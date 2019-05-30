@@ -13,13 +13,13 @@ sudo pip install virtualenv
 ```
 virtualenv env
 source env/bin/activate
-pip install -r src/requirements.txt
+pip install -r requirements.txt
 ```
 
 3. Run the application:
 
 ```
-python src/main.py
+python main.py
 ```
 
 4. In your web browser, enter the following address: http://127.0.0.1:8080
