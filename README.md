@@ -10,6 +10,7 @@ We are currently developing the inaugural 2019 edition of the Almanac and lookin
 - [Peer reviewers](https://github.com/HTTPArchive/almanac.httparchive.org/issues/2) to assist the chapter authors with planning and editing.
 - [Data analysts](https://github.com/HTTPArchive/almanac.httparchive.org/issues/23) to query the HTTP Archive dataset for metrics used by each chapter.
 - [Web designers and developers](https://github.com/HTTPArchive/almanac.httparchive.org/issues/24) to help build the UX of the Almanac itself.
+- [Translators](https://github.com/HTTPArchive/almanac.httparchive.org/issues/29) to bring the Almanac content to as many popular languages as possible
 
 We strive to make the Web Almanac an inclusive and diverse project. If you bring a unique perspective, we want to hear from you. For example, members of the web community from underrepresented groups or those with unique experiences like standards work, browser development, framework development, etc bring a valuable set of diverse perspectives and are highly encouraged to participate.
 
