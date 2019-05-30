@@ -26,7 +26,7 @@ The expected release date for the 2019 edition of the Web Almanac is November 4,
 - July 1: Queries written for all metrics, designers hired/assigned, and the development environment built.
 - September 9: Design completed and all chapters written and reviewed.
 - October 7: Website built and content integrated.
-- November 4: Website QA tested and deployed.
+- November 4: Website translated, QA tested, and deployed.
 
 ## [License](https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE)
 
