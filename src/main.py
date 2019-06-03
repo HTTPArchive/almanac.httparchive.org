@@ -1,13 +1,16 @@
-from flask import Flask
-
+from flask import Flask, render_template
+from flask_talisman import Talisman
+from csp import csp
 
 app = Flask(__name__)
+Talisman(app,
+         content_security_policy=csp,
+         content_security_policy_nonce_in=['script-src'])
 
 
 @app.route('/')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+def index():
+    return render_template('index.html')
 
 
 @app.errorhandler(500)

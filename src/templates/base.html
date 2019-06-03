@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block meta %}
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:image" content="/static/img/ha.png">
+  {% endblock %}
+  {% block head %}
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="shortcut icon" href="../static/images/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+  <link rel="stylesheet" href="../static/css/styles.css">
+  {% endblock %}
+</head>
+<body>
+<div id="main">
+  {% block main %}{% endblock %}
+</div>
+{% block scripts %}
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3" nonce="{{ csp_nonce() }}"></script>
+<script nonce="{{ csp_nonce() }}">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-22381566-3');
+</script>
+
+{% endblock %}
+</body>
+</html>
