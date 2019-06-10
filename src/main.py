@@ -10,7 +10,7 @@ Talisman(app,
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('en-US/index.html')
 
 
 @app.errorhandler(500)
