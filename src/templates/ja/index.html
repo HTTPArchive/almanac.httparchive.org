@@ -1,0 +1,32 @@
+{% extends "ja/base.html" %}
+
+{% block title %}
+The Web Almanac by HTTP Archive
+{% endblock %}
+
+{# TODO(MSakamaki): Translate to Japanese. #}
+{% block main %}
+<section>
+  <div>
+    <img src="../static/images/ha.png" alt="HTTP Archive">
+
+    <h1>
+      Introducing the <b>Web Almanac</b>, coming November 2019.
+    </h1>
+
+    <p>
+      The Web Almanac is HTTP Archive's annual "state of the web" report.
+      Our mission is to combine the powerful analytics of HTTP Archive with the
+      expertise of the web community. The Almanac is made up of four primary
+      sections: page content, user experience, content delivery, and
+      content distribution. Each section is comprised of chapters that explore
+      the state of specific areas like JavaScript usage, accessibility,
+      content management systems, and compression.
+    </p>
+
+    <a href="https://github.com/HTTPArchive/almanac.httparchive.org">
+      Learn more
+    </a>
+  </div>
+</section>
+{% endblock %}
