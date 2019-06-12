@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 from flask_talisman import Talisman
 from csp import csp
 
@@ -7,10 +7,18 @@ Talisman(app,
          content_security_policy=csp,
          content_security_policy_nonce_in=['script-src'])
 
+SUPPORTED_LANGS = ('en', 'ja')
 
 @app.route('/')
 def index():
-    return render_template('en-US/index.html')
+    return render_template('en/index.html')
+
+@app.route('/<lang>/')
+def index_i18n(lang):
+    if lang not in SUPPORTED_LANGS:
+        abort(404)
+
+    return render_template('%s/index.html' % lang)
 
 
 @app.errorhandler(500)
