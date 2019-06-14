@@ -18,7 +18,7 @@ def index_i18n(lang):
     if lang not in SUPPORTED_LANGS:
         abort(404)
 
-    return render_template('%s/index.html' % lang)
+    return render_template('%s/splash.html' % lang)
 
 
 @app.errorhandler(500)
