@@ -11,14 +11,14 @@ SUPPORTED_LANGS = ('en', 'ja')
 
 @app.route('/')
 def index():
-    return render_template('en/index.html')
+    return render_template('en/splash.html')
 
 @app.route('/<lang>/')
 def index_i18n(lang):
     if lang not in SUPPORTED_LANGS:
         abort(404)
 
-    return render_template('%s/index.html' % lang)
+    return render_template('%s/splash.html' % lang)
 
 
 @app.errorhandler(500)
