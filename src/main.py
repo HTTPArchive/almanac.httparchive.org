@@ -10,7 +10,6 @@ Talisman(app,
 
 DEFAULT_YEAR = '2019'
 DEFAULT_LANG = 'en'
-SUPPORTED_LANGS = ('en', 'ja')
 SUPPORTED_YEARS = {
     '2019': ('en', 'ja')
 }
