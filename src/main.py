@@ -1,90 +1,79 @@
 from flask import Flask, render_template, abort
 from flask_talisman import Talisman
 from csp import csp
+import logging
 
 app = Flask(__name__)
 Talisman(app,
          content_security_policy=csp,
          content_security_policy_nonce_in=['script-src'])
 
-# TODO: Don't expect the same languages to be supported each year.
-SUPPORTED_LANGS = ('en', 'ja')
-SUPPORTED_YEARS = ('2019')
+DEFAULT_YEAR = '2019'
+DEFAULT_LANG = 'en'
+SUPPORTED_YEARS = {
+    '2019': ('en', 'ja')
+}
 
-##
-## English is implied when omitting a language code from the URL.
-## TODO: Should we require language codes to simplify this?
-##
 
 @app.route('/')
-def index():
-    return index_i18n('en')
-
-@app.route('/<year>/outline')
-def outline(year):
-    return outline_i18n('en', year)
-
-@app.route('/<year>/contributors')
-def contributors(year):
-    return contributors_i18n('en', year)
-
-@app.route('/<year>/methodology')
-def methodology(year):
-    return methodology_i18n('en', year)
-
-@app.route('/<year>/<chapter>/')
-def chapter(year, chapter):
-    return chapter_i18n('en', year, chapter)
-
-##
-## Internationalization (i18n)
-##
-
 @app.route('/<lang>/')
-def index_i18n(lang):
-    if lang not in SUPPORTED_LANGS:
-        abort(404)
+def index(lang=DEFAULT_LANG):
+    validate(lang)
 
     return render_template('%s/splash.html' % lang)
 
+
+@app.route('/<year>/outline')
 @app.route('/<lang>/<year>/outline')
-def outline_i18n(lang, year):
-    if lang not in SUPPORTED_LANGS:
-        abort(404)
-    if year not in SUPPORTED_YEARS:
-        abort(404)
+def outline(year, lang=DEFAULT_LANG):
+    validate(lang, year)
 
     return render_template('%s/%s/outline.html' % (lang, year))
 
+
+@app.route('/<year>/contributors')
 @app.route('/<lang>/<year>/contributors')
-def contributors_i18n(lang, year):
-    if lang not in SUPPORTED_LANGS:
-        abort(404)
-    if year not in SUPPORTED_YEARS:
-        abort(404)
+def contributors(year, lang=DEFAULT_LANG):
+    validate(lang, year)
 
     # TODO: Get contributor data and pass into the template.
     return render_template('%s/%s/contributors.html' % (lang, year), contributors={})
 
+
+@app.route('/<year>/methodology')
 @app.route('/<lang>/<year>/methodology')
-def methodology_i18n(lang, year):
-    if lang not in SUPPORTED_LANGS:
-        abort(404)
-    if year not in SUPPORTED_YEARS:
-        abort(404)
+def methodology(year, lang=DEFAULT_LANG):
+    validate(lang, year)
 
     return render_template('%s/%s/methodology.html' % (lang, year))
 
+
+@app.route('/<year>/<chapter>/')
 @app.route('/<lang>/<year>/<chapter>')
-def chapter_i18n(lang, year, chapter):
-    if lang not in SUPPORTED_LANGS:
-        abort(404)
-    if year not in SUPPORTED_YEARS:
-        abort(404)
+def chapter(year, chapter, lang=DEFAULT_LANG):
+    validate(lang, year)
 
     # TODO: Validate the chapter.
     # TODO: Get chapter data and pass into the template.
     return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
+
+
+## This could become a decorator, and be encapsulated. Would that make this a
+## cleaner solution? I looked at implementing one, but it seemed complicated.
+def validate(lang, year=DEFAULT_YEAR):
+    validate_year(year)
+    validate_lang(lang, year)
+
+
+def validate_year(year):
+    if year not in SUPPORTED_YEARS:
+        abort(404)
+
+
+def validate_lang(lang, year):
+    supported_langs = SUPPORTED_YEARS[year]
+    if lang not in supported_langs:
+        abort(404)
 
 
 @app.errorhandler(500)
