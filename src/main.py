@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_talisman import Talisman
 from csp import csp
-from validate_i18n import validate_i18n
+from validate import validate
 import logging
 
 app = Flask(__name__)
@@ -13,21 +13,21 @@ logging.basicConfig(level=logging.DEBUG)
 
 @app.route('/')
 @app.route('/<lang>/')
-@validate_i18n
+@validate
 def index(year, lang):
     return render_template('%s/splash.html' % lang)
 
 
 @app.route('/<year>/outline')
 @app.route('/<lang>/<year>/outline')
-@validate_i18n
+@validate
 def outline(year, lang):
     return render_template('%s/%s/outline.html' % (lang, year))
 
 
 @app.route('/<year>/contributors')
 @app.route('/<lang>/<year>/contributors')
-@validate_i18n
+@validate
 def contributors(year, lang):
     # TODO: Get contributor data and pass into the template.
     return render_template('%s/%s/contributors.html' % (lang, year), contributors={})
@@ -35,14 +35,14 @@ def contributors(year, lang):
 
 @app.route('/<year>/methodology')
 @app.route('/<lang>/<year>/methodology')
-@validate_i18n
+@validate
 def methodology(year, lang):
     return render_template('%s/%s/methodology.html' % (lang, year))
 
 
 @app.route('/<year>/<chapter>/')
 @app.route('/<lang>/<year>/<chapter>')
-@validate_i18n
+@validate
 def chapter(year, chapter, lang):
     # TODO: Validate the chapter.
     # TODO: Get chapter data and pass into the template.

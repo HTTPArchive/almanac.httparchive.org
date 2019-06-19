@@ -1,8 +1,7 @@
 import logging
 import re
 
-from flask import request
-from werkzeug.exceptions import abort
+from flask import request, abort
 from functools import wraps
 
 DEFAULT_YEAR = '2019'
@@ -12,13 +11,13 @@ SUPPORTED_YEARS = {
 }
 
 
-def validate_i18n(func):
+def validate(func):
     @wraps(func)
     def decorated_function(*args, **kwargs):
         lang = kwargs.get('lang')
         year = kwargs.get('year')
 
-        updated_kwargs = validate(lang, year)
+        updated_kwargs = validate_lang_and_year(lang, year)
 
         kwargs.update(updated_kwargs)
 
@@ -27,7 +26,7 @@ def validate_i18n(func):
     return decorated_function
 
 
-def validate(lang, year):
+def validate_lang_and_year(lang, year):
     if year is None:
         logging.debug('Defaulting the year to: %s' % year)
         year = DEFAULT_YEAR
