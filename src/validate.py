@@ -39,38 +39,39 @@ def validate_lang_and_year(lang, year):
     logging.debug('Languages supported for %s: %s.' % (year, supported_langs))
 
     # If an unsupported language code is passed in, abort.
-    # TODO: Should we still redirect back to default?
     if lang is not None and lang not in supported_langs:
         logging.debug('Unsupported language set: %s.' % lang)
         abort(404)
 
     if lang is None:
         # Extract the language from the Accept-Language header.
-        lang = parse_accept_language(supported_langs)
+        accept_language_header = request.headers.get('Accept-Language')
+        lang = parse_accept_language(accept_language_header, supported_langs)
 
     logging.debug('Using lang: "%s" and year: "%s" ' % (lang, year))
 
     return {'lang': lang, 'year': year}
 
 
-def parse_accept_language(supported_langs):
+def parse_accept_language(header, supported_langs):
     # Try and extract the language out of the header. The regex below will pull the
     # alpha characters out of the start of the string, after a comma, or after a space.
     # It may not be exhaustive, and will require testing.
 
     logging.debug('Trying to extract Accept-Language header.')
 
-    header = request.headers.get('Accept-Language')
-    accepted_languages = re.findall('(?:^|\s|,)(\w+)', header)
+    if header is not None:
 
-    logging.debug('Accepted languages: %s' % accepted_languages)
+        accepted_languages = re.findall('(?:^|\s|,)(\w+)', header)
 
-    # The header could contain multiple languages, in order of precedence
-    for lang in accepted_languages:
-        if lang in supported_langs:
-            # Return the first found supported language.
-            logging.debug('Using "%s" as the highest precedent language.' % lang)
-            return lang
+        logging.debug('Accepted languages: %s' % accepted_languages)
+
+        # The header could contain multiple languages, in order of precedence
+        for lang in accepted_languages:
+            if lang in supported_langs:
+                # Return the first found supported language.
+                logging.debug('Using "%s" as the highest precedent language.' % lang)
+                return lang
 
     # If all else fails, default the language.
     return DEFAULT_LANG
