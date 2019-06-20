@@ -1,5 +1,6 @@
 import logging
 import re
+import inspect
 
 from flask import request, abort
 from functools import wraps
@@ -17,9 +18,15 @@ def validate(func):
         lang = kwargs.get('lang')
         year = kwargs.get('year')
 
-        updated_kwargs = validate_lang_and_year(lang, year)
+        accepted_args = inspect.getargspec(func).args
 
-        kwargs.update(updated_kwargs)
+        lang, year = validate_lang_and_year(lang, year)
+
+        if 'lang' in accepted_args:
+            kwargs.update({'lang': lang})
+
+        if 'year' in accepted_args:
+            kwargs.update({'year': year})
 
         return func(*args, **kwargs)
 
@@ -54,7 +61,7 @@ def validate_lang_and_year(lang, year):
 
     logging.debug('Using lang: "%s" and year: "%s" ' % (lang, year))
 
-    return {'lang': lang, 'year': year}
+    return lang, year
 
 
 def parse_accept_language(header, supported_langs):

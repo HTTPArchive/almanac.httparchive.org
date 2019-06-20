@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 @app.route('/')
 @app.route('/<lang>/')
 @validate
-def index(year, lang):
+def index(lang):
     return render_template('%s/splash.html' % lang)
 
 
