@@ -1,24 +1,53 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template
 from flask_talisman import Talisman
 from csp import csp
+from validate import validate
+import logging
 
 app = Flask(__name__)
 Talisman(app,
          content_security_policy=csp,
          content_security_policy_nonce_in=['script-src'])
+logging.basicConfig(level=logging.DEBUG)
 
-SUPPORTED_LANGS = ('en', 'ja')
 
 @app.route('/')
-def index():
-    return render_template('en/splash.html')
-
 @app.route('/<lang>/')
-def index_i18n(lang):
-    if lang not in SUPPORTED_LANGS:
-        abort(404)
-
+@validate
+def index(lang):
     return render_template('%s/splash.html' % lang)
+
+
+@app.route('/<year>/outline')
+@app.route('/<lang>/<year>/outline')
+@validate
+def outline(year, lang):
+    return render_template('%s/%s/outline.html' % (lang, year))
+
+
+@app.route('/<year>/contributors')
+@app.route('/<lang>/<year>/contributors')
+@validate
+def contributors(year, lang):
+    # TODO: Get contributor data and pass into the template.
+    return render_template('%s/%s/contributors.html' % (lang, year), contributors={})
+
+
+@app.route('/<year>/methodology')
+@app.route('/<lang>/<year>/methodology')
+@validate
+def methodology(year, lang):
+    return render_template('%s/%s/methodology.html' % (lang, year))
+
+
+@app.route('/<year>/<chapter>/')
+@app.route('/<lang>/<year>/<chapter>')
+@validate
+def chapter(year, chapter, lang):
+    # TODO: Validate the chapter.
+    # TODO: Get chapter data and pass into the template.
+
+    return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
 
 
 @app.errorhandler(500)
