@@ -33,6 +33,8 @@ def validate_lang_and_year(lang, year):
 
     if year not in SUPPORTED_YEARS:
         logging.debug('Unsupported year requested: %s' % year)
+        # TODO: Return this as an  error message to the user, and display
+        # it in the custom error page.
         abort(404)
 
     supported_langs = SUPPORTED_YEARS[year]
@@ -41,6 +43,8 @@ def validate_lang_and_year(lang, year):
     # If an unsupported language code is passed in, abort.
     if lang is not None and lang not in supported_langs:
         logging.debug('Unsupported language set: %s.' % lang)
+        # TODO: Return this as an  error message to the user, and display
+        # it in the custom error page.
         abort(404)
 
     if lang is None:
