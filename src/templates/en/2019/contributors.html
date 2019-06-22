@@ -3,3 +3,16 @@
 {% block title %}
 Contributors | The Web Almanac by HTTP Archive
 {% endblock %}
+
+{% block main %}
+{% for contributor in contributors %}
+<section>
+  <h3>{{ contributor.name }}</h3>
+  <ul>
+    <li>{{ team.name }}</li>
+    <li>{{ contributor.github }}</li>
+    <li>{{ contributor.twitter }}</li>
+  </ul>
+</section>
+{% endfor %}
+{% endblock %}

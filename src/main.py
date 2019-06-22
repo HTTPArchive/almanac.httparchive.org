@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask_talisman import Talisman
 from csp import csp
 from validate import validate
@@ -48,6 +48,17 @@ def chapter(year, chapter, lang):
     # TODO: Get chapter data and pass into the template.
 
     return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
+
+
+@app.route('/<year>/contributors')
+@app.route('/<lang>/<year>/contributors')
+reports = report_util.get_reports()
+
+  # TODO: Add any additional information about contributors to include
+  if get_format(request) == 'json':
+    return jsonify(name=contributors.name, teams=team.name)
+
+  return render_template('contributors.html', name=contributors.name, teams=contributors.teams)
 
 
 @app.errorhandler(500)
