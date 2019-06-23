@@ -31,6 +31,12 @@
     <div id="navigation">
       {% block navigation %}{% endblock %}
     </div>
+    <div class="language-switcher">
+      {% block current_lang %}{% endblock %}
+      <div class="language-switcher__dropdown">
+        {% block other_lang %}{% endblock %}
+      </div>
+    </div>
     <div id="main">
       {% block main %}{% endblock %}
     </div>
