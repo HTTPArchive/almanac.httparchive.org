@@ -27,7 +27,7 @@ h1 {
     line-height: 1.1;
 }
 
-a {
+section a {
     display: inline-block;
     border: 2px solid #667a7d;
     border-radius: 5px;
@@ -39,17 +39,35 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+section a:hover {
     background-color: #fff;
     border-color: #667a7d;
     color: #667a7d;
 }
 
-@media (min-width: 800px) {
-    img {
-        margin-left: -20px;
-    }
+.svg {
+    display: block;
+    box-shadow: 1px 1px 14px rgba(0,0,0,0.2);
+}
 
+.language-switcher {
+    width: 60px;
+    top: 20px;
+    right: 40px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.language-switcher__dropdown {
+    display: none;
+    margin-top: 10px;
+}
+
+.language-switcher:hover .language-switcher__dropdown {
+    display: block;
+}
+
+@media (min-width: 800px) {
     section {
         margin-top: 20vh;
     }
