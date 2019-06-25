@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 from flask_talisman import Talisman
 from csp import csp
 from validate import validate
