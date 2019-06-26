@@ -1,67 +1,52 @@
 {
   "teams": {
     "developers": {
-      "name": "Web Developers",
-      "members": [
-        "KJLarson",
-        "rviscomi"
-      ]
+      "name": "Web Developers"
     },
     "brainstormers": {
-      "name": "Brainstormers",
-      "members": [
-        "argyleink"
-      ]
+      "name": "Brainstormers"
     },
     "authors": {
-      "name": "Chapter Authors",
-      "members": [
-        "addyosmani"
-      ]
+      "name": "Chapter Authors"
     },
     "reviewers": {
-      "name": "Peer Reviewers",
-      "members": [
-        "ahmadawais"
-      ]
+      "name": "Peer Reviewers"
     },
     "analysts": {
-      "name": "Data Analysts",
-      "members": [
-        "dotjs"
-      ]
+      "name": "Data Analysts"
     },
     "designers": {
-      "name": "Web Designers",
-      "members": [
-        "GabrielDeGennaro"
-      ]
+      "name": "Web Designers"
     },
     "translators": {
-      "name": "Content Translators",
-      "members": [
-        "MSakamaki"
-      ]
+      "name": "Content Translators"
     },
     "editors": {
-      "name": "Editors",
-      "members": [
-        "ekharvey"
-      ]
+      "name": "Editors"
     }
   },
   "contributors": {
-    "KJLarson": {
+    "argyleink": {
+      "name": "Adam Argyle",
+      "github": "https://github.com/argyleink",
+      "teams": [
+        "brainstormers"
+      ]
+    },
+    "kjLarson": {
       "name": "Kari Larson",
-      "github": "https://github.com/KJLarson"
+      "github": "https://github.com/KJLarson",
+      "teams": [
+        "developers"
+      ]
     },
     "rviscomi": {
       "name": "Rick Viscomi",
-      "github": "https://github.com/rviscomi"
-    },
-    "argyleink": {
-      "name": "Adam Argyle",
-      "github": "https://github.com/argyleink"
+      "github": "https://github.com/rviscomi",
+      "teams": [
+        "brainstormers",
+        "developers"
+      ]
     }
   }
 }
