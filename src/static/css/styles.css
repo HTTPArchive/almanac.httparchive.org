@@ -45,29 +45,23 @@ section a:hover {
     color: #667a7d;
 }
 
-.svg {
-    display: block;
-    box-shadow: 1px 1px 14px rgba(0,0,0,0.2);
+select {
+    height: 30px;
+    font-size: 1rem;
 }
 
 .language-switcher {
-    width: 60px;
     top: 20px;
-    right: 40px;
+    right: 20px;
     position: absolute;
     cursor: pointer;
 }
 
-.language-switcher__dropdown {
-    display: none;
-    margin-top: 10px;
-}
-
-.language-switcher:hover .language-switcher__dropdown {
-    display: block;
-}
-
 @media (min-width: 800px) {
+    img {
+        margin-left: 20px;
+    }
+
     section {
         margin-top: 20vh;
     }

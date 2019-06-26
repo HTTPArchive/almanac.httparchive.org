@@ -31,15 +31,26 @@
     <div id="navigation">
       {% block navigation %}{% endblock %}
     </div>
-    <div class="language-switcher">
-      {% block current_lang %}{% endblock %}
-      <div class="language-switcher__dropdown">
-        {% block other_lang %}{% endblock %}
-      </div>
-    </div>
+    <select class="language-switcher">
+      <option
+        class="default-language"
+        selected="selected"
+        value={{ self.lang()[0:2] }}>
+      </option>
+      {% for language in supported_languages %}
+        {% if (language != self.lang()[0:2]) %}
+          <option
+            class="alternate-language"
+            value={{ language }}>
+          </option>
+        {% endif %}
+      {% endfor %}
+    </select>
     <div id="main">
       {% block main %}{% endblock %}
     </div>
-    {% block scripts %}{% endblock %}
+    {% block scripts %}
+      <script src="../static/js/language.js"></script>
+    {% endblock %}
   </body>
 </html>
