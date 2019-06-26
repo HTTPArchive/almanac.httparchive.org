@@ -10,12 +10,13 @@ Talisman(app,
          content_security_policy_nonce_in=['script-src'])
 logging.basicConfig(level=logging.DEBUG)
 
+supported_languages = ['en', 'ja']
 
 @app.route('/')
 @app.route('/<lang>/')
 @validate
 def index(lang):
-    return render_template('%s/splash.html' % lang)
+    return render_template('%s/splash.html' % lang, supported_languages=supported_languages)
 
 
 @app.route('/<year>/outline')
