@@ -59,7 +59,7 @@ select {
 
 @media (min-width: 800px) {
     img {
-        margin-left: 20px;
+        margin-left: -20px;
     }
 
     section {

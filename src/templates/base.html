@@ -38,7 +38,7 @@
         value={{ self.lang()[0:2] }}>
       </option>
       {% for language in supported_languages %}
-        {% if (language != self.lang()[0:2]) %}
+        {% if language != self.lang()[0:2] %}
           <option
             class="alternate-language"
             value={{ language }}>
