@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_talisman import Talisman
+import contributors as contributors_util
 from csp import csp
 from validate import validate
 import logging
