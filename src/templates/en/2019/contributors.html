@@ -9,7 +9,9 @@ Contributors | The Web Almanac by HTTP Archive
 <section>
   <h3>{{ contributor.name }}</h3>
   <ul>
-    <li>{{ team.name }}</li>
+    {% for team in contributor.teams %}
+    <li>{{ teams[team].name }}</li>
+    {% endfor %}
     <li>{{ contributor.github }}</li>
     <li>{{ contributor.twitter }}</li>
   </ul>
