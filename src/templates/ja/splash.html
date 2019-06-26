@@ -6,18 +6,6 @@ HTTP ArchiveによるWeb年鑑
 
 {% block navigation %} {% endblock %}
 
-{% block current_lang %}
-<a href={{ url_for('index', lang='ja') }} aria-label="Japanese">
-  <img class="svg" src="../static/images/lang/jp.svg" alt="ja" title="Japanese">
-</a>
-{% endblock %}
-
-{% block other_lang %}
-<a href={{ url_for('index', lang='en') }} aria-label="English">
-  <img class="svg" src="../static/images/lang/gb.svg" alt="en" title="English">
-</a>
-{% endblock %}
-
 {% block main %}
 <section>
   <div>
