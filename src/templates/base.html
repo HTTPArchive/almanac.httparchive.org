@@ -33,15 +33,19 @@
     </div>
     <select class="language-switcher">
       <option
-        class="default-language"
         selected="selected"
-        value={{ self.lang()[0:2] }}>
+        {% block default %}
+        value={{ url_for(request.endpoint, lang=self.lang()[0:2]) }}
+        {% endblock %}
+        lang={{ self.lang()[0:2] }}>
       </option>
       {% for language in supported_languages %}
         {% if language != self.lang()[0:2] %}
           <option
-            class="alternate-language"
-            value={{ language }}>
+            {% block alternate scoped %}
+            value={{ url_for(request.endpoint, lang=language) }}
+            {% endblock %}
+            lang={{ language }}>
           </option>
         {% endif %}
       {% endfor %}
