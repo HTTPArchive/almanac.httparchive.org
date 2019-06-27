@@ -30,7 +30,8 @@ def outline(year, lang):
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(year, lang):
-    return render_template('%s/%s/contributors.html' % (lang, year), contributors=contributors_util.get_contributors())
+    contributors=contributors_util.get_contributors()
+    return render_template('%s/%s/contributors.html' % (lang, year), contributors=contributors)
 
 
 @app.route('/<year>/methodology')
