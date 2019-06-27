@@ -27,7 +27,7 @@ h1 {
     line-height: 1.1;
 }
 
-section a {
+a {
     display: inline-block;
     border: 2px solid #667a7d;
     border-radius: 5px;
@@ -39,18 +39,15 @@ section a {
     text-decoration: none;
 }
 
-section a:hover {
+a:hover {
     background-color: #fff;
     border-color: #667a7d;
     color: #667a7d;
 }
 
-select {
+.language-switcher {
     height: 30px;
     font-size: 1rem;
-}
-
-.language-switcher {
     top: 20px;
     right: 20px;
     position: absolute;
