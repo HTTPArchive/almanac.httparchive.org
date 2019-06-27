@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_talisman import Talisman
 from csp import csp
-from validate import validate
+from validate import validate, SUPPORTED_YEARS
 import logging
 
 app = Flask(__name__)
@@ -10,12 +10,11 @@ Talisman(app,
          content_security_policy_nonce_in=['script-src'])
 logging.basicConfig(level=logging.DEBUG)
 
-supported_languages = ['en', 'ja']
-
 @app.route('/')
 @app.route('/<lang>/')
 @validate
 def index(lang):
+    supported_languages = SUPPORTED_YEARS.get('2019')
     return render_template('%s/splash.html' % lang, supported_languages=supported_languages)
 
 
