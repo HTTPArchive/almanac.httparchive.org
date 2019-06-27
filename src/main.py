@@ -50,17 +50,6 @@ def chapter(year, chapter, lang):
     return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
 
 
-@app.route('/<year>/contributors')
-@app.route('/<lang>/<year>/contributors')
-reports = report_util.get_reports()
-
-  # TODO: Add any additional information about contributors to include
-  if get_format(request) == 'json':
-    return jsonify(name=contributors.name, teams=team.name)
-
-  return render_template('contributors.html', contributors=contributor_util.get_contributors())
-
-
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request.')
