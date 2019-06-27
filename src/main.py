@@ -30,8 +30,7 @@ def outline(year, lang):
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(year, lang):
-    # TODO: Get contributor data and pass into the template.
-    return render_template('%s/%s/contributors.html' % (lang, year), contributors={})
+    return render_template('%s/%s/contributors.html' % (lang, year), contributors=contributor_util.get_contributors())
 
 
 @app.route('/<year>/methodology')
@@ -50,16 +49,6 @@ def chapter(year, chapter, lang):
 
     return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
 
-
-@app.route('/<year>/contributors')
-@app.route('/<lang>/<year>/contributors')
-reports = report_util.get_reports()
-
-  # TODO: Add any additional information about contributors to include
-  if get_format(request) == 'json':
-    return jsonify(name=contributors.name, teams=team.name)
-
-  return render_template('contributors.html', contributors=contributor_util.get_contributors())
 
 
 @app.errorhandler(500)
