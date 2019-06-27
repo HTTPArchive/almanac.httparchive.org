@@ -4,6 +4,7 @@ contributors_json = {}
 
 
 def get_contributors():
+  global contributors_json
   return contributors_json
 
 def update_contributors():
