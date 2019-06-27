@@ -50,7 +50,6 @@ def chapter(year, chapter, lang):
     return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
 
 
-
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request.')
