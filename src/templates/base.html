@@ -21,9 +21,9 @@
 
         gtag('config', 'UA-22381566-3');
     </script>
-    <link rel="shortcut icon" href="../static/images/favicon.ico">
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
     {% endblock %}
   </head>
 
@@ -31,9 +31,27 @@
     <div id="navigation">
       {% block navigation %}{% endblock %}
     </div>
+    {% set view_args = request.view_args.copy() %}
+    <select class="language-switcher">
+      <option
+        selected="selected"
+        value={{ url_for(request.endpoint, **(request.view_args.update(lang=self.lang()[0:2]) or request.view_args)) }}
+        lang={{ self.lang()[0:2] }}>
+      </option>
+      {% for language in supported_languages %}
+        {% if language != self.lang()[0:2] %}
+          <option
+            value={{ url_for(request.endpoint, **(request.view_args.update(lang=language) or request.view_args)) }}
+            lang={{ language }}>
+          </option>
+        {% endif %}
+      {% endfor %}
+    </select>
     <div id="main">
       {% block main %}{% endblock %}
     </div>
-    {% block scripts %}{% endblock %}
+    {% block scripts %}
+      <script src="/static/js/language.js"></script>
+    {% endblock %}
   </body>
 </html>

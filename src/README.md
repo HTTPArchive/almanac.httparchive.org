@@ -1,5 +1,7 @@
 ## Run Locally
 
+Make sure you run the following commands from within the `src` directory by executing `cd src` first.
+
 [Source](https://cloud.google.com/appengine/docs/flexible/python/quickstart)
 
 1. If you don't have virtualenv, install it using pip.
