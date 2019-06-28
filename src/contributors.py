@@ -10,7 +10,7 @@ def get_contributors():
 def update_contributors():
   global contributors_json
   
-  with open('src/config/contributors.json', 'r') as contributors_file:
+  with open('config/contributors.json', 'r') as contributors_file:
     contributors_json = json.load(contributors_file)
 
 
