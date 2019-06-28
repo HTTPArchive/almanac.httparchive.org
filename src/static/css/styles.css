@@ -45,6 +45,15 @@ a:hover {
     color: #667a7d;
 }
 
+.language-switcher {
+    height: 30px;
+    font-size: 1rem;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    cursor: pointer;
+}
+
 @media (min-width: 800px) {
     img {
         margin-left: -20px;
