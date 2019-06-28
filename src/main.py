@@ -10,11 +10,12 @@ Talisman(app,
          content_security_policy_nonce_in=['script-src'])
 logging.basicConfig(level=logging.DEBUG)
 
+supported_languages = SUPPORTED_YEARS.get('2019')
+
 @app.route('/')
 @app.route('/<lang>/')
 @validate
 def index(lang):
-    supported_languages = SUPPORTED_YEARS.get('2019')
     return render_template('%s/splash.html' % lang, supported_languages=supported_languages)
 
 
@@ -22,7 +23,7 @@ def index(lang):
 @app.route('/<lang>/<year>/outline')
 @validate
 def outline(year, lang):
-    return render_template('%s/%s/outline.html' % (lang, year))
+    return render_template('%s/%s/outline.html' % (lang, year), supported_languages=supported_languages)
 
 
 @app.route('/<year>/contributors')
@@ -30,14 +31,14 @@ def outline(year, lang):
 @validate
 def contributors(year, lang):
     # TODO: Get contributor data and pass into the template.
-    return render_template('%s/%s/contributors.html' % (lang, year), contributors={})
+    return render_template('%s/%s/contributors.html' % (lang, year), contributors={}, supported_languages=supported_languages)
 
 
 @app.route('/<year>/methodology')
 @app.route('/<lang>/<year>/methodology')
 @validate
 def methodology(year, lang):
-    return render_template('%s/%s/methodology.html' % (lang, year))
+    return render_template('%s/%s/methodology.html' % (lang, year), supported_languages=supported_languages)
 
 
 @app.route('/<year>/<chapter>/')
@@ -46,8 +47,7 @@ def methodology(year, lang):
 def chapter(year, chapter, lang):
     # TODO: Validate the chapter.
     # TODO: Get chapter data and pass into the template.
-
-    return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
+    return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter, supported_languages=supported_languages)
 
 
 @app.errorhandler(500)
