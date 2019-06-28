@@ -15,6 +15,6 @@ function generateOptionText(language) {
     case 'en':
       return '🇺🇸 English';
     case 'ja':
-      return '🇯🇵 Japanese';
+      return '🇯🇵 日本語';
   }
 }
