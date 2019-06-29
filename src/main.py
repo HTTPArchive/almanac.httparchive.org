@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_talisman import Talisman
+import contributors as contributors_util
 from csp import csp
 from validate import validate, SUPPORTED_YEARS
 import logging
@@ -30,8 +31,8 @@ def outline(year, lang):
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(year, lang):
-    # TODO: Get contributor data and pass into the template.
-    return render_template('%s/%s/contributors.html' % (lang, year), contributors={}, supported_languages=supported_languages)
+    contributors=contributors_util.get_contributors()
+    return render_template('%s/%s/contributors.html' % (lang, year), contributors=contributors, supported_languages=supported_languages)
 
 
 @app.route('/<year>/methodology')

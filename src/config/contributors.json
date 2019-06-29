@@ -1,0 +1,52 @@
+{
+  "teams": {
+    "developers": {
+      "name": "Web Developers"
+    },
+    "brainstormers": {
+      "name": "Brainstormers"
+    },
+    "authors": {
+      "name": "Chapter Authors"
+    },
+    "reviewers": {
+      "name": "Peer Reviewers"
+    },
+    "analysts": {
+      "name": "Data Analysts"
+    },
+    "designers": {
+      "name": "Web Designers"
+    },
+    "translators": {
+      "name": "Content Translators"
+    },
+    "editors": {
+      "name": "Editors"
+    }
+  },
+  "contributors": {
+    "argyleink": {
+      "name": "Adam Argyle",
+      "github": "https://github.com/argyleink",
+      "teams": [
+        "brainstormers"
+      ]
+    },
+    "kjlarson": {
+      "name": "Kari Larson",
+      "github": "https://github.com/KJLarson",
+      "teams": [
+        "developers"
+      ]
+    },
+    "rviscomi": {
+      "name": "Rick Viscomi",
+      "github": "https://github.com/rviscomi",
+      "teams": [
+        "brainstormers",
+        "developers"
+      ]
+    }
+  }
+}
