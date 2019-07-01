@@ -44,7 +44,7 @@ def validate_lang_and_year(lang, year):
         # it in the custom error page.
         abort(404)
 
-    supported_langs = [l.lang_code for l in SUPPORTED_YEARS.get(year, DEFAULT_YEAR)]
+    supported_langs = [l.lang_code for l in SUPPORTED_YEARS.get(year)]
     logging.debug('Languages supported for %s: %s.' % (year, supported_langs))
 
     # If an unsupported language code is passed in, abort.
@@ -79,13 +79,11 @@ def parse_accept_language(header, supported_langs):
 
         # The header could contain multiple languages, in order of precedence
         # Limit the number of accepted languages tested to 10.
-        for accepted_lang_code in accepted_languages[:10]:
-            for supported_lang in supported_langs:
-                logging.debug('Supported language: %s' % supported_lang)
-                if accepted_lang_code == supported_lang:
-                    # Return the first found supported language.
-                    logging.debug('Using "%s" as the highest precedent language.' % accepted_lang_code)
-                    return supported_lang
+        for lang in accepted_languages[:10]:
+            if lang in supported_langs:
+                # Return the first found supported language.
+                logging.debug('Using "%s" as the highest precedent language.' % lang)
+                return lang
 
     # If all else fails, default the language.
-    return DEFAULT_LANGUAGE
+    return DEFAULT_LANGUAGE.lang_code
