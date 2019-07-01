@@ -1,3 +1,4 @@
+import contributors as contributors_util
 from csp import csp
 from flask import Flask, render_template as flask_render_template, request
 from flask_talisman import Talisman
@@ -38,8 +39,8 @@ def outline(year, lang):
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(year, lang):
-    # TODO: Get contributor data and pass into the template.
-    return render_template('%s/%s/contributors.html' % (lang, year), contributors={})
+    contributors=contributors_util.get_contributors()
+    return render_template('%s/%s/contributors.html' % (lang, year), contributors=contributors)
 
 
 @app.route('/<year>/methodology')
