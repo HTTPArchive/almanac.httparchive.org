@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
     <link rel="stylesheet" href="/static/css/styles.css">
     {% endblock %}
+		{% set view_args = request.view_args.copy() %}
+	{% for l in supported_languages %}
+	<link rel="alternate" href="{{ url_for(request.endpoint, **(view_args.update(lang=l.lang_code) or view_args)) }}" hreflang="{{ l.lang_code}}" />
+	      {% endfor %}
   </head>
 
   <body>
