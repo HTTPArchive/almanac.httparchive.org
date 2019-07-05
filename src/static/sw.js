@@ -1,48 +1,86 @@
-console.log('Hello from sw.js');
+const cacheName = 'almanac-cache';
+const startPage = '/';
+const offlinePage = '/';
+const filesToCache = [
+    '/',
+	'/en/',
+	'/ja/',
+    '/static/js/app.js'
+];
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js');
+// Install
+self.addEventListener('install', function(e) {
+	console.log('service worker installation');
+	e.waitUntil(
+		caches.open(cacheName).then(function(cache) {
+			console.log('service worker caching dependencies');
+			filesToCache.map(function(url) {
+				return cache.add(url).catch(function (reason) {
+					return console.log('SW: ' + String(reason) + ' ' + url);
+				});
+			});
+		})
+	);
+});
 
-if (workbox) {
-  console.log(`Yay! Workbox is loaded 🎉`);
+// Activate
+self.addEventListener('activate', function(e) {
+	console.log('service worker activation');
+	e.waitUntil(
+		caches.keys().then(function(keyList) {
+			return Promise.all(keyList.map(function(key) {
+				if ( key !== cacheName ) {
+					console.log('SW old cache removed', key);
+					return caches.delete(key);
+				}
+			}));
+		})
+	);
+	return self.clients.claim();
+});
 
-  workbox.precaching.precacheAndRoute([
-    {
-      "url": "/",
-      "revision": "1"
-    }
-  ]);
+// Fetch
+self.addEventListener('fetch', function(e) {
+	
+	
+	if ( ! e.request.url.match(/^(http|https):\/\//i) )
+		return;
+	
+	if ( new URL(e.request.url).origin !== location.origin )
+		return;
+	
+	if ( e.request.method !== 'GET' ) {
+		e.respondWith(
+			fetch(e.request).catch( function() {
+				return caches.match(offlinePage);
+			})
+		);
+		return;
+	}
+	
+	if ( e.request.mode === 'navigate' && navigator.onLine ) {
+		e.respondWith(
+			fetch(e.request).then(function(response) {
+				return caches.open(cacheName).then(function(cache) {
+					cache.put(e.request, response.clone());
+					return response;
+				});  
+			})
+		);
+		return;
+	}
 
-  workbox.routing.registerRoute(
-    /\.(?:js|css)$/,
-    workbox.strategies.staleWhileRevalidate({
-      cacheName: 'static-resources',
-    }),
-  );
+	e.respondWith(
+		caches.match(e.request).then(function(response) {
+			return response || fetch(e.request).then(function(response) {
+				return caches.open(cacheName).then(function(cache) {
+					cache.put(e.request, response.clone());
+					return response;
+				});  
+			});
+		}).catch(function() {
+			return caches.match(offlinePage);
+		})
+	);
+});
 
-  workbox.routing.registerRoute(
-    /\.(?:png|gif|jpg|jpeg|svg)$/,
-    workbox.strategies.cacheFirst({
-      cacheName: 'images',
-      plugins: [
-        new workbox.expiration.Plugin({
-          maxEntries: 60,
-          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-        }),
-      ],
-    }),
-  );
-
-  workbox.routing.registerRoute(
-    new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
-    workbox.strategies.cacheFirst({
-      cacheName: 'googleapis',
-      plugins: [
-        new workbox.expiration.Plugin({
-          maxEntries: 30,
-        }),
-      ],
-    }),
-  );
-} else {
-  console.log(`Boo! Workbox didn't load 😬`);
-}
