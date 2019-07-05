@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, make_response
 from flask_talisman import Talisman
+from flask import send_from_directory
 import contributors as contributors_util
 from csp import csp
 from validate import validate, SUPPORTED_YEARS
@@ -58,6 +59,17 @@ def server_error(e):
     An internal error occurred: <pre>{}</pre>
     See logs for full stacktrace.
     """.format(e), 500
+	
+@app.route('/manifest.json')
+def manifest():
+    return send_from_directory('static', 'manifest.json')
+
+
+@app.route('/sw.js')
+def service_worker():
+    response = make_response(send_from_directory('static', 'sw.js'))
+    response.headers['Cache-Control'] = 'no-cache'
+    return response
 
 
 if __name__ == '__main__':
