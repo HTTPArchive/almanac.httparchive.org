@@ -1,7 +1,7 @@
 from language import Language, DEFAULT_LANGUAGE
 from validate import parse_accept_language, DEFAULT_YEAR, SUPPORTED_YEARS
 
-SUPPORTED_LANGUAGES = (Language.ENGLISH, Language.JAPANESE)
+SUPPORTED_LANGUAGES = (Language.ENGLISH.lang_code, Language.JAPANESE.lang_code)
 DEFAULT_LANGUAGE_CODE = DEFAULT_LANGUAGE.lang_code
 JAPANESE_LANGUAGE_CODE = Language.JAPANESE.lang_code
 
