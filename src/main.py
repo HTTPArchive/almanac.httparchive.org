@@ -21,6 +21,18 @@ def render_template(template, *args, **kwargs):
     kwargs.update(supported_languages=supported_languages, language=language)
     return flask_render_template(template, *args, **kwargs)
 
+
+def get_view_args(lang=None):
+    view_args = request.view_args.copy()
+    if lang:
+        # Optionally overwrite the lang value in the current request.
+        view_args.update(lang=lang)
+    return view_args
+
+# Make this function available in templates.
+app.jinja_env.globals['get_view_args'] = get_view_args
+
+
 @app.route('/')
 @app.route('/<lang>/')
 @validate
