@@ -1,50 +1,53 @@
 {
   "teams": {
-    "developers": {
-      "name": "Web Developers"
-    },
-    "brainstormers": {
-      "name": "Brainstormers"
+    "analysts": {
+      "name": "Data Analysts"
     },
     "authors": {
       "name": "Chapter Authors"
     },
-    "reviewers": {
-      "name": "Peer Reviewers"
-    },
-    "analysts": {
-      "name": "Data Analysts"
+    "brainstormers": {
+      "name": "Brainstormers"
     },
     "designers": {
       "name": "Web Designers"
     },
-    "translators": {
-      "name": "Content Translators"
+    "developers": {
+      "name": "Web Developers"
     },
     "editors": {
       "name": "Editors"
+    },
+    "reviewers": {
+      "name": "Peer Reviewers"
+    },
+    "translators": {
+      "name": "Content Translators"
     }
   },
   "contributors": {
     "argyleink": {
       "name": "Adam Argyle",
-      "github": "https://github.com/argyleink",
+      "github": "argyleink",
       "teams": [
-        "brainstormers"
+        "authors"
       ]
     },
     "kjlarson": {
       "name": "Kari Larson",
-      "github": "https://github.com/KJLarson",
+      "github": "KJLarson",
       "teams": [
         "developers"
       ]
     },
     "rviscomi": {
       "name": "Rick Viscomi",
-      "github": "https://github.com/rviscomi",
+      "tagline": "Web Almanac PM",
+      "gravatar": "rviscomi@google.com",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi",
       "teams": [
-        "brainstormers",
+        "authors",
         "developers"
       ]
     }
