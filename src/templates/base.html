@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{% block lang %}{% endblock %}">
+<html lang="{% block lang %}{{ language.lang_attribute }}{% endblock %}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,26 +25,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
     <link rel="stylesheet" href="/static/css/styles.css">
     {% endblock %}
+    {% for l in supported_languages %}
+    <link rel="alternate" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
+    {% endfor %}
   </head>
 
   <body>
     <div id="navigation">
       {% block navigation %}{% endblock %}
     </div>
-    {% set view_args = request.view_args.copy() %}
     <select class="language-switcher">
-      <option
-        selected="selected"
-        value={{ url_for(request.endpoint, **(request.view_args.update(lang=self.lang()[0:2]) or request.view_args)) }}
-        lang={{ self.lang()[0:2] }}>
-      </option>
-      {% for language in supported_languages %}
-        {% if language != self.lang()[0:2] %}
-          <option
-            value={{ url_for(request.endpoint, **(request.view_args.update(lang=language) or request.view_args)) }}
-            lang={{ language }}>
-          </option>
-        {% endif %}
+      {% for l in supported_languages %}
+        <option
+          {% if l == language %}selected="selected"{% endif %}
+          value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+          {{ l }}
+        </option>
       {% endfor %}
     </select>
     <div id="main">
