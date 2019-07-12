@@ -4,11 +4,11 @@ import inspect
 
 from flask import request, abort
 from functools import wraps
+from language import Language, DEFAULT_LANGUAGE
 
 DEFAULT_YEAR = '2019'
-DEFAULT_LANG = 'en'
 SUPPORTED_YEARS = {
-    '2019': ('en', 'ja')
+    '2019': (Language.ENGLISH, Language.JAPANESE)
 }
 
 
@@ -44,7 +44,7 @@ def validate_lang_and_year(lang, year):
         # it in the custom error page.
         abort(404)
 
-    supported_langs = SUPPORTED_YEARS[year]
+    supported_langs = [l.lang_code for l in SUPPORTED_YEARS.get(year)]
     logging.debug('Languages supported for %s: %s.' % (year, supported_langs))
 
     # If an unsupported language code is passed in, abort.
@@ -78,11 +78,12 @@ def parse_accept_language(header, supported_langs):
         logging.debug('Accepted languages: %s' % accepted_languages)
 
         # The header could contain multiple languages, in order of precedence
-        for lang in accepted_languages:
+        # Limit the number of accepted languages tested to 10.
+        for lang in accepted_languages[:10]:
             if lang in supported_langs:
                 # Return the first found supported language.
                 logging.debug('Using "%s" as the highest precedent language.' % lang)
                 return lang
 
     # If all else fails, default the language.
-    return DEFAULT_LANG
+    return DEFAULT_LANGUAGE.lang_code
