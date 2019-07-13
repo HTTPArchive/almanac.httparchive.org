@@ -36,20 +36,22 @@
     <div id="navigation">
       {% block navigation %}{% endblock %}
     </div>
-    <select class="language-switcher">
-      {% if supported_languages is iterable %}
-        {% for l in supported_languages %}
-          <option
-            {% if l == language %}selected="selected"{% endif %}
-            value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-            {{ l }}
-          </option>
-        {% endfor %}
-      {% endif %}
-    </select>
-    <div id="main">
-      {% block main %}{% endblock %}
-    </div>
+    {% block content %}
+      <select class="language-switcher">
+        {% if supported_languages is iterable %}
+          {% for l in supported_languages %}
+            <option
+              {% if l == language %}selected="selected"{% endif %}
+              value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+              {{ l }}
+            </option>
+          {% endfor %}
+        {% endif %}
+      </select>
+      <div id="main">
+        {% block main %}{% endblock %}
+      </div>
+    {% endblock %}
     {% block scripts %}
       <script src="/static/js/language.js"></script>
     {% endblock %}
