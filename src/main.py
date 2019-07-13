@@ -70,15 +70,25 @@ def chapter(year, chapter, lang):
     # TODO: Get chapter data and pass into the template.
     return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
 
+@app.errorhandler(400)
+def bad_request(e):
+    logging.exception('An error occurred during a request due to bad request error.')
+    return render_template('error/400.html', error=e), 400
+
+@app.errorhandler(404)
+def page_not_found(e):
+    logging.exception('An error occurred during a request due to page not found.')
+    return render_template('error/404.html', error=e), 404
 
 @app.errorhandler(500)
 def server_error(e):
-    logging.exception('An error occurred during a request.')
-    return """
-    An internal error occurred: <pre>{}</pre>
-    See logs for full stacktrace.
-    """.format(e), 500
+    logging.exception('An error occurred during a request due to internal server error.')
+    return render_template('error/500.html', error=e), 500
 
+@app.errorhandler(502)
+def server_error(e):
+    logging.exception('An error occurred during a request due to bad gateway.')
+    return render_template('error/502.html', error=e), 502
 
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the

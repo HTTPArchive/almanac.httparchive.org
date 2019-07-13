@@ -25,27 +25,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
     <link rel="stylesheet" href="/static/css/styles.css">
     {% endblock %}
-    {% for l in supported_languages %}
-    <link rel="alternate" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
-    {% endfor %}
+    {% if supported_languages is iterable %}
+      {% for l in supported_languages %}
+      <link rel="alternate" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
+      {% endfor %}
+    {% endif %}
   </head>
 
   <body>
     <div id="navigation">
       {% block navigation %}{% endblock %}
     </div>
-    <select class="language-switcher">
-      {% for l in supported_languages %}
-        <option
-          {% if l == language %}selected="selected"{% endif %}
-          value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-          {{ l }}
-        </option>
-      {% endfor %}
-    </select>
-    <div id="main">
-      {% block main %}{% endblock %}
-    </div>
+    {% block content %}
+      <select class="language-switcher">
+        {% if supported_languages is iterable %}
+          {% for l in supported_languages %}
+            <option
+              {% if l == language %}selected="selected"{% endif %}
+              value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+              {{ l }}
+            </option>
+          {% endfor %}
+        {% endif %}
+      </select>
+      <div id="main">
+        {% block main %}{% endblock %}
+      </div>
+    {% endblock %}
     {% block scripts %}
       <script src="/static/js/language.js"></script>
     {% endblock %}
