@@ -3,3 +3,7 @@
 {% block title %}
 Chapter {{ chapter }} | The Web Almanac by HTTP Archive
 {% endblock %}
+
+{% block main %}
+{{ chapter_content | safe }}
+{% endblock %}

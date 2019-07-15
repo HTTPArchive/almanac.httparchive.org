@@ -5,6 +5,7 @@ from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
 from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
+import chapters
 
 app = Flask(__name__)
 Talisman(app,
@@ -68,7 +69,9 @@ def methodology(year, lang):
 def chapter(year, chapter, lang):
     # TODO: Validate the chapter.
     # TODO: Get chapter data and pass into the template.
-    return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
+    chapter_content = chapters.get_chapter(lang, year, chapter)
+    print(chapter_content)
+    return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter, chapter_content = chapter_content)
 
 @app.errorhandler(400)
 def bad_request(e):
