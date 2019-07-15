@@ -70,7 +70,6 @@ def chapter(year, chapter, lang):
     # TODO: Validate the chapter.
     # TODO: Get chapter data and pass into the template.
     chapter_content = chapters.get_chapter(lang, year, chapter)
-    print(chapter_content)
     return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter, chapter_content = chapter_content)
 
 @app.errorhandler(400)
