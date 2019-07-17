@@ -1,12 +1,6 @@
 {% extends "en/2019/base_chapter.html" %}
 
-{% block title %}
-JavaScript
-{% endblock %}
-
-{% block meta %}
-  <meta name="description" content="Something about JavaScript">
-{% endblock %}
+{% set metadata = { {'part_number': 'I', 'chapter_number': 1, 'title': 'JavaScript', 'description': 'Something about JavaScript', 'hero_image': '', 'authors': ['addyosmani', 'housseindjirdeh', 'mathiasbynens'], 'reviewers': ['rwaldron', 'RReverser'], 'translaters': []} | json } %}
 
 {% block main %}
 <h1>Chapter 1: JavaScript</h1>

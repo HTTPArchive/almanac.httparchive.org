@@ -1,12 +1,6 @@
 {% extends "ja/2019/base_chapter.html" %}
 
-{% block title %}
-JavaScript
-{% endblock %}
-
-{% block meta %}
-  <meta name="description" content="JavaScriptについて">
-{% endblock %}
+{% set metadata = { {'part_number': 'I', 'chapter_number': 1, 'title': 'JavaScript', 'description': 'JavaScriptについて', 'hero_image': '', 'authors': ['addyosmani', 'housseindjirdeh', 'mathiasbynens'], 'reviewers': ['rwaldron', 'RReverser'], 'translaters': []} | json } %}
 
 {% block main %}
 <h1>第1章：JavaScript</h1>
