@@ -75,22 +75,19 @@ def chapter(year, chapter, lang):
 
 @app.errorhandler(400)
 def bad_request(e):
-    logging.exception(
-        'An error occurred during a request due to bad request error.')
+    logging.exception('An error occurred during a request due to bad request error.')
     return render_template('error/400.html', error=e), 400
 
 
 @app.errorhandler(404)
 def page_not_found(e):
-    logging.exception(
-        'An error occurred during a request due to page not found.')
+    logging.exception('An error occurred during a request due to page not found.')
     return render_template('error/404.html', error=e), 404
 
 
 @app.errorhandler(500)
 def server_error(e):
-    logging.exception(
-        'An error occurred during a request due to internal server error.')
+    logging.exception('An error occurred during a request due to internal server error.')
     return render_template('error/500.html', error=e), 500
 
 
