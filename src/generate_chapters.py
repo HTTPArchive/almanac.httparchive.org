@@ -6,24 +6,6 @@ import yaml
 renderer = mistune.Renderer()
 markdown = mistune.Markdown(renderer=renderer)
 
-# This could perhaps be loaded from an external file.
-TEMPLATE = """
-{{% extends "en/base.html" %}}
-
-{{% block title %}}
-{title}
-{{% endblock %}}
-
-{{% block meta %}}
-  <meta name="description" content="{description}">
-{{% endblock %}}
-
-{{% block main %}}
-{body}
-{{% endblock %}}
-"""
-
-
 def generate_chapters():
     for language_dir in os.scandir('content'):
         language = language_dir.name
@@ -53,10 +35,15 @@ def parse_file(chapter_file):
 
 
 def write_template(language, year, chapter, metadata, body):
+    template_path = 'templates/%s/%s/chapter.html' % (language, year)
+
+    with open(template_path, 'r') as template_file:
+        template = template_file.read()
+
     path = 'templates/%s/%s/chapters/%s.html' % (language, year, chapter)
 
     with open(path, 'w') as file_to_write:
-        file_to_write.write(TEMPLATE.format(
+        file_to_write.write(template.format(
             body=body, title=metadata['title'], description=metadata['description']))
 
 
