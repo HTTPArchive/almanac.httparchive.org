@@ -1,5 +1,17 @@
-{% extends "en/base.html" %}
+{{# IMPORTANT!
 
-{% block title %}
-Chapter {{ chapter }} | The Web Almanac by HTTP Archive
-{% endblock %}
+- `chapter.html` is a "template for templates" used by the `generate_chapters.py` script, hence the strange template syntax (eg, double braces `{{% ... %}}`)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}}
+
+{{% extends "en/2019/base_chapter.html" %}}
+
+{{% set metadata = {metadata} %}}
+
+{{% block main %}}
+{body}
+{{% endblock %}}

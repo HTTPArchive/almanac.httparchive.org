@@ -1,5 +1,7 @@
-{% extends "ja/base.html" %}
+{{% extends "ja/2019/base_chapter.html" %}}
 
-{% block title %}
-章 {{ chapter }} | HTTP ArchiveによるWeb年鑑
-{% endblock %}
+{{% set metadata = {metadata} %}}
+
+{{% block main %}}
+{body}
+{{% endblock %}}

@@ -12,6 +12,7 @@ Talisman(app,
          content_security_policy_nonce_in=['script-src'])
 logging.basicConfig(level=logging.DEBUG)
 
+
 def render_template(template, *args, **kwargs):
     year = request.view_args.get('year', DEFAULT_YEAR)
     supported_languages = SUPPORTED_YEARS.get(year, (DEFAULT_LANGUAGE))
@@ -28,6 +29,7 @@ def get_view_args(lang=None):
         # Optionally overwrite the lang value in the current request.
         view_args.update(lang=lang)
     return view_args
+
 
 # Make this function available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
@@ -51,7 +53,7 @@ def outline(year, lang):
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(year, lang):
-    contributors=contributors_util.get_contributors()
+    contributors = contributors_util.get_contributors()
     return render_template('%s/%s/contributors.html' % (lang, year), contributors=contributors)
 
 
@@ -67,28 +69,32 @@ def methodology(year, lang):
 @validate
 def chapter(year, chapter, lang):
     # TODO: Validate the chapter.
-    # TODO: Get chapter data and pass into the template.
-    return render_template('%s/%s/chapter.html' % (lang, year), chapter=chapter)
+    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter))
+
 
 @app.errorhandler(400)
 def bad_request(e):
     logging.exception('An error occurred during a request due to bad request error.')
     return render_template('error/400.html', error=e), 400
 
+
 @app.errorhandler(404)
 def page_not_found(e):
     logging.exception('An error occurred during a request due to page not found.')
     return render_template('error/404.html', error=e), 404
+
 
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request due to internal server error.')
     return render_template('error/500.html', error=e), 500
 
+
 @app.errorhandler(502)
 def server_error(e):
     logging.exception('An error occurred during a request due to bad gateway.')
     return render_template('error/502.html', error=e), 502
+
 
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
