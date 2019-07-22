@@ -70,7 +70,7 @@ def methodology(year, lang):
 def chapter(year, chapter, lang):
     # TODO: Validate the chapter.
     # TODO: Get chapter data and pass into the template.
-    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), chapter=chapter)
+    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter))
 
 
 @app.errorhandler(400)
