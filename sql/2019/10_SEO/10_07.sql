@@ -1,4 +1,7 @@
 #standardSQL
+
+#todo length title + description (statistical distribution woud be nice here)
+
 CREATE TEMP FUNCTION analyse(almanacPayload STRING)
 RETURNS INT64
 LANGUAGE js AS """

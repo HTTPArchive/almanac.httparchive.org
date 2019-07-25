@@ -15,9 +15,8 @@ return 0;
 """;
 
 SELECT
-
-    SUM(analyse(JSON_EXTRACT(payload, '$._almanac'))) AS `scoreSum`,
-    AVG(analyse(JSON_EXTRACT(payload, '$._almanac'))) AS `scoreAverage`,
-    (SUM(analyse(JSON_EXTRACT(payload, '$._almanac'))) / COUNT(url)) as `scorePercentage`
+    SUM(analyse(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS `scoreSum`,
+    AVG(analyse(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS `scoreAverage`,
+    (SUM(analyse(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) / COUNT(url)) as `scorePercentage`
 FROM
     `httparchive.pages.2019_07_01_desktop`

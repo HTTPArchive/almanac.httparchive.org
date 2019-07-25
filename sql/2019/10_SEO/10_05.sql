@@ -2,21 +2,12 @@
 
 #ld+json, microformatting, schema.org + what @type
 
-CREATE TEMP FUNCTION analyse(almanacPayload STRING)
-RETURNS INT64
-LANGUAGE js AS """
-var arr = JSON.parse(almanacPayload);
-if(arr && arr['10.5']) {
-
-}
-return 0;
-""";
-
-# UNNEST and count :)
-
 SELECT
-    analyse(JSON_EXTRACT(payload, '$._almanac')) AS `analyseResult`
+    url,
+    flattened_105
 FROM
     `httparchive.pages.2019_07_01_desktop`
-GROUP BY
-    JSON_EXTRACT(JSON_EXTRACT(payload, '$._almanac'), '$."10.05"')
+CROSS JOIN
+    UNNEST(CAST(JSON_EXTRACT_SCALAR(REPLACE(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '\\"','"'), "$['10.5']") as ARRAY)) as flattened_105
+/* group by for counting SUM */
+LIMIT 10
