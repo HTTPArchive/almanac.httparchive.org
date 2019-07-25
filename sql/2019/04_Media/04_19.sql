@@ -5,7 +5,9 @@
 
 only tested on the sample response body samples
 
-This pulls out every parameter from the video tag and totals them.  
+This pulls out every parameter from the video tag and totals them.
+
+_09_07 is looking for a cations track... added to this query  
 */
 select count(*) countvideo, 
       sum(cntsrc) totalsrc, 
@@ -22,7 +24,9 @@ select count(*) countvideo,
       sum(cntpreloadauto	) totalpreloadauto,
       sum(cntpreloadmetadata	) totalprelaodmetadata,
       sum(cntpreloadnone	) totalprelaodnone,
-      sum(hero	) totalhero
+      sum(hero	) totalhero,
+      sum(track) totaltrack,
+      sum(vtt) totalvtt
 from(
 
 
@@ -49,6 +53,8 @@ SELECT
   IF(flat_videotag like "%preload%", IF(flat_videotag like "%metadata%", 1,0),0) AS cntpreloadmetadata,
   IF(flat_videotag like "%preload%", IF(flat_videotag like "%none%", 1,0),0) AS cntpreloadnone,
   IF(flat_videotag like "%hero%",1,0) hero,
+  IF(flat_videotag like "%track%",1,0) track,
+  IF(flat_videotag like "%vtt%",1,0) vtt,
   flat_videotag 
   from
 
