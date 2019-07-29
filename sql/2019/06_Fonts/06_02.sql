@@ -1,6 +1,6 @@
 #standardSQL
 
--- counts the local and hosted fonts
+-- counts the host_url of a given font
 
 WITH
   summary_pages AS (
@@ -22,6 +22,9 @@ WITH
     SELECT (NET.HOST(url) != NET.HOST(page_url)) as hosted, url, page_url
     FROM merge_table WHERE type = 'font'
   )
-SELECT
-  COUNTIF(hosted = true) AS hosted, COUNTIF(hosted = false) AS local
-FROM processedTable
+SELECT value AS host, count
+FROM (
+  SELECT APPROX_TOP_COUNT(NET.HOST(url), 500) AS font_host
+  FROM processedTable
+  WHERE hosted = true
+), UNNEST(font_host)
