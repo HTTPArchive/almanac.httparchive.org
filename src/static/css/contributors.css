@@ -1,0 +1,33 @@
+.filter-container {
+  display: flex;
+  padding-top: 100px;
+  justify-content: center;
+}
+
+.filter-container button {
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.2;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 8px;
+  padding: 8px;
+}
+
+.selected {
+  background: #0053ba;
+  color: white;
+}
+
+.deselected {
+  background: white;
+  color: black;
+}
+
+.contributors {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

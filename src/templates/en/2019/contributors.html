@@ -5,14 +5,26 @@ Contributors | The Web Almanac by HTTP Archive
 {% endblock %}
 
 {% block main %}
-{% for id, contributor in contributors.contributors.items() %}
-<section>
-  <h3>{{ contributor.name }}</h3>
-  <ul>
-    {% for team in contributor.teams %}
-    <li>{{ contributors.teams[team].name }}</li>
+  <div class="filter-container">
+  {% for id, team in contributors.teams.items()  %}
+    <button class="{{ id }}">{{ team.name }}</button>
+  {% endfor %}
+  </div>
+
+  <div class="contributors">
+    {% set ns = namespace(contributors_class_list = "") %}
+    {% for id, contributor in contributors.contributors.items() %}
+      {% for team in contributor.teams %}
+        {% if ns.contributors_class_list == "" %}
+          {% set ns.contributors_class_list = team %}
+        {% else %}
+          {% set ns.contributors_class_list = ns.contributors_class_list ~ " " ~ team  %}
+        {% endif %}
+      {% endfor %}
+      <div class="{{ ns.contributors_class_list }}">
+        {{ contributor.name}}
+      </div>
+      {% set ns.contributors_class_list = "" %}
     {% endfor %}
-  </ul>
-</section>
-{% endfor %}
+  </div>
 {% endblock %}
