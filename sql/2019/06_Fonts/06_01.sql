@@ -23,5 +23,5 @@ WITH
     FROM merge_table WHERE type = 'font'
   )
 SELECT
-  COUNTIF(hosted = true) AS hosted, COUNTIF(hosted = false) AS local
+  COUNTIF(hosted = true) / COUNT(0) AS hosted, COUNTIF(hosted = false) / COUNT(0) AS local
 FROM processedTable
