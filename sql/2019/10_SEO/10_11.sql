@@ -4,7 +4,7 @@
 # sample: `httparchive.almanac.pages_desktop_1k`
 # dataset: `httparchive.pages.2019_07_01_desktop`
 
-# todo: include if is SPA (react/vue) or not
+# todo: include if is SPA (react/vue) or not (see uncommented lines)
 
 CREATE TEMPORARY FUNCTION parseAnchor(payload STRING, element STRING)
 RETURNS INT64 LANGUAGE js AS '''
@@ -20,6 +20,10 @@ RETURNS INT64 LANGUAGE js AS '''
 SELECT
     COUNT(url) AS `total`,
     COUNT(DISTINCT url) AS `distinct_total`,
-    SUM(parseAnchor(payload, "navigateHash")) as `navigateHash`
+    COUNTIF(parseAnchor(payload, "navigateHash") > 0) as `navigateHash`
 FROM
     `httparchive.almanac.pages_desktop_1k`
+# LEFT JOIN
+#     `httparchive.almanac.technologies_desktop_1k` ON `httparchive.almanac.technologies_desktop_1k`.url = `httparchive.almanac.pages_desktop_1k`.url
+# WHERE
+#    REGEXP_CONTAINS(httparchive.almanac.technologies_desktop_1k`.technology, '/(react|vue|angular)/i')
