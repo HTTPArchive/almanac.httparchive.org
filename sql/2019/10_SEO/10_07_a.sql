@@ -2,28 +2,8 @@
 
 # dataset: `httparchive.lighthouse.2019_07_01_mobile`
 # sample: `httparchive.almanac.lighthouse_mobile_1k`
-# todo: APPROX_QUANTILES title + description length but must come from pages response (not lighthouse below)
 
-CREATE TEMP FUNCTION analyse(payload STRING)
-RETURNS INT64
-LANGUAGE js AS """
-try {
-  var $ = JSON.parse(payload);
-  var almanac = JSON.parse($._almanac);
-  if(almanac && almanac['link-nodes']) {
-        var descriptionFound = almanac['meta-nodes'].find(node => {
-            if(node.name && node.name.toLowerCase() == 'description') {
-                return true;
-            }
-        });
-        return descriptionFound && descriptionFound.content ? descriptionFound.content.length : 0;
-  }
-  return 0;
-} catch (e) {
-  return 0;
-}
-""";
-
+# <title> and <meta description> present
 
 SELECT
     COUNT(url) AS `total`,
