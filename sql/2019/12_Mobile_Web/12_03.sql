@@ -1,6 +1,6 @@
 #standardSQL
 
-# font-size
+# color-contrast
 # score is not binary
 
 
