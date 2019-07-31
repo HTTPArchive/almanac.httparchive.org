@@ -1,6 +1,6 @@
 #standardSQL
 
-# <meta description> length
+# <meta viewport> not scaleble
 
 # dataset: `httparchive.lighthouse.2019_07_01_mobile`
 # sample: `httparchive.almanac.lighthouse_mobile_1k`
