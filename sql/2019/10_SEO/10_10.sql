@@ -17,8 +17,8 @@ RETURNS INT64 LANGUAGE js AS '''
 ''';
 
 SELECT
-    parseAnchor(payload, "internal") as internal,
-    parseAnchor(payload, "external") as external,
-    parseAnchor(payload, "hash") as `hash`
+    COUNTIF(parseAnchor(payload, "internal") > 0) as internal,
+    COUNTIF(parseAnchor(payload, "external") > 0) as external,
+    COUNTIF( parseAnchor(payload, "hash") > 0) as `hash`
 FROM
     `httparchive.almanac.pages_desktop_1k`
