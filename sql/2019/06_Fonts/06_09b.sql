@@ -31,8 +31,8 @@ SELECT
   APPROX_QUANTILES(faces_per_page, 1000)[OFFSET(750)] AS p75_faces_per_page
 FROM (
   SELECT SUM(parseCSS(body)) as faces_per_page
-  FROM `httparchive.sample_data.response_bodies_desktop_1k`
-  JOIN `httparchive.sample_data.summary_requests_desktop_1k`
+  FROM `httparchive.response_bodies.2017_01_01_*`
+  JOIN `httparchive.summary_requests.2017_01_01_*`
   USING (url)
   WHERE type = 'css'
   GROUP BY pageid
