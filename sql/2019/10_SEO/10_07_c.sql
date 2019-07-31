@@ -11,7 +11,7 @@ LANGUAGE js AS """
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
-  if(almanac && almanac['link-nodes']) {
+  if(almanac && almanac['meta-nodes']) {
         var descriptionFound = almanac['meta-nodes'].find(node => {
             if(node.name && node.name.toLowerCase() == 'description') {
                 return true;
