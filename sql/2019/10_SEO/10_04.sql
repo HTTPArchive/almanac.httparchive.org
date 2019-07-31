@@ -1,13 +1,32 @@
 #standardSQL
 
-# todo group by hreflang contents (similar to 10.02 / #  https://discuss.httparchive.org/t/what-are-the-invalid-uses-of-the-lang-attribute/1022)
-SELECT
-    COUNT(url) AS `total`,
-    COUNT(DISTINCT url) AS `distinct_total`,
-    SUM(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.hreflang.score') as NUMERIC)) AS `scoreSum`,
-    AVG(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.hreflang.score') as NUMERIC)) AS `scoreAverage`,
-    (SUM(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.hreflang.score') as NUMERIC)) / COUNT(url)) as `scorePercentage`
-FROM
-    `httparchive.lighthouse.2019_07_01_mobile`
+# todo: similar to 10.02
+# dataset: `httparchive.lighthouse.2019_07_01_mobile`
+# sample: `httparchive.almanac.lighthouse_mobile_1k`
+# note: updated the table, but this has no items detailst to parse
 
-/* result: scorePercentage =  0.xxx% */
+
+CREATE TEMPORARY FUNCTION getViolations(items STRING)
+RETURNS ARRAY<STRING>
+LANGUAGE js AS """
+  try {
+    return items.match(/hreflang="([^"]*)"/ig);
+  } catch (e) {
+    return [];
+  }
+""";
+
+SELECT
+  COUNT(0) AS volume,
+  lang
+FROM (
+  SELECT
+    getViolations(JSON_EXTRACT(report, "$.audits.hreflang.details.items")) AS langs
+  FROM
+    `httparchive.almanac.lighthouse_mobile_1k`)
+CROSS JOIN
+  UNNEST(langs) AS lang
+GROUP BY
+  lang
+ORDER BY
+  volume DESC

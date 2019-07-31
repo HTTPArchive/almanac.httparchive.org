@@ -1,11 +1,18 @@
 #standardSQL
+
+# robots.txt
+
+# sample: `httparchive.almanac.lighthouse_mobile_1k`
+# dataset: `httparchive.lighthouse.2019_07_01_desktop`
+
+
 SELECT
     COUNT(url) AS `total`,
     COUNT(DISTINCT url) AS `distinct_total`,
-    SUM(CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') as NUMERIC)) AS `scoreSum`,
-    AVG(CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') as NUMERIC)) AS `scoreAverage`,
-    (SUM(CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') as NUMERIC)) / COUNT(url)) as `scorePercentage`
+    SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') as NUMERIC)) AS `scoreSum`,
+    AVG(SAFE_CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') as NUMERIC)) AS `scoreAverage`,
+    (SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') as NUMERIC)) / COUNT(url)) as `scorePercentage`
 FROM
-    `httparchive.lighthouse.2019_07_01_mobile`
+    `httparchive.almanac.lighthouse_mobile_1k`
 
 /* result: scorePercentage =  0.xxx% */

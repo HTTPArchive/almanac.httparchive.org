@@ -2,13 +2,23 @@
 
 # Linking - extract <a href> count per page (internal + external)
 
+# sample: `httparchive.almanac.pages_desktop_1k`
+# dataset: `httparchive.pages.2019_07_01_desktop`
+
+CREATE TEMPORARY FUNCTION parseAnchor(payload STRING, element STRING)
+RETURNS INT64 LANGUAGE js AS '''
+  try {
+    var $ = JSON.parse(payload);
+    var almanac = JSON.parse($._almanac);
+    return almanac['seo-anchor-elements'][element];
+  } catch (e) {
+    return 0;
+  }
+''';
 
 SELECT
-    url,
-    JSON_EXTRACT_SCALAR(REPLACE(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '\\"','"'), "$.seo-anchor-elements.internal") as internal,
-    JSON_EXTRACT_SCALAR(REPLACE(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '\\"','"'), "$.seo-anchor-elements.external") as external,
-    JSON_EXTRACT_SCALAR(REPLACE(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '\\"','"'), "$.seo-anchor-elements.hash") as hash
+    parseAnchor(payload, "internal") as internal,
+    parseAnchor(payload, "external") as external,
+    parseAnchor(payload, "hash") as `hash`
 FROM
-    `httparchive.pages.2019_07_01_desktop`
-/* group by for counting SUM */
-LIMIT 10
+    `httparchive.almanac.pages_desktop_1k`
