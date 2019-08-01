@@ -24,7 +24,7 @@ from(
 select url, flat_svgs , length(flat_svgs) svglen
 
 from(
-(select url, REGEXP_EXTRACT_ALL(body,r'(<svg.*?/svg>)') svgs
+(select url, REGEXP_EXTRACT_ALL(lower(body),r'(<svg.*?/svg>)') svgs
 from `response_bodies.2019_07_01_mobile`  svglist
 where body like "%<svg%" and url not like "%svg") 
 )

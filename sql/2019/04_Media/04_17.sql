@@ -11,11 +11,11 @@ top video players - I have chosen a few based on my knowledge... Perhaps there a
 
 select url, respsize, ext, mimetype, _gzip_save
 from `summary_requests.2019_07_01_mobile` 
-where (url like "%hls.js" or 
-      url like "%video.js" or 
-      url like "%shaka.js" or 
-      url like "%jwplayer.js" or 
-      url like "brightcove-player-loader.min.js")
+where (lower(url) like "%hls.js" or 
+      lower(url) like "%video.js" or 
+      lower(url) like "%shaka.js" or 
+      lower(url) like "%jwplayer.js" or 
+      lower(url) like "brightcove-player-loader.min.js")
      
      
      

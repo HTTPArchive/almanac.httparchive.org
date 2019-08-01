@@ -21,12 +21,12 @@ Save this in a table, and then see how many sites have header but no footer, or 
 
 select
 url, 
-if(body like "%</nav>%", 1,0) nav, 
-if(body like "%</main>%", 1,0) main, 
-if(body like "%</header>%", 1,0) header, 
-if(body like "%</footer>%", 1,0) footer
+if(lower(body)) nav, 
+if(lower(body) like "%</main>%", 1,0) main, 
+if(lower(body) like "%</header>%", 1,0) header, 
+if(lower(body) like "%</footer>%", 1,0) footer
 from `response_bodies.2019_07_01_mobile` 
-where body like "%</nav>%"  or 
-      body like "%</main>%"    or  
-      body like "%</header>%" or 
-      body like "%</footer>%"
+where lower(body) like "%</nav>%"  or 
+      lower(body) like "%</main>%"    or  
+      lower(body) like "%</header>%" or 
+      lower(body) like "%</footer>%"

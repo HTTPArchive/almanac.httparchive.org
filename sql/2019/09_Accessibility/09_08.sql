@@ -16,9 +16,9 @@ select lower(langtag), count(*) cnt from(
 select url, trim(ltrim(regexp_extract(htmlopentag, r'(lang=.*? )'),"lang="), '"') langtag
 from(
 select
-url, REGEXP_EXTRACT(body,r'(<html.*?lang=.*?>)') htmlopentag
+url, REGEXP_EXTRACT(lower(body),r'(<html.*?lang=.*?>)') htmlopentag
 from `response_bodies.2019_07_01_mobile` videotagset
-where body like "%lang=%"
+where lower(body) like "%lang=%"
 ))
 group by langtag
 order by cnt desc

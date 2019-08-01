@@ -58,7 +58,7 @@ select url, flat_img
 from(
 
 #this query grabs all img tags with srcset inside. it also grabs the same for the picture tag
-select url, REGEXP_EXTRACT_ALL(body,r'(<img.*?srcset.*?>)') img,REGEXP_EXTRACT_ALL(body,r'(<picture.*?srcset.*?/picture>)') picture
+select url, REGEXP_EXTRACT_ALL(lower(body),r'(<img.*?srcset.*?>)') img,REGEXP_EXTRACT_ALL(lower(body),r'(<picture.*?srcset.*?/picture>)') picture
 from `response_bodies.2019_07_01_mobile`  srcsets
 where body like "%srcset%sizes%")
 cross join unnest(img) flat_img

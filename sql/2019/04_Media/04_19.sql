@@ -62,7 +62,7 @@ SELECT
 select url, flat_videotag
 from(
 select
-url, REGEXP_EXTRACT_ALL(body,r'(<video[\s\S]+?<\/video>)') videotag
+url, REGEXP_EXTRACT_ALL(lower(body),r'(<video[\s\S]+?<\/video>)') videotag
 from `response_bodies.2019_07_01_mobile` videotagset
 where body like "%</video>%"
 )

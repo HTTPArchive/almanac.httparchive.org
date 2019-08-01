@@ -14,9 +14,9 @@ save this as a table to further dig into the data
 select url, flat_ariarole, count(flat_ariarole) counter
 from(
 select
-url, REGEXP_EXTRACT_ALL(body,r'(role="[\s\S]+?")') ariarole
+url, REGEXP_EXTRACT_ALL(lower(body),r'(role="[\s\S]+?")') ariarole
 from `response_bodies.2019_07_01_mobile` 
-where body like "%role=%"
+where lower(body) like "%role=%"
 )
 cross join unnest(ariarole) flat_ariarole
 group by url, flat_ariarole

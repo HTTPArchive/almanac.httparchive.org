@@ -7,8 +7,6 @@ this gives the final totals.  If we unwind the query we can break down count by 
 
 only tested on the sample data set
 */
-select flat_heading, sum(cnt) totalcount
-from(
 
 
 select url, flat_heading, count(flat_heading) cnt from
@@ -25,6 +23,3 @@ order by array_length(heading) desc
 cross join unnest(heading) flat_heading
 group by url, flat_heading
 order by url desc, cnt desc
-)
-group by flat_heading
-order by flat_heading asc
