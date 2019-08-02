@@ -19,3 +19,4 @@ FROM (
 GROUP BY
   thirdPartyCategory,
   contentType
+ORDER BY percentBytes DESC
