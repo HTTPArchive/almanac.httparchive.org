@@ -15,5 +15,5 @@ GROUP BY
   requestUrl
 ORDER BY
   totalRequests DESC
-LIMIT 1000
+LIMIT 100
 

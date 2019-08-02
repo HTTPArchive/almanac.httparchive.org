@@ -3,7 +3,7 @@
 SELECT
   COUNT(*) as numberOfPages,
   COUNTIF(numberOfAdRequests > 0) AS numberOfPagesWithAd,
-  COUNT(*) / COUNTIF(numberOfAdRequests > 0) AS percentOfPagesWithAd
+  COUNTIF(numberOfAdRequests > 0) / COUNT(*) AS percentOfPagesWithAd
 FROM (
   SELECT
     pageUrl,

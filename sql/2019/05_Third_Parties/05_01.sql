@@ -3,7 +3,7 @@
 SELECT
   COUNT(*) as numberOfPages,
   COUNTIF(numberOfThirdPartyRequests > 0) AS numberOfPagesWithThirdParty,
-  COUNT(*) / COUNTIF(numberOfThirdPartyRequests > 0) AS percentOfPagesWithThirdParty
+  COUNTIF(numberOfThirdPartyRequests > 0) / COUNT(*) AS percentOfPagesWithThirdParty
 FROM (
   SELECT
     pageUrl,
