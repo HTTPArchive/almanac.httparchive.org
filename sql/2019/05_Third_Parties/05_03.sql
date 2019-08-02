@@ -3,10 +3,11 @@
 SELECT
   thirdPartyCategory,
   contentType,
-  COUNT(*) AS totalRequests
+  COUNT(*) AS totalRequests,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 4) AS percentRequests
 FROM (
   SELECT
-      resp_content_type AS contentType,
+      type AS contentType,
       ThirdPartyTable.category as thirdPartyCategory
     FROM
       `httparchive.almanac.summary_requests`

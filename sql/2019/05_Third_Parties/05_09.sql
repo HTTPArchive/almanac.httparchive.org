@@ -3,14 +3,17 @@
 SELECT
   requestUrl,
   COUNT(*) AS totalRequests,
-  SUM(requestBytes) AS totalBytes
+  SUM(requestBytes) AS totalBytes,
+  ROUND(COUNT(*) * 100 / MAX(t2.totalRequestCount), 2) as percentRequestCount
 FROM (
   SELECT
       url AS requestUrl,
       respBodySize AS requestBytes
     FROM
       `httparchive.almanac.summary_requests`
-)
+) t1, (
+  SELECT COUNT(*) as totalRequestCount FROM `httparchive.almanac.summary_requests`
+) t2
 GROUP BY
   requestUrl
 ORDER BY

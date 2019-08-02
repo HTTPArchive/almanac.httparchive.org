@@ -3,10 +3,11 @@
 SELECT
   thirdPartyCategory,
   contentType,
-  SUM(requestBytes) AS totalBytes
+  SUM(requestBytes) AS totalBytes,
+  ROUND(SUM(requestBytes) * 100 / SUM(SUM(requestBytes)) OVER (), 4) AS percentBytes
 FROM (
   SELECT
-      resp_content_type AS contentType,
+      type AS contentType,
       respBodySize AS requestBytes,
       ThirdPartyTable.category as thirdPartyCategory
     FROM
