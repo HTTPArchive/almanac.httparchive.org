@@ -21,7 +21,7 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 SELECT
     flattened,
     COUNT(flattened) AS occurence,
-    COUNT(flattened) / COUNT(url) AS occurence_perc
+    ROUND(COUNT(flattened) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
     `httparchive.almanac.pages_desktop_1k`
 CROSS JOIN
