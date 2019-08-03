@@ -1,8 +1,5 @@
 #standardSQL
 
-# dataset: `httparchive.lighthouse.2019_07_01_mobile`
-# sample: `httparchive.almanac.lighthouse_mobile_1k`
-
 # <title> and <meta description> present
 
 SELECT
@@ -20,6 +17,4 @@ SELECT
     (SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.meta-description.score') as NUMERIC)) / COUNT(url)) as `descriptionScorePercentage`
 
 FROM
-    `httparchive.almanac.lighthouse_mobile_1k`
-
-/* result: scorePercentage =  0.xxx% */
+    `httparchive.lighthouse.2019_07_01_mobile`

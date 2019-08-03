@@ -8,10 +8,6 @@
 
 # todo: onload event? document html size? images size? soo many more metrics
 
-
-# sample: `httparchive.almanac.lighthouse_mobile_1k`
-# dataset: `httparchive.lighthouse.2019_07_01_desktop`
-
 SELECT
     COUNT(url) AS `total`,
     COUNT(DISTINCT url) AS `distinct_total`,
@@ -21,4 +17,4 @@ SELECT
     AVG(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.interactive.numericValue') as NUMERIC)) AS `ttiAvgMs`,
     AVG(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.estimated-input-latency.numericValue') as NUMERIC)) AS `eilAvgMs`
 FROM
-    `httparchive.almanac.lighthouse_mobile_1k`
+    `httparchive.lighthouse.2019_07_01_mobile`

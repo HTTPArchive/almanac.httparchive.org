@@ -16,6 +16,4 @@ SELECT
     APPROX_QUANTILES(CHAR_LENGTH(analyse(body)), 1000)[OFFSET(750)] as quantP75TitleLength,
     AVG(CHAR_LENGTH(analyse(body))) as avgTitleLength
 FROM
-    `httparchive.almanac.response_bodies_mobile_1k`
-
-/* result: scorePercentage =  0.xxx% */
+    `httparchive.response_bodies.2019_07_01_desktop`

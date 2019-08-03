@@ -2,9 +2,6 @@
 
 # <meta description> length
 
-# dataset: `httparchive.lighthouse.2019_07_01_mobile`
-# sample: `httparchive.almanac.lighthouse_mobile_1k`
-
 CREATE TEMP FUNCTION analyse(payload STRING)
 RETURNS STRING
 LANGUAGE js AS """
@@ -32,6 +29,4 @@ SELECT
     APPROX_QUANTILES(CHAR_LENGTH(analyse(payload)), 1000)[OFFSET(750)] as quantP75TitleLength,
     AVG(CHAR_LENGTH(analyse(payload))) as avgTitleLength
 FROM
-    `httparchive.almanac.pages_desktop_1k`
-
-/* result: scorePercentage =  0.xxx% */
+    `httparchive.pages.2019_07_01_desktop`

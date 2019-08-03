@@ -2,9 +2,6 @@
 
 # Linking - extract <a href> count per page (internal + external)
 
-# sample: `httparchive.almanac.pages_desktop_1k`
-# dataset: `httparchive.pages.2019_07_01_desktop`
-
 CREATE TEMPORARY FUNCTION parseAnchor(payload STRING, element STRING)
 RETURNS INT64 LANGUAGE js AS '''
   try {
@@ -21,4 +18,4 @@ SELECT
     COUNTIF(parseAnchor(payload, "external") > 0) as external,
     COUNTIF( parseAnchor(payload, "hash") > 0) as `hash`
 FROM
-    `httparchive.almanac.pages_desktop_1k`
+    `httparchive.pages.2019_07_01_desktop`

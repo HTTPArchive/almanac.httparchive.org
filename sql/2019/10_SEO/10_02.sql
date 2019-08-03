@@ -1,5 +1,6 @@
 #standardSQL
 
+# lang attribute usage and mistakes (lang='en')
 # source: https://discuss.httparchive.org/t/what-are-the-invalid-uses-of-the-lang-attribute/1022
 # note: updated the table, but this has no items details (also 10.04) to parse
 

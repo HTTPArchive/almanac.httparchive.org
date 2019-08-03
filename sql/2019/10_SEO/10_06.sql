@@ -1,5 +1,7 @@
 #standardSQL
 
+# Indexability - looking at meta tags like <meta> noindex, <link> canonicals.
+
 SELECT
     COUNT(url) AS `total`,
     COUNT(DISTINCT url) AS `distinct_total`,
@@ -13,5 +15,3 @@ SELECT
     (SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.canonical.score') as NUMERIC)) / COUNT(url)) as `canonicalScorePercentage`
 FROM
     `httparchive.lighthouse.2019_07_01_mobile`
-
-/* result: scorePercentage =  0.xxx% */

@@ -9,5 +9,3 @@ SELECT
     SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.image-alt.score') as NUMERIC)) AS `imageAltScoreSum`
 FROM
     `httparchive.lighthouse.2019_07_01_mobile`
-
-/* result: scorePercentage =  0.xxx% */

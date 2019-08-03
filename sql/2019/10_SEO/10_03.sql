@@ -1,9 +1,8 @@
 #standardSQL
 
+# <link> rel="amphtml" (AMP)
 # note: this looks like a very low count (error?)
 
-# sample: `httparchive.almanac.pages_desktop_1k`
-# dataset: `httparchive.pages.2019_07_01_desktop`
 
 CREATE TEMP FUNCTION analyse(payload STRING)
 RETURNS INT64
@@ -30,4 +29,4 @@ SELECT
     AVG(analyse(payload)) AS `scoreAverage`,
     (SUM(analyse(payload)) / COUNT(url)) as `scorePercentage`
 FROM
-    `httparchive.almanac.pages_desktop_1k`
+    `httparchive.pages.2019_07_01_desktop`

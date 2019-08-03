@@ -2,9 +2,6 @@
 
 # Metric: Content - looking at word count, thin pages, header usage, alt attributes images
 
-# sample: `httparchive.almanac.pages_desktop_1k`
-# dataset: `httparchive.pages.2019_07_01_desktop`
-
 CREATE TEMPORARY FUNCTION parseWords(payload STRING, element STRING)
 RETURNS INT64 LANGUAGE js AS '''
   try {
@@ -42,4 +39,4 @@ SELECT
     AVG(parseTitle(payload, 'titleWords')) as avgTitleWords,
     AVG(parseTitle(payload, 'titleElements')) as avgTitleElements
 FROM
-    `httparchive.almanac.pages_desktop_1k`
+    `httparchive.pages.2019_07_01_desktop`
