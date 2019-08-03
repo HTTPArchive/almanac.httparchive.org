@@ -1,9 +1,6 @@
 #standardSQL
 
-# <link rel="manifest">
-
-# dataset: `httparchive.lighthouse.2019_07_01_mobile`
-# sample: `httparchive.almanac.lighthouse_mobile_1k`
+# <link rel="manifest"> and if valid
 
 SELECT
     COUNT(url) AS `total`,
@@ -11,4 +8,4 @@ SELECT
     COUNTIF(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.installable-manifest.score') as NUMERIC)=1) AS `scoreSum`,
     (COUNTIF(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.installable-manifest.score') as NUMERIC) = 1) / COUNT(url)) as `scorePercentage`
 FROM
-    `httparchive.almanac.lighthouse_mobile_1k`
+    `httparchive.lighthouse.2019_07_01_mobile`

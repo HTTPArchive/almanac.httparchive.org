@@ -2,18 +2,15 @@
 
 # input attributes
 
-# dataset: `httparchive.pages.2019_07_01_mobile`
-# sample: `httparchive.almanac.pages_desktop_1k`
-
-CREATE TEMPORARY FUNCTION parseStructuredData(payload STRING)
+CREATE TEMPORARY FUNCTION getInputAttributes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
   var attrs = [];
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);
-    almanac['input-elements'] && almanac['input-elements'].map(function(node) {
-        Object.keys(node).map(function(attr) {
-            attrs.push(attr);
+    almanac['input-elements'] && almanac['input-elements'].forEach(function(node) {
+        Object.keys(node).forEach(function(attr) {
+            if (attr != 'tagName') attrs.push(attr);
         });
     });
     return attrs;
@@ -23,12 +20,13 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 ''';
 
 SELECT
-    flattened,
-    COUNT(flattened) AS occurence,
-    COUNT(flattened) / COUNT(url) AS occurence_perc
+    input_attributes,
+    COUNT(input_attributes) AS occurence,
+    ROUND(COUNT(input_attributes) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
-    `httparchive.almanac.pages_desktop_1k`
+    `httparchive.pages.2019_07_01_mobile`
 CROSS JOIN
-    UNNEST(parseStructuredData(payload)) as flattened
-GROUP BY flattened
+    UNNEST(getInputAttributes(payload)) as input_attributes
+GROUP BY input_attributes
 ORDER BY occurence DESC
+LIMIT 100

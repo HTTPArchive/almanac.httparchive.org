@@ -2,10 +2,7 @@
 
 # input types
 
-# dataset: `httparchive.pages.2019_07_01_mobile`
-# sample: `httparchive.almanac.pages_desktop_1k`
-
-CREATE TEMPORARY FUNCTION parseStructuredData(payload STRING)
+CREATE TEMPORARY FUNCTION getInputTypes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
@@ -19,12 +16,12 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 ''';
 
 SELECT
-    flattened,
-    COUNT(flattened) AS occurence,
-    COUNT(flattened) / COUNT(url) AS occurence_perc
+    input_types,
+    COUNT(input_types) AS occurence,
+    ROUND(COUNT(input_types) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
-    `httparchive.almanac.pages_desktop_1k`
+    `httparchive.pages.2019_07_01_mobile`
 CROSS JOIN
-    UNNEST(parseStructuredData(payload)) as flattened
-GROUP BY flattened
+    UNNEST(getInputTypes(payload)) as input_types
+GROUP BY input_types
 ORDER BY occurence DESC
