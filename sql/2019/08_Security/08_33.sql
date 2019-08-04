@@ -6,7 +6,7 @@
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 # 
 #   break at "report=" to generalize
-#
+# 
 #
 #   Within "archive" I only see 3 buckets, "null", "allow-postmessage" and "same-origin"
 # I see references to "Deny", "Allow" in Safari. 
