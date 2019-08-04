@@ -5,7 +5,7 @@
 #    Mode Block = 1 + mode=block
 #    Reporting = 1 + report=
 #    Active Block Reporting (combo of all 3)     
-#
+# 
 #   `httparchive.almanac.summary_response_bodies` archive = 71.5GB 
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
