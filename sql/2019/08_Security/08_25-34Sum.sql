@@ -2,7 +2,7 @@
 standard SQL
 08_01
 
-Calculate usage percentage for each of the 10 metrics
+Calculate usage percentage for each of the 10 metrics 08.25-34 metrics in one run
 
 BigQuery usage notes: 
  == archive.summary_response_bodies =  71.5 GB usage
