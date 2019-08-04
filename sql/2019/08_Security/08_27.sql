@@ -1,5 +1,5 @@
 #standardSQL
-# 08_29: Groupings of "referrer-policy" parsed values buckets
+# 08_27: Groupings of "referrer-policy" parsed values buckets
 #   8 groups
 #    no-referrer = does not contain "-when-downgrade"
 #    no-referrer-when-downgrade
