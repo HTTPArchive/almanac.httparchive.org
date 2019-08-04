@@ -11,7 +11,7 @@ for (let button of buttons) {
     display: block;
   }
 
-  .contributors.${buttonClassName} button.${buttonClassName}{
+  .contributors.${buttonClassName} button.${buttonClassName} {
     background: #0053ba;
     color: white;
   }
