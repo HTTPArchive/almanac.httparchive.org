@@ -3,7 +3,7 @@
 #   
 #   `httparchive.almanac.summary_response_bodies` archive = 71.5GB 
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
-# 
+#  
 #   break at "report=" to generalize
 
 select ROUND(100*(cnt/total),5) as pct, cnt, flat_xssvals
