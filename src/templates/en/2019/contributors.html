@@ -4,27 +4,47 @@
 Contributors | The Web Almanac by HTTP Archive
 {% endblock %}
 
+{% block style %}
+<style>
+.contributors {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-container {
+  margin-bottom: 30px;
+}
+
+.filter-container button {
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.2;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 8px;
+  padding: 8px;
+}
+
+.contributor {
+  display: none;
+}
+</style>
+{% endblock %}
+
 {% block main %}
+<div class="contributors {{ ' '.join(contributors.teams.keys()) }}">
   <div class="filter-container">
   {% for id, team in contributors.teams.items()  %}
     <button class="{{ id }}">{{ team.name }}</button>
   {% endfor %}
   </div>
-
-  <div class="contributors">
-    {% set ns = namespace(contributors_class_list = "") %}
-    {% for id, contributor in contributors.contributors.items() %}
-      {% for team in contributor.teams %}
-        {% if ns.contributors_class_list == "" %}
-          {% set ns.contributors_class_list = team %}
-        {% else %}
-          {% set ns.contributors_class_list = ns.contributors_class_list ~ " " ~ team  %}
-        {% endif %}
-      {% endfor %}
-      <div class="{{ ns.contributors_class_list }}">
-        {{ contributor.name}}
-      </div>
-      {% set ns.contributors_class_list = "" %}
-    {% endfor %}
-  </div>
+  {% for id, contributor in contributors.contributors.items() %}
+    <div class="contributor {{ ' '.join(contributor.teams) }}">
+      {{ contributor.name}}
+    </div>
+  {% endfor %}
+</div>
 {% endblock %}

@@ -24,7 +24,7 @@
     <link rel="shortcut icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
     <link rel="stylesheet" href="/static/css/styles.css">
-    <link rel="stylesheet" href="/static/css/contributors.css">
+    {% block style %}{% endblock %}
     {% endblock %}
     {% if supported_languages is iterable %}
       {% for l in supported_languages %}
@@ -55,7 +55,7 @@
     {% endblock %}
     {% block scripts %}
       <script src="/static/js/language.js"></script>
-      <script src="/static/js/filter-teams.js"></script>
+      <script src="/static/js/contributors.js"></script>
     {% endblock %}
   </body>
 </html>
