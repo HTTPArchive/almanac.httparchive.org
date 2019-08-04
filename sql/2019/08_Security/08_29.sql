@@ -1,6 +1,6 @@
 #standardSQL
 # 08_29: Groupings of "x-content-type-options" parsed values by percentage
-#   
+#    
 #   `httparchive.almanac.summary_response_bodies` archive = 71.5GB 
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
