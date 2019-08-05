@@ -16,8 +16,8 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 ''';
 
 SELECT
-    COUNTIF(REGEXP_CONTAINS(input_types, '/color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist/i')) AS occurence,
-    ROUND(COUNT(REGEXP_CONTAINS(input_types, '/color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist/i')) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
+    COUNTIF(REGEXP_CONTAINS(input_types, '(?i)color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist')) AS occurence,
+    ROUND(COUNTIF(REGEXP_CONTAINS(input_types, '(?i)color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist')) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
     `httparchive.pages.2019_07_01_mobile`
 CROSS JOIN

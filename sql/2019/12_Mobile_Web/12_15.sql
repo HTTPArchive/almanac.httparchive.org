@@ -20,8 +20,8 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 ''';
 
 SELECT
-    COUNTIF(REGEXP_CONTAINS(input_attributes, '/autocomplete|min|max|pattern|placeholder|required|step/i')) AS occurence,
-    ROUND(COUNTIF(REGEXP_CONTAINS(input_attributes, '/autocomplete|min|max|pattern|placeholder|required|step/i')) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
+    COUNTIF(REGEXP_CONTAINS(input_attributes, '(?i)autocomplete|min|max|pattern|placeholder|required|step')) AS occurence,
+    ROUND(COUNTIF(REGEXP_CONTAINS(input_attributes, '(?i)autocomplete|min|max|pattern|placeholder|required|step')) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
     `httparchive.pages.2019_07_01_mobile`
 CROSS JOIN
