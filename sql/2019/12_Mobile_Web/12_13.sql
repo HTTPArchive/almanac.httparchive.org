@@ -8,7 +8,7 @@ RETURNS BOOL LANGUAGE js AS '''
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);
     var found = almanac['input-elements'].findIndex(node => {
-        if(node.type && node.type.match(/color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist/i)) {
+        if(node.type && node.type.match(/(color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist)/i)) {
             return true;
         }
     });

@@ -9,7 +9,7 @@ RETURNS BOOL LANGUAGE js AS '''
     var almanac = JSON.parse($._almanac);
     var found = almanac['input-elements'].findIndex(node => {
         var search = Object.keys(node).findIndex(attr => {
-            if(attr.match(/autocomplete|min|max|pattern|step/i)) {
+            if(attr.match(/(autocomplete|min|max|pattern|step)/i)) {
                 return true;
             }
         });
