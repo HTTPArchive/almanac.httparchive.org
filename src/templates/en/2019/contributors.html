@@ -4,7 +4,7 @@
 Contributors | The Web Almanac by HTTP Archive
 {% endblock %}
 
-{% block style %}
+{% block styles %}
 <style>
 .contributors {
   margin-top: 100px;
@@ -31,13 +31,24 @@ Contributors | The Web Almanac by HTTP Archive
 .contributor {
   display: none;
 }
+
+{% for id in contributors.teams.keys() %}
+.contributors.{{ id }} .contributor.{{ id }} {
+  display: block;
+}
+
+.contributors.{{ id }} button.{{ id }} {
+  background: #0053ba;
+  color: white;
+}
+{% endfor %}
 </style>
 {% endblock %}
 
 {% block main %}
 <div class="contributors {{ ' '.join(contributors.teams.keys()) }}">
   <div class="filter-container">
-  {% for id, team in contributors.teams.items()  %}
+  {% for id, team in contributors.teams.items() %}
     <button class="{{ id }}">{{ team.name }}</button>
   {% endfor %}
   </div>
@@ -47,4 +58,9 @@ Contributors | The Web Almanac by HTTP Archive
     </div>
   {% endfor %}
 </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/static/js/contributors.js"></script>
 {% endblock %}
