@@ -1,4 +1,3 @@
-const style = document.querySelector('style');
 const buttons = document.querySelectorAll('.filter-container button');
 const contributors = document.querySelector('.contributors');
 
