@@ -3,22 +3,24 @@
 # input types occurence prefined set %
 
 CREATE TEMPORARY FUNCTION getInputTypes(payload STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+RETURNS BOOL LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);
-    return almanac['input-elements'] && almanac['input-elements'].map(function(node) {
-        return node.type.toLowerCase();
+    var found = almanac['input-elements'].findIndex(node => {
+        if(node.type && node.type.match(/color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist/i)) {
+            return true;
+        }
     });
+    return found >= 0 ? true : false;
   } catch (e) {
-    return [];
+    return false;
   }
 ''';
 
 SELECT
-    COUNTIF(REGEXP_CONTAINS(input_types, '(?i)color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist')) AS occurence,
-    ROUND(COUNTIF(REGEXP_CONTAINS(input_types, '(?i)color|date|datetime-local|email|month|number|range|reset|search|tel|time|url|week|datalist')) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
+    COUNT(0) as count,
+    COUNTIF(getInputTypes(payload)) AS occurence,
+    ROUND(COUNTIF(getInputTypes(payload)) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
     `httparchive.pages.2019_07_01_mobile`
-CROSS JOIN
-    UNNEST(getInputTypes(payload)) as input_types
