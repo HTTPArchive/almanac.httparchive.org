@@ -25,6 +25,6 @@ FROM
     `httparchive.pages.2019_07_01_desktop`
 CROSS JOIN
     UNNEST(parseStructuredData(payload)) as flattened_105
-WHERE REGEXP_CONTAINS(flattened_105, '/(Breadcrumb|SearchAction|Offer|AggregateRating|Event|Review|Rating|SoftwareApplication|ContactPoint|NewsArticle|Book|Recipe|Course|EmployerAggregateRating|ClaimReview|Question|HowTo|JobPosting|LocalBusiness|Organization|Product|SpeakableSpecification|VideoObject)/i')
+WHERE REGEXP_CONTAINS(flattened_105, '(?i)(Breadcrumb|SearchAction|Offer|AggregateRating|Event|Review|Rating|SoftwareApplication|ContactPoint|NewsArticle|Book|Recipe|Course|EmployerAggregateRating|ClaimReview|Question|HowTo|JobPosting|LocalBusiness|Organization|Product|SpeakableSpecification|VideoObject)')
 GROUP BY flattened_105
 ORDER BY occurence DESC

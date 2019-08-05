@@ -23,4 +23,4 @@ FROM
 # LEFT JOIN
 #     `httparchive.almanac.technologies_desktop_1k` ON `httparchive.almanac.technologies_desktop_1k`.url = `httparchive.pages.2019_07_01_desktop`.url
 # WHERE
-#    REGEXP_CONTAINS(httparchive.almanac.technologies_desktop_1k`.technology, '/(react|vue|angular)/i')
+#    REGEXP_CONTAINS(httparchive.almanac.technologies_desktop_1k`.technology, '(?i)(react|vue|angular)')
