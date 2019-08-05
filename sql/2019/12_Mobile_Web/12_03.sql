@@ -5,7 +5,6 @@
 
 SELECT
     COUNT(url) AS total,
-    COUNT(DISTINCT url) AS distinct_total,
     COUNTIF(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.color-contrast.score') as NUMERIC) = 1) AS score_sum,
     AVG(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.color-contrast.score') as NUMERIC)) AS score_average,
     ROUND(COUNTIF(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.color-contrast.score') as NUMERIC) = 1) * 100 / COUNT(url), 2) as score_percentage
