@@ -3,7 +3,7 @@
 04_01a
 
 1.22 TB query
-*Lighthouse Lazyloading score in 1000 percentile points	
+*Lighthouse Lazyloading, resp images, image quality, webp image score score in 1000 percentile points	
 
 this query takes lighthouse data on image performance: 
     lazyloading (offscreen), 
@@ -22,9 +22,10 @@ this query takes lighthouse data on image performance:
 */
 
 select 
-      APPROX_QUANTILES( offscreenScore ,1000) offscreenscore
-    
-      
+      APPROX_QUANTILES( offscreenScore ,1000) offscreenscore,
+      APPROX_QUANTILES( repimagesScore ,1000) repimagesScore,
+      APPROX_QUANTILES( optimagesScore ,1000) optimagesScore,
+      APPROX_QUANTILES( webpimagesScore ,1000) webpimagesScore
 from(
 select
       cast(offscreenScore as float64) offscreenscore,

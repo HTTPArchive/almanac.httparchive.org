@@ -20,7 +20,7 @@ select counter, count (*) from(
 
 select url, flat_ids , count(flat_ids) counter from(
 select
-url, regexp_extract_all(lower(body),r'(id=".*?")') ids
+url, regexp_extract_all(lower(body),r'(id=["\']*[^\s\'"]*["\']*)') ids
 from `response_bodies.2019_07_01_mobile` 
 where lower(body) like "%id=%"  )
 cross join unnest(ids) flat_ids
