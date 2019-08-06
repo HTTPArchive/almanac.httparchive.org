@@ -4,25 +4,28 @@
 10TB
 
 only tested on the 10k sample response body samples
-from the sample data
-look for input foelds with aria_required
-save this as a table to further dig into the data
+look for all input fields.
+then also look for input fields with 'aria-required' or 'aria-invalid'
+get quantiles and sum of total inputs
+
 */
-select url,  
-       count(flat_ariarequired) countrequired,
-       count(ariainvalid) countariainvalid,
-       count(flat_inputs) countinputs,
-              
+select approx_quantiles(ariarequired, 5) ariareqquantiles,
+       approx_quantiles(ariainvalid, 5)  ariainvalidquantiles,
+       approx_quantiles(allinputs, 5)  allinputsquantiles,
+       sum(ariarequired) requiredsum,
+       sum(ariainvalid) ariainvalidsum,
+       sum(allinputs) allinputssum
+
+from(
+select url, array_length(ariarequired) ariarequired,
+            array_length(ariainvalid) ariainvalid,
+            array_length(allinputs) allinputs
 from(
 select
 url, 
-REGEXP_EXTRACT_ALL(lower(body),r'(<input.*aria-required.*/>)') ariarequired, 
+REGEXP_EXTRACT_ALL(lower(body),r'(<input.*aria-required.*/>)') ariarequired,
 REGEXP_EXTRACT_ALL(lower(body),r'(<input.*aria-invalid.*/>)') ariainvalid,
-REGEXP_EXTRACT_ALL(lower(body),r'(<input.*/>)') inputs,
+REGEXP_EXTRACT_ALL(lower(body),r'(<input.*/>)') allinputs
 from `response_bodies.2019_07_01_mobile` 
-)
-cross join unnest(ariarequired) flat_ariarequired
-cross join unnest(ariainvalid) flat_ariainvalid
-cross join unnest(inputs) flat_inputs
-group by url, flat_ariarequired, flat_ariainvalid, flat_inputs
-order by url desc, counter desc
+where lower(body) like "%<input%"
+))
