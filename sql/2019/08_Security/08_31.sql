@@ -10,10 +10,10 @@
 
 SELECT
   COUNT(0) AS TotCount,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-frame-options =')) / COUNT(0) AS pct_TotXFrames,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-frame-options = deny')) / COUNT(0) AS pct_Deny,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-frame-options = sameorigin')) / COUNT(0) AS pct_SameOrigin,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-frame-options = allow-from http')) / COUNT(0) AS pct_AllowFrom
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-frame-options =')) * 100 / COUNT(0),2) AS pct_t_x_frames,
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-frame-options = deny')) * 100 / COUNT(0),2) AS pct_deny,
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-frame-options = sameorigin')) * 100 / COUNT(0),2) AS pct_same_origin,
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-frame-options = allow-from http')) * 100 / COUNT(0),2) AS pct_allow_from
 FROM
   `httparchive.almanac.summary_response_bodies`
   where firstHtml
