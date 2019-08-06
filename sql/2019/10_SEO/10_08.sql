@@ -1,15 +1,16 @@
 #standardSQL
 
-# Status codes and whether pages are accessible - 200, 3xx, 4xx, 5xx.
+# Status codes returned
 
 SELECT
-    COUNT(`httparchive.pages.2019_07_01_desktop`.url) AS `total`,
-    COUNT(DISTINCT `httparchive.pages.2019_07_01_desktop`.url) AS `distinct_total`,
-    SAFE_CAST(JSON_EXTRACT(`httparchive.requests.2019_07_01_desktop`.payload, '$.response.status') as NUMERIC) as `status`
+  status,
+  COUNT(0) AS freq,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
 FROM
-    `httparchive.pages.2019_07_01_desktop`
-LEFT JOIN
-    `httparchive.requests.2019_07_01_desktop`
-    ON `httparchive.pages.2019_07_01_desktop`.url = `httparchive.requests.2019_07_01_desktop`.url
+  `httparchive.almanac.summary_requests`
+WHERE
+  firstReq
 GROUP BY
-    SAFE_CAST(JSON_EXTRACT(`httparchive.requests.2019_07_01_desktop`.payload, '$.response.status') as NUMERIC)
+  status
+ORDER BY
+  freq DESC

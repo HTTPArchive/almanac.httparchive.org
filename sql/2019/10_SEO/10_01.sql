@@ -7,7 +7,7 @@
 # note: also see 10.05
 
 CREATE TEMPORARY FUNCTION parseStructuredData(payload STRING)
-RETURNS BOOL LANGUAGE js AS '''
+RETURNS BOOLEAN LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);
@@ -27,4 +27,4 @@ SELECT
     COUNTIF(parseStructuredData(payload)) AS occurence,
     ROUND(COUNTIF(parseStructuredData(payload)) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
-    `httparchive.pages.2019_07_01_mobile`
+    `httparchive.pages.2019_07_01_*`

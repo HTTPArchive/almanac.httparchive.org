@@ -1,32 +1,20 @@
 #standardSQL
 
-# <link> rel="amphtml" (AMP)
-# note: this looks like a very low count (error?)
+# <link rel="amphtml"> (AMP)
 
-
-CREATE TEMP FUNCTION analyse(payload STRING)
-RETURNS INT64
-LANGUAGE js AS """
+CREATE TEMP FUNCTION hasAmpLink(payload STRING)
+RETURNS BOOLEAN LANGUAGE js AS '''
 try {
-    var $ = JSON.parse(payload);
-    var almanac = JSON.parse($._almanac);
-    if(almanac && almanac['link-nodes']) {
-        var found = almanac['link-nodes'].findIndex(node => {
-            if(node.rel && node.rel.toLowerCase() == 'amphtml') {
-                return true;
-            }
-        });
-        return found >= 0 ? 1 : 0;
-    }
-    return 0;
+  var $ = JSON.parse(payload);
+  var almanac = JSON.parse($._almanac);
+  return !!almanac['link-nodes'].find(node => node.rel.toLowerCase() == 'amphtml')
 } catch (e) {
-  return 0;
+  return false;
 }
-""";
+''';
 
 SELECT
-    SUM(analyse(payload)) AS `scoreSum`,
-    AVG(analyse(payload)) AS `scoreAverage`,
-    (SUM(analyse(payload)) / COUNT(url)) as `scorePercentage`
+  COUNTIF(hasAmpLink(payload)) AS score_sum,
+  COUNTIF(hasAmpLink(payload)) / COUNT(0) AS score_percentage
 FROM
-    `httparchive.pages.2019_07_01_desktop`
+  `httparchive.pages.2019_07_01_*`
