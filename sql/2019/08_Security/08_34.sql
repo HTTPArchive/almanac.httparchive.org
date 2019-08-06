@@ -4,23 +4,19 @@
 #   https://w3c.github.io/webappsec-fetch-metadata/
 #
 #   `httparchive.almanac.summary_response_bodies` archive = 71.5GB 
+#         Zero results within the "archive" tables 
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
-select ROUND(100*(cnt/total),5) as pct, cnt, flat_xssvals
-from 
-(
-select
-count(*) as cnt,
-sum(count(*)) OVER() AS total,
-flat_xssvals
-from
-(
-SELECT   
-   REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'sec-fetch-%') AS xssvals
-  FROM
-    `httparchive.almanac.summary_response_bodies`
-)
-left join unnest(xssvals) flat_xssvals   
-group by flat_xssvals
-)
-order by pct desc
+SELECT
+  val,
+  COUNT(0) AS freq,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
+FROM
+  `httparchive.almanac.summary_requests`,
+  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'sec-fetch-[dest|mode|site|user] = ([\\w-]+)')) AS val
+WHERE
+  firstHtml
+GROUP BY
+  val
+ORDER BY
+  freq DESC
