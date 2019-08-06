@@ -12,28 +12,37 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 ''';
 
 SELECT
-  date,
   lib,
-  COUNT(0) AS count,
-  ROUND(COUNT(0) * 100 / total, 2) AS pct
+  freq_2018,
+  ROUND(pct_2018 * 100, 2) AS pct_2018,
+  freq_2019,
+  ROUND(pct_2019 * 100, 2) AS pct_2019,
+  ROUND((pct_2019 - pct_2018) * 100, 2) AS pct_pt_change,
+  IF(pct_2018 > 0, ROUND((pct_2019 - pct_2018) * 100 / pct_2018, 2), NULL) AS pct_change
 FROM (
   SELECT
-    CAST(REPLACE(SUBSTR(_TABLE_SUFFIX, 0, 10), '_', '-') AS DATE) AS date,
-    url,
-    getJSLibs(payload) AS libs,
-    total
+    lib,
+    COUNT(0) AS freq_2018,
+    COUNT(0) / total AS pct_2018
   FROM
-    `httparchive.pages.*`
-  INNER JOIN (
-    SELECT _TABLE_SUFFIX, COUNT(0) AS total
-    FROM `httparchive.summary_pages.*`
-    GROUP BY _TABLE_SUFFIX)
-  USING (_TABLE_SUFFIX)),
-  UNNEST(libs) AS lib
-GROUP BY
-  date,
-  lib,
-  total
+    (SELECT COUNT(0) AS total FROM `httparchive.summary_pages.2018_07_01_*`),
+    `httparchive.pages.2018_07_01_*`,
+    UNNEST(getJSLibs(payload)) AS lib
+  GROUP BY
+    lib,
+    total)
+JOIN (
+  SELECT
+    lib,
+    COUNT(0) AS freq_2019,
+    COUNT(0) / total AS pct_2019
+  FROM
+    (SELECT COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*`),
+    `httparchive.pages.2019_07_01_*`,
+    UNNEST(getJSLibs(payload)) AS lib
+  GROUP BY
+    lib,
+    total)
+USING (lib)
 ORDER BY
-  date DESC,
-  count DESC
+  freq_2019 DESC

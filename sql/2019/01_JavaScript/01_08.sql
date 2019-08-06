@@ -13,18 +13,15 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 
 SELECT
   lib,
-  COUNT(0) AS count,
-  ROUND(COUNT(0) * 100 / (SELECT COUNT(DISTINCT pageid) FROM `httparchive.summary_pages.2019_07_01_*`), 2) AS pct
-FROM (
-  SELECT
-    url,
-    getJSLibs(payload) AS libs
-  FROM
-    `httparchive.pages.2019_07_01_*`),
-  UNNEST(libs) AS lib
+  COUNT(0) AS freq,
+  total,
+  ROUND(COUNT(0) * 100 / total, 2) AS pct
+FROM
+  (SELECT COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*`),
+  `httparchive.pages.2019_07_01_*`,
+  UNNEST(getJSLibs(payload)) AS lib
 GROUP BY
-  lib
+  lib,
+  total
 ORDER BY
-  count DESC
-LIMIT
-  50
+  freq DESC
