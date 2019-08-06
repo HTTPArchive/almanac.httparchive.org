@@ -9,6 +9,6 @@ SELECT
   APPROX_QUANTILES(score, 1000)[OFFSET(900)] AS p90
 FROM 
 (
-  SELECT CAST(JSON_EXTRACT(report, '$.categories.performance.score') as NUMERIC) AS score
+  SELECT CAST(JSON_EXTRACT(report, '$.categories.performance.score') AS NUMERIC) AS score
   FROM httparchive.almanac.lighthouse_mobile_1k
 )
