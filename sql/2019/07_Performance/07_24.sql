@@ -1,6 +1,6 @@
 #standardSQL
 # 07_24: Percentiles of lighthouse performance score
-# 07_24: This metric comes from Lighthouse only
+# This metric comes from Lighthouse only
 SELECT
   APPROX_QUANTILES(score, 1000)[OFFSET(100)] AS p10,
   APPROX_QUANTILES(score, 1000)[OFFSET(250)] AS p25,
