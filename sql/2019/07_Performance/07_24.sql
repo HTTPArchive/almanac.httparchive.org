@@ -10,5 +10,5 @@ SELECT
 FROM 
 (
   SELECT CAST(JSON_EXTRACT(report, '$.categories.performance.score') AS NUMERIC) AS score
-  FROM httparchive.almanac.lighthouse_mobile_1k
+  FROM `httparchive.lighthouse.2019_07_01_mobile`
 )
