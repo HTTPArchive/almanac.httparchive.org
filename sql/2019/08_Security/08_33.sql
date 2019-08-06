@@ -19,7 +19,7 @@ SELECT
   COUNT(0) AS freq,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
 FROM
-  `httparchive.almanac.summary_requests`,
+  `httparchive.almanac.summary_response_bodies`,
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'cross-origin-opener-policy = ([\\w-]+)')) AS val
 WHERE
   firstHtml
