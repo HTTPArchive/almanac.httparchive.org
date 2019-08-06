@@ -8,10 +8,11 @@
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
 SELECT
-  COUNT(0) AS TotCount,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)cross-origin-resource-policy =')) / COUNT(0) AS pct_TotCORP,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)cross-origin-resource-policy = same-site')) / COUNT(0) AS pct_SameSite,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)cross-origin-resource-policy = same-origin')) / COUNT(0) AS pct_SameOrigin
+  COUNT(0) AS tot_count,
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)cross-origin-resource-policy =')) * 100 / COUNT(0),2) AS pct_tot_corp,
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)cross-origin-resource-policy = same-site')) * 100 / COUNT(0),2) AS pct_same_site,
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)cross-origin-resource-policy = same-origin'))* 100 / COUNT(0),2) AS pct_same_origin,
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)cross-origin-resource-policy = cross-site'))* 100 / COUNT(0),2) AS pct_same_cross_site
 FROM
   `httparchive.almanac.summary_response_bodies`
   where firstHtml
