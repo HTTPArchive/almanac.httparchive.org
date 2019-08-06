@@ -1,25 +1,22 @@
 #standardSQL
 # 08_30: Groupings of "x-xss-protection" parsed values buckets
-#    Inactive = 0
-#    Active = 1 (.*)
-#    Mode Block = 1 + mode=block
-#    Reporting = 1 + report=
-#    Active Block Reporting (combo of all 3)     
+#   
+#    Updated query for the dynamic grouping
+#    Left the ";" values together and truncated the "report=(distinct values)" 
 # 
 #   `httparchive.almanac.summary_response_bodies` archive = 71.5GB 
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
 SELECT
-  COUNT(0) AS TotCount,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-xss-protection = 0')) / COUNT(0) AS pct_Inactive,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-xss-protection = 1')) / COUNT(0) AS pct_Active,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-xss-protection = 1.*mode=block.*')) / COUNT(0) AS pct_Block,
-  COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-xss-protection = 1.*report=.*')) / COUNT(0) AS pct_Reporting,
-  COUNTIF(
-    REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-xss-protection = 1.*report=.*')
-    and 
-    REGEXP_CONTAINS(LOWER(respOtherHeaders), '(?i)x-xss-protection = 1.*mode=block.*')
-  ) / COUNT(0) AS pct_ActiveBlockReporting
+  val,
+  COUNT(0) AS freq,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
 FROM
-  `httparchive.almanac.summary_response_bodies`
-  where firstHtml
+  `httparchive.almanac.summary_requests`,
+  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'x-xss-protection = (.*report=|[^,\r\n]*)')) AS val
+WHERE
+  firstHtml
+GROUP BY
+  val
+ORDER BY
+  freq DESC
