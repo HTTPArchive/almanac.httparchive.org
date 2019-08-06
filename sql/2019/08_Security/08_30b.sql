@@ -11,7 +11,7 @@
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
 SELECT
-  COUNT(0) AS TotCount,
+  COUNT(0) AS tot_count,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-xss-protection = 0')) * 100 / COUNT(0),2) AS pct_inactive,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-xss-protection = 1')) * 100 / COUNT(0),2) AS pct_active,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-xss-protection = 1.*mode=block.*')) * 100 / COUNT(0),2) AS pct_block,
