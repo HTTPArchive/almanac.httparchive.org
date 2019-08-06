@@ -9,7 +9,7 @@
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
 SELECT
-  COUNT(0) AS TotCount,
+  COUNT(0) AS tot_count,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-frame-options =')) * 100 / COUNT(0),2) AS pct_t_x_frames,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-frame-options = deny')) * 100 / COUNT(0),2) AS pct_deny,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-frame-options = sameorigin')) * 100 / COUNT(0),2) AS pct_same_origin,
