@@ -3,7 +3,7 @@ from io import BytesIO
 
 import matplotlib
 import matplotlib.pyplot as plt
-import pandas as pd
+import pandas
 
 from scour import scour
 
@@ -15,7 +15,7 @@ def generate_histogram(year, key, x, y, x_label):
     print('\nGenerating histogram from the following file: %s' % path)
 
     # Read the data file for the visualisation
-    data = pd.read_json(path)
+    data = pandas.read_json(path)
     original_length = len(data)
 
     # Rationalise the data set, like HA currently does.
@@ -42,7 +42,3 @@ def generate_histogram(year, key, x, y, x_label):
     svg = scour.scourString(svg)
 
     return svg
-
-
-# REMOVE - Just for testing
-# generate_histogram(2019, '01_01', 'kbytes', 'pdf', 'KB')
