@@ -2,10 +2,12 @@ import os
 import re
 import mistune
 import yaml
+from visualisation_lexer import VisualisationLexer
 
 renderer = mistune.Renderer()
-markdown = mistune.Markdown(renderer=renderer)
-
+inline = VisualisationLexer(renderer)
+inline.enable_wiki_link()
+markdown = mistune.Markdown(renderer=renderer, inline=inline)
 
 def generate_chapters():
     for language_dir in os.scandir('content'):

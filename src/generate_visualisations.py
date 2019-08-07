@@ -7,12 +7,20 @@ import pandas as pd
 
 OUTLIER_MIN = 30
 
-plt.style.use(['seaborn-white', 'seaborn-paper'])
-plt.tight_layout()
+# plt.style.use(['seaborn-white', 'seaborn-paper'])
+# plt.tight_layout()
 
 def generate_histogram(year, key, x, y, x_label):
-    data = pd.read_json('data/%s/%s.json' % (year, key))
+    path = 'data/%s/%s.json' % (year, key)
+
+    print('\nGenerating histogram from the following file: %s' % path)
+
+    data = pd.read_json(path)
+    original_length = len(data)
+
     data = data[data.cdf < 0.95]
+    print('Reduced the data set from %s to %s to fall within acceptable margins.' % (original_length, len(data)))
+    
     data[y] *= 100
 
     fig, ax = plt.subplots()   
@@ -22,7 +30,7 @@ def generate_histogram(year, key, x, y, x_label):
     ax.set_ylabel('Probability density')
 
     # REMOVE - Just for testing.
-    plt.savefig('%s.svg' %  key)
+    # plt.savefig('%s.svg' %  key)
 
     buf = BytesIO()
     plt.savefig(buf, format='svg')
@@ -30,4 +38,4 @@ def generate_histogram(year, key, x, y, x_label):
 
 
 # REMOVE - Just for testing
-generate_histogram(2019, '01_01', 'kbytes', 'pdf', 'KB')
+# generate_histogram(2019, '01_01', 'kbytes', 'pdf', 'KB')
