@@ -17,7 +17,6 @@ class VisualisationLexer(InlineLexer):
         return self
 
     def output_visualisation(self, m):
-        print(m)
         visualisation = m.group(1)
         raw_args = m.group(2)
         caption = m.group(3)

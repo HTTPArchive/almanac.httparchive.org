@@ -6,3 +6,4 @@ mistune
 pandas
 pytest
 pytest-watch
+scour
