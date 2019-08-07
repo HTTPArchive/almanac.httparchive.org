@@ -1,3 +1,4 @@
+#StandardSQL
 /*
 standard sql
 
@@ -7,21 +8,21 @@ standard sql
 
 how many movies.. using Youtube
 The query is currently set to NOT YouTube
-Deleting the not in like 24 gives YES YouTube
+Deleting the NOT in LIKE 24 gives YES YouTube
 
 
 
 */
 
-select ext, count(*) cnter
+SELECT ext, COUNT(*) cnter
 
 
-from(
+FROM(
 
-select url, respsize, ext, mimetype, format
+SELECT url, respsize, ext, mimetype, format
 
-from `summary_requests.2019_07_01_mobile` 
-where mimetype like "%video%" and url not like "%youtube%"
+FROM `summary_requests.2019_07_01_mobile` 
+WHERE mimetype LIKE "%video%" AND url NOT LIKE "%youtube%"
 )
-group by format, ext
-order by cnter desc
+GROUP BY format, ext
+ORDER BY cnter desc

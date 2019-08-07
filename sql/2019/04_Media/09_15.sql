@@ -1,3 +1,4 @@
+#StandardSQL
 /*
 09_15
 
@@ -5,27 +6,27 @@
 
 only tested on the 10k sample response body samples
 look for all input fields.
-then also look for input fields with 'aria-required' or 'aria-invalid'
-get quantiles and sum of total inputs
+then also look for input fields with 'aria-required' OR  'aria-invalid'
+get quantiles AND SUM of total inputs
 
 */
-select approx_quantiles(ariarequired, 5) ariareqquantiles,
-       approx_quantiles(ariainvalid, 5)  ariainvalidquantiles,
-       approx_quantiles(allinputs, 5)  allinputsquantiles,
-       sum(ariarequired) requiredsum,
-       sum(ariainvalid) ariainvalidsum,
-       sum(allinputs) allinputssum
+SELECT APPROX_QUANTILES(ariarequired, 5) AS ariareqquantiles,
+       APPROX_QUANTILES(ariainvalid, 5)  AS ariainvalidquantiles,
+       APPROX_QUANTILES(allinputs, 5)  AS allinputsquantiles,
+       SUM(ariarequired) AS requiredSUM,
+       SUM(ariainvalid) AS ariainvalidSUM,
+       SUM(allinputs) AS allinputsSUM
 
-from(
-select url, array_length(ariarequired) ariarequired,
-            array_length(ariainvalid) ariainvalid,
-            array_length(allinputs) allinputs
-from(
-select
+FROM(
+SELECT url, ARRAY_LENGTH(ariarequired) AS ariarequired,
+            ARRAY_LENGTH(ariainvalid) AS ariainvalid,
+            ARRAY_LENGTH(allinputs) AS allinputs
+FROM(
+SELECT
 url, 
-REGEXP_EXTRACT_ALL(lower(body),r'(<input.*aria-required.*/>)') ariarequired,
-REGEXP_EXTRACT_ALL(lower(body),r'(<input.*aria-invalid.*/>)') ariainvalid,
-REGEXP_EXTRACT_ALL(lower(body),r'(<input.*/>)') allinputs
-from `response_bodies.2019_07_01_mobile` 
-where lower(body) like "%<input%"
+REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*aria-required.*/>)') AS ariarequired,
+REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*aria-invalid.*/>)') AS ariainvalid,
+REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*/>)') AS allinputs
+FROM `response_bodies.2019_07_01_mobile` 
+WHERE LOWER(body) LIKE "%<input%"
 ))

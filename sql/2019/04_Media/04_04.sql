@@ -1,38 +1,39 @@
+#standardSQL
 /*
-standard sql
+
 
 10 TB query  
 NB: I have only tested this on the mobile 1k sample data...it worked there
 
 this query looks in all response bodies for <svg *  /svg> tags 
 in a non greedy way - so we get all the SVGs that are inline.
-i then unnest the SVGS from the array, and calculate the length
-and get percentiles (and total count).
+i then UNNEST the SVGS FROM the array, AND calculate the LENGTH
+and get percentiles (and total COUNT).
 
 
 */
-select
-    approx_quantiles(svgCount, 1000)[offset(250)] as p25,
-    approx_quantiles(svgCount, 1000)[offset(500)] as p50,
-    approx_quantiles(svgCount, 1000)[offset(750)] as p75,
-    approx_quantiles(svgCount, 1000)[offset(900)] as p90,
-    count(url) as pagecount
-from(
-select url, count(flat_svgs) AS svgCount
-from(
+SELECT
+    APPROX_QUANTILES(svgCOUNT, 1000)[offset(250)] AS p25,
+    APPROX_QUANTILES(svgCOUNT, 1000)[offset(500)] AS p50,
+    APPROX_QUANTILES(svgCOUNT, 1000)[offset(750)] AS p75,
+    APPROX_QUANTILES(svgCOUNT, 1000)[offset(900)] AS p90,
+    COUNT(url) AS pageCOUNT
+FROM(
+SELECT url, COUNT(flat_svgs) AS svgCOUNT
+FROM(
 
-select url, flat_svgs , length(flat_svgs) svglen
+SELECT url, flat_svgs , LENGTH(flat_svgs) AS svglen
 
-from(
-(select url, REGEXP_EXTRACT_ALL(lower(body),r'(<svg.*?/svg>)') svgs
-from `response_bodies.2019_07_01_mobile`  svglist
-where body like "%<svg%" and url not like "%svg") 
+FROM(
+(SELECT url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<svg.*?/svg>)') svgs
+FROM `response_bodies.2019_07_01_mobile`  svglist
+WHERE body LIKE "%<svg%" AND url NOT LIKE "%svg") 
 )
-cross join UNNEST(svgs) AS flat_svgs
+CROSS JOIN UNNEST(svgs) AS flat_svgs
 /*
-need these when unnesting the queries
-group by url, flat_svgs
-order by url asc
+need these when UNNESTing the queries
+GROUP BY url, flat_svgs
+ORDER BY url asc
 */
-)group by url
+)GROUP BY url
 )

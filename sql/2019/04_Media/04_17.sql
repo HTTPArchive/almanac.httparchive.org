@@ -1,22 +1,27 @@
+#StandardSQL
 /*
 04_17  
 
 66GB
 
 top video players - I have chosen a few based on my knowledge... Perhaps there are more?
-- there are 6400 here where Gzip could make a large difference....
+- there are 6400 here WHERE Gzip could make a large difference....
 
 */
 
 
-select url, respsize, ext, mimetype, _gzip_save
-from `summary_requests.2019_07_01_mobile` 
-where (lower(url) like "%hls.js" or 
-      lower(url) like "%video.js" or 
-      lower(url) like "%shaka.js" or 
-      lower(url) like "%jwplayer.js" or 
-      lower(url) like "brightcove-player-loader.min.js")
+SELECT url, 
+      respsize, 
+      ext, 
+      mimetype, 
+      _gzip_save
+FROM `summary_requests.2019_07_01_mobile` 
+WHERE (LOWER(url) LIKE "%hls.js" OR  
+      LOWER(url) LIKE "%video.js" OR  
+      LOWER(url) LIKE "%shaka.js" OR  
+      LOWER(url) LIKE "%jwplayer.js" OR  
+      LOWER(url) LIKE "brightcove-player-loader.min.js")
      
      
      
-order by respsize desc
+ORDER BY respsize desc

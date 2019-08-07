@@ -1,3 +1,4 @@
+#standardSQL
 /*
 standard sql
 
@@ -7,21 +8,23 @@ standard sql
 
 how many movies.. how big (in percentiles by extension).. 
 
-remove the percentiles to get a better count for each format.
-remove the ext and cnter to get a better idea on sizes.
+remove the percentiles to get a better COUNT for each format.
+remove the ext AND cnter to get a better idea on sizes.
 
 
 
 */
 
-select ext, count(*) cnter, approx_quantiles(respsize,11) sizepercentiles 
+SELECT ext, 
+        COUNT(*) AS cnter, 
+        APPROX_QUANTILES(respsize,11) AS sizepercentiles 
 
-from(
+FROM(
 
-select url, respsize, ext, mimetype, format
+SELECT url, respsize, ext, mimetype, format
 
-from `summary_requests.2019_07_01_mobile` 
-where mimetype like "%video%"
+FROM `summary_requests.2019_07_01_mobile` 
+WHERE mimetype LIKE "%video%"
 )
-group by format, ext
-order by cnter desc
+GROUP BY format, ext
+ORDER BY cnter desc

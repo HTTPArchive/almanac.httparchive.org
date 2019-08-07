@@ -1,3 +1,4 @@
+#StandardSQL
 /*
 standard SQL
 04_09a
@@ -9,9 +10,11 @@ I'll do another query for the meta tag
 */
 
 
-select url, NET.HOST(url) host, respOtherHeaders
+SELECT url, 
+	NET.HOST(url)AS  host, 
+	respOtherHeaders
 
 
-from `summary_requests.2019_07_01_mobile`
-where respOtherHeaders like "%Accept-CH%"
+FROM `summary_requests.2019_07_01_mobile`
+WHERE respOtherHeaders LIKE "%Accept-CH%"
 ORDER BY HOST ASC

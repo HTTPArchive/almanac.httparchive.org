@@ -1,3 +1,4 @@
+#StandardSQL
 /*
 standard sql
 09_09
@@ -6,19 +7,19 @@ standard sql
 
 only tested on the sample response body samples
 presence of lang attribute
-this grabs the lang tag hout o fthe html header, and then works to remove the lang=, and "" from the language.
-then it orders the languages by appearance in the dataset
+this grabs the lang tag hout o fthe html header, AND then works to remove the lang=, AND "" FROM the language.
+then it ORDERs the languages by appearance in the dataset
 
 _09_08 is looking for a cations track... added to this query  
 */
 
-select lower(langtag), count(*) cnt from(
-select url, trim(ltrim(regexp_extract(htmlopentag, r'(lang=.*? )'),"lang="), '"') langtag
-from(
-select
-url, REGEXP_EXTRACT(lower(body),r'(<html.*?lang=.*?>)') htmlopentag
-from `response_bodies.2019_07_01_mobile` videotagset
-where lower(body) like "%lang=%"
+SELECT LOWER(langtag), COUNT(*) cnt FROM(
+SELECT url, trim(ltrim(regexp_extract(htmlopentag, r'(lang=.*? )'),"lang="), '"') langtag
+FROM(
+SELECT
+url, REGEXP_EXTRACT(LOWER(body),r'(<html.*?lang=.*?>)') htmlopentag
+FROM `response_bodies.2019_07_01_mobile` videotagset
+WHERE LOWER(body) LIKE "%lang=%"
 ))
-group by langtag
-order by cnt desc
+GROUP BY langtag
+ORDER BY cnt desc

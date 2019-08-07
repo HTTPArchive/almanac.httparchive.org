@@ -1,25 +1,26 @@
+#StandardSQL
 /*
 09_03
 
 10TB
 headings  <h1> -> <h6>
-this gives the final totals.  If we unwind the query we can break down count by url.
+this gives the final totals.  If we unwind the query we can break down COUNT by url.
 
 only tested on the sample data set
 */
 
 
-select url, flat_heading, count(flat_heading) cnt from
+SELECT url, flat_heading, COUNT(flat_heading) cnt FROM
 (
-select url, heading from (
-select
-url, REGEXP_EXTRACT_ALL(lower(body),r'(<h[1-6]>)') heading
-from `response_bodies.2019_07_01_mobile` 
+SELECT url, heading FROM (
+SELECT
+url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<h[1-6]>)') heading
+FROM `response_bodies.2019_07_01_mobile` 
 
 )
-where array_length(heading) >0
-order by array_length(heading) desc
+WHERE ARRAY_LENGTH(heading) >0
+ORDER BY ARRAY_LENGTH(heading) desc
 )
-cross join unnest(heading) flat_heading
-group by url, flat_heading
-order by url desc, cnt desc
+CROSS JOIN UNNEST(heading) flat_heading
+GROUP BY url, flat_heading
+ORDER BY url desc, cnt desc

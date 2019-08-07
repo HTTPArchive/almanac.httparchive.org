@@ -1,3 +1,4 @@
+#standardSQL
 /*
 09_13
 standardsql
@@ -5,9 +6,9 @@ standardsql
 only tested on sample data
 
 headings  <h1> -> <h6>
-are heading levels out of order?
-the GetNames and counts fills an array in order of the way the headings appear, 
-so as long as that array is in order, the arrangement of headings in the page is ok
+are heading levels out of ORDER?
+the GetNames AND COUNTs fills an array in ORDER of the way the headings appear, 
+so AS long AS that array is in ORDER, the arrangement of headings in the page is ok
 <h1>
 <h2>
 <h1>
@@ -15,25 +16,25 @@ is ok
 
 <h2>
 <h1> 
-is not ok.
+is NOT ok.
 
 This query is a bit convoluted.  Sorry about that :)
 
-there are 2 similar queries that are joined.
+there are 2 similar queries that are JOINed.
 both run a regex to get all of the headings in the body.
-then I run GetNumberOnly to strip out the < h and > and only the first occurence of each
+then I run GetNumberOnly to strip out the < h AND > AND only the first occurence of each
 here the queries divide
 - - - - -- - - 
-ordered query takes this list and orders them from 1->6
-unnests the array of numbers in to a comma seperated string
+ORDERed query takes this list AND ORDERs them FROM 1->6
+UNNESTs the array of numbers in to a comma seperated string
 
 -------
-h query takes the list as from the body of the doc into a comma seperated string
+h query takes the list AS FROM the body of the doc into a comma seperated string
 --- - - - - - - - - -
-if the order is correct - thr ordered list will match the h query.
-if they are out of order - the if will give a 0
-then sum up "all sites" (count)
-     sum up all ones - headings in order
+if the ORDER is correct - thr ORDERed list will match the h query.
+if they are out of ORDER - the if will give a 0
+then SUM up "all sites" (COUNT)
+     SUM up all ones - headings in ORDER
 
 */
 CREATE TEMP FUNCTION GetNumberOnly(elements ARRAY<STRING>) AS (
@@ -44,49 +45,51 @@ CREATE TEMP FUNCTION GetNumberOnly(elements ARRAY<STRING>) AS (
   )
 );
 
-select count(*) count, sum(inorder) sitesheadingsinorder
-from(
-select url, if (ordered = hnumber,1,0) inorder
-from(
+SELECT COUNT(*) AS COUNT, SUM(inORDER)  AS sitesheadingsinORDER
+FROM(
+SELECT url, if (ORDERed = hnumber,1,0) AS inORDER
+FROM(
 
-/* get the array with < h and > removed, nad also create the ordered version*/
-select ordered.url, ordered.ordered, hnumber.hnumber
+/* get the array with < h AND > removed, nad also create the ORDERed version*/
+SELECT ORDERed.url, 
+	   ORDERed.ORDERed, 
+	   hnumber.hnumber
 
-from
-(select url, string_agg(flat_hordered, ",") ordered
-from(
-select url,   
+FROM
+(SELECT url, string_agg(flat_hORDERed, ",") ORDERed
+FROM(
+SELECT url,   
        heading, 
        /*GetNumberOnly(heading) AS hnumber*/
-       ARRAY(SELECT x FROM UNNEST(GetNumberOnly(heading)) AS x ORDER BY x) AS hordered
+       ARRAY(SELECT x FROM UNNEST(GetNumberOnly(heading)) AS x ORDER BY x) AS hORDERed
 
-from (
-select
-url, REGEXP_EXTRACT_ALL(lower(body),r'(<h[1-6]>)') heading
-from `response_bodies.2019_07_01_mobile` 
+FROM (
+SELECT
+url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<h[1-6]>)') heading
+FROM `response_bodies.2019_07_01_mobile` 
 )
-where array_length(heading) >1 
-) cross join unnest(hordered) as flat_hordered
-group by url) ordered
+WHERE ARRAY_LENGTH(heading) >1 
+) CROSS JOIN UNNEST(hORDERed) AS flat_hORDERed
+GROUP BY url) ORDERed
 
 
-join
+JOIN
 
 
-(select url, string_agg(flat_hnumber, ",") hnumber
-from(
-select url,   
+(SELECT url, string_agg(flat_hnumber, ",") hnumber
+FROM(
+SELECT url,   
        heading, 
        GetNumberOnly(heading) AS hnumber
-       /*ARRAY(SELECT x FROM UNNEST(GetNumberOnly(heading)) AS x ORDER BY x) AS hordered*/
+       /*ARRAY(SELECT x FROM UNNEST(GetNumberOnly(heading)) AS x ORDER BY x) AS hORDERed*/
 
-from (
-select
-url, REGEXP_EXTRACT_ALL(lower(body),r'(<h[1-6]>)') heading
-from `response_bodies.2019_07_01_mobile` 
+FROM (
+SELECT
+url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<h[1-6]>)') heading
+FROM `response_bodies.2019_07_01_mobile` 
 )
-where array_length(heading) >1 
-) cross join unnest(hnumber) as flat_hnumber
-group by url) hnumber
-on(hnumber.url = ordered.url)
+WHERE ARRAY_LENGTH(heading) >1 
+) CROSS JOIN UNNEST(hnumber) AS flat_hnumber
+GROUP BY url) hnumber
+on(hnumber.url = ORDERed.url)
 ))
