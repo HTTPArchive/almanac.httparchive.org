@@ -12,7 +12,7 @@ OUTLIER_MIN = 30
 def generate_histogram(year, key, x, y, x_label):
     path = 'data/%s/%s.json' % (year, key)
 
-    print('\nGenerating histogram from the following file: %s' % path)
+    print(' - Using this file: %s' % path)
 
     # Read the data file for the visualisation
     data = pandas.read_json(path)
@@ -20,7 +20,7 @@ def generate_histogram(year, key, x, y, x_label):
 
     # Rationalise the data set, like HA currently does.
     data = data[data.cdf < 0.95]
-    print('Reduced the data set from %s to %s to fall within acceptable margins.' % (original_length, len(data)))
+    print(' - Reduced the data set from: %s to: %s' % (original_length, len(data)))
     
     data[y] *= 100
 
