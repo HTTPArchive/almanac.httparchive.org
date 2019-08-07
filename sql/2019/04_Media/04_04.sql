@@ -26,7 +26,7 @@ SELECT url, flat_svgs , LENGTH(flat_svgs) AS svglen
 
 FROM(
 (SELECT url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<svg.*?/svg>)') svgs
-FROM `response_bodies.2019_07_01_mobile`  svglist
+FROM `response_bodies.2019_07_01_*`  svglist
 WHERE body LIKE "%<svg%" AND url NOT LIKE "%svg") 
 )
 CROSS JOIN UNNEST(svgs) AS flat_svgs

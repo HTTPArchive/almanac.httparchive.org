@@ -27,6 +27,6 @@ url,
 REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*aria-required.*/>)')  AS ariarequired,
 REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*aria-invalid.*/>)')  AS ariainvalid,
 REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*/>)')  AS allinputs
-FROM `response_bodies.2019_07_01_mobile` 
+FROM `response_bodies.2019_07_01_*` 
 WHERE LOWER(body) LIKE "%<input%"
 ))

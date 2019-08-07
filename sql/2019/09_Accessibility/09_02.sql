@@ -19,7 +19,7 @@ FROM(
 SELECT
 	url, 
 	REGEXP_EXTRACT_ALL(LOWER(body),r'(role=['"]*[^\s\'"]+?['"]*)') AS ariarole
-FROM `response_bodies.2019_07_01_mobile` 
+FROM `response_bodies.2019_07_01_*` 
 WHERE LOWER(body) LIKE "%role=%"
 )
 CROSS JOIN UNNEST(ariarole) flat_ariarole

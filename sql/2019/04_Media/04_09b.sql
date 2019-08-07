@@ -11,8 +11,8 @@ Only 3 hits in the 1K mobile response body sample set
 */
 
 
-SELECT url,body
+SELECT url,body, _TABLE_SUFFIX AS client,
 
 
-FROM `response_bodies.2019_07_01_mobile`
+FROM `response_bodies.2019_07_01_*`
 WHERE body LIKE "%Accept-CH%"

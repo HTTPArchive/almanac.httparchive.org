@@ -25,7 +25,7 @@ SELECT
       url, 
       REGEXP_EXTRACT_ALL(LOWER(body),r'<?.*role=[\'"]*[^\s\'"]+[\'"]*.*?>') ariaenclosed,
       body
-FROM `almanac.response_bodies_mobile_1k` 
+FROM `response_bodies.2019_07_01_*` 
 WHERE LOWER(body) LIKE "%role=%"
 
 )

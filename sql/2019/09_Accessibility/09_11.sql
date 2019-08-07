@@ -35,7 +35,7 @@ SELECT url, '<h1>' in UNNEST(heading) AS h1,
              ARRAY_LENGTH(heading) numberofheadings FROM (
 SELECT
 url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<h[1-6]>)') heading
-FROM `response_bodies.2019_07_01_mobile` 
+FROM `response_bodies.2019_07_01_*` 
 
 )
 WHERE ARRAY_LENGTH(heading) >1

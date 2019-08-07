@@ -18,7 +18,7 @@ SELECT url, trim(ltrim(regexp_extract(htmlopentag, r'(lang=.*? )'),"lang="), '"'
 FROM(
 SELECT
 url, REGEXP_EXTRACT(LOWER(body),r'(<html.*?lang=.*?>)') htmlopentag
-FROM `response_bodies.2019_07_01_mobile` videotagset
+FROM `response_bodies.2019_07_01_*` videotagset
 WHERE LOWER(body) LIKE "%lang=%"
 ))
 GROUP BY langtag

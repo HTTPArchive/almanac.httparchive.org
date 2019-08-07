@@ -9,8 +9,8 @@ looking up 3 top VR frameworks.. I COUNT only 52 responses - NOT highly utilised
 */
 
 
-SELECT url, respsize, ext, mimetype, format
+SELECT url, respsize, ext, mimetype, format, _TABLE_SUFFIX AS client
 
-FROM `summary_requests.2019_07_01_mobile` 
+FROM `summary_requests.2019_07_01_*` 
 WHERE url LIKE "%aframe.min.js" OR  url LIKE "%babylon.js" OR  url LIKE "%argon.js"
 ORDER BY url asc, respsize asc

@@ -15,7 +15,7 @@ SELECT url, flat_heading, COUNT(flat_heading) cnt FROM
 SELECT url, heading FROM (
 SELECT
 url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<h[1-6]>)') heading
-FROM `response_bodies.2019_07_01_mobile` 
+FROM `response_bodies.2019_07_01_*` 
 
 )
 WHERE ARRAY_LENGTH(heading) >0

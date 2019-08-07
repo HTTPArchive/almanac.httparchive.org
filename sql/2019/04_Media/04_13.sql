@@ -27,7 +27,7 @@ added in alt tag query.  get COUNT AND LENGTH - note that LENGTH 6 = alt="" (emp
 */
 
 
-SELECT APPROX_QUANTILES(srcsetCOUNT,10) srcsetperc, APPROX_QUANTILES(sizesCOUNT,10) sizesperc, 
+SELECT client, APPROX_QUANTILES(srcsetCOUNT,10) srcsetperc, APPROX_QUANTILES(sizesCOUNT,10) sizesperc, 
 APPROX_QUANTILES(ratio,10) ratioperc,
 APPROX_QUANTILES(srcCOUNT,10) srcperc,
 APPROX_QUANTILES(altLENGTH,10) altTextLENGTHPercentiles,
@@ -44,25 +44,25 @@ SELECT
      (LENGTH(srcset) - LENGTH(REGEXP_REPLACE(srcset, ',', '')) +1)/(LENGTH(sizes) - LENGTH(REGEXP_REPLACE(sizes, ',', '')) +1) ratio
      ,
      LENGTH(src)/LENGTH(src) srcCOUNT,
-     LENGTH(alt)/LENGTH(alt) altCOUNT, LENGTH(alt) altLENGTH,
+     LENGTH(alt)/LENGTH(alt) altCOUNT, LENGTH(alt) altLENGTH, client,
      #double check that its working
      srcset, sizes, alt
 FROM(
 
 SELECT REGEXP_EXTRACT(flat_img,r'srcset=".*?"') srcset, REGEXP_EXTRACT(flat_img,r'sizes=".*?"') sizes,
-REGEXP_EXTRACT(flat_img,r'src=".*?"') src, REGEXP_EXTRACT(flat_img,r'alt=".*?"') alt
+REGEXP_EXTRACT(flat_img,r'src=".*?"') src, REGEXP_EXTRACT(flat_img,r'alt=".*?"') alt, client
 
 #here I am extracting the srcset=" *** " AND sizes " *** " for analysis   
 FROM(
-SELECT url, flat_img 
+SELECT url, flat_img, client
 #this CROSS JOIN flattens the array of image tags into strings.
 FROM(
 
 #this query grabs all img tags with srcset inside. it also grabs the same for the picture tag
-SELECT url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<img.*?srcset.*?>)') img,REGEXP_EXTRACT_ALL(LOWER(body),r'(<picture.*?srcset.*?/picture>)') picture
-FROM `response_bodies.2019_07_01_mobile`  srcsets
+SELECT url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<img.*?srcset.*?>)') img,REGEXP_EXTRACT_ALL(LOWER(body),r'(<picture.*?srcset.*?/picture>)') picture, _TABLE_SUFFIX AS client
+FROM `response_bodies.2019_07_01_*`  srcsets
 WHERE body LIKE "%srcset%sizes%")
 CROSS JOIN UNNEST(img) flat_img
 )
 )
-)
+) GROUP BY client

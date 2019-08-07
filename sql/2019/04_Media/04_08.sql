@@ -27,7 +27,7 @@ added in alt tag query.  get COUNT AND LENGTH - note that LENGTH 6 = alt="" (emp
 */
 
 
-SELECT APPROX_QUANTILES(srcsetCOUNT,10) AS srcsetperc, 
+SELECT client, APPROX_QUANTILES(srcsetCOUNT,10) AS srcsetperc, 
 	APPROX_QUANTILES(sizesCOUNT,10) AS sizesperc, 
 	APPROX_QUANTILES(ratio,10) AS ratioperc,
 	APPROX_QUANTILES(srcCOUNT,10) AS srcperc,
@@ -40,6 +40,7 @@ SELECT APPROX_QUANTILES(srcsetCOUNT,10) AS srcsetperc,
 FROM(
 
 SELECT 
+     client, 
      #this COUNTs the number of commas, AND adds one - to get the number of srcsets
      LENGTH(srcset) - LENGTH(REGEXP_REPLACE(srcset, ',', '')) +1 srcsetCOUNT,
      #this COUNTs the number of commas, AND adds one - to get the number of sizes
@@ -53,20 +54,20 @@ SELECT
      srcset, sizes, alt
 FROM(
 
-SELECT REGEXP_EXTRACT(flat_img,r'srcset=".*?"') srcset, REGEXP_EXTRACT(flat_img,r'sizes=".*?"') sizes,
+SELECT client, REGEXP_EXTRACT(flat_img,r'srcset=".*?"') srcset, REGEXP_EXTRACT(flat_img,r'sizes=".*?"') sizes,
 REGEXP_EXTRACT(flat_img,r'src=".*?"') src, REGEXP_EXTRACT(flat_img,r'alt=".*?"') alt
 
 #here I am extracting the srcset=" *** " AND sizes " *** " for analysis   
 FROM(
-SELECT url, flat_img 
+SELECT client, url, flat_img 
 #this CROSS JOIN flattens the array of image tags into strings.
 FROM(
 
 #this query grabs all img tags with srcset inside. it also grabs the same for the picture tag
-SELECT url, REGEXP_EXTRACT_ALL(body,r'(<img.*?srcset.*?>)') img,REGEXP_EXTRACT_ALL(body,r'(<picture.*?srcset.*?/picture>)') picture
-FROM `response_bodies.2019_07_01_mobile`  srcsets
+SELECT url, REGEXP_EXTRACT_ALL(body,r'(<img.*?srcset.*?>)') img,REGEXP_EXTRACT_ALL(body,r'(<picture.*?srcset.*?/picture>)') picture,  _TABLE_SUFFIX AS client
+FROM `response_bodies.2019_07_01_*`  srcsets
 WHERE body LIKE "%srcset%sizes%")
 CROSS JOIN UNNEST(img) flat_img
 )
 )
-)
+)GROUP BY client

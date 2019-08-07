@@ -22,6 +22,6 @@ FROM(
 
 SELECT url, pageid, respsize, ext, format
 
-FROM `httparchive.summary_requests.2019_07_01_mobile`
+FROM `httparchive.summary_requests.2019_07_01_*`
 WHERE ext ="svg")
 GROUP BY pageid)

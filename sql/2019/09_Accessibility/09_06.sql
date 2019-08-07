@@ -22,7 +22,7 @@ SELECT COUNTer, COUNT (*) FROM(
 SELECT url, flat_ids , COUNT(flat_ids) COUNTer FROM(
 SELECT
 url, regexp_extract_all(LOWER(body),r'(id=["\']*[^\s\'"]*["\']*)') ids
-FROM `response_bodies.2019_07_01_mobile` 
+FROM `response_bodies.2019_07_01_*` 
 WHERE LOWER(body) LIKE "%id=%"  )
 CROSS JOIN UNNEST(ids) flat_ids
 GROUP BY url, flat_ids

@@ -14,8 +14,9 @@ SELECT url,
       respsize, 
       ext, 
       mimetype, 
-      _gzip_save
-FROM `summary_requests.2019_07_01_mobile` 
+      _gzip_save,
+      _TABLE_SUFFIX AS client
+FROM `summary_requests.2019_07_01_*` 
 WHERE (LOWER(url) LIKE "%hls.js" OR  
       LOWER(url) LIKE "%video.js" OR  
       LOWER(url) LIKE "%shaka.js" OR  

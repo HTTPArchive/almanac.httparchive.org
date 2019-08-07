@@ -10,7 +10,9 @@ This pulls out every parameter FROM the video tag AND totals them.
 
 _09_07 is looking for a cations track... added to this query  
 */
-SELECT COUNT(*) COUNTvideo, 
+SELECT 
+	  client,
+	  COUNT(*) COUNTvideo, 
       SUM(cntsrc) totalsrc, 
       SUM(cnttype) totaltype,
       SUM(cntw	) totalwidth,
@@ -33,7 +35,7 @@ FROM(
 
 SELECT
   url,
- 
+  client,
   IF(flat_videotag LIKE "%src%", (LENGTH(flat_videotag) - LENGTH(REGEXP_REPLACE(flat_videotag, 'src', '')))/3,0) cntsrc,
   
   IF(flat_videotag LIKE "%source%", (LENGTH(flat_videotag) - LENGTH(REGEXP_REPLACE(flat_videotag, 'source', '')))/6,0) cntsource,
@@ -60,13 +62,13 @@ SELECT
   FROM
 
 (
-SELECT url, flat_videotag
+SELECT url, flat_videotag, client
 FROM(
 SELECT
-url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<video[\s\S]+?<\/video>)') videotag
-FROM `response_bodies.2019_07_01_mobile` videotagset
+url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<video[\s\S]+?<\/video>)') videotag,_TABLE_SUFFIX AS client
+FROM `response_bodies.2019_07_01_*` videotagset
 WHERE body LIKE "%</video>%"
 )
 CROSS JOIN UNNEST(videotag) flat_videotag
 )
-)
+)GROUP BY client

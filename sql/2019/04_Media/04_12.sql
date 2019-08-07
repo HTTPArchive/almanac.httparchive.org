@@ -13,6 +13,6 @@ this gets the requests whose servers add a "Vary: User-Agent" OR  "Vary: Accept"
 SELECT url, NET.HOST(url) host, respOtherHeaders
 
 
-FROM `summary_requests.2019_07_01_mobile`
+FROM `summary_requests.2019_07_01_*`
 WHERE respOtherHeaders LIKE "%Vary:%User-Agent%" OR respOtherHeaders LIKE "%Vary:%Accept%"
 ORDER BY HOST ASC

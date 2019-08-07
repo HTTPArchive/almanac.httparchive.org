@@ -14,7 +14,7 @@ SELECT
 url, 
 REGEXP_EXTRACT_ALL(LOWER(body),r'(aria-keyshortcuts=["\']*[^\s\'"]*["\']*)') ariakbShortcut
 
-FROM `response_bodies.2019_07_01_mobile` 
+FROM `response_bodies.2019_07_01_*` 
 WHERE LOWER(body) LIKE "%aria-keyshortcuts%"
 ) WHERE ARRAY_LENGTH(ariakbShortcut) >0
 ORDER BY ARRAY_LENGTH(ariakbShortcut) desc

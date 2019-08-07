@@ -15,6 +15,6 @@ SELECT url,
 	respOtherHeaders
 
 
-FROM `summary_requests.2019_07_01_mobile`
+FROM `summary_requests.2019_07_01_*`
 WHERE respOtherHeaders LIKE "%Accept-CH%"
 ORDER BY HOST ASC
