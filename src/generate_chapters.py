@@ -5,8 +5,7 @@ import yaml
 from visualisation_lexer import VisualisationLexer
 
 renderer = mistune.Renderer()
-inline = VisualisationLexer(renderer)
-inline.enable_wiki_link()
+inline = VisualisationLexer(renderer).enable()
 markdown = mistune.Markdown(renderer=renderer, inline=inline)
 
 def generate_chapters():

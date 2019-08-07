@@ -18,5 +18,3 @@ And **only** a test
 > If it was anything more, it would certainly have had better placeholder text
 
 [!generate_histogram(year=2019, key='01_01', x='kbytes', y='pdf', x_label='KB')|Histogram of JavaScript Bytes]
-
-[[test|test]]
