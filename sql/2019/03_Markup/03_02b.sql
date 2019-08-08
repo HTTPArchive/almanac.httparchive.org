@@ -1,5 +1,5 @@
 #standardSQL
-# 03_02: Top elements
+# 03_02b: Top elements
 CREATE TEMPORARY FUNCTION getElements(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -24,5 +24,5 @@ GROUP BY
   client,
   element
 ORDER BY
-  pct DESC,
+  freq / total DESC,
   client

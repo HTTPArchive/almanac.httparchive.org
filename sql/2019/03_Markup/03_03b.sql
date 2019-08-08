@@ -24,5 +24,5 @@ GROUP BY
   client,
   custom_element
 ORDER BY
-  pct DESC,
+  freq / total DESC,
   client

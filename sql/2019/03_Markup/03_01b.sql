@@ -30,5 +30,5 @@ GROUP BY
   client,
   deprecated
 ORDER BY
-  freq DESC,
+  freq / total DESC,
   client
