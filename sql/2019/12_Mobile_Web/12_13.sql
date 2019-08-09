@@ -2,7 +2,7 @@
 
 # input types occurence prefined set %
 
-CREATE TEMPORARY FUNCTION getInputTypes(payload STRING)
+CREATE TEMPORARY FUNCTION hasNewInputType(payload STRING)
 RETURNS BOOL LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
@@ -20,7 +20,7 @@ RETURNS BOOL LANGUAGE js AS '''
 
 SELECT
     COUNT(0) as count,
-    COUNTIF(getInputTypes(payload)) AS occurence,
-    ROUND(COUNTIF(getInputTypes(payload)) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
+    COUNTIF(hasNewInputType(payload)) AS occurence,
+    ROUND(COUNTIF(hasNewInputType(payload)) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
     `httparchive.pages.2019_07_01_mobile`

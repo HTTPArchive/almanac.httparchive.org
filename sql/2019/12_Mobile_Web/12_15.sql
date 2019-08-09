@@ -2,7 +2,7 @@
 
 # input attributes occurence defined set % (minus placeholder and required)
 
-CREATE TEMPORARY FUNCTION getInputAttributes(payload STRING)
+CREATE TEMPORARY FUNCTION hasInputAttributes(payload STRING)
 RETURNS BOOL LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
@@ -24,7 +24,7 @@ RETURNS BOOL LANGUAGE js AS '''
 
 SELECT
     COUNT(0) as count,
-    COUNTIF(getInputAttributes(payload)) AS occurence,
-    ROUND(COUNTIF(getInputAttributes(payload)) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
+    COUNTIF(hasInputAttributes(payload)) AS occurence,
+    ROUND(COUNTIF(hasInputAttributes(payload)) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
     `httparchive.pages.2019_07_01_mobile`
