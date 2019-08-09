@@ -1,6 +1,6 @@
 #standardSQL
 # 07_21: Percentiles of layout CPU time
-#where the main thread of the browser was busy
+#corresponding to the time main thread of the browser was busy
 SELECT
   client,
   ROUND(APPROX_QUANTILES(layoutCpuTime, 1000)[OFFSET(100)] / 1000, 2) AS p10,
