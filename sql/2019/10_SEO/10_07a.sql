@@ -4,7 +4,6 @@
 
 SELECT
     COUNT(url) AS total,
-    COUNT(DISTINCT url) AS distinct_total,
 
     #title
     SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.document-title.score') as NUMERIC)) AS title_score_sum,

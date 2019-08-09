@@ -9,7 +9,8 @@ SELECT
     APPROX_QUANTILES(words_count, 1000)[OFFSET(750)] AS p75_content_words_count,
     AVG(words_count) AS avg_words_count,
     AVG(word_elements) AS avg_words_elements,
-    # titles
+    
+    # headers
     APPROX_QUANTILES(header_words_count, 1000)[OFFSET(250)] AS p25_header_words_count,
     APPROX_QUANTILES(header_words_count, 1000)[OFFSET(500)] AS media_header_words_count,
     APPROX_QUANTILES(header_words_count, 1000)[OFFSET(750)] AS p75_header_words_count,
