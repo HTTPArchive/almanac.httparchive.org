@@ -4,6 +4,6 @@
 
 SELECT
     COUNT(url) AS total,
-    ROUND(COUNTIF(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['12.11']") = '1') * 100 / COUNT(0), 2) AS pct_has_icon_button
+    ROUND(COUNTIF(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['12.11']") > 0) * 100 / COUNT(0), 2) AS pct_has_icon_button
 FROM
     `httparchive.pages.2019_07_01_mobile`
