@@ -1,12 +1,10 @@
 #standardSQL
-# 17_09: Count of sites with server-timing header
+# 17_09: Percentage of responses with server-timing header
 SELECT
   _TABLE_SUFFIX AS client,
-  COUNT(respOtherHeaders) AS serverTiming
+  ROUND(SUM(IF(LOWER(respOtherHeaders) LIKE "%server-timing%", 1, 0)) / COUNT(0), 4) AS pctServerTiming
 FROM 
   `httparchive.summary_requests.2019_07_01_*`
-WHERE
-   STRPOS(LOWER(respOtherHeaders), "server-timing") > 0
 GROUP BY
   client
 
