@@ -18,12 +18,12 @@ SELECT
 FROM (
   SELECT
     client,
-    COUNTIF(body LIKE '%Atomics%') AS atomics,
-    COUNTIF(body LIKE '%Intl%') AS intl,
-    COUNTIF(body LIKE '%Proxy%') AS proxy,
-    COUNTIF(body LIKE '%SharedArrayBuffer%') AS sharedarraybuffer,
-    COUNTIF(body LIKE '%WeakMap%') AS weakmap,
-    COUNTIF(body LIKE '%WeakSet%') AS weakset
+    COUNTIF(body LIKE '%Atomics.%') AS atomics,
+    COUNTIF(body LIKE '%new Intl.%') AS intl,
+    COUNTIF(body LIKE '%new Proxy%') AS proxy,
+    COUNTIF(body LIKE '%new SharedArrayBuffer(%') AS sharedarraybuffer,
+    COUNTIF(body LIKE '%new WeakMap%') AS weakmap,
+    COUNTIF(body LIKE '%new WeakSet%') AS weakset
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE

@@ -2,6 +2,7 @@
 # 01_09: Changes in top JS libraries
 SELECT
   app,
+  client,
   freq_2018,
   ROUND(pct_2018 * 100, 2) AS pct_2018,
   freq_2019,
@@ -11,28 +12,36 @@ SELECT
 FROM (
   SELECT
     app,
+    _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS freq_2018,
     COUNT(DISTINCT url) / total AS pct_2018
   FROM
-    (SELECT COUNT(DISTINCT url) AS total FROM `httparchive.summary_pages.2018_07_01_*`),
+    (SELECT _TABLE_SUFFIX, COUNT(DISTINCT url) AS total FROM `httparchive.summary_pages.2018_07_01_*` GROUP BY _TABLE_SUFFIX)
+  JOIN
     `httparchive.technologies.2018_07_01_*`
+  USING (_TABLE_SUFFIX)
   GROUP BY
     app,
+    client,
     total)
 JOIN (
   SELECT
     app,
+    _TABLE_SUFFIX AS client,
     COUNT(DISTINCT url) AS freq_2019,
     COUNT(DISTINCT url) / total AS pct_2019
   FROM
-    (SELECT COUNT(DISTINCT url) AS total FROM `httparchive.summary_pages.2019_07_01_*`),
+    (SELECT _TABLE_SUFFIX, COUNT(DISTINCT url) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+  JOIN
     `httparchive.technologies.2019_07_01_*`
+  USING (_TABLE_SUFFIX)
   WHERE
     category = 'JavaScript Libraries'
   GROUP BY
     app,
+    client,
     total)
-USING (app)
+USING (app, client)
 WHERE
   freq_2019 > 10
 ORDER BY
