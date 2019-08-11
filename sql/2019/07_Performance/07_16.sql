@@ -1,6 +1,6 @@
 #standardSQL
 # 07_16: Percentiles of time to interactive
-# This metric comes from Lighthouse
+#This metric comes from Lighthouse
 SELECT
    _TABLE_SUFFIX AS client,
   ROUND(APPROX_QUANTILES(CAST(IFNULL(JSON_EXTRACT(report, "$.audits.consistently-interactive.numericValue"), JSON_EXTRACT(report, "$.audits.interactive.numericValue")) AS FLOAT64), 1000)[OFFSET(100)] / 1000, 2) AS p10,
