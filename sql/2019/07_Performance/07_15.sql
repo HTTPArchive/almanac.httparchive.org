@@ -1,6 +1,6 @@
 #standardSQL
 # 07_15: Percentiles of first cpu idle
-# This metric comes from Lighthouse
+#This metric comes from Lighthouse
 SELECT
    _TABLE_SUFFIX AS client,
   ROUND(APPROX_QUANTILES(CAST(IFNULL(JSON_EXTRACT(report, "$.audits.first-interactive.numericValue"), JSON_EXTRACT(report, "$.audits.first-cpu-idle.numericValue")) AS FLOAT64), 1000)[OFFSET(100)] / 1000, 2) AS p10,
