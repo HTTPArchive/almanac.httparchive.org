@@ -1,15 +1,18 @@
 #standardSQL
 # Percentage of pages that include at least one third party resource.
 SELECT
+  client,
   COUNT(0) AS numberOfPages,
   COUNTIF(numberOfThirdPartyRequests > 0) AS numberOfPagesWithThirdParty,
-  COUNTIF(numberOfThirdPartyRequests > 0) / COUNT(0) AS percentOfPagesWithThirdParty
+  ROUND(COUNTIF(numberOfThirdPartyRequests > 0) * 100 / COUNT(0), 2) AS percentOfPagesWithThirdParty
 FROM (
   SELECT
+    client,
     pageUrl,
     COUNTIF(thirdPartyDomain IS NOT NULL) AS numberOfThirdPartyRequests
   FROM (
     SELECT
+      client,
       page AS pageUrl,
       DomainsOver50Table.requestDomain AS thirdPartyDomain
     FROM
@@ -19,5 +22,8 @@ FROM (
     ON NET.HOST(url) = DomainsOver50Table.requestDomain
   )
   GROUP BY
+    client,
     pageUrl
 )
+GROUP BY
+  client

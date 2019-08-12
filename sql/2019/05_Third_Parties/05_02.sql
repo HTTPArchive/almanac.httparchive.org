@@ -1,15 +1,18 @@
 #standardSQL
 # Percentage of pages that include at least one ad resource.
 SELECT
+  client,
   COUNT(0) AS numberOfPages,
   COUNTIF(numberOfAdRequests > 0) AS numberOfPagesWithAd,
-  COUNTIF(numberOfAdRequests > 0) / COUNT(0) AS percentOfPagesWithAd
+  ROUND(COUNTIF(numberOfAdRequests > 0) * 100 / COUNT(0), 2) AS percentOfPagesWithAd
 FROM (
   SELECT
+    client,
     pageUrl,
     COUNTIF(thirdPartyCategory = 'ad') AS numberOfAdRequests
   FROM (
     SELECT
+      client,
       page AS pageUrl,
       ThirdPartyTable.category AS thirdPartyCategory
     FROM
@@ -19,5 +22,8 @@ FROM (
     ON NET.HOST(url) = ThirdPartyTable.domain
   )
   GROUP BY
+    client,
     pageUrl
 )
+GROUP BY
+  client

@@ -1,6 +1,7 @@
 #standardSQL
 # Percentile breakdown page-relative percentage of total bytes that are from third party requests broken down by third party category.
 SELECT
+  client,
   COUNT(0) AS numberOfPages,
   APPROX_QUANTILES(numberOfThirdPartyBytes / numberOfBytes, 100) AS percentThirdPartyBytesQuantiles,
   APPROX_QUANTILES(numberOfAdBytes / numberOfBytes, 100) AS percentAdBytesQuantiles,
@@ -17,6 +18,7 @@ SELECT
   APPROX_QUANTILES(numberOfOtherBytes / numberOfBytes, 100) AS percentOtherBytesQuantiles
 FROM (
   SELECT
+    client,
     pageUrl,
     COUNT(0) AS numberOfRequests,
     SUM(requestBytes) AS numberOfBytes,
@@ -36,6 +38,7 @@ FROM (
     SUM(IF(thirdPartyCategory = 'other', requestBytes, 0)) AS numberOfOtherBytes
   FROM (
     SELECT
+      client,
       page AS pageUrl,
       respBodySize AS requestBytes,
       DomainsOver50Table.requestDomain AS thirdPartyDomain,
@@ -52,3 +55,5 @@ FROM (
   GROUP BY
     pageUrl
 )
+GROUP BY
+  client
