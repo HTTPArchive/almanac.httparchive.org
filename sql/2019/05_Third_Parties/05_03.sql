@@ -3,7 +3,7 @@
 SELECT
   thirdPartyCategory,
   contentType,
-  COUNT(*) AS totalRequests,
+  COUNT(0) AS totalRequests,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 4) AS percentRequests
 FROM (
   SELECT

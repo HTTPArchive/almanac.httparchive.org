@@ -2,9 +2,9 @@
 # Top 100 third party requests by request volume
 SELECT
   requestUrl,
-  COUNT(*) AS totalRequests,
+  COUNT(0) AS totalRequests,
   SUM(requestBytes) AS totalBytes,
-  ROUND(COUNT(*) * 100 / MAX(t2.totalRequestCount), 2) AS percentRequestCount
+  ROUND(COUNT(0) * 100 / MAX(t2.totalRequestCount), 2) AS percentRequestCount
 FROM (
   SELECT
       url AS requestUrl,
@@ -12,7 +12,7 @@ FROM (
     FROM
       `httparchive.almanac.summary_requests`
 ) t1, (
-  SELECT COUNT(*) AS totalRequestCount FROM `httparchive.almanac.summary_requests`
+  SELECT COUNT(0) AS totalRequestCount FROM `httparchive.almanac.summary_requests`
 ) t2
 GROUP BY
   requestUrl

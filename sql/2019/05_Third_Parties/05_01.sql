@@ -1,9 +1,9 @@
 #standardSQL
 # Percentage of pages that include at least one third party resource.
 SELECT
-  COUNT(*) AS numberOfPages,
+  COUNT(0) AS numberOfPages,
   COUNTIF(numberOfThirdPartyRequests > 0) AS numberOfPagesWithThirdParty,
-  COUNTIF(numberOfThirdPartyRequests > 0) / COUNT(*) AS percentOfPagesWithThirdParty
+  COUNTIF(numberOfThirdPartyRequests > 0) / COUNT(0) AS percentOfPagesWithThirdParty
 FROM (
   SELECT
     pageUrl,

@@ -1,7 +1,7 @@
 #standardSQL
 # Percentile breakdown page-relative percentage of requests that are third party requests broken down by third party category.
 SELECT
-  COUNT(*) AS numberOfPages,
+  COUNT(0) AS numberOfPages,
   COUNTIF(numberOfThirdPartyRequests > 0) AS numberOfPagesWithThirdParty,
   APPROX_QUANTILES(numberOfThirdPartyRequests / numberOfRequests, 100) AS percentThirdPartyRequestsQuantiles,
   APPROX_QUANTILES(numberOfAdRequests / numberOfRequests, 100) AS percentAdRequestsQuantiles,
@@ -19,7 +19,7 @@ SELECT
 FROM (
   SELECT
     pageUrl,
-    COUNT(*) AS numberOfRequests,
+    COUNT(0) AS numberOfRequests,
     COUNTIF(thirdPartyDomain IS NULL) AS numberOfFirstPartyRequests,
     COUNTIF(thirdPartyDomain IS NOT NULL) AS numberOfThirdPartyRequests,
     COUNTIF(thirdPartyCategory = 'ad') AS numberOfAdRequests,

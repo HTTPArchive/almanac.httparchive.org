@@ -2,7 +2,7 @@
 # Top 100 third party domains by total byte weight
 SELECT
   thirdPartyDomain,
-  COUNT(*) AS totalRequests,
+  COUNT(0) AS totalRequests,
   SUM(requestBytes) AS totalBytes,
   ROUND(SUM(requestBytes) * 100 / MAX(totalRequestBytes), 2) AS percentBytes
 FROM (

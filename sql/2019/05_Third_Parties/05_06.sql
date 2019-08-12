@@ -2,7 +2,7 @@
 # Top 100 third party domains by request volume
 SELECT
   thirdPartyDomain,
-  COUNT(*) AS totalRequests,
+  COUNT(0) AS totalRequests,
   SUM(requestBytes) AS totalBytes
 FROM (
   SELECT

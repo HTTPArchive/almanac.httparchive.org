@@ -1,9 +1,9 @@
 #standardSQL
 # Percentage of pages that include at least one ad resource.
 SELECT
-  COUNT(*) AS numberOfPages,
+  COUNT(0) AS numberOfPages,
   COUNTIF(numberOfAdRequests > 0) AS numberOfPagesWithAd,
-  COUNTIF(numberOfAdRequests > 0) / COUNT(*) AS percentOfPagesWithAd
+  COUNTIF(numberOfAdRequests > 0) / COUNT(0) AS percentOfPagesWithAd
 FROM (
   SELECT
     pageUrl,
