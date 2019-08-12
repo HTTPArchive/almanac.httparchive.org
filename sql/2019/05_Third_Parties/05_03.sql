@@ -8,7 +8,7 @@ SELECT
 FROM (
   SELECT
       type AS contentType,
-      ThirdPartyTable.category as thirdPartyCategory
+      ThirdPartyTable.category AS thirdPartyCategory
     FROM
       `httparchive.almanac.summary_requests`
     LEFT JOIN

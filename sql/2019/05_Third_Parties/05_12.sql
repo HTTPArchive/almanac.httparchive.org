@@ -1,45 +1,45 @@
 #standardSQL
 # Percentile breakdown page-relative percentage of total bytes that are from third party requests broken down by third party category.
 SELECT
-  COUNT(*) as numberOfPages,
+  COUNT(*) AS numberOfPages,
   APPROX_QUANTILES(numberOfThirdPartyBytes / numberOfBytes, 100) AS percentThirdPartyBytesQuantiles,
   APPROX_QUANTILES(numberOfAdBytes / numberOfBytes, 100) AS percentAdBytesQuantiles,
-  APPROX_QUANTILES(numberOfAnalyticsBytes / numberOfBytes, 100) as percentAnalyticsBytesQuantiles,
-  APPROX_QUANTILES(numberOfSocialBytes / numberOfBytes, 100) as percentSocialBytesQuantiles,
-  APPROX_QUANTILES(numberOfVideoBytes / numberOfBytes, 100) as percentVideoBytesQuantiles,
-  APPROX_QUANTILES(numberOfUtilityBytes / numberOfBytes, 100) as percentUtilityBytesQuantiles,
-  APPROX_QUANTILES(numberOfHostingBytes / numberOfBytes, 100) as percentHostingBytesQuantiles,
-  APPROX_QUANTILES(numberOfMarketingBytes / numberOfBytes, 100) as percentMarketingBytesQuantiles,
-  APPROX_QUANTILES(numberOfCustomerSuccessBytes / numberOfBytes, 100) as percentCustomerSuccessBytesQuantiles,
-  APPROX_QUANTILES(numberOfContentBytes / numberOfBytes, 100) as percentContentBytesQuantiles,
-  APPROX_QUANTILES(numberOfCdnBytes / numberOfBytes, 100) as percentCdnBytesQuantiles,
-  APPROX_QUANTILES(numberOfTagManagerBytes / numberOfBytes, 100) as percentTagManagerBytesQuantiles,
-  APPROX_QUANTILES(numberOfOtherBytes / numberOfBytes, 100) as percentOtherBytesQuantiles
+  APPROX_QUANTILES(numberOfAnalyticsBytes / numberOfBytes, 100) AS percentAnalyticsBytesQuantiles,
+  APPROX_QUANTILES(numberOfSocialBytes / numberOfBytes, 100) AS percentSocialBytesQuantiles,
+  APPROX_QUANTILES(numberOfVideoBytes / numberOfBytes, 100) AS percentVideoBytesQuantiles,
+  APPROX_QUANTILES(numberOfUtilityBytes / numberOfBytes, 100) AS percentUtilityBytesQuantiles,
+  APPROX_QUANTILES(numberOfHostingBytes / numberOfBytes, 100) AS percentHostingBytesQuantiles,
+  APPROX_QUANTILES(numberOfMarketingBytes / numberOfBytes, 100) AS percentMarketingBytesQuantiles,
+  APPROX_QUANTILES(numberOfCustomerSuccessBytes / numberOfBytes, 100) AS percentCustomerSuccessBytesQuantiles,
+  APPROX_QUANTILES(numberOfContentBytes / numberOfBytes, 100) AS percentContentBytesQuantiles,
+  APPROX_QUANTILES(numberOfCdnBytes / numberOfBytes, 100) AS percentCdnBytesQuantiles,
+  APPROX_QUANTILES(numberOfTagManagerBytes / numberOfBytes, 100) AS percentTagManagerBytesQuantiles,
+  APPROX_QUANTILES(numberOfOtherBytes / numberOfBytes, 100) AS percentOtherBytesQuantiles
 FROM (
   SELECT
     pageUrl,
-    COUNT(*) as numberOfRequests,
+    COUNT(*) AS numberOfRequests,
     SUM(requestBytes) AS numberOfBytes,
     SUM(IF(thirdPartyDomain IS NULL, requestBytes, 0)) AS numberOfFirstPartyBytes,
     SUM(IF(thirdPartyDomain IS NOT NULL, requestBytes, 0)) AS numberOfThirdPartyBytes,
     SUM(IF(thirdPartyCategory = 'ad', requestBytes, 0)) AS numberOfAdBytes,
-    SUM(IF(thirdPartyCategory = 'analytics', requestBytes, 0)) as numberOfAnalyticsBytes,
-    SUM(IF(thirdPartyCategory = 'social', requestBytes, 0)) as numberOfSocialBytes,
-    SUM(IF(thirdPartyCategory = 'video', requestBytes, 0)) as numberOfVideoBytes,
-    SUM(IF(thirdPartyCategory = 'utility', requestBytes, 0)) as numberOfUtilityBytes,
-    SUM(IF(thirdPartyCategory = 'hosting', requestBytes, 0)) as numberOfHostingBytes,
-    SUM(IF(thirdPartyCategory = 'marketing', requestBytes, 0)) as numberOfMarketingBytes,
-    SUM(IF(thirdPartyCategory = 'customer-success', requestBytes, 0)) as numberOfCustomerSuccessBytes,
-    SUM(IF(thirdPartyCategory = 'content', requestBytes, 0)) as numberOfContentBytes,
-    SUM(IF(thirdPartyCategory = 'cdn', requestBytes, 0)) as numberOfCdnBytes,
-    SUM(IF(thirdPartyCategory = 'tag-manager', requestBytes, 0)) as numberOfTagManagerBytes,
-    SUM(IF(thirdPartyCategory = 'other', requestBytes, 0)) as numberOfOtherBytes
+    SUM(IF(thirdPartyCategory = 'analytics', requestBytes, 0)) AS numberOfAnalyticsBytes,
+    SUM(IF(thirdPartyCategory = 'social', requestBytes, 0)) AS numberOfSocialBytes,
+    SUM(IF(thirdPartyCategory = 'video', requestBytes, 0)) AS numberOfVideoBytes,
+    SUM(IF(thirdPartyCategory = 'utility', requestBytes, 0)) AS numberOfUtilityBytes,
+    SUM(IF(thirdPartyCategory = 'hosting', requestBytes, 0)) AS numberOfHostingBytes,
+    SUM(IF(thirdPartyCategory = 'marketing', requestBytes, 0)) AS numberOfMarketingBytes,
+    SUM(IF(thirdPartyCategory = 'customer-success', requestBytes, 0)) AS numberOfCustomerSuccessBytes,
+    SUM(IF(thirdPartyCategory = 'content', requestBytes, 0)) AS numberOfContentBytes,
+    SUM(IF(thirdPartyCategory = 'cdn', requestBytes, 0)) AS numberOfCdnBytes,
+    SUM(IF(thirdPartyCategory = 'tag-manager', requestBytes, 0)) AS numberOfTagManagerBytes,
+    SUM(IF(thirdPartyCategory = 'other', requestBytes, 0)) AS numberOfOtherBytes
   FROM (
     SELECT
       page AS pageUrl,
       respBodySize AS requestBytes,
-      DomainsOver50Table.requestDomain as thirdPartyDomain,
-      ThirdPartyTable.category as thirdPartyCategory
+      DomainsOver50Table.requestDomain AS thirdPartyDomain,
+      ThirdPartyTable.category AS thirdPartyCategory
     FROM
       `httparchive.almanac.summary_requests`
     LEFT JOIN

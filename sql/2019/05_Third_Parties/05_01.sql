@@ -1,7 +1,7 @@
 #standardSQL
 # Percentage of pages that include at least one third party resource.
 SELECT
-  COUNT(*) as numberOfPages,
+  COUNT(*) AS numberOfPages,
   COUNTIF(numberOfThirdPartyRequests > 0) AS numberOfPagesWithThirdParty,
   COUNTIF(numberOfThirdPartyRequests > 0) / COUNT(*) AS percentOfPagesWithThirdParty
 FROM (
@@ -11,7 +11,7 @@ FROM (
   FROM (
     SELECT
       page AS pageUrl,
-      DomainsOver50Table.requestDomain as thirdPartyDomain
+      DomainsOver50Table.requestDomain AS thirdPartyDomain
     FROM
       `httparchive.almanac.summary_requests`
     LEFT JOIN

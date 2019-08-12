@@ -4,19 +4,19 @@ SELECT
   thirdPartyDomain,
   COUNT(*) AS totalRequests,
   SUM(requestBytes) AS totalBytes,
-  ROUND(SUM(requestBytes) * 100 / MAX(totalRequestBytes), 2) as percentBytes
+  ROUND(SUM(requestBytes) * 100 / MAX(totalRequestBytes), 2) AS percentBytes
 FROM (
   SELECT
       respSize AS requestBytes,
       NET.HOST(url) AS requestDomain,
-      DomainsOver50Table.requestDomain as thirdPartyDomain
+      DomainsOver50Table.requestDomain AS thirdPartyDomain
     FROM
       `httparchive.almanac.summary_requests`
     LEFT JOIN
       `lighthouse-infrastructure.third_party_web.2019_07_01_all_observed_domains` AS DomainsOver50Table
     ON NET.HOST(url) = DomainsOver50Table.requestDomain
 ) t1, (
-  SELECT SUM(respSize) as totalRequestBytes FROM `httparchive.almanac.summary_requests`
+  SELECT SUM(respSize) AS totalRequestBytes FROM `httparchive.almanac.summary_requests`
 ) t2
 WHERE thirdPartyDomain IS NOT NULL
 GROUP BY

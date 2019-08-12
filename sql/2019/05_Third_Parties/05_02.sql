@@ -1,7 +1,7 @@
 #standardSQL
 # Percentage of pages that include at least one ad resource.
 SELECT
-  COUNT(*) as numberOfPages,
+  COUNT(*) AS numberOfPages,
   COUNTIF(numberOfAdRequests > 0) AS numberOfPagesWithAd,
   COUNTIF(numberOfAdRequests > 0) / COUNT(*) AS percentOfPagesWithAd
 FROM (
@@ -11,7 +11,7 @@ FROM (
   FROM (
     SELECT
       page AS pageUrl,
-      ThirdPartyTable.category as thirdPartyCategory
+      ThirdPartyTable.category AS thirdPartyCategory
     FROM
       `httparchive.almanac.summary_requests`
     LEFT JOIN

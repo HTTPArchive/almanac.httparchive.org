@@ -8,7 +8,7 @@ FROM (
   SELECT
       respSize AS requestBytes,
       NET.HOST(url) AS requestDomain,
-      DomainsOver50Table.requestDomain as thirdPartyDomain
+      DomainsOver50Table.requestDomain AS thirdPartyDomain
     FROM
       `httparchive.summary_requests.2019_07_01_mobile`
     LEFT JOIN
