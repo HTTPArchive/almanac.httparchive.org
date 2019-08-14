@@ -24,8 +24,9 @@
     <link rel="shortcut icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
     <link rel="stylesheet" href="/static/css/normalize.css">
+    {% block styles %}
     <link rel="stylesheet" href="/static/css/main.css">
-    {% block styles %}{% endblock %}
+    {% endblock %}
     {% endblock %}
     {% if supported_languages is iterable %}
       {% for l in supported_languages %}
