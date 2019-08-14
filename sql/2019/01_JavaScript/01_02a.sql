@@ -6,10 +6,17 @@ SELECT
   ROUND(APPROX_QUANTILES(third_party, 1000)[OFFSET(percentile * 10)], 2) AS third_party_js_kbytes
 FROM (
   SELECT
-    SUM(IF(NET.HOST(page) = NET.HOST(url), respSize, 0) / 1024) AS first_party,
-    SUM(IF(NET.HOST(page) != NET.HOST(url), respSize, 0) / 1024) AS third_party
-  FROM
-    `httparchive.almanac.summary_requests`
+    SUM(IF(NOT is_third_party, respSize, 0) / 1024) AS first_party,
+    SUM(IF(is_third_party, respSize, 0) / 1024) AS third_party
+  FROM (
+    SELECT
+      page,
+      url,
+      type,
+      respSize,
+      NET.HOST(url) IN (SELECT requestDomain FROM `httparchive.almanac.third_parties`) AS is_third_party
+    FROM
+      `httparchive.almanac.summary_requests`)
   WHERE
     type = 'script'
   GROUP BY

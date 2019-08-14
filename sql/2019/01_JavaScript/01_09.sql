@@ -16,7 +16,7 @@ FROM (
     COUNT(DISTINCT url) AS freq_2018,
     COUNT(DISTINCT url) / total AS pct_2018
   FROM
-    (SELECT _TABLE_SUFFIX, COUNT(DISTINCT url) AS total FROM `httparchive.summary_pages.2018_07_01_*` GROUP BY _TABLE_SUFFIX)
+    (SELECT _TABLE_SUFFIX, COUNT(url) AS total FROM `httparchive.summary_pages.2018_07_01_*` GROUP BY _TABLE_SUFFIX)
   JOIN
     `httparchive.technologies.2018_07_01_*`
   USING (_TABLE_SUFFIX)
@@ -31,7 +31,7 @@ JOIN (
     COUNT(DISTINCT url) AS freq_2019,
     COUNT(DISTINCT url) / total AS pct_2019
   FROM
-    (SELECT _TABLE_SUFFIX, COUNT(DISTINCT url) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+    (SELECT _TABLE_SUFFIX, COUNT(url) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
   JOIN
     `httparchive.technologies.2019_07_01_*`
   USING (_TABLE_SUFFIX)
