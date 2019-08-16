@@ -10,22 +10,10 @@ SELECT
 FROM 
 ( 
   SELECT
-  _TABLE_SUFFIX AS client,
-   CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.BackgroundImage']") AS INT64) AS largestBackgroundImage
+    _TABLE_SUFFIX AS client,
+    CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.BackgroundImage']") AS INT64) AS largestBackgroundImage
   FROM
-  `httparchive.pages.2019_07_01_*`
+    `httparchive.pages.2019_07_01_*`
 )
 GROUP BY
   client
-
-
-
-  
-
-
-  
-
-
-
-  
-
