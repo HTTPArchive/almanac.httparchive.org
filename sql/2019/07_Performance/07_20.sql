@@ -25,7 +25,7 @@ FROM
     CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.MajorGC']"), "0") AS INT64)
   ) AS scriptingCpuTime
   FROM
-  `httparchive.pages.2019_07_01_*`
+   `httparchive.pages.2019_07_01_*`
 )
 GROUP BY
   client
