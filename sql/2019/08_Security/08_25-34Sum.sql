@@ -1,5 +1,6 @@
 # standard SQL
 # 08_24-34Sum.sql
+# 
 #
 # Calculate usage percentage for each of the 10 metrics 08.25-34 metrics in one run
 #
@@ -11,6 +12,7 @@
 # sec-fetch-* - zero instances of this data across the archive
 
 SELECT
+  client,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)nel =')) * 100 / COUNT(0),2) AS pct_nel,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)report-to = ')) * 100 / COUNT(0),2) AS pct_report_to,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)referrer-policy = ')) * 100 / COUNT(0),2) AS pct_referrer_policy,
@@ -23,5 +25,7 @@ SELECT
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)sec-fetch-[dest|mode|site|user] = ')) * 100 / COUNT(0),2) AS pct_sec_fetches
 FROM
   `httparchive.almanac.summary_response_bodies`
- WHERE
-   firstHtml
+WHERE
+  firstHtml
+GROUP BY
+  client
