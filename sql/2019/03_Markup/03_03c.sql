@@ -4,7 +4,8 @@ CREATE TEMPORARY FUNCTION getCustomElements(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);
-  var elements = JSON.parse($._element_count)
+  var elements = JSON.parse($._element_count);
+  if (Array.isArray(elements) || typeof elements != 'object') return [];
   return Object.keys(elements).filter(e => e.includes('-'));
 } catch (e) {
   return [];
