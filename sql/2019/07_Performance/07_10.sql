@@ -15,18 +15,11 @@ SELECT
 FROM 
 ( 
   SELECT
-  _TABLE_SUFFIX AS client,
-   CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.FirstPaintedHero']") AS INT64) AS firstPaintedHero,
-   CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.LastPaintedHero']") AS INT64) AS lastPaintedHero
+    _TABLE_SUFFIX AS client,
+    CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.FirstPaintedHero']") AS INT64) AS firstPaintedHero,
+    CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.LastPaintedHero']") AS INT64) AS lastPaintedHero
   FROM
-  `httparchive.pages.2019_07_01_*`
+    `httparchive.pages.2019_07_01_*`
 )
 GROUP BY
   client
-
-
-
-
-
-  
-
