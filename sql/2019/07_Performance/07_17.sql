@@ -31,17 +31,3 @@ FROM
   FROM
     `httparchive.lighthouse.2019_07_01_mobile`    
 )
-
-
-
-
-
-  
-
-
-  
-
-
-
-  
-
