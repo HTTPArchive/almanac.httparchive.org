@@ -17,11 +17,7 @@ FROM
     CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.UpdateLayerTree']"), "0") as INT64)
   ) AS paintCpuTime
   FROM
-  `httparchive.pages.2019_07_01_*` 
+   `httparchive.pages.2019_07_01_*` 
 )
 GROUP BY
   client
-
-
-  
-
