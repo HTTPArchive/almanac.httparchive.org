@@ -48,4 +48,4 @@ GROUP BY
   attribute,
   value
 ORDER BY
-  freq / total DESC
+  freq DESC
