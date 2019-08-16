@@ -18,7 +18,7 @@ FROM
     CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.UpdateLayoutTree']"), "0") AS INT64)
   ) AS layoutCpuTime
   FROM
-  `httparchive.pages.2019_07_01_*`  
+   `httparchive.pages.2019_07_01_*`  
 )
 GROUP BY
   client
