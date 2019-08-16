@@ -1,6 +1,9 @@
 Flask==1.0.2
 flask-talisman
 gunicorn==19.9.0
+matplotlib
 mistune
+pandas
 pytest
 pytest-watch
+scour

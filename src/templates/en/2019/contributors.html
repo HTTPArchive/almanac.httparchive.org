@@ -4,15 +4,63 @@
 Contributors | The Web Almanac by HTTP Archive
 {% endblock %}
 
-{% block main %}
-{% for id, contributor in contributors.contributors.items() %}
-<section>
-  <h3>{{ contributor.name }}</h3>
-  <ul>
-    {% for team in contributor.teams %}
-    <li>{{ contributors.teams[team].name }}</li>
-    {% endfor %}
-  </ul>
-</section>
+{% block styles %}
+<style>
+.contributors {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-container {
+  margin-bottom: 30px;
+}
+
+.filter-container button {
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.2;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 8px;
+  padding: 8px;
+}
+
+.contributor {
+  display: none;
+}
+
+{% for id in contributors.teams.keys() %}
+.contributors.{{ id }} .contributor.{{ id }} {
+  display: block;
+}
+
+.contributors.{{ id }} button.{{ id }} {
+  background: #0053ba;
+  color: white;
+}
 {% endfor %}
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="contributors {{ ' '.join(contributors.teams.keys()) }}">
+  <div class="filter-container">
+  {% for id, team in contributors.teams.items() %}
+    <button class="{{ id }}">{{ team.name }}</button>
+  {% endfor %}
+  </div>
+  {% for id, contributor in contributors.contributors.items() %}
+    <div class="contributor {{ ' '.join(contributor.teams) }}">
+      {{ contributor.name }}
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/static/js/contributors.js"></script>
 {% endblock %}
