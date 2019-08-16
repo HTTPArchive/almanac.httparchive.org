@@ -29,5 +29,5 @@ GROUP BY
   total,
   element
 ORDER BY
-  pct DESC,
+  pages / total DESC,
   client
