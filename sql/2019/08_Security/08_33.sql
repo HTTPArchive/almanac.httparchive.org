@@ -8,22 +8,19 @@
 #       0 rows available some far
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 # 
-#   break at "report=" to generalize
-# 
-#
-#   Within "archive" I only see 3 buckets, "null", "allow-postmessage" and "same-origin"
-#   I see references to "Deny", "Allow" in Safari. 
 
 SELECT
-  val,
-  COUNT(0) AS freq,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
+  client, 
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS client_tot,
+  xcoop_val,
+  count(0) as xcoop_val_freq,
+  ROUND(COUNT(0)*100/SUM(COUNT(0)) OVER (PARTITION BY client),2) as xcoop_val_pct 
 FROM
   `httparchive.almanac.summary_response_bodies`,
-  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'cross-origin-opener-policy = ([\\w-]+)')) AS val
+  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'cross-origin-opener-policy = ([^,\r\n]+)')) AS xcoop_val
 WHERE
   firstHtml
 GROUP BY
-  val
+  client, xcoop_val
 ORDER BY
-  freq DESC
+  client, xcoop_val_freq DESC
