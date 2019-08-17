@@ -5,9 +5,11 @@
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
  
 SELECT
+  client,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS client_tot,
   policy,
-  COUNT(0) AS freq,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
+  count(0) as policy_freq,
+  ROUND(COUNT(0)/SUM(COUNT(0)) OVER (PARTITION BY client),2) as policy_pct
 FROM
   `httparchive.almanac.summary_response_bodies`,
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'feature-policy = ([^,\r\n]+)')) AS value,
@@ -15,6 +17,6 @@ FROM
 WHERE
   firstHtml
 GROUP BY
-  policy
+  client, policy
 ORDER BY
-  freq DESC
+  client, policy_freq DESC
