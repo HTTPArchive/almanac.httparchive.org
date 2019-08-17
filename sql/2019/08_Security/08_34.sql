@@ -8,15 +8,17 @@
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
 SELECT
-  val,
-  COUNT(0) AS freq,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
+  client, 
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS client_tot,
+  sec_fetch_val,
+  count(0) as sec_fetch_val_freq,
+  ROUND(COUNT(0)*100/SUM(COUNT(0)) OVER (PARTITION BY client),2) as sec_fetch_val_pct 
 FROM
-  `httparchive.almanac.summary_requests`,
-  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'sec-fetch-[dest|mode|site|user] = ([\\w-]+)')) AS val
+  `httparchive.almanac.summary_response_bodies`,
+  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'sec-fetch-[dest|mode|site|user] = ([^,\r\n]+)')) AS sec_fetch_val
 WHERE
   firstHtml
 GROUP BY
-  val
+  client, sec_fetch_val
 ORDER BY
-  freq DESC
+  client, sec_fetch_val_freq DESC
