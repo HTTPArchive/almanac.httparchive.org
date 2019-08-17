@@ -9,7 +9,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS client_tot,
   policy,
   count(0) as policy_freq,
-  ROUND(COUNT(0)/SUM(COUNT(0)) OVER (PARTITION BY client),2) as policy_pct
+  ROUND(COUNT(0)*100/SUM(COUNT(0)) OVER (PARTITION BY client),2) as policy_pct
 FROM
   `httparchive.almanac.summary_response_bodies`,
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'feature-policy = ([^,\r\n]+)')) AS value,
