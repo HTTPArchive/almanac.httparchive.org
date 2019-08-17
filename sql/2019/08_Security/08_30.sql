@@ -8,15 +8,17 @@
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
 SELECT
-  val,
-  COUNT(0) AS freq,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
+  client, 
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS client_tot,
+  xss_val,
+  count(0) as xss_val_freq,
+  ROUND(COUNT(0)*100/SUM(COUNT(0)) OVER (PARTITION BY client),2) as xss_val_pct 
 FROM
-  `httparchive.almanac.summary_requests`,
-  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'x-xss-protection = (.*report=|[^,\r\n]*)')) AS val
+  `httparchive.almanac.summary_response_bodies`,
+  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'x-xss-protection = (.*report=|[^,\r\n]*)')) AS xss_val
 WHERE
   firstHtml
 GROUP BY
-  val
+  client, xss_val
 ORDER BY
-  freq DESC
+  client, xss_val_freq DESC
