@@ -15,6 +15,7 @@
 #   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
 
 SELECT
+  client,
   COUNT(0) AS TotCount,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)referrer-policy =')) * 100 / COUNT(0),2) AS pct_tot_x_frames,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)referrer-policy = no-referrer[^-]')) * 100 / COUNT(0),2) AS pct_no_ref,
@@ -27,4 +28,7 @@ SELECT
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)referrer-policy = unsafe-url')) * 100 / COUNT(0),2) AS pct_unsafe_url
 FROM
   `httparchive.almanac.summary_response_bodies`
-  where firstHtml
+WHERE
+  firstHtml
+GROUP BY
+  client
