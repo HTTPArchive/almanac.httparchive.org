@@ -3,7 +3,7 @@
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
-var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender']);
+var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 var attributes = ['as', 'crossorigin'];
 try {
   var $ = JSON.parse(payload);

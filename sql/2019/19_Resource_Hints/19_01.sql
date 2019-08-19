@@ -1,9 +1,9 @@
 #standardSQL
 # 19_01: % of sites that use each type of hint.
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
-RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN>
+RETURNS STRUCT<preload BOOLEAN, prefetch BOOLEAN, preconnect BOOLEAN, prerender BOOLEAN, `dns-prefetch` BOOLEAN>
 LANGUAGE js AS '''
-var hints = ['preload', 'prefetch', 'preconnect', 'prerender'];
+var hints = ['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch'];
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
@@ -28,7 +28,9 @@ SELECT
   COUNTIF(hints.preconnect) AS preconnect,
   ROUND(COUNTIF(hints.preconnect) * 100 / COUNT(0), 2) AS pct_preconnect,
   COUNTIF(hints.prerender) AS prerender,
-  ROUND(COUNTIF(hints.prerender) * 100 / COUNT(0), 2) AS pct_prerender
+  ROUND(COUNTIF(hints.prerender) * 100 / COUNT(0), 2) AS pct_prerender,
+  COUNTIF(hints.`dns-prefetch`) AS dns_prefetch,
+  ROUND(COUNTIF(hints.`dns-prefetch`) * 100 / COUNT(0), 2) AS pct_dns_prefetch
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
