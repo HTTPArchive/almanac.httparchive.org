@@ -21,7 +21,7 @@ try {
       return values;
     }
 
-    return values.concat(rule.declarations.filter(isLogicalProperty).map(d => d.value));
+    return values.concat(rule.declarations.filter(d => isLogicalProperty(d.property)).map(d => d.value));
   };
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []).length > 0;
