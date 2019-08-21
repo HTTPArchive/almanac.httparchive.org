@@ -1,8 +1,18 @@
 #standardSQL
-# 02_01: % of sites that use custom properties.
+# 02_05: % of sites that use logical properties
 CREATE TEMPORARY FUNCTION getAllValues(css STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
+  var isLogicalProperty = (prop) => {
+    prop = prop.toLowerCase();
+    return prop.includes('block-start') ||
+        prop.includes('block-end') ||
+        prop.includes('inline-start') ||
+        prop.includes('inline-end') ||
+        prop == 'block-size' ||
+        prop == 'inline-size';
+  }
+
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
       return rule.rules.reduce(reduceValues, values);
@@ -11,7 +21,7 @@ try {
       return values;
     }
 
-    return values.concat(rule.declarations.filter(d => d.property.startsWith(`--`)).map(d => d.value));
+    return values.concat(rule.declarations.filter(isLogicalProperty).map(d => d.value));
   };
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []).length > 0;

@@ -1,5 +1,5 @@
 #standardSQL
-# 02_01: % of sites that use custom properties.
+# 02_04: % of sites that use blend modes
 CREATE TEMPORARY FUNCTION getAllValues(css STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
@@ -11,7 +11,7 @@ try {
       return values;
     }
 
-    return values.concat(rule.declarations.filter(d => d.property.startsWith(`--`)).map(d => d.value));
+    return values.concat(rule.declarations.filter(d => d.property.endsWith('blend-mode')).map(d => d.value));
   };
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []).length > 0;
