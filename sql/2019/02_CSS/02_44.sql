@@ -7,11 +7,12 @@ try {
     if ('rules' in rule) {
       return rule.rules.reduce(reduceValues, values);
     }
-    if (!('selectors' in rule)) {
+    var selectors = rule.selectors || rule.selector && [rule.selector];
+    if (!selectors) {
       return values;
     }
 
-    rule.selectors.forEach(selector => {
+    selectors.forEach(selector => {
       var match = selector.match(/\\[class([*^$~]?=)/);
       if (match) {
         var operator = match[1];
