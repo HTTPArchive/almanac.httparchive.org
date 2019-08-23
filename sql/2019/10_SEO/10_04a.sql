@@ -4,7 +4,7 @@
 
 SELECT
   has_hreflang,
-  has_hreflang / total AS pct
+  ROUND((has_hreflang * 100) / total, 2) AS pct
 FROM (
   SELECT
     COUNTIF(REGEXP_CONTAINS(body, '(?i)<link[^>]*hreflang')) AS has_hreflang,
