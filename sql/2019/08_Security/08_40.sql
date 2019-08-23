@@ -1,5 +1,5 @@
 #standardSQL
-# 08_27: Check for 'Vulnerable JS' noted in Lighthouse run
+# 08_40: Check for 'Vulnerable JS' noted in Lighthouse run
 # 
 #  Lighthouse score = 0 - means site contains at min 1 vulnerable JS 
 #
