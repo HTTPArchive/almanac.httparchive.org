@@ -1,8 +1,18 @@
 #standardSQL
-# 02_01: % of sites that use custom properties.
-CREATE TEMPORARY FUNCTION usesCustomProps(css STRING)
+# 02_05: % of sites that use logical properties
+CREATE TEMPORARY FUNCTION usesLogicalProps(css STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
+  var isLogicalProperty = (prop) => {
+    prop = prop.toLowerCase();
+    return prop.includes('block-start') ||
+        prop.includes('block-end') ||
+        prop.includes('inline-start') ||
+        prop.includes('inline-end') ||
+        prop == 'block-size' ||
+        prop == 'inline-size';
+  }
+
   var reduceValues = (values, rule) => {
     if ('rules' in rule) {
       return rule.rules.reduce(reduceValues, values);
@@ -11,7 +21,7 @@ try {
       return values;
     }
 
-    return values.concat(rule.declarations.filter(d => d.property.startsWith(`--`)));
+    return values.concat(rule.declarations.filter(d => isLogicalProperty(d.property)).map(d => d.value));
   };
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []).length > 0;
@@ -29,7 +39,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(usesCustomProps(css)) AS num_stylesheets
+    COUNTIF(usesLogicalProps(css)) AS num_stylesheets
   FROM
     `httparchive.almanac.parsed_css`
   GROUP BY

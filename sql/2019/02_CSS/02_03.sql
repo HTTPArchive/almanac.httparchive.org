@@ -1,6 +1,6 @@
 #standardSQL
-# 02_01: % of sites that use custom properties.
-CREATE TEMPORARY FUNCTION usesCustomProps(css STRING)
+# 02_03: % of sites that use filter properties
+CREATE TEMPORARY FUNCTION usesFilterProp(css STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -11,7 +11,7 @@ try {
       return values;
     }
 
-    return values.concat(rule.declarations.filter(d => d.property.startsWith(`--`)));
+    return values.concat(rule.declarations.filter(d => d.property.toLowerCase() == 'filter').map(d => d.value));
   };
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []).length > 0;
@@ -29,7 +29,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(usesCustomProps(css)) AS num_stylesheets
+    COUNTIF(usesFilterProp(css)) AS num_stylesheets
   FROM
     `httparchive.almanac.parsed_css`
   GROUP BY
