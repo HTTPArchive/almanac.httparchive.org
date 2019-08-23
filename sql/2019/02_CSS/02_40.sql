@@ -1,6 +1,6 @@
 #standardSQL
-# 02_40: Distribution of margin values per page
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+# 02_40: Distribution of distinct margin values per page
+CREATE TEMPORARY FUNCTION getMarginValues(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -34,7 +34,7 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`
   LEFT JOIN
-    UNNEST(getAllValues(css)) AS value
+    UNNEST(getMarginValues(css)) AS value
   GROUP BY
     client,
     page)

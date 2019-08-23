@@ -1,5 +1,5 @@
 #standardSQL
-# 02_19: Distribution of stylesheets per page
+# 02_20: Top 100 stylesheet names
 SELECT
   client,
   filename,

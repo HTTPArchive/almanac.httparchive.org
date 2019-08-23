@@ -1,6 +1,6 @@
 #standardSQL
 # 02_05: % of sites that use logical properties
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION usesLogicalProps(css STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
   var isLogicalProperty = (prop) => {
@@ -39,7 +39,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(getAllValues(css)) AS num_stylesheets
+    COUNTIF(usesLogicalProps(css)) AS num_stylesheets
   FROM
     `httparchive.almanac.parsed_css`
   GROUP BY

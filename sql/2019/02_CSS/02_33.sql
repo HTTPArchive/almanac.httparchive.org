@@ -1,6 +1,6 @@
 #standardSQL
 # 02_33: Distribution of duplicate color values per page
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getColors(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -41,7 +41,7 @@ FROM (
     FROM
       `httparchive.almanac.parsed_css`
     LEFT JOIN
-      UNNEST(getAllValues(css)) AS value
+      UNNEST(getColors(css)) AS value
     GROUP BY
       client,
       page,

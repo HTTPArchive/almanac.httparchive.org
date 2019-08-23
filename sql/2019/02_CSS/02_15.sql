@@ -1,6 +1,6 @@
 #standardSQL
 # 02_15: Top snap points in media queries
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getSnapPoints(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -9,7 +9,7 @@ try {
     }
 
     return values.concat(rule.media.split(',').filter(query => {
-      return query.match(/(min|max)-(width|height)/i);
+      return query.match(/(min|max)-(width|height)/i) && query.match(/\\d+\\w*/);
     }).map(query => {
       return query.match(/\\d+\\w*/)[0]
     }));
@@ -29,7 +29,7 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
   `httparchive.almanac.parsed_css`,
-  UNNEST(getAllValues(css)) AS snap_point
+  UNNEST(getSnapPoints(css)) AS snap_point
 GROUP BY
   client,
   snap_point

@@ -1,6 +1,6 @@
 #standardSQL
 # 02_39: Distribution of media queries per page
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getMediaQueries(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(css);
@@ -29,7 +29,7 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`
   LEFT JOIN
-    UNNEST(getAllValues(css)) AS value
+    UNNEST(getMediaQueries(css)) AS value
   GROUP BY
     client,
     page)

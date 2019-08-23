@@ -1,6 +1,6 @@
 #standardSQL
 # 02_16: % of pages using min/max-width in media queries
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getMediaType(css STRING)
 RETURNS STRUCT<max_width BOOLEAN, min_width BOOLEAN> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -39,7 +39,7 @@ FROM (
     SELECT
       client,
       page,
-      getAllValues(css) AS type
+      getMediaType(css) AS type
     FROM
       `httparchive.almanac.parsed_css`)
   GROUP BY

@@ -1,6 +1,6 @@
 #standardSQL
 # 02_04: % of sites that use blend modes
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION usesBlendModes(css STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -29,7 +29,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(getAllValues(css)) AS num_stylesheets
+    COUNTIF(usesBlendModes(css)) AS num_stylesheets
   FROM
     `httparchive.almanac.parsed_css`
   GROUP BY

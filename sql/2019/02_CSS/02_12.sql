@@ -1,6 +1,6 @@
 #standardSQL
 # 02_12: % of sites that use each dir value
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getDirValues(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -44,7 +44,7 @@ FROM (
     COUNT(DISTINCT page) AS freq
   FROM
     `httparchive.almanac.parsed_css`,
-    UNNEST(getAllValues(css)) AS direction
+    UNNEST(getDirValues(css)) AS direction
   GROUP BY
     client,
     direction)

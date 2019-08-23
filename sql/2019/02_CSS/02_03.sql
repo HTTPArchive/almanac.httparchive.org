@@ -1,6 +1,6 @@
 #standardSQL
 # 02_03: % of sites that use filter properties
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION usesFilterProp(css STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -29,7 +29,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(getAllValues(css)) AS num_stylesheets
+    COUNTIF(usesFilterProp(css)) AS num_stylesheets
   FROM
     `httparchive.almanac.parsed_css`
   GROUP BY

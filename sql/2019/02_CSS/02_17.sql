@@ -1,6 +1,6 @@
 #standardSQL
 # 02_17: % of pages using em/rem/px in media queries
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getUnits(css STRING)
 RETURNS STRUCT<em BOOLEAN, rem BOOLEAN, px BOOLEAN> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -9,7 +9,7 @@ try {
     }
 
     rule.media.split(',').filter(query => {
-      return query.match(/(min|max)-(width|height)/i);
+      return query.match(/(min|max)-(width|height)/i) && query.match(/\\d+(\\w*)/);
     }).forEach(query => {
       var unit = query.match(/\\d+(\\w*)/)[1];
       values[unit] = true;
@@ -20,7 +20,7 @@ try {
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, {});
 } catch (e) {
-  return e;
+  return {};
 }
 ''';
 
@@ -43,7 +43,7 @@ FROM (
     SELECT
       client,
       page,
-      getAllValues(css) AS unit
+      getUnits(css) AS unit
     FROM
       `httparchive.almanac.parsed_css`)
   GROUP BY

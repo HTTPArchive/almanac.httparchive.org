@@ -1,6 +1,6 @@
 #standardSQL
-# 02_34: Distribution of fonts declared per page#standardSQL
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+# 02_34: Distribution of fonts declared per page
+CREATE TEMPORARY FUNCTION countFonts(css STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {
   var $ = JSON.parse(css);
@@ -20,7 +20,7 @@ SELECT
 FROM (
   SELECT
     client,
-    SUM(getAllValues(css)) AS font_rules
+    SUM(countFonts(css)) AS font_rules
   FROM
     `httparchive.almanac.parsed_css`
   GROUP BY

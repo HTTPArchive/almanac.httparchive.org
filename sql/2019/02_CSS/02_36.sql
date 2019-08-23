@@ -1,6 +1,6 @@
 #standardSQL
-# 02_36: Distribution of font-size values per page
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+# 02_36: Distribution of unqiue font-size values per page
+CREATE TEMPORARY FUNCTION getFontSizes(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -34,7 +34,7 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`
   LEFT JOIN
-    UNNEST(getAllValues(css)) AS value
+    UNNEST(getFontSizes(css)) AS value
   GROUP BY
     client,
     page)

@@ -1,6 +1,6 @@
 #standardSQL
 # 02_41: Distribution of transitions per page
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getTransitions(css STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -30,7 +30,7 @@ SELECT
 FROM (
   SELECT
     client,
-    SUM(getAllValues(css)) AS transitions
+    SUM(getTransitions(css)) AS transitions
   FROM
     `httparchive.almanac.parsed_css`
   GROUP BY

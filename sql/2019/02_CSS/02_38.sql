@@ -1,6 +1,6 @@
 #standardSQL
 # 02_38: Top numeric z-index values
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getNumericZIndexValues(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -28,7 +28,7 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
   `httparchive.almanac.parsed_css`,
-  UNNEST(getAllValues(css)) AS value
+  UNNEST(getNumericZIndexValues(css)) AS value
 GROUP BY
   client,
   value

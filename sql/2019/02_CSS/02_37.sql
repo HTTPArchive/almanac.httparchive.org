@@ -1,6 +1,6 @@
 #standardSQL
-# 02_37: Distribution of z-index values per page
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+# 02_37: Distribution of unique z-index values per page
+CREATE TEMPORARY FUNCTION getZIndexValues(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -34,7 +34,7 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`
   LEFT JOIN
-    UNNEST(getAllValues(css)) AS value
+    UNNEST(getZIndexValues(css)) AS value
   GROUP BY
     client,
     page)

@@ -1,6 +1,6 @@
 #standardSQL
 # 02_08: % of sites that use classes or IDs in selectors
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getSelectorType(css STRING)
 RETURNS STRUCT<class BOOLEAN, id BOOLEAN> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -45,7 +45,7 @@ FROM (
     SELECT
       client,
       page,
-      getAllValues(css) AS type
+      getSelectorType(css) AS type
     FROM
       `httparchive.almanac.parsed_css`)
   GROUP BY

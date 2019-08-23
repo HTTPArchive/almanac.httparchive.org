@@ -1,6 +1,6 @@
 #standardSQL
 # 02_07: % of sites that use each length unit
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getLengthUnit(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   // https://developer.mozilla.org/en-US/docs/Web/CSS/length
@@ -55,7 +55,7 @@ FROM (
     COUNT(DISTINCT page) AS freq
   FROM
     `httparchive.almanac.parsed_css`,
-    UNNEST(getAllValues(css)) AS unit
+    UNNEST(getLengthUnit(css)) AS unit
   GROUP BY
     client,
     unit)

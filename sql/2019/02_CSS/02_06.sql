@@ -1,6 +1,6 @@
 #standardSQL
 # 02_06: % of sites that use each color format
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getColorFormats(css STRING)
 RETURNS STRUCT<hsl BOOLEAN, hsla BOOLEAN, rgb BOOLEAN, rgba BOOLEAN, hex BOOLEAN> LANGUAGE js AS '''
 try {
   var getColorFormat = (value) => {
@@ -71,7 +71,7 @@ FROM (
     SELECT
       client,
       page,
-      getAllValues(css) AS color
+      getColorFormats(css) AS color
     FROM
       `httparchive.almanac.parsed_css`)
   GROUP BY

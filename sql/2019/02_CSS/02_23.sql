@@ -1,6 +1,6 @@
 #standardSQL
 # 02_23: Popular fonts
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getFontFamilies(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(css);
@@ -21,7 +21,7 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
   `httparchive.almanac.parsed_css`,
-  UNNEST(getAllValues(css)) AS font_family
+  UNNEST(getFontFamilies(css)) AS font_family
 GROUP BY
   client,
   font_family

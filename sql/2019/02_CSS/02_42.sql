@@ -1,6 +1,6 @@
 #standardSQL
 # 02_42: Distribution of keyframes per page
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getKeyframes(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(css);
@@ -29,7 +29,7 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`
   LEFT JOIN
-    UNNEST(getAllValues(css)) AS value
+    UNNEST(getKeyframes(css)) AS value
   GROUP BY
     client,
     page)

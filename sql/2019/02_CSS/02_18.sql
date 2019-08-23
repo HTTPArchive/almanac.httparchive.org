@@ -1,6 +1,6 @@
 #standardSQL
 # 02_18: % of pages using all/print/screen/speech in media queries
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getMediaType(css STRING)
 RETURNS STRUCT<all BOOLEAN, print BOOLEAN, screen BOOLEAN, speech BOOLEAN> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -21,7 +21,7 @@ try {
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, {});
 } catch (e) {
-  return e;
+  return {};
 }
 ''';
 
@@ -47,7 +47,7 @@ FROM (
     SELECT
       client,
       page,
-      getAllValues(css) AS type
+      getMediaType(css) AS type
     FROM
       `httparchive.almanac.parsed_css`)
   GROUP BY

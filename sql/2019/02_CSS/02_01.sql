@@ -1,6 +1,6 @@
 #standardSQL
 # 02_01: % of sites that use custom properties.
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION usesCustomProps(css STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -11,7 +11,7 @@ try {
       return values;
     }
 
-    return values.concat(rule.declarations.filter(d => d.property.startsWith(`--`)).map(d => d.value));
+    return values.concat(rule.declarations.filter(d => d.property.startsWith(`--`)));
   };
   var $ = JSON.parse(css);
   return $.stylesheet.rules.reduce(reduceValues, []).length > 0;
@@ -29,7 +29,7 @@ FROM (
   SELECT
     client,
     page,
-    COUNTIF(getAllValues(css)) AS num_stylesheets
+    COUNTIF(usesCustomProps(css)) AS num_stylesheets
   FROM
     `httparchive.almanac.parsed_css`
   GROUP BY

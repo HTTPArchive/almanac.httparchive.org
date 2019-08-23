@@ -1,5 +1,5 @@
 #standardSQL
-# 02_45: Distribution of classes per element per page
+# 02_45: Distribution of classes per element
 SELECT
   client,
   APPROX_QUANTILES(classes, 1000)[OFFSET(100)] AS p10,

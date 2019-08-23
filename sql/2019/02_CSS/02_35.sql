@@ -1,6 +1,6 @@
 #standardSQL
-# 02_35: Distribution of font-family values per page
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+# 02_35: Distribution of duplicate font-family values per page
+CREATE TEMPORARY FUNCTION getFonts(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -41,7 +41,7 @@ FROM (
     FROM
       `httparchive.almanac.parsed_css`
     LEFT JOIN
-      UNNEST(getAllValues(css)) AS value
+      UNNEST(getFonts(css)) AS value
     GROUP BY
       client,
       page,

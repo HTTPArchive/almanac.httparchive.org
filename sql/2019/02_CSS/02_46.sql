@@ -1,6 +1,6 @@
 #standardSQL
 # 02_46: Distribution of selector class length
-CREATE TEMPORARY FUNCTION getAllValues(css STRING)
+CREATE TEMPORARY FUNCTION getClassChainLengths(css STRING)
 RETURNS ARRAY<INT64> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
@@ -39,6 +39,6 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`
 LEFT JOIN
-  UNNEST(getAllValues(css)) AS classes
+  UNNEST(getClassChainLengths(css)) AS classes
 GROUP BY
   client
