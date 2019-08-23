@@ -6,13 +6,13 @@ SELECT
     COUNT(url) AS total,
 
     #crawlable
-    SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') as NUMERIC)) AS crawlable_score_sum,
-    AVG(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') as NUMERIC)) AS crawlable_score_average,
-    (SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') as NUMERIC)) / COUNT(url)) as crawlable_score_percentage,
+    SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') AS NUMERIC)) AS crawlable_score_sum,
+    AVG(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') AS NUMERIC)) AS crawlable_score_average,
+    (SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') AS NUMERIC)) / COUNT(url)) AS crawlable_score_percentage,
 
     #canonical
-    SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.canonical.score') as NUMERIC)) AS canonical_score_sum,
-    AVG(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.canonical.score') as NUMERIC)) AS canonical_core_average,
-    (SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.canonical.score') as NUMERIC)) / COUNT(url)) as canonical_score_percentage
+    SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.canonical.score') AS NUMERIC)) AS canonical_score_sum,
+    AVG(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.canonical.score') AS NUMERIC)) AS canonical_core_average,
+    (SUM(SAFE_CAST(JSON_EXTRACT_SCALAR(report, '$.audits.canonical.score') AS NUMERIC)) / COUNT(url)) AS canonical_score_percentage
 FROM
     `httparchive.lighthouse.2019_07_01_mobile`

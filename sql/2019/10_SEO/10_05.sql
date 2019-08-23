@@ -24,6 +24,6 @@ SELECT
 FROM
     `httparchive.pages.2019_07_01_*`
 CROSS JOIN
-    UNNEST(parseStructuredData(payload)) as schema_type
+    UNNEST(parseStructuredData(payload)) AS schema_type
 GROUP BY schema_type
 ORDER BY occurence DESC

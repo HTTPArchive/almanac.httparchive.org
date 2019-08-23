@@ -23,7 +23,7 @@ RETURNS BOOLEAN LANGUAGE js AS '''
 ''';
 
 SELECT
-    COUNT(0) as count,
+    COUNT(0) AS count,
     COUNTIF(parseStructuredData(payload)) AS occurence,
     ROUND(COUNTIF(parseStructuredData(payload)) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
 FROM
