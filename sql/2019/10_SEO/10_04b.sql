@@ -9,6 +9,7 @@ SELECT
 FROM
   `httparchive.almanac.summary_response_bodies`
 CROSS JOIN
-  UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)<link[^>]*hreflang=[\'"]?([^(\'|"|\\s)]+)')) AS hreflang
+  LOWER(UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)<link[^>]*hreflang=[\'"]?([^(\'|"|\\s)]+)'))) AS hreflang
 GROUP BY hreflang
 ORDER BY occurence DESC
+LIMIT 250

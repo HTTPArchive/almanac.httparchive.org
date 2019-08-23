@@ -27,3 +27,4 @@ CROSS JOIN
     UNNEST(parseStructuredData(payload)) AS schema_type
 GROUP BY schema_type
 ORDER BY occurence DESC
+LIMIT 100
