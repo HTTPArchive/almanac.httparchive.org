@@ -14,7 +14,7 @@
 SELECT
   client,
   ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = ([^,\r\n]+)')) * 100 / COUNT(0),2) AS pct_all_set_cookie,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = .*secure.*([^,\r\n]+)')) * 100 / COUNT(0),4) AS pct_httponly
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = .*secure.*([^,\r\n]+)')) * 100 / COUNT(0),4) AS pct_secure
 FROM
   `httparchive.almanac.summary_response_bodies`
 WHERE
