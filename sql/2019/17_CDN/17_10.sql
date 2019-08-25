@@ -1,11 +1,11 @@
 #standardSQL
-# 17_10: Count of sites with vary header
+# 17_10: Percentage of responses with vary header
 SELECT
   _TABLE_SUFFIX AS client,
-  COUNT(respOtherHeaders) AS vary
+  COUNTIF(resp_vary != '') AS freq,
+  COUNT(0) AS total,
+  ROUND(COUNTIF(resp_vary != '') * 100 / COUNT(0), 2) AS pct
 FROM 
   `httparchive.summary_requests.2019_07_01_*`
-WHERE
-   STRPOS(LOWER(respOtherHeaders), "vary") > 0
 GROUP BY
   client
