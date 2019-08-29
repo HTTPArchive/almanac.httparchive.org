@@ -16,6 +16,7 @@ FROM
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING (client),
+  # Search for reset util fingerprints in stylesheet comments.
   UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)(normalize\\.css|pure\\-css|http://meyerweb\\.com/eric/tools/css/reset/)')) AS util
 GROUP BY
   client,
