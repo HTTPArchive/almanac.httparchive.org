@@ -14,7 +14,7 @@ FROM (
       url,
       type,
       respSize,
-      NET.HOST(url) IN (SELECT requestDomain FROM `httparchive.almanac.third_parties`) AS is_third_party
+      NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties`) AS is_third_party
     FROM
       `httparchive.almanac.summary_requests`)
   WHERE
