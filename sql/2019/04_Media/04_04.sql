@@ -13,21 +13,25 @@ and get percentiles (and total COUNT).
 
 */
 SELECT
-    APPROX_QUANTILES(svgCOUNT, 1000)[offset(250)] AS p25,
-    APPROX_QUANTILES(svgCOUNT, 1000)[offset(500)] AS p50,
-    APPROX_QUANTILES(svgCOUNT, 1000)[offset(750)] AS p75,
-    APPROX_QUANTILES(svgCOUNT, 1000)[offset(900)] AS p90,
-    COUNT(url) AS pageCOUNT
+    APPROX_QUANTILES(svgCOUNT, 1000)[offset(250)] AS p25count,
+    APPROX_QUANTILES(svgCOUNT, 1000)[offset(500)] AS p50count,
+    APPROX_QUANTILES(svgCOUNT, 1000)[offset(750)] AS p75count,
+    APPROX_QUANTILES(svgCOUNT, 1000)[offset(900)] AS p90count,
+    COUNT(url) AS pageCOUNT,
+    APPROX_QUANTILES(svglen, 1000)[offset(250)] AS p25length,
+    APPROX_QUANTILES(svglen, 1000)[offset(500)] AS p50length,
+    APPROX_QUANTILES(svglen, 1000)[offset(750)] AS p75length, 
+    APPROX_QUANTILES(svglen, 1000)[offset(900)] AS p90length
 FROM(
-SELECT url, COUNT(flat_svgs) AS svgCOUNT
+SELECT url, COUNT(flat_svgs) AS svgCOUNT, svglen
 FROM(
 
 SELECT url, flat_svgs , LENGTH(flat_svgs) AS svglen
 
 FROM(
 (SELECT url, REGEXP_EXTRACT_ALL(LOWER(body),r'(<svg.*?/svg>)') svgs
-FROM `response_bodies.2019_07_01_*`  svglist
-WHERE body LIKE "%<svg%" AND url NOT LIKE "%svg") 
+FROM `almanac.summary_response_bodies`  svglist
+WHERE body LIKE "%<svg%" AND url NOT LIKE "%svg" AND type = 'html')
 )
 CROSS JOIN UNNEST(svgs) AS flat_svgs
 /*
@@ -35,5 +39,5 @@ need these when UNNESTing the queries
 GROUP BY url, flat_svgs
 ORDER BY url asc
 */
-)GROUP BY url
+)GROUP BY url, svglen
 )
