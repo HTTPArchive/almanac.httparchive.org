@@ -15,6 +15,6 @@ try {
 
 SELECT
   COUNTIF(hasAmpLink(payload)) AS score_sum,
-  COUNTIF(hasAmpLink(payload)) / COUNT(0) AS score_percentage
+  ROUND(COUNTIF(hasAmpLink(payload)) * 100 / COUNT(0), 2) AS score_percentage
 FROM
   `httparchive.pages.2019_07_01_*`
