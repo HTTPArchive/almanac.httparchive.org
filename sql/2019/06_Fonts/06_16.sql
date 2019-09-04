@@ -2,37 +2,34 @@
 
 -- counts the local() inside @font-face
 
-CREATE TEMP FUNCTION parseCSS(stylesheet STRING)
+CREATE TEMPORARY FUNCTION parseCSS(strcss STRING)
 RETURNS INT64 LANGUAGE js AS '''
-   var css = parse(stylesheet, { silent: true })
-   var re = /local\\(/g
-   var local = 0
+try {
+  var css = JSON.parse(strcss);
+  var re = /local\\(/g
+  var local = 0
 
-   if (css.type === 'stylesheet' && css.stylesheet && css.stylesheet.rules) {
-     for (var rule of css.stylesheet.rules) {
-       if (rule.type === 'font-face') {
-         if (rule.declarations && rule.declarations.length) {
-           for (var declaration of rule.declarations) {
-             if (declaration.type === 'declaration' && declaration.property === 'src') {
-               local = local + ((declaration.value || '').match(re) || []).length;
-             }
-           }
-         }
-       }
-     }
-   }
+  if (css.type === 'stylesheet' && css.stylesheet && css.stylesheet.rules) {
+    for (var rule of css.stylesheet.rules) {
+      if (rule.type === 'font-face') {
+        if (rule.declarations && rule.declarations.length) {
+          for (var declaration of rule.declarations) {
+            if (declaration.type === 'declaration' && declaration.property === 'src') {
+              local = local + ((declaration.value || '').match(re) || []).length;
+            }
+          }
+        }
+      }
+    }
+  }
 
-   return local;
-'''
-OPTIONS (library="gs://httparchive/lib/parse-css.js");
+  return local;
+} catch (e) {
+  return 0;
+}
+''';
 
 SELECT
-  SUM(local_usage) as local_usage
-FROM (
-  SELECT SUM(parseCSS(body)) as local_usage
-  FROM `httparchive.response_bodies.2017_01_01_*`
-  JOIN `httparchive.summary_requests.2017_01_01_*`
-  USING (url)
-  WHERE type = 'css'
-  GROUP BY pageid
-)
+   SUM(parseCSS(css))
+FROM
+  `httparchive.almanac.parsed_css`
