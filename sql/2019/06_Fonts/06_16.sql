@@ -30,6 +30,6 @@ try {
 ''';
 
 SELECT
-   SUM(parseCSS(css))
+   SUM(parseCSS(css)) as local_usage
 FROM
   `httparchive.almanac.parsed_css`
