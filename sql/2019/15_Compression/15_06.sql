@@ -1,9 +1,17 @@
+#standardSQL
 #15_06 - Text Based Compression Byte Savings
 SELECT 
-       ROUND(CAST(JSON_EXTRACT_SCALAR(report, "$.audits.uses-text-compression.details.overallSavingsBytes")as INT64)/1024/1024) byteSavings,
-       count(*) Sites
-       
-FROM `httparchive.lighthouse.2019_07_01_mobile`
-where JSON_EXTRACT_SCALAR(report, "$.audits.uses-text-compression.score") != "1"
-GROUP BY byteSavings
-ORDER BY byteSavings ASC
+  _TABLE_SUFFIX AS client,
+  ROUND(CAST(JSON_EXTRACT_SCALAR(report, "$.audits.uses-text-compression.details.overallSavingsBytes")as INT64)/1024/1024) mbyte_savings,
+  COUNT(*) num_pages,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct_pages       
+FROM 
+  `httparchive.lighthouse.2019_07_01_mobile`
+WHERE
+  JSON_EXTRACT_SCALAR(report, "$.audits.uses-text-compression.score") != "1"
+GROUP BY 
+  client,
+  mbyte_savings
+ORDER BY 
+  client,
+  mbyte_savings ASC
