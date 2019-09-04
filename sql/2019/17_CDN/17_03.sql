@@ -2,6 +2,7 @@
 # 07_03: Percentiles of TTFB for CDN
 SELECT
   client,
+  cdn,
   ROUND(APPROX_QUANTILES(ttfb, 1000)[OFFSET(100)] / 1000, 2) AS p10,
   ROUND(APPROX_QUANTILES(ttfb, 1000)[OFFSET(250)] / 1000, 2) AS p25,
   ROUND(APPROX_QUANTILES(ttfb, 1000)[OFFSET(500)] / 1000, 2) AS p50,
@@ -19,4 +20,4 @@ FROM
 WHERE
   cdn != ''
 GROUP BY
-  client
+  client, cdn
