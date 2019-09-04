@@ -75,7 +75,8 @@ def methodology(year, lang):
 @validate
 def chapter(year, chapter, lang):
     # TODO: Validate the chapter.
-    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter))
+    config = config_util.get_config(year)
+    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config)
 
 
 @app.errorhandler(400)
