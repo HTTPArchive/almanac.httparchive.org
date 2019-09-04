@@ -4,10 +4,11 @@
 
 CREATE TEMP FUNCTION parseCSS(stylesheet STRING)
 RETURNS INT64 LANGUAGE js AS '''
-   var css = parse(stylesheet, { silent: true })
-   var fontFace = {};
+   try {
+    var css = JSON.parse(stylesheet);
+    var fontFace = {};
 
-   if (css.type === 'stylesheet' && css.stylesheet && css.stylesheet.rules) {
+    if (css.type === 'stylesheet' && css.stylesheet && css.stylesheet.rules) {
      for (var rule of css.stylesheet.rules) {
        if (rule.type === 'font-face' || rule.type === 'rule') {
          if (rule.declarations && rule.declarations.length) {
@@ -22,18 +23,18 @@ RETURNS INT64 LANGUAGE js AS '''
    }
 
    return Object.keys(fontFace).length;
-'''
-OPTIONS (library="gs://httparchive/lib/parse-css.js");
+  } catch (e) {
+    return 0;
+  }
+
+''';
 
 SELECT
   APPROX_QUANTILES(faces_per_page, 1000)[OFFSET(250)] AS p25_faces_per_page,
   APPROX_QUANTILES(faces_per_page, 1000)[OFFSET(500)] AS median_faces_per_page,
   APPROX_QUANTILES(faces_per_page, 1000)[OFFSET(750)] AS p75_faces_per_page
 FROM (
-  SELECT SUM(parseCSS(body)) as faces_per_page
-  FROM `httparchive.response_bodies.2017_01_01_*`
-  JOIN `httparchive.summary_requests.2017_01_01_*`
-  USING (url)
-  WHERE type = 'css'
-  GROUP BY pageid
+  SELECT SUM(parseCSS(css)) as faces_per_page
+  FROM `httparchive.almanac.parsed_css`
+  GROUP BY page
 )
