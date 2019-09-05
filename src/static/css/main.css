@@ -1,0 +1,8 @@
+.language-switcher {
+  height: 30px;
+  font-size: 1rem;
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  cursor: pointer;
+}

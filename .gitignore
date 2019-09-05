@@ -1,3 +1,4 @@
 env/
 *.log
 *.pyc
+**/.DS_Store
