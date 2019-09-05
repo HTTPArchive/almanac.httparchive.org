@@ -1,3 +1,34 @@
 #standardSQL
+# 06_25: % of pages that use @supports font-variation-settings
+CREATE TEMPORARY FUNCTION checksSupports(css STRING)
+RETURNS INT64 LANGUAGE js AS '''
+try {
+  var reduceValues = (values, rule) => {
+    if (rule.type == 'supports' && rule.supports.toLowerCase().includes('font-variation-settings')) {
+      return values++;
+    }
+    return values;
+  };
+  var $ = JSON.parse(css);
+  return $.stylesheet.rules.reduce(reduceValues, 0);
+} catch (e) {
+  return 0;
+}
+''';
 
--- pages use @supports to screen for variations capable browsers
+SELECT
+  client,
+  COUNT(DISTINCT page) AS freq,
+  total,
+  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+FROM
+  `httparchive.almanac.parsed_css`
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING
+  (client)
+GROUP BY
+  client,
+  total
+HAVING
+  SUM(checksSupports(css)) > 0

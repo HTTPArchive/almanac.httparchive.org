@@ -1,10 +1,10 @@
 #standardSQL
-
--- counts the number of usage of FontFace API
-
+# 06_13: Font Loading API usage
 SELECT
   client,
-  pct_urls
+  num_urls AS freq,
+  total_urls AS total,
+  ROUND(pct_urls * 100, 2) AS pct
 FROM
   `httparchive.blink_features.usage`
 WHERE

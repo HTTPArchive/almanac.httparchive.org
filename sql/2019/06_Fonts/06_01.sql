@@ -1,12 +1,15 @@
 #standardSQL
-
--- counts the local and hosted fonts
-
+# 06_01: counts the local and hosted fonts
 SELECT
-  COUNTIF(NET.HOST(page) != NET.HOST(url)) / COUNT(0) AS hosted,
-  COUNTIF(NET.HOST(page) = NET.HOST(url)) / COUNT(0) AS local
+  client,
+  COUNTIF(NET.HOST(page) != NET.HOST(url)) AS hosted,
+  COUNTIF(NET.HOST(page) = NET.HOST(url)) AS local,
+  COUNT(0) AS total,
+  ROUND(COUNTIF(NET.HOST(page) != NET.HOST(url)) * 100 / COUNT(0), 2) AS pct_hosted,
+  ROUND(COUNTIF(NET.HOST(page) = NET.HOST(url)) * 100 / COUNT(0), 2) AS pct_local
 FROM
-  (SELECT _TABLE_SUFFIX, pageid, url FROM `httparchive.summary_requests.2019_07_01_*` WHERE type = 'font')
-JOIN
-  (SELECT _TABLE_SUFFIX, pageid, url AS page FROM `httparchive.summary_pages.2019_07_01_*`)
-USING (_TABLE_SUFFIX, pageid)
+  `httparchive.almanac.requests`
+WHERE
+  type = 'font'
+GROUP BY
+  client

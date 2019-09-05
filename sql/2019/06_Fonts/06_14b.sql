@@ -1,5 +1,5 @@
 #standardSQL
-# 06_14: % of pages that declare a font with unicode-range
+# 06_14b: Popular unicode-range values
 CREATE TEMPORARY FUNCTION getFonts(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -30,22 +30,15 @@ try {
 
 SELECT
   client,
-  COUNTIF(ranges > 0) AS freq,
-  total,
-  ROUND(COUNTIF(ranges > 0) * 100 / total, 2) AS pct
-FROM (
-  SELECT
-    client,
-    SUM(ARRAY_LENGTH(getFonts(css))) AS ranges
-  FROM
-    `httparchive.almanac.parsed_css`
-  GROUP BY
-    client,
-    page)
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
-USING
-  (client)
+  UPPER(unicode_range),
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
+FROM
+  `httparchive.almanac.parsed_css`,
+  UNNEST(getFonts(css)) AS unicode_range
 GROUP BY
   client,
-  total
+  unicode_range
+ORDER BY
+  freq / total DESC

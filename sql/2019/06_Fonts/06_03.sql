@@ -1,25 +1,17 @@
 #standardSQL
-
--- counts the font types (format)
-
+# 06_03: counts the font types (format)
 SELECT
-  DISTINCT LOWER(font),
-  COUNT(0) OVER (PARTITION BY LOWER(font)) / COUNT(0) OVER () AS pct
-FROM (
-  SELECT
-    IF(STRPOS(mimeType, "font") > 0,
-      -- get the type of font from the content-type
-      REGEXP_REPLACE(
-        REGEXP_REPLACE(mimeType, r"^(font\/x\-)|(font\/font\-)|(font\/)|(application\/font\-)|(application\/x\-font\-)", ""),
-        r"^x\-",
-        ""
-      ),
-      LOWER(ext)
-    ) AS font
-  FROM
-    `httparchive.summary_requests.2019_07_01_*`
-  WHERE
-    type = 'font'
-)
+  client,
+  LOWER(IFNULL(REGEXP_EXTRACT(mimeType, '/(?:x-)?(?:font-)?(.*)'), ext)) AS mime_type,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
+FROM
+  `httparchive.almanac.requests`
+WHERE
+  type = 'font'
+GROUP BY
+  client,
+  mime_type
 ORDER BY
-  pct DESC
+  freq / total DESC

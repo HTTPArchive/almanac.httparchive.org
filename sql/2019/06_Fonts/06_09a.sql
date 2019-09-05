@@ -1,18 +1,24 @@
 #standardSQL
-
--- counts the number of pages given number of font-face
-
-#standardSQL
+# 06_09a: distribution of fonts per page
 SELECT
-  APPROX_QUANTILES(fonts_per_page, 1000)[OFFSET(250)] AS p25_fonts_per_page,
-  APPROX_QUANTILES(fonts_per_page, 1000)[OFFSET(500)] AS median_fonts_per_page,
-  APPROX_QUANTILES(fonts_per_page, 1000)[OFFSET(750)] AS p75_fonts_per_page
+  percentile,
+  client,
+  APPROX_QUANTILES(fonts_per_page, 1000)[OFFSET(percentile * 10)] AS fonts
 FROM (
   SELECT
+    client,
     COUNT(0) AS fonts_per_page
   FROM
-    `httparchive.summary_requests.2019_07_01_*`
+    `httparchive.almanac.requests`
   WHERE
     type = 'font'
   GROUP BY
-    pageid)
+    client,
+    page),
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
+GROUP BY
+  percentile,
+  client
+ORDER BY
+  percentile,
+  client
