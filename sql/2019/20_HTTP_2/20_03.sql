@@ -3,7 +3,7 @@
 SELECT
   client,
   ROUND(AVG(http_1_1/num_requests) * 100,2) avg_pct_http_1_1,
-  ROUND(AVG(http_1_1/num_requests) * 100,2) avg_pct_http_2
+  ROUND(AVG(http_2/num_requests) * 100,2) avg_pct_http_2
 FROM (
   SELECT 
     _TABLE_SUFFIX AS client,
