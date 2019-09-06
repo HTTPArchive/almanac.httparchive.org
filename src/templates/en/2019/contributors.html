@@ -54,6 +54,7 @@ Contributors | The Web Almanac by HTTP Archive
   </div>
   {% for id, contributor in config.contributors.items() %}
     <div class="contributor {{ ' '.join(contributor.teams) }}">
+      <img src="{{ contributor.avatar_url }}">
       {{ contributor.name }}
     </div>
   {% endfor %}
