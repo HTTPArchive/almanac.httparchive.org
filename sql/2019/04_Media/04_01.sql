@@ -1,128 +1,36 @@
 #standardSQL
-/*
-04_01
-04_02
+# 04_01-02: Lighthouse media scores, savings, and item lengths
+CREATE TEMPORARY FUNCTION getAuditResults(report STRING)
+RETURNS ARRAY<STRUCT<name STRING, score NUMERIC, ms NUMERIC, bytes NUMERIC, items NUMERIC>> LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(report);
+  var audits = ['offscreen-images', 'uses-optimized-images', 'uses-responsive-images', 'uses-webp-images', 'efficient-animated-content']
+  return audits.map(audit => ({
+    name: audit,
+    score: $.audits[audit].score,
+    ms: $.audits[audit].details.overallSavingsMs,
+    bytes: $.audits[audit].details.overallSavingsBytes,
+    items: $.audits[audit].details.items.length
+  }));
+} catch (e) {
+  return null;
+}
+''';
 
-1.22 TB query
-
-this query takes lighthouse data on image performance: 
-    lazyloading (offscreen), 
-    responsiveness, 
-    quality (optimized),
-    format (webp),
-    animated GIF
-    
-    I break down this data into: 
-         scores (FROM 0-1) 
-         wasted ms in load time
-         wasted KB
-         COUNT of offending items
-    AND break them into percentiles - 26 is the median, but 50 seemed 
-    LIKE a good number to graph the data with
-*/
-
-SELECT 
-      APPROX_QUANTILES( offscreenScore ,50) AS offscreenscore,
-      APPROX_QUANTILES( optimagesScore ,50) AS optimagescore,
-      APPROX_QUANTILES( repimagesScore ,50) AS respimagescore,
-      APPROX_QUANTILES( webpimagesScore ,50) AS webpscore,
-      APPROX_QUANTILES( agifScore ,50) AS agifScore,
-      APPROX_QUANTILES( videocaptionScore ,50) AS videocaptionScore,
-      APPROX_QUANTILES( pwaScore ,50) AS pwaScore,
-      
-      
-      APPROX_QUANTILES( offscreenwastedms ,50) AS offscreenwastedms,
-      APPROX_QUANTILES( optimgwastedms  ,50) AS optimgwastedms,
-      APPROX_QUANTILES( respimgwastedms ,50) AS respimgwastedms,
-      APPROX_QUANTILES( webpimgwastedms , 50) AS webpimgwastedms,
-      APPROX_QUANTILES( agifwastedms , 50) AS agifwastedms,
-      
-      APPROX_QUANTILES( offscreenwastedkb ,50) AS offscreenwastedkb,
-      APPROX_QUANTILES( optimgwastedkb  ,50) AS optimgwastedkb,
-      APPROX_QUANTILES( respimgwastedkb ,50) AS respimgwastedkb,
-      APPROX_QUANTILES( webpimgwastedkb , 50) AS webpimgwastedkb,
-      APPROX_QUANTILES( agifwastedkb , 50) AS agifwastedkb,      
-      
-      APPROX_QUANTILES( offscreenimageCOUNT ,50) AS offscreenimageCOUNT,
-      APPROX_QUANTILES( unoptimageCOUNTCOUNT  ,50) AS unoptimageCOUNTCOUNT,
-      APPROX_QUANTILES( nonresponsiveCOUNT ,50) AS nonresponsiveCOUNT,
-      APPROX_QUANTILES( nonwebpCOUNT , 50) AS nonwebpCOUNT,
-      APPROX_QUANTILES( agifCOUNTCOUNT , 50) AS agifCOUNTCOUNT
-      
-FROM(
 SELECT
-      CAST(offscreenScore AS float64) AS offscreenscore,
-      CAST(offscreenwastedms AS FLOAT64) AS offscreenwastedms, 
-      CAST(offscreenwastedkb AS FLOAT64) AS offscreenwastedkb, 
-      offscreenimageCOUNT,
-      
-      CAST(optimagesScore AS Float64) AS optimagesScore,
-      CAST(optimgwastedms AS FLOAT64) AS optimgwastedms,
-      CAST( optimgwastedkb AS FLOAT64) AS optimgwastedkb ,
-      unoptimageCOUNTCOUNT,
-      
-      CAST( repimagesScore AS FLOAT64) AS repimagesScore ,
-      CAST(respimgwastedms AS FLOAT64) AS respimgwastedms, 
-      CAST( respimgwastedkb AS FLOAT64) AS respimgwastedkb ,
-      nonresponsiveCOUNT,
-      
-      CAST( webpimagesScore AS FLOAT64) AS webpimagesScore ,
-      CAST(webpimgwastedms AS FLOAT64) AS webpimgwastedms, 
-      CAST( webpimgwastedkb AS FLOAT64) AS webpimgwastedkb ,
-      nonwebpCOUNT,
-      
-      CAST( agifScore AS FLOAT64) AS agifScore ,
-      CAST( agifwastedms AS FLOAT64) AS  agifwastedms ,
-      CAST( agifwastedkb AS FLOAT64) AS agifwastedkb ,
-      agifCOUNTCOUNT,
-      
-      CAST( videocaptionScore AS FLOAT64) AS videocaptionScore ,
-      CAST( pwaScore AS FLOAT64) AS pwaScore  
+  percentile,
+  audit.name,
+  APPROX_QUANTILES(audit.score, 1000)[OFFSET(percentile * 10)] AS score,
+  APPROX_QUANTILES(audit.ms, 1000)[OFFSET(percentile * 10)] AS ms,
+  ROUND(APPROX_QUANTILES(audit.bytes, 1000)[OFFSET(percentile * 10)] / 1024, 2) AS kbytes,
+  APPROX_QUANTILES(audit.items, 1000)[OFFSET(percentile * 10)] AS items
 FROM
-(  SELECT
-    url,
-    CAST(JSON_EXTRACT_SCALAR(report, "$.audits.offscreen-images.score")as numeric) +CAST(JSON_EXTRACT_SCALAR(report, "$.audits.uses-optimized-images.score")as numeric) + CAST(JSON_EXTRACT_SCALAR(report, "$.audits.uses-responsive-images.score") AS numeric) +CAST(JSON_EXTRACT_SCALAR(report, "$.audits.uses-webp-images.score") AS numeric) imgSUMscore,
-    
-    (JSON_EXTRACT_SCALAR(report, "$.audits.offscreen-images.score")) AS offscreenScore,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.offscreen-images.details.overallSavingsMs")) AS offscreenwastedms,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.offscreen-images.details.overallSavingsBytes")) AS offscreenwastedkb,
-     (LENGTH(JSON_EXTRACT(report, "$.audits.offscreen-images.details.items")) - LENGTH(REGEXP_REPLACE((JSON_EXTRACT(report, "$.audits.offscreen-images.details.items")),"url","")))/3 AS offscreenimageCOUNT,
-    
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-optimized-images.score")) AS optimagesScore,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-optimized-images.details.overallSavingsMs")) AS optimgwastedms,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-optimized-images.details.overallSavingsBytes")) AS optimgwastedkb,
-     (LENGTH(JSON_EXTRACT(report, "$.audits.uses-optimized-images.details.items")) - LENGTH(REGEXP_REPLACE((JSON_EXTRACT(report, "$.audits.uses-optimized-images.details.items")),"url","")))/3 AS unoptimageCOUNTCOUNT,
-   
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-responsive-images.score")) AS repimagesScore,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-responsive-images.details.overallSavingsMs")) AS respimgwastedms,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-responsive-images.details.overallSavingsBytes")) AS respimgwastedkb,
-    (LENGTH(JSON_EXTRACT(report, "$.audits.uses-responsive-images.details.items")) - LENGTH(REGEXP_REPLACE((JSON_EXTRACT(report, "$.audits.uses-responsive-images.details.items")),"url","")))/3 AS nonresponsiveCOUNT,
-    
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-webp-images.score")) AS webpimagesScore,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-webp-images.details.overallSavingsMs")) AS webpimgwastedms,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.uses-webp-images.details.overallSavingsBytes")) AS webpimgwastedkb,
-    (LENGTH(JSON_EXTRACT(report, "$.audits.uses-webp-images.details.items")) - LENGTH(REGEXP_REPLACE((JSON_EXTRACT(report, "$.audits.uses-webp-images.details.items")),"url","")))/3 AS nonwebpCOUNT,
-    
-     (JSON_EXTRACT_SCALAR(report, "$.audits.efficient-animated-content.score")) AS agifScore,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.efficient-animated-content.details.overallSavingsMs")) AS agifwastedms,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.efficient-animated-content.details.overallSavingsBytes"))AS  agifwastedkb,
-    (LENGTH(JSON_EXTRACT(report, "$.audits.efficient-animated-content.details.items")) - LENGTH(REGEXP_REPLACE((JSON_EXTRACT(report, "$.audits.efficient-animated-content.details.items")),"url","")))/3 AS agifCOUNTCOUNT,
-    
-     (JSON_EXTRACT_SCALAR(report, "$.audits.video-caption.score")) AS videocaptionScore,
-    (JSON_EXTRACT(report, "$.audits.video-caption.scoreDisplayMode")) AS videocaptiondisplaymode,
-    (JSON_EXTRACT_SCALAR(report, "$.audits.video-description.score")) AS videoDescription,
-    JSON_EXTRACT(report, "$.audits.video-description.scoreDisplayMode") AS videodescriptiondeisplaymode,
-     (JSON_EXTRACT_SCALAR(report, "$.audits.pwa.score")) AS pwaScore
-    
-    
-  FROM
-    `httparchive.lighthouse.2019_07_01_mobile` 
-)  
-GROUP BY offscreenScore, offscreenwastedms, offscreenwastedkb,offscreenimageCOUNT,
-         optimagesScore,optimgwastedms, optimgwastedkb,unoptimageCOUNTCOUNT,
-         repimagesScore,respimgwastedms, respimgwastedkb, nonresponsiveCOUNT, 
-         webpimagesScore, webpimgwastedms, webpimgwastedkb, nonwebpCOUNT,
-         agifScore, agifwastedms, agifwastedkb, agifCOUNTCOUNT, videocaptionScore, pwaScore
-         
-)
-  
+  `httparchive.lighthouse.2019_07_01_mobile`,
+  UNNEST(getAuditResults(report)) AS audit,
+  UNNEST([5,10,15,20, 25,30,35,40,45, 50,55,60,65,70, 75,80,85, 90,95]) AS percentile
+GROUP BY
+  percentile,
+  name
+ORDER BY
+  percentile,
+  name
