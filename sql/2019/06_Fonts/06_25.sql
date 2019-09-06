@@ -1,18 +1,18 @@
 #standardSQL
-# 06_25: % of pages that use @supports font-variation-settings
+# 06_25: % of pages that use @supports font-variant-*
 CREATE TEMPORARY FUNCTION checksSupports(css STRING)
-RETURNS INT64 LANGUAGE js AS '''
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var reduceValues = (values, rule) => {
     if (rule.type == 'supports' && rule.supports.toLowerCase().includes('font-variation-settings')) {
-      return values++;
+      values.push(rule.supports.toLowerCase());
     }
     return values;
   };
   var $ = JSON.parse(css);
-  return $.stylesheet.rules.reduce(reduceValues, 0);
+  return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-  return 0;
+  return [];
 }
 ''';
 
@@ -27,8 +27,8 @@ JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING
   (client)
+WHERE
+  ARRAY_LENGTH(checksSupports(css)) > 0
 GROUP BY
   client,
   total
-HAVING
-  SUM(checksSupports(css)) > 0
