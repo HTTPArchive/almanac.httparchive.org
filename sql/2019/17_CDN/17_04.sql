@@ -1,25 +1,26 @@
 #standardSQL
-# 17_04: Percentiles of header volume
+# 17_04: Distribution of response header size
 SELECT
   client,
-  ROUND(APPROX_QUANTILES(reqheader, 1000)[OFFSET(100)] / 1024, 2) AS p10_reqheader,
-  ROUND(APPROX_QUANTILES(reqheader, 1000)[OFFSET(250)] / 1024, 2) AS p25_reqheader,
-  ROUND(APPROX_QUANTILES(reqheader, 1000)[OFFSET(500)] / 1024, 2) AS p50_reqheader,
-  ROUND(APPROX_QUANTILES(reqheader, 1000)[OFFSET(750)] / 1024, 2) AS p75_reqheader,
-  ROUND(APPROX_QUANTILES(reqheader, 1000)[OFFSET(900)] / 1024, 2) AS p90_reqheader,
-  ROUND(APPROX_QUANTILES(resheader, 1000)[OFFSET(100)] / 1024, 2) AS p10_resheader,
-  ROUND(APPROX_QUANTILES(resheader, 1000)[OFFSET(250)] / 1024, 2) AS p25_resheader,
-  ROUND(APPROX_QUANTILES(resheader, 1000)[OFFSET(500)] / 1024, 2) AS p50_resheader,
-  ROUND(APPROX_QUANTILES(resheader, 1000)[OFFSET(750)] / 1024, 2) AS p75_resheader,
-  ROUND(APPROX_QUANTILES(resheader, 1000)[OFFSET(900)] / 1024, 2) AS p90_resheader
-FROM 
-( 
+  cdn,
+  COUNT(0) AS requests,
+  APPROX_QUANTILES(resheader, 1000)[OFFSET(100)] AS p10,
+  APPROX_QUANTILES(resheader, 1000)[OFFSET(250)] AS p25,
+  APPROX_QUANTILES(resheader, 1000)[OFFSET(500)] AS p50,
+  APPROX_QUANTILES(resheader, 1000)[OFFSET(750)] AS p75,
+  APPROX_QUANTILES(resheader, 1000)[OFFSET(900)] AS p90
+FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT(payload, '$.request.headersSize') AS INT64) AS reqheader,
-    CAST(JSON_EXTRACT(payload, '$.response.headersSize') AS INT64) AS resheader
+    client,
+    CAST(JSON_EXTRACT(payload, '$.response.headersSize') AS INT64) AS resheader,
+    _cdn_provider AS cdn
   FROM
-    `httparchive.requests.2019_07_01_*`
-)
+    `httparchive.almanac.requests`
+  WHERE
+    _cdn_provider != '')
 GROUP BY
+  client,
+  cdn
+ORDER BY
+  requests DESC,
   client
