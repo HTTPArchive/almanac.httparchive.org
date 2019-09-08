@@ -7,7 +7,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   ROUND((COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client)), 2) AS pct
 FROM
-  `httparchive.summary_requests.2019_07_01_*`
+  `httparchive.almanac.requests`
 WHERE
   firstHtml
 GROUP BY
