@@ -1,21 +1,17 @@
 #standardSQL
-# 17_01: Top CDNs used in the requests
-#Requests to root document of the page which is served by a CDN.
-SELECT 
+# 17_01: Top CDNs used on the root HTML pages
+SELECT
   client,
-  cdn, 
-  COUNT(*) AS freq,
-  SUM(COUNT(*)) OVER(PARTITION BY client) AS total,
-  ROUND(100 * (COUNT(*)/SUM(COUNT(*)) OVER(PARTITION BY client)), 2) AS pct
-FROM (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    _cdn_provider AS cdn
-  FROM
-    `httparchive.summary_requests.2019_07_01_*`
-  WHERE firstHtml
-  ORDER BY
-    client
-)
-GROUP BY client, cdn
-ORDER BY client, freq DESC
+  _cdn_provider AS cdn,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  ROUND((COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client)), 2) AS pct
+FROM
+  `httparchive.almanac.requests`
+WHERE
+  firstHtml
+GROUP BY
+  client,
+  cdn
+ORDER BY
+  freq / total DESC
