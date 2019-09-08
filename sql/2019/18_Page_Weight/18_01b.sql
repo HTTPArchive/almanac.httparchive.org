@@ -1,5 +1,5 @@
 #standardSQL
-# 18_01: Distribution of page weight by resource type and client.
+# 18_01b: Distribution of page weight by resource type and client (2018).
 SELECT
   percentile,
   _TABLE_SUFFIX as client,
@@ -11,7 +11,7 @@ SELECT
   APPROX_QUANTILES(ROUND(bytesOther / 1024, 2), 1000)[OFFSET(percentile * 10)] AS other_kbytes,
   APPROX_QUANTILES(ROUND(bytesHtmlDoc / 1024, 2), 1000)[OFFSET(percentile * 10)] AS html_doc_kbytes
 FROM
-  `httparchive.summary_pages.2019_07_01_*`,
+  `httparchive.summary_pages.2018_07_01_*`,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,
