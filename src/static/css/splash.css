@@ -1,6 +1,6 @@
 /* Browser elements */
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	color: #444;
 	margin: 0;
 }
@@ -64,7 +64,7 @@ footer,
 	color: white;
 }
 
-.mobile-web-container,
+.featured-chapter,
 .methodology-container {
 	width: 100%;
 	display: flex;
@@ -172,12 +172,14 @@ footer,
 	display: flex;
 	align-items: center;
 	margin-right: 40px;
+	text-transform: uppercase;
 }
 
 .data-processed {
 	display: flex;
 	align-items: center;
 	margin-left: 40px;
+	text-transform: uppercase;
 }
 
 .websites-tested div,

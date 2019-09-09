@@ -34,6 +34,11 @@ def get_view_args(lang=None):
 # Make this function available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 
+@app.route('/')
+@app.route('/<lang>/')
+@validate
+def home(lang):
+    return render_template('%s/index.html' % lang)
 
 @app.route('/')
 @app.route('/<lang>/')
