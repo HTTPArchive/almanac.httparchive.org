@@ -13,7 +13,11 @@ RETURNS BOOLEAN LANGUAGE js AS '''
 ''';
 
 SELECT
+  _TABLE_SUFFIX AS client,
   COUNTIF(hasModulePreload(payload)) AS num_pages,
+  COUNT(0) AS total,
   ROUND(COUNTIF(hasModulePreload(payload)) * 100 / COUNT(0), 2) AS pct_modulepreload
 FROM
   `httparchive.pages.2019_07_01_*`
+GROUP BY
+  client

@@ -13,7 +13,11 @@ RETURNS BOOLEAN LANGUAGE js AS '''
 ''';
 
 SELECT
+  _TABLE_SUFFIX AS client,
   COUNTIF(hasScriptPrefetch(payload)) AS num_pages,
+  COUNT(0) AS total,
   ROUND(COUNTIF(hasScriptPrefetch(payload)) * 100 / COUNT(0), 2) AS pct_script_prefetch
 FROM
   `httparchive.pages.2019_07_01_*`
+GROUP BY
+  client
