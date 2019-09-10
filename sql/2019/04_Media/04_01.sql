@@ -1,4 +1,5 @@
 #standardSQL
+#
 # 04_01-02: Lighthouse media scores, savings, and item lengths
 CREATE TEMPORARY FUNCTION getAuditResults(report STRING)
 RETURNS ARRAY<STRUCT<name STRING, score NUMERIC, ms NUMERIC, bytes NUMERIC, items NUMERIC>> LANGUAGE js AS '''
