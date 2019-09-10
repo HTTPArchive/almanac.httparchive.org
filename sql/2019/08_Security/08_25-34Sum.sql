@@ -2,30 +2,31 @@
 # 08_24-34Sum.sql
 # 
 #
-# Calculate usage percentage for each of the 10 metrics 08.25-34 metrics in one run
+# Leverage a reworked query to help streamline array values/joins
 #
 # BigQuery usage notes: 
-# == archive.summary_response_bodies =  71.5 GB usage (firstHtml partitioning)
-# == archive.summary_requests = 117.5 GB 
+# == `httparchive.summary_requests.2019_07_01_*` + httparchive.summary_pages.2019_07_01_*`  = 118 GB
 #  
-# cross-origin-opener-policy - only 6 instances of this data across the archive
-# sec-fetch-* - zero instances of this data across the archive
 
 SELECT
-  client,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)nel =')) * 100 / COUNT(0),2) AS pct_nel,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)report-to = ')) * 100 / COUNT(0),2) AS pct_report_to,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)referrer-policy = ')) * 100 / COUNT(0),2) AS pct_referrer_policy,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)feature-policy = ')) * 100 / COUNT(0),2) AS pct_feature_policy,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-content-type-options = ')) * 100 / COUNT(0),2) AS pct_xcontent_type_options,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-xss-protection = ')) * 100 / COUNT(0),2) AS pct_x_xss_protection,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)x-frame-options = ')) * 100 / COUNT(0),2) AS pct_x_frame_options,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)cross-origin-resource-policy = ')) * 100 / COUNT(0),2) AS pct_x_origin_resource_policy,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)cross-origin-opener-policy = ')) * 100 / COUNT(0),2) AS pct_x_origin_opener_policy,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)sec-fetch-[dest|mode|site|user] = ')) * 100 / COUNT(0),2) AS pct_sec_fetches
+  _TABLE_SUFFIX AS client,
+  header,
+  COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', header, ' ='))) AS freq,
+  total,
+  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, CONCAT('(?i)', header, ' ='))) * 100 / total, 2) AS pct
 FROM
-  `httparchive.almanac.summary_response_bodies`
+  `httparchive.summary_requests.2019_07_01_*`,
+UNNEST(['nel', 'report-to', 'referrer-policy', 'feature-policy', 'x-content-type-options', 'x-xss-protection', 'x-frame-options', 'cross-origin-resource-policy', 'cross-origin-opener-policy', 'sec-fetch-(dest|mode|site|user)']) AS header
+JOIN (
+  SELECT _TABLE_SUFFIX, COUNT(0) AS total
+  FROM `httparchive.summary_pages.2019_07_01_*`
+  GROUP BY _TABLE_SUFFIX)
+USING (_TABLE_SUFFIX)
 WHERE
   firstHtml
 GROUP BY
-  client
+  client,
+  total,
+  header
+ORDER BY
+  freq / total DESC
