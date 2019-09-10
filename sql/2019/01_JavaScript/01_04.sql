@@ -3,8 +3,8 @@
 SELECT
   percentile,
   client,
-  APPROX_QUANTILES(first_party, 1000)[OFFSET(percentile * 10)] AS distribution_first_party_js_kbytes,
-  APPROX_QUANTILES(third_party, 1000)[OFFSET(percentile * 10)] AS distribution_third_party_js_kbytes
+  APPROX_QUANTILES(first_party, 1000)[OFFSET(percentile * 10)] AS first_party_js_requests,
+  APPROX_QUANTILES(third_party, 1000)[OFFSET(percentile * 10)] AS third_party_js_requests
 FROM (
   SELECT
     client,
