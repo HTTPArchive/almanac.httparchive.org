@@ -1,4 +1,4 @@
-# standard SQL
+#standardSQL
 # 08_35.sql
 # 
 # Calculate usage percentage for set-cookie and the "httponly" flag
