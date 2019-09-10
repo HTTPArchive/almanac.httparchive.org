@@ -1,4 +1,4 @@
-# standard SQL
+#standardSQL
 # 08_24-34Sum.sql
 # 
 #
