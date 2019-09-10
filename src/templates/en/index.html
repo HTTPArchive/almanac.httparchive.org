@@ -5,7 +5,7 @@ The Web Almanac by HTTP Archive
 {% endblock %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/splash.css">
+  <link rel="stylesheet" href="/static/css/index.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
 {% endblock %}
 
@@ -13,61 +13,71 @@ The Web Almanac by HTTP Archive
 <div id="home">
   <header>
     <section class="nav">
-      <div class="logo">
-        <b>Web Almanac</b>
-      </div>
+      <img src="/static/images/home.png" />
       <nav class="nav-items">
-        <li>
-          <a href="#">Facts and stats</a>
-        </li>
         <li>
           <a href="#">Contributors</a>
         </li>
         <li>
           <a href="#">Methodology</a>
         </li>
-        <li>
-          <a href="#">Explore older reports</a>
-        </li>
-        <select>
-          <option>2019</option>
-        </select>
+        <div class="select-year">
+          {% if supported_years | length > 1 %}
+            <button>
+              2019 Edition
+            </button>
+            <img src="/static/images/dropdown-arrow.png" />
+          {% endif %}
+        </div>
       </nav>
       <div class="explore">
         <button>
           Start Exploring
         </button>
+        <img src="/static/images/{{ language }}.png" />
         <select class="language-switcher">
-            {% if supported_languages is iterable %}
-              {% for l in supported_languages %}
-                <option
-                  {% if l == language %}selected="selected"{% endif %}
-                  value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-                  {{ l }}
-                </option>
-              {% endfor %}
-            {% endif %}
-          </select>
+          {% if supported_languages is iterable %}
+            {% for l in supported_languages %}
+              <option
+                {% if l == language %}selected="selected"{% endif %}
+                value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+                {{ l }}
+              </option>
+            {% endfor %}
+          {% endif %}
+        </select>
+        <img src="/static/images/dropdown-arrow.png" />
       </div>
     </section>
-    <section class="intro">
-      <h1>Web Almanac</h1>
-      <h2>
-        <b>HTTP Archive's</b> annual<br/>
-        <b>state of the web</b> report
-      </h2>
-      <div>
-        Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20 chapters spanning aspects of page content, user experience, publishing, and distribution.
+    <section class="intro-container">
+      <div class="intro">
+        <h1>Web Almanac</h1>
+        <h2>
+          <b>HTTP Archive's</b> annual<br>
+          <b>state of the web</b> report
+        </h2>
+        <div>
+          Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20 chapters spanning aspects of page content, user experience, publishing, and distribution.
+        </div>
+        <button>
+          Start exploring
+        </button>
       </div>
-      <button>
-        Start exploring
-      </button>
+      <div class="intro-image">
+        <div>2019</div>
+        <img class="home-browser" src="/static/images/home-browser.png" />
+        <img class="camada-751" src="/static/images/camada-751.png" />
+        <img class="camada-759" src="/static/images/camada-759.png" />
+        <img class="camada-752" src="/static/images/camada-752.png" />
+      </div>
     </section>
   </header>
   <section class="featured-chapter">
     <div class="mobile-web">
-      <h1>Mobile Web</h1>
-      <div>
+      <h1>Featured Chapter</h1>
+      <h2>Mobile Web</h2>
+      <div class="quote-text">
+        <img class="quote" src="/static/images/quote.png" />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim facilisis gravida neque convallis a cras semper auctor neque.
       </div>
       <div class="mobile-web-data">
@@ -85,11 +95,12 @@ The Web Almanac by HTTP Archive
         </div>
       </div>
       <button>
-        Read the R2D2C3P0 Chapter
+        <b>Read the R2D2C3P0 Chapter</b>
       </button>
     </div>
   </section>
   <section class="contributors-container">
+    <div class="rectangles"></div>
     <div class="contributors">
       <h1>Contributors</h1>
       <div>
@@ -99,10 +110,20 @@ The Web Almanac by HTTP Archive
         See the contributors
       </button>
     </div>
+    <div class="people">
+      <img class="camada-755" src="/static/images/camada-755.png" />
+      <div class="people-number">
+        91
+      </div>
+      <img class="camada-756" src="/static/images/camada-756.png" />
+      <img class="camada-754" src="/static/images/camada-754.png" />
+    </div>
+    <div class="people-text">
+      People
+    </div>
   </section>
   <section class="methodology-container">
     <div class="methodology">
-      <img src="/static/images/img1.png" alt="img1">
       <h1>Methodology</h1>
       <div class="methodology-data">
         <div class="websites-tested">
@@ -128,19 +149,15 @@ The Web Almanac by HTTP Archive
       <button>
         See the Methodology
       </button>
-      <img src="/static/images/img2.png" alt="img2">
+      <img src="/static/images/camada-760.png" />
     </div>
   </section>
   <footer class="footer">
     <div class="footer-container">
       <section class="nav">
-        <div class="logo">
-          <b>Web Almanac</b>
-        </div>
+        <img src="/static/images/home.png" />
         <nav class="nav-items">
-          <li>
-            <a href="#">Facts and stats</a>
-          </li>
+          <img src="/static/images/ha-home.png" />
           <li>
             <a href="#">Contributors</a>
           </li>
@@ -149,17 +166,19 @@ The Web Almanac by HTTP Archive
           </li>
         </nav>
         <div class="explore">
+          <img src="/static/images/{{ language }}.png" />
           <select class="language-switcher">
-              {% if supported_languages is iterable %}
-                {% for l in supported_languages %}
-                  <option
-                    {% if l == language %}selected="selected"{% endif %}
-                    value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-                    {{ l }}
-                  </option>
-                {% endfor %}
-              {% endif %}
-            </select>
+            {% if supported_languages is iterable %}
+              {% for l in supported_languages %}
+                <option
+                  {% if l == language %}selected="selected"{% endif %}
+                  value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+                  {{ l }}
+                </option>
+              {% endfor %}
+            {% endif %}
+          </select>
+          <img src="/static/images/dropdown-arrow.png" />
         </div>
       </section>
       <hr>
@@ -168,8 +187,8 @@ The Web Almanac by HTTP Archive
           Copyright © 2019 Web Almanac. All rights reserved.
         </div>
         <div class="social-media">
-          <div>Twitter</div>
-          <div>GitHub</div>
+            <img src="/static/images/twitter.png" />
+            <img src="/static/images/github.png" />
         </div>
       </div>
     </div>

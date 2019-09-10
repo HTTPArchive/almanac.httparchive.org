@@ -19,7 +19,7 @@ def render_template(template, *args, **kwargs):
 
     lang = request.view_args.get('lang')
     language = get_language(lang)
-    kwargs.update(supported_languages=supported_languages, language=language)
+    kwargs.update(supported_languages=supported_languages, language=language, supported_years=list(SUPPORTED_YEARS.keys()))
     return flask_render_template(template, *args, **kwargs)
 
 
