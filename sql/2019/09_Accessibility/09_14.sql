@@ -1,20 +1,24 @@
-#StandardSQL
-/*
-09_15
-
-10TB
-
-only tested on the 1k sample response body samples AND there are only 10 examples 
-retrieves all sites with aria key shortcuts finds how many on each page.
-*/
-
-SELECT url, ARRAY_LENGTH(ariakbShortcut) AS ariakbShortcut
-FROM(
+#standardSQL
+# 09_14: % pages using aria-keyshortcuts, accesskey attrs
 SELECT
-url, 
-REGEXP_EXTRACT_ALL(LOWER(body),r'(aria-keyshortcuts=["\']*[^\s\'"]*["\']*)') ariakbShortcut
-
-FROM `response_bodies.2019_07_01_*` 
-WHERE LOWER(body) LIKE "%aria-keyshortcuts%"
-) WHERE ARRAY_LENGTH(ariakbShortcut) >0
-ORDER BY ARRAY_LENGTH(ariakbShortcut) desc
+  client,
+  COUNTIF(aria_keyshortcuts) AS freq_aria_keyshortcuts,
+  COUNTIF(accesskey) AS freq_accesskey,
+  total,
+  ROUND(COUNTIF(aria_keyshortcuts) * 100 / total, 2) AS pct_aria_keyshortcuts,
+  ROUND(COUNTIF(accesskey) * 100 / total, 2) AS pct_accesskey
+FROM (
+  SELECT
+    client,
+    REGEXP_CONTAINS(body, '(?i)<[^>]+aria-keyshortcuts=') AS aria_keyshortcuts,
+    REGEXP_CONTAINS(body, '(?i)<[^>]+accesskey=') AS accesskey
+  FROM
+    `httparchive.almanac.summary_response_bodies`
+  WHERE
+    firstHtml)
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING (client)
+GROUP BY
+  client,
+  total

@@ -1,33 +1,35 @@
-#StandardSQL
-/*
-09_04
-10TB
-only tested on the sample data set
-
-COUNT of sites that have the following attributes:
-
-header </header>
-footer </footer>
-main </main>
-nav   </nav>
-
-AsSUMption - only looking for one instance each.  
-Looking for the close tage is easier - no extra elements.
-
-Save this in a table, AND then see how many sites have header but no footer, OR  have nav but no main.
-
-*/
-
-
+#standardSQL
+# 09_04: % of pages having more than one "main" landmark
+CREATE TEMPORARY FUNCTION getMainCount(payload STRING)
+RETURNS INT64 LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var elements = JSON.parse($._element_count);
+  if (Array.isArray(elements) || typeof elements != 'object') return 0;
+  return elements['main'] || 0;
+} catch (e) {
+  return 0;
+}
+''';
 
 SELECT
-url, 
-IF(LOWER(body)) nav, 
-IF(LOWER(body) LIKE "%</main>%", 1,0) main, 
-IF(LOWER(body) LIKE "%</header>%", 1,0) header, 
-IF(LOWER(body) LIKE "%</footer>%", 1,0) footer
-FROM `response_bodies.2019_07_01_*` 
-WHERE LOWER(body) LIKE "%</nav>%"  OR  
-      LOWER(body) LIKE "%</main>%"    OR   
-      LOWER(body) LIKE "%</header>%" OR  
-      LOWER(body) LIKE "%</footer>%"
+  client,
+  main_elements + main_roles AS main_landmarks,
+  COUNT(DISTINCT page) AS pages,
+  total,
+  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+FROM
+  (SELECT _TABLE_SUFFIX AS client, url AS page, getMainCount(payload) AS main_elements FROM `httparchive.pages.2019_07_01_*`)
+JOIN
+  (SELECT client, page, ARRAY_LENGTH(REGEXP_EXTRACT_ALL(body, '(?i)role=[\'"]?main')) AS main_roles FROM `httparchive.almanac.summary_response_bodies` WHERE firstHtml)
+USING
+  (client, page)
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING (client)
+GROUP BY
+  client,
+  total,
+  main_landmarks
+ORDER BY
+  pages / total DESC
