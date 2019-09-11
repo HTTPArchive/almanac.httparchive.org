@@ -14,6 +14,7 @@ try {
       return values;
     }
     // From `url(basic-sans-serif.ttf) format("truetype")` get `truetype`.
+    var re = /format\\(["']?(\\w+)['"]?\\)/;
     return values.concat(rule.declarations.filter(d => d.property.toLowerCase() == 'src').map(d => {
       // Convert `format(woff), format(svg)` into `svg, woff`
       return d.value.toLowerCase().split(',').filter(src => re.test(src)).map(src => src.match(re)[1]).sort().join(', ');

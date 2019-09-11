@@ -5,7 +5,7 @@ RETURNS BOOLEAN LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);
-    return !!almanac['link-nodes'].find(e => e.rel.toLowerCase() == 'stylesheet' && e.href.startsWith('https://fonts.googleapis.com'));
+    return !!almanac['link-nodes'].find(e => e.rel.toLowerCase() == 'stylesheet' && (e.href.startsWith('https://fonts.googleapis.com') || e.href.startsWith('http://fonts.googleapis.com')));
   } catch (e) {
     return false;
   }

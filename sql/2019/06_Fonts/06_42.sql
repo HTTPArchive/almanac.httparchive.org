@@ -14,10 +14,7 @@ USING
 WHERE
   type = 'font' AND
   # Color fonts have any of sbix, cbdt, svg or colr tables.
-  JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.sbix') IS NOT NULL OR
-  JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.cbdt') IS NOT NULL OR
-  JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.svg') IS NOT NULL OR
-  JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.colr') IS NOT NULL
+  ARRAY_LENGTH(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)(sbix|cbdt|svg|colr)')) > 0
 GROUP BY
   client,
   total
