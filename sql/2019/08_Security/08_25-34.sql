@@ -1,5 +1,5 @@
 #standardSQL
-# 08_24-34Sum.sql
+# 08_24-34.sql
 # 
 #
 # Leverage a reworked query to help streamline array values/joins
