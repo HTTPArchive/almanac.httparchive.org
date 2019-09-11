@@ -1,5 +1,5 @@
 #standardSQL
-# 09_29: Pages that auto refresh, e.g. http-equiv="refresh" attribute in the meta tag
+# 09_28: Pages that auto refresh, e.g. http-equiv="refresh" attribute in the meta tag
 SELECT
   client,
   COUNTIF(total_matches > 0) AS occurrences,
