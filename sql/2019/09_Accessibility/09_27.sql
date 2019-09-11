@@ -31,7 +31,7 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 SELECT
   _TABLE_SUFFIX AS client,
   tag_type,
-  COUNT(tag_type) AS occurrence,
+  COUNT(tag_type) AS occurrences,
   ROUND(COUNT(tag_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurrence_perc,
   COUNT(DISTINCT url) AS pages,
   total AS total_pages,
@@ -43,4 +43,4 @@ JOIN
   (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX)
 GROUP BY client, tag_type, total
-ORDER BY occurrence DESC
+ORDER BY occurrences DESC
