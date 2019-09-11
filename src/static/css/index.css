@@ -145,9 +145,14 @@ header {
 	flex-shrink: 0;
 }
 
+.menu {
+	display: none;
+}
+
 .intro-container {
 	display: flex;
-	padding: 0 300px 200px 300px;
+	justify-content: center;
+	margin-bottom: 200px;
 }
 
 .intro {
@@ -271,6 +276,8 @@ header {
 .contributors-container {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	width: 100vw;
 }
 
 .rectangles {
@@ -321,6 +328,9 @@ header {
 	font-weight: bold;
 	font-size: 40px;
 	letter-spacing: 5px;
+	position: absolute;
+	top: 100px;
+	right: -15px;
 }
 
 /* Methodology */

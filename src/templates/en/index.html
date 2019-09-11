@@ -34,7 +34,11 @@ The Web Almanac by HTTP Archive
         <button>
           Start Exploring
         </button>
-        <img src="/static/images/{{ language }}.png" />
+        {% if language is not none %}
+          <img src="/static/images/{{ language }}.png" />
+        {% else %}
+          <img src="/static/images/English.png" />
+        {% endif %}
         <select class="language-switcher">
           {% if supported_languages is iterable %}
             {% for l in supported_languages %}
@@ -48,6 +52,7 @@ The Web Almanac by HTTP Archive
         </select>
         <img src="/static/images/dropdown-arrow.png" />
       </div>
+      <img class="menu" src="/static/images/menu.png" />
     </section>
     <section class="intro-container">
       <div class="intro">
@@ -117,9 +122,9 @@ The Web Almanac by HTTP Archive
       </div>
       <img class="camada-756" src="/static/images/camada-756.png" />
       <img class="camada-754" src="/static/images/camada-754.png" />
-    </div>
-    <div class="people-text">
-      People
+      <div class="people-text">
+        People
+      </div>
     </div>
   </section>
   <section class="methodology-container">
@@ -166,7 +171,11 @@ The Web Almanac by HTTP Archive
           </li>
         </nav>
         <div class="explore">
-          <img src="/static/images/{{ language }}.png" />
+          {% if language is not none %}
+            <img src="/static/images/{{ language }}.png" />
+          {% else %}
+            <img src="/static/images/English.png" />
+          {% endif %}
           <select class="language-switcher">
             {% if supported_languages is iterable %}
               {% for l in supported_languages %}
