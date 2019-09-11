@@ -32,7 +32,8 @@ SELECT
   _TABLE_SUFFIX AS client,
   tag_type,
   COUNT(tag_type) AS occurrences,
-  ROUND(COUNT(tag_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurrence_perc,
+  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total_interactive_elements,
+  ROUND(COUNT(tag_type) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS occurrence_perc,
   COUNT(DISTINCT url) AS pages,
   total AS total_pages,
   ROUND(COUNT(DISTINCT url) * 100 / total, 2) AS pages_perc
