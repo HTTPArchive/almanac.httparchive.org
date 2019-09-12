@@ -150,21 +150,22 @@ header {
 }
 
 .intro-container {
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-areas:
+		'intro year'
+		'intro image';
 	margin-bottom: 200px;
+	justify-content: center;
 }
 
 .intro {
+	grid-area: intro;
 	width: 400px;
 	margin-right: 150px;
 }
 
-.intro-image {
-	position: relative;
-}
-
-.intro-image div:first-of-type {
+.intro-year {
+	grid-area: year;
 	height: 180px;
 	width: 564px;
 	margin-left: 10px;
@@ -172,6 +173,11 @@ header {
 	font-size: 200px;
 	font-weight: bold;
 	letter-spacing: 50px;
+}
+
+.intro-image {
+	grid-area: image;
+	position: relative;
 }
 
 .camada-751 {
@@ -277,7 +283,6 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 100vw;
 }
 
 .rectangles {
@@ -289,7 +294,6 @@ header {
 
 .contributors {
 	width: 400px;
-	margin: 100px 50px 50px 200px;
 }
 
 .people {
