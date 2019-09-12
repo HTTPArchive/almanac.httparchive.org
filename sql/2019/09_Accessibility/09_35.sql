@@ -14,12 +14,12 @@ try {
       return values;
     }
 
-    return !!rule.declarations.find(d => 
+    return !!rule.declarations.find(d =>
           d.property.toLowerCase() == 'animation-iteration-count' &&
           d.value.toLowerCase() == 'infinite');
   };
   var $ = JSON.parse(css);
-  return Object.keys($.stylesheet.rules.reduce(reduceValues, false));
+  return $.stylesheet.rules.reduce(reduceValues, false);
 } catch (e) {
   return false;
 }
