@@ -20,5 +20,3 @@ FROM (
   FROM
     `httparchive.lighthouse.2019_07_01_mobile`
 )
-ORDER BY
-  perc_good_img_alts DESC
