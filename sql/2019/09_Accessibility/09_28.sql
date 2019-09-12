@@ -1,5 +1,30 @@
 #standardSQL
 # 09_28: Pages that auto refresh, e.g. http-equiv="refresh" attribute in the meta tag
+CREATE TEMPORARY FUNCTION getTotalMetaRefresh(payload STRING)
+RETURNS INT64 LANGUAGE js AS '''
+  try {
+    var $ = JSON.parse(payload);
+    var almanac = JSON.parse($._almanac);
+    if (!almanac['meta-nodes']) {
+      return 0;
+    }
+
+    return almanac['meta-nodes'].reduce(function(acc, node) {
+      if (!node['http-equiv']) {
+        return acc;
+      }
+
+      if (node['http-equiv'].toLowerCase() === 'refresh') {
+        return acc + 1;
+      }
+
+      return acc;
+    }, 0);
+  } catch (e) {
+    return 0;
+  }
+''';
+
 SELECT
   client,
   COUNTIF(total_matches > 0) AS occurrences,
@@ -7,16 +32,11 @@ SELECT
   ROUND(COUNTIF(total_matches > 0) * 100 / total_pages, 2) AS occurrence_percentage
 FROM (
   SELECT
-    client,
+    _TABLE_SUFFIX AS client,
     url,
-    COUNT(regex_match) AS total_matches
+    getTotalMetaRefresh(payload) AS total_matches
   FROM
-    `httparchive.almanac.summary_response_bodies`,
-    UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)<\\s*meta\\s[^>]*http-equiv=[\'"]?\\s*refresh\\s*[\'"]?')) AS regex_match
-  WHERE firstHtml
-  GROUP BY
-    url,
-    client
+    `httparchive.pages.2019_07_01_*`
 )
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total_pages FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)

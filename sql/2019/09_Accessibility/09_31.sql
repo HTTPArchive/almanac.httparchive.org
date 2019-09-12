@@ -11,12 +11,17 @@ SELECT
   ROUND(COUNTIF(uses_either AND good_or_na_buttons AND good_or_na_links) * 100 / COUNTIF(uses_either), 2) AS perc_both_good
 FROM (
   SELECT
-    JSON_EXTRACT_SCALAR(report, '$.audits.button-name.score') IS NOT NULL AS uses_buttons,
-    JSON_EXTRACT_SCALAR(report, '$.audits.link-name.score') IS NOT NULL AS uses_links,
-    JSON_EXTRACT_SCALAR(report, '$.audits.button-name.score') IS NOT NULL OR JSON_EXTRACT_SCALAR(report, '$.audits.link-name.score') IS NOT NULL AS uses_either,
+    button_name_score IS NOT NULL AS uses_buttons,
+    link_name_score IS NOT NULL AS uses_links,
+    button_name_score IS NOT NULL OR link_name_score IS NOT NULL AS uses_either,
 
-    IFNULL(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.button-name.score') as NUMERIC), 1) = 1 AS good_or_na_buttons,
-    IFNULL(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.link-name.score') as NUMERIC), 1) = 1 AS good_or_na_links
-  FROM
-    `httparchive.lighthouse.2019_07_01_mobile`
+    IFNULL(CAST(button_name_score as NUMERIC), 1) = 1 AS good_or_na_buttons,
+    IFNULL(CAST(link_name_score as NUMERIC), 1) = 1 AS good_or_na_links
+  FROM (
+    SELECT
+      JSON_EXTRACT_SCALAR(report, '$.audits.button-name.score') AS button_name_score,
+      JSON_EXTRACT_SCALAR(report, '$.audits.link-name.score') AS link_name_score
+    FROM
+      `httparchive.lighthouse.2019_07_01_mobile`
+  )
 )
