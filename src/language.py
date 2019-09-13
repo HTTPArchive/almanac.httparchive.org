@@ -1,10 +1,9 @@
 # coding=utf-8
 class _Language(object):
-  def __init__(self, local_name, lang_code, region_code, emoji_flag):
+  def __init__(self, local_name, lang_code, region_code):
     self._local_name = local_name
     self._lang_code = lang_code
     self._region_code = region_code
-    self._emoji_flag = emoji_flag
 
   def __eq__(self, other):
     if isinstance(other, _Language):
@@ -12,7 +11,7 @@ class _Language(object):
     return False
 
   def __str__(self):
-    return '%s %s' % (self._emoji_flag, self._local_name)
+    return '%s' % (self._local_name)
 
   def __repr__(self):
     return '%s, %s' % (self.__str__(), self.lang_attribute)
@@ -27,8 +26,8 @@ class _Language(object):
     return self._lang_code
 
 class Language(object):
-  JAPANESE = _Language('日本語', 'ja', 'JP', '🇯🇵')
-  ENGLISH = _Language('English', 'en', 'US', '🇺🇸')
+  JAPANESE = _Language('日本語', 'ja', 'JP')
+  ENGLISH = _Language('English', 'en', 'US')
 
 DEFAULT_LANGUAGE = Language.ENGLISH
 
