@@ -52,7 +52,8 @@ The Web Almanac by HTTP Archive
         </select>
         <img src="/static/images/dropdown-arrow.png" />
       </div>
-      <img class="menu" src="/static/images/menu.png" />
+      <img class="menu-icon" src="/static/images/menu.png" />
+      <img class="menu-close-icon" src="/static/images/cross.png" />
     </section>
     <section class="intro-container">
       <div class="intro">
@@ -69,11 +70,50 @@ The Web Almanac by HTTP Archive
         </button>
       </div>
       <div class="intro-year">2019</div>
-      <div class="intro-image">
-        <img class="home-browser" src="/static/images/home-browser.png" />
-        <img class="camada-751" src="/static/images/camada-751.png" />
-        <img class="camada-759" src="/static/images/camada-759.png" />
-        <img class="camada-752" src="/static/images/camada-752.png" />
+      <div class="intro-image-container">
+        <div class="intro-image">
+          <img class="home-browser" src="/static/images/home-browser.png" />
+          <img class="camada-751" src="/static/images/camada-751.png" />
+          <img class="camada-759" src="/static/images/camada-759.png" />
+          <img class="camada-752" src="/static/images/camada-752.png" />
+        </div>
+      </div>
+      <div class="menu">
+        <li>
+          <a href="#">Table of Contents</a>
+        </li>
+        <li>
+          <a href="#">Contributors</a>
+        </li>
+        <li>
+          <a href="#">Methodology</a>
+        </li>
+        <div>
+          <img src="/static/images/ha-home.png" />
+          <div class="social-media">
+            <img src="/static/images/twitter.png" />
+            <img src="/static/images/github.png" />
+          </div>
+          <div class="explore">
+            {% if language is not none %}
+              <img src="/static/images/{{ language }}.png" />
+            {% else %}
+              <img src="/static/images/English.png" />
+            {% endif %}
+            <select class="language-switcher">
+              {% if supported_languages is iterable %}
+                {% for l in supported_languages %}
+                  <option
+                    {% if l == language %}selected="selected"{% endif %}
+                    value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+                    {{ l }}
+                  </option>
+                {% endfor %}
+              {% endif %}
+            </select>
+            <img src="/static/images/dropdown-arrow.png" />
+          </div>
+        </div>
       </div>
     </section>
   </header>
@@ -154,7 +194,7 @@ The Web Almanac by HTTP Archive
       <button>
         See the Methodology
       </button>
-      <img src="/static/images/camada-760.png" />
+      <img class="camada-760" src="/static/images/camada-760.png" />
     </div>
   </section>
   <footer class="footer">
@@ -191,6 +231,25 @@ The Web Almanac by HTTP Archive
         </div>
       </section>
       <hr>
+      <div class="footer-mobile-nav">
+        <li>
+          <a href="#">Table of Contents</a>
+        </li>
+        <li>
+          <a href="#">Contributors</a>
+        </li>
+        <li>
+          <a href="#">Methodology</a>
+        </li>
+        <div>
+          <img src="/static/images/ha-home.png" />
+          <div class="social-media">
+            <img src="/static/images/twitter.png" />
+            <img src="/static/images/github.png" />
+          </div>
+        </div>
+      </div>
+      <hr>
       <div class="misc">
         <div>
           Copyright © 2019 Web Almanac. All rights reserved.
@@ -203,4 +262,9 @@ The Web Almanac by HTTP Archive
     </div>
   </footer>
 </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/static/js/home.js"></script>
 {% endblock %}
