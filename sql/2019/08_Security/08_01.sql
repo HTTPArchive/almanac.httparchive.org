@@ -1,12 +1,17 @@
 #standardSQL
 # 08_01: Distribution of TLS versions
-SELECT 
-  _TABLE_SUFFIX AS client,
-  DISTINCT(JSON_EXTRACT_SCALAR(payload, '$._tls_version')) as tls_version,
-  ROUND(COUNT(0) / (SELECT COUNT(0) FROM `httparchive.requests.2019_07_01_*` WHERE JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL), 2) pct_tls_version
-FROM 
-  `httparchive.requests.2019_07_01_*`
+SELECT
+  client,
+  tls_version,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) pct
+FROM
+  (SELECT _TABLE_SUFFIX AS client, JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tls_version FROM `httparchive.requests.2019_07_01_*`)
 WHERE
-  JSON_EXTRACT_SCALAR(payload, '$._tls_version') IS NOT NULL 
+  tls_version IS NOT NULL
 GROUP BY
-  client, tls_version
+  client,
+  tls_version
+ORDER BY
+  freq / total DESC

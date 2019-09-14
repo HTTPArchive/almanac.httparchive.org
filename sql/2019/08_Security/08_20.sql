@@ -1,12 +1,24 @@
 #standardSQL
 # 08_20: CSP 'trusted-types' usage
 SELECT
-  COUNT(*) site_count,
-  COUNTIF(csp IS NOT NULL) csp_count,
-  COUNTIF(csp_report_only IS NOT NULL) csp_report_only_count,
-  COUNTIF(REGEXP_CONTAINS(LOWER(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\Wcontent-security-policy =([^,]+)')), 'trusted-types')) csp_trusted_type_count,
-  COUNTIF(REGEXP_CONTAINS(LOWER(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\Wcontent-security-policy-report-only =([^,]+)')), 'trusted-types')) csp_report_only_trusted_type_count
-FROM
-  `httparchive.summary_requests.2019_07_01_*`
-WHERE 
-  firstHtml = true
+  client,
+  csp_report_only_count,
+  csp_trusted_type_count,
+  csp_report_only_trusted_type_count,
+  total,
+  ROUND(csp_report_only_count * 100 / total, 2) AS pct_csp_report_only,
+  ROUND(csp_trusted_type_count * 100 / total, 2) AS pct_csp_trusted_type,
+  ROUND(csp_trusted_type_count * 100 / total, 2) AS pct_csp_report_only_trusted_type
+FROM (
+  SELECT
+    client,
+    COUNT(0) AS total,
+    COUNTIF(REGEXP_CONTAINS(respOtherHeaders, r'(?i)\Wcontent-security-policy-report-only =')) AS csp_report_only_count,
+    COUNTIF(REGEXP_CONTAINS(LOWER(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\Wcontent-security-policy =([^,]+)')), 'trusted-types')) AS csp_trusted_type_count,
+    COUNTIF(REGEXP_CONTAINS(LOWER(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\Wcontent-security-policy-report-only =([^,]+)')), 'trusted-types')) AS csp_report_only_trusted_type_count
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    firstHtml
+  GROUP BY
+    client)
