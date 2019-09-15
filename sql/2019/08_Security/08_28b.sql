@@ -1,5 +1,5 @@
 #standardSQL
-# 08_35: HttpOnly cookies
+# 08_28b: Groupings of "feature-policy" directives
 CREATE TEMPORARY FUNCTION extractHeader(payload STRING, name STRING)
 RETURNS STRING LANGUAGE js AS '''
 try {
@@ -16,20 +16,19 @@ try {
 
 SELECT
   client,
-  COUNT(DISTINCT page) AS http_only,
-  total,
-  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+  SPLIT(TRIM(directive), ' ')[SAFE_OFFSET(0)] AS feature,
+  SPLIT(TRIM(directive), ' ')[SAFE_OFFSET(1)] AS rule,
+  COUNT(0) as freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) as pct
 FROM
   `httparchive.almanac.requests`,
-  UNNEST(SPLIT(extractHeader(payload, 'Set-Cookie'), ';')) AS directive
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
-USING (client)
+  UNNEST(SPLIT(extractHeader(payload, 'Feature-Policy'), ';')) AS directive
 WHERE
-  firstHtml AND
-  TRIM(directive) = 'HttpOnly'
+  firstHtml
 GROUP BY
   client,
-  total
+  feature,
+  rule
 ORDER BY
-  http_only / total DESC
+  freq / total DESC

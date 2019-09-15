@@ -1,23 +1,24 @@
 #standardSQL
-# timeline view from the top-level HTTPArchive page 
-#    https://httparchive.org/reports/state-of-the-web?start=2016_04_01&end=latest&view=list
-# 13.6TB 
-
+# 08_40b: Most frequent vulnerable libraries
+CREATE TEMPORARY FUNCTION getVulnerabilities(report STRING)
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(report);
+  return $.audits['no-vulnerable-libraries'].details.items.map(i => i.detectedLib.text.split('@')[0]);
+} catch(e) {
+  return [];
+}
+''';
 
 SELECT
-  SUBSTR(_TABLE_SUFFIX, 0, 10) AS date,
-  UNIX_DATE(CAST(REPLACE(SUBSTR(_TABLE_SUFFIX, 0, 10), '_', '-') AS DATE)) * 1000 * 60 * 60 * 24 AS timestamp,
-  IF(ENDS_WITH(_TABLE_SUFFIX, 'desktop'), 'desktop', 'mobile') AS client,
-  ROUND(SUM(IF(JSON_EXTRACT(report, '$.audits.no-vulnerable-libraries.score') IN ('false', '0'), 1, 0)) * 100 / COUNT(0), 2) AS percent
+  lib,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER () AS total,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
 FROM
-  `httparchive.lighthouse.*`
-WHERE
-  report IS NOT NULL AND
-  JSON_EXTRACT(report, '$.audits.no-vulnerable-libraries.score') IS NOT NULL
+  `httparchive.lighthouse.2019_07_01_mobile`,
+  UNNEST(getVulnerabilities(report)) AS lib
 GROUP BY
-  date,
-  timestamp,
-  client
+  lib
 ORDER BY
-  date DESC,
-  client
+  freq DESC
