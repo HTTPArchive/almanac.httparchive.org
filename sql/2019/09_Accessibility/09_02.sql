@@ -1,27 +1,38 @@
-#StandardSQL
-/*
-09_02
+#standardSQL
+# 09_02: % of pages having minimum set of accessible elements
+# Compliant pages have: header, footer, nav, and main (or [role=main]) elements
+CREATE TEMPORARY FUNCTION getCompliantElements(payload STRING)
+RETURNS ARRAY<STRING> LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var elements = JSON.parse($._element_count);
+  if (Array.isArray(elements) || typeof elements != 'object') return [];
+  var compliantElements = new Set(['header', 'footer', 'nav', 'main']);
+  return Object.keys(elements).filter(e => compliantElements.has(e));
+} catch (e) {
+  return [];
+}
+''';
 
-10TB
-
-only tested on the 10k sample response body samples
-FROM the sample data
-20,651 urls have aria roles
-there are 132,658 aria roles on those pages
-34514 of these are unique, AND the query below gives the COUNT of each role on each page.
-
-save this AS a table to further dig into the data
-*/
-SELECT url, 
-		flat_ariarole, 
-		COUNT(flat_ariarole) AS COUNTer
-FROM(
 SELECT
-	url, 
-	REGEXP_EXTRACT_ALL(LOWER(body),r'(role=['"]*[^\s\'"]+?['"]*)') AS ariarole
-FROM `response_bodies.2019_07_01_*` 
-WHERE LOWER(body) LIKE "%role=%"
-)
-CROSS JOIN UNNEST(ariarole) flat_ariarole
-GROUP BY url, flat_ariarole
-ORDER BY url desc, COUNTer desc
+  client,
+  COUNT(DISTINCT page) AS pages,
+  total,
+  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+FROM
+  (SELECT _TABLE_SUFFIX AS client, url AS page, getCompliantElements(payload) AS compliant_elements FROM `httparchive.pages.2019_07_01_*`)
+JOIN
+  (SELECT client, page, REGEXP_CONTAINS(body, '(?i)role=[\'"]?main') AS has_role_main FROM `httparchive.almanac.summary_response_bodies` WHERE firstHtml)
+USING
+  (client, page)
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING (client)
+WHERE
+  'header' IN UNNEST(compliant_elements) AND
+  'footer' IN UNNEST(compliant_elements) AND
+  'nav' IN UNNEST(compliant_elements) AND
+  ('main' IN UNNEST(compliant_elements) OR has_role_main)
+GROUP BY
+  client,
+  total

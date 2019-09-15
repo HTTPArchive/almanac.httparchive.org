@@ -2,10 +2,11 @@ import os
 import re
 import mistune
 import yaml
+from visualisation_lexer import VisualisationLexer
 
 renderer = mistune.Renderer()
-markdown = mistune.Markdown(renderer=renderer)
-
+inline = VisualisationLexer(renderer).enable()
+markdown = mistune.Markdown(renderer=renderer, inline=inline)
 
 def generate_chapters():
     for language_dir in os.scandir('content'):
@@ -16,6 +17,7 @@ def generate_chapters():
 
             for chapter_file in os.scandir(year_dir.path):
                 chapter = re.sub('.md$', '', chapter_file.name)
+                print('\n Generating chapter: %s, %s, %s' % (chapter, year, language))
 
                 (metadata, body) = parse_file(chapter_file)
 
@@ -54,6 +56,15 @@ def write_template(language, year, chapter, metadata, body):
 
     with open(path, 'w') as file_to_write:
         file_to_write.write(template.format(body=body, metadata=metadata))
+        print(' - Output file size: %s' % size_of(file_to_write.tell()))
+
+
+def size_of(num, suffix='B'):
+    for unit in ['','K','M','G']:
+        if abs(num) < 1024.0:
+            return "%3.1f%s%s" % (num, unit, suffix)
+        num /= 1024.0
+    return "%.1f%s%s" % (num, 'Yi', suffix)
 
 
 generate_chapters()

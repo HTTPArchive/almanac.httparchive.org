@@ -1,32 +1,25 @@
-#standardsql
-/*
-09_15
-
-10TB
-
-only tested on the 10k sample response body samples
-look for all input fields.
-then also look for input fields with 'aria-required' OR  'aria-invalid'
-get quantiles AND SUM of total inputs
-
-*/
-SELECT APPROX_QUANTILES(ariarequired, 5) AS ariareqquantiles,
-       APPROX_QUANTILES(ariainvalid, 5)  AS  ariainvalidquantiles,
-       APPROX_QUANTILES(allinputs, 5)  AS  allinputsquantiles,
-       SUM(ariarequired)  AS requiredSUM,
-       SUM(ariainvalid)  AS ariainvalidSUM,
-       SUM(allinputs)  AS allinputsSUM
-
-FROM(
-SELECT url, ARRAY_LENGTH(ariarequired)  AS ariarequired,
-            ARRAY_LENGTH(ariainvalid)  AS ariainvalid,
-            ARRAY_LENGTH(allinputs) AS  allinputs
-FROM(
+#standardSQL
+# 09_16: % pages using invalid/required form field attributes
 SELECT
-url, 
-REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*aria-required.*/>)')  AS ariarequired,
-REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*aria-invalid.*/>)')  AS ariainvalid,
-REGEXP_EXTRACT_ALL(LOWER(body),r'(<input.*/>)')  AS allinputs
-FROM `response_bodies.2019_07_01_*` 
-WHERE LOWER(body) LIKE "%<input%"
-))
+  client,
+  attr,
+  COUNT(DISTINCT page) AS pages,
+  total,
+  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+FROM
+  `httparchive.almanac.summary_response_bodies`,
+  UNNEST(ARRAY_CONCAT(
+    REGEXP_EXTRACT_ALL(body, '<input[^>]+(aria-invalid|aria-required)\\b'),
+    REGEXP_EXTRACT_ALL(body, '<input[^>]+[^-](required)\\b')
+  )) AS attr
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING (client)
+WHERE
+  firstHtml
+GROUP BY
+  client,
+  total,
+  attr
+ORDER BY
+  pages / total DESC

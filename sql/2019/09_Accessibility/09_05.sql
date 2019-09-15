@@ -1,37 +1,25 @@
-#StandardSQL
-/*
-09_05
-
-10TB
-
-only tested on the 10k sample response body samples
-FROM the sample data
-Get the aria roles - AND the tags that contain them.  
-(this is NOT a perfect query - AS some are too long, AND probably some areas are grabbed 2x)
-
-get the LENGTH of the body, AND the SUM of the LENGTHs of all the roles - AND find the percentage that are ariacovered
-
-then calculate the percentiles of he percentages of ARia coverage
-*/
-SELECT Approx_quantiles(percentgearia, 11)
-FROM(
-
-SELECT url, bodyLENGTH, SUM(roleLENGTH) SUMroles, SUM(roleLENGTH)/bodyLENGTH*100 percentgearia
-FROM(
-SELECT url, BYTE_LENGTH(flat_ariaenclosed) roleLENGTH, BYTE_LENGTH(body) bodyLENGTH
-FROM(
-
+#standardSQL
+# 09_05: ARIA role popularity
 SELECT
-      url, 
-      REGEXP_EXTRACT_ALL(LOWER(body),r'<?.*role=[\'"]*[^\s\'"]+[\'"]*.*?>') ariaenclosed,
-      body
-FROM `response_bodies.2019_07_01_*` 
-WHERE LOWER(body) LIKE "%role=%"
-
-)
-CROSS JOIN UNNEST(ariaenclosed) flat_ariaenclosed
-GROUP BY url, flat_ariaenclosed, body
-)
-GROUP BY url, bodyLENGTH
-ORDER BY SUM(roleLENGTH)/bodyLENGTH*100 desc
-)
+  client,
+  role,
+  COUNT(DISTINCT page) AS pages,
+  total,
+  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+FROM
+  `httparchive.almanac.summary_response_bodies`,
+  UNNEST(REGEXP_EXTRACT_ALL(LOWER(body),'role=[\'"]?([\\w-]+)')) AS role
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING
+  (client)
+WHERE
+  firstHtml
+GROUP BY
+  client,
+  total,
+  role
+ORDER BY
+  pages / total DESC
+LIMIT
+  1000
