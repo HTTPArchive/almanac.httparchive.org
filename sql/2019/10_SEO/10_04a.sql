@@ -1,16 +1,17 @@
 #standardSQL
-
-# has hreflang
-
+# 10_04a: has hreflang
 SELECT
-  has_hreflang,
-  ROUND((has_hreflang * 100) / total, 2) AS pct
+  client,
+  COUNTIF(has_hreflang) AS freq,
+  COUNT(0) AS total,
+  ROUND(COUNTIF(has_hreflang) * 100 / COUNT(0), 2) AS pct
 FROM (
   SELECT
-    COUNTIF(REGEXP_CONTAINS(body, '(?i)<link[^>]*hreflang')) AS has_hreflang,
-    COUNT(0) AS total
+    client,
+    REGEXP_CONTAINS(body, '(?i)<link[^>]*hreflang') AS has_hreflang
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    firstHtml
-)
+    firstHtml)
+GROUP BY
+  client
