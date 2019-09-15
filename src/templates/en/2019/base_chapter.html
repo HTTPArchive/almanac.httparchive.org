@@ -3,3 +3,10 @@
 {% block title %}
 {{ metadata.get('title') }} | 2019 | The Web Almanac by HTTP Archive
 {% endblock %}
+
+{% macro render_byline() %}
+  <div id="byline">By
+  {% for author in metadata.get('authors') %}
+    {{ config.contributors[author].name if author in config.contributors else author }}
+  {% endfor %}
+{% endmacro %}

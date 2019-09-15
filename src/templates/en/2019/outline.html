@@ -3,3 +3,18 @@
 {% block title %}
 2019 | The Web Almanac by HTTP Archive
 {% endblock %}
+
+{% block main %}
+{% for part_config in config.outline %}
+  <section>
+    <h2>Part {{ part_config.part }}</h2>
+    {% for chapter_config in part_config.chapters %}
+      <div>
+        <a href="{{ url_for('chapter', year=year, lang=lang, chapter=get_chapter_slug(chapter_config.title)) }}">
+          Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}
+        </a>
+      </div>
+    {% endfor %}
+  </section>
+{% endfor %}
+{% endblock %}

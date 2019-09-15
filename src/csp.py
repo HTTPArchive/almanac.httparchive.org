@@ -19,6 +19,7 @@ csp = {
     ],
     'img-src': [
         '\'self\'',
-        'www.google-analytics.com'
+        'www.google-analytics.com',
+        'www.gravatar.com'
     ]
 }
