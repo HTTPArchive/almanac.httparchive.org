@@ -1,0 +1,177 @@
+{
+  "outline": [
+    {
+      "part": "I. Page Content",
+      "chapters": [
+        {
+          "part": "I",
+          "chapter": "1",
+          "title": "JavaScript"
+        },
+        {
+          "part": "I",
+          "chapter": "2",
+          "title": "CSS"
+        },
+        {
+          "part": "I",
+          "chapter": "3",
+          "title": "Markup"
+        },
+        {
+          "part": "I",
+          "chapter": "4",
+          "title": "Media"
+        },
+        {
+          "part": "I",
+          "chapter": "5",
+          "title": "Third Parties"
+        },
+        {
+          "part": "I",
+          "chapter": "6",
+          "title": "Fonts"
+        }
+      ]
+    },
+    {
+      "part": "II. User Experience",
+      "chapters": [
+        {
+          "part": "II",
+          "chapter": "7",
+          "title": "Performance"
+        },
+        {
+          "part": "II",
+          "chapter": "8",
+          "title": "Security"
+        },
+        {
+          "part": "II",
+          "chapter": "9",
+          "title": "Accessibility"
+        },
+        {
+          "part": "II",
+          "chapter": "10",
+          "title": "SEO"
+        },
+        {
+          "part": "II",
+          "chapter": "11",
+          "title": "PWA"
+        },
+        {
+          "part": "II",
+          "chapter": "12",
+          "title": "Mobile Web"
+        }
+      ]
+    },
+    {
+      "part": "III. Content Publishing",
+      "chapters": [
+        {
+          "part": "III",
+          "chapter": "13",
+          "title": "Ecommerce"
+        },
+        {
+          "part": "III",
+          "chapter": "14",
+          "title": "CMS"
+        }
+      ]
+    },
+    {
+      "part": "IV. Content Distribution",
+      "chapters": [
+        {
+          "part": "IV",
+          "chapter": "15",
+          "title": "Compression"
+        },
+        {
+          "part": "IV",
+          "chapter": "16",
+          "title": "Caching"
+        },
+        {
+          "part": "IV",
+          "chapter": "17",
+          "title": "CDN"
+        },
+        {
+          "part": "IV",
+          "chapter": "18",
+          "title": "Page Weight"
+        },
+        {
+          "part": "IV",
+          "chapter": "19",
+          "title": "Resource Hints"
+        },
+        {
+          "part": "IV",
+          "chapter": "20",
+          "title": "HTTP/2"
+        }
+      ]
+    }
+  ],
+  "teams": {
+    "analysts": {
+      "name": "Data Analysts"
+    },
+    "authors": {
+      "name": "Chapter Authors"
+    },
+    "brainstormers": {
+      "name": "Brainstormers"
+    },
+    "designers": {
+      "name": "Web Designers"
+    },
+    "developers": {
+      "name": "Web Developers"
+    },
+    "editors": {
+      "name": "Editors"
+    },
+    "reviewers": {
+      "name": "Peer Reviewers"
+    },
+    "translators": {
+      "name": "Content Translators"
+    }
+  },
+  "contributors": {
+    "argyleink": {
+      "name": "Adam Argyle",
+      "github": "argyleink",
+      "teams": [
+        "authors"
+      ]
+    },
+    "kjlarson": {
+      "name": "Kari Larson",
+      "github": "KJLarson",
+      "teams": [
+        "developers"
+      ]
+    },
+    "rviscomi": {
+      "name": "Rick Viscomi",
+      "tagline": "Web Almanac PM",
+      "gravatar": "rviscomi@google.com",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi",
+      "teams": [
+        "authors",
+        "developers"
+      ]
+    }
+  }
+}

@@ -33,7 +33,7 @@ Contributors | The Web Almanac by HTTP Archive
   display: none;
 }
 
-{% for id in contributors.teams.keys() %}
+{% for id in config.teams.keys() %}
 .contributors.{{ id }} .contributor.{{ id }} {
   display: block;
 }
@@ -47,14 +47,15 @@ Contributors | The Web Almanac by HTTP Archive
 {% endblock %}
 
 {% block main %}
-<div class="contributors {{ ' '.join(contributors.teams.keys()) }}">
+<div class="contributors {{ ' '.join(config.teams.keys()) }}">
   <div class="filter-container">
-  {% for id, team in contributors.teams.items() %}
+  {% for id, team in config.teams.items() %}
     <button class="{{ id }}">{{ team.name }}</button>
   {% endfor %}
   </div>
-  {% for id, contributor in contributors.contributors.items() %}
+  {% for id, contributor in config.contributors.items() %}
     <div class="contributor {{ ' '.join(contributor.teams) }}">
+      <img src="{{ contributor.avatar_url }}">
       {{ contributor.name }}
     </div>
   {% endfor %}

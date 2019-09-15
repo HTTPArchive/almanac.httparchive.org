@@ -1,4 +1,4 @@
-import contributors as contributors_util
+import config as config_util
 from csp import csp
 from flask import Flask, render_template as flask_render_template, request
 from flask_talisman import Talisman
@@ -31,8 +31,13 @@ def get_view_args(lang=None):
     return view_args
 
 
+def get_chapter_slug(title):
+    return title.lower().replace(' ', '-').replace('/', '')
+
+
 # Make this function available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
+app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
 
 @app.route('/')
 @app.route('/<lang>/')
@@ -51,15 +56,16 @@ def index(lang):
 @app.route('/<lang>/<year>/outline')
 @validate
 def outline(year, lang):
-    return render_template('%s/%s/outline.html' % (lang, year))
+    config = config_util.get_config(year)
+    return render_template('%s/%s/outline.html' % (lang, year), config=config)
 
 
 @app.route('/<year>/contributors')
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(year, lang):
-    contributors = contributors_util.get_contributors()
-    return render_template('%s/%s/contributors.html' % (lang, year), contributors=contributors)
+    config = config_util.get_config(year)
+    return render_template('%s/%s/contributors.html' % (lang, year), config=config)
 
 
 @app.route('/<year>/methodology')
@@ -74,7 +80,8 @@ def methodology(year, lang):
 @validate
 def chapter(year, chapter, lang):
     # TODO: Validate the chapter.
-    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter))
+    config = config_util.get_config(year)
+    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config)
 
 
 @app.errorhandler(400)
