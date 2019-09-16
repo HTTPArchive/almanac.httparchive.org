@@ -1,10 +1,17 @@
 #standardSQL
-
-# <meta viewport> not scaleble
-
+# 12_04: Sites that disable zooming and scaling with user-scalable="no"
 SELECT
-    COUNT(url) AS total,
-    COUNTIF(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.meta-viewport.score') as NUMERIC) = 1) AS score_sum,
-    ROUND(COUNTIF(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.meta-viewport.score') as NUMERIC) = 1) * 100 / COUNT(url), 2) as score_percentage
-FROM
-    `httparchive.lighthouse.2019_07_01_mobile`
+  client,
+  COUNT(0) AS total_sites,
+  COUNTIF(meta_viewport IS NOT NULL) AS total_viewports,
+  COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*no') IS NOT NULL) AS total_no_scale,
+  ROUND(COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*no') IS NOT NULL) * 100 / COUNTIF(meta_viewport IS NOT NULL), 2) AS percent_of_viewports,
+  ROUND(COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*no') IS NOT NULL) * 100 / COUNT(0), 2) AS percent_of_sites
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    JSON_EXTRACT_SCALAR(payload, '$._meta_viewport') AS meta_viewport
+  FROM
+    `httparchive.pages.2019_07_01_*`
+)
+GROUP BY client
