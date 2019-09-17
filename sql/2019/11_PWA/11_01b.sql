@@ -1,8 +1,5 @@
 #standardSQL
-#
-# Moved to leverage smaller "blink_features" table
-# 7.92 MB
-
+# 11_01b: SW adoption over time
 SELECT
   yyyymmdd AS date,
   client,
