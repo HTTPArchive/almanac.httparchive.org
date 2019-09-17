@@ -10,4 +10,4 @@ FROM
 WHERE
   firstHtml
 GROUP BY
-  clien
+  client

@@ -1,5 +1,5 @@
 #standardSQL
-# 08_07 Autheticated cipher suites
+# 08_07: Autheticated cipher suites
 SELECT
   _TABLE_SUFFIX AS client,
   COUNTIF(REGEXP_CONTAINS(cipher, r'GCM|CCM|POLY1305')) AS authenticated_cipher_count,
@@ -8,11 +8,10 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX,
-    JSON_EXTRACT(payload, '$._securityDetails.cipher') AS cipher,
-    JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol') AS protocol
+    JSON_EXTRACT(payload, '$._securityDetails.cipher') AS cipher
   FROM
    `httparchive.requests.2019_07_01_*`)
 WHERE
-  protocol IS NOT NULL
+  cipher IS NOT NULL
 GROUP BY
   client
