@@ -1,24 +1,38 @@
-# standard SQL
-# 08_38.sql
-# 
-# Calculate usage percentage for set-cookie and the "prefix" values of "__Secure" and "__Host-" groupings
-#
-# BigQuery usage notes: 
-# == archive.summary_response_bodies =  71.5 GB usage (firstHtml partitioning)
-# == archive.summary_requests = 117.5 GB 
-#  
-# minimal number of responses so for now moved the rounding out to 4 digits
-#
-### Zero data found - so need to see if the parsing/search location is incorrect vs. truly low use
+#standardSQL
+# 08_38: Cookie prefixes
+CREATE TEMPORARY FUNCTION extractHeader(payload STRING, name STRING)
+RETURNS STRING LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var header = $._headers.response.find(h => h.toLowerCase().startsWith(name.toLowerCase()));
+  if (!header) {
+    return null;
+  }
+  return header.substr(header.indexOf(':') + 1).trim();
+} catch (e) {
+  return null;
+}
+''';
 
 SELECT
   client,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = ([^,\r\n]+)')) * 100 / COUNT(0),2) AS pct_all_set_cookie,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = .*__secure.*([^,\r\n]+)')) * 100 / COUNT(0),4) AS pct_prefix_secure,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = .*__host-.*([^,\r\n]+)')) * 100 / COUNT(0),4) AS pct_prefix_host
+  prefix,
+  COUNT(DISTINCT page) AS pages,
+  total,
+  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
 FROM
-  `httparchive.almanac.summary_requests`
+  `httparchive.almanac.requests`,
+  UNNEST(SPLIT(extractHeader(payload, 'Set-Cookie'), ';')) AS directive,
+  UNNEST(REGEXP_EXTRACT_ALL(directive, '(__Host-|__Secure-)')) AS prefix
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING (client)
 WHERE
-  firstHtml
+  firstHtml AND
+  prefix IS NOT NULL
 GROUP BY
-  client  
+  client,
+  total,
+  prefix
+ORDER BY
+  pages / total DESC

@@ -1,25 +1,35 @@
-# standard SQL
-# 08_37.sql
-# 
-# Calculate usage percentage for set-cookie and the "samesite" flag
-#
-# BigQuery usage notes: 
-# == archive.summary_response_bodies =  71.5 GB usage (firstHtml partitioning)
-# == archive.summary_requests = 117.5 GB 
-#  
-# minimal number of responses so for now moved the rounding out to 4 digits
-#
-### Super low data set - so need to see if the parsing/search location is incorrect vs. truly low use
+#standardSQL
+# 08_37: SameSite cookies
+CREATE TEMPORARY FUNCTION extractHeader(payload STRING, name STRING)
+RETURNS STRING LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var header = $._headers.response.find(h => h.toLowerCase().startsWith(name.toLowerCase()));
+  if (!header) {
+    return null;
+  }
+  return header.substr(header.indexOf(':') + 1).trim();
+} catch (e) {
+  return null;
+}
+''';
 
 SELECT
   client,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = ([^,\r\n]+)')) * 100 / COUNT(0),2) AS pct_all_set_cookie,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = .*samesite.*([^,\r\n]+)')) * 100 / COUNT(0),4) AS pct_samesite_overall,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = .*samesite=strict.*([^,\r\n]+)')) * 100 / COUNT(0),4) AS pct_samesite_strict,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)set-cookie = .*samesite=lax.*([^,\r\n]+)')) * 100 / COUNT(0),4) AS pct_samesite_lax
+  COUNT(DISTINCT page) AS pages,
+  total,
+  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
 FROM
-  `httparchive.almanac.summary_response_bodies`
+  `httparchive.almanac.requests`,
+  UNNEST(SPLIT(extractHeader(payload, 'Set-Cookie'), ';')) AS directive
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING (client)
 WHERE
-  firstHtml
+  firstHtml AND
+  STARTS_WITH(TRIM(directive), 'SameSite')
 GROUP BY
-  client  
+  client,
+  total
+ORDER BY
+  pages / total DESC
