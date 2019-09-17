@@ -1,7 +1,7 @@
 #standardSQL
 # 13_12: Lighthouse indexability scores
 SELECT
-  JSON_EXTRACT_SCALAR(report, "$.audits['is-crawlable']") AS crawlable,
+  JSON_EXTRACT_SCALAR(report, "$.audits.is-crawlable.score") AS crawlable,
   COUNT(0) AS freq,
   total,
   ROUND(COUNT(0) * 100 / total, 2) AS pct
