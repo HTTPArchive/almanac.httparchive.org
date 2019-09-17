@@ -1,12 +1,27 @@
 #standardSQL
-
-# linking - extract <a href> count per page (internal + external + hash)
-
+# 10_10: linking - extract <a href> count per page (internal + external + hash)
 SELECT
-    APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-anchor-elements'].internal") AS INT64), 1000)[OFFSET(500)] AS median_internal_count,
-    APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-anchor-elements'].external") AS INT64), 1000)[OFFSET(500)] AS median_external_count,
-    APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-anchor-elements'].hash") AS INT64), 1000)[OFFSET(500)] AS median_hash_count,
-    APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-anchor-elements'].external") AS INT64), 1000)[OFFSET(500)] / APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-anchor-elements'].internal") AS INT64), 1000)[OFFSET(500)] AS median_ratio_external_internal_count,
-    ROUND(COUNTIF(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$['seo-anchor-elements'].hash") AS INT64) > 0) * 100 / SUM(COUNT(0)) OVER (), 2)  AS hash_occurence_percentage
-FROM
-    `httparchive.pages.2019_07_01_*`
+  percentile,
+  client,
+  APPROX_QUANTILES(internal, 1000)[OFFSET(percentile * 10)] AS internal,
+  APPROX_QUANTILES(external, 1000)[OFFSET(percentile * 10)] AS external,
+  APPROX_QUANTILES(_hash, 1000)[OFFSET(percentile * 10)] AS _hash
+FROM (
+  SELECT
+    client,
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].internal") AS INT64) AS internal,
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].external") AS INT64) AS external,
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].hash") AS INT64) AS _hash
+  FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      JSON_EXTRACT_SCALAR(payload, '$._almanac') AS almanac
+    FROM
+      `httparchive.pages.2019_07_01_*`)),
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
+GROUP BY
+  percentile,
+  client
+ORDER BY
+  percentile,
+  client
