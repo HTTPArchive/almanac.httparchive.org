@@ -1,8 +1,6 @@
 #standardSQL
-
-# structured data by @type
-
-CREATE TEMPORARY FUNCTION parseStructuredData(payload STRING)
+# 10_05: structured data by @type
+CREATE TEMPORARY FUNCTION getSchemaTypes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
@@ -18,13 +16,16 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 ''';
 
 SELECT
-    schema_type,
-    COUNT(schema_type) AS occurence,
-    ROUND(COUNT(schema_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
+  _TABLE_SUFFIX AS client,
+  schema_type,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
+  ROUND(COUNT(schema_type) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
 FROM
-    `httparchive.pages.2019_07_01_*`
-CROSS JOIN
-    UNNEST(parseStructuredData(payload)) AS schema_type
-GROUP BY schema_type
-ORDER BY occurence DESC
-LIMIT 100
+  `httparchive.pages.2019_07_01_*`,
+  UNNEST(getSchemaTypes(payload)) AS schema_type
+GROUP BY
+  client,
+  schema_type
+ORDER BY
+  freq / total DESC

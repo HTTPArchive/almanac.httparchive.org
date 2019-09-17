@@ -1,11 +1,11 @@
 #standardSQL
-
-# robots.txt
-
+# 10_12: robots.txt
 SELECT
-    COUNT(url) AS total,
-    SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') AS NUMERIC)) AS score_sum,
-    AVG(SAFE_CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') AS NUMERIC)) AS score_average,
-    (SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.robots-txt.score') AS NUMERIC)) * 100 / COUNT(url)) AS score_percentage
-FROM
-    `httparchive.lighthouse.2019_07_01_mobile`
+  COUNTIF(robots_txt) AS freq,
+  COUNT(0) AS total,
+  ROUND(COUNTIF(robots_txt) * 100 / COUNT(0), 2) AS pct
+FROM (
+  SELECT
+    JSON_EXTRACT_SCALAR(report, '$.audits.robots-txt.score') = '1' AS robots_txt
+  FROM
+    `httparchive.lighthouse.2019_07_01_mobile`)

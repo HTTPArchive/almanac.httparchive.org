@@ -1,7 +1,5 @@
 #standardSQL
-
-# <meta description> length
-
+# 10_07c: <meta description> length
 CREATE TEMP FUNCTION getMetaDescriptionLength(payload STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {
@@ -14,11 +12,20 @@ try {
 }
 ''';
 
-
 SELECT
-    APPROX_QUANTILES(getMetaDescriptionLength(payload), 1000)[OFFSET(250)] AS p25_meta_length,
-    APPROX_QUANTILES(getMetaDescriptionLength(payload), 1000)[OFFSET(500)] AS median_meta_length,
-    APPROX_QUANTILES(getMetaDescriptionLength(payload), 1000)[OFFSET(750)] AS p75_meta_length,
-    AVG(getMetaDescriptionLength(payload)) AS avg_meta_length
-FROM
-    `httparchive.pages.2019_07_01_*`
+  percentile,
+  client,
+  APPROX_QUANTILES(description_length, 1000)[OFFSET(percentile * 10)] AS desc_length
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    getMetaDescriptionLength(payload) AS description_length
+  FROM
+    `httparchive.pages.2019_07_01_*`),
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
+GROUP BY
+  percentile,
+  client
+ORDER BY
+  percentile,
+  client

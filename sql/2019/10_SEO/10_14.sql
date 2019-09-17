@@ -1,11 +1,11 @@
 #standardSQL
-
-# Descriptive link text usage
-
+# 10_14: Descriptive link text usage
 SELECT
-    COUNT(url) AS total,
-    SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.link-text.score') AS NUMERIC)) AS score_sum,
-    AVG(SAFE_CAST(JSON_EXTRACT(report, '$.audits.link-text.score') AS NUMERIC)) AS score_average,
-    (SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.link-text.score') AS NUMERIC)) * 100 / COUNT(url)) AS score_percentage
-FROM
-    `httparchive.lighthouse.2019_07_01_mobile`
+  COUNTIF(link_text) AS freq,
+  COUNT(0) AS total,
+  ROUND(COUNTIF(link_text) * 100 / COUNT(0), 2) AS pct
+FROM (
+  SELECT
+    JSON_EXTRACT_SCALAR(report, '$.audits.link-text.score') = '1' AS link_text
+  FROM
+    `httparchive.lighthouse.2019_07_01_mobile`)

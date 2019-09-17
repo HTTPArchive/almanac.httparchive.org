@@ -1,15 +1,18 @@
 #standardSQL
-
-# hreflang implementation values
-
+# 10_04b: hreflang implementation values
 SELECT
-  hreflang,
-  COUNT(hreflang) AS occurence,
-  ROUND(COUNT(hreflang) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
+  client,
+  NORMALIZE_AND_CASEFOLD(TRIM(hreflang)) AS hreflang,
+  COUNT(0) AS freq,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
-  `httparchive.almanac.summary_response_bodies`
-CROSS JOIN
-  LOWER(UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)<link[^>]*hreflang=[\'"]?([^(\'|"|\\s)]+)'))) AS hreflang
-GROUP BY hreflang
-ORDER BY occurence DESC
-LIMIT 250
+  `httparchive.almanac.summary_response_bodies`,
+  UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)<link[^>]*hreflang=[\'"]?([^\'"\\s>]+)')) AS hreflang
+GROUP BY
+  client,
+  hreflang
+ORDER BY
+  freq / total DESC
+LIMIT
+  10000

@@ -1,19 +1,16 @@
 #standardSQL
-
-# <title> and <meta description> present
-
+# 10_07a: <title> and <meta description> present
 SELECT
-    COUNT(url) AS total,
-
-    #title
-    SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.document-title.score') AS NUMERIC)) AS title_score_sum,
-    AVG(SAFE_CAST(JSON_EXTRACT(report, '$.audits.document-title.score') AS NUMERIC)) AS title_score_average,
-    (SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.document-title.score') AS NUMERIC)) / COUNT(url)) AS title_score_percentage,
-
-    #description
-    SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.meta-description.score') AS NUMERIC)) AS description_score_sum,
-    AVG(SAFE_CAST(JSON_EXTRACT(report, '$.audits.meta-description.score') AS NUMERIC)) AS description_score_average,
-    (SUM(SAFE_CAST(JSON_EXTRACT(report, '$.audits.meta-description.score') AS NUMERIC)) / COUNT(url)) AS description_score_percentage
-
-FROM
-    `httparchive.lighthouse.2019_07_01_mobile`
+    COUNTIF(has_title) AS doc_title,
+    COUNTIF(has_meta_description) AS meta_description,
+    COUNTIF(has_title AND has_meta_description) AS both,
+    COUNT(0) AS total,
+    ROUND(COUNTIF(has_title) * 100 / COUNT(0), 2) AS pct_title,
+    ROUND(COUNTIF(has_meta_description) * 100 / COUNT(0), 2) AS pct_desc,
+    ROUND(COUNTIF(has_title AND has_meta_description) * 100 / COUNT(0), 2) AS pct_both
+FROM (
+  SELECT
+    JSON_EXTRACT_SCALAR(report, '$.audits.document-title.score') = '1' AS has_title,
+    JSON_EXTRACT_SCALAR(report, '$.audits.meta-description.score') = '1' AS has_meta_description
+  FROM
+    `httparchive.lighthouse.2019_07_01_mobile`)

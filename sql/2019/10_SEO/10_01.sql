@@ -1,12 +1,9 @@
 #standardSQL
-
-# structured data rich results eligibility
-
+# 10_01: structured data rich results eligibility
 # note: the RegExp options based on: https://developers.google.com/search/docs/guides/search-gallery
 # note: homepage only data
 # note: also see 10.05
-
-CREATE TEMPORARY FUNCTION parseStructuredData(payload STRING)
+CREATE TEMPORARY FUNCTION hasEligibleType(payload STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
@@ -23,8 +20,15 @@ RETURNS BOOLEAN LANGUAGE js AS '''
 ''';
 
 SELECT
-    COUNT(0) AS count,
-    COUNTIF(parseStructuredData(payload)) AS occurence,
-    ROUND(COUNTIF(parseStructuredData(payload)) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
-FROM
-    `httparchive.pages.2019_07_01_*`
+  client,
+  COUNTIF(has_eligible_type) AS freq,
+  COUNT(0) AS total,
+  ROUND(COUNTIF(has_eligible_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    hasEligibleType(payload) AS has_eligible_type
+  FROM
+    `httparchive.pages.2019_07_01_*`)
+GROUP BY
+  client
