@@ -1,6 +1,6 @@
 #standardSQL
 # 10_05: structured data by @type
-CREATE TEMPORARY FUNCTION parseStructuredData(payload STRING)
+CREATE TEMPORARY FUNCTION getSchemaTypes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
@@ -23,7 +23,7 @@ SELECT
   ROUND(COUNT(schema_type) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
 FROM
   `httparchive.pages.2019_07_01_*`,
-  UNNEST(parseStructuredData(payload)) AS schema_type
+  UNNEST(getSchemaTypes(payload)) AS schema_type
 GROUP BY
   client,
   schema_type

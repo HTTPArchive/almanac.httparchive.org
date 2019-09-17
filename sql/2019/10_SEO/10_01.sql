@@ -3,7 +3,7 @@
 # note: the RegExp options based on: https://developers.google.com/search/docs/guides/search-gallery
 # note: homepage only data
 # note: also see 10.05
-CREATE TEMPORARY FUNCTION parseStructuredData(payload STRING)
+CREATE TEMPORARY FUNCTION hasEligibleType(payload STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
   try {
     var $ = JSON.parse(payload);
@@ -27,7 +27,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    parseStructuredData(payload) AS has_eligible_type
+    hasEligibleType(payload) AS has_eligible_type
   FROM
     `httparchive.pages.2019_07_01_*`)
 GROUP BY
