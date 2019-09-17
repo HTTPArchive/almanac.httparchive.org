@@ -3,8 +3,8 @@
 SELECT
   JSON_EXTRACT_SCALAR(report, "$.audits.is-crawlable.score") AS crawlable,
   COUNT(0) AS freq,
-  total,
-  ROUND(COUNT(0) * 100 / total, 2) AS pct
+  SUM(COUNT(0)) OVER () AS total,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct
 FROM
   `httparchive.technologies.2019_07_01_mobile`,
   (SELECT COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_mobile`)
@@ -14,7 +14,6 @@ USING (url)
 WHERE
   category = 'Ecommerce'
 GROUP BY
-  total,
   crawlable
 ORDER BY
   freq / total DESC
