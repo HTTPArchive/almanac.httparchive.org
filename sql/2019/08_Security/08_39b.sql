@@ -1,20 +1,31 @@
-# standard SQL
-# 08_39b.sql
-# 
-# Calculate usage percentage for Use of SRI on subresources via Headers
-#
-# BigQuery usage notes: 
-# == archive.summary_response_bodies =  71.5 GB usage (firstHtml partitioning)
-# == archive.summary_requests = 117.5 GB 
-#  
+#standardSQL
+# 08_39b: SRI header
+CREATE TEMPORARY FUNCTION extractHeader(payload STRING, name STRING)
+RETURNS STRING LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var header = $._headers.response.find(h => h.toLowerCase().startsWith(name.toLowerCase()));
+  if (!header) {
+    return null;
+  }
+  return header.substr(header.indexOf(':') + 1).trim();
+} catch (e) {
+  return null;
+}
+''';
 
 SELECT
   client,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)content-security-policy = ([^,\r\n]+)')) * 100 / COUNT(0),2) AS pct_all_csp,
-  ROUND(COUNTIF(REGEXP_CONTAINS(respOtherHeaders, '(?i)content-security-policy = .*require-sri-for*([^,\r\n]+)')) * 100 / COUNT(0),4) AS pct_csp_sri
-FROM
-  `httparchive.almanac.summary_requests`
-WHERE
-  firstHtml
+  COUNTIF(requires_sri) AS pages,
+  COUNT(0) AS total,
+  ROUND(COUNTIF(requires_sri) * 100 / COUNT(0), 2) AS pct
+FROM (
+  SELECT
+    client,
+    REGEXP_CONTAINS(extractHeader(payload, 'Content-Security-Policy'), '(?i)require-sri-for') AS requires_sri
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    firstHtml)
 GROUP BY
-  client  
+  client

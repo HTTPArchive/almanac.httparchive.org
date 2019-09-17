@@ -1,22 +1,31 @@
 #standardSQL
-# 08_29: Groupings of "x-content-type-options" parsed values by percentage
-#    
-#
-#   `httparchive.summary_requests.2019_07_01_*` = 118.3 GB
+# 08_29: Groupings of "x-content-type-options" values
+CREATE TEMPORARY FUNCTION extractHeader(payload STRING, name STRING)
+RETURNS STRING LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var header = $._headers.response.find(h => h.toLowerCase().startsWith(name.toLowerCase()));
+  if (!header) {
+    return null;
+  }
+  return header.substr(header.indexOf(':') + 1).trim();
+} catch (e) {
+  return null;
+}
+''';
 
 SELECT
-  _TABLE_SUFFIX AS client,
-  policy,
+  client,
+  NORMALIZE_AND_CASEFOLD(extractHeader(payload, 'X-Content-Type-Options')) AS value,
   COUNT(0) as freq,
-  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) as pct 
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) as pct
 FROM
-  `httparchive.summary_requests.2019_07_01_*`,
-  UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders), 'x-content-type-options = ([\\w-]+)')) AS policy
+  `httparchive.almanac.requests`
 WHERE
   firstHtml
 GROUP BY
   client,
-  policy
+  value
 ORDER BY
   freq / total DESC
