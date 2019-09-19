@@ -18,8 +18,8 @@ try {
 SELECT
   client,
   COUNTIF(varies > 0) AS pages,
-  total,
-  ROUND(COUNTIF(varies > 0) * 100 / total, 2) AS pct
+  COUNT(0) AS total,
+  ROUND(COUNTIF(varies > 0) * 100 / COUNT(0), 2) AS pct
 FROM (
   SELECT
     client,
@@ -33,9 +33,5 @@ FROM (
   GROUP BY
     client,
     page)
-JOIN
-  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
-USING (client)
 GROUP BY
-  client,
-  total
+  client

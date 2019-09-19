@@ -1,22 +1,41 @@
-#StandardSQL
-/*
-standard SQL
-04_09a
-112 GB
+#standardSQL
+# 04_09a: Client Hints
+CREATE TEMP FUNCTION hasClientHintMeta(payload STRING)
+RETURNS BOOLEAN LANGUAGE js AS '''
+try {
+  var $ = JSON.parse(payload);
+  var almanac = JSON.parse($._almanac);
+  return !!almanac['meta-nodes'].find(meta => meta['http-equiv'].toLowerCase() == 'accept-ch');
+} catch (e) {
+  return null;
+}
+''';
 
-this gets the requests whose servers add a "accept-CH" header
-I'll do another query for the meta tag
-
-*/
-
-select count(host)
-from(
-SELECT url, 
-	NET.HOST(url)AS  host, 
-	respOtherHeaders
-
-
-FROM `summary_requests.2019_07_01_*`
-WHERE respOtherHeaders LIKE "%Accept-CH%"
-ORDER BY HOST ASC
-)
+SELECT
+  client,
+  accept_ch_header,
+  accept_ch_meta,
+  total,
+  ROUND(accept_ch_header * 100 / total, 2) AS pct_accept_ch_header,
+  ROUND(accept_ch_meta * 100 / total, 2) AS pct_accept_ch_meta
+FROM (
+  SELECT
+    client,
+    COUNTIF(REGEXP_CONTAINS(LOWER(respOtherHeaders), 'accept-ch =')) AS accept_ch_header
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    firstHtml
+  GROUP BY
+    client)
+JOIN (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    COUNTIF(hasClientHintMeta(payload)) AS accept_ch_meta,
+    COUNT(0) AS total
+  FROM
+    `httparchive.pages.2019_07_01_*`
+  GROUP BY
+    client)
+USING
+  (client)
