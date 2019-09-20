@@ -11,7 +11,7 @@ SELECT
 
   ROUND(COUNTIF(uses_cache_control) * 100 / COUNT(0), 2) AS pct_req_using_control,
   ROUND(COUNTIF(uses_public) * 100 / COUNTIF(uses_cache_control), 2) AS pct_control_using_public,
-  ROUND(COUNTIF(uses_private) * 100 / COUNT(0), 2) AS pct_control_using_private,
+  ROUND(COUNTIF(uses_private) * 100 / COUNTIF(uses_cache_control), 2) AS pct_control_using_private,
   ROUND(COUNTIF(uses_public AND uses_private) * 100 / COUNTIF(uses_cache_control), 2) AS pct_control_using_both
 FROM (
   SELECT
