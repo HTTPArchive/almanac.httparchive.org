@@ -1,15 +1,15 @@
-const menu = document.querySelector(".menu");
-const menuIcon = document.querySelector(".menu-icon");
-const menuCloseIcon = document.querySelector(".menu-close-icon");
+const menu = document.querySelector('.menu');
+const menuIcon = document.querySelector('.menu-icon');
+const menuCloseIcon = document.querySelector('.menu-close-icon');
 
 menuIcon.addEventListener('click', () => {
-  menu.style.display = "flex";
-  menuIcon.style.display = "none";
-  menuCloseIcon.style.display = "block";
+  menu.classList.toggle("hidden");
+  menuIcon.classList.toggle("hidden");
+  menuCloseIcon.classList.toggle("hidden");
 });
 
 menuCloseIcon.addEventListener('click', () => {
-  menu.style.display = "none";
-  menuIcon.style.display = "block";
-  menuCloseIcon.style.display = "none";
+  menu.classList.toggle("hidden");
+  menuIcon.classList.toggle("hidden");
+  menuCloseIcon.classList.toggle("hidden");
 });
