@@ -10,55 +10,40 @@
     <header class="alt-bg">
       <img src="/static/images/logo.png" />
       <nav>
-        <li>
-          <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
-        </li>
-        <li>
-          <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
-        </li>
+        <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
         {% if supported_years | length > 1 %}
-          <div class="select-year">
-            <button>
-              2019 Edition
-            </button>
-            <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" />
-          </div>
+          {{ year_switcher() }}
         {% endif %}
       </nav>
-      <div class="explore">
-        <a href="{{ url_for('outline', year=year, language=language) }}" class="alt btn">
-          Start Exploring
-        </a>
+      <div class="cta">
+        {% if request.endpoint == 'home' %}
+          <a href="{{ url_for('outline', year=year, language=language) }}" class="alt btn">
+            Start Exploring
+          </a>
+        {% endif %}
         {{ language_switcher() }}
       </div>
       <img class="menu-icon" src="/static/images/menu.png" />
       <img class="hidden menu-close-icon" src="/static/images/close.png" />
-      <div class="hidden menu">
-        <li>
-          <a href="{{ url_for('outline', year=year, language=language) }}">Table of Contents</a>
-        </li>
-        <li>
-          <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
-        </li>
-        <li>
-          <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
-        </li>
-        <div>
+      <nav class="hidden menu">
+        <a href="{{ url_for('outline', year=year, language=language) }}">Table of Contents</a>
+        <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
+        <div class="misc">
           <a href="https://httparchive.org/">
             <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
           </a>
           <div class="social-media">
-            <a href="https://twitter.com/HTTPArchive">
+            <a href="https://twitter.com/HTTPArchive" class="twitter">
               <img src="/static/images/twitter.png" alt="Twitter" />
             </a>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org">
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
               <img src="/static/images/github.png" alt="GitHub" />
             </a>
           </div>
-          <div class="explore">
-            {{ language_switcher() }}
-          </div>
-        </div>
+          {{ language_switcher() }}
+        </nav>
       </div>
     </header>
   {% endblock %}
@@ -66,62 +51,46 @@
   {% block main %}{% endblock %}
 
   {% block footer %}
-    <footer class="footer alt-bg">
-      <div class="footer-container">
-        <section class="nav">
-          <img src="/static/images/logo.png" />
-          <nav class="nav-items">
-            <img src="/static/images/ha-home.png" />
-            <li>
-              <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
-            </li>
-            <li>
-              <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
-            </li>
-          </nav>
-          <div class="explore">
-            {{ language_switcher() }}
-          </div>
-        </section>
-        <hr class="line-break">
-        <div class="footer-mobile-nav">
-          <li>
-            <a href="#">Table of Contents</a>
-          </li>
-          <li>
-            <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
-          </li>
-          <li>
-            <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
-          </li>
-          <div>
-            <a href="https://httparchive.org/">
-              <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
+    <footer class="alt-bg">
+      <section class="nav">
+        <img src="/static/images/logo.png" />
+        <nav class="nav-items">
+          <img src="/static/images/ha-home.png" />
+          <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
+          <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
+        </nav>
+        {{ language_switcher() }}
+      </section>
+      <hr>
+      <div class="footer-mobile-nav">
+        <a href="{{ url_for('outline', year=year, language=language) }}">Table of Contents</a>
+        <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
+        <div>
+          <a href="https://httparchive.org/">
+            <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
+          </a>
+          <div class="social-media">
+            <a href="https://twitter.com/HTTPArchive" class="twitter">
+              <img src="/static/images/twitter.png" alt="Twitter" />
             </a>
-            <div class="social-media">
-              <a href="https://twitter.com/HTTPArchive">
-                <img src="/static/images/twitter.png" alt="Twitter" />
-              </a>
-              <a href="https://github.com/HTTPArchive/almanac.httparchive.org">
-                <img src="/static/images/github.png" alt="GitHub" />
-              </a>
-            </div>
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+              <img src="/static/images/github.png" alt="GitHub" />
+            </a>
           </div>
         </div>
-        <hr class="line-break">
-        <div class="misc">
-          <div>
-            Copyright © 2019 Web Almanac. All rights reserved.
-          </div>
-          <div>
-            <div class="social-media">
-              <a href="https://twitter.com/HTTPArchive">
-                <img src="/static/images/twitter.png" alt="Twitter" />
-              </a>
-              <a href="https://github.com/HTTPArchive/almanac.httparchive.org">
-                <img src="/static/images/github.png" alt="GitHub" />
-              </a>
-            </div>
+      </div>
+      <hr>
+      <div class="misc">
+        <p>Copyright © 2019 Web Almanac. All rights reserved.</p>
+        <div>
+          <div class="social-media">
+            <a href="https://twitter.com/HTTPArchive" class="twitter">
+              <img src="/static/images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+              <img src="/static/images/github.png" alt="GitHub" />
+            </a>
           </div>
         </div>
       </div>
@@ -131,7 +100,7 @@
     <script nonce="{{ csp_nonce() }}">
 (function() {
 // Language switching
-var languageSwitchers = document.querySelectorAll('.language-switcher');
+var languageSwitchers = document.querySelectorAll('.language-switcher select');
 for (var i = 0; i < languageSwitchers.length; i++) {
   languageSwitchers[i].addEventListener('change', function(e) {
     if (e.target.value) {
@@ -159,12 +128,13 @@ menuCloseIcon.addEventListener('click', toggleMenu);
 {% endblock %}
 
 {% macro language_switcher() %}
+<div class="language-switcher">
   {% if language is not none %}
-    <img src="/static/images/{{ language }}.png" height="25" width="25" />
+    <img src="/static/images/{{ language }}.png" class="flag" height="25" width="25" />
   {% else %}
-    <img src="/static/images/English.png" height="25" width="25" />
+    <img src="/static/images/English.png" class="flag" height="25" width="25" />
   {% endif %}
-  <select class="language-switcher">
+  <select>
     {% for l in supported_languages %}
       <option
         {% if l == language %}selected="selected"{% endif %}
@@ -174,4 +144,20 @@ menuCloseIcon.addEventListener('click', toggleMenu);
     {% endfor %}
   </select>
   <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="open" height="20" width="20" />
+</div>
+{% endmacro %}
+
+{% macro year_switcher() %}
+<div class="year-switcher">
+  <select>
+      {% for y in supported_years %}
+        <option
+          {% if y == year %}selected="selected"{% endif %}
+          value="{{ url_for('outline', **get_view_args(year=y)) }}">
+          {{ y }} Edition
+        </option>
+      {% endfor %}
+  </select>
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="open" height="20" width="20" />
+</div>
 {% endmacro %}

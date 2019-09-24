@@ -23,11 +23,13 @@ def render_template(template, *args, **kwargs):
     return flask_render_template(template, *args, **kwargs)
 
 
-def get_view_args(lang=None):
+def get_view_args(lang=None, year=None):
     view_args = request.view_args.copy()
     if lang:
         # Optionally overwrite the lang value in the current request.
         view_args.update(lang=lang)
+    if year:
+        view_args.update(year=year)
     return view_args
 
 
@@ -39,14 +41,13 @@ def get_chapter_slug(title):
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
 
-@app.route('/home')
-@app.route('/<lang>/home')
+@app.route('/<year>/')
+@app.route('/<lang>/<year>/')
 @validate
-def home(lang):
-    return render_template('%s/%s/index.html' % (lang, DEFAULT_YEAR))
+def home(year, lang):
+    return render_template('%s/%s/index.html' % (lang, year))
 
 @app.route('/')
-@app.route('/<lang>/')
 @validate
 def index(lang):
     return render_template('%s/%s/splash.html' % (lang, DEFAULT_YEAR))

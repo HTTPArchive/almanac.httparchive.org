@@ -1,4 +1,3 @@
-/* Shared */
 #home {
   display: grid;
   grid-template-areas:
@@ -6,6 +5,10 @@
     'chapter'
     'contributors'
     'methodology';
+}
+
+section {
+  overflow: hidden;
 }
 
 .featured-chapter,
@@ -40,24 +43,6 @@ p {
   margin-bottom: 40px;
 }
 
-.explore button,
-.contributors button {
-  background: none;
-  border: 1px solid #F7F779;
-  color: #F7F779;
-}
-
-.explore button:hover,
-.contributors button:hover {
-  background: #F7F779;
-  color: #1A2B49;
-}
-
-.featured-chapter,
-.methodology {
-  color:#1A2B49;
-}
-
 .intro-container {
   grid-area: intro;
   position: relative;
@@ -65,15 +50,12 @@ p {
   grid-template-areas:
     'intro year'
     'intro image';
-  margin-bottom: 200px;
   justify-content: center;
-  background-color: #5C687D;
-  color: #FFFFFF;
 }
 
 .intro {
   grid-area: intro;
-  width: 400px;
+  width: 420px;
   margin-right: 150px;
 }
 
@@ -82,57 +64,23 @@ p {
   height: 180px;
   width: 564px;
   margin-left: 10px;
+  margin-bottom: -10px;
   color: #F7F779;
   font-size: 200px;
   font-weight: bold;
-  letter-spacing: 18px;
 }
 
 .intro-image {
   grid-area: image;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   width: 530px;
   height: auto;
-}
-
-.explore {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.explore button,
-.explore img {
-  margin-right: 20px;
-}
-
-.explore img {
-  height: 25px;
-  width: 25px;
-}
-
-.explore select {
-  margin-right: 10px;
-  border: none;
-  background: none;
-  color: white;
-  width: 100px;
-  outline: none;
-}
-
-.explore img:last-of-type {
-  position: absolute;
-  right: 0px;
-  pointer-events: none;
+  margin-bottom: -110px;
 }
 
 /* Featured Chapter */
 .featured-chapter {
   grid-area: chapter;
-  width: 100vw;
+  padding: 120px 0;
 }
 
 .featured-chapter h1 {
@@ -148,7 +96,7 @@ p {
 }
 
 .featured-chapter-content {
-  width: 500px;
+  width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,14 +128,9 @@ p {
 }
 
 .rectangles {
-  background: url("/static/images/rectangles.png");
-  background-position: right;
+  background: url("/static/images/rectangles.png") center right no-repeat;
   height: 300px;
   width: 300px;
-}
-
-.contributors {
-  width: 400px;
 }
 
 .people {
@@ -218,6 +161,7 @@ p {
   font-weight: bold;
   letter-spacing: 50px;
   line-height: 400px;
+  overflow: hidden;
 }
 
 .people-text {
@@ -290,6 +234,14 @@ p {
   margin-bottom: 30px;
 }
 
+.methodology-characters {
+  margin-bottom: -3px;
+  width: 650px;
+  max-width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
 /* Mobile View */
 @media (max-width: 600px) {
   .intro-container .menu li {
@@ -314,7 +266,7 @@ p {
       'year'
       'intro'
       'image';
-    align-items: center;
+    justify-items: center;
     margin-bottom: 50px;
   }
 
@@ -360,8 +312,9 @@ p {
   }
 
   .intro-image {
+    margin-top: 20px;
+    margin-right: -46px;
     width: 350px;
-    height: 300px;
   }
 
   /* Featured Chapter */
@@ -415,21 +368,21 @@ p {
 
   .camada-755 {
     width: 80px;
-    height: 100px;
+    height: auto;
     top: 25px;
     right: 50px;
   }
 
   .camada-756 {
     width: 80px;
-    height: 100px;
+    height: auto;
     bottom: 60px;
     left: 150px;
   }
 
   .camada-754 {
     width: 80px;
-    height: 100px;
+    height: auto;
     bottom: 60px;
   }
 
@@ -452,8 +405,6 @@ p {
 
   .methodology-characters {
     width: 350px;
-    height: 150px;
-    margin: 0;
   }
 
   .websites-tested,

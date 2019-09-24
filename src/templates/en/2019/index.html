@@ -11,7 +11,7 @@ The Web Almanac by HTTP Archive
 
 {% block main %}
 <div id="home">
-  <section class="intro-container">
+  <section class="intro-container alt-bg">
     <div class="intro">
       <h1>Web Almanac</h1>
       <h2>
@@ -49,7 +49,7 @@ The Web Almanac by HTTP Archive
           <div>Lorem ipsum</div>
         </div>
       </div>
-      <a class="btn">
+      <a href="{{ url_for('chapter', year=year, chapter='mobile-web', language=language) }}" class="btn">
         Read the Mobile Web Chapter
       </a>
     </div>
@@ -61,9 +61,9 @@ The Web Almanac by HTTP Archive
       <p>
         The Web Almanac has been made possible by the hard work of the web community. 91 people have volunteered countless hours in the planning, research, writing and production phases.
       </p>
-      <button>
+      <a href="{{ url_for('contributors', year=year, language=language) }}" class="alt btn">
         See the contributors
-      </button>
+      </a>
     </div>
     <div class="people">
       <img class="camada-755" src="/static/images/camada-755.png" />
@@ -97,9 +97,9 @@ The Web Almanac by HTTP Archive
       <p class="methodology-info">
         Unless otherwise noted, the metrics in all of the 20 chapters of the Web Almanac are sourced from the HTTP Archive dataset. HTTP Archive is a community-run project that has been tracking how the web is built since 2010. Using WebPageTest and Lighthouse under the hood, metadata about nearly 6 million websites are tested monthly and included in a public BigQuery database for analysis. The July 2019 dataset was used as the basis for the Web Almanac's metrics. For more information, see the Methodology page.
       </p>
-      <button>
+      <a href="{{ url_for('methodology', year=year, language=language) }}" class="alt btn">
         See the Methodology
-      </button>
+      </a>
       <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" />
     </div>
   </section>
