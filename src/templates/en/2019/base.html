@@ -25,8 +25,8 @@
         {{ language_switcher() }}
       </div>
       <img class="menu-icon" src="/static/images/menu.png" />
-      <img class="hidden menu-close-icon" src="/static/images/close.png" />
-      <nav class="hidden menu">
+      <img class="menu-close-icon" src="/static/images/close.png" />
+      <nav class="menu">
         <a href="{{ url_for('outline', year=year, language=language) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
         <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
@@ -110,14 +110,11 @@ for (var i = 0; i < languageSwitchers.length; i++) {
 }
 
 // Mobile menu
-var menu = document.querySelector('.menu');
 var menuIcon = document.querySelector('.menu-icon');
 var menuCloseIcon = document.querySelector('.menu-close-icon');
 
 function toggleMenu(e) {
-  menu.classList.toggle('hidden');
-  menuIcon.classList.toggle('hidden');
-  menuCloseIcon.classList.toggle('hidden');
+  document.body.classList.toggle('menu-open');
 }
 
 menuIcon.addEventListener('click', toggleMenu);

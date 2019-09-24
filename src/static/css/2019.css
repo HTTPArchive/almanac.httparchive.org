@@ -134,11 +134,9 @@ header .btn + .language-switcher {
   filter: invert(100%) sepia(0%) saturate(953%) hue-rotate(229deg) brightness(116%) contrast(100%);
 }
 
-.hidden {
-  display: none !important;
-}
-
-.menu-icon {
+.menu-icon,
+.menu-close-icon,
+.menu {
   display: none;
 }
 
@@ -221,22 +219,44 @@ footer hr:last-of-type {
   header .cta {
     display: none;
   }
-
-  .menu-icon {
-    display: block;
+  header nav > * {
     margin: 0;
   }
 
-  header .menu {
+  .menu {
+    box-sizing: border-box;
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     top: 100%;
     left: 0;
     width: 100%;
+    padding: 30px;
     background: #677486;
     opacity: 0.95;
     z-index: 1;
+  }
+  .menu-icon {
+    display: block;
+    margin: 0;
+  }
+  .menu-open .menu {
+    display: flex;
+  }
+  .menu-open .menu-close-icon {
+    display: block;
+  }
+  .menu-open .menu-icon {
+    display: none;
+  }
+  .menu-open header {
+    background-color: #667384;
+  }
+  .menu .misc {
+    width: 100%;
+  }
+  .menu .social-media img {
+    width: 40px;
   }
 
   /* Footer */
