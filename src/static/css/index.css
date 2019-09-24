@@ -46,29 +46,31 @@ p {
   grid-template-areas:
     'intro year'
     'intro image';
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 60px;
 }
 
 .intro {
   grid-area: intro;
-  width: 420px;
-  margin-right: 150px;
+  width: 100%;
+  max-width: 420px;
 }
 
 .intro-year {
   grid-area: year;
   height: 180px;
-  width: 564px;
   margin-left: 10px;
-  margin-bottom: -10px;
+  margin-bottom: -45px;
   color: #F7F779;
   font-size: 200px;
+  line-height: 160px;
   font-weight: bold;
 }
 
 .intro-image {
   grid-area: image;
   width: 530px;
+  max-width: 100%;
   height: auto;
   margin-bottom: -110px;
 }
@@ -120,32 +122,29 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
-}
-
-.rectangles {
-  background: url("/static/images/rectangles.png") center right no-repeat;
-  height: 300px;
-  width: 300px;
+  background-image: url("/static/images/rectangles.png");
+  background-position: -250px center;
+  background-repeat: no-repeat;
+  padding-left: 180px;
 }
 
 .people {
   position: relative;
 }
 
-.camada-755 {
+#character-markup {
   position: absolute;
   top: -210px;
   right: 100px;
 }
 
-.camada-756 {
+#character-star {
   position: absolute;
   bottom: 0;
   left: 200px;
 }
 
-.camada-754 {
+#character-hat {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -174,7 +173,7 @@ p {
 /* Methodology */
 .methodology-container {
   grid-area: methodology;
-  width: 100vw;
+  padding: 0 60px;
 }
 
 .methodology {
@@ -265,6 +264,7 @@ p {
   .featured-chapter-content-data {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .contributors-container {
@@ -292,21 +292,21 @@ p {
     font-size: 300px;
   }
 
-  .camada-755 {
+  #character-markup {
     width: 80px;
     height: auto;
     top: 25px;
     right: 50px;
   }
 
-  .camada-756 {
+  #character-star {
     width: 80px;
     height: auto;
     bottom: 60px;
     left: 150px;
   }
 
-  .camada-754 {
+  #character-hat {
     width: 80px;
     height: auto;
     bottom: 60px;
@@ -336,6 +336,11 @@ p {
   .data-processed {
     flex-direction: column;
     margin: 0;
+  }
+
+  .websites-tested div:last-of-type,
+  .data-processed div:last-of-type {
+    font-size: 5rem;
   }
 }
 
@@ -463,21 +468,21 @@ p {
     font-size: 300px;
   }
 
-  .camada-755 {
+  #character-markup {
     width: 80px;
     height: auto;
     top: 25px;
     right: 50px;
   }
 
-  .camada-756 {
+  #character-star {
     width: 80px;
     height: auto;
     bottom: 60px;
     left: 150px;
   }
 
-  .camada-754 {
+  #character-hat {
     width: 80px;
     height: auto;
     bottom: 60px;
