@@ -11,7 +11,7 @@ FROM (
     COUNT(svg) AS svg_elements,
     SUM(LENGTH(svg)) AS svg_length
   FROM
-    `almanac.summary_response_bodies`,
+    `httparchive.almanac.summary_response_bodies`,
     UNNEST(REGEXP_EXTRACT_ALL(body,r'(?i)(<svg.*?/svg>)')) AS svg
   WHERE
     firstHtml

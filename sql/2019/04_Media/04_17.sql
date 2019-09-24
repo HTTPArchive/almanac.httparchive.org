@@ -10,7 +10,7 @@ FROM (
   SELECT
     client,
     respSize,
-    LOWER(REGEXP_EXTRACT(url, '(?i)(hls|video|shaka|jwplayer|brightcove-player-loader)[(?:\\.min)]?\\.js')) AS player
+    LOWER(REGEXP_EXTRACT(url, '(?i)(hls|video|shaka|jwplayer|brightcove-player-loader|flowplayer)[(?:\\.min)]?\\.js')) AS player
   FROM
     `httparchive.almanac.requests`
   WHERE
