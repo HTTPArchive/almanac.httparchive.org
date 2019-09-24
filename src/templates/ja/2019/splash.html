@@ -1,15 +1,18 @@
-{% extends "ja/base.html" %}
+{% extends "base.html" %}
 
 {% block title %}
 HTTP ArchiveによるWeb年鑑
 {% endblock %}
 
-{% block navigation %} {% endblock %}
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/splash.css">
+{% endblock %}
 
 {% block main %}
 <section>
   <div>
-    <img src="../static/images/ha.png" alt="HTTP Archive">
+    <img src="/static/images/ha.png" alt="HTTP Archive">
 
     <h1>
       2019年11月に発表予定の<b>Web年鑑</b>をご紹介します。

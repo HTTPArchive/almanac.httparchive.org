@@ -1,17 +1,18 @@
-{% extends "en/base.html" %}
+{% extends "en/2019/base.html" %}
 
 {% block title %}
 The Web Almanac by HTTP Archive
 {% endblock %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/main.css">
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/splash.css">
 {% endblock %}
 
-{% block main %}
+{% block content %}
 <section>
   <div>
-    <img src="../static/images/ha.png" alt="HTTP Archive">
+    <img src="/static/images/ha.png" alt="HTTP Archive">
 
     <h1>
       Introducing the <b>Web Almanac</b>, coming November 2019.
