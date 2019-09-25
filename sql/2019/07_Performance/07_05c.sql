@@ -1,5 +1,5 @@
 #standardSQL
-# 07_05b: % fast FID per PSI by device
+# 07_05c: % fast FID per PSI by ECT
 SELECT
   device,
   ROUND(COUNTIF(fast_fcp >= .9 AND fast_fid >= .95) * 100 / COUNT(0), 2) AS pct_fast,
