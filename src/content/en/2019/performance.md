@@ -2,8 +2,6 @@
 part_number: II
 chapter_number: 7
 title: Performance
-description: ''
-hero_image: ''
 authors: [rviscomi, zeman]
 reviewers: [JMPerez, obto, sergeychernyshev]
 translators: []
