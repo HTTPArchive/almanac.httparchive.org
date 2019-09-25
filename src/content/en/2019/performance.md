@@ -9,6 +9,8 @@ reviewers: [JMPerez, obto, sergeychernyshev]
 translators: []
 ---
 
+![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/07_Performance.jpg)
+
 ## Intro
 - what do we mean when we talk about "performance" -- what's in scope for this chapter?
 - why is performance an important thing to discuss?
