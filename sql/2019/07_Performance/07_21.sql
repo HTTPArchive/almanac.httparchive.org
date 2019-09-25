@@ -2,23 +2,23 @@
 # 07_21: Percentiles of layout CPU time
 #corresponding to the time main thread of the browser was busy
 SELECT
+  percentile,
   client,
-  ROUND(APPROX_QUANTILES(layoutCpuTime, 1000)[OFFSET(100)] / 1000, 2) AS p10,
-  ROUND(APPROX_QUANTILES(layoutCpuTime, 1000)[OFFSET(250)] / 1000, 2) AS p25,
-  ROUND(APPROX_QUANTILES(layoutCpuTime, 1000)[OFFSET(500)] / 1000, 2) AS p50,
-  ROUND(APPROX_QUANTILES(layoutCpuTime, 1000)[OFFSET(750)] / 1000, 2) AS p75,
-  ROUND(APPROX_QUANTILES(layoutCpuTime, 1000)[OFFSET(900)] / 1000, 2) AS p90
-FROM 
-( 
-  SELECT 
+  ROUND(APPROX_QUANTILES(layout_cpu_time, 1000)[OFFSET(percentile * 10)] / 1000, 2) AS layout_cpu_time
+FROM (
+  SELECT
   _TABLE_SUFFIX AS client,
   (
     CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.ParseAuthorStyleSheet']"), "0") AS INT64) +
     CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.Layout']"), "0") as INT64) +
     CAST(IFNULL(JSON_EXTRACT(payload, "$['_cpu.UpdateLayoutTree']"), "0") AS INT64)
-  ) AS layoutCpuTime
+  ) AS layout_cpu_time
   FROM
-   `httparchive.pages.2019_07_01_*`  
-)
+   `httparchive.pages.2019_07_01_*`),
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
+  percentile,
+  client
+ORDER BY
+  percentile,
   client
