@@ -2,19 +2,15 @@
 # 07_16: Percentiles of time to interactive
 #This metric comes from Lighthouse
 SELECT
-  client,
-  ROUND(APPROX_QUANTILES(timeToInteractive, 1000)[OFFSET(100)] / 1000, 2) AS p10,
-  ROUND(APPROX_QUANTILES(timeToInteractive, 1000)[OFFSET(250)] / 1000, 2) AS p25,
-  ROUND(APPROX_QUANTILES(timeToInteractive, 1000)[OFFSET(500)] / 1000, 2) AS p50,
-  ROUND(APPROX_QUANTILES(timeToInteractive, 1000)[OFFSET(750)] / 1000, 2) AS p75,
-  ROUND(APPROX_QUANTILES(timeToInteractive, 1000)[OFFSET(900)] / 1000, 2) AS p90
-FROM 
-(
+  percentile,
+  ROUND(APPROX_QUANTILES(tti, 1000)[OFFSET(percentile * 10)] / 1000, 2) AS tti
+FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
-    CAST(IFNULL(JSON_EXTRACT(report, "$.audits.consistently-interactive.numericValue"), JSON_EXTRACT(report, "$.audits.interactive.numericValue")) AS FLOAT64) AS timeToInteractive
+    CAST(IFNULL(JSON_EXTRACT(report, "$.audits.consistently-interactive.numericValue"), JSON_EXTRACT(report, "$.audits.interactive.numericValue")) AS FLOAT64) AS tti
   FROM
-    `httparchive.lighthouse.2019_07_01_*`
-)
+    `httparchive.lighthouse.2019_07_01_mobile`),
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
-  client
+  percentile
+ORDER BY
+  percentile
