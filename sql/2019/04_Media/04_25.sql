@@ -1,16 +1,20 @@
-#StandardSQL
-/*
-standard sql
-
-04_25
-64 GB
-looking up 3 top VR frameworks.. I COUNT only 52 responses - NOT highly utilised in this dataset
-
-*/
-
-
-SELECT url, respsize, ext, mimetype, format, _TABLE_SUFFIX AS client
-
-FROM `summary_requests.2019_07_01_*` 
-WHERE url LIKE "%aframe.min.js" OR  url LIKE "%babylon.js" OR  url LIKE "%argon.js"
-ORDER BY url asc, respsize asc
+#standardSQL
+# 04_25: % of pages having WebXR frameworks
+SELECT
+  client,
+  framework,
+  COUNT(DISTINCT page) AS pages
+FROM (
+  SELECT
+    client,
+    page,
+    REGEXP_EXTRACT(LOWER(url), '(aframe|babylon|argon)(?:\\.min)?\\.js') AS framework
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    type = 'script')
+WHERE
+  framework IS NOT NULL
+GROUP BY
+  client,
+  framework
