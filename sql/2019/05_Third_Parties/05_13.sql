@@ -49,7 +49,7 @@ FROM (
     SUM(IF(thirdPartyCategory = 'content', executionTime, 0)) AS amountOfContentTime,
     SUM(IF(thirdPartyCategory = 'cdn', executionTime, 0)) AS amountOfCdnTime,
     SUM(IF(thirdPartyCategory = 'tag-manager', executionTime, 0)) AS amountOfTagManagerTime,
-    SUM(IF(thirdPartyCategory = 'other', executionTime, 0)) AS amountOfOtherTime
+    SUM(IF(thirdPartyCategory = 'other' OR thirdPartyCategory IS NULL, executionTime, 0)) AS amountOfOtherTime
   FROM (
     SELECT
       lh.url AS pageUrl,

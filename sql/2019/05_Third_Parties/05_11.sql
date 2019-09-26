@@ -35,7 +35,7 @@ FROM (
     COUNTIF(thirdPartyCategory = 'content') AS numberOfContentRequests,
     COUNTIF(thirdPartyCategory = 'cdn') AS numberOfCdnRequests,
     COUNTIF(thirdPartyCategory = 'tag-manager') AS numberOfTagManagerRequests,
-    COUNTIF(thirdPartyCategory = 'other') AS numberOfOtherRequests
+    COUNTIF(thirdPartyCategory = 'other' OR thirdPartyCategory IS NULL) AS numberOfOtherRequests
   FROM (
     SELECT
       client,
