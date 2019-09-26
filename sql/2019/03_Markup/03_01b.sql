@@ -17,19 +17,24 @@ CREATE TEMPORARY FUNCTION isDeprecated(element STRING) AS (
 );
 
 SELECT
-  _TABLE_SUFFIX AS client,
-  element AS deprecated,
+  client,
+  deprecated,
   COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
-FROM
-  `httparchive.pages.2019_07_01_*`,
-  UNNEST(getElements(payload)) AS element
-WHERE
-  isDeprecated(element)
+  total,
+  ROUND(COUNT(0) * 100 / total, 2) AS pct
+FROM (
+  SELECT
+    _TABLE_SUFFIX AS client,
+    element AS deprecated,
+    COUNT(DISTINCT url) OVER (PARTITION BY _TABLE_SUFFIX) AS total
+  FROM
+    `httparchive.pages.2019_07_01_*`,
+    UNNEST(getElements(payload)) AS element
+  WHERE
+    isDeprecated(element))
 GROUP BY
   client,
+  total,
   deprecated
 ORDER BY
-  freq / total DESC,
-  client
+  freq / total DESC
