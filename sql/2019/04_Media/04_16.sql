@@ -13,7 +13,7 @@ USING
   (client)
 WHERE
   type = 'video' AND
-  NET.REG_DOMAIN(url) NOT IN ('youtube.com', 'googlevideo.com)')
+  NET.REG_DOMAIN(url) NOT IN ('youtube.com','youtube-nocookie.com', 'googlevideo.com', 'fbcdn.net', 'vimeocdn.com')
 GROUP BY
   client,
   total
