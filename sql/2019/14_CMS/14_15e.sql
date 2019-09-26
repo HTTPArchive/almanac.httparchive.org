@@ -1,5 +1,5 @@
 #standardSQL
-# 14_15e: Requests and weight of all content on ecom pages by type
+# 14_15e: Requests and weight of all content on CMS pages by type
 SELECT
   percentile,
   client,
