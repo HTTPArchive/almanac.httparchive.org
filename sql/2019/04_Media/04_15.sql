@@ -1,30 +1,20 @@
 #standardSQL
-/*
-standard sql
-
-04_15
-13 GB
-
-
-how many movies.. how big (in percentiles by extension).. 
-
-remove the percentiles to get a better COUNT for each format.
-remove the ext AND cnter to get a better idea on sizes.
-
-
-
-*/
-
-SELECT ext, client,
-        COUNT(*) AS cnter, 
-        APPROX_QUANTILES(respsize,11) AS sizepercentiles
-
-FROM(
-
-SELECT url, respsize, ext, mimetype, format, _TABLE_SUFFIX AS client
-
-FROM `summary_requests.2019_07_01_*` 
-WHERE mimetype LIKE "%video%"
-)
-GROUP BY format, ext, client
-ORDER BY cnter desc
+# 04_16: Video format sizes
+SELECT
+  percentile,
+  client,
+  format,
+  ROUND(APPROX_QUANTILES(respSize, 1000)[OFFSET(percentile * 10)] / 1024, 2) AS kbytes
+FROM
+  `httparchive.almanac.requests`,
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
+WHERE
+  type = 'video'
+GROUP BY
+  percentile,
+  client,
+  format
+ORDER BY
+  percentile,
+  client,
+  format
