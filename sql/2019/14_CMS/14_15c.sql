@@ -1,15 +1,15 @@
 #standardSQL
-# 13_09e: Requests and weight of all content on ecom pages by type
+# 14_15c: Requests and weight of third party content on CMS pages, by category
 SELECT
   percentile,
   client,
-  type,
+  category,
   APPROX_QUANTILES(requests, 1000)[OFFSET(percentile * 10)] AS requests,
   ROUND(APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024, 2) AS kbytes
 FROM (
   SELECT
     client,
-    type,
+    category,
     COUNT(0) AS requests,
     SUM(respSize) AS bytes
   FROM
@@ -17,19 +17,23 @@ FROM (
   JOIN (
     SELECT _TABLE_SUFFIX AS client, url AS page
     FROM `httparchive.technologies.2019_07_01_*`
-    WHERE category = 'Ecommerce')
+    WHERE category = 'CMS')
   USING
     (client, page)
+  JOIN
+    `httparchive.almanac.third_parties`
+  ON
+    NET.HOST(url) = domain
   GROUP BY
     client,
-    type,
+    category,
     page),
 UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,
   client,
-  type
+  category
 ORDER BY
   percentile,
   client,
-  kbytes DESC
+  requests DESC

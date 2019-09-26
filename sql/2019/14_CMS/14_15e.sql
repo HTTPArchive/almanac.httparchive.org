@@ -1,5 +1,5 @@
 #standardSQL
-# 13_09e: Requests and weight of all content on ecom pages by type
+# 14_15e: Requests and weight of all content on CMS pages by type
 SELECT
   percentile,
   client,
@@ -17,7 +17,7 @@ FROM (
   JOIN (
     SELECT _TABLE_SUFFIX AS client, url AS page
     FROM `httparchive.technologies.2019_07_01_*`
-    WHERE category = 'Ecommerce')
+    WHERE category = 'CMS')
   USING
     (client, page)
   GROUP BY
