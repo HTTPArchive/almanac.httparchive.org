@@ -4,7 +4,7 @@ SELECT
   client,
   COUNTIF(has_picture_img) AS has_picture_img,
   COUNT(0) AS total,
-  ROUND(COUNTIF(has_source_sizes) * 100 / COUNT(0), 2) AS pct
+  ROUND(COUNTIF(has_picture_img) * 100 / COUNT(0), 2) AS pct
 FROM (
   SELECT
     client,

@@ -1,5 +1,5 @@
 #standardSQL
-# 09_17: % of pages having a table caption/thead
+# 09_18: % of pages having a table caption/thead
 # Caveat: This does not necessarily enforce that the element is within the table.
 CREATE TEMPORARY FUNCTION getTableElements(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
