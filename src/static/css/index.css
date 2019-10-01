@@ -1,3 +1,12 @@
+body { 
+  background-image: url(/static/images/intro-background-fit.png);
+  background-repeat: no-repeat;
+  background-size: 100% 910px;
+}
+header.alt-bg {
+  background-color: initial;
+}
+
 #home {
   display: grid;
   grid-template-areas:
@@ -45,6 +54,7 @@ p {
 }
 
 .intro-container {
+  color: #FFFFFF;
   grid-area: intro;
   position: relative;
   display: grid;
@@ -246,7 +256,16 @@ p {
   z-index: -1;
 }
 
+@media (min-width: 2048px) {
+  body {
+    background-size: 100% 1110px;
+  }
+}
+
 @media (max-width: 900px) and (min-width: 601px) {
+  body {
+    background-size: auto;
+  }
   .intro-container {
     grid-template-areas:
       'year'
@@ -359,6 +378,9 @@ p {
 
 /* Mobile View */
 @media (max-width: 600px) {
+  body {
+    background-size: auto;
+  }
   .intro-container .menu li {
     list-style: none;
     margin: 30px;
