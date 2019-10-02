@@ -16,7 +16,7 @@ SELECT
 FROM (
   SELECT
     client,
-    TRIM(resp_expires) = "" AS uses_expires,
+    TRIM(resp_expires) != "" AS uses_expires,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=') AS uses_max_age
   FROM
     `httparchive.almanac.requests`

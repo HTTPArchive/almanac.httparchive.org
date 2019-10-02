@@ -16,7 +16,7 @@ SELECT
 FROM (
   SELECT
     client,
-    TRIM(resp_cache_control) = "" AS uses_cache_control,
+    TRIM(resp_cache_control) != "" AS uses_cache_control,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)public(\s*,|\s*$)') AS uses_public,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)private(\s*,|\s*$)') AS uses_private
   FROM

@@ -16,8 +16,8 @@ SELECT
 FROM (
   SELECT
     client,
-    TRIM(resp_etag) = "" AS uses_etag,
-    TRIM(resp_last_modified) = "" AS uses_last_modified
+    TRIM(resp_etag) != "" AS uses_etag,
+    TRIM(resp_last_modified) != "" AS uses_last_modified
   FROM
     `httparchive.almanac.requests`
 )

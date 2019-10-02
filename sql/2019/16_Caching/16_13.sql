@@ -12,7 +12,7 @@ SELECT
 FROM (
   SELECT
     client,
-    TRIM(resp_cache_control) = "" AS uses_cache_control,
+    TRIM(resp_cache_control) != "" AS uses_cache_control,
     REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)must-revalidate(\s*,|\s*$)') AS uses_revalidate
   FROM
     `httparchive.almanac.requests`
