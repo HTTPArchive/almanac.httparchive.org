@@ -8,6 +8,7 @@ header.alt-bg {
 }
 
 #home {
+  overflow: hidden;
   display: grid;
   grid-template-areas:
     'intro'
@@ -59,9 +60,8 @@ p {
   position: relative;
   display: grid;
   grid-template-areas:
-    'intro year'
     'intro image';
-  justify-content: space-between;
+  justify-content: normal;
   padding: 0 60px;
 }
 
@@ -71,22 +71,18 @@ p {
   max-width: 420px;
 }
 
-.intro-year {
-  grid-area: year;
-  height: 180px;
-  margin-bottom: -45px;
-  color: #F7F779;
-  font-size: 20vw;
-  line-height: 160px;
-  font-weight: bold;
-}
-
 .intro-image {
   grid-area: image;
+  max-height: 470px;
   max-width: 100%;
   height: auto;
-  margin-bottom: -90px;
-  margin-left: -22px;
+  margin-left: 24px;
+}
+
+text.intro-year {
+  font-size: 265px;
+  fill: #f8f879;
+  font-weight: bold;
 }
 
 /* Featured Chapter */
