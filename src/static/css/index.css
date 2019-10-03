@@ -61,7 +61,7 @@ p {
   display: grid;
   grid-template-areas:
     'intro image';
-  justify-content: normal;
+  justify-content: space-between;
   padding: 0 60px;
 }
 
@@ -76,7 +76,7 @@ p {
   max-height: 470px;
   max-width: 100%;
   height: auto;
-  margin-left: 24px;
+  margin-bottom: -90px;
 }
 
 /* Featured Chapter */
@@ -262,6 +262,7 @@ p {
       'intro'
       'image';
     justify-items: center;
+    justify-content: center;
     padding: 40px 60px;
   }
   .intro {
@@ -275,7 +276,7 @@ p {
     width: auto;
   }
   .intro-image {
-    margin-top: 20px;
+    margin-top: 80px;
     margin-right: -46px;
   }
 
@@ -303,6 +304,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .contributors div {
@@ -348,6 +350,7 @@ p {
     width: initial;
     margin-left: 20px;
     margin-right: 20px;
+    text-align: center;
   }
 
   .methodology-characters {
@@ -394,6 +397,7 @@ p {
       'intro'
       'image';
     justify-items: center;
+    justify-content: center;
     margin-bottom: 50px;
   }
 
@@ -413,6 +417,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .intro p {
@@ -437,7 +442,7 @@ p {
   }
 
   .intro-image {
-    margin-top: 20px;
+    margin-top: 60px;
     margin-right: -46px;
     width: 350px;
   }
@@ -482,6 +487,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .contributors div {
@@ -528,6 +534,7 @@ p {
     width: initial;
     margin-left: 20px;
     margin-right: 20px;
+    text-align: center;
   }
 
   .methodology-characters {
