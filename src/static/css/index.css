@@ -79,12 +79,6 @@ p {
   margin-left: 24px;
 }
 
-text.intro-year {
-  font-size: 265px;
-  fill: #f8f879;
-  font-weight: bold;
-}
-
 /* Featured Chapter */
 .featured-chapter {
   grid-area: chapter;
