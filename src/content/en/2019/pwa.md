@@ -136,7 +136,7 @@ nevertheless, it was found on 0.09% of all web app manifests used by mobile and 
 ### Display Values
 Looking at the values developers set for the `display` property, it becomes immediately clear 
 that they want PWAs to be perceived as “proper” apps that don’t  reveal their web technology origins. 
-By choosing `"standalone"` they make sure no browser UI is shown to the end user. This is reflected 
+By choosing `"standalone"`, they make sure no browser UI is shown to the end-user. This is reflected 
 by the majority of apps that make use of the `prefers_related_applications` property: more that 97% 
 of both mobile and desktop applications do *not* prefer native applications.
 
