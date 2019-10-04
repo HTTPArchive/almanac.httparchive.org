@@ -27,9 +27,11 @@ SELECT
   client,
   COUNTIF(max_width > 0) AS freq_max_width,
   COUNTIF(min_width > 0) AS freq_min_width,
+  COUNTIF(max_width > 0 AND min_width > 0) AS freq_both,
   total,
   ROUND(COUNTIF(max_width > 0) * 100 / total, 2) AS pct_max_width,
-  ROUND(COUNTIF(min_width > 0) * 100 / total, 2) AS pct_min_width
+  ROUND(COUNTIF(min_width > 0) * 100 / total, 2) AS pct_min_width,
+  ROUND(COUNTIF(max_width > 0 AND min_width > 0) * 100 / total, 2) AS pct_both
 FROM (
   SELECT
     client,
