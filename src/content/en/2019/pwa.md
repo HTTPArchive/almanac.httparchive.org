@@ -150,7 +150,7 @@ of both mobile and desktop applications do *not* prefer native applications.
 
 ### Category Values
 The `categories` member describes the expected application categories to which the web application belongs. 
-It is only meant as a hint to catalogs or stores listing web applications and it is expected that 
+It is only meant as a hint to catalogs or stores listing web applications, and it is expected that 
 these will make a best effort to find appropriate categories (or category) under which to list the 
 web application. There were not too many manifests that made use of the property, but it is 
 interesting to see the shift from *shopping* being the most popular category on mobile to *business*, 
