@@ -1,12 +1,12 @@
 #standardSQL
-# 09_26: Sites that disable zooming and scaling with user-scalable="no"
+# 09_26: Sites that disable zooming and scaling with user-scalable="no" or "0"
 SELECT
   client,
   COUNT(0) AS total_sites,
   COUNTIF(meta_viewport IS NOT NULL) AS total_viewports,
-  COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*no') IS NOT NULL) AS total_no_scale,
-  ROUND(COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*no') IS NOT NULL) * 100 / COUNTIF(meta_viewport IS NOT NULL), 2) AS percent_of_viewports,
-  ROUND(COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*no') IS NOT NULL) * 100 / COUNT(0), 2) AS percent_of_sites
+  COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*(no|0)') IS NOT NULL) AS total_no_scale,
+  ROUND(COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*(no|0)') IS NOT NULL) * 100 / COUNTIF(meta_viewport IS NOT NULL), 2) AS percent_of_viewports,
+  ROUND(COUNTIF(REGEXP_EXTRACT(meta_viewport, '(?i)user-scalable\\s*=\\s*(no|0)') IS NOT NULL) * 100 / COUNT(0), 2) AS percent_of_sites
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
