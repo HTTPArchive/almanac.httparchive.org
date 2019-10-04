@@ -1,5 +1,5 @@
 #standardSQL
-# 12_04: Sites that disable zooming and scaling with user-scalable="no"
+# 12_04: Sites that disable zooming and scaling with user-scalable="no" or "0"
 SELECT
   client,
   COUNT(0) AS total_sites,
