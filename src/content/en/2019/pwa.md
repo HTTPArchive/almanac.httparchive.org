@@ -24,7 +24,8 @@ in 2015. As service workers are now finally [implemented in all major browsers](
 we were wondering how many PWAs are actually out there, and how do they make use of these new technologies? 
 Certain advanced APIs like [Background Sync](https://developers.google.com/web/updates/2015/12/background-sync) 
 are currently still [only available on Chromium-based browsers](https://caniuse.com/#feat=background-sync), 
-so as an additional question we looked into which features these PWAs actually use.
+so as an additional question, we looked into which features these PWAs actually use.
+
 
 All data in the HTTP Archive can be [queried through BigQuery](https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/docs/bigquery-gettingstarted.md),
 where multiple tables are available in the `httparchive` project. As these tables tend to get fairly big, 
