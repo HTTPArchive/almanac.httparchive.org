@@ -11,7 +11,7 @@ translators: []
 Progressive Web Apps (PWA) are a new class of web applications, building on top of platform primitives 
 like the [Service Worker APIs](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API). 
 Service workers allow apps to support network-independent loading by acting as a network proxy, 
-intercepting your web app's outgoing requests and replying with programmatic or cached responses. 
+intercepting your web app's outgoing requests, and replying with programmatic or cached responses. 
 Service workers can receive push notifications, and synchronize data in the background even when 
 the corresponding app is not running. Additional, service workers — together with 
 [Web App Manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest) — 
