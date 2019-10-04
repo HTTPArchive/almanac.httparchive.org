@@ -72,7 +72,7 @@ The results for mobile and desktop are very similar with `fetch`, `install`, and
 most popular events, followed by `notificationclick` and `push`. If we interpret these results, offline use 
 cases that service workers enable are the most attractive feature for app developers, far ahead of 
 push notifications. Due to its limited availability, and less common use case, background sync doesn’t 
-play a big role at the moment. 
+play a significant role at the moment. 
 
 <bar chart of 11_03 mobile>
 
