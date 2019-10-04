@@ -3,7 +3,7 @@ part_number: [II]
 chapter_number: [11]
 title: Progressive Web Apps
 authors: [tomayac, jeffposnick]
-reviewers: [hyperpress]
+reviewers: [hyperpress, ahmadawais]
 translators: []
 ---
 
