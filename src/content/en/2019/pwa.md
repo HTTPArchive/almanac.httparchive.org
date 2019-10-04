@@ -42,7 +42,7 @@ The first metric we explore are service worker installations. Looking at the dat
 feature counters in the HTTP Archive, we find that 0.44% of all desktop and 0.37% of all mobile pages 
 register a service worker, and both curves over time are steeply growing. Now this might not look overly 
 impressive, but taking traffic data from Chrome Platform Status into account, we can see that about 
-[15% of all page loads were controlled by a service worker](https://www.chromestatus.com/metrics/feature/timeline/popularity/990),
+[a service worker controlled 15% of all page loads](https://www.chromestatus.com/metrics/feature/timeline/popularity/990),
 which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers. 
 
 <timeseries chart of 11_01b>
