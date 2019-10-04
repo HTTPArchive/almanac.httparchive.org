@@ -1,11 +1,9 @@
 ---
-part_number: [TODO]
-chapter_number: [TODO]
+part_number: [II]
+chapter_number: [11]
 title: Progressive Web Apps
-description: [TODO]
-hero_image: [TODO]
-authors: [@tomayac, @jeffposnick]
-reviewers: [@hyperpress]
+authors: [tomayac, jeffposnick]
+reviewers: [hyperpress]
 translators: []
 ---
 
