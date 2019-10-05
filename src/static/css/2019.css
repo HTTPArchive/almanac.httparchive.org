@@ -1,6 +1,6 @@
 /* Browser elements */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lato', sans-serif;
   color: #1A2B49;
   margin: 0;
   font-weight: inherit;
@@ -10,8 +10,8 @@ body {
   box-sizing: border-box;
 }
 
-p {
-  font-family: 'Lato', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
 }
 
 b {

@@ -123,28 +123,28 @@
   ],
   "teams": {
     "analysts": {
-      "name": "Data Analysts"
+      "name": "Analysts"
     },
     "authors": {
-      "name": "Chapter Authors"
+      "name": "Authors"
     },
     "brainstormers": {
       "name": "Brainstormers"
     },
     "designers": {
-      "name": "Web Designers"
+      "name": "Designers"
     },
     "developers": {
-      "name": "Web Developers"
+      "name": "Developers"
     },
     "editors": {
       "name": "Editors"
     },
     "reviewers": {
-      "name": "Peer Reviewers"
+      "name": "Reviewers"
     },
     "translators": {
-      "name": "Content Translators"
+      "name": "Translators"
     }
   },
   "contributors": {
