@@ -16,15 +16,15 @@ LANGUAGE js AS """
 """;
 
 SELECT 
-  _TABLE_SUFFIX AS client,
-  JSON_EXTRACT_SCALAR(payload, "$._is_base_page") AS is_base_page,  
+  client,
+  firstHtml,  
   COUNT(*) AS num_requests
 FROM 
-  `httparchive.requests.2019_07_01_*`
+  `httparchive.almanac.requests`
 WHERE
   url LIKE "https://%"
   AND JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2"
   AND getUpgradeHeader(payload) LIKE "%h2%"
 GROUP BY
   client,
-  is_base_page
+  firstHtml
