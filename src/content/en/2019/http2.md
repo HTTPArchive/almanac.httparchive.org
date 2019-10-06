@@ -34,7 +34,7 @@ This whistle-stop tour of HTTP/2 gives the main history and concepts of the newi
 ## Adoption of HTTP/2
 Internet protocols are often difficult to adopt, since they are ingrained into all the various routers, switches that make up the internet. This makes introducing any changes slow and difficult. Ipv6 for example has been around for 20 years but has [struggled to be adopted](https://www.google.com/intl/en/ipv6/statistics.html). HTTP/2 however, was different as it was effectively hidden in HTTPS removing barriers to adoption as long as both the browser and server supported it. [Browser support](https://caniuse.com/#feat=http2) has been very strong for some time and the advent of auto updating *evergreen* browsers has meant that an estimated 95% of global users support HTTP/2 now. For this Web Almanac we use HTTP Archive which runs a Chrome web crawler on the approximately 5 million top websites (on both Desktop and Mobile with a slightly different set for each). This shows that HTTP/2 usage is now the majority protocol - an impressive feat just 4 short years after formal standardization:
 
-<Figure 1 - 20.01 - take from here: https://httparchive.org/reports/state-of-the-web#h2 rather than from stats>
+**Figure 1 - 20.01 - take from here: https://httparchive.org/reports/state-of-the-web#h2 rather than from stats**
 
 Looking at the breakdown of all HTTP versions by request we see the following:
 
@@ -46,7 +46,7 @@ Looking at the breakdown of all HTTP versions by request we see the following:
 | HTTP/1.1 | 40.36%  | 45.01% | 42.79% |
 | HTTP/2   | 53.96%  | 54.37% | 54.18% |
 
-<Figure 2 - HTTP version usage by request (20.01 pivot table in A25 - C31)>
+**Figure 2 - HTTP version usage by request (20.01 pivot table in A25 - C31)**
 
 This shows that HTTP/1.1 and HTTP/2 are the versions used by the vast majority of requests as expected. There are only a very small number on the older HTTP/1.0 and HTTP/0.9 protocols. Annoyingly there is a larger percentage where the protocol was not correctly tracked by the HTTP Archive crawl, particularly on desktop. Digging into this has shown various reasons some of which I can explain and some of what I can't, but they mostly appear to be HTTP/1.1 requests, and assuming these unclassified requests are HTTP/1.1, then desktop and mobile usage is similar. Despite being a little larger percentage of noise than I'd like, it doesn't alter the overall message being conveyed here. Other than that, the mobile/desktop similarity is not unexpected - the HTTP Archive data crawls as Chrome for both which supports both. Real world usage may have slightly different stats with some older usage of browsers on both but even then support is widespread so I would not expect a large variation between desktop and mobile.
 
@@ -63,7 +63,7 @@ It is still interesting to look at homes pages only to get a rough figure on the
 | HTTP/1.1 | 62.36%  | 63.92% | 63.22% |
 | HTTP/2   | 37.46%  | 35.92% | 36.61% |
 
-<Figure 3 - HTTP version usage for home pages (20.02 pivot table in K22 - N26)>
+**Figure 3 - HTTP version usage for home pages (20.02 pivot table in K22 - N26)**
 
 HTTP/2 is only supported by browsers over HTTPS, even though officially HTTP/2 can be used over HTTPS or over unencrypted non-HTTPS connections. As mentioned previously, hiding the new protocol in encrypted HTTPS connections prevents networking appliances which do not understand this new protocol from interfering in (or rejecting!) it's usage. Additionally, the HTTPS handshake allows and easy method of the client and server agreeing to use HTTP/2. Not every site has made the transition to HTTPS, so HTTP/2 will not even be available to them. Looking at just those sites that use HTTPS, we do see a higher percentage support HTTP/2 at around 55% - similar to all requests:
 
@@ -74,7 +74,7 @@ HTTP/2 is only supported by browsers over HTTPS, even though officially HTTP/2 c
 | HTTP/1.1 | 45.81%  | 44.31% | 45.01% |
 | HTTP/2   | 54.04%  | 55.53% | 54.83% |
 
-<Figure 4 - HTTP version usage for HTTPS home pages (20.02 pivot table in K30 - N34)>
+**Figure 4 - HTTP version usage for HTTPS home pages (20.02 pivot table in K30 - N34)**
 
 We have shown that browser support is strong, and there is a safe road to adoption, so why does every site (or at least every HTTPS site) not support HTTP/2? Well here we come to the final item we have not measured yet: server support. This is more problematic than browser support. Unlike modern browsers, servers often do not automatically upgrade to the latest version. Even when the server is regularly maintained and patched they will often just apply security patches rather than new features like HTTP/2. Let us look first at the server HTTP header for those sites that do support HTTP/2:
 
@@ -90,7 +90,7 @@ We have shown that browser support is strong, and there is a safe road to adopti
 | openresty     |   2.15% |  2.01% |  2.07% |
 | ...etc.       |   ...   |  ...   |  ...   |
 
-<Figure 5 - Servers used for HTTP/2 (20.08 pivot table in F2 - I14)>
+**Figure 5 - Servers used for HTTP/2 (20.08 pivot table in F2 - I14)**
 
 Nginx provides package repos that allow easy of automatically upgrading to the more recent version, so it is no surprise to see it leading the way here. Cloudflare is the [most popular CDN](../cdn/) and enables HTTP/2 by default so again it is also not surprising to see this as a large percentage of HTTP/2 sites. After this we see Apache at around 20% of usage, followed by some servers who choose to hide what they are and then the smaller players (Litespeed, IIS, Google Servlet Engine and openresty - which is nginx based).
 
@@ -108,7 +108,7 @@ What is more interesting is those site that that do *not* support HTTP/2:
 | openresty     |   1.22% |  1.36% |  1.30% |
 | ...etc.       |   ...   |  ...   |  ...   |
 
-<Figure 6 - Servers used for HTTP/1.1 or lower (20.09 pivot table in F2 - I14)>
+**Figure 6 - Servers used for HTTP/1.1 or lower (20.09 pivot table in F2 - I14)**
 
 Some of this will be non-HTTPS traffic that would use HTTP/1.1 even if the server supported HTTP/2, but a bigger issue is those that do not support HTTP/2. In these stats we see a much greater share for Apache and IIS which are likely running older versions or for sites that do not yet support HTTPS. Apache in particular is often not easy to add HTTP/2 support as Apache does not provide an official repository to install this from. This often means resorting to compiling from source or trusting a third-party repo - neither of which is particularly appealing to many administrators. Only the latest versions of Linux distributions (RHEL and CentOS 8, Ubuntu 18 and Debian 9) come with a version of Apache which supports HTTP/2 and many servers are not running those yet. On the Microsoft side only Windows Server 2016 and above supports HTTP/2 so again those running older versions cannot support this. Merging these two stats together we can see the percentage of installs, of each server, that uses HTTP/2: 
 
@@ -124,7 +124,7 @@ Some of this will be non-HTTPS traffic that would use HTTP/1.1 even if the serve
 | Microsoft-IIS |  14.10% | 13.47% |
 | ...etc.       |   ...   |  ...   |
 
-<Figure 7 - percentage installs of each server used to provide HTTP/2 (20.08 pivot table in F19 - N28)>
+**Figure 7 - percentage installs of each server used to provide HTTP/2 (20.08 pivot table in F19 - N28)**
 
 It's clear Apache and IIS fall way behind with 18% and 14% of their installed based supporting HTTP/2, and this has to be at least in part, a consequence of it being more difficult to upgrade them to versions that support HTTP/2 with a full OS upgrade being required for many to get this support. Hopefully this will get easier as new versions of operating systems become the norm. None of this is a comment on the HTTP/2 implementations here ([I happen to think Apache has one of the best implementations](https://twitter.com/tunetheweb/status/988196156697169920?s=20)), but more in the ease of enabling HTTP/2 in each of these servers - or lack thereof.
 
@@ -133,11 +133,11 @@ The impact of HTTP/2 is a much more difficult to measure statistic, especially u
 
 One impact that can be measured is in the changing use case of HTTP now we are in a HTTP/2 world. Multiple connections were a work around with HTTP/1.1 to allow a limited parallelization, but this is in fact the opposite of what works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, HTTPS negotiation and also allows the potential of cross-request prioritization. The HTTP Archive measure the number of TCP connections per page and that is dropping steadying as more sites support HTTP/2 and use its single connection over 6 separate connections:
 
-<Figure 8 - TCP connections per page (https://httparchive.org/reports/state-of-the-web#tcp)>
+**Figure 8 - [TCP connections per page](https://httparchive.org/reports/state-of-the-web#tcp)**
 
 Bundling assets into few requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting...etc. It is less necessary when using HTTP/2 as there is less overhead with requests in HTTP/2 but it should be noted that requests are not free in HTTP/2 and [those that experimented with removing bundling completely have noticed a loss in performance](https://engineering.khanacademy.org/posts/js-packaging-http2.htm). Looking at the number of requests loaded by page over time, we do see a slight decrease in requests:
 
-<Figure 9 - Total Requests per page (https://httparchive.org/reports/state-of-the-web#reqTotal)>
+**Figure 9 - [Total Requests per page(https://httparchive.org/reports/state-of-the-web#reqTotal)**
 
 This is less noticeable than the drop in number of connections which can be attributed to the observations that often bundling cannot be removed completely without a negative performance impact, and also that many sites may not be willing to penalize HTTP/1.1 users by undoing their HTTP/1.1 performance hacks.
 
@@ -157,7 +157,7 @@ Putting that aside let's look at the usage of HTTP/2 push:
 | Desktop |  22,581                 | 0.52%                       |
 | Mobile  |  31,452                 | 0.59%                       |
 
-<Figure 10 - Sites using HTTP/2 push (20.10)>
+**Figure 10 - Sites using HTTP/2 push (20.10)**
 
 It's clear that uptick of HTTP/2 push is very low - most likely because of the issues described previously. However, when sites do use push, then tend to use it a lot rather than for one or two assets as shown in Figure 11:
 
@@ -166,11 +166,11 @@ It's clear that uptick of HTTP/2 push is very low - most likely because of the i
 | Desktop |  7.86               | 162.38        |
 | Mobile  |  6.35               | 122.78        |
 
-<Figure 11 - How much is pushed when it is used (20.11)>
+**Figure 11 - How much is pushed when it is used (20.11)**
 
 This is a concern as previous advice has been to be conservative with push and to ["push just enough resources to fill idle network time, and no more"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). Looking at what is pushed
 
-<Figure 12 - What asset types is pushed used for? (20.12)>
+**Figure 12 - What asset types is pushed used for? (20.12 - Pie Chart)**
 
 JavaScript and then CSS are the overwhelming majority of pushed items, both by volume and by bytes followed by Images and then JavaScript. After this there is a rag tag assortment of images, fonts, data...etc. At the tail end we see around 100 sites pushing video - which I would say is definitely not the intended use case of HTTP/2 push, and even one site that decides to push 1.5Mb of PDFs.
 
@@ -205,7 +205,7 @@ Another cause of issues in HTTP/2 is the poor support of HTTP/2 prioritization. 
 | Netlify           | Fail                   |  0.23%  |  0.15% |  0.19% |
 | OVH CDN           | Unknown                |  0.19%  |  0.18% |  0.18% |
 
-<Figure 13 - HTTP/2 prioritization support in common CDNs>
+**Figure 13 - HTTP/2 prioritization support in common CDNs**
 
 This shows that a not insignificant portion of traffic is subject to the issue identified. How much of a problem this is, depends on exactly how your page loads and whether high priority resources are discovered late, but it does show another complexity to take into considerations.
 
