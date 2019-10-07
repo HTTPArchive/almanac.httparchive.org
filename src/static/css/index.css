@@ -71,12 +71,39 @@ p {
   max-width: 420px;
 }
 
+.intro-year {
+  grid-area: year;
+  display: none;
+}
+
 .intro-image {
+  grid-area: image;
+  display: none;
+}
+
+.intro-image-2019 {
   grid-area: image;
   max-height: 470px;
   max-width: 100%;
   height: auto;
   margin-bottom: -90px;
+}
+
+.alt-bg.underline-center,
+.alt-bg .underline-center {
+  width: 20%;
+  margin: 0 40%;
+  border-bottom: solid 1px #F7F779;
+}
+.intro .btn {
+  border-color: #F7F779;
+  background-color: #F7F779;
+  color: #1A2B49;
+}
+.intro .btn:hover,
+.intro .btn:focus {
+  background-color: transparent;
+  color: #F7F779;
 }
 
 /* Featured Chapter */
@@ -271,13 +298,22 @@ p {
     text-align: center;
   }
   .intro-year {
-    font-size: 200px;
+    display: block;
     margin: 0;
     width: auto;
+    color: #F7F779;
+    font-size: 190px;
+    line-height: 160px;
+    font-weight: bold;
   }
+
   .intro-image {
+    display: block;
     margin-top: 80px;
     margin-right: -46px;
+  }
+  .intro-image-2019 {
+    display: none;
   }
 
   .featured-chapter,
@@ -314,6 +350,7 @@ p {
 
   .people-number {
     font-size: 300px;
+    overflow: visible;
   }
 
   #character-markup {
@@ -407,11 +444,6 @@ p {
     align-items: center;
   }
 
-  .intro-year {
-    font-size: 150px;
-    letter-spacing: 20px;
-  }
-
   .intro {
     margin: 0;
     display: flex;
@@ -428,23 +460,30 @@ p {
   .intro button {
     margin-bottom: 20px;
   }
-
-  .intro-year {
-    height: initial;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-
   .intro-image-container {
     display: flex;
     justify-content: center;
   }
 
+  .intro-year {
+    display: block;
+    margin: 0;
+    width: auto;
+    color: #F7F779;
+    font-size: 40vw;
+    line-height: 100%;
+    font-weight: bold;
+  }
+
   .intro-image {
+    display: block;
     margin-top: 60px;
     margin-right: -46px;
     width: 350px;
+  }
+
+  .intro-image-2019 {
+    display: none;
   }
 
   /* Featured Chapter */
@@ -503,6 +542,7 @@ p {
     font-size: 300px;
     letter-spacing: 27px;
     line-height: 240px;
+    overflow: visible;
   }
   .people-text {
     top: 100px;
