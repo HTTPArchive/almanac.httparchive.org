@@ -1,6 +1,6 @@
 #standardSQL
-# 20.04a_5a_6a - Detailed alt-svc headers
-CREATE TEMPORARY FUNCTION getAltSvcHeader(payload STRING)
+# 20.16 - Detailed alt-svc headers
+CREATE TEMPORARY FUNCTION getUpgradeHeader(payload STRING)
 RETURNS STRING
 LANGUAGE js AS """
   try {
@@ -16,15 +16,15 @@ LANGUAGE js AS """
 """;
 
 SELECT 
-  _TABLE_SUFFIX AS client,
-  JSON_EXTRACT_SCALAR(payload, "$._is_base_page") AS is_base_page,  
+  client,
+  firstHtml,  
   JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
-  getAltSvcHeader(payload) AS altsvc,
+  getUpgradeHeader(payload) AS upgrade,
   COUNT(*) AS num_requests
 FROM 
-  `httparchive.requests.2019_07_01_*`
+  `httparchive.almanac.requests` 
 GROUP BY
   client,
-  is_base_page,
+  firstHtml,
   protocol,
-  altsvc
+  upgrade
