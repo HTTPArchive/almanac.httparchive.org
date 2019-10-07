@@ -1,13 +1,13 @@
 #standardSQL
-# 20.04a_5a_6a - Detailed alt-svc headers
-CREATE TEMPORARY FUNCTION getAltSvcHeader(payload STRING)
+# 20.04a_5a_6a - Detailed upgrade headers for 20.04, 20.05 and 20.06
+CREATE TEMPORARY FUNCTION getUpgradeHeader(payload STRING)
 RETURNS STRING
 LANGUAGE js AS """
   try {
     var $ = JSON.parse(payload);
     var headers = $.response.headers;
     var st = headers.find(function(e) { 
-      return e['name'].toLowerCase() === 'alt-svc'
+      return e['name'].toLowerCase() === 'upgrade'
     });
     return st['value'];
   } catch (e) {
@@ -19,7 +19,7 @@ SELECT
   client,
   firstHtml,  
   JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
-  getAltSvcHeader(payload) AS altsvc,
+  getUpgradeHeader(payload) AS upgrade,
   COUNT(*) AS num_requests
 FROM 
   `httparchive.almanac.requests` 
@@ -27,4 +27,4 @@ GROUP BY
   client,
   firstHtml,
   protocol,
-  altsvc
+  upgrade
