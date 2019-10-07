@@ -41,7 +41,7 @@ Internet protocols are often difficult to adopt, since they are ingrained into a
 
 ![](https://www.tunetheweb.com/assets/images/http2usage.png)
 
-**Figure 1 - 20.01 - take from here: https://httparchive.org/reports/state-of-the-web#h2 rather than from stats**
+**Figure 1 - HTTP/2 usage by request (20.01 - take from here: https://httparchive.org/reports/state-of-the-web#h2 rather than from stats)**
 
 Looking at the breakdown of all HTTP versions by request we see the following:
 
@@ -95,7 +95,7 @@ We have shown that browser support is strong, and there is a safe road to adopti
 | GSE           |   2.16% |  3.73% |  3.01% |
 | Microsoft-IIS |   3.09% |  2.66% |  2.86% |
 | openresty     |   2.15% |  2.01% |  2.07% |
-| ...etc.       |   ...   |  ...   |  ...   |
+| ...           |   ...   |  ...   |  ...   |
 
 **Figure 5 - Servers used for HTTP/2 (20.08 pivot table in F2 - I14)**
 
@@ -113,7 +113,7 @@ What is more interesting is those site that that do *not* support HTTP/2:
 | cloudflare    |   2.44% |  2.48% |  2.46% |
 | LiteSpeed     |   1.02% |  1.63% |  1.36% |
 | openresty     |   1.22% |  1.36% |  1.30% |
-| ...etc.       |   ...   |  ...   |  ...   |
+| ...           |   ...   |  ...   |  ...   |
 
 **Figure 6 - Servers used for HTTP/1.1 or lower (20.09 pivot table in F2 - I14)**
 
@@ -129,7 +129,7 @@ Some of this will be non-HTTPS traffic that would use HTTP/1.1 even if the serve
 |               |  25.57% | 27.49% |
 | Apache        |  18.09% | 18.56% |
 | Microsoft-IIS |  14.10% | 13.47% |
-| ...etc.       |   ...   |  ...   |
+| ...           |   ...   |  ...   |
 
 **Figure 7 - percentage installs of each server used to provide HTTP/2 (20.08 pivot table in F19 - N28)**
 
@@ -148,7 +148,7 @@ Bundling assets into few requests was another HTTP/1.1 workaround that went by m
 
 ![](https://www.tunetheweb.com/assets/images/numresources.png)
 
-**Figure 9 - [Total Requests per page(https://httparchive.org/reports/state-of-the-web#reqTotal)**
+**Figure 9 - [Total Requests per page](https://httparchive.org/reports/state-of-the-web#reqTotal)**
 
 This is less noticeable than the drop in the number of connections which can perhaps be attributed to the aforementioned observations that bundling cannot be removed completely without a negative performance impact. It is also likely that many sites may not be willing to penalize HTTP/1.1 users by undoing their HTTP/1.1 performance hacks just yet, or at least that they do not have the confidence (or time!) to feel this is worthwhile.
 
