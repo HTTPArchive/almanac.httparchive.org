@@ -48,6 +48,12 @@ select {
   background: #5C687D;
   color: white;
 }
+.alt-bg.underline-center,
+.alt-bg .underline-center {
+  width: 20%;
+  margin: 0 40%;
+  border-bottom: solid 1px #F7F779;
+}
 .alt-bg .btn {
   border-color: #F7F779;
   background-color: #F7F779;

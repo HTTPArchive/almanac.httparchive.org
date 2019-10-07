@@ -8,6 +8,7 @@ header.alt-bg {
 }
 
 #home {
+  overflow: hidden;
   display: grid;
   grid-template-areas:
     'intro'
@@ -59,7 +60,6 @@ p {
   position: relative;
   display: grid;
   grid-template-areas:
-    'intro year'
     'intro image';
   justify-content: space-between;
   padding: 0 60px;
@@ -73,20 +73,37 @@ p {
 
 .intro-year {
   grid-area: year;
-  height: 180px;
-  margin-bottom: -45px;
-  color: #F7F779;
-  font-size: 20vw;
-  line-height: 160px;
-  font-weight: bold;
+  display: none;
 }
 
 .intro-image {
   grid-area: image;
+  display: none;
+}
+
+.intro-image-2019 {
+  grid-area: image;
+  max-height: 470px;
   max-width: 100%;
   height: auto;
   margin-bottom: -90px;
-  margin-left: -22px;
+}
+
+.alt-bg.underline-center,
+.alt-bg .underline-center {
+  width: 20%;
+  margin: 0 40%;
+  border-bottom: solid 1px #F7F779;
+}
+.intro .btn {
+  border-color: #F7F779;
+  background-color: #F7F779;
+  color: #1A2B49;
+}
+.intro .btn:hover,
+.intro .btn:focus {
+  background-color: transparent;
+  color: #F7F779;
 }
 
 /* Featured Chapter */
@@ -272,6 +289,7 @@ p {
       'intro'
       'image';
     justify-items: center;
+    justify-content: center;
     padding: 40px 60px;
   }
   .intro {
@@ -280,13 +298,22 @@ p {
     text-align: center;
   }
   .intro-year {
-    font-size: 200px;
+    display: block;
     margin: 0;
     width: auto;
+    color: #F7F779;
+    font-size: 190px;
+    line-height: 160px;
+    font-weight: bold;
   }
+
   .intro-image {
-    margin-top: 20px;
+    display: block;
+    margin-top: 80px;
     margin-right: -46px;
+  }
+  .intro-image-2019 {
+    display: none;
   }
 
   .featured-chapter,
@@ -313,6 +340,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .contributors div {
@@ -322,6 +350,7 @@ p {
 
   .people-number {
     font-size: 300px;
+    overflow: visible;
   }
 
   #character-markup {
@@ -358,6 +387,7 @@ p {
     width: initial;
     margin-left: 20px;
     margin-right: 20px;
+    text-align: center;
   }
 
   .methodology-characters {
@@ -404,6 +434,7 @@ p {
       'intro'
       'image';
     justify-items: center;
+    justify-content: center;
     margin-bottom: 50px;
   }
 
@@ -413,16 +444,12 @@ p {
     align-items: center;
   }
 
-  .intro-year {
-    font-size: 150px;
-    letter-spacing: 20px;
-  }
-
   .intro {
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .intro p {
@@ -433,23 +460,30 @@ p {
   .intro button {
     margin-bottom: 20px;
   }
-
-  .intro-year {
-    height: initial;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-
   .intro-image-container {
     display: flex;
     justify-content: center;
   }
 
+  .intro-year {
+    display: block;
+    margin: 0;
+    width: auto;
+    color: #F7F779;
+    font-size: 40vw;
+    line-height: 100%;
+    font-weight: bold;
+  }
+
   .intro-image {
-    margin-top: 20px;
+    display: block;
+    margin-top: 60px;
     margin-right: -46px;
     width: 350px;
+  }
+
+  .intro-image-2019 {
+    display: none;
   }
 
   /* Featured Chapter */
@@ -492,6 +526,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .contributors div {
@@ -507,6 +542,7 @@ p {
     font-size: 300px;
     letter-spacing: 27px;
     line-height: 240px;
+    overflow: visible;
   }
   .people-text {
     top: 100px;
@@ -538,6 +574,7 @@ p {
     width: initial;
     margin-left: 20px;
     margin-right: 20px;
+    text-align: center;
   }
 
   .methodology-characters {
