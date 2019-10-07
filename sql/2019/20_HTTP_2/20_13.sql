@@ -17,20 +17,20 @@ LANGUAGE js AS """
 
 SELECT 
   client, 
-  is_base_page, 
+  firstHtml, 
   COUNT(*) as num_requests,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM (
   SELECT 
-    _TABLE_SUFFIX AS client,
-    JSON_EXTRACT_SCALAR(payload, "$._is_base_page") AS is_base_page,  
+    client,
+    firstHtml,  
     getLinkHeaders(payload) AS link_headers
   FROM 
-   `httparchive.requests.2019_07_01_*`
+   `httparchive.almanac.requests` 
 )
 CROSS JOIN
   UNNEST(link_headers) AS link_header
 WHERE 
   link_header LIKE '%preload%' 
   AND link_header LIKE '%nopush%'
-GROUP BY client, is_base_page
+GROUP BY client, firstHtml
