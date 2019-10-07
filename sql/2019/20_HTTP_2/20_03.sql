@@ -6,7 +6,7 @@ SELECT
   ROUND(AVG(http_2/num_requests) * 100,2) avg_pct_http_2
 FROM (
   SELECT 
-    _TABLE_SUFFIX AS client,
+    client,
     page,
     COUNT(*) AS num_requests, 
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="http/0.9",1,0)) AS http_0_9, 
@@ -14,7 +14,7 @@ FROM (
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="http/1.1",1,0)) AS http_1_1,
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="HTTP/2",1,0)) AS http_2
   FROM 
-    `httparchive.requests.2019_07_01_*` 
+    `httparchive.almanac.requests` 
   GROUP BY
     client,
     page
