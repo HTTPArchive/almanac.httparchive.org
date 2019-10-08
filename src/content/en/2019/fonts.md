@@ -24,7 +24,7 @@ I was hoping to see [SVG fonts](https://caniuse.com/#feat=svg-fonts) on the decl
 
 **06.39–41:  src formats combinations**
 
-- [ ]  *Editors note: The order here is important, yeah.*
+- [ ]  *Zach’s note: The order here is important, yeah.*
 
 **06.04:  font-display Usage**
 
@@ -44,7 +44,7 @@ Why are there more requests for fonts made on mobile devices? Is it related to f
 
 **06.09b: Web font families**
 
-- [ ]  *Editors note: Is this families per page? What is `httparchive.almanac.parsed_css`?*
+- [ ]  *Zach’s note: Is this families per page? What is `httparchive.almanac.parsed_css`?*
 
 These results were a little surprising. I didn’t expect this to line up so well with the number of web font requests per page. Namely I didn’t expect so many unique font families! To me this suggests a few things might be happening here:
 
@@ -110,7 +110,7 @@ Usage here of these is basically nonexistent but you can check out the excellent
 
 **06.46: Uses a Google Fonts link**
 
-- [ ]  *Editors note: If the intention here was to measure if pages used an optimized single CSS request for the Google Fonts stylesheet (versus a bunch of disparate ones)—was that what was measured?*
+- [ ]  *Zach’s note: If the intention here was to measure if pages used an optimized single CSS request for the Google Fonts stylesheet (versus a bunch of disparate ones)—was that what was measured?*
 - [ ]  [CONTENT_NEEDED]
 
 **06.47: Uses a Google Fonts link first**
