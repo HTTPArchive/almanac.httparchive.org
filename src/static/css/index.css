@@ -74,6 +74,7 @@ p {
 .intro-year {
   grid-area: year;
   display: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .intro-image {
@@ -187,6 +188,7 @@ p {
 }
 
 .people-number {
+  font-family: 'Poppins', sans-serif;
   color: #FFFFFF;
   font-size: 600px;
   font-weight: bold;
