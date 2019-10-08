@@ -57,7 +57,7 @@ select {
 .alt-bg.decorative-line,
 .alt-bg .decorative-line {
   width: 20%;
-  margin: 0 40% !important;
+  margin-right: 80% !important;
   border-bottom: solid 1px #F7F779;
 }
 .alt-bg .btn {
