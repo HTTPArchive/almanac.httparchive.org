@@ -26,10 +26,15 @@ header.alt-bg {
 .methodology-container {
   display: flex;
   justify-content: center;
+  margin-top: 58px;
 }
 
 .intro h1 {
   letter-spacing: 5px;
+}
+.intro .decorative-line {
+  position: relative;
+  top: -10px;
 }
 
 .intro h1,
@@ -37,6 +42,10 @@ header.alt-bg {
 .methodology h1 {
   font-size: 3rem;
   font-weight: bold;
+}
+.methodology .decorative-line-center{
+  position: relative;
+  top: -10px;
 }
 
 .intro h2 {
@@ -90,12 +99,6 @@ p {
   margin-bottom: -90px;
 }
 
-.alt-bg.underline-center,
-.alt-bg .underline-center {
-  width: 20%;
-  margin: 0 40%;
-  border-bottom: solid 1px #F7F779;
-}
 .intro .btn {
   border-color: #F7F779;
   background-color: #F7F779;
@@ -124,6 +127,10 @@ p {
   font-size: 24px;
   font-weight: bold;
 }
+.featured-chapter .decorative-line-center{
+  position: relative;
+  top: -10px;
+}
 
 .featured-chapter-content {
   width: 550px;
@@ -149,6 +156,11 @@ p {
 }
 
 /* Contributors */
+.contributors .decorative-line {
+  position: relative;
+  top: -10px;
+  border-bottom: solid 1px #c6dcd2;
+}
 .contributors-container {
   grid-area: contributors;
   display: flex;
@@ -273,7 +285,13 @@ p {
   max-width: 100%;
   height: auto;
   z-index: -1;
+  background: linear-gradient(180deg,
+    rgba(0,0,0,0) calc(70% - 1px),
+    rgb(192, 192, 192) calc(50%),
+    rgba(0,0,0,0) calc(70% + 1px)
+  );
 }
+
 
 @media (min-width: 2048px) {
   body {
@@ -348,6 +366,9 @@ p {
   .contributors div {
     margin-left: 20px;
     margin-right: 20px;
+  }
+  .contributors .decorative-line {
+    border-bottom: solid 1px #F7F779;
   }
 
   .people-number {
@@ -534,6 +555,9 @@ p {
   .contributors div {
     margin-left: 20px;
     margin-right: 20px;
+  }
+  .contributors .decorative-line {
+    border-bottom: solid 1px #F7F779;
   }
 
   .people {
