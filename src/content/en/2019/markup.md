@@ -181,7 +181,7 @@ Most of these can seem like very small numbers, but perspective matters.
 
 ## Perspective on Value and Usage
 
-In order to discuss numbers about the use of elements (standard, deprecated or custom), we first need to establish some perspective.
+In order to discuss numbers about the use of elements (standard, deprecated or custom), we first need to establish some perspective.  
 
 The top 150 element names, counting the number of pages where they appear, are shown in this chart:
 
@@ -203,11 +203,9 @@ It's interesting, then, to look at what the distribution of these elements looks
 
 You can observe two things here: First, that the set of elements that have more than 1% use are not exclusively HTML.  In fact, *27 of the most popular 100 elements aren't even HTML* - they are SVG! And there are *non-standard tags at or very near that cutoff too*!  Second, note that a whole lot of HTML elements are used by less than 1% of pages.
 
- 
+So, are all of those elements used by less than 1% of pages "useless?".  Definitely not.  This is why establishing perspective matters.  There are around [2 billion web sites on the web](https://www.websitehostingrating.com/internet-statistics-facts/). If something appears on 0.1% of all websites in our dataset, we can extrapolate that this represents perhaps *2 million web sites* in the whole web. Even 0.01% extrapolates to a _two hundred of thousand of sites_.  This is also why removing support for elements, even very old ones which we think aren't great ideas, is a very rare occurrence:  Breaking hundreds of thousands or millions of sites just isn't a thing that browser vendors can do lightly.  
 
-So, are all of those elements used by less than 1% of pages "useless?".  Definitely not.  This is why establishing perspective matters.
-
-`<code>`, for example, is an element that I both use and encounter a lot.  It's definitely important - and yet it is used on only 0.57% of these pages.  Part of this is skewed based on what we are measuring - home pages are generally *less likely* to include certain kinds of things (like `<code>` for example): They serve a less general purpose than, for example, headings, paragraphs, links and lists, however, the data is generally useful.
+So, lots of elements, even the native ones, have less than 1% use and are still very important and successful.  `<code>`, for example, is an element that I both use and encounter a lot.  It's definitely useful and important - and yet it is used on only 0.57% of these pages.  Part of this is skewed based on what we are measuring - home pages are generally *less likely* to include certain kinds of things (like `<code>` for example): They serve a less general purpose than, for example, headings, paragraphs, links and lists, however, the data is generally useful.
 
 We also collected information about which pages contained an author defined (not native) `.shadowRoot` -- About 0.22% of the pages on desktop, and 0.15% on mobile.  This might not sound like a lot, but it is roughly 6.5k sites in the mobile dataset and 10k sites on the desktop and is more than several HTML elements.  `<summary>` for example, has about equivalent use on the desktop and it is the 146th most popular element.
 
