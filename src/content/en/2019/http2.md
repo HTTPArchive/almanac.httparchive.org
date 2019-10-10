@@ -179,7 +179,7 @@ These status show that the uptick of HTTP/2 push is very low - most likely becau
 
 This is a concern as previous advice has been to be conservative with push and to ["push just enough resources to fill idle network time, and no more"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). The above statistics suggest many resources, of a significant combined size are pushed. Looking at what is pushed we see the data in Figure 12:
 
-![](https://www.tunetheweb.com/assets/images/whatispushusedfor.png)
+![](https://www.tunetheweb.com/assets/images/whatpushisusedfor.png)
 
 **Figure 12 - What asset types is pushed used for?**
 
