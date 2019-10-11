@@ -17,7 +17,7 @@ The SEO (Search Engine Optimization) chapter of the Web Almanac analyses onsite 
 
 We focus on SEO fundamentals like <title> elements, type of on-page links, content and loading speed, but also the more technical aspects of SEO, including structured data, internationalisation and AMP.
 
-Our custom metrics provide insights that, up until now, have not been exposed before. We are now able to make claims about the adoption and implementation of the hreflang tag, rich results eligibility, headingheader tag usage and even anchor-based navigation for single page apps.
+Our custom metrics provide insights that, up until now, have not been exposed before. We are now able to make claims about the adoption and implementation of the hreflang tag, rich results eligibility, heading tag usage and even anchor-based navigation for single page apps.
 
 It must be noted that our data is limited to analysing the homepage only, and has not been gathered from site-wide crawls. This will impact many metrics we’ll discuss, so we’ve added any relevant limitations in this case whenever we mention a specific metric.
 
@@ -43,11 +43,11 @@ We found 2.73% desktop pages without any meaningful content. The median desktop 
 
 ##### Headings
 
-We also looked at whether the web provides the right context to content. Key is using headings which, similar to for example books make content easier to read and parse. 10.67% has no header tags at all.
+We also looked at whether the web provides the right context to content. Key is using headings which, similar to for example books make content easier to read and parse. 10.67% has no heading tags at all.
 
-<graph histogram number of header elements. Source: 10.09a, column F>
+<graph histogram number of heading elements. Source: 10.09a, column F>
 
-The median heading (h1, h2, h3, h4) element count on the web’s homepage is **10**. With 30 (mobile) and 32 (desktop) words used in headings. This implies that from the websites that utilise headers, put significant effort in making sure a website is properly readable and technically parseable.
+The median heading (h1, h2, h3, h4) element count on the web’s homepage is **10**. With 30 (mobile) and 32 (desktop) words used in headings. This implies that from the websites that utilise headings, put significant effort in making sure a website is properly readable and technically parseable.
 
 The H1 is one fundamental SEO element to improve on-page relevance for a keyword. Although Google [recently emphasized](https://twitter.com/googlewmc/status/1179803329247039488) it can index and rank pages fine without h1 tags.
 
