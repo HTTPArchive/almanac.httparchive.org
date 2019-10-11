@@ -8,7 +8,6 @@ authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, voltek62]
 translaters: []
 ---
-[ source: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/edit#gid=758241096 ]
 # Chapter 10: SEO
 
 
