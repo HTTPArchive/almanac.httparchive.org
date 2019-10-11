@@ -101,24 +101,22 @@ Another possible reason could be that a robots.txt file has only been created fo
 
 #### **Linking**
 
+The most important attribute of a webpage, are links. Links point to relevant urls. 96% of the webpages in our data contain at least one link site link, and 93% contain at least one link to another domain.
+
 The number of internal and external links included on desktop pages were consistently higher than the number found on mobile pages. Often a limited space on a smaller viewport causes fewer links to be included in the design of a mobile page compared to desktop.
 
 <graph histogram count of links by type Source: 10.10, column C, D, E, desktop only>
 
 The median desktop page includes **70** internal (same-site) links, whereas the median mobile page has **60** internal links. The median number of external links per page followed a similar trend, with desktop pages including **10** external links, and mobile pages including **8**.
 
-Anchor links, which link to a certain scroll position on the same page, are not very popular on the web, having a median count of 0.
+Anchor links, which link to a certain scroll position on the same page, are not very popular. Over 65% have no page anchor and the data’s median count is 0.
 
-Good news comes from the metric descriptive link text. **89.94%** of mobile pages pass the descriptive link text Lighthouse audit. These sites don’t have any generic ‘click here’, ‘go’, ‘here’ or ‘learn more’ links.
-
-[% pages without any links?]
-
-[what is the most links found?]
+Good news comes from the metric descriptive link text. **89.94%** of mobile pages pass the descriptive link text Lighthouse audit. These sites don’t have generic ‘click here’, ‘go’, ‘here’ or ‘learn more’ links but use more meaningful link text.
 
 
 ## Advanced
 
-Several more technically complex factors [?] have been gaining importance on successfully indexing and ranking websites in the search engine. Two key pillars are security and speed. Mobile loading speed as ranking factor was first [announced](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) by Google in 2018, and https already back since in [2014](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
+Several more technically complex aspects have been gaining importance on successfully indexing and ranking websites in the search engine. Two key pillars are security and speed. Mobile loading speed as ranking factor was first [announced](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) by Google in 2018, and https already back since in [2014](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html).
 
 
 #### Speed
