@@ -87,6 +87,7 @@ We have shown that browser support is strong, and there is a safe road to adopti
 
 | Server        | Desktop | Mobile | Both   |
 | ------------- | ------- | -------| ------ |
+| nginx         |  34.04% | 32.48% | 33.19% |
 | cloudflare    |  23.76% | 22.29% | 22.97% |
 | Apache        |  17.31% | 19.11% | 18.28% |
 |               |   4.56% |  5.13% |  4.87% |
