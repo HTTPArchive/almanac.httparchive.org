@@ -7,7 +7,7 @@ reviewers: [bagder, rmarx, dotjs]
 translators: []
 ---
 
-![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2.jpg)
+![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images//2019/20_HTTP_2/hero_xl.jpg)
 
 ## Introduction
 HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that - we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into to get around its inefficiencies. Bundling, spriting, inlining and even sharding domains would all become anti-patterns in an HTTP/2 world, giving performance by default. This meant even those without the skills and resources to concentrate on web performance would suddenly have performant websites. The reality has been, as ever, a little more nuanced than that. It has been over four years since its formal approval as a [standard in May 2015 as RFC 7540](https://tools.ietf.org/html/rfc7540), so now is a good time to look over how this relatively new technology has fared in the real world.
