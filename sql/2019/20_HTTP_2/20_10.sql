@@ -6,10 +6,10 @@ SELECT
 FROM (
 
   SELECT 
-    _TABLE_SUFFIX AS client,
+    client,
     page
   FROM 
-    `httparchive.requests.2019_07_01_*` 
+    `httparchive.almanac.requests` 
   WHERE 
     JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
     AND 

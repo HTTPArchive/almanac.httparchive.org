@@ -19,14 +19,35 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
   }
 ''';
 
+CREATE TEMPORARY FUNCTION hasInputs(payload STRING)
+RETURNS BOOLEAN LANGUAGE js AS '''
+  try {
+    var $ = JSON.parse(payload);
+    var almanac = JSON.parse($._almanac);
+
+    if (!almanac['input-elements']) {
+      return false;
+    }
+
+    return almanac['input-elements'].length;
+  } catch (e) {
+    return 0;
+  }
+''';
+
 SELECT
+    total_pages_with_inputs,
+    SUM(COUNT(0)) OVER () AS total_inputs,
     input_attributes,
+
     COUNT(input_attributes) AS occurence,
-    ROUND(COUNT(input_attributes) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc
+    COUNT(DISTINCT url) AS total_pages_using,
+    ROUND(COUNT(input_attributes) * 100 / SUM(COUNT(0)) OVER (), 2) AS occurence_perc,
+    ROUND(COUNT(DISTINCT url) * 100 / total_pages_with_inputs, 2) AS perc_of_pages_using
 FROM
-    `httparchive.pages.2019_07_01_mobile`
-CROSS JOIN
-    UNNEST(getInputAttributes(payload)) as input_attributes
-GROUP BY input_attributes
-ORDER BY occurence DESC
-LIMIT 100
+    `httparchive.pages.2019_07_01_mobile`,
+    UNNEST(getInputAttributes(payload)) as input_attributes,
+    (SELECT COUNTIF(hasInputs(payload)) AS total_pages_with_inputs FROM `httparchive.pages.2019_07_01_mobile`)
+GROUP BY input_attributes, total_pages_with_inputs
+ORDER BY perc_of_pages_using DESC
+LIMIT 1000
