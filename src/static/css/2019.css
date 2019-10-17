@@ -262,7 +262,7 @@ footer .nav-items *:last-child {
     margin: 0 40% !important;
   }
   /* Header */
-  header {
+  header, footer {
     position: relative;
     padding: 30px;
   }
