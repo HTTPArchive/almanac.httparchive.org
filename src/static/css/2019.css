@@ -80,6 +80,9 @@ select {
 header, footer {
   padding: 40px 60px;
 }
+.main {
+  margin: 0px 60px;
+}
 header, footer .nav {
   display: flex;
   justify-content: space-between;
@@ -262,6 +265,9 @@ footer .nav-items *:last-child {
   header {
     position: relative;
     padding: 30px;
+  }
+  .main {
+    margin: 0px 30px;
   }
   header nav:first-of-type,
   header .cta {

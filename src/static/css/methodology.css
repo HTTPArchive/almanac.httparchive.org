@@ -2,7 +2,7 @@
 #methodology {
   margin-top: 32px;
   padding: 0 5%;
-  overflow: hidden;
+  overflow: visible;
   display: grid;
   grid-template-areas: 'index content';
   grid-template-columns: 300px auto;
@@ -28,7 +28,7 @@
   box-shadow: 0 0 5px 5px #f6f7f9;
 }
 .code-block {
-  margin: 8px;
+  margin: 8px 0;
   padding: 16px;
 }
 .code-block .divider {
@@ -39,7 +39,7 @@
 }
 .code-block code {
   display: block;
-  white-space: pre-wrap  
+  white-space: pre-wrap;
 }
 
 .index {
@@ -50,7 +50,7 @@
   padding: 8px 16px;
 }
 .index .header {
-  display: block;
+  display: #1A2B49;
 }
 .index .header-mobile {
   display: none;
@@ -67,6 +67,9 @@
   line-height: 64px;
   padding-left: 16px;
   border-bottom: 1px solid #1A2B490A;
+}
+#methodology .index li a {
+  color: #1A2B49;
 }
 #methodology .index li li {
   font-weight: 600;
@@ -126,7 +129,6 @@
   border: 1px solid #1A2B490A;
 }
 
-/* @media (max-width: 900px) and (min-width: 601px) { */
 @media (max-width: 900px) {
   #methodology {
     padding: 0;
@@ -135,7 +137,13 @@
       'content';
     grid-template-columns: auto;
   }
-
+  #methodology .content {
+    margin: 0;
+    padding: 0;
+  }
+  #methodology .content .intro h1 {
+    font-size: 10vw;
+  }
   .decorative-line {
     display: none; 
   }
@@ -145,6 +153,9 @@
     border-bottom: solid 1px #c6dcd2;
     position: relative;
     top: 12px;
+  }
+  #methodology .index .index-box {
+    margin: 0px;
   }
   #methodology .index-box .header {
     display: none;
@@ -171,7 +182,7 @@
     margin-top: 16px;
     margin-bottom: 16px;
     border-top: 1px solid #1A2B490A;
-    max-height: 500px;
+    max-height: 100%;
     transition: max-height 0.25s ease-in;
   }
 }

@@ -10,26 +10,26 @@ Methodology | The Web Almanac by HTTP Archive
 {% endblock %}
 
 {% block main %}
-<article id="methodology">
+<article id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
       <h2 class="header-mobile">Index</h2>
       <ul>
-        <li class="active">Lorem Ipsum Content
+        <li class="active"><a href="#">Lorem Ipsum Content</a>
           <ul>
-            <li>Lorem Ipsum Content
+            <li><a href="#">Lorem Ipsum Content</a>
               <ul>
-                <li>Lorem Ipsum Content</li>
+                <li><a href="#">Lorem Ipsum Content</a></li>
               </ul>
             </li>
           </ul>
         </li>
-        <li>Lorem Ipsum Content</li>
-        <li>Lorem Ipsum Content</li>
-        <li>Lorem Ipsum Content</li>
-        <li>Lorem Ipsum Content</li>
-        <li>Lorem Ipsum Content</li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
       </ul>
     </div>
   </nav>
@@ -73,20 +73,27 @@ Methodology | The Web Almanac by HTTP Archive
 https://github.com/HTTPArchive/almanac.httparchive.org/issues/130#issuecomment-526694637 -->
           <code>
 #standardSQL
+# 14_19b: Lighthouse PWA scores by CMS
 SELECT
-    *
+  app,
+  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, "$.categories.pwa.score") AS NUMERIC), 1000)[OFFSET(501)] AS median_pwa_score,
+  COUNT(0) AS pages
 FROM
-    xxxxx
+  `httparchive.lighthouse.2019_07_01_mobile`
+LEFT JOIN
+  `httparchive.technologies.2019_07_01_mobile`
+USING (url)
+WHERE
+  category = 'CMS'
 GROUP BY
-    yyyy
+  app
 ORDER BY
-    zzzz
+  pages DESC
           </code>
       </div>
     </section>
     <section> 
       <h3>Lorem Ipsum Title H3</h3>
-      <img class="methodology-banner" src="/static/images/methodology-layer.png" alt="Methodology">
     </section>
   </section>
 </article>
@@ -100,11 +107,7 @@ var indexBox = document.querySelector('.index-box');
 var indexBoxTitle = document.querySelector('.index-box h2.header-mobile');
 
 indexBoxTitle.addEventListener('click', function(e) {
-  if (indexBox.classList.contains('show')) {
-    indexBox.classList.remove('show');
-  } else {
-    indexBox.classList.add('show');
-  }
+  indexBox.classList.toggle('show');
 });
 
 </script>
