@@ -37,9 +37,12 @@
   width: calc(100% + 32px);
   left: -16px;
 }
+.code-block pre {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
 .code-block code {
-  display: block;
-  white-space: pre-wrap;
+  width: 100%;
 }
 
 .index {
@@ -97,6 +100,7 @@
   grid-area: content;
   margin: 8px;
   padding: 16px;
+  min-width: 320px;
 }
 .content > section {
   margin-bottom: 64px;
