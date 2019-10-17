@@ -174,6 +174,7 @@ p {
 
 .people {
   position: relative;
+  height: 400px;
 }
 
 .people .character {
@@ -205,19 +206,9 @@ p {
   font-size: 600px;
   font-weight: bold;
   letter-spacing: 50px;
-  line-height: 400px;
-  overflow: hidden;
-}
-
-.people-text {
-  transform: rotate(90deg);
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 40px;
-  letter-spacing: 5px;
-  position: absolute;
-  top: 100px;
-  right: -15px;
+  overflow: visible;
+  top: -100px;
+  position: relative;
 }
 
 /* Methodology */
@@ -299,6 +290,41 @@ p {
   }
 }
 
+
+@media (max-width: 1280px) and (min-width: 901px) {
+  .people {
+    height: auto;
+  }
+  .people-number {
+    font-size: 300px;
+    overflow: visible;
+    line-height: 400px;
+    top: 50px;
+    position: relative;
+    left: 50px;
+  }
+  .people .character {
+    width: 8vw;
+    height: auto;
+  }
+  #character-markup {
+    position: absolute;
+    top: auto;
+    right: 10%;
+    bottom: 65%;
+  }
+  #character-star {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+  }
+  #character-hat {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
 @media (max-width: 900px) and (min-width: 601px) {
   body {
     background-size: auto;
@@ -371,9 +397,16 @@ p {
     border-bottom: solid 1px #F7F779;
   }
 
+  .people {
+    height: auto;
+  }
   .people-number {
     font-size: 300px;
     overflow: visible;
+    line-height: 400px;
+    top: 50px;
+    position: relative;
+    left: 50px;
   }
 
   #character-markup {
@@ -394,12 +427,6 @@ p {
     width: 80px;
     height: auto;
     bottom: 60px;
-  }
-
-  .people-text {
-    top: 160px;
-    right: -15px;
-    font-size: 30px;
   }
 
   .methodology-data {
@@ -563,31 +590,30 @@ p {
   .people {
     position: absolute;
     bottom: 0;
+    height: auto;
   }
   .people-number {
     font-size: 300px;
     letter-spacing: 27px;
     line-height: 240px;
     overflow: visible;
-  }
-  .people-text {
-    top: 100px;
-    right: -34px;
-    font-size: 30px;
+    top: 40px;
+    position: relative;
+    left: 25px;
   }
   .people .character {
     width: 80px;
   }
   #character-markup {
     top: -55px;
-    right: 100px;
+    right: 60px
   }
   #character-star {
     bottom: -20px;
-    left: 90px;
+    left: 130px;
   }
   #character-hat {
-    right: 75px;
+    right: 0px;
     bottom: -15px;
   }
 
