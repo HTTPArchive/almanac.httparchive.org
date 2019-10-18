@@ -1,25 +1,21 @@
 #standardSQL
 # 07_10: Percentiles of first/last painted hero
 SELECT
+  percentile,
   client,
-  ROUND(APPROX_QUANTILES(firstPaintedHero, 1000)[OFFSET(100)] / 1000, 2) AS p10_fph,
-  ROUND(APPROX_QUANTILES(firstPaintedHero, 1000)[OFFSET(250)] / 1000, 2) AS p25_fph,
-  ROUND(APPROX_QUANTILES(firstPaintedHero, 1000)[OFFSET(500)] / 1000, 2) AS p50_fph,
-  ROUND(APPROX_QUANTILES(firstPaintedHero, 1000)[OFFSET(750)] / 1000, 2) AS p75_fph,
-  ROUND(APPROX_QUANTILES(firstPaintedHero, 1000)[OFFSET(900)] / 1000, 2) AS p90_fph,
-  ROUND(APPROX_QUANTILES(lastPaintedHero, 1000)[OFFSET(100)] / 1000, 2) AS p10_lph,
-  ROUND(APPROX_QUANTILES(lastPaintedHero, 1000)[OFFSET(250)] / 1000, 2) AS p25_lph,
-  ROUND(APPROX_QUANTILES(lastPaintedHero, 1000)[OFFSET(500)] / 1000, 2) AS p50_lph,
-  ROUND(APPROX_QUANTILES(lastPaintedHero, 1000)[OFFSET(750)] / 1000, 2) AS p75_lph,
-  ROUND(APPROX_QUANTILES(lastPaintedHero, 1000)[OFFSET(900)] / 1000, 2) AS p90_lph
-FROM 
-( 
+  ROUND(APPROX_QUANTILES(first_painted_hero, 1000)[OFFSET(percentile * 10)] / 1000, 2) AS first_painted_hero,
+  ROUND(APPROX_QUANTILES(last_painted_hero, 1000)[OFFSET(percentile * 10)] / 1000, 2) AS last_painted_hero
+FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.FirstPaintedHero']") AS INT64) AS firstPaintedHero,
-    CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.LastPaintedHero']") AS INT64) AS lastPaintedHero
+    CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.FirstPaintedHero']") AS INT64) AS first_painted_hero,
+    CAST(JSON_EXTRACT(payload, "$['_heroElementTimes.LastPaintedHero']") AS INT64) AS last_painted_hero
   FROM
-    `httparchive.pages.2019_07_01_*`
-)
+    `httparchive.pages.2019_07_01_*`),
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
+  percentile,
+  client
+ORDER BY
+  percentile,
   client

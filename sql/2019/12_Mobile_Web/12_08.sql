@@ -3,8 +3,15 @@
 # password-inputs-can-be-pasted-into
 
 SELECT
-    COUNT(url) AS total,
-    COUNTIF(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.password-inputs-can-be-pasted-into.score') as NUMERIC) = 1) AS score_sum,
-    ROUND(COUNTIF(CAST(JSON_EXTRACT_SCALAR(report, '$.audits.password-inputs-can-be-pasted-into.score') as NUMERIC) = 1) * 100 / COUNT(url), 2) as score_percentage
-FROM
-    `httparchive.lighthouse.2019_07_01_mobile`
+    COUNT(0) AS total_pages,
+    COUNTIF(password_score IS NOT NULL) AS applicable_pages,
+
+    COUNTIF(CAST(password_score as NUMERIC) = 1) AS total_allowing,
+    ROUND(COUNTIF(CAST(password_score as NUMERIC) = 1) * 100 / COUNTIF(password_score IS NOT NULL), 2) as perc_allowing
+FROM (
+    SELECT
+        url,
+        JSON_EXTRACT_SCALAR(report, '$.audits.password-inputs-can-be-pasted-into.score') AS password_score
+    FROM
+        `httparchive.lighthouse.2019_07_01_mobile`
+)

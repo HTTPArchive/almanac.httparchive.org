@@ -5,7 +5,7 @@ SELECT
   client,
   type,
   APPROX_QUANTILES(requests, 1000)[OFFSET(percentile * 10)] AS requests,
-  ROUND(APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024 / 1024, 2) AS mbytes
+  ROUND(APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024, 2) AS kbytes
 FROM (
   SELECT
     client,
@@ -32,4 +32,4 @@ GROUP BY
 ORDER BY
   percentile,
   client,
-  mbytes DESC
+  kbytes DESC

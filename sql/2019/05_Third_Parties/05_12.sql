@@ -35,7 +35,7 @@ FROM (
     SUM(IF(thirdPartyCategory = 'content', requestBytes, 0)) AS numberOfContentBytes,
     SUM(IF(thirdPartyCategory = 'cdn', requestBytes, 0)) AS numberOfCdnBytes,
     SUM(IF(thirdPartyCategory = 'tag-manager', requestBytes, 0)) AS numberOfTagManagerBytes,
-    SUM(IF(thirdPartyCategory = 'other', requestBytes, 0)) AS numberOfOtherBytes
+    SUM(IF(thirdPartyCategory = 'other' OR thirdPartyCategory IS NULL, requestBytes, 0)) AS numberOfOtherBytes
   FROM (
     SELECT
       client,
@@ -53,6 +53,7 @@ FROM (
     ON NET.HOST(url) = DomainsOver50Table.requestDomain
   )
   GROUP BY
+    client,
     pageUrl
 )
 GROUP BY

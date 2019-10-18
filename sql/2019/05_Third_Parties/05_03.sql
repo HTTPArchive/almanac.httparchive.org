@@ -10,12 +10,17 @@ FROM (
   SELECT
       client,
       type AS contentType,
-      ThirdPartyTable.category AS thirdPartyCategory
+      IFNULL(ThirdPartyTable.category,
+        IF(DomainsOver50Table.requestDomain IS NULL, 'first-party', 'other')
+      ) AS thirdPartyCategory
     FROM
       `httparchive.almanac.summary_requests`
     LEFT JOIN
       `lighthouse-infrastructure.third_party_web.2019_07_01` AS ThirdPartyTable
     ON NET.HOST(url) = ThirdPartyTable.domain
+    LEFT JOIN
+      `lighthouse-infrastructure.third_party_web.2019_07_01_all_observed_domains` AS DomainsOver50Table
+    ON NET.HOST(url) = DomainsOver50Table.requestDomain
 )
 GROUP BY
   client,

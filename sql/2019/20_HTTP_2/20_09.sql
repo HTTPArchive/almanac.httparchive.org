@@ -18,14 +18,14 @@ LANGUAGE js AS """
 """;
 
 SELECT 
- _TABLE_SUFFIX AS client,
+  client,
   getServerHeader(payload) AS server_header,
   COUNT(*) AS num_pages,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
+  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM 
-  `httparchive.requests.2019_07_01_*` 
+  `httparchive.almanac.requests` 
 WHERE
-  JSON_EXTRACT_SCALAR(payload, "$._is_base_page")  = "true"
+  firstHtml
   AND JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2"
 GROUP BY
   client,

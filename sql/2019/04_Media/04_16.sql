@@ -1,28 +1,19 @@
-#StandardSQL
-/*
-standard sql
-
-04_16
-60 GB
-
-
-how many movies.. using Youtube
-The query is currently set to NOT YouTube
-Deleting the NOT in LIKE 24 gives YES YouTube
-
-
-
-*/
-
-SELECT ext, client, COUNT(*) cnter
-
-
-FROM(
-
-SELECT url, respsize, ext, mimetype, format, _TABLE_SUFFIX AS client
-
-FROM `summary_requests.2019_07_01_*` 
-WHERE mimetype LIKE "%video%" AND url NOT LIKE "%youtube%"
-)
-GROUP BY format, ext, client
-ORDER BY cnter desc
+#standardSQL
+# 04_16: Pages self-serving video
+SELECT
+  client,
+  COUNT(DISTINCT page) AS pages,
+  total,
+  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+FROM
+  `httparchive.almanac.requests`
+JOIN
+  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+USING
+  (client)
+WHERE
+  type = 'video' AND
+  NET.REG_DOMAIN(url) NOT IN ('youtube.com','youtube-nocookie.com', 'googlevideo.com', 'fbcdn.net', 'vimeocdn.com')
+GROUP BY
+  client,
+  total
