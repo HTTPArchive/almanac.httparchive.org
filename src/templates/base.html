@@ -4,59 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block meta %}
-    <meta property="og:title" content="{{ self.title() }}">
-    <meta property="og:image" content="/static/images/ha.png">
+      <meta property="og:title" content="{{ self.title() }}">
+      <meta property="og:image" content="/static/images/ha.png">
     {% endblock %}
     {% block head %}
-    <title>{% block title %}The Web Almanac{% endblock %}</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3" nonce="{{ csp_nonce() }}"></script>
-    <script nonce="{{ csp_nonce() }}">
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-22381566-3');
-    </script>
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
-    <link rel="stylesheet" href="/static/css/normalize.css">
-    {% block styles %}
-    <link rel="stylesheet" href="/static/css/main.css">
+      <title>{% block title %}The Web Almanac{% endblock %}</title>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3" nonce="{{ csp_nonce() }}"></script>
+      <script nonce="{{ csp_nonce() }}">
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+              dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'UA-22381566-3');
+      </script>
+      <link rel="shortcut icon" href="/static/images/favicon.ico">
+      <link rel="stylesheet" href="/static/css/normalize.css">
+      {% block styles %}{% endblock %}
     {% endblock %}
-    {% endblock %}
-    {% if supported_languages is iterable %}
-      {% for l in supported_languages %}
-      <link rel="alternate" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
-      {% endfor %}
-    {% endif %}
+    {% for l in supported_languages %}
+    <link rel="alternate" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
+    {% endfor %}
   </head>
 
   <body>
-    <div id="navigation">
-      {% block navigation %}{% endblock %}
-    </div>
-    {% block content %}
-      <select class="language-switcher">
-        {% if supported_languages is iterable %}
-          {% for l in supported_languages %}
-            <option
-              {% if l == language %}selected="selected"{% endif %}
-              value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-              {{ l }}
-            </option>
-          {% endfor %}
-        {% endif %}
-      </select>
-      <div id="main">
-        {% block main %}{% endblock %}
-      </div>
-    {% endblock %}
-    {% block scripts %}
-      <script src="/static/js/language.js"></script>
-    {% endblock %}
+    {% block content %}{% endblock %}
   </body>
 </html>

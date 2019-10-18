@@ -1,7 +1,7 @@
-{% extends "en/base.html" %}
+{% extends "en/2019/base.html" %}
 
 {% block title %}
-Contributors | The Web Almanac by HTTP Archive
+2019 Contributors | The Web Almanac by HTTP Archive
 {% endblock %}
 
 {% block styles %}
@@ -29,13 +29,57 @@ Contributors | The Web Almanac by HTTP Archive
   padding: 8px;
 }
 
+.contributor-grid {
+  display: flex;
+  align-items: stretch;
+}
+
 .contributor {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 5px rgba(48, 64, 91, 0.1);
+  width: 250px;
+  padding: 15px;
+}
+
+.contributor-avatar {
+  border-radius: 50px;
+  background-color: #f7f779;
+  margin-bottom: 10px;
+}
+
+.contributor-name {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contributor-social {
+  margin-bottom: 10px;
+}
+
+.contributor-social img {
+  height: 18px;
+  width: 18px;
+  margin: 0 10px;
+}
+
+.contributor-team {
+  font-size: 10px;
+  color: #666;
+}
+.contributor-team::after {
+  content: ', ';
+}
+.contributor-team:last-child::after {
+  content: '';
 }
 
 {% for id in config.teams.keys() %}
 .contributors.{{ id }} .contributor.{{ id }} {
-  display: block;
+  display: flex;
 }
 
 .contributors.{{ id }} button.{{ id }} {
@@ -47,22 +91,66 @@ Contributors | The Web Almanac by HTTP Archive
 {% endblock %}
 
 {% block main %}
-<div class="contributors {{ ' '.join(config.teams.keys()) }}">
-  <div class="filter-container">
-  {% for id, team in config.teams.items() %}
-    <button class="{{ id }}">{{ team.name }}</button>
-  {% endfor %}
-  </div>
-  {% for id, contributor in config.contributors.items() %}
-    <div class="contributor {{ ' '.join(contributor.teams) }}">
-      <img src="{{ contributor.avatar_url }}">
-      {{ contributor.name }}
+<section id="main">
+  <h1>
+    <span id="filtered-contributors">{{ config.contributors.items() | length }}</span>
+    Contributors
+  </h1>
+  <div class="contributors {{ ' '.join(config.teams.keys()) }}">
+    <div class="filter-container">
+      <p>Filter by team</p>
+    {% for id, team in config.teams.items() %}
+      <button class="{{ id }}">{{ team.name }}</button>
+    {% endfor %}
     </div>
-  {% endfor %}
+
+    <div class="contributor-grid">
+    {% for id, contributor in config.contributors.items() %}
+      <div class="contributor {{ ' '.join(contributor.teams) }}">
+        <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar">
+        <div class="contributor-name">{{ contributor.name }}</div>
+        {% if contributor.twitter or contributor.github %}
+        <div class="contributor-social">
+          {% if contributor.twitter %}
+          <a href="https://twitter.com/{{ contributor.twitter }}"><img src="/static/images/twitter.png" alt="@{{ contributor.twitter }} on Twitter"></a>
+          {% endif %}
+          {% if contributor.github %}
+          <a href="https://github.com/{{ contributor.github }}"><img src="/static/images/github.png" alt="{{ contributor.github }}@ on GitHub"></a>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="contributor-teams">
+          {% for id in contributor.teams %}
+            <span class="contributor-team team-{{ id }}">{{ config.teams[id].name }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
   {{ super() }}
-  <script src="/static/js/contributors.js"></script>
+  <script nonce="{{ csp_nonce() }}">
+var buttons = document.querySelectorAll('.filter-container button');
+var contributors = document.querySelector('.contributors');
+var counter = document.querySelector('#filtered-contributors');
+
+function getFilteredContributorCount() {
+  return Array.from(document.querySelectorAll('.contributor')).filter(function(e) {
+    return getComputedStyle(e).display != 'none';
+  }).length;
+}
+
+for (var i = 0; i < buttons.length; i++) {
+  var button = buttons[i];
+  button.addEventListener('click', function(e) {
+    var teamId = e.target.className;
+    contributors.classList.toggle(teamId);
+    counter.innerText = getFilteredContributorCount();
+  });
+}
+  </script>
 {% endblock %}

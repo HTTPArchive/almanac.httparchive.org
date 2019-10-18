@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i|Poppins:300,400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/2019.css">
+{% endblock %}
+
+{% block content%}
+  {% block header %}
+    <header class="alt-bg">
+      <img src="/static/images/logo.png" />
+      <nav>
+        <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
+        {% if supported_years | length > 1 %}
+          {{ year_switcher() }}
+        {% endif %}
+      </nav>
+      <div class="cta">
+        {% if request.endpoint == 'home' %}
+          <a href="{{ url_for('outline', year=year, language=language) }}" class="alt btn">
+            Start Exploring
+          </a>
+        {% endif %}
+        {{ language_switcher() }}
+      </div>
+      <img class="menu-icon" src="/static/images/menu.png" />
+      <img class="menu-close-icon" src="/static/images/close.png" />
+      <nav class="menu">
+        <a href="{{ url_for('outline', year=year, language=language) }}">Table of Contents</a>
+        <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
+        <div class="misc">
+          <a href="https://httparchive.org/">
+            <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
+          </a>
+          <div class="social-media">
+            <a href="https://twitter.com/HTTPArchive" class="twitter">
+              <img src="/static/images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+              <img src="/static/images/github.png" alt="GitHub" />
+            </a>
+          </div>
+          {{ language_switcher() }}
+        </nav>
+      </div>
+    </header>
+  {% endblock %}
+
+  {% block main %}{% endblock %}
+
+  {% block footer %}
+    <footer class="alt-bg">
+      <section class="nav">
+        <img src="/static/images/logo.png" />
+        <nav class="nav-items">
+          <img src="/static/images/ha-home.png" />
+          <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
+          <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
+        </nav>
+        {{ language_switcher() }}
+      </section>
+      <hr>
+      <div class="footer-mobile-nav">
+        <a href="{{ url_for('outline', year=year, language=language) }}">Table of Contents</a>
+        <a href="{{ url_for('contributors', year=year, language=language) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, language=language) }}">Methodology</a>
+        <div>
+          <a href="https://httparchive.org/">
+            <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
+          </a>
+          <div class="social-media">
+            <a href="https://twitter.com/HTTPArchive" class="twitter">
+              <img src="/static/images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+              <img src="/static/images/github.png" alt="GitHub" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="misc">
+        <p>Copyright © 2019 Web Almanac. All rights reserved.</p>
+        <div>
+          <div class="social-media">
+            <a href="https://twitter.com/HTTPArchive" class="twitter">
+              <img src="/static/images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+              <img src="/static/images/github.png" alt="GitHub" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  {% endblock %}
+  {% block scripts %}
+    <script nonce="{{ csp_nonce() }}">
+(function() {
+// Language switching
+var languageSwitchers = document.querySelectorAll('.language-switcher select');
+for (var i = 0; i < languageSwitchers.length; i++) {
+  languageSwitchers[i].addEventListener('change', function(e) {
+    if (e.target.value) {
+      window.location = e.target.value;
+    }
+  });
+}
+
+// Mobile menu
+var menuIcon = document.querySelector('.menu-icon');
+var menuCloseIcon = document.querySelector('.menu-close-icon');
+
+function toggleMenu(e) {
+  document.body.classList.toggle('menu-open');
+}
+
+menuIcon.addEventListener('click', toggleMenu);
+menuCloseIcon.addEventListener('click', toggleMenu);
+})();
+    </script>
+  {% endblock %}
+{% endblock %}
+
+{% macro language_switcher() %}
+<div class="language-switcher">
+  {% if language is not none %}
+    <img src="/static/images/{{ language }}.png" class="flag" height="25" width="25" />
+  {% else %}
+    <img src="/static/images/English.png" class="flag" height="25" width="25" />
+  {% endif %}
+  <select>
+    {% for l in supported_languages %}
+      <option
+        {% if l == language %}selected="selected"{% endif %}
+        value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+        {{ l }}
+      </option>
+    {% endfor %}
+  </select>
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="open" height="20" width="20" />
+</div>
+{% endmacro %}
+
+{% macro year_switcher() %}
+<div class="year-switcher">
+  <select>
+      {% for y in supported_years %}
+        <option
+          {% if y == year %}selected="selected"{% endif %}
+          value="{{ url_for('outline', **get_view_args(year=y)) }}">
+          {{ y }} Edition
+        </option>
+      {% endfor %}
+  </select>
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="open" height="20" width="20" />
+</div>
+{% endmacro %}
