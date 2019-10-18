@@ -56,17 +56,18 @@ The Web Almanac by HTTP Archive
     </div>
   </section>
   <section class="contributors-container alt-bg">
+    {% set contributors = config.contributors.keys() | length %}
     <div class="contributors">
       <h1><div class="decorative-line"></div>Contributors:</h1>
       <p>
-        The Web Almanac has been made possible by the hard work of the web community. 91 people have volunteered countless hours in the planning, research, writing and production phases.
+        The Web Almanac has been made possible by the hard work of the web community. {{ contributors }} people have volunteered countless hours in the planning, research, writing and production phases.
       </p>
       <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
         See the contributors
       </a>
     </div>
     <div class="people">
-      <div class="people-number">91</div>
+      <div class="people-number">{{ contributors }}</div>
       <img id="character-markup" class="character" src="/static/images/character-markup.png" />
       <img id="character-star" class="character" src="/static/images/character-star.png" />
       <img id="character-hat" class="character" src="/static/images/character-hat.png" />

@@ -44,7 +44,8 @@ app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
 @app.route('/<lang>/<year>/')
 @validate
 def home(lang, year):
-    return render_template('%s/%s/index.html' % (lang, year))
+    config = config_util.get_config(year)
+    return render_template('%s/%s/index.html' % (lang, year), config=config)
 
 @app.route('/')
 @validate
