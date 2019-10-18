@@ -1,7 +1,6 @@
 
 #methodology {
   margin-top: 32px;
-  padding: 0 5%;
   overflow: visible;
   display: grid;
   grid-template-areas: 'index content';
@@ -14,14 +13,14 @@
   line-height: 30px;
 }
 .decorative-line {
-  display: block; 
+  display: block;
   width: 48px;
   border-bottom: solid 1px #c6dcd2;
   position: relative;
   top: -12px;
 }
 .decorative-line-mobile {
- display: none; 
+ display: none;
 }
 .floating-card {
   border-radius: 16px;
@@ -149,10 +148,10 @@
     font-size: 10vw;
   }
   .decorative-line {
-    display: none; 
+    display: none;
   }
   .decorative-line-mobile {
-    display: block; 
+    display: block;
     width: 74px;
     border-bottom: solid 1px #c6dcd2;
     position: relative;
