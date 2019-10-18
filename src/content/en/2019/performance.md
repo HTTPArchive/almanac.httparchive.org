@@ -4,7 +4,6 @@ chapter_number: 7
 title: Performance
 authors: [rviscomi, zeman]
 reviewers: [JMPerez, obto, sergeychernyshev]
-translators: []
 ---
 
 ![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/07_Performance.jpg)

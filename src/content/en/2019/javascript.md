@@ -2,11 +2,8 @@
 part_number: I
 chapter_number: 1
 title: JavaScript
-description: Something about JavaScript
-hero_image: ''
 authors: [addyosmani, housseindjirdeh, mathiasbynens]
 reviewers: [rwaldron, RReverser]
-translaters: []
 ---
 
 # Chapter 1: JavaScript
