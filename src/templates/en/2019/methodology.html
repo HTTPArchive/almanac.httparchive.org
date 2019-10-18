@@ -1,14 +1,116 @@
-{% extends "en/base.html" %}
+{% extends "en/2019/base.html" %}
 
 {% block title %}
 Methodology | The Web Almanac by HTTP Archive
 {% endblock %}
+ 
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/methodology.css">
+{% endblock %}
 
-{{% block main %}}
-<h1>Methodology</h1>
-<p>TODO</p>
+{% block main %}
+<article id="methodology" class="main">
+  <nav class="index">
+    <div class="index-box floating-card">
+      <h2 class="header">Index</h2>
+      <h2 class="header-mobile">Index</h2>
+      <ul>
+        <li class="active"><a href="#">Lorem Ipsum Content</a>
+          <ul>
+            <li><a href="#">Lorem Ipsum Content</a>
+              <ul>
+                <li><a href="#">Lorem Ipsum Content</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+        <li><a href="#">Lorem Ipsum Content</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<h2>Overview of HTTP Archive</h2>
+  <section class="content">
+    <section class="intro">
+      <h1><div class="decorative-line"></div>Methodology<div class="decorative-line-mobile"></div></h1>
+      <p class="subtitle">A concise map into the guidelines that are strictly followed to output our reports.</p>
+      <img class="methodology-banner" src="/static/images/methodology-banner.png" alt="Methodology">
+    </section>
 
-<h2>Analyzing Stylesheets</h2>
-{{% endblock %}}
+    <section>
+        <h1>Lorem Ipsum Title H1</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+    <section>
+        <h2>Lorem Ipsum Title H2</h2>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+              et dolore magna aliqua. Ut enim ad minim veniam,</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+              et dolore magna aliqua. Ut enim ad minim veniam,</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+              et dolore magna aliqua. Ut enim ad minim veniam,</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+              et dolore magna aliqua. Ut enim ad minim veniam,</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+              et dolore magna aliqua. Ut enim ad minim veniam,</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Lorem Ipsum Title H3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+    <section> 
+      <div class="code-block floating-card">
+          <h3>Lorem Ipsum Title H3</h3>
+          <div class="divider"></div>
+<!-- This is just an example of embedding a code sample, you can disregard for now.
+https://github.com/HTTPArchive/almanac.httparchive.org/issues/130#issuecomment-526694637 -->
+        <pre>
+          <code>
+#standardSQL
+# 14_19b: Lighthouse PWA scores by CMS
+SELECT
+  app,
+  APPROX_QUANTILES(CAST(JSON_EXTRACT_SCALAR(report, "$.categories.pwa.score") AS NUMERIC), 1000)[OFFSET(501)] AS median_pwa_score,
+  COUNT(0) AS pages
+FROM
+  `httparchive.lighthouse.2019_07_01_mobile`
+LEFT JOIN
+  `httparchive.technologies.2019_07_01_mobile`
+USING (url)
+WHERE
+  category = 'CMS'
+GROUP BY
+  app
+ORDER BY
+  pages DESC
+          </code>
+        </pre>
+      </div>
+    </section>
+    <section> 
+      <h3>Lorem Ipsum Title H3</h3>
+    </section>
+  </section>
+</article>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script nonce="{{ csp_nonce() }}">
+
+var indexBox = document.querySelector('.index-box');
+var indexBoxTitle = document.querySelector('.index-box h2.header-mobile');
+
+indexBoxTitle.addEventListener('click', function(e) {
+  indexBox.classList.toggle('show');
+});
+
+</script>
+{% endblock %}

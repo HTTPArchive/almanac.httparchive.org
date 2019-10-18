@@ -16,22 +16,26 @@
         {
           "part": "I",
           "chapter": "3",
-          "title": "Markup"
+          "title": "Markup",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "4",
-          "title": "Media"
+          "title": "Media",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "5",
-          "title": "Third Parties"
+          "title": "Third Parties",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "6",
-          "title": "Fonts"
+          "title": "Fonts",
+          "todo": true
         }
       ]
     },
@@ -41,32 +45,38 @@
         {
           "part": "II",
           "chapter": "7",
-          "title": "Performance"
+          "title": "Performance",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "8",
-          "title": "Security"
+          "title": "Security",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "9",
-          "title": "Accessibility"
+          "title": "Accessibility",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "10",
-          "title": "SEO"
+          "title": "SEO",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "11",
-          "title": "PWA"
+          "title": "PWA",
+          "todo": true
         },
         {
           "part": "II",
           "chapter": "12",
-          "title": "Mobile Web"
+          "title": "Mobile Web",
+          "todo": true
         }
       ]
     },
@@ -76,12 +86,14 @@
         {
           "part": "III",
           "chapter": "13",
-          "title": "Ecommerce"
+          "title": "Ecommerce",
+          "todo": true
         },
         {
           "part": "III",
           "chapter": "14",
-          "title": "CMS"
+          "title": "CMS",
+          "todo": true
         }
       ]
     },
@@ -91,60 +103,66 @@
         {
           "part": "IV",
           "chapter": "15",
-          "title": "Compression"
+          "title": "Compression",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "16",
-          "title": "Caching"
+          "title": "Caching",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "17",
-          "title": "CDN"
+          "title": "CDN",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "18",
-          "title": "Page Weight"
+          "title": "Page Weight",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "19",
-          "title": "Resource Hints"
+          "title": "Resource Hints",
+          "todo": true
         },
         {
           "part": "IV",
           "chapter": "20",
-          "title": "HTTP/2"
+          "title": "HTTP/2",
+          "todo": true
         }
       ]
     }
   ],
   "teams": {
     "analysts": {
-      "name": "Data Analysts"
+      "name": "Analysts"
     },
     "authors": {
-      "name": "Chapter Authors"
+      "name": "Authors"
     },
     "brainstormers": {
       "name": "Brainstormers"
     },
     "designers": {
-      "name": "Web Designers"
+      "name": "Designers"
     },
     "developers": {
-      "name": "Web Developers"
+      "name": "Developers"
     },
     "editors": {
       "name": "Editors"
     },
     "reviewers": {
-      "name": "Peer Reviewers"
+      "name": "Reviewers"
     },
     "translators": {
-      "name": "Content Translators"
+      "name": "Translators"
     }
   },
   "contributors": {

@@ -7,7 +7,8 @@ csp = {
     ],
     'script-src': [
         '\'self\'',
-        'www.google-analytics.com'
+        'www.google-analytics.com',
+        'www.googletagmanager.com'
     ],
     'font-src': [
         '\'self\'',
@@ -15,11 +16,13 @@ csp = {
     ],
     'connect-src': [
         '\'self\'',
-        'www.google-analytics.com'
+        'www.google-analytics.com',
+        'www.googletagmanager.com'
     ],
     'img-src': [
         '\'self\'',
         'www.google-analytics.com',
+        'www.googletagmanager.com',
         'www.gravatar.com'
     ]
 }

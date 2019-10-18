@@ -26,5 +26,5 @@ def update_config():
         contributor['avatar_url'] = gravatar_url
       else:
         contributor['avatar_url'] = DEFAULT_AVATAR_FOLDER_PATH + str(hash(contributor_id) % AVATARS_NUMBER) + '.jpg'
-        
+
 update_config()
