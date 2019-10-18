@@ -13,7 +13,7 @@ SELECT
 FROM (
     SELECT
       client, pageid, requestid, page, url, firstHtml,
-      REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*') cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
+      ifnull(nullif(REGEXP_EXTRACT(_cdn_provider, r'^([^,]*).*'), ''), 'ORIGIN') cdn, # sometimes _cdn provider detection includes multiple entries. we bias for the DNS detected entry which is the first entry
       CAST(JSON_EXTRACT(payload, ""$.timings.ssl"") AS INT64) AS tlstime,
       ARRAY_LENGTH(split(JSON_EXTRACT(payload, '$._securityDetails.sanList'), "","")) sanLength,
 --       length(FROM_BASE64(REPLACE(REGEXP_REPLACE(JSON_EXTRACT_SCALAR(payload, '$._certificates[0]'), ""-----(BEGIN|END) CERTIFICATE-----"", """"), ""\n"", """"))) AS tlscertsize,
