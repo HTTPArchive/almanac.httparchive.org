@@ -1,29 +1,49 @@
-{% extends "base.html" %}
+{% extends "en/2019/base.html" %}
+{% set year = '2019' %}
+{% set lang = 'en' %}
 
 {% block title %}
   {% block error %}Unknown Error{% endblock %}
 {% endblock %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/error.css">
+{{ super() }}
+<style>
+.main {
+  position: relative;
+  padding-bottom: 200px;
+}
+.error-message {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+.escape-hatch {
+  margin: 50px 0;
+}
+.methodology-characters {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  max-width: 100%;
+  height: auto;
+}
+</style>
 {% endblock %}
 
-{% block content %}
-  <section>
-    <div>
-      <h2>
-        Error: {{ self.error() }}
-      </h2>
-      {% block error_message %}
-        {% block custom %}
-          <p>
-            {{ error }}
-          </p>
-        {% endblock %}
-        <p>
-          <a href="{{ url_for('index') }}" class="btn">Home</a>
-        </p>
-      {% endblock %}
+{% block main %}
+  <section class="main">
+    <h1>
+      Error: {{ self.error() }}
+    </h1>
+    {% block custom %}
+      <p class="error-message">{{ error }}</p>
+    {% endblock %}
+    <div class="escape-hatch">
+      <a href="{{ url_for('home', lang=lang, year=year) }}" class="btn">Home</a>
     </div>
+    <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" />
   </section>
 {% endblock %}
