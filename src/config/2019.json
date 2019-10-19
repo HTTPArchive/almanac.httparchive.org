@@ -6,18 +6,19 @@
         {
           "part": "I",
           "chapter": "1",
-          "title": "JavaScript"
+          "title": "JavaScript",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "2",
-          "title": "CSS"
+          "title": "CSS",
+          "todo": true
         },
         {
           "part": "I",
           "chapter": "3",
-          "title": "Markup",
-          "todo": true
+          "title": "Markup"
         },
         {
           "part": "I",
@@ -28,8 +29,7 @@
         {
           "part": "I",
           "chapter": "5",
-          "title": "Third Parties",
-          "todo": true
+          "title": "Third Parties"
         },
         {
           "part": "I",
@@ -69,8 +69,7 @@
         {
           "part": "II",
           "chapter": "11",
-          "title": "PWA",
-          "todo": true
+          "title": "PWA"
         },
         {
           "part": "II",
@@ -133,8 +132,7 @@
         {
           "part": "IV",
           "chapter": "20",
-          "title": "HTTP/2",
-          "todo": true
+          "title": "HTTP/2"
         }
       ]
     }

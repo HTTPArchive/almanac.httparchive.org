@@ -10,10 +10,18 @@
 
 {% extends "en/2019/base_chapter.html" %}
 
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/chapter.css">
+{% endblock %}
+
 {% set metadata = {'part_number': 'II', 'chapter_number': 11, 'title': 'Progressive Web Apps', 'authors': ['tomayac', 'jeffposnick'], 'reviewers': ['hyperpress', 'ahmadawais']} %}
 
 {% block main %}
-<h2>Introduction</h2>
+<section class="main">
+  <h1 class="chapter-title">{{ metadata.get('title') }}</h1>
+  <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="chapter-hero">
+  <h2>Introduction</h2>
 <p>Progressive Web Apps (PWA) are a new class of web applications, building on top of platform primitives 
 like the <a href="https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API">Service Worker APIs</a>. 
 Service workers allow apps to support network-independent loading by acting as a network proxy, 
@@ -176,4 +184,5 @@ driven by its inclusion as a feature in a number of popular JavaScript framework
 12.71% of them are using at least one of the Workbox libraries. This percentage is roughly consistent 
 across desktop and mobile, with a slightly lower percentage (11.46%) on mobile compared to desktop (14.36%).</p>
 
+</section>
 {% endblock %}

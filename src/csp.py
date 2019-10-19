@@ -24,5 +24,9 @@ csp = {
         'www.google-analytics.com',
         'www.googletagmanager.com',
         'www.gravatar.com'
+    ],
+    'frame-src': [
+        '\'self\'',
+        'docs.google.com'
     ]
 }
