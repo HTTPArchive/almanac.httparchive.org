@@ -17,11 +17,11 @@ SELECT
   ROUND((COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client)), 2) AS hits_pct,
   sum(respsize) bytes,
   ROUND((sum(respsize) * 100 / SUM(sum(respsize)) OVER (PARTITION BY client)), 2) AS bytes_pct,
-  APPROX_QUANTILES(round(respSize/1024, 2), 1000)[OFFSET(100)] AS size_kb_p10,
-  APPROX_QUANTILES(round(respSize/1024, 2), 1000)[OFFSET(250)] AS size_kb_p25,
-  APPROX_QUANTILES(round(respSize/1024, 2), 1000)[OFFSET(500)] AS size_kb_p50,
-  APPROX_QUANTILES(round(respSize/1024, 2), 1000)[OFFSET(750)] AS size_kb_p75,
-  APPROX_QUANTILES(round(respSize/1024, 2), 1000)[OFFSET(900)] AS size_kb_p90
+  APPROX_QUANTILES(respSize, 1000)[OFFSET(100)] AS size_p10,
+  APPROX_QUANTILES(respSize, 1000)[OFFSET(250)] AS size_p25,
+  APPROX_QUANTILES(respSize, 1000)[OFFSET(500)] AS size_p50,
+  APPROX_QUANTILES(respSize, 1000)[OFFSET(750)] AS size_p75,
+  APPROX_QUANTILES(respSize, 1000)[OFFSET(900)] AS size_p90
 FROM `httparchive.almanac.requests3`
 WHERE
   # many 404s and redirects show up as image/gif
