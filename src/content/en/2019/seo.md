@@ -5,7 +5,7 @@ title: SEO
 description: State of SEO 2019
 hero_image: ''
 authors: [ymschaap, rachellcostello, AVGP]
-reviewers: [clarkeclark, andylimn, voltek62]
+reviewers: [clarkeclark, andylimn, voltek62, AymenLoukil, catalinred]
 translaters: []
 ---
 # Chapter 10: SEO
