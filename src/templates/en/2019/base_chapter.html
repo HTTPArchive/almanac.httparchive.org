@@ -4,9 +4,30 @@
 {{ metadata.get('title') }} | 2019 | The Web Almanac by HTTP Archive
 {% endblock %}
 
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css">
+{% endblock %}
+
+
+
 {% macro render_byline() %}
   <div id="byline">By
   {% for author in metadata.get('authors') %}
     {{ config.contributors[author].name if author in config.contributors else author }}
   {% endfor %}
 {% endmacro %}
+
+{% block scripts %}
+{{ super() }}
+<script nonce="{{ csp_nonce() }}">
+
+var indexBox = document.querySelector('.index-box');
+var indexBoxTitle = document.querySelector('.index-box h2.header-mobile');
+
+indexBoxTitle.addEventListener('click', function(e) {
+  indexBox.classList.toggle('show');
+});
+
+</script>
+{% endblock %}

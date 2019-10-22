@@ -11,7 +11,12 @@
 {{% extends "en/2019/base_chapter.html" %}}
 
 {{% set metadata = {metadata} %}}
-
 {{% block main %}}
-{body}
+<article id="chapter" class="main">
+ {toc}
+ <section class="content">
+    {body}
+ </section>
+</article>
 {{% endblock %}}
+

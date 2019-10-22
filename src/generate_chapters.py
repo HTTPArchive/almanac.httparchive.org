@@ -1,12 +1,69 @@
 import os
 import re
 import mistune
+from mistune_contrib.toc import TocMixin
 import yaml
 from visualisation_lexer import VisualisationLexer
 
-renderer = mistune.Renderer()
-inline = VisualisationLexer(renderer).enable()
-markdown = mistune.Markdown(renderer=renderer, inline=inline)
+class TocRenderer(TocMixin, mistune.Renderer):
+  
+    def header(self, text, level, raw=None):
+        title =  re.sub('[\W_]+', ' ', text, flags=re.UNICODE).lower().replace(' ','-')
+        rv = '<h%d id="toc-%s">%s</h%d>\n' % (
+            level, title, text, level
+        )
+        self.toc_tree.append((self.toc_count, text, level, raw))
+        self.toc_count += 1
+        return rv
+
+    def _iter_toc(self, level):
+        first_level = 0
+        last_level = 0
+
+        yield '<nav class="index">\n'
+        yield '<div class="index-box floating-card">\n'
+        yield '<h2 class="header">Index</h2>\n'
+        yield '<h2 class="header-mobile">Index</h2>\n'
+        yield '<ul>\n'
+
+        for toc in self.toc_tree:
+            index, text, l, raw = toc
+            title = re.sub('[\W_]+', ' ', text, flags=re.UNICODE).lower().replace(' ','-')
+            if l > level:
+                # ignore this level
+                continue
+
+            if first_level == 0 :
+                # based on first level
+                first_level = l
+                last_level = l
+                yield '<li><a href="#toc-%s">%s</a>' % (title, text)
+            elif last_level == l:
+                yield '</li>\n<li><a href="#toc-%s">%s</a>' % (title, text)
+            elif last_level == l - 1:
+                last_level = l
+                yield '<ul>\n<li><a href="#toc-%s">%s</a>' % (title, text)
+            elif last_level > l:
+                # close indention
+                yield '</li>'
+                while last_level > l:
+                    yield '</ul>\n</li>\n'
+                    last_level -= 1
+                yield '<li><a href="#toc-%s">%s</a>' % (title, text)
+
+        # close tags
+        yield '</li>\n'
+        while last_level > first_level:
+            yield '</ul>\n</li>\n'
+            last_level -= 1
+
+        yield '</ul>\n'
+        yield '</div>\n'
+        yield '</nav>\n'
+
+toc = TocRenderer()
+inline = VisualisationLexer(toc).enable()
+markdown = mistune.Markdown(renderer=toc, inline=inline)
 
 def generate_chapters():
     for language_dir in os.scandir('content'):
@@ -19,9 +76,9 @@ def generate_chapters():
                 chapter = re.sub('.md$', '', chapter_file.name)
                 print('\n Generating chapter: %s, %s, %s' % (chapter, year, language))
 
-                (metadata, body) = parse_file(chapter_file)
+                (metadata, body, tochtml) = parse_file(chapter_file)
 
-                write_template(language, year, chapter, metadata, body)
+                write_template(language, year, chapter, metadata, body, tochtml)
 
 
 def parse_file(chapter_file):
@@ -40,13 +97,12 @@ def parse_file(chapter_file):
     metadata = yaml.load(metadata_text, Loader=yaml.SafeLoader)
 
     # TODO: Parse the body_text and find placeholders for generating embedded SVG.
+    toc.reset_toc() 
+    body = markdown.parse(body_text)
+    tochtml=toc.render_toc(level=2)
+    return (metadata, body, tochtml)
 
-    body = markdown(body_text)
-
-    return (metadata, body)
-
-
-def write_template(language, year, chapter, metadata, body):
+def write_template(language, year, chapter, metadata, body, tochtml):
     template_path = 'templates/%s/%s/chapter.html' % (language, year)
 
     with open(template_path, 'r') as template_file:
@@ -55,7 +111,7 @@ def write_template(language, year, chapter, metadata, body):
     path = 'templates/%s/%s/chapters/%s.html' % (language, year, chapter)
 
     with open(path, 'w') as file_to_write:
-        file_to_write.write(template.format(body=body, metadata=metadata))
+        file_to_write.write(template.format(body=body, metadata=metadata,toc=tochtml))
         print(' - Output file size: %s' % size_of(file_to_write.tell()))
 
 
