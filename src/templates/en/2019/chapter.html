@@ -13,7 +13,13 @@
 {{% set metadata = {metadata} %}}
 {{% block main %}}
 <article id="chapter" class="main">
- {toc}
+        <nav class="index">
+            <div class="index-box floating-card">
+            <h2 class="header">Index</h2>
+            <h2 class="header-mobile">Index</h2>
+                {toc}
+            </div>
+        </nav>
  <section class="content">
     {body}
  </section>

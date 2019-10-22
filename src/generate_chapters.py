@@ -20,10 +20,6 @@ class TocRenderer(TocMixin, mistune.Renderer):
         first_level = 0
         last_level = 0
 
-        yield '<nav class="index">\n'
-        yield '<div class="index-box floating-card">\n'
-        yield '<h2 class="header">Index</h2>\n'
-        yield '<h2 class="header-mobile">Index</h2>\n'
         yield '<ul>\n'
 
         for toc in self.toc_tree:
@@ -58,8 +54,6 @@ class TocRenderer(TocMixin, mistune.Renderer):
             last_level -= 1
 
         yield '</ul>\n'
-        yield '</div>\n'
-        yield '</nav>\n'
 
 toc = TocRenderer()
 inline = VisualisationLexer(toc).enable()
