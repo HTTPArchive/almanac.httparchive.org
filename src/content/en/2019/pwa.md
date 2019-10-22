@@ -1,10 +1,9 @@
 ---
-part_number: [II]
-chapter_number: [11]
+part_number: II
+chapter_number: 11
 title: Progressive Web Apps
 authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
-translators: []
 ---
 
 ## Introduction

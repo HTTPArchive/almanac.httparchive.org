@@ -51,7 +51,7 @@
             {% if chapter_config.todo %}
             <span class="todo">Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}</span>
             {% else %}
-            <a href="{{ url_for('chapter', year=year, lang=lang, chapter=get_chapter_slug(chapter_config.title)) }}">
+            <a href="{{ url_for('chapter', year=year, lang=lang, chapter=get_chapter_slug(chapter_config)) }}">
               Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}
             </a>
             {% endif %}

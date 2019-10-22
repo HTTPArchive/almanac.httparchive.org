@@ -33,13 +33,20 @@ def get_view_args(lang=None, year=None):
     return view_args
 
 
-def get_chapter_slug(title):
+def get_chapter_slug(metadata):
+    title = metadata.get('title')
     return title.lower().replace(' ', '-').replace('/', '')
+
+
+def get_chapter_image_dir(metadata):
+    title = metadata.get('title', 'NO TITLE FOUND').replace('/', '_').replace(' ', '_')
+    return '%.2d_%s' % (metadata.get('chapter_number', 0), title)
 
 
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
+app.jinja_env.globals['get_chapter_image_dir'] = get_chapter_image_dir
 
 @app.route('/<lang>/<year>/')
 @validate
