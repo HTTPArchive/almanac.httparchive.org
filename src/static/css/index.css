@@ -1,4 +1,4 @@
-body { 
+body {
   background-image: url(/static/images/intro-background-fit.png);
   background-repeat: no-repeat;
   background-size: 100% 910px;
@@ -139,6 +139,11 @@ p {
   align-items: center;
 }
 
+blockquote {
+  font-size: 19px;
+  line-height: 26px
+}
+
 .featured-chapter-content > div,
 .featured-chapter-content button {
   margin-bottom: 40px;
@@ -209,6 +214,7 @@ p {
   overflow: visible;
   top: -100px;
   position: relative;
+  pointer-events: none;
 }
 
 /* Methodology */
