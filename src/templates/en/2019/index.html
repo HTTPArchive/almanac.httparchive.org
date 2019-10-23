@@ -32,22 +32,22 @@ The Web Almanac by HTTP Archive
   <section class="featured-chapter">
     <div class="featured-chapter-content">
       <h1><div class="decorative-line-center"></div>Featured Chapter</h1>
-      <h2>Mobile Web</h2>
+      <h2>Third Parties</h2>
       <blockquote>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim facilisis gravida neque convallis a cras semper auctor neque.
+        The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link></code> or <code>&lt;script></code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
       </blockquote>
       <div class="featured-chapter-content-data">
         <div class="featured-chapter-content-data-item">
-          <div>36%</div>
-          <div>Lorem ipsum</div>
+          <div>93%</div>
+          <div>Pages with 3P</div>
         </div>
         <div class="featured-chapter-content-data-item">
-          <div>120M</div>
-          <div>Lorem ipsum</div>
+          <div>49%</div>
+          <div>3P requests</div>
         </div>
         <div class="featured-chapter-content-data-item">
-          <div>07/10</div>
-          <div>Lorem ipsum</div>
+          <div>28%</div>
+          <div>3P bytes</div>
         </div>
       </div>
       <a href="{{ url_for('chapter', year=year, chapter='mobile-web', lang=lang) }}" class="btn">
@@ -56,17 +56,18 @@ The Web Almanac by HTTP Archive
     </div>
   </section>
   <section class="contributors-container alt-bg">
+    {% set contributors = config.contributors.keys() | length %}
     <div class="contributors">
       <h1><div class="decorative-line"></div>Contributors:</h1>
       <p>
-        The Web Almanac has been made possible by the hard work of the web community. 91 people have volunteered countless hours in the planning, research, writing and production phases.
+        The Web Almanac has been made possible by the hard work of the web community. {{ contributors }} people have volunteered countless hours in the planning, research, writing and production phases.
       </p>
       <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
         See the contributors
       </a>
     </div>
     <div class="people">
-      <div class="people-number">91</div>
+      <div class="people-number">{{ contributors }}</div>
       <img id="character-markup" class="character" src="/static/images/character-markup.png" />
       <img id="character-star" class="character" src="/static/images/character-star.png" />
       <img id="character-hat" class="character" src="/static/images/character-hat.png" />
@@ -81,7 +82,7 @@ The Web Almanac by HTTP Archive
             Websites Tested
           </div>
           <div>
-            5.2M
+            5.8M
           </div>
         </div>
         <div class="data-processed">
@@ -97,7 +98,7 @@ The Web Almanac by HTTP Archive
         Unless otherwise noted, the metrics in all of the 20 chapters of the Web Almanac are sourced from the HTTP Archive dataset. HTTP Archive is a community-run project that has been tracking how the web is built since 2010. Using WebPageTest and Lighthouse under the hood, metadata about nearly 6 million websites are tested monthly and included in a public BigQuery database for analysis. The July 2019 dataset was used as the basis for the Web Almanac's metrics. For more information, see the Methodology page.
       </p>
       <a href="{{ url_for('methodology', year=year, lang=lang) }}" class="alt btn">
-        See the Methodology
+        Learn about our Methodology
       </a>
       <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" />
     </div>
