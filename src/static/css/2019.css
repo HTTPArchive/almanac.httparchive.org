@@ -62,14 +62,7 @@ header.alt-bg a:hover, footer.alt-bg a:hover,
 header.alt-bg a:focus, footer.alt-bg a:focus {
   color: #F7F779;
   outline: none;
-}
-header.alt-bg a.interactive:hover::after, footer.alt-bg a.interactive:hover::after,
-header.alt-bg a.interactive:focus::after, footer.alt-bg a.interactive:focus::after {
-  content: '';
-  border-bottom: solid 1px #F7F779;
-  display: block;
-  position: relative;
-  bottom: -4px;
+  text-decoration: underline;
 }
 
 .decorative-line-center {
