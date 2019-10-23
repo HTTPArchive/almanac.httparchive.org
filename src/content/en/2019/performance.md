@@ -16,7 +16,7 @@ There are two kinds of performance data: lab and field. You may have heard these
 
 ## The state of performance
 
-The [HTTP Archive](https://httparchive.org/) is an entirely lab-based tool, so to get field data we need to make use of a different dataset. In this section we're using the [Chrome UX Report](http://bit.ly/chrome-ux-report) (CrUX), a public dataset from Google that consists of all the same websites as the HTTP Archive and aggregates how Chrome users actually experience them. Experiences are categorized by:
+Almost all of the other chapters in the Web Almanac are based on data from the [HTTP Archive](https://httparchive.org/). In order to capture how real users experience the web, we need a different dataset. In this section we're using the [Chrome UX Report](http://bit.ly/chrome-ux-report) (CrUX), a public dataset from Google that consists of all the same websites as the HTTP Archive and aggregates how Chrome users actually experience them. Experiences are categorized by:
 
 - the form factor of the users' devices
   - desktop
@@ -30,7 +30,7 @@ The [HTTP Archive](https://httparchive.org/) is an entirely lab-based tool, so t
   - 4G
 - users' geographic location
 
-Experiences are measured monthly including paint, load, and interactivity metrics. The first metric we'll look at is [First Contentful Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP). This is the time users spend waiting for the page to display something useful to the screen, like an image or text. Next, we'll look at look at a loading metric, [Time to First Byte](https://web.dev/time-to-first-byte) (TTFB). This is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response. And finally, the last field metric we'll look at is [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). This is a relatively new metric and one that represents parts of the UX other than loading performance. It measures the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event.
+Experiences are measured monthly including paint, load, and interactivity metrics. The first metric we'll look at is [First Contentful Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP). This is the time users spend waiting for the page to display something useful to the screen, like an image or text. Next, we'll look at look at a loading metric, [Time to First Byte](https://csswizardry.com/2019/08/time-to-first-byte-what-it-is-and-why-it-matters/) (TTFB). This is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response. And finally, the last field metric we'll look at is [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). This is a relatively new metric and one that represents parts of the UX other than loading performance. It measures the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event.
 
 So let's dive in and see what kind of insights we can find.
 
