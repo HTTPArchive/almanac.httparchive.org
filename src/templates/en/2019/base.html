@@ -10,7 +10,7 @@
     <header class="alt-bg">
       <a href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" /></a>
       <nav>
-        <a href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         {% if supported_years | length > 1 %}
@@ -19,7 +19,7 @@
       </nav>
       <div class="cta">
         {% if request.endpoint == 'home' %}
-          <a href="{{ url_for('outline', year=year, lang=lang) }}" class="alt btn">
+          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
             Start Exploring
           </a>
         {% endif %}
@@ -28,7 +28,7 @@
       <img class="menu-icon" src="/static/images/menu.png" />
       <img class="menu-close-icon" src="/static/images/close.png" />
       <nav class="menu">
-        <a href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         <div class="misc">
@@ -64,7 +64,7 @@
       </section>
       <hr>
       <div class="footer-mobile-nav">
-        <a href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         <div>
@@ -153,7 +153,7 @@ menuCloseIcon.addEventListener('click', toggleMenu);
       {% for y in supported_years %}
         <option
           {% if y == year %}selected="selected"{% endif %}
-          value="{{ url_for('outline', **get_view_args(year=y)) }}">
+          value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
           {{ y }} Edition
         </option>
       {% endfor %}

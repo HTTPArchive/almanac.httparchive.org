@@ -1,0 +1,102 @@
+{% extends "en/2019/base.html" %}
+
+{% block title %}
+Table of Contents | Web Almanac 2019
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+.main {
+  margin-bottom: 100px;
+}
+.contents-wrapper {
+  display: grid;
+  grid-template-areas: 'parts characters';
+}
+.parts {
+  grid-area: parts;
+  max-width: 600px;
+}
+.characters {
+  grid-area: characters;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.character {
+  width: 150px;
+  height: auto;
+}
+.part,
+.part-name,
+.chapter {
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+.chapter:last-child {
+  border-bottom: none;
+}
+
+.part-name,
+.chapter {
+  padding: 20px 0;
+}
+
+.chapters {
+  padding: 0 20px;
+}
+
+.chapter .todo {
+  color: #aaa;
+}
+.chapter a {
+  text-decoration: none;
+  color: #1A2B49;
+}
+.chapter a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .characters {
+    display: none;
+  }
+}
+</style>
+{% endblock %}
+
+{% block main %}
+<section class="main">
+  <h1>Table of Contents</h1>
+
+  <div class="contents-wrapper">
+    <div class="parts">
+      {% for part_config in config.outline %}
+        <section class="part">
+          <h2 class="part-name">Part {{ part_config.part }}</h2>
+          <div class="chapters">
+            {% for chapter_config in part_config.chapters %}
+              <div class="chapter">
+                {% if chapter_config.todo %}
+                <span class="todo">Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}</span>
+                {% else %}
+                <a href="{{ url_for('chapter', year=year, lang=lang, chapter=get_chapter_slug(chapter_config)) }}">
+                  Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}
+                </a>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+
+    <section class="characters">
+      <img id="character-markup" class="character" src="/static/images/character-markup.png" alt=""/>
+      <img id="character-star" class="character" src="/static/images/character-star.png" alt=""/>
+      <img id="character-hat" class="character" src="/static/images/character-hat.png" alt=""/>
+    </section>
+  </div>
+</section>
+{% endblock %}
