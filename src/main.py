@@ -51,7 +51,8 @@ app.jinja_env.globals['get_chapter_image_dir'] = get_chapter_image_dir
 @app.route('/<lang>/<year>/')
 @validate
 def home(lang, year):
-    return render_template('%s/%s/index.html' % (lang, year))
+    config = config_util.get_config(year)
+    return render_template('%s/%s/index.html' % (lang, year), config=config)
 
 @app.route('/')
 @validate
