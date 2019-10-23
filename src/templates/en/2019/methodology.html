@@ -399,12 +399,13 @@ Methodology | The Web Almanac by HTTP Archive
       </p>
 
       <p>
-        Wappalyzer powers many chapters that look at usage of developer tools
-        like the popularity of WordPress, Bootstrap, or jQuery. The
-        <a href="https://www.wappalyzer.com/categories/ecommerce">Ecommerce</a>
-        and <a href="https://www.wappalyzer.com/categories/cms">CMS</a>
-        categories make up the foundation of their respective Web Almanac
-        chapters.
+        Wappalyzer powers many chapters that analyze the popularity of developer
+        tools like WordPress, Bootstrap, and jQuery. For example, the
+        <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">Ecommerce</a>
+        and <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> chapters rely heavily on the respective
+        <a href="https://www.wappalyzer.com/categories/ecommerce">Ecommerce</a> and
+        <a href="https://www.wappalyzer.com/categories/cms">CMS</a>
+        categories of technologies detected by Wappalyzer.
       </p>
     </section>
 
