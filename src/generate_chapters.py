@@ -35,7 +35,7 @@ def parse_file(chapter_file):
     # https://yaml.org/spec/1.2/spec.html#id2760395
     pattern = r'^\s*(?:-{3})(.*?)(?:-{3})\s*(.+)$'
     (metadata_text, body_text) = re.findall(
-        pattern, content, re. DOTALL | re.MULTILINE)[0]
+        pattern, content, re.DOTALL | re.MULTILINE)[0]
 
     metadata = yaml.load(metadata_text, Loader=yaml.SafeLoader)
 
