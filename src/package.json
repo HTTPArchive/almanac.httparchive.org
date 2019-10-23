@@ -1,0 +1,24 @@
+{
+  "name": "almanac.httparchive.org",
+  "version": "0.0.1",
+  "description": "HTTP Archive's annual 'State of the Web' report made by the web community.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HTTPArchive/almanac.httparchive.org.git"
+  },
+  "author": "Rick Viscomi",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/HTTPArchive/almanac.httparchive.org/issues"
+  },
+  "homepage": "https://github.com/HTTPArchive/almanac.httparchive.org#readme",
+  "scripts": {
+    "generate": "node ./tools/generate"
+  },
+  "devDependencies": {
+    "ejs": "^2.7.1",
+    "fs-extra": "^8.1.0",
+    "showdown": "^1.9.0"
+  }
+}
