@@ -56,7 +56,9 @@
       <section class="nav">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive"/></a>
         <nav class="nav-items">
-          <img src="/static/images/ha-home.png" />
+          <a class="navigation-logo" href="https://httparchive.org">
+            <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
+          </a>
           <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
           <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         </nav>
@@ -68,7 +70,7 @@
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         <div>
-          <a href="https://httparchive.org/">
+          <a class="navigation-logo" href="https://httparchive.org/">
             <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
           </a>
           <div class="social-media">
