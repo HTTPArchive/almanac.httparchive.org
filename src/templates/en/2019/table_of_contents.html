@@ -56,13 +56,15 @@ Table of Contents | Web Almanac 2019
 }
 
 .chapter .todo {
-  color: #aaa;
+  opacity: 0.3;
 }
 .chapter a {
   text-decoration: none;
   color: #1A2B49;
 }
-.chapter a:hover {
+.chapter a:hover,
+.chapter a:focus {
+  outline: none;
   text-decoration: underline;
 }
 @media (max-width: 600px) {
