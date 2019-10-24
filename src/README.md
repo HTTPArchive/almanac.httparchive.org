@@ -41,3 +41,19 @@ If you want to have the tests continue running (for example, while writing new t
 ```
 ptw
 ```
+
+## Generating chapters
+
+The chapter generation is dependent on nodejs, so you will need to have [nodejs](https://nodejs.org/en/) installed as well. All of the following commands must be run from within the `src` directory by executing `cd src` first.
+
+1. Install the dependencies:
+
+```
+npm install
+```
+
+2. Run the generate chapters script:
+
+```
+npm run generate
+```
