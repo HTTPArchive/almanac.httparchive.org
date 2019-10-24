@@ -10,6 +10,13 @@ Table of Contents | Web Almanac 2019
 .main {
   margin-bottom: 100px;
 }
+.title::before {
+  display: block;
+  content: '';
+  margin-bottom: 18px;
+  border-bottom: solid 1px #c6dcd2;
+  width: 70px;
+}
 .contents-wrapper {
   display: grid;
   grid-template-areas: 'parts characters';
@@ -26,7 +33,7 @@ Table of Contents | Web Almanac 2019
   align-items: center;
 }
 .character {
-  width: 150px;
+  max-width: 150px;
   height: auto;
 }
 .part,
@@ -45,7 +52,7 @@ Table of Contents | Web Almanac 2019
 }
 
 .chapters {
-  padding: 0 20px;
+  padding-left: 20px;
 }
 
 .chapter .todo {
@@ -59,6 +66,12 @@ Table of Contents | Web Almanac 2019
   text-decoration: underline;
 }
 @media (max-width: 600px) {
+  .contents-wrapper {
+    display: block;
+  }
+  .parts {
+    max-width: 100%;
+  }
   .characters {
     display: none;
   }
@@ -68,7 +81,7 @@ Table of Contents | Web Almanac 2019
 
 {% block main %}
 <section class="main">
-  <h1>Table of Contents</h1>
+  <h1 class="title">Table of Contents</h1>
 
   <div class="contents-wrapper">
     <div class="parts">
@@ -93,9 +106,10 @@ Table of Contents | Web Almanac 2019
     </div>
 
     <section class="characters">
-      <img id="character-markup" class="character" src="/static/images/character-markup.png" alt=""/>
-      <img id="character-star" class="character" src="/static/images/character-star.png" alt=""/>
-      <img id="character-hat" class="character" src="/static/images/character-hat.png" alt=""/>
+      <img class="character" src="/static/images/character-painter.png" alt=""/>
+      <img class="character" src="/static/images/character-file.png" alt=""/>
+      <img class="character" src="/static/images/character-star.png" alt=""/>
+      <img class="character" src="/static/images/character-hat.png" alt=""/>
     </section>
   </div>
 </section>
