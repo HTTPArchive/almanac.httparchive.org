@@ -22,12 +22,22 @@ Ready to dig into the fascinating data!? Many of the following numbers may be sm
 ## Color
 
 ### Color Types
+
+Percentage of types used
 <pie chart of 02_06>
 
+Top named colors
+<pie chart of 02_06b>
 
 
 
 ## Units
+
+### Length
+
+$ of sites using given units
+<pie chart of 02_07b>
+
 
 ### Custom Properties
 Custom Properties are what many call CSS variables. They're more dynamic than a typical static variable though! They're very powerful and I feel as a community we're still discovering their potential. 
@@ -41,14 +51,27 @@ We felt like this was exciting information, since it shows healthy grow of one o
 
 
 
-
 ## Selectors
 
+### ID vs Class selectors
+ID and class selector usage
+<pie chart of 02_08f>
 
 
 
 ## Layout
 
+### Flexbox
+% of sites using flexbox
+<pie chart of 02_013c>
+
+### Grid
+% of sites using grid
+<pie chart of 02_014c>
+
+### Writing Direction
+Pages using dir:ltr
+<pie chart of 02_012>
 
 
 
@@ -59,18 +82,25 @@ We felt like this was exciting information, since it shows healthy grow of one o
 
 ## Spacing
 
-
+### Logical Properties
+% of sites using logical props atm
+<bar chart of 02_05d>
 
 
 ## Decoration
 
 ### Filters
+$ of sites using filters
+<pie chart of 02_03d>
 
-<pie chart of 02_01d>
 
 ### Blend Modes
 
+Presence in stylesheets
+<pie chart of 02_04d>
 
+Which are used?
+<bar chart of 02_04be>
 
 
 ## Animation
@@ -84,6 +114,16 @@ We felt like this was exciting information, since it shows healthy grow of one o
 
 
 ## Media Queries
+
+### Popular Media Query Adaption Sizes
+Percent of viewport lengths used
+<bar chart of 02_015e>
+
+### Portrait vs Landscape Usage
+<bar chart of 02_015bf>
+
+### Print
+<bar chart of 02_018h>
 
 ### @supports & @import
 CSS @supports is a way for CSS to check whether or not something is supported before employing it's usage.
@@ -105,11 +145,19 @@ We did not expect that! @import has been in browsers since ~2007.
 
 ## Page Level
 
+### Stylesheets
+Number of stylesheets per page
+<bar chart of 02_019>
 
+### Stylesheet Names
+Common stylesheet names
+<bar chart of 02_020>
 
+### Libraries
+% of sites using given libs
+<bar chart of 02_010e>
 
-
-
-## Logical Properties
-
+### Reset Utilities
+% of sites using given resets
+<bar chart of 02_011e>
 
