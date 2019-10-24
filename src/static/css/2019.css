@@ -22,6 +22,10 @@ select {
   -webkit-appearance: none;
 }
 
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
 .btn {
   outline: none;
   border: 1px solid #1A2B49;
@@ -62,10 +66,6 @@ header.alt-bg a:hover, footer.alt-bg a:hover,
 header.alt-bg a:focus, footer.alt-bg a:focus {
   color: #F7F779;
   outline: none;
-}
-header.alt-bg a.interactive:hover, footer.alt-bg a.interactive:hover,
-header.alt-bg a.interactive:focus, footer.alt-bg a.interactive:focus {
-  text-decoration: underline;
 }
 
 .decorative-line-center {
