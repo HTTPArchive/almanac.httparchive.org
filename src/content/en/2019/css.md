@@ -21,15 +21,23 @@ Ready to dig into the fascinating data!? Many of the following numbers may be sm
 
 ## Color
 
+Color is an integral part of theming and styling on the web. We wanted to take a look at how people tend to use color.
+
 ### Color Types
 
+Interestingly, developers are taking full advantage of the alpha-transparency argument when it comes to color types. HSLA and RGBA are far more popular than HSL and RGB, with almost double the usage! Even though the alpha-transparency was added later to the web spec, HSLA and RGBA are supported [as far back as IE9](https://caniuse.com/#feat=css3-colors), so you can go ahead and use them, too!
+
 Percentage of types used
-<pie chart of 02_06>
+<bar chart of 02_06>
+
+### Color Selection
+
+There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readible styling. The most popular named colors are black and white, unsurprisingly, followed by red and blue.
+
+Language is interestingly inferred via color as well. There are more people using the American-style "gray" than the British-style "grey" when writing code on the web. Almost every instance of [gray colors](https://www.rapidtables.com/web/color/gray-color.html) (gray, lightgray, darkgray, slategray, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why silver is ranked higher than grey with an "e" in the charts!
 
 Top named colors
 <pie chart of 02_06b>
-
-
 
 ## Units
 
