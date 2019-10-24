@@ -11,7 +11,7 @@ try {
 
   return (elements.h1 || elements.h2 || elements.h3 || elements.h4 || elements.h5 || elements.h6 || 0) > 0;
 } catch (e) {
-  return [];
+  return false;
 }
 ''';
 

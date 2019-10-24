@@ -13,4 +13,7 @@ FROM (
     ROUND(SAFE_DIVIDE(medium_cls, small_cls + medium_cls + large_cls) * 100, 2) AS perc_medium_cls
   FROM
     `chrome-ux-report.materialized.device_summary`
+  WHERE
+    device = 'phone' AND
+    yyyymm = '201907'
 )
