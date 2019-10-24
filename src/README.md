@@ -44,7 +44,7 @@ ptw
 
 ## Generating chapters
 
-The chapter generation is dependent on nodejs, so is you will need to have [nodejs](https://nodejs.org/en/) installed as well. All of the following commands must be run from within the `src` directory by executing `cd src` first.
+The chapter generation is dependent on nodejs, so you will need to have [nodejs](https://nodejs.org/en/) installed as well. All of the following commands must be run from within the `src` directory by executing `cd src` first.
 
 1. Install the dependencies:
 
