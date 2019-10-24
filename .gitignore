@@ -2,3 +2,5 @@ env/
 *.log
 *.pyc
 **/.DS_Store
+src/templates/en/2019/chapters/
+src/templates/ja/2019/chapters/

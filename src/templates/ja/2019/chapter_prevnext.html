@@ -1,0 +1,25 @@
+<nav id="chapter-navigation">
+        {% if prev_chapter %}
+            <a id="previous-chapter" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+                <span class="arrow">&#8963;</span>
+                <span class="chapter-no">
+                    Chapter {{ prev_chapter['chapter'] }}
+                </span>
+                <span class="chapter-title">
+                    {{ prev_chapter['title'] }}
+                </span>
+            </a>
+        {% endif %}
+    
+        {% if next_chapter %}
+            <a id="next-chapter" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+                    <span class="arrow">&#8963;</span>
+                    <span class="chapter-no">
+                        Chapter {{ next_chapter['chapter'] }}
+                    </span>
+                    <span class="chapter-title">
+                        {{ next_chapter['title'] }}
+                    </span>
+            </a>
+        {% endif %}
+    </nav>

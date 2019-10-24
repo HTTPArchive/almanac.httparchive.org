@@ -1,0 +1,24 @@
+{% for author in authors %}
+    <li>
+        <img class="avatar" alt="Author name" src="{{ author.avatar_url }}">
+        <div class="info">
+            <span class="name">{{ author.name }}</span>
+            {% if author.twitter or author.github %}
+                <span class="social">
+                {% if author.twitter %}
+                <a class="twitter" href="https://twitter.com/{{ author.twitter }}"><img src="/static/images/twitter.png" alt="@{{ author.twitter }} on Twitter"></a>
+                {% endif %}
+                {% if author.github %}
+                <a class="github" href="https://github.com/{{ author.github }}"><img src="/static/images/github.png" alt="{{ author.github }}@ on GitHub"></a>
+                {% endif %}
+                </span>
+            {% endif %}
+            {% if author.tagline %}
+                <div class="tagline">
+                    {{ author.tagline }}
+                </div>
+            {% endif %}
+        </div>
+        
+    </li>
+{% endfor %}

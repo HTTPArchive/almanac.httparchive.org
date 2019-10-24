@@ -4,6 +4,8 @@ import mistune
 from mistune_contrib.toc import TocMixin
 import yaml
 from visualisation_lexer import VisualisationLexer
+import config as config_util
+import jinja2
 
 class TocRenderer(TocMixin, mistune.Renderer):
   
@@ -71,7 +73,6 @@ def generate_chapters():
                 print('\n Generating chapter: %s, %s, %s' % (chapter, year, language))
 
                 (metadata, body, tochtml) = parse_file(chapter_file)
-
                 write_template(language, year, chapter, metadata, body, tochtml)
 
 
@@ -96,6 +97,19 @@ def parse_file(chapter_file):
     tochtml=toc.render_toc(level=2)
     return (metadata, body, tochtml)
 
+def generate_author_html(lang,year, metadata):
+    config = config_util.get_config(year)
+    authors = []
+    for userid in metadata['authors']:
+        author = config['contributors'].get(userid)
+        if author is not None:
+            authors.append(author)  
+
+    return jinja2.Environment(
+        loader=jinja2.FileSystemLoader('templates')
+    ).get_template('%s/%s/chapter_author.html' % (lang, year)).render(authors=authors)
+       
+
 def write_template(language, year, chapter, metadata, body, tochtml):
     template_path = 'templates/%s/%s/chapter.html' % (language, year)
 
@@ -104,8 +118,11 @@ def write_template(language, year, chapter, metadata, body, tochtml):
 
     path = 'templates/%s/%s/chapters/%s.html' % (language, year, chapter)
 
+    
+    authors = generate_author_html(language, year, metadata)
+    prevnext = generate_prevnext_html(language, year, metadata['chapter_number'])
     with open(path, 'w') as file_to_write:
-        file_to_write.write(template.format(body=body, metadata=metadata,toc=tochtml))
+        file_to_write.write(template.format(body=body, metadata=metadata, toc=tochtml, authors=authors, prevnext=prevnext))
         print(' - Output file size: %s' % size_of(file_to_write.tell()))
 
 
@@ -116,5 +133,28 @@ def size_of(num, suffix='B'):
         num /= 1024.0
     return "%.1f%s%s" % (num, 'Yi', suffix)
 
+
+def generate_prevnext_html(lang,year,chapter_no):
+    config = config_util.get_config(year)
+    chapter_no = str(chapter_no)
+    prev_chapter = False
+    next_chapter = False
+    found =  False
+
+    for part in config['outline']:
+        for chapter in part['chapters']:
+            if found:
+                next_chapter = chapter
+                break
+            elif chapter['chapter'] == chapter_no:
+                found = True
+            else:
+                prev_chapter = chapter
+        if(found):
+            break
+
+    return jinja2.Environment(
+        loader=jinja2.FileSystemLoader('templates')
+    ).get_template('%s/%s/chapter_prevnext.html' % (lang, year)).render(lang=lang, year=year, prev_chapter=prev_chapter,next_chapter=next_chapter)
 
 generate_chapters()

@@ -190,6 +190,58 @@
         "authors",
         "developers"
       ]
+    },
+    "tomayac": {
+      "name": "Tomas",
+      "tagline": "Web Almanac PM",
+      "github": "rviscomi",
+      "teams": [
+        "authors",
+        "developers"
+      ]
+    },
+    "jeffposnick": {
+      "name": "Jeff Posnick",
+      "tagline": "Web Almanac PM",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi",
+      "teams": [
+        "authors",
+        "developers"
+      ]
+    },
+    "addyosmani": {
+      "name": "Addy Osmani",
+      "tagline": "Developer Advocate Google",
+      "gravatar": "rviscomi@google.com",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi",
+      "teams": [
+        "authors",
+        "developers"
+      ]
+    },
+    "housseindjirdeh": {
+      "name": "Jeff Posnick",
+      "tagline": "Developer Advocate Google",
+      "gravatar": "rviscomi@google.com",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi",
+      "teams": [
+        "authors",
+        "developers"
+      ]
+    },
+    "mathiasbynens": {
+      "name": "Mathias Bynens",
+      "tagline": "Web Almanac PM",
+      "gravatar": "rviscomi@google.com",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi",
+      "teams": [
+        "authors",
+        "developers"
+      ]
     }
   }
 }
