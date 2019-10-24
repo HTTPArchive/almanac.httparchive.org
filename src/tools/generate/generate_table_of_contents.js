@@ -7,7 +7,6 @@ const generate_table_of_contents = (html) => {
   );
   const starting_level = get_level(all_headings[0]);
   const nested_headings = nest_headings(all_headings, starting_level);
-  console.log(JSON.stringify(nested_headings));
   const toc = generate_html(nested_headings.children);
 
   return toc;
