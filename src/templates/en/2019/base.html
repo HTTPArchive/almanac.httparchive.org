@@ -10,16 +10,16 @@
     <header class="alt-bg">
       <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive" /></a>
       <nav>
-        <a class="interactive" href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
-        <a class="interactive" href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-        <a class="interactive" href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         {% if supported_years | length > 1 %}
           {{ year_switcher() }}
         {% endif %}
       </nav>
       <div class="cta">
         {% if request.endpoint == 'home' %}
-          <a href="{{ url_for('outline', year=year, lang=lang) }}" class="alt btn">
+          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
             Start Exploring
           </a>
         {% endif %}
@@ -28,9 +28,9 @@
       <img class="menu-icon" src="/static/images/menu.png" />
       <img class="menu-close-icon" src="/static/images/close.png" />
       <nav class="menu">
-        <a class="interactive" href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
-        <a class="interactive" href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-        <a class="interactive" href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         <div class="misc">
           <a href="https://httparchive.org/">
             <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
@@ -56,19 +56,21 @@
       <section class="nav">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive"/></a>
         <nav class="nav-items">
-          <img src="/static/images/ha-home.png" />
-          <a class="interactive" href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-          <a class="interactive" href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+          <a class="navigation-logo" href="https://httparchive.org">
+            <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
+          </a>
+          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         </nav>
         {{ language_switcher() }}
       </section>
       <hr>
       <div class="footer-mobile-nav">
-        <a class="interactive" href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
-        <a class="interactive" href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-        <a class="interactive" href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         <div>
-          <a href="https://httparchive.org/">
+          <a class="navigation-logo" href="https://httparchive.org/">
             <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
           </a>
           <div class="social-media">
@@ -153,7 +155,7 @@ menuCloseIcon.addEventListener('click', toggleMenu);
       {% for y in supported_years %}
         <option
           {% if y == year %}selected="selected"{% endif %}
-          value="{{ url_for('outline', **get_view_args(year=y)) }}">
+          value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
           {{ y }} Edition
         </option>
       {% endfor %}
