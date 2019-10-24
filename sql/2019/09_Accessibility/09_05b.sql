@@ -1,5 +1,5 @@
 #standardSQL
-# 09_05_b: % of sites using ARIA role
+# 09_05b: % of sites using ARIA role
 SELECT
   client,
   COUNT(0) AS total_sites,

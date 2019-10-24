@@ -1,5 +1,5 @@
 #standardSQL
-# 09_01_b: % of pages having any heading
+# 09_01b: % of pages having any heading
 CREATE TEMPORARY FUNCTION hasHeading(payload STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {

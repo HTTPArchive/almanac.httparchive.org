@@ -1,5 +1,5 @@
 #standardSQL
-# 12_20_b: Sites with majority of CLS >=medium, >=large
+# 12_20b: Sites with majority of CLS >=medium, >=large
 SELECT
   COUNT(0) AS total_sites,
   COUNTIF((perc_medium_cls + perc_large_cls) >= 50) AS total_majority_medium_cls,

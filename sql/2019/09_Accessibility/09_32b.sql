@@ -1,5 +1,5 @@
 #standardSQL
-# 09_32_b: % of pages using alt tags
+# 09_32b: % of pages using alt tags
 CREATE TEMPORARY FUNCTION hasImages(payload STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {

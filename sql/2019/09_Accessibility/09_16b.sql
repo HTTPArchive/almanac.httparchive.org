@@ -1,5 +1,5 @@
 #standardSQL
-# 09_16_b: % page with forms using invalid/required
+# 09_16b: % page with forms using invalid/required
 CREATE TEMPORARY FUNCTION getTotalInputsUsed(payload STRING)
 RETURNS INT64 LANGUAGE js AS '''
   try {
