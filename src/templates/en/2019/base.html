@@ -8,11 +8,11 @@
 {% block content%}
   {% block header %}
     <header class="alt-bg">
-      <a href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" /></a>
+      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive" /></a>
       <nav>
-        <a href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+        <a class="interactive" href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
+        <a class="interactive" href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+        <a class="interactive" href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         {% if supported_years | length > 1 %}
           {{ year_switcher() }}
         {% endif %}
@@ -28,9 +28,9 @@
       <img class="menu-icon" src="/static/images/menu.png" />
       <img class="menu-close-icon" src="/static/images/close.png" />
       <nav class="menu">
-        <a href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+        <a class="interactive" href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
+        <a class="interactive" href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+        <a class="interactive" href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         <div class="misc">
           <a href="https://httparchive.org/">
             <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
@@ -54,19 +54,19 @@
   {% block footer %}
     <footer class="alt-bg">
       <section class="nav">
-        <a href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" /></a>
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive"/></a>
         <nav class="nav-items">
           <img src="/static/images/ha-home.png" />
-          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+          <a class="interactive" href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+          <a class="interactive" href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         </nav>
         {{ language_switcher() }}
       </section>
       <hr>
       <div class="footer-mobile-nav">
-        <a href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+        <a class="interactive" href="{{ url_for('outline', year=year, lang=lang) }}">Table of Contents</a>
+        <a class="interactive" href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+        <a class="interactive" href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
         <div>
           <a href="https://httparchive.org/">
             <img src="/static/images/ha-home.png" alt="HTTP Archive home" />

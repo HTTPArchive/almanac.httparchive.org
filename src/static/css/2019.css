@@ -22,6 +22,10 @@ select {
   -webkit-appearance: none;
 }
 
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
 .btn {
   outline: none;
   border: 1px solid #1A2B49;
@@ -47,6 +51,21 @@ select {
 .alt-bg {
   background: #5C687D;
   color: white;
+}
+
+a.navigation-logo {
+  outline: none;
+  color: white;
+}
+a.navigation-logo img:hover,
+a.navigation-logo:focus img {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(4%) saturate(4357%) hue-rotate(16deg) brightness(136%) contrast(94%);
+}
+
+header.alt-bg a:hover, footer.alt-bg a:hover,
+header.alt-bg a:focus, footer.alt-bg a:focus {
+  color: #F7F779;
+  outline: none;
 }
 
 .decorative-line-center {
@@ -232,8 +251,12 @@ footer .nav-items *:last-child {
 .social-media img {
   filter: brightness(0) saturate(100%) invert(66%) sepia(3%) saturate(1296%) hue-rotate(179deg) brightness(91%) contrast(90%);
 }
-.social-media img:hover {
+.social-media img:hover,
+.social-media a:focus img {
   filter: brightness(0) saturate(100%) invert(86%) sepia(4%) saturate(4357%) hue-rotate(16deg) brightness(136%) contrast(94%);
+}
+.social-media a:focus {
+  outline: none;
 }
 
 @media (max-width: 900px) and (min-width: 601px) {
