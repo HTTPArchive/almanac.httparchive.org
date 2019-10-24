@@ -25,7 +25,7 @@ Color is an integral part of theming and styling on the web. We wanted to take a
 
 ### Color Types
 
-Interestingly, developers are taking full advantage of the alpha-transparency argument when it comes to color types. HSLA and RGBA are far more popular than HSL and RGB, with almost double the usage! Even though the alpha-transparency was added later to the web spec, HSLA and RGBA are supported [as far back as IE9](https://caniuse.com/#feat=css3-colors), so you can go ahead and use them, too!
+Hex is the most popular way to describe color by far (with 93% usage), followed by RGB and then HSL. Interestingly, developers are taking full advantage of the alpha-transparency argument when it comes to these color types. HSLA and RGBA are far more popular than HSL and RGB, with almost double the usage! Even though the alpha-transparency was added later to the web spec, HSLA and RGBA are supported [as far back as IE9](https://caniuse.com/#feat=css3-colors), so you can go ahead and use them, too!
 
 Percentage of types used
 <bar chart of 02_06>
