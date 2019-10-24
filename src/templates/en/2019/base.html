@@ -8,7 +8,7 @@
 {% block content%}
   {% block header %}
     <header class="alt-bg">
-      <a href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" /></a>
+      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive" /></a>
       <nav>
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
@@ -54,7 +54,7 @@
   {% block footer %}
     <footer class="alt-bg">
       <section class="nav">
-        <a href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" /></a>
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive"/></a>
         <nav class="nav-items">
           <img src="/static/images/ha-home.png" />
           <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
