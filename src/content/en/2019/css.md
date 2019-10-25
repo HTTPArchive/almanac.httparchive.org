@@ -34,17 +34,27 @@ Percentage of types used
 
 There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readible styling. The most popular named colors are black and white, unsurprisingly, followed by red and blue.
 
-Language is interestingly inferred via color as well. There are more people using the American-style "gray" than the British-style "grey" when writing code on the web. Almost every instance of [gray colors](https://www.rapidtables.com/web/color/gray-color.html) (gray, lightgray, darkgray, slategray, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why silver is ranked higher than grey with an "e" in the charts!
-
 Top named colors
 <pie chart of 02_06b>
 
+Language is interestingly inferred via color as well. There are more people using the American-style "gray" than the British-style "grey" when writing code on the web. Almost every instance of [gray colors](https://www.rapidtables.com/web/color/gray-color.html) (gray, lightgray, darkgray, slategray, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why silver is ranked higher than grey with an "e" in the charts!
+
 ## Units
 
-### Length
+In CSS, there are a lot of different ways to achieve the same visual result -- using different unit types (i.e. `rem` vs `px` vs `em` vs `ch` or `cm` even!) is one of them. So which unit types are most popular?
 
 $ of sites using given units
-<pie chart of 02_07b>
+<side-by-side bar chart of 02_07b for desktop and mobile>
+
+### Length and Sizing
+
+Unsurpsiginly, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, etc). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font-size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, but it does allow for adjustment of all spacing evenly.
+
+When it comes to units based on physical space, the `q` unit (1 quarter of a millimeter, or 1/40 of 1cm) is the most commonly used by far, with 22.46% on mobile and 15.13% on desktop. We knew about these types of units (`mm`, `in`, `cm`, etc.), specifically useful for print stylesheets, but didn't even know the `q` unit existed until this survey! Did you?
+
+### Viewport-Based Units
+
+We saw relatively larger differences to unit types when it comes to mobile and desktop usage for viewport-based units. 36.8% of mobile sites use `vh` (viewport height), while only 31% of desktop sites do. We also found that `vh` is more common than `vw` (viewport width) by about 11%. `vmin` (viewport minimum) is more popular than `vmax` (viewport maximum), with  about 8% usage on mobile, while `vmax` is only used by 1% of websites.
 
 
 ### Custom Properties
