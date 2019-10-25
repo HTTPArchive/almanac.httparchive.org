@@ -1,0 +1,118 @@
+{% extends "en/2019/base.html" %}
+
+{% block title %}
+Table of Contents | Web Almanac 2019
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+.main {
+  margin-bottom: 100px;
+}
+.title::before {
+  display: block;
+  content: '';
+  margin-bottom: 18px;
+  border-bottom: solid 1px #c6dcd2;
+  width: 70px;
+}
+.contents-wrapper {
+  display: grid;
+  grid-template-areas: 'parts characters';
+}
+.parts {
+  grid-area: parts;
+  max-width: 600px;
+}
+.characters {
+  grid-area: characters;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.character {
+  max-width: 150px;
+  height: auto;
+}
+.part,
+.part-name,
+.chapter {
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+.chapter:last-child {
+  border-bottom: none;
+}
+
+.part-name,
+.chapter {
+  padding: 20px 0;
+}
+
+.chapters {
+  padding-left: 20px;
+}
+
+.chapter .todo {
+  opacity: 0.3;
+}
+.chapter a {
+  text-decoration: none;
+  color: #1A2B49;
+}
+.chapter a:hover,
+.chapter a:focus {
+  outline: none;
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .contents-wrapper {
+    display: block;
+  }
+  .parts {
+    max-width: 100%;
+  }
+  .characters {
+    display: none;
+  }
+}
+</style>
+{% endblock %}
+
+{% block main %}
+<section class="main">
+  <h1 class="title">Table of Contents</h1>
+
+  <div class="contents-wrapper">
+    <div class="parts">
+      {% for part_config in config.outline %}
+        <section class="part">
+          <h2 class="part-name">Part {{ part_config.part }}</h2>
+          <div class="chapters">
+            {% for chapter_config in part_config.chapters %}
+              <div class="chapter">
+                {% if chapter_config.todo %}
+                <span class="todo">Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}</span>
+                {% else %}
+                <a href="{{ url_for('chapter', year=year, lang=lang, chapter=get_chapter_slug(chapter_config)) }}">
+                  Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}
+                </a>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+
+    <section class="characters">
+      <img class="character" src="/static/images/character-painter.png" alt=""/>
+      <img class="character" src="/static/images/character-file.png" alt=""/>
+      <img class="character" src="/static/images/character-star.png" alt=""/>
+      <img class="character" src="/static/images/character-hat.png" alt=""/>
+    </section>
+  </div>
+</section>
+{% endblock %}

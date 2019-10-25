@@ -4,7 +4,6 @@ chapter_number: 5
 title: Third Parties
 authors: [patrickhulce]
 reviewers: [simonhearne, flowlabs, jasti, zeman]
-translators: []
 ---
 
 # Chapter 5: Third Parties

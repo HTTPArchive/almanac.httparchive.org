@@ -1,5 +1,5 @@
 #standardSQL
-# 09_30_b: Usage of aria-label or aria-labelledby
+# 09_30b: Usage of aria-label or aria-labelledby
 CREATE TEMPORARY FUNCTION getAriaLabelUsage(payload STRING)
 RETURNS ARRAY<BOOLEAN> LANGUAGE js AS '''
   try {

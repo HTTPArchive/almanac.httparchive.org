@@ -4,7 +4,6 @@ chapter_number: 20
 title: HTTP/2
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
-translators: []
 ---
 
 ![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images//2019/20_HTTP_2/hero_xl.jpg)
