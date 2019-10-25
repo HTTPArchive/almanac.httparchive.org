@@ -1,5 +1,5 @@
 #standardSQL
-# 09_30_a: Sites that have associated labels for their form elements
+# 09_30a: Sites that have associated labels for their form elements
 SELECT
   COUNT(0) AS total_sites,
   COUNTIF(label_score IS NOT NULL) AS total_applicable,

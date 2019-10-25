@@ -1,8 +1,9 @@
 #standardSQL
-# 09_19_b: Top aria attributes
+# 09_19a: Top 10,000 aria attribute/value pairs
 SELECT
   client,
   SPLIT(REGEXP_REPLACE(attr, '[\'"]', ''), '=')[OFFSET(0)] AS attribute,
+  SPLIT(REGEXP_REPLACE(attr, '[\'"]', ''), '=')[OFFSET(1)] AS value,
   COUNT(DISTINCT page) AS pages,
   total,
   ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
@@ -17,6 +18,8 @@ WHERE
 GROUP BY
   client,
   total,
-  attribute
+  attribute,
+  value
 ORDER BY
   pages / total DESC
+LIMIT 10000
