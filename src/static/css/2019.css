@@ -230,6 +230,12 @@ footer .nav-items *:last-child {
   font-size: 12px;
   color: #F2F2F2;
 }
+.misc > div {
+  display: flex;
+}
+.misc > div a.navigation-logo {
+  margin-right: 24px;
+}
 
 .social-media {
   display: flex;
@@ -362,6 +368,7 @@ footer .nav-items *:last-child {
     display: block;
   }
 
+  footer .misc > div a.navigation-logo,
   footer .misc .social-media {
     display: none;
   }
