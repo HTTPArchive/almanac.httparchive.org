@@ -28,5 +28,5 @@ FROM
     if(regexp_contains(json_extract(report, '$.audits.uses-optimized-images.details.items'), ','),
       ARRAY_LENGTH(split(json_extract(report, '$.audits.uses-optimized-images.details.items'), ',')), 0) unoptimizedImagesCount
   FROM
-    `httparchive.almanac.lighthouse_mobile_1k`
+    `httparchive.lighthouse.2019_07_01_mobile`
 )

@@ -5,6 +5,8 @@ SELECT
   client,
   webImageType AS imageType,
   count(0) as pageCount,
+  countif(hits > 0) as frequencyCount,
+  round(100*countif(hits > 0) / count(0), 2) as pct,
   sum(hits) as totalHits,
   sum(bytes) as totalBytes,
   APPROX_QUANTILES(hits, 1000)[OFFSET(100)] AS hits_p10,
