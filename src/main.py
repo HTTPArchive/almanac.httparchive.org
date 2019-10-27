@@ -1,6 +1,6 @@
 import config as config_util
 from csp import csp
-from flask import Flask, render_template as flask_render_template, request
+from flask import Flask, redirect, render_template as flask_render_template, request, url_for
 from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
@@ -15,70 +15,74 @@ logging.basicConfig(level=logging.DEBUG)
 
 def render_template(template, *args, **kwargs):
     year = request.view_args.get('year', DEFAULT_YEAR)
-    supported_languages = SUPPORTED_YEARS.get(year, (DEFAULT_LANGUAGE))
+    supported_languages = SUPPORTED_YEARS.get(year, (DEFAULT_LANGUAGE,))
 
     lang = request.view_args.get('lang')
     language = get_language(lang)
-    kwargs.update(supported_languages=supported_languages, language=language, supported_years=list(SUPPORTED_YEARS.keys()))
+    kwargs.update(supported_languages=supported_languages, year=year, lang=lang, language=language, supported_years=list(SUPPORTED_YEARS.keys()))
     return flask_render_template(template, *args, **kwargs)
 
 
-def get_view_args(lang=None):
+def get_view_args(lang=None, year=None):
     view_args = request.view_args.copy()
     if lang:
         # Optionally overwrite the lang value in the current request.
         view_args.update(lang=lang)
+    if year:
+        view_args.update(year=year)
     return view_args
 
 
-def get_chapter_slug(title):
+def get_chapter_slug(metadata):
+    title = metadata.get('title')
     return title.lower().replace(' ', '-').replace('/', '')
 
 
-# Make this function available in templates.
+def get_chapter_image_dir(metadata):
+    title = metadata.get('title', 'NO TITLE FOUND').replace('/', '_').replace(' ', '_')
+    return '%.2d_%s' % (metadata.get('chapter_number', 0), title)
+
+
+# Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
+app.jinja_env.globals['get_chapter_image_dir'] = get_chapter_image_dir
 
-@app.route('/')
-@app.route('/<lang>/')
+@app.route('/<lang>/<year>/')
 @validate
-def home(lang):
-    return render_template('%s/index.html' % lang)
-
-@app.route('/')
-@app.route('/<lang>/')
-@validate
-def index(lang):
-    return render_template('%s/splash.html' % lang)
-
-
-@app.route('/<year>/outline')
-@app.route('/<lang>/<year>/outline')
-@validate
-def outline(year, lang):
+def home(lang, year):
     config = config_util.get_config(year)
-    return render_template('%s/%s/outline.html' % (lang, year), config=config)
+    return render_template('%s/%s/index.html' % (lang, year), config=config)
+
+@app.route('/')
+@validate
+def root(lang):
+    return redirect(url_for('home', lang=lang, year=DEFAULT_YEAR))
 
 
-@app.route('/<year>/contributors')
+@app.route('/<lang>/<year>/table-of-contents')
+@validate
+def table_of_contents(lang, year):
+    config = config_util.get_config(year)
+    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config)
+
+
 @app.route('/<lang>/<year>/contributors')
 @validate
-def contributors(year, lang):
+def contributors(lang, year):
     config = config_util.get_config(year)
     return render_template('%s/%s/contributors.html' % (lang, year), config=config)
 
 
-@app.route('/<year>/methodology')
 @app.route('/<lang>/<year>/methodology')
 @validate
-def methodology(year, lang):
+def methodology(lang, year):
     return render_template('%s/%s/methodology.html' % (lang, year))
 
 
-@app.route('/<year>/<chapter>/')
 @app.route('/<lang>/<year>/<chapter>')
 @validate
-def chapter(year, chapter, lang):
+def chapter(lang, year, chapter):
     # TODO: Validate the chapter.
     config = config_util.get_config(year)
     return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config)

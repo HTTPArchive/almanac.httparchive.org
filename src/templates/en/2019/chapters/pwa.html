@@ -1,0 +1,188 @@
+{# IMPORTANT!
+
+- `chapter.html` is a "template for templates" used by the `generate_chapters.py` script, hence the strange template syntax (eg, double braces `{% ... %}`)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}
+
+{% extends "en/2019/base_chapter.html" %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/chapter.css">
+{% endblock %}
+
+{% set metadata = {'part_number': 'II', 'chapter_number': 11, 'title': 'Progressive Web Apps', 'authors': ['tomayac', 'jeffposnick'], 'reviewers': ['hyperpress', 'ahmadawais']} %}
+
+{% block main %}
+<section class="main">
+  <h1 class="chapter-title">{{ metadata.get('title') }}</h1>
+  <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="chapter-hero">
+  <h2>Introduction</h2>
+<p>Progressive Web Apps (PWA) are a new class of web applications, building on top of platform primitives 
+like the <a href="https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API">Service Worker APIs</a>. 
+Service workers allow apps to support network-independent loading by acting as a network proxy, 
+intercepting your web app's outgoing requests, and replying with programmatic or cached responses. 
+Service workers can receive push notifications, and synchronize data in the background even when 
+the corresponding app is not running. Additional, service workers — together with 
+<a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">Web App Manifests</a> — 
+allow users to install PWAs to their devices’ home screens.</p>
+<p>Service workers were <a href="https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html">first implemented in Chrome 40</a>, 
+back in December 2014, and the term Progressive Web Apps was 
+<a href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">coined by Frances Berriman and Alex Russell</a> 
+in 2015. As service workers are now finally <a href="https://jakearchibald.github.io/isserviceworkerready/">implemented in all major browsers</a>, 
+we were wondering how many PWAs are actually out there, and how do they make use of these new technologies? 
+Certain advanced APIs like <a href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync</a> 
+are currently still <a href="https://caniuse.com/#feat=background-sync">only available on Chromium-based browsers</a>, 
+so as an additional question, we looked into which features these PWAs actually use.</p>
+<p>All data in the HTTP Archive can be <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/docs/bigquery-gettingstarted.md">queried through BigQuery</a>,
+where multiple tables are available in the <code>httparchive</code> project. As these tables tend to get fairly big, 
+they are partitioned, but multiple associated tables can be queried using the <a href="https://cloud.google.com/bigquery/docs/querying-wildcard-tables">wildcard symbol '*'</a>.
+For our research, three families of tables are relevant:</p>
+<ul>
+<li><code>httparchive.lighthouse.*</code>, which contains data about <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> runs. Note that Lighthouse data is only available for mobile pages.</li>
+<li><code>httparchive.pages.*</code>, which contain the JSON-encoded parent documents’ HAR data.</li>
+<li><code>httparchive.response_bodies.*</code>, which contains the raw response bodies of all resources and sub-resources of all sites in the archive.</li>
+</ul>
+<h2>Service Workers</h2>
+<h3>Service Worker Registrations and Installability</h3>
+<p>The first metric we explore are service worker installations. Looking at the data exposed through 
+feature counters in the HTTP Archive, we find that 0.44% of all desktop and 0.37% of all mobile pages 
+register a service worker, and both curves over time are steeply growing. Now this might not look overly 
+impressive, but taking traffic data from Chrome Platform Status into account, we can see that about 
+<a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">a service worker controlled 15% of all page loads</a>,
+which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.</p>
+<p>&lt;timeseries chart of 11_01b&gt;</p>
+<p><strong>Figure 1:</strong> Service Worker installation over time for desktop and mobile</p>
+<p>Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages are <a href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">installable</a>,
+that is, they pass Lighthouse’s <em>user can be prompted to install the web app</em> test. 
+Lighthouse tests currently are only available for mobile pages. To control the install experience, 
+0.82% of all desktop and 0.94% of all mobile pages use the <a href="https://w3c.github.io/manifest/#beforeinstallpromptevent-interface"><code>OnBeforeInstallPrompt</code> interface</a>.</p>
+<h3>Service Worker Events</h3>
+<p>In a service worker one can <a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle">listen for a number of events</a>:</p>
+<ul>
+<li><code>install</code>, which occurs upon service worker installation. </li>
+<li><code>activate</code>, which occurs upon service worker activation. </li>
+<li><code>fetch</code>, which occurs whenever a resource is fetched.</li>
+<li><code>push</code>, which occurs when a push notification arrives.</li>
+<li><code>notificationclick</code>, which occurs when a notification is being clicked.</li>
+<li><code>notificationclose</code>, which occurs when a notification is being closed.
+<code>- message</code>, which occurs when a message sent via <code>postMessage()</code>  arrives.</li>
+<li><code>sync</code>, which occurs when a Background Sync event occurs.</li>
+</ul>
+<p>We have examined which of these events are being listened to by service workers we could find in the HTTP Archive. 
+The results for mobile and desktop are very similar with <code>fetch</code>, <code>install</code>, and <code>activate</code> being the three 
+most popular events, followed by <code>notificationclick</code> and <code>push</code>. If we interpret these results, offline use 
+cases that service workers enable are the most attractive feature for app developers, far ahead of 
+push notifications. Due to its limited availability, and less common use case, background sync doesn’t 
+play a significant role at the moment.</p>
+<p>&lt;bar chart of 11_03 mobile&gt;</p>
+<p><strong>Figure 2a:</strong> Service worker events on mobile, ordered by decreasing frequency.</p>
+<p>&lt;bar chart of 11_03 desktop&gt;</p>
+<p><strong>Figure 2b:</strong> Service worker events on desktop, ordered by decreasing frequency.</p>
+<h3>Service Worker File Sizes</h3>
+<p>File size or lines of code are in general a bad proxy for the complexity of the task at hand. 
+In this case, however, it is definitely interesting to compare (compressed) file sizes of service workers 
+for mobile and desktop. The median service worker file on desktop is 895 bytes, whereas on mobile it’s 694 bytes. 
+Throughout all percentiles desktop service workers are larger than mobile service workers. 
+We note that these stats don’t account for dynamically imported scripts through the 
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts"><code>importScripts()</code></a> method, 
+which likely skews the results higher.</p>
+<p>&lt;distribution of 11_03b mobile&gt;</p>
+<p><strong>Figure 3a:</strong> Percentiles of service worker file sizes on mobile.</p>
+<p>&lt;distribution of 11_03b desktop&gt;</p>
+<p><strong>Figure 3b:</strong> Percentiles of service worker file sizes on desktop.</p>
+<h2>Web App Manifests</h2>
+<h3>Web App Manifest Properties</h3>
+<p>The web app manifest is a simple JSON file that tells the browser about a web application 
+and how it should behave when installed on the user's mobile device or desktop. A typical 
+manifest file includes information about the app name, icons it should use, the start URL 
+it should open at when launched, and more. Only 1.54% of all encountered manifests were 
+invalid JSON, and the rest parsed correctly.</p>
+<p>We looked at the different properties defined by the 
+<a href="https://w3c.github.io/manifest/#webappmanifest-dictionary">specification</a>, 
+and also considered non-standard proprietary properties. According to the Web App Manifest spec, 
+the following properties are allowed: <code>dir</code>, <code>lang</code>, <code>name</code>, <code>short_name</code>, <code>description</code>, 
+<code>icons</code>, <code>screenshots</code>, <code>categories</code>, <code>iarc_rating_id</code>, <code>start_url</code>, <code>display</code>, <code>orientation</code>, 
+<code>theme_color</code>, <code>background_color</code>, <code>scope</code>, <code>serviceworker</code>, <code>related_applications</code>, and 
+<code>prefer_related_applications</code>. The only property that we didn’t observe in the wild was 
+<code>iarc_rating_id</code>, which is a string that represents the International Age Rating Coalition (IARC) 
+certification code of the web application. It is intended to be used to determine which ages 
+the web application is appropriate for. The proprietary properties we encountered still 
+frequently were <code>gcm_sender_id</code> and <code>gcm_user_visible_only</code> from the legacy 
+Google Cloud Messaging (GCM) service. Interestingly there’re almost no differences between mobile 
+and desktop. On both platforms, however, there’s a long tail of properties that are not interpreted 
+by browsers but that contain potentially useful metadata like <code>author</code> or <code>version</code>. We also found 
+a non-trivial amount of mistyped properties, our favorite being <code>shot_name</code>. An interesting outlier 
+is the <code>serviceworker</code> property which is standard, but not implemented by any browser vendor — 
+nevertheless, it was found on 0.09% of all web app manifests used by mobile and desktop pages.</p>
+<p>&lt;bar chart of 11_04 mobile&gt;</p>
+<p><strong>Figure 4a:</strong> Web App Manifest properties ordered by decreasing popularity on mobile.</p>
+<p>&lt;bar chart of 11_04 mobile&gt;</p>
+<p><strong>Figure 4b:</strong> Web App Manifest properties ordered by decreasing popularity on desktop.</p>
+<h3>Display Values</h3>
+<p>Looking at the values developers set for the <code>display</code> property, it becomes immediately clear 
+that they want PWAs to be perceived as “proper” apps that don’t  reveal their web technology origins. 
+By choosing <code>"standalone"</code>, they make sure no browser UI is shown to the end-user. This is reflected 
+by the majority of apps that make use of the <code>prefers_related_applications</code> property: more that 97% 
+of both mobile and desktop applications do <em>not</em> prefer native applications.</p>
+<11_04c mobile>
+
+<p><strong>Figure 5a:</strong> Values for the <code>display</code> property on mobile.</p>
+<11_04c desktop>
+
+<p><strong>Figure 5b:</strong> Values for the <code>display</code> property on desktop.</p>
+<h3>Category Values</h3>
+<p>The <code>categories</code> member describes the expected application categories to which the web application belongs. 
+It is only meant as a hint to catalogs or stores listing web applications, and it is expected that 
+these will make a best effort to find appropriate categories (or category) under which to list the 
+web application. There were not too many manifests that made use of the property, but it is 
+interesting to see the shift from <em>shopping</em> being the most popular category on mobile to <em>business</em>, 
+<em>technology</em>, and <em>web</em> (whatever may be meant with that) on desktop that share the first place evenly.</p>
+<11_04d mobile>
+
+<p><strong>Figure 6a:</strong> Values for the <code>categories</code> property on mobile.</p>
+<11_04d desktop>
+
+<p><strong>Figure 6b:</strong> Values for the <code>categories</code> property on desktop.</p>
+<h3>Icon Sizes</h3>
+<p>Lighthouse <a href="https://developers.google.com/web/tools/lighthouse/audits/manifest-contains-192px-icon">requires</a> 
+at least an icon sized 192×192, but common favicon generation tools create a plethora of other sizes, too. 
+Lighthouse’s rule is probably the culprit for 192×192 being the most popular choice of icon size on both 
+desktop and mobile, despite <a href="https://developers.google.com/web/fundamentals/web-app-manifest#icons">Google’s documentation</a> 
+additionally explicitly recommending 512×512, which doesn’t show as a particularly prominent option.</p>
+<11_04f mobile>
+
+<p><strong>Figure 7a:</strong> Popular icon sizes on mobile.</p>
+<11_04f desktop>
+
+<p><strong>Figure 7b:</strong> Popular icon sizes on desktop.</p>
+<h3>Orientation Values</h3>
+<p>The valid values for the <code>orientation</code> property are <a href="https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype">defined</a>
+in the Screen Orientation API specification. Namely there are <code>"any"</code>, <code>"natural"</code>, <code>"landscape"</code>,<br>
+<code>"portrait"</code>, <code>"portrait-primary"</code>, <code>"portrait-secondary"</code>, <code>"landscape-primary"</code>, and <code>"landscape-secondary"</code>. 
+Portrait orientation is the clear winner on both platforms, followed by any orientation.</p>
+<11_04g mobile>
+
+<p><strong>Figure 8a:</strong> Popular orientation values on mobile.</p>
+<11_04g desktop>
+
+<p><strong>Figure 8b:</strong> Popular orientation values on desktop.</p>
+<h2>Workbox</h2>
+<p>Workbox is a set of libraries that help with common service worker use cases. For instance, Workbox has tools 
+that can plug in to your build process and generate a manifest of files, which are then precached by your 
+service worker. Workbox includes libraries to handle runtime caching, request routing, cache expiration, 
+background sync, and more.</p>
+<p>Given the low-level nature of the service worker APIs, many developers have turned to Workbox as a way of 
+structuring their service worker logic into higher-level, reusable chunks of code. Workbox adoption is also 
+driven by its inclusion as a feature in a number of popular JavaScript framework starter kits, like 
+<a href="https://create-react-app.dev/"><code>create-react-app</code></a> and <a href="https://www.npmjs.com/package/@vue/cli-plugin-pwa">Vue's PWA plugin</a>.</p>
+<p>The HTTP Archive shows that, out of the total population of sites that register a service worker, 
+12.71% of them are using at least one of the Workbox libraries. This percentage is roughly consistent 
+across desktop and mobile, with a slightly lower percentage (11.46%) on mobile compared to desktop (14.36%).</p>
+
+</section>
+{% endblock %}
