@@ -8,7 +8,8 @@ SELECT
   COUNT(0) AS total,
   ROUND(COUNTIF(hasSizes) * 100 / COUNT(0), 2) AS pctSizes,
   ROUND(COUNTIF(hasSrcSet) * 100 / COUNT(0), 2) AS pctSrcSet,
-  ROUND(COUNTIF(hasPicture) * 100 / COUNT(0), 2) AS pctPicture
+  ROUND(COUNTIF(hasPicture) * 100 / COUNT(0), 2) AS pctPicture,
+  ROUND(COUNTIF(hasPicture OR hasSrcSet OR hasSizes) * 100 / COUNT(0), 2) AS anyRespImg
 FROM (
   SELECT
     client,

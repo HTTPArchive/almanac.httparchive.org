@@ -17,13 +17,19 @@ SELECT
   APPROX_QUANTILES(round(100*unoptimizedImagesBytes/(totalImageBytes + 0.1), 2), 1000)[OFFSET(250)] AS pctImageBytes_p25,
   APPROX_QUANTILES(round(100*unoptimizedImagesBytes/(totalImageBytes + 0.1), 2), 1000)[OFFSET(500)] AS pctImageBytes_p50,
   APPROX_QUANTILES(round(100*unoptimizedImagesBytes/(totalImageBytes + 0.1), 2), 1000)[OFFSET(750)] AS pctImageBytes_p75,
-  APPROX_QUANTILES(round(100*unoptimizedImagesBytes/(totalImageBytes + 0.1), 2), 1000)[OFFSET(900)] AS pctImageBytes_p90
+  APPROX_QUANTILES(round(100*unoptimizedImagesBytes/(totalImageBytes + 0.1), 2), 1000)[OFFSET(900)] AS pctImageBytes_p90,
+  APPROX_QUANTILES(unoptimizedImagesSavingsMs, 1000)[OFFSET(100)] AS ms_p10,
+  APPROX_QUANTILES(unoptimizedImagesSavingsMs, 1000)[OFFSET(250)] AS ms_p25,
+  APPROX_QUANTILES(unoptimizedImagesSavingsMs, 1000)[OFFSET(500)] AS ms_p50,
+  APPROX_QUANTILES(unoptimizedImagesSavingsMs, 1000)[OFFSET(750)] AS ms_p75,
+  APPROX_QUANTILES(unoptimizedImagesSavingsMs, 1000)[OFFSET(900)] AS ms_p90
 FROM
 (
   SELECT
     url,
     cast(json_extract_scalar(report, '$.audits.resource-summary.details.items[0].size') AS INT64) totalBytes,
     cast(json_extract_scalar(report, '$.audits.resource-summary.details.items[1].size') AS INT64) totalImageBytes,
+    cast(json_extract_scalar(report, '$.audits.uses-optimized-images.details.overallSavingsMs') AS INT64) unoptimizedImagesSavingsMs,
     cast(json_extract_scalar(report, '$.audits.uses-optimized-images.details.overallSavingsBytes') AS INT64) unoptimizedImagesBytes,
     if(regexp_contains(json_extract(report, '$.audits.uses-optimized-images.details.items'), ','),
       ARRAY_LENGTH(split(json_extract(report, '$.audits.uses-optimized-images.details.items'), ',')), 0) unoptimizedImagesCount
