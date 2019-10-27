@@ -170,11 +170,55 @@
         "authors"
       ]
     },
+    "bagder": {
+      "name": "Daniel Stenberg",
+      "github": "bagder",
+      "twitter": "bagder",
+      "teams": [
+        "reviewers"
+      ]
+    },
+    "bazzadp": {
+      "name": "Barry Pollard",
+      "tagline": "HTTP/2 Chapter Author",
+      "github": "bazzadp",
+      "twitter": "tunetheweb",
+      "teams": [
+        "authors",
+        "reviewers"
+      ]
+    },
+    "dotjs": {
+      "name": "Andrew Galloni",
+      "github": "dotjs",
+      "twitter": "dot_js",
+      "teams": [
+        "reviewers"
+      ]
+    },
     "kjlarson": {
       "name": "Kari Larson",
       "github": "KJLarson",
       "teams": [
         "developers"
+      ]
+    },
+    "paulcalvano": {
+      "name": "Paul Calvano",
+      "github": "paulcalvano",
+      "twitter": "paulcalvano",
+      "teams": [
+        "analysts",
+        "authors",
+        "reviewers"
+      ]
+    },
+    "rmarx": {
+      "name": "Robin Marx",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi",
+      "teams": [
+        "reviewers"
       ]
     },
     "rviscomi": {
