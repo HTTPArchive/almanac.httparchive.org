@@ -13,7 +13,7 @@ FROM
     page,
     countif(
       NET.HOST(url) in ('unpkg.com',
-        'www.jsdelivr.com',
+        'www.jsdelivr.net',
         'cdnjs.cloudflare.com',
         'ajax.aspnetcdn.com',
         'ajax.googleapis.com',
@@ -21,7 +21,7 @@ FROM
         'maxcdn.bootstrapcdn.com',
         'use.fontawesome.com',
         'code.jquery.com',
-        'fonts.google.com')
+        'fonts.googleapis.com')
         ) jscdnHits
   FROM `httparchive.almanac.requests3`
   GROUP BY
