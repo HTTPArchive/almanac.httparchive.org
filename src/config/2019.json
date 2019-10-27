@@ -178,16 +178,6 @@
         "reviewers"
       ]
     },
-    "tunetheweb": {
-      "name": "Barry Pollard",
-      "tagline": "HTTP/2 Chapter Author",
-      "github": "bazzadp",
-      "twitter": "tunetheweb",
-      "teams": [
-        "authors",
-        "reviewers"
-      ]
-    },
     "dotjs": {
       "name": "Andrew Galloni",
       "github": "dotjs",
@@ -230,6 +220,16 @@
       "teams": [
         "authors",
         "developers"
+      ]
+    },
+    "tunetheweb": {
+      "name": "Barry Pollard",
+      "tagline": "HTTP/2 Chapter Author",
+      "github": "bazzadp",
+      "twitter": "tunetheweb",
+      "teams": [
+        "authors",
+        "reviewers"
       ]
     }
   }
