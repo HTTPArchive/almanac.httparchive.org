@@ -101,24 +101,30 @@ Pages using dir:ltr
 ## Spacing
 
 ### Logical Properties
-% of sites using logical props atm
+We estimate that days are numbered for `margin-left` and `padding-top`, to be replaced by their writing direction agnostic, successive, logical property syntax. While we're optimistic, current usage is quite low at 0.67% usage on desktop pages. To us, this feels like a habit change we'll need to develop as an industry, while hopefully training new developers to use the new syntax exclusively. 
+
 <bar chart of 02_05d>
 
 
 ## Decoration
 
 ### Filters
-$ of sites using filters
+Filters are a fun and great way to modify the pixels the browser intends to draw to the screen. It's a post processing effect that is done against a flat version of the element/node/layer it's applied to. Photoshop made them easy to use, then Instagram made them accessible to the masses through bespoke, stylized combinations! They've been around since ~2012, there's 10 of them and they can be combined to create unique effects.
+
+We were excited to see that 78% of stylesheets contain the filter property! That number was also so high it seemed a little fishy, so we dug in and sought to explain the high number. Because let's be honest, filters are neat, but they don't make it into all of our applications and projects. Unless!
+
+Upon further investigation, [FontAwesome](https://fontawesome.com)'s stylesheet comes with some filter usage, as well as a [YouTube](https://youtube.com) embed. Therefore, we believe filter snuck in the back door by piggybacking onto a couple very popular stylesheets. We also believe that `-ms-filter` presence could have been included as well, contributing to the high percent of use. 
 <pie chart of 02_03d>
 
 
 ### Blend Modes
+Blend Modes are similar to filters in the way they are a post processing effect that's done against a flat version of it's target elements, but is unique in that it's concerned with pixel convergence. Said another way, blend modes are how 2 pixels _should_ impact each other when they overlap. Depending on which element is on the top or the bottom, will effect the way the blend mode manipulates the pixels. There are 16 blend modes, let's see which ones are the most popular.
 
-Presence in stylesheets
-<pie chart of 02_04d>
-
-Which are used?
+TODO: chart is pending resolution of [this request](https://docs.google.com/a/google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/edit?disco=AAAADjuwTws)
 <bar chart of 02_04be>
+
+Overall usage of blend modes is much less than filters, but is still enough to be considered moderately used.
+<pie chart of 02_04d>
 
 
 ## Animation
