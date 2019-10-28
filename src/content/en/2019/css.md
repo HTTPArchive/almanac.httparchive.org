@@ -7,9 +7,9 @@ reviewers: [meyerweb, huijing]
 ---
 
 ## Introduction
-Cascading Style Sheets are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle the content and ensure it's adapting properly the requesting user.
+Cascading Style Sheets are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle the content and ensure it's adapting properly to the requesting user.
 
-When describing CSS to those not familiar with web technology, it can be helpful to think of it as the language to paint the walls of the house, describe the size and position of windows and doors, as well as flourishing decorations such as wallpaper or plant life. The fun twist to that story, is that depending on who is walking through the house, a developer can adapt to their preferences or contexts!
+When describing CSS to those not familiar with web technology, it can be helpful to think of it as the language to paint the walls of the house; describing the size and position of windows and doors, as well as flourishing decorations such as wallpaper or plant life. The fun twist to that story, is that depending on the user walking through the house, a developer can adapt the house to that specific user's preferences or contexts!
 
 In this chapter, we'll be inspecting, tallying, and extracting datums about how CSS is used across the web. The goal is to understand holistically what is being used, how they're using it, and to use that information to help inform ourselves (and you) how CSS is growing and being adopted. 
 
@@ -64,7 +64,7 @@ Custom Properties are what many call CSS variables. They're more dynamic than a 
 
 **Figure 1:** Custom Properties growth shown since release
 
-We felt like this was exciting information, since it shows healthy grow of one of our favorite CSS additions. They were available in all major browsers ~2016-2017, so it's fair to say they're fairly new. Many folks are still transitioning from their CSS preprocessor variables to CSS custom properties. We estimate it'll be a few more years until custom properties are the norm.
+We felt like this was exciting information, since it shows healthy growth of one of our favorite CSS additions. They were available in all major browsers ~2016-2017, so it's fair to say they're fairly new. Many folks are still transitioning from their CSS preprocessor variables to CSS custom properties. We estimate it'll be a few more years until custom properties are the norm.
 
 
 
@@ -144,7 +144,7 @@ Percent of viewport lengths used
 <bar chart of 02_018h>
 
 ### @supports & @import
-CSS @supports is a way for CSS to check whether or not something is supported before employing it's usage.
+CSS @supports is a way for the browser to check whether a particular property is supported or not and pass that support scenario to CSS for developer handling.
 
 <bar chart of 02_02f>
 
