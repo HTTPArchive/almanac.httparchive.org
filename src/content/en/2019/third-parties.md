@@ -127,7 +127,7 @@ Analytics is the most popular third-party category found across the web and yet 
 
 There’s also a flip side to user data though: consumption. While analytics is about generating data from your site’s visitors, other third-party resources focus on consuming data about your visitors that is known only by others. Social providers fall squarely into this usage pattern. A site owner _must_ use Facebook resources if they wish to integrate information from a visitor’s Facebook profile into their site. As long as site owners are interested in personalizing their experience with widgets from social networks and leveraging the social networks of their visitors to increase their reach, social integrations are likely to remain the domain of third-party entities for the foreseeable future.
 
-### Monetization
+### Monetize Web Traffic
 
 The open model of the web does not always serve the financial interests of content creators to their liking and many site owners resort to monetizing their sites with advertising. Because building direct relationships with advertisers and negotiating pricing contracts is a relatively difficult and time-consuming process, this concern is largely handled by third-party providers performing targeted advertising and real-time bidding. Widespread negative public opinion, the popularity of ad blocking technology, and regulatory action in major global markets such as Europe pose the largest threat to the continued use of third-party providers for monetization. While it’s unlikely that site owners suddenly strike their own advertising deals or build bespoke ad networks, alternative monetization models like paywalls and experiments like Brave’s [Basic Attention Token](https://basicattentiontoken.org/) have a real chance of shaking up the third-party ad landscape of the future.
 
@@ -157,7 +157,7 @@ The silver lining of such a small number of entities enjoying such large market 
 
 ### Privacy
 
-The abundance of analytics providers and top-heavy concentration of script execution raises two primary privacy concerns for site visitors: the main use case of third-parties is for site owners to track their users and a handful of companies receive information on a large swath of web traffic.
+The abundance of analytics providers and top-heavy concentration of script execution raises two primary privacy concerns for site visitors: the largest use case of third-parties is for site owners to track their users and a handful of companies receive information on a large swath of web traffic.
 
 The interest of site owners in understanding and analyzing user behavior is not malicious on its own, but the widespread and relatively behind-the-scenes nature of web analytics raises valid concerns, and users, companies, and lawmakers have taken notice in recent years with privacy regulation such as [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) in Europe and the [CCPA](https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act) in California. Ensuring that developers handle user data responsibly, treat the user respectfully, and are transparent with what data is collected is key to keeping analytics the most popular third-party category and maintaining the symbiotic nature of analyzing user behavior to deliver future user value.
 
