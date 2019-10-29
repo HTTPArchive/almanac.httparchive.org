@@ -1,3 +1,5 @@
+{% extends "en/2019/base_chapter.html" %}
+
 <!--{# IMPORTANT!
 
 - `chapter.html` is a "template for templates" used by the `generate_chapters.js` script, hence the strange template syntax (eg, mixing ejs and jinja syntax)
@@ -7,8 +9,6 @@
 - if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
-
-{% extends "en/2019/base_chapter.html" %}
 
 {% set metadata = <%- JSON.stringify(metadata) %> %}
 
