@@ -1,42 +1,24 @@
 #standardSQL
 # 04_09a: Client Hints
-CREATE TEMP FUNCTION hasClientHintMeta(payload STRING)
-RETURNS BOOLEAN LANGUAGE js AS '''
-try {
-  var $ = JSON.parse(payload);
-  var almanac = JSON.parse($._almanac);
-  return !!almanac['meta-nodes'].find(meta => meta['http-equiv'].toLowerCase() == 'accept-ch');
-} catch (e) {
-  return null;
-}
-''';
-
-SELECT
-  client,
-  COUNTIF(accept_ch_header) AS accept_ch_header,
-  COUNTIF(accept_ch_meta) AS accept_ch_meta,
-  COUNTIF(accept_ch_header OR accept_ch_meta) AS either,
-  COUNT(0) AS total,
-  ROUND(COUNTIF(accept_ch_header) * 100 / COUNT(0), 2) AS pct_accept_ch_header,
-  ROUND(COUNTIF(accept_ch_meta) * 100 / COUNT(0), 2) AS pct_accept_ch_meta,
-  ROUND(COUNTIF(accept_ch_header OR accept_ch_meta) * 100 / COUNT(0), 2) AS pct_either
-FROM (
+SELECT client,
+  countif(chHTML) chHTMLCount,
+  countif(chHeader) chHeaderCount,
+  countif(chHTML AND chHeader) chBothCount,
+  countif(chHTML OR chHeader) chEitherCount,
+  count(0) as total,
+  round(100*countif(chHTML) / count(0), 2) chHTMLPct,
+  round(100*countif(chHeader) / count(0), 2) chHeaderPct,
+  round(100*countif(chHTML AND chHeader) / count(0), 2) chBothPct,
+  round(100*countif(chHTML OR chHeader) / count(0), 2) chEitherPct
+FROM
+(
   SELECT
     client,
     page,
-    REGEXP_CONTAINS(LOWER(respOtherHeaders), 'accept-ch =') AS accept_ch_header
-  FROM
-    `httparchive.almanac.requests`
-  WHERE
-    firstHtml)
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page,
-    hasClientHintMeta(payload) AS accept_ch_meta
-  FROM
-    `httparchive.pages.2019_07_01_*`)
-USING
-  (client, page)
+    regexp_contains(body, r'(?is)<meta[^><]*Accept-CH\b') chHTML,
+    regexp_contains(respOtherHeaders, r'(?is)Accept-CH = ') chHeader
+  FROM `httparchive.almanac.summary_response_bodies`
+  WHERE firstHtml
+)
 GROUP BY
   client
