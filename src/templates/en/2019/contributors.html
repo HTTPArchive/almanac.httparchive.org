@@ -219,12 +219,15 @@ for (var i = 0; i < buttons.length; i++) {
 
     //on first filter, hide all except that one
     if(contributors.classList.length == (teams.length + 1)) {
-
         teams.forEach(function(team) {
             if(team === teamId) {
                 return;
             }
             document.querySelector('.' + team).classList.toggle(team);
+        });
+    } else if (contributors.classList.length == 2 && contributors.classList.contains(teamId)) {
+        teams.forEach(function(team) {
+            contributors.classList.add(team);
         });
     } else {
         contributors.classList.toggle(teamId);
