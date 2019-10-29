@@ -185,7 +185,7 @@
         </div>
         {% endif %}
         <div class="contributor-teams">
-          {% for id in contributor.teams %}
+          {% for id in contributor.teams | sort() %}
             <span class="contributor-team team-{{ id }}">{{ config.teams[id].name }}</span>
           {% endfor %}
         </div>
