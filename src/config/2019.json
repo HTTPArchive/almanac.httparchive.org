@@ -163,75 +163,545 @@
     }
   },
   "contributors": {
-    "argyleink": {
+    "abigail-klein": {
+      "name": "Abigail Klein",
+      "teams": [
+        "author"
+      ],
+      "github": "kleinab"
+    },
+    "adam-argyle": {
       "name": "Adam Argyle",
-      "github": "argyleink",
       "teams": [
-        "authors"
-      ]
+        "brainstorm",
+        "author"
+      ],
+      "github": "argyleink"
     },
-    "bagder": {
-      "name": "Daniel Stenberg",
-      "github": "bagder",
-      "twitter": "bagder",
+    "addy-osmani": {
+      "name": "Addy Osmani",
       "teams": [
-        "reviewers"
-      ]
+        "brainstorm"
+      ],
+      "github": "addyosmani"
     },
-    "dotjs": {
+    "ahmad-awais": {
+      "name": "Ahmad Awais",
+      "teams": [
+        "brainstorm",
+        "reviewer"
+      ],
+      "github": "ahmadawais"
+    },
+    "alan-kent": {
+      "name": "Alan Kent",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "alankent"
+    },
+    "alberto-medina": {
+      "name": "Alberto Medina",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "amedina"
+    },
+    "alex-russell": {
+      "name": "Alex Russell",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "slightlyoff"
+    },
+    "andrew-galloni": {
       "name": "Andrew Galloni",
-      "github": "dotjs",
-      "twitter": "dot_js",
       "teams": [
-        "reviewers"
-      ]
+        "analyst"
+      ],
+      "github": "dotjs"
     },
-    "kjlarson": {
-      "name": "Kari Larson",
-      "github": "KJLarson",
+    "andrew-noblet": {
+      "name": "Andrew Noblet",
       "teams": [
-        "developers"
-      ]
+        "developer"
+      ],
+      "github": "anoblet"
     },
-    "paulcalvano": {
-      "name": "Paul Calvano",
-      "github": "paulcalvano",
-      "twitter": "paulcalvano",
+    "andy-davies": {
+      "name": "Andy Davies",
       "teams": [
-        "analysts",
-        "authors",
-        "reviewers"
-      ]
+        "author"
+      ],
+      "github": "andydavies"
     },
-    "rmarx": {
-      "name": "Robin Marx",
-      "github": "rmarx",
-      "twitter": "programmingart",
+    "artur-janc": {
+      "name": "Artur Janc",
       "teams": [
-        "reviewers"
-      ]
+        "brainstorm"
+      ],
+      "github": "arturjanc"
     },
-    "rviscomi": {
-      "name": "Rick Viscomi",
-      "tagline": "Web Almanac PM",
-      "gravatar": "rviscomi@google.com",
-      "github": "rviscomi",
-      "twitter": "rick_viscomi",
+    "aymen-loukil": {
+      "name": "Aymen Loukil",
       "teams": [
-        "authors",
-        "developers"
-      ]
+        "reviewer",
+        "developer"
+      ],
+      "github": "AymenLoukil"
     },
-    "tunetheweb": {
+    "barry-pollard": {
       "name": "Barry Pollard",
-      "tagline": "HTTP/2 Chapter Author",
-      "gravatar": "tunetheweb",
-      "github": "bazzadp",
-      "twitter": "tunetheweb",
       "teams": [
-        "authors",
-        "reviewers"
+        "brainstorm",
+        "author"
+      ],
+      "github": "bazzadp"
+    },
+    "brian-kardell": {
+      "name": "Brian Kardell",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "bkardell"
+    },
+    "carlos-araya": {
+      "name": "Carlos Araya",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "caraya"
+    },
+    "catalin-rosu": {
+      "name": "Catalin Rosu",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "catalinred"
+    },
+    "chen-hui-jing": {
+      "name": "Chen Hui Jing",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "huijing"
+    },
+    "colin-bendell": {
+      "name": "Colin Bendell",
+      "teams": [
+        "brainstorm",
+        "author",
+        "analyst"
+      ],
+      "github": "colinbendell"
+    },
+    "daniel-stenberg": {
+      "name": "Daniel Stenberg",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "bagder"
+    },
+    "dave-crossland": {
+      "name": "Dave Crossland",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "davelab6"
+    },
+    "david-fox": {
+      "name": "David Fox",
+      "teams": [
+        "brainstorm",
+        "author",
+        "reviewer",
+        "analyst"
+      ],
+      "github": "obto"
+    },
+    "doug-sillars": {
+      "name": "Doug Sillars",
+      "teams": [
+        "brainstorm",
+        "author",
+        "analyst"
+      ],
+      "github": "dougsillars"
+    },
+    "eric-portis": {
+      "name": "Eric Portis",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "eeeps"
+    },
+    "gabriel-de-gennaro": {
+      "name": "Gabriel De Gennaro",
+      "teams": [
+        "designer"
       ]
+    },
+    "giacomo-pignoni": {
+      "name": "Giacomo Pignoni",
+      "teams": [
+        "developer"
+      ],
+      "github": "GiacomoPignoni"
+    },
+    "heng-yeow": {
+      "name": "Heng Yeow",
+      "teams": [
+        "developer"
+      ],
+      "github": "tanhengyeow"
+    },
+    "henri-helvetica": {
+      "name": "Henri Helvetica",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "henrisGH"
+    },
+    "houssein-djirdeh": {
+      "name": "Houssein Djirdeh",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "housseindjirdeh"
+    },
+    "jared-white": {
+      "name": "Jared White",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "jaredcwhite"
+    },
+    "jason-haralson": {
+      "name": "Jason Haralson",
+      "teams": [
+        "analyst"
+      ],
+      "github": "jrharalson"
+    },
+    "jeff-posnick": {
+      "name": "Jeff Posnick",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "ithib.com\/jeffposnick"
+    },
+    "john-fox": {
+      "name": "John Fox",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "clarkeclark"
+    },
+    "john-teague": {
+      "name": "John Teague",
+      "teams": [
+        "brainstorm",
+        "reviewer",
+        "developer"
+      ],
+      "github": "hyperpress"
+    },
+    "jose-m-perez": {
+      "name": "Jos\u00e9 M. P\u00e9rez",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "JMPerez"
+    },
+    "kari-larson": {
+      "name": "Kari Larson",
+      "teams": [
+        "developer"
+      ],
+      "github": "KJLarson"
+    },
+    "katie-hempenius": {
+      "name": "Katie Hempenius",
+      "teams": [
+        "brainstorm",
+        "author",
+        "analyst"
+      ],
+      "github": "khempenius"
+    },
+    "laura-eberly": {
+      "name": "Laura Eberly",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "ljme"
+    },
+    "msakamaki": {
+      "name": "M.Sakamaki",
+      "teams": [
+        "developer",
+        "translator"
+      ],
+      "github": "MSakamaki"
+    },
+    "malek-hakim": {
+      "name": "Malek Hakim",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "hakimelek"
+    },
+    "mark-nottingham": {
+      "name": "Mark Nottingham",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "mnot"
+    },
+    "mark-zeman": {
+      "name": "Mark Zeman",
+      "teams": [
+        "brainstorm",
+        "reviewer"
+      ],
+      "github": "zeman"
+    },
+    "martin-splitt": {
+      "name": "Martin Splitt",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "AVGP"
+    },
+    "mathias-bynens": {
+      "name": "Mathias Bynens",
+      "teams": [
+        "brainstorm",
+        "reviewer"
+      ],
+      "github": "mathiasbynens"
+    },
+    "matt-ludwig": {
+      "name": "Matt Ludwig",
+      "teams": [
+        "reviewer"
+      ]
+    },
+    "matthew-phillips": {
+      "name": "Matthew Phillips",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "matthewp"
+    },
+    "mike-geyser": {
+      "name": "Mike Geyser",
+      "teams": [
+        "developer"
+      ],
+      "github": "mikegeyser"
+    },
+    "natasha-kosoglov": {
+      "name": "Natasha Kosoglov",
+      "teams": [
+        "reviewer"
+      ]
+    },
+    "nektarios-paisios": {
+      "name": "Nektarios Paisios",
+      "teams": [
+        "author"
+      ]
+    },
+    "noah-blon": {
+      "name": "Noah Blon",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "noahblon"
+    },
+    "patrick-hulce": {
+      "name": "Patrick Hulce",
+      "teams": [
+        "brainstorm",
+        "author",
+        "analyst"
+      ],
+      "github": "patrickhulce"
+    },
+    "paul-calvano": {
+      "name": "Paul Calvano",
+      "teams": [
+        "brainstorm",
+        "author",
+        "analyst"
+      ],
+      "github": "paulcalvano"
+    },
+    "rachel-costello": {
+      "name": "Rachel Costello",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "rachellcostello"
+    },
+    "raghu-ramakrishnan": {
+      "name": "Raghu Ramakrishnan",
+      "teams": [
+        "analyst"
+      ],
+      "github": "raghuramakrishnan71"
+    },
+    "renee-johnson": {
+      "name": "Renee Johnson",
+      "teams": [
+        "author"
+      ],
+      "github": "ernee"
+    },
+    "rick-viscomi": {
+      "name": "Rick Viscomi",
+      "teams": [
+        "brainstorm",
+        "author",
+        "reviewer",
+        "analyst",
+        "developer"
+      ],
+      "github": "rviscomi"
+    },
+    "rory-hewitt": {
+      "name": "Rory Hewitt",
+      "teams": [
+        "brainstorm"
+      ]
+    },
+    "sam-dutton": {
+      "name": "Sam Dutton",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "samdutton"
+    },
+    "scott-helme": {
+      "name": "Scott Helme",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "ScottHelme"
+    },
+    "sergey-chernyshev": {
+      "name": "Sergey Chernyshev",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "sergeychernyshev"
+    },
+    "simon-pieters": {
+      "name": "Simon Pieters",
+      "teams": [
+        "brainstorm"
+      ],
+      "github": "zcorpan"
+    },
+    "susie-lu": {
+      "name": "Susie Lu",
+      "teams": [
+        "designer"
+      ]
+    },
+    "tammy-everts": {
+      "name": "Tammy Everts",
+      "teams": [
+        "author"
+      ],
+      "github": "tammyeverts"
+    },
+    "tj-monserrat": {
+      "name": "TJ Monserrat",
+      "teams": [
+        "analyst"
+      ],
+      "github": "tjmonsi"
+    },
+    "tom-steiner": {
+      "name": "Tom Steiner",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "tomayac"
+    },
+    "tommy-hodgins": {
+      "name": "Tommy Hodgins",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "tomhodgins"
+    },
+    "una-kravets": {
+      "name": "Una Kravets",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "una"
+    },
+    "vamsee-jasti": {
+      "name": "Vamsee Jasti",
+      "teams": [
+        "reviewer"
+      ],
+      "github": "jasti"
+    },
+    "vincent-terrasi": {
+      "name": "Vincent Terrasi",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "voltek62"
+    },
+    "yoav-weiss": {
+      "name": "Yoav Weiss",
+      "teams": [
+        "brainstorm",
+        "reviewer"
+      ],
+      "github": "yoavweiss"
+    },
+    "yohan-totting": {
+      "name": "Yohan Totting",
+      "teams": [
+        "developer"
+      ],
+      "github": "tyohan"
+    },
+    "yvo-schaap": {
+      "name": "Yvo Schaap",
+      "teams": [
+        "brainstorm",
+        "author",
+        "analyst",
+        "developer"
+      ],
+      "github": "ymschaap"
+    },
+    "zach-leatherman": {
+      "name": "Zach Leatherman",
+      "teams": [
+        "brainstorm",
+        "author"
+      ],
+      "github": "zachleat"
     }
   }
 }
