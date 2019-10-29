@@ -4,6 +4,11 @@
 {{ metadata.get('title') }} | 2019 | The Web Almanac by HTTP Archive
 {% endblock %}
 
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css">
+{% endblock %}
+
 {% macro render_byline() %}
   <div id="byline">By
   {% for author in metadata.get('authors') %}
