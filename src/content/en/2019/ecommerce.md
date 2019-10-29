@@ -64,7 +64,8 @@ Of these platforms, six got more than 0.1% each of all web page requests in this
 In addition, these results do not show variation by country, by size of site, or other similar metrics.
 
 <figure>
-// Chart: 13_02 • Top shops, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1984468159
+// Chart 13_02: Top shops
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1984468159
 <figcaption>Figure 2. Percentage of home pages on e-commerce platforms.</figcaption>
 </figure>
 
@@ -88,7 +89,8 @@ In addition, these results do not show variation by country, by size of site, or
 According to Web Almanac data there are 110 ecommerce platforms that each get less than 0.1% of either mobile or desktop page requests. Around 60 of these get less than 0.01% of page requests on mobile or desktop.
 
 <figure>
-// Chart: 13_02 • Number of home pages on each e-commerce platform, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
+// Chart 13_02: Number of home pages on each e-commerce platform
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
 <figcaption>Figure 4. Number of pages on each e-commerce platform: from the most popular to the least popular.</figcaption>
 </figure>
 
@@ -98,7 +100,8 @@ According to Web Almanac data there are 110 ecommerce platforms that each get le
 1.52% of requests on mobile and 1.59% on desktop are for home pages on the 110 other ecommerce platforms.
 
 <figure>
-// Chart: 13_02 • Percentage of home pages: top six versus long tail, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
+// Chart 13_02: Percentage of home pages: top six versus long tail
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
 <figcaption>Figure 5. Percentage of home pages: top six versus long tail.</figcaption>
 </figure>
 
@@ -113,7 +116,8 @@ According to Web Almanac data there are 110 ecommerce platforms that each get le
 In total, 9.39% of all requests on mobile and 9.65% on desktop in this study were for home pages on ecommerce platforms.
 
 <figure>
-// Chart: 13_02b • % Ecommerce (any shop), https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
+// Chart 13_02b : % Ecommerce (any shop)
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
 <figcaption>Figure 6. Percentage of home pages on an e-commerce platform.</figcaption>
 </figure>
 
@@ -128,12 +132,14 @@ In total, 9.39% of all requests on mobile and 9.65% on desktop in this study wer
 'Payload' means all the bytes to load a page, including HTML, CSS, JavaScript, JSON, XML, images, audio and video.
 
 <figure>
-// Chart: 13_09d • Total payload for pages on ecommerce platforms (MB), https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=2073072298
+// Chart 13_09d: Total payload for pages on ecommerce platforms (MB)
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=2073072298
 <figcaption>Figure 7. Total payload for pages on ecommerce platforms (MB).</figcaption>
 </figure>
 
 <figure>
-// Chart: 13_09d • Total requests for pages on ecommerce platforms, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=2073072298
+// Chart 13_09d: Total requests for pages on ecommerce platforms
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=2073072298
 <figcaption>Figure 8. Total requests for pages on ecommerce platforms.</figcaption>
 </figure>
 
@@ -169,7 +175,8 @@ In total, 9.39% of all requests on mobile and 9.65% on desktop in this study wer
 The charts below are for desktop requests: see the spreadsheet for mobile stats.
 
 <figure>
-// Chart: 13_09d • Ecommerce platforms: requests by type, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=878794652
+// Chart 13_09d: Ecommerce platforms: requests by type
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=878794652
 <figcaption>Figure 9. Ecommerce platforms: payload by type.</figcaption>
 </figure>
 
@@ -199,11 +206,13 @@ The charts below are for desktop requests: see the spreadsheet for mobile stats.
 
 
 <figure>
-// Chart: 13_09d • Ecommerce platforms: distribution of HTML payload size, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=81509282
+// Chart 13_09d: Ecommerce platforms: distribution of HTML payload size
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=81509282
 <figcaption>Figure 11. Ecommerce platforms: distribution of HTML payload size.</figcaption>
 </figure>
 
 <figure>
+
 | Percentile | 10    | 25    | 50    | 75    | 90     |
 |:-----------|:------|:------|:------|:------|:-------|
 | Desktop    | 12.45 | 19.8  | 35.56 | 66.08 | 117.74 |
@@ -218,7 +227,7 @@ The charts below are for desktop requests: see the spreadsheet for mobile stats.
 -  To reiterate: this study was only able to request home pages.
 -  HTML payload may include other code such as JSON, JavaScript or CSS in an HTML page request.
 
-## What it means
+### What it means
 
 -  The median HTML payload size for home pages on ecommerce platforms is 33.8 KB on mobile and 35.56 KB on desktop.
 -  10% of home pages on ecommerce platforms have an HTML payload of over 115 KB.
@@ -236,16 +245,19 @@ The charts below are for desktop requests: see the spreadsheet for mobile stats.
 ![image](insert_image_url_here)
 
 <figure>
-// Chart 13_06: Image payload by percentile (KB), https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=916461214
+// Chart 13_06: Image payload by percentile (KB)
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=916461214
 <figcaption>Figure 13. Image payload by percentile (KB).</figcaption>
 </figure>
 
 <figure>
-// Chart 13_06: Number of image requests by percentile, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=916461214
+// Chart 13_06: Number of image requests by percentile
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=916461214
 <figcaption>Figure 14. Number of image requests by percentile.</figcaption>
 </figure>
 
 <figure>
+
 |         | Number of images | Image payload (KB) |
 |:--------|:-----------------|:-------------------|
 | Mobile  | 37               | 1,517              |
@@ -255,6 +267,7 @@ The charts below are for desktop requests: see the spreadsheet for mobile stats.
 </figure>
 
 <figure>
+
 |         | Number of images | Image payload (KB) |
 |:--------|:-----------------|:-------------------|
 | Mobile  | 90               | 5,993              |
@@ -292,7 +305,8 @@ The charts below are for desktop requests: see the spreadsheet for mobile stats.
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1049425091)
 
 <figure>
-// Chart 13_06b: Popular image formats, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1240367519
+// Chart 13_06b: Popular image formats
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1240367519
 <figcaption>Figure 17. Popular image formats.</figcaption>
 </figure>
 
@@ -328,7 +342,8 @@ WebP is [supported by all modern browsers other than Safari](https://caniuse.com
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1866746948)
 
 <figure>
-// Chart 13_06c: Image dimensions, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1050583521
+// Chart 13_06c: Image dimensions
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1050583521
 <figcaption>Figure 18. Image dimensions by percentile.</figcaption>
 </figure>
 
@@ -374,12 +389,14 @@ WebP is [supported by all modern browsers other than Safari](https://caniuse.com
 Many websites — especially online stores — load a significant amount of code and content from third parties: for analytics, A/B testing, customer behaviour tracking, advertising and social media support. Third party content can have a [significant impact on performance](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript).
 
 <figure>
-// Chart 13_09: Third party requests and bytes, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1605504516
+// Chart 13_09: Third party requests and bytes
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1605504516
 <figcaption>Figure 20. Requests for third party content.</figcaption>
 </figure>
 
 <figure>
-// Chart 13_09: Third party requests and bytes, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1605504516
+// Chart 13_09: Third party requests and bytes
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1605504516
 <figcaption>Figure 21. Total third party payload.</figcaption>
 </figure>
 
@@ -452,7 +469,7 @@ Many websites — especially online stores — load a significant amount of code
 
 ---
 
-## Third party requests/bytes per platform
+## Third party requests and payload per platform
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1914856197)
 
@@ -461,7 +478,8 @@ Many websites — especially online stores — load a significant amount of code
 See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1914856197) for desktop data.
 
 <figure>
-// Chart 13_09b: 3P requests/bytes per platform, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=281168323
+// Chart 13_09b: 3P requests/bytes per platform
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=281168323
 <figcaption>Figure 23. Third party requests from mobile home pages.</figcaption>
 </figure>
 
@@ -480,7 +498,8 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 </figure>
 
 <figure>
-// Chart 13_09b: 3P requests/bytes per platform, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=281168323
+// Chart 13_09b: 3P requests/bytes per platform
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=281168323
 <figcaption>Figure 25. Total third party payload for mobile home pages.</figcaption>
 </figure>
 
@@ -518,12 +537,14 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=758228558)
 
 <figure>
-// Chart 13_09c: 3P requests/bytes per category, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=842081746
+// Chart 13_09c: 3P requests/bytes per category
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=842081746
 <figcaption>Figure 27. Median number of third party requests from home pages.</figcaption>
 </figure>
 
 <figure>
-// Chart 13_09c: 3P requests/bytes per category, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=842081746
+// Chart 13_09c: 3P requests/bytes per category
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=842081746
 <figcaption>Figure 28. Median total third party payload.</figcaption>
 </figure>
 
@@ -567,7 +588,8 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1279520266)
 
 <figure>
-// Chart 13_11: Top ad providers >=1%, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1621252176
+// Chart 13_11: Top ad providers >=1%
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1621252176
 
 <figcaption>Figure 31. Top ad providers.</figcaption>
 </figure>
@@ -607,7 +629,8 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 </figure>
 
 <figure>
-// Chart 13_08: CrUX FCP, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=498270258
+// Chart 13_08: CrUX FCP
+// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=498270258
 <figcaption>Figure 33. Top six ecommerce platforms: First Contentful Paint.</figcaption>
 </figure>
 
