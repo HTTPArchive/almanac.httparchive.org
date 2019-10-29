@@ -172,7 +172,7 @@
     {% for id, contributor in config.contributors.items() %}
       <div class="contributor {{ ' '.join(contributor.teams) }}">
         <img class="contributor-avatar" src="{% if contributor.avatar %}{{contributor.avatar}}&s=200{% else %}data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
-{% endif %}" height="100" width="100" alt="{{ contributor.name }} avatar">
+{% endif %}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy">
         <div class="contributor-name">{{ contributor.name }}</div>
         {% if contributor.twitter or contributor.github %}
         <div class="contributor-social">
