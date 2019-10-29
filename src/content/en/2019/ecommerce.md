@@ -20,11 +20,11 @@ An 'ecommerce platform' is a set of software or services that enables you to cre
 -  Software platforms such as [Magento Open Source](https://magento.com/products/magento-open-source) which you set up, host and manage yourself. These platforms can be powerful and flexible but may be  more complex to set up and run than services such as Shopify.
 -  Hosted platforms such as [Magento Commerce](https://magento.com/products/magento-commerce) that offer the same features as their self-hosted counterparts, except that hosting is managed as a service by a third party.
 
-<aside>This analysis only includes sites built on an ecommerce platform.
+<aside>This analysis could only detect sites built on an ecommerce platform.
 <br><br>
 This means that most large online stores and marketplaces — such as Amazon, JD, and eBay — are not included here.
 <br><br>
-Also note that the data here is for home pages only.</aside>
+Also note that the data here is for home pages only: not category, product or other pages.</aside>
 
 ## Platform detection
 
@@ -65,7 +65,7 @@ In addition, these results do not show variation by country, by size of site, or
 
 <figure>
 // Chart: 13_02 • Top shops, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1984468159
-<figcaption>Figure XX. Percentage of home pages on e-commerce platforms.</figcaption>
+<figcaption>Figure 2. Percentage of home pages on e-commerce platforms.</figcaption>
 </figure>
 
 <figure>
@@ -79,7 +79,7 @@ In addition, these results do not show variation by country, by size of site, or
 | Bigcommerce | 0.19   | 0.22    |
 | Shopware    | 0.12   | 0.11    |
 
-<figcaption>Figure 2. Top six ecommerce platforms detected in the Web Almanac study</figcaption>
+<figcaption>Figure 3. Top six ecommerce platforms detected in the Web Almanac study</figcaption>
 </figure>
 
 
@@ -89,7 +89,7 @@ According to Web Almanac data there are 110 ecommerce platforms that each get le
 
 <figure>
 // Chart: 13_02 • Number of home pages on each e-commerce platform, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
-<figcaption>Figure XX. Number of pages on each e-commerce platform: from the most popular to the least popular.</figcaption>
+<figcaption>Figure 4. Number of pages on each e-commerce platform: from the most popular to the least popular.</figcaption>
 </figure>
 
 
@@ -99,7 +99,7 @@ According to Web Almanac data there are 110 ecommerce platforms that each get le
 
 <figure>
 // Chart: 13_02 • Percentage of home pages: top six versus long tail, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
-<figcaption>Figure XX. Percentage of home pages: top six versus long tail.</figcaption>
+<figcaption>Figure 5. Percentage of home pages: top six versus long tail.</figcaption>
 </figure>
 
 ---
@@ -114,7 +114,7 @@ In total, 9.39% of all requests on mobile and 9.65% on desktop in this study wer
 
 <figure>
 // Chart: 13_02b • % Ecommerce (any shop), https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1618996184
-<figcaption>Figure XX. Percentage of home pages on an e-commerce platform.</figcaption>
+<figcaption>Figure 6. Percentage of home pages on an e-commerce platform.</figcaption>
 </figure>
 
 -  Although the desktop proportion of requests was slightly higher overall, some popular platforms (including WooCommerce, PrestaShop and Shopware) actually got more mobile than desktop requests.
@@ -129,12 +129,12 @@ In total, 9.39% of all requests on mobile and 9.65% on desktop in this study wer
 
 <figure>
 // Chart: 13_09d • Total payload for pages on ecommerce platforms (MB), https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=2073072298
-<figcaption>Figure XX. Total payload for pages on ecommerce platforms (MB).</figcaption>
+<figcaption>Figure 7. Total payload for pages on ecommerce platforms (MB).</figcaption>
 </figure>
 
 <figure>
 // Chart: 13_09d • Total requests for pages on ecommerce platforms, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=2073072298
-<figcaption>Figure XX. Total requests for pages on ecommerce platforms.</figcaption>
+<figcaption>Figure 8. Total requests for pages on ecommerce platforms.</figcaption>
 </figure>
 
 ### Note that…
@@ -168,13 +168,19 @@ In total, 9.39% of all requests on mobile and 9.65% on desktop in this study wer
 
 The charts below are for desktop requests: see the spreadsheet for mobile stats.
 
-![image](insert_image_url_here)
+<figure>
+// Chart: 13_09d • Ecommerce platforms: requests by type, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=878794652
+<figcaption>Figure 9. Ecommerce platforms: payload by type.</figcaption>
+</figure>
 
-![image](insert_image_url_here)
+<figure>
+// Chart: 13_09d • Ecommerce platforms: payload by type, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=878794652
+<figcaption>Figure 10. Ecommerce platforms: requests by type.</figcaption>
+</figure>
 
-### What this means
+### What it means
 
--  Images constitute the largest number of requests and the highest proportion of payload.
+-  Images constitute the largest number of requests and the highest proportion of payload for home pages on ecommerce platforms.
 -  The median desktop ecommerce home page includes 39 images weighing 1,513.67 KB.
 
 ### Commentary
@@ -190,7 +196,12 @@ The charts below are for desktop requests: see the spreadsheet for mobile stats.
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1709620354)
 
-![image](insert_image_url_here)
+
+
+<figure>
+// Chart: 13_09d • Ecommerce platforms: distribution of HTML payload size, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=81509282
+<figcaption>Figure 11. Ecommerce platforms: distribution of HTML payload size.</figcaption>
+</figure>
 
 <figure>
 | Percentile | 10    | 25    | 50    | 75    | 90     |
@@ -199,7 +210,7 @@ The charts below are for desktop requests: see the spreadsheet for mobile stats.
 | Mobile     | 11.44 | 18.63 | 33.8  | 64.01 | 115.85 |
 
 
-<figcaption>Figure 3. HTML payload size (KB)</figcaption>
+<figcaption>Figure 12. HTML payload size (KB)</figcaption>
 </figure>
 
 ### Note that…
@@ -207,16 +218,15 @@ The charts below are for desktop requests: see the spreadsheet for mobile stats.
 -  To reiterate: this study was only able to request home pages.
 -  HTML payload may include other code such as JSON, JavaScript or CSS in an HTML page request.
 
-##
-What it means
+## What it means
 
 -  The median HTML payload size for home pages on ecommerce platforms is 33.8 KB on mobile and 35.56 KB on desktop.
 -  10% of home pages on ecommerce platforms have an HTML payload of over 115 KB.
 
 ### Commentary
 
--  HTML payload on mobile is not significantly different from that delivered to desktop. In other words, it appears that sites are not delivering significantly different HTML for different viewport sizes.
--  On many ecommerce sites, home page HTML payloads are large. It's impossible to know whether this is because of bloated HTML, or from other code (such as JSON) within HTML files.
+-  Mobile HTML payload sizes are not very different from desktop. In other words, it appears that sites are not delivering significantly different HTML files for different devices or viewport sizes.
+- On many ecommerce sites, home page HTML payloads are large. It's not known from this study whether this is because of bloated HTML, or from other code (such as JSON) within HTML files.
 
 ---
 
@@ -225,7 +235,15 @@ What it means
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=98135455)
 ![image](insert_image_url_here)
 
-![image](insert_image_url_here)
+<figure>
+// Chart 13_06: Image payload by percentile (KB), https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=916461214
+<figcaption>Figure 13. Image payload by percentile (KB).</figcaption>
+</figure>
+
+<figure>
+// Chart 13_06: Number of image requests by percentile, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=916461214
+<figcaption>Figure 14. Number of image requests by percentile.</figcaption>
+</figure>
 
 <figure>
 |         | Number of images | Image payload (KB) |
@@ -233,7 +251,7 @@ What it means
 | Mobile  | 37               | 1,517              |
 | Desktop | 40               | 1,524              |
 
-<figcaption>Figure 4. Median image usage for home pages on ecommerce platforms</figcaption>
+<figcaption>Figure 15. Median image usage for home pages on ecommerce platforms</figcaption>
 </figure>
 
 <figure>
@@ -242,7 +260,7 @@ What it means
 | Mobile  | 90               | 5,993              |
 | Desktop | 97               | 5,881              |
 
-<figcaption>Figure 5. 90th percentile image usage for home pages on ecommerce platforms</figcaption>
+<figcaption>Figure 16. 90th percentile image usage for home pages on ecommerce platforms</figcaption>
 </figure>
 
 
@@ -265,7 +283,7 @@ What it means
 ### Suggested actions
 
 -  We need to do more analysis to better understand why some sites are not using responsive image techniques or lazy loading.
--  We need to provide guidance that enables commerce platforms to reliably deliver beautiful images to those with high end devices and good connectivity — while providing a best-possible experience to lower-end devices and those with poor connectivity.
+-  We need to provide guidance that helps ecommerce platforms to reliably deliver beautiful images to those with high end devices and good connectivity — while providing a best-possible experience to lower-end devices and those with poor connectivity.
 
 ---
 
@@ -273,7 +291,10 @@ What it means
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1049425091)
 
-![image](insert_image_url_here)
+<figure>
+// Chart 13_06b: Popular image formats, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1240367519
+<figcaption>Figure 17. Popular image formats.</figcaption>
+</figure>
 
 ### Note that…
 
@@ -305,7 +326,11 @@ WebP is [supported by all modern browsers other than Safari](https://caniuse.com
 ## Image dimensions
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1866746948)
-![image](insert_image_url_here)
+
+<figure>
+// Chart 13_06c: Image dimensions, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1050583521
+<figcaption>Figure 18. Image dimensions by percentile.</figcaption>
+</figure>
 
 <figure>
 
@@ -317,10 +342,10 @@ WebP is [supported by all modern browsers other than Safari](https://caniuse.com
 | 75         | 364          | 320           | 400           | 331            |
 | 90         | 693          | 512           | 800           | 546            |
 
-<figcaption>Figure 6. Image dimensions for home pages on ecommerce platforms.</figcaption>
+<figcaption>Figure 19. Image dimensions for home pages on ecommerce platforms.</figcaption>
 </figure>
 
-### What this means
+### What it means
 
 -  The median ('mid range') dimensions for images requested by home pages on ecommerce platforms is 247x196 px on mobile and 240x192 px on desktop.
 -  10% of images requested by home pages on ecommerce platforms are at least 693x512 px on mobile and 800x546 px on desktop.
@@ -348,70 +373,75 @@ WebP is [supported by all modern browsers other than Safari](https://caniuse.com
 
 Many websites — especially online stores — load a significant amount of code and content from third parties: for analytics, A/B testing, customer behaviour tracking, advertising and social media support. Third party content can have a [significant impact on performance](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript).
 
-![image](insert_image_url_here)
-
-![image](insert_image_url_here)
+<figure>
+// Chart 13_09: Third party requests and bytes, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1605504516
+<figcaption>Figure 20. Requests for third party content.</figcaption>
+</figure>
 
 <figure>
+// Chart 13_09: Third party requests and bytes, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1605504516
+<figcaption>Figure 21. Total third party payload.</figcaption>
+</figure>
 
-<table>
-<tr>
-<td></td>
-<td colspan="2"><strong>Number of requests</strong></td>
-<td colspan="2"><strong>Payload (KB)</strong></td>
-</tr>
-<tr>
-<td><strong>Percentile</strong></td>
-<td><strong>Mobile</strong></td>
-<td><strong>Desktop</strong></td>
-<td><strong>Mobile</strong></td>
-<td><strong>Desktop</strong></td>
-</tr>
-<tr>
-<td><strong>10</strong></td>
-<td>4</td>
-<td>4</td>
-<td>33.05</td>
-<td>41.51</td>
-</tr>
-<tr>
-<td><strong>25</strong></td>
-<td>8</td>
-<td>9</td>
-<td>118.44</td>
-<td>129.39</td>
-</tr>
-<tr>
-<td><strong>50</strong></td>
-<td>17</td>
-<td>19</td>
-<td>292.61</td>
-<td>320.17</td>
-</tr>
-<tr>
-<td><strong>75</strong></td>
-<td>32</td>
-<td>34</td>
-<td>613.46</td>
-<td>651.19</td>
-</tr>
-<tr>
-<td><strong>90</strong></td>
-<td>50</td>
-<td>54</td>
-<td>1016.45</td>
-<td>1071.3</td>
-</tr>
-</table>
-
-<figcaption>Figure 7. Total third party requests for home pages on ecommerce platforms.</figcaption>
+<figure>
+	<!-- HTML used here in order to enable colspans -->
+	<table>
+		<tr>
+			<td></td>
+			<td colspan="2"><strong>Number of requests</strong></td>
+			<td colspan="2"><strong>Payload (KB)</strong></td>
+		</tr>
+		<tr>
+			<td><strong>Percentile</strong></td>
+			<td><strong>Mobile</strong></td>
+			<td><strong>Desktop</strong></td>
+			<td><strong>Mobile</strong></td>
+			<td><strong>Desktop</strong></td>
+		</tr>
+		<tr>
+			<td><strong>10</strong></td>
+			<td>4</td>
+			<td>4</td>
+			<td>33.05</td>
+			<td>41.51</td>
+		</tr>
+		<tr>
+			<td><strong>25</strong></td>
+			<td>8</td>
+			<td>9</td>
+			<td>118.44</td>
+			<td>129.39</td>
+		</tr>
+		<tr>
+			<td><strong>50</strong></td>
+			<td>17</td>
+			<td>19</td>
+			<td>292.61</td>
+			<td>320.17</td>
+		</tr>
+		<tr>
+			<td><strong>75</strong></td>
+			<td>32</td>
+			<td>34</td>
+			<td>613.46</td>
+			<td>651.19</td>
+		</tr>
+		<tr>
+			<td><strong>90</strong></td>
+			<td>50</td>
+			<td>54</td>
+			<td>1016.45</td>
+			<td>1071.3</td>
+		</tr>
+	</table>
+	<figcaption>Figure 22. Total third party requests for home pages on ecommerce platforms.</figcaption>
 </figure>
 
 ### Note that…
 
 -  Patrick Hulce 's [third-party-web tool](https://github.com/patrickhulce/third-party-web) is used to determine third party requests, as defined in the [Web Almanac Third Parties document](https://docs.google.com/document/d/1q52f7pRSO0g6J1zbiVq-iVCYdGs6UdYQTCLOAFglz94/edit#heading=h.z3uzjvnolr4v).
 
-### What this means
+### What it means
 
 -  The median ('mid-range') home page on an ecommerce platform makes 17 requests for third party content on mobile and 19 on desktop.
 -  10% of all home pages on ecommerce platforms make over 50 requests for third-party content, with a total payload of over 1 MB.
@@ -430,7 +460,10 @@ Many websites — especially online stores — load a significant amount of code
 
 See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1914856197) for desktop data.
 
-![image](insert_image_url_here)
+<figure>
+// Chart 13_09b: 3P requests/bytes per platform, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=281168323
+<figcaption>Figure 23. Third party requests from mobile home pages.</figcaption>
+</figure>
 
 <figure>
 
@@ -443,10 +476,13 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 | Bigcommerce | 24 | 33 | 48 | 73  | 99  |
 | Shopware    | 3  | 6  | 12 | 20  | 30  |
 
-<figcaption>Figure 8. Number of third requests at each percentile.</figcaption>
+<figcaption>Figure 24. Number of third requests at each percentile.</figcaption>
 </figure>
 
-![image](insert_image_url_here)
+<figure>
+// Chart 13_09b: 3P requests/bytes per platform, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=281168323
+<figcaption>Figure 25. Total third party payload for mobile home pages.</figcaption>
+</figure>
 
 <figure>
 
@@ -459,7 +495,7 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 | Bigcommerce | 379 | 761   | 1,475 | 2,459 | 3,946 |
 | Shopware    | 18  | 74    | 170   | 334   | 621   |
 
-<figcaption>Figure 9. Payload size (KB) at each percentile.</figcaption>
+<figcaption>Figure 26. Payload size (KB) at each percentile.</figcaption>
 </figure>
 
 ### Note that…
@@ -477,13 +513,19 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 
 ---
 
-## Third party requests/bytes per category
+## Third party requests and payload per category
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=758228558)
 
-![image](insert_image_url_here)
+<figure>
+// Chart 13_09c: 3P requests/bytes per category, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=842081746
+<figcaption>Figure 27. Median number of third party requests from home pages.</figcaption>
+</figure>
 
-![image](insert_image_url_here)
+<figure>
+// Chart 13_09c: 3P requests/bytes per category, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=842081746
+<figcaption>Figure 28. Median total third party payload.</figcaption>
+</figure>
 
 ### What it means
 
@@ -503,9 +545,15 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=440889700)
 
-![image](insert_image_url_here)
+<figure>
+// Charts • 13_10: Top analytics providers > 1%, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1232567425
+<figcaption>Figure 29. Analytics, review and user behaviour monitoring.</figcaption>
+</figure>
 
-![image](insert_image_url_here)
+<figure>
+// Charts • 13_10: Top analytics providers non-Google, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1585341764
+<figcaption>Figure 30. Analytics, review and user behaviour monitoring — other than Google.</figcaption>
+</figure>
 
 ### Commentary
 
@@ -518,7 +566,11 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1279520266)
 
-![image](insert_image_url_here)
+<figure>
+// Chart 13_11: Top ad providers >=1%, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1621252176
+
+<figcaption>Figure 31. Top ad providers.</figcaption>
+</figure>
 
 ### Commentary
 
@@ -551,11 +603,13 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 | Shopware desktop    | 4,275       | 52%  | 35%     | 12%  |
 | Shopware mobile     | 4,919       | 47%  | 40%     | 12%  |
 
-<figcaption>Figure 10. First Contentful Paint for top ecommerce platforms.</figcaption>
+<figcaption>Figure 32. First Contentful Paint for top ecommerce platforms.</figcaption>
 </figure>
 
-
-![image](insert_image_url_here)
+<figure>
+// Chart 13_08: CrUX FCP, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=498270258
+<figcaption>Figure 33. Top six ecommerce platforms: First Contentful Paint.</figcaption>
+</figure>
 
 ### What it means
 
@@ -578,9 +632,12 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=624286853)
 
-![image](insert_image_url_here)
+<figure>
+// Charts 13_12: SEO Indexability, _pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1788076260
+<figcaption>Figure 34. Search engine indexability of home pages on commerce platforms.</figcaption>
+</figure>
 
-### What this means
+### What it means
 
 -  97.35% of mobile home pages on ecommerce platforms pass the [Lighthouse SEO audit](https://developers.google.com/web/tools/lighthouse/audits/indexing): they do not have HTTP headers or meta tags that block indexing.
 
@@ -599,14 +656,19 @@ See the Web Almanac [spreadsheet](https://docs.google.com/spreadsheets/d/1FUMHeO
 
 [Data](https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit#gid=1181092280)
 
-![image](insert_image_url_here)
+<figure>
+// Chart 13_13: PWA scores, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1548616265
+<figcaption>Figure 35. Lighthouse PWA scores.</figcaption>
+</figure>
 
-### What this means
+### What it means
 
--  More than 60% of home pages on ecommerce platforms get a [Lighthouse PWA score](https://developers.google.com/web/progressive-web-apps/checklist) between 25 and 35.
--  Lighthouse returns a Progressive Web App (PWA) score between 0 and 100. 0 is the worst possible score, and 100 is the best. The PWA audits are based on the Baseline PWA Checklist, which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.
+-  More than 60% of home pages on ecommerce platforms get a [Lighthouse PWA score](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) between 25 and 35.
 -  Less than 20% of home pages on ecommerce platforms get a score of more than 50.
 -  Less than 1% of home pages score more than 60.
+
+<aside>Lighthouse returns a Progressive Web App (PWA) score between zero and 100. Zero is the worst possible score, and 100 is the best. The PWA audits are based on the [Baseline PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist), which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.
+</aside>
 
 ### Note that…
 
