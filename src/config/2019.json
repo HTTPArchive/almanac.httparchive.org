@@ -163,7 +163,7 @@
     }
   },
   "contributors": {
-    "abigail-klein": {
+    "kleinab": {
       "name": "Abigail Klein",
       "teams": [
         "authors"
@@ -171,49 +171,45 @@
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/1319324?v=4",
       "github": "kleinab"
     },
-    "adam-argyle": {
+    "argyleink": {
       "name": "Adam Argyle",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/1134620?v=4",
-      "bio": "CSS DevRel \ud83e\udd51; #VisBug creator; dev += designer; parentNode + 2 leafs; CSS\/JS\/UX addict; repeat(\u221e, [empathize, define, design, develop, deploy]); ",
       "blog": "https:\/\/nerdy.dev",
       "github": "argyleink"
     },
-    "addy-osmani": {
+    "addyosmani": {
       "name": "Addy Osmani",
       "teams": [
         "brainstormers"
       ],
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/110953?v=4",
-      "bio": "Engineering Manager at Google working on Chrome & Web Platform",
       "blog": "https:\/\/www.addyosmani.com",
       "github": "addyosmani"
     },
-    "ahmad-awais": {
+    "ahmadawais": {
       "name": "Ahmad Awais",
       "teams": [
         "brainstormers",
         "reviewers"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/960133?v=4",
-      "bio": "An Open Source Dev Advocate       \r\n\u276f @nodejs CommComm TLC\r\n\u276f Edutainer at the VSCode.pro\r\n\u276f @WordPress Core Team Dev\r\n\u276f EE-CS Engineer",
-      "blog": "https:\/\/AhmadAwais.com\/",
+      "blog": "https:\/\/ahmadawais.com\/",
       "github": "ahmadawais"
     },
-    "alan-kent": {
+    "alankent": {
       "name": "Alan Kent",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/5702163?v=4",
-      "bio": "Developer Advocate at Google",
       "github": "alankent"
     },
-    "alberto-medina": {
+    "amedina": {
       "name": "Alberto Medina",
       "teams": [
         "brainstormers",
@@ -222,7 +218,7 @@
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/506089?v=4",
       "github": "amedina"
     },
-    "alex-russell": {
+    "slightlyoff": {
       "name": "Alex Russell",
       "teams": [
         "brainstormers"
@@ -231,7 +227,7 @@
       "blog": "http:\/\/infrequently.org",
       "github": "slightlyoff"
     },
-    "andrew-galloni": {
+    "dotjs": {
       "name": "Andrew Galloni",
       "teams": [
         "analysts"
@@ -239,16 +235,15 @@
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/2914966?v=4",
       "github": "dotjs"
     },
-    "andrew-noblet": {
+    "anoblet": {
       "name": "Andrew Noblet",
       "teams": [
         "developers"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/7674171?v=4",
-      "bio": "Civic minded engineer",
       "github": "anoblet"
     },
-    "andy-davies": {
+    "andydavies": {
       "name": "Andy Davies",
       "teams": [
         "authors"
@@ -257,7 +252,7 @@
       "blog": "http:\/\/andydavies.me\/",
       "github": "andydavies"
     },
-    "artur-janc": {
+    "arturjanc": {
       "name": "Artur Janc",
       "teams": [
         "brainstormers"
@@ -265,40 +260,37 @@
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/665379?v=4",
       "github": "arturjanc"
     },
-    "aymen-loukil": {
+    "AymenLoukil": {
       "name": "Aymen Loukil",
       "teams": [
         "reviewers",
         "developers"
       ],
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/5750656?v=4",
-      "bio": "International SEO Consultant",
       "blog": "http:\/\/www.aymen-loukil.com\/en\/",
       "github": "AymenLoukil"
     },
-    "barry-pollard": {
+    "bazzadp": {
       "name": "Barry Pollard",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/10931297?v=4",
-      "bio": "Interested in website development, particularly performance and security. Author of \u201cHTTP\/2 in Action\u201d published by Manning. @tunetheweb on Twitter",
       "blog": "https:\/\/www.tunetheweb.com",
       "github": "bazzadp"
     },
-    "brian-kardell": {
+    "bkardell": {
       "name": "Brian Kardell",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/870501?v=4",
-      "bio": "Front-end engineer - Betterifying the Web Co-author Extensible Web Manifesto | Standards Dude (JS Foundation) https:\/\/bkardell.com \r\nemail: bkardell@gmail",
       "blog": "https:\/\/bkardell.com",
       "github": "bkardell"
     },
-    "carlos-araya": {
+    "caraya": {
       "name": "Carlos Araya",
       "teams": [
         "brainstormers"
@@ -307,7 +299,7 @@
       "blog": "http:\/\/publishing-project.rivendellweb.net\/",
       "github": "caraya"
     },
-    "catalin-rosu": {
+    "catalinred": {
       "name": "Catalin Rosu",
       "teams": [
         "reviewers"
@@ -316,17 +308,16 @@
       "blog": "https:\/\/catalin.red\/",
       "github": "catalinred"
     },
-    "chen-hui-jing": {
+    "huijing": {
       "name": "Chen Hui Jing",
       "teams": [
         "reviewers"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/1461498?v=4",
-      "bio": "\ud83c\uddf2\ud83c\uddfe\ud83d\udc7e\ud83c\udfc0\ud83d\udeb2\ud83d\udd8c\ud83d\udc5f\ud83d\udcbb\ud83d\udd8a\ud83c\udf99\ud83e\udd8a\ud83e\udd51\ud83e\uddd7\u200d\u2640\ufe0f\ud83c\udff3\ufe0f\u200d\ud83c\udf08",
       "blog": "https:\/\/www.chenhuijing.com",
       "github": "huijing"
     },
-    "colin-bendell": {
+    "colinbendell": {
       "name": "Colin Bendell",
       "teams": [
         "brainstormers",
@@ -337,27 +328,25 @@
       "blog": "www.bendell.ca",
       "github": "colinbendell"
     },
-    "daniel-stenberg": {
+    "bagder": {
       "name": "Daniel Stenberg",
       "teams": [
         "reviewers"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/177011?v=4",
-      "bio": "Network code and protocols. Debugging and standards. I don't know anything. I'm probably the one to blame.",
       "blog": "https:\/\/daniel.haxx.se\/",
       "github": "bagder"
     },
-    "dave-crossland": {
+    "davelab6": {
       "name": "Dave Crossland",
       "teams": [
         "brainstormers"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/261579?v=4",
-      "bio": "I free fonts \ud83d\udcb8 I work at Google on fonts",
       "blog": "http:\/\/fonts.google.com",
       "github": "davelab6"
     },
-    "david-fox": {
+    "obto": {
       "name": "David Fox",
       "teams": [
         "brainstormers",
@@ -369,7 +358,7 @@
       "blog": "https:\/\/www.lookzook.com",
       "github": "obto"
     },
-    "doug-sillars": {
+    "dougsillars": {
       "name": "Doug Sillars",
       "teams": [
         "brainstormers",
@@ -380,13 +369,12 @@
       "blog": "dougsillars.com",
       "github": "dougsillars"
     },
-    "eric-portis": {
+    "eeeps": {
       "name": "Eric Portis",
       "teams": [
         "reviewers"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/3441390?v=4",
-      "bio": "Web Platform advocate at @CloudinaryLtd ",
       "blog": "https:\/\/ericportis.com",
       "github": "eeeps"
     },
@@ -396,7 +384,7 @@
         "designers"
       ]
     },
-    "giacomo-pignoni": {
+    "GiacomoPignoni": {
       "name": "Giacomo Pignoni",
       "teams": [
         "developers"
@@ -405,17 +393,16 @@
       "blog": "giacomo.online",
       "github": "GiacomoPignoni"
     },
-    "heng-yeow": {
+    "tanhengyeow": {
       "name": "Heng Yeow",
       "teams": [
         "developers"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/25320782?v=4",
-      "bio": "Open Source enthusiast. Passionate about front-end\/UI\/UX.",
       "blog": "https:\/\/tanhengyeow.github.io",
       "github": "tanhengyeow"
     },
-    "henri-helvetica": {
+    "henrisGH": {
       "name": "Henri Helvetica",
       "teams": [
         "brainstormers"
@@ -423,28 +410,26 @@
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/50970808?v=4",
       "github": "henrisGH"
     },
-    "houssein-djirdeh": {
+    "housseindjirdeh": {
       "name": "Houssein Djirdeh",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/12476932?v=4",
-      "bio": "Will always be a beginner",
       "blog": "https:\/\/houssein.me",
       "github": "housseindjirdeh"
     },
-    "jared-white": {
+    "jaredcwhite": {
       "name": "Jared White",
       "teams": [
         "brainstormers"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/658496?v=4",
-      "bio": "Writer, Designer, and Ruby\/Rails\/Jekyll developer",
       "blog": "https:\/\/jaredwhite.com",
       "github": "jaredcwhite"
     },
-    "jason-haralson": {
+    "jrharalson": {
       "name": "Jason Haralson",
       "teams": [
         "analysts"
@@ -452,25 +437,26 @@
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/7421844?v=4",
       "github": "jrharalson"
     },
-    "jeff-posnick": {
+    "jeffposnick": {
       "name": "Jeff Posnick",
       "teams": [
         "brainstormers",
         "authors"
       ],
+      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/1749548?v=4",
+      "blog": "https:\/\/jeffy.info",
       "github": "jeffposnick"
     },
-    "john-fox": {
+    "clarkeclark": {
       "name": "John Fox",
       "teams": [
         "reviewers"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/13718746?v=4",
-      "bio": "Marketing leader for disruptive B2B innovators. Known for SEO, channel strategy, buyer personas & building geo distributed teams",
       "blog": "https:\/\/www.linkedin.com\/in\/johnfox\/",
       "github": "clarkeclark"
     },
-    "john-teague": {
+    "hyperpress": {
       "name": "John Teague",
       "teams": [
         "brainstormers",
@@ -478,30 +464,28 @@
         "developers"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/25212653?v=4",
-      "bio": "#HyperPress project. Google Cloud HA WordPress hosting architect and web performance engineer. I make slow apps fast apps.",
       "blog": "https:\/\/gemservers.com",
       "github": "hyperpress"
     },
-    "jose-m-perez": {
+    "JMPerez": {
       "name": "Jos\u00e9 M. P\u00e9rez",
       "teams": [
         "reviewers"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/416456?v=4",
-      "bio": "Software Engineer. I \u2665 Web.",
       "blog": "https:\/\/jmperezperez.com",
       "github": "JMPerez"
     },
-    "kari-larson": {
+    "KJLarson": {
       "name": "Kari Larson",
       "teams": [
         "developers"
       ],
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/42503401?v=4",
-      "blog": "Https:\/\/www.kjlarson.com",
+      "blog": "https:\/\/www.kjlarson.com",
       "github": "KJLarson"
     },
-    "katie-hempenius": {
+    "khempenius": {
       "name": "Katie Hempenius",
       "teams": [
         "brainstormers",
@@ -509,10 +493,9 @@
         "analysts"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/6076184?v=4",
-      "bio": "katiehempenius.com",
       "github": "khempenius"
     },
-    "laura-eberly": {
+    "ljme": {
       "name": "Laura Eberly",
       "teams": [
         "reviewers"
@@ -520,7 +503,7 @@
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/3392338?v=4",
       "github": "ljme"
     },
-    "msakamaki": {
+    "MSakamaki": {
       "name": "M.Sakamaki",
       "teams": [
         "developers",
@@ -530,7 +513,7 @@
       "blog": "https:\/\/twitter.com\/msakamaki2",
       "github": "MSakamaki"
     },
-    "malek-hakim": {
+    "hakimelek": {
       "name": "Malek Hakim",
       "teams": [
         "reviewers"
@@ -538,17 +521,16 @@
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/1974993?v=4",
       "github": "hakimelek"
     },
-    "mark-nottingham": {
+    "mnot": {
       "name": "Mark Nottingham",
       "teams": [
         "brainstormers"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/74384?v=4",
-      "bio": "I work on HTTP specifications and implementations.",
       "blog": "https:\/\/www.mnot.net\/",
       "github": "mnot"
     },
-    "mark-zeman": {
+    "zeman": {
       "name": "Mark Zeman",
       "teams": [
         "brainstormers",
@@ -558,7 +540,7 @@
       "blog": "http:\/\/speedcurve.com",
       "github": "zeman"
     },
-    "martin-splitt": {
+    "AVGP": {
       "name": "Martin Splitt",
       "teams": [
         "brainstormers"
@@ -567,14 +549,13 @@
       "blog": "http:\/\/geekonaut.de",
       "github": "AVGP"
     },
-    "mathias-bynens": {
+    "mathiasbynens": {
       "name": "Mathias Bynens",
       "teams": [
         "brainstormers",
         "reviewers"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/81942?v=4",
-      "bio": "Web standards fanatic. JavaScript, HTML, CSS, HTTP, performance, security, Bash, Unicode, macOS.",
       "blog": "https:\/\/mathiasbynens.be\/",
       "github": "mathiasbynens"
     },
@@ -584,7 +565,7 @@
         "reviewers"
       ]
     },
-    "matthew-phillips": {
+    "matthewp": {
       "name": "Matthew Phillips",
       "teams": [
         "reviewers"
@@ -593,13 +574,12 @@
       "blog": "http:\/\/www.matthewphillips.info",
       "github": "matthewp"
     },
-    "mike-geyser": {
+    "mikegeyser": {
       "name": "Mike Geyser",
       "teams": [
         "developers"
       ],
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/105242?v=4",
-      "bio": "pro\u00b7gram\u00b7mer\/\u02c8pr\u014d\u02ccgram\u0259r\/ Noun: A person who writes computer programs. I am both more and less than this. Google Developer Expert\r\n in Web Technologies. ",
       "github": "mikegeyser"
     },
     "natasha-kosoglov": {
@@ -614,17 +594,16 @@
         "authors"
       ]
     },
-    "noah-blon": {
+    "noahblon": {
       "name": "Noah Blon",
       "teams": [
         "brainstormers"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/561590?v=4",
-      "bio": "Senior Frontend Web Dev",
       "blog": "www.noahblon.com",
       "github": "noahblon"
     },
-    "patrick-hulce": {
+    "patrickhulce": {
       "name": "Patrick Hulce",
       "teams": [
         "brainstormers",
@@ -635,7 +614,7 @@
       "blog": "http:\/\/patrickhulce.com",
       "github": "patrickhulce"
     },
-    "paul-calvano": {
+    "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
         "brainstormers",
@@ -643,10 +622,9 @@
         "analysts"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/7459458?v=4",
-      "bio": "Senior Web Performance Architect @ Akamai",
       "github": "paulcalvano"
     },
-    "rachel-costello": {
+    "rachellcostello": {
       "name": "Rachel Costello",
       "teams": [
         "brainstormers",
@@ -655,7 +633,7 @@
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/49983543?v=4",
       "github": "rachellcostello"
     },
-    "raghu-ramakrishnan": {
+    "raghuramakrishnan71": {
       "name": "Raghu Ramakrishnan",
       "teams": [
         "analysts"
@@ -663,7 +641,7 @@
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/24447527?v=4",
       "github": "raghuramakrishnan71"
     },
-    "renee-johnson": {
+    "ernee": {
       "name": "Renee Johnson",
       "teams": [
         "authors"
@@ -672,7 +650,7 @@
       "blog": "https:\/\/reneesvirtualoffice.com",
       "github": "ernee"
     },
-    "rick-viscomi": {
+    "rviscomi": {
       "name": "Rick Viscomi",
       "teams": [
         "brainstormers",
@@ -691,29 +669,27 @@
         "brainstormers"
       ]
     },
-    "sam-dutton": {
+    "samdutton": {
       "name": "Sam Dutton",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/205226?v=4",
-      "bio": "Developer Advocate for Google Chrome. Born in South Australia, based in London. \r\nCreator of simpl.info: simplest-possible examples of HTML, CSS and JavaScript.",
       "blog": "simpl.info",
       "github": "samdutton"
     },
-    "scott-helme": {
+    "ScottHelme": {
       "name": "Scott Helme",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/5352840?v=4",
-      "bio": "Security Researcher, international speaker and blogger.",
       "blog": "https:\/\/scotthelme.co.uk",
       "github": "ScottHelme"
     },
-    "sergey-chernyshev": {
+    "sergeychernyshev": {
       "name": "Sergey Chernyshev",
       "teams": [
         "reviewers"
@@ -722,13 +698,12 @@
       "blog": "http:\/\/sergeychernyshev.com\/",
       "github": "sergeychernyshev"
     },
-    "simon-pieters": {
+    "zcorpan": {
       "name": "Simon Pieters",
       "teams": [
         "brainstormers"
       ],
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/244772?v=4",
-      "bio": "I work for @bocoup on web standards and testing the web platform to foster interoperability between web browsers.",
       "github": "zcorpan"
     },
     "susie-lu": {
@@ -737,59 +712,54 @@
         "designers"
       ]
     },
-    "tammy-everts": {
+    "tammyeverts": {
       "name": "Tammy Everts",
       "teams": [
         "authors"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/15661032?v=4",
-      "bio": "I work closely with customers to learn how they use SpeedCurve to understand their visitors. Then I use that understanding to help make our tools even better.",
       "blog": "https:\/\/speedcurve.com\/",
       "github": "tammyeverts"
     },
-    "tj-monserrat": {
+    "tjmonsi": {
       "name": "TJ Monserrat",
       "teams": [
         "analysts"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/2645718?v=4",
-      "bio": "Husband to a Painter\/Artist\/Chef, Father to two princesses, HCI Researcher, GDE on Web components\/Polymer, PWA, and Web performance, Web Developer, and Gamer",
       "blog": "github.com\/tjmonsi",
       "github": "tjmonsi"
     },
-    "tom-steiner": {
+    "tomayac": {
       "name": "Tom Steiner",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/145676?v=4",
-      "bio": "Dad-of-3. Mobile Web at @Google (\ud83c\udde9\ud83c\uddea), PhD from @la_UPC (\ud83c\uddea\ud83c\uddf8), Postdoc at @UniversiteLyon (\ud83c\uddeb\ud83c\uddf7)\u2014\ud83c\uddea\ud83c\uddfa #PWA #JavaScript #NodeJS #HTML5 #Wikipedia #SemanticWeb",
       "blog": "https:\/\/blog.tomayac.com\/",
       "github": "tomayac"
     },
-    "tommy-hodgins": {
+    "tomhodgins": {
       "name": "Tommy Hodgins",
       "teams": [
         "reviewers"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/955601?v=4",
-      "bio": "Frontend Developer & Designer",
       "blog": "http:\/\/codepen.io\/tomhodgins",
       "github": "tomhodgins"
     },
-    "una-kravets": {
+    "una": {
       "name": "Una Kravets",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/1693164?v=4",
-      "bio": "The original unacorn \ud83e\udd84",
       "blog": "http:\/\/una.im",
       "github": "una"
     },
-    "vamsee-jasti": {
+    "jasti": {
       "name": "Vamsee Jasti",
       "teams": [
         "reviewers"
@@ -798,18 +768,17 @@
       "blog": "vamseejasti.com",
       "github": "jasti"
     },
-    "vincent-terrasi": {
+    "voltek62": {
       "name": "Vincent Terrasi",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/2698956?v=4",
-      "bio": "Data Scientist specialized in SEO and Web Analytics",
       "blog": "https:\/\/data-seo.com",
       "github": "voltek62"
     },
-    "yoav-weiss": {
+    "yoavweiss": {
       "name": "Yoav Weiss",
       "teams": [
         "brainstormers",
@@ -819,17 +788,16 @@
       "blog": "blog.yoav.ws",
       "github": "yoavweiss"
     },
-    "yohan-totting": {
+    "tyohan": {
       "name": "Yohan Totting",
       "teams": [
         "developers"
       ],
       "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/106703?v=4",
-      "bio": "Web Advocate\r\n",
       "blog": "http:\/\/tyohan.me",
       "github": "tyohan"
     },
-    "yvo-schaap": {
+    "ymschaap": {
       "name": "Yvo Schaap",
       "teams": [
         "brainstormers",
@@ -838,28 +806,18 @@
         "developers"
       ],
       "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/91795?v=4",
-      "bio": "CTO \/ Growth",
       "blog": "https:\/\/build.amsterdam\/",
       "github": "ymschaap"
     },
-    "zach-leatherman": {
+    "zachleat": {
       "name": "Zach Leatherman",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/39355?v=4",
-      "bio": "bleep blorp the singularity is nigh",
       "blog": "https:\/\/zachleat.com\/",
       "github": "zachleat"
-    },
-    "rmarx": {
-      "name": "Robin Marx",
-      "github": "rmarx",
-      "twitter": "programmingart",
-      "teams": [
-        "reviewers"
-      ]
     }
   }
 }

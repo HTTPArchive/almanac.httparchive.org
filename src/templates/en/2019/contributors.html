@@ -8,7 +8,7 @@
 {{ super() }}
 <style>
 .contributors {
-  margin-top: 100px;
+  margin: 0 0 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,12 +26,40 @@
   border-radius: 10px;
   cursor: pointer;
   margin: 8px;
-  padding: 8px;
+  padding: 8px 16px;
+  border: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 .contributor-grid {
   display: flex;
   align-items: stretch;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contributor-grid:not([data-rendered='true']) .contributor {
+    transform: translateY(30px);
+    opacity: 0;
+    will-change: opacity;
+}
+
+.contributor-grid[data-rendered='true'] .contributor {
+    animation-name: fade-in;
+    animation-duration: 750ms;
+}
+.contributor-grid[data-rendered='true'] .contributor:nth-of-type(0) {
+    animation-duration: 250ms;
+}
+.contributor-grid[data-rendered='true'] .contributor:nth-of-type(1) {
+    animation-duration: 350ms;
+}
+.contributor-grid[data-rendered='true'] .contributor:nth-of-type(2) {
+    animation-duration: 450ms;
+}
+.contributor-grid[data-rendered='true'] .contributor:nth-of-type(3) {
+    animation-duration: 600ms;
 }
 
 .contributor {
@@ -39,15 +67,18 @@
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  box-shadow: 0 0 5px 5px rgba(48, 64, 91, 0.1);
+  box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
+  padding: 24px 34px;
   width: 250px;
-  padding: 15px;
+  margin: 15px;
 }
 
 .contributor-avatar {
   border-radius: 50px;
   background-color: #f7f779;
   margin-bottom: 10px;
+  width: 100px;
+  height: auto;
 }
 
 .contributor-name {
@@ -61,14 +92,18 @@
 }
 
 .contributor-social img {
-  height: 18px;
+  height: auto;
   width: 18px;
-  margin: 0 10px;
+  margin: 0 6px;
+}
+
+.contributor-teams {
+  text-align: center;
 }
 
 .contributor-team {
-  font-size: 10px;
-  color: #666;
+  font-size: 14px;
+  color: #868686;
 }
 .contributor-team::after {
   content: ', ';
@@ -83,9 +118,37 @@
 }
 
 .contributors.{{ id }} button.{{ id }} {
-  background: #0053ba;
-  color: white;
+  background: #f7f779;
+  color: #333;
 }
+
+@media (max-width: 600px) {
+    .contributor {
+        margin: 16px 8px;
+        padding: 16px 8px;
+        width: 140px;
+    }
+
+    .contributor-avatar {
+        width: 60px;
+        height: auto;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 {% endfor %}
 </style>
 {% endblock %}
@@ -107,15 +170,16 @@
     <div class="contributor-grid">
     {% for id, contributor in config.contributors.items() %}
       <div class="contributor {{ ' '.join(contributor.teams) }}">
-        <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar">
+        <img class="contributor-avatar" src="{% if contributor.avatar %}{{contributor.avatar}}&s=200{% else %}data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+{% endif %}" height="100" width="100" alt="{{ contributor.name }} avatar">
         <div class="contributor-name">{{ contributor.name }}</div>
         {% if contributor.twitter or contributor.github %}
         <div class="contributor-social">
-          {% if contributor.twitter %}
-          <a href="https://twitter.com/{{ contributor.twitter }}"><img src="/static/images/twitter.png" alt="@{{ contributor.twitter }} on Twitter"></a>
-          {% endif %}
           {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}"><img src="/static/images/github.png" alt="{{ contributor.github }}@ on GitHub"></a>
+          <a href="https://github.com/{{ contributor.github }}" target="_blank"><img src="/static/images/github.png" alt="{{ contributor.github }}@ on GitHub"></a>
+          {% endif %}
+          {% if contributor.blog %}
+          <a href="{{ contributor.blog }}" target="_blank"><img src="/static/images/blog.png" alt="{{ contributor.name }} website"></a>
           {% endif %}
         </div>
         {% endif %}
@@ -134,13 +198,17 @@
 {% block scripts %}
   {{ super() }}
   <script nonce="{{ csp_nonce() }}">
+var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
 var buttons = document.querySelectorAll('.filter-container button');
 var contributors = document.querySelector('.contributors');
+var contributorsGrid = document.querySelector('.contributor-grid');
 var counter = document.querySelector('#filtered-contributors');
 
+contributorsGrid.setAttribute('data-rendered', true);
+
 function getFilteredContributorCount() {
-  return Array.from(document.querySelectorAll('.contributor')).filter(function(e) {
-    return getComputedStyle(e).display != 'none';
+  return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
+    return getComputedStyle(el).display != 'none';
   }).length;
 }
 
@@ -148,9 +216,22 @@ for (var i = 0; i < buttons.length; i++) {
   var button = buttons[i];
   button.addEventListener('click', function(e) {
     var teamId = e.target.className;
-    contributors.classList.toggle(teamId);
+
+    //on first filter, hide all except that one
+    if(contributors.classList.length == (teams.length + 1)) {
+
+        teams.forEach(function(team) {
+            if(team === teamId) {
+                return;
+            }
+            document.querySelector('.' + team).classList.toggle(team);
+        });
+    } else {
+        contributors.classList.toggle(teamId);
+    }
     counter.innerText = getFilteredContributorCount();
   });
 }
+
   </script>
 {% endblock %}
