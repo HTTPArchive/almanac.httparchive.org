@@ -202,10 +202,10 @@ blockquote::before {
 footer {
   display: grid;
   grid-template-areas:
-    'home-logo ha-logo nav-items language-switcher'
+    'home-logo nav-items nav-items nav-items'
     'hr hr hr hr'
-    'copyright copyright copyright social-media';
-  grid-template-rows: 60px 1fr 50px;
+    'copyright copyright ha-logo social-media';
+  grid-template-columns: 300px 1fr 1fr 120px 0 0;
 }
 
 footer .home-logo {
@@ -217,7 +217,7 @@ footer .home-logo {
 footer .nav-items {
   grid-area: nav-items;
   display: flex;
-  justify-content: start;
+  justify-content: flex-end;
   align-items: center;
 }
 footer .ha-logo {
@@ -246,7 +246,7 @@ footer .social-media {
 footer hr {
   grid-area: hr;
   width: 100%;
-  margin: 60px 0px 20px 0;
+  margin: 40px 0px 20px 0;
 }
 footer hr:last-of-type {
   grid-area: hr-last;
@@ -302,7 +302,8 @@ p.copyright {
       'nav-items nav-items nav-items'
       'hr-last hr-last hr-last'
       'copyright ha-logo social-media';
-    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr 1fr 120px 0 0;
+    grid-template-rows: 60px auto auto;
   }
   footer .nav-items {
     grid-area: nav-items;
@@ -401,12 +402,15 @@ p.copyright {
       'ha-logo  social-media'
       'hr-last hr-last'
       'copyright copyright';
-    grid-template-columns: 1fr 1fr 0 0;
+    grid-template-columns: 1fr 120px 0 0;
     grid-template-rows: auto;
   }
   footer .home-logo {
     grid-area: home-logo;
     margin: 20px 0px;
+  }
+  footer .home-logo > img {
+    max-width: 40vw;
   }
   footer .ha-logo {
     grid-area: ha-logo;
