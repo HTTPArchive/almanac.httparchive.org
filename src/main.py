@@ -60,11 +60,11 @@ def root(lang):
     return redirect(url_for('home', lang=lang, year=DEFAULT_YEAR))
 
 
-@app.route('/<lang>/<year>/outline')
+@app.route('/<lang>/<year>/table-of-contents')
 @validate
-def outline(lang, year):
+def table_of_contents(lang, year):
     config = config_util.get_config(year)
-    return render_template('%s/%s/outline.html' % (lang, year), config=config)
+    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config)
 
 
 @app.route('/<lang>/<year>/contributors')
