@@ -44,7 +44,7 @@ impressive, but taking traffic data from Chrome Platform Status into account, we
 [a service worker controlled 15% of all page loads](https://www.chromestatus.com/metrics/feature/timeline/popularity/990),
 which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers. 
 
-<timeseries chart of 11_01b>
+``` timeseries chart of 11_01b ```
 
 **Figure 1:** Service Worker installation over time for desktop and mobile
 
@@ -73,11 +73,11 @@ cases that service workers enable are the most attractive feature for app develo
 push notifications. Due to its limited availability, and less common use case, background sync doesn’t 
 play a significant role at the moment. 
 
-<bar chart of 11_03 mobile>
+``` bar chart of 11_03 mobile ```
 
 **Figure 2a:** Service worker events on mobile, ordered by decreasing frequency.
 
-<bar chart of 11_03 desktop>
+``` bar chart of 11_03 desktop ```
 
 **Figure 2b:** Service worker events on desktop, ordered by decreasing frequency.
 
@@ -90,11 +90,11 @@ We note that these stats don’t account for dynamically imported scripts throug
 [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) method, 
 which likely skews the results higher.
 
-<distribution of 11_03b mobile>
+``` distribution of 11_03b mobile ```
 
 **Figure 3a:** Percentiles of service worker file sizes on mobile.
 
-<distribution of 11_03b desktop>
+``` distribution of 11_03b desktop ```
 
 **Figure 3b:** Percentiles of service worker file sizes on desktop.
 

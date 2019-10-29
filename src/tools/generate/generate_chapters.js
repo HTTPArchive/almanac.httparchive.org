@@ -1,6 +1,8 @@
 const fs = require('fs-extra');
 const showdown = require('showdown');
 const ejs = require('ejs');
+const prettier = require('prettier');
+
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
@@ -47,8 +49,9 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   let html = await ejs.renderFile(template, { metadata, body, toc });
+  let fomatted_html = prettier.format(html, { parser: "html" });
 
-  await fs.outputFile(path, html, 'utf8');
+  await fs.outputFile(path, fomatted_html, 'utf8');
 
   await size_of(path);
 };
