@@ -6,22 +6,9 @@ const generate_table_of_contents = (html) => {
     dom.window.document.querySelectorAll('h1, h2, h3, h4, h5, h6')
   );
   const starting_level = get_level(all_headings[0]);
-  const nested_headings = nest_headings(all_headings, starting_level);
-  const toc = generate_html(nested_headings);
+  const toc = nest_headings(all_headings, starting_level);
 
   return toc;
-};
-
-const generate_html = (headings) => {
-  const list = [];
-  for (const heading of headings) {
-    const a = `<a href="#${heading.id}">${heading.title}</a>`;
-    const children = heading.children ? generate_html(heading.children) : '';
-    const li = `<li>${a}${children}</li>`;
-    list.push(li);
-  }
-
-  return `<ul>${list.join('')}</ul>`;
 };
 
 // This is a recursive function to nest the headings.

@@ -19,7 +19,7 @@
 
 {% block main %}
 <aside>
-    <%- toc %>
+    <%- include('toc.html', { headings: toc }) %>
 </aside>
 
 <section class="main">
