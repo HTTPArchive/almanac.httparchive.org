@@ -38,13 +38,13 @@ We assessed the content on the pages by looking for groups of at least 3 words a
 
 The median desktop home page has 346 words, and the median mobile home page has a slightly lower word count at 306 words. This shows that mobile sites do serve a bit less content to their users, but at over 300 words, this is still a reasonable amount to read, especially for a home page which will naturally contain less content than an article page, for example. Overall the distribution of words is broad, with between 22 words at the 10th percentile and up to 1,361 at the 90th percentile.
 
-<graph histogram number of words. Source: 10.09, column C, desktop & mobile>
+```<graph histogram number of words. Source: 10.09, column C, desktop & mobile>```
 
 #### Headings
 
 We also looked at whether pages are structured in a way that provides the right context for the content they contain. Headings (`H1`, `H2`, `H3`, etc) are used to format and structure a page and make content easier to read and parse. Despite the importance on headings, 10.67% of pages have no heading tags at all.
 
-<graph histogram number of heading elements. Source: 10.09a, column F>
+```<graph histogram number of heading elements. Source: 10.09a, column F>```
 
 The median number of heading elements per page is 10, with 30 words (on mobile) and 32 words (on desktop) used in headings. This implies that the websites that utilize headings put significant effort in making sure that their pages are readable, descriptive, and clearly outline the page structure and context to search engine bots.
 
@@ -52,7 +52,7 @@ In terms of specific heading length, the median length of the first `H1` element
 
 For advice on how to handle `H1`s and headings for SEO and accessibility, take a look at this [video response by John Mueller](https://www.youtube.com/watch?v=zyqJJXWk0gk) in the Ask Google Webmasters series.
 
-<graph histogram h1 tag source: 10.16, column C, desktop & mobile>
+```<graph histogram h1 tag source: 10.16, column C, desktop & mobile>```
 
 ### Meta tags
 
@@ -64,7 +64,7 @@ Page titles are an important way of communicating the purpose of a page to a use
 
 Even though [Google usually displays the first 50-60 characters of a page title](https://moz.com/learn/seo/title-tag) within a SERP, the median length of the `<title>` tag was only 21 characters for mobile pages and 20 characters for desktop pages. Even the 75th percentile is still below the cutoff length. This suggests that some SEOs and content writers aren't making the most of the space allocated to them by search engines for describing their home pages in the SERPs.
 
-<graph histogram length <title> Source: 10.07b, column C, desktop & mobile>
+```<graph histogram length <title> Source: 10.07b, column C, desktop & mobile>```
 
 #### Meta descriptions
 
@@ -72,7 +72,7 @@ Compared to the `<title>` tag, fewer pages were detected to have a meta descript
 
 The median meta description length was also lower than the [recommended length of 155-160 characters](https://moz.com/learn/seo/meta-description), with desktop pages having descriptions of 123 characters. Interestingly, meta descriptions were consistently longer on mobile than on desktop, despite mobile SERPs traditionally having a shorter pixel limit. This limit has only been extended recently, so perhaps more website owners have been testing the impact of having longer, more descriptive meta descriptions for mobile results.
 
-<graph histogram length <meta description> Source: 10.07c, column C, desktop & mobile>
+```<graph histogram length <meta description> Source: 10.07c, column C, desktop & mobile>```
 
 #### Image alt tags
 
@@ -125,9 +125,9 @@ The number of internal and external links included on desktop pages were consist
 
 It's important to bear in mind that fewer internal links on the mobile version of a page [might cause an issue](https://moz.com/blog/internal-linking-mobile-first-crawl-paths) for your website. With [mobile-first indexing](https://www.deepcrawl.com/knowledge/white-papers/mobile-first-index-guide/), which for new websites is the default for Google, if a page is only linked from the desktop version and not present on the mobile version, search engines will have a much harder time discovering and ranking it.
 
-<graph histogram count of links by type Source: 10.10, column C desktop only>
+```<graph histogram count of links by type Source: 10.10, column C desktop only>```
 
-<graph histogram count of links by type Source: 10.10, column D, E, desktop only>
+```<graph histogram count of links by type Source: 10.10, column D, E, desktop only>```
 
 The median desktop page includes 70 internal (same-site) links, whereas the median mobile page has 60 internal links. The median number of external links per page follows a similar trend, with desktop pages including 10 external links, and mobile pages including 8.
 
@@ -149,7 +149,7 @@ A fast-loading website is also crucial for a good user experience. Users that ha
 
 The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](../methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 63.47% of websites are labelled as **slow**. Split by device, this picture is even bleaker for tablet (82.00%) and phone (77.61%). In the context of our results, per the [PageSpeed Insights classification system](https://developers.google.com/speed/docs/insights/v5/about#categories), a slow website is defined as having 10% of First Contentful Paint (FCP) experiences taking over 2,500 ms or 5% of First Input Delay (FID) experiences measuring over 250 ms.
 
-<graph data 10.15b: CruX image similar to [IMG](https://developers.google.com/web/updates/images/2018/08/crux-dash-fcp.png) per device + speed label>
+```<graph data 10.15b: CruX image similar to [IMG](https://developers.google.com/web/updates/images/2018/08/crux-dash-fcp.png) per device + speed label>```
 
 Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the [Performance chapter](../performance).
 
@@ -185,9 +185,9 @@ Internationalization is one of the most complex aspects of SEO, even [according 
 
 While 38.40% of desktop sites (33.79% on mobile) have the HTML lang attribute set to English, only 7.43% (6.79% on mobile) of the sites also contain an `hreflang` link to another language version. This suggests that the vast majority of websites that we analyzed don't offer separate versions of their home page that would require language targeting -- unless these separate versions do exist, but haven't been configured correctly.
 
-<graph 10.04b - [do we want to chart this data, e.g. what does it really mean for SEO?]>
+```<graph 10.04b - [do we want to chart this data, e.g. what does it really mean for SEO?]>```
 
-<include a chart of the languages and country combinations found, SEOs will want to see this breakdown>
+```<include a chart of the languages and country combinations found, SEOs will want to see this breakdown>```
 
 Next to English, the most common languages are French, Spanish, and German. These are followed by languages targeted towards specific geographies like English for Americans (`en-us`) or more obscure combinations like Spanish for the Irish (`es-ie`).
 
