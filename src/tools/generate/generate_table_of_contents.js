@@ -7,7 +7,7 @@ const generate_table_of_contents = (html) => {
   );
   const starting_level = get_level(all_headings[0]);
   const nested_headings = nest_headings(all_headings, starting_level);
-  const toc = generate_html(nested_headings.children);
+  const toc = generate_html(nested_headings);
 
   return toc;
 };
@@ -47,31 +47,28 @@ const nest_headings = (source, current_level = 1) => {
       target.push(heading);
     } else if (level > current_level) {
       /* The heading needs to be added to the next level.
+        - Put the element back on the source array.
         - Get the last item on the list, that becomes the parent.
         - Use the rest of the source list to recurse and generate the 
           rest of the children.
         - Set the children property of the parent heading, including
             * Previous children
-            * The 'current' heading)
             * The recursively generated children
       */
-
+      source.unshift(element);
       const parent = target[target.length - 1];
-      let { children, nextHeading } = nest_headings(source, level);
-      parent.children = [...(parent.children || []), heading, ...children];
-      if (nextHeading) {
-        target.push(nextHeading);
-      }
+      let children = nest_headings(source, level);
+      parent.children = [...(parent.children || []), ...children];
     } else {
       /* The next item on the source is at a higher level, break out of this
-         level of recursion.
+         level of recursion after putting the element back on the array.
       */
-
-      return { children: target, nextHeading: heading };
+      source.unshift(element);
+      return target;
     }
   }
 
-  return { children: target };
+  return target;
 };
 
 const get_level = (element) => Number(element.localName.match(/\d+/)[0]);
