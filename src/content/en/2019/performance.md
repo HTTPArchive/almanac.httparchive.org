@@ -3,7 +3,7 @@ part_number: II
 chapter_number: 7
 title: Performance
 authors: [rviscomi]
-reviewers: [JMPerez, obto, sergeychernyshev, zeman]
+reviewers: [JMPerez,obto,sergeychernyshev,zeman]
 ---
 
 ## Intro
