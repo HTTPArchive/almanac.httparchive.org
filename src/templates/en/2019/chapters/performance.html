@@ -652,53 +652,11 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
     </section>
     <section class="authors">
       <h4>Authors :</h4>
-      <ul>
-        <li>
-          <img
-            class="avatar"
-            alt="Author name"
-            src="https://www.gravatar.com/avatar/cf58fcc6995e15f35e42532c3775fed6.jpg?d=mp&s=200"
-          />
-          <div class="info">
-            <span class="name">Full Name</span>
-            <span class="social">
-              <a class="twitter" href="https://twitter.com/rick_viscomi">
-                <img src="/static/images/twitter.png" alt="Twitter account" />
-              </a>
-
-              <a class="github" href="https://github.com/rviscomi">
-                <img src="/static/images/github.png" alt="github account" />
-              </a>
-            </span>
-
-            <div class="tagline">
-              Tagline of contributor here
-            </div>
-          </div>
-        </li>
-      </ul>
+      {{ render_authors() }}
     </section>
 
     <nav id="chapter-navigation">
-      <a id="previous-chapter" href="#replace-with-url-to-chapter">
-        <span class="arrow">&#8963;</span>
-        <span class="chapter-no">
-          Chapter X
-        </span>
-        <span class="chapter-title">
-          Chapter title
-        </span>
-      </a>
-
-      <a id="next-chapter" href="#replace-with-url-to-chapter">
-        <span class="arrow">&#8963;</span>
-        <span class="chapter-no">
-          Chapter X
-        </span>
-        <span class="chapter-title">
-          Chapter title
-        </span>
-      </a>
+      {{ render_prevnext() }}
     </nav>
   </section>
 </article>
