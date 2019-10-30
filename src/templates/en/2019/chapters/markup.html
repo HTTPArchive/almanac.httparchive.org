@@ -36,18 +36,18 @@ tomhodgins"," matthewp"]} %} {% block main %}
         </li>
 
         <li>
-          <a href="#custom-elements">Custom elements?</a>
+          <a href="#custom-elements">Custom elements</a>
         </li>
 
         <li>
           <a href="#perspective-on-value-and-usage"
-            >Perspective on Value and Usage</a
+            >Perspective on value and usage</a
           >
         </li>
 
         <li>
           <a href="#lots-of-data-real-dom-on-the-real-web"
-            >Lots of data: Real DOM on the Real Web</a
+            >Lots of data: real DOM on the real web</a
           >
 
           <ul>
@@ -62,11 +62,11 @@ tomhodgins"," matthewp"]} %} {% block main %}
                 >Common use cases and solutions</a
               >
             </li>
-
-            <li>
-              <a href="#in-summary">In Summary</a>
-            </li>
           </ul>
+        </li>
+
+        <li>
+          <a href="#conclusion">Conclusion</a>
         </li>
       </ul>
     </div>
@@ -97,7 +97,12 @@ tomhodgins"," matthewp"]} %} {% block main %}
       </p>
       <p>
         14 years later, it's time to take a fresh look. Since then, we've also
-        had the introduction of Custom Elements and the
+        had the introduction of
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements"
+          >Custom Elements</a
+        >
+        and the
         <a href="https://extensiblewebmanifesto.org/"
           >Extensible Web Manifesto</a
         >
@@ -107,7 +112,7 @@ tomhodgins"," matthewp"]} %} {% block main %}
           href="https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html"
         >
           act more like dictionary editors</a
-        >. Unlike CSS class names which might be used for anything, we can be
+        >. Unlike CSS class names, which might be used for anything, we can be
         far more certain that authors who used a non-standard
         <em>element</em> really intended this to be an element.
       </p>
@@ -116,42 +121,47 @@ tomhodgins"," matthewp"]} %} {% block main %}
         <em>element</em> names in the DOM for about 4.4 million desktop home
         pages, and about 5.3 million mobile home pages which we can now begin to
         research and dissect.
+        <em
+          >(Learn more about our <a href="../methodology">Methodology</a>.)</em
+        >
       </p>
       <p>
         This crawl encountered
-        <em>over 5000 distinct non-standard element names</em> in these pages,
+        <em>over 5,000 distinct non-standard element names</em> in these pages,
         so we capped the total distinct number of elements that we count to the
-        'top' (explained below) 5048.
+        'top' (explained below) 5,048.
       </p>
       <h2 id="methodology">Methodology</h2>
       <p>
-        Names of elements on each page were collected from the DOM itself, post
-        initial run of JavaScript.
+        Names of elements on each page were collected from the DOM itself, after
+        the initial run of JavaScript.
       </p>
       <p>
         Looking at a raw frequency count isn't especially helpful, even for
         standard elements: About 25% of all elements encountered are
         <code>&lt;div&gt;</code>. About 17% are <code>&lt;a&gt;</code>, about
-        10.6% are <code>&lt;span&gt;</code> -- and those are the only elements
+        11% are <code>&lt;span&gt;</code> -- and those are the only elements
         that account for more than 10% of occurrences. Languages are
         <a href="https://www.youtube.com/watch?v=fCn8zs912OE"
           >generally like this</a
-        >, a small number of terms are astoundingly used by comparison. Further,
+        >; a small number of terms are astoundingly used by comparison. Further,
         when we start looking at non-standard elements for uptake, this would be
         very misleading as one site could use a certain element a thousand times
         and thus make it look artificially very popular.
       </p>
       <p>
         Instead, as in Hixie's original study, what we will look at is how many
-        sites include each element at least once in their homepage (Note: This
-        is, itself, not without some potential biases. Popular products can be
-        used by several sites, which introduce non-standard markup, even
-        'invisibly' to individual authors. Thus, care must be taken to
-        acknowledge that usage doesn't necessarily imply direct author knowledge
-        and conscious adoption as much as it does the servicing of a common
-        need, in a common way. During our research, we found several examples of
-        this, some we will call out.)
+        sites include each element at least once in their homepage.
       </p>
+      <aside class="note">
+        Note: This is, itself, not without some potential biases. Popular
+        products can be used by several sites, which introduce non-standard
+        markup, even "invisibly" to individual authors. Thus, care must be taken
+        to acknowledge that usage doesn't necessarily imply direct author
+        knowledge and conscious adoption as much as it does the servicing of a
+        common need, in a common way. During our research, we found several
+        examples of this, some we will call out.
+      </aside>
       <h2 id="top-elements-and-general-info">Top elements and general info</h2>
       <p>
         In 2005, Hixie's survey listed the top few most commonly used elements
@@ -163,115 +173,120 @@ tomhodgins"," matthewp"]} %} {% block main %}
         from then to now (I've included the frequency comparison here as well
         just for fun).
       </p>
-      <table>
-        <tr>
-          <td>2005 (per site)</td>
-          <td>2019 (per site)</td>
-          <td>2019 (frequency)</td>
-        </tr>
-        <tr>
-          <td>title</td>
-          <td>title</td>
-          <td>div</td>
-        </tr>
-        <tr>
-          <td>a</td>
-          <td>meta</td>
-          <td>a</td>
-        </tr>
-        <tr>
-          <td>img</td>
-          <td>a</td>
-          <td>span</td>
-        </tr>
-        <tr>
-          <td>meta</td>
-          <td>div</td>
-          <td>li</td>
-        </tr>
-        <tr>
-          <td>br</td>
-          <td>link</td>
-          <td>img</td>
-        </tr>
-        <tr>
-          <td>table</td>
-          <td>script</td>
-          <td>script</td>
-        </tr>
-        <tr>
-          <td>td</td>
-          <td>img</td>
-          <td>p</td>
-        </tr>
-        <tr>
-          <td>tr</td>
-          <td>span</td>
-          <td>option</td>
-        </tr>
-      </table>
-
+      <figure id="fig1" markdown>
+        <table>
+          <thead>
+            <tr>
+              <th id="2005_(per_site)">2005 (per site)</th>
+              <th id="2019_(per_site)">2019 (per site)</th>
+              <th id="2019_(frequency)">2019 (frequency)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>title</td>
+              <td>title</td>
+              <td>div</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>meta</td>
+              <td>a</td>
+            </tr>
+            <tr>
+              <td>img</td>
+              <td>a</td>
+              <td>span</td>
+            </tr>
+            <tr>
+              <td>meta</td>
+              <td>div</td>
+              <td>li</td>
+            </tr>
+            <tr>
+              <td>br</td>
+              <td>link</td>
+              <td>img</td>
+            </tr>
+            <tr>
+              <td>table</td>
+              <td>script</td>
+              <td>script</td>
+            </tr>
+            <tr>
+              <td>td</td>
+              <td>img</td>
+              <td>p</td>
+            </tr>
+            <tr>
+              <td>tr</td>
+              <td>span</td>
+              <td>option</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <figcaption>
+            Figure 1. Comparison of the top elements from 2005 to 2019.
+          </figcaption>
+        </p>
+      </figure>
       <h3 id="elements-per-page">Elements per page</h3>
+      <figure id="fig2">
+        <img
+          src="/static/images/2019/03_Markup/hixie_elements_per_page.png"
+          alt="Distribution of Hixie's 2005 analysis of element frequencies"
+        />
+        <figcaption>
+          Figure 2. Distribution of Hixie's 2005 analysis of element
+          frequencies.
+        </figcaption>
+      </figure>
+      <figure id="fig3">
+        <iframe
+          width="600"
+          height="371"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"
+        ></iframe>
+        <figcaption>Figure 3. Element frequencies as of 2019.</figcaption>
+      </figure>
       <p>
-        Comparing data to that of Hixie's report from 2005 shows that the
-        average size of DOM trees has gotten bigger.
+        Comparing the latest data in Figure 3 to that of Hixie's report from
+        2005 in Figure 2, we can see that the average size of DOM trees has
+        gotten bigger.
       </p>
-      <table>
-        <tr>
-          <td>2005</td>
-          <td>2019</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/static/images/2019/03_Markup/hixie_elements_per_page.png"
-              width="300px"
-            />
-          </td>
-          <td>
-            <iframe
-              width="600"
-              height="371"
-              seamless
-              frameborder="0"
-              scrolling="no"
-              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"
-            ></iframe>
-          </td>
-        </tr>
-      </table>
-
+      <figure id="fig4">
+        <img
+          src="/static/images/2019/03_Markup/hixie_element_types_per_page.png"
+          alt="Histogram of Hixie's 2005 analysis of element types per page"
+        />
+        <figcaption>
+          Figure 4. Histogram of Hixie's 2005 analysis of element types per
+          page.
+        </figcaption>
+      </figure>
+      <figure id="fig5">
+        <iframe
+          width="600"
+          height="371"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"
+        ></iframe>
+        <figcaption>
+          Figure 5. Histogram of element types per page as of 2019.
+        </figcaption>
+      </figure>
       <p>
-        And also that both the average number of types of elements per page has
-        increased, as well as the maximum numbers of unique elements that we
-        encounter…
+        We can see that both the average number of types of elements per page
+        has increased, as well as the maximum numbers of unique elements that we
+        encounter.
       </p>
-      <table>
-        <tr>
-          <td>2005</td>
-          <td>2019</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/static/images/2019/03_Markup/hixie_element_types_per_page.png"
-              width="300px"
-            />
-          </td>
-          <td>
-            <iframe
-              width="600"
-              height="371"
-              seamless
-              frameborder="0"
-              scrolling="no"
-              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive"
-            ></iframe>
-          </td>
-        </tr>
-      </table>
-
-      <h2 id="custom-elements">Custom elements?</h2>
+      <h2 id="custom-elements">Custom elements</h2>
       <p>
         Most of the elements we recorded are custom (as in simply 'not
         standard'), but discussing which elements are and are not custom can get
@@ -297,26 +312,25 @@ tomhodgins"," matthewp"]} %} {% block main %}
       </p>
       <ul>
         <li>
-          155 (3.21%) are identifiable as very probable markup or escaping
-          errors (they contain characters in the parsed tag name which imply
-          that the markup is broken)
+          155 (3%) are identifiable as very probable markup or escaping errors
+          (they contain characters in the parsed tag name which imply that the
+          markup is broken)
         </li>
         <li>
-          341 (7.05%) use XML-style colon namespacing (though, as HTML, they
-          don't use actual XML namespaces)
+          341 (7%) use XML-style colon namespacing (though, as HTML, they don't
+          use actual XML namespaces)
         </li>
-        <li>3207 (66.44%) are valid custom element names</li>
+        <li>3,207 (66%) are valid custom element names</li>
         <li>
-          1211 (25.05%) are in the global namespace (non-standard, having
-          neither dash, nor colon)
+          1,211 (25%) are in the global namespace (non-standard, having neither
+          dash, nor colon)
           <ul>
             <li>
-              216 of these we have flagged as *possible *typos as they are
-              longer than 2 characters and have a Levenshtein distance of 1 from
-              some standard element name like <code>&lt;cript&gt;</code>,<code
-                >&lt;spsn&gt;</code
-              >
-              or <code>&lt;artice&gt;</code>. Some of these (like
+              216 of these we have flagged as <em>possible</em> typos as they
+              are longer than 2 characters and have a Levenshtein distance of 1
+              from some standard element name like
+              <code>&lt;cript&gt;</code>,<code>&lt;spsn&gt;</code> or
+              <code>&lt;artice&gt;</code>. Some of these (like
               <code>&lt;jdiv&gt;</code>), however, are certainly intentional.
             </li>
           </ul>
@@ -324,440 +338,417 @@ tomhodgins"," matthewp"]} %} {% block main %}
       </ul>
       <p>
         Additionally, 15% of desktop pages and 16% of mobile pages contain
-        deprecated elements (NOTE: A lot of this is very likely due to the use
-        of products rather than individual authors continuing to manually create
-        this markup.), here's the most common 10 and the number of pages they
-        appear on in each set…
+        deprecated elements.
       </p>
-      <table>
-        <tr>
-          <td>element</td>
-          <td>mobile</td>
-          <td>desktop</td>
-        </tr>
-        <tr>
-          <td><code>&lt;center></code></td>
-          <td>7.96%</td>
-          <td>8.30%</td>
-        </tr>
-        <tr>
-          <td><code>&lt;font></code></td>
-          <td>7.80%</td>
-          <td>8.01%</td>
-        </tr>
-        <tr>
-          <td><code>&lt;marquee></code></td>
-          <td>1.20%</td>
-          <td>1.07%</td>
-        </tr>
-        <tr>
-          <td><code>&lt;nobr></code></td>
-          <td>0.55%</td>
-          <td>0.71%</td>
-        </tr>
-        <tr>
-          <td><code>&lt;big></code></td>
-          <td>0.47%</td>
-          <td>0.53%</td>
-        </tr>
-        <tr>
-          <td><code>&lt;frame></code></td>
-          <td>0.35%</td>
-          <td>0.39%</td>
-        </tr>
-        <tr>
-          <td><code>&lt;frameset></code></td>
-          <td>0.39%</td>
-          <td>0.35%</td>
-        </tr>
-        <tr>
-          <td><code>&lt;strike></code></td>
-          <td>0.27%</td>
-          <td>0.32%</td>
-        </tr>
-        <tr>
-          <td><code>&lt;noframes></code></td>
-          <td>0.27%</td>
-          <td>0.25%</td>
-        </tr>
-      </table>
-
+      <aside class="note">
+        Note: A lot of this is very likely due to the use of products rather
+        than individual authors continuing to manually create this markup.
+      </aside>
+      <figure id="fig6">
+        <iframe
+          width="600"
+          height="371"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive"
+        ></iframe>
+        <figcaption>
+          Figure 6. Most frequently used deprecated elements.
+        </figcaption>
+      </figure>
       <p>
-        Most of these can seem like very small numbers, but perspective matters.
+        Figure 6 above shows the top 10 most frequently used deprecated
+        elements. Most of these can seem like very small numbers, but
+        perspective matters.
       </p>
       <h2 id="perspective-on-value-and-usage">
-        Perspective on Value and Usage
+        Perspective on value and usage
       </h2>
       <p>
         In order to discuss numbers about the use of elements (standard,
         deprecated or custom), we first need to establish some perspective.
       </p>
+      <figure id="fig7">
+        <iframe
+          width="600"
+          height="778"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive"
+        ></iframe>
+        <figcaption>Figure 7. Top 150 elements.</figcaption>
+      </figure>
       <p>
-        The top 150 element names, counting the number of pages where they
-        appear, are shown in this chart:
+        In Figure 7 above, the top 150 element names, counting the number of
+        pages where they appear, are shown. Note how quickly use drops off.
       </p>
-      <iframe
-        width="877"
-        height="588"
-        seamless
-        frameborder="0"
-        scrolling="no"
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive"
-      ></iframe>
-      <p>Note how quickly use drops off.</p>
+      <p>Only 11 elements are used on more than 90% of pages:</p>
+      <ul>
+        <li><code>&lt;html&gt;</code></li>
+        <li><code>&lt;head&gt;</code></li>
+        <li><code>&lt;body&gt;</code></li>
+        <li><code>&lt;title&gt;</code></li>
+        <li><code>&lt;meta&gt;</code></li>
+        <li><code>&lt;a&gt;</code></li>
+        <li><code>&lt;div&gt;</code></li>
+        <li><code>&lt;link&gt;</code></li>
+        <li><code>&lt;script&gt;</code></li>
+        <li><code>&lt;img&gt;</code></li>
+        <li><code>&lt;span&gt;</code></li>
+      </ul>
       <p>
-        11 elements occur in over 90% <code>&lt;html&gt;</code>,
-        <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>,
-        <code>&lt;title&gt;</code>, <code>&lt;meta&gt;</code>,
-        <code>&lt;a&gt;</code>,<code>&lt;div&gt;</code>,
-        <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>,
-        <code>&lt;img&gt;</code> and <code>&lt;span&gt;</code>.
+        There are only 15 other elements that occur on more than 50% of pages:
       </p>
+      <ul>
+        <li><code>&lt;ul&gt;</code></li>
+        <li><code>&lt;li&gt;</code></li>
+        <li><code>&lt;p&gt;</code></li>
+        <li><code>&lt;style&gt;</code></li>
+        <li><code>&lt;input&gt;</code></li>
+        <li><code>&lt;br&gt;</code></li>
+        <li><code>&lt;form&gt;</code></li>
+        <li><code>&lt;h2&gt;</code></li>
+        <li><code>&lt;h1&gt;</code></li>
+        <li><code>&lt;iframe&gt;</code></li>
+        <li><code>&lt;h3&gt;</code></li>
+        <li><code>&lt;button&gt;</code></li>
+        <li><code>&lt;footer&gt;</code></li>
+        <li><code>&lt;header&gt;</code></li>
+        <li><code>&lt;nav&gt;</code></li>
+      </ul>
       <p>
-        Only 15 more elements occur in at least 50% of the home pages
-        (<code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>,
-        <code>&lt;p&gt;</code>, <code>&lt;style&gt;</code>,
-        <code>&lt;input&gt;</code>, <code>&lt;br&gt;</code>,
-        <code>&lt;form&gt;</code>, <code>&lt;h2&gt;</code>,
-        <code>&lt;h1&gt;</code>, <code>&lt;iframe&gt;</code>,
-        <code>&lt;h3&gt;</code>, <code>&lt;button&gt;</code>,
-        <code>&lt;footer&gt;</code>, <code>&lt;header&gt;</code>,
-        <code>&lt;nav&gt;</code> are the others).
+        And there are only 40 other elements&nbsp;that occur on more than 5% of
+        pages.
       </p>
-      <p>And only 40 more elements occur on more than 5% of pages.</p>
       <p>
         Even <code>&lt;video&gt;</code>, for example, doesn't make that cut. It
-        appears on only 4.21% of pages in the dataset (on desktop, only 3.03% on
-        mobile). While these numbers sound very low, 4.21% is actually
-        <em>quite</em> popular by comparison. In fact, only 98 elements occur on
-        more than 1% of pages.
+        appears on only 4% of desktop pages in the dataset (3% on mobile). While
+        these numbers sound very low, 4% is actually <em>quite</em> popular by
+        comparison. In fact, only 98 elements occur on more than 1% of pages.
       </p>
       <p>
-        It's interesting, then, to look at what the distribution of these
-        elements looks like and which ones have more than 1% use. Below is a
-        chart that shows the rank of each element and which category they fall
+        It's interesting, then, to see what the distribution of these elements
+        looks like and which ones have more than 1% use.
+      </p>
+      <figure id="fig8">
+        <a href="https://rainy-periwinkle.glitch.me/scatter/html">
+          <img
+            src="/static/images/2019/03_Markup/element_categories.png"
+            alt="Element popularity categorized by standardization"
+          />
+        </a>
+        <figcaption>
+          Figure 8. Element popularity categorized by standardization.
+        </figcaption>
+      </figure>
+      <p>
+        Figure 8 shows the rank of each element and which category they fall
         into. I've separated the data points into discrete sets simply so that
         they can be viewed (otherwise there just aren't enough pixels to capture
-        all that data), but they represent a single 'line' of popularity - the
+        all that data), but they represent a single 'line' of popularity; the
         left-most being the most common, the right-most being the least common.
         The arrow points to the end of elements that appear in more than 1% of
         the pages.
       </p>
       <p>
-        (( TODO: there is a corresponding image in the google doc
-        <a
-          href="https://docs.google.com/document/d/16TY_pV-FyW35DzuvdlaOiENz6o6PWYpl_RviU-HW7Qc/edit"
-          >https://docs.google.com/document/d/16TY_pV-FyW35DzuvdlaOiENz6o6PWYpl_RviU-HW7Qc/edit</a
-        >
-        ))
-      </p>
-      <p>
-        You can observe two things here: First, that the set of elements that
-        have more than 1% use are not exclusively HTML. In fact,
+        You can observe two things here. First, the set of elements that have
+        more than 1% use are not exclusively HTML. In fact,
         <em>27 of the most popular 100 elements aren't even HTML</em> - they are
         SVG! And there are
         <em>non-standard tags at or very near that cutoff too</em>! Second, note
         that a whole lot of HTML elements are used by less than 1% of pages.
       </p>
       <p>
-        So, are all of those elements used by less than 1% of pages "useless?".
+        So, are all of those elements used by less than 1% of pages "useless"?
         Definitely not. This is why establishing perspective matters. There are
         around
         <a
           href="https://www.websitehostingrating.com/internet-statistics-facts/"
-          >2 billion web sites on the web</a
+          >two billion web sites on the web</a
         >. If something appears on 0.1% of all websites in our dataset, we can
-        extrapolate that this represents perhaps <em>2 million web sites</em> in
-        the whole web. Even 0.01% extrapolates to a
-        <em>two hundred of thousand of sites</em>. This is also why removing
+        extrapolate that this represents perhaps
+        <em>two million web sites</em> in the whole web. Even 0.01% extrapolates
+        to <em>two hundred thousand sites</em>. This is also why removing
         support for elements, even very old ones which we think aren't great
-        ideas, is a very rare occurrence: Breaking hundreds of thousands or
+        ideas, is a very rare occurrence. Breaking hundreds of thousands or
         millions of sites just isn't a thing that browser vendors can do
         lightly.
       </p>
       <p>
-        So, lots of elements, even the native ones, have less than 1% use and
-        are still very important and successful. <code>&lt;code&gt;</code>, for
-        example, is an element that I both use and encounter a lot. It's
-        definitely useful and important - and yet it is used on only 0.57% of
-        these pages. Part of this is skewed based on what we are measuring -
-        home pages are generally <em>less likely</em> to include certain kinds
-        of things (like <code>&lt;code&gt;</code> for example): They serve a
+        Many elements, even the native ones, appear on fewer than 1% of pages
+        and are still very important and successful. <code>&lt;code&gt;</code>,
+        for example, is an element that I both use and encounter a lot. It's
+        definitely useful and important, and yet it is used on only 0.57% of
+        these pages. Part of this is skewed based on what we are measuring; home
+        pages are generally <em>less likely</em> to include certain kinds of
+        things (like <code>&lt;code&gt;</code> for example). Home pages serve a
         less general purpose than, for example, headings, paragraphs, links and
-        lists, however, the data is generally useful.
+        lists. However, the data is generally useful.
       </p>
       <p>
-        We also collected information about which pages contained an author
-        defined (not native) <code>.shadowRoot</code> -- About 0.22% of the
-        pages on desktop, and 0.15% on mobile. This might not sound like a lot,
-        but it is roughly 6.5k sites in the mobile dataset and 10k sites on the
-        desktop and is more than several HTML elements.
+        We also collected information about which pages contained an
+        author-defined (not native) <code>.shadowRoot</code>. About 0.22% of
+        desktop pages and 0.15% of mobile pages had a shadow root. This might
+        not sound like a lot, but it is roughly 6.5k sites in the mobile dataset
+        and 10k sites on the desktop and is more than several HTML elements.
         <code>&lt;summary&gt;</code> for example, has about equivalent use on
         the desktop and it is the 146th most popular element.
-      </p>
-      <p>
-        <code>&lt;datalist&gt;</code> appeared in 0.04% of homepages, it is the
+        <code>&lt;datalist&gt;</code> appears on 0.04% of homepages and it's the
         201st most popular element.
       </p>
       <p>
         In fact, over 15% of elements we're counting as defined by HTML are
         outside the top 200 in the desktop dataset .
-        <code>&lt;meter&gt;</code> is the least popular "HTML5 era" element
-        (2004-2011, before HTML moved to a Living Standard model): It is around
-        the 1000th most popular element. <code>&lt;slot&gt;</code>, the most
-        recently introduced element (April 2016), is only around the 1400th most
-        popular element.
+        <code>&lt;meter&gt;</code> is the least popular "HTML5 era" element,
+        which we can define as 2004-2011, before HTML moved to a Living Standard
+        model. It is around the 1,000th most popular element.
+        <code>&lt;slot&gt;</code>, the most recently introduced element (April
+        2016), is only around the 1,400th most popular element.
       </p>
       <h2 id="lots-of-data-real-dom-on-the-real-web">
-        Lots of data: Real DOM on the Real Web
+        Lots of data: real DOM on the real web
       </h2>
       <p>
         With this perspective in mind about what use of native/standard features
         looks like in the dataset, let's talk about the non-standard stuff.
       </p>
       <p>
-        You might expect that lots of elements we recorded are used only on a
-        single domain, but in fact, no element we're talking about in this list
-        of 5048 elements is used on only a single domain. The least number of
-        domains an element in our dataset appears in is 15. About a fifth of
-        them occur on more than 100 domains. About 7% occur on more than 1000
-        domains.
+        You might expect that many of the elements we measured are used only on
+        a single web page, but in fact all one of the 5,048 elements appear on
+        more than one page. The fewest pages an element in our dataset appears
+        on is 15. About a fifth of them occur on more than 100 pages. About 7%
+        occur on more than 1,000 pages.
       </p>
       <p>
         To help analyze the data, I hacked together a
-        <a href="https://rainy-periwinkle.glitch.me">little tool with Glitch</a>
-        - where possible I link my observations to a page containing the data.
-        You can use this tool yourself, and please share a permalink back with
-        the <a href="https://twitter.com/HTTPArchive">@HTTPAchive</a> along with
-        your observations (Tommy Hodgins has also built a similar
+        <a href="https://rainy-periwinkle.glitch.me">little tool with Glitch</a
+        >. You can use this tool yourself, and please share a permalink back
+        with the <a href="https://twitter.com/HTTPArchive">@HTTPAchive</a> along
+        with your observations. (Tommy Hodgins has also built a similar
         <a href="https://github.com/tomhodgins/hade">CLI tool</a> which you can
-        use to explore).
+        use to explore.)
       </p>
-      <p>Let's look at some data…</p>
+      <p>Let's look at some data.</p>
       <h3 id="products-and-libraries-and-their-custom-markup">
         Products (and libraries) and their custom markup
       </h3>
       <p>
-        As in Hixie's original research, it seems that several of the extremely
-        popular ones have more to do with being a part of popular
-        <em>products than themselves being universally adopted</em>. Many of the
-        ones
+        For several non-standard elements, their prevalence may have more to do
+        with their inclusion in popular third party tools than first party
+        adoption. For example, the <code>&lt;fb:like&gt;</code> element is found
+        on 0.3% of pages not because site owners are explicitly writing it out
+        but because they include the Facebook widget. Many of the elements
         <a
           href="https://web.archive.org/web/20060203031245/http://code.google.com/webstats/2005-12/editors.html"
-          >Ian Hickson mentioned 14 years ago</a
+          >Hixie mentioned 14 years ago</a
         >
-        seem to have dwindled, but not disappeared, but some are still pretty
-        huge.
+        seem to have dwindled, but others are still pretty huge:
       </p>
-      <p>
-        Those he mentioned as being pervasive and created by
-        <a href="https://en.wikipedia.org/wiki/Claris_Home_Page"
-          >Claris Home Page</a
-        >
-        (whose last stable release was 21 years ago) still appeared on over 100
-        domains.
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/28b0b7abb3980af793a2f63b484e7815365b91c04ae625dd4170389cc1ab0a52.html"
-          ><code>&lt;x-claris-window&gt;</code>, for example still appears on
-          130 mobile domains</a
-        >
-        (desktop is similar). Some of the
-        <code>&lt;actinic:*&gt;</code> elements he mentioned appear on even
-        more:
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/30dfca0fde9fad9b2ec58b12cb2b0271a272fb5c8970cd40e316adc728a09d19.html"
-          ><code>actinic:basehref</code>, still shows up on 154 pages in the
-          desktop data</a
-        >. (These come from British e-commerce provider
-        <a href="https://www.oxatis.co.uk">Oxatis</a>).
-      </p>
-      <p>
-        Macromedia's elements seem to have largely disappeared,
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/17d49e765c4f1bfef2a3bd183ee0961fe40f0623d2b9ddf885ee35e1f251d14c.html"
-          >only one appears at all on our list, and on only 22 domains</a
-        >, however Adobe's Go-Live tags like
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html"
-          ><code>&lt;csscriptdict&gt;</code></a
-        >
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html"
-          >still appear on 640 domains in the desktop dataset</a
-        >.
-      </p>
-      <p>
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/bc8f154a95dfe06a6d0fdb099b6c8df61727b2289141a0ef16dc17b2b57d3068.html"
-          ><code>&lt;o:p&gt;</code> (created by Microsoft Office) still appears
-          in ~0.46% of desktop pages</a
-        >
-        (that's over 20k domains) and
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/66f75e1fd2b8e62a1e77033601d9f65516df3ff8cb1896ce37fbdb932853d5c5.html"
-          >0.32% of mobile page</a
-        >
-        (more than a lot of standard HTML elements).
-      </p>
+      <ul>
+        <li>
+          Popular elements created by
+          <a href="https://en.wikipedia.org/wiki/Claris_Home_Page"
+            >Claris Home Page</a
+          >
+          (whose last stable release was 21 years ago) <em>still</em> appear on
+          over 100 pages.
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/28b0b7abb3980af793a2f63b484e7815365b91c04ae625dd4170389cc1ab0a52.html"
+            ><code>&lt;x-claris-window&gt;</code></a
+          >, for example, appears on 130 pages.
+        </li>
+        <li>
+          Some of the <code>&lt;actinic:*&gt;</code> elements from British
+          ecommerce provider
+          <a href="https://www.oxatis.co.uk">Oxatis</a> appear on even more
+          pages. For example,
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/30dfca0fde9fad9b2ec58b12cb2b0271a272fb5c8970cd40e316adc728a09d19.html"
+            ><code>&lt;actinic:basehref&gt;</code></a
+          >
+          still shows up on 154 pages in the desktop data.
+        </li>
+        <li>
+          Macromedia's elements seem to have largely disappeared. Only one
+          element,
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/836d469b8c29e5892dedfd43556ed1b0e28a5647066858ca1c395f5b30f8485c.html"
+            ><code>&lt;mm:endlock&gt;</code></a
+          >, appears on our list and on only 22 pages.
+        </li>
+        <li>
+          Adobe Go-Live's
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html"
+            ><code>&lt;csscriptdict&gt;</code></a
+          >
+          still appears on 640 pages in the desktop dataset.
+        </li>
+        <li>
+          Microsoft Office's
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/bc8f154a95dfe06a6d0fdb099b6c8df61727b2289141a0ef16dc17b2b57d3068.html"
+            ><code>&lt;o:p&gt;</code></a
+          >
+          element still appears on 0.5% of desktop pages, over 20k pages.
+        </li>
+      </ul>
       <p>
         But there are plenty of newcomers that weren't in Hixie's original
-        report too, and with even bigger numbers…
+        report too, and with even bigger numbers.
       </p>
+      <ul>
+        <li>
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/e8bf0130c4f29b28a97b3c525c09a9a423c31c0c813ae0bd1f227bd74ddec03d.html"
+            ><code>&lt;ym-measure&gt;</code></a
+          >
+          is a tag injected by Yandex's
+          <a href="https://www.npmjs.com/package/yandex-metrica-watch"
+            >Metrica analytics package</a
+          >. It's used on more than 1% of desktop and mobile pages, solidifying
+          its place in the top 100 most used elements. That's huge!
+        </li>
+        <li>
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/a532f18bbfd1b565b460776a64fa9a2cdd1aa4cd2ae0d37eb2facc02bfacb40c.html"
+            ><code>&lt;g:plusone&gt;</code></a
+          >
+          from the now-defunct Google Plus occurs on over 21k pages.
+        </li>
+        <li>
+          Facebook's
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/2e2f63858f7715ef84d28625344066480365adba8da8e6ca1a00dfdde105669a.html"
+            ><code>&lt;fb:like&gt;</code></a
+          >
+          occurs on 14k mobile pages.
+        </li>
+        <li>
+          Similarly,
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/5a964079ac2a3ec1b4f552503addd406d02ec4ddb4955e61f54971c27b461984.html"
+            ><code>&lt;fb:like-box&gt;</code></a
+          >
+          occurs on 7.8k mobile pages.
+        </li>
+        <li>
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/6997d689f56fe77e5ce345cfb570adbd42d802393f4cc175a1b974833a0e3cb5.html"
+            ><code>&lt;app-root&gt;</code></a
+          >, which is generally included in frameworks like Angular, appears on
+          8.2k mobile pages.
+        </li>
+      </ul>
       <p>
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/e8bf0130c4f29b28a97b3c525c09a9a423c31c0c813ae0bd1f227bd74ddec03d.html"
-          ><code>&lt;ym-measure&gt;</code> is used on more than 1% of pages
-          (both desktop and mobile)</a
-        >
-        -- that's <em>huge</em> -- putting it in the top 100. It's a tag
-        injected by Yandex's
-        <a href="https://metrica.yandex.com/about">Metrica</a> analytics
-        <a href="https://www.npmjs.com/package/yandex-metrica-watch">package</a
-        >.
+        Let's compare these to a few of the native HTML elements that are below
+        the 5% bar, for perspective.
       </p>
+      <figure id="fig9">
+        <iframe
+          width="600"
+          height="370"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive"
+        ></iframe>
+        <figcaption>
+          Figure 9. Popularity of product-specific and native elements under 5%
+          adoption.
+        </figcaption>
+      </figure>
+      <p>You could discover interesting insights like these all day long.</p>
       <p>
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/a532f18bbfd1b565b460776a64fa9a2cdd1aa4cd2ae0d37eb2facc02bfacb40c.html"
-          ><code>&lt;g:plusone&gt;</code> from Google's now defunct Google Plus
-          occurs on over 21k domains (both desktop and mobile)</a
-        >.
-      </p>
-      <p>
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/2e2f63858f7715ef84d28625344066480365adba8da8e6ca1a00dfdde105669a.html"
-          ><code>&lt;fb:like&gt;</code> occurs on ~13.8k</a
-        >
-        (mobile,
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/a9aceaee7fbe82b3156caf79f48d7ef6b42729bce637f6683dc6c287df52cd5b.html"
-          >12.8k on desktop</a
-        >) and
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/5a964079ac2a3ec1b4f552503addd406d02ec4ddb4955e61f54971c27b461984.html"
-          ><code>&lt;fb:like-box&gt;</code> occurs on 7.8k</a
-        >
-        (mobile,
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/cc56280bb2d659b4426050b0c135b5c15b8ea4f8090756b567c564dac1f0659b.html"
-          >7k on desktop</a
-        >)
-      </p>
-      <p>
-        And
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/6997d689f56fe77e5ce345cfb570adbd42d802393f4cc175a1b974833a0e3cb5.html"
-          ><code>&lt;app-root&gt;</code> (generally a framework like Angular)
-          appears on 8.2k mobile sites</a
-        >
-        (<a
-          href="https://rainy-periwinkle.glitch.me/permalink/ee3c9dfbcab568e97c7318d9795b9ecbde0605f247b19b68793afc837796aa5c.html"
-          >8.5k on desktop</a
-        >).
-      </p>
-      <p>
-        Comparing these to a few of the native HTML elements that are below the
-        5% bar, for perspective, looks something like this (note -- varies
-        slightly based on dataset).
-      </p>
-      <p>
-        (( TOOD: there is a corresponding image in the google doc
-        <a
-          href="https://docs.google.com/document/d/16TY_pV-FyW35DzuvdlaOiENz6o6PWYpl_RviU-HW7Qc/edit"
-          >https://docs.google.com/document/d/16TY_pV-FyW35DzuvdlaOiENz6o6PWYpl_RviU-HW7Qc/edit</a
-        >
-        ))
-      </p>
-      <p>You could draw interesting observations like these all day long.</p>
-      <p>
-        Here's one that's a little different: Productization causing popularity
-        is evident in outright errors as well.
+        Here's one that's a little different: popular elements could be caused
+        by outright errors in products. For example,
         <a
           href="https://rainy-periwinkle.glitch.me/permalink/3214f840b6ae3ef1074291f60fa1be4b9d9df401fe0190bfaff4bb078c8614a5.html"
-          ><code>&lt;pclass="ddc-font-size-large"&gt;</code> was a parsed tag
-          name which occurred in our dataset in over 1000 sites</a
-        >. This was thanks to a missing space in a popular 'as a service' kind
-        of product. Happily, we reported this error during our research and it
-        was quickly fixed.
+          ><code>&lt;pclass="ddc-font-size-large"&gt;</code></a
+        >
+        occurrs on over 1,000 sites. This was thanks to a missing space in a
+        popular "as-a-service" kind of product. Happily, we reported this error
+        during our research and it was quickly fixed.
       </p>
+      <p>In his original paper, Hixie mentions that:</p>
+      <blockquote>
+        The good thing, if we can be forgiven for trying to remain optimistic in
+        the face of all this non-standard markup, is that at least these
+        elements are all clearly using vendor-specific names. This massively
+        reduces the likelihood that standards bodies will invent elements and
+        attributes that clash with any of them.
+      </blockquote>
       <p>
-        In his original paper, Hixie mentions that "The good thing, if we can be
-        forgiven for trying to remain optimistic in the face of all this
-        non-standard markup, is that at least these elements are all clearly
-        using vendor-specific names. This massively reduces the likelihood that
-        standards bodies will invent elements and attributes that clash with any
-        of them." However, as mentioned above, this is not universal. Over 25%
-        of the non-standard elements that we captured don't use any kind of
-        namespacing strategy to avoid polluting the global namespace. Here is
+        However, as mentioned above, this is not universal. Over 25% of the
+        non-standard elements that we captured don't use any kind of namespacing
+        strategy to avoid polluting the global namespace. For example, here is
         <a
           href="https://rainy-periwinkle.glitch.me/permalink/53567ec94b328de965eb821010b8b5935b0e0ba316e833267dc04f1fb3b53bd5.html"
           >a list of 1157 elements like that from the mobile dataset</a
-        >. Many of those, as you can see, are probably non-problematic as they
-        are obscure names, misspellings and so on -- but at least a few probably
-        present some challenges. You'll note, for example, that
+        >. Many of those, as you can see, are likely to be non-problematic as
+        they have obscure names, misspellings and so on. But at least a few
+        probably present some challenges. You'll note, for example, that
         <code>&lt;toast&gt;</code> (which Googlers
         <a href="https://www.chromestatus.com/feature/5674896879255552"
           >recently tried to propose as <code>&lt;std-toast&gt;</code></a
         >) appears in this list.
       </p>
       <p>
-        Among the probably not challenging, but popular ones are some
-        interesting entries:
+        There are some popular elements that are probably not so challenging:
       </p>
-      <p>
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/2ba66fb067dce29ecca276201c37e01aa7fe7c191e6be9f36dd59224f9a36e16.html"
-          ><code>&lt;ymaps&gt;</code> (from yahoo maps) appears on ~12.5k mobile
-          sites</a
-        >
-        (<a
-          href="https://rainy-periwinkle.glitch.me/permalink/7f365899dc8a5341ed5c234162ee4eb187e99a23fc28cdea31af2322029d8b48.html"
-          >~8.3k desktop</a
-        >)
-      </p>
-      <p>
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/5cfe2db53aadf5049e32cf7db0f7f6d8d2f1d4926d06467d9bdcd0842d943a17.html"
-          ><code>&lt;cufon&gt;</code> and <code>&lt;cufontext&gt;</code> from a
-          font replacement library from 2008, appear on ~10.5k of mobile
-          pages</a
-        >
-        (~<a
-          href="https://rainy-periwinkle.glitch.me/permalink/c9371b2f13e7e6ff74553f7918c18807cd9222024d970699e493b2935608a5f2.html"
-          >8.7k desktop</a
-        >)
-      </p>
-      <p>
-        There is also
-        <a
-          href="https://rainy-periwinkle.glitch.me/permalink/976b0cf78c73d125644d347be9e93e51d3a9112e31a283259c35942bda06e989.html"
-          >the <code>&lt;jdiv&gt;</code> element appears to be injected by Jivo
-          chat, a popular chat solution which appears on ~40.3k of mobile
-          sites</a
-        >
-        (<a
-          href="https://rainy-periwinkle.glitch.me/permalink/98fb3bf4f44c33edabc05439b10a374a121dbbfc5f83af65e00e859039b13acd.html"
-          >~37.6k of desktop pages -- that's roughly ~0.86%)</a
-        >!
-      </p>
+      <ul>
+        <li>
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/2ba66fb067dce29ecca276201c37e01aa7fe7c191e6be9f36dd59224f9a36e16.html"
+            ><code>&lt;ymaps&gt;</code></a
+          >
+          from Yahoo Maps appears on ~12.5k mobile pages.
+        </li>
+        <li>
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/5cfe2db53aadf5049e32cf7db0f7f6d8d2f1d4926d06467d9bdcd0842d943a17.html"
+            ><code>&lt;cufon&gt;</code> and <code>&lt;cufontext&gt;</code></a
+          >
+          from a font replacement library from 2008, appear on ~10.5k mobile
+          pages.
+        </li>
+        <li>
+          The
+          <a
+            href="https://rainy-periwinkle.glitch.me/permalink/976b0cf78c73d125644d347be9e93e51d3a9112e31a283259c35942bda06e989.html"
+            ><code>&lt;jdiv&gt;</code></a
+          >
+          element, which appears to be injected by the Jivo chat product,
+          appears on ~40.3k mobile pages,
+        </li>
+      </ul>
       <p>
         Placing these into our same chart as above for perspective looks
         something like this (again, it varies slightly based on the dataset)
       </p>
+      <figure id="fig10">
+        <iframe
+          width="600"
+          height="370"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive"
+        ></iframe>
+        <figcaption>
+          Figure 10. Other popular elements in the context of product-specific
+          and native elements with under 5% adoption.
+        </figcaption>
+      </figure>
       <p>
-        (( TODO: there is a corresponding image in the google doc
-        <a
-          href="https://docs.google.com/document/d/16TY_pV-FyW35DzuvdlaOiENz6o6PWYpl_RviU-HW7Qc/edit"
-          >https://docs.google.com/document/d/16TY_pV-FyW35DzuvdlaOiENz6o6PWYpl_RviU-HW7Qc/edit</a
-        >
-        ))
-      </p>
-      <p>
-        The interesting thing about these is that they also introduce a few
-        other ways that our tool can come in very handy: If we're interested in
-        exploring the space of the data, a very specific tag name is just one
+        The interesting thing about these results is that they also introduce a
+        few other ways that our tool can come in very handy. If we're interested
+        in exploring the space of the data, a very specific tag name is just one
         possible measure. It's definitely the strongest indicator if we can find
-        good slang developing. However, what if that's not all we're interested
-        in?
+        good "slang" developing. However, what if that's not all we're
+        interested in?
       </p>
       <h3 id="common-use-cases-and-solutions">
         Common use cases and solutions
@@ -767,39 +758,39 @@ tomhodgins"," matthewp"]} %} {% block main %}
         cases? This could be because we're looking for solutions to use cases
         that we currently have ourselves, or for researching more broadly what
         common use cases people are solving with an eye toward incubating some
-        standardization effort. Let's take a common example: Tabs. Over the
+        standardization effort. Let's take a common example: tabs. Over the
         years there have been a lot of requests for things like tabs. We can use
         a fuzzy search here and find that there are
         <a
           href="https://rainy-periwinkle.glitch.me/permalink/c6d39f24d61d811b55fc032806cade9f0be437dcb2f5735a4291adb04aa7a0ea.html"
           >many variants of tabs</a
-        >. It's a little harder to count use here since we can't as easily
+        >. It's a little harder to count usage here since we can't as easily
         distinguish if two elements appear on the same page, so the count
         provided there conservatively simply takes the one with the largest
-        count -- in most cases the real number of domains is probably
-        significantly larger.
+        count. In most cases the real number of pages is probably significantly
+        larger.
       </p>
       <p>
-        There are also
+        There are also lots of
         <a
           href="https://rainy-periwinkle.glitch.me/permalink/e573cf279bf1d2f0f98a90f0d7e507ac8dbd3e570336b20c6befc9370146220b.html"
-          >lots of accordions</a
+          >accordions</a
         >,
         <a
           href="https://rainy-periwinkle.glitch.me/permalink/0bb74b808e7850a441fc9b93b61abf053efc28f05e0a1bc2382937e3b78695d9.html"
           >dialogs</a
-        >, at least
+        >, at least 65 variants of
         <a
           href="https://rainy-periwinkle.glitch.me/permalink/651e592cb2957c14cdb43d6610b6acf696272b2fbd0d58a74c283e5ad4c79a12.html"
-          >65 variants of carousels</a
+          >carousels</a
         >, lots of stuff about
         <a
           href="https://rainy-periwinkle.glitch.me/permalink/981967b19a9346ac466482c51b35c49fc1c1cc66177ede440ab3ee51a7912187.html"
-          >'popups'</a
-        >, at least
+          >popups</a
+        >, at least 27 variants of
         <a
           href="https://rainy-periwinkle.glitch.me/permalink/2e6827af7c9d2530cb3d2f39a3f904091c523c2ead14daccd4a41428f34da5e8.html"
-          >27 variants of toggles and switches</a
+          >toggles and switches</a
         >, and so on.
       </p>
       <p>
@@ -820,11 +811,11 @@ tomhodgins"," matthewp"]} %} {% block main %}
         >
         and follow connections to survey the space.
       </p>
-      <h3 id="in-summary">In Summary</h3>
+      <h2 id="conclusion">Conclusion</h2>
       <p>So, there's lots of data here, but to summarize:</p>
       <ul>
         <li>
-          Pages have more elements than they did 14 years ago -- both on average
+          Pages have more elements than they did 14 years ago, both on average
           and max.
         </li>
         <li>
@@ -834,14 +825,14 @@ tomhodgins"," matthewp"]} %} {% block main %}
         </li>
         <li>
           There is a lot of broken markup out there in the wild (misspelled
-          tags, missing spaces, bad escaping, misunderstandings)
+          tags, missing spaces, bad escaping, misunderstandings).
         </li>
         <li>
-          Measuring what 'useful' means is tricky -- lots of native elements
-          don't pass the 5% bar, or even the 1% bar, but lots of custom ones do
-          -- and for lots of reasons. Passing 1% should definitely grab our
-          attention at least, but perhaps so should 0.5% because that is,
-          according to the data, comparatively <em>very</em> successful.
+          Measuring what "useful" means is tricky. Lots of native elements don't
+          pass the 5% bar, or even the 1% bar, but lots of custom ones do, and
+          for lots of reasons. Passing 1% should definitely grab our attention
+          at least, but perhaps so should 0.5% because that is, according to the
+          data, comparatively <em>very</em> successful.
         </li>
         <li>
           There is already a ton of custom markup out there. It comes in a lot
@@ -854,12 +845,12 @@ tomhodgins"," matthewp"]} %} {% block main %}
         </li>
       </ul>
       <p>
-        That last one is where you come in: We'd love to tap into the creativity
+        That last one is where you come in. We'd love to tap into the creativity
         and curiosity of the larger community to help explore this data using
         some of the tools (like
         <a href="https://rainy-periwinkle.glitch.me/"
           >https://rainy-periwinkle.glitch.me/</a
-        >) -- please share your interesting observations and help build our
+        >). Please share your interesting observations and help build our
         commons of knowledge and understanding.
       </p>
     </section>
