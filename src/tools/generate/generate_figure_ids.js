@@ -17,7 +17,7 @@ const generate_figure_ids = (html) => {
     });
   }
 
-  const body = dom.window.document.body.outerHTML;
+  const body = dom.window.document.body.innerHTML;
   return body;
 };
 
