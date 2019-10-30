@@ -10,7 +10,7 @@ reviewers: [aymenloukil, hyperpress]
 
 ## Introduction
 
-Let’s step back a moment… to the year 2007. The "mobile web" is currently just a blip on the radar, and for good reason too. Why? WIth little to no CSS support sites look nothing like they do on desktop—often times displaying in text-only. Screens are incredibly small and can only display a few lines of text at a time. And clicking tiny little arrow keys to “tab around” is the replacement for a mouse… Browsing the web on a phone is truly a labor of love. However, all of this is just about to change.
+Let’s step back a moment… to the year 2007. The "mobile web" is currently just a blip on the radar, and for good reason too. Why? Mobile browsers have little to no CSS support, meaning sites look nothing like they do on desktop (some browsers can only display text). Screens are incredibly small and can only display a few lines of text at a time. And the replacement for a mouse are these tiny little arrow keys you use to “tab around”. Needless to say, browsing the web on a phone is truly a labor of love. However, all of this is just about to change.
 
 In the middle of his presentation, Steve Jobs takes the newly unveiled iPhone, sits down, and begins to surf the web in a way we had only previously dreamed of. A large screen and fully featured browser displaying websites in their full glory. And most importantly, surfing the web using the most intuitive pointer device known to man: our fingers. No more alt tabbing with tiny little arrow keys.
 
@@ -20,7 +20,7 @@ Since 2007, the mobile web has grown at an exploding rate. And now 13 years late
 
 ## The page loading experience
 
-The first part of the mobile web experience we analyzed is the one we’re all most intimately familiar with: *the page loading experience*. But before we can start diving into our findings, we all need to be on the same page regarding what the average mobile user *really looks* like—so that not only can you reproduce these results, but understand them better.
+The first part of the mobile web experience we analyzed is the one we’re all most intimately familiar with: *the page loading experience*. But before we start diving into our findings, let's make sure we're all on the same page regarding what the average mobile user *really* looks like. Because this will not only help you reproduce these results, but understand these users better.
 
 Let’s start with what phone the average mobile user has. The average android phone [is ~$250](https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119), and one of the [most popular phones](https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones) in that range is a Samsung Galaxy S6… so this is likely the kind of phone they use (4x slower than that iPhone 8 you may have). This user doesn’t have access to a much faster 4G connection, but rather a 2G ([29%](https://www.gsma.com/r/mobileeconomy/) of the time) or 3G connection ([28%](https://www.gsma.com/r/mobileeconomy/) of the time). And this is what it all adds up to:
 
@@ -49,9 +49,9 @@ I imagine some of you are surprised by these results. They may be far worse cond
 
 ### Pages bloated with javascript
 
-Looking at the HTTP Archive’s [compiled report on javascript](https://httparchive.org/reports/state-of-javascript) shows that the state of javascript on the web is in complete shambles. The median mobile site requires phones to not only **download 375KB** of javascript, but to then uncompress, parse and compile it. And at an average 70% compression ratio... this means **parsing, compiling, and executing ~1.25MB** of javascript on average.
+The state of javascript on the mobile web is terrifying. According to HTTP Archive's [compiled report on javascript](https://httparchive.org/reports/state-of-javascript), the median mobile site requires phones to **download 375KB** of javascript. Meaning phones have to **parse, compile, and execute ~1.25MB** of javascript on average (assuming a typical 70% compression ratio).
 
-Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed#ttci) to become interactive (remember that poor Galaxy S6). Or in other words: your page may appear fully loaded, but since the JS has not finished executing, when your user clicks any buttons, menus, etc… nothing will happen. They’re forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that gets.
+Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed#ttci) to become interactive. Or in other words: your page may appear fully loaded, but when a user clicks any of your buttons, menus, etc… nothing happens because the JS hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that gets.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -67,7 +67,7 @@ Let’s delve deeper and look at another metric more focused on *how well* each 
 
 > The *Javascript Bloat Score* is defined as: (total Javascript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it’d faster to send a screenshot.</aside>
 
-The results of this? Of the 5million+ websites analyzed, **75.52% were bloated with javascript**. We have a long way to go.
+The results of this? Of the 5 million+ websites analyzed, **75.52% were bloated with javascript**. We have a long way to go.
 
 **_Notes:_**
 
