@@ -53,51 +53,27 @@
 
   {% block footer %}
     <footer class="alt-bg">
-      <section class="nav">
-        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive"/></a>
-        <nav class="nav-items">
-          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
-          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
-        </nav>
-        {{ language_switcher() }}
-      </section>
-      <hr>
-      <div class="footer-mobile-nav">
+      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive"/></a>
+      <a class="navigation-logo ha-logo" href="https://httparchive.org">
+        <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
+      </a>
+      <nav class="nav-items">
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
-        <div>
-          <a class="navigation-logo" href="https://httparchive.org/">
-            <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
-          </a>
-          <div class="social-media">
-            <a href="https://twitter.com/HTTPArchive" class="twitter">
-              <img src="/static/images/twitter.png" alt="Twitter" />
-            </a>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-              <img src="/static/images/github.png" alt="GitHub" />
-            </a>
-          </div>
-        </div>
+      </nav>
+      <div class="language-switcher">{{ language_switcher() }}</div>
+      <p class="copyright">Copyright © 2019 Web Almanac. All rights reserved.</p>
+      <div class="social-media">
+        <a href="https://twitter.com/HTTPArchive" class="twitter">
+          <img src="/static/images/twitter.png" alt="Twitter" />
+        </a>
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+          <img src="/static/images/github.png" alt="GitHub" />
+        </a>
       </div>
       <hr>
-      <div class="misc">
-        <p>Copyright © 2019 Web Almanac. All rights reserved.</p>
-        <div>
-          <a class="navigation-logo" href="https://httparchive.org">
-            <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
-          </a>
-          <div class="social-media">
-            <a href="https://twitter.com/HTTPArchive" class="twitter">
-              <img src="/static/images/twitter.png" alt="Twitter" />
-            </a>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-              <img src="/static/images/github.png" alt="GitHub" />
-            </a>
-          </div>
-        </div>
-      </div>
+      <hr>
     </footer>
   {% endblock %}
   {% block scripts %}
