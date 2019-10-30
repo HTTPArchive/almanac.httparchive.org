@@ -253,6 +253,13 @@
       "blog": "http:\/\/andydavies.me\/",
       "github": "andydavies"
     },
+    "andylimn": {
+      "name": "Andrew Limn",
+      "teams": [
+        "reviewers"
+      ],
+      "github": "andylimn"
+    },
     "arturjanc": {
       "name": "Artur Janc",
       "teams": [
@@ -275,7 +282,9 @@
       "name": "Barry Pollard",
       "teams": [
         "brainstormers",
-        "authors"
+        "authors",
+        "reviewers",
+        "editors"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/10931297?v=4&s=200",
       "blog": "https:\/\/www.tunetheweb.com",
@@ -355,7 +364,8 @@
         "brainstormers",
         "authors",
         "reviewers",
-        "analysts"
+        "analysts",
+        "editors"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/684747?v=4&s=200",
       "blog": "https:\/\/www.lookzook.com",
@@ -562,11 +572,12 @@
       "blog": "https:\/\/mathiasbynens.be\/",
       "github": "mathiasbynens"
     },
-    "matt-ludwig": {
+    "mattludwig": {
       "name": "Matt Ludwig",
       "teams": [
         "reviewers"
-      ]
+      ],
+      "github": "mattludwig"
     },
     "matthewp": {
       "name": "Matthew Phillips",
@@ -632,7 +643,8 @@
       "name": "Rachel Costello",
       "teams": [
         "brainstormers",
-        "authors"
+        "authors",
+        "editors"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/49983543?v=4&s=200",
       "github": "rachellcostello"
@@ -669,7 +681,8 @@
         "authors",
         "reviewers",
         "analysts",
-        "developers"
+        "developers",
+        "editors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1120896?v=4&s=200",
       "blog": "https:\/\/twitter.com\/rick_viscomi",
