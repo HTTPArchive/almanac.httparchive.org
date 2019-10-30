@@ -144,7 +144,7 @@ Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated el
     <td>desktop</td>
   </tr>
   <tr>
-    <td><code>&lt;center><code></td>
+    <td><code>&lt;center></code></td>
     <td>7.96%</td>
     <td>8.30%</td>
   </tr>
