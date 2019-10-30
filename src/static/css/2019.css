@@ -26,6 +26,19 @@ a:focus, a:hover {
   text-decoration: underline;
 }
 
+h1.title {
+  margin-top: 0;
+  font-size: 72px;
+  line-height: 90px;
+}
+h1.title::before {
+  display: block;
+  content: '';
+  margin-bottom: 18px;
+  border-bottom: solid 1px #A8CABA;
+  width: 70px;
+}
+
 .btn {
   outline: none;
   border: 1px solid #1A2B49;
@@ -120,7 +133,6 @@ header nav > *:last-child {
   margin-right: 0;
 }
 nav a {
-  font-size: 14px;
   text-decoration: none;
   color: #F2F2F2;
 }
