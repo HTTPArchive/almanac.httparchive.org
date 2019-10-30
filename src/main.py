@@ -5,15 +5,13 @@ from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
 from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
-from random import randrange
 
 app = Flask(__name__)
-app.jinja_env.globals.update(randrange=randrange,str=str)
-
 Talisman(app,
          content_security_policy=csp,
          content_security_policy_nonce_in=['script-src'])
 logging.basicConfig(level=logging.DEBUG)
+
 
 def render_template(template, *args, **kwargs):
     year = request.view_args.get('year', DEFAULT_YEAR)
@@ -49,6 +47,7 @@ def get_chapter_image_dir(metadata):
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
 app.jinja_env.globals['get_chapter_image_dir'] = get_chapter_image_dir
+
 
 @app.route('/<lang>/<year>/')
 @validate
@@ -87,12 +86,13 @@ def methodology(lang, year):
 def chapter(lang, year, chapter):
     # TODO: Validate the chapter.
     config = config_util.get_config(year)
-    chapter_nextprev = get_chapter_nextprev(config,chapter)
-    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config, prev_chapter=chapter_nextprev['prev_chapter'], next_chapter=chapter_nextprev['next_chapter'])
+    (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
+    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config, prev_chapter=prev_chapter, next_chapter=next_chapter)
+
 
 def get_chapter_nextprev(config, chapter_slug):
-    prev_chapter = False
-    next_chapter = False
+    prev_chapter = None
+    next_chapter = None
     found =  False
 
     for part in config['outline']:
@@ -100,14 +100,15 @@ def get_chapter_nextprev(config, chapter_slug):
             if found and 'todo' not in chapter:
                 next_chapter = chapter
                 break
-            elif chapter['title'].lower().replace(' ', '-').replace('/', '') == chapter_slug and 'todo' not in chapter:
+            elif get_chapter_slug(chapter) == chapter_slug and 'todo' not in chapter:
                 found = True
             elif 'todo' not in chapter:
                 prev_chapter = chapter
-        if(found):
+        if found and next_chapter:
             break
 
-    return dict(prev_chapter=prev_chapter,next_chapter=next_chapter)
+    return (prev_chapter, next_chapter)
+
 
 @app.errorhandler(400)
 def bad_request(e):
