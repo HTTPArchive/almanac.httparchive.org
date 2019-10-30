@@ -1,6 +1,8 @@
 const fs = require('fs-extra');
 const showdown = require('showdown');
 const ejs = require('ejs');
+const prettier = require('prettier');
+
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
@@ -10,14 +12,19 @@ const generate_chapters = async () => {
   for (let language of await fs.readdir('content')) {
     for (let year of await fs.readdir(`content/${language}`)) {
       for (let file of await fs.readdir(`content/${language}/${year}`)) {
-        let markdown = await fs.readFile(`content/${language}/${year}/${file}`, 'utf-8');
-        let chapter = file.replace('.md', '');
+        try {
+          let markdown = await fs.readFile(`content/${language}/${year}/${file}`, 'utf-8');
+          let chapter = file.replace('.md', '');
 
-        console.log(`\n Generating chapter: ${language}, ${year}, ${chapter}`);
+          console.log(`\n Generating chapter: ${language}, ${year}, ${chapter}`);
 
-        let { metadata, body, toc } = await parse_file(markdown);
+          let { metadata, body, toc } = await parse_file(markdown);
 
-        await write_template(language, year, chapter, metadata, body, toc);
+          await write_template(language, year, chapter, metadata, body, toc);
+        } catch (error) {
+          console.error(error);
+          console.error('  Failed to generate chapter, moving onto the next one. ');
+        }
       }
     }
   }
@@ -47,8 +54,9 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   let html = await ejs.renderFile(template, { metadata, body, toc });
+  let fomatted_html = prettier.format(html, { parser: 'html' });
 
-  await fs.outputFile(path, html, 'utf8');
+  await fs.outputFile(path, fomatted_html, 'utf8');
 
   await size_of(path);
 };
