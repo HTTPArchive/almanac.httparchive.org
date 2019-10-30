@@ -7,15 +7,40 @@
 {% block styles %}
 {{ super() }}
 <style>
+.title::before {
+  display: block;
+  content: '';
+  margin-bottom: 18px;
+  border-bottom: solid 1px #c6dcd2;
+  width: 70px;
+}
+.team {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: 200px;
+  justify-content: space-between;
+  margin: 0 0 24px 0;
+}
+.team img {
+  height: 200px;
+  width: auto;
+}
 .contributors {
-  margin-top: 100px;
+  margin: 0 0 100px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
 }
 
 .filter-container {
   margin-bottom: 30px;
+}
+.contributors-count {
+  position: absolute;
+  right: 0;
+  top: 20px;
 }
 
 .filter-container button {
@@ -25,13 +50,42 @@
   outline: none;
   border-radius: 10px;
   cursor: pointer;
-  margin: 8px;
-  padding: 8px;
+  margin: 0 8px 8px 0;
+  padding: 8px 16px;
+  border: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 .contributor-grid {
   display: flex;
   align-items: stretch;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.contributor-grid:not([data-rendered='true']) .contributor {
+  transform: translateY(30px);
+  opacity: 0;
+  will-change: opacity;
+}
+
+.contributor-grid[data-rendered='true'] .contributor {
+  animation-name: fade-in;
+  animation-duration: 750ms;
+}
+.contributor-grid[data-rendered='true'] .contributor:nth-of-type(0) {
+  animation-duration: 250ms;
+}
+.contributor-grid[data-rendered='true'] .contributor:nth-of-type(1) {
+  animation-duration: 350ms;
+}
+.contributor-grid[data-rendered='true'] .contributor:nth-of-type(2) {
+  animation-duration: 450ms;
+}
+.contributor-grid[data-rendered='true'] .contributor:nth-of-type(3) {
+  animation-duration: 600ms;
 }
 
 .contributor {
@@ -39,21 +93,26 @@
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  box-shadow: 0 0 5px 5px rgba(48, 64, 91, 0.1);
+  box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
+  padding: 24px 34px;
   width: 250px;
-  padding: 15px;
+  margin: 15px;
 }
 
 .contributor-avatar {
   border-radius: 50px;
   background-color: #f7f779;
   margin-bottom: 10px;
+  width: 100px;
+  height: auto;
 }
 
 .contributor-name {
+  text-align: center;
   font-style: italic;
   font-size: 18px;
   margin-bottom: 10px;
+  flex: 1
 }
 
 .contributor-social {
@@ -61,14 +120,18 @@
 }
 
 .contributor-social img {
-  height: 18px;
+  height: auto;
   width: 18px;
-  margin: 0 10px;
+  margin: 0 6px 0 0;
+}
+
+.contributor-teams {
+  text-align: center;
 }
 
 .contributor-team {
-  font-size: 10px;
-  color: #666;
+  font-size: 14px;
+  color: #868686;
 }
 .contributor-team::after {
   content: ', ';
@@ -83,22 +146,83 @@
 }
 
 .contributors.{{ id }} button.{{ id }} {
-  background: #0053ba;
-  color: white;
+  background: #f7f779;
+  color: #333;
 }
 {% endfor %}
+
+@media (max-width: 600px) {
+  .team {
+    height: 100px;
+  }
+  .team img {
+     width: 100px;
+     height: auto;
+  }
+
+  {% for id in config.teams.keys() %}
+  .contributors.{{ id }} .contributor.{{ id }} {
+    display: grid;
+  }
+  {% endfor %}
+
+  .contributor {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 100px 3fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0;
+    padding: 20px 16px;
+
+  }
+  .contributor div {
+      text-align: left;
+  }
+
+  .contributor-avatar {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    width: 80px;
+    height: auto;
+    margin: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    }
+}
 </style>
 {% endblock %}
 
 {% block main %}
 <section class="main">
-  <h1>
-    <span id="filtered-contributors">{{ config.contributors.items() | length }}</span>
+  <h1 class="title">
     Contributors
   </h1>
+  <div class="team">
+      <img src="/static/images/avatars/1.jpg">
+      <img src="/static/images/avatars/8.jpg">
+      <img src="/static/images/avatars/4.jpg">
+      <img src="/static/images/avatars/0.jpg">
+      <img src="/static/images/avatars/11.jpg">
+      <img src="/static/images/avatars/9.jpg">
+  </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
+    <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors</div>
     <div class="filter-container">
-      <p>Filter by team</p>
+      <p>Filter by team:</p>
     {% for id, team in config.teams.items() %}
       <button class="{{ id }}">{{ team.name }}</button>
     {% endfor %}
@@ -107,20 +231,23 @@
     <div class="contributor-grid">
     {% for id, contributor in config.contributors.items() %}
       <div class="contributor {{ ' '.join(contributor.teams) }}">
-        <img class="contributor-avatar" src="{{ contributor.avatar_url }}" height="100" width="100" alt="{{ contributor.name }} avatar">
+        <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy">
         <div class="contributor-name">{{ contributor.name }}</div>
-        {% if contributor.twitter or contributor.github %}
+        {% if contributor.twitter or contributor.github or contributor.website %}
         <div class="contributor-social">
-          {% if contributor.twitter %}
-          <a href="https://twitter.com/{{ contributor.twitter }}"><img src="/static/images/twitter.png" alt="@{{ contributor.twitter }} on Twitter"></a>
-          {% endif %}
           {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}"><img src="/static/images/github.png" alt="{{ contributor.github }}@ on GitHub"></a>
+          <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ contributor.github }} on GitHub"><img src="/static/images/github.png" alt="GitHub"></a>
+          {% endif %}
+          {% if contributor.twitter %}
+          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" title="{{ contributor.github }} on Twitter"><img src="/static/images/twitter.png" title="Twitter"></a>
+          {% endif %}
+          {% if contributor.website %}
+          <a href="{{ contributor.website }}" target="_blank" title="{{ contributor.name }} website"><img src="/static/images/blog.png" alt="website"></a>
           {% endif %}
         </div>
         {% endif %}
         <div class="contributor-teams">
-          {% for id in contributor.teams %}
+          {% for id in contributor.teams | sort() %}
             <span class="contributor-team team-{{ id }}">{{ config.teams[id].name }}</span>
           {% endfor %}
         </div>
@@ -134,13 +261,17 @@
 {% block scripts %}
   {{ super() }}
   <script nonce="{{ csp_nonce() }}">
+var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
 var buttons = document.querySelectorAll('.filter-container button');
 var contributors = document.querySelector('.contributors');
+var contributorsGrid = document.querySelector('.contributor-grid');
 var counter = document.querySelector('#filtered-contributors');
 
+contributorsGrid.setAttribute('data-rendered', true);
+
 function getFilteredContributorCount() {
-  return Array.from(document.querySelectorAll('.contributor')).filter(function(e) {
-    return getComputedStyle(e).display != 'none';
+  return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
+    return getComputedStyle(el).display != 'none';
   }).length;
 }
 
@@ -148,9 +279,25 @@ for (var i = 0; i < buttons.length; i++) {
   var button = buttons[i];
   button.addEventListener('click', function(e) {
     var teamId = e.target.className;
-    contributors.classList.toggle(teamId);
+
+    //on first filter, hide all except that one
+    if(contributors.classList.length == (teams.length + 1)) {
+        teams.forEach(function(team) {
+            if(team === teamId) {
+                return;
+            }
+            document.querySelector('.' + team).classList.toggle(team);
+        });
+    } else if (contributors.classList.length == 2 && contributors.classList.contains(teamId)) {
+        teams.forEach(function(team) {
+            contributors.classList.add(team);
+        });
+    } else {
+        contributors.classList.toggle(teamId);
+    }
     counter.innerText = getFilteredContributorCount();
   });
 }
+
   </script>
 {% endblock %}
