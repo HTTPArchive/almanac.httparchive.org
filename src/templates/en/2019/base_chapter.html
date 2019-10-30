@@ -19,7 +19,7 @@
 {% macro render_authors() %}
 <ul>
   {% for author in metadata.get('authors') %}
-    {% set authordata = config.contributors[author].name if author in config.contributors else None %}
+    {% set authordata = config.contributors[author] if author in config.contributors else None %}
     {% if authordata %}
       <li>
           <img class="avatar" alt="Author name" src="{{ authordata.avatar_url if authordata.avatar_url else '/static/images/avatars/'+str(randrange(1, 12))+'.jpg'  }}">
