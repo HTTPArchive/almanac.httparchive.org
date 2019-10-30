@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const showdown = require('showdown');
 const ejs = require('ejs');
+const { generate_table_of_contents } = require('./generate_table_of_contents');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -14,9 +15,9 @@ const generate_chapters = async () => {
 
         console.log(`\n Generating chapter: ${language}, ${year}, ${chapter}`);
 
-        let { metadata, body } = await parse_file(markdown);
+        let { metadata, body, toc } = await parse_file(markdown);
 
-        await write_template(language, year, chapter, metadata, body);
+        await write_template(language, year, chapter, metadata, body, toc);
       }
     }
   }
@@ -24,6 +25,7 @@ const generate_chapters = async () => {
 
 const parse_file = async (markdown) => {
   const body = converter.makeHtml(markdown);
+  const toc = generate_table_of_contents(body);
 
   const m = converter.getMetadata();
   const chapter_number = Number(m.chapter_number);
@@ -37,14 +39,14 @@ const parse_file = async (markdown) => {
     reviewers
   };
 
-  return { metadata, body };
+  return { metadata, body, toc };
 };
 
-const write_template = async (language, year, chapter, metadata, body) => {
+const write_template = async (language, year, chapter, metadata, body, toc) => {
   const template = `templates/${language}/${year}/chapter.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
-  let html = await ejs.renderFile(template, { metadata, body });
+  let html = await ejs.renderFile(template, { metadata, body, toc });
 
   await fs.outputFile(path, html, 'utf8');
 

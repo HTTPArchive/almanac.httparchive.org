@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 20
 title: HTTP/2
-authors: [bazzadp]
+authors: [tunetheweb]
 reviewers: [bagder, rmarx, dotjs]
 ---
 
@@ -38,7 +38,7 @@ This whistle-stop tour of HTTP/2 gives the main history and concepts of the newi
 ## Adoption of HTTP/2
 As mentioned above, Internet protocols are often difficult to adopt since they are ingrained into so much of the infrastructure that makes up the internet. This makes introducing any changes slow and difficult. IPv6 for example has been around for 20 years but has [struggled to be adopted](https://www.google.com/intl/en/ipv6/statistics.html). HTTP/2 however, was different as it was effectively hidden in HTTPS (at least for the browser uses cases) removing barriers to adoption as long as both the browser and server supported it. Browser support has been very strong for some time and the advent of auto updating *evergreen* browsers has meant that an estimated [95% of global users support HTTP/2 now](https://caniuse.com/#feat=http2). For this Web Almanac we use HTTP Archive which runs a Chrome web crawler on the approximately 5 million top websites (on both Desktop and Mobile with a slightly different set for each). This shows that HTTP/2 usage is now the majority protocol - an impressive feat just 4 short years after formal standardization:
 
-![](https://github.com/bazzadp/almanac.httparchive.org/raw/http2_chapter/src/static/images/2019/20_HTTP_2/http2usage.png)
+![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/http2usage.png)
 
 **Figure 1 - [HTTP/2 usage by request](https://httparchive.org/reports/state-of-the-web#h2)**
 
@@ -139,13 +139,13 @@ The impact of HTTP/2 is a much more difficult to measure statistic, especially u
 
 One impact that can be measured is in the changing use of HTTP now we are in an HTTP/2 world. Multiple connections were a work around with HTTP/1.1 to allow a limited form of parallelization, but this is in fact the opposite of what usually works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, HTTPS negotiation and also allows the potential of cross-request prioritization. The HTTP Archive measures the number of TCP connections per page and that is dropping steadily as more sites support HTTP/2 and use its single connection instead of 6 separate connections:
 
-![](https://github.com/bazzadp/almanac.httparchive.org/raw/http2_chapter/src/static/images/2019/20_HTTP_2/TCPconnections.png)
+![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/TCPconnections.png)
 
 **Figure 8 - [TCP connections per page](https://httparchive.org/reports/state-of-the-web#tcp)**
 
 Bundling assets to obtain fewer requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting, ... etc. It is less necessary when using HTTP/2 as there is less overhead with requests but it should be noted that requests are not free in HTTP/2 and [those that experimented with removing bundling completely have noticed a loss in performance](https://engineering.khanacademy.org/posts/js-packaging-http2.htm). Looking at the number of requests loaded by page over time, we do see a slight decrease in requests, rather than the expected increase:
 
-![](https://github.com/bazzadp/almanac.httparchive.org/raw/http2_chapter/src/static/images/2019/20_HTTP_2/numresources.png)
+![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/numresources.png)
 
 **Figure 9 - [Total Requests per page](https://httparchive.org/reports/state-of-the-web#reqTotal)**
 
@@ -178,7 +178,7 @@ These status show that the uptick of HTTP/2 push is very low - most likely becau
 
 This is a concern as previous advice has been to be conservative with push and to ["push just enough resources to fill idle network time, and no more"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). The above statistics suggest many resources, of a significant combined size are pushed. Looking at what is pushed we see the data in Figure 12:
 
-![](https://github.com/bazzadp/almanac.httparchive.org/raw/http2_chapter/src/static/images/2019/20_HTTP_2/whatpushisusedfor.png)
+![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/whatpushisusedfor.png)
 
 **Figure 12 - What asset types is push used for?**
 
