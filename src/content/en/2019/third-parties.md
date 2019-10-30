@@ -47,9 +47,9 @@ This chapter divides third-party providers into one of these broad categories. A
 
 Third-party code is everywhere. 93% of pages include at least one third-party resource, 76% of pages issue a request to an analytics domain, the median page requests content from at least 9 _unique_ third-party domains that represent 35% of their total network activity, and the most active 10% of pages issue a whopping 175 third-party requests or more. It’s not a stretch to say that third parties are an integral part of the web.
 
-<insert stylized value of metric 05_01>
+```<insert stylized value of metric 05_01>```
 
-<insert stylized value of metric 05_02>
+```<insert stylized value of metric 05_02>```
 
 ### Categories
 
@@ -57,7 +57,7 @@ If the ubiquity of third-party content is unsurprising, perhaps more interesting
 
 While advertising might be the most user-visible example of third-party presence on the web, analytics providers are the most common third-party category with 76% of sites including at least one analytics request. CDNs at 63%, ads at 57%, and developer utilities like Sentry, Stripe, and Google Maps SDK at 56% follow up as a close second, third, and fourth for appearing on the most web properties. The popularity of these categories forms the foundation of our web usage patterns identified later in the chapter.
 
-<insert graphic of metric 05_11>
+```<insert graphic of metric 05_11>```
 
 ### Providers
 
@@ -65,15 +65,15 @@ A relatively small set of providers dominate the third-party landscape, the top 
 
 While much could be said about every individual provider’s popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as [third-party-web](https://thirdpartyweb.today).
 
-<insert table of metric 05_06>
+```<insert table of metric 05_06>```
 
-<insert table of metric 05_09>
+```<insert table of metric 05_09>```
 
 ### Resource Types
 
 The resource type breakdown of third-party content also lends insight into how third-party code is used across the web. While first-party requests are 56% images, 23% script, 14% CSS, and only 4% HTML, third-party requests skew more heavily toward script and HTML at 32% script, 34% images, 12% HTML, and only 6% CSS. While this suggests that third-party code is less frequently used to aid the design and instead used more frequently to facilitate or observe interactions than first-party code, a breakdown of resource types by party status tells a more nuanced story. While CSS and images are dominantly first-party at 70% and 64% respectively, fonts are largely served by third-party providers with only 28% being served from first-party sources. This concept of usage patterns is explored in more depth later in this chapter.
 
-<insert graphic of metric 05_03>
+```<insert graphic of metric 05_03>```
 
 Several other amusing factoids jump out from this data. Tracking pixels (image requests to analytics domains) make up 1.6% of all network requests, six times as many video requests are to social networks like Facebook and Twitter than dedicated video providers like YouTube and Vimeo (presumably because the default YouTube embed consists of HTML and a preview thumbnail but not an autoplaying video), and there are still more requests for first-party images than all scripts combined.
 
@@ -81,7 +81,7 @@ Several other amusing factoids jump out from this data. Tracking pixels (image r
 
 49% of all requests are third-party. At 51%, first-party can still narrowly hold on to the crown in 2019 of comprising the majority of the web resources. Given that just under half of all the requests are third-party yet a small set of pages do not include any at all, the most active third-party users must be doing quite a bit more than their fair share. Indeed, at the 75th, 90th, and 99th percentiles we see nearly all of the page being comprised of third-party content. In fact, for some sites heavily relying on distributed WYSIWYG platforms like Wix and SquareSpace, the root document might be the sole first-party request!
 
-<insert graphic of metric 05_11>
+```<insert graphic of metric 05_11>```
 
 The number of requests issued by each third-party provider also varies considerably by category. While analytics are the most widespread third-party category across websites, they account for only 7% of all third-party network requests. Ads, on the other hand, are found on nearly 20% fewer sites yet make up 25% of all third-party network requests. Their outsized resource impact compared to their popularity will be a theme we continue to uncover in the remaining data.
 
@@ -91,27 +91,27 @@ While 49% of requests are third-party, their share of the web in terms of bytes 
 
 Despite serving 57% of scripts, third parties comprise 64% of script bytes. meaning their scripts are larger on average than first-party scripts. This is an early warning sign for their performance impact to come in the next few sections.
 
-<insert graphic of metric 05_04>
+```<insert graphic of metric 05_04>```
 
-<insert graphic of metric 05_12>
+```<insert graphic of metric 05_12>```
 
 As for specific third-party providers, the same juggernauts topping the request count leaderboards make their appearance in byte weight as well. The only few notable movements are the large, media-heavy providers such as YouTube, Shopify, and Twitter which climb to the top of the byte impact charts.
 
-<insert table of metric 05_07>
+```<insert table of metric 05_07>```
 
 ### Script Execution
 
 57% of script execution time is from third-party scripts, and the top 100 domains already account for 48% of all script execution time on the web. This underscores just how large an impact a select few entities really have on web performance. This topic is explored more in depth in the [Repercussions > Performance](#performance) section.
 
-<insert graphic of metric 05_05>
+```<insert graphic of metric 05_05>```
 
-<insert graphic of metric 05_13>
+```<insert graphic of metric 05_13>```
 
 The category breakdowns among script execution largely follow that of resource counts. Here too advertising looms largest. Ad scripts comprise 25% of third-party script execution time with hosting and social providers in a distant tie for second at 12%.
 
-<insert table of metric 05_08>
+```<insert table of metric 05_08>```
 
-<insert table of metric 05_10>
+```<insert table of metric 05_10>```
 
 While much could be said about every individual provider’s popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as the previously mentioned [third-party-web](https://thirdpartyweb.today).
 
