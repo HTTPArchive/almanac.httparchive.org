@@ -15,3 +15,66 @@
     {{ config.contributors[author].name if author in config.contributors else author }}
   {% endfor %}
 {% endmacro %}
+
+{% macro render_authors() %}
+<ul>
+  {% for author in metadata.get('authors') %}
+    {% set authordata = config.contributors[author] if author in config.contributors else None %}
+    {% if authordata %}
+      <li>
+          <img class="avatar" alt="Author name" src="{{ authordata.avatar_url if authordata.avatar_url else '/static/images/avatars/'+str(randrange(1, 12))+'.jpg'  }}">
+          <div class="info">
+              <span class="name">{{ authordata.name if authordata.name else author }}</span>
+              {% if authordata.twitter or authordata.github %}
+                  <span class="social">
+                  {% if authordata.twitter %}
+                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="@{{ authordata.twitter }} on Twitter"></a>
+                  {% endif %}
+                  {% if authordata.github %}
+                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }}@ on GitHub"></a>
+                  {% endif %}
+                  </span>
+              {% endif %}
+              {% if authordata.tagline %}
+                  <div class="tagline">
+                      {{ authordata.tagline }}
+                  </div>
+              {% endif %}
+          </div>
+      </li>
+    {% else %}
+      <li>
+          <div class="info">
+            <span class="name">{{ author }}</span>
+          </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro render_prevnext() %}
+  {% if prev_chapter %}
+      <a id="previous-chapter" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+          <span class="arrow">&#8963;</span>
+          <span class="chapter-no">
+              Chapter {{ prev_chapter['chapter'] }}
+          </span>
+          <span class="chapter-title">
+              {{ prev_chapter['title'] }}
+          </span>
+      </a>
+  {% endif %}
+
+  {% if next_chapter %}
+      <a id="next-chapter" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+              <span class="arrow">&#8963;</span>
+              <span class="chapter-no">
+                  Chapter {{ next_chapter['chapter'] }}
+              </span>
+              <span class="chapter-title">
+                  {{ next_chapter['title'] }}
+              </span>
+      </a>
+  {% endif %}
+{% endmacro %}

@@ -48,6 +48,7 @@ app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
 app.jinja_env.globals['get_chapter_image_dir'] = get_chapter_image_dir
 
+
 @app.route('/<lang>/<year>/')
 @validate
 def home(lang, year):
@@ -85,7 +86,28 @@ def methodology(lang, year):
 def chapter(lang, year, chapter):
     # TODO: Validate the chapter.
     config = config_util.get_config(year)
-    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config)
+    (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
+    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config, prev_chapter=prev_chapter, next_chapter=next_chapter)
+
+
+def get_chapter_nextprev(config, chapter_slug):
+    prev_chapter = None
+    next_chapter = None
+    found =  False
+
+    for part in config['outline']:
+        for chapter in part['chapters']:
+            if found and 'todo' not in chapter:
+                next_chapter = chapter
+                break
+            elif get_chapter_slug(chapter) == chapter_slug and 'todo' not in chapter:
+                found = True
+            elif 'todo' not in chapter:
+                prev_chapter = chapter
+        if found and next_chapter:
+            break
+
+    return (prev_chapter, next_chapter)
 
 
 @app.errorhandler(400)
