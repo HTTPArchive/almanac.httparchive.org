@@ -168,7 +168,7 @@
       "teams": [
         "authors"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/1319324?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/1319324?v=4&s=200",
       "github": "kleinab"
     },
     "argyleink": {
@@ -177,7 +177,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/1134620?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1134620?v=4&s=200",
       "blog": "https:\/\/nerdy.dev",
       "github": "argyleink"
     },
@@ -186,7 +186,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/110953?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/110953?v=4&s=200",
       "blog": "https:\/\/www.addyosmani.com",
       "github": "addyosmani"
     },
@@ -196,7 +196,7 @@
         "brainstormers",
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/960133?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/960133?v=4&s=200",
       "blog": "https:\/\/ahmadawais.com\/",
       "github": "ahmadawais"
     },
@@ -206,7 +206,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/5702163?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/5702163?v=4&s=200",
       "github": "alankent"
     },
     "amedina": {
@@ -215,7 +215,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/506089?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/506089?v=4&s=200",
       "github": "amedina"
     },
     "slightlyoff": {
@@ -223,7 +223,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/97331?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/97331?v=4&s=200",
       "blog": "http:\/\/infrequently.org",
       "github": "slightlyoff"
     },
@@ -232,15 +232,16 @@
       "teams": [
         "analysts"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/2914966?v=4",
-      "github": "dotjs"
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2914966?v=4&s=200",
+      "github": "dotjs",
+      "twitter": "dot_js"
     },
     "anoblet": {
       "name": "Andrew Noblet",
       "teams": [
         "developers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/7674171?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/7674171?v=4&s=200",
       "github": "anoblet"
     },
     "andydavies": {
@@ -248,7 +249,7 @@
       "teams": [
         "authors"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/427052?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/427052?v=4&s=200",
       "blog": "http:\/\/andydavies.me\/",
       "github": "andydavies"
     },
@@ -257,7 +258,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/665379?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/665379?v=4&s=200",
       "github": "arturjanc"
     },
     "AymenLoukil": {
@@ -266,7 +267,7 @@
         "reviewers",
         "developers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/5750656?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/5750656?v=4&s=200",
       "blog": "http:\/\/www.aymen-loukil.com\/en\/",
       "github": "AymenLoukil"
     },
@@ -276,9 +277,10 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/10931297?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/10931297?v=4&s=200",
       "blog": "https:\/\/www.tunetheweb.com",
-      "github": "bazzadp"
+      "github": "bazzadp",
+      "twitter": "tunetheweb"
     },
     "bkardell": {
       "name": "Brian Kardell",
@@ -286,7 +288,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/870501?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/870501?v=4&s=200",
       "blog": "https:\/\/bkardell.com",
       "github": "bkardell"
     },
@@ -295,7 +297,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/409841?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/409841?v=4&s=200",
       "blog": "http:\/\/publishing-project.rivendellweb.net\/",
       "github": "caraya"
     },
@@ -304,7 +306,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/1867900?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1867900?v=4&s=200",
       "blog": "https:\/\/catalin.red\/",
       "github": "catalinred"
     },
@@ -313,7 +315,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/1461498?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1461498?v=4&s=200",
       "blog": "https:\/\/www.chenhuijing.com",
       "github": "huijing"
     },
@@ -324,7 +326,7 @@
         "authors",
         "analysts"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/1622597?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1622597?v=4&s=200",
       "blog": "www.bendell.ca",
       "github": "colinbendell"
     },
@@ -333,16 +335,17 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/177011?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/177011?v=4&s=200",
       "blog": "https:\/\/daniel.haxx.se\/",
-      "github": "bagder"
+      "github": "bagder",
+      "twitter": "bagder"
     },
     "davelab6": {
       "name": "Dave Crossland",
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/261579?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/261579?v=4&s=200",
       "blog": "http:\/\/fonts.google.com",
       "github": "davelab6"
     },
@@ -354,7 +357,7 @@
         "reviewers",
         "analysts"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/684747?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/684747?v=4&s=200",
       "blog": "https:\/\/www.lookzook.com",
       "github": "obto"
     },
@@ -365,7 +368,7 @@
         "authors",
         "analysts"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/1514288?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1514288?v=4&s=200",
       "blog": "dougsillars.com",
       "github": "dougsillars"
     },
@@ -374,7 +377,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/3441390?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3441390?v=4&s=200",
       "blog": "https:\/\/ericportis.com",
       "github": "eeeps"
     },
@@ -389,7 +392,7 @@
       "teams": [
         "developers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/34923063?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/34923063?v=4&s=200",
       "blog": "https:\/\/giacomo.online",
       "github": "GiacomoPignoni"
     },
@@ -398,7 +401,7 @@
       "teams": [
         "developers"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/25320782?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/25320782?v=4&s=200",
       "blog": "https:\/\/tanhengyeow.github.io",
       "github": "tanhengyeow"
     },
@@ -407,7 +410,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/50970808?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/50970808?v=4&s=200",
       "github": "henrisGH"
     },
     "housseindjirdeh": {
@@ -416,7 +419,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/12476932?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/12476932?v=4&s=200",
       "blog": "https:\/\/houssein.me",
       "github": "housseindjirdeh"
     },
@@ -425,7 +428,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/658496?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/658496?v=4&s=200",
       "blog": "https:\/\/jaredwhite.com",
       "github": "jaredcwhite"
     },
@@ -434,7 +437,7 @@
       "teams": [
         "analysts"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/7421844?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/7421844?v=4&s=200",
       "github": "jrharalson"
     },
     "jeffposnick": {
@@ -443,7 +446,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/1749548?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/1749548?v=4&s=200",
       "blog": "https:\/\/jeffy.info",
       "github": "jeffposnick"
     },
@@ -452,7 +455,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/13718746?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/13718746?v=4&s=200",
       "blog": "https:\/\/www.linkedin.com\/in\/johnfox\/",
       "github": "clarkeclark"
     },
@@ -463,7 +466,7 @@
         "reviewers",
         "developers"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/25212653?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/25212653?v=4&s=200",
       "blog": "https:\/\/gemservers.com",
       "github": "hyperpress"
     },
@@ -472,7 +475,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/416456?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/416456?v=4&s=200",
       "blog": "https:\/\/jmperezperez.com",
       "github": "JMPerez"
     },
@@ -481,7 +484,7 @@
       "teams": [
         "developers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/42503401?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/42503401?v=4&s=200",
       "blog": "https:\/\/www.kjlarson.com",
       "github": "KJLarson"
     },
@@ -492,7 +495,7 @@
         "authors",
         "analysts"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/6076184?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/6076184?v=4&s=200",
       "github": "khempenius"
     },
     "ljme": {
@@ -500,7 +503,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/3392338?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/3392338?v=4&s=200",
       "github": "ljme"
     },
     "MSakamaki": {
@@ -509,7 +512,7 @@
         "developers",
         "translators"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/2183053?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/2183053?v=4&s=200",
       "blog": "https:\/\/twitter.com\/msakamaki2",
       "github": "MSakamaki"
     },
@@ -518,7 +521,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/1974993?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/1974993?v=4&s=200",
       "github": "hakimelek"
     },
     "mnot": {
@@ -526,7 +529,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/74384?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/74384?v=4&s=200",
       "blog": "https:\/\/www.mnot.net\/",
       "github": "mnot"
     },
@@ -536,7 +539,7 @@
         "brainstormers",
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/204268?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/204268?v=4&s=200",
       "blog": "http:\/\/speedcurve.com",
       "github": "zeman"
     },
@@ -545,7 +548,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/370246?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/370246?v=4&s=200",
       "blog": "http:\/\/geekonaut.de",
       "github": "AVGP"
     },
@@ -555,7 +558,7 @@
         "brainstormers",
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/81942?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/81942?v=4&s=200",
       "blog": "https:\/\/mathiasbynens.be\/",
       "github": "mathiasbynens"
     },
@@ -570,7 +573,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/361671?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/361671?v=4&s=200",
       "blog": "http:\/\/www.matthewphillips.info",
       "github": "matthewp"
     },
@@ -579,7 +582,7 @@
       "teams": [
         "developers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/105242?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/105242?v=4&s=200",
       "github": "mikegeyser"
     },
     "natasha-kosoglov": {
@@ -599,7 +602,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/561590?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/561590?v=4&s=200",
       "blog": "https:\/\/www.noahblon.com",
       "github": "noahblon"
     },
@@ -610,7 +613,7 @@
         "authors",
         "analysts"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/2301202?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/2301202?v=4&s=200",
       "blog": "http:\/\/patrickhulce.com",
       "github": "patrickhulce"
     },
@@ -621,8 +624,9 @@
         "authors",
         "analysts"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/7459458?v=4",
-      "github": "paulcalvano"
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/7459458?v=4&s=200",
+      "github": "paulcalvano",
+      "twitter": "paulcalvano"
     },
     "rachellcostello": {
       "name": "Rachel Costello",
@@ -630,7 +634,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/49983543?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/49983543?v=4&s=200",
       "github": "rachellcostello"
     },
     "raghuramakrishnan71": {
@@ -638,7 +642,7 @@
       "teams": [
         "analysts"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/24447527?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/24447527?v=4&s=200",
       "github": "raghuramakrishnan71"
     },
     "rmarx": {
@@ -654,7 +658,7 @@
       "teams": [
         "authors"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/8108643?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/8108643?v=4&s=200",
       "blog": "https:\/\/reneesvirtualoffice.com",
       "github": "ernee"
     },
@@ -667,7 +671,7 @@
         "analysts",
         "developers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/1120896?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1120896?v=4&s=200",
       "blog": "https:\/\/twitter.com\/rick_viscomi",
       "github": "rviscomi"
     },
@@ -683,7 +687,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/205226?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/205226?v=4&s=200",
       "blog": "https:\/\/simpl.info",
       "github": "samdutton"
     },
@@ -693,7 +697,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/5352840?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/5352840?v=4&s=200",
       "blog": "https:\/\/scotthelme.co.uk",
       "github": "ScottHelme"
     },
@@ -702,7 +706,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/38076?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/38076?v=4&s=200",
       "blog": "http:\/\/sergeychernyshev.com\/",
       "github": "sergeychernyshev"
     },
@@ -711,7 +715,7 @@
       "teams": [
         "brainstormers"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/244772?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/244772?v=4&s=200",
       "github": "zcorpan"
     },
     "susie-lu": {
@@ -725,7 +729,7 @@
       "teams": [
         "authors"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/15661032?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/15661032?v=4&s=200",
       "blog": "https:\/\/speedcurve.com\/",
       "github": "tammyeverts"
     },
@@ -734,7 +738,7 @@
       "teams": [
         "analysts"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/2645718?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2645718?v=4&s=200",
       "blog": "https:\/\/github.com\/tjmonsi",
       "github": "tjmonsi"
     },
@@ -744,7 +748,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/145676?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/145676?v=4&s=200",
       "blog": "https:\/\/blog.tomayac.com\/",
       "github": "tomayac"
     },
@@ -753,7 +757,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/955601?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/955601?v=4&s=200",
       "blog": "http:\/\/codepen.io\/tomhodgins",
       "github": "tomhodgins"
     },
@@ -763,7 +767,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/1693164?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/1693164?v=4&s=200",
       "blog": "http:\/\/una.im",
       "github": "una"
     },
@@ -772,7 +776,7 @@
       "teams": [
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/2366341?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2366341?v=4&s=200",
       "blog": "https:\/\/vamseejasti.com",
       "github": "jasti"
     },
@@ -782,7 +786,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars3.githubusercontent.com\/u\/2698956?v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2698956?v=4&s=200",
       "blog": "https:\/\/data-seo.com",
       "github": "voltek62"
     },
@@ -792,7 +796,7 @@
         "brainstormers",
         "reviewers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/786187?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/786187?v=4&s=200",
       "blog": "https:\/\/blog.yoav.ws",
       "github": "yoavweiss"
     },
@@ -801,7 +805,7 @@
       "teams": [
         "developers"
       ],
-      "avatar": "https:\/\/avatars0.githubusercontent.com\/u\/106703?v=4",
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/106703?v=4&s=200",
       "blog": "http:\/\/tyohan.me",
       "github": "tyohan"
     },
@@ -813,9 +817,10 @@
         "analysts",
         "developers"
       ],
-      "avatar": "https:\/\/avatars1.githubusercontent.com\/u\/91795?v=4",
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/91795?v=4&s=200",
       "blog": "https:\/\/build.amsterdam\/",
-      "github": "ymschaap"
+      "github": "ymschaap",
+      "twitter": "yvoschaap"
     },
     "zachleat": {
       "name": "Zach Leatherman",
@@ -823,7 +828,7 @@
         "brainstormers",
         "authors"
       ],
-      "avatar": "https:\/\/avatars2.githubusercontent.com\/u\/39355?v=4",
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/39355?v=4&s=200",
       "blog": "https:\/\/zachleat.com\/",
       "github": "zachleat"
     }
