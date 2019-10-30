@@ -181,8 +181,9 @@ Common stylesheet names
 <bar chart of 02_020>
 
 ### Libraries
-% of sites using given libs
+It's common, popular, convenient and powerful to reach for a CSS library to kick start a new project. While you may not be such a dev to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did for us, I think it's an interesting clue to just how small of a developer bubble we live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.
 <bar chart of 02_010e>
+This chart makes me think that Bootstrap is a strong skill to have for getting a job. Look at all the opportunity there is to help!
 
 ### Reset Utilities
 % of sites using given resets
