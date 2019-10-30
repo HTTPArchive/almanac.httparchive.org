@@ -41,14 +41,14 @@ Language is interestingly inferred via color as well. There are more people usin
 
 ## Units
 
-In CSS, there are a lot of different ways to achieve the same visual result -- using different unit types (i.e. `rem` vs `px` vs `em` vs `ch` or `cm` even!) is one of them. So which unit types are most popular?
+In CSS, there are a lot of different ways to achieve the same visual result -- using different unit types (i.e. `rem` vs `px` vs `em` vs `ch` or `cm` even!). So which unit types are most popular?
 
 $ of sites using given units
 <side-by-side bar chart of 02_07b for desktop and mobile>
 
 ### Length and Sizing
 
-Unsurpsiginly, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, etc). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font-size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, but it does allow for adjustment of all spacing evenly.
+Unsurprisingly, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, etc). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font-size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, but it does allow for adjustment of all spacing evenly.
 
 When it comes to units based on physical space, the `q` unit (1 quarter of a millimeter, or 1/40 of 1cm) is the most commonly used by far, with 22.46% on mobile and 15.13% on desktop. We knew about these types of units (`mm`, `in`, `cm`, etc.), specifically useful for print stylesheets, but didn't even know the `q` unit existed until this survey! Did you?
 
@@ -72,10 +72,13 @@ We felt like this was exciting information, since it shows healthy growth of one
 ## Selectors
 
 ### ID vs Class selectors
-ID and class selector usage
-<pie chart of 02_08f>
+CSS has a few ways to find elements on the page for styling, but let's put ID's and classes against each other to see which is more prevalent! I don't think the results are too surprising, classes are more popular! 
 
+<pie chart of 02_08e-f>
 
+A nice follow up chart is this one, showing that classes take up ~93% of the selectors found in a stylesheet. This is good news too, it would be troubling if ~93% of all selectors in stylesheets were using IDs!
+
+<pie chart of 02_08be-f>
 
 ## Layout
 
