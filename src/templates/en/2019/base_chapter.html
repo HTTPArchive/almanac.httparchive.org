@@ -42,6 +42,12 @@
               {% endif %}
           </div>
       </li>
+    {% else %}
+      <li>
+          <div class="info">
+            <span class="name">{{ author }}</span>
+          </div>
+      </li>
     {% endif %}
   {% endfor %}
 </ul>
