@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const prettier = require('prettier');
 
 const { generate_table_of_contents } = require('./generate_table_of_contents');
+const { generate_figure_ids } = require('./generate_figure_ids');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -31,7 +32,8 @@ const generate_chapters = async () => {
 };
 
 const parse_file = async (markdown) => {
-  const body = converter.makeHtml(markdown);
+  const html = converter.makeHtml(markdown);
+  const body = generate_figure_ids(html);
   const toc = generate_table_of_contents(body);
 
   const m = converter.getMetadata();
