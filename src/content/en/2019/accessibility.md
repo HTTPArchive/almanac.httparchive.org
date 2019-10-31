@@ -58,7 +58,7 @@ Developers have misused this so much that **almost one out of every three sites 
 
 Unless your site is a very special case, remove user-scalable and maximum-scale from your meta viewport tag.
 
-<insert graphic of metric 09_26>
+```<insert graphic of metric 09_26>```
 
 *Figure 2. Percentage of sites that disable zooming and scaling vs device type*
 
@@ -120,7 +120,7 @@ With that being said, here are our results:
 
 3. Strangely, H2s are found on more sites than H1s
 
-<insert graphic of metric 09_01>
+```<insert graphic of metric 09_01>```
 
 Alt text: Figure 3. Vertical bar chart titled "% of sites using each heading" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing each heading level h1 through h6.  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%
 
@@ -130,7 +130,7 @@ A [main landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARI
 
 We found **only one in every four pages** (26.03%) include a main landmark. And surprisingly, **8.06% of pages** erroneously contained more than one main landmark, leaving these users guessing which landmark contains the actual main content. So, make sure to double check you have exactly one!
 
-<insert graphic of metric 09_04>
+```<insert graphic of metric 09_04>```
 
 Alt text: Figure 4. Vertical bar chart titled "Number of “main" landmarks per page” displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of “main” landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%
 
@@ -138,13 +138,13 @@ Alt text: Figure 4. Vertical bar chart titled "Number of “main" landmarks per 
 
 Since HTML5 was released in 2008, and was made the official standard in 2014, there are many HTML elements to aid computers and screen readers in understanding our page layout and structure.
 
-Elements like [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav), and [<main>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) indicate where specific types of content live and allow users to quickly jump around your page. These are being used pretty widely across the web, with most of them being used on over **50% of pages** (`<main>` being the outlier).
+Elements like [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav), and [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) indicate where specific types of content live and allow users to quickly jump around your page. These are being used pretty widely across the web, with most of them being used on over **50% of pages** (`<main>` being the outlier).
 
 Others like [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr), and [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) aid readers in understanding a page’s main content. For example, `<article>` says where one article ends and another begins. These elements are not used nearly as much, which each sitting at around **20% usage**. Not all of these belong on every web page, so this isn’t necessarily an alarming statistic.
 
 All of these elements are primarily designed for accessibility support and have no visual effect. This means that you can safely replace existing elements with them with no unintended consequences.
 
-<insert graphic of metric 09_03: Usage of semantic elements>
+```<insert graphic of metric 09_03: Usage of semantic elements>```
 
 *Figure 5. Usage of various HTML semantic elements.*
 
@@ -154,7 +154,7 @@ Alt text: Figure 5. Horizontal bar chart titled "usage of semantic elements" wit
 
 Many popular screen readers also allow users to navigate by quickly jumping through links, lists, list items, iframes, and form fields like edit fields, buttons, and list boxes. Figure 6 details how often we saw pages using these elements.
 
-<insert graphic of metric 09_03: Other HTML elements used for navigation>
+```<insert graphic of metric 09_03: Other HTML elements used for navigation>```
 
 *Figure 6. Other HTML elements used for navigation*
 
@@ -210,7 +210,7 @@ One of the most popular and widely used specifications for accessibility on the 
 
 Using ARIA correctly and appropriately can be challenging. For example, of pages making use of ARIA attributes, we found **12.31%** have invalid values assigned to their attributes. This is problematic because any mistake in the use of an ARIA attribute has no visual effect on the page. Sometimes errors can be detected by using an automated validation tool, but generally they require hands-on use of real assistive software (like a screen reader). This section will examine how ARIA is used on the web, and specifically which parts of the standard are most prevalent.
 
-<insert graphic of metric 09_19b>
+```<insert graphic of metric 09_19b>```
 
 *Figure 8. Percent of total pages vs ARIA attribute*
 
@@ -222,7 +222,7 @@ The "role" attribute is the most important attribute in the entire ARIA specific
 
 Currently, **46.91% of pages** use at least one ARIA role attribute. In Figure 9 below, we’ve compiled a list of the top ten most widely used ARIA role values.
 
-<insert graphic of metric 09_05>
+```<insert graphic of metric 09_05>```
 
 *Figure 9. Top 10 aria roles*
 

@@ -1,7 +1,7 @@
 ---
 part_number: II
 chapter_number: 11
-title: Progressive Web Apps
+title: PWA
 authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
 ---
