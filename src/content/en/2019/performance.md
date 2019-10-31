@@ -6,7 +6,7 @@ authors: [rviscomi]
 reviewers: [JMPerez, obto, sergeychernyshev, zeman]
 ---
 
-## Intro
+## Introduction
 
 Performance is a visceral part of the user experience. For [many websites](https://wpostats.com/), an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed [rage clicking](https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/) on the page in frustration.
 
