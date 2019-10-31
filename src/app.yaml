@@ -7,5 +7,5 @@ handlers:
   secure: always
 
 - url: /.*
-  script: main.app
+  script: auto
   secure: always
