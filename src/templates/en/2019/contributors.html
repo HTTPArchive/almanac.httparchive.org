@@ -47,12 +47,13 @@
   font-size: 1rem;
   font-family: inherit;
   line-height: 1.2;
+  background: none;
   outline: none;
-  border-radius: 10px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   margin: 0 8px 8px 0;
   padding: 8px 16px;
-  border: none;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -275,8 +276,8 @@
     var contributors = document.querySelector('.contributors');
     var contributorsGrid = document.querySelector('.contributor-grid');
     var counter = document.querySelector('#filtered-contributors');
-
-    contributorsGrid.setAttribute('data-rendered', true);
+    var shadowNode = document.createElement('div');
+    var urlObject = new URL(document.location);
 
     function getFilteredContributorCount() {
       return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
@@ -286,33 +287,75 @@
 
     for (var i = 0; i < buttons.length; i++) {
       var button = buttons[i];
-      button.addEventListener('click', function(e) {
-        var teamId = e.target.className;
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
 
-        if(contributors.classList.length == (teams.length + 1)) {
+        var teamName = event.target.className;
+
+        shadowNode.className = contributors.className;
+        if(shadowNode.classList.length == (teams.length + 1)) {
             teams.forEach(function(team) {
-                if(team === teamId) {
+                if(team === teamName) {
                     return;
                 }
-                document.querySelector('.' + team).classList.toggle(team);
+                shadowNode.classList.toggle(team);
             });
-        } else if (contributors.classList.length == 2 && contributors.classList.contains(teamId)) {
+        } else if (shadowNode.classList.length == 2 && shadowNode.classList.contains(teamName)) {
             teams.forEach(function(team) {
-                contributors.classList.add(team);
+                shadowNode.classList.add(team);
             });
         } else {
-            contributors.classList.toggle(teamId);
+            shadowNode.classList.toggle(teamName);
         }
+
+        var selected = [];
+        teams.forEach(function(team) {
+            if(shadowNode.classList.contains(team)) {
+                selected.push(team);
+            }
+        });
+
+        if(selected.length > 0 && selected.length < teams.length){
+            urlObject.searchParams.set('teams', selected.join(','));
+            history.pushState(null, null, urlObject);
+            handleFilterUrl();
+        } else {
+            urlObject.searchParams.delete('teams');
+            history.pushState(null, null, urlObject);
+            handleFilterUrl();
+        }
+
         counter.innerText = getFilteredContributorCount();
       });
     }
 
-    if(document.location.hash.length > 0) {
-        var highlight = document.querySelector('#' + document.location.hash.substr(1));
-        if(highlight) {
-            highlight.focus();
+    try {
+        var hash = document.location.hash;
+        var highlight = document.querySelector(hash);
+        highlight.focus();
+    } catch(e) { }
+
+    function handleFilterUrl(event) {
+
+        event && event.preventDefault();
+        var urlObject = new URL(document.location);
+        if(urlObject.searchParams.has('teams')) {
+
+            var hash = urlObject.searchParams.get('teams');
+            var filterTeams = hash.split(',');
+
+            if(teams.includes(filterTeams[0])) {
+                contributors.classList.remove(...teams);
+                contributors.classList.add(...filterTeams);
+            }
+        } else {
+            contributors.classList.add(...teams);
         }
     }
+    window.addEventListener('popstate', handleFilterUrl);
+    handleFilterUrl();
+
+    contributorsGrid.setAttribute('data-rendered', true);
 })();
 
   </script>
