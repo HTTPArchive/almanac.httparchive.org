@@ -12,13 +12,12 @@
 
 {% set metadata =
 {"part_number":"I","chapter_number":10,"title":"SEO","authors":["ymschaap","
-rachellcostello"," AVGP"],"reviewers":["clarkeclark"," andylimn"," voltek62","
-AymenLoukil"," catalinred"]} %} {% block main %}
+rachellcostello"," AVGP"],"reviewers":["clarkeclark"," andylimn","
+AymenLoukil"," catalinred"," mattludwig"]} %} {% block main %}
 <article id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
-      <h2 class="header-mobile">Index</h2>
       <ul>
         <li>
           <a href="#intro">Intro</a>
@@ -127,15 +126,18 @@ AymenLoukil"," catalinred"]} %} {% block main %}
 
   <section class="content">
     <section class="body">
-      <h1>
-        <div class="decorative-line"></div>
+      <h1 class="title">
+        <div class="subtitle">
+          Part {{ metadata.get('part_number') }} Chapter {{
+          metadata.get('chapter_number') }}
+        </div>
         {{ metadata.get('title') }}
-        <div class="decorative-line-mobile"></div>
       </h1>
       <img
         src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg"
         class="content-banner"
       />
+      {{ render_byline() }}
       <h2 id="intro">Intro</h2>
       <p>
         Search Engine Optimization (SEO) isn't just a hobby or a side project
@@ -352,7 +354,7 @@ AymenLoukil"," catalinred"]} %} {% block main %}
       </p>
       <p>
         Learn more about this in the
-        <a href="../accessibility">Accessibility chapter</a>.
+        <a href="./accessibility">Accessibility chapter</a>.
       </p>
       <h3 id="indexability">Indexability</h3>
       <p>
@@ -419,7 +421,7 @@ AymenLoukil"," catalinred"]} %} {% block main %}
         dataset, which excludes websites that are not publicly discoverable.
         This is a significant source of bias because we're unable to analyze
         sites that Chrome determines to be non-public. Learn more about our
-        [Methodology](../methodology#websites).
+        [Methodology](./methodology#websites).
       </aside>
       <h4 id="canonicalization">Canonicalization</h4>
       <p>
@@ -569,7 +571,7 @@ AymenLoukil"," catalinred"]} %} {% block main %}
       <p>
         The metrics we used for our analysis of load speed across the web is
         based on the
-        <a href="../methodology#chrome-ux-report">Chrome UX Report</a> (CrUX),
+        <a href="./methodology#chrome-ux-report">Chrome UX Report</a> (CrUX),
         which collects data from real-world Chrome users. This data shows that
         an astonishing 63.47% of websites are labelled as <strong>slow</strong>.
         Split by device, this picture is even bleaker for tablet (82.00%) and
@@ -593,7 +595,7 @@ AymenLoukil"," catalinred"]} %} {% block main %}
         is that SEO experts and tools have been focusing more and more on the
         technical challenges of speeding up websites. You can learn more about
         the state of web performance in the
-        <a href="../performance">Performance chapter</a>.
+        <a href="./performance">Performance chapter</a>.
       </p>
       <h3 id="structured-data">Structured data</h3>
       <p>
@@ -861,7 +863,7 @@ AymenLoukil"," catalinred"]} %} {% block main %}
       </p>
     </section>
     <section class="authors">
-      <h4>Authors :</h4>
+      <h4>Authors</h4>
       {{ render_authors() }}
     </section>
 

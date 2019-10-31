@@ -11,13 +11,12 @@
 #}-->
 
 {% set metadata =
-{"part_number":"IV","chapter_number":20,"title":"HTTP/2","authors":["tunetheweb"],"reviewers":["bagder","
+{"part_number":"IV","chapter_number":20,"title":"HTTP/2","authors":["bazzadp"],"reviewers":["bagder","
 rmarx"," dotjs"]} %} {% block main %}
 <article id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
-      <h2 class="header-mobile">Index</h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -56,15 +55,18 @@ rmarx"," dotjs"]} %} {% block main %}
 
   <section class="content">
     <section class="body">
-      <h1>
-        <div class="decorative-line"></div>
+      <h1 class="title">
+        <div class="subtitle">
+          Part {{ metadata.get('part_number') }} Chapter {{
+          metadata.get('chapter_number') }}
+        </div>
         {{ metadata.get('title') }}
-        <div class="decorative-line-mobile"></div>
       </h1>
       <img
         src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg"
         class="content-banner"
       />
+      {{ render_byline() }}
       <p>
         <img
           src="https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images//2019/20_HTTP_2/hero_xl.jpg"
@@ -1253,7 +1255,7 @@ rmarx"," dotjs"]} %} {% block main %}
       </p>
     </section>
     <section class="authors">
-      <h4>Authors :</h4>
+      <h4>Authors</h4>
       {{ render_authors() }}
     </section>
 
