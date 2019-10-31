@@ -177,7 +177,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1134620?v=4&s=200",
       "website": "https:\/\/nerdy.dev",
-      "github": "argyleink"
+      "github": "argyleink",
+      "twitter": "argyleink"
     },
     "addyosmani": {
       "name": "Addy Osmani",
@@ -186,7 +187,8 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/110953?v=4&s=200",
       "website": "https:\/\/www.addyosmani.com",
-      "github": "addyosmani"
+      "github": "addyosmani",
+      "twitter": "addyosmani"
     },
     "ahmadawais": {
       "name": "Ahmad Awais",
@@ -196,7 +198,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/960133?v=4&s=200",
       "website": "https:\/\/ahmadawais.com\/",
-      "github": "ahmadawais"
+      "github": "ahmadawais",
+      "twitter": "MrAhmadAwais"
     },
     "alankent": {
       "name": "Alan Kent",
@@ -205,7 +208,8 @@
         "authors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/5702163?v=4&s=200",
-      "github": "alankent"
+      "github": "alankent",
+      "twitter": "akent99"
     },
     "amedina": {
       "name": "Alberto Medina",
@@ -214,7 +218,8 @@
         "authors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/506089?v=4&s=200",
-      "github": "amedina"
+      "github": "amedina",
+      "twitter": "iAlbMedina"
     },
     "slightlyoff": {
       "name": "Alex Russell",
@@ -223,7 +228,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/97331?v=4&s=200",
       "website": "http:\/\/infrequently.org",
-      "github": "slightlyoff"
+      "github": "slightlyoff",
+      "twitter": "slightlylate"
     },
     "dotjs": {
       "name": "Andrew Galloni",
@@ -249,14 +255,18 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/427052?v=4&s=200",
       "website": "http:\/\/andydavies.me\/",
-      "github": "andydavies"
+      "github": "andydavies",
+      "twitter": "AndyDavies"
     },
     "andylimn": {
       "name": "Andrew Limn",
       "teams": [
         "reviewers"
       ],
-      "github": "andylimn"
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/38131750?v=4&s=200",
+      "website": "https:\/\/artefact.com\/gb-en\/",
+      "github": "andylimn",
+      "twitter": "Artefact_Andy"
     },
     "arturjanc": {
       "name": "Artur Janc",
@@ -264,7 +274,8 @@
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/665379?v=4&s=200",
-      "github": "arturjanc"
+      "github": "arturjanc",
+      "twitter": "arturjanc"
     },
     "AymenLoukil": {
       "name": "Aymen Loukil",
@@ -274,7 +285,8 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/5750656?v=4&s=200",
       "website": "http:\/\/www.aymen-loukil.com\/en\/",
-      "github": "AymenLoukil"
+      "github": "AymenLoukil",
+      "twitter": "LoukilAymen"
     },
     "bazzadp": {
       "name": "Barry Pollard",
@@ -297,7 +309,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/870501?v=4&s=200",
       "website": "https:\/\/bkardell.com",
-      "github": "bkardell"
+      "github": "bkardell",
+      "twitter": "briankardell"
     },
     "caraya": {
       "name": "Carlos Araya",
@@ -306,7 +319,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/409841?v=4&s=200",
       "website": "http:\/\/publishing-project.rivendellweb.net\/",
-      "github": "caraya"
+      "github": "caraya",
+      "twitter": "elrond25"
     },
     "catalinred": {
       "name": "Catalin Rosu",
@@ -315,7 +329,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1867900?v=4&s=200",
       "website": "https:\/\/catalin.red\/",
-      "github": "catalinred"
+      "github": "catalinred",
+      "twitter": "catalinred"
     },
     "huijing": {
       "name": "Chen Hui Jing",
@@ -324,7 +339,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1461498?v=4&s=200",
       "website": "https:\/\/www.chenhuijing.com",
-      "github": "huijing"
+      "github": "huijing",
+      "twitter": "hj_chen"
     },
     "colinbendell": {
       "name": "Colin Bendell",
@@ -335,7 +351,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1622597?v=4&s=200",
       "website": "www.bendell.ca",
-      "github": "colinbendell"
+      "github": "colinbendell",
+      "twitter": "colinbendell"
     },
     "bagder": {
       "name": "Daniel Stenberg",
@@ -354,7 +371,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/261579?v=4&s=200",
       "website": "http:\/\/fonts.google.com",
-      "github": "davelab6"
+      "github": "davelab6",
+      "twitter": "davelab6"
     },
     "obto": {
       "name": "David Fox",
@@ -367,7 +385,8 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/684747?v=4&s=200",
       "website": "https:\/\/www.lookzook.com",
-      "github": "obto"
+      "github": "obto",
+      "twitter": "theobto"
     },
     "dougsillars": {
       "name": "Doug Sillars",
@@ -378,7 +397,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1514288?v=4&s=200",
       "website": "dougsillars.com",
-      "github": "dougsillars"
+      "github": "dougsillars",
+      "twitter": "dougsillars"
     },
     "eeeps": {
       "name": "Eric Portis",
@@ -387,7 +407,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3441390?v=4&s=200",
       "website": "https:\/\/ericportis.com",
-      "github": "eeeps"
+      "github": "eeeps",
+      "twitter": "etportis"
     },
     "gabriel-de-gennaro": {
       "name": "Gabriel De Gennaro",
@@ -402,7 +423,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/34923063?v=4&s=200",
       "website": "https:\/\/giacomo.online",
-      "github": "GiacomoPignoni"
+      "github": "GiacomoPignoni",
+      "twitter": "Pigna__"
     },
     "tanhengyeow": {
       "name": "Heng Yeow",
@@ -411,7 +433,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/25320782?v=4&s=200",
       "website": "https:\/\/tanhengyeow.github.io",
-      "github": "tanhengyeow"
+      "github": "tanhengyeow",
+      "twitter": "tanhengyeow"
     },
     "henrisGH": {
       "name": "Henri Helvetica",
@@ -419,7 +442,8 @@
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/50970808?v=4&s=200",
-      "github": "henrisGH"
+      "github": "henrisGH",
+      "twitter": "HenriHelvetica"
     },
     "housseindjirdeh": {
       "name": "Houssein Djirdeh",
@@ -429,7 +453,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/12476932?v=4&s=200",
       "website": "https:\/\/houssein.me",
-      "github": "housseindjirdeh"
+      "github": "housseindjirdeh",
+      "twitter": "hdjirdeh"
     },
     "jaredcwhite": {
       "name": "Jared White",
@@ -438,7 +463,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/658496?v=4&s=200",
       "website": "https:\/\/jaredwhite.com",
-      "github": "jaredcwhite"
+      "github": "jaredcwhite",
+      "twitter": "jaredcwhite"
     },
     "jrharalson": {
       "name": "Jason Haralson",
@@ -456,7 +482,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/1749548?v=4&s=200",
       "website": "https:\/\/jeffy.info",
-      "github": "jeffposnick"
+      "github": "jeffposnick",
+      "twitter": "jeffposnick"
     },
     "clarkeclark": {
       "name": "John Fox",
@@ -476,7 +503,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/25212653?v=4&s=200",
       "website": "https:\/\/gemservers.com",
-      "github": "hyperpress"
+      "github": "hyperpress",
+      "twitter": "jtteag"
     },
     "JMPerez": {
       "name": "Jos\u00e9 M. P\u00e9rez",
@@ -485,7 +513,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/416456?v=4&s=200",
       "website": "https:\/\/jmperezperez.com",
-      "github": "JMPerez"
+      "github": "JMPerez",
+      "twitter": "jmperezperez"
     },
     "KJLarson": {
       "name": "Kari Larson",
@@ -494,7 +523,8 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/42503401?v=4&s=200",
       "website": "https:\/\/www.kjlarson.com",
-      "github": "KJLarson"
+      "github": "KJLarson",
+      "twitter": "KaJLa47"
     },
     "khempenius": {
       "name": "Katie Hempenius",
@@ -504,7 +534,8 @@
         "analysts"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/6076184?v=4&s=200",
-      "github": "khempenius"
+      "github": "khempenius",
+      "twitter": "katiehempenius"
     },
     "ljme": {
       "name": "Laura Eberly",
@@ -522,7 +553,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/2183053?v=4&s=200",
       "website": "https:\/\/twitter.com\/msakamaki2",
-      "github": "MSakamaki"
+      "github": "MSakamaki",
+      "twitter": "msakamaki2"
     },
     "hakimelek": {
       "name": "Malek Hakim",
@@ -539,7 +571,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/74384?v=4&s=200",
       "website": "https:\/\/www.mnot.net\/",
-      "github": "mnot"
+      "github": "mnot",
+      "twitter": "mnot"
     },
     "zeman": {
       "name": "Mark Zeman",
@@ -549,7 +582,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/204268?v=4&s=200",
       "website": "http:\/\/speedcurve.com",
-      "github": "zeman"
+      "github": "zeman",
+      "twitter": "MarkZeman"
     },
     "AVGP": {
       "name": "Martin Splitt",
@@ -558,7 +592,8 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/370246?v=4&s=200",
       "website": "http:\/\/geekonaut.de",
-      "github": "AVGP"
+      "github": "AVGP",
+      "twitter": "g33konaut"
     },
     "mathiasbynens": {
       "name": "Mathias Bynens",
@@ -568,7 +603,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/81942?v=4&s=200",
       "website": "https:\/\/mathiasbynens.be\/",
-      "github": "mathiasbynens"
+      "github": "mathiasbynens",
+      "twitter": "mathias"
     },
     "mattludwig": {
       "name": "Matt Ludwig",
@@ -592,7 +628,9 @@
         "developers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/105242?v=4&s=200",
-      "github": "mikegeyser"
+      "website": "https:\/\/mikerambl.es",
+      "github": "mikegeyser",
+      "twitter": "mikegeyser"
     },
     "natasha-kosoglov": {
       "name": "Natasha Kosoglov",
@@ -611,7 +649,7 @@
       "teams": [
         "developers"
       ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3008677?s=460&v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3008677?v=4&s=200",
       "github": "welenofsky"
     },
     "noahblon": {
@@ -621,7 +659,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/561590?v=4&s=200",
       "website": "https:\/\/www.noahblon.com",
-      "github": "noahblon"
+      "github": "noahblon",
+      "twitter": "noahblon"
     },
     "patrickhulce": {
       "name": "Patrick Hulce",
@@ -632,7 +671,8 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/2301202?v=4&s=200",
       "website": "http:\/\/patrickhulce.com",
-      "github": "patrickhulce"
+      "github": "patrickhulce",
+      "twitter": "patrickhulce"
     },
     "paulcalvano": {
       "name": "Paul Calvano",
@@ -653,7 +693,8 @@
         "editors"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/49983543?v=4&s=200",
-      "github": "rachellcostello"
+      "github": "rachellcostello",
+      "twitter": "rachellcostello"
     },
     "raghuramakrishnan71": {
       "name": "Raghu Ramakrishnan",
@@ -665,11 +706,12 @@
     },
     "rmarx": {
       "name": "Robin Marx",
-      "github": "rmarx",
-      "twitter": "programmingart",
       "teams": [
         "reviewers"
-      ]
+      ],
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/2240689?s=460&v=4&s=200",
+      "github": "rmarx",
+      "twitter": "programmingart"
     },
     "ernee": {
       "name": "Renee Johnson",
@@ -678,7 +720,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/8108643?v=4&s=200",
       "website": "https:\/\/reneesvirtualoffice.com",
-      "github": "ernee"
+      "github": "ernee",
+      "twitter": "reneesoffice"
     },
     "rviscomi": {
       "name": "Rick Viscomi",
@@ -708,7 +751,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/205226?v=4&s=200",
       "website": "https:\/\/simpl.info",
-      "github": "samdutton"
+      "github": "samdutton",
+      "twitter": "sw12"
     },
     "ScottHelme": {
       "name": "Scott Helme",
@@ -718,7 +762,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/5352840?v=4&s=200",
       "website": "https:\/\/scotthelme.co.uk",
-      "github": "ScottHelme"
+      "github": "ScottHelme",
+      "twitter": "Scott_Helme"
     },
     "sergeychernyshev": {
       "name": "Sergey Chernyshev",
@@ -727,22 +772,26 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/38076?v=4&s=200",
       "website": "http:\/\/sergeychernyshev.com\/",
-      "github": "sergeychernyshev"
+      "github": "sergeychernyshev",
+      "twitter": "sergeyche"
     },
     "zcorpan": {
       "name": "Simon Pieters",
       "teams": [
-        "brainstormers"
+        "brainstormers",
+        "reviewers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/244772?v=4&s=200",
-      "github": "zcorpan"
+      "github": "zcorpan",
+      "twitter": "zcorpan"
     },
     "susie-lu": {
       "name": "Susie Lu",
       "teams": [
         "designers"
       ],
-      "website": "https:\/\/www.susielu.com\/"
+      "website": "https:\/\/www.susielu.com\/",
+      "twitter": "DataToViz"
     },
     "tammyeverts": {
       "name": "Tammy Everts",
@@ -751,7 +800,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/15661032?v=4&s=200",
       "website": "https:\/\/speedcurve.com\/",
-      "github": "tammyeverts"
+      "github": "tammyeverts",
+      "twitter": "tameverts"
     },
     "tjmonsi": {
       "name": "TJ Monserrat",
@@ -770,7 +820,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/145676?v=4&s=200",
       "website": "https:\/\/blog.tomayac.com\/",
-      "github": "tomayac"
+      "github": "tomayac",
+      "twitter": "tomayac"
     },
     "tomhodgins": {
       "name": "Tommy Hodgins",
@@ -789,7 +840,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/1693164?v=4&s=200",
       "website": "http:\/\/una.im",
-      "github": "una"
+      "github": "una",
+      "twitter": "una"
     },
     "jasti": {
       "name": "Vamsee Jasti",
@@ -798,7 +850,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2366341?v=4&s=200",
       "website": "https:\/\/vamseejasti.com",
-      "github": "jasti"
+      "github": "jasti",
+      "twitter": "vamseejasti"
     },
     "voltek62": {
       "name": "Vincent Terrasi",
@@ -818,7 +871,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/786187?v=4&s=200",
       "website": "https:\/\/blog.yoav.ws",
-      "github": "yoavweiss"
+      "github": "yoavweiss",
+      "twitter": "yoavweiss"
     },
     "tyohan": {
       "name": "Yohan Totting",
@@ -827,7 +881,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/106703?v=4&s=200",
       "website": "http:\/\/tyohan.me",
-      "github": "tyohan"
+      "github": "tyohan",
+      "twitter": "tyohan"
     },
     "ymschaap": {
       "name": "Yvo Schaap",
@@ -850,7 +905,8 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/39355?v=4&s=200",
       "website": "https:\/\/zachleat.com\/",
-      "github": "zachleat"
+      "github": "zachleat",
+      "twitter": "zachleat"
     }
   }
 }
