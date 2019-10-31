@@ -35,9 +35,9 @@ feature counters in the HTTP Archive, we find that 0.44% of all desktop and 0.37
 register a service worker, and both curves over time are steeply growing. Now this might not look overly 
 impressive, but taking traffic data from Chrome Platform Status into account, we can see that about 
 [a service worker controlled 15% of all page loads](https://www.chromestatus.com/metrics/feature/timeline/popularity/990),
-which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers. 
+which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.
 
-<timeseries chart of 11_01b>
+```<timeseries chart of 11_01b>```
 
 **Figure 1:** Service Worker installation over time for desktop and mobile
 
@@ -71,11 +71,11 @@ cases that service workers enable are the most attractive feature for app develo
 push notifications. Due to its limited availability, and less common use case, background sync doesn’t 
 play a significant role at the moment. 
 
-<bar chart of 11_03 mobile>
+```<bar chart of 11_03 mobile>```
 
 **Figure 2a:** Service worker events on mobile, ordered by decreasing frequency.
 
-<bar chart of 11_03 desktop>
+```<bar chart of 11_03 desktop>```
 
 **Figure 2b:** Service worker events on desktop, ordered by decreasing frequency.
 
@@ -89,11 +89,11 @@ We note that these stats don’t account for dynamically imported scripts throug
 [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) method, 
 which likely skews the results higher.
 
-<distribution of 11_03b mobile>
+```<distribution of 11_03b mobile>```
 
 **Figure 3a:** Percentiles of service worker file sizes on mobile.
 
-<distribution of 11_03b desktop>
+```<distribution of 11_03b desktop>```
 
 **Figure 3b:** Percentiles of service worker file sizes on desktop.
 
@@ -125,11 +125,11 @@ a non-trivial amount of mistyped properties; our favorite being `shot_name`. An 
 is the `serviceworker` property, which is standard but not implemented by any browser vendor —
 nevertheless, it was found on 0.09% of all web app manifests used by mobile and desktop pages. 
 
-<bar chart of 11_04 mobile>
+```<bar chart of 11_04 mobile>```
 
 **Figure 4a:** Web App Manifest properties ordered by decreasing popularity on mobile.
 
-<bar chart of 11_04 mobile>
+```<bar chart of 11_04 mobile>```
 
 **Figure 4b:** Web App Manifest properties ordered by decreasing popularity on desktop.
 
@@ -141,11 +141,11 @@ By choosing `"standalone"`, they make sure no browser UI is shown to the end-use
 by the majority of apps that make use of the `prefers_related_applications` property: more that 97% 
 of both mobile and desktop applications do *not* prefer native applications.
 
-<11_04c mobile>
+```<11_04c mobile>```
 
 **Figure 5a:** Values for the `display` property on mobile.
 
-<11_04c desktop>
+```<11_04c desktop>```
 
 **Figure 5b:** Values for the `display` property on desktop.
 
@@ -158,11 +158,11 @@ web application. There were not too many manifests that made use of the property
 interesting to see the shift from *shopping* being the most popular category on mobile to *business*, 
 *technology*, and *web* (whatever may be meant with that) on desktop that share the first place evenly.
 
-<11_04d mobile>
+```<11_04d mobile>```
 
 **Figure 6a:** Values for the `categories` property on mobile.
 
-<11_04d desktop>
+```<11_04d desktop>```
 
 **Figure 6b:** Values for the `categories` property on desktop.
 
@@ -174,11 +174,11 @@ Lighthouse’s rule is probably the culprit for 192×192 being the most popular 
 desktop and mobile, despite [Google’s documentation](https://developers.google.com/web/fundamentals/web-app-manifest#icons) 
 additionally explicitly recommending 512×512, which doesn’t show as a particularly prominent option.
 
-<11_04f mobile>
+```<11_04f mobile>```
 
 **Figure 7a:** Popular icon sizes on mobile.
 
-<11_04f desktop>
+```<11_04f desktop>```
 
 **Figure 7b:** Popular icon sizes on desktop.
 
@@ -190,11 +190,11 @@ Namely there are `"any"`, `"natural"`, `"landscape"`,  `"portrait"`, `"portrait-
 `"landscape-primary"`, and `"landscape-secondary"`.
 Portrait orientation is the clear winner on both platforms, followed by any orientation.
 
-<11_04g mobile>
+```<11_04g mobile>```
 
 **Figure 8a:** Popular orientation values on mobile.
 
-<11_04g desktop>
+```<11_04g desktop>```
 
 **Figure 8b:** Popular orientation values on desktop.
 
