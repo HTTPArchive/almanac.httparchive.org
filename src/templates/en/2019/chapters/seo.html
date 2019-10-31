@@ -17,7 +17,7 @@
       <h2 class="header">Index</h2>
       <ul>
         <li>
-          <a href="#intro">Intro</a>
+          <a href="#introduction">Introduction</a>
         </li>
 
         <li>
@@ -129,7 +129,7 @@
       </h1>
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
-      <h2 id="intro">Intro</h2>
+      <h2 id="introduction">Introduction</h2>
       <p>Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers.</p>
       <p>Let's put the importance of SEO into perspective. Earlier this year, the SEO industry looked on in horror (and fascination) as <a href="https://www.bbc.co.uk/news/business-47877688">ASOS reported an 87% decrease in profits</a> after a "difficult year". The brand attributed their issues to a drop in search engine rankings which occurred after they launched over 200 microsites and significant changes to their website's navigation, among other technical changes. Yikes.</p>
       <p>The SEO chapter of the Web Almanac was created to analyze onsite elements of the web that impact the crawling and indexing of content for search engines, and ultimately, website performance. In this chapter, we'll take a look at how well-equipped the top websites are to provide a great experience for users and search engines, and which ones still have work to do.</p>
@@ -170,7 +170,7 @@
       <p>To show a page's content to users in the SERPs, search engine crawlers must first be permitted to access and index that page. Some of the factors that impact a search engine's ability to crawl and index pages include:</p>
       <ul>
         <li>Status codes</li>
-        <li>Noindex tags</li>
+        <li><code>Noindex</code> tags</li>
         <li>Canonical tags</li>
         <li>The robots.txt file</li>
       </ul>
@@ -179,8 +179,8 @@
       <p>The next most commonly found status code on mobile was <code>302</code>, a temporary redirect, which was found on 10.45% of mobile pages. This was higher than on desktop, with only 6.71% desktop home pages returning a <code>302</code> status code. This could be due to the fact that the <a href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">mobile home pages were alternates</a> to an equivalent desktop page, such as on non-responsive sites that have separate versions of the website for each device.</p>
       <aside>Note: Our results didn't include `4xx` or `5xx` status codes.</aside>
       <h4 id="noindex">Noindex</h4>
-      <p>A noindex tag can be served in the HTML <code>&lt;head&gt;</code> or in the HTTP headers as an <code>X-Robots</code> tag. A noindex tag basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. Noindex tags are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered or faceted pages or internal search pages.</p>
-      <p>96.93% of mobile pages passed the <a href="https://developers.google.com/web/tools/lighthouse/audits/indexing">Lighthouse indexing audit</a>, meaning that these pages didn't contain a noindex tag in the <code>&lt;head&gt;</code> or in the HTTP headers. However, this means that 3.07% of mobile home pages <em>did</em> have a noindex tag, which is cause for concern, meaning that Google was prevented from indexing these pages.</p>
+      <p>A <code>noindex</code> tag can be served in the HTML <code>&lt;head&gt;</code> or in the HTTP headers as an <code>X-Robots</code> tag. A <code>noindex</code> tag basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. <code>Noindex</code> tags are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered or faceted pages or internal search pages.</p>
+      <p>96.93% of mobile pages passed the <a href="https://developers.google.com/web/tools/lighthouse/audits/indexing">Lighthouse indexing audit</a>, meaning that these pages didn't contain a <code>noindex</code> tag in the <code>&lt;head&gt;</code> or in the HTTP headers. However, this means that 3.07% of mobile home pages <em>did</em> have a <code>noindex</code> tag, which is cause for concern, meaning that Google was prevented from indexing these pages.</p>
       <aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our [Methodology](./methodology#websites).</aside>
       <h4 id="canonicalization">Canonicalization</h4>
       <p>Canonical tags are used to specify duplicate pages and their preferred alternates, so that search engines can consolidate authority which might be spread across multiple pages within the group onto one main page for improved rankings.</p>
@@ -198,7 +198,7 @@
       <p>Anchor links, which link to a certain scroll position on the same page, are not very popular. Over 65% of home pages have no anchor links. This is probably due to the fact that home pages don't usually contain any long-form content.</p>
       <p>There is good news from our analysis of the descriptive link text metric. 89.94% of mobile pages pass Lighthouse's <a href="https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text">descriptive link text audit</a>. This means that these pages don't have generic "click here", "go", "here" or "learn more" links, but use more meaningful link text which helps users and search engines better understand the context of pages and how they connect with one another.</p>
       <h2 id="advanced">Advanced</h2>
-      <p>Having descriptive, useful content on a page that isn't being blocked from search engines with a noindex tag or robots.txt directive isn't enough for a website to succeed in organic search. Those are just the basics. There is a lot more than can be done to enhance the performance of a website and its appearance in SERPs.</p>
+      <p>Having descriptive, useful content on a page that isn't being blocked from search engines with a <code>noindex</code> tag or robots.txt directive isn't enough for a website to succeed in organic search. Those are just the basics. There is a lot more than can be done to enhance the performance of a website and its appearance in SERPs.</p>
       <p>Some of the more technically complex aspects that have been gaining importance in successfully indexing and ranking websites include: speed, structured data, internationalization, security, and mobile friendliness.</p>
       <h3 id="speed">Speed</h3>
       <p>Mobile loading speed was first <a href="https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html">announced as a ranking factor</a> by Google in 2018. Speed isn't a new focus for Google though. Back in 2010 it was <a href="https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html">revealed that speed had been introduced as a ranking signal</a>.</p>

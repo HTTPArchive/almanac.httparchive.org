@@ -6,7 +6,7 @@ authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 ---
 
-## Intro
+## Introduction
 
 Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers.
 
@@ -85,7 +85,7 @@ Learn more about this in the [Accessibility chapter](./accessibility).
 To show a page's content to users in the SERPs, search engine crawlers must first be permitted to access and index that page. Some of the factors that impact a search engine's ability to crawl and index pages include:
 
 - Status codes
-- Noindex tags
+- `Noindex` tags
 - Canonical tags
 - The robots.txt file
 
@@ -99,9 +99,9 @@ The next most commonly found status code on mobile was `302`, a temporary redire
 
 #### Noindex
 
-A noindex tag can be served in the HTML `<head>` or in the HTTP headers as an `X-Robots` tag. A noindex tag basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. Noindex tags are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered or faceted pages or internal search pages.
+A `noindex` tag can be served in the HTML `<head>` or in the HTTP headers as an `X-Robots` tag. A `noindex` tag basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. `Noindex` tags are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered or faceted pages or internal search pages.
 
-96.93% of mobile pages passed the [Lighthouse indexing audit](https://developers.google.com/web/tools/lighthouse/audits/indexing), meaning that these pages didn't contain a noindex tag in the `<head>` or in the HTTP headers. However, this means that 3.07% of mobile home pages _did_ have a noindex tag, which is cause for concern, meaning that Google was prevented from indexing these pages.
+96.93% of mobile pages passed the [Lighthouse indexing audit](https://developers.google.com/web/tools/lighthouse/audits/indexing), meaning that these pages didn't contain a `noindex` tag in the `<head>` or in the HTTP headers. However, this means that 3.07% of mobile home pages _did_ have a `noindex` tag, which is cause for concern, meaning that Google was prevented from indexing these pages.
 
 <aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our [Methodology](./methodology#websites).</aside>
 
@@ -137,7 +137,7 @@ There is good news from our analysis of the descriptive link text metric. 89.94%
 
 ## Advanced
 
-Having descriptive, useful content on a page that isn't being blocked from search engines with a noindex tag or robots.txt directive isn't enough for a website to succeed in organic search. Those are just the basics. There is a lot more than can be done to enhance the performance of a website and its appearance in SERPs.
+Having descriptive, useful content on a page that isn't being blocked from search engines with a `noindex` tag or robots.txt directive isn't enough for a website to succeed in organic search. Those are just the basics. There is a lot more than can be done to enhance the performance of a website and its appearance in SERPs.
 
 Some of the more technically complex aspects that have been gaining importance in successfully indexing and ranking websites include: speed, structured data, internationalization, security, and mobile friendliness.
 
