@@ -117,11 +117,10 @@
   font-style: italic;
   font-size: 18px;
   margin-bottom: 10px;
-  flex: 1
 }
 
 .contributor-social {
-  margin-bottom: 10px;
+  flex: 1
 }
 
 .contributor-social img {
@@ -131,6 +130,7 @@
 }
 
 .contributor-teams {
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -241,7 +241,7 @@
       <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="0">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy">
         <div class="contributor-name">{{ contributor.name }}</div>
-        {% if contributor.twitter or contributor.github or contributor.website %}
+
         <div class="contributor-social">
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ contributor.github }} on GitHub"><img src="/static/images/github.png" alt="GitHub"></a>
@@ -253,7 +253,7 @@
           <a href="{{ contributor.website }}" target="_blank" title="{{ contributor.name }} website"><img src="/static/images/blog.png" alt="website"></a>
           {% endif %}
         </div>
-        {% endif %}
+
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
             <span class="contributor-team team-{{ id }}">{{ config.teams[id].name }}</span>
