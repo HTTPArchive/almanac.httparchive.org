@@ -99,12 +99,17 @@
   margin: 15px;
 }
 
+.contributor:focus .contributor-avatar{
+    transform: scale(1.1);
+}
+
 .contributor-avatar {
   border-radius: 50px;
   background-color: #f7f779;
   margin-bottom: 10px;
   width: 100px;
   height: auto;
+  transition-duration: .3s;
 }
 
 .contributor-name {
@@ -233,7 +238,7 @@
 
     <div class="contributor-grid">
     {% for id, contributor in config.contributors.items() %}
-      <div class="contributor {{ ' '.join(contributor.teams) }}">
+      <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="0">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy">
         <div class="contributor-name">{{ contributor.name }}</div>
         {% if contributor.twitter or contributor.github or contributor.website %}
@@ -264,43 +269,51 @@
 {% block scripts %}
   {{ super() }}
   <script nonce="{{ csp_nonce() }}">
-var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
-var buttons = document.querySelectorAll('.filter-container button');
-var contributors = document.querySelector('.contributors');
-var contributorsGrid = document.querySelector('.contributor-grid');
-var counter = document.querySelector('#filtered-contributors');
+(function loaded() {
+    var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
+    var buttons = document.querySelectorAll('.filter-container button');
+    var contributors = document.querySelector('.contributors');
+    var contributorsGrid = document.querySelector('.contributor-grid');
+    var counter = document.querySelector('#filtered-contributors');
 
-contributorsGrid.setAttribute('data-rendered', true);
+    contributorsGrid.setAttribute('data-rendered', true);
 
-function getFilteredContributorCount() {
-  return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
-    return getComputedStyle(el).display != 'none';
-  }).length;
-}
-
-for (var i = 0; i < buttons.length; i++) {
-  var button = buttons[i];
-  button.addEventListener('click', function(e) {
-    var teamId = e.target.className;
-
-    //on first filter, hide all except that one
-    if(contributors.classList.length == (teams.length + 1)) {
-        teams.forEach(function(team) {
-            if(team === teamId) {
-                return;
-            }
-            document.querySelector('.' + team).classList.toggle(team);
-        });
-    } else if (contributors.classList.length == 2 && contributors.classList.contains(teamId)) {
-        teams.forEach(function(team) {
-            contributors.classList.add(team);
-        });
-    } else {
-        contributors.classList.toggle(teamId);
+    function getFilteredContributorCount() {
+      return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
+        return getComputedStyle(el).display != 'none';
+      }).length;
     }
-    counter.innerText = getFilteredContributorCount();
-  });
-}
+
+    for (var i = 0; i < buttons.length; i++) {
+      var button = buttons[i];
+      button.addEventListener('click', function(e) {
+        var teamId = e.target.className;
+
+        if(contributors.classList.length == (teams.length + 1)) {
+            teams.forEach(function(team) {
+                if(team === teamId) {
+                    return;
+                }
+                document.querySelector('.' + team).classList.toggle(team);
+            });
+        } else if (contributors.classList.length == 2 && contributors.classList.contains(teamId)) {
+            teams.forEach(function(team) {
+                contributors.classList.add(team);
+            });
+        } else {
+            contributors.classList.toggle(teamId);
+        }
+        counter.innerText = getFilteredContributorCount();
+      });
+    }
+
+    if(document.location.hash.length > 0) {
+        var highlight = document.querySelector('#' + document.location.hash.substr(1));
+        if(highlight) {
+            highlight.focus();
+        }
+    }
+})();
 
   </script>
 {% endblock %}
