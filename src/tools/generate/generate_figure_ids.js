@@ -1,24 +1,8 @@
-const { JSDOM } = require('jsdom');
-const slugify = require('slugify');
-
 const generate_figure_ids = (html) => {
-  const dom = new JSDOM(html);
-  const all_figures = Object.values(dom.window.document.querySelectorAll('figure'));
+  const re = /<figure>|<figure markdown>/gi;
 
-  for (const figure of all_figures) {
-    if (figure.id) continue;
-
-    const figcaption = figure.querySelector('figcaption');
-
-    figure.id = slugify(figcaption.textContent, {
-      replacement: '-',
-      remove: /[^\w\s]|_/,
-      lower: true
-    });
-  }
-
-  const body = dom.window.document.body.innerHTML;
-  return body;
+  let i = 1;
+  return html.replace(re, () => `<figure id='fig-${i++}'>`);
 };
 
 module.exports = {
