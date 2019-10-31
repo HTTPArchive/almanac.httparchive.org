@@ -66,6 +66,7 @@ rmarx"," dotjs"]} %} {% block main %}
         src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg"
         class="content-banner"
       />
+      {{ render_byline() }}
       <p>
         <img
           src="https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images//2019/20_HTTP_2/hero_xl.jpg"
@@ -1254,7 +1255,7 @@ rmarx"," dotjs"]} %} {% block main %}
       </p>
     </section>
     <section class="authors">
-      <h4>Authors :</h4>
+      <h4>Authors</h4>
       {{ render_authors() }}
     </section>
 

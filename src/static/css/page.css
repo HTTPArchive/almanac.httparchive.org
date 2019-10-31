@@ -129,6 +129,14 @@ table,
   border: 1px solid #E5E5E5;
 }
 
+.byline {
+  font-weight: bold;
+  font-style: italic;
+}
+.byline.reviewers {
+  font-weight: normal;
+}
+
 .authors h4{
   padding: 16px 0;
 }
@@ -141,7 +149,7 @@ table,
 }
 
 .authors li::before{
-  content:none;
+  content: none;
   width: 0;
   margin-left: 0;
 }
@@ -227,8 +235,8 @@ table,
   right:-24px;
 }
 
-a,
-a:visited {
+.main a,
+.main a:visited {
   color: initial;
 }
 
