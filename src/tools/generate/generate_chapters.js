@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const prettier = require('prettier');
 
 const { generate_table_of_contents } = require('./generate_table_of_contents');
+const { generate_figure_ids } = require('./generate_figure_ids');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -31,7 +32,8 @@ const generate_chapters = async () => {
 };
 
 const parse_file = async (markdown) => {
-  const body = converter.makeHtml(markdown);
+  const html = converter.makeHtml(markdown);
+  const body = generate_figure_ids(html);
   const toc = generate_table_of_contents(body);
 
   const m = converter.getMetadata();
@@ -54,14 +56,19 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   let html = await ejs.renderFile(template, { metadata, body, toc });
-  let fomatted_html = prettier.format(html, { parser: 'html' });
+  let fomatted_html = prettier.format(html, {
+    parser: 'html',
+    printWidth: Number.MAX_SAFE_INTEGER
+  });
 
   await fs.outputFile(path, fomatted_html, 'utf8');
 
   await size_of(path);
 };
 
-const parse_array = (s) => s.substring(1, s.length - 1).split(',');
+const parse_array = (s) => s.substring(1, s.length - 1)
+                            .split(',')
+                            .map((value) => value.trim());
 
 const size_of = async (path) => {
   let b = (await fs.stat(path)).size;

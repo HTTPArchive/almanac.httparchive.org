@@ -1,27 +1,13 @@
-
 .main {
   margin-top: 32px;
   overflow: visible;
   display: grid;
   grid-template-areas: 'index content';
   grid-template-columns: 300px auto;
-}
-
-.main p,
-.main li {
   font-size: 18px;
   line-height: 30px;
 }
-.decorative-line {
-  display: block;
-  width: 48px;
-  border-bottom: solid 1px #c6dcd2;
-  position: relative;
-  top: -12px;
-}
-.decorative-line-mobile {
- display: none;
-}
+table,
 .floating-card {
   border-radius: 16px;
   box-shadow: 0 0 5px 5px #f6f7f9;
@@ -48,71 +34,82 @@
   grid-area: index;
 }
 .index .index-box {
-  margin: 8px;
+  margin: 0 8px 8px;
   padding: 8px 16px;
 }
 .index .header {
-  display: #1A2B49;
+  color: #1A2B49;
 }
 .index .header-mobile {
   display: none;
 }
-.main .index ul {
+.index ul {
   width: 100%;
   margin: 0px;
   padding-left: 0px;
-  border-top: 1px solid #1A2B490A;
+  border-top: 1px solid rgba(26, 43, 73, 0.1);
 }
-.main .index li{
+.index ul ul:first-child {
+  border-top: none;
+}
+.index li {
+  position: relative;
   font-weight: 900;
   list-style-type: none;
-  line-height: 64px;
-  padding-left: 16px;
-  border-bottom: 1px solid #1A2B490A;
+  border-bottom: 1px solid rgba(26, 43, 73, 0.1);
 }
-.main .index li a {
+.index ul:last-child li:last-child {
+  border-bottom: none;
+}
+.index li a {
+  display: block;
+  padding: 24px 16px;
+  line-height: 24px;
   color: #1A2B49;
 }
-.main .index li li {
-  font-weight: 600;
-  border-bottom: 1px solid #FFFFFFFF;
+.index li li {
+  font-weight: 700;
+  border-bottom: 1px solid rgba(26, 43, 73, 0.1);
 }
-.main .index li li li {
+.index li li a {
+  padding-left: 32px;
+}
+.index li li:last-child {
+  border-bottom: none;
+}
+.index li li li {
   font-weight: normal;
-  border-bottom: 1px solid #FFFFFFFF;
+  border-bottom: 1px solid rgba(26, 43, 73, 0.1);
 }
-.main .index li:before{
+.index li li li a {
+  padding-left: 48px;
+}
+.index li:before{
   content: "";
   width: 8px;
-  height: 28px;
-  display:  inline-block;
-  position: relative;
-  top: 8px;
-  left: -6px;
+  display: inline-block;
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
 }
-.main .index li.active:before{
-  background-color: #a9cbbb;
+.index li.active:before{
+  background-color: #A8CABA;
 }
-
 
 .content {
   grid-area: content;
   margin: 8px;
   padding: 16px;
+  margin-top: 0;
+  padding-top: 0;
   min-width: 320px;
+  font-size: 18px;
 }
 .content > section {
   margin-bottom: 64px;
 }
-.content .intro h1 {
-  font-size: 3rem;
-  font-weight: bold;
-}
 .content .intro p {
   font-weight: bold;
-}
-.content p {
-  font-size: 1.4rem;
 }
 .content li {
   list-style: none;;
@@ -127,9 +124,17 @@
 }
 
 .content-banner {
-  width: 100%;
+  max-width: 100%;
   border-radius: 8px;
-  border: 1px solid #1A2B490A;
+  border: 1px solid #E5E5E5;
+}
+
+.byline {
+  font-weight: bold;
+  font-style: italic;
+}
+.byline.reviewers {
+  font-weight: normal;
 }
 
 .authors h4{
@@ -144,7 +149,7 @@
 }
 
 .authors li::before{
-  content:none;
+  content: none;
   width: 0;
   margin-left: 0;
 }
@@ -230,6 +235,51 @@
   right:-24px;
 }
 
+.main a,
+.main a:visited {
+  color: initial;
+}
+
+img,
+table,
+figure {
+  max-width: 100%;
+}
+figure img {
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+}
+figure iframe {
+  display: block;
+  margin: 0 auto;
+}
+figure {
+  margin: 15px -8px;
+  padding: 8px;
+  font-style: italic;
+  overflow-x: auto;
+}
+figcaption {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 1px solid #eee;
+}
+th, td {
+  padding: 10px;
+}
+tbody tr:nth-child(even) {
+  background-color: #f2f2f280;
+}
+
 @media (max-width: 900px) {
   .main {
     padding: 0;
@@ -255,31 +305,31 @@
     position: relative;
     top: 12px;
   }
-  .main .index .index-box {
+  .index {
+    margin-bottom: 45px;
+  }
+  .index .index-box {
     margin: 0px;
   }
-  .main .index-box .header {
-    display: none;
-  }
-  .main .index-box .header-mobile {
+  .index-box .header {
     display: flex;
     justify-content: space-between;
   }
-  .main .index-box  h2.header-mobile::after {
+  .index-box  h2.header::after {
     font-weight: normal;
     content: '+';
   }
-  .main .index-box.show  h2.header-mobile::after {
+  .index-box.show  h2.header::after {
     content: '-';
   }
 
-  .main .index-box ul {
+  .index-box ul {
     max-height: 0;
     border-top: 0px solid #FFFFFFFF;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
   }
-  .main .index-box.show ul {
+  .index-box.show ul {
     margin-top: 16px;
     margin-bottom: 16px;
     border-top: 1px solid #1A2B490A;

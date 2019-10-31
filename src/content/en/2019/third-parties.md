@@ -3,7 +3,7 @@ part_number: II
 chapter_number: 5
 title: Third Parties
 authors: [patrickhulce]
-reviewers: [simonhearne, flowlabs, jasti, zeman]
+reviewers: [zcorpan, obto, jasti]
 ---
 
 # Chapter 5: Third Parties

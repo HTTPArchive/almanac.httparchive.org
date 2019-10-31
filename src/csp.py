@@ -23,7 +23,8 @@ csp = {
         '\'self\'',
         'www.google-analytics.com',
         'www.googletagmanager.com',
-        'www.gravatar.com'
+        '*.githubusercontent.com',
+        'data:'
     ],
     'frame-src': [
         '\'self\'',
