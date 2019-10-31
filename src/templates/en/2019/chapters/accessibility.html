@@ -10,20 +10,16 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":9,"title":"Accessibility","authors":["nektarios-paisios"," obto"," kleinab"],"reviewers":["ljme"]} %} {% block main %}
+{% set metadata = {"part_number":"II","chapter_number":9,"title":"Accessibility","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"]} %} {% block main %}
 <article id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
       <ul>
         <li>
-          <a href="#chapter-9-accessibility">Chapter 9: Accessibility</a>
+          <a href="#introduction">Introduction</a>
 
           <ul>
-            <li>
-              <a href="#what-is-web-accessibility-and-why-does-it-matter">What is web accessibility and why does it matter?</a>
-            </li>
-
             <li>
               <a href="#state-of-accessibility-support-around-the-web">State of accessibility support around the web</a>
             </li>
@@ -169,8 +165,7 @@
       </h1>
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
-      <h1 id="chapter-9-accessibility">Chapter 9: Accessibility</h1>
-      <h2 id="what-is-web-accessibility-and-why-does-it-matter">What is web accessibility and why does it matter?</h2>
+      <h1 id="introduction">Introduction</h1>
       <p>Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes all the more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder assistive technology users depending on the level of accessibility support integrated into a website.</p>
       <p>When thinking about users with disabilities, we should remember that their user journeys are often the same, but they utilize different tools. These popular tools include but are not limited to: screen readers, screen magnifiers, browser or text size zooming, captions, voice controls, and color perception differences.</p>
       <p>Often, improving the accessibility of your web page has benefits for everyone. While we typically think of people with disabilities as people with a permanent disability, everybody can have a temporary or situational disability. For example, someone might be permanently blind, or temporarily have an eye infection, or situationally be outside on a sunny day. All of these might explain why someone is unable to see their screen. Everyone has situational disabilities, and so improving the accessibility of your web page will improve the experience of all users in any situation.</p>
