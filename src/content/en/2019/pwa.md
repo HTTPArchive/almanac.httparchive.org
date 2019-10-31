@@ -6,9 +6,8 @@ authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
 ---
 
-![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images//2019/11_PWA/hero_xl.jpg)
-
 ## Introduction
+
 Progressive Web Apps (PWA) are a new class of web applications, building on top of platform primitives 
 like the [Service Worker APIs](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API). 
 Service workers allow apps to support network-independent loading by acting as a network proxy, 
@@ -28,7 +27,9 @@ are currently still [only available on Chromium-based browsers](https://caniuse.
 so as an additional question, we looked into which features these PWAs actually use.
 
 ## Service Workers
+
 ### Service Worker Registrations and Installability
+
 The first metric we explore are service worker installations. Looking at the data exposed through 
 feature counters in the HTTP Archive, we find that 0.44% of all desktop and 0.37% of all mobile pages 
 register a service worker, and both curves over time are steeply growing. Now this might not look overly 
@@ -46,7 +47,7 @@ though it currently is only available for mobile pages. Looking at Lighthouse da
 register a service worker, which is also a requirement of the install prompt
 ([issue raised to make this clearer in the documentation](https://github.com/GoogleChrome/web.dev/issues/1797)).
 The difference in these numbers may be due to Service Workers being registered on pages other than the home page as the [Web Almanac
-only is restricted just to home pages](../methodology).
+only is restricted just to home pages](./methodology).
 
 To control the install experience, 0.82% of all desktop and 0.94% of all mobile pages use the [`OnBeforeInstallPrompt` interface](https://w3c.github.io/manifest/#beforeinstallpromptevent-interface). At present [support is limited to Chromium based browsers](https://caniuse.com/#feat=web-app-manifest).
 
@@ -79,6 +80,7 @@ play a significant role at the moment.
 **Figure 2b:** Service worker events on desktop, ordered by decreasing frequency.
 
 ### Service Worker File Sizes
+
 File size or lines of code are in general a bad proxy for the complexity of the task at hand. 
 In this case, however, it is definitely interesting to compare (compressed) file sizes of service workers 
 for mobile and desktop. The median service worker file on desktop is 895 bytes, whereas on mobile it’s 694 bytes. 
@@ -96,7 +98,9 @@ which likely skews the results higher.
 **Figure 3b:** Percentiles of service worker file sizes on desktop.
 
 ## Web App Manifests
+
 ### Web App Manifest Properties
+
 The web app manifest is a simple JSON file that tells the browser about a web application 
 and how it should behave when installed on the user's mobile device or desktop. A typical 
 manifest file includes information about the app name, icons it should use, the start URL 
@@ -130,6 +134,7 @@ nevertheless, it was found on 0.09% of all web app manifests used by mobile and 
 **Figure 4b:** Web App Manifest properties ordered by decreasing popularity on desktop.
 
 ### Display Values
+
 Looking at the values developers set for the `display` property, it becomes immediately clear 
 that they want PWAs to be perceived as “proper” apps that don’t reveal their web technology origins.
 By choosing `"standalone"`, they make sure no browser UI is shown to the end-user. This is reflected 
@@ -145,6 +150,7 @@ of both mobile and desktop applications do *not* prefer native applications.
 **Figure 5b:** Values for the `display` property on desktop.
 
 ### Category Values
+
 The `categories` member describes the expected application categories to which the web application belongs. 
 It is only meant as a hint to catalogs or app stores listing web applications, and it is expected that
 these will make a best effort to find appropriate categories (or category) under which to list the 
@@ -161,6 +167,7 @@ interesting to see the shift from *shopping* being the most popular category on 
 **Figure 6b:** Values for the `categories` property on desktop.
 
 ### Icon Sizes
+
 Lighthouse [requires](https://developers.google.com/web/tools/lighthouse/audits/manifest-contains-192px-icon) 
 at least an icon sized 192×192, but common favicon generation tools create a plethora of other sizes, too. 
 Lighthouse’s rule is probably the culprit for 192×192 being the most popular choice of icon size on both 
@@ -176,6 +183,7 @@ additionally explicitly recommending 512×512, which doesn’t show as a particu
 **Figure 7b:** Popular icon sizes on desktop.
 
 ### Orientation Values
+
 The valid values for the `orientation` property are
 [defined in the Screen Orientation API specification](https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype).
 Namely there are `"any"`, `"natural"`, `"landscape"`,  `"portrait"`, `"portrait-primary"`, `"portrait-secondary"`,
@@ -191,6 +199,7 @@ Portrait orientation is the clear winner on both platforms, followed by any orie
 **Figure 8b:** Popular orientation values on desktop.
 
 ## Workbox
+
 [Workbox](https://developers.google.com/web/tools/workbox) is a set of libraries that help with common service worker
 use cases. For instance, Workbox has tools that can plug in to your build process and generate a manifest of files,
 which are then precached by your service worker. Workbox includes libraries to handle runtime caching, request routing,
@@ -206,6 +215,7 @@ The HTTP Archive shows that, out of the total population of sites that register 
 across desktop and mobile, with a slightly lower percentage (11.46%) on mobile compared to desktop (14.36%).
 
 ## Conclusion
+
 The stats in this chapter show that PWAs are still only used by a small percentage of sites. However this relatively small usage
 is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more:
 we showed that 15% of page loads use a service workers.
@@ -225,5 +235,5 @@ listed in their App Store](https://developer.apple.com/news/?id=09062019b). Micr
  [Android's commitment to the PWA compared to Chrome](https://medium.com/@firt/is-there-a-cold-war-between-android-and-chrome-because-of-pwas-e50a7471056c).
 
  Even though progress on supporting PWAs is slower than we'd like, adoption is increasing. We may not quite have hit the point where
- PWAs are mainstream yet but the advantages they give for [performance](../performance) and greater control over [caching](../caching),
- particualrly for [mobile](../mobile) could soon lead to an explosion in use - perhaps 2020 is the year for this?
+ PWAs are mainstream yet but the advantages they give for [performance](./performance) and greater control over [caching](./caching),
+ particualrly for [mobile](./mobile) could soon lead to an explosion in use - perhaps 2020 is the year for this?
