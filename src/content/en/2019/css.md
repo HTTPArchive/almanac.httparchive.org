@@ -39,6 +39,9 @@ Top named colors
 
 Language is interestingly inferred via color as well. There are more people using the American-style "gray" than the British-style "grey" when writing code on the web. Almost every instance of [gray colors](https://www.rapidtables.com/web/color/gray-color.html) (gray, lightgray, darkgray, slategray, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why silver is ranked higher than grey with an "e" in the charts!
 
+
+
+
 ## Units
 
 In CSS, there are a lot of different ways to achieve the same visual result -- using different unit types (i.e. `rem` vs `px` vs `em` vs `ch` or `cm` even!). So which unit types are most popular?
@@ -83,20 +86,24 @@ A nice follow up chart is this one, showing that classes take up ~93% of the sel
 ## Layout
 
 ### Flexbox
-% of sites using flexbox
+Flexbox is a container style that directs and aligns it's children, aka it helps with layout in a constraint based way. It had a quite rocky beginning on the web, as it's spec went through 2-3 different quite drastic changes from 2010-2013. Fortunately, it settled and was implemented across all browsers by 2014. Given that history, it had a slow adoption rate, but it's been a few years since then! It's quite popular now, has many articles about it and how to leverage it, but it's new in comparison to other layout tactics.
 <pie chart of 02_013c>
+Quite the success story shown here, as nearly 50% of the web has flexbox usage in it's stylesheets.
 
 ### Grid
-% of sites using grid
+Like flexbox, grid too went through a few spec alternations early on in it's lifespan. Microsoft had Grid in it's first versions of Windows 8, as the primary layout engine for it's horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until it's final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to it's power and capabilities.
 <pie chart of 02_014c>
+This chart shows just how little the web development community has exercised and explored their latest layout tactic. I look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. I love writing grid, I typically reach for it first, and dial my complexity back as I realize and iterate on layout. Curious what the rest of the world will do with this powerful CSS feature over the next few years. 
 
-### Writing Direction
-Pages using dir:ltr
-<pie chart of 02_012>
+### Writing Modes
+The Web and CSS are international platform features, and writing mode is a way for HTML and CSS to indicate a users preferred reading/writing direction within our elements. Let's see how many folks are using the HTML property from their CSS:
+<bar chart of 02_12e>
 
 
 
-## Fonts
+## Typography
+
+### Fonts
 
 
 
@@ -181,11 +188,13 @@ Common stylesheet names
 <bar chart of 02_020>
 
 ### Libraries
-It's common, popular, convenient and powerful to reach for a CSS library to kick start a new project. While you may not be such a dev to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did for us, I think it's an interesting clue to just how small of a developer bubble we live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.
+It's common, popular, convenient and powerful to reach for a CSS library to kick start a new project. While you may not be such a dev to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did for us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.
 <bar chart of 02_010e>
-This chart makes me think that Bootstrap is a strong skill to have for getting a job. Look at all the opportunity there is to help!
+This chart makes me think that Bootstrap is a strong skill to have for getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only, the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites *are not* using a CSS framework. Very interesting no!?
 
 ### Reset Utilities
-% of sites using given resets
+CSS reset utilities intend to normalize or create a baseline for native web elements. In case you didn't know, each browser serves it's own stylesheet for all HTML elements, and each browser gets to make their own unique decisions about how those elements look or behave. Reset Utilities have looked at these files, found their common ground (or not), and iron out any differences so you as a developer can style confidently in one browser and have reasonable confidence it will look the same in another.
+So let's take a peek at how many sites are using one! The reason they exist seems quite reasonable, so how many folks agree with their tactics and use them in their sites?
 <bar chart of 02_011e>
+Turns out that about 1/3 of the web is using [normalize.css](https://necolas.github.io/normalize.css), which could be considered a more gentle approach to the task then a reset is. We looked a little deeper, and it turns out that Bootstrap.css includes normalize.css, which likely accounts for a massive amount of it's usage. It's worth noting as well that normalize.css has more adoption than Bootstrap, so there are plenty of folks using it on it's own. 
 
