@@ -12,13 +12,12 @@
 
 {% set metadata =
 {"part_number":"I","chapter_number":10,"title":"SEO","authors":["ymschaap","
-rachellcostello"," AVGP"],"reviewers":["clarkeclark"," andylimn"," voltek62","
-AymenLoukil"," catalinred"]} %} {% block main %}
+rachellcostello"," AVGP"],"reviewers":["clarkeclark"," andylimn","
+AymenLoukil"," catalinred"," mattludwig"]} %} {% block main %}
 <article id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
-      <h2 class="header-mobile">Index</h2>
       <ul>
         <li>
           <a href="#intro">Intro</a>
@@ -127,15 +126,18 @@ AymenLoukil"," catalinred"]} %} {% block main %}
 
   <section class="content">
     <section class="body">
-      <h1>
-        <div class="decorative-line"></div>
+      <h1 class="title">
+        <div class="subtitle">
+          Part {{ metadata.get('part_number') }} Chapter {{
+          metadata.get('chapter_number') }}
+        </div>
         {{ metadata.get('title') }}
-        <div class="decorative-line-mobile"></div>
       </h1>
       <img
         src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg"
         class="content-banner"
       />
+      {{ render_byline() }}
       <h2 id="intro">Intro</h2>
       <p>
         Search Engine Optimization (SEO) isn't just a hobby or a side project
@@ -861,7 +863,7 @@ AymenLoukil"," catalinred"]} %} {% block main %}
       </p>
     </section>
     <section class="authors">
-      <h4>Authors :</h4>
+      <h4>Authors</h4>
       {{ render_authors() }}
     </section>
 
