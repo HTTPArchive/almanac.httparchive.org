@@ -186,7 +186,7 @@ additionally explicitly recommending 512×512, which doesn’t show as a particu
 
 The valid values for the `orientation` property are
 [defined in the Screen Orientation API specification](https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype).
-Namely there are `"any"`, `"natural"`, `"landscape"`,  `"portrait"`, `"portrait-primary"`, `"portrait-secondary"`,
+Currently, they are `"any"`, `"natural"`, `"landscape"`,  `"portrait"`, `"portrait-primary"`, `"portrait-secondary"`,
 `"landscape-primary"`, and `"landscape-secondary"`.
 Portrait orientation is the clear winner on both platforms, followed by any orientation.
 
