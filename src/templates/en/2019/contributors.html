@@ -329,7 +329,8 @@
     }
 
     try {
-        var highlight = document.querySelector('#' + hash);
+        var hash = document.location.hash;
+        var highlight = document.querySelector(hash);
         highlight.focus();
     } catch(e) { }
 
