@@ -52,21 +52,26 @@
   border-top: none;
 }
 .index li {
+  position: relative;
   font-weight: 900;
   list-style-type: none;
-  line-height: 64px;
-  padding-left: 16px;
   border-bottom: 1px solid rgba(26, 43, 73, 0.1);
 }
 .index ul:last-child li:last-child {
   border-bottom: none;
 }
 .index li a {
+  display: block;
+  padding: 24px 16px;
+  line-height: 24px;
   color: #1A2B49;
 }
 .index li li {
   font-weight: 700;
   border-bottom: 1px solid rgba(26, 43, 73, 0.1);
+}
+.index li li a {
+  padding-left: 32px;
 }
 .index li li:last-child {
   border-bottom: none;
@@ -75,17 +80,19 @@
   font-weight: normal;
   border-bottom: 1px solid rgba(26, 43, 73, 0.1);
 }
+.index li li li a {
+  padding-left: 48px;
+}
 .index li:before{
   content: "";
   width: 8px;
-  height: 28px;
   display: inline-block;
-  position: relative;
-  top: 8px;
-  left: -6px;
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
 }
 .index li.active:before{
-  background-color: #a9cbbb;
+  background-color: #A8CABA;
 }
 
 .content {

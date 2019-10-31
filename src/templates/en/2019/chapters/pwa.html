@@ -17,7 +17,6 @@ ahmadawais"]} %} {% block main %}
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
-      <h2 class="header-mobile">Index</h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -80,10 +79,12 @@ ahmadawais"]} %} {% block main %}
 
   <section class="content">
     <section class="body">
-      <h1>
-        <div class="decorative-line"></div>
+      <h1 class="title">
+        <div class="subtitle">
+          Part {{ metadata.get('part_number') }} Chapter {{
+          metadata.get('chapter_number') }}
+        </div>
         {{ metadata.get('title') }}
-        <div class="decorative-line-mobile"></div>
       </h1>
       <img
         src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg"
