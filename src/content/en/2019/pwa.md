@@ -218,22 +218,20 @@ across desktop and mobile, with a slightly lower percentage (11.46%) on mobile c
 
 The stats in this chapter show that PWAs are still only used by a small percentage of sites. However this relatively small usage
 is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more:
-we showed that 15% of page loads use a service workers.
+we showed that 15% of page loads use a service workers. The advantages they give for [performance](./performance) and
+greater control over [caching](./caching) particularly for [mobile](./mobile).
 
-PWAs have also often been seen as Google-driven technology and while the other browsers still have some way to go to catch up on
-it's support it's positive to see support becoming more widespread. [Maximiliano Firtman](https://twitter.com/firt) does a great
-job of tracking this, including
-[explaining Safari PWA support](https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49)
-in light of poor documentation from Apple on that front. He (amongst others) also questions whether the tech giants really want
-to support this technology. Apple doesn't use the term PWA much, and has [explicitly stated that it does not want these apps
-listed in their App Store](https://developer.apple.com/news/?id=09062019b). Microsoft went the opposite direction not only
-[encouraging PWAs in it's app store, but even automatically indexing any found when as it craweled the web]
-(https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store), though with it moving on from the Windows
- Phone platform the future of that is uncertain. Google has also
- [made moves to accepting PWAs in its app store](https://medium.com/@firt/google-play-store-now-open-for-progressive-web-apps-ec6f3c6ff3cc)
- though Maxim questions
- [Android's commitment to the PWA compared to Chrome](https://medium.com/@firt/is-there-a-cold-war-between-android-and-chrome-because-of-pwas-e50a7471056c).
+PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the
+underlying technologies, although first-class installability lags on some platforms. it's positive to see support becoming more
+widespread. [Maximiliano Firtman](https://twitter.com/firt) does a great job of tracking this, including
+[explaining Safari PWA support](https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49).
+Apple doesn't use the term PWA much, and has
+[explicitly stated that these HTML5 apps are best delivered outside of the App Store](https://developer.apple.com/news/?id=09062019b).
+Microsoft went the opposite direction not only [encouraging PWAs in it's app store, but even automatically indexing any found when
+as it craweled the web] (https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store), though with it
+moving on from the Windows Phone platform the future of that is uncertain. Google has also
+[made moves to accepting PWAs in its app store](https://medium.com/@firt/google-play-store-now-open-for-progressive-web-apps-ec6f3c6ff3cc).
 
- Even though progress on supporting PWAs is slower than we'd like, adoption is increasing. We may not quite have hit the point where
- PWAs are mainstream yet but the advantages they give for [performance](./performance) and greater control over [caching](./caching),
- particualrly for [mobile](./mobile) could soon lead to an explosion in use - perhaps 2020 is the year for this?
+PWAs provide a path forward for developers who would prefer to build and release on the web instead of on native platforms and app stores.
+Not every operating system and browser offers full parity with native software, but improvements continue, and perhaps 2020 is the year
+where we see an explosion in deployments?
