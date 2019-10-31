@@ -18,7 +18,8 @@
         {
           "part": "I",
           "chapter": "3",
-          "title": "Markup"
+          "title": "Markup",
+          "todo": true
         },
         {
           "part": "I",
@@ -29,7 +30,8 @@
         {
           "part": "I",
           "chapter": "5",
-          "title": "Third Parties"
+          "title": "Third Parties",
+          "todo": true
         },
         {
           "part": "I",
@@ -45,7 +47,8 @@
         {
           "part": "II",
           "chapter": "7",
-          "title": "Performance"
+          "title": "Performance",
+          "todo": true
         },
         {
           "part": "II",
@@ -68,7 +71,8 @@
         {
           "part": "II",
           "chapter": "11",
-          "title": "PWA"
+          "title": "PWA",
+          "todo": true
         },
         {
           "part": "II",
@@ -131,7 +135,8 @@
         {
           "part": "IV",
           "chapter": "20",
-          "title": "HTTP/2"
+          "title": "HTTP/2",
+          "todo": true
         }
       ]
     }

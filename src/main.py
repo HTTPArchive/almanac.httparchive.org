@@ -81,15 +81,6 @@ def methodology(lang, year):
     return render_template('%s/%s/methodology.html' % (lang, year))
 
 
-@app.route('/<lang>/<year>/<chapter>')
-@validate
-def chapter(lang, year, chapter):
-    # TODO: Validate the chapter.
-    config = config_util.get_config(year)
-    (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
-    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config, prev_chapter=prev_chapter, next_chapter=next_chapter)
-
-
 def get_chapter_nextprev(config, chapter_slug):
     prev_chapter = None
     next_chapter = None
