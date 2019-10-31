@@ -6,9 +6,7 @@ authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 ---
 
-# Chapter 9: Accessibility
-
-## What is web accessibility and why does it matter?
+# Introduction
 
 Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes all the more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder assistive technology users depending on the level of accessibility support integrated into a website.
 
