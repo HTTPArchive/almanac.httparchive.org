@@ -275,8 +275,7 @@
     var contributors = document.querySelector('.contributors');
     var contributorsGrid = document.querySelector('.contributor-grid');
     var counter = document.querySelector('#filtered-contributors');
-
-    contributorsGrid.setAttribute('data-rendered', true);
+    var shadowNode = document.createElement('div');
 
     function getFilteredContributorCount() {
       return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
@@ -286,33 +285,64 @@
 
     for (var i = 0; i < buttons.length; i++) {
       var button = buttons[i];
-      button.addEventListener('click', function(e) {
-        var teamId = e.target.className;
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
 
-        if(contributors.classList.length == (teams.length + 1)) {
+        var teamId = event.target.className;
+
+        if(shadowNode.length == (teams.length + 1)) {
             teams.forEach(function(team) {
                 if(team === teamId) {
                     return;
                 }
-                document.querySelector('.' + team).classList.toggle(team);
+                shadowNode.classList.toggle(team);
             });
-        } else if (contributors.classList.length == 2 && contributors.classList.contains(teamId)) {
+        } else if (shadowNode.length == 2 && shadowNode.classList.contains(teamId)) {
             teams.forEach(function(team) {
-                contributors.classList.add(team);
+                shadowNode.classList.add(team);
             });
         } else {
-            contributors.classList.toggle(teamId);
+            shadowNode.classList.toggle(teamId);
         }
+
+        var selected = [];
+        teams.forEach(function(team) {
+            if(shadowNode.classList.contains(team)) {
+                selected.push(team);
+            }
+        });
+
+        if(selected.length > 0 && selected.length < teams.length){
+            document.location.hash = selected.join(",");
+        } else {
+            document.location.hash = "all";
+        }
+
         counter.innerText = getFilteredContributorCount();
       });
     }
 
-    if(document.location.hash.length > 0) {
-        var highlight = document.querySelector('#' + document.location.hash.substr(1));
-        if(highlight) {
-            highlight.focus();
+    function handleHash(event) {
+        event && event.preventDefault();
+        if(document.location.hash.length > 0) {
+            var hash = document.location.hash.substr(1);
+            var highlight = document.querySelector('#' + hash);
+            var filterTeams = hash.split(",");
+
+            if(hash === "all") {
+                contributors.classList.add(...teams);
+            } else if(teams.includes(filterTeams[0])) {
+                contributors.classList.remove(...teams);
+                contributors.classList.add(...filterTeams);
+            } else if(highlight) {
+                highlight.focus();
+            }
         }
     }
+    window.addEventListener("hashchange", handleHash);
+    handleHash();
+
+    contributorsGrid.setAttribute('data-rendered', true);
 })();
 
   </script>
