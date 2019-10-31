@@ -67,6 +67,10 @@
         <li>
           <a href="#workbox">Workbox</a>
         </li>
+
+        <li>
+          <a href="#conclusion">Conclusion</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -85,7 +89,7 @@
         like the <a href="https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API">Service Worker APIs</a>. <br />
         Service workers allow apps to support network-independent loading by acting as a network proxy, <br />
         intercepting your web app's outgoing requests, and replying with programmatic or cached responses. <br />
-        Service workers can receive push notifications, and synchronize data in the background even when <br />
+        Service workers can receive push notifications and synchronize data in the background even when<br />
         the corresponding app is not running. Additional, service workers — together with <br />
         <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">Web App Manifests</a> — <br />
         allow users to install PWAs to their devices’ home screens.
@@ -100,17 +104,6 @@
         are currently still <a href="https://caniuse.com/#feat=background-sync">only available on Chromium-based browsers</a>, <br />
         so as an additional question, we looked into which features these PWAs actually use.
       </p>
-      <p>
-        All data in the HTTP Archive can be <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/docs/bigquery-gettingstarted.md">queried through BigQuery</a>,<br />
-        where multiple tables are available in the <code>httparchive</code> project. As these tables tend to get fairly big, <br />
-        they are partitioned, but multiple associated tables can be queried using the <a href="https://cloud.google.com/bigquery/docs/querying-wildcard-tables">wildcard symbol '*'</a>.<br />
-        For our research, three families of tables are relevant:
-      </p>
-      <ul>
-        <li><code>httparchive.lighthouse.*</code>, which contains data about <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> runs. Note that Lighthouse data is only available for mobile pages.</li>
-        <li><code>httparchive.pages.*</code>, which contain the JSON-encoded parent documents’ HAR data.</li>
-        <li><code>httparchive.response_bodies.*</code>, which contains the raw response bodies of all resources and sub-resources of all sites in the archive.</li>
-      </ul>
       <h2 id="service-workers">Service Workers</h2>
       <h3 id="service-worker-registrations-and-installability">Service Worker Registrations and Installability</h3>
       <p>
@@ -124,24 +117,27 @@
       <p><code>&lt;timeseries chart of 11_01b&gt;</code></p>
       <p><strong>Figure 1:</strong> Service Worker installation over time for desktop and mobile</p>
       <p>
-        Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages are <a href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">installable</a>,<br />
-        that is, they pass Lighthouse’s <em>user can be prompted to install the web app</em> test. <br />
-        Lighthouse tests currently are only available for mobile pages. To control the install experience, <br />
-        0.82% of all desktop and 0.94% of all mobile pages use the <a href="https://w3c.github.io/manifest/#beforeinstallpromptevent-interface"><code>OnBeforeInstallPrompt</code> interface</a>.
+        Lighthouse checks whether a page is eligble for an <a href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">install prompt</a><br />
+        though it currently is only available for mobile pages. Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages have an<br />
+        <a href="https://web.dev/installable-manifest/">installable manifest</a>. Readers may notice this is higher than the 0.37% of mobile pages that<br />
+        register a service worker, which is also a requirement of the install prompt<br />
+        (<a href="https://github.com/GoogleChrome/web.dev/issues/1797">issue raised to make this clearer in the documentation</a>).<br />
+        The difference in these numbers may be due to Service Workers being registered on pages other than the home page as the <a href="./methodology">Web Almanac only is restricted just to home pages</a>.
+      </p>
+      <p>
+        To control the install experience, 0.82% of all desktop and 0.94% of all mobile pages use the <a href="https://w3c.github.io/manifest/#beforeinstallpromptevent-interface"><code>OnBeforeInstallPrompt</code> interface</a>. At present <a href="https://caniuse.com/#feat=web-app-manifest">support is limited to Chromium based browsers</a>.
       </p>
       <h3 id="service-worker-events">Service Worker Events</h3>
       <p>In a service worker one can <a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle">listen for a number of events</a>:</p>
       <ul>
-        <li><code>install</code>, which occurs upon service worker installation.</li>
-        <li><code>activate</code>, which occurs upon service worker activation.</li>
-        <li><code>fetch</code>, which occurs whenever a resource is fetched.</li>
-        <li><code>push</code>, which occurs when a push notification arrives.</li>
-        <li><code>notificationclick</code>, which occurs when a notification is being clicked.</li>
-        <li>
-          <code>notificationclose</code>, which occurs when a notification is being closed.<br />
-          <code>- message</code>, which occurs when a message sent via <code>postMessage()</code> arrives.
-        </li>
-        <li><code>sync</code>, which occurs when a Background Sync event occurs.</li>
+        <li><code>install</code> - which occurs upon service worker installation.</li>
+        <li><code>activate</code> - which occurs upon service worker activation.</li>
+        <li><code>fetch</code> - which occurs whenever a resource is fetched.</li>
+        <li><code>push</code> - which occurs when a push notification arrives.</li>
+        <li><code>notificationclick</code> - which occurs when a notification is being clicked.</li>
+        <li><code>notificationclose</code> - which occurs when a notification is being closed.</li>
+        <li><code>message</code> - which occurs when a message sent via <code>postMessage()</code> arrives.</li>
+        <li><code>sync</code> - which occurs when a Background Sync event occurs.</li>
       </ul>
       <p>
         We have examined which of these events are being listened to by service workers we could find in the HTTP Archive. <br />
@@ -193,8 +189,8 @@
         Google Cloud Messaging (GCM) service. Interestingly there’re almost no differences between mobile <br />
         and desktop. On both platforms, however, there’s a long tail of properties that are not interpreted <br />
         by browsers but that contain potentially useful metadata like <code>author</code> or <code>version</code>. We also found <br />
-        a non-trivial amount of mistyped properties, our favorite being <code>shot_name</code>. An interesting outlier <br />
-        is the <code>serviceworker</code> property which is standard, but not implemented by any browser vendor — <br />
+        a non-trivial amount of mistyped properties; our favorite being <code>shot_name</code>. An interesting outlier<br />
+        is the <code>serviceworker</code> property, which is standard but not implemented by any browser vendor —<br />
         nevertheless, it was found on 0.09% of all web app manifests used by mobile and desktop pages.
       </p>
       <p><code>&lt;bar chart of 11_04 mobile&gt;</code></p>
@@ -204,7 +200,7 @@
       <h3 id="display-values">Display Values</h3>
       <p>
         Looking at the values developers set for the <code>display</code> property, it becomes immediately clear <br />
-        that they want PWAs to be perceived as “proper” apps that don’t reveal their web technology origins. <br />
+        that they want PWAs to be perceived as “proper” apps that don’t reveal their web technology origins.<br />
         By choosing <code>"standalone"</code>, they make sure no browser UI is shown to the end-user. This is reflected <br />
         by the majority of apps that make use of the <code>prefers_related_applications</code> property: more that 97% <br />
         of both mobile and desktop applications do <em>not</em> prefer native applications.
@@ -216,7 +212,7 @@
       <h3 id="category-values">Category Values</h3>
       <p>
         The <code>categories</code> member describes the expected application categories to which the web application belongs. <br />
-        It is only meant as a hint to catalogs or stores listing web applications, and it is expected that <br />
+        It is only meant as a hint to catalogs or app stores listing web applications, and it is expected that<br />
         these will make a best effort to find appropriate categories (or category) under which to list the <br />
         web application. There were not too many manifests that made use of the property, but it is <br />
         interesting to see the shift from <em>shopping</em> being the most popular category on mobile to <em>business</em>, <br />
@@ -240,9 +236,10 @@
       <p><strong>Figure 7b:</strong> Popular icon sizes on desktop.</p>
       <h3 id="orientation-values">Orientation Values</h3>
       <p>
-        The valid values for the <code>orientation</code> property are <a href="https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype">defined</a><br />
-        in the Screen Orientation API specification. Namely there are <code>"any"</code>, <code>"natural"</code>, <code>"landscape"</code>, <br />
-        <code>"portrait"</code>, <code>"portrait-primary"</code>, <code>"portrait-secondary"</code>, <code>"landscape-primary"</code>, and <code>"landscape-secondary"</code>. <br />
+        The valid values for the <code>orientation</code> property are<br />
+        <a href="https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype">defined in the Screen Orientation API specification</a>.<br />
+        Namely there are <code>"any"</code>, <code>"natural"</code>, <code>"landscape"</code>, <code>"portrait"</code>, <code>"portrait-primary"</code>, <code>"portrait-secondary"</code>,<br />
+        <code>"landscape-primary"</code>, and <code>"landscape-secondary"</code>.<br />
         Portrait orientation is the clear winner on both platforms, followed by any orientation.
       </p>
       <p><code>&lt;11_04g mobile&gt;</code></p>
@@ -251,10 +248,10 @@
       <p><strong>Figure 8b:</strong> Popular orientation values on desktop.</p>
       <h2 id="workbox">Workbox</h2>
       <p>
-        Workbox is a set of libraries that help with common service worker use cases. For instance, Workbox has tools <br />
-        that can plug in to your build process and generate a manifest of files, which are then precached by your <br />
-        service worker. Workbox includes libraries to handle runtime caching, request routing, cache expiration, <br />
-        background sync, and more.
+        <a href="https://developers.google.com/web/tools/workbox">Workbox</a> is a set of libraries that help with common service worker<br />
+        use cases. For instance, Workbox has tools that can plug in to your build process and generate a manifest of files,<br />
+        which are then precached by your service worker. Workbox includes libraries to handle runtime caching, request routing,<br />
+        cache expiration, background sync, and more.
       </p>
       <p>
         Given the low-level nature of the service worker APIs, many developers have turned to Workbox as a way of <br />
@@ -266,6 +263,31 @@
         The HTTP Archive shows that, out of the total population of sites that register a service worker, <br />
         12.71% of them are using at least one of the Workbox libraries. This percentage is roughly consistent <br />
         across desktop and mobile, with a slightly lower percentage (11.46%) on mobile compared to desktop (14.36%).
+      </p>
+      <h2 id="conclusion">Conclusion</h2>
+      <p>
+        The stats in this chapter show that PWAs are still only used by a small percentage of sites. However this relatively small usage<br />
+        is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more:<br />
+        we showed that 15% of page loads use a service workers.
+      </p>
+      <p>
+        PWAs have also often been seen as Google-driven technology and while the other browsers still have some way to go to catch up on<br />
+        it's support it's positive to see support becoming more widespread. <a href="https://twitter.com/firt">Maximiliano Firtman</a> does a great<br />
+        job of tracking this, including<br />
+        <a href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">explaining Safari PWA support</a><br />
+        in light of poor documentation from Apple on that front. He (amongst others) also questions whether the tech giants really want<br />
+        to support this technology. Apple doesn't use the term PWA much, and has <a href="https://developer.apple.com/news/?id=09062019b">explicitly stated that it does not want these apps listed in their App Store</a>. Microsoft went the opposite direction not only<br />
+        [encouraging PWAs in it's app store, but even automatically indexing any found when as it craweled the web]<br />
+        (<a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store)">https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store)</a>, though with it moving on from the Windows<br />
+        Phone platform the future of that is uncertain. Google has also<br />
+        <a href="https://medium.com/@firt/google-play-store-now-open-for-progressive-web-apps-ec6f3c6ff3cc">made moves to accepting PWAs in its app store</a><br />
+        though Maxim questions<br />
+        <a href="https://medium.com/@firt/is-there-a-cold-war-between-android-and-chrome-because-of-pwas-e50a7471056c">Android's commitment to the PWA compared to Chrome</a>.
+      </p>
+      <p>
+        Even though progress on supporting PWAs is slower than we'd like, adoption is increasing. We may not quite have hit the point where<br />
+        PWAs are mainstream yet but the advantages they give for <a href="./performance">performance</a> and greater control over <a href="./caching">caching</a>,<br />
+        particualrly for <a href="./mobile">mobile</a> could soon lead to an explosion in use - perhaps 2020 is the year for this?
       </p>
     </section>
     <section class="authors">
