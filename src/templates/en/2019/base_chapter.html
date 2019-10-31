@@ -12,7 +12,6 @@
 {% macro render_byline() %}
   <div class="byline">Written by
   {% for author in metadata.get('authors') %}
-    {% set author = author | trim() %}
     <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
     {% if loop.index == loop.length - 1 %} and{% endif %}
   {% endfor %}
@@ -20,7 +19,6 @@
 
   <div class="byline reviewers">Reviewed by
   {% for reviewer in metadata.get('reviewers') %}
-    {% set reviewer = reviewer | trim() %}
     <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
     {% if loop.index == loop.length - 1 %} and{% endif %}
   {% endfor %}
