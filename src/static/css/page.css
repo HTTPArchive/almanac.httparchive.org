@@ -7,6 +7,7 @@
   font-size: 18px;
   line-height: 30px;
 }
+table,
 .floating-card {
   border-radius: 16px;
   box-shadow: 0 0 5px 5px #f6f7f9;
@@ -224,6 +225,51 @@
   transform: rotate(90deg);
   position:absolute;
   right:-24px;
+}
+
+a,
+a:visited {
+  color: initial;
+}
+
+img,
+table,
+figure {
+  max-width: 100%;
+}
+figure img {
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+}
+figure iframe {
+  display: block;
+  margin: 0 auto;
+}
+figure {
+  margin: 15px -8px;
+  padding: 8px;
+  font-style: italic;
+  overflow-x: auto;
+}
+figcaption {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 1px solid #eee;
+}
+th, td {
+  padding: 10px;
+}
+tbody tr:nth-child(even) {
+  background-color: #f2f2f280;
 }
 
 @media (max-width: 900px) {
