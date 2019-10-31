@@ -339,7 +339,6 @@
 
         event && event.preventDefault();
         var urlObject = new URL(document.location);
-        //console.log(urlObject, event, urlObject.searchParams.has('teams'));
         if(urlObject.searchParams.has('teams')) {
 
             var hash = urlObject.searchParams.get('teams');
