@@ -194,7 +194,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
       </p>
       <p>So let's dive in and see what kind of insights we can find.</p>
       <h3 id="fcp">FCP</h3>
-      <figure>
+      <figure id="fig-1">
         // Chart: flame distribution of 07_01
         <figcaption>
           Figure 1. Distribution of websites' fast, average, and slow FCP
@@ -236,14 +236,14 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         <strong>average</strong> performance when it doesn't meet either of
         these conditions.
       </p>
-      <figure>
+      <figure id="fig-2">
         // Chart: Bar distribution of 07_03
         <figcaption>
           Figure 2. Distribution of websites labelled as having fast, average,
           or slow FCP.
         </figcaption>
       </figure>
-      <figure>
+      <figure id="fig-3">
         Fast FCP | Average FCP | Slow FCP -- | -- | -- 2.17% | 37.55% | 60.28%
 
         <figcaption>
@@ -258,14 +258,14 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         segment by form factor.
       </p>
       <h4 id="fcp-by-device">FCP by device</h4>
-      <figure>
+      <figure id="fig-4">
         // Chart: Flame distribution of 07_01b
         <figcaption>
           Figure 4. Distribution of _desktop_ websites' fast, average, and slow
           FCP performance.
         </figcaption>
       </figure>
-      <figure>
+      <figure id="fig-5">
         // Chart: Flame distribution of 07_01c
         <figcaption>
           Figure 5. Distribution of _phone_ websites' fast, average, and slow
@@ -280,14 +280,14 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         desktop users experience a higher overall proportion of fast FCP. To
         verify this we can apply the PSI methodology to each distribution.
       </p>
-      <figure>
+      <figure id="fig-6">
         // Chart: Bar distributions of 07_03b
         <figcaption>
           Figure 6. Distribution of websites labelled as having fast, average,
           or slow FCP, broken down by device type.
         </figcaption>
       </figure>
-      <figure>
+      <figure id="fig-7">
         Device | Fast FCP | Average FCP | Slow FCP -- | -- | -- | -- desktop |
         2.80% | 39.40% | 57.80% phone | 1.76% | 35.62% | 62.62%
 
@@ -304,7 +304,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         category.
       </p>
       <h4 id="fcp-by-ect">FCP by ECT</h4>
-      <figure>
+      <figure id="fig-8">
         // Chart: Bar distribution of 07_03c
         <figcaption>
           Figure 8. Distribution of websites labelled as having fast, average,
@@ -312,7 +312,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
           <abbr title="effective connection type">ECT</abbr>.
         </figcaption>
       </figure>
-      <figure>
+      <figure id="fig-9">
         Speed | Fast FCP | Average FCP | Slow FCP -- | -- | -- | -- 4G | 2.31 |
         40.10 | 57.59 3G | 0.04 | 3.48 | 96.49 2G | 0.03 | 0.30 | 99.68 slow-2G
         | 0.03 | 0.08 | 99.89
@@ -335,7 +335,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         on slow connections.
       </p>
       <h4 id="fcp-by-geo">FCP by geo</h4>
-      <figure>
+      <figure id="fig-10">
         // Chart: Bar distribution of 07_03d
         <figcaption>
           Figure 10. Distribution of websites labelled as having fast, average,
@@ -370,7 +370,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         (TTFB) is a measure of how long the web page took from the time of the
         user's navigation until they received the first byte of the response.
       </p>
-      <figure>
+      <figure id="fig-11">
         ![Navigation Timing API diagram of the events in a page
         navigation](/static/images/2019/07_Performance/nav-timing.png)
         <figcaption>
@@ -388,7 +388,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         handling the request. Given that context, let's see how users are
         experiencing this metric.
       </p>
-      <figure>
+      <figure id="fig-12">
         // Chart: Flame distribution of 07_07
         <figcaption>
           Figure 12. Distribution of websites' fast, average, and slow TTFB
@@ -418,14 +418,14 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         it's slow. If neither of those conditions apply, it's
         <strong>average</strong>.
       </p>
-      <figure>
+      <figure id="fig-13">
         // Chart: Bar distribution of 07_08
         <figcaption>
           Figure 13. Distribution of websites labelled as having fast, average,
           or slow TTFB.
         </figcaption>
       </figure>
-      <figure>
+      <figure id="fig-14">
         Fast TTFB | Average TTFB | Slow TTFB -- | -- | -- 0.13% | 30.67% |
         69.20%
 
@@ -443,7 +443,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         completely ineligible to be considered as having fast FCP.
       </p>
       <h4 id="ttfb-by-geo">TTFB by geo</h4>
-      <figure>
+      <figure id="fig-15">
         // Chart: Bar distribution of 07_08d
         <figcaption>
           Figure 15. Distribution of websites labelled as having fast, average,
@@ -480,7 +480,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         <strong>slow</strong> FID is one that happens in 250 ms or more.
         Everything in between is <strong>average</strong>.
       </p>
-      <figure>
+      <figure id="fig-16">
         // Chart: Flame distribution of 07_02
         <figcaption>
           Figure 16. Distribution of websites' fast, average, and slow FID
@@ -494,14 +494,14 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         descends from 100% to 75% then takes a nosedive. The overwhelming
         majority of FID experiences are fast for most websites.
       </p>
-      <figure>
+      <figure id="fig-17">
         // Chart: Bar distribution of 07_04
         <figcaption>
           Figure 17. Distribution of websites labelled as having fast, average,
           or slow TTFB.
         </figcaption>
       </figure>
-      <figure>
+      <figure id="fig-18">
         Fast FID | Average FID | Slow FID -- | -- | -- 26.61% | 42.03% | 31.35%
 
         <figcaption>
@@ -520,14 +520,14 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         balanced, with 26.61% of websites qualifying as fast and 31.35% as slow.
       </p>
       <h4 id="fid-by-device">FID by device</h4>
-      <figure>
+      <figure id="fig-19">
         // Chart: Flame distribution of 07_02b
         <figcaption>
           Figure 19. Distribution of _desktop_ websites' fast, average, and slow
           FID performance.
         </figcaption>
       </figure>
-      <figure>
+      <figure id="fig-20">
         // Chart: Flame distribution of 07_02c
         <figcaption>
           Figure 20. Distribution of _phone_ websites' fast, average, and slow
@@ -544,14 +544,14 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         experienced by users on only the tail ~10% of websites, but this is
         still a substantial difference.
       </p>
-      <figure>
+      <figure id="fig-21">
         // Chart: Bar distributions of 07_04b
         <figcaption>
           Figure 21. Distribution of websites labelled as having fast, average,
           or slow FID, broken down by device type.
         </figcaption>
       </figure>
-      <figure>
+      <figure id="fig-22">
         Device | Fast FID | Average FID | Slow FID -- | -- | -- | -- desktop |
         70.32% | 23.20% | 6.48% phone | 13.76% | 43.21% | 43.03%
 
@@ -567,7 +567,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         experiences, 13.76% of websites are fast while 43.03% are slow.
       </p>
       <h4 id="fid-by-ect">FID by ECT</h4>
-      <figure>
+      <figure id="fig-23">
         // Chart: Bar distribution of 07_04c
         <figcaption>
           Figure 23. Distribution of websites labelled as having fast, average,
@@ -589,7 +589,7 @@ obto"," sergeychernyshev"," zeman"]} %} {% block main %}
         websites with average FID is about the same across ECTs.
       </p>
       <h4 id="fid-by-geo">FID by geo</h4>
-      <figure>
+      <figure id="fig-24">
         // Chart: Bar distribution of 07_04d
         <figcaption>
           Figure 24. Distribution of websites labelled as having fast, average,
