@@ -290,21 +290,22 @@
       button.addEventListener('click', function(event) {
         event.preventDefault();
 
-        var teamId = event.target.className;
+        var teamName = event.target.className;
 
-        if(shadowNode.length == (teams.length + 1)) {
+        shadowNode.className = contributors.className;
+        if(shadowNode.classList.length == (teams.length + 1)) {
             teams.forEach(function(team) {
-                if(team === teamId) {
+                if(team === teamName) {
                     return;
                 }
                 shadowNode.classList.toggle(team);
             });
-        } else if (shadowNode.length == 2 && shadowNode.classList.contains(teamId)) {
+        } else if (shadowNode.classList.length == 2 && shadowNode.classList.contains(teamName)) {
             teams.forEach(function(team) {
                 shadowNode.classList.add(team);
             });
         } else {
-            shadowNode.classList.toggle(teamId);
+            shadowNode.classList.toggle(teamName);
         }
 
         var selected = [];
