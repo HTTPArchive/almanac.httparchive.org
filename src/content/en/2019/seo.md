@@ -78,7 +78,7 @@ The median meta description length was also lower than the [recommended length o
 
 Considering the importance of alt text for SEO and accessibility, it is far from ideal to see that only 46.71% of mobile pages use alt attributes on all of their images. This means that there are still improvements to be made with regard to making images across the web more accessible to users and understandable for search engines.
 
-Learn more about this in the [Accessibility chapter](../accessibility).
+Learn more about this in the [Accessibility chapter](./accessibility).
 
 ### Indexability
 
@@ -103,7 +103,7 @@ A noindex tag can be served in the HTML `<head>` or in the HTTP headers as an `X
 
 96.93% of mobile pages passed the [Lighthouse indexing audit](https://developers.google.com/web/tools/lighthouse/audits/indexing), meaning that these pages didn't contain a noindex tag in the `<head>` or in the HTTP headers. However, this means that 3.07% of mobile home pages _did_ have a noindex tag, which is cause for concern, meaning that Google was prevented from indexing these pages.
 
-<aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our [Methodology](../methodology#websites).</aside>
+<aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our [Methodology](./methodology#websites).</aside>
 
 #### Canonicalization
 
@@ -147,11 +147,11 @@ Mobile loading speed was first [announced as a ranking factor](https://webmaster
 
 A fast-loading website is also crucial for a good user experience. Users that have to wait even a few seconds for a site to load have the tendency to bounce and try another result from one of your competitors in the SERPs that loads quickly and meets their expectations of website performance.
 
-The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](../methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 63.47% of websites are labelled as **slow**. Split by device, this picture is even bleaker for tablet (82.00%) and phone (77.61%). In the context of our results, per the [PageSpeed Insights classification system](https://developers.google.com/speed/docs/insights/v5/about#categories), a slow website is defined as having 10% of First Contentful Paint (FCP) experiences taking over 2,500 ms or 5% of First Input Delay (FID) experiences measuring over 250 ms.
+The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 63.47% of websites are labelled as **slow**. Split by device, this picture is even bleaker for tablet (82.00%) and phone (77.61%). In the context of our results, per the [PageSpeed Insights classification system](https://developers.google.com/speed/docs/insights/v5/about#categories), a slow website is defined as having 10% of First Contentful Paint (FCP) experiences taking over 2,500 ms or 5% of First Input Delay (FID) experiences measuring over 250 ms.
 
 ```<graph data 10.15b: CruX image similar to [IMG](https://developers.google.com/web/updates/images/2018/08/crux-dash-fcp.png) per device + speed label>```
 
-Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the [Performance chapter](../performance).
+Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the [Performance chapter](./performance).
 
 ### Structured data
 

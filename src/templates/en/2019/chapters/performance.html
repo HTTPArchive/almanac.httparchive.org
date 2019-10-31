@@ -15,7 +15,6 @@
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
-      <h2 class="header-mobile">Index</h2>
       <ul>
         <li>
           <a href="#intro">Intro</a>
@@ -82,12 +81,12 @@
 
   <section class="content">
     <section class="body">
-      <h1>
-        <div class="decorative-line"></div>
+      <h1 class="title">
+        <div class="subtitle">Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}</div>
         {{ metadata.get('title') }}
-        <div class="decorative-line-mobile"></div>
       </h1>
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      {{ render_byline() }}
       <h2 id="intro">Intro</h2>
       <p>Performance is a visceral part of the user experience. For <a href="https://wpostats.com/">many websites</a>, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed <a href="https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/">rage clicking</a> on the page in frustration.</p>
       <p>There are many ways to quantify web performance. The most important thing is to measure what actually matters to users. Events like <code>onload</code> or <code>DOM content loaded</code> may not necessarily reflect what users experience visually. For example, an email client might have a very fast onload event but the only thing loaded is the interstitial progress bar, meanwhile the inbox contents are loading asynchronously. The loading metric that matters for this web app is the "time to inbox", and focusing on the <code>onload</code> event may be misleading. For that reason this chapter will look at more modern and universally applicable paint, load, and interactivity metrics to try to capture how users are actually experiencing the page.</p>
@@ -262,7 +261,7 @@
       <p>As the web gets another year older and our ability to measure how users experience it improves incrementally, I'm looking forward to developers having access to metrics that capture more of the holistic experience. FCP is very early on the timeline of showing useful content to users and newer metrics like <a href="https://web.dev/largest-contentful-paint">Largest Contentful Paint</a> (LCP) are emerging to improve our visibility into how page loads are perceived. The <a href="https://web.dev/layout-instability-api">Layout Instability API</a> has also given us a novel glimpse into the frustration users experience beyond page load. Equipped with these new metrics, the web in 2020 will become even more transparent, better understood, and give developers an advantage to make more meaningful progress to improve performance and contribute to positive user experiences.</p>
     </section>
     <section class="authors">
-      <h4>Authors :</h4>
+      <h4>Authors</h4>
       {{ render_authors() }}
     </section>
 

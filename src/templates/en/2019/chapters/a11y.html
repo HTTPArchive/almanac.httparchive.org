@@ -15,7 +15,6 @@
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
-      <h2 class="header-mobile">Index</h2>
       <ul>
         <li>
           <a href="#chapter-9-accessibility">Chapter 9: Accessibility</a>
@@ -164,12 +163,12 @@
 
   <section class="content">
     <section class="body">
-      <h1>
-        <div class="decorative-line"></div>
+      <h1 class="title">
+        <div class="subtitle">Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}</div>
         {{ metadata.get('title') }}
-        <div class="decorative-line-mobile"></div>
       </h1>
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      {{ render_byline() }}
       <h1 id="chapter-9-accessibility">Chapter 9: Accessibility</h1>
       <h2 id="what-is-web-accessibility-and-why-does-it-matter">What is web accessibility and why does it matter?</h2>
       <p>Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes all the more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder assistive technology users depending on the level of accessibility support integrated into a website.</p>
@@ -371,7 +370,7 @@
       <p>The next frontier, in our opinion, is making widgets that are available through UI frameworks more accessible. Since many complex widgets used in the wild (e.g., calendar pickers) are sourced from a UI library, it would be great for these widgets to be accessible out of the box. We hope that when we collect our results next time, the usage of more properly implemented complex ARIA roles is on the rise—signifying more complex widgets have also been made accessible. In addition, we hope to see more accessible media, like images and video, so all users can enjoy the richness of the web.</p>
     </section>
     <section class="authors">
-      <h4>Authors :</h4>
+      <h4>Authors</h4>
       {{ render_authors() }}
     </section>
 

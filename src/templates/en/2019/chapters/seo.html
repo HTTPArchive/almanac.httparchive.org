@@ -15,7 +15,6 @@
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
-      <h2 class="header-mobile">Index</h2>
       <ul>
         <li>
           <a href="#intro">Intro</a>
@@ -124,12 +123,12 @@
 
   <section class="content">
     <section class="body">
-      <h1>
-        <div class="decorative-line"></div>
+      <h1 class="title">
+        <div class="subtitle">Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}</div>
         {{ metadata.get('title') }}
-        <div class="decorative-line-mobile"></div>
       </h1>
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      {{ render_byline() }}
       <h2 id="intro">Intro</h2>
       <p>Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers.</p>
       <p>Let's put the importance of SEO into perspective. Earlier this year, the SEO industry looked on in horror (and fascination) as <a href="https://www.bbc.co.uk/news/business-47877688">ASOS reported an 87% decrease in profits</a> after a "difficult year". The brand attributed their issues to a drop in search engine rankings which occurred after they launched over 200 microsites and significant changes to their website's navigation, among other technical changes. Yikes.</p>
@@ -166,7 +165,7 @@
       <p><code>&lt;graph histogram length &lt;meta description&gt; Source: 10.07c, column C, desktop &amp; mobile&gt;</code></p>
       <h4 id="image-alt-tags">Image alt tags</h4>
       <p>Considering the importance of alt text for SEO and accessibility, it is far from ideal to see that only 46.71% of mobile pages use alt attributes on all of their images. This means that there are still improvements to be made with regard to making images across the web more accessible to users and understandable for search engines.</p>
-      <p>Learn more about this in the <a href="../accessibility">Accessibility chapter</a>.</p>
+      <p>Learn more about this in the <a href="./accessibility">Accessibility chapter</a>.</p>
       <h3 id="indexability">Indexability</h3>
       <p>To show a page's content to users in the SERPs, search engine crawlers must first be permitted to access and index that page. Some of the factors that impact a search engine's ability to crawl and index pages include:</p>
       <ul>
@@ -182,7 +181,7 @@
       <h4 id="noindex">Noindex</h4>
       <p>A noindex tag can be served in the HTML <code>&lt;head&gt;</code> or in the HTTP headers as an <code>X-Robots</code> tag. A noindex tag basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. Noindex tags are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered or faceted pages or internal search pages.</p>
       <p>96.93% of mobile pages passed the <a href="https://developers.google.com/web/tools/lighthouse/audits/indexing">Lighthouse indexing audit</a>, meaning that these pages didn't contain a noindex tag in the <code>&lt;head&gt;</code> or in the HTTP headers. However, this means that 3.07% of mobile home pages <em>did</em> have a noindex tag, which is cause for concern, meaning that Google was prevented from indexing these pages.</p>
-      <aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our [Methodology](../methodology#websites).</aside>
+      <aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our [Methodology](./methodology#websites).</aside>
       <h4 id="canonicalization">Canonicalization</h4>
       <p>Canonical tags are used to specify duplicate pages and their preferred alternates, so that search engines can consolidate authority which might be spread across multiple pages within the group onto one main page for improved rankings.</p>
       <p>48.34% of mobile home pages were <a href="https://developers.google.com/web/tools/lighthouse/audits/canonical">detected</a> to have a canonical tag. Self-referencing canonical tags aren't essential, and canonical tags are usually required for duplicate pages. Home pages are rarely duplicated anywhere else across the site so seeing that less than half of pages have a canonical tag isn't surprising.</p>
@@ -204,9 +203,9 @@
       <h3 id="speed">Speed</h3>
       <p>Mobile loading speed was first <a href="https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html">announced as a ranking factor</a> by Google in 2018. Speed isn't a new focus for Google though. Back in 2010 it was <a href="https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html">revealed that speed had been introduced as a ranking signal</a>.</p>
       <p>A fast-loading website is also crucial for a good user experience. Users that have to wait even a few seconds for a site to load have the tendency to bounce and try another result from one of your competitors in the SERPs that loads quickly and meets their expectations of website performance.</p>
-      <p>The metrics we used for our analysis of load speed across the web is based on the <a href="../methodology#chrome-ux-report">Chrome UX Report</a> (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 63.47% of websites are labelled as <strong>slow</strong>. Split by device, this picture is even bleaker for tablet (82.00%) and phone (77.61%). In the context of our results, per the <a href="https://developers.google.com/speed/docs/insights/v5/about#categories">PageSpeed Insights classification system</a>, a slow website is defined as having 10% of First Contentful Paint (FCP) experiences taking over 2,500 ms or 5% of First Input Delay (FID) experiences measuring over 250 ms.</p>
+      <p>The metrics we used for our analysis of load speed across the web is based on the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 63.47% of websites are labelled as <strong>slow</strong>. Split by device, this picture is even bleaker for tablet (82.00%) and phone (77.61%). In the context of our results, per the <a href="https://developers.google.com/speed/docs/insights/v5/about#categories">PageSpeed Insights classification system</a>, a slow website is defined as having 10% of First Contentful Paint (FCP) experiences taking over 2,500 ms or 5% of First Input Delay (FID) experiences measuring over 250 ms.</p>
       <p><code>&lt;graph data 10.15b: CruX image similar to [IMG](https://developers.google.com/web/updates/images/2018/08/crux-dash-fcp.png) per device + speed label&gt;</code></p>
-      <p>Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the <a href="../performance">Performance chapter</a>.</p>
+      <p>Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the <a href="./performance">Performance chapter</a>.</p>
       <h3 id="structured-data">Structured data</h3>
       <p>Structured data allows website owners to add additional semantic data to their web pages, by adding <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON-LD</a> snippets or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata">Microdata</a>, for example. Search engines parse this data to better understand these pages and sometimes use the markup to display additional relevant information in the search results. The most commonly found types of structured data are <a href="https://developers.google.com/search/docs/data-types/review-snippet">reviews</a>, <a href="https://developers.google.com/search/docs/data-types/product">products</a>, <a href="https://developers.google.com/search/docs/data-types/local-business">businesses</a>, <a href="https://developers.google.com/search/docs/data-types/movie">movies</a>, and <a href="https://developers.google.com/search/docs/guides/search-gallery">more</a>.</p>
       <p>The <a href="https://developers.google.com/search/docs/guides/enhance-site">extra visibility</a> that structured data can provide for websites is interesting for site owners, given that it can help to create more opportunities for traffic. For example, the relatively new <a href="https://developers.google.com/search/docs/data-types/faqpage">FAQ schema</a> will double the size of your snippet and the real estate of your site in the SERP.</p>
@@ -249,7 +248,7 @@
       <p>There is a lot more that we can all be doing to learn about SEO best practices and industry developments. This is essential due to the evolving nature of the search industry and the rate at which changes happen. Search engines make thousands of improvements to their algorithms each year, and we need to keep up if we want our websites to reach more visitors in organic search.</p>
     </section>
     <section class="authors">
-      <h4>Authors :</h4>
+      <h4>Authors</h4>
       {{ render_authors() }}
     </section>
 
