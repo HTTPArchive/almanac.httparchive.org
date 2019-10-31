@@ -647,8 +647,22 @@ tomhodgins"," matthewp"]} %} {% block main %}
         the 5% bar, for perspective.
       </p>
       <figure id="fig9">
+<<<<<<< HEAD
         <figcaption>
           Figure 9. Popularity of native HTML elements under 5% adoption.
+=======
+        <iframe
+          width="600"
+          height="370"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive"
+        ></iframe>
+        <figcaption>
+          Figure 9. Popularity of product-specific and native elements under 5%
+          adoption.
+>>>>>>> master
         </figcaption>
       </figure>
       <p>You could discover interesting insights like these all day long.</p>
@@ -720,7 +734,22 @@ tomhodgins"," matthewp"]} %} {% block main %}
         something like this (again, it varies slightly based on the dataset)
       </p>
       <figure id="fig10">
+<<<<<<< HEAD
         <figcaption>Figure 10. TODO</figcaption>
+=======
+        <iframe
+          width="600"
+          height="370"
+          seamless
+          frameborder="0"
+          scrolling="no"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive"
+        ></iframe>
+        <figcaption>
+          Figure 10. Other popular elements in the context of product-specific
+          and native elements with under 5% adoption.
+        </figcaption>
+>>>>>>> master
       </figure>
       <p>
         The interesting thing about these results is that they also introduce a
@@ -836,53 +865,11 @@ tomhodgins"," matthewp"]} %} {% block main %}
     </section>
     <section class="authors">
       <h4>Authors :</h4>
-      <ul>
-        <li>
-          <img
-            class="avatar"
-            alt="Author name"
-            src="https://www.gravatar.com/avatar/cf58fcc6995e15f35e42532c3775fed6.jpg?d=mp&s=200"
-          />
-          <div class="info">
-            <span class="name">Full Name</span>
-            <span class="social">
-              <a class="twitter" href="https://twitter.com/rick_viscomi">
-                <img src="/static/images/twitter.png" alt="Twitter account" />
-              </a>
-
-              <a class="github" href="https://github.com/rviscomi">
-                <img src="/static/images/github.png" alt="github account" />
-              </a>
-            </span>
-
-            <div class="tagline">
-              Tagline of contributor here
-            </div>
-          </div>
-        </li>
-      </ul>
+      {{ render_authors() }}
     </section>
 
     <nav id="chapter-navigation">
-      <a id="previous-chapter" href="#replace-with-url-to-chapter">
-        <span class="arrow">&#8963;</span>
-        <span class="chapter-no">
-          Chapter X
-        </span>
-        <span class="chapter-title">
-          Chapter title
-        </span>
-      </a>
-
-      <a id="next-chapter" href="#replace-with-url-to-chapter">
-        <span class="arrow">&#8963;</span>
-        <span class="chapter-no">
-          Chapter X
-        </span>
-        <span class="chapter-title">
-          Chapter title
-        </span>
-      </a>
+      {{ render_prevnext() }}
     </nav>
   </section>
 </article>

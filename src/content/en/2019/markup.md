@@ -202,7 +202,8 @@ But there are plenty of newcomers that weren't in Hixie's original report too, a
 Let's compare these to a few of the native HTML elements that are below the 5% bar, for perspective.
 
 <figure id="fig9">
-  <figcaption>Figure 9. Popularity of native HTML elements under 5% adoption.</figcaption>
+  <iframe width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive"></iframe>
+  <figcaption>Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
 </figure>
 
 You could discover interesting insights like these all day long.
@@ -224,7 +225,8 @@ There are some popular elements that are probably not so challenging:
 Placing these into our same chart as above for perspective looks something like this (again, it varies slightly based on the dataset)
 
 <figure id="fig10">
-  <figcaption>Figure 10. TODO</figcaption>
+  <iframe width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive"></iframe>
+  <figcaption>Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</figcaption>
 </figure>
 
 The interesting thing about these results is that they also introduce a few other ways that our tool can come in very handy.  If we're interested in exploring the space of the data, a very specific tag name is just one possible measure.  It's definitely the strongest indicator if we can find good "slang" developing.  However, what if that's not all we're interested in?

@@ -3,7 +3,7 @@ part_number: I
 chapter_number: 10
 title: SEO
 authors: [ymschaap, rachellcostello, AVGP]
-reviewers: [clarkeclark, andylimn, voltek62, AymenLoukil, catalinred]
+reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 ---
 
 ## Intro

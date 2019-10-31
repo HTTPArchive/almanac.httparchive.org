@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 20
 title: HTTP/2
-authors: [tunetheweb]
+authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
 ---
 
