@@ -17,7 +17,7 @@
       <h2 class="header">Index</h2>
       <ul>
         <li>
-          <a href="#intro">Intro</a>
+          <a href="#introduction">Introduction</a>
         </li>
 
         <li>
@@ -87,7 +87,7 @@
       </h1>
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
-      <h2 id="intro">Intro</h2>
+      <h2 id="introduction">Introduction</h2>
       <p>Performance is a visceral part of the user experience. For <a href="https://wpostats.com/">many websites</a>, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed <a href="https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/">rage clicking</a> on the page in frustration.</p>
       <p>There are many ways to quantify web performance. The most important thing is to measure what actually matters to users. Events like <code>onload</code> or <code>DOM content loaded</code> may not necessarily reflect what users experience visually. For example, an email client might have a very fast onload event but the only thing loaded is the interstitial progress bar, meanwhile the inbox contents are loading asynchronously. The loading metric that matters for this web app is the "time to inbox", and focusing on the <code>onload</code> event may be misleading. For that reason this chapter will look at more modern and universally applicable paint, load, and interactivity metrics to try to capture how users are actually experiencing the page.</p>
       <p>There are two kinds of performance data: lab and field. You may have heard these referred to as synthetic and real-user measurement (or RUM). Measuring performance in the lab ensures that each website is tested under common conditions like browser, connection speed, physical location, cache state, etc. This guarantee of consistency makes each website comparable with one another. On the other hand, measuring performance in the field represents how users actually experience the web in all of the infinite combinations of conditions that we could never capture in the lab. For the purposes of this chapter and understanding real-world user experiences, we'll look at field data.</p>
