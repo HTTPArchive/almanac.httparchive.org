@@ -6,12 +6,14 @@ authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
 ---
 
+![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images//2019/11_PWA/hero_xl.jpg)
+
 ## Introduction
 Progressive Web Apps (PWA) are a new class of web applications, building on top of platform primitives 
 like the [Service Worker APIs](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API). 
 Service workers allow apps to support network-independent loading by acting as a network proxy, 
 intercepting your web app's outgoing requests, and replying with programmatic or cached responses. 
-Service workers can receive push notifications, and synchronize data in the background even when 
+Service workers can receive push notifications and synchronize data in the background even when
 the corresponding app is not running. Additional, service workers — together with 
 [Web App Manifests](https://developer.mozilla.org/en-US/docs/Web/Manifest) — 
 allow users to install PWAs to their devices’ home screens.
@@ -25,16 +27,6 @@ Certain advanced APIs like [Background Sync](https://developers.google.com/web/u
 are currently still [only available on Chromium-based browsers](https://caniuse.com/#feat=background-sync), 
 so as an additional question, we looked into which features these PWAs actually use.
 
-
-All data in the HTTP Archive can be [queried through BigQuery](https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/docs/bigquery-gettingstarted.md),
-where multiple tables are available in the `httparchive` project. As these tables tend to get fairly big, 
-they are partitioned, but multiple associated tables can be queried using the [wildcard symbol '*'](https://cloud.google.com/bigquery/docs/querying-wildcard-tables).
-For our research, three families of tables are relevant:
-
-- `httparchive.lighthouse.*`, which contains data about [Lighthouse](https://developers.google.com/web/tools/lighthouse/) runs. Note that Lighthouse data is only available for mobile pages.
-- `httparchive.pages.*`, which contain the JSON-encoded parent documents’ HAR data.
-- `httparchive.response_bodies.*`, which contains the raw response bodies of all resources and sub-resources of all sites in the archive.
-
 ## Service Workers
 ### Service Worker Registrations and Installability
 The first metric we explore are service worker installations. Looking at the data exposed through 
@@ -44,27 +36,32 @@ impressive, but taking traffic data from Chrome Platform Status into account, we
 [a service worker controlled 15% of all page loads](https://www.chromestatus.com/metrics/feature/timeline/popularity/990),
 which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers. 
 
-``` <timeseries chart of 11_01b> ```
+<timeseries chart of 11_01b>
 
 **Figure 1:** Service Worker installation over time for desktop and mobile
 
-Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages are [installable](https://developers.google.com/web/tools/lighthouse/audits/install-prompt),
-that is, they pass Lighthouse’s *user can be prompted to install the web app* test. 
-Lighthouse tests currently are only available for mobile pages. To control the install experience, 
-0.82% of all desktop and 0.94% of all mobile pages use the [`OnBeforeInstallPrompt` interface](https://w3c.github.io/manifest/#beforeinstallpromptevent-interface).
+Lighthouse checks whether a page is eligble for an [install prompt](https://developers.google.com/web/tools/lighthouse/audits/install-prompt)
+though it currently is only available for mobile pages. Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages have an
+[installable manifest](https://web.dev/installable-manifest/).  Readers may notice this is higher than the 0.37% of mobile pages that
+register a service worker, which is also a requirement of the install prompt
+([issue raised to make this clearer in the documentation](https://github.com/GoogleChrome/web.dev/issues/1797)).
+The difference in these numbers may be due to Service Workers being registered on pages other than the home page as the [Web Almanac
+only is restricted just to home pages](../methodology).
+
+To control the install experience, 0.82% of all desktop and 0.94% of all mobile pages use the [`OnBeforeInstallPrompt` interface](https://w3c.github.io/manifest/#beforeinstallpromptevent-interface). At present [support is limited to Chromium based browsers](https://caniuse.com/#feat=web-app-manifest).
 
 ### Service Worker Events
 
 In a service worker one can [listen for a number of events](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle):
 
-- `install`, which occurs upon service worker installation. 
-- `activate`, which occurs upon service worker activation. 
-- `fetch`, which occurs whenever a resource is fetched.
-- `push`, which occurs when a push notification arrives.
-- `notificationclick`, which occurs when a notification is being clicked.
-- `notificationclose`, which occurs when a notification is being closed.
-`- message`, which occurs when a message sent via `postMessage()`  arrives.
-- `sync`, which occurs when a Background Sync event occurs.
+- `install` - which occurs upon service worker installation.
+- `activate` - which occurs upon service worker activation.
+- `fetch` - which occurs whenever a resource is fetched.
+- `push` - which occurs when a push notification arrives.
+- `notificationclick` - which occurs when a notification is being clicked.
+- `notificationclose` - which occurs when a notification is being closed.
+- `message` - which occurs when a message sent via `postMessage()`  arrives.
+- `sync` - which occurs when a Background Sync event occurs.
 
 We have examined which of these events are being listened to by service workers we could find in the HTTP Archive. 
 The results for mobile and desktop are very similar with `fetch`, `install`, and `activate` being the three 
@@ -73,11 +70,11 @@ cases that service workers enable are the most attractive feature for app develo
 push notifications. Due to its limited availability, and less common use case, background sync doesn’t 
 play a significant role at the moment. 
 
-``` <bar chart of 11_03 mobile> ```
+<bar chart of 11_03 mobile>
 
 **Figure 2a:** Service worker events on mobile, ordered by decreasing frequency.
 
-``` <bar chart of 11_03 desktop> ```
+<bar chart of 11_03 desktop>
 
 **Figure 2b:** Service worker events on desktop, ordered by decreasing frequency.
 
@@ -90,11 +87,11 @@ We note that these stats don’t account for dynamically imported scripts throug
 [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) method, 
 which likely skews the results higher.
 
-``` <distribution of 11_03b mobile> ```
+<distribution of 11_03b mobile>
 
 **Figure 3a:** Percentiles of service worker file sizes on mobile.
 
-``` <distribution of 11_03b desktop> ```
+<distribution of 11_03b desktop>
 
 **Figure 3b:** Percentiles of service worker file sizes on desktop.
 
@@ -120,46 +117,46 @@ frequently were `gcm_sender_id` and `gcm_user_visible_only` from the legacy
 Google Cloud Messaging (GCM) service. Interestingly there’re almost no differences between mobile 
 and desktop. On both platforms, however, there’s a long tail of properties that are not interpreted 
 by browsers but that contain potentially useful metadata like `author` or `version`. We also found 
-a non-trivial amount of mistyped properties, our favorite being `shot_name`. An interesting outlier 
-is the `serviceworker` property which is standard, but not implemented by any browser vendor — 
+a non-trivial amount of mistyped properties; our favorite being `shot_name`. An interesting outlier
+is the `serviceworker` property, which is standard but not implemented by any browser vendor —
 nevertheless, it was found on 0.09% of all web app manifests used by mobile and desktop pages. 
 
-```<bar chart of 11_04 mobile>```
+<bar chart of 11_04 mobile>
 
 **Figure 4a:** Web App Manifest properties ordered by decreasing popularity on mobile.
 
-```<bar chart of 11_04 mobile>```
+<bar chart of 11_04 mobile>
 
 **Figure 4b:** Web App Manifest properties ordered by decreasing popularity on desktop.
 
 ### Display Values
 Looking at the values developers set for the `display` property, it becomes immediately clear 
-that they want PWAs to be perceived as “proper” apps that don’t  reveal their web technology origins. 
+that they want PWAs to be perceived as “proper” apps that don’t reveal their web technology origins.
 By choosing `"standalone"`, they make sure no browser UI is shown to the end-user. This is reflected 
 by the majority of apps that make use of the `prefers_related_applications` property: more that 97% 
 of both mobile and desktop applications do *not* prefer native applications.
 
-```<11_04c mobile>```
+<11_04c mobile>
 
 **Figure 5a:** Values for the `display` property on mobile.
 
-```<11_04c desktop>```
+<11_04c desktop>
 
 **Figure 5b:** Values for the `display` property on desktop.
 
 ### Category Values
 The `categories` member describes the expected application categories to which the web application belongs. 
-It is only meant as a hint to catalogs or stores listing web applications, and it is expected that 
+It is only meant as a hint to catalogs or app stores listing web applications, and it is expected that
 these will make a best effort to find appropriate categories (or category) under which to list the 
 web application. There were not too many manifests that made use of the property, but it is 
 interesting to see the shift from *shopping* being the most popular category on mobile to *business*, 
 *technology*, and *web* (whatever may be meant with that) on desktop that share the first place evenly.
 
-```<11_04d mobile>```
+<11_04d mobile>
 
 **Figure 6a:** Values for the `categories` property on mobile.
 
-```<11_04d desktop>```
+<11_04d desktop>
 
 **Figure 6b:** Values for the `categories` property on desktop.
 
@@ -170,33 +167,34 @@ Lighthouse’s rule is probably the culprit for 192×192 being the most popular 
 desktop and mobile, despite [Google’s documentation](https://developers.google.com/web/fundamentals/web-app-manifest#icons) 
 additionally explicitly recommending 512×512, which doesn’t show as a particularly prominent option.
 
-```<11_04f mobile>```
+<11_04f mobile>
 
 **Figure 7a:** Popular icon sizes on mobile.
 
-```<11_04f desktop>```
+<11_04f desktop>
 
 **Figure 7b:** Popular icon sizes on desktop.
 
 ### Orientation Values
-The valid values for the `orientation` property are [defined](https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype)
-in the Screen Orientation API specification. Namely there are `"any"`, `"natural"`, `"landscape"`,  
-`"portrait"`, `"portrait-primary"`, `"portrait-secondary"`, `"landscape-primary"`, and `"landscape-secondary"`. 
+The valid values for the `orientation` property are
+[defined in the Screen Orientation API specification](https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype).
+Namely there are `"any"`, `"natural"`, `"landscape"`,  `"portrait"`, `"portrait-primary"`, `"portrait-secondary"`,
+`"landscape-primary"`, and `"landscape-secondary"`.
 Portrait orientation is the clear winner on both platforms, followed by any orientation.
 
-```<11_04g mobile>```
+<11_04g mobile>
 
 **Figure 8a:** Popular orientation values on mobile.
 
-```<11_04g desktop>```
+<11_04g desktop>
 
 **Figure 8b:** Popular orientation values on desktop.
 
 ## Workbox
-Workbox is a set of libraries that help with common service worker use cases. For instance, Workbox has tools 
-that can plug in to your build process and generate a manifest of files, which are then precached by your 
-service worker. Workbox includes libraries to handle runtime caching, request routing, cache expiration, 
-background sync, and more.
+[Workbox](https://developers.google.com/web/tools/workbox) is a set of libraries that help with common service worker
+use cases. For instance, Workbox has tools that can plug in to your build process and generate a manifest of files,
+which are then precached by your service worker. Workbox includes libraries to handle runtime caching, request routing,
+cache expiration, background sync, and more.
 
 Given the low-level nature of the service worker APIs, many developers have turned to Workbox as a way of 
 structuring their service worker logic into higher-level, reusable chunks of code. Workbox adoption is also 
@@ -206,3 +204,26 @@ driven by its inclusion as a feature in a number of popular JavaScript framework
 The HTTP Archive shows that, out of the total population of sites that register a service worker, 
 12.71% of them are using at least one of the Workbox libraries. This percentage is roughly consistent 
 across desktop and mobile, with a slightly lower percentage (11.46%) on mobile compared to desktop (14.36%).
+
+## Conclusion
+The stats in this chapter show that PWAs are still only used by a small percentage of sites. However this relatively small usage
+is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more:
+we showed that 15% of page loads use a service workers.
+
+PWAs have also often been seen as Google-driven technology and while the other browsers still have some way to go to catch up on
+it's support it's positive to see support becoming more widespread. [Maximiliano Firtman](https://twitter.com/firt) does a great
+job of tracking this, including
+[explaining Safari PWA support](https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49)
+in light of poor documentation from Apple on that front. He (amongst others) also questions whether the tech giants really want
+to support this technology. Apple doesn't use the term PWA much, and has [explicitly stated that it does not want these apps
+listed in their App Store](https://developer.apple.com/news/?id=09062019b). Microsoft went the opposite direction not only
+[encouraging PWAs in it's app store, but even automatically indexing any found when as it craweled the web]
+(https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store), though with it moving on from the Windows
+ Phone platform the future of that is uncertain. Google has also
+ [made moves to accepting PWAs in its app store](https://medium.com/@firt/google-play-store-now-open-for-progressive-web-apps-ec6f3c6ff3cc)
+ though Maxim questions
+ [Android's commitment to the PWA compared to Chrome](https://medium.com/@firt/is-there-a-cold-war-between-android-and-chrome-because-of-pwas-e50a7471056c).
+
+ Even though progress on supporting PWAs is slower than we'd like, adoption is increasing. We may not quite have hit the point where
+ PWAs are mainstream yet but the advantages they give for [performance](../performance) and greater control over [caching](../caching),
+ particualrly for [mobile](../mobile) could soon lead to an explosion in use - perhaps 2020 is the year for this?
