@@ -277,6 +277,7 @@
     var contributorsGrid = document.querySelector('.contributor-grid');
     var counter = document.querySelector('#filtered-contributors');
     var shadowNode = document.createElement('div');
+    var urlObject = new URL(document.location);
 
     function getFilteredContributorCount() {
       return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
@@ -314,34 +315,44 @@
         });
 
         if(selected.length > 0 && selected.length < teams.length){
-            document.location.hash = selected.join(",");
+            urlObject.searchParams.set('teams', selected.join(','));
+            history.pushState(null, null, urlObject);
+            handleFilterUrl();
         } else {
-            document.location.hash = "all";
+            urlObject.searchParams.delete('teams');
+            history.pushState(null, null, urlObject);
+            handleFilterUrl();
         }
 
         counter.innerText = getFilteredContributorCount();
       });
     }
 
-    function handleHash(event) {
-        event && event.preventDefault();
-        if(document.location.hash.length > 0) {
-            var hash = document.location.hash.substr(1);
-            var highlight = document.querySelector('#' + hash);
-            var filterTeams = hash.split(",");
+    try {
+        var highlight = document.querySelector('#' + hash);
+        highlight.focus();
+    } catch(e) { }
 
-            if(hash === "all") {
-                contributors.classList.add(...teams);
-            } else if(teams.includes(filterTeams[0])) {
+    function handleFilterUrl(event) {
+
+        event && event.preventDefault();
+        var urlObject = new URL(document.location);
+        //console.log(urlObject, event, urlObject.searchParams.has('teams'));
+        if(urlObject.searchParams.has('teams')) {
+
+            var hash = urlObject.searchParams.get('teams');
+            var filterTeams = hash.split(',');
+
+            if(teams.includes(filterTeams[0])) {
                 contributors.classList.remove(...teams);
                 contributors.classList.add(...filterTeams);
-            } else if(highlight) {
-                highlight.focus();
             }
+        } else {
+            contributors.classList.add(...teams);
         }
     }
-    window.addEventListener("hashchange", handleHash);
-    handleHash();
+    window.addEventListener('popstate', handleFilterUrl);
+    handleFilterUrl();
 
     contributorsGrid.setAttribute('data-rendered', true);
 })();
