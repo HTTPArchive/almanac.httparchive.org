@@ -99,8 +99,6 @@
         document.querySelector('.menu-btn').addEventListener('click', function() {
           var menuOpen = document.body.classList.toggle('menu-open');
           menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
-          var src = (menuIcon.src === menuIconInitialSrc) ?  menuIconSrcClose : menuIconInitialSrc;
-          menuIcon.src = src;
         });
       })();
     </script>
