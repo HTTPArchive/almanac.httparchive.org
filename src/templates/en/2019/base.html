@@ -97,7 +97,8 @@
         var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
 
         document.querySelector('.menu-btn').addEventListener('click', function() {
-          document.body.classList.toggle('menu-open');
+          var menuOpen = document.body.classList.toggle('menu-open');
+          menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
           var src = (menuIcon.src === menuIconInitialSrc) ?  menuIconSrcClose : menuIconInitialSrc;
           menuIcon.src = src;
         });
