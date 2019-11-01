@@ -176,6 +176,10 @@ Overall usage of blend modes is much less than filters, but is still enough to b
 ## Media Queries
 Media queries let CSS hook into various system level variables in order to adapt appropriately for the visiting user. Some of these queries could handle print styles, projector screen styles, and viewport/screensize. For a long time, media queries were primarily leveraged for their viewport knowledge. Designers and developers could adapt their layouts based on small screens, large screens, etc. Later, the web started bringing more and more capabilities and queries, insomuch media queries now account for accessibility features on top of viewport features. 
 
+### Number of Media Queries Per Page
+A good place to start with Media Queries, is just about how many are used per page? How many different moments or contexts does the average page feel they want to respond to?
+<bar chart of 02_39>
+
 ### Popular Media Query Breakpoint Sizes
 For viewport media queries, any type of CSS unit can be passed into the query expression for evaluation. Early days, folks would pass `em`'s and `px`'s into the query, but more units were added over time, making us very curious about what types of sizes were commonly found across the web. We assume most media queries will follow popular device sizes, but instead of assuming, we asked for a query!
 <bar chart of 02_015e>
