@@ -139,11 +139,6 @@ p {
   align-items: center;
 }
 
-blockquote {
-  font-size: 19px;
-  line-height: 26px
-}
-
 .featured-chapter-content > div,
 .featured-chapter-content button {
   margin-bottom: 40px;

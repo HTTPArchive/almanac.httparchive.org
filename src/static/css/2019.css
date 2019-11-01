@@ -201,17 +201,19 @@ hr {
 blockquote {
   position: relative;
   font-style: italic;
+  font-size: 19px;
+  line-height: 26px;
 }
 blockquote::before {
+  content: '"';
   position: absolute;
-  top: -15px;
-  left: -50px;
-  opacity: 0.05;
-  background: url('/static/images/quote.png') top left no-repeat;
-  background-size: contain;
-  content: '';
-  height: 100px;
-  width: 100px;
+  z-index: -1;
+  top: -4rem;
+  left: -7rem;
+  opacity: .05;  
+  font-size: 20rem;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1;
 }
 
 /* Footer */
@@ -305,9 +307,6 @@ p.copyright {
   }
   header .cta {
     display: none;
-  }
-  blockquote::before {
-    left: calc(50% - 50px);
   }
 
   footer {
@@ -403,10 +402,6 @@ p.copyright {
   }
   .menu .misc {
     width: 100%;
-  }
-
-  blockquote::before {
-    left: calc(50% - 50px);
   }
 
   /* Footer */
