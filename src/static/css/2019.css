@@ -184,8 +184,7 @@ header .btn + .language-switcher {
   filter: invert(100%) sepia(0%) saturate(953%) hue-rotate(229deg) brightness(116%) contrast(100%);
 }
 
-.menu-icon,
-.menu-close-icon,
+.menu-btn,
 .menu {
   display: none;
 }
@@ -376,19 +375,15 @@ p.copyright {
     opacity: 0.95;
     z-index: 1;
   }
-  .menu-icon {
-    display: block;
-    margin: 0;
-
+  .menu-btn {
+    background: none;
+    border: 0;
+    display: block; 
+    cursor: pointer;   
   }
+
   .menu-open .menu {
     display: flex;
-  }
-  .menu-open .menu-close-icon {
-    display: block;
-  }
-  .menu-open .menu-icon {
-    display: none;
   }
   .menu-open header {
     background-color: #667384;
