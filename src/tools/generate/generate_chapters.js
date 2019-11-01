@@ -72,11 +72,9 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   await size_of(path);
 };
 
-const parse_array = (s) =>
-  s
-    .substring(1, s.length - 1)
-    .split(',')
-    .map((value) => value.trim());
+const parse_array = (s) => s.substring(1, s.length - 1)
+                            .split(',')
+                            .map((value) => value.trim());
 
 const size_of = async (path) => {
   let b = (await fs.stat(path)).size;
