@@ -326,7 +326,8 @@
     "catalinred": {
       "name": "Catalin Rosu",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1867900?v=4&s=200",
       "website": "https:\/\/catalin.red\/",
