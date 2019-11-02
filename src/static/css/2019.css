@@ -44,7 +44,6 @@ h1.title::before {
 }
 
 .btn {
-  outline: none;
   border: 1px solid #1A2B49;
   border-radius: 50px;
   padding: 15px 30px;
@@ -71,7 +70,6 @@ h1.title::before {
 }
 
 a.navigation-logo {
-  outline: none;
   color: white;
 }
 a.navigation-logo img:hover,
@@ -82,7 +80,6 @@ a.navigation-logo:focus img {
 header.alt-bg a:hover, footer.alt-bg a:hover,
 header.alt-bg a:focus, footer.alt-bg a:focus {
   color: #F7F779;
-  outline: none;
 }
 
 .decorative-line-center {
@@ -164,7 +161,6 @@ header .btn + .language-switcher {
 
 .language-switcher select,
 .year-switcher select {
-  outline: none;
   border: 1px solid transparent;
   border-radius: 50px;
   padding: 20px;
@@ -188,8 +184,7 @@ header .btn + .language-switcher {
   filter: invert(100%) sepia(0%) saturate(953%) hue-rotate(229deg) brightness(116%) contrast(100%);
 }
 
-.menu-icon,
-.menu-close-icon,
+.menu-btn,
 .menu {
   display: none;
 }
@@ -201,17 +196,19 @@ hr {
 blockquote {
   position: relative;
   font-style: italic;
+  font-size: 19px;
+  line-height: 26px;
 }
 blockquote::before {
+  content: '"';
   position: absolute;
-  top: -15px;
-  left: -50px;
-  opacity: 0.05;
-  background: url('/static/images/quote.png') top left no-repeat;
-  background-size: contain;
-  content: '';
-  height: 100px;
-  width: 100px;
+  z-index: -1;
+  top: -4rem;
+  left: -7rem;
+  opacity: .05;  
+  font-size: 20rem;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1;
 }
 
 /* Footer */
@@ -294,9 +291,6 @@ p.copyright {
 .social-media a:focus img {
   filter: brightness(0) saturate(100%) invert(86%) sepia(4%) saturate(4357%) hue-rotate(16deg) brightness(136%) contrast(94%);
 }
-.social-media a:focus {
-  outline: none;
-}
 
 @media (max-width: 900px) and (min-width: 601px) {
   .alt-bg.decorative-line,
@@ -305,9 +299,6 @@ p.copyright {
   }
   header .cta {
     display: none;
-  }
-  blockquote::before {
-    left: calc(50% - 50px);
   }
 
   footer {
@@ -384,29 +375,24 @@ p.copyright {
     opacity: 0.95;
     z-index: 1;
   }
-  .menu-icon {
-    display: block;
-    margin: 0;
-
+  .menu-btn {
+    background: none;
+    border: 0;
+    display: block; 
+    cursor: pointer;   
   }
+
   .menu-open .menu {
     display: flex;
-  }
-  .menu-open .menu-close-icon {
-    display: block;
-  }
-  .menu-open .menu-icon {
-    display: none;
   }
   .menu-open header {
     background-color: #667384;
   }
   .menu .misc {
     width: 100%;
-  }
-
-  blockquote::before {
-    left: calc(50% - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   /* Footer */
