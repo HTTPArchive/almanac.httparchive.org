@@ -194,7 +194,8 @@
       "name": "Ahmad Awais",
       "teams": [
         "brainstormers",
-        "reviewers"
+        "reviewers",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/960133?v=4&s=200",
       "website": "https:\/\/ahmadawais.com\/",
@@ -325,7 +326,8 @@
     "catalinred": {
       "name": "Catalin Rosu",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1867900?v=4&s=200",
       "website": "https:\/\/catalin.red\/",
@@ -396,7 +398,7 @@
         "analysts"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1514288?v=4&s=200",
-      "website": "dougsillars.com",
+      "website": "https:\/\/dougsillars.com",
       "github": "dougsillars",
       "twitter": "dougsillars"
     },
@@ -414,7 +416,8 @@
       "name": "Gabriel De Gennaro",
       "teams": [
         "designers"
-      ]
+      ],
+      "website": "https:\/\/gabrieldegennaro.com"
     },
     "GiacomoPignoni": {
       "name": "Giacomo Pignoni",
@@ -505,6 +508,16 @@
       "website": "https:\/\/gemservers.com",
       "github": "hyperpress",
       "twitter": "jtteag"
+    },
+    "sirjonathan": {
+      "name": "Jonathan Wold",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/104149?v=4&s=200",
+      "website": "https:\/\/jonathanwold.com",
+      "github": "sirjonathan",
+      "twitter": "sirjonathan"
     },
     "JMPerez": {
       "name": "Jos\u00e9 M. P\u00e9rez",
