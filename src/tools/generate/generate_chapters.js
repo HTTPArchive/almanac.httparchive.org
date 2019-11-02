@@ -12,8 +12,14 @@ converter.setOption('simpleLineBreaks', false);
 
 const generate_chapters = async () => {
   for (let language of await fs.readdir('content')) {
+    if (ignore(language)) continue;
+
     for (let year of await fs.readdir(`content/${language}`)) {
+      if (ignore(year)) continue;
+
       for (let file of await fs.readdir(`content/${language}/${year}`)) {
+        if (ignore(file)) continue;
+
         try {
           let markdown = await fs.readFile(`content/${language}/${year}/${file}`, 'utf-8');
           let chapter = file.replace('.md', '');
@@ -84,6 +90,9 @@ const size_of = async (path) => {
 
   console.log(` - Output file size: ${size}`);
 };
+
+const ignorelist = ['.DS_Store'];
+const ignore = (file) => ignorelist.find((f) => f === file);
 
 module.exports = {
   generate_chapters
