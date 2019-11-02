@@ -65,8 +65,8 @@
        {% endfor %}
        ],
        "description": "{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}",
-       "datePublished": "2019-11-08T12:00:00+00:00:00",
-       "dateModified": "2019-11-08T12:00:00+00:00:00"
+       "datePublished": "{{ metadata.get('published','2019-11-08T12:00:00+00:00:00') }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-08T12:00:00+00:00:00') }}"
   }
 </script>
 {% endblock %} {% block main %}

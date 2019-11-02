@@ -5,6 +5,8 @@ title: HTTP/2
 description: HTTP/2 Chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, Issues and HTTP/3
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
+published: 2019-11-01T12:00:00+00:00:00
+last_updated: 2019-11-02T12:00:00+00:00:00 
 ---
 
 ## Introduction
