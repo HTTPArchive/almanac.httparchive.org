@@ -48,7 +48,6 @@
   font-family: inherit;
   line-height: 1.2;
   background: none;
-  outline: none;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -233,7 +232,7 @@
     <div class="filter-container">
       <p>Filter by team:</p>
     {% for id, team in config.teams.items() %}
-      <button class="{{ id }}">{{ team.name }}</button>
+      <button class="{{ id }}" type="button">{{ team.name }}</button>
     {% endfor %}
     </div>
 
