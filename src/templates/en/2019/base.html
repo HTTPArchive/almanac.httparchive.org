@@ -26,8 +26,9 @@
         {% endif %}
         {{ language_switcher() }}
       </div>
-      <img class="menu-icon" src="/static/images/menu.png" />
-      <img class="menu-close-icon" src="/static/images/close.png" />
+      <button type="button" class="menu-btn" arial-label="Menu">
+        <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png"/>
+      </button>
       <nav class="menu">
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
@@ -79,28 +80,27 @@
   {% endblock %}
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
-(function() {
-// Language switching
-var languageSwitchers = document.querySelectorAll('.language-switcher select');
-for (var i = 0; i < languageSwitchers.length; i++) {
-  languageSwitchers[i].addEventListener('change', function(e) {
-    if (e.target.value) {
-      window.location = e.target.value;
-    }
-  });
-}
+      (function() {
+        // Language switching
+        var languageSwitchers = document.querySelectorAll('.language-switcher select');
+        for (var i = 0; i < languageSwitchers.length; i++) {
+          languageSwitchers[i].addEventListener('change', function(e) {
+            if (e.target.value) {
+              window.location = e.target.value;
+            }
+          });
+        }
 
-// Mobile menu
-var menuIcon = document.querySelector('.menu-icon');
-var menuCloseIcon = document.querySelector('.menu-close-icon');
+        // Mobile menu
+        var menuIcon = document.querySelector('.menu-icon');
+        var menuIconInitialSrc = document.querySelector('.menu-icon').src;
+        var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
 
-function toggleMenu(e) {
-  document.body.classList.toggle('menu-open');
-}
-
-menuIcon.addEventListener('click', toggleMenu);
-menuCloseIcon.addEventListener('click', toggleMenu);
-})();
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+          var menuOpen = document.body.classList.toggle('menu-open');
+          menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
+        });
+      })();
     </script>
   {% endblock %}
 {% endblock %}

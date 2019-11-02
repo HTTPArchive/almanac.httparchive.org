@@ -122,10 +122,7 @@
       <p><strong>Figure 3b:</strong> Percentiles of service worker file sizes on desktop.</p>
       <h2 id="web-app-manifests">Web App Manifests</h2>
       <h3 id="web-app-manifest-properties">Web App Manifest Properties</h3>
-      <p>
-        The web app manifest is a simple JSON file that tells the browser about a web application and how it should behave when installed on the user's mobile device or desktop. A typical <br />
-        manifest file includes information about the app name, icons it should use, the start URL it should open at when launched, and more. Only 1.54% of all encountered manifests were invalid JSON, and the rest parsed correctly.
-      </p>
+      <p>The web app manifest is a simple JSON file that tells the browser about a web application and how it should behave when installed on the user's mobile device or desktop. A typical manifest file includes information about the app name, icons it should use, the start URL it should open at when launched, and more. Only 1.54% of all encountered manifests were invalid JSON, and the rest parsed correctly.</p>
       <p>We looked at the different properties defined by the <a href="https://w3c.github.io/manifest/#webappmanifest-dictionary">specification</a>, and also considered non-standard proprietary properties. According to the Web App Manifest spec, the following properties are allowed:</p>
       <ul>
         <li><code>dir</code></li>
@@ -145,10 +142,7 @@
         <li><code>scope</code></li>
         <li><code>serviceworker</code></li>
         <li><code>related_applications</code></li>
-        <li>
-          <code>prefer_related_applications</code><br />
-          The only property that we didn’t observe in the wild was <code>iarc_rating_id</code>, which is a string that represents the International Age Rating Coalition (IARC) certification code of the web application. It is intended to be used to determine which ages the web application is appropriate for. The proprietary properties we encountered still frequently were <code>gcm_sender_id</code> and <code>gcm_user_visible_only</code> from the legacy Google Cloud Messaging (GCM) service. Interestingly there’re almost no differences between mobile and desktop. On both platforms, however, there’s a long tail of properties that are not interpreted by browsers but that contain potentially useful metadata like <code>author</code> or <code>version</code>. We also found a non-trivial amount of mistyped properties; our favorite being <code>shot_name</code>. An interesting outlier is the <code>serviceworker</code> property, which is standard but not implemented by any browser vendor — nevertheless, it was found on 0.09% of all web app manifests used by mobile and desktop pages.
-        </li>
+        <li><code>prefer_related_applications</code> The only property that we didn’t observe in the wild was <code>iarc_rating_id</code>, which is a string that represents the International Age Rating Coalition (IARC) certification code of the web application. It is intended to be used to determine which ages the web application is appropriate for. The proprietary properties we encountered still frequently were <code>gcm_sender_id</code> and <code>gcm_user_visible_only</code> from the legacy Google Cloud Messaging (GCM) service. Interestingly there’re almost no differences between mobile and desktop. On both platforms, however, there’s a long tail of properties that are not interpreted by browsers but that contain potentially useful metadata like <code>author</code> or <code>version</code>. We also found a non-trivial amount of mistyped properties; our favorite being <code>shot_name</code>. An interesting outlier is the <code>serviceworker</code> property, which is standard but not implemented by any browser vendor — nevertheless, it was found on 0.09% of all web app manifests used by mobile and desktop pages.</li>
       </ul>
       <p><code>&lt;bar chart of 11_04 mobile&gt;</code></p>
       <p><strong>Figure 4a:</strong> Web App Manifest properties ordered by decreasing popularity on mobile.</p>
@@ -173,10 +167,7 @@
       <p><code>&lt;11_04f desktop&gt;</code></p>
       <p><strong>Figure 7b:</strong> Popular icon sizes on desktop.</p>
       <h3 id="orientation-values">Orientation Values</h3>
-      <p>
-        The valid values for the <code>orientation</code> property are <a href="https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype">defined in the Screen Orientation API specification</a>.<br />
-        Currently, they are:
-      </p>
+      <p>The valid values for the <code>orientation</code> property are <a href="https://www.w3.org/TR/screen-orientation/#dom-orientationlocktype">defined in the Screen Orientation API specification</a>. Currently, they are:</p>
       <ul>
         <li><code>"any"</code></li>
         <li><code>"natural"</code></li>
@@ -185,10 +176,7 @@
         <li><code>"portrait-primary"</code></li>
         <li><code>"portrait-secondary"</code></li>
         <li><code>"landscape-primary"</code></li>
-        <li>
-          <code>"landscape-secondary"</code>.<br />
-          Portrait orientation is the clear winner on both platforms, followed by any orientation.
-        </li>
+        <li><code>"landscape-secondary"</code>. Portrait orientation is the clear winner on both platforms, followed by any orientation.</li>
       </ul>
       <p><code>&lt;11_04g mobile&gt;</code></p>
       <p><strong>Figure 8a:</strong> Popular orientation values on mobile.</p>
