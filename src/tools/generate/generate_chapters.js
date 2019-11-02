@@ -8,6 +8,7 @@ const { generate_figure_ids } = require('./generate_figure_ids');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
+converter.setOption('simpleLineBreaks', false);
 
 const generate_chapters = async () => {
   for (let language of await fs.readdir('content')) {
