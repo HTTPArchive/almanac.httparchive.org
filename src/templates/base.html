@@ -24,6 +24,9 @@
     {% endblock %}
     {% for l in supported_languages %}
     <link rel="alternate" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
+    {% if l==language %}
+    <link rel="canonical" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" />
+    {% endif %}
     {% endfor %}
   </head>
 
