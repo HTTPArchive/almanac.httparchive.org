@@ -130,7 +130,7 @@ Appoximately 38% of HTTP responses are delivered with text based compression. Th
 
 Of the resources that are served compressed, the majority are using either either gzip (80%) or brotli (20%). The other compression algorithms are infrequently used.
 
-![](../../../src/static/images/2019/15_Compression/ch15_fig1_compression_algorithms.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig1_compression_algorithms.jpg)
 
 Additionally, there are 67K requests that return an invalid Content-Encoding, such as “none”, “UTF-8”, “base64”, “text”, etc. These resources are likely served uncompressed.
 
@@ -147,23 +147,23 @@ Most text based resources (such as HTML, CSS and JavaScript) can benefit from gz
 
 In the graph below, the top 25 content types are displayed with box sizes representing the relative amount of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded red, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded green to indicate that they are being compressed. However, the light green shading for some content types indicate that they are not compressed as consistently as the others. 
 
-![](../../../src/static/images/2019/15_Compression/ch15_fig2_compressed_content_types.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig2_compressed_content_types.jpg)
 
 Filtering out the 6 most popular content types allows us to see the rest of these content types more clearly.The application/json and image/svg+xml content types are compressed less than 65% of the time.   
 
 Most of the custom web fonts are served without compression, since they are already in a compressed format. However font/ttf is compressible, but only 84% of TTF font requests are being served with compression.
 
-![](../../../src/static/images/2019/15_Compression/ch15_fig3_compressed_content_types_filtered.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig3_compressed_content_types_filtered.jpg)
 
 The graphs below illustrates the breakdown of compression techniques used for each content type. Looking at the top 3 content types, we can see that across both Desktop and Mobile there are major gaps in compressing some of the most frequently requested content types. 56% of text/html as well as 18% of application/javascript and text/css resources are not being compressed. This presents a significant performance opportunity.. 
 
-![](../../../src/static/images/2019/15_Compression/ch15_fig4_compression_by_content_type_desktop.jpg)
-![](../../../src/static/images/2019/15_Compression/ch15_fig5_compression_by_content_type_mobile.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig4_compression_by_content_type_desktop.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig5_compression_by_content_type_mobile.jpg)
 
 The content types with the lowest compression rates include application/json, text/xml and text/plain. These resources are commonly used for XHR requests to provide data that web applications can use to create rich experiences. Compressing them will likely improve user experience.  Vector graphics such as image/svg+xml, and image/x-icon are not often thought of as text based, but they are and sites that use them would benefit from compression. 
 
-![](../../../src/static/images/2019/15_Compression/ch15_fig6_compression_by_content_type_pct_desktop.jpg)
-![](../../../src/static/images/2019/15_Compression/ch15_fig7_compression_by_content_type_pct_mobile.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig6_compression_by_content_type_pct_desktop.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig7_compression_by_content_type_pct_mobile.jpg)
 
 Across all content types, gzip is the most popular compression algorithm. Brotli compression is used less frequently, and the content types where it appears most are application/javascript, text/css and application/x-javascript. This is likely due to to CDNs that automatically apply brotli compression for traffic that passes through them. 
 
@@ -223,15 +223,15 @@ Additionally, the percentage of Brotli compression is higher for third party con
 
 [Google’s Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and[ one of them](https://developers.google.com/web/tools/lighthouse/audits/text-compression) evaluates whether a site can benefit from additional text based compression. It does this by attempting to compress resources and evaluate whether an object’s size can be reduced by at least 10% and 1400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
 
-![](../../../src/static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg)
 
 Because the HTTP Archive runs Lighthouse audits for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 62% of websites are passing this audit and almost 23% of websites have scored below a 40. This means that over 1.2 million websites could benefit from enabling additional text based compression.
 
-![](../../../src/static/images/2019/15_Compression/ch15_fig9_lighthouse_compression_scores.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig9_lighthouse_compression_scores.jpg)
 
 Lighthouse also indicates how many bytes could be saved by enabling text compression. Of the sites that could benefit from text compression, 82% of them can reduce their page weight by up to 1 MB!
 
-![](../../../src/static/images/2019/15_Compression/ch15_fig10_lighthouse_compression_byte_savings.jpg)
+![](../../../static/images/2019/15_Compression/ch15_fig10_lighthouse_compression_byte_savings.jpg)
 
 # Conclusion
 
