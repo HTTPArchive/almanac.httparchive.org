@@ -326,7 +326,8 @@
     "catalinred": {
       "name": "Catalin Rosu",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1867900?v=4&s=200",
       "website": "https:\/\/catalin.red\/",
@@ -351,7 +352,6 @@
         "analysts"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1622597?v=4&s=200",
-      "website": "www.bendell.ca",
       "github": "colinbendell",
       "twitter": "colinbendell"
     },
@@ -397,7 +397,7 @@
         "analysts"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1514288?v=4&s=200",
-      "website": "dougsillars.com",
+      "website": "https:\/\/dougsillars.com",
       "github": "dougsillars",
       "twitter": "dougsillars"
     },
@@ -507,6 +507,16 @@
       "website": "https:\/\/gemservers.com",
       "github": "hyperpress",
       "twitter": "jtteag"
+    },
+    "sirjonathan": {
+      "name": "Jonathan Wold",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/104149?v=4&s=200",
+      "website": "https:\/\/jonathanwold.com",
+      "github": "sirjonathan",
+      "twitter": "sirjonathan"
     },
     "JMPerez": {
       "name": "Jos\u00e9 M. P\u00e9rez",

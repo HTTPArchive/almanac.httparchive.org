@@ -9,6 +9,7 @@ const { generate_figure_ids } = require('./generate_figure_ids');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
+converter.setOption('simpleLineBreaks', false);
 
 const generate_chapters = async () => {
   for (const file of await find_files()) {
@@ -74,9 +75,11 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   await size_of(path);
 };
 
-const parse_array = (s) => s.substring(1, s.length - 1)
-                            .split(',')
-                            .map((value) => value.trim());
+const parse_array = (s) =>
+  s
+    .substring(1, s.length - 1)
+    .split(',')
+    .map((value) => value.trim());
 
 const size_of = async (path) => {
   let b = (await fs.stat(path)).size;
@@ -91,6 +94,9 @@ const size_of = async (path) => {
 
   console.log(` - Output file size: ${size}`);
 };
+
+const ignorelist = ['.DS_Store'];
+const ignore = (file) => ignorelist.find((f) => f === file);
 
 module.exports = {
   generate_chapters
