@@ -1,4 +1,10 @@
-# Resource Hints
+---
+part_number: IV
+chapter_number: 19
+title: Resource Hints
+authors: [khempenius]
+reviewers: [andydavies, bazzadp, yoavweiss]
+---
 
 ## Introduction
 
