@@ -80,13 +80,13 @@ The example below contains an excerpt of a request/response header from HTTP Arc
 
 The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, [a test for the URL above](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) would output the following: 
 
-![](../../../static/images/2019/15_Compression/ch16_fig1_redbot_example.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg)
 
 If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC’s suggested heuristic - which is 10% of the time since last modified. However some may cache the response indefinitely. So it is important to set specific caching rules to ensure that you are in control of the cacheability. 
 
 According to the HTTP Archive, in July 2019 72% of responses were served with a Cache-Control header, and 56% of responses were served with an Expires header. However 27% of responses did not use either header, and are subject to heuristic caching! This was consistent across both desktop and mobile sites.
 
-![](../../../static/images/2019/15_Compression/ch16_fig2_cache_control_expires.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig2_cache_control_expires.jpg)
 
 # What Type of Content Are We Caching
 
@@ -98,7 +98,7 @@ A cacheable resource is stored by the client for a period of time and available 
 
 The remaining responses are not permitted to be stored in browser caches.
 
-![](../../../static/images/2019/15_Compression/ch16_fig3_distribution_of_cacheable_responses.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig3_distribution_of_cacheable_responses.jpg)
 
 The table below details the cache TTL values for desktop requests by type. Most content types are being cached, however CSS resources appear to be consistently cached at high TTLs.
 
@@ -203,11 +203,11 @@ While most of the median TTLs are high, the lower percentiles highlight some of 
 
 By exploring the cacheability by content type in more detail, we can see that approximately half of all HTML responses are considered non-cacheable. Additionally, 16% of images and scripts are non-cacheable. 
 
-![](../../../static/images/2019/15_Compression/ch16_fig4_caheability_by_content_type_desktop.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig4_caheability_by_content_type_desktop.jpg)
 
 The same data for mobile is shown below. The cacheability of content types is consistent between desktop and mobile. 
 
-![](../../../static/images/2019/15_Compression/ch16_fig5_caheability_by_content_type_mobile.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig5_caheability_by_content_type_mobile.jpg)
 
 
 # Cache-Control vs Expires
@@ -227,7 +227,7 @@ HTTP/1.1 introduced the Cache-Control header, and most modern clients support bo
 
 53% of HTTP responses include a Cache-Control header with the max-age directive, and 54% include the Expires header.  However, 41% of these responses use both headers, which means that 13% of responses are caching solely based on the Expires header. 
 
-![](../../../static/images/2019/15_Compression/ch16_fig6_usage_of_cache_control_expires.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig6_usage_of_cache_control_expires.jpg)
 
 
 # Cache-Control Directives
@@ -301,7 +301,7 @@ cache-control: public, max-age=43200
 
 The graph below illustrates the top 15 Cache-Control directives in use. 
 
-![](../../../static/images/2019/15_Compression/ch16_fig7_cache_control_directives.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig7_cache_control_directives.jpg)
 
 There are a few interesting observations about the popularity of these cache directives:
 
@@ -345,7 +345,7 @@ The graph below illustrates the relative age of resources by content type, and y
 
 
 
-![](../../../static/images/2019/15_Compression/ch16_fig8_resource_age.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig8_resource_age.jpg)
 
 
 By comparing a resources cacheability to its age, we can determine if the TTL used is appropriate or too low. For example, the resource served by this response was last modified on 25 Aug 2019, which means that it was 49 days old at the time of delivery. The Cache-Control header says that we can cache it for 43,200 seconds, which is 12 hours. It is definitely old enough to merit investigating whether a longer TTL would be appropriate.
@@ -446,7 +446,7 @@ Overall, 65% of responses are served with a Last-Modified header, 42% are served
 
 
 
-![](../../../static/images/2019/15_Compression/ch16_fig9_validating_freshness.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig9_validating_freshness.jpg)
 
 
 # Validity of Date Strings
@@ -483,7 +483,7 @@ Most clients will ignore invalid date strings, which render them ineffective for
 
 The Date HTTP response header is usually generated by the web server or CDN serving the response to a client. Because the header is generated server side, it tends to be less prone to error, which is reflected by the very low percentage of invalid Date headers. Last-Modified headers were very similar, with only 0.67% of them being invalid. What was very surprising to see though, was that 3.64% Expires headers used an invalid date format!
 
-![](../../../static/images/2019/15_Compression/ch16_fig10_invalid_date_formats.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig10_invalid_date_formats.jpg)
 
 
 Examples of some of the invalid uses of the Expires header are:
@@ -520,7 +520,7 @@ The Vary header is used on 39% of HTTP responses, and 45% of responses that incl
 The graph below details the popularity for the top 10 Vary header values. Accept-Encoding accounts for 90% of Vary’s use, with User-Agent (11%), Origin (??%), and Accept (??%) making up much of the rest.
 
 
-![](../../../static/images/2019/15_Compression/ch16_fig11_vary_header.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig11_vary_header.jpg)
 
 
 
@@ -529,7 +529,7 @@ The graph below details the popularity for the top 10 Vary header values. Accept
 When a response is cached, it’s entire headers are swapped into the cache as well.  This is why you can see the response headers when inspecting a cached response via DevTools.
 
 
-![](../../../static/images/2019/15_Compression/ch16_fig12_header_example_with_cookie.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg)
 
 But what happens if you have a Set-Cookie on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a Set-Cookie response header does not inhibit caching. This means that a cached entry might contain a Set-Cookie if it was cached with one. The RFC goes on to recommend that you should configure appropriate Cache-Control headers to control how responses are cached. 
 
@@ -538,7 +538,7 @@ One of the risks of caching responses with Set-Cookie is that the cookie values 
 According to the HTTP Archive, 3% of cacheable responses contain a Set-Cookie header. Of those responses, only 18% use the private directive.  The remaining 82% include 5.3 million HTTP responses that include a Set-Cookie which can be cached by public and private cache servers. 
 
 
-![](../../../static/images/2019/15_Compression/ch16_fig13_cookies_on_cacheable_responses.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig13_cookies_on_cacheable_responses.jpg)
 
 
 # AppCache and Service Workers
@@ -549,7 +549,7 @@ In fact, one of the HTTP Archive trend reports shows the adoption of Service Wor
 
 
 
-![](../../../static/images/2019/15_Compression/ch16_fig14_service_worker_adoption.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg)
 
 
 In the table below, you can see a summary of AppCache vs ServiceWorker usage.  32,292 websites have implemented a Service Worker, while 1,867 sites are still utilizing the deprecated AppCache feature.
@@ -623,17 +623,17 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting.   5
 
 [Google’s Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and[ one of them](https://developers.google.com/web/tools/lighthouse/audits/text-compression) evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the Last-Modified header) to the Cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.
 
-![](../../../static/images/2019/15_Compression/ch16_fig15_lighthouse_example.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg)
 
 
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The [caching score](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) is based on potential byte savings. When we examine the HTTP Archive Lighthouse data, we can get a perspective of how many sites are doing well with their cache policies. Only 3.4% of sites scored a 100%, meaning that most sites can benefit from some cache optimizations. A vast majority of sites sore below 40%, with 38% scoring less than 10%. Based on this, there is a significant amount of caching opportunities on the web. 
 
-![](../../../static/images/2019/15_Compression/ch16_fig16_lighthouse_cache_score.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig16_lighthouse_cache_score.jpg)
 
 
 Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 82% of them can reduce their page weight by up to 1 MB!
 
-![](../../../static/images/2019/15_Compression/ch16_fig17_lighthouse_cache_byte_savings.jpg)
+![](../../../static/images/2019/16_Caching/ch16_fig17_lighthouse_cache_byte_savings.jpg)
 
 # Conclusion
 
