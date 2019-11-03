@@ -82,8 +82,7 @@
         {
           "part": "III",
           "chapter": "13",
-          "title": "Ecommerce",
-          "todo": true
+          "title": "Ecommerce"
         },
         {
           "part": "III",
@@ -295,7 +294,8 @@
         "brainstormers",
         "authors",
         "reviewers",
-        "editors"
+        "editors",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/10931297?v=4&s=200",
       "website": "https:\/\/www.tunetheweb.com",
