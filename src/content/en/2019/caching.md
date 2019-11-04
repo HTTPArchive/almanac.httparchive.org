@@ -3,7 +3,7 @@ part_number: IV
 chapter_number: 16
 title: Caching
 authors: [paulcalvano]
-reviewers: [obto][bkardell]
+reviewers: [obto, bkardell]
 ---
 
 # Intro
