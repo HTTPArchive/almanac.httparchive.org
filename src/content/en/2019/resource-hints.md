@@ -45,7 +45,7 @@ Useful for: Loading important resources that would otherwise be discovered late 
 
 Read more: [Preload, prefetch, and priorities in Chrome](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
 
-**prefetch**
+###prefetch
 
 What it does: Initiates a low-priority request.
 
