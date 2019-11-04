@@ -199,7 +199,7 @@ To get around this unintended push, you can provide the `nopush` attribute in yo
 It looks like 5% of preload HTTP headers do make use of this attribute, which is higher than I would have expected as I would have considered this a niche optimization. Then again, so is the use of preload HTTP headers and/or HTTP/2 push itself!
 
 
-## Issues
+## HTTP/2 Issues
 
 HTTP/2 is mostly a seamless upgrade that, once your server supports it, you can switch on with no need to change your website or application. Of course, you can optimize for HTTP/2 or stop using HTTP/1.1 workarounds as much, but in general a site will usually work without needing any changes - but just be faster. There are a couple of gotchas to be aware of however that can impact any upgrade and some sites have found these out the hard way.
 
