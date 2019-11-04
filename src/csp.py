@@ -28,6 +28,7 @@ csp = {
     ],
     'frame-src': [
         '\'self\'',
-        'docs.google.com'
+        'docs.google.com',
+        'www.youtube.com'
     ]
 }

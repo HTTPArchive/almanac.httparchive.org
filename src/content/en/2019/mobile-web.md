@@ -51,8 +51,8 @@ The state of JavaScript on the mobile web is terrifying. According to HTTP Archi
 Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) to become interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, nothing happens because the JavaScript hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.
 
 <figure>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
 </figure>
 
 Let's delve deeper and look at another metric that focuses more on *how well* each page utilizes JavaScript. For example, does it really need as much JavaScript as it's loading? We call this metric the *JavaScript Bloat Score*, based on the [web bloat score](https://www.webbloatscore.com/). The idea behind it is this:
@@ -95,9 +95,7 @@ So, how do we measure how much our sites shift? In the past it was quite difficu
 Because every visitor can have a different CLS, in order to analyze this metric across the web with the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), we combine every experience into three different buckets:
 
 - **Small** CLS: Experiences having CLS *under 5%*. That is, the page is mostly stable and does not shift very much at all. For perspective, the page in the video above has a CLS of 42.59%.
-
 - **Large** CLS: Experiences having CLS *100% or greater*. These may consist of many small individual shifts or a few large and noticeable shifts.
-
 - **Medium** CLS: Anything in between small and large.
 
 So what do we see when we look at CLS across the web?
@@ -139,13 +137,13 @@ The second part of legibility is ensuring that text is large enough to read easi
 
 Across the web we found 80.66% of web pages meet this baseline.
 
-## Zooming, scaling and rotating pages
+## Zooming, scaling, and rotating pages
 
 ### Zooming and scaling
 
-Designing your site to work perfectly across the tens of thousands of screen sizes and devices is incredibly difficult, albeit impossible. Some users need larger font sizes to read, zoom in on your product images, or need a button to be larger because it's too small and slipped past your QC. Reasons like these are why device features like pinch-to-zoom and scaling are so important—they allow users to tweak our pages so their needs are met.
+Designing your site to work perfectly across the tens of thousands of screen sizes and devices is incredibly difficult. Some users need larger font sizes to read, zoom in on your product images, or need a button to be larger because it's too small and slipped past your quality assurance team. Reasons like these are why device features like pinch-to-zoom and scaling are so important; they allow users to tweak our pages so their needs are met.
 
-There do exist very rare cases when disabling this is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, resulting in a less than usable experience.
+There do exist very rare cases when disabling this is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, resulting in an unusable experience.
 
 Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the meta viewport tag:
 
@@ -153,13 +151,13 @@ Because of this, developers are given the ability to disable this feature by set
 
 2. `maximum-scale` set to `1`, `1.0`, etc
 
-However, developers have misused this so much that almost one out of every three sites (32.21%) disable this feature… and Apple (as of iOS 10) no longer allows web-developers to disable zooming—mobile safari simply [ignores the tag](https://archive.org/details/ios-10-beta-release-notes). All sites, no matter what, can be zoomed and scaled on newer Apple devices (over 11% of all web traffic worldwide)
+<figure>
+  <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive"></iframe>
+  <div id="fig5-caption" class="visually-hidden">Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
+  <figcaption>Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>
+</figure>
 
-**_Note:_** Browser usage stats from: [https://gs.statcounter.com/](https://gs.statcounter.com/)
-
-```<insert graphic of metric 12_04>```
-
-Alt text: Figure 2. Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.
+However, developers have misused this so much that almost one out of every three sites (32.21%) disable this feature, and Apple (as of iOS 10) no longer allows web developers to disable zooming. Mobile Safari simply [ignores the tag](https://archive.org/details/ios-10-beta-release-notes). All sites, no matter what, can be zoomed and scaled on newer Apple devices, which account for over [11%](](https://gs.statcounter.com/)) of all web traffic worldwide!
 
 ### Rotating pages
 

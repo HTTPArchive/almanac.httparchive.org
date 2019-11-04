@@ -116,7 +116,7 @@
         </li>
 
         <li>
-          <a href="#zooming-scaling-and-rotating-pages">Zooming, scaling and rotating pages</a>
+          <a href="#zooming-scaling-and-rotating-pages">Zooming, scaling, and rotating pages</a>
 
           <ul>
             <li>
@@ -210,7 +210,7 @@
       <p>The state of JavaScript on the mobile web is terrifying. According to HTTP Archive's <a href="https://httparchive.org/reports/state-of-javascript?start=2016_05_15&end=2019_07_01&view=list#bytesJs">JavaScript report</a>, the median mobile site requires phones to download 375 KB of JavaScript. Assuming a 70% compression ratio, this means that phones have to parse, compile, and execute 1.25 MB of JavaScript at the median.</p>
       <p>Why is this a problem? Because sites loading this much JS take upwards of <a href="https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci">10 seconds</a> to become interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, nothing happens because the JavaScript hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.</p>
       <figure id="fig-2">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
       </figure>
       <p>Let's delve deeper and look at another metric that focuses more on <em>how well</em> each page utilizes JavaScript. For example, does it really need as much JavaScript as it's loading? We call this metric the <em>JavaScript Bloat Score</em>, based on the <a href="https://www.webbloatscore.com/">web bloat score</a>. The idea behind it is this:</p>
@@ -244,15 +244,9 @@
       </ol>
       <p>Because every visitor can have a different CLS, in order to analyze this metric across the web with the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> (CrUX), we combine every experience into three different buckets:</p>
       <ul>
-        <li>
-          <p><strong>Small</strong> CLS: Experiences having CLS <em>under 5%</em>. That is, the page is mostly stable and does not shift very much at all. For perspective, the page in the video above has a CLS of 42.59%.</p>
-        </li>
-        <li>
-          <p><strong>Large</strong> CLS: Experiences having CLS <em>100% or greater</em>. These may consist of many small individual shifts or a few large and noticeable shifts.</p>
-        </li>
-        <li>
-          <p><strong>Medium</strong> CLS: Anything in between small and large.</p>
-        </li>
+        <li><strong>Small</strong> CLS: Experiences having CLS <em>under 5%</em>. That is, the page is mostly stable and does not shift very much at all. For perspective, the page in the video above has a CLS of 42.59%.</li>
+        <li><strong>Large</strong> CLS: Experiences having CLS <em>100% or greater</em>. These may consist of many small individual shifts or a few large and noticeable shifts.</li>
+        <li><strong>Medium</strong> CLS: Anything in between small and large.</li>
       </ul>
       <p>So what do we see when we look at CLS across the web?</p>
       <ol>
@@ -279,10 +273,10 @@
       <h3 id="font-size">Font size</h3>
       <p>The second part of legibility is ensuring that text is large enough to read easily. This is important for all users, but especially so for older age demographics. Font sizes under 12px tend to be harder to read.</p>
       <p>Across the web we found 80.66% of web pages meet this baseline.</p>
-      <h2 id="zooming-scaling-and-rotating-pages">Zooming, scaling and rotating pages</h2>
+      <h2 id="zooming-scaling-and-rotating-pages">Zooming, scaling, and rotating pages</h2>
       <h3 id="zooming-and-scaling">Zooming and scaling</h3>
-      <p>Designing your site to work perfectly across the tens of thousands of screen sizes and devices is incredibly difficult, albeit impossible. Some users need larger font sizes to read, zoom in on your product images, or need a button to be larger because it's too small and slipped past your QC. Reasons like these are why device features like pinch-to-zoom and scaling are so important—they allow users to tweak our pages so their needs are met.</p>
-      <p>There do exist very rare cases when disabling this is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, resulting in a less than usable experience.</p>
+      <p>Designing your site to work perfectly across the tens of thousands of screen sizes and devices is incredibly difficult. Some users need larger font sizes to read, zoom in on your product images, or need a button to be larger because it's too small and slipped past your quality assurance team. Reasons like these are why device features like pinch-to-zoom and scaling are so important; they allow users to tweak our pages so their needs are met.</p>
+      <p>There do exist very rare cases when disabling this is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, resulting in an unusable experience.</p>
       <p>Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the meta viewport tag:</p>
       <ol>
         <li>
@@ -292,12 +286,12 @@
           <p><code>maximum-scale</code> set to <code>1</code>, <code>1.0</code>, etc</p>
         </li>
       </ol>
-      <p>However, developers have misused this so much that almost one out of every three sites (32.21%) disable this feature… and Apple (as of iOS 10) no longer allows web-developers to disable zooming—mobile safari simply <a href="https://archive.org/details/ios-10-beta-release-notes">ignores the tag</a>. All sites, no matter what, can be zoomed and scaled on newer Apple devices (over 11% of all web traffic worldwide)</p>
-      <p>
-        <strong><em>Note:</em></strong> Browser usage stats from: <a href="https://gs.statcounter.com/">https://gs.statcounter.com/</a>
-      </p>
-      <p><code>&lt;insert graphic of metric 12_04&gt;</code></p>
-      <p>Alt text: Figure 2. Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</p>
+      <figure id="fig-5">
+        <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive"></iframe>
+        <div id="fig5-caption" class="visually-hidden">Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
+        <figcaption>Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>
+      </figure>
+      <p>However, developers have misused this so much that almost one out of every three sites (32.21%) disable this feature, and Apple (as of iOS 10) no longer allows web developers to disable zooming. Mobile Safari simply <a href="https://archive.org/details/ios-10-beta-release-notes">ignores the tag</a>. All sites, no matter what, can be zoomed and scaled on newer Apple devices, which account for over <a href="](https://gs.statcounter.com/)">11%</a> of all web traffic worldwide!</p>
       <h3 id="rotating-pages">Rotating pages</h3>
       <p>Mobile devices allow users to rotate them so your website can be viewed in the format users prefer. Users do not always keep the same orientation throughout a session however. When filling out forms, many rotate to landscape mode to use the larger keyboard. Or while browsing products, some enjoy the larger product images landscape mode gives them. Because of these types of use-cases, its very important not to rob the user of this built-in ability of mobile devices. And good news, we found virtually no sites disable this. Only 87 total sites (or 0.0016% of all sites) disable this feature. This is fantastic.</p>
       <h2 id="buttons-and-links">Buttons and links</h2>

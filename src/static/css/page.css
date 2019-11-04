@@ -111,10 +111,10 @@ table,
 .content .intro p {
   font-weight: bold;
 }
-.content li {
-  list-style: none;;
+.content ul li {
+  list-style: none;
 }
-.content li::before {
+.content ul li::before {
   content: "•";
   font-size: 16px;
   color: #a9cbbb;
