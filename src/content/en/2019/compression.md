@@ -3,7 +3,7 @@ part_number: I
 chapter_number: 15
 title: Compression
 authors: [paulcalvano]
-reviewers: [obto][yoavweiss]
+reviewers: [obto, yoavweiss]
 ---
 
 # Intro
