@@ -1,6 +1,15 @@
 ---
-title: Web Fonts
+part_number: I
+chapter_number: 6
+title: Fonts
+description: Fonts chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third parties, performance, seo, and PWAs
+authors: [zachleat]
+reviewers: [hyperpress, AymenLoukil]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
+
+## Introduction
 
 **06.02 and 06.32: Popular web font hosts**
 

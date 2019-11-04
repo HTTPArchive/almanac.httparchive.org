@@ -2,8 +2,11 @@
 part_number: IV
 chapter_number: 16
 title: Caching
+description: Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 # Intro
