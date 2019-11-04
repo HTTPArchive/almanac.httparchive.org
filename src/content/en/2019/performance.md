@@ -37,7 +37,7 @@ Experiences are measured monthly including paint, load, and interactivity metric
 
 So let's dive in and see what insights we can find.
 
-### First Contentful Paint (FCP)
+### First Contentful Paint
 
 <figure id="fig1">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&amp;format=interactive"></iframe>
@@ -82,7 +82,7 @@ According to PSI's classification, 17% of websites have fast FCP experiences ove
 
 Why might desktop users experience fast FCP on a higher proportion of websites than phone users? We can only speculate, after all this dataset is meant to answer how is the web performing and not necessarily _why_ it's performing that way. But one guess could be that desktop users are connected to the internet on faster, more reliable networks like WiFi rather than cell towers. To help answer this question we can also explore how user experiences vary by ECT.
 
-#### FCP by effective connection type (ECT)
+#### FCP by effective connection type
 
 <figure id="fig6">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&amp;format=interactive"></iframe>
@@ -140,7 +140,7 @@ Let's apply a TTFB speed label to each website, taking inspiration from the PSI 
 
 Now let's look at the percent of websites serving fast TTFB to users in different geos. APAC geos like Korea, Taiwan, and Japan are still outperforming users from the rest of the world. But no geo has more than 15% of websites with fast TTFB. India, for example, has fewer than 1% of websites with fast TTFB and 79% with slow TTFB.
 
-### First Input Delay (FID)
+### First Input Delay
 
 The last field metric we'll look at is [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). This metric represents the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event. Note that this doesn't include the time applications spend actually handling the input. At worst, slow FID results in a page that appears unresponsive and a frustrating user experience.
 
@@ -183,7 +183,7 @@ Breaking FID down by device, it becomes clear that there are two very different 
 
 When we apply the PSI labelling to desktop and phone experiences, the distinction becomes crystal clear. 82% of websites' FID experienced by desktop users are fast compared to 5% slow. For mobile experiences, 26% of websites are fast while 22% are slow. Form factor plays a major role in the performance of interactivity metrics like FID.
 
-#### FID by effective connection type (ECT)
+#### FID by effective connection type
 
 <figure id="fig17">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&amp;format=interactive"></iframe>
