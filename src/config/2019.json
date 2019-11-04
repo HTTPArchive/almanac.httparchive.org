@@ -162,6 +162,7 @@
   "contributors": {
     "kleinab": {
       "name": "Abigail Klein",
+      "bio": "Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she improved screen reader support and added <a href=\"https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/\">automatic captions to Google Slides</a>. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor's and master's degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.",
       "teams": [
         "authors"
       ],
@@ -272,7 +273,9 @@
     },
     "arturjanc": {
       "name": "Artur Janc",
+      "bio": "Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href=\"https://twitter.com/arturjanc\">@arturjanc on Twitter</a>.",
       "teams": [
+        "authors",
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/665379?v=4&s=200",
@@ -670,6 +673,7 @@
     },
     "nektarios-paisios": {
       "name": "Nektarios Paisios",
+      "bio": "Nektarios Paisios is a software engineer working on Chrome accessibility for the last 5 years. He primarily focuses on making Chrome compatible with third party assistive software such as screen readers and screen magnifiers. Before working on Chrome accessibility, Nektarios worked in various other roles at the company, such as GSuite accessibility and display ads. Nektarios holds a Ph.D. in Computer Science from New York University.",
       "teams": [
         "authors"
       ]
@@ -872,6 +876,7 @@
     },
     "una": {
       "name": "Una Kravets",
+      "bio": "Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a href=\"https://www.youtube.com/watch?v=YK8GZBx3hpg\">Designing the Browser</a> web series and the <a href=\"https://spec.fm/podcasts/toolsday\">Toolsday</a> developer podcast. Follow her on <a href=\"https://twitter.com/una\">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.",
       "teams": [
         "brainstormers",
         "authors"
