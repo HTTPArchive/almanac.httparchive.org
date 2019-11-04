@@ -4,6 +4,8 @@ chapter_number: 19
 title: Resource Hints
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 ## Introduction
