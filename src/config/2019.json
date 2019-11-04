@@ -170,6 +170,7 @@
     },
     "argyleink": {
       "name": "Adam Argyle",
+      "bio":"Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX &amp; UI; Find him on the web @argyleink> or <a href=\"https://nerdy.dev\">https://nerdy.dev</a>;",
       "teams": [
         "brainstormers",
         "authors"
@@ -203,6 +204,7 @@
     },
     "alankent": {
       "name": "Alan Kent",
+      "bio": "Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at alankent.me and tweets as @akent99.",
       "teams": [
         "brainstormers",
         "authors"
@@ -290,6 +292,7 @@
     },
     "bazzadp": {
       "name": "Barry Pollard",
+      "bio": "Barry Pollard is a software developer and author of the Manning book <a href=\"https://www.manning.com/books/http2-in-action\">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href=\"https://twitter.com/tunetheweb\">@tunetheweb</a> and blogging at <a href=\"https://www.tunetheweb.com\">www.tunetheweb.com</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -304,6 +307,7 @@
     },
     "bkardell": {
       "name": "Brian Kardell",
+      "bio": "Brian Kardell is developer advocate at <a href=\"https://igalia.com\">Igalia</a>, standards contributor, <a href=\"https://bkardell.com\">blogger</a>, and is currently the W3C Advisory Committee Representative for the <a href=\"https://openjsf.org/\">Open JS Foundation</a>. He was a founder of the Extensible Web Community Group and co-author of <a href=\"https://extensiblewebmanifesto.org\">The Extensible Web Manifesto</a>.",
       "teams": [
         "brainstormers",
         "authors"
@@ -391,6 +395,7 @@
     },
     "dougsillars": {
       "name": "Doug Sillars",
+      "bio": "Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets @dougsillars, and blogs regularly at dougsillars.com.",
       "teams": [
         "brainstormers",
         "authors",
@@ -478,6 +483,7 @@
     },
     "jeffposnick": {
       "name": "Jeff Posnick",
+      "bio":"Jeff Posnick is a member of Google's Web Developer Relations team, based in New York. His focus is on <a href=\"https://developers.google.com/web/tools/workbox/\">Workbox</a>, a set of service worker libraries for Progressive Web Apps. He blogs at <a href=\"https://jeffy.info\">https://jeffy.info</a> and tweets as <a href=\"https://twitter.com/jeffposnick\">@jeffposnick</a>.",
       "teams": [
         "brainstormers",
         "authors"
@@ -541,6 +547,7 @@
     },
     "khempenius": {
       "name": "Katie Hempenius",
+      "bio":"Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.",
       "teams": [
         "brainstormers",
         "authors",
@@ -609,6 +616,7 @@
     },
     "AVGP": {
       "name": "Martin Splitt",
+      "bio":"Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.",
       "teams": [
         "brainstormers"
       ],
@@ -686,6 +694,7 @@
     },
     "patrickhulce": {
       "name": "Patrick Hulce",
+      "bio":"Patrick Hulce is an ex-Chrome engineer, founder of <a href=\"https://eris.ventures/\">Eris Ventures</a>, core team member of <a href=\"https://github.com/GoogleChrome/lighthouse\">Lighthouse</a> and <a href=\"https://github.com/GoogleChrome/lighthouse-ci\">Lighthouse CI</a>, co-organizer of the <a href=\"https://www.meetup.com/DallasJS/\">DallasJS</a> meetup, and author of the <a href=\"https://github.com/patrickhulce/third-party-web\">third-party-web</a> project.",
       "teams": [
         "brainstormers",
         "authors",
@@ -698,6 +707,7 @@
     },
     "paulcalvano": {
       "name": "Paul Calvano",
+      "bio":"Paul Calvano is a Web Performance Architect at <a href=\"https://www.akamai.com/\">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href=\"https://twitter.com/paulcalvano\">@paulcalvano</a>, blogging at <a href=\"http://paulcalvano.com\">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href=\"https://discuss.httparchive.org\">https://discuss.httparchive.org</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -709,6 +719,7 @@
     },
     "rachellcostello": {
       "name": "Rachel Costello",
+      "bio":"Rachel Costello is a Technical SEO &amp; Content Manager at <a href=\"https://www.deepcrawl.com/\">DeepCrawl</a> and an international conference speaker who spends her time researching and communicating the latest developments in search. Rachel currently manages the production of <a href=\"https://www.deepcrawl.com/knowledge/white-papers/\">technical SEO white papers</a> and research pieces for DeepCrawl, and is a regular columnist for <a href=\"https://www.searchenginejournal.com/author/rachel-costello/\">Search Engine Journal</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -767,6 +778,7 @@
     },
     "samdutton": {
       "name": "Sam Dutton",
+      "bio":"Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organised and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a href=\"https:/simpl.info\">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.",
       "teams": [
         "brainstormers",
         "authors"
@@ -778,6 +790,7 @@
     },
     "ScottHelme": {
       "name": "Scott Helme",
+      "bio":"Scott Helme is a Security Researcher and founder of <a href=\"https://report-uri.com\">report-uri.com</a> and <a href=\"https://securityheaders.com\">securityheaders.com</a>. You can find him talking about security on Twitter <a href=\"https://twitter.com/Scott_Helme\">@Scott_Helme</a> and blogging at <a href=\"https://scotthelme.co.uk\">scotthelme.co.uk</a>.",
       "teams": [
         "brainstormers",
         "authors"
@@ -817,6 +830,7 @@
     },
     "tammyeverts": {
       "name": "Tammy Everts",
+      "bio": "Tammy Everts has spent more than two decades studying usability and UX. For the past ten years, she's focused on the intersection of UX with web performance and business. She is CXO at <a href=\"https://speedcurve.com/\">SpeedCurve</a>, co-chair of the <a href=\"https://perfnow.nl/\">performance.now() conference</a>, and author of the O'Reilly book <em><a href=\"http://shop.oreilly.com/product/0636920041450.do\">Time Is Money: The Business Value of Performance</a></em>.",
       "teams": [
         "authors"
       ],
@@ -836,6 +850,7 @@
     },
     "tomayac": {
       "name": "Tom Steiner",
+      "bio" : "Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a href=\"https://blog.tomayac.com/\">blog.tomayac.com</a> and tweets as <a href=\"https://twitter.com/tomayac\">@tomayac</a>.",
       "teams": [
         "brainstormers",
         "authors"
@@ -908,6 +923,7 @@
     },
     "ymschaap": {
       "name": "Yvo Schaap",
+      "bio": "Founder at technical SEO consultancy <a href=\"https://build.amsterdam/\">build.amsterdam</a>. Previously founded several web companies that reached over 1 billions users. Blogging about his latest (ad)ventures since 2005 on <a href=\"https://yvoschaap.com/\">yvoschaap.com</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -921,6 +937,7 @@
     },
     "zachleat": {
       "name": "Zach Leatherman",
+      "bio": "Zach is a Web Developer with <a href=\"http://www.filamentgroup.com/\">Filament Group</a>. He’s currently fixated on <a href=\"https://www.zachleat.com/web/fonts/\">web fonts</a> and <a href=\"https://www.zachleat.com/web/introducing-eleventy/\">static site generators</a>. His <a href=\"https://www.zachleat.com/web/speaking/\">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a href=\"https://www.zachleat.com/web/whitehouse/\">The White House</a>. He also helps herd <a href=\"http://nejsconf.com/\">NEJS CONF</a> and the <a href=\"http://nebraskajs.com\">NebraskaJS</a> meetup.",
       "teams": [
         "brainstormers",
         "authors"
