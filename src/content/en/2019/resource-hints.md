@@ -258,7 +258,7 @@ Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901
 
 ### Native lazy loading
 
-[Native lazy loading](https://web.dev/native-lazy-loading) is a native API for deferring the load of off-screen images and iframes. This frees up resources during the initial page load and avoids loading assets that are never used. Previously, this technique could only be achieved through third-party Javascript libraries.
+[Native lazy loading](https://web.dev/native-lazy-loading) is a native API for deferring the load of off-screen images and iframes. This frees up resources during the initial page load and avoids loading assets that are never used. Previously, this technique could only be achieved through third-party JavaScript libraries.
 
 The API for native lazy loading looks like this:
 
