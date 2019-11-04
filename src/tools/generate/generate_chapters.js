@@ -10,6 +10,7 @@ const { generate_figure_ids } = require('./generate_figure_ids');
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
 converter.setOption('simpleLineBreaks', false);
+converter.setOption('tablesHeaderId', false);
 
 const generate_chapters = async () => {
   for (const file of await find_files()) {
