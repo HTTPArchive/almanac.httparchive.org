@@ -1,7 +1,79 @@
 {% extends "en/2019/base.html" %}
 
-{% block title %}
-2019 Contributors | The Web Almanac by HTTP Archive
+{% block title %}2019 Contributors | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}The {{ config.contributors.items() | length }} people who contributed to the 2019 Web Almanac from HTTP Archive as Analysts, Authors, Brainstormers, Designers, Developers, Editors, Reviewers and Translators{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ self.description() }}">
+
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{ self.description() }}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@HTTPArchive">
+<meta name="twitter:title" content="{{ self.title() }}">
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta name="twitter:description" content="{{ self.description() }}">
+
+<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+	  },
+	  "headline": "{{ self.title() }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "https://almanac.httparchive.org/static/images/methodology-characters.png"
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "HTTPArchive",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+    "author":
+      {
+	  	  "@type": "Person",
+          "sameas": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+            "https://twitter.com/rick_viscomi",
+            "https://github.com/rviscomi"
+            ],
+	  	  "name": "Rick Viscomi"
+      },
+      "description": "{{ self.description() }}",
+      "datePublished": "2019-11-04T12:00:00+00:00:00",
+      "dateModified": "2019-11-04T12:00:00+00:00:00"
+	}
+	</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ year }} contributors",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}"
+      }]
+    }
+    </script>
 {% endblock %}
 
 {% block styles %}
