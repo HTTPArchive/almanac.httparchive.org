@@ -10,20 +10,20 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":11,"title":"PWA","authors":["tomayac","jeffposnick"],"reviewers":["hyperpress","ahmadawais"]} %} {% block meta %}
+{% set metadata = {"part_number":"II","chapter_number":11,"title":"PWA","description":"PWA chapter of the 2019 Web Almanac covering Service Workers, Web App Manifests, and Workbox","authors":["tomayac","jeffposnick"],"reviewers":["hyperpress","ahmadawais"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T12:00:00+00:00:00 "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
-<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
 <meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
 <meta property="og:type" content="article" />
-<meta property="og:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta property="og:description" content="{{ self.description() }}" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@HTTPArchive" />
 <meta name="twitter:title" content="{{ self.title() }}" />
 <meta name="twitter:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
-<meta name="twitter:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta name="twitter:description" content="{{ self.description() }}" />
 
 <script type="application/ld+json">
   {
@@ -31,7 +31,7 @@
     "@type": "Article",
     "mainEntityOfPage": {
     	  "@type": "WebPage",
-    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}"
+    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
     },
     "headline": "{{ metadata.get('title') }}",
     "image": {
@@ -48,10 +48,10 @@
     	      "width": 320
     	  }
        },
-    "author": [
-       {% for author in metadata.get('authors') %}
-       {% set authordata = config.contributors[author] if author in config.contributors else None %}
-       {% if authordata %}
+    "author":
+       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+       {% if authordata -%}
     {
     	  "@type": "Person",
            "sameas": [
@@ -61,12 +61,31 @@
              ],
     	  "name": "{{ authordata.name if authordata.name else author }}"
        }{% if loop.index < loop.length %},{% endif %}
-       {% endif %}
-       {% endfor %}
-       ],
-       "description": "{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}",
-       "datePublished": "{{ metadata.get('published','2019-11-08T12:00:00+00:00:00') }}",
-       "dateModified": "{{ metadata.get('last_updated','2019-11-08T12:00:00+00:00:00') }}"
+       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+       {% endfor %},
+       "description": "{{ self.description() }}",
+       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ metadata.get('title') }}",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+      }
+    ]
   }
 </script>
 {% endblock %} {% block main %}
@@ -152,7 +171,7 @@
       <p>The first metric we explore are service worker installations. Looking at the data exposed through feature counters in the HTTP Archive, we find that 0.44% of all desktop and 0.37% of all mobile pages register a service worker, and both curves over time are steeply growing. Now this might not look overly impressive, but taking traffic data from Chrome Platform Status into account, we can see that about <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">a service worker controlled 15% of all page loads</a>, which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.</p>
       <p><code>&lt;timeseries chart of 11_01b&gt;</code></p>
       <p><strong>Figure 1:</strong> Service Worker installation over time for desktop and mobile</p>
-      <p>Lighthouse checks whether a page is eligble for an <a href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">install prompt</a> though it currently is only available for mobile pages. Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages have an <a href="https://web.dev/installable-manifest/">installable manifest</a>. Readers may notice this is higher than the 0.37% of mobile pages that register a service worker, which is also a requirement of the install prompt (<a href="https://github.com/GoogleChrome/web.dev/issues/1797">issue raised to make this clearer in the documentation</a>). The difference in these numbers may be due to Service Workers being registered on pages other than the home page as the <a href="./methodology">Web Almanac only is restricted just to home pages</a>.</p>
+      <p>Lighthouse checks whether a page is eligble for an <a href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">install prompt</a> though it currently is only available for mobile pages. Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages have an <a href="https://web.dev/installable-manifest/">installable manifest</a>. Readers may notice this is higher than the 0.37% of mobile pages that register a service worker, which is also a requirement of the install prompt. The difference in these numbers may be due to Service Workers being registered on pages other than the home page as the <a href="./methodology">Web Almanac only is restricted just to home pages</a>.</p>
       <p>
         To control the install experience, 0.82% of all desktop and 0.94% of all mobile pages use the <a href="https://w3c.github.io/manifest/#beforeinstallpromptevent-interface"><code>OnBeforeInstallPrompt</code> interface</a>. At present <a href="https://caniuse.com/#feat=web-app-manifest">support is limited to Chromium based browsers</a>.
       </p>
@@ -251,7 +270,7 @@
       <p>The HTTP Archive shows that, out of the total population of sites that register a service worker, 12.71% of them are using at least one of the Workbox libraries. This percentage is roughly consistent across desktop and mobile, with a slightly lower percentage (11.46%) on mobile compared to desktop (14.36%).</p>
       <h2 id="conclusion">Conclusion</h2>
       <p>The stats in this chapter show that PWAs are still only used by a small percentage of sites. However this relatively small usage is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more: we showed that 15% of page loads use a service workers. The advantages they give for <a href="./performance">performance</a> and greater control over <a href="./caching">caching</a> particularly for <a href="./mobile">mobile</a> should mean that usage will continue to grow.</p>
-      <p>PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the underlying technologies, although first-class installability lags on some platforms. it's positive to see support becoming more widespread. <a href="https://twitter.com/firt">Maximiliano Firtman</a> does a great job of tracking this, including <a href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">explaining Safari PWA support</a>. Apple doesn't use the term PWA much, and has <a href="https://developer.apple.com/news/?id=09062019b">explicitly stated that these HTML5 apps are best delivered outside of the App Store</a>. Microsoft went the opposite direction, not only <a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">encouraging PWAs in its app store, but even automatically indexing any found when as it crawled the web</a>. Google has also provided a method for listing web apps in the Google Play Store, via <a href="https://developers.google.com/web/updates/2019/02/using-twa">Trusted Web Activities</a>.</p>
+      <p>PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the underlying technologies, although first-class installability lags on some platforms. It's positive to see support becoming more widespread. <a href="https://twitter.com/firt">Maximiliano Firtman</a> does a great job of tracking this on iOS, including <a href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">explaining Safari PWA support</a>. Apple doesn't use the term PWA much, and has <a href="https://developer.apple.com/news/?id=09062019b">explicitly stated that these HTML5 apps are best delivered outside of the App Store</a>. Microsoft went the opposite direction, not only <a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">encouraging PWAs in its app store, but even automatically shortlisting PWAs to be added that were found via the Bing web crawler</a>. Google has also provided a method for listing web apps in the Google Play Store, via <a href="https://developers.google.com/web/updates/2019/02/using-twa">Trusted Web Activities</a>.</p>
       <p>PWAs provide a path forward for developers who would prefer to build and release on the web instead of on native platforms and app stores. Not every operating system and browser offers full parity with native software, but improvements continue, and perhaps 2020 is the year where we see an explosion in deployments?</p>
     </section>
     <section class="authors">

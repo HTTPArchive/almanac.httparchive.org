@@ -1,7 +1,79 @@
 {% extends "en/2019/base.html" %}
 
-{% block title %}
-Methodology | The Web Almanac by HTTP Archive
+{% block title %}Methodology | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}Describes how the 2019 Web Almanac from HTTP Archive was put together: The Datasets and Tools used and how the project was run.{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ self.description() }}">
+
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{ self.description() }}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@HTTPArchive">
+<meta name="twitter:title" content="{{ self.title() }}">
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta name="twitter:description" content="{{ self.description() }}">
+
+<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}"
+	  },
+	  "headline": "{{ self.title() }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "https://almanac.httparchive.org/static/images/methodology-characters.png"
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "HTTPArchive",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+    "author":
+      {
+	  	  "@type": "Person",
+          "sameas": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+            "https://twitter.com/rick_viscomi",
+            "https://github.com/rviscomi"
+            ],
+	  	  "name": "Rick Viscomi"
+      },
+      "description": "{{ self.description() }}",
+      "datePublished": "2019-11-04T12:00:00+00:00:00",
+      "dateModified": "2019-11-04T12:00:00+00:00:00"
+	}
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ year }} Methodology",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}"
+      }]
+    }
+    </script>
 {% endblock %}
 
 {% block styles %}
@@ -44,14 +116,12 @@ Methodology | The Web Almanac by HTTP Archive
     </div>
   </nav>
 
-  <section class="content">
-    <section class="intro">
-      <h1 class="title">Methodology</h1>
-      <img class="content-banner" src="/static/images/methodology-banner.png" alt="">
-    </section>
+  <div class="content">
+    <h1 class="title">Methodology</h1>
 
     <section>
-        <h1 id="overview">Overview</h1>
+      <img class="content-banner" src="/static/images/methodology-banner.png" alt="">
+        <h2 id="overview">Overview</h2>
 
         <p>
           The Web Almanac is a project organized by <a href="https://httparchive.org">HTTP Archive</a>.
@@ -81,7 +151,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-        <h1 id="dataset">About the dataset</h1>
+        <h2 id="dataset">About the dataset</h2>
 
         <p>
           The HTTP Archive dataset is continuously updating with new data
@@ -126,7 +196,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-        <h2 id="websites">Websites</h2>
+        <h3 id="websites">Websites</h3>
 
         <p>
           There are 5,790,700 websites in the dataset. Among those, 5,297,442
@@ -169,7 +239,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="metrics">Metrics</h2>
+      <h3 id="metrics">Metrics</h3>
 
       <p>
         HTTP Archive collects metrics about how the web is built. It includes
@@ -212,7 +282,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h1 id="tools">Tools</h1>
+      <h2 id="tools">Tools</h2>
 
       <p>
         The Web Almanac is made possible with the help of the following open
@@ -221,7 +291,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="webpagetest">WebPageTest</h2>
+      <h3 id="webpagetest">WebPageTest</h3>
 
       <p>
         <a href="https://www.webpagetest.org/">WebPageTest</a> is a prominent
@@ -319,7 +389,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="lighthouse">Lighthouse</h2>
+      <h3 id="lighthouse">Lighthouse</h3>
 
       <p>
         <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>
@@ -380,7 +450,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="wappalyzer">Wappalyzer</h2>
+      <h3 id="wappalyzer">Wappalyzer</h3>
 
       <p>
         <a href="https://www.wappalyzer.com/">Wappalyzer</a> is a tool for
@@ -410,7 +480,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="chrome-ux-report">Chrome UX Report</h2>
+      <h3 id="chrome-ux-report">Chrome UX Report</h3>
 
       <p>
         The <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a>
@@ -436,7 +506,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="third-party-web">Third Party Web</h2>
+      <h3 id="third-party-web">Third Party Web</h3>
 
       <p>
         <a href="https://www.thirdpartyweb.today/">Third Party Web</a> is a
@@ -460,7 +530,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h1 id="rework-css">Rework CSS</h1>
+      <h3 id="rework-css">Rework CSS</h3>
 
       <p>
         <a href="https://github.com/reworkcss/css">Rework CSS</a> is a
@@ -482,7 +552,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h1 id="process">Analytical process</h1>
+      <h2 id="process">Analytical process</h2>
 
       <p>
         The Web Almanac took about a year to plan and execute with the
@@ -493,7 +563,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="brainstorming">Brainstorming</h2>
+      <h3 id="brainstorming">Brainstorming</h3>
 
       <p>
         The inception of the Web Almanac started in January 2019 as a
@@ -525,7 +595,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="analysis">Analysis</h2>
+      <h3 id="analysis">Analysis</h3>
 
       <p>
         In June 2019, with the stable list of metrics and chapters, data
@@ -548,7 +618,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h2 id="interpretation">Interpretation</h2>
+      <h3 id="interpretation">Interpretation</h3>
 
       <p>
         Authors worked with analysts to correctly interpret the results and draw
@@ -575,7 +645,7 @@ Methodology | The Web Almanac by HTTP Archive
     </section>
 
     <section>
-      <h1 id="looking-ahead">Looking ahead</h1>
+      <h2 id="looking-ahead">Looking ahead</h2>
 
       <p>
         The 2019 edition of the Web Almanac is the first of what we hope to be
@@ -593,7 +663,7 @@ Methodology | The Web Almanac by HTTP Archive
         We'd love to hear your ideas for making this project even better!
       </p>
     </section>
-  </section>
+  </div>
 </article>
 {% endblock %}
 

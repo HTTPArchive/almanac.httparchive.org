@@ -2,8 +2,11 @@
 part_number: II
 chapter_number: 9
 title: Accessibility
+description: Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 # Introduction

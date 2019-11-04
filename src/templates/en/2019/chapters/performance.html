@@ -10,20 +10,20 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":7,"title":"Performance","authors":["rviscomi"],"reviewers":["JMPerez","obto","sergeychernyshev","zeman"]} %} {% block meta %}
+{% set metadata = {"part_number":"II","chapter_number":7,"title":"Performance","description":"Performance chapter of the 2019 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and First Input Delay (FID) ","authors":["rviscomi"],"reviewers":["JMPerez","obto","sergeychernyshev","zeman"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T12:00:00+00:00:00 "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
-<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
 <meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
 <meta property="og:type" content="article" />
-<meta property="og:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta property="og:description" content="{{ self.description() }}" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@HTTPArchive" />
 <meta name="twitter:title" content="{{ self.title() }}" />
 <meta name="twitter:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
-<meta name="twitter:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta name="twitter:description" content="{{ self.description() }}" />
 
 <script type="application/ld+json">
   {
@@ -31,7 +31,7 @@
     "@type": "Article",
     "mainEntityOfPage": {
     	  "@type": "WebPage",
-    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}"
+    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
     },
     "headline": "{{ metadata.get('title') }}",
     "image": {
@@ -48,10 +48,10 @@
     	      "width": 320
     	  }
        },
-    "author": [
-       {% for author in metadata.get('authors') %}
-       {% set authordata = config.contributors[author] if author in config.contributors else None %}
-       {% if authordata %}
+    "author":
+       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+       {% if authordata -%}
     {
     	  "@type": "Person",
            "sameas": [
@@ -61,12 +61,31 @@
              ],
     	  "name": "{{ authordata.name if authordata.name else author }}"
        }{% if loop.index < loop.length %},{% endif %}
-       {% endif %}
-       {% endfor %}
-       ],
-       "description": "{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}",
-       "datePublished": "{{ metadata.get('published','2019-11-08T12:00:00+00:00:00') }}",
-       "dateModified": "{{ metadata.get('last_updated','2019-11-08T12:00:00+00:00:00') }}"
+       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+       {% endfor %},
+       "description": "{{ self.description() }}",
+       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ metadata.get('title') }}",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+      }
+    ]
   }
 </script>
 {% endblock %} {% block main %}
@@ -84,7 +103,7 @@
 
           <ul>
             <li>
-              <a href="#fcp">FCP</a>
+              <a href="#first-contentful-paint">First Contentful Paint</a>
 
               <ul>
                 <li>
@@ -92,7 +111,7 @@
                 </li>
 
                 <li>
-                  <a href="#fcp-by-ect">FCP by ECT</a>
+                  <a href="#fcp-by-effective-connection-type">FCP by effective connection type</a>
                 </li>
 
                 <li>
@@ -102,7 +121,7 @@
             </li>
 
             <li>
-              <a href="#ttfb">TTFB</a>
+              <a href="#time-to-first-byte-ttfb">Time to First Byte (TTFB)</a>
 
               <ul>
                 <li>
@@ -112,7 +131,7 @@
             </li>
 
             <li>
-              <a href="#fid">FID</a>
+              <a href="#first-input-delay">First Input Delay</a>
 
               <ul>
                 <li>
@@ -120,7 +139,7 @@
                 </li>
 
                 <li>
-                  <a href="#fid-by-ect">FID by ECT</a>
+                  <a href="#fid-by-effective-connection-type">FID by effective connection type</a>
                 </li>
 
                 <li>
@@ -177,7 +196,7 @@
       </ul>
       <p>Experiences are measured monthly including paint, load, and interactivity metrics. The first metric we'll look at is <a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">First Contentful Paint</a> (FCP). This is the time users spend waiting for the page to display something useful to the screen, like an image or text. Next, we'll look at look at a loading metric, <a href="https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte">Time to First Byte</a> (TTFB). This is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response. And finally, the last field metric we'll look at is <a href="https://developers.google.com/web/updates/2018/05/first-input-delay">First Input Delay</a> (FID). This is a relatively new metric and one that represents parts of the UX other than loading performance. It measures the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event.</p>
       <p>So let's dive in and see what insights we can find.</p>
-      <h3 id="fcp">FCP</h3>
+      <h3 id="first-contentful-paint">First Contentful Paint</h3>
       <figure id="fig1">
         <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&amp;format=interactive"></iframe>
         <figcaption>Figure 1. Distribution of websites' fast, moderate, and slow FCP performance.</figcaption>
@@ -207,7 +226,7 @@
       </figure>
       <p>According to PSI's classification, 17% of websites have fast FCP experiences overall for desktop users, compared to 11% for mobile users. The entire distribution is skewed slightly faster for desktop experiences, with fewer slow websites and more in the fast and moderate category.</p>
       <p>Why might desktop users experience fast FCP on a higher proportion of websites than phone users? We can only speculate, after all this dataset is meant to answer how is the web performing and not necessarily <em>why</em> it's performing that way. But one guess could be that desktop users are connected to the internet on faster, more reliable networks like WiFi rather than cell towers. To help answer this question we can also explore how user experiences vary by ECT.</p>
-      <h4 id="fcp-by-ect">FCP by ECT</h4>
+      <h4 id="fcp-by-effective-connection-type">FCP by effective connection type</h4>
       <figure id="fig6">
         <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&amp;format=interactive"></iframe>
         <figcaption>Figure 6. Distribution of websites labelled as having fast, moderate, or slow FCP, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>
@@ -220,7 +239,7 @@
       </figure>
       <p>Finally, we can slice FCP by users' geography (geo). The chart above shows the top 23 geos having the highest number of distinct websites, an indicator of overall popularity of the open web. Web users in the United States visit the most distinct websites at 1,211,002. The geos are sorted by the percent of websites having sufficiently fast FCP experiences. At the top of the list are three <a href="https://en.wikipedia.org/wiki/Asia-Pacific">Asia-Pacific</a> (APAC) geos: Korea, Taiwan, and Japan. This could be explained by the availability of extremely <a href="https://en.wikipedia.org/wiki/List_of_countries_by_Internet_connection_speeds">fast network connection speeds in these regions</a>. Korea has 36% of websites meeting the fast FCP bar and only 7% rated as slow FCP. Recall that the global distribution of fast/moderate/slow websites is approximately 13/66/20, making Korea a significantly positive outlier.</p>
       <p>Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India all have fewer than 10% of fast websites. These geos also have more than triple the proportion of slow websites than Korea.</p>
-      <h3 id="ttfb">TTFB</h3>
+      <h3 id="time-to-first-byte-ttfb">Time to First Byte (TTFB)</h3>
       <p><a href="https://web.dev/time-to-first-byte">Time to First Byte</a> (TTFB) is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response.</p>
       <figure id="fig8" markdown>
         <p>
@@ -247,7 +266,7 @@
         <figcaption>Figure 11. Distribution of websites labelled as having fast, moderate, or slow TTFB, broken down by geo.</figcaption>
       </figure>
       <p>Now let's look at the percent of websites serving fast TTFB to users in different geos. APAC geos like Korea, Taiwan, and Japan are still outperforming users from the rest of the world. But no geo has more than 15% of websites with fast TTFB. India, for example, has fewer than 1% of websites with fast TTFB and 79% with slow TTFB.</p>
-      <h3 id="fid">FID</h3>
+      <h3 id="first-input-delay">First Input Delay</h3>
       <p>The last field metric we'll look at is <a href="https://developers.google.com/web/updates/2018/05/first-input-delay">First Input Delay</a> (FID). This metric represents the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event. Note that this doesn't include the time applications spend actually handling the input. At worst, slow FID results in a page that appears unresponsive and a frustrating user experience.</p>
       <p>Let's start by defining some thresholds. According to the new PSI methodology, a <strong>fast</strong> FID is one that happens in less than 100 ms. This gives the application enough time to handle the input event and provide feedback to the user in a time that feels instantaneous. A <strong>slow</strong> FID is one that happens in 300 ms or more. Everything in between is <strong>moderate</strong>.</p>
       <figure id="fig12">
@@ -276,7 +295,7 @@
         <figcaption>Figure 16. Distribution of websites labelled as having fast, moderate, or slow FID, broken down by device type.</figcaption>
       </figure>
       <p>When we apply the PSI labelling to desktop and phone experiences, the distinction becomes crystal clear. 82% of websites' FID experienced by desktop users are fast compared to 5% slow. For mobile experiences, 26% of websites are fast while 22% are slow. Form factor plays a major role in the performance of interactivity metrics like FID.</p>
-      <h4 id="fid-by-ect">FID by ECT</h4>
+      <h4 id="fid-by-effective-connection-type">FID by effective connection type</h4>
       <figure id="fig17">
         <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&amp;format=interactive"></iframe>
         <figcaption>Figure 17. Distribution of websites labelled as having fast, moderate, or slow FID, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>

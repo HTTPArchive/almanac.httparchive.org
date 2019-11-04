@@ -10,20 +10,20 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":20,"title":"HTTP/2","description":"HTTP/2 Chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, Issues and HTTP/3","authors":["bazzadp"],"reviewers":["bagder","rmarx","dotjs"],"published":"2019-11-01T12:00:00+00:00:00","last_updated":"2019-11-02T12:00:00+00:00:00 "} %} {% block meta %}
+{% set metadata = {"part_number":"IV","chapter_number":20,"title":"HTTP/2","description":"HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3","authors":["bazzadp"],"reviewers":["bagder","rmarx","dotjs"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T12:00:00+00:00:00 "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
-<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
 <meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
 <meta property="og:type" content="article" />
-<meta property="og:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta property="og:description" content="{{ self.description() }}" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@HTTPArchive" />
 <meta name="twitter:title" content="{{ self.title() }}" />
 <meta name="twitter:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
-<meta name="twitter:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta name="twitter:description" content="{{ self.description() }}" />
 
 <script type="application/ld+json">
   {
@@ -31,7 +31,7 @@
     "@type": "Article",
     "mainEntityOfPage": {
     	  "@type": "WebPage",
-    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}"
+    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
     },
     "headline": "{{ metadata.get('title') }}",
     "image": {
@@ -48,10 +48,10 @@
     	      "width": 320
     	  }
        },
-    "author": [
-       {% for author in metadata.get('authors') %}
-       {% set authordata = config.contributors[author] if author in config.contributors else None %}
-       {% if authordata %}
+    "author":
+       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+       {% if authordata -%}
     {
     	  "@type": "Person",
            "sameas": [
@@ -61,12 +61,31 @@
              ],
     	  "name": "{{ authordata.name if authordata.name else author }}"
        }{% if loop.index < loop.length %},{% endif %}
-       {% endif %}
-       {% endfor %}
-       ],
-       "description": "{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}",
-       "datePublished": "{{ metadata.get('published','2019-11-08T12:00:00+00:00:00') }}",
-       "dateModified": "{{ metadata.get('last_updated','2019-11-08T12:00:00+00:00:00') }}"
+       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+       {% endfor %},
+       "description": "{{ self.description() }}",
+       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ metadata.get('title') }}",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+      }
+    ]
   }
 </script>
 {% endblock %} {% block main %}
@@ -96,7 +115,7 @@
         </li>
 
         <li>
-          <a href="#issues">Issues</a>
+          <a href="#http2-issues">HTTP/2 Issues</a>
         </li>
 
         <li>
@@ -143,7 +162,7 @@
       <p>This whistle-stop tour of HTTP/2 gives the main history and concepts of the newish protocol. As should be apparent from this explanation, the main benefit of HTTP/2 is to address performance limitations of the HTTP/1.1 protocol. There were also security improvements as well - perhaps most importantly in being to address performance issues of using HTTPS since HTTP/2, even over HTTPS, is <a href="https://www.httpvshttps.com/">often much faster than plain HTTP</a>. Other than the web browser packing the HTTP messages into the new binary format, and the web server unpacking it at the other side, the core basics of HTTP itself stayed roughly the same. This means web applications do not need to make any changes to support HTTP/2 as the browser and server take care of this. Turning it on should be a free performance boost and because of this adoption should be relatively easy. Of course, there are ways web developers can optimize for HTTP/2 to take full advantage of how it differs.</p>
       <h2 id="adoption-of-http2">Adoption of HTTP/2</h2>
       <p>As mentioned above, Internet protocols are often difficult to adopt since they are ingrained into so much of the infrastructure that makes up the internet. This makes introducing any changes slow and difficult. IPv6 for example has been around for 20 years but has <a href="https://www.google.com/intl/en/ipv6/statistics.html">struggled to be adopted</a>. HTTP/2 however, was different as it was effectively hidden in HTTPS (at least for the browser uses cases) removing barriers to adoption as long as both the browser and server supported it. Browser support has been very strong for some time and the advent of auto updating <em>evergreen</em> browsers has meant that an estimated <a href="https://caniuse.com/#feat=http2">95% of global users support HTTP/2 now</a>. For this Web Almanac we use HTTP Archive which runs a Chrome web crawler on the approximately 5 million top websites (on both Desktop and Mobile with a slightly different set for each). This shows that HTTP/2 usage is now the majority protocol - an impressive feat just 4 short years after formal standardization:</p>
-      <p><img src="https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/http2usage.png" alt="" /></p>
+      <p><img src="/static/images/2019/20_HTTP_2/http2usage.png" alt="Timeseries of HTTP/2 Requests" /></p>
       <p>
         <strong>Figure 1 - <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP/2 usage by request</a></strong>
       </p>
@@ -469,12 +488,12 @@
       <h2 id="impact-of-http2">Impact of HTTP/2</h2>
       <p>The impact of HTTP/2 is a much more difficult to measure statistic, especially using the HTTP Archive methodology. Ideally sites should be crawled with both HTTP/1.1 and HTTP/2 and the difference measured but that is not possible with the statistics we are investigating here. Additionally, measuring whether the average HTTP/2 site is faster than the average HTTP/1.1 site introduces too many other variables that I feel requires a more exhaustive study than we can cover here.</p>
       <p>One impact that can be measured is in the changing use of HTTP now we are in an HTTP/2 world. Multiple connections were a work around with HTTP/1.1 to allow a limited form of parallelization, but this is in fact the opposite of what usually works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, HTTPS negotiation and also allows the potential of cross-request prioritization. The HTTP Archive measures the number of TCP connections per page and that is dropping steadily as more sites support HTTP/2 and use its single connection instead of 6 separate connections:</p>
-      <p><img src="https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/TCPconnections.png" alt="" /></p>
+      <p><img src="/static/images/2019/20_HTTP_2/TCPconnections.png" alt="Timeseries of TCP Connections Per Page" /></p>
       <p>
         <strong>Figure 8 - <a href="https://httparchive.org/reports/state-of-the-web#tcp">TCP connections per page</a></strong>
       </p>
       <p>Bundling assets to obtain fewer requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting, … etc. It is less necessary when using HTTP/2 as there is less overhead with requests but it should be noted that requests are not free in HTTP/2 and <a href="https://engineering.khanacademy.org/posts/js-packaging-http2.htm">those that experimented with removing bundling completely have noticed a loss in performance</a>. Looking at the number of requests loaded by page over time, we do see a slight decrease in requests, rather than the expected increase:</p>
-      <p><img src="https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/numresources.png" alt="" /></p>
+      <p><img src="/static/images/2019/20_HTTP_2/numresources.png" alt="Timeseries of Total Requests" /></p>
       <p>
         <strong>Figure 9 - <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">Total Requests per page</a></strong>
       </p>
@@ -530,14 +549,14 @@
       </table>
       <p><strong>Figure 11 - How much is pushed when it is used</strong></p>
       <p>This is a concern as previous advice has been to be conservative with push and to <a href="https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit">"push just enough resources to fill idle network time, and no more"</a>. The above statistics suggest many resources, of a significant combined size are pushed. Looking at what is pushed we see the data in Figure 12:</p>
-      <p><img src="https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/whatpushisusedfor.png" alt="" /></p>
+      <p><img src="/static/images/2019/20_HTTP_2/whatpushisusedfor.png" alt="What asset types is push used for?" /></p>
       <p><strong>Figure 12 - What asset types is push used for?</strong></p>
       <p>JavaScript and then CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this there is a rag tag assortment of images, fonts, data, …etc. At the tail end we see around 100 sites pushing video - which may be intentional or may be a sign of over-pushing the wrong types of assets!</p>
       <p>One concern raised by some, is that HTTP/2 implementations have repurposed the preload HTTP link header as a signal to push. One of the most popular uses of the preload <a href="./resource-hints">resource hint</a> is to inform the browser of late-discovered resources like fonts and images, that the browser will not see until the CSS for example has been requested, downloaded and parsed. If these are now pushed based on that header, there was a concern that reusing this may result in a lot of unintended pushes. However, the relative low usage of fonts and images may mean that risk is not being seen as much as was feared. <code>&lt;link rel="preload" ... &gt;</code> tags are often used in the HTML rather than HTTP link headers and the meta tags are not a signal to push. Statistics in the <a href="./resource-hints">resource hints</a> chapter show that less than 1% of sites use the preload HTTP link header, and about the same amount use preconnection which has no meaning in HTTP/2, so this would suggest this is not so much of an issue. Though there are a number of fonts and other assets being pushed, which may be a signal of this. As a counter argument to those complaints, if an asset is important enough to preload, then it could be argued these assets should be pushed if possible as browsers treat a preload hints as very high priority requests anyway. Any performance concern is therefore (again arguably) at the overuse of preload, rather than the resulting HTTP/2 push that happens because of this.</p>
       <p>To get around this unintended push, you can provide the <code>nopush</code> attribute in your preload header:</p>
       <pre><code>link: &lt;/assets/jquery.js&gt;; rel=preload; as=script; nopush</code></pre>
       <p>It looks like 5% of preload HTTP headers do make use of this attribute, which is higher than I would have expected as I would have considered this a niche optimization. Then again, so is the use of preload HTTP headers and/or HTTP/2 push itself!</p>
-      <h2 id="issues">Issues</h2>
+      <h2 id="http2-issues">HTTP/2 Issues</h2>
       <p>HTTP/2 is mostly a seamless upgrade that, once your server supports it, you can switch on with no need to change your website or application. Of course, you can optimize for HTTP/2 or stop using HTTP/1.1 workarounds as much, but in general a site will usually work without needing any changes - but just be faster. There are a couple of gotchas to be aware of however that can impact any upgrade and some sites have found these out the hard way.</p>
       <p>One cause of issues in HTTP/2 is the poor support of HTTP/2 prioritization. This feature allows multiple requests in progress to make the appropriate use of the connection. This is especially important since HTTP/2 has massively increased the number of requests that can be running on the same connection. 100 or 128 parallel requests limits are common in server implementations. Previously the browser had a max of 6 connections per domain and so used its skill and judgement to decide how best to use those connections. Now it rarely needs to queue and can send all requests as soon as it knows about them. This then can lead to the bandwidth being "wasted" on lower priority requests while critical requests are delayed (and incidentally <a href="https://www.lucidchart.com/techblog/2019/04/10/why-turning-on-http2-was-a-mistake/">can also lead to swamping your backend server with more requests than it is used to!</a>). HTTP/2 has a complex prioritization model (too complex many say - hence why it is being reconsidered for HTTP/3!) but few servers honor that properly. This can be because their HTTP/2 implementations are not up to scratch or because of so called <em>bufferbloat</em> where the responses are already en route before the server realizes there is a higher priority request. Due to the varying nature of servers, TCP stacks and locations it is difficult to measure this for most sites, but with CDNs this should be more consistent. <a href="https://twitter.com/patmeenan">Patrick Meenan</a> created <a href="https://github.com/pmeenan/http2priorities/tree/master/stand-alone">an example test page</a> which deliberately tries to download a load of low-priority, off-screen, images, before requesting some high priority on-screen images. A good HTTP/2 server should be able to recognize this and send the high priority images shortly after requested, at the expense of the lower priority images. A poor HTTP/2 server will just respond in the request order and ignore any priority signals. <a href="https://twitter.com/AndyDavies">Andy Davies</a> has <a href="https://github.com/andydavies/http2-prioritization-issues">a page tracking status of various CDNs for Patrick's test</a>. The HTTP Archive identifies when a CDN is used as part of its crawl and merging these two datasets that gives us the results shown in Figure 13:</p>
       <table>

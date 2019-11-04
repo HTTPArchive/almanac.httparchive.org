@@ -1,7 +1,74 @@
 {% extends "en/2019/base.html" %}
 
-{% block title %}
-The Web Almanac by HTTP Archive
+{% block title %}The 2019 Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}The 2019 Web Almanac by HTTP Archive is an annual state of the web combining the raw stats and trends of the HTTP Archive with the expertise of the web community{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ self.description() }}">
+
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint , year=year, lang=lang) }}">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{ self.description() }}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@HTTPArchive">
+<meta name="twitter:title" content="{{ self.title() }}">
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta name="twitter:description" content="{{ self.description() }}">
+
+<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+	  },
+	  "headline": "{{ self.title() }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "https://almanac.httparchive.org/static/images/methodology-characters.png"
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "HTTPArchive",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+    "author":
+      {
+	  	  "@type": "Person",
+          "sameas": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+            "https://twitter.com/rick_viscomi",
+            "https://github.com/rviscomi"
+            ],
+	  	  "name": "Rick Viscomi"
+      },
+      "description": "{{ self.description() }}",
+      "datePublished": "2019-11-04T12:00:00+00:00:00",
+      "dateModified": "2019-11-04T12:00:00+00:00:00"
+	}
+	</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      }]
+    }
+    </script>
 {% endblock %}
 
 {% block styles %}
@@ -31,8 +98,8 @@ The Web Almanac by HTTP Archive
   </section>
   <section class="featured-chapter">
     <div class="featured-chapter-content">
-      <h1><div class="decorative-line-center"></div>Featured Chapter</h1>
-      <h2>Third Parties</h2>
+      <h2><div class="decorative-line-center"></div>Featured Chapter</h2>
+      <h3>Third Parties</h3>
       <blockquote>
         The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link></code> or <code>&lt;script></code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
       </blockquote>
@@ -50,15 +117,15 @@ The Web Almanac by HTTP Archive
           <div>3P bytes</div>
         </div>
       </div>
-      <a href="{{ url_for('chapter', year=year, chapter='mobile-web', lang=lang) }}" class="btn">
-        Read the Mobile Web Chapter
+      <a href="{{ url_for('chapter', year=year, chapter='third-parties', lang=lang) }}" class="btn">
+        Read the Third Parties Chapter
       </a>
     </div>
   </section>
   <section class="contributors-container alt-bg">
     {% set contributors = config.contributors.keys() | length %}
     <div class="contributors">
-      <h1><div class="decorative-line"></div>Contributors:</h1>
+      <h2><div class="decorative-line"></div>Contributors</h2>
       <p>
         The Web Almanac has been made possible by the hard work of the web community. {{ contributors }} people have volunteered countless hours in the planning, research, writing and production phases.
       </p>
@@ -75,7 +142,7 @@ The Web Almanac by HTTP Archive
   </section>
   <section class="methodology-container">
     <div class="methodology">
-      <h1><div class="decorative-line-center"></div>Methodology</h1>
+      <h2><div class="decorative-line-center"></div>Methodology</h2>
       <div class="methodology-data">
         <div class="websites-tested">
           <div>
