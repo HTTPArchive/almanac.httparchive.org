@@ -2,8 +2,11 @@
 part_number: II
 chapter_number: 12
 title: Mobile Web
+description: Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms
 authors: [obto]
 reviewers: [aymenloukil, hyperpress]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 # Chapter 12: The mobile web
@@ -65,7 +68,7 @@ Let’s delve deeper and look at another metric more focused on *how well* each 
 
 3. So… if the total amount of JS a page downloads **ALONE** (not including images, css, etc…) is larger than a PNG screenshot of the viewport, we are using far too much javascript. Since at this point, it'd be faster to just send that screenshot.
 
-> The *Javascript Bloat Score* is defined as: (total Javascript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it’d faster to send a screenshot.</aside>
+> The *Javascript Bloat Score* is defined as: (total Javascript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it’d faster to send a screenshot.
 
 The results of this? Of the 5 million+ websites analyzed, **75.52% were bloated with javascript**. We have a long way to go.
 
@@ -165,7 +168,7 @@ However, developers have misused this so much that **almost one out of every thr
 
 **_Note:_** Browser usage stats from: [https://gs.statcounter.com/](https://gs.statcounter.com/)
 
-<insert graphic of metric 12_04>
+```<insert graphic of metric 12_04>```
 
 Alt text: Figure 2. Vertical grouped bar chart titled “Are zooming and scaling enabled?” measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.
 

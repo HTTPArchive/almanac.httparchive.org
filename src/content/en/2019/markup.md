@@ -2,8 +2,11 @@
 part_number: I
 chapter_number: 3
 title: Markup
+description: Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 ## Introduction

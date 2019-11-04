@@ -10,20 +10,20 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":5,"title":"Third Parties","authors":["patrickhulce"],"reviewers":["zcorpan","obto","jasti"]} %} {% block meta %}
+{% set metadata = {"part_number":"II","chapter_number":5,"title":"Third Parties","description":"Third Parties chapter of the 2019 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts","authors":["patrickhulce"],"reviewers":["zcorpan","obto","jasti"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T12:00:00+00:00:00 "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
-<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
 <meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
 <meta property="og:type" content="article" />
-<meta property="og:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta property="og:description" content="{{ self.description() }}" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@HTTPArchive" />
 <meta name="twitter:title" content="{{ self.title() }}" />
 <meta name="twitter:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
-<meta name="twitter:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta name="twitter:description" content="{{ self.description() }}" />
 
 <script type="application/ld+json">
   {
@@ -31,7 +31,7 @@
     "@type": "Article",
     "mainEntityOfPage": {
     	  "@type": "WebPage",
-    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}"
+    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
     },
     "headline": "{{ metadata.get('title') }}",
     "image": {
@@ -48,10 +48,10 @@
     	      "width": 320
     	  }
        },
-    "author": [
-       {% for author in metadata.get('authors') %}
-       {% set authordata = config.contributors[author] if author in config.contributors else None %}
-       {% if authordata %}
+    "author":
+       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+       {% if authordata -%}
     {
     	  "@type": "Person",
            "sameas": [
@@ -61,12 +61,31 @@
              ],
     	  "name": "{{ authordata.name if authordata.name else author }}"
        }{% if loop.index < loop.length %},{% endif %}
-       {% endif %}
-       {% endfor %}
-       ],
-       "description": "{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}",
-       "datePublished": "{{ metadata.get('published','2019-11-08T12:00:00+00:00:00') }}",
-       "dateModified": "{{ metadata.get('last_updated','2019-11-08T12:00:00+00:00:00') }}"
+       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+       {% endfor %},
+       "description": "{{ self.description() }}",
+       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ metadata.get('title') }}",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+      }
+    ]
   }
 </script>
 {% endblock %} {% block main %}
@@ -128,13 +147,9 @@
         </li>
 
         <li>
-          <a href="#analysis">Analysis</a>
+          <a href="#usage-patterns">Usage Patterns</a>
 
           <ul>
-            <li>
-              <a href="#usage-patterns">Usage Patterns</a>
-            </li>
-
             <li>
               <a href="#generate-and-consume-data">Generate and Consume Data</a>
             </li>
@@ -251,8 +266,7 @@
       <p><code>&lt;insert table of metric 05_08&gt;</code></p>
       <p><code>&lt;insert table of metric 05_10&gt;</code></p>
       <p>While much could be said about every individual provider’s popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as the previously mentioned <a href="https://thirdpartyweb.today">third-party-web</a>.</p>
-      <h2 id="analysis">Analysis</h2>
-      <h3 id="usage-patterns">Usage Patterns</h3>
+      <h2 id="usage-patterns">Usage Patterns</h2>
       <p>Why do site owners use third-party code? How did third-party content grow to be nearly half of all network requests? What are all these requests doing? Answers to these questions lie in the three primary usage patterns of third-party resources. Broadly, site owners reach for third parties to generate and consume data from their users, monetize their site experiences, and simplify web development.</p>
       <h3 id="generate-and-consume-data">Generate and Consume Data</h3>
       <p>Analytics is the most popular third-party category found across the web and yet is minimally user-visible. Consider the volume of information at play in the lifetime of a web visit; there’s user context, device, browser, connection quality, location, page interactions, session length, return visitor status, and more being generated continuously. It’s difficult, cumbersome, and expensive to maintain tools that warehouse, normalize, and analyze time series data of this magnitude. While nothing categorically necessitates that analytics fall into the domain of third-party providers, the widespread attractiveness of understanding your users, deep complexity of the problem space, and increasing emphasis on managing data respectfully and responsibly naturally surfaces analytics as a popular third-party usage pattern.</p>
