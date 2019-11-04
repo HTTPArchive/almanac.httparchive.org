@@ -2,6 +2,7 @@
 part_number: IV
 chapter_number: 19
 title: Resource Hints
+description: Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, and prefetch as well as priority hints and native lazy loading
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
 published: 2019-11-04T12:00:00+00:00:00
