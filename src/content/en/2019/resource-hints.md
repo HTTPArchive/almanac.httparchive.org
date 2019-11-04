@@ -18,7 +18,7 @@ reviewers: [andydavies, bazzadp, yoavweiss]
 
 There are four separate resource hints supported by most browsers today: dns-prefetch, preconnect, preload, and prefetch.
 
-**dns-prefetch**
+###dns-prefetch
 
 What it does: Initiates an early DNS lookup.
 
