@@ -34,7 +34,7 @@ Useful for: Setting up a connection with third parties. The uses of preconnect a
 
 Read more: [preconnect (web.dev)](https://web.dev/uses-rel-preconnect)
 
-**preload**
+###preload
 
 What it does: Initiates an early request.
 
