@@ -47,6 +47,11 @@
                       {{ authordata.tagline }}
                   </div>
               {% endif %}
+              {% if authordata.bio %}
+              <div class="bio">
+                  {{ authordata.bio | safe }}
+              </div>
+          {% endif %}
           </div>
       </li>
     {% else %}
