@@ -9,6 +9,8 @@ published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
+## Introduction
+
 **06.02 and 06.32: Popular web font hosts**
 
 Google Fonts’ dominance here was simultaneously surprising and unsurprising at the same time. It was unsurprising in that I expected the service to be the most popular and surprising in the sheer dominance of its popularity. 75% of requests is astounding. TypeKit was a distant single-digit second place, with the Bootstrap library accounting for an even more distant third place. 

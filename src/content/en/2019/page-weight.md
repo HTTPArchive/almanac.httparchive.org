@@ -2,8 +2,11 @@
 part_number: IV
 chapter_number: 18
 title: Page Weight
+description: Page Weight chapter of the 2019 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 # Chapter 18 • Page Weight
@@ -127,6 +130,7 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
     <td>893</td>
     <td>13</td>
   </tr>
+  <tr>
     <td>25</td>
     <td>800</td>
     <td>11</td>
@@ -396,6 +400,7 @@ The median desktop site makes 74 requests; the median mobile site makes 69 reque
     <td>49</td>
     <td>2</td>
   </tr>
+  <tr>
     <td>50</td>
     <td>69</td>
     <td>3</td>
