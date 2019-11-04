@@ -172,8 +172,10 @@
 
   <section class="content">
     <section class="body">
+      <div class="subtitle">
+        Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
+      </div>
       <h1 class="title">
-        <div class="subtitle">Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}</div>
         {{ metadata.get('title') }}
       </h1>
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
