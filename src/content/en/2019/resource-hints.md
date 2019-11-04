@@ -26,7 +26,7 @@ Useful for: Completing the DNS lookup for third-parties. For example, the DNS lo
 
 Read more: [dns-prefetch (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch)
 
-**preconnect**
+###preconnect
 
 What it does: Initiates an early connection - including DNS lookup, TCP handshake, and TLS negotiation.
 
