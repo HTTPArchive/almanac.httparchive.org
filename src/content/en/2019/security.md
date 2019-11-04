@@ -498,4 +498,35 @@ By adding an integrity attribute to a script or link tag, a browser can integrit
 
 With only 0.06% of desktop pages and 0.05% of mobile pages containing link or script tags with the integrity attribute set, there's room for a lot of improvement in the use of SRI. With many CDNs now providing code samples tha tinclude the SRI integrity attribute we should see a steady increase in the use of SRI. 
 
-## Vulnerable JS Libraries
+## Conclusion
+
+As the web grows in capabilities and allows access to more and more sensitive data, it becomes increasingly important for developers to adopt web security features to protect their applications. The security features reviewed in this chapter are the basic defenses built into the web platform itself, available to every web author. However, as a review of the study results in this chapter shows, the coverage of several important security mechanisms extends only to a subset of the web, leaving a significant part of the ecosystem exposed to security or privacy bugs.
+
+### Encryption
+
+In the recent years, the web has made the most progress on the encryption of data in transit. As described in the [TLS section](#tls) section, thanks to a range of efforts from browser vendors, developers and Certificate Authorities such as Let's Encrypt, the fraction of the web using HTTPS has steadily grown. At the time of writing, the majority of sites are available over HTTPS, ensuring confidentiality and integrity of traffic. Importantly, over 99% of websites which enable HTTPS use newer, more secure versions of the TLS protocol (TLSv1.2 and TLSv1.3); the use of strong [ciphersuites](#cipher-suites) such as AES in GCM mode is also high, accounting for over 95% of requests on all platforms.
+
+At the same time, gaps in TLS configurations are still fairly common. Over 15% of pages suffer from [mixed content](#mixed-content) issues, resulting in browser warnings, and 4% of sites contain active mixed content, blocked by modern browsers for security reasons. Similarly, the benefits of [HTTP Strict Transport Security](#http-strict-transport-security) only extend to a small subset of major sites, and the majority of websites don't enable the most secure HSTS configurations and are not eligible for [HSTS preloading](#hsts-preloading). Despite progress in HTTPS adoption, a large number of cookies is still set without the `Secure` flag; only 4% of homepages that set cookies prevent them from being sent over unencrypted HTTP.
+
+### Defending against common web vulnerabilities
+
+Web developers working on sites with sensitive data often enable opt-in web security features to protect their applications from [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting), [CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery), [clickjacking](https://en.wikipedia.org/wiki/Clickjacking), and other common web bugs. These issues can be mitigated by setting a number of standard, broadly supported HTTP response headers, including [`X-Frame-Options`](#x-frame-options), [`X-Content-Type-Options`](#x-content-type-options), and [Content Security Policy](#content-security-policy). 
+
+In large part due to the complexity of both the security features and web applications, only a minority of websites currently use these defenses, and often enable only those mechanisms which do not require significant refactoring efforts. The most common opt-in application security features are `X-Content-Type-Options` (enabled by 17% of pages), `X-Frame-Options` (16%), and the deprecated `X-XSS-Protection` header (15%). The most powerful web security mechanism — Content Security Policy — is only enabled by 5% of websites, and only a small subset of them (about 0.1% of all sites) use the safer configurations based on [CSP nonces and hashes](#hashnonce). The related [Referrer Policy](#referrer-policy), aiming to reduce the amount of information sent to third parties in the `Referer` headers is similarly only used by 3% of websites.
+
+### Modern web platform defenses 
+
+In the recent years, web browsers have implemented powerful new mechanisms which offer protections from major classes of vulnerabilities and new web threats; this includes [Subresource Integrity](#subresource-integrity), [SameSite cookies](#samesite), and [cookie prefixes](#prefixes).
+
+These features have seen adoption only by a relatively small number of websites; their total coverage is generally well below 1%. The even more recent security mechanisms such as [Trusted Types](https://w3c.github.io/webappsec-trusted-types/dist/spec/), [Cross-Origin Resource Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)) or [Cross-Origin-Opener Policy](https://www.chromestatus.com/feature/5432089535053824) have not seen any widespread adoption as of yet.
+
+Similarly, convenience features such as the [Reporting API](#report-to), [Network Error Logging](#network-error-logging) and the [`Clear-Site-Data`](#clear-site-data) header are also still in their infancy and are currently being used by a small number of sites.
+
+### Tying it all together 
+
+At web scale, the total coverage of opt-in platform security features is currently relatively low. Even the most broadly adopted protections are enabled by less than a quarter of websites, leaving the majority of the web without platform safeguards against common security issues; more recent security mechanisms, such as Content Security Policy or Referrer Policy, are enabled by less than 5% of websites.
+
+It's important to note, however, that the adoption of these mechanisms is skewed towards larger web applications which frequently handle more sensitive user data. The developers of these sites more frequently invest in improving their web defenses, including enabling a range of protections against common vulnerabilities; tools such as [Mozilla Observatory](https://observatory.mozilla.org/) and [Security Headers](https://securityheaders.com/) can provide a useful checklist of web available security features.
+
+If your web application handles sensitive user data, consider enabling the security mechanisms outlined in this section to protect your users and make the web safer.
+
