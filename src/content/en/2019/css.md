@@ -90,6 +90,16 @@ A nice follow up chart is this one, showing that classes take up ~93% of the sel
 
 <pie chart of 02_08be-f>
 
+### Attribute Selectors
+CSS has some very powerful comparison selectors that we were curious of their use on the web. These are selectors like `[target="_blank"]`, `[attribute^="value"]`, `[title~="rad"]`, `[attribute$="-rad"]` or `[attribute*="value"]`. Do you use them? Think they're used a lot? Let's compare how those are used with IDs and classes across the web.
+<pie chart of 02_43h-l>
+<pie chart of 02_44h-l>
+Much more use with class names than IDs, which feels natural since a stylesheet has less ID selectors than class selectors, but still neat to see how uses of all these combinations. 
+
+### Classes Per Element
+We thought it would be fun to query all webpages to see an average number of classes put on elements! With the rise of OOCSS / atomic / functional CSS strategies which can compose ~10 classes on an element to achieve a design look, perhaps we'd see some interesting results. The query came back quite unexciting, with the average on mobile and desktop being 1 class per element. 
+<pie chart of 02_45d>
+
 
 
 
@@ -130,6 +140,11 @@ This is a fun one, because if you asked a user how many font sizes they feel are
 
 ## Spacing
 
+### Margins
+Margin is the space outside of elements, like the space you demand when you push your arms out from yourself, so is margin pushing for space outside of itself. This often looks like the spacing between elements, but is not limited to that effect. In a website or app, spacing places a huge role in UX and design, let's see how much margin spacing code goes into a stylesheet shall we? 
+<bar chart of 02_40b-f>
+Quite popular it seems! An average of 96 distinct margins on desktop and 104 on mobile. That makes for a lot of unique spacing moments in your design. Curious how many margins you have in your site? How can we make all this whitespace more manageable?
+
 ### Logical Properties
 We estimate that days are numbered for `margin-left` and `padding-top`, to be replaced by their writing direction agnostic, successive, logical property syntax. While we're optimistic, current usage is quite low at 0.67% usage on desktop pages. To us, this feels like a habit change we'll need to develop as an industry, while hopefully training new developers to use the new syntax exclusively. 
 <bar chart of 02_05d>
@@ -141,6 +156,10 @@ Vertical layering, or stacking, can be managed with `z-index` in CSS, and we wer
 ### Z-Index Popular Values
 From our work experience, any number of 9's seemed to be the most popular choice, even though we taught ourselves to use the lowest number possible, that's not the communal norm. So what is then!? If folks need things on top, what are the most popular `z-index` numbers to pass in? Put your drink down, this one is funny enough you might lose it. 
 <scatter chart of 02_38>
+
+
+
+
 
 ## Decoration
 
@@ -165,10 +184,15 @@ Overall usage of blend modes is much less than filters, but is still enough to b
 
 ## Animation
 
+### Transitions
+CSS has this awesome interpolation power that can be simply used by just writing a single rule on how to transition those values. If you're using CSS to manage states in your app, how often are you employing transitions to do the task? Let's query the web!
+<bar chart of 02_41b-f>
+That's pretty good! We did see animate.css as a popular library to include, which brings in a ton of transition animations, but it's still nice to see folks are considering transitioning their UIs. 
 
+### Keyframe Animations
+CSS keyframe animations are a great solution for your more complex animations or transitions. They allow you to be more explicit which provides higher control over the effects. They can be small, like 1 keyframe effect, or be large with many many keyframe effects composing into a robust animation. We were curious the average of keyframe animations per page, which turned out to be much less than CSS transitions. 
+<bar chart of 02_42b-f>
 
-
-## Performance
 
 
 
@@ -248,4 +272,16 @@ An interesting follow up to this is, that there's more usage of @supports then @
 <bar chart of 02_02e>
 
 We did not expect that! @import has been in browsers since ~2007. 
+
+
+
+
+
+## Conclusion
+There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made this summarizing very fun, and left us with lots of clues and trails to investigate if we wanted to hunt down the reasons "why" some of the results were the way they were. 
+
+Which results did you find the most alarming?
+Which results make you head to your codebase for a quick query?
+
+We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to @una or @argyleink with your queries, questions and assertions. We'd love to hear about them. 
 
