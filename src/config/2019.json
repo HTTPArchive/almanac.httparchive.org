@@ -758,6 +758,7 @@
     },
     "rviscomi": {
       "name": "Rick Viscomi",
+      "bio": "Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a href=\"https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ\">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a href=\"https://usingwpt.com\">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a href=\"https://dev.to/rick_viscomi\">dev.to</a> and on Twitter at <a href=\"https://twitter.com/rick_viscomi\">@rick_viscomi</a>.",
       "teams": [
         "brainstormers",
         "authors",
