@@ -57,11 +57,21 @@ There were three really important takeaways from this research by Google:
 
 2. **The number of images on a page was the second greatest predictor of conversions.** Sessions which converted users had 38% fewer images than sessions that didn't convert.
 
-![Chart showing 19 converted sessions vs. 31 non-converted sessions](/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png)
+<figure>
+  <a href="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="Chart showing 19 converted sessions vs. 31 non-converted sessions">
+  </a>
+  <figcaption>Figure 1. Converted sessions vs non-converted sessions.</figcaption>
+</figure>
 
 3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the huge longtail that demonstrates how many retail sessions contained up to 1440 scripts!
 
-![Chart showing conversion rate dropping off as scripts increase](/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png)
+<figure>
+  <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png" alt="Chart showing conversion rate dropping off as scripts increase">
+  </a>
+  <figcaption>Figure 2. Conversion rate dropping off as scripts increase.</figcaption>
+</figure>
 
 Now that we've covered why page size and complexity matter, let's get into some juicy HTTP Archive stats so we can better understand the current state of the web and the impact of page bloat.
 
@@ -75,121 +85,127 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
 
 #### Mobile
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>Total (KB)</th>
-   <th>HTML (KB)</th>
-   <th>JS (KB)</th>
-   <th>CSS (KB)</th>
-   <th>Image (KB)</th>
-   <th>Document (KB)</th>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>6226</td>
-    <td>107</td>
-    <td>1060</td>
-    <td>234</td>
-    <td>4746</td>
-    <td>49</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>3431</td>
-    <td>56</td>
-    <td>668</td>
-    <td>122</td>
-    <td>2270</td>
-    <td>25</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>1745</td>
-    <td>26</td>
-    <td>360</td>
-    <td>56</td>
-    <td>893</td>
-    <td>13</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>800</td>
-    <td>11</td>
-    <td>164</td>
-    <td>22</td>
-    <td>266</td>
-    <td>7</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>318</td>
-    <td>6</td>
-    <td>65</td>
-    <td>5</td>
-    <td>59</td>
-    <td>4</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>Total (KB)</th>
+      <th>HTML (KB)</th>
+      <th>JS (KB)</th>
+      <th>CSS (KB)</th>
+      <th>Image (KB)</th>
+      <th>Document (KB)</th>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>6226</td>
+      <td>107</td>
+      <td>1060</td>
+      <td>234</td>
+      <td>4746</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>3431</td>
+      <td>56</td>
+      <td>668</td>
+      <td>122</td>
+      <td>2270</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>1745</td>
+      <td>26</td>
+      <td>360</td>
+      <td>56</td>
+      <td>893</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>800</td>
+      <td>11</td>
+      <td>164</td>
+      <td>22</td>
+      <td>266</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>318</td>
+      <td>6</td>
+      <td>65</td>
+      <td>5</td>
+      <td>59</td>
+      <td>4</td>
+    </tr>
+  </table>
+  <figcaption>Figure 3. Page weight on mobile broken down by resource type</figcaption>
+</figure>
 
 #### Desktop
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>Total (KB)</th>
-   <th>HTML (KB)</th>
-   <th>JS (KB)</th>
-   <th>CSS (KB)</th>
-   <th>Image (KB)</th>
-   <th>Document (KB)</th>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>6945</td>
-    <td>110</td>
-    <td>1131</td>
-    <td>240</td>
-    <td>5220</td>
-    <td>52</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>3774</td>
-    <td>58</td>
-    <td>721</td>
-    <td>129</td>
-    <td>2434</td>
-    <td>26</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>1934</td>
-    <td>27</td>
-    <td>391</td>
-    <td>62</td>
-    <td>983</td>
-    <td>14</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>924</td>
-    <td>12</td>
-    <td>186</td>
-    <td>26</td>
-    <td>319</td>
-    <td>8</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>397</td>
-    <td>6</td>
-    <td>76</td>
-    <td>8</td>
-    <td>78</td>
-    <td>4</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>Total (KB)</th>
+      <th>HTML (KB)</th>
+      <th>JS (KB)</th>
+      <th>CSS (KB)</th>
+      <th>Image (KB)</th>
+      <th>Document (KB)</th>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>6945</td>
+      <td>110</td>
+      <td>1131</td>
+      <td>240</td>
+      <td>5220</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>3774</td>
+      <td>58</td>
+      <td>721</td>
+      <td>129</td>
+      <td>2434</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>1934</td>
+      <td>27</td>
+      <td>391</td>
+      <td>62</td>
+      <td>983</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>924</td>
+      <td>12</td>
+      <td>186</td>
+      <td>26</td>
+      <td>319</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>397</td>
+      <td>6</td>
+      <td>76</td>
+      <td>8</td>
+      <td>78</td>
+      <td>4</td>
+    </tr>
+  </table>
+  <figcaption>Figure 4. Page weight on desktop broken down by resource type</figcaption>
+</figure>
 
 ### Page Weight Over Time
 
@@ -197,125 +213,127 @@ Over the past year the median size of a desktop site increased by 434KB, and the
 
 #### Mobile
 
-Change (KB) in page size vs. 2018
-
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>Total (KB)</th>
-   <th>HTML (KB)</th>
-   <th>JS (KB)</th>
-   <th>CSS (KB)</th>
-   <th>Image (KB)</th>
-   <th>Document (KB)</th>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>+376</td>
-    <td>-50</td>
-    <td>+46</td>
-    <td>+36</td>
-    <td>+648</td>
-    <td>+2</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>+304</td>
-    <td>-7</td>
-    <td>+34</td>
-    <td>+21</td>
-    <td>+281</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>+179</td>
-    <td>-1</td>
-    <td>+27</td>
-    <td>+10</td>
-    <td>+106</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>+110</td>
-    <td>-1</td>
-    <td>+16</td>
-    <td>+5</td>
-    <td>+36</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>+72</td>
-    <td>0</td>
-    <td>+13</td>
-    <td>+2</td>
-    <td>+20</td>
-    <td>+1</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>Total (KB)</th>
+      <th>HTML (KB)</th>
+      <th>JS (KB)</th>
+      <th>CSS (KB)</th>
+      <th>Image (KB)</th>
+      <th>Document (KB)</th>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>+376</td>
+      <td>-50</td>
+      <td>+46</td>
+      <td>+36</td>
+      <td>+648</td>
+      <td>+2</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>+304</td>
+      <td>-7</td>
+      <td>+34</td>
+      <td>+21</td>
+      <td>+281</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>+179</td>
+      <td>-1</td>
+      <td>+27</td>
+      <td>+10</td>
+      <td>+106</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>+110</td>
+      <td>-1</td>
+      <td>+16</td>
+      <td>+5</td>
+      <td>+36</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>+72</td>
+      <td>0</td>
+      <td>+13</td>
+      <td>+2</td>
+      <td>+20</td>
+      <td>+1</td>
+    </tr>
+  </table>
+  <figcaption>Figure 5. Change (KB) in page size vs. 2018</figcaption>
+</figure>
 
 #### Desktop
 
-Change (KB) in page size vs. 2018
-
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>Total (KB)</th>
-   <th>HTML (KB)</th>
-   <th>JS (KB)</th>
-   <th>CSS (KB)</th>
-   <th>Image (KB)</th>
-   <th>Document (KB)</th>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>+1106</td>
-    <td>-75</td>
-    <td>+22</td>
-    <td>+45</td>
-    <td>+1291</td>
-    <td>+5</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>+795</td>
-    <td>-12</td>
-    <td>+9</td>
-    <td>+32</td>
-    <td>+686</td>
-    <td>+1</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>+434</td>
-    <td>-1</td>
-    <td>+10</td>
-    <td>+15</td>
-    <td>+336</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>+237</td>
-    <td>0</td>
-    <td>+12</td>
-    <td>+7</td>
-    <td>+138</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>+120</td>
-    <td>0</td>
-    <td>+10</td>
-    <td>+2</td>
-    <td>+39</td>
-    <td>+1</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>Total (KB)</th>
+      <th>HTML (KB)</th>
+      <th>JS (KB)</th>
+      <th>CSS (KB)</th>
+      <th>Image (KB)</th>
+      <th>Document (KB)</th>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>+1106</td>
+      <td>-75</td>
+      <td>+22</td>
+      <td>+45</td>
+      <td>+1291</td>
+      <td>+5</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>+795</td>
+      <td>-12</td>
+      <td>+9</td>
+      <td>+32</td>
+      <td>+686</td>
+      <td>+1</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>+434</td>
+      <td>-1</td>
+      <td>+10</td>
+      <td>+15</td>
+      <td>+336</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>+237</td>
+      <td>0</td>
+      <td>+12</td>
+      <td>+7</td>
+      <td>+138</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>+120</td>
+      <td>0</td>
+      <td>+10</td>
+      <td>+2</td>
+      <td>+39</td>
+      <td>+1</td>
+    </tr>
+  </table>
+  <figcaption>Figure 6. Change (KB) in page size vs. 2018</figcaption>
+</figure>
 
 For a longer-term perspective on how page weight has changed over time, check out this [graph](https://httparchive.org/reports/page-weight#bytesTotal) on the main HTTP Archive site. Median page size has grown at a fairly constant rate since the HTTP Archive started tracking this metric in November 2010 and the increase in page weight observed over the past year is consistent with this.
 
@@ -325,121 +343,127 @@ The median desktop site makes 74 requests, and the median mobile site makes 69â€
 
 #### Mobile
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>Total</th>
-   <th>HTML</th>
-   <th>JS</th>
-   <th>CSS</th>
-   <th>Image</th>
-   <th>Document</th>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>168</td>
-    <td>15</td>
-    <td>52</td>
-    <td>20</td>
-    <td>79</td>
-    <td>7</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>111</td>
-    <td>7</td>
-    <td>32</td>
-    <td>12</td>
-    <td>49</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>69</td>
-    <td>3</td>
-    <td>18</td>
-    <td>6</td>
-    <td>28</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>40</td>
-    <td>2</td>
-    <td>9</td>
-    <td>3</td>
-    <td>15</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>22</td>
-    <td>1</td>
-    <td>4</td>
-    <td>1</td>
-    <td>7</td>
-    <td>0</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>Total</th>
+      <th>HTML</th>
+      <th>JS</th>
+      <th>CSS</th>
+      <th>Image</th>
+      <th>Document</th>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>168</td>
+      <td>15</td>
+      <td>52</td>
+      <td>20</td>
+      <td>79</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>111</td>
+      <td>7</td>
+      <td>32</td>
+      <td>12</td>
+      <td>49</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>69</td>
+      <td>3</td>
+      <td>18</td>
+      <td>6</td>
+      <td>28</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>40</td>
+      <td>2</td>
+      <td>9</td>
+      <td>3</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>22</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+  </table>
+  <figcaption>Figure 7. Page requests on mobile broken down by resource type</figcaption>
+</figure>
 
 #### Desktop
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>Total</th>
-   <th>HTML</th>
-   <th>JS</th>
-   <th>CSS</th>
-   <th>Image</th>
-   <th>Document</th>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>179</td>
-    <td>14</td>
-    <td>53</td>
-    <td>20</td>
-    <td>90</td>
-    <td>6</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>118</td>
-    <td>7</td>
-    <td>33</td>
-    <td>12</td>
-    <td>54</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>74</td>
-    <td>4</td>
-    <td>19</td>
-    <td>6</td>
-    <td>31</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>44</td>
-    <td>2</td>
-    <td>10</td>
-    <td>3</td>
-    <td>16</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>24</td>
-    <td>1</td>
-    <td>4</td>
-    <td>1</td>
-    <td>7</td>
-    <td>0</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>Total</th>
+      <th>HTML</th>
+      <th>JS</th>
+      <th>CSS</th>
+      <th>Image</th>
+      <th>Document</th>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>179</td>
+      <td>14</td>
+      <td>53</td>
+      <td>20</td>
+      <td>90</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>118</td>
+      <td>7</td>
+      <td>33</td>
+      <td>12</td>
+      <td>54</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>74</td>
+      <td>4</td>
+      <td>19</td>
+      <td>6</td>
+      <td>31</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>44</td>
+      <td>2</td>
+      <td>10</td>
+      <td>3</td>
+      <td>16</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>24</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+  </table>
+  <figcaption>Figure 8. Page requests on desktop broken down by resource type</figcaption>
+</figure>
 
 ### File Formats
 
@@ -447,61 +471,64 @@ The preceding analysis has focused on analyzing page weight through the lens of 
 
 #### File size by image format (Mobile)
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>GIF</th>
-   <th>ICO</th>
-   <th>JPG</th>
-   <th>PNG</th>
-   <th>SVG</th>
-   <th>WEBP</th>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>0</td>
-    <td>0</td>
-    <td>3.08</td>
-    <td>0.37</td>
-    <td>0.25</td>
-    <td>2.54</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>0.03</td>
-    <td>0.26</td>
-    <td>7.96</td>
-    <td>1.14</td>
-    <td>0.43</td>
-    <td>4.89</td>
-  <tr>
-    <td>50</td>
-    <td>0.04</td>
-    <td>1.12</td>
-    <td>21</td>
-    <td>4.31</td>
-    <td>0.88</td>
-    <td>13</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>0.06</td>
-    <td>2.72</td>
-    <td>63</td>
-    <td>22</td>
-    <td>2.41</td>
-    <td>33</td>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>2.65</td>
-    <td>13</td>
-    <td>155</td>
-    <td>90</td>
-    <td>7.91</td>
-    <td>78</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>GIF</th>
+      <th>ICO</th>
+      <th>JPG</th>
+      <th>PNG</th>
+      <th>SVG</th>
+      <th>WEBP</th>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3.08</td>
+      <td>0.37</td>
+      <td>0.25</td>
+      <td>2.54</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>0.03</td>
+      <td>0.26</td>
+      <td>7.96</td>
+      <td>1.14</td>
+      <td>0.43</td>
+      <td>4.89</td>
+    <tr>
+      <td>50</td>
+      <td>0.04</td>
+      <td>1.12</td>
+      <td>21</td>
+      <td>4.31</td>
+      <td>0.88</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>0.06</td>
+      <td>2.72</td>
+      <td>63</td>
+      <td>22</td>
+      <td>2.41</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>2.65</td>
+      <td>13</td>
+      <td>155</td>
+      <td>90</td>
+      <td>7.91</td>
+      <td>78</td>
+    </tr>
+  </table>
+  <figcaption>Figure 9. Images file sizes on mobile broken down by image format</figcaption>
+</figure>
 
 Some of these results, particularly those for GIFs, are really surprising. If GIFs are so small, then why are they being replaced by formats like JPG, PNG, and WEBP?
 
@@ -509,127 +536,138 @@ The data above obscures the fact that the vast majority of GIFs on the web are a
 
 Further investigation into the data set revealed that 62% of GIFs are 43 bytes or smaller (43 bytes is the size of a transparent, 1x1 pixel GIF) and 84% of GIFs are 1 KB or smaller.
 
-![Chart showing cumulative distriubtion function of GIF file sizes](/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png)
+<figure>
+  <a href="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Chart showing cumulative distriubtion function of GIF file sizes">
+  </a>
+  <figcaption>Figure 10. Cumulative distriubtion function of GIF file sizes.</figcaption>
+</figure>
 
 The tables below show two different approaches to removing these tiny images from the data set: the first one is based on images with a file size greater than 100 bytes, the second is based on images with a file size greater than 1024 bytes.
 
-#### File size by image format; images > 100 bytes
+#### File size by image format for images > 100 bytes
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>GIF</th>
-   <th>ICO</th>
-   <th>JPG</th>
-   <th>PNG</th>
-   <th>SVG</th>
-   <th>WEBP</th>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>0.27</td>
-    <td>0.31</td>
-    <td>3.08</td>
-    <td>0.4</td>
-    <td>0.28</td>
-    <td>2.1</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>0.75</td>
-    <td>0.6</td>
-    <td>7.7</td>
-    <td>1.17</td>
-    <td>0.46</td>
-    <td>4.4</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>2.14</td>
-    <td>1.12</td>
-    <td>20.47</td>
-    <td>4.35</td>
-    <td>0.95</td>
-    <td>11.54</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>7.34</td>
-    <td>4.19</td>
-    <td>61.13</td>
-    <td>21.39</td>
-    <td>2.67</td>
-    <td>31.21</td>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>35</td>
-    <td>14.73</td>
-    <td>155.46</td>
-    <td>91.02</td>
-    <td>8.26</td>
-    <td>76.43</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>GIF</th>
+      <th>ICO</th>
+      <th>JPG</th>
+      <th>PNG</th>
+      <th>SVG</th>
+      <th>WEBP</th>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0.27</td>
+      <td>0.31</td>
+      <td>3.08</td>
+      <td>0.4</td>
+      <td>0.28</td>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>0.75</td>
+      <td>0.6</td>
+      <td>7.7</td>
+      <td>1.17</td>
+      <td>0.46</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>2.14</td>
+      <td>1.12</td>
+      <td>20.47</td>
+      <td>4.35</td>
+      <td>0.95</td>
+      <td>11.54</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>7.34</td>
+      <td>4.19</td>
+      <td>61.13</td>
+      <td>21.39</td>
+      <td>2.67</td>
+      <td>31.21</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>35</td>
+      <td>14.73</td>
+      <td>155.46</td>
+      <td>91.02</td>
+      <td>8.26</td>
+      <td>76.43</td>
+    </tr>
+  </table>
+  <figcaption>Figure 11. File size by image format for images > 100 bytes</figcaption>
+</figure>
 
-#### File size by image format; images > 1024 bytes only
+#### File size by image format for images > 1024 bytes
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>GIF</th>
-   <th>ICO</th>
-   <th>JPG</th>
-   <th>PNG</th>
-   <th>SVG</th>
-   <th>WEBP</th>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>1.28</td>
-    <td>1.12</td>
-    <td>3.4</td>
-    <td>1.5</td>
-    <td>1.2</td>
-    <td>3.08</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>1.9</td>
-    <td>1.12</td>
-    <td>8.21</td>
-    <td>2.88</td>
-    <td>1.52</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>4.01</td>
-    <td>2.49</td>
-    <td>21.19</td>
-    <td>8.33</td>
-    <td>2.81</td>
-    <td>12.52</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>11.92</td>
-    <td>7.87</td>
-    <td>62.54</td>
-    <td>33.17</td>
-    <td>6.88</td>
-    <td>32.83</td>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>67.15</td>
-    <td>22.13</td>
-    <td>157.96</td>
-    <td>127.15</td>
-    <td>19.06</td>
-    <td>79.53</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>GIF</th>
+      <th>ICO</th>
+      <th>JPG</th>
+      <th>PNG</th>
+      <th>SVG</th>
+      <th>WEBP</th>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>1.28</td>
+      <td>1.12</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>1.2</td>
+      <td>3.08</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>1.9</td>
+      <td>1.12</td>
+      <td>8.21</td>
+      <td>2.88</td>
+      <td>1.52</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>4.01</td>
+      <td>2.49</td>
+      <td>21.19</td>
+      <td>8.33</td>
+      <td>2.81</td>
+      <td>12.52</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>11.92</td>
+      <td>7.87</td>
+      <td>62.54</td>
+      <td>33.17</td>
+      <td>6.88</td>
+      <td>32.83</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>67.15</td>
+      <td>22.13</td>
+      <td>157.96</td>
+      <td>127.15</td>
+      <td>19.06</td>
+      <td>79.53</td>
+    </tr>
+  </table>
+  <figcaption>Figure 12. File size by image format for images > 1024 bytes</figcaption>
+</figure>
 
 The low file size of PNG images compared to JPEG images may seem surprising. JPEG uses [lossy compression](https://en.wikipedia.org/wiki/Lossy_compression) (lossy compression results in data loss; this makes it possible to achieve smaller file sizes) while PNG uses [lossless compression](https://en.wikipedia.org/wiki/Lossless_compression) (lossless compression does not result in data loss; this produces higher-quality, but larger images). However this difference in file sizes is probably a reflection of the popularity of PNGs for iconography due to their transparency support; rather than differences in their encoding and compression.
 
@@ -641,85 +679,91 @@ Unlike some of the other tables in this data set, this one has mostly happy take
 
 ##### Mobile
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>MP4 (KB)</th>
-   <th>WebM (KB)</th>
-   <th>MPEG-TS (KB)</th>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>0.89</td>
-    <td>0.29</td>
-    <td>0.01</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>2.07</td>
-    <td>0.29</td>
-    <td>55</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>18</td>
-    <td>1.44</td>
-    <td>153</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>202</td>
-    <td>223</td>
-    <td>278</td>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>928</td>
-    <td>390</td>
-    <td>475</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>MP4 (KB)</th>
+      <th>WebM (KB)</th>
+      <th>MPEG-TS (KB)</th>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0.89</td>
+      <td>0.29</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>2.07</td>
+      <td>0.29</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>18</td>
+      <td>1.44</td>
+      <td>153</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>202</td>
+      <td>223</td>
+      <td>278</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>928</td>
+      <td>390</td>
+      <td>475</td>
+    </tr>
+  </table>
+  <figcaption>Figure 13. File size by media format on mobile</figcaption>
+</figure>
 
 ##### Desktop
 
-<table>
-  <tr>
-   <th>Percentile</th>
-   <th>MP4 (KB)</th>
-   <th>WebM (KB)</th>
-   <th>MPEG-TS (KB)</th>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>0.27</td>
-    <td>0.29</td>
-    <td>34</td>
-  </tr>
-  <tr>
-    <td>25</td>
-    <td>1.05</td>
-    <td>0.29</td>
-    <td>121</td>
-  </tr>
-  <tr>
-    <td>50</td>
-    <td>39</td>
-    <td>17</td>
-    <td>286</td>
-  </tr>
-  <tr>
-    <td>75</td>
-    <td>514</td>
-    <td>288</td>
-    <td>476</td>
-  </tr>
-  <tr>
-    <td>90</td>
-    <td>2142</td>
-    <td>896</td>
-    <td>756</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Percentile</th>
+      <th>MP4 (KB)</th>
+      <th>WebM (KB)</th>
+      <th>MPEG-TS (KB)</th>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0.27</td>
+      <td>0.29</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>1.05</td>
+      <td>0.29</td>
+      <td>121</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>39</td>
+      <td>17</td>
+      <td>286</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>514</td>
+      <td>288</td>
+      <td>476</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>2142</td>
+      <td>896</td>
+      <td>756</td>
+    </tr>
+  </table>
+  <figcaption>Figure 14. File size by media format on desktop</figcaption>
+</figure>
 
 ## Conclusion
 
