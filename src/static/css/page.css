@@ -190,6 +190,7 @@ table,
   padding:50px 36px;
   border:1px solid #1A2B490A;
   margin: 20px 0;
+  overflow: auto;
 }
 
 #chapter-navigation>a{
@@ -214,13 +215,13 @@ table,
 }
 
 #chapter-navigation .arrow{
+  position:absolute;
   font-size:24px;
   top:12px;
 }
 
 #previous-chapter .arrow{
   transform: rotate(-90deg);
-  position:absolute;
   left:-24px;
 }
 
@@ -231,7 +232,6 @@ table,
 
 #next-chapter .arrow{
   transform: rotate(90deg);
-  position:absolute;
   right:-24px;
 }
 
