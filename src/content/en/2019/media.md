@@ -16,8 +16,8 @@ Looking at bytes per page results in just looking at the costs - to page perform
 
 There are three metrics to consider when looking at pixel volume: CSS pixels and Natural pixels and Screen pixels. 
 * CSS pixel volume is from the CSS perspective of layout. This measure focuses on the bounding boxes for which an image or video could be stretched or squeezed into. It also does not take into the actual file pixels nor the screen display pixels
-*Natural pixels refer to the logical pixels represented in a file. If you were to load this image in Gimp or Photoshop, the pixel file dimensions would be the natural pixels.
-*Screen pixels refer to the physical electronics on the display. Prior to mobile phones and modern high-resolution displays, there was a 1:1 relationship between CSS pixels and LED points on a screen. However, because mobile devices are held closer to the eye, and laptop screens are closer than the old mainframe terminals, modern screens have a higher ratio of physical pixels to traditional CSS pixels. This ratio is referred to as Device-Pixel-Ratio or colloquially referred to as Regina™ displays.
+* Natural pixels refer to the logical pixels represented in a file. If you were to load this image in Gimp or Photoshop, the pixel file dimensions would be the natural pixels.
+* Screen pixels refer to the physical electronics on the display. Prior to mobile phones and modern high-resolution displays, there was a 1:1 relationship between CSS pixels and LED points on a screen. However, because mobile devices are held closer to the eye, and laptop screens are closer than the old mainframe terminals, modern screens have a higher ratio of physical pixels to traditional CSS pixels. This ratio is referred to as Device-Pixel-Ratio or colloquially referred to as Regina™ displays.
 
 Looking at the CSS pixel and the Natural pixel volume we can see that the median website has a layout that displays 1MegaPixel of media content. At the 90th percentile, the CSS layout pixel volume grows to 4.6MP and 6.3MP mobile and desktop respectively. This is interesting not only because the responsive layout is likely different, but also because the form factor is different. In short, the mobile layout has less space allocated for media compared to the desktop.
 
@@ -44,12 +44,12 @@ Media resources are critical for the user experience!
 Much has already been written on the subject of managing and optimizing images to help reduce the bytes and optimize the user experience. <<TODO: link, link link>> It is an important and critical topic for many because it is the creative media that define a brand experience. Therefore optimizing image and video content is a balancing act between applying best practices that can help reduce the bytes transferred over the network while preserving the fidelity of the intended experience. 
 
 While the strategies that are utilized for images, videos and animations are, in broad strokes similar, the specific approaches can be very different. In general, these strategies boil down to:
-*File Formats - utilizing the optimal file format 
-*Responsive - applying responsive images techniques to transfer only the pixels that will be shown on screen, 
-*Lazy Loading - to transfer content only when a human will see it
-*Accessibility - ensuring a consistent experience for all humans
+* File Formats - utilizing the optimal file format 
+* Responsive - applying responsive images techniques to transfer only the pixels that will be shown on screen, 
+* Lazy Loading - to transfer content only when a human will see it
+* Accessibility - ensuring a consistent experience for all humans
 
-*A word of caution when interpreting these results. The web pages crawled for the almanac were based on a Chrome browser. This implies that any content negotiation that might better apply for Safari or Firefox, might not be represented in this dataset. For example, the use of file formats like JPEG2000, JPEG-XR, HEVC and HEIC are absent because these are not supported natively by Chrome. This does not mean that the web does not contain these other formats or experiences. Likewise, Chrome has native support for lazy loading (since v76) which is not yet available in other browsers.*
+* A word of caution when interpreting these results. The web pages crawled for the almanac were based on a Chrome browser. This implies that any content negotiation that might better apply for Safari or Firefox, might not be represented in this dataset. For example, the use of file formats like JPEG2000, JPEG-XR, HEVC and HEIC are absent because these are not supported natively by Chrome. This does not mean that the web does not contain these other formats or experiences. Likewise, Chrome has native support for lazy loading (since v76) which is not yet available in other browsers.*
 
 It is rare to find a webpage that does not utilize images. Over the years, many different file formats have emerged to help present content on the web - each addressing a different problem. Predominantly there are 4 main universal image formats: JPEG, PNG, GIF, and SVG. In addition, Chrome has enhanced the media pipeline and added support for a fifth image format - WebP. Other browsers have likewise added support for JPEG2000 (Safari), JPEG-XL (IE and Edge) and HEIC (WebView only in Safari)
 
@@ -71,8 +71,9 @@ In aggregate, across all page, we indeed see the prevalence of these formats. JP
 (figure image formats by % of totla requests)
 Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of Google.com and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images and 61 at the 90th percentile and a whopping 229 at the 99th percentile.
 (figure image frequency per page)
-| Format | p10 | p25 | p50 | p75 | p90 | p99
-|--|--|--| --| --| --| --| 
+
+| Format | p10 | p25 | p50 | p75 | p90 | p99 |
+|---|---|---| ---| ---| ---| ---| 
 | jpg | 0 | 3 | 9 |20  |39  |119  |  
 | png | 0 | 4 | 4 |10  |18  |49  |   
 | webp | 0 | 0 | 0 |0  |0  |28  |  
@@ -89,10 +90,10 @@ This helps explain why even at the 90th percentile of pages the frequency of web
 
 ## Image File Sizes
 There are two ways to look at image file sizes: absolute bytes per resource and bytes per pixel. Looking at the absolute bytes per resource, and we can look at the frequency of file sizes.
- (figure image format flie size)
-
+ (figure image format file size)
+ 
 | Format | p10 | p25 | p50 | p75 | p90 | 
-|--|--|--| --| --| --| --| 
+|---|---|---| ---| ---| ---| 
 | jpg | 4 KB | 9 KB | 24 KB |68 KB  |  166 KB  |  
 | png | 2 KB| 4 KB | 11 KB |43 KB  |152 KB     
 | webp | 4 KB| 7 KB | 17 KB|41 KB  |90 KB   |  
@@ -102,10 +103,11 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
 
 From this we can start to get a sense of how large or small a typical resource is on the web. However, this doesn’t give us a sense of the volume of pixels represented on screen for these file distributions. To do this we can divide each resource bytes by the natural pixel volume of the image. A lower Bytes-Per-Pixel indicates a more efficient transmission of visual content.
 (figure Bytes per pixel)
+
 | imageType | Bytes Per Pixel: p10 | Bytes Per Pixel: p25 | Bytes Per Pixel: p50 | Bytes Per Pixel: p75 | Bytes Per Pixel: p90 | 
-|--|--|--| --| --| --| --| 
+|---|---|---| ---| ---| ---|  
 | jpg | 0.1175 | 0.1848 | 0.2997 |0.5456  |  0.9822  |  
-| png | 0.1197| 0.2874 | 0.6918 |1.4548  |2.5026     
+| png | 0.1197| 0.2874 | 0.6918 |1.4548  |2.5026 |    
 | gif | 0.1702| 0.3641 | 0.7967|2.515  |8.5151   |  
 | webp | 0.0586| 0.1025| 0.183 |0.3272  |0.6474 |  
 | svg | 0.0293| 0.174| 0.6766|1.9261  |4.1075 |  
