@@ -1,0 +1,209 @@
+{% extends "en/2019/base_chapter.html" %}
+
+<!--{# IMPORTANT!
+
+- `chapter.html` is a "template for templates" used by the `generate_chapters.js` script, hence the strange template syntax (eg, mixing ejs and jinja syntax)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}-->
+
+{% set metadata = {"part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third parties, performance, seo, and PWAs","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T12:00:00+00:00:00 "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+<meta name="description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+
+<meta property="og:title" content="{{ self.title() }}" />
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{ self.description() }}" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@HTTPArchive" />
+<meta name="twitter:title" content="{{ self.title() }}" />
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+<meta name="twitter:description" content="{{ self.description() }}" />
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+    	  "@type": "WebPage",
+    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+    },
+    "headline": "{{ metadata.get('title') }}",
+    "image": {
+    	  "@type": "ImageObject",
+    	  "url": "https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg"
+    },
+    "publisher": {
+    	  "@type": "Organization",
+    	  "name": "HTTP Archive",
+    	  "logo": {
+    	      "@type": "ImageObject",
+    	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+    	      "height": 160,
+    	      "width": 320
+    	  }
+       },
+    "author":
+       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+       {% if authordata -%}
+    {
+    	  "@type": "Person",
+           "sameas": [
+             "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"
+             {% if authordata.twitter %},"https://twitter.com/{{ authordata.twitter }}"{% endif %}
+             {% if authordata.github %},"https://github.com/{{ authordata.github }}"{% endif %}
+             ],
+    	  "name": "{{ authordata.name if authordata.name else author }}"
+       }{% if loop.index < loop.length %},{% endif %}
+       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+       {% endfor %},
+       "description": "{{ self.description() }}",
+       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ metadata.get('title') }}",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+      }
+    ]
+  }
+</script>
+{% endblock %} {% block main %}
+<article id="chapter" class="main">
+  <nav class="index">
+    <div class="index-box floating-card">
+      <h2 class="header">Index</h2>
+      <ul>
+        <li>
+          <a href="#introduction">Introduction</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="content">
+    <section class="body">
+      <div class="subtitle">
+        Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
+      </div>
+      <h1 class="title">
+        {{ metadata.get('title') }}
+      </h1>
+      <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      {{ render_byline() }}
+      <h2 id="introduction">Introduction</h2>
+      <p><strong>06.02 and 06.32: Popular web font hosts</strong></p>
+      <p>Google Fonts’ dominance here was simultaneously surprising and unsurprising at the same time. It was unsurprising in that I expected the service to be the most popular and surprising in the sheer dominance of its popularity. 75% of requests is astounding. TypeKit was a distant single-digit second place, with the Bootstrap library accounting for an even more distant third place.</p>
+      <p><strong>06.46: Uses a Google Fonts link</strong></p>
+      <p>While Google Fonts’ dominance on requests was very impressive, it’s very noteworthy that only 29% of pages included a Google Fonts <code>&lt;link&gt;</code> element. This could mean a few things:</p>
+      <ul>
+        <li>When pages uses Google Fonts, they use <em>a lot</em> of Google fonts. They are free, after all. This seems like the most likely reason.</li>
+        <li>A lot of people are using Google Fonts with <code>@import</code> instead of <code>&lt;link&gt;</code>. My hunch is that this seems unlikely but maybe!</li>
+        <li>
+          Google Fonts are being requested using an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">HTTP <code>Link:</code> header</a> instead. Now we’re going off the deep end into very unlikely scenarios.
+        </li>
+      </ul>
+      <p><strong>06.47: Uses a Google Fonts link first</strong></p>
+      <p>Google Fonts documentation encourages the <code>&lt;link&gt;</code> for the Google Fonts CSS to be placed as the first child in the <code>&lt;head&gt;</code> of a page. This is a big ask! In practice, this is not common as only half a percent of all pages took this advice. More so, if a page is using <code>preconnect</code> or <code>dns-prefetch</code> (read on for more about these) as <code>&lt;link&gt;</code> elements, these would come before the Google Fonts CSS anyway. In conclusion, 🤷‍♂️!</p>
+      <p><strong>06.01: Are fonts being hosted on the same host or by a different host than the main content?</strong></p>
+      <p>This differentiation is important for performance reasons, increasingly relevant in an H2 world where the performance gap between a same-host and different-host connection can be wider. Same-host requests can also be better prioritized against same-host requests for other resources in the waterfall. Recommendations to mitigate this include <code>preconnect</code>, <code>dns-prefetch</code>, and <code>preload</code> but high priority web fonts (those used by a lot of content on your page) should be same-host requests to minimize the performance impact of web fonts.</p>
+      <p>This is perhaps unsurprising given Google Fonts dominance in <code>06.02</code>, as 75% Google Fonts requests-dominance would all be different host requests. Note that <code>preload</code> is not yet available with Google Fonts.</p>
+      <p><strong>06.03: MIME types</strong></p>
+      <p>WOFF2 is pretty well supported in web browsers today. Google Fonts serves WOFF2, a format that offers improved compression over its predecessor. To me this is perhaps supporting evidence for a case to be made to go WOFF2-only for web fonts. I wonder where the double-digit WOFF usage is coming from—perhaps Internet Explorer?</p>
+      <p>Third place <code>octet-stream</code> (and <code>plain</code> a little further down) would seem to suggest that a lot of web servers are misconfigured to not properly send a MIME type with web font file requests.</p>
+      <p>
+        <strong>06.36–38: src formats included in <a href="https://github.com/font-face">@font-face</a> blocks</strong>
+      </p>
+      <p>I was hoping to see <a href="https://caniuse.com/#feat=svg-fonts">SVG fonts</a> on the decline. They’re buggy and implementations have been removed from every browser except Safari. Time to drop these, y’all.</p>
+      <p><strong>06.39–41: src formats combinations</strong></p>
+      <ul>
+        <li class="task-list-item" style="list-style-type: none;"><input type="checkbox" disabled style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;" /> TODO <em>Zach’s note: The order here is important, yeah.</em></li>
+      </ul>
+      <p><strong>06.04: font-display Usage</strong></p>
+      <p>
+        I assume this will be creeping up over time, especially now that <a href="https://www.zachleat.com/web/google-fonts-display/">Google Fonts is adding <code>font-display</code> to all new code snippets</a> copied from their site. If you’re using Google Fonts—update your snippets! If you’re not using Google Fonts—use <code>font-display</code>! Read more about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display"><code>font-display</code> on MDN</a>.
+      </p>
+      <p><strong>06.44: font-display values</strong></p>
+      <p>As an easy way to show fallback text while a web font is loading, <code>font-display: swap</code> reigns supreme and is the most common descriptor value. <code>swap</code> is also the default descriptor value used by new Google Fonts code snippets too. I would have expected <code>optional</code> (only render if cached) to have a bit more usage here as a few prominent developer evangelists lobbied for it a bit—but no dice.</p>
+      <p><strong>06.09a: Web font requests per page</strong></p>
+      <p>The median web page makes 4 web font requests. Even the 10th percentile requests one. The ubiquity of Web fonts is complete. It does seem interesting to me that web font requests seem to be pretty steady across desktop and mobile. I’m glad to see the recommendation to hide <code>@font-face</code> blocks inside of a <code>@media</code> query didn’t catch on (don’t do this).</p>
+      <p><strong>06.34: Font requests per page</strong></p>
+      <p>Why are there more requests for fonts made on mobile devices? Is it related to fewer typefaces available on mobile devices, which in turn means fewer <code>local()</code> hits in Google Fonts CSS? Actually we might be on to something here.</p>
+      <p><strong>06.09b: Web font families</strong></p>
+      <ul>
+        <li class="task-list-item" style="list-style-type: none;">
+          <input type="checkbox" disabled style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;" /> TODO <em>Zach’s note: Is this families per page? What is <code>httparchive.almanac.parsed_css</code>?</em>
+        </li>
+      </ul>
+      <p>These results were a little surprising. I didn’t expect this to line up so well with the number of web font requests per page. Namely I didn’t expect so many unique font families! To me this suggests a few things might be happening here:</p>
+      <ul>
+        <li>Authors are mapping web fonts that share the same typeface to unique font-family names. My intuition seems to think this is unlikely.</li>
+        <li>Authors are only using one web font from each font-family (this will be more common as variable font usage increases).</li>
+        <li>I’ve seen some foundries (typography.com) use multiple font-family names as a copy-prevention mechanism for web fonts but I don’t think this is very common.</li>
+      </ul>
+      <p><strong>06.10: Italics</strong></p>
+      <p>Only 29% of pages declare at least one italic font. This suggests a lot of faux-italic across the web, as web browsers will synthesize a fake bold version if one is not available for use. That means using elements with italic user agent styling (<code>em</code>, <code>i</code>, et al) will render faux-italic.</p>
+      <p>Faux bold may be even larger of a problem, as about 53–55% of pages have a font-face with a weight above 400, and (arguably) bold usage is more common than italic usage.</p>
+      <p>(Counterargument: a <code>@font-face</code> needn’t be declared bold or italic if the underlying glyphs are from a bold or italic variant of the typeface)</p>
+      <p><strong>06.13: CSS Font Loading API</strong></p>
+      <p>This is the first metric that elicited an audible “oof” from me. The <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api">CSS Font Loading API</a> is currently the only way to group web font repaints. Arguably unnecessary if you’re only using one font file per typeface, which per the implication in in <code>06.09b</code> may be common practice!</p>
+      <p><strong>06.14, 06.14b: unicode-range</strong></p>
+      <p>This is another metric that I expect was skewed by Google Fonts usage, as Google Fonts uses <code>unicode-range</code> in most of (if not all) its CSS. I’d expect this to be less common in userland—but perhaps filtering out Google Fonts requests in the next edition of the Almanac may be possible 😀.</p>
+      <p><strong>06.15: Preconnect</strong></p>
+      <p>Wow—less than 2% of pages are using <a href="https://web.dev/uses-rel-preconnect">preconnect</a>! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use preconnect!! Google Fonts, proselytize preconnect more!</p>
+      <p><strong>06.16: local()</strong></p>
+      <p>See <code>06.14</code>, my comments are similar. It has been said (and I agree) that using <code>local()</code> can be unpredictable as installed versions of fonts can be outdated and unreliable.</p>
+      <p><strong>06.18, 06.21, 06.25: Variable Fonts</strong></p>
+      <p>Even at 1.8% this was higher than expected—although I’m excited to see this take off even higher. I would be interested in some deeper analysis here. Is a big player using variable fonts? Can we slice this by host instead of requests?</p>
+      <p><strong>06.28 and 06.28b: Variable Font variation axes</strong></p>
+      <p>Through the lens of the this large data set, these are very low sample sizes—take these results with a grain of salt. However, <code>opsz</code> as the most common axis is notable, with <code>wght</code> and <code>wdth</code> trailing. In my experience, the introductory demos for variable fonts are usually <code>font-weight</code> based.</p>
+      <p><strong>06.29: Variable Font variation axes +/- 20pt</strong></p>
+      <ul>
+        <li class="task-list-item" style="list-style-type: none;"><input type="checkbox" disabled style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;" /> TODO [CONTENT_NEEDED]</li>
+      </ul>
+      <p><strong>06.30: Variable Font variation axes combinations</strong></p>
+      <ul>
+        <li class="task-list-item" style="list-style-type: none;"><input type="checkbox" disabled style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;" /> TODO [CONTENT_NEEDED]</li>
+      </ul>
+      <p><strong>06.26: font-stretch</strong></p>
+      <p>
+        <code>font-stretch</code> is not a well known <code>@font-face</code> descriptor, historically, due to poor browser support. Read more about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><code>font-stretch</code> on MDN</a>. That’s changed and it is now well supported. It has been suggested that using condensed fonts on smaller viewports allows more text to be viewable, but it certainly isn’t common. That being said, that this descriptor is used more on desktop than mobile is unexpected—and ~7% seems much higher than I would have predicted.
+      </p>
+      <p><strong>06.31: Top Fonts</strong></p>
+      <p>It’s super weird that the top fonts here seem to match up very similarly to the list on <a href="https://fonts.google.com/?sort=popularity">https://fonts.google.com/?sort=popularity</a></p>
+      <p><strong>06.35: Page with the most font requests</strong></p>
+      <p>After diving into the code, the site that requests 718 web fonts is actually requesting 718 Google Fonts! It looks like a malfunctioning “Above the Page fold” optimization plugin for WordPress has gone rogue on this site and is requesting all the Google Fonts—oops!</p>
+      <p><strong>06.42 and 06.43: color fonts</strong></p>
+      <p>Usage here of these is basically nonexistent but you can check out the excellent resource <a href="https://www.colorfonts.wtf/">Color Fonts! WTF?</a> for more information. Similar (but not at all) to the SVG format for fonts (which is bad and going away), this allows you to embed SVG inside of OpenType files (which is awesome and cool).</p>
+    </section>
+    <section class="authors">
+      {{ render_authors() }}
+    </section>
+
+    <nav id="chapter-navigation">
+      {{ render_prevnext() }}
+    </nav>
+  </section>
+</article>
+
+{% endblock %}
