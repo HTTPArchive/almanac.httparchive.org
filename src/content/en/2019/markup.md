@@ -2,9 +2,14 @@
 part_number: I
 chapter_number: 3
 title: Markup
+description: Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
+
+## Introduction
 
 In 2005, Ian "Hixie" Hickson posted [some analysis of markup data](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html)  building upon various previous work. Much of this work aimed to investigate class names to see if there were common informal semantics that were being adopted by developers which it might make sense to standardize upon.  Some of this research helped inform new elements in HTML5.
 

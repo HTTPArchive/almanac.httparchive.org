@@ -8,9 +8,9 @@ SELECT
 FROM (
   SELECT
     effective_connection_type.name AS speed,
-    ROUND(SAFE_DIVIDE(SUM(IF(bin.start < 50, bin.density, 0)), SUM(bin.density)), 4) AS fast_fid,
-    ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 50 AND bin.start < 250, bin.density, 0)), SUM(bin.density)), 4) AS avg_fid,
-    ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 250, bin.density, 0)), SUM(bin.density)), 4) AS slow_fid
+    ROUND(SAFE_DIVIDE(SUM(IF(bin.start < 100, bin.density, 0)), SUM(bin.density)), 4) AS fast_fid,
+    ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 100 AND bin.start < 300, bin.density, 0)), SUM(bin.density)), 4) AS avg_fid,
+    ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 300, bin.density, 0)), SUM(bin.density)), 4) AS slow_fid
   FROM
     `chrome-ux-report.all.201907`,
     UNNEST(experimental.first_input_delay.histogram.bin) AS bin

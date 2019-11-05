@@ -9,7 +9,7 @@
 {% block content%}
   {% block header %}
     <header class="alt-bg">
-      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive" /></a>
+      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive" srcset="/static/images/logo@2x.png 2x" /></a>
       <nav>
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
@@ -26,8 +26,9 @@
         {% endif %}
         {{ language_switcher() }}
       </div>
-      <img class="menu-icon" src="/static/images/menu.png" />
-      <img class="menu-close-icon" src="/static/images/close.png" />
+      <button type="button" class="menu-btn" arial-label="Menu">
+        <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png"/>
+      </button>
       <nav class="menu">
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
@@ -45,8 +46,8 @@
             </a>
           </div>
           {{ language_switcher() }}
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
   {% endblock %}
 
@@ -54,7 +55,7 @@
 
   {% block footer %}
     <footer class="alt-bg">
-      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive"/></a>
+      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive" srcset="/static/images/logo@2x.png 2x" /></a>
       <a class="navigation-logo ha-logo" href="https://httparchive.org">
         <img src="/static/images/ha-home.png" alt="HTTP Archive home" />
       </a>
@@ -79,28 +80,27 @@
   {% endblock %}
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
-(function() {
-// Language switching
-var languageSwitchers = document.querySelectorAll('.language-switcher select');
-for (var i = 0; i < languageSwitchers.length; i++) {
-  languageSwitchers[i].addEventListener('change', function(e) {
-    if (e.target.value) {
-      window.location = e.target.value;
-    }
-  });
-}
+      (function() {
+        // Language switching
+        var languageSwitchers = document.querySelectorAll('.language-switcher select');
+        for (var i = 0; i < languageSwitchers.length; i++) {
+          languageSwitchers[i].addEventListener('change', function(e) {
+            if (e.target.value) {
+              window.location = e.target.value;
+            }
+          });
+        }
 
-// Mobile menu
-var menuIcon = document.querySelector('.menu-icon');
-var menuCloseIcon = document.querySelector('.menu-close-icon');
+        // Mobile menu
+        var menuIcon = document.querySelector('.menu-icon');
+        var menuIconInitialSrc = document.querySelector('.menu-icon').src;
+        var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
 
-function toggleMenu(e) {
-  document.body.classList.toggle('menu-open');
-}
-
-menuIcon.addEventListener('click', toggleMenu);
-menuCloseIcon.addEventListener('click', toggleMenu);
-})();
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+          var menuOpen = document.body.classList.toggle('menu-open');
+          menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
+        });
+      })();
     </script>
   {% endblock %}
 {% endblock %}

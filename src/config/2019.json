@@ -71,8 +71,7 @@
         {
           "part": "II",
           "chapter": "12",
-          "title": "Mobile Web",
-          "todo": true
+          "title": "Mobile Web"
         }
       ]
     },
@@ -82,8 +81,7 @@
         {
           "part": "III",
           "chapter": "13",
-          "title": "Ecommerce",
-          "todo": true
+          "title": "Ecommerce"
         },
         {
           "part": "III",
@@ -163,6 +161,7 @@
   "contributors": {
     "kleinab": {
       "name": "Abigail Klein",
+      "bio": "Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she improved screen reader support and added <a href=\"https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/\">automatic captions to Google Slides</a>. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor's and master's degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.",
       "teams": [
         "authors"
       ],
@@ -171,13 +170,15 @@
     },
     "argyleink": {
       "name": "Adam Argyle",
+      "bio":"Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX &amp; UI; Find him on the web @argyleink> or <a href=\"https://nerdy.dev\">https://nerdy.dev</a>;",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1134620?v=4&s=200",
       "website": "https:\/\/nerdy.dev",
-      "github": "argyleink"
+      "github": "argyleink",
+      "twitter": "argyleink"
     },
     "addyosmani": {
       "name": "Addy Osmani",
@@ -186,26 +187,31 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/110953?v=4&s=200",
       "website": "https:\/\/www.addyosmani.com",
-      "github": "addyosmani"
+      "github": "addyosmani",
+      "twitter": "addyosmani"
     },
     "ahmadawais": {
       "name": "Ahmad Awais",
       "teams": [
         "brainstormers",
-        "reviewers"
+        "reviewers",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/960133?v=4&s=200",
       "website": "https:\/\/ahmadawais.com\/",
-      "github": "ahmadawais"
+      "github": "ahmadawais",
+      "twitter": "MrAhmadAwais"
     },
     "alankent": {
       "name": "Alan Kent",
+      "bio": "Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at alankent.me and tweets as @akent99.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/5702163?v=4&s=200",
-      "github": "alankent"
+      "github": "alankent",
+      "twitter": "akent99"
     },
     "amedina": {
       "name": "Alberto Medina",
@@ -214,7 +220,8 @@
         "authors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/506089?v=4&s=200",
-      "github": "amedina"
+      "github": "amedina",
+      "twitter": "iAlbMedina"
     },
     "slightlyoff": {
       "name": "Alex Russell",
@@ -223,7 +230,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/97331?v=4&s=200",
       "website": "http:\/\/infrequently.org",
-      "github": "slightlyoff"
+      "github": "slightlyoff",
+      "twitter": "slightlylate"
     },
     "dotjs": {
       "name": "Andrew Galloni",
@@ -249,22 +257,29 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/427052?v=4&s=200",
       "website": "http:\/\/andydavies.me\/",
-      "github": "andydavies"
+      "github": "andydavies",
+      "twitter": "AndyDavies"
     },
     "andylimn": {
       "name": "Andrew Limn",
       "teams": [
         "reviewers"
       ],
-      "github": "andylimn"
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/38131750?v=4&s=200",
+      "website": "https:\/\/artefact.com\/gb-en\/",
+      "github": "andylimn",
+      "twitter": "Artefact_Andy"
     },
     "arturjanc": {
       "name": "Artur Janc",
+      "bio": "Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href=\"https://twitter.com/arturjanc\">@arturjanc on Twitter</a>.",
       "teams": [
+        "authors",
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/665379?v=4&s=200",
-      "github": "arturjanc"
+      "github": "arturjanc",
+      "twitter": "arturjanc"
     },
     "AymenLoukil": {
       "name": "Aymen Loukil",
@@ -274,15 +289,18 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/5750656?v=4&s=200",
       "website": "http:\/\/www.aymen-loukil.com\/en\/",
-      "github": "AymenLoukil"
+      "github": "AymenLoukil",
+      "twitter": "LoukilAymen"
     },
     "bazzadp": {
       "name": "Barry Pollard",
+      "bio": "Barry Pollard is a software developer and author of the Manning book <a href=\"https://www.manning.com/books/http2-in-action\">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href=\"https://twitter.com/tunetheweb\">@tunetheweb</a> and blogging at <a href=\"https://www.tunetheweb.com\">www.tunetheweb.com</a>.",
       "teams": [
         "brainstormers",
         "authors",
         "reviewers",
-        "editors"
+        "editors",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/10931297?v=4&s=200",
       "website": "https:\/\/www.tunetheweb.com",
@@ -291,13 +309,15 @@
     },
     "bkardell": {
       "name": "Brian Kardell",
+      "bio": "Brian Kardell is developer advocate at <a href=\"https://igalia.com\">Igalia</a>, standards contributor, <a href=\"https://bkardell.com\">blogger</a>, and is currently the W3C Advisory Committee Representative for the <a href=\"https://openjsf.org/\">Open JS Foundation</a>. He was a founder of the Extensible Web Community Group and co-author of <a href=\"https://extensiblewebmanifesto.org\">The Extensible Web Manifesto</a>.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/870501?v=4&s=200",
       "website": "https:\/\/bkardell.com",
-      "github": "bkardell"
+      "github": "bkardell",
+      "twitter": "briankardell"
     },
     "caraya": {
       "name": "Carlos Araya",
@@ -306,16 +326,19 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/409841?v=4&s=200",
       "website": "http:\/\/publishing-project.rivendellweb.net\/",
-      "github": "caraya"
+      "github": "caraya",
+      "twitter": "elrond25"
     },
     "catalinred": {
       "name": "Catalin Rosu",
       "teams": [
-        "reviewers"
+        "reviewers",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1867900?v=4&s=200",
       "website": "https:\/\/catalin.red\/",
-      "github": "catalinred"
+      "github": "catalinred",
+      "twitter": "catalinred"
     },
     "huijing": {
       "name": "Chen Hui Jing",
@@ -324,7 +347,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1461498?v=4&s=200",
       "website": "https:\/\/www.chenhuijing.com",
-      "github": "huijing"
+      "github": "huijing",
+      "twitter": "hj_chen"
     },
     "colinbendell": {
       "name": "Colin Bendell",
@@ -334,8 +358,8 @@
         "analysts"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1622597?v=4&s=200",
-      "website": "www.bendell.ca",
-      "github": "colinbendell"
+      "github": "colinbendell",
+      "twitter": "colinbendell"
     },
     "bagder": {
       "name": "Daniel Stenberg",
@@ -354,7 +378,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/261579?v=4&s=200",
       "website": "http:\/\/fonts.google.com",
-      "github": "davelab6"
+      "github": "davelab6",
+      "twitter": "davelab6"
     },
     "obto": {
       "name": "David Fox",
@@ -367,18 +392,21 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/684747?v=4&s=200",
       "website": "https:\/\/www.lookzook.com",
-      "github": "obto"
+      "github": "obto",
+      "twitter": "theobto"
     },
     "dougsillars": {
       "name": "Doug Sillars",
+      "bio": "Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets @dougsillars, and blogs regularly at dougsillars.com.",
       "teams": [
         "brainstormers",
         "authors",
         "analysts"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1514288?v=4&s=200",
-      "website": "dougsillars.com",
-      "github": "dougsillars"
+      "website": "https:\/\/dougsillars.com",
+      "github": "dougsillars",
+      "twitter": "dougsillars"
     },
     "eeeps": {
       "name": "Eric Portis",
@@ -387,13 +415,15 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3441390?v=4&s=200",
       "website": "https:\/\/ericportis.com",
-      "github": "eeeps"
+      "github": "eeeps",
+      "twitter": "etportis"
     },
     "gabriel-de-gennaro": {
       "name": "Gabriel De Gennaro",
       "teams": [
         "designers"
-      ]
+      ],
+      "website": "https:\/\/gabrieldegennaro.com"
     },
     "GiacomoPignoni": {
       "name": "Giacomo Pignoni",
@@ -402,7 +432,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/34923063?v=4&s=200",
       "website": "https:\/\/giacomo.online",
-      "github": "GiacomoPignoni"
+      "github": "GiacomoPignoni",
+      "twitter": "Pigna__"
     },
     "tanhengyeow": {
       "name": "Heng Yeow",
@@ -411,7 +442,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/25320782?v=4&s=200",
       "website": "https:\/\/tanhengyeow.github.io",
-      "github": "tanhengyeow"
+      "github": "tanhengyeow",
+      "twitter": "tanhengyeow"
     },
     "henrisGH": {
       "name": "Henri Helvetica",
@@ -419,7 +451,8 @@
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/50970808?v=4&s=200",
-      "github": "henrisGH"
+      "github": "henrisGH",
+      "twitter": "HenriHelvetica"
     },
     "housseindjirdeh": {
       "name": "Houssein Djirdeh",
@@ -429,7 +462,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/12476932?v=4&s=200",
       "website": "https:\/\/houssein.me",
-      "github": "housseindjirdeh"
+      "github": "housseindjirdeh",
+      "twitter": "hdjirdeh"
     },
     "jaredcwhite": {
       "name": "Jared White",
@@ -438,7 +472,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/658496?v=4&s=200",
       "website": "https:\/\/jaredwhite.com",
-      "github": "jaredcwhite"
+      "github": "jaredcwhite",
+      "twitter": "jaredcwhite"
     },
     "jrharalson": {
       "name": "Jason Haralson",
@@ -450,13 +485,15 @@
     },
     "jeffposnick": {
       "name": "Jeff Posnick",
+      "bio":"Jeff Posnick is a member of Google's Web Developer Relations team, based in New York. His focus is on <a href=\"https://developers.google.com/web/tools/workbox/\">Workbox</a>, a set of service worker libraries for Progressive Web Apps. He blogs at <a href=\"https://jeffy.info\">https://jeffy.info</a> and tweets as <a href=\"https://twitter.com/jeffposnick\">@jeffposnick</a>.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/1749548?v=4&s=200",
       "website": "https:\/\/jeffy.info",
-      "github": "jeffposnick"
+      "github": "jeffposnick",
+      "twitter": "jeffposnick"
     },
     "clarkeclark": {
       "name": "John Fox",
@@ -476,16 +513,29 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/25212653?v=4&s=200",
       "website": "https:\/\/gemservers.com",
-      "github": "hyperpress"
+      "github": "hyperpress",
+      "twitter": "jtteag"
+    },
+    "sirjonathan": {
+      "name": "Jonathan Wold",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/104149?v=4&s=200",
+      "website": "https:\/\/jonathanwold.com",
+      "github": "sirjonathan",
+      "twitter": "sirjonathan"
     },
     "JMPerez": {
       "name": "Jos\u00e9 M. P\u00e9rez",
       "teams": [
+        "developers",
         "reviewers"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/416456?v=4&s=200",
       "website": "https:\/\/jmperezperez.com",
-      "github": "JMPerez"
+      "github": "JMPerez",
+      "twitter": "jmperezperez"
     },
     "KJLarson": {
       "name": "Kari Larson",
@@ -494,17 +544,20 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/42503401?v=4&s=200",
       "website": "https:\/\/www.kjlarson.com",
-      "github": "KJLarson"
+      "github": "KJLarson",
+      "twitter": "KaJLa47"
     },
     "khempenius": {
       "name": "Katie Hempenius",
+      "bio":"Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.",
       "teams": [
         "brainstormers",
         "authors",
         "analysts"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/6076184?v=4&s=200",
-      "github": "khempenius"
+      "github": "khempenius",
+      "twitter": "katiehempenius"
     },
     "ljme": {
       "name": "Laura Eberly",
@@ -522,7 +575,17 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/2183053?v=4&s=200",
       "website": "https:\/\/twitter.com\/msakamaki2",
-      "github": "MSakamaki"
+      "github": "MSakamaki",
+      "twitter": "msakamaki2"
+    },
+    "Pavel-Evdokimov": {
+      "name": "Pavel Evdokimov",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/6407114?v=4&s=200",
+      "github": "Pavel-Evdokimov",
+      "twitter": "Pavel_Evdokimov"
     },
     "hakimelek": {
       "name": "Malek Hakim",
@@ -539,7 +602,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/74384?v=4&s=200",
       "website": "https:\/\/www.mnot.net\/",
-      "github": "mnot"
+      "github": "mnot",
+      "twitter": "mnot"
     },
     "zeman": {
       "name": "Mark Zeman",
@@ -549,16 +613,19 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/204268?v=4&s=200",
       "website": "http:\/\/speedcurve.com",
-      "github": "zeman"
+      "github": "zeman",
+      "twitter": "MarkZeman"
     },
     "AVGP": {
       "name": "Martin Splitt",
+      "bio":"Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.",
       "teams": [
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/370246?v=4&s=200",
       "website": "http:\/\/geekonaut.de",
-      "github": "AVGP"
+      "github": "AVGP",
+      "twitter": "g33konaut"
     },
     "mathiasbynens": {
       "name": "Mathias Bynens",
@@ -568,7 +635,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/81942?v=4&s=200",
       "website": "https:\/\/mathiasbynens.be\/",
-      "github": "mathiasbynens"
+      "github": "mathiasbynens",
+      "twitter": "mathias"
     },
     "mattludwig": {
       "name": "Matt Ludwig",
@@ -592,7 +660,9 @@
         "developers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/105242?v=4&s=200",
-      "github": "mikegeyser"
+      "website": "https:\/\/mikerambl.es",
+      "github": "mikegeyser",
+      "twitter": "mikegeyser"
     },
     "natasha-kosoglov": {
       "name": "Natasha Kosoglov",
@@ -602,6 +672,7 @@
     },
     "nektarios-paisios": {
       "name": "Nektarios Paisios",
+      "bio": "Nektarios Paisios is a software engineer working on Chrome accessibility for the last 5 years. He primarily focuses on making Chrome compatible with third party assistive software such as screen readers and screen magnifiers. Before working on Chrome accessibility, Nektarios worked in various other roles at the company, such as GSuite accessibility and display ads. Nektarios holds a Ph.D. in Computer Science from New York University.",
       "teams": [
         "authors"
       ]
@@ -611,7 +682,7 @@
       "teams": [
         "developers"
       ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3008677?s=460&v=4",
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3008677?v=4&s=200",
       "github": "welenofsky"
     },
     "noahblon": {
@@ -621,10 +692,12 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/561590?v=4&s=200",
       "website": "https:\/\/www.noahblon.com",
-      "github": "noahblon"
+      "github": "noahblon",
+      "twitter": "noahblon"
     },
     "patrickhulce": {
       "name": "Patrick Hulce",
+      "bio":"Patrick Hulce is an ex-Chrome engineer, founder of <a href=\"https://eris.ventures/\">Eris Ventures</a>, core team member of <a href=\"https://github.com/GoogleChrome/lighthouse\">Lighthouse</a> and <a href=\"https://github.com/GoogleChrome/lighthouse-ci\">Lighthouse CI</a>, co-organizer of the <a href=\"https://www.meetup.com/DallasJS/\">DallasJS</a> meetup, and author of the <a href=\"https://github.com/patrickhulce/third-party-web\">third-party-web</a> project.",
       "teams": [
         "brainstormers",
         "authors",
@@ -632,10 +705,12 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/2301202?v=4&s=200",
       "website": "http:\/\/patrickhulce.com",
-      "github": "patrickhulce"
+      "github": "patrickhulce",
+      "twitter": "patrickhulce"
     },
     "paulcalvano": {
       "name": "Paul Calvano",
+      "bio":"Paul Calvano is a Web Performance Architect at <a href=\"https://www.akamai.com/\">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href=\"https://twitter.com/paulcalvano\">@paulcalvano</a>, blogging at <a href=\"http://paulcalvano.com\">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href=\"https://discuss.httparchive.org\">https://discuss.httparchive.org</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -647,13 +722,15 @@
     },
     "rachellcostello": {
       "name": "Rachel Costello",
+      "bio":"Rachel Costello is a Technical SEO &amp; Content Manager at <a href=\"https://www.deepcrawl.com/\">DeepCrawl</a> and an international conference speaker who spends her time researching and communicating the latest developments in search. Rachel currently manages the production of <a href=\"https://www.deepcrawl.com/knowledge/white-papers/\">technical SEO white papers</a> and research pieces for DeepCrawl, and is a regular columnist for <a href=\"https://www.searchenginejournal.com/author/rachel-costello/\">Search Engine Journal</a>.",
       "teams": [
         "brainstormers",
         "authors",
         "editors"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/49983543?v=4&s=200",
-      "github": "rachellcostello"
+      "github": "rachellcostello",
+      "twitter": "rachellcostello"
     },
     "raghuramakrishnan71": {
       "name": "Raghu Ramakrishnan",
@@ -665,11 +742,12 @@
     },
     "rmarx": {
       "name": "Robin Marx",
-      "github": "rmarx",
-      "twitter": "programmingart",
       "teams": [
         "reviewers"
-      ]
+      ],
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/2240689?s=460&v=4&s=200",
+      "github": "rmarx",
+      "twitter": "programmingart"
     },
     "ernee": {
       "name": "Renee Johnson",
@@ -678,10 +756,12 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/8108643?v=4&s=200",
       "website": "https:\/\/reneesvirtualoffice.com",
-      "github": "ernee"
+      "github": "ernee",
+      "twitter": "reneesoffice"
     },
     "rviscomi": {
       "name": "Rick Viscomi",
+      "bio": "Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a href=\"https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ\">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a href=\"https://usingwpt.com\">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a href=\"https://dev.to/rick_viscomi\">dev.to</a> and on Twitter at <a href=\"https://twitter.com/rick_viscomi\">@rick_viscomi</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -702,23 +782,27 @@
     },
     "samdutton": {
       "name": "Sam Dutton",
+      "bio":"Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a href=\"https://simpl.info\">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/205226?v=4&s=200",
       "website": "https:\/\/simpl.info",
-      "github": "samdutton"
+      "github": "samdutton",
+      "twitter": "sw12"
     },
     "ScottHelme": {
       "name": "Scott Helme",
+      "bio":"Scott Helme is a Security Researcher and founder of <a href=\"https://report-uri.com\">report-uri.com</a> and <a href=\"https://securityheaders.com\">securityheaders.com</a>. You can find him talking about security on Twitter <a href=\"https://twitter.com/Scott_Helme\">@Scott_Helme</a> and blogging at <a href=\"https://scotthelme.co.uk\">scotthelme.co.uk</a>.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/5352840?v=4&s=200",
       "website": "https:\/\/scotthelme.co.uk",
-      "github": "ScottHelme"
+      "github": "ScottHelme",
+      "twitter": "Scott_Helme"
     },
     "sergeychernyshev": {
       "name": "Sergey Chernyshev",
@@ -727,31 +811,37 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/38076?v=4&s=200",
       "website": "http:\/\/sergeychernyshev.com\/",
-      "github": "sergeychernyshev"
+      "github": "sergeychernyshev",
+      "twitter": "sergeyche"
     },
     "zcorpan": {
       "name": "Simon Pieters",
       "teams": [
-        "brainstormers"
+        "brainstormers",
+        "reviewers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/244772?v=4&s=200",
-      "github": "zcorpan"
+      "github": "zcorpan",
+      "twitter": "zcorpan"
     },
     "susie-lu": {
       "name": "Susie Lu",
       "teams": [
         "designers"
       ],
-      "website": "https:\/\/www.susielu.com\/"
+      "website": "https:\/\/www.susielu.com\/",
+      "twitter": "DataToViz"
     },
     "tammyeverts": {
       "name": "Tammy Everts",
+      "bio": "Tammy Everts has spent more than two decades studying usability and UX. For the past ten years, she's focused on the intersection of UX with web performance and business. She is CXO at <a href=\"https://speedcurve.com/\">SpeedCurve</a>, co-chair of the <a href=\"https://perfnow.nl/\">performance.now() conference</a>, and author of the O'Reilly book <em><a href=\"http://shop.oreilly.com/product/0636920041450.do\">Time Is Money: The Business Value of Performance</a></em>.",
       "teams": [
         "authors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/15661032?v=4&s=200",
       "website": "https:\/\/speedcurve.com\/",
-      "github": "tammyeverts"
+      "github": "tammyeverts",
+      "twitter": "tameverts"
     },
     "tjmonsi": {
       "name": "TJ Monserrat",
@@ -764,13 +854,15 @@
     },
     "tomayac": {
       "name": "Tom Steiner",
+      "bio" : "Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a href=\"https://blog.tomayac.com/\">blog.tomayac.com</a> and tweets as <a href=\"https://twitter.com/tomayac\">@tomayac</a>.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/145676?v=4&s=200",
       "website": "https:\/\/blog.tomayac.com\/",
-      "github": "tomayac"
+      "github": "tomayac",
+      "twitter": "tomayac"
     },
     "tomhodgins": {
       "name": "Tommy Hodgins",
@@ -783,13 +875,15 @@
     },
     "una": {
       "name": "Una Kravets",
+      "bio": "Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a href=\"https://www.youtube.com/watch?v=YK8GZBx3hpg\">Designing the Browser</a> web series and the <a href=\"https://spec.fm/podcasts/toolsday\">Toolsday</a> developer podcast. Follow her on <a href=\"https://twitter.com/una\">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/1693164?v=4&s=200",
       "website": "http:\/\/una.im",
-      "github": "una"
+      "github": "una",
+      "twitter": "una"
     },
     "jasti": {
       "name": "Vamsee Jasti",
@@ -798,7 +892,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2366341?v=4&s=200",
       "website": "https:\/\/vamseejasti.com",
-      "github": "jasti"
+      "github": "jasti",
+      "twitter": "vamseejasti"
     },
     "voltek62": {
       "name": "Vincent Terrasi",
@@ -818,7 +913,8 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/786187?v=4&s=200",
       "website": "https:\/\/blog.yoav.ws",
-      "github": "yoavweiss"
+      "github": "yoavweiss",
+      "twitter": "yoavweiss"
     },
     "tyohan": {
       "name": "Yohan Totting",
@@ -827,10 +923,12 @@
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/106703?v=4&s=200",
       "website": "http:\/\/tyohan.me",
-      "github": "tyohan"
+      "github": "tyohan",
+      "twitter": "tyohan"
     },
     "ymschaap": {
       "name": "Yvo Schaap",
+      "bio": "Founder at technical SEO consultancy <a href=\"https://build.amsterdam/\">build.amsterdam</a>. Previously founded several web companies that reached over 1 billions users. Blogging about his latest (ad)ventures since 2005 on <a href=\"https://yvoschaap.com/\">yvoschaap.com</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -844,13 +942,15 @@
     },
     "zachleat": {
       "name": "Zach Leatherman",
+      "bio": "Zach is a Web Developer with <a href=\"http://www.filamentgroup.com/\">Filament Group</a>. He’s currently fixated on <a href=\"https://www.zachleat.com/web/fonts/\">web fonts</a> and <a href=\"https://www.zachleat.com/web/introducing-eleventy/\">static site generators</a>. His <a href=\"https://www.zachleat.com/web/speaking/\">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a href=\"https://www.zachleat.com/web/whitehouse/\">The White House</a>. He also helps herd <a href=\"http://nejsconf.com/\">NEJS CONF</a> and the <a href=\"http://nebraskajs.com\">NebraskaJS</a> meetup.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/39355?v=4&s=200",
       "website": "https:\/\/zachleat.com\/",
-      "github": "zachleat"
+      "github": "zachleat",
+      "twitter": "zachleat"
     }
   }
 }

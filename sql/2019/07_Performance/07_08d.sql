@@ -244,9 +244,9 @@ WITH geos AS (
 SELECT
   geo,
   COUNT(0) AS websites,
-  ROUND(COUNTIF(fast_ttfb >= .9) * 100 / COUNT(0), 2) AS pct_fast_ttfb,
-  ROUND(COUNTIF(NOT(slow_ttfb >= .1) AND NOT(fast_ttfb >= .9)) * 100 / COUNT(0), 2) AS pct_avg_ttfb,
-  ROUND(COUNTIF(slow_ttfb >= .1) * 100 / COUNT(0), 2) AS pct_slow_ttfb
+  ROUND(COUNTIF(fast_ttfb >= .75) * 100 / COUNT(0), 2) AS pct_fast_ttfb,
+  ROUND(COUNTIF(NOT(slow_ttfb >= .25) AND NOT(fast_ttfb >= .75)) * 100 / COUNT(0), 2) AS pct_avg_ttfb,
+  ROUND(COUNTIF(slow_ttfb >= .25) * 100 / COUNT(0), 2) AS pct_slow_ttfb
 FROM (
   SELECT
     geo,
@@ -255,7 +255,7 @@ FROM (
     ROUND(SAFE_DIVIDE(SUM(IF(bin.start >= 1000, bin.density, 0)), SUM(bin.density)), 4) AS slow_ttfb
   FROM
     geos,
-    UNNEST(experimental.first_input_delay.histogram.bin) AS bin
+    UNNEST(experimental.time_to_first_byte.histogram.bin) AS bin
   GROUP BY
     origin,
     geo)
