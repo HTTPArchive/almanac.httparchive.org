@@ -6,7 +6,7 @@ description: Accessibility chapter of the 2019 Web Almanac covering ease of read
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-04T12:00:00+00:00:00 
+last_updated: 2019-11-04T12:00:00+00:00:00
 ---
 
 # Introduction
@@ -23,7 +23,7 @@ The [Web Content Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickre
 
 We’ve split up our most interesting insights into four categories: Ease of reading, media on the web, ease of page navigation, and compatibility with assistive technologies.
 
-**_Note:_** We did not find any significant difference in accessibility when testing on desktop vs. mobile. As a result, all of our presented metrics are the result of our **desktop** analysis unless otherwise stated.
+No significant difference in accessibility was found between desktop and mobile during testing. As a result, all of our presented metrics are the result of our desktop analysis unless otherwise stated.
 
 ## Ease of reading
 
@@ -35,13 +35,14 @@ There are many cases in which website visitors may not be able to see a website 
 
 To allow your users to be able to read your website under these conditions, be sure that your text has sufficient color contrast with its background.
 
-![Figure 1. Four colored boxes of orange and gray shades with white text overlayed inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in grayscale. Courtesy of LookZook.](/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png)
+<figure markdown>
+  ![Figure 1. Four colored boxes of orange and gray shades with white text overlayed inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in grayscale. Courtesy of LookZook.](/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png)
+  <figcaption>Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
+</figure>
 
-*Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook*
+So how well did the sites we analyzed do? Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text that easily blends into the background, making it unreadable.
 
-So how well did the sites we analyzed do? **Only 22.04%** of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text that easily blends into the background, making it unreadable.
-
-**_Note:_** Because we were unable to analyze text when it has an image as a background, we gave all of these instances a passing grade. This means our reported metric is an upper-bound of the total number of websites that pass the color contrast test.
+Analyzing the color contrast of text having an image as its background was not possible during this analysis; so any instances of text like this was given a passing grade. This means our reported metric is an upper-bound of the total number of websites passing the color contrast test.
 
 ### Zooming and scaling pages
 
@@ -55,15 +56,15 @@ Because of this, developers are given the ability to disable this feature by set
 
 2. `maximum-scale` set to `1`, `1.0`, etc
 
-Developers have misused this so much that **almost one out of every three sites on mobile** (32.21%) disable this feature, and Apple no longer allows web-developers to disable zooming (as of iOS 10, [Safari browser simply ignores the tag](https://archive.org/details/ios-10-beta-release-notes)). All sites, no matter what, can be zoomed and scaled on newer iOS devices.
+Developers have misused this so much that almost one out of every three sites on mobile (32.21%) disable this feature, and Apple no longer allows web-developers to disable zooming (as of iOS 10, [Safari browser simply ignores the tag](https://archive.org/details/ios-10-beta-release-notes)). All sites, no matter what, can be zoomed and scaled on newer iOS devices.
 
 Unless your site is a very special case, remove user-scalable and maximum-scale from your meta viewport tag.
 
-```<insert graphic of metric 09_26>```
-
-*Figure 2. Percentage of sites that disable zooming and scaling vs device type*
-
-Alt text: Figure 2. Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.
+<figure>
+  <iframe aria-labelledby="fig2-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"></iframe>
+  <div id="fig2-caption" class="visually-hidden">Figure 2. Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
+  <figcaption>Figure 2. Percentage of sites that disable zooming and scaling vs device type.</figcaption>
+</figure>
 
 ### Language identification
 
@@ -73,7 +74,7 @@ In order to facilitate this feature, the translation engines need to know what l
 
 This problem is even more pronounced on text-to-speech assistive technologies like screen readers, where if no language has been specified, they tend to read the text in the default user language.
 
-Of the pages analyzed, **26.13% do not specify a language** with the `lang` attribute. This leaves over a quarter of pages susceptible to all of the problems described above. The good news? Of sites using the `lang` attribute, they specify a valid language code correctly **99.68% of the time**.
+Of the pages analyzed, 26.13% do not specify a language with the `lang` attribute. This leaves over a quarter of pages susceptible to all of the problems described above. The good news? Of sites using the `lang` attribute, they specify a valid language code correctly 99.68% of the time.
 
 ### Distracting content
 
@@ -81,7 +82,7 @@ Some users, such as those with cognitive disabilities, have difficulties concent
 
 Unfortunately, our findings indicate that infinitely looping animations are quite common on the web, with **21.04%** of pages using them through [`<marquee>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee)/[`<blink>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink) elements or infinite CSS animations.
 
-**_Note:_** The bulk of this problem appears to be a few popular third-party stylesheets including infinitely looping CSS animations by default.
+It is interesting to note however, that the bulk of this problem appears to be a few popular third-party stylesheets which include infinitely looping CSS animations by default.
 
 ## Media on the web
 
@@ -89,13 +90,13 @@ Unfortunately, our findings indicate that infinitely looping animations are quit
 
 Images are an essential part of the web experience. They can tell powerful stories, grab attention, and elicit emotion. But not everyone can see these images that we rely on telling parts of our stories. Thankfully, in 1995, HTML 2.0 provided a solution to this problem: [the alt tag](https://webaim.org/techniques/alttext/). The alt tag provides web developers with the capability of adding a textual description to the images we use, so that when someone is unable to see our images (or the images are unable to load), they can read the alt text for a description. The alt text fills them in on the part of the story they would have otherwise missed.
 
-Even though alt tags have been around for 25 years, **49.91% of pages** still fail to provide alt tags for some of their images, and **8.68%** of sites never use them at all.
+Even though alt tags have been around for 25 years, 49.91% of pages still fail to provide alt tags for some of their images, and 8.68% of sites never use them at all.
 
 ### Captions for audio and video
 
 Just as images are powerful storytellers, so too are audio and video in grabbing attention and expressing ideas. When audio and video is not captioned, users who cannot hear this content are missing out on large portions of the web. One of the most common things we hear from users who are Deaf or hard of hearing is the need to include captions for all audio and video content.
 
-Of sites using [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) or [`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) elements, only **0.54% (1 out of every 185 sites)** provide captions. Note that some websites have custom solutions for providing video and audio captions to users. We were unable to detect these and thus the true percentage of sites utilizing captions is slightly higher.
+Of sites using [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) or [`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) elements, only 0.54% (1 out of every 185 sites) provide captions. Note that some websites have custom solutions for providing video and audio captions to users. We were unable to detect these and thus the true percentage of sites utilizing captions is slightly higher.
 
 You can add captions to all video and audio by using the [`<track>`](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) tag.
 
@@ -105,7 +106,7 @@ When you open the menu in a restaurant, the first thing you probably do is read 
 
 While this is exceptionally important, we need to take care to mark up our pages so our visitors’ computers can perceive these distinct sections as well. Why? While most of us use a mouse to navigate pages, many others rely on keyboards and screen readers. These technologies rely heavily on how well their computers understand your page.
 
-So how well are we doing? Very poorly. **Only 26.03% of sites** even contained the most basic part of navigation: a [main landmark](#heading=h.23wv35354sk).
+So how well are we doing? Very poorly. Only 26.03% of sites even contained the most basic part of navigation: a [main landmark](#heading=h.23wv35354sk).
 
 ### Headings
 
@@ -115,63 +116,68 @@ In order to avoid confusing screen reader users, make sure you never skip a head
 
 With that being said, here are our results:
 
-1. **89.36% of pages** use headings in some fashion. Awesome.
+1. 89.36% of pages use headings in some fashion. Awesome.
 
-2. **38.6% of pages** do skip heading levels (e.g., an h3 following an h1, with no h2 in between)
+2. 38.6% of pages do skip heading levels (e.g., an h3 following an h1, with no h2 in between)
 
 3. Strangely, H2s are found on more sites than H1s
 
-```<insert graphic of metric 09_01>```
-
-Alt text: Figure 3. Vertical bar chart titled "% of sites using each heading" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing each heading level h1 through h6.  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%
+<figure>
+  <iframe aria-labelledby="fig3-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"></iframe>
+  <div id="fig3-caption" class="visually-hidden">Figure 3. Vertical bar chart titled "% of sites using each heading" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing each heading level h1 through h6.  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%</div>
+  <figcaption>Figure 3. Percentage of sites using each heading.</figcaption>
+</figure>
 
 ### Main landmark
 
 A [main landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role) indicates to screen readers where the main content of a web page starts so users can jump right to it. Without this, screen reader users have to manually skip over your navigation every single time they go to a new page within your site. Obviously, this is rather frustrating.
 
-We found **only one in every four pages** (26.03%) include a main landmark. And surprisingly, **8.06% of pages** erroneously contained more than one main landmark, leaving these users guessing which landmark contains the actual main content. So, make sure to double check you have exactly one!
+We found only one in every four pages (26.03%) include a main landmark. And surprisingly, 8.06% of pages erroneously contained more than one main landmark, leaving these users guessing which landmark contains the actual main content. So, make sure to double check you have exactly one!
 
-```<insert graphic of metric 09_04>```
-
-Alt text: Figure 4. Vertical bar chart titled "Number of “main" landmarks per page” displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of “main” landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%
+<figure>
+  <iframe aria-labelledby="fig4-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"></iframe>
+  <div id="fig4-caption" class="visually-hidden">Figure 4. Vertical bar chart titled "Number of “main" landmarks per page” displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of “main” landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%</div>
+  <figcaption>Figure 4. Number of `main` landmarks per page.</figcaption>
+</figure>
 
 ### HTML section elements
 
 Since HTML5 was released in 2008, and was made the official standard in 2014, there are many HTML elements to aid computers and screen readers in understanding our page layout and structure.
 
-Elements like [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav), and [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) indicate where specific types of content live and allow users to quickly jump around your page. These are being used pretty widely across the web, with most of them being used on over **50% of pages** (`<main>` being the outlier).
+Elements like [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav), and [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) indicate where specific types of content live and allow users to quickly jump around your page. These are being used pretty widely across the web, with most of them being used on over 50% of pages (`<main>` being the outlier).
 
-Others like [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr), and [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) aid readers in understanding a page’s main content. For example, `<article>` says where one article ends and another begins. These elements are not used nearly as much, which each sitting at around **20% usage**. Not all of these belong on every web page, so this isn’t necessarily an alarming statistic.
+Others like [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr), and [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) aid readers in understanding a page’s main content. For example, `<article>` says where one article ends and another begins. These elements are not used nearly as much, which each sitting at around 20% usage. Not all of these belong on every web page, so this isn’t necessarily an alarming statistic.
 
 All of these elements are primarily designed for accessibility support and have no visual effect. This means that you can safely replace existing elements with them with no unintended consequences.
 
-```<insert graphic of metric 09_03: Usage of semantic elements>```
-
-*Figure 5. Usage of various HTML semantic elements.*
-
-Alt text: Figure 5. Horizontal bar chart titled "usage of semantic elements" with bars for each element type vs percent of pages ranging from 0 to 60 in increments of 20. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%
+<figure>
+  <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"></iframe>
+  <div id="fig5-caption" class="visually-hidden">Figure 5. Horizontal bar chart titled "usage of semantic elements" with bars for each element type vs percent of pages ranging from 0 to 60 in increments of 20. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%</div>
+  <figcaption>Figure 5. Usage of various HTML semantic elements.</figcaption>
+</figure>
 
 ### Other HTML elements used for navigation
 
 Many popular screen readers also allow users to navigate by quickly jumping through links, lists, list items, iframes, and form fields like edit fields, buttons, and list boxes. Figure 6 details how often we saw pages using these elements.
 
-```<insert graphic of metric 09_03: Other HTML elements used for navigation>```
-
-*Figure 6. Other HTML elements used for navigation*
-
-Alt text: Figure 6. Horizontal bar chart titled "other HTML elements used for navigation" with bars for each element type vs percent of pages ranging from 0 to 100 in increments of 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%
+<figure>
+  <iframe aria-labelledby="fig6-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src=""></iframe>
+  <div id="fig6-caption" class="visually-hidden">Figure 6. Horizontal bar chart titled "other HTML elements used for navigation" with bars for each element type vs percent of pages ranging from 0 to 100 in increments of 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%</div>
+  <figcaption>Figure 6. Other HTML elements used for navigation.</figcaption>
+</figure>
 
 ### Skip Links
 
-A [skip link](https://webaim.org/techniques/skipnav/) is a link placed at the top of a page which allows screen readers or keyboard-only users to jump straight to the main content. It effectively "skips" over all navigational links and menus at the top of the page. Skip links are especially useful to keyboard users who don't use a screen reader, as these users don’t usually have access to other modes of quick navigation (like landmarks and headings). **14.19%** of the pages in our sample were found to have skip links.
+A [skip link](https://webaim.org/techniques/skipnav/) is a link placed at the top of a page which allows screen readers or keyboard-only users to jump straight to the main content. It effectively "skips" over all navigational links and menus at the top of the page. Skip links are especially useful to keyboard users who don't use a screen reader, as these users don’t usually have access to other modes of quick navigation (like landmarks and headings). 14.19% of the pages in our sample were found to have skip links.
 
 If you’d like to see a skip link in action for yourself, you can! Just do a quick Google search and hit "tab" as soon as you land on the search result pages. You’ll be greeted with a previously hidden link just like the one in Figure 7.
 
-![Figure 7. Screenshot of Google search results page for search "http archive". The visible “Skip to main content” link is surrounded by a blue focus highlight and a yellow overlayed box with a red arrow pointing to the skip link reads “A skip link on google.com”.](./../../../static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png)
+<figure markdown>
+  ![Figure 7. Screenshot of Google search results page for search "http archive". The visible “Skip to main content” link is surrounded by a blue focus highlight and a yellow overlayed box with a red arrow pointing to the skip link reads “A skip link on google.com”.](/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png)
+  <figcaption>Figure 7. What a skip link looks like on google.com.</figcaption>
+</figure>
 
-*Figure 7. What a skip link looks like on google.com*
-
-**_Note:_** It’s hard to accurately determine what a skip link is when analyzing sites. For this analysis, if we found an anchor link (href=#heading1) within the first 3 links on the page, we defined this as a page with a skip link. So, this 14.19% we reported is an upper bound and could be far worse.
+It’s hard to accurately determine what a skip link is when analyzing sites. For this analysis, if we found an anchor link (`href=#heading1`) within the first 3 links on the page, we defined this as a page with a skip link. So, this 14.19% we reported is an upper bound and could be far worse.
 
 ### Shortcuts
 
@@ -181,9 +187,9 @@ Shortcut keys set via the [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1
 
 2. Giving a certain element on the page focus. For example, shifting focus to a certain input on the page, allowing a user to then start typing into it.
 
-Use of [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) was almost absent from our sample, with it only being used on **only 159 sites out of over 4 million** analyzed. The [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attribute was used more frequently, being found on **2.47% of web pages** (1.74% on mobile). We believe the higher usage of shortcuts on desktop is due to developers expecting mobile sites to only be accessed via a touch screen and not a keyboard.
+Use of [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) was almost absent from our sample, with it only being used on only 159 sites out of over 4 million analyzed. The [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attribute was used more frequently, being found on 2.47% of web pages (1.74% on mobile). We believe the higher usage of shortcuts on desktop is due to developers expecting mobile sites to only be accessed via a touch screen and not a keyboard.
 
-What was especially surprising here is **15.56% of mobile and 13.03% of desktop **sites that use shortcut keys assign the same shortcut to multiple different elements. This means browsers have to guess which element should be the one to own this shortcut key.
+What was especially surprising here is 15.56% of mobile and 13.03% of desktop sites that use shortcut keys assign the same shortcut to multiple different elements. This means browsers have to guess which element should be the one to own this shortcut key.
 
 ### Tables
 
@@ -193,15 +199,15 @@ Tables are one of the primary ways we organize and express large amounts of data
 
 Depending on the way a particular table is structured, the use of table headers makes it easier to read across columns or rows without losing context on what data that particular column or row refers to. Having to navigate a table lacking in header rows or columns is a subpar experience for a screen reader user. This is because it’s hard for a screen reader user to keep track of their place in a table that is absent of headers, especially when that table is quite large.
 
-To mark up table headers, simply use the [`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th) tag (instead of [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)), or either of the ARIA [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) or [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) roles. Only **24.5% of pages** with tables were found to markup their tables with either of these methods. So, the three quarters of pages choosing to include tables without headers are creating serious challenges for screen reader users.
+To mark up table headers, simply use the [`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th) tag (instead of [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)), or either of the ARIA [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) or [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) roles. Only 24.5% of pages with tables were found to markup their tables with either of these methods. So, the three quarters of pages choosing to include tables without headers are creating serious challenges for screen reader users.
 
-**_Note:_** The use of *columnheader* and *rowheader* roles was almost non-existent with only 677 total sites using them (0.058% of the over 4 million pages we analyzed).
+Using `<th>` and `<td>` was by far the most commonly used method. The use of `columnheader` and `rowheader` roles was almost non-existent with only 677 total sites using them (0.058% of the over 4 million pages we analyzed).
 
 #### Captions
 
 Table captions via the [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) element are helpful in giving more context for readers of all kinds. A caption can prepare a reader to take in the information your table is sharing, and it can be especially useful for people who may get distracted or interrupted easily. They are also useful for people who may lose their place within a large table, such as a screen reader user or someone with a learning or intellectual disability. The easier you can make it for readers to understand what they’re analyzing, the better.
 
-Despite this, only **4.32% of pages** with tables provide captions.
+Despite this, only 4.32% of pages with tables provide captions.
 
 ## Compatibility with assistive technologies
 
@@ -209,25 +215,25 @@ Despite this, only **4.32% of pages** with tables provide captions.
 
 One of the most popular and widely used specifications for accessibility on the web is the [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA) standard. This standard offers a large array of additional HTML attributes to help convey the purpose behind visual elements (i.e., their semantic meaning), and what kinds of actions they’re capable of.
 
-Using ARIA correctly and appropriately can be challenging. For example, of pages making use of ARIA attributes, we found **12.31%** have invalid values assigned to their attributes. This is problematic because any mistake in the use of an ARIA attribute has no visual effect on the page. Sometimes errors can be detected by using an automated validation tool, but generally they require hands-on use of real assistive software (like a screen reader). This section will examine how ARIA is used on the web, and specifically which parts of the standard are most prevalent.
+Using ARIA correctly and appropriately can be challenging. For example, of pages making use of ARIA attributes, we found 12.31% have invalid values assigned to their attributes. This is problematic because any mistake in the use of an ARIA attribute has no visual effect on the page. Sometimes errors can be detected by using an automated validation tool, but generally they require hands-on use of real assistive software (like a screen reader). This section will examine how ARIA is used on the web, and specifically which parts of the standard are most prevalent.
 
-```<insert graphic of metric 09_19b>```
-
-*Figure 8. Percent of total pages vs ARIA attribute*
-
-Alt text: Figure 8. Vertical bar chart titled "Percent of total pages vs ARIA attribute" displaying percentage data, ranging from 0 to 25 in increments of 5, vs. bars representing each attribute. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%
+<figure>
+  <iframe aria-labelledby="fig8-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"></iframe>
+  <div id="fig8-caption" class="visually-hidden">Figure 8. Vertical bar chart titled "Percentage of pages using each ARIA attribute" displaying percentage data, ranging from 0 to 25 in increments of 5, vs. bars representing each attribute. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%.</div>
+  <figcaption>Figure 8. Percentage of pages using each ARIA attribute.</figcaption>
+</figure>
 
 #### The `role` attribute
 
 The "role" attribute is the most important attribute in the entire ARIA specification. It's used to inform the browser what the purpose of a given HTML element is (i.e., the semantic meaning). For example, a `<div>` element, visually styled as a button using CSS, should be given the ARIA role of `button`.
 
-Currently, **46.91% of pages** use at least one ARIA role attribute. In Figure 9 below, we’ve compiled a list of the top ten most widely used ARIA role values.
+Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9 below, we’ve compiled a list of the top ten most widely used ARIA role values.
 
-```<insert graphic of metric 09_05>```
-
-*Figure 9. Top 10 aria roles*
-
-Alt text: Figure 9. Horizontal bar chart titled "percent of pages using role" with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%
+<figure>
+  <iframe aria-labelledby="fig9-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"></iframe>
+  <div id="fig9-caption" class="visually-hidden">Figure 9. Horizontal bar chart titled "percent of pages using role" with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%</div>
+  <figcaption>Figure 9. Percent of pages using role.</figcaption>
+</figure>
 
 Looking at the results in Figure 9, we can draw two surprising conclusions:
 
@@ -247,27 +253,27 @@ The relative popularity of the [dialog role](https://developer.mozilla.org/en-US
 
 The most common way that a user interacts with a website is through its controls, such as links or buttons, in order to perform an action such as navigating to another part of the website, or changing what is displayed on the current page. Many times, screen reader users are unable to tell what action a control, such as a button or a link, is going to perform once activated. The reason is often the fact that the control lacks a textual label. For example, it might convey its meaning only in a graphical way, such as a button displaying a left-pointing arrow to signify that it is the "Back" button, or showing an “X” to signify that it is the “Close” button.
 
-In our sample, a lot of websites use buttons or links. From those, **only around a quarter, or 24.39%,** include textual labels with these controls. If a control is not labeled, a screen reader user might read something generic, such as the word "button," instead of a meaningful name such as “Search”. This makes it difficult for screen reader users to understand how to use the website.
+In our sample, a lot of websites use buttons or links. From those, only around a quarter (24.39%) include textual labels with these controls. If a control is not labeled, a screen reader user might read something generic, such as the word "button," instead of a meaningful name such as “Search”. This makes it difficult for screen reader users to understand how to use the website.
 
 Buttons and links are almost always included in the tab order and thus have extremely high visibility. Navigating through a website using the tab key is one of the primary ways through which users who use only the keyboard explore your website. So, a user is sure to encounter your unlabeled buttons and links if they are moving through your website using the tab key.
 
 ### Accessibility of Form Controls
 
-Filling out forms is a task many of us do every single day. Whether we’re shopping, booking travel, or applying for a job, forms are the main way users share information with web pages. Because of this, ensuring your forms are accessible is incredibly important. The simplest means of accomplishing this is by providing labels (via the [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label), [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) or [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)) for each of your inputs. Sadly, only **22.33% of pages **provide labels for all their form inputs, meaning 4 out of every 5 pages have forms that may be next to impossible to fill out.
+Filling out forms is a task many of us do every single day. Whether we’re shopping, booking travel, or applying for a job, forms are the main way users share information with web pages. Because of this, ensuring your forms are accessible is incredibly important. The simplest means of accomplishing this is by providing labels (via the [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label), [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) or [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)) for each of your inputs. Sadly, only 22.33% of pages provide labels for all their form inputs, meaning 4 out of every 5 pages have forms that may be next to impossible to fill out.
 
 #### Indicators of required and invalid fields
 
-When we come across a field with a big red asterisk next to it, we know it’s a required field. Or when we hit submit and are looking back through the form, anything highlighted in a different color needs to be corrected and then resubmitted. However, people with low or no vision cannot rely on these visual cues, which is why the HTML input attributes *required, aria-required* and* aria-invalid* are so important. They provide screen readers with the equivalent of the red asterisks and red highlighted fields. As a nice bonus, when you inform browsers what fields are required, they’ll [validate parts of your forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) for you. No JavaScript required.
+When we come across a field with a big red asterisk next to it, we know it’s a required field. Or when we hit submit and are looking back through the form, anything highlighted in a different color needs to be corrected and then resubmitted. However, people with low or no vision cannot rely on these visual cues, which is why the HTML input attributes `required`, `aria-required` and `aria-invalid` are so important. They provide screen readers with the equivalent of the red asterisks and red highlighted fields. As a nice bonus, when you inform browsers what fields are required, they’ll [validate parts of your forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) for you. No JavaScript required.
 
-Of pages using forms: **21.73% use required or aria-required** when marking up required fields. Only one in every five sites make use of this. This is a simple step to make your site accessible, and unlocks helpful browser features for all users.
+Of pages using forms: 21.73% use required or aria-required when marking up required fields. Only one in every five sites make use of this. This is a simple step to make your site accessible, and unlocks helpful browser features for all users.
 
-**_Note:_** We also found 3.52% of sites with forms make use of *aria-invalid.* However, since many forms only make use of this field once incorrect information is submitted, we could not ascertain the true percentage of sites using this markup.
+We also found 3.52% of sites with forms make use of `aria-invalid`. However, since many forms only make use of this field once incorrect information is submitted, we could not ascertain the true percentage of sites using this markup.
 
 #### Duplicate IDs
 
 IDs can be used in HTML to link two elements together. For example, the [`<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) works this way. You specify the ID of the input field this label is describing and the browser links them together. The result? Users can now click on this label to focus on the input field, and screen readers will use this label as the description.
 
-Unfortunately, **34.62% of sites have duplicate IDs**, which means on many sites the ID specified by the user could refer to multiple different inputs. So when a user clicks on the label to select a field, they may end up [selecting something different](https://www.deque.com/blog/unique-id-attributes-matter/) than they intended. As you might imagine, this could have negative consequences in something like a shopping cart.
+Unfortunately, 34.62% of sites have duplicate IDs, which means on many sites the ID specified by the user could refer to multiple different inputs. So when a user clicks on the label to select a field, they may end up [selecting something different](https://www.deque.com/blog/unique-id-attributes-matter/) than they intended. As you might imagine, this could have negative consequences in something like a shopping cart.
 
 This issue is even more pronounced for screen readers because their users may not be able to visually double check what is selected. Plus, many ARIA attributes, such as [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute)  and [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), work similarly to the label element detailed above. So, to make your site accessible, removing all duplicate IDs is a good first step.
 
