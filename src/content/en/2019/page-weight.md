@@ -6,67 +6,63 @@ description: Page Weight chapter of the 2019 Web Almanac covering why page weigh
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-04T12:00:00+00:00:00 
+last_updated: 2019-11-04T12:00:00+00:00:00
 ---
 
 # Chapter 18 • Page Weight
 
-
 # Introduction
 
-The median web page is around 1900KB in size and contains 74 requests. That doesn’t sound too bad, right? 
+The median web page is around 1900KB in size and contains 74 requests. That doesn’t sound too bad, right?
 
 Here’s the issue with medians – they mask problems. By definition, they focus only on the middle of the distribution. We need to consider percentiles at both extremes to get an understanding of the bigger picture.
 
-Looking at the 90th percentile exposes the unpleasant stuff. Roughly 10% of the pages we’re pushing at the unsuspecting public are in excess of 6MB and contain 179 requests. This is, frankly, terrible. If this doesn’t seem terrible to you, then you definitely need to read this chapter. 
-
+Looking at the 90th percentile exposes the unpleasant stuff. Roughly 10% of the pages we’re pushing at the unsuspecting public are in excess of 6MB and contain 179 requests. This is, frankly, terrible. If this doesn’t seem terrible to you, then you definitely need to read this chapter.
 
 ## Myth: Page size doesn’t matter
 
 The common argument as to why page size doesn’t matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine… as long as you’re okay with ignoring the vast swathe of internet users who don’t have access to said high-speed internet and souped-up devices.
 
-Yes, you can build large, robust pages that feel fast… to some users. But you should care about page bloat in terms of how it affects all your users, especially mobile-only users who are dealing with bandwidth constraints or data limits. 
+Yes, you can build large, robust pages that feel fast… to some users. But you should care about page bloat in terms of how it affects all your users, especially mobile-only users who deal with bandwidth constraints or data limits.
 
-(Check out Tim Kadlec’s fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost – in dollars and Gross National Income per capita – of your pages in countries around the world. It's an eye-opener. For instance, Amazon’s home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day’s wages just to visit a few dozen pages?)  
-
+<aside class="note">Check out Tim Kadlec’s fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost – in dollars and Gross National Income per capita – of your pages in countries around the world. It's an eye-opener. For instance, Amazon’s home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day’s wages just to visit a few dozen pages?</aside>
 
 ## More bandwidth isn’t a magic bullet for web performance
 
-Even if more people had access to better devices and cheaper connections, that wouldn’t be a complete solution. Double the bandwidth doesn't equal twice as fast. This assumption has had holes poked in it a number of times ([such as this example](https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance), which demonstrated that increasing bandwidth by up to 1233% made pages just 55% faster). 
+Even if more people had access to better devices and cheaper connections, that wouldn’t be a complete solution. Double the bandwidth doesn't mean twice as fast. In fact, it has been demonstrated that increasing bandwidth by up to 1233% only made pages 55% faster ([see the study here](https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance)).
 
-The problem is latency. Most of our networking protocols require a lot of round-trips. Each of those round trips imposes a latency penalty. Latency is governed, at the end of the day, by the speed of light. For as long as latency continues to be a performance problem (which is to say, for the foreseeable future), the major performance culprit will continue to be the fact that a typical web page today contains a hundred or so assets hosted on dozens of different servers. Many of these assets are unoptimized, unmeasured, unmonitored – and therefore unpredictable.
-
+The problem is latency. Most of our networking protocols require a lot of round-trips, and each of those round trips imposes a latency penalty. For as long as latency continues to be a performance problem (which is to say, for the foreseeable future), the major performance culprit will continue to be that a typical web page today contains a hundred or so assets hosted on dozens of different servers. Many of these assets are unoptimized, unmeasured, unmonitored – and therefore unpredictable.
 
 ## What types of assets does the HTTP Archive track, and how much do they matter?
 
 Here’s a quick glossary of the page composition metrics the HTTP Archive tracks, and how much they matter in terms of performance and user experience:
 
-**Total size** – This is the total weight in kilobytes of the page. It matters especially to mobile users who have limited and/or metered data.
+- **Total size** – This is the total weight in kilobytes of the page. It matters especially to mobile users who have limited and/or metered data.
 
-**HTML** – HTML is typically the smallest resource on the page. Its performance risk is negligible. 
+- **HTML** – HTML is typically the smallest resource on the page. Its performance risk is negligible.
 
-**Images** – Unoptimized images are often the greatest contributor to page bloat. Looking at the 90th percentile of the HTTP Archive data gathered for the Almanac, images accounted for a whopping 5220KB of a roughly 7MB page. In other words, images comprised almost 75% of the total page weight. The number of images on a page has been linked to lower conversion rates on retail sites. (More on that later.)
+- **Images** – Unoptimized images are often the greatest contributor to page bloat. Looking at the 90th percentile of the HTTP Archive data gathered for the Almanac, images accounted for a whopping 5220KB of a roughly 7MB page. In other words, images comprised almost 75% of the total page weight. And if that already wasn't enough, the number of images on a page has been linked to lower conversion rates on retail sites. (More on that later.)
 
-**JavaScript** – JavaScript matters. A page can have a relatively low JS weight but still suffer from JS-inflicted performance problems. A single 100KB third-party script can wreak havoc with your page. The more scripts on your page, the greater the risk. 
+- **JavaScript** – JavaScript matters. A page can have a relatively low JS weight but still suffer from JS-inflicted performance problems. Even a single 100KB third-party script can wreak havoc with your page. The more scripts on your page, the greater the risk.
 
-It's not enough to focus solely on blocking JS. It's possible for your pages to contain zero blocking resources and still have less-than-optimal performance because of how your JavaScript is rendered. That's why it's so important to understand CPU usage on your pages – because JavaScript consumes more CPU than all other browser activities combined. While JS blocks the CPU, the browser can't respond to user input. This creates what’s commonly called “jank” – that annoying feeling of jittery, unstable page rendering. 
+  It's not enough to focus solely on blocking JS. It's possible for your pages to contain zero blocking resources and still have less-than-optimal performance because of how your JavaScript is rendered. That's why it's so important to understand CPU usage on your pages – because JavaScript consumes more CPU than all other browser activities combined. While JS blocks the CPU, the browser can't respond to user input. This creates what’s commonly called “jank” – that annoying feeling of jittery, unstable page rendering.
 
-**CSS** – Stylesheets are an incredible boon for modern web pages. They solve a myriad of design problems, from browser compatibility to design maintenance and updating. Without stylesheets, we wouldn’t have great things like responsive design. But, like JavaScript, CSS doesn’t have to be bulky to cause problems. Poorly executed stylesheets can create a host of performance problems, ranging from stylesheets that take too long to download and parse, to improperly placed stylesheets that block the rest of the page from rendering. And like JS, more CSS files equals more potential trouble.
+- **CSS** – Stylesheets are an incredible boon for modern web pages. They solve a myriad of design problems, from browser compatibility to design maintenance and updating. Without stylesheets, we wouldn’t have great things like responsive design. But, like JavaScript, CSS doesn’t have to be bulky to cause problems. Poorly executed stylesheets can create a host of performance problems, ranging from stylesheets that take too long to download and parse, to improperly placed stylesheets that block the rest of the page from rendering. And like JS, more CSS files equals more potential trouble.
 
 
 ## Bigger, complex pages can be bad for your business
 
-Let’s assume you’re not a heartless monster who doesn’t care about your site’s visitors. But if you are, you should know that serving bigger, more complex pages hurts you, too. That was one of the findings of a [Google-led machine-learning study](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/) that gathered over a million beacons worth of real user data from retail sites. 
+Let’s assume you’re not a heartless monster who doesn’t care about your site’s visitors. But if you are, you should know that serving bigger, more complex pages hurts you, too. That was one of the findings of a [Google-led machine-learning study](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/) that gathered over a million beacons worth of real user data from retail sites.
 
 There were three really important takeaways from Google’s research:
 
-**1. The total number of elements on a page was the greatest predictor of conversions. **Hopefully this doesn’t come as a huge surprise to you, given what we’ve just covered about the performance risks imposed by the various assets that make up a modern web page. 
+**1. The total number of elements on a page was the greatest predictor of conversions. **Hopefully this doesn’t come as a huge surprise to you, given what we’ve just covered about the performance risks imposed by the various assets that make up a modern web page.
 
 **2. The number of images on a page was the second greatest predictor of conversions.** Sessions that converted users had 38% fewer images than sessions that didn't convert.
 
 ![Chart showing 19 converted session vs. 31 non-converted sessions](../../../static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png)
 
-**3. Sessions with more scripts were less likely to convert.** What’s really fascinating about this chart isn’t just the sharp drop-off in conversion probability after about 240 scripts. It’s the huge longtail that demonstrates how many retail sessions contained up to 1440 scripts! 
+**3. Sessions with more scripts were less likely to convert.** What’s really fascinating about this chart isn’t just the sharp drop-off in conversion probability after about 240 scripts. It’s the huge longtail that demonstrates how many retail sessions contained up to 1440 scripts!
 
 ![Chart showing conversion rate dropping off as scripts increase](../../../static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png)
 
@@ -499,7 +495,7 @@ The median desktop site makes 74 requests; the median mobile site makes 69 reque
 
 The preceding analysis has focused on analyzing page weight through the lens of resource type. However, in the case of images and media, it’s possible to dive a level deeper and look at the differences in resource size between specific file formats.
 
-### File size by image format (Mobile) 
+### File size by image format (Mobile)
 
 <table>
   <tr>
@@ -568,7 +564,7 @@ Some of these results, particularly those for GIFs, are really surprising. If GI
 
 The data above obscures the fact that the vast majority of GIFs on the web are actually tiny 1x1 pixels. These pixels are typically used as “tracking pixels”, but can also be used as a hack to generate various CSS effects. While these 1x1 pixels are images in the literal sense, the spirit of their usage is probably closer to what we’d associate with scripts or CSS.
 
-Further investigation into the data set revealed that 62% of GIFs are 43 bytes or smaller (43 bytes is the size of a transparent, 1x1 pixel GIF) and 84% of GIFs are 1 KB or smaller. 
+Further investigation into the data set revealed that 62% of GIFs are 43 bytes or smaller (43 bytes is the size of a transparent, 1x1 pixel GIF) and 84% of GIFs are 1 KB or smaller.
 
 
 ![Chart showing cumulative distriubtion function of GIF file sizes](../../../static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png)
