@@ -164,7 +164,7 @@
     </p>
 
     <p>
-      The mission of the Web Almanac is to take the treasure trove of insights that would otherwise be accessible only to intrepid data miners and package it up in a way that's easy to understand. This is made possible with the help of industry experts who can make sense of the data and tell us what it means. Each of the 20 chapters in the Web Almanac focuses on a specific aspect of the web and it's authored and peer reviewed by experts in their field. The strength of the Web Almanac flows directly from the expertise of the people who write it.
+      The mission of the Web Almanac is to take the treasure trove of insights that would otherwise be accessible only to intrepid data miners and package it up in a way that's easy to understand. This is made possible with the help of industry experts who can make sense of the data and tell us what it means. Each of the 20 chapters in the Web Almanac focuses on a specific aspect of the web and is authored and peer reviewed by experts in their field. The strength of the Web Almanac flows directly from the expertise of the people who write it.
     </p>
 
     <p>
@@ -201,9 +201,14 @@
       {% endfor %}
       <section class="part">
         <h2 class="part-name">Appendix</h2>
-        <div class="chapters"><div class="chapter">
-          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
-        </div></div>
+        <div class="chapters">
+          <div class="chapter">
+            <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+          </div>
+          <div class="chapter">
+            <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+          </div>
+        </div>
       </section>
     </div>
 
