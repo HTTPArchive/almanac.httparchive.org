@@ -9,95 +9,81 @@ published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-04T12:00:00+00:00:00
 ---
 
-# Chapter 18 • Page Weight
+## Introduction
 
-# Introduction
+The median web page is around 1900KB in size and contains 74 requests. That doesn't sound too bad, right?
 
-The median web page is around 1900KB in size and contains 74 requests. That doesn’t sound too bad, right?
+Here's the issue with medians—they mask problems. By definition, they focus only on the middle of the distribution. We need to consider percentiles at both extremes to get an understanding of the bigger picture.
 
-Here’s the issue with medians – they mask problems. By definition, they focus only on the middle of the distribution. We need to consider percentiles at both extremes to get an understanding of the bigger picture.
+Looking at the 90th percentile exposes the unpleasant stuff. Roughly 10% of the pages we're pushing at the unsuspecting public are in excess of 6MB and contain 179 requests. This is, frankly, terrible. If this doesn't seem terrible to you, then you definitely need to read this chapter.
 
-Looking at the 90th percentile exposes the unpleasant stuff. Roughly 10% of the pages we’re pushing at the unsuspecting public are in excess of 6MB and contain 179 requests. This is, frankly, terrible. If this doesn’t seem terrible to you, then you definitely need to read this chapter.
+### Myth: Page size doesn't matter
 
-## Myth: Page size doesn’t matter
+The common argument as to why page size doesn't matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine, as long as you're okay with ignoring the vast swathe of internet users who don't have access to said high-speed internet and souped-up devices.
 
-The common argument as to why page size doesn’t matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine… as long as you’re okay with ignoring the vast swathe of internet users who don’t have access to said high-speed internet and souped-up devices.
+Yes, you can build large robust pages that feel fast… to some users. But you should care about page bloat in terms of how it affects all your users, especially mobile-only users who deal with bandwidth constraints or data limits.
 
-Yes, you can build large, robust pages that feel fast… to some users. But you should care about page bloat in terms of how it affects all your users, especially mobile-only users who deal with bandwidth constraints or data limits.
+<aside class="note">Check out Tim Kadlec's fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost—in dollars and Gross National Income per capita—of your pages in countries around the world. It's an eye-opener. For instance, Amazon's home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day's wages just to visit a few dozen pages?</aside>
 
-<aside class="note">Check out Tim Kadlec’s fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost – in dollars and Gross National Income per capita – of your pages in countries around the world. It's an eye-opener. For instance, Amazon’s home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day’s wages just to visit a few dozen pages?</aside>
+### More bandwidth isn't a magic bullet for web performance
 
-## More bandwidth isn’t a magic bullet for web performance
+Even if more people had access to better devices and cheaper connections, that wouldn't be a complete solution. Double the bandwidth doesn't mean twice as fast. In fact, it has been demonstrated that increasing bandwidth by up to 1233% only made pages 55% faster ([see the study here](https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance)).
 
-Even if more people had access to better devices and cheaper connections, that wouldn’t be a complete solution. Double the bandwidth doesn't mean twice as fast. In fact, it has been demonstrated that increasing bandwidth by up to 1233% only made pages 55% faster ([see the study here](https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance)).
+The problem is latency. Most of our networking protocols require a lot of round-trips, and each of those round trips imposes a latency penalty. For as long as latency continues to be a performance problem (which is to say, for the foreseeable future), the major performance culprit will continue to be that a typical web page today contains a hundred or so assets hosted on dozens of different servers. Many of these assets are unoptimized, unmeasured, unmonitored—and therefore unpredictable.
 
-The problem is latency. Most of our networking protocols require a lot of round-trips, and each of those round trips imposes a latency penalty. For as long as latency continues to be a performance problem (which is to say, for the foreseeable future), the major performance culprit will continue to be that a typical web page today contains a hundred or so assets hosted on dozens of different servers. Many of these assets are unoptimized, unmeasured, unmonitored – and therefore unpredictable.
+### What types of assets does the HTTP Archive track, and how much do they matter?
 
-## What types of assets does the HTTP Archive track, and how much do they matter?
+Here's a quick glossary of the page composition metrics the HTTP Archive tracks, and how much they matter in terms of performance and user experience:
 
-Here’s a quick glossary of the page composition metrics the HTTP Archive tracks, and how much they matter in terms of performance and user experience:
+- **Total size** - This is the total weight in kilobytes of the page. It matters especially to mobile users who have limited and/or metered data.
 
-- **Total size** – This is the total weight in kilobytes of the page. It matters especially to mobile users who have limited and/or metered data.
+- **HTML** - HTML is typically the smallest resource on the page. Its performance risk is negligible.
 
-- **HTML** – HTML is typically the smallest resource on the page. Its performance risk is negligible.
+- **Images** - Unoptimized images are often the greatest contributor to page bloat. Looking at the 90th percentile of data gathered for the Almanac, images accounted for a whopping 5220KB of a roughly 7MB page. In other words, images comprised almost 75% of the total page weight. And if that already wasn't enough, the number of images on a page has been linked to lower conversion rates on retail sites. (More on that later.)
 
-- **Images** – Unoptimized images are often the greatest contributor to page bloat. Looking at the 90th percentile of the HTTP Archive data gathered for the Almanac, images accounted for a whopping 5220KB of a roughly 7MB page. In other words, images comprised almost 75% of the total page weight. And if that already wasn't enough, the number of images on a page has been linked to lower conversion rates on retail sites. (More on that later.)
+- **JavaScript** - JavaScript matters. A page can have a relatively low JS weight but still suffer from JS-inflicted performance problems. Even a single 100KB third-party script can wreak havoc with your page. The more scripts on your page, the greater the risk.
 
-- **JavaScript** – JavaScript matters. A page can have a relatively low JS weight but still suffer from JS-inflicted performance problems. Even a single 100KB third-party script can wreak havoc with your page. The more scripts on your page, the greater the risk.
+  It's not enough to focus solely on blocking JS. It's possible for your pages to contain zero blocking resources and still have less-than-optimal performance because of how your JavaScript is rendered. That's why it's so important to understand CPU usage on your pages—because JavaScript consumes more CPU than all other browser activities combined. While JS blocks the CPU, the browser can't respond to user input. This creates what's commonly called "jank"—that annoying feeling of jittery, unstable page rendering.
 
-  It's not enough to focus solely on blocking JS. It's possible for your pages to contain zero blocking resources and still have less-than-optimal performance because of how your JavaScript is rendered. That's why it's so important to understand CPU usage on your pages – because JavaScript consumes more CPU than all other browser activities combined. While JS blocks the CPU, the browser can't respond to user input. This creates what’s commonly called “jank” – that annoying feeling of jittery, unstable page rendering.
+- **CSS** - Stylesheets are an incredible boon for modern web pages. They solve a myriad of design problems, from browser compatibility to design maintenance and updating. Without stylesheets, we wouldn't have great things like responsive design. But, like JavaScript, CSS doesn't have to be bulky to cause problems. Poorly executed stylesheets can create a host of performance problems, ranging from stylesheets taking too long to download and parse, to improperly placed stylesheets that block the rest of the page from rendering. And similarly to JS, more CSS files equals more potential trouble.
 
-- **CSS** – Stylesheets are an incredible boon for modern web pages. They solve a myriad of design problems, from browser compatibility to design maintenance and updating. Without stylesheets, we wouldn’t have great things like responsive design. But, like JavaScript, CSS doesn’t have to be bulky to cause problems. Poorly executed stylesheets can create a host of performance problems, ranging from stylesheets that take too long to download and parse, to improperly placed stylesheets that block the rest of the page from rendering. And like JS, more CSS files equals more potential trouble.
+### Bigger, complex pages can be bad for your business
 
+Let's assume you're not a heartless monster who doesn't care about your site's visitors. But if you are, you should know that serving bigger, more complex pages hurts you, too. That was one of the findings of a [Google-led machine-learning study](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/) that gathered over a million beacons worth of real user data from retail sites.
 
-## Bigger, complex pages can be bad for your business
+There were three really important takeaways from this research by Google:
 
-Let’s assume you’re not a heartless monster who doesn’t care about your site’s visitors. But if you are, you should know that serving bigger, more complex pages hurts you, too. That was one of the findings of a [Google-led machine-learning study](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/) that gathered over a million beacons worth of real user data from retail sites.
+1. **The total number of elements on a page was the greatest predictor of conversions.** Hopefully this doesn't come as a huge surprise to you, given what we've just covered about the performance risks imposed by the various assets that make up a modern web page.
 
-There were three really important takeaways from Google’s research:
+2. **The number of images on a page was the second greatest predictor of conversions.** Sessions which converted users had 38% fewer images than sessions that didn't convert.
 
-**1. The total number of elements on a page was the greatest predictor of conversions. **Hopefully this doesn’t come as a huge surprise to you, given what we’ve just covered about the performance risks imposed by the various assets that make up a modern web page.
+![Chart showing 19 converted sessions vs. 31 non-converted sessions](/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png)
 
-**2. The number of images on a page was the second greatest predictor of conversions.** Sessions that converted users had 38% fewer images than sessions that didn't convert.
+3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the huge longtail that demonstrates how many retail sessions contained up to 1440 scripts!
 
-![Chart showing 19 converted session vs. 31 non-converted sessions](../../../static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png)
+![Chart showing conversion rate dropping off as scripts increase](/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png)
 
-**3. Sessions with more scripts were less likely to convert.** What’s really fascinating about this chart isn’t just the sharp drop-off in conversion probability after about 240 scripts. It’s the huge longtail that demonstrates how many retail sessions contained up to 1440 scripts!
+Now that we've covered why page size and complexity matter, let's get into some juicy HTTP Archive stats so we can better understand the current state of the web and the impact of page bloat.
 
-![Chart showing conversion rate dropping off as scripts increase](../../../static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png)
+## Analysis
 
+The statistics in this section are all based on the _transfer size_ of a page and its resources. Not all resources on the web are compressed before sending, but if they are, this analysis uses the compressed size.
 
-Now that we’ve covered why page size and complexity matter, let’s get into some juicy HTTP Archive stats so we can better understand the current state of the web and the impact of page bloat.
-
-
-# Analysis
-
-Note: The statistics in this section are all based on the _transfer size_ of a page and its resources. Not all resources on the web are compressed before sending, but if they are, this analysis uses the compressed size.
-
-
-## Page Weight
+### Page Weight
 
 Roughly speaking, mobile sites are about 10% smaller than their desktop counterparts. The majority of the difference is due to mobile sites loading less image bytes than their desktop counterparts.
 
-
-### Mobile
+#### Mobile
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>Total (KB)</strong>
-   </td>
-   <td><strong>HTML (KB)</strong>
-   </td>
-   <td><strong>JS (KB)</strong>
-   </td>
-   <td><strong>CSS (KB)</strong>
-   </td>
-   <td><strong>Image (KB)</strong>
-   </td>
-   <td><strong>Document (KB)</strong>
-   </td>
+   <th>Percentile</th>
+   <th>Total (KB)</th>
+   <th>HTML (KB)</th>
+   <th>JS (KB)</th>
+   <th>CSS (KB)</th>
+   <th>Image (KB)</th>
+   <th>Document (KB)</th>
   </tr>
   <tr>
     <td>90</td>
@@ -146,24 +132,17 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
   </tr>
 </table>
 
-### Desktop
+#### Desktop
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>Total (KB)</strong>
-   </td>
-   <td><strong>HTML (KB)</strong>
-   </td>
-   <td><strong>JS (KB)</strong>
-   </td>
-   <td><strong>CSS (KB)</strong>
-   </td>
-   <td><strong>Image (KB)</strong>
-   </td>
-   <td><strong>Document (KB)</strong>
-   </td>
+   <th>Percentile</th>
+   <th>Total (KB)</th>
+   <th>HTML (KB)</th>
+   <th>JS (KB)</th>
+   <th>CSS (KB)</th>
+   <th>Image (KB)</th>
+   <th>Document (KB)</th>
   </tr>
   <tr>
     <td>90</td>
@@ -212,30 +191,23 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
   </tr>
 </table>
 
-## Page Weight Over Time
+### Page Weight Over Time
 
-Over the past year the median size of a desktop site increased by 434KB; the median size of a mobile site increased by 179KB. Images are overwhelmingly driving this increase.
+Over the past year the median size of a desktop site increased by 434KB, and the median size of a mobile site increased by 179KB. Images are overwhelmingly driving this increase.
 
-### Mobile
+#### Mobile
 
 Change (KB) in page size vs. 2018
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>Total (KB)</strong>
-   </td>
-   <td><strong>HTML (KB)</strong>
-   </td>
-   <td><strong>JS (KB)</strong>
-   </td>
-   <td><strong>CSS (KB)</strong>
-   </td>
-   <td><strong>Image (KB)</strong>
-   </td>
-   <td><strong>Document (KB)</strong>
-   </td>
+   <th>Percentile</th>
+   <th>Total (KB)</th>
+   <th>HTML (KB)</th>
+   <th>JS (KB)</th>
+   <th>CSS (KB)</th>
+   <th>Image (KB)</th>
+   <th>Document (KB)</th>
   </tr>
   <tr>
     <td>90</td>
@@ -284,27 +256,19 @@ Change (KB) in page size vs. 2018
   </tr>
 </table>
 
-### Desktop
+#### Desktop
 
 Change (KB) in page size vs. 2018
 
-
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>Total (KB)</strong>
-   </td>
-   <td><strong>HTML (KB)</strong>
-   </td>
-   <td><strong>JS (KB)</strong>
-   </td>
-   <td><strong>CSS (KB)</strong>
-   </td>
-   <td><strong>Image (KB)</strong>
-   </td>
-   <td><strong>Document (KB)</strong>
-   </td>
+   <th>Percentile</th>
+   <th>Total (KB)</th>
+   <th>HTML (KB)</th>
+   <th>JS (KB)</th>
+   <th>CSS (KB)</th>
+   <th>Image (KB)</th>
+   <th>Document (KB)</th>
   </tr>
   <tr>
     <td>90</td>
@@ -353,30 +317,23 @@ Change (KB) in page size vs. 2018
   </tr>
 </table>
 
-For a longer-term perspective on how page weight has changed over time, check out this [graph](https://httparchive.org/reports/page-weight#bytesTotal) on the main HTTP Archive site. Median page size has grown at a fairly constant rate since the HTTP Archive stated tracking this metric in November 2010 and the increase in page weight observed over the past year is consistent with this.
+For a longer-term perspective on how page weight has changed over time, check out this [graph](https://httparchive.org/reports/page-weight#bytesTotal) on the main HTTP Archive site. Median page size has grown at a fairly constant rate since the HTTP Archive started tracking this metric in November 2010 and the increase in page weight observed over the past year is consistent with this.
 
-## Page Requests
+### Page Requests
 
-The median desktop site makes 74 requests; the median mobile site makes 69 requests. Images and JavaScript make up the majority of these requests. There was no significant change in the quantity or distribution of requests over the last year.
+The median desktop site makes 74 requests, and the median mobile site makes 69—with images and JavaScript accounting for the majority of these requests.  There was no significant change in the quantity or distribution of requests over the last year.
 
-### Mobile
+#### Mobile
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>Total</strong>
-   </td>
-   <td><strong>HTML</strong>
-   </td>
-   <td><strong>JS</strong>
-   </td>
-   <td><strong>CSS</strong>
-   </td>
-   <td><strong>Image</strong>
-   </td>
-   <td><strong>Document</strong>
-   </td>
+   <th>Percentile</th>
+   <th>Total</th>
+   <th>HTML</th>
+   <th>JS</th>
+   <th>CSS</th>
+   <th>Image</th>
+   <th>Document</th>
   </tr>
   <tr>
     <td>90</td>
@@ -425,24 +382,17 @@ The median desktop site makes 74 requests; the median mobile site makes 69 reque
   </tr>
 </table>
 
-### Desktop
+#### Desktop
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>Total</strong>
-   </td>
-   <td><strong>HTML</strong>
-   </td>
-   <td><strong>JS</strong>
-   </td>
-   <td><strong>CSS</strong>
-   </td>
-   <td><strong>Image</strong>
-   </td>
-   <td><strong>Document</strong>
-   </td>
+   <th>Percentile</th>
+   <th>Total</th>
+   <th>HTML</th>
+   <th>JS</th>
+   <th>CSS</th>
+   <th>Image</th>
+   <th>Document</th>
   </tr>
   <tr>
     <td>90</td>
@@ -491,28 +441,21 @@ The median desktop site makes 74 requests; the median mobile site makes 69 reque
   </tr>
 </table>
 
-## File Formats
+### File Formats
 
-The preceding analysis has focused on analyzing page weight through the lens of resource type. However, in the case of images and media, it’s possible to dive a level deeper and look at the differences in resource size between specific file formats.
+The preceding analysis has focused on analyzing page weight through the lens of resource type. However, in the case of images and media, it's possible to dive a level deeper and look at the differences in resource size between specific file formats.
 
-### File size by image format (Mobile)
+#### File size by image format (Mobile)
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>GIF</strong>
-   </td>
-   <td><strong>ICO</strong>
-   </td>
-   <td><strong>JPG</strong>
-   </td>
-   <td><strong>PNG</strong>
-   </td>
-   <td><strong>SVG</strong>
-   </td>
-   <td><strong>WEBP</strong>
-   </td>
+   <th>Percentile</th>
+   <th>GIF</th>
+   <th>ICO</th>
+   <th>JPG</th>
+   <th>PNG</th>
+   <th>SVG</th>
+   <th>WEBP</th>
   </tr>
   <tr>
     <td>10</td>
@@ -562,36 +505,25 @@ The preceding analysis has focused on analyzing page weight through the lens of 
 
 Some of these results, particularly those for GIFs, are really surprising. If GIFs are so small, then why are they being replaced by formats like JPG, PNG, and WEBP?
 
-The data above obscures the fact that the vast majority of GIFs on the web are actually tiny 1x1 pixels. These pixels are typically used as “tracking pixels”, but can also be used as a hack to generate various CSS effects. While these 1x1 pixels are images in the literal sense, the spirit of their usage is probably closer to what we’d associate with scripts or CSS.
+The data above obscures the fact that the vast majority of GIFs on the web are actually tiny 1x1 pixels. These pixels are typically used as "tracking pixels", but can also be used as a hack to generate various CSS effects. While these 1x1 pixels are images in the literal sense, the spirit of their usage is probably closer to what we'd associate with scripts or CSS.
 
 Further investigation into the data set revealed that 62% of GIFs are 43 bytes or smaller (43 bytes is the size of a transparent, 1x1 pixel GIF) and 84% of GIFs are 1 KB or smaller.
 
-
-![Chart showing cumulative distriubtion function of GIF file sizes](../../../static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png)
-
+![Chart showing cumulative distriubtion function of GIF file sizes](/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png)
 
 The tables below show two different approaches to removing these tiny images from the data set: the first one is based on images with a file size greater than 100 bytes, the second is based on images with a file size greater than 1024 bytes.
 
-
-### File size by image format; images > 100 bytes
-
+#### File size by image format; images > 100 bytes
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>GIF</strong>
-   </td>
-   <td><strong>ICO</strong>
-   </td>
-   <td><strong>JPG</strong>
-   </td>
-   <td><strong>PNG</strong>
-   </td>
-   <td><strong>SVG</strong>
-   </td>
-   <td><strong>WEBP</strong>
-   </td>
+   <th>Percentile</th>
+   <th>GIF</th>
+   <th>ICO</th>
+   <th>JPG</th>
+   <th>PNG</th>
+   <th>SVG</th>
+   <th>WEBP</th>
   </tr>
   <tr>
     <td>10</td>
@@ -640,24 +572,17 @@ The tables below show two different approaches to removing these tiny images fro
   </tr>
 </table>
 
-### File size by image format; images > 1024 bytes only
+#### File size by image format; images > 1024 bytes only
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>GIF</strong>
-   </td>
-   <td><strong>ICO</strong>
-   </td>
-   <td><strong>JPG</strong>
-   </td>
-   <td><strong>PNG</strong>
-   </td>
-   <td><strong>SVG</strong>
-   </td>
-   <td><strong>WEBP</strong>
-   </td>
+   <th>Percentile</th>
+   <th>GIF</th>
+   <th>ICO</th>
+   <th>JPG</th>
+   <th>PNG</th>
+   <th>SVG</th>
+   <th>WEBP</th>
   </tr>
   <tr>
     <td>10</td>
@@ -708,24 +633,20 @@ The tables below show two different approaches to removing these tiny images fro
 
 The low file size of PNG images compared to JPEG images may seem surprising. JPEG uses [lossy compression](https://en.wikipedia.org/wiki/Lossy_compression) (lossy compression results in data loss; this makes it possible to achieve smaller file sizes) while PNG uses [lossless compression](https://en.wikipedia.org/wiki/Lossless_compression) (lossless compression does not result in data loss; this produces higher-quality, but larger images). However this difference in file sizes is probably a reflection of the popularity of PNGs for iconography due to their transparency support; rather than differences in their encoding and compression.
 
-### File size by media format
+#### File size by media format
 
 MP4 is overwhelmingly the most popular media format on the web today. In terms of popularity, it is followed by WebM and MPEG-TS respectively.
 
-Unlike some of the other tables in this data set, this one has mostly happy takeaways. Videos are consistently smaller on mobile - which is great to see. In addition, the median size of an MP4 video is a very reasonable 18 KB on mobile and 39 KB of desktop. The median numbers for WebM are even better but they should be taken with a grain of salt: the duplicate measurement of “0.29 KB” across multiple clients and percentiles is a little bit suspicious. One possible explanation is that identical copies of one very tiny WebM video is included on many pages. Of the three formats, MPEG-TS consistently has the highest file size across all percentiles; this may be related to the fact that it was released in 1995 - making it the oldest of these three media formats.
+Unlike some of the other tables in this data set, this one has mostly happy takeaways. Videos are consistently smaller on mobile—which is great to see. In addition, the median size of an MP4 video is a very reasonable 18 KB on mobile and 39 KB on desktop. The median numbers for WebM are even better but they should be taken with a grain of salt: the duplicate measurement of "0.29 KB" across multiple clients and percentiles is a little bit suspicious. One possible explanation is that identical copies of one very tiny WebM video is included on many pages. Of the three formats, MPEG-TS consistently has the highest file size across all percentiles; this may be related to the fact that it was released in 1995—making it the oldest of these three media formats.
 
-#### Mobile
+##### Mobile
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>MP4 (KB)</strong>
-   </td>
-   <td><strong>WebM (KB)</strong>
-   </td>
-   <td><strong>MPEG-TS (KB)</strong>
-   </td>
+   <th>Percentile</th>
+   <th>MP4 (KB)</th>
+   <th>WebM (KB)</th>
+   <th>MPEG-TS (KB)</th>
   </tr>
   <tr>
     <td>10</td>
@@ -759,18 +680,14 @@ Unlike some of the other tables in this data set, this one has mostly happy take
   </tr>
 </table>
 
-#### Desktop
+##### Desktop
 
 <table>
   <tr>
-   <td><strong>Percentile</strong>
-   </td>
-   <td><strong>MP4 (KB)</strong>
-   </td>
-   <td><strong>WebM (KB)</strong>
-   </td>
-   <td><strong>MPEG-TS (KB)</strong>
-   </td>
+   <th>Percentile</th>
+   <th>MP4 (KB)</th>
+   <th>WebM (KB)</th>
+   <th>MPEG-TS (KB)</th>
   </tr>
   <tr>
     <td>10</td>
@@ -806,5 +723,4 @@ Unlike some of the other tables in this data set, this one has mostly happy take
 
 ## Conclusion
 
-Over the past year, pages increased in size by roughly 10%. Brotli, performance budgets, and basic image optimization best practices are probably the three techniques that show the most promise for maintaining or improving page weight while also being widely applicable and fairly easy to implement. That being said, in recent years, improvements in page weight have been more constrained by the low adoption of best practices, than by the technology itself. In other words, although there are many existing techniques for improving page weight - they won’t make a difference if they aren’t put to use.
-
+Over the past year, pages increased in size by roughly 10%. Brotli, performance budgets, and basic image optimization best practices are probably the three techniques which show the most promise for maintaining or improving page weight while also being widely applicable and fairly easy to implement. That being said, in recent years, improvements in page weight have been more constrained by the low adoption of best practices than by the technology itself. In other words, although there are many existing techniques for improving page weight, they won't make a difference if they aren't put to use.
