@@ -6,12 +6,12 @@ description: Third Parties chapter of the 2019 Web Almanac covering data of what
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-04T12:00:00+00:00:00 
+last_updated: 2019-11-04T12:00:00+00:00:00
 ---
 
 ## Introduction
 
-The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single `<link>` or `<script>` element has supercharged developers’ productivity and enabled awesome new web experiences. On the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
+The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single `<link>` or `<script>` element has supercharged developers’ productivity and enabled awesome new web experiences. On the flip side, the immense popularity of a select few third-party providers raises important performance, privacy, and security concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web experiences.
 
 ## Definitions
 
@@ -21,18 +21,13 @@ A third party is an entity outside the primary site-user relationship, i.e. the 
 
 Third-party resources are...
 
-- Hosted on a shared and public origin
+- Hosted on a _shared_ and _public_ origin
 - Widely used by a variety of sites
 - Uninfluenced by an individual site owner
 
 To match these goals as closely as possible, the formal definition used throughout this chapter of a third-party resource is a resource that originates from a domain whose resources can be found on at least 50 unique pages in the HTTPArchive dataset.
 
-### Caveats
-
-- All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.
-- Third-party content served from a first-party domain is counted as first-party content. i.e. self-hosting Google Fonts or bootstrap.css will be considered first-party content.
-- First-party content served from a third-party domain is counted as third-party content. i.e. first-party images served over a third-party CDN will be considered third-party content.
-- Roughly 84% of all third-party domains by request volume have been identified and categorized. The remaining 16% fall into the “Other” category.
+Note that using these definitions, third-party content served from a first-party domain is counted as first-party content. For example, self-hosting Google Fonts or bootstrap.css is counted as first-party content. Similarly, first-party content served from a third-party domain is counted as third-party content. For example, first-party images served over a CDN on a third-party domain are considered third-party content.
 
 ### Provider Categories
 
@@ -50,6 +45,13 @@ This chapter divides third-party providers into one of these broad categories. A
 - **Utility** - code that aids the development objectives of the site owner
 - **Video** - providers that host the arbitrary video content of their users
 - **Other** - uncategorized or non-conforming activity
+
+**Note on CDNs** The CDN category here includes providers that provide resources on _public_ CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc) and does _not_ include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.
+
+### Caveats
+
+- All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.
+- Roughly 84% of all third-party domains by request volume have been identified and categorized. The remaining 16% fall into the “Other” category.
 
 ## Data
 
@@ -169,12 +171,16 @@ The interest of site owners in understanding and analyzing user behavior is not 
 
 The top-heavy concentration of script execution is great for the potential impact of performance improvements, but less exciting for the privacy ramifications. 29% of _all_ script execution time across the web is just from scripts on domains owned by Google or Facebook. That’s a very large percentage of CPU time that is controlled by just two entities. It’s critical to ensure that the same privacy protections held to analytics providers be applied in these other ad, social, and developer utility categories as well.
 
+### Security
+
+While the topic of security is covered more in-depth in a [separate chapter](./security#vulnerable-js-libraries), the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns it can introduce a single point of failure [which has been recognized as a potential problem for some time now](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+
+[Self-hosting third-party content](https://csswizardry.com/2019/05/self-host-your-static-assets/) addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly [partitioning HTTP caches](https://chromestatus.com/feature/5730772021411840) the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring its impact more difficult.
+
 ## Conclusion
 
-This chapter has shown that use of third-party content is rampant. This is entirely unsurprising - the entire basis of the web is to allow interconnectedness and linking.
+Third-party content is everywhere. This is hardly surprising; the entire basis of the web is to allow interconnectedness and linking. In this chapter we have examined third-party content in terms of assets hosted away from the main domain. If we had included self-hosted third-party content (e.g. common open source libraries hosted on the main domain), third-party usage would have be even larger!
 
-[Reuse in computer technologies](https://en.wikipedia.org/wiki/Code_reuse) is generally a good thing, though it does introduce dependencies which can impact performance (in positive and negative ways!) and has privacy implications, both of which we have touched on here. We have also not discussed the security implications of adding such dependencies to your site, though the security chapter has a [section on vulnerable JS libraries](./security#vulnerable-js-libraries) which is relevant and may be of interest to readers. Even if code has no security concerns it can introduce a single point of failure [which has been recognized as a potential problem for some time now](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+While [reuse in computer technologies](https://en.wikipedia.org/wiki/Code_reuse) is generally a best practice, third parties on the web introduce dependencies that have a considerable impact on the performance, privacy, and security of a page. Self-hosting and careful provider selection can go a long way to mitigate these effects
 
-In this chapter we have looked at third-party content in terms of assets hosted away from the main domain. If we included self-hosted third party content (e.g. common JavaScript libraries hosted on the main domain) then third-party usage would be even larger. [Self-hosting third-party content](https://csswizardry.com/2019/05/self-host-your-static-assets/) addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly [partitioning HTTP caches](https://chromestatus.com/feature/5730772021411840) the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring this for posts like this more difficult.
-
-Regardless of the important question of how third-party content is added to a page, the conclusion is the same and to repeat an earlier sentiment: third parties are an integral part of the web!
+Regardless of the important question of how third-party content is added to a page, the conclusion is the same: third parties are an integral part of the web!
