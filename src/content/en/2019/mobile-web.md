@@ -261,7 +261,7 @@ The mobile web has now been around long enough for there to be an entire generat
 
 <figure>
   <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" width="300">
-  <figcaption>1000 hours of America Online for free. From <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a></figcaption>
+  <figcaption>1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
 </figure>
 
 <aside class="note" markdown>Notes:

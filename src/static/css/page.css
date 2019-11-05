@@ -354,3 +354,9 @@ figure .big-number {
     transition: max-height 0.25s ease-in;
   }
 }
+
+@media (max-width: 600px) {
+  figure .big-number {
+    font-size: 5rem;
+  }
+}
