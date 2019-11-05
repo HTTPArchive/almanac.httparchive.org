@@ -18,7 +18,7 @@ Compression algorithms are often categorized as Lossy or Lossless:
 *   When a lossy compression algorithm is used, the process is irreversible, and the original file cannot be restored via decompression. This is commonly used to compress media resources - such as image and video content where losing some data will not materially affect the resource.
 *   Lossless compression is a completely reversible process, and is commonly used to compress text based resources - such as HTML, JavaScript, Stylesheets, etc. 
 
-In this chapter, we are going to explore how text-based content is compressed on the web.
+In this chapter, we are going to explore how text-based content is compressed on the web. Analysis of non-text based content forms part of the [Media Chapter](./media).
 
 
 ## How HTTP Compression Works

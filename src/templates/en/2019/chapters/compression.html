@@ -40,7 +40,7 @@
     },
     "publisher": {
     	  "@type": "Organization",
-    	  "name": "HTTPArchive",
+    	  "name": "HTTP Archive",
     	  "logo": {
     	      "@type": "ImageObject",
     	      "url": "https://almanac.httparchive.org/static/images/ha.png",
@@ -142,7 +142,7 @@
         <li>When a lossy compression algorithm is used, the process is irreversible, and the original file cannot be restored via decompression. This is commonly used to compress media resources - such as image and video content where losing some data will not materially affect the resource.</li>
         <li>Lossless compression is a completely reversible process, and is commonly used to compress text based resources - such as HTML, JavaScript, Stylesheets, etc.</li>
       </ul>
-      <p>In this chapter, we are going to explore how text-based content is compressed on the web.</p>
+      <p>In this chapter, we are going to explore how text-based content is compressed on the web. Analysis of non-text based content forms part of the <a href="./media">Media Chapter</a>.</p>
       <h2 id="how-http-compression-works">How HTTP Compression Works</h2>
       <p>When a client makes an HTTP request, it often includes an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding">Accept-Encoding</a> header to advertise the compression algorithms it is capable of decoding. The server can then select from one of the advertised encodings it supports and serve a compressed response. The compressed response would include a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> header so that the client is aware of which compression was used. Additionally, a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type">Content-Type</a> header is often used to indicate the mime type of the resource being served.</p>
       <p>In the example below, the client advertised support for gzip, brotli and deflate compression. The server decided to return a gzip compressed response containing a text/html document.</p>
