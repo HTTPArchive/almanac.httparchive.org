@@ -6,14 +6,12 @@
         {
           "part": "I",
           "chapter": "1",
-          "title": "JavaScript",
-          "todo": true
+          "title": "JavaScript"
         },
         {
           "part": "I",
           "chapter": "2",
-          "title": "CSS",
-          "todo": true
+          "title": "CSS"
         },
         {
           "part": "I",
@@ -97,14 +95,12 @@
         {
           "part": "IV",
           "chapter": "15",
-          "title": "Compression",
-          "todo": true
+          "title": "Compression"
         },
         {
           "part": "IV",
           "chapter": "16",
-          "title": "Caching",
-          "todo": true
+          "title": "Caching"
         },
         {
           "part": "IV",
@@ -115,14 +111,12 @@
         {
           "part": "IV",
           "chapter": "18",
-          "title": "Page Weight",
-          "todo": true
+          "title": "Page Weight"
         },
         {
           "part": "IV",
           "chapter": "19",
-          "title": "Resource Hints",
-          "todo": true
+          "title": "Resource Hints"
         },
         {
           "part": "IV",
