@@ -1,7 +1,7 @@
 ---
 part_number: III
 chapter_number: 13
-title: Ecommerce platforms
+title: Ecommerce
 description: Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third parties, performance, seo, and PWAs
 authors: [samdutton, alankent]
 reviewers: [voltek62]
@@ -113,7 +113,7 @@ Although the desktop proportion of requests was slightly higher overall, some po
 <figcaption>Figure 8. Total requests for pages on ecommerce platforms.</figcaption>
 </figure>
 
-Note that, as explained above, this study only covers requests for home pages. Additionally many successful ecommerce sites such as Amazon and eBay are designed so requests don't block content rendering — even though their pages make a large number of requests and have a heavy total payload. In other words, good performance is not just about smaller payloads and less requests!
+Note that, as explained above, this study only covers requests for home pages. Additionally, many successful ecommerce sites such as Amazon and eBay are designed so requests don't block content rendering — even though their pages make a large number of requests and have a heavy total payload. In other words, good performance is not just about smaller payloads and less requests!
 
 The median desktop home page on an ecommerce platform loads 108 requests and 2.65 MB. The median for _all_ pages on desktop is [74 requests and 1.95 MB](https://httparchive.org/reports/page-weight#bytesTotal). In other words, median desktop home pages on ecommerce platforms from this study make nearly 50% more requests than other web pages, with payloads around 35% larger. By comparison, the [amazon.com](amazon.com) home page makes around 300 requests on first load, for a total payload of around 5 MB, and [ebay.com](ebay.com) makes around 150 requests for a total payload of approximately 3 MB. The total payload and number of requests for home pages on ecommerce platforms is slightly less on mobile at every percentile but around 10% of all home pages on ecommerce platforms load more than 7MB and make over 200 requests.
 
@@ -159,7 +159,7 @@ The number of JavaScript requests indicates that better bundling (and/or [HTTP/2
 <figcaption>Figure 12. HTML payload size (KB)</figcaption>
 </figure>
 
-Note that HTML payload may include other code such as JSON, JavaScript or CSS embedded directly in an HTML page itself, rather than referenced as external links. The median HTML payload size for home pages on ecommerce platforms is 33.8 KB on mobile and 35.56 KB on desktop. However 10% of home pages on ecommerce platforms have an HTML payload of over 115 KB.
+Note that HTML payload may include other code such as JSON, JavaScript or CSS embedded directly in an HTML page itself, rather than referenced as external links. The median HTML payload size for home pages on ecommerce platforms is 33.8 KB on mobile and 35.56 KB on desktop. However, 10% of home pages on ecommerce platforms have an HTML payload of over 115 KB.
 
 Mobile HTML payload sizes are not very different from desktop. In other words, it appears that sites are not delivering significantly different HTML files for different devices or viewport sizes. On many ecommerce sites, home page HTML payloads are large. It's not known from this study whether this is because of bloated HTML, or from other code (such as JSON) within HTML files.
 
@@ -227,7 +227,7 @@ The data shows very few sites on ecommerce platforms using WebP, which tallies w
 
 ### Pushing to use WebP more
 
-We as a web community can provide better guidance/advocacy for enabling transparency using WebP with a PNG fallback and/or using WebP/JPEG with a solid color background. WebP appears to be rarely used on ecommerce platforms even though several guides to WebP usage are available (such as [web.dev/serve-images-webp](https://web.dev/serve-images-webp)) as well as apps and tools including [Squoosh](https://squoosh.app/) and [cwebp](https://developers.google.com/speed/webp/docs/cwebp). We need to do further research into why there hasn't been more takeup of WebP, which is now [nearly 10 years old](https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html).
+We as a web community can provide better guidance/advocacy for enabling transparency using WebP with a PNG fallback and/or using WebP/JPEG with a solid color background. WebP appears to be rarely used on ecommerce platforms even though several guides to WebP usage are available (such as [web.dev/serve-images-webp](https://web.dev/serve-images-webp)) as well as apps and tools including [Squoosh](https://squoosh.app/) and [cwebp](https://developers.google.com/speed/webp/docs/cwebp). We need to do further research into why there hasn't been more take-up of WebP, which is now [nearly 10 years old](https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html).
 
 ## Image dimensions
 
@@ -488,4 +488,4 @@ Clearly, most home pages on ecommerce platforms are failing most [PWA checklist 
 
 ## Conclusion
 
-This comprehensive study of ecommerce usage for the sites crawled by HTTP Archive shows some interesting data and also the wide variations in ecommerce sites - even those built on the same ecommerce platform. Even though we have gone into a lot of detail here, there is much more analysis we could do in this space. For example, we didn't get accessibility scores this year (checkout the [accessibility chapter](./accessibility) for more on that). Next year, we should look at this and likewise, for geographical data. This study detected 246 ad providers on home pages on ecommerce platforms. Further studies (perhaps in next years Web Almanac?) could calculate what proportion of sites on ecommerce platforms shows ads. WooCommerce got very high numbers in this study so another interesting statistic we could look at next year is if some hosting providers are installing WooCommerce but not enabling it, thereby causing inflated figures.
+This comprehensive study of ecommerce usage for the sites crawled by HTTP Archive shows some interesting data and also the wide variations in ecommerce sites - even those built on the same ecommerce platform. Even though we have gone into a lot of detail here, there is much more analysis we could do in this space. For example, we didn't get accessibility scores this year (checkout the [accessibility chapter](./accessibility) for more on that). Next year, we should look at this and likewise, for geographical data. This study detected 246 ad providers on home pages on ecommerce platforms. Further studies (perhaps in next year's Web Almanac?) could calculate what proportion of sites on ecommerce platforms shows ads. WooCommerce got very high numbers in this study so another interesting statistic we could look at next year is if some hosting providers are installing WooCommerce but not enabling it, thereby causing inflated figures.
