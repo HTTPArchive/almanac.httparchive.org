@@ -4,6 +4,7 @@ body {
   color: #1A2B49;
   margin: 0;
   font-weight: inherit;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -27,9 +28,8 @@ a:focus, a:hover {
 }
 
 h1.title {
-  margin-top: 0;
-  font-size: 72px;
-  line-height: 80px;
+  margin-top: 20px;
+  font-size: 50px;
 }
 
 div.subtitle {
@@ -44,6 +44,15 @@ div.subtitle::before {
   margin-bottom: 18px;
   border-bottom: solid 1px #A8CABA;
   width: 70px;
+}
+
+h2.header {
+  font-size: 25px;
+  margin: 14px;
+}
+.subtitle {
+  font-size: 28px;
+  line-height: 42px;
 }
 
 .btn {
@@ -118,6 +127,7 @@ header, footer {
 }
 .main {
   margin: 0px 60px;
+  overflow: hidden;
 }
 header, footer .nav {
   display: flex;
@@ -208,7 +218,7 @@ blockquote::before {
   z-index: -1;
   top: -4rem;
   left: -7rem;
-  opacity: .05;  
+  opacity: .05;
   font-size: 20rem;
   font-family: 'Courier New', Courier, monospace;
   line-height: 1;
@@ -363,7 +373,9 @@ p.copyright {
   header nav > a:last-child {
     margin: 0;
   }
-
+  h1.title {
+    font-size: 40px;
+  }
   .menu {
     position: absolute;
     display: none;
@@ -381,8 +393,8 @@ p.copyright {
   .menu-btn {
     background: none;
     border: 0;
-    display: block; 
-    cursor: pointer;   
+    display: block;
+    cursor: pointer;
   }
 
   .menu-open .menu {

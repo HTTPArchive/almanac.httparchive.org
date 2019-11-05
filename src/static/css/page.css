@@ -1,6 +1,5 @@
 .main {
   margin-top: 32px;
-  overflow: visible;
   display: grid;
   grid-template-areas: 'index content';
   grid-template-columns: 300px auto;
@@ -268,6 +267,8 @@ table {
   margin: 0 auto;
   max-width: 100%;
   border-collapse: collapse;
+  display: block;
+  overflow: auto;
 }
 thead {
   font-family: 'Poppins', sans-serif;
@@ -335,5 +336,9 @@ tbody tr:nth-child(even) {
     border-top: 1px solid #1A2B490A;
     max-height: 100%;
     transition: max-height 0.25s ease-in;
+  }
+
+  table {
+    font-size: .8em;
   }
 }
