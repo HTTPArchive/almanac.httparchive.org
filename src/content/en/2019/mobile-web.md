@@ -83,7 +83,10 @@ Despite being available since 2016 and implemented on every major browser, only 
 One of the most beautiful parts of the web is how web pages load progressively by nature. Browsers download and display content as soon as they are able, so users can engage with your content as soon as possible. However, this can have a detrimental effect if you don't design your site with this in mind. Specifically, content can shift position as resources load and impede the user experience.
 
 <figure>
-  <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook">
+  <a href="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
+    <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook">
+  </a>
+
   <figcaption>Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook</figcaption>
 </figure>
 
@@ -128,7 +131,10 @@ When designing our sites we tend to be in more optimal conditions, and have far 
 To help us mitigate this problem, there are [accessibility guidelines](https://dequeuniversity.com/rules/axe/2.2/color-contrast) we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
 
 <figure>
-  <img alt="Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
+  <a href="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
+    <img alt="Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
+  </a>
+
   <figcaption>Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
@@ -175,7 +181,9 @@ We're used to having precise devices like mice while on desktop, but the story i
 Designing tap targets appropriately to mitigate this issue can be difficult because of how widely fingers vary in size. However, lots of research has now been done and there are safe [standards](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) for how large buttons should be and how far apart they need to be separated.
 
 <figure>
-  <img alt="A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
+  <a href="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
+    <img alt="A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
+  </a>
 
   <figcaption>Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook</figcaption>
 </figure>
@@ -202,55 +210,61 @@ Many [new input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
 When analyzing sites containing an email input, 56.42% use `type="email"`. Similarly, for phone inputs, `type="tel"` is used 36.7% of the time. Other new input types have an even lower adoption rate.
 
-Make sure to educate yourself and others on the large amount of input types available and double-check that you don't have any typos like these most common ones:
-
 <figure>
   <table>
     <tr>
       <th>Type</th>
-      <th># of pages with this typo / invalid type</th>
+      <th>Frequency (pages)</th>
     </tr>
     <tr>
       <td>phone</td>
-      <td>1917</td>
+      <td class="numeric">1,917</td>
     </tr>
     <tr>
       <td>name</td>
-      <td>1348</td>
+      <td class="numeric">1,348</td>
     </tr>
     <tr>
       <td>textbox</td>
-      <td>833</td>
+      <td class="numeric">833</td>
     </tr>
   </table>
   <figcaption>Figure 7. Most commonly used invalid input types</figcaption>
 </figure>
 
+Make sure to educate yourself and others on the large amount of input types available and double-check that you don't have any typos like the most common ones in Figure 7 above.
+
 ### Enabling autocomplete for inputs
 
-Allowing users to input information into fields more easily is great, but what about letting them fill them out in a single click? This is what the `autocomplete` input attribute aims to do. Users fill out tons of forms, often with the exact same information each time. Realizing this, browsers have begun to securely store this information so it can be used on future pages. All developers need to do, is use this `autocomplete` attribute to tell browsers what exact piece of information needs to be input, and the browser does the rest ([see here for more details](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)).
+The [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) input attribute enables users to fill out form fields in a single click. Users fill out tons of forms, often with the exact same information each time. Realizing this, browsers have begun to securely store this information so it can be used on future pages. All developers need to do is use this `autocomplete` attribute to tell browsers what exact piece of information needs to be filled in, and the browser does the rest.
+
+<figure>
+  <div class="big-number">29.62%</div>
+  <figcaption>Figure 8. Percent of pages that use `autocomplete`.</figcaption>
+</figure>
 
 Currently, only 29.62% of pages with input fields utilize this feature.
 
-### Copy + Paste into password fields
+### Pasting into password fields
 
-Enabling users to copy + paste their passwords into your page allows them to use password managers. Password managers help users generate (and remember) strong passwords and fill them out automatically on sites. When analyzing sites to check how many disable this functionality we found only 0.02% do so.
+Enabling users to copy and paste their passwords into your page is one way that allows them to use password managers. Password managers help users generate (and remember) strong passwords and fill them out automatically on web pages. Only 0.02% of web pages tested disable this functionality.
 
-While this is very encouraging, we suspect this number is far higher than we report because many pages host their registration and login forms on separate interior pages (e.g., /login/). During this analysis we only checked the homepages of these sites which means a large number of login/registration forms have not been analyzed.
+<aside class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our [Methodology](./methodology) to only test home pages. Interior pages, like login pages, are not tested.</aside>
 
 ## Conclusion
 
-For over 13 years we've been treating the *mobile* web as an afterthought—a mere exception to desktop. But it's time for this to change. Mobile is now *THE* web, and desktop is becoming legacy. There are now **4 billion** active smartphones in the world, covering 70% of all potential users… What about PCs? They currently sit at 1.6 billion, and account for less and less of the internet every month.
+For over 13 years we've been treating the *mobile* web as an afterthought, like a mere exception to desktop. But it's time for this to change. The mobile web is now _*the*_ web, and desktop is becoming the legacy one. There are now 4 billion active smartphones in the world, covering 70% of all potential users. What about desktops? They currently sit at 1.6 billion, and account for less and less of web usage every month.
 
-How well are we doing catering to mobile users? After looking through our research, even though 71.03% of sites make some kind of effort to adjust their site for mobile... they're falling well below the mark. Pages take forever to load and become usable thanks to an abuse of JavaScript; text is often impossible to read; engaging with sites via clicking links or buttons is error-prone and infuriating; and tons of great technologies invented to mitigate these problems (service workers, autocomplete, zooming, new image formats, etc) are barely being used at all.
+How well are we doing catering to mobile users? According to our research, even though 71% of sites make some kind of effort to adjust their site for mobile, they're falling well below the mark. Pages take forever to load and become usable thanks to an abuse of JavaScript, text is often impossible to read, engaging with sites via clicking links or buttons is error-prone and infuriating, and tons of great technologies invented to mitigate these problems (Service Workers, autocomplete, zooming, new image formats, etc) are barely being used at all.
 
-The mobile web has now been around long enough for there to be an entire generation of kids where this is the only internet they've ever known. And what kind of experience are we giving them? We're essentially taking them back to the dial-up era (good thing I hear AOL still sells those CDs providing 1000 hours of free internet access).
+The mobile web has now been around long enough for there to be an entire generation of kids where this is the only internet they've ever known. And what kind of experience are we giving them? We're essentially taking them back to the dial-up era. (Good thing I hear AOL still sells those CDs providing 1000 hours of free internet access!)
 
-![A 1000 hour free-trial CD for America Online](/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg)
+<figure>
+  <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" width="300">
+  <figcaption>1000 hours of America Online for free. From <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a></figcaption>
+</figure>
 
-*1000 hours of America Online for free. Taken from [archive.org](https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28)
-
-**_Notes:_**
+<aside class="note" markdown>Notes:
 
 1. We defined sites making a mobile effort as those who adjust their designs for smaller screens. Or rather, those which have at least one CSS breakpoint at 600px or less.
 
@@ -261,5 +275,4 @@ The mobile web has now been around long enough for there to be an entire generat
 4. The total number of active smartphones was found by totaling the number of active Androids and iPhones (made public by Apple and Google), and a bit of math to account for Chinese internet-connected phones. [More info here](https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile).
 
 5. The 1.6 billion desktops is calculated by numbers made public by [Microsoft](https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices) and [Apple](https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users). It does not include linux PC users.
-
-6. Of sites with images, only 4.69% utilize WebP.
+</aside>

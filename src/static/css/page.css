@@ -143,18 +143,18 @@ table,
 .authors,.authors h4{
   border-bottom: 1px solid #1A2B490A;
 }
-.authors ul{
+.content .authors ul{
   margin:16px 0;
   padding:0;
 }
 
-.authors li::before{
+.content .authors li::before{
   content: none;
   width: 0;
   margin-left: 0;
 }
 
-.authors li{
+.content .authors li{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -256,6 +256,9 @@ figure {
 figure > p {
   display: inline-block;
 }
+figure > a {
+  margin: 0 auto;
+}
 figure img {
   margin: 0 auto;
   border-radius: 8px;
@@ -282,8 +285,16 @@ thead {
 th, td {
   padding: 10px;
 }
+th.numeric, td.numeric {
+  text-align: right;
+}
 tbody tr:nth-child(even) {
   background-color: #f2f2f280;
+}
+figure .big-number {
+  text-align: center;
+  font: bold 8rem/1em Poppins, sans-serif;
+  color: #a8caba;
 }
 
 @media (max-width: 900px) {
