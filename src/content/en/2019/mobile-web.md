@@ -39,7 +39,7 @@ Let's start with what phone the typical mobile user has. The average Android pho
     <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
   </tr>
 </table>
-<figcaption>Figure 1. The average mobile user.</figcaption>
+<figcaption>Figure 1. Technical profile of a typical mobile user.</figcaption>
 </figure>
 
 I imagine some of you are surprised by these results. They may be far worse conditions than you've ever tested your site with. But now that we're all on the same page with what a mobile user truly looks like, let's get started.
@@ -79,9 +79,9 @@ Despite being available since 2016 and implemented on every major browser, only 
 
 One of the most beautiful parts of the web is how web pages load progressively by nature. Browsers download and display content as soon as they are able, so users can engage with your content as soon as possible. However, this can have a detrimental effect if you don't design your site with this in mind. Specifically, content can shift position as resources load and impede the user experience.
 
-<figure markdown>
-![A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook](/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif)
-<figcaption>Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook</figcaption>
+<figure>
+  <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook">
+  <figcaption>Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook</figcaption>
 </figure>
 
 Imagine you're reading an article when all of a sudden, an image loads and pushes the text you're reading way down the screen. You now have to hunt for where you were or just give up on reading the article. Or, perhaps even worse, you begin to click a link right before an ad loads in the same spot, resulting in an accidental click on the ad instead.
@@ -124,9 +124,9 @@ When designing our sites we tend to be in more optimal conditions, and have far 
 
 To help us mitigate this problem, there are [accessibility guidelines](https://dequeuniversity.com/rules/axe/2.2/color-contrast) we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
 
-<figure markdown>
-![Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook](/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png)
-<figcaption>Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
+<figure>
+  <img alt="Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
+  <figcaption>Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
 For colorblindness stats for other demographics, see [this paper](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf).
@@ -161,64 +161,67 @@ However, developers have misused this so much that almost one out of every three
 
 ### Rotating pages
 
-Mobile devices allow users to rotate them so your website can be viewed in the format users prefer. Users do not always keep the same orientation throughout a session however. When filling out forms, many rotate to landscape mode to use the larger keyboard. Or while browsing products, some enjoy the larger product images landscape mode gives them. Because of these types of use-cases, its very important not to rob the user of this built-in ability of mobile devices. And good news, we found virtually no sites disable this. Only 87 total sites (or 0.0016% of all sites) disable this feature. This is fantastic.
+Mobile devices allow users to rotate them so your website can be viewed in the format users prefer. Users do not always keep the same orientation throughout a session however. When filling out forms, users may rotate to landscape mode to use the larger keyboard. Or while browsing products, some may prefer the larger product images landscape mode gives them. Because of these types of use cases, it's very important not to rob the user of this built-in ability of mobile devices. And the good news is that we found virtually no sites that disable this. Only 87 total sites (or 0.0016%) disable this feature. This is fantastic.
 
 ## Buttons and links
 
 ### Tap targets
 
-We're used to having precise devices like mice while on desktop, but the story is quite different on mobile. On mobile we engage with sites through these large and imprecise tools we call fingers. Because of how imprecise they can be, we constantly "fat finger" links and buttons—clicking things we never meant to.
+We're used to having precise devices like mice while on desktop, but the story is quite different on mobile. On mobile we engage with sites through these large and imprecise tools we call fingers. Because of how imprecise they can be, we constantly "fat finger" links and buttons, tapping on things we never intended.
 
-Designing tap targets appropriately to mitigate this issue can be difficult because of how widely fingers vary in size. However, lots of research has now been done and there are safe standards both for: how large buttons should be, and how far apart they need to be separated. [See the standards here](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) (or see the illustration below).
+Designing tap targets appropriately to mitigate this issue can be difficult because of how widely fingers vary in size. However, lots of research has now been done and there are safe [standards](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) for how large buttons should be and how far apart they need to be separated.
 
-As of right now, only 34.43% of sites have well sized tap-targets on their site. So we have quite a ways to go until "fat fingering" is a thing of the past.
+<figure>
+  <img alt="A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
 
-![A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook](/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png)
+  <figcaption>Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook</figcaption>
+</figure>
 
-*Detailed information on the minimum size and spacing for buttons. Image courtesy of LookZook*
+As of now, 34.43% of sites have sufficiently sized tap targets. So we have quite a ways to go until "fat fingering" is a thing of the past.
 
-### Properly labeling our buttons
+### Labeling buttons
 
-As designers, we love to use icons in our designs in place of text. They can make our sites look cleaner and more elegant. But while you and everyone on your team may know what these icons mean… many of your users will not (this is even the case with the infamous hamburger icon). If you don't believe us, do some user-testing and see how often users get confused. You'll be astounded.
+Some designers love to use icons in place of text -- they can make our sites look cleaner and more elegant. But while you and everyone on your team may know what these icons mean, many of your users will not. This is even the case with the infamous hamburger icon! If you don't believe us, do some user testing and see how often users get confused. You'll be astounded.
 
-This is why we recommend adding supporting text/labels to your buttons, to clear any of this possible confusion. As of right now, over 28.59% of sites have buttons having only a single icon with no supporting text.
+This is why it's important to avoid any confusion and add supporting text and labels to your buttons. As of now, at least 28.59% of sites include a button with only a single icon with no supporting text.
 
-**_Note:_** The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.
+<aside class="note">Note: The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.</aside>
 
-## Ease of filling out form inputs
+## Semantic form fields
 
-From signing up for a new service, buying something online or even to receive notifications of new posts from a blog… form fields are an essential part of the web and something we use daily. Unfortunately, these fields are infamous for how much of a pain they are to fill out on mobile. Thankfully, in recent years browsers have given developers new tools to help ease the pain of completing these fields we know all too well. So let's take a look at how much they've been getting used.
+From signing up for a new service, buying something online, or even to receive notifications of new posts from a blog, form fields are an essential part of the web and something we use daily. Unfortunately, these fields are infamous for how much of a pain they are to fill out on mobile. Thankfully, in recent years browsers have given developers new tools to help ease the pain of completing these fields we know all too well. So let's take a look at how much they've been getting used.
 
 ### New input types
 
-In the past, `text` and `password` were some of the only types of inputs available to developers as it met almost all our needs on desktop. This is not the case for mobile devices. Mobile keyboards are incredibly small and a simple task, like entering an email address, requires users to switch between multiple keyboards (the standard keyboard and the special character keyboard for the @). Just entering a phone number can be difficult since the default keyboard's numbers are tiny and prone to error.
+In the past, `text` and `password` were some of the only input types available to developers as it met almost all of our needs on desktop. This is not the case for mobile devices. Mobile keyboards are incredibly small, and a simple task, like entering an email address, may require users to switch between multiple keyboards: the standard keyboard and the special character keyboard for the "@" symbol. Simply entering a phone number can be difficult using the default keyboard's tiny numbers.
 
-Many new types have since been introduced ([see full list here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)). They allow developers to inform browsers what kind of data is expected, and browsers to provide customized keyboards specifically for these input types. For example: a type of `email` gives you an alphanumeric keyboard with an @ symbol, and a type of `tel` will display a numpad.
+Many [new input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) have since been introduced, allowing developers to inform browsers what kind of data is expected, and enable browsers to provide customized keyboards specifically for these input types. For example, a type of `email` provides users with an alphanumeric keyboard including the "@" symbol, and a type of `tel` will display a numeric keypad.
 
-When analyzing sites containing an email input, only 56.42% use `type="email"`. Similarly for phone inputs, `input="tel"` is only used 36.7% of the time, and other new input types have an even lower adoption rate.
+When analyzing sites containing an email input, 56.42% use `type="email"`. Similarly, for phone inputs, `type="tel"` is used 36.7% of the time. Other new input types have an even lower adoption rate.
 
-Make sure to educate yourself and others on the large amount of input types available and double-check you don't have any typos like these most common ones:
+Make sure to educate yourself and others on the large amount of input types available and double-check that you don't have any typos like these most common ones:
 
-<table>
-  <tr>
-    <th>Type</th>
-    <th># of pages with this typo / invalid type</th>
-  </tr>
-  <tr>
-    <td>phone</td>
-    <td>1917</td>
-  </tr>
-  <tr>
-    <td>name</td>
-    <td>1348</td>
-  </tr>
-  <tr>
-    <td>textbox</td>
-    <td>833</td>
-  </tr>
-</table>
-
-_Most commonly used invalid input types_
+<figure>
+  <table>
+    <tr>
+      <th>Type</th>
+      <th># of pages with this typo / invalid type</th>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td>1917</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>1348</td>
+    </tr>
+    <tr>
+      <td>textbox</td>
+      <td>833</td>
+    </tr>
+  </table>
+  <figcaption>Figure 7. Most commonly used invalid input types</figcaption>
+</figure>
 
 ### Enabling autocomplete for inputs
 
