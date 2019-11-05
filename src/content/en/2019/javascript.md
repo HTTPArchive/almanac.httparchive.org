@@ -38,7 +38,7 @@ turn improve page performance. **But how much JavaScript do we really use?**
 
 Here's a chart showing the amount of bytes shipped for different percentiles:
 
-<insert graphic of metric 01_01a>
+```<insert graphic of metric 01_01a>```
 
 **373.46 kB** of JavaScript is shipped at the 50th percentile, or median. In other words, 50% of all
 sites ship over this much JavaScript to their users.
@@ -47,7 +47,7 @@ Looking at these numbers, it's only natural to wonder if this is too much JavaSc
 terms of page performance, the impact entirely depends on network connections and devices used. That
 brings us to our next question, **how much JavaScript do we ship when we compare mobile and desktop clients**?
 
-<insert graphic of metric 01_01b>
+```<insert graphic of metric 01_01b>```
 
 At every percentile, we're sending slightly more JavaScript on desktop devices than we are on
 mobile.
@@ -60,7 +60,7 @@ JavaScript can be processed on a page. **What are the current processing times o
 
 We can get an idea by analyzing main thread processing times for V8 at different percentiles: 
 
-<insert graphic of metric 01_07>
+```<insert graphic of metric 01_07>```
 
 At every percentile, processing times are longer for mobile web pages than on desktop. The median
 total main thread time on desktop is **849 ms**, while mobile is at a larger number - **2436ms.**
@@ -82,7 +82,7 @@ number of requests shipped. With
 chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by
 device client, **how many requests are being fetched?**
 
-<insert graphic of metric 01_03>
+```<insert graphic of metric 01_03>```
 
 At the median, **19** requests are sent for desktop and **18** for mobile. 
 
@@ -96,13 +96,13 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
 media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us
 to our next question: **how many requests sent are third-party instead of first-party?**
 
-<insert graphics of metric 01_04>
+```<insert graphics of metric 01_04>```
 
 For both mobile and desktop clients, more third-party requests are sent than first-party at every
 percentile. If this seems surprising, let's find out** how much actual code shipped comes from
 third-party vendors.**
 
-<insert graphics of metric 01_02b>
+```<insert graphics of metric 01_02b>```
 
 At the median, **89%** more third-party code is used than first-party code authored by the developer
 for both mobile and desktop**. **This clearly shows that third-party code can be one of the biggest
@@ -132,7 +132,7 @@ significant factors in improving site performance.
 
 **How many sites are compressing their JavaScript resources**?
 
-<insert graphics of metric 01_05 and 01_06>
+```<insert graphics of metric 01_05 and 01_06>```
 
 The majority of sites are compressing their JavaScript resources. Gzip encoding is used on
 **~64-67%** of sites and Brotli on **~14%**. Compression ratios are similar for both desktop and
@@ -152,7 +152,7 @@ application, relying on open-source packages cam make feature development easier
 
 **Which JavaScript open-source libraries are used the most?**
 
-<insert graphics of metric 01_08>
+```<insert graphics of metric 01_08>```
 
 [jQuery](https://jquery.com/), the most widely used JavaScript library ever created, is used in
 **85.03%** of desktop pages and **83.46%** of mobile pages. The advent of many Browser APIs and
@@ -184,7 +184,7 @@ improve the experience of such sites.
 
 **How many sites use these types of frameworks?**
 
-<insert graphics of metric 01_10_05>
+```<insert graphics of metric 01_10_05>```
 
 Only a subset of popular frameworks are being analyzed here, but it's important to note that all of
 them either follow one of these two approaches:
@@ -222,7 +222,7 @@ To declare a script as a module, the script tag must get the `type="module"`:
 
 **How many sites use `type="module"` for scripts on their page?**
 
-<insert graphic of metric 01_12>
+```<insert graphic of metric 01_12>```
 
 Browser-level support for modules is still relatively new, and the numbers here show that very few
 sites currently use `type="module"` for their scripts. Many sites are still relying on module
@@ -247,14 +247,14 @@ scripts with the attribute normally. Using this approach can allow developers to
 
 So, **how many sites use `nomodule` for scripts on their page?**
 
-<insert graphic of metric 01_13>
+```<insert graphic of metric 01_13>```
 
 Similarly, very few sites (**~0.5% - 0.8%**) use the `nomodule` attribute for any scripts.
 
 # Preload and prefetch
 
-**[Preload**](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) and
-**[prefetch**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are
+[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) and
+[prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are
 directives which enable you to aid the browser in determining what resources need to be
 downloaded.
 
@@ -267,14 +267,14 @@ downloaded.
 
 **So, how many sites use preload and prefetch directives?**
 
-<insert graphic of metric 01_14>
+```<insert graphic of metric 01_14>```
 
 For all sites measured in HTTP Archive, **14.33%** of desktop sites and **14.84%** of mobile sites
 use `<link rel="preload"> `for scripts on their page.
 
 For prefetch:
 
-<insert graphic of metric 01_16>
+```<insert graphic of metric 01_16>```
 
 For both mobile and desktop, **0.08% (~0.1%)** of pages leverage prefetch for any of their
 scripts.
@@ -298,7 +298,7 @@ an accompanying polyfill to make sure they still work for every user.
 -  [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 -  [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
-<insert graphic of metric 01_18>
+```<insert graphic of metric 01_18>```
 
 Atomics (**0.38%**) and SharedArrayBuffer (**0.2%**) are barely visible on this chart since they are
 used on such few pages. Each of the other APIs here 
@@ -323,7 +323,7 @@ Although useful, there are a number of reasons why many sites may not want to in
 their final production site, such as choosing not to expose complete source code to the public. **So
 how many sites actually include sourcemaps?**
 
-<insert graphic of metric 01_25>
+```<insert graphic of metric 01_25>```
 
 For both desktop and mobile pages, the results are about the same. **17-18%** include a source map
 for at least one script on the page (detected as a first-party script with `sourceMappingURL`).
