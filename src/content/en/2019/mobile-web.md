@@ -2,8 +2,11 @@
 part_number: II
 chapter_number: 12
 title: Mobile Web
+description: Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 ## Introduction

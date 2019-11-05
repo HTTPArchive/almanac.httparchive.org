@@ -2,11 +2,11 @@
 part_number: IV
 chapter_number: 20
 title: HTTP/2
-description: HTTP/2 Chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, Issues and HTTP/3
+description: HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
-published: 2019-11-01T12:00:00+00:00:00
-last_updated: 2019-11-02T12:00:00+00:00:00 
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 ## Introduction
@@ -42,7 +42,7 @@ This whistle-stop tour of HTTP/2 gives the main history and concepts of the newi
 
 As mentioned above, Internet protocols are often difficult to adopt since they are ingrained into so much of the infrastructure that makes up the internet. This makes introducing any changes slow and difficult. IPv6 for example has been around for 20 years but has [struggled to be adopted](https://www.google.com/intl/en/ipv6/statistics.html). HTTP/2 however, was different as it was effectively hidden in HTTPS (at least for the browser uses cases) removing barriers to adoption as long as both the browser and server supported it. Browser support has been very strong for some time and the advent of auto updating *evergreen* browsers has meant that an estimated [95% of global users support HTTP/2 now](https://caniuse.com/#feat=http2). For this Web Almanac we use HTTP Archive which runs a Chrome web crawler on the approximately 5 million top websites (on both Desktop and Mobile with a slightly different set for each). This shows that HTTP/2 usage is now the majority protocol - an impressive feat just 4 short years after formal standardization:
 
-![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/http2usage.png)
+![Timeseries of HTTP/2 Requests](/static/images/2019/20_HTTP_2/http2usage.png)
 
 **Figure 1 - [HTTP/2 usage by request](https://httparchive.org/reports/state-of-the-web#h2)**
 
@@ -144,19 +144,20 @@ The impact of HTTP/2 is a much more difficult to measure statistic, especially u
 
 One impact that can be measured is in the changing use of HTTP now we are in an HTTP/2 world. Multiple connections were a work around with HTTP/1.1 to allow a limited form of parallelization, but this is in fact the opposite of what usually works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, HTTPS negotiation and also allows the potential of cross-request prioritization. The HTTP Archive measures the number of TCP connections per page and that is dropping steadily as more sites support HTTP/2 and use its single connection instead of 6 separate connections:
 
-![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/TCPconnections.png)
+![Timeseries of TCP Connections Per Page](/static/images/2019/20_HTTP_2/TCPconnections.png)
 
 **Figure 8 - [TCP connections per page](https://httparchive.org/reports/state-of-the-web#tcp)**
 
 Bundling assets to obtain fewer requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting, ... etc. It is less necessary when using HTTP/2 as there is less overhead with requests but it should be noted that requests are not free in HTTP/2 and [those that experimented with removing bundling completely have noticed a loss in performance](https://engineering.khanacademy.org/posts/js-packaging-http2.htm). Looking at the number of requests loaded by page over time, we do see a slight decrease in requests, rather than the expected increase:
 
-![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/numresources.png)
+![Timeseries of Total Requests](/static/images/2019/20_HTTP_2/numresources.png)
 
 **Figure 9 - [Total Requests per page](https://httparchive.org/reports/state-of-the-web#reqTotal)**
 
 This low rate of change can perhaps be attributed to the aforementioned observations that bundling cannot be removed (at least completely) without a negative performance impact and that many build tools currently bundle for historical reasons based on HTTP/1.1 recommendations. It is also likely that many sites may not be willing to penalize HTTP/1.1 users by undoing their HTTP/1.1 performance hacks just yet, or at least that they do not have the confidence (or time!) to feel this is worthwhile. That the number of requests is staying roughly static, and against the background of an ever increasing [page weight](./page-weight) is interesting though perhaps not really related to HTTP/2.
 
 ## HTTP/2 Push
+
 HTTP/2 push has a mixed history despite being a much-hyped new feature of HTTP/2. The other features were basically under the hood performance improvements, but push was a brand-new concept that completely broke the single request to single response nature of HTTP up until then. It allowed extra responses to be returned: when you asked for the web page, the server could respond with the HTML page as usual, but then also send you the critical CSS and JavaScript, thus avoiding any additional round trips for certain resources. It would in theory allow us to stop inlining CSS and JavaScript into our HTML and yet still get the same performance gains of doing it. After solving that, it could potentially lead to all sorts of new and interesting use cases.
 
 The reality has been... well, a bit disappointing. HTTP/2 push has proved much harder than originally envisaged to use effectively. Some of this has been due to [the complexity of how HTTP/2 push works](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/), and the implementation issues due to that. A bigger concern is that push can quite easily cause, rather than solve, performance issues. Over-pushing is a real risk. Often the browser is in the best place to decide *what* to request, and just as crucially *when* to request it but HTTP/2 push puts that responsibility on the server. Pushing resources that a browser already has in its cache, is a waste of bandwidth (though in my opinion so is inlining CSS but that gets must less of a hard time about that than HTTP/2 push!). [Proposals to inform the server about the status of the browser cache have stalled](https://lists.w3.org/Archives/Public/ietf-http-wg/2019JanMar/0033.html) especially on privacy concerns. Even without that problem, there are other potential issues if push is not used correctly. For example, pushing large images and therefore holding up the sending of critical CSS and JavaScript will lead to slower websites than if you'd not pushed at all!
@@ -183,7 +184,7 @@ These status show that the uptick of HTTP/2 push is very low - most likely becau
 
 This is a concern as previous advice has been to be conservative with push and to ["push just enough resources to fill idle network time, and no more"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). The above statistics suggest many resources, of a significant combined size are pushed. Looking at what is pushed we see the data in Figure 12:
 
-![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/whatpushisusedfor.png)
+![What asset types is push used for?](/static/images/2019/20_HTTP_2/whatpushisusedfor.png)
 
 **Figure 12 - What asset types is push used for?**
 
@@ -198,7 +199,7 @@ To get around this unintended push, you can provide the `nopush` attribute in yo
 It looks like 5% of preload HTTP headers do make use of this attribute, which is higher than I would have expected as I would have considered this a niche optimization. Then again, so is the use of preload HTTP headers and/or HTTP/2 push itself!
 
 
-## Issues
+## HTTP/2 Issues
 
 HTTP/2 is mostly a seamless upgrade that, once your server supports it, you can switch on with no need to change your website or application. Of course, you can optimize for HTTP/2 or stop using HTTP/1.1 workarounds as much, but in general a site will usually work without needing any changes - but just be faster. There are a couple of gotchas to be aware of however that can impact any upgrade and some sites have found these out the hard way.
 

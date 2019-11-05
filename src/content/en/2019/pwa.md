@@ -2,8 +2,11 @@
 part_number: II
 chapter_number: 11
 title: PWA
+description: PWA chapter of the 2019 Web Almanac covering Service Workers, Web App Manifests, and Workbox
 authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 ## Introduction
@@ -22,7 +25,7 @@ The first metric we explore are service worker installations. Looking at the dat
 
 **Figure 1:** Service Worker installation over time for desktop and mobile
 
-Lighthouse checks whether a page is eligble for an [install prompt](https://developers.google.com/web/tools/lighthouse/audits/install-prompt) though it currently is only available for mobile pages. Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages have an [installable manifest](https://web.dev/installable-manifest/).  Readers may notice this is higher than the 0.37% of mobile pages that register a service worker, which is also a requirement of the install prompt ([issue raised to make this clearer in the documentation](https://github.com/GoogleChrome/web.dev/issues/1797)). The difference in these numbers may be due to Service Workers being registered on pages other than the home page as the [Web Almanac only is restricted just to home pages](./methodology).
+Lighthouse checks whether a page is eligble for an [install prompt](https://developers.google.com/web/tools/lighthouse/audits/install-prompt) though it currently is only available for mobile pages. Looking at Lighthouse data in the HTTP Archive, 1.56% of mobile pages have an [installable manifest](https://web.dev/installable-manifest/).  Readers may notice this is higher than the 0.37% of mobile pages that register a service worker, which is also a requirement of the install prompt. The difference in these numbers may be due to Service Workers being registered on pages other than the home page as the [Web Almanac only is restricted just to home pages](./methodology).
 
 To control the install experience, 0.82% of all desktop and 0.94% of all mobile pages use the [`OnBeforeInstallPrompt` interface](https://w3c.github.io/manifest/#beforeinstallpromptevent-interface). At present [support is limited to Chromium based browsers](https://caniuse.com/#feat=web-app-manifest).
 
@@ -167,6 +170,6 @@ The HTTP Archive shows that, out of the total population of sites that register 
 
 The stats in this chapter show that PWAs are still only used by a small percentage of sites. However this relatively small usage is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more: we showed that 15% of page loads use a service workers. The advantages they give for [performance](./performance) and greater control over [caching](./caching) particularly for [mobile](./mobile) should mean that usage will continue to grow.
 
-PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the underlying technologies, although first-class installability lags on some platforms. it's positive to see support becoming more widespread. [Maximiliano Firtman](https://twitter.com/firt) does a great job of tracking this, including [explaining Safari PWA support](https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49). Apple doesn't use the term PWA much, and has [explicitly stated that these HTML5 apps are best delivered outside of the App Store](https://developer.apple.com/news/?id=09062019b). Microsoft went the opposite direction, not only [encouraging PWAs in its app store, but even automatically indexing any found when as it crawled the web](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store). Google has also provided a method for listing web apps in the Google Play Store, via [Trusted Web Activities](https://developers.google.com/web/updates/2019/02/using-twa>).
+PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the underlying technologies, although first-class installability lags on some platforms. It's positive to see support becoming more widespread. [Maximiliano Firtman](https://twitter.com/firt) does a great job of tracking this on iOS, including [explaining Safari PWA support](https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49). Apple doesn't use the term PWA much, and has [explicitly stated that these HTML5 apps are best delivered outside of the App Store](https://developer.apple.com/news/?id=09062019b). Microsoft went the opposite direction, not only [encouraging PWAs in its app store, but even automatically shortlisting PWAs to be added that were found via the Bing web crawler](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store). Google has also provided a method for listing web apps in the Google Play Store, via [Trusted Web Activities](https://developers.google.com/web/updates/2019/02/using-twa>).
 
 PWAs provide a path forward for developers who would prefer to build and release on the web instead of on native platforms and app stores. Not every operating system and browser offers full parity with native software, but improvements continue, and perhaps 2020 is the year where we see an explosion in deployments?

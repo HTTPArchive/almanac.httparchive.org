@@ -10,20 +10,20 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":3,"title":"Markup","authors":["bkardell"],"reviewers":["zcorpan","tomhodgins","matthewp"]} %} {% block meta %}
+{% set metadata = {"part_number":"I","chapter_number":3,"title":"Markup","description":"Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases","authors":["bkardell"],"reviewers":["zcorpan","tomhodgins","matthewp"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T12:00:00+00:00:00 "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
-<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
 <meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
 <meta property="og:type" content="article" />
-<meta property="og:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta property="og:description" content="{{ self.description() }}" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@HTTPArchive" />
 <meta name="twitter:title" content="{{ self.title() }}" />
 <meta name="twitter:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
-<meta name="twitter:description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta name="twitter:description" content="{{ self.description() }}" />
 
 <script type="application/ld+json">
   {
@@ -31,7 +31,7 @@
     "@type": "Article",
     "mainEntityOfPage": {
     	  "@type": "WebPage",
-    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}"
+    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
     },
     "headline": "{{ metadata.get('title') }}",
     "image": {
@@ -40,7 +40,7 @@
     },
     "publisher": {
     	  "@type": "Organization",
-    	  "name": "HTTPArchive",
+    	  "name": "HTTP Archive",
     	  "logo": {
     	      "@type": "ImageObject",
     	      "url": "https://almanac.httparchive.org/static/images/ha.png",
@@ -48,10 +48,10 @@
     	      "width": 320
     	  }
        },
-    "author": [
-       {% for author in metadata.get('authors') %}
-       {% set authordata = config.contributors[author] if author in config.contributors else None %}
-       {% if authordata %}
+    "author":
+       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+       {% if authordata -%}
     {
     	  "@type": "Person",
            "sameas": [
@@ -61,12 +61,31 @@
              ],
     	  "name": "{{ authordata.name if authordata.name else author }}"
        }{% if loop.index < loop.length %},{% endif %}
-       {% endif %}
-       {% endfor %}
-       ],
-       "description": "{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}",
-       "datePublished": "{{ metadata.get('published','2019-11-08T12:00:00+00:00:00') }}",
-       "dateModified": "{{ metadata.get('last_updated','2019-11-08T12:00:00+00:00:00') }}"
+       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+       {% endfor %},
+       "description": "{{ self.description() }}",
+       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ metadata.get('title') }}",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+      }
+    ]
   }
 </script>
 {% endblock %} {% block main %}
@@ -124,8 +143,10 @@
 
   <section class="content">
     <section class="body">
+      <div class="subtitle">
+        Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
+      </div>
       <h1 class="title">
-        <div class="subtitle">Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}</div>
         {{ metadata.get('title') }}
       </h1>
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
@@ -148,9 +169,9 @@
         <table>
           <thead>
             <tr>
-              <th id="2005_(per_site)">2005 (per site)</th>
-              <th id="2019_(per_site)">2019 (per site)</th>
-              <th id="2019_(frequency)">2019 (frequency)</th>
+              <th>2005 (per site)</th>
+              <th>2019 (per site)</th>
+              <th>2019 (frequency)</th>
             </tr>
           </thead>
           <tbody>
@@ -399,7 +420,6 @@
       <p>That last one is where you come in. We'd love to tap into the creativity and curiosity of the larger community to help explore this data using some of the tools (like <a href="https://rainy-periwinkle.glitch.me/">https://rainy-periwinkle.glitch.me/</a>). Please share your interesting observations and help build our commons of knowledge and understanding.</p>
     </section>
     <section class="authors">
-      <h4>Authors</h4>
       {{ render_authors() }}
     </section>
 

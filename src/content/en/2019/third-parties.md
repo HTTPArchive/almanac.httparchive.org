@@ -2,8 +2,11 @@
 part_number: II
 chapter_number: 5
 title: Third Parties
+description: Third Parties chapter of the 2019 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
 ---
 
 ## Introduction
@@ -120,9 +123,7 @@ The category breakdowns among script execution largely follow that of resource c
 
 While much could be said about every individual provider’s popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as the previously mentioned [third-party-web](https://thirdpartyweb.today).
 
-## Analysis
-
-### Usage Patterns
+## Usage Patterns
 
 Why do site owners use third-party code? How did third-party content grow to be nearly half of all network requests? What are all these requests doing? Answers to these questions lie in the three primary usage patterns of third-party resources. Broadly, site owners reach for third parties to generate and consume data from their users, monetize their site experiences, and simplify web development.
 

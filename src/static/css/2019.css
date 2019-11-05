@@ -31,16 +31,19 @@ h1.title {
   font-size: 72px;
   line-height: 80px;
 }
-h1.title::before {
+
+div.subtitle {
+  font-size: 28px;
+  line-height: 42px;
+  font-weight: bold;
+}
+
+div.subtitle::before {
   display: block;
   content: '';
   margin-bottom: 18px;
   border-bottom: solid 1px #A8CABA;
   width: 70px;
-}
-.subtitle {
-  font-size: 28px;
-  line-height: 42px;
 }
 
 .btn {
