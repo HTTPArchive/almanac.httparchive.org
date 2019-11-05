@@ -2,11 +2,8 @@
 part_number: II
 chapter_number: 8
 title: Security
-description: State of Security 2019
-hero_image: ''
-authors: [scotthelme]
+authors: [scotthelme, arturjanc]
 reviewers: [paulcalvano, bazzadp, ghedo, ndrnmnn]
-translaters: []
 ---
 
 # Chapter 8: Security
