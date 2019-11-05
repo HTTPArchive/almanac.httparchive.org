@@ -11,11 +11,13 @@
 #}-->
 
 {% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T12:00:00+00:00:00 "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
-<meta name="description" content="{{ metadata.get('description',metadata.get('title') + ' chapter of the 2019 Web Almanac') }}" />
+<meta name="description" content="{{ self.description() }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
-<meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
+<meta property="og:image:height" content="433" />
+<meta property="og:image:width" content="866" />
 <meta property="og:type" content="article" />
 <meta property="og:description" content="{{ self.description() }}" />
 
@@ -36,7 +38,9 @@
     "headline": "{{ metadata.get('title') }}",
     "image": {
     	  "@type": "ImageObject",
-    	  "url": "https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg"
+    	  "url": "https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
+    	  "height": 163,
+    	  "width": 326
     },
     "publisher": {
     	  "@type": "Organization",
@@ -198,7 +202,7 @@
       <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
-      <p>Let's step back for a moment, to the year 2007. The "mobile web" is currently just a blip on the radar, and for good reason too. Why? Mobile browsers have little to no CSS support, meaning sites look nothing like they do on desktop -- some browsers can only display text. Screens are incredibly small and can only display a few lines of text at a time. And the replacements for a mouse are these tiny little arrow keys you use to "tab around". Needless to say, browsing the web on a phone is truly a labor of love. However, all of this is just about to change.</p>
+      <p>Let's step back for a moment, to the year 2007. The "mobile web" is currently just a blip on the radar, and for good reason too. Why? Mobile browsers have little to no CSS support, meaning sites look nothing like they do on desktop — some browsers can only display text. Screens are incredibly small and can only display a few lines of text at a time. And the replacements for a mouse are these tiny little arrow keys you use to "tab around". Needless to say, browsing the web on a phone is truly a labor of love. However, all of this is just about to change.</p>
       <p>In the middle of his presentation, Steve Jobs takes the newly unveiled iPhone, sits down, and begins to surf the web in a way we had only previously dreamed of. A large screen and fully featured browser displaying websites in their full glory. And most importantly, surfing the web using the most intuitive pointer device known to man: our fingers. No more tabbing around with tiny little arrow keys.</p>
       <p>Since 2007, the mobile web has grown at an explosive rate. And now, 13 years later, mobile accounts for <a href="https://www.merkleinc.com/thought-leadership/digital-marketing-report">59% of all searches</a> and 58.7% of all web traffic, according to <a href="https://developer.akamai.com/akamai-mpulse-real-user-monitoring-solution">Akamai mPulse</a> data in July 2019. It's no longer an afterthought, but the primary way people experience the web. So given how significant mobile is, what kind of experience are we providing our visitors? Where are we falling short? Let's find out.</p>
       <h2 id="the-page-loading-experience">The page loading experience</h2>
@@ -273,7 +277,7 @@
       <p>So what do we see when we look at CLS across the web?</p>
       <ol>
         <li><p>Nearly two out of every three sites (65.32%) have medium or large CLS for 50% or more of all user experiences.</p></li>
-        <li><p>20.52% of sites have large CLS for at least half of all user experiences. That's about one of every five websites. Remember, the video&nbsp;in Figure 3 only has a CLS of 42.59% -- these experiences are even worse than that!</p></li>
+        <li><p>20.52% of sites have large CLS for at least half of all user experiences. That's about one of every five websites. Remember, the video&nbsp;in Figure 3 only has a CLS of 42.59% — these experiences are even worse than that!</p></li>
       </ol>
       <p>We suspect much of this may be caused by websites not providing an explicit width and height for resources like ads and images that load after text has been painted to the screen. Before browsers can display a resource on the screen, they need to know how much room the resource will take up. So unless an explicit size is provided via CSS or HTML attributes, browsers have no way to know how how large the resource actually is and display it with a width and height of 0px until loaded. When the resource loads and browsers finally know how big it is, it shifts the page's contents, creating an unstable layout.</p>
       <h3 id="permission-requests">Permission requests</h3>
@@ -330,7 +334,7 @@
       </figure>
       <p>As of now, 34.43% of sites have sufficiently sized tap targets. So we have quite a ways to go until "fat fingering" is a thing of the past.</p>
       <h3 id="labeling-buttons">Labeling buttons</h3>
-      <p>Some designers love to use icons in place of text -- they can make our sites look cleaner and more elegant. But while you and everyone on your team may know what these icons mean, many of your users will not. This is even the case with the infamous hamburger icon! If you don't believe us, do some user testing and see how often users get confused. You'll be astounded.</p>
+      <p>Some designers love to use icons in place of text — they can make our sites look cleaner and more elegant. But while you and everyone on your team may know what these icons mean, many of your users will not. This is even the case with the infamous hamburger icon! If you don't believe us, do some user testing and see how often users get confused. You'll be astounded.</p>
       <p>This is why it's important to avoid any confusion and add supporting text and labels to your buttons. As of now, at least 28.59% of sites include a button with only a single icon with no supporting text.</p>
       <aside class="note">Note: The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.</aside>
       <h2 id="semantic-form-fields">Semantic form fields</h2>
@@ -382,7 +386,7 @@
       <p>The mobile web has now been around long enough for there to be an entire generation of kids where this is the only internet they've ever known. And what kind of experience are we giving them? We're essentially taking them back to the dial-up era. (Good thing I hear AOL still sells those CDs providing 1000 hours of free internet access!)</p>
       <figure id="fig-9">
         <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" width="300" />
-        <figcaption>1000 hours of America Online for free. From <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a></figcaption>
+        <figcaption>1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
       </figure>
       <aside class="note" markdown>
         <p>Notes:</p>
