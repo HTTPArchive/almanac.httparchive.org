@@ -46,7 +46,7 @@ This chapter divides third-party providers into one of these broad categories. A
 - **Video** - providers that host the arbitrary video content of their users
 - **Other** - uncategorized or non-conforming activity
 
-**Note on CDNs** The CDN category here includes providers that provide resources on _public_ CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc) and does _not_ include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.
+**Note on CDNs**: The CDN category here includes providers that provide resources on _public_ CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does _not_ include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.
 
 ### Caveats
 
@@ -173,13 +173,13 @@ The top-heavy concentration of script execution is great for the potential impac
 
 ### Security
 
-While the topic of security is covered more in-depth in a [separate chapter](./security#vulnerable-js-libraries), the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns it can introduce a single point of failure [which has been recognized as a potential problem for some time now](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+While the topic of security is covered more in-depth in a [separate chapter](./security), the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns it can introduce a single point of failure [which has been recognized as a potential problem for some time now](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
 
 [Self-hosting third-party content](https://csswizardry.com/2019/05/self-host-your-static-assets/) addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly [partitioning HTTP caches](https://chromestatus.com/feature/5730772021411840) the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring its impact more difficult.
 
 ## Conclusion
 
-Third-party content is everywhere. This is hardly surprising; the entire basis of the web is to allow interconnectedness and linking. In this chapter we have examined third-party content in terms of assets hosted away from the main domain. If we had included self-hosted third-party content (e.g. common open source libraries hosted on the main domain), third-party usage would have be even larger!
+Third-party content is everywhere. This is hardly surprising; the entire basis of the web is to allow interconnectedness and linking. In this chapter we have examined third-party content in terms of assets hosted away from the main domain. If we had included self-hosted third-party content (e.g. common open source libraries hosted on the main domain), third-party usage would have been even larger!
 
 While [reuse in computer technologies](https://en.wikipedia.org/wiki/Code_reuse) is generally a best practice, third parties on the web introduce dependencies that have a considerable impact on the performance, privacy, and security of a page. Self-hosting and careful provider selection can go a long way to mitigate these effects
 
