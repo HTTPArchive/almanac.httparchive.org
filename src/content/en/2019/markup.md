@@ -164,7 +164,7 @@ It's interesting, then, to see what the distribution of these elements looks lik
   <figcaption>Figure 8. Element popularity categorized by standardization.</figcaption>
 </figure>
 
-Figure 8 shows the rank of each element and which category they fall into.  I've separated the data points into discrete sets simply so that they can be viewed (otherwise there just aren't enough pixels to capture all that data), but they represent a single 'line' of popularity; the left-most being the most common, the right-most being the least common.  The arrow points to the end of elements that appear in more than 1% of the pages.
+Figure 8 shows the rank of each element and which category they fall into.  I've separated the data points into discrete sets simply so that they can be viewed (otherwise there just aren't enough pixels to capture all that data), but they represent a single 'line' of popularity; the bottom-most being the most common, the top-most being the least common.  The arrow points to the end of elements that appear in more than 1% of the pages.
 
 You can observe two things here. First, the set of elements that have more than 1% use are not exclusively HTML.  In fact, *27 of the most popular 100 elements aren't even HTML* - they are SVG! And there are *non-standard tags at or very near that cutoff too*!  Second, note that a whole lot of HTML elements are used by less than 1% of pages.
 
@@ -180,7 +180,7 @@ In fact, over 15% of elements we're counting as defined by HTML are outside the 
 
 With this perspective in mind about what use of native/standard features looks like in the dataset, let's talk about the non-standard stuff.
 
-You might expect that many of the elements we measured are used only on a single web page, but in fact all one of the 5,048 elements appear on more than one page.  The fewest pages an element in our dataset appears on is 15.  About a fifth of them occur on more than 100 pages.  About 7% occur on more than 1,000 pages.
+You might expect that many of the elements we measured are used only on a single web page, but in fact all of the 5,048 elements appear on more than one page.  The fewest pages an element in our dataset appears on is 15.  About a fifth of them occur on more than 100 pages.  About 7% occur on more than 1,000 pages.
 
 To help analyze the data, I hacked together a [little tool with Glitch](https://rainy-periwinkle.glitch.me).  You can use this tool yourself, and please share a permalink back with the [@HTTPAchive](https://twitter.com/HTTPArchive) along with your observations. (Tommy Hodgins has also built a similar [CLI tool](https://github.com/tomhodgins/hade) which you can use to explore.)
 
