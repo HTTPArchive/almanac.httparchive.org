@@ -11,7 +11,7 @@ last_updated: 2019-11-04T12:00:00+00:00:00
 
 ## Introduction
 
-HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client’s available bandwidth, reduces [page weight](./page-weight), and improves [web performance](./performance).
+HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client's available bandwidth, reduces [page weight](./page-weight), and improves [web performance](./performance).
 
 Compression algorithms are often categorized as lossy or lossless: 
 
@@ -135,9 +135,9 @@ Of the resources that are served compressed, the majority are using either gzip 
 
 ![Compression Algorithms](../../../static/images/2019/15_Compression/ch15_fig1_compression_algorithms.jpg)
 
-Additionally, there are 67K requests that return an invalid `Content-Encoding`, such as “none”, “UTF-8”, “base64”, “text”, etc. These resources are likely served uncompressed.
+Additionally, there are 67K requests that return an invalid `Content-Encoding`, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.
 
-We can’t determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:
+We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:
 
 *   At a minimum, enable gzip compression level 6 for text based assets. This provides a fair tradeoff between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)—though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
 *   If you can support brotli and precompress resources, then compress to brotli level 11.  This is more computationally expensive than gzip - so precompression is an absolute must to avoid delays. 
@@ -146,7 +146,7 @@ We can’t determine the compression levels from any of the diagnostics collecte
 
 ## What types of content are we compressing?
 
-Most text based resources (such as HTML, CSS, and JavaScript) can benefit from gzip or brotli compression. However, it’s often not necessary to use these compression techniques on binary resources, such as images, video, and some web fonts because their file formats are already compressed.
+Most text based resources (such as HTML, CSS, and JavaScript) can benefit from gzip or brotli compression. However, it's often not necessary to use these compression techniques on binary resources, such as images, video, and some web fonts because their file formats are already compressed.
 
 In the graph below, the top 25 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded red, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded green to indicate that they are being compressed. However, the light green shading for some content types indicate that they are not compressed as consistently as the others. 
 
@@ -230,7 +230,7 @@ Additionally, the percentage of brotli compression is higher for third party con
 
 ## Identifying compression opportunities
 
-Google’s [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages. The [text compression audit](https://developers.google.com/web/tools/lighthouse/audits/text-compression) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object’s size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
+Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages. The [text compression audit](https://developers.google.com/web/tools/lighthouse/audits/text-compression) evaluates whether a site can benefit from additional text-based compression. It does this by attempting to compress resources and evaluate whether an object's size can be reduced by at least 10% and 1,400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
 
 ![Lighthouse Compression Suggestions](../../../static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg)
 
