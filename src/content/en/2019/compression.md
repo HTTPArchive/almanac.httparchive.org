@@ -44,7 +44,7 @@ The HTTP Archive contains measurements for 5.3 million web sites, and each site 
 
 ## Compression algorithms
 
-IANA maintains a [list of valid HTTP Content Encodings](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) that can be used with the Accept-Encoding and Content-Encoding headers. These include gzip, deflate, br (brotli), as well as a few others. Brief descriptions of these algorithms are given below:
+IANA maintains a [list of valid HTTP content encodings](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) that can be used with the `Accept-Encoding` and `Content-Encoding` headers. These include gzip, deflate, br (brotli), as well as a few others. Brief descriptions of these algorithms are given below:
 
 *   [Gzip](https://tools.ietf.org/html/rfc1952) uses the [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) and [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) compression techniques, and is older than the web itself. It was originally developed for the UNIX gzip program in 1992. An implementation for web delivery has existed since HTTP/1.1, and most web browsers and clients support it.
 *   [Deflate](https://tools.ietf.org/html/rfc1951) uses the same algorithm as gzip, just with a different container. It’s use was not widely adopted for the web because of [compatibility issues](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) with some servers and browsers.
