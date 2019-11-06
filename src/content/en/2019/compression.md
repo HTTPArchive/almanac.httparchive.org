@@ -42,7 +42,7 @@ In the example below, the client advertised support for gzip, brotli, and deflat
 The HTTP Archive contains measurements for 5.3 million web sites, and each site loaded at least 1 compressed text resource on their home page. Additionally, resources were compressed on the primary domain on 81% of web sites.
 
 
-## Compression Algorithms
+## Compression algorithms
 
 IANA maintains a [list of valid HTTP Content Encodings](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) that can be used with the Accept-Encoding and Content-Encoding headers. These include gzip, deflate, br (brotli), as well as a few others. Brief descriptions of these algorithms are given below:
 
