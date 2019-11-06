@@ -4,6 +4,9 @@ body {
   color: #1A2B49;
   margin: 0;
   font-weight: inherit;
+  -webkit-font-smoothing: antialiased;
+  font-size: 17px;
+  line-height: 30px;
 }
 
 * {
@@ -27,9 +30,8 @@ a:focus, a:hover {
 }
 
 h1.title {
-  margin-top: 0;
-  font-size: 72px;
-  line-height: 80px;
+  margin-top: 20px;
+  font-size: 50px;
 }
 
 div.subtitle {
@@ -44,6 +46,15 @@ div.subtitle::before {
   margin-bottom: 18px;
   border-bottom: solid 1px #A8CABA;
   width: 70px;
+}
+
+h2.header {
+  font-size: 25px;
+  margin: 14px;
+}
+.subtitle {
+  font-size: 28px;
+  line-height: 42px;
 }
 
 .btn {
@@ -116,8 +127,8 @@ header.alt-bg a:focus, footer.alt-bg a:focus {
 header, footer {
   padding: 40px 60px;
 }
-.main {
-  margin: 0px 60px;
+article.main {
+  max-width: 1324px;
 }
 header, footer .nav {
   display: flex;
@@ -143,6 +154,8 @@ nav a {
 
 header .cta {
   display: flex;
+  min-width: 205px;
+  flex-direction: row-reverse;
 }
 
 header .btn + .language-switcher {
@@ -192,6 +205,32 @@ header .btn + .language-switcher {
   display: none;
 }
 
+.main {
+  margin: 0px auto;
+  font-size: 17px;
+}
+.content, section.main {
+  max-width: 1024px;
+}
+
+.main a,
+.main a:visited {
+  color: #0b1423;
+  word-break: break-all;
+}
+
+h2, h3, h4 {
+  margin-top: 2em;
+}
+
+p, td, th, code, li {
+  font-size: 17px;
+}
+
+pre {
+  margin: 0;
+}
+
 hr {
   opacity: 0.2;
 }
@@ -200,15 +239,15 @@ blockquote {
   position: relative;
   font-style: italic;
   font-size: 19px;
-  line-height: 26px;
 }
+
 blockquote::before {
   content: '"';
   position: absolute;
   z-index: -1;
   top: -4rem;
   left: -7rem;
-  opacity: .05;  
+  opacity: .05;
   font-size: 20rem;
   font-family: 'Courier New', Courier, monospace;
   line-height: 1;
@@ -347,6 +386,10 @@ p.copyright {
 
 /* Mobile View */
 @media (max-width: 600px) {
+   body, p, td, th, code, li {
+     font-size: 16px;
+   }
+
   .alt-bg.decorative-line,
   .alt-bg .decorative-line {
     margin: 0 40% !important;
@@ -373,7 +416,9 @@ p.copyright {
   header nav > a:last-child {
     margin: 0;
   }
-
+  h1.title {
+    font-size: 40px;
+  }
   .menu {
     position: absolute;
     display: none;
@@ -384,15 +429,15 @@ p.copyright {
     width: 100%;
     padding: 60px 30px 30px;
     background-color: #677486;
-    box-shadow: 0px 12px 12px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
     opacity: 0.95;
     z-index: 1;
   }
   .menu-btn {
     background: none;
     border: 0;
-    display: block; 
-    cursor: pointer;   
+    display: block;
+    cursor: pointer;
   }
 
   .menu-open .menu {

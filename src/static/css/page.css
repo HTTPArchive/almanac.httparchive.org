@@ -1,26 +1,30 @@
 .main {
-  margin-top: 32px;
-  overflow: visible;
+  padding-top: 32px;
   display: grid;
   grid-template-areas: 'index content';
   grid-template-columns: 300px auto;
-  font-size: 18px;
-  line-height: 30px;
 }
-table,
+.table-wrap,
 .floating-card {
   border-radius: 16px;
-  box-shadow: 0 0 5px 5px #f6f7f9;
+  box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
 }
+.table-wrap {
+  display: inline-block;
+  margin: 10px 0;
+  max-width: 100%;
+  overflow: auto;
+}
+
 .code-block {
   margin: 8px 0;
-  padding: 16px;
+  padding: 24px;
 }
 .code-block .divider {
   position: relative;
   border: 1px solid #1A2B490A;
   width: calc(100% + 32px);
-  left: -16px;
+  left: -24px;
 }
 .code-block pre {
   overflow-y: hidden;
@@ -177,10 +181,13 @@ table,
   height: 60px;
   border-radius: 50%;
 }
-
+.authors .social {
+  display: inline-block;
+  vertical-align: top;
+}
 .authors .social img{
-  width: 24px;
-  height: 24px;
+  width: auto;
+  height: 18px;
   display: inline-block;
   margin-left: 16px;
   vertical-align: middle;
@@ -235,11 +242,6 @@ table,
   right:-24px;
 }
 
-.main a,
-.main a:visited {
-  color: initial;
-}
-
 img,
 table,
 figure {
@@ -272,11 +274,11 @@ figcaption {
   margin-top: 20px;
   text-align: center;
 }
-
 table {
   margin: 0 auto;
   max-width: 100%;
   border-collapse: collapse;
+  display: block;
 }
 thead {
   font-family: 'Poppins', sans-serif;
@@ -299,7 +301,6 @@ figure .big-number {
 
 @media (max-width: 900px) {
   .main {
-    padding: 0;
     grid-template-areas:
       'index'
       'content';
@@ -352,6 +353,10 @@ figure .big-number {
     border-top: 1px solid #1A2B490A;
     max-height: 100%;
     transition: max-height 0.25s ease-in;
+  }
+
+  table {
+    font-size: .8em;
   }
 }
 

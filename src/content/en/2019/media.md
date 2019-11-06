@@ -51,7 +51,7 @@ For the median web page on desktop, only 46% of the display would have layout co
 Media resources are critical for the user experience!
 
 # Images 
-Much has already been written on the subject of managing and optimizing images to help reduce the bytes and optimize the user experience. <<TODO: link, link link>> It is an important and critical topic for many because it is the creative media that define a brand experience. Therefore optimizing image and video content is a balancing act between applying best practices that can help reduce the bytes transferred over the network while preserving the fidelity of the intended experience. 
+Much has already been written on the subject of managing and optimizing images to help reduce the bytes and optimize the user experience. `<<TODO: link, link link>>` It is an important and critical topic for many because it is the creative media that define a brand experience. Therefore optimizing image and video content is a balancing act between applying best practices that can help reduce the bytes transferred over the network while preserving the fidelity of the intended experience. 
 
 While the strategies that are utilized for images, videos and animations are, in broad strokes similar, the specific approaches can be very different. In general, these strategies boil down to:
 * File Formats - utilizing the optimal file format 

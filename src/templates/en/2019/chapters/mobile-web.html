@@ -209,33 +209,36 @@
       <p>The first part of the mobile web experience we analyzed is the one we're all most intimately familiar with: <em>the page loading experience</em>. But before we start diving into our findings, let's make sure we're all on the same page regarding what the typical mobile user <em>really</em> looks like. Because this will not only help you reproduce these results, but understand these users better.</p>
       <p>Let's start with what phone the typical mobile user has. The average Android phone <a href="https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119">is ~$250</a>, and one of the <a href="https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones">most popular phones</a> in that range is a Samsung Galaxy S6. So this is likely the kind of phone they use, which is actually 4x slower than an iPhone 8. This user doesn't have access to a fast 4G connection, but rather a 2G connection (<a href="https://www.gsma.com/r/mobileeconomy/">29%</a> of the time) or 3G connection (<a href="https://www.gsma.com/r/mobileeconomy/">28%</a> of the time). And this is what it all adds up to:</p>
       <figure id="fig-1">
-        <table>
-          <tr>
-            <th>Connection type</th>
-            <td><a href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
-          </tr>
-          <tr>
-            <th>Latency</th>
-            <td>300 - 400ms</td>
-          </tr>
-          <tr>
-            <th>Bandwidth</th>
-            <td>0.4 - 1.6Mbps</td>
-          </tr>
-          <tr>
-            <th>Phone</th>
-            <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
-          </tr>
-        </table>
-
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr>
+                <th>Connection type</th>
+                <td><a href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
+              </tr>
+              <tr>
+                <th>Latency</th>
+                <td>300 - 400ms</td>
+              </tr>
+              <tr>
+                <th>Bandwidth</th>
+                <td>0.4 - 1.6Mbps</td>
+              </tr>
+              <tr>
+                <th>Phone</th>
+                <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <figcaption>Figure 1. Technical profile of a typical mobile user.</figcaption>
       </figure>
       <p>I imagine some of you are surprised by these results. They may be far worse conditions than you've ever tested your site with. But now that we're all on the same page with what a mobile user truly looks like, let's get started.</p>
       <h3 id="pages-bloated-with-javascript">Pages bloated with JavaScript</h3>
-      <p>The state of JavaScript on the mobile web is terrifying. According to HTTP Archive's <a href="https://httparchive.org/reports/state-of-javascript?start=2016_05_15&end=2019_07_01&view=list#bytesJs">JavaScript report</a>, the median mobile site requires phones to download 375 KB of JavaScript. Assuming a 70% compression ratio, this means that phones have to parse, compile, and execute 1.25 MB of JavaScript at the median.</p>
-      <p>Why is this a problem? Because sites loading this much JS take upwards of <a href="https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci">10 seconds</a> to become interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, nothing happens because the JavaScript hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.</p>
+      <p>The state of JavaScript on the mobile web is terrifying. According to HTTP Archive's <a href="https://httparchive.org/reports/state-of-javascript?start=2016_05_15&amp;end=2019_07_01&amp;view=list#bytesJs">JavaScript report</a>, the median mobile site requires phones to download 375 KB of JavaScript. Assuming a 70% compression ratio, this means that phones have to parse, compile, and execute 1.25 MB of JavaScript at the median.</p>
+      <p>Why is this a problem? Because sites loading this much JS take upwards of <a href="https://httparchive.org/reports/loading-speed?start=earliest&amp;end=2019_07_01&amp;view=list#ttci">10 seconds</a> to become interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, nothing happens because the JavaScript hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.</p>
       <figure id="fig-2">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
         <figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
       </figure>
       <p>Let's delve deeper and look at another metric that focuses more on <em>how well</em> each page utilizes JavaScript. For example, does it really need as much JavaScript as it's loading? We call this metric the <em>JavaScript Bloat Score</em>, based on the <a href="https://www.webbloatscore.com/">web bloat score</a>. The idea behind it is this:</p>
@@ -314,7 +317,7 @@
         </li>
       </ol>
       <figure id="fig-5">
-        <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive"></iframe>
         <div id="fig5-caption" class="visually-hidden">Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
         <figcaption>Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>
       </figure>
@@ -344,25 +347,28 @@
       <p>Many <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types">new input types</a> have since been introduced, allowing developers to inform browsers what kind of data is expected, and enable browsers to provide customized keyboards specifically for these input types. For example, a type of <code>email</code> provides users with an alphanumeric keyboard including the "@" symbol, and a type of <code>tel</code> will display a numeric keypad.</p>
       <p>When analyzing sites containing an email input, 56.42% use <code>type="email"</code>. Similarly, for phone inputs, <code>type="tel"</code> is used 36.7% of the time. Other new input types have an even lower adoption rate.</p>
       <figure id="fig-7">
-        <table>
-          <tr>
-            <th>Type</th>
-            <th>Frequency (pages)</th>
-          </tr>
-          <tr>
-            <td>phone</td>
-            <td class="numeric">1,917</td>
-          </tr>
-          <tr>
-            <td>name</td>
-            <td class="numeric">1,348</td>
-          </tr>
-          <tr>
-            <td>textbox</td>
-            <td class="numeric">833</td>
-          </tr>
-        </table>
-
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr>
+                <th>Type</th>
+                <th>Frequency (pages)</th>
+              </tr>
+              <tr>
+                <td>phone</td>
+                <td class="numeric">1,917</td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td class="numeric">1,348</td>
+              </tr>
+              <tr>
+                <td>textbox</td>
+                <td class="numeric">833</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <figcaption>Figure 7. Most commonly used invalid input types</figcaption>
       </figure>
       <p>Make sure to educate yourself and others on the large amount of input types available and double-check that you don't have any typos like the most common ones in Figure 7 above.</p>
@@ -388,7 +394,7 @@
         <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" width="300" />
         <figcaption>1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
       </figure>
-      <aside class="note" markdown>
+      <aside class="note" markdown="">
         <p>Notes:</p>
         <ol>
           <li><p>We defined sites making a mobile effort as those who adjust their designs for smaller screens. Or rather, those which have at least one CSS breakpoint at 600px or less.</p></li>
