@@ -144,7 +144,7 @@ We can’t determine the compression levels from any of the diagnostics collecte
 *   If you can support brotli and are unable to precompress, then compress to brotli level 5. This level will result in smaller payloads compared to gzip, with a similar computational overhead.
 
 
-## What Type of Content Are We Compressing?
+## What types of content are we compressing?
 
 Most text based resources (such as HTML, CSS and JavaScript) can benefit from gzip or brotli compression. However, it’s often not necessary to use these compression techniques on binary resources, such as images, video and some web fonts because their file formats are already compressed.
 
