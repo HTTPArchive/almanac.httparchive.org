@@ -238,7 +238,7 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
 
 !["Enable Text Compression" Lighthouse Scores](../../../static/images/2019/15_Compression/ch15_fig9_lighthouse_compression_scores.jpg)
 
-Lighthouse also indicates how many bytes could be saved by enabling text compression. Of the sites that could benefit from text compression, 82% of them can reduce their page weight by up to 1 MB!
+Lighthouse also indicates how many bytes could be saved by enabling text-based compression. Of the sites that could benefit from text compression, 82% of them can reduce their page weight by up to 1 MB!
 
 !["Enable Text Compression" Potential Byte Savings](../../../static/images/2019/15_Compression/ch15_fig10_lighthouse_compression_byte_savings.jpg)
 
