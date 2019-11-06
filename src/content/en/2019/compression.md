@@ -11,7 +11,7 @@ last_updated: 2019-11-04T12:00:00+00:00:00
 
 ## Introduction
 
-HTTP Compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client’s available bandwidth, reduces [page weight](./page-weight) and improves [web performance](./performance).
+HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client’s available bandwidth, reduces [page weight](./page-weight), and improves [web performance](./performance).
 
 Compression algorithms are often categorized as Lossy or Lossless: 
 
