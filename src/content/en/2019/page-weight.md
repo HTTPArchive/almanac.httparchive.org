@@ -475,12 +475,12 @@ The preceding analysis has focused on analyzing page weight through the lens of 
   <table>
     <tr>
       <th>Percentile</th>
-      <th>GIF</th>
-      <th>ICO</th>
-      <th>JPG</th>
-      <th>PNG</th>
-      <th>SVG</th>
-      <th>WEBP</th>
+      <th>GIF (KB)</th>
+      <th>ICO (KB)</th>
+      <th>JPG (KB)</th>
+      <th>PNG (KB)</th>
+      <th>SVG (KB)</th>
+      <th>WEBP (KB)</th>
     </tr>
     <tr>
       <td>10</td>
@@ -551,12 +551,12 @@ The tables below show two different approaches to removing these tiny images fro
   <table>
     <tr>
       <th>Percentile</th>
-      <th>GIF</th>
-      <th>ICO</th>
-      <th>JPG</th>
-      <th>PNG</th>
-      <th>SVG</th>
-      <th>WEBP</th>
+      <th>GIF (KB)</th>
+      <th>ICO (KB)</th>
+      <th>JPG (KB)</th>
+      <th>PNG (KB)</th>
+      <th>SVG (KB)</th>
+      <th>WEBP (KB)</th>
     </tr>
     <tr>
       <td>10</td>
@@ -613,12 +613,12 @@ The tables below show two different approaches to removing these tiny images fro
   <table>
     <tr>
       <th>Percentile</th>
-      <th>GIF</th>
-      <th>ICO</th>
-      <th>JPG</th>
-      <th>PNG</th>
-      <th>SVG</th>
-      <th>WEBP</th>
+      <th>GIF (KB)</th>
+      <th>ICO (KB)</th>
+      <th>JPG (KB)</th>
+      <th>PNG (KB)</th>
+      <th>SVG (KB)</th>
+      <th>WEBP (KB)</th>
     </tr>
     <tr>
       <td>10</td>
