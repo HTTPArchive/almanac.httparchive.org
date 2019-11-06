@@ -137,7 +137,7 @@ Of the resources that are served compressed, the majority are using either gzip 
 
 Additionally, there are 67K requests that return an invalid `Content-Encoding`, such as “none”, “UTF-8”, “base64”, “text”, etc. These resources are likely served uncompressed.
 
-We can’t determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content will be:
+We can’t determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:
 
 *   At a minimum, enable gzip compression level 6 for text based assets. This provides a fair tradeoff between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/) - though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
 *   If you can support brotli and precompress resources, then compress to brotli level 11.  This is more computationally expensive than gzip - so precompression is an absolute must to avoid delays. 
