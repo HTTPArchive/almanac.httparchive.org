@@ -165,7 +165,7 @@ The graphs below illustrate the breakdown of compression techniques used for eac
 ![Compression By Content Type for Desktop](../../../static/images/2019/15_Compression/ch15_fig4_compression_by_content_type_desktop.jpg)
 ![Compression By Content Type for Mobile](../../../static/images/2019/15_Compression/ch15_fig5_compression_by_content_type_mobile.jpg)
 
-The content types with the lowest compression rates include application/json, text/xml and text/plain. These resources are commonly used for XHR requests to provide data that web applications can use to create rich experiences. Compressing them will likely improve user experience.  Vector graphics such as image/svg+xml, and image/x-icon are not often thought of as text based, but they are and sites that use them would benefit from compression. 
+The content types with the lowest compression rates include `application/json`, `text/xml`, and `text/plain`. These resources are commonly used for XHR requests to provide data that web applications can use to create rich experiences. Compressing them will likely improve user experience.  Vector graphics such as `image/svg+xml`, and `image/x-icon` are not often thought of as text based, but they are and sites that use them would benefit from compression. 
 
 ![Compression By Content Type as a % for Desktop](../../../static/images/2019/15_Compression/ch15_fig6_compression_by_content_type_pct_desktop.jpg)
 ![Compression By Content Type as a % for Mobile](../../../static/images/2019/15_Compression/ch15_fig7_compression_by_content_type_pct_mobile.jpg)
