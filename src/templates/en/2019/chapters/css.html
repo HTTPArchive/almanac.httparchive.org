@@ -1,0 +1,491 @@
+{% extends "en/2019/base_chapter.html" %}
+
+<!--{# IMPORTANT!
+
+- `chapter.html` is a "template for templates" used by the `generate_chapters.js` script, hence the strange template syntax (eg, mixing ejs and jinja syntax)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}-->
+
+{% set metadata = {"part_number":"I","chapter_number":2,"title":"CSS","authors":["una","argyleink"],"reviewers":["meyerweb","huijing"]} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+<meta name="description" content="{{ self.description() }}" />
+
+<meta property="og:title" content="{{ self.title() }}" />
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
+<meta property="og:image:height" content="433" />
+<meta property="og:image:width" content="866" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{ self.description() }}" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@HTTPArchive" />
+<meta name="twitter:title" content="{{ self.title() }}" />
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+<meta name="twitter:description" content="{{ self.description() }}" />
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+    	  "@type": "WebPage",
+    	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+    },
+    "headline": "{{ metadata.get('title') }}",
+    "image": {
+    	  "@type": "ImageObject",
+    	  "url": "https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
+    	  "height": 163,
+    	  "width": 326
+    },
+    "publisher": {
+    	  "@type": "Organization",
+    	  "name": "HTTP Archive",
+    	  "logo": {
+    	      "@type": "ImageObject",
+    	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+    	      "height": 160,
+    	      "width": 320
+    	  }
+       },
+    "author":
+       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+       {% if authordata -%}
+    {
+    	  "@type": "Person",
+           "sameas": [
+             "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"
+             {% if authordata.twitter %},"https://twitter.com/{{ authordata.twitter }}"{% endif %}
+             {% if authordata.github %},"https://github.com/{{ authordata.github }}"{% endif %}
+             ],
+    	  "name": "{{ authordata.name if authordata.name else author }}"
+       }{% if loop.index < loop.length %},{% endif %}
+       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+       {% endfor %},
+       "description": "{{ self.description() }}",
+       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ year }} Home ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ metadata.get('title') }}",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+      }
+    ]
+  }
+</script>
+{% endblock %} {% block main %}
+<article id="chapter" class="main">
+  <nav class="index">
+    <div class="index-box floating-card">
+      <h2 class="header">Index</h2>
+      <ul>
+        <li>
+          <a href="#introduction">Introduction</a>
+        </li>
+
+        <li>
+          <a href="#color">Color</a>
+
+          <ul>
+            <li>
+              <a href="#color-types">Color Types</a>
+            </li>
+
+            <li>
+              <a href="#color-selection">Color Selection</a>
+            </li>
+
+            <li>
+              <a href="#color-count">Color Count</a>
+            </li>
+
+            <li>
+              <a href="#color-duplication">Color Duplication</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#units">Units</a>
+
+          <ul>
+            <li>
+              <a href="#length-and-sizing">Length and Sizing</a>
+            </li>
+
+            <li>
+              <a href="#viewport-based-units">Viewport-Based Units</a>
+            </li>
+
+            <li>
+              <a href="#custom-properties">Custom Properties</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#selectors">Selectors</a>
+
+          <ul>
+            <li>
+              <a href="#id-vs-class-selectors">ID vs Class selectors</a>
+            </li>
+
+            <li>
+              <a href="#attribute-selectors">Attribute Selectors</a>
+            </li>
+
+            <li>
+              <a href="#classes-per-element">Classes Per Element</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#layout">Layout</a>
+
+          <ul>
+            <li>
+              <a href="#flexbox">Flexbox</a>
+            </li>
+
+            <li>
+              <a href="#grid">Grid</a>
+            </li>
+
+            <li>
+              <a href="#writing-modes">Writing Modes</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#typography">Typography</a>
+
+          <ul>
+            <li>
+              <a href="#fonts-per-page">Fonts Per Page</a>
+            </li>
+
+            <li>
+              <a href="#popular-font-families">Popular Font Families</a>
+            </li>
+
+            <li>
+              <a href="#font-sizes">Font Sizes</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#spacing">Spacing</a>
+
+          <ul>
+            <li>
+              <a href="#margins">Margins</a>
+            </li>
+
+            <li>
+              <a href="#logical-properties">Logical Properties</a>
+            </li>
+
+            <li>
+              <a href="#z-index">Z-Index</a>
+            </li>
+
+            <li>
+              <a href="#z-index-popular-values">Z-Index Popular Values</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#decoration">Decoration</a>
+
+          <ul>
+            <li>
+              <a href="#filters">Filters</a>
+            </li>
+
+            <li>
+              <a href="#blend-modes">Blend Modes</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#animation">Animation</a>
+
+          <ul>
+            <li>
+              <a href="#transitions">Transitions</a>
+            </li>
+
+            <li>
+              <a href="#keyframe-animations">Keyframe Animations</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#media-queries">Media Queries</a>
+
+          <ul>
+            <li>
+              <a href="#number-of-media-queries-per-page">Number of Media Queries Per Page</a>
+            </li>
+
+            <li>
+              <a href="#popular-media-query-breakpoint-sizes">Popular Media Query Breakpoint Sizes</a>
+            </li>
+
+            <li>
+              <a href="#portrait-vs-landscape-usage">Portrait vs Landscape Usage</a>
+            </li>
+
+            <li>
+              <a href="#most-popular-unit-types">Most Popular Unit Types</a>
+            </li>
+
+            <li>
+              <a href="#min-width-vs-max-width">min-width vs max-width</a>
+            </li>
+
+            <li>
+              <a href="#print--speech">Print &amp; Speech</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#page-level">Page Level</a>
+
+          <ul>
+            <li>
+              <a href="#stylesheets">Stylesheets</a>
+            </li>
+
+            <li>
+              <a href="#stylesheet-names">Stylesheet Names</a>
+            </li>
+
+            <li>
+              <a href="#stylesheet-size">Stylesheet Size</a>
+            </li>
+
+            <li>
+              <a href="#libraries">Libraries</a>
+            </li>
+
+            <li>
+              <a href="#reset-utilities">Reset Utilities</a>
+            </li>
+
+            <li>
+              <a href="#supports--import">@supports &amp; @import</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#conclusion">Conclusion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="content">
+    <section class="body">
+      <div class="subtitle">
+        Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
+      </div>
+      <h1 class="title">
+        {{ metadata.get('title') }}
+      </h1>
+      <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      {{ render_byline() }}
+      <h2 id="introduction">Introduction</h2>
+      <p>Cascading Style Sheets are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle the content and ensure it's adapting properly to the requesting user.</p>
+      <p>When describing CSS to those not familiar with web technology, it can be helpful to think of it as the language to paint the walls of the house; describing the size and position of windows and doors, as well as flourishing decorations such as wallpaper or plant life. The fun twist to that story, is that depending on the user walking through the house, a developer can adapt the house to that specific user's preferences or contexts!</p>
+      <p>In this chapter, we'll be inspecting, tallying, and extracting datums about how CSS is used across the web. The goal is to understand holistically what is being used, how they're using it, and to use that information to help inform ourselves (and you) how CSS is growing and being adopted.</p>
+      <p>Ready to dig into the fascinating data!? Many of the following numbers may be small, but don't mistake them as insignificant! It can take many years for new things to saturate the web.</p>
+      <h2 id="color">Color</h2>
+      <p>Color is an integral part of theming and styling on the web. We wanted to take a look at how people tend to use color.</p>
+      <h3 id="color-types">Color Types</h3>
+      <p>Hex is the most popular way to describe color by far (with 93% usage), followed by RGB and then HSL. Interestingly, developers are taking full advantage of the alpha-transparency argument when it comes to these color types. HSLA and RGBA are far more popular than HSL and RGB, with almost double the usage! Even though the alpha-transparency was added later to the web spec, HSLA and RGBA are supported <a href="https://caniuse.com/#feat=css3-colors">as far back as IE9</a>, so you can go ahead and use them, too!</p>
+      <p>Percentage of types used <code>&lt;bar chart of 02_06&gt;</code></p>
+      <h3 id="color-selection">Color Selection</h3>
+      <p>There are <a href="https://www.w3.org/TR/css-color-4/#named-colors">148 named CSS colors</a>, not including the special values <code>transparent</code> and <code>currentcolor</code>. You can use these by their string name for more readible styling. The most popular named colors are black and white, unsurprisingly, followed by red and blue.</p>
+      <p>Top named colors <code>&lt;pie chart of 02_06b&gt;</code></p>
+      <p>Language is interestingly inferred via color as well. There are more people using the American-style "gray" than the British-style "grey" when writing code on the web. Almost every instance of <a href="https://www.rapidtables.com/web/color/gray-color.html">gray colors</a> (gray, lightgray, darkgray, slategray, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why silver is ranked higher than grey with an "e" in the charts!</p>
+      <h3 id="color-count">Color Count</h3>
+      <p>We ran a fun query to see how many different font colors are used across the web. So this isn't total number of unique colors, rather it's how many different colors just for text. The numbers in this chart are quite high, and from experience, we know that without CSS variables, spacing, sizes and colors can quickly get away from you and fragment into lots of tiny values across your styles. These numbers reflect a difficulty of style management, and we hope this helps create some perspective for you to bring back to your teams or projects. How can you reduce this number into a manageable and reasonable amount? <code>&lt;bar chart of 02_32&gt;</code></p>
+      <h3 id="color-duplication">Color Duplication</h3>
+      <p>Well we got curious here and wanted to inspect how many duplicate colors are present on a page. Without a tightly managed reusable class CSS system, duplicates are quite easy to create. Turns out, that on average, there's enough duplicates that it could be worth doing a pass to unify them with custom properties. <code>&lt;bar chart of 02_33&gt;</code></p>
+      <h2 id="units">Units</h2>
+      <p>In CSS, there are a lot of different ways to achieve the same visual result -- using different unit types (i.e. <code>rem</code> vs <code>px</code> vs <code>em</code> vs <code>ch</code> or <code>cm</code> even!). So which unit types are most popular?</p>
+      <p>$ of sites using given units <code>&lt;side-by-side bar chart of 02_07b for desktop and mobile&gt;</code></p>
+      <h3 id="length-and-sizing">Length and Sizing</h3>
+      <p>Unsurprisingly, <code>px</code> is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, etc). However, the <code>em</code> unit is almost as popular, with about 90% usage. This is over 2x more popular than the <code>rem</code> unit, which has only 40% frequency in web pages. If you're wondering what the difference is, <code>em</code> is based on the parent font-size, while <code>rem</code> is based on the base font size set to the page. It doesn't change per-component like <code>em</code> could, but it does allow for adjustment of all spacing evenly.</p>
+      <p>When it comes to units based on physical space, the <code>q</code> unit (1 quarter of a millimeter, or 1/40 of 1cm) is the most commonly used by far, with 22.46% on mobile and 15.13% on desktop. We knew about these types of units (<code>mm</code>, <code>in</code>, <code>cm</code>, etc.), specifically useful for print stylesheets, but didn't even know the <code>q</code> unit existed until this survey! Did you?</p>
+      <h3 id="viewport-based-units">Viewport-Based Units</h3>
+      <p>We saw relatively larger differences to unit types when it comes to mobile and desktop usage for viewport-based units. 36.8% of mobile sites use <code>vh</code> (viewport height), while only 31% of desktop sites do. We also found that <code>vh</code> is more common than <code>vw</code> (viewport width) by about 11%. <code>vmin</code> (viewport minimum) is more popular than <code>vmax</code> (viewport maximum), with about 8% usage on mobile, while <code>vmax</code> is only used by 1% of websites.</p>
+      <h3 id="custom-properties">Custom Properties</h3>
+      <p>Custom Properties are what many call CSS variables. They're more dynamic than a typical static variable though! They're very powerful and I feel as a community we're still discovering their potential.</p>
+      <p><code>&lt;timeseries chart of 02_01d&gt;</code></p>
+      <p><strong>Figure 1:</strong> Custom Properties growth shown since release</p>
+      <p>We felt like this was exciting information, since it shows healthy growth of one of our favorite CSS additions. They were available in all major browsers ~2016-2017, so it's fair to say they're fairly new. Many folks are still transitioning from their CSS preprocessor variables to CSS custom properties. We estimate it'll be a few more years until custom properties are the norm.</p>
+      <h2 id="selectors">Selectors</h2>
+      <h3 id="id-vs-class-selectors">ID vs Class selectors</h3>
+      <p>CSS has a few ways to find elements on the page for styling, but let's put ID's and classes against each other to see which is more prevalent! I don't think the results are too surprising, classes are more popular!</p>
+      <p><code>&lt;pie chart of 02_08e-f&gt;</code></p>
+      <p>A nice follow up chart is this one, showing that classes take up ~93% of the selectors found in a stylesheet. This is good news too, it would be troubling if ~93% of all selectors in stylesheets were using IDs!</p>
+      <p><code>&lt;pie chart of 02_08be-f&gt;</code></p>
+      <h3 id="attribute-selectors">Attribute Selectors</h3>
+      <p>CSS has some very powerful comparison selectors that we were curious of their use on the web. These are selectors like <code>[target="_blank"]</code>, <code>[attribute^="value"]</code>, <code>[title~="rad"]</code>, <code>[attribute$="-rad"]</code> or <code>[attribute*="value"]</code>. Do you use them? Think they're used a lot? Let's compare how those are used with IDs and classes across the web.</p>
+      <pre><code>&lt;pie chart of 02_43h-l&gt;
+&lt;pie chart of 02_44h-l&gt;</code></pre>
+      <p>Much more use with class names than IDs, which feels natural since a stylesheet has less ID selectors than class selectors, but still neat to see how uses of all these combinations.</p>
+      <h3 id="classes-per-element">Classes Per Element</h3>
+      <p>We thought it would be fun to query all webpages to see an average number of classes put on elements! With the rise of OOCSS / atomic / functional CSS strategies which can compose ~10 classes on an element to achieve a design look, perhaps we'd see some interesting results. The query came back quite unexciting, with the average on mobile and desktop being 1 class per element. <code>&lt;pie chart of 02_45d&gt;</code></p>
+      <h2 id="layout">Layout</h2>
+      <h3 id="flexbox">Flexbox</h3>
+      <p>Flexbox is a container style that directs and aligns it's children, aka it helps with layout in a constraint based way. It had a quite rocky beginning on the web, as it's spec went through 2-3 different quite drastic changes from 2010-2013. Fortunately, it settled and was implemented across all browsers by 2014. Given that history, it had a slow adoption rate, but it's been a few years since then! It's quite popular now, has many articles about it and how to leverage it, but it's new in comparison to other layout tactics.</p>
+      <p><code>&lt;pie chart of 02_013c&gt;</code></p>
+      <p>Quite the success story shown here, as nearly 50% of the web has flexbox usage in it's stylesheets.</p>
+      <h3 id="grid">Grid</h3>
+      <p>Like flexbox, grid too went through a few spec alternations early on in it's lifespan. Microsoft had Grid in it's first versions of Windows 8, as the primary layout engine for it's horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until it's final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to it's power and capabilities.</p>
+      <p><code>&lt;pie chart of 02_014c&gt;</code></p>
+      <p>This chart shows just how little the web development community has exercised and explored their latest layout tactic. I look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. I love writing grid, I typically reach for it first, and dial my complexity back as I realize and iterate on layout. Curious what the rest of the world will do with this powerful CSS feature over the next few years.</p>
+      <h3 id="writing-modes">Writing Modes</h3>
+      <p>The Web and CSS are international platform features, and writing mode is a way for HTML and CSS to indicate a users preferred reading/writing direction within our elements. Let's see how many folks are using the HTML property from their CSS:</p>
+      <p><code>&lt;bar chart of 02_12e&gt;</code></p>
+      <h2 id="typography">Typography</h2>
+      <h3 id="fonts-per-page">Fonts Per Page</h3>
+      <p>How many fonts are you using in your webpage or webapp? 0, 10? Average turned out to be 3!</p>
+      <p><code>&lt;bar chart of 02_22&gt;</code></p>
+      <h3 id="popular-font-families">Popular Font Families</h3>
+      <p>A natural follow up to the inquiry of total number of fonts per page, is what fonts!? Designers tune in, because you'll now get to see if your choices are in line or not with what's popular.</p>
+      <p><code>&lt;bar chart of 02_23&gt;</code></p>
+      <p>Open Sans is a huge winner here, with presence on nearly 1 in 4 pages of the web. We've definitely used Open Sans in projects at agencies.</p>
+      <h3 id="font-sizes">Font Sizes</h3>
+      <p>This is a fun one, because if you asked a user how many font sizes they feel are on a page, they'd generally return a number of 5 or definitely less than 10. Is that reality though? Even in a design system, how many font sizes are there? We queried the web and found the average to be 40 on mobile and 38 on desktop. Might be time to really think hard about custom properties or creating some reusable classes to help you distribute your type ramp.</p>
+      <p><code>&lt;bar chart of 02_36&gt;</code></p>
+      <h2 id="spacing">Spacing</h2>
+      <h3 id="margins">Margins</h3>
+      <p>Margin is the space outside of elements, like the space you demand when you push your arms out from yourself, so is margin pushing for space outside of itself. This often looks like the spacing between elements, but is not limited to that effect. In a website or app, spacing places a huge role in UX and design, let's see how much margin spacing code goes into a stylesheet shall we?</p>
+      <p><code>&lt;bar chart of 02_40b-f&gt;</code></p>
+      <p>Quite popular it seems! An average of 96 distinct margins on desktop and 104 on mobile. That makes for a lot of unique spacing moments in your design. Curious how many margins you have in your site? How can we make all this whitespace more manageable?</p>
+      <h3 id="logical-properties">Logical Properties</h3>
+      <p>We estimate that days are numbered for <code>margin-left</code> and <code>padding-top</code>, to be replaced by their writing direction agnostic, successive, logical property syntax. While we're optimistic, current usage is quite low at 0.67% usage on desktop pages. To us, this feels like a habit change we'll need to develop as an industry, while hopefully training new developers to use the new syntax exclusively.</p>
+      <p><code>&lt;bar chart of 02_05d&gt;</code></p>
+      <h3 id="z-index">Z-Index</h3>
+      <p>Vertical layering, or stacking, can be managed with <code>z-index</code> in CSS, and we were curious how many different values folks use in their sites. The range of what <code>z-index</code> accepts it crazy, well into the millions. Are all those stack positions used? Let's see!</p>
+      <p><code>&lt;bar chart of 02_37&gt;</code></p>
+      <h3 id="z-index-popular-values">Z-Index Popular Values</h3>
+      <p>From our work experience, any number of 9's seemed to be the most popular choice, even though we taught ourselves to use the lowest number possible, that's not the communal norm. So what is then!? If folks need things on top, what are the most popular <code>z-index</code> numbers to pass in? Put your drink down, this one is funny enough you might lose it.</p>
+      <p><code>&lt;scatter chart of 02_38&gt;</code></p>
+      <h2 id="decoration">Decoration</h2>
+      <h3 id="filters">Filters</h3>
+      <p>Filters are a fun and great way to modify the pixels the browser intends to draw to the screen. It's a post processing effect that is done against a flat version of the element/node/layer it's applied to. Photoshop made them easy to use, then Instagram made them accessible to the masses through bespoke, stylized combinations! They've been around since ~2012, there's 10 of them and they can be combined to create unique effects.</p>
+      <p>We were excited to see that 78% of stylesheets contain the filter property! That number was also so high it seemed a little fishy, so we dug in and sought to explain the high number. Because let's be honest, filters are neat, but they don't make it into all of our applications and projects. Unless!</p>
+      <p>Upon further investigation, <a href="https://fontawesome.com">FontAwesome</a>'s stylesheet comes with some filter usage, as well as a <a href="https://youtube.com">YouTube</a> embed. Therefore, we believe filter snuck in the back door by piggybacking onto a couple very popular stylesheets. We also believe that <code>-ms-filter</code> presence could have been included as well, contributing to the high percent of use.</p>
+      <p><code>&lt;pie chart of 02_03d&gt;</code></p>
+      <h3 id="blend-modes">Blend Modes</h3>
+      <p>Blend Modes are similar to filters in the way they are a post processing effect that's done against a flat version of it's target elements, but is unique in that it's concerned with pixel convergence. Said another way, blend modes are how 2 pixels <em>should</em> impact each other when they overlap. Depending on which element is on the top or the bottom, will effect the way the blend mode manipulates the pixels. There are 16 blend modes, let's see which ones are the most popular.</p>
+      <p>TODO: chart is pending resolution of <a href="https://docs.google.com/a/google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/edit?disco=AAAADjuwTws">this request</a> <code>&lt;bar chart of 02_04be&gt;</code></p>
+      <p>Overall usage of blend modes is much less than filters, but is still enough to be considered moderately used.</p>
+      <p><code>&lt;pie chart of 02_04d&gt;</code></p>
+      <h2 id="animation">Animation</h2>
+      <h3 id="transitions">Transitions</h3>
+      <p>CSS has this awesome interpolation power that can be simply used by just writing a single rule on how to transition those values. If you're using CSS to manage states in your app, how often are you employing transitions to do the task? Let's query the web!</p>
+      <p><code>&lt;bar chart of 02_41b-f&gt;</code></p>
+      <p>That's pretty good! We did see animate.css as a popular library to include, which brings in a ton of transition animations, but it's still nice to see folks are considering transitioning their UIs.</p>
+      <h3 id="keyframe-animations">Keyframe Animations</h3>
+      <p>CSS keyframe animations are a great solution for your more complex animations or transitions. They allow you to be more explicit which provides higher control over the effects. They can be small, like 1 keyframe effect, or be large with many many keyframe effects composing into a robust animation. We were curious the average of keyframe animations per page, which turned out to be much less than CSS transitions.</p>
+      <p><code>&lt;bar chart of 02_42b-f&gt;</code></p>
+      <h2 id="media-queries">Media Queries</h2>
+      <p>Media queries let CSS hook into various system level variables in order to adapt appropriately for the visiting user. Some of these queries could handle print styles, projector screen styles, and viewport/screensize. For a long time, media queries were primarily leveraged for their viewport knowledge. Designers and developers could adapt their layouts based on small screens, large screens, etc. Later, the web started bringing more and more capabilities and queries, insomuch media queries now account for accessibility features on top of viewport features.</p>
+      <h3 id="number-of-media-queries-per-page">Number of Media Queries Per Page</h3>
+      <p>A good place to start with Media Queries, is just about how many are used per page? How many different moments or contexts does the average page feel they want to respond to?</p>
+      <p><code>&lt;bar chart of 02_39&gt;</code></p>
+      <h3 id="popular-media-query-breakpoint-sizes">Popular Media Query Breakpoint Sizes</h3>
+      <p>For viewport media queries, any type of CSS unit can be passed into the query expression for evaluation. Early days, folks would pass <code>em</code>'s and <code>px</code>'s into the query, but more units were added over time, making us very curious about what types of sizes were commonly found across the web. We assume most media queries will follow popular device sizes, but instead of assuming, we asked for a query!</p>
+      <p><code>&lt;bar chart of 02_015e&gt;</code></p>
+      <p>The chart shows that part of our assumptions were correct, there's certainly a high amount of phone specific sizes in there, but there's also some that aren't. It's interesting also how it's very pixel dominant, with a few trickling entries using <code>em</code>'s. Pretty interesting!</p>
+      <h3 id="portrait-vs-landscape-usage">Portrait vs Landscape Usage</h3>
+      <p>The most popular query value from the popular breakpoint sizes looks to be <code>768px</code>, which made us curious. Was this value primarily used to switch to a portrait layout, since it could be based on an assumption that <code>768px</code> represents the typical mobile portrait viewport. So we ran a follow up query to see the popularity of using the portrait and landscape:</p>
+      <p><code>&lt;bar chart of 02_015bf-g&gt;</code></p>
+      <p>Interestingly, <code>portrait</code> isn't used very much, <code>landscape</code> is used so much more. We can only assume that <code>768px</code> has been reliable enough as the portrait layout case that it's reached for much less. We also assume that folks on a desktop computer, testing their work, can't trigger portrait to see their mobile layout as easily as they can just squishing the browser. Hard to tell, but the data is fascinating.</p>
+      <h3 id="most-popular-unit-types">Most Popular Unit Types</h3>
+      <p>In the width and height media queries we've seen so far, pixels looks like the dominant type of choice for developers looking to adapt their UI to viewports. We wanted to exclusively query this though, and really take a look at the types of units folks use. Here's what was discovered.</p>
+      <p><code>&lt;bar chart of 02_017f-h&gt;</code></p>
+      <h3 id="min-width-vs-max-width">min-width vs max-width</h3>
+      <p>How about when folks write a media query, are they typically checking for a viewport that's over or under a specific range, OR both, checking if it's between a range of sizes. Let's ask the web!</p>
+      <p><code>&lt;bar chart of 02_016f-h&gt;</code></p>
+      <p>No clear winners here, max and min are nearly equally used.</p>
+      <h3 id="print--speech">Print &amp; Speech</h3>
+      <p>Websites feel like digital paper right, as user's it's generally known that you can just hit print from your browser and turn that digital content into physical content. A website isn't required to change itself for that use case, but it can if it wants to! Lesser known is the ability to adjust your website in the use case of it being read by a tool or robot. So just how often are these features taken advantage of?!</p>
+      <p><code>&lt;bar chart of 02_018h-j&gt;</code></p>
+      <h2 id="page-level">Page Level</h2>
+      <h3 id="stylesheets">Stylesheets</h3>
+      <p>How many stylesheets do you reference from your home page? How many from your apps? Do you serve more or less to mobile vs desktop? Here's a chart of everyone else!</p>
+      <p><code>&lt;bar chart of 02_019&gt;</code></p>
+      <h3 id="stylesheet-names">Stylesheet Names</h3>
+      <p>What do you name your stylesheets? Have you been consistent throughout your career? Have you slowly converged or consistently diverged? This chart shows a small glimpse into library popularity, but also a large glimpse into popular names of CSS files.</p>
+      <p><code>&lt;bar chart of 02_020&gt;</code></p>
+      <p>Look at all those creative file names 😂: style, styles, main, default, all.. One stood out though, do you see it? <code>BfWyFJ2Rl5s.css</code> takes the #9 and the #10 spot for most popular. We went researching it a bit and our best guess is that it's related to Facebook like buttons. Do you know what that file is? Send Una or Adam an email, we'd love to hear the story.</p>
+      <h3 id="stylesheet-size">Stylesheet Size</h3>
+      <p>How big are these stylesheets? Is our CSS size something to worry about? Judging by this data, our CSS is not a main offender for page bloat.</p>
+      <p><code>&lt;bar chart of 02_24&gt;</code></p>
+      <h3 id="libraries">Libraries</h3>
+      <p>It's common, popular, convenient and powerful to reach for a CSS library to kick start a new project. While you may not be such a dev to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did for us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.</p>
+      <p><code>&lt;bar chart of 02_010e&gt;</code></p>
+      <p>This chart makes me think that Bootstrap is a strong skill to have for getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only, the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites <em>are not</em> using a CSS framework. Very interesting no!?</p>
+      <h3 id="reset-utilities">Reset Utilities</h3>
+      <p>CSS reset utilities intend to normalize or create a baseline for native web elements. In case you didn't know, each browser serves it's own stylesheet for all HTML elements, and each browser gets to make their own unique decisions about how those elements look or behave. Reset Utilities have looked at these files, found their common ground (or not), and iron out any differences so you as a developer can style confidently in one browser and have reasonable confidence it will look the same in another. So let's take a peek at how many sites are using one! The reason they exist seems quite reasonable, so how many folks agree with their tactics and use them in their sites?</p>
+      <p><code>&lt;bar chart of 02_011e&gt;</code></p>
+      <p>Turns out that about 1/3 of the web is using <a href="https://necolas.github.io/normalize.css">normalize.css</a>, which could be considered a more gentle approach to the task then a reset is. We looked a little deeper, and it turns out that Bootstrap.css includes normalize.css, which likely accounts for a massive amount of it's usage. It's worth noting as well that normalize.css has more adoption than Bootstrap, so there are plenty of folks using it on it's own.</p>
+      <h3 id="supports--import"><a href="https://github.com/supports">@supports</a> &amp; <a href="https://github.com/import">@import</a></h3>
+      <p>CSS <a href="https://github.com/supports">@supports</a> is a way for the browser to check whether a particular property is supported or not and pass that support scenario to CSS for developer handling.</p>
+      <p><code>&lt;bar chart of 02_02f&gt;</code></p>
+      <p><strong>Figure 2:</strong> <a href="https://github.com/supports">@supports</a> usage across mobile and desktop</p>
+      <p>Considering <a href="https://github.com/supports">@supports</a> was implemented across most browsers in 2013, it's not too surprising to see a high amount of usage and adoption. We're impressed at the mindfulness of developers here. This is considerate coding! 29% of all websites are checking for some display related support before using it. 👍</p>
+      <p>An interesting follow up to this is, that there's more usage of <a href="https://github.com/supports">@supports</a> then <a href="https://github.com/imports">@imports</a>!</p>
+      <p><code>&lt;bar chart of 02_02e&gt;</code></p>
+      <p>We did not expect that! <code>@import</code> has been in browsers since ~2007.</p>
+      <h2 id="conclusion">Conclusion</h2>
+      <p>There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made this summarizing very fun, and left us with lots of clues and trails to investigate if we wanted to hunt down the reasons "why" some of the results were the way they were.</p>
+      <p>Which results did you find the most alarming? Which results make you head to your codebase for a quick query?</p>
+      <p>We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to <a href="https://github.com/una">@una</a> or <a href="https://github.com/argyleink">@argyleink</a> with your queries, questions and assertions. We'd love to hear about them.</p>
+    </section>
+    <section class="authors">
+      {{ render_authors() }}
+    </section>
+
+    <nav id="chapter-navigation">
+      {{ render_prevnext() }}
+    </nav>
+  </section>
+</article>
+
+{% endblock %}

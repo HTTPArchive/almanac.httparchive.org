@@ -115,10 +115,10 @@
 .content .intro p {
   font-weight: bold;
 }
-.content li {
-  list-style: none;;
+.content ul li {
+  list-style: none;
 }
-.content li::before {
+.content ul li::before {
   content: "•";
   font-size: 16px;
   color: #a9cbbb;
@@ -147,18 +147,18 @@
 .authors,.authors h4{
   border-bottom: 1px solid #1A2B490A;
 }
-.authors ul{
+.content .authors ul{
   margin:16px 0;
   padding:0;
 }
 
-.authors li::before{
+.content .authors li::before{
   content: none;
   width: 0;
   margin-left: 0;
 }
 
-.authors li{
+.content .authors li{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -197,6 +197,7 @@
   padding:50px 36px;
   border:1px solid #1A2B490A;
   margin: 20px 0;
+  overflow: auto;
 }
 
 #chapter-navigation>a{
@@ -221,13 +222,13 @@
 }
 
 #chapter-navigation .arrow{
+  position:absolute;
   font-size:24px;
   top:12px;
 }
 
 #previous-chapter .arrow{
   transform: rotate(-90deg);
-  position:absolute;
   left:-24px;
 }
 
@@ -238,7 +239,6 @@
 
 #next-chapter .arrow{
   transform: rotate(90deg);
-  position:absolute;
   right:-24px;
 }
 
@@ -246,6 +246,20 @@ img,
 table,
 figure {
   max-width: 100%;
+}
+figure {
+  display: flex;
+  flex-direction: column;
+  margin: 15px -8px;
+  padding: 8px;
+  font-style: italic;
+  overflow-x: auto;
+}
+figure > p {
+  display: inline-block;
+}
+figure > a {
+  margin: 0 auto;
 }
 figure img {
   margin: 0 auto;
@@ -256,13 +270,8 @@ figure iframe {
   display: block;
   margin: 0 auto;
 }
-figure {
-  margin: 15px -8px;
-  padding: 8px;
-  font-style: italic;
-  overflow-x: auto;
-}
 figcaption {
+  margin-top: 20px;
   text-align: center;
 }
 table {
@@ -278,8 +287,16 @@ thead {
 th, td {
   padding: 10px;
 }
+th.numeric, td.numeric {
+  text-align: right;
+}
 tbody tr:nth-child(even) {
   background-color: #f2f2f280;
+}
+figure .big-number {
+  text-align: center;
+  font: bold 8rem/1em Poppins, sans-serif;
+  color: #a8caba;
 }
 
 @media (max-width: 900px) {
@@ -340,5 +357,11 @@ tbody tr:nth-child(even) {
 
   table {
     font-size: .8em;
+  }
+}
+
+@media (max-width: 600px) {
+  figure .big-number {
+    font-size: 5rem;
   }
 }

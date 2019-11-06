@@ -11,29 +11,29 @@ last_updated: 2019-11-04T12:00:00+00:00:00
 
 ## Introduction
 
-Performance is a visceral part of the user experience. For [many websites](https://wpostats.com/), an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed [rage clicking](https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/) on the page in frustration.
+Performance is a visceral part of the user experience. For [many websites](https://wpostats.com/), an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be [rage clicking](https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/) on the page in frustration.
 
-There are many ways to quantify web performance. The most important thing is to measure what actually matters to users. However, events like `onload` or `DOMContentLoaded` may not necessarily reflect what users experience visually. For example, when loading an email client, it might show an interstitial progress bar while the inbox contents load asynchronously. The problem is that the `onload` event doesn't wait for the inbox to asynchronously load. In this example, the loading metric that matters most to users is the "time to inbox", and focusing on the `onload` event may be misleading. For that reason this chapter will look at more modern and universally applicable paint, load, and interactivity metrics to try to capture how users are actually experiencing the page.
+There are many ways to quantify web performance. The most important thing is to measure what actually matters to users. However, events like `onload` or `DOMContentLoaded` may not necessarily reflect what users experience visually. For example, when loading an email client, it might show an interstitial progress bar while the inbox contents load asynchronously. The problem is that the `onload` event doesn't wait for the inbox to asynchronously load. In this example, the loading metric that matters most to users is the "time to inbox", and focusing on the `onload` event may be misleading. For that reason, this chapter will look at more modern and universally applicable paint, load, and interactivity metrics to try to capture how users are actually experiencing the page.
 
-There are two kinds of performance data: lab and field. You may have heard these referred to as synthetic and real-user measurement (or RUM). Measuring performance in the lab ensures that each website is tested under common conditions like browser, connection speed, physical location, cache state, etc. This guarantee of consistency makes each website comparable with one another. On the other hand, measuring performance in the field represents how users actually experience the web in all of the infinite combinations of conditions that we could never capture in the lab. For the purposes of this chapter and understanding real-world user experiences, we'll look at field data.
+There are two kinds of performance data: lab and field. You may have heard these referred to as synthetic testing and real-user measurement (or RUM). Measuring performance in the lab ensures that each website is tested under common conditions and variables like browser, connection speed, physical location, cache state, etc. remain the same. This guarantee of consistency makes each website comparable with one another. On the other hand, measuring performance in the field represents how users actually experience the web in all of the infinite combinations of conditions that we could never capture in the lab. For the purposes of this chapter and understanding real-world user experiences, we'll look at field data.
 
 ## The state of performance
 
-Almost all of the other chapters in the Web Almanac are based on data from the [HTTP Archive](https://httparchive.org/). In order to capture how real users experience the web, we need a different dataset. In this section we're using the [Chrome UX Report](http://bit.ly/chrome-ux-report) (CrUX), a public dataset from Google that consists of all the same websites as the HTTP Archive and aggregates how Chrome users actually experience them. Experiences are categorized by:
+Almost all of the other chapters in the Web Almanac are based on data from the [HTTP Archive](https://httparchive.org/). However, in order to capture how real users experience the web, we need a different dataset. In this section, we're using the [Chrome UX Report](http://bit.ly/chrome-ux-report) (CrUX), a public dataset from Google that consists of all the same websites as the HTTP Archive, and aggregates how Chrome users actually experience them. Experiences are categorized by:
 
-- the form factor of the users' devices
-  - desktop
-  - phone
-  - tablet
-- users' effective connection type (ECT) in mobile terms
-  - offline
-  - slow 2G
+- The form factor of the users' devices
+  - Desktop
+  - Phone
+  - Tablet
+- Users' effective connection type (ECT) in mobile terms
+  - Offline
+  - Slow 2G
   - 2G
   - 3G
   - 4G
-- users' geographic location
+- Users' geographic locations
 
-Experiences are measured monthly including paint, load, and interactivity metrics. The first metric we'll look at is [First Contentful Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP). This is the time users spend waiting for the page to display something useful to the screen, like an image or text. Next, we'll look at look at a loading metric, [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) (TTFB). This is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response. And finally, the last field metric we'll look at is [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). This is a relatively new metric and one that represents parts of the UX other than loading performance. It measures the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event.
+Experiences are measured monthly, including paint, load, and interactivity metrics. The first metric we'll look at is [First Contentful Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP). This is the time users spend waiting for the page to display something useful to the screen, like an image or text. Then, we'll look at look at a loading metric, [Time to First Byte](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) (TTFB). This is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response. And, finally, the last field metric we'll look at is [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID). This is a relatively new metric and one that represents parts of the UX other than loading performance. It measures the time from a user's first interaction with a page's UI until the time the browser's main thread is ready to process the event.
 
 So let's dive in and see what insights we can find.
 
@@ -44,18 +44,18 @@ So let's dive in and see what insights we can find.
 <figcaption>Figure 1. Distribution of websites' fast, moderate, and slow FCP performance.</figcaption>
 </figure>
 
-In Figure 1 above you can see how FCP experiences are distributed across the web. Out of the millions of websites in the CrUX dataset, this chart compresses the distribution down to 1,000 websites where each vertical slice represents a single website. The chart is sorted by the percent of fast FCP experiences, which are those occurring in less than 1 second. Slow experiences occur in 3 seconds or more, and moderate (formerly known as "average") experiences are everything in between. At the extremes of the chart, there are some websites with almost 100% fast experiences and some websites with almost 100% slow experiences. In between, websites have a combination of fast, moderate, and slow performance that seems to lean more towards fast or moderate than slow, which is good.
+In Figure 1 above, you can see how FCP experiences are distributed across the web. Out of the millions of websites in the CrUX dataset, this chart compresses the distribution down to 1,000 websites, where each vertical slice represents a single website. The chart is sorted by the percent of fast FCP experiences, which are those occurring in less than 1 second. Slow experiences occur in 3 seconds or more, and moderate (formerly known as "average") experiences are everything in between. At the extremes of the chart, there are some websites with almost 100% fast experiences and some websites with almost 100% slow experiences. In between that, websites that have a combination of fast, moderate, and slow performance seem to lean more towards fast or moderate than slow, which is good.
 
-<aside class="note">Note: When a user experiences slow performance, it's hard to say what the reason might be. It could be that the website itself was built poorly and inefficiently. Or there could be other environmental factors like the user's slow connection, empty cache, etc. So when looking at this field data we prefer to say that the user experiences themselves are slow and not necessarily the websites.</aside>
+<aside class="note">Note: When a user experiences slow performance, it's hard to say what the reason might be. It could be that the website itself was built poorly and inefficiently. Or there could be other environmental factors like the user's slow connection, empty cache, etc. So, when looking at this field data we prefer to say that the user experiences themselves are slow, and not necessarily the websites.</aside>
 
-In order to categorize whether a website is sufficiently **fast** we will use the new [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#categories) (PSI) methodology where at least 75% of the website's FCP experiences must be faster than 1 second. Similarly a sufficiently **slow** website has 25% or more FCP experiences slower than 3 seconds. We say a website has **moderate** performance when it doesn't meet either of these conditions.
+In order to categorize whether a website is sufficiently **fast** we will use the new [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#categories) (PSI) methodology, where at least 75% of the website's FCP experiences must be faster than 1 second. Similarly, a sufficiently **slow** website has 25% or more FCP experiences slower than 3 seconds. We say a website has **moderate** performance when it doesn't meet either of these conditions.
 
 <figure id="fig2">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&amp;format=interactive"></iframe>
 <figcaption>Figure 2. Distribution of websites labelled as having fast, moderate, or slow FCP.</figcaption>
 </figure>
 
-The results in Figure 2 show that only 13% of websites are considered fast. This is a sign that there is still a lot of room for improvement but many websites are painting meaningful content quickly and consistently. Two thirds of websites have moderate FCP experiences.
+The results in Figure 2 show that only 13% of websites are considered fast. This is a sign that there is still a lot of room for improvement, but many websites are painting meaningful content quickly and consistently. Two thirds of websites have moderate FCP experiences.
 
 To help us understand how users experience FCP across different devices, let's segment by form factor.
 
@@ -71,16 +71,16 @@ To help us understand how users experience FCP across different devices, let's s
 <figcaption markdown>Figure 4. Distribution of <em>phone</em> websites' fast, moderate, and slow FCP performance.</figcaption>
 </figure>
 
-In Figures 3 and 4 above, the FCP distributions are broken down by desktop and phone. It's subtle, but the torso of the desktop fast FCP distribution appears to be more convex than the distribution for phone users. This visual approximation suggests that desktop users experience a higher overall proportion of fast FCP. To verify this we can apply the PSI methodology to each distribution.
+In Figures 3 and 4 above, the FCP distributions are broken down by desktop and phone. It's subtle, but the torso of the desktop fast FCP distribution appears to be more convex than the distribution for phone users. This visual approximation suggests that desktop users experience a higher overall proportion of fast FCP. To verify this, we can apply the PSI methodology to each distribution.
 
 <figure id="fig5">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&amp;format=interactive"></iframe>
 <figcaption>Figure 5. Distribution of websites labelled as having fast, moderate, or slow FCP, broken down by device type.</figcaption>
 </figure>
 
-According to PSI's classification, 17% of websites have fast FCP experiences overall for desktop users, compared to 11% for mobile users. The entire distribution is skewed slightly faster for desktop experiences, with fewer slow websites and more in the fast and moderate category.
+According to PSI's classification, 17% of websites have fast FCP experiences overall for desktop users, compared to 11% for mobile users. The entire distribution is skewed to being slightly faster for desktop experiences, with fewer slow websites and more in the fast and moderate category.
 
-Why might desktop users experience fast FCP on a higher proportion of websites than phone users? We can only speculate, after all this dataset is meant to answer how is the web performing and not necessarily _why_ it's performing that way. But one guess could be that desktop users are connected to the internet on faster, more reliable networks like WiFi rather than cell towers. To help answer this question we can also explore how user experiences vary by ECT.
+Why might desktop users experience fast FCP on a higher proportion of websites than phone users? We can only speculate, after all, this dataset is meant to answer how the web is performing and not necessarily _why_ it's performing that way. But one guess could be that desktop users are connected to the internet on faster, more reliable networks like WiFi rather than cell towers. To help answer this question, we can also explore how user experiences vary by ECT.
 
 #### FCP by effective connection type
 
@@ -91,14 +91,14 @@ Why might desktop users experience fast FCP on a higher proportion of websites t
 
 In Figure 6 above, FCP experiences are grouped by the ECT of the user experience. Interestingly, there is a correlation between ECT speed and the percent of websites serving fast FCP. As the ECT speeds decrease, the proportion of fast experiences approaches zero. 14% of websites that serve users with 4G ECT have fast FCP experiences, while 19% of those websites have slow experiences. 61% of websites serve slow FCP to users with 3G ECT, 90% to 2G ECT, and 99% to slow-2G ECT. These results suggest that websites seldom serve fast FCP consistently to users on connections effectively slower than 4G.
 
-#### FCP by geo
+#### FCP by geography
 
 <figure id="fig7">
 <iframe width="600" height="940" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive"></iframe>
 <figcaption>Figure 7. Distribution of websites labelled as having fast, moderate, or slow FCP, broken down by geo.</figcaption>
 </figure>
 
-Finally, we can slice FCP by users' geography (geo). The chart above shows the top 23 geos having the highest number of distinct websites, an indicator of overall popularity of the open web. Web users in the United States visit the most distinct websites at 1,211,002. The geos are sorted by the percent of websites having sufficiently fast FCP experiences. At the top of the list are three [Asia-Pacific](https://en.wikipedia.org/wiki/Asia-Pacific) (APAC) geos: Korea, Taiwan, and Japan. This could be explained by the availability of extremely [fast network connection speeds in these regions](https://en.wikipedia.org/wiki/List_of_countries_by_Internet_connection_speeds). Korea has 36% of websites meeting the fast FCP bar and only 7% rated as slow FCP. Recall that the global distribution of fast/moderate/slow websites is approximately 13/66/20, making Korea a significantly positive outlier.
+Finally, we can slice FCP by users' geography (geo). The chart above shows the top 23 geos having the highest number of distinct websites, an indicator of overall popularity of the open web. Web users in the United States visit the most distinct websites at 1,211,002. The geos are sorted by the percent of websites having sufficiently fast FCP experiences. At the top of the list are three [Asia-Pacific](https://en.wikipedia.org/wiki/Asia-Pacific) (APAC) geos: Korea, Taiwan, and Japan. This could be explained by the availability of extremely [fast network connection speeds in these regions](https://en.wikipedia.org/wiki/List_of_countries_by_Internet_connection_speeds). Korea has 36% of websites meeting the fast FCP bar, and only 7% rated as slow FCP. Recall that the global distribution of fast/moderate/slow websites is approximately 13/66/20, making Korea a significantly positive outlier.
 
 Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India all have fewer than 10% of fast websites. These geos also have more than triple the proportion of slow websites than Korea.
 
@@ -111,7 +111,7 @@ Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India 
 <figcaption>Figure 8. Navigation Timing API diagram of the events in a page navigation.</figcaption>
 </figure>
 
-To help explain TTFB and the many factors that affect it, let's borrow a diagram from the Navigation Timing API spec. In Figure 8 above, TTFB is the duration from `startTime` to `responseStart`, including everything in between: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`, `TCP`, and the time the server spends handling the request. Given that context, let's see how users are experiencing this metric.
+To help explain TTFB and the many factors that affect it, let's borrow a diagram from the [Navigation Timing API spec](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API). In Figure 8 above, TTFB is the duration from `startTime` to `responseStart`, including everything in between: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`, `TCP`, and the time the server spends handling the request. Given that context, let's see how users are experiencing this metric.
 
 <figure id="fig9">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&amp;format=interactive"></iframe>
@@ -122,7 +122,7 @@ Similar to the FCP chart in Figure 1, this is a view of 1,000 representative sam
 
 Looking at the curve of the fast proportions, the shape is quite different from that of FCP. There are very few websites that have a fast TTFB greater than 75%, while more than half are below 25%.
 
-Let's apply a TTFB speed label to each website, taking inspiration from the PSI methodology used above for FCP. If a website serves fast TTFB to 75% or more user experiences, it's labelled as **fast**. Otherwise if it serves **slow** TTFB to 25% or more user experiences, it's slow. If neither of those conditions apply, it's **moderate**.
+Let's apply a TTFB speed label to each website, taking inspiration from the PSI methodology used above for FCP. If a website serves fast TTFB to 75% or more user experiences, it's labelled as **fast**. Otherwise, if it serves **slow** TTFB to 25% or more user experiences, it's slow. If neither of those conditions apply, it's **moderate**.
 
 <figure id="fig10">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&amp;format=interactive"></iframe>
@@ -151,7 +151,7 @@ Let's start by defining some thresholds. According to the new PSI methodology, a
 <figcaption>Figure 12. Distribution of websites' fast, moderate, and slow FID performance.</figcaption>
 </figure>
 
-You know the drill by now. This chart shows the distribution of websites' fast, moderate, and slow FID experiences. This is a dramatically different chart from the previous charts for FCP and TTFB. (See [Figure 1](#fig1) and [Figure 9](#fig9), respectively). The curve of fast FID very slowly descends from 100% to 75% then takes a nosedive. The overwhelming majority of FID experiences are fast for most websites.
+You know the drill by now. This chart shows the distribution of websites' fast, moderate, and slow FID experiences. This is a dramatically different chart from the previous charts for FCP and TTFB. (See [Figure 1](#fig1) and [Figure 9](#fig9), respectively). The curve of fast FID very slowly descends from 100% to 75%, then takes a nosedive. The overwhelming majority of FID experiences are fast for most websites.
 
 <figure id="fig13">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&amp;format=interactive"></iframe>
@@ -174,7 +174,7 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 <figcaption>Figure 15. Distribution of <em>phone</em> websites' fast, moderate, and slow FID performance.</figcaption>
 </figure>
 
-Breaking FID down by device, it becomes clear that there are two very different stories. Desktop users enjoy fast FID almost all the time. Sure there are some websites that throw out a slow experience now and then, but the results are predominantly fast. Mobile users, on the other hand, have what seem to be one of two experiences: pretty fast (but not quite as often as desktop) and almost never fast. The latter is experienced by users on only the tail ~10% of websites, but this is still a substantial difference.
+By breaking FID down by device, it becomes clear that there are two very different stories. Desktop users enjoy fast FID almost all the time. Sure, there are some websites that throw out a slow experience now and then, but the results are predominantly fast. Mobile users, on the other hand, have what seem to be one of two experiences: pretty fast (but not quite as often as desktop) and almost never fast. The latter is experienced by users on only the tail ~10% of websites, but this is still a substantial difference.
 
 <figure id="fig16">
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&amp;format=interactive"></iframe>
@@ -207,8 +207,10 @@ As with the other geo-specific results, there are so many possible factors that 
 
 ## Conclusion
 
-Quantifying how fast a web page loads is an imperfect science that can't be represented by a single metric. Conventional metrics like `onload` can miss the mark entirely by measuring irrelevant or imperceptible parts of the user experience. User-perceived metrics like FCP and FID more faithfully convey what users see and feel. Even still, neither metric can be looked at in isolation to draw conclusions about whether the overall page load experience was fast or slow. Only by looking at many metrics holistically can we start to understand the performance for an individual website and the state of the web.
+Quantifying how fast a web page loads is an imperfect science that can't be represented by a single metric. Conventional metrics like `onload` can miss the mark entirely by measuring irrelevant or imperceptible parts of the user experience. User-perceived metrics like FCP and FID more faithfully convey what users see and feel. Even still, neither metric can be looked at in isolation to draw conclusions about whether the overall page load experience was fast or slow. Only by looking at many metrics holistically, can we start to understand the performance for an individual website and the state of the web.
 
 The data presented in this chapter showed that there is still a lot of work to do to meet the goals set for fast websites. Certain form factors, effective connection types, and geos do correlate with better user experiences, but we can't forget about the combinations of demographics with poor performance. In many cases, the web platform is used for business; making more money from improving conversion rates can be a huge motivator for speeding up a website. Ultimately, for all websites, performance is about delivering positive experiences to users in a way that doesn't impede, frustrate, or enrage them.
 
-As the web gets another year older and our ability to measure how users experience it improves incrementally, I'm looking forward to developers having access to metrics that capture more of the holistic experience. FCP is very early on the timeline of showing useful content to users and newer metrics like [Largest Contentful Paint](https://web.dev/largest-contentful-paint) (LCP) are emerging to improve our visibility into how page loads are perceived. The [Layout Instability API](https://web.dev/layout-instability-api) has also given us a novel glimpse into the frustration users experience beyond page load. Equipped with these new metrics, the web in 2020 will become even more transparent, better understood, and give developers an advantage to make more meaningful progress to improve performance and contribute to positive user experiences.
+As the web gets another year older and our ability to measure how users experience it improves incrementally, I'm looking forward to developers having access to metrics that capture more of the holistic user experience. FCP is very early on the timeline of showing useful content to users, and newer metrics like [Largest Contentful Paint](https://web.dev/largest-contentful-paint) (LCP) are emerging to improve our visibility into how page loads are perceived. The [Layout Instability API](https://web.dev/layout-instability-api) has also given us a novel glimpse into the frustration users experience beyond page load.
+
+Equipped with these new metrics, the web in 2020 will become even more transparent, better understood, and give developers an advantage to make more meaningful progress to improve performance and contribute to positive user experiences.
