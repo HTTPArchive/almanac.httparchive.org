@@ -155,7 +155,7 @@
   "contributors": {
     "kleinab": {
       "name": "Abigail Klein",
-      "bio": "Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she improved screen reader support and added <a href=\"https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/\">automatic captions to Google Slides</a>. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor's and master's degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.",
+      "bio": "Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she added <a href=\"https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/\">automatic captions to Google Slides</a>, as well as improving screen reader, braille, screen magnifier, and high contrast support. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor's and master's degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.",
       "teams": [
         "authors"
       ],
@@ -246,6 +246,7 @@
     },
     "andydavies": {
       "name": "Andy Davies",
+      "bio":"Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK's leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is coauthor of Using WebPageTest and also an organiser of the London Web Performance meetup. You can find Andy on Twitter as <a href=\"https://twitter.com/andydavies\">@AndyDavies</a>, and he occasionally blogs at <a href=\"https://andydavies.me\">https://andydavies.me</a>",
       "teams": [
         "authors"
       ],
