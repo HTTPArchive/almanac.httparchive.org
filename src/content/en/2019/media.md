@@ -15,7 +15,7 @@ Images, animations, and videos are an important part of the web experience. They
 From a pure bytes perspective, HTTP Archive has historically reported an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every webpage depends on images and videos. Even at the 10th percentile, we see that 43% of the bytes are from media and can rise to 91.3% of the total bytes at the 90th percentile of pages. 
 (% of image bytes per page figure)
 
-While media is critical for the visual experience, the impact of this high volume of bytes has two side effects. First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an uber) can dramatically slow down the page performance. Images are a lower priority request by the browser, but can easily block CSS and Javascript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual queue to the user that the page is ready and slow transfers can give a perceived slowness of the page. <<todo: link>>
+While media is critical for the visual experience, the impact of this high volume of bytes has two side effects. First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an uber) can dramatically slow down the page performance. Images are a lower priority request by the browser, but can easily block CSS and Javascript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual queue to the user that the page is ready and slow transfers can give a perceived slowness of the page. `<<todo: link>>`
 
 The second impact is on the financial cost to the user. This is often an ignored aspect since it is not a burden on the website owner but a burden to the end-user. Anecdotally it has been shared that in some markets, like Japan, see a drop in purchases by students near the end of the month when data caps are reached and users cannot see the visual content without weighting. 
 
@@ -142,18 +142,18 @@ The savings in this AB Lighthouse test is not just about potential byte savings,
 
 ## Responsive Images
 Another axis for improving page performance is to apply Responsive Images. This technique focuses on reducing image bytes by reducing the extra pixels that are not shown on the display because of image shrinking. At the beginning of this chapter, you saw that the median web page on desktop used 1MP of image placeholders, yet transferred 2.1MP of actual pixel volume. Since this was a 1x DPR test, 1.1 MP of pixels were transferred over the network, but not displayed. To reduce this overhead, we can use one of 2 (3) techniques:
-*HTML Markup - using a combination of the <picture> and <source> elements along with the srcset and sizes attributes allows the browser to select the best image based on the dimensions of the viewport and the density of the display. 
+*HTML Markup - using a combination of the `<picture>` and `<source>` elements along with the srcset and sizes attributes allows the browser to select the best image based on the dimensions of the viewport and the density of the display. 
 *Client Hints - this moves the selection of possible resized images to HTTP content negotiation.
 *BONUS: Javascript libraries to delay image loading until the js can execute and inspect the Browser DOM and inject the correct image based on the container.
 
-The most common method to implement Responsive Images is to build a list of alternative images using either <img srcset> or <source srcset>. If the srcset is based on DPR the browser can select the correct from the list without additional information. However, most implementations also use <img sizes> to help instruct the browser how to perform the necessary layout calculation to select the correct image in the srcset based on pixel dimensions. The notably lower use of <picture> is not surprising given that it is used most often for advanced RWD layouts like Art Direction. 
+The most common method to implement Responsive Images is to build a list of alternative images using either `<img srcset>` or `<source srcset>`. If the srcset is based on DPR the browser can select the correct from the list without additional information. However, most implementations also use `<img sizes>` to help instruct the browser how to perform the necessary layout calculation to select the correct image in the srcset based on pixel dimensions. The notably lower use of `<picture>` is not surprising given that it is used most often for advanced RWD layouts like Art Direction. 
 (figure % of pages using responsive images with html)
 ### Use of Sizes
-The utility of SrcSet is usually dependent on the precision of the Sizes media query. Without Sizes the browser will assume the <img> tag will fill the entire viewport instead of smaller component. Interestingly, there are 5 common patterns that web developers have adopted for <img sizes>:
-*<img sizes=”**100vw**”> this indicates that the image will fill the width of the viewport (also the default)
-*<img sizes=”**200px**”> this is helpful for browsers selecting based on DPR
-*<img sizes=”**(max-width: 300px) 100vw, 300px**”> this is the second most popular design pattern. It is the one auto generated by wordpress and likely a few other platforms. It appears auto generated based on the original image size (in this case 300px).
-*<img sizes=”**(max-width: 767px) 89vw, (max-width: 1000px) 54vw**, ...”> this pattern is the custom built design pattern that is aligned with the CSS responsive layout. Each breakpoint has a different calculation for sizes to use.
+The utility of SrcSet is usually dependent on the precision of the Sizes media query. Without Sizes the browser will assume the `<img>` tag will fill the entire viewport instead of smaller component. Interestingly, there are 5 common patterns that web developers have adopted for `<img sizes>`:
+*`<img sizes=”**100vw**”>` this indicates that the image will fill the width of the viewport (also the default)
+*`<img sizes=”**200px**”>` this is helpful for browsers selecting based on DPR
+*`<img sizes=”**(max-width: 300px) 100vw, 300px**”>` this is the second most popular design pattern. It is the one auto generated by wordpress and likely a few other platforms. It appears auto generated based on the original image size (in this case 300px).
+*`<img sizes=”**(max-width: 767px) 89vw, (max-width: 1000px) 54vw**, ...”>` this pattern is the custom built design pattern that is aligned with the CSS responsive layout. Each breakpoint has a different calculation for sizes to use.
 | sizes | freq (Millions) | pct | 
 |--|--|--| --| --| --| --| 
 | (max-width: 300px) 100vw, 300px | 1.47 | 5% | 
@@ -162,17 +162,17 @@ The utility of SrcSet is usually dependent on the precision of the Sizes media q
 | (max-width: 400px) 100vw, 400px | 0.32| 1%
 | (max-width: 80px) 100vw, 80px | 0.28| 1%
 
-*<img sizes=”**auto**”> this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes <<todo: link>> javascript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the javascript loading and DOM to be fully ready, delaying image loading substantially. 
+*`<img sizes=”**auto**”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes `<<todo: link>>` javascript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the javascript loading and DOM to be fully ready, delaying image loading substantially. 
 
-(figure <img sizes> by implementaion pattern)
+(figure `<img sizes>` by implementaion pattern)
 
 ## Client Hints
-Finally, Client Hints allows content creators to move the resizing of images to HTTP Content Negotiation. In this way, the HTML does not need additional <img srcset> to clutter the markup, and instead can depend on a server or [Image CDN to select an optimal image](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) for the context. This allows simplifying of HTML and enables origin servers to adapt overtime and disconnect the content and presentation layers. 
+Finally, Client Hints allows content creators to move the resizing of images to HTTP Content Negotiation. In this way, the HTML does not need additional `<img srcset>` to clutter the markup, and instead can depend on a server or [Image CDN to select an optimal image](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) for the context. This allows simplifying of HTML and enables origin servers to adapt overtime and disconnect the content and presentation layers. 
 
-To enable Client Hints, the web page must signal to the browser using either an extra HTTP header `Accept-CH: DPR, Width, Viewport-Width` OR by adding the HTML <meta http-equiv=”Accept-CH” content=”DPR, Width, Viewport-Width”>. The convenience of one or the other technique depends on the team implementing and both are offered for convenience.
-The use of the <meta tag in HTML to invoke Client Hints is far more common compared with the HTTP Header. This is likely a reflection of the convenience to modify markup templates compared to adding HTTP headers in middle boxes. However, looking at the usage of the HTTP header, over 50% of these cases are from a single SaaS platform (Mercado). 
+To enable Client Hints, the web page must signal to the browser using either an extra HTTP header `Accept-CH: DPR, Width, Viewport-Width` OR by adding the HTML `<meta http-equiv=”Accept-CH” content=”DPR, Width, Viewport-Width”>`. The convenience of one or the other technique depends on the team implementing and both are offered for convenience.
+The use of the `<meta>` tag in HTML to invoke Client Hints is far more common compared with the HTTP Header. This is likely a reflection of the convenience to modify markup templates compared to adding HTTP headers in middle boxes. However, looking at the usage of the HTTP header, over 50% of these cases are from a single SaaS platform (Mercado). 
 (figure use of accept ch)
-Of the Client Hints invoked, the majority of pages use it for the original three use-cases of DPR, ViewportWidth and Width. Of course, the Width Client Hint that requires the use <img sizes> for the browser to have enough context about the layout. 
+Of the Client Hints invoked, the majority of pages use it for the original three use-cases of DPR, ViewportWidth and Width. Of course, the Width Client Hint that requires the use `<img sizes>` for the browser to have enough context about the layout. 
 (figure enabled client hints)
 The network related Client Hints - Downlink, RTT, and ECT - are only available on Android Chrome. 
 
@@ -209,7 +209,7 @@ The most common attributes are autoplay, muted and loop, followed by the preload
 
 While most of the attributes have similar usage on desktop and mobile, there are a few that have significant differences.  The two attributes with the largest difference between mobile and desktop are width and height- with 4% fewer sites using these attributes on mobile.  Interestingly, there is a small increase of the poster attribute (placing an image over the video window before playback) on mobile.
 
-From an accessibility point of view, the <track> tag can be used to add captions or subtitles.  There is data in the httparchive on how often the <track> tag is used, but on investigation, most of the instances in the dataset were commented out, or pointed to an asset re-runing a 404 error.  It appears that many sites use boilerplate JavaScript or HTML and do not remove the track - even when it is not in use.  
+From an accessibility point of view, the `<track>` tag can be used to add captions or subtitles.  There is data in the httparchive on how often the `<track>` tag is used, but on investigation, most of the instances in the dataset were commented out, or pointed to an asset re-runing a 404 error.  It appears that many sites use boilerplate JavaScript or HTML and do not remove the track - even when it is not in use.  
 
 For more advanced playback (and to play video streams), the HTML5 native video player will not work.  There are a few popular video libraries that are used to playback the video:
 
