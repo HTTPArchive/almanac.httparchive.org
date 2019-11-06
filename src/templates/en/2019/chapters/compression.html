@@ -250,11 +250,13 @@
       <p><img src="../../../static/images/2019/15_Compression/ch15_fig1_compression_algorithms.jpg" alt="Compression Algorithms" /></p>
       <p>Additionally, there are 67K requests that return an invalid <code>Content-Encoding</code>, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.</p>
       <p>We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:</p>
+
       <ul>
         <li>At a minimum, enable gzip compression level 6 for text based assets. This provides a fair tradeoff between computational cost and compression ratio and is the <a href="https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/">default for many web servers</a>—though <a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level">Nginx still defaults to the, often too low, level 1</a>.</li>
         <li>If you can support brotli and precompress resources, then compress to brotli level 11. This is more computationally expensive than gzip - so precompression is an absolute must to avoid delays.</li>
         <li>If you can support brotli and are unable to precompress, then compress to brotli level 5. This level will result in smaller payloads compared to gzip, with a similar computational overhead.</li>
       </ul>
+
       <h2 id="what-types-of-content-are-we-compressing">What types of content are we compressing?</h2>
       <p>Most text based resources (such as HTML, CSS, and JavaScript) can benefit from gzip or brotli compression. However, it's often not necessary to use these compression techniques on binary resources, such as images, video, and some web fonts because their file formats are already compressed.</p>
       <p>In the graph below, the top 25 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded red, which is expected since gzip and brotli would have little to no benefit for them. Most of the text content is shaded green to indicate that they are being compressed. However, the light green shading for some content types indicate that they are not compressed as consistently as the others.</p>

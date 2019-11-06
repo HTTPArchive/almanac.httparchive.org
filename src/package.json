@@ -19,9 +19,9 @@
   "devDependencies": {
     "ejs": "^2.7.1",
     "fs-extra": "^8.1.0",
-    "jsdom": "^15.2.0",
+    "jsdom": "^15.2.1",
     "prettier": "^1.18.2",
-    "showdown": "^1.9.0",
-    "recursive-readdir": "^2.2.2"
+    "recursive-readdir": "^2.2.2",
+    "showdown": "^1.9.0"
   }
 }
