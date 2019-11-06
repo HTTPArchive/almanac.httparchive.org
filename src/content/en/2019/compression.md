@@ -244,7 +244,7 @@ Lighthouse also indicates how many bytes could be saved by enabling text-based c
 
 ## Conclusion
 
-HTTP Compression is a widely used and highly valuable feature for reducing the size of web content. Both gzip and brotli compression are the dominant algorithms used, and the amount of compressed content varies by content type. Tools like Google Lighthouse can help uncover opportunities to compress content.
+HTTP compression is a widely used and highly valuable feature for reducing the size of web content. Both gzip and brotli compression are the dominant algorithms used, and the amount of compressed content varies by content type. Tools like Lighthouse can help uncover opportunities to compress content.
 
 While many sites are making good use of HTTP compression, there is still room for improvement, particularly for the text/html format that the web is built upon! Similarly, lesser understood text formats like font/ttf, application/json, text/xml, text/plain, image/svg+xml, and image/x-icon may take extra configuration that many websites miss.
 
