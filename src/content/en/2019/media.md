@@ -1,4 +1,14 @@
-# Web Almanac: Media
+---
+part_number: I
+chapter_number: 4
+title: Media
+description: Media chapter of the 2019 Web Almanac covering images, animations, and videos
+authors: [colinbendell, dougsillars]
+reviewers: [ahmadawais, kornelski, eeeps]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-04T12:00:00+00:00:00 
+---
+
 ## Introduction
 Images, animations, and videos are an important part of the web experience. They are important for many reasons - they help tell stories, engage audiences and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media. 
 
