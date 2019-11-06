@@ -374,6 +374,10 @@ p.copyright {
 
 /* Mobile View */
 @media (max-width: 600px) {
+   body, p, td, th, code, li {
+     font-size: 16px;
+   }
+
   .alt-bg.decorative-line,
   .alt-bg .decorative-line {
     margin: 0 40% !important;
