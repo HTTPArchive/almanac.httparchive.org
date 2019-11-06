@@ -234,7 +234,7 @@ Additionally, the percentage of brotli compression is higher for third party con
 
 ![Lighthouse Compression Suggestions](../../../static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg)
 
-Because the [HTTP Archive runs Lighthouse audits](./methodology) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 62% of websites are passing this audit and almost 23% of websites have scored below a 40. This means that over 1.2 million websites could benefit from enabling additional text based compression.
+Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 62% of websites are passing this audit and almost 23% of websites have scored below a 40. This means that over 1.2 million websites could benefit from enabling additional text based compression.
 
 !["Enable Text Compression" Lighthouse Scores](../../../static/images/2019/15_Compression/ch15_fig9_lighthouse_compression_scores.jpg)
 
