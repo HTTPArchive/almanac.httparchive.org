@@ -146,7 +146,7 @@ We can’t determine the compression levels from any of the diagnostics collecte
 
 ## What types of content are we compressing?
 
-Most text based resources (such as HTML, CSS and JavaScript) can benefit from gzip or brotli compression. However, it’s often not necessary to use these compression techniques on binary resources, such as images, video and some web fonts because their file formats are already compressed.
+Most text based resources (such as HTML, CSS, and JavaScript) can benefit from gzip or brotli compression. However, it’s often not necessary to use these compression techniques on binary resources, such as images, video, and some web fonts because their file formats are already compressed.
 
 In the graph below, the top 25 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded red, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded green to indicate that they are being compressed. However, the light green shading for some content types indicate that they are not compressed as consistently as the others. 
 
