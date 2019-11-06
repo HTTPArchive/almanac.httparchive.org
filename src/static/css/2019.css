@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-weight: inherit;
   -webkit-font-smoothing: antialiased;
+  font-size: 17px;
 }
 
 * {
@@ -125,9 +126,8 @@ header.alt-bg a:focus, footer.alt-bg a:focus {
 header, footer {
   padding: 40px 60px;
 }
-.main {
-  margin: 0px 60px;
-  overflow: hidden;
+article.main {
+  max-width: 1324px;
 }
 header, footer .nav {
   display: flex;
@@ -202,6 +202,33 @@ header .btn + .language-switcher {
   display: none;
 }
 
+.main {
+  margin: 0px auto;
+  font-size: 17px;
+  line-height: 30px;
+}
+.content, section.main {
+  max-width: 1024px;
+}
+
+.main a,
+.main a:visited {
+  color: #0b1423;
+  word-break: break-all;
+}
+
+h2, h3, h4 {
+  margin-top: 2em;
+}
+
+p, td, th, code, li {
+  font-size: 17px;
+}
+
+pre {
+  margin: 0;
+}
+
 hr {
   opacity: 0.2;
 }
@@ -210,8 +237,8 @@ blockquote {
   position: relative;
   font-style: italic;
   font-size: 19px;
-  line-height: 26px;
 }
+
 blockquote::before {
   content: '"';
   position: absolute;
@@ -386,7 +413,7 @@ p.copyright {
     width: 100%;
     padding: 60px 30px 30px;
     background-color: #677486;
-    box-shadow: 0px 12px 12px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
     opacity: 0.95;
     z-index: 1;
   }

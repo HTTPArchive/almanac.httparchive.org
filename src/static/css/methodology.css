@@ -23,7 +23,7 @@
 }
 .floating-card {
   border-radius: 16px;
-  box-shadow: 0 0 5px 5px #f6f7f9;
+  box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
 }
 .code-block {
   margin: 8px 0;
