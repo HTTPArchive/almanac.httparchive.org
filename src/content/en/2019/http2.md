@@ -125,7 +125,7 @@ This is more problematic than browser support as, unlike modern browsers, server
 
 **Figure 5 - Servers used for HTTP/2**
 
-Nginx provides package repos that allow ease of installing or upgrading to the latest version, so it is no surprise to see it leading the way here. Cloudflare is the most popular [CDN](https://almanac.httparchive.org/en/2019/cdn) and enables HTTP/2 by default, so again it is not surprising to see it hosts a large percentage of HTTP/2 sites. Incidently, Cloudflare uses [a heavily customised version of nginx as their web server](https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/).
+Nginx provides package repos that allow ease of installing or upgrading to the latest version, so it is no surprise to see it leading the way here. Cloudflare is the most popular [CDN](./cdn) and enables HTTP/2 by default, so again it is not surprising to see it hosts a large percentage of HTTP/2 sites. Incidently, Cloudflare uses [a heavily customised version of nginx as their web server](https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/).
 
 After this, we see Apache at around 20% of usage, followed by some servers who choose to hide what they are, and then the smaller players such as LiteSpeed, IIS, Google Servlet Engine and openresty - which is nginx based.
 
