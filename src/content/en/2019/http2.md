@@ -55,7 +55,7 @@ As mentioned above, Internet Protocols are often difficult to adopt since they a
 
 HTTP/2 however, was different as it was effectively hidden in HTTPS (at least for the browser uses cases), removing barriers to adoption as long as both the browser and server supported it. Browser support has been very strong for some time and the advent of auto updating *evergreen* browsers has meant that an estimated [95% of global users now support HTTP/2](https://caniuse.com/#feat=http2).
 
-For this Web Almanac, we used HTTP Archive which runs a Chrome web crawler on approximately 5 million of the top websites on both desktop and mobile, with a slightly different set for each device. Our analysis shows that HTTP/2 usage is now the majority protocol - an impressive feat just 4 short years after formal standardization:
+For this Web Almanac, we used HTTP Archive which runs a Chrome web crawler on approximately 5 million of the top websites on both desktop and mobile, with a slightly different set for each device (see [methodology](./methodology)). Our analysis shows that HTTP/2 usage is now the majority protocol - an impressive feat just 4 short years after formal standardization:
 
 ![](https://github.com/HTTPArchive/almanac.httparchive.org/raw/master/src/static/images/2019/20_HTTP_2/http2usage.png)
 
