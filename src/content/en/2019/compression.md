@@ -13,7 +13,7 @@ last_updated: 2019-11-04T12:00:00+00:00:00
 
 HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client’s available bandwidth, reduces [page weight](./page-weight), and improves [web performance](./performance).
 
-Compression algorithms are often categorized as Lossy or Lossless: 
+Compression algorithms are often categorized as lossy or lossless: 
 
 *   When a lossy compression algorithm is used, the process is irreversible, and the original file cannot be restored via decompression. This is commonly used to compress media resources - such as image and video content where losing some data will not materially affect the resource.
 *   Lossless compression is a completely reversible process, and is commonly used to compress text based resources - such as HTML, JavaScript, Stylesheets, etc. 
