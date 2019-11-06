@@ -156,7 +156,7 @@ Filtering out the seven most popular content types allows us to see the rest of 
 
 ![Filtered Top Compressed Content Types](../../../static/images/2019/15_Compression/ch15_fig3_compressed_content_types_filtered.jpg)
 
-The application/json and image/svg+xml content types are compressed less than 65% of the time.   
+The `application/json` and `image/svg+xml` content types are compressed less than 65% of the time.
 
 Most of the custom web fonts are served without compression, since they are already in a compressed format. However, font/ttf is compressible, but only 84% of TTF font requests are being served with compression so there is still room for improvement here.
 
