@@ -170,7 +170,7 @@ The content types with the lowest compression rates include `application/json`, 
 ![Compression By Content Type as a % for Desktop](../../../static/images/2019/15_Compression/ch15_fig6_compression_by_content_type_pct_desktop.jpg)
 ![Compression By Content Type as a % for Mobile](../../../static/images/2019/15_Compression/ch15_fig7_compression_by_content_type_pct_mobile.jpg)
 
-Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are application/javascript, text/css and application/x-javascript. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them. 
+Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are `application/javascript`, `text/css` and `application/x-javascript`. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them. 
 
 ## 1st Party vs 3rd Party Compression
 
