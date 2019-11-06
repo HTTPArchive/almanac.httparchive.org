@@ -152,7 +152,7 @@ In the graph below, the top 25 content types are displayed with box sizes repres
 
 ![Top 25 Compressed Content Types](../../../static/images/2019/15_Compression/ch15_fig2_compressed_content_types.jpg)
 
-Filtering out the 7 most popular content types allows us to see the rest of these content types more clearly.
+Filtering out the seven most popular content types allows us to see the rest of these content types more clearly.
 
 ![Filtered Top Compressed Content Types](../../../static/images/2019/15_Compression/ch15_fig3_compressed_content_types_filtered.jpg)
 
