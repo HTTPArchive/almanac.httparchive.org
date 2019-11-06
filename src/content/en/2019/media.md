@@ -183,31 +183,6 @@ In the above diagrams we can plainly see that the volume of image content at the
 
 (figure Lighthouse audit offscreen)
 
-## Hero Images
-Hero media
-how many pages include a large "hero" graphic above the fold?
-Same or different microdata hero images
-Orientation and pixel volume of hero images
-Hero video usage
-Image formats
-Lighthouse data on responsiveness, format, quality, lazy loading
-adoption of newer image formats like WebP
-SVG
-Inline versus external sources (from css or otherwise)
-comments volume v. total bytes
-SVGO comparison
-Microdata usage (og:image, twitter:image, etc)
-Use of <source sizes>
-Preloader effectiveness (initiator Source: javascript, css, vanilla-html)
-Fallback image support for legacy devices that don’t support <picture> or <srcset>
-Accept-CH in <meta> vs http
-Photographic v. illustration score per pixel
-Bytes per pixel for photographic
-Use of Vary (Either User-Agent or Accept)
-A11y: Support for Alt tags
-TCP/TLS connection time delay (use of preconnect for cross origin hosts)
-inlined / base64 image content
-
 ## Accessibility
 
 At the heart of image accessibility is the alt tag.  When the alt tag is added to an image, this text can be used to describe the image to a user who is unable to view the images (either due to a disability, or a poor internet connection.  
