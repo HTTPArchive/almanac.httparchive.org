@@ -228,7 +228,7 @@ Additionally, the percentage of brotli compression is higher for third party con
   </tr>
 </table>
 
-## Identifying Compression Opportunities
+## Identifying compression opportunities
 
 [Google’s Lighthouse](https://developers.google.com/web/tools/lighthouse) tool enables users to run a series of audits against web pages, and [one of them](https://developers.google.com/web/tools/lighthouse/audits/text-compression) evaluates whether a site can benefit from additional text based compression. It does this by attempting to compress resources and evaluate whether an object’s size can be reduced by at least 10% and 1400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.
 
