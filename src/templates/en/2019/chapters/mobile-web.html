@@ -218,31 +218,34 @@
       <h2 id="the-page-loading-experience">The page loading experience</h2>
       <p>The first part of the mobile web experience we analyzed is the one we’re all most intimately familiar with: <em>the page loading experience</em>. But before we start diving into our findings, let's make sure we're all on the same page regarding what the average mobile user <em>really</em> looks like. Because this will not only help you reproduce these results, but understand these users better.</p>
       <p>Let’s start with what phone the average mobile user has. The average android phone <a href="https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119">is ~$250</a>, and one of the <a href="https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones">most popular phones</a> in that range is a Samsung Galaxy S6… so this is likely the kind of phone they use (4x slower than that iPhone 8 you may have). This user doesn’t have access to a much faster 4G connection, but rather a 2G (<a href="https://www.gsma.com/r/mobileeconomy/">29%</a> of the time) or 3G connection (<a href="https://www.gsma.com/r/mobileeconomy/">28%</a> of the time). And this is what it all adds up to:</p>
-      <table>
-        <tr>
-          <th>Connection type</th>
-          <td>[2G or 3G](https://www.gsma.com/r/mobileeconomy/)</td>
-        </tr>
-        <tr>
-          <th>Latency</th>
-          <td>300 - 400ms</td>
-        </tr>
-        <tr>
-          <th>Bandwidth</th>
-          <td>0.4 - 1.6Mbps</td>
-        </tr>
-        <tr>
-          <th>Phone</th>
-          <td>[Galaxy S6](https://www.gsmarena.com/samsung_galaxy_s6-6849.php) — [4x slower](https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html) than iPhone 8 (Octane V2 score)</td>
-        </tr>
-      </table>
-
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr>
+              <th>Connection type</th>
+              <td>[2G or 3G](https://www.gsma.com/r/mobileeconomy/)</td>
+            </tr>
+            <tr>
+              <th>Latency</th>
+              <td>300 - 400ms</td>
+            </tr>
+            <tr>
+              <th>Bandwidth</th>
+              <td>0.4 - 1.6Mbps</td>
+            </tr>
+            <tr>
+              <th>Phone</th>
+              <td>[Galaxy S6](https://www.gsmarena.com/samsung_galaxy_s6-6849.php) — [4x slower](https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html) than iPhone 8 (Octane V2 score)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p><em>The average mobile user</em></p>
       <p>I imagine some of you are surprised by these results. They may be far worse conditions than you’ve ever tested your site with. But now that we’re all on the same page with what a mobile user truly looks like… let’s get started.</p>
       <h3 id="pages-bloated-with-javascript">Pages bloated with javascript</h3>
       <p>The state of javascript on the mobile web is terrifying. According to HTTP Archive's <a href="https://httparchive.org/reports/state-of-javascript">compiled report on javascript</a>, the median mobile site requires phones to <strong>download 375KB</strong> of javascript. Meaning phones have to <strong>parse, compile, and execute ~1.25MB</strong> of javascript on average (assuming a typical 70% compression ratio).</p>
       <p>Why is this a problem? Because sites loading this much JS take upwards of <a href="https://httparchive.org/reports/loading-speed#ttci">10 seconds</a> to become interactive. Or in other words: your page may appear fully loaded, but when a user clicks any of your buttons, menus, etc… nothing happens because the JS hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that gets.</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
       <p><em>Example displaying how painful of an experience waiting for JS to load can be</em></p>
       <p>Let’s delve deeper and look at another metric more focused on <em>how well</em> each page utilizes its javascript (does it really need as much as it’s loading). We call this metric the <em>Javascript Bloat Score</em> (based on <a href="https://www.webbloatscore.com/">web bloat score</a>). The idea behind it is this:</p>
       <ol>
@@ -362,25 +365,28 @@
       <p>Many new types have since been introduced (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types">see full list here</a>). They allow developers to inform browsers what kind of data is expected, and browsers to provide customized keyboards specifically for these input types. For example: a type of <code>email</code> gives you an alphanumeric keyboard with an @ symbol, and a type of <code>tel</code> will display a numpad.</p>
       <p>When analyzing sites containing an email input, only **56.42% **use <code>type="email”</code>. Similarly for phone inputs, <code>input=”tel”</code> is only used **36.7% **of the time, and other new input types have an even lower adoption rate.</p>
       <p>Make sure to educate yourself and others on the large amount of input types available and double-check you don’t have any typos like these most common ones:</p>
-      <table>
-        <tr>
-          <th>Type</th>
-          <th># of pages with this typo / invalid type</th>
-        </tr>
-        <tr>
-          <td>phone</td>
-          <td>1917</td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>1348</td>
-        </tr>
-        <tr>
-          <td>textbox</td>
-          <td>833</td>
-        </tr>
-      </table>
-
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr>
+              <th>Type</th>
+              <th># of pages with this typo / invalid type</th>
+            </tr>
+            <tr>
+              <td>phone</td>
+              <td>1917</td>
+            </tr>
+            <tr>
+              <td>name</td>
+              <td>1348</td>
+            </tr>
+            <tr>
+              <td>textbox</td>
+              <td>833</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p><em>Most commonly used invalid input types</em></p>
       <h3 id="enabling-autocomplete-for-inputs">Enabling autocomplete for inputs</h3>
       <p>Allowing users to input information into fields more easily is great, but what about letting them fill them out in a single click? This is what the <code>autocomplete</code> input attribute aims to do. Users fill out tons of forms, often with the exact same information each time. Realizing this, browsers have begun to securely store this information so it can be used on future pages. All developers need to do, is use this <code>autocomplete</code> attribute to tell browsers what exact piece of information needs to be input, and the browser does the rest (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">see here for more details</a>).</p>
