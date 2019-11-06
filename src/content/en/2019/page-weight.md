@@ -13,9 +13,9 @@ last_updated: 2019-11-04T12:00:00+00:00:00
 
 The median web page is around 1900KB in size and contains 74 requests. That doesn't sound too bad, right?
 
-Here's the issue with medians—they mask problems. By definition, they focus only on the middle of the distribution. We need to consider percentiles at both extremes to get an understanding of the bigger picture.
+Here's the issue with medians: they mask problems. By definition, they focus only on the middle of the distribution. We need to consider percentiles at both extremes to get an understanding of the bigger picture.
 
-Looking at the 90th percentile exposes the unpleasant stuff. Roughly 10% of the pages we're pushing at the unsuspecting public are in excess of 6MB and contain 179 requests. This is, frankly, terrible. If this doesn't seem terrible to you, then you definitely need to read this chapter.
+Looking at the 90th percentile exposes the unpleasant stuff. Roughly 10% of the pages we're pushing at the unsuspecting public are in excess of 6 MB and contain 179 requests. This is, frankly, terrible. If this doesn't seem terrible to you, then you definitely need to read this chapter.
 
 ### Myth: Page size doesn't matter
 
@@ -27,35 +27,35 @@ Yes, you can build large robust pages that feel fast… to some users. But you s
 
 ### More bandwidth isn't a magic bullet for web performance
 
-Even if more people had access to better devices and cheaper connections, that wouldn't be a complete solution. Double the bandwidth doesn't mean twice as fast. In fact, it has been demonstrated that increasing bandwidth by up to 1233% only made pages 55% faster ([see the study here](https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance)).
+Even if more people had access to better devices and cheaper connections, that wouldn't be a complete solution. Double the bandwidth doesn't mean twice as fast. In fact, [it has been demonstrated](https://developer.akamai.com/blog/2015/06/09/heres-why-more-bandwidth-isnt-magic-bullet-web-performance) that increasing bandwidth by up to 1,233% only made pages 55% faster.
 
 The problem is latency. Most of our networking protocols require a lot of round-trips, and each of those round trips imposes a latency penalty. For as long as latency continues to be a performance problem (which is to say, for the foreseeable future), the major performance culprit will continue to be that a typical web page today contains a hundred or so assets hosted on dozens of different servers. Many of these assets are unoptimized, unmeasured, unmonitored—and therefore unpredictable.
 
 ### What types of assets does the HTTP Archive track, and how much do they matter?
 
-Here's a quick glossary of the page composition metrics the HTTP Archive tracks, and how much they matter in terms of performance and user experience:
+Here's a quick glossary of the page composition metrics that the HTTP Archive tracks, and how much they matter in terms of performance and user experience:
 
-- **Total size** - This is the total weight in kilobytes of the page. It matters especially to mobile users who have limited and/or metered data.
+- The **total size** is the total weight in bytes of the page. It matters especially to mobile users who have limited and/or metered data.
 
-- **HTML** - HTML is typically the smallest resource on the page. Its performance risk is negligible.
+- **HTML** is typically the smallest resource on the page. Its performance risk is negligible.
 
-- **Images** - Unoptimized images are often the greatest contributor to page bloat. Looking at the 90th percentile of data gathered for the Almanac, images accounted for a whopping 5220KB of a roughly 7MB page. In other words, images comprised almost 75% of the total page weight. And if that already wasn't enough, the number of images on a page has been linked to lower conversion rates on retail sites. (More on that later.)
+- Unoptimized **images** are often the greatest contributor to page bloat. Looking at the 90th percentile of the distribution of page weight, images account for a whopping 5.2 MB of a roughly 7 MB page. In other words, images comprise almost 75% of the total page weight. And if that already wasn't enough, the number of images on a page has been linked to lower conversion rates on retail sites. (More on that later.)
 
-- **JavaScript** - JavaScript matters. A page can have a relatively low JS weight but still suffer from JS-inflicted performance problems. Even a single 100KB third-party script can wreak havoc with your page. The more scripts on your page, the greater the risk.
+- **JavaScript** matters. A page can have a relatively low JavaScript weight but still suffer from JavaScript-inflicted performance problems. Even a single 100 KB third-party script can wreak havoc with your page. The more scripts on your page, the greater the risk.
 
-  It's not enough to focus solely on blocking JS. It's possible for your pages to contain zero blocking resources and still have less-than-optimal performance because of how your JavaScript is rendered. That's why it's so important to understand CPU usage on your pages—because JavaScript consumes more CPU than all other browser activities combined. While JS blocks the CPU, the browser can't respond to user input. This creates what's commonly called "jank"—that annoying feeling of jittery, unstable page rendering.
+  It's not enough to focus solely on blocking JavaScript. It's possible for your pages to contain zero blocking resources and still have less-than-optimal performance because of how your JavaScript is rendered. That's why it's so important to understand CPU usage on your pages, because JavaScript consumes more CPU than all other browser activities combined. While JavaScript blocks the CPU, the browser can't respond to user input. This creates what's commonly called "jank": that annoying feeling of jittery, unstable page rendering.
 
-- **CSS** - Stylesheets are an incredible boon for modern web pages. They solve a myriad of design problems, from browser compatibility to design maintenance and updating. Without stylesheets, we wouldn't have great things like responsive design. But, like JavaScript, CSS doesn't have to be bulky to cause problems. Poorly executed stylesheets can create a host of performance problems, ranging from stylesheets taking too long to download and parse, to improperly placed stylesheets that block the rest of the page from rendering. And similarly to JS, more CSS files equals more potential trouble.
+- **CSS** is an incredible boon for modern web pages. It solves a myriad of design problems, from browser compatibility to design maintenance and updating. Without CSS, we wouldn't have great things like responsive design. But, like JavaScript, CSS doesn't have to be bulky to cause problems. Poorly executed stylesheets can create a host of performance problems, ranging from stylesheets taking too long to download and parse, to improperly placed stylesheets that block the rest of the page from rendering. And, similarly to JavaScript, more CSS files equals more potential trouble.
 
 ### Bigger, complex pages can be bad for your business
 
-Let's assume you're not a heartless monster who doesn't care about your site's visitors. But if you are, you should know that serving bigger, more complex pages hurts you, too. That was one of the findings of a [Google-led machine-learning study](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/) that gathered over a million beacons worth of real user data from retail sites.
+Let's assume you're not a heartless monster who doesn't care about your site's visitors. But if you are, you should know that serving bigger, more complex pages hurts you, too. That was one of the findings of a [Google-led machine learning study](https://www.thinkwithgoogle.com/marketing-resources/experience-design/mobile-page-speed-load-time/) that gathered over a million beacons' worth of real user data from retail sites.
 
-There were three really important takeaways from this research by Google:
+There were three really important takeaways from this research:
 
 1. **The total number of elements on a page was the greatest predictor of conversions.** Hopefully this doesn't come as a huge surprise to you, given what we've just covered about the performance risks imposed by the various assets that make up a modern web page.
 
-2. **The number of images on a page was the second greatest predictor of conversions.** Sessions which converted users had 38% fewer images than sessions that didn't convert.
+2. **The number of images on a page was the second greatest predictor of conversions.** Sessions in which users converted had 38% fewer images than in sessions that didn't convert.
 
 <figure>
   <a href="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png">
@@ -64,7 +64,7 @@ There were three really important takeaways from this research by Google:
   <figcaption>Figure 1. Converted sessions vs non-converted sessions.</figcaption>
 </figure>
 
-3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the huge longtail that demonstrates how many retail sessions contained up to 1440 scripts!
+3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the long tail that demonstrates how many retail sessions contained up to 1,440 scripts!
 
 <figure>
   <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png">
@@ -79,9 +79,9 @@ Now that we've covered why page size and complexity matter, let's get into some 
 
 The statistics in this section are all based on the _transfer size_ of a page and its resources. Not all resources on the web are compressed before sending, but if they are, this analysis uses the compressed size.
 
-### Page Weight
+### Page weight
 
-Roughly speaking, mobile sites are about 10% smaller than their desktop counterparts. The majority of the difference is due to mobile sites loading less image bytes than their desktop counterparts.
+Roughly speaking, mobile sites are about 10% smaller than their desktop counterparts. The majority of the difference is due to mobile sites loading fewer image bytes than their desktop counterparts.
 
 #### Mobile
 
@@ -142,7 +142,7 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
       <td>4</td>
     </tr>
   </table>
-  <figcaption>Figure 3. Page weight on mobile broken down by resource type</figcaption>
+  <figcaption>Figure 3. Page weight on mobile broken down by resource type.</figcaption>
 </figure>
 
 #### Desktop
@@ -207,9 +207,9 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
   <figcaption>Figure 4. Page weight on desktop broken down by resource type</figcaption>
 </figure>
 
-### Page Weight Over Time
+### Page weight over time
 
-Over the past year the median size of a desktop site increased by 434KB, and the median size of a mobile site increased by 179KB. Images are overwhelmingly driving this increase.
+Over the past year the median size of a desktop site increased by 434 KB, and the median size of a mobile site increased by 179 KB. Images are overwhelmingly driving this increase.
 
 #### Mobile
 
@@ -270,7 +270,7 @@ Over the past year the median size of a desktop site increased by 434KB, and the
       <td>+1</td>
     </tr>
   </table>
-  <figcaption>Figure 5. Change (KB) in page size vs. 2018</figcaption>
+  <figcaption>Figure 5. Change in mobile page weight since 2018.</figcaption>
 </figure>
 
 #### Desktop
@@ -332,14 +332,14 @@ Over the past year the median size of a desktop site increased by 434KB, and the
       <td>+1</td>
     </tr>
   </table>
-  <figcaption>Figure 6. Change (KB) in page size vs. 2018</figcaption>
+  <figcaption>Figure 6. Change in desktop page weight since 2018.</figcaption>
 </figure>
 
-For a longer-term perspective on how page weight has changed over time, check out this [graph](https://httparchive.org/reports/page-weight#bytesTotal) on the main HTTP Archive site. Median page size has grown at a fairly constant rate since the HTTP Archive started tracking this metric in November 2010 and the increase in page weight observed over the past year is consistent with this.
+For a longer-term perspective on how page weight has changed over time, check out [this timeseries graph](https://httparchive.org/reports/page-weight#bytesTotal) from HTTP Archive. Median page size has grown at a fairly constant rate since the HTTP Archive started tracking this metric in November 2010 and the increase in page weight observed over the past year is consistent with this.
 
-### Page Requests
+### Page requests
 
-The median desktop site makes 74 requests, and the median mobile site makes 69—with images and JavaScript accounting for the majority of these requests.  There was no significant change in the quantity or distribution of requests over the last year.
+The median desktop page makes 74 requests, and the median mobile page makes 69. Images and JavaScript account for the majority of these requests.  There was no significant change in the quantity or distribution of requests over the last year.
 
 #### Mobile
 
@@ -400,7 +400,7 @@ The median desktop site makes 74 requests, and the median mobile site makes 69�
       <td>0</td>
     </tr>
   </table>
-  <figcaption>Figure 7. Page requests on mobile broken down by resource type</figcaption>
+  <figcaption>Figure 7. Mobile page requests broken down by resource type.</figcaption>
 </figure>
 
 #### Desktop
@@ -462,14 +462,14 @@ The median desktop site makes 74 requests, and the median mobile site makes 69�
       <td>0</td>
     </tr>
   </table>
-  <figcaption>Figure 8. Page requests on desktop broken down by resource type</figcaption>
+  <figcaption>Figure 8. Desktop page requests broken down by resource type.</figcaption>
 </figure>
 
-### File Formats
+### File formats
 
-The preceding analysis has focused on analyzing page weight through the lens of resource type. However, in the case of images and media, it's possible to dive a level deeper and look at the differences in resource size between specific file formats.
+The preceding analysis has focused on analyzing page weight through the lens of resource types. However, in the case of images and media, it's possible to dive a level deeper and look at the differences in resource sizes between specific file formats.
 
-#### File size by image format (Mobile)
+#### File size by image format (mobile)
 
 <figure>
   <table>
@@ -527,7 +527,7 @@ The preceding analysis has focused on analyzing page weight through the lens of 
       <td>78</td>
     </tr>
   </table>
-  <figcaption>Figure 9. Images file sizes on mobile broken down by image format</figcaption>
+  <figcaption>Figure 9. Images file sizes on mobile broken down by image format.</figcaption>
 </figure>
 
 Some of these results, particularly those for GIFs, are really surprising. If GIFs are so small, then why are they being replaced by formats like JPG, PNG, and WEBP?
@@ -604,7 +604,7 @@ The tables below show two different approaches to removing these tiny images fro
       <td>76.43</td>
     </tr>
   </table>
-  <figcaption>Figure 11. File size by image format for images > 100 bytes</figcaption>
+  <figcaption>Figure 11. File size by image format for images > 100 bytes.</figcaption>
 </figure>
 
 #### File size by image format for images > 1024 bytes
@@ -666,16 +666,16 @@ The tables below show two different approaches to removing these tiny images fro
       <td>79.53</td>
     </tr>
   </table>
-  <figcaption>Figure 12. File size by image format for images > 1024 bytes</figcaption>
+  <figcaption>Figure 12. File size by image format for images > 1024 bytes.</figcaption>
 </figure>
 
-The low file size of PNG images compared to JPEG images may seem surprising. JPEG uses [lossy compression](https://en.wikipedia.org/wiki/Lossy_compression) (lossy compression results in data loss; this makes it possible to achieve smaller file sizes) while PNG uses [lossless compression](https://en.wikipedia.org/wiki/Lossless_compression) (lossless compression does not result in data loss; this produces higher-quality, but larger images). However this difference in file sizes is probably a reflection of the popularity of PNGs for iconography due to their transparency support; rather than differences in their encoding and compression.
+The low file size of PNG images compared to JPEG images may seem surprising. JPEG uses [lossy compression](https://en.wikipedia.org/wiki/Lossy_compression). Lossy compression results in data loss, which makes it possible to achieve smaller file sizes. Meanwhile, PNG uses [lossless compression](https://en.wikipedia.org/wiki/Lossless_compression). This does not result in data loss, which this produces higher-quality, but larger images. However, this difference in file sizes is probably a reflection of the popularity of PNGs for iconography due to their transparency support, rather than differences in their encoding and compression.
 
 #### File size by media format
 
-MP4 is overwhelmingly the most popular media format on the web today. In terms of popularity, it is followed by WebM and MPEG-TS respectively.
+MP4 is overwhelmingly the most popular video format on the web today. In terms of popularity, it is followed by WebM and MPEG-TS respectively.
 
-Unlike some of the other tables in this data set, this one has mostly happy takeaways. Videos are consistently smaller on mobile—which is great to see. In addition, the median size of an MP4 video is a very reasonable 18 KB on mobile and 39 KB on desktop. The median numbers for WebM are even better but they should be taken with a grain of salt: the duplicate measurement of "0.29 KB" across multiple clients and percentiles is a little bit suspicious. One possible explanation is that identical copies of one very tiny WebM video is included on many pages. Of the three formats, MPEG-TS consistently has the highest file size across all percentiles; this may be related to the fact that it was released in 1995—making it the oldest of these three media formats.
+Unlike some of the other tables in this data set, this one has mostly happy takeaways. Videos are consistently smaller on mobile, which is great to see. In addition, the median size of an MP4 video is a very reasonable 18 KB on mobile and 39 KB on desktop. The median numbers for WebM are even better but they should be taken with a grain of salt: the duplicate measurement of 0.29 KB across multiple clients and percentiles is a little bit suspicious. One possible explanation is that identical copies of one very tiny WebM video is included on many pages. Of the three formats, MPEG-TS consistently has the highest file size across all percentiles. This may be related to the fact that it was released in 1995, making it the oldest of these three media formats.
 
 ##### Mobile
 
@@ -718,7 +718,7 @@ Unlike some of the other tables in this data set, this one has mostly happy take
       <td>475</td>
     </tr>
   </table>
-  <figcaption>Figure 13. File size by media format on mobile</figcaption>
+  <figcaption>Figure 13. Video size by media format on mobile.</figcaption>
 </figure>
 
 ##### Desktop
@@ -762,7 +762,7 @@ Unlike some of the other tables in this data set, this one has mostly happy take
       <td>756</td>
     </tr>
   </table>
-  <figcaption>Figure 14. File size by media format on desktop</figcaption>
+  <figcaption>Figure 14. Video size by media format on desktop.</figcaption>
 </figure>
 
 ## Conclusion
