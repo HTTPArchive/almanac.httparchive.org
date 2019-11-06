@@ -154,6 +154,8 @@ nav a {
 
 header .cta {
   display: flex;
+  min-width: 205px;
+  flex-direction: row-reverse;
 }
 
 header .btn + .language-switcher {
