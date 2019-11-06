@@ -10,7 +10,7 @@ last_updated: 2019-11-04T12:00:00+00:00:00
 ---
 
 ## Introduction
-HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that - we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into to due to its inefficiencies. Bundling, spriting, inlining and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default.
+HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that - we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default.
 
 This meant that even those without the skills and resources to concentrate on [web performance](./performance) would suddenly have performant websites. However, the reality has been, as ever, a little more nuanced than that. It has been over four years since the formal approval of HTTP/2 as a [standard in May 2015 as RFC 7540](https://tools.ietf.org/html/rfc7540), so now is a good time to look over how this relatively new technology has fared in the real world.
 
