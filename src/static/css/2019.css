@@ -6,6 +6,7 @@ body {
   font-weight: inherit;
   -webkit-font-smoothing: antialiased;
   font-size: 17px;
+  line-height: 30px;
 }
 
 * {
@@ -205,7 +206,6 @@ header .btn + .language-switcher {
 .main {
   margin: 0px auto;
   font-size: 17px;
-  line-height: 30px;
 }
 .content, section.main {
   max-width: 1024px;
