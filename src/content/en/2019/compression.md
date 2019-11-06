@@ -158,7 +158,7 @@ Filtering out the seven most popular content types allows us to see the rest of 
 
 The `application/json` and `image/svg+xml` content types are compressed less than 65% of the time.
 
-Most of the custom web fonts are served without compression, since they are already in a compressed format. However, font/ttf is compressible, but only 84% of TTF font requests are being served with compression so there is still room for improvement here.
+Most of the custom web fonts are served without compression, since they are already in a compressed format. However, `font/ttf` is compressible, but only 84% of TTF font requests are being served with compression so there is still room for improvement here.
 
 The graphs below illustrate the breakdown of compression techniques used for each content type. Looking at the top 3 content types, we can see that across both Desktop and Mobile there are major gaps in compressing some of the most frequently requested content types. 56% of text/html as well as 18% of application/javascript and text/css resources are not being compressed. This presents a significant performance opportunity.
 
