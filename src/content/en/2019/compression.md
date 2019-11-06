@@ -174,7 +174,7 @@ Across all content types, gzip is the most popular compression algorithm. The ne
 
 ## First party vs third party compression
 
-In the [Third Parties chapter](./third-parties), we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third party content tends to be compressed more than first party content. 
+In the [Third Parties](./third-parties) chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third party content tends to be compressed more than first party content. 
 
 Additionally, the percentage of brotli compression is higher for third party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.
 
