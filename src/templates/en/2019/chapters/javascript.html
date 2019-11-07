@@ -39,9 +39,9 @@
     "headline": "{{ metadata.get('title') }}",
     "image": {
     	  "@type": "ImageObject",
-    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
-    	  "height": 163,
-    	  "width": 326
+    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg",
+    	  "height": 433,
+    	  "width": 866
     },
     "publisher": {
     	  "@type": "Organization",
@@ -191,7 +191,7 @@
       <p><code>&lt;insert graphic of metric 01_07&gt;</code></p>
       <p>At every percentile, processing times are longer for mobile web pages than on desktop. The median total main thread time on desktop is <strong>849 ms</strong>, while mobile is at a larger number - <strong>2436ms.</strong></p>
       <p>Although this data shows how much longer it can take for a mobile device to process JavaScript than a more powerful desktop machine, mobile devices also vary in terms of computing power. The following chart shows how processing times on a single web page can vary significantly depending on the mobile device class.</p>
-      <p><img src="/static/images/2019/01_JavaScript/js-processing-reddit.png" alt="JavaScript processing times for Reddit.com" /></p>
+      <p><img src="/static/images/2019/01_JavaScript/js-processing-reddit.png" alt="JavaScript processing times for Reddit.com" loading="lazy" /></p>
       <p>
         <em>From <a href="https://v8.dev/blog/cost-of-javascript-2019">"The cost of JavaScript in 2019" </a></em>
       </p>

@@ -39,9 +39,9 @@
     "headline": "{{ metadata.get('title') }}",
     "image": {
     	  "@type": "ImageObject",
-    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
-    	  "height": 163,
-    	  "width": 326
+    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg",
+    	  "height": 433,
+    	  "width": 866
     },
     "publisher": {
     	  "@type": "Organization",
@@ -211,26 +211,28 @@
       <p>Let's start with what phone the typical mobile user has. The average Android phone <a href="https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119">is ~$250</a>, and one of the <a href="https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones">most popular phones</a> in that range is a Samsung Galaxy S6. So this is likely the kind of phone they use, which is actually 4x slower than an iPhone 8. This user doesn't have access to a fast 4G connection, but rather a 2G connection (<a href="https://www.gsma.com/r/mobileeconomy/">29%</a> of the time) or 3G connection (<a href="https://www.gsma.com/r/mobileeconomy/">28%</a> of the time). And this is what it all adds up to:</p>
       <figure id="fig-1">
         <div class="table-wrap">
-          <table>
-            <tbody>
-              <tr>
-                <th>Connection type</th>
-                <td><a href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
-              </tr>
-              <tr>
-                <th>Latency</th>
-                <td>300 - 400ms</td>
-              </tr>
-              <tr>
-                <th>Bandwidth</th>
-                <td>0.4 - 1.6Mbps</td>
-              </tr>
-              <tr>
-                <th>Phone</th>
-                <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Connection type</th>
+                  <td><a href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
+                </tr>
+                <tr>
+                  <th>Latency</th>
+                  <td>300 - 400ms</td>
+                </tr>
+                <tr>
+                  <th>Bandwidth</th>
+                  <td>0.4 - 1.6Mbps</td>
+                </tr>
+                <tr>
+                  <th>Phone</th>
+                  <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <figcaption>Figure 1. Technical profile of a typical mobile user.</figcaption>
       </figure>
@@ -239,7 +241,7 @@
       <p>The state of JavaScript on the mobile web is terrifying. According to HTTP Archive's <a href="https://httparchive.org/reports/state-of-javascript?start=2016_05_15&amp;end=2019_07_01&amp;view=list#bytesJs">JavaScript report</a>, the median mobile site requires phones to download 375 KB of JavaScript. Assuming a 70% compression ratio, this means that phones have to parse, compile, and execute 1.25 MB of JavaScript at the median.</p>
       <p>Why is this a problem? Because sites loading this much JS take upwards of <a href="https://httparchive.org/reports/loading-speed?start=earliest&amp;end=2019_07_01&amp;view=list#ttci">10 seconds</a> to become interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, nothing happens because the JavaScript hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.</p>
       <figure id="fig-2">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
         <figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
       </figure>
       <p>Let's delve deeper and look at another metric that focuses more on <em>how well</em> each page utilizes JavaScript. For example, does it really need as much JavaScript as it's loading? We call this metric the <em>JavaScript Bloat Score</em>, based on the <a href="https://www.webbloatscore.com/">web bloat score</a>. The idea behind it is this:</p>
@@ -259,7 +261,7 @@
       <p>One of the most beautiful parts of the web is how web pages load progressively by nature. Browsers download and display content as soon as they are able, so users can engage with your content as soon as possible. However, this can have a detrimental effect if you don't design your site with this in mind. Specifically, content can shift position as resources load and impede the user experience.</p>
       <figure id="fig-3">
         <a href="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
-          <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook" />
+          <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook" loading="lazy" />
         </a>
 
         <figcaption>Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook</figcaption>
@@ -295,7 +297,7 @@
       <p>To help us mitigate this problem, there are <a href="https://dequeuniversity.com/rules/axe/2.2/color-contrast">accessibility guidelines</a> we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.</p>
       <figure id="fig-4">
         <a href="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
-          <img alt="Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png" />
+          <img alt="Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png" loading="lazy" />
         </a>
 
         <figcaption>Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
@@ -318,7 +320,7 @@
         </li>
       </ol>
       <figure id="fig-5">
-        <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive" loading="lazy"></iframe>
         <div id="fig5-caption" class="visually-hidden">Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
         <figcaption>Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>
       </figure>
@@ -331,7 +333,7 @@
       <p>Designing tap targets appropriately to mitigate this issue can be difficult because of how widely fingers vary in size. However, lots of research has now been done and there are safe <a href="https://developers.google.com/web/tools/lighthouse/audits/tap-targets">standards</a> for how large buttons should be and how far apart they need to be separated.</p>
       <figure id="fig-6">
         <a href="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
-          <img alt="A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png" />
+          <img alt="A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png" loading="lazy" />
         </a>
 
         <figcaption>Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook</figcaption>
@@ -349,26 +351,28 @@
       <p>When analyzing sites containing an email input, 56.42% use <code>type="email"</code>. Similarly, for phone inputs, <code>type="tel"</code> is used 36.7% of the time. Other new input types have an even lower adoption rate.</p>
       <figure id="fig-7">
         <div class="table-wrap">
-          <table>
-            <tbody>
-              <tr>
-                <th>Type</th>
-                <th>Frequency (pages)</th>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td class="numeric">1,917</td>
-              </tr>
-              <tr>
-                <td>name</td>
-                <td class="numeric">1,348</td>
-              </tr>
-              <tr>
-                <td>textbox</td>
-                <td class="numeric">833</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Type</th>
+                  <th>Frequency (pages)</th>
+                </tr>
+                <tr>
+                  <td>phone</td>
+                  <td class="numeric">1,917</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td class="numeric">1,348</td>
+                </tr>
+                <tr>
+                  <td>textbox</td>
+                  <td class="numeric">833</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <figcaption>Figure 7. Most commonly used invalid input types</figcaption>
       </figure>
@@ -392,7 +396,7 @@
       <p>How well are we doing catering to mobile users? According to our research, even though 71% of sites make some kind of effort to adjust their site for mobile, they're falling well below the mark. Pages take forever to load and become usable thanks to an abuse of JavaScript, text is often impossible to read, engaging with sites via clicking links or buttons is error-prone and infuriating, and tons of great technologies invented to mitigate these problems (Service Workers, autocomplete, zooming, new image formats, etc) are barely being used at all.</p>
       <p>The mobile web has now been around long enough for there to be an entire generation of kids where this is the only internet they've ever known. And what kind of experience are we giving them? We're essentially taking them back to the dial-up era. (Good thing I hear AOL still sells those CDs providing 1000 hours of free internet access!)</p>
       <figure id="fig-9">
-        <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" width="300" />
+        <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" width="300" loading="lazy" />
         <figcaption>1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
       </figure>
       <aside class="note" markdown="">
