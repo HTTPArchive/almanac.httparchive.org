@@ -225,6 +225,7 @@ h2, h3, h4 {
 
 p, td, th, code, li {
   font-size: 17px;
+  line-height: 1.5em;
 }
 
 pre {

@@ -302,6 +302,9 @@ figure .big-number {
   font: bold 8rem/1em Poppins, sans-serif;
   color: #a8caba;
 }
+.bio {
+  margin-top: 10px;
+}
 
 @media (max-width: 900px) {
   .main {
