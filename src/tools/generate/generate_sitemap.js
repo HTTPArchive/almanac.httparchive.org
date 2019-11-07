@@ -12,33 +12,18 @@ const static_pages = [
 ];
 
 const generate_sitemap = async (sitemap_chapters) => {
-  let urls = await get_static_pages(sitemap_chapters);
-
-  let chapter_urls = {};
+  const urls = await get_static_pages(sitemap_chapters);
 
   for (let sitemap_chapter of sitemap_chapters) {
     let { language, year, chapter, metadata } = sitemap_chapter;
-    let key = `${year}_${chapter}`;
 
-    let chapter_url = chapter_urls[key] || {
-      loc: `en/${year}/${chapter}`,
-      lastmod: null,
-      alternatives: []
-    };
+    check_meta_dates(metadata);
 
-    if (language === 'en') {
-      check_meta_dates(metadata);
-      chapter_url.lastmod = metadata.last_updated;
-    }
+    const loc = `${language}/${year}/${chapter}`;
+    const lastmod = metadata.last_updated;
 
-    const hreflang = language;
-    const href = `${language}/${year}/${chapter}`;
-    chapter_url.alternatives.push({ hreflang, href });
-
-    chapter_urls[key] = chapter_url;
+    urls.push({ loc, lastmod });
   }
-
-  urls = [...urls, ...Object.values(chapter_urls)];
 
   let sitemap = await ejs.renderFile(sitemap_template, { urls });
   await fs.outputFile(sitemap_path, sitemap, 'utf8');
@@ -49,45 +34,26 @@ const generate_sitemap = async (sitemap_chapters) => {
 };
 
 const get_static_pages = async (sitemap_chapters) => {
-  const years_and_languages = get_years_and_languages(sitemap_chapters);
+  // Get distinct languages and years
+  const languages_and_years = [...new Set(sitemap_chapters.map((x) => `${x.language}/${x.year}`))];
 
+  // Get all of the static pages for each combination
+  const files = languages_and_years
+    .map((x) => static_pages.map((p) => `${x}/${p}`))
+    .reduce((x, y) => [...x, ...y], []);
+
+  // Get the sitemap entries for those pages
   let urls = [];
-  for (let year in years_and_languages) {
-    let en_urls = [];
 
-    for (let page of static_pages) {
-      const loc = `en/${year}/${page}`;
-      const contents = await fs.readFile(`templates/${loc}`, 'utf-8');
-      const match = contents.match(/"datePublished": "([0-9\-\+\:T]*)"/);
-      const lastmod = set_min_date(match[1]);
+  for (const loc of await files) {
+    const file = await fs.readFile(`templates/${loc}`, 'utf-8');
+    const match = file.match(/"datePublished": "([0-9\-\+\:T]*)"/);
+    const lastmod = set_min_date(match[1]);
 
-      const alternatives = [];
-      for (let language of years_and_languages[year]) {
-        const hreflang = language;
-        const href = `${language}/${year}/${page}`;
-
-        alternatives.push({ hreflang, href });
-      }
-
-      en_urls.push({ loc, lastmod, alternatives });
-    }
-
-    urls = [...urls, ...en_urls];
+    urls.push({ loc, lastmod });
   }
 
   return urls;
-};
-
-const get_years_and_languages = (sitemap_chapters) => {
-  const years_and_languages = {};
-
-  for (let { language, year } of sitemap_chapters) {
-    let languages = years_and_languages[year] || [];
-    languages = [...languages, language];
-    years_and_languages[year] = [...new Set(languages)];
-  }
-
-  return years_and_languages;
 };
 
 const check_meta_dates = (metadata) => {
