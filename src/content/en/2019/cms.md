@@ -13,7 +13,7 @@ At the beginning of (web evolution) time, the web ecosystem was powered by a sim
 
 As the web evolved, it became more powerful, but also more complicated. As a consequence that simple growth loop was broken and it was not the case anymore that any user could become a creator. For those who could pursue the content creation path, the road became arduous and hard to achieve and the [usage-capability gap](https://medinathoughts.com/2018/05/17/progressive-wordpress/), that is, the difference between what can be done in the web and what is actually done, grew steadily.
 
-(image upload here)
+![chart showing the increase in web capabilities from 1999 to 2018](/static/images/2019/14_CMS/web-evolution.png)
 
 Here is where a CMS plays the very important role of making it easy for users with different degrees of technical expertise to enter the web ecosystem loop as content creators. By lowering the barrier of entry for content creation, CMSs activate the growth loop of the web by turning users into creators. Hence their popularity.
 
@@ -29,7 +29,7 @@ There are other datasets tracking market share of CMS platforms, such as W3Techs
 
 In essence, this means that there are many CMS platforms available out there. The following picture shows a reduced view of the CMS landscape.
 
-(image upload here)
+![logos of the top content management systems](/static/images/2019/14_CMS/cms-logos.png)
 
 Some of them are open source (e.g. WordPress, Drupal, others) and some of them are proprietary (e.g. AEM, others). Some CMS platforms can be used on “free” hosted (or self-hosted) plans, and there are also advanced options for using these platforms on higher tiered plans (even at the enterprise level). The CMS space as a whole is a complex, federated universe of *CMS ecosystems*, all separated and at the same time intertwined in the vast fabric of the web. 
 
@@ -135,7 +135,7 @@ Success as a web content creator is all about user experience. Factors such as r
 
 To achieve this, we turn our analysis towards some [user-perceived performance metrics](https://thepathforward.io/web-performance-how-to-affect-perceived-performance/), which are captured in the CrUX dataset. These metrics relate in some ways to [how we, as humans, perceive time](https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/):
 
-(Image upload here)
+![chart showing the time frame of how humans perceive time](/static/images/2019/14_CMS/perf-perception.png)
 
 If things happen within one second, for all of us they are happening virtually instantly. And when things take longer than a few seconds, the likelihood we go on with our lives without waiting any longer is very high. This is very important for content creators seeking sustainable success in the web, because it tells us how fast our sites must load if we want to acquire, engage, and retain our user base. 
 
