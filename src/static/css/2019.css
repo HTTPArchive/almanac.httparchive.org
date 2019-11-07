@@ -15,6 +15,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, .subtitle {
   font-family: 'Poppins', sans-serif;
+  line-height: 1.2em;
 }
 
 b {
@@ -216,7 +217,6 @@ header .btn + .language-switcher {
 .main a,
 .main a:visited {
   color: #0b1423;
-  word-break: break-all;
 }
 
 h2, h3, h4 {
@@ -374,9 +374,9 @@ p.copyright {
   }
 }
 
-.visually-hidden { 
+.visually-hidden {
   position: absolute !important;
-  height: 1px; 
+  height: 1px;
   width: 1px;
   overflow: hidden;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */

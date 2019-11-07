@@ -39,9 +39,9 @@
     "headline": "{{ metadata.get('title') }}",
     "image": {
     	  "@type": "ImageObject",
-    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
-    	  "height": 163,
-    	  "width": 326
+    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg",
+    	  "height": 433,
+    	  "width": 866
     },
     "publisher": {
     	  "@type": "Organization",
@@ -189,75 +189,79 @@
       <p>That being said, if a site does not need to support IE11 and below, switching from dns-prefetch to preconnect is probably a good idea. In an era where HTTPS is ubiquitous, preconnect yields greater performance improvements while still being inexpensive. (Unlike dns-prefetch, preconnect not only initiates the DNS lookup, but also the TCP handshake and TLS negotiation. The <a href="https://knowledge.digicert.com/solution/SO16297.html">certificate chain</a> is downloaded during TLS negotiation - this typically costs a couple kilobytes.)</p>
       <p>According to the data set, prefetch is used by 3% of sites, making it the least widely used resource hint. This low usage may be explained by the fact that prefetch is useful for improving subsequent rather than current page loads. Thus, it will be overlooked if a site is only focused on improving their landing page or the performance of the first page viewed. In addition, the way prefetch is used may lead to its usage to be very slightly under-reported. This data set was collected by querying the DOM at runtime: it includes dynamically injected resource hints, but it would not include, for example, resource hints that are dynamically injected as a result of a user action.</p>
       <div class="table-wrap">
-        <table>
-          <tbody>
-            <tr>
-              <td><strong>Resource Hint</strong></td>
-              <td><strong>Usage (% of sites)</strong></td>
-            </tr>
-            <tr>
-              <td>dns-prefetch</td>
-              <td>29%</td>
-            </tr>
-            <tr>
-              <td>preload</td>
-              <td>16%</td>
-            </tr>
-            <tr>
-              <td>preconnect</td>
-              <td>4%</td>
-            </tr>
-            <tr>
-              <td>prefetch</td>
-              <td>3%</td>
-            </tr>
-            <tr>
-              <td>prerender (deprecated)</td>
-              <td>0.13%</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap-container">
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>Resource Hint</strong></td>
+                <td><strong>Usage (% of sites)</strong></td>
+              </tr>
+              <tr>
+                <td>dns-prefetch</td>
+                <td>29%</td>
+              </tr>
+              <tr>
+                <td>preload</td>
+                <td>16%</td>
+              </tr>
+              <tr>
+                <td>preconnect</td>
+                <td>4%</td>
+              </tr>
+              <tr>
+                <td>prefetch</td>
+                <td>3%</td>
+              </tr>
+              <tr>
+                <td>prerender (deprecated)</td>
+                <td>0.13%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <p>Resource hints are most effective when they’re used selectively (“when everything is important, nothing is”). The table below shows the number of resource hints per page for pages using at least one resource hint. Although there is no clear cut rule for defining what an appropriate number of resource hints is, it appears that most sites are using resource hints appropriately.</p>
       <div class="table-wrap">
-        <table>
-          <tbody>
-            <tr>
-              <td><strong>Resource Hint</strong></td>
-              <td>
-                <strong>Resource Hints Per Page:<br />Median</strong>
-              </td>
-              <td>
-                <strong>Resource Hints Per Page:<br />90th Percentile</strong>
-              </td>
-            </tr>
-            <tr>
-              <td>dns-prefetch</td>
-              <td>2</td>
-              <td>8</td>
-            </tr>
-            <tr>
-              <td>preload</td>
-              <td>2</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <td>preconnect</td>
-              <td>2</td>
-              <td>8</td>
-            </tr>
-            <tr>
-              <td>prefetch</td>
-              <td>1</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>prerender (deprecated)</td>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap-container">
+          <table>
+            <tbody>
+              <tr>
+                <td><strong>Resource Hint</strong></td>
+                <td>
+                  <strong>Resource Hints Per Page:<br />Median</strong>
+                </td>
+                <td>
+                  <strong>Resource Hints Per Page:<br />90th Percentile</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>dns-prefetch</td>
+                <td>2</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>preload</td>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>preconnect</td>
+                <td>2</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>prefetch</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>prerender (deprecated)</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <h2 id="the-crossorigin-attribute">The <code>crossorigin</code> Attribute</h2>
       <p>Most “traditional” resources fetched on the web: images, stylesheets and scripts are fetched without opting in to CORS. That means that if those resources are fetched from a cross-origin server, by default their contents cannot be read back by the page, due to the same-origin policy.</p>
@@ -266,32 +270,34 @@
       <p>In the context of resource hints, usage of the crossorigin attribute enables them to match the CORS mode of the resources they are supposed to match and indicates the credentials to include in the request. For example: <code>&lt;link rel=”prefetch” href=”https://other-server.com/shopping-cart.css” crossorigin=”anonymous”&gt;</code> enables CORS and indicates that no credentials should be included for those cross-origin requests.</p>
       <p>Although other HTML elements support the crossorigin attribute, this analysis only looks at usage with resource hints.</p>
       <div class="table-wrap">
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <strong>Value of <code>crossorigin</code> attribute</strong>
-              </td>
-              <td><strong>Usage (% of resource hint instances)</strong></td>
-              <td><strong>Explanation</strong></td>
-            </tr>
-            <tr>
-              <td>Not set</td>
-              <td>92%</td>
-              <td>If the crossorigin attribute is absent, the request will follow the single-origin policy.</td>
-            </tr>
-            <tr>
-              <td>anonymous (or equivalent)</td>
-              <td>7%</td>
-              <td>Executes a cross-origin request that does not include credentials.</td>
-            </tr>
-            <tr>
-              <td>use-credentials</td>
-              <td>0.47%</td>
-              <td>Executes a cross-origin request that includes credentials.</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap-container">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Value of <code>crossorigin</code> attribute</strong>
+                </td>
+                <td><strong>Usage (% of resource hint instances)</strong></td>
+                <td><strong>Explanation</strong></td>
+              </tr>
+              <tr>
+                <td>Not set</td>
+                <td>92%</td>
+                <td>If the crossorigin attribute is absent, the request will follow the single-origin policy.</td>
+              </tr>
+              <tr>
+                <td>anonymous (or equivalent)</td>
+                <td>7%</td>
+                <td>Executes a cross-origin request that does not include credentials.</td>
+              </tr>
+              <tr>
+                <td>use-credentials</td>
+                <td>0.47%</td>
+                <td>Executes a cross-origin request that includes credentials.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <h2 id="the-as-attribute">The <code>as</code> attribute</h2>
       <p><code>as</code> is an attribute that should be used with the <code>preload</code> resource hint to inform the browser of the type (e.g. image, script, style, etc.) of the requested resource. This helps the browser correctly prioritize the request and apply the correct <a href="https://developers.google.com/web/fundamentals/security/csp">Content Security Policy (CSP)</a>. Content Security Policy is a security mechanism, expressed via HTTP header, that helps mitigate the impact of XSS and other malicious attacks by declaring a whitelist of trusted sources; only content from these sources can be rendered or executed.</p>

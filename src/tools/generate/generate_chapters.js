@@ -7,6 +7,7 @@ const recursive = require('recursive-readdir');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_figure_ids } = require('./generate_figure_ids');
 const { wrap_tables } = require('./wrap_tables');
+const { lazyload_img_iframes } = require('./lazyload_img_iframes');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -48,6 +49,7 @@ const parse_file = async (markdown) => {
 
   body = generate_figure_ids(body);
   body = wrap_tables(body);
+  body = lazyload_img_iframes(body);
   const toc = generate_table_of_contents(body);
 
   const m = converter.getMetadata();

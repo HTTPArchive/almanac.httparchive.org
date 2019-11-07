@@ -4,16 +4,22 @@
   grid-template-areas: 'index content';
   grid-template-columns: 300px auto;
 }
-.table-wrap,
+.table-wrap-container,
 .floating-card {
   border-radius: 16px;
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
 }
 .table-wrap {
-  display: inline-block;
-  margin: 10px 0;
+  display: flex;
+  margin: 0 auto;
+  padding: 16px;
   max-width: 100%;
+  justify-content: center;
+}
+.table-wrap-container {
   overflow: auto;
+  display: inline-block;
+  margin: 0 -16px;
 }
 
 .code-block {
@@ -107,7 +113,6 @@
   margin-top: 0;
   padding-top: 0;
   min-width: 320px;
-  font-size: 18px;
 }
 .content > section {
   margin-bottom: 64px;
@@ -173,7 +178,7 @@
 }
 
 .authors .tagline{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .authors .avatar{
@@ -271,14 +276,13 @@ figure iframe {
   margin: 0 auto;
 }
 figcaption {
-  margin-top: 20px;
+  margin-top: 8px;
   text-align: center;
 }
 table {
   margin: 0 auto;
   max-width: 100%;
   border-collapse: collapse;
-  display: block;
 }
 thead {
   font-family: 'Poppins', sans-serif;
@@ -354,7 +358,9 @@ figure .big-number {
     max-height: 100%;
     transition: max-height 0.25s ease-in;
   }
-
+  .table-wrap {
+    justify-content: left;
+  }
   table {
     font-size: .8em;
   }
