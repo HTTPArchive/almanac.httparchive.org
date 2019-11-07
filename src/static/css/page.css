@@ -16,7 +16,7 @@
   overflow: auto;
 }
 
-.code-block {
+.code-block, pre {
   margin: 8px 0;
   padding: 24px;
 }
@@ -26,7 +26,7 @@
   width: calc(100% + 32px);
   left: -24px;
 }
-.code-block pre {
+.code-block, pre {
   overflow-y: hidden;
   overflow-x: scroll;
 }
