@@ -1,3 +1,14 @@
+---
+part_number: III
+chapter_number: 14
+title: CMS
+description: CMS chapter of the 2019 Web Almanac covering adoption and composition of top CMSs
+authors: [ernee, amedina]
+reviewers: [sirjonathan]
+published: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-07T21:26:11.000Z 
+---
+
 ## Introduction
 ### What are CMS Platforms
 The general term **Content Management System (CMS)** refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content specifically, is a system aimed at creating, managing and publishing content to consumed and experienced via the open web.
