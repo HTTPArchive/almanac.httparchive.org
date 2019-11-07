@@ -81,6 +81,15 @@ def methodology(lang, year):
     return render_template('%s/%s/methodology.html' % (lang, year))
 
 
+@app.route('/sitemap.xml')
+@validate
+def sitemap():
+    xml = render_template('sitemap.xml')
+    resp = app.make_response(xml)
+    resp.mimetype = "text/xml"
+    return resp
+
+
 @app.route('/<lang>/<year>/<chapter>')
 @validate
 def chapter(lang, year, chapter):

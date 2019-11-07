@@ -69,8 +69,8 @@
        {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
        {% endfor %},
        "description": "{{ self.description() }}",
-       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
-       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+       "datePublished": "{{ metadata.get('published','2019-11-04') + 'T12:00:00+00:00:00' }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00+00:00:00' }}"
   }
 </script>
 <script type="application/ld+json">

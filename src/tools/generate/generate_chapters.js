@@ -6,6 +6,7 @@ const prettier = require('prettier');
 const { find_files, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_figure_ids } = require('./generate_figure_ids');
+const { generate_sitemap } = require('./generate_sitemap');
 const { wrap_tables } = require('./wrap_tables');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
@@ -14,6 +15,7 @@ converter.setOption('simpleLineBreaks', false);
 converter.setOption('tablesHeaderId', false);
 
 const generate_chapters = async () => {
+  let sitemap = [];
   for (const file of await find_files()) {
     const re = /content\/(.*)\/(.*)\/(.*).md/;
     const [path, language, year, chapter] = file.match(re);
@@ -23,12 +25,18 @@ const generate_chapters = async () => {
 
       const markdown = await fs.readFile(file, 'utf-8');
       const { metadata, body, toc } = await parse_file(markdown);
+
+      sitemap.push({ language, year, chapter, metadata });
+
       await write_template(language, year, chapter, metadata, body, toc);
     } catch (error) {
       console.error(error);
       console.error('  Failed to generate chapter, moving onto the next one. ');
     }
   }
+
+  const sitemap_path = await generate_sitemap(sitemap);
+  await size_of(sitemap_path);
 };
 
 const parse_file = async (markdown) => {
@@ -65,7 +73,6 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   });
 
   await fs.outputFile(path, fomatted_html, 'utf8');
-
   await size_of(path);
 };
 
