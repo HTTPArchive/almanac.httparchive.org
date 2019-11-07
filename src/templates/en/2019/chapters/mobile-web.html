@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-05T18:43:57.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-07T21:25:05.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
@@ -69,8 +69,8 @@
        {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
        {% endfor %},
        "description": "{{ self.description() }}",
-       "datePublished": "{{ metadata.get('published','2019-11-04T12:00:00+00:00:00') }}",
-       "dateModified": "{{ metadata.get('last_updated','2019-11-04T12:00:00+00:00:00') }}"
+       "datePublished": "{{ metadata.get('published','2019-11-04') + 'T12:00:00+00:00:00' }}",
+       "dateModified": "{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00+00:00:00' }}"
   }
 </script>
 <script type="application/ld+json">
