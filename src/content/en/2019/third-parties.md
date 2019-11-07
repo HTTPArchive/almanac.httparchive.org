@@ -6,7 +6,7 @@ description: Third Parties chapter of the 2019 Web Almanac covering data of what
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-04T12:00:00+00:00:00
+last_updated: 2019-11-05T15:45:32.000Z
 ---
 
 ## Introduction
