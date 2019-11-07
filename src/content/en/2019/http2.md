@@ -251,6 +251,8 @@ One concern raised by some is that HTTP/2 implementations have repurposed the pr
 
 However, the relatively low usage of fonts and images may mean that risk is not being seen as much as was feared. `<link rel="preload" ... >` tags are often used in the HTML rather than HTTP `link` headers and the meta tags are not a signal to push. Statistics in the [Resource Hints](./resource-hints) chapter show that fewer than 1% of sites use the preload HTTP `link` header, and about the same amount use preconnect which has no meaning in HTTP/2, so this would suggest this is not so much of an issue. Though there are a number of fonts and other assets being pushed, which may be a signal of this.
 
+As a counter argument to those complaints, if an asset is important enough to preload, then it could be argued these assets should be pushed if possible as browsers treat a preload hint as very high priority requests anyway. Any performance concern is therefore (again arguably) at the overuse of preload, rather than the resulting HTTP/2 push that happens because of this.
+
 To get around this unintended push, you can provide the `nopush` attribute in your preload header:
 
 ```
