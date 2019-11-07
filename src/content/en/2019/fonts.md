@@ -6,7 +6,7 @@ description: Fonts chapter of the 2019 Web Almanac covering ecommerce platforms,
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-04T22:37:21.000Z 
+last_updated: 2019-11-07T21:25:05.000Z 
 ---
 
 ## Introduction

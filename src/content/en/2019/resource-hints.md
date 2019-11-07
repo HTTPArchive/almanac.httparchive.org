@@ -6,7 +6,7 @@ description: Resource Hints chapter of the 2019 Web Almanac covering usage of dn
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-04T18:45:53.000Z 
+last_updated: 2019-11-07T21:25:05.000Z 
 ---
 
 ## Introduction

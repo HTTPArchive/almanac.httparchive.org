@@ -46,22 +46,11 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/accessibility
-        </loc>
-        
-        <lastmod>
-            2019-11-05
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/caching
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -72,7 +61,7 @@
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -90,7 +79,7 @@
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -101,7 +90,7 @@
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -112,7 +101,84 @@
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/accessibility
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/markup
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/media
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/mobile-web
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/page-weight
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/performance
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/pwa
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -126,77 +192,11 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/markup
-        </loc>
-        
-        <lastmod>
-            2019-11-05
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/media
-        </loc>
-        
-        <lastmod>
-            2019-11-05
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/mobile-web
-        </loc>
-        
-        <lastmod>
-            2019-11-05
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/page-weight
-        </loc>
-        
-        <lastmod>
-            2019-11-05
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/performance
-        </loc>
-        
-        <lastmod>
-            2019-11-05
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/pwa
-        </loc>
-        
-        <lastmod>
-            2019-11-05
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/resource-hints
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -207,7 +207,7 @@
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -218,7 +218,7 @@
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:25:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
