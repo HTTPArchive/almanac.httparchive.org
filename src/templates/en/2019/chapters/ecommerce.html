@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"III","chapter_number":13,"title":"Ecommerce","description":"Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third parties, performance, seo, and PWAs","authors":["samdutton","alankent"],"reviewers":["voltek62"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-07T21:25:05.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"III","chapter_number":13,"title":"Ecommerce","description":"Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third parties, performance, seo, and PWAs","authors":["samdutton","alankent"],"reviewers":["voltek62"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-05T01:25:08.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
@@ -365,57 +365,59 @@
       <figure id="fig-22">
         <!-- HTML used here in order to enable colspans -->
         <div class="table-wrap">
-          <table>
-            <tbody>
-              <tr>
-                <td></td>
-                <td colspan="2"><strong>Number of requests</strong></td>
-                <td colspan="2"><strong>Payload (KB)</strong></td>
-              </tr>
-              <tr>
-                <td><strong>Percentile</strong></td>
-                <td><strong>Mobile</strong></td>
-                <td><strong>Desktop</strong></td>
-                <td><strong>Mobile</strong></td>
-                <td><strong>Desktop</strong></td>
-              </tr>
-              <tr>
-                <td><strong>10</strong></td>
-                <td>4</td>
-                <td>4</td>
-                <td>33.05</td>
-                <td>41.51</td>
-              </tr>
-              <tr>
-                <td><strong>25</strong></td>
-                <td>8</td>
-                <td>9</td>
-                <td>118.44</td>
-                <td>129.39</td>
-              </tr>
-              <tr>
-                <td><strong>50</strong></td>
-                <td>17</td>
-                <td>19</td>
-                <td>292.61</td>
-                <td>320.17</td>
-              </tr>
-              <tr>
-                <td><strong>75</strong></td>
-                <td>32</td>
-                <td>34</td>
-                <td>613.46</td>
-                <td>651.19</td>
-              </tr>
-              <tr>
-                <td><strong>90</strong></td>
-                <td>50</td>
-                <td>54</td>
-                <td>1016.45</td>
-                <td>1071.3</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td colspan="2"><strong>Number of requests</strong></td>
+                  <td colspan="2"><strong>Payload (KB)</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Percentile</strong></td>
+                  <td><strong>Mobile</strong></td>
+                  <td><strong>Desktop</strong></td>
+                  <td><strong>Mobile</strong></td>
+                  <td><strong>Desktop</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>10</strong></td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>33.05</td>
+                  <td>41.51</td>
+                </tr>
+                <tr>
+                  <td><strong>25</strong></td>
+                  <td>8</td>
+                  <td>9</td>
+                  <td>118.44</td>
+                  <td>129.39</td>
+                </tr>
+                <tr>
+                  <td><strong>50</strong></td>
+                  <td>17</td>
+                  <td>19</td>
+                  <td>292.61</td>
+                  <td>320.17</td>
+                </tr>
+                <tr>
+                  <td><strong>75</strong></td>
+                  <td>32</td>
+                  <td>34</td>
+                  <td>613.46</td>
+                  <td>651.19</td>
+                </tr>
+                <tr>
+                  <td><strong>90</strong></td>
+                  <td>50</td>
+                  <td>54</td>
+                  <td>1016.45</td>
+                  <td>1071.3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <figcaption>Figure 22. Total third party requests for home pages on ecommerce platforms.</figcaption>
       </figure>

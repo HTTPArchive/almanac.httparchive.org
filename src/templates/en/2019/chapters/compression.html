@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":15,"title":"Compression","description":"Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities","authors":["paulcalvano"],"reviewers":["obto","yoavweiss"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-07T21:25:05.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"IV","chapter_number":15,"title":"Compression","description":"Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities","authors":["paulcalvano"],"reviewers":["obto","yoavweiss"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T22:37:21.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
@@ -168,85 +168,87 @@
       </ul>
       <p>Appoximately 38% of HTTP responses are delivered with text based compression. This may seem like a surprising statistic, but keep in mind that it is based on all HTTP requests in the archive. Some content, such as images, will not benefit from these compression algorithms. The table below summarizes the percentage of requests served with each content encoding.</p>
       <div class="table-wrap">
-        <table>
-          <tbody>
-            <tr>
-              <td></td>
-              <td colspan="2">% of Requests</td>
-              <td colspan="2">Requests</td>
-            </tr>
-            <tr>
-              <td><em>Content Encoding</em></td>
-              <td>desktop</td>
-              <td>mobile</td>
-              <td>desktop</td>
-              <td>mobile</td>
-            </tr>
-            <tr>
-              <td>none</td>
-              <td><p style="text-align: right">62.87%</p></td>
-              <td><p style="text-align: right">61.47%</p></td>
-              <td><p style="text-align: right">260245106</p></td>
-              <td><p style="text-align: right">285158644</p></td>
-            </tr>
-            <tr>
-              <td>gzip</td>
-              <td><p style="text-align: right">29.66%</p></td>
-              <td><p style="text-align: right">30.95%</p></td>
-              <td><p style="text-align: right">122789094</p></td>
-              <td><p style="text-align: right">143549122</p></td>
-            </tr>
-            <tr>
-              <td>br</td>
-              <td><p style="text-align: right">7.43%</p></td>
-              <td><p style="text-align: right">7.55%</p></td>
-              <td><p style="text-align: right">30750681</p></td>
-              <td><p style="text-align: right">35012368</p></td>
-            </tr>
-            <tr>
-              <td>deflate</td>
-              <td><p style="text-align: right">0.02%</p></td>
-              <td><p style="text-align: right">0.02%</p></td>
-              <td><p style="text-align: right">68802</p></td>
-              <td><p style="text-align: right">70679</p></td>
-            </tr>
-            <tr>
-              <td>Other / Invalid</td>
-              <td><p style="text-align: right">0.02%</p></td>
-              <td><p style="text-align: right">0.01%</p></td>
-              <td><p style="text-align: right">67527</p></td>
-              <td><p style="text-align: right">68352</p></td>
-            </tr>
-            <tr>
-              <td>identity</td>
-              <td><p style="text-align: right">0.000709%</p></td>
-              <td><p style="text-align: right">0.000563%</p></td>
-              <td><p style="text-align: right">2935</p></td>
-              <td><p style="text-align: right">2611</p></td>
-            </tr>
-            <tr>
-              <td>x-gzip</td>
-              <td><p style="text-align: right">0.000193%</p></td>
-              <td><p style="text-align: right">0.000179%</p></td>
-              <td><p style="text-align: right">800</p></td>
-              <td><p style="text-align: right">829</p></td>
-            </tr>
-            <tr>
-              <td>compress</td>
-              <td><p style="text-align: right">0.000008%</p></td>
-              <td><p style="text-align: right">0.000007%</p></td>
-              <td><p style="text-align: right">33</p></td>
-              <td><p style="text-align: right">32</p></td>
-            </tr>
-            <tr>
-              <td>x-compress</td>
-              <td><p style="text-align: right">0.000002%</p></td>
-              <td><p style="text-align: right">0.000006%</p></td>
-              <td><p style="text-align: right">8</p></td>
-              <td><p style="text-align: right">29</p></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap-container">
+          <table>
+            <tbody>
+              <tr>
+                <td></td>
+                <td colspan="2">% of Requests</td>
+                <td colspan="2">Requests</td>
+              </tr>
+              <tr>
+                <td><em>Content Encoding</em></td>
+                <td>desktop</td>
+                <td>mobile</td>
+                <td>desktop</td>
+                <td>mobile</td>
+              </tr>
+              <tr>
+                <td>none</td>
+                <td><p style="text-align: right">62.87%</p></td>
+                <td><p style="text-align: right">61.47%</p></td>
+                <td><p style="text-align: right">260245106</p></td>
+                <td><p style="text-align: right">285158644</p></td>
+              </tr>
+              <tr>
+                <td>gzip</td>
+                <td><p style="text-align: right">29.66%</p></td>
+                <td><p style="text-align: right">30.95%</p></td>
+                <td><p style="text-align: right">122789094</p></td>
+                <td><p style="text-align: right">143549122</p></td>
+              </tr>
+              <tr>
+                <td>br</td>
+                <td><p style="text-align: right">7.43%</p></td>
+                <td><p style="text-align: right">7.55%</p></td>
+                <td><p style="text-align: right">30750681</p></td>
+                <td><p style="text-align: right">35012368</p></td>
+              </tr>
+              <tr>
+                <td>deflate</td>
+                <td><p style="text-align: right">0.02%</p></td>
+                <td><p style="text-align: right">0.02%</p></td>
+                <td><p style="text-align: right">68802</p></td>
+                <td><p style="text-align: right">70679</p></td>
+              </tr>
+              <tr>
+                <td>Other / Invalid</td>
+                <td><p style="text-align: right">0.02%</p></td>
+                <td><p style="text-align: right">0.01%</p></td>
+                <td><p style="text-align: right">67527</p></td>
+                <td><p style="text-align: right">68352</p></td>
+              </tr>
+              <tr>
+                <td>identity</td>
+                <td><p style="text-align: right">0.000709%</p></td>
+                <td><p style="text-align: right">0.000563%</p></td>
+                <td><p style="text-align: right">2935</p></td>
+                <td><p style="text-align: right">2611</p></td>
+              </tr>
+              <tr>
+                <td>x-gzip</td>
+                <td><p style="text-align: right">0.000193%</p></td>
+                <td><p style="text-align: right">0.000179%</p></td>
+                <td><p style="text-align: right">800</p></td>
+                <td><p style="text-align: right">829</p></td>
+              </tr>
+              <tr>
+                <td>compress</td>
+                <td><p style="text-align: right">0.000008%</p></td>
+                <td><p style="text-align: right">0.000007%</p></td>
+                <td><p style="text-align: right">33</p></td>
+                <td><p style="text-align: right">32</p></td>
+              </tr>
+              <tr>
+                <td>x-compress</td>
+                <td><p style="text-align: right">0.000002%</p></td>
+                <td><p style="text-align: right">0.000006%</p></td>
+                <td><p style="text-align: right">8</p></td>
+                <td><p style="text-align: right">29</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <p>Of the resources that are served compressed, the majority are using either either gzip (80%) or brotli (20%). The other compression algorithms are infrequently used.</p>
       <p><img src="../../../static/images/2019/15_Compression/ch15_fig1_compression_algorithms.jpg" alt="" /></p>
@@ -275,52 +277,54 @@
       <p>In Chapter 5, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third party content tends to be compressed more than first party content.</p>
       <p>Additionally, the percentage of Brotli compression is higher for third party content. This is likely due to the number of resources served from third parties that support Brotli, such as Google and Facebook with Brotli.</p>
       <div class="table-wrap">
-        <table>
-          <tbody>
-            <tr>
-              <td><em>Content Encoding</em></td>
-              <td>FirstParty</td>
-              <td>ThirdParty</td>
-              <td>FirstParty</td>
-              <td>ThirdParty</td>
-            </tr>
-            <tr>
-              <td>No Text Compression</td>
-              <td><p style="text-align: right">66.23%</p></td>
-              <td><p style="text-align: right">59.28%</p></td>
-              <td><p style="text-align: right">64.54%</p></td>
-              <td><p style="text-align: right">58.26%</p></td>
-            </tr>
-            <tr>
-              <td>gzip</td>
-              <td><p style="text-align: right">29.33%</p></td>
-              <td><p style="text-align: right">30.20%</p></td>
-              <td><p style="text-align: right">30.87%</p></td>
-              <td><p style="text-align: right">31.22%</p></td>
-            </tr>
-            <tr>
-              <td>br</td>
-              <td><p style="text-align: right">4.41%</p></td>
-              <td><p style="text-align: right">10.49%</p></td>
-              <td><p style="text-align: right">4.56%</p></td>
-              <td><p style="text-align: right">10.49%</p></td>
-            </tr>
-            <tr>
-              <td>deflate</td>
-              <td><p style="text-align: right">0.02%</p></td>
-              <td><p style="text-align: right">0.01%</p></td>
-              <td><p style="text-align: right">0.02%</p></td>
-              <td><p style="text-align: right">0.01%</p></td>
-            </tr>
-            <tr>
-              <td>other / invalid</td>
-              <td><p style="text-align: right">0.01%</p></td>
-              <td><p style="text-align: right">0.02%</p></td>
-              <td><p style="text-align: right">0.01%</p></td>
-              <td><p style="text-align: right">0.02%</p></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrap-container">
+          <table>
+            <tbody>
+              <tr>
+                <td><em>Content Encoding</em></td>
+                <td>FirstParty</td>
+                <td>ThirdParty</td>
+                <td>FirstParty</td>
+                <td>ThirdParty</td>
+              </tr>
+              <tr>
+                <td>No Text Compression</td>
+                <td><p style="text-align: right">66.23%</p></td>
+                <td><p style="text-align: right">59.28%</p></td>
+                <td><p style="text-align: right">64.54%</p></td>
+                <td><p style="text-align: right">58.26%</p></td>
+              </tr>
+              <tr>
+                <td>gzip</td>
+                <td><p style="text-align: right">29.33%</p></td>
+                <td><p style="text-align: right">30.20%</p></td>
+                <td><p style="text-align: right">30.87%</p></td>
+                <td><p style="text-align: right">31.22%</p></td>
+              </tr>
+              <tr>
+                <td>br</td>
+                <td><p style="text-align: right">4.41%</p></td>
+                <td><p style="text-align: right">10.49%</p></td>
+                <td><p style="text-align: right">4.56%</p></td>
+                <td><p style="text-align: right">10.49%</p></td>
+              </tr>
+              <tr>
+                <td>deflate</td>
+                <td><p style="text-align: right">0.02%</p></td>
+                <td><p style="text-align: right">0.01%</p></td>
+                <td><p style="text-align: right">0.02%</p></td>
+                <td><p style="text-align: right">0.01%</p></td>
+              </tr>
+              <tr>
+                <td>other / invalid</td>
+                <td><p style="text-align: right">0.01%</p></td>
+                <td><p style="text-align: right">0.02%</p></td>
+                <td><p style="text-align: right">0.01%</p></td>
+                <td><p style="text-align: right">0.02%</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <h1 id="identifying-compression-opportunities">Identifying Compression Opportunities</h1>
       <p><a href="https://developers.google.com/web/tools/lighthouse">Google’s Lighthouse</a> tool enables users to run a series of audits against web pages, and<a href="https://developers.google.com/web/tools/lighthouse/audits/text-compression"> one of them</a> evaluates whether a site can benefit from additional text based compression. It does this by attempting to compress resources and evaluate whether an object’s size can be reduced by at least 10% and 1400 bytes. Depending on the score, you may see a compression recommendation in the results, with a list of specific resources that could be compressed.</p>

@@ -6,7 +6,7 @@ description: Page Weight chapter of the 2019 Web Almanac covering why page weigh
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-07T21:25:05.000Z
+last_updated: 2019-11-06T18:14:24.000Z
 ---
 
 ## Introduction

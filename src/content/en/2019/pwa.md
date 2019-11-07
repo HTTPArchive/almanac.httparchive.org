@@ -6,7 +6,7 @@ description: PWA chapter of the 2019 Web Almanac covering Service Workers, Web A
 authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-07T21:25:05.000Z 
+last_updated: 2019-11-05T01:25:08.000Z 
 ---
 
 ## Introduction

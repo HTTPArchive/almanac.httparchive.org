@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":20,"title":"HTTP/2","description":"HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3","authors":["bazzadp"],"reviewers":["bagder","rmarx","dotjs"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-07T21:25:05.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"IV","chapter_number":20,"title":"HTTP/2","description":"HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3","authors":["bazzadp"],"reviewers":["bagder","rmarx","dotjs"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-04T18:46:53.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
@@ -155,7 +155,7 @@
       <p>Despite HTTP being text-based, the reality is that it was rarely used to transport text, at least in its raw format. While it was true that HTTP headers were still text, the payloads themselves often were not. Text files like <a href="./markup">HTML</a>, <a href="./javascript">JS</a>, and <a href="./css">CSS</a> are usually <a href="./compression">compressed</a> for transport into a binary format using gzip, brotli, or similar. Non-text files like images and videos are served in their own formats. The whole HTTP message is then often wrapped in HTTPS to encrypt the messages for <a href="./security">security</a> reasons.</p>
       <p>So, the web had basically moved on from text-based transport a long time ago, but HTTP had not. One reason for this stagnation was because it was so difficult to introduce any breaking changes to such a ubiquitous protocol like HTTP (previous efforts had tried and failed). Many routers, firewalls, and other middleboxes understood HTTP and would react badly to major changes to it. Upgrading them all to support a new version was simply not possible.</p>
       <p>In 2009, Google announced that they were working on an alternative to the text-based HTTP called <a href="https://www.chromium.org/spdy">SPDY</a>, which has since been deprecated. This would take advantage of the fact that HTTP messages were often encrypted in HTTPS, which prevents them being read and interfered with en route.</p>
-      <p>Google's idea was to pack HTTP messages into a proprietary format, send them across the internet, and then unpack them on the other side. The proprietary format, SPDY, was binary-based rather than text-based. This solved some of the main performance problems with HTTP/1.1 by allowing more efficient use of a single TCP connection, negating the need to open the six connections that had become the norm under HTTP/1.1.</p>
+      <p>Google controlled one of the most popular browsers (Chrome) and some of the most popular websites (Google, YouTube, Gmail…etc.) - so both ends of the connection when both were used together. Google's idea was to pack HTTP messages into a proprietary format, send them across the internet, and then unpack them on the other side. The proprietary format, SPDY, was binary-based rather than text-based. This solved some of the main performance problems with HTTP/1.1 by allowing more efficient use of a single TCP connection, negating the need to open the six connections that had become the norm under HTTP/1.1.</p>
       <p>By using SPDY in the real world, they were able to prove that it was more performant for real users, and not just because of some lab-based experimental results. After rolling out SPDY to all Google websites, other servers and browser started implementing it, and then it was time to standardize this proprietary format into an internet standard, and thus HTTP/2 was born.</p>
       <p>HTTP/2 has the following key concepts:</p>
       <ul>
@@ -184,48 +184,50 @@
       <p>The results show that HTTP/2 usage is now the majority protocol-an impressive feat just 4 short years after formal standardization! Looking at the breakdown of all HTTP versions by request we see the following:</p>
       <figure id="fig-2">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Protocol</th>
-                <th>Desktop</th>
-                <th>Mobile</th>
-                <th>Both</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>5.60%</td>
-                <td>0.57%</td>
-                <td>2.97%</td>
-              </tr>
-              <tr>
-                <td>HTTP/0.9</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-                <td>0.00%</td>
-              </tr>
-              <tr>
-                <td>HTTP/1.0</td>
-                <td>0.08%</td>
-                <td>0.05%</td>
-                <td>0.06%</td>
-              </tr>
-              <tr>
-                <td>HTTP/1.1</td>
-                <td>40.36%</td>
-                <td>45.01%</td>
-                <td>42.79%</td>
-              </tr>
-              <tr>
-                <td>HTTP/2</td>
-                <td>53.96%</td>
-                <td>54.37%</td>
-                <td>54.18%</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Protocol</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                  <th>Both</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>5.60%</td>
+                  <td>0.57%</td>
+                  <td>2.97%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/0.9</td>
+                  <td>0.00%</td>
+                  <td>0.00%</td>
+                  <td>0.00%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/1.0</td>
+                  <td>0.08%</td>
+                  <td>0.05%</td>
+                  <td>0.06%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/1.1</td>
+                  <td>40.36%</td>
+                  <td>45.01%</td>
+                  <td>42.79%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/2</td>
+                  <td>53.96%</td>
+                  <td>54.37%</td>
+                  <td>54.18%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 2. HTTP version usage by request.</figcaption>
@@ -238,42 +240,44 @@
       <p>However, our findings are corroborated by other sources, like <a href="https://telemetry.mozilla.org/new-pipeline/dist.html#!cumulative=0&amp;measure=HTTP_RESPONSE_VERSION">Mozilla's telemetry</a>, which looks at real-world usage through the Firefox browser.</p>
       <figure id="fig-3">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Protocol</th>
-                <th>Desktop</th>
-                <th>Mobile</th>
-                <th>Both</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>0.09%</td>
-                <td>0.08%</td>
-                <td>0.08%</td>
-              </tr>
-              <tr>
-                <td>HTTP/1.0</td>
-                <td>0.09%</td>
-                <td>0.08%</td>
-                <td>0.09%</td>
-              </tr>
-              <tr>
-                <td>HTTP/1.1</td>
-                <td>62.36%</td>
-                <td>63.92%</td>
-                <td>63.22%</td>
-              </tr>
-              <tr>
-                <td>HTTP/2</td>
-                <td>37.46%</td>
-                <td>35.92%</td>
-                <td>36.61%</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Protocol</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                  <th>Both</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>0.09%</td>
+                  <td>0.08%</td>
+                  <td>0.08%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/1.0</td>
+                  <td>0.09%</td>
+                  <td>0.08%</td>
+                  <td>0.09%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/1.1</td>
+                  <td>62.36%</td>
+                  <td>63.92%</td>
+                  <td>63.22%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/2</td>
+                  <td>37.46%</td>
+                  <td>35.92%</td>
+                  <td>36.61%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 3. HTTP version usage for home pages.</figcaption>
@@ -283,42 +287,44 @@
       <p>HTTP/2 is only supported by browsers over HTTPS, even though officially HTTP/2 can be used over HTTPS or over unencrypted non-HTTPS connections. As mentioned previously, hiding the new protocol in encrypted HTTPS connections prevents networking appliances which do not understand this new protocol from interfering with (or rejecting!) its usage. Additionally, the HTTPS handshake allows an easy method of the client and server agreeing to use HTTP/2.</p>
       <figure id="fig-4">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Protocol</th>
-                <th>Desktop</th>
-                <th>Mobile</th>
-                <th>Both</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>0.09%</td>
-                <td>0.10%</td>
-                <td>0.09%</td>
-              </tr>
-              <tr>
-                <td>HTTP/1.0</td>
-                <td>0.06%</td>
-                <td>0.06%</td>
-                <td>0.06%</td>
-              </tr>
-              <tr>
-                <td>HTTP/1.1</td>
-                <td>45.81%</td>
-                <td>44.31%</td>
-                <td>45.01%</td>
-              </tr>
-              <tr>
-                <td>HTTP/2</td>
-                <td>54.04%</td>
-                <td>55.53%</td>
-                <td>54.83%</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Protocol</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                  <th>Both</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>0.09%</td>
+                  <td>0.10%</td>
+                  <td>0.09%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/1.0</td>
+                  <td>0.06%</td>
+                  <td>0.06%</td>
+                  <td>0.06%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/1.1</td>
+                  <td>45.81%</td>
+                  <td>44.31%</td>
+                  <td>45.01%</td>
+                </tr>
+                <tr>
+                  <td>HTTP/2</td>
+                  <td>54.04%</td>
+                  <td>55.53%</td>
+                  <td>54.83%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 4. HTTP version usage for HTTPS home pages.</figcaption>
@@ -329,72 +335,74 @@
       <p>This is more problematic than browser support as, unlike modern browsers, servers often do not automatically upgrade to the latest version. Even when the server is regularly maintained and patched, that will often just apply security patches rather than new features like HTTP/2. Let's look first at the server HTTP headers for those sites that do support HTTP/2.</p>
       <figure id="fig-5">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Server</th>
-                <th>Desktop</th>
-                <th>Mobile</th>
-                <th>Both</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>nginx</td>
-                <td>34.04%</td>
-                <td>32.48%</td>
-                <td>33.19%</td>
-              </tr>
-              <tr>
-                <td>cloudflare</td>
-                <td>23.76%</td>
-                <td>22.29%</td>
-                <td>22.97%</td>
-              </tr>
-              <tr>
-                <td>Apache</td>
-                <td>17.31%</td>
-                <td>19.11%</td>
-                <td>18.28%</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>4.56%</td>
-                <td>5.13%</td>
-                <td>4.87%</td>
-              </tr>
-              <tr>
-                <td>LiteSpeed</td>
-                <td>4.11%</td>
-                <td>4.97%</td>
-                <td>4.57%</td>
-              </tr>
-              <tr>
-                <td>GSE</td>
-                <td>2.16%</td>
-                <td>3.73%</td>
-                <td>3.01%</td>
-              </tr>
-              <tr>
-                <td>Microsoft-IIS</td>
-                <td>3.09%</td>
-                <td>2.66%</td>
-                <td>2.86%</td>
-              </tr>
-              <tr>
-                <td>openresty</td>
-                <td>2.15%</td>
-                <td>2.01%</td>
-                <td>2.07%</td>
-              </tr>
-              <tr>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Server</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                  <th>Both</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>nginx</td>
+                  <td>34.04%</td>
+                  <td>32.48%</td>
+                  <td>33.19%</td>
+                </tr>
+                <tr>
+                  <td>cloudflare</td>
+                  <td>23.76%</td>
+                  <td>22.29%</td>
+                  <td>22.97%</td>
+                </tr>
+                <tr>
+                  <td>Apache</td>
+                  <td>17.31%</td>
+                  <td>19.11%</td>
+                  <td>18.28%</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>4.56%</td>
+                  <td>5.13%</td>
+                  <td>4.87%</td>
+                </tr>
+                <tr>
+                  <td>LiteSpeed</td>
+                  <td>4.11%</td>
+                  <td>4.97%</td>
+                  <td>4.57%</td>
+                </tr>
+                <tr>
+                  <td>GSE</td>
+                  <td>2.16%</td>
+                  <td>3.73%</td>
+                  <td>3.01%</td>
+                </tr>
+                <tr>
+                  <td>Microsoft-IIS</td>
+                  <td>3.09%</td>
+                  <td>2.66%</td>
+                  <td>2.86%</td>
+                </tr>
+                <tr>
+                  <td>openresty</td>
+                  <td>2.15%</td>
+                  <td>2.01%</td>
+                  <td>2.07%</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 5. Servers used for HTTP/2.</figcaption>
@@ -404,72 +412,74 @@
       <p>What is more interesting is those servers that that do <em>not</em> support HTTP/2:</p>
       <figure id="fig-6">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Server</th>
-                <th>Desktop</th>
-                <th>Mobile</th>
-                <th>Both</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Apache</td>
-                <td>46.76%</td>
-                <td>46.84%</td>
-                <td>46.80%</td>
-              </tr>
-              <tr>
-                <td>nginx</td>
-                <td>21.12%</td>
-                <td>21.33%</td>
-                <td>21.24%</td>
-              </tr>
-              <tr>
-                <td>Microsoft-IIS</td>
-                <td>11.30%</td>
-                <td>9.60%</td>
-                <td>10.36%</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>7.96%</td>
-                <td>7.59%</td>
-                <td>7.75%</td>
-              </tr>
-              <tr>
-                <td>GSE</td>
-                <td>1.90%</td>
-                <td>3.84%</td>
-                <td>2.98%</td>
-              </tr>
-              <tr>
-                <td>cloudflare</td>
-                <td>2.44%</td>
-                <td>2.48%</td>
-                <td>2.46%</td>
-              </tr>
-              <tr>
-                <td>LiteSpeed</td>
-                <td>1.02%</td>
-                <td>1.63%</td>
-                <td>1.36%</td>
-              </tr>
-              <tr>
-                <td>openresty</td>
-                <td>1.22%</td>
-                <td>1.36%</td>
-                <td>1.30%</td>
-              </tr>
-              <tr>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Server</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                  <th>Both</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Apache</td>
+                  <td>46.76%</td>
+                  <td>46.84%</td>
+                  <td>46.80%</td>
+                </tr>
+                <tr>
+                  <td>nginx</td>
+                  <td>21.12%</td>
+                  <td>21.33%</td>
+                  <td>21.24%</td>
+                </tr>
+                <tr>
+                  <td>Microsoft-IIS</td>
+                  <td>11.30%</td>
+                  <td>9.60%</td>
+                  <td>10.36%</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>7.96%</td>
+                  <td>7.59%</td>
+                  <td>7.75%</td>
+                </tr>
+                <tr>
+                  <td>GSE</td>
+                  <td>1.90%</td>
+                  <td>3.84%</td>
+                  <td>2.98%</td>
+                </tr>
+                <tr>
+                  <td>cloudflare</td>
+                  <td>2.44%</td>
+                  <td>2.48%</td>
+                  <td>2.46%</td>
+                </tr>
+                <tr>
+                  <td>LiteSpeed</td>
+                  <td>1.02%</td>
+                  <td>1.63%</td>
+                  <td>1.36%</td>
+                </tr>
+                <tr>
+                  <td>openresty</td>
+                  <td>1.22%</td>
+                  <td>1.36%</td>
+                  <td>1.30%</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 6. Servers used for HTTP/1.1 or lower.</figcaption>
@@ -481,62 +491,64 @@
       <p>Merging these two stats together, we can see the percentage of installs per server, that use HTTP/2:</p>
       <figure id="fig-7">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Server</th>
-                <th>Desktop</th>
-                <th>Mobile</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>cloudflare</td>
-                <td>85.40%</td>
-                <td>83.46%</td>
-              </tr>
-              <tr>
-                <td>LiteSpeed</td>
-                <td>70.80%</td>
-                <td>63.08%</td>
-              </tr>
-              <tr>
-                <td>openresty</td>
-                <td>51.41%</td>
-                <td>45.24%</td>
-              </tr>
-              <tr>
-                <td>nginx</td>
-                <td>49.23%</td>
-                <td>46.19%</td>
-              </tr>
-              <tr>
-                <td>GSE</td>
-                <td>40.54%</td>
-                <td>35.25%</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>25.57%</td>
-                <td>27.49%</td>
-              </tr>
-              <tr>
-                <td>Apache</td>
-                <td>18.09%</td>
-                <td>18.56%</td>
-              </tr>
-              <tr>
-                <td>Microsoft-IIS</td>
-                <td>14.10%</td>
-                <td>13.47%</td>
-              </tr>
-              <tr>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Server</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>cloudflare</td>
+                  <td>85.40%</td>
+                  <td>83.46%</td>
+                </tr>
+                <tr>
+                  <td>LiteSpeed</td>
+                  <td>70.80%</td>
+                  <td>63.08%</td>
+                </tr>
+                <tr>
+                  <td>openresty</td>
+                  <td>51.41%</td>
+                  <td>45.24%</td>
+                </tr>
+                <tr>
+                  <td>nginx</td>
+                  <td>49.23%</td>
+                  <td>46.19%</td>
+                </tr>
+                <tr>
+                  <td>GSE</td>
+                  <td>40.54%</td>
+                  <td>35.25%</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>25.57%</td>
+                  <td>27.49%</td>
+                </tr>
+                <tr>
+                  <td>Apache</td>
+                  <td>18.09%</td>
+                  <td>18.56%</td>
+                </tr>
+                <tr>
+                  <td>Microsoft-IIS</td>
+                  <td>14.10%</td>
+                  <td>13.47%</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 7. Percentage installs of each server used to provide HTTP/2.</figcaption>
@@ -567,32 +579,36 @@
       <p>The fact that the number of requests is staying roughly static is interesting, given the ever-increasing <a href="./page-weight">page weight</a>, though perhaps this is not entirely related to HTTP/2.</p>
       <h2 id="http2-push">HTTP/2 Push</h2>
       <p>HTTP/2 push has a mixed history despite being a much-hyped new feature of HTTP/2. The other features were basically performance improvements under the hood, but push was a brand new concept that completely broke the single request to single response nature of HTTP. It allowed extra responses to be returned; when you asked for the web page, the server could respond with the HTML page as usual, but then also send you the critical CSS and JavaScript, thus avoiding any additional round trips for certain resources. It would, in theory, allow us to stop inlining CSS and JavaScript into our HTML, and still get the same performance gains of doing so. After solving that, it could potentially lead to all sorts of new and interesting use cases.</p>
-      <p>The reality has been, well, a bit disappointing. HTTP/2 push has proved much harder to use effectively than originally envisaged. Some of this has been due to <a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">the complexity of how HTTP/2 push works</a>, and the implementation issues due to that. A bigger concern is that push can quite easily cause, rather than solve, performance issues. Over-pushing is a real risk.</p>
+      <p>The reality has been, well, a bit disappointing. HTTP/2 push has proved much harder to use effectively than originally envisaged. Some of this has been due to <a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">the complexity of how HTTP/2 push works</a>, and the implementation issues due to that.</p>
+      <p>A bigger concern is that push can quite easily cause, rather than solve, performance issues. Over-pushing is a real risk. Often the browser is in the best place to decide <em>what</em> to request, and just as crucially <em>when</em> to request it but HTTP/2 push puts that responsibility on the server. Pushing resources that a browser already has in its cache, is a waste of bandwidth (though in my opinion so is inlining CSS but that gets must less of a hard time about that than HTTP/2 push!).</p>
+      <p><a href="https://lists.w3.org/Archives/Public/ietf-http-wg/2019JanMar/0033.html">Proposals to inform the server about the status of the browser cache have stalled</a> especially on privacy concerns. Even without that problem, there are other potential issues if push is not used correctly. For example, pushing large images and therefore holding up the sending of critical CSS and JavaScript will lead to slower websites than if you'd not pushed at all!</p>
       <p>There has also been very little evidence to date that push, even when implemented correctly, results in the performance increase it promised. This is an area that, again, the HTTP Archive is not best placed to answer, due to the nature of how it runs (a crawl of popular sites using Chrome in one state), so we won't delve into it too much here. However, suffice to say that the performance gains are far from clear-cut and the potential problems are real.</p>
       <p>Putting that aside let's look at the usage of HTTP/2 push.</p>
       <figure id="fig-10">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Client</th>
-                <th>Sites Using HTTP/2 Push</th>
-                <th>Sites Using HTTP/2 Push (%)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Desktop</td>
-                <td>22,581</td>
-                <td>0.52%</td>
-              </tr>
-              <tr>
-                <td>Mobile</td>
-                <td>31,452</td>
-                <td>0.59%</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Sites Using HTTP/2 Push</th>
+                  <th>Sites Using HTTP/2 Push (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Desktop</td>
+                  <td>22,581</td>
+                  <td>0.52%</td>
+                </tr>
+                <tr>
+                  <td>Mobile</td>
+                  <td>31,452</td>
+                  <td>0.59%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 10. Sites using HTTP/2 push.</figcaption>
@@ -600,27 +616,29 @@
       </figure>
       <figure id="fig-11">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Client</th>
-                <th>Avg Pushed Requests</th>
-                <th>Avg KB Pushed</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Desktop</td>
-                <td>7.86</td>
-                <td>162.38</td>
-              </tr>
-              <tr>
-                <td>Mobile</td>
-                <td>6.35</td>
-                <td>122.78</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Avg Pushed Requests</th>
+                  <th>Avg KB Pushed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Desktop</td>
+                  <td>7.86</td>
+                  <td>162.38</td>
+                </tr>
+                <tr>
+                  <td>Mobile</td>
+                  <td>6.35</td>
+                  <td>122.78</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 11. How much is pushed when it is used.</figcaption>
@@ -638,6 +656,7 @@
       <p>Figure 12 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!</p>
       <p>One concern raised by some is that HTTP/2 implementations have repurposed the preload HTTP <code>link</code> header as a signal to push. One of the most popular uses of the preload <a href="./resource-hints">resource hint</a> is to inform the browser of late-discovered resources, like fonts and images, that the browser will not see until the CSS has been requested, downloaded, and parsed. If these are now pushed based on that header, there was a concern that reusing this may result in a lot of unintended pushes.</p>
       <p>However, the relatively low usage of fonts and images may mean that risk is not being seen as much as was feared. <code>&lt;link rel="preload" ... &gt;</code> tags are often used in the HTML rather than HTTP <code>link</code> headers and the meta tags are not a signal to push. Statistics in the <a href="./resource-hints">Resource Hints</a> chapter show that fewer than 1% of sites use the preload HTTP <code>link</code> header, and about the same amount use preconnect which has no meaning in HTTP/2, so this would suggest this is not so much of an issue. Though there are a number of fonts and other assets being pushed, which may be a signal of this.</p>
+      <p>As a counter argument to those complaints, if an asset is important enough to preload, then it could be argued these assets should be pushed if possible as browsers treat a preload hint as very high priority requests anyway. Any performance concern is therefore (again arguably) at the overuse of preload, rather than the resulting HTTP/2 push that happens because of this.</p>
       <p>To get around this unintended push, you can provide the <code>nopush</code> attribute in your preload header:</p>
       <pre><code>link: &lt;/assets/jquery.js&gt;; rel=preload; as=script; nopush</code></pre>
       <p>5% of preload HTTP headers do make use of this attribute, which is higher than I would have expected as I would have considered this a niche optimization. Then again, so is the use of preload HTTP headers and/or HTTP/2 push itself!</p>
@@ -648,103 +667,105 @@
       <p><a href="https://twitter.com/patmeenan">Patrick Meenan</a> created <a href="https://github.com/pmeenan/http2priorities/tree/master/stand-alone">an example test page</a>, which deliberately tries to download a load of low priority, off-screen images, before requesting some high priority on-screen images. A good HTTP/2 server should be able to recognize this and send the high priority images shortly after requested, at the expense of the lower priority images. A poor HTTP/2 server will just respond in the request order and ignore any priority signals. <a href="./contributors#andydavies">Andy Davies</a> has <a href="https://github.com/andydavies/http2-prioritization-issues">a page tracking the status of various CDNs for Patrick's test</a>. The HTTP Archive identifies when a CDN is used as part of its crawl, and merging these two datasets can tell us the percent of pages using a passing or failing CDN.</p>
       <figure id="fig-13">
         <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>CDN</th>
-                <th>Prioritizes Correctly?</th>
-                <th>Desktop</th>
-                <th>Mobile</th>
-                <th>Both</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Not using CDN</td>
-                <td>Unknown</td>
-                <td>57.81%</td>
-                <td>60.41%</td>
-                <td>59.21%</td>
-              </tr>
-              <tr>
-                <td>Cloudflare</td>
-                <td>Pass</td>
-                <td>23.15%</td>
-                <td>21.77%</td>
-                <td>22.40%</td>
-              </tr>
-              <tr>
-                <td>Google</td>
-                <td>Fail</td>
-                <td>6.67%</td>
-                <td>7.11%</td>
-                <td>6.90%</td>
-              </tr>
-              <tr>
-                <td>Amazon CloudFront</td>
-                <td>Fail</td>
-                <td>2.83%</td>
-                <td>2.38%</td>
-                <td>2.59%</td>
-              </tr>
-              <tr>
-                <td>Fastly</td>
-                <td>Pass</td>
-                <td>2.40%</td>
-                <td>1.77%</td>
-                <td>2.06%</td>
-              </tr>
-              <tr>
-                <td>Akamai</td>
-                <td>Pass</td>
-                <td>1.79%</td>
-                <td>1.50%</td>
-                <td>1.64%</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Unknown</td>
-                <td>1.32%</td>
-                <td>1.58%</td>
-                <td>1.46%</td>
-              </tr>
-              <tr>
-                <td>WordPress</td>
-                <td>Pass</td>
-                <td>1.12%</td>
-                <td>0.99%</td>
-                <td>1.05%</td>
-              </tr>
-              <tr>
-                <td>Sucuri Firewall</td>
-                <td>Fail</td>
-                <td>0.88%</td>
-                <td>0.75%</td>
-                <td>0.81%</td>
-              </tr>
-              <tr>
-                <td>Incapsula</td>
-                <td>Fail</td>
-                <td>0.39%</td>
-                <td>0.34%</td>
-                <td>0.36%</td>
-              </tr>
-              <tr>
-                <td>Netlify</td>
-                <td>Fail</td>
-                <td>0.23%</td>
-                <td>0.15%</td>
-                <td>0.19%</td>
-              </tr>
-              <tr>
-                <td>OVH CDN</td>
-                <td>Unknown</td>
-                <td>0.19%</td>
-                <td>0.18%</td>
-                <td>0.18%</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>CDN</th>
+                  <th>Prioritizes Correctly?</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                  <th>Both</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Not using CDN</td>
+                  <td>Unknown</td>
+                  <td>57.81%</td>
+                  <td>60.41%</td>
+                  <td>59.21%</td>
+                </tr>
+                <tr>
+                  <td>Cloudflare</td>
+                  <td>Pass</td>
+                  <td>23.15%</td>
+                  <td>21.77%</td>
+                  <td>22.40%</td>
+                </tr>
+                <tr>
+                  <td>Google</td>
+                  <td>Fail</td>
+                  <td>6.67%</td>
+                  <td>7.11%</td>
+                  <td>6.90%</td>
+                </tr>
+                <tr>
+                  <td>Amazon CloudFront</td>
+                  <td>Fail</td>
+                  <td>2.83%</td>
+                  <td>2.38%</td>
+                  <td>2.59%</td>
+                </tr>
+                <tr>
+                  <td>Fastly</td>
+                  <td>Pass</td>
+                  <td>2.40%</td>
+                  <td>1.77%</td>
+                  <td>2.06%</td>
+                </tr>
+                <tr>
+                  <td>Akamai</td>
+                  <td>Pass</td>
+                  <td>1.79%</td>
+                  <td>1.50%</td>
+                  <td>1.64%</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Unknown</td>
+                  <td>1.32%</td>
+                  <td>1.58%</td>
+                  <td>1.46%</td>
+                </tr>
+                <tr>
+                  <td>WordPress</td>
+                  <td>Pass</td>
+                  <td>1.12%</td>
+                  <td>0.99%</td>
+                  <td>1.05%</td>
+                </tr>
+                <tr>
+                  <td>Sucuri Firewall</td>
+                  <td>Fail</td>
+                  <td>0.88%</td>
+                  <td>0.75%</td>
+                  <td>0.81%</td>
+                </tr>
+                <tr>
+                  <td>Incapsula</td>
+                  <td>Fail</td>
+                  <td>0.39%</td>
+                  <td>0.34%</td>
+                  <td>0.36%</td>
+                </tr>
+                <tr>
+                  <td>Netlify</td>
+                  <td>Fail</td>
+                  <td>0.23%</td>
+                  <td>0.15%</td>
+                  <td>0.19%</td>
+                </tr>
+                <tr>
+                  <td>OVH CDN</td>
+                  <td>Unknown</td>
+                  <td>0.19%</td>
+                  <td>0.18%</td>
+                  <td>0.18%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <p></p>
         <figcaption>Figure 13. HTTP/2 prioritization support in common CDNs.</figcaption>
