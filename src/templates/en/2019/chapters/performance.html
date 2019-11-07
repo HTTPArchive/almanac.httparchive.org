@@ -169,7 +169,7 @@
       <h1 class="title">
         {{ metadata.get('title') }}
       </h1>
-      <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      <img loading="lazy" src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>Performance is a visceral part of the user experience. For <a href="https://wpostats.com/">many websites</a>, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be <a href="https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/">rage clicking</a> on the page in frustration.</p>
@@ -246,7 +246,7 @@
       <h3 id="time-to-first-byte-ttfb">Time to First Byte (TTFB)</h3>
       <p><a href="https://web.dev/time-to-first-byte">Time to First Byte</a> (TTFB) is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response.</p>
       <figure id="fig8" markdown="">
-        <p><img src="/static/images/2019/07_Performance/nav-timing.png" alt="Navigation Timing API diagram of the events in a page navigation" /></p>
+        <p><img loading="lazy" src="/static/images/2019/07_Performance/nav-timing.png" alt="Navigation Timing API diagram of the events in a page navigation" /></p>
         <figcaption>Figure 8. Navigation Timing API diagram of the events in a page navigation.</figcaption>
         <p></p>
       </figure>

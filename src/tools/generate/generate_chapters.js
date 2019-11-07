@@ -6,6 +6,7 @@ const recursive = require('recursive-readdir');
 
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_figure_ids } = require('./generate_figure_ids');
+const { lazy_load_images } = require('./lazy_load_images');
 const { wrap_tables } = require('./wrap_tables');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
@@ -48,6 +49,7 @@ const parse_file = async (markdown) => {
 
   body = generate_figure_ids(body);
   body = wrap_tables(body);
+  body = lazy_load_images(body);
   const toc = generate_table_of_contents(body);
 
   const m = converter.getMetadata();
