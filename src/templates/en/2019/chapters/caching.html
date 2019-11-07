@@ -15,16 +15,17 @@
 
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
-<meta property="og:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
 <meta property="og:image:height" content="433" />
 <meta property="og:image:width" content="866" />
 <meta property="og:type" content="article" />
 <meta property="og:description" content="{{ self.description() }}" />
 
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@HTTPArchive" />
 <meta name="twitter:title" content="{{ self.title() }}" />
-<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+<meta name="twitter:image:alt" content="Chapter image for the {{ metadata.get('title') }} chapter of the {{ year }} Web Almanac" />
 <meta name="twitter:description" content="{{ self.description() }}" />
 
 <script type="application/ld+json">
@@ -38,7 +39,7 @@
     "headline": "{{ metadata.get('title') }}",
     "image": {
     	  "@type": "ImageObject",
-    	  "url": "https://almanac.httparchive.org/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
+    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
     	  "height": 163,
     	  "width": 326
     },
@@ -165,7 +166,7 @@
       <h1 class="title">
         {{ metadata.get('title') }}
       </h1>
-      <img src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
       <h1 id="intro">Intro</h1>
       <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website’s origin infrastructure. There’s an old saying, “ the fastest request is the one that you don't have to make”, and caching is one way to avoid having to make requests.</p>
