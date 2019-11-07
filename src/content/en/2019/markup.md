@@ -6,7 +6,7 @@ description: Markup chapter of the 2019 Web Almanac covering elements used, cust
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-06T20:17:09.000Z 
+last_updated: 2019-11-07T21:46:11.000Z 
 ---
 
 ## Introduction
