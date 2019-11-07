@@ -7,6 +7,12 @@
         <lastmod>
             <%= url.lastmod %>
         </lastmod>
+        <% for (let alt of url.alternatives ) { %>
+        <xhtml:link 
+            rel="alternate" 
+            hreflang="<%= alt.hreflang %>"
+            href="https://almanac.httparchive.org/<%= alt.href %>"/>
+        <% } %>   
     </url>
 <% } %>   
 </urlset>
