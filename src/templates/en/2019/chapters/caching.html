@@ -39,9 +39,9 @@
     "headline": "{{ metadata.get('title') }}",
     "image": {
     	  "@type": "ImageObject",
-    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg",
-    	  "height": 433,
-    	  "width": 866
+    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
+    	  "height": 163,
+    	  "width": 326
     },
     "publisher": {
     	  "@type": "Organization",
@@ -222,10 +222,10 @@
 &lt; expires: Mon, 14 Oct 2019 07:36:57 GMT
 &lt; etag: "1566748830.0-3052-3932359948"</code></pre>
       <p>The tool <a href="https://redbot.org/">RedBot.org</a> allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, <a href="https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js">a test for the URL above</a> would output the following:</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" alt="" /></p>
       <p>If no caching headers are present in a response, then the <a href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">client is permitted to heuristically cache the response</a>. Most clients implement a variation of the RFC’s suggested heuristic - which is 10% of the time since last modified. However some may cache the response indefinitely. So it is important to set specific caching rules to ensure that you are in control of the cacheability.</p>
       <p>According to the HTTP Archive, in July 2019 72% of responses were served with a Cache-Control header, and 56% of responses were served with an Expires header. However 27% of responses did not use either header, and are subject to heuristic caching! This was consistent across both desktop and mobile sites.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig2_cache_control_expires.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig2_cache_control_expires.jpg" alt="" /></p>
       <h1 id="what-type-of-content-are-we-caching">What Type of Content Are We Caching</h1>
       <p>A cacheable resource is stored by the client for a period of time and available for reuse on a subsequent request. Across all HTTP requests, 80% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these,</p>
       <ul>
@@ -234,113 +234,111 @@
         <li>47% are cached for at least 1 second.</li>
       </ul>
       <p>The remaining responses are not permitted to be stored in browser caches.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig3_distribution_of_cacheable_responses.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig3_distribution_of_cacheable_responses.jpg" alt="" /></p>
       <p>The table below details the cache TTL values for desktop requests by type. Most content types are being cached, however CSS resources appear to be consistently cached at high TTLs.</p>
       <p>While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 28 hours, however the 25th percentile is just 1-2 hours and the 10th percentile indicates that 10% of cacheable image content is cached for less than 1 hour.</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <tbody>
-              <tr>
-                <td></td>
-                <td colspan="5">Desktop Cache TTL Percentiles (Hours)</td>
-              </tr>
-              <tr>
-                <td><em>type</em></td>
-                <td>p10</td>
-                <td>p25</td>
-                <td>p50</td>
-                <td>p75</td>
-                <td>p90</td>
-              </tr>
-              <tr>
-                <td>audio</td>
-                <td><p style="text-align: right">12</p></td>
-                <td><p style="text-align: right">24</p></td>
-                <td><p style="text-align: right">720</p></td>
-                <td><p style="text-align: right">8760</p></td>
-                <td><p style="text-align: right">8760</p></td>
-              </tr>
-              <tr>
-                <td>css</td>
-                <td><p style="text-align: right">720</p></td>
-                <td><p style="text-align: right">8760</p></td>
-                <td><p style="text-align: right">8760</p></td>
-                <td><p style="text-align: right">8760</p></td>
-                <td><p style="text-align: right">8760</p></td>
-              </tr>
-              <tr>
-                <td>font</td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">3</p></td>
-                <td><p style="text-align: right">336</p></td>
-                <td><p style="text-align: right">8760</p></td>
-                <td><p style="text-align: right">87600</p></td>
-              </tr>
-              <tr>
-                <td>html</td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">168</p></td>
-                <td><p style="text-align: right">720</p></td>
-                <td><p style="text-align: right">8760</p></td>
-                <td><p style="text-align: right">8766</p></td>
-              </tr>
-              <tr>
-                <td>image</td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">1</p></td>
-                <td><p style="text-align: right">28</p></td>
-                <td><p style="text-align: right">48</p></td>
-                <td><p style="text-align: right">8760</p></td>
-              </tr>
-              <tr>
-                <td>other</td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">2</p></td>
-                <td><p style="text-align: right">336</p></td>
-                <td><p style="text-align: right">8760</p></td>
-                <td><p style="text-align: right">8760</p></td>
-              </tr>
-              <tr>
-                <td>script</td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">1</p></td>
-                <td><p style="text-align: right">6</p></td>
-                <td><p style="text-align: right">720</p></td>
-              </tr>
-              <tr>
-                <td>text</td>
-                <td><p style="text-align: right">21</p></td>
-                <td><p style="text-align: right">336</p></td>
-                <td><p style="text-align: right">7902</p></td>
-                <td><p style="text-align: right">8357</p></td>
-                <td><p style="text-align: right">8740</p></td>
-              </tr>
-              <tr>
-                <td>video</td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">4</p></td>
-                <td><p style="text-align: right">24</p></td>
-                <td><p style="text-align: right">24</p></td>
-                <td><p style="text-align: right">336</p></td>
-              </tr>
-              <tr>
-                <td>xml</td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td></td>
+              <td colspan="5">Desktop Cache TTL Percentiles (Hours)</td>
+            </tr>
+            <tr>
+              <td><em>type</em></td>
+              <td>p10</td>
+              <td>p25</td>
+              <td>p50</td>
+              <td>p75</td>
+              <td>p90</td>
+            </tr>
+            <tr>
+              <td>audio</td>
+              <td><p style="text-align: right">12</p></td>
+              <td><p style="text-align: right">24</p></td>
+              <td><p style="text-align: right">720</p></td>
+              <td><p style="text-align: right">8760</p></td>
+              <td><p style="text-align: right">8760</p></td>
+            </tr>
+            <tr>
+              <td>css</td>
+              <td><p style="text-align: right">720</p></td>
+              <td><p style="text-align: right">8760</p></td>
+              <td><p style="text-align: right">8760</p></td>
+              <td><p style="text-align: right">8760</p></td>
+              <td><p style="text-align: right">8760</p></td>
+            </tr>
+            <tr>
+              <td>font</td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">3</p></td>
+              <td><p style="text-align: right">336</p></td>
+              <td><p style="text-align: right">8760</p></td>
+              <td><p style="text-align: right">87600</p></td>
+            </tr>
+            <tr>
+              <td>html</td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">168</p></td>
+              <td><p style="text-align: right">720</p></td>
+              <td><p style="text-align: right">8760</p></td>
+              <td><p style="text-align: right">8766</p></td>
+            </tr>
+            <tr>
+              <td>image</td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">1</p></td>
+              <td><p style="text-align: right">28</p></td>
+              <td><p style="text-align: right">48</p></td>
+              <td><p style="text-align: right">8760</p></td>
+            </tr>
+            <tr>
+              <td>other</td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">2</p></td>
+              <td><p style="text-align: right">336</p></td>
+              <td><p style="text-align: right">8760</p></td>
+              <td><p style="text-align: right">8760</p></td>
+            </tr>
+            <tr>
+              <td>script</td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">1</p></td>
+              <td><p style="text-align: right">6</p></td>
+              <td><p style="text-align: right">720</p></td>
+            </tr>
+            <tr>
+              <td>text</td>
+              <td><p style="text-align: right">21</p></td>
+              <td><p style="text-align: right">336</p></td>
+              <td><p style="text-align: right">7902</p></td>
+              <td><p style="text-align: right">8357</p></td>
+              <td><p style="text-align: right">8740</p></td>
+            </tr>
+            <tr>
+              <td>video</td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">4</p></td>
+              <td><p style="text-align: right">24</p></td>
+              <td><p style="text-align: right">24</p></td>
+              <td><p style="text-align: right">336</p></td>
+            </tr>
+            <tr>
+              <td>xml</td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+              <td><p style="text-align: right">&lt; 1</p></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p>By exploring the cacheability by content type in more detail, we can see that approximately half of all HTML responses are considered non-cacheable. Additionally, 16% of images and scripts are non-cacheable.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig4_caheability_by_content_type_desktop.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig4_caheability_by_content_type_desktop.jpg" alt="" /></p>
       <p>The same data for mobile is shown below. The cacheability of content types is consistent between desktop and mobile.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig5_caheability_by_content_type_mobile.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig5_caheability_by_content_type_mobile.jpg" alt="" /></p>
       <h1 id="cache-control-vs-expires">Cache-Control vs Expires</h1>
       <p>In HTTP/1.0, the Expires header was used to indicate the date/time after which the response is considered stale. It’s value is an HTTP-date timestamp, such as:</p>
       <p><code>Expires: Thu, 01 Dec 1994 16:00:00 GMT</code></p>
@@ -352,73 +350,71 @@
         <li>Private indicates a response should only be cached by a browser, and not by an intermediary that would serve multiple clients.</li>
       </ul>
       <p>53% of HTTP responses include a Cache-Control header with the max-age directive, and 54% include the Expires header. However, 41% of these responses use both headers, which means that 13% of responses are caching solely based on the Expires header.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig6_usage_of_cache_control_expires.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig6_usage_of_cache_control_expires.jpg" alt="" /></p>
       <h1 id="cache-control-directives">Cache-Control Directives</h1>
       <p>The HTTP/1.1 <a href="https://tools.ietf.org/html/rfc7234#section-5.2.1">specification</a> includes multiple directives that can be used in the Cache-Control response header and are detailed below. Note that multiple can be used in a single response.</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <tbody>
-              <tr>
-                <td><em>Directive</em></td>
-                <td>Description</td>
-              </tr>
-              <tr>
-                <td>max-age</td>
-                <td>Indicates the number of seconds that a resource can be cached for</td>
-              </tr>
-              <tr>
-                <td>public</td>
-                <td>Any cache may store the response.</td>
-              </tr>
-              <tr>
-                <td>no-cache</td>
-                <td>A cached entry must be revalidated prior to it's use</td>
-              </tr>
-              <tr>
-                <td>must-revalidate</td>
-                <td>A stale cached entry must be revalidated prior to its use</td>
-              </tr>
-              <tr>
-                <td>no-store</td>
-                <td>Indicates that a response is not cacheable</td>
-              </tr>
-              <tr>
-                <td>private</td>
-                <td>The response is intended for a specific user and should not be stored by shared caches.</td>
-              </tr>
-              <tr>
-                <td>no-transform</td>
-                <td>No transformations or conversions should be made to this resource</td>
-              </tr>
-              <tr>
-                <td>proxy-revalidate</td>
-                <td>Same as must-revalidate, but applies to shared caches.</td>
-              </tr>
-              <tr>
-                <td>s-maxage</td>
-                <td>Same as max age, but applies to shared caches only</td>
-              </tr>
-              <tr>
-                <td>immutable</td>
-                <td>Indicates that the cached entry will never change, and that revalidation is not necessary.</td>
-              </tr>
-              <tr>
-                <td>stale-while-revalidate</td>
-                <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
-              </tr>
-              <tr>
-                <td>stale-if-error</td>
-                <td>Indicates that the client is willing to accept a stale response if the check for one fails.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td><em>Directive</em></td>
+              <td>Description</td>
+            </tr>
+            <tr>
+              <td>max-age</td>
+              <td>Indicates the number of seconds that a resource can be cached for</td>
+            </tr>
+            <tr>
+              <td>public</td>
+              <td>Any cache may store the response.</td>
+            </tr>
+            <tr>
+              <td>no-cache</td>
+              <td>A cached entry must be revalidated prior to it's use</td>
+            </tr>
+            <tr>
+              <td>must-revalidate</td>
+              <td>A stale cached entry must be revalidated prior to its use</td>
+            </tr>
+            <tr>
+              <td>no-store</td>
+              <td>Indicates that a response is not cacheable</td>
+            </tr>
+            <tr>
+              <td>private</td>
+              <td>The response is intended for a specific user and should not be stored by shared caches.</td>
+            </tr>
+            <tr>
+              <td>no-transform</td>
+              <td>No transformations or conversions should be made to this resource</td>
+            </tr>
+            <tr>
+              <td>proxy-revalidate</td>
+              <td>Same as must-revalidate, but applies to shared caches.</td>
+            </tr>
+            <tr>
+              <td>s-maxage</td>
+              <td>Same as max age, but applies to shared caches only</td>
+            </tr>
+            <tr>
+              <td>immutable</td>
+              <td>Indicates that the cached entry will never change, and that revalidation is not necessary.</td>
+            </tr>
+            <tr>
+              <td>stale-while-revalidate</td>
+              <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
+            </tr>
+            <tr>
+              <td>stale-if-error</td>
+              <td>Indicates that the client is willing to accept a stale response if the check for one fails.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p>For example, the below header indicates that a cached entry should be stored for 43200 seconds and it can be stored by all caches.</p>
       <pre><code>cache-control: public, max-age=43200</code></pre>
       <p>The graph below illustrates the top 15 Cache-Control directives in use.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig7_cache_control_directives.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig7_cache_control_directives.jpg" alt="" /></p>
       <p>There are a few interesting observations about the popularity of these cache directives:</p>
       <ul>
         <li>Max-age is used by almost 75% of Cache-Control headers, and no-store is used by 18%.</li>
@@ -442,7 +438,7 @@
       <p>So far we’ve talked about how web servers tell a client what is cacheable, and how long it has been cached for. When designing cache rules, it’s also important to understand how old the content you are serving is.</p>
       <p>When you are selecting a cache TTL, ask yourself: “How often are you updating these assets?” and “what is their content sensitivity?”. For example, if a hero image is going to be modified infrequently - then cache it with a very long TTL. If you expect a JavaScript resource to change frequently, then version it and cache it with a long TTL or cache it with a shorter TTL.</p>
       <p>The graph below illustrates the relative age of resources by content type, and you can read a <a href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">more detailed analysis here</a>. HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources scripts, css, and fonts) are older than 1 year!</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" alt="" /></p>
       <p>By comparing a resources cacheability to its age, we can determine if the TTL used is appropriate or too low. For example, the resource served by this response was last modified on 25 Aug 2019, which means that it was 49 days old at the time of delivery. The Cache-Control header says that we can cache it for 43,200 seconds, which is 12 hours. It is definitely old enough to merit investigating whether a longer TTL would be appropriate.</p>
       <pre><code>&lt; HTTP/2 200
 &lt; date: Sun, 13 Oct 2019 19:36:57 GMT
@@ -457,34 +453,32 @@
       <p>Overall, 59% of resources served on the web have a cache TTL that is too short compared to it’s content age. Furthermore, the median delta between the TTL and age is 25 days.</p>
       <p>When we break this out by first vs third party, we can also see that 70% of first party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring caching is configured correctly.</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <tbody>
-              <tr>
-                <td></td>
-                <td colspan="3">% of Requests with Short TTLs</td>
-              </tr>
-              <tr>
-                <td><em>client</em></td>
-                <td>1st Party</td>
-                <td>3rd Party</td>
-                <td>Overall</td>
-              </tr>
-              <tr>
-                <td>desktop</td>
-                <td><p style="text-align: right">70.7%</p></td>
-                <td><p style="text-align: right">47.9%</p></td>
-                <td><p style="text-align: right">59.2%</p></td>
-              </tr>
-              <tr>
-                <td>mobile</td>
-                <td><p style="text-align: right">71.4%</p></td>
-                <td><p style="text-align: right">46.8%</p></td>
-                <td><p style="text-align: right">59.6%</p></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td></td>
+              <td colspan="3">% of Requests with Short TTLs</td>
+            </tr>
+            <tr>
+              <td><em>client</em></td>
+              <td>1st Party</td>
+              <td>3rd Party</td>
+              <td>Overall</td>
+            </tr>
+            <tr>
+              <td>desktop</td>
+              <td><p style="text-align: right">70.7%</p></td>
+              <td><p style="text-align: right">47.9%</p></td>
+              <td><p style="text-align: right">59.2%</p></td>
+            </tr>
+            <tr>
+              <td>mobile</td>
+              <td><p style="text-align: right">71.4%</p></td>
+              <td><p style="text-align: right">46.8%</p></td>
+              <td><p style="text-align: right">59.6%</p></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <h1 id="validating-freshness">Validating Freshness</h1>
       <p>The HTTP response headers used for validating the responses stored within a cache are Last-Modified and Etag. The Last-Modified header provides the time that the object was last modified, and the Etag header provides a unique identifier for the content.</p>
@@ -515,7 +509,7 @@
 &lt; etag: "1566748830.0-3052-3932359948"
 &lt; accept-ranges: bytes</code></pre>
       <p>Overall, 65% of responses are served with a Last-Modified header, 42% are served with an Etag, and 38% use both. However 30% of responses include neither a Last-Modified or Etag header.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig9_validating_freshness.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig9_validating_freshness.jpg" alt="" /></p>
       <h1 id="validity-of-date-strings">Validity of Date Strings</h1>
       <p>There are a few HTTP headers used to convey timestamps, and the format for these are very important. The Date response header indicates when the resource was served to a client. The Last-Modified response header indicates when a resource was last changed on the server. And the Expires header is used to indicate how long a resource is cacheable until (unless a Cache-Control header is present).</p>
       <p>All 3 of these headers use an HTTP-date formatted string to represent timestamps.</p>
@@ -538,7 +532,7 @@
       <p><code>&lt; etag: "1566748830.0-3052-3932359948"</code></p>
       <p>Most clients will ignore invalid date strings, which render them ineffective for the response they are served on. This can have consequences on cacheability, since an erroneous Last-Modified header will be cached without a Last-Modified timestamp resulting in the inability to perform a conditional request.</p>
       <p>The Date HTTP response header is usually generated by the web server or CDN serving the response to a client. Because the header is generated server side, it tends to be less prone to error, which is reflected by the very low percentage of invalid Date headers. Last-Modified headers were very similar, with only 0.67% of them being invalid. What was very surprising to see though, was that 3.64% Expires headers used an invalid date format!</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig10_invalid_date_formats.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig10_invalid_date_formats.jpg" alt="" /></p>
       <p>Examples of some of the invalid uses of the Expires header are:</p>
       <ul>
         <li>Valid date formats, but using a timezone other than GMT</li>
@@ -555,95 +549,91 @@
       <p>In general, you should only vary the cache if you are serving alternate content to clients based on that header.</p>
       <p>The Vary header is used on 39% of HTTP responses, and 45% of responses that include a Cache-Control header.</p>
       <p>The graph below details the popularity for the top 10 Vary header values. Accept-Encoding accounts for 90% of Vary’s use, with User-Agent (11%), Origin (??%), and Accept (??%) making up much of the rest.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig11_vary_header.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig11_vary_header.jpg" alt="" /></p>
       <h1 id="setting-cookies-on-cacheable-responses">Setting Cookies on Cacheable Responses</h1>
       <p>When a response is cached, it’s entire headers are swapped into the cache as well. This is why you can see the response headers when inspecting a cached response via DevTools.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg" alt="" /></p>
       <p>But what happens if you have a Set-Cookie on a response? According to <a href="https://tools.ietf.org/html/rfc7234#section-8">RFC 7234 Section 8</a>, the presence of a Set-Cookie response header does not inhibit caching. This means that a cached entry might contain a Set-Cookie if it was cached with one. The RFC goes on to recommend that you should configure appropriate Cache-Control headers to control how responses are cached.</p>
       <p>One of the risks of caching responses with Set-Cookie is that the cookie values can be stored and served to subsequent requests. Depending on the cookie’s purpose, this could have worrying results. For example, if a login cookie or a session cookie is present in a shared cache, then that cookie might be reused by another client. One way to avoid this is to use the Cache-Control “private” directive, which only permits the response to be cached by the client browser.</p>
       <p>According to the HTTP Archive, 3% of cacheable responses contain a Set-Cookie header. Of those responses, only 18% use the private directive. The remaining 82% include 5.3 million HTTP responses that include a Set-Cookie which can be cached by public and private cache servers.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig13_cookies_on_cacheable_responses.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig13_cookies_on_cacheable_responses.jpg" alt="" /></p>
       <h1 id="appcache-and-service-workers">AppCache and Service Workers</h1>
       <p>The Application Cache is a feature of HTML5 that allows developers to specify resources the browser should cache and make available to offline users. This feature was deprecated and removed from web standards, and browser support has been diminishing. In fact when it’s use is detected, Firefox v44+ recommends that developers should use service workers instead. Chrome 69+ restricts the Application Cache to secure context only. The industry has moved more towards implementing this type of functionality with Service Workers - and browser support has been rapidly growing for it.</p>
       <p>In fact, one of the HTTP Archive trend reports shows the adoption of Service Workers. Adoption is still below 1% of websites, but it has been steadily increasing since January 2017.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="" /></p>
       <p>In the table below, you can see a summary of AppCache vs ServiceWorker usage. 32,292 websites have implemented a Service Worker, while 1,867 sites are still utilizing the deprecated AppCache feature.</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>Does Not Use Server Worker</td>
-                <td>Uses Service Worker</td>
-                <td>Total</td>
-              </tr>
-              <tr>
-                <td>Does Not Use AppCache</td>
-                <td><p style="text-align: right">5,045,337</p></td>
-                <td><p style="text-align: right">32,241</p></td>
-                <td><p style="text-align: right">5,077,578</p></td>
-              </tr>
-              <tr>
-                <td>Uses AppCache</td>
-                <td><p style="text-align: right">1,816</p></td>
-                <td><p style="text-align: right">51</p></td>
-                <td><p style="text-align: right">1,867</p></td>
-              </tr>
-              <tr>
-                <td>Total</td>
-                <td><p style="text-align: right">5,047,153</p></td>
-                <td><p style="text-align: right">32,292</p></td>
-                <td><p style="text-align: right">5,079,445</p></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>Does Not Use Server Worker</td>
+              <td>Uses Service Worker</td>
+              <td>Total</td>
+            </tr>
+            <tr>
+              <td>Does Not Use AppCache</td>
+              <td><p style="text-align: right">5,045,337</p></td>
+              <td><p style="text-align: right">32,241</p></td>
+              <td><p style="text-align: right">5,077,578</p></td>
+            </tr>
+            <tr>
+              <td>Uses AppCache</td>
+              <td><p style="text-align: right">1,816</p></td>
+              <td><p style="text-align: right">51</p></td>
+              <td><p style="text-align: right">1,867</p></td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td><p style="text-align: right">5,047,153</p></td>
+              <td><p style="text-align: right">32,292</p></td>
+              <td><p style="text-align: right">5,079,445</p></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p>If we break this out by HTTP vs HTTPS, then this gets even more interesting. 581 of the AppCache enabled sites are served over HTTP, which means that Chrome is likely disabling the feature. HTTPS is a requirement for using Service Workers, but 907 of the sites using them are served over HTTP.</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>Does Not Use Service Worker</td>
-                <td>Uses Service Worker</td>
-              </tr>
-              <tr>
-                <td rowspan="2">HTTP</td>
-                <td>Does Not Use AppCache</td>
-                <td><p style="text-align: right">1,968,736</p></td>
-                <td><p style="text-align: right">907</p></td>
-              </tr>
-              <tr>
-                <td>Uses AppCache</td>
-                <td><p style="text-align: right">580</p></td>
-                <td><p style="text-align: right">1</p></td>
-              </tr>
-              <tr>
-                <td rowspan="2">HTTPS</td>
-                <td>Does Not Use AppCache</td>
-                <td><p style="text-align: right">3,076,601</p></td>
-                <td><p style="text-align: right">31,334</p></td>
-              </tr>
-              <tr>
-                <td>Uses AppCache</td>
-                <td><p style="text-align: right">1,236</p></td>
-                <td><p style="text-align: right">50</p></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Does Not Use Service Worker</td>
+              <td>Uses Service Worker</td>
+            </tr>
+            <tr>
+              <td rowspan="2">HTTP</td>
+              <td>Does Not Use AppCache</td>
+              <td><p style="text-align: right">1,968,736</p></td>
+              <td><p style="text-align: right">907</p></td>
+            </tr>
+            <tr>
+              <td>Uses AppCache</td>
+              <td><p style="text-align: right">580</p></td>
+              <td><p style="text-align: right">1</p></td>
+            </tr>
+            <tr>
+              <td rowspan="2">HTTPS</td>
+              <td>Does Not Use AppCache</td>
+              <td><p style="text-align: right">3,076,601</p></td>
+              <td><p style="text-align: right">31,334</p></td>
+            </tr>
+            <tr>
+              <td>Uses AppCache</td>
+              <td><p style="text-align: right">1,236</p></td>
+              <td><p style="text-align: right">50</p></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <h1 id="identifying-caching-opportunities">Identifying Caching Opportunities</h1>
       <p><a href="https://developers.google.com/web/tools/lighthouse">Google’s Lighthouse</a> tool enables users to run a series of audits against web pages, and<a href="https://developers.google.com/web/tools/lighthouse/audits/text-compression"> one of them</a> evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the Last-Modified header) to the Cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg" alt="" /></p>
       <p>Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The <a href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">caching score</a> is based on potential byte savings. When we examine the HTTP Archive Lighthouse data, we can get a perspective of how many sites are doing well with their cache policies. Only 3.4% of sites scored a 100%, meaning that most sites can benefit from some cache optimizations. A vast majority of sites sore below 40%, with 38% scoring less than 10%. Based on this, there is a significant amount of caching opportunities on the web.</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig16_lighthouse_cache_score.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig16_lighthouse_cache_score.jpg" alt="" /></p>
       <p>Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 82% of them can reduce their page weight by up to 1 MB!</p>
-      <p><img src="../../../static/images/2019/16_Caching/ch16_fig17_lighthouse_cache_byte_savings.jpg" alt="" loading="lazy" /></p>
+      <p><img src="../../../static/images/2019/16_Caching/ch16_fig17_lighthouse_cache_byte_savings.jpg" alt="" /></p>
       <h1 id="conclusion">Conclusion</h1>
       <p>Caching is an incredibly powerful feature that allows browsers, proxies and other intermediaries (such as CDNs) to store web content and serve it to end users. The performance benefits of this are significant, since it reduces round trip times and minimizes costly network requests.</p>
       <p>Caching is also a very complex topic. There are numerous HTTP response headers that can convey freshness as well as validate cached entries, and Cache-Control directives provide a tremendous amount of flexibility and control. However developers should be cautious about the additional opportunities for mistakes that it comes with. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like Lighthouse and REDbot do an excellent job of helping to simplify the analysis.</p>

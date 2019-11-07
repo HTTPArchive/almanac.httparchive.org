@@ -39,9 +39,9 @@
     "headline": "{{ metadata.get('title') }}",
     "image": {
     	  "@type": "ImageObject",
-    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg",
-    	  "height": 433,
-    	  "width": 866
+    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg",
+    	  "height": 163,
+    	  "width": 326
     },
     "publisher": {
     	  "@type": "Organization",
@@ -158,127 +158,123 @@
       <p>It is rare to find a webpage that does not utilize images. Over the years, many different file formats have emerged to help present content on the web - each addressing a different problem. Predominantly there are 4 main universal image formats: JPEG, PNG, GIF, and SVG. In addition, Chrome has enhanced the media pipeline and added support for a fifth image format - WebP. Other browsers have likewise added support for JPEG2000 (Safari), JPEG-XL (IE and Edge) and HEIC (WebView only in Safari)</p>
       <p>Each format has its own merits and has ideal uses for the web. A very simplified summary would break down as:</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Format</th>
-                <th>Highlights</th>
-                <th>Drawbacks</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>JPEG</td>
-                <td>* ubiquitously supported <br />* ideal for photographic content</td>
-                <td>* there is always quality loss <br />* most decoders cannot handle high bit depth photographs from modern cameras (&gt; 8 bits per channel) <br />* no support for transparency</td>
-              </tr>
-              <tr>
-                <td>PNG</td>
-                <td>
-                  * like JPEG and GIF, shares wide support <br />
-                  *it is lossless <br />
-                  * supports transparency, animation, and high bit depth
-                </td>
-                <td>
-                  * much bigger files compared to JPEG <br />
-                  * not ideal for photographic content
-                </td>
-              </tr>
-              <tr>
-                <td>GIF</td>
-                <td>* the predecessor to PNG, is most known for animations <br />* lossless</td>
-                <td>* because of the limitation of 256 colors, there is always visual loss from conversion<br />*very large files for animations</td>
-              </tr>
-              <tr>
-                <td>SVG</td>
-                <td>
-                  * A vector based format that can be resized without increasing filesize <br />
-                  * It is based on math rather than pixels and creates smooth lines
-                </td>
-                <td>* not useful for photographic or other raster content</td>
-              </tr>
-              <tr>
-                <td>WebP</td>
-                <td>
-                  * a newer file format that can produce lossless images like PNG and lossy images like JPEG <br />
-                  * It <a href="https://developers.google.com/speed/webp/faq">boasts a 30% average file reduction compared</a> to JPEG, while other data suggests that median file reduction is <a href="https://cloudinary.com/state-of-visual-media-report/">between 10-28% based on pixel volume</a>.
-                </td>
-                <td>
-                  * Unlike JPEG, it is limited to chroma-subsampling which will make some images appear blurry. <br />
-                  *not universally supported. Only Chrome, Firefox and Android ecosystems.<br />
-                  * fragmented feature support depending on browser versions
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Highlights</th>
+              <th>Drawbacks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JPEG</td>
+              <td>* ubiquitously supported <br />* ideal for photographic content</td>
+              <td>* there is always quality loss <br />* most decoders cannot handle high bit depth photographs from modern cameras (&gt; 8 bits per channel) <br />* no support for transparency</td>
+            </tr>
+            <tr>
+              <td>PNG</td>
+              <td>
+                * like JPEG and GIF, shares wide support <br />
+                *it is lossless <br />
+                * supports transparency, animation, and high bit depth
+              </td>
+              <td>
+                * much bigger files compared to JPEG <br />
+                * not ideal for photographic content
+              </td>
+            </tr>
+            <tr>
+              <td>GIF</td>
+              <td>* the predecessor to PNG, is most known for animations <br />* lossless</td>
+              <td>* because of the limitation of 256 colors, there is always visual loss from conversion<br />*very large files for animations</td>
+            </tr>
+            <tr>
+              <td>SVG</td>
+              <td>
+                * A vector based format that can be resized without increasing filesize <br />
+                * It is based on math rather than pixels and creates smooth lines
+              </td>
+              <td>* not useful for photographic or other raster content</td>
+            </tr>
+            <tr>
+              <td>WebP</td>
+              <td>
+                * a newer file format that can produce lossless images like PNG and lossy images like JPEG <br />
+                * It <a href="https://developers.google.com/speed/webp/faq">boasts a 30% average file reduction compared</a> to JPEG, while other data suggests that median file reduction is <a href="https://cloudinary.com/state-of-visual-media-report/">between 10-28% based on pixel volume</a>.
+              </td>
+              <td>
+                * Unlike JPEG, it is limited to chroma-subsampling which will make some images appear blurry. <br />
+                *not universally supported. Only Chrome, Firefox and Android ecosystems.<br />
+                * fragmented feature support depending on browser versions
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <h2 id="image-formats">Image Formats</h2>
       <p>In aggregate, across all page, we indeed see the prevalence of these formats. JPEG, one of the oldest formats on the web, is by far the most commonly used image formats at 60% of the image requests and 65% of all image bytes. Interestingly, PNG is the second most commonly used image format 28% of image requests and bytes. The ubiquity of support along with the precision of color and creative content are likely explanations for its wide use. In contrast SVG, GIF and WebP share nearly the same usage at 4%. (figure image formats by % of totla requests) Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of Google.com and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images and 61 at the 90th percentile and a whopping 229 at the 99th percentile. (figure image frequency per page)</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Format</th>
-                <th>p10</th>
-                <th>p25</th>
-                <th>p50</th>
-                <th>p75</th>
-                <th>p90</th>
-                <th>p99</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>jpg</td>
-                <td>0</td>
-                <td>3</td>
-                <td>9</td>
-                <td>20</td>
-                <td>39</td>
-                <td>119</td>
-              </tr>
-              <tr>
-                <td>png</td>
-                <td>0</td>
-                <td>4</td>
-                <td>4</td>
-                <td>10</td>
-                <td>18</td>
-                <td>49</td>
-              </tr>
-              <tr>
-                <td>webp</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>28</td>
-              </tr>
-              <tr>
-                <td>svg</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>2</td>
-                <td>19</td>
-              </tr>
-              <tr>
-                <td>gif</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>1</td>
-                <td>2</td>
-                <td>14</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>p10</th>
+              <th>p25</th>
+              <th>p50</th>
+              <th>p75</th>
+              <th>p90</th>
+              <th>p99</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>jpg</td>
+              <td>0</td>
+              <td>3</td>
+              <td>9</td>
+              <td>20</td>
+              <td>39</td>
+              <td>119</td>
+            </tr>
+            <tr>
+              <td>png</td>
+              <td>0</td>
+              <td>4</td>
+              <td>4</td>
+              <td>10</td>
+              <td>18</td>
+              <td>49</td>
+            </tr>
+            <tr>
+              <td>webp</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <td>svg</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>2</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>gif</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>14</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p>While the median page has 9 jpegs and 4 pngs, and only in the top 25% pages where use gifs, this doesn’t report the adoption rate. The use and frequency of each format per page doesn’t provide insight into the adoption of the more modern formats. Specifically, what % of pages include at least one image in each format?</p>
       <p>(figure % of pages using at least 1 image)</p>
@@ -286,121 +282,117 @@
       <h2 id="image-file-sizes">Image File Sizes</h2>
       <p>There are two ways to look at image file sizes: absolute bytes per resource and bytes per pixel. Looking at the absolute bytes per resource, and we can look at the frequency of file sizes. (figure image format file size)</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Format</th>
-                <th>p10</th>
-                <th>p25</th>
-                <th>p50</th>
-                <th>p75</th>
-                <th>p90</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>jpg</td>
-                <td>4 KB</td>
-                <td>9 KB</td>
-                <td>24 KB</td>
-                <td>68 KB</td>
-                <td>166 KB</td>
-              </tr>
-              <tr>
-                <td>png</td>
-                <td>2 KB</td>
-                <td>4 KB</td>
-                <td>11 KB</td>
-                <td>43 KB</td>
-                <td>152 KB</td>
-              </tr>
-              <tr>
-                <td>webp</td>
-                <td>4 KB</td>
-                <td>7 KB</td>
-                <td>17 KB</td>
-                <td>41 KB</td>
-                <td>90 KB</td>
-              </tr>
-              <tr>
-                <td>gif</td>
-                <td>2 KB</td>
-                <td>3 KB</td>
-                <td>6 KB</td>
-                <td>17 KB</td>
-                <td>87 KB</td>
-              </tr>
-              <tr>
-                <td>svg</td>
-                <td>0 KB</td>
-                <td>0 KB</td>
-                <td>1 KB</td>
-                <td>2 KB</td>
-                <td>8 KB</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>p10</th>
+              <th>p25</th>
+              <th>p50</th>
+              <th>p75</th>
+              <th>p90</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>jpg</td>
+              <td>4 KB</td>
+              <td>9 KB</td>
+              <td>24 KB</td>
+              <td>68 KB</td>
+              <td>166 KB</td>
+            </tr>
+            <tr>
+              <td>png</td>
+              <td>2 KB</td>
+              <td>4 KB</td>
+              <td>11 KB</td>
+              <td>43 KB</td>
+              <td>152 KB</td>
+            </tr>
+            <tr>
+              <td>webp</td>
+              <td>4 KB</td>
+              <td>7 KB</td>
+              <td>17 KB</td>
+              <td>41 KB</td>
+              <td>90 KB</td>
+            </tr>
+            <tr>
+              <td>gif</td>
+              <td>2 KB</td>
+              <td>3 KB</td>
+              <td>6 KB</td>
+              <td>17 KB</td>
+              <td>87 KB</td>
+            </tr>
+            <tr>
+              <td>svg</td>
+              <td>0 KB</td>
+              <td>0 KB</td>
+              <td>1 KB</td>
+              <td>2 KB</td>
+              <td>8 KB</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p>From this we can start to get a sense of how large or small a typical resource is on the web. However, this doesn’t give us a sense of the volume of pixels represented on screen for these file distributions. To do this we can divide each resource bytes by the natural pixel volume of the image. A lower Bytes-Per-Pixel indicates a more efficient transmission of visual content. (figure Bytes per pixel)</p>
       <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <thead>
-              <tr>
-                <th>imageType</th>
-                <th>Bytes Per Pixel: p10</th>
-                <th>Bytes Per Pixel: p25</th>
-                <th>Bytes Per Pixel: p50</th>
-                <th>Bytes Per Pixel: p75</th>
-                <th>Bytes Per Pixel: p90</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>jpg</td>
-                <td>0.1175</td>
-                <td>0.1848</td>
-                <td>0.2997</td>
-                <td>0.5456</td>
-                <td>0.9822</td>
-              </tr>
-              <tr>
-                <td>png</td>
-                <td>0.1197</td>
-                <td>0.2874</td>
-                <td>0.6918</td>
-                <td>1.4548</td>
-                <td>2.5026</td>
-              </tr>
-              <tr>
-                <td>gif</td>
-                <td>0.1702</td>
-                <td>0.3641</td>
-                <td>0.7967</td>
-                <td>2.515</td>
-                <td>8.5151</td>
-              </tr>
-              <tr>
-                <td>webp</td>
-                <td>0.0586</td>
-                <td>0.1025</td>
-                <td>0.183</td>
-                <td>0.3272</td>
-                <td>0.6474</td>
-              </tr>
-              <tr>
-                <td>svg</td>
-                <td>0.0293</td>
-                <td>0.174</td>
-                <td>0.6766</td>
-                <td>1.9261</td>
-                <td>4.1075</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>imageType</th>
+              <th>Bytes Per Pixel: p10</th>
+              <th>Bytes Per Pixel: p25</th>
+              <th>Bytes Per Pixel: p50</th>
+              <th>Bytes Per Pixel: p75</th>
+              <th>Bytes Per Pixel: p90</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>jpg</td>
+              <td>0.1175</td>
+              <td>0.1848</td>
+              <td>0.2997</td>
+              <td>0.5456</td>
+              <td>0.9822</td>
+            </tr>
+            <tr>
+              <td>png</td>
+              <td>0.1197</td>
+              <td>0.2874</td>
+              <td>0.6918</td>
+              <td>1.4548</td>
+              <td>2.5026</td>
+            </tr>
+            <tr>
+              <td>gif</td>
+              <td>0.1702</td>
+              <td>0.3641</td>
+              <td>0.7967</td>
+              <td>2.515</td>
+              <td>8.5151</td>
+            </tr>
+            <tr>
+              <td>webp</td>
+              <td>0.0586</td>
+              <td>0.1025</td>
+              <td>0.183</td>
+              <td>0.3272</td>
+              <td>0.6474</td>
+            </tr>
+            <tr>
+              <td>svg</td>
+              <td>0.0293</td>
+              <td>0.174</td>
+              <td>0.6766</td>
+              <td>1.9261</td>
+              <td>4.1075</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p>While previously it appeared that GIF files were smaller than JPEG, we can now clearly see that the cause of the larger JPEG resources is due to the pixel volume. It is probably not a surprise that GIF shows a very low pixel density compared to the other formats. Additionally, PNG, while it can handle high bit depth and doesn’t suffer from chroma subsampling blurriness, is about twice the size of JPG or WebP for the same pixel volume.</p>
       <p>Of note, the pixel volume used for SVG is the size of the DOM element on screen (in CSS pixels). While considerably smaller for file sizes, this hints that SVGs are generally used in smaller portions of the layout. This is why the bytes per pixel appears worse than PNG.</p>
