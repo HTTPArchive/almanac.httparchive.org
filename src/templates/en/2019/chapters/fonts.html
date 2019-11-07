@@ -113,7 +113,7 @@
       <h1 class="title">
         {{ metadata.get('title') }}
       </h1>
-      <img loading="lazy" src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      <img loading="eager" src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p><strong>06.02 and 06.32: Popular web font hosts</strong></p>

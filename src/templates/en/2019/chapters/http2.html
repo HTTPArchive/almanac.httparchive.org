@@ -141,7 +141,7 @@
       <h1 class="title">
         {{ metadata.get('title') }}
       </h1>
-      <img loading="lazy" src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      <img loading="eager" src="/static/images/2019/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that - we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into to get around its inefficiencies. Bundling, spriting, inlining and even sharding domains would all become anti-patterns in an HTTP/2 world, giving performance by default. This meant even those without the skills and resources to concentrate on web performance would suddenly have performant websites. The reality has been, as ever, a little more nuanced than that. It has been over four years since its formal approval as a <a href="https://tools.ietf.org/html/rfc7540">standard in May 2015 as RFC 7540</a>, so now is a good time to look over how this relatively new technology has fared in the real world.</p>
