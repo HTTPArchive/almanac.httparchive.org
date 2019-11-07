@@ -9,19 +9,19 @@ published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-04T12:00:00+00:00:00
 ---
 
-# Introduction
+## Introduction
 
-Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder assistive technology users rely on.
+Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.
 
 When thinking about users with disabilities, we should remember that their user journeys are often the same—they just use different tools. These popular tools include but are not limited to: screen readers, screen magnifiers, browser or text size zooming, and voice controls.
 
-Often, improving the accessibility of your site has benefits for everyone. While we typically think of people with disabilities as people with a permanent disability, everybody can have a temporary or situational disability. For example: someone might be permanently blind, have a temporarary eye infection, or situationally be outside on a sunny day. All of these might explain why someone is unable to see their screen. Everyone has situational disabilities, and so improving the accessibility of your web page will improve the experience of all users in any situation.
+Often, improving the accessibility of your site has benefits for everyone. While we typically think of people with disabilities as people with a permanent disability, anybody can have a temporary or situational disability. For example, someone might be permanently blind, have a temporary eye infection, or, situationally, be outside under a glaring sun. All of these might explain why someone is unable to see their screen. Everyone has situational disabilities, and so improving the accessibility of your web page will improve the experience of all users in any situation.
 
 ## State of accessibility support around the web
 
 The [Web Content Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/) (WCAG) advise on how to make a website accessible. These guidelines were used as the basis for our analysis. However, in many cases it is difficult to programmatically analyze the accessibility of a website. For instance, the web platform provides several ways of achieving similar functional results, but the underlying code powering them may be completely different. Therefore, our analysis is just an approximation of overall web accessibility.
 
-We’ve split up our most interesting insights into four categories: Ease of reading, media on the web, ease of page navigation, and compatibility with assistive technologies.
+We’ve split up our most interesting insights into four categories: ease of reading, media on the web, ease of page navigation, and compatibility with assistive technologies.
 
 No significant difference in accessibility was found between desktop and mobile during testing. As a result, all of our presented metrics are the result of our desktop analysis unless otherwise stated.
 
@@ -33,20 +33,20 @@ The primary goal of a web page is to deliver content users want to engage with. 
 
 There are many cases where visitors to your site may not be able see it perfectly. Visitors may be colorblind and unable to distinguish between the font and background color ([1 in every 12 men and 1 in 200 women](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf) of European descent). Perhaps they’re simply reading while the sun is out and creating tons of glare on their screen—significantly impairing their vision. Or maybe they’ve just grown older and their eyes can't distinguish colors as well as they used to.
 
-In order to make sure your website is readible under these conditions, making sure your text has sufficient color contrast with its background is crtical.
+In order to make sure your website is readable under these conditions, making sure your text has sufficient color contrast with its background is critical.
 
 <figure markdown>
   ![Figure 1. Four colored boxes of orange and gray shades with white text overlayed inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in grayscale. Courtesy of LookZook.](/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png)
   <figcaption>Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
-So how well did the sites we analyzed do? Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.
+Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.
 
-Analyzing text having an image as its background was not possible during this analysis, so all instances we found of this were automatically given a passing grade. This means our reported metric is an upper-bound of the total number of websites passing the color contrast test.
+<aside class="note">Note that we weren't able to analyze any text inside of images, so our reported metric is an upper-bound of the total number of websites passing the color contrast test.</aside>
 
 ### Zooming and scaling pages
 
-Using a [readable font size](https://accessibleweb.com/question-answer/minimum-font-size/) and [target size](https://www.w3.org/WAI/WCAG21/quickref/#target-size) helps users read and interact with your website. But even websites perfectly following all of these guidelines can't meet the specific needs of each visitor. This is why device features like pinch-to-zoom and scaling are so important—they allow users to tweak your pages so their needs are met. Or in the case of particularly inaccessible sites using tiny fonts and buttons, it gives users the chance to even use the site.
+Using a [legible font size](https://accessibleweb.com/question-answer/minimum-font-size/) and [target size](https://www.w3.org/WAI/WCAG21/quickref/#target-size) helps users read and interact with your website. But even websites perfectly following all of these guidelines can't meet the specific needs of each visitor. This is why device features like pinch-to-zoom and scaling are so important: they allow users to tweak your pages so their needs are met. Or in the case of particularly inaccessible sites using tiny fonts and buttons, it gives users the chance to even use the site.
 
 There are rare cases when disabling scaling is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players’ phones will zoom in and out every time the player taps twice on the game, ironically making it inaccessible.
 
@@ -76,11 +76,11 @@ Of the pages analyzed, 26.13% do not specify a language with the `lang` attribut
 
 ### Distracting content
 
-Some users, such as those with cognitive disabilities, have difficulties concentrating on the same task for long periods of time. These users don’t want to deal with pages including lots of motion and animations—especially when these effects are purely cosmetic and not related to the task at hand. At a minimum, these users need a way to turn all distracting animations off.
+Some users, such as those with cognitive disabilities, have difficulties concentrating on the same task for long periods of time. These users don’t want to deal with pages that include lots of motion and animations, especially when these effects are purely cosmetic and not related to the task at hand. At a minimum, these users need a way to turn all distracting animations off.
 
 Unfortunately, our findings indicate that infinitely looping animations are quite common on the web, with 21.04% of pages using them through infinite CSS animations or [`<marquee>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee) and [`<blink>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink) elements.
 
-It is interesting to note however, that the bulk of this problem appears to be a few popular third-party stylesheets which include infinitely looping CSS animations by default.
+It is interesting to note however, that the bulk of this problem appears to be a few popular third-party stylesheets which include infinitely looping CSS animations by default. We were unable to determine how many pages actually used these animation styles.
 
 ## Media on the web
 
@@ -100,7 +100,7 @@ You can add captions to all video and audio content by using the [`<track>`](htt
 
 ## Ease of page navigation
 
-When you open the menu in a restaurant, the first thing you probably do is read all of the section headers: appetizers, salads, main course, and dessert. This allows you to scan a menu for all of the options and jump quickly to the dishes most interesting to you. Similarly, when a visitor opens a web page their goal is to find the information they are most interested in: the reason they came to the page in the first place. In order to help users find their desired content as fast as possible (and prevent them from hitting the back button), we try to separate the contents of our pages into several visually distinct sections. For example: a site header for navigation, various headings in our articles so users can quickly scan them, a footer for other extraneous resources, and more.
+When you open the menu in a restaurant, the first thing you probably do is read all of the section headers: appetizers, salads, main course, and dessert. This allows you to scan a menu for all of the options and jump quickly to the dishes most interesting to you. Similarly, when a visitor opens a web page, their goal is to find the information they are most interested in—the reason they came to the page in the first place. In order to help users find their desired content as fast as possible (and prevent them from hitting the back button), we try to separate the contents of our pages into several visually distinct sections, for example: a site header for navigation, various headings in our articles so users can quickly scan them, a footer for other extraneous resources, and more.
 
 While this is exceptionally important, we need to take care to mark up our pages so our visitors’ computers can perceive these distinct sections as well. Why? While most of us use a mouse to navigate pages, many others rely on keyboards and screen readers. These technologies rely heavily on how well their computers understand your page.
 
@@ -108,15 +108,15 @@ So how well are we doing? Very poorly. Only 26.03% of sites even contained the m
 
 ### Headings
 
-Headings are not only helpful visually, but to screen readers as well. They allow screen readers to quickly jump from section to section, and help indicate where one section ends and another begins.
+Headings are not only helpful visually, but to screen readers as well. They allow screen readers to quickly jump from section to section and help indicate where one section ends and another begins.
 
-In order to avoid confusing screen reader users, make sure you never skip a heading level. For example, don’t go straight from an H1 to an H3, and skip the H2. Why is this a big deal? Because this is an unexpected change that will cause a screen reader user to think they've missed a piece of content. This might cause them to start looking all over for what they may have missed, even if there isn’t anything missing. Plus, you’ll help all of your readers by keeping a more consistent design.
+In order to avoid confusing screen reader users, make sure you never skip a heading level. For example, don’t go straight from an H1 to an H3, skipping the H2. Why is this a big deal? Because this is an unexpected change that will cause a screen reader user to think they've missed a piece of content. This might cause them to start looking all over for what they may have missed, even if there isn’t anything missing. Plus, you’ll help all of your readers by keeping a more consistent design.
 
 With that being said, here are our results:
 
 1. 89.36% of pages use headings in some fashion. Awesome.
-2. 38.6% of pages do skip heading levels (e.g., an h3 following an h1, with no h2 in between)
-3. Strangely, H2s are found on more sites than H1s
+2. 38.6% of pages do skip heading levels.
+3. Strangely, H2s are found on more sites than H1s.
 
 <figure>
   <iframe aria-labelledby="fig3-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"></iframe>
@@ -128,23 +128,23 @@ With that being said, here are our results:
 
 A [main landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role) indicates to screen readers where the main content of a web page starts so users can jump right to it. Without this, screen reader users have to manually skip over your navigation every single time they go to a new page within your site. Obviously, this is rather frustrating.
 
-We found only one in every four pages (26.03%) include a main landmark. And surprisingly, 8.06% of pages erroneously contained more than one main landmark—leaving these users guessing which landmark contains the actual main content. So make sure to double check you have exactly one!
+We found only one in every four pages (26.03%) include a main landmark. And surprisingly, 8.06% of pages erroneously contained more than one main landmark, leaving these users guessing which landmark contains the actual main content.
 
 <figure>
   <iframe aria-labelledby="fig4-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"></iframe>
   <div id="fig4-caption" class="visually-hidden">Figure 4. Vertical bar chart titled "Number of main landmarks per page" displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of "main" landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%</div>
-  <figcaption>Figure 4. Number of `main` landmarks per page.</figcaption>
+  <figcaption>Figure 4. Number of <code>main</code> landmarks per page.</figcaption>
 </figure>
 
 ### HTML section elements
 
 Since HTML5 was released in 2008, and made the official standard in 2014, there are many HTML elements to aid computers and screen readers in understanding our page layout and structure.
 
-Elements like [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav), and [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) indicate where specific types of content live and allow users to quickly jump around your page. These are being used pretty widely across the web, with most of them being used on over 50% of pages (`<main>` being the outlier).
+Elements like [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav), and [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) indicate where specific types of content live and allow users to quickly jump around your page. These are being used widely across the web, with most of them being used on over 50% of pages (`<main>` being the outlier).
 
 Others like [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr), and [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) aid readers in understanding a page’s main content. For example, `<article>` says where one article ends and another begins. These elements are not used nearly as much, with each sitting at around 20% usage. Not all of these belong on every web page, so this isn’t necessarily an alarming statistic.
 
-All of these elements are primarily designed for accessibility support and have no visual effect. Which means you can safely replace existing elements with them and suffer no unintended consequences.
+All of these elements are primarily designed for accessibility support and have no visual effect, which means you can safely replace existing elements with them and suffer no unintended consequences.
 
 <figure>
   <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"></iframe>
@@ -173,7 +173,7 @@ If you’d like to see a skip link in action for yourself, you can! Just do a qu
   <figcaption>Figure 7. What a skip link looks like on google.com.</figcaption>
 </figure>
 
-It’s hard to accurately determine what a skip link is when analyzing sites. For this analysis, if we found an anchor link (`href=#heading1`) within the first 3 links on the page, we defined this as a page with a skip link. So, this 14.19% we reported is an upper bound and could be far worse.
+It’s hard to accurately determine what a skip link is when analyzing sites. For this analysis, if we found an anchor link (`href=#heading1`) within the first 3 links on the page, we defined this as a page with a skip link. So 14.19% is a strict upper bound.
 
 ### Shortcuts
 
@@ -183,9 +183,9 @@ Shortcut keys set via the [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1
 
 2. Giving a certain element on the page focus. For example, shifting focus to a certain input on the page, allowing a user to then start typing into it.
 
-Use of [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) was almost absent from our sample, with it only being used on 159 sites out of over 4 million analyzed. The [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attribute was used more frequently, being found on 2.47% of web pages (1.74% on mobile). We believe the higher usage of shortcuts on desktop is due to developers expecting mobile sites to only be accessed via a touch screen and not a keyboard.
+Adoption of [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) was almost absent from our sample, with it only being used on 159 sites out of over 4 million analyzed. The [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) attribute was used more frequently, being found on 2.47% of web pages (1.74% on mobile). We believe the higher usage of shortcuts on desktop is due to developers expecting mobile sites to only be accessed via a touch screen and not a keyboard.
 
-What was especially surprising here is 15.56% of mobile and 13.03% of desktop sites which use shortcut keys assign the same shortcut to multiple different elements. This means browsers have to guess which element should own this shortcut key.
+What is especially surprising here is 15.56% of mobile and 13.03% of desktop sites which use shortcut keys assign the same shortcut to multiple different elements. This means browsers have to guess which element should own this shortcut key.
 
 ### Tables
 
@@ -197,7 +197,7 @@ Depending on the way a particular table is structured, the use of table headers 
 
 To mark up table headers, simply use the [`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th) tag (instead of [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)), or either of the ARIA [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) or [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) roles. Only 24.5% of pages with tables were found to markup their tables with either of these methods. So the three quarters of pages choosing to include tables without headers are creating serious challenges for screen reader users.
 
-Using `<th>` and `<td>` was by far the most commonly used method for marking up table headers. The use of `columnheader` and `rowheader` roles was almost non-existent with only 677 total sites using them (0.058% of the over 4 million pages we analyzed).
+Using `<th>` and `<td>` was by far the most commonly used method for marking up table headers. The use of `columnheader` and `rowheader` roles was almost non-existent with only 677 total sites using them (0.058%).
 
 #### Captions
 
@@ -211,7 +211,7 @@ Despite this, only 4.32% of pages with tables provide captions.
 
 One of the most popular and widely used specifications for accessibility on the web is the [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA) standard. This standard offers a large array of additional HTML attributes to help convey the purpose behind visual elements (i.e., their semantic meaning), and what kinds of actions they’re capable of.
 
-Using ARIA correctly and appropriately can be challenging. For example: of pages making use of ARIA attributes, we found 12.31% have invalid values assigned to their attributes. This is problematic because any mistake in the use of an ARIA attribute has no visual effect on the page. Some of these errors can be detected by using an automated validation tool, but generally they require hands-on use of real assistive software (like a screen reader). This section will examine how ARIA is used on the web, and specifically which parts of the standard are most prevalent.
+Using ARIA correctly and appropriately can be challenging. For example, of pages making use of ARIA attributes, we found 12.31% have invalid values assigned to their attributes. This is problematic because any mistake in the use of an ARIA attribute has no visual effect on the page. Some of these errors can be detected by using an automated validation tool, but generally they require hands-on use of real assistive software (like a screen reader). This section will examine how ARIA is used on the web, and specifically which parts of the standard are most prevalent.
 
 <figure>
   <iframe aria-labelledby="fig8-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"></iframe>
@@ -235,11 +235,11 @@ Looking at the results in Figure 9, we can draw two surprising conclusions:
 
 ##### Updating UI frameworks could be the way forward for accessibility across the web
 
-The top 5 roles, all appearing on 11% of pages or more, are landmark roles. These are used to aid navigation—not to describe the functionality of a widget, such as a combo box. This is a surprising result because the main motivator behind the development of ARIA was to give web developers the capability to describe the functionality of widgets made of generic HTML elements (like a `<div>`).
+The top 5 roles, all appearing on 11% of pages or more, are landmark roles. These are used to aid navigation, not to describe the functionality of a widget, such as a combo box. This is a surprising result because the main motivator behind the development of ARIA was to give web developers the capability to describe the functionality of widgets made of generic HTML elements (like a `<div>`).
 
 We suspect that some of the most popular web UI frameworks include navigation roles in their templates. This would explain the prevalence of landmark attributes. If this theory is correct, updating popular UI frameworks to include more accessibility support may have a huge impact on the accessibility of the web.
 
-Another result pointing towards this conclusion is the fact that more "advanced" but equally important ARIA attributes don't appear to be used at all. Such attributes cannot easily be deployed through a UI framework because they might need to be customized based on the structure and the visual appearance of every site individually. For example, we found that the posinset and setsize attributes were only used on 0.01% of websites. These attributes convey to a screen reader user how many items are in a list or menu and which item is currently selected. So, if a visually impaired user is trying to navigate through a menu, they might hear index announcements like: "Home, 1 of 5", "Products, 2 of 5", "Downloads, 3 of 5", etc.
+Another result pointing towards this conclusion is the fact that more "advanced" but equally important ARIA attributes don't appear to be used at all. Such attributes cannot easily be deployed through a UI framework because they might need to be customized based on the structure and the visual appearance of every site individually. For example, we found that the `posinset` and `setsize` attributes were only used on 0.01% of pages. These attributes convey to a screen reader user how many items are in a list or menu and which item is currently selected. So, if a visually impaired user is trying to navigate through a menu, they might hear index announcements like: "Home, 1 of 5", "Products, 2 of 5", "Downloads, 3 of 5", etc.
 
 ##### Many sites attempt to make dialogs accessible
 
@@ -247,9 +247,9 @@ The relative popularity of the [dialog role](https://developer.mozilla.org/en-US
 
 #### Labels on interactive elements
 
-The most common way that a interacts with a website is through its controls (such as links or buttons to navigate the website). However, many times screen reader users are unable to tell what action a control will perform once activated. Often the reason this confusion occurs is due to the lack of a textual label. For example: a button displaying a left-pointing arrow icon to signify it's the "Back" button, but containing no actual text.
+The most common way that a user interacts with a website is through its controls, such as links or buttons to navigate the website. However, many times screen reader users are unable to tell what action a control will perform once activated. Often the reason this confusion occurs is due to the lack of a textual label. For example, a button displaying a left-pointing arrow icon to signify it's the "Back" button, but containing no actual text.
 
-In our sample, a lot of websites use buttons or links. From those, only around a quarter (24.39%) include textual labels with these controls. If a control is not labeled a screen reader user might read something generic, such as the word "button" instead of a meaningful word like "Search".
+Only about a quarter (24.39%) of pages that use buttons or links include textual labels with these controls. If a control is not labeled, a screen reader user might read something generic, such as the word "button" instead of a meaningful word like "Search".
 
 Buttons and links are almost always included in the tab order and thus have extremely high visibility. Navigating through a website using the tab key is one of the primary ways through which users who use only the keyboard explore your website. So a user is sure to encounter your unlabeled buttons and links if they are moving through your website using the tab key.
 
@@ -259,9 +259,9 @@ Filling out forms is a task many of us do every single day. Whether we’re shop
 
 #### Indicators of required and invalid fields
 
-When we come across a field with a big red asterisk next to it, we know it’s a required field. Or when we hit submit and are informed there were invalid inputs, anything highlighted in a different color needs to be corrected and then resubmitted. However, people with low or no vision cannot rely on these visual cues, which is why the HTML input attributes `required`, `aria-required` and `aria-invalid` are so important. They provide screen readers with the equivalent of red asterisks and red highlighted fields. As a nice bonus, when you inform browsers what fields are required, they’ll [validate parts of your forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) for you. No JavaScript required.
+When we come across a field with a big red asterisk next to it, we know it’s a required field. Or when we hit submit and are informed there were invalid inputs, anything highlighted in a different color needs to be corrected and then resubmitted. However, people with low or no vision cannot rely on these visual cues, which is why the HTML input attributes `required`, `aria-required`, and `aria-invalid` are so important. They provide screen readers with the equivalent of red asterisks and red highlighted fields. As a nice bonus, when you inform browsers what fields are required, they’ll [validate parts of your forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) for you. No JavaScript required.
 
-Of pages using forms: 21.73% use required or aria-required when marking up required fields. Only one in every five sites make use of this. This is a simple step to make your site accessible, and unlocks helpful browser features for all users.
+Of pages using forms, 21.73% use `required` or `aria-required` when marking up required fields. Only one in every five sites make use of this. This is a simple step to make your site accessible, and unlocks helpful browser features for all users.
 
 We also found 3.52% of sites with forms make use of `aria-invalid`. However, since many forms only make use of this field once incorrect information is submitted, we could not ascertain the true percentage of sites using this markup.
 
@@ -278,12 +278,12 @@ This issue is even more pronounced for screen readers because their users may no
 People with disabilities are not the only ones with accessibility needs. For example, anyone who has suffered a temporary wrist injury has experienced the difficulty of tapping small tap targets. Eyesight often diminishes with age, making text written in small fonts challenging to read. Finger dexterity is not the same across age demographics, making tapping interactive controls or swiping through content on mobile websites more difficult for a sizable percentage of users.
 
 Similarly, assistive software is not only geared towards people with disabilities:
-- Drivers would benefit from a screen reading functionality that, while they keep their eyes on the road, reads long pieces of text like news stories aloud.
-- The recent popularity of voice assistance, both on mobile devices and in the home, has demonstrated that controlling a computing device using voice commands is desirable (and essential for many users). Voice commands like these used to only be an accessibility feature but are now turning into a mainstream product.
+- Drivers would benefit from a screen reading feature that, while they keep their eyes on the road, reads long pieces of text like news stories aloud.
+- The recent popularity of voice assistance, both on mobile devices and in the home, has demonstrated that controlling a computing device using voice commands is both desirable and essential for many users. Voice commands like these used to only be an accessibility feature but are now turning into a mainstream product.
 - Captions are enjoyed not only by people who cannot hear a video but also by people who want to watch a video in a loud restaurant or in a library.
 
-Once a website is built, it’s often hard to retrofit accessibility on top of existing site structures and widgets. Accessibility isn’t something that can be easily sprinkled on afterwards, but needs to be part of the design and implementation process. Unfortunately, either through a lack of awareness or easy-to-use testing tools, many developers are not familiar with the needs of all their users and the requirements of the assistive software they use.
+Once a website is built, it’s often hard to retrofit accessibility on top of existing site structures and widgets. Accessibility isn’t something that can be easily sprinkled on afterwards, rather it needs to be part of the design and implementation process. Unfortunately, either through a lack of awareness or easy-to-use testing tools, many developers are not familiar with the needs of all their users and the requirements of the assistive software they use.
 
-While not conclusive, our results indicate that the use of accessibility standards like ARIA, and accessibility best practices (e.g., using alt text) are found on a *sizable, but not substantial,* portion of the web. On the surface this is encouraging, but we suspect many of these positive trends are due to the popularity of certain UI frameworks. On one hand, this is disappointing because web developers cannot simply rely on UI frameworks to inject their sites with accessibility support. On the other hand though, it’s encouraging to see how large of an effect UI frameworks could have on the accessibility of the web.
+While not conclusive, our results indicate that the use of accessibility standards like ARIA and accessibility best practices (e.g., using alt text) are found on a *sizable, but not substantial* portion of the web. On the surface this is encouraging, but we suspect many of these positive trends are due to the popularity of certain UI frameworks. On one hand, this is disappointing because web developers cannot simply rely on UI frameworks to inject their sites with accessibility support. On the other hand though, it’s encouraging to see how large of an effect UI frameworks could have on the accessibility of the web.
 
 The next frontier, in our opinion, is making widgets which are available through UI frameworks more accessible. Since many complex widgets used in the wild (e.g., calendar pickers) are sourced from a UI library, it would be great for these widgets to be accessible out of the box. We hope that when we collect our results next time, the usage of more properly implemented complex ARIA roles is on the rise—signifying more complex widgets have also been made accessible. In addition, we hope to see more accessible media, like images and video, so all users can enjoy the richness of the web.
