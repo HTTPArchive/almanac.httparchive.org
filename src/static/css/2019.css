@@ -216,7 +216,7 @@ header .btn + .language-switcher {
 .main a,
 .main a:visited {
   color: #0b1423;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 h2, h3, h4 {
@@ -229,6 +229,7 @@ p, td, th, code, li {
 
 pre {
   margin: 0;
+  overflow: auto;
 }
 
 hr {
