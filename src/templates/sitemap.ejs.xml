@@ -2,7 +2,7 @@
 <% for (let url of urls ) { %>
     <url>
         <loc>
-            https://almanac.httparchive.org/<%= url.loc %>
+            https://almanac.httparchive.org/<%= url.url %>
         </loc>
         <% if (url.lastmod) { %>
         <lastmod>

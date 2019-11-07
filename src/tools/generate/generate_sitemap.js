@@ -21,8 +21,9 @@ const generate_sitemap = async (sitemap_chapters) => {
 
     const loc = `${language}/${year}/${chapter}`;
     const lastmod = metadata.last_updated;
+    const url = strip_html_extension(loc);
 
-    urls.push({ loc, lastmod });
+    urls.push({ url, lastmod });
   }
 
   let sitemap = await ejs.renderFile(sitemap_template, { urls });
@@ -49,8 +50,9 @@ const get_static_pages = async (sitemap_chapters) => {
     const file = await fs.readFile(`templates/${loc}`, 'utf-8');
     const match = file.match(/"datePublished": "([0-9\-\+\:T]*)"/);
     const lastmod = set_min_date(match[1]);
+    const url = strip_html_extension(loc);
 
-    urls.push({ loc, lastmod });
+    urls.push({ url, lastmod });
   }
 
   return urls;
@@ -81,6 +83,16 @@ const set_min_date = (date) => {
   } else {
     return new Date().toISOString().substr(0, 10);
   }
+};
+
+const strip_html_extension = (url) => {
+  if ( url.substr(url.length - 10) == "index.html" ) {
+    return url.substr(0, url.length - 10);
+  };
+  if ( url.substr(url.length - 5) == ".html" ) {
+    return url.substr(0, url.length - 5);
+  };
+  return url;
 };
 
 module.exports = {
