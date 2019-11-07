@@ -2,8 +2,8 @@ const fs = require('fs-extra');
 const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
-const recursive = require('recursive-readdir');
 
+const { find_files, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_figure_ids } = require('./generate_figure_ids');
 const { generate_sitemap } = require('./generate_sitemap');
@@ -37,17 +37,6 @@ const generate_chapters = async () => {
 
   const sitemap_path = await generate_sitemap(sitemap);
   await size_of(sitemap_path);
-};
-
-const find_files = async () => {
-  const filter = (file, stats) => {
-    const isMd = file && file.endsWith('.md');
-    const isDirectory = stats && stats.isDirectory();
-
-    return !isMd && !isDirectory;
-  };
-
-  return await recursive('content', [filter]);
 };
 
 const parse_file = async (markdown) => {
@@ -86,27 +75,6 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   await fs.outputFile(path, fomatted_html, 'utf8');
   await size_of(path);
 };
-
-const parse_array = (s) => s.substring(1, s.length - 1)
-                            .split(',')
-                            .map((value) => value.trim());
-
-const size_of = async (path) => {
-  let b = (await fs.stat(path)).size;
-
-  let u = 0,
-    s = 1024;
-  while (b >= s || -b >= s) {
-    b /= s;
-    u++;
-  }
-  let size = (u ? b.toFixed(1) + ' ' : b) + ' KMGTPEZY'[u] + 'B';
-
-  console.log(` - Output file size: ${size}`);
-};
-
-const ignorelist = ['.DS_Store'];
-const ignore = (file) => ignorelist.find((f) => f === file);
 
 module.exports = {
   generate_chapters
