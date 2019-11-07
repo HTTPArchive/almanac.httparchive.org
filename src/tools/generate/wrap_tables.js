@@ -9,8 +9,14 @@ const wrap_tables = (html) => {
       const wrapper = dom.window.document.createElement('div');
       wrapper.className = 'table-wrap';
 
-      table.parentNode.insertBefore(wrapper, table);
-      wrapper.appendChild(table);
+      const container = dom.window.document.createElement('div');
+      container.className = 'table-wrap-container';
+
+      table.parentNode.insertBefore(container, table);
+      container.appendChild(table);
+
+      container.parentNode.insertBefore(wrapper, container);
+      wrapper.appendChild(container);
   });
 
   return dom.window.document.querySelector('body').innerHTML;

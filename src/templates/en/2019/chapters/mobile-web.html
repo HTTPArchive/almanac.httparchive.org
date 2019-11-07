@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-07T21:25:05.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-05T18:43:57.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 
 <meta property="og:title" content="{{ self.title() }}" />
@@ -211,26 +211,28 @@
       <p>Let's start with what phone the typical mobile user has. The average Android phone <a href="https://web.archive.org/web/20190921115844/https://www.idc.com/getdoc.jsp?containerId=prUS45115119">is ~$250</a>, and one of the <a href="https://web.archive.org/web/20190812221233/https://deviceatlas.com/blog/most-popular-android-smartphones">most popular phones</a> in that range is a Samsung Galaxy S6. So this is likely the kind of phone they use, which is actually 4x slower than an iPhone 8. This user doesn't have access to a fast 4G connection, but rather a 2G connection (<a href="https://www.gsma.com/r/mobileeconomy/">29%</a> of the time) or 3G connection (<a href="https://www.gsma.com/r/mobileeconomy/">28%</a> of the time). And this is what it all adds up to:</p>
       <figure id="fig-1">
         <div class="table-wrap">
-          <table>
-            <tbody>
-              <tr>
-                <th>Connection type</th>
-                <td><a href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
-              </tr>
-              <tr>
-                <th>Latency</th>
-                <td>300 - 400ms</td>
-              </tr>
-              <tr>
-                <th>Bandwidth</th>
-                <td>0.4 - 1.6Mbps</td>
-              </tr>
-              <tr>
-                <th>Phone</th>
-                <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Connection type</th>
+                  <td><a href="https://www.gsma.com/r/mobileeconomy/">2G or 3G</a></td>
+                </tr>
+                <tr>
+                  <th>Latency</th>
+                  <td>300 - 400ms</td>
+                </tr>
+                <tr>
+                  <th>Bandwidth</th>
+                  <td>0.4 - 1.6Mbps</td>
+                </tr>
+                <tr>
+                  <th>Phone</th>
+                  <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <figcaption>Figure 1. Technical profile of a typical mobile user.</figcaption>
       </figure>
@@ -349,26 +351,28 @@
       <p>When analyzing sites containing an email input, 56.42% use <code>type="email"</code>. Similarly, for phone inputs, <code>type="tel"</code> is used 36.7% of the time. Other new input types have an even lower adoption rate.</p>
       <figure id="fig-7">
         <div class="table-wrap">
-          <table>
-            <tbody>
-              <tr>
-                <th>Type</th>
-                <th>Frequency (pages)</th>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td class="numeric">1,917</td>
-              </tr>
-              <tr>
-                <td>name</td>
-                <td class="numeric">1,348</td>
-              </tr>
-              <tr>
-                <td>textbox</td>
-                <td class="numeric">833</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-wrap-container">
+            <table>
+              <tbody>
+                <tr>
+                  <th>Type</th>
+                  <th>Frequency (pages)</th>
+                </tr>
+                <tr>
+                  <td>phone</td>
+                  <td class="numeric">1,917</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td class="numeric">1,348</td>
+                </tr>
+                <tr>
+                  <td>textbox</td>
+                  <td class="numeric">833</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <figcaption>Figure 7. Most commonly used invalid input types</figcaption>
       </figure>
