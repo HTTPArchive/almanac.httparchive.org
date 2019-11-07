@@ -209,6 +209,7 @@
     },
     "amedina": {
       "name": "Alberto Medina",
+      "bio": "Alberto Medina is a Developer Advocate in the Web Content Ecosystems Team at Google, focusing on advancing the proliferation of quality content on the web via progressive technologies such as Amp, and the use of modern Web APIs. Alberto's work currently has a strong focus on Content Management Systems as he leads an area of Content Ecosystem called CMS Developer Relations.",
       "teams": [
         "brainstormers",
         "authors"
@@ -347,6 +348,7 @@
     },
     "colinbendell": {
       "name": "Colin Bendell",
+      "bio": "Colin is part of the CTO Office at [Cloudinary](https://cloudinar.com/) and co-author of the O'Reilly book [High Performance Images](https://www.oreilly.com/library/view/high-performance-images/9781491925799/). He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting [@colinbendell](https://twitter.com/colinbendell) and at blogging at [https://bendell.ca](https://bendell.ca/).",
       "teams": [
         "brainstormers",
         "authors",
@@ -451,6 +453,7 @@
     },
     "housseindjirdeh": {
       "name": "Houssein Djirdeh",
+      "bio": "Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at [@hdjirdeh](https://twitter.com/hdjirdeh) and blogs at [https://houssein.me/](https://houssein.me/).",
       "teams": [
         "brainstormers",
         "authors"
@@ -746,6 +749,7 @@
     },
     "ernee": {
       "name": "Renee Johnson",
+      "bio": "Renee Johnson is a web and product consultant, a WordPress enthusiast, and frequent WordCamp organizer and volunteer. She's currently working with the Content Management System Developer Relations team at Google as a Product Support Specialist.",
       "teams": [
         "authors"
       ],
