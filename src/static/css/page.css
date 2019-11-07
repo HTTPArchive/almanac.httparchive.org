@@ -202,7 +202,7 @@
   padding:50px 36px;
   border:1px solid #1A2B490A;
   margin: 20px 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 #chapter-navigation>a{
