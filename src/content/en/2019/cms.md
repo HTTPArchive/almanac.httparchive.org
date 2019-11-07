@@ -6,7 +6,7 @@ description: CMS chapter of the 2019 Web Almanac covering adoption and compositi
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-07T21:26:11.000Z 
+last_updated: 2019-11-07T22:02:35.000Z 
 ---
 
 ## Introduction
