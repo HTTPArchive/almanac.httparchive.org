@@ -9,14 +9,17 @@
 
 <meta property="og:title" content="{{ self.title() }}">
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}">
-<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
+<meta property="og:image:height" content="984">
+<meta property="og:image:width" content="1200">
 <meta property="og:type" content="article">
 <meta property="og:description" content="{{ self.description() }}">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@HTTPArchive">
 <meta name="twitter:title" content="{{ self.title() }}">
-<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
+<meta name="twitter:image:alt" content="{{ year }} Web Almanac methodology" />
 <meta name="twitter:description" content="{{ self.description() }}">
 
 <script type="application/ld+json">
@@ -30,11 +33,13 @@
 	  "headline": "{{ self.title() }}",
 	  "image": {
 	  	  "@type": "ImageObject",
-	  	  "url": "https://almanac.httparchive.org/static/images/methodology-characters.png"
+	  	  "url": "https://almanac.httparchive.org/static/images/methodology-banner.png",
+	  	  "height": 984,
+	  	  "width": 1200
 	  },
 	  "publisher": {
 	  	  "@type": "Organization",
-	  	  "name": "HTTPArchive",
+	  	  "name": "HTTP Archive",
 	  	  "logo": {
 	  	      "@type": "ImageObject",
 	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
@@ -135,6 +140,7 @@
   justify-content: start;
   flex-wrap: wrap;
   margin: 0 -15px;
+  justify-content: center;
 }
 
 .contributor-grid:not([data-rendered='true']) .contributor {
@@ -167,7 +173,7 @@
   border-radius: 15px;
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
   padding: 24px 34px;
-  width: 250px;
+  width: 230px;
   margin: 15px;
 }
 
@@ -187,7 +193,7 @@
 .contributor-name {
   text-align: center;
   font-style: italic;
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 10px;
 }
 

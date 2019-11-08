@@ -1,6 +1,6 @@
 import config as config_util
 from csp import csp
-from flask import Flask, redirect, render_template as flask_render_template, request, url_for
+from flask import Flask, redirect, render_template as flask_render_template, request, send_from_directory, url_for
 from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
@@ -81,6 +81,15 @@ def methodology(lang, year):
     return render_template('%s/%s/methodology.html' % (lang, year))
 
 
+@app.route('/sitemap.xml')
+@validate
+def sitemap():
+    xml = render_template('sitemap.xml')
+    resp = app.make_response(xml)
+    resp.mimetype = "text/xml"
+    return resp
+
+
 @app.route('/<lang>/<year>/<chapter>')
 @validate
 def chapter(lang, year, chapter):
@@ -108,6 +117,11 @@ def get_chapter_nextprev(config, chapter_slug):
             break
 
     return (prev_chapter, next_chapter)
+
+
+@app.route('/robots.txt')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 @app.errorhandler(400)
