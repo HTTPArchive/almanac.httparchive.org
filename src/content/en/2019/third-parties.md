@@ -55,11 +55,17 @@ This chapter divides third-party providers into one of these broad categories. A
 
 ## Data
 
+<figure>
+  <div class="big-number">93.59%</div>
+  <figcaption>Figure 1. Percentage of desktop pages that include at least one third party resource.</figcaption>
+</figure>
+
 Third-party code is everywhere. 93% of pages include at least one third-party resource, 76% of pages issue a request to an analytics domain, the median page requests content from at least 9 _unique_ third-party domains that represent 35% of their total network activity, and the most active 10% of pages issue a whopping 175 third-party requests or more. It’s not a stretch to say that third parties are an integral part of the web.
 
-```<insert stylized value of metric 05_01>```
-
-```<insert stylized value of metric 05_02>```
+<figure>
+  <div class="big-number">55.63%</div>
+  <figcaption>Figure 2. Percentage of desktop pages that include at least one ad resource.</figcaption>
+</figure>
 
 ### Categories
 
@@ -67,23 +73,54 @@ If the ubiquity of third-party content is unsurprising, perhaps more interesting
 
 While advertising might be the most user-visible example of third-party presence on the web, analytics providers are the most common third-party category with 76% of sites including at least one analytics request. CDNs at 63%, ads at 57%, and developer utilities like Sentry, Stripe, and Google Maps SDK at 56% follow up as a close second, third, and fourth for appearing on the most web properties. The popularity of these categories forms the foundation of our web usage patterns identified later in the chapter.
 
-```<insert graphic of metric 05_11>```
-
 ### Providers
 
 A relatively small set of providers dominate the third-party landscape, the top 100 domains account for 30% of network requests across the web. Powerhouses like Google, Facebook, and YouTube make the headlines here with full percentage points of share each, but smaller entities like Wix and Shopify command a substantial portion of third-party popularity as well.
 
 While much could be said about every individual provider’s popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as [third-party-web](https://thirdpartyweb.today).
 
-```<insert table of metric 05_06>```
+<figure markdown>
+Rank | Third party domain | Percent of requests
+-- | -- | --
+1 | `fonts.gstatic.com` | 2.53%
+2 | `www.facebook.com` | 2.38%
+3 | `www.google-analytics.com` | 1.71%
+4 | `www.google.com` | 1.17%
+5 | `fonts.googleapis.com` | 1.05%
+6 | `www.youtube.com` | 0.99%
+7 | `connect.facebook.net` | 0.97%
+8 | `googleads.g.doubleclick.net` | 0.93%
+9 | `cdn.shopify.com` | 0.76%
+10 | `maps.googleapis.com` | 0.75%
 
-```<insert table of metric 05_09>```
+<figcaption>Figure 3. Top 10 most popular third party domains.</figcaption>
+</figure>
+
+<figure>
+Rank | Third party URL | Percent of requests
+-- | -- | --
+1 | `https://www.google-analytics.com/analytics.js` | 0.64%
+2 | `https://connect.facebook.net/en_US/fbevents.js` | 0.20%
+3 | `https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.8.51` | 0.19%
+4 | `https://staticxx.facebook.com/connect/xd_arbiter.php?version=44` | 0.16%
+5 | `https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2` | 0.13%
+6 | `https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101` | 0.12%
+7 | `https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.11%
+8 | `https://googleads.g.doubleclick.net/pagead/id` | 0.11%
+9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
+10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
+
+<figcaption>Figure 4. Top 10 most popular third party requests.</figcaption>
 
 ### Resource Types
 
 The resource type breakdown of third-party content also lends insight into how third-party code is used across the web. While first-party requests are 56% images, 23% script, 14% CSS, and only 4% HTML, third-party requests skew more heavily toward script and HTML at 32% script, 34% images, 12% HTML, and only 6% CSS. While this suggests that third-party code is less frequently used to aid the design and instead used more frequently to facilitate or observe interactions than first-party code, a breakdown of resource types by party status tells a more nuanced story. While CSS and images are dominantly first-party at 70% and 64% respectively, fonts are largely served by third-party providers with only 28% being served from first-party sources. This concept of usage patterns is explored in more depth later in this chapter.
 
-```<insert graphic of metric 05_03>```
+<figure>
+  <iframe aria-labelledby="fig5-caption" width="600" height="387" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive"></iframe>
+  <div id="fig5-caption" class="visually-hidden">Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.</div>
+  <figcaption>Figure 5. Percent of third party requests by category and content type.</figcaption>
+</figure>
 
 Several other amusing factoids jump out from this data. Tracking pixels (image requests to analytics domains) make up 1.6% of all network requests, six times as many video requests are to social networks like Facebook and Twitter than dedicated video providers like YouTube and Vimeo (presumably because the default YouTube embed consists of HTML and a preview thumbnail but not an autoplaying video), and there are still more requests for first-party images than all scripts combined.
 
@@ -91,7 +128,7 @@ Several other amusing factoids jump out from this data. Tracking pixels (image r
 
 49% of all requests are third-party. At 51%, first-party can still narrowly hold on to the crown in 2019 of comprising the majority of the web resources. Given that just under half of all the requests are third-party yet a small set of pages do not include any at all, the most active third-party users must be doing quite a bit more than their fair share. Indeed, at the 75th, 90th, and 99th percentiles we see nearly all of the page being comprised of third-party content. In fact, for some sites heavily relying on distributed WYSIWYG platforms like Wix and SquareSpace, the root document might be the sole first-party request!
 
-```<insert graphic of metric 05_11>```
+<!-- insert graphic of metric 05_11 -->
 
 The number of requests issued by each third-party provider also varies considerably by category. While analytics are the most widespread third-party category across websites, they account for only 7% of all third-party network requests. Ads, on the other hand, are found on nearly 20% fewer sites yet make up 25% of all third-party network requests. Their outsized resource impact compared to their popularity will be a theme we continue to uncover in the remaining data.
 
