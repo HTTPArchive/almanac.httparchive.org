@@ -245,7 +245,7 @@ What do you name your stylesheets? Have you been consistent throughout your care
 
 ```<bar chart of 02_020>```
 
-Look at all those creative file names 😂: style, styles, main, default, all.. One stood out though, do you see it? `BfWyFJ2Rl5s.css` takes the #9 and the #10 spot for most popular. We went researching it a bit and our best guess is that it's related to Facebook like buttons. Do you know what that file is? Send Una or Adam an email, we'd love to hear the story. 
+Look at all those creative file names 😂: style, styles, main, default, all.  One stood out though, do you see it? `BfWyFJ2Rl5s.css` takes the #9 and the #10 spot for most popular. We went researching it a bit and our best guess is that it's related to Facebook like buttons. Do you know what that file is? Send Una or Adam an email, because we'd love to hear the story. 
 
 ### Stylesheet Size
 How big are these stylesheets? Is our CSS size something to worry about? Judging by this data, our CSS is not a main offender for page bloat.
@@ -253,39 +253,40 @@ How big are these stylesheets? Is our CSS size something to worry about? Judging
 ```<bar chart of 02_24>```
 
 ### Libraries
-It's common, popular, convenient and powerful to reach for a CSS library to kick start a new project. While you may not be such a dev to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did for us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.
+It's common, popular, convenient and powerful to reach for a CSS library to kick start a new project. While you may not be such a dev to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.
 
 ```<bar chart of 02_010e>```
 
-This chart makes me think that Bootstrap is a strong skill to have for getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only, the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites *are not* using a CSS framework. Very interesting no!?
+This chart makes me think that Bootstrap is a strong skill to have for getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only: the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites *are not* using a CSS framework. Very interesting, no!?
 
 ### Reset Utilities
-CSS reset utilities intend to normalize or create a baseline for native web elements. In case you didn't know, each browser serves its own stylesheet for all HTML elements, and each browser gets to make their own unique decisions about how those elements look or behave. Reset Utilities have looked at these files, found their common ground (or not), and iron out any differences so you as a developer can style confidently in one browser and have reasonable confidence it will look the same in another.
-So let's take a peek at how many sites are using one! The reason they exist seems quite reasonable, so how many folks agree with their tactics and use them in their sites?
+CSS reset utilities intend to normalize or create a baseline for native web elements. In case you didn't know, each browser serves its own stylesheet for all HTML elements, and each browser gets to make their own unique decisions about how those elements look or behave. Reset utilities have looked at these files, found their common ground (or not), and ironed out any differences so you as a developer can style in one browser and have reasonable confidence it will look the same in another.
+
+So let's take a peek at how many sites are using one! Their existence seems quite reasonable, so how many folks agree with their tactics and use them in their sites?
 
 ```<bar chart of 02_011e>```
 
 Turns out that about 1/3 of the web is using [normalize.css](https://necolas.github.io/normalize.css), which could be considered a more gentle approach to the task then a reset is. We looked a little deeper, and it turns out that Bootstrap.css includes normalize.css, which likely accounts for a massive amount of its usage. It's worth noting as well that normalize.css has more adoption than Bootstrap, so there are plenty of folks using it on its own. 
 
 ### @supports & @import
-CSS @supports is a way for the browser to check whether a particular property is supported or not and pass that support scenario to CSS for developer handling.
+CSS `@supports` is a way for the browser to check whether a particular property-value combination is parsed as valid, and then apply styles if the check returns as true.
 
 ```<bar chart of 02_02f>```
 
 **Figure 2:** @supports usage across mobile and desktop
 
-Considering @supports was implemented across most browsers in 2013, it's not too surprising to see a high amount of usage and adoption. We're impressed at the mindfulness of developers here. This is considerate coding! 29% of all websites are checking for some display related support before using it. 👍
+Considering `@supports` was implemented across most browsers in 2013, it's not too surprising to see a high amount of usage and adoption. We're impressed at the mindfulness of developers here -- this is considerate coding! 29% of all websites are checking for some display related support before using it. 👍
 
-An interesting follow up to this is, that there's more usage of @supports then @imports!
+An interesting follow up to this is, that there's more usage of `@supports` than `@imports`!
 
 ```<bar chart of 02_02e>```
 
-We did not expect that! `@import` has been in browsers since ~2007.
+We did not expect that! `@import` has been in browsers since ~1994.
 
 ## Conclusion
-There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made this summarizing very fun, and left us with lots of clues and trails to investigate if we wanted to hunt down the reasons "why" some of the results were the way they were. 
+There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made the summarizing very fun, and left us with lots of clues and trails to investigate if we want to hunt down the reasons *why* some of the results are the way they are. 
 
 Which results did you find the most alarming?
 Which results make you head to your codebase for a quick query?
 
-We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to @una or @argyleink with your queries, questions and assertions. We'd love to hear about them. 
+We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to [@una](https://twitter.com/una) or [@argyleink](https://twitter.com/argyleink) with your queries, questions and assertions. We'd love to hear about them. 
