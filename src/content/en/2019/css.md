@@ -52,13 +52,13 @@ $ of sites using given units
 
 ### Length and Sizing
 
-Unsurprisingly, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, etc). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font-size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, but it does allow for adjustment of all spacing evenly.
+Unsurprisingly, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, and so on). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font-size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, and thus allows for adjustment of all spacing evenly.
 
-When it comes to units based on physical space, the `q` unit (1 quarter of a millimeter, or 1/40 of 1cm) is the most commonly used by far, with 22.46% on mobile and 15.13% on desktop. We knew about these types of units (`mm`, `in`, `cm`, etc.), specifically useful for print stylesheets, but didn't even know the `q` unit existed until this survey! Did you?
+When it comes to units based on physical space, the `q` unit (1 quarter of a millimeter, or 1/40 of 1cm) is the most commonly used by far, with 22.46% on mobile and 15.13% on desktop. We knew about these types of units (e.q., `mm`, `in`, `cm`), which are specifically useful for print stylesheets, but didn't even know the `q` unit existed until this survey! Did you?
 
 ### Viewport-Based Units
 
-We saw relatively larger differences to unit types when it comes to mobile and desktop usage for viewport-based units. 36.8% of mobile sites use `vh` (viewport height), while only 31% of desktop sites do. We also found that `vh` is more common than `vw` (viewport width) by about 11%. `vmin` (viewport minimum) is more popular than `vmax` (viewport maximum), with  about 8% usage on mobile, while `vmax` is only used by 1% of websites.
+We saw larger differences in unit types when it comes to mobile and desktop usage for viewport-based units. 36.8% of mobile sites use `vh` (viewport height), while only 31% of desktop sites do. We also found that `vh` is more common than `vw` (viewport width) by about 11%. `vmin` (viewport minimum) is more popular than `vmax` (viewport maximum), with about 8% usage of `vmin` on mobile while `vmax` is only used by 1% of websites.
 
 
 ### Custom Properties
