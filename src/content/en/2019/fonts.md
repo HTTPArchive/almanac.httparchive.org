@@ -129,16 +129,6 @@ It does seem quite interesting that web font requests seem to be pretty steady a
 
 That said there are marginally more requests for fonts made on mobile devices! My hunch here is that fewer typefaces are available on mobile devices, which in turn means fewer `local()` hits in Google Fonts CSS, falling back to network requests for these.
 
-(Graph Title: @font-face Blocks Per Page; Source: 06.09b)
-
-- [ ] **TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO** this section might be irrelevant depending on https://github.com/HTTPArchive/almanac.httparchive.org/pull/192#discussion_r343967930 If they are unique @font-face blocks per page why do the distrubtions seem lower than the one for requests?
-
-These results were a little surprising. I didn’t expect this to line up so well with the number of web font requests per page. Namely I didn’t expect so many unique font families! To me this suggests a few things might be happening here:
-
-- Authors are mapping web fonts that share the same typeface to unique font-family names. My intuition seems to think this is unlikely.
-- Authors are only using one web font from each font-family (this will be more common as variable font usage increases).
-- I’ve seen some foundries (typography.com) use multiple font-family names as a copy-prevention mechanism for web fonts but I don’t think this is very common.
-
 ### You Don’t Want To Win This Award
 
 The award for the page that requests the most web fonts goes to a site that made 718 web font requests.
