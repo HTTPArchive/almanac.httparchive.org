@@ -12,7 +12,6 @@
 
 {% set metadata = {"part_number":"IV","chapter_number":16,"title":"Caching","description":"Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-07T21:46:11.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
-
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
 <meta property="og:image" content="https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
@@ -657,5 +656,4 @@
     </nav>
   </section>
 </article>
-
 {% endblock %}

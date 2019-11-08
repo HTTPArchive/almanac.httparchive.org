@@ -122,6 +122,7 @@
   </nav>
 
   <div class="content">
+    <div class="subtitle"></div>
     <h1 class="title">Methodology</h1>
 
     <section>
@@ -679,11 +680,10 @@
 <script nonce="{{ csp_nonce() }}">
 
 var indexBox = document.querySelector('.index-box');
-var indexBoxTitle = document.querySelector('.index-box h2.header-mobile');
+var indexBoxTitle = document.querySelector('.index .header');
 
 indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');
 });
-
 </script>
 {% endblock %}
