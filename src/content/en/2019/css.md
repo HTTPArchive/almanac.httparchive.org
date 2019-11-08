@@ -195,7 +195,7 @@ CSS keyframe animations are a great solution for your more complex animations or
 ```<bar chart of 02_42b-f>```
 
 ## Media Queries
-Media queries let CSS hook into various system level variables in order to adapt appropriately for the visiting user. Some of these queries could handle print styles, projector screen styles, and viewport/screensize. For a long time, media queries were primarily leveraged for their viewport knowledge. Designers and developers could adapt their layouts based on small screens, large screens, etc. Later, the web started bringing more and more capabilities and queries, insomuch media queries now account for accessibility features on top of viewport features. 
+Media queries let CSS hook into various system-level variables in order to adapt appropriately for the visiting user. Some of these queries could handle print styles, projector screen styles, and viewport/screen size. For a long time, media queries were primarily leveraged for their viewport knowledge. Designers and developers could adapt their layouts based on small screens, large screens, an so forth. Later, the web started bringing more and more capabilities and queries, meaning media queries can now manage accessibility features on top of viewport features. 
 
 ### Number of Media Queries Per Page
 A good place to start with Media Queries, is just about how many are used per page? How many different moments or contexts does the average page feel they want to respond to?
@@ -203,33 +203,33 @@ A good place to start with Media Queries, is just about how many are used per pa
 ```<bar chart of 02_39>```
 
 ### Popular Media Query Breakpoint Sizes
-For viewport media queries, any type of CSS unit can be passed into the query expression for evaluation. Early days, folks would pass `em`'s and `px`'s into the query, but more units were added over time, making us very curious about what types of sizes were commonly found across the web. We assume most media queries will follow popular device sizes, but instead of assuming, we asked for a query!
+For viewport media queries, any type of CSS unit can be passed into the query expression for evaluation. In earlier days, folks would pass `em`'s and `px`'s into the query, but more units were added over time, making us very curious about what types of sizes were commonly found across the web. We assume most media queries will follow popular device sizes, but instead of assuming, we asked for a query!
 
 ```<bar chart of 02_015e>```
 
-The chart shows that part of our assumptions were correct, there's certainly a high amount of phone specific sizes in there, but there's also some that aren't. It's interesting also how it's very pixel dominant, with a few trickling entries using `em`'s. Pretty interesting! 
+The chart shows that part of our assumptions were correct -- there's certainly a high amount of phone specific sizes in there, but there's also some that aren't. It's interesting also how it's very pixel dominant, with a few trickling entries using `em`'s.
 
 ### Portrait vs Landscape Usage
-The most popular query value from the popular breakpoint sizes looks to be `768px`, which made us curious. Was this value primarily used to switch to a portrait layout, since it could be based on an assumption that `768px` represents the typical mobile portrait viewport. So we ran a follow up query to see the popularity of using the portrait and landscape:
+The most popular query value from the popular breakpoint sizes looks to be `768px`, which made us curious. Was this value primarily used to switch to a portrait layout, since it could be based on an assumption that `768px` represents the typical mobile portrait viewport? So we ran a follow up query to see the popularity of using the portrait and landscape modes:
 
 ```<bar chart of 02_015bf-g>```
 
-Interestingly, `portrait` isn't used very much, `landscape` is used so much more. We can only assume that `768px` has been reliable enough as the portrait layout case that it's reached for much less. We also assume that folks on a desktop computer, testing their work, can't trigger portrait to see their mobile layout as easily as they can just squishing the browser. Hard to tell, but the data is fascinating.  
+Interestingly, `portrait` isn't used very much, whereas `landscape` is used much more. We can only assume that `768px` has been reliable enough as the portrait layout case that it's reached for much less. We also assume that folks on a desktop computer, testing their work, can't trigger portrait to see their mobile layout as easily as they can just squish the browser. Hard to tell, but the data is fascinating.  
 
 ### Most Popular Unit Types
-In the width and height media queries we've seen so far, pixels looks like the dominant type of choice for developers looking to adapt their UI to viewports. We wanted to exclusively query this though, and really take a look at the types of units folks use. Here's what was discovered.
+In the width and height media queries we've seen so far, pixels look like the dominant unit of choice for developers looking to adapt their UI to viewports. We wanted to exclusively query this though, and really take a look at the types of units folks use. Here's what was discovered.
 
 ```<bar chart of 02_017f-h>```
 
 ### min-width vs max-width
-How about when folks write a media query, are they typically checking for a viewport that's over or under a specific range, OR both, checking if it's between a range of sizes. Let's ask the web!
+Wen folks write a media query, are they typically checking for a viewport that's over or under a specific range, OR both, checking if it's between a range of sizes? Let's ask the web!
 
 ```<bar chart of 02_016f-h>```
 
-No clear winners here, max and min are nearly equally used. 
+No clear winners here; max- and min- are nearly equally used. 
 
 ### Print & Speech
-Websites feel like digital paper, right? As users, it's generally known that you can just hit print from your browser and turn that digital content into physical content. A website isn't required to change itself for that use case, but it can if it wants to! Lesser known is the ability to adjust your website in the use case of it being read by a tool or robot. So just how often are these features taken advantage of?!
+Websites feel like digital paper, right? As users, it's generally known that you can just hit print from your browser and turn that digital content into physical content. A website isn't required to change itself for that use case, but it can if it wants to! Lesser known is the ability to adjust your website in the use case of it being read by a tool or robot. So just how often are these features taken advantage of?
 
 ```<bar chart of 02_018h-j>```
 
