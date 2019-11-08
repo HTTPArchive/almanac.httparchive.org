@@ -36,7 +36,7 @@ Top named colors
 Language is interestingly inferred via color as well. There are more people using the American-style "gray" than the British-style "grey" when writing code on the web. Almost every instance of [gray colors](https://www.rapidtables.com/web/color/gray-color.html) (gray, lightgray, darkgray, slategray, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why silver is ranked higher than grey with an "e" in the charts!
 
 ### Color Count
-We ran a fun query to see how many different font colors are used across the web. So this isn't total number of unique colors, rather it's how many different colors just for text. The numbers in this chart are quite high, and from experience, we know that without CSS variables, spacing, sizes and colors can quickly get away from you and fragment into lots of tiny values across your styles. These numbers reflect a difficulty of style management, and we hope this helps create some perspective for you to bring back to your teams or projects. How can you reduce this number into a manageable and reasonable amount?
+We ran a fun query to see how many different font colors are used across the web. So this isn't total number of unique colors; rather, it's how many different colors are used just for text. The numbers in this chart are quite high, and from experience, we know that without CSS variables, spacing, sizes and colors can quickly get away from you and fragment into lots of tiny values across your styles. These numbers reflect a difficulty of style management, and we hope this helps create some perspective for you to bring back to your teams or projects. How can you reduce this number into a manageable and reasonable amount?
 ```<bar chart of 02_32>```
 
 ### Color Duplication
@@ -98,14 +98,14 @@ We thought it would be fun to query all webpages to see an average number of cla
 ## Layout
 
 ### Flexbox
-Flexbox is a container style that directs and aligns it's children, aka it helps with layout in a constraint based way. It had a quite rocky beginning on the web, as it's spec went through 2-3 different quite drastic changes from 2010-2013. Fortunately, it settled and was implemented across all browsers by 2014. Given that history, it had a slow adoption rate, but it's been a few years since then! It's quite popular now, has many articles about it and how to leverage it, but it's new in comparison to other layout tactics.
+Flexbox is a container style that directs and aligns its children, aka it helps with layout in a constraint based way. It had a quite rocky beginning on the web, as its spec went through 2-3 different quite drastic changes from 2010-2013. Fortunately, it settled and was implemented across all browsers by 2014. Given that history, it had a slow adoption rate, but it's been a few years since then! It's quite popular now, has many articles about it and how to leverage it, but it's new in comparison to other layout tactics.
 
 ```<pie chart of 02_013c>```
 
-Quite the success story shown here, as nearly 50% of the web has flexbox usage in it's stylesheets.
+Quite the success story shown here, as nearly 50% of the web has flexbox usage in its stylesheets.
 
 ### Grid
-Like flexbox, grid too went through a few spec alternations early on in it's lifespan. Microsoft had Grid in it's first versions of Windows 8, as the primary layout engine for it's horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until it's final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to it's power and capabilities.
+Like flexbox, grid too went through a few spec alternations early on in its lifespan. Microsoft had Grid in the first versions of Windows 8, as the primary layout engine for its horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until its final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to its power and capabilities.
 
 ```<pie chart of 02_014c>```
 
@@ -171,7 +171,7 @@ Upon further investigation, [FontAwesome](https://fontawesome.com)'s stylesheet 
 ```<pie chart of 02_03d>```
 
 ### Blend Modes
-Blend Modes are similar to filters in the way they are a post processing effect that's done against a flat version of it's target elements, but is unique in that it's concerned with pixel convergence. Said another way, blend modes are how 2 pixels _should_ impact each other when they overlap. Depending on which element is on the top or the bottom, will effect the way the blend mode manipulates the pixels. There are 16 blend modes, let's see which ones are the most popular.
+Blend Modes are similar to filters in the way they are a post processing effect that's done against a flat version of its target elements, but is unique in that it's concerned with pixel convergence. Said another way, blend modes are how 2 pixels _should_ impact each other when they overlap. Depending on which element is on the top or the bottom, will effect the way the blend mode manipulates the pixels. There are 16 blend modes, let's see which ones are the most popular.
 
 TODO: chart is pending resolution of [this request](https://docs.google.com/a/google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/edit?disco=AAAADjuwTws)
 ```<bar chart of 02_04be>```
@@ -229,7 +229,7 @@ How about when folks write a media query, are they typically checking for a view
 No clear winners here, max and min are nearly equally used. 
 
 ### Print & Speech
-Websites feel like digital paper right, as user's it's generally known that you can just hit print from your browser and turn that digital content into physical content. A website isn't required to change itself for that use case, but it can if it wants to! Lesser known is the ability to adjust your website in the use case of it being read by a tool or robot. So just how often are these features taken advantage of?!
+Websites feel like digital paper, right? As users, it's generally known that you can just hit print from your browser and turn that digital content into physical content. A website isn't required to change itself for that use case, but it can if it wants to! Lesser known is the ability to adjust your website in the use case of it being read by a tool or robot. So just how often are these features taken advantage of?!
 
 ```<bar chart of 02_018h-j>```
 
@@ -260,12 +260,12 @@ It's common, popular, convenient and powerful to reach for a CSS library to kick
 This chart makes me think that Bootstrap is a strong skill to have for getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only, the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites *are not* using a CSS framework. Very interesting no!?
 
 ### Reset Utilities
-CSS reset utilities intend to normalize or create a baseline for native web elements. In case you didn't know, each browser serves it's own stylesheet for all HTML elements, and each browser gets to make their own unique decisions about how those elements look or behave. Reset Utilities have looked at these files, found their common ground (or not), and iron out any differences so you as a developer can style confidently in one browser and have reasonable confidence it will look the same in another.
+CSS reset utilities intend to normalize or create a baseline for native web elements. In case you didn't know, each browser serves its own stylesheet for all HTML elements, and each browser gets to make their own unique decisions about how those elements look or behave. Reset Utilities have looked at these files, found their common ground (or not), and iron out any differences so you as a developer can style confidently in one browser and have reasonable confidence it will look the same in another.
 So let's take a peek at how many sites are using one! The reason they exist seems quite reasonable, so how many folks agree with their tactics and use them in their sites?
 
 ```<bar chart of 02_011e>```
 
-Turns out that about 1/3 of the web is using [normalize.css](https://necolas.github.io/normalize.css), which could be considered a more gentle approach to the task then a reset is. We looked a little deeper, and it turns out that Bootstrap.css includes normalize.css, which likely accounts for a massive amount of it's usage. It's worth noting as well that normalize.css has more adoption than Bootstrap, so there are plenty of folks using it on it's own. 
+Turns out that about 1/3 of the web is using [normalize.css](https://necolas.github.io/normalize.css), which could be considered a more gentle approach to the task then a reset is. We looked a little deeper, and it turns out that Bootstrap.css includes normalize.css, which likely accounts for a massive amount of its usage. It's worth noting as well that normalize.css has more adoption than Bootstrap, so there are plenty of folks using it on its own. 
 
 ### @supports & @import
 CSS @supports is a way for the browser to check whether a particular property is supported or not and pass that support scenario to CSS for developer handling.
