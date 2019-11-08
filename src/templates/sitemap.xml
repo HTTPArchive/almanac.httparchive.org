@@ -57,7 +57,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/caching
+            https://almanac.httparchive.org/en/2019/compression
         </loc>
         
         <lastmod>
@@ -68,18 +68,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/cms
-        </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 22:02:00 GMT-0800 (PST)
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/compression
+            https://almanac.httparchive.org/en/2019/caching
         </loc>
         
         <lastmod>
@@ -102,6 +91,17 @@
         
         <lastmod>
             Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/cms
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 22:02:00 GMT-0800 (PST)
         </lastmod>
         
     </url>
@@ -181,7 +181,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/performance
+            https://almanac.httparchive.org/en/2019/pwa
         </loc>
         
         <lastmod>
@@ -192,7 +192,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/pwa
+            https://almanac.httparchive.org/en/2019/performance
         </loc>
         
         <lastmod>
@@ -214,7 +214,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/third-parties
+            https://almanac.httparchive.org/en/2019/seo
         </loc>
         
         <lastmod>
@@ -225,7 +225,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/seo
+            https://almanac.httparchive.org/en/2019/third-parties
         </loc>
         
         <lastmod>
