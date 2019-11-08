@@ -124,6 +124,7 @@
   list-style: none;
 }
 .content ul li::before {
+  position: absolute;
   content: "•";
   font-size: 16px;
   color: #a9cbbb;
