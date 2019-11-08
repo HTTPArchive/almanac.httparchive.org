@@ -154,7 +154,7 @@ application, relying on open-source packages cam make feature development easier
 
 ```<insert graphics of metric 01_08>```
 
-[jQuery](https://jquery.com/), the most widely used JavaScript library ever created, is used in
+[jQuery](https://jquery.com/), the most popular JavaScript library ever created, is used in
 **85.03%** of desktop pages and **83.46%** of mobile pages. The advent of many Browser APIs and
 methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and
 [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector),
@@ -312,7 +312,7 @@ to measure feature usage.
 In many build systems, JavaScript files undergo minification to minimize its size and transpilation
 for newer language features that are not yet supported in many browsers. Moreover, language
 supersets like [TypeScript](https://www.typescriptlang.org/) compile to an output that can look
-extremely different from the original source code. For all these reasons, the final code served to
+noticeably different from the original source code. For all these reasons, the final code served to
 the browser can unreadable and hard to decipher.
 
 A **source map** is an additional file accompanying a JavaScript file that allows a browser to map
