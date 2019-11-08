@@ -46,6 +46,17 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/accessibility
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/caching
         </loc>
         
@@ -57,11 +68,11 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/accessibility
+            https://almanac.httparchive.org/en/2019/cms
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 22:02:00 GMT-0800 (PST)
         </lastmod>
         
     </url>
@@ -97,18 +108,18 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/cms
+            https://almanac.httparchive.org/en/2019/fonts
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 22:02:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
         </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/fonts
+            https://almanac.httparchive.org/en/2019/http2
         </loc>
         
         <lastmod>
@@ -126,7 +137,18 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/http2
+            https://almanac.httparchive.org/en/2019/media
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/markup
         </loc>
         
         <lastmod>
@@ -148,29 +170,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/media
-        </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/page-weight
-        </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/markup
         </loc>
         
         <lastmod>

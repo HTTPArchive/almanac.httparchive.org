@@ -36,7 +36,9 @@ There are many cases in which website visitors may not be able to see a website 
 To allow your users to be able to read your website under these conditions, be sure that your text has sufficient color contrast with its background.
 
 <figure>
-	<img alt="Figure 1. Four colored boxes of orange and gray shades with white text overlayed inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in grayscale. Courtesy of LookZook." src="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
+	<a href="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
+		<img alt="Figure 1. Four colored boxes of orange and gray shades with white text overlayed inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in grayscale. Courtesy of LookZook." src="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
+	</a>
 	<figcaption>Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
@@ -173,7 +175,9 @@ A [skip link](https://webaim.org/techniques/skipnav/) is a link placed at the to
 If you’d like to see a skip link in action for yourself, you can! Just do a quick Google search and hit "tab" as soon as you land on the search result pages. You’ll be greeted with a previously hidden link just like the one in Figure 7.
 
 <figure>
-	<img alt="Figure 7. Screenshot of Google search results page for search 'http archive'. The visible 'Skip to main content' link is surrounded by a blue focus highlight and a yellow overlayed box with a red arrow pointing to the skip link reads 'A skip link on google.com'." src="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png">
+	<a href="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png">
+		<img alt="Figure 7. Screenshot of Google search results page for search 'http archive'. The visible 'Skip to main content' link is surrounded by a blue focus highlight and a yellow overlayed box with a red arrow pointing to the skip link reads 'A skip link on google.com'." src="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png">
+	</a>
 	<figcaption>Figure 7. What a skip link looks like on google.com.</figcaption>
 </figure>
 
