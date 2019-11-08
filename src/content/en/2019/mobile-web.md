@@ -240,7 +240,7 @@ The [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attribute
 
 <figure>
   <div class="big-number">29.62%</div>
-  <figcaption>Figure 8. Percent of pages that use `autocomplete`.</figcaption>
+  <figcaption>Figure 8. Percent of pages that use <code>autocomplete</code>.</figcaption>
 </figure>
 
 Currently, only 29.62% of pages with input fields utilize this feature.
