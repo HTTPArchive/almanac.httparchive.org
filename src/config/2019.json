@@ -565,6 +565,17 @@
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/3392338?v=4&s=200",
       "github": "ljme"
     },
+    "meyerweb": {
+      "name": "Eric A. Meyer",
+      "teams": [
+        "reviewers",
+        "editors"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/939727?v=4&s=200",
+      "website": "https:\/\/meyerweb.com",
+      "github": "meyerweb",
+      "twitter": "meyerweb"
+    },
     "MSakamaki": {
       "name": "M.Sakamaki",
       "teams": [
