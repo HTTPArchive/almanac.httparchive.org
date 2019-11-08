@@ -98,21 +98,21 @@ We thought it would be fun to query all webpages to see an average number of cla
 ## Layout
 
 ### Flexbox
-Flexbox is a container style that directs and aligns its children, aka it helps with layout in a constraint based way. It had a quite rocky beginning on the web, as its spec went through 2-3 different quite drastic changes from 2010-2013. Fortunately, it settled and was implemented across all browsers by 2014. Given that history, it had a slow adoption rate, but it's been a few years since then! It's quite popular now, has many articles about it and how to leverage it, but it's new in comparison to other layout tactics.
+Flexbox is a container style that directs and aligns its children; that is, it helps with layout in a constraint-based way. It had a quite rocky beginning on the web, as its spec went through 2-3 different quite drastic changes from 2010-2013. Fortunately, it settled and was implemented across all browsers by 2014. Given that history, it had a slow adoption rate, but it's been a few years since then! It's quite popular now and has many articles about it and how to leverage it, but it's new in comparison to other layout tactics.
 
 ```<pie chart of 02_013c>```
 
 Quite the success story shown here, as nearly 50% of the web has flexbox usage in its stylesheets.
 
 ### Grid
-Like flexbox, grid too went through a few spec alternations early on in its lifespan. Microsoft had Grid in the first versions of Windows 8, as the primary layout engine for its horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until its final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to its power and capabilities.
+Like flexbox, grid too went through a few spec alternations early on in its lifespan, but without changing implementations in publicly-deployed browsers. Microsoft had Grid in the first versions of Windows 8, as the primary layout engine for its horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until its final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, at the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to its power and capabilities.
 
 ```<pie chart of 02_014c>```
 
-This chart shows just how little the web development community has exercised and explored their latest layout tactic. I look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. I love writing grid, I typically reach for it first, and dial my complexity back as I realize and iterate on layout. Curious what the rest of the world will do with this powerful CSS feature over the next few years. 
+This chart shows just how little the web development community has exercised and explored their latest layout tool. I look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. I love writing grid: I typically reach for it first, then dial my complexity back as I realize and iterate on layout. Curious what the rest of the world will do with this powerful CSS feature over the next few years. 
 
 ### Writing Modes
-The Web and CSS are international platform features, and writing mode is a way for HTML and CSS to indicate a users preferred reading/writing direction within our elements. Let's see how many folks are using the HTML property from their CSS:
+The Web and CSS are international platform features, and writing modes offer a way for HTML and CSS to indicate a users preferred reading/writing direction within our elements.
 
 ```<bar chart of 02_12e>```
 
