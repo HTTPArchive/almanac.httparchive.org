@@ -124,7 +124,7 @@ How many fonts are you using in your webpage or webapp? 0, 10? Average turned ou
 ```<bar chart of 02_22>```
 
 ### Popular Font Families
-A natural follow up to the inquiry of total number of fonts per page, is what fonts!? Designers tune in, because you'll now get to see if your choices are in line or not with what's popular.
+A natural follow up to the inquiry of total number of fonts per page, is: what fonts are they!? Designers, tune in, because you'll now get to see if your choices are in line with what's popular or not.
 
 ```<bar chart of 02_23>```
 
@@ -138,24 +138,24 @@ This is a fun one, because if you asked a user how many font sizes they feel are
 ## Spacing
 
 ### Margins
-Margin is the space outside of elements, like the space you demand when you push your arms out from yourself, so is margin pushing for space outside of itself. This often looks like the spacing between elements, but is not limited to that effect. In a website or app, spacing places a huge role in UX and design, let's see how much margin spacing code goes into a stylesheet shall we?
+Margin is the space outside of elements, like the space you demand when you push your arms out from yourself. This often looks like the spacing between elements, but is not limited to that effect. In a website or app, spacing plays a huge role in UX and design. Let's see how much margin spacing code goes into a stylesheet, shall we?
 
 ```<bar chart of 02_40b-f>```
 
-Quite popular it seems! An average of 96 distinct margins on desktop and 104 on mobile. That makes for a lot of unique spacing moments in your design. Curious how many margins you have in your site? How can we make all this whitespace more manageable?
+Quite a lot, it seems! An average of 96 distinct margins on desktop and 104 on mobile. That makes for a lot of unique spacing moments in your design. Curious how many margins you have in your site? How can we make all this whitespace more manageable?
 
 ### Logical Properties
-We estimate that days are numbered for `margin-left` and `padding-top`, to be replaced by their writing direction agnostic, successive, logical property syntax. While we're optimistic, current usage is quite low at 0.67% usage on desktop pages. To us, this feels like a habit change we'll need to develop as an industry, while hopefully training new developers to use the new syntax exclusively.
+We estimate that the hegemony of `margin-left` and `padding-top` is of limited duration, soon to be supplemented by their writing direction agnostic, successive, logical property syntax. While we're optimistic, current usage is quite low at 0.67% usage on desktop pages. To us, this feels like a habit change we'll need to develop as an industry, while hopefully training new developers to use the new syntax.
 
 ```<bar chart of 02_05d>```
 
 ### Z-Index
-Vertical layering, or stacking, can be managed with `z-index` in CSS, and we were curious how many different values folks use in their sites. The range of what `z-index` accepts it crazy, well into the millions. Are all those stack positions used? Let's see!
+Vertical layering, or stacking, can be managed with `z-index` in CSS. We were curious how many different values folks use in their sites. The range of what `z-index` accepts is theoretically infinite, bounded only by a browser's variable size limitations. Are all those stack positions used? Let's see!
 
 ```<bar chart of 02_37>```
 
 ### Z-Index Popular Values
-From our work experience, any number of 9's seemed to be the most popular choice, even though we taught ourselves to use the lowest number possible, that's not the communal norm. So what is then!? If folks need things on top, what are the most popular `z-index` numbers to pass in? Put your drink down, this one is funny enough you might lose it.
+From our work experience, any number of 9's seemed to be the most popular choice. Even though we taught ourselves to use the lowest number possible, that's not the communal norm. So what is then!? If folks need things on top, what are the most popular `z-index` numbers to pass in? Put your drink down -- this one is funny enough you might lose it.
 
 ```<scatter chart of 02_38>```
 
