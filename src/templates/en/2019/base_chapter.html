@@ -19,15 +19,15 @@ indexBoxTitle.addEventListener('click', function(e) {
 });
 
 fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
-    .then(r => r.json())
-    .then(r => {
+    .then(function(r) { return r.json(); })
+    .then(function(r) {
   if (!r) {
     return;
   }
 
-  var replies = r.reply_count;
+  var comments = r.reply_count;
   var el = document.getElementById('num_comments');
-  el.innerText = `${replies} ${replies == 1 ? 'comment' : 'comments'}`;
+  el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
 });
 </script>
 {% endblock %}
