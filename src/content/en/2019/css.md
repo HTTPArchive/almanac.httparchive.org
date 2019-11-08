@@ -21,26 +21,26 @@ Color is an integral part of theming and styling on the web. We wanted to take a
 
 ### Color Types
 
-Hex is the most popular way to describe color by far (with 93% usage), followed by RGB and then HSL. Interestingly, developers are taking full advantage of the alpha-transparency argument when it comes to these color types. HSLA and RGBA are far more popular than HSL and RGB, with almost double the usage! Even though the alpha-transparency was added later to the web spec, HSLA and RGBA are supported [as far back as IE9](https://caniuse.com/#feat=css3-colors), so you can go ahead and use them, too!
+Hex is the most popular way to describe color by far, with 93% usage, followed by RGB and then HSL. Interestingly, developers are taking full advantage of the alpha-transparency argument when it comes to these color types: HSLA and RGBA are far more popular than HSL and RGB, with almost double the usage! Even though the alpha-transparency was added later to the web spec, HSLA and RGBA are supported [as far back as IE9](https://caniuse.com/#feat=css3-colors), so you can go ahead and use them, too!
 
 Percentage of types used
 ```<bar chart of 02_06>```
 
 ### Color Selection
 
-There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readible styling. The most popular named colors are black and white, unsurprisingly, followed by red and blue.
+There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readible styling. The most popular named colors are `black` and `white`, unsurprisingly, followed by `red` and `blue`.
 
 Top named colors
 ```<pie chart of 02_06b>```
 
-Language is interestingly inferred via color as well. There are more people using the American-style "gray" than the British-style "grey" when writing code on the web. Almost every instance of [gray colors](https://www.rapidtables.com/web/color/gray-color.html) (gray, lightgray, darkgray, slategray, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why silver is ranked higher than grey with an "e" in the charts!
+Language is interestingly inferred via color as well. There are more people using the American-style "gray" than the British-style "grey" when writing code on the web. Almost every instance of [gray colors](https://www.rapidtables.com/web/color/gray-color.html) (`gray`, `lightgray`, `darkgray`, `slategray`, etc.) had nearly double the usage when spelled with an "a" instead of an "e". If gr[a/e]ys were combined, they would rank higher than blue, solidifying themselves in the #4 spot. This could be why `silver` is ranked higher than `grey` with an "e" in the charts!
 
 ### Color Count
 We ran a fun query to see how many different font colors are used across the web. So this isn't total number of unique colors; rather, it's how many different colors are used just for text. The numbers in this chart are quite high, and from experience, we know that without CSS variables, spacing, sizes and colors can quickly get away from you and fragment into lots of tiny values across your styles. These numbers reflect a difficulty of style management, and we hope this helps create some perspective for you to bring back to your teams or projects. How can you reduce this number into a manageable and reasonable amount?
 ```<bar chart of 02_32>```
 
 ### Color Duplication
-Well we got curious here and wanted to inspect how many duplicate colors are present on a page. Without a tightly managed reusable class CSS system, duplicates are quite easy to create. Turns out, that on average, there's enough duplicates that it could be worth doing a pass to unify them with custom properties.
+Well, we got curious here and wanted to inspect how many duplicate colors are present on a page. Without a tightly managed reusable class CSS system, duplicates are quite easy to create. Turns out, that on average, there's enough duplicates that it could be worth doing a pass to unify them with custom properties.
 ```<bar chart of 02_33>```
 
 ## Units
