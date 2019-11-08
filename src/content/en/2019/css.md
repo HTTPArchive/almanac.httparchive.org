@@ -73,23 +73,23 @@ We felt like this was exciting information, since it shows healthy growth of one
 ## Selectors
 
 ### ID vs Class selectors
-CSS has a few ways to find elements on the page for styling, but let's put ID's and classes against each other to see which is more prevalent! I don't think the results are too surprising, classes are more popular! 
+CSS has a few ways to find elements on the page for styling, but let's put IDs and classes against each other to see which is more prevalent! I don't think the results are too surprising -- classes are more popular! 
 
 ```<pie chart of 02_08e-f>```
 
-A nice follow up chart is this one, showing that classes take up ~93% of the selectors found in a stylesheet. This is good news too, it would be troubling if ~93% of all selectors in stylesheets were using IDs!
+A nice follow up chart is this one, showing that classes take up ~93% of the selectors found in a stylesheet.
 
 ```<pie chart of 02_08be-f>```
 
 ### Attribute Selectors
-CSS has some very powerful comparison selectors that we were curious of their use on the web. These are selectors like `[target="_blank"]`, `[attribute^="value"]`, `[title~="rad"]`, `[attribute$="-rad"]` or `[attribute*="value"]`. Do you use them? Think they're used a lot? Let's compare how those are used with IDs and classes across the web.
+CSS has some very powerful comparison selectors, and we were curious about their use on the web. These are selectors like `[target="_blank"]`, `[attribute^="value"]`, `[title~="rad"]`, `[attribute$="-rad"]` or `[attribute*="value"]`. Do you use them? Think they're used a lot? Let's compare how those are used with IDs and classes across the web.
 
 ```
 <pie chart of 02_43h-l>
 <pie chart of 02_44h-l>
 ```
 
-Much more use with class names than IDs, which feels natural since a stylesheet has less ID selectors than class selectors, but still neat to see how uses of all these combinations. 
+Much more use with class names than IDs, which feels natural since a stylesheet usually has fewer ID selectors than class selectors, but still neat to see how uses of all these combinations. 
 
 ### Classes Per Element
 We thought it would be fun to query all webpages to see an average number of classes put on elements! With the rise of OOCSS / atomic / functional CSS strategies which can compose ~10 classes on an element to achieve a design look, perhaps we'd see some interesting results. The query came back quite unexciting, with the average on mobile and desktop being 1 class per element. 
