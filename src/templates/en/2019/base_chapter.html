@@ -7,6 +7,20 @@
 <link rel="stylesheet" href="/static/css/page.css">
 {% endblock %}
 
+{% block scripts %}
+{{ super() }}
+<script nonce="{{ csp_nonce() }}">
+
+var indexBox = document.querySelector('.index-box');
+var indexBoxTitle = document.querySelector('.index .header');
+
+indexBoxTitle.addEventListener('click', function(e) {
+  indexBox.classList.toggle('show');
+});
+</script>
+{% endblock %}
+
+
 {% macro render_byline() %}
   <div class="byline">Written by
   {% for author in metadata.get('authors') %}
