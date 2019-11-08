@@ -25,7 +25,10 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
     return;
   }
 
-  var comments = r.reply_count;
+  var comments = +r.posts_count - 1;
+  if (isNaN(comments)) {
+    return;
+  }
   var el = document.getElementById('num_comments');
   el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
 });
