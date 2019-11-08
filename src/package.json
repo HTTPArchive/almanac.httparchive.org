@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/HTTPArchive/almanac.httparchive.org#readme",
   "scripts": {
-    "generate": "node ./tools/generate"
+    "generate": "node ./tools/generate",
+    "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version"
   },
   "devDependencies": {
     "ejs": "^2.7.1",
