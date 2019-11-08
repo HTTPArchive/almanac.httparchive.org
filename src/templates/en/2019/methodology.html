@@ -9,16 +9,17 @@
 
 <meta property="og:title" content="{{ self.title() }}">
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}">
-<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
-<meta property="og:image:height" content="354">
-<meta property="og:image:width" content="984">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
+<meta property="og:image:height" content="984">
+<meta property="og:image:width" content="1200">
 <meta property="og:type" content="article">
 <meta property="og:description" content="{{ self.description() }}">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@HTTPArchive">
 <meta name="twitter:title" content="{{ self.title() }}">
-<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-characters.png">
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
+<meta name="twitter:image:alt" content="{{ year }} Web Almanac methodology" />
 <meta name="twitter:description" content="{{ self.description() }}">
 
 <script type="application/ld+json">
@@ -32,9 +33,9 @@
 	  "headline": "{{ self.title() }}",
 	  "image": {
 	  	  "@type": "ImageObject",
-	  	  "url": "https://almanac.httparchive.org/static/images/methodology-characters.png",
-	  	  "height": 354,
-	  	  "width": 984
+	  	  "url": "https://almanac.httparchive.org/static/images/methodology-banner.png",
+	  	  "height": 984,
+	  	  "width": 1200
 	  },
 	  "publisher": {
 	  	  "@type": "Organization",
@@ -306,7 +307,7 @@
         that test each web page. Desktop and mobile websites are tested under
         different configurations:
       </p>
-      <div class="table-wrap">
+      <div class="table-wrap"><div class="table-wrap-container">
       <table>
         <thead>
           <tr>
@@ -357,7 +358,7 @@
           </tr>
         </tbody>
       </table>
-      </div>
+      </div></div>
 
       <p>
         Desktop websites are run from within a desktop Chrome environment on a
@@ -415,7 +416,7 @@
         Lighthouse is run as its own distinct test from within <a href="#webpagetest">WebPageTest</a>,
         but it has its own configuration profile:
       </p>
-      <div class="table-wrap">
+      <div class="table-wrap"><div class="table-wrap-container">
       <table>
         <thead>
           <tr>
@@ -442,7 +443,7 @@
           </tr>
         </tbody>
       </table>
-      </div>
+      </div></div>
 
       <aside>
         * Note that Lighthouse is normally configured to have a CPU slowdown of
