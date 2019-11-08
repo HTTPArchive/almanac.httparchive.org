@@ -23,7 +23,7 @@ The common argument as to why page size doesn't matter anymore is that, thanks t
 
 Yes, you can build large robust pages that feel fast… to some users. But you should care about page bloat in terms of how it affects all your users, especially mobile-only users who deal with bandwidth constraints or data limits.
 
-<aside class="note">Check out Tim Kadlec's fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost—in dollars and Gross National Income per capita—of your pages in countries around the world. It's an eye-opener. For instance, Amazon's home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day's wages just to visit a few dozen pages?</aside>
+<aside class="note" markdown>Check out Tim Kadlec's fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost—in dollars and Gross National Income per capita—of your pages in countries around the world. It's an eye-opener. For instance, Amazon's home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day's wages just to visit a few dozen pages?</aside>
 
 ### More bandwidth isn't a magic bullet for web performance
 
