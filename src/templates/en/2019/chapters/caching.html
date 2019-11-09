@@ -168,22 +168,19 @@
       <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
-      <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant <a href="./performance">performance</a> benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, " the fastest request is the one that you don't have to make", and caching is one of the key ways to avoid having to make requests.</p>
-      <p>There are three guiding principles to caching web content:</p>
-      <p><strong>Cache as much as you can</strong></p>
-      <p>When considering how much can be cached, it is important to understand whether a response is static or dynamic. Requests that are served as a static response are typically cacheable, as they have a one-to-many relationship between the resource and the users requesting it. Dynamically generated content can be more nuanced and require careful consideration.</p>
-      <p><strong>Cache for as long as you can</strong></p>
-      <p>The length of time you would cache a resource is highly dependent on the sensitivity of the content being cached. A versioned JavaScript resource could be cached for a very long time, while a non-versioned resource may need a shorter cache duration to ensure users get a fresh version.</p>
-      <p><strong>Cache as close to end users as you can</strong></p>
-      <p>Caching content close to the end user reduces download times by removing latency. For example, if a resource is cached on an end user's browser, then the request never goes out to the network and the download time is as fast as the machine's I/O. For first time visitors, or visitors that don't have entries in their cache, a CDN would typically be the next place a cached resource is returned from. In most cases, it will be faster to fetch a resource from a local cache or a CDN compared to an origin server.</p>
+      <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant <a href="./performance">performance</a> benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make," and caching is one of the key ways to avoid having to make requests.</p>
+      <p>There are three guiding principles to caching web content: cache as much as you can, for as long as you can, as close as you can to end users.</p>
+      <p><strong>Cache as much as you can.</strong> When considering how much can be cached, it is important to understand whether a response is static or dynamic. Requests that are served as a static response are typically cacheable, as they have a one-to-many relationship between the resource and the users requesting it. Dynamically generated content can be more nuanced and require careful consideration.</p>
+      <p><strong>Cache for as long as you can.</strong> The length of time you would cache a resource is highly dependent on the sensitivity of the content being cached. A versioned JavaScript resource could be cached for a very long time, while a non-versioned resource may need a shorter cache duration to ensure users get a fresh version.</p>
+      <p><strong>Cache as close to end users as you can.</strong> Caching content close to the end user reduces download times by removing latency. For example, if a resource is cached on an end user's browser, then the request never goes out to the network and the download time is as fast as the machine's I/O. For first time visitors, or visitors that don't have entries in their cache, a CDN would typically be the next place a cached resource is returned from. In most cases, it will be faster to fetch a resource from a local cache or a CDN compared to an origin server.</p>
       <p>Web architectures typically involve <a href="https://blog.yoav.ws/tale-of-four-caches/">multiple tiers of caching</a>. For example, an HTTP request may have the opportunity to be cached in:</p>
       <ul>
         <li>An end user's browser</li>
-        <li>A Service worker cache in the user's browser</li>
+        <li>A service worker cache in the user's browser</li>
         <li>A shared gateway</li>
-        <li>CDNs - which offer the ability to cache at the edge, close to end users.</li>
-        <li>A caching proxy in front of the application (to reduce the backend workload)</li>
-        <li>The application and database layers.</li>
+        <li>CDNs, which offer the ability to cache at the edge, close to end users</li>
+        <li>A caching proxy in front of the application, to reduce the backend workload</li>
+        <li>The application and database layers</li>
       </ul>
       <p>This chapter will explore how resources are cached within web browsers.</p>
       <h2 id="overview-of-http-caching">Overview of HTTP caching</h2>
@@ -192,20 +189,20 @@
         <li>"How long am I allowed to cache this for?"</li>
         <li>"How do I validate that the content is still fresh?"</li>
       </ul>
-      <p>When a web browser sends a response to a client, it typically includes headers that indicate whether the resource is cacheable, how long to cache it for, and how old the resource is. RFC 7234 covers this in more detail in section<a href="https://tools.ietf.org/html/rfc7234#section-4.2"> 4.2 (Freshness)</a> and<a href="https://tools.ietf.org/html/rfc7234#section-4.3"> 4.3 (Validation)</a>.</p>
+      <p>When a web browser sends a response to a client, it typically includes headers that indicate whether the resource is cacheable, how long to cache it for, and how old the resource is. RFC 7234 covers this in more detail in section <a href="https://tools.ietf.org/html/rfc7234#section-4.2">4.2 (Freshness)</a> and <a href="https://tools.ietf.org/html/rfc7234#section-4.3">4.3 (Validation)</a>.</p>
       <p>The HTTP response headers typically used for conveying freshness lifetime are:</p>
       <ul>
         <li><code>Cache-Control</code> - allows you to configure a cache lifetime duration (i.e. how long this is valid for)</li>
         <li><code>Expires</code> - provides an expiration date or time (i.e. when exactly this expires).</li>
       </ul>
-      <p><code>Cache-Control</code> takes priority if both are present. These are <a href="cache-control-vs-expires">discussed in more detail below</a>.</p>
+      <p><code>Cache-Control</code> takes priority if both are present. These are <a href="#cache-control-vs-expires">discussed in more detail below</a>.</p>
       <p>The HTTP response headers for validating the responses stored within the cache, i.e. giving conditional requests something to compare to on the server side, are:</p>
       <ul>
         <li><code>Last-Modified</code> - indicates when the object was last changed.</li>
         <li>Entity Tag (<code>ETag</code>) - provides a unique identifier for the content.</li>
       </ul>
-      <p><code>ETag</code> takes priority if both are present. These are <a href="validating-freshness">discussed in more detail below</a>.</p>
-      <p>The example below contains an excerpt of a request/response header from HTTP Archive's main.js file. These headers indicate that the resource can be cached for 43200 seconds (12 hours), and it was last modified more than 2 months ago (difference between the last-modified and date headers).</p>
+      <p><code>ETag</code> takes priority if both are present. These are <a href="#validating-freshness">discussed in more detail below</a>.</p>
+      <p>The example below contains an excerpt of a request/response header from HTTP Archive's main.js file. These headers indicate that the resource can be cached for 43,200 seconds (12 hours), and it was last modified more than two months ago (difference between the <code>Last-Modified</code> and <code>Date</code> headers).</p>
       <pre><code>&gt; GET /static/js/main.js HTTP/1.1
 &gt; Host: httparchive.org
 &gt; User-agent: curl/7.54.0
@@ -229,14 +226,15 @@
         <figcaption>Figure 1. <code>Cache Control</code> information from RedBot.</figcaption>
         <p></p>
       </figure>
-      <p>If no caching headers are present in a response, then the <a href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">client is permitted to heuristically cache the response</a>. Most clients implement a variation of the RFC's suggested heuristic - which is 10% of the time since last modified. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.</p>
-      <p>According to the HTTP Archive, in July 2019 72% of responses were served with a <code>Cache-Control</code> header, and 56% of responses were served with an <code>Expires</code> header. However, 27% of responses did not use either header, and therefore are subject to heuristic caching. This was consistent across both desktop and mobile sites.</p>
+      <p>If no caching headers are present in a response, then the <a href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">client is permitted to heuristically cache the response</a>. Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since <code>Last-Modified</code>. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.</p>
+      <p>72% of responses are served with a <code>Cache-Control</code> header, and 56% of responses are served with an <code>Expires</code> header. However, 27% of responses did not use either header, and therefore are subject to heuristic caching. This is consistent across both desktop and mobile sites.</p>
       <figure id="fig-2">
-        <p>
-          <a href="/static/images/2019/16_Caching/ch16_fig2_cache_control_expires.jpg"><img src="/static/images/2019/16_Caching/ch16_fig2_cache_control_expires.jpg" alt="Two identical bar charts for mobile and desktop showing 72% of requests use <code>Cache-Control</code> headers, 56% use <code>Expires</code> and the 27% use neither."/></a>
-        </p>
+        <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/16_Caching/fig2.png" class="fig-mobile">
+          <img src="/static/images/2019/16_Caching/fig2.png" width="600" aria-labelledby="fig2-caption" />
+        </a>
+        <div id="fig2-caption" class="visually-hidden">Two identical bar charts for mobile and desktop showing 72% of requests use Cache-Control headers, 56% use Expires and the 27% use neither.</div>
         <figcaption>Figure 2. Presence of HTTP <code>Cache-Control</code> and <code>Expires</code> headers.</figcaption>
-        <p></p>
       </figure>
       <h2 id="what-type-of-content-are-we-caching">What type of content are we caching?</h2>
       <p>A cacheable resource is stored by the client for a period of time and available for reuse on a subsequent request. Across all HTTP requests, 80% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these,</p>
