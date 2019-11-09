@@ -50,18 +50,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/compression
-        </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            2019-11-05
         </lastmod>
         
     </url>
@@ -72,7 +61,18 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/cms
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 22:02:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
@@ -86,22 +86,22 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/ecommerce
+            https://almanac.httparchive.org/en/2019/compression
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/cms
+            https://almanac.httparchive.org/en/2019/ecommerce
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 22:02:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
@@ -112,18 +112,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/http2
-        </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
@@ -141,18 +130,18 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/markup
+            https://almanac.httparchive.org/en/2019/http2
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
@@ -163,7 +152,18 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/markup
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
@@ -174,18 +174,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/pwa
-        </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
@@ -196,7 +185,18 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/pwa
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
@@ -207,8 +207,15 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/security
+        </loc>
         
     </url>
 
@@ -218,7 +225,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
@@ -229,7 +236,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (PST)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>

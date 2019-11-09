@@ -17,8 +17,32 @@ var indexBoxTitle = document.querySelector('.index .header');
 indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');
 });
+
+fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
+    .then(function(r) { return r.json(); })
+    .then(function(r) {
+  if (!r) {
+    return;
+  }
+
+  var comments = +r.posts_count - 1;
+  if (isNaN(comments)) {
+    return;
+  }
+  var el = document.getElementById('num_comments');
+  el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
+});
 </script>
 {% endblock %}
+
+{# Calls to action for readers who want to engage more with this chapter. #}
+{% macro render_actions() %}
+  <div class="discuss">
+    <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24"><span id="num_comments"></span>
+    </a>
+  </div>
+{% endmacro %}
 
 
 {% macro render_byline() %}

@@ -4,6 +4,7 @@ chapter_number: 8
 title: Security
 authors: [scotthelme, arturjanc]
 reviewers: [paulcalvano, bazzadp, ghedo, ndrnmnn]
+discuss: 1763
 ---
 
 # Chapter 8: Security

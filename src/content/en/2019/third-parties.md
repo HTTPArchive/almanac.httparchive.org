@@ -5,6 +5,7 @@ title: Third Parties
 description: Third Parties chapter of the 2019 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
+discuss: 1760
 published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-07T21:46:11.000Z
 ---
