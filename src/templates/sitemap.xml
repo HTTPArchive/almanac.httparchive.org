@@ -57,17 +57,6 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/cms
-        </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 22:02:00 GMT+0000 (Greenwich Mean Time)
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/compression
         </loc>
         
@@ -86,6 +75,17 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/ecommerce
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/fonts
         </loc>
         
@@ -97,11 +97,22 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/ecommerce
+            https://almanac.httparchive.org/en/2019/cms
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
+            Thu Nov 07 2019 22:02:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/accessibility
+        </loc>
+        
+        <lastmod>
+            2019-11-05
         </lastmod>
         
     </url>
@@ -131,17 +142,6 @@
         
         <lastmod>
             Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/accessibility
-        </loc>
-        
-        <lastmod>
-            2019-11-05
         </lastmod>
         
     </url>
@@ -214,19 +214,19 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/security
+        </loc>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/seo
         </loc>
         
         <lastmod>
             Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/security
-        </loc>
         
     </url>
 
