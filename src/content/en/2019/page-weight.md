@@ -5,6 +5,7 @@ title: Page Weight
 description: Page Weight chapter of the 2019 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
+discuss: 1773
 published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-07T21:46:11.000Z
 ---

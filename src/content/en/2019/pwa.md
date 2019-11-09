@@ -5,6 +5,7 @@ title: PWA
 description: PWA chapter of the 2019 Web Almanac covering Service Workers, Web App Manifests, and Workbox
 authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
+discuss: 1766
 published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-07T21:46:11.000Z 
 ---
