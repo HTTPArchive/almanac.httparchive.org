@@ -78,9 +78,11 @@ The example below contains an excerpt of a request/response header from HTTP Arc
 
 The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, [a test for the URL above](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) would output the following: 
 
-<figure markdown>
-[![Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings.](/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg)](/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg)
-<figcaption>Figure 1. `Cache Control` information from RedBot.</figcaption>
+<figure>
+  <a href="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg">
+    <img alt="Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" width="600">
+  </a>
+  <figcaption>Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
 </figure>
 
 If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability. 
@@ -117,102 +119,102 @@ The remaining responses are not permitted to be stored in browser caches.
 
 The table below details the cache TTL values for desktop requests by type. Most content types are being cached however CSS resources appear to be consistently cached at high TTLs.
 
-<figure markdown>
-<table>
-  <tr>
-   <th></th>
-   <th colspan="5" >Desktop Cache TTL Percentiles (Hours)</th>
-  </tr>
-  <tr>
-   <th></th>
-   <th>10</th>
-   <th>25</th>
-   <th>50</th>
-   <th>75</th>
-   <th>90</th>
-  </tr>
-  <tr>
-   <th>Audio</th>
-   <td><p style="text-align: right">12</p></td>
-   <td><p style="text-align: right">24</p></td>
-   <td><p style="text-align: right">720</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-  </tr>
-  <tr>
-   <th>CSS</th>
-   <td><p style="text-align: right">720</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-  </tr>
-  <tr>
-   <th>Font</th>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">3</p></td>
-   <td><p style="text-align: right">336</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-   <td><p style="text-align: right">87,600</p></td>
-  </tr>
-  <tr>
-   <th>HTML</th>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">168</p></td>
-   <td><p style="text-align: right">720</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-   <td><p style="text-align: right">8,766</p></td>
-  </tr>
-  <tr>
-   <th>Image</th>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">1</p></td>
-   <td><p style="text-align: right">28</p></td>
-   <td><p style="text-align: right">48</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-  </tr>
-  <tr>
-   <th>Other</th>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">2</p></td>
-   <td><p style="text-align: right">336</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-   <td><p style="text-align: right">8,760</p></td>
-  </tr>
-  <tr>
-   <th>Script</th>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">1</p></td>
-   <td><p style="text-align: right">6</p></td>
-   <td><p style="text-align: right">720</p></td>
-  </tr>
-  <tr>
-   <th>Text</th>
-   <td><p style="text-align: right">21</p></td>
-   <td><p style="text-align: right">336</p></td>
-   <td><p style="text-align: right">7,902</p></td>
-   <td><p style="text-align: right">8,357</p></td>
-   <td><p style="text-align: right">8,740</p></td>
-  </tr>
-  <tr>
-   <th>Video</th>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">4</p></td>
-   <td><p style="text-align: right">24</p></td>
-   <td><p style="text-align: right">24</p></td>
-   <td><p style="text-align: right">336</p></td>
-  </tr>
-  <tr>
-   <th>XML</th>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">< 1</p></td>
-   <td><p style="text-align: right">< 1</p></td>
-  </tr>
-</table>
-<figcaption>Figure 4. Desktop cache TTL percentiles by resource type.</figcaption>
+<figure>
+  <table>
+    <tr>
+     <th></th>
+     <th colspan="5" >Desktop Cache TTL Percentiles (Hours)</th>
+    </tr>
+    <tr>
+     <th></th>
+     <th>10</th>
+     <th>25</th>
+     <th>50</th>
+     <th>75</th>
+     <th>90</th>
+    </tr>
+    <tr>
+     <th>Audio</th>
+     <td><p style="text-align: right">12</p></td>
+     <td><p style="text-align: right">24</p></td>
+     <td><p style="text-align: right">720</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+    </tr>
+    <tr>
+     <th>CSS</th>
+     <td><p style="text-align: right">720</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+    </tr>
+    <tr>
+     <th>Font</th>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">3</p></td>
+     <td><p style="text-align: right">336</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+     <td><p style="text-align: right">87,600</p></td>
+    </tr>
+    <tr>
+     <th>HTML</th>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">168</p></td>
+     <td><p style="text-align: right">720</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+     <td><p style="text-align: right">8,766</p></td>
+    </tr>
+    <tr>
+     <th>Image</th>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">1</p></td>
+     <td><p style="text-align: right">28</p></td>
+     <td><p style="text-align: right">48</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+    </tr>
+    <tr>
+     <th>Other</th>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">2</p></td>
+     <td><p style="text-align: right">336</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+     <td><p style="text-align: right">8,760</p></td>
+    </tr>
+    <tr>
+     <th>Script</th>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">1</p></td>
+     <td><p style="text-align: right">6</p></td>
+     <td><p style="text-align: right">720</p></td>
+    </tr>
+    <tr>
+     <th>Text</th>
+     <td><p style="text-align: right">21</p></td>
+     <td><p style="text-align: right">336</p></td>
+     <td><p style="text-align: right">7,902</p></td>
+     <td><p style="text-align: right">8,357</p></td>
+     <td><p style="text-align: right">8,740</p></td>
+    </tr>
+    <tr>
+     <th>Video</th>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">4</p></td>
+     <td><p style="text-align: right">24</p></td>
+     <td><p style="text-align: right">24</p></td>
+     <td><p style="text-align: right">336</p></td>
+    </tr>
+    <tr>
+     <th>XML</th>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">< 1</p></td>
+     <td><p style="text-align: right">< 1</p></td>
+    </tr>
+  </table>
+  <figcaption>Figure 4. Desktop cache TTL percentiles by resource type.</figcaption>
 </figure>
 
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 28 hours, however the 25th percentile is just one-two hours and the 10th percentile indicates that 10% of cacheable image content is cached for less than one hour.
@@ -268,62 +270,62 @@ HTTP/1.1 introduced the `Cache-Control` header, and most modern clients support 
 
 The HTTP/1.1 [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1) includes multiple directives that can be used in the `Cache-Control` response header and are detailed below. Note that multiple can be used in a single response.
 
-<figure markdown>
-<table>
-  <tr>
-   <th>Directive</th>
-   <th>Description</th>
-  </tr>
-  <tr>
-   <td>max-age</td>
-   <td>Indicates the number of seconds that a resource can be cached for.</td>
-  </tr>
-  <tr>
-   <td>public</td>
-   <td>Any cache may store the response.</td>
-  </tr>
-  <tr>
-   <td>no-cache</td>
-   <td>A cached entry must be revalidated prior to its use.</td>
-  </tr>
-  <tr>
-   <td>must-revalidate</td>
-   <td>A stale cached entry must be revalidated prior to its use.</td>
-  </tr>
-  <tr>
-   <td>no-store</td>
-   <td>Indicates that a response is not cacheable.</td>
-  </tr>
-  <tr>
-   <td>private</td>
-   <td>The response is intended for a specific user and should not be stored by shared caches.</td>
-  </tr>
-  <tr>
-   <td>no-transform</td>
-   <td>No transformations or conversions should be made to this resource.</td>
-  </tr>
-  <tr>
-   <td>proxy-revalidate</td>
-   <td>Same as must-revalidate but applies to shared caches.</td>
-  </tr>
-  <tr>
-   <td>s-maxage</td>
-   <td>Same as max age but applies to shared caches only.</td>
-  </tr>
-  <tr>
-   <td>immutable</td>
-   <td>Indicates that the cached entry will never change, and that revalidation is not necessary.</td>
-  </tr>
-  <tr>
-   <td>stale-while-revalidate</td>
-   <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
-  </tr>
-  <tr>
-   <td>stale-if-error</td>
-   <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
-  </tr>
-</table>
-<figcaption>Figure 8. `Cache-Control` directives.</figcaption>
+<figure>
+  <table>
+    <tr>
+     <th>Directive</th>
+     <th>Description</th>
+    </tr>
+    <tr>
+     <td>max-age</td>
+     <td>Indicates the number of seconds that a resource can be cached for.</td>
+    </tr>
+    <tr>
+     <td>public</td>
+     <td>Any cache may store the response.</td>
+    </tr>
+    <tr>
+     <td>no-cache</td>
+     <td>A cached entry must be revalidated prior to its use.</td>
+    </tr>
+    <tr>
+     <td>must-revalidate</td>
+     <td>A stale cached entry must be revalidated prior to its use.</td>
+    </tr>
+    <tr>
+     <td>no-store</td>
+     <td>Indicates that a response is not cacheable.</td>
+    </tr>
+    <tr>
+     <td>private</td>
+     <td>The response is intended for a specific user and should not be stored by shared caches.</td>
+    </tr>
+    <tr>
+     <td>no-transform</td>
+     <td>No transformations or conversions should be made to this resource.</td>
+    </tr>
+    <tr>
+     <td>proxy-revalidate</td>
+     <td>Same as must-revalidate but applies to shared caches.</td>
+    </tr>
+    <tr>
+     <td>s-maxage</td>
+     <td>Same as max age but applies to shared caches only.</td>
+    </tr>
+    <tr>
+     <td>immutable</td>
+     <td>Indicates that the cached entry will never change, and that revalidation is not necessary.</td>
+    </tr>
+    <tr>
+     <td>stale-while-revalidate</td>
+     <td>Indicates that the client is willing to accept a stale response while asynchronously checking in the background for a fresh one.</td>
+    </tr>
+    <tr>
+     <td>stale-if-error</td>
+     <td>Indicates that the client is willing to accept a stale response if the check for a fresh one fails.</td>
+    </tr>
+  </table>
+  <figcaption>Figure 8. <code>Cache-Control</code> directives.</figcaption>
 </figure>
 
 For example, `cache-control: public, max-age=43200` indicates that a cached entry should be stored for 43,200 seconds and it can be stored by all caches. 
@@ -372,9 +374,11 @@ When you are selecting a cache TTL, ask yourself: "how often are you updating th
 
 The graph below illustrates the relative age of resources by content type, and you can read a [more detailed analysis here](https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659). HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources ([scripts](./javascript), [CSS](./css), and [fonts](./fonts)) are older than one year!
 
-<figure markdown>
-[![A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first party and third party. The value 0 is used most particularly for first party HTML, text and xml, and for up to 50% of third party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.)](/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg)](/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg)
-<figcaption>Figure 10. Resource age distribution by content type.</figcaption>
+<figure>
+  <a href="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg">
+    <img alt="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first party and third party. The value 0 is used most particularly for first party HTML, text and xml, and for up to 50% of third party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year." src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" width="600">
+  </a>
+  <figcaption>Figure 10. Resource age distribution by content type.</figcaption>
 </figure>
 
 By comparing a resources cacheability to its age, we can determine if the TTL is appropriate or too low. For example, the resource served by the response below was last modified on 25 Aug 2019, which means that it was 49 days old at the time of delivery. The `Cache-Control` header says that we can cache it for 43,200 seconds, which is 12 hours. It is definitely old enough to merit investigating whether a longer TTL would be appropriate.
@@ -397,27 +401,27 @@ Overall, 59% of resources served on the web have a cache TTL that is too short c
 When we break this out by first vs third party, we can also see that 70% of first party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring caching is configured correctly.
 
 <figure>
-<table>
-  <tr>
-   <th>Client</th>
-   <th>1st Party</th>
-   <th>3rd Party</th>
-   <th>Overall</th>
-  </tr>
-  <tr>
-   <td>Desktop</td>
-   <td><p style="text-align: right">70.7%</p></td>
-   <td><p style="text-align: right">47.9%</p></td>
-   <td><p style="text-align: right">59.2%</p></td>
-  </tr>
-  <tr>
-   <td>Mobile</td>
-   <td><p style="text-align: right">71.4%</p></td>
-   <td><p style="text-align: right">46.8%</p></td>
-   <td><p style="text-align: right">59.6%</p></td>
-  </tr>
-</table>
-<figcaption>Figure 11. Percent of requests with short TTLs.</figcaption>
+  <table>
+    <tr>
+     <th>Client</th>
+     <th>1st Party</th>
+     <th>3rd Party</th>
+     <th>Overall</th>
+    </tr>
+    <tr>
+     <td>Desktop</td>
+     <td><p style="text-align: right">70.7%</p></td>
+     <td><p style="text-align: right">47.9%</p></td>
+     <td><p style="text-align: right">59.2%</p></td>
+    </tr>
+    <tr>
+     <td>Mobile</td>
+     <td><p style="text-align: right">71.4%</p></td>
+     <td><p style="text-align: right">46.8%</p></td>
+     <td><p style="text-align: right">59.6%</p></td>
+    </tr>
+  </table>
+  <figcaption>Figure 11. Percent of requests with short TTLs.</figcaption>
 </figure>
 
 ## Validating freshness

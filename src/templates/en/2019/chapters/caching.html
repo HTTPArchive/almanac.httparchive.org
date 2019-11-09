@@ -220,11 +220,10 @@
 &lt; ETag: "1566748830.0-3052-3932359948"</code></pre>
       <p>The tool <a href="https://redbot.org/">RedBot.org</a> allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, <a href="https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js">a test for the URL above</a> would output the following:</p>
       <figure id="fig-1">
-        <p>
-          <a href="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg"><img src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" alt="Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings."/></a>
-        </p>
-        <figcaption>Figure 1. <code>Cache Control</code> information from RedBot.</figcaption>
-        <p></p>
+        <a href="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg">
+          <img alt="Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" width="600" />
+        </a>
+        <figcaption>Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
       </figure>
       <p>If no caching headers are present in a response, then the <a href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">client is permitted to heuristically cache the response</a>. Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since <code>Last-Modified</code>. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.</p>
       <p>72% of responses are served with a <code>Cache-Control</code> header, and 56% of responses are served with an <code>Expires</code> header. However, 27% of responses did not use either header, and therefore are subject to heuristic caching. This is consistent across both desktop and mobile sites.</p>
@@ -254,7 +253,6 @@
       </figure>
       <p>The table below details the cache TTL values for desktop requests by type. Most content types are being cached however CSS resources appear to be consistently cached at high TTLs.</p>
       <figure id="fig-4">
-        <p></p>
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -355,10 +353,7 @@
             </table>
           </div>
         </div>
-        <p></p>
-        <p></p>
         <figcaption>Figure 4. Desktop cache TTL percentiles by resource type.</figcaption>
-        <p></p>
       </figure>
       <p>While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 28 hours, however the 25th percentile is just one-two hours and the 10th percentile indicates that 10% of cacheable image content is cached for less than one hour.</p>
       <p>By exploring the cacheability by content type in more detail in figure 5 below, we can see that approximately half of all HTML responses are considered non-cacheable. Additionally, 16% of images and scripts are non-cacheable.</p>
@@ -401,7 +396,6 @@
       <h2 id="cache-control-directives">Cache-Control directives</h2>
       <p>The HTTP/1.1 <a href="https://tools.ietf.org/html/rfc7234#section-5.2.1">specification</a> includes multiple directives that can be used in the <code>Cache-Control</code> response header and are detailed below. Note that multiple can be used in a single response.</p>
       <figure id="fig-8">
-        <p></p>
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -462,10 +456,7 @@
             </table>
           </div>
         </div>
-        <p></p>
-        <p></p>
         <figcaption>Figure 8. <code>Cache-Control</code> directives.</figcaption>
-        <p></p>
       </figure>
       <p>For example, <code>cache-control: public, max-age=43200</code> indicates that a cached entry should be stored for 43,200 seconds and it can be stored by all caches.</p>
       <figure id="fig-9">
@@ -500,11 +491,10 @@
       <p>When you are selecting a cache TTL, ask yourself: "how often are you updating these assets?" and "what is their content sensitivity?". For example, if a hero image is going to be modified infrequently, then cache it with a very long TTL. If you expect a JavaScript resource to change frequently, then version it and cache it with a long TTL or cache it with a shorter TTL.</p>
       <p>The graph below illustrates the relative age of resources by content type, and you can read a <a href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">more detailed analysis here</a>. HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources (<a href="./javascript">scripts</a>, <a href="./css">CSS</a>, and <a href="./fonts">fonts</a>) are older than one year!</p>
       <figure id="fig-10">
-        <p>
-          <a href="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg"><img src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" alt="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first party and third party. The value 0 is used most particularly for first party HTML, text and xml, and for up to 50% of third party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.)"/></a>
-        </p>
+        <a href="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg">
+          <img alt="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first party and third party. The value 0 is used most particularly for first party HTML, text and xml, and for up to 50% of third party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year." src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" width="600" />
+        </a>
         <figcaption>Figure 10. Resource age distribution by content type.</figcaption>
-        <p></p>
       </figure>
       <p>By comparing a resources cacheability to its age, we can determine if the TTL is appropriate or too low. For example, the resource served by the response below was last modified on 25 Aug 2019, which means that it was 49 days old at the time of delivery. The <code>Cache-Control</code> header says that we can cache it for 43,200 seconds, which is 12 hours. It is definitely old enough to merit investigating whether a longer TTL would be appropriate.</p>
       <pre><code>&lt; HTTP/1.1 200
