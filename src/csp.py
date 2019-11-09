@@ -16,6 +16,7 @@ csp = {
     ],
     'connect-src': [
         '\'self\'',
+        'discuss.httparchive.org',
         'www.google-analytics.com',
         'www.googletagmanager.com'
     ],

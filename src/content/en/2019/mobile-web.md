@@ -5,8 +5,9 @@ title: Mobile Web
 description: Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
+discuss: 1767
 published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-07T21:46:11.000Z 
+last_updated: 2019-11-07T21:46:11.000Z
 ---
 
 ## Introduction
@@ -126,7 +127,7 @@ The primary goal of a web page is to deliver content users want to engage with. 
 
 ### Color contrast
 
-When designing our sites we tend to be in more optimal conditions, and have far better eyes than many of our visitors. Visitors may be colorblind and unable to distinguish between the text and background color. [1 in every 12 men and 1 in 200 women](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf) of European descent are colorblind. Or perhaps visitors are reading the page while the sun is creating glare on their screen, which may similarly impair legibility.
+When designing our sites we tend to be in more optimal conditions, and have far better eyes than many of our visitors. Visitors may be colorblind and unable to distinguish between the text and background color. [1 in every 12 men and 1 in 200 women](http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf) of European descent are colorblind. Or perhaps visitors are reading the page while the sun is creating glare on their screen, which may similarly impair legibility.
 
 To help us mitigate this problem, there are [accessibility guidelines](https://dequeuniversity.com/rules/axe/2.2/color-contrast) we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
 
@@ -240,7 +241,7 @@ The [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attribute
 
 <figure>
   <div class="big-number">29.62%</div>
-  <figcaption>Figure 8. Percent of pages that use `autocomplete`.</figcaption>
+  <figcaption>Figure 8. Percent of pages that use <code>autocomplete</code>.</figcaption>
 </figure>
 
 Currently, only 29.62% of pages with input fields utilize this feature.

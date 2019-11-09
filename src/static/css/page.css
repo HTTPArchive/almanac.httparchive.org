@@ -124,6 +124,7 @@
   list-style: none;
 }
 .content ul li::before {
+  position: absolute;
   content: "•";
   font-size: 16px;
   color: #a9cbbb;
@@ -144,6 +145,18 @@
 }
 .byline.reviewers {
   font-weight: normal;
+}
+
+.discuss img {
+  margin-right: 10px;
+  vertical-align: top;
+}
+.discuss a:hover img,
+.discuss a:focus img {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(4%) saturate(4357%) hue-rotate(16deg) brightness(136%) contrast(94%);
+}
+#num_comments {
+  line-height: 24px;
 }
 
 .authors h4{

@@ -4,6 +4,7 @@ chapter_number: 4
 title: Media
 description: Media chapter of the 2019 Web Almanac covering images, animations, and videos
 authors: [colinbendell, dougsillars]
+discuss: 1759
 reviewers: [ahmadawais, kornelski, eeeps]
 published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-07T21:46:11.000Z 
