@@ -9,8 +9,11 @@
 {% block styles %}
 {{ super() }}
 <style>
-.main a, .main a:visited {
+.main a.btn, .main a.btn:visited {
   color: #fff;
+}
+main a.btn:hover, main a.btn:focus, main a.alt.btn {
+  color: #1A2B49;
 }
 .main {
   position: relative;
