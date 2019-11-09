@@ -68,6 +68,17 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/cms
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 22:02:00 GMT-0800 (Pacific Standard Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/compression
         </loc>
         
@@ -86,18 +97,18 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/cms
+            https://almanac.httparchive.org/en/2019/ecommerce
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 22:02:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
         </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/ecommerce
+            https://almanac.httparchive.org/en/2019/fonts
         </loc>
         
         <lastmod>
@@ -119,18 +130,14 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/media
+            https://almanac.httparchive.org/en/2019/javascript
         </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
-        </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/fonts
+            https://almanac.httparchive.org/en/2019/media
         </loc>
         
         <lastmod>
@@ -163,13 +170,6 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/javascript
-        </loc>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/page-weight
         </loc>
         
@@ -192,6 +192,17 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/pwa
+        </loc>
+        
+        <lastmod>
+            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/resource-hints
         </loc>
         
@@ -203,7 +214,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/pwa
+            https://almanac.httparchive.org/en/2019/seo
         </loc>
         
         <lastmod>
@@ -216,17 +227,6 @@
         <loc>
             https://almanac.httparchive.org/en/2019/security
         </loc>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/seo
-        </loc>
-        
-        <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
-        </lastmod>
         
     </url>
 
