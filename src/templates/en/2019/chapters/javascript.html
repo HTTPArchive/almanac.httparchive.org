@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":1,"title":"JavaScript","authors":["housseindjirdeh"],"reviewers":["rviscomi","obto","paulcalvano","mathiasbynens"]} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"II","chapter_number":1,"title":"JavaScript","authors":["housseindjirdeh"],"reviewers":["rviscomi","obto","paulcalvano","mathiasbynens"],"discuss":"1756"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -221,7 +221,7 @@
       <p>Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as <a href="https://www.chromium.org/Home">Chromium</a> and <a href="https://www.openhub.net/p/firefox">Firefox</a>, open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages cam make feature development easier and faster.</p>
       <p><strong>Which JavaScript open-source libraries are used the most?</strong></p>
       <p><code>&lt;insert graphics of metric 01_08&gt;</code></p>
-      <p><a href="https://jquery.com/">jQuery</a>, the most widely used JavaScript library ever created, is used in <strong>85.03%</strong> of desktop pages and <strong>83.46%</strong> of mobile pages. The advent of many Browser APIs and methods, such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a>, standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?</p>
+      <p><a href="https://jquery.com/">jQuery</a>, the most popular JavaScript library ever created, is used in <strong>85.03%</strong> of desktop pages and <strong>83.46%</strong> of mobile pages. The advent of many Browser APIs and methods, such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a>, standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?</p>
       <p>There are a number of possible reasons:</p>
       <ul>
         <li><a href="https://wordpress.org/">WordPress</a>, which is used in more than 30% of sites, includes jQuery by default</li>
@@ -288,7 +288,7 @@
         to measure feature usage.
       </p>
       <h1 id="source-maps">Source maps</h1>
-      <p>In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like <a href="https://www.typescriptlang.org/">TypeScript</a> compile to an output that can look extremely different from the original source code. For all these reasons, the final code served to the browser can unreadable and hard to decipher.</p>
+      <p>In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like <a href="https://www.typescriptlang.org/">TypeScript</a> compile to an output that can look noticeably different from the original source code. For all these reasons, the final code served to the browser can unreadable and hard to decipher.</p>
       <p>A <strong>source map</strong> is an additional file accompanying a JavaScript file that allows a browser to map the final output to its original source. This can make debugging and analyzing production bundles much simpler.</p>
       <p>Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. <strong>So how many sites actually include sourcemaps?</strong></p>
       <p><code>&lt;insert graphic of metric 01_25&gt;</code></p>
@@ -297,6 +297,7 @@
       <p>Every year, the JavaScript ecosystem continues to change and evolve. Newer APIs, improved browser engines, and fresh libraries and frameworks are all things we can expect to happen indefinitely. HTTP Archive provides us with valuable insight on how sites in the wild use the language.</p>
       <p>Without JavaScript, the web would not be where it is today, and all the data gathered for this article only proves this.</p>
     </section>
+    {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>

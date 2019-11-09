@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-07T21:46:11.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"discuss":"1767","published":"2019-11-04T12:00:00+00:00:00","last_updated":"2019-11-07T21:46:11.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -292,7 +292,7 @@
       <h2 id="textual-content">Textual content</h2>
       <p>The primary goal of a web page is to deliver content users want to engage with. This content might be a YouTube video or an assortment of images, but often times, it's simply the text on the page. It goes without saying that ensuring our textual content is legible to our visitors is extremely important. Because if visitors can't read it, there's nothing left to engage with, and they'll leave. There are two key things to check when ensuring your text is legible to readers: color contrast and font sizes.</p>
       <h3 id="color-contrast">Color contrast</h3>
-      <p>When designing our sites we tend to be in more optimal conditions, and have far better eyes than many of our visitors. Visitors may be colorblind and unable to distinguish between the text and background color. <a href="https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf">1 in every 12 men and 1 in 200 women</a> of European descent are colorblind. Or perhaps visitors are reading the page while the sun is creating glare on their screen, which may similarly impair legibility.</p>
+      <p>When designing our sites we tend to be in more optimal conditions, and have far better eyes than many of our visitors. Visitors may be colorblind and unable to distinguish between the text and background color. <a href="http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf">1 in every 12 men and 1 in 200 women</a> of European descent are colorblind. Or perhaps visitors are reading the page while the sun is creating glare on their screen, which may similarly impair legibility.</p>
       <p>To help us mitigate this problem, there are <a href="https://dequeuniversity.com/rules/axe/2.2/color-contrast">accessibility guidelines</a> we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.</p>
       <figure id="fig-4">
         <a href="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
@@ -417,6 +417,7 @@
         </ol>
       </aside>
     </section>
+    {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>

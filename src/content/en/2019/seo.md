@@ -5,6 +5,7 @@ title: SEO
 description: SEO chapter of the 2019 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
+discuss: 1765
 published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-07T21:46:11.000Z 
 ---
