@@ -288,6 +288,9 @@ figure iframe {
   display: block;
   margin: 0 auto;
 }
+figure .code-block {
+  margin: 10px auto;
+}
 figcaption {
   margin-top: 8px;
   text-align: center;
