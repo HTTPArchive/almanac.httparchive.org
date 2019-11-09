@@ -118,7 +118,7 @@ In Figure 6 above, FCP experiences are grouped by the ECT of the user experience
 #### FCP by geography
 
 <figure id="fig7">
-  <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig7-caption" width="600" height="940" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive"></iframe>
   <a href="/static/images/2019/07_Performance/fig7.png" class="fig-mobile">
     <img src="/static/images/2019/07_Performance/fig7.png" aria-labelledby="fig7-caption" width="600">
   </a>
@@ -172,7 +172,7 @@ Let's apply a TTFB speed label to each website, taking inspiration from the PSI 
 #### TTFB by geo
 
 <figure id="fig11">
-  <iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=685447534&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig11-caption" width="600" height="940" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=685447534&amp;format=interactive"></iframe>
   <a href="/static/images/2019/07_Performance/fig11.png" class="fig-mobile">
     <img src="/static/images/2019/07_Performance/fig11.png" aria-labelledby="fig11-caption" width="600">
   </a>
@@ -263,7 +263,7 @@ The ECT results above seem to suggest that there is a correlation between connec
 #### FID by geo
 
 <figure id="fig18">
-  <iframe aria-labelledby="fig18-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=11500240&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig18-caption" width="600" height="940" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=11500240&amp;format=interactive"></iframe>
   <a href="/static/images/2019/07_Performance/fig18.png" class="fig-mobile">
     <img src="/static/images/2019/07_Performance/fig18.png" aria-labelledby="fig18-caption" width="600">
   </a>
