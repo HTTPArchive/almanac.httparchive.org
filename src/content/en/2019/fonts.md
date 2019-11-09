@@ -5,6 +5,7 @@ title: Fonts
 description: Fonts chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third parties, performance, seo, and PWAs
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
+discuss: 1761
 published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-07T21:46:11.000Z 
 ---

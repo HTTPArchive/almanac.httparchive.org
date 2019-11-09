@@ -4,6 +4,7 @@ chapter_number: 1
 title: JavaScript
 authors: [housseindjirdeh]
 reviewers: [rviscomi, obto, paulcalvano, mathiasbynens]
+discuss: 1756
 ---
 
 # Chapter 1: JavaScript

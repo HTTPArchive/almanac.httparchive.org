@@ -147,6 +147,18 @@
   font-weight: normal;
 }
 
+.discuss img {
+  margin-right: 10px;
+  vertical-align: top;
+}
+.discuss a:hover img,
+.discuss a:focus img {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(4%) saturate(4357%) hue-rotate(16deg) brightness(136%) contrast(94%);
+}
+#num_comments {
+  line-height: 24px;
+}
+
 .authors h4{
   padding: 16px 0;
 }
@@ -276,6 +288,9 @@ figure iframe {
   display: block;
   margin: 0 auto;
 }
+figure .code-block {
+  margin: 10px auto;
+}
 figcaption {
   margin-top: 8px;
   text-align: center;
@@ -303,6 +318,10 @@ figure .big-number {
   font: bold 8rem/1em Poppins, sans-serif;
   color: #a8caba;
 }
+figure .fig-mobile {
+  display: none;
+}
+
 .bio {
   margin-top: 10px;
 }
@@ -373,5 +392,11 @@ figure .big-number {
 @media (max-width: 600px) {
   figure .big-number {
     font-size: 5rem;
+  }
+  figure iframe {
+    display: none;
+  }
+  figure .fig-mobile {
+    display: block;
   }
 }

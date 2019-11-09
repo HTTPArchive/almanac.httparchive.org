@@ -4,6 +4,7 @@ from flask import Flask, redirect, render_template as flask_render_template, req
 from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
+import random
 from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
 
 app = Flask(__name__)
@@ -72,6 +73,9 @@ def table_of_contents(lang, year):
 @validate
 def contributors(lang, year):
     config = config_util.get_config(year)
+    contributors = list(config["contributors"].items())
+    random.shuffle(contributors)
+    config["contributors"] = dict(contributors)
     return render_template('%s/%s/contributors.html' % (lang, year), config=config)
 
 
