@@ -315,6 +315,10 @@ figure .big-number {
   font: bold 8rem/1em Poppins, sans-serif;
   color: #a8caba;
 }
+figure .fig-mobile {
+  display: none;
+}
+
 .bio {
   margin-top: 10px;
 }
@@ -385,5 +389,11 @@ figure .big-number {
 @media (max-width: 600px) {
   figure .big-number {
     font-size: 5rem;
+  }
+  figure iframe {
+    display: none;
+  }
+  figure .fig-mobile {
+    display: block;
   }
 }
