@@ -46,22 +46,22 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/accessibility
+            https://almanac.httparchive.org/en/2019/caching
         </loc>
         
         <lastmod>
-            2019-11-05
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/caching
+            https://almanac.httparchive.org/en/2019/compression
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -90,29 +90,33 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/css
-        </loc>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/ecommerce
+            https://almanac.httparchive.org/en/2019/fonts
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/fonts
+            https://almanac.httparchive.org/en/2019/cms
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 22:02:00 GMT+0000 (Greenwich Mean Time)
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/accessibility
+        </loc>
+        
+        <lastmod>
+            2019-11-05
         </lastmod>
         
     </url>
@@ -123,7 +127,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -141,7 +145,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -152,7 +156,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -163,7 +167,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -174,7 +178,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -185,7 +189,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -196,7 +200,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -207,7 +211,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -225,7 +229,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
@@ -236,7 +240,7 @@
         </loc>
         
         <lastmod>
-            Thu Nov 07 2019 21:46:00 GMT-0800 (Pacific Standard Time)
+            Thu Nov 07 2019 21:46:00 GMT+0000 (Greenwich Mean Time)
         </lastmod>
         
     </url>
