@@ -14,29 +14,27 @@ last_updated: 2019-11-07T21:46:11.000Z
 The Security chapter of the Web Almanac looks at the current status of security on the web. With security and privacy becoming increasingly more important online there has been an increase in the availability of features to protect site operators and users. We're going to look at the adoption of these new features across the web.
 
 ## Transport Layer Security
-Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security. TLS (or the older version SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great increase in the use of HTTPS across the web, but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.
+Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security. TLS (or the older version SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great [increase in the use of HTTPS across the web](https://httparchive.org/reports/state-of-the-web#pctHttps), but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.
 
-<figure markdown>
-| Protocol | Desktop | Mobile |
-|----------|---------|--------|
-| HTTPS    | 60.25%  | 54.33% |
-| HTTP     | 39.75%  | 45.67% |
-
-<figcaption>Figure 1. Usage of HTTPS versus HTTPS.</figcaption>
+<figure>
+  <iframe aria-labelledby="fig1-caption" width="760" height="470" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/08_Security/fig1.png" class="fig-mobile">
+    <img src="/static/images/2019/08_Security/fig1.png" aria-labelledby="fig1-caption" width="760">
+  </a>
+  <div id="fig1-caption" class="visually-hidden">Figure 1. Usage of HTTP versus HTTPS</div>
+  <figcaption>Figure 1. Usage of HTTP versus HTTPS</figcaption>
 </figure>
 
 ### Protocol versions
 Looking at the support for various protocol versions we get the statistics in figure 2:
 
-<figure markdown>
-| TLS Version | Desktop | Mobile |
-|-------------|------------------|
-| TLSv1.3     | 40.9%   | 41.77% |
-| TLSv1.2     | 58.32%  | 57.53% |
-| TLSv1.1     | 0.01%   | 0.01%  |
-| TLSv1.0     | 0.78%   | 0.69%  |
-
-<figcaption>Figure 2. Usage of TLS protocol versions.</figcaption>
+<figure>
+  <iframe aria-labelledby="fig2-caption" width="760" height="470" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/08_Security/fig2.png" class="fig-mobile">
+    <img src="/static/images/2019/08_Security/fig2.png" aria-labelledby="fig2-caption" width="760">
+  </a>
+  <div id="fig2-caption" class="visually-hidden">Figure 2. Usage of TLS protocol versions.</div>
+  <figcaption>Figure 2. Usage of TLS protocol versions.</figcaption>
 </figure>
 
 Use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in [August 2018](https://tools.ietf.org/html/rfc8446)), over 40% of requests using TLS are using the latest version!
@@ -45,15 +43,13 @@ This is likely due to many sites using requests from the larger players for [thi
 
 If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to [CMS](./cms) sites like Wordpress and [CDNs](./cdns):
 
-<figure markdown>
-| TLS Version | Desktop | Mobile |
-|-------------|------------------|
-| TLSv1.3     | 20.25%  | 19.69% |
-| TLSv1.2     | 78.54%  | 79.23% |
-| TLSv1.1     |  0.02%  | 0.02%  |
-| TLSv1.0     |  1.09%  | 1.17%  |
-
-<figcaption>Figure 3. Usage of TLS protocol versions for home page requests only.</figcaption>
+<figure>
+ 	  <iframe aria-labelledby="fig3-caption" width="760" height="470" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive"></iframe>
+   <a href="/static/images/2019/08_Security/fig3.png" class="fig-mobile">
+    <img src="/static/images/2019/08_Security/fig3.png" aria-labelledby="fig3-caption" width="760">
+  </a>
+  <div id="fig3-caption" class="visually-hidden">Figure 3. Usage of TLS protocol versions for home page requests only.</div>
+  <figcaption>Figure 3. Usage of TLS protocol versions for home page requests only.</figcaption>
 </figure>
 
 On the other hand, the [methodology](./methodology) used by the Web Almanac will also *under report* usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.
@@ -137,12 +133,22 @@ Most sites on the web originally existed as HTTP websites and have had to migrat
 <figcaption>Figure 7. Mixed content usage.</figcaption>
 </figure>
 
-We can see that around 20% of sites across mobile and desktop present some form of mixed content. Whilst passive mixed content, something like an image, is less dangerous, we can still see that almost a quarter of sites with mixed content have active mixed content. Active mixed content, like javascript, is more dangerous as an attacker can insert their own hostile code into a page easily.
+We can see that around 20% of sites across mobile (645,485 sites) and desktop (594,072 sites) present some form of mixed content. Whilst passive mixed content, something like an image, is less dangerous, we can still see that almost a quarter of sites with mixed content have active mixed content. Active mixed content, like javascript, is more dangerous as an attacker can insert their own hostile code into a page easily.
 
 In the past web browsers have allowed passive mixed content and flagged it with a warning but blocked active mixed content. More recently however, Chrome [announced](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html) it intends to improve here and as HTTPS becomes the norm it will block all mixed content instead.
 
 ## Security headers
 Many new and recent features for site operators to better protect their users have come in the form of new HTTP response headers that can configure and control security protections built into the browser. Some of these features are easy to enable and provide a huge level of protection whilst others require a little more work from site operators. If you wish to check if a site is using these headers and has them correctly configured, you can use the [Security Headers](https://securityheaders.com/) tool to scan it.
+
+<figure>
+    <iframe aria-labelledby="fig8-caption" width="760" height="450" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive"></iframe>
+
+   <a href="/static/images/2019/08_Security/fig8.png" class="fig-mobile">
+    <img src="/static/images/2019/08_Security/fig8.png" aria-labelledby="fig8-caption" width="760">
+  </a>
+  <div id="fig8-caption" class="visually-hidden">Figure 8. Usage of Security Headers.</div>
+  <figcaption>Figure 8. Usage of Security Headers</figcaption>
+</figure>
 
 ### HTTP Strict Transport Security
 The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instruct a browser that it should only ever communicate with the site over a secure HTTPS connection. This means that any attempts to use a http:// URL will automatically be converted to https:// before a request is made. Given that over 40% of requests were capable of using TLS, we see a much lower % of requests instructing the browser to require it.
@@ -446,7 +452,7 @@ By adding an `integrity` attribute to a script or link tag, a browser can integr
   crossorigin="anonymous"></script>
 ```
 
-With only 0.06% of desktop pages and 0.05% of mobile pages containing link or script tags with the integrity attribute set, there's room for a lot of improvement in the use of SRI. With many CDNs now providing code samples that include the SRI integrity attribute we should see a steady increase in the use of SRI. 
+With only 0.06% (247,604) of desktop pages and 0.05% (272,167) of mobile pages containing link or script tags with the integrity attribute set, there's room for a lot of improvement in the use of SRI. With many CDNs now providing code samples that include the SRI integrity attribute we should see a steady increase in the use of SRI. 
 
 ## Conclusion
 
