@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i, 900|Poppins:300,400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/2019.css">
+{% endblock %}
+
+{% block content%}
+  {% block header %}
+    <header class="alt-bg">
+      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac por http archive" srcset="/static/images/logo@2x.png 2x" /></a>
+      <nav>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
+        {% if supported_years | length > 1 %}
+          {{ year_switcher() }}
+        {% endif %}
+      </nav>
+      <div class="cta">
+        {% if request.endpoint == 'home' %}
+          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
+            Empieza a Explorar
+          </a>
+        {% endif %}
+        {{ language_switcher() }}
+      </div>
+      <button type="button" class="menu-btn" arial-label="Menú">
+        <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png"/>
+      </button>
+      <nav class="menu">
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
+        <div class="misc">
+          <a href="https://httparchive.org/">
+            <img src="/static/images/ha-home.png" alt="Página de Inicio HTTP Archive" />
+          </a>
+          <div class="social-media">
+            <a href="https://twitter.com/HTTPArchive" class="twitter">
+              <img src="/static/images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+              <img src="/static/images/github.png" alt="GitHub" />
+            </a>
+          </div>
+          {{ language_switcher() }}
+        </div>
+      </nav>
+    </header>
+  {% endblock %}
+
+  {% block main %}{% endblock %}
+
+  {% block footer %}
+    <footer class="alt-bg">
+      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac por http archive" srcset="/static/images/logo@2x.png 2x" /></a>
+      <a class="navigation-logo ha-logo" href="https://httparchive.org">
+        <img src="/static/images/ha-home.png" alt="Página de Inicio HTTP Archive" />
+      </a>
+      <nav class="nav-items">
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
+      </nav>
+      <div class="language-switcher">{{ language_switcher() }}</div>
+      <p class="copyright">Copyright © 2019 Web Almanac. Todos los derechos reservados.</p>
+      <div class="social-media">
+        <a href="https://twitter.com/HTTPArchive" class="twitter">
+          <img src="/static/images/twitter.png" alt="Twitter" />
+        </a>
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+          <img src="/static/images/github.png" alt="GitHub" />
+        </a>
+      </div>
+      <hr>
+      <hr>
+    </footer>
+  {% endblock %}
+  {% block scripts %}
+    <script nonce="{{ csp_nonce() }}">
+      (function() {
+        // Language switching
+        var languageSwitchers = document.querySelectorAll('.language-switcher select');
+        for (var i = 0; i < languageSwitchers.length; i++) {
+          languageSwitchers[i].addEventListener('change', function(e) {
+            if (e.target.value) {
+              window.location = e.target.value;
+            }
+          });
+        }
+
+        // Mobile menu
+        var menuIcon = document.querySelector('.menu-icon');
+        var menuIconInitialSrc = document.querySelector('.menu-icon').src;
+        var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
+
+        document.querySelector('.menu-btn').addEventListener('click', function() {
+          var menuOpen = document.body.classList.toggle('menu-open');
+          menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
+        });
+      })();
+    </script>
+  {% endblock %}
+{% endblock %}
+
+{% macro language_switcher() %}
+{% if supported_languages | length > 1%}
+<div class="language-switcher">
+  {% if language is not none %}
+    <img src="/static/images/{{ language.lang_code }}.png" class="flag" height="25" width="25" />
+  {% else %}
+    <img src="/static/images/English.png" class="flag" height="25" width="25" />
+  {% endif %}
+  <select>
+    {% for l in supported_languages %}
+      <option
+        {% if l == language %}selected="selected"{% endif %}
+        value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+        {{ l }}
+      </option>
+    {% endfor %}
+  </select>
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="abrir" height="20" width="20" />
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro year_switcher() %}
+<div class="year-switcher">
+  <select>
+      {% for y in supported_years %}
+        <option
+          {% if y == year %}selected="selected"{% endif %}
+          value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
+          Edición de {{ y }} 
+        </option>
+      {% endfor %}
+  </select>
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="abir" height="20" width="20" />
+</div>
+{% endmacro %}
