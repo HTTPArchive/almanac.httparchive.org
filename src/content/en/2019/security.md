@@ -160,7 +160,7 @@ The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instr
 | `includeSubDomains` |  3.86%  |  3.29% |
 | `preload`           |  2.27%  |  1.99% |
 
-<figcaption>Figure 8. HSTS directive usage.</figcaption>
+<figcaption>Figure 9. HSTS directive usage.</figcaption>
 </figure>
 
 Less than 15% of mobile and desktop page are issuing a HSTS with a `max-age ` directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration.
@@ -203,7 +203,7 @@ Less than 15% of mobile and desktop page are issuing a HSTS with a `max-age ` di
     </tr>
   </table>
 
-<figcaption>Figure 9. Medium values of HSTS `max-age` policy by percentile.</figcaption>
+<figcaption>Figure 10. Medium values of HSTS `max-age` policy by percentile.</figcaption>
 </figure>
 
 #### HSTS preloading
@@ -268,7 +268,7 @@ A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Po
 | `strict-origin `                  |  4.35%  |  4.14% |
 | `origin`                          |  3.63%  |  3.23% |
 
-<figcaption>Figure 10. `Referrer-Policy` configuration option usage.</figcaption>
+<figcaption>Figure 11. `Referrer-Policy` configuration option usage.</figcaption>
 </figure>
 
 This table shows the valid values set by pages and that 99.75% of desktop pages and 96.55% of mobile pages are setting a valid policy. The most popular choice of configuration is `no-referrer-when-downgrade` which will prevent the `Referer` header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is `strict-origin-when-cross-origin` which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the `Referer` it will only contain the origin of the source and not the full URL (for example `https://www.example.com` rather than `https://www.example.com/page/that/referred/you`). Details on the other valid configurations can be found in the [Referrer Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policies), though such a high usage of `unsafe-url` warrants further investigation but is likely to be a [third-party](./thirdparty) like analytics or advertisements.
@@ -287,7 +287,7 @@ Here are the 5 most popular features that are controlled with a Feature Policy.
 | `geolocation`     | 9.38%   |  9.41% |
 | `gyroscope`       | 7.92%   |  7.90% |
 
-<figcaption>Figure 11. Top 5 `Feature-Policy` options used.</figcaption>
+<figcaption>Figure 12. Top 5 `Feature-Policy` options used.</figcaption>
 </figure>
 
 We can see that the most popular feature to take control of is the microphone, with almost 11% of desktop and mobile pages issuing a policy that includes it. Delving deeper into the data we can look at what those pages are allowing or blocking.
@@ -303,7 +303,7 @@ We can see that the most popular feature to take control of is the microphone, w
 | microphone | *             | 0.64% |
 | microphone | *             | 0.53% |
 
-<figcaption>Figure 12. Settings used for `microphone` feature.</figcaption>
+<figcaption>Figure 13. Settings used for `microphone` feature.</figcaption>
 </figure>
 
 By far the most common approach here is to block use of the microphone altogether, with ~9% of pages taking that approach. A small number of pages do allow the use of the microphone by their own origin and interestingly, a small selection of pages intentionally allow use of the microphone by any origin loading content in their page. 
@@ -320,7 +320,7 @@ We see that the usage of the `X-Frame-Options` header is quite high on both desk
 | `deny`        | 13.54%  | 14.50% |
 | `allow-from`  |  1.53%  |  1.64% |
 
-<figcaption>Figure 13. `X-Frame-Options` configuration used.</figcaption>
+<figcaption>Figure 14. `X-Frame-Options` configuration used.</figcaption>
 </figure>
 
 It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to `frame-ancestors` in CSP where these 2 approaches are also the most common. It should also be noted that the `allow-from` option, which in theory allow site owners to list the third-party domains allowed to frame was [never well supported(https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) and has been deprecated].
@@ -343,7 +343,7 @@ The [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Heade
 | `0`            |  2.58%  |  3.11% |
 | `1;report=`    |  0.12%  |  0.09% |
 
-<figcaption>Figure 14. `X-XSS-Protection` configuration usage.</figcaption>
+<figcaption>Figure 15. `X-XSS-Protection` configuration usage.</figcaption>
 </figure>
 
 The value `1` enables the filter/auditor and `mode=block` sets the protection to the strongest setting (in theory) where any suspected XSS attack would cause the page to not be rendered. The second most common configuration was to simply ensure the auditor/filter was turned on, by presenting a value of `1` and then the 3rd most popular configuration is quite interesting.
@@ -392,7 +392,7 @@ Being a recently introduced mechanism, the usage of Same-Site cookies is much lo
 | `lax`         | 45.85%  | 47.42% |
 | `none`        |  0.51%  |  0.41% |
 
-<figcaption>Figure 15. SameSite configuration usage.</figcaption>
+<figcaption>Figure 16. SameSite configuration usage.</figcaption>
 </figure>
 
 We can see that of those pages already using Same-Site cookies, more than half of them are using it in Strict mode. This is closely followed by sites using Same-Site in Lax mode and then a small selection of sites using the value `none`. This last value is used to opt-out of the upcoming change where browser vendors may implement Lax mode by default.
@@ -435,7 +435,7 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
     </tr>
   </table>
 
-<figcaption>Figure 16. Cookie prefix usage.</figcaption>
+<figcaption>Figure 17. Cookie prefix usage.</figcaption>
 </figure>
 
 As the figures show, the use of either prefix is incredibly low but as the more relaxed of the two, the `__Secure-` prefix does see more utilization already. 
