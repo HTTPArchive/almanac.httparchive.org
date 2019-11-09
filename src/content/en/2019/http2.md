@@ -59,7 +59,7 @@ HTTP/2 however, was different as it was effectively hidden in HTTPS (at least fo
 Our analysis is sourced from the HTTP Archive, which tests approximately 5 million of the top desktop and mobile websites in the Chrome browser. (Learn more about our [methodology](./methodology).)
 
 <figure markdown>
-[![Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop adnd mobile as of July 2019. The trend is growing steadily at about 15 points per year.](/static/images/2019/20_HTTP_2/http2usage.png)](/static/images/2019/20_HTTP_2/http2usage.png)
+[![Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop adnd mobile as of July 2019. The trend is growing steadily at about 15 points per year.](/static/images/2019/20_HTTP_2/ch20_fig1_http2_usage_by_request.png)](/static/images/2019/20_HTTP_2/ch20_fig1_http2_usage_by_request.png)
 <figcaption>Figure 1. HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
 </figure>
 
@@ -189,14 +189,14 @@ The impact of HTTP/2 is much more difficult to measure, especially using the HTT
 One impact that can be measured is in the changing use of HTTP now that we are in an HTTP/2 world. Multiple connections were a workaround with HTTP/1.1 to allow a limited form of parallelization, but this is in fact the opposite of what usually works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, and HTTPS negotiation, and it also allows the potential of cross-request prioritization.
 
 <figure markdown>
-[![Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.](/static/images/2019/20_HTTP_2/TCPconnections.png)](/static/images/2019/20_HTTP_2/TCPconnections.png)
+[![Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.](/static/images/2019/20_HTTP_2/ch20_fig8_num_tcp_connections_trend_over_years.png)](/static/images/2019/20_HTTP_2/ch20_fig8_num_tcp_connections_trend_over_years.png)
 <figcaption>Figure 8. TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
 </figure>
 
 HTTP Archive measures the number of TCP connections per page, and that is dropping steadily as more sites support HTTP/2 and use its single connection instead of six separate connections.
 
 <figure markdown>
-[![Timeseries chart of the number of requests per page, with themedian desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.](/static/images/2019/20_HTTP_2/numresources.png)](/static/images/2019/20_HTTP_2/numresources.png)
+[![Timeseries chart of the number of requests per page, with themedian desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.](/static/images/2019/20_HTTP_2/ch20_fig9_total_requests_per_page_trend_over_years.png)](/static/images/2019/20_HTTP_2/ch20_fig9_total_requests_per_page_trend_over_years.png)
 <figcaption>Figure 9. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
 </figure>
 
@@ -241,9 +241,13 @@ These stats show that the uptick of HTTP/2 push is very low, most likely because
 
 This is a concern as previous advice has been to be conservative with push and to ["push just enough resources to fill idle network time, and no more"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). The above statistics suggest many resources of a significant combined size are pushed.
 
-<figure markdown>
-[![Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eigth, and various text-based types making up the rest.](/static/images/2019/20_HTTP_2/whatpushisusedfor.png)](/static/images/2019/20_HTTP_2/whatpushisusedfor.png)
-<figcaption>Figure 12. What asset types is push used for?</figcaption>
+<figure>
+  <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/20_HTTP_2/ch20_fig12_what_push_is_used_for.png" class="fig-mobile">
+    <img src="/static/images/2019/20_HTTP_2/ch20_fig12_what_push_is_used_for.png" aria-labelledby="fig2-caption" width="600">
+  </a>
+  <div id="fig2-caption" class="visually-hidden">Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eigth, and various text-based types making up the rest.</div>
+  <figcaption>Figure 12. What asset types is push used for?</figcaption>
 </figure>
 
 Figure 12 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!
@@ -290,7 +294,12 @@ HTTP/2 has a complex prioritization model (too complex many say - hence why it i
 <figcaption>Figure 13. HTTP/2 prioritization support in common CDNs.</figcaption>
 </figure>
 
-Figure 13 shows that a fairly significant portion of traffic is subject to the identified issue. How much of a problem this is depends on exactly how your page loads and whether high priority resources are discovered late or not for your site.
+Figure 13 shows that a fairly significant portion of traffic is subject to the identified issue, totalling 26.82% on desktop and 27.83% on mobile. How much of a problem this is depends on exactly how your page loads and whether high priority resources are discovered late or not for your site.
+
+<figure>
+  <div class="big-number">27.83%</div>
+  <figcaption>Figure 14. The percent of mobile requests with sub-optimal HTTP/2 prioritisation.</figcaption>
+</figure>
 
 Another issue is with the `upgrade` HTTP header being used incorrectly. Web servers can respond to requests with an `upgrade` HTTP header suggesting that it supports a better protocol that the client might wish to use (e.g. advertise HTTP/2 to a client only using HTTP/1.1). You might think this would be useful as a way of informing the browser it supports HTTP/2, but since browsers only support HTTP/2 over HTTPS and since use of HTTP/2 can be negotiated through the HTTPS handshake, the use of this `upgrade` header for advertising HTTP/2 is pretty limited (to browsers at least).
 
@@ -310,6 +319,11 @@ HTTP/3 also cleans up some overlap between TCP and HTTP/2 (e.g. flow control bei
 QUIC has been implemented by Google for a number of years and it is now undergoing a similar standardization process that SDPY did on its way to HTTP/2. QUIC has ambitions beyond just HTTP, but for the moment it is the use case being worked on currently. Just as this chapter was being written, [Cloudflare, Chrome, and Firefox all announced HTTP/3 support](https://blog.cloudflare.com/http3-the-past-present-and-future/), despite the fact that HTTP/3 is still not formally complete or approved as a standard yet. This is welcome as QUIC support has been somewhat lacking outside of Google until recently, and definitely lags behind SPDY and HTTP/2 support from a similar stage of standardization.
 
 Because HTTP/3 uses QUIC over UDP rather than TCP, it makes the discovery of HTTP/3 support a bigger challenge than HTTP/2 discovery. With HTTP/2 we can mostly use the HTTPS handshake, but as HTTP/3 is on a completely different connection, that is not an option here. HTTP/2 also used the `upgrade` HTTP header to inform the browser of HTTP/2 support, and although that was not that useful for HTTP/2, a similar mechanism has been put in place for QUIC that is more useful. The *alternative services* HTTP header (`alt-svc`) advertises alternative protocols that can be used on completely different connections, as opposed to alternative protocols that can be used on this connection, which is what the `upgrade` HTTP header is used for.
+
+<figure>
+  <div class="big-number">8.38%</div>
+  <figcaption>Figure 15. The percent of mobile sites which support QUIC.</figcaption>
+</figure>
 
 Analysis of this header shows that 7.67% of desktop sites and 8.38% of mobile sites already support QUIC, which roughly represents Google's percentage of traffic, unsurprisingly enough, as it has been using this for a while. And 0.04% are already supporting HTTP/3. I would imagine by next year's Web Almanac, this number will have increased significantly.
 
