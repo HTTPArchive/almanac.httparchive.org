@@ -4,17 +4,17 @@ chapter_number: 8
 title: Security
 description: Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity
 authors: [ScottHelme, arturjanc]
-reviewers: [bazzadp, ghedo]
+reviewers: [bazzadp, ghedo, paulcalvano]
 discuss: 1763
 published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-07T21:46:11.000Z 
 ---
 
 ## Introduction
-The Security chapter of the Web Almanac looks at the current status of security on the Web. With security and privacy becoming increasingly more important online there has been an increase in the availability of features to protect site operators and users. We're going to look at the adoption of these new features across the Web.
+The Security chapter of the Web Almanac looks at the current status of security on the web. With security and privacy becoming increasingly more important online there has been an increase in the availability of features to protect site operators and users. We're going to look at the adoption of these new features across the web.
 
 ## Transport Layer Security
-Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security. TLS (or the older version SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great increase in the use of HTTPS across the Web, but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.
+Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security. TLS (or the older version SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great increase in the use of HTTPS across the web, but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.
 
 <figure markdown>
 | Protocol | Desktop | Mobile |
@@ -25,8 +25,8 @@ Perhaps the largest push to increasing security and privacy online we're seeing 
 <figcaption>Figure 1. Usage of HTTPS versus HTTPS.</figcaption>
 </figure>
 
-### Protocol Versions
-Looking at the support for various protocol versions we can see that the use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Not only that but even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in [August 2018](https://tools.ietf.org/html/rfc8446)), over 40% of requests using TLS are using the latest version!
+### Protocol versions
+Looking at the support for various protocol versions we get the statistics in figure 2:
 
 <figure markdown>
 | TLS Version | Desktop | Mobile |
@@ -39,33 +39,55 @@ Looking at the support for various protocol versions we can see that the use of 
 <figcaption>Figure 2. Usage of TLS protocol versions.</figcaption>
 </figure>
 
-This is likely due to many sites using requests from the larger players for [third-party content](./third-party). For example, any sites load Google Analytics, Google Adwords, or Google Fonts and these large players like Google are typically early adoptors for new protocols. On the other hand, the [methodology](./methodology) used by the Web Almanac will also under report usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.
+Use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in [August 2018](https://tools.ietf.org/html/rfc8446)), over 40% of requests using TLS are using the latest version!
 
-### Certificate Authorities 
-Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority. With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top 10 certificate issuers based on the volume of TLS requests that use their certificate.
+This is likely due to many sites using requests from the larger players for [third-party content](./third-party). For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.
+
+If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to [CMS](./cms) sites like Wordpress and [CDNs](./cdns):
 
 <figure markdown>
-| Issuing Certificate Authority          | Desktop | Mobile |
-|----------------------------------------|---------|--------|
-| Google Internet Authority G3           | 19.26%  | 19.68% |
-| Let's Encrypt Authority X3             | 10.2%   |  9.19% |
-| DigiCert SHA2 High Assurance Server CA | 9.83%   |  9.26% |
-| DigiCert SHA2 Secure Server CA         | 7.55%   | 8.72%  |
-| GTS CA 1O1                             | 7.87%   | 8.43%  |
+| TLS Version | Desktop | Mobile |
+|-------------|------------------|
+| TLSv1.3     | 20.25%  | 19.69% |
+| TLSv1.2     | 78.54%  | 79.23% |
+| TLSv1.1     |  0.02%  | 0.02%  |
+| TLSv1.0     |  1.09%  | 1.17%  |
 
-<figcaption>Figure 3. Top Certificate Authority used.</figcaption>
+<figcaption>Figure 3. Usage of TLS protocol versions for home page requests only.</figcaption>
 </figure>
 
-As per previous discussions, the volume for Google likely reflects repeated use of Google Analytics, Google Adwords, or Google Fonts on other sites.
+On the other hand, the [methodology](./methodology) used by the Web Almanac will also *under report* usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.
 
-The rise of [Let's Encrypt](https://letsencrypt.org/) has been meteoric after their launch in early 2016, since then they've become one of the top certificate issuers in the world. The availability of free certificates and the automated tooling has been critically important to the adoption of HTTPS on the Web. Let's Encrypt certainly had a significant part to play in both of those.
+### Certificate Authorities 
+Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority. With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top ten certificate issuers based on the volume of TLS requests that use their certificate.
 
-The reduced cost has remove the barrier to entry for HTTPS, but the automation LEt's Encrypt uses is perhaps more important in the long run as it allows shorter certificate lifetimes [which has many security benefits]](https://scotthelme.co.uk/why-we-need-to-do-more-to-reduce-certificate-lifetimes/).
+<figure markdown>
+| Issuing Certificate Authority                   | Desktop | Mobile |
+|-------------------------------------------------|---------|--------|
+| Google Internet Authority G3                    | 19.26%  | 19.68% |
+| Let's Encrypt Authority X3                      | 10.20%  |  9.19% |
+| DigiCert SHA2 High Assurance Server CA          |  9.83%  |  9.26% |
+| DigiCert SHA2 Secure Server CA                  |  7.55%  |  8.72% |
+| GTS CA 1O1                                      |  7.87%  |  8.43% |
+| DigiCert SHA2 Secure Server CA                  |  7.55%  |  8.72% |
+| COMODO RSA Domain Validation Secure Server CA   |  6.29%  |  5.79% |
+| Go Daddy Secure Certificate Authority - G2      |  4.84%  |  5.10% |
+| Amazon                                          |  4.71%  |  4.45% |
+| COMODO ECC Domain Validation Secure Server CA 2 |  3.22%  |  2.75% |
+
+<figcaption>Figure 4. Top ten Certificate Authority used.</figcaption>
+</figure>
+
+As previously discussed, the volume for Google likely reflects repeated use of Google Analytics, Google Adwords, or Google Fonts on other sites.
+
+The rise of [Let's Encrypt](https://letsencrypt.org/) has been meteoric after their launch in early 2016, since then they've become one of the top certificate issuers in the world. The availability of free certificates and the automated tooling has been critically important to the adoption of HTTPS on the web. Let's Encrypt certainly had a significant part to play in both of those.
+
+The reduced cost has remove the barrier to entry for HTTPS, but the automation Let's Encrypt uses is perhaps more important in the long run as it allows shorter certificate lifetimes [which has many security benefits]](https://scotthelme.co.uk/why-we-need-to-do-more-to-reduce-certificate-lifetimes/).
 
 ### Authentication key type
 Alongside the important requirement to use HTTPS is the requirement to also use a good configuration. With so many configuration options and choices to make, this is a careful balance.
 
-First of all at the keys used for authentication purposes. Traditionally certificates have been issued based on keys using the RSA algorithm, however a newer and better algorithm uses ECDSA (Elliptic Curve Digital Signature Algorithm) which allows the use of smaller keys, and demonstrate better performance than their RSA counterparts. Look at the results of our crawl, we still see a large % of the Web using RSA.
+First of all, at the keys used for authentication purposes. Traditionally certificates have been issued based on keys using the RSA algorithm, however a newer and better algorithm uses ECDSA (Elliptic Curve Digital Signature Algorithm) which allows the use of smaller keys, and demonstrate better performance than their RSA counterparts. Look at the results of our crawl, we still see a large % of the web using RSA.
 
 <figure markdown>
 | Key Type      | Desktop | Mobile |
@@ -73,10 +95,10 @@ First of all at the keys used for authentication purposes. Traditionally certifi
 | RSA Keys (%)  | 48.67%  | 58.8%  |
 | ECDA Keys (%) | 21.47%  | 26.41% |
 
-<figcaption>Figure 4. Authentication key types used.</figcaption>
+<figcaption>Figure 5. Authentication key types used.</figcaption>
 </figure>
 
-Whilst ECDSA keys are stronger, which allows the use of smaller keys, and demonstrate better performance than their RSA counterparts, concerns around backwards compatibility, and complications in supporting both in the meantime, do prevent some website operators from migrating. 
+Whilst ECDSA keys are stronger, which allows the use of smaller keys and demonstrate better performance than their RSA counterparts, concerns around backwards compatibility, and complications in supporting both in the meantime, do prevent some website operators from migrating. 
 
 ### Forward secrecy
 [Forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) is a property of some key exchange mechanisms that secures the connection in such a way that it prevents each connection to a server from being exposed even in case of a future compromise of the server's private key. This is well understood within the security community as desirable on all TLS connections to safeguard the security of those connections. It was introduced as an optional configuration in 2008 with TLSv1.2 and has become mandatory in 2018 with TLSv1.3 requiring the use of Forward Secrecy.
@@ -84,7 +106,7 @@ Whilst ECDSA keys are stronger, which allows the use of smaller keys, and demons
 Looking at the % of TLS requests that provide Forward Secrecy, we can see that support is tremendous. 96.92% of Desktop and 96.49% of mobile requests use Forward secrecy. We'd expect that the continuing increase in the adoption of TLSv1.3 will further increase these numbers.
 
 ### Cipher suites
-TLS allows the use of various cipher suites - some newer and more secure, and some older and insecure. Traditionally newer TLS versions have added cipher suites, but have been reluctant to remove older cipher suites. TLSv1.3 aims to simplify this by offering a reduced set of ciphers suites and will not permit the older, insecure, cipher suites to be used. Tools like like [SSL Labs](https://www.ssllabs.com/) allow the TLS setup of a website (including the cipher suites supported and their preferred order) to be easily seen which helps drive better configurations. We can see that the majority of cipher suites negotiated for TLS requests were indeed excellent:
+TLS allows the use of various cipher suites - some newer and more secure, and some older and insecure. Traditionally newer TLS versions have added cipher suites but have been reluctant to remove older cipher suites. TLSv1.3 aims to simplify this by offering a reduced set of ciphers suites and will not permit the older, insecure, cipher suites to be used. Tools like [SSL Labs](https://www.ssllabs.com/) allow the TLS setup of a website (including the cipher suites supported and their preferred order) to be easily seen which helps drive better configurations. We can see that the majority of cipher suites negotiated for TLS requests were indeed excellent:
 
 <figure markdown>
 | Cipher Suite      | Desktop | Mobile |
@@ -96,15 +118,15 @@ TLS allows the use of various cipher suites - some newer and more secure, and so
 | CHACHA20_POLY1305 |  0.69%  |  0.79% |
 | 3DES_EDE_CBC      |  0.06%  |  0.04% |
 
-<figcaption>Figure 5. Cipher suite usage used.</figcaption>
+<figcaption>Figure 6. Cipher suite usage used.</figcaption>
 </figure>
 
-It is positive to seem such widestream use of GCM ciphers since the older CBC ciphers are less secure. [CHACHA20_POLY1305](https://blog.cloudflare.com/it-takes-two-to-chacha-poly/) is still an niche cipher suite, and we even still have a very small use of the [insecure 3DES ciphers](https://en.wikipedia.org/wiki/Triple_DES#Security).
+It is positive to seem such wide stream use of GCM ciphers since the older CBC ciphers are less secure. [CHACHA20_POLY1305](https://blog.cloudflare.com/it-takes-two-to-chacha-poly/) is still an niche cipher suite, and we even still have a very small use of the [insecure 3DES ciphers](https://en.wikipedia.org/wiki/Triple_DES#Security).
 
-It should be notced that these were the cipher suites used for the crawl using Chrome, but sites will likely also support other cipher suites as well for older browsers. Other sources, for example SSL Pulse](https://www.ssllabs.com/ssl-pulse/), can provide more detail on the range of all cipher suites and protocols supported.
+It should be noticed that these were the cipher suites used for the crawl using Chrome, but sites will likely also support other cipher suites as well for older browsers. Other sources, for example SSL Pulse](https://www.ssllabs.com/ssl-pulse/), can provide more detail on the range of all cipher suites and protocols supported.
 
 ## Mixed content
-Most sites on the Web originally existed as HTTP websites and have had to migrate their site to HTTPS. This 'lift and shift' operation can be difficult and sometimes things get missed or left behind. This results in sites having mixed content, where their pages load over HTTPS but something on the page, perhaps an image or a style, is loaded over HTTP. Mixed content is bad for security and privacy and can be difficult to find and fix.
+Most sites on the web originally existed as HTTP websites and have had to migrate their site to HTTPS. This 'lift and shift' operation can be difficult and sometimes things get missed or left behind. This results in sites having mixed content, where their pages load over HTTPS but something on the page, perhaps an image or a style, is loaded over HTTP. Mixed content is bad for security and privacy and can be difficult to find and fix.
 
 <figure markdown>
 | Cipher Suite                    | Desktop | Mobile |
@@ -112,14 +134,14 @@ Most sites on the Web originally existed as HTTP websites and have had to migrat
 | Pages with Mixed Content        | 16.27%  | 15.37% |
 | Pages with Active Mixed Content |  3.99%  |  4.13% |
 
-<figcaption>Figure 6. Mixed content usage.</figcaption>
+<figcaption>Figure 7. Mixed content usage.</figcaption>
 </figure>
 
 We can see that around 20% of sites across mobile and desktop present some form of mixed content. Whilst passive mixed content, something like an image, is less dangerous, we can still see that almost a quarter of sites with mixed content have active mixed content. Active mixed content, like javascript, is more dangerous as an attacker can insert their own hostile code into a page easily.
 
 In the past web browsers have allowed passive mixed content and flagged it with a warning but blocked active mixed content. More recently however, Chrome [announced](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html) it intends to improve here and as HTTPS becomes the norm it will block all mixed content instead.
 
-## Security Headers
+## Security headers
 Many new and recent features for site operators to better protect their users have come in the form of new HTTP response headers that can configure and control security protections built into the browser. Some of these features are easy to enable and provide a huge level of protection whilst others require a little more work from site operators. If you wish to check if a site is using these headers and has them correctly configured, you can use the [Security Headers](https://securityheaders.com/) tool to scan it.
 
 ### HTTP Strict Transport Security
@@ -132,10 +154,10 @@ The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instr
 | `includeSubDomains` |  3.86%  |  3.29% |
 | `preload`           |  2.27%  |  1.99% |
 
-<figcaption>Figure 7. HSTS directive usage.</figcaption>
+<figcaption>Figure 8. HSTS directive usage.</figcaption>
 </figure>
 
-Less than 15% of mobile and desktop page are issuing a HSTS with a `max-age `directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration.
+Less than 15% of mobile and desktop page are issuing a HSTS with a `max-age ` directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration.
 
 <figure>
   <table>
@@ -144,7 +166,7 @@ Less than 15% of mobile and desktop page are issuing a HSTS with a `max-age `dir
      <th colspan="2" >Client</th>
     </tr>
     <tr>
-     <th>max-age value</th>
+     <th>Percentile</th>
      <th>Desktop</th>
      <th>Mobile</th>
     </tr>
@@ -175,20 +197,20 @@ Less than 15% of mobile and desktop page are issuing a HSTS with a `max-age `dir
     </tr>
   </table>
 
-<figcaption>Figure 8. Medium values of HSTS `max-age` policy by percentile.</figcaption>
+<figcaption>Figure 9. Medium values of HSTS `max-age` policy by percentile.</figcaption>
 </figure>
 
-#### HSTS Preloading
+#### HSTS preloading
 With the HSTS policy delivered via an HTTP response Header, when visiting a site for the first time a browser will not know whether a policy is configured. To avoid this [Trust On First Use](https://en.wikipedia.org/wiki/Trust_on_first_use) problem, a site operator can have the policy preloaded into the browser (or other user agents) meaning you are protected even before you visit the site for the first time.
 
-There are a number of requirements for preloading, which are outlined on the [HSTS Preload](https://hstspreload.org/) site. We can see that only a small number of sites, 0.31% on desktop and 0.26% on mobile, are eligible according to current criteria. Sites should ensure they have fully transitions all sites under their domain to HTTPS before submitting to preload the domain or they risk blocking access to HTTP-only sites.
+There are a number of requirements for preloading, which are outlined on the [HSTS preload](https://hstspreload.org/) site. We can see that only a small number of sites, 0.31% on desktop and 0.26% on mobile, are eligible according to current criteria. Sites should ensure they have fully transitions all sites under their domain to HTTPS before submitting to preload the domain or they risk blocking access to HTTP-only sites.
 
 ### Content Security Policy
-Web applications face frequent attacks where hostile content finds its way into a page. The most worrisome form of content is JavaScript and when an attacker finds a way to insert JavaScript into a page, they can launch damaging attacks. These attacks are known as [Cross-Site Scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) and [Content Security Policy (CSP)](https://www.w3.org/TR/CSP2/) provides an effective defence against these attacks.
+Web applications face frequent attacks where hostile content finds its way into a page. The most worrisome form of content is JavaScript and when an attacker finds a way to insert JavaScript into a page, they can launch damaging attacks. These attacks are known as [Cross-Site Scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) and [Content Security Policy (CSP)](https://www.w3.org/TR/CSP2/) provides an effective defense against these attacks.
 
-CSP is an HTTP header (`Content-Security-Policy') published by a website which tells the browser rules around  ontent allowed on a sites. If additional content is injected into the site due to a security flaw, and it is not allowed by the policy, the browser will block it from being used. Alongside XSS protection, CSP also offers several other key benefits such as [making migration to HTTP easier](#upgrade-insecure-requests).
+CSP is an HTTP header (`Content-Security-Policy') published by a website which tells the browser rules around content allowed on a site. If additional content is injected into the site due to a security flaw, and it is not allowed by the policy, the browser will block it from being used. Alongside XSS protection, CSP also offers several other key benefits such as [making migration to HTTP easier](#upgrade-insecure-requests).
 
-Despite the many benefits of CSP, it can be complicated to implement on websites since its very purpose is to limit what is acceptable on a page. The policy must allow all content and resources you need and can easily get large and complex. Tools like [Report URI](https://report-uri.com/) can help you analyse and build the appropriate policy.
+Despite the many benefits of CSP, it can be complicated to implement on websites since its very purpose is to limit what is acceptable on a page. The policy must allow all content and resources you need and can easily get large and complex. Tools like [Report URI](https://report-uri.com/) can help you analyze and build the appropriate policy.
 
 We find that only 5.51% of desktop pages include a CSP and only 4.73% of mobile pages include a CSP, likely due to the complexity of deployment.
 
@@ -211,7 +233,7 @@ A common problem that site operators face in their migration from HTTP to HTTPS 
 
 Of the HTTPS pages surveyed on the desktop, 16.27% of them loaded mixed-content with 3.99% of pages loading active mixed-content like JS/CSS/fonts. On mobile pages we see 15.37% of HTTPS pages loading mixed-content with 4.13% loading active mixed-content. By loading active content such as JavaScript over HTTP an attacker can easily inject hostile code into the page to launch an attack. This is what the 'upgrade-insecure-requests` directive in CSP protects against.
 
-The `upgrade-insecure-requests` directive is found in the CSP of 3.24% of desktop pages and 2.84% of mobile pages, indicating that an increase in adoption would provide substantial benefits. It could be introduced with relative ease, without requiring a fullly locked-down CSP and the complexity that would entail, by whitelisting broad categories and including `unsafe-inline` and `unsafe-eval` with a policy like below:
+The `upgrade-insecure-requests` directive is found in the CSP of 3.24% of desktop pages and 2.84% of mobile pages, indicating that an increase in adoption would provide substantial benefits. It could be introduced with relative ease, without requiring a fully locked-down CSP and the complexity that would entail, by whitelisting broad categories and including `unsafe-inline` and `unsafe-eval` with a policy like below:
 
 `Content-Security-Policy: upgrade-insecure-requests; default-src https:`
 
@@ -220,10 +242,10 @@ Another common attack known as [clickjacking](https://en.wikipedia.org/wiki/Clic
 
 Of the pages surveyed, 2.85% of desktop pages include the `frame-ancestors` directive in CSP with 0.74% of desktop pages setting Frame-Ancestors to `'none'`, preventing any framing, and 0.47% of pages setting `frame-ancestors` to `'self'`, allowing only their own site to frame itself. On mobile we see 2.52% of pages using `frame-ancestors` with 0.71% setting the value of `'none'` and 0.41% setting the value to `'self'`.
 
-### Referrer policy
+### Referrer Policy
 The [`Referrer-Policy`](https://www.w3.org/TR/referrer-policy/) header allows a site to control what information will be sent in the `Referer` header when a user navigates away from the current page. This can be the source of information leakage if there is sensitive date in the URL such as the page being visited, or URL parameters. By controlling what information is sent in the `Referer` header, ideally limiting it, a site can protect the privacy of their visitors by reducing the information sent to 3rd parties.
 
-Note the Referrer Policy does not follow the Referer header's misspelling [which has become a well known error](https://stackoverflow.com/questions/3087626/was-the-misspelling-of-the-http-field-name-referer-intentional).
+Note the Referrer Policy does not follow the Referer header's misspelling [which has become a well-known error](https://stackoverflow.com/questions/3087626/was-the-misspelling-of-the-http-field-name-referer-intentional).
 
 A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Policy` header and below we can see the configurations those pages used.
 
@@ -240,7 +262,7 @@ A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Po
 | `strict-origin `                  |  4.35%  |  4.14% |
 | `origin`                          |  3.63%  |  3.23% |
 
-<figcaption>Figure 9. `Referrer-Policy` configuration option usage.</figcaption>
+<figcaption>Figure 10. `Referrer-Policy` configuration option usage.</figcaption>
 </figure>
 
 This table shows the valid values set by pages and that 99.75% of desktop pages and 96.55% of mobile pages are setting a valid policy. The most popular choice of configuration is `no-referrer-when-downgrade` which will prevent the `Referer` header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is `strict-origin-when-cross-origin` which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the `Referer` it will only contain the origin of the source and not the full URL (for example `https://www.example.com` rather than `https://www.example.com/page/that/referred/you`). Details on the other valid configurations can be found in the [Referrer Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policies), though such a high usage of `unsafe-url` warrants further investigation but is likely to be a [third-party](./thirdparty) like analytics or advertisements.
@@ -259,23 +281,23 @@ Here are the 5 most popular features that are controlled with a Feature Policy.
 | `geolocation`     | 9.38%   |  9.41% |
 | `gyroscope`       | 7.92%   |  7.90% |
 
-<figcaption>Figure 10. Top 5 `Feature-Policy` options used.</figcaption>
+<figcaption>Figure 11. Top 5 `Feature-Policy` options used.</figcaption>
 </figure>
 
 We can see that the most popular feature to take control of is the microphone, with almost 11% of desktop and mobile pages issuing a policy that includes it. Delving deeper into the data we can look at what those pages are allowing or blocking.
 
 <figure markdown>
 
-| Feature    | Configuration | Policies that set this configuration (%) |
-|------------|---------------|------------------------------------------|
-| microphone | none          | 9.09%                                    |
-| microphone | none          | 8.97%                                    |
-| microphone | self          | 0.86%                                    |
-| microphone | self          | 0.85%                                    |
-| microphone | *             | 0.64%                                    |
-| microphone | *             | 0.53%                                    |
+| Feature    | Configuration | Usage |
+|------------|---------------|-------|
+| microphone | none          | 9.09% |
+| microphone | none          | 8.97% |
+| microphone | self          | 0.86% |
+| microphone | self          | 0.85% |
+| microphone | *             | 0.64% |
+| microphone | *             | 0.53% |
 
-<figcaption>Figure 11. Settings used for `microphone` feature.</figcaption>
+<figcaption>Figure 12. Settings used for `microphone` feature.</figcaption>
 </figure>
 
 By far the most common approach here is to block use of the microphone altogether, with ~9% of pages taking that approach. A small number of pages do allow the use of the microphone by their own origin and interestingly, a small selection of pages intentionally allow use of the microphone by any origin loading content in their page. 
@@ -292,7 +314,7 @@ We see that the usage of the `X-Frame-Options` header is quite high on both desk
 | `deny`        | 13.54%  | 14.50% |
 | `allow-from`  |  1.53%  |  1.64% |
 
-<figcaption>Figure 12. `X-Frame-Options` configuration used.</figcaption>
+<figcaption>Figure 13. `X-Frame-Options` configuration used.</figcaption>
 </figure>
 
 It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to `frame-ancestors` in CSP where these 2 approaches are also the most common. It should also be noted that the `allow-from` option, which in theory allow site owners to list the third-party domains allowed to frame was [never well supported(https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) and has been deprecated].
@@ -315,7 +337,7 @@ The [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Heade
 | `0`            |  2.58%  |  3.11% |
 | `1;report=`    |  0.12%  |  0.09% |
 
-<figcaption>Figure 13. `X-XSS-Protection` configuration usage.</figcaption>
+<figcaption>Figure 14. `X-XSS-Protection` configuration usage.</figcaption>
 </figure>
 
 The value `1` enables the filter/auditor and `mode=block` sets the protection to the strongest setting (in theory) where any suspected XSS attack would cause the page to not be rendered. The second most common configuration was to simply ensure the auditor/filter was turned on, by presenting a value of `1` and then the 3rd most popular configuration is quite interesting.
@@ -345,7 +367,7 @@ Given the nature of the header, it is unsurprising to see almost no usage report
 Cookies have many security protections available and whilst some of those are long standing, having been available for years, some of them are really quite new have been introduced only in the last couple of years.
 
 ### `Secure`
-The `Secure` flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is quick depressing considering the relative ease with which this feature can be used. Again the high usage of analytics and advertisement (third-party](./third-party) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.
+The `Secure` flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is quick depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement (third-party](./third-party) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.
 
 ### `HttpOnly`
 The `HttpOnly` flag on a cookie instructs the browser to prevent JavaScript on the page from accessing the cookie. Many cookies are only used by the server so are not needed by the JavaScript on the page, so restricting access to a cookie is a great protection against XSS attacks from stealing the cookie. We find that a much larger % of sites issuing a cookie with this flag on their homepage at 24.24% on desktop and 22.23% on mobile.
@@ -353,9 +375,9 @@ The `HttpOnly` flag on a cookie instructs the browser to prevent JavaScript on t
 ### `SameSite`
 As a much more recent addition to cookie protections, the `Same-Site` flag is a powerful protection against [Cross-Site Request Forgery (CSRF)](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks (often also known as XSRF).
 
-These attacks work by using the fact that browsers will typically include relevant cookies in all requests. Therefore if you are logged in, and so have cookies set, and then visit a malicious site, it can make a call for an API and the browser will "helpfully" send the cookies. Adding the `SameSite` attribute to a Cookie, allows a website to inform the browser not to send the cookies when calls are issued from third-party sites and hence the attack fails.
+These attacks work by using the fact that browsers will typically include relevant cookies in all requests. Therefore, if you are logged in, and so have cookies set, and then visit a malicious site, it can make a call for an API and the browser will "helpfully" send the cookies. Adding the `SameSite` attribute to a Cookie, allows a website to inform the browser not to send the cookies when calls are issued from third-party sites and hence the attack fails.
 
-Being a recently introduced mechanism, the usage of Same-Site cookies is much lower as we would expect at 0.1% of requests on both desktop and mobile. There are use cases when a cookie should be sent cross-site. For example, single sign on sites implicitly work by setting the cookie along with an authnetication token.
+Being a recently introduced mechanism, the usage of Same-Site cookies is much lower as we would expect at 0.1% of requests on both desktop and mobile. There are use cases when a cookie should be sent cross-site. For example, single sign on sites implicitly work by setting the cookie along with an authentication token.
 
 <figure markdown>
 | Configuration | Desktop | Mobile |
@@ -364,7 +386,7 @@ Being a recently introduced mechanism, the usage of Same-Site cookies is much lo
 | `lax`         | 45.85%  | 47.42% |
 | `none`        |  0.51%  |  0.41% |
 
-<figcaption>Figure 14. SameSite configuration useage.</figcaption>
+<figcaption>Figure 15. SameSite configuration usage.</figcaption>
 </figure>
 
 We can see that of those pages already using Same-Site cookies, more than half of them are using it in Strict mode. This is closely followed by sites using Same-Site in Lax mode and then a small selection of sites using the value `none`. This last value is used to opt-out of the upcoming change where browser vendors may implement Lax mode by default.
@@ -407,12 +429,12 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
     </tr>
   </table>
 
-<figcaption>Figure 15. Cookie prefix usage.</figcaption>
+<figcaption>Figure 16. Cookie prefix usage.</figcaption>
 </figure>
 
 As the figures show, the use of either prefix is incredibly low but as the more relaxed of the two, the `__Secure-` prefix does see more utilization already. 
 
-## Subresource integrity
+## Subresource Integrity
 Another problem that has been on the rise recently is the security of 3rd party dependencies. When loading a script file from a 3rd party, we hope that the script file is always the library that we wanted, perhaps a particular version of jQuery. If a CDN or 3rd party hosting service is compromised, the script files they are hosting could be altered. In this scenario your application would now be loading malicious JavaScript that could harm your visitors. This is what subresource integrity protects against.
 
 By adding an `integrity` attribute to a script or link tag, a browser can integrity check the 3rd party resource and reject it if it has been altered, in a similar manner that CSP hashes described above are used.
