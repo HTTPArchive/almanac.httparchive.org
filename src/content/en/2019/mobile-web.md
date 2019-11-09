@@ -167,7 +167,7 @@ Because of this, developers are given the ability to disable this feature by set
   <figcaption>Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>
 </figure>
 
-However, developers have misused this so much that almost one out of every three sites (32.21%) disable this feature, and Apple (as of iOS 10) no longer allows web developers to disable zooming. Mobile Safari simply [ignores the tag](https://archive.org/details/ios-10-beta-release-notes). All sites, no matter what, can be zoomed and scaled on newer Apple devices, which account for over [11%](](https://gs.statcounter.com/)) of all web traffic worldwide!
+However, developers have misused this so much that almost one out of every three sites (32.21%) disable this feature, and Apple (as of iOS 10) no longer allows web developers to disable zooming. Mobile Safari simply [ignores the tag](https://archive.org/details/ios-10-beta-release-notes). All sites, no matter what, can be zoomed and scaled on newer Apple devices, which account for over [11%](https://gs.statcounter.com/) of all web traffic worldwide!
 
 ### Rotating pages
 
