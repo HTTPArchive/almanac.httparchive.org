@@ -22,7 +22,7 @@ usable in many environments, not only web browsers.
 The [HTTP Archive](https://httparchive.org/) crawls [millions of
 URLs](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a
 private instance of [WebPageTest](https://webpagetest.org/) to store key information of every page
-(see [methodology](/methodology)). In the context of JavaScript, HTTP Archive provides extensive
+(see [methodology](./methodology)). In the context of JavaScript, HTTP Archive provides extensive
 information on the usage of the language for the entire web. This chapter consolidates and analyzes
 many of these trends. 
 
@@ -139,7 +139,7 @@ The majority of sites are compressing their JavaScript resources. Gzip encoding 
 **~64-67%** of sites and Brotli on **~14%**. Compression ratios are similar for both desktop and
 mobile.
 
-For a deeper analysis on compression, refer to the ["Compression"](/compression) chapter.
+For a deeper analysis on compression, refer to the ["Compression"](./compression) chapter.
 
 # Open source libraries and frameworks
 
