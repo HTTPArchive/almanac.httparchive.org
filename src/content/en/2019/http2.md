@@ -63,11 +63,9 @@ HTTP/2 however, was different as it was effectively hidden in HTTPS (at least fo
 
 Our analysis is sourced from the HTTP Archive, which tests approximately 5 million of the top desktop and mobile websites in the Chrome browser. (Learn more about our [methodology](./methodology).)
 
-<figure>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png">
-    <img src="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png" alt="Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year." width="600">
-  </a>
- <figcaption>Figure 2. HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
+<figure markdown>
+[![Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop adnd mobile as of July 2019. The trend is growing steadily at about 15 points per year.](/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png)](/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png)
+<figcaption>Figure 2. HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
 </figure>
 
 The results show that HTTP/2 usage is now the majority protocol-an impressive feat just 4 short years after formal standardization! Looking at the breakdown of all HTTP versions by request we see the following:
@@ -102,7 +100,7 @@ However, our findings are corroborated by other sources, like [Mozilla's telemet
 | HTTP/1.1 | 62.36%  | 63.92% | 63.22% |
 | HTTP/2   | 37.46%  | 35.92% | 36.61% |
 
-  <figcaption>Figure 4. HTTP version usage for home pages.</figcaption>
+<figcaption>Figure 4. HTTP version usage for home pages.</figcaption>
 </figure>
 
 It is still interesting to look at home pages only to get a rough figure on the number of sites that support HTTP/2 (at least on their home page). Figure 4 shows less support than overall requests, as expected, at around 36%.
@@ -195,20 +193,16 @@ The impact of HTTP/2 is much more difficult to measure, especially using the HTT
 
 One impact that can be measured is in the changing use of HTTP now that we are in an HTTP/2 world. Multiple connections were a workaround with HTTP/1.1 to allow a limited form of parallelization, but this is in fact the opposite of what usually works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, and HTTPS negotiation, and it also allows the potential of cross-request prioritization.
 
-<figure>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png">
-    <img src="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png" alt="Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019." width="600">
-  </a>
-  <figcaption>Figure 9. TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
+<figure markdown>
+[![Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.](/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png)](/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png)
+<figcaption>Figure 9. TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
 </figure>
 
 HTTP Archive measures the number of TCP connections per page, and that is dropping steadily as more sites support HTTP/2 and use its single connection instead of six separate connections.
 
-<figure>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png">
-    <img src="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png" alt="Timeseries chart of the number of requests per page, with themedian desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat." width="600">
-  </a>
-  <figcaption>Figure 10. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>).</figcaption>
+<figure markdown>
+[![Timeseries chart of the number of requests per page, with themedian desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.](/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png)](/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png)
+<figcaption>Figure 10. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
 </figure>
 
 Bundling assets to obtain fewer requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting, etc. This is less necessary when using HTTP/2 as there is less overhead with requests, but it should be noted that requests are not free in HTTP/2, and [those that experimented with removing bundling completely have noticed a loss in performance](https://engineering.khanacademy.org/posts/js-packaging-http2.htm). Looking at the number of requests loaded per page over time, we do see a slight decrease in requests, rather than the expected increase.
