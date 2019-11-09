@@ -354,6 +354,7 @@ p {
 
   .intro-image {
     display: block;
+    max-width: 100%;
     margin-top: 80px;
     margin-right: -46px;
   }
