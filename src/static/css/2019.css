@@ -343,6 +343,9 @@ p.copyright {
   header .cta {
     display: none;
   }
+  .main {
+    margin: 0px 30px;
+  }
 
   footer {
     display: grid;
