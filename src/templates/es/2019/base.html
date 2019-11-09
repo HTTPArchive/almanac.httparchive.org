@@ -134,7 +134,7 @@
         <option
           {% if y == year %}selected="selected"{% endif %}
           value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
-          {{ y }} Edition
+          Edición de {{ y }} 
         </option>
       {% endfor %}
   </select>
