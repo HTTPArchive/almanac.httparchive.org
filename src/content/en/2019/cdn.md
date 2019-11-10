@@ -65,7 +65,7 @@ Historically, CDNs were used exclusively for static resources like [CSS](./css),
     <img src="/static/images/2019/17_CDN/fig1.png" aria-labelledby="fig1-caption" width="600">
   </a>
   <div id="fig1-caption" class="visually-hidden">Split of requests between origin and CDN, broken down by HTML, sub-resources and third-party content</div>
-  <figcaption>Figure 1. CDN ssage vs. origin-hosted resources.</figcaption>
+  <figcaption>Figure 1. CDN usage vs. origin-hosted resources.</figcaption>
 </figure>
 
 Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of web pages (80%) serve the base HTML from ORIGIN. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely do to the small continued use of mobile specific web pages ("mDot"), which more frequently use a CDN.
