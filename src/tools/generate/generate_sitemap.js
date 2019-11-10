@@ -27,6 +27,8 @@ const generate_sitemap = async (sitemap_chapters) => {
     urls.push({ url, lastmod });
   }
 
+  urls.sort((a,b) => (a.url).localeCompare(b.url));
+
   let sitemap = await ejs.renderFile(sitemap_template, { urls });
   await fs.outputFile(sitemap_path, sitemap, 'utf8');
 

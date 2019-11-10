@@ -13,40 +13,18 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/table_of_contents
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/methodology
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/contributors
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/accessibility
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/caching
         </loc>
         
         <lastmod>
@@ -79,7 +57,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/caching
+            https://almanac.httparchive.org/en/2019/contributors
         </loc>
         
         <lastmod>
@@ -134,6 +112,17 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/javascript
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/markup
         </loc>
         
@@ -145,18 +134,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/javascript
-        </loc>
-        
-        <lastmod>
-            2019-11-12
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/mobile-web
+            https://almanac.httparchive.org/en/2019/media
         </loc>
         
         <lastmod>
@@ -167,7 +145,18 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/media
+            https://almanac.httparchive.org/en/2019/methodology
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/mobile-web
         </loc>
         
         <lastmod>
@@ -234,6 +223,17 @@
     <url>
         <loc>
             https://almanac.httparchive.org/en/2019/seo
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/table_of_contents
         </loc>
         
         <lastmod>
