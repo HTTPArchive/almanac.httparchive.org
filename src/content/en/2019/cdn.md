@@ -15,7 +15,7 @@ Although CDNs are often thought of as just caches that store and serve static co
 
 * Using a CDN to proxy dynamic content – base HTML page, API responses etc. – can take advantage of both the reduced latency between the browser and the CDN’s own network back to the origin. 
 * Some CDNs offer transformations that optimise pages so they download, and render more quickly, or optimise images so they’re the appropriate size (both dimensions and file size) for the device they’re going to be viewed on.
-* From a security perspective malicious traffic and ‘bots’ can be filtered out by a CDN before the requests even reach the origin, and their wide custom base means CDNs can often see and react to new threats soon.
+* From a security perspective malicious traffic and ‘bots’ can be filtered out by a CDN before the requests even reach the origin, and their wide customer base means CDNs can often see and react to new threats sooner.
 * The rise of ‘[edge computing](https://en.wikipedia.org/wiki/Edge_computing)’ allows sites to run their own code close to their visitors, both improving performance and reducing the load on the origin.
 
 Finally, CDNs also help sites to adopt new technologies without requiring changes at the origin, for example HTTP/2, TLS 1.3, and/or IPv6 can be enabled from the edge to the browser, even if the origin servers doesn’t support it yet.
@@ -68,7 +68,7 @@ This is clearly represented when looking at the top CDNs found serving the base 
 
 |||
 |--- |--- |
-||Html CDN Usage (%)|
+||HTML CDN Usage (%)|
 |ORIGIN|80.39|
 |Cloudflare|9.61|
 |Google|5.54|
