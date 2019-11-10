@@ -12,7 +12,7 @@
 
 {% set metadata = <%- JSON.stringify(metadata) %> %}
 
-{% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title') + ' on the web.') }}{% endblock %}
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
