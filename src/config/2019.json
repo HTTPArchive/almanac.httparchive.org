@@ -722,7 +722,8 @@
       "teams": [
         "brainstormers",
         "authors",
-        "analysts"
+        "analysts",
+        "developers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/7459458?v=4&s=200",
       "github": "paulcalvano",
@@ -1017,6 +1018,17 @@
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/6588246?v=4&s=200",
       "github": "c-torres",
       "twitter": "carlos_catb"
+    },
+    "pmeenan": {
+      "name": "Patrick Meenan",
+      "teams": [
+        "brainstormers",
+        "reviewers"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/444165?v=4&s=200",
+      "website": "https:\/\/www.webpagetest.org\/",
+      "github": "pmeenan",
+      "twitter": "patmeenan"
     }
   }
 }
