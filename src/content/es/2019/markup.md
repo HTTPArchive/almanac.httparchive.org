@@ -195,7 +195,7 @@ Para varios elementos no estándar, su prevalencia puede tener más que ver con 
 - Algunos de los `<actinic:*>` elementos del proveedor de comercio electrónico británico [Oxatis](https://www.oxatis.co.uk) aparecen en incluso más páginas. Por ejemplo, [`<actinic:basehref>`](https://rainy-periwinkle.glitch.me/permalink/30dfca0fde9fad9b2ec58b12cb2b0271a272fb5c8970cd40e316adc728a09d19.html) todavía aparece en 154 páginas en los datos del escritorio.
 - Los elementos de Macromedia parecen haber desaparecido en gran medida. Solo un elemento, [`<mm:endlock>`](https://rainy-periwinkle.glitch.me/permalink/836d469b8c29e5892dedfd43556ed1b0e28a5647066858ca1c395f5b30f8485c.html), aparece en nuestra lista y en solo 22 páginas.
 - El elemento de Adobe Go-Live [`<csscriptdict>`](https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html) todavía aparece en 640 páginas en el escritorio dataset.
-- El elemento de Microsoft Office [`<o:p>`](https://rainy-periwinkle.glitch.me/permalink/bc8f154a95dfe06a6d0fdb099b6c8df61727b2289141a0ef16dc17b2b57d3068.html) El elemento todavía aparece en el 0.5% de las páginas de escritorio, más de 20.000 páginas.
+- El elemento de Microsoft Office [`<o:p>`](https://rainy-periwinkle.glitch.me/permalink/bc8f154a95dfe06a6d0fdb099b6c8df61727b2289141a0ef16dc17b2b57d3068.html) El elemento todavía aparece en el 0,5% de las páginas de escritorio, más de 20.000 páginas.
 
 Pero hay muchos recién llegados que tampoco estaban en el informe original de Hixie, y con números aún mayores.
 
