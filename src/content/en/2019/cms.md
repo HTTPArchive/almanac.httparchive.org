@@ -2,11 +2,11 @@
 part_number: III
 chapter_number: 14
 title: CMS
-description: CMS chapter of the 2019 Web Almanac covering adoption and composition of top CMSs
+description: CMS chapter of the 2019 Web Almanac covering CMS adoption, how CMS suites are built, User experience of CMS powered websites, and CMS innovation.
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
 discuss: 1769
-published: 2019-11-04T12:00:00+00:00:00
+published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-07T22:02:35.000Z 
 ---
 

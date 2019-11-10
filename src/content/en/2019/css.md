@@ -2,9 +2,12 @@
 part_number: I
 chapter_number: 2
 title: CSS
+description: CSS chapter of the 2019 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, media queries, and page level statistics.
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 discuss: 1757
+published: 2019-11-11T00:00:00.000Z
+last_updated: 2019-11-07T21:46:11.000Z 
 ---
 
 ## Introduction
