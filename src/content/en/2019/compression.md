@@ -218,7 +218,7 @@ The content types with the lowest compression rates include `application/json`, 
 
 <figure>
  <iframe aria-labelledby="fig8-caption" width="760" height="470" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=673629979&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/15_Compression/fig8png" class="fig-mobile">
+  <a href="/static/images/2019/15_Compression/fig8.png" class="fig-mobile">
     <img src="/static/images/2019/15_Compression/fig8.png" aria-labelledby="fig6-caption" width="600">
   </a>
   <div id="fig8-caption" class="visually-hidden">Figure 8. Compression by content type as a percent for desktop</div>
