@@ -2,9 +2,12 @@
 part_number: I
 chapter_number: 1
 title: JavaScript
+description: JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens]
 discuss: 1756
+published: 2019-11-11T00:00:00.000Z
+last_updated: 2019-11-11T21:46:11.000Z 
 ---
 
 ## Introduction
