@@ -159,7 +159,7 @@ We can't determine the compression levels from any of the diagnostics collected 
 
 Most text based resources (such as HTML, CSS, and JavaScript) can benefit from gzip or brotli compression. However, it's often not necessary to use these compression techniques on binary resources, such as images, video, and some web fonts because their file formats are already compressed.
 
-In the graph below, the top 25 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded red, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded green to indicate that they are being compressed. However, the light green shading for some content types indicate that they are not compressed as consistently as the others. 
+In the graph below, the top 25 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded orange, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others. 
 
 <figure>
   <iframe aria-labelledby="fig3-caption" width="779.5" height="481.99083333333334" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1790056981&amp;format=interactive"></iframe>
@@ -170,7 +170,7 @@ In the graph below, the top 25 content types are displayed with box sizes repres
   <figcaption>Figure 3. Top 25 compressed content types.</figcaption>
 </figure>
 
-Filtering out the seven most popular content types allows us to see the rest of these content types more clearly.
+Filtering out the eight most popular content types allows us to see the compression stats for the rest of these content types more clearly.
 
 <figure>
   <iframe aria-labelledby="fig4-caption" width="779.5" height="481.99083333333334" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=495358423&amp;format=interactive"></iframe>
