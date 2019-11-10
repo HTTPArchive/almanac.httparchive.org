@@ -45,6 +45,7 @@ const parse_file = async (markdown) => {
 
   body = generate_figure_ids(body);
   body = wrap_tables(body);
+  body = body.replace(/<p><\/p>/g,""); //tempm fix to remove extra paragraph tags created by wrap_tables
   const toc = generate_table_of_contents(body);
 
   const m = converter.getMetadata();

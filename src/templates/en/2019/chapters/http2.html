@@ -182,7 +182,6 @@
           <a href="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png"><img src="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png" alt="Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year."/></a>
         </p>
         <figcaption>Figure 2. HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
-        <p></p>
       </figure>
       <p>The results show that HTTP/2 usage is now the majority protocol-an impressive feat just 4 short years after formal standardization! Looking at the breakdown of all HTTP versions by request we see the following:</p>
       <figure id="fig-3">
@@ -232,9 +231,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 3. HTTP version usage by request.</figcaption>
-        <p></p>
       </figure>
       <p>Figure 3 shows that HTTP/1.1 and HTTP/2 are the versions used by the vast majority of requests as expected. There is only a very small number of requests on the older HTTP/1.0 and HTTP/0.9 protocols. Annoyingly, there is a larger percentage where the protocol was not correctly tracked by the HTTP Archive crawl, particularly on desktop. Digging into this has shown various reasons, some of which can be explained and some of which can't. Based on spot checks, they mostly appear to be HTTP/1.1 requests and, assuming they are, desktop and mobile usage is similar.</p>
       <p>Despite there being a little larger percentage of noise than we'd like, it doesn't alter the overall message being conveyed here. Other than that, the mobile/desktop similarity is not unexpected; HTTP Archive tests with Chrome, which supports HTTP/2 for both desktop and mobile. Real-world usage may have slightly different stats with some older usage of browsers on both, but even then support is widespread, so we would not expect a large variation between desktop and mobile.</p>
@@ -282,9 +279,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 4. HTTP version usage for home pages.</figcaption>
-        <p></p>
       </figure>
       <p>It is still interesting to look at home pages only to get a rough figure on the number of sites that support HTTP/2 (at least on their home page). Figure 4 shows less support than overall requests, as expected, at around 36%.</p>
       <p>HTTP/2 is only supported by browsers over HTTPS, even though officially HTTP/2 can be used over HTTPS or over unencrypted non-HTTPS connections. As mentioned previously, hiding the new protocol in encrypted HTTPS connections prevents networking appliances which do not understand this new protocol from interfering with (or rejecting!) its usage. Additionally, the HTTPS handshake allows an easy method of the client and server agreeing to use HTTP/2.</p>
@@ -329,9 +324,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 5. HTTP version usage for HTTPS home pages.</figcaption>
-        <p></p>
       </figure>
       <p>The web is moving to HTTPS, and HTTP/2 turns the traditional argument of HTTPS being bad for performance almost completely on its head. Not every site has made the transition to HTTPS, so HTTP/2 will not even be available to those that have not. Looking at just those sites that use HTTPS, in Figure 5 we do see a higher adoption of HTTP/2 at around 55%, similar to the percent of <em>all requests</em> in Figure 2.</p>
       <p>We have shown that browser support for HTTP/2 is strong and that there is a safe road to adoption, so why doesn't every site (or at least every HTTPS site) support HTTP/2? Well, here we come to the final item for support we have not measured yet: server support.</p>
@@ -407,9 +400,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 6. Servers used for HTTP/2.</figcaption>
-        <p></p>
       </figure>
       <p>Nginx provides package repositories that allow ease of installing or upgrading to the latest version, so it is no surprise to see it leading the way here. Cloudflare is the most popular <a href="./cdn">CDN</a> and enables HTTP/2 by default, so again it is not surprising to see it hosts a large percentage of HTTP/2 sites. Incidently, Cloudflare uses a <a href="https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/">heavily customised</a> version of nginx as their web server. After those, we see Apache at around 20% of usage, followed by some servers who choose to hide what they are, and then the smaller players such as LiteSpeed, IIS, Google Servlet Engine, and openresty, which is nginx based.</p>
       <p>What is more interesting is those servers that that do <em>not</em> support HTTP/2:</p>
@@ -484,9 +475,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 7. Servers used for HTTP/1.1 or lower.</figcaption>
-        <p></p>
       </figure>
       <p>Some of this will be non-HTTPS traffic that would use HTTP/1.1 even if the server supported HTTP/2, but a bigger issue is those that do not support HTTP/2 at all. In these stats, we see a much greater share for Apache and IIS, which are likely running older versions.</p>
       <p>For Apache in particular, it is often not easy to add HTTP/2 support to an existing installation, as Apache does not provide an official repository to install this from. This often means resorting to compiling from source or trusting a third-party repository, neither of which is particularly appealing to many administrators.</p>
@@ -553,9 +542,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 8. Percentage installs of each server used to provide HTTP/2.</figcaption>
-        <p></p>
       </figure>
       <p>It's clear that Apache and IIS fall way behind with 18% and 14% of their installed based supporting HTTP/2, which has to be (at least in part) a consequence of it being more difficult to upgrade them. A full operating system upgrade is often required for many servers to get this support easily. Hopefully this will get easier as new versions of operating systems become the norm.</p>
       <p>None of this is a comment on the HTTP/2 implementations here (<a href="https://twitter.com/tunetheweb/status/988196156697169920?s=20">I happen to think Apache has one of the best implementations</a>), but more about the ease of enabling HTTP/2 in each of these servers-or lack thereof.</p>
@@ -567,7 +554,6 @@
           <a href="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png"><img src="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png" alt="Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019."/></a>
         </p>
         <figcaption>Figure 9. TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
-        <p></p>
       </figure>
       <p>HTTP Archive measures the number of TCP connections per page, and that is dropping steadily as more sites support HTTP/2 and use its single connection instead of six separate connections.</p>
       <figure id="fig-10">
@@ -575,7 +561,6 @@
           <a href="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png"><img src="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png" alt="Timeseries chart of the number of requests per page, with themedian desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat."/></a>
         </p>
         <figcaption>Figure 10. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
-        <p></p>
       </figure>
       <p>Bundling assets to obtain fewer requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting, etc. This is less necessary when using HTTP/2 as there is less overhead with requests, but it should be noted that requests are not free in HTTP/2, and <a href="https://engineering.khanacademy.org/posts/js-packaging-http2.htm">those that experimented with removing bundling completely have noticed a loss in performance</a>. Looking at the number of requests loaded per page over time, we do see a slight decrease in requests, rather than the expected increase.</p>
       <p>This low rate of change can perhaps be attributed to the aforementioned observations that bundling cannot be removed (at least, not completely) without a negative performance impact and that many build tools currently bundle for historical reasons based on HTTP/1.1 recommendations. It is also likely that many sites may not be willing to penalize HTTP/1.1 users by undoing their HTTP/1.1 performance hacks just yet, or at least that they do not have the confidence (or time!) to feel that this is worthwhile.</p>
@@ -613,9 +598,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 11. Sites using HTTP/2 push.</figcaption>
-        <p></p>
       </figure>
       <figure id="fig-12">
         <div class="table-wrap">
@@ -643,9 +626,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 12. How much is pushed when it is used.</figcaption>
-        <p></p>
       </figure>
       <p>These stats show that the uptick of HTTP/2 push is very low, most likely because of the issues described previously. However, when sites do use push, they tend to use it a lot rather than for one or two assets as shown in Figure 12.</p>
       <p>This is a concern as previous advice has been to be conservative with push and to <a href="https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit">"push just enough resources to fill idle network time, and no more"</a>. The above statistics suggest many resources of a significant combined size are pushed.</p>
@@ -771,9 +752,7 @@
             </table>
           </div>
         </div>
-        <p></p>
         <figcaption>Figure 14. HTTP/2 prioritization support in common CDNs.</figcaption>
-        <p></p>
       </figure>
       <p>Figure 14 shows that a fairly significant portion of traffic is subject to the identified issue, totalling 26.82% on desktop and 27.83% on mobile. How much of a problem this is depends on exactly how your page loads and whether high priority resources are discovered late or not for your site.</p>
       <figure id="fig-15">
