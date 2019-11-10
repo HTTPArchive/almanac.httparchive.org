@@ -108,6 +108,17 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/fonts
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/http2
         </loc>
         
@@ -148,17 +159,6 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/fonts
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/mobile-web
         </loc>
         
@@ -181,7 +181,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/performance
+            https://almanac.httparchive.org/en/2019/resource-hints
         </loc>
         
         <lastmod>
@@ -203,7 +203,18 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/resource-hints
+            https://almanac.httparchive.org/en/2019/performance
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/seo
         </loc>
         
         <lastmod>
@@ -216,17 +227,6 @@
         <loc>
             https://almanac.httparchive.org/en/2019/security
         </loc>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/seo
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
         
     </url>
 
