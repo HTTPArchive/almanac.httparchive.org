@@ -68,17 +68,6 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/caching
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/compression
         </loc>
         
@@ -92,6 +81,21 @@
         <loc>
             https://almanac.httparchive.org/en/2019/css
         </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/caching
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
         
     </url>
 
@@ -130,14 +134,18 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/javascript
+            https://almanac.httparchive.org/en/2019/markup
         </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/markup
+            https://almanac.httparchive.org/en/2019/javascript
         </loc>
         
         <lastmod>
@@ -170,7 +178,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/page-weight
+            https://almanac.httparchive.org/en/2019/performance
         </loc>
         
         <lastmod>
@@ -181,7 +189,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/resource-hints
+            https://almanac.httparchive.org/en/2019/page-weight
         </loc>
         
         <lastmod>
@@ -203,7 +211,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/performance
+            https://almanac.httparchive.org/en/2019/security
         </loc>
         
         <lastmod>
@@ -225,14 +233,18 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/security
+            https://almanac.httparchive.org/en/2019/third-parties
         </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
         
     </url>
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/third-parties
+            https://almanac.httparchive.org/en/2019/resource-hints
         </loc>
         
         <lastmod>
