@@ -181,7 +181,7 @@ De hecho, más del 15% de los elementos que contamos según lo definido por HTML
 
 Con esta perspectiva en mente acerca de cómo se ve el uso de características nativas / estándar en el conjunto de datos, hablemos de las cosas no estándar.
 
-Puede esperar que muchos de los elementos que medimos se usen solo en una sola página web, pero de hecho, todos los 5.048 elementos aparecen en más de una página. La menor cantidad de páginas en las que aparece un elemento de nuestro conjunto de datos es 15. Aproximadamente una quinta parte de ellas ocurre en más de 100 páginas. Alrededor del 7% se produce en más de 1,000 páginas.
+Puede esperar que muchos de los elementos que medimos se usen solo en una sola página web, pero de hecho, todos los 5.048 elementos aparecen en más de una página. La menor cantidad de páginas en las que aparece un elemento de nuestro conjunto de datos es 15. Aproximadamente una quinta parte de ellas ocurre en más de 100 páginas. Alrededor del 7% se produce en más de 1.000 páginas.
 
 Para ayudar a analizar los datos, _hackee_ en conjunto una [pequeña herramienta con Glitch](https://rainy-periwinkle.glitch.me). Puede usar esta herramienta usted mismo y por favor comparta un enlace permanente con el [@HTTPArchive](https://twitter.com/HTTPArchive) junto con sus observaciones. (Tommy Hodgins también ha construido una herramienta similar [CLI Tool](https://github.com/tomhodgins/hade) que se puede usar para explorar.)
 
