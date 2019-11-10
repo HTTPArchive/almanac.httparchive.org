@@ -173,7 +173,7 @@
         </li>
 
         <li>
-          <a href="#color-conts-might-also-be-the-future">Color conts might also be the future?</a>
+          <a href="#color-fonts-might-also-be-the-future">Color fonts might also be the future?</a>
         </li>
 
         <li>
@@ -194,7 +194,7 @@
       <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
-      <p>Web Fonts enable beautiful and functional typography on the web. Use web fonts not only empowers design but democratizing a subset of design as they allowing easier access to those who might not have particularly strong design skill. However, for all the good they can do, web fonts can also do great harm to your site's performance if they aren't loaded properly.</p>
+      <p>Web Fonts enable beautiful and functional typography on the web. Use web fonts not only empowers design but democratizing a subset of design as they allow easier access to those who might not have particularly strong design skill. However, for all the good they can do, web fonts can also do great harm to your site's performance if they aren't loaded properly.</p>
       <p>Are they a net positive for the web? Do they provide more benefit than harm? Are the web standards cowpaths sufficiently paved to encourage web font loading best practices by default? And if not, what needs to change? Let's take a data-driven peek at whether or not we can answer those questions by inspecting how web fonts are used on the web today.</p>
       <h2 id="where-did-you-get-those-web-fonts">Where did you get those web fonts?</h2>
       <p>The first and most prominent question: Performance. There is a whole chapter dedicated to <a href="./performance">performance</a> but we will delve a little into font-specific performance issues here.</p>
@@ -204,10 +204,10 @@
       <p>
         Recommendations to mitigate the performance costs of loading web fonts from another host include <a href="https://www.w3.org/TR/resource-hints/#preconnect"><code>preconnect</code></a
         >, <a href="https://www.w3.org/TR/resource-hints/#dns-prefetch"><code>dns-prefetch</code></a
-        >, and <a href="https://www.w3.org/TR/preload/"><code>preload</code></a> <a href="./resource-hints">resource hints</a> but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especailly important for those font used by very visually prominent content or body copy occupying the majority of a page.
+        >, and <a href="https://www.w3.org/TR/preload/"><code>preload</code></a> <a href="./resource-hints">resource hints</a> but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.
       </p>
       <p>(Graph Title: Third-party hosted versus self-hosted (local); Source: 06.01)</p>
-      <p>The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss <a href="#what-are-the-most-popular-third-party-hosts">below</a>. Note that <code>preload</code> is not yet available with Google Fonts, as they generate unique URLs for their fonts <a href="https://github.com/google/fonts/issues/1067">which are liable to change</a>, and even <a href="https://github.com/google/fonts/issues/234">serve different fonts for different browsers</a>. Google serves fonts by getting websites to include a CSS link to a stylesheet. This will be in the main HTML (more on which below), so will already be connected to quickly. However the fonts themselves are hosted on another domain (<a href="https://fonts.gstatic.com">https://fonts.gstatic.com</a>) so <code>preconnect</code> is a great option here as that will not be discovered until the CSS is downloaded.</p>
+      <p>The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss <a href="#what-are-the-most-popular-third-party-hosts">below</a>. Note that <code>preload</code> is not yet available with Google Fonts, as they generate unique URLs for their fonts <a href="https://github.com/google/fonts/issues/1067">which are liable to change</a>, and even <a href="https://github.com/google/fonts/issues/234">serve different fonts for different browsers</a>. Google serves fonts by getting websites to include a CSS link to a stylesheet. This will be in the main HTML (more on which below), so will already be connected to quickly. However, the fonts themselves are hosted on another domain (<a href="https://fonts.gstatic.com">https://fonts.gstatic.com</a>) so <code>preconnect</code> is a great option here as that will not be discovered until the CSS is downloaded.</p>
       <h3 id="what-are-the-most-popular-third-party-hosts">What are the most popular third-party hosts?</h3>
       <p>(Graph Title: Popular Web Font Hosts by Request, Source: 06.02)</p>
       <p>The dominance of Google Fonts here was simultaneously surprising and unsurprising at the same time. It was unsurprising in that I expected the service to be the most popular and surprising in the sheer dominance of its popularity. 75% of requests (55–57% of fonts) is astounding. TypeKit was a distant single-digit second place, with the Bootstrap library accounting for an even more distant third place.</p>
@@ -230,7 +230,7 @@
       <p>(Graph Title: Pages using <code>preconnect</code>; Source: 06.15)</p>
       <p>
         Wow! Less than 2% of pages are using <a href="https://web.dev/uses-rel-preconnect"><code>preconnect</code></a
-        >! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use <code>preconnect</code>!! Google Fonts, proselytize <code>preconnect</code> more!
+        >! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use <code>preconnect</code>! Google Fonts: proselytize <code>preconnect</code> more!
       </p>
       <p>In fact, if you're using Google Fonts go ahead and add this to your <code>&lt;head&gt;</code> if it's not there already:</p>
       <p><code>&lt;link rel="preconnect" href="https://fonts.gstatic.com/"&gt;</code></p>
@@ -249,7 +249,7 @@
       <h3 id="woff2-only">WOFF2-only</h3>
       <p>(Graph Title: Popular Font format() Combinations, Source: 06.39-41)</p>
       <p>This data set seems to suggest that the majority of people are already using WOFF2-only in their <code>@font-face</code> blocks. But this is misleading of course, per our earlier discussion on the dominance of Google Fonts in the data set. Google Fonts does some sniffing methods to serve a streamlined CSS file and only includes the most modern <code>format()</code>. Unsurprisingly WOFF2 dominates the results here for that reason, as browser support for WOFF2 has been pretty broad for some time now.</p>
-      <p>Importantly, this particular data doesn't really support or detract from the case to go WOFF2 only yet but it remains a tempting idea.</p>
+      <p>Importantly, this particular data doesn't really support or detract from the case to go WOFF2-only yet, but it remains a tempting idea.</p>
       <h2 id="fighting-against-invisible-text">Fighting against invisible text</h2>
       <p>The number one tool we have to fight the default web font loading behavior of "invisible while loading" (also known as the Flash of Invisible Text, or FOIT), is <code>font-display</code>. Adding <code>font-display: swap</code> to your <code>@font-face</code> block is an easy way to tell the browser to show fallback text while the web font is loading.</p>
       <p><a href="https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display">Browser support is great too</a>. Internet Explorer and pre-Chromium Edge don't have support but they also by-default render fallback text when a web font loads (no FOITs allowed here). For other browsers, how commonly is <code>font-display</code> used?</p>
@@ -307,7 +307,7 @@
       <p>Even at 1.8% this was higher than expected, although I am excited to see this take off. <a href="https://developers.google.com/fonts/docs/css2">Google Fonts v2 does include some support for Variable Fonts</a>.</p>
       <p>(Graph Title: Top variation axes; Source: 06.28)</p>
       <p>Through the lens of this large data set, these are very low sample sizes-take these results with a grain of salt. However, <code>opsz</code> as the most common axis is notable, with <code>wght</code> and <code>wdth</code> trailing. In my experience, the introductory demos for variable fonts are usually weight-based.</p>
-      <h2 id="color-conts-might-also-be-the-future">Color conts might also be the future?</h2>
+      <h2 id="color-fonts-might-also-be-the-future">Color fonts might also be the future?</h2>
       <p>(Graph Title: Percentage of Pages with Color Fonts; Source: 06.42)</p>
       <p>Usage here of these is basically nonexistent but you can check out the excellent resource <a href="https://www.colorfonts.wtf/">Color Fonts! WTF?</a> for more information. Similar (but not at all) to the SVG format for fonts (which is bad and going away), this allows you to embed SVG inside of OpenType files (which is awesome and cool).</p>
       <h2 id="conclusion">Conclusion</h2>

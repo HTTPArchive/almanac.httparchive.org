@@ -12,7 +12,7 @@ last_updated: 2019-11-11T00:00:00.000Z
 
 ## Introduction
 
-Web Fonts enable beautiful and functional typography on the web. Use web fonts not only empowers design but democratizing a subset of design as they allowing easier access to those who might not have particularly strong design skill. However, for all the good they can do, web fonts can also do great harm to your site's performance if they aren't loaded properly.
+Web Fonts enable beautiful and functional typography on the web. Use web fonts not only empowers design but democratizing a subset of design as they allow easier access to those who might not have particularly strong design skill. However, for all the good they can do, web fonts can also do great harm to your site's performance if they aren't loaded properly.
 
 Are they a net positive for the web? Do they provide more benefit than harm? Are the web standards cowpaths sufficiently paved to encourage web font loading best practices by default? And if not, what needs to change? Let's take a data-driven peek at whether or not we can answer those questions by inspecting how web fonts are used on the web today.
 
@@ -26,11 +26,11 @@ Using hosted web fonts allows ease of implementation and maintenance but self-ho
 
 Differentiating self-hosting against third-party hosting is increasingly relevant in an [HTTP/2](./http2) world where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of better potential for prioritization against other same-host requests in the waterfall.
 
-Recommendations to mitigate the performance costs of loading web fonts from another host include [`preconnect`](https://www.w3.org/TR/resource-hints/#preconnect), [`dns-prefetch`](https://www.w3.org/TR/resource-hints/#dns-prefetch), and [`preload`](https://www.w3.org/TR/preload/) [resource hints](./resource-hints) but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especailly important for those font used by very visually prominent content or body copy occupying the majority of a page.
+Recommendations to mitigate the performance costs of loading web fonts from another host include [`preconnect`](https://www.w3.org/TR/resource-hints/#preconnect), [`dns-prefetch`](https://www.w3.org/TR/resource-hints/#dns-prefetch), and [`preload`](https://www.w3.org/TR/preload/) [resource hints](./resource-hints) but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.
 
 (Graph Title: Third-party hosted versus self-hosted (local); Source: 06.01)
 
-The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss [below](#what-are-the-most-popular-third-party-hosts). Note that `preload` is not yet available with Google Fonts, as they generate unique URLs for their fonts [which are liable to change](https://github.com/google/fonts/issues/1067), and even [serve different fonts for different browsers](https://github.com/google/fonts/issues/234). Google serves fonts by getting websites to include a CSS link to a stylesheet. This will be in the main HTML (more on which below), so will already be connected to quickly. However the fonts themselves are hosted on another domain (https://fonts.gstatic.com) so `preconnect` is a great option here as that will not be discovered until the CSS is downloaded.
+The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss [below](#what-are-the-most-popular-third-party-hosts). Note that `preload` is not yet available with Google Fonts, as they generate unique URLs for their fonts [which are liable to change](https://github.com/google/fonts/issues/1067), and even [serve different fonts for different browsers](https://github.com/google/fonts/issues/234). Google serves fonts by getting websites to include a CSS link to a stylesheet. This will be in the main HTML (more on which below), so will already be connected to quickly. However, the fonts themselves are hosted on another domain (https://fonts.gstatic.com) so `preconnect` is a great option here as that will not be discovered until the CSS is downloaded.
 
 ### What are the most popular third-party hosts?
 
@@ -62,7 +62,7 @@ As mentioned above, a super easy way to speed up web font requests to a third-pa
 
 (Graph Title: Pages using `preconnect`; Source: 06.15)
 
-Wow! Less than 2% of pages are using [`preconnect`](https://web.dev/uses-rel-preconnect)! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use `preconnect`!! Google Fonts, proselytize `preconnect` more!
+Wow! Less than 2% of pages are using [`preconnect`](https://web.dev/uses-rel-preconnect)! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use `preconnect`! Google Fonts: proselytize `preconnect` more!
 
 In fact, if you're using Google Fonts go ahead and add this to your `<head>` if it's not there already:
 
@@ -98,7 +98,7 @@ The SVG data point here also makes me wonder what MIME type y'all are serving th
 
 This data set seems to suggest that the majority of people are already using WOFF2-only in their `@font-face` blocks. But this is misleading of course, per our earlier discussion on the dominance of Google Fonts in the data set. Google Fonts does some sniffing methods to serve a streamlined CSS file and only includes the most modern `format()`. Unsurprisingly WOFF2 dominates the results here for that reason, as browser support for WOFF2 has been pretty broad for some time now.
 
-Importantly, this particular data doesn't really support or detract from the case to go WOFF2 only yet but it remains a tempting idea.
+Importantly, this particular data doesn't really support or detract from the case to go WOFF2-only yet, but it remains a tempting idea.
 
 ## Fighting against invisible text
 
@@ -195,7 +195,7 @@ Even at 1.8% this was higher than expected, although I am excited to see this ta
 
 Through the lens of this large data set, these are very low sample sizes-take these results with a grain of salt. However, `opsz` as the most common axis is notable, with `wght` and `wdth` trailing. In my experience, the introductory demos for variable fonts are usually weight-based.
 
-## Color conts might also be the future?
+## Color fonts might also be the future?
 
 (Graph Title: Percentage of Pages with Color Fonts; Source: 06.42)
 
