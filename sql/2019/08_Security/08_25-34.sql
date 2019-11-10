@@ -13,7 +13,9 @@ UNNEST(['nel', 'report-to', 'referrer-policy',
   'x-xss-protection', 'x-frame-options',
   'cross-origin-resource-policy',
   'cross-origin-opener-policy',
-  'sec-fetch-(dest|mode|site|user)']) AS header
+  'sec-fetch-(dest|mode|site|user)',
+  'strict-transport-security',
+  'content-security-policy']) AS header
 JOIN (
   SELECT _TABLE_SUFFIX, COUNT(0) AS total
   FROM `httparchive.summary_pages.2019_07_01_*`

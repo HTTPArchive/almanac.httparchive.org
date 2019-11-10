@@ -3,11 +3,15 @@ const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
 
+//Chapters may exist but not be ready to be launched so do not include in sitemap
+const sitemap_languages = ['en'];
+
 const { find_files, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_figure_ids } = require('./generate_figure_ids');
 const { generate_sitemap } = require('./generate_sitemap');
 const { wrap_tables } = require('./wrap_tables');
+const { remove_unnecessary_markup } = require('./remove_unnecessary_markup');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -25,9 +29,9 @@ const generate_chapters = async () => {
 
       const markdown = await fs.readFile(file, 'utf-8');
       const { metadata, body, toc } = await parse_file(markdown);
-
-      sitemap.push({ language, year, chapter, metadata });
-
+      if ( sitemap_languages.includes(language) ) {
+        sitemap.push({ language, year, chapter, metadata });
+      }
       await write_template(language, year, chapter, metadata, body, toc);
     } catch (error) {
       console.error(error);
@@ -45,6 +49,7 @@ const parse_file = async (markdown) => {
 
   body = generate_figure_ids(body);
   body = wrap_tables(body);
+  body = remove_unnecessary_markup(body);
   const toc = generate_table_of_contents(body);
 
   const m = converter.getMetadata();
@@ -66,14 +71,16 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   const template = `templates/${language}/${year}/chapter.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
-  let html = await ejs.renderFile(template, { metadata, body, toc });
-  let fomatted_html = prettier.format(html, {
-    parser: 'html',
-    printWidth: Number.MAX_SAFE_INTEGER
-  });
+  if (fs.existsSync(template)) {
+    let html = await ejs.renderFile(template, { metadata, body, toc });
+    let fomatted_html = prettier.format(html, {
+      parser: 'html',
+      printWidth: Number.MAX_SAFE_INTEGER
+    });
 
-  await fs.outputFile(path, fomatted_html, 'utf8');
-  await size_of(path);
+    await fs.outputFile(path, fomatted_html, 'utf8');
+    await size_of(path);
+  }
 };
 
 module.exports = {

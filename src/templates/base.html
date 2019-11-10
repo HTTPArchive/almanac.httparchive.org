@@ -22,9 +22,9 @@
       <link rel="stylesheet" href="/static/css/normalize.css">
       {% block styles %}{% endblock %}
     {% endblock %}
-    <link rel="canonical" href="{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
+    <link rel="canonical" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
     {% for l in supported_languages %}
-    <link rel="alternate" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
+    <link rel="alternate" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" hreflang="{{ l.lang_code}}" />
     {% endfor %}
   </head>
 
