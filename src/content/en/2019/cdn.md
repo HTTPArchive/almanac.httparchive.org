@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 17
 title: CDN
-description: CDN chapter of the 2019 Web Almanac covering CDN adoption and usage
+description: CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT & TLS management, HTTP/2 adoption, caching and common library and content CDNs.
 authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 discuss: 1772
