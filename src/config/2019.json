@@ -48,8 +48,7 @@
         {
           "part": "II",
           "chapter": "8",
-          "title": "Security",
-          "todo": true
+          "title": "Security"
         },
         {
           "part": "II",
@@ -962,6 +961,53 @@
       "website": "https:\/\/zachleat.com\/",
       "github": "zachleat",
       "twitter": "zachleat"
+    },
+    "ghedo": {
+      "name": "Alessandro Ghedini",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/117643?v=4&s=200",
+      "website": "https:\/\/ghedini.me\/",
+      "github": "ghedo"
+    },
+    "ndrnmnn": {
+      "name": "André Naumann",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/22891577?v=4&s=200",
+      "github": "ndrnmnn"
+    },
+    "mor10": {
+      "name": "Morten Rand-Hendriksen",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1132200?v=4&s=200",
+      "website": "http:\/\/mor10.com\/",
+      "github": "mor10",
+      "twitter": "mor10"
+    },
+    "westonruter": {
+      "name": "Weston Rutern",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/134745?v=4&s=200",
+      "website": "https:\/\/weston.ruter.net\/",
+      "github": "westonruter",
+      "twitter": "westonruter"
+    },
+    "enygren": {
+      "name": "Erik Nygren",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/6840678?v=4&s=200",
+      "website": "https:\/\/erik.nygren.org\/",
+      "github": "enygren",
+      "twitter": "akanygren"
     },
     "c-torres": {
       "name": "Carlos Torres",
