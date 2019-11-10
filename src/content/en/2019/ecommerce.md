@@ -403,326 +403,218 @@ Mobile HTML payload sizes are not very different from desktop. In other words, i
 ## Image stats
 
 <figure>
-// Chart 13_06: Image payload by percentile (KB)
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=916461214
-<figcaption>Figure 13. Image payload by percentile (KB).</figcaption>
+  <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig12.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig12.png" aria-labelledby="fig12-caption" width="600">
+  </a>
+  <div id="fig12-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of image bytes per ecommerce page. The median mobile ecommerce page has 1,517 KB of images. The 10th percentile is 318 KB, 25th 703, 75th 3,132, and 90th 5,881. Desktop and mobile websites have similar distributions.</div>
+  <figcaption>Figure 12. Distribution of image bytes (in KB) per ecommerce page.</figcaption>
 </figure>
 
 <figure>
-// Chart 13_06: Number of image requests by percentile
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=916461214
-<figcaption>Figure 14. Number of image requests by percentile.</figcaption>
+  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig13.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig13.png" aria-labelledby="fig13-caption" width="600">
+  </a>
+  <div id="fig13-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of image requests per ecommerce page. The median desktop ecommerce page makes 40 image requests. The 10th percentile is 16 requests, 25th 25, 75th 62, and 90th 97. The desktop distribution is slightly higher than mobile by 2-10 requests at each percentile.</div>
+  <figcaption>Figure 13. Distribution of image requests per ecommerce page.</figcaption>
 </figure>
+
+<aside class="note">Note that because our data collection [methodology](./methodology) does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</aside>
+
+Figures 12 and 13 above show that the median ecommerce page has 37 images and an image payload of 1,517 KB on mobile, 40 images and 1,524 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly 6 MB!
 
 <figure>
-
-|         | Number of images | Image payload (KB) |
-|:--------|:-----------------|:-------------------|
-| Mobile  | 37               | 1,517              |
-| Desktop | 40               | 1,524              |
-
-<figcaption>Figure 15. Median image usage for home pages on ecommerce platforms</figcaption>
+  <div class="big-number">1,517 KB</div>
+  <figcaption>Figure 14. The median number of image bytes per mobile ecommerce page.</figcaption>
 </figure>
 
-<figure>
+A significant proportion of ecommerce pages have sizeable image payloads and make a large number of image requests on first load. See HTTP Archive's [State of Images](https://httparchive.org/reports/state-of-images) report and the [media](./media) and [page weight](./page-weight) chapters for more context.
 
-|         | Number of images | Image payload (KB) |
-|:--------|:-----------------|:-------------------|
-| Mobile  | 90               | 5,993              |
-| Desktop | 97               | 5,881              |
+Website owners want their sites to look good on modern devices. As a result, many sites deliver the same high resolution product images to every user _without regard for screen resolution or size_. Developers may not be aware of (or not want to use) responsive techniques that enable efficient delivery of the best possible image to different users. It's worth remembering that high-resolution images may not necessarily increase conversion rates. Conversely, overuse of heavy images is likely to impact page speed and can thereby _reduce_ conversion rates. In the authors' experience from site reviews and events, some developers and other stakeholders have SEO or other concerns about using lazy loading for images.
 
-<figcaption>Figure 16. 90th percentile image usage for home pages on ecommerce platforms</figcaption>
-</figure>
-
-Note that the data here is for page load without scrolling.
-
-This shows that the median page on an ecommerce platform (for home pages from the Web Almanac data) has 37 images and an image payload of 1,517.16 KB on mobile, 40 images and 1,524.56 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly 6 MB.
-
-A significant proportion of home pages on ecommerce platforms have sizeable image payloads and make a large number of image requests on first load. See [httparchive.org/reports/state-of-images](https://httparchive.org/reports/state-of-images) for context on the state of images globally, and also the [media](./media) and [page weight](./page-weight) chapters. Website owners want their sites to look good on modern devices. As a result, many sites deliver the same high resolution product images to every user without regard for screen resolution or size. Developers may not be aware of (or not want to use) responsive techniques that enable efficient delivery of the best possible image to different users. It's worth remembering that high-resolution images may not necessarily increase conversion rates. Conversely, overuse of heavy images is likely to impact page speed and can thereby _reduce_ conversion rates. In the authors' experience from site reviews and events, some developers and other stakeholders have SEO or other concerns about using lazy loading for images.
-
-We need to do more analysis to better understand why some sites are not using responsive image techniques or lazy loading. We also need to provide guidance that helps ecommerce platforms to reliably deliver beautiful images to those with high end devices and good connectivity — while providing a best-possible experience to lower-end devices and those with poor connectivity.
+We need to do more analysis to better understand why some sites are not using responsive image techniques or lazy loading. We also need to provide guidance that helps ecommerce platforms to reliably deliver beautiful images to those with high end devices and good connectivity, while simultaneously providing a best-possible experience to lower-end devices and those with poor connectivity.
 
 ## Popular image formats
 
 <figure>
-// Chart 13_06b: Popular image formats
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1240367519
-<figcaption>Figure 17. Popular image formats.</figcaption>
+  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig15.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig15.png" aria-labelledby="fig15-caption" width="600">
+  </a>
+  <div id="fig15-caption" class="visually-hidden">Bar chart showing the popularity of various image formats. JPEG is the most popular format at 54% of images on desktop ecommerce pages. Next are PNG at 27%, GIF at 14%, SVG at 2%, and WebP and ICO at 1% each.</div>
+  <figcaption>Figure 15. Popular image formats.</figcaption>
 </figure>
 
-<aside class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a `.jpg` or `.png` suffix. For example, this URL will return a WebP image in Chrome: [IMG_20190113_113201.jpg](https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg). However, HTTP Archive image format detection is done by checking for keywords in the MIME type first, then falling back to the file extension. The code for format detection is [here](https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994). This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</aside>
+<aside class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a `.jpg` or `.png` suffix. For example, [IMG_20190113_113201.jpg](https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg) returns a WebP image in Chrome. However, the way HTTP Archive [detects image formats](https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994) is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</aside>
 
 ### PNG
 
-The high number of PNG requests from pages on ecommerce platforms is probably for product images. Many commerce sites use PNG with photographic images to enable transparency.
+One in four images on ecommerce pages are PNG. The high number of PNG requests from pages on ecommerce platforms is probably for product images. Many commerce sites use PNG with photographic images to enable transparency.
 
 Using WebP with a PNG fallback can be a far more efficient alternative, either via a [picture element](http://simpl.info/picturetype) or by using user agent capability detection via an image service such as [Cloudinary](https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg).
 
 ### WebP
 
-The data shows very few sites on ecommerce platforms using WebP, which tallies with the authors' experience of site reviews and partner work. WebP is [supported by all modern browsers other than Safari](https://caniuse.com/#feat=webp) and has good fallback mechanisms available. WebP supports transparency and is a far more efficient format than PNG for photographic images (see PNG section above).
+Only 1% of images on ecommerce platforms are WebP, which tallies with the authors' experience of site reviews and partner work. WebP is [supported by all modern browsers other than Safari](https://caniuse.com/#feat=webp) and has good fallback mechanisms available. WebP supports transparency and is a far more efficient format than PNG for photographic images (see PNG section above).
 
-### Pushing to use WebP more
-
-We as a web community can provide better guidance/advocacy for enabling transparency using WebP with a PNG fallback and/or using WebP/JPEG with a solid color background. WebP appears to be rarely used on ecommerce platforms even though several guides to WebP usage are available (such as [web.dev/serve-images-webp](https://web.dev/serve-images-webp)) as well as apps and tools including [Squoosh](https://squoosh.app/) and [cwebp](https://developers.google.com/speed/webp/docs/cwebp). We need to do further research into why there hasn't been more take-up of WebP, which is now [nearly 10 years old](https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html).
+We as a web community can provide better guidance/advocacy for enabling transparency using WebP with a PNG fallback and/or using WebP/JPEG with a solid color background. WebP appears to be rarely used on ecommerce platforms, despite the availability of [guides](https://web.dev/serve-images-webp) and tools (e.g. [Squoosh](https://squoosh.app/) and [cwebp](https://developers.google.com/speed/webp/docs/cwebp)). We need to do further research into why there hasn't been more take-up of WebP, which is now [nearly 10 years old](https://blog.chromium.org/2010/09/webp-new-image-format-for-web.html).
 
 ## Image dimensions
 
 <figure>
-// Chart 13_06c: Image dimensions
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1050583521
-<figcaption>Figure 18. Image dimensions by percentile.</figcaption>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th colspan="2">Mobile</th>
+        <th colspan="2">Desktop</th>
+      </tr>
+      <tr>
+        <th>Percentile</th>
+        <th>Width (px)</th>
+        <th>Height (px)</th>
+        <th>Width (px)</th>
+        <th>Height (px)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td class="numeric">16</td>
+        <td class="numeric">16</td>
+        <td class="numeric">16</td>
+        <td class="numeric">16</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td class="numeric">100</td>
+        <td class="numeric">64</td>
+        <td class="numeric">100</td>
+        <td class="numeric">60</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td class="numeric">247</td>
+        <td class="numeric">196</td>
+        <td class="numeric">240</td>
+        <td class="numeric">192</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td class="numeric">364</td>
+        <td class="numeric">320</td>
+        <td class="numeric">400</td>
+        <td class="numeric">331</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td class="numeric">693</td>
+        <td class="numeric">512</td>
+        <td class="numeric">800</td>
+        <td class="numeric">546</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 16. Distribution of instrinsic image dimensions (in pixels) per ecommerce page.</figcaption>
 </figure>
 
-<figure>
+The median ('mid-range') dimensions for images requested by ecommerce pages is 247x196 px on mobile and 240x192 px on desktop. 10% of images requested by ecommerce pages are at least 693x512 px on mobile and 800x546 px on desktop. Note that these dimensions are the intrinsic sizes of images, not their display size.
 
-| Percentile | Mobile width | Mobile height | Desktop width | Desktop height |
-|:-----------|:-------------|:--------------|:--------------|:---------------|
-| 10         | 16           | 16            | 16            | 16             |
-| 25         | 100          | 64            | 100           | 60             |
-| 50         | 247          | 196           | 240           | 192            |
-| 75         | 364          | 320           | 400           | 331            |
-| 90         | 693          | 512           | 800           | 546            |
-
-<figcaption>Figure 19. Image dimensions for home pages on ecommerce platforms.</figcaption>
-</figure>
-
-The median ('mid-range') dimensions for images requested by home pages on ecommerce platforms is 247x196 px on mobile and 240x192 px on desktop. 10% of images requested by home pages on ecommerce platforms are at least 693x512 px on mobile and 800x546 px on desktop.
-
-Note that these dimensions are the intrinsic sizes of images, not their display size. The median dimensions for images on ecommerce platforms are 247x196 px on mobile, 240x192 px on desktop though 10% of images for pages on ecommerce platforms are at least 693x512 px on mobile and 800x546 px on desktop.
-
-Given that image dimensions at each percentile up to the median are similar on mobile and desktop, or even slightly _larger_ on mobile in some cases, it would seem that many sites are not delivering different image dimensions for different viewports — in other words, not using responsive image techniques. The delivery of _larger_ images to mobile in some cases may (or may not!) be explained by sites using device or screen detection.
+Given that image dimensions at each percentile up to the median are similar on mobile and desktop, or even slightly _larger_ on mobile in some cases, it would seem that many sites are not delivering different image dimensions for different viewports, or in other words, not using responsive image techniques. The delivery of _larger_ images to mobile in some cases may (or may not!) be explained by sites using device or screen detection.
 
 We need to do more research into why many sites are (apparently) not delivering different image sizes to different viewports.
 
 ## Third party requests and bytes
 
-Many websites — especially online stores — load a significant amount of code and content from third parties: for analytics, A/B testing, customer behavior tracking, advertising and social media support. Third party content can have a [significant impact on performance](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript). [Patrick Hulce](https://twitter.com/patrickhulce)'s [third-party-web tool](https://github.com/patrickhulce/third-party-web) is used to determine third party requests for this report, and this is discussed more in the [./third-party](Third Party chapter) written by Patrick.
+Many websites—especially online stores—load a significant amount of code and content from third parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third party content can have a [significant impact on performance](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript). [Patrick Hulce](https://twitter.com/patrickhulce)'s [third-party-web tool](https://github.com/patrickhulce/third-party-web) is used to determine third party requests for this report, and this is discussed more in the [Third Parties](./third-parties) chapter.
 
 <figure>
-// Chart 13_09: Third party requests and bytes
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1605504516
-<figcaption>Figure 20. Requests for third party content.</figcaption>
+  <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig17.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig17.png" aria-labelledby="fig17-caption" width="600">
+  </a>
+  <div id="fig17-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third party requests per ecommerce page. The median number of third party requests on desktop is 19. The 10, 25, 75, and 90th percentiles are: 4, 9, 34, and 54. The desktop distribution is higher at each percentile than mobile by only 1-2 requests.</div>
+  <figcaption>Figure 17. Distribution of third party requets per ecommerce page.</figcaption>
 </figure>
 
 <figure>
-// Chart 13_09: Third party requests and bytes
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1605504516
-<figcaption>Figure 21. Total third party payload.</figcaption>
-</figure>
-
-<figure>
-  <!-- HTML used here in order to enable colspans -->
-  <table>
-    <tr>
-      <td></td>
-      <td colspan="2"><strong>Number of requests</strong></td>
-      <td colspan="2"><strong>Payload (KB)</strong></td>
-    </tr>
-    <tr>
-      <td><strong>Percentile</strong></td>
-      <td><strong>Mobile</strong></td>
-      <td><strong>Desktop</strong></td>
-      <td><strong>Mobile</strong></td>
-      <td><strong>Desktop</strong></td>
-    </tr>
-    <tr>
-      <td><strong>10</strong></td>
-      <td>4</td>
-      <td>4</td>
-      <td>33.05</td>
-      <td>41.51</td>
-    </tr>
-    <tr>
-      <td><strong>25</strong></td>
-      <td>8</td>
-      <td>9</td>
-      <td>118.44</td>
-      <td>129.39</td>
-    </tr>
-    <tr>
-      <td><strong>50</strong></td>
-      <td>17</td>
-      <td>19</td>
-      <td>292.61</td>
-      <td>320.17</td>
-    </tr>
-    <tr>
-      <td><strong>75</strong></td>
-      <td>32</td>
-      <td>34</td>
-      <td>613.46</td>
-      <td>651.19</td>
-    </tr>
-    <tr>
-      <td><strong>90</strong></td>
-      <td>50</td>
-      <td>54</td>
-      <td>1016.45</td>
-      <td>1071.3</td>
-    </tr>
-  </table>
-  <figcaption>Figure 22. Total third party requests for home pages on ecommerce platforms.</figcaption>
+  <iframe aria-labelledby="fig18-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig18.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig18.png" aria-labelledby="fig18-caption" width="600">
+  </a>
+  <div id="fig18-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third party bytes per ecommerce page. The median number of third party bytes on desktop is 320 KB. The 10, 25, 75, and 90th percentiles are: 42, 129, 651, and 1,071. The desktop distribution is higher at each percentile than mobile by 10-30 KB.</div>
+  <figcaption>Figure 18. Distribution of third party bytes per ecommerce page.</figcaption>
 </figure>
 
 The median ('mid-range') home page on an ecommerce platform makes 17 requests for third party content on mobile and 19 on desktop. 10% of all home pages on ecommerce platforms make over 50 requests for third-party content, with a total payload of over 1 MB.
 
-[Other studies](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/) indicated that third party content can be a major performance bottleneck. This study shows that 17 or more requests (50 or more for the top 10%) is the norm for home pages on ecommerce platforms.
+[Other studies](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/) have indicated that third party content can be a major performance bottleneck. This study shows that 17 or more requests (50 or more for the top 10%) is the norm for ecommerce pages.
 
 ## Third party requests and payload per platform
 
 Note the charts and tables below show data for mobile only.
 
 <figure>
-// Chart 13_09b: 3P requests/bytes per platform
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=281168323
-<figcaption>Figure 23. Third party requests from mobile home pages.</figcaption>
+  <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig19.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig19.png" aria-labelledby="fig19-caption" width="600">
+  </a>
+  <div id="fig19-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third party requests per ecommerce page for each platform. Shopify and Bigcommerce load the most third party requests across the distributions by about 40 requests at the median.</div>
+<figcaption>Figure 19. Distribution of third party requests per mobile page for each ecommerce platform.</figcaption>
 </figure>
 
 <figure>
-
-|             | 10 | 25 | 50 | 75  | 90  |
-|:------------|:---|:---|:---|:----|:----|
-| WooCommerce | 4  | 8  | 16 | 29  | 47  |
-| Shopify     | 35 | 49 | 71 | 100 | 134 |
-| Magento     | 4  | 9  | 17 | 29  | 44  |
-| PrestaShop  | 3  | 7  | 13 | 23  | 34  |
-| Bigcommerce | 24 | 33 | 48 | 73  | 99  |
-| Shopware    | 3  | 6  | 12 | 20  | 30  |
-
-<figcaption>Figure 24. Number of third requests at each percentile.</figcaption>
-</figure>
-
-<figure>
-// Chart 13_09b: 3P requests/bytes per platform
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=281168323
-<figcaption>Figure 25. Total third party payload for mobile home pages.</figcaption>
-</figure>
-
-<figure>
-
-|             | 10  | 25    | 50    | 75    | 90    |
-|:------------|:----|:------|:------|:------|:------|
-| WooCommerce | 28  | 110   | 266   | 580   | 934   |
-| Shopify     | 788 | 1,225 | 1,962 | 3,234 | 5,601 |
-| Magento     | 32  | 120   | 279   | 523   | 831   |
-| PrestaShop  | 19  | 95    | 221   | 445   | 691   |
-| Bigcommerce | 379 | 761   | 1,475 | 2,459 | 3,946 |
-| Shopware    | 18  | 74    | 170   | 334   | 621   |
-
-<figcaption>Figure 26. Payload size (KB) at each percentile.</figcaption>
+  <iframe aria-labelledby="fig20-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig20.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig20.png" aria-labelledby="fig20-caption" width="600">
+  </a>
+  <div id="fig20-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third party bytes (KB) per ecommerce page for each platform. Shopify and Bigcommerce load the most third party byes across the distributions by more than 1,000 KB at the median.</div>
+<figcaption>Figure 20. Distribution of third party bytes (KB) per mobile page for each ecommerce platform.</figcaption>
 </figure>
 
 Platforms such as Shopify may extend their services using client-side JavaScript, whereas other platforms such as Magento use more server side extensions. This difference in architecture affects the figures seen here.
 
-Clearly, home pages on some platforms make more requests for third party content and incur a larger total third party payload. Further analysis could be completed on why home pages from some platforms make more requests and have larger third party payloads than others.
-
-## Third party requests and payload per category
-
-<figure>
-// Chart 13_09c: 3P requests/bytes per category
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=842081746
-<figcaption>Figure 27. Median number of third party requests from home pages.</figcaption>
-</figure>
-
-<figure>
-// Chart 13_09c: 3P requests/bytes per category
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=842081746
-<figcaption>Figure 28. Median total third party payload.</figcaption>
-</figure>
-
-'Hosting' in these charts refers to files used by the platforms themselves, such as boilerplate JavaScript and CSS. Video libraries constitute the largest number of requests and by far the largest payload size of third party content for home pages on ecommerce platforms (apart from files used by the platforms themselves — the 'Hosting' category).
-
-## Analytics, reviews and user behavior monitoring
-
-<figure>
-// Charts • 13_10: Top analytics providers > 1%, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1232567425
-<figcaption>Figure 29. Analytics, review and user behavior monitoring.</figcaption>
-</figure>
-
-<figure>
-// Charts • 13_10: Top analytics providers non-Google, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1585341764
-<figcaption>Figure 30. Analytics, review and user behavior monitoring — other than Google.</figcaption>
-</figure>
-
-138 analytics providers were found, 131 of which get less than 1% of all requests. Of these, more than 100 get less than 0.1% of requests. Google Analytics gets around ten times as many requests (and pages) as the second most popular provider, Hotjar.
-
-## Top ad providers
-
-<figure>
-// Chart 13_11: Top ad providers >=1%
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1621252176
-
-<figcaption>Figure 31. Top ad providers.</figcaption>
-</figure>
-
-246 ad providers were detected on home pages on ecommerce platforms. Of these, 12 get more than 1% of all requests on either mobile or desktop. 127 providers get less than 0.01% of ad requests from home pages on ecommerce platforms.
+Clearly, pages on some ecommerce platforms make more requests for third party content and incur a larger payload of third party content. Further analysis could be done on _why_ pages from some platforms make more requests and have larger third party payloads than others.
 
 ## First Contentful Paint (FCP)
 
-See the [performance chapter](./performance) for comparative data.
-
 <figure>
-
-|                     | Total pages | Fast | Average | Slow |
-|:--------------------|:------------|:-----|:--------|:-----|
-| WooCommerce desktop | 135,290     | 26%  | 37%     | 37%  |
-| WooCommerce mobile  | 156,666     | 22%  | 34%     | 43%  |
-| Shopify desktop     | 61,274      | 53%  | 36%     | 11%  |
-| Shopify mobile      | 66,182      | 47%  | 40%     | 14%  |
-| Magento desktop     | 48,358      | 31%  | 43%     | 26%  |
-| Magento mobile      | 50,262      | 23%  | 46%     | 31%  |
-| PrestaShop desktop  | 31,709      | 36%  | 43%     | 21%  |
-| PrestaShop mobile   | 37,256      | 28%  | 46%     | 27%  |
-| Bigcommerce desktop | 8,327       | 51%  | 40%     | 9%   |
-| Bigcommerce mobile  | 8,435       | 43%  | 45%     | 11%  |
-| Shopware desktop    | 4,275       | 52%  | 35%     | 12%  |
-| Shopware mobile     | 4,919       | 47%  | 40%     | 12%  |
-
-<figcaption>Figure 32. First Contentful Paint for top ecommerce platforms.</figcaption>
+  <iframe aria-labelledby="fig21-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig21.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig21.png" aria-labelledby="fig21-caption" width="600">
+  </a>
+  <div id="fig21-caption" class="visually-hidden">Bar chart of the average distribution of FCP experiences for the top six ecommerce platforms. WooCommerce has the highest density of slow FCP experiences at 43%. Shopify has the highest density of fast FCP experiences at 47%.</div>
+<figcaption>Figure 21. Average distribution of FCP experiences per ecommerce platform.</figcaption>
 </figure>
 
-<figure>
-// Chart 13_08: CrUX FCP
-// https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=498270258
-<figcaption>Figure 33. Top six ecommerce platforms: First Contentful Paint.</figcaption>
-</figure>
+[First Contentful Paint](./performance#first-contentful-paint) measures the time it takes from navigation until content such as text or an image is first displayed. In this context, **fast** means FCP in under one second, **slow** means FCP in 3 seconds or more, and **moderate** is everything in between. Note that third party content and code may have a significant impact on FCP.
 
-'Total pages' is the total number of home pages retrieved while data was being gathered for this study. For example, 135,290 desktop requests were for home pages on sites built using the WooCommerce platform. [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint) measures the time it takes from navigation until content such as text or an image is first displayed. In this context, 'fast' means FCP in under one second, 'slow' means FCP in 2.5 seconds or more, 'average' is everything in between. Note that third party content and code may have a significant impact on FCP.
+All top-six ecommerce platforms have worse FCP on mobile than desktop: less fast and more slow. Note that FCP is affected by device capability (processing power, memory, etc.) as well as connectivity.
 
-All top-six ecommerce platforms have worse FCP on mobile than desktop: less 'fast', more 'slow'. Note that FCP is affected by device capability (processing power, memory, etc.) as well as connectivity.
-
-We need to establish why FCP is worse on mobile than desktop. What are the causes: connectivity and/or device capability — or something else?
-
-## SEO Indexability
-
-See also the [SEO chapter](./seo) for more information on this topic beyond just ecommerce sites.
-
-<figure>
-// Charts 13_12: SEO Indexability, _pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1788076260
-<figcaption>Figure 34. Search engine indexability of home pages on commerce platforms.</figcaption>
-</figure>
-
-97.35% of mobile home pages on ecommerce platforms pass the [Lighthouse SEO audit](https://developers.google.com/web/tools/lighthouse/audits/indexing): they do not have HTTP headers or meta tags that block indexing. Note that Lighthouse API SEO audit results are only available for mobile. 0.57% of home pages on ecommerce platforms block indexing. Lighthouse was unable to the SEO audit for 2.08% of home pages.
-
+We need to establish why FCP is worse on mobile than desktop. What are the causes: connectivity and/or device capability, or something else?
 
 ## Progressive Web App (PWA) scores
 
 See also the [PWA chapter](./pwa) for more information on this topic beyond just ecommerce sites.
 
 <figure>
-// Chart 13_13: PWA scores, https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/edit?ts=5d768aec#gid=1548616265
-<figcaption>Figure 35. Lighthouse PWA scores.</figcaption>
+  <iframe aria-labelledby="fig22-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/13_Ecommerce/fig22.png" class="fig-mobile">
+    <img src="/static/images/2019/13_Ecommerce/fig22.png" aria-labelledby="fig22-caption" width="600">
+  </a>
+  <div id="fig22-caption" class="visually-hidden">Distribution of Lighthouse's PWA category scores for ecommerce pages. On a scale of 0 (failing) to 1 (perfect), 40% of pages get a score of 0.33. 1% of pages get a score above 0.6.</div>
+<figcaption>Figure 22. Distribution of Lighthouse PWA category scores for mobile ecommerce pages.</figcaption>
 </figure>
 
-More than 60% of home pages on ecommerce platforms get a [Lighthouse PWA score](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) between 25 and 35. Less than 20% of home pages on ecommerce platforms get a score of more than 50 and less than 1% of home pages score more than 60.
+More than 60% of home pages on ecommerce platforms get a [Lighthouse PWA score](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) between 0.25 and 0.35. Less than 20% of home pages on ecommerce platforms get a score of more than 0.5 and less than 1% of home pages score more than 0.6.
 
-Lighthouse returns a Progressive Web App (PWA) score between zero and 100. Zero is the worst possible score, and 100 is the best. The PWA audits are based on the [Baseline PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist), which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.
+Lighthouse returns a Progressive Web App (PWA) score between 0 and 1. 0 is the worst possible score, and 1 is the best. The PWA audits are based on the [Baseline PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist), which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.
 
-If at least one of the PWA audits got a null score, Lighthouse nulls out the score for the entire PWA category. This was the case for 2.32% of home pages.
+If at least one of the PWA audits got a null score, Lighthouse nulls out the score for the entire PWA category. This was the case for 2.32% of mobile pages.
 
-Clearly, most home pages on ecommerce platforms are failing most [PWA checklist audits](https://developers.google.com/web/progressive-web-apps/checklist). We need to do further analysis to better understand which audits are failing and why.
+Clearly, the majority of ecommerce pages are failing most [PWA checklist audits](https://developers.google.com/web/progressive-web-apps/checklist). We need to do further analysis to better understand which audits are failing and why.
 
 ## Conclusion
 
-This comprehensive study of ecommerce usage for the sites crawled by HTTP Archive shows some interesting data and also the wide variations in ecommerce sites - even those built on the same ecommerce platform. Even though we have gone into a lot of detail here, there is much more analysis we could do in this space. For example, we didn't get accessibility scores this year (checkout the [accessibility chapter](./accessibility) for more on that). Next year, we should look at this and likewise, for geographical data. This study detected 246 ad providers on home pages on ecommerce platforms. Further studies (perhaps in next year's Web Almanac?) could calculate what proportion of sites on ecommerce platforms shows ads. WooCommerce got very high numbers in this study so another interesting statistic we could look at next year is if some hosting providers are installing WooCommerce but not enabling it, thereby causing inflated figures.
+This comprehensive study of ecommerce usage shows some interesting data and also the wide variations in ecommerce sites, even among those built on the same ecommerce platform. Even though we have gone into a lot of detail here, there is much more analysis we could do in this space. For example, we didn't get accessibility scores this year (checkout the [accessibility chapter](./accessibility) for more on that). Likewise, it would be interesting to segment these metrics by geography. This study detected 246 ad providers on home pages on ecommerce platforms. Further studies (perhaps in next year's Web Almanac?) could calculate what proportion of sites on ecommerce platforms shows ads. WooCommerce got very high numbers in this study so another interesting statistic we could look at next year is if some hosting providers are installing WooCommerce but not enabling it, thereby causing inflated figures.
