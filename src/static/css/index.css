@@ -226,7 +226,7 @@ p {
 .methodology-data {
   display: flex;
   margin: 20px 0 30px 0;
-  padding: 20px 40px;
+  padding: 20px 30px;
   border-radius: 5px;
   box-shadow: 0 0 5px 5px #f6f7f9;
 }
@@ -255,6 +255,7 @@ p {
 .websites-tested div:last-of-type,
 .data-processed div:last-of-type {
   font-size: 3rem;
+  line-height: 3rem;
 }
 
 .methodology-info {
@@ -453,6 +454,7 @@ p {
   .websites-tested div:last-of-type,
   .data-processed div:last-of-type {
     font-size: 5rem;
+    line-height: 5rem;
   }
 }
 
