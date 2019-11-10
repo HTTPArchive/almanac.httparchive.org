@@ -260,6 +260,10 @@
   right:-24px;
 }
 
+aside {
+  font-style: italic;
+}
+
 img,
 table,
 figure {
