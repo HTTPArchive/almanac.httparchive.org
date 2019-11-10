@@ -58,9 +58,14 @@ For website performance a CDN can improve performance for the primary domain (ww
 Historically, CDNs were used exclusively for static resources like CSS, JavaScript and images. These resources would likely be versioned (include a unique number in the path) and cached long term. In this way we should expect to see higher adoption of CDNs on subdomains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that www.shoesbycolin.com would serve HTML directly from a datacenter (or ORIGIN) while static.shoesbycolin.com would use a CDN.
 
 
-![Figure 1. CDN Usage vs. Origin Hosted Resources](images/Web-Almanac1.png "Origin vs CDN")
-
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive
+<figure id="fig1">
+  <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig1.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig1.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig1-caption" class="visually-hidden">Split of requests between origin and CDN, broken down by HTML, sub-resources and third-party content</div>
+  <figcaption>Figure 1. CDN Usage vs. Origin Hosted Resources</figcaption>
+</figure>
 
 Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of webpages (80%) serve the base HTML from ORIGIN. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely do to the small continued use of mobile specific webpages (mDot) which more frequently use a CDN.
 
@@ -75,7 +80,12 @@ This is clearly represented when looking at the top CDNs found serving the base 
 
 (NB: this does not reflect traffic or usage, only the number of sites using them)
 
-![Figure 2: HTML CDN Usage](images/Web-Almanac2.png "HTML CDN Usage")
+<figure id="fig2">
+  <a href="/static/images/2019/17_CDN/html_cdn_usage.png">
+    <img alt="Most popular CDNs used to serve base HTML pages" src="/static/images/2019/17_CDN/html_cdn_usage.png">
+  </a>
+  <figcaption>Figure 2: HTML CDN Usage</figcaption>
+</figure>
 
 *Top 25 CDNs for HTML by Site*
 
@@ -110,7 +120,13 @@ This is clearly represented when looking at the top CDNs found serving the base 
 
 SubDomain requests have a very similar composition. Since many websites use subdomains for static content, we see a shift to a higher CDN usage. Like the base page requests, the resources served from these sub-domains utilize generic CDN offerings.
 
-![Figure 3. Sub-Domain Resource CDN Usage](images/Web-Almanac3.png "Sub-Domain CDN Usage")
+<figure id="fig3">
+  <a href="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png">
+    <img alt="Most popular CDNs used for resources served from a sub-domain" src="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png">
+  </a>
+  <figcaption>Figure 3. Sub-Domain Resource CDN Usage</figcaption>
+</figure>
+
 
 *Top 25 Resource CDNs for Sub-Domain Requests*
 
@@ -145,8 +161,12 @@ SubDomain requests have a very similar composition. Since many websites use subd
 
 The composition of top CDN providers dramatically shifts for third party resources. Not only are CDNs more frequently observed hosting third party resources, there is also an increase in purpose-fit CDN providers such as Facebook, Twitter and Google.
 
-![Figure 4. Third-Party Resource CDN Usage](images/Web-Almanac4.png "Third Party CDN Usage")
- 
+<figure id="fig4">
+  <a href="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png">
+    <img alt="Most popular CDNs used by third-party resources" src="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png">
+  </a>
+  <figcaption>Figure 4. Third-Party Resource CDN Usage</figcaption>
+</figure>
 
 *Top 25 Resource CDNs for 3rd Party Requests*
 
@@ -198,7 +218,12 @@ In contrast, the median TLS negotiation for the majority of CDN providers is bet
 
 _A word of caution when interpreting these charts: it is important to focus on orders of magnitude when comparing vendors as there are many factors that impact the actual TLS negotiation performance. These tests were completed from a single datacenter under controlled conditions and do not reflect the variability of the internet and user experiences._
 
-![Figure 5. HTML TLS Negotiation Time](images/Web-Almanac5.png "HTML TLS Negotiation Time")
+<figure id="fig5">
+  <a href="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
+    <img alt="Distribution of TLS negotiation time for intial HTML request broken down by CDN" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
+  </a>
+  <figcaption>Figure 5. HTML TLS Negotiation Time</figcaption>
+</figure>
 
 *HTML TLS Connection Time (ms)*
 
@@ -226,7 +251,12 @@ _A word of caution when interpreting these charts: it is important to focus on o
 
 For resource requests (including same domain and third party), the TLS negotiation time takes longer and the variance increases. This is expected because of network saturation and network congestion. By the time that a third party connection is established - by way of a resource hint or a resource request - the browser is busy rendering and making other parallel requests. This creates contention on the network. Despite this disadvantage, there is still a clear advantage for third party resources that utilize a CDN over using an origin solution.  
 
-![Figure 6. Resource TLS Negotiation Time](images/Web-Almanac6.png "Resource TLS Negotiation Time")
+<figure id="fig6">
+  <a href="/static/images/2019/17_CDN/resource_tls_negotiation_time.png">
+    <img alt="Distribution of TLS negotiation time for site resources broken down by CDN" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png">
+  </a>
+  <figcaption>Figure 6. Resource TLS Negotiation Time</figcaption>
+</figure>
 
 TLS handshake performance is impacted by a number of factors. These include RTT, TLS Record size and TLS certificate size. While RTT has the biggest impact of TLS handshake, the second largest driver for TLS performance is the TLS certificate size. 
 
@@ -245,9 +275,15 @@ According to Akamai, the adoption of SNI is [still not 100% globally](https://da
 Most CDNs balance the need for shared certificates and performance. Most cap the number of SANs between 100-150. This limit often derives from the certificate providers. For example, [LetsEncrypt](https://letsencrypt.org/docs/rate-limits/), [DigiCert](https://www.websecurity.digicert.com/security-topics/san-ssl-certificates) and [GoDaddy](https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate) all limit SAN certificates to 100 hostnames while [Comodo](https://comodosslstore.com/comodo-mdc-ssl.aspx)'s limit is 2000. This, in turn, allows some CDNs push this limit cresting over 800 SANs on a single certificate. There is a strong negative correlation of TLS performance and the number of SANs on a certificate.
 
 
-![Figure 7. TLS SAN Count for HTML](images/Web-Almanac7.png "TLS SAN Count for HTML")
+<figure id="fig7">
+  <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig7.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig7.png" aria-labelledby="fig7-caption" width="600">
+  </a>
+  <div id="fig7-caption" class="visually-hidden">Distribution showing the number of Subject-Alternative-Names per certificate for initial HTML request, broken down by CDN</div>
+  <figcaption>Figure 7. TLS SAN Count for HTML</figcaption>
+</figure>
 
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive
 
 * TLS SAN Count for HTML *
 
@@ -273,9 +309,15 @@ https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmX
 |Myra Security CDN|2|2|18|139|145|
 |CDNetworks|2|7|100|360|818|
 
-![Figure 8. Resource SAN Count (p50)](images/Web-Almanac8.png "Resource SAN Count (p50)")
+<figure id="fig8">
+  <iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig8.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig8.png" aria-labelledby="fig8-caption" width="600">
+  </a>
+  <div id="fig8-caption" class="visually-hidden">Median number of Subject-Alternative-Names for sub-resource requests, broken down by CDN</div>
+  <figcaption>Figure 8. Resource SAN Count (p50)</figcaption>
+</figure>
 
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive
 
 |||||||
 |--- |--- |--- |--- |--- |--- |
@@ -304,19 +346,34 @@ https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmX
 
 In addition to using a CDN for TLS & RTT Performance, CDNs are often used to ensure patching and adoption of TLS ciphers and TLS versions. In general, the adoption of TLS on the main HTML page is much higher for websites that use a CDN. Over 76% of HTML pages are served with TLS compared to the 62% from Origin hosted pages. 
 
-![Figure 9. HTML TLS Version Adoption (CDN v. Origin)](images/Web-Almanac8.png "HTML TLS Version Adoption (CDN v. Origin)")
-
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive
+<figure id="fig9">
+  <iframe aria-labelledby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig9.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig9.png" aria-labelledby="fig9-caption" width="600">
+  </a>
+  <div id="fig9-caption" class="visually-hidden">Break down of TLS version used to establish secure connection for the initial HTML request but origin and CDN requests</div>
+  <figcaption>Figure 9. HTML TLS Version Adoption (CDN v. Origin)</figcaption>
+</figure>
 
 Each CDN offers different rates of adoption for both TLS and the relative ciphers and versions offered. Some CDNs are more aggressive and roll out these changes to all customers whereas other CDNs require website owners to opt-in to the latest changes and offer change-management to facilitate these ciphers and versions.
 
-![Figure 10. HTML TLS Adoption by CDN](images/Web-Almanac8.png "HTML TLS Adoption by CDN")
+<figure id="fig10">
+  <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig10.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig10.png" aria-labelledby="fig10-caption" width="600">
+  </a>
+  <div id="fig10-caption" class="visually-hidden">Division of secure vs non-secure connections established for initial HTML request broken down by CDN</div>
+  <figcaption>Figure 10. HTML TLS Adoption by CDN</figcaption>
+</figure>
 
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive
-
-![Figure 10. Third-Party TLS Adoption by CDN](images/Web-Almanac8.png "Third-Party TLS Adoption by CDN")
-
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive
+<figure id="fig11">
+  <iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig11.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig11.png" aria-labelledby="fig11-caption" width="600">
+  </a>
+  <div id="fig11-caption" class="visually-hidden">Division of secure vs non-secure connections established for third-party requests broken down by CDN</div>
+  <figcaption>Figure 11. Third-Party TLS Adoption by CDN</figcaption>
+</figure>
 
 
 Along with this general adoption of TLS, CDN use also sees higher adoption of emerging TLS Versions like TLS 1.3. 
@@ -325,9 +382,15 @@ In general the use of a CDN is highly correlated with a more rapid adoption of s
 
 > It is important to emphasise that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions. 
 
-![Figure 10. HTML TLS Negotiation by CDN](images/Web-Almanac8.png "HTML TLS Negotiation by CDN")
+<figure id="fig12">
+  <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig12.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig12.png" aria-labelledby="fig12-caption" width="600">
+  </a>
+  <div id="fig12-caption" class="visually-hidden">Version of TLS used to establish connection for initial HTML request broken down by CDN</div>
+  <figcaption>Figure 12. HTML TLS Negotiation by CDN</figcaption>
+</figure>
 
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive
 
 More discussion of the TLS Versions and ciphers can be found In the [Security](https://todo.dev) and [HTTP/2](https://todo.dev) chapters, 
 
@@ -338,14 +401,24 @@ The top 10 CDNs have over 80% of the websites covered by WebPageTest have HTTP/2
 
 > NB: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported this would indicate either unencrypted (non TLS) servers or servers that don’t support HTTP/2.
 
-![Figure 9. HTML Adoption of HTTP/2 (CDN v. Origin)](images/Web-Almanac9.png "HTML Adoption of HTTP/2 CDN v. Origin")
+<figure id="fig13">
+  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig13.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig13.png" aria-labelledby="fig13-caption" width="600">
+  </a>
+  <div id="fig13-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests via CDN, and site origins</div>
+  <figcaption>Figure 13. HTTP/2 Adoption CDN vs Origin</figcaption>
+</figure>
 
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive
+<figure id="fig14">
+  <iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig14.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig14.png" aria-labelledby="fig14-caption" width="600">
+  </a>
+  <div id="fig14-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests from intial HTML via CDN, and site origins</div>
+  <figcaption>Figure 14. HTML Adoption of HTTP/2</figcaption>
+</figure>
 
-
-![Figure 9. HTML Adoption of HTTP/2](images/Web-Almanac9.png "HTML Adoption of HTTP/2")
-
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive
 
 *HTML Adoption of HTTP/2*
 
@@ -379,9 +452,15 @@ https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmX
 |ChinaNetCenter|0|0|94.49|6|
 
 
-![Figure 10. HTML/2 Adoption: Third Party Resources](images/Web-Almanac10.png "HTML/2 Adoption: Third Party Resources")
+figure id="fig15">
+  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig15.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig15.png" aria-labelledby="fig15-caption" width="600">
+  </a>
+  <div id="fig15-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests from intial HTML via CDN, and site origins</div>
+  <figcaption>Figure 15. HTML/2 Adoption: Third Party Resources</figcaption>
+</figure>
 
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive
 
 *HTML/2 Adoption: Third Party Resources*
 
