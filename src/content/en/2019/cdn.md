@@ -1,4 +1,5 @@
 # Web Almanac: CDN
+
 ## Introduction
 
 "Use a Content Delivery Network" was one of [Steve Souders original recommendations](http://stevesouders.com/hpws/rules.php) for making web sites load faster. It’s advice that remains valid today, and in this chapter of the WebAlmanac we’re going to explore how widely Steve’s recommendation has been adopted, how sites are using Content Delivery Networks (CDNs) and some of the features they’re using. 
@@ -18,7 +19,9 @@ Although CDNs are often thought of as just caches that store and serve static co
 * The rise of ‘[edge computing](https://en.wikipedia.org/wiki/Edge_computing)’ allows sites to run their own code close to their visitors, both improving performance and reducing the load on the origin.
 
 Finally, CDNs also help sites to adopt new technologies without requiring changes at the origin, for example HTTP/2, TLS 1.3, and/or IPv6 can be enabled from the edge to the browser, even if the origin servers doesn’t support it yet.
+
 ### Caveats and Disclaimers
+
 As with any observational study, there are limits to the scope and impact that can be measured. The statistics gathered on CDN usage for the the WebAlmanac does not imply performance, nor effectiveness of a specific CDN vendor.
 
 There are many limits to the testing methodology used for the WebAlmanac. These include:
@@ -33,9 +36,13 @@ Most importantly, these results reflect a potential utilization but do not refle
 With this in mind, there are a few intentional statistics that were not measured with the context of a CDN:
 * TTFB - Measuring the Time-To-First-Byte by CDN would be intellectually dishonest without proper knowledge about cacheability and cache effectiveness. If one site uses a CDN for RTT management but not for caching, this would create a disadvantage when comparing another site that uses a different CDN vendor but does also caches the content. 
 * Cache Hit vs. Cache Miss performance - As mentioned previously, this is opaque to the testing apparatus and therefore repeat tests to test page performance with a cold cache vs. a hot cache are unreliable.
+
 ### Further Stats
+
 In future versions of the WebAlmanac, we would expect to look more closely at the TLS & RTT management between CDN vendors. Of interest would the impact of OCSP stapling, differences in TLS Cipher performance. CWND (TCP Congestion Window) growth rate and specifically the adoption of BBR v1, v2 and traditional TCP Cubic. 
+
 ## CDN Adoption and Usage
+
 For website performance a CDN can improve performance for the primary domain (www.shoesbycolin.com), subdomains or sibling domains (images.shoesbycolin.com or checkout.shoesbycolin.com) and finally third parties (google analytics, etc). Using a CDN for each of these use cases improves performance in different ways. 
 
 Historically, CDNs were used exclusively for static resources like CSS, JavaScript and images. These resources would likely be versioned (include a unique number in the path) and cached long term. In this way we should expect to see higher adoption of CDNs on subdomains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that www.shoesbycolin.com would serve HTML directly from a datacenter (or ORIGIN) while static.shoesbycolin.com would use a CDN.
@@ -58,6 +65,7 @@ This is clearly represented when looking at the top CDNs found serving the base 
 ![Figure 2: HTML CDN Usage](images/Web-Almanac2.png "HTML CDN Usage")
 
 *Top 25 CDNs for HTML by Site*
+
 |||
 |--- |--- |
 ||Html CDN Usage (%)|
@@ -92,6 +100,7 @@ SubDomain requests have a very similar composition. Since many websites use subd
 ![Figure 3. Sub-Domain Resource CDN Usage](images/Web-Almanac3.png "Sub-Domain CDN Usage")
 
 *Top 25 Resource CDNs for Sub-Domain Requests*
+
 |||
 |--- |--- |
 ||Sub-Domain CDN Usage (%)|
@@ -121,15 +130,13 @@ SubDomain requests have a very similar composition. Since many websites use subd
 |Level 3|0.06|
 |StackPath|0.06|
 
-
 The composition of top CDN providers dramatically shifts for third party resources. Not only are CDNs more frequently observed hosting third party resources, there is also an increase in purpose-fit CDN providers such as Facebook, Twitter and Google.
-
-
 
 ![Figure 4. Third-Party Resource CDN Usage](images/Web-Almanac4.png "Third Party CDN Usage")
  
 
 *Top 25 Resource CDNs for 3rd Party Requests*
+
 |||
 |--- |--- |
 ||Third Party CDN Usage (%)|
@@ -160,6 +167,7 @@ The composition of top CDN providers dramatically shifts for third party resourc
 |StackPath|0.09|
 
 ## RTT & TLS Management
+
 CDNs can offer more than simple caching for website performance. Many CDNs also support a pass-through mode for dynamic or personalized content when an organization has a legal or other business requirement prohibiting the content to be cached. Utilizing a CDNs physical distribution enables increased performance for TCP round-trip-time for end user. As [others have noted](https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/), [reducing RTT is the most effective means to improve webpage performance](https://hpbn.co/primer-on-latency-and-bandwidth/) compared to increasing bandwidth. 
 
 Using a CDN in this way can improve page performance in two ways:
@@ -170,6 +178,7 @@ Reducing RTT has three immediate benefits. First is it improves the time for the
 2. CDNs can utilize pre-warmed TCP connections to the back-end origin. Just as terminating the connection closer to the user will improve the time it takes to grow the congestion window, the CDN can relay the request to the origin on pre-established TCP connections that have already maximized congestion windows. In this way the origin can return the dynamic content in fewer TCP round trips and the content can be more effectively ready to deliver to the waiting user. 
 
 ## TLS Negotiation Time: Origin ~3x slower than CDNs
+
 Since TLS negotiations requires multiple TCP round trips before data can be sent from a server, simply improving the RTT can significantly improve the page performance. For example, looking at the base html page, the median TLS negotiation time for origin requests is 207ms for desktop WebPageTest. This alone accounts for 10% of a 2s performance budget and this is under an ideal network conditions where there is no latency applied on the request. 
 
 In contrast, the median TLS negotiation for the majority of CDN providers is between 60 and 70ms. Origin requests for HTML pages take almost 3x longer to complete TLS negotiation than those web pages that use a CDN. Even at the 90th percentile, this disparity perpetuates with Origin TLS negotiation rates of 427ms compared to most CDNs which complete under 140ms! 
@@ -182,6 +191,7 @@ _A word of caution when interpreting these charts: it is important to focus on o
 ![Figure 5. HTML TLS Negotiation Time](images/Web-Almanac5.png "HTML TLS Negotiation Time")
 
 *HTML TLS Connection Time (ms)*
+
 |||||||
 |--- |--- |--- |--- |--- |--- |
 ||p10|p25|p50|p75|p90|
@@ -227,8 +237,8 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 
 ![Figure 7. TLS SAN Count for HTML](images/Web-Almanac7.png "TLS SAN Count for HTML")
 
-
 * TLS SAN Count for HTML *
+
 |||||||
 |--- |--- |--- |--- |--- |--- |
 ||p10|p25|p50|p75|p90|
@@ -277,6 +287,7 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 |CDNetworks|132|178|397|398|645|
 
 ## TLS Adoption
+
 A CDN is often used not just for TLS to improve RTT but to also ensure the latest ciphers and TLS versions are supported. In general, the adoption of TLS on the main HTML page is much higher for websites that use a CDN. Over 76% of HTML pages are served with TLS compared to the 62% from Origin hosted pages. Along with this general adoption of TLS, CDN use also sees higher adoption of emerging TLS Versions like TLS 1.3. More discussion of the TLS Versions and ciphers can be found In the [Security](https://todo.dev) and [HTTP/2](https://todo.dev) chapters, 
 
 > NB: These web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions. 
@@ -305,6 +316,7 @@ The top 10 CDNs have over 80% of the websites covered by WebPageTest have HTTP/2
 ![Figure 9. HTML Adoption of HTTP/2](images/Web-Almanac9.png "HTML Adoption of HTTP/2")
 
 *HTML Adoption of HTTP/2*
+
 ||||||
 |--- |--- |--- |--- |--- |
 ||HTTP/0.9|HTTP/1.0|HTTP/1.1|HTTP/2|
@@ -338,6 +350,7 @@ The top 10 CDNs have over 80% of the websites covered by WebPageTest have HTTP/2
 ![Figure 10. HTML/2 Adoption: Third Party Resources](images/Web-Almanac10.png "HTML/2 Adoption: Third Party Resources")
 
 *HTML/2 Adoption: Third Party Resources*
+
 ||||||
 |--- |--- |--- |--- |--- |
 |cdn|HTTP/0.9|HTTP/1.0|HTTP/1.1|HTTP/2|
@@ -368,8 +381,11 @@ The top 10 CDNs have over 80% of the websites covered by WebPageTest have HTTP/2
 |ORIGIN|0|0.07|69|31|
 
 A more in depth discussion of HTTP/2 is covered in [Chapter 20](https://todo.dev)
+
 ## Controlling CDN Caching Behavior
+
 ### Vary
+
 A website can control many the caching behavior of browsers and CDNs with the use of different HTTP headers. The most common is the Cache-Control header which specifically determines how long something can be cached before returning to the origin to ensure it is up-to-date. 
 
 Another useful tool is the use of the Vary HTTP Header. This header instructs both CDNs and Browsers how to fragment a cache. The Vary Header allows an origin to indicate there are multiple representations of a resource, and the CDN should cache each variation separately. The most common example is compression as discussed in [Chapter 16](http://todo.dev). Declaring a resource as `Vary: Accept-Encoding` allows the CDN to cache the same content but in different forms like uncompressed, with gzip or Brotli. Some CDNs even do this compression on the fly so as to keep only one copy available. This Vary header likewise also instructs the browser how to cache the content and when to request new content. 
@@ -380,8 +396,6 @@ While the main use of `Vary` is to coordinate `Conten-Encoding`, there are other
 For HTML pages, the most common use of Vary is to signal that the content will change based on the User-Agent. This is short-hand to indicate that the website will return different content for Desktops, Phones, Tablets and Link Unfurling engines (like Slack, iMessage and Whatsapp). The use of `Vary: User-Agent` is also a vestigate of the early mobile era where content was split between mDot servers and "regular" servers in the back end. While the adoption for Responsive Web has gained wide popularity, this Vary form remains.
 
 In a similar way, `Vary: Cookie` usually indicates content that will change based on the logged in state of the user or other personalization. 
-
-
 
 Resources, in contrast, don’t `Vary: Cookie` as much as the HTML resources. Instead these resources are more likely to adapt based on the Accept, Origin or Referer. Most media, for example, will use `Vary: Accept` to indicate that an image could be a JPEG, WebP, JPEG 2000, or JPEG XR depending on the Browser’s offered `Accept` header.  In a similar way, third party shared resources signal that an XHR API will differ depending on which website it is embeded. This way a call to an ad server API will return different content depending on the parent website that called the API.
 
@@ -404,8 +418,8 @@ With 40% of sites using a CDN for resources, and presuming these resources are s
 Future research might explore cache lifetimes versus the age of the resources, and the usage of s-maxage versus other validation directives such as stale-while-revalidate.
 
 ## CDNs for Common Libraries and Content
-So far this chapter has explored the use of commercials CDNs which the site may be using using the CDN to host its own content, or perhaps used by a third-party tag that’s included on the site.
 
+So far this chapter has explored the use of commercials CDNs which the site may be using using the CDN to host its own content, or perhaps used by a third-party tag that’s included on the site.
 
 Common libraries – jQuery, Bootstrap etc. – are also available from public CDNs hosted by Google, Cloudflare, Microsoft, etc.
 
@@ -414,7 +428,9 @@ Using content from one of the public CDNs instead of a self-hosting the content 
 Google Fonts is the most popular of the content CDNs and is used by 55% of the sites in the Almanac dataset. For non-font content Google API, Cloudflare’s JS CDN, and the Bootstrap’s CDN are the next most popular. 
 
 As more browsers implement partitioned caches, the effectiveness of public CDNs for hosting common libraries will decrease  and it will be interesting to see whether they are less popular in future iterations of this research.
+
 ## Closing Thoughts
+
 The reduction in latency CDNs deliver, along with their ability to store content close to visitors  enables sites to deliver faster experiences while reducing the load on the origin.
 
 Steve Souders’ recommendation to use a CDN remains as valid today as it was 12 years ago, but yet only 20% of sites serve their HTML content via a CDN, and only 40% are using a CDN for resources so there’s plenty of opportunity for their usage to grow further.
