@@ -195,9 +195,6 @@ In contrast, the median TLS negotiation for the majority of CDN providers is bet
 
 _A word of caution when interpreting these charts: it is important to focus on orders of magnitude when comparing vendors as there are many factors that impact the actual TLS negotiation performance. These tests were completed from a single datacenter under controlled conditions and do not reflect the variability of the internet and user experiences._
 
-
-
-
 ![Figure 5. HTML TLS Negotiation Time](images/Web-Almanac5.png "HTML TLS Negotiation Time")
 
 *HTML TLS Connection Time (ms)*
@@ -298,22 +295,25 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 
 ## TLS Adoption
 
-A CDN is often used not just for TLS to improve RTT but to also ensure the latest ciphers and TLS versions are supported. In general, the adoption of TLS on the main HTML page is much higher for websites that use a CDN. Over 76% of HTML pages are served with TLS compared to the 62% from Origin hosted pages. Along with this general adoption of TLS, CDN use also sees higher adoption of emerging TLS Versions like TLS 1.3. More discussion of the TLS Versions and ciphers can be found In the [Security](https://todo.dev) and [HTTP/2](https://todo.dev) chapters, 
-
-> NB: These web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions. 
+In addition to using a CDN for TLS & RTT Performance, CDNs are often used to ensure patching and adoption of TLS ciphers and TLS versions. In general, the adoption of TLS on the main HTML page is much higher for websites that use a CDN. Over 76% of HTML pages are served with TLS compared to the 62% from Origin hosted pages. 
 
 ![Figure 9. HTML TLS Version Adoption (CDN v. Origin)](images/Web-Almanac8.png "HTML TLS Version Adoption (CDN v. Origin)")
 
-
+Each CDN offers different rates of adoption for both TLS and the relative ciphers and versions offered. Some CDNs are more aggressive and roll out these changes to all customers whereas other CDNs require website owners to opt-in to the latest changes and offer change-management to facilitate these ciphers and versions.
 
 ![Figure 10. HTML TLS Adoption by CDN](images/Web-Almanac8.png "HTML TLS Adoption by CDN")
 
-
-
 ![Figure 10. Third-Party TLS Adoption by CDN](images/Web-Almanac8.png "Third-Party TLS Adoption by CDN")
 
+Along with this general adoption of TLS, CDN use also sees higher adoption of emerging TLS Versions like TLS 1.3. 
+
+In general the use of a CDN is highly correlated with a more rapid adoption of stronger ciphers and stronger TLS versions compared to Origin hosted services where there is a higher user of very old and compromised TLS Versions like TLS 1.0. 
+
+> It is important to emphasise that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions. 
 
 ![Figure 10. HTML TLS Negotiation by CDN](images/Web-Almanac8.png "HTML TLS Negotiation by CDN")
+
+More discussion of the TLS Versions and ciphers can be found In the [Security](https://todo.dev) and [HTTP/2](https://todo.dev) chapters, 
 
 ## HTTP/2 Adoption
 Along with RTT Management and improving TLS performance, CDNs also enable new standards like HTTP/2 and IPv6. While most CDNs offer support for HTTP/2 and many have signaled early support of the still-under-standards-development HTTP/3, adoption still depends on website owners to enable these new features. Despite the change management overhead, the majority of the HTML served from CDNs has HTTP/2 enabled. 
