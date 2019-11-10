@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const ejs = require('ejs');
 
-const min_publish_date = new Date('2019-11-05T12:00');
+const min_publish_date = new Date('2019-11-11T00:00');
 const sitemap_template = `templates/sitemap.ejs.xml`;
 const sitemap_path = `templates/sitemap.xml`;
 const static_pages = [
@@ -12,6 +12,7 @@ const static_pages = [
 ];
 
 const generate_sitemap = async (sitemap_chapters) => {
+
   const urls = await get_static_pages(sitemap_chapters);
 
   for (let sitemap_chapter of sitemap_chapters) {
@@ -47,12 +48,14 @@ const get_static_pages = async (sitemap_chapters) => {
   let urls = [];
 
   for (const loc of await files) {
-    const file = await fs.readFile(`templates/${loc}`, 'utf-8');
-    const match = file.match(/"datePublished": "([0-9\-\+\:T]*)"/);
-    const lastmod = set_min_date(match[1]);
-    const url = strip_html_extension(loc);
+    if (fs.existsSync(`templates/${loc}`)) {
+      const file = await fs.readFile(`templates/${loc}`, 'utf-8');
+      const match = file.match(/"datePublished": "([0-9\-\+\:T]*)"/);
+      const lastmod = set_min_date(match[1]);
+      const url = strip_html_extension(loc);
 
-    urls.push({ url, lastmod });
+      urls.push({ url, lastmod });
+    }
   }
 
   return urls;
@@ -78,7 +81,7 @@ const set_min_date = (date) => {
     if (date < min_publish_date) {
       return min_publish_date.toISOString().substr(0, 10);
     } else {
-      return date;
+      return date.toISOString().substr(0, 10);
     }
   } else {
     return new Date().toISOString().substr(0, 10);

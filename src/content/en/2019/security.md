@@ -2,11 +2,11 @@
 part_number: II
 chapter_number: 8
 title: Security
-description: Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity
+description: Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.
 authors: [ScottHelme, arturjanc]
 reviewers: [bazzadp, ghedo, paulcalvano]
 discuss: 1763
-published: 2019-11-04T12:00:00+00:00:00
+published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-07T21:46:11.000Z 
 ---
 

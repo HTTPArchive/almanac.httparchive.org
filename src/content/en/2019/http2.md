@@ -2,11 +2,11 @@
 part_number: IV
 chapter_number: 20
 title: HTTP/2
-description: HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3
+description: HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
 discuss: 1775
-published: 2019-11-04T12:00:00+00:00:00
+published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-07T21:46:11.000Z 
 ---
 

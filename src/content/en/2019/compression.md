@@ -2,11 +2,11 @@
 part_number: IV
 chapter_number: 15
 title: Compression
-description: Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities
+description: Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.
 authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
 discuss: 1770
-published: 2019-11-04T12:00:00+00:00:00
+published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-07T21:46:11.000Z 
 ---
 
