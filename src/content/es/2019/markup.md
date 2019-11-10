@@ -254,7 +254,7 @@ Entonces, hay muchos datos aquí, pero para resumir:
 * Las páginas tienen más elementos que hace 14 años, tanto en promedio como en máximo.
 * La vida útil de las cosas en las páginas de inicio es *muy* larga. Marcar como obsoleto o descontinuar las cosas no las hace desaparecer, y puede que nunca lo haga.
 * Hay una gran cantidad de marcado roto en la naturaleza (etiquetas mal escritas, espacios faltantes, mal escape, malentendidos).
-* Medir lo que significa "útil" es complicado. Muchos elementos nativos no pasan la barra del 5%, o incluso la barra del 1%, pero muchos de los personalizados sí, y por muchas razones. Pasar del 1% definitivamente debería captar nuestra atención al menos, pero tal vez incluso debería ser del 0,5% porque, según los datos, es comparativamente *muy* exitoso.
+* Medir lo que significa "útil" es complicado. Muchos elementos nativos no pasan la barra del 5%, o incluso la barra del 1%, pero muchos de los personalizados sí, y por muchas razones. Pasar del 1% definitivamente debería captar nuestra atención al menos, pero tal vez incluso debería ser del 0.5% porque, según los datos, es comparativamente *muy* exitoso.
 * Ya hay un montón de marcas personalizadas por ahí. Viene en muchas formas, pero los elementos que contienen un guión definitivamente parecen haber despegado.
 * Necesitamos estudiar cada vez más estos datos y generar buenas observaciones para ayudar a encontrar y pavimentar los senderos.
 
