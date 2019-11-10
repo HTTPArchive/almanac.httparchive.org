@@ -305,7 +305,12 @@ Each CDN offers different rates of adoption for both TLS and the relative cipher
 
 ![Figure 10. HTML TLS Adoption by CDN](images/Web-Almanac8.png "HTML TLS Adoption by CDN")
 
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive
+
 ![Figure 10. Third-Party TLS Adoption by CDN](images/Web-Almanac8.png "Third-Party TLS Adoption by CDN")
+
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive
+
 
 Along with this general adoption of TLS, CDN use also sees higher adoption of emerging TLS Versions like TLS 1.3. 
 
@@ -368,6 +373,8 @@ https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmX
 
 
 ![Figure 10. HTML/2 Adoption: Third Party Resources](images/Web-Almanac10.png "HTML/2 Adoption: Third Party Resources")
+
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive
 
 *HTML/2 Adoption: Third Party Resources*
 
@@ -433,6 +440,8 @@ Some CDNs support post-check as a method to allow a resource to refreshed when i
 
 The s-maxage directive informs proxies how long they may cache a response for. Across the Web Almanac dataset, jsDelivr is the only CDN where a high level of usage was seen across multiple resources – this isn’t surprising given jsDelivr’s role as public CDN for libraries. Usage across other CDNs seems to be driven by individual customers e.g. 3rd-party scripts, or SaaS providers using that particular CDN.
 
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive
+
 With 40% of sites using a CDN for resources, and presuming these resources are static and cacheable, the usage of s-maxage seems low.
 
 Future research might explore cache lifetimes versus the age of the resources, and the usage of s-maxage versus other validation directives such as stale-while-revalidate.
@@ -446,6 +455,8 @@ Common libraries – jQuery, Bootstrap etc. – are also available from public C
 Using content from one of the public CDNs instead of a self-hosting the content is a tradeoff – even though the content is hosted on a CDN, creating a new connection, and growing the congestion window may negate the low latency of using a CDN.
 
 Google Fonts is the most popular of the content CDNs and is used by 55% of the sites in the Almanac dataset. For non-font content Google API, Cloudflare’s JS CDN, and the Bootstrap’s CDN are the next most popular. 
+
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive
 
 As more browsers implement partitioned caches, the effectiveness of public CDNs for hosting common libraries will decrease  and it will be interesting to see whether they are less popular in future iterations of this research.
 
