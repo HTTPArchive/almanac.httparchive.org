@@ -165,7 +165,7 @@
       <h1 class="title">
         {{ metadata.get('title') }}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant <a href="./performance">performance</a> benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make," and caching is one of the key ways to avoid having to make requests.</p>
