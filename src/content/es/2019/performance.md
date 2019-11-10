@@ -1,7 +1,7 @@
 ---
 part_number: II
 chapter_number: 7
-title: Rendimiento
+title: Performance
 description: Capítulo sobre rendimiento del Web Almanac de 2019 que explica First Contentful Paint (FCP), Time to First Byte (TTFB) y First Input Delay (FID) 
 authors: [rviscomi]
 reviewers: [JMPerez,obto,sergeychernyshev,zeman]
@@ -201,7 +201,7 @@ Los resultados de ECT anteriores parecen sugerir que existe una correlación ent
 <figcaption>Figura 18. Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por geo.</figcaption>
 </figure>
 
-En este desglose del FID por ubicación geográfica, Corea está nuevamente al frentes. Pero los principales geos tienen algunas caras nuevas: Australia, Estados Unidos y Canadá son los siguientes, con más del 50% de los sitios web que tienen una FID rápida.
+En este desglose del FID por ubicación geográfica, Corea está nuevamente al frente. Pero los principales geos tienen algunas caras nuevas: Australia, Estados Unidos y Canadá son los siguientes, con más del 50% de los sitios web que tienen una FID rápida.
 
 Al igual que con los otros resultados geoespecíficos, hay muchos factores posibles que podrían estar contribuyendo a la experiencia del usuario. Por ejemplo, quizás los geos más ricos que son más privilegiados pueden permitirse una infraestructura de red más rápida y también tienen residentes con más dinero para gastar en computadoras de escritorio y/o teléfonos móviles de alta gama.
 
