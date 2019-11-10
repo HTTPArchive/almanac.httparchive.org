@@ -28,6 +28,7 @@ class _Language(object):
 class Language(object):
   JAPANESE = _Language('日本語', 'ja', 'JP')
   ENGLISH = _Language('English', 'en', 'US')
+  SPANISH = _Language('Español', 'es', 'ES')
 
 DEFAULT_LANGUAGE = Language.ENGLISH
 

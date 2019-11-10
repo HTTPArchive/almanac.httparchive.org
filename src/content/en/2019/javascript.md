@@ -13,7 +13,7 @@ JavaScript is a scripting language that makes it possible to build interactive a
 
 The language specification itself, along with many community-built libraries and frameworks used by developers around the world, has changed and evolved ever since the language was created in 1995. JavaScript implementations and interpreters have also continued to progress, making the language usable in many environments, not only web browsers.
 
-The [HTTP Archive](https://httparchive.org/) crawls [millions of URLs](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information of every page (see [methodology](/methodology)). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.
+The [HTTP Archive](https://httparchive.org/) crawls [millions of URLs](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information of every page (see [methodology](./methodology)). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.
 
 ## How much JavaScript do we use?
 
@@ -132,7 +132,7 @@ Compressed scripts will always need to be uncompressed by the browser once trans
 
 The majority of sites are compressing their JavaScript resources. Gzip encoding is used on ~64-67% of sites and Brotli on ~14%. Compression ratios are similar for both desktop and mobile.
 
-For a deeper analysis on compression, refer to the ["Compression"](/compression) chapter.
+For a deeper analysis on compression, refer to the ["Compression"](./compression) chapter.
 
 ## Open source libraries and frameworks
 
