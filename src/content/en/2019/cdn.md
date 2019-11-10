@@ -1,4 +1,14 @@
-# Web Almanac: CDN
+---
+part_number: IV
+chapter_number: 17
+title: CDN
+description: CDN chapter of the 2019 Web Almanac covering ...
+authors: [andydavies, colinbendell]
+reviewers: [yoavweiss, paulcalvano, pmeenan]
+discuss: 1772
+published: 2019-11-11T00:00:00.000Z
+published: 2019-11-11T00:00:00.000Z
+---
 
 ## Introduction
 
@@ -429,7 +439,7 @@ Google Fonts is the most popular of the content CDNs and is used by 55% of the s
 
 As more browsers implement partitioned caches, the effectiveness of public CDNs for hosting common libraries will decrease  and it will be interesting to see whether they are less popular in future iterations of this research.
 
-## Closing Thoughts
+## Conclusions
 
 The reduction in latency CDNs deliver, along with their ability to store content close to visitors  enables sites to deliver faster experiences while reducing the load on the origin.
 
