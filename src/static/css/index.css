@@ -204,10 +204,10 @@ p {
   font-size: 600px;
   font-weight: bold;
   letter-spacing: 50px;
-  overflow: visible;
-  top: -100px;
-  position: relative;
   pointer-events: none;
+  height: 100%;
+  width: auto;
+  line-height: 400px;
 }
 
 /* Methodology */
