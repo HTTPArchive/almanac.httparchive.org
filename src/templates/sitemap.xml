@@ -2,28 +2,6 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/es/2019/
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/es/2019/table_of_contents
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/
         </loc>
         
@@ -68,17 +46,6 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/es/2019/performance
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/accessibility
         </loc>
         
@@ -90,7 +57,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/caching
+            https://almanac.httparchive.org/en/2019/cms
         </loc>
         
         <lastmod>
@@ -101,7 +68,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/cms
+            https://almanac.httparchive.org/en/2019/caching
         </loc>
         
         <lastmod>
@@ -131,17 +98,6 @@
     <url>
         <loc>
             https://almanac.httparchive.org/en/2019/ecommerce
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/fonts
         </loc>
         
         <lastmod>
@@ -182,6 +138,17 @@
     <url>
         <loc>
             https://almanac.httparchive.org/en/2019/media
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/fonts
         </loc>
         
         <lastmod>
