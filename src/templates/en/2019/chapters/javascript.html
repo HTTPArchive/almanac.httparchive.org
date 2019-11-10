@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":1,"title":"JavaScript","authors":["housseindjirdeh"],"reviewers":["rviscomi","obto","paulcalvano","mathiasbynens"],"discuss":"1756"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"discuss":"1756"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -99,7 +99,7 @@
       <h2 class="header">Index</h2>
       <ul>
         <li>
-          <a href="#chapter-1-javascript">Chapter 1: JavaScript</a>
+          <a href="#introduction">Introduction</a>
         </li>
 
         <li>
@@ -167,71 +167,262 @@
       </h1>
       <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
       {{ render_byline() }}
-      <h1 id="chapter-1-javascript">Chapter 1: JavaScript</h1>
-      <p>JavaScript is a scripting language that makes it possible to build interactive and complex experiences on the web. This includes responding to user interactions, updating dynamic content on a page and so forth. Anything involving how a web page should behave when an event occurs is what JavaScript is used for.</p>
+      <h2 id="introduction">Introduction</h2>
+      <p>JavaScript is a scripting language that makes it possible to build interactive and complex experiences on the web. This includes responding to user interactions, updating dynamic content on a page, and so forth. Anything involving how a web page should behave when an event occurs is what JavaScript is used for.</p>
       <p>The language specification itself, along with many community-built libraries and frameworks used by developers around the world, has changed and evolved ever since the language was created in 1995. JavaScript implementations and interpreters have also continued to progress, making the language usable in many environments, not only web browsers.</p>
-      <p>The <a href="https://httparchive.org/">HTTP Archive</a> crawls <a href="https://httparchive.org/reports/state-of-the-web#numUrls">millions of URLs</a> every month and runs them through a private instance of <a href="https://webpagetest.org/">WebPageTest</a> to store key information of every page (see <a href="./methodology">methodology</a>). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.</p>
-      <h1 id="how-much-javascript-do-we-use">How much JavaScript do we use?</h1>
-      <p>
-        JavaScript is the most costly resource we send to browsers, having to be downloaded, parsed, compiled and then finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts,
-        <a href="https://v8.dev/blog/cost-of-javascript-2019">download and execution have become the most expensive stages</a>
-        when JavaScript is processed by a web page.
-      </p>
+      <p>The <a href="https://httparchive.org/">HTTP Archive</a> crawls <a href="https://httparchive.org/reports/state-of-the-web#numUrls">millions of pages</a> every month and runs them through a private instance of <a href="https://webpagetest.org/">WebPageTest</a> to store key information of every page. (You can learn more about this in our <a href="./methodology">methodology</a>). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.</p>
+      <h2 id="how-much-javascript-do-we-use">How much JavaScript do we use?</h2>
+      <p>JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, <a href="https://v8.dev/blog/cost-of-javascript-2019">download and execution have become the most expensive stages</a> when JavaScript is processed by a web page.</p>
       <p>Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. <strong>But how much JavaScript do we really use?</strong></p>
-      <p>Here's a chart showing the amount of bytes shipped for different percentiles:</p>
-      <p><code>&lt;insert graphic of metric 01_01a&gt;</code></p>
-      <p><strong>373.46 kB</strong> of JavaScript is shipped at the 50th percentile, or median. In other words, 50% of all sites ship over this much JavaScript to their users.</p>
-      <p>Looking at these numbers, it's only natural to wonder if this is too much JavaScript. However in terms of page performance, the impact entirely depends on network connections and devices used. That brings us to our next question, <strong>how much JavaScript do we ship when we compare mobile and desktop clients</strong>?</p>
-      <p><code>&lt;insert graphic of metric 01_01b&gt;</code></p>
-      <p>At every percentile, we're sending slightly more JavaScript on desktop devices than we are on mobile.</p>
-      <h2 id="processing-time">Processing time</h2>
-      <p>After being parsed and compiled, JavaScript fetched by the browser needs to processed, or executed, before it can be utilized. Devices vary, and their computing power can significantly affect how fast JavaScript can be processed on a page. <strong>What are the current processing times on the web?</strong></p>
+      <figure id="fig-1">
+        <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig1.png" aria-labelledby="fig1-caption" width="600" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Figure 1. Distribution of JavaScript bytes per page</div>
+        <figcaption>Figure 1. Distribution of JavaScript bytes per page.</figcaption>
+      </figure>
+      <p>Figure 1 above shows that we use 373 KB of JavaScript at the 50th percentile, or median. In other words, 50% of all sites ship more than this much JavaScript to their users.</p>
+      <p>Looking at these numbers, it's only natural to wonder if this is too much JavaScript. However in terms of page performance, the impact entirely depends on network connections and devices used. Which brings us to our next question: how much JavaScript do we ship when we compare mobile and desktop clients?</p>
+      <figure id="fig-2">
+        <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig2.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig2.png" aria-labelledby="fig2-caption" width="600" />
+        </a>
+        <div id="fig2-caption" class="visually-hidden">Figure 2. Distribution of JavaScript per page by device</div>
+        <figcaption>Figure 2. Distribution of JavaScript per page by device.</figcaption>
+      </figure>
+      <p>At every percentile, we're sending slightly more JavaScript to desktop devices than we are to mobile.</p>
+      <h3 id="processing-time">Processing time</h3>
+      <p>After being parsed and compiled, JavaScript fetched by the browser needs to processed (or executed) before it can be utilized. Devices vary, and their computing power can significantly affect how fast JavaScript can be processed on a page. What are the current processing times on the web?</p>
       <p>We can get an idea by analyzing main thread processing times for V8 at different percentiles:</p>
-      <p><code>&lt;insert graphic of metric 01_07&gt;</code></p>
-      <p>At every percentile, processing times are longer for mobile web pages than on desktop. The median total main thread time on desktop is <strong>849 ms</strong>, while mobile is at a larger number - <strong>2436ms.</strong></p>
-      <p>Although this data shows how much longer it can take for a mobile device to process JavaScript than a more powerful desktop machine, mobile devices also vary in terms of computing power. The following chart shows how processing times on a single web page can vary significantly depending on the mobile device class.</p>
-      <p><img src="/static/images/2019/01_JavaScript/js-processing-reddit.png" alt="JavaScript processing times for Reddit.com" /></p>
-      <p>
-        <em>From <a href="https://v8.dev/blog/cost-of-javascript-2019">"The cost of JavaScript in 2019" </a></em>
-      </p>
-      <h2 id="number-of-requests">Number of requests</h2>
+      <figure id="fig-3">
+        <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig2.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig3.png" aria-labelledby="fig3-caption" width="600" />
+        </a>
+        <div id="fig3-caption" class="visually-hidden">Figure 3. V8 Main thread processing times by device</div>
+        <figcaption>Figure 3. V8 Main thread processing times by device.</figcaption>
+      </figure>
+      <p>At every percentile, processing times are longer for mobile web pages than on desktop. The median total main thread time on desktop is 849 ms, while mobile is at a larger number: 2,436ms.</p>
+      <p>Although this data shows how much longer it can take for a mobile device to process JavaScript compared to a more powerful desktop machine, mobile devices also vary in terms of computing power. The following chart shows how processing times on a single web page can vary significantly depending on the mobile device class.</p>
+      <figure id="fig-4">
+        <a href="/static/images/2019/01_JavaScript/js-processing-reddit.png">
+          <img alt="JavaScript processing times for Reddit.com" src="/static/images/2019/01_JavaScript/js-processing-reddit.png" width="600" />
+        </a>
+        <figcaption>Figure 4. JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.</figcaption>
+      </figure>
+      <h3 id="number-of-requests">Number of requests</h3>
       <p>One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With <a href="https://developers.google.com/web/fundamentals/performance/http2">HTTP/2</a>, sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, <strong>how many requests are being fetched?</strong></p>
-      <p><code>&lt;insert graphic of metric 01_03&gt;</code></p>
-      <p>At the median, <strong>19</strong> requests are sent for desktop and <strong>18</strong> for mobile.</p>
-      <h2 id="first-party-vs-third-party">First-party vs. third-party</h2>
+      <figure id="fig-5">
+        <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig5.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig5.png" aria-labelledby="fig5-caption" width="600" />
+        </a>
+        <div id="fig5-caption" class="visually-hidden">Figure 5. Distribution of total JavaScript requests</div>
+        <figcaption>Figure 5. Distribution of total JavaScript requests.</figcaption>
+      </figure>
+      <p>At the median, 19 requests are sent for desktop and 18 for mobile.</p>
+      <h3 id="first-party-vs-third-party">First-party vs. third-party</h3>
       <p>Of the results analyzed so far, the entire size and number of requests were being considered. In a majority of websites however, a significant portion of the JavaScript code fetched and used comes from third-party sources.</p>
       <p>Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: <strong>how many requests sent are third-party instead of first-party?</strong></p>
-      <p><code>&lt;insert graphics of metric 01_04&gt;</code></p>
-      <p>For both mobile and desktop clients, more third-party requests are sent than first-party at every percentile. If this seems surprising, let's find out** how much actual code shipped comes from third-party vendors.**</p>
-      <p><code>&lt;insert graphics of metric 01_02b&gt;</code></p>
-      <p>At the median, <strong>89%</strong> more third-party code is used than first-party code authored by the developer for both mobile and desktop**. **This clearly shows that third-party code can be one of the biggest contributors to bloat.</p>
-      <h1 id="resource-compression">Resource compression</h1>
-      <p>In the context of browser-server interactions, <strong>resource compression</strong> refers to code that has been modified using a data compression algorithm. Resources can be compressed statically ahead of time or on-the-fly as they are requested by the browser, and for either approach the transferred resource size is significantly reduced which improves page performance.</p>
+      <figure id="fig-6">
+        <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig6.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig6.png" aria-labelledby="fig6-caption" width="600" />
+        </a>
+        <div id="fig6-caption" class="visually-hidden">Figure 6. Distribution of first and third-party scripts on desktop</div>
+        <figcaption>Figure 6. Distribution of first and third party scripts on desktop.</figcaption>
+      </figure>
+      <figure id="fig-7">
+        <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig7.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig7.png" aria-labelledby="fig7-caption" width="600" />
+        </a>
+        <div id="fig6-caption" class="visually-hidden">Figure 7. Distribution of first and third-party scripts on mobile</div>
+        <figcaption>Figure 7. Distribution of first and third party scripts on mobile.</figcaption>
+      </figure>
+      <p>For both mobile and desktop clients, more third-party requests are sent than first-party at every percentile. If this seems surprising, let's find out how much actual code shipped comes from third-party vendors.</p>
+      <figure id="fig-8">
+        <iframe aria-labelledby="fig8-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig8.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig8.png" aria-labelledby="fig8-caption" width="600" />
+        </a>
+        <div id="fig8-caption" class="visually-hidden">Figure 8. Distribution of total JavaScript downloaded on desktop</div>
+        <figcaption>Figure 8. Distribution of total JavaScript downloaded on desktop.</figcaption>
+      </figure>
+      <figure id="fig-9">
+        <iframe aria-labelledby="fig9-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig9.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig9.png" aria-labelledby="fig9-caption" width="600" />
+        </a>
+        <div id="fig9-caption" class="visually-hidden">Figure 9. Distribution of total JavaScript downloaded on mobile</div>
+        <figcaption>Figure 9. Distribution of total JavaScript downloaded on mobile.</figcaption>
+      </figure>
+      <p>At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat.</p>
+      <h2 id="resource-compression">Resource compression</h2>
+      <p>In the context of browser-server interactions, resource compression refers to code that has been modified using a data compression algorithm. Resources can be compressed statically ahead of time or on-the-fly as they are requested by the browser, and for either approach the transferred resource size is significantly reduced which improves page performance.</p>
       <p>There are multiple text-compression algorithms, but only two are mostly used for the compression (and decompression) of HTTP network requests:</p>
       <ul>
         <li><a href="https://www.gzip.org/">Gzip</a> (gzip): The most widely used compression format for server and client interactions</li>
         <li><a href="https://github.com/google/brotli">Brotli</a> (br): A newer compression algorithm aiming to further improve compression ratios. <a href="https://caniuse.com/#feat=brotli">90% of browsers</a> support Brotli encoding.</li>
       </ul>
       <p>Compressed scripts will always need to be uncompressed by the browser once transferred. This means its content remains the same and execution times are not optimized whatsoever. Resource compression, however, will always improve download times which also is one of the most expensive stages of JavaScript processing. Ensuring JavaScript files are compressed correctly can be one of the most significant factors in improving site performance.</p>
-      <p><strong>How many sites are compressing their JavaScript resources</strong>?</p>
-      <p><code>&lt;insert graphics of metric 01_05 and 01_06&gt;</code></p>
-      <p>The majority of sites are compressing their JavaScript resources. Gzip encoding is used on <strong>~64-67%</strong> of sites and Brotli on <strong>~14%</strong>. Compression ratios are similar for both desktop and mobile.</p>
+      <p><strong>How many sites are compressing their JavaScript resources?</strong></p>
+      <figure id="fig-10">
+        <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig10.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig10.png" aria-labelledby="fig10-caption" width="600" />
+        </a>
+        <div id="fig10-caption" class="visually-hidden">Figure 10. Percentage of sites compressing JavaScript resources with gzip or brotli</div>
+        <figcaption>Figure 10. Percentage of sites compressing JavaScript resources with gzip or brotli.</figcaption>
+      </figure>
+      <p>The majority of sites are compressing their JavaScript resources. Gzip encoding is used on ~64-67% of sites and Brotli on ~14%. Compression ratios are similar for both desktop and mobile.</p>
       <p>For a deeper analysis on compression, refer to the <a href="./compression">"Compression"</a> chapter.</p>
-      <h1 id="open-source-libraries-and-frameworks">Open source libraries and frameworks</h1>
+      <h2 id="open-source-libraries-and-frameworks">Open source libraries and frameworks</h2>
       <p>Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as <a href="https://www.chromium.org/Home">Chromium</a> and <a href="https://www.openhub.net/p/firefox">Firefox</a>, open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages cam make feature development easier and faster.</p>
       <p><strong>Which JavaScript open-source libraries are used the most?</strong></p>
-      <p><code>&lt;insert graphics of metric 01_08&gt;</code></p>
-      <p><a href="https://jquery.com/">jQuery</a>, the most popular JavaScript library ever created, is used in <strong>85.03%</strong> of desktop pages and <strong>83.46%</strong> of mobile pages. The advent of many Browser APIs and methods, such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a>, standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?</p>
+      <figure id="fig-11">
+        <div class="table-wrap">
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Library</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>jQuery</td>
+                  <td class="numeric">85.03%</td>
+                  <td class="numeric">83.46%</td>
+                </tr>
+                <tr>
+                  <td>jQuery Migrate</td>
+                  <td class="numeric">31.26%</td>
+                  <td class="numeric">31.68%</td>
+                </tr>
+                <tr>
+                  <td>jQuery UI</td>
+                  <td class="numeric">23.60%</td>
+                  <td class="numeric">21.75%</td>
+                </tr>
+                <tr>
+                  <td>Modernizr</td>
+                  <td class="numeric">17.80%</td>
+                  <td class="numeric">16.76%</td>
+                </tr>
+                <tr>
+                  <td>FancyBox</td>
+                  <td class="numeric">7.04%</td>
+                  <td class="numeric">6.61%</td>
+                </tr>
+                <tr>
+                  <td>Lightbox</td>
+                  <td class="numeric">6.02%</td>
+                  <td class="numeric">5.93%</td>
+                </tr>
+                <tr>
+                  <td>Slick</td>
+                  <td class="numeric">5.53%</td>
+                  <td class="numeric">5.24%</td>
+                </tr>
+                <tr>
+                  <td>Moment.js</td>
+                  <td class="numeric">4.92%</td>
+                  <td class="numeric">4.29%</td>
+                </tr>
+                <tr>
+                  <td>Underscore.js</td>
+                  <td class="numeric">4.20%</td>
+                  <td class="numeric">3.82%</td>
+                </tr>
+                <tr>
+                  <td>prettyPhoto</td>
+                  <td class="numeric">2.89%</td>
+                  <td class="numeric">3.09%</td>
+                </tr>
+                <tr>
+                  <td>Select2</td>
+                  <td class="numeric">2.78%</td>
+                  <td class="numeric">2.48%</td>
+                </tr>
+                <tr>
+                  <td>Lodash</td>
+                  <td class="numeric">2.65%</td>
+                  <td class="numeric">2.68%</td>
+                </tr>
+                <tr>
+                  <td>Hammer.js</td>
+                  <td class="numeric">2.28%</td>
+                  <td class="numeric">2.70%</td>
+                </tr>
+                <tr>
+                  <td>YUI</td>
+                  <td class="numeric">1.84%</td>
+                  <td class="numeric">1.50%</td>
+                </tr>
+                <tr>
+                  <td>Lazy.js</td>
+                  <td class="numeric">1.26%</td>
+                  <td class="numeric">1.56%</td>
+                </tr>
+                <tr>
+                  <td>Fingerprintjs</td>
+                  <td class="numeric">1.21%</td>
+                  <td class="numeric">1.32%</td>
+                </tr>
+                <tr>
+                  <td>script.aculo.us</td>
+                  <td class="numeric">0.98%</td>
+                  <td class="numeric">0.85%</td>
+                </tr>
+                <tr>
+                  <td>Polyfill</td>
+                  <td class="numeric">0.97%</td>
+                  <td class="numeric">1.00%</td>
+                </tr>
+                <tr>
+                  <td>Flickity</td>
+                  <td class="numeric">0.83%</td>
+                  <td class="numeric">0.92%</td>
+                </tr>
+                <tr>
+                  <td>Zepto</td>
+                  <td class="numeric">0.78%</td>
+                  <td class="numeric">1.17%</td>
+                </tr>
+                <tr>
+                  <td>Dojo</td>
+                  <td class="numeric">0.70%</td>
+                  <td class="numeric">0.62%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figcaption>Figure 11. Top JavaScript libraries on desktop and mobile.</figcaption>
+      </figure>
+      <p><a href="https://jquery.com/">jQuery</a>, the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a>, standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?</p>
       <p>There are a number of possible reasons:</p>
       <ul>
-        <li><a href="https://wordpress.org/">WordPress</a>, which is used in more than 30% of sites, includes jQuery by default</li>
-        <li>Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries</li>
+        <li><a href="https://wordpress.org/">WordPress</a>, which is used in more than 30% of sites, includes jQuery by default.</li>
+        <li>Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.</li>
       </ul>
       <p>Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), <a href="https://modernizr.com/">Modernizr</a>, <a href="https://momentjs.com/">Moment.js</a>, <a href="https://underscorejs.org/">Underscore.js</a> and so on.</p>
-      <h2 id="frameworks-and-ui-libraries">Frameworks and UI libraries</h2>
+      <h3 id="frameworks-and-ui-libraries">Frameworks and UI libraries</h3>
       <p>In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building <strong>single-page applications</strong> (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites.</p>
       <p><strong>How many sites use these types of frameworks?</strong></p>
-      <p><code>&lt;insert graphics of metric 01_10_05&gt;</code></p>
+      <figure id="fig-12">
+        <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig12.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig12.png" aria-labelledby="fig12-caption" width="600" />
+        </a>
+        <div id="fig12-caption" class="visually-hidden">Figure 12. Most frequently used frameworks on desktop</div>
+        <figcaption>Figure 12. Most frequently used frameworks on desktop.</figcaption>
+      </figure>
       <p>Only a subset of popular frameworks are being analyzed here, but it's important to note that all of them either follow one of these two approaches:</p>
       <ul>
         <li>A <a href="https://developer.chrome.com/apps/app_frameworks">model-view-controller</a> (or model-view-viewmodel) architecture</li>
@@ -239,36 +430,64 @@
       </ul>
       <p>Although there has been a shift towards a component-based model, many older frameworks that follow the MVC paradigm (<a href="https://angularjs.org/">AngularJS</a>, <a href="https://backbonejs.org/">Backbone.js</a>, <a href="https://emberjs.com/">Ember</a>) are still being used in thousands of pages. However, <a href="https://reactjs.org/">React</a>, <a href="https://vuejs.org/">Vue</a> and <a href="https://angular.io/">Angular</a> are the most popular component-based frameworks (<a href="https://github.com/angular/zone.js">Zone.js</a> is a package that is now part of Angular core).</p>
       <p>Although this analysis is interesting, it's important to keep in mind that these results rely on a third-party detection library - <a href="https://www.wappalyzer.com">Wappalyzer</a>. All these usage numbers depend on the accuracy of each <a href="https://github.com/AliasIO/Wappalyzer/blob/master/src/apps.json">detection mechanism</a> in place.</p>
-      <h1 id="differential-loading">Differential loading</h1>
+      <h2 id="differential-loading">Differential loading</h2>
       <p><a href="https://v8.dev/features/modules">JavaScript modules</a>, or ES modules, are supported in <a href="https://caniuse.com/#feat=es6-module">all major browsers</a>. Modules provide the capability to create scripts that can import and export from other modules. This allows anyone to build their applications architected in a module pattern, importing and exporting wherever necessary, without relying on third-party module loaders.</p>
       <p>To declare a script as a module, the script tag must get the <code>type="module"</code>:</p>
       <pre><code class="html language-html">&lt;script type="module" src="main.mjs"&gt;&lt;/script&gt;</code></pre>
       <p>
         <strong>How many sites use <code>type="module"</code> for scripts on their page?</strong>
       </p>
-      <p><code>&lt;insert graphic of metric 01_12&gt;</code></p>
-      <p>Browser-level support for modules is still relatively new, and the numbers here show that very few sites currently use <code>type="module"</code> for their scripts. Many sites are still relying on module loaders (~<strong>2.37%</strong> of all desktop sites use <a href="https://github.com/requirejs/requirejs">RequireJS</a> for example) and bundlers (<a href="https://webpack.js.org/">webpack</a> for example) to define modules within their codebase.</p>
-      <p>If native modules are used, it's important to ensure that an appropriate fallback script is used for browsers that do not yet support modules. This can be done by including an additional script with a <code>nomodule</code> attribute,</p>
+      <figure id="fig-13">
+        <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig13.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig13.png" aria-labelledby="fig13-caption" width="600" />
+        </a>
+        <div id="fig13-caption" class="visually-hidden">Figure 13. Percentage of sites utilizing type=module</div>
+        <figcaption>Figure 13. Percentage of sites utilizing type=module.</figcaption>
+      </figure>
+      <p>Browser-level support for modules is still relatively new, and the numbers here show that very few sites currently use <code>type="module"</code> for their scripts. Many sites are still relying on module loaders (2.37% of all desktop sites use <a href="https://github.com/requirejs/requirejs">RequireJS</a> for example) and bundlers (<a href="https://webpack.js.org/">webpack</a> for example) to define modules within their codebase.</p>
+      <p>If native modules are used, it's important to ensure that an appropriate fallback script is used for browsers that do not yet support modules. This can be done by including an additional script with a <code>nomodule</code> attribute.</p>
       <pre><code class="html language-html">&lt;script nomodule src="fallback.js"&gt;&lt;/script&gt;</code></pre>
       <p>When used together, browsers that support modules will completely ignore any scripts containing the <code>nomodule</code> attribute. On the other hand, browsers that do not yet support modules will not download any scripts with <code>type="module"</code>. Since they do not recognize <code>nomodule</code> either, they will download scripts with the attribute normally. Using this approach can allow developers to <a href="https://web.dev/serve-modern-code-to-modern-browsers/">send modern code to modern browsers for faster page loads</a>.</p>
       <p>
         So, <strong>how many sites use <code>nomodule</code> for scripts on their page?</strong>
       </p>
-      <p><code>&lt;insert graphic of metric 01_13&gt;</code></p>
-      <p>Similarly, very few sites (<strong>~0.5% - 0.8%</strong>) use the <code>nomodule</code> attribute for any scripts.</p>
-      <h1 id="preload-and-prefetch">Preload and prefetch</h1>
+      <figure id="fig-14">
+        <iframe aria-labelledby="fig14-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig14.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig14.png" aria-labelledby="fig14-caption" width="600" />
+        </a>
+        <div id="fig14-caption" class="visually-hidden">Figure 14. Percentage of sites using nomodule</div>
+        <figcaption>Figure 14. Percentage of sites using nomodule.</figcaption>
+      </figure>
+      <p>Similarly, very few sites (0.50%-0.80%) use the <code>nomodule</code> attribute for any scripts.</p>
+      <h2 id="preload-and-prefetch">Preload and prefetch</h2>
       <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content">Preload</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ">prefetch</a> are directives which enable you to aid the browser in determining what resources need to be downloaded.</p>
       <ul>
         <li>Preloading a resource with <code>&lt;link rel="preload"&gt;</code>tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., javascript located at the bottom of your HTML) and are otherwise downloaded last.</li>
         <li>Using <code>&lt;link rel="prefetch"&gt;</code> tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations</li>
       </ul>
       <p><strong>So, how many sites use preload and prefetch directives?</strong></p>
-      <p><code>&lt;insert graphic of metric 01_14&gt;</code></p>
-      <p>For all sites measured in HTTP Archive, <strong>14.33%</strong> of desktop sites and <strong>14.84%</strong> of mobile sites use <code>&lt;link rel="preload"&gt;</code>for scripts on their page.</p>
+      <figure id="fig-15">
+        <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig15.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig15.png" aria-labelledby="fig15-caption" width="600" />
+        </a>
+        <div id="fig15-caption" class="visually-hidden">Figure 15. Percentage of sites using rel=preload for scripts</div>
+        <figcaption>Figure 15. Percentage of sites using rel=preload for scripts.</figcaption>
+      </figure>
+      <p>For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mobile sites use <code>&lt;link rel="preload"&gt;</code>for scripts on their page.</p>
       <p>For prefetch:</p>
-      <p><code>&lt;insert graphic of metric 01_16&gt;</code></p>
-      <p>For both mobile and desktop, <strong>0.08% (~0.1%)</strong> of pages leverage prefetch for any of their scripts.</p>
-      <h1 id="newer-apis">Newer APIs</h1>
+      <figure id="fig-16">
+        <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig16.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig16.png" aria-labelledby="fig16-caption" width="600" />
+        </a>
+        <div id="fig16-caption" class="visually-hidden">Figure 16. Percentage of sites using rel=prefetch for scripts</div>
+        <figcaption>Figure 16. Percentage of sites using rel=prefetch for scripts.</figcaption>
+      </figure>
+      <p>For both mobile and desktop, 0.08% of pages leverage prefetch for any of their scripts.</p>
+      <h2 id="newer-apis">Newer APIs</h2>
       <p>JavaScript continues to evolve as a language. A new version of the language standard itself, known as ECMAScript, is released every year with new APIs and features passing proposal stages to become a part of the language itself.</p>
       <p>With HTTP Archive, we can take a look at any newer API that is supported (or is about to be) and see how widespread its usage is. These APIs may already be used in browsers that support them <em>or</em> with an accompanying polyfill to make sure they still work for every user.</p>
       <p><strong>How many sites use the following APIs?</strong></p>
@@ -280,21 +499,31 @@
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap">WeakMap</a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet">WeakSet</a></li>
       </ul>
-      <p><code>&lt;insert graphic of metric 01_18&gt;</code></p>
-      <p>Atomics (<strong>0.38%</strong>) and SharedArrayBuffer (<strong>0.2%</strong>) are barely visible on this chart since they are used on such few pages. Each of the other APIs here</p>
-      <p>
-        It is important to note that the numbers here are approximations and they do not leverage
-        <a href="https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md">UseCounter</a>
-        to measure feature usage.
-      </p>
-      <h1 id="source-maps">Source maps</h1>
+      <figure id="fig-17">
+        <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig17.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig17.png" aria-labelledby="fig17-caption" width="600" />
+        </a>
+        <div id="fig17-caption" class="visually-hidden">Figure 17. Usage of new JavaScript APIs</div>
+        <figcaption>Figure 17. Usage of new JavaScript APIs.</figcaption>
+      </figure>
+      <p>Atomics (0.38%) and SharedArrayBuffer (0.20%) are barely visible on this chart since they are used on such few pages. Each of the other APIs here</p>
+      <p>It is important to note that the numbers here are approximations and they do not leverage <a href="https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md">UseCounter</a> to measure feature usage.</p>
+      <h2 id="source-maps">Source maps</h2>
       <p>In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like <a href="https://www.typescriptlang.org/">TypeScript</a> compile to an output that can look noticeably different from the original source code. For all these reasons, the final code served to the browser can unreadable and hard to decipher.</p>
       <p>A <strong>source map</strong> is an additional file accompanying a JavaScript file that allows a browser to map the final output to its original source. This can make debugging and analyzing production bundles much simpler.</p>
       <p>Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. <strong>So how many sites actually include sourcemaps?</strong></p>
-      <p><code>&lt;insert graphic of metric 01_25&gt;</code></p>
-      <p>For both desktop and mobile pages, the results are about the same. <strong>17-18%</strong> include a source map for at least one script on the page (detected as a first-party script with <code>sourceMappingURL</code>).</p>
-      <h1 id="conclusion">Conclusion</h1>
-      <p>Every year, the JavaScript ecosystem continues to change and evolve. Newer APIs, improved browser engines, and fresh libraries and frameworks are all things we can expect to happen indefinitely. HTTP Archive provides us with valuable insight on how sites in the wild use the language.</p>
+      <figure id="fig-18">
+        <iframe aria-labelledby="fig18-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/01_JavaScript/fig18.png" class="fig-mobile">
+          <img src="/static/images/2019/01_JavaScript/fig18.png" aria-labelledby="fig18-caption" width="600" />
+        </a>
+        <div id="fig18-caption" class="visually-hidden">Figure 18. Percentage of sites using source maps</div>
+        <figcaption>Figure 18. Percentage of sites using source maps.</figcaption>
+      </figure>
+      <p>For both desktop and mobile pages, the results are about the same. 17-18% include a source map for at least one script on the page (detected as a first-party script with <code>sourceMappingURL</code>).</p>
+      <h2 id="conclusion">Conclusion</h2>
+      <p>The JavaScript ecosystem continues to change and evolve every year. Newer APIs, improved browser engines, and fresh libraries and frameworks are all things we can expect to happen indefinitely. HTTP Archive provides us with valuable insight on how sites in the wild use the language.</p>
       <p>Without JavaScript, the web would not be where it is today, and all the data gathered for this article only proves this.</p>
     </section>
     {{ render_actions() }}
