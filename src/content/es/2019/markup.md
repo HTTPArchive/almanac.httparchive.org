@@ -203,7 +203,7 @@ Pero hay muchos recién llegados que tampoco estaban en el informe original de H
 - [`<g:plusone>`](https://rainy-periwinkle.glitch.me/permalink/a532f18bbfd1b565b460776a64fa9a2cdd1aa4cd2ae0d37eb2facc02bfacb40c.html) del ahora desaparecido Google Plus se produce en más de 21.000 páginas.
 - Facebook [`<fb:like>`](https://rainy-periwinkle.glitch.me/permalink/2e2f63858f7715ef84d28625344066480365adba8da8e6ca1a00dfdde105669a.html)  ocurre en 14.000 páginas móviles.
 - De manera similar, [`<fb:like-box>`](https://rainy-periwinkle.glitch.me/permalink/5a964079ac2a3ec1b4f552503addd406d02ec4ddb4955e61f54971c27b461984.html)  ocurre en 7.800 páginas móviles.
-- [`<app-root>`](https://rainy-periwinkle.glitch.me/permalink/6997d689f56fe77e5ce345cfb570adbd42d802393f4cc175a1b974833a0e3cb5.html), que generalmente se incluye en frameworks como Angular, aparece en 8.2k páginas móviles.
+- [`<app-root>`](https://rainy-periwinkle.glitch.me/permalink/6997d689f56fe77e5ce345cfb570adbd42d802393f4cc175a1b974833a0e3cb5.html), que generalmente se incluye en frameworks como Angular, aparece en algo más de 8.200 páginas móviles.
 
 Comparemos esto con algunos de los elementos HTML nativos que están por debajo de la barra del 5%, por perspectiva.
 
