@@ -34,7 +34,6 @@ Here's a chart showing the amount of bytes shipped for different percentiles:
 
 Looking at these numbers, it's only natural to wonder if this is too much JavaScript. However in terms of page performance, the impact entirely depends on network connections and devices used. Which brings us to our next question: how much JavaScript do we ship when we compare mobile and desktop clients?
 
-```<insert graphic of metric 01_01b>```
 <figure>
 	<iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive"></iframe>
 	<div id="fig2-caption" class="visually-hidden">Figure 2. Distribution of JavaScript per page by device</div>
@@ -49,7 +48,6 @@ After being parsed and compiled, JavaScript fetched by the browser needs to proc
 
 We can get an idea by analyzing main thread processing times for V8 at different percentiles:
 
-```<insert graphic of metric 01_07>```
 <figure>
 	<iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive"></iframe>
 	<div id="fig3-caption" class="visually-hidden">Figure 3. V8 Main thread processing times by device</div>
@@ -71,7 +69,6 @@ Although this data shows how much longer it can take for a mobile device to proc
 
 One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With [HTTP/2](https://developers.google.com/web/fundamentals/performance/http2), sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, **how many requests are being fetched?**
 
-```<insert graphic of metric 01_03>```
 <figure>
 	<iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive"></iframe>
 	<div id="fig5-caption" class="visually-hidden">Figure 5. Distribution of total JavaScript requests</div>
@@ -86,48 +83,51 @@ Of the results analyzed so far, the entire size and number of requests were bein
 
 Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: **how many requests sent are third-party instead of first-party?**
 
-```<insert graphics of metric 01_04>```
 <figure>
-	<iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig6-caption" class="visually-hidden">Figure 6. </div>
-	<figcaption>Figure 6. </figcaption>
+	<iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"></iframe>
+	<div id="fig6-caption" class="visually-hidden">Figure 6. Distribution of first and third-party scripts on desktop</div>
+	<figcaption>Figure 6. Distribution of first and third party scripts on desktop</figcaption>
 </figure>
 
-For both mobile and desktop clients, more third-party requests are sent than first-party at every percentile. If this seems surprising, let's find out** how much actual code shipped comes from third-party vendors.
-
-```<insert graphics of metric 01_02b>```
 <figure>
-	<iframe aria-labelledby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig7-caption" class="visually-hidden">Figure 7. </div>
-	<figcaption>Figure 7. </figcaption>
+	<iframe aria-labelledby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive"></iframe>
+	<div id="fig6-caption" class="visually-hidden">Figure 7. Distribution of first and third-party scripts on mobile</div>
+	<figcaption>Figure 7. Distribution of first and third party scripts on mobile</figcaption>
 </figure>
 
-At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop**. **This clearly shows that third-party code can be one of the biggest contributors to bloat.
+For both mobile and desktop clients, more third-party requests are sent than first-party at every percentile. If this seems surprising, let's find out how much actual code shipped comes from third-party vendors.
+
+<figure>
+	<iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive"></iframe>
+	<div id="fig8-caption" class="visually-hidden">Figure 8. Distribution of total JavaScript downloaded on desktop</div>
+	<figcaption>Figure 8. Distribution of total JavaScript downloaded on desktop</figcaption>
+</figure>
+
+<figure>
+	<iframe aria-labelledby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive"></iframe>
+	<div id="fig9-caption" class="visually-hidden">Figure 9. Distribution of total JavaScript downloaded on mobile</div>
+	<figcaption>Figure 9. Distribution of total JavaScript downloaded on mobile</figcaption>
+</figure>
+
+At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat.
 
 ## Resource compression
 
-In the context of browser-server interactions, **resource compression** refers to code that has been modified using a data compression algorithm. Resources can be compressed statically ahead of time or on-the-fly as they are requested by the browser, and for either approach the transferred resource size is significantly reduced which improves page performance.
+In the context of browser-server interactions, resource compression refers to code that has been modified using a data compression algorithm. Resources can be compressed statically ahead of time or on-the-fly as they are requested by the browser, and for either approach the transferred resource size is significantly reduced which improves page performance.
 
 There are multiple text-compression algorithms, but only two are mostly used for the compression (and decompression) of HTTP network requests:
 
--  [Gzip](https://www.gzip.org/) (gzip): The most widely used compression format for server and client interactions
--  [Brotli](https://github.com/google/brotli) (br): A newer compression algorithm aiming to further improve compression ratios. [90% of browsers](https://caniuse.com/#feat=brotli) support Brotli encoding.
+- [Gzip](https://www.gzip.org/) (gzip): The most widely used compression format for server and client interactions
+- [Brotli](https://github.com/google/brotli) (br): A newer compression algorithm aiming to further improve compression ratios. [90% of browsers](https://caniuse.com/#feat=brotli) support Brotli encoding.
 
 Compressed scripts will always need to be uncompressed by the browser once transferred. This means its content remains the same and execution times are not optimized whatsoever. Resource compression, however, will always improve download times which also is one of the most expensive stages of JavaScript processing. Ensuring JavaScript files are compressed correctly can be one of the most significant factors in improving site performance.
 
-**How many sites are compressing their JavaScript resources**?
-
-```<insert graphics of metric 01_05 and 01_06>```
-<figure>
-	<iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig8-caption" class="visually-hidden">Figure 8. </div>
-	<figcaption>Figure 8. </figcaption>
-</figure>
+**How many sites are compressing their JavaScript resources?**
 
 <figure>
-	<iframe aria-labelledby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig9-caption" class="visually-hidden">Figure 9. </div>
-	<figcaption>Figure 9. </figcaption>
+	<iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"></iframe>
+	<div id="fig10-caption" class="visually-hidden">Figure 10. Percentage of sites compressing JavaScript resources with gzip or brotli</div>
+	<figcaption>Figure 10. Percentage of sites compressing JavaScript resources with gzip or brotli</figcaption>
 </figure>
 
 The majority of sites are compressing their JavaScript resources. Gzip encoding is used on ~64-67% of sites and Brotli on ~14%. Compression ratios are similar for both desktop and mobile.
@@ -140,19 +140,18 @@ Open source code, or code with a permissive license that can be accessed, viewed
 
 **Which JavaScript open-source libraries are used the most?**
 
-```<insert graphics of metric 01_08>```
 <figure>
-	<iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig10-caption" class="visually-hidden">Figure 10. </div>
-	<figcaption>Figure 10. </figcaption>
+	<iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1195911053&format=interactive"></iframe>
+	<div id="fig11-caption" class="visually-hidden">Figure 11. Top JavaScript libraries on desktop and mobile</div>
+	<figcaption>Figure 11. Top JavaScript libraries on desktop and mobile</figcaption>
 </figure>
 
 [jQuery](https://jquery.com/), the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
 
 There are a number of possible reasons:
 
--  [WordPress](https://wordpress.org/), which is used in more than 30% of sites, includes jQuery by default
--  Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries
+- [WordPress](https://wordpress.org/), which is used in more than 30% of sites, includes jQuery by default
+- Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries
 
 Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/) and so on.
 
@@ -162,17 +161,16 @@ In the past number of years, the JavaScript ecosystem has seen a rise in open-so
 
 **How many sites use these types of frameworks?**
 
-```<insert graphics of metric 01_10_05>```
 <figure>
-	<iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig11-caption" class="visually-hidden">Figure 11. </div>
-	<figcaption>Figure 11. </figcaption>
+	<iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"></iframe>
+	<div id="fig12-caption" class="visually-hidden">Figure 12. Most frequently used frameworks on desktop</div>
+	<figcaption>Figure 12. Most frequently used frameworks on desktop</figcaption>
 </figure>
 
 Only a subset of popular frameworks are being analyzed here, but it's important to note that all of them either follow one of these two approaches:
 
--  A [model-view-controller](https://developer.chrome.com/apps/app_frameworks) (or model-view-viewmodel) architecture
--  A component-based architecture
+- A [model-view-controller](https://developer.chrome.com/apps/app_frameworks) (or model-view-viewmodel) architecture
+- A component-based architecture
 
 Although there has been a shift towards a component-based model, many older frameworks that follow the MVC paradigm ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) are still being used in thousands of pages. However, [React](https://reactjs.org/), [Vue](https://vuejs.org/) and [Angular](https://angular.io/) are the most popular component-based frameworks ([Zone.js](https://github.com/angular/zone.js) is a package that is now part of Angular core).
 
@@ -190,11 +188,10 @@ To declare a script as a module, the script tag must get the `type="module"`:
 
 **How many sites use `type="module"` for scripts on their page?**
 
-```<insert graphic of metric 01_12>```
 <figure>
-	<iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig12-caption" class="visually-hidden">Figure 12. </div>
-	<figcaption>Figure 12. </figcaption>
+	<iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive"></iframe>
+	<div id="fig13-caption" class="visually-hidden">Figure 13. Percentage of sites utilizing type=module</div>
+	<figcaption>Figure 13. Percentage of sites utilizing type=module</figcaption>
 </figure>
 
 Browser-level support for modules is still relatively new, and the numbers here show that very few sites currently use `type="module"` for their scripts. Many sites are still relying on module loaders (~2.37% of all desktop sites use [RequireJS](https://github.com/requirejs/requirejs) for example) and bundlers ([webpack](https://webpack.js.org/) for example) to define modules within their codebase.
@@ -209,11 +206,10 @@ When used together, browsers that support modules will completely ignore any scr
 
 So, **how many sites use `nomodule` for scripts on their page?**
 
-```<insert graphic of metric 01_13>```
 <figure>
-	<iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig13-caption" class="visually-hidden">Figure 13. </div>
-	<figcaption>Figure 13. </figcaption>
+	<iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"></iframe>
+	<div id="fig14-caption" class="visually-hidden">Figure 14. Percentage of sites using nomodule</div>
+	<figcaption>Figure 14. Percentage of sites using nomodule</figcaption>
 </figure>
 
 Similarly, very few sites (~0.50% - 0.80%) use the `nomodule` attribute for any scripts.
@@ -222,30 +218,28 @@ Similarly, very few sites (~0.50% - 0.80%) use the `nomodule` attribute for any 
 
 [Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) and [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are directives which enable you to aid the browser in determining what resources need to be downloaded.
 
--  Preloading a resource with `<link rel="preload"> `tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., javascript located at the bottom of your HTML) and are otherwise downloaded last.
--  Using `<link rel="prefetch">`  tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations
+- Preloading a resource with `<link rel="preload"> `tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., javascript located at the bottom of your HTML) and are otherwise downloaded last.
+- Using `<link rel="prefetch">`  tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations
 
 **So, how many sites use preload and prefetch directives?**
 
-```<insert graphic of metric 01_14>```
 <figure>
-	<iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig14-caption" class="visually-hidden">Figure 14. </div>
-	<figcaption>Figure 14. </figcaption>
+	<iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive"></iframe>
+	<div id="fig15-caption" class="visually-hidden">Figure 15. Percentage of sites using rel=preload for scripts</div>
+	<figcaption>Figure 15. Percentage of sites using rel=preload for scripts</figcaption>
 </figure>
 
 For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mobile sites use `<link rel="preload"> `for scripts on their page.
 
 For prefetch:
 
-```<insert graphic of metric 01_16>```
 <figure>
-	<iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig15-caption" class="visually-hidden">Figure 15. </div>
-	<figcaption>Figure 15. </figcaption>
+	<iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive"></iframe>
+	<div id="fig16-caption" class="visually-hidden">Figure 16. Percentage of sites using rel=prefetch for scripts</div>
+	<figcaption>Figure 16. Percentage of sites using rel=prefetch for scripts</figcaption>
 </figure>
 
-For both mobile and desktop, 0.08% (~0.10%) of pages leverage prefetch for any of their scripts.
+For both mobile and desktop, 0.08% of pages leverage prefetch for any of their scripts.
 
 ## Newer APIs
 
@@ -255,18 +249,17 @@ With HTTP Archive, we can take a look at any newer API that is supported (or is 
 
 **How many sites use the following APIs?**
 
--  [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
--  [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
--  [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
--  [SharedArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
--  [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
--  [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+- [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
+- [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+- [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+- [SharedArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
+- [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+- [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
-```<insert graphic of metric 01_18>```
 <figure>
-	<iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig16-caption" class="visually-hidden">Figure 16. </div>
-	<figcaption>Figure 16. </figcaption>
+	<iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive"></iframe>
+	<div id="fig17-caption" class="visually-hidden">Figure 17. Usage of new JavaScript APIs</div>
+	<figcaption>Figure 17. Usage of new JavaScript APIs</figcaption>
 </figure>
 
 Atomics (0.38%) and SharedArrayBuffer (0.20%) are barely visible on this chart since they are used on such few pages. Each of the other APIs here
@@ -281,11 +274,10 @@ A **source map** is an additional file accompanying a JavaScript file that allow
 
 Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. **So how many sites actually include sourcemaps?**
 
-```<insert graphic of metric 01_25>```
 <figure>
-	<iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="GOOGLE_URL"></iframe>
-	<div id="fig17-caption" class="visually-hidden">Figure 17. </div>
-	<figcaption>Figure 17. </figcaption>
+	<iframe aria-labelledby="fig18-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"></iframe>
+	<div id="fig18-caption" class="visually-hidden">Figure 18. Percentage of sites using source maps</div>
+	<figcaption>Figure 18. Percentage of sites using source maps</figcaption>
 </figure>
 
 For both desktop and mobile pages, the results are about the same. 17-18% include a source map for at least one script on the page (detected as a first-party script with `sourceMappingURL`).
