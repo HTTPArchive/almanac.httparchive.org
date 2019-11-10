@@ -66,14 +66,16 @@ const write_template = async (language, year, chapter, metadata, body, toc) => {
   const template = `templates/${language}/${year}/chapter.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
-  let html = await ejs.renderFile(template, { metadata, body, toc });
-  let fomatted_html = prettier.format(html, {
-    parser: 'html',
-    printWidth: Number.MAX_SAFE_INTEGER
-  });
+  if (fs.existsSync(template)) {
+    let html = await ejs.renderFile(template, { metadata, body, toc });
+    let fomatted_html = prettier.format(html, {
+      parser: 'html',
+      printWidth: Number.MAX_SAFE_INTEGER
+    });
 
-  await fs.outputFile(path, fomatted_html, 'utf8');
-  await size_of(path);
+    await fs.outputFile(path, fomatted_html, 'utf8');
+    await size_of(path);
+  }
 };
 
 module.exports = {
