@@ -961,6 +961,16 @@
       "website": "https:\/\/zachleat.com\/",
       "github": "zachleat",
       "twitter": "zachleat"
+    },
+    "c-torres": {
+      "name": "Carlos Torres",
+      "teams": [
+        "developers",
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/6588246?v=4&s=200",
+      "github": "c-torres",
+      "twitter": "carlos_catb"
     }
   }
 }
