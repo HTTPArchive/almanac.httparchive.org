@@ -1,19 +1,8 @@
 #standardSQL
 # 17_19: Percentage of HTTPS responses by protocol
 SELECT
-  client, cdn, firstHtml,
-  countif(ifnull(a.protocol, b.protocol) = 'HTTP/0.9') as http09,
-  countif(ifnull(a.protocol, b.protocol) = 'HTTP/1.0') as http10,
-  countif(ifnull(a.protocol, b.protocol) = 'HTTP/1.1') as http11,
-  countif(ifnull(a.protocol, b.protocol) = 'HTTP/2') as http2,
-  countif(ifnull(a.protocol, b.protocol) not in ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) as http_other,
-  countif(isSecure or ifnull(a.protocol, b.protocol) = 'HTTP/2') as tls_total,
-  round(100*countif(ifnull(a.protocol, b.protocol) = 'HTTP/0.9')/count(0), 2) as http09_pct,
-  round(100*countif(ifnull(a.protocol, b.protocol) = 'HTTP/1.0')/count(0), 2) as http10_pct,
-  round(100*countif(ifnull(a.protocol, b.protocol) = 'HTTP/1.1')/count(0), 2) as http11_pct,
-  round(100*countif(ifnull(a.protocol, b.protocol) = 'HTTP/2')/count(0), 2) as http2_pct,
-  round(100*countif(ifnull(a.protocol, b.protocol) not in ('HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2')) /count(0), 2) as http_other_pct,
-  round(100*countif(isSecure or ifnull(a.protocol, b.protocol) = 'HTTP/2')/count(0), 2) as tls_pct,
+  a.client, firstHtml,ifnull(a.protocol, b.protocol) as protocol,ifnull(a.tlsVersion, b.tlsVersion) as tlsVersion,
+  isSecure,
   count(0) as total
 FROM
 (
@@ -51,7 +40,6 @@ LEFT JOIN (
 ) b ON (a.client = b.client AND a.page = b.page AND a.socket = b.socket)
 
 GROUP BY
-  client,cdn,firstHtml
+  client,protocol,tlsVersion,firstHtml,isSecure
 ORDER BY
-  client DESC,
-  total DESC
+  total desc
