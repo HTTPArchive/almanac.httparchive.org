@@ -527,7 +527,8 @@
       "name": "Jos\u00e9 M. P\u00e9rez",
       "teams": [
         "developers",
-        "reviewers"
+        "reviewers",
+        "translators"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/416456?v=4&s=200",
       "website": "https:\/\/jmperezperez.com",
@@ -1007,6 +1008,16 @@
       "website": "https:\/\/erik.nygren.org\/",
       "github": "enygren",
       "twitter": "akanygren"
+    },
+    "c-torres": {
+      "name": "Carlos Torres",
+      "teams": [
+        "developers",
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/6588246?v=4&s=200",
+      "github": "c-torres",
+      "twitter": "carlos_catb"
     }
   }
 }

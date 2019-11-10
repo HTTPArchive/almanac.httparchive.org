@@ -185,6 +185,12 @@ header .btn + .language-switcher {
   color: inherit;
   cursor: pointer;
 }
+
+.language-switcher option,
+.year-switcher option {
+  color: #1A2B49;
+}
+
 .language-switcher select:focus,
 .year-switcher select:focus {
   border-color: #f2f2f2;
@@ -221,6 +227,11 @@ header .btn + .language-switcher {
 
 h2, h3, h4 {
   margin-top: 2em;
+}
+h2 code,
+h3 code,
+h4 code {
+  font-size: inherit;
 }
 
 p, td, th, code, li {

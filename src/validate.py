@@ -2,14 +2,49 @@ import logging
 import re
 import inspect
 
-from flask import request, abort
+from flask import request, abort, redirect
 from functools import wraps
 from language import Language, DEFAULT_LANGUAGE
+
+import config as config_util
 
 DEFAULT_YEAR = '2019'
 SUPPORTED_YEARS = {
     # When there is one supported language, it must have a trailing comma.
     '2019': (Language.ENGLISH,)
+}
+
+#TO DO - Stop Hardcoding these
+CHAPTERS = {
+    'accessibility',
+    'caching',
+    'cdn',
+    'cms',
+    'compression',
+    'css',
+    'ecommerce',
+    'fonts',
+    'javascript',
+    'http2',
+    'markup',
+    'media',
+    'page-weight',
+    'performance',
+    'pwa',
+    'resource-hints',
+    'seo',
+    'security',
+    'third-parties',
+    'media',
+    'mobile-web'
+}
+
+TYPO_CHAPTERS = {
+    'http-2': 'http2',
+    'mobileweb': 'mobile-web',
+    'pageweight': 'page-weight',
+    'resourcehints': 'resource-hints',
+    'thirdparties': 'third-parties'
 }
 
 
@@ -18,8 +53,16 @@ def validate(func):
     def decorated_function(*args, **kwargs):
         lang = kwargs.get('lang')
         year = kwargs.get('year')
+        chapter = kwargs.get('chapter')
 
         accepted_args = inspect.getargspec(func).args
+
+        if chapter:
+
+            validated_chapter = validate_chapter(chapter)
+
+            if chapter != validated_chapter:
+                return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
 
         lang, year = validate_lang_and_year(lang, year)
 
@@ -32,6 +75,21 @@ def validate(func):
         return func(*args, **kwargs)
 
     return decorated_function
+
+
+def validate_chapter(chapter):
+
+    if chapter not in CHAPTERS:
+        if chapter in TYPO_CHAPTERS:
+            logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
+            return TYPO_CHAPTERS.get(chapter)
+        else:
+            logging.debug('Unsupported chapter requested: %s' % chapter)
+            abort(404, 'Unsupported chapter requested')
+    
+    logging.debug('Using chapter: "%s ' % (chapter))
+
+    return chapter
 
 
 def validate_lang_and_year(lang, year):
