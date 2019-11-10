@@ -503,12 +503,25 @@ A website can control many the caching behavior of browsers and CDNs with the us
 
 Another useful tool is the use of the Vary HTTP Header. This header instructs both CDNs and Browsers how to fragment a cache. The Vary Header allows an origin to indicate there are multiple representations of a resource, and the CDN should cache each variation separately. The most common example is compression as discussed in [Chapter 16](http://todo.dev). Declaring a resource as `Vary: Accept-Encoding` allows the CDN to cache the same content but in different forms like uncompressed, with gzip or Brotli. Some CDNs even do this compression on the fly so as to keep only one copy available. This Vary header likewise also instructs the browser how to cache the content and when to request new content. 
 
+<figure id="fig16">
+  <a href="/static/images/2019/17_CDN/use_of_vary_on_cdn.png">
+    <img alt="Breakdown of Vary header values for HTML content served from a CDN" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png">
+  </a>
+  <figcaption>Figure 16. Usage of Vary for HTML served from CDNs</figcaption>
+</figure>
 
 While the main use of `Vary` is to coordinate `Content-Encoding`, there are other important variations that web sites signal cache fragmentation. Using Vary also instructs SEO Bots like DuckDuckGo, Google and BingBot that alternate content would be returned under different conditions. This has been important to avoid SEO penalties for ‘ghosting’ (sending SEO specific content in order to game the rankings).
 
 For HTML pages, the most common use of Vary is to signal that the content will change based on the User-Agent. This is short-hand to indicate that the website will return different content for Desktops, Phones, Tablets and Link Unfurling engines (like Slack, iMessage and Whatsapp). The use of `Vary: User-Agent` is also a vestigate of the early mobile era where content was split between mDot servers and "regular" servers in the back end. While the adoption for Responsive Web has gained wide popularity, this Vary form remains.
 
 In a similar way, `Vary: Cookie` usually indicates content that will change based on the logged in state of the user or other personalization. 
+
+<figure id="fig17">
+  <a href="/static/images/2019/17_CDN/use_of_vary.png">
+    <img alt="Comparison of Vary header values for HTML and Resouces, divided by Orign and CDN" src="/static/images/2019/17_CDN/use_of_vary.png">
+  </a>
+  <figcaption>Figure 17. Comparison of Vary usage for HTML and Resources served from Origin and CDN</figcaption>
+</figure>
 
 Resources, in contrast, don’t `Vary: Cookie` as much as the HTML resources. Instead these resources are more likely to adapt based on the Accept, Origin or Referer. Most media, for example, will use `Vary: Accept` to indicate that an image could be a JPEG, WebP, JPEG 2000, or JPEG XR depending on the Browser’s offered `Accept` header.  In a similar way, third party shared resources signal that an XHR API will differ depending on which website it is embeded. This way a call to an ad server API will return different content depending on the parent website that called the API.
 
@@ -526,7 +539,14 @@ Some CDNs support post-check as a method to allow a resource to refreshed when i
 
 The s-maxage directive informs proxies how long they may cache a response for. Across the Web Almanac dataset, jsDelivr is the only CDN where a high level of usage was seen across multiple resources – this isn’t surprising given jsDelivr’s role as public CDN for libraries. Usage across other CDNs seems to be driven by individual customers e.g. 3rd-party scripts, or SaaS providers using that particular CDN.
 
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive
+<figure id="fig18">
+  <iframe aria-labelledby="fig18-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig18.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig18.png" aria-labelledby="fig18-caption" width="600">
+  </a>
+  <div id="fig18-caption" class="visually-hidden">Comparison of s-maxage adoption across CDNs</div>
+  <figcaption>Figure 18. Adoption of s-maxage across CDN responses</figcaption>
+</figure>
 
 With 40% of sites using a CDN for resources, and presuming these resources are static and cacheable, the usage of s-maxage seems low.
 
@@ -542,7 +562,14 @@ Using content from one of the public CDNs instead of a self-hosting the content 
 
 Google Fonts is the most popular of the content CDNs and is used by 55% of the sites in the Almanac dataset. For non-font content Google API, Cloudflare’s JS CDN, and the Bootstrap’s CDN are the next most popular. 
 
-https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive
+<figure id="fig19">
+  <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive"></iframe>
+  <a href="/static/images/2019/17_CDN/fig19.png" class="fig-mobile">
+    <img src="/static/images/2019/17_CDN/fig19.png" aria-labelledby="fig19-caption" width="600">
+  </a>
+  <div id="fig19-caption" class="visually-hidden">Most popular content CDNs</div>
+  <figcaption>Figure 19. Usage of public content CDNs</figcaption>
+</figure>
 
 As more browsers implement partitioned caches, the effectiveness of public CDNs for hosting common libraries will decrease  and it will be interesting to see whether they are less popular in future iterations of this research.
 
