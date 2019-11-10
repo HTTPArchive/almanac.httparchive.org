@@ -2,11 +2,11 @@
 part_number: I
 chapter_number: 6
 title: Fonts
-description: Fonts chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third parties, performance, seo, and PWAs
+description: Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 discuss: 1761
-published: 2019-11-04T12:00:00+00:00:00
+published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-07T21:46:11.000Z 
 ---
 

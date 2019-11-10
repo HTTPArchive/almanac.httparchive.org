@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"discuss":"1756"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"discuss":"1756","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-11T21:46:11.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title') + ' on the web.') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
