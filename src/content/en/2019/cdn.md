@@ -299,6 +299,8 @@ In addition to using a CDN for TLS & RTT Performance, CDNs are often used to ens
 
 ![Figure 9. HTML TLS Version Adoption (CDN v. Origin)](images/Web-Almanac8.png "HTML TLS Version Adoption (CDN v. Origin)")
 
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive
+
 Each CDN offers different rates of adoption for both TLS and the relative ciphers and versions offered. Some CDNs are more aggressive and roll out these changes to all customers whereas other CDNs require website owners to opt-in to the latest changes and offer change-management to facilitate these ciphers and versions.
 
 ![Figure 10. HTML TLS Adoption by CDN](images/Web-Almanac8.png "HTML TLS Adoption by CDN")
@@ -313,6 +315,8 @@ In general the use of a CDN is highly correlated with a more rapid adoption of s
 
 ![Figure 10. HTML TLS Negotiation by CDN](images/Web-Almanac8.png "HTML TLS Negotiation by CDN")
 
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive
+
 More discussion of the TLS Versions and ciphers can be found In the [Security](https://todo.dev) and [HTTP/2](https://todo.dev) chapters, 
 
 ## HTTP/2 Adoption
@@ -322,8 +326,14 @@ The top 10 CDNs have over 80% of the websites covered by WebPageTest have HTTP/2
 
 > NB: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported this would indicate either unencrypted (non TLS) servers or servers that don’t support HTTP/2.
 
+![Figure 9. HTML Adoption of HTTP/2 (CDN v. Origin)](images/Web-Almanac9.png "HTML Adoption of HTTP/2 CDN v. Origin")
+
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive
+
 
 ![Figure 9. HTML Adoption of HTTP/2](images/Web-Almanac9.png "HTML Adoption of HTTP/2")
+
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive
 
 *HTML Adoption of HTTP/2*
 
