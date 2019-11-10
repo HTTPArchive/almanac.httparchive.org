@@ -60,11 +60,14 @@ Historically, CDNs were used exclusively for static resources like CSS, JavaScri
 
 ![Figure 1. CDN Usage vs. Origin Hosted Resources](images/Web-Almanac1.png "Origin vs CDN")
 
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive
+
 Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of webpages (80%) serve the base HTML from ORIGIN. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely do to the small continued use of mobile specific webpages (mDot) which more frequently use a CDN.
 
 Likewise, resources served from subdomains are more likely to utilize a CDN at 40% of subdomain resources. Subdomains are used either to partition resources like images and CSS or they are used to reflect organization teams such as checkout or apis.
 
 Despite first party resources still largely being served direct from ORIGIN, third-party resources have a substantially higher adoption of CDNs. Nearly 66% of all third-party resources are served from a CDN. Since 3rd party domains are more likely a SaaS integration the use of CDNs are more likely core to these business offerings. Most third-party content breaks down to shared resources (JavaScript/font CDNs), augmented content (advertisements) or statistics. In all these cases, using a CDN will improve the performance and offload for these SaaS solutions.
+
 ## Top Utilized CDN Providers
 There are two categories of CDN providers: the generic and the purpose-fit CDN. The generic CDN providers offer customization and flexibility to serve all kinds of content for many industries. In contrast the purpose-fit CDN provider offers similar content distribution capabilities but are narrowly focused on a specific solution.
 
@@ -244,6 +247,8 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 
 ![Figure 7. TLS SAN Count for HTML](images/Web-Almanac7.png "TLS SAN Count for HTML")
 
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive
+
 * TLS SAN Count for HTML *
 
 |||||||
@@ -269,6 +274,8 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 |CDNetworks|2|7|100|360|818|
 
 ![Figure 8. Resource SAN Count (p50)](images/Web-Almanac8.png "Resource SAN Count (p50)")
+
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive
 
 |||||||
 |--- |--- |--- |--- |--- |--- |
