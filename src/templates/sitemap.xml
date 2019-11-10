@@ -79,7 +79,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/css
+            https://almanac.httparchive.org/en/2019/caching
         </loc>
         
         <lastmod>
@@ -90,7 +90,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/caching
+            https://almanac.httparchive.org/en/2019/css
         </loc>
         
         <lastmod>
@@ -149,18 +149,7 @@
         </loc>
         
         <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/media
-        </loc>
-        
-        <lastmod>
-            2019-11-11
+            2019-11-12
         </lastmod>
         
     </url>
@@ -178,7 +167,7 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/performance
+            https://almanac.httparchive.org/en/2019/media
         </loc>
         
         <lastmod>
@@ -200,7 +189,29 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/performance
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/pwa
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/resource-hints
         </loc>
         
         <lastmod>
@@ -234,17 +245,6 @@
     <url>
         <loc>
             https://almanac.httparchive.org/en/2019/third-parties
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/resource-hints
         </loc>
         
         <lastmod>

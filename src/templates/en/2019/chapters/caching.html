@@ -639,8 +639,8 @@
       <p>One of the risks of caching responses with <code>Set-Cookie</code> is that the cookie values can be stored and served to subsequent requests. Depending on the cookie's purpose, this could have worrying results. For example, if a login cookie or a session cookie is present in a shared cache, then that cookie might be reused by another client. One way to avoid this is to use the <code>Cache-Control</code> <code>private</code> directive, which only permits the response to be cached by the client browser.</p>
       <p>3% of cacheable responses contain a <code>Set-Cookie header</code>. Of those responses, only 18% use the <code>private</code> directive. The remaining 82% include 5.3 million HTTP responses that include a <code>Set-Cookie</code> which can be cached by public and private cache servers.</p>
       <figure id="fig-16">
-        <a href="/static/images/2019/16_Caching/ch16_fig13_cookies_on_cacheable_responses.jpg">
-          <img alt="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private." src="/static/images/2019/16_Caching/ch16_fig13_cookies_on_cacheable_responses.jpg" width="600" />
+        <a href="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg">
+          <img alt="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private." src="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg" width="600" />
         </a>
         <figcaption>Figure 16. Cacheable responses of <code>Set-Cookie</code> responses.</figcaption>
       </figure>
