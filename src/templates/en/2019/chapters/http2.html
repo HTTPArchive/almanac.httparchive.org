@@ -141,7 +141,7 @@
       <h1 class="title">
         {{ metadata.get('title') }}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default.</p>
