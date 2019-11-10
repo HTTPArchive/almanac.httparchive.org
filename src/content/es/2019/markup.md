@@ -175,7 +175,7 @@ Muchos elementos, incluso los nativos, aparecen en menos del 1% de las páginas 
 
 También recopilamos información sobre qué páginas contenían un autor definido (no nativo) `.shadowRoot`. Alrededor del 0,22% de las páginas de escritorio y el 0,15% de las páginas móviles tenían un _shadow root_. Esto puede no parecer mucho, pero es más o menos 6.500 sitios en el conjunto de datos móviles y 10.000 sitios en el escritorio y es más que varios elementos HTML. `<summary>` por ejemplo, tiene un uso equivalente en el escritorio y es el elemento número 146 más popular. `<datalist>` aparece en el 0,04% de las páginas de inicio y es el elemento 201 más popular.
 
-De hecho, más del 15% de los elementos que contamos según lo definido por HTML están fuera de los 200 primeros en el conjunto de datos de escritorio. `<meter>` es el elemento menos popular de la "era HTML5", que podemos definir como 2004-2011, antes de que HTML se moviera a un modelo de Living Standard. Es alrededor del elemento número 1.000 en popularidad. `<slot>`, el elemento introducido más recientemente (abril de 2016) es solo alrededor del 1.400 elemento más popular.
+De hecho, más del 15% de los elementos que contamos según lo definido por HTML están fuera de los 200 primeros en el conjunto de datos de escritorio. `<meter>` es el elemento menos popular de la "era HTML5", que podemos definir como 2004-2011, antes de que HTML se moviera a un modelo de Living Standard. Es alrededor del elemento número 1.000 en popularidad. `<slot>`, el elemento introducido más recientemente (abril de 2016) está situado alrededor del puesto 1.400 en cuanto a popularidad.
 
 ## Muchos datos: DOM real en la web real
 
