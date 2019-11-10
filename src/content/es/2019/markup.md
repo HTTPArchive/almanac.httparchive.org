@@ -18,7 +18,7 @@ En 2005, Ian "Hixie" Hickson publicó [algunos análisis de datos de marcado](ht
 
 A partir de julio de 2019, el HTTP Archive ha comenzado a recopilar todos los nombres de elementos usados en el DOM para aproximadamente 4,4 millones de páginas de inicio de computadoras de escritorio y alrededor de 5,3 millones de páginas de inicio de dispositivos móviles que ahora podemos comenzar a investigar y diseccionar. _(Conozca más sobre nuestra [Metodología](./methodology).)_
 
-Esta exploración encontró *más de 5,000 nombres distintos de elementos no estándar* en estas páginas, por lo que limitamos el número total de elementos distintos que contamos a los 'principales' (explicado a continuación) 5,048.
+Esta exploración encontró *más de 5.000 nombres distintos de elementos no estándar* en estas páginas, por lo que limitamos el número total de elementos distintos que contamos a los 'principales' (explicado a continuación) 5.048.
 
 ## Metodología
 
