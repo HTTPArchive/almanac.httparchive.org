@@ -35,6 +35,13 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/cdn
+        </loc>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/cms
         </loc>
         
@@ -116,7 +123,7 @@
         </loc>
         
         <lastmod>
-            2019-11-11
+            2019-11-12
         </lastmod>
         
     </url>
