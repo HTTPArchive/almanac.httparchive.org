@@ -13,39 +13,6 @@
 
     <url>
         <loc>
-            https://almanac.httparchive.org/en/2019/table_of_contents
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/methodology
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
-            https://almanac.httparchive.org/en/2019/contributors
-        </loc>
-        
-        <lastmod>
-            2019-11-11
-        </lastmod>
-        
-    </url>
-
-    <url>
-        <loc>
             https://almanac.httparchive.org/en/2019/accessibility
         </loc>
         
@@ -68,6 +35,13 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/cdn
+        </loc>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/cms
         </loc>
         
@@ -80,6 +54,17 @@
     <url>
         <loc>
             https://almanac.httparchive.org/en/2019/compression
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/contributors
         </loc>
         
         <lastmod>
@@ -167,6 +152,17 @@
 
     <url>
         <loc>
+            https://almanac.httparchive.org/en/2019/methodology
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
             https://almanac.httparchive.org/en/2019/mobile-web
         </loc>
         
@@ -234,6 +230,17 @@
     <url>
         <loc>
             https://almanac.httparchive.org/en/2019/seo
+        </loc>
+        
+        <lastmod>
+            2019-11-11
+        </lastmod>
+        
+    </url>
+
+    <url>
+        <loc>
+            https://almanac.httparchive.org/en/2019/table_of_contents
         </loc>
         
         <lastmod>
