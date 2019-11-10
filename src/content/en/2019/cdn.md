@@ -523,7 +523,7 @@ In a similar way, `Vary: Cookie` usually indicates content that will change base
   <figcaption>Figure 17. Comparison of Vary usage for HTML and Resources served from Origin and CDN</figcaption>
 </figure>
 
-Resources, in contrast, don’t `Vary: Cookie` as much as the HTML resources. Instead these resources are more likely to adapt based on the Accept, Origin or Referer. Most media, for example, will use `Vary: Accept` to indicate that an image could be a JPEG, WebP, JPEG 2000, or JPEG XR depending on the Browser’s offered `Accept` header.  In a similar way, third party shared resources signal that an XHR API will differ depending on which website it is embeded. This way a call to an ad server API will return different content depending on the parent website that called the API.
+Resources, in contrast, don’t `Vary: Cookie` as much as the HTML resources. Instead these resources are more likely to adapt based on the Accept, Origin or Referer. Most media, for example, will use `Vary: Accept` to indicate that an image could be a JPEG, WebP, JPEG 2000, or JPEG XR depending on the Browser’s offered `Accept` header.  In a similar way, third party shared resources signal that an XHR API will differ depending on which website it is embedded. This way a call to an ad server API will return different content depending on the parent website that called the API.
 
 The Vary header also contains evidence of CDN chains, these can be seen in Vary headers such as "Accept-Encoding, Accept-Encoding" or even "Accept-Encoding, Accept-Encoding". Further analysis of these chains and Via header entries might reveal interesting data, for example how many sites are proxying third-party tags. 
 
