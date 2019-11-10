@@ -641,9 +641,3 @@ p {
     margin: 0;
   }
 }
-
-@media (max-width: 320px) {
-  .methodology-data {
-    padding: 20px 5px
-  }
-}
