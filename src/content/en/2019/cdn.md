@@ -4,7 +4,7 @@ chapter_number: 17
 title: CDN
 description: CDN chapter of the 2019 Web Almanac covering ...
 authors: [andydavies, colinbendell]
-reviewers: [yoavweiss, paulcalvano, pmeenan]
+reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 discuss: 1772
 published: 2019-11-11T00:00:00.000Z
 published: 2019-11-11T00:00:00.000Z
