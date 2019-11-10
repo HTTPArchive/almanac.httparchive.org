@@ -564,8 +564,8 @@ One of the risks of caching responses with `Set-Cookie` is that the cookie value
 3% of cacheable responses contain a `Set-Cookie header`. Of those responses, only 18% use the `private` directive. The remaining 82% include 5.3 million HTTP responses that include a `Set-Cookie` which can be cached by public and private cache servers. 
 
 <figure>
-  <a href="/static/images/2019/16_Caching/ch16_fig13_cookies_on_cacheable_responses.jpg">
-    <img alt="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private." src="/static/images/2019/16_Caching/ch16_fig13_cookies_on_cacheable_responses.jpg" width="600">
+  <a href="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg">
+    <img alt="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private." src="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg" width="600">
   </a>
   <figcaption>Figure 16. Cacheable responses of <code>Set-Cookie</code> responses.</figcaption>
 </figure>
