@@ -96,9 +96,8 @@ For the mobile device used in the web page crawl, we have a display of `512 x 36
 
 If we had one image that filled the entire screen perfectly, this would be a 1x pixel fill rate. Of course, rarely does a website fill the entire canvas with a single image. Media content tends to be mixed in with the design and other content. A value greater than 1x implies that the layout requires the user to scroll to see the additional image content. 
 
-NB: this is only looking at the CSS layout for both the viper and the volume of layout content. It is not evaluating the effectiveness of the responsive images or the effectiveness of providing high DPR content. 
+> NB: this is only looking at the CSS layout for both the viper and the volume of layout content. It is not evaluating the effectiveness of the responsive images or the effectiveness of providing high DPR content. 
 
-(figure: relative pixel volume per page o screen size)
 <figure>
   <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig5.png" class="fig-mobile">
@@ -127,12 +126,11 @@ While the strategies that are utilized for images, videos and animations are, in
 * Lazy Loading - to transfer content only when a human will see it
 * Accessibility - ensuring a consistent experience for all humans
 
-* A word of caution when interpreting these results. The web pages crawled for the almanac were based on a Chrome browser. This implies that any content negotiation that might better apply for Safari or Firefox, might not be represented in this dataset. For example, the use of file formats like JPEG2000, JPEG-XR, HEVC and HEIC are absent because these are not supported natively by Chrome. This does not mean that the web does not contain these other formats or experiences. Likewise, Chrome has native support for lazy loading (since v76) which is not yet available in other browsers.*
+> A word of caution when interpreting these results. The web pages crawled for the almanac were based on a Chrome browser. This implies that any content negotiation that might better apply for Safari or Firefox, might not be represented in this dataset. For example, the use of file formats like JPEG2000, JPEG-XR, HEVC and HEIC are absent because these are not supported natively by Chrome. This does not mean that the web does not contain these other formats or experiences. Likewise, Chrome has native support for lazy loading (since v76) which is not yet available in other browsers.
 
 It is rare to find a web page that does not utilize images. Over the years, many different file formats have emerged to help present content on the web - each addressing a different problem. Predominantly there are 4 main universal image formats: JPEG, PNG, GIF, and SVG. In addition, Chrome has enhanced the media pipeline and added support for a fifth image format - WebP. Other browsers have likewise added support for JPEG2000 (Safari), JPEG-XL (IE and Edge) and HEIC (WebView only in Safari)
 
 Each format has its own merits and has ideal uses for the web. A very simplified summary would break down as:
-
 
 |Format|Highlights  | Drawbacks
 |--|--| --|
@@ -142,14 +140,31 @@ Each format has its own merits and has ideal uses for the web. A very simplified
 |SVG| * A vector based format that can be resized without increasing filesize <br> * It is based on math rather than pixels and creates smooth lines| * not useful for photographic or other raster content
 |WebP| * a newer file format that can produce lossless images like PNG and lossy images like JPEG <br> *  It [boasts a 30% average file reduction compared](https://developers.google.com/speed/webp/faq) to JPEG, while other data suggests that median file reduction is [between 10-28% based on pixel volume](https://cloudinary.com/state-of-visual-media-report/).| * Unlike JPEG, it is limited to chroma-subsampling which will make some images appear blurry. <br> *not universally supported. Only Chrome, Firefox and Android ecosystems.<br> * fragmented feature support depending on browser versions
   
-
-
 ## Image Formats
+
 In aggregate, across all page, we indeed see the prevalence of these formats. JPEG, one of the oldest formats on the web, is by far the most commonly used image formats at 60% of the image requests and 65% of all image bytes. Interestingly, PNG is the second most commonly used image format 28% of image requests and bytes. The ubiquity of support along with the precision of color and creative content are likely explanations for its wide use. In contrast SVG, GIF and WebP share nearly the same usage at 4%.
-(figure image formats by % of total requests)
+
+<figure>
+  <a href="/static/images/2019/04_Media/image_format_usage.png">
+    <img alt="Most frequent Image types used on webapges" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600">
+  </a>
+  <figcaption>Figure 6: Image Format Usage</figcaption>
+</figure>
+
+* Image Format Usage 
+|||
+|--- |--- |
+|jpg|60.27|
+|png|28.2|
+|webp|4.2|
+|gif|3.67|
+|svg|3.63|
+
+
 Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of Google.com and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images and 61 at the 90th percentile and a whopping 229 at the 99th percentile.
 (figure image frequency per page)
 
+||||||||
 | Format | p10 | p25 | p50 | p75 | p90 | p99 |
 |---|---|---| ---| ---| ---| ---| 
 | jpg | 0 | 3 | 9 |20  |39  |119  |  
