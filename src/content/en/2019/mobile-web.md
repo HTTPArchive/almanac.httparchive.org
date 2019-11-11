@@ -55,7 +55,7 @@ The state of JavaScript on the mobile web is terrifying. According to HTTP Archi
 Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) to become interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, nothing happens because the JavaScript hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.
 
 <figure>
-  <iframe class="fig-mobile" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
 </figure>
 
