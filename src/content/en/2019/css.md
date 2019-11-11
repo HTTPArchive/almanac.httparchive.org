@@ -56,7 +56,7 @@ Language is interestingly inferred via color as well. There are more instances o
 How many different font colors are used across the web? So this isn't the total number of unique colors; rather, it's how many different colors are used just for text. The numbers in this chart are quite high, and from experience, we know that without CSS variables, spacing, sizes and colors can quickly get away from you and fragment into lots of tiny values across your styles. These numbers reflect a difficulty of style management, and we hope this helps create some perspective for you to bring back to your teams or projects. How can you reduce this number into a manageable and reasonable amount?
 
 <figure>
-  <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&amp;format=interactive"></iframe>447UTW-1-5-OjE/pubchart?oid=1946838030&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&amp;format=interactive"></iframe>
   <a href="/static/images/2019/02_CSS/fig3.png" class="fig-mobile">
     <img src="/static/images/2019/02_CSS/fig3.png" aria-labelledby="fig3-caption" width="600">
   </a>
@@ -105,12 +105,8 @@ We saw larger differences in unit types when it comes to mobile and desktop usag
 Custom properties are what many call CSS variables. They're more dynamic than a typical static variable though! They're very powerful and as a community we're still discovering their potential. 
 
 <figure>
-  <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=897021371&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/02_CSS/fig6.png" class="fig-mobile">
-    <img src="/static/images/2019/02_CSS/fig6.png" aria-labelledby="fig6-caption" width="600">
-  </a>
-  <div id="fig6-caption" class="visually-hidden">Bar chart showing the adoption of custom properties. It's used on 5% of desktop and mobile websites.</div>
-  <figcaption>Figure 6. Adoption of custom properties.</figcaption>
+  <div class="big-number">5%</div>
+  <figcaption>Figure 6. Percent of pages using custom properties.</figcaption>
 </figure>
 
 We felt like this was exciting information, since it shows healthy growth of one of our favorite CSS additions. They were available in all major browsers since 2016 or 2017, so it's fair to say they're fairly new. Many folks are still transitioning from their CSS preprocessor variables to CSS custom properties. We estimate it'll be a few more years until custom properties are the norm.
@@ -196,15 +192,11 @@ Quite the success story shown here, as nearly 50% of the web has flexbox usage i
 Like flexbox, [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) too went through a few spec alternations early on in its lifespan, but without changing implementations in publicly-deployed browsers. Microsoft had grid in the first versions of Windows 8, as the primary layout engine for its horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until its final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, at the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to its power and capabilities.
 
 <figure>
-  <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2143277119&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/02_CSS/fig13.png" class="fig-mobile">
-    <img src="/static/images/2019/02_CSS/fig13.png" aria-labelledby="fig13-caption" width="600">
-  </a>
-  <div id="fig13-caption" class="visually-hidden">Bar chart showing 2% of desktop and mobile pages using grid.</div>
-  <figcaption>Figure 13. Adoption of grid.</figcaption>
+  <div class="big-number">2%</div>
+  <figcaption>Figure 13. Percent of websites using grid.</figcaption>
 </figure>
 
-This chart shows just how little the web development community has exercised and explored their latest layout tool. We look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. For us authors, we love writing grid: we typically reach for it first, then dial our complexity back as we realize and iterate on layout. It remains to be seen what the rest of the world will do with this powerful CSS feature over the next few years.
+This shows just how little the web development community has exercised and explored their latest layout tool. We look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. For us authors, we love writing grid: we typically reach for it first, then dial our complexity back as we realize and iterate on layout. It remains to be seen what the rest of the world will do with this powerful CSS feature over the next few years.
 
 ### Writing modes
 

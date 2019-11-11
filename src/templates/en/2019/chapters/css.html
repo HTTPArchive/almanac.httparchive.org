@@ -293,11 +293,11 @@
             </li>
 
             <li>
-              <a href="#reset-utilities">Reset Utilities</a>
+              <a href="#reset-utilities">Reset utilities</a>
             </li>
 
             <li>
-              <a href="#supports--import">@supports &amp; @import</a>
+              <a href="#supports-and-import">@supports and @import</a>
             </li>
           </ul>
         </li>
@@ -350,7 +350,7 @@
       <h3 id="color-count">Color count</h3>
       <p>How many different font colors are used across the web? So this isn't the total number of unique colors; rather, it's how many different colors are used just for text. The numbers in this chart are quite high, and from experience, we know that without CSS variables, spacing, sizes and colors can quickly get away from you and fragment into lots of tiny values across your styles. These numbers reflect a difficulty of style management, and we hope this helps create some perspective for you to bring back to your teams or projects. How can you reduce this number into a manageable and reasonable amount?</p>
       <figure id="fig-3">
-        <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&amp;format=interactive"></iframe>447UTW-1-5-OjE/pubchart?oid=1946838030&amp;format=interactive"&gt;
+        <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&amp;format=interactive"></iframe>
         <a href="/static/images/2019/02_CSS/fig3.png" class="fig-mobile">
           <img src="/static/images/2019/02_CSS/fig3.png" aria-labelledby="fig3-caption" width="600" />
         </a>
@@ -385,12 +385,8 @@
       <h3 id="custom-properties">Custom properties</h3>
       <p>Custom properties are what many call CSS variables. They're more dynamic than a typical static variable though! They're very powerful and as a community we're still discovering their potential.</p>
       <figure id="fig-6">
-        <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=897021371&amp;format=interactive"></iframe>
-        <a href="/static/images/2019/02_CSS/fig6.png" class="fig-mobile">
-          <img src="/static/images/2019/02_CSS/fig6.png" aria-labelledby="fig6-caption" width="600" />
-        </a>
-        <div id="fig6-caption" class="visually-hidden">Bar chart showing the adoption of custom properties. It's used on 5% of desktop and mobile websites.</div>
-        <figcaption>Figure 6. Adoption of custom properties.</figcaption>
+        <div class="big-number">5%</div>
+        <figcaption>Figure 6. Percent of pages using custom properties.</figcaption>
       </figure>
       <p>We felt like this was exciting information, since it shows healthy growth of one of our favorite CSS additions. They were available in all major browsers since 2016 or 2017, so it's fair to say they're fairly new. Many folks are still transitioning from their CSS preprocessor variables to CSS custom properties. We estimate it'll be a few more years until custom properties are the norm.</p>
       <h2 id="selectors">Selectors</h2>
@@ -453,14 +449,10 @@
       <h3 id="grid">Grid</h3>
       <p>Like flexbox, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">grid</a> too went through a few spec alternations early on in its lifespan, but without changing implementations in publicly-deployed browsers. Microsoft had grid in the first versions of Windows 8, as the primary layout engine for its horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until its final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, at the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to its power and capabilities.</p>
       <figure id="fig-13">
-        <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2143277119&amp;format=interactive"></iframe>
-        <a href="/static/images/2019/02_CSS/fig13.png" class="fig-mobile">
-          <img src="/static/images/2019/02_CSS/fig13.png" aria-labelledby="fig13-caption" width="600" />
-        </a>
-        <div id="fig13-caption" class="visually-hidden">Bar chart showing 2% of desktop and mobile pages using grid.</div>
-        <figcaption>Figure 13. Adoption of grid.</figcaption>
+        <div class="big-number">2%</div>
+        <figcaption>Figure 13. Percent of websites using grid.</figcaption>
       </figure>
-      <p>This chart shows just how little the web development community has exercised and explored their latest layout tool. We look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. For us authors, we love writing grid: we typically reach for it first, then dial our complexity back as we realize and iterate on layout. It remains to be seen what the rest of the world will do with this powerful CSS feature over the next few years.</p>
+      <p>This shows just how little the web development community has exercised and explored their latest layout tool. We look forward to the eventual takeover of grid as the primary layout engine folks lean on when building a site. For us authors, we love writing grid: we typically reach for it first, then dial our complexity back as we realize and iterate on layout. It remains to be seen what the rest of the world will do with this powerful CSS feature over the next few years.</p>
       <h3 id="writing-modes">Writing modes</h3>
       <p>The web and CSS are international platform features, and writing modes offer a way for HTML and CSS to indicate a user's preferred reading and writing direction within our elements.</p>
       <figure id="fig-14">
@@ -668,9 +660,9 @@
             <table>
               <thead>
                 <tr>
-                  <th>filename</th>
-                  <th>desktop</th>
-                  <th>mobile</th>
+                  <th>Stylesheet name</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
                 </tr>
               </thead>
               <tbody>
@@ -784,136 +776,126 @@
       <p>See the <a href="./page-weight">Page Weight</a> chapter for a more in-depth look at the number of bytes websites are loading for each content type.</p>
       <h3 id="libraries">Libraries</h3>
       <p>It's common, popular, convenient, and powerful to reach for a CSS library to kick start a new project. While you may not be one to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.</p>
-      <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <thead>
-              <tr>
-                <th>library</th>
-                <th>desktop</th>
-                <th>mobile</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Bootstrap</td>
-                <td>27.8%</td>
-                <td>26.9%</td>
-              </tr>
-              <tr>
-                <td>animate.css</td>
-                <td>6.1%</td>
-                <td>6.4%</td>
-              </tr>
-              <tr>
-                <td>ZURB Foundation</td>
-                <td>2.5%</td>
-                <td>2.6%</td>
-              </tr>
-              <tr>
-                <td>UIKit</td>
-                <td>0.5%</td>
-                <td>0.6%</td>
-              </tr>
-              <tr>
-                <td>Material Design Lite</td>
-                <td>0.3%</td>
-                <td>0.3%</td>
-              </tr>
-              <tr>
-                <td>Materialize CSS</td>
-                <td>0.2%</td>
-                <td>0.2%</td>
-              </tr>
-              <tr>
-                <td>Pure CSS</td>
-                <td>0.1%</td>
-                <td>0.1%</td>
-              </tr>
-              <tr>
-                <td>Angular Material</td>
-                <td>0.1%</td>
-                <td>0.1%</td>
-              </tr>
-              <tr>
-                <td>Semantic-ui</td>
-                <td>0.1%</td>
-                <td>0.1%</td>
-              </tr>
-              <tr>
-                <td>Bulma</td>
-                <td>0.0%</td>
-                <td>0.0%</td>
-              </tr>
-              <tr>
-                <td>Ant Design</td>
-                <td>0.0%</td>
-                <td>0.0%</td>
-              </tr>
-              <tr>
-                <td>tailwindcss</td>
-                <td>0.0%</td>
-                <td>0.0%</td>
-              </tr>
-              <tr>
-                <td>Milligram</td>
-                <td>0.0%</td>
-                <td>0.0%</td>
-              </tr>
-              <tr>
-                <td>Clarity</td>
-                <td>0.0%</td>
-                <td>0.0%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
       <figure id="fig-36">
-        <figcaption>Figure 36. Adoption of CSS libraries.</figcaption>
+        <div class="table-wrap">
+          <div class="table-wrap-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Library</th>
+                  <th>Desktop</th>
+                  <th>Mobile</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bootstrap</td>
+                  <td class="numeric">27.8%</td>
+                  <td class="numeric">26.9%</td>
+                </tr>
+                <tr>
+                  <td>animate.css</td>
+                  <td class="numeric">6.1%</td>
+                  <td class="numeric">6.4%</td>
+                </tr>
+                <tr>
+                  <td>ZURB Foundation</td>
+                  <td class="numeric">2.5%</td>
+                  <td class="numeric">2.6%</td>
+                </tr>
+                <tr>
+                  <td>UIKit</td>
+                  <td class="numeric">0.5%</td>
+                  <td class="numeric">0.6%</td>
+                </tr>
+                <tr>
+                  <td>Material Design Lite</td>
+                  <td class="numeric">0.3%</td>
+                  <td class="numeric">0.3%</td>
+                </tr>
+                <tr>
+                  <td>Materialize CSS</td>
+                  <td class="numeric">0.2%</td>
+                  <td class="numeric">0.2%</td>
+                </tr>
+                <tr>
+                  <td>Pure CSS</td>
+                  <td class="numeric">0.1%</td>
+                  <td class="numeric">0.1%</td>
+                </tr>
+                <tr>
+                  <td>Angular Material</td>
+                  <td class="numeric">0.1%</td>
+                  <td class="numeric">0.1%</td>
+                </tr>
+                <tr>
+                  <td>Semantic-ui</td>
+                  <td class="numeric">0.1%</td>
+                  <td class="numeric">0.1%</td>
+                </tr>
+                <tr>
+                  <td>Bulma</td>
+                  <td class="numeric">0.0%</td>
+                  <td class="numeric">0.0%</td>
+                </tr>
+                <tr>
+                  <td>Ant Design</td>
+                  <td class="numeric">0.0%</td>
+                  <td class="numeric">0.0%</td>
+                </tr>
+                <tr>
+                  <td>tailwindcss</td>
+                  <td class="numeric">0.0%</td>
+                  <td class="numeric">0.0%</td>
+                </tr>
+                <tr>
+                  <td>Milligram</td>
+                  <td class="numeric">0.0%</td>
+                  <td class="numeric">0.0%</td>
+                </tr>
+                <tr>
+                  <td>Clarity</td>
+                  <td class="numeric">0.0%</td>
+                  <td class="numeric">0.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figcaption>Figure 36. Percent of pages that include a given CSS library.</figcaption>
       </figure>
-      <p>This chart makes me think that Bootstrap is a strong skill to have for getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only: the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites <em>are not</em> using a CSS framework. Very interesting, no!?</p>
-      <h3 id="reset-utilities">Reset Utilities</h3>
+      <p>This chart suggests that <a href="https://getbootstrap.com/">Bootstrap</a> is a valuable library to know to assist with getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only: the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites <em>are not</em> using a known CSS framework. Very interesting, no?!</p>
+      <h3 id="reset-utilities">Reset utilities</h3>
       <p>CSS reset utilities intend to normalize or create a baseline for native web elements. In case you didn't know, each browser serves its own stylesheet for all HTML elements, and each browser gets to make their own unique decisions about how those elements look or behave. Reset utilities have looked at these files, found their common ground (or not), and ironed out any differences so you as a developer can style in one browser and have reasonable confidence it will look the same in another.</p>
       <p>So let's take a peek at how many sites are using one! Their existence seems quite reasonable, so how many folks agree with their tactics and use them in their sites?</p>
       <figure id="fig-37">
-        <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&amp;format=interactive"></iframe>
-        <a href="/static/images/2019/02_CSS/fig1.png" class="fig-mobile">
-          <img src="/static/images/2019/02_CSS/fig1.png" aria-labelledby="fig1-caption" width="600" />
+        <iframe aria-labelledby="fig37-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/02_CSS/fig37.png" class="fig-mobile">
+          <img src="/static/images/2019/02_CSS/fig37.png" aria-labelledby="fig37-caption" width="600" />
         </a>
-        <div id="fig1-caption" class="visually-hidden"></div>
-        <figcaption>Figure 1. Popularity of color formats.</figcaption>
+        <div id="fig37-caption" class="visually-hidden">Bar chart showing the adoption of three CSS reset utilities: Normalize.css (33%), Reset CSS (3%), and Pure CSS (0%). There is no difference in adoption across desktop and mobile pages.</div>
+        <figcaption>Figure 37. Adoption of CSS reset utilities.</figcaption>
       </figure>
-      <p><code>&lt;bar chart of 02_011e&gt;</code></p>
-      <p>Turns out that about 1/3 of the web is using <a href="https://necolas.github.io/normalize.css">normalize.css</a>, which could be considered a more gentle approach to the task then a reset is. We looked a little deeper, and it turns out that Bootstrap.css includes normalize.css, which likely accounts for a massive amount of its usage. It's worth noting as well that normalize.css has more adoption than Bootstrap, so there are plenty of folks using it on its own.</p>
-      <h3 id="supports--import"><a href="https://github.com/supports">@supports</a> &amp; <a href="https://github.com/import">@import</a></h3>
+      <p>
+        Turns out that about one-third of the web is using <a href="https://necolas.github.io/normalize.css"><code>normalize.css</code></a
+        >, which could be considered a more gentle approach to the task then a reset is. We looked a little deeper, and it turns out that Bootstrap includes <code>normalize.css</code>, which likely accounts for a massive amount of its usage. It's worth noting as well that <code>normalize.css</code> has more adoption than Bootstrap, so there are plenty of folks using it on its own.
+      </p>
+      <h3 id="supports-and-import"><code>@supports</code> and <code>@import</code></h3>
       <p>CSS <code>@supports</code> is a way for the browser to check whether a particular property-value combination is parsed as valid, and then apply styles if the check returns as true.</p>
       <figure id="fig-38">
-        <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&amp;format=interactive"></iframe>
-        <a href="/static/images/2019/02_CSS/fig1.png" class="fig-mobile">
-          <img src="/static/images/2019/02_CSS/fig1.png" aria-labelledby="fig1-caption" width="600" />
+        <iframe aria-labelledby="fig38-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&amp;format=interactive"></iframe>
+        <a href="/static/images/2019/02_CSS/fig38.png" class="fig-mobile">
+          <img src="/static/images/2019/02_CSS/fig38.png" aria-labelledby="fig38-caption" width="600" />
         </a>
-        <div id="fig1-caption" class="visually-hidden"></div>
-        <figcaption>Figure 1. Popularity of color formats.</figcaption>
+        <div id="fig38-caption" class="visually-hidden">Bar chart showing the popularity of @import and @supports "at" rules. On desktop, @import is used on 28% of pages and @supports is used on 31%. For mobile @import is used on 26% of pages and @supports is used on 29%.</div>
+        <figcaption>Figure 38. Popularity of CSS "at" rules.</figcaption>
       </figure>
-      <p><code>&lt;bar chart of 02_02f&gt;</code></p>
-      <p><strong>Figure 2:</strong> <a href="https://github.com/supports">@supports</a> usage across mobile and desktop</p>
-      <p>Considering <code>@supports</code> was implemented across most browsers in 2013, it's not too surprising to see a high amount of usage and adoption. We're impressed at the mindfulness of developers here -- this is considerate coding! 29% of all websites are checking for some display related support before using it. 👍</p>
-      <p>An interesting follow up to this is, that there's more usage of <code>@supports</code> than <code>@imports</code>!</p>
-      <figure id="fig-39">
-        <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&amp;format=interactive"></iframe>
-        <a href="/static/images/2019/02_CSS/fig1.png" class="fig-mobile">
-          <img src="/static/images/2019/02_CSS/fig1.png" aria-labelledby="fig1-caption" width="600" />
-        </a>
-        <div id="fig1-caption" class="visually-hidden"></div>
-        <figcaption>Figure 1. Popularity of color formats.</figcaption>
-      </figure>
-      <p><code>&lt;bar chart of 02_02e&gt;</code></p>
-      <p>We did not expect that! <code>@import</code> has been in browsers since ~1994.</p>
+      <p>Considering <code>@supports</code> was implemented across most browsers in 2013, it's not too surprising to see a high amount of usage and adoption. We're impressed at the mindfulness of developers here. This is considerate coding! 30% of all websites are checking for some display related support before using it.</p>
+      <p>An interesting follow up to this is that there's more usage of <code>@supports</code> than <code>@imports</code>! We did not expect that! <code>@import</code> has been in browsers since 1994.</p>
       <h2 id="conclusion">Conclusion</h2>
       <p>There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made the summarizing very fun, and left us with lots of clues and trails to investigate if we want to hunt down the reasons <em>why</em> some of the results are the way they are.</p>
       <p>Which results did you find the most alarming? Which results make you head to your codebase for a quick query?</p>
-      <p>We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to <a href="https://twitter.com/una">@una</a> or <a href="https://twitter.com/argyleink">@argyleink</a> with your queries, questions and assertions. We'd love to hear about them.</p>
+      <p>We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to <a href="https://twitter.com/una">@una</a> or <a href="https://twitter.com/argyleink">@argyleink</a> in the comments with your queries, questions, and assertions. We'd love to hear them!</p>
     </section>
     {{ render_actions() }}
     <section class="authors">
