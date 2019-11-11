@@ -139,7 +139,9 @@
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
       <h1 class="title">
-        {{ metadata.get('title') }}
+        {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
+        <span class="chapter-unedited">[Unedited]</span>
+        {% endif %}
       </h1>
       <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
       {{ render_byline() }}

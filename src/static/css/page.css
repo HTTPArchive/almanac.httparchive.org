@@ -133,6 +133,14 @@
   margin-left: -1em
 }
 
+.chapter-unedited {
+  font-family: monospace;
+  text-transform: uppercase;
+  color: red;
+  vertical-align: super;
+  font-size: 0.5em;
+}
+
 .content-banner {
   max-width: 100%;
   border-radius: 8px;
