@@ -141,7 +141,9 @@ def bad_request(e):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    logging.exception('An error occurred during a request due to page not found.')
+    message = ('An error occurred during a request due to page not found. (Requested url: %s)' % (request.url))
+    logging.exception(message)
+
     return render_template('error/404.html', error=e), 404
 
 
