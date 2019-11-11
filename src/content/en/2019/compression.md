@@ -227,7 +227,7 @@ The content types with the lowest compression rates include `application/json`, 
 
 Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are `application/javascript`, `text/css` and `application/x-javascript`. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them. 
 
-## First -arty vs third-party compression
+## First-party vs third-party compression
 
 In the [Third Parties](./third-parties) chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. 
 
