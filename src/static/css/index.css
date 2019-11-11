@@ -146,6 +146,7 @@ p {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  text-align: center;
 }
 
 .featured-chapter-content-data-item div:first-of-type {
