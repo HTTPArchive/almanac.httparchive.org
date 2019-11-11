@@ -21,8 +21,7 @@
         {
           "part": "I",
           "chapter": "4",
-          "title": "Media",
-          "todo": true
+          "title": "Media"
         },
         {
           "part": "I",
@@ -32,8 +31,7 @@
         {
           "part": "I",
           "chapter": "6",
-          "title": "Fonts",
-          "todo": true
+          "title": "Fonts"
         }
       ]
     },
