@@ -38,7 +38,7 @@ Perhaps the largest push to increasing security and privacy online we're seeing 
 
 Figure 2 shows the support for various protocol versions. Use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in [August 2018](https://tools.ietf.org/html/rfc8446)), over 40% of requests using TLS are using the latest version!
 
-This is likely due to many sites using requests from the larger players for [third-party content](./third-party). For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.
+This is likely due to many sites using requests from the larger players for [third-party content](./third-parties). For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.
 
 If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to [CMS](./cms) sites like Wordpress and [CDNs](./cdn):
 
@@ -373,7 +373,7 @@ Given the nature of the header, it is unsurprising to see almost no usage report
 Cookies have many security protections available and whilst some of those are long standing, having been available for years, some of them are really quite new have been introduced only in the last couple of years.
 
 ### `Secure`
-The `Secure` flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is quick depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement (third-party](./third-party) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.
+The `Secure` flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is quick depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement [third-party](./third-parties) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.
 
 ### `HttpOnly`
 The `HttpOnly` flag on a cookie instructs the browser to prevent JavaScript on the page from accessing the cookie. Many cookies are only used by the server so are not needed by the JavaScript on the page, so restricting access to a cookie is a great protection against XSS attacks from stealing the cookie. We find that a much larger % of sites issuing a cookie with this flag on their homepage at 24.24% on desktop and 22.23% on mobile.
