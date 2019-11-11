@@ -108,7 +108,7 @@ A `noindex` tag can be served in the HTML `<head>` or in the HTTP headers as an 
 
 96.93% of mobile pages passed the [Lighthouse indexing audit](https://developers.google.com/web/tools/lighthouse/audits/indexing), meaning that these pages didn't contain a `noindex` tag in the `<head>` or in the HTTP headers. However, this means that 3.07% of mobile home pages _did_ have a `noindex` tag, which is cause for concern, meaning that Google was prevented from indexing these pages.
 
-<aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our [Methodology](./methodology#websites).</aside>
+<aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
 
 #### Canonicalization
 
