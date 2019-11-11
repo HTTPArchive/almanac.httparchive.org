@@ -97,7 +97,7 @@ Rank | Third party domain | Percent of requests
 <figcaption>Figure 3. Top 10 most popular third party domains.</figcaption>
 </figure>
 
-<figure>
+<figure markdown>
 Rank | Third party URL | Percent of requests
 -- | -- | --
 1 | `https://www.google-analytics.com/analytics.js` | 0.64%
