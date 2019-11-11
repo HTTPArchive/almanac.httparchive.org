@@ -50,19 +50,69 @@ There are three metrics to consider when looking at pixel volume: CSS pixels and
 Looking at the CSS pixel and the Natural pixel volume we can see that the median website has a layout that displays 1MegaPixel of media content. At the 90th percentile, the CSS layout pixel volume grows to 4.6MP and 6.3MP mobile and desktop respectively. This is interesting not only because the responsive layout is likely different, but also because the form factor is different. In short, the mobile layout has less space allocated for media compared to the desktop.
 
 In contrast, the natural, or file, pixel volume is between 2 and 2.6 times the layout volume. The median desktop web page sends 2.1MP of pixel content that is displayed in 1.1MP of layout space. At the 90th percentile for mobile we see 12MP squeezed into 4.6MP.  
- (Absolute Pixel Volume per page figure)
+ 
+ <figure>
+  <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"></iframe>
+  <a href="/static/images/2019/04_Media/fig3.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig3.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig3-caption" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels</div>
+  <figcaption>Figure 3. Image Pixels Per Page (Mobile): CSS v. Actual</figcaption>
+</figure>
+
+* Mobile Image Pixels Per Web Page in MegaPixels *
+_ (512x360 @3x) _
+
+ |||||||
+|--- |--- |--- |--- |--- |--- |
+||p10|p25|p50|p75|p90|
+|Actual Image Pixel Volume|0.07 MP|0.38 MP|1.6 MP|5.1 MP|12 MP|
+|CSS Pixel Volume|0.04 MP|0.18 MP|0.65 MP|1.8 MP|4.6 MP|
+
+<figure>
+  <iframe aria-labelledby="fig4-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"></iframe>
+  <a href="/static/images/2019/04_Media/fig4.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig4.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig4-caption" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels</div>
+  <figcaption>Figure 4. Image Pixels Per Page (Desktop): CSS v. Actual</figcaption>
+</figure>
+
+* Desktop Image Pixels Per Web Page (in MegaPixels) *
+_ (1200x1920 @1x) _
+
+|||||||
+|--- |--- |--- |--- |--- |--- |
+||p10|p25|p50|p75|p90|
+|Actual Image Pixel Volume|0.09 MP|0.52 MP|2.1 MP|6.0 MP|14 MP|
+|CSS Pixel Volume|0.05 MP|0.29 MP|1.1 MP|2.8 MP|6.3 MP|
+
 
 Of course, the form factor for a mobile device is different than a desktop. A mobile device is smaller and usually held in portrait mode while the desktop is larger and used in landscape mode. As mentioned earlier, a mobile device also typically has a higher DPR because it is held much closer to the eye, requiring more pixels per inch compared to what you would need on a billboard in Times Square. These differences force layout changes and users on mobile more commonly scroll through a site to consume the entirety of content compared to what you can display on a single desktop layout.
 
 Megapixels are a challenging metric because it is a largely abstract metric. A useful way to express this volume of pixels being used on a web page is to represent it as a ratio relative to the display size. 
 
-For our mobile device, we have a display of 512x360 which is 0.18 MP of CSS content. (Not to be confused with the physical screen which is 3X or 3^2 more pixels which is 1.7MP) Dividing this viewer pixel volume by the number of CSS pixels allocated to images we get a relative pixel volume.
+For the mobile device used in the web page crawl, we have a display of `512 x 360` which is 0.18 MP of CSS content. (Not to be confused with the physical screen which is `3x` or 3^2 more pixels which is 1.7MP) Dividing this viewer pixel volume by the number of CSS pixels allocated to images we get a relative pixel volume.
 
 If we had one image that filled the entire screen perfectly, this would be a 1x pixel fill rate. Of course, rarely does a website fill the entire canvas with a single image. Media content tends to be mixed in with the design and other content. A value greater than 1x implies that the layout requires the user to scroll to see the additional image content. 
 
 NB: this is only looking at the CSS layout for both the viper and the volume of layout content. It is not evaluating the effectiveness of the responsive images or the effectiveness of providing high DPR content. 
 
 (figure: relative pixel volume per page o screen size)
+<figure>
+  <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"></iframe>
+  <a href="/static/images/2019/04_Media/fig5.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig5.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig5-caption" class="visually-hidden">A comparison of the pixel volume required per page relative to the actual screen size in CSS pixels.</div>
+  <figcaption>Figure 5. Image Pixel Volume v. Screen Size (CSS Pixels)</figcaption>
+</figure>
+
+|||||||
+|--- |--- |--- |--- |--- |--- |
+||p10|p25|p50|p75|p90|
+|Mobile|20%|97%|354%|1003%|2477%|
+|Desktop|2%|13%|46%|123%|273%|
 
 For the median web page on desktop, only 46% of the display would have layout containing images and video. In contrast, on mobile, the volume of media pixels fills 3.5 times the actual viewport size. The layout has more content than can be filled in a single screen, requiring the user to scroll. At a minimum, there is 3.5 scrolling pages of content per site (assuming 100% saturation). At the 90th percentile for mobile, this grows substantially to 25x the viewport size!
 
