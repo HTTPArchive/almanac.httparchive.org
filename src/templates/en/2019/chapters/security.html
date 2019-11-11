@@ -251,11 +251,11 @@
             <li>
               <a href="#modern-web-platform-defenses">Modern web platform defenses</a>
             </li>
-
-            <li>
-              <a href="#tying-it-all-together">Tying it all together</a>
-            </li>
           </ul>
+        </li>
+
+        <li>
+          <a href="#tying-it-all-together">Tying it all together</a>
         </li>
       </ul>
     </div>
@@ -272,19 +272,18 @@
       <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
-      <p>The Security chapter of the Web Almanac looks at the current status of security on the web. With security and privacy becoming increasingly more important online there has been an increase in the availability of features to protect site operators and users. We're going to look at the adoption of these new features across the web.</p>
+      <p>This chapter of the Web Almanac looks at the current status of security on the web. With security and privacy becoming increasingly more important online there has been an increase in the availability of features to protect site operators and users. We're going to look at the adoption of these new features across the web.</p>
       <h2 id="transport-layer-security">Transport Layer Security</h2>
-      <p>Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security. TLS (or the older version SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great <a href="https://httparchive.org/reports/state-of-the-web#pctHttps">increase in the use of HTTPS across the web</a>, but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.</p>
+      <p>Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security (TLS). TLS (or the older version, SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great <a href="https://httparchive.org/reports/state-of-the-web#pctHttps">increase in the use of HTTPS across the web</a>, but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.</p>
       <figure id="fig-1">
         <iframe aria-labelledby="fig1-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive"></iframe>
         <a href="/static/images/2019/08_Security/fig1.png" class="fig-mobile">
           <img src="/static/images/2019/08_Security/fig1.png" aria-labelledby="fig1-caption" width="760" />
         </a>
         <div id="fig1-caption" class="visually-hidden">Figure 1. Usage of HTTP versus HTTPS</div>
-        <figcaption>Figure 1. Usage of HTTP versus HTTPS</figcaption>
+        <figcaption>Figure 1. Usage of HTTP versus HTTPS.</figcaption>
       </figure>
       <h3 id="protocol-versions">Protocol versions</h3>
-      <p>Looking at the support for various protocol versions we get the statistics in figure 2:</p>
       <figure id="fig-2">
         <iframe aria-labelledby="fig2-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive"></iframe>
         <a href="/static/images/2019/08_Security/fig2.png" class="fig-mobile">
@@ -293,9 +292,9 @@
         <div id="fig2-caption" class="visually-hidden">Figure 2. Usage of TLS protocol versions.</div>
         <figcaption>Figure 2. Usage of TLS protocol versions.</figcaption>
       </figure>
-      <p>Use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in <a href="https://tools.ietf.org/html/rfc8446">August 2018</a>), over 40% of requests using TLS are using the latest version!</p>
-      <p>This is likely due to many sites using requests from the larger players for <a href="./third-party">third-party content</a>. For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.</p>
-      <p>If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to <a href="./cms">CMS</a> sites like Wordpress and <a href="./cdns">CDNs</a>:</p>
+      <p>Figure 2 shows the support for various protocol versions. Use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in <a href="https://tools.ietf.org/html/rfc8446">August 2018</a>), over 40% of requests using TLS are using the latest version!</p>
+      <p>This is likely due to many sites using requests from the larger players for <a href="./third-parties">third-party content</a>. For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.</p>
+      <p>If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to <a href="./cms">CMS</a> sites like Wordpress and <a href="./cdn">CDNs</a>:</p>
       <figure id="fig-3">
         <iframe aria-labelledby="fig3-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive"></iframe>
         <a href="/static/images/2019/08_Security/fig3.png" class="fig-mobile">
@@ -304,9 +303,9 @@
         <div id="fig3-caption" class="visually-hidden">Figure 3. Usage of TLS protocol versions for home page requests only.</div>
         <figcaption>Figure 3. Usage of TLS protocol versions for home page requests only.</figcaption>
       </figure>
-      <p>On the other hand, the <a href="./methodology">methodology</a> used by the Web Almanac will also <em>under report</em> usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.</p>
+      <p>On the other hand, the <a href="./methodology">methodology</a> used by the Web Almanac will also <em>underreport</em> usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.</p>
       <h3 id="certificate-authorities">Certificate Authorities</h3>
-      <p>Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority. With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top ten certificate issuers based on the volume of TLS requests that use their certificate.</p>
+      <p>Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority (CA). With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top ten certificate issuers based on the volume of TLS requests that use their certificate.</p>
       <figure id="fig-4">
         <div class="table-wrap">
           <div class="table-wrap-container">
@@ -595,7 +594,7 @@
       <p>There are a number of requirements for preloading, which are outlined on the <a href="https://hstspreload.org/">HSTS preload</a> site. We can see that only a small number of sites, 0.31% on desktop and 0.26% on mobile, are eligible according to current criteria. Sites should ensure they have fully transitions all sites under their domain to HTTPS before submitting to preload the domain or they risk blocking access to HTTP-only sites.</p>
       <h3 id="content-security-policy">Content Security Policy</h3>
       <p>Web applications face frequent attacks where hostile content finds its way into a page. The most worrisome form of content is JavaScript and when an attacker finds a way to insert JavaScript into a page, they can launch damaging attacks. These attacks are known as <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">Cross-Site Scripting (XSS)</a> and <a href="https://www.w3.org/TR/CSP2/">Content Security Policy (CSP)</a> provides an effective defense against these attacks.</p>
-      <p>CSP is an HTTP header (`Content-Security-Policy') published by a website which tells the browser rules around content allowed on a site. If additional content is injected into the site due to a security flaw, and it is not allowed by the policy, the browser will block it from being used. Alongside XSS protection, CSP also offers several other key benefits such as <a href="#upgrade-insecure-requests">making migration to HTTP easier</a>.</p>
+      <p>CSP is an HTTP header (<code>Content-Security-Policy</code>) published by a website which tells the browser rules around content allowed on a site. If additional content is injected into the site due to a security flaw, and it is not allowed by the policy, the browser will block it from being used. Alongside XSS protection, CSP also offers several other key benefits such as <a href="#upgrade-insecure-requests">making migration to HTTP easier</a>.</p>
       <p>Despite the many benefits of CSP, it can be complicated to implement on websites since its very purpose is to limit what is acceptable on a page. The policy must allow all content and resources you need and can easily get large and complex. Tools like <a href="https://report-uri.com/">Report URI</a> can help you analyze and build the appropriate policy.</p>
       <p>We find that only 5.51% of desktop pages include a CSP and only 4.73% of mobile pages include a CSP, likely due to the complexity of deployment.</p>
       <h4 id="hashnonce">Hash/nonce</h4>
@@ -681,7 +680,7 @@
         </div>
         <figcaption>Figure 11. <code>Referrer-Policy</code> configuration option usage.</figcaption>
       </figure>
-      <p>This table shows the valid values set by pages and that 99.75% of desktop pages and 96.55% of mobile pages are setting a valid policy. The most popular choice of configuration is <code>no-referrer-when-downgrade</code> which will prevent the <code>Referer</code> header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is <code>strict-origin-when-cross-origin</code> which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the <code>Referer</code> it will only contain the origin of the source and not the full URL (for example <code>https://www.example.com</code> rather than <code>https://www.example.com/page/that/referred/you</code>). Details on the other valid configurations can be found in the <a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrer Policy specification</a>, though such a high usage of <code>unsafe-url</code> warrants further investigation but is likely to be a <a href="./thirdparty">third-party</a> like analytics or advertisements.</p>
+      <p>This table shows the valid values set by pages and that 99.75% of desktop pages and 96.55% of mobile pages are setting a valid policy. The most popular choice of configuration is <code>no-referrer-when-downgrade</code> which will prevent the <code>Referer</code> header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is <code>strict-origin-when-cross-origin</code> which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the <code>Referer</code> it will only contain the origin of the source and not the full URL (for example <code>https://www.example.com</code> rather than <code>https://www.example.com/page/that/referred/you</code>). Details on the other valid configurations can be found in the <a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrer Policy specification</a>, though such a high usage of <code>unsafe-url</code> warrants further investigation but is likely to be a <a href="./third-parties">third-party</a> like analytics or advertisements.</p>
       <h3 id="feature-policy">Feature Policy</h3>
       <p>
         As the web platform becomes more powerful and feature rich, attackers can these new APIs in interesting ways. In order to limit abuse of powerful APIs, a site operator can issue a <a href="https://w3c.github.io/webappsec-feature-policy/"><code>Feature-Policy</code></a> header to disable features that are not required, preventing them from being abused.
@@ -779,7 +778,7 @@
         </div>
         <figcaption>Figure 13. Settings used for <code>microphone</code> feature.</figcaption>
       </figure>
-      <p>By far the most common approach here is to block use of the microphone altogether, with ~9% of pages taking that approach. A small number of pages do allow the use of the microphone by their own origin and interestingly, a small selection of pages intentionally allow use of the microphone by any origin loading content in their page.</p>
+      <p>By far the most common approach here is to block use of the microphone altogether, with about 9% of pages taking that approach. A small number of pages do allow the use of the microphone by their own origin and interestingly, a small selection of pages intentionally allow use of the microphone by any origin loading content in their page.</p>
       <h3 id="x-frame-options"><code>X-Frame-Options</code></h3>
       <p>
         The <a href="https://tools.ietf.org/html/rfc7034"><code>X-Frame-Options</code></a> header allows a page to control whether or not it can be placed in an iframe by another page. Whilst lacking the flexibility of <code>frame-ancestors</code> in CSP, mentioned above, it was effective if you didn't require fine grained control of framing.
@@ -883,7 +882,7 @@
       <h2 id="cookies">Cookies</h2>
       <p>Cookies have many security protections available and whilst some of those are long standing, having been available for years, some of them are really quite new have been introduced only in the last couple of years.</p>
       <h3 id="secure"><code>Secure</code></h3>
-      <p>The <code>Secure</code> flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is quick depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement (third-party](./third-party) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.</p>
+      <p>The <code>Secure</code> flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is quick depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement <a href="./third-parties">third-party</a> requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.</p>
       <h3 id="httponly"><code>HttpOnly</code></h3>
       <p>The <code>HttpOnly</code> flag on a cookie instructs the browser to prevent JavaScript on the page from accessing the cookie. Many cookies are only used by the server so are not needed by the JavaScript on the page, so restricting access to a cookie is a great protection against XSS attacks from stealing the cookie. We find that a much larger % of sites issuing a cookie with this flag on their homepage at 24.24% on desktop and 22.23% on mobile.</p>
       <h3 id="samesite"><code>SameSite</code></h3>
@@ -997,7 +996,7 @@
       <p>
         Similarly, convenience features such as the <a href="#report-to">Reporting API</a>, <a href="#network-error-logging">Network Error Logging</a> and the <a href="#clear-site-data"><code>Clear-Site-Data</code></a> header are also still in their infancy and are currently being used by a small number of sites.
       </p>
-      <h3 id="tying-it-all-together">Tying it all together</h3>
+      <h2 id="tying-it-all-together">Tying it all together</h2>
       <p>At web scale, the total coverage of opt-in platform security features is currently relatively low. Even the most broadly adopted protections are enabled by less than a quarter of websites, leaving the majority of the web without platform safeguards against common security issues; more recent security mechanisms, such as Content Security Policy or Referrer Policy, are enabled by less than 5% of websites.</p>
       <p>It is important to note, however, that the adoption of these mechanisms is skewed towards larger web applications which frequently handle more sensitive user data. The developers of these sites more frequently invest in improving their web defenses, including enabling a range of protections against common vulnerabilities; tools such as <a href="https://observatory.mozilla.org/">Mozilla Observatory</a> and <a href="https://securityheaders.com/">Security Headers</a> can provide a useful checklist of web available security features.</p>
       <p>If your web application handles sensitive user data, consider enabling the security mechanisms outlined in this section to protect your users and make the web safer.</p>
