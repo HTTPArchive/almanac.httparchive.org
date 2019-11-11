@@ -101,7 +101,7 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
       <img src="/static/images/2019/01_JavaScript/fig6.png" aria-labelledby="fig6-caption" width="600">
    </a>
 	<div id="fig6-caption" class="visually-hidden">Figure 6. Distribution of first and third-party scripts on desktop</div>
-	<figcaption>Figure 6. Distribution of first and third party scripts on desktop.</figcaption>
+	<figcaption>Figure 6. Distribution of first and third-party scripts on desktop.</figcaption>
 </figure>
 
 <figure>
@@ -421,7 +421,7 @@ With HTTP Archive, we can take a look at any newer API that is supported (or is 
 	<figcaption>Figure 17. Usage of new JavaScript APIs.</figcaption>
 </figure>
 
-Atomics (0.38%) and SharedArrayBuffer (0.20%) are barely visible on this chart since they are used on such few pages. Each of the other APIs here
+Atomics (0.38%) and SharedArrayBuffer (0.20%) are barely visible on this chart since they are used on such few pages.
 
 It is important to note that the numbers here are approximations and they do not leverage [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) to measure feature usage.
 

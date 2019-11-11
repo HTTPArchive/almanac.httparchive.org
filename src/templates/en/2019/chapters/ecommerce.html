@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"III","chapter_number":13,"title":"Ecommerce","description":"Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third parties, performance, seo, and PWAs.","authors":["samdutton","alankent"],"reviewers":["voltek62"],"discuss":"1768","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-07T21:46:11.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"III","chapter_number":13,"title":"Ecommerce","description":"Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, seo, and PWAs.","authors":["samdutton","alankent"],"reviewers":["voltek62"],"discuss":"1768","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-07T21:46:11.000Z "} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -155,11 +155,11 @@
         </li>
 
         <li>
-          <a href="#third-party-requests-and-bytes">Third party requests and bytes</a>
+          <a href="#third-party-requests-and-bytes">Third-party requests and bytes</a>
         </li>
 
         <li>
-          <a href="#third-party-requests-and-payload-per-platform">Third party requests and payload per platform</a>
+          <a href="#third-party-requests-and-payload-per-platform">Third-party requests and payload per platform</a>
         </li>
 
         <li>
@@ -194,7 +194,7 @@
       <ul>
         <li><strong>Paid-for services</strong> such as <a href="https://www.shopify.com/">Shopify</a> that host your store and help you get started. They provide website hosting, site and page templates, product-data management, shopping carts and payments.</li>
         <li><strong>Software platforms</strong> such as <a href="https://magento.com/products/magento-open-source">Magento Open Source</a> which you set up, host and manage yourself. These platforms can be powerful and flexible, but may be more complex to set up and run than services such as Shopify.</li>
-        <li><strong>Hosted platforms</strong> such as <a href="https://magento.com/products/magento-commerce">Magento Commerce</a> that offer the same features as their self-hosted counterparts, except that hosting is managed as a service by a third party.</li>
+        <li><strong>Hosted platforms</strong> such as <a href="https://magento.com/products/magento-commerce">Magento Commerce</a> that offer the same features as their self-hosted counterparts, except that hosting is managed as a service by a third-party.</li>
       </ul>
       <figure id="fig-1">
         <div class="big-number">10%</div>
@@ -295,7 +295,7 @@
         <a href="/static/images/2019/13_Ecommerce/fig4.png" class="fig-mobile">
           <img src="/static/images/2019/13_Ecommerce/fig4.png" aria-labelledby="fig4-caption" width="600" />
         </a>
-        <div id="fig4-caption" class="visually-hidden">Bar chart of the adoption of top 20 ecommerce plaforms. Refer to Figure 3 above for a data table of adoption of the top six platforms.</div>
+        <div id="fig4-caption" class="visually-hidden">Bar chart of the adoption of top 20 ecommerce platforms. Refer to Figure 3 above for a data table of adoption of the top six platforms.</div>
         <figcaption>Figure 4. Adoption of top ecommerce platforms.</figcaption>
       </figure>
       <p>There are 110 ecommerce platforms that each have fewer than 0.1% of desktop or mobile websites. Around 60 of these have fewer than 0.01% of mobile or desktop websites.</p>
@@ -338,7 +338,7 @@
         <figcaption>Figure 8. Distribution of requests per ecommerce page.</figcaption>
       </figure>
       <p>The median desktop ecommerce platform page loads 108 requests and 2.7 MB. The median weight for <em>all</em> desktop pages is 74 requests and <a href="./page-weight#page-weight">1.9 MB</a>. In other words, ecommerce pages make nearly 50% more requests than other web pages, with payloads around 35% larger. By comparison, the <a href="https://amazon.com">amazon.com</a> home page makes around 300 requests on first load, for a page weight of around 5 MB, and <a href="https://ebay.com">ebay.com</a> makes around 150 requests for a page weight of approximately 3 MB. The page weight and number of requests for home pages on ecommerce platforms is slightly smaller on mobile at every percentile, but around 10% of all ecommerce home pages load more than 7 MB and make over 200 requests.</p>
-      <p>This data accounts for home page payload and requests without scrolling. Clearly there are a significant proportion of sites that appear to be retrieving more files (the median is over 100), with a larger total payload, than should be necessary for first load. See also: <a href="#third-party-requests-and-bytes">Third party requests and bytes</a> below.</p>
+      <p>This data accounts for home page payload and requests without scrolling. Clearly there are a significant proportion of sites that appear to be retrieving more files (the median is over 100), with a larger total payload, than should be necessary for first load. See also: <a href="#third-party-requests-and-bytes">Third-party requests and bytes</a> below.</p>
       <p>We need to do further research to better understand why so many home pages on ecommerce platforms make so many requests and have such large payloads. The authors regularly see home pages on ecommerce platforms that make hundreds of requests on first load, with multi-megabyte payloads. If the number of requests and payload are a problem for performance, then how can they be reduced?</p>
       <h2 id="requests-and-payload-by-type">Requests and payload by type</h2>
       <p>The charts below are for desktop requests:</p>
@@ -580,7 +580,7 @@
         <div class="big-number">1,517 KB</div>
         <figcaption>Figure 14. The median number of image bytes per mobile ecommerce page.</figcaption>
       </figure>
-      <p>A significant proportion of ecommerce pages have sizeable image payloads and make a large number of image requests on first load. See HTTP Archive's <a href="https://httparchive.org/reports/state-of-images">State of Images</a> report and the <a href="./media">media</a> and <a href="./page-weight">page weight</a> chapters for more context.</p>
+      <p>A significant proportion of ecommerce pages have sizable image payloads and make a large number of image requests on first load. See HTTP Archive's <a href="https://httparchive.org/reports/state-of-images">State of Images</a> report and the <a href="./media">media</a> and <a href="./page-weight">page weight</a> chapters for more context.</p>
       <p>Website owners want their sites to look good on modern devices. As a result, many sites deliver the same high resolution product images to every user <em>without regard for screen resolution or size</em>. Developers may not be aware of (or not want to use) responsive techniques that enable efficient delivery of the best possible image to different users. It's worth remembering that high-resolution images may not necessarily increase conversion rates. Conversely, overuse of heavy images is likely to impact page speed and can&nbsp;thereby <em>reduce</em> conversion rates. In the authors' experience from site reviews and events, some developers and other stakeholders have SEO or other concerns about using lazy loading for images.</p>
       <p>We need to do more analysis to better understand why some sites are not using responsive image techniques or lazy loading. We also need to provide guidance that helps ecommerce platforms to reliably deliver beautiful images to those with high end devices and good connectivity, while simultaneously providing a best-possible experience to lower-end devices and those with poor connectivity.</p>
       <h2 id="popular-image-formats">Popular image formats</h2>
@@ -658,51 +658,51 @@
             </table>
           </div>
         </div>
-        <figcaption>Figure 16. Distribution of instrinsic image dimensions (in pixels) per ecommerce page.</figcaption>
+        <figcaption>Figure 16. Distribution of intrinsic image dimensions (in pixels) per ecommerce page.</figcaption>
       </figure>
       <p>The median ('mid-range') dimensions for images requested by ecommerce pages is 247x196 px on mobile and 240x192 px on desktop. 10% of images requested by ecommerce pages are at least 693x512 px on mobile and 800x546 px on desktop. Note that these dimensions are the intrinsic sizes of images, not their display size.</p>
       <p>Given that image dimensions at each percentile up to the median are similar on mobile and desktop, or even slightly <em>larger</em> on mobile in some cases, it would seem that many sites are not delivering different image dimensions for different viewports, or in other words, not using responsive image techniques. The delivery of <em>larger</em> images to mobile in some cases may (or may not!) be explained by sites using device or screen detection.</p>
       <p>We need to do more research into why many sites are (apparently) not delivering different image sizes to different viewports.</p>
-      <h2 id="third-party-requests-and-bytes">Third party requests and bytes</h2>
-      <p>Many websites—especially online stores—load a significant amount of code and content from third parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third party content can have a <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">significant impact on performance</a>. <a href="https://twitter.com/patrickhulce">Patrick Hulce</a>'s <a href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> is used to determine third party requests for this report, and this is discussed more in the <a href="./third-parties">Third Parties</a> chapter.</p>
+      <h2 id="third-party-requests-and-bytes">Third-party requests and bytes</h2>
+      <p>Many websites—especially online stores—load a significant amount of code and content from third-parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third-party content can have a <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">significant impact on performance</a>. <a href="https://twitter.com/patrickhulce">Patrick Hulce</a>'s <a href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> is used to determine third-party requests for this report, and this is discussed more in the <a href="./third-parties">Third Parties</a> chapter.</p>
       <figure id="fig-17">
         <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&amp;format=interactive"></iframe>
         <a href="/static/images/2019/13_Ecommerce/fig17.png" class="fig-mobile">
           <img src="/static/images/2019/13_Ecommerce/fig17.png" aria-labelledby="fig17-caption" width="600" />
         </a>
-        <div id="fig17-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third party requests per ecommerce page. The median number of third party requests on desktop is 19. The 10, 25, 75, and 90th percentiles are: 4, 9, 34, and 54. The desktop distribution is higher at each percentile than mobile by only 1-2 requests.</div>
-        <figcaption>Figure 17. Distribution of third party requets per ecommerce page.</figcaption>
+        <div id="fig17-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page. The median number of third-party requests on desktop is 19. The 10, 25, 75, and 90th percentiles are: 4, 9, 34, and 54. The desktop distribution is higher at each percentile than mobile by only 1-2 requests.</div>
+        <figcaption>Figure 17. Distribution of third-party requests per ecommerce page.</figcaption>
       </figure>
       <figure id="fig-18">
         <iframe aria-labelledby="fig18-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&amp;format=interactive"></iframe>
         <a href="/static/images/2019/13_Ecommerce/fig18.png" class="fig-mobile">
           <img src="/static/images/2019/13_Ecommerce/fig18.png" aria-labelledby="fig18-caption" width="600" />
         </a>
-        <div id="fig18-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third party bytes per ecommerce page. The median number of third party bytes on desktop is 320 KB. The 10, 25, 75, and 90th percentiles are: 42, 129, 651, and 1,071. The desktop distribution is higher at each percentile than mobile by 10-30 KB.</div>
-        <figcaption>Figure 18. Distribution of third party bytes per ecommerce page.</figcaption>
+        <div id="fig18-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes per ecommerce page. The median number of third-party bytes on desktop is 320 KB. The 10, 25, 75, and 90th percentiles are: 42, 129, 651, and 1,071. The desktop distribution is higher at each percentile than mobile by 10-30 KB.</div>
+        <figcaption>Figure 18. Distribution of third-party bytes per ecommerce page.</figcaption>
       </figure>
-      <p>The median ('mid-range') home page on an ecommerce platform makes 17 requests for third party content on mobile and 19 on desktop. 10% of all home pages on ecommerce platforms make over 50 requests for third-party content, with a total payload of over 1 MB.</p>
-      <p><a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/">Other studies</a> have indicated that third party content can be a major performance bottleneck. This study shows that 17 or more requests (50 or more for the top 10%) is the norm for ecommerce pages.</p>
-      <h2 id="third-party-requests-and-payload-per-platform">Third party requests and payload per platform</h2>
+      <p>The median ('mid-range') home page on an ecommerce platform makes 17 requests for third-party content on mobile and 19 on desktop. 10% of all home pages on ecommerce platforms make over 50 requests for third-party content, with a total payload of over 1 MB.</p>
+      <p><a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/">Other studies</a> have indicated that third-party content can be a major performance bottleneck. This study shows that 17 or more requests (50 or more for the top 10%) is the norm for ecommerce pages.</p>
+      <h2 id="third-party-requests-and-payload-per-platform">Third-party requests and payload per platform</h2>
       <p>Note the charts and tables below show data for mobile only.</p>
       <figure id="fig-19">
         <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&amp;format=interactive"></iframe>
         <a href="/static/images/2019/13_Ecommerce/fig19.png" class="fig-mobile">
           <img src="/static/images/2019/13_Ecommerce/fig19.png" aria-labelledby="fig19-caption" width="600" />
         </a>
-        <div id="fig19-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third party requests per ecommerce page for each platform. Shopify and Bigcommerce load the most third party requests across the distributions by about 40 requests at the median.</div>
-        <figcaption>Figure 19. Distribution of third party requests per mobile page for each ecommerce platform.</figcaption>
+        <div id="fig19-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party requests across the distributions by about 40 requests at the median.</div>
+        <figcaption>Figure 19. Distribution of third-party requests per mobile page for each ecommerce platform.</figcaption>
       </figure>
       <figure id="fig-20">
         <iframe aria-labelledby="fig20-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&amp;format=interactive"></iframe>
         <a href="/static/images/2019/13_Ecommerce/fig20.png" class="fig-mobile">
           <img src="/static/images/2019/13_Ecommerce/fig20.png" aria-labelledby="fig20-caption" width="600" />
         </a>
-        <div id="fig20-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third party bytes (KB) per ecommerce page for each platform. Shopify and Bigcommerce load the most third party byes across the distributions by more than 1,000 KB at the median.</div>
-        <figcaption>Figure 20. Distribution of third party bytes (KB) per mobile page for each ecommerce platform.</figcaption>
+        <div id="fig20-caption" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes (KB) per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party bytes across the distributions by more than 1,000 KB at the median.</div>
+        <figcaption>Figure 20. Distribution of third-party bytes (KB) per mobile page for each ecommerce platform.</figcaption>
       </figure>
       <p>Platforms such as Shopify may extend their services using client-side JavaScript, whereas other platforms such as Magento use more server side extensions. This difference in architecture affects the figures seen here.</p>
-      <p>Clearly, pages on some ecommerce platforms make more requests for third party content and incur a larger payload of third party content. Further analysis could be done on <em>why</em> pages from some platforms make more requests and have larger third party payloads than others.</p>
+      <p>Clearly, pages on some ecommerce platforms make more requests for third-party content and incur a larger payload of third-party content. Further analysis could be done on <em>why</em> pages from some platforms make more requests and have larger third-party payloads than others.</p>
       <h2 id="first-contentful-paint-fcp">First Contentful Paint (FCP)</h2>
       <figure id="fig-21">
         <iframe aria-labelledby="fig21-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&amp;format=interactive"></iframe>
@@ -712,7 +712,7 @@
         <div id="fig21-caption" class="visually-hidden">Bar chart of the average distribution of FCP experiences for the top six ecommerce platforms. WooCommerce has the highest density of slow FCP experiences at 43%. Shopify has the highest density of fast FCP experiences at 47%.</div>
         <figcaption>Figure 21. Average distribution of FCP experiences per ecommerce platform.</figcaption>
       </figure>
-      <p><a href="./performance#first-contentful-paint">First Contentful Paint</a> measures the time it takes from navigation until content such as text or an image is first displayed. In this context, <strong>fast</strong> means FCP in under one second, <strong>slow</strong> means FCP in 3 seconds or more, and <strong>moderate</strong> is everything in between. Note that third party content and code may have a significant impact on FCP.</p>
+      <p><a href="./performance#first-contentful-paint">First Contentful Paint</a> measures the time it takes from navigation until content such as text or an image is first displayed. In this context, <strong>fast</strong> means FCP in under one second, <strong>slow</strong> means FCP in 3 seconds or more, and <strong>moderate</strong> is everything in between. Note that third-party content and code may have a significant impact on FCP.</p>
       <p>All top-six ecommerce platforms have worse FCP on mobile than desktop: less fast and more slow. Note that FCP is affected by device capability (processing power, memory, etc.) as well as connectivity.</p>
       <p>We need to establish why FCP is worse on mobile than desktop. What are the causes: connectivity and/or device capability, or something else?</p>
       <h2 id="progressive-web-app-pwa-scores">Progressive Web App (PWA) scores</h2>

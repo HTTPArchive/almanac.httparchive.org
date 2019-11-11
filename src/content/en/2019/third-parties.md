@@ -58,7 +58,7 @@ This chapter divides third-party providers into one of these broad categories. A
 
 <figure>
   <div class="big-number">93.59%</div>
-  <figcaption>Figure 1. Percentage of desktop pages that include at least one third party resource.</figcaption>
+  <figcaption>Figure 1. Percentage of desktop pages that include at least one third-party resource.</figcaption>
 </figure>
 
 Third-party code is everywhere. 93% of pages include at least one third-party resource, 76% of pages issue a request to an analytics domain, the median page requests content from at least 9 _unique_ third-party domains that represent 35% of their total network activity, and the most active 10% of pages issue a whopping 175 third-party requests or more. It's not a stretch to say that third parties are an integral part of the web.
@@ -94,7 +94,7 @@ Rank | Third party domain | Percent of requests
 9 | `cdn.shopify.com` | 0.76%
 10 | `maps.googleapis.com` | 0.75%
 
-<figcaption>Figure 3. Top 10 most popular third party domains.</figcaption>
+<figcaption>Figure 3. Top 10 most popular third-party domains.</figcaption>
 </figure>
 
 <figure markdown>
@@ -111,7 +111,7 @@ Rank | Third party URL | Percent of requests
 9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
 10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
 
-<figcaption>Figure 4. Top 10 most popular third party requests.</figcaption>
+<figcaption>Figure 4. Top 10 most popular third-party requests.</figcaption>
 </figure>
 
 ### Resource types
@@ -124,7 +124,7 @@ The resource type breakdown of third-party content also lends insight into how t
     <img src="/static/images/2019/05_Third_Parties/fig5.png" aria-labelledby="fig5-caption" width="600">
   </a>
   <div id="fig5-caption" class="visually-hidden">Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.</div>
-  <figcaption>Figure 5. Percent of third party requests by category and content type.</figcaption>
+  <figcaption>Figure 5. Percent of third-party requests by category and content type.</figcaption>
 </figure>
 
 Several other amusing factoids jump out from this data. Tracking pixels (image requests to analytics domains) make up 1.6% of all network requests, six times as many video requests are to social networks like Facebook and Twitter than dedicated video providers like YouTube and Vimeo (presumably because the default YouTube embed consists of HTML and a preview thumbnail but not an autoplaying video), and there are still more requests for first-party images than all scripts combined.

@@ -364,7 +364,7 @@
         <a href="/static/images/2019/16_Caching/fig5.png" class="fig-mobile">
           <img src="/static/images/2019/16_Caching/fig5.png" width="600" aria-labelledby="fig5-caption" />
         </a>
-        <div id="fig5-caption" class="visually-hidden">A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for desktop. A small, but significant porpotion are not cachable and this goes up to 50% for HTML, most have caching greater and 0 and a smaller amount has a 0 TTL</div>
+        <div id="fig5-caption" class="visually-hidden">A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for desktop. A small, but significant porportion are not cacheable and this goes up to 50% for HTML, most have caching greater and 0 and a smaller amount has a 0 TTL</div>
         <figcaption>Figure 5. Distribution of cacheability by content type for desktop.</figcaption>
       </figure>
       <p>The same data for mobile is shown below. As can be seen, the cacheability of content types is consistent between desktop and mobile.</p>
@@ -392,7 +392,7 @@
         <a href="/static/images/2019/16_Caching/fig7.png" class="fig-mobile">
           <img src="/static/images/2019/16_Caching/fig7.png" width="600" aria-labelledby="fig7-caption" />
         </a>
-        <div id="fig7-caption" class="visually-hidden">A bar chart showing 53% of reponses have a `Cache-Control: max-age`, 54%-55% use `Expires`, 41%-42% use both, and 34% use neither. The figures are given for both desktop and mobile but the figures are near identical with mobile having a percentage point higher in use of expires.</div>
+        <div id="fig7-caption" class="visually-hidden">A bar chart showing 53% of responses have a `Cache-Control: max-age`, 54%-55% use `Expires`, 41%-42% use both, and 34% use neither. The figures are given for both desktop and mobile but the figures are near identical with mobile having a percentage point higher in use of expires.</div>
         <figcaption>Figure 7. Usage of <code>Cache-Control</code> versus <code>Expires</code> headers.</figcaption>
       </figure>
       <h2 id="cache-control-directives">Cache-Control directives</h2>
@@ -473,7 +473,7 @@
       <ul>
         <li><code>max-age</code> is used by almost 75% of <code>Cache-Control</code> headers, and <code>no-store</code> is used by 18%.</li>
         <li><code>public</code> is rarely necessary since cached entries are assumed <code>public</code> unless <code>private</code> is specified. Approximately 38% of responses include <code>public</code>.</li>
-        <li>The <code>immutable</code> directive is relatively new, <a href="https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook">introduced in 2017</a> and is <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility">supported on Firefox and Safari</a>. Its usage has grown to 3.4%, and it is widely used in <a href="https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195">Facebook and Google third party responses</a>.</li>
+        <li>The <code>immutable</code> directive is relatively new, <a href="https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook">introduced in 2017</a> and is <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility">supported on Firefox and Safari</a>. Its usage has grown to 3.4%, and it is widely used in <a href="https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195">Facebook and Google third-party responses</a>.</li>
       </ul>
       <p>Another interesting set of directives to show up in this list are <code>pre-check</code> and <code>post-check</code>, which are used in 2.2% of <code>Cache-Control</code> response headers (approximately 7.8 million responses). This pair of headers was <a href="https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/">introduced in Internet Explorer 5 to provide a background validation</a> and was rarely implemented correctly by websites. 99.2% of responses using these headers had used the combination of <code>pre-check=0</code> and <code>post-check=0</code>. When both of these directives are set to 0, then both directives are ignored. So, it seems these directives were never used correctly!</p>
       <p>In the long tail, there are more than 1,500 erroneous directives in use across 0.28% of responses. These are ignored by clients, and include misspellings such as "nocache", "s-max-age", "smax-age", and "maxage". There are also numerous non-existent directives such as "max-stale", "proxy-public", "surrogate-control", etc.</p>
@@ -494,7 +494,7 @@
       <p>The graph below illustrates the relative age of resources by content type, and you can read a <a href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">more detailed analysis here</a>. HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources (<a href="./javascript">scripts</a>, <a href="./css">CSS</a>, and <a href="./fonts">fonts</a>) are older than one year!</p>
       <figure id="fig-10">
         <a href="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg">
-          <img alt="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first party and third party. The value 0 is used most particularly for first party HTML, text and xml, and for up to 50% of third party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year." src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" width="600" />
+          <img alt="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year." src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" width="600" />
         </a>
         <figcaption>Figure 10. Resource age distribution by content type.</figcaption>
       </figure>
@@ -510,7 +510,7 @@
 &lt; Expires: Mon, 14 Oct 2019 07:36:57 GMT
 &lt; ETag: "1566748830.0-3052-3932359948" </code></pre>
       <p>Overall, 59% of resources served on the web have a cache TTL that is too short compared to its content age. Furthermore, the median delta between the TTL and age is 25 days.</p>
-      <p>When we break this out by first vs third party, we can also see that 70% of first party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring caching is configured correctly.</p>
+      <p>When we break this out by first vs third-party, we can also see that 70% of first-party resources can benefit from a longer TTL. This clearly highlights a need to spend extra attention focusing on what is cacheable, and then ensuring caching is configured correctly.</p>
       <figure id="fig-11">
         <div class="table-wrap">
           <div class="table-wrap-container">
@@ -612,7 +612,7 @@
         <li>Numerical values such as 0 or -1</li>
         <li>Values that would be valid in a <code>Cache-Control</code> header</li>
       </ul>
-      <p>The largest source of invalid <code>Expires</code> headers is from assets served from a popular third party, in which a date/time uses the EST time zone, for example <code>Expires: Tue, 27 Apr 1971 19:44:06 EST</code>.</p>
+      <p>The largest source of invalid <code>Expires</code> headers is from assets served from a popular third-party, in which a date/time uses the EST time zone, for example <code>Expires: Tue, 27 Apr 1971 19:44:06 EST</code>.</p>
       <h2 id="vary-header">Vary header</h2>
       <p>One of the most important steps in caching is determining if the resource being requested is cached or not. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what <a href="./compression">compression</a> they used (gzip, brotli, etc.) or be modified and tailored for mobile visitors.</p>
       <p>To solve this problem, clients give each cached resource a unique identifier (a cache key). By default, this cache key is simply the URL of the resource, but developers can add other elements (like compression method) by using the Vary header.</p>
@@ -626,7 +626,7 @@
         <a href="/static/images/2019/16_Caching/fig14.png" class="fig-mobile">
           <img src="/static/images/2019/16_Caching/fig14.png" width="600" aria-labelledby="fig14-caption" />
         </a>
-        <div id="fig14-caption" class="visually-hidden">A bar chart showing 90% use of accept-encoding, much smaller values for the rest with 10%-11% for user-agent, approximately 7%-8% for originand less so for accept, almost not usage for cookie, x-forward-proto, accept-language, host, x-origin, access-control-request-method, and access-control-request-headers</div>
+        <div id="fig14-caption" class="visually-hidden">A bar chart showing 90% use of accept-encoding, much smaller values for the rest with 10%-11% for user-agent, approximately 7%-8% for origin and less so for accept, almost not usage for cookie, x-forward-proto, accept-language, host, x-origin, access-control-request-method, and access-control-request-headers</div>
         <figcaption>Figure 14. Vary header usage.</figcaption>
       </figure>
       <h2 id="setting-cookies-on-cacheable-responses">Setting cookies on cacheable responses</h2>
@@ -756,7 +756,7 @@
         <a href="/static/images/2019/16_Caching/fig22.png" class="fig-mobile">
           <img src="/static/images/2019/16_Caching/fig22.png" width="600" aria-labelledby="fig21-caption" />
         </a>
-        <div id="fig22-caption" class="visually-hidden">A stacked bar chart showing 56.8% of websites have potential byte savsings of less than one MB, 22.1% could have savings of one to two MB, 8.3% could save two to three MB. 4.3% could save three to four MB and 6.0% could save more than four MB.</div>
+        <div id="fig22-caption" class="visually-hidden">A stacked bar chart showing 56.8% of websites have potential byte savings of less than one MB, 22.1% could have savings of one to two MB, 8.3% could save two to three MB. 4.3% could save three to four MB and 6.0% could save more than four MB.</div>
         <figcaption>Figure 22. Distribution of potential byte savings from the Lighthouse caching audit.</figcaption>
       </figure>
       <h2 id="conclusion">Conclusion</h2>

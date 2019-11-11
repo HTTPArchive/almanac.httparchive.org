@@ -205,7 +205,7 @@ Let's look at some data.
 
 ### Products (and libraries) and their custom markup
 
-For several non-standard elements, their prevalence may have more to do with their inclusion in popular third party tools than first party adoption. For example, the `<fb:like>` element is found on 0.3% of pages not because site owners are explicitly writing it out but because they include the Facebook widget. Many of the elements [Hixie mentioned 14 years ago](https://web.archive.org/web/20060203031245/http://code.google.com/webstats/2005-12/editors.html) seem to have dwindled, but others are still pretty huge:
+For several non-standard elements, their prevalence may have more to do with their inclusion in popular third-party tools than first-party adoption. For example, the `<fb:like>` element is found on 0.3% of pages not because site owners are explicitly writing it out but because they include the Facebook widget. Many of the elements [Hixie mentioned 14 years ago](https://web.archive.org/web/20060203031245/http://code.google.com/webstats/2005-12/editors.html) seem to have dwindled, but others are still pretty huge:
 
 - Popular elements created by [Claris Home Page](https://en.wikipedia.org/wiki/Claris_Home_Page) (whose last stable release was 21 years ago) *still* appear on over 100 pages. [`<x-claris-window>`](https://rainy-periwinkle.glitch.me/permalink/28b0b7abb3980af793a2f63b484e7815365b91c04ae625dd4170389cc1ab0a52.html), for example, appears on 130 pages.
 - Some of the `<actinic:*>` elements from British ecommerce provider [Oxatis](https://www.oxatis.co.uk) appear on even more pages. For example, [`<actinic:basehref>`](https://rainy-periwinkle.glitch.me/permalink/30dfca0fde9fad9b2ec58b12cb2b0271a272fb5c8970cd40e316adc728a09d19.html) still shows up on 154 pages in the desktop data.
@@ -234,7 +234,7 @@ Let's compare these to a few of the native HTML elements that are below the 5% b
 
 You could discover interesting insights like these all day long.
 
-Here's one that's a little different: popular elements could be caused by outright errors in products. For example, [`<pclass="ddc-font-size-large">`](https://rainy-periwinkle.glitch.me/permalink/3214f840b6ae3ef1074291f60fa1be4b9d9df401fe0190bfaff4bb078c8614a5.html) occurrs on over 1,000 sites. This was thanks to a missing space in a popular "as-a-service" kind of product.  Happily, we reported this error during our research and it was quickly fixed.
+Here's one that's a little different: popular elements could be caused by outright errors in products. For example, [`<pclass="ddc-font-size-large">`](https://rainy-periwinkle.glitch.me/permalink/3214f840b6ae3ef1074291f60fa1be4b9d9df401fe0190bfaff4bb078c8614a5.html) occurs on over 1,000 sites. This was thanks to a missing space in a popular "as-a-service" kind of product.  Happily, we reported this error during our research and it was quickly fixed.
 
 In his original paper, Hixie mentions that:
 

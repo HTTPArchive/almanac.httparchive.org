@@ -152,7 +152,7 @@ Mobile loading speed was first [announced as a ranking factor](https://webmaster
 
 A fast-loading website is also crucial for a good user experience. Users that have to wait even a few seconds for a site to load have the tendency to bounce and try another result from one of your competitors in the SERPs that loads quickly and meets their expectations of website performance.
 
-The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 63.47% of websites are labelled as **slow**. Split by device, this picture is even bleaker for tablet (82.00%) and phone (77.61%). In the context of our results, per the [PageSpeed Insights classification system](https://developers.google.com/speed/docs/insights/v5/about#categories), a slow website is defined as having 10% of First Contentful Paint (FCP) experiences taking over 2,500 ms or 5% of First Input Delay (FID) experiences measuring over 250 ms.
+The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 63.47% of websites are labeled as **slow**. Split by device, this picture is even bleaker for tablet (82.00%) and phone (77.61%). In the context of our results, per the [PageSpeed Insights classification system](https://developers.google.com/speed/docs/insights/v5/about#categories), a slow website is defined as having 10% of First Contentful Paint (FCP) experiences taking over 2,500 ms or 5% of First Input Delay (FID) experiences measuring over 250 ms.
 
 ```<graph data 10.15b: CruX image similar to [IMG](https://developers.google.com/web/updates/images/2018/08/crux-dash-fcp.png) per device + speed label>```
 
@@ -214,7 +214,7 @@ Despite this, only 0.62% of mobile home pages contain a link to an AMP version. 
 
 ### Security
 
-A strong online shift in recent years has been for the web to move to HTTPS by default. HTTPS prevents website traffic from being intercepted on public WiFi networks, for example, where user input data is then transmitted unsecurely. Google have been pushing for sites to adopt HTTPS, and even made [HTTPS as a ranking signal](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). Chrome also supported the move to secure pages by labelling non-HTTPS pages as ‘[not secure](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/)' in the browser.
+A strong online shift in recent years has been for the web to move to HTTPS by default. HTTPS prevents website traffic from being intercepted on public WiFi networks, for example, where user input data is then transmitted unsecurely. Google have been pushing for sites to adopt HTTPS, and even made [HTTPS as a ranking signal](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). Chrome also supported the move to secure pages by labeling non-HTTPS pages as ‘[not secure](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/)' in the browser.
 
 For more information and guidance from Google on the importance of HTTPS and how to adopt it, please see [Why HTTPS Matters](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 

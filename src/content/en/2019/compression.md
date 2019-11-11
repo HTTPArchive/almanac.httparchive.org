@@ -150,7 +150,7 @@ Additionally, there are 67K requests that return an invalid `Content-Encoding`, 
 
 We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:
 
-*   At a minimum, enable gzip compression level 6 for text based assets. This provides a fair tradeoff between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)—though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
+*   At a minimum, enable gzip compression level 6 for text based assets. This provides a fair trade-off between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)—though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
 *   If you can support brotli and precompress resources, then compress to brotli level 11.  This is more computationally expensive than gzip - so precompression is an absolute must to avoid delays. 
 *   If you can support brotli and are unable to precompress, then compress to brotli level 5. This level will result in smaller payloads compared to gzip, with a similar computational overhead.
 
@@ -227,11 +227,11 @@ The content types with the lowest compression rates include `application/json`, 
 
 Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are `application/javascript`, `text/css` and `application/x-javascript`. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them. 
 
-## First party vs third party compression
+## First -arty vs third-party compression
 
-In the [Third Parties](./third-parties) chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third party content tends to be compressed more than first party content. 
+In the [Third Parties](./third-parties) chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. 
 
-Additionally, the percentage of brotli compression is higher for third party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.
+Additionally, the percentage of brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.
 
 <figure>
   <table>
@@ -242,10 +242,10 @@ Additionally, the percentage of brotli compression is higher for third party con
     </tr>
     <tr>
      <th>Content Encoding</th>
-     <th>First Party</th>
-     <th>Third Party</th>
-     <th>First Party</th>
-     <th>Third Party</th>
+     <th>First-Party</th>
+     <th>Third-Party</th>
+     <th>First-Party</th>
+     <th>Third-Party</th>
     </tr>
     <tr>
      <td><em>No Text Compression</em></td>

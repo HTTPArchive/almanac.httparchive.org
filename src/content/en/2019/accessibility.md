@@ -251,7 +251,7 @@ Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9 bel
   <figcaption>Figure 9. Top 10 aria roles.</figcaption>
 </figure>
 
-Looking at the results in Figure 9, we found two interesting insights: updating UI frameworks may have a profound impact on accessibilty across the web, and the impressive number of sites attempting to make dialogs accessible.
+Looking at the results in Figure 9, we found two interesting insights: updating UI frameworks may have a profound impact on accessibility across the web, and the impressive number of sites attempting to make dialogs accessible.
 
 ##### Updating UI frameworks could be the way forward for accessibility across the web
 

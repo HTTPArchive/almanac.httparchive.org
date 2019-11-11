@@ -326,7 +326,7 @@ Filters are a fun and great way to modify the pixels the browser intends to draw
 
 We were excited to see that 78% of stylesheets contain the `filter` property! That number was also so high it seemed a little fishy, so we dug in and sought to explain the high number. Because let's be honest, filters are neat, but they don't make it into all of our applications and projects. Unless!
 
-Upon further investigation, we discoverd [FontAwesome](https://fontawesome.com)'s stylesheet comes with some `filter` usage, as well as a [YouTube](https://youtube.com) embed. Therefore, we believe `filter` snuck in the back door by piggybacking onto a couple very popular stylesheets. We also believe that `-ms-filter` presence could have been included as well, contributing to the high percent of use.
+Upon further investigation, we discovered [FontAwesome](https://fontawesome.com)'s stylesheet comes with some `filter` usage, as well as a [YouTube](https://youtube.com) embed. Therefore, we believe `filter` snuck in the back door by piggybacking onto a couple very popular stylesheets. We also believe that `-ms-filter` presence could have been included as well, contributing to the high percent of use.
 
 ### Blend modes
 
@@ -451,7 +451,7 @@ Websites feel like digital paper, right? As users, it's generally known that you
   <a href="/static/images/2019/02_CSS/fig32.png" class="fig-mobile">
     <img src="/static/images/2019/02_CSS/fig32.png" aria-labelledby="fig32-caption" width="600">
   </a>
-  <div id="fig32-caption" class="visually-hidden">Bar chart showing 35% of desktop pages using the "all" media query type, 46% using print, 72% using screen, and 0% using speech. Adoption is lower by about 5 percentage points for desktop compared to mobiel.</div>
+  <div id="fig32-caption" class="visually-hidden">Bar chart showing 35% of desktop pages using the "all" media query type, 46% using print, 72% using screen, and 0% using speech. Adoption is lower by about 5 percentage points for desktop compared to mobile.</div>
   <figcaption>Figure 32. Adoption of the all, print, screen, and speech types of media queries.</figcaption>
 </figure>
 
