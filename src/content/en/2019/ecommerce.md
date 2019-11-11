@@ -420,7 +420,7 @@ Mobile HTML payload sizes are not very different from desktop. In other words, i
   <figcaption>Figure 13. Distribution of image requests per ecommerce page.</figcaption>
 </figure>
 
-<aside class="note">Note that because our data collection [methodology](./methodology) does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</aside>
+<aside class="note">Note that because our data collection <a href="./methodology">methodology</a> does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</aside>
 
 Figures 12 and 13 above show that the median ecommerce page has 37 images and an image payload of 1,517 KB on mobile, 40 images and 1,524 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly 6 MB!
 
