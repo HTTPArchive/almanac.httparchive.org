@@ -159,7 +159,7 @@ CSS has some very powerful comparison selectors. These are selectors like `[targ
   <figcaption>Figure 10. Popularity of operators per class attribute selector.</figcaption>
 </figure>
 
-These operators are much more popular with class selectors than IDs, which feels natural since a stylesheet usually has fewer ID selectors than class selectors, but still neat to see how uses of all these combinations. 
+These operators are much more popular with class selectors than IDs, which feels natural since a stylesheet usually has fewer ID selectors than class selectors, but still neat to see the uses of all these combinations. 
 
 ### Classes per element
 
