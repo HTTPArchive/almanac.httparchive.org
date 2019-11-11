@@ -162,7 +162,15 @@ In aggregate, across all page, we indeed see the prevalence of these formats. JP
 
 
 Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of Google.com and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images and 61 at the 90th percentile and a whopping 229 at the 99th percentile.
-(figure image frequency per page)
+
+<figure>
+  <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"></iframe>
+  <a href="/static/images/2019/04_Media/fig7.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig7.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig7-caption" class="visually-hidden">A comparison of the Image Formats used per page</div>
+  <figcaption>Figure 7. Image Format Usage Per Page</figcaption>
+</figure>
 
 ||||||||
 | Format | p10 | p25 | p50 | p75 | p90 | p99 |
@@ -178,10 +186,20 @@ Of course, web pages are not uniform in their use of image content. Some depend 
 While the median page has 9 jpegs and 4 pngs, and only in the top 25% pages where use gifs, this doesn’t report the adoption rate. The use and frequency of each format per page doesn’t provide insight into the adoption of the more modern formats. Specifically, what % of pages include at least one image in each format?
 
 (figure % of pages using at least 1 image)
+<figure>
+  <iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"></iframe>
+  <a href="/static/images/2019/04_Media/fig8.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig8.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig7-caption" class="visually-hidden">A comparison of image formats in use on webpages where there is at least 1 occurance.</div>
+  <figcaption>Figure 8. % of Pages Using At Least 1 Image</figcaption>
+</figure>
+
 
 This helps explain why even at the 90th percentile of pages the frequency of webp is still zero - only 9% of web pages have even 1 resource. There are many reasons that webp might not be the right choice for an image, but adoption of media best practices like adoption of webp still remain nascent. 
 
 ## Image File Sizes
+
 There are two ways to look at image file sizes: absolute bytes per resource and bytes per pixel. Looking at the absolute bytes per resource, and we can look at the frequency of file sizes.
  (figure image format file size)
  
@@ -210,7 +228,9 @@ While previously it appeared that GIF files were smaller than JPEG, we can now c
 Of note, the pixel volume used for SVG is the size of the DOM element on screen (in CSS pixels). While considerably smaller for file sizes, this hints that SVGs are generally used in smaller portions of the layout. This is why the bytes per pixel appears worse than PNG. 
 
 Again it is worth emphasizing, this comparison of pixel density is not comparing equivalent images. Rather it is reporting typical user experience. As we will discuss next, even in each of these formats there are techniques that can be used to further optimize and reduce the bytes per pixel. 
+
 ## Image Format Optimization
+
 Selecting the best format for an experience is an art of balancing capabilities of the format and reducing the total bytes. For web pages one goal is to help improve web performance through optimizing images. Yet within each format there are additional features that can help reduce bytes. 
 
 Some features can impact the total experience. For example, JPEG and WebP can utilize quantization (commonly referred to as quality levels) and chroma subsampling which can reduce the bits stored in the image without impacting the visual experience. Like MP3s for music, this technique depends on a bug in the human eye and allows for the same experience despite the loss of color data. However, not all images are good candidates for these techniques since this can create blocky or blurry images, and may distort colors or make text overlays become unreadable. 
@@ -224,6 +244,7 @@ The savings in this AB Lighthouse test is not just about potential byte savings,
 (figure page performance improvement)
 
 ## Responsive Images
+
 Another axis for improving page performance is to apply Responsive Images. This technique focuses on reducing image bytes by reducing the extra pixels that are not shown on the display because of image shrinking. At the beginning of this chapter, you saw that the median web page on desktop used 1MP of image placeholders, yet transferred 2.1MP of actual pixel volume. Since this was a 1x DPR test, 1.1 MP of pixels were transferred over the network, but not displayed. To reduce this overhead, we can use one of 2 (3) techniques:
 *HTML Markup - using a combination of the `<picture>` and `<source>` elements along with the srcset and sizes attributes allows the browser to select the best image based on the dimensions of the viewport and the density of the display. 
 *Client Hints - this moves the selection of possible resized images to HTTP content negotiation.
@@ -231,30 +252,36 @@ Another axis for improving page performance is to apply Responsive Images. This 
 
 The most common method to implement Responsive Images is to build a list of alternative images using either `<img srcset>` or `<source srcset>`. If the srcset is based on DPR the browser can select the correct from the list without additional information. However, most implementations also use `<img sizes>` to help instruct the browser how to perform the necessary layout calculation to select the correct image in the srcset based on pixel dimensions. The notably lower use of `<picture>` is not surprising given that it is used most often for advanced RWD layouts like Art Direction. 
 (figure % of pages using responsive images with html)
+
 ### Use of Sizes
+
 The utility of SrcSet is usually dependent on the precision of the Sizes media query. Without Sizes the browser will assume the `<img>` tag will fill the entire viewport instead of smaller component. Interestingly, there are 5 common patterns that web developers have adopted for `<img sizes>`:
 *`<img sizes=”**100vw**”>` this indicates that the image will fill the width of the viewport (also the default)
 *`<img sizes=”**200px**”>` this is helpful for browsers selecting based on DPR
 *`<img sizes=”**(max-width: 300px) 100vw, 300px**”>` this is the second most popular design pattern. It is the one auto generated by WordPress and likely a few other platforms. It appears auto generated based on the original image size (in this case 300px).
 *`<img sizes=”**(max-width: 767px) 89vw, (max-width: 1000px) 54vw**, ...”>` this pattern is the custom built design pattern that is aligned with the CSS responsive layout. Each breakpoint has a different calculation for sizes to use.
+
 | sizes | freq (Millions) | pct | 
 |--|--|--| --| --| --| --| 
 | (max-width: 300px) 100vw, 300px | 1.47 | 5% | 
 |(max-width: 150px) 100vw, 150px | 0.63| 2% |
 | (max-width: 100px) 100vw, 100px | 0.37 | 1% |
-| (max-width: 400px) 100vw, 400px | 0.32| 1%
-| (max-width: 80px) 100vw, 80px | 0.28| 1%
+| (max-width: 400px) 100vw, 400px | 0.32| 1% |
+| (max-width: 80px) 100vw, 80px | 0.28| 1% |
 
 *`<img sizes=”**auto**”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes JavaScript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the JavaScript loading and DOM to be fully ready, delaying image loading substantially. 
 
 (figure `<img sizes>` by implementation pattern)
 
 ## Client Hints
+
 Finally, Client Hints allows content creators to move the resizing of images to HTTP Content Negotiation. In this way, the HTML does not need additional `<img srcset>` to clutter the markup, and instead can depend on a server or [Image CDN to select an optimal image](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) for the context. This allows simplifying of HTML and enables origin servers to adapt overtime and disconnect the content and presentation layers. 
 
 To enable Client Hints, the web page must signal to the browser using either an extra HTTP header `Accept-CH: DPR, Width, Viewport-Width` OR by adding the HTML `<meta http-equiv=”Accept-CH” content=”DPR, Width, Viewport-Width”>`. The convenience of one or the other technique depends on the team implementing and both are offered for convenience.
+
 The use of the `<meta>` tag in HTML to invoke Client Hints is far more common compared with the HTTP Header. This is likely a reflection of the convenience to modify markup templates compared to adding HTTP headers in middle boxes. However, looking at the usage of the HTTP header, over 50% of these cases are from a single SaaS platform (Mercado). 
 (figure use of accept ch)
+
 Of the Client Hints invoked, the majority of pages use it for the original three use-cases of DPR, ViewportWidth and Width. Of course, the Width Client Hint that requires the use `<img sizes>` for the browser to have enough context about the layout. 
 (figure enabled client hints)
 The network related Client Hints - Downlink, RTT, and ECT - are only available on Android Chrome. 
