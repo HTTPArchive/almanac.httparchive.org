@@ -410,5 +410,6 @@ figure .fig-mobile {
   }
   figure .fig-mobile {
     display: block;
+    max-width: 100%;
   }
 }

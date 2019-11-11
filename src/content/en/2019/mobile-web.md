@@ -55,7 +55,7 @@ The state of JavaScript on the mobile web is terrifying. According to HTTP Archi
 Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) to become interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, nothing happens because the JavaScript hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.
 
 <figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="fig-mobile" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
 </figure>
 
@@ -163,6 +163,9 @@ Because of this, developers are given the ability to disable this feature by set
 
 <figure>
   <iframe aria-labelledby="fig5-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/12_Mobile_Web/fig5.png" class="fig-mobile">
+    <img src="/static/images/2019/12_Mobile_Web/fig5.png" aria-labelledby="fig5-caption" width="600">
+  </a>
   <div id="fig5-caption" class="visually-hidden">Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
   <figcaption>Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>
 </figure>
@@ -250,7 +253,7 @@ Currently, only 29.62% of pages with input fields utilize this feature.
 
 Enabling users to copy and paste their passwords into your page is one way that allows them to use password managers. Password managers help users generate (and remember) strong passwords and fill them out automatically on web pages. Only 0.02% of web pages tested disable this functionality.
 
-<aside class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our [Methodology](./methodology) to only test home pages. Interior pages, like login pages, are not tested.</aside>
+<aside class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="./methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</aside>
 
 ## Conclusion
 
