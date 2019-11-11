@@ -15,14 +15,30 @@ last_updated: 2019-11-07T21:46:11.000Z
 Images, animations, and videos are an important part of the web experience. They are important for many reasons - they help tell stories, engage audiences and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media. 
 
 From a pure bytes perspective, HTTP Archive has historically reported an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every web page depends on images and videos. Even at the 10th percentile, we see that 43% of the bytes are from media and can rise to 91.3% of the total bytes at the 90th percentile of pages. 
-(% of image bytes per page figure)
 
-While media is critical for the visual experience, the impact of this high volume of bytes has two side effects. First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an uber) can dramatically slow down the page performance. Images are a lower priority request by the browser, but can easily block CSS and JavaScript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual queue to the user that the page is ready and slow transfers can give a perceived slowness of the page.
+<figure>
+  <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive"></iframe>
+  <a href="/static/images/2019/04_Media/fig1.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig1.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig1-caption" class="visually-hidden">Breakdown of bytes required per Web Page showing a median 67% of bytes allocatd to images+video</div>
+  <figcaption>Figure 1. Web Page Bytes: Image+Video vs. Other</figcaption>
+</figure>
+
+While media is critical for the visual experience, the impact of this high volume of bytes has two side effects. First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an uber) can dramatically slow down the page performance. Images are a lower priority request by the browser, but can easily block CSS and JavaScript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual cue to the user that the page is ready. Slow transfers of visual content, therefore, can give the preception of a slow web page.
 
 The second impact is on the financial cost to the user. This is often an ignored aspect since it is not a burden on the website owner but a burden to the end-user. Anecdotally it has been shared that in some markets, like Japan, see a drop in purchases by students near the end of the month when data caps are reached and users cannot see the visual content without weighting. 
 
 Further, the financial cost of visiting these websites in different parts of the world is disproportionate. At the median and 90th percentile, the volume of image bytes is 1MB and 1.9MB respectively. Using [WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost) we can see that the GNI per capita cost to a user in Madagascar a single web page load at the 90th percentile would cost 2.6% of the daily gross income. By contrast, in Germany this would be 0.3% of the daily gross income.  
-(figure: image bytes per web page)
+
+<figure>
+  <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"></iframe>
+  <a href="/static/images/2019/04_Media/fig2.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig2.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig2-caption" class="visually-hidden">The median webpage on mobile requires 1MB of images and 4.9MB at the 90th percentile.</div>
+  <figcaption>Figure 2. Total Image Bytes Per Web Page (Mobile)</figcaption>
+</figure>
 
 Looking at bytes per page results in just looking at the costs - to page performance and the user - but it overlooks the benefits. These bytes are important to render pixels on the screen. As such, we can see the importance of the images and video resources by also looking at the number of media pixels used per page.
 
