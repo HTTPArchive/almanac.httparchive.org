@@ -253,7 +253,7 @@ Currently, only 29.62% of pages with input fields utilize this feature.
 
 Enabling users to copy and paste their passwords into your page is one way that allows them to use password managers. Password managers help users generate (and remember) strong passwords and fill them out automatically on web pages. Only 0.02% of web pages tested disable this functionality.
 
-<aside class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our [Methodology](./methodology) to only test home pages. Interior pages, like login pages, are not tested.</aside>
+<aside class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="./methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</aside>
 
 ## Conclusion
 
