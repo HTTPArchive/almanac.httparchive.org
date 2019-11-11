@@ -151,7 +151,7 @@ Resource hints are most effective when they're used selectively (_"when everythi
 
 ## The `crossorigin` attribute
 
-Most "traditional" resources fetched on the web ([images](./media), [stylesheets](./css), and [scripts](./javascript)) are fetched without opting in to Cross-Origin Resource Sharing ([CORS]((https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)). That means that if those resources are fetched from a cross-origin server, by default their contents cannot be read back by the page, due to the same-origin policy.
+Most "traditional" resources fetched on the web ([images](./media), [stylesheets](./css), and [scripts](./javascript)) are fetched without opting in to Cross-Origin Resource Sharing ([CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)). That means that if those resources are fetched from a cross-origin server, by default their contents cannot be read back by the page, due to the same-origin policy.
 
 In some cases, the page can opt-in to fetch the resource using CORS if it needs to read its content. CORS enables the browser to "ask permission" and get access to those cross-origin resources.
 
