@@ -128,6 +128,11 @@ def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
 
 
+@app.route('/favicon.ico')
+def default_favicon():
+    return send_from_directory(app.static_folder, 'images/favicon.ico')
+
+
 @app.errorhandler(400)
 def bad_request(e):
     logging.exception('An error occurred during a request due to bad request error.')
