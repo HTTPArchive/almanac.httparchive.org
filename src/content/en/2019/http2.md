@@ -140,7 +140,7 @@ This is more problematic than browser support as, unlike modern browsers, server
 <figcaption>Figure 6. Servers used for HTTP/2.</figcaption>
 </figure>
 
-Nginx provides package repositories that allow ease of installing or upgrading to the latest version, so it is no surprise to see it leading the way here. Cloudflare is the most popular [CDN](./cdn) and enables HTTP/2 by default, so again it is not surprising to see it hosts a large percentage of HTTP/2 sites. Incidently, Cloudflare uses a [heavily customised](https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/) version of nginx as their web server. After those, we see Apache at around 20% of usage, followed by some servers who choose to hide what they are, and then the smaller players such as LiteSpeed, IIS, Google Servlet Engine, and openresty, which is nginx based.
+Nginx provides package repositories that allow ease of installing or upgrading to the latest version, so it is no surprise to see it leading the way here. Cloudflare is the most popular [CDN](./cdn) and enables HTTP/2 by default, so again it is not surprising to see it hosts a large percentage of HTTP/2 sites. Incidently, Cloudflare uses a [heavily customized](https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/) version of nginx as their web server. After those, we see Apache at around 20% of usage, followed by some servers who choose to hide what they are, and then the smaller players such as LiteSpeed, IIS, Google Servlet Engine, and openresty, which is nginx based.
 
 What is more interesting is those servers that that do *not* support HTTP/2:
 
@@ -251,7 +251,7 @@ This is a concern as previous advice has been to be conservative with push and t
   <a href="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" class="fig-mobile">
     <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" width="600">
   </a>
-  <div id="fig13-caption" class="visually-hidden">Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eigth, and various text-based types making up the rest.</div>
+  <div id="fig13-caption" class="visually-hidden">Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eighth, and various text-based types making up the rest.</div>
   <figcaption>Figure 13. What asset types is push used for?</figcaption>
 </figure>
 
@@ -299,11 +299,11 @@ HTTP/2 has a complex prioritization model (too complex many say - hence why it i
 <figcaption>Figure 14. HTTP/2 prioritization support in common CDNs.</figcaption>
 </figure>
 
-Figure 14 shows that a fairly significant portion of traffic is subject to the identified issue, totalling 26.82% on desktop and 27.83% on mobile. How much of a problem this is depends on exactly how your page loads and whether high priority resources are discovered late or not for your site.
+Figure 14 shows that a fairly significant portion of traffic is subject to the identified issue, totaling 26.82% on desktop and 27.83% on mobile. How much of a problem this is depends on exactly how your page loads and whether high priority resources are discovered late or not for your site.
 
 <figure>
   <div class="big-number">27.83%</div>
-  <figcaption>Figure 15. The percent of mobile requests with sub-optimal HTTP/2 prioritisation.</figcaption>
+  <figcaption>Figure 15. The percent of mobile requests with sub-optimal HTTP/2 prioritization.</figcaption>
 </figure>
 
 Another issue is with the `upgrade` HTTP header being used incorrectly. Web servers can respond to requests with an `upgrade` HTTP header suggesting that it supports a better protocol that the client might wish to use (e.g. advertise HTTP/2 to a client only using HTTP/1.1). You might think this would be useful as a way of informing the browser it supports HTTP/2, but since browsers only support HTTP/2 over HTTPS and since use of HTTP/2 can be negotiated through the HTTPS handshake, the use of this `upgrade` header for advertising HTTP/2 is pretty limited (to browsers at least).
@@ -339,6 +339,6 @@ We've also talked about how it is (still!) not easy to get HTTP/2 support in som
 
 Other than that, HTTP/2 has been a relatively easy upgrade path, which is why it has had the strong uptake it has already seen. For the most part, it is a painless switch-on and, therefore, for most, it has turned out to be a hassle-free performance increase that requires little thought once your server supports it. The devil is in the details though (as always), and small differences between server implementations can result in better or worse HTTP/2 usage and, ultimately, end user experience. There has also been a number of bugs and even [security issues](https://github.com/Netflix/security-bulletins/blob/master/advisories/third-party/2019-002.md), as is to be expected with any new protocol.
 
-Ensuring you are using a strong, up-to-date, well-maintained implementation of any newish protocol like HTTP/2 will ensure you stay on top of these issues. However, that can take expertise and managing. The roll out of QUIC and HTTP/3 will likely be even more complicated and require more expertise. Perhaps this is best left to third party service providers like CDNs who have this expertise and can give your site easy access to these features? However, even when left to the experts, this is not a sure thing (as the prioritization statistics show), but if you choose your server provider wisely and engage with them on what your priorities are, then it should be an easier implementation.
+Ensuring you are using a strong, up-to-date, well-maintained implementation of any newish protocol like HTTP/2 will ensure you stay on top of these issues. However, that can take expertise and managing. The roll out of QUIC and HTTP/3 will likely be even more complicated and require more expertise. Perhaps this is best left to third-party service providers like CDNs who have this expertise and can give your site easy access to these features? However, even when left to the experts, this is not a sure thing (as the prioritization statistics show), but if you choose your server provider wisely and engage with them on what your priorities are, then it should be an easier implementation.
 
 On that note it would be great if the CDNs prioritized these issues (pun definitely intended!), though I suspect with the advent of a new prioritization method in HTTP/3, many will hold tight. The next year will prove yet more interesting times in the HTTP world.

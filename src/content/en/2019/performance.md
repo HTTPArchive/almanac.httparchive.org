@@ -61,7 +61,7 @@ In order to categorize whether a website is sufficiently **fast** we will use th
     <img src="/static/images/2019/07_Performance/fig2.png" aria-labelledby="fig2-caption" width="600">
   </a>
   <div id="fig2-caption" class="visually-hidden">Bar chart showing that 13% of websites have fast FCP, 66% have moderate FCP, and 20% have slow FCP.</div>
-  <figcaption>Figure 2. Distribution of websites labelled as having fast, moderate, or slow FCP.</figcaption>
+  <figcaption>Figure 2. Distribution of websites labeled as having fast, moderate, or slow FCP.</figcaption>
 </figure>
 
 The results in Figure 2 show that only 13% of websites are considered fast. This is a sign that there is still a lot of room for improvement, but many websites are painting meaningful content quickly and consistently. Two thirds of websites have moderate FCP experiences.
@@ -96,7 +96,7 @@ In Figures 3 and 4 above, the FCP distributions are broken down by desktop and p
     <img src="/static/images/2019/07_Performance/fig5.png" aria-labelledby="fig5-caption" width="600">
   </a>
   <div id="fig5-caption" class="visually-hidden">Bar chart of the desktop and mobile FCP distributions. Desktop fast, moderate, slow: 17%, 67%, and 16% respectively. Mobile: 11%, 66%, and 23%.</div>
-  <figcaption>Figure 5. Distribution of websites labelled as having fast, moderate, or slow FCP, broken down by device type.</figcaption>
+  <figcaption>Figure 5. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by device type.</figcaption>
 </figure>
 
 According to PSI's classification, 17% of websites have fast FCP experiences overall for desktop users, compared to 11% for mobile users. The entire distribution is skewed to being slightly faster for desktop experiences, with fewer slow websites and more in the fast and moderate category.
@@ -111,7 +111,7 @@ Why might desktop users experience fast FCP on a higher proportion of websites t
     <img src="/static/images/2019/07_Performance/fig6.png" aria-labelledby="fig6-caption" width="600">
   </a>
   <div id="fig6-caption" class="visually-hidden">Bar chart of FCP distributions per effective connection type. 4G fast, moderate, slow: 14%, 67%, and 19% respectively. 3G: 1%, 38%, and 61%. 2G: 0%, 9%, 90%. Slow 2G: 0%, 1%, 99%.</div>
-  <figcaption>Figure 6. Distribution of websites labelled as having fast, moderate, or slow FCP, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>
+  <figcaption>Figure 6. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>
 </figure>
 
 In Figure 6 above, FCP experiences are grouped by the ECT of the user experience. Interestingly, there is a correlation between ECT speed and the percent of websites serving fast FCP. As the ECT speeds decrease, the proportion of fast experiences approaches zero. 14% of websites that serve users with 4G ECT have fast FCP experiences, while 19% of those websites have slow experiences. 61% of websites serve slow FCP to users with 3G ECT, 90% to 2G ECT, and 99% to slow-2G ECT. These results suggest that websites seldom serve fast FCP consistently to users on connections effectively slower than 4G.
@@ -124,7 +124,7 @@ In Figure 6 above, FCP experiences are grouped by the ECT of the user experience
     <img src="/static/images/2019/07_Performance/fig7.png" aria-labelledby="fig7-caption" width="600">
   </a>
   <div id="fig7-caption" class="visually-hidden">Bar chart of FCP distributions for the top 23 most popular geographies. Korea has the most fast websites at 36%. From there, the percent of fast websites declines rapidly for other geographies: Japan 28%, Taiwan 26%, Netherlands 21%, etc.</div>
-  <figcaption>Figure 7. Distribution of websites labelled as having fast, moderate, or slow FCP, broken down by geo.</figcaption>
+  <figcaption>Figure 7. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by geo.</figcaption>
 </figure>
 
 Finally, we can slice FCP by users' geography (geo). The chart above shows the top 23 geos having the highest number of distinct websites, an indicator of overall popularity of the open web. Web users in the United States visit the most distinct websites at 1,211,002. The geos are sorted by the percent of websites having sufficiently fast FCP experiences. At the top of the list are three [Asia-Pacific](https://en.wikipedia.org/wiki/Asia-Pacific) (APAC) geos: Korea, Taiwan, and Japan. This could be explained by the availability of extremely [fast network connection speeds in these regions](https://en.wikipedia.org/wiki/List_of_countries_by_Internet_connection_speeds). Korea has 36% of websites meeting the fast FCP bar, and only 7% rated as slow FCP. Recall that the global distribution of fast/moderate/slow websites is approximately 13/66/20, making Korea a significantly positive outlier.
@@ -157,7 +157,7 @@ Similar to the FCP chart in Figure 1, this is a view of 1,000 representative sam
 
 Looking at the curve of the fast proportions, the shape is quite different from that of FCP. There are very few websites that have a fast TTFB greater than 75%, while more than half are below 25%.
 
-Let's apply a TTFB speed label to each website, taking inspiration from the PSI methodology used above for FCP. If a website serves fast TTFB to 75% or more user experiences, it's labelled as **fast**. Otherwise, if it serves **slow** TTFB to 25% or more user experiences, it's slow. If neither of those conditions apply, it's **moderate**.
+Let's apply a TTFB speed label to each website, taking inspiration from the PSI methodology used above for FCP. If a website serves fast TTFB to 75% or more user experiences, it's labeled as **fast**. Otherwise, if it serves **slow** TTFB to 25% or more user experiences, it's slow. If neither of those conditions apply, it's **moderate**.
 
 <figure id="fig10">
   <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&amp;format=interactive"></iframe>
@@ -165,7 +165,7 @@ Let's apply a TTFB speed label to each website, taking inspiration from the PSI 
     <img src="/static/images/2019/07_Performance/fig10.png" aria-labelledby="fig10-caption" width="600">
   </a>
   <div id="fig10-caption" class="visually-hidden">Bar chart showing that 2% of websites have fast TTFB, 56% have moderate TTFB, and 42% have slow TTFB.</div>
-  <figcaption>Figure 10. Distribution of websites labelled as having fast, moderate, or slow TTFB.</figcaption>
+  <figcaption>Figure 10. Distribution of websites labeled as having fast, moderate, or slow TTFB.</figcaption>
 </figure>
 
 42% of websites have slow TTFB experiences. This is significant because TTFB is a blocker for all other performance metrics to follow. _By definition, a user cannot possibly experience a fast FCP if the TTFB takes more than 1 second_.
@@ -178,7 +178,7 @@ Let's apply a TTFB speed label to each website, taking inspiration from the PSI 
     <img src="/static/images/2019/07_Performance/fig11.png" aria-labelledby="fig11-caption" width="600">
   </a>
   <div id="fig11-caption" class="visually-hidden">Bar chart of TTFB distributions for the top 23 most popular geographies. Korea has the most fast websites at 14%. From there, the percent of fast websites declines rapidly for other geographies: Taiwan 7%, Japan 5%, Netherlands 4%, etc.</div>
-  <figcaption>Figure 11. Distribution of websites labelled as having fast, moderate, or slow TTFB, broken down by geo.</figcaption>
+  <figcaption>Figure 11. Distribution of websites labeled as having fast, moderate, or slow TTFB, broken down by geo.</figcaption>
 </figure>
 
 Now let's look at the percent of websites serving fast TTFB to users in different geos. APAC geos like Korea, Taiwan, and Japan are still outperforming users from the rest of the world. But no geo has more than 15% of websites with fast TTFB. India, for example, has fewer than 1% of websites with fast TTFB and 79% with slow TTFB.
@@ -206,10 +206,10 @@ You know the drill by now. This chart shows the distribution of websites' fast, 
     <img src="/static/images/2019/07_Performance/fig13.png" aria-labelledby="fig13-caption" width="600">
   </a>
   <div id="fig13-caption" class="visually-hidden">Bar chart showing that 40% of websites have fast FID, 45% have moderate FID, and 15% have slow FID.</div>
-  <figcaption>Figure 13. Distribution of websites labelled as having fast, moderate, or slow TTFB.</figcaption>
+  <figcaption>Figure 13. Distribution of websites labeled as having fast, moderate, or slow TTFB.</figcaption>
 </figure>
 
-The PSI methodology for labelling a website as having sufficiently fast or slow FID is slightly different than that of FCP. For a site to be **fast**, 95% of its FID experiences must be fast. A site is **slow** if 5% of its FID experiences are slow. All other experiences are **moderate**.
+The PSI methodology for labeling a website as having sufficiently fast or slow FID is slightly different than that of FCP. For a site to be **fast**, 95% of its FID experiences must be fast. A site is **slow** if 5% of its FID experiences are slow. All other experiences are **moderate**.
 
 Compared to the previous metrics, the distribution of aggregate FID performance is much more skewed towards fast and moderate experiences than slow. 40% of websites have fast FID and only 15% have slow FID. The nature of FID being an interactivity metric -- as opposed to a loading metric bound by network speeds -- makes for an entirely different way to characterize performance.
 
@@ -241,7 +241,7 @@ By breaking FID down by device, it becomes clear that there are two very differe
     <img src="/static/images/2019/07_Performance/fig16.png" aria-labelledby="fig16-caption" width="600">
   </a>
   <div id="fig16-caption" class="visually-hidden">Bar chart of the desktop and mobile FID distributions. Desktop fast, moderate, slow: 82%, 12%, and 5% respectively. Mobile: 26%, 52%, and 22%.</div>
-  <figcaption>Figure 16. Distribution of websites labelled as having fast, moderate, or slow FID, broken down by device type.</figcaption>
+  <figcaption>Figure 16. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by device type.</figcaption>
 </figure>
 
 When we apply the PSI labelling to desktop and phone experiences, the distinction becomes crystal clear. 82% of websites' FID experienced by desktop users are fast compared to 5% slow. For mobile experiences, 26% of websites are fast while 22% are slow. Form factor plays a major role in the performance of interactivity metrics like FID.
@@ -254,7 +254,7 @@ When we apply the PSI labelling to desktop and phone experiences, the distinctio
     <img src="/static/images/2019/07_Performance/fig17.png" aria-labelledby="fig17-caption" width="600">
   </a>
   <div id="fig17-caption" class="visually-hidden">Bar chart of FID distributions per effective connection type. 4G fast, moderate, slow: 41%, 45%, and 15% respectively. 3G: 22%, 52%, and 26%. 2G: 19%, 58%, 23%. Slow 2G: 15%, 58%, 27%.</div>
-  <figcaption>Figure 17. Distribution of websites labelled as having fast, moderate, or slow FID, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>
+  <figcaption>Figure 17. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>
 </figure>
 
 On its face, FID seems like it would be driven primarily by CPU speed. It'd be reasonable to assume that the slower the device itself is, the higher the likelihood that it will be busy when the user attempts to interact with a web page, right?
@@ -269,7 +269,7 @@ The ECT results above seem to suggest that there is a correlation between connec
     <img src="/static/images/2019/07_Performance/fig18.png" aria-labelledby="fig18-caption" width="600">
   </a>
   <div id="fig18-caption" class="visually-hidden">Bar chart of FID distributions for the top 23 most popular geographies. Korea has the most fast websites at 69%. From there, the percent of fast websites declines steadily for other geographies: Australia 55%, United States 52%, Canada 51%, etc.</div>
-  <figcaption>Figure 18. Distribution of websites labelled as having fast, moderate, or slow FID, broken down by geo.</figcaption>
+  <figcaption>Figure 18. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by geo.</figcaption>
 </figure>
 
 In this breakdown of FID by geographic location, Korea is out in front of everyone else again. But the top geos have some new faces: Australia, the United States, and Canada are next with more than 50% of websites having fast FID.
