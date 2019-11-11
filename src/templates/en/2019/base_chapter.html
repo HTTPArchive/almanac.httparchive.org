@@ -1,12 +1,132 @@
 {% extends "en/2019/base.html" %}
 
-{% block title %}
-{{ metadata.get('title') }} | 2019 | The Web Almanac by HTTP Archive
+{% block title %}{{ metadata.get('title') }} | 2019 | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css">
 {% endblock %}
 
+{% block scripts %}
+{{ super() }}
+<script nonce="{{ csp_nonce() }}">
+
+var indexBox = document.querySelector('.index-box');
+var indexBoxTitle = document.querySelector('.index .header');
+
+indexBoxTitle.addEventListener('click', function(e) {
+  indexBox.classList.toggle('show');
+});
+
+fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
+    .then(function(r) { return r.json(); })
+    .then(function(r) {
+  if (!r) {
+    return;
+  }
+
+  var comments = +r.posts_count - 1;
+  if (isNaN(comments)) {
+    return;
+  }
+  var el = document.getElementById('num_comments');
+  el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
+});
+</script>
+{% endblock %}
+
+{# Calls to action for readers who want to engage more with this chapter. #}
+{% macro render_actions() %}
+  <div class="discuss">
+    <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24"><span id="num_comments"></span>
+    </a>
+  </div>
+{% endmacro %}
+
+
 {% macro render_byline() %}
-  <div id="byline">By
+  <div class="byline">Written by
   {% for author in metadata.get('authors') %}
-    {{ config.contributors[author].name if author in config.contributors else author }}
+    <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    {% if loop.index == loop.length - 1 %} and{% endif %}
   {% endfor %}
+  </div>
+
+  <div class="byline reviewers">Reviewed by
+  {% for reviewer in metadata.get('reviewers') %}
+    <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    {% if loop.index == loop.length - 1 %} and{% endif %}
+  {% endfor %}
+  </div>
+{% endmacro %}
+
+{% macro render_authors() %}
+  {% for author in metadata.get('authors') %}
+  {% if loop.length == 1 %}<h4>Author</h4>{% endif -%}
+  {% if loop.length > 1 and loop.index == 1 %}<h4>Authors</h4>{% endif %}
+  {% if loop.index == 1 %}<ul>{% endif %}
+      {% set authordata = config.contributors[author] if author in config.contributors else None %}
+    {% if authordata %}
+      <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" /></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
+              {% if authordata.twitter or authordata.github %}
+                  <span class="social">
+                  {% if authordata.twitter %}
+                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="@{{ authordata.twitter }} on Twitter"></a>
+                  {% endif %}
+                  {% if authordata.github %}
+                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }}@ on GitHub"></a>
+                  {% endif %}
+                  </span>
+              {% endif %}
+              {% if authordata.tagline %}
+                  <div class="tagline">
+                      {{ authordata.tagline }}
+                  </div>
+              {% endif %}
+              {% if authordata.bio %}
+              <div class="bio">
+                  {{ authordata.bio | safe }}
+              </div>
+          {% endif %}
+          </div>
+      </li>
+    {% else %}
+      <li>
+          <div class="info">
+            <span class="name">{{ author }}</span>
+          </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro render_prevnext() %}
+  {% if prev_chapter %}
+      <a id="previous-chapter" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+          <span class="arrow">&#8963;</span>
+          <span class="chapter-no">
+              Chapter {{ prev_chapter['chapter'] }}
+          </span>
+          <span class="chapter-title">
+              {{ prev_chapter['title'] }}
+          </span>
+      </a>
+  {% endif %}
+
+  {% if next_chapter %}
+      <a id="next-chapter" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+              <span class="arrow">&#8963;</span>
+              <span class="chapter-no">
+                  Chapter {{ next_chapter['chapter'] }}
+              </span>
+              <span class="chapter-title">
+                  {{ next_chapter['title'] }}
+              </span>
+      </a>
+  {% endif %}
 {% endmacro %}

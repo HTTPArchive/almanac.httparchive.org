@@ -58,8 +58,6 @@ header.alt-bg {
 }
 
 p {
-  font-size: 16px;
-  line-height: 24px;
   margin-bottom: 40px;
 }
 
@@ -139,11 +137,6 @@ p {
   align-items: center;
 }
 
-blockquote {
-  font-size: 19px;
-  line-height: 26px
-}
-
 .featured-chapter-content > div,
 .featured-chapter-content button {
   margin-bottom: 40px;
@@ -211,10 +204,10 @@ blockquote {
   font-size: 600px;
   font-weight: bold;
   letter-spacing: 50px;
-  overflow: visible;
-  top: -100px;
-  position: relative;
   pointer-events: none;
+  height: 100%;
+  width: auto;
+  line-height: 400px;
 }
 
 /* Methodology */
@@ -233,7 +226,7 @@ blockquote {
 .methodology-data {
   display: flex;
   margin: 20px 0 30px 0;
-  padding: 20px 40px;
+  padding: 20px 30px;
   border-radius: 5px;
   box-shadow: 0 0 5px 5px #f6f7f9;
 }
@@ -262,6 +255,7 @@ blockquote {
 .websites-tested div:last-of-type,
 .data-processed div:last-of-type {
   font-size: 3rem;
+  line-height: 3rem;
 }
 
 .methodology-info {
@@ -361,6 +355,7 @@ blockquote {
 
   .intro-image {
     display: block;
+    max-width: 100%;
     margin-top: 80px;
     margin-right: -46px;
   }
@@ -459,6 +454,7 @@ blockquote {
   .websites-tested div:last-of-type,
   .data-processed div:last-of-type {
     font-size: 5rem;
+    line-height: 5rem;
   }
 }
 

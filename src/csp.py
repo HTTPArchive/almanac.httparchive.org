@@ -16,6 +16,7 @@ csp = {
     ],
     'connect-src': [
         '\'self\'',
+        'discuss.httparchive.org',
         'www.google-analytics.com',
         'www.googletagmanager.com'
     ],
@@ -23,10 +24,12 @@ csp = {
         '\'self\'',
         'www.google-analytics.com',
         'www.googletagmanager.com',
-        'www.gravatar.com'
+        '*.githubusercontent.com',
+        'data:'
     ],
     'frame-src': [
         '\'self\'',
-        'docs.google.com'
+        'docs.google.com',
+        'www.youtube.com'
     ]
 }

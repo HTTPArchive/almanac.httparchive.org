@@ -1,4 +1,3 @@
-
 #methodology {
   margin-top: 32px;
   overflow: visible;
@@ -9,7 +8,7 @@
 
 #methodology p,
 #methodology li {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 30px;
 }
 .decorative-line {
@@ -24,7 +23,7 @@
 }
 .floating-card {
   border-radius: 16px;
-  box-shadow: 0 0 5px 5px #f6f7f9;
+  box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
 }
 .code-block {
   margin: 8px 0;
@@ -43,6 +42,21 @@
 .code-block code {
   width: 100%;
 }
+.code-comment {
+  color: #838689;
+}
+.code-keyword {
+  color: #4A3244;
+}
+.code-function {
+  color: #1A2B49;
+}
+.code-string {
+  color: #2C4A73;
+}
+.code-number {
+  color: #A8CABA;
+}
 
 .index {
   grid-area: index;
@@ -53,9 +67,6 @@
 }
 .index .header {
   display: #1A2B49;
-}
-.index .header-mobile {
-  display: none;
 }
 #methodology .index ul {
   width: 100%;
@@ -129,7 +140,7 @@
 .methodology-banner {
   width: 100%;
   border-radius: 8px;
-  border: 1px solid #1A2B490A;
+  border: 1px solid #e5e5e5;
 }
 
 @media (max-width: 900px) {
@@ -161,17 +172,14 @@
     margin: 0px;
   }
   #methodology .index-box .header {
-    display: none;
-  }
-  #methodology .index-box .header-mobile {
     display: flex;
     justify-content: space-between;
   }
-  #methodology .index-box  h2.header-mobile::after {
+  #methodology .index-box  h2.header::after {
     font-weight: normal;
     content: '+';
   }
-  #methodology .index-box.show  h2.header-mobile::after {
+  #methodology .index-box.show  h2.header::after {
     content: '-';
   }
 

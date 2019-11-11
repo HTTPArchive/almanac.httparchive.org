@@ -1,9 +1,10 @@
 import config as config_util
 from csp import csp
-from flask import Flask, redirect, render_template as flask_render_template, request, url_for
+from flask import Flask, redirect, render_template as flask_render_template, request, send_from_directory, url_for
 from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
+import random
 from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
 
 app = Flask(__name__)
@@ -48,6 +49,7 @@ app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
 app.jinja_env.globals['get_chapter_image_dir'] = get_chapter_image_dir
 
+
 @app.route('/<lang>/<year>/')
 @validate
 def home(lang, year):
@@ -60,17 +62,20 @@ def root(lang):
     return redirect(url_for('home', lang=lang, year=DEFAULT_YEAR))
 
 
-@app.route('/<lang>/<year>/outline')
+@app.route('/<lang>/<year>/table-of-contents')
 @validate
-def outline(lang, year):
+def table_of_contents(lang, year):
     config = config_util.get_config(year)
-    return render_template('%s/%s/outline.html' % (lang, year), config=config)
+    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config)
 
 
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(lang, year):
     config = config_util.get_config(year)
+    contributors = list(config["contributors"].items())
+    random.shuffle(contributors)
+    config["contributors"] = dict(contributors)
     return render_template('%s/%s/contributors.html' % (lang, year), config=config)
 
 
@@ -80,12 +85,52 @@ def methodology(lang, year):
     return render_template('%s/%s/methodology.html' % (lang, year))
 
 
+@app.route('/sitemap.xml')
+@validate
+def sitemap():
+    xml = render_template('sitemap.xml')
+    resp = app.make_response(xml)
+    resp.mimetype = "text/xml"
+    return resp
+
+
 @app.route('/<lang>/<year>/<chapter>')
 @validate
 def chapter(lang, year, chapter):
     # TODO: Validate the chapter.
     config = config_util.get_config(year)
-    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config)
+    (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
+    return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config, prev_chapter=prev_chapter, next_chapter=next_chapter)
+
+
+def get_chapter_nextprev(config, chapter_slug):
+    prev_chapter = None
+    next_chapter = None
+    found =  False
+
+    for part in config['outline']:
+        for chapter in part['chapters']:
+            if found and 'todo' not in chapter:
+                next_chapter = chapter
+                break
+            elif get_chapter_slug(chapter) == chapter_slug and 'todo' not in chapter:
+                found = True
+            elif 'todo' not in chapter:
+                prev_chapter = chapter
+        if found and next_chapter:
+            break
+
+    return (prev_chapter, next_chapter)
+
+
+@app.route('/robots.txt')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
+
+@app.route('/favicon.ico')
+def default_favicon():
+    return send_from_directory(app.static_folder, 'images/favicon.ico')
 
 
 @app.errorhandler(400)
