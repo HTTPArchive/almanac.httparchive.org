@@ -17,7 +17,7 @@ Images, animations, and videos are an important part of the web experience. They
 From a pure bytes perspective, HTTP Archive has historically reported an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every web page depends on images and videos. Even at the 10th percentile, we see that 43% of the bytes are from media and can rise to 91.3% of the total bytes at the 90th percentile of pages. 
 (% of image bytes per page figure)
 
-While media is critical for the visual experience, the impact of this high volume of bytes has two side effects. First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an uber) can dramatically slow down the page performance. Images are a lower priority request by the browser, but can easily block CSS and JavaScript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual queue to the user that the page is ready and slow transfers can give a perceived slowness of the page. `<<todo: link>>`
+While media is critical for the visual experience, the impact of this high volume of bytes has two side effects. First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an uber) can dramatically slow down the page performance. Images are a lower priority request by the browser, but can easily block CSS and JavaScript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual queue to the user that the page is ready and slow transfers can give a perceived slowness of the page.
 
 The second impact is on the financial cost to the user. This is often an ignored aspect since it is not a burden on the website owner but a burden to the end-user. Anecdotally it has been shared that in some markets, like Japan, see a drop in purchases by students near the end of the month when data caps are reached and users cannot see the visual content without weighting. 
 
@@ -164,7 +164,7 @@ The utility of SrcSet is usually dependent on the precision of the Sizes media q
 | (max-width: 400px) 100vw, 400px | 0.32| 1%
 | (max-width: 80px) 100vw, 80px | 0.28| 1%
 
-*`<img sizes=”**auto**”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes `<<todo: link>>` javascript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the javascript loading and DOM to be fully ready, delaying image loading substantially. 
+*`<img sizes=”**auto**”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes JavaScript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the JavaScript loading and DOM to be fully ready, delaying image loading substantially. 
 
 (figure `<img sizes>` by implementation pattern)
 
