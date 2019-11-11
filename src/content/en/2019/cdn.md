@@ -339,7 +339,7 @@ The composition of top CDN providers dramatically shifts for third-party resourc
     <thead>
       <tr>
         <th></th>
-        <th>Third Party CDN Usage (%)</th>
+        <th>Third-Party CDN Usage (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -454,7 +454,7 @@ CDNs can offer more than simple caching for website performance. Many CDNs also 
 
 Using a CDN in this way can improve page performance in two ways:
 
-1. Reduce RTT for TCP and TLS negotiation. The speed of light is only so fast and CDNs offer a highly distributed set of datacenters that are closer to the end users. In this way the logical (and physical) distance that packets must traverse to negotiate a TCP connection and perform the TLS handshake can be greatly reduced.
+1. Reduce RTT for TCP and TLS negotiation. The speed of light is only so fast and CDNs offer a highly distributed set of data centers that are closer to the end users. In this way the logical (and physical) distance that packets must traverse to negotiate a TCP connection and perform the TLS handshake can be greatly reduced.
 
   Reducing RTT has three immediate benefits. First, it improves the time for the user to receive data, because TCP+TLS connection time are RTT-bound. Secondly, this will improve the time it takes to grow the congestion window and utilize the full amount of bandwidth the user has available. Finally, it reduces the probability of packet loss. When the RTT is high, network interfaces will time-out requests and resend packets. This can result in double packets being delivered.
 
@@ -470,7 +470,7 @@ In contrast, the median TLS negotiation for the majority of CDN providers is bet
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
-    <img alt="Distribution of TLS negotiation time for intial HTML request broken down by CDN" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600">
+    <img alt="Distribution of TLS negotiation time for initial HTML request broken down by CDN" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600">
   </a>
   <figcaption>Figure 8. HTML TLS negotiation time.</figcaption>
 </figure>
@@ -1049,7 +1049,7 @@ Along with this general adoption of TLS, CDN use also sees higher adoption of em
 
 In general, the use of a CDN is highly correlated with a more rapid adoption of stronger ciphers and stronger TLS versions compared to origin-hosted services where there is a higher usage of very old and compromised TLS versions like TLS 1.0. 
 
-<aside class="note">It is important to emphasise that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions.</aside> 
+<aside class="note">It is important to emphasize that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions.</aside> 
 
 <figure>
   <iframe aria-labelledby="fig18-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive"></iframe>
@@ -1286,7 +1286,7 @@ CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin page
     <img src="/static/images/2019/17_CDN/fig22.png" aria-labelledby="fig22-caption" width="600">
   </a>
   <div id="fig22-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests from intial HTML via CDN, and site origins</div>
-  <figcaption>Figure 22. HTML/2 adoption: third party resources.</figcaption>
+  <figcaption>Figure 22. HTML/2 adoption: third-party resources.</figcaption>
 </figure>
 
 <figure>
@@ -1478,7 +1478,7 @@ CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin page
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 23. HTML/2 adoption: third party resources.</figcaption>
+  <figcaption>Figure 23. HTML/2 adoption: third-party resources.</figcaption>
 </figure>
 
 ## Controlling CDN caching behavior
@@ -1542,7 +1542,7 @@ Future research might explore cache lifetimes versus the age of the resources, a
 
 So far, this chapter has explored the use of commercials CDNs which the site may be using to host its own content, or perhaps used by a third-party resource included on the site.
 
-Common libraries like jQuery and Bootstrap are also available from public CDNs hosted by Google, Cloudflare, Microsoft, etc. Using content from one of the public CDNs instead of a self-hosting the content is a tradeoff. Even though the content is hosted on a CDN, creating a new connection and growing the congestion window may negate the low latency of using a CDN.
+Common libraries like jQuery and Bootstrap are also available from public CDNs hosted by Google, Cloudflare, Microsoft, etc. Using content from one of the public CDNs instead of a self-hosting the content is a trade-off. Even though the content is hosted on a CDN, creating a new connection and growing the congestion window may negate the low latency of using a CDN.
 
 Google Fonts is the most popular of the content CDNs and is used by 55% of websites. For non-font content, Google API, Cloudflare's JS CDN, and the Bootstrap's CDN are the next most popular.
 

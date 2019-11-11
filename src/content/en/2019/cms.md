@@ -248,9 +248,9 @@ The impact doesn't necessarily correlate with the number of requests, but rather
 
 With our CMS experiences saturated with these resources, we must consider the impact this has on website visitors on the frontend- is their experience fast or slow? Additionally, when comparing mobile and desktop resource usage, the amount of requests and weight show little difference. This means that the same amount and weight of resources are powering both mobile and desktop CMS experiences. Variation in connection speed and mobile device quality adds [another layer of complexity](https://medinathoughts.com/2017/12/03/the-perils-of-mobile-web-performance-part-iii/). Later in this chapter, we'll use data from CrUX to assess user experience in the CMS space.
 
-### Third party resources
+### Third-party resources
 
-Let's highlight a particular subset of resources to assess their impact in the CMS landscape. [Third party](./third-parties) resources are those from origins not belonging to the destination site's domain name or servers. They can be images, videos, scripts, or other resource types. Sometimes these resources are packaged in combination such as with embedding an iframe for example. Our data reveals that the median amount of 3rd party resources for both desktop and mobile are close. 
+Let's highlight a particular subset of resources to assess their impact in the CMS landscape. [Third-party](./third-parties) resources are those from origins not belonging to the destination site's domain name or servers. They can be images, videos, scripts, or other resource types. Sometimes these resources are packaged in combination such as with embedding an iframe for example. Our data reveals that the median amount of 3rd party resources for both desktop and mobile are close. 
 
 The median amount of 3rd party requests on mobile CMS pages is 15 and weigh 264.72 KB, while the median for these requests on desktop CMS pages is 16 and weigh 271.56 KB. (Note that this excludes 3P resources considered part of "hosting").
 
@@ -259,8 +259,8 @@ The median amount of 3rd party requests on mobile CMS pages is 15 and weigh 264.
   <a href="/static/images/2019/14_CMS/fig10.png" class="fig-mobile">
     <img src="/static/images/2019/14_CMS/fig10.png" aria-labelledby="fig10-caption" width="600">
   </a>
-  <div id="fig10-caption" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third party kilobytes on CMS pages for desktop and mobile. The median (50th percentile) desktop third party weight is 272 KB. The 10th percentile is 27 KB, 25th 104 KB, 75th 577 KB, and 90th 940 KB. Mobile is slightly smaller in the smaller percentiles and slightly larger in the larger percentiles.</div>
-  <figcaption>Figure 10. Distribution of third party weight (KB) on CMS pages.</figcaption>
+  <div id="fig10-caption" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third-party kilobytes on CMS pages for desktop and mobile. The median (50th percentile) desktop third-party weight is 272 KB. The 10th percentile is 27 KB, 25th 104 KB, 75th 577 KB, and 90th 940 KB. Mobile is slightly smaller in the smaller percentiles and slightly larger in the larger percentiles.</div>
+  <figcaption>Figure 10. Distribution of third-party weight (KB) on CMS pages.</figcaption>
 </figure>
 
 <figure>
@@ -268,13 +268,13 @@ The median amount of 3rd party requests on mobile CMS pages is 15 and weigh 264.
   <a href="/static/images/2019/14_CMS/fig11.png" class="fig-mobile">
     <img src="/static/images/2019/14_CMS/fig11.png" aria-labelledby="fig11-caption" width="600">
   </a>
-  <div id="fig11-caption" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third party requests on CMS pages for desktop and mobile. The median (50th percentile) desktop third party request count is 16. The 10th percentile is 3, 25th 7, 75th 31, and 90th 52. Desktop and mobile have nearly equivalent distributions.</div>
-  <figcaption>Figure 11. Distribution of the number of third party requests on CMS pages.</figcaption>
+  <div id="fig11-caption" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third-party requests on CMS pages for desktop and mobile. The median (50th percentile) desktop third-party request count is 16. The 10th percentile is 3, 25th 7, 75th 31, and 90th 52. Desktop and mobile have nearly equivalent distributions.</div>
+  <figcaption>Figure 11. Distribution of the number of third-party requests on CMS pages.</figcaption>
 </figure>
 
 We know the median value indicates at least half of CMS web pages are shipping with more 3rd party resources than what we report here. At the 90th percentile, CMS pages can deliver up to 52 resources at approximately 940 KB, a considerable increase. 
 
-Given that third party resources originate from remote domains and servers, the destination site has little control over the quality and impact these resources have on its performance. This unpredictability could lead to fluctuations in speed and affect the user experience, which we'll soon explore. 
+Given that third-party resources originate from remote domains and servers, the destination site has little control over the quality and impact these resources have on its performance. This unpredictability could lead to fluctuations in speed and affect the user experience, which we'll soon explore. 
 
 ### Image stats
 
@@ -301,7 +301,7 @@ Which are the common formats found on mobile and desktop CMS pages? From our dat
   <a href="/static/images/2019/14_CMS/fig14.png" class="fig-mobile">
     <img src="/static/images/2019/14_CMS/fig14.png" aria-labelledby="fig14-caption" width="600">
   </a>
-  <div id="fig14-caption" class="visually-hidden">Bar chart of the adoption of image formats on CMS pages for desktop and mobile. JPEG makes up nearly half of all image formats, PNG comprises a third, GIF comprises a fift, and the remaining 5% shared among SVG, ICO, and WebP. Desktop and mobile have nearly equivalent adoption.</div>
+  <div id="fig14-caption" class="visually-hidden">Bar chart of the adoption of image formats on CMS pages for desktop and mobile. JPEG makes up nearly half of all image formats, PNG comprises a third, GIF comprises a fifth, and the remaining 5% shared among SVG, ICO, and WebP. Desktop and mobile have nearly equivalent adoption.</div>
   <figcaption>Figure 14. Adoption of image formats on CMS pages.</figcaption>
 </figure>
 
