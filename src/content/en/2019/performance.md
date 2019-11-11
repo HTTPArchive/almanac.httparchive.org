@@ -244,7 +244,7 @@ By breaking FID down by device, it becomes clear that there are two very differe
   <figcaption>Figure 16. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by device type.</figcaption>
 </figure>
 
-When we apply the PSI labelling to desktop and phone experiences, the distinction becomes crystal clear. 82% of websites' FID experienced by desktop users are fast compared to 5% slow. For mobile experiences, 26% of websites are fast while 22% are slow. Form factor plays a major role in the performance of interactivity metrics like FID.
+When we apply the PSI labeling to desktop and phone experiences, the distinction becomes crystal clear. 82% of websites' FID experienced by desktop users are fast compared to 5% slow. For mobile experiences, 26% of websites are fast while 22% are slow. Form factor plays a major role in the performance of interactivity metrics like FID.
 
 #### FID by effective connection type
 
