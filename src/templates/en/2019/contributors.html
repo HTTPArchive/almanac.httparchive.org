@@ -84,13 +84,6 @@
 {% block styles %}
 {{ super() }}
 <style>
-.title::before {
-  display: block;
-  content: '';
-  margin-bottom: 18px;
-  border-bottom: solid 1px #c6dcd2;
-  width: 70px;
-}
 .team {
   display: flex;
   flex-direction: row;
@@ -294,7 +287,7 @@
 
 {% block main %}
 <section class="main">
-  <h1 class="title">
+  <h1 class="title title-lg">
     Contributors
   </h1>
   <div class="team">
