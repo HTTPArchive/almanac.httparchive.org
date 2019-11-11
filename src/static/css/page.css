@@ -333,6 +333,9 @@ figure .big-number {
 figure .fig-mobile {
   display: none;
 }
+figure .fig-desktop {
+  display: block;
+}
 
 .bio {
   margin-top: 10px;
