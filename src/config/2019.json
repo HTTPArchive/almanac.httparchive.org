@@ -618,7 +618,7 @@
         "reviewers"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/204268?v=4&s=200",
-      "website": "http:\/\/speedcurve.com",
+      "website": "https:\/\/speedcurve.com",
       "github": "zeman",
       "twitter": "MarkZeman"
     },
@@ -716,7 +716,7 @@
     },
     "paulcalvano": {
       "name": "Paul Calvano",
-      "bio":"Paul Calvano is a Web Performance Architect at <a href=\"https://www.akamai.com/\">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href=\"https://twitter.com/paulcalvano\">@paulcalvano</a>, blogging at <a href=\"http://paulcalvano.com\">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href=\"https://discuss.httparchive.org\">https://discuss.httparchive.org</a>.",
+      "bio":"Paul Calvano is a Web Performance Architect at <a href=\"https://www.akamai.com/\">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href=\"https://twitter.com/paulcalvano\">@paulcalvano</a>, blogging at <a href=\"https://paulcalvano.com\">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href=\"https://discuss.httparchive.org\">https://discuss.httparchive.org</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -950,7 +950,7 @@
     },
     "zachleat": {
       "name": "Zach Leatherman",
-      "bio": "Zach is a Web Developer with <a href=\"http://www.filamentgroup.com/\">Filament Group</a>. He’s currently fixated on <a href=\"https://www.zachleat.com/web/fonts/\">web fonts</a> and <a href=\"https://www.zachleat.com/web/introducing-eleventy/\">static site generators</a>. His <a href=\"https://www.zachleat.com/web/speaking/\">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a href=\"https://www.zachleat.com/web/whitehouse/\">The White House</a>. He also helps herd <a href=\"http://nejsconf.com/\">NEJS CONF</a> and the <a href=\"http://nebraskajs.com\">NebraskaJS</a> meetup.",
+      "bio": "Zach is a Web Developer with <a href=\"https://www.filamentgroup.com/\">Filament Group</a>. He’s currently fixated on <a href=\"https://www.zachleat.com/web/fonts/\">web fonts</a> and <a href=\"https://www.zachleat.com/web/introducing-eleventy/\">static site generators</a>. His <a href=\"https://www.zachleat.com/web/speaking/\">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a href=\"https://www.zachleat.com/web/whitehouse/\">The White House</a>. He also helps herd <a href=\"http://nejsconf.com/\">NEJS CONF</a> and the <a href=\"http://nebraskajs.com\">NebraskaJS</a> meetup.",
       "teams": [
         "brainstormers",
         "authors"
