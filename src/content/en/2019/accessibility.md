@@ -35,10 +35,10 @@ There are many cases where visitors to your site may not be able see it perfectl
 In order to make sure your website is readable under these conditions, making sure your text has sufficient color contrast with its background is critical.
 
 <figure>
-	<a href="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
-		<img alt="Figure 1. Four colored boxes of orange and gray shades with white text overlayed inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in grayscale. Courtesy of LookZook." src="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
-	</a>
-	<figcaption>Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
+  <a href="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
+    <img alt="Figure 1. Four colored boxes of orange and gray shades with white text overlayed inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in grayscale. Courtesy of LookZook." src="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600">
+  </a>
+  <figcaption>Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
 Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.
@@ -60,9 +60,12 @@ Because of this, developers are given the ability to disable this feature by set
 Sadly, developers have misused this so much that almost one out of every three sites on mobile (32.21%) disable this feature, and Apple (as of iOS 10) no longer allows web-developers to disable zooming. Mobile Safari simply [ignores the tag](https://archive.org/details/ios-10-beta-release-notes). All sites, no matter what, can be zoomed and scaled on newer iOS devices.
 
 <figure>
-	<iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive"></iframe>
-	<div id="fig2-caption" class="visually-hidden">Figure 2. Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
-	<figcaption>Figure 2. Percentage of sites that disable zooming and scaling vs device type.</figcaption>
+  <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/09_Accessibility/fig2.png" class="fig-mobile">
+    <img src="/static/images/2019/09_Accessibility/fig2.png" aria-labelledby="fig2-caption" width="600">
+  </a>
+  <div id="fig2-caption" class="visually-hidden">Figure 2. Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
+  <figcaption>Figure 2. Percentage of sites that disable zooming and scaling vs device type.</figcaption>
 </figure>
 
 ### Language identification
@@ -116,9 +119,12 @@ With that being said, here are our results:
 3. Strangely, H2s are found on more sites than H1s.
 
 <figure>
-	<iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive"></iframe>
-	<div id="fig3-caption" class="visually-hidden">Vertical bar chart titled "% of sites using each heading" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing each heading level h1 through h6.  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.</div>
-	<figcaption>Figure 3. Popularity of heading levels.</figcaption>
+  <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/09_Accessibility/fig3.png" class="fig-mobile">
+    <img src="/static/images/2019/09_Accessibility/fig3.png" aria-labelledby="fig3-caption" width="600">
+  </a>
+  <div id="fig3-caption" class="visually-hidden">Vertical bar chart titled "% of sites using each heading" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing each heading level h1 through h6.  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.</div>
+  <figcaption>Figure 3. Popularity of heading levels.</figcaption>
 </figure>
 
 ### Main landmark
@@ -128,9 +134,12 @@ A [main landmark](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARI
 We found only one in every four pages (26.03%) include a main landmark. And surprisingly, 8.06% of pages erroneously contained more than one main landmark, leaving these users guessing which landmark contains the actual main content.
 
 <figure>
-	<iframe aria-labelledby="fig4-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive"></iframe>
-	<div id="fig4-caption" class="visually-hidden">Figure 4. Vertical bar chart titled "Number of “main" landmarks per page” displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of “main” landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%.</div>
-	<figcaption>Figure 4. Percent of pages by their number of "main" landmarks.</figcaption>
+  <iframe aria-labelledby="fig4-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/09_Accessibility/fig4.png" class="fig-mobile">
+    <img src="/static/images/2019/09_Accessibility/fig4.png" aria-labelledby="fig4-caption" width="600">
+  </a>
+  <div id="fig4-caption" class="visually-hidden">Figure 4. Vertical bar chart titled "Number of “main" landmarks per page” displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of “main” landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%.</div>
+  <figcaption>Figure 4. Percent of pages by their number of "main" landmarks.</figcaption>
 </figure>
 
 ### HTML section elements
@@ -144,9 +153,12 @@ Others like [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Elem
 All of these elements are primarily designed for accessibility support and have no visual effect, which means you can safely replace existing elements with them and suffer no unintended consequences.
 
 <figure>
-	<iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive"></iframe>
-	<div id="fig5-caption" class="visually-hidden">Figure 5. Horizontal bar chart titled "usage of semantic elements" with bars for each element type vs percent of pages ranging from 0 to 60 in increments of 20. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%.</div>
-	<figcaption>Figure 5. Usage of various HTML semantic elements.</figcaption>
+  <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/09_Accessibility/fig5.png" class="fig-mobile">
+    <img src="/static/images/2019/09_Accessibility/fig5.png" aria-labelledby="fig5-caption" width="600">
+  </a>
+  <div id="fig5-caption" class="visually-hidden">Figure 5. Horizontal bar chart titled "usage of semantic elements" with bars for each element type vs percent of pages ranging from 0 to 60 in increments of 20. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%.</div>
+  <figcaption>Figure 5. Usage of various HTML semantic elements.</figcaption>
 </figure>
 
 ### Other HTML elements used for navigation
@@ -154,9 +166,12 @@ All of these elements are primarily designed for accessibility support and have 
 Many popular screen readers also allow users to navigate by quickly jumping through links, lists, list items, iframes, and form fields like edit fields, buttons, and list boxes. Figure 6 details how often we saw pages using these elements.
 
 <figure>
-	<iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive"></iframe>
-	<div id="fig6-caption" class="visually-hidden">Figure 6. Horizontal bar chart titled "other HTML elements used for navigation" with bars for each element type vs percent of pages ranging from 0 to 100 in increments of 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%.</div>
-	<figcaption>Figure 6. Other HTML elements used for navigation.</figcaption>
+  <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/09_Accessibility/fig6.png" class="fig-mobile">
+    <img src="/static/images/2019/09_Accessibility/fig6.png" aria-labelledby="fig6-caption" width="600">
+  </a>
+  <div id="fig6-caption" class="visually-hidden">Figure 6. Horizontal bar chart titled "other HTML elements used for navigation" with bars for each element type vs percent of pages ranging from 0 to 100 in increments of 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%.</div>
+  <figcaption>Figure 6. Other HTML elements used for navigation.</figcaption>
 </figure>
 
 ### Skip Links
@@ -166,10 +181,10 @@ A [skip link](https://webaim.org/techniques/skipnav/) is a link placed at the to
 If you'd like to see a skip link in action for yourself, you can! Just do a quick Google search and hit "tab" as soon as you land on the search result pages. You'll be greeted with a previously hidden link just like the one in Figure 7.
 
 <figure>
-	<a href="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png">
-		<img alt="Figure 7. Screenshot of Google search results page for search 'http archive'. The visible 'Skip to main content' link is surrounded by a blue focus highlight and a yellow overlayed box with a red arrow pointing to the skip link reads 'A skip link on google.com'." src="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png">
-	</a>
-	<figcaption>Figure 7. What a skip link looks like on google.com.</figcaption>
+  <a href="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png">
+    <img alt="Figure 7. Screenshot of Google search results page for search 'http archive'. The visible 'Skip to main content' link is surrounded by a blue focus highlight and a yellow overlayed box with a red arrow pointing to the skip link reads 'A skip link on google.com'." src="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png" width="600">
+  </a>
+  <figcaption>Figure 7. What a skip link looks like on google.com.</figcaption>
 </figure>
 
 It's hard to accurately determine what a skip link is when analyzing sites. For this analysis, if we found an anchor link (`href=#heading1`) within the first 3 links on the page, we defined this as a page with a skip link. So 14.19% is a strict upper bound.
@@ -213,9 +228,12 @@ One of the most popular and widely used specifications for accessibility on the 
 Using ARIA correctly and appropriately can be challenging. For example, of pages making use of ARIA attributes, we found 12.31% have invalid values assigned to their attributes. This is problematic because any mistake in the use of an ARIA attribute has no visual effect on the page. Some of these errors can be detected by using an automated validation tool, but generally they require hands-on use of real assistive software (like a screen reader). This section will examine how ARIA is used on the web, and specifically which parts of the standard are most prevalent.
 
 <figure>
-	<iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive"></iframe>
-	<div id="fig8-caption" class="visually-hidden">Figure 8. Vertical bar chart titled "Percent of total pages vs ARIA attribute" displaying percentage data, ranging from 0 to 25 in increments of 5, vs. bars representing each attribute. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%</div>
-	<figcaption>Figure 8. Percent of total pages vs ARIA attribute.</figcaption>
+  <iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/09_Accessibility/fig8.png" class="fig-mobile">
+    <img src="/static/images/2019/09_Accessibility/fig8.png" aria-labelledby="fig8-caption" width="600">
+  </a>
+  <div id="fig8-caption" class="visually-hidden">Figure 8. Vertical bar chart titled "Percent of total pages vs ARIA attribute" displaying percentage data, ranging from 0 to 25 in increments of 5, vs. bars representing each attribute. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%</div>
+  <figcaption>Figure 8. Percent of total pages vs ARIA attribute.</figcaption>
 </figure>
 
 #### The `role` attribute
@@ -225,9 +243,12 @@ The "role" attribute is the most important attribute in the entire ARIA specific
 Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9 below, we've compiled a list of the top ten most widely used ARIA role values.
 
 <figure>
-	<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive"></iframe>
-	<div id="fig9-caption" class="visually-hidden">Figure 9. Horizontal bar chart titled "percent of pages using role" with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%</div>
-	<figcaption>Figure 9. Top 10 aria roles.</figcaption>
+  <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/09_Accessibility/fig9.png" class="fig-mobile">
+    <img src="/static/images/2019/09_Accessibility/fig9.png" aria-labelledby="fig9-caption" width="600">
+  </a>
+  <div id="fig9-caption" class="visually-hidden">Figure 9. Horizontal bar chart titled "percent of pages using role" with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%</div>
+  <figcaption>Figure 9. Top 10 aria roles.</figcaption>
 </figure>
 
 Looking at the results in Figure 9, we found two interesting insights: updating UI frameworks may have a profound impact on accessibilty across the web, and the impressive number of sites attempting to make dialogs accessible.
