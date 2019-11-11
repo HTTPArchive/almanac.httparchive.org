@@ -1285,7 +1285,7 @@ CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin page
   <a href="/static/images/2019/17_CDN/fig22.png" class="fig-mobile">
     <img src="/static/images/2019/17_CDN/fig22.png" aria-labelledby="fig22-caption" width="600">
   </a>
-  <div id="fig22-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests from intial HTML via CDN, and site origins</div>
+  <div id="fig22-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests from initial HTML via CDN, and site origins</div>
   <figcaption>Figure 22. HTML/2 adoption: third-party resources.</figcaption>
 </figure>
 
