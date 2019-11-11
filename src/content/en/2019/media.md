@@ -6,7 +6,7 @@ title: Media
 description: Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.
 authors: [colinbendell, dougsillars]
 discuss: 1759
-reviewers: [ahmadawais, kornelski, eeeps]
+reviewers: [ahmadawais, eeeps]
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-07T21:46:11.000Z 
 ---
