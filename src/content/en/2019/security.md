@@ -119,7 +119,7 @@ TLS allows the use of various cipher suites - some newer and more secure, and so
 
 It is positive to seem such wide stream use of GCM ciphers since the older CBC ciphers are less secure. [CHACHA20_POLY1305](https://blog.cloudflare.com/it-takes-two-to-chacha-poly/) is still an niche cipher suite, and we even still have a very small use of the [insecure 3DES ciphers](https://en.wikipedia.org/wiki/Triple_DES#Security).
 
-It should be noticed that these were the cipher suites used for the crawl using Chrome, but sites will likely also support other cipher suites as well for older browsers. Other sources, for example SSL Pulse](https://www.ssllabs.com/ssl-pulse/), can provide more detail on the range of all cipher suites and protocols supported.
+It should be noticed that these were the cipher suites used for the crawl using Chrome, but sites will likely also support other cipher suites as well for older browsers. Other sources, for example [SSL Pulse](https://www.ssllabs.com/ssl-pulse/), can provide more detail on the range of all cipher suites and protocols supported.
 
 ## Mixed content
 Most sites on the web originally existed as HTTP websites and have had to migrate their site to HTTPS. This 'lift and shift' operation can be difficult and sometimes things get missed or left behind. This results in sites having mixed content, where their pages load over HTTPS but something on the page, perhaps an image or a style, is loaded over HTTP. Mixed content is bad for security and privacy and can be difficult to find and fix.
