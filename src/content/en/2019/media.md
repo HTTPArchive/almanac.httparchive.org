@@ -81,10 +81,12 @@ _(512x360 @3x)_
 
 _(1200x1920 @1x)_
 
+<figure markdown>
 ||p10|p25|p50|p75|p90|
 |--- |--- |--- |--- |--- |--- |
 |Actual Image Pixel Volume|0.09 MP|0.52 MP|2.1 MP|6.0 MP|14 MP|
 |CSS Pixel Volume|0.05 MP|0.29 MP|1.1 MP|2.8 MP|6.3 MP|
+</figure>
 
 
 Of course, the form factor for a mobile device is different than a desktop. A mobile device is smaller and usually held in portrait mode while the desktop is larger and used in landscape mode. As mentioned earlier, a mobile device also typically has a higher DPR because it is held much closer to the eye, requiring more pixels per inch compared to what you would need on a billboard in Times Square. These differences force layout changes and users on mobile more commonly scroll through a site to consume the entirety of content compared to what you can display on a single desktop layout.
@@ -106,10 +108,12 @@ If we had one image that filled the entire screen perfectly, this would be a 1x 
   <figcaption>Figure 5. Image Pixel Volume v. Screen Size (CSS Pixels)</figcaption>
 </figure>
 
+<figure markdown>
 ||p10|p25|p50|p75|p90|
 |--- |--- |--- |--- |--- |--- |
 |Mobile|20%|97%|354%|1003%|2477%|
 |Desktop|2%|13%|46%|123%|273%|
+</figure>
 
 For the median web page on desktop, only 46% of the display would have layout containing images and video. In contrast, on mobile, the volume of media pixels fills 3.5 times the actual viewport size. The layout has more content than can be filled in a single screen, requiring the user to scroll. At a minimum, there is 3.5 scrolling pages of content per site (assuming 100% saturation). At the 90th percentile for mobile, this grows substantially to 25x the viewport size!
 
@@ -152,6 +156,7 @@ In aggregate, across all page, we indeed see the prevalence of these formats. JP
 
 **Image Format Usage** 
 
+<figure markdown>
 ||% Usage|
 |--- |--- |
 |jpg|60.27|
@@ -159,6 +164,7 @@ In aggregate, across all page, we indeed see the prevalence of these formats. JP
 |webp|4.2|
 |gif|3.67|
 |svg|3.63|
+</figure>
 
 
 Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of Google.com and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images and 61 at the 90th percentile and a whopping 229 at the 99th percentile.
@@ -174,6 +180,7 @@ Of course, web pages are not uniform in their use of image content. Some depend 
 
 **Image Format Usage Per Page**
 
+<figure markdown>
 | Format | p10 | p25 | p50 | p75 | p90 | p99 |
 |---|---|---| ---| ---| ---| ---| 
 | jpg | 0 | 3 | 9 |20  |39  |119  |  
@@ -181,6 +188,7 @@ Of course, web pages are not uniform in their use of image content. Some depend 
 | webp | 0 | 0 | 0 |0  |0  |28  |  
 | svg | 0 | 0 | 0 |0  |2  |19  |  
 | gif | 0 | 0 | 0 |1  |2  |14  |  
+</figure>
 
 While the median page has 9 jpegs and 4 pngs, and only in the top 25% pages where use gifs, this doesn’t report the adoption rate. The use and frequency of each format per page doesn’t provide insight into the adoption of the more modern formats. Specifically, what % of pages include at least one image in each format?
 
@@ -208,6 +216,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
  
 **File Size by Image Format**
 
+<figure markdown>
 | Format | p10 | p25 | p50 | p75 | p90 | 
 |---|---|---| ---| ---| ---| 
 | jpeg | 4 KB | 9 KB | 24 KB |68 KB  |  166 KB  |  
@@ -215,7 +224,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
 | webp | 4 KB| 7 KB | 17 KB|41 KB  |90 KB   |  
 | gif | 2 KB| 3 KB| 6 KB |17 KB  |87 KB |  
 | svg | 0 KB| 0 KB| 1 KB|2 KB  |8 KB |  
-
+</figure>
 
 From this we can start to get a sense of how large or small a typical resource is on the web. However, this doesn’t give us a sense of the volume of pixels represented on screen for these file distributions. To do this we can divide each resource bytes by the natural pixel volume of the image. A lower Bytes-Per-Pixel indicates a more efficient transmission of visual content.
 
@@ -228,6 +237,7 @@ From this we can start to get a sense of how large or small a typical resource i
   <figcaption>Figure 10. Bytes per Pixel</figcaption>
 </figure>
 
+<figure markdown>
 | Format | Bytes Per Pixel: p10 | Bytes Per Pixel: p25 | Bytes Per Pixel: p50 | Bytes Per Pixel: p75 | Bytes Per Pixel: p90 | 
 |---|---|---| ---| ---| ---|  
 | jpeg | 0.1175 | 0.1848 | 0.2997 |0.5456  |  0.9822  |  
@@ -235,6 +245,7 @@ From this we can start to get a sense of how large or small a typical resource i
 | gif | 0.1702| 0.3641 | 0.7967|2.515  |8.5151   |  
 | webp | 0.0586| 0.1025| 0.183 |0.3272  |0.6474 |  
 | svg | 0.0293| 0.174| 0.6766|1.9261  |4.1075 |  
+</figure>
 
 While previously it appeared that GIF files were smaller than JPEG, we can now clearly see that the cause of the larger JPEG resources is due to the pixel volume. It is probably not a surprise that GIF shows a very low pixel density compared to the other formats. Additionally, PNG, while it can handle high bit depth and doesn’t suffer from chroma subsampling blurriness, is about twice the size of JPG or WebP for the same pixel volume. 
 
