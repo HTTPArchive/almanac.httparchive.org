@@ -145,7 +145,7 @@ In aggregate, across all page, we indeed see the prevalence of these formats. JP
 
 <figure>
   <a href="/static/images/2019/04_Media/image_format_usage.png">
-    <img alt="Most frequent Image types used on webapges" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600">
+    <img alt="Most frequent Image types used on web pages" src="/static/images/2019/04_Media/image_format_usage.png" width="600">
   </a>
   <figcaption>Figure 6: Image Format Usage</figcaption>
 </figure>
