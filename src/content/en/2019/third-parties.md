@@ -47,7 +47,9 @@ This chapter divides third-party providers into one of these broad categories. A
 - **Video** - providers that host the arbitrary video content of their users
 - **Other** - uncategorized or non-conforming activity
 
-<aside>**Note on CDNs**: The CDN category here includes providers that provide resources on _public_ CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does _not_ include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</aside>
+<aside>
+  <strong>Note on CDNs</strong>: The CDN category here includes providers that provide resources on <strong>public</strong> CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does <strong>not</strong> include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.
+</aside>
 
 ### Caveats
 
@@ -142,7 +144,6 @@ The number of requests issued by each third-party provider also varies considera
 While 49% of requests are third-party, their share of the web in terms of bytes is quite a bit lower at only 28%. The same goes for the breakdown by multiple resource types. Third-party fonts make up 72% of all fonts, but they're only 53% of font bytes; 74% of HTML requests, but only 39% of HTML bytes; 68% of video requests, but only 31% of video bytes. All this seems to suggest third-party providers are responsible stewards who keep their response sizes low, and, for the most part, that is in fact the case until you look at scripts.
 
 Despite serving 57% of scripts, third parties comprise 64% of script bytes. meaning their scripts are larger on average than first-party scripts. This is an early warning sign for their performance impact to come in the next few sections.
-
 
 <figure>
   <iframe aria-labelledby="fig7-caption" width="600" height="483.5" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive"></iframe>
