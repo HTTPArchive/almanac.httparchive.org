@@ -32,28 +32,9 @@ header.alt-bg {
 .intro h1 {
   letter-spacing: 5px;
 }
-.intro .decorative-line {
-  position: relative;
-  top: -10px;
-}
-
-.intro h1,
-.contributors h1,
-.methodology h1 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-.methodology .decorative-line-center{
-  position: relative;
-  top: -10px;
-}
 
 .intro h2 {
   font-weight: 300;
-}
-
-.intro h2,
-.contributors h2 {
   font-size: 30px;
 }
 
@@ -125,10 +106,6 @@ p {
   font-size: 24px;
   font-weight: bold;
 }
-.featured-chapter .decorative-line-center{
-  position: relative;
-  top: -10px;
-}
 
 .featured-chapter-content {
   width: 550px;
@@ -155,11 +132,6 @@ p {
 }
 
 /* Contributors */
-.contributors .decorative-line {
-  position: relative;
-  top: -10px;
-  border-bottom: solid 1px #c6dcd2;
-}
 .contributors-container {
   grid-area: contributors;
   display: flex;
@@ -395,9 +367,6 @@ p {
     margin-left: 20px;
     margin-right: 20px;
   }
-  .contributors .decorative-line {
-    border-bottom: solid 1px #F7F779;
-  }
 
   .people {
     height: auto;
@@ -585,9 +554,6 @@ p {
   .contributors div {
     margin-left: 20px;
     margin-right: 20px;
-  }
-  .contributors .decorative-line {
-    border-bottom: solid 1px #F7F779;
   }
 
   .people {
