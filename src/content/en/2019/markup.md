@@ -74,7 +74,7 @@ Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Fig
 </figure>
 
 <figure id="fig5">
-    <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
+    <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive"></iframe>
     <a href="/static/images/2019/03_Markup/fig5.png" class="fig-mobile">
       <img src="/static/images/2019/03_Markup/fig5.png" aria-labelledby="fig5-caption" width="600">
     </a>
