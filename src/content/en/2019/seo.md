@@ -21,9 +21,9 @@ The SEO chapter of the Web Almanac was created to analyze onsite elements of the
 
 Our analysis includes data from [Lighthouse](https://developers.google.com/web/tools/lighthouse), the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report), and HTML element analysis. We focused on SEO fundamentals like `<title>` elements, the different types of on-page links, content and loading speed, but also the more technical aspects of SEO, including indexability, structured data, internationalization and AMP across over 5 million websites.
 
-Our custom metrics provide insights that, up until now, have not been exposed before. We are now able to make claims about the adoption and implementation of elements such as the hreflang tag, rich results eligibility, heading tag usage, and even anchor-based navigation for single page apps.
+Our custom metrics provide insights that, up until now, have not been exposed before. We are now able to make claims about the adoption and implementation of elements such as the `hreflang` tag, rich results eligibility, heading tag usage, and even anchor-based navigation for single page apps.
 
-<aside>Note: Our data is limited to analyzing home pages only, and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric.</aside>
+<aside>Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric.</aside>
 
 Read on to find out more about the current state of the web and its search engine friendliness.
 
@@ -31,7 +31,7 @@ Read on to find out more about the current state of the web and its search engin
 
 Search engines have a 3-step process: crawling, indexing, and ranking. To be search engine-friendly, a page needs to be discoverable, understandable, and contain quality content that would provide value to a user who is browsing the search engine results pages (SERPs).
 
-We wanted to analyze how much of the web is meeting the basic standards of SEO best practices, so we assessed on-page elements such as body content, meta tags, and internal linking. Let's take a look at the results.
+We wanted to analyze how much of the web is meeting the basic standards of SEO best practices, so we assessed on-page elements such as body content, `meta` tags, and internal linking. Let's take a look at the results.
 
 ### Content
 
@@ -41,13 +41,13 @@ To be able to understand what a page is about and decide for which search querie
 
 We assessed the content on the pages by looking for groups of at least 3 words and counting how many were found in total. We found 2.73% of desktop pages that didn't have any word groups, meaning that they have no body content to help search engines understand what the website is about.
 
-The median desktop home page has 346 words, and the median mobile home page has a slightly lower word count at 306 words. This shows that mobile sites do serve a bit less content to their users, but at over 300 words, this is still a reasonable amount to read, especially for a home page which will naturally contain less content than an article page, for example. Overall the distribution of words is broad, with between 22 words at the 10th percentile and up to 1,361 at the 90th percentile.
+The median desktop home page has 346 words, and the median mobile home page has a slightly lower word count at 306 words. This shows that mobile sites do serve a bit less content to their users, but at over 300 words, this is still a reasonable amount to read. This is especially true for home pages which will naturally contain less content than article pages, for example. Overall the distribution of words is broad, with between 22 words at the 10th percentile and up to 1,361 at the 90th percentile.
 
 ```<graph histogram number of words. Source: 10.09, column C, desktop & mobile>```
 
 #### Headings
 
-We also looked at whether pages are structured in a way that provides the right context for the content they contain. Headings (`H1`, `H2`, `H3`, etc) are used to format and structure a page and make content easier to read and parse. Despite the importance on headings, 10.67% of pages have no heading tags at all.
+We also looked at whether pages are structured in a way that provides the right context for the content they contain. Headings (`H1`, `H2`, `H3`, etc.) are used to format and structure a page and make content easier to read and parse. Despite the importance on headings, 10.67% of pages have no heading tags at all.
 
 ```<graph histogram number of heading elements. Source: 10.09a, column F>```
 
@@ -59,9 +59,9 @@ For advice on how to handle `H1`s and headings for SEO and accessibility, take a
 
 ```<graph histogram h1 tag source: 10.16, column C, desktop & mobile>```
 
-### Meta tags
+### `Meta` tags
 
-Meta tags allow us to give specific instructions and information to search engine bots about the different elements and content on a page. Certain meta tags can convey things like the topical focus of a page, as well as how the page should be crawled and indexed. We wanted to assess whether or not websites were making the most of these opportunities that meta tags provide.
+`Meta` tags allow us to give specific instructions and information to search engine bots about the different elements and content on a page. Certain `meta` tags can convey things like the topical focus of a page, as well as how the page should be crawled and indexed. We wanted to assess whether or not websites were making the most of these opportunities that `meta` tags provide.
 
 #### Page titles
 
@@ -73,15 +73,15 @@ Even though [Google usually displays the first 50-60 characters of a page title]
 
 #### Meta descriptions
 
-Compared to the `<title>` tag, fewer pages were detected to have a meta description, as only 64.02% of mobile home pages have a meta description. Considering that Google often rewrites meta descriptions in the SERPs in response to the searcher's query, perhaps website owners place less importance on including a meta description at all.
+Compared to the `<title>` tag, fewer pages were detected to have a `meta description`, as only 64.02% of mobile home pages have a `meta description`. Considering that Google often rewrites `meta descriptions` in the SERPs in response to the searcher's query, perhaps website owners place less importance on including a `meta description` at all.
 
-The median meta description length was also lower than the [recommended length of 155-160 characters](https://moz.com/learn/seo/meta-description), with desktop pages having descriptions of 123 characters. Interestingly, meta descriptions were consistently longer on mobile than on desktop, despite mobile SERPs traditionally having a shorter pixel limit. This limit has only been extended recently, so perhaps more website owners have been testing the impact of having longer, more descriptive meta descriptions for mobile results.
+The median `meta description` length was also lower than the [recommended length of 155-160 characters](https://moz.com/learn/seo/meta-description), with desktop pages having descriptions of 123 characters. Interestingly, `meta descriptions` were consistently longer on mobile than on desktop, despite mobile SERPs traditionally having a shorter pixel limit. This limit has only been extended recently, so perhaps more website owners have been testing the impact of having longer, more descriptive `meta descriptions` for mobile results.
 
 ```<graph histogram length <meta description> Source: 10.07c, column C, desktop & mobile>```
 
 #### Image alt tags
 
-Considering the importance of alt text for SEO and accessibility, it is far from ideal to see that only 46.71% of mobile pages use alt attributes on all of their images. This means that there are still improvements to be made with regard to making images across the web more accessible to users and understandable for search engines.
+Considering the importance of alt text for SEO and accessibility, it is far from ideal to see that only 46.71% of mobile pages use `alt` attributes on all of their images. This means that there are still improvements to be made with regard to making images across the web more accessible to users and understandable for search engines.
 
 Learn more about this in the [Accessibility chapter](./accessibility).
 
@@ -90,9 +90,9 @@ Learn more about this in the [Accessibility chapter](./accessibility).
 To show a page's content to users in the SERPs, search engine crawlers must first be permitted to access and index that page. Some of the factors that impact a search engine's ability to crawl and index pages include:
 
 - Status codes
-- `Noindex` tags
+- `noindex` tags
 - Canonical tags
-- The robots.txt file
+- The `robots.txt` file
 
 #### Status codes
 
@@ -102,7 +102,7 @@ The next most commonly found status code on mobile was `302`, a temporary redire
 
 <aside>Note: Our results didn't include `4xx` or `5xx` status codes.</aside>
 
-#### Noindex
+#### `noindex`
 
 A `noindex` tag can be served in the HTML `<head>` or in the HTTP headers as an `X-Robots` tag. A `noindex` tag basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. `Noindex` tags are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered or faceted pages or internal search pages.
 
@@ -118,9 +118,9 @@ Canonical tags are used to specify duplicate pages and their preferred alternate
 
 #### robots.txt
 
-One of the most effective methods for controlling search engine crawling is the [robots.txt file](https://www.deepcrawl.com/knowledge/technical-seo-library/robots-txt/). This is a file that sits on the root domain of a website and specifies which URLs and URL paths should be disallowed from being crawled by search engines.
+One of the most effective methods for controlling search engine crawling is the [`robots.txt` file](https://www.deepcrawl.com/knowledge/technical-seo-library/robots-txt/). This is a file that sits on the root domain of a website and specifies which URLs and URL paths should be disallowed from being crawled by search engines.
 
-It was interesting to observe that only 72.16% of mobile sites have a valid robots.txt, [according to Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/robots). The key issues we found are split between 22% of sites having no robots.txt file at all, and ~6% serving an invalid robots.txt file, and thus failing the audit. While there are many valid reasons to not have a robots.txt file, such as having a small website that doesn't struggle with [crawl budget issues](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html), having an invalid robots.txt is cause for concern.
+It was interesting to observe that only 72.16% of mobile sites have a valid `robots.txt`, [according to Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/robots). The key issues we found are split between 22% of sites having no `robots.txt` file at all, and ~6% serving an invalid `robots.txt` file, and thus failing the audit. While there are many valid reasons to not have a `robots.txt` file, such as having a small website that doesn't struggle with [crawl budget issues](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html), having an invalid `robots.txt` is cause for concern.
 
 ### Linking
 
@@ -144,7 +144,7 @@ There is good news from our analysis of the descriptive link text metric. 89.94%
 
 Having descriptive, useful content on a page that isn't being blocked from search engines with a `noindex` tag or robots.txt directive isn't enough for a website to succeed in organic search. Those are just the basics. There is a lot more than can be done to enhance the performance of a website and its appearance in SERPs.
 
-Some of the more technically complex aspects that have been gaining importance in successfully indexing and ranking websites include: speed, structured data, internationalization, security, and mobile friendliness.
+Some of the more technically complex aspects that have been gaining importance in successfully indexing and ranking websites include speed, structured data, internationalization, security, and mobile friendliness.
 
 ### Speed
 
@@ -186,9 +186,9 @@ Also, the newly introduced [QAPage](https://schema.org/QAPage) appeared only in 
 
 ### Internationalization
 
-Internationalization is one of the most complex aspects of SEO, even [according to some Google search employees](https://twitter.com/JohnMu/status/965507331369984002). Internationalization in SEO focuses on serving the right content from a website with multiple language or country versions, and making sure that content is being targeted towards the specific language and location of the user.
+Internationalization is one of the most complex aspects of SEO, even [according to some Google search employees](https://twitter.com/JohnMu/status/965507331369984002). Internationalization in SEO focuses on serving the right content from a website with multiple language or country versions and making sure that content is being targeted towards the specific language and location of the user.
 
-While 38.40% of desktop sites (33.79% on mobile) have the HTML lang attribute set to English, only 7.43% (6.79% on mobile) of the sites also contain an `hreflang` link to another language version. This suggests that the vast majority of websites that we analyzed don't offer separate versions of their home page that would require language targeting -- unless these separate versions do exist, but haven't been configured correctly.
+While 38.40% of desktop sites (33.79% on mobile) have the HTML lang attribute set to English, only 7.43% (6.79% on mobile) of the sites also contain an `hreflang` link to another language version. This suggests that the vast majority of websites that we analyzed don't offer separate versions of their home page that would require language targeting -- unless these separate versions do exist but haven't been configured correctly.
 
 ```<graph 10.04b - [do we want to chart this data, e.g. what does it really mean for SEO?]>```
 
@@ -214,13 +214,13 @@ Despite this, only 0.62% of mobile home pages contain a link to an AMP version. 
 
 ### Security
 
-A strong online shift in recent years has been for the web to move to HTTPS by default. HTTPS prevents website traffic from being intercepted on public WiFi networks, for example, where user input data is then transmitted unsecurely. Google have been pushing for sites to adopt HTTPS, and even made [HTTPS as a ranking signal](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). Chrome also supported the move to secure pages by labeling non-HTTPS pages as ‘[not secure](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/)' in the browser.
+A strong online shift in recent years has been for the web to move to HTTPS by default. HTTPS prevents website traffic from being intercepted on public Wi-Fi networks, for example, where user input data is then transmitted unsecurely. Google have been pushing for sites to adopt HTTPS, and even made [HTTPS as a ranking signal](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). Chrome also supported the move to secure pages by labeling non-HTTPS pages as '[not secure](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/)' in the browser.
 
 For more information and guidance from Google on the importance of HTTPS and how to adopt it, please see [Why HTTPS Matters](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
 We found that 67.06% of websites on desktop are now served over HTTPS. Just under half of websites still haven't migrated to HTTPS and are serving non-secure pages to their users. This is a significant number. Migrations can be hard work, so this could be a reason why the adoption rate isn't higher, but an HTTPS migration usually require an SSL certificate and a simple change to the `.htaccess` file. There's no real reason not to switch to HTTPS.
 
-Google's [HTTPS Transparancy Report](https://transparencyreport.google.com/https/overview) reports a 90% adoption of HTTPS for the top 100 non-Google domains (representing 25% of all website traffic worldwide). The difference between this number and ours could be explained by the fact that relatively smaller sites are adopting HTTPS at a slower rate.
+Google's [HTTPS Transparency Report](https://transparencyreport.google.com/https/overview) reports a 90% adoption of HTTPS for the top 100 non-Google domains (representing 25% of all website traffic worldwide). The difference between this number and ours could be explained by the fact that relatively smaller sites are adopting HTTPS at a slower rate.
 
 ## Conclusion
 
