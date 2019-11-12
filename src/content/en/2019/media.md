@@ -117,7 +117,8 @@ For the median web page on desktop, only 46% of the display would have layout co
 
 Media resources are critical for the user experience!
 
-# Images 
+## Images 
+
 Much has already been written on the subject of managing and optimizing images to help reduce the bytes and optimize the user experience. It is an important and critical topic for many because it is the creative media that define a brand experience. Therefore optimizing image and video content is a balancing act between applying best practices that can help reduce the bytes transferred over the network while preserving the fidelity of the intended experience. 
 
 While the strategies that are utilized for images, videos and animations are, in broad strokes similar, the specific approaches can be very different. In general, these strategies boil down to:
@@ -140,7 +141,7 @@ Each format has its own merits and has ideal uses for the web. A very simplified
 |SVG| * A vector based format that can be resized without increasing filesize <br> * It is based on math rather than pixels and creates smooth lines| * not useful for photographic or other raster content
 |WebP| * a newer file format that can produce lossless images like PNG and lossy images like JPEG <br> *  It [boasts a 30% average file reduction compared](https://developers.google.com/speed/webp/faq) to JPEG, while other data suggests that median file reduction is [between 10-28% based on pixel volume](https://cloudinary.com/state-of-visual-media-report/).| * Unlike JPEG, it is limited to chroma-subsampling which will make some images appear blurry. <br> *not universally supported. Only Chrome, Firefox and Android ecosystems.<br> * fragmented feature support depending on browser versions
   
-## Image Formats
+### Image Formats
 
 In aggregate, across all page, we indeed see the prevalence of these formats. JPEG, one of the oldest formats on the web, is by far the most commonly used image formats at 60% of the image requests and 65% of all image bytes. Interestingly, PNG is the second most commonly used image format 28% of image requests and bytes. The ubiquity of support along with the precision of color and creative content are likely explanations for its wide use. In contrast SVG, GIF and WebP share nearly the same usage at 4%.
 
@@ -181,27 +182,31 @@ Of course, web pages are not uniform in their use of image content. Some depend 
 | svg | 0 | 0 | 0 |0  |2  |19  |  
 | gif | 0 | 0 | 0 |1  |2  |14  |  
 
-
-
 While the median page has 9 jpegs and 4 pngs, and only in the top 25% pages where use gifs, this doesn’t report the adoption rate. The use and frequency of each format per page doesn’t provide insight into the adoption of the more modern formats. Specifically, what % of pages include at least one image in each format?
 
-(figure % of pages using at least 1 image)
 <figure>
   <iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig8.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig8.png" aria-labelledby="fig1-caption" width="600">
   </a>
-  <div id="fig7-caption" class="visually-hidden">A comparison of image formats in use on webpages where there is at least 1 occurance.</div>
+  <div id="fig8-caption" class="visually-hidden">A comparison of image formats in use on webpages where there is at least 1 occurance.</div>
   <figcaption>Figure 8. % of Pages Using At Least 1 Image</figcaption>
 </figure>
 
-
 This helps explain why even at the 90th percentile of pages the frequency of webp is still zero - only 9% of web pages have even 1 resource. There are many reasons that webp might not be the right choice for an image, but adoption of media best practices like adoption of webp still remain nascent. 
 
-## Image File Sizes
+### Image File Sizes
 
 There are two ways to look at image file sizes: absolute bytes per resource and bytes per pixel. Looking at the absolute bytes per resource, and we can look at the frequency of file sizes.
- (figure image format file size)
+ 
+ <figure>
+  <iframe aria-labelledby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig9.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig9.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig-9 -caption" class="visually-hidden">A comparison of image formats by file size.</div>
+  <figcaption>Figure 9. File Size by Image Format</figcaption>
+</figure>
  
 | Format | p10 | p25 | p50 | p75 | p90 | 
 |---|---|---| ---| ---| ---| 
@@ -213,7 +218,15 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
 
 
 From this we can start to get a sense of how large or small a typical resource is on the web. However, this doesn’t give us a sense of the volume of pixels represented on screen for these file distributions. To do this we can divide each resource bytes by the natural pixel volume of the image. A lower Bytes-Per-Pixel indicates a more efficient transmission of visual content.
-(figure Bytes per pixel)
+
+ <figure>
+  <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig10.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig10.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig10-caption" class="visually-hidden">A comparison of the bytes required to contain a single image pixel.</div>
+  <figcaption>Figure 10. Bytes per Pixel</figcaption>
+</figure>
 
 | imageType | Bytes Per Pixel: p10 | Bytes Per Pixel: p25 | Bytes Per Pixel: p50 | Bytes Per Pixel: p75 | Bytes Per Pixel: p90 | 
 |---|---|---| ---| ---| ---|  
@@ -229,7 +242,7 @@ Of note, the pixel volume used for SVG is the size of the DOM element on screen 
 
 Again it is worth emphasizing, this comparison of pixel density is not comparing equivalent images. Rather it is reporting typical user experience. As we will discuss next, even in each of these formats there are techniques that can be used to further optimize and reduce the bytes per pixel. 
 
-## Image Format Optimization
+### Image Format Optimization
 
 Selecting the best format for an experience is an art of balancing capabilities of the format and reducing the total bytes. For web pages one goal is to help improve web performance through optimizing images. Yet within each format there are additional features that can help reduce bytes. 
 
@@ -238,28 +251,55 @@ Some features can impact the total experience. For example, JPEG and WebP can ut
 While other format features simply organize the content and sometimes requires contextual knowledge. For example, applying progressive encoding of a JPEG reorganizes the pixels into scan layers that allows the browser to complete layout sooner and coincidently reduces pixel volume.
 
 One Lighthouse test is an A/B comparing baseline with a progressively encoded JPEG. This provides a smell to indicate whether the images overall can be further optimized with lossless techniques and potentially with lossy techniques like using different quality levels.  
- (figure % optimized images)
+
+ <figure>
+  <iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig11.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig11.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig11-caption" class="visually-hidden">Using lighthouse's non destructive image optimization.</div>
+  <figcaption>Figure 11. Percent "Optimized" Images</figcaption>
+</figure>
 
 The savings in this AB Lighthouse test is not just about potential byte savings, which can accrue to several MBs at the p95, it also demonstrates the page performance improvement. 
-(figure page performance improvement)
 
-## Responsive Images
+ <figure>
+  <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig12.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig12.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig12-caption" class="visually-hidden">Using lighthouse's image optimization for jpeg, we can estimate the expected page performance.</div>
+  <figcaption>Figure 12. Projected Page Performance from Lighthouse</figcaption>
+</figure>
+
+### Responsive Images
 
 Another axis for improving page performance is to apply Responsive Images. This technique focuses on reducing image bytes by reducing the extra pixels that are not shown on the display because of image shrinking. At the beginning of this chapter, you saw that the median web page on desktop used 1MP of image placeholders, yet transferred 2.1MP of actual pixel volume. Since this was a 1x DPR test, 1.1 MP of pixels were transferred over the network, but not displayed. To reduce this overhead, we can use one of 2 (3) techniques:
-*HTML Markup - using a combination of the `<picture>` and `<source>` elements along with the srcset and sizes attributes allows the browser to select the best image based on the dimensions of the viewport and the density of the display. 
-*Client Hints - this moves the selection of possible resized images to HTTP content negotiation.
-*BONUS: JavaScript libraries to delay image loading until the js can execute and inspect the Browser DOM and inject the correct image based on the container.
+
+* HTML Markup - using a combination of the `<picture>` and `<source>` elements along with the srcset and sizes attributes allows the browser to select the best image based on the dimensions of the viewport and the density of the display. 
+* Client Hints - this moves the selection of possible resized images to HTTP content negotiation.
+* BONUS: JavaScript libraries to delay image loading until the js can execute and inspect the Browser DOM and inject the correct image based on the container.
 
 The most common method to implement Responsive Images is to build a list of alternative images using either `<img srcset>` or `<source srcset>`. If the srcset is based on DPR the browser can select the correct from the list without additional information. However, most implementations also use `<img sizes>` to help instruct the browser how to perform the necessary layout calculation to select the correct image in the srcset based on pixel dimensions. The notably lower use of `<picture>` is not surprising given that it is used most often for advanced RWD layouts like Art Direction. 
 (figure % of pages using responsive images with html)
+ <figure>
+  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig13.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig13.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig13-caption" class="visually-hidden">An comparison of HTML approaches to implement responsive images.</div>
+  <figcaption>Figure 13. Percent of Pages using Responsive Images with HTML</figcaption>
+</figure>
+
 
 ### Use of Sizes
 
 The utility of SrcSet is usually dependent on the precision of the Sizes media query. Without Sizes the browser will assume the `<img>` tag will fill the entire viewport instead of smaller component. Interestingly, there are 5 common patterns that web developers have adopted for `<img sizes>`:
-*`<img sizes=”**100vw**”>` this indicates that the image will fill the width of the viewport (also the default)
-*`<img sizes=”**200px**”>` this is helpful for browsers selecting based on DPR
-*`<img sizes=”**(max-width: 300px) 100vw, 300px**”>` this is the second most popular design pattern. It is the one auto generated by WordPress and likely a few other platforms. It appears auto generated based on the original image size (in this case 300px).
-*`<img sizes=”**(max-width: 767px) 89vw, (max-width: 1000px) 54vw**, ...”>` this pattern is the custom built design pattern that is aligned with the CSS responsive layout. Each breakpoint has a different calculation for sizes to use.
+
+* `<img sizes=”**100vw**”>` this indicates that the image will fill the width of the viewport (also the default)
+* `<img sizes=”**200px**”>` this is helpful for browsers selecting based on DPR
+* `<img sizes=”**(max-width: 300px) 100vw, 300px**”>` this is the second most popular design pattern. It is the one auto generated by WordPress and likely a few other platforms. It appears auto generated based on the original image size (in this case 300px).
+* `<img sizes=”**(max-width: 767px) 89vw, (max-width: 1000px) 54vw**, ...”>` this pattern is the custom built design pattern that is aligned with the CSS responsive layout. Each breakpoint has a different calculation for sizes to use.
 
 | sizes | freq (Millions) | pct | 
 |--|--|--| --| --| --| --| 
@@ -269,51 +309,117 @@ The utility of SrcSet is usually dependent on the precision of the Sizes media q
 | (max-width: 400px) 100vw, 400px | 0.32| 1% |
 | (max-width: 80px) 100vw, 80px | 0.28| 1% |
 
-*`<img sizes=”**auto**”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes JavaScript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the JavaScript loading and DOM to be fully ready, delaying image loading substantially. 
+* `<img sizes=”**auto**”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes JavaScript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the JavaScript loading and DOM to be fully ready, delaying image loading substantially. 
 
-(figure `<img sizes>` by implementation pattern)
+ <figure>
+  <iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig14.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig14.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig14-caption" class="visually-hidden">Top values found in the `sizes` attribute.</div>
+  <figcaption>Figure 14. `<img sizes>` by implementation patter</figcaption>
+</figure>
 
-## Client Hints
+### Client Hints
 
 Finally, Client Hints allows content creators to move the resizing of images to HTTP Content Negotiation. In this way, the HTML does not need additional `<img srcset>` to clutter the markup, and instead can depend on a server or [Image CDN to select an optimal image](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) for the context. This allows simplifying of HTML and enables origin servers to adapt overtime and disconnect the content and presentation layers. 
 
 To enable Client Hints, the web page must signal to the browser using either an extra HTTP header `Accept-CH: DPR, Width, Viewport-Width` OR by adding the HTML `<meta http-equiv=”Accept-CH” content=”DPR, Width, Viewport-Width”>`. The convenience of one or the other technique depends on the team implementing and both are offered for convenience.
 
 The use of the `<meta>` tag in HTML to invoke Client Hints is far more common compared with the HTTP Header. This is likely a reflection of the convenience to modify markup templates compared to adding HTTP headers in middle boxes. However, looking at the usage of the HTTP header, over 50% of these cases are from a single SaaS platform (Mercado). 
-(figure use of accept ch)
+
+<figure>
+  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig15.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig15.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig15-caption" class="visually-hidden">A comparison of the adoption of the Accept-CH signal to enable client hints in HTTP and HTML</div>
+  <figcaption>Figure 15. Usage of the Accept-CH: HTTP v. HTML</figcaption>
+</figure>
 
 Of the Client Hints invoked, the majority of pages use it for the original three use-cases of DPR, ViewportWidth and Width. Of course, the Width Client Hint that requires the use `<img sizes>` for the browser to have enough context about the layout. 
-(figure enabled client hints)
+
+<figure>
+  <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig16.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig16.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig16-caption" class="visually-hidden">A comparison of the Client Hints that are enabled on web pages</div>
+  <figcaption>Figure 16. Enabled Client Hints</figcaption>
+</figure>
+
 The network related Client Hints - Downlink, RTT, and ECT - are only available on Android Chrome. 
 
-## LazyLoading
-Web Page performance is partly a game of illusions. LazyLoading images is one of these illusions where the image and media content is only loaded when the user scrolls on the page. This saves downloading bytes that the user might not view since the content is below the fold. 
+### LazyLoading
 
-In the above diagrams we can plainly see that the volume of image content at the 75th percentile is far more than could theoretically be shown in a single desktop or mobile viewport. The Offscreen Lighthouse audit confirms this suspicion. The median web page has 27% of image content significantly below the fold. This grows to 84% at the 90th percentile.
+Improving Web Page performance can be partially characterized as a game of illusions - moving slow things out of band and out of site of the user. In this way, LazyLoading images is one of these illusions where the image and media content is only loaded when the user scrolls on the page. This improves perceived performance - even on slow networks, and saves the user from downloading bytes that not otherwise view. 
 
-(figure Lighthouse audit offscreen)
+In the above figures we can plainly see that the volume of image content at the 75th percentile is far more than could theoretically be shown in a single desktop or mobile viewport. The Offscreen Lighthouse audit confirms this suspicion. The median webpage has 27% of image content significantly below the fold. This grows to 84% at the 90th percentile. 
 
-## Accessibility
+<figure>
+  <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig17.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig17.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig7-caption" class="visually-hidden">A comparison of the Lighthouse Audit for Offscreen content</div>
+  <figcaption>Figure 17. Lighthouse Audit: Offscreen</figcaption>
+</figure>
+
+The Lighthouse audit provides us a smell as there are a number of situations that can provide tricky to detect such as the use of quality placeholders. 
+
+LazyLoading [can be implemented](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) in many different ways including using a combination of Intersection-Observers or Resize-Observers or using javascript libraries like [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), and a host of others. 
+
+In 2019-August, Chrome 76 launched with the support for markup based lazy loading using `<img loading=”lazy”>`. While the snapshot of websites used for the 2019 Web Almanac used 2019-July, over 2,509 websites already utilized this feature.
+
+### Accessibility
 
 At the heart of image accessibility is the alt tag.  When the alt tag is added to an image, this text can be used to describe the image to a user who is unable to view the images (either due to a disability, or a poor internet connection.  
 
 We can detect all of the image tags in the HTML files of the dataset. Of 13M image tags on desktop and 15M on mobile, 91.6% of images have an alt tag present.  At initial glance, it appears that image accessibility is in very good shape on the web.  However, upon deeper inspection, the outlook is not as good.  If we examine the length of the alt tags present in the dataset, we find that the median length of the alt tag is 6 characters.  This maps to an empty alt tag (appearing as alt=””).  Only 39% of images use alt text that is longer than 6 characters.  The median value of ‘real’ alt text is 31 characters  - of which 25 actually describe the image.
 
-# Video
+## Video
 While images dominate the media being served on web pages, videos are beginning to have a major role in content delivery on the web.  According to HTTP Archive, we find that 4.06% of desktop and 2.99% of mobile sites are self hosting video files (meaning that the files are not hosted at websites like YouTube or Facebook.).
 
+### Video Formats
+
 Video can be delivered with many different formats, and players.  The dominant formats for mobile and desktop are .ts (segments of HLS streaming) and .mp4 (the H264 MPEG):
- (figure (count of video files by extension)
+
+<figure>
+  <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig19.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig19.png" aria-labelledby="fig1-caption" width="600">
+  </a>
+  <div id="fig19-caption" class="visually-hidden">A comparison of the Video File extensions</div>
+  <figcaption>Figure 19. Count of Video Files by Extension</figcaption>
+</figure>
 
 Other formats that are seen include webm, mov, m4s, and m4v (MPEG-DASH streaming segments).  It is clear that the majority of streaming on the web is HLS, and that the major format for static videos is the mp4.
 
 The median video size for each format is shown below:
-(figure median video size by extension)
+
+<figure>
+  <iframe aria-labelledby="fig20-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig20.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig20.png" aria-labelledby="fig20-caption" width="600">
+  </a>
+  <div id="fig20-caption" class="visually-hidden">A comparison of the Video file siezes by extensions</div>
+  <figcaption>Figure 20. Median File Size by Video Extension</figcaption>
+</figure>
+
 The median values are smaller on mobile, which probably just means that some sites that have very large videos on the desktop disable them for mobile, and that video streams serve smaller versions of videos to smaller screens
 
+### Video File Sizes
 
 When delivering video on the web, most videos are delivered with the HTML5 video player. The HTML video player is extremely customizable to deliver video for many different purposes. For example, to autoplay a video, the parameters “autoplay” and “muted” would be added.  The ‘controls’ attribute allows the user to start/stop and scan through the video.  By parsing the video tags in the HTTP Archive, we’re able to see the usage of each of these attributes:
- (figure usage of video attributes)
+
+<figure>
+  <iframe aria-labelledby="fig21-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig21.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig21.png" aria-labelledby="fig21-caption" width="600">
+  </a>
+  <div id="fig21-caption" class="visually-hidden">A comparison of the HTML video tag attributes and their respective usage</div>
+  <figcaption>Figure 21. Usage of HTML Video tag attributes</figcaption>
+</figure>
 
 The most common attributes are autoplay, muted and loop, followed by the preload tag and width and height.  The use of the loop attribute is used in background videos, and also when videos are used to replace animated GIFs, so it is not surprising to see that it is often used on website home pages.  
 
@@ -321,9 +427,21 @@ While most of the attributes have similar usage on desktop and mobile, there are
 
 From an accessibility point of view, the `<track>` tag can be used to add captions or subtitles.  There is data in the httparchive on how often the `<track>` tag is used, but on investigation, most of the instances in the dataset were commented out, or pointed to an asset re-runing a 404 error.  It appears that many sites use boilerplate JavaScript or HTML and do not remove the track - even when it is not in use.  
 
+### Video Players
+
 For more advanced playback (and to play video streams), the HTML5 native video player will not work.  There are a few popular video libraries that are used to playback the video:
 
 (figure: video player instances)
+<figure>
+  <iframe aria-labelledby="fig22-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <a href="/static/images/2019/04_Media/fig22.png" class="fig-mobile">
+    <img src="/static/images/2019/04_Media/fig22.png" aria-labelledby="fig22-caption" width="600">
+  </a>
+  <div id="fig22-caption" class="visually-hidden">A comparison of popularity of different javascript based video players</div>
+  <figcaption>Figure 22. Top Javascript Video Players</figcaption>
+</figure>
+
+
 The most popular (by far) is video.js, followed by JWPLayer and HLS.js.  The authors do admit that it is possible that there are other files with the name “video.js” that may not be the same video playback library.
 
 
