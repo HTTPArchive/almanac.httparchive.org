@@ -18,17 +18,20 @@ class _Language(object):
 
   @property
   def lang_attribute(self):
-    # Returns the language attribute (eg "en-US") to be used in HTML.
-    return '%s-%s' % (self._lang_code, self._region_code)
+    # Returns the language attribute (eg "en" or "en-US") to be used in HTML.
+    if (self._region_code):
+      return '%s-%s' % (self._lang_code, self._region_code)
+    return '%s' % (self._lang_code)
 
   @property
   def lang_code(self):
     return self._lang_code
 
+# We support language and region codes, but should only use region if we have several regions for that language
 class Language(object):
-  JAPANESE = _Language('日本語', 'ja', 'JP')
-  ENGLISH = _Language('English', 'en', 'US')
-  SPANISH = _Language('Español', 'es', 'ES')
+  JAPANESE = _Language('日本語', 'ja', '')
+  ENGLISH = _Language('English', 'en', '')
+  SPANISH = _Language('Español', 'es', '')
 
 DEFAULT_LANGUAGE = Language.ENGLISH
 
