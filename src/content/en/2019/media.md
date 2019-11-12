@@ -204,7 +204,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
   <a href="/static/images/2019/04_Media/fig9.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig9.png" aria-labelledby="fig9-caption" width="600">
   </a>
-  <div id="fig-9 -caption" class="visually-hidden">A comparison of image formats by file size.</div>
+  <div id="fig9-caption" class="visually-hidden">A comparison of image formats by file size.</div>
   <figcaption>Figure 9. File Size by Image Format</figcaption>
 </figure>
  
