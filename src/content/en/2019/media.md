@@ -212,7 +212,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
 
 | Format | p10 | p25 | p50 | p75 | p90 | 
 |---|---|---| ---| ---| ---| 
-| jpg | 4 KB | 9 KB | 24 KB |68 KB  |  166 KB  |  
+| jpeg | 4 KB | 9 KB | 24 KB |68 KB  |  166 KB  |  
 | png | 2 KB| 4 KB | 11 KB |43 KB  |152 KB     
 | webp | 4 KB| 7 KB | 17 KB|41 KB  |90 KB   |  
 | gif | 2 KB| 3 KB| 6 KB |17 KB  |87 KB |  
@@ -230,9 +230,9 @@ From this we can start to get a sense of how large or small a typical resource i
   <figcaption>Figure 10. Bytes per Pixel</figcaption>
 </figure>
 
-| imageType | Bytes Per Pixel: p10 | Bytes Per Pixel: p25 | Bytes Per Pixel: p50 | Bytes Per Pixel: p75 | Bytes Per Pixel: p90 | 
+| Format | Bytes Per Pixel: p10 | Bytes Per Pixel: p25 | Bytes Per Pixel: p50 | Bytes Per Pixel: p75 | Bytes Per Pixel: p90 | 
 |---|---|---| ---| ---| ---|  
-| jpg | 0.1175 | 0.1848 | 0.2997 |0.5456  |  0.9822  |  
+| jpeg | 0.1175 | 0.1848 | 0.2997 |0.5456  |  0.9822  |  
 | png | 0.1197| 0.2874 | 0.6918 |1.4548  |2.5026 |    
 | gif | 0.1702| 0.3641 | 0.7967|2.515  |8.5151   |  
 | webp | 0.0586| 0.1025| 0.183 |0.3272  |0.6474 |  
@@ -283,9 +283,9 @@ Another axis for improving page performance is to apply Responsive Images. This 
 * BONUS: JavaScript libraries to delay image loading until the js can execute and inspect the Browser DOM and inject the correct image based on the container.
 
 The most common method to implement Responsive Images is to build a list of alternative images using either `<img srcset>` or `<source srcset>`. If the srcset is based on DPR the browser can select the correct from the list without additional information. However, most implementations also use `<img sizes>` to help instruct the browser how to perform the necessary layout calculation to select the correct image in the srcset based on pixel dimensions. The notably lower use of `<picture>` is not surprising given that it is used most often for advanced RWD layouts like Art Direction. 
-(figure % of pages using responsive images with html)
+
  <figure>
-  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig13.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig13.png" aria-labelledby="fig13-caption" width="600">
   </a>
@@ -314,12 +314,12 @@ The utility of SrcSet is usually dependent on the precision of the Sizes media q
 * `<img sizes=”**auto**”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes JavaScript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the JavaScript loading and DOM to be fully ready, delaying image loading substantially. 
 
  <figure>
-  <iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig14.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig14.png" aria-labelledby="fig14-caption" width="600">
   </a>
   <div id="fig14-caption" class="visually-hidden">Top values found in the `sizes` attribute.</div>
-  <figcaption>Figure 14. `<img sizes>` by implementation patter</figcaption>
+  <figcaption>Figure 14. Top Patterns of `<img sizes>`</figcaption>
 </figure>
 
 ### Client Hints
@@ -331,7 +331,7 @@ To enable Client Hints, the web page must signal to the browser using either an 
 The use of the `<meta>` tag in HTML to invoke Client Hints is far more common compared with the HTTP Header. This is likely a reflection of the convenience to modify markup templates compared to adding HTTP headers in middle boxes. However, looking at the usage of the HTTP header, over 50% of these cases are from a single SaaS platform (Mercado). 
 
 <figure>
-  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig15.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig15.png" aria-labelledby="fig15-caption" width="600">
   </a>
@@ -342,7 +342,7 @@ The use of the `<meta>` tag in HTML to invoke Client Hints is far more common co
 Of the Client Hints invoked, the majority of pages use it for the original three use-cases of DPR, ViewportWidth and Width. Of course, the Width Client Hint that requires the use `<img sizes>` for the browser to have enough context about the layout. 
 
 <figure>
-  <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig16.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig16.png" aria-labelledby="fig16-caption" width="600">
   </a>
@@ -359,7 +359,7 @@ Improving Web Page performance can be partially characterized as a game of illus
 In the above figures we can plainly see that the volume of image content at the 75th percentile is far more than could theoretically be shown in a single desktop or mobile viewport. The Offscreen Lighthouse audit confirms this suspicion. The median webpage has 27% of image content significantly below the fold. This grows to 84% at the 90th percentile. 
 
 <figure>
-  <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig17.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig17.png" aria-labelledby="fig17-caption" width="600">
   </a>
@@ -387,7 +387,7 @@ While images dominate the media being served on web pages, videos are beginning 
 Video can be delivered with many different formats, and players.  The dominant formats for mobile and desktop are .ts (segments of HLS streaming) and .mp4 (the H264 MPEG):
 
 <figure>
-  <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig19.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig19.png" aria-labelledby="fig19-caption" width="600">
   </a>
@@ -400,11 +400,11 @@ Other formats that are seen include webm, mov, m4s, and m4v (MPEG-DASH streaming
 The median video size for each format is shown below:
 
 <figure>
-  <iframe aria-labelledby="fig20-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig20-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig20.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig20.png" aria-labelledby="fig20-caption" width="600">
   </a>
-  <div id="fig20-caption" class="visually-hidden">A comparison of the Video file siezes by extensions</div>
+  <div id="fig20-caption" class="visually-hidden">A comparison of the Video file sizes by extensions</div>
   <figcaption>Figure 20. Median File Size by Video Extension</figcaption>
 </figure>
 
@@ -415,7 +415,7 @@ The median values are smaller on mobile, which probably just means that some sit
 When delivering video on the web, most videos are delivered with the HTML5 video player. The HTML video player is extremely customizable to deliver video for many different purposes. For example, to autoplay a video, the parameters “autoplay” and “muted” would be added.  The ‘controls’ attribute allows the user to start/stop and scan through the video.  By parsing the video tags in the HTTP Archive, we’re able to see the usage of each of these attributes:
 
 <figure>
-  <iframe aria-labelledby="fig21-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig21-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig21.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig21.png" aria-labelledby="fig21-caption" width="600">
   </a>
@@ -433,9 +433,8 @@ From an accessibility point of view, the `<track>` tag can be used to add captio
 
 For more advanced playback (and to play video streams), the HTML5 native video player will not work.  There are a few popular video libraries that are used to playback the video:
 
-(figure: video player instances)
 <figure>
-  <iframe aria-labelledby="fig22-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig22-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig22.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig22.png" aria-labelledby="fig22-caption" width="600">
   </a>
