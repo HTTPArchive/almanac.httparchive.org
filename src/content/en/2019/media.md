@@ -34,7 +34,7 @@ Further, the financial cost of visiting these websites in different parts of the
 <figure>
   <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig2.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig2.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig2.png" aria-labelledby="fig2-caption" width="600">
   </a>
   <div id="fig2-caption" class="visually-hidden">The median webpage on mobile requires 1MB of images and 4.9MB at the 90th percentile.</div>
   <figcaption>Figure 2. Total Image Bytes Per Web Page (Mobile)</figcaption>
@@ -54,7 +54,7 @@ In contrast, the natural, or file, pixel volume is between 2 and 2.6 times the l
  <figure>
   <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig3.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig3.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig3.png" aria-labelledby="fig3-caption" width="600">
   </a>
   <div id="fig3-caption" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels</div>
   <figcaption>Figure 3. Image Pixels Per Page (Mobile): CSS v. Actual</figcaption>
@@ -72,7 +72,7 @@ _ (512x360 @3x) _
 <figure>
   <iframe aria-labelledby="fig4-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig4.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig4.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig4.png" aria-labelledby="fig4-caption" width="600">
   </a>
   <div id="fig4-caption" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels</div>
   <figcaption>Figure 4. Image Pixels Per Page (Desktop): CSS v. Actual</figcaption>
@@ -101,7 +101,7 @@ If we had one image that filled the entire screen perfectly, this would be a 1x 
 <figure>
   <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig5.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig5.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig5.png" aria-labelledby="fig5-caption" width="600">
   </a>
   <div id="fig5-caption" class="visually-hidden">A comparison of the pixel volume required per page relative to the actual screen size in CSS pixels.</div>
   <figcaption>Figure 5. Image Pixel Volume v. Screen Size (CSS Pixels)</figcaption>
@@ -167,7 +167,7 @@ Of course, web pages are not uniform in their use of image content. Some depend 
 <figure>
   <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig7.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig7.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig7.png" aria-labelledby="fig7-caption" width="600">
   </a>
   <div id="fig7-caption" class="visually-hidden">A comparison of the Image Formats used per page</div>
   <figcaption>Figure 7. Image Format Usage Per Page</figcaption>
@@ -187,7 +187,7 @@ While the median page has 9 jpegs and 4 pngs, and only in the top 25% pages wher
 <figure>
   <iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig8.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig8.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig8.png" aria-labelledby="fig8-caption" width="600">
   </a>
   <div id="fig8-caption" class="visually-hidden">A comparison of image formats in use on webpages where there is at least 1 occurance.</div>
   <figcaption>Figure 8. % of Pages Using At Least 1 Image</figcaption>
@@ -202,7 +202,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
  <figure>
   <iframe aria-labelledby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig9.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig9.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig9.png" aria-labelledby="fig9-caption" width="600">
   </a>
   <div id="fig-9 -caption" class="visually-hidden">A comparison of image formats by file size.</div>
   <figcaption>Figure 9. File Size by Image Format</figcaption>
@@ -222,7 +222,7 @@ From this we can start to get a sense of how large or small a typical resource i
  <figure>
   <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig10.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig10.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig10.png" aria-labelledby="fig10-caption" width="600">
   </a>
   <div id="fig10-caption" class="visually-hidden">A comparison of the bytes required to contain a single image pixel.</div>
   <figcaption>Figure 10. Bytes per Pixel</figcaption>
@@ -255,7 +255,7 @@ One Lighthouse test is an A/B comparing baseline with a progressively encoded JP
  <figure>
   <iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig11.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig11.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig11.png" aria-labelledby="fig11-caption" width="600">
   </a>
   <div id="fig11-caption" class="visually-hidden">Using lighthouse's non destructive image optimization.</div>
   <figcaption>Figure 11. Percent "Optimized" Images</figcaption>
@@ -266,7 +266,7 @@ The savings in this AB Lighthouse test is not just about potential byte savings,
  <figure>
   <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig12.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig12.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig12.png" aria-labelledby="fig12-caption" width="600">
   </a>
   <div id="fig12-caption" class="visually-hidden">Using lighthouse's image optimization for jpeg, we can estimate the expected page performance.</div>
   <figcaption>Figure 12. Projected Page Performance from Lighthouse</figcaption>
@@ -285,7 +285,7 @@ The most common method to implement Responsive Images is to build a list of alte
  <figure>
   <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig13.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig13.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig13.png" aria-labelledby="fig13-caption" width="600">
   </a>
   <div id="fig13-caption" class="visually-hidden">An comparison of HTML approaches to implement responsive images.</div>
   <figcaption>Figure 13. Percent of Pages using Responsive Images with HTML</figcaption>
@@ -314,7 +314,7 @@ The utility of SrcSet is usually dependent on the precision of the Sizes media q
  <figure>
   <iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig14.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig14.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig14.png" aria-labelledby="fig14-caption" width="600">
   </a>
   <div id="fig14-caption" class="visually-hidden">Top values found in the `sizes` attribute.</div>
   <figcaption>Figure 14. `<img sizes>` by implementation patter</figcaption>
@@ -331,7 +331,7 @@ The use of the `<meta>` tag in HTML to invoke Client Hints is far more common co
 <figure>
   <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig15.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig15.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig15.png" aria-labelledby="fig15-caption" width="600">
   </a>
   <div id="fig15-caption" class="visually-hidden">A comparison of the adoption of the Accept-CH signal to enable client hints in HTTP and HTML</div>
   <figcaption>Figure 15. Usage of the Accept-CH: HTTP v. HTML</figcaption>
@@ -342,7 +342,7 @@ Of the Client Hints invoked, the majority of pages use it for the original three
 <figure>
   <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig16.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig16.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig16.png" aria-labelledby="fig16-caption" width="600">
   </a>
   <div id="fig16-caption" class="visually-hidden">A comparison of the Client Hints that are enabled on web pages</div>
   <figcaption>Figure 16. Enabled Client Hints</figcaption>
@@ -359,7 +359,7 @@ In the above figures we can plainly see that the volume of image content at the 
 <figure>
   <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig17.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig17.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig17.png" aria-labelledby="fig17-caption" width="600">
   </a>
   <div id="fig7-caption" class="visually-hidden">A comparison of the Lighthouse Audit for Offscreen content</div>
   <figcaption>Figure 17. Lighthouse Audit: Offscreen</figcaption>
@@ -387,7 +387,7 @@ Video can be delivered with many different formats, and players.  The dominant f
 <figure>
   <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
   <a href="/static/images/2019/04_Media/fig19.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig19.png" aria-labelledby="fig1-caption" width="600">
+    <img src="/static/images/2019/04_Media/fig19.png" aria-labelledby="fig19-caption" width="600">
   </a>
   <div id="fig19-caption" class="visually-hidden">A comparison of the Video File extensions</div>
   <figcaption>Figure 19. Count of Video Files by Extension</figcaption>
