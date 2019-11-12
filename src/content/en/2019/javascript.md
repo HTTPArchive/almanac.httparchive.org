@@ -368,8 +368,8 @@ Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scr
 
 [Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) and [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are directives which enable you to aid the browser in determining what resources need to be downloaded.
 
-- Preloading a resource with `<link rel="preload"> `tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., javascript located at the bottom of your HTML) and are otherwise downloaded last.
-- Using `<link rel="prefetch">`  tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations
+- Preloading a resource with `<link rel="preload">` tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., javascript located at the bottom of your HTML) and are otherwise downloaded last.
+- Using `<link rel="prefetch">` tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations
 
 **So, how many sites use preload and prefetch directives?**
 
@@ -382,7 +382,7 @@ Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scr
 	<figcaption>Figure 15. Percentage of sites using rel=preload for scripts.</figcaption>
 </figure>
 
-For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mobile sites use `<link rel="preload"> `for scripts on their page.
+For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mobile sites use `<link rel="preload">` for scripts on their page.
 
 For prefetch:
 
