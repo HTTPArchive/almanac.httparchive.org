@@ -199,12 +199,10 @@ This helps explain why even at the 90th percentile of pages the frequency of web
 
 There are two ways to look at image file sizes: absolute bytes per resource and bytes per pixel. Looking at the absolute bytes per resource, and we can look at the frequency of file sizes.
  
- <figure>
-  <iframe aria-labelledby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
-  <a href="/static/images/2019/04_Media/fig9.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig9.png" aria-labelledby="fig9-caption" width="600">
+<figure>
+  <a href="/static/images/2019/04_Media/image_format_size.png">
+    <img alt="A comparison of image formats by file size" src="/static/images/2019/04_Media/image_format_size.png" width="600">
   </a>
-  <div id="fig9-caption" class="visually-hidden">A comparison of image formats by file size.</div>
   <figcaption>Figure 9. File Size by Image Format</figcaption>
 </figure>
  
