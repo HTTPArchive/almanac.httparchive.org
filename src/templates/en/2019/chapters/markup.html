@@ -372,9 +372,7 @@
         <li>
           Adobe Go-Live's <a href="https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html"><code>&lt;csscriptdict&gt;</code></a> still appears on 640 pages in the desktop dataset.
         </li>
-        <li>
-          Microsoft Office's <a href="https://rainy-periwinkle.glitch.me/permalink/bc8f154a95dfe06a6d0fdb099b6c8df61727b2289141a0ef16dc17b2b57d3068.html"><code>&lt;o:p&gt;</code></a> element still appears on 0.5% of desktop pages, over 20k pages.
-        </li>
+        <li>Microsoft Office's <code>&lt;o:p&gt;</code> element still appears on 0.5% of desktop pages, over 20k pages.</li>
       </ul>
       <p>But there are plenty of newcomers that weren't in Hixie's original report too, and with even bigger numbers.</p>
       <ul>
@@ -405,9 +403,7 @@
         <figcaption>Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
       </figure>
       <p>You could discover interesting insights like these all day long.</p>
-      <p>
-        Here's one that's a little different: popular elements could be caused by outright errors in products. For example, <a href="https://rainy-periwinkle.glitch.me/permalink/3214f840b6ae3ef1074291f60fa1be4b9d9df401fe0190bfaff4bb078c8614a5.html"><code>&lt;pclass="ddc-font-size-large"&gt;</code></a> occurs on over 1,000 sites. This was thanks to a missing space in a popular "as-a-service" kind of product. Happily, we reported this error during our research and it was quickly fixed.
-      </p>
+      <p>Here's one that's a little different: popular elements could be caused by outright errors in products. For example, <code>&lt;pclass="ddc-font-size-large"&gt;</code> occurs on over 1,000 sites. This was thanks to a missing space in a popular "as-a-service" kind of product. Happily, we reported this error during our research and it was quickly fixed.</p>
       <p>In his original paper, Hixie mentions that:</p>
       <blockquote>The good thing, if we can be forgiven for trying to remain optimistic in the face of all this non-standard markup, is that at least these elements are all clearly using vendor-specific names. This massively reduces the likelihood that standards bodies will invent elements and attributes that clash with any of them.</blockquote>
       <p>

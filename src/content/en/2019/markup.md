@@ -211,7 +211,7 @@ For several non-standard elements, their prevalence may have more to do with the
 - Some of the `<actinic:*>` elements from British ecommerce provider [Oxatis](https://www.oxatis.co.uk) appear on even more pages. For example, [`<actinic:basehref>`](https://rainy-periwinkle.glitch.me/permalink/30dfca0fde9fad9b2ec58b12cb2b0271a272fb5c8970cd40e316adc728a09d19.html) still shows up on 154 pages in the desktop data.
 - Macromedia's elements seem to have largely disappeared. Only one element, [`<mm:endlock>`](https://rainy-periwinkle.glitch.me/permalink/836d469b8c29e5892dedfd43556ed1b0e28a5647066858ca1c395f5b30f8485c.html), appears on our list and on only 22 pages.
 - Adobe Go-Live's [`<csscriptdict>`](https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html) still appears on 640 pages in the desktop dataset.
-- Microsoft Office's [`<o:p>`](https://rainy-periwinkle.glitch.me/permalink/bc8f154a95dfe06a6d0fdb099b6c8df61727b2289141a0ef16dc17b2b57d3068.html) element still appears on 0.5% of desktop pages, over 20k pages.
+- Microsoft Office's `<o:p>` element still appears on 0.5% of desktop pages, over 20k pages.
 
 But there are plenty of newcomers that weren't in Hixie's original report too, and with even bigger numbers.
 
@@ -234,7 +234,7 @@ Let's compare these to a few of the native HTML elements that are below the 5% b
 
 You could discover interesting insights like these all day long.
 
-Here's one that's a little different: popular elements could be caused by outright errors in products. For example, [`<pclass="ddc-font-size-large">`](https://rainy-periwinkle.glitch.me/permalink/3214f840b6ae3ef1074291f60fa1be4b9d9df401fe0190bfaff4bb078c8614a5.html) occurs on over 1,000 sites. This was thanks to a missing space in a popular "as-a-service" kind of product.  Happily, we reported this error during our research and it was quickly fixed.
+Here's one that's a little different: popular elements could be caused by outright errors in products. For example, `<pclass="ddc-font-size-large">` occurs on over 1,000 sites. This was thanks to a missing space in a popular "as-a-service" kind of product.  Happily, we reported this error during our research and it was quickly fixed.
 
 In his original paper, Hixie mentions that:
 

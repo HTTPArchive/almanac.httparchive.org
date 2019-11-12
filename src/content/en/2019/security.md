@@ -77,7 +77,7 @@ As previously discussed, the volume for Google likely reflects repeated use of G
 
 The rise of [Let's Encrypt](https://letsencrypt.org/) has been meteoric after their launch in early 2016, since then they've become one of the top certificate issuers in the world. The availability of free certificates and the automated tooling has been critically important to the adoption of HTTPS on the web. Let's Encrypt certainly had a significant part to play in both of those.
 
-The reduced cost has remove the barrier to entry for HTTPS, but the automation Let's Encrypt uses is perhaps more important in the long run as it allows shorter certificate lifetimes [which has many security benefits]](https://scotthelme.co.uk/why-we-need-to-do-more-to-reduce-certificate-lifetimes/).
+The reduced cost has remove the barrier to entry for HTTPS, but the automation Let's Encrypt uses is perhaps more important in the long run as it allows shorter certificate lifetimes [which has many security benefits](https://scotthelme.co.uk/why-we-need-to-do-more-to-reduce-certificate-lifetimes/).
 
 ### Authentication key type
 
