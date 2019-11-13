@@ -338,10 +338,7 @@ figure .fig-mobile {
     padding: 0;
   }
   .index {
-    margin-bottom: 45px;
-  }
-  .index .index-box {
-    margin: 0px;
+    margin: 30px 0;
   }
   .index-box .header {
     display: flex;
