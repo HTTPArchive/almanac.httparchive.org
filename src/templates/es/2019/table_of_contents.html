@@ -87,13 +87,7 @@
 .main {
   margin-bottom: 100px;
 }
-.title::before {
-  display: block;
-  content: '';
-  margin-bottom: 18px;
-  border-bottom: solid 1px #c6dcd2;
-  width: 70px;
-}
+
 .contents-wrapper {
   display: grid;
   grid-template-areas: 'parts characters';
@@ -159,7 +153,7 @@
 
 {% block main %}
 <section class="main">
-  <h1 class="title">Tabla de Contenidos</h1>
+  <h1 class="title title-lg">Tabla de Contenidos</h1>
 
   <section>
     <h2>Prefacio</h2>
