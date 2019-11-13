@@ -167,7 +167,7 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>Progressive Web Apps (PWA) are a new class of web applications, building on top of platform primitives like the <a href="https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API">Service Worker APIs</a>. Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses. Service workers can receive push notifications and synchronize data in the background even when the corresponding app is not running. Additional, service workers — together with <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">Web App Manifests</a> — allow users to install PWAs to their devices’ home screens.</p>

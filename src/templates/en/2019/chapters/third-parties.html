@@ -203,7 +203,7 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>The open web is vast, linkable, and interoperable by design. The ability to grab someone else's complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers' productivity and enabled awesome new web experiences. On the flip side, the immense popularity of a select few third-party providers raises important performance, privacy, and security concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web experiences.</p>
@@ -395,9 +395,9 @@
       <h3 id="resource-types">Resource types</h3>
       <p>The resource type breakdown of third-party content also lends insight into how third-party code is used across the web. While first-party requests are 56% images, 23% script, 14% CSS, and only 4% HTML, third-party requests skew more heavily toward script and HTML at 32% script, 34% images, 12% HTML, and only 6% CSS. While this suggests that third-party code is less frequently used to aid the design and instead used more frequently to facilitate or observe interactions than first-party code, a breakdown of resource types by party status tells a more nuanced story. While CSS and images are dominantly first-party at 70% and 64% respectively, fonts are largely served by third-party providers with only 28% being served from first-party sources. This concept of usage patterns is explored in more depth later in this chapter.</p>
       <figure id="fig-5">
-        <iframe aria-labelledby="fig5-caption" width="600" height="387" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig5-caption" width="600" height="387" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/05_Third_Parties/fig5.png" class="fig-mobile">
-          <img src="/static/images/2019/05_Third_Parties/fig5.png" aria-labelledby="fig5-caption" width="600" />
+          <img src="/static/images/2019/05_Third_Parties/fig5.png" aria-labelledby="fig5-caption" width="600" loading="lazy" />
         </a>
         <div id="fig5-caption" class="visually-hidden">Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.</div>
         <figcaption>Figure 5. Percent of third-party requests by category and content type.</figcaption>
@@ -411,9 +411,9 @@
       <p>While 49% of requests are third-party, their share of the web in terms of bytes is quite a bit lower at only 28%. The same goes for the breakdown by multiple resource types. Third-party fonts make up 72% of all fonts, but they're only 53% of font bytes; 74% of HTML requests, but only 39% of HTML bytes; 68% of video requests, but only 31% of video bytes. All this seems to suggest third-party providers are responsible stewards who keep their response sizes low, and, for the most part, that is in fact the case until you look at scripts.</p>
       <p>Despite serving 57% of scripts, third parties comprise 64% of script bytes. meaning their scripts are larger on average than first-party scripts. This is an early warning sign for their performance impact to come in the next few sections.</p>
       <figure id="fig-6">
-        <iframe aria-labelledby="fig7-caption" width="600" height="483.5" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig7-caption" width="600" height="483.5" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/05_Third_Parties/fig7.png" class="fig-mobile">
-          <img src="/static/images/2019/05_Third_Parties/fig7.png" aria-labelledby="fig7-caption" width="600" />
+          <img src="/static/images/2019/05_Third_Parties/fig7.png" aria-labelledby="fig7-caption" width="600" loading="lazy" />
         </a>
         <div id="fig7-caption" class="visually-hidden">Chart showing the breakdown of bytes for each content type per third party category. Images and scripts are relatively evenly distributed across categories. 80% of fonts come from CDNs. Video comes from "content" third-parties.</div>
         <figcaption>Figure 7. Distributions of resource bytes per third-party category.</figcaption>
