@@ -63,10 +63,12 @@ In contrast, the natural, or file, pixel volume is between 2 and 2.6 times the l
 **Mobile Image Pixels Per Web Page in MegaPixels**
 _(512x360 @3x)_
 
+<figure markdown>
 ||p10|p25|p50|p75|p90|
 |--- |--- |--- |--- |--- |--- |
 |Actual Image Pixel Volume|0.07 MP|0.38 MP|1.6 MP|5.1 MP|12 MP|
 |CSS Pixel Volume|0.04 MP|0.18 MP|0.65 MP|1.8 MP|4.6 MP|
+</figure>
 
 <figure>
   <iframe aria-labelledby="fig4-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"></iframe>
@@ -135,6 +137,7 @@ It is rare to find a web page that does not utilize images. Over the years, many
 
 Each format has its own merits and has ideal uses for the web. A very simplified summary would break down as:
 
+<figure markdown>
 |Format|Highlights  | Drawbacks
 |--|--| --|
 | JPEG | * ubiquitously supported  <br>* ideal for photographic content | * there is always quality loss <br>* most decoders cannot handle high bit depth photographs from modern cameras (> 8 bits per channel)  <br>* no support for transparency
@@ -142,6 +145,7 @@ Each format has its own merits and has ideal uses for the web. A very simplified
 |GIF| * the predecessor to PNG, is most known for animations <br>* lossless| * because of the limitation of 256 colors, there is always visual loss from conversion<br>*very large files for animations
 |SVG| * A vector based format that can be resized without increasing filesize <br> * It is based on math rather than pixels and creates smooth lines| * not useful for photographic or other raster content
 |WebP| * a newer file format that can produce lossless images like PNG and lossy images like JPEG <br> *  It [boasts a 30% average file reduction compared](https://developers.google.com/speed/webp/faq) to JPEG, while other data suggests that median file reduction is [between 10-28% based on pixel volume](https://cloudinary.com/state-of-visual-media-report/).| * Unlike JPEG, it is limited to chroma-subsampling which will make some images appear blurry. <br> *not universally supported. Only Chrome, Firefox and Android ecosystems.<br> * fragmented feature support depending on browser versions
+</figure>
   
 ### Image Formats
 
@@ -327,8 +331,8 @@ The utility of SrcSet is usually dependent on the precision of the Sizes media q
   <a href="/static/images/2019/04_Media/fig14.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig14.png" aria-labelledby="fig14-caption" width="600">
   </a>
-  <div id="fig14-caption" class="visually-hidden">Top values found in the `sizes` attribute.</div>
-  <figcaption>Figure 14. Top Patterns of `<img sizes>`</figcaption>
+  <div id="fig14-caption" class="visually-hidden">Top values found in the sizes attribute.</div>
+  <figcaption>Figure 14. Top Patterns of <code>&lt;img sizes></code></figcaption>
 </figure>
 
 ### Client Hints
@@ -455,5 +459,5 @@ For more advanced playback (and to play video streams), the HTML5 native video p
 The most popular (by far) is video.js, followed by JWPLayer and HLS.js.  The authors do admit that it is possible that there are other files with the name “video.js” that may not be the same video playback library.
 
 
-# Conclusion
+## Conclusion
 Nearly all web pages use images and video to some degree to enhance the user experience and create meaning. These media files utilize a large amount of resources, and are a large percentage of the tonnage of websites (and they are not going away!) Utilization of alternative formats, lazy loading, responsive images, and image optimization can go a long way to lower the size of media on the web.  
