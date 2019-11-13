@@ -97,7 +97,7 @@
       reader.onload = function() {
         var body = document.getElementsByTagName('body')[0];
         body.setAttribute('style', 'background-image: url(' + reader.result + ');');
-        body.removeAttribute('class');
+        body.classList.remove('lazy');
       };
 
       reader.readAsDataURL(blob);
