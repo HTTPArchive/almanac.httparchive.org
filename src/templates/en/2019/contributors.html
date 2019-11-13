@@ -298,12 +298,12 @@
     Contributors
   </h1>
   <div class="team">
-      <img src="/static/images/avatars/1.jpg">
-      <img src="/static/images/avatars/8.jpg">
-      <img src="/static/images/avatars/4.jpg">
-      <img src="/static/images/avatars/0.jpg">
-      <img src="/static/images/avatars/11.jpg">
-      <img src="/static/images/avatars/9.jpg">
+      <img src="/static/images/avatars/1.jpg" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/8.jpg" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/4.jpg" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/0.jpg" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/11.jpg" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/9.jpg" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
     <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors</div>
@@ -317,18 +317,18 @@
     <div class="contributor-grid">
     {% for id, contributor in config.contributors.items() %}
       <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="0">
-        <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy">
+        <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
         <div class="contributor-social">
           {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ contributor.github }} on GitHub"><img src="/static/images/github.png" alt="GitHub"></a>
+          <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ contributor.github }} on GitHub"><img src="/static/images/github.png" alt="GitHub" height="80" width="78" loading="lazy" /></a>
           {% endif %}
           {% if contributor.twitter %}
-          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" title="{{ contributor.github }} on Twitter"><img src="/static/images/twitter.png" title="Twitter"></a>
+          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" title="{{ contributor.github }} on Twitter"><img src="/static/images/twitter.png" title="Twitter" height="80" width="65" loading="lazy" /></a>
           {% endif %}
           {% if contributor.website %}
-          <a href="{{ contributor.website }}" target="_blank" title="{{ contributor.name }} website"><img src="/static/images/blog.png" alt="website"></a>
+          <a href="{{ contributor.website }}" target="_blank" title="{{ contributor.name }} website"><img src="/static/images/blog.png" alt="website" height="72" width="72" loading="lazy" /></a>
           {% endif %}
         </div>
 

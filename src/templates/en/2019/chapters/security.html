@@ -271,25 +271,25 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>This chapter of the Web Almanac looks at the current status of security on the web. With security and privacy becoming increasingly more important online there has been an increase in the availability of features to protect site operators and users. We're going to look at the adoption of these new features across the web.</p>
       <h2 id="transport-layer-security">Transport Layer Security</h2>
       <p>Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security (TLS). TLS (or the older version, SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great <a href="https://httparchive.org/reports/state-of-the-web#pctHttps">increase in the use of HTTPS across the web</a>, but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.</p>
       <figure id="fig-1">
-        <iframe aria-labelledby="fig1-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig1-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/08_Security/fig1.png" class="fig-mobile">
-          <img src="/static/images/2019/08_Security/fig1.png" aria-labelledby="fig1-caption" width="760" />
+          <img src="/static/images/2019/08_Security/fig1.png" aria-labelledby="fig1-caption" width="760" loading="lazy" />
         </a>
         <div id="fig1-caption" class="visually-hidden">Figure 1. Usage of HTTP versus HTTPS</div>
         <figcaption>Figure 1. Usage of HTTP versus HTTPS.</figcaption>
       </figure>
       <h3 id="protocol-versions">Protocol versions</h3>
       <figure id="fig-2">
-        <iframe aria-labelledby="fig2-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig2-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/08_Security/fig2.png" class="fig-mobile">
-          <img src="/static/images/2019/08_Security/fig2.png" aria-labelledby="fig2-caption" width="760" />
+          <img src="/static/images/2019/08_Security/fig2.png" aria-labelledby="fig2-caption" width="760" loading="lazy" />
         </a>
         <div id="fig2-caption" class="visually-hidden">Figure 2. Usage of TLS protocol versions.</div>
         <figcaption>Figure 2. Usage of TLS protocol versions.</figcaption>
@@ -298,9 +298,9 @@
       <p>This is likely due to many sites using requests from the larger players for <a href="./third-parties">third-party content</a>. For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.</p>
       <p>If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to <a href="./cms">CMS</a> sites like Wordpress and <a href="./cdn">CDNs</a>:</p>
       <figure id="fig-3">
-        <iframe aria-labelledby="fig3-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig3-caption" width="760" height="470" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/08_Security/fig3.png" class="fig-mobile">
-          <img src="/static/images/2019/08_Security/fig3.png" aria-labelledby="fig3-caption" width="760" />
+          <img src="/static/images/2019/08_Security/fig3.png" aria-labelledby="fig3-caption" width="760" loading="lazy" />
         </a>
         <div id="fig3-caption" class="visually-hidden">Figure 3. Usage of TLS protocol versions for home page requests only.</div>
         <figcaption>Figure 3. Usage of TLS protocol versions for home page requests only.</figcaption>
@@ -501,10 +501,10 @@
       <h2 id="security-headers">Security headers</h2>
       <p>Many new and recent features for site operators to better protect their users have come in the form of new HTTP response headers that can configure and control security protections built into the browser. Some of these features are easy to enable and provide a huge level of protection whilst others require a little more work from site operators. If you wish to check if a site is using these headers and has them correctly configured, you can use the <a href="https://securityheaders.com/">Security Headers</a> tool to scan it.</p>
       <figure id="fig-8">
-        <iframe aria-labelledby="fig8-caption" width="760" height="450" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig8-caption" width="760" height="450" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive" loading="lazy"></iframe>
 
         <a href="/static/images/2019/08_Security/fig8.png" class="fig-mobile">
-          <img src="/static/images/2019/08_Security/fig8.png" aria-labelledby="fig8-caption" width="760" />
+          <img src="/static/images/2019/08_Security/fig8.png" aria-labelledby="fig8-caption" width="760" loading="lazy" />
         </a>
         <div id="fig8-caption" class="visually-hidden">Figure 8. Usage of Security Headers.</div>
         <figcaption>Figure 8. Usage of Security Headers</figcaption>

@@ -155,7 +155,7 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>In 2005, Ian "Hixie" Hickson posted <a href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">some analysis of markup data</a> building upon various previous work. Much of this work aimed to investigate class names to see if there were common informal semantics that were being adopted by developers which it might make sense to standardize upon. Some of this research helped inform new elements in HTML5.</p>
@@ -231,26 +231,26 @@
       </figure>
       <h3 id="elements-per-page">Elements per page</h3>
       <figure id="fig2">
-        <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution of Hixie's 2005 analysis of element frequencies" width="600" />
+        <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution of Hixie's 2005 analysis of element frequencies" width="600" loading="lazy" />
         <figcaption>Figure 2. Distribution of Hixie's 2005 analysis of element frequencies.</figcaption>
       </figure>
       <figure id="fig3">
-        <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/03_Markup/fig3.png" class="fig-mobile">
-          <img src="/static/images/2019/03_Markup/fig3.png" aria-labelledby="fig3-caption" width="600" />
+          <img src="/static/images/2019/03_Markup/fig3.png" aria-labelledby="fig3-caption" width="600" loading="lazy" />
         </a>
         <div id="fig3-caption" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
         <figcaption>Figure 3. Element frequencies as of 2019.</figcaption>
       </figure>
       <p>Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Figure 2, we can see that the average size of DOM trees has gotten bigger.</p>
       <figure id="fig4">
-        <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" width="600" />
+        <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" width="600" loading="lazy" />
         <figcaption>Figure 4. Histogram of Hixie's 2005 analysis of element types per page.</figcaption>
       </figure>
       <figure id="fig5">
-        <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/03_Markup/fig5.png" class="fig-mobile">
-          <img src="/static/images/2019/03_Markup/fig5.png" aria-labelledby="fig5-caption" width="600" />
+          <img src="/static/images/2019/03_Markup/fig5.png" aria-labelledby="fig5-caption" width="600" loading="lazy" />
         </a>
         <div id="fig5-caption" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
         <figcaption>Figure 5. Histogram of element types per page as of 2019.</figcaption>
@@ -284,9 +284,9 @@
       <p>Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated elements.</p>
       <aside class="note">Note: A lot of this is very likely due to the use of products rather than individual authors continuing to manually create this markup.</aside>
       <figure id="fig6">
-        <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/03_Markup/fig6.png" class="fig-mobile">
-          <img src="/static/images/2019/03_Markup/fig6.png" aria-labelledby="fig6-caption" width="600" />
+          <img src="/static/images/2019/03_Markup/fig6.png" aria-labelledby="fig6-caption" width="600" loading="lazy" />
         </a>
         <div id="fig6-caption" class="visually-hidden">Figure 6. Most frequently used deprecated elements.</div>
         <figcaption>Figure 6. Most frequently used deprecated elements.</figcaption>
@@ -295,9 +295,9 @@
       <h2 id="perspective-on-value-and-usage">Perspective on value and usage</h2>
       <p>In order to discuss numbers about the use of elements (standard, deprecated or custom), we first need to establish some perspective.</p>
       <figure id="fig7">
-        <iframe aria-labelledby="fig7-caption" width="600" height="778" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig7-caption" width="600" height="778" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/03_Markup/fig7.png" class="fig-mobile">
-          <img src="/static/images/2019/03_Markup/fig7.png" aria-labelledby="fig7-caption" width="600" />
+          <img src="/static/images/2019/03_Markup/fig7.png" aria-labelledby="fig7-caption" width="600" loading="lazy" />
         </a>
         <div id="fig7-caption" class="visually-hidden">Figure 7. Top 150 elements.</div>
         <figcaption>Figure 7. Top 150 elements.</figcaption>
@@ -340,7 +340,7 @@
       <p>It's interesting, then, to see what the distribution of these elements looks like and which ones have more than 1% use.</p>
       <figure id="fig8">
         <a href="https://rainy-periwinkle.glitch.me/scatter/html">
-          <img src="/static/images/2019/03_Markup/element_categories.png" alt="Element popularity categorized by standardization" width="600" />
+          <img src="/static/images/2019/03_Markup/element_categories.png" alt="Element popularity categorized by standardization" width="600" loading="lazy" />
         </a>
         <figcaption>Figure 8. Element popularity categorized by standardization.</figcaption>
       </figure>
@@ -395,9 +395,9 @@
       </ul>
       <p>Let's compare these to a few of the native HTML elements that are below the 5% bar, for perspective.</p>
       <figure id="fig9">
-        <iframe aria-labelledby="fig9-caption" width="600" height="370" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig9-caption" width="600" height="370" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/03_Markup/fig9.png" class="fig-mobile">
-          <img src="/static/images/2019/03_Markup/fig9.png" aria-labelledby="fig9-caption" width="600" />
+          <img src="/static/images/2019/03_Markup/fig9.png" aria-labelledby="fig9-caption" width="600" loading="lazy" />
         </a>
         <div id="fig9-caption" class="visually-hidden">Figure 9. Popularity of product-specific and native elements under 5% adoption.</div>
         <figcaption>Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
@@ -424,9 +424,9 @@
       </ul>
       <p>Placing these into our same chart as above for perspective looks something like this (again, it varies slightly based on the dataset)</p>
       <figure id="fig10">
-        <iframe aria-labelledby="fig10-caption" width="600" height="370" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig10-caption" width="600" height="370" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/03_Markup/fig10.png" class="fig-mobile">
-          <img src="/static/images/2019/03_Markup/fig10.png" aria-labelledby="fig10-caption" width="600" />
+          <img src="/static/images/2019/03_Markup/fig10.png" aria-labelledby="fig10-caption" width="600" loading="lazy" />
         </a>
         <div id="fig10-caption" class="visually-hidden">Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</div>
         <figcaption>Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</figcaption>
