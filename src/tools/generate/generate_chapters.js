@@ -18,6 +18,7 @@ const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
 converter.setOption('simpleLineBreaks', false);
 converter.setOption('tablesHeaderId', false);
+converter.setOption('ghMentions', false);
 
 const generate_chapters = async () => {
   let sitemap = [];
