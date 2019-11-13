@@ -229,7 +229,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
 From this we can start to get a sense of how large or small a typical resource is on the web. However, this doesn’t give us a sense of the volume of pixels represented on screen for these file distributions. To do this we can divide each resource bytes by the natural pixel volume of the image. A lower Bytes-Per-Pixel indicates a more efficient transmission of visual content.
 
  <figure>
-  <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive"></iframe>
   <a href="/static/images/2019/04_Media/fig10.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig10.png" aria-labelledby="fig10-caption" width="600">
   </a>
@@ -264,7 +264,7 @@ While other format features simply organize the content and sometimes requires c
 One Lighthouse test is an A/B comparing baseline with a progressively encoded JPEG. This provides a smell to indicate whether the images overall can be further optimized with lossless techniques and potentially with lossy techniques like using different quality levels.  
 
  <figure>
-  <iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767"></iframe>
   <a href="/static/images/2019/04_Media/fig11.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig11.png" aria-labelledby="fig11-caption" width="600">
   </a>
@@ -275,7 +275,7 @@ One Lighthouse test is an A/B comparing baseline with a progressively encoded JP
 The savings in this AB Lighthouse test is not just about potential byte savings, which can accrue to several MBs at the p95, it also demonstrates the page performance improvement. 
 
  <figure>
-  <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://todo"></iframe>
+  <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"></iframe>
   <a href="/static/images/2019/04_Media/fig12.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig12.png" aria-labelledby="fig12-caption" width="600">
   </a>
