@@ -39,6 +39,7 @@ a:focus, a:hover {
 .subtitle {
   font-size: 28px;
   line-height: 42px;
+  font-weight: bold;
 }
 
 .title::before,
