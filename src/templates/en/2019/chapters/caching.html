@@ -167,7 +167,7 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant <a href="./performance">performance</a> benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make," and caching is one of the key ways to avoid having to make requests.</p>
@@ -223,16 +223,16 @@
       <p>The tool <a href="https://redbot.org/">RedBot.org</a> allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, <a href="https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js">a test for the URL above</a> would output the following:</p>
       <figure id="fig-1">
         <a href="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg">
-          <img alt="Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" width="600" />
+          <img alt="Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" width="600" loading="lazy" />
         </a>
         <figcaption>Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
       </figure>
       <p>If no caching headers are present in a response, then the <a href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">client is permitted to heuristically cache the response</a>. Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since <code>Last-Modified</code>. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.</p>
       <p>72% of responses are served with a <code>Cache-Control</code> header, and 56% of responses are served with an <code>Expires</code> header. However, 27% of responses did not use either header, and therefore are subject to heuristic caching. This is consistent across both desktop and mobile sites.</p>
       <figure id="fig-2">
-        <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig2.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig2.png" width="600" aria-labelledby="fig2-caption" />
+          <img src="/static/images/2019/16_Caching/fig2.png" width="600" aria-labelledby="fig2-caption" loading="lazy" />
         </a>
         <div id="fig2-caption" class="visually-hidden">Two identical bar charts for mobile and desktop showing 72% of requests use Cache-Control headers, 56% use Expires and the 27% use neither.</div>
         <figcaption>Figure 2. Presence of HTTP <code>Cache-Control</code> and <code>Expires</code> headers.</figcaption>
@@ -246,9 +246,9 @@
       </ul>
       <p>The remaining responses are not permitted to be stored in browser caches.</p>
       <figure id="fig-3">
-        <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig3.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig3.png" width="600" aria-labelledby="fig3-caption" />
+          <img src="/static/images/2019/16_Caching/fig3.png" width="600" aria-labelledby="fig3-caption" loading="lazy" />
         </a>
         <div id="fig3-caption" class="visually-hidden">A stacked bar chart showing 20% of desktop responses are not cacheable, 47% have a cache greater than zero, 27% are heuristically cached and 6% have a TTL of 0. The stats for mobile are very similar (19%, 47%, 27% and 7%)</div>
         <figcaption>Figure 3. Distribution of cacheable responses.</figcaption>
@@ -360,18 +360,18 @@
       <p>While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 28 hours, however the 25th percentile is just one-two hours and the 10th percentile indicates that 10% of cacheable image content is cached for less than one hour.</p>
       <p>By exploring the cacheability by content type in more detail in figure 5 below, we can see that approximately half of all HTML responses are considered non-cacheable. Additionally, 16% of images and scripts are non-cacheable.</p>
       <figure id="fig-5">
-        <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig5.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig5.png" width="600" aria-labelledby="fig5-caption" />
+          <img src="/static/images/2019/16_Caching/fig5.png" width="600" aria-labelledby="fig5-caption" loading="lazy" />
         </a>
         <div id="fig5-caption" class="visually-hidden">A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for desktop. A small, but significant proportion are not cacheable and this goes up to 50% for HTML, most have caching greater and 0 and a smaller amount has a 0 TTL</div>
         <figcaption>Figure 5. Distribution of cacheability by content type for desktop.</figcaption>
       </figure>
       <p>The same data for mobile is shown below. As can be seen, the cacheability of content types is consistent between desktop and mobile.</p>
       <figure id="fig-6">
-        <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig6.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig6.png" width="600" aria-labelledby="fig6-caption" />
+          <img src="/static/images/2019/16_Caching/fig6.png" width="600" aria-labelledby="fig6-caption" loading="lazy" />
         </a>
         <div id="fig6-caption" class="visually-hidden">A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for mobile. A small, but significant proportion are not cacheable and this goes up to 50% for HTML, most have caching greater and 0 and a smaller amount has a 0 TTL</div>
         <figcaption>Figure 6. Distribution of cacheability by content type for mobile.</figcaption>
@@ -388,9 +388,9 @@
       </ul>
       <p>53% of HTTP responses include a <code>Cache-Control</code> header with the <code>max-age</code> directive, and 54% include the Expires header. However, only 41% of these responses use both headers, which means that 13% of responses are caching solely based on the older <code>Expires</code> header.</p>
       <figure id="fig-7">
-        <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig7.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig7.png" width="600" aria-labelledby="fig7-caption" />
+          <img src="/static/images/2019/16_Caching/fig7.png" width="600" aria-labelledby="fig7-caption" loading="lazy" />
         </a>
         <div id="fig7-caption" class="visually-hidden">A bar chart showing 53% of responses have a `Cache-Control: max-age`, 54%-55% use `Expires`, 41%-42% use both, and 34% use neither. The figures are given for both desktop and mobile but the figures are near identical with mobile having a percentage point higher in use of expires.</div>
         <figcaption>Figure 7. Usage of <code>Cache-Control</code> versus <code>Expires</code> headers.</figcaption>
@@ -462,9 +462,9 @@
       </figure>
       <p>For example, <code>cache-control: public, max-age=43200</code> indicates that a cached entry should be stored for 43,200 seconds and it can be stored by all caches.</p>
       <figure id="fig-9">
-        <iframe aria-labelledby="fig9-caption" width="600" height="662" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig9-caption" width="600" height="662" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig9.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig9.png" width="600" aria-labelledby="fig9-caption" />
+          <img src="/static/images/2019/16_Caching/fig9.png" width="600" aria-labelledby="fig9-caption" loading="lazy" />
         </a>
         <div id="fig9-caption" class="visually-hidden">A bar chart of 15 cache control directives and their usage ranging from 74.8% for max-age, 37.8% for public, 27.8% for no-cache, 18% for no-store, 14.3% for private, 3.4% for immutable, 3.3% for no-transform, 2.4% for stale-while-revalidate, 2.2% for pre-check, 2.2% for post-check, 1.9% for s-maxage, 1.6% for proxy-revalidate, 0.3% for set-cookie and 0.2% for stale-if-error. The stats are near identical for desktop and mobile.</div>
         <figcaption>Figure 9. Usage of <code>Cache-Control</code> directives on mobile.</figcaption>
@@ -494,7 +494,7 @@
       <p>The graph below illustrates the relative age of resources by content type, and you can read a <a href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">more detailed analysis here</a>. HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources (<a href="./javascript">scripts</a>, <a href="./css">CSS</a>, and <a href="./fonts">fonts</a>) are older than one year!</p>
       <figure id="fig-10">
         <a href="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg">
-          <img alt="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year." src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" width="600" />
+          <img alt="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year." src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" width="600" loading="lazy" />
         </a>
         <figcaption>Figure 10. Resource age distribution by content type.</figcaption>
       </figure>
@@ -570,9 +570,9 @@
 &lt; Accept-Ranges: bytes</code></pre>
       <p>Overall, 65% of responses are served with a <code>Last-Modified</code> header, 42% are served with an <code>ETag</code>, and 38% use both. However, 30% of responses include neither a <code>Last-Modified</code> or <code>ETag</code> header.</p>
       <figure id="fig-12">
-        <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig12.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig12.png" width="600" aria-labelledby="fig12-caption" />
+          <img src="/static/images/2019/16_Caching/fig12.png" width="600" aria-labelledby="fig12-caption" loading="lazy" />
         </a>
         <div id="fig12-caption" class="visually-hidden">A bar chart showing 64.4% of desktop requests have a last modified, 42.8% have an ETag, 37.9% have both and 30.7% have neither. The stats for mobile are almost identical at 65.3% for Last Modified, 42.8% for ETag, 38.0% for both and 29.9% for neither.</div>
         <figcaption>Figure 12. Adoption of validating freshness via `Last-Modified` and `ETag` headers for desktop websites.</figcaption>
@@ -599,9 +599,9 @@
       <p>Most clients will ignore invalid date strings, which render them ineffective for the response they are served on. This can have consequences on cacheability, since an erroneous <code>Last-Modified</code> header will be cached without a Last-Modified timestamp resulting in the inability to perform a conditional request.</p>
       <p>The <code>Date</code> HTTP response header is usually generated by the web server or CDN serving the response to a client. Because the header is typically generated automatically by the server, it tends to be less prone to error, which is reflected by the very low percentage of invalid <code>Date</code> headers. <code>Last-Modified</code> headers were very similar, with only 0.67% of them being invalid. What was very surprising to see though, was that 3.64% <code>Expires</code> headers used an invalid date format!</p>
       <figure id="fig-13">
-        <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig13.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig13.png" width="600" aria-labelledby="fig13-caption" />
+          <img src="/static/images/2019/16_Caching/fig13.png" width="600" aria-labelledby="fig13-caption" loading="lazy" />
         </a>
         <div id="fig13-caption" class="visually-hidden">A bar chart showing 0.10% of desktop responses have an invalid date, 0.67% have an invalid Last-Modified and 3.64% have an invalid Expires. The stats for mobile are very similar with 0.06% of responses have an invalid date, 0.68% have an invalid Last-Modified and 3.50% have an invalid Expires.</div>
         <figcaption>Figure 13. Invalid date formats in response headers.</figcaption>
@@ -622,9 +622,9 @@
       <p>The <code>Vary</code> header is used on 39% of HTTP responses, and 45% of responses that include a <code>Cache-Control</code> header.</p>
       <p>The graph below details the popularity for the top 10 <code>Vary</code> header values. <code>Accept-Encoding</code> accounts for 90% of <code>Vary</code>'s use, with <code>User-Agent</code> (11%), <code>Origin</code> (9%), and <code>Accept</code> (3%) making up much of the rest.</p>
       <figure id="fig-14">
-        <iframe aria-labelledby="fig14-caption" width="600" height="655" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=384675253&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig14-caption" width="600" height="655" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=384675253&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig14.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig14.png" width="600" aria-labelledby="fig14-caption" />
+          <img src="/static/images/2019/16_Caching/fig14.png" width="600" aria-labelledby="fig14-caption" loading="lazy" />
         </a>
         <div id="fig14-caption" class="visually-hidden">A bar chart showing 90% use of accept-encoding, much smaller values for the rest with 10%-11% for user-agent, approximately 7%-8% for origin and less so for accept, almost not usage for cookie, x-forward-proto, accept-language, host, x-origin, access-control-request-method, and access-control-request-headers</div>
         <figcaption>Figure 14. Vary header usage.</figcaption>
@@ -633,7 +633,7 @@
       <p>When a response is cached, its entire headers are swapped into the cache as well. This is why you can see the response headers when inspecting a cached response via DevTools.</p>
       <figure id="fig-15">
         <a href="/static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg">
-          <img alt="A screenshot of Chrome Developer Tools showing HTTP response headers for a cached response." src="/static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg" width="600" />
+          <img alt="A screenshot of Chrome Developer Tools showing HTTP response headers for a cached response." src="/static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg" width="600" loading="lazy" />
         </a>
         <figcaption>Figure 15. Chrome Dev Tools for a cached resource.</figcaption>
       </figure>
@@ -642,7 +642,7 @@
       <p>3% of cacheable responses contain a <code>Set-Cookie header</code>. Of those responses, only 18% use the <code>private</code> directive. The remaining 82% include 5.3 million HTTP responses that include a <code>Set-Cookie</code> which can be cached by public and private cache servers.</p>
       <figure id="fig-16">
         <a href="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg">
-          <img alt="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private." src="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg" width="600" />
+          <img alt="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private." src="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg" width="600" loading="lazy" />
         </a>
         <figcaption>Figure 16. Cacheable responses of <code>Set-Cookie</code> responses.</figcaption>
       </figure>
@@ -651,7 +651,7 @@
       <p>In fact, one of the <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive trend reports shows the adoption of service workers</a> shown below:</p>
       <figure id="fig-17">
         <a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">
-          <img alt="A time series chart showing service worker controlled site usage from October 2016 until July 2019. Usage has been steadily growing throughout the years for both mobile and desktop but is still less than 0.6% for both." src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" width="600" />
+          <img alt="A time series chart showing service worker controlled site usage from October 2016 until July 2019. Usage has been steadily growing throughout the years for both mobile and desktop but is still less than 0.6% for both." src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" width="600" loading="lazy" />
         </a>
         <figcaption><a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">Figure 17. Timeseries of service worker controlled pages. (Source: </a><a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
       </figure>
@@ -736,15 +736,15 @@
       <p>Google's <a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> tool enables users to run a series of audits against web pages, and <a href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">the cache policy audit</a> evaluates whether a site can benefit from additional caching. It does this by comparing the content age (via the <code>Last-Modified</code> header) to the cache TTL and estimating the probability that the resource would be served from cache. Depending on the score, you may see a caching recommendation in the results, with a list of specific resources that could be cached.</p>
       <figure id="fig-20">
         <a href="/static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg">
-          <img alt="A screenshot of part of a report from the Google Lighthouse tool, with the 'Serve static assets with an efficient cache policy' section open where it lists a number of resources, who's names have been redacted, and the Cache TTL versus the size." src="/static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg" width="600" />
+          <img alt="A screenshot of part of a report from the Google Lighthouse tool, with the 'Serve static assets with an efficient cache policy' section open where it lists a number of resources, who's names have been redacted, and the Cache TTL versus the size." src="/static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg" width="600" loading="lazy" />
         </a>
         <figcaption>Figure 20. Lighthouse report highlighting potential cache policy improvements.</figcaption>
       </figure>
       <p>Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The <a href="https://developers.google.com/web/tools/lighthouse/audits/cache-policy">caching score</a> is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.</p>
       <figure id="fig-21">
-        <iframe aria-labelledby="fig21-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig21-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig21.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig21.png" width="600" aria-labelledby="fig21-caption" />
+          <img src="/static/images/2019/16_Caching/fig21.png" width="600" aria-labelledby="fig21-caption" loading="lazy" />
         </a>
         <div id="fig21-caption" class="visually-hidden">A stacked bar chart 38.2% of websites get a score of &lt; 10%, 29.0% of websites get a score between 10% and 39%, 18.7% of websites get a score of 40%-79%, 10.7% of websites get a score of 80% - 99%, and 3.4% of websites get a score of 100%.</div>
         <figcaption>Figure 21. Distribution of Lighthouse scores for the "Uses Long Cache TTL" audit for mobile web pages.</figcaption>
@@ -752,9 +752,9 @@
       <p>Only 3.4% of sites scored a 100%, meaning that most sites can benefit from some cache optimizations. A vast majority of sites sore below 40%, with 38% scoring less than 10%. Based on this, there is a significant amount of caching opportunities on the web.</p>
       <p>Lighthouse also indicates how many bytes could be saved on repeat views by enabling a longer cache policy. Of the sites that could benefit from additional caching, 82% of them can reduce their page weight by up to a whole Mb!</p>
       <figure id="fig-22">
-        <iframe aria-labelledby="fig22-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&amp;format=interactive"></iframe>
+        <iframe aria-labelledby="fig22-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/16_Caching/fig22.png" class="fig-mobile">
-          <img src="/static/images/2019/16_Caching/fig22.png" width="600" aria-labelledby="fig21-caption" />
+          <img src="/static/images/2019/16_Caching/fig22.png" width="600" aria-labelledby="fig21-caption" loading="lazy" />
         </a>
         <div id="fig22-caption" class="visually-hidden">A stacked bar chart showing 56.8% of websites have potential byte savings of less than one MB, 22.1% could have savings of one to two MB, 8.3% could save two to three MB. 4.3% could save three to four MB and 6.0% could save more than four MB.</div>
         <figcaption>Figure 22. Distribution of potential byte savings from the Lighthouse caching audit.</figcaption>

@@ -10,6 +10,7 @@ const { find_files, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_figure_ids } = require('./generate_figure_ids');
 const { generate_sitemap } = require('./generate_sitemap');
+const { lazy_load_content } = require('./lazy_load_content');
 const { wrap_tables } = require('./wrap_tables');
 const { remove_unnecessary_markup } = require('./remove_unnecessary_markup');
 
@@ -49,6 +50,7 @@ const parse_file = async (markdown) => {
 
   body = generate_figure_ids(body);
   body = wrap_tables(body);
+  body = lazy_load_content(body);
   body = remove_unnecessary_markup(body);
   const toc = generate_table_of_contents(body);
 
