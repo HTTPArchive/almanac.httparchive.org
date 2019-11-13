@@ -74,19 +74,25 @@ a:focus, a:hover {
   border-bottom-color: #f7f779;
 }
 
+.title-center {
+  text-align: center;
+}
+
 .title-center::before {
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (max-width: 600px) {
-  .title::before {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+@media (max-width: 600px) {  
   .title-lg {
     font-size: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .title-alt::before {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
