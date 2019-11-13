@@ -16,15 +16,16 @@ class _Language(object):
   def __repr__(self):
     return '%s, %s' % (self.__str__(), self.lang_attribute)
 
+  #Currently this returns the same as lang_code as we don't support regions
   @property
   def lang_attribute(self):
-    # Returns the language attribute (eg "en-US") to be used in HTML.
-    return '%s-%s' % (self._lang_code, self._region_code)
+    return self._lang_code
 
   @property
   def lang_code(self):
     return self._lang_code
 
+# Currently we are only supporting languages and not regions
 class Language(object):
   JAPANESE = _Language('日本語', 'ja', 'JP')
   ENGLISH = _Language('English', 'en', 'US')

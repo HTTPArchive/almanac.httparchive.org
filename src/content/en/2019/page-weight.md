@@ -541,7 +541,7 @@ Further investigation into the data set revealed that 62% of GIFs are 43 bytes o
   <a href="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png">
     <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Chart showing cumulative distriubtion function of GIF file sizes">
   </a>
-  <figcaption>Figure 10. Cumulative distriubtion function of GIF file sizes.</figcaption>
+  <figcaption>Figure 10. Cumulative distribution function of GIF file sizes.</figcaption>
 </figure>
 
 The tables below show two different approaches to removing these tiny images from the data set: the first one is based on images with a file size greater than 100 bytes, the second is based on images with a file size greater than 1024 bytes.

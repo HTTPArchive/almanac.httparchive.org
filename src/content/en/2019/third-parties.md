@@ -47,7 +47,9 @@ This chapter divides third-party providers into one of these broad categories. A
 - **Video** - providers that host the arbitrary video content of their users
 - **Other** - uncategorized or non-conforming activity
 
-<aside>**Note on CDNs**: The CDN category here includes providers that provide resources on _public_ CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does _not_ include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</aside>
+<aside>
+  <strong>Note on CDNs</strong>: The CDN category here includes providers that provide resources on <strong>public</strong> CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does <strong>not</strong> include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.
+</aside>
 
 ### Caveats
 
@@ -58,7 +60,7 @@ This chapter divides third-party providers into one of these broad categories. A
 
 <figure>
   <div class="big-number">93.59%</div>
-  <figcaption>Figure 1. Percentage of desktop pages that include at least one third party resource.</figcaption>
+  <figcaption>Figure 1. Percentage of desktop pages that include at least one third-party resource.</figcaption>
 </figure>
 
 Third-party code is everywhere. 93% of pages include at least one third-party resource, 76% of pages issue a request to an analytics domain, the median page requests content from at least 9 _unique_ third-party domains that represent 35% of their total network activity, and the most active 10% of pages issue a whopping 175 third-party requests or more. It's not a stretch to say that third parties are an integral part of the web.
@@ -94,7 +96,7 @@ Rank | Third party domain | Percent of requests
 9 | `cdn.shopify.com` | 0.76%
 10 | `maps.googleapis.com` | 0.75%
 
-<figcaption>Figure 3. Top 10 most popular third party domains.</figcaption>
+<figcaption>Figure 3. Top 10 most popular third-party domains.</figcaption>
 </figure>
 
 <figure markdown>
@@ -111,7 +113,7 @@ Rank | Third party URL | Percent of requests
 9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
 10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
 
-<figcaption>Figure 4. Top 10 most popular third party requests.</figcaption>
+<figcaption>Figure 4. Top 10 most popular third-party requests.</figcaption>
 </figure>
 
 ### Resource types
@@ -124,7 +126,7 @@ The resource type breakdown of third-party content also lends insight into how t
     <img src="/static/images/2019/05_Third_Parties/fig5.png" aria-labelledby="fig5-caption" width="600">
   </a>
   <div id="fig5-caption" class="visually-hidden">Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.</div>
-  <figcaption>Figure 5. Percent of third party requests by category and content type.</figcaption>
+  <figcaption>Figure 5. Percent of third-party requests by category and content type.</figcaption>
 </figure>
 
 Several other amusing factoids jump out from this data. Tracking pixels (image requests to analytics domains) make up 1.6% of all network requests, six times as many video requests are to social networks like Facebook and Twitter than dedicated video providers like YouTube and Vimeo (presumably because the default YouTube embed consists of HTML and a preview thumbnail but not an autoplaying video), and there are still more requests for first-party images than all scripts combined.
@@ -142,7 +144,6 @@ The number of requests issued by each third-party provider also varies considera
 While 49% of requests are third-party, their share of the web in terms of bytes is quite a bit lower at only 28%. The same goes for the breakdown by multiple resource types. Third-party fonts make up 72% of all fonts, but they're only 53% of font bytes; 74% of HTML requests, but only 39% of HTML bytes; 68% of video requests, but only 31% of video bytes. All this seems to suggest third-party providers are responsible stewards who keep their response sizes low, and, for the most part, that is in fact the case until you look at scripts.
 
 Despite serving 57% of scripts, third parties comprise 64% of script bytes. meaning their scripts are larger on average than first-party scripts. This is an early warning sign for their performance impact to come in the next few sections.
-
 
 <figure>
   <iframe aria-labelledby="fig7-caption" width="600" height="483.5" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive"></iframe>
