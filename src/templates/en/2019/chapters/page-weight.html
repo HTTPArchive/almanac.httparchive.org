@@ -217,7 +217,7 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>The median web page is around 1900KB in size and contains 74 requests. That doesn't sound too bad, right?</p>
@@ -265,7 +265,7 @@
       </ol>
       <figure id="fig-1">
         <a href="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png">
-          <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="Chart showing 19 converted sessions vs. 31 non-converted sessions" />
+          <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="Chart showing 19 converted sessions vs. 31 non-converted sessions" loading="lazy" />
         </a>
         <figcaption>Figure 1. Converted sessions vs non-converted sessions.</figcaption>
       </figure>
@@ -274,7 +274,7 @@
       </ol>
       <figure id="fig-2">
         <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png">
-          <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png" alt="Chart showing conversion rate dropping off as scripts increase" />
+          <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png" alt="Chart showing conversion rate dropping off as scripts increase" loading="lazy" />
         </a>
         <figcaption>Figure 2. Conversion rate dropping off as scripts increase.</figcaption>
       </figure>
@@ -757,7 +757,7 @@
       <p>Further investigation into the data set revealed that 62% of GIFs are 43 bytes or smaller (43 bytes is the size of a transparent, 1x1 pixel GIF) and 84% of GIFs are 1 KB or smaller.</p>
       <figure id="fig-10">
         <a href="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png">
-          <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Chart showing cumulative distriubtion function of GIF file sizes" />
+          <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Chart showing cumulative distriubtion function of GIF file sizes" loading="lazy" />
         </a>
         <figcaption>Figure 10. Cumulative distribution function of GIF file sizes.</figcaption>
       </figure>
