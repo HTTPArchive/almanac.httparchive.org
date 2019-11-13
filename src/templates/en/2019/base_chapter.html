@@ -39,7 +39,7 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
 {% macro render_actions() %}
   <div class="discuss">
     <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
-      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24"><span id="num_comments"></span>
+      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24" loading="lazy" /><span id="num_comments"></span>
     </a>
   </div>
 {% endmacro %}
@@ -69,16 +69,16 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
       {% set authordata = config.contributors[author] if author in config.contributors else None %}
     {% if authordata %}
       <li>
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" /></a>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" /></a>
           <div class="info">
             <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
               {% if authordata.twitter or authordata.github %}
                   <span class="social">
                   {% if authordata.twitter %}
-                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="@{{ authordata.twitter }} on Twitter"></a>
+                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="@{{ authordata.twitter }} on Twitter" height="80" width="65" loading="lazy" /></a>
                   {% endif %}
                   {% if authordata.github %}
-                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }}@ on GitHub"></a>
+                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }} on GitHub" height="80" width="78" loading="lazy" /></a>
                   {% endif %}
                   </span>
               {% endif %}
