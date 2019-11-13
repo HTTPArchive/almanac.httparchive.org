@@ -30,32 +30,76 @@ a:focus, a:hover {
   text-decoration: underline;
 }
 
-h1.title {
+/* Main title, subtitle and modifiers */
+.title,
+.subtitle {
   margin-top: 20px;
-  font-size: 50px;
 }
 
-div.subtitle {
+.subtitle {
   font-size: 28px;
   line-height: 42px;
   font-weight: bold;
 }
 
-div.subtitle::before {
+.title::before,
+.subtitle::before {
   display: block;
   content: '';
-  margin-bottom: 18px;
-  border-bottom: solid 1px #A8CABA;
-  width: 70px;
+  margin-bottom: 15px;
+  border-bottom: solid 1px #a8caba;
+  width: 80px;
+}
+
+.subtitle + .title {
+  margin-top: 0;
+}
+
+.subtitle + .title::before {
+  content: normal;
+}
+
+.title .chapter-unedited {
+  font-family: monospace;
+  text-transform: uppercase;
+  color: red;
+  vertical-align: super;
+  font-size: .5em;
+}
+
+.title-lg {
+  font-size: 48px;
+}
+
+.title-alt::before {
+  border-bottom-color: #f7f779;
+}
+
+.title-center {
+  text-align: center;
+}
+
+.title-center::before {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {  
+  .title-lg {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .title-alt::before {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 h2.header {
   font-size: 25px;
   margin: 14px;
-}
-.subtitle {
-  font-size: 28px;
-  line-height: 42px;
 }
 
 .btn {
@@ -95,18 +139,6 @@ a.navigation-logo:focus img {
 header.alt-bg a:hover, footer.alt-bg a:hover,
 header.alt-bg a:focus, footer.alt-bg a:focus {
   color: #F7F779;
-}
-
-.decorative-line-center {
-  width: 20%;
-  margin: 0 40% !important;
-  border-bottom: solid 1px #c6dcd2;
-}
-.alt-bg.decorative-line,
-.alt-bg .decorative-line {
-  width: 20%;
-  margin-right: 80% !important;
-  border-bottom: solid 1px #F7F779;
 }
 .alt-bg .btn {
   border-color: #F7F779;
@@ -347,10 +379,6 @@ p.copyright {
 }
 
 @media (max-width: 900px) and (min-width: 601px) {
-  .alt-bg.decorative-line,
-  .alt-bg .decorative-line {
-    margin: 0 40% !important;
-  }
   header .cta {
     display: none;
   }
@@ -404,11 +432,6 @@ p.copyright {
    body, p, td, th, code, li {
      font-size: 16px;
    }
-
-  .alt-bg.decorative-line,
-  .alt-bg .decorative-line {
-    margin: 0 40% !important;
-  }
   /* Header */
   header, footer {
     position: relative;
@@ -430,9 +453,6 @@ p.copyright {
   }
   header nav > a:last-child {
     margin: 0;
-  }
-  h1.title {
-    font-size: 40px;
   }
   .menu {
     position: absolute;
