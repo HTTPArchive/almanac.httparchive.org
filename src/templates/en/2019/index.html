@@ -107,13 +107,6 @@
       fetch(url)
         .then(function(response) { return response.blob(); })
         .then(function(blob) { setImage(blob); });
-    } else {
-      // Internet explorer.. :(
-      var request = new XMLHttpRequest();
-      request.open('GET', url);
-      request.responseType = 'blob';
-      request.onload = function () { setImage(request.response); };
-      request.send();
     }
   </script>
 {% endblock %}
