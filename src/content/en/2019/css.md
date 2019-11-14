@@ -7,15 +7,16 @@ authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 discuss: 1757
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z 
+last_updated: 2019-11-07T21:46:11.000Z
 ---
 
 ## Introduction
+
 Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user.
 
 When describing CSS to those not familiar with web technology, it can be helpful to think of it as the language to paint the walls of the house; describing the size and position of windows and doors, as well as flourishing decorations such as wallpaper or plant life. The fun twist to that story is that depending on the user walking through the house, a developer can adapt the house to that specific user's preferences or contexts!
 
-In this chapter, we'll be inspecting, tallying, and extracting data about how CSS is used across the web. Our goal is to holistically understand what features are being used, how they're used, and how CSS is growing and being adopted. 
+In this chapter, we'll be inspecting, tallying, and extracting data about how CSS is used across the web. Our goal is to holistically understand what features are being used, how they're used, and how CSS is growing and being adopted.
 
 Ready to dig into the fascinating data?! Many of the following numbers may be small, but don't mistake them as insignificant! It can take many years for new things to saturate the web.
 
@@ -38,7 +39,7 @@ Hex is the most popular way to describe color by far, with 93% usage, followed b
 
 ### Color selection
 
-There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readible styling. The most popular named colors are `black` and `white`, unsurprisingly, followed by `red` and `blue`.
+There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readable styling. The most popular named colors are `black` and `white`, unsurprisingly, followed by `red` and `blue`.
 
 <figure>
   <iframe aria-labelledby="fig2-caption" width="600" height="415" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1985913808&amp;format=interactive"></iframe>
@@ -102,7 +103,7 @@ We saw larger differences in unit types when it comes to mobile and desktop usag
 
 ### Custom properties
 
-Custom properties are what many call CSS variables. They're more dynamic than a typical static variable though! They're very powerful and as a community we're still discovering their potential. 
+Custom properties are what many call CSS variables. They're more dynamic than a typical static variable though! They're very powerful and as a community we're still discovering their potential.
 
 <figure>
   <div class="big-number">5%</div>
@@ -115,7 +116,7 @@ We felt like this was exciting information, since it shows healthy growth of one
 
 ### ID vs class selectors
 
-CSS has a few ways to find elements on the page for styling, so let's put IDs and classes against each other to see which is more prevalent! The results shouldn't be too surprising: classes are more popular! 
+CSS has a few ways to find elements on the page for styling, so let's put IDs and classes against each other to see which is more prevalent! The results shouldn't be too surprising: classes are more popular!
 
 <figure>
   <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&amp;format=interactive"></iframe>
@@ -159,7 +160,7 @@ CSS has some very powerful comparison selectors. These are selectors like `[targ
   <figcaption>Figure 10. Popularity of operators per class attribute selector.</figcaption>
 </figure>
 
-These operators are much more popular with class selectors than IDs, which feels natural since a stylesheet usually has fewer ID selectors than class selectors, but still neat to see the uses of all these combinations. 
+These operators are much more popular with class selectors than IDs, which feels natural since a stylesheet usually has fewer ID selectors than class selectors, but still neat to see the uses of all these combinations.
 
 ### Classes per element
 
@@ -239,7 +240,7 @@ A natural follow up to the inquiry of total number of fonts per page, is: what f
   <figcaption>Figure 16. Top web fonts.</figcaption>
 </figure>
 
-Open Sans is a huge winner here, with nearly 1 in 4 CSS `@font-family` declarations specifying it.  We've definitely used Open Sans in projects at agencies.
+Open Sans is a huge winner here, with nearly 1 in 4 CSS `@font-family` declarations specifying it. We've definitely used Open Sans in projects at agencies.
 
 It's also interesting to note the differences between desktop and mobile adoption. For example, mobile pages use Open Sans slightly less often than desktop. Meanwhile, they also use Roboto slightly more often.
 
@@ -356,7 +357,7 @@ CSS has this awesome interpolation power that can be simply used by just writing
   <figcaption>Figure 25. Distribution of the number of transitions per page.</figcaption>
 </figure>
 
-That's pretty good! We did see `animate.css` as a popular library to include, which brings in a ton of transition animations, but it's still nice to see folks are considering transitioning their UIs. 
+That's pretty good! We did see `animate.css` as a popular library to include, which brings in a ton of transition animations, but it's still nice to see folks are considering transitioning their UIs.
 
 ### Keyframe animations
 
@@ -402,6 +403,7 @@ For viewport media queries, any type of CSS unit can be passed into the query ex
 Figure 28 above shows that part of our assumptions were correct: there's certainly a high amount of phone specific sizes in there, but there's also some that aren't. It's interesting also how it's very pixel dominant, with a few trickling entries using `em` beyond the scope of this chart.
 
 ### Portrait vs landscape usage
+
 The most popular query value from the popular breakpoint sizes looks to be `768px`, which made us curious. Was this value primarily used to switch to a portrait layout, since it could be based on an assumption that `768px` represents the typical mobile portrait viewport? So we ran a follow up query to see the popularity of using the portrait and landscape modes:
 
 <figure>
@@ -413,7 +415,7 @@ The most popular query value from the popular breakpoint sizes looks to be `768p
   <figcaption>Figure 29. Adoption of media query orientation modes.</figcaption>
 </figure>
 
-Interestingly, `portrait` isn't used very much, whereas `landscape` is used much more. We can only assume that `768px` has been reliable enough as the portrait layout case that it's reached for much less. We also assume that folks on a desktop computer, testing their work, can't trigger portrait to see their mobile layout as easily as they can just squish the browser. Hard to tell, but the data is fascinating.  
+Interestingly, `portrait` isn't used very much, whereas `landscape` is used much more. We can only assume that `768px` has been reliable enough as the portrait layout case that it's reached for much less. We also assume that folks on a desktop computer, testing their work, can't trigger portrait to see their mobile layout as easily as they can just squish the browser. Hard to tell, but the data is fascinating.
 
 ### Most popular unit types
 
@@ -429,7 +431,8 @@ In the width and height media queries we've seen so far, pixels look like the do
 </figure>
 
 ### `min-width` vs `max-width`
-Wen folks write a media query, are they typically checking for a viewport that's over or under a specific range, _or_ both, checking if it's between a range of sizes? Let's ask the web!
+
+When folks write a media query, are they typically checking for a viewport that's over or under a specific range, _or_ both, checking if it's between a range of sizes? Let's ask the web!
 
 <figure>
   <iframe aria-labelledby="fig31-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&amp;format=interactive"></iframe>
@@ -440,7 +443,7 @@ Wen folks write a media query, are they typically checking for a viewport that's
   <figcaption>Figure 31. Adoption of properties used in media query snap points.</figcaption>
 </figure>
 
-No clear winners here; `max-width` and `min-width` are nearly equally used. 
+No clear winners here; `max-width` and `min-width` are nearly equally used.
 
 ### Print and speech
 
@@ -579,7 +582,7 @@ What do you name your stylesheets? Have you been consistent throughout your care
   <figcaption>Figure 34. Most frequently used stylesheet names.</figcaption>
 </figure>
 
-Look at all those creative file names! style, styles, main, default, all. One stood out though, do you see it? `BfWyFJ2Rl5s.css` takes the number four spot for most popular. We went researching it a bit and our best guess is that it's related to Facebook "like" buttons. Do you know what that file is? Leave a comment, because we'd love to hear the story. 
+Look at all those creative file names! style, styles, main, default, all. One stood out though, do you see it? `BfWyFJ2Rl5s.css` takes the number four spot for most popular. We went researching it a bit and our best guess is that it's related to Facebook "like" buttons. Do you know what that file is? Leave a comment, because we'd love to hear the story.
 
 ### Stylesheet size
 
@@ -685,7 +688,7 @@ It's common, popular, convenient, and powerful to reach for a CSS library to kic
   <figcaption>Figure 36. Percent of pages that include a given CSS library.</figcaption>
 </figure>
 
-This chart suggests that [Bootstrap](https://getbootstrap.com/) is a valuable library to know to assist with getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only: the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites *are not* using a known CSS framework. Very interesting, no?!
+This chart suggests that [Bootstrap](https://getbootstrap.com/) is a valuable library to know to assist with getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only: the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites _are not_ using a known CSS framework. Very interesting, no?!
 
 ### Reset utilities
 
@@ -722,7 +725,8 @@ Considering `@supports` was implemented across most browsers in 2013, it's not t
 An interesting follow up to this is that there's more usage of `@supports` than `@imports`! We did not expect that! `@import` has been in browsers since 1994.
 
 ## Conclusion
-There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made the summarizing very fun, and left us with lots of clues and trails to investigate if we want to hunt down the reasons *why* some of the results are the way they are. 
+
+There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made the summarizing very fun, and left us with lots of clues and trails to investigate if we want to hunt down the reasons _why_ some of the results are the way they are.
 
 Which results did you find the most alarming?
 Which results make you head to your codebase for a quick query?
