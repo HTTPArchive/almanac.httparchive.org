@@ -1,8 +1,14 @@
 body {
-  background-image: url(/static/images/intro-background-fit.png);
   background-repeat: no-repeat;
   background-size: 100% 910px;
 }
+
+body.lazy {
+  /* This is a 1px solid #677486 image. */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNML2n7DwAFDQJi8nQACgAAAABJRU5ErkJggg==);
+  background-size: 100% 700px;
+}
+
 header.alt-bg {
   background-color: initial;
 }
