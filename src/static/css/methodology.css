@@ -11,16 +11,6 @@
   font-size: 17px;
   line-height: 30px;
 }
-.decorative-line {
-  display: block;
-  width: 48px;
-  border-bottom: solid 1px #c6dcd2;
-  position: relative;
-  top: -12px;
-}
-.decorative-line-mobile {
- display: none;
-}
 .floating-card {
   border-radius: 16px;
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
@@ -115,13 +105,6 @@
 .content > section {
   margin-bottom: 64px;
 }
-.content .intro h1 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-.content .intro p {
-  font-weight: bold;
-}
 .content p {
   font-size: 1.4rem;
 }
@@ -154,19 +137,6 @@
   #methodology .content {
     margin: 0;
     padding: 0;
-  }
-  #methodology .content .intro h1 {
-    font-size: 10vw;
-  }
-  .decorative-line {
-    display: none;
-  }
-  .decorative-line-mobile {
-    display: block;
-    width: 74px;
-    border-bottom: solid 1px #c6dcd2;
-    position: relative;
-    top: 12px;
   }
   #methodology .index .index-box {
     margin: 0px;

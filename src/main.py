@@ -1,6 +1,6 @@
 import config as config_util
 from csp import csp
-from flask import Flask, redirect, render_template as flask_render_template, request, send_from_directory, url_for
+from flask import Flask, abort, redirect, render_template as flask_render_template, request, send_from_directory, url_for
 from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
@@ -55,6 +55,13 @@ app.jinja_env.globals['get_chapter_image_dir'] = get_chapter_image_dir
 def home(lang, year):
     config = config_util.get_config(year)
     return render_template('%s/%s/index.html' % (lang, year), config=config)
+
+
+@app.route('/<lang>/')
+@validate
+def lang_only(lang):
+    return redirect(url_for('home', lang=lang, year=DEFAULT_YEAR))
+
 
 @app.route('/')
 @validate
@@ -133,27 +140,34 @@ def default_favicon():
     return send_from_directory(app.static_folder, 'images/favicon.ico')
 
 
+# Catch all route for everything not matched elsewhere
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    abort(404)
+
+
 @app.errorhandler(400)
 def bad_request(e):
-    logging.exception('An error occurred during a request due to bad request error.')
+    logging.exception('An error occurred during a request due to bad request error: %s', request.path)
     return render_template('error/400.html', error=e), 400
 
 
 @app.errorhandler(404)
 def page_not_found(e):
-    logging.exception('An error occurred during a request due to page not found.')
+    logging.exception('An error occurred during a request due to page not found: %s', request.path)
     return render_template('error/404.html', error=e), 404
 
 
 @app.errorhandler(500)
 def server_error(e):
-    logging.exception('An error occurred during a request due to internal server error.')
+    logging.exception('An error occurred during a request due to internal server error: %s', request.path)
     return render_template('error/500.html', error=e), 500
 
 
 @app.errorhandler(502)
 def server_error(e):
-    logging.exception('An error occurred during a request due to bad gateway.')
+    logging.exception('An error occurred during a request due to bad gateway: %s', request.path)
     return render_template('error/502.html', error=e), 502
 
 

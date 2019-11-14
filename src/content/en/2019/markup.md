@@ -53,24 +53,32 @@ tr | span | option
 ### Elements per page
 
 <figure id="fig2">
-  <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution of Hixie's 2005 analysis of element frequencies">
+  <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution of Hixie's 2005 analysis of element frequencies" width="600">
   <figcaption>Figure 2. Distribution of Hixie's 2005 analysis of element frequencies.</figcaption>
 </figure>
 
 <figure id="fig3">
-    <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
+    <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
+    <a href="/static/images/2019/03_Markup/fig3.png" class="fig-mobile">
+      <img src="/static/images/2019/03_Markup/fig3.png" aria-labelledby="fig3-caption" width="600">
+    </a>
+    <div id="fig3-caption" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
   <figcaption>Figure 3. Element frequencies as of 2019.</figcaption>
 </figure>
 
 Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Figure 2, we can see that the average size of DOM trees has gotten bigger.
 
 <figure id="fig4">
-      <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page">
+      <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" width="600">
   <figcaption>Figure 4. Histogram of Hixie's 2005 analysis of element types per page.</figcaption>
 </figure>
 
 <figure id="fig5">
-    <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
+    <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive"></iframe>
+    <a href="/static/images/2019/03_Markup/fig5.png" class="fig-mobile">
+      <img src="/static/images/2019/03_Markup/fig5.png" aria-labelledby="fig5-caption" width="600">
+    </a>
+    <div id="fig5-caption" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
   <figcaption>Figure 5. Histogram of element types per page as of 2019.</figcaption>
 </figure>
 
@@ -103,7 +111,11 @@ Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated el
 <aside class="note">Note: A lot of this is very likely due to the use of products rather than individual authors continuing to manually create this markup.</aside>
 
 <figure id="fig6">
-  <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive"></iframe>
+    <a href="/static/images/2019/03_Markup/fig6.png" class="fig-mobile">
+      <img src="/static/images/2019/03_Markup/fig6.png" aria-labelledby="fig6-caption" width="600">
+    </a>
+    <div id="fig6-caption" class="visually-hidden">Figure 6. Most frequently used deprecated elements.</div>
   <figcaption>Figure 6. Most frequently used deprecated elements.</figcaption>
 </figure>
 
@@ -114,7 +126,11 @@ Figure 6 above shows the top 10 most frequently used deprecated elements. Most o
 In order to discuss numbers about the use of elements (standard, deprecated or custom), we first need to establish some perspective.
 
 <figure id="fig7">
-  <iframe width="600" height="778" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig7-caption" width="600" height="778" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive"></iframe>
+    <a href="/static/images/2019/03_Markup/fig7.png" class="fig-mobile">
+      <img src="/static/images/2019/03_Markup/fig7.png" aria-labelledby="fig7-caption" width="600">
+    </a>
+    <div id="fig7-caption" class="visually-hidden">Figure 7. Top 150 elements.</div>
   <figcaption>Figure 7. Top 150 elements.</figcaption>
 </figure>
 
@@ -160,7 +176,7 @@ It's interesting, then, to see what the distribution of these elements looks lik
 
 <figure id="fig8">
   <a href="https://rainy-periwinkle.glitch.me/scatter/html">
-    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Element popularity categorized by standardization">
+    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Element popularity categorized by standardization" width="600">
   </a>
   <figcaption>Figure 8. Element popularity categorized by standardization.</figcaption>
 </figure>
@@ -189,13 +205,13 @@ Let's look at some data.
 
 ### Products (and libraries) and their custom markup
 
-For several non-standard elements, their prevalence may have more to do with their inclusion in popular third party tools than first party adoption. For example, the `<fb:like>` element is found on 0.3% of pages not because site owners are explicitly writing it out but because they include the Facebook widget. Many of the elements [Hixie mentioned 14 years ago](https://web.archive.org/web/20060203031245/http://code.google.com/webstats/2005-12/editors.html) seem to have dwindled, but others are still pretty huge:
+For several non-standard elements, their prevalence may have more to do with their inclusion in popular third-party tools than first-party adoption. For example, the `<fb:like>` element is found on 0.3% of pages not because site owners are explicitly writing it out but because they include the Facebook widget. Many of the elements [Hixie mentioned 14 years ago](https://web.archive.org/web/20060203031245/http://code.google.com/webstats/2005-12/editors.html) seem to have dwindled, but others are still pretty huge:
 
 - Popular elements created by [Claris Home Page](https://en.wikipedia.org/wiki/Claris_Home_Page) (whose last stable release was 21 years ago) *still* appear on over 100 pages. [`<x-claris-window>`](https://rainy-periwinkle.glitch.me/permalink/28b0b7abb3980af793a2f63b484e7815365b91c04ae625dd4170389cc1ab0a52.html), for example, appears on 130 pages.
 - Some of the `<actinic:*>` elements from British ecommerce provider [Oxatis](https://www.oxatis.co.uk) appear on even more pages. For example, [`<actinic:basehref>`](https://rainy-periwinkle.glitch.me/permalink/30dfca0fde9fad9b2ec58b12cb2b0271a272fb5c8970cd40e316adc728a09d19.html) still shows up on 154 pages in the desktop data.
 - Macromedia's elements seem to have largely disappeared. Only one element, [`<mm:endlock>`](https://rainy-periwinkle.glitch.me/permalink/836d469b8c29e5892dedfd43556ed1b0e28a5647066858ca1c395f5b30f8485c.html), appears on our list and on only 22 pages.
 - Adobe Go-Live's [`<csscriptdict>`](https://rainy-periwinkle.glitch.me/permalink/579abc77652df3ac2db1338d17aab0a8dc737b9d945510b562085d8522b18799.html) still appears on 640 pages in the desktop dataset.
-- Microsoft Office's [`<o:p>`](https://rainy-periwinkle.glitch.me/permalink/bc8f154a95dfe06a6d0fdb099b6c8df61727b2289141a0ef16dc17b2b57d3068.html) element still appears on 0.5% of desktop pages, over 20k pages.
+- Microsoft Office's `<o:p>` element still appears on 0.5% of desktop pages, over 20k pages.
 
 But there are plenty of newcomers that weren't in Hixie's original report too, and with even bigger numbers.
 
@@ -208,13 +224,17 @@ But there are plenty of newcomers that weren't in Hixie's original report too, a
 Let's compare these to a few of the native HTML elements that are below the 5% bar, for perspective.
 
 <figure id="fig9">
-  <iframe width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig9-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive"></iframe>
+    <a href="/static/images/2019/03_Markup/fig9.png" class="fig-mobile">
+      <img src="/static/images/2019/03_Markup/fig9.png" aria-labelledby="fig9-caption" width="600">
+    </a>
+  <div id="fig9-caption" class="visually-hidden">Figure 9. Popularity of product-specific and native elements under 5% adoption.</div>
   <figcaption>Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
 </figure>
 
 You could discover interesting insights like these all day long.
 
-Here's one that's a little different: popular elements could be caused by outright errors in products. For example, [`<pclass="ddc-font-size-large">`](https://rainy-periwinkle.glitch.me/permalink/3214f840b6ae3ef1074291f60fa1be4b9d9df401fe0190bfaff4bb078c8614a5.html) occurrs on over 1,000 sites. This was thanks to a missing space in a popular "as-a-service" kind of product.  Happily, we reported this error during our research and it was quickly fixed.
+Here's one that's a little different: popular elements could be caused by outright errors in products. For example, `<pclass="ddc-font-size-large">` occurs on over 1,000 sites. This was thanks to a missing space in a popular "as-a-service" kind of product.  Happily, we reported this error during our research and it was quickly fixed.
 
 In his original paper, Hixie mentions that:
 
@@ -231,7 +251,11 @@ There are some popular elements that are probably not so challenging:
 Placing these into our same chart as above for perspective looks something like this (again, it varies slightly based on the dataset)
 
 <figure id="fig10">
-  <iframe width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig10-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive"></iframe>
+    <a href="/static/images/2019/03_Markup/fig10.png" class="fig-mobile">
+      <img src="/static/images/2019/03_Markup/fig10.png" aria-labelledby="fig10-caption" width="600">
+    </a>
+    <div id="fig10-caption" class="visually-hidden">Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</div>
   <figcaption>Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</figcaption>
 </figure>
 

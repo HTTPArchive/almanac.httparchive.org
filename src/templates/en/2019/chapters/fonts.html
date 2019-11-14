@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"discuss":"1761","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-11T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
+{% set metadata = {"unedited":"true","part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"discuss":"1761","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-11T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -188,10 +188,12 @@
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
-      <h1 class="title">
-        {{ metadata.get('title') }}
+      <h1 class="title title-lg">
+        {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
+        <span class="chapter-unedited">[Unedited]</span>
+        {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>Web Fonts enable beautiful and functional typography on the web. Use web fonts not only empowers design but democratizing a subset of design as they allow easier access to those who might not have particularly strong design skill. However, for all the good they can do, web fonts can also do great harm to your site's performance if they aren't loaded properly.</p>
@@ -207,7 +209,7 @@
         >, and <a href="https://www.w3.org/TR/preload/"><code>preload</code></a> <a href="./resource-hints">resource hints</a> but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.
       </p>
       <p>(Graph Title: Third-party hosted versus self-hosted (local); Source: 06.01)</p>
-      <p>The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss <a href="#what-are-the-most-popular-third-party-hosts">below</a>. Note that <code>preload</code> is not yet available with Google Fonts, as they generate unique URLs for their fonts <a href="https://github.com/google/fonts/issues/1067">which are liable to change</a>, and even <a href="https://github.com/google/fonts/issues/234">serve different fonts for different browsers</a>. Google serves fonts by getting websites to include a CSS link to a stylesheet. This will be in the main HTML (more on which below), so will already be connected to quickly. However, the fonts themselves are hosted on another domain (<a href="https://fonts.gstatic.com">https://fonts.gstatic.com</a>) so <code>preconnect</code> is a great option here as that will not be discovered until the CSS is downloaded.</p>
+      <p>The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss <a href="#what-are-the-most-popular-third-party-hosts">below</a>. Note that <code>preload</code> is not yet available with Google Fonts, as they generate unique URLs for their fonts <a href="https://github.com/google/fonts/issues/1067">which are liable to change</a>, and even <a href="https://github.com/google/fonts/issues/234">serve different fonts for different browsers</a>. Google serves fonts by getting websites to include a CSS link to a stylesheet. This will be in the main HTML (more on which below), so will already be connected to quickly. However, the fonts themselves are hosted on another domain <code>https://fonts.gstatic.com</code> so <code>preconnect</code> is a great option here as that will not be discovered until the CSS is downloaded.</p>
       <h3 id="what-are-the-most-popular-third-party-hosts">What are the most popular third-party hosts?</h3>
       <p>(Graph Title: Popular Web Font Hosts by Request, Source: 06.02)</p>
       <p>The dominance of Google Fonts here was simultaneously surprising and unsurprising at the same time. It was unsurprising in that I expected the service to be the most popular and surprising in the sheer dominance of its popularity. 75% of requests (55–57% of fonts) is astounding. TypeKit was a distant single-digit second place, with the Bootstrap library accounting for an even more distant third place.</p>

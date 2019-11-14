@@ -1,5 +1,4 @@
 .main {
-  padding-top: 32px;
   display: grid;
   grid-template-areas: 'index content';
   grid-template-columns: 300px auto;
@@ -44,7 +43,7 @@
   grid-area: index;
 }
 .index .index-box {
-  margin: 0 8px 8px;
+  margin: 20px 8px 8px;
   padding: 8px 16px;
 }
 .index .header {
@@ -116,9 +115,6 @@
 }
 .content > section {
   margin-bottom: 64px;
-}
-.content .intro p {
-  font-weight: bold;
 }
 .content ul li {
   list-style: none;
@@ -325,6 +321,9 @@ figure .big-number {
 figure .fig-mobile {
   display: none;
 }
+figure .fig-desktop {
+  display: block;
+}
 
 .bio {
   margin-top: 10px;
@@ -341,24 +340,8 @@ figure .fig-mobile {
     margin: 0;
     padding: 0;
   }
-  .main .content .intro h1 {
-    font-size: 10vw;
-  }
-  .decorative-line {
-    display: none;
-  }
-  .decorative-line-mobile {
-    display: block;
-    width: 74px;
-    border-bottom: solid 1px #c6dcd2;
-    position: relative;
-    top: 12px;
-  }
   .index {
-    margin-bottom: 45px;
-  }
-  .index .index-box {
-    margin: 0px;
+    margin: 30px 0;
   }
   .index-box .header {
     display: flex;
@@ -402,5 +385,6 @@ figure .fig-mobile {
   }
   figure .fig-mobile {
     display: block;
+    max-width: 100%;
   }
 }
