@@ -1017,7 +1017,7 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 In addition to using a CDN for TLS and RTT performance, CDNs are often used to ensure patching and adoption of TLS ciphers and TLS versions. In general, the adoption of TLS on the main HTML page is much higher for websites that use a CDN. Over 76% of HTML pages are served with TLS compared to the 62% from origin-hosted pages. 
 
 <figure>
-  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive"></iframe>
+  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive"></iframe>
   <a href="/static/images/2019/17_CDN/fig15.png" class="fig-mobile">
     <img src="/static/images/2019/17_CDN/fig15.png" aria-labelledby="fig15-caption" width="600">
   </a>
@@ -1028,7 +1028,7 @@ In addition to using a CDN for TLS and RTT performance, CDNs are often used to e
 Each CDN offers different rates of adoption for both TLS and the relative ciphers and versions offered. Some CDNs are more aggressive and roll out these changes to all customers whereas other CDNs require website owners to opt-in to the latest changes and offer change-management to facilitate these ciphers and versions.
 
 <figure>
-  <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive"></iframe>
+  <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive"></iframe>
   <a href="/static/images/2019/17_CDN/fig16.png" class="fig-mobile">
     <img src="/static/images/2019/17_CDN/fig16.png" aria-labelledby="fig16-caption" width="600">
   </a>
