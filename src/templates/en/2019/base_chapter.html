@@ -33,6 +33,8 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
   el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
 });
 </script>
+
+<script src='/static/js/chapter.js' defer></script>
 {% endblock %}
 
 {# Calls to action for readers who want to engage more with this chapter. #}

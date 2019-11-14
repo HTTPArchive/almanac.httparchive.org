@@ -7,7 +7,7 @@ authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
 discuss: 1775
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z 
+last_updated: 2019-11-14T00:00:00.000Z 
 ---
 
 ## Introduction
@@ -247,9 +247,8 @@ These stats show that the uptick of HTTP/2 push is very low, most likely because
 This is a concern as previous advice has been to be conservative with push and to ["push just enough resources to fill idle network time, and no more"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). The above statistics suggest many resources of a significant combined size are pushed.
 
 <figure>
-  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" class="fig-mobile">
-    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" width="600">
+  <a href="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png">
+    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" alt="Figure 13. What asset types is push used for?" aria-describedby="fig13-caption" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
   </a>
   <div id="fig13-caption" class="visually-hidden">Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eighth, and various text-based types making up the rest.</div>
   <figcaption>Figure 13. What asset types is push used for?</figcaption>
