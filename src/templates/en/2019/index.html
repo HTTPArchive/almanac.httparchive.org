@@ -89,6 +89,28 @@
   <link rel="stylesheet" href="/static/css/index.css">
 {% endblock %}
 
+{% block scripts %}
+  <script defer="defer" nonce="{{ csp_nonce() }}">
+    var url = '/static/images/intro-background-fit.png';
+    var setImage = function(blob) {
+      var reader = new FileReader;
+      reader.onload = function() {
+        var body = document.getElementsByTagName('body')[0];
+        body.setAttribute('style', 'background-image: url(' + reader.result + ');');
+        body.classList.remove('lazy');
+      };
+
+      reader.readAsDataURL(blob);
+    };
+
+    if (window.fetch) {
+      fetch(url)
+        .then(function(response) { return response.blob(); })
+        .then(function(blob) { setImage(blob); });
+    }
+  </script>
+{% endblock %}
+
 {% block main %}
 <div id="home">
   <section class="intro-container">
