@@ -254,7 +254,7 @@ This is a concern as previous advice has been to be conservative with push and t
   <figcaption>Figure 13. What asset types is push used for?</figcaption>
 </figure>
 
-Figure 12 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!
+Figure 13 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!
 
 One concern raised by some is that HTTP/2 implementations have repurposed the preload HTTP `link` header as a signal to push. One of the most popular uses of the preload [resource hint](./resource-hints) is to inform the browser of late-discovered resources, like fonts and images, that the browser will not see until the CSS has been requested, downloaded, and parsed. If these are now pushed based on that header, there was a concern that reusing this may result in a lot of unintended pushes.
 
