@@ -90,20 +90,13 @@ const upgradeInteractiveFigures = async () => {
           //Set up some default attributes
           iframe.setAttribute('aria-describedby', fig_img.getAttribute('aria-describedby'));
           iframe.setAttribute('title', fig_img.getAttribute('alt'));
-          iframe.setAttribute('width', "600");
-          iframe.setAttribute('height', '371');
-          iframe.setAttribute('seamless', '');
-          iframe.setAttribute('frameborder', '0');
-          iframe.setAttribute('scrolling', 'no');
-          iframe.setAttribute('loading', 'lazy');
-
-          //Copy the atttributes from the data- attributes of the img
-          for (var i = 0, atts = fig_img.attributes, n = atts.length, arr = []; i < n; i++) {
-            const att_name = atts[i].nodeName;
-            if (att_name.substring(0, 5) == 'data-') {
-              iframe.setAttribute(att_name.substring(5), fig_img.getAttribute(att_name));
-            }
-          }
+          iframe.setAttribute('width', fig_img.dataset.width || "600");
+          iframe.setAttribute('height', fig_img.dataset.height || '371');
+          iframe.setAttribute('seamless', fig_img.dataset.seamless || '');
+          iframe.setAttribute('frameborder', fig_img.dataset.frameborder || '0');
+          iframe.setAttribute('scrolling', fig_img.dataset.scrolling || 'no');
+          iframe.setAttribute('loading', fig_img.dataset.loading || 'lazy');
+          iframe.setAttribute('src', fig_img.dataset.src);
 
           //The figure should have a link
           const parentLink = fig_img.parentNode;
