@@ -7,7 +7,7 @@ authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 discuss: 1760
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z
+last_updated: 2019-11-14T19:32:09.680Z
 ---
 
 ## Introduction
@@ -26,7 +26,7 @@ Third-party resources are:
 - Widely used by a variety of sites
 - Uninfluenced by an individual site owner
 
-To match these goals as closely as possible, the formal definition used throughout this chapter of a third-party resource is a resource that originates from a domain whose resources can be found on at least 50 unique pages in the HTTPArchive dataset.
+To match these goals as closely as possible, the formal definition used throughout this chapter of a third-party resource is a resource that originates from a domain whose resources can be found on at least 50 unique pages in the HTTP Archive dataset.
 
 Note that using these definitions, third-party content served from a first-party domain is counted as first-party content. For example, self-hosting Google Fonts or bootstrap.css is counted as first-party content. Similarly, first-party content served from a third-party domain is counted as third-party content. For example, first-party images served over a CDN on a third-party domain are considered third-party content.
 
@@ -78,7 +78,7 @@ While advertising might be the most user-visible example of third-party presence
 
 ### Providers
 
-A relatively small set of providers dominate the third-party landscape, the top 100 domains account for 30% of network requests across the web. Powerhouses like Google, Facebook, and YouTube make the headlines here with full percentage points of share each, but smaller entities like Wix and Shopify command a substantial portion of third-party popularity as well.
+A relatively small set of providers dominate the third-party landscape: the top 100 domains account for 30% of network requests across the web. Powerhouses like Google, Facebook, and YouTube make the headlines here with full percentage points of share each, but smaller entities like Wix and Shopify command a substantial portion of third-party popularity as well.
 
 While much could be said about every individual provider's popularity and performance impact, this more opinionated analysis is left as an exercise for the reader and other purpose-built tools such as [third-party-web](https://thirdpartyweb.today).
 
@@ -199,7 +199,7 @@ Above all, third-party resources are used to simplify the web development experi
 
 Hosting providers are the most extreme example of this pattern. Some of these providers even enable anyone on Earth to become a site owner with no technical expertise necessary. They provide hosting of assets, tools to build sites without coding experience, and domain registration services.
 
-The remainder of third-party providers also tend to fall into this usage pattern. Whether it's hosting of a utility library such as jQuery for usage by front-end developers cached on Cloudflare's edge servers or a vast library of common fonts served from a popular Google CDN, third-party content is another way to give the site owner one fewer thing to worry about and, maybe, just maybe make the job of delivering a great experience a little bit easier.
+The remainder of third-party providers also tend to fall into this usage pattern. Whether it's hosting of a utility library such as jQuery for usage by front-end developers cached on Cloudflare's edge servers or a vast library of common fonts served from a popular Google CDN, third-party content is another way to give the site owner one fewer thing to worry about and, maybe, just maybe, make the job of delivering a great experience a little bit easier.
 
 ## Repercussions
 
@@ -227,7 +227,7 @@ The top-heavy concentration of script execution is great for the potential impac
 
 ### Security
 
-While the topic of security is covered more in-depth in the [Security](./security) chapter, the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns it can introduce a single point of failure [which has been recognized as a potential problem for some time now](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+While the topic of security is covered more in-depth in the [Security](./security) chapter, the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and `window`, it can do everything. Even if code has no security concerns, it can introduce a single point of failure, [which has been recognized as a potential problem for some time now](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
 
 [Self-hosting third-party content](https://csswizardry.com/2019/05/self-host-your-static-assets/) addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly [partitioning HTTP caches](https://chromestatus.com/feature/5730772021411840) the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring its impact more difficult.
 
