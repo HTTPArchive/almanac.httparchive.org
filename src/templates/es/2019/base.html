@@ -48,7 +48,28 @@
           {{ language_switcher() }}
         </div>
       </nav>
-    </header>
+    </div>
+    {% if request.endpoint == 'home' %}
+    <div class="intro-container">
+      <div class="intro">
+        <div class="intro-year">2019</div>
+        <h1 class="title title-alt">Web Almanac</h1>
+        <h2>
+          HTTP Archive informe del<br>
+          <b>estado de la web</b> anual
+        </h2>
+        <p>
+          Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de 20 capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+        </p>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
+          Empieza a explorar
+        </a>
+      </div>
+      <img class="intro-image-2019" src="/static/images/home-hero-2019.png" alt="Web Almanac edición 2019" />
+      <img class="intro-image" src="/static/images/home-hero.png" alt="Web Almanac edición 2019" />
+    </div>
+    {% endif %}    
+  </header>
   {% endblock %}
 
   {% block main %}{% endblock %}

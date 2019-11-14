@@ -124,7 +124,7 @@ h2.header {
 }
 
 .alt-bg {
-  background: #5C687D;
+  background-color: #5C687D;
   color: white;
 }
 
@@ -157,13 +157,13 @@ header.alt-bg a:focus, footer.alt-bg a:focus {
   color: #1A2B49;
 }
 
-header, footer {
+.top-header, footer {
   padding: 40px 60px;
 }
 article.main {
   max-width: 1324px;
 }
-header, footer .nav {
+.top-header, footer .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -433,7 +433,7 @@ p.copyright {
      font-size: 16px;
    }
   /* Header */
-  header, footer {
+  .top-header, footer {
     position: relative;
     padding: 30px;
   }
