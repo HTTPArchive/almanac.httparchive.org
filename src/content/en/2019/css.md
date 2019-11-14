@@ -39,7 +39,7 @@ Hex is the most popular way to describe color by far, with 93% usage, followed b
 
 ### Color selection
 
-There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readible styling. The most popular named colors are `black` and `white`, unsurprisingly, followed by `red` and `blue`.
+There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readable styling. The most popular named colors are `black` and `white`, unsurprisingly, followed by `red` and `blue`.
 
 <figure>
   <iframe aria-labelledby="fig2-caption" width="600" height="415" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1985913808&amp;format=interactive"></iframe>
@@ -432,7 +432,7 @@ In the width and height media queries we've seen so far, pixels look like the do
 
 ### `min-width` vs `max-width`
 
-Wen folks write a media query, are they typically checking for a viewport that's over or under a specific range, _or_ both, checking if it's between a range of sizes? Let's ask the web!
+When folks write a media query, are they typically checking for a viewport that's over or under a specific range, _or_ both, checking if it's between a range of sizes? Let's ask the web!
 
 <figure>
   <iframe aria-labelledby="fig31-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&amp;format=interactive"></iframe>
