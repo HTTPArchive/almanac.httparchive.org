@@ -88,7 +88,7 @@ const upgradeInteractiveFigures = async () => {
           var iframe = document.createElement('iframe');
 
           //Set up some default attributes
-          iframe.setAttribute('aria-labelledby',fig_img.getAttribute('aria-describedby'));
+          iframe.setAttribute('aria-describedby',fig_img.getAttribute('aria-describedby'));
           iframe.setAttribute('title',fig_img.getAttribute('alt'));
           iframe.setAttribute('width',"600");
           iframe.setAttribute('height','371');
