@@ -26,6 +26,7 @@ csp = {
         '\'self\'',
         'www.google-analytics.com',
         'www.googletagmanager.com',
+        'stats.g.doubleclick.net',
         '*.githubusercontent.com',
         'data:'
     ],

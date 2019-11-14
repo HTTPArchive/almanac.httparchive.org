@@ -47,9 +47,9 @@ const googleSheetsAllowed = async () => {
   let sheetsAllowed = true;
 
   const url = 'https://docs.google.com/spreadsheets/';
-  
+
   //non-async aware browsers can stick with images, as they probably don't support sheet anyway
-  await fetch(url, { method: 'HEAD', mode: 'no-cors' } )
+  await fetch(url, { method: 'HEAD', mode: 'no-cors' })
     .then(
       function (response) {
         //If response status is 0 then means CORS is blocking it
@@ -61,7 +61,7 @@ const googleSheetsAllowed = async () => {
       }
     )
     .catch(function (err) {
-      sheetsAllowed = true;
+      sheetsAllowed = false;
     });
 
   if (!sheetsAllowed) {
@@ -80,7 +80,7 @@ const upgradeInteractiveFigures = async () => {
 
       //Set the Google Sheets iframe
       let all_fig_imgs = document.querySelectorAll('figure img');
-      
+
       all_fig_imgs.forEach(function (fig_img) {
 
         if (fig_img.getAttribute('data-src')) {
@@ -88,19 +88,19 @@ const upgradeInteractiveFigures = async () => {
           var iframe = document.createElement('iframe');
 
           //Set up some default attributes
-          iframe.setAttribute('aria-describedby',fig_img.getAttribute('aria-describedby'));
-          iframe.setAttribute('title',fig_img.getAttribute('alt'));
-          iframe.setAttribute('width',"600");
-          iframe.setAttribute('height','371');
-          iframe.setAttribute('seamless','');
-          iframe.setAttribute('frameborder','0');
-          iframe.setAttribute('scrolling','no');
-          iframe.setAttribute('loading','lazy');
+          iframe.setAttribute('aria-describedby', fig_img.getAttribute('aria-describedby'));
+          iframe.setAttribute('title', fig_img.getAttribute('alt'));
+          iframe.setAttribute('width', "600");
+          iframe.setAttribute('height', '371');
+          iframe.setAttribute('seamless', '');
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('scrolling', 'no');
+          iframe.setAttribute('loading', 'lazy');
 
           //Copy the atttributes from the data- attributes of the img
           for (var i = 0, atts = fig_img.attributes, n = atts.length, arr = []; i < n; i++) {
             const att_name = atts[i].nodeName;
-            if (att_name.substring(0,5) == 'data-') {
+            if (att_name.substring(0, 5) == 'data-') {
               iframe.setAttribute(att_name.substring(5), fig_img.getAttribute(att_name));
             }
           }
@@ -108,9 +108,9 @@ const upgradeInteractiveFigures = async () => {
           //The figure should have a link
           const parentLink = fig_img.parentNode;
           if (parentLink.nodeName == "A") {
-          
+
             //Insert the iframe before the link.
-            parentLink.parentNode.insertBefore(iframe,parentLink);
+            parentLink.parentNode.insertBefore(iframe, parentLink);
 
             //Add the fig-mobile class to hide the img in desktop view
             parentLink.classList.add("fig-mobile");
@@ -120,7 +120,7 @@ const upgradeInteractiveFigures = async () => {
       });
     }
   } catch (e) {
-    console.log('Error' + e);
+    console.error('Error' + e);
   }
 }
 
