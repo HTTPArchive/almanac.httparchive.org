@@ -165,7 +165,6 @@ function setDiscussionCount() {
   }
 }
 
-enableDropDownMenu();
 upgradeInteractiveFigures();
 setDiscussionCount();
 
