@@ -1,6 +1,6 @@
 //Data Save can be set to on, so let's check it
 function dataSaverEnabled() {
-  let dataSaver = false;
+  var dataSaver = false;
   if ('connection' in navigator) {
     dataSaver = navigator.connection.saveData;
     if (dataSaver) {
@@ -18,12 +18,12 @@ function dataSaverEnabled() {
 //Let's check if we have large Canvas support (annoyingly no API for this!)
 function highResolutionCanvasSupported() {
 
-  let largeCanvasSupported = false;
+  var largeCanvasSupported = false;
 
   try {
     // Set large sized canvas dimensions and draw test rectangle
-    const cvs = document ? document.createElement('canvas') : null;
-    const ctx = cvs && cvs.getContext ? cvs.getContext('2d') : null;
+    var cvs = document ? document.createElement('canvas') : null;
+    var ctx = cvs && cvs.getContext ? cvs.getContext('2d') : null;
     cvs.width = 6000;
     cvs.height = 3700;
     ctx.fillRect(5999, 3699, 1, 1);
@@ -44,6 +44,33 @@ function highResolutionCanvasSupported() {
 
 };
 
+//If google sheets test pixel works, then can assume interactive sheets work and can remove it
+function googleSheetsPixelLoaded() {
+  this.parentElement.removeChild(this);
+  gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'successful', 'value': 1 });
+  gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
+}
+
+//If google sheets test pixel doesn't work, then revert back to static images
+function googleSheetsPixelNotLoaded() {
+  console.error('Google Sheets cannot be loaded');
+
+  var all_fig_imgs = document.querySelectorAll('figure .fig-mobile');
+  for (index = 0; index < all_fig_imgs.length; ++index) {
+    var fig_img = all_fig_imgs[index];
+    fig_img.classList.remove("fig-mobile");
+  }
+
+  var all_fig_iframes = document.querySelectorAll('figure iframe');
+  for (index = 0; index < all_fig_iframes.length; ++index) {
+    var fig_iframe = all_fig_iframes[index];
+    fig_iframe.parentElement.removeChild(fig_iframe);
+  }
+  gtag('event', 'google-sheets', { 'event_category': 'user', 'event_label': 'blocked', 'value': 1 });
+  gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 1 });
+
+}
+
 //We use Google Sheets for detailed visualisations
 //Check for support and switch out images if supported
 function upgradeInteractiveFigures() {
@@ -53,20 +80,24 @@ function upgradeInteractiveFigures() {
 
       console.log('Upgrading to interactive figures');
 
-      //Set the Google Sheets iframe
-      let all_fig_imgs = document.querySelectorAll('figure img');
+      //Find each image and create the iframe
+      var all_fig_imgs = document.querySelectorAll('figure img');
 
-      //all_fig_imgs.forEach(function (fig_img) {
       for (index = 0; index < all_fig_imgs.length; ++index) {
-        const fig_img = all_fig_imgs[index];
+        var fig_img = all_fig_imgs[index];
 
         if (fig_img.getAttribute('data-src')) {
 
           var iframe = document.createElement('iframe');
 
           //Set up some default attributes
-          iframe.setAttribute('aria-describedby', fig_img.getAttribute('aria-describedby'));
           iframe.setAttribute('title', fig_img.getAttribute('alt'));
+          if (fig_img.getAttribute('aria-labelledby')) {
+            iframe.setAttribute('aria-labelledby', fig_img.getAttribute('aria-labelledby'));
+          }
+          if (fig_img.getAttribute('aria-describedby')) {
+            iframe.setAttribute('aria-describedby', fig_img.getAttribute('aria-describedby'));
+          }
           iframe.setAttribute('width', fig_img.dataset.width || "600");
           iframe.setAttribute('height', fig_img.dataset.height || '371');
           iframe.setAttribute('seamless', fig_img.dataset.seamless || '');
@@ -76,7 +107,7 @@ function upgradeInteractiveFigures() {
           iframe.setAttribute('src', fig_img.dataset.src);
 
           //The figure should have a link
-          const parentLink = fig_img.parentNode;
+          var parentLink = fig_img.parentNode;
           if (parentLink.nodeName == "A") {
 
             //Insert the iframe before the link.
@@ -86,9 +117,19 @@ function upgradeInteractiveFigures() {
             parentLink.classList.add("fig-mobile");
           }
 
+          //Add a test image to check we can actually access Google Sheets
+          //as it's sometimes blocked by corporate proxies and the like
+          //have a fallback function to revert if this is the case
+          var google_sheets_pixel = document.createElement('img');
+          google_sheets_pixel.setAttribute('src', 'https://docs.google.com/favicon.ico');
+          google_sheets_pixel.setAttribute('height', '1');
+          google_sheets_pixel.setAttribute('width', '1');
+          google_sheets_pixel.addEventListener('load', googleSheetsPixelLoaded);
+          google_sheets_pixel.addEventListener('error', googleSheetsPixelNotLoaded);
+          window.document.body.appendChild(google_sheets_pixel);
+
         }
       };
-      gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
 
     } else {
       gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
@@ -130,5 +171,4 @@ function setDiscussionCount() {
 
 upgradeInteractiveFigures();
 setDiscussionCount();
-
 
