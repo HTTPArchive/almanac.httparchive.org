@@ -137,7 +137,7 @@ It is recommended to maintain a `200 OK` status code for any important pages tha
 
 The next most commonly found status code on mobile was `302`, a temporary redirect, which was found on 10.45% of mobile pages. This was higher than on desktop, with only 6.71% desktop home pages returning a `302` status code. This could be due to the fact that the [mobile home pages were alternates](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls) to an equivalent desktop page, such as on non-responsive sites that have separate versions of the website for each device.
 
-<aside>Note: Our results didn't include `4xx` or `5xx` status codes.</aside>
+<aside>Note: Our results didn't include <code>4xx</code> or <code>5xx</code> status codes.</aside>
 
 #### `noindex`
 
@@ -145,7 +145,7 @@ A `noindex` directive can be served in the HTML `<head>` or in the HTTP headers 
 
 96.93% of mobile pages passed the [Lighthouse indexing audit](https://developers.google.com/web/tools/lighthouse/audits/indexing), meaning that these pages didn't contain a `noindex` directive. However, this means that 3.07% of mobile home pages _did_ have a `noindex` directive, which is cause for concern, meaning that Google was prevented from indexing these pages.
 
-<aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
+<aside>The websites included in our research are sourced from the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
 
 #### Canonicalization
 
@@ -220,7 +220,7 @@ The metrics we used for our analysis of load speed across the web is based on th
     <img src="/static/images/2019/10_SEO/fig10.png" aria-describedby="fig10-caption" width="600">
   </a>
   <div id="fig10-caption" class="visually-hidden">Distribution of the performance of desktop, phone, and tablet user experiences. Desktop: 2% fast, 52% moderate, 46% slow. Phone: 1% fast, 41% moderate, 58% slow. Tablet: 0% fast, 35% moderate, 65% slow.</div>
-  <figcaption>Figure 10. Distribution of anchor links per page.</figcaption>
+  <figcaption>Figure 10. Distribution of the performance of user experiences by device type.</figcaption>
 </figure>
 
 Split by device, this picture is even bleaker for tablet (65%) and phone (58%).

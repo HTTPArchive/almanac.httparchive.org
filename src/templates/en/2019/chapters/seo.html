@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"unedited":"true","part_number":"I","chapter_number":10,"title":"SEO","description":"SEO chapter of the 2019 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.","authors":["ymschaap","rachellcostello","AVGP"],"reviewers":["clarkeclark","andylimn","AymenLoukil","catalinred","mattludwig"],"discuss":"1765","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-15T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"I","chapter_number":10,"title":"SEO","description":"SEO chapter of the 2019 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.","authors":["ymschaap","rachellcostello","AVGP"],"reviewers":["clarkeclark","andylimn","AymenLoukil","catalinred","mattludwig"],"discuss":"1765","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-15T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -301,11 +301,11 @@
       <h4 id="status-codes">Status codes</h4>
       <p>It is recommended to maintain a <code>200 OK</code> status code for any important pages that you want search engines to index. The majority of pages tested were available for search engines to access, with 87.03% of initial HTML requests on desktop returning a <code>200</code> status code. The results were slightly lower for mobile pages, with only 82.95% of pages returning a <code>200</code> status code.</p>
       <p>The next most commonly found status code on mobile was <code>302</code>, a temporary redirect, which was found on 10.45% of mobile pages. This was higher than on desktop, with only 6.71% desktop home pages returning a <code>302</code> status code. This could be due to the fact that the <a href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">mobile home pages were alternates</a> to an equivalent desktop page, such as on non-responsive sites that have separate versions of the website for each device.</p>
-      <aside>Note: Our results didn't include `4xx` or `5xx` status codes.</aside>
+      <aside>Note: Our results didn't include <code>4xx</code> or <code>5xx</code> status codes.</aside>
       <h4 id="noindex"><code>noindex</code></h4>
       <p>A <code>noindex</code> directive can be served in the HTML <code>&lt;head&gt;</code> or in the HTTP headers as an <code>X-Robots</code> directive. A <code>noindex</code> directive basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. <code>noindex</code> directives are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered, faceted, or internal search pages.</p>
       <p>96.93% of mobile pages passed the <a href="https://developers.google.com/web/tools/lighthouse/audits/indexing">Lighthouse indexing audit</a>, meaning that these pages didn't contain a <code>noindex</code> directive. However, this means that 3.07% of mobile home pages <em>did</em> have a <code>noindex</code> directive, which is cause for concern, meaning that Google was prevented from indexing these pages.</p>
-      <aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
+      <aside>The websites included in our research are sourced from the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
       <h4 id="canonicalization">Canonicalization</h4>
       <p>Canonical tags are used to specify duplicate pages and their preferred alternates, so that search engines can consolidate authority which might be spread across multiple pages within the group onto one main page for improved rankings.</p>
       <p>48.34% of mobile home pages were <a href="https://developers.google.com/web/tools/lighthouse/audits/canonical">detected</a> to have a canonical tag. Self-referencing canonical tags aren't essential, and canonical tags are usually required for duplicate pages. Home pages are rarely duplicated anywhere else across the site so seeing that less than half of pages have a canonical tag isn't surprising.</p>
@@ -336,7 +336,7 @@
       </figure>
       <p>The median desktop page includes 70 internal (same-site) links, whereas the median mobile page has 60 internal links. The median number of external links per page follows a similar trend, with desktop pages including 10 external links, and mobile pages including 8.</p>
       <figure id="fig-9">
-        <iframe aria-describedby="fig9-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive" loading="lazy"></iframe>
+        <iframe aria-describedby="fig9-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/10_SEO/fig9.png" class="fig-mobile">
           <img src="/static/images/2019/10_SEO/fig9.png" aria-describedby="fig9-caption" width="600" loading="lazy" />
         </a>
@@ -358,7 +358,7 @@
           <img src="/static/images/2019/10_SEO/fig10.png" aria-describedby="fig10-caption" width="600" loading="lazy" />
         </a>
         <div id="fig10-caption" class="visually-hidden">Distribution of the performance of desktop, phone, and tablet user experiences. Desktop: 2% fast, 52% moderate, 46% slow. Phone: 1% fast, 41% moderate, 58% slow. Tablet: 0% fast, 35% moderate, 65% slow.</div>
-        <figcaption>Figure 10. Distribution of anchor links per page.</figcaption>
+        <figcaption>Figure 10. Distribution of the performance of user experiences by device type.</figcaption>
       </figure>
       <p>Split by device, this picture is even bleaker for tablet (65%) and phone (58%).</p>
       <p>Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the <a href="./performance">Performance</a> chapter.</p>
