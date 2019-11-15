@@ -1,5 +1,4 @@
 ---
-unedited: true
 part_number: I
 chapter_number: 10
 title: SEO
@@ -8,7 +7,7 @@ authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 discuss: 1765
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z 
+last_updated: 2019-11-15T00:00:00.000Z
 ---
 
 ## Introduction
@@ -17,19 +16,19 @@ Search Engine Optimization (SEO) isn't just a hobby or a side project for digita
 
 Let's put the importance of SEO into perspective. Earlier this year, the SEO industry looked on in horror (and fascination) as [ASOS reported an 87% decrease in profits](https://www.bbc.co.uk/news/business-47877688) after a "difficult year". The brand attributed their issues to a drop in search engine rankings which occurred after they launched over 200 microsites and significant changes to their website's navigation, among other technical changes. Yikes.
 
-The SEO chapter of the Web Almanac was created to analyze onsite elements of the web that impact the crawling and indexing of content for search engines, and ultimately, website performance. In this chapter, we'll take a look at how well-equipped the top websites are to provide a great experience for users and search engines, and which ones still have work to do.
+The purpose of the SEO chapter of the Web Almanac is to analyze on-site elements of the web that impact the crawling and indexing of content for search engines, and ultimately, website performance. In this chapter, we'll take a look at how well-equipped the top websites are to provide a great experience for users and search engines, and which ones still have work to do.
 
-Our analysis includes data from [Lighthouse](https://developers.google.com/web/tools/lighthouse), the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report), and HTML element analysis. We focused on SEO fundamentals like `<title>` elements, the different types of on-page links, content and loading speed, but also the more technical aspects of SEO, including indexability, structured data, internationalization and AMP across over 5 million websites.
+Our analysis includes data from [Lighthouse](./methodology#lighthouse), the [Chrome UX Report](./methodology#chrome-ux-report), and HTML element analysis. We focused on SEO fundamentals like `<title>` elements, the different types of on-page links, content, and loading speed, but also the more technical aspects of SEO, including indexability, structured data, internationalization, and AMP across over 5 million websites.
 
 Our custom metrics provide insights that, up until now, have not been exposed before. We are now able to make claims about the adoption and implementation of elements such as the `hreflang` tag, rich results eligibility, heading tag usage, and even anchor-based navigation for single page apps.
 
-<aside>Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric.</aside>
+<aside>Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric. Learn more about these limitations in our <a href="./methodology">Methodology</a>.</aside>
 
 Read on to find out more about the current state of the web and its search engine friendliness.
 
 ## Fundamentals
 
-Search engines have a 3-step process: crawling, indexing, and ranking. To be search engine-friendly, a page needs to be discoverable, understandable, and contain quality content that would provide value to a user who is browsing the search engine results pages (SERPs).
+Search engines have a three-step process: crawling, indexing, and ranking. To be search engine-friendly, a page needs to be discoverable, understandable, and contain quality content that would provide value to a user who is browsing the search engine results pages (SERPs).
 
 We wanted to analyze how much of the web is meeting the basic standards of SEO best practices, so we assessed on-page elements such as body content, `meta` tags, and internal linking. Let's take a look at the results.
 
@@ -41,49 +40,87 @@ To be able to understand what a page is about and decide for which search querie
 
 We assessed the content on the pages by looking for groups of at least 3 words and counting how many were found in total. We found 2.73% of desktop pages that didn't have any word groups, meaning that they have no body content to help search engines understand what the website is about.
 
-The median desktop home page has 346 words, and the median mobile home page has a slightly lower word count at 306 words. This shows that mobile sites do serve a bit less content to their users, but at over 300 words, this is still a reasonable amount to read. This is especially true for home pages which will naturally contain less content than article pages, for example. Overall the distribution of words is broad, with between 22 words at the 10th percentile and up to 1,361 at the 90th percentile.
+<figure>
+  <iframe aria-describedby="fig1-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig1.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig1.png" aria-describedby="fig1-caption" width="600">
+  </a>
+  <div id="fig1-caption" class="visually-hidden">Distribution of words per page. The median number of words per desktop page is 346 and 306 for mobile pages. Desktop pages have more word throughout the percentiles, by as many as 120 words at the 90th percentile.</div>
+  <figcaption>Figure 1. Distribution of the number of words per page.</figcaption>
+</figure>
 
-```<graph histogram number of words. Source: 10.09, column C, desktop & mobile>```
+The median desktop home page has 346 words, and the median mobile home page has a slightly lower word count at 306 words. This shows that mobile sites do serve a bit less content to their users, but at over 300 words, this is still a reasonable amount to read. This is especially true for home pages which will naturally contain less content than article pages, for example. Overall the distribution of words is broad, with between 22 words at the 10th percentile and up to 1,361 at the 90th percentile.
 
 #### Headings
 
-We also looked at whether pages are structured in a way that provides the right context for the content they contain. Headings (`H1`, `H2`, `H3`, etc.) are used to format and structure a page and make content easier to read and parse. Despite the importance on headings, 10.67% of pages have no heading tags at all.
+We also looked at whether pages are structured in a way that provides the right context for the content they contain. Headings (`H1`, `H2`, `H3`, etc.) are used to format and structure a page and make content easier to read and parse. Despite the importance of headings, 10.67% of pages have no heading tags at all.
 
-```<graph histogram number of heading elements. Source: 10.09a, column F>```
+<figure>
+  <iframe aria-describedby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig2.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig2.png" aria-describedby="fig2-caption" width="600">
+  </a>
+  <div id="fig2-caption" class="visually-hidden">Distribution of headings per page. The median number of headings per desktop and mobile page is 10. At the 10, 25, 75, and 90th percentiles, the number of headings per desktop page are: 0, 3, 21, and 39. This is slightly higher than the distribution of mobile headings per page.</div>
+  <figcaption>Figure 2. Distribution of the number of headings per page.</figcaption>
+</figure>
 
-The median number of heading elements per page is 10, with 30 words (on mobile) and 32 words (on desktop) used in headings. This implies that the websites that utilize headings put significant effort in making sure that their pages are readable, descriptive, and clearly outline the page structure and context to search engine bots.
+The median number of heading elements per page is 10. Headings contain 30 words on mobile pages and 32 words on desktop pages. This implies that the websites that utilize headings put significant effort in making sure that their pages are readable, descriptive, and clearly outline the page structure and context to search engine bots.
+
+<figure>
+  <iframe aria-describedby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig3.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig3.png" aria-describedby="fig3-caption" width="600">
+  </a>
+  <div id="fig3-caption" class="visually-hidden">Distribution of the number of characters in the first H1 per page. The desktop and mobile distributions are nearly identical, with the 10, 25, 50, 75, and 90th percentiles as: 6, 11, 19, 31, and 47 characters.</div>
+  <figcaption>Figure 3. Distribution of H1 length per page.</figcaption>
+</figure>
 
 In terms of specific heading length, the median length of the first `H1` element found on desktop is 19 characters.
 
 For advice on how to handle `H1`s and headings for SEO and accessibility, take a look at this [video response by John Mueller](https://www.youtube.com/watch?v=zyqJJXWk0gk) in the Ask Google Webmasters series.
 
-```<graph histogram h1 tag source: 10.16, column C, desktop & mobile>```
+### Meta tags
 
-### `Meta` tags
-
-`Meta` tags allow us to give specific instructions and information to search engine bots about the different elements and content on a page. Certain `meta` tags can convey things like the topical focus of a page, as well as how the page should be crawled and indexed. We wanted to assess whether or not websites were making the most of these opportunities that `meta` tags provide.
+Meta tags allow us to give specific instructions and information to search engine bots about the different elements and content on a page. Certain meta tags can convey things like the topical focus of a page, as well as how the page should be crawled and indexed. We wanted to assess whether or not websites were making the most of these opportunities that meta tags provide.
 
 #### Page titles
 
+<figure>
+  <div class="big-number">97%</div>
+  <figcaption>Figure 4. Percent of mobile pages that include a <code>&lt;title></code> tag.</figcaption>
+</figure>
+
 Page titles are an important way of communicating the purpose of a page to a user or search engine. `<title>` tags are also used as headings in the SERPS and as the title for the browser tab when visiting a page, so it's no surprise to see that 97.1% of mobile pages have a document title.
+
+<figure>
+  <iframe aria-describedby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig5.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig5.png" aria-describedby="fig5-caption" width="600">
+  </a>
+  <div id="fig5-caption" class="visually-hidden">Distribution of the number of characters per title element per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 4, 9, 20, 40, and 66 characters. The mobile distribution is very similar.</div>
+  <figcaption>Figure 5. Distribution of title length per page.</figcaption>
+</figure>
 
 Even though [Google usually displays the first 50-60 characters of a page title](https://moz.com/learn/seo/title-tag) within a SERP, the median length of the `<title>` tag was only 21 characters for mobile pages and 20 characters for desktop pages. Even the 75th percentile is still below the cutoff length. This suggests that some SEOs and content writers aren't making the most of the space allocated to them by search engines for describing their home pages in the SERPs.
 
-```<graph histogram length <title> Source: 10.07b, column C, desktop & mobile>```
-
 #### Meta descriptions
 
-Compared to the `<title>` tag, fewer pages were detected to have a `meta description`, as only 64.02% of mobile home pages have a `meta description`. Considering that Google often rewrites `meta descriptions` in the SERPs in response to the searcher's query, perhaps website owners place less importance on including a `meta description` at all.
+Compared to the `<title>` tag, fewer pages were detected to have a meta description, as only 64.02% of mobile home pages have a meta description. Considering that Google often rewrites meta descriptions in the SERPs in response to the searcher's query, perhaps website owners place less importance on including a meta description at all.
 
-The median `meta description` length was also lower than the [recommended length of 155-160 characters](https://moz.com/learn/seo/meta-description), with desktop pages having descriptions of 123 characters. Interestingly, `meta descriptions` were consistently longer on mobile than on desktop, despite mobile SERPs traditionally having a shorter pixel limit. This limit has only been extended recently, so perhaps more website owners have been testing the impact of having longer, more descriptive `meta descriptions` for mobile results.
+<figure>
+  <iframe aria-describedby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig6.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig6.png" aria-describedby="fig6-caption" width="600">
+  </a>
+  <div id="fig6-caption" class="visually-hidden">Distribution of the number of characters per meta description per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 9, 48, 123, 162, and 230 characters. The mobile distribution is slightly higher by fewer than 10 characters at any given percentile.</div>
+  <figcaption>Figure 6. Distribution of meta description length per page.</figcaption>
+</figure>
 
-```<graph histogram length <meta description> Source: 10.07c, column C, desktop & mobile>```
+The median meta description length was also lower than the [recommended length of 155-160 characters](https://moz.com/learn/seo/meta-description), with desktop pages having descriptions of 123 characters. Interestingly, meta descriptions were consistently longer on mobile than on desktop, despite mobile SERPs traditionally having a shorter pixel limit. This limit has only been extended recently, so perhaps more website owners have been testing the impact of having longer, more descriptive meta descriptions for mobile results.
 
 #### Image alt tags
 
-Considering the importance of alt text for SEO and accessibility, it is far from ideal to see that only 46.71% of mobile pages use `alt` attributes on all of their images. This means that there are still improvements to be made with regard to making images across the web more accessible to users and understandable for search engines.
-
-Learn more about this in the [Accessibility chapter](./accessibility).
+Considering the importance of `alt` text for SEO and accessibility, it is far from ideal to see that only 46.71% of mobile pages use `alt` attributes on all of their images. This means that there are still improvements to be made with regard to making images across the web more accessible to users and understandable for search engines. Learn more about issues like these in the [Accessibility](./accessibility) chapter.
 
 ### Indexability
 
@@ -100,15 +137,15 @@ It is recommended to maintain a `200 OK` status code for any important pages tha
 
 The next most commonly found status code on mobile was `302`, a temporary redirect, which was found on 10.45% of mobile pages. This was higher than on desktop, with only 6.71% desktop home pages returning a `302` status code. This could be due to the fact that the [mobile home pages were alternates](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls) to an equivalent desktop page, such as on non-responsive sites that have separate versions of the website for each device.
 
-<aside>Note: Our results didn't include `4xx` or `5xx` status codes.</aside>
+<aside>Note: Our results didn't include <code>4xx</code> or <code>5xx</code> status codes.</aside>
 
 #### `noindex`
 
-A `noindex` tag can be served in the HTML `<head>` or in the HTTP headers as an `X-Robots` tag. A `noindex` tag basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. `Noindex` tags are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered or faceted pages or internal search pages.
+A `noindex` directive can be served in the HTML `<head>` or in the HTTP headers as an `X-Robots` directive. A `noindex` directive basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. `noindex` directives are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered, faceted, or internal search pages.
 
-96.93% of mobile pages passed the [Lighthouse indexing audit](https://developers.google.com/web/tools/lighthouse/audits/indexing), meaning that these pages didn't contain a `noindex` tag in the `<head>` or in the HTTP headers. However, this means that 3.07% of mobile home pages _did_ have a `noindex` tag, which is cause for concern, meaning that Google was prevented from indexing these pages.
+96.93% of mobile pages passed the [Lighthouse indexing audit](https://developers.google.com/web/tools/lighthouse/audits/indexing), meaning that these pages didn't contain a `noindex` directive. However, this means that 3.07% of mobile home pages _did_ have a `noindex` directive, which is cause for concern, meaning that Google was prevented from indexing these pages.
 
-<aside>The websites included in our research are sourced from the [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
+<aside>The websites included in our research are sourced from the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
 
 #### Canonicalization
 
@@ -130,11 +167,34 @@ The number of internal and external links included on desktop pages were consist
 
 It's important to bear in mind that fewer internal links on the mobile version of a page [might cause an issue](https://moz.com/blog/internal-linking-mobile-first-crawl-paths) for your website. With [mobile-first indexing](https://www.deepcrawl.com/knowledge/white-papers/mobile-first-index-guide/), which for new websites is the default for Google, if a page is only linked from the desktop version and not present on the mobile version, search engines will have a much harder time discovering and ranking it.
 
-```<graph histogram count of links by type Source: 10.10, column C desktop only>```
+<figure>
+  <iframe aria-describedby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig7.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig7.png" aria-describedby="fig7-caption" width="600">
+  </a>
+  <div id="fig7-caption" class="visually-hidden">Distribution of the number of internal links per page. The 10, 25, 50, 75, and 90th percentiles of internal links for desktop are: 7, 29, 70, 142, and 261. The mobile distribution is much lower, by 30 links at the 90th percentile and 10 at the median.</div>
+  <figcaption>Figure 7. Distribution of internal links per page.</figcaption>
+</figure>
 
-```<graph histogram count of links by type Source: 10.10, column D, E, desktop only>```
+<figure>
+  <iframe aria-describedby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig8.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig8.png" aria-describedby="fig8-caption" width="600">
+  </a>
+  <div id="fig8-caption" class="visually-hidden">Distribution of the number of external links per page. The 10, 25, 50, 75, and 90th percentiles of external links for desktop are: 1, 4, 10, 22, and 51. The mobile distribution is much lower, by 11 links at the 90th percentile and 2 at the median.</div>
+  <figcaption>Figure 8. Distribution of external links per page.</figcaption>
+</figure>
 
 The median desktop page includes 70 internal (same-site) links, whereas the median mobile page has 60 internal links. The median number of external links per page follows a similar trend, with desktop pages including 10 external links, and mobile pages including 8.
+
+<figure>
+  <iframe aria-describedby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig9.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig9.png" aria-describedby="fig9-caption" width="600">
+  </a>
+  <div id="fig9-caption" class="visually-hidden">Distribution of the number of anchor links per page. The 10, 25, 50, 75, and 90th percentiles of internal anchor for desktop are: 0, 0, 0, 1, and 3. The mobile distribution is identical.</div>
+  <figcaption>Figure 9. Distribution of anchor links per page.</figcaption>
+</figure>
 
 Anchor links, which link to a certain scroll position on the same page, are not very popular. Over 65% of home pages have no anchor links. This is probably due to the fact that home pages don't usually contain any long-form content.
 
@@ -142,7 +202,7 @@ There is good news from our analysis of the descriptive link text metric. 89.94%
 
 ## Advanced
 
-Having descriptive, useful content on a page that isn't being blocked from search engines with a `noindex` tag or robots.txt directive isn't enough for a website to succeed in organic search. Those are just the basics. There is a lot more than can be done to enhance the performance of a website and its appearance in SERPs.
+Having descriptive, useful content on a page that isn't being blocked from search engines with a `noindex` or `Disallow` directive isn't enough for a website to succeed in organic search. Those are just the basics. There is a lot more than can be done to enhance the performance of a website and its appearance in SERPs.
 
 Some of the more technically complex aspects that have been gaining importance in successfully indexing and ranking websites include speed, structured data, internationalization, security, and mobile friendliness.
 
@@ -150,17 +210,32 @@ Some of the more technically complex aspects that have been gaining importance i
 
 Mobile loading speed was first [announced as a ranking factor](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) by Google in 2018. Speed isn't a new focus for Google though. Back in 2010 it was [revealed that speed had been introduced as a ranking signal](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html).
 
-A fast-loading website is also crucial for a good user experience. Users that have to wait even a few seconds for a site to load have the tendency to bounce and try another result from one of your competitors in the SERPs that loads quickly and meets their expectations of website performance.
+A fast-loading website is also crucial for a good user experience. Users that have to wait even a few seconds for a site to load have the tendency to bounce and try another result from one of your SERP competitors that loads quickly and meets their expectations of website performance.
 
-The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 63.47% of websites are labeled as **slow**. Split by device, this picture is even bleaker for tablet (82.00%) and phone (77.61%). In the context of our results, per the [PageSpeed Insights classification system](https://developers.google.com/speed/docs/insights/v5/about#categories), a slow website is defined as having 10% of First Contentful Paint (FCP) experiences taking over 2,500 ms or 5% of First Input Delay (FID) experiences measuring over 250 ms.
+The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 48% of websites are labeled as **slow**. A website is labeled slow if it more than 25% of FCP experiences slower than 3 seconds _or_ 5% of FID experiences slower than 300 ms.
 
-```<graph data 10.15b: CruX image similar to [IMG](https://developers.google.com/web/updates/images/2018/08/crux-dash-fcp.png) per device + speed label>```
+<figure>
+  <iframe aria-describedby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/10_SEO/fig10.png" class="fig-mobile">
+    <img src="/static/images/2019/10_SEO/fig10.png" aria-describedby="fig10-caption" width="600">
+  </a>
+  <div id="fig10-caption" class="visually-hidden">Distribution of the performance of desktop, phone, and tablet user experiences. Desktop: 2% fast, 52% moderate, 46% slow. Phone: 1% fast, 41% moderate, 58% slow. Tablet: 0% fast, 35% moderate, 65% slow.</div>
+  <figcaption>Figure 10. Distribution of the performance of user experiences by device type.</figcaption>
+</figure>
 
-Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the [Performance chapter](./performance).
+Split by device, this picture is even bleaker for tablet (65%) and phone (58%).
+
+Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the [Performance](./performance) chapter.
 
 ### Structured data
 
-Structured data allows website owners to add additional semantic data to their web pages, by adding [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) snippets or [Microdata](https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata), for example. Search engines parse this data to better understand these pages and sometimes use the markup to display additional relevant information in the search results. The most commonly found types of structured data are [reviews](https://developers.google.com/search/docs/data-types/review-snippet), [products](https://developers.google.com/search/docs/data-types/product), [businesses](https://developers.google.com/search/docs/data-types/local-business), [movies](https://developers.google.com/search/docs/data-types/movie), and [more](https://developers.google.com/search/docs/guides/search-gallery).
+Structured data allows website owners to add additional semantic data to their web pages, by adding [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) snippets or [Microdata](https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata), for example. Search engines parse this data to better understand these pages and sometimes use the markup to display additional relevant information in the search results. The most commonly found types of structured data are:
+
+- [reviews](https://developers.google.com/search/docs/data-types/review-snippet)
+- [products](https://developers.google.com/search/docs/data-types/product)
+- [businesses](https://developers.google.com/search/docs/data-types/local-business)
+- [movies](https://developers.google.com/search/docs/data-types/movie)
+- and [more](https://developers.google.com/search/docs/guides/search-gallery)
 
 The [extra visibility](https://developers.google.com/search/docs/guides/enhance-site) that structured data can provide for websites is interesting for site owners, given that it can help to create more opportunities for traffic. For example, the relatively new [FAQ schema](https://developers.google.com/search/docs/data-types/faqpage) will double the size of your snippet and the real estate of your site in the SERP.
 
@@ -176,13 +251,11 @@ Among the sites with structured data markup, the five most prevalent types are:
 
 Interestingly, one of the most popular data types that triggers a search engine feature is `SearchAction`, which powers the [sitelinks searchbox](https://developers.google.com/search/docs/data-types/sitelinks-searchbox).
 
-The top 5 markup types all lead to more visibility in Google's search results, which might be the fuel for more widespread adoption of these types of structured data.
+The top five markup types all lead to more visibility in Google's search results, which might be the fuel for more widespread adoption of these types of structured data.
 
 Seeing as we only looked at home pages within this analysis, the results might look very different if we were to consider interior pages, too.
 
-Review stars are only found on 1.09% of the web's home pages (via [AggregateRating](https://schema.org/AggregateRating)).
-
-Also, the newly introduced [QAPage](https://schema.org/QAPage) appeared only in 48 instances, and the [FAQPage](https://schema.org/FAQPage) at a slightly higher frequency of 218 times. These last two counts are expected to increase in the future as we run more crawls and dive deeper into Web Almanac analysis.
+Review stars are only found on 1.09% of the web's home pages (via [AggregateRating](https://schema.org/AggregateRating)). Also, the newly introduced [QAPage](https://schema.org/QAPage) appeared only in 48 instances, and the [FAQPage](https://schema.org/FAQPage) at a slightly higher frequency of 218 times. These last two counts are expected to increase in the future as we run more crawls and dive deeper into Web Almanac analysis.
 
 ### Internationalization
 
@@ -190,13 +263,149 @@ Internationalization is one of the most complex aspects of SEO, even [according 
 
 While 38.40% of desktop sites (33.79% on mobile) have the HTML lang attribute set to English, only 7.43% (6.79% on mobile) of the sites also contain an `hreflang` link to another language version. This suggests that the vast majority of websites that we analyzed don't offer separate versions of their home page that would require language targeting -- unless these separate versions do exist but haven't been configured correctly.
 
-```<graph 10.04b - [do we want to chart this data, e.g. what does it really mean for SEO?]>```
-
-```<include a chart of the languages and country combinations found, SEOs will want to see this breakdown>```
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th><code>hreflang</code></th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>en</td>
+        <td class="numeric">12.19%</td>
+        <td class="numeric">2.80%</td>
+      </tr>
+      <tr>
+        <td>x-default</td>
+        <td class="numeric">5.58%</td>
+        <td class="numeric">1.44%</td>
+      </tr>
+      <tr>
+        <td>fr</td>
+        <td class="numeric">5.23%</td>
+        <td class="numeric">1.28%</td>
+      </tr>
+      <tr>
+        <td>es</td>
+        <td class="numeric">5.08%</td>
+        <td class="numeric">1.25%</td>
+      </tr>
+      <tr>
+        <td>de</td>
+        <td class="numeric">4.91%</td>
+        <td class="numeric">1.24%</td>
+      </tr>
+      <tr>
+        <td>en-us</td>
+        <td class="numeric">4.22%</td>
+        <td class="numeric">2.95%</td>
+      </tr>
+      <tr>
+        <td>it</td>
+        <td class="numeric">3.58%</td>
+        <td class="numeric">0.92%</td>
+      </tr>
+      <tr>
+        <td>ru</td>
+        <td class="numeric">3.13%</td>
+        <td class="numeric">0.80%</td>
+      </tr>
+      <tr>
+        <td>en-gb</td>
+        <td class="numeric">3.04%</td>
+        <td class="numeric">2.79%</td>
+      </tr>
+      <tr>
+        <td>de-de</td>
+        <td class="numeric">2.34%</td>
+        <td class="numeric">2.58%</td>
+      </tr>
+      <tr>
+        <td>nl</td>
+        <td class="numeric">2.28%</td>
+        <td class="numeric">0.55%</td>
+      </tr>
+      <tr>
+        <td>fr-fr</td>
+        <td class="numeric">2.28%</td>
+        <td class="numeric">2.56%</td>
+      </tr>
+      <tr>
+        <td>es-es</td>
+        <td class="numeric">2.08%</td>
+        <td class="numeric">2.51%</td>
+      </tr>
+      <tr>
+        <td>pt</td>
+        <td class="numeric">2.07%</td>
+        <td class="numeric">0.48%</td>
+      </tr>
+      <tr>
+        <td>pl</td>
+        <td class="numeric">2.01%</td>
+        <td class="numeric">0.50%</td>
+      </tr>
+      <tr>
+        <td>ja</td>
+        <td class="numeric">2.00%</td>
+        <td class="numeric">0.43%</td>
+      </tr>
+      <tr>
+        <td>tr</td>
+        <td class="numeric">1.78%</td>
+        <td class="numeric">0.49%</td>
+      </tr>
+      <tr>
+        <td>it-it</td>
+        <td class="numeric">1.62%</td>
+        <td class="numeric">2.40%</td>
+      </tr>
+      <tr>
+        <td>ar</td>
+        <td class="numeric">1.59%</td>
+        <td class="numeric">0.43%</td>
+      </tr>
+      <tr>
+        <td>pt-br</td>
+        <td class="numeric">1.52%</td>
+        <td class="numeric">2.38%</td>
+      </tr>
+      <tr>
+        <td>th</td>
+        <td class="numeric">1.40%</td>
+        <td class="numeric">0.42%</td>
+      </tr>
+      <tr>
+        <td>ko</td>
+        <td class="numeric">1.33%</td>
+        <td class="numeric">0.28%</td>
+      </tr>
+      <tr>
+        <td>zh</td>
+        <td class="numeric">1.30%</td>
+        <td class="numeric">0.27%</td>
+      </tr>
+      <tr>
+        <td>sv</td>
+        <td class="numeric">1.22%</td>
+        <td class="numeric">0.30%</td>
+      </tr>
+      <tr>
+        <td>en-au</td>
+        <td class="numeric">1.20%</td>
+        <td class="numeric">2.31%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 11. Top 25 most popular <code>hreflang</code> values.</figcaption>
+</figure>
 
 Next to English, the most common languages are French, Spanish, and German. These are followed by languages targeted towards specific geographies like English for Americans (`en-us`) or more obscure combinations like Spanish for the Irish (`es-ie`).
 
-The analysis did not check for correct implementation, such as whether or not the different language versions properly link to each other. However, from looking at the low adoption of [having an x-default version as is recommended](https://www.google.com/url?q=https://support.google.com/webmasters/answer/189077?hl%3Den&sa=D&ust=1570627963630000&usg=AFQjCNFwzwglsbysT9au_I-7ZQkwa-QvrA) (only 3.77% on desktop and 1.30% on mobile), this is an indicator that this element is complex and not always easy to get right.
+The analysis did not check for correct implementation, such as whether or not the different language versions properly link to each other. However, from looking at the low adoption of having an x-default version (only 3.77% on desktop and 1.30% on mobile), [as is recommended](https://www.google.com/url?q=https://support.google.com/webmasters/answer/189077?hl%3Den&sa=D&ust=1570627963630000&usg=AFQjCNFwzwglsbysT9au_I-7ZQkwa-QvrA), this is an indicator that this element is complex and not always easy to get right.
 
 ### SPA crawlability
 
@@ -214,7 +423,7 @@ Despite this, only 0.62% of mobile home pages contain a link to an AMP version. 
 
 ### Security
 
-A strong online shift in recent years has been for the web to move to HTTPS by default. HTTPS prevents website traffic from being intercepted on public Wi-Fi networks, for example, where user input data is then transmitted unsecurely. Google have been pushing for sites to adopt HTTPS, and even made [HTTPS as a ranking signal](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). Chrome also supported the move to secure pages by labeling non-HTTPS pages as '[not secure](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/)' in the browser.
+A strong online shift in recent years has been for the web to move to HTTPS by default. HTTPS prevents website traffic from being intercepted on public Wi-Fi networks, for example, where user input data is then transmitted unsecurely. Google have been pushing for sites to adopt HTTPS, and even made [HTTPS as a ranking signal](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html). Chrome also supported the move to secure pages by labeling non-HTTPS pages as [not secure](https://www.blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/) in the browser.
 
 For more information and guidance from Google on the importance of HTTPS and how to adopt it, please see [Why HTTPS Matters](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
@@ -222,9 +431,11 @@ We found that 67.06% of websites on desktop are now served over HTTPS. Just unde
 
 Google's [HTTPS Transparency Report](https://transparencyreport.google.com/https/overview) reports a 90% adoption of HTTPS for the top 100 non-Google domains (representing 25% of all website traffic worldwide). The difference between this number and ours could be explained by the fact that relatively smaller sites are adopting HTTPS at a slower rate.
 
+Learn more about the state of security in the [Security](./security) chapter.
+
 ## Conclusion
 
-Through our analysis, we observed that the majority of websites are getting the fundamentals right, in that their home pages are crawlable, indexable, and include the key content required to rank well in search engines' results pages. Not every person who owns a website will be aware of SEO at all, let alone best practice guidelines, so it is promising to see that so many sites have got the basics covered.
+Through our analysis, we observed that the majority of websites are getting the fundamentals right, in that their home pages are crawlable, indexable, and include the key content required to rank well in search engines' results pages. Not every person who owns a website will be aware of SEO at all, let alone its best practice guidelines, so it is promising to see that so many sites have got the basics covered.
 
 However, more sites are missing the mark than expected when it comes to some of the more advanced aspects of SEO and accessibility. Site speed is one of these factors that many websites are struggling with, especially on mobile. This is a significant problem, as speed is one of the biggest contributors to UX, which is something that can impact rankings. The number of websites that aren't yet served over HTTPS is also problematic to see, considering the importance of security and keeping user data safe.
 
