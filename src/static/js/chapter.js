@@ -137,6 +137,7 @@ const upgradeInteractiveFigures = async () => {
 
         }
       });
+      sendGTMEvent('Features', 'Interactive Figures', 'Enabled', 1);
     }
   } catch (e) {
     console.error('Error' + e);
