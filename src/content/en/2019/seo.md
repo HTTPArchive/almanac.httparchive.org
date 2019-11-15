@@ -1,5 +1,4 @@
 ---
-unedited: true
 part_number: I
 chapter_number: 10
 title: SEO
@@ -189,7 +188,7 @@ It's important to bear in mind that fewer internal links on the mobile version o
 The median desktop page includes 70 internal (same-site) links, whereas the median mobile page has 60 internal links. The median number of external links per page follows a similar trend, with desktop pages including 10 external links, and mobile pages including 8.
 
 <figure>
-  <iframe aria-describedby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive"></iframe>
+  <iframe aria-describedby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive"></iframe>
   <a href="/static/images/2019/10_SEO/fig9.png" class="fig-mobile">
     <img src="/static/images/2019/10_SEO/fig9.png" aria-describedby="fig9-caption" width="600">
   </a>
