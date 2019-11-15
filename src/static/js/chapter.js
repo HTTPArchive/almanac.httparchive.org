@@ -1,3 +1,20 @@
+function sendGTMEvent(category, action, label, value) {
+  
+  window.dataLayer = window.dataLayer || [];
+
+  dataLayer.push(
+    {
+      'event': {
+        'category': category,
+        'action': action,
+        'label': label,
+        'value': value
+      }
+    }
+  );
+
+}
+
 //Data Save can be set to on, so let's check it
 function dataSaverEnabled() {
   let dataSaver = false;
@@ -5,6 +22,9 @@ function dataSaverEnabled() {
     dataSaver = navigator.connection.saveData;
     if (dataSaver) {
       console.log('DataSaver is enabled');
+      sendGTMEvent('Features', 'DataSaver', 'Enabled', 1);
+    } else {
+      sendGTMEvent('Features', 'DataSaver', 'Not Enabled', 0);
     }
   }
 
@@ -30,8 +50,11 @@ function highResolutionCanvasSupported() {
     largeCanvasSupported = false;
   }
 
-  if (!largeCanvasSupported) {
+  if (largeCanvasSupported) {
+    sendGTMEvent('Features', 'Hi-res Canvas', 'Supported', 1);
+  } else {
     console.log('High resolution canvas images are not supported');
+    sendGTMEvent('Features', 'Hi-res Canvas', 'Not Supported', 0);
   }
 
   return largeCanvasSupported;
@@ -64,8 +87,11 @@ const googleSheetsAllowed = async () => {
       sheetsAllowed = false;
     });
 
-  if (!sheetsAllowed) {
+  if (sheetsAllowed) {
+    sendGTMEvent('Features', 'Sheets Access', 'Successful', 1);
+  } else {
     console.log('Google Sheets access blocked');
+    sendGTMEvent('Features', 'Sheets Access', 'Blocked', 0);
   }
   return sheetsAllowed;
 }
@@ -117,4 +143,39 @@ const upgradeInteractiveFigures = async () => {
   }
 }
 
+function enableDropDownMenu() {
+  const indexBox = document.querySelector('.index-box');
+  const indexBoxTitle = document.querySelector('.index .header');
+
+  indexBoxTitle.addEventListener('click', function(e) {
+    indexBox.classList.toggle('show');
+  });
+}
+
+function setDiscussionCount() {
+  if (window.discussion_url) {
+    fetch(window.discussion_url)
+    .then(function (r) { return r.json(); })
+    .then(function (r) {
+      if (!r) {
+        return;
+      }
+
+      var comments = +r.posts_count - 1;
+      if (isNaN(comments)) {
+        return;
+      }
+      var el = document.getElementById('num_comments');
+      el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
+    })
+    .catch(function (err) {
+      console.error(err);
+    });
+  }
+}
+
+enableDropDownMenu();
 upgradeInteractiveFigures();
+setDiscussionCount();
+
+
