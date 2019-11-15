@@ -51,65 +51,45 @@ function upgradeInteractiveFigures() {
   try {
     if (highResolutionCanvasSupported() && !dataSaverEnabled()) {
 
-      let sheetsAllowed = true;
+      console.log('Upgrading to interactive figures');
 
-      const sheets_url = 'https://docs.google.com/spreadsheets/';
+      //Set the Google Sheets iframe
+      let all_fig_imgs = document.querySelectorAll('figure img');
 
-      //Google Sheets is sometimes blocked by companies/proxies so let's check for that
-      //Unfortunately no easy way to check this as cannot make non-CORS request to
-      //Another domain and can't check status response when CORS domain :-(
-      //Below seems to work for my corporate proxy anyway
-      fetch(sheets_url, { method: 'HEAD', mode: 'no-cors' })
-        .then(function (response) {
-          //If response status is 0 then means CORS is blocking it, which Sheets requires
-          //Which means it made it as proxies block with a 403 before getting that far,
-          //or error completely.
-          if (response.status != 0) {
-            sheetsAllowed = false;
-            gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'blocked', 'value': 0 });
-          } else {
-            console.log('Upgrading to interactive figures');
+      //all_fig_imgs.forEach(function (fig_img) {
+      for (index = 0; index < all_fig_imgs.length; ++index) {
+        const fig_img = all_fig_imgs[index];
 
-            //Set the Google Sheets iframe
-            let all_fig_imgs = document.querySelectorAll('figure img');
+        if (fig_img.getAttribute('data-src')) {
 
-            all_fig_imgs.forEach(function (fig_img) {
+          var iframe = document.createElement('iframe');
 
-              if (fig_img.getAttribute('data-src')) {
+          //Set up some default attributes
+          iframe.setAttribute('aria-describedby', fig_img.getAttribute('aria-describedby'));
+          iframe.setAttribute('title', fig_img.getAttribute('alt'));
+          iframe.setAttribute('width', fig_img.dataset.width || "600");
+          iframe.setAttribute('height', fig_img.dataset.height || '371');
+          iframe.setAttribute('seamless', fig_img.dataset.seamless || '');
+          iframe.setAttribute('frameborder', fig_img.dataset.frameborder || '0');
+          iframe.setAttribute('scrolling', fig_img.dataset.scrolling || 'no');
+          iframe.setAttribute('loading', fig_img.dataset.loading || 'lazy');
+          iframe.setAttribute('src', fig_img.dataset.src);
 
-                var iframe = document.createElement('iframe');
+          //The figure should have a link
+          const parentLink = fig_img.parentNode;
+          if (parentLink.nodeName == "A") {
 
-                //Set up some default attributes
-                iframe.setAttribute('aria-describedby', fig_img.getAttribute('aria-describedby'));
-                iframe.setAttribute('title', fig_img.getAttribute('alt'));
-                iframe.setAttribute('width', fig_img.dataset.width || "600");
-                iframe.setAttribute('height', fig_img.dataset.height || '371');
-                iframe.setAttribute('seamless', fig_img.dataset.seamless || '');
-                iframe.setAttribute('frameborder', fig_img.dataset.frameborder || '0');
-                iframe.setAttribute('scrolling', fig_img.dataset.scrolling || 'no');
-                iframe.setAttribute('loading', fig_img.dataset.loading || 'lazy');
-                iframe.setAttribute('src', fig_img.dataset.src);
+            //Insert the iframe before the link.
+            parentLink.parentNode.insertBefore(iframe, parentLink);
 
-                //The figure should have a link
-                const parentLink = fig_img.parentNode;
-                if (parentLink.nodeName == "A") {
-
-                  //Insert the iframe before the link.
-                  parentLink.parentNode.insertBefore(iframe, parentLink);
-
-                  //Add the fig-mobile class to hide the img in desktop view
-                  parentLink.classList.add("fig-mobile");
-                }
-
-              }
-            });
-            gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
+            //Add the fig-mobile class to hide the img in desktop view
+            parentLink.classList.add("fig-mobile");
           }
-        }).catch(function (err) {
-          console.error('Error' + err);
-          gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'blocked', 'value': 0 });
-          gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
-        });
+
+        }
+      };
+      gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
+
     } else {
       gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
     }
