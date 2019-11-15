@@ -10,7 +10,15 @@
 {% block scripts %}
 {{ super() }}
 <script nonce="{{ csp_nonce() }}">
-  window.discussion_url='https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json';
+  
+var indexBox = document.querySelector('.index-box');
+var indexBoxTitle = document.querySelector('.index .header');
+ 
+indexBoxTitle.addEventListener('click', function(e) {
+  indexBox.classList.toggle('show');
+});
+  
+window.discussion_url='https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json';
 </script>
 
 <script src='/static/js/chapter.js' defer></script>
