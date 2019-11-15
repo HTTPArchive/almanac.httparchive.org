@@ -7,6 +7,12 @@ header {
   padding-bottom: 400px;
 }
 
+@media (max-width: 600px) {
+  header {
+    background-size: cover;
+  }
+}
+
 header.alt-bg {
   background-color: transparent;
 }
