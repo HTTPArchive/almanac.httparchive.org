@@ -46,7 +46,7 @@ function highResolutionCanvasSupported() {
 
 //We use Google Sheets for detailed visualisations
 //Check for support and switch out images if supported
-const upgradeInteractiveFigures = async () => {
+function upgradeInteractiveFigures() {
 
   try {
     if (highResolutionCanvasSupported() && !dataSaverEnabled()) {
@@ -120,24 +120,31 @@ const upgradeInteractiveFigures = async () => {
 }
 
 function setDiscussionCount() {
-  if (window.discussion_url) {
-    fetch(window.discussion_url)
-      .then(function (r) { return r.json(); })
-      .then(function (r) {
-        if (!r) {
-          return;
-        }
+  try {
+    if (window.discussion_url) {
+      fetch(window.discussion_url)
+        .then(function (r) { return r.json(); })
+        .then(function (r) {
+          if (!r) {
+            return;
+          }
 
-        var comments = +r.posts_count - 1;
-        if (isNaN(comments)) {
-          return;
-        }
-        var el = document.getElementById('num_comments');
-        el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
-      })
-      .catch(function (err) {
-        console.error(err);
-      });
+          var comments = +r.posts_count - 1;
+          if (isNaN(comments)) {
+            return;
+          }
+          var el = document.getElementById('num_comments');
+          el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
+          gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
+        })
+        .catch(function (err) {
+          console.error(err);
+          gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
+        });
+    }
+  } catch (e) {
+    console.error('Error' + e);
+    gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
   }
 }
 
