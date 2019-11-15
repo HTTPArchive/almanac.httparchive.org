@@ -8,7 +8,7 @@ authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 discuss: 1761
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-11T00:00:00.000Z
+last_updated: 2019-11-15T00:00:00.000Z
 ---
 
 ## Introduction
@@ -31,7 +31,11 @@ Recommendations to mitigate the performance costs of loading web fonts from anot
 
 (Graph Title: Third-party hosted versus self-hosted (local); Source: 06.01)
 
-The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss [below](#what-are-the-most-popular-third-party-hosts). Note that `preload` is not yet available with Google Fonts, as they generate unique URLs for their fonts [which are liable to change](https://github.com/google/fonts/issues/1067), and even [serve different fonts for different browsers](https://github.com/google/fonts/issues/234). Google serves fonts by getting websites to include a CSS link to a stylesheet. This will be in the main HTML (more on which below), so will already be connected to quickly. However, the fonts themselves are hosted on another domain `https://fonts.gstatic.com` so `preconnect` is a great option here as that will not be discovered until the CSS is downloaded.
+The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss [below](#what-are-the-most-popular-third-party-hosts).
+
+Google serves fonts using third-party CSS files hosted on `https://fonts.googleapis.com`. Developers add requests to these stylesheets using `<link>` tags in their markup. While these stylesheets are render blocking, they are very small. However, the font files are hosted on yet another domain: `https://fonts.gstatic.com`. The model of requiring two separate hops to two different domains makes `preconnect` a great option here for the second request that will not be discovered until the CSS is downloaded.
+
+Note that while `preload` would be a nice addition to load the font files higher in the request waterfall (remember that `preconnect` sets up the connection, it doesn’t request the file content), `preload` is not yet available with Google Fonts. Google Fonts generates unique URLs for their font files [which are subject to change](https://github.com/google/fonts/issues/1067).
 
 ### What are the most popular third-party hosts?
 
@@ -77,7 +81,7 @@ It is unsurprising that the top entries here seem to match up very similarly to 
 
 ## What font formats are being used?
 
-[WOFF2 is pretty well supported](https://caniuse.com/#feat=woff2) in web browsers today. Google Fonts serves WOFF2, a format that offers improved compression over its predecessor, which was already an improvement over the other font formats.
+[WOFF2 is pretty well supported](https://caniuse.com/#feat=woff2) in web browsers today. Google Fonts serves WOFF2, a format that offers improved compression over its predecessor WOFF, which was itself already an improvement over other existing font formats.
 
 (Graph Title: Popular MIME Types, Source: 06.03)
 
