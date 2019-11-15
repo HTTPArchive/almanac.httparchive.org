@@ -317,13 +317,15 @@ The utility of SrcSet is usually dependent on the precision of the Sizes media q
 * `<img sizes=”(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...”>` this pattern is the custom built design pattern that is aligned with the CSS responsive layout. Each breakpoint has a different calculation for sizes to use.
 
 <figure markdown>
-| `<img sizes>` | frequency (Millions) | % | 
-|--|--|--| --| --| --| --| 
-| (max-width: 300px) 100vw, 300px | 1.47 | 5% | 
-| (max-width: 150px) 100vw, 150px | 0.63| 2% |
-| (max-width: 100px) 100vw, 100px | 0.37 | 1% |
-| (max-width: 400px) 100vw, 400px | 0.32| 1% |
-| (max-width: 80px) 100vw, 80px | 0.28| 1% |
+
+`<img sizes>` | Frequency (millions) | %
+-- | -- | --
+(max-width: 300px) 100vw, 300px | 1.47 | 5%
+(max-width: 150px) 100vw, 150px | 0.63 | 2%
+(max-width: 100px) 100vw, 100px | 0.37 | 1%
+(max-width: 400px) 100vw, 400px | 0.32 | 1%
+(max-width: 80px) 100vw, 80px | 0.28 | 1%
+
 </figure>
 
 * `<img sizes=”auto”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes JavaScript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the JavaScript loading and DOM to be fully ready, delaying image loading substantially. 
