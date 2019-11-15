@@ -1,20 +1,3 @@
-function sendGTMEvent(category, action, label, value) {
-  
-  window.dataLayer = window.dataLayer || [];
-
-  dataLayer.push(
-    {
-      'event': {
-        'category': category,
-        'action': action,
-        'label': label,
-        'value': value
-      }
-    }
-  );
-
-}
-
 //Data Save can be set to on, so let's check it
 function dataSaverEnabled() {
   let dataSaver = false;
@@ -22,9 +5,9 @@ function dataSaverEnabled() {
     dataSaver = navigator.connection.saveData;
     if (dataSaver) {
       console.log('DataSaver is enabled');
-      sendGTMEvent('Features', 'DataSaver', 'Enabled', 1);
+      gtag('event', 'data-saver', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
     } else {
-      sendGTMEvent('Features', 'DataSaver', 'Not Enabled', 0);
+      gtag('event', 'data-saver', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
     }
   }
 
@@ -51,118 +34,110 @@ function highResolutionCanvasSupported() {
   }
 
   if (largeCanvasSupported) {
-    sendGTMEvent('Features', 'Hi-res Canvas', 'Supported', 1);
+    gtag('event', 'hi-res-canvas', { 'event_category': 'user', 'event_label': 'supported', 'value': 1 });
   } else {
     console.log('High resolution canvas images are not supported');
-    sendGTMEvent('Features', 'Hi-res Canvas', 'Not Supported', 0);
+    gtag('event', 'hi-res-canvas', { 'event_category': 'user', 'event_label': 'not-supported', 'value': 0 });
   }
 
   return largeCanvasSupported;
 
 };
 
-//Google Sheets is sometimes blocked by companies/proxies so let's check for that
-//Unfortunately no easy way to check this as cannot make non-CORS request to
-//Another domain and can't check status response when CORS domain :-(
-//Below seems to work for my corporate proxy anyway
-const googleSheetsAllowed = async () => {
-
-  let sheetsAllowed = true;
-
-  const url = 'https://docs.google.com/spreadsheets/';
-
-  //non-async aware browsers can stick with images, as they probably don't support sheet anyway
-  await fetch(url, { method: 'HEAD', mode: 'no-cors' })
-    .then(
-      function (response) {
-        //If response status is 0 then means CORS is blocking it
-        //Which means it made it as proxies block with a 403
-        //before getting that far.
-        if (response.status != 0) {
-          sheetsAllowed = false;
-        }
-      }
-    )
-    .catch(function (err) {
-      sheetsAllowed = false;
-    });
-
-  if (sheetsAllowed) {
-    sendGTMEvent('Features', 'Sheets Access', 'Successful', 1);
-  } else {
-    console.log('Google Sheets access blocked');
-    sendGTMEvent('Features', 'Sheets Access', 'Blocked', 0);
-  }
-  return sheetsAllowed;
-}
-
 //We use Google Sheets for detailed visualisations
 //Check for support and switch out images if supported
 const upgradeInteractiveFigures = async () => {
 
   try {
-    if (highResolutionCanvasSupported() && !dataSaverEnabled() && await googleSheetsAllowed()) {
-      console.log('Upgrading to interactive figures');
+    if (highResolutionCanvasSupported() && !dataSaverEnabled()) {
 
-      //Set the Google Sheets iframe
-      let all_fig_imgs = document.querySelectorAll('figure img');
+      let sheetsAllowed = true;
 
-      all_fig_imgs.forEach(function (fig_img) {
+      const sheets_url = 'https://docs.google.com/spreadsheets/';
 
-        if (fig_img.getAttribute('data-src')) {
+      //Google Sheets is sometimes blocked by companies/proxies so let's check for that
+      //Unfortunately no easy way to check this as cannot make non-CORS request to
+      //Another domain and can't check status response when CORS domain :-(
+      //Below seems to work for my corporate proxy anyway
+      fetch(window.sheets_url, { method: 'HEAD', mode: 'no-cors' })
+        .then(function (r) {
+          //If response status is 0 then means CORS is blocking it, which Sheets requires
+          //Which means it made it as proxies block with a 403 before getting that far,
+          //or error completely.
+          if (response.status != 0) {
+            sheetsAllowed = false;
+            gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'blocked', 'value': 0 });
+          } else {
+            console.log('Upgrading to interactive figures');
 
-          var iframe = document.createElement('iframe');
+            //Set the Google Sheets iframe
+            let all_fig_imgs = document.querySelectorAll('figure img');
 
-          //Set up some default attributes
-          iframe.setAttribute('aria-describedby', fig_img.getAttribute('aria-describedby'));
-          iframe.setAttribute('title', fig_img.getAttribute('alt'));
-          iframe.setAttribute('width', fig_img.dataset.width || "600");
-          iframe.setAttribute('height', fig_img.dataset.height || '371');
-          iframe.setAttribute('seamless', fig_img.dataset.seamless || '');
-          iframe.setAttribute('frameborder', fig_img.dataset.frameborder || '0');
-          iframe.setAttribute('scrolling', fig_img.dataset.scrolling || 'no');
-          iframe.setAttribute('loading', fig_img.dataset.loading || 'lazy');
-          iframe.setAttribute('src', fig_img.dataset.src);
+            all_fig_imgs.forEach(function (fig_img) {
 
-          //The figure should have a link
-          const parentLink = fig_img.parentNode;
-          if (parentLink.nodeName == "A") {
+              if (fig_img.getAttribute('data-src')) {
 
-            //Insert the iframe before the link.
-            parentLink.parentNode.insertBefore(iframe, parentLink);
+                var iframe = document.createElement('iframe');
 
-            //Add the fig-mobile class to hide the img in desktop view
-            parentLink.classList.add("fig-mobile");
+                //Set up some default attributes
+                iframe.setAttribute('aria-describedby', fig_img.getAttribute('aria-describedby'));
+                iframe.setAttribute('title', fig_img.getAttribute('alt'));
+                iframe.setAttribute('width', fig_img.dataset.width || "600");
+                iframe.setAttribute('height', fig_img.dataset.height || '371');
+                iframe.setAttribute('seamless', fig_img.dataset.seamless || '');
+                iframe.setAttribute('frameborder', fig_img.dataset.frameborder || '0');
+                iframe.setAttribute('scrolling', fig_img.dataset.scrolling || 'no');
+                iframe.setAttribute('loading', fig_img.dataset.loading || 'lazy');
+                iframe.setAttribute('src', fig_img.dataset.src);
+
+                //The figure should have a link
+                const parentLink = fig_img.parentNode;
+                if (parentLink.nodeName == "A") {
+
+                  //Insert the iframe before the link.
+                  parentLink.parentNode.insertBefore(iframe, parentLink);
+
+                  //Add the fig-mobile class to hide the img in desktop view
+                  parentLink.classList.add("fig-mobile");
+                }
+
+              }
+            });
+            gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
           }
-
-        }
-      });
-      sendGTMEvent('Features', 'Interactive Figures', 'Enabled', 1);
+        }).catch(function (err) {
+          console.error('Error' + e);
+          gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'blocked', 'value': 0 });
+          gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
+        });
+    } else {
+      gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
     }
   } catch (e) {
     console.error('Error' + e);
+    gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
   }
 }
 
 function setDiscussionCount() {
   if (window.discussion_url) {
     fetch(window.discussion_url)
-    .then(function (r) { return r.json(); })
-    .then(function (r) {
-      if (!r) {
-        return;
-      }
+      .then(function (r) { return r.json(); })
+      .then(function (r) {
+        if (!r) {
+          return;
+        }
 
-      var comments = +r.posts_count - 1;
-      if (isNaN(comments)) {
-        return;
-      }
-      var el = document.getElementById('num_comments');
-      el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
-    })
-    .catch(function (err) {
-      console.error(err);
-    });
+        var comments = +r.posts_count - 1;
+        if (isNaN(comments)) {
+          return;
+        }
+        var el = document.getElementById('num_comments');
+        el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
+      })
+      .catch(function (err) {
+        console.error(err);
+      });
   }
 }
 
