@@ -59,8 +59,8 @@ function upgradeInteractiveFigures() {
       //Unfortunately no easy way to check this as cannot make non-CORS request to
       //Another domain and can't check status response when CORS domain :-(
       //Below seems to work for my corporate proxy anyway
-      fetch(window.sheets_url, { method: 'HEAD', mode: 'no-cors' })
-        .then(function (r) {
+      fetch(sheets_url, { method: 'HEAD', mode: 'no-cors' })
+        .then(function (response) {
           //If response status is 0 then means CORS is blocking it, which Sheets requires
           //Which means it made it as proxies block with a 403 before getting that far,
           //or error completely.
@@ -106,15 +106,15 @@ function upgradeInteractiveFigures() {
             gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
           }
         }).catch(function (err) {
-          console.error('Error' + e);
+          console.error('Error' + err);
           gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'blocked', 'value': 0 });
           gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
         });
     } else {
       gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
     }
-  } catch (e) {
-    console.error('Error' + e);
+  } catch (err) {
+    console.error('Error' + err);
     gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
   }
 }
@@ -123,9 +123,9 @@ function setDiscussionCount() {
   try {
     if (window.discussion_url) {
       fetch(window.discussion_url)
-        .then(function (r) { return r.json(); })
-        .then(function (r) {
-          if (!r) {
+        .then(function (response) { return response.json(); })
+        .then(function (response) {
+          if (!response) {
             return;
           }
 
@@ -142,8 +142,8 @@ function setDiscussionCount() {
           gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
         });
     }
-  } catch (e) {
-    console.error('Error' + e);
+  } catch (err) {
+    console.error('Error' + err);
     gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
   }
 }
