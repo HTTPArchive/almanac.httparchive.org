@@ -16,8 +16,6 @@ csp = {
     ],
     'connect-src': [
         '\'self\'',
-        'accounts.google.com',
-        'docs.google.com',
         'discuss.httparchive.org',
         'www.google-analytics.com',
         'www.googletagmanager.com'
