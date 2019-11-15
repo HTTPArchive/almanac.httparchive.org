@@ -1,19 +1,25 @@
-body {
+header {
+  /* background-image: url(/static/images/intro-background-fit.svg); */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojYThjYWJhO2ZpbGwtcnVsZTpldmVub2RkO29wYWNpdHk6LjA1fTwvc3R5bGU+PC9kZWZzPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS0yMzEgODloMjA4OHY2NTFsLTIwODggMzYwVjg5eiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS00NzAgMjM5aDIwODh2NjUxbC0yMDg4IDM2MFYyMzl6Ii8+PHBhdGggZD0iTS0xNDQtMTloMjA4OHY2NTFMLTE0NCA5OTJWLTE5eiIgZmlsbD0iIzFhMmI0OSIgb3BhY2l0eT0iLjciIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS00NzAtODNoMjA4OHY2NTFMLTQ3MCA5MjhWLTgzeiIvPjxwYXRoIGQ9Ik0tMjMyLTQ4aDIwODh2NjUxTC0yMzIgOTYzVi00OHoiIGZpbGw9IiNmMmYyZjIiIG9wYWNpdHk9Ii4wNSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0iTS0xNDI2LTM3MUg2NjJ2NjUxbC0yMDg4IDM2MFYtMzcxeiIgb3BhY2l0eT0iLjEiIGZpbGw9IiNmMmYyZjIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+  background-position: bottom left;  
   background-repeat: no-repeat;
-  background-size: 100% 910px;
+  background-size: 100% 100%;
+  padding-bottom: 400px;
 }
 
-body.lazy {
-  /* This is a 1px solid #677486 image. */
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNML2n7DwAFDQJi8nQACgAAAABJRU5ErkJggg==);
-  background-size: 100% 700px;
+@media (max-width: 600px) {
+  header {
+    background-size: cover;
+  }
 }
 
 header.alt-bg {
-  background-color: initial;
+  background-color: transparent;
 }
 
 #home {
+  /* -400px to overcome the `padding-bottom: 400px;` for the above adjacent header */
+  margin-top: -400px;
   overflow: hidden;
   display: grid;
   grid-template-areas:
@@ -262,14 +268,6 @@ p {
   );
 }
 
-
-@media (min-width: 2048px) {
-  body {
-    background-size: 100% 1110px;
-  }
-}
-
-
 @media (max-width: 1280px) and (min-width: 901px) {
   .people {
     height: auto;
@@ -305,9 +303,6 @@ p {
 }
 
 @media (max-width: 900px) and (min-width: 601px) {
-  body {
-    background-size: auto;
-  }
   .intro-container {
     grid-template-areas:
       'year'
@@ -436,9 +431,6 @@ p {
 
 /* Mobile View */
 @media (max-width: 600px) {
-  body {
-    background-size: auto;
-  }
   .intro-container .menu li {
     list-style: none;
     margin: 30px;
@@ -463,7 +455,6 @@ p {
       'image';
     justify-items: center;
     justify-content: center;
-    margin-bottom: 50px;
   }
 
   .intro-container .menu {
