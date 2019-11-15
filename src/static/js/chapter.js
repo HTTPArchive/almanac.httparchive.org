@@ -143,15 +143,6 @@ const upgradeInteractiveFigures = async () => {
   }
 }
 
-function enableDropDownMenu() {
-  const indexBox = document.querySelector('.index-box');
-  const indexBoxTitle = document.querySelector('.index .header');
-
-  indexBoxTitle.addEventListener('click', function(e) {
-    indexBox.classList.toggle('show');
-  });
-}
-
 function setDiscussionCount() {
   if (window.discussion_url) {
     fetch(window.discussion_url)
