@@ -7,7 +7,7 @@ authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
 discuss: 1770
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z 
+last_updated: 2019-11-16T00:00:00.000Z
 ---
 
 ## Introduction
@@ -138,12 +138,11 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
 Of the resources that are served compressed, the majority are using either gzip (80%) or brotli (20%). The other compression algorithms are infrequently used.
 
 <figure>
-  <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2052550005&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/15_Compression/fig2.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig2.png" aria-labelledby="fig2-caption" width="600">
+  <a href="/static/images/2019/15_Compression/fig2.png">
+    <img src="/static/images/2019/15_Compression/fig2.png" alt="Figure 2. Adoption of compression algorithms on desktop pages." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2052550005&amp;format=interactive">
   </a>
-  <div id="fig2-caption" class="visually-hidden">Pie chart of the data table in Figure 1.</div>
-  <figcaption>Figure 2. Adoption of compression algorithms on desktop pages.</figcaption>
+  <div id="fig2-description" class="visually-hidden">Pie chart of the data table in Figure 1.</div>
+  <figcaption id="fig2-caption">Figure 2. Adoption of compression algorithms on desktop pages.</figcaption>
 </figure>
 
 Additionally, there are 67K requests that return an invalid `Content-Encoding`, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.
@@ -162,23 +161,21 @@ Most text based resources (such as HTML, CSS, and JavaScript) can benefit from g
 In the graph below, the top 25 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded orange, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others. 
 
 <figure>
-  <iframe aria-labelledby="fig3-caption" width="779.5" height="481.99083333333334" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1790056981&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/15_Compression/fig3.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig3.png" aria-labelledby="fig3-caption" width="600">
+  <a href="/static/images/2019/15_Compression/fig3.png">
+    <img src="/static/images/2019/15_Compression/fig3.png" alt="Figure 3. Top 25 compressed content types." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="779.5" data-height="481.99083333333334" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1790056981&amp;format=interactive">
   </a>
-  <div id="fig3-caption" class="visually-hidden">Figure 3. Top 25 compressed content types.</div>
-  <figcaption>Figure 3. Top 25 compressed content types.</figcaption>
+  <div id="fig3-description" class="visually-hidden">Figure 3. Top 25 compressed content types.</div>
+  <figcaption id="fig3-caption">Figure 3. Top 25 compressed content types.</figcaption>
 </figure>
 
 Filtering out the eight most popular content types allows us to see the compression stats for the rest of these content types more clearly.
 
 <figure>
-  <iframe aria-labelledby="fig4-caption" width="779.5" height="481.99083333333334" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=495358423&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/15_Compression/fig4.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig4.png" aria-labelledby="fig4-caption" width="600">
+  <a href="/static/images/2019/15_Compression/fig4.png">
+    <img src="/static/images/2019/15_Compression/fig4.png" alt="Figure 4. Compressed content types, excluding top 8." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="779.5" data-height="481.99083333333334" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=495358423&amp;format=interactive">
   </a>
-  <div id="fig3-caption" class="visually-hidden">Figure 4. Compressed content types, excluding top 8.</div>
-  <figcaption>Figure 4. Compressed content types, excluding top 8.</figcaption>
+  <div id="fig3-description" class="visually-hidden">Figure 4. Compressed content types, excluding top 8.</div>
+  <figcaption id="fig3-caption">Figure 4. Compressed content types, excluding top 8.</figcaption>
 </figure>
 
 The `application/json` and `image/svg+xml` content types are compressed less than 65% of the time.
@@ -188,41 +185,37 @@ Most of the custom web fonts are served without compression, since they are alre
 The graphs below illustrate the breakdown of compression techniques used for each content type. Looking at the top three content types, we can see that across both desktop and mobile there are major gaps in compressing some of the most frequently requested content types. 56% of `text/html` as well as 18% of `application/javascript` and `text/css` resources are not being compressed. This presents a significant performance opportunity.
 
 <figure>
-  <iframe aria-labelledby="fig5-caption" width="760" height="470" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=148811764&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/15_Compression/fig5.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig5.png" aria-labelledby="fig5-caption" width="600">
+  <a href="/static/images/2019/15_Compression/fig5.png">
+    <img src="/static/images/2019/15_Compression/fig5.png" alt="Figure 5. Compression by content type for desktop." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=148811764&amp;format=interactive">
   </a>
-  <div id="fig5-caption" class="visually-hidden">Figure 5. Compression by content type for desktop.</div>
-  <figcaption>Figure 5. Compression by content type for desktop.</figcaption>
+  <div id="fig5-description" class="visually-hidden">Figure 5. Compression by content type for desktop.</div>
+  <figcaption id="fig5-caption">Figure 5. Compression by content type for desktop.</figcaption>
 </figure>
 
 <figure>
-  <iframe aria-labelledby="fig6-caption" width="760" height="470" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2009060762&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/15_Compression/fig6.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig6.png" aria-labelledby="fig6-caption" width="600">
+  <a href="/static/images/2019/15_Compression/fig6.png">
+    <img src="/static/images/2019/15_Compression/fig6.png" alt="Figure 6. Compression by content type for mobile." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2009060762&amp;format=interactive">
   </a>
-  <div id="fig6-caption" class="visually-hidden">Figure 6. Compression by content type for mobile.</div>
-  <figcaption>Figure 6. Compression by content type for mobile.</figcaption>
+  <div id="fig6-description" class="visually-hidden">Figure 6. Compression by content type for mobile.</div>
+  <figcaption id="fig6-caption">Figure 6. Compression by content type for mobile.</figcaption>
 </figure>
 
 The content types with the lowest compression rates include `application/json`, `text/xml`, and `text/plain`. These resources are commonly used for XHR requests to provide data that web applications can use to create rich experiences. Compressing them will likely improve user experience.  Vector graphics such as `image/svg+xml`, and `image/x-icon` are not often thought of as text based, but they are and sites that use them would benefit from compression.
 
 <figure>
-  	<iframe aria-labelledby="fig7-caption" width="760" height="470" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1923565332&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/15_Compression/fig7.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig7.png" aria-labelledby="fig7-caption" width="600">
+    <a href="/static/images/2019/15_Compression/fig7.png">
+    <img src="/static/images/2019/15_Compression/fig7.png" alt="Figure 7. Compression by content type as a percent for desktop." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1923565332&amp;format=interactive">
   </a>
-  <div id="fig5-caption" class="visually-hidden">Figure 7. CCompression by content type as a percent for desktop</div>
-  <figcaption>Figure 7. Compression by content type as a percent for desktop.</figcaption>
+  <div id="fig5-description" class="visually-hidden">Figure 7. CCompression by content type as a percent for desktop</div>
+  <figcaption id="fig5-caption">Figure 7. Compression by content type as a percent for desktop.</figcaption>
 </figure>
 
 <figure>
- <iframe aria-labelledby="fig8-caption" width="760" height="470" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=673629979&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/15_Compression/fig8.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig8.png" aria-labelledby="fig6-caption" width="600">
+  <a href="/static/images/2019/15_Compression/fig8.png">
+    <img src="/static/images/2019/15_Compression/fig8.png" alt="Figure 8. Compression by content type as a percent for desktop." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=673629979&amp;format=interactive">
   </a>
-  <div id="fig8-caption" class="visually-hidden">Figure 8. Compression by content type as a percent for desktop</div>
-  <figcaption>Figure 8. Compression by content type as a percent for desktop.</figcaption>
+  <div id="fig8-description" class="visually-hidden">Figure 8. Compression by content type as a percent for desktop</div>
+  <figcaption id="fig8-caption">Figure 8. Compression by content type as a percent for desktop.</figcaption>
 </figure>
 
 Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are `application/javascript`, `text/css` and `application/x-javascript`. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them. 
@@ -300,23 +293,21 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 62% of websites are passing this audit and almost 23% of websites have scored below a 40. This means that over 1.2 million websites could benefit from enabling additional text based compression.
 
 <figure>
-  	<iframe aria-labelledby="fig11-caption" width="760" height="330.50000000000006" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/15_Compression/fig11.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig11.png" aria-labelledby="fig11-caption" width="600">
+  <a href="/static/images/2019/15_Compression/fig11.png">
+    <img src="/static/images/2019/15_Compression/fig11.png" alt="Figure 11. Lighthouse 'enable text compression' audit scores." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="760" data-height="330.50000000000006" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&amp;format=interactive">
   </a>
-  <div id="fig11-caption" class="visually-hidden">Figure 11. Lighthouse "enable text compression" audit scores.</div>
-  <figcaption>Figure 11. Lighthouse "enable text compression" audit scores.</figcaption>
+  <div id="fig11-description" class="visually-hidden">Figure 11. Lighthouse "enable text compression" audit scores.</div>
+  <figcaption id="fig11-caption">Figure 11. Lighthouse "enable text compression" audit scores.</figcaption>
 </figure>
 
 Lighthouse also indicates how many bytes could be saved by enabling text-based compression. Of the sites that could benefit from text compression, 82% of them can reduce their page weight by up to 1 MB!
 
 <figure>
-  	<iframe aria-labelledby="fig12-caption" width="760" height="330.50000000000006" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=738657382&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/15_Compression/fig12.png" class="fig-mobile">
-    <img src="/static/images/2019/15_Compression/fig12.png" aria-labelledby="fig12-caption" width="600">
+  <a href="/static/images/2019/15_Compression/fig12.png">
+    <img src="/static/images/2019/15_Compression/fig12.png" alt="Figure 12. Lighthouse 'enable text compression' audit potential byte savings." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="760" data-height="330.50000000000006" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=738657382&amp;format=interactive">
   </a>
-  <div id="fig12-caption" class="visually-hidden">Figure 12. Lighthouse "enable text compression" audit potential byte savings./div>
-  <figcaption>Figure 12. Lighthouse "enable text compression" audit potential byte savings.</figcaption>
+  <div id="fig12-description" class="visually-hidden">Figure 12. Lighthouse "enable text compression" audit potential byte savings./div>
+  <figcaption id="fig12-caption">Figure 12. Lighthouse "enable text compression" audit potential byte savings.</figcaption>
 </figure>
 
 ## Conclusion

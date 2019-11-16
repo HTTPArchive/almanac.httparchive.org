@@ -60,12 +60,11 @@ For websites, a CDN can improve performance for the primary domain (`www.shoesby
 Historically, CDNs were used exclusively for static resources like [CSS](./css), [JavaScript](./javascript), and [images](./media). These resources would likely be versioned (include a unique number in the path) and cached long-term. In this way we should expect to see higher adoption of CDNs on sub-domains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that `www.shoesbycolin.com` would serve HTML directly from a datacenter (or ORIGIN) while `static.shoesbycolin.com` would use a CDN.
 
 <figure>
-  <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig1.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig1.png" aria-labelledby="fig1-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig1.png">
+    <img src="/static/images/2019/17_CDN/fig1.png" alt="Figure 1. CDN usage vs. origin-hosted resources." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive">
   </a>
-  <div id="fig1-caption" class="visually-hidden">Split of requests between origin and CDN, broken down by HTML, sub-resources and third-party content</div>
-  <figcaption>Figure 1. CDN usage vs. origin-hosted resources.</figcaption>
+  <div id="fig1-description" class="visually-hidden">Split of requests between origin and CDN, broken down by HTML, sub-resources and third-party content</div>
+  <figcaption id="fig1-caption">Figure 1. CDN usage vs. origin-hosted resources.</figcaption>
 </figure>
 
 Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of web pages (80%) serve the base HTML from ORIGIN. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely do to the small continued use of mobile specific web pages ("mDot"), which more frequently use a CDN.
@@ -663,12 +662,11 @@ According to Akamai, the adoption of SNI is [still not 100% globally](https://da
 Most CDNs balance the need for shared certificates and performance. Most cap the number of SANs between 100 and 150. This limit often derives from the certificate providers. For example, [LetsEncrypt](https://letsencrypt.org/docs/rate-limits/), [DigiCert](https://www.websecurity.digicert.com/security-topics/san-ssl-certificates), and [GoDaddy](https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate) all limit SAN certificates to 100 hostnames while [Comodo](https://comodosslstore.com/comodo-mdc-ssl.aspx)'s limit is 2,000. This, in turn, allows some CDNs to push this limit, cresting over 800 SANs on a single certificate. There is a strong negative correlation of TLS performance and the number of SANs on a certificate.
 
 <figure>
-  <iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig11.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig11.png" aria-labelledby="fig11-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig11.png">
+    <img src="/static/images/2019/17_CDN/fig11.png" alt="Figure 11. TLS SAN count for HTML." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive">
   </a>
-  <div id="fig11-caption" class="visually-hidden">Distribution showing the number of Subject-Alternative-Names per certificate for initial HTML request, broken down by CDN</div>
-  <figcaption>Figure 11. TLS SAN count for HTML.</figcaption>
+  <div id="fig11-description" class="visually-hidden">Distribution showing the number of Subject-Alternative-Names per certificate for initial HTML request, broken down by CDN</div>
+  <figcaption id="fig11-caption">Figure 11. TLS SAN count for HTML.</figcaption>
 </figure>
 
 <figure>
@@ -834,12 +832,11 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 </figure>
 
 <figure>
-  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig13.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig13.png" aria-labelledby="fig13-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig13.png">
+    <img src="/static/images/2019/17_CDN/fig13.png" alt="Figure 13. Resource SAN count (p50)." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive">
   </a>
-  <div id="fig13-caption" class="visually-hidden">Median number of Subject-Alternative-Names for sub-resource requests, broken down by CDN</div>
-  <figcaption>Figure 13. Resource SAN count (p50).</figcaption>
+  <div id="fig13-description" class="visually-hidden">Median number of Subject-Alternative-Names for sub-resource requests, broken down by CDN</div>
+  <figcaption id="fig13-caption">Figure 13. Resource SAN count (p50).</figcaption>
 </figure>
 
 <figure>
@@ -1017,32 +1014,29 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 In addition to using a CDN for TLS and RTT performance, CDNs are often used to ensure patching and adoption of TLS ciphers and TLS versions. In general, the adoption of TLS on the main HTML page is much higher for websites that use a CDN. Over 76% of HTML pages are served with TLS compared to the 62% from origin-hosted pages. 
 
 <figure>
-  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig15.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig15.png" aria-labelledby="fig15-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig15.png">
+    <img src="/static/images/2019/17_CDN/fig15.png" alt="Figure 15. HTML TLS version adoption (CDN vs. origin)." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive">
   </a>
-  <div id="fig15-caption" class="visually-hidden">Break down of TLS version used to establish secure connection for the initial HTML request but origin and CDN requests</div>
-  <figcaption>Figure 15. HTML TLS version adoption (CDN vs. origin).</figcaption>
+  <div id="fig15-description" class="visually-hidden">Break down of TLS version used to establish secure connection for the initial HTML request but origin and CDN requests</div>
+  <figcaption id="fig15-caption">Figure 15. HTML TLS version adoption (CDN vs. origin).</figcaption>
 </figure>
 
 Each CDN offers different rates of adoption for both TLS and the relative ciphers and versions offered. Some CDNs are more aggressive and roll out these changes to all customers whereas other CDNs require website owners to opt-in to the latest changes and offer change-management to facilitate these ciphers and versions.
 
 <figure>
-  <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig16.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig16.png" aria-labelledby="fig16-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig16.png">
+    <img src="/static/images/2019/17_CDN/fig16.png" alt="Figure 16. HTML TLS adoption by CDN." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive">
   </a>
-  <div id="fig16-caption" class="visually-hidden">Division of secure vs non-secure connections established for initial HTML request broken down by CDN</div>
-  <figcaption>Figure 16. HTML TLS adoption by CDN.</figcaption>
+  <div id="fig16-description" class="visually-hidden">Division of secure vs non-secure connections established for initial HTML request broken down by CDN</div>
+  <figcaption id="fig16-caption">Figure 16. HTML TLS adoption by CDN.</figcaption>
 </figure>
 
 <figure>
-  <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig17.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig17.png" aria-labelledby="fig17-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig17.png">
+    <img src="/static/images/2019/17_CDN/fig17.png" alt="Figure 17. Third-party TLS adoption by CDN." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive">
   </a>
-  <div id="fig17-caption" class="visually-hidden">Division of secure vs non-secure connections established for third-party requests broken down by CDN</div>
-  <figcaption>Figure 17. Third-party TLS adoption by CDN.</figcaption>
+  <div id="fig17-description" class="visually-hidden">Division of secure vs non-secure connections established for third-party requests broken down by CDN</div>
+  <figcaption id="fig17-caption">Figure 17. Third-party TLS adoption by CDN.</figcaption>
 </figure>
 
 Along with this general adoption of TLS, CDN use also sees higher adoption of emerging TLS versions like TLS 1.3. 
@@ -1052,12 +1046,11 @@ In general, the use of a CDN is highly correlated with a more rapid adoption of 
 <aside class="note">It is important to emphasize that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions.</aside> 
 
 <figure>
-  <iframe aria-labelledby="fig18-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig18.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig18.png" aria-labelledby="fig18-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig18.png">
+    <img src="/static/images/2019/17_CDN/fig18.png" alt="Figure 18. HTML TLS version by CDN." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive">
   </a>
-  <div id="fig18-caption" class="visually-hidden">Version of TLS used to establish connection for initial HTML request broken down by CDN</div>
-  <figcaption>Figure 18. HTML TLS version by CDN.</figcaption>
+  <div id="fig18-description" class="visually-hidden">Version of TLS used to establish connection for initial HTML request broken down by CDN</div>
+  <figcaption id="fig18-caption">Figure 18. HTML TLS version by CDN.</figcaption>
 </figure>
 
 More discussion of TLS versions and ciphers can be found in the [Security](./security) and [HTTP/2](./http2) chapters.
@@ -1071,21 +1064,19 @@ CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin page
 <aside class="note">NB: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</aside>
 
 <figure>
-  <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig19.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig19.png" aria-labelledby="fig19-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig19.png">
+    <img src="/static/images/2019/17_CDN/fig19.png" alt="Figure 19. HTTP/2 adoption (CDN vs. origin)." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive">
   </a>
-  <div id="fig19-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests via CDN, and site origins</div>
-  <figcaption>Figure 19. HTTP/2 adoption (CDN vs. origin).</figcaption>
+  <div id="fig19-description" class="visually-hidden">Comparison of HTTP/2 usage between requests via CDN, and site origins</div>
+  <figcaption id="fig19-caption">Figure 19. HTTP/2 adoption (CDN vs. origin).</figcaption>
 </figure>
 
 <figure>
-  <iframe aria-labelledby="fig20-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig20.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig20.png" aria-labelledby="fig20-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig20.png">
+    <img src="/static/images/2019/17_CDN/fig20.png" alt="Figure 20. HTML adoption of HTTP/2." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive">
   </a>
-  <div id="fig20-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests from initial HTML via CDN, and site origins</div>
-  <figcaption>Figure 20. HTML adoption of HTTP/2.</figcaption>
+  <div id="fig20-description" class="visually-hidden">Comparison of HTTP/2 usage between requests from initial HTML via CDN, and site origins</div>
+  <figcaption id="fig20-caption">Figure 20. HTML adoption of HTTP/2.</figcaption>
 </figure>
 
 <figure>
@@ -1281,12 +1272,11 @@ CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin page
 </figure>
 
 <figure>
-  <iframe aria-labelledby="fig22-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig22.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig22.png" aria-labelledby="fig22-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig22.png">
+    <img src="/static/images/2019/17_CDN/fig22.png" alt="Figure 22. HTML/2 adoption: third-party resources." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive">
   </a>
-  <div id="fig22-caption" class="visually-hidden">Comparison of HTTP/2 usage between requests from initial HTML via CDN, and site origins</div>
-  <figcaption>Figure 22. HTML/2 adoption: third-party resources.</figcaption>
+  <div id="fig22-description" class="visually-hidden">Comparison of HTTP/2 usage between requests from initial HTML via CDN, and site origins</div>
+  <figcaption id="fig22-caption">Figure 22. HTML/2 adoption: third-party resources.</figcaption>
 </figure>
 
 <figure>
@@ -1526,12 +1516,11 @@ Some CDNs support `post-check` as a method to allow a resource to refreshed when
 The `s-maxage` directive informs proxies for how long they may cache a response. Across the Web Almanac dataset, jsDelivr is the only CDN where a high level of usage was seen across multiple resources—this isn't surprising given jsDelivr's role as a public CDN for libraries. Usage across other CDNs seems to be driven by individual customers, for example third-party scripts or SaaS providers using that particular CDN.
 
 <figure>
-  <iframe aria-labelledby="fig18-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig26.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig26.png" aria-labelledby="fig26-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig26.png">
+    <img src="/static/images/2019/17_CDN/fig26.png" alt="Figure 26. Adoption of s-maxage across CDN responses." aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive">
   </a>
-  <div id="fig26-caption" class="visually-hidden">Comparison of s-maxage adoption across CDNs</div>
-  <figcaption>Figure 26. Adoption of <code>s-maxage</code> across CDN responses.</figcaption>
+  <div id="fig26-description" class="visually-hidden">Comparison of s-maxage adoption across CDNs</div>
+  <figcaption id="fig26-caption">Figure 26. Adoption of <code>s-maxage</code> across CDN responses.</figcaption>
 </figure>
 
 With 40% of sites using a CDN for resources, and presuming these resources are static and cacheable, the usage of `s-maxage` seems low.
@@ -1547,12 +1536,11 @@ Common libraries like jQuery and Bootstrap are also available from public CDNs h
 Google Fonts is the most popular of the content CDNs and is used by 55% of websites. For non-font content, Google API, Cloudflare's JS CDN, and the Bootstrap's CDN are the next most popular.
 
 <figure>
-  <iframe aria-labelledby="fig27-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive"></iframe>
-  <a href="/static/images/2019/17_CDN/fig27.png" class="fig-mobile">
-    <img src="/static/images/2019/17_CDN/fig27.png" aria-labelledby="fig27-caption" width="600">
+  <a href="/static/images/2019/17_CDN/fig27.png">
+    <img src="/static/images/2019/17_CDN/fig27.png" alt="Figure 27. Usage of public content CDNs." aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive">
   </a>
-  <div id="fig27-caption" class="visually-hidden">Most popular content CDNs</div>
-  <figcaption>Figure 27. Usage of public content CDNs.</figcaption>
+  <div id="fig27-description" class="visually-hidden">Most popular content CDNs</div>
+  <figcaption id="fig27-caption">Figure 27. Usage of public content CDNs.</figcaption>
 </figure>
 
 As more browsers implement partitioned caches, the effectiveness of public CDNs for hosting common libraries will decrease and it will be interesting to see whether they are less popular in future iterations of this research.
