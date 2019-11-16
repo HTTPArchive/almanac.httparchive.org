@@ -18,7 +18,7 @@ Perhaps the largest push to increasing security and privacy online we're seeing 
 
 <figure>
   <a href="/static/images/2019/08_Security/fig1.png">
-    <img src="/static/images/2019/08_Security/fig1.png" alt="Figure 1. Usage of HTTP versus HTTPS." aria-labelledby="fig1-caption" aria-labelledby="fig1-description" width="760" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive">
+    <img src="/static/images/2019/08_Security/fig1.png" alt="Figure 1. Usage of HTTP versus HTTPS." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="760" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">Horizontal bar chart showing mobile HTTPS at 79% and HTTP at 21%, and beneath that desktop HTTPS is 80.51% and HTTP is 19.49%</div>
   <figcaption id="fig1-caption" >Figure 1. Usage of HTTP versus HTTPS.</figcaption>
