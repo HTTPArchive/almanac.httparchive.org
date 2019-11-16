@@ -2,9 +2,10 @@
 //At the moment we base it on 600px break point matching CSS but it does not need to be the same
 function bigEnoughForInteractiveFigures() {
   if (!(window.matchMedia('(max-width: 600px)').matches)) {
-    console.log('Screen big enough for interactive visuals');
+    gtag('event', 'min-sheets-width', { 'event_category': 'user', 'event_label': 'true', 'value': 1 });
     return true;
   }
+  gtag('event', 'min-sheets-width', { 'event_category': 'user', 'event_label': 'enabfalseled', 'value': 0 });
   console.log('Screen too small for interactive visuals');
   return false;
 }
