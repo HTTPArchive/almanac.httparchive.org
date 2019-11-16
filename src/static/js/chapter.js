@@ -67,13 +67,15 @@ function googleSheetsPixelLoaded() {
 function googleSheetsPixelNotLoaded() {
   console.error('Google Sheets cannot be loaded');
 
+  this.parentElement.removeChild(this);
+
   var all_fig_imgs = document.querySelectorAll('figure .fig-mobile');
   for (index = 0; index < all_fig_imgs.length; ++index) {
     var fig_img = all_fig_imgs[index];
     fig_img.classList.remove("fig-mobile");
   }
 
-  var all_fig_iframes = document.querySelectorAll('figure iframe');
+  var all_fig_iframes = document.querySelectorAll('figure .fig-iframe');
   for (index = 0; index < all_fig_iframes.length; ++index) {
     var fig_iframe = all_fig_iframes[index];
     fig_iframe.parentElement.removeChild(fig_iframe);
@@ -104,6 +106,7 @@ function upgradeInteractiveFigures() {
 
           //Set up some default attributes
           iframe.setAttribute('title', fig_img.getAttribute('alt'));
+          iframe.setAttribute('class', 'fig-iframe');
           if (fig_img.getAttribute('aria-labelledby')) {
             iframe.setAttribute('aria-labelledby', fig_img.getAttribute('aria-labelledby'));
           }
