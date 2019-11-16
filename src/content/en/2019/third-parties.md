@@ -146,7 +146,7 @@ While 49% of requests are third-party, their share of the web in terms of bytes 
 Despite serving 57% of scripts, third parties comprise 64% of script bytes. meaning their scripts are larger on average than first-party scripts. This is an early warning sign for their performance impact to come in the next few sections.
 
 <figure>
-  <iframe aria-labelledby="fig7-caption" width="600" height="483.5" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive"></iframe>
+  <iframe aria-labelledby="fig7-caption" width="600" height="387" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive"></iframe>
   <a href="/static/images/2019/05_Third_Parties/fig7.png" class="fig-mobile">
     <img src="/static/images/2019/05_Third_Parties/fig7.png" aria-labelledby="fig7-caption" width="600">
   </a>
