@@ -58,12 +58,11 @@ tr | span | option
 </figure>
 
 <figure id="fig3">
-    <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig3.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig3.png" aria-labelledby="fig3-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig3.png">
+      <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Element frequencies as of 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
     </a>
-    <div id="fig3-caption" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
-  <figcaption>Figure 3. Element frequencies as of 2019.</figcaption>
+    <div id="fig3-description" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
+  <figcaption id="fig3-caption">Figure 3. Element frequencies as of 2019.</figcaption>
 </figure>
 
 Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Figure 2, we can see that the average size of DOM trees has gotten bigger.
@@ -74,12 +73,11 @@ Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Fig
 </figure>
 
 <figure id="fig5">
-    <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig5.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig5.png" aria-labelledby="fig5-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig5.png">
+      <img src="/static/images/2019/03_Markup/fig5.png" alt="Figure 5. Histogram of element types per page as of 2019." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
     </a>
-    <div id="fig5-caption" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
-  <figcaption>Figure 5. Histogram of element types per page as of 2019.</figcaption>
+    <div id="fig5-description" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
+  <figcaption d="fig5-caption">Figure 5. Histogram of element types per page as of 2019.</figcaption>
 </figure>
 
 We can see that both the average number of types of elements per page has increased, as well as the maximum numbers of unique elements that we encounter.
@@ -111,12 +109,11 @@ Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated el
 <aside class="note">Note: A lot of this is very likely due to the use of products rather than individual authors continuing to manually create this markup.</aside>
 
 <figure id="fig6">
-  <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig6.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig6.png" aria-labelledby="fig6-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig6.png">
+      <img src="/static/images/2019/03_Markup/fig6.png" alt="Figure 6. Most frequently used deprecated elements." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
     </a>
-    <div id="fig6-caption" class="visually-hidden">Figure 6. Most frequently used deprecated elements.</div>
-  <figcaption>Figure 6. Most frequently used deprecated elements.</figcaption>
+    <div id="fig6-description" class="visually-hidden">Figure 6. Most frequently used deprecated elements.</div>
+  <figcaption id="fig6-caption">Figure 6. Most frequently used deprecated elements.</figcaption>
 </figure>
 
 Figure 6 above shows the top 10 most frequently used deprecated elements. Most of these can seem like very small numbers, but perspective matters.
@@ -126,12 +123,11 @@ Figure 6 above shows the top 10 most frequently used deprecated elements. Most o
 In order to discuss numbers about the use of elements (standard, deprecated or custom), we first need to establish some perspective.
 
 <figure id="fig7">
-  <iframe aria-labelledby="fig7-caption" width="600" height="778" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig7.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig7.png" aria-labelledby="fig7-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig7.png">
+      <img src="/static/images/2019/03_Markup/fig7.png" alt="Figure 7. Top 150 elements." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
     </a>
-    <div id="fig7-caption" class="visually-hidden">Figure 7. Top 150 elements.</div>
-  <figcaption>Figure 7. Top 150 elements.</figcaption>
+    <div id="fig7-description" class="visually-hidden">Figure 7. Top 150 elements.</div>
+  <figcaption id="fig7-caption">Figure 7. Top 150 elements.</figcaption>
 </figure>
 
 In Figure 7 above, the top 150 element names, counting the number of pages where they appear, are shown. Note how quickly use drops off.
@@ -224,12 +220,11 @@ But there are plenty of newcomers that weren't in Hixie's original report too, a
 Let's compare these to a few of the native HTML elements that are below the 5% bar, for perspective.
 
 <figure id="fig9">
-  <iframe aria-labelledby="fig9-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig9.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig9.png" aria-labelledby="fig9-caption" width="600">
-    </a>
-  <div id="fig9-caption" class="visually-hidden">Figure 9. Popularity of product-specific and native elements under 5% adoption.</div>
-  <figcaption>Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
+  <a href="/static/images/2019/03_Markup/fig9.png">
+    <img src="/static/images/2019/03_Markup/fig9.png" alt="Figure 9. Popularity of product-specific and native elements under 5% adoption." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
+  </a>
+  <div id="fig9-description" class="visually-hidden">Figure 9. Popularity of product-specific and native elements under 5% adoption.</div>
+  <figcaption id="fig9-caption">Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
 </figure>
 
 You could discover interesting insights like these all day long.
@@ -251,12 +246,11 @@ There are some popular elements that are probably not so challenging:
 Placing these into our same chart as above for perspective looks something like this (again, it varies slightly based on the dataset)
 
 <figure id="fig10">
-  <iframe aria-labelledby="fig10-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig10.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig10.png" aria-labelledby="fig10-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig10.png">
+      <img src="/static/images/2019/03_Markup/fig10.png" alt="igure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
     </a>
-    <div id="fig10-caption" class="visually-hidden">Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</div>
-  <figcaption>Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</figcaption>
+    <div id="fig10-description" class="visually-hidden">Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</div>
+  <figcaption id="fig10-caption">Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</figcaption>
 </figure>
 
 The interesting thing about these results is that they also introduce a few other ways that our tool can come in very handy.  If we're interested in exploring the space of the data, a very specific tag name is just one possible measure.  It's definitely the strongest indicator if we can find good "slang" developing.  However, what if that's not all we're interested in?

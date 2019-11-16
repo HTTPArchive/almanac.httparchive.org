@@ -17,12 +17,11 @@ Images, animations, and videos are an important part of the web experience. They
 From a pure bytes perspective, HTTP Archive has historically reported an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every web page depends on images and videos. Even at the 10th percentile, we see that 43% of the bytes are from media and can rise to 91.3% of the total bytes at the 90th percentile of pages. 
 
 <figure>
-  <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig1.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig1.png" aria-labelledby="fig1-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig1.png">
+    <img src="/static/images/2019/04_Media/fig1.png" alt="Figure 1. Web Page Bytes: Image+Video vs. Other" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
   </a>
-  <div id="fig1-caption" class="visually-hidden">Breakdown of bytes required per Web Page showing a median 67% of bytes allocatd to images+video</div>
-  <figcaption>Figure 1. Web Page Bytes: Image+Video vs. Other</figcaption>
+  <div id="fig1-description" class="visually-hidden">Breakdown of bytes required per Web Page showing a median 67% of bytes allocatd to images+video</div>
+  <figcaption id="fig1-caption">Figure 1. Web Page Bytes: Image+Video vs. Other</figcaption>
 </figure>
 
 While media is critical for the visual experience, the impact of this high volume of bytes has two side effects. First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an uber) can dramatically slow down the page performance. Images are a lower priority request by the browser, but can easily block CSS and JavaScript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual cue to the user that the page is ready. Slow transfers of visual content, therefore, can give the preception of a slow web page.
@@ -32,12 +31,11 @@ The second impact is on the financial cost to the user. This is often an ignored
 Further, the financial cost of visiting these websites in different parts of the world is disproportionate. At the median and 90th percentile, the volume of image bytes is 1MB and 1.9MB respectively. Using [WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost) we can see that the GNI per capita cost to a user in Madagascar a single web page load at the 90th percentile would cost 2.6% of the daily gross income. By contrast, in Germany this would be 0.3% of the daily gross income.  
 
 <figure>
-  <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig2.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig2.png" aria-labelledby="fig2-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig2.png">
+    <img src="/static/images/2019/04_Media/fig2.png" alt="Figure 2. Total Image Bytes Per Web Page (Mobile)" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive">
   </a>
-  <div id="fig2-caption" class="visually-hidden">The median webpage on mobile requires 1MB of images and 4.9MB at the 90th percentile.</div>
-  <figcaption>Figure 2. Total Image Bytes Per Web Page (Mobile)</figcaption>
+  <div id="fig2-description" class="visually-hidden">The median webpage on mobile requires 1MB of images and 4.9MB at the 90th percentile.</div>
+  <figcaption id="fig2-caption">Figure 2. Total Image Bytes Per Web Page (Mobile)</figcaption>
 </figure>
 
 Looking at bytes per page results in just looking at the costs - to page performance and the user - but it overlooks the benefits. These bytes are important to render pixels on the screen. As such, we can see the importance of the images and video resources by also looking at the number of media pixels used per page.
@@ -52,12 +50,11 @@ Looking at the CSS pixel and the Natural pixel volume we can see that the median
 In contrast, the natural, or file, pixel volume is between 2 and 2.6 times the layout volume. The median desktop web page sends 2.1MP of pixel content that is displayed in 1.1MP of layout space. At the 90th percentile for mobile we see 12MP squeezed into 4.6MP.  
  
  <figure>
-  <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig3.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig3.png" aria-labelledby="fig3-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig3.png">
+    <img src="/static/images/2019/04_Media/fig3.png" alt="Figure 3. Image Pixels Per Page (Mobile): CSS v. Actual" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive">
   </a>
-  <div id="fig3-caption" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels</div>
-  <figcaption>Figure 3. Image Pixels Per Page (Mobile): CSS v. Actual</figcaption>
+  <div id="fig3-description" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels</div>
+  <figcaption id="fig3-caption" >Figure 3. Image Pixels Per Page (Mobile): CSS v. Actual</figcaption>
 </figure>
 
 **Mobile Image Pixels Per Web Page in MegaPixels**
@@ -71,12 +68,11 @@ _(512x360 @3x)_
 </figure>
 
 <figure>
-  <iframe aria-labelledby="fig4-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig4.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig4.png" aria-labelledby="fig4-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig4.png">
+    <img src="/static/images/2019/04_Media/fig4.png" alt="Figure 4. Image Pixels Per Page (Desktop): CSS v. Actual" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
   </a>
-  <div id="fig4-caption" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels</div>
-  <figcaption>Figure 4. Image Pixels Per Page (Desktop): CSS v. Actual</figcaption>
+  <div id="fig4-description" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels</div>
+  <figcaption id="fig4-caption">Figure 4. Image Pixels Per Page (Desktop): CSS v. Actual</figcaption>
 </figure>
 
 **Desktop Image Pixels Per Web Page (in MegaPixels)**
@@ -102,12 +98,11 @@ If we had one image that filled the entire screen perfectly, this would be a 1x 
 > NB: this is only looking at the CSS layout for both the viper and the volume of layout content. It is not evaluating the effectiveness of the responsive images or the effectiveness of providing high DPR content. 
 
 <figure>
-  <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig5.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig5.png" aria-labelledby="fig5-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig5.png">
+    <img src="/static/images/2019/04_Media/fig5.png" alt="Figure 5. Image Pixel Volume v. Screen Size (CSS Pixels)" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive">
   </a>
-  <div id="fig5-caption" class="visually-hidden">A comparison of the pixel volume required per page relative to the actual screen size in CSS pixels.</div>
-  <figcaption>Figure 5. Image Pixel Volume v. Screen Size (CSS Pixels)</figcaption>
+  <div id="fig5-description" class="visually-hidden">A comparison of the pixel volume required per page relative to the actual screen size in CSS pixels.</div>
+  <figcaption id="fig5-caption">Figure 5. Image Pixel Volume v. Screen Size (CSS Pixels)</figcaption>
 </figure>
 
 <figure markdown>
@@ -174,12 +169,11 @@ In aggregate, across all page, we indeed see the prevalence of these formats. JP
 Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of Google.com and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images and 61 at the 90th percentile and a whopping 229 at the 99th percentile.
 
 <figure>
-  <iframe aria-labelledby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig7.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig7.png" aria-labelledby="fig7-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig7.png">
+    <img src="/static/images/2019/04_Media/fig7.png" alt="Figure 7. Image Format Usage Per Page" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive">
   </a>
-  <div id="fig7-caption" class="visually-hidden">A comparison of the Image Formats used per page</div>
-  <figcaption>Figure 7. Image Format Usage Per Page</figcaption>
+  <div id="fig7-description" class="visually-hidden">A comparison of the Image Formats used per page</div>
+  <figcaption id="fig7-caption">Figure 7. Image Format Usage Per Page</figcaption>
 </figure>
 
 **Image Format Usage Per Page**
@@ -197,12 +191,11 @@ Of course, web pages are not uniform in their use of image content. Some depend 
 While the median page has 9 jpegs and 4 pngs, and only in the top 25% pages where use gifs, this doesn’t report the adoption rate. The use and frequency of each format per page doesn’t provide insight into the adoption of the more modern formats. Specifically, what % of pages include at least one image in each format?
 
 <figure>
-  <iframe aria-labelledby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig8.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig8.png" aria-labelledby="fig8-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig8.png">
+    <img src="/static/images/2019/04_Media/fig8.png" alt="Figure 8. % of Pages Using At Least 1 Image" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive">
   </a>
-  <div id="fig8-caption" class="visually-hidden">A comparison of image formats in use on webpages where there is at least 1 occurance.</div>
-  <figcaption>Figure 8. % of Pages Using At Least 1 Image</figcaption>
+  <div id="fig8-description" class="visually-hidden">A comparison of image formats in use on webpages where there is at least 1 occurance.</div>
+  <figcaption id="fig8-caption">Figure 8. % of Pages Using At Least 1 Image</figcaption>
 </figure>
 
 This helps explain why even at the 90th percentile of pages the frequency of webp is still zero - only 9% of web pages have even 1 resource. There are many reasons that webp might not be the right choice for an image, but adoption of media best practices like adoption of webp still remain nascent. 
@@ -233,12 +226,11 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
 From this we can start to get a sense of how large or small a typical resource is on the web. However, this doesn’t give us a sense of the volume of pixels represented on screen for these file distributions. To do this we can divide each resource bytes by the natural pixel volume of the image. A lower Bytes-Per-Pixel indicates a more efficient transmission of visual content.
 
  <figure>
-  <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig10.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig10.png" aria-labelledby="fig10-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig10.png">
+    <img src="/static/images/2019/04_Media/fig10.png" alt="Figure 10. Bytes per Pixel" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive">
   </a>
-  <div id="fig10-caption" class="visually-hidden">A comparison of the bytes required to contain a single image pixel.</div>
-  <figcaption>Figure 10. Bytes per Pixel</figcaption>
+  <div id="fig10-description" class="visually-hidden">A comparison of the bytes required to contain a single image pixel.</div>
+  <figcaption id="fig10-caption">Figure 10. Bytes per Pixel</figcaption>
 </figure>
 
 <figure markdown>
@@ -268,23 +260,21 @@ While other format features simply organize the content and sometimes requires c
 One Lighthouse test is an A/B comparing baseline with a progressively encoded JPEG. This provides a smell to indicate whether the images overall can be further optimized with lossless techniques and potentially with lossy techniques like using different quality levels.  
 
  <figure>
-  <iframe aria-labelledby="fig11-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767"></iframe>
-  <a href="/static/images/2019/04_Media/fig11.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig11.png" aria-labelledby="fig11-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig11.png">
+    <img src="/static/images/2019/04_Media/fig11.png" alt="Figure 11. Percent 'Optimized' Images" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767">
   </a>
-  <div id="fig11-caption" class="visually-hidden">Using lighthouse's non destructive image optimization.</div>
-  <figcaption>Figure 11. Percent "Optimized" Images</figcaption>
+  <div id="fig11-description" class="visually-hidden">Using lighthouse's non destructive image optimization.</div>
+  <figcaption id="fig11-caption">Figure 11. Percent "Optimized" Images</figcaption>
 </figure>
 
 The savings in this AB Lighthouse test is not just about potential byte savings, which can accrue to several MBs at the p95, it also demonstrates the page performance improvement. 
 
  <figure>
-  <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"></iframe>
-  <a href="/static/images/2019/04_Media/fig12.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig12.png" aria-labelledby="fig12-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig12.png">
+    <img src="/static/images/2019/04_Media/fig12.png" alt="Figure 12. Projected Page Performance from Lighthouse" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779">
   </a>
-  <div id="fig12-caption" class="visually-hidden">Using lighthouse's image optimization for jpeg, we can estimate the expected page performance.</div>
-  <figcaption>Figure 12. Projected Page Performance from Lighthouse</figcaption>
+  <div id="fig12-description" class="visually-hidden">Using lighthouse's image optimization for jpeg, we can estimate the expected page performance.</div>
+  <figcaption id="fig12-caption">Figure 12. Projected Page Performance from Lighthouse</figcaption>
 </figure>
 
 ### Responsive Images
@@ -298,12 +288,11 @@ Another axis for improving page performance is to apply Responsive Images. This 
 The most common method to implement Responsive Images is to build a list of alternative images using either `<img srcset>` or `<source srcset>`. If the srcset is based on DPR the browser can select the correct from the list without additional information. However, most implementations also use `<img sizes>` to help instruct the browser how to perform the necessary layout calculation to select the correct image in the srcset based on pixel dimensions. The notably lower use of `<picture>` is not surprising given that it is used most often for advanced RWD layouts like Art Direction. 
 
  <figure>
-  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig13.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig13.png" aria-labelledby="fig13-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig13.png">
+    <img src="/static/images/2019/04_Media/fig13.png" alt="Figure 13. Percent of Pages using Responsive Images with HTML" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive">
   </a>
-  <div id="fig13-caption" class="visually-hidden">An comparison of HTML approaches to implement responsive images.</div>
-  <figcaption>Figure 13. Percent of Pages using Responsive Images with HTML</figcaption>
+  <div id="fig13-description" class="visually-hidden">An comparison of HTML approaches to implement responsive images.</div>
+  <figcaption id="fig13-caption">Figure 13. Percent of Pages using Responsive Images with HTML</figcaption>
 </figure>
 
 
@@ -331,12 +320,11 @@ The utility of SrcSet is usually dependent on the precision of the Sizes media q
 * `<img sizes=”auto”>` this is the most popular use which is actually non standard and is an artifact of the use of the lazy_sizes JavaScript library. This uses client side code to inject a better sizes calculation for the browser. The downside of this is that it depends on the JavaScript loading and DOM to be fully ready, delaying image loading substantially. 
 
  <figure>
-  <iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig14.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig14.png" aria-labelledby="fig14-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig14.png">
+    <img src="/static/images/2019/04_Media/fig14.png" alt="Figure 14. Top Patterns of '&lt;img sizes&gt;'" aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive">
   </a>
-  <div id="fig14-caption" class="visually-hidden">Top values found in the sizes attribute.</div>
-  <figcaption>Figure 14. Top Patterns of <code>&lt;img sizes></code></figcaption>
+  <div id="fig14-description" class="visually-hidden">Top values found in the sizes attribute.</div>
+  <figcaption id="fig14-caption">Figure 14. Top Patterns of <code>&lt;img sizes&gt;</code></figcaption>
 </figure>
 
 ### Client Hints
@@ -348,23 +336,21 @@ To enable Client Hints, the web page must signal to the browser using either an 
 The use of the `<meta>` tag in HTML to invoke Client Hints is far more common compared with the HTTP Header. This is likely a reflection of the convenience to modify markup templates compared to adding HTTP headers in middle boxes. However, looking at the usage of the HTTP header, over 50% of these cases are from a single SaaS platform (Mercado). 
 
 <figure>
-  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig15.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig15.png" aria-labelledby="fig15-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig15.png">
+    <img src="/static/images/2019/04_Media/fig15.png" alt="Figure 15. Usage of the Accept-CH: HTTP v. HTML" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive">
   </a>
-  <div id="fig15-caption" class="visually-hidden">A comparison of the adoption of the Accept-CH signal to enable client hints in HTTP and HTML</div>
-  <figcaption>Figure 15. Usage of the Accept-CH: HTTP v. HTML</figcaption>
+  <div id="fig15-description" class="visually-hidden">A comparison of the adoption of the Accept-CH signal to enable client hints in HTTP and HTML</div>
+  <figcaption id="fig15-caption">Figure 15. Usage of the Accept-CH: HTTP v. HTML</figcaption>
 </figure>
 
 Of the Client Hints invoked, the majority of pages use it for the original three use-cases of DPR, ViewportWidth and Width. Of course, the Width Client Hint that requires the use `<img sizes>` for the browser to have enough context about the layout. 
 
 <figure>
-  <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig16.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig16.png" aria-labelledby="fig16-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig16.png">
+    <img src="/static/images/2019/04_Media/fig16.png" alt="Figure 16. Enabled Client Hints" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive">
   </a>
-  <div id="fig16-caption" class="visually-hidden">A comparison of the Client Hints that are enabled on web pages</div>
-  <figcaption>Figure 16. Enabled Client Hints</figcaption>
+  <div id="fig16-description" class="visually-hidden">A comparison of the Client Hints that are enabled on web pages</div>
+  <figcaption id="fig16-caption">Figure 16. Enabled Client Hints</figcaption>
 </figure>
 
 The network related Client Hints - Downlink, RTT, and ECT - are only available on Android Chrome. 
@@ -376,12 +362,11 @@ Improving Web Page performance can be partially characterized as a game of illus
 In the above figures we can plainly see that the volume of image content at the 75th percentile is far more than could theoretically be shown in a single desktop or mobile viewport. The Offscreen Lighthouse audit confirms this suspicion. The median webpage has 27% of image content significantly below the fold. This grows to 84% at the 90th percentile. 
 
 <figure>
-  <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig17.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig17.png" aria-labelledby="fig17-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig17.png">
+    <img src="/static/images/2019/04_Media/fig17.png" alt="Figure 17. Lighthouse Audit: Offscreen" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
   </a>
-  <div id="fig7-caption" class="visually-hidden">A comparison of the Lighthouse Audit for Offscreen content</div>
-  <figcaption>Figure 17. Lighthouse Audit: Offscreen</figcaption>
+  <div id="fig7-description" class="visually-hidden">A comparison of the Lighthouse Audit for Offscreen content</div>
+  <figcaption id="fig7-caption">Figure 17. Lighthouse Audit: Offscreen</figcaption>
 </figure>
 
 The Lighthouse audit provides us a smell as there are a number of situations that can provide tricky to detect such as the use of quality placeholders. 
@@ -404,12 +389,11 @@ While images dominate the media being served on web pages, videos are beginning 
 Video can be delivered with many different formats, and players.  The dominant formats for mobile and desktop are .ts (segments of HLS streaming) and .mp4 (the H264 MPEG):
 
 <figure>
-  <iframe aria-labelledby="fig19-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig19.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig19.png" aria-labelledby="fig19-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig19.png">
+    <img src="/static/images/2019/04_Media/fig19.png" alt="Figure 19. Count of Video Files by Extension" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive">
   </a>
-  <div id="fig19-caption" class="visually-hidden">A comparison of the Video File extensions</div>
-  <figcaption>Figure 19. Count of Video Files by Extension</figcaption>
+  <div id="fig19-description" class="visually-hidden">A comparison of the Video File extensions</div>
+  <figcaption id="fig19-caption">Figure 19. Count of Video Files by Extension</figcaption>
 </figure>
 
 Other formats that are seen include webm, mov, m4s, and m4v (MPEG-DASH streaming segments).  It is clear that the majority of streaming on the web is HLS, and that the major format for static videos is the mp4.
@@ -417,12 +401,11 @@ Other formats that are seen include webm, mov, m4s, and m4v (MPEG-DASH streaming
 The median video size for each format is shown below:
 
 <figure>
-  <iframe aria-labelledby="fig20-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig20.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig20.png" aria-labelledby="fig20-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig20.png">
+    <img src="/static/images/2019/04_Media/fig20.png" alt="Figure 20. Median File Size by Video Extension" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive">
   </a>
-  <div id="fig20-caption" class="visually-hidden">A comparison of the Video file sizes by extensions</div>
-  <figcaption>Figure 20. Median File Size by Video Extension</figcaption>
+  <div id="fig20-description" class="visually-hidden">A comparison of the Video file sizes by extensions</div>
+  <figcaption id="fig20-caption">Figure 20. Median File Size by Video Extension</figcaption>
 </figure>
 
 The median values are smaller on mobile, which probably just means that some sites that have very large videos on the desktop disable them for mobile, and that video streams serve smaller versions of videos to smaller screens
@@ -432,12 +415,11 @@ The median values are smaller on mobile, which probably just means that some sit
 When delivering video on the web, most videos are delivered with the HTML5 video player. The HTML video player is extremely customizable to deliver video for many different purposes. For example, to autoplay a video, the parameters “autoplay” and “muted” would be added.  The ‘controls’ attribute allows the user to start/stop and scan through the video.  By parsing the video tags in the HTTP Archive, we’re able to see the usage of each of these attributes:
 
 <figure>
-  <iframe aria-labelledby="fig21-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig21.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig21.png" aria-labelledby="fig21-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig21.png">
+    <img src="/static/images/2019/04_Media/fig21.png" alt="Figure 21. Usage of HTML Video tag attributes" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive">
   </a>
-  <div id="fig21-caption" class="visually-hidden">A comparison of the HTML video tag attributes and their respective usage</div>
-  <figcaption>Figure 21. Usage of HTML Video tag attributes</figcaption>
+  <div id="fig21-description" class="visually-hidden">A comparison of the HTML video tag attributes and their respective usage</div>
+  <figcaption id="fig21-caption">Figure 21. Usage of HTML Video tag attributes</figcaption>
 </figure>
 
 The most common attributes are autoplay, muted and loop, followed by the preload tag and width and height.  The use of the loop attribute is used in background videos, and also when videos are used to replace animated GIFs, so it is not surprising to see that it is often used on website home pages.  
@@ -451,12 +433,11 @@ From an accessibility point of view, the `<track>` tag can be used to add captio
 For more advanced playback (and to play video streams), the HTML5 native video player will not work.  There are a few popular video libraries that are used to playback the video:
 
 <figure>
-  <iframe aria-labelledby="fig22-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive"></iframe>
-  <a href="/static/images/2019/04_Media/fig22.png" class="fig-mobile">
-    <img src="/static/images/2019/04_Media/fig22.png" aria-labelledby="fig22-caption" width="600">
+  <a href="/static/images/2019/04_Media/fig22.png">
+    <img src="/static/images/2019/04_Media/fig22.png" alt="Figure 22. Top Javascript Video Players" aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive">
   </a>
-  <div id="fig22-caption" class="visually-hidden">A comparison of popularity of different javascript based video players</div>
-  <figcaption>Figure 22. Top Javascript Video Players</figcaption>
+  <div id="fig22-description" class="visually-hidden">A comparison of popularity of different javascript based video players</div>
+  <figcaption id="fig22-caption">Figure 22. Top Javascript Video Players</figcaption>
 </figure>
 
 
