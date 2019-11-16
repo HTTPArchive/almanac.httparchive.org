@@ -1,3 +1,14 @@
+//Check if the screen meets minimum size requirements for Interactive figures
+//At the moment we base it on 600px break point matching CSS but it does not need to be the same
+function bigEnoughForInteractiveFigures() {
+  if (!(window.matchMedia('(max-width: 600px)').matches)) {
+    console.log('Screen big enough for interactive visuals');
+    return true;
+  }
+  console.log('Screen too small for interactive visuals');
+  return false;
+}
+
 //Data Save can be set to on, so let's check it
 function dataSaverEnabled() {
   var dataSaver = false;
@@ -76,7 +87,7 @@ function googleSheetsPixelNotLoaded() {
 function upgradeInteractiveFigures() {
 
   try {
-    if (highResolutionCanvasSupported() && !dataSaverEnabled()) {
+    if (bigEnoughForInteractiveFigures() && highResolutionCanvasSupported() && !dataSaverEnabled()) {
 
       console.log('Upgrading to interactive figures');
 
@@ -150,7 +161,7 @@ function setDiscussionCount() {
             return;
           }
 
-          var comments = +r.posts_count - 1;
+          var comments = + response.posts_count - 1;
           if (isNaN(comments)) {
             return;
           }
