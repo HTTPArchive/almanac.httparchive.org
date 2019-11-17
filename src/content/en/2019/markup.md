@@ -53,30 +53,32 @@ tr | span | option
 ### Elements per page
 
 <figure id="fig2">
-  <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution of Hixie's 2005 analysis of element frequencies" width="600">
-  <figcaption>Figure 2. Distribution of Hixie's 2005 analysis of element frequencies.</figcaption>
+  <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution of Hixie's 2005 analysis of element frequencies" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600">
+    <div id="fig2-description" class="visually-hidden">Graph showing a decreasing distribution of relative frequency as the number of elements increases</div>
+  <figcaption id="fig2-caption">Figure 2. Distribution of Hixie's 2005 analysis of element frequencies.</figcaption>
 </figure>
 
 <figure id="fig3">
-    <a href="/static/images/2019/03_Markup/fig3.png">
-      <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Element frequencies as of 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
-    </a>
-    <div id="fig3-description" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
+  <a href="/static/images/2019/03_Markup/fig3.png">
+    <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Element frequencies as of 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
+  </a>
+  <div id="fig3-description" class="visually-hidden">Graph showing about 2,500 pages start with approximately 30 elements, this increases peaking at 6,876 pages have 283 elements, before trailing fairly linearly to 327 pages having 2,00 elements.</div>
   <figcaption id="fig3-caption">Figure 3. Element frequencies as of 2019.</figcaption>
 </figure>
 
 Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Figure 2, we can see that the average size of DOM trees has gotten bigger.
 
 <figure id="fig4">
-      <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" width="600">
-  <figcaption>Figure 4. Histogram of Hixie's 2005 analysis of element types per page.</figcaption>
+  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600">
+   <div id="fig4-description" class="visually-hidden">Graph that relative frequency is a bell curve around the 19 elements point.</div>
+  <figcaption id="fig4-caption">Figure 4. Histogram of Hixie's 2005 analysis of element types per page.</figcaption>
 </figure>
 
 <figure id="fig5">
     <a href="/static/images/2019/03_Markup/fig5.png">
       <img src="/static/images/2019/03_Markup/fig5.png" alt="Figure 5. Histogram of element types per page as of 2019." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
     </a>
-    <div id="fig5-description" class="visually-hidden">Figure 3. Element frequencies as of 2019.</div>
+    <div id="fig5-description" class="visually-hidden">Graph showing the average number of elements is a bell curve around the 30 elements marked, as used by 308,168 thousand sites.</div>
   <figcaption d="fig5-caption">Figure 5. Histogram of element types per page as of 2019.</figcaption>
 </figure>
 
@@ -112,7 +114,7 @@ Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated el
     <a href="/static/images/2019/03_Markup/fig6.png">
       <img src="/static/images/2019/03_Markup/fig6.png" alt="Figure 6. Most frequently used deprecated elements." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
     </a>
-    <div id="fig6-description" class="visually-hidden">Figure 6. Most frequently used deprecated elements.</div>
+    <div id="fig6-description" class="visually-hidden">Bar chart showing 'center' in use by 8.31% of desktop sites (7.96% of mobile), 'font' in use by 8.01% of desktop sites (7.38% of mobile), 'marquee' in use by 1.07% of desktop sites (1.20% of mobile), 'nobr' in use by 0.71% of desktop sites (0.55% of mobile), 'big' in use by 0.53% of desktop sites (0.47% of mobile), 'frameset' in use by 0.39% of desktop sites (0.35% of mobile), 'frame' in use by 0.39% of desktop sites (0.35% of mobile), 'strike' in use by 0.33% of desktop sites (0.27% of mobile), and 'noframes' in use by 0.25% of desktop sites (0.27% of mobile).</div>
   <figcaption id="fig6-caption">Figure 6. Most frequently used deprecated elements.</figcaption>
 </figure>
 
@@ -126,7 +128,7 @@ In order to discuss numbers about the use of elements (standard, deprecated or c
     <a href="/static/images/2019/03_Markup/fig7.png">
       <img src="/static/images/2019/03_Markup/fig7.png" alt="Figure 7. Top 150 elements." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
     </a>
-    <div id="fig7-description" class="visually-hidden">Figure 7. Top 150 elements.</div>
+    <div id="fig7-description" class="visually-hidden">Bar chart showing a decreasing used of elements in descending order: html, head, body, title at above 99% usage, meta, a, div above 98% usage, link, script, imge, span above 90% usage, ul, li , p, style, input, br, form above 70% usage, h2, h1, iframe, h3, button, footer, header, nav above 50% usage and other less well-known tags trailing down from below 50% to almost 0% usage.</div>
   <figcaption id="fig7-caption">Figure 7. Top 150 elements.</figcaption>
 </figure>
 
@@ -172,9 +174,9 @@ It's interesting, then, to see what the distribution of these elements looks lik
 
 <figure id="fig8">
   <a href="https://rainy-periwinkle.glitch.me/scatter/html">
-    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Element popularity categorized by standardization" width="600">
+    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Element popularity categorized by standardization" aria-labelledby="fig8-caption" width="600">
   </a>
-  <figcaption>Figure 8. Element popularity categorized by standardization.</figcaption>
+  <figcaption id="fig8-caption">Figure 8. Element popularity categorized by standardization.</figcaption>
 </figure>
 
 Figure 8 shows the rank of each element and which category they fall into.  I've separated the data points into discrete sets simply so that they can be viewed (otherwise there just aren't enough pixels to capture all that data), but they represent a single 'line' of popularity; the bottom-most being the most common, the top-most being the least common.  The arrow points to the end of elements that appear in more than 1% of the pages.
@@ -223,7 +225,7 @@ Let's compare these to a few of the native HTML elements that are below the 5% b
   <a href="/static/images/2019/03_Markup/fig9.png">
     <img src="/static/images/2019/03_Markup/fig9.png" alt="Figure 9. Popularity of product-specific and native elements under 5% adoption." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
   </a>
-  <div id="fig9-description" class="visually-hidden">Figure 9. Popularity of product-specific and native elements under 5% adoption.</div>
+  <div id="fig9-description" class="visually-hidden">Bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure (a product-specific tag) byt 52,146, code by 25,075, g:plusone (a product-specific tag) by 21,098, fb:like (a product-specific tag) by 12,773, fb:like-box (a product-specific tag) by 6,792, app-root (a product-specific tag) by 8,468, summary by 6,578, template by 5,913, and meter by 0.</div>
   <figcaption id="fig9-caption">Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
 </figure>
 
@@ -249,7 +251,7 @@ Placing these into our same chart as above for perspective looks something like 
     <a href="/static/images/2019/03_Markup/fig10.png">
       <img src="/static/images/2019/03_Markup/fig10.png" alt="igure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
     </a>
-    <div id="fig10-description" class="visually-hidden">Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</div>
+    <div id="fig10-description" class="visually-hidden">A bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure by 52,416, code by 25,075, g:plusone by 21,098, db:like by 12,773, cufon by 10,523, ymaps by 8,303, fb:like-box by 6,972, app-root by 8,468, summary by 6,578, template by 5,913, and meter by 0</div>
   <figcaption id="fig10-caption">Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</figcaption>
 </figure>
 
