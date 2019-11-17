@@ -148,7 +148,7 @@ Each format has its own merits and has ideal uses for the web. A very simplified
  </tbody>
  </table>
 
- <figcaption>Figure 6. Explanation of the mainstream file formats<figcaption>
+ <figcaption>Figure 6. Explanation of the mainstream file formats</figcaption>
 </figure>
   
 ### Image formats
@@ -170,7 +170,7 @@ Of course, web pages are not uniform in their use of image content. Some depend 
   <a href="/static/images/2019/04_Media/fig8_image_format_usage_per_page.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig8_image_format_usage_per_page.png" alt="Figure 8. Image format usage per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600">
   </a>
-  <div id="fig8-description" class="visually-hidden">A bar chart showing in p10 percentile no image formats are used at all, in the p25 percentile three JPGs and four PNGs are used, in the p50 percentile nine JPGs, four PNGs, and one GIF are used, in th p75 percentile 39 JPEGs, 18 PNGs, two SVGs, and two GIFs are used and in the p99 percentile, 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs and 14 GIFs are used.</div>
+  <div id="fig8-description" class="visually-hidden">A bar chart showing in p10 percentile no image formats are used at all, in the p25 percentile three JPGs and four PNGs are used, in the p50 percentile nine JPGs, four PNGs, and one GIF are used, in the p75 percentile 39 JPEGs, 18 PNGs, two SVGs, and two GIFs are used and in the p99 percentile, 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs and 14 GIFs are used.</div>
   <figcaption id="fig8-caption">Figure 8. Image format usage per page.</figcaption>
 </figure>
 
@@ -195,7 +195,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
   <a href="/static/images/2019/04_Media/fig10_image_format_size.png">
     <img alt="A comparison of image formats by file size" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/04_Media/fig10_image_format_size.png" width="600">
   </a>
-  <div id="fig10-description" class="visually-hidden">A chart showing in p10 percentile 4 KB of JPEGs, 2 KB of PNG and 2 KB og GIFs are used, in the p25 percentile 9 KB JPGs, 4 KB of PNGs, 7 KB of WebP, and 3 KB of GIFs are used, in the p50 percentile 24 KB of JPGs, 11 KB of PNGs, 17 Kb of WebP, 6 KB of GIFs, and 1 KB of SVGs are used, in th p75 percentile 68 KB of JPEGs, 43 KB of PNGs, 41 Kb of WebPs, 17 KB of GIFs and 2 Kb of SVGs are used and in the p90 percentile, 116 KB of JPGs, 152 KB of PNGs, 90 KB of WebPs, 87 KB of GIFs, and 8 KB of SVGs are used.</div>
+  <div id="fig10-description" class="visually-hidden">A chart showing in p10 percentile 4 KB of JPEGs, 2 KB of PNG and 2 KB of GIFs are used, in the p25 percentile 9 KB JPGs, 4 KB of PNGs, 7 KB of WebP, and 3 KB of GIFs are used, in the p50 percentile 24 KB of JPGs, 11 KB of PNGs, 17 KB of WebP, 6 KB of GIFs, and 1 KB of SVGs are used, in the p75 percentile 68 KB of JPEGs, 43 KB of PNGs, 41 KB of WebPs, 17 KB of GIFs and 2 KB of SVGs are used and in the p90 percentile, 116 KB of JPGs, 152 KB of PNGs, 90 KB of WebPs, 87 KB of GIFs, and 8 KB of SVGs are used.</div>
   <figcaption id="fig10-caption">Figure 10. File size by image format.</figcaption>
 </figure>
 
@@ -206,7 +206,7 @@ From this we can start to get a sense of how large or small a typical resource i
   <a href="/static/images/2019/04_Media/fig11_bytes_per_pixel.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig11_bytes_per_pixel.png" alt="Figure 11. Bytes per pixel." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600">
   </a>
-  <div id="fig11-description" class="visually-hidden">A candelstick chart showing in p10 percentile we have 0.1175 bytes-per-pixel for JPEG, 0.1197 for PNG, 0.1702 for GIF, 0.0586 for WebP, and 0.0293 for SVG. In the p25 percentile we have 0.1848 bytes-per-pixel for JPEGs, 0.2874 for PNG, 0.3641 for GIF, 0.1025 for WebP, and 0.174 for SVG. In the p50 percentile we have 0.2997 bytes-per-pixel for JPEGs, 0.6918 for PNG, 0.7967 for GIF, 0.183 for WebP, and 0.6766 for SVG. In the p75 percentile we have 0.5456 bytes-per-pixel for JPEGs, 1.4548 for PNG, 2.515 for GIF, 0.3272 for WebP, and 1.9261 for SVG. In the p90 percentile we have 0.9822 bytes-per-pixel for JPEGs, 2.5026 for PNG, 8.5151 for GIF, 0.6474 for WebP, and 4.1075 for SVG</div>
+  <div id="fig11-description" class="visually-hidden">A candlestick chart showing in p10 percentile we have 0.1175 bytes-per-pixel for JPEG, 0.1197 for PNG, 0.1702 for GIF, 0.0586 for WebP, and 0.0293 for SVG. In the p25 percentile we have 0.1848 bytes-per-pixel for JPEGs, 0.2874 for PNG, 0.3641 for GIF, 0.1025 for WebP, and 0.174 for SVG. In the p50 percentile we have 0.2997 bytes-per-pixel for JPEGs, 0.6918 for PNG, 0.7967 for GIF, 0.183 for WebP, and 0.6766 for SVG. In the p75 percentile we have 0.5456 bytes-per-pixel for JPEGs, 1.4548 for PNG, 2.515 for GIF, 0.3272 for WebP, and 1.9261 for SVG. In the p90 percentile we have 0.9822 bytes-per-pixel for JPEGs, 2.5026 for PNG, 8.5151 for GIF, 0.6474 for WebP, and 4.1075 for SVG</div>
   <figcaption id="fig11-caption">Figure 11. Bytes per pixel.</figcaption>
 </figure>
 
@@ -231,7 +231,7 @@ One [Lighthouse](https://developers.google.com/web/tools/lighthouse) test is an 
   <a href="/static/images/2019/04_Media/fig12_percentage_optimized_images.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig12_percentage_optimized_images.png" alt="Figure 12. Percent 'optimized' images." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600">
   </a>
-  <div id="fig12-description" class="visually-hidden">Bar chart showing in the p10 percentile 100% of images are optimized, same in p25 percentile, in the p50 percentile 98% of images are optimized (2% not), in the p75 pcentile 83% of images are optimized (17% not), and in the p90 percentile 59% of images are optimized and 41% are not.</div>
+  <div id="fig12-description" class="visually-hidden">Bar chart showing in the p10 percentile 100% of images are optimized, same in p25 percentile, in the p50 percentile 98% of images are optimized (2% not), in the p75 percentile 83% of images are optimized (17% not), and in the p90 percentile 59% of images are optimized and 41% are not.</div>
   <figcaption id="fig12-caption">Figure 12. Percent "optimized" images.</figcaption>
 </figure>
 
@@ -242,13 +242,13 @@ The savings in this AB Lighthouse test is not just about potential byte savings,
   <a href="/static/images/2019/04_Media/fig13_project_perf_improvements_image_optimization.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig13_project_perf_improvements_image_optimization.png" alt="Figure 13. Projected page performance improvements from image optimization from Lighthouse." aria-labelledby="fig12-caption" aria-describedby="fig13-description" width="600">
   </a>
-  <div id="fig13-description" class="visually-hidden">Bar chart showing in the p10 percentile 0 ms could be sized, same in p25 percentile, in the p50 percentile 150 ms could be saved, in the p75 pcentile 1,460 ms could be saved and in the p90 percentile 5,720 ms could be saved.</div>
+  <div id="fig13-description" class="visually-hidden">Bar chart showing in the p10 percentile 0 ms could be sized, same in p25 percentile, in the p50 percentile 150 ms could be saved, in the p75 percentile 1,460 ms could be saved and in the p90 percentile 5,720 ms could be saved.</div>
   <figcaption id="fig13-caption">Figure 13. Projected page performance improvements from image optimization from Lighthouse.</figcaption>
 </figure>
 
 ### Responsive images
 
-Another axis for improving page performance is to apply responsive images. This technique focuses on reducing image bytes by reducing the extra pixels that are not shown on the display because of image shrinking. At the beginning of this chapter, you saw that the median web page on desktop used one MP of image placeholders, yet transferred 2.1 MP of actual pixel volume. Since this was a 1 x DPR test, 1.1 MP of pixels were transferred over the network, but not displayed. To reduce this overhead, we can use one of two (possibly three) techniques:
+Another axis for improving page performance is to apply responsive images. This technique focuses on reducing image bytes by reducing the extra pixels that are not shown on the display because of image shrinking. At the beginning of this chapter, you saw that the median web page on desktop used one MP of image placeholders yet transferred 2.1 MP of actual pixel volume. Since this was a 1 x DPR test, 1.1 MP of pixels were transferred over the network, but not displayed. To reduce this overhead, we can use one of two (possibly three) techniques:
 
 * **HTML markup** - using a combination of the `<picture>` and `<source>` elements along with the `srcset` and `sizes` attributes allows the browser to select the best image based on the dimensions of the viewport and the density of the display. 
 * **Client Hints** - this moves the selection of possible resized images to HTTP content negotiation.
@@ -312,7 +312,7 @@ The use of the `<meta>` tag in HTML to invoke Client Hints is far more common co
   <a href="/static/images/2019/04_Media/fig17_usage_of_accept-ch_http_v_html.png" class="fig-mobile">
     <img src="/static/images/2019/04_Media/fig17_usage_of_accept-ch_http_v_html.png" alt="Usage of the Accept-CH: HTTP versus HTML." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600">
   </a>
-  <div id="fig17-description" class="visually-hidden">Bar chart showing 71% use the meta http-e quiv, 30% use the Accept-CH HTTP header and 1% use both.</div>
+  <div id="fig17-description" class="visually-hidden">Bar chart showing 71% use the 'meta http-e quiv', 30% use the 'Accept-CH' HTTP header and 1% use both.</div>
   <figcaption id="fig17-caption">Figure 17. Usage of the Accept-CH: HTTP versus HTML.</figcaption>
 </figure>
 
