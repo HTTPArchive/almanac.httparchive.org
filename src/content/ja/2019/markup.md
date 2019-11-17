@@ -1,7 +1,7 @@
 ---
 part_number: I
 chapter_number: 3
-title: Markup
+title: マークアップ
 description: 使われている要素、カスタム要素、価値、製品、及び一般的なユースケースについて抑えてある 2019 Web Almanac マークアップの章 (2019 Web Almanac
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
