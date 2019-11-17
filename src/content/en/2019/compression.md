@@ -164,7 +164,7 @@ In the graph below, the top 25 content types are displayed with box sizes repres
   <a href="/static/images/2019/15_Compression/fig3.png">
     <img src="/static/images/2019/15_Compression/fig3.png" alt="Figure 3. Top 25 compressed content types." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="779.5" data-height="481.99083333333334" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1790056981&amp;format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">Figure 3. Top 25 compressed content types.</div>
+  <div id="fig3-description" class="visually-hidden">Treemap chart showing image/jpeg (167,912,373 requests - 3.23% compressed), application/javascript (121,058,259 requests - 81.29% compressed), image/png (113,530,400 requests - 3.81% compressed), text/css (86,634,570 requests - 81.81% compressed), text/html (81,975,252 requests - 43.44% compressed), image/gif (70,838,761 requests - 3.87% compressed), text/javascript (60,645,767 requests - 89.52% compressed), application/x-javascript (38,816,387 requests - 91.02% compressed), font/woff2 (22,622,918 requests - 3.87% compressed), application/json (16,501,326 requests - 59.02% compressed), image/webp (12,911,688 requests - 1.66% compressed), image/svg+xml (9,862,643 requests - 64.42% compressed), text/plain (6,622,361 requests - 24.72% compressed), application/octet-stream (3,884,287 requests - 6.01% compressed), image/x-icon (3,737,030 requests - 37.60% compressed), application/font-woff2 (3,061,857 requests - 5.90% compressed), application/font-woff (2,117,999 requests - 23.61% compressed), image/vnd.microsoft.icon (1,774,995 requests - 15.55% compressed), video/mp4 (1,472,880 requests - 0.03% compressed), font/woff (1,255,093 requests - 24.33% compressed), font/ttf (1,062,747 requests - 84.27% compressed), application/x-font-woff (1,048,398 requests - 30.77% compressed), image/jpg (951,610 requests - 6.66% compressed), application/ocsp-response (883,603 requests - 0.00% compressed).</div>
   <figcaption id="fig3-caption">Figure 3. Top 25 compressed content types.</figcaption>
 </figure>
 
@@ -174,7 +174,7 @@ Filtering out the eight most popular content types allows us to see the compress
   <a href="/static/images/2019/15_Compression/fig4.png">
     <img src="/static/images/2019/15_Compression/fig4.png" alt="Figure 4. Compressed content types, excluding top 8." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="779.5" data-height="481.99083333333334" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=495358423&amp;format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">Figure 4. Compressed content types, excluding top 8.</div>
+  <div id="fig3-description" class="visually-hidden">Treemap chart showing font/woff2 (22,622,918 requests - 3.87% compressed), application/json (16,501,326 requests - 59.02% compressed), image/webp (12,911,688 requests - 1.66% compressed), image/svg+xml (9,862,643 requests - 64.42% compressed), text/plain (6,622,361 requests - 24.72% compressed), application/octet-stream (3,884,287 requests - 6.01% compressed), image/x-icon (3,737,030 requests - 37.60% compressed), application/font-woff2 (3,061,857 requests - 5.90% compressed), application/font-woff (2,117,999 requests - 23.61% compressed), image/vnd.microsoft.icon (1,774,995 requests - 15.55% compressed), video/mp4 (1,472,880 requests - 0.03% compressed), font/woff (1,255,093 requests - 24.33% compressed), font/ttf (1,062,747 requests - 84.27% compressed), application/x-font-woff (1,048,398 requests - 30.77% compressed), image/jpg (951,610 requests - 6.66% compressed), application/ocsp-response (883,603 requests - 0.00% compressed)</div>
   <figcaption id="fig3-caption">Figure 4. Compressed content types, excluding top 8.</figcaption>
 </figure>
 
@@ -188,7 +188,7 @@ The graphs below illustrate the breakdown of compression techniques used for eac
   <a href="/static/images/2019/15_Compression/fig5.png">
     <img src="/static/images/2019/15_Compression/fig5.png" alt="Figure 5. Compression by content type for desktop." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=148811764&amp;format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">Figure 5. Compression by content type for desktop.</div>
+  <div id="fig5-description" class="visually-hidden">Stacked bar chart showing application/javascript is 36.18 Million/8.97 Million/10.47 Million by compression type (Gzip/Brotli/None), text/css is 24.29 M/8.31 M/7.20 M, text/html is 11.37 M/4.89 M/20.57 M, text/javascript is 23.21 M/1.72 M/3.03 M, application/x-javascript is 11.86 M/4.97 M/1.66 M, application/json is 4.06 M/0.50 M/3.23 M, image/svg+xml is 2.54 M/0.46 M/1.74 M, text/plain is 0.71 M/0.06 M/2.42 M, and image/x-icon is 0.58 M/0.10 M/1.11 M. Deflate is almost never used by any time and does not register on the chart..</div>
   <figcaption id="fig5-caption">Figure 5. Compression by content type for desktop.</figcaption>
 </figure>
 
@@ -196,7 +196,7 @@ The graphs below illustrate the breakdown of compression techniques used for eac
   <a href="/static/images/2019/15_Compression/fig6.png">
     <img src="/static/images/2019/15_Compression/fig6.png" alt="Figure 6. Compression by content type for mobile." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2009060762&amp;format=interactive">
   </a>
-  <div id="fig6-description" class="visually-hidden">Figure 6. Compression by content type for mobile.</div>
+  <div id="fig6-description" class="visually-hidden">Stacked bar chart showing application/javascript is 43.07 Million/10.17 Million/12.19 Million by compression type (Gzip/Brotli/None), text/css is 28.3 M/9.91 M/8.56 M, text/html is 13.86 M/5.48 M/25.79 M, text/javascript is 27.41 M/1.94 M/3.33 M, application/x-javascript is 12.77 M/5.70 M/1.82 M, application/json is 4.67 M/0.50 M/3.53 M, image/svg+xml is 2.91 M/ 0.44 M/1.77 M, text/plain is 0.80 M/0.06 M/1.77 M, and image/x-icon is 0.62 M/0.11 M/1.22M. Deflate is almost never used by any time and does not register on the chart.</div>
   <figcaption id="fig6-caption">Figure 6. Compression by content type for mobile.</figcaption>
 </figure>
 
@@ -206,16 +206,16 @@ The content types with the lowest compression rates include `application/json`, 
     <a href="/static/images/2019/15_Compression/fig7.png">
     <img src="/static/images/2019/15_Compression/fig7.png" alt="Figure 7. Compression by content type as a percent for desktop." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=1923565332&amp;format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">Figure 7. CCompression by content type as a percent for desktop</div>
+  <div id="fig5-description" class="visually-hidden">Stacked bar chart showing application/javascript is 65.1%/16.1%/18.8% by compression type (Gzip/Brotli/None), text/css is 61.0%/20.9%/18.1%, text/html is 30.9%/13.3%/55.8%, text/javascript is 83.0%/6.1%/10.8%, application/x-javascript is 64.1%/26.9%/9.0%, application/json is 52.1%/6.4%/41.4%, image/svg+xml is 53.5%/9.8%/36.7%, text/plain is 22.2%/2.0%/75.8%, and image/x-icon is 32.6%/5.3%/62.1%. Deflate is almost never used by any time and does not register on the chart.</div>
   <figcaption id="fig5-caption">Figure 7. Compression by content type as a percent for desktop.</figcaption>
 </figure>
 
 <figure>
   <a href="/static/images/2019/15_Compression/fig8.png">
-    <img src="/static/images/2019/15_Compression/fig8.png" alt="Figure 8. Compression by content type as a percent for desktop." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=673629979&amp;format=interactive">
+    <img src="/static/images/2019/15_Compression/fig8.png" alt="Figure 8. Compression by content type as a percent for mobile." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=673629979&amp;format=interactive">
   </a>
-  <div id="fig8-description" class="visually-hidden">Figure 8. Compression by content type as a percent for desktop</div>
-  <figcaption id="fig8-caption">Figure 8. Compression by content type as a percent for desktop.</figcaption>
+  <div id="fig8-description" class="visually-hidden">Stacked bar chart showing application/javascript is 65.8%/15.5%/18.6% by compression type (Gzip/Brotli/None), text/css is 60.5%/21.2%/18.3%, text/html is 30.7%/12.1%/57.1%, text/javascript is 83.9%/5.9%/10.2%, application/x-javascript is 62.9%/28.1%/9.0%, application/json is 53.6%/8.6%/34.6%, image/svg+xml is 23.4%/1.8%/74.8%, text/plain is 23.4%/1.8%/74.8%, and image/x-icon is 31.8%/5.5%/62.7%. Deflate is almost never used by any time and does not register on the chart.</div>
+  <figcaption id="fig8-caption">Figure 8. Compression by content type as a percent for mobile.</figcaption>
 </figure>
 
 Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are `application/javascript`, `text/css` and `application/x-javascript`. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them. 
@@ -276,7 +276,7 @@ Additionally, the percentage of brotli compression is higher for third-party con
      <td><p style="text-align: right">0.02%</p></td>
     </tr>
   </table>
-  <figcaption>Figure 9</figcaption>
+  <figcaption>Figure 9. First-party versus third-party compression by device type.</figcaption>
 </figure>
 
 ## Identifying compression opportunities
@@ -285,9 +285,9 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 <figure>
   <a href="/static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg">
-    <img src="/static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg" alt="" width="600">
+    <img src="/static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg" alt="Figure 10. Lighthouse compression suggestions" aria-labelledby="fig10-caption" width="600">
   </a>
-  <figcaption>Figure 10. Lighthouse compression suggestions.</figcaption>
+  <figcaption id="fig10-caption">Figure 10. Lighthouse compression suggestions.</figcaption>
 </figure>
 
 Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for each mobile page, we can aggregate the scores across all sites to learn how much opportunity there is to compress more content. Overall, 62% of websites are passing this audit and almost 23% of websites have scored below a 40. This means that over 1.2 million websites could benefit from enabling additional text based compression.
@@ -296,7 +296,7 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
   <a href="/static/images/2019/15_Compression/fig11.png">
     <img src="/static/images/2019/15_Compression/fig11.png" alt="Figure 11. Lighthouse 'enable text compression' audit scores." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="760" data-height="330.50000000000006" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&amp;format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden">Figure 11. Lighthouse "enable text compression" audit scores.</div>
+  <div id="fig11-description" class="visually-hidden">Stacked bar chart showing 7.6% are cosing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% os sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.</div>
   <figcaption id="fig11-caption">Figure 11. Lighthouse "enable text compression" audit scores.</figcaption>
 </figure>
 
@@ -306,7 +306,7 @@ Lighthouse also indicates how many bytes could be saved by enabling text-based c
   <a href="/static/images/2019/15_Compression/fig12.png">
     <img src="/static/images/2019/15_Compression/fig12.png" alt="Figure 12. Lighthouse 'enable text compression' audit potential byte savings." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="760" data-height="330.50000000000006" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=738657382&amp;format=interactive">
   </a>
-  <div id="fig12-description" class="visually-hidden">Figure 12. Lighthouse "enable text compression" audit potential byte savings./div>
+  <div id="fig12-description" class="visually-hidden">Stacked bar chart showing 82.11% of sites could save less than 1 Mb, 15.88% of sites could save 1 - 2 Mb and 2% of sites could save > 3 MB.</div>
   <figcaption id="fig12-caption">Figure 12. Lighthouse "enable text compression" audit potential byte savings.</figcaption>
 </figure>
 
