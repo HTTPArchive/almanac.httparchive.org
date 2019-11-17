@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":11,"title":"PWA","description":"PWA chapter of the 2019 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.","authors":["tomayac","jeffposnick"],"reviewers":["hyperpress","ahmadawais"],"discuss":"1766","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-16T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"II","chapter_number":11,"title":"PWA","description":"PWA chapter of the 2019 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.","authors":["tomayac","jeffposnick"],"reviewers":["hyperpress","ahmadawais"],"discuss":"1766","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-17T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -180,17 +180,17 @@
       </figure>
       <p>The first metric we explore are service worker installations. Looking at the data exposed through feature counters in the HTTP Archive, we find that 0.44% of all desktop and 0.37% of all mobile pages register a service worker, and both curves over time are steeply growing.</p>
       <figure id="fig-2">
-        <div class="big-number">15%</div>
-        <figcaption>Figure 2. Percent of page views on a page that registers a service worker. (Source: <a href="(https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)</figcaption>
+        <iframe aria-describedby="fig2-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/11_PWA/fig2.png" class="fig-mobile">
+          <img src="/static/images/2019/11_PWA/fig2.png" aria-describedby="fig2-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig2-caption" class="visually-hidden">Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.</div>
+        <figcaption>Figure 2. Service Worker installation over time for desktop and mobile.</figcaption>
       </figure>
       <p>Now this might not look overly impressive, but taking traffic data from Chrome Platform Status into account, we can see that a service worker controls about <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">15% of all page loads</a>, which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.</p>
       <figure id="fig-3">
-        <iframe aria-describedby="fig3-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive" loading="lazy"></iframe>
-        <a href="/static/images/2019/11_PWA/fig3.png" class="fig-mobile">
-          <img src="/static/images/2019/11_PWA/fig3.png" aria-describedby="fig3-caption" width="600" loading="lazy" />
-        </a>
-        <div id="fig3-caption" class="visually-hidden">Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.</div>
-        <figcaption>Figure 3. Service Worker installation over time for desktop and mobile.</figcaption>
+        <div class="big-number">15%</div>
+        <figcaption>Figure 3. Percent of page views on a page that registers a service worker. (Source: <a href="(https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)</figcaption>
       </figure>
       <p><a href="./methodology#lighthouse">Lighthouse</a> checks whether a page is eligible for an <a href="https://developers.google.com/web/tools/lighthouse/audits/install-prompt">install prompt</a>. 1.56% of mobile pages have an <a href="https://web.dev/installable-manifest/">installable manifest</a>.</p>
       <p>
