@@ -59,6 +59,15 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
     {% if loop.index == loop.length - 1 %} and{% endif %}
   {% endfor %}
   </div>
+
+  {% if metadata.get('translators') %}
+  <div class="byline translators">Translated by
+  {% for translator in metadata.get('translators') %}
+    <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    {% if loop.index == loop.length - 1 %} and{% endif %}
+  {% endfor %}
+  </div>
+  {% endif %}
 {% endmacro %}
 
 {% macro render_authors() %}
