@@ -139,7 +139,7 @@
   font-weight: bold;
   font-style: italic;
 }
-.byline.reviewers {
+.byline.reviewers, .byline.translators {
   font-weight: normal;
 }
 
