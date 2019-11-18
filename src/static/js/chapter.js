@@ -38,6 +38,7 @@ function highResolutionCanvasSupported() {
     var ctx = cvs && cvs.getContext ? cvs.getContext('2d') : null;
     cvs.width = 6000;
     cvs.height = 3700;
+    cvs.id = 'barry';
     ctx.fillRect(5999, 3699, 1, 1);
     largeCanvasSupported = Boolean(ctx.getImageData(5999, 3699, 1, 1).data[3]) == 1;
   }
@@ -90,7 +91,7 @@ function googleSheetsPixelNotLoaded() {
 function upgradeInteractiveFigures() {
 
   try {
-    if (bigEnoughForInteractiveFigures() && highResolutionCanvasSupported() && !dataSaverEnabled()) {
+    if (bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highResolutionCanvasSupported()) {
 
       console.log('Upgrading to interactive figures');
 
