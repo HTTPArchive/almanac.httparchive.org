@@ -7,7 +7,7 @@ authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 discuss: 1757
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z
+last_updated: 2019-11-18T00:00:00.000Z
 ---
 
 ## Introduction
@@ -95,7 +95,9 @@ In CSS, there are many different ways to achieve the same visual result using di
 
 Unsurprisingly, In Figure 5 above, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, and so on). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, and thus allows for adjustment of all spacing evenly.
 
-When it comes to units based on physical space, the `q` unit (1 quarter of a millimeter, or 1/40 of 1cm) is the most commonly used by far, with 22.46% on mobile and 15.13% on desktop. We knew about these types of units (e.q., `mm`, `in`, `cm`), which are specifically useful for print stylesheets, but didn't even know the `q` unit existed until this survey! Did you?
+When it comes to units based on physical space, the `cm` (or centimeter) unit is the most popular by far, followed by `in` (inches), and then `Q`. We know these types of units are specifically useful for print stylesheets, but we didn't even know the `Q` unit existed until this survey! Did you?
+
+<aside>An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 5 accordingly.</aside>
 
 ### Viewport-based units
 

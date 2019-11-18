@@ -77,13 +77,13 @@ As previously discussed, the volume for Google likely reflects repeated use of G
 
 The rise of [Let's Encrypt](https://letsencrypt.org/) has been meteoric after their launch in early 2016, since then they've become one of the top certificate issuers in the world. The availability of free certificates and the automated tooling has been critically important to the adoption of HTTPS on the web. Let's Encrypt certainly had a significant part to play in both of those.
 
-The reduced cost has remove the barrier to entry for HTTPS, but the automation Let's Encrypt uses is perhaps more important in the long run as it allows shorter certificate lifetimes [which has many security benefits](https://scotthelme.co.uk/why-we-need-to-do-more-to-reduce-certificate-lifetimes/).
+The reduced cost has removed the barrier to entry for HTTPS, but the automation Let's Encrypt uses is perhaps more important in the long run as it allows shorter certificate lifetimes [which has many security benefits](https://scotthelme.co.uk/why-we-need-to-do-more-to-reduce-certificate-lifetimes/).
 
 ### Authentication key type
 
 Alongside the important requirement to use HTTPS is the requirement to also use a good configuration. With so many configuration options and choices to make, this is a careful balance.
 
-First of all, at the keys used for authentication purposes. Traditionally certificates have been issued based on keys using the RSA algorithm, however a newer and better algorithm uses ECDSA (Elliptic Curve Digital Signature Algorithm) which allows the use of smaller keys, and demonstrate better performance than their RSA counterparts. Look at the results of our crawl, we still see a large % of the web using RSA.
+First of all, we'll look at the keys used for authentication purposes. Traditionally certificates have been issued based on keys using the RSA algorithm, however a newer and better algorithm uses ECDSA (Elliptic Curve Digital Signature Algorithm) which allows the use of smaller keys that demonstrate better performance than their RSA counterparts. Looking at the results of our crawl we still see a large % of the web using RSA.
 
 <figure markdown>
 | Key Type      | Desktop | Mobile |
@@ -102,7 +102,7 @@ Whilst ECDSA keys are stronger, which allows the use of smaller keys and demonst
 Looking at the % of TLS requests that provide Forward Secrecy, we can see that support is tremendous. 96.92% of Desktop and 96.49% of mobile requests use Forward secrecy. We'd expect that the continuing increase in the adoption of TLSv1.3 will further increase these numbers.
 
 ### Cipher suites
-TLS allows the use of various cipher suites - some newer and more secure, and some older and insecure. Traditionally newer TLS versions have added cipher suites but have been reluctant to remove older cipher suites. TLSv1.3 aims to simplify this by offering a reduced set of ciphers suites and will not permit the older, insecure, cipher suites to be used. Tools like [SSL Labs](https://www.ssllabs.com/) allow the TLS setup of a website (including the cipher suites supported and their preferred order) to be easily seen which helps drive better configurations. We can see that the majority of cipher suites negotiated for TLS requests were indeed excellent:
+TLS allows the use of various cipher suites - some newer and more secure, and some older and insecure. Traditionally newer TLS versions have added cipher suites but have been reluctant to remove older cipher suites. TLSv1.3 aims to simplify this by offering a reduced set of ciphers suites and will not permit the older, insecure, cipher suites to be used. Tools like [SSL Labs](https://www.ssllabs.com/) allow the TLS setup of a website (including the cipher suites supported and their preferred order) to be easily seen, which helps drive better configurations. We can see that the majority of cipher suites negotiated for TLS requests were indeed excellent:
 
 <figure markdown>
 | Cipher Suite      | Desktop | Mobile |
@@ -117,7 +117,7 @@ TLS allows the use of various cipher suites - some newer and more secure, and so
 <figcaption>Figure 6. Cipher suite usage used.</figcaption>
 </figure>
 
-It is positive to seem such wide stream use of GCM ciphers since the older CBC ciphers are less secure. [CHACHA20_POLY1305](https://blog.cloudflare.com/it-takes-two-to-chacha-poly/) is still an niche cipher suite, and we even still have a very small use of the [insecure 3DES ciphers](https://en.wikipedia.org/wiki/Triple_DES#Security).
+It is positive to see such wide stream use of GCM ciphers since the older CBC ciphers are less secure. [CHACHA20_POLY1305](https://blog.cloudflare.com/it-takes-two-to-chacha-poly/) is still an niche cipher suite, and we even still have a very small use of the [insecure 3DES ciphers](https://en.wikipedia.org/wiki/Triple_DES#Security).
 
 It should be noticed that these were the cipher suites used for the crawl using Chrome, but sites will likely also support other cipher suites as well for older browsers. Other sources, for example [SSL Pulse](https://www.ssllabs.com/ssl-pulse/), can provide more detail on the range of all cipher suites and protocols supported.
 
@@ -133,7 +133,7 @@ Most sites on the web originally existed as HTTP websites and have had to migrat
 <figcaption>Figure 7. Mixed content usage.</figcaption>
 </figure>
 
-We can see that around 20% of sites across mobile (645,485 sites) and desktop (594,072 sites) present some form of mixed content. Whilst passive mixed content, something like an image, is less dangerous, we can still see that almost a quarter of sites with mixed content have active mixed content. Active mixed content, like javascript, is more dangerous as an attacker can insert their own hostile code into a page easily.
+We can see that around 20% of sites across mobile (645,485 sites) and desktop (594,072 sites) present some form of mixed content. Whilst passive mixed content, something like an image, is less dangerous, we can still see that almost a quarter of sites with mixed content have active mixed content. Active mixed content, like JavaScript, is more dangerous as an attacker can insert their own hostile code into a page easily.
 
 In the past web browsers have allowed passive mixed content and flagged it with a warning but blocked active mixed content. More recently however, Chrome [announced](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html) it intends to improve here and as HTTPS becomes the norm it will block all mixed content instead.
 
@@ -232,7 +232,7 @@ The proposal of [`strict-dynamic`](https://www.w3.org/TR/CSP3/#strict-dynamic-us
 XSS attacks come in various forms and [Trusted-Types](https://github.com/w3c/webappsec-trusted-types) was created to help specifically with DOM-XSS. Despite being an effective mechanism, our data shows that only 2 mobile and desktop pages use the Trusted-Types directive.
 
 #### `unsafe inline` and `unsafe-eval`
-When a CSP is deployed on a page, certain unsafe features like inline script or the use of `eval()` are disabled. A page can depend on these features and in place of enabling them in a safe fashion, perhaps with a nonce or hash source. Site operators can re-enable these unsafe features with `unsafe-inline` or `unsafe-eval` in their CSP though, as their names suggest, doing so does lose much of the protections that CSP gives you. Of the 5.51% of desktop pages that include a CSP, 33.94% of them include `unsafe-inline` and 31.03% of them include `unsafe-eval`. On mobile pages we find that of the 4.73% that contain a CSP, 34.04% use `unsafe-inline` and 31.71% use `unsafe-eval`.
+When a CSP is deployed on a page, certain unsafe features like inline script or the use of `eval()` are disabled. A page can depend on these features and enable them in a safe fashion, perhaps with a nonce or hash source. Site operators can also re-enable these unsafe features with `unsafe-inline` or `unsafe-eval` in their CSP though, as their names suggest, doing so does lose much of the protections that CSP gives you. Of the 5.51% of desktop pages that include a CSP, 33.94% of them include `unsafe-inline` and 31.03% of them include `unsafe-eval`. On mobile pages we find that of the 4.73% that contain a CSP, 34.04% use `unsafe-inline` and 31.71% use `unsafe-eval`.
 
 #### `upgrade-insecure-requests`
 A common problem that site operators face in their migration from HTTP to HTTPS is that some content can still be accidentally loaded over HTTP on their HTTPS page. This problem is known as mixed content and CSP provides an effective way to solve this problem. The 'upgrade-insecure-requests` directive instructs a browser to load all subresources on a page over a secure connection, automatically upgrading HTTP requests to HTTPS requests as an example.
@@ -249,7 +249,7 @@ Another common attack known as [clickjacking](https://en.wikipedia.org/wiki/Clic
 Of the pages surveyed, 2.85% of desktop pages include the `frame-ancestors` directive in CSP with 0.74% of desktop pages setting Frame-Ancestors to `'none'`, preventing any framing, and 0.47% of pages setting `frame-ancestors` to `'self'`, allowing only their own site to frame itself. On mobile we see 2.52% of pages using `frame-ancestors` with 0.71% setting the value of `'none'` and 0.41% setting the value to `'self'`.
 
 ### Referrer Policy
-The [`Referrer-Policy`](https://www.w3.org/TR/referrer-policy/) header allows a site to control what information will be sent in the `Referer` header when a user navigates away from the current page. This can be the source of information leakage if there is sensitive date in the URL such as the page being visited, or URL parameters. By controlling what information is sent in the `Referer` header, ideally limiting it, a site can protect the privacy of their visitors by reducing the information sent to 3rd parties.
+The [`Referrer-Policy`](https://www.w3.org/TR/referrer-policy/) header allows a site to control what information will be sent in the `Referer` header when a user navigates away from the current page. This can be the source of information leakage if there is sensitive data in the URL, such as search queries or other user-dependent information included in URL parameters. By controlling what information is sent in the `Referer` header, ideally limiting it, a site can protect the privacy of their visitors by reducing the information sent to 3rd parties.
 
 Note the Referrer Policy does not follow the Referer header's misspelling [which has become a well-known error](https://stackoverflow.com/questions/3087626/was-the-misspelling-of-the-http-field-name-referer-intentional).
 
@@ -271,10 +271,10 @@ A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Po
 <figcaption>Figure 11. `Referrer-Policy` configuration option usage.</figcaption>
 </figure>
 
-This table shows the valid values set by pages and that 99.75% of desktop pages and 96.55% of mobile pages are setting a valid policy. The most popular choice of configuration is `no-referrer-when-downgrade` which will prevent the `Referer` header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is `strict-origin-when-cross-origin` which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the `Referer` it will only contain the origin of the source and not the full URL (for example `https://www.example.com` rather than `https://www.example.com/page/`). Details on the other valid configurations can be found in the [Referrer Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policies), though such a high usage of `unsafe-url` warrants further investigation but is likely to be a [third-party](./third-parties) like analytics or advertisements.
+This table shows the valid values set by pages and that 99.75% of desktop pages and 96.55% of mobile pages are setting a valid policy. The most popular choice of configuration is `no-referrer-when-downgrade` which will prevent the `Referer` header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is `strict-origin-when-cross-origin` which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the `Referer` it will only contain the origin of the source and not the full URL (for example `https://www.example.com` rather than `https://www.example.com/page/`). Details on the other valid configurations can be found in the [Referrer Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policies), though such a high usage of `unsafe-url` warrants further investigation but is likely to be a [third-party](./third-parties) component like analytics or advertisement libraries.
 
 ### Feature Policy
-As the web platform becomes more powerful and feature rich, attackers can these new APIs in interesting ways. In order to limit abuse of powerful APIs, a site operator can issue a [`Feature-Policy`](https://w3c.github.io/webappsec-feature-policy/) header to disable features that are not required, preventing them from being abused.
+As the web platform becomes more powerful and feature rich, attackers can abuse these new APIs in interesting ways. In order to limit misuse of powerful APIs, a site operator can issue a [`Feature-Policy`](https://w3c.github.io/webappsec-feature-policy/) header to disable features that are not required, preventing them from being abused.
 
 Here are the 5 most popular features that are controlled with a Feature Policy.
 
@@ -323,7 +323,7 @@ We see that the usage of the `X-Frame-Options` header is quite high on both desk
 <figcaption>Figure 14. `X-Frame-Options` configuration used.</figcaption>
 </figure>
 
-It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to `frame-ancestors` in CSP where these 2 approaches are also the most common. It should also be noted that the `allow-from` option, which in theory allow site owners to list the third-party domains allowed to frame was [never well supported(https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) and has been deprecated].
+It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to `frame-ancestors` in CSP where these 2 approaches are also the most common. It should also be noted that the `allow-from` option, which in theory allow site owners to list the third-party domains allowed to frame was [never well supported](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) and has been deprecated.
 
 ### `X-Content-Type-Options`
 The [`X-Content-Type-Options`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options) header is the most widely deployed Security Header and is also the most simple, with only one possible configuration value `nosniff`. When this header is issued a browser must treat a piece of content as the MIME Type declared in the `Content-Type` header and not try to change the advertised value when it infers a file is of a different type. Various security flaws can be introduced if a browser is persuaded to incorrectly sniff the type..
@@ -373,13 +373,13 @@ Given the nature of the header, it is unsurprising to see almost no usage report
 Cookies have many security protections available and whilst some of those are long standing, having been available for years, some of them are really quite new have been introduced only in the last couple of years.
 
 ### `Secure`
-The `Secure` flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is quick depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement [third-party](./third-parties) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.
+The `Secure` flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement [third-party](./third-parties) requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.
 
 ### `HttpOnly`
 The `HttpOnly` flag on a cookie instructs the browser to prevent JavaScript on the page from accessing the cookie. Many cookies are only used by the server so are not needed by the JavaScript on the page, so restricting access to a cookie is a great protection against XSS attacks from stealing the cookie. We find that a much larger % of sites issuing a cookie with this flag on their homepage at 24.24% on desktop and 22.23% on mobile.
 
 ### `SameSite`
-As a much more recent addition to cookie protections, the `Same-Site` flag is a powerful protection against [Cross-Site Request Forgery (CSRF)](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks (often also known as XSRF).
+As a much more recent addition to cookie protections, the `SameSite` flag is a powerful protection against [Cross-Site Request Forgery (CSRF)](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks (often also known as XSRF).
 
 These attacks work by using the fact that browsers will typically include relevant cookies in all requests. Therefore, if you are logged in, and so have cookies set, and then visit a malicious site, it can make a call for an API and the browser will "helpfully" send the cookies. Adding the `SameSite` attribute to a Cookie, allows a website to inform the browser not to send the cookies when calls are issued from third-party sites and hence the attack fails.
 
