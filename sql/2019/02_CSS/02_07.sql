@@ -28,6 +28,7 @@ try {
     }
 
     rule.declarations.forEach(d => {
+      if (d.value.length > 20) return;
       var unit = getLengthUnit(d.value);
       if (unit) {
         values[unit] = true;
