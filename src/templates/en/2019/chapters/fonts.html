@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"unedited":"true","part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"discuss":"1761","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-15T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"discuss":"1761","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-17T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -196,27 +196,54 @@
       <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
-      <p>Web Fonts enable beautiful and functional typography on the web. Use web fonts not only empowers design but democratizing a subset of design as they allow easier access to those who might not have particularly strong design skill. However, for all the good they can do, web fonts can also do great harm to your site's performance if they aren't loaded properly.</p>
+      <p>Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.</p>
       <p>Are they a net positive for the web? Do they provide more benefit than harm? Are the web standards cowpaths sufficiently paved to encourage web font loading best practices by default? And if not, what needs to change? Let's take a data-driven peek at whether or not we can answer those questions by inspecting how web fonts are used on the web today.</p>
       <h2 id="where-did-you-get-those-web-fonts">Where did you get those web fonts?</h2>
-      <p>The first and most prominent question: Performance. There is a whole chapter dedicated to <a href="./performance">performance</a> but we will delve a little into font-specific performance issues here.</p>
-      <p>Using hosted web fonts allows ease of implementation and maintenance but self-hosting offers the best performance. Given that web fonts by default make text invisible while the web font is loading (also known as the <a href="https://css-tricks.com/fout-foit-foft/">Flash of Invisible Text, or FOIT</a>), the performance of web fonts can be more critical than non-blocking assets like images.</p>
+      <p>The first and most prominent question: performance. There is a whole chapter dedicated to <a href="./performance">performance</a> but we will delve a little into font-specific performance issues here.</p>
+      <p>Using hosted web fonts enables ease of implementation and maintenance, but self-hosting offers the best performance. Given that web fonts by default make text invisible while the web font is loading (also known as the <a href="https://css-tricks.com/fout-foit-foft/">Flash of Invisible Text</a>, or FOIT), the performance of web fonts can be more critical than non-blocking assets like images.</p>
       <h3 id="are-fonts-being-hosted-on-the-same-host-or-by-a-different-host">Are fonts being hosted on the same host or by a different host?</h3>
-      <p>Differentiating self-hosting against third-party hosting is increasingly relevant in an <a href="./http2">HTTP/2</a> world where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of better potential for prioritization against other same-host requests in the waterfall.</p>
-      <p>
-        Recommendations to mitigate the performance costs of loading web fonts from another host include <a href="https://www.w3.org/TR/resource-hints/#preconnect"><code>preconnect</code></a
-        >, <a href="https://www.w3.org/TR/resource-hints/#dns-prefetch"><code>dns-prefetch</code></a
-        >, and <a href="https://www.w3.org/TR/preload/"><code>preload</code></a> <a href="./resource-hints">resource hints</a> but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.
-      </p>
-      <p>(Graph Title: Third-party hosted versus self-hosted (local); Source: 06.01)</p>
+      <p>Differentiating self-hosting against third-party hosting is increasingly relevant in an <a href="./http2">HTTP/2</a> world, where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of a better potential for prioritization against other same-host requests in the waterfall.</p>
+      <p>Recommendations to mitigate the performance costs of loading web fonts from another host include using the <code>preconnect</code>, <code>dns-prefetch</code>, and <code>preload</code> <a href="./resource-hints">resource hints</a>, but high-priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.</p>
+      <figure id="fig-1">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss <a href="#what-are-the-most-popular-third-party-hosts">below</a>.</p>
       <p>Google serves fonts using third-party CSS files hosted on <code>https://fonts.googleapis.com</code>. Developers add requests to these stylesheets using <code>&lt;link&gt;</code> tags in their markup. While these stylesheets are render blocking, they are very small. However, the font files are hosted on yet another domain: <code>https://fonts.gstatic.com</code>. The model of requiring two separate hops to two different domains makes <code>preconnect</code> a great option here for the second request that will not be discovered until the CSS is downloaded.</p>
       <p>Note that while <code>preload</code> would be a nice addition to load the font files higher in the request waterfall (remember that <code>preconnect</code> sets up the connection, it doesn’t request the file content), <code>preload</code> is not yet available with Google Fonts. Google Fonts generates unique URLs for their font files <a href="https://github.com/google/fonts/issues/1067">which are subject to change</a>.</p>
       <h3 id="what-are-the-most-popular-third-party-hosts">What are the most popular third-party hosts?</h3>
+      <figure id="fig-2">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Popular Web Font Hosts by Request, Source: 06.02)</p>
       <p>The dominance of Google Fonts here was simultaneously surprising and unsurprising at the same time. It was unsurprising in that I expected the service to be the most popular and surprising in the sheer dominance of its popularity. 75% of requests (55–57% of fonts) is astounding. TypeKit was a distant single-digit second place, with the Bootstrap library accounting for an even more distant third place.</p>
+      <figure id="fig-3">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Popular Web Fonts by Host, Source: 06.32)</p>
       <p>While the high usage of Google Fonts here is very impressive, it is also noteworthy that only 29% of pages included a Google Fonts <code>&lt;link&gt;</code> element.</p>
+      <figure id="fig-4">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Percentage of Pages with a Google Fonts <code>&lt;link&gt;</code>, Source: 06.46)</p>
       <p>This could mean a few things:</p>
       <ul>
@@ -227,10 +254,26 @@
         </li>
       </ul>
       <p>Google Fonts documentation encourages the <code>&lt;link&gt;</code> for the Google Fonts CSS to be placed as the first child in the <code>&lt;head&gt;</code> of a page. This is a big ask! In practice, this is not common as only half a percent of all pages took this advice.</p>
+      <figure id="fig-5">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Percentage of pages that have a Google Fonts <code>&lt;link&gt;</code> first, Source: 06.47)</p>
       <p>More so, if a page is using <code>preconnect</code> or <code>dns-prefetch</code> as <code>&lt;link&gt;</code> elements, these would come before the Google Fonts CSS anyway. Read on for more about these resource hints.</p>
       <h3 id="speeding-up-third-party-hosting">Speeding up third-party hosting</h3>
       <p>As mentioned above, a super easy way to speed up web font requests to a third-party host is to use the <code>preconnect</code> <a href="./resource-hints">resource hint</a>.</p>
+      <figure id="fig-6">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Pages using <code>preconnect</code>; Source: 06.15)</p>
       <p>
         Wow! Less than 2% of pages are using <a href="https://web.dev/uses-rel-preconnect"><code>preconnect</code></a
@@ -239,36 +282,100 @@
       <p>In fact, if you're using Google Fonts go ahead and add this to your <code>&lt;head&gt;</code> if it's not there already:</p>
       <p><code>&lt;link rel="preconnect" href="https://fonts.gstatic.com/"&gt;</code></p>
       <h3 id="most-popular-typefaces">Most popular typefaces</h3>
+      <figure id="fig-7">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Top typefaces, Source: 06.31)</p>
       <p>It is unsurprising that the top entries here seem to match up very similarly to <a href="https://fonts.google.com/?sort=popularity">Google Fonts' list of fonts sorted by popularity</a>.</p>
       <h2 id="what-font-formats-are-being-used">What font formats are being used?</h2>
       <p><a href="https://caniuse.com/#feat=woff2">WOFF2 is pretty well supported</a> in web browsers today. Google Fonts serves WOFF2, a format that offers improved compression over its predecessor WOFF, which was itself already an improvement over other existing font formats.</p>
+      <figure id="fig-8">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Popular MIME Types, Source: 06.03)</p>
       <p>From my perspective an argument could be made to go WOFF2-only for web fonts after seeing the results here. I wonder where the double-digit WOFF usage is coming from? Perhaps developers still serving web fonts to Internet Explorer?</p>
       <p>Third place <code>octet-stream</code> (and <code>plain</code> a little further down) would seem to suggest that a lot of web servers are configured improperly, sending an incorrect MIME type with web font file requests.</p>
       <p>Let's dig a bit deeper and look at the <code>format()</code>s used in the <code>src:</code> descriptor in <code>@font-face</code> blocks:</p>
+      <figure id="fig-9">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Top Declared src formats, Source: 06.36-38)</p>
       <p>I was hoping to see <a href="https://caniuse.com/#feat=svg-fonts">SVG fonts</a> on the decline. They're buggy and implementations have been removed from every browser except Safari. Time to drop these, y'all.</p>
       <p>The SVG data point here also makes me wonder what MIME type y'all are serving these SVG fonts with. I don't see <code>image/svg+xml</code> anywhere in the <code>06.03</code> data set. Anyway, don't worry about fixing that, just get rid of them!</p>
       <h3 id="woff2-only">WOFF2-only</h3>
+      <figure id="fig-10">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Popular Font format() Combinations, Source: 06.39-41)</p>
       <p>This data set seems to suggest that the majority of people are already using WOFF2-only in their <code>@font-face</code> blocks. But this is misleading of course, per our earlier discussion on the dominance of Google Fonts in the data set. Google Fonts does some sniffing methods to serve a streamlined CSS file and only includes the most modern <code>format()</code>. Unsurprisingly WOFF2 dominates the results here for that reason, as browser support for WOFF2 has been pretty broad for some time now.</p>
       <p>Importantly, this particular data doesn't really support or detract from the case to go WOFF2-only yet, but it remains a tempting idea.</p>
       <h2 id="fighting-against-invisible-text">Fighting against invisible text</h2>
       <p>The number one tool we have to fight the default web font loading behavior of "invisible while loading" (also known as the Flash of Invisible Text, or FOIT), is <code>font-display</code>. Adding <code>font-display: swap</code> to your <code>@font-face</code> block is an easy way to tell the browser to show fallback text while the web font is loading.</p>
       <p><a href="https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display">Browser support is great too</a>. Internet Explorer and pre-Chromium Edge don't have support but they also by-default render fallback text when a web font loads (no FOITs allowed here). For other browsers, how commonly is <code>font-display</code> used?</p>
+      <figure id="fig-11">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Usage of <code>font-display</code>; Source: 06.04)</p>
       <p>
         I assume this will be creeping up over time, especially now that <a href="https://www.zachleat.com/web/google-fonts-display/">Google Fonts is adding <code>font-display</code> to all new code snippets</a> copied from their site.
       </p>
       <p>If you're using Google Fonts, update your snippets! If you're not using Google Fonts, use <code>font-display</code>! Read more about <code>font-display</code> on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">MDN</a>.</p>
       <p>Let's have a look at what <code>font-display</code> values are popular:</p>
+      <figure id="fig-12">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: <code>font-display</code> value popularity; Source: 06.44)</p>
       <p>As an easy way to show fallback text while a web font is loading, <code>font-display: swap</code> reigns supreme and is the most common descriptor value. <code>swap</code> is also the default descriptor value used by new Google Fonts code snippets too. I would have expected <code>optional</code> (only render if cached) to have a bit more usage here as a few prominent developer evangelists lobbied for it a bit, but no dice.</p>
       <h2 id="how-many-web-fonts-are-too-many">How many web fonts are too many?</h2>
       <p>This is a question that requires some measure of nuance. How are the fonts being used? For how much content on the page? Where does this content live in the layout? How are the fonts being rendered? In lieu of nuance however let's dive right into some broad and heavy handed analysis specifically centered on request counts.</p>
+      <figure id="fig-13">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Distribution of fonts per page; Source: 06.09a)</p>
       <p>The median web page makes four web font requests. The pages with the most web fonts (in the 90th percentile) requested nine and ten web fonts on mobile and desktop, respectively.</p>
+      <figure id="fig-14">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Font requests per page; Source: 06.34)</p>
       <p>
         It does seem quite interesting that web font requests seem to be pretty steady across desktop and mobile. I'm glad to see the <a href="https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6">recommendation to hide <code>@font-face</code> blocks inside of a <code>@media</code> queries</a> didn't catch on (don't get any ideas).
@@ -279,27 +386,75 @@
       <p>After diving into the code, all of those 718 requests are going to Google Fonts! It looks like a malfunctioning "Above the Page fold" optimization plugin for WordPress has gone rogue on this site and is requesting (DDoS-ing?) all the Google Fonts—oops!</p>
       <p>Ironic that a performance optimization plugin can make your performance much worse!</p>
       <h2 id="faux-web-fonts-are-socks-with-sandals">Faux web fonts are socks with sandals</h2>
+      <figure id="fig-15">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Percentage of Pages Declaring an Italic Web Font; Source: 06.10)</p>
       <p>Only 29% of pages declare at least one italic font. This suggests a lot of faux-italic across the web, as web browsers will synthesize a fake italic version of a font if one is not declared and available for use. That means using elements with italic user agent styling (<code>&lt;em&gt;</code>, <code>&lt;i&gt;</code>, et al) will render faux-italic.</p>
       <p>Faux bold may be even larger of a problem, as about 53–55% of pages have a font-face with a weight above 400, and (arguably) bold usage is more common than italic usage.</p>
       <p>(Counterpoint: a <code>@font-face</code> needn't be declared bold or italic if the underlying glyphs are from a bold or italic variant of the typeface but y'all wouldn't do this, would you??)</p>
       <h2 id="using-javascript-to-improve-web-font-loading">Using JavaScript to improve web font loading</h2>
+      <figure id="fig-16">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Pages using the CSS Font Loading API; Source: 06.13)</p>
       <p>This is the first metric that elicited an audible "oof" from me. The <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api">CSS Font Loading API</a> is currently the only way to group web font repaints. Arguably unnecessary if you're only using one font file per typeface, which per the implication in <code>06.09b</code> may be common practice.</p>
+      <figure id="fig-17">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Do something with 6.09b and update above text?)</p>
       <h2 id="more-accurate-matching-with-unicode-range">More accurate matching with <code>unicode-range</code></h2>
+      <figure id="fig-18">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Pages with at least one Web Font using unicode-range; Source: 06.14)</p>
       <p>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range"><code>unicode-range</code> is a great CSS descriptor</a> to let the browser know specifically which code points the page would like to use in the font file. If the <code>@font-face</code> block has a <code>unicode-range</code>, content on the page must match one of the code points in the range before the font is requested. It is a very good thing.
       </p>
       <p>This is another metric that I expect was skewed by Google Fonts usage, as Google Fonts uses <code>unicode-range</code> in most of (if not all) its CSS. I'd expect this to be less common in userland, but perhaps filtering out Google Fonts requests in the next edition of the Almanac may be possible.</p>
       <h2 id="dont-request-web-fonts-if-a-system-font-exists">Don't request web fonts if a system font exists</h2>
+      <figure id="fig-19">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Pages that declare a Web Font with a <code>local()</code>; Source: 06.16)</p>
       <p><code>local()</code> is a nice way to reference a system font in your <code>@font-face</code> <code>src</code>. If the <code>local()</code> font exists, it doesn't need to make a request for a web font at all. This is used both extensively and controversially by Google Fonts, so it likely is another example of skewed data if we're trying to glean patterns from user land.</p>
       <p>
         It should also be noted here that it has been said by smarter people than I (Bram Stein of TypeKit) that <a href="https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html">using <code>local()</code> can be unpredictable as installed versions of fonts can be outdated and unreliable</a>.
       </p>
       <h2 id="condensed-fonts-and-font-stretch">Condensed fonts and <code>font-stretch</code></h2>
+      <figure id="fig-20">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Top Variation Axes; Source: 06.26)</p>
       <p>
         Historically <code>font-stretch</code> has suffered from poor browser support and was not a well-known <code>@font-face</code> descriptor. Read more about <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><code>font-stretch</code> on MDN</a>. But <a href="https://caniuse.com/#feat=css-font-stretch">browser support</a> has broadened.
@@ -307,11 +462,35 @@
       <p>It has been suggested that using condensed fonts on smaller viewports allows more text to be viewable, but this approach isn't commonly used. That being said, that this descriptor is used more on desktop than mobile is unexpected, and ~7% seems much higher than I would have predicted.</p>
       <h2 id="variable-fonts-are-the-future">Variable fonts are the future</h2>
       <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide">Variable fonts</a> allow several font weights and styles to be included in the one font file.</p>
+      <figure id="fig-21">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Pages that Include a Variable Font; Source: 06.18)</p>
       <p>Even at 1.8% this was higher than expected, although I am excited to see this take off. <a href="https://developers.google.com/fonts/docs/css2">Google Fonts v2 does include some support for Variable Fonts</a>.</p>
+      <figure id="fig-22">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Top variation axes; Source: 06.28)</p>
       <p>Through the lens of this large data set, these are very low sample sizes-take these results with a grain of salt. However, <code>opsz</code> as the most common axis is notable, with <code>wght</code> and <code>wdth</code> trailing. In my experience, the introductory demos for variable fonts are usually weight-based.</p>
       <h2 id="color-fonts-might-also-be-the-future">Color fonts might also be the future?</h2>
+      <figure id="fig-23">
+        <iframe aria-describedby="fig1-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy"></iframe>
+        <a href="/static/images/2019/06_Fonts/fig1.png" class="fig-mobile">
+          <img src="/static/images/2019/06_Fonts/fig1.png" aria-describedby="fig1-caption" width="600" loading="lazy" />
+        </a>
+        <div id="fig1-caption" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
+        <figcaption>Figure 1. Popular web font hosting strategies.</figcaption>
+      </figure>
       <p>(Graph Title: Percentage of Pages with Color Fonts; Source: 06.42)</p>
       <p>Usage here of these is basically nonexistent but you can check out the excellent resource <a href="https://www.colorfonts.wtf/">Color Fonts! WTF?</a> for more information. Similar (but not at all) to the SVG format for fonts (which is bad and going away), this allows you to embed SVG inside of OpenType files (which is awesome and cool).</p>
       <h2 id="conclusion">Conclusion</h2>
