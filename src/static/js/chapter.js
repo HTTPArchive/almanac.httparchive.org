@@ -36,10 +36,16 @@ function highResolutionCanvasSupported() {
     // Set large sized canvas dimensions and draw test rectangle
     var cvs = document ? document.createElement('canvas') : null;
     var ctx = cvs && cvs.getContext ? cvs.getContext('2d') : null;
-    cvs.width = 6000;
-    cvs.height = 3700;
-    cvs.id = 'barry';
-    ctx.fillRect(5999, 3699, 1, 1);
+    var scale = window.devicePixelRatio || 1;
+    if (scale > 1) {
+      cvs.width = 6000;
+      cvs.height = 3700;
+      ctx.fillRect(5999, 3699, 1, 1);
+    } else {
+      cvs.width = 1200;
+      cvs.height = 742;
+      ctx.fillRect(1199, 741, 1, 1);
+    }
     largeCanvasSupported = Boolean(ctx.getImageData(5999, 3699, 1, 1).data[3]) == 1;
   }
   catch (e) {
