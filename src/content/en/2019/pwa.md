@@ -7,7 +7,7 @@ authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
 discuss: 1766
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-16T00:00:00.000Z
+last_updated: 2019-11-17T00:00:00.000Z
 ---
 
 ## Introduction
@@ -28,19 +28,19 @@ Service workers were [first implemented in Chrome 40](https://blog.chromium.org/
 The first metric we explore are service worker installations. Looking at the data exposed through feature counters in the HTTP Archive, we find that 0.44% of all desktop and 0.37% of all mobile pages register a service worker, and both curves over time are steeply growing.
 
 <figure>
-  <div class="big-number">15%</div>
-  <figcaption>Figure 2. Percent of page views on a page that registers a service worker. (Source: <a href="(https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)</figcaption>
+  <iframe aria-describedby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive"></iframe>
+  <a href="/static/images/2019/11_PWA/fig2.png" class="fig-mobile">
+    <img src="/static/images/2019/11_PWA/fig2.png" aria-describedby="fig2-caption" width="600">
+  </a>
+  <div id="fig2-caption" class="visually-hidden">Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.</div>
+  <figcaption>Figure 2. Service Worker installation over time for desktop and mobile.</figcaption>
 </figure>
 
 Now this might not look overly impressive, but taking traffic data from Chrome Platform Status into account, we can see that a service worker controls about [15% of all page loads](https://www.chromestatus.com/metrics/feature/timeline/popularity/990), which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.
 
 <figure>
-  <iframe aria-describedby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/11_PWA/fig3.png" class="fig-mobile">
-    <img src="/static/images/2019/11_PWA/fig3.png" aria-describedby="fig3-caption" width="600">
-  </a>
-  <div id="fig3-caption" class="visually-hidden">Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.</div>
-  <figcaption>Figure 3. Service Worker installation over time for desktop and mobile.</figcaption>
+  <div class="big-number">15%</div>
+  <figcaption>Figure 3. Percent of page views on a page that registers a service worker. (Source: <a href="(https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)</figcaption>
 </figure>
 
 [Lighthouse](./methodology#lighthouse) checks whether a page is eligible for an [install prompt](https://developers.google.com/web/tools/lighthouse/audits/install-prompt). 1.56% of mobile pages have an [installable manifest](https://web.dev/installable-manifest/).
