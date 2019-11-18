@@ -41,12 +41,13 @@ function highResolutionCanvasSupported() {
       cvs.width = 6000;
       cvs.height = 3700;
       ctx.fillRect(5999, 3699, 1, 1);
+      largeCanvasSupported = Boolean(ctx.getImageData(5999, 3699, 1, 1).data[3]) == 1;
     } else {
       cvs.width = 1200;
       cvs.height = 742;
       ctx.fillRect(1199, 741, 1, 1);
+      largeCanvasSupported = Boolean(ctx.getImageData(1199, 741, 1, 1).data[3]) == 1;
     }
-    largeCanvasSupported = Boolean(ctx.getImageData(5999, 3699, 1, 1).data[3]) == 1;
   }
   catch (e) {
     largeCanvasSupported = false;
