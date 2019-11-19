@@ -5,7 +5,7 @@ function bigEnoughForInteractiveFigures() {
     gtag('event', 'min-sheets-width', { 'event_category': 'user', 'event_label': 'true', 'value': 1 });
     return true;
   }
-  gtag('event', 'min-sheets-width', { 'event_category': 'user', 'event_label': 'enabfalseled', 'value': 0 });
+  gtag('event', 'min-sheets-width', { 'event_category': 'user', 'event_label': 'false', 'value': 0 });
   console.log('Screen too small for interactive visuals');
   return false;
 }
@@ -88,8 +88,8 @@ function googleSheetsPixelNotLoaded() {
     var fig_iframe = all_fig_iframes[index];
     fig_iframe.parentElement.removeChild(fig_iframe);
   }
-  gtag('event', 'google-sheets', { 'event_category': 'user', 'event_label': 'blocked', 'value': 1 });
-  gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 1 });
+  gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'blocked', 'value': 0 });
+  gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
 
 }
 
@@ -143,7 +143,7 @@ function upgradeInteractiveFigures() {
 
         }
       };
-      
+
       //Add a test image to check we can actually access Google Sheets
       //as it's sometimes blocked by corporate proxies and the like
       //have a fallback function to revert if this is the case
