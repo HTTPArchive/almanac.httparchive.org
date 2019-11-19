@@ -57,3 +57,38 @@ npm install
 ```
 npm run generate
 ```
+
+## Deploying changes
+
+If you've been added to the "App Engine Deployers" role in the GCP project, you're able to push code changes to the production website.
+
+1. Install the [`gcloud`](https://cloud.google.com/sdk/install) Google Cloud SDK.
+
+2. Authenticate the email address associated with the project with the `webalmanac` GCP project:
+
+```
+gcloud init
+```
+
+3. Stage the changes locally:
+
+```
+git checkout production
+git status
+git pull
+git pull origin master
+git push
+```
+
+  - Check out the `production` branch
+  - Run `git status` to ensure you don't have any uncommitted changes locally
+  - Merge any remote changes (both origin/production and origin/master branches)
+  - Push the merge-commit back up to origin/production
+
+4. Browse the website locally as one final QA test, then deploy the changes live:
+
+```
+npm run deploy
+```
+
+5. Browse the website in production to verify that the new changes have taken effect
