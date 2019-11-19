@@ -8,7 +8,7 @@ reviewers: [voltek62]
 translators: [JMPerez]
 discuss: 1768
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z 
+last_updated: 2019-11-07T00:00:00.000Z
 ---
 
 ## Introducción

@@ -88,8 +88,8 @@ function googleSheetsPixelNotLoaded() {
     var fig_iframe = all_fig_iframes[index];
     fig_iframe.parentElement.removeChild(fig_iframe);
   }
-  gtag('event', 'google-sheets', { 'event_category': 'user', 'event_label': 'blocked', 'value': 1 });
-  gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 1 });
+  gtag('event', 'sheets-access', { 'event_category': 'user', 'event_label': 'blocked', 'value': 0 });
+  gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
 
 }
 
@@ -194,4 +194,3 @@ function setDiscussionCount() {
 
 upgradeInteractiveFigures();
 setDiscussionCount();
-
