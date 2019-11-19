@@ -5,7 +5,7 @@ function bigEnoughForInteractiveFigures() {
     gtag('event', 'min-sheets-width', { 'event_category': 'user', 'event_label': 'true', 'value': 1 });
     return true;
   }
-  gtag('event', 'min-sheets-width', { 'event_category': 'user', 'event_label': 'enabfalseled', 'value': 0 });
+  gtag('event', 'min-sheets-width', { 'event_category': 'user', 'event_label': 'false', 'value': 0 });
   console.log('Screen too small for interactive visuals');
   return false;
 }
