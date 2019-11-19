@@ -5,6 +5,7 @@ title: Markup
 description: Capítulo sobre marcado del Web Almanac de 2019 que cubre elementos utilizados, elementos personalizados, valor, productos y casos de uso comunes.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
+translators: [c-torres]
 discuss: 1758
 published: 2019-11-04T12:00:00+00:00:00
 last_updated: 2019-11-07T21:46:11.000Z 
