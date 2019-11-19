@@ -140,19 +140,20 @@ function upgradeInteractiveFigures() {
             parentLink.classList.add("fig-mobile");
           }
 
-          //Add a test image to check we can actually access Google Sheets
-          //as it's sometimes blocked by corporate proxies and the like
-          //have a fallback function to revert if this is the case
-          var google_sheets_pixel = document.createElement('img');
-          google_sheets_pixel.setAttribute('src', 'https://docs.google.com/favicon.ico');
-          google_sheets_pixel.setAttribute('height', '1');
-          google_sheets_pixel.setAttribute('width', '1');
-          google_sheets_pixel.addEventListener('load', googleSheetsPixelLoaded);
-          google_sheets_pixel.addEventListener('error', googleSheetsPixelNotLoaded);
-          window.document.body.appendChild(google_sheets_pixel);
 
         }
       };
+      
+      //Add a test image to check we can actually access Google Sheets
+      //as it's sometimes blocked by corporate proxies and the like
+      //have a fallback function to revert if this is the case
+      var google_sheets_pixel = document.createElement('img');
+      google_sheets_pixel.setAttribute('src', 'https://docs.google.com/favicon.ico');
+      google_sheets_pixel.setAttribute('height', '1');
+      google_sheets_pixel.setAttribute('width', '1');
+      google_sheets_pixel.addEventListener('load', googleSheetsPixelLoaded);
+      google_sheets_pixel.addEventListener('error', googleSheetsPixelNotLoaded);
+      window.document.body.appendChild(google_sheets_pixel);
 
     } else {
       gtag('event', 'interactive-figures', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
