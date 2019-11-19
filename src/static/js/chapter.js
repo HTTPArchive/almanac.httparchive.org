@@ -193,5 +193,5 @@ function setDiscussionCount() {
 }
 
 upgradeInteractiveFigures();
-setDiscussionCount();
+//setDiscussionCount();
 
