@@ -7,7 +7,7 @@ authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
 discuss: 1775
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z 
+last_updated: 2019-11-14T00:00:00.000Z 
 ---
 
 ## Introduction
@@ -247,15 +247,14 @@ These stats show that the uptick of HTTP/2 push is very low, most likely because
 This is a concern as previous advice has been to be conservative with push and to ["push just enough resources to fill idle network time, and no more"](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit). The above statistics suggest many resources of a significant combined size are pushed.
 
 <figure>
-  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" class="fig-mobile">
-    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" width="600">
+  <a href="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png">
+    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="Figure 13. What asset types is push used for?" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
   </a>
-  <div id="fig13-caption" class="visually-hidden">Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eighth, and various text-based types making up the rest.</div>
-  <figcaption>Figure 13. What asset types is push used for?</figcaption>
+  <div id="fig13-description" class="visually-hidden">Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eighth, and various text-based types making up the rest.</div>
+  <figcaption id="fig13-caption">Figure 13. What asset types is push used for?</figcaption>
 </figure>
 
-Figure 12 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!
+Figure 13 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!
 
 One concern raised by some is that HTTP/2 implementations have repurposed the preload HTTP `link` header as a signal to push. One of the most popular uses of the preload [resource hint](./resource-hints) is to inform the browser of late-discovered resources, like fonts and images, that the browser will not see until the CSS has been requested, downloaded, and parsed. If these are now pushed based on that header, there was a concern that reusing this may result in a lot of unintended pushes.
 
@@ -342,3 +341,5 @@ Other than that, HTTP/2 has been a relatively easy upgrade path, which is why it
 Ensuring you are using a strong, up-to-date, well-maintained implementation of any newish protocol like HTTP/2 will ensure you stay on top of these issues. However, that can take expertise and managing. The roll out of QUIC and HTTP/3 will likely be even more complicated and require more expertise. Perhaps this is best left to third-party service providers like CDNs who have this expertise and can give your site easy access to these features? However, even when left to the experts, this is not a sure thing (as the prioritization statistics show), but if you choose your server provider wisely and engage with them on what your priorities are, then it should be an easier implementation.
 
 On that note it would be great if the CDNs prioritized these issues (pun definitely intended!), though I suspect with the advent of a new prioritization method in HTTP/3, many will hold tight. The next year will prove yet more interesting times in the HTTP world.
+
+<script src='/static/js/chapter.js' defer></script>

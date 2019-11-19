@@ -10,10 +10,10 @@
 {% block scripts %}
 {{ super() }}
 <script nonce="{{ csp_nonce() }}">
-
+  
 var indexBox = document.querySelector('.index-box');
 var indexBoxTitle = document.querySelector('.index .header');
-
+ 
 indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');
 });
@@ -32,7 +32,10 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
   var el = document.getElementById('num_comments');
   el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
 });
+  
+window.discussion_url='https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json';
 </script>
+
 {% endblock %}
 
 {# Calls to action for readers who want to engage more with this chapter. #}
