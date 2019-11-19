@@ -26,6 +26,8 @@ csp = {
         'www.googletagmanager.com',
         'stats.g.doubleclick.net',
         '*.githubusercontent.com',
+        'docs.google.com',
+        'ssl.gstatic.com',
         'data:'
     ],
     'frame-src': [
