@@ -80,9 +80,10 @@ The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a d
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg">
-    <img alt="Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" width="600">
+    <img alt="Figure 1. Cache-Control information from RedBot." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600">
   </a>
-  <figcaption>Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
+  <div id="fig1-description" class="visually-hidden">Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings.</div>
+  <figcaption d="fig1-caption">Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
 </figure>
 
 If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability. 
@@ -370,9 +371,10 @@ The graph below illustrates the relative age of resources by content type, and y
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg">
-    <img alt="A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year." src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" width="600">
+    <img src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" alt="Figure 10. Resource age distribution by content type." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600">
   </a>
-  <figcaption>Figure 10. Resource age distribution by content type.</figcaption>
+  <div id="fig10-description" class="visually-hidden">A stack bar chart showing the age of content, split into weeks 0-52, > one year and > two years with null and negative figures shown too. The stats are split into first-party and third-party. The value 0 is used most particularly for first-party HTML, text and xml, and for up to 50% of third-party requests across all assets types. There is a mix using intermediary years and then considerable usage for one year and two year.</div>
+  <figcaption id="fig10-caption">Figure 10. Resource age distribution by content type.</figcaption>
 </figure>
 
 By comparing a resources cacheability to its age, we can determine if the TTL is appropriate or too low. For example, the resource served by the response below was last modified on 25 Aug 2019, which means that it was 49 days old at the time of delivery. The `Cache-Control` header says that we can cache it for 43,200 seconds, which is 12 hours. It is definitely old enough to merit investigating whether a longer TTL would be appropriate.
@@ -543,9 +545,10 @@ When a response is cached, its entire headers are swapped into the cache as well
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg">
-    <img alt="A screenshot of Chrome Developer Tools showing HTTP response headers for a cached response." src="/static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg" src="/static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg" width="600">
+    <img src="/static/images/2019/16_Caching/ch16_fig12_header_example_with_cookie.jpg" alt="Figure 15. Chrome Dev Tools for a cached resource." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600">
   </a>
-  <figcaption>Figure 15. Chrome Dev Tools for a cached resource.</figcaption>
+  <div id="fig15-description" class="visually-hidden">A screenshot of Chrome Developer Tools showing HTTP response headers for a cached response.</div>
+  <figcaption id="fig15-caption">Figure 15. Chrome Dev Tools for a cached resource.</figcaption>
 </figure>
 
 But what happens if you have a `Set-Cookie` on a response? According to [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), the presence of a `Set-Cookie` response header does not inhibit caching. This means that a cached entry might contain a `Set-Cookie` if it was cached with one. The RFC goes on to recommend that you should configure appropriate `Cache-Control` headers to control how responses are cached. 
@@ -556,9 +559,10 @@ One of the risks of caching responses with `Set-Cookie` is that the cookie value
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg">
-    <img alt="A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private." src="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg" width="600">
+    <img src="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg" alt="Figure 16. Cacheable responses of Set-Cookie responses." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600">
   </a>
-  <figcaption>Figure 16. Cacheable responses of <code>Set-Cookie</code> responses.</figcaption>
+  <div id="fig16-description" class="visually-hidden">A bar chart showing 97% of responses do not use Set-Cookie, and 3% do. This 3% is zoomed into for another bar chart showing the split of 15.3% private, 84.7% public for desktop and similar for mobile at 18.4% public and 81.6% private.</div>
+  <figcaption id="fig16-caption">Figure 16. Cacheable responses of <code>Set-Cookie</code> responses.</figcaption>
 </figure>
 
 ## AppCache and service workers
@@ -569,8 +573,9 @@ In fact, one of the [HTTP Archive trend reports shows the adoption of service wo
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">
-    <img alt="A time series chart showing service worker controlled site usage from October 2016 until July 2019. Usage has been steadily growing throughout the years for both mobile and desktop but is still less than 0.6% for both." src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" width="600">
-  <figcaption>Figure 17. Timeseries of service worker controlled pages. (Source: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
+    <img src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="Figure 17. Timeseries of service worker controlled pages." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600">
+  <div id="fig17-description" class="visually-hidden">A time series chart showing service worker controlled site usage from October 2016 until July 2019. Usage has been steadily growing throughout the years for both mobile and desktop but is still less than 0.6% for both.</div>
+  <figcaption id="fig17-caption">Figure 17. Timeseries of service worker controlled pages. (Source: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
 </figure>
 
 Adoption is still below 1% of websites, but it has been steadily increasing since January 2017. The [Progressive Web App](./pwa) chapter discusses this more, including the fact that it is used a lot more than this graph suggests due to its usage on popular sites, which are only counted once in above graph.
@@ -649,16 +654,17 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg">
-    <img alt="A screenshot of part of a report from the Google Lighthouse tool, with the 'Serve static assets with an efficient cache policy' section open where it lists a number of resources, who's names have been redacted, and the Cache TTL versus the size." src="/static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg" width="600">
+    <img src="/static/images/2019/16_Caching/ch16_fig15_lighthouse_example.jpg" alt="Figure 20. Lighthouse report highlighting potential cache policy improvements." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600">
   </a>
-  <figcaption>Figure 20. Lighthouse report highlighting potential cache policy improvements.</figcaption>
+  <div id="fig20-description" class="visually-hidden">A screenshot of part of a report from the Google Lighthouse tool, with the 'Serve static assets with an efficient cache policy' section open where it lists a number of resources, who's names have been redacted, and the Cache TTL versus the size.</div>
+  <figcaption id="fig20-caption">Figure 20. Lighthouse report highlighting potential cache policy improvements.</figcaption>
 </figure>
 
 Lighthouse computes a score for each audit, ranging from 0% to 100%, and those scores are then factored into the overall scores. The [caching score](https://developers.google.com/web/tools/lighthouse/audits/cache-policy) is based on potential byte savings. When we examine the Lighthouse results, we can get a perspective of how many sites are doing well with their cache policies.
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig21.png">
-    <img src="/static/images/2019/16_Caching/fig21.png" alt="igure 21. Distribution of Lighthouse scores for the 'Uses Long Cache TTL' audit for mobile web pages." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive">
+    <img src="/static/images/2019/16_Caching/fig21.png" alt="Figure 21. Distribution of Lighthouse scores for the 'Uses Long Cache TTL' audit for mobile web pages." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive">
   </a>
   <div id="fig21-description" class="visually-hidden">A stacked bar chart 38.2% of websites get a score of < 10%, 29.0% of websites get a score between 10% and 39%, 18.7% of websites get a score of 40%-79%, 10.7% of websites get a score of 80% - 99%, and 3.4% of websites get a score of 100%.</div>
   <figcaption id="fig21-caption">Figure 21. Distribution of Lighthouse scores for the "Uses Long Cache TTL" audit for mobile web pages.</figcaption>
