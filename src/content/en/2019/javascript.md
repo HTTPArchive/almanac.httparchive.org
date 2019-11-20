@@ -7,7 +7,7 @@ authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens]
 discuss: 1756
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-11T00:00:00.000Z
+last_updated: 2019-11-20T00:00:00.000Z
 ---
 
 ## Introduction
@@ -427,7 +427,7 @@ It is important to note that the numbers here are approximations and they do not
 
 ## Source maps
 
-In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like [TypeScript](https://www.typescriptlang.org/) compile to an output that can look noticeably different from the original source code. For all these reasons, the final code served to the browser can unreadable and hard to decipher.
+In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like [TypeScript](https://www.typescriptlang.org/) compile to an output that can look noticeably different from the original source code. For all these reasons, the final code served to the browser can be unreadable and hard to decipher.
 
 A **source map** is an additional file accompanying a JavaScript file that allows a browser to map the final output to its original source. This can make debugging and analyzing production bundles much simpler.
 
