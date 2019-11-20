@@ -7,7 +7,7 @@ authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 discuss: 1765
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-19T00:00:00.000Z
+last_updated: 2019-11-20T00:00:00.000Z
 ---
 
 ## Introduction
@@ -105,7 +105,7 @@ Compared to the `<title>` tag, fewer pages were detected to have a meta descript
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig6.png">
-    <img src="/static/images/2019/10_SEO/fig6.png" alt="Figure 6. Distribution of meta description length per page." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig6.png" alt="Figure 6. Distribution of meta description length per page." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">Distribution of the number of characters per meta description per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 9, 48, 123, 162, and 230 characters. The mobile distribution is slightly higher by fewer than 10 characters at any given percentile.</div>
   <figcaption id="fig6-caption" >Figure 6. Distribution of meta description length per page.</figcaption>
@@ -172,7 +172,7 @@ It's important to bear in mind that fewer internal links on the mobile version o
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig8.png">
-    <img src="/static/images/2019/10_SEO/fig8.png" alt="Figure 8. Distribution of external links per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-idth="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig8.png" alt="Figure 8. Distribution of external links per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-idth="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive">
   </a>
   <div id="fig8-description" class="visually-hidden">Distribution of the number of external links per page. The 10, 25, 50, 75, and 90th percentiles of external links for desktop are: 1, 4, 10, 22, and 51. The mobile distribution is much lower, by 11 links at the 90th percentile and 2 at the median.</div>
   <figcaption id="fig8-caption" >Figure 8. Distribution of external links per page.</figcaption>
