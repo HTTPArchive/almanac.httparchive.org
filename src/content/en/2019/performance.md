@@ -130,9 +130,10 @@ Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India 
 
 <figure id="fig8">
   <a href="/static/images/2019/07_Performance/nav-timing.png">
-    <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/07_Performance/nav-timing.png" alt="Diagram showing the sequence of network phases in a page load: startTime (promptForUnload), redirect, AppCache, DNS, TCP, request, response, processing, and load.">
+    <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/07_Performance/nav-timing.png" alt="Figure 8. Navigation Timing API diagram of the events in a page navigation." aria-labelledby="fig8-caption" aria-describedby="fig8-description">
   </a>
-  <figcaption>Figure 8. Navigation Timing API diagram of the events in a page navigation.</figcaption>
+  <div id="fig8-description" class="visually-hidden">Diagram showing the sequence of network phases in a page load: startTime (promptForUnload), redirect, AppCache, DNS, TCP, request, response, processing, and load.</div>
+  <figcaption id="fig8-caption">Figure 8. Navigation Timing API diagram of the events in a page navigation.</figcaption>
 </figure>
 
 To help explain TTFB and the many factors that affect it, let's borrow a diagram from the [Navigation Timing API spec](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API). In Figure 8 above, TTFB is the duration from `startTime` to `responseStart`, including everything in between: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`, `TCP`, and the time the server spends handling the request. Given that context, let's see how users are experiencing this metric.

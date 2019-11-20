@@ -28,9 +28,10 @@ As the web evolved, it became more powerful, but also more complicated. As a con
 
 <figure>
   <a href="/static/images/2019/14_CMS/web-evolution.png">
-    <img alt="chart showing the increase in web capabilities from 1999 to 2018" src="/static/images/2019/14_CMS/web-evolution.png" width="600">
+    <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018." width="600">
   </a>
-  <figcaption>Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018.</figcaption>
+  <div id="fig1-description" class="visually-hidden">On the left, labelled circa 1999, we have a bar chart with two bars showing what can be done is close to what is actually done. On the right, labelled 2018, we have a similar bar chart but what can be done is much larger, and what is done is slightly larger. The gap between what can be done and what is actually done has greatly increased.</div>
+  <figcaption id="fig1-caption">Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018.</figcaption>
 </figure>
 
 Here is where a CMS plays the very important role of making it easy for users with different degrees of technical expertise to enter the web ecosystem loop as content creators. By lowering the barrier of entry for content creation, CMSs activate the growth loop of the web by turning users into creators. Hence their popularity.
@@ -56,9 +57,10 @@ In essence, this means that there are many CMS platforms available out there. Th
 
 <figure>
   <a href="/static/images/2019/14_CMS/cms-logos.png">
-    <img src="/static/images/2019/14_CMS/cms-logos.png" alt="Logos of the top CMS providers, including WordPress, Drupal, Wix, etc." width="600">
+    <img src="/static/images/2019/14_CMS/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. The top content management systems." width="600">
   </a>
-  <figcaption>Figure 3. The top content management systems.</figcaption>
+  <div id="fig3-description" class="visually-hidden">Logos of the top CMS providers, including WordPress, Drupal, Wix, etc.</div>
+  <figcaption id="fig3-caption">Figure 3. The top content management systems.</figcaption>
 </figure>
 
 Some of them are open source (e.g. WordPress, Drupal, others) and some of them are proprietary (e.g. AEM, others). Some CMS platforms can be used on "free" hosted or self-hosted plans, and there are also advanced options for using these platforms on higher-tiered plans even at the enterprise level. The CMS space as a whole is a complex, federated universe of *CMS ecosystems*, all separated and at the same time intertwined in the vast fabric of the web.

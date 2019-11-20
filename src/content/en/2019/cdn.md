@@ -1501,8 +1501,9 @@ In a similar way, `Vary: Cookie` usually indicates that content that will change
 
 <figure>
   <a href="/static/images/2019/17_CDN/use_of_vary.png">
-    <img alt="Comparison of Vary header values for HTML and Resouces, divided by Orign and CDN" src="/static/images/2019/17_CDN/use_of_vary.png" aria-labelledby="fig25-caption" width="600">
+    <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="Figure 25. Comparison of Vary usage for HTML and resources served from origin and CDN." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600">
   </a>
+  <div id="fig25-description" class="visually-hidden">Set of four treemap graphs showing that for CDNs serving home pages the biggest use of Vary is for Cookie, followed by User-agent. For CDNs serving other resources it's origin, followed by accept, user-agent, x-origin and referrer. For Origins and home pages it's user-agent, followed by cookie. Finally for Origins and other resources it's primarily user-agent followed by origin, accept, then range and host.</div>
   <figcaption id="fig25-caption">Figure 25. Comparison of <code>Vary</code> usage for HTML and resources served from origin and CDN.</figcaption>
 </figure>
 

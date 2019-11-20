@@ -174,8 +174,9 @@ It's interesting, then, to see what the distribution of these elements looks lik
 
 <figure id="fig8">
   <a href="https://rainy-periwinkle.glitch.me/scatter/html">
-    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Element popularity categorized by standardization" aria-labelledby="fig8-caption" width="600">
+    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Figure 8. Element popularity categorized by standardization" aria-labelledby="fig8-caption" width="600">
   </a>
+  <div id="fig8-description" class="visually-hidden">Scatter graph showing HTML, SVG, and Math ML use relatively few tags while non-standard elements (split into "in global ns", "dasherized" and "colon") are much more spread out.</div>
   <figcaption id="fig8-caption">Figure 8. Element popularity categorized by standardization.</figcaption>
 </figure>
 

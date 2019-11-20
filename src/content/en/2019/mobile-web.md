@@ -85,10 +85,10 @@ One of the most beautiful parts of the web is how web pages load progressively b
 
 <figure>
   <a href="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
-    <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook">
+    <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook" aria-labelledby="fig3-caption" aria-describedby="fig3-description">
   </a>
-
-  <figcaption>Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook</figcaption>
+  <div id="fig3-description" class="visually-hidden">A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook</div>
+  <figcaption id="fig3-caption">Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook</figcaption>
 </figure>
 
 Imagine you're reading an article when all of a sudden, an image loads and pushes the text you're reading way down the screen. You now have to hunt for where you were or just give up on reading the article. Or, perhaps even worse, you begin to click a link right before an ad loads in the same spot, resulting in an accidental click on the ad instead.
@@ -133,10 +133,10 @@ To help us mitigate this problem, there are [accessibility guidelines](https://d
 
 <figure>
   <a href="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img alt="Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
+    <img src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description">
   </a>
-
-  <figcaption>Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
+  <div id="fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook</div>
+  <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
 For colorblindness stats for other demographics, see [this paper](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf).
@@ -185,10 +185,10 @@ Designing tap targets appropriately to mitigate this issue can be difficult beca
 
 <figure>
   <a href="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
-    <img alt="A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook" src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
+    <img src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png" alt="Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook" aria-labelledby="fig6-caption" aria-describedby="fig6-description">
   </a>
-
-  <figcaption>Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook</figcaption>
+  <div id="fig6-description" class="visually-hidden">A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook</div>
+  <figcaption id="fig6-caption">Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook</figcaption>
 </figure>
 
 As of now, 34.43% of sites have sufficiently sized tap targets. So we have quite a ways to go until "fat fingering" is a thing of the past.
@@ -263,8 +263,11 @@ How well are we doing catering to mobile users? According to our research, even 
 The mobile web has now been around long enough for there to be an entire generation of kids where this is the only internet they've ever known. And what kind of experience are we giving them? We're essentially taking them back to the dial-up era. (Good thing I hear AOL still sells those CDs providing 1000 hours of free internet access!)
 
 <figure>
-  <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" width="300">
-  <figcaption>1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
+  <a href="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg">
+    <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="300">
+  </a>
+  <div id="fig9-description" class="visually-hidden">A photograph of an AOL CD-ROM offering 1,000 hours free.</div>
+  <figcaption id="fig9-caption">Figure 9. 1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
 </figure>
 
 <aside class="note" markdown>Notes:

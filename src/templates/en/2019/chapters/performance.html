@@ -270,9 +270,10 @@
       <p><a href="https://web.dev/time-to-first-byte">Time to First Byte</a> (TTFB) is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response.</p>
       <figure id="fig8">
         <a href="/static/images/2019/07_Performance/nav-timing.png">
-          <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/07_Performance/nav-timing.png" loading="lazy" />
+          <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/07_Performance/nav-timing.png" aria-labelledby="fig8-caption" aria-describedby="fig8-description" loading="lazy" />
         </a>
-        <figcaption>Figure 8. Navigation Timing API diagram of the events in a page navigation.</figcaption>
+        <div id="fig8-description" class="visually-hidden">Diagram showing the sequence of network phases in a page load: startTime (promptForUnload), redirect, AppCache, DNS, TCP, request, response, processing, and load.</div>
+        <figcaption id="fig8-caption">Figure 8. Navigation Timing API diagram of the events in a page navigation.</figcaption>
       </figure>
       <p>To help explain TTFB and the many factors that affect it, let's borrow a diagram from the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API">Navigation Timing API spec</a>. In Figure 8 above, TTFB is the duration from <code>startTime</code> to <code>responseStart</code>, including everything in between: <code>unload</code>, <code>redirects</code>, <code>AppCache</code>, <code>DNS</code>, <code>SSL</code>, <code>TCP</code>, and the time the server spends handling the request. Given that context, let's see how users are experiencing this metric.</p>
       <figure id="fig9">
