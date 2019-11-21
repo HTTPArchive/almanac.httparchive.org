@@ -81,12 +81,12 @@ const set_min_date = (date) => {
   if (date) {
     date = new Date(date.substring(0, 16));
     if (date < min_publish_date) {
-      return min_publish_date.toISOString().substr(0, 10);
+      return min_publish_date.toUTCString().substr(0, 10);
     } else {
-      return date.toISOString().substr(0, 10);
+      return date.toUTCString().substr(0, 10);
     }
   } else {
-    return new Date().toISOString().substr(0, 10);
+    return new Date().toUTCString().substr(0, 10);
   }
 };
 
