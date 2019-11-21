@@ -7,7 +7,7 @@ authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 discuss: 1772
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-11T00:00:00.000Z
+last_updated: 2019-11-21T00:00:00.000Z
 ---
 
 ## Introduction
@@ -68,7 +68,7 @@ Historically, CDNs were used exclusively for static resources like [CSS](./css),
   <figcaption>Figure 1. CDN usage vs. origin-hosted resources.</figcaption>
 </figure>
 
-Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of web pages (80%) serve the base HTML from ORIGIN. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely do to the small continued use of mobile specific web pages ("mDot"), which more frequently use a CDN.
+Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of web pages (80%) serve the base HTML from ORIGIN. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely due to the small continued use of mobile specific web pages ("mDot"), which more frequently use a CDN.
 
 Likewise, resources served from sub-domains are more likely to utilize a CDN at 40% of sub-domain resources. Sub-domains are used either to partition resources like images and CSS or they are used to reflect organizational teams such as checkout or APIs.
 
@@ -1521,7 +1521,7 @@ There are other HTTP headers that specifically target CDNs, or other proxy cache
 
 `Surrogate-Control` allows origins to specify caching rules just for CDNs, and as CDNs are likely to strip the header before serving responses, its low visible usage isn't a surprise, in fact it's surprising that it's actually in any responses at all! (It was even seen from some CDNs that state they strip it).
 
-Some CDNs support `post-check` as a method to allow a resource to refreshed when it goes stale, and `pre-check` as a `maxage` equivalent. For most CDNs, usage of `pre-check` and `post-check` was below 1%. Yahoo was the exception to this and about 15% of requests had `pre-check=0, post-check=0`. Unfortunately this seems to be a remnant of an old Internet Explorer pattern rather than active usage. More discussion on this can be found in the [Caching](./caching) chapter.
+Some CDNs support `post-check` as a method to allow a resource to be refreshed when it goes stale, and `pre-check` as a `maxage` equivalent. For most CDNs, usage of `pre-check` and `post-check` was below 1%. Yahoo was the exception to this and about 15% of requests had `pre-check=0, post-check=0`. Unfortunately this seems to be a remnant of an old Internet Explorer pattern rather than active usage. More discussion on this can be found in the [Caching](./caching) chapter.
 
 The `s-maxage` directive informs proxies for how long they may cache a response. Across the Web Almanac dataset, jsDelivr is the only CDN where a high level of usage was seen across multiple resources—this isn't surprising given jsDelivr's role as a public CDN for libraries. Usage across other CDNs seems to be driven by individual customers, for example third-party scripts or SaaS providers using that particular CDN.
 
