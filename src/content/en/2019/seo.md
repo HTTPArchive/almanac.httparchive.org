@@ -7,7 +7,7 @@ authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 discuss: 1765
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-15T00:00:00.000Z
+last_updated: 2019-11-20T00:00:00.000Z
 ---
 
 ## Introduction
@@ -108,7 +108,7 @@ Even though [Google usually displays the first 50-60 characters of a page title]
 Compared to the `<title>` tag, fewer pages were detected to have a meta description, as only 64.02% of mobile home pages have a meta description. Considering that Google often rewrites meta descriptions in the SERPs in response to the searcher's query, perhaps website owners place less importance on including a meta description at all.
 
 <figure>
-  <iframe aria-describedby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive"></iframe>
+  <iframe aria-describedby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive"></iframe>
   <a href="/static/images/2019/10_SEO/fig6.png" class="fig-mobile">
     <img src="/static/images/2019/10_SEO/fig6.png" aria-describedby="fig6-caption" width="600">
   </a>
@@ -177,7 +177,7 @@ It's important to bear in mind that fewer internal links on the mobile version o
 </figure>
 
 <figure>
-  <iframe aria-describedby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive"></iframe>
+  <iframe aria-describedby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive"></iframe>
   <a href="/static/images/2019/10_SEO/fig8.png" class="fig-mobile">
     <img src="/static/images/2019/10_SEO/fig8.png" aria-describedby="fig8-caption" width="600">
   </a>
