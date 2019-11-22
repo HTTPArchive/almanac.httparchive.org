@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const ejs = require('ejs');
 
-const min_publish_date = new Date('2019-11-11T00:00');
+const min_publish_date = '2019-11-11';
 const sitemap_template = `templates/sitemap.ejs.xml`;
 const sitemap_path = `templates/sitemap.xml`;
 const static_pages = [
@@ -79,11 +79,11 @@ const check_meta_dates = (metadata) => {
 
 const set_min_date = (date) => {
   if (date) {
-    date = new Date(date.substring(0, 16));
+    date = date.substr(0, 10);
     if (date < min_publish_date) {
-      return min_publish_date.toISOString().substr(0, 10);
+      return min_publish_date;
     } else {
-      return date.toISOString().substr(0, 10);
+      return date;
     }
   } else {
     return new Date().toISOString().substr(0, 10);
