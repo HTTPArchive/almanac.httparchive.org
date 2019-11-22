@@ -7,7 +7,7 @@ authors: [tomayac, jeffposnick]
 reviewers: [hyperpress, ahmadawais]
 discuss: 1766
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-19T00:00:00.000Z
+last_updated: 2019-11-23T00:00:00.000Z
 ---
 
 ## Introduction
@@ -39,16 +39,8 @@ The first metric we explore are service worker installations. Looking at the dat
 Now this might not look overly impressive, but taking traffic data from Chrome Platform Status into account, we can see that a service worker controls about [15% of all page loads](https://www.chromestatus.com/metrics/feature/timeline/popularity/990), which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.
 
 <figure>
-<<<<<<< HEAD
-  <a href="/static/images/2019/11_PWA/fig3.png">
-    <img src="/static/images/2019/11_PWA/fig3.png" alt="Figure 3. Service Worker installation over time for desktop and mobile." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.</div>
-  <figcaption id="fig3-caption">Figure 3. Service Worker installation over time for desktop and mobile.</figcaption>
-=======
   <div class="big-number">15%</div>
   <figcaption>Figure 3. Percent of page views on a page that registers a service worker. (Source: <a href="(https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)</figcaption>
->>>>>>> master
 </figure>
 
 [Lighthouse](./methodology#lighthouse) checks whether a page is eligible for an [install prompt](https://developers.google.com/web/tools/lighthouse/audits/install-prompt). 1.56% of mobile pages have an [installable manifest](https://web.dev/installable-manifest/).
