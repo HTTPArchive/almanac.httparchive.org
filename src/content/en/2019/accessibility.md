@@ -89,9 +89,9 @@ It is interesting to note however, that the bulk of this problem appears to be a
 
 ### Alternative text on images
 
-Images are an essential part of the web experience. They can tell powerful stories, grab attention, and elicit emotion. But not everyone can see these images that we rely on to tell parts of our stories. Thankfully, in 1995, HTML 2.0 provided a solution to this problem: [the alt tag](https://webaim.org/techniques/alttext/). The alt tag provides web developers with the capability of adding a textual description to the images we use, so that when someone is unable to see our images (or the images are unable to load), they can read the alt text for a description. The alt text fills them in on the part of the story they would have otherwise missed.
+Images are an essential part of the web experience. They can tell powerful stories, grab attention, and elicit emotion. But not everyone can see these images that we rely on to tell parts of our stories. Thankfully, in 1995, HTML 2.0 provided a solution to this problem: [the alt attribute](https://webaim.org/techniques/alttext/). The alt attribute provides web developers with the capability of adding a textual description to the images we use, so that when someone is unable to see our images (or the images are unable to load), they can read the alt text for a description. The alt text fills them in on the part of the story they would have otherwise missed.
 
-Even though alt tags have been around for 25 years, 49.91% of pages still fail to provide alt tags for some of their images, and 8.68% of pages never use them at all.
+Even though alt attributes have been around for 25 years, 49.91% of pages still fail to provide alt attributes for some of their images, and 8.68% of pages never use them at all.
 
 ### Captions for audio and video
 
