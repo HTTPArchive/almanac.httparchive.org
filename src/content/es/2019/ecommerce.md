@@ -126,7 +126,7 @@ La Figura 3 anterior muestra que WooCommerce tiene la mayor adopción con alrede
   <figcaption>Figura 4. Adopción de las principales plataformas de comercio electrónico.</figcaption>
   </figure>
   
-  Hay 110 plataformas de comercio electrónico usadas por menso de un 0,1% de sitios web de escritorio o móvil. Alrededor de 60 de éstas tienen menos del 0,01% de sitios web móviles o de escritorio.
+Hay 110 plataformas de comercio electrónico usadas por menos de un 0,1% de sitios web de escritorio o móvil. Alrededor de 60 de éstas tienen menos del 0,01% de sitios web móviles o de escritorio.
   
   <figure>
   <iframe aria-labelledby="fig5-caption" width="600" height="361" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2093212206&amp;format=interactive"></iframe>
@@ -190,7 +190,7 @@ Los siguientes gráficos son para peticiones de escritorio:
   <table>
     <thead>
       <tr>
-        <th>Type</th>
+        <th>Tipo</th>
         <th>10</th>
         <th>25</th>
         <th>50</th>
@@ -399,7 +399,7 @@ El número de peticiones [JavaScript](./javascript) indica que un mejor _bundlin
 
 Tenga en cuenta que el _payload_ de HTML puede incluir otro código, como JSON, JavaScript o CSS incrustado en el marcado, en lugar de referenciarse como enlaces externos. El tamaño medio del HTML para las páginas de comercio electrónico es de 34 KB en dispositivos móviles y 36 KB en escritorio. Sin embargo, el 10% de las páginas de comercio electrónico tienen un tamaño de HTML de más de 115 KB.
 
-Los tamaños de HTML en móvil no son muy diferentes de los de escritorio. En otras palabras, parece que los sitios no están entregando archivos HTML significativamente diferentes para diferentes dispositivos o tamaños de pantalla. En muchos sitios de comercio electrónico, el HTML de la página de inicio es grands. No sabemos si esto se debe a HTML hinchado o a otro código (como JSON) dentro de los archivos HTML.
+Los tamaños de HTML en móvil no son muy diferentes de los de escritorio. En otras palabras, parece que los sitios no están entregando archivos HTML significativamente diferentes para diferentes dispositivos o tamaños de pantalla. En muchos sitios de comercio electrónico, el HTML de la página de inicio es grande. No sabemos si esto se debe a HTML hinchado o a otro código (como JSON) dentro de los archivos HTML.
 
 ## Estadísticas de imágenes
 
@@ -430,7 +430,7 @@ Las Figuras 12 y 13 muestran que la página de comercio electrónico promedio ti
   <figcaption>Figura 14. El número medio de bytes de imagen por página de comercio electrónico en móvil.</figcaption>
 </figure>
 
-Una proporción significativa de las páginas de comercio electrónico tienen un _payload_ de imaágenes considerable y realizan una gran cantidad de peticiones de imágenes en la primera carga. Consulte el informe [Estado de las imágenes](https://httparchive.org/reports/state-of-images) de HTTP Archive y los capítulos [media](./media) y [peso de página](./page-weight) para más contexto.
+Una proporción significativa de las páginas de comercio electrónico tienen un _payload_ de imágenes considerable y realizan una gran cantidad de peticiones de imágenes en la primera carga. Consulte el informe [Estado de las imágenes](https://httparchive.org/reports/state-of-images) de HTTP Archive y los capítulos [media](./media) y [peso de página](./page-weight) para más contexto.
 
 Los propietarios de sitios web quieren que sus sitios se vean bien en dispositivos modernos. Como resultado, muchos sitios ofrecen las mismas imágenes de productos de alta resolución a todos los usuarios, sin importar la resolución o el tamaño de la pantalla. Es posible que los desarrolladores no estén al tanto (o no quieran usar) técnicas _responsive_ que permitan servir de forma eficiente la mejor imagen posible a diferentes usuarios. Vale la pena recordar que las imágenes de alta resolución no necesariamente aumentan las tasas de conversión. Por el contrario, el uso excesivo de imágenes pesadas puede afectar la velocidad de la página y, por lo tanto, puede reducir las tasas de conversión. En la experiencia de los autores revisando sitios, algunos desarrolladores y otras partes interesadas no adoptan _lazy loading_ de imágenes por preocupaciones sobre SEO entre otros.
 
