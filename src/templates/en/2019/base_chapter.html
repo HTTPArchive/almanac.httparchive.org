@@ -18,7 +18,7 @@ indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');
 });
 
-fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
+fetch("https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json")
     .then(function(r) { return r.json(); })
     .then(function(r) {
   if (!r) {
