@@ -42,7 +42,7 @@ function highBandwidthConnection() {
       gtag('event', 'connection-type', { 'event_category': 'user', 'event_label': effectiveType, 'value': 1 });
     }
   } else {
-    gtag('event', 'connection-type', { 'event_category': 'user', 'event_label': 'note-reported', 'value': 1 });
+    gtag('event', 'connection-type', { 'event_category': 'user', 'event_label': 'not-reported', 'value': 1 });
   }
 
   return highBandwidth;
