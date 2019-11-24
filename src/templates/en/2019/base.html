@@ -8,7 +8,7 @@
 
 {% block content%}
   {% block header %}
-  <header class="alt-bg"> 
+  <header class="alt-bg">
     <div class="top-header">
       <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.png" alt="web almanac by http archive" srcset="/static/images/logo@2x.png 2x" /></a>
       <nav>
@@ -68,8 +68,8 @@
       </div>
       <img class="intro-image-2019" src="/static/images/home-hero-2019.png" alt="The Web Almanac 2019 edition" />
       <img class="intro-image" src="/static/images/home-hero.png" alt="The Web Almanac 2019 edition" />
-    </div> 
-    {% endif %}    
+    </div>
+    {% endif %}
   </header>
   {% endblock %}
 
@@ -87,7 +87,7 @@
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
       </nav>
       <div class="language-switcher">{{ language_switcher() }}</div>
-      <p class="copyright">Copyright © 2019 Web Almanac. All rights reserved.</p>
+      <p class="copyright">Copyright © 2019 Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</p>
       <div class="social-media">
         <a href="https://twitter.com/HTTPArchive" class="twitter">
           <img src="/static/images/twitter.png" alt="Twitter" height="80" width="65" loading="lazy" />
