@@ -211,7 +211,7 @@ HTTP Archive measures the number of TCP connections per page, and that is droppi
   <a href="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png">
     <img alt="Figure 10. Total requests per page." aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png" width="600">
   </a>
-  <div id="fig10-description" class="visually-hidden">Timeseries chart of the number of requests per page, with themedian desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.</div>
+  <div id="fig10-description" class="visually-hidden">Timeseries chart of the number of requests per page, with the median desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.</div>
   <figcaption id="fig10-caption">Figure 10. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
 </figure>
 

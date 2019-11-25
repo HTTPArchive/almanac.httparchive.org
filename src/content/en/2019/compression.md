@@ -287,7 +287,7 @@ Google's [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool e
   <a href="/static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg">
     <img src="/static/images/2019/15_Compression/ch15_fig8_lighthouse.jpg" alt="Figure 10. Lighthouse compression suggestions" aria-labelledby="fig10-caption" aria-describedby="fig10-description"  width="600">
   </a>
-  <div id="fig10-description" class="visually-hidden">A screenshot of a Lighthouse report showing a list of reources (with the names redacted) and showing the size and the potential saving. For the first item there is a potentialy significant saving from 91 KB to 73 KB, while for other smaller files of 6 KB or less there are smaller savings of 4 KB to 1 KB.</div>
+  <div id="fig10-description" class="visually-hidden">A screenshot of a Lighthouse report showing a list of resources (with the names redacted) and showing the size and the potential saving. For the first item there is a potentially significant saving from 91 KB to 73 KB, while for other smaller files of 6 KB or less there are smaller savings of 4 KB to 1 KB.</div>
   <figcaption id="fig10-caption">Figure 10. Lighthouse compression suggestions.</figcaption>
 </figure>
 
