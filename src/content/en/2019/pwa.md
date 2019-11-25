@@ -131,7 +131,7 @@ Looking at the values developers set for the `display` property, it becomes imme
   <a href="/static/images/2019/11_PWA/fig7.png">
     <img src="/static/images/2019/11_PWA/fig7.png" alt="Figure 7. Usage of web app manifest display properties." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&amp;format=interactive">
   </a>
-  <div id="fig7-description" class="visually-hidden">Bar chart showing how the display property of web app manifests is used by desktop and mobile websites. In both cases, the "standalone" value is used 57% of the time. The property is not set at all in 38% of manifests. The "minimal UI", "browser", and "fullsceen" values each make up only 1 or 2% of usage.</div>
+  <div id="fig7-description" class="visually-hidden">Bar chart showing how the display property of web app manifests is used by desktop and mobile websites. In both cases, the "standalone" value is used 57% of the time. The property is not set at all in 38% of manifests. The "minimal UI", "browser", and "fullscreen" values each make up only 1 or 2% of usage.</div>
   <figcaption id="fig7-caption">Figure 7. Usage of web app manifest <code>display</code> properties.</figcaption>
 </figure>
 
