@@ -34,13 +34,16 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
 });
 document.addEventListener("keypress", function onPress(event) {
  	if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
- 		var previous = document.getElementById('previous-chapter').click();
+ 		var previous = document.getElementById('previous-chapter');
  		if (previous) {
  		  previous.click();
  		}
  	}
  	if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>') {
- 		document.getElementById('next-chapter').click();
+ 		var next = document.getElementById('next-chapter');
+ 		if (next) {
+ 		  next.click();
+ 		}
  	}
 });
   
