@@ -33,7 +33,7 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
   el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
 });
 document.addEventListener("keypress", function onPress(event) {
- 	if (event.key === 'p' || event.key === ',') {
+ 	if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
  		document.getElementById('previous-chapter').click();
  	}
  	if (event.key === 'n' || event.key === '.') {
