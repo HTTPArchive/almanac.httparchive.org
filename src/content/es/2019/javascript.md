@@ -408,7 +408,7 @@ Con HTTP Archive, podemos echar un vistazo a cualquier API más nueva que sea co
 	<figcaption id="fig17-caption">Figura 17. Uso de nuevas API de JavaScript.</figcaption>
 </figure>
 
-Atomics (0.38%) y SharedArrayBuffer (0.20%) son apenas visibles en este gráfico ya que se usan en tan pocas páginas.
+Atomics (0,38%) y SharedArrayBuffer (0,20%) son apenas visibles en este gráfico ya que se usan en tan pocas páginas.
 
 Es importante tener en cuenta que los números aquí son aproximaciones y no aprovechan [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) para medir el uso de funciones.
 
