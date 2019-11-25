@@ -21,7 +21,7 @@ La especificación del lenguaje en sí, junto con muchas bibliotecas y marcos cr
 
 ## ¿Cuánto JavaScript usamos?
 
-JavaScript es el recurso más costoso que enviamos a los navegadores; ya que tiene que ser descargado, analizado, compilado y finalmente ejecutado. Aunque los navegadores han disminuido significativamente el tiempo que lleva analizar y compilar scripts, [la descarga y la ejecución se han convertido en las etapas más caras](https://v8.dev/blog/cost-of-javascript-2019) cuando JavaScript es procesado por una página web.
+JavaScript es el recurso más costoso que enviamos a los navegadores, ya que tiene que ser descargado, analizado, compilado y finalmente ejecutado. Aunque los navegadores han disminuido significativamente el tiempo que lleva analizar y compilar scripts, [la descarga y la ejecución se han convertido en las etapas más costosas](https://v8.dev/blog/cost-of-javascript-2019) cuando JavaScript es procesado por una página web.
 
 Enviar paquetes de JavaScript más pequeños al navegador es la mejor manera de reducir los tiempos de descarga y, a su vez, mejorar el rendimiento de la página.**Pero, ¿cuánto JavaScript utilizamos realmente?**
 
