@@ -428,7 +428,7 @@ Aunque es útil, hay una serie de razones por las cuales muchos sitios pueden no
 	<figcaption id="fig18-caption">Figura 18. Porcentaje de sitios que usan mapas fuente.</figcaption>
 </figure>
 
-Para las páginas de escritorio y móviles, los resultados son casi los mismos. 17-18% incluye un mapa fuente para al menos un script en la página (detectado como un script de contenido de origen con  `sourceMappingURL`).
+Para las páginas de escritorio y móviles, los resultados son casi los mismos. Un 17-18% incluye un mapa fuente para al menos un script en la página (detectado como un script de contenido de origen con `sourceMappingURL`).
 
 ## Conclusión
 
