@@ -404,7 +404,7 @@ Con HTTP Archive, podemos echar un vistazo a cualquier API más nueva que sea co
    <a href="/static/images/2019/01_JavaScript/fig17.png">
       <img src="/static/images/2019/01_JavaScript/fig17.png" alt="Figura 17. Uso de nuevas API de JavaScript." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive">
    </a>
-	<div id="fig17-description" class="visually-hidden">Gráfico de barras que muestra el 25.5% / 36.2% de los sitios en computadoras de escritorio y dispositivos móviles usa WeakMap, 6.1% / 17.2% usa WeakSet, 3.9% / 14.0% usa Intl, 3.9% / 4.4% usa Proxy, 0.4% / 0.4% usa Atomics, y 0.2% / 0.2% usan SharedArrayBuffer.</div>
+	<div id="fig17-description" class="visually-hidden">Gráfico de barras que muestra el 25,5% / 36,2% de los sitios en computadoras de escritorio y dispositivos móviles usa WeakMap, 6,1% / 17,2% usa WeakSet, 3,9% / 14,0% usa Intl, 3,9% / 4,4% usa Proxy, 0,4% / 0,4% usa Atomics, y 0,2% / 0,2% usan SharedArrayBuffer.</div>
 	<figcaption id="fig17-caption">Figura 17. Uso de nuevas API de JavaScript.</figcaption>
 </figure>
 
