@@ -49,7 +49,7 @@ En cada percentil, estamos enviando un poco más de JavaScript a los dispositivo
 
 ### Tiempo de procesamiento
 
-Después de ser analizado y compilado, el JavaScript cargado por el navegador debe procesarse (o ejecutarse) antes de poder ser utilizado. Los dispositivos varían y su potencia informática puede afectar significativamente la rapidez con que se puede procesar JavaScript en una página. ¿Cuáles son los tiempos de procesamiento actuales en la web?
+Después de ser analizado y compilado, el JavaScript cargado por el navegador debe procesarse (o ejecutarse) antes de poder ser utilizado. Los dispositivos varían y su potencia de cálculo puede afectar significativamente la rapidez con que se puede procesar JavaScript en una página. ¿Cuáles son los tiempos de procesamiento actuales en la web?
 
 Podemos tener una idea analizando los tiempos de procesamiento de subprocesos principales para V8 en diferentes percentiles:
 
