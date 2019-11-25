@@ -17,7 +17,7 @@ JavaScript es un lenguaje de script que permite construir experiencias interacti
 
 La especificación del lenguaje en sí, junto con muchas bibliotecas y marcos creados por la comunidad utilizados por desarrolladores de todo el mundo, ha cambiado y evolucionado desde que se creó el lenguaje en 1995. Las implementaciones e intérpretes de JavaScript también han seguido progresando, haciendo que el lenguaje sea utilizable en muchos entornos, no solo navegadores web.
 
-[HTTP Archive](https://httparchive.org/) explora [millones de páginas](https://httparchive.org/reports/state-of-the-web#numUrls) todos los meses y los ejecuta a través de una instancia privada de [WebPageTest](https://webpagetest.org/) para almacenar información clave de cada página. (Puedes aprender más sobre esto en nuestra [metodología](./methodology)). En el context de JavaScript, HTTP Archive proporciona información extensa sobre el uso del idioma para toda la web. Este capítulo consolida y analiza muchas de estas tendencias.
+[HTTP Archive](https://httparchive.org/) explora [millones de páginas](https://httparchive.org/reports/state-of-the-web#numUrls) todos los meses y los ejecuta a través de una instancia privada de [WebPageTest](https://webpagetest.org/) para almacenar información clave de cada página. (Puedes aprender más sobre esto en nuestra [metodología](./methodology)). En el context de JavaScript, HTTP Archive proporciona información extensa sobre el uso del lenguaje en toda la web. Este capítulo consolida y analiza muchas de estas tendencias.
 
 ## ¿Cuánto JavaScript usamos?
 
