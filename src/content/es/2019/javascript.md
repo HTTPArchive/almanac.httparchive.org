@@ -332,7 +332,7 @@ Para declarar un script como módulo, la etiqueta del script debe tener el códi
 	<figcaption id="fig13-caption">Figura 13. Porcentaje de sitios que utilizan type=module.</figcaption>
 </figure>
 
-El soporte a nivel de navegador para módulos todavía es relativamente nuevo, y los números aquí muestran que muy pocos sitios usan actualmente `type="module"` para sus scripts. Muchos sitios todavía dependen de cargadores de módulos (2.37% de todos los sitios de escritorio usan [RequireJS](https://github.com/requirejs/requirejs) por ejemplo) y _bundlers_ ([webpack](https://webpack.js.org/) por ejemplo) para definir módulos dentro de su código fuente.
+El soporte a nivel de navegador para módulos todavía es relativamente nuevo, y los números aquí muestran que muy pocos sitios usan actualmente `type="module"` para sus scripts. Muchos sitios todavía dependen de cargadores de módulos (2,37% de todos los sitios de escritorio usan [RequireJS](https://github.com/requirejs/requirejs) por ejemplo) y _bundlers_ ([webpack](https://webpack.js.org/) por ejemplo) para definir módulos dentro de su código fuente.
 
 Si se usan módulos nativos, es importante asegurarse de que se use un script de respaldo apropiado para los navegadores que aún no admiten módulos. Esto se puede hacer incluyendo un script adicional con un atributo `nomodule`.
 
