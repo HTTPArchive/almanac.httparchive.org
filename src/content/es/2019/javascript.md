@@ -287,7 +287,7 @@ Hay varias razones posibles:
 - [WordPress](https://wordpress.org/), que se usa en más del 30% de los sitios, incluye jQuery por defecto.
 - Cambiar de jQuery a una biblioteca más nueva del lado del cliente puede llevar tiempo dependiendo de qué tan grande sea una aplicación, y muchos sitios pueden consistir en jQuery y además bibliotecas más nuevas del lado del cliente.
 
-Otras bibliotecas JavaScript más utilizadas incluyen variantes de jQuery (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/) y así.
+Otras bibliotecas JavaScript más utilizadas incluyen variantes de jQuery (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/), etc.
 
 ### Frameworks y bibliotecas de UI
 
