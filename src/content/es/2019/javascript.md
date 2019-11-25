@@ -328,7 +328,7 @@ Para declarar un script como módulo, la etiqueta del script debe tener el códi
    <a href="/static/images/2019/01_JavaScript/fig13.png">
       <img src="/static/images/2019/01_JavaScript/fig13.png" alt="Figura 13. Porcentaje de sitios que utilizan type=module." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive">
    </a>
-	<div id="fig13-description" class="visually-hidden">Gráfico de barras que muestra el 0.6% de los sitios en computadoras de escritorio usan 'type = module' y el 0.8% de los sitios en dispositivos móviles.</div>
+	<div id="fig13-description" class="visually-hidden">Gráfico de barras que muestra el 0,6% de los sitios en computadoras de escritorio usan 'type=module' y el 0,8% de los sitios en dispositivos móviles.</div>
 	<figcaption id="fig13-caption">Figura 13. Porcentaje de sitios que utilizan type=module.</figcaption>
 </figure>
 
