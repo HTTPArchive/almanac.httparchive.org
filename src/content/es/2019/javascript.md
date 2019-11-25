@@ -41,7 +41,7 @@ Mirando estos números, es natural preguntarse si esto es demasiado JavaScript. 
    <a href="/static/images/2019/01_JavaScript/fig2.png">
       <img src="/static/images/2019/01_JavaScript/fig2.png" alt="Figura 2. Distribución de JavaScript por página por dispositivo." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive">
    </a>
-	<div id="fig2-description" class="visually-hidden">Gráfico de barras que muestra 76 bytes / 65 bytes de JavaScript se usa en el percentil p10 en computadoras de escritorio y dispositivos móviles respectivamente, 186/164 bytes para p25, 391/359 bytes para p50, 721/668 bytes para p75 y 1,131 / 1,060 bytes para p90 .</div>
+	<div id="fig2-description" class="visually-hidden">Gráfico de barras que muestra 76 bytes / 65 bytes de JavaScript se usa en el percentil p10 en computadoras de escritorio y dispositivos móviles respectivamente, 186/164 bytes para p25, 391/359 bytes para p50, 721/668 bytes para p75 y 1.131 / 1.060 bytes para p90 .</div>
 	<figcaption id="fig2-caption">Figura 2. Distribución de JavaScript por página por dispositivo.</figcaption>
 </figure>
 
