@@ -7,7 +7,7 @@ authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 discuss: 1773
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-07T21:46:11.000Z
+last_updated: 2019-11-23T00:00:00.000Z
 ---
 
 ## Introduction
@@ -60,18 +60,20 @@ There were three really important takeaways from this research:
 
 <figure>
   <a href="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="Chart showing 19 converted sessions vs. 31 non-converted sessions">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="Figure 1. Converted sessions vs non-converted sessions." aria-labelledby="fig1-caption" aria-describedby="fig1-description">
   </a>
-  <figcaption>Figure 1. Converted sessions vs non-converted sessions.</figcaption>
+  <div id="fig1-description" class="visually-hidden">Chart showing 19 converted sessions vs. 31 non-converted sessions</div>
+  <figcaption id="fig1-caption">Figure 1. Converted sessions vs non-converted sessions.</figcaption>
 </figure>
 
 3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the long tail that demonstrates how many retail sessions contained up to 1,440 scripts!
 
 <figure>
   <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png" alt="Chart showing conversion rate dropping off as scripts increase">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png" alt="" aria-labelledby="fig2-caption" aria-describedby="fig2-description">
   </a>
-  <figcaption>Figure 2. Conversion rate dropping off as scripts increase.</figcaption>
+  <div id="fig2-description" class="visually-hidden">Chart showing conversion rate climbing up until 80 scripts, and then dropping off as scripts increase up to 1440 scripts.</div>
+  <figcaption id="fig2-caption">Figure 2. Conversion rate dropping off as scripts increase.</figcaption>
 </figure>
 
 Now that we've covered why page size and complexity matter, let's get into some juicy HTTP Archive stats so we can better understand the current state of the web and the impact of page bloat.
@@ -539,9 +541,10 @@ Further investigation into the data set revealed that 62% of GIFs are 43 bytes o
 
 <figure>
   <a href="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Chart showing cumulative distriubtion function of GIF file sizes">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Figure 10. Cumulative distribution function of GIF file sizes." aria-labelledby="fig10-caption" aria-describedby="fig10-description">
   </a>
-  <figcaption>Figure 10. Cumulative distribution function of GIF file sizes.</figcaption>
+  <div id="fig10-description" class="visually-hidden">Chart showing 25% of GIFs are 35 bytes or smaller (which is the optimal size of a 1x1 white GIF) and 62% of GIFs are 43 bytes or smaller (which is the optimal size of a 1x1 transparent GIF). This increases to just over 75% of GIFs being 100 bytes or less.</div>
+  <figcaption id="fig10-caption">Figure 10. Cumulative distribution function of GIF file sizes.</figcaption>
 </figure>
 
 The tables below show two different approaches to removing these tiny images from the data set: the first one is based on images with a file size greater than 100 bytes, the second is based on images with a file size greater than 1024 bytes.

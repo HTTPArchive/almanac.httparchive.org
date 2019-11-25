@@ -7,7 +7,7 @@ authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
 discuss: 1775
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-14T00:00:00.000Z 
+last_updated: 2019-11-23T00:00:00.000Z 
 ---
 
 ## Introduction
@@ -63,9 +63,13 @@ HTTP/2 however, was different as it was effectively hidden in HTTPS (at least fo
 
 Our analysis is sourced from the HTTP Archive, which tests approximately 5 million of the top desktop and mobile websites in the Chrome browser. (Learn more about our [methodology](./methodology).)
 
-<figure markdown>
-[![Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year.](/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png)](/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png)
-<figcaption>Figure 2. HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
+
+<figure>
+  <a href="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png">
+    <img alt="Figure 2. HTTP/2 usage by request." aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png" width="600">
+  </a>
+  <div id="fig2-description" class="visually-hidden">Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year.</div>
+  <figcaption id="fig2-caption">Figure 2. HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
 </figure>
 
 The results show that HTTP/2 usage is now the majority protocol-an impressive feat just 4 short years after formal standardization! Looking at the breakdown of all HTTP versions by request we see the following:
@@ -193,16 +197,22 @@ The impact of HTTP/2 is much more difficult to measure, especially using the HTT
 
 One impact that can be measured is in the changing use of HTTP now that we are in an HTTP/2 world. Multiple connections were a workaround with HTTP/1.1 to allow a limited form of parallelization, but this is in fact the opposite of what usually works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, and HTTPS negotiation, and it also allows the potential of cross-request prioritization.
 
-<figure markdown>
-[![Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.](/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png)](/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png)
-<figcaption>Figure 9. TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
+<figure>
+  <a href="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png">
+    <img alt="Figure 9. TCP connections per page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" src="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png" width="600">
+  </a>
+  <div id="fig9-description" class="visually-hidden">Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.</div>
+  <figcaption id="fig9-caption">Figure 9. TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
 </figure>
 
 HTTP Archive measures the number of TCP connections per page, and that is dropping steadily as more sites support HTTP/2 and use its single connection instead of six separate connections.
 
-<figure markdown>
-[![Timeseries chart of the number of requests per page, with themedian desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.](/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png)](/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png)
-<figcaption>Figure 10. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
+<figure>
+  <a href="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png">
+    <img alt="Figure 10. Total requests per page." aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png" width="600">
+  </a>
+  <div id="fig10-description" class="visually-hidden">Timeseries chart of the number of requests per page, with themedian desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.</div>
+  <figcaption id="fig10-caption">Figure 10. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
 </figure>
 
 Bundling assets to obtain fewer requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting, etc. This is less necessary when using HTTP/2 as there is less overhead with requests, but it should be noted that requests are not free in HTTP/2, and [those that experimented with removing bundling completely have noticed a loss in performance](https://engineering.khanacademy.org/posts/js-packaging-http2.htm). Looking at the number of requests loaded per page over time, we do see a slight decrease in requests, rather than the expected increase.
@@ -341,5 +351,3 @@ Other than that, HTTP/2 has been a relatively easy upgrade path, which is why it
 Ensuring you are using a strong, up-to-date, well-maintained implementation of any newish protocol like HTTP/2 will ensure you stay on top of these issues. However, that can take expertise and managing. The roll out of QUIC and HTTP/3 will likely be even more complicated and require more expertise. Perhaps this is best left to third-party service providers like CDNs who have this expertise and can give your site easy access to these features? However, even when left to the experts, this is not a sure thing (as the prioritization statistics show), but if you choose your server provider wisely and engage with them on what your priorities are, then it should be an easier implementation.
 
 On that note it would be great if the CDNs prioritized these issues (pun definitely intended!), though I suspect with the advent of a new prioritization method in HTTP/3, many will hold tight. The next year will prove yet more interesting times in the HTTP world.
-
-<script src='/static/js/chapter.js' defer></script>
