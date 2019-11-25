@@ -162,7 +162,6 @@ function upgradeInteractiveFigures() {
             parentLink.classList.add("fig-mobile");
           }
 
-
         }
       };
 
@@ -216,4 +215,4 @@ function setDiscussionCount() {
 }
 
 upgradeInteractiveFigures();
-//setDiscussionCount();
+setDiscussionCount();
