@@ -383,7 +383,7 @@ Para _prefetch_:
 	<figcaption id="fig16-caption">Figura 16. Porcentaje de sitios que usan rel=prefetch para scripts.</figcaption>
 </figure>
 
-Tanto para dispositivos móviles como para computadoras de escritorio, el 0.08% de las páginas aprovechan la captación previa para cualquiera de sus scripts.
+Tanto para dispositivos móviles como para computadoras de escritorio, el 0,08% de las páginas aprovechan la captación previa para cualquiera de sus scripts.
 
 ## Nuevos APIs
 
