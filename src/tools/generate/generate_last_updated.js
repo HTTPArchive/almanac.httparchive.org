@@ -29,7 +29,7 @@ const get_last_updated_date = (path) => {
   const date_string = /Date:\s+(\S*)/g.exec(stdout)[1];
   const date = new Date(date_string);
 
-  return date.toISOString();
+  return date.toUTCString();
 };
 
 module.exports = {
