@@ -352,7 +352,7 @@ Así que, **¿Cuántos sitios usan `nomodule` para los scripts en su página?**
 	<figcaption id="fig14-caption">Figura 14. Porcentaje de sitios que usan nomodule.</figcaption>
 </figure>
 
-Del mismo modo, muy pocos sitios (0.50% - 0.80%) usan el atributo `nomodule` para cualquier script.
+Del mismo modo, muy pocos sitios (0,50% - 0,80%) usan el atributo `nomodule` para cualquier script.
 
 ## Preload y prefetch
 
