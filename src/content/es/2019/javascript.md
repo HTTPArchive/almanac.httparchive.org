@@ -280,7 +280,7 @@ Código fuente abierto, o código con una licencia permisiva a la que cualquier 
 	<figcaption>Figura 11. Principales bibliotecas de JavaScript en computadoras de escritorio y dispositivos móviles.</figcaption>
 </figure>
 
-[jQuery](https://jquery.com/), la biblioteca JavaScript más popular jamás creada, se utiliza en el 85.03% de las páginas de escritorio y el 83.46% de las páginas móviles. El advenimiento de muchas API y métodos del navegador, tales como [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) y [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), estandarizaron gran parte de la funcionalidad proporcionada por la biblioteca en una forma nativa. Aunque la popularidad de jQuery puede parecer estar disminuyendo, ¿por qué todavía se usa en la gran mayoría de la web?
+[jQuery](https://jquery.com/), la biblioteca JavaScript más popular jamás creada, se utiliza en el 85,03% de las páginas de escritorio y el 83,46% de las páginas móviles. El advenimiento de muchas API y métodos del navegador, tales como [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) y [querySelector](https://developer.mozilla.org/docs/Web/API/Document/querySelector), estandarizaron gran parte de la funcionalidad proporcionada por la biblioteca en una forma nativa. Aunque la popularidad de jQuery puede parecer estar disminuyendo, ¿por qué todavía se usa en la gran mayoría de la web?
 
 Hay varias razones posibles:
 
