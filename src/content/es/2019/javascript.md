@@ -379,7 +379,7 @@ Para _prefetch_:
    <a href="/static/images/2019/01_JavaScript/fig16.png">
       <img src="/static/images/2019/01_JavaScript/fig16.png" alt="Figura 16. Porcentaje de sitios que usan rel=prefetch para scripts." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive">
    </a>
-	<div id="fig16-description" class="visually-hidden">Gráfico de barras que muestra el 0.08% de los sitios en computadoras de escritorio usan 'rel=prefetch' y el 0.08% de los sitios en dispositivos móviles.</div>
+	<div id="fig16-description" class="visually-hidden">Gráfico de barras que muestra el 0,08% de los sitios en computadoras de escritorio usan 'rel=prefetch' y el 0,08% de los sitios en dispositivos móviles.</div>
 	<figcaption id="fig16-caption">Figura 16. Porcentaje de sitios que usan rel=prefetch para scripts.</figcaption>
 </figure>
 
