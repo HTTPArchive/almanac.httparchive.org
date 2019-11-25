@@ -333,6 +333,7 @@ footer .language-switcher {
 }
 footer .copyright {
   grid-area: copyright;
+  display: flex;
   align-items: center;
 }
 footer .social-media {
@@ -358,6 +359,7 @@ p.copyright {
 }
 p.copyright a {
   color: white;
+  margin-left: 3px;
 }
 
 .social-media div {
@@ -533,6 +535,7 @@ p.copyright a {
   }
   footer .copyright {
     grid-area: copyright;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
