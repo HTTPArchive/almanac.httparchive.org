@@ -314,7 +314,7 @@ Aunque este análisis es interesante, es importante tener en cuenta que estos re
 
 ## Carga diferenciada
 
-Los [módulos JavaScript](https://v8.dev/features/modules), o ES modules, son soportados en [en todos los navegadores principales](https://caniuse.com/#feat=es6-module). Los módulos proporcionan la capacidad de crear scripts que pueden importar y exportar desde otros módulos. Esto permite a cualquier persona construir sus aplicaciones diseñadas en un patrón de módulo, importando y exportando donde sea necesario, sin depender de cargadores de módulos de terceros.
+Los [módulos JavaScript](https://v8.dev/features/modules), o ES modules, son soportados en [todos los navegadores principales](https://caniuse.com/#feat=es6-module). Los módulos proporcionan la capacidad de crear scripts que pueden importar y exportar desde otros módulos. Esto permite a cualquier persona construir sus aplicaciones diseñadas en un patrón de módulo, importando y exportando donde sea necesario, sin depender de cargadores de módulos de terceros.
 
 Para declarar un script como módulo, la etiqueta del script debe tener el código `type="module"`:
 
