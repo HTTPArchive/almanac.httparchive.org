@@ -7,7 +7,7 @@ authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens]
 discuss: 1756
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-22T00:00:00.000Z
+last_updated: 2019-11-23T00:00:00.000Z
 ---
 
 ## Introduction
@@ -434,5 +434,3 @@ For both desktop and mobile pages, the results are about the same. 17-18% includ
 The JavaScript ecosystem continues to change and evolve every year. Newer APIs, improved browser engines, and fresh libraries and frameworks are all things we can expect to happen indefinitely. HTTP Archive provides us with valuable insight on how sites in the wild use the language.
 
 Without JavaScript, the web would not be where it is today, and all the data gathered for this article only proves this.
-
-<script src='/static/js/chapter.js' defer></script>

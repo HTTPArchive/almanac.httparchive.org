@@ -7,7 +7,7 @@ authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 discuss: 1765
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-20T00:00:00.000Z
+last_updated: 2019-11-23T00:00:00.000Z
 ---
 
 ## Introduction
@@ -41,12 +41,11 @@ To be able to understand what a page is about and decide for which search querie
 We assessed the content on the pages by looking for groups of at least 3 words and counting how many were found in total. We found 2.73% of desktop pages that didn't have any word groups, meaning that they have no body content to help search engines understand what the website is about.
 
 <figure>
-  <iframe aria-describedby="fig1-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig1.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig1.png" aria-describedby="fig1-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig1.png">
+    <img src="/static/images/2019/10_SEO/fig1.png" alt="Figure 1. Distribution of the number of words per page." aria-labelledby="fig1-caption" aria-describedby="fig1-caption" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive">
   </a>
-  <div id="fig1-caption" class="visually-hidden">Distribution of words per page. The median number of words per desktop page is 346 and 306 for mobile pages. Desktop pages have more word throughout the percentiles, by as many as 120 words at the 90th percentile.</div>
-  <figcaption>Figure 1. Distribution of the number of words per page.</figcaption>
+  <div id="fig1-description" class="visually-hidden">Distribution of words per page. The median number of words per desktop page is 346 and 306 for mobile pages. Desktop pages have more word throughout the percentiles, by as many as 120 words at the 90th percentile.</div>
+  <figcaption id="fig1-caption" >Figure 1. Distribution of the number of words per page.</figcaption>
 </figure>
 
 The median desktop home page has 346 words, and the median mobile home page has a slightly lower word count at 306 words. This shows that mobile sites do serve a bit less content to their users, but at over 300 words, this is still a reasonable amount to read. This is especially true for home pages which will naturally contain less content than article pages, for example. Overall the distribution of words is broad, with between 22 words at the 10th percentile and up to 1,361 at the 90th percentile.
@@ -56,23 +55,21 @@ The median desktop home page has 346 words, and the median mobile home page has 
 We also looked at whether pages are structured in a way that provides the right context for the content they contain. Headings (`H1`, `H2`, `H3`, etc.) are used to format and structure a page and make content easier to read and parse. Despite the importance of headings, 10.67% of pages have no heading tags at all.
 
 <figure>
-  <iframe aria-describedby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig2.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig2.png" aria-describedby="fig2-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig2.png">
+    <img src="/static/images/2019/10_SEO/fig2.png" alt="Figure 2. Distribution of the number of headings per page." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive">
   </a>
-  <div id="fig2-caption" class="visually-hidden">Distribution of headings per page. The median number of headings per desktop and mobile page is 10. At the 10, 25, 75, and 90th percentiles, the number of headings per desktop page are: 0, 3, 21, and 39. This is slightly higher than the distribution of mobile headings per page.</div>
-  <figcaption>Figure 2. Distribution of the number of headings per page.</figcaption>
+  <div id="fig2-describption" class="visually-hidden">Distribution of headings per page. The median number of headings per desktop and mobile page is 10. At the 10, 25, 75, and 90th percentiles, the number of headings per desktop page are: 0, 3, 21, and 39. This is slightly higher than the distribution of mobile headings per page.</div>
+  <figcaption id="fig2-caption" >Figure 2. Distribution of the number of headings per page.</figcaption>
 </figure>
 
 The median number of heading elements per page is 10. Headings contain 30 words on mobile pages and 32 words on desktop pages. This implies that the websites that utilize headings put significant effort in making sure that their pages are readable, descriptive, and clearly outline the page structure and context to search engine bots.
 
 <figure>
-  <iframe aria-describedby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig3.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig3.png" aria-describedby="fig3-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig3.png">
+    <img src="/static/images/2019/10_SEO/fig3.png" alt="Figure 3. Distribution of H1 length per page." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive">
   </a>
-  <div id="fig3-caption" class="visually-hidden">Distribution of the number of characters in the first H1 per page. The desktop and mobile distributions are nearly identical, with the 10, 25, 50, 75, and 90th percentiles as: 6, 11, 19, 31, and 47 characters.</div>
-  <figcaption>Figure 3. Distribution of H1 length per page.</figcaption>
+  <div id="fig3-description" class="visually-hidden">Distribution of the number of characters in the first H1 per page. The desktop and mobile distributions are nearly identical, with the 10, 25, 50, 75, and 90th percentiles as: 6, 11, 19, 31, and 47 characters.</div>
+  <figcaption id="fig3-caption" >Figure 3. Distribution of H1 length per page.</figcaption>
 </figure>
 
 In terms of specific heading length, the median length of the first `H1` element found on desktop is 19 characters.
@@ -93,12 +90,11 @@ Meta tags allow us to give specific instructions and information to search engin
 Page titles are an important way of communicating the purpose of a page to a user or search engine. `<title>` tags are also used as headings in the SERPS and as the title for the browser tab when visiting a page, so it's no surprise to see that 97.1% of mobile pages have a document title.
 
 <figure>
-  <iframe aria-describedby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig5.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig5.png" aria-describedby="fig5-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig5.png">
+    <img src="/static/images/2019/10_SEO/fig5.png" alt="Figure 5. Distribution of title length per page." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive">
   </a>
-  <div id="fig5-caption" class="visually-hidden">Distribution of the number of characters per title element per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 4, 9, 20, 40, and 66 characters. The mobile distribution is very similar.</div>
-  <figcaption>Figure 5. Distribution of title length per page.</figcaption>
+  <div id="fig5-description" class="visually-hidden">Distribution of the number of characters per title element per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 4, 9, 20, 40, and 66 characters. The mobile distribution is very similar.</div>
+  <figcaption id="fig5-caption">Figure 5. Distribution of title length per page.</figcaption>
 </figure>
 
 Even though [Google usually displays the first 50-60 characters of a page title](https://moz.com/learn/seo/title-tag) within a SERP, the median length of the `<title>` tag was only 21 characters for mobile pages and 20 characters for desktop pages. Even the 75th percentile is still below the cutoff length. This suggests that some SEOs and content writers aren't making the most of the space allocated to them by search engines for describing their home pages in the SERPs.
@@ -108,12 +104,11 @@ Even though [Google usually displays the first 50-60 characters of a page title]
 Compared to the `<title>` tag, fewer pages were detected to have a meta description, as only 64.02% of mobile home pages have a meta description. Considering that Google often rewrites meta descriptions in the SERPs in response to the searcher's query, perhaps website owners place less importance on including a meta description at all.
 
 <figure>
-  <iframe aria-describedby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig6.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig6.png" aria-describedby="fig6-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig6.png">
+    <img src="/static/images/2019/10_SEO/fig6.png" alt="Figure 6. Distribution of meta description length per page." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive">
   </a>
-  <div id="fig6-caption" class="visually-hidden">Distribution of the number of characters per meta description per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 9, 48, 123, 162, and 230 characters. The mobile distribution is slightly higher by fewer than 10 characters at any given percentile.</div>
-  <figcaption>Figure 6. Distribution of meta description length per page.</figcaption>
+  <div id="fig6-description" class="visually-hidden">Distribution of the number of characters per meta description per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 9, 48, 123, 162, and 230 characters. The mobile distribution is slightly higher by fewer than 10 characters at any given percentile.</div>
+  <figcaption id="fig6-caption" >Figure 6. Distribution of meta description length per page.</figcaption>
 </figure>
 
 The median meta description length was also lower than the [recommended length of 155-160 characters](https://moz.com/learn/seo/meta-description), with desktop pages having descriptions of 123 characters. Interestingly, meta descriptions were consistently longer on mobile than on desktop, despite mobile SERPs traditionally having a shorter pixel limit. This limit has only been extended recently, so perhaps more website owners have been testing the impact of having longer, more descriptive meta descriptions for mobile results.
@@ -168,32 +163,29 @@ The number of internal and external links included on desktop pages were consist
 It's important to bear in mind that fewer internal links on the mobile version of a page [might cause an issue](https://moz.com/blog/internal-linking-mobile-first-crawl-paths) for your website. With [mobile-first indexing](https://www.deepcrawl.com/knowledge/white-papers/mobile-first-index-guide/), which for new websites is the default for Google, if a page is only linked from the desktop version and not present on the mobile version, search engines will have a much harder time discovering and ranking it.
 
 <figure>
-  <iframe aria-describedby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig7.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig7.png" aria-describedby="fig7-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig7.png">
+    <img src="/static/images/2019/10_SEO/fig7.png" alt="Figure 7. Distribution of internal links per page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive">
   </a>
-  <div id="fig7-caption" class="visually-hidden">Distribution of the number of internal links per page. The 10, 25, 50, 75, and 90th percentiles of internal links for desktop are: 7, 29, 70, 142, and 261. The mobile distribution is much lower, by 30 links at the 90th percentile and 10 at the median.</div>
-  <figcaption>Figure 7. Distribution of internal links per page.</figcaption>
+  <div id="fig7-description" class="visually-hidden">Distribution of the number of internal links per page. The 10, 25, 50, 75, and 90th percentiles of internal links for desktop are: 7, 29, 70, 142, and 261. The mobile distribution is much lower, by 30 links at the 90th percentile and 10 at the median.</div>
+  <figcaption id="fig7-caption" >Figure 7. Distribution of internal links per page.</figcaption>
 </figure>
 
 <figure>
-  <iframe aria-describedby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig8.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig8.png" aria-describedby="fig8-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig8.png">
+    <img src="/static/images/2019/10_SEO/fig8.png" alt="Figure 8. Distribution of external links per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-idth="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive">
   </a>
-  <div id="fig8-caption" class="visually-hidden">Distribution of the number of external links per page. The 10, 25, 50, 75, and 90th percentiles of external links for desktop are: 1, 4, 10, 22, and 51. The mobile distribution is much lower, by 11 links at the 90th percentile and 2 at the median.</div>
-  <figcaption>Figure 8. Distribution of external links per page.</figcaption>
+  <div id="fig8-description" class="visually-hidden">Distribution of the number of external links per page. The 10, 25, 50, 75, and 90th percentiles of external links for desktop are: 1, 4, 10, 22, and 51. The mobile distribution is much lower, by 11 links at the 90th percentile and 2 at the median.</div>
+  <figcaption id="fig8-caption" >Figure 8. Distribution of external links per page.</figcaption>
 </figure>
 
 The median desktop page includes 70 internal (same-site) links, whereas the median mobile page has 60 internal links. The median number of external links per page follows a similar trend, with desktop pages including 10 external links, and mobile pages including 8.
 
 <figure>
-  <iframe aria-describedby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig9.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig9.png" aria-describedby="fig9-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig9.png">
+    <img src="/static/images/2019/10_SEO/fig9.png" alt="Figure 9. Distribution of anchor links per page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive">
   </a>
-  <div id="fig9-caption" class="visually-hidden">Distribution of the number of anchor links per page. The 10, 25, 50, 75, and 90th percentiles of internal anchor for desktop are: 0, 0, 0, 1, and 3. The mobile distribution is identical.</div>
-  <figcaption>Figure 9. Distribution of anchor links per page.</figcaption>
+  <div id="fig9-description" class="visually-hidden">Distribution of the number of anchor links per page. The 10, 25, 50, 75, and 90th percentiles of internal anchor for desktop are: 0, 0, 0, 1, and 3. The mobile distribution is identical.</div>
+  <figcaption id="fig9-caption">Figure 9. Distribution of anchor links per page.</figcaption>
 </figure>
 
 Anchor links, which link to a certain scroll position on the same page, are not very popular. Over 65% of home pages have no anchor links. This is probably due to the fact that home pages don't usually contain any long-form content.
@@ -215,12 +207,11 @@ A fast-loading website is also crucial for a good user experience. Users that ha
 The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 48% of websites are labeled as **slow**. A website is labeled slow if it more than 25% of FCP experiences slower than 3 seconds _or_ 5% of FID experiences slower than 300 ms.
 
 <figure>
-  <iframe aria-describedby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig10.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig10.png" aria-describedby="fig10-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig10.png">
+    <img src="/static/images/2019/10_SEO/fig10.png" alt="Figure 10. Distribution of the performance of user experiences by device type." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive">
   </a>
-  <div id="fig10-caption" class="visually-hidden">Distribution of the performance of desktop, phone, and tablet user experiences. Desktop: 2% fast, 52% moderate, 46% slow. Phone: 1% fast, 41% moderate, 58% slow. Tablet: 0% fast, 35% moderate, 65% slow.</div>
-  <figcaption>Figure 10. Distribution of the performance of user experiences by device type.</figcaption>
+  <div id="fig10-description" class="visually-hidden">Distribution of the performance of desktop, phone, and tablet user experiences. Desktop: 2% fast, 52% moderate, 46% slow. Phone: 1% fast, 41% moderate, 58% slow. Tablet: 0% fast, 35% moderate, 65% slow.</div>
+  <figcaption id="fig10-caption">Figure 10. Distribution of the performance of user experiences by device type.</figcaption>
 </figure>
 
 Split by device, this picture is even bleaker for tablet (65%) and phone (58%).
