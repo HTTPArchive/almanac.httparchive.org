@@ -28,7 +28,7 @@ function dataSaverEnabled() {
   return dataSaver;
 }
 
-//Check if networh API states this is a high bandwidth connection
+//Check if network API states this is a high bandwidth connection
 //Assume it is for those browsers who do not support this (e.g. Safari and IE)
 function highBandwidthConnection() {
   var highBandwidth = true;
@@ -217,4 +217,3 @@ function setDiscussionCount() {
 
 upgradeInteractiveFigures();
 //setDiscussionCount();
-
