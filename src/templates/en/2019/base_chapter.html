@@ -32,6 +32,14 @@ fetch(`https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json`)
   var el = document.getElementById('num_comments');
   el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
 });
+document.addEventListener("keypress", function onPress(event) {
+ 	if (event.key === 'p' || event.key === ',') {
+ 		document.getElementById('previous-chapter').click();
+ 	}
+ 	if (event.key === 'n' || event.key === '.') {
+ 		document.getElementById('next-chapter').click();
+ 	}
+});
   
 window.discussion_url='https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json';
 </script>
@@ -119,6 +127,7 @@ window.discussion_url='https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_prevnext() %}
   {% if prev_chapter %}
+test
       <a id="previous-chapter" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
           <span class="arrow">&#8963;</span>
           <span class="chapter-no">
