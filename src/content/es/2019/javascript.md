@@ -299,7 +299,7 @@ En los últimos años, el ecosistema de JavaScript ha visto un aumento en las bi
    <a href="/static/images/2019/01_JavaScript/fig12.png">
       <img src="/static/images/2019/01_JavaScript/fig12.png" alt="Figura 12. Los frameworks más utilizados en el escritorio." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive">
    </a>
-	<div id="fig12-description" class="visually-hidden">Gráfico de barras que muestra que el 4.6% de los sitios usan React, 2.0% AngiularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember. js.</div>
+	<div id="fig12-description" class="visually-hidden">Gráfico de barras que muestra que el 4,6% de los sitios usan React, 2,0% AngiularJS, 1,8% Backbone.js, 0,8% Vue.js, 0,4% Knockout.js, 0,3% Zone.js, 0,3% Angular, 0,1% AMP, 0,1% Ember. js.</div>
 	<figcaption id="fig12-caption">Figura 12. Los frameworks más utilizados en el escritorio.</figcaption>
 </figure>
 
