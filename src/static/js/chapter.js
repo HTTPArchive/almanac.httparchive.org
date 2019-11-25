@@ -21,9 +21,31 @@ function dataSaverEnabled() {
     } else {
       gtag('event', 'data-saver', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
     }
+  } else {
+    gtag('event', 'data-saver', { 'event_category': 'user', 'event_label': 'not-reported', 'value': 0 });
   }
 
   return dataSaver;
+}
+
+//Check if network API states this is a high bandwidth connection
+//Assume it is for those browsers who do not support this (e.g. Safari and IE)
+function highBandwidthConnection() {
+  var highBandwidth = true;
+  if ('connection' in navigator) {
+    const effectiveType = navigator.connection.effectiveType;
+    if (effectiveType == 'slow-2g' || effectiveType == '2g' || effectiveType == '3g') {
+      highBandwidth = false;
+      console.log('effectiveType ' + effectiveType + ' is low BandWidth');
+      gtag('event', 'connection-type', { 'event_category': 'user', 'event_label': effectiveType, 'value': 0 });
+    } else {
+      gtag('event', 'connection-type', { 'event_category': 'user', 'event_label': effectiveType, 'value': 1 });
+    }
+  } else {
+    gtag('event', 'connection-type', { 'event_category': 'user', 'event_label': 'not-reported', 'value': 1 });
+  }
+
+  return highBandwidth;
 }
 
 //iOS causes Google Sheets to create a 6000 by 3700 canvas, which annoyingly isn't supported by iOS!
@@ -98,7 +120,7 @@ function googleSheetsPixelNotLoaded() {
 function upgradeInteractiveFigures() {
 
   try {
-    if (bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highResolutionCanvasSupported()) {
+    if (bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
 
       console.log('Upgrading to interactive figures');
 
@@ -195,4 +217,3 @@ function setDiscussionCount() {
 
 upgradeInteractiveFigures();
 //setDiscussionCount();
-
