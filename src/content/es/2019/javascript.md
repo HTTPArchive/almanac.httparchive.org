@@ -29,7 +29,7 @@ Enviar paquetes de JavaScript más pequeños al navegador es la mejor manera de 
    <a href="/static/images/2019/01_JavaScript/fig1.png">
       <img src="/static/images/2019/01_JavaScript/fig1.png" alt="Figura 1. Distribución de bytes de JavaScript por página." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive">
    </a>
-	<div id="fig1-description" class="visually-hidden">Gráfico de barras que muestra que 70 bytes de JavaScript se usa en el percentil p10, 174 bytes para p25, 373 bytes para p50, 693 bytes para p75 y 1,093 bytes para p90</div>
+	<div id="fig1-description" class="visually-hidden">Gráfico de barras que muestra que 70 bytes de JavaScript se usa en el percentil p10, 174 bytes para p25, 373 bytes para p50, 693 bytes para p75 y 1.093 bytes para p90</div>
 	<figcaption id="fig1-caption">Figura 1. Distribución de bytes de JavaScript por página.</figcaption>
 </figure>
 
