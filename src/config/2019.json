@@ -226,7 +226,8 @@
     "dotjs": {
       "name": "Andrew Galloni",
       "teams": [
-        "analysts"
+        "analysts",
+        "reviewers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2914966?v=4&s=200",
       "github": "dotjs",
@@ -626,6 +627,7 @@
       "name": "Martin Splitt",
       "bio":"Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.",
       "teams": [
+        "authors",
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/370246?v=4&s=200",
