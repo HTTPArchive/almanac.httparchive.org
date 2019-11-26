@@ -180,12 +180,11 @@
       </figure>
       <p>The first metric we explore are service worker installations. Looking at the data exposed through feature counters in the HTTP Archive, we find that 0.44% of all desktop and 0.37% of all mobile pages register a service worker, and both curves over time are steeply growing.</p>
       <figure id="fig-2">
-        <iframe aria-describedby="fig2-caption" width="600" height="371" seamless="" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive" loading="lazy"></iframe>
         <a href="/static/images/2019/11_PWA/fig2.png" class="fig-mobile">
-          <img src="/static/images/2019/11_PWA/fig2.png" aria-describedby="fig2-caption" width="600" loading="lazy" />
+          <img src="/static/images/2019/11_PWA/fig2.png" alt="Figure 2. Service Worker installation over time for desktop and mobile." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive" loading="lazy" />
         </a>
-        <div id="fig2-caption" class="visually-hidden">Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.</div>
-        <figcaption>Figure 2. Service Worker installation over time for desktop and mobile.</figcaption>
+        <div id="fig2-description" class="visually-hidden">Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.</div>
+        <figcaption id="fig2-caption">Figure 2. Service Worker installation over time for desktop and mobile.</figcaption>
       </figure>
       <p>Now this might not look overly impressive, but taking traffic data from Chrome Platform Status into account, we can see that a service worker controls about <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">15% of all page loads</a>, which can be interpreted as popular, high-traffic sites increasingly having started to embrace service workers.</p>
       <figure id="fig-3">
