@@ -135,7 +135,7 @@ To help us mitigate this problem, there are [accessibility guidelines](https://d
   <a href="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
     <img src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description">
   </a>
-  <div id="fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlayed inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook</div>
+  <div id="fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook</div>
   <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 

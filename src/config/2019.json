@@ -226,7 +226,8 @@
     "dotjs": {
       "name": "Andrew Galloni",
       "teams": [
-        "analysts"
+        "analysts",
+        "reviewers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2914966?v=4&s=200",
       "github": "dotjs",
@@ -242,7 +243,7 @@
     },
     "andydavies": {
       "name": "Andy Davies",
-      "bio":"Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK's leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is coauthor of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href=\"https://twitter.com/andydavies\">@AndyDavies</a>, and he occasionally blogs at <a href=\"https://andydavies.me\">https://andydavies.me</a>",
+      "bio":"Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK's leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is co-author of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href=\"https://twitter.com/andydavies\">@AndyDavies</a>, and he occasionally blogs at <a href=\"https://andydavies.me\">https://andydavies.me</a>",
       "teams": [
         "authors"
       ],
@@ -626,6 +627,7 @@
       "name": "Martin Splitt",
       "bio":"Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.",
       "teams": [
+        "authors",
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/370246?v=4&s=200",
@@ -745,6 +747,15 @@
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/24447527?v=4&s=200",
       "github": "raghuramakrishnan71"
+    },
+    "raghav": {
+      "name": "Raghvendra Kumar",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/9475742?v=4&s=200",
+      "github": "arsenicraghav",
+      "twitter": "mail_raghvendra"
     },
     "rmarx": {
       "name": "Robin Marx",
