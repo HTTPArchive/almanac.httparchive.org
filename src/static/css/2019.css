@@ -357,6 +357,9 @@ p.copyright {
   font-size: 12px;
   color: #F2F2F2;
 }
+p.copyright a {
+  color: white;
+}
 
 .social-media div {
   padding: 0 20px;
