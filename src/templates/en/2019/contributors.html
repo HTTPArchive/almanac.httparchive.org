@@ -309,7 +309,7 @@
 
     <div class="contributor-grid">
     {% for id, contributor in config.contributors.items() %}
-      <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="0">
+      <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
