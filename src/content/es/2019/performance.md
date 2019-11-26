@@ -6,8 +6,8 @@ description: Capítulo sobre rendimiento del Web Almanac de 2019 que explica Fir
 authors: [rviscomi]
 reviewers: [JMPerez,obto,sergeychernyshev,zeman]
 translators: [JMPerez]
-published: 2019-11-04T12:00:00+00:00:00
-last_updated: 2019-11-07T21:46:11.000Z 
+published: 2019-11-04T00:00:00.000Z
+last_updated: 2019-11-07T00:00:00.000Z
 ---
 
 ## Introducción
