@@ -149,8 +149,8 @@ CSS has some very powerful comparison selectors. These are selectors like `[targ
   <a href="/static/images/2019/02_CSS/fig10.png">
     <img src="/static/images/2019/02_CSS/fig10.png" alt="Figure 10. Popularity of operators per class attribute selector." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&amp;format=interactive">
   </a>
-  <div id="fig9-description" class="visually-hidden">Bar chart showing the popularity of operators used by class attribute selectors. 57% of pages use star-equals. 36% use caret-equals. 1% use equals and dollar-equals. 0% use tilde-equals.</div>
-  <figcaption id="fig9-caption">Figure 10. Popularity of operators per class attribute selector.</figcaption>
+  <div id="fig10-description" class="visually-hidden">Bar chart showing the popularity of operators used by class attribute selectors. 57% of pages use star-equals. 36% use caret-equals. 1% use equals and dollar-equals. 0% use tilde-equals.</div>
+  <figcaption id="fig10-caption">Figure 10. Popularity of operators per class attribute selector.</figcaption>
 </figure>
 
 These operators are much more popular with class selectors than IDs, which feels natural since a stylesheet usually has fewer ID selectors than class selectors, but still neat to see the uses of all these combinations.
@@ -337,8 +337,8 @@ CSS has this awesome interpolation power that can be simply used by just writing
   <a href="/static/images/2019/02_CSS/fig25.png">
     <img src="/static/images/2019/02_CSS/fig25.png" alt="Figure 25. Distribution of the number of transitions per page." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&amp;format=interactive">
   </a>
-  <div id="fig1-description" class="visually-hidden">Bar chart showing the distribution of transitions per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 2, 16, 49, and 118 transitions. The desktop distribution is much lower than mobile, by as many as 77 transitions at the 90th percentile.</div>
-  <figcaption id="fig1-caption">Figure 25. Distribution of the number of transitions per page.</figcaption>
+  <div id="fig25-description" class="visually-hidden">Bar chart showing the distribution of transitions per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 2, 16, 49, and 118 transitions. The desktop distribution is much lower than mobile, by as many as 77 transitions at the 90th percentile.</div>
+  <figcaption id="fig25-caption">Figure 25. Distribution of the number of transitions per page.</figcaption>
 </figure>
 
 That's pretty good! We did see `animate.css` as a popular library to include, which brings in a ton of transition animations, but it's still nice to see folks are considering transitioning their UIs.
@@ -687,7 +687,7 @@ CSS `@supports` is a way for the browser to check whether a particular property-
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig38.png">
-    <img src="/static/images/2019/02_CSS/fig38.png" alt="Figure 38. Popularity of CSS "at" rules" aria-labelledby="fig38-caption" aria-describedby="fig38-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig38.png" alt="Figure 38. Popularity of CSS 'at' rules" aria-labelledby="fig38-caption" aria-describedby="fig38-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&amp;format=interactive">
   </a>
   <div id="fig38-description" class="visually-hidden">Bar chart showing the popularity of @import and @supports "at" rules. On desktop, @import is used on 28% of pages and @supports is used on 31%. For mobile @import is used on 26% of pages and @supports is used on 29%.</div>
   <figcaption id="fig38-caption">Figure 38. Popularity of CSS "at" rules.</figcaption>

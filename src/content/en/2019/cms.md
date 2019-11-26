@@ -30,7 +30,7 @@ As the web evolved, it became more powerful, but also more complicated. As a con
   <a href="/static/images/2019/14_CMS/web-evolution.png">
     <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018." width="600">
   </a>
-  <div id="fig1-description" class="visually-hidden">On the left, labelled circa 1999, we have a bar chart with two bars showing what can be done is close to what is actually done. On the right, labelled 2018, we have a similar bar chart but what can be done is much larger, and what is done is slightly larger. The gap between what can be done and what is actually done has greatly increased.</div>
+  <div id="fig1-description" class="visually-hidden">On the left, labeled circa 1999, we have a bar chart with two bars showing what can be done is close to what is actually done. On the right, labeled 2018, we have a similar bar chart but what can be done is much larger, and what is done is slightly larger. The gap between what can be done and what is actually done has greatly increased.</div>
   <figcaption id="fig1-caption">Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018.</figcaption>
 </figure>
 

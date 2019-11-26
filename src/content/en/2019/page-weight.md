@@ -69,8 +69,8 @@ There were three really important takeaways from this research:
 3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the long tail that demonstrates how many retail sessions contained up to 1,440 scripts!
 
 <figure>
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.png" alt="" aria-labelledby="fig2-caption" aria-describedby="fig2-description">
+  <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg" alt="" aria-labelledby="fig2-caption" aria-describedby="fig2-description">
   </a>
   <div id="fig2-description" class="visually-hidden">Chart showing conversion rate climbing up until 80 scripts, and then dropping off as scripts increase up to 1440 scripts.</div>
   <figcaption id="fig2-caption">Figure 2. Conversion rate dropping off as scripts increase.</figcaption>

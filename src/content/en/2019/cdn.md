@@ -646,7 +646,7 @@ For resource requests (including same-domain and third-party), the TLS negotiati
   <a href="/static/images/2019/17_CDN/resource_tls_negotiation_time.png">
     <img alt="Distribution of TLS negotiation time for site resources broken down by CDN" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png" width="600">
   </a>
-  <div id="fig10-description" class="visually-hidden">Graph showing most CDNs have a TLS negotion time of around 80 ms, but some (Microsoft Azure, Yahoo, Edgecast, ORIGIN, and CDNetworks) start to creep out towards 200 ms - especially when going above the p50 percentile.</div>
+  <div id="fig10-description" class="visually-hidden">Graph showing most CDNs have a TLS negotiation time of around 80 ms, but some (Microsoft Azure, Yahoo, Edgecast, ORIGIN, and CDNetworks) start to creep out towards 200 ms - especially when going above the p50 percentile.</div>
   <figcaption id="fig10-caption">Figure 10. Resource TLS negotiation time.</figcaption>
 </figure>
 

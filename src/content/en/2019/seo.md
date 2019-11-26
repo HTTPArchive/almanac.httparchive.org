@@ -58,7 +58,7 @@ We also looked at whether pages are structured in a way that provides the right 
   <a href="/static/images/2019/10_SEO/fig2.png">
     <img src="/static/images/2019/10_SEO/fig2.png" alt="Figure 2. Distribution of the number of headings per page." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive">
   </a>
-  <div id="fig2-describption" class="visually-hidden">Distribution of headings per page. The median number of headings per desktop and mobile page is 10. At the 10, 25, 75, and 90th percentiles, the number of headings per desktop page are: 0, 3, 21, and 39. This is slightly higher than the distribution of mobile headings per page.</div>
+  <div id="fig2-description" class="visually-hidden">Distribution of headings per page. The median number of headings per desktop and mobile page is 10. At the 10, 25, 75, and 90th percentiles, the number of headings per desktop page are: 0, 3, 21, and 39. This is slightly higher than the distribution of mobile headings per page.</div>
   <figcaption id="fig2-caption" >Figure 2. Distribution of the number of headings per page.</figcaption>
 </figure>
 

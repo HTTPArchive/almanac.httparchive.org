@@ -38,7 +38,7 @@ In order to make sure your website is readable under these conditions, making su
   <a href="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
     <img alt="Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600">
   </a>
-  <div id="fig1-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlayed inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in grayscale. Courtesy of LookZook.</div>
+  <div id="fig1-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in greyscale. Courtesy of LookZook.</div>
   <figcaption id="fig1-caption">Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
@@ -180,7 +180,7 @@ If you'd like to see a skip link in action for yourself, you can! Just do a quic
   <a href="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png">
     <img alt="Figure 7. What a skip link looks like on google.com." aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png" width="600">
   </a>
-  <div id="fig7-description" class="visually-hidden">Screenshot of Google search results page for search 'http archive'. The visible 'Skip to main content' link is surrounded by a blue focus highlight and a yellow overlayed box with a red arrow pointing to the skip link reads 'A skip link on google.com'.</div>
+  <div id="fig7-description" class="visually-hidden">Screenshot of Google search results page for search 'http archive'. The visible 'Skip to main content' link is surrounded by a blue focus highlight and a yellow overlaid box with a red arrow pointing to the skip link reads 'A skip link on google.com'.</div>
   <figcaption id="fig7-caption">Figure 7. What a skip link looks like on google.com.</figcaption>
 </figure>
 
