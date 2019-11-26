@@ -79,7 +79,7 @@ Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Fig
       <img src="/static/images/2019/03_Markup/fig5.png" alt="Figure 5. Histogram of element types per page as of 2019." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
     </a>
     <div id="fig5-description" class="visually-hidden">Graph showing the average number of elements is a bell curve around the 30 elements marked, as used by 308,168 thousand sites.</div>
-  <figcaption d="fig5-caption">Figure 5. Histogram of element types per page as of 2019.</figcaption>
+  <figcaption id="fig5-caption">Figure 5. Histogram of element types per page as of 2019.</figcaption>
 </figure>
 
 We can see that both the average number of types of elements per page has increased, as well as the maximum numbers of unique elements that we encounter.
