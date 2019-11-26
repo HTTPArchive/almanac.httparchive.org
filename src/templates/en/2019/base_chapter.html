@@ -136,7 +136,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_prevnext() %}
   {% if prev_chapter %}
-      <a id="previous-chapter" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+      <a id="previous-chapter" title="Previous Chapter (press 'p' or ',')" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
           <span class="arrow">&#8963;</span>
           <span class="chapter-no">
               Chapter {{ prev_chapter['chapter'] }}
@@ -148,7 +148,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endif %}
 
   {% if next_chapter %}
-      <a id="next-chapter" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+      <a id="next-chapter" title="Next Chapter (press 'n' or '.')" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
               <span class="arrow">&#8963;</span>
               <span class="chapter-no">
                   Chapter {{ next_chapter['chapter'] }}
