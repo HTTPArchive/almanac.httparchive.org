@@ -1,43 +1,26 @@
 import logging
 import re
 import inspect
+import json
+import os
 
 from flask import request, abort, redirect
 from functools import wraps
 from language import Language, DEFAULT_LANGUAGE
+from datetime import date
 
 import config as config_util
 
-DEFAULT_YEAR = '2019'
+CONFIG_DIR = './config'
+
+DEFAULT_YEAR = str(date.today().year)
 SUPPORTED_YEARS = {
     # When there is one supported language, it must have a trailing comma.
     '2019': (Language.ENGLISH,)
 }
 
 #TO DO - Stop Hardcoding these
-CHAPTERS = {
-    'accessibility',
-    'caching',
-    'cdn',
-    'cms',
-    'compression',
-    'css',
-    'ecommerce',
-    'fonts',
-    'javascript',
-    'http2',
-    'markup',
-    'media',
-    'page-weight',
-    'performance',
-    'pwa',
-    'resource-hints',
-    'seo',
-    'security',
-    'third-parties',
-    'media',
-    'mobile-web'
-}
+CHAPTERS = set();
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
@@ -46,7 +29,6 @@ TYPO_CHAPTERS = {
     'resourcehints': 'resource-hints',
     'thirdparties': 'third-parties'
 }
-
 
 def validate(func):
     @wraps(func)
@@ -144,3 +126,53 @@ def parse_accept_language(header, supported_langs):
 
     # If all else fails, default the language.
     return DEFAULT_LANGUAGE.lang_code
+
+def get_json_files_from_dir(path):
+
+    files_found = []
+    for root, directories, files in os.walk(path):
+        for file in files:
+            if '.json' in file:
+                files_found.append(os.path.join(root, file))
+
+    return files_found
+
+def get_entries_from_json(path, p_key, s_key):
+
+    with open(path) as json_file:
+        data = json.load(json_file)
+
+    entries = []
+
+    if p_key in data:
+        for values in data.get(p_key):
+             entries.append(values.get(s_key))
+
+    return entries
+
+def get_chapters_for_year(file):
+
+    chapters = []
+
+    data = get_entries_from_json(file,'outline','chapters')
+    for list in data:
+        for entry in list:
+            chapters.append(entry.get('title').lower().replace(" ", "-").replace("/",""))
+
+    return chapters
+
+def get_parts_for_year(file):
+
+    parts = get_entries_from_json(file,'outline','part')
+
+    return parts
+
+json_files_present = get_json_files_from_dir(CONFIG_DIR)
+
+
+#TO DO - Lazy load previous year chapters
+
+for file in json_files_present:
+    if DEFAULT_YEAR in file:
+      CHAPTERS = set(get_chapters_for_year(file))
+      break
