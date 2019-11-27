@@ -62,7 +62,7 @@ tr | span | option
   <a href="/static/images/2019/03_Markup/fig3.png">
     <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Element frequencies as of 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">Graph showing about 2,500 pages start with approximately 30 elements, this increases peaking at 6,876 pages have 283 elements, before trailing fairly linearly to 327 pages having 2,00 elements.</div>
+  <div id="fig3-description" class="visually-hidden">Graph showing about 2,500 pages start with approximately 30 elements, this increases peaking at 6,876 pages have 283 elements, before trailing fairly linearly to 327 pages having 2,000 elements.</div>
   <figcaption id="fig3-caption">Figure 3. Element frequencies as of 2019.</figcaption>
 </figure>
 
