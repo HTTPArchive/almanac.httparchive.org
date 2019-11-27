@@ -1,18 +1,14 @@
 ---
 part_number: I
-chapter_number: '3'
+chapter_number: 3
 title: Markup
-description: Chapitre de balisage d'Almanac Web 2019 couvrant les éléments utilisés,
-  éléments personnalisés, valeur, produits et en cas d'utilisation commune.
-authors:
-- bkardell
-reviewers:
-- zcorpan
-- tomhodgins
-- matthewp
-discuss: '1758'
-published: '2019-11-11 00:00:00 +0000'
-last_updated: '2019-11-23 00:00:00 +0000'
+description: Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.
+authors: [bkardell]
+reviewers: [zcorpan, tomhodgins, matthewp]
+translators: [SilentJMA]
+discuss: 1758
+published: 2019-11-27T00:00:00.000Z
+last_updated: 2019-11-27T00:00:00.000Z
 ---
 
 ## Introduction
@@ -29,7 +25,7 @@ Cette analyse a rencontré * plus de 5,000 noms d'éléments non standard distin
 
 Les noms des éléments sur chaque page ont été collectés à partir du DOM lui même, après l'exécution initiale de JavaScript.
 
-Examiner un nombre de fréquences brut n'est pas particulièrement utile, même pour les éléments standards: environ 25% des éléments rencontrés sont ` div> `. Environ 17% sont ` a> `, environ 11% sont ` span> ` - et ce sont les seuls éléments qui comptent pour plus de 10% des occurrences. Les langues sont [ généralement comme ceci ](https://www.youtube.com/watch?v=fCn8zs912OE); un petit nombre de termes sont étonnamment utilisés par comparaison. En plus, lorsque nous commençons à examiner des éléments non standard pour les adopter, cela peut être très trompeur puisqu'un site pourrait utiliser un certain élément mille fois et lui donner un aspect artificiellement très populaire.
+Examiner un nombre de fréquences brut n'est pas particulièrement utile, même pour les éléments standards: environ 25% des éléments rencontrés sont `div>`. Environ 17% sont `a>`, environ 11% sont `span>` -- et ce sont les seuls éléments qui comptent pour plus de 10% des occurrences. Les langues sont [ généralement comme ceci ](https://www.youtube.com/watch?v=fCn8zs912OE); un petit nombre de termes sont étonnamment utilisés par comparaison. En plus, lorsque nous commençons à examiner des éléments non standard pour les adopter, cela peut être très trompeur puisqu'un site pourrait utiliser un certain élément mille fois et lui donner un aspect artificiellement très populaire.
 
 Plutôt, comme dans l'étude originale d'Hixie, ce que nous allons voir, c'est combien de sites incluent chaque élément au moins une fois dans leur page d'accueil.
 
@@ -37,7 +33,7 @@ Plutôt, comme dans l'étude originale d'Hixie, ce que nous allons voir, c'est c
 
 ## Principaux éléments et informations générales
 
-En 2005, l’enquête d'Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient ` html `, ` head ` et ` body ` qu’il a noté comme intéressant car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM post-analysé, ils apparaissent universellement dans nos données. Ainsi que nous commencerons par le 4ème élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données à partir de là jusqu'à maintenant (j’ai inclus ici la comparaison de fréquence, juste pour le plaisir).
+En 2005, l’enquête d'Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient `html`, `head` et `body` qu’il a noté comme intéressant car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM post-analysé, ils apparaissent universellement dans nos données. Ainsi que nous commencerons par le 4ème élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données à partir de là jusqu'à maintenant (j’ai inclus ici la comparaison de fréquence, juste pour le plaisir).
 
 <figure id="fig1" markdown>
 
@@ -58,33 +54,33 @@ tr | span | option
 ### Éléments par page
 
 <figure id="fig2">
-  <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution de l'analyse des fréquences d'élément effectuée par Hixie en 2005" width="600">
-  <figcaption>Figure 2. Distribution de l'analyse des fréquences d'élément effectuée par Hixie en 2005.</figcaption>
+  <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution de l'analyse des fréquences d'élément effectuée par Hixie en 2005" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600">
+    <div id="fig2-description" class="visually-hidden">Graphique montrant une distribution décroissante de la fréquence relative à mesure quand le nombre d'éléments augmente</div>
+  <figcaption id="fig2-caption">Figure 2. Distribution de l'analyse des fréquences d'élément effectuée par Hixie en 2005.</figcaption>
 </figure>
 
 <figure id="fig3">
-    <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig3.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig3.png" aria-labelledby="fig3-caption" width="600">
-    </a>
-    <div id="fig3-caption" class="visually-hidden">Figure 3. Fréquences des éléments à partir de 2019.</div>
-  <figcaption>Figure 3. Fréquences des éléments à partir de 2019.</figcaption>
+  <a href="/static/images/2019/03_Markup/fig3.png">
+    <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Fréquences des éléments à partir de 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
+  </a>
+  <div id="fig3-description" class="visually-hidden">Graphique représentant environ 2 500 pages commençant par environ 30 éléments, il passe à 6 876 pages et compte 283 éléments, avant de se terminer d'une manière relativement linéaire jusqu'à 327 pages comportant 2,00 éléments.</div>
+  <figcaption id="fig3-caption">Figure 3. Fréquences des éléments à partir de 2019.</figcaption>
 </figure>
 
 En comparant les dernières données de la figure 3 à celles du rapport d'Hixie de 2005 à la figure 2, nous pouvons constater que la taille moyenne des arbres DOM a augmenté.
 
 <figure id="fig4">
-      <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogramme de l'analyse effectuée par Hixie en 2005 sur les types d'éléments par page" width="600">
-  <figcaption>Figure 4. Histogramme de l'analyse effectuée par Hixie en 2005 sur les types d'éléments par page.</figcaption>
+  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogramme de l'analyse effectuée par Hixie en 2005 sur les types d'éléments par page" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600">
+   <div id="fig4-description" class="visually-hidden">Cette graphe de fréquence relative par une courbe en cloche autour du point des 19 éléments..</div>
+  <figcaption id="fig4-caption">Figure 4. Histogramme de l'analyse effectuée par Hixie en 2005 sur les types d'éléments par page.</figcaption>
 </figure>
 
 <figure id="fig5">
-    <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig5.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig5.png" aria-labelledby="fig5-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig5.png">
+      <img src="/static/images/2019/03_Markup/fig5.png" alt="Figure 5. Histogramme des types d'éléments par page à partir de 2019." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
     </a>
-    <div id="fig5-caption" class="visually-hidden">Figure 3. Fréquences des éléments à partir de 2019.</div>
-  <figcaption>Figure 5. Histogramme des types d'éléments par page à partir de 2019.</figcaption>
+    <div id="fig5-description" class="visually-hidden">Ce graphique représente le nombre moyen d'éléments est une courbe en cloche autour des 30 éléments marqués, telle qu'utilisée par 308 168 milliers de sites.</div>
+  <figcaption id="fig5-caption">Figure 5. Histogramme des types d'éléments par page à partir de 2019.</figcaption>
 </figure>
 
 Nous pouvons voir sur les deux que nombre moyen de types d'éléments par page a augmentés, ainsi que le nombre maximal d'éléments uniques que nous rencontrons.
@@ -116,12 +112,11 @@ En outre, 15% des pages d'ordinateur et 16% des pages de mobile contiennent des 
 <aside class="note">Remarque: cela est très probablement dû à l'utilisation de produits plutôt qu'au fait que des auteurs individuels continuent à créer manuellement ce balisage.</aside>
 
 <figure id="fig6">
-  <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig6.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig6.png" aria-labelledby="fig6-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig6.png">
+      <img src="/static/images/2019/03_Markup/fig6.png" alt="Figure 6. Most frequently used deprecated elements." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
     </a>
-    <div id="fig6-caption" class="visually-hidden">Figure 6. Éléments déconseillés les plus fréquemment utilisés.</div>
-  <figcaption>Figure 6. Éléments déconseillés les plus fréquemment utilisés.</figcaption>
+    <div id="fig6-description" class="visually-hidden">Diagramme à barres montrant 'center' utilisé par 8,31% des sites version web (7,96% des sites mobiles), 'font' utilisé par 8,01% des sites version web (7,38% des sites mobiles), 'marquee' utilisé par 1,07% des sites version web (1,20% des sites mobiles), 'nobr' utilisé par 0,71% des sites version web (0,55% des sites mobiles), 'big' utilisé par 0,53% des sites version web (0,47% des sites mobiles), 'frameset' utilisé par 0,39% des sites version web (0,35% des sites mobiles), 'frame' utilisé par 0,39% des sites version web (0,35% des sites mobiles), 'strike' utilisé par 0,33% des sites version web (0,27% des sites mobiles), and 'noframes' utilisé par 0,25% des sites version web (0,27% des sites mobiles).</div>
+  <figcaption id="fig6-caption">Figure 6. Éléments déconseillés les plus fréquemment utilisés.</figcaption>
 </figure>
 
 La figure 6 ci-dessus montre les 10 éléments déconseillés les plus fréquemment utilisés. La plupart d'entre eux peuvent sembler être de très petits nombres, mais la point de vue compte.
@@ -131,12 +126,11 @@ La figure 6 ci-dessus montre les 10 éléments déconseillés les plus fréquemm
 Afin de discuter des chiffres sur l'utilisation d'éléments (standard, obsolète ou personnalisé), nous devons d'abord établir quelque perspective.
 
 <figure id="fig7">
-  <iframe aria-labelledby="fig7-caption" width="600" height="778" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig7.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig7.png" aria-labelledby="fig7-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig7.png">
+      <img src="/static/images/2019/03_Markup/fig7.png" alt="Figure 7. 150 premiers éléments." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
     </a>
-    <div id="fig7-caption" class="visually-hidden">Figure 7. 150 premiers éléments.</div>
-  <figcaption>Figure 7. 150 premiers éléments.</figcaption>
+    <div id="fig7-description" class="visually-hidden">Diagramme à barres illustre une décroissance des éléments dans l'ordre décroissant: html, head, body, title au dessus de 99% d'utilisation, meta, a, div plus de 98% d'utilisation, link, script, img, span plus de 90% d'utilisation, ul, li , p, style, input, br, form plus de 70% d'utilisation, h2, h1, iframe, h3, button, footer, header, nav plus de 50% d’utilisation et d’autres tags moins connus passant de moins de 50% à presque 0%.</div>
+  <figcaption id="fig7-caption">Figure 7. 150 premiers éléments.</figcaption>
 </figure>
 
 Dans la figure 7 ci-dessus, les 150 premiers noms d'éléments, en comptant le nombre de pages où ils apparaissent, sont affichés. Notez la rapidité d'utilisation baisse.
@@ -181,14 +175,15 @@ Donc il est intéressant de voir à quoi ressemble la distribution de ces élém
 
 <figure id="fig8">
   <a href="https://rainy-periwinkle.glitch.me/scatter/html">
-    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Popularité des éléments classée par normalisation" width="600">
+    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Figure 8. Popularité des éléments classée par la normalisation" aria-labelledby="fig8-caption" width="600">
   </a>
-  <figcaption>Popularité des éléments classée par normalisation.</figcaption>
+  <div id="fig8-description" class="visually-hidden">Le graphique en nuage de points montrant HTML, SVG et Math ML utilise relativement peu de balises alors que des éléments non standard "in global ns", "dasherized" et "colon") sont beaucoup plus dispersés.</div>
+  <figcaption id="fig8-caption">Figure 8. Popularité des éléments classée par la normalisation.</figcaption>
 </figure>
 
 La figure 8 montre le classement de chaque élément et la catégorie dans laquelle ils se situent. J'ai séparé les points de données en ensembles discrets simplement pour pouvoir les visualiser (sinon, il n'y a tout simplement pas assez de pixels pour capturer toutes ces données), mais ils représentent une "ligne" unique de popularité; le plus bas étant le plus commun, le plus haut étant le moins commun. La flèche pointe vers la fin des éléments qui apparaissent dans plus de 1% des pages.
 
-Vous pouvez observer deux choses ici. Premièrement, l'ensemble des éléments utilisés à plus de 1% n'est pas exclusivement HTML. En fait, * 27 des 100 éléments les plus populaires ne sont même pas HTML * - ils sont en SVG! Et il y a * des balises non standard ou très près de cette limite aussi *! Deuxièmement, notez que de nombreux éléments HTML sont utilisés par moins de 1% des pages.
+Vous pouvez observer deux choses ici. Premièrement, l'ensemble des éléments utilisés à plus de 1% n'est pas exclusivement HTML. En fait, *27 des 100 éléments les plus populaires ne sont même pas HTML* - ils sont en SVG! Et il y a *des balises non standard ou très près de cette limite aussi*! Deuxièmement, notez que de nombreux éléments HTML sont utilisés par moins de 1% des pages.
 
 Donc, tous ces éléments utilisés par moins de 1% des pages sont-ils "inutiles"? Définitivement pas. C'est pourquoi il est important d'établir une perspective. Il y a environ [deux milliards de sites Web sur le Web](https://www.websitehostingrating.com/internet-statistics-facts/). Si quelque chose apparaît sur 0,1% de tous les sites Web de notre ensemble de données, nous pouvons n'extrapoler que cela représente peut-être * deux millions de sites Web * sur l'ensemble du Web. Même 0,01% extrapolent à deux cent mille sites. C’est aussi pourquoi il est très rare qu’on supprime le support d’éléments, même les très anciens, que nous considérons comme de mauvaises idées. Briser des centaines de milliers où des millions de sites ne sont pas une chose que les éditeurs de navigateurs peuvent faire à la légère.
 
@@ -229,17 +224,16 @@ Mais beaucoup de nouveaux arrivants ne figuraient pas non plus dans le rapport i
 Comparons-les à quelques-uns des éléments HTML natifs inférieurs à la barre des 5%, en perspective.
 
 <figure id="fig9">
-  <iframe aria-labelledby="fig9-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig9.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig9.png" aria-labelledby="fig9-caption" width="600">
-    </a>
-  <div id="fig9-caption" class="visually-hidden">Figure 9. Popularité des éléments natifs et spécifiques au produit avec moins de 5% d'adoption.</div>
-  <figcaption>Figure 9. Popularité des éléments natifs et spécifiques au produit avec moins de 5% d'adoption.</figcaption>
+  <a href="/static/images/2019/03_Markup/fig9.png">
+    <img src="/static/images/2019/03_Markup/fig9.png" alt="Figure 9. Popularité des éléments natifs et les produits spécifiques avec moins de 5% d'adoption." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
+  </a>
+  <div id="fig9-description" class="visually-hidden">Le graphique à barres montrant la vidéo est utilisé par 184,149 sites, canvas par 108,355, ym-measure (une balise de produit-spécifique) byt 52,146, code par 25,075, g:plusone (une product-specific tag) par 21,098, fb:like (une balise de produit-spécifique) par 12,773, fb:like-box (une balise de produit-spécifique) par 6,792, app-root (une balise de produit-spécifique) par 8,468, summary par 6,578, template par 5,913, et meter par 0.</div>
+  <figcaption id="fig9-caption">Figure 9. Popularité des éléments natifs et les produits spécifiques avec moins de 5% d'adoption.</figcaption>
 </figure>
 
 Vous pourriez découvrir des idées intéressantes comme celles-ci toute la journée.
 
-Voici un qui est un peu différent: les élementss les plus courants peuvent être causé par des erreurs flagrantes dans les produits. Par exemple, `<pclass =" ddc-font-size-large ">` apparaît sur plus de 1 000 sites. Cela était dû à un espace manquant dans un type de produit populaire "en-tant-que-service". Heureusement, nous avons signalé cette erreur lors de notre recherche et elle a été rapidement corrigée.
+Voici un qui est un peu différent: les élementss les plus courants peuvent être causé par des erreurs flagrantes dans les produits. Par exemple, `<pclass ="ddc-font-size-large">` apparaît sur plus de 1 000 sites. Cela était dû à un espace manquant dans un type de produit populaire "en-tant-que-service". Heureusement, nous avons signalé cette erreur lors de notre recherche et elle a été rapidement corrigée.
 
 Dans son article original, Hixie mentionne que:
 
@@ -256,12 +250,11 @@ Il existe certains éléments populaires qui ne sont probablement pas si diffici
 Le faite de les placer dans notre graphe ci-dessus pour la perspective ressemble à ceci (encore une fois, cela varie légèrement en fonction d'ensemble' de données)
 
 <figure id="fig10">
-  <iframe aria-labelledby="fig10-caption" width="600" height="370" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive"></iframe>
-    <a href="/static/images/2019/03_Markup/fig10.png" class="fig-mobile">
-      <img src="/static/images/2019/03_Markup/fig10.png" aria-labelledby="fig10-caption" width="600">
+    <a href="/static/images/2019/03_Markup/fig10.png">
+      <img src="/static/images/2019/03_Markup/fig10.png" alt="Figure 10. Autres éléments populaires dans le contexte d’éléments natifs et les produits spécifiques au adoptés à moins de 5%." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
     </a>
-    <div id="fig10-caption" class="visually-hidden">Figure 10. Autres éléments populaires dans le contexte d’éléments natifs et les produits spécifiques adoptés à moins de 5%.</div>
-  <figcaption>Figure 10. Autres éléments populaires dans le contexte d’éléments natifs et les produits spécifiques adoptés à moins de 5%.</figcaption>
+    <div id="fig10-description" class="visually-hidden">Un graphique à barres montrant la vidéo est utilisé par 184,149 sites, canvas par 108,355, ym-measure par 52,416, code par 25,075, g:plusone par 21,098, db:like par 12,773, cufon par 10,523, ymaps par 8,303, fb:like-box par 6,972, app-root par 8,468, summary par 6,578, template par 5,913, et meter par 0</div>
+  <figcaption id="fig10-caption">Figure 10. Autres éléments populaires dans le contexte d’éléments natifs et les produits spécifiques adoptés à moins de 5%.</figcaption>
 </figure>
 
 La chose intéressante à propos de ces résultats est qu’ils introduisent également quelques autres méthodes dont notre outil peut être très utile. Si nous souhaitons explorer l’espace des données, un nom de balise très spécifique n’est qu’une mesure possible. C'est certainement l'indicateur le plus puissant si nous pouvons trouver un bon "argot" en développement. Cependant, si ce n’est pas tout ce qui nous intéresse?
@@ -270,18 +263,18 @@ La chose intéressante à propos de ces résultats est qu’ils introduisent ég
 
 Et si, par exemple, nous étions intéressés par des personnes qui résolvent des cas d'utilisations courantes? Cela peut être car nous recherchons des solutions aux cas d'utilisation que nous avons actuellement nous-mêmes ou à une recherche plus générale des cas d'utilisations courantes résolus par les utilisateurs dans l'optique de mettre en œuvre des efforts de normalisation. Prenons un exemple commun: les onglets. Au cours des années, il y a eu beaucoup de demandes pour des choses comme des tabulations. Nous pouvons utiliser une recherche floue ici et trouver qu'il existe [de nombreuses variantes d'onglets](https://rainy-periwinkle.glitch.me/permalink/c6d39f24d61d811b55fc032806cade9f0be437dcb2f5735a4291adb04aa7a0ea.html). Il est un peu difficile de compter l'utilisation ici car nous ne pouvons pas distinguer facilement si deux éléments apparaissent sur la même page, ainsi que le nombre fourni ici prend simplement le plus grand nombre. Dans la plupart des cas, le nombre réel de pages est probablement beaucoup plus grand.
 
-Il y a aussi beaucoup des [ accordéons ](https://rainy-periwinkle.glitch.me/permalink/e573cf279bf1d2f0f98a90f0d7e507ac8dbd3e570336b20c6befc9370146220b.html), [ dialogues ](https://rainy-periwinkle.glitch.me/permalink/0bb74b808e7850a441fc9b93b61abf053efc28f05e0a1bc2382937e3b78695d9.html), au moins 65 variantes de [ carrousels ](https://rainy-periwinkle.glitch.me/permalink/651e592cb2957c14cdb43d6610b6acf696272b2fbd0d58a74c283e5ad4c79a12.html), et beaucoup de choses sur les [ popups ](https://rainy-periwinkle.glitch.me/permalink/981967b19a9346ac466482c51b35c49fc1c1cc66177ede440ab3ee51a7912187.html), au moins 27 variantes d' [ interrupteurs et de bascules ](https://rainy-periwinkle.glitch.me/permalink/2e6827af7c9d2530cb3d2f39a3f904091c523c2ead14daccd4a41428f34da5e8.html), etc.
+Il y a aussi beaucoup des [accordéons](https://rainy-periwinkle.glitch.me/permalink/e573cf279bf1d2f0f98a90f0d7e507ac8dbd3e570336b20c6befc9370146220b.html), [dialogues](https://rainy-periwinkle.glitch.me/permalink/0bb74b808e7850a441fc9b93b61abf053efc28f05e0a1bc2382937e3b78695d9.html), au moins 65 variantes de [carrousels](https://rainy-periwinkle.glitch.me/permalink/651e592cb2957c14cdb43d6610b6acf696272b2fbd0d58a74c283e5ad4c79a12.html), et beaucoup de choses sur les [popups](https://rainy-periwinkle.glitch.me/permalink/981967b19a9346ac466482c51b35c49fc1c1cc66177ede440ab3ee51a7912187.html), au moins 27 variantes d' [interrupteurs et de bascules](https://rainy-periwinkle.glitch.me/permalink/2e6827af7c9d2530cb3d2f39a3f904091c523c2ead14daccd4a41428f34da5e8.html), etc.
 
-Nous pourrions peut-être rechercher pourquoi nous avons besoin de [ 92 variantes d'éléments liés à des boutons qui ne sont pas des boutons natifs ](https://rainy-periwinkle.glitch.me/permalink/5ae67c941395ca3125e42909c2c3881e27cb49cfa9aaf1cf59471e3779435339.html), par exemple, et essayer de remplir le vide existant.
+Nous pourrions peut-être rechercher pourquoi nous avons besoin de [92 variantes d'éléments liés à des boutons qui ne sont pas des boutons natifs](https://rainy-periwinkle.glitch.me/permalink/5ae67c941395ca3125e42909c2c3881e27cb49cfa9aaf1cf59471e3779435339.html), par exemple, et essayer de remplir le vide existant.
 
-Si nous remarquons que des choses populaires apparaissent (comme ` <jdiv> `, résoudre le chat), nous pouvons prendre connaissance de choses que nous connaissons (comme, voilà ce que  ` <jdiv> ` consiste,ou ` <olark> `) et essayez de regarder [ au moins 43 choses que nous avons construites pour résoudre ce problème ](https://rainy-periwinkle.glitch.me/permalink/db8fc0e58d2d46d2e2a251ed13e3daab39eba864e46d14d69cc114ab5d684b00.html) et de suivre les connexions pour surveiller l'espace.
+Si nous remarquons que des choses populaires apparaissent (comme `<jdiv>`, résoudre le chat), nous pouvons prendre connaissance de choses que nous connaissons (comme, voilà ce que  `<jdiv>` consiste,ou `<olark>`) et essayez de regarder [au moins 43 choses que nous avons construites pour résoudre ce problème](https://rainy-periwinkle.glitch.me/permalink/db8fc0e58d2d46d2e2a251ed13e3daab39eba864e46d14d69cc114ab5d684b00.html) et de suivre les connexions pour surveiller l'espace.
 
 ## Conclusion
 
 Donc, il y a beaucoup de données ici, mais pour résumer:
 
 - Les pages contiennent plus d'éléments qu'il y a 14 ans, en moyenne et maximale.
-- La durée de vie des éléments sur les pages d'accueil est * très * longue. La désapprobation ou l’arrêt des choses ne les fait pas disparaître, et il se peut que jamais.
+- La durée de vie des éléments sur les pages d'accueil est *très* longue. La désapprobation ou l’arrêt des choses ne les fait pas disparaître, et il se peut que jamais.
 - Il y a beaucoup de balises brisées dans la nature (balises mal orthographiées, espaces manquants, mauvaises échappements, incompréhensions).
 - Mesurer ce que les significations "utile" et difficile. Plusieurs éléments natifs ne dépassent pas la barre des 5%, ni même la barre des 1%, mais plusieurs éléments personnalisés le font, et pour de nombreuses raisons. Passage à 1% devrait certainement attirer au moins notre attention, mais peut-être devrait-il 0,5%, car c'est comme ça, selon les données, comparativement * très * réussi.
 - Il existe déjà une tonne de balises personnalisées. Il se présente sous de nombreuses formes, mais les éléments contenant un tiret semblent enlevés définitivement.
