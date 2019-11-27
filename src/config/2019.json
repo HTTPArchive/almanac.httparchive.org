@@ -1037,6 +1037,15 @@
       "website": "https:\/\/www.webpagetest.org\/",
       "github": "pmeenan",
       "twitter": "patmeenan"
+    },
+      "SilentJMA": {
+      "name": "JABANE Mohamed Ayoub",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/16384750?s=4&s=200",
+      "github": "SilentJMA",
+      "twitter": "SilentJMA"
     }
   }
 }
