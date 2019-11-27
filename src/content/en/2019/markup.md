@@ -226,7 +226,7 @@ Let's compare these to a few of the native HTML elements that are below the 5% b
   <a href="/static/images/2019/03_Markup/fig9.png">
     <img src="/static/images/2019/03_Markup/fig9.png" alt="Figure 9. Popularity of product-specific and native elements under 5% adoption." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
   </a>
-  <div id="fig9-description" class="visually-hidden">Bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure (a product-specific tag) byt 52,146, code by 25,075, g:plusone (a product-specific tag) by 21,098, fb:like (a product-specific tag) by 12,773, fb:like-box (a product-specific tag) by 6,792, app-root (a product-specific tag) by 8,468, summary by 6,578, template by 5,913, and meter by 0.</div>
+  <div id="fig9-description" class="visually-hidden">Bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure (a product-specific tag) by 52,146, code by 25,075, g:plusone (a product-specific tag) by 21,098, fb:like (a product-specific tag) by 12,773, fb:like-box (a product-specific tag) by 6,792, app-root (a product-specific tag) by 8,468, summary by 6,578, template by 5,913, and meter by 0.</div>
   <figcaption id="fig9-caption">Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
 </figure>
 
