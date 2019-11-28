@@ -4,10 +4,13 @@
 
 .alt-bg {
     background-color: white;
-    padding: 0;
 }
 
-p.copyright, p.copyright a {
+a.btn  {
+    display: none;
+}
+
+h1, h2, h3, p, p.copyright, p.copyright a {
     color:black;
 }
 
