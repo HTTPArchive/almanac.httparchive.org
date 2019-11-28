@@ -59,8 +59,8 @@ def validate(func):
 
 def validate_chapter(chapter,year):
 
-    CHAPTERS_FOR_YEAR = CHAPTERS.get(year)
-    if chapter not in CHAPTERS_FOR_YEAR:
+    chapters_for_year = CHAPTERS.get(year)
+    if chapter not in chapters_for_year:
         if chapter in TYPO_CHAPTERS:
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
             return TYPO_CHAPTERS.get(chapter)
@@ -160,9 +160,12 @@ def get_chapters(file):
 
     return chapters
 
-json_files = get_json_files(CONFIG_DIR)
+def init():
+    year_config_files = get_json_files(CONFIG_DIR)
 
-for file in json_files:
-    CHAPTERS.update({file[9:-5] : set(get_chapters(file))})
+    for file in year_config_files:
+        CHAPTERS.update({file[9:-5] : set(get_chapters(file))})
 
-DEFAULT_YEAR = sorted(CHAPTERS.keys())[-1]
+    return sorted(CHAPTERS.keys())[-1]
+
+DEFAULT_YEAR = init()
