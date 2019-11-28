@@ -23,11 +23,11 @@ Lors de ce parcours, nous avons rencontré *plus de 5 000 noms d’éléments no
 
 ## Méthodologie
 
-Les noms des éléments sur chaque page ont été collectés à partir du DOM lui-même, après l’exécution initiale de JavaScript.
+Les noms des éléments sur chaque page ont été collectés à partir du <a href="https://fr.wikipedia.org/wiki/Document_Object_Model">DOM</a> lui-même, après l’exécution initiale de JavaScript.
 
-Examiner un nombre de fréquences brut n’est pas particulièrement utile, même pour les éléments standards : environ 25 % des éléments rencontrés sont des `<div>`. Environ 17 % sont des `<a>`, environ 11 % sont des `<span>` -- et ce sont les seuls éléments qui comptent pour plus de 10 % des occurrences. Les langues sont [généralement comme ceci](https://www.youtube.com/watch?v=fCn8zs912OE) ; un petit nombre de termes sont étonnamment utilisés par comparaison. En plus, lorsque nous commençons à examiner des éléments non-standards pour les adopter, cela peut être très trompeur puisqu’un site pourrait utiliser un certain élément mille fois et lui donner un aspect artificiellement très populaire.
+Examiner un nombre de fréquences brut n’est pas particulièrement utile, même pour les éléments standards : environ 25 % des éléments rencontrés sont des `<div>`. Environ 17 % sont des `<a>`, environ 11 % sont des `<span>` -- et ce sont les seuls éléments qui comptent pour plus de 10 % des occurrences. Les langues sont [généralement comme ceci] ; un petit nombre de termes sont étonnamment utilisés par comparaison. En plus, lorsque nous commençons à examiner des éléments non standards, cela peut être très trompeur puisqu’un site pourrait utiliser un certain élément mille fois et lui donner un aspect artificiellement très populaire.
 
-Au lieu de faire cela, nous allons examiner combien de sites incluent chaque élément au moins une fois dans leur page d’accueil, comme dans l’étude originale de Hixie.
+Au lieu de faire cela, nous allons examiner combien de sites incluent chaque élément au moins une fois dans leur pages d’accueil, comme dans l’étude originale de Hixie.
 
 <aside class="note">Remarque: cette démarche n’est pas dénuée, en soi, de biais potentiels. Des solutions populaires, pouvant être utilisées par plusieurs sites, peuvent introduire un balisage non-standard "invisible" à chaque auteur. Ainsi, il faut veiller à reconnaître que l’utilisation n’implique pas nécessairement la connaissance directe de l’auteur et l’adoption consciente puisqu’elle répond à un besoin commun, d’une manière commune. Au cours de notre recherche, nous avons trouvé plusieurs exemples, dont certains seront explicités.</aside>
 
