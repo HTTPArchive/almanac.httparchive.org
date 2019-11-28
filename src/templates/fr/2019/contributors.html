@@ -301,10 +301,15 @@
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
     <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> personnes</div>
     <div class="filter-container">
-      <p>Filtrer par équipe (noms anglais)&nbsp;:</p>
-    {% for id, team in config.teams.items() %}
-      <button class="{{ id }}" type="button">{{ team.name }}</button>
-    {% endfor %}
+      <p>Filtrer par équipe&nbsp;:</p>
+      <button class="analysts" type="button">Analyse</button>
+      <button class="authors" type="button">Rédaction</button>
+      <button class="brainstormers" type="button">Réflexion</button>
+      <button class="designers" type="button">Design</button>
+      <button class="developers" type="button">Développement</button>
+      <button class="editors" type="button">Édition</button>
+      <button class="reviewers" type="button">Relecture</button>
+      <button class="translators" type="button">Traduction</button>
     </div>
 
     <div class="contributor-grid">
