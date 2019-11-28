@@ -13,14 +13,13 @@ import config as config_util
 
 CONFIG_DIR = './config'
 
-DEFAULT_YEAR = str(date.today().year)
 SUPPORTED_YEARS = {
     # When there is one supported language, it must have a trailing comma.
     '2019': (Language.ENGLISH,)
 }
 
 #TO DO - Stop Hardcoding these
-CHAPTERS = set();
+CHAPTERS = {}
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
@@ -41,7 +40,7 @@ def validate(func):
 
         if chapter:
 
-            validated_chapter = validate_chapter(chapter)
+            validated_chapter = validate_chapter(chapter,year)
 
             if chapter != validated_chapter:
                 return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
@@ -59,9 +58,10 @@ def validate(func):
     return decorated_function
 
 
-def validate_chapter(chapter):
+def validate_chapter(chapter,year):
 
-    if chapter not in CHAPTERS:
+    CHAPTERS_FOR_YEAR = CHAPTERS.get(year)
+    if chapter not in CHAPTERS_FOR_YEAR:
         if chapter in TYPO_CHAPTERS:
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
             return TYPO_CHAPTERS.get(chapter)
@@ -127,7 +127,7 @@ def parse_accept_language(header, supported_langs):
     # If all else fails, default the language.
     return DEFAULT_LANGUAGE.lang_code
 
-def get_json_files_from_dir(path):
+def get_json_files(path):
 
     files_found = []
     for root, directories, files in os.walk(path):
@@ -150,7 +150,7 @@ def get_entries_from_json(path, p_key, s_key):
 
     return entries
 
-def get_chapters_for_year(file):
+def get_chapters(file):
 
     chapters = []
 
@@ -161,18 +161,9 @@ def get_chapters_for_year(file):
 
     return chapters
 
-def get_parts_for_year(file):
+json_files = get_json_files(CONFIG_DIR)
 
-    parts = get_entries_from_json(file,'outline','part')
+for file in json_files:
+    CHAPTERS.update({file[9:-5] : set(get_chapters(file))})
 
-    return parts
-
-json_files_present = get_json_files_from_dir(CONFIG_DIR)
-
-
-#TO DO - Lazy load previous year chapters
-
-for file in json_files_present:
-    if DEFAULT_YEAR in file:
-      CHAPTERS = set(get_chapters_for_year(file))
-      break
+DEFAULT_YEAR = sorted(CHAPTERS.keys())[-1]
