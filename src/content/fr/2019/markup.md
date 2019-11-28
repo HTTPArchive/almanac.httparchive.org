@@ -63,77 +63,77 @@ tr | span | option
   <a href="/static/images/2019/03_Markup/fig3.png">
     <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Fréquences des éléments à partir de 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">Graphique représentant environ 2 500 pages commençant par environ 30 éléments, il passe à 6 876 pages et compte 283 éléments, avant de se terminer d'une manière relativement linéaire jusqu'à 327 pages comportant 2,00 éléments.</div>
-  <figcaption id="fig3-caption">Figure 3. Fréquences des éléments à partir de 2019.</figcaption>
+  <div id="fig3-description" class="visually-hidden">Graphique représentant environ 2 500 pages commençant par environ 30 éléments, il passe à 6 876 pages et compte 283 éléments, avant de se terminer d'une manière relativement linéaire jusqu'à 327 pages comportant 2 000 éléments.</div>
+  <figcaption id="fig3-caption">Figure 3. Fréquences des éléments en 2019.</figcaption>
 </figure>
 
 En comparant les dernières données de la figure 3 à celles du rapport d'Hixie de 2005 à la figure 2, nous pouvons constater que la taille moyenne des arbres DOM a augmenté.
 
 <figure id="fig4">
   <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogramme de l'analyse effectuée par Hixie en 2005 sur les types d'éléments par page" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600">
-   <div id="fig4-description" class="visually-hidden">Cette graphe de fréquence relative par une courbe en cloche autour du point des 19 éléments..</div>
-  <figcaption id="fig4-caption">Figure 4. Histogramme de l'analyse effectuée par Hixie en 2005 sur les types d'éléments par page.</figcaption>
+   <div id="fig4-description" class="visually-hidden">Graphique montrant que la fréquence relative est une courbe en cloche autour d’un point culminant correspondant à 19 éléments.</div>
+  <figcaption id="fig4-caption">Figure 4. Histogramme de l’analyse effectuée par Hixie en 2005 sur les types d’éléments par page.</figcaption>
 </figure>
 
 <figure id="fig5">
     <a href="/static/images/2019/03_Markup/fig5.png">
-      <img src="/static/images/2019/03_Markup/fig5.png" alt="Figure 5. Histogramme des types d'éléments par page à partir de 2019." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
+      <img src="/static/images/2019/03_Markup/fig5.png" alt="Figure 5. Histogramme des types d'éléments par page en 2019." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
     </a>
-    <div id="fig5-description" class="visually-hidden">Ce graphique représente le nombre moyen d'éléments est une courbe en cloche autour des 30 éléments marqués, telle qu'utilisée par 308 168 milliers de sites.</div>
-  <figcaption id="fig5-caption">Figure 5. Histogramme des types d'éléments par page à partir de 2019.</figcaption>
+    <div id="fig5-description" class="visually-hidden">Graphique montrant que la fréquence relative est une courbe en cloche autour d’un point culminant correspondant à 30 éléments, tel qu’utilisés par 308 168 sites.</div>
+  <figcaption id="fig5-caption">Figure 5. Histogramme des types d’éléments par page en 2019.</figcaption>
 </figure>
 
 Nous pouvons voir sur les deux que nombre moyen de types d'éléments par page ont augmenté, ainsi que le nombre maximal d'éléments uniques que nous rencontrons.
 
 ## Éléments personnalisés
 
-La plupart des éléments que nous avons enregistrés sont personnalisés (tout simplement «non standard»), mais il peut être un peu difficile de déterminer quels sont des éléments personnalisés ou non. Écrit dans une spécification où proposition quelque part est, actuellement, un certain nombre d'éléments. Pour ce but, nous avons considéré 244 éléments comme standard (cependant, certains d’entre eux sont obsolètes ou non pris en charge):
+La plupart des éléments que nous avons enregistrés sont personnalisés (c’est-à-dire non-standards), mais il peut être un peu difficile de déterminer quels éléments sont vraiment personnalisés ou non. Car il existe de nombreux élément en cours de spécification ou de proposition. Dans notre démarche, nous avons considéré 244 éléments comme standards (cependant, certains d’entre eux sont obsolètes ou non pris en charge) :
 
-* 145 Éléments de HTML
-* 68 Éléments de SVG
-* 31 Éléments de MathML
+* 145 éléments HTML
+* 68 éléments SVG
+* 31 éléments MathML
 
-En pratique, nous n'avons rencontré que 214 d'entre eux:
+En pratique, nous n’avons rencontré que 214 d’entre eux:
 
 * 137 Éléments de HTML
 * 54 Éléments de SVG
 * 23 Éléments de MathML
 
-Dans l'ensemble de données de bureau, nous avons collecté des données pour les top 4 834 éléments non standard rencontrés. Parmi ceux-ci:
+Dans le jeu de données _desktop_, nous avons collecté des données pour les premiers 4 834 éléments non-standards rencontrés. Parmi ceux-ci:
 
-* 155 (3%) sont identifiables comme des balisages très probable ou des erreurs d'échappement (ils contiennent des caractères dans le nom de balise analysé qui implique que le balisage est cassé)
-* 341 (7%) utilisent un espace de nom de style XML de type deux-points (bien que, comme HTML, ils n'utilisent pas d'espaces de nom XML réels)
-* 3 207 (66%) sont des noms d'élément personnalisé valides
-* 1 211 (25%) sont dans l'espace de noms global (non standard, sans tiret ni deux-points)
-    * 216 de celles-ci ont été marquées comme * possibles * des fautes de frappe car elles sont plus longs que 2 caractères et ont une distance de Levenshtein de 1 à partir d'un nom d'élément standard comme `<cript>`,`<spsn>` ou `<artice>`. Certains d'entre eux (comme `<jdiv>`), Cependant, sont certainement intentionnelle.
+* 155 (3 %) sont identifiables comme de très probables erreurs de balisage ou d'échappement (ils contiennent des caractères dans le nom de balise analysé qui implique que le balisage est cassé)
+* 341 (7 %) utilisent un espace de nom de type XML à deux-points (bien que, comme HTML, ils n'utilisent pas d'espaces de nom XML réels)
+* 3 207 (66 %) sont des noms d’élément personnalisé valides
+* 1 211 (25 %) sont dans l’espace de noms global (non-standard, sans tiret ni deux-points)
+    * 216 parmi ceux-ci ont été marqués comme de *possibles* fautes de frappe car ils sont plus longs que 2 caractères et ont une distance de Levenshtein de 1 par rapport à un nom d’élément standard comme `<cript>`,`<spsn>` ou `<artice>`. Certains d’entre eux (comme `<jdiv>`), cependant, sont certainement intentionnels.
 
-En outre, 15% des pages d'ordinateur et 16% des pages de mobile contiennent des éléments obsolètes.
+En outre, 15 % des pages _desktop_ et 16 % des pages mobiles contiennent des éléments obsolètes.
 
-<aside class="note">Remarque: cela est très probablement dû à l'utilisation de produits plutôt qu'au fait que des auteurs individuels continuent à créer manuellement ce balisage.</aside>
+<aside class="note">Remarque: cela est très probablement dû à l’utilisation de solutions plutôt qu’au fait que des auteurs individuels continuent à créer manuellement ce balisage.</aside>
 
 <figure id="fig6">
     <a href="/static/images/2019/03_Markup/fig6.png">
-      <img src="/static/images/2019/03_Markup/fig6.png" alt="Figure 6. Éléments déconseillés les plus fréquemment utilisés." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
+      <img src="/static/images/2019/03_Markup/fig6.png" alt="Figure 6. Éléments obsolètes les plus fréquemment utilisés." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
     </a>
-    <div id="fig6-description" class="visually-hidden">Diagramme à barres montrant 'center' utilisé par 8,31% des sites version web (7,96% des sites mobiles), 'font' utilisé par 8,01% des sites version web (7,38% des sites mobiles), 'marquee' utilisé par 1,07% des sites version web (1,20% des sites mobiles), 'nobr' utilisé par 0,71% des sites version web (0,55% des sites mobiles), 'big' utilisé par 0,53% des sites version web (0,47% des sites mobiles), 'frameset' utilisé par 0,39% des sites version web (0,35% des sites mobiles), 'frame' utilisé par 0,39% des sites version web (0,35% des sites mobiles), 'strike' utilisé par 0,33% des sites version web (0,27% des sites mobiles), and 'noframes' utilisé par 0,25% des sites version web (0,27% des sites mobiles).</div>
-  <figcaption id="fig6-caption">Figure 6. Éléments déconseillés les plus fréquemment utilisés.</figcaption>
+    <div id="fig6-description" class="visually-hidden">Diagramme à barres montrant que 'center' est utilisé par 8,31 % des sites _desktop_ (7,96 % des sites mobiles), 'font' par 8,01 % des sites _desktop_ (7,38 % des sites mobiles), 'marquee' utilisé par 1,07 % des sites _desktop_ (1,20 % des sites mobiles), 'nobr' utilisé par 0,71 % des sites _desktop_ (0,55 % des sites mobiles), 'big' utilisé par 0,53 % des sites _desktop_ (0,47 % des sites mobiles), 'frameset' utilisé par 0,39 % des sites version web (0,35 % des sites mobiles), 'frame' utilisé par 0,39 % des sites _desktop_ (0,35 % des sites mobiles), 'strike' utilisé par 0,33 % des sites _desktop_ (0,27 % des sites mobiles), and 'noframes' utilisé par 0,25 % des sites _desktop_ (0,27 % des sites mobiles).</div>
+  <figcaption id="fig6-caption">Figure 6. Éléments obsolètes les plus fréquemment utilisés.</figcaption>
 </figure>
 
-La figure 6 ci-dessus montre les 10 éléments déconseillés les plus fréquemment utilisés. La plupart d'entre eux peuvent sembler être de très petits nombres, mais la point de vue compte.
+La figure 6 ci-dessus montre les 10 éléments les plus fréquemment utilisés. Dans la plupart des cas, les nombres peuvent sembler petits mais dans l’ensemble, cela compte.
 
-## Point de vue sur la valeur et l'utilisation
+## Mise en perspective des valeurs et des usages
 
-Afin de discuter des chiffres sur l'utilisation d'éléments (standard, obsolète ou personnalisé), nous devons d'abord établir quelque perspective.
+Afin de discuter des chiffres sur l’utilisation d’éléments (standards, obsolètes ou personnalisés), nous devons d’abord prendre un peu de recul.
 
 <figure id="fig7">
     <a href="/static/images/2019/03_Markup/fig7.png">
       <img src="/static/images/2019/03_Markup/fig7.png" alt="Figure 7. 150 premiers éléments." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
     </a>
-    <div id="fig7-description" class="visually-hidden">Diagramme à barres illustre une décroissance des éléments dans l'ordre décroissant: html, head, body, title au dessus de 99% d'utilisation, meta, a, div plus de 98% d'utilisation, link, script, img, span plus de 90% d'utilisation, ul, li , p, style, input, br, form plus de 70% d'utilisation, h2, h1, iframe, h3, button, footer, header, nav plus de 50% d’utilisation et d’autres tags moins connus passant de moins de 50% à presque 0%.</div>
+    <div id="fig7-description" class="visually-hidden">Diagramme à barres illustrant une décroissance des éléments par ordre descendant: html, head, body, title au dessus de 99 % d’utilisation, meta, a, div plus de 98 % d’utilisation, link, script, img, span plus de 90 % d’utilisation, ul, li , p, style, input, br, form plus de 70 % d’utilisation, h2, h1, iframe, h3, button, footer, header, nav plus de 50 % d’utilisation et d’autres tags moins connus passant de moins de 50 % à presque 0 %.</div>
   <figcaption id="fig7-caption">Figure 7. 150 premiers éléments.</figcaption>
 </figure>
 
-Dans la figure 7 ci-dessus, les 150 premiers noms d'éléments, en comptant le nombre de pages où ils apparaissent, sont affichés. Notez la rapidité d'utilisation baisse.
+Dans la figure 7 ci-dessus, les 150 premiers noms d’éléments, en comptant le nombre de pages où ils apparaissent, sont affichés. Notez la rapidité avec laquelle l’utilisation diminue.
 
 Seuls 11 éléments sont utilisés sur plus de 90 % des pages:
 
