@@ -299,7 +299,7 @@
       <img src="/static/images/avatars/9.jpg" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
-    <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors</div>
+    <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> personnes</div>
     <div class="filter-container">
       <p>Filtrer par équipe (noms anglais)&nbsp;:</p>
     {% for id, team in config.teams.items() %}
