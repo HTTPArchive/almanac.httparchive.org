@@ -1,3 +1,61 @@
+//This function removes the lazy-loading attributes from all img and iframe tags
+//Useful for print view for example (https://bugs.chromium.org/p/chromium/issues/detail?id=875403)
+function removeLazyLoading() {
+
+  console.log("Removing lazy loading...");
+
+  var all_imgs = document.querySelectorAll('img');
+  for (index = 0; index < all_imgs.length; ++index) {
+    var img = all_imgs[index];
+    if (img.getAttribute('loading')) {
+      img.removeAttribute('loading');
+    }
+  }
+  
+  var all_iframes = document.querySelectorAll('iframe');
+  for (index = 0; index < all_iframes.length; ++index) {
+    var iframe = all_iframes[index];
+    if (iframe.getAttribute('loading')) {
+      iframe.removeAttribute('loading');
+    }
+  }
+}
+
+//Add an event handler to remove LazyLoading when entering print mode
+function removeLazyLoadingOnPrint() {
+  if ("onbeforeprint" in window) {
+    window.onbeforeprint = function() {
+      removeLazyLoading();
+    }
+  }
+
+}
+
+//Check if in print mode so we can remove lazy loading and block interactive visuals
+function printMode() {
+  var printMode = false;
+  var field = 'print';
+  var url = window.location.href;
+
+  if(url.indexOf('?' + field) != -1) {
+    printMode = true;
+  } else if(url.indexOf('&' + field) != -1) {
+    printMode = true;
+  }
+
+  if (printMode) {
+    console.log("Print mode");
+    gtag('event', 'print-mode', { 'event_category': 'user', 'event_label': 'true', 'value': 1 });
+    
+    removeLazyLoading();
+
+    return true;
+  } else {
+    gtag('event', 'print-mode', { 'event_category': 'user', 'event_label': 'false', 'value': 0 });
+    return false;
+  }
+}
+
 //Check if the screen meets minimum size requirements for Interactive figures
 //At the moment we base it on 600px break point matching CSS but it does not need to be the same
 function bigEnoughForInteractiveFigures() {
@@ -120,7 +178,7 @@ function googleSheetsPixelNotLoaded() {
 function upgradeInteractiveFigures() {
 
   try {
-    if (bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
+    if (!printMode() && bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
 
       console.log('Upgrading to interactive figures');
 
@@ -214,5 +272,6 @@ function setDiscussionCount() {
   }
 }
 
+removeLazyLoadingOnPrint();
 upgradeInteractiveFigures();
 setDiscussionCount();

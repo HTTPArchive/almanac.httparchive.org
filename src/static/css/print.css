@@ -1,0 +1,11 @@
+.top-header, .index, .discuss, #chapter-navigation, footer {
+    display: none;
+}
+
+figure iframe {
+    display: none;
+}
+figure .fig-mobile {
+    display: block;
+    max-width: 100%;
+}
