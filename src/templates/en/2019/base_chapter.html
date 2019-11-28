@@ -44,7 +44,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_actions() %}
   <div class="discuss">
     <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
-      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24" loading="lazy" /><span id="num_comments"></span><span data-translation id="comment-singular">commentaire</span><span data-translation id="comment-plural">commentaires</span>
+      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24" loading="lazy" /><span id="num_comments"></span> <span data-translation id="comment-singular">comment</span><span data-translation id="comment-plural">comments</span>
     </a>
   </div>
 {% endmacro %}

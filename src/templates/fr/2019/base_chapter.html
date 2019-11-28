@@ -44,7 +44,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_actions() %}
   <div class="discuss">
     <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
-      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24" loading="lazy" /><span id="num_comments"></span><span data-translation id="comment-singular">commentaire</span><span data-translation id="comment-plural">commentaires</span>
+      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24" loading="lazy" /><span id="num_comments"></span> <span data-translation id="comment-singular">commentaire</span><span data-translation id="comment-plural">commentaires</span>
     </a>
   </div>
 {% endmacro %}
@@ -121,7 +121,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_prevnext() %}
   {% if prev_chapter %}
-      <a id="previous-chapter" title="Previous Chapter (press 'p' or ',')" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+      <a id="previous-chapter" title="Chapitre précédent (appuyez sur 'p' ou ',')" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
           <span class="arrow">&#8963;</span>
           <span class="chapter-no">
               Chapitre {{ prev_chapter['chapter'] }}
@@ -133,7 +133,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endif %}
 
   {% if next_chapter %}
-      <a id="next-chapter" title="Next Chapter (press 'n' or '.')" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+      <a id="next-chapter" title="Chapitre suivant (appuyez sur 'n' or '.')" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
               <span class="arrow">&#8963;</span>
               <span class="chapter-no">
                   Chapitre {{ next_chapter['chapter'] }}
