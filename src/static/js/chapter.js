@@ -185,6 +185,15 @@ function upgradeInteractiveFigures() {
   }
 }
 
+function getElementContent(selector, fallback){
+  var element = document.querySelector(selector);
+  if (element) {
+    return element.innerText;
+  } else {
+    return fallback;
+  }
+}
+
 function setDiscussionCount() {
   try {
     if (window.discussion_url) {
@@ -199,8 +208,10 @@ function setDiscussionCount() {
           if (isNaN(comments)) {
             return;
           }
+          var commentSingular = getElementContent('#comment-singular', 'comment');
+          var commentPlural = getElementContent('#comment-plural', 'comments');
           var el = document.getElementById('num_comments');
-          el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
+          el.innerText = comments + ' ' + (comments == 1 ? commentSingular : commentPlural);
           gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
         })
         .catch(function (err) {
