@@ -37,9 +37,9 @@ function printMode() {
   var field = 'print';
   var url = window.location.href;
 
-  if(url.indexOf('?' + field) != -1) {
+  if(url.indexOf('?' + field + '=') != -1) {
     printMode = true;
-  } else if(url.indexOf('&' + field) != -1) {
+  } else if(url.indexOf('&' + field + '=') != -1) {
     printMode = true;
   }
 
