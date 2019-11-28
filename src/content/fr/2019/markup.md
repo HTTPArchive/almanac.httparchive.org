@@ -56,12 +56,12 @@ tr | span | option
 <figure id="fig2">
   <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution de l'analyse des fréquences d'élément effectuée par Hixie en 2005" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600">
     <div id="fig2-description" class="visually-hidden">Graphique montrant une distribution décroissante de la fréquence relative à mesure que le nombre d'éléments augmente</div>
-  <figcaption id="fig2-caption">Figure 2. Distribution de l'analyse des fréquences d'élément effectuée par Hixie en 2005.</figcaption>
+  <figcaption id="fig2-caption">Figure 2. Distribution de l’analyse des fréquences d’élément effectuée par Hixie en 2005.</figcaption>
 </figure>
 
 <figure id="fig3">
   <a href="/static/images/2019/03_Markup/fig3.png">
-    <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Fréquences des éléments à partir de 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
+    <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Fréquences des éléments en 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
   </a>
   <div id="fig3-description" class="visually-hidden">Graphique représentant environ 2 500 pages commençant par environ 30 éléments, il passe à 6 876 pages et compte 283 éléments, avant de se terminer d'une manière relativement linéaire jusqu'à 327 pages comportant 2 000 éléments.</div>
   <figcaption id="fig3-caption">Figure 3. Fréquences des éléments en 2019.</figcaption>
