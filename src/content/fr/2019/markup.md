@@ -5,7 +5,7 @@ title: Balisage Web
 description: Chapitre sur le balisage web du rapport Web Almanac 2019. Découvrez des statistiques sur l'usage des balises, valeurs, produits et des cas d'utilisation courants.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
-translators: [SilentJMA]
+translators: [SilentJMA, borisschapira]
 discuss: 1758
 published: 2019-11-27T00:00:00.000Z
 last_updated: 2019-11-27T00:00:00.000Z
