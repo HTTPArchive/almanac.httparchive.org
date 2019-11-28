@@ -311,6 +311,17 @@
       "github": "bkardell",
       "twitter": "briankardell"
     },
+    "borisschapira": {
+      "name": "Boris Schapira",
+      "bio": "Boris is Customer Success Manager at <a href=\"https://dareboost.com/en/\">Dareboost</a>. He's a WebPerf & Web Quality aficionado, a web professional, a developer, a teacher and loves standars, microtypography and chocolatines.",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/284742?v=4&s=200",
+      "website": "https:\/\/boris.schapira.dev",
+      "github": "borisschapira",
+      "twitter": "boostmarks"
+    },
     "caraya": {
       "name": "Carlos Araya",
       "teams": [
