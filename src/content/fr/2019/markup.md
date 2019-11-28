@@ -1,8 +1,8 @@
 ---
 part_number: I
 chapter_number: 3
-title: Markup
-description: Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.
+title: Balisage Web
+description: Chapitre sur le balisage web du rapport Web Almanac 2019. Découvrez des statistiques sur l'usage des balises, valeurs, produits et des cas d'utilisation courants.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 translators: [SilentJMA]
@@ -13,27 +13,27 @@ last_updated: 2019-11-27T00:00:00.000Z
 
 ## Introduction
 
-En 2005, Ian "Hixie" Hickson a publié [une analyse des données de balisage](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) à partir de différents travaux précédents. Une grande partie de ce travail visait à examiner les noms de classes pour voir s’il existait une sémantique informelle commune adoptée par les développeurs et sur laquelle il serait peut-être logique de normaliser. Certaines de ses recherches ont permis d’informer de nouveaux éléments en HTML5.
+En 2005, Ian "Hixie" Hickson a publié [une analyse sur les données de balisage Web](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html) à partir de différents travaux précédents. Une grande partie de ce travail visait à examiner les noms de classes pour voir s’il existait une sémantique informelle commune adoptée par les développeurs et sur laquelle il serait peut-être logique de standardiser. Certaines de ses recherches ont permis d'introduire de nouveaux éléments en HTML5.
 
-14 ans plus tard, il est temps de jeter un nouveau coup d’œil. Depuis ce temps, nous avons introduit [des éléments personnalisés](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) et l'[Extensible Web manifesto](https://extensiblewebmanifesto.org/), ce qui nous a encouragé à trouver des meilleures méthodes pour tracer des chemins en permettant aux développeurs d'explorer l'espace des éléments eux-mêmes et permettent aux organismes de normalisation [d'agir comme des éditeurs de dictionnaire](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html). Par contre les noms de classes CSS, qui peuvent être utilisés pour n'importe quoi, nous pouvons être certains que les auteurs qui ont utilisé un élément {en3} ne sont pas au standard {/en3} ont vraiment voulu qu'il soit un élément.
+14 ans plus tard, il est temps de jeter un nouveau coup d’œil. Depuis ce temps, nous avons introduit [des éléments personnalisés](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_custom_elements) et l’[Extensible Web manifesto](https://extensiblewebmanifesto.org/), ce qui nous a encouragé à trouver de meilleures méthodes pour baliser le chemin en permettant aux développeurs d’explorer l’espace des éléments de balisage eux-mêmes et à permettre aux organismes de normalisation [d’agir comme des éditeurs de dictionnaires](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html). À l'inverse des noms de classes CSS, qui peuvent être utilisés pour n’importe quoi, nous pouvons être certains que les auteurs qui ont utilisé un *élément* non-standard l'ont fait volontairement.
 
-À partir de juillet 2019, l'archive HTTP a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d'accueil sur bureau et environ 5,3 millions de pages d'accueil sur mobiles que nous pouvons maintenant commencer à rechercher et à disséquer. _(En savoir plus sur notre [méthodologie](./methodology).)_
+À partir de juillet 2019, HTTP Archive a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d’accueil _desktop_ et environ 5,3 millions de pages d’accueil sur mobiles que nous pouvons maintenant commencer à analyser et à disséquer. _(En savoir plus sur notre [méthodologie](./methodology).)_
 
-Cette analyse a rencontré * plus de 5,000 noms d'éléments non standard distincts * dans ces pages. Nous avons donc limité le nombre total d'éléments distincts que nous comptons en 'haut' (expliqué ci-dessous) 5,048.
+Lors de ce parcours, nous avons rencontré *plus de 5 000 noms d’éléments non-standard distincts* dans les pages. Nous avons donc limité le nombre total d’éléments distincts que nous comptons aux 5 048 "premiers" (explications ci-dessous).
 
 ## Méthodologie
 
-Les noms des éléments sur chaque page ont été collectés à partir du DOM lui même, après l'exécution initiale de JavaScript.
+Les noms des éléments sur chaque page ont été collectés à partir du DOM lui-même, après l’exécution initiale de JavaScript.
 
-Examiner un nombre de fréquences brut n'est pas particulièrement utile, même pour les éléments standards: environ 25% des éléments rencontrés sont `<div>`. Environ 17% sont `<a>`, environ 11% sont `<span>` -- et ce sont les seuls éléments qui comptent pour plus de 10% des occurrences. Les langues sont [généralement comme ceci](https://www.youtube.com/watch?v=fCn8zs912OE); un petit nombre de termes sont étonnamment utilisés par comparaison. En plus, lorsque nous commençons à examiner des éléments non standard pour les adopter, cela peut être très trompeur puisqu'un site pourrait utiliser un certain élément mille fois et lui donner un aspect artificiellement très populaire.
+Examiner un nombre de fréquences brut n’est pas particulièrement utile, même pour les éléments standards : environ 25 % des éléments rencontrés sont des `<div>`. Environ 17 % sont des `<a>`, environ 11 % sont des `<span>` -- et ce sont les seuls éléments qui comptent pour plus de 10 % des occurrences. Les langues sont [généralement comme ceci](https://www.youtube.com/watch?v=fCn8zs912OE) ; un petit nombre de termes sont étonnamment utilisés par comparaison. En plus, lorsque nous commençons à examiner des éléments non-standards pour les adopter, cela peut être très trompeur puisqu’un site pourrait utiliser un certain élément mille fois et lui donner un aspect artificiellement très populaire.
 
-Plutôt, comme dans l'étude originale d'Hixie, ce que nous allons voir, c'est combien de sites incluent chaque élément au moins une fois dans leur page d'accueil.
+Au lieu de faire cela, nous allons examiner combien de sites incluent chaque élément au moins une fois dans leur page d’accueil, comme dans l’étude originale de Hixie.
 
-<aside class="note">Remarque: Ceci est, lui-même, n'est pas sans quelques préjugement potentiels. Des produits populaires peuvent être utilisés par plusieurs sites, qui introduisent un balisage non standard, même "invisible" pour des auteurs individuels. Ainsi, il faut veiller à reconnaître que l'utilisation n'implique pas nécessairement la connaissance directe de l'auteur et l'adoption consciente puisqu'elle répond à un besoin commun, d'une manière commune. Au cours de notre recherche, nous avons trouvé plusieurs exemples, dont certains exemples on va les citers.</aside>
+<aside class="note">Remarque: cette démarche n’est pas dénuée, en soi, de biais potentiels. Des solutions populaires, pouvant être utilisées par plusieurs sites, peuvent introduire un balisage non-standard "invisible" à chaque auteur. Ainsi, il faut veiller à reconnaître que l’utilisation n’implique pas nécessairement la connaissance directe de l’auteur et l’adoption consciente puisqu’elle répond à un besoin commun, d’une manière commune. Au cours de notre recherche, nous avons trouvé plusieurs exemples, dont certains seront explicités.</aside>
 
-## Principaux éléments et informations générales
+## Principaux éléments de balisage et informations générales
 
-En 2005, l’enquête d'Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient `html`, `head` et `body` qu’il a noté comme intéressant car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM post-analysé, ils apparaissent universellement dans nos données. Ainsi que nous commencerons par le 4ème élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données à partir de là jusqu'à maintenant (j’ai inclus ici la comparaison de fréquence, juste pour le plaisir).
+En 2005, l’enquête de Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient `html`, `head` et `body` qu’il a noté comme intéressant car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM après interprétation, ils apparaissent universellement dans nos données. C'est pourquoi nous commencerons par le 4e élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données collectées à son époque et aujourd'hui (j’ai inclus ici la comparaison en fréquence, pour le plaisir).
 
 <figure id="fig1" markdown>
 
@@ -48,14 +48,14 @@ table | script | script
 td | img | p
 tr | span | option
 
-<figcaption>Figure 1. Comparaison des principaux éléments à partir de 2005 jusqu'à 2019.</figcaption>
+<figcaption>Figure 1. Comparaison des principaux éléments entre 2005 et 2019.</figcaption>
 </figure>
 
 ### Éléments par page
 
 <figure id="fig2">
   <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribution de l'analyse des fréquences d'élément effectuée par Hixie en 2005" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600">
-    <div id="fig2-description" class="visually-hidden">Graphique montrant une distribution décroissante de la fréquence relative à mesure quand le nombre d'éléments augmente</div>
+    <div id="fig2-description" class="visually-hidden">Graphique montrant une distribution décroissante de la fréquence relative à mesure que le nombre d'éléments augmente</div>
   <figcaption id="fig2-caption">Figure 2. Distribution de l'analyse des fréquences d'élément effectuée par Hixie en 2005.</figcaption>
 </figure>
 
@@ -83,7 +83,7 @@ En comparant les dernières données de la figure 3 à celles du rapport d'Hixie
   <figcaption id="fig5-caption">Figure 5. Histogramme des types d'éléments par page à partir de 2019.</figcaption>
 </figure>
 
-Nous pouvons voir sur les deux que nombre moyen de types d'éléments par page a augmentés, ainsi que le nombre maximal d'éléments uniques que nous rencontrons.
+Nous pouvons voir sur les deux que nombre moyen de types d'éléments par page ont augmenté, ainsi que le nombre maximal d'éléments uniques que nous rencontrons.
 
 ## Éléments personnalisés
 
@@ -135,7 +135,7 @@ Afin de discuter des chiffres sur l'utilisation d'éléments (standard, obsolèt
 
 Dans la figure 7 ci-dessus, les 150 premiers noms d'éléments, en comptant le nombre de pages où ils apparaissent, sont affichés. Notez la rapidité d'utilisation baisse.
 
-Seuls 11 éléments sont utilisés sur plus de 90% des pages:
+Seuls 11 éléments sont utilisés sur plus de 90 % des pages:
 
 - `<html>`
 - `<head>`
@@ -149,7 +149,7 @@ Seuls 11 éléments sont utilisés sur plus de 90% des pages:
 - `<img>`
 - `<span>`
 
-Il n'y a que 15 autres éléments qui apparaissent sur plus de 50% des pages:
+Il n’y a que 15 autres éléments qui apparaissent sur plus de 50 % des pages:
 
 - `<ul>`
 - `<li>`
@@ -167,11 +167,11 @@ Il n'y a que 15 autres éléments qui apparaissent sur plus de 50% des pages:
 - `<header>`
 - `<nav>`
 
-Et il n'y a que 40 autres éléments qui apparaissent sur plus de 5% des pages.
+Et il n’y a que 40 autres éléments qui apparaissent sur plus de 5 % des pages.
 
-Même `<video>`, par exemple, ne fait pas cette coupe. Il apparaît sur seulement 4% des pages d'ordinateur de l'ensemble de données (3% sur mobile). Bien que ces chiffres semblent très faibles, 4% sont en fait * assez * populaires par comparaison. En effet, seuls 98 éléments apparaissent sur plus de 1% des pages.
+Même `<video>`, par exemple, ne fait pas ce score. Il apparaît sur seulement 4 % des pages _desktop_ du jeu de données (3 % sur mobile). Bien que ces chiffres semblent très faibles, 4 % correspond à une utilisation *assez* populaires, par comparaison. En effet, seuls 98 éléments apparaissent sur plus de 1 % des pages.
 
-Donc il est intéressant de voir à quoi ressemble la distribution de ces éléments et lesquels utilisent plus de 1%.
+Donc il est intéressant de voir à quoi ressemble la distribution de ces éléments et lesquels sont utilisés à plus de 1 %.
 
 <figure id="fig8">
   <a href="https://rainy-periwinkle.glitch.me/scatter/html">
