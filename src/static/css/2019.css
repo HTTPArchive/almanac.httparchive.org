@@ -30,6 +30,14 @@ a:focus, a:hover {
   text-decoration: underline;
 }
 
+/* The main wrapper, center aligned */
+.container {
+  max-width: 1280px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+}
+
 /* Main title, subtitle and modifiers */
 .title,
 .subtitle {
@@ -158,11 +166,10 @@ header.alt-bg a:focus, footer.alt-bg a:focus {
 }
 
 .top-header, footer {
-  padding: 40px 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
-article.main {
-  max-width: 1324px;
-}
+
 .top-header, footer .nav {
   display: flex;
   justify-content: space-between;
@@ -248,9 +255,6 @@ header .btn + .language-switcher {
   margin: 0px auto;
   font-size: 17px;
 }
-.content, section.main {
-  max-width: 1024px;
-}
 
 .main a,
 .main a:visited {
@@ -305,6 +309,9 @@ footer {
     'hr hr hr hr'
     'copyright copyright ha-logo social-media';
   grid-template-columns: 300px 1fr 1fr 120px 0 0;
+  /* 20px same as .container padding */
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 footer .home-logo {
@@ -385,9 +392,6 @@ p.copyright a {
   header .cta {
     display: none;
   }
-  .main {
-    margin: 0px 30px;
-  }
 
   footer {
     display: grid;
@@ -438,10 +442,8 @@ p.copyright a {
   /* Header */
   .top-header, footer {
     position: relative;
-    padding: 30px;
-  }
-  .main {
-    margin: 0px 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   header nav:first-of-type,
   header .cta {
@@ -462,9 +464,10 @@ p.copyright a {
     display: none;
     flex-direction: column;
     top: 100%;
-    left: 0;
+    /* overcome the parent container's 20px side padding */    
+    left: -20px;
+    right: -20px;
     border-top: 1px solid rgba(242, 242, 242, 0.2);
-    width: 100%;
     padding: 60px 30px 30px;
     background-color: #677486;
     box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);

@@ -43,7 +43,7 @@
   grid-area: index;
 }
 .index .index-box {
-  margin: 20px 8px 8px;
+  margin: 20px 0;
   padding: 8px 16px;
 }
 .index .header {
