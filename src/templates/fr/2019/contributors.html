@@ -313,11 +313,7 @@
             "translators": "Traduction", 
             } %}
       {% for id, team in config.teams.items() %}
-        {% if localizedTeamNames[id]|length %}
-          <button class="{{ id }}" type="button">{{ localizedTeamNames[id] }}</button>
-        {% else %}
-          <button class="{{ id }}" type="button">{{ team.name }}</button>
-        {% endif %}
+        <button class="{{ id }}" type="button">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</button>
       {% endfor %}
     </div>
 
