@@ -1,0 +1,169 @@
+{% extends "fr/2019/base.html" %}
+
+{% block title %}Web Almanac 2019{% endblock %}
+
+{% block description %}Le Web Almanac est un rapport annuel sur l'état du Web qui combine l'expertise de la communauté Web avec les données et tendances de HTTP Archive.{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ self.description() }}">
+
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint , year=year, lang=lang) }}">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/home-hero-bg.png">
+<meta property="og:image:height" content="562">
+<meta property="og:image:width" content="715">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{ self.description() }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@HTTPArchive">
+<meta name="twitter:title" content="{{ self.title() }}">
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/home-hero-bg.png">
+<meta name="twitter:image:alt" content="Web Almanac {{ year }}" />
+<meta name="twitter:description" content="{{ self.description() }}">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "https://almanac.httparchive.org",
+    "logo": "https://almanac.httparchive.org/static/images/ha.png"
+  }
+  </script>
+  <script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+	  },
+	  "headline": "{{ self.title() }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "https://almanac.httparchive.org/static/images/home-hero-bg.png",
+	  	  "height": 562,
+	  	  "width": 715
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "Web Almanac by HTTP Archive",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+    "author":
+      {
+	  	  "@type": "Person",
+          "sameas": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+            "https://twitter.com/rick_viscomi",
+            "https://github.com/rviscomi"
+            ],
+	  	  "name": "Rick Viscomi"
+      },
+      "description": "{{ self.description() }}",
+      "datePublished": "2019-11-04T12:00:00+00:00:00",
+      "dateModified": "2019-11-04T12:00:00+00:00:00"
+	}
+	</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Page d'accueil {{ year }} ({{ language }})",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      }]
+    }
+    </script>
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+
+{% block main %}
+<div id="home">
+  <section class="featured-chapter">
+    <div class="featured-chapter-content">
+      <h2 class="title title-center">Focus sur le chapitre…</h2>
+      <h3>Parties tierces (3P)</h3>
+      <blockquote>
+          Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link></code> ou <code>&lt;script></code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l'immense popularité de quelques fournisseurs tiers pose d'importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l'impact du code tiers sur le Web en 2019, les modèles d'utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l'avenir des performances Web et de la confidentialité.
+      </blockquote>
+      <div class="featured-chapter-content-data">
+        <div class="featured-chapter-content-data-item">
+          <div>93%</div>
+          <div>pages avec 3P</div>
+        </div>
+        <div class="featured-chapter-content-data-item">
+          <div>49%</div>
+          <div>des equêtes</div>
+        </div>
+        <div class="featured-chapter-content-data-item">
+          <div>28%</div>
+          <div>des octets</div>
+        </div>
+      </div>
+      <a href="{{ url_for('chapter', year=year, chapter='third-parties', lang=lang) }}" class="btn">
+        Lire le chapitre sur les Parties Tierces
+      </a>
+    </div>
+  </section>
+  <section class="contributors-container alt-bg">
+    {% set contributors = config.contributors.keys() | length %}
+    <div class="contributors">
+      <h2 class="title title-alt">Contributeurs et contributrices</h2>
+      <p>
+          Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ contributors }} personnes ont consacré bénévolement d'innombrables heures à le planifier, faire des recherches, le rédiger et le mettre à votre disposition.
+      </p>
+      <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
+        Voir les contributeurs et contributrices
+      </a>
+    </div>
+    <div class="people">
+      <div class="people-number">{{ contributors }}</div>
+      <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" loading="lazy" />
+      <img id="character-star" class="character" src="/static/images/character-star.png" alt="" loading="lazy" />
+      <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" loading="lazy" />
+    </div>
+  </section>
+  <section class="methodology-container">
+    <div class="methodology">
+      <h2 class="title title-center">Méthodologie</h2>
+      <div class="methodology-data">
+        <div class="websites-tested">
+          <div>
+            Sites Web testés
+          </div>
+          <div>
+            5,8&nbsp;M
+          </div>
+        </div>
+        <div class="data-processed">
+          <div>
+              Données traitées
+          </div>
+          <div>
+            20,9&nbsp;TB
+          </div>
+        </div>
+      </div>
+      <p class="methodology-info">
+          Sauf indication contraire, les statistiques des 20 chapitres du Web Almanac proviennent du jeu de données HTTP Archiven, un projet communautaire qui suit l'évolution de la construction du web depuis 2010. Grâce à WebPageTest et Lighthouse, HTTP Archive collecte chaque mois les métadonnées de près de 6 millions de sites Web et les insère dans une base de données publique BigQuery pour les analyser. Le jeu de données de juillet 2019 a servi de base aux mesures du Web Almanac. Pour plus d'informations, consultez la page Méthodologie.
+      </p>
+      <a href="{{ url_for('methodology', year=year, lang=lang) }}" class="alt btn">
+        En savoir plus sur la Méthodologie
+      </a>
+      <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" loading="lazy" />
+    </div>
+  </section>
+</div>
+{% endblock %}

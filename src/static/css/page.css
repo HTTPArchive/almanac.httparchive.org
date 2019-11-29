@@ -154,6 +154,9 @@
 #num_comments {
   line-height: 24px;
 }
+[data-translation] {
+  display: none;
+}
 
 .authors h4{
   padding: 16px 0;

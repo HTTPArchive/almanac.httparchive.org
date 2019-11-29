@@ -239,7 +239,10 @@ function setDiscussionCount() {
             return;
           }
           var el = document.getElementById('num_comments');
-          el.innerText = comments + ' ' + (comments == 1 ? 'comment' : 'comments');
+          el.innerText = comments;
+          
+          document.getElementById(comments <= 1 ? 'comment-singular' : 'comment-plural').removeAttribute('data-translation');
+          
           gtag('event', 'discussion-count', { 'event_category': 'user', 'event_label': 'enabled', 'value': 1 });
         })
         .catch(function (err) {

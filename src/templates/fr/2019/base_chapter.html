@@ -1,6 +1,6 @@
-{% extends "en/2019/base.html" %}
+{% extends "fr/2019/base.html" %}
 
-{% block title %}{{ metadata.get('title') }} | 2019 | The Web Almanac by HTTP Archive{% endblock %}
+{% block title %}{{ metadata.get('title') }} | 2019 | Le Web Almanac par HTTP Archive{% endblock %}
 
 {% block styles %}
 {{ super() }}
@@ -44,32 +44,32 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_actions() %}
   <div class="discuss">
     <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
-      <img src="/static/images/discuss.png" alt="Discuss this chapter" height="24" width="24" loading="lazy" /><span id="num_comments"></span> <span data-translation id="comment-singular">comment</span><span data-translation id="comment-plural">comments</span>
+      <img src="/static/images/discuss.png" alt="Discuter de ce chapitre" height="24" width="24" loading="lazy" /><span id="num_comments"></span> <span data-translation id="comment-singular">commentaire</span><span data-translation id="comment-plural">commentaires</span>
     </a>
   </div>
 {% endmacro %}
 
 
 {% macro render_byline() %}
-  <div class="byline">Written by
+  <div class="byline">Écrit par
   {% for author in metadata.get('authors') %}
     <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
-    {% if loop.index == loop.length - 1 %} and{% endif %}
+    {% if loop.index == loop.length - 1 %} et{% endif %}
   {% endfor %}
   </div>
 
-  <div class="byline reviewers">Reviewed by
+  <div class="byline reviewers">Relu par
   {% for reviewer in metadata.get('reviewers') %}
     <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
-    {% if loop.index == loop.length - 1 %} and{% endif %}
+    {% if loop.index == loop.length - 1 %} et{% endif %}
   {% endfor %}
   </div>
 
   {% if metadata.get('translators') | length > 1 %}
-  <div class="byline translators">Translated by
+  <div class="byline translators">Traduit par
   {% for translator in metadata.get('translators') %}
     <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
-    {% if loop.index == loop.length - 1 %} and{% endif %}
+    {% if loop.index == loop.length - 1 %} et{% endif %}
   {% endfor %}
   </div>
   {% endif %}
@@ -77,22 +77,25 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_authors() %}
   {% for author in metadata.get('authors') %}
-  {% if loop.length == 1 %}<h4>Author</h4>{% endif -%}
-  {% if loop.length > 1 and loop.index == 1 %}<h4>Authors</h4>{% endif %}
+  {% if loop.length == 1 %}<h4>Auteur·ice</h4>{% endif -%}
+  {% if loop.length > 1 and loop.index == 1 %}<h4>Auteur·ice·s</h4>{% endif %}
   {% if loop.index == 1 %}<ul>{% endif %}
       {% set authordata = config.contributors[author] if author in config.contributors else None %}
     {% if authordata %}
       <li>
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" /></a>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="avatar de {{ authordata.name }}" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" /></a>
           <div class="info">
             <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
               {% if authordata.twitter or authordata.github %}
                   <span class="social">
                   {% if authordata.twitter %}
-                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="@{{ authordata.twitter }} on Twitter" height="80" width="65" loading="lazy" /></a>
+                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="@{{ authordata.twitter }} sur Twitter" height="80" width="65" loading="lazy" /></a>
                   {% endif %}
                   {% if authordata.github %}
-                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }} on GitHub" height="80" width="78" loading="lazy" /></a>
+                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }} sur GitHub" height="80" width="78" loading="lazy" /></a>
+                  {% endif %}
+                  {% if authordata.website %}
+                  <a class="website" href="{{ authordata.website }}"><img src="/static/images/blog.png" alt="site web de {{ contributor.name }}" height="72" width="72" loading="lazy" /></a>
                   {% endif %}
                   </span>
               {% endif %}
@@ -121,10 +124,10 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_prevnext() %}
   {% if prev_chapter %}
-      <a id="previous-chapter" title="Previous Chapter (press 'p' or ',')" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+      <a id="previous-chapter" title="Chapitre précédent (appuyez sur 'p' ou ',')" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
           <span class="arrow">&#8963;</span>
           <span class="chapter-no">
-              Chapter {{ prev_chapter['chapter'] }}
+              Chapitre {{ prev_chapter['chapter'] }}
           </span>
           <span class="chapter-title">
               {{ prev_chapter['title'] }}
@@ -133,10 +136,10 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endif %}
 
   {% if next_chapter %}
-      <a id="next-chapter" title="Next Chapter (press 'n' or '.')" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+      <a id="next-chapter" title="Chapitre suivant (appuyez sur 'n' or '.')" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
               <span class="arrow">&#8963;</span>
               <span class="chapter-no">
-                  Chapter {{ next_chapter['chapter'] }}
+                  Chapitre {{ next_chapter['chapter'] }}
               </span>
               <span class="chapter-title">
                   {{ next_chapter['title'] }}
