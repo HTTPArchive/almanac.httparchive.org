@@ -107,10 +107,7 @@
 
 .content {
   grid-area: content;
-  margin: 8px;
-  padding: 16px;
-  margin-top: 0;
-  padding-top: 0;
+  margin-left: 30px;
   min-width: 320px;
 }
 .content > section {
@@ -340,8 +337,7 @@ figure .fig-desktop {
     grid-template-columns: auto;
   }
   .main .content {
-    margin: 0;
-    padding: 0;
+    margin-left: 0;
   }
   .index {
     margin: 30px 0;
