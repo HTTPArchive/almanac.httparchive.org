@@ -5,6 +5,7 @@ title: Markup
 description: Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
+translators: []
 discuss: 1758
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z
@@ -62,7 +63,7 @@ tr | span | option
   <a href="/static/images/2019/03_Markup/fig3.png">
     <img src="/static/images/2019/03_Markup/fig3.png" alt="Figure 3. Element frequencies as of 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">Graph showing about 2,500 pages start with approximately 30 elements, this increases peaking at 6,876 pages have 283 elements, before trailing fairly linearly to 327 pages having 2,00 elements.</div>
+  <div id="fig3-description" class="visually-hidden">Graph showing about 2,500 pages start with approximately 30 elements, this increases peaking at 6,876 pages have 283 elements, before trailing fairly linearly to 327 pages having 2,000 elements.</div>
   <figcaption id="fig3-caption">Figure 3. Element frequencies as of 2019.</figcaption>
 </figure>
 
@@ -226,7 +227,7 @@ Let's compare these to a few of the native HTML elements that are below the 5% b
   <a href="/static/images/2019/03_Markup/fig9.png">
     <img src="/static/images/2019/03_Markup/fig9.png" alt="Figure 9. Popularity of product-specific and native elements under 5% adoption." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
   </a>
-  <div id="fig9-description" class="visually-hidden">Bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure (a product-specific tag) byt 52,146, code by 25,075, g:plusone (a product-specific tag) by 21,098, fb:like (a product-specific tag) by 12,773, fb:like-box (a product-specific tag) by 6,792, app-root (a product-specific tag) by 8,468, summary by 6,578, template by 5,913, and meter by 0.</div>
+  <div id="fig9-description" class="visually-hidden">Bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure (a product-specific tag) by 52,146, code by 25,075, g:plusone (a product-specific tag) by 21,098, fb:like (a product-specific tag) by 12,773, fb:like-box (a product-specific tag) by 6,792, app-root (a product-specific tag) by 8,468, summary by 6,578, template by 5,913, and meter by 0.</div>
   <figcaption id="fig9-caption">Figure 9. Popularity of product-specific and native elements under 5% adoption.</figcaption>
 </figure>
 
@@ -250,7 +251,7 @@ Placing these into our same chart as above for perspective looks something like 
 
 <figure id="fig10">
     <a href="/static/images/2019/03_Markup/fig10.png">
-      <img src="/static/images/2019/03_Markup/fig10.png" alt="igure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
+      <img src="/static/images/2019/03_Markup/fig10.png" alt="Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
     </a>
     <div id="fig10-description" class="visually-hidden">A bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure by 52,416, code by 25,075, g:plusone by 21,098, db:like by 12,773, cufon by 10,523, ymaps by 8,303, fb:like-box by 6,972, app-root by 8,468, summary by 6,578, template by 5,913, and meter by 0</div>
   <figcaption id="fig10-caption">Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption.</figcaption>

@@ -1,4 +1,4 @@
-{% extends "en/2019/base_chapter.html" %}
+{% extends "fr/2019/base_chapter.html" %}
 
 <!--{# IMPORTANT!
 
@@ -12,7 +12,7 @@
 
 {% set metadata = <%- JSON.stringify(metadata) %> %}
 
-{% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %}
+{% block description %}{{ metadata.get('description','Chapitre' + metadata.get('title') + ' du Web Almanac'+ year + " explorant l'utilisation des " + metadata.get('description',metadata.get('title')) + ' sur le web.') }}{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
@@ -28,7 +28,7 @@
 <meta name="twitter:site" content="@HTTPArchive" />
 <meta name="twitter:title" content="{{ self.title() }}" />
 <meta name="twitter:image" content="https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
-<meta name="twitter:image:alt" content="Chapter image for the {{ metadata.get('title') }} chapter of the {{ year }} Web Almanac" />
+<meta name="twitter:image:alt" content="Image du chapitre {{ metadata.get('title') }} du Web Almanac {{ year }}" />
 <meta name="twitter:description" content="{{ self.description() }}" />
 
 <script type="application/ld+json">
@@ -83,7 +83,7 @@
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "{{ year }} Home ({{ language }})",
+          "name": "Page d'Accueil {{ year }} ({{ language }})",
           "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
         },{
           "@type": "ListItem",
@@ -107,12 +107,12 @@
     <section class="content">
         <section class="body">
             <div class="subtitle">
-                Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
+                Partie {{ metadata.get('part_number') }} Chapitre {{ metadata.get('chapter_number') }}
             </div>
             <h1 class="title title-lg">
                 {{ metadata.get('title') }}
                 {% if metadata.get('unedited', false) %}
-                <span class="chapter-unedited">[Unedited]</span>
+                <span class="chapter-unedited">[non corrigé]</span>
                 {% endif %}
             </h1>
             <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />

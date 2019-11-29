@@ -5,6 +5,7 @@ title: Security
 description: Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.
 authors: [ScottHelme, arturjanc]
 reviewers: [bazzadp, ghedo, paulcalvano]
+translators: []
 discuss: 1763
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z

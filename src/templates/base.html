@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{% block lang %}{{ language.lang_attribute }}{% endblock %}">
+<html lang="{% block lang %}{{ language.lang_attribute }}{% endblock %}" {% block dir_attribute %}{% endblock %}>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,7 @@
       <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
       <link rel="stylesheet" href="/static/css/normalize.css">
       {% block styles %}{% endblock %}
+      <link rel="stylesheet" media="print" href="/static/css/print.css">
     {% endblock %}
     <link rel="canonical" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
     {% if supported_languages | length > 1%}

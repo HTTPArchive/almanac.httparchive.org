@@ -6,6 +6,7 @@ description: Media chapter of the 2019 Web Almanac covering image file sizes and
 authors: [colinbendell, dougsillars]
 discuss: 1759
 reviewers: [ahmadawais, eeeps]
+translators: []
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z
 ---
