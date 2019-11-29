@@ -5,6 +5,7 @@ title: Fonts
 description: Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
+translators: []
 discuss: 1761
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z
