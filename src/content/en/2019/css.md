@@ -5,6 +5,7 @@ title: CSS
 description: CSS chapter of the 2019 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
+translators: []
 discuss: 1757
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z

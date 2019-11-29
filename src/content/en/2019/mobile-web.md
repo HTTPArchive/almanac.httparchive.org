@@ -5,6 +5,7 @@ title: Mobile Web
 description: Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
+translators: []
 discuss: 1767
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z
