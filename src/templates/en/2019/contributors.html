@@ -295,7 +295,10 @@
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
     <div class="filter-container">
-      <p>Filter by team:</p>
+      <p>
+        Filter by team:
+        <span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors
+      </p>
       {% set localizedTeamNames = {
         "analysts": "Analysts",
         "authors": "Authors",
