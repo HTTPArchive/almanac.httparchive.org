@@ -23,13 +23,6 @@ header .container {
   padding-right: 60px;
 }
 
-@media (max-width: 600px) {
-  header .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
 #home {
   /* -400px to overcome the `padding-bottom: 400px;` for the above adjacent header */
   margin-top: -400px;
