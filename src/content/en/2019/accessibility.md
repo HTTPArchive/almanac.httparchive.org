@@ -5,6 +5,7 @@ title: Accessibility
 description: Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
+translators: []
 discuss: 1764
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z

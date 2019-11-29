@@ -1,0 +1,27 @@
+.top-header, .index, .discuss, #chapter-navigation, footer .navigation-logo, footer .nav-items, footer .language-switcher, footer .social-media, footer hr {
+    display: none;
+}
+
+.alt-bg {
+    background-color: white;
+}
+
+a.btn  {
+    display: none;
+}
+
+h1, h2, h3, p, p.copyright, p.copyright a {
+    color:black;
+}
+
+p.copyright {
+    margin: 0 auto;
+}
+
+figure iframe {
+    display: none;
+}
+figure .fig-mobile {
+    display: block;
+    max-width: 100%;
+}

@@ -8,12 +8,13 @@
 
 {% block content%}
   {% block header %}
-    <header class="alt-bg">
-      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive"></a>
+  <header class="alt-bg">
+    <div class="top-header">
+      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive"></a>
       <nav>
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
         {% if supported_years | length > 1 %}
           {{ year_switcher() }}
         {% endif %}
@@ -21,28 +22,28 @@
       <div class="cta">
         {% if request.endpoint == 'home' %}
           <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
-            Empieza a Explorar
+            Commencer l'exploration
           </a>
         {% endif %}
         {{ language_switcher() }}
       </div>
-      <button type="button" class="menu-btn" arial-label="Menú">
+      <button type="button" class="menu-btn" arial-label="Menu">
         <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" />
       </button>
       <nav class="menu">
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
         <div class="misc">
           <a href="https://httparchive.org/">
-            <img src="/static/images/ha-home.svg" alt="Página de Inicio HTTP Archive" height="35" width="70">
+            <img src="/static/images/ha-home.svg" alt="Page d'accueil HTTP Archive" height="35" width="70">
           </a>
           <div class="social-media">
             <a href="https://twitter.com/HTTPArchive" class="twitter">
-              <img src="/static/images/twitter.png" alt="Twitter" height="80" width="65" loading="lazy" />
+              <img src="/static/images/twitter.png" height="80" width="65" alt="Twitter" loading="lazy" />
             </a>
             <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-              <img src="/static/images/github.png" alt="GitHub" height="80" width="78" loading="lazy" />
+              <img src="/static/images/github.png" height="80" width="78" alt="GitHub" loading="lazy" />
             </a>
           </div>
           {{ language_switcher() }}
@@ -53,22 +54,23 @@
     <div class="intro-container">
       <div class="intro">
         <div class="intro-year">2019</div>
-        <h1 class="title title-alt">Web Almanac</h1>
+        <h1 class="title title-lg title-alt">Web Almanac</h1>
         <h2>
-          HTTP Archive informe del<br>
-          <b>estado de la web</b> anual
+          Rapport annuel<br>
+          de HTTP Archive sur<br>
+          <b>l'état du Web</b>
         </h2>
         <p>
-          Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de 20 capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+          Notre mission est de combiner les statistiques brutes et les tendances de HTTP Archive avec l'expertise de la communauté web. Le Web Almanac est un rapport complet sur l'état du Web, soutenu par des données réelles et des experts du Web. Il est composé de 20 chapitres couvrant l'expérience utilisateur, le contenu des pages, leur publication et leur distribution.
         </p>
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
-          Empieza a explorar
+          Commencer l'exploration
         </a>
       </div>
-      <img class="intro-image-2019" src="/static/images/home-hero-2019.png" alt="Web Almanac edición 2019" />
-      <img class="intro-image" src="/static/images/home-hero.png" alt="Web Almanac edición 2019" />
+      <img class="intro-image-2019" src="/static/images/home-hero-2019.png" alt="Édition 2019 du Web Almanac" />
+      <img class="intro-image" src="/static/images/home-hero.png" alt="Web Almanac" />
     </div>
-    {% endif %}    
+    {% endif %}
   </header>
   {% endblock %}
 
@@ -76,17 +78,17 @@
 
   {% block footer %}
     <footer class="alt-bg">
-      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive"></a>
+      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive"></a>
       <a class="navigation-logo ha-logo" href="https://httparchive.org">
-        <img src="/static/images/ha-home.svg" alt="Página de Inicio HTTP Archive" height="35" width="70">
+        <img src="/static/images/ha-home.svg" alt="Page d'accueil HTTP Archive" height="35" width="70">
       </a>
       <nav class="nav-items">
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
       </nav>
       <div class="language-switcher">{{ language_switcher() }}</div>
-      <p class="copyright">Copyright © 2019 Web Almanac. Todos los derechos reservados.</p>
+      <p class="copyright"><span>© 2019 Web Almanac. Sous licence <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span></p>
       <div class="social-media">
         <a href="https://twitter.com/HTTPArchive" class="twitter">
           <img src="/static/images/twitter.png" alt="Twitter" height="80" width="65" loading="lazy" />
@@ -130,7 +132,7 @@
 {% if supported_languages | length > 1%}
 <div class="language-switcher">
   {% if language is not none %}
-    <img src="/static/images/{{ language.lang_code }}.png" class="flag" height="25" width="25" loading="lazy" />
+    <img src="/static/images/{{ language }}.png" class="flag" height="25" width="25" loading="lazy" />
   {% else %}
     <img src="/static/images/English.png" class="flag" height="25" width="25" loading="lazy" />
   {% endif %}
@@ -143,7 +145,7 @@
       </option>
     {% endfor %}
   </select>
-  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="abrir" height="20" width="20" loading="lazy" />
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="ouvrir" height="20" width="20" loading="lazy" />
 </div>
 {% endif %}
 {% endmacro %}
@@ -155,10 +157,10 @@
         <option
           {% if y == year %}selected="selected"{% endif %}
           value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
-          Edición de {{ y }} 
+          Édition {{ y }}
         </option>
       {% endfor %}
   </select>
-  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="abir" height="20" width="20" loading="lazy" />
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="ouvrir" height="20" width="20" loading="lazy" />
 </div>
 {% endmacro %}

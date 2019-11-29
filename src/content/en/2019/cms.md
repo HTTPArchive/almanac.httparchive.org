@@ -5,6 +5,7 @@ title: CMS
 description: CMS chapter of the 2019 Web Almanac covering CMS adoption, how CMS suites are built, User experience of CMS powered websites, and CMS innovation.
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
+translators: []
 discuss: 1769
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z

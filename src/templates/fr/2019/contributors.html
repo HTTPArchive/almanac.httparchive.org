@@ -1,8 +1,8 @@
-{% extends "en/2019/base.html" %}
+{% extends "fr/2019/base.html" %}
 
-{% block title %}2019 Contributors | The Web Almanac by HTTP Archive{% endblock %}
+{% block title %}Contributeurs et contributrices 2019 | Web Almanac par HTTP Archive{% endblock %}
 
-{% block description %}The {{ config.contributors.items() | length }} people who contributed to the 2019 Web Almanac as Analysts, Authors, Brainstormers, Designers, Developers, Editors, Reviewers and Translators.{% endblock %}
+{% block description %}Les {{ config.contributors.items() | length }} personnes ayant contribué au Web Almanac 2019 par leurs analyses, leurs écrits, leurs réflexions, leurs participations au design, leur code, leurs éditions, leurs relectures, ou leurs traductions.{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ self.description() }}">
@@ -19,7 +19,7 @@
 <meta name="twitter:site" content="@HTTPArchive">
 <meta name="twitter:title" content="{{ self.title() }}">
 <meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-characters-bg.png">
-<meta name="twitter:image:alt" content="{{ year }} Web Almanac methodology" />
+<meta name="twitter:image:alt" content="Méthodologie du Web Almanac {{ year }} " />
 <meta name="twitter:description" content="{{ self.description() }}">
 
 <script type="application/ld+json">
@@ -69,7 +69,7 @@
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
-        "name": "{{ year }} Home ({{ language }})",
+        "name": "Page d'accueil {{ year }} ({{ language }})",
         "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
       },{
         "@type": "ListItem",
@@ -288,7 +288,7 @@
 {% block main %}
 <section class="main">
   <h1 class="title title-lg">
-    Contributors
+    Contributeurs et contributrices
   </h1>
   <div class="team">
       <img src="/static/images/avatars/1.jpg" height="100" width="100" loading="lazy" />
@@ -299,39 +299,39 @@
       <img src="/static/images/avatars/9.jpg" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
-    <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors</div>
+    <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> personnes</div>
     <div class="filter-container">
-      <p>Filter by team:</p>
+      <p>Filtrer par équipe&nbsp;:</p>
       {% set localizedTeamNames = {
-        "analysts": "Analysts",
-        "authors": "Authors",
-        "brainstormers": "Brainstormers",
-        "designers": "Designers",
-        "developers": "Developers",
-        "editors": "Editors",
-        "reviewers": "Reviewers",
-        "translators": "Translators", 
-        } %}
-        {% for id, team in config.teams.items() %}
-          <button class="{{ id }}" type="button">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</button>
-        {% endfor %}
+            "analysts": "Analyse",
+            "authors": "Rédaction",
+            "brainstormers": "Réflexion",
+            "designers": "Design",
+            "developers": "Développement",
+            "editors": "Édition",
+            "reviewers": "Relecture",
+            "translators": "Traduction", 
+            } %}
+      {% for id, team in config.teams.items() %}
+        <button class="{{ id }}" type="button">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</button>
+      {% endfor %}
     </div>
 
     <div class="contributor-grid">
     {% for id, contributor in config.contributors.items() %}
       <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
-        <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
+        <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="avatar de {{ contributor.name }}" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
         <div class="contributor-social">
           {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ contributor.github }} on GitHub"><img src="/static/images/github.png" alt="GitHub" height="80" width="78" loading="lazy" /></a>
+          <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ contributor.github }} sur GitHub"><img src="/static/images/github.png" alt="GitHub" height="80" width="78" loading="lazy" /></a>
           {% endif %}
           {% if contributor.twitter %}
-          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" title="{{ contributor.twitter }} on Twitter"><img src="/static/images/twitter.png" alt="Twitter" height="80" width="65" loading="lazy" /></a>
+          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" title="{{ contributor.twitter }} sur Twitter"><img src="/static/images/twitter.png" alt="Twitter" height="80" width="65" loading="lazy" /></a>
           {% endif %}
           {% if contributor.website %}
-          <a href="{{ contributor.website }}" target="_blank" title="{{ contributor.name }} website"><img src="/static/images/blog.png" alt="website" height="72" width="72" loading="lazy" /></a>
+          <a href="{{ contributor.website }}" target="_blank" title="site web de {{ contributor.name }}"><img src="/static/images/blog.png" alt="Site Web" height="72" width="72" loading="lazy" /></a>
           {% endif %}
         </div>
 
@@ -439,6 +439,4 @@
 })();
 
   </script>
-  <!-- add chapter.js to handle print mode and avoid duplicating code -->
-  <script src='/static/js/chapter.js' defer></script>
 {% endblock %}
