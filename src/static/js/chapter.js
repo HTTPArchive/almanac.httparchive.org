@@ -2,58 +2,39 @@
 //Useful for print view for example (https://bugs.chromium.org/p/chromium/issues/detail?id=875403)
 function removeLazyLoading() {
 
-  console.log("Removing lazy loading...");
-
-  var all_imgs = document.querySelectorAll('img');
-  for (index = 0; index < all_imgs.length; ++index) {
-    var img = all_imgs[index];
-    if (img.getAttribute('loading')) {
-      img.removeAttribute('loading');
-    }
-  }
-  
-  var all_iframes = document.querySelectorAll('iframe');
-  for (index = 0; index < all_iframes.length; ++index) {
-    var iframe = all_iframes[index];
-    if (iframe.getAttribute('loading')) {
-      iframe.removeAttribute('loading');
-    }
+  //If no Array.from then pretty sure there will be no native lazy-loading support to remove!
+  if (Array.from) {
+    console.log("Removing lazy loading...");
+    
+    Array.from(document.querySelectorAll('img[loading], iframe[loading]')).forEach(function(element) {
+      element.removeAttribute('loading');
+    });
   }
 }
 
 //Add an event handler to remove LazyLoading when entering print mode
 function removeLazyLoadingOnPrint() {
   if ("onbeforeprint" in window) {
-    window.onbeforeprint = function() {
-      removeLazyLoading();
-    }
+   window.onbeforeprint = removeLazyLoading;
   }
 
 }
 
 //Check if in print mode so we can remove lazy loading and block interactive visuals
-function printMode() {
+function isInPrintMode() {
   var printMode = false;
-  var field = 'print';
-  var url = window.location.href;
 
-  if(url.indexOf('?' + field + '=') != -1) {
-    printMode = true;
-  } else if(url.indexOf('&' + field + '=') != -1) {
-    printMode = true;
+  if (window.URL && window.URLSearchParams) {
+    var url = new URL(window.location);
+    printMode = url.searchParams.has('print');
   }
-
   if (printMode) {
-    console.log("Print mode");
-    gtag('event', 'print-mode', { 'event_category': 'user', 'event_label': 'true', 'value': 1 });
-    
+    console.log ("Print Mode");
     removeLazyLoading();
-
-    return true;
-  } else {
-    gtag('event', 'print-mode', { 'event_category': 'user', 'event_label': 'false', 'value': 0 });
-    return false;
   }
+  gtag('event', 'print-mode', { 'event_category': 'user', 'event_label': '' + printMode, 'value': +printMode })
+  return printMode;
+  
 }
 
 //Check if the screen meets minimum size requirements for Interactive figures
@@ -178,7 +159,7 @@ function googleSheetsPixelNotLoaded() {
 function upgradeInteractiveFigures() {
 
   try {
-    if (!printMode() && bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
+    if (!isInPrintMode() && bigEnoughForInteractiveFigures() && !dataSaverEnabled() && highBandwidthConnection() && highResolutionCanvasSupported()) {
 
       console.log('Upgrading to interactive figures');
 
@@ -245,7 +226,7 @@ function upgradeInteractiveFigures() {
 
 function setDiscussionCount() {
   try {
-    if (window.discussion_url) {
+    if (window.discussion_url && window.fetch) {
       fetch(window.discussion_url)
         .then(function (response) { return response.json(); })
         .then(function (response) {
