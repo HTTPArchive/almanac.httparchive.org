@@ -302,14 +302,23 @@
     <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> personnes</div>
     <div class="filter-container">
       <p>Filtrer par équipe&nbsp;:</p>
-      <button class="analysts" type="button">Analyse</button>
-      <button class="authors" type="button">Rédaction</button>
-      <button class="brainstormers" type="button">Réflexion</button>
-      <button class="designers" type="button">Design</button>
-      <button class="developers" type="button">Développement</button>
-      <button class="editors" type="button">Édition</button>
-      <button class="reviewers" type="button">Relecture</button>
-      <button class="translators" type="button">Traduction</button>
+      {% set localizedTeamNames = {
+            "analysts": "Analyse",
+            "authors": "Rédaction",
+            "brainstormers": "Réflexion",
+            "designers": "Design",
+            "developers": "Développement",
+            "editors": "Édition",
+            "reviewers": "Relecture",
+            "translators": "Traduction", 
+            } %}
+      {% for id, team in config.teams.items() %}
+        {% if localizedTeamNames[id]|length %}
+          <button class="{{ id }}" type="button">{{ localizedTeamNames[id] }}</button>
+        {% else %}
+          <button class="{{ id }}" type="button">{{ team.name }}</button>
+        {% endif %}
+      {% endfor %}
     </div>
 
     <div class="contributor-grid">
