@@ -387,3 +387,37 @@ figure .fig-desktop {
     max-width: 100%;
   }
 }
+
+/* Code highlighting */
+.code-block {
+  margin: 8px 0;
+  padding: 16px;
+}
+.code-block .divider {
+  position: relative;
+  border: 1px solid #1A2B490A;
+  width: calc(100% + 32px);
+  left: -16px;
+}
+.code-block pre {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.code-block code {
+  width: 100%;
+}
+.code-comment {
+  color: #838689;
+}
+.code-keyword {
+  color: #4A3244;
+}
+.code-function {
+  color: #1A2B49;
+}
+.code-string {
+  color: #2C4A73;
+}
+.code-number {
+  color: #A8CABA;
+}
