@@ -52,12 +52,11 @@ SEOの基本的なベストプラクティスの基準を満たしているWeb�
 デスクトップページには単語グループを持たないものが2.73%見つかりました。これはWebサイトが何を指しているのかを検索エンジンが理解するのに役立つ本文コンテンツが無いことを示しています。
 
 <figure>
-  <iframe aria-describedby="fig1-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig1.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig1.png" aria-describedby="fig1-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig1.png">
+    <img src="/static/images/2019/10_SEO/fig1.png" alt="Figure 1. Distribution of the number of words per page." aria-labelledby="fig1-caption" aria-describedby="fig1-caption" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive">
   </a>
-  <div id="fig1-caption" class="visually-hidden">ページ毎の単語分布。デスクトップページあたりの単語数の中央値は346でモバイルページの場合は306となっています。デスクトップページには、パーセンタイル全体でより多くの単語があり、90パーセンタイルで120単語もあります。</div>
-  <figcaption>図1.ページ毎の単語数分布。</figcaption>
+  <div id="fig1-description" class="visually-hidden">ページ毎の単語分布。デスクトップページあたりの単語数の中央値は346でモバイルページの場合は306となっています。デスクトップページには、パーセンタイル全体でより多くの単語があり、90パーセンタイルで120単語もあります</div>
+  <figcaption id="fig1-caption" >図1.ページ毎の単語数分布。</figcaption>
 </figure>
 
 デスクトップ向けホームページの中央値は346ワードで、モバイル向けホームページの中央値は306ワードとわずかに少ない単語数になっています。
@@ -72,12 +71,11 @@ SEOの基本的なベストプラクティスの基準を満たしているWeb�
 そんな見出しの重要性にもかかわらず、ページの10.67%には見出しタグがまったくありませんでした。
 
 <figure>
-  <iframe aria-describedby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig2.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig2.png" aria-describedby="fig2-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig2.png">
+    <img src="/static/images/2019/10_SEO/fig2.png" alt="Figure 2. Distribution of the number of headings per page." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive">
   </a>
-  <div id="fig2-caption" class="visually-hidden">ページ毎の見出しの分布。 デスクトップもモバイルもページ毎の見出しの中央値は10です。10/25/75/90それぞれのパーセンタイルではデスクトップの場合 0、3、21、39となっており、モバイルの見出し分布よりも少しだけ高くなっています。 </div>
-  <figcaption>図2.ページ毎の見出し数分布。</figcaption>
+  <div id="fig2-description" class="visually-hidden">ページ毎の見出しの分布。 デスクトップもモバイルもページ毎の見出しの中央値は10です。10/25/75/90それぞれのパーセンタイルではデスクトップの場合 0、3、21、39となっており、モバイルの見出し分布よりも少しだけ高くなっています。</div>
+  <figcaption id="fig2-caption" >図2.ページ毎の見出し数分布。</figcaption>
 </figure>
 
 １ページあたりの見出し要素の中央値は10となっています。
@@ -85,12 +83,11 @@ SEOの基本的なベストプラクティスの基準を満たしているWeb�
 これは、見出しを活用できているWebサイトが、ページが読みやすく、説明的で、ページの構造とコンテキストを検索エンジンボットに明確に概説することに多大な労力を費やしていることを意味します。
 
 <figure>
-  <iframe aria-describedby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig3.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig3.png" aria-describedby="fig3-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig3.png">
+    <img src="/static/images/2019/10_SEO/fig3.png" alt="Figure 3. Distribution of H1 length per page." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive">
   </a>
-  <div id="fig3-caption" class="visually-hidden">ページ毎の最初のH1文字数の分布。デスクトップとモバイルの分配はほぼ同様となっており、10、25、50、75、90パーセンタイルで6、11、19、31、47文字です。</div>
-  <figcaption>図3.ページ毎のH1の長さの分布。</figcaption>
+  <div id="fig3-description" class="visually-hidden">ページ毎の最初のH1文字数の分布。デスクトップとモバイルの分配はほぼ同様となっており、10、25、50、75、90パーセンタイルで6、11、19、31、47文字です。</div>
+  <figcaption id="fig3-caption" >図3.ページ毎のH1の長さの分布。</figcaption>
 </figure>
 
 具体的な見出しの長さを見ると、最初に見つかった`H1`要素の長さの中央値はデスクトップで19文字です。
@@ -114,13 +111,11 @@ SEOとアクセシビリティのための`H1`と見出しの処理に関する�
 `<title>`タグはSERPSの見出にも、ページにアクセスする時のブラウザーのタブのタイトルとしても使われるので、モバイルページの97.1%にドキュメントタイトルが存在することは驚くことではないでしょう。
 
 <figure>
-  <iframe aria-describedby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig5.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig5.png" aria-describedby="fig5-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig5.png">
+    <img src="/static/images/2019/10_SEO/fig5.png" alt="Figure 5. Distribution of title length per page." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive">
   </a>
-  <div id="fig5-caption" class="visually-hidden">ページ毎のタイトル要素毎の文字数分布。デスクトップのタイトルの長さそれぞれの10、25、50、75、90パーセンタイルは、4、9、20、40、66文字です。モバイルの分布も非常に似ています。
-</div>
-  <figcaption>図5.ページごとのタイトルの長さの分布。</figcaption>
+  <div id="fig5-description" class="visually-hidden">ページ毎のタイトル要素毎の文字数分布。デスクトップのタイトルの長さそれぞれの10、25、50、75、90パーセンタイルは、4、9、20、40、66文字です。モバイルの分布も非常に似ています。</div>
+  <figcaption id="fig5-caption">図5.ページごとのタイトルの長さの分布。</figcaption>
 </figure>
 
 一般的に[GoogleのSERPはページタイトルの最初の50〜60文字を表示](https://moz.com/learn/seo/title-tag)しますが、`<title>`タグの長さの中央値はモバイルページで21文字、デスクトップページで20文字でした。
@@ -133,12 +128,11 @@ SEOとアクセシビリティのための`H1`と見出しの処理に関する�
 Googleが検索者のクエリに応じてSERP内のメタディスクリプションの記述を頻繁に書き換えることを考慮すると、おそらくWebサイトの所有者はメタディスクリプションを含めることを重要視しないでしょう。
 
 <figure>
-  <iframe aria-describedby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig6.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig6.png" aria-describedby="fig6-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig6.png">
+    <img src="/static/images/2019/10_SEO/fig6.png" alt="Figure 6. Distribution of meta description length per page." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive">
   </a>
-  <div id="fig6-caption" class="visually-hidden">ページ毎のメタ記述毎の文字数分布。デスクトップのタイトルの長さの10、25、50、75、90パーセンタイルはそれぞれ、9、48、123、162、230文字です。モバイルの分布は任意のパーセンタイルでは10文字未満だけわずかに高くなっています。</div>
-  <figcaption>図6. ページ毎のメタ記述の長さ分布。</figcaption>
+  <div id="fig6-description" class="visually-hidden">ページ毎のメタ記述毎の文字数分布。デスクトップのタイトルの長さの10、25、50、75、90パーセンタイルはそれぞれ、9、48、123、162、230文字です。モバイルの分布は任意のパーセンタイルでは10文字未満だけわずかに高くなっています。</div>
+  <figcaption id="fig6-caption" >図6. ページ毎のメタ記述の長さ分布。</figcaption>
 </figure>
 
 メタディスクリプションの長さは[155-160文字が推奨](https://moz.com/learn/seo/meta-description)となっていますが、デスクトップページの中央値ははそれより短い123文字となっています。
@@ -214,32 +208,29 @@ canonicalタグを使い重複ページと優先代替ページを指定しま�
 新しいWebサイトでGoogleの規定である[モバイルファーストインデックス](https://www.deepcrawl.com/knowledge/white-papers/mobile-first-index-guide/)が適用されると、そのページがデスクトップ用ではリンクされているがモバイル用からリンクが無い時、検索エンジンはそのページを見つけてランク付けするのがとても難しくなってしまいます。
 
 <figure>
-  <iframe aria-describedby="fig7-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig7.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig7.png" aria-describedby="fig7-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig7.png">
+    <img src="/static/images/2019/10_SEO/fig7.png" alt="Figure 7. Distribution of internal links per page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive">
   </a>
-  <div id="fig7-caption" class="visually-hidden">ページ毎の内部リンク数の分布。デスクトップの内部リンクは10、25、50、75、90パーセンタイルごとに、7、29、70、142、261となっています。モバイル分布はかなり低く、90パーセンタイルでリンク数は30、中央値で10となっています。</div>
-  <figcaption>図7.ページ毎の内部リンク分布。</figcaption>
+  <div id="fig7-description" class="visually-hidden">ページ毎の内部リンク数の分布。デスクトップの内部リンクは10、25、50、75、90パーセンタイルごとに、7、29、70、142、261となっています。モバイル分布はかなり低く、90パーセンタイルでリンク数は30、中央値で10となっています。</div>
+  <figcaption id="fig7-caption" >図7.ページ毎の内部リンク分布。</figcaption>
 </figure>
 
 <figure>
-  <iframe aria-describedby="fig8-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig8.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig8.png" aria-describedby="fig8-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig8.png">
+    <img src="/static/images/2019/10_SEO/fig8.png" alt="Figure 8. Distribution of external links per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-idth="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive">
   </a>
-  <div id="fig8-caption" class="visually-hidden">ページ毎の外部リンク数の分布。デスクトップの外部リンクは10、25、50、75、90パーセンタイルごとに、1、4、10、22、51となっています。モバイルの分布はかなり低く、90パーセンタイルでリンク数は11、中央値で2となっています。</div>
-  <figcaption>図8.ページ毎の外部リンク数の分布。</figcaption>
+  <div id="fig8-description" class="visually-hidden">ページ毎の外部リンク数の分布。デスクトップの外部リンクは10、25、50、75、90パーセンタイルごとに、1、4、10、22、51となっています。モバイルの分布はかなり低く、90パーセンタイルでリンク数は11、中央値で2となっています。</div>
+  <figcaption id="fig8-caption" >図8.ページ毎の外部リンク数の分布。</figcaption>
 </figure>
 
 デスクトップ用ページの内部リンク(同一サイト)数は中央値で70となっていますが、モバイル用ページの内部リンク数の中央値は60になっています。外部リンク数のページ毎中央値も同じような傾向となっており、デスクトップ用ページの外部リンク数は10で、モバイル用ページは8になっています。
 
 <figure>
-  <iframe aria-describedby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig9.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig9.png" aria-describedby="fig9-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig9.png">
+    <img src="/static/images/2019/10_SEO/fig9.png" alt="Figure 9. Distribution of anchor links per page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive">
   </a>
-  <div id="fig9-caption" class="visually-hidden">ページ毎のアンカーリンク数の分布。デスクトップの内部アンカーは10、25、50、75、90パーセンタイルに対して、0、0、0、1、3となっています。モバイルの分布も同様です。</div>
-  <figcaption>図9.ページ毎のアンカーリンク数の分布。</figcaption>
+  <div id="fig9-description" class="visually-hidden">ページ毎のアンカーリンク数の分布。デスクトップの内部アンカーは10、25、50、75、90パーセンタイルに対して、0、0、0、1、3となっています。モバイルの分布も同様です。</div>
+  <figcaption id="fig9-caption">図9.ページ毎のアンカーリンク数の分布。</figcaption>
 </figure>
 
 同一ページの特定スクロール位置にリンクするアンカーリンクはあまり人気が無いようです。
@@ -270,12 +261,11 @@ Web全体の読み込み速度の分析に使った指標は [Chrome UX Report](
 FCPの25%が3秒より遅い場合、_もしくは_ FIDの5%が300ミリ秒より遅い場合にWebサイトは低速とラベル付されます。
 
 <figure>
-  <iframe aria-describedby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/10_SEO/fig10.png" class="fig-mobile">
-    <img src="/static/images/2019/10_SEO/fig10.png" aria-describedby="fig10-caption" width="600">
+  <a href="/static/images/2019/10_SEO/fig10.png">
+    <img src="/static/images/2019/10_SEO/fig10.png" alt="Figure 10. Distribution of the performance of user experiences by device type." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive">
   </a>
-  <div id="fig10-caption" class="visually-hidden">デスクトップ、電話、タブレットのパフォーマンスにおけるユーザー体験の分布。 デスクトップ：2%高速、52%中程度、46%低速。 電話：高速1%、中程度41%、低速58%。 タブレット：高速0%、中程度35%、低速65%。</div>
-  <figcaption>図10.デバイスタイプごとのユーザー体験パフォーマンスの分布。</figcaption>
+  <div id="fig10-description" class="visually-hidden">デスクトップ、電話、タブレットのパフォーマンスにおけるユーザー体験の分布。 デスクトップ：2%高速、52%中程度、46%低速。 電話：高速1%、中程度41%、低速58%。 タブレット：高速0%、中程度35%、低速65%。</div>
+  <figcaption id="fig10-caption">図10.デバイスタイプごとのユーザー体験パフォーマンスの分布。</figcaption>
 </figure>
 
 デバイスごとに分けるとより鮮明になります、この画像ではタブレット(65%)、電話(58%)を示しています。
