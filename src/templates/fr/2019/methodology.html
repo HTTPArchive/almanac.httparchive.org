@@ -2,9 +2,7 @@
 
 {% block title %}Méthodologie | Web Almanac par HTTP Archive{% endblock %}
 
-{% block description %}Décrit comment le Web
-Almanac 2019 a été conçu : Les ensembles de données et outils utilisés et la
-façon dont le projet a été exécuté.{% endblock %}
+{% block description %}Décrit comment le Web Almanac 2019 a été conçu : Les ensembles de données et outils utilisés et la façon dont le projet a été exécuté.{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ self.description() }}">
@@ -25,82 +23,83 @@ façon dont le projet a été exécuté.{% endblock %}
 <meta name="twitter:description" content="{{ self.description() }}">
 
 <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}"
-    },
-    "headline": "{{ self.title() }}",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://almanac.httparchive.org/static/images/methodology-banner.png",
-      "height": 984,
-      "width": 1200
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "HTTP Archive",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://almanac.httparchive.org/static/images/ha.png",
-        "height": 160,
-        "width": 320
-      }
-    },
-    "author": {
-      "@type": "Person",
-      "sameas": [
-        "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
-        "https://twitter.com/rick_viscomi",
-        "https://github.com/rviscomi"
-      ],
-      "name": "Rick Viscomi"
-    },
-    "description": "{{ self.description() }}",
-    "datePublished": "2019-11-04T12:00:00+00:00:00",
-    "dateModified": "2019-11-04T12:00:00+00:00:00"
-  }
-</script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}"
+	  },
+	  "headline": "{{ self.title() }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "https://almanac.httparchive.org/static/images/methodology-banner.png",
+	  	  "height": 984,
+	  	  "width": 1200
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "HTTP Archive",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+    "author":
       {
+	  	  "@type": "Person",
+          "sameas": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+            "https://twitter.com/rick_viscomi",
+            "https://github.com/rviscomi"
+            ],
+	  	  "name": "Rick Viscomi"
+      },
+      "description": "{{ self.description() }}",
+      "datePublished": "2019-11-04T12:00:00+00:00:00",
+      "dateModified": "2019-11-04T12:00:00+00:00:00"
+	}
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
         "name": "Page d’accueil {{ year }} ({{ language }})",
         "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
-      },
-      {
+      },{
         "@type": "ListItem",
         "position": 2,
         "name": "Méthodologie {{ year }}",
         "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}"
-      }
-    ]
-  }
-</script>
-{% endblock %} {% block styles %} {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css" />
-{% endblock %} {% block main %}
+      }]
+    }
+    </script>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css">
+{% endblock %}
+
+{% block main %}
 <article id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
       <ul>
-        <li><a href="#overview">Vue d’ensemble</a></li>
-        <li>
-          <a href="#dataset">À propos du jeu de données</a>
+        <li><a href="#overview">Vue d'ensemble</a></li>
+        <li><a href="#dataset">À propos du jeu de données</a>
           <ul>
             <li><a href="#websites">Sites Web</a></li>
             <li><a href="#metrics">Mesures</a></li>
           </ul>
         </li>
-        <li>
-          <a href="#tools">Outils</a>
+        <li><a href="#tools">Outils</a>
           <ul>
             <li><a href="#webpagetest">WebPageTest</a></li>
             <li><a href="#lighthouse">Lighthouse</a></li>
@@ -110,8 +109,7 @@ façon dont le projet a été exécuté.{% endblock %}
             <li><a href="#rework-css">Rework CSS</a></li>
           </ul>
         </li>
-        <li>
-          <a href="#process">Processus analytique</a>
+        <li><a href="#process">Processus analytique</a>
           <ul>
             <li><a href="#brainstorming">Réflexion préalable</a></li>
             <li><a href="#analysis">Analyse</a></li>
@@ -127,12 +125,8 @@ façon dont le projet a été exécuté.{% endblock %}
     <h1 class="title title-lg">Méthodologie</h1>
 
     <section>
-      <img
-        class="content-banner"
-        src="/static/images/methodology-banner.png"
-        alt=""
-      />
-      <h2 id="overview">Vue d’ensemble</h2>
+      <img class="content-banner" src="/static/images/methodology-banner.png" alt="">
+        <h2 id="overview">Vue d'ensemble</h2>
 
       <p>
         Le Web Almanac est un projet élaboré par
@@ -202,8 +196,8 @@ façon dont le projet a été exécuté.{% endblock %}
         >:
       </p>
 
-      <div class="code-block floating-card">
-        <pre><code><span class="code-comment">#standardSQL
+        <div class="code-block floating-card">
+          <pre><code><span class="code-comment">#standardSQL
 # 01_01b: Distribution of JS bytes by client</span>
 <span class="code-keyword">SELECT</span>
   percentile,
@@ -218,7 +212,7 @@ façon dont le projet a été exécuté.{% endblock %}
 <span class="code-keyword">ORDER BY</span>
   percentile,
   client</code></pre>
-      </div>
+        </div>
 
       <p>
         Ces résultats statistiques peuvent être consultés publiquement dans des
@@ -282,15 +276,29 @@ façon dont le projet a été exécuté.{% endblock %}
       <h3 id="metrics">Mesures</h3>
 
       <p>
-        HTTP Archive collecte des indicateurs reflétant la manière dont le web est construit. Cette collecte inclut des mesures de base comme le nombre d’octets par page, si la page a été chargée en HTTPS ou non, et des en-têtes de requête et de réponse individuels. La majorité de ces indicateurs est fournie par <a href="#webpagetest">WebPageTest</a>, qui sert de test pour chaque site Web.
+        HTTP Archive collecte des indicateurs reflétant la manière dont le web 
+        est construit. Cette collecte inclut des mesures de base comme le 
+        nombre d’octets par page, si la page a été chargée en HTTPS ou non, et 
+        des en-têtes de requête et de réponse individuels. La majorité de ces 
+        indicateurs est fournie par <a href="#webpagetest">WebPageTest</a>, qui 
+        sert de test pour chaque site Web.
       </p>
 
       <p>
-        D’autres outils de test sont utilisés pour fournir des indicateurs avancés sur la page. Par exemple, <a href="#lighthouse">Lighthouse</a> est utilisé pour exécuter des audits sur la page afin d’analyser sa qualité dans des domaines comme l’accessibilité et le référencement. La section <a href="#tools">Outils</a> ci-dessous décrit plus en détail chacun de ces outils.
+        D’autres outils de test sont utilisés pour fournir des indicateurs 
+        avancés sur la page. Par exemple, <a href="#lighthouse">Lighthouse</a> 
+        est utilisé pour exécuter des audits sur la page afin d’analyser sa 
+        qualité dans des domaines comme l’accessibilité et le référencement. La 
+        section <a href="#tools">Outils</a> ci-dessous décrit plus en détail 
+        chacun de ces outils.
       </p>
 
       <p>
-        Pour contourner certaines des limites inhérentes à un jeu de données issus de tests synthétiques, le Web Almanac utilise également le <a href="#chrome-ux-report">Chrome UX Report</a> afin de récupérer des indicateurs relatifs à l’expérience utilisateur, notamment dans le domaine des performances Web.
+        Pour contourner certaines des limites inhérentes à un jeu de données 
+        issus de tests synthétiques, le Web Almanac utilise également le 
+        <a href="#chrome-ux-report">Chrome UX Report</a> afin de récupérer des 
+        indicateurs relatifs à l’expérience utilisateur, notamment dans le 
+        domaine des performances Web.
       </p>
 
       <p>
@@ -328,64 +336,62 @@ façon dont le projet a été exécuté.{% endblock %}
         >
         de WebPageTest avec des agents de test privés, c’est-à-dire de vrais navigateurs testant chaque page web. Les sites pour ordinateurs de bureau et périphériques mobiles sont testés avec différentes configurations&nbsp;:
       </p>
-      <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Config</th>
-                <th>Bureau</th>
-                <th>Mobile</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Matériel</td>
-                <td>Linux VM</td>
-                <td>Moto G4 Émulé</td>
-              </tr>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Config</th>
+            <th>Bureau</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Matériel</td>
+            <td>Linux VM</td>
+            <td>Moto G4 Émulé</td>
+          </tr>
 
-              <tr>
-                <td>User Agent</td>
-                <td>
-                  Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
-                  like Gecko) Chrome/75.0.3770.100 Safari/537.36
-                  PTST/190704.170731
-                </td>
-                <td>
-                  Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)
-                  Build/MPJ24.139-64) AppleWebKit/537.36 (KHTML, like Gecko)
-                  Chrome/65.0.3325.146 Mobile Safari/537.36 PTST/190628.140653
-                </td>
-              </tr>
+          <tr>
+            <td>User Agent</td>
+            <td>
+              Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
+              like Gecko) Chrome/75.0.3770.100 Safari/537.36
+              PTST/190704.170731
+            </td>
+            <td>
+              Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)
+              Build/MPJ24.139-64) AppleWebKit/537.36 (KHTML, like Gecko)
+              Chrome/65.0.3325.146 Mobile Safari/537.36 PTST/190628.140653
+            </td>
+          </tr>
 
-              <tr>
-                <td>Emplacement</td>
-                <td>
-                  Redwood City, Californie, États-Unis<br />
-                  The Dalles, Oregon, États-Unis
-                </td>
-                <td>
-                  Redwood City, Californie, États-Unis<br />
-                  The Dalles, Oregon, États-Unis
-                </td>
-              </tr>
+          <tr>
+            <td>Emplacement</td>
+            <td>
+              Redwood City, Californie, États-Unis<br />
+              The Dalles, Oregon, États-Unis
+            </td>
+            <td>
+              Redwood City, Californie, États-Unis<br />
+              The Dalles, Oregon, États-Unis
+            </td>
+          </tr>
 
-              <tr>
-                <td>Connexion</td>
-                <td>Cable (5/1&nbsp;Mbps 28&nbsp;ms de latence)</td>
-                <td>3G (1.600/0.768&nbsp;Mbps 300&nbsp;ms de latence)</td>
-              </tr>
+          <tr>
+            <td>Connexion</td>
+            <td>Cable (5/1&nbsp;Mbps 28&nbsp;ms de latence)</td>
+            <td>3G (1.600/0.768&nbsp;Mbps 300&nbsp;ms de latence)</td>
+          </tr>
 
-              <tr>
-                <td>Viewport</td>
-                <td>1200&nbsp;×&nbsp;1920&nbsp;px</td>
-                <td>512&nbsp;×&nbsp;360&nbsp;px</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+          <tr>
+            <td>Viewport</td>
+            <td>1200&nbsp;×&nbsp;1920&nbsp;px</td>
+            <td>512&nbsp;×&nbsp;360&nbsp;px</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
 
       <p>
         Les sites Web pour ordinateurs de bureau sont exécutés à partir d’un 
@@ -400,7 +406,13 @@ façon dont le projet a été exécuté.{% endblock %}
       </p>
 
       <p>
-        Les tests sont effectués depuis deux localisations américaines&nbsp;: en Californie et en Oregon. HTTP Archive maintient l’ensemble des matériels servant aux tests au sein du datacenter <a href="https://archive.org">Internet Archive</a> situé en Californie. Si nécessaire des périphériques de test supplémentaires sont ajoutés depuis <a href="https://cloud.google.com/compute/docs/regions-zones/#locations" >Google Cloud Platform</a >, emplacement us-west-1, en Oregon.
+        Les tests sont effectués depuis deux localisations américaines&nbsp;: 
+        en Californie et en Oregon. HTTP Archive maintient l’ensemble des matériels servant aux tests au sein du datacenter 
+        <a href="https://archive.org">Internet Archive</a> situé en Californie. 
+        Si nécessaire des périphériques de test supplémentaires sont ajoutés 
+        depuis 
+        <a href="https://cloud.google.com/compute/docs/regions-zones/#locations" >Google Cloud Platform</a >, emplacement us-west-1, en 
+        Oregon.
       </p>
 
       <p>
@@ -416,7 +428,10 @@ façon dont le projet a été exécuté.{% endblock %}
       </p>
 
       <p>
-        Les résultats de chaque test sont disponibles sous la forme d’un <a href="https://fr.wikipedia.org/wiki/Format_HTTP_Archive">fichier HAR</a>, un fichier d’archive au format JSON contenant les métadonnées de la page Web.
+        Les résultats de chaque test sont disponibles sous la forme d’un 
+        <a href="https://fr.wikipedia.org/wiki/Format_HTTP_Archive">fichier 
+        HAR</a>, un fichier d’archive au format JSON contenant les métadonnées 
+        de la page Web.
       </p>
     </section>
 
@@ -434,7 +449,10 @@ façon dont le projet a été exécuté.{% endblock %}
       </p>
 
       <p>
-        HTTP Archive utilise la dernière version de Lighthouse pour toutes ses pages Web mobiles –&nbsp;pas pour les pages sur ordinateurs de bureau pour limiter la consommation de ressources. À partir de l’exploration de juillet 2019, HTTP Archive a utilisé la version
+        HTTP Archive utilise la dernière version de Lighthouse pour toutes ses 
+        pages Web mobiles –&nbsp;pas pour les pages sur ordinateurs de bureau 
+        pour limiter la consommation de ressources. À partir de l’exploration 
+        de juillet 2019, HTTP Archive a utilisé la version
         <a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v5.1.0"
           >5.1.0</a
         >
@@ -446,36 +464,34 @@ façon dont le projet a été exécuté.{% endblock %}
         <a href="#webpagetest">WebPageTest</a>, mais il utilise son propre 
         profil de configuration&nbsp;:
       </p>
-      <div class="table-wrap">
-        <div class="table-wrap-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Config</th>
-                <th>Valeur</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Ralentissement CPU</td>
-                <td>1x*</td>
-              </tr>
-              <tr>
-                <td>Débit descendant</td>
-                <td>1,475&nbsp;Mbps</td>
-              </tr>
-              <tr>
-                <td>Débit montant</td>
-                <td>0,675&nbsp;Mbps</td>
-              </tr>
-              <tr>
-                <td>Latence</td>
-                <td>150&nbsp;ms</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Config</th>
+            <th>Valeur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ralentissement CPU</td>
+            <td>1x*</td>
+          </tr>
+          <tr>
+            <td>Débit descendant</td>
+            <td>1,475&nbsp;Mbps</td>
+          </tr>
+          <tr>
+            <td>Débit montant</td>
+            <td>0,675&nbsp;Mbps</td>
+          </tr>
+          <tr>
+            <td>Latence</td>
+            <td>150&nbsp;ms</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
 
       <aside>
         * Notez que Lighthouse est normalement configuré pour avoir un 
@@ -499,7 +515,12 @@ façon dont le projet a été exécuté.{% endblock %}
       <h3 id="wappalyzer">Wappalyzer</h3>
 
       <p>
-        <a href="https://www.wappalyzer.com/">Wappalyzer</a> est un outil de détection des technologies utilisées dans les pages Web. Il y a <a href="https://www.wappalyzer.com/technologies">65 catégories</a> de technologies testées, allant des frameworks JavaScript, aux plates-formes CMS, en passant par les mineurs de cryptomonnaie. Plus de 1&nbsp;200 technologies sont prises en charge.
+        <a href="https://www.wappalyzer.com/">Wappalyzer</a> est un outil de 
+        détection des technologies utilisées dans les pages Web. Il y a 
+        <a href="https://www.wappalyzer.com/technologies">65 catégories</a> de 
+        technologies testées, allant des frameworks JavaScript, aux 
+        plates-formes CMS, en passant par les mineurs de cryptomonnaie. Plus de 
+        1&nbsp;200 technologies sont prises en charge.
       </p>
 
       <p>
@@ -512,7 +533,9 @@ façon dont le projet a été exécuté.{% endblock %}
       </p>
 
       <p>
-        Wappalyzer fournit des informations que vous retrouverez dans de nombreux chapitres analysant la popularité des outils de développement comme WordPress, Bootstrap, et jQuery. Par exemple, les chapitres
+        Wappalyzer fournit des informations que vous retrouverez dans de 
+        nombreux chapitres analysant la popularité des outils de développement 
+        comme WordPress, Bootstrap, et jQuery. Par exemple, les chapitres
         <a
           href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}"
           >E-commerce</a
@@ -597,11 +620,18 @@ façon dont le projet a été exécuté.{% endblock %}
       <h3 id="rework-css">Rework CSS</h3>
 
       <p>
-        <a href="https://github.com/reworkcss/css">Rework CSS</a> est un analyseur CSS basé sur JavaScript. Il prend en entrées des feuilles de style entières et produit un objet JSON identifiant chaque règle de style, sélecteur, directive et valeur.
+        <a href="https://github.com/reworkcss/css">Rework CSS</a> est un 
+        analyseur CSS basé sur JavaScript. Il prend en entrées des feuilles de 
+        style entières et produit un objet JSON identifiant chaque règle de 
+        style, sélecteur, directive et valeur.
       </p>
 
       <p>
-        Cet outil dédié à l’analyse CSS a amélioré de manière significative la précision de beaucoup d’indicateurs dans le chapitre <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}" >CSS</a>. Pour rendre l’analyse possible, toutes les feuilles de style externes et les styles en ligne ont été parcourus et analysés. Voir <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683" >ce fil de discussion</a > pour plus d’informations sur la façon dont il a été intégré avec l’ensemble de données HTTP Archive sur BigQuery.
+        Cet outil dédié à l’analyse CSS a amélioré de manière significative la 
+        précision de beaucoup d’indicateurs dans le chapitre <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}" >CSS</a>. Pour 
+        rendre l’analyse possible, toutes les feuilles de style externes et les 
+        styles en ligne ont été parcourus et analysés. Voir <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683" >ce fil de discussion</a > pour plus d’informations sur la façon 
+        dont il a été intégré avec l’ensemble de données HTTP Archive sur BigQuery.
       </p>
     </section>
 
@@ -609,7 +639,11 @@ façon dont le projet a été exécuté.{% endblock %}
       <h2 id="process">Processus analytique</h2>
 
       <p>
-        La planification et l’exécution du Web Almanac ont pris environ un an, avec la coordination de dizaines de contributeurs de la communauté Web. Cette section décrit pourquoi nous avons choisi les indicateurs que vous voyez dans le Web Almanac, comment ils ont été consultés et interprétés.
+        La planification et l’exécution du Web Almanac ont pris environ un an, 
+        avec la coordination de dizaines de contributeurs de la communauté Web. 
+        Cette section décrit pourquoi nous avons choisi les indicateurs que 
+        vous voyez dans le Web Almanac, comment ils ont été consultés et 
+        interprétés.
       </p>
     </section>
 
@@ -634,10 +668,10 @@ façon dont le projet a été exécuté.{% endblock %}
       </p>
 
       <p>
-        À la suite de ce remue-méninge, 20 chapitres ont été confirmés et nous avons commencé à
-        <a
-          href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2"
-          >l’affectation d’expert·e·s et de relecteur·ice·s, ainsi que de pair·e·s pour les relecteurs inhérentes à chaque chapitre</a
+        À la suite de ce remue-méninge, 20 chapitres ont été confirmés et nous 
+        avons commencé à
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2">l’affectation d’expert·e·s et de relecteur·ice·s, ainsi que de 
+        pair·e·s pour les relecteurs inhérentes à chaque chapitre</a
         >. Ce processus comportait un biais inhérent lié à la difficulté 
         d’amener les bénévoles à s’engager dans un projet de cette envergure. 
         Ainsi, de nombreux contributeurs et contributrices sont membres des 
@@ -648,7 +682,10 @@ façon dont le projet a été exécuté.{% endblock %}
       </p>
 
       <p>
-        De mai à juin 2019, nous avons demandé à de nombreuses personnes leur avis sur les chapitres et obtenu leurs commentaires, ce qui nous a permis de finaliser, pour chaque chapitre, la liste des indicateurs qui le composeront.
+        De mai à juin 2019, nous avons demandé à de nombreuses personnes leur 
+        avis sur les chapitres et obtenu leurs commentaires, ce qui nous a 
+        permis de finaliser, pour chaque chapitre, la liste des indicateurs qui 
+        le composeront.
       </p>
     </section>
 
@@ -656,21 +693,29 @@ façon dont le projet a été exécuté.{% endblock %}
       <h3 id="analysis">Analyse</h3>
 
       <p>
-        En juin 2019, une fois obtenue la liste finale des paramètres et chapitres, des analystes ont trié les indicateurs en fonction de leur difficulté d’obtention. Dans certains cas,
+        En juin 2019, une fois obtenue la liste finale des paramètres et 
+        chapitres, des analystes ont trié les indicateurs en fonction de leur 
+        difficulté d’obtention. Dans certains cas,
         <a
           href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js"
           >des indicateurs personnalisés</a
         >
-        devaient être créés pour combler les lacunes de nos capacités analytiques.
+        devaient être créés pour combler les lacunes de nos capacités 
+        analytiques.
       </p>
 
       <p>
-        Tout au long du mois de juillet 2019, le pipeline de données HTTP Archive a parcouru plusieurs millions de sites Web, rassemblant les métadonnées utilisées par le Web Almanac.
+        Tout au long du mois de juillet 2019, le pipeline de données HTTP 
+        Archive a parcouru plusieurs millions de sites Web, rassemblant les 
+        métadonnées utilisées par le Web Almanac.
       </p>
 
       <p>
-        À partir d’août 2019, les analystes ont commencé à rédiger des requêtes pour extraire les résultats pour chaque indicateur. Au total,
-        <strong>431 requêtes</strong> furent écrites à la main&nbsp;! Vous pouvez parcourir toutes les requêtes, chapitre par chapitre, dans le répertoire
+        À partir d’août 2019, les analystes ont commencé à rédiger des requêtes 
+        pour extraire les résultats pour chaque indicateur. Au total,
+        <strong>431 requêtes</strong> furent écrites à la main&nbsp;! Vous 
+        pouvez parcourir toutes les requêtes, chapitre par chapitre, dans le 
+        répertoire
         <a
           href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/master/sql/2019"
           >sql/2019</a
@@ -683,15 +728,31 @@ façon dont le projet a été exécuté.{% endblock %}
       <h3 id="interpretation">Interprétation</h3>
 
       <p>
-        Les auteurs et autrices ont travaillé avec les analystes pour interpréter correctement les résultats et tirer les conclusions appropriées. Au fur et à mesure que ces personnes ont rédigé leurs chapitres respectifs, elles ont puisé dans ces statistiques pour étayer leur analyse de l'état du Web. Leurs confrères et consœurs chargés de la relecture ont travaillé avec elles pour s’assurer de l’exactitude technique de leur analyse.
+        Les auteurs et autrices ont travaillé avec les analystes pour 
+        interpréter correctement les résultats et tirer les conclusions 
+        appropriées. Au fur et à mesure que ces personnes ont rédigé leurs 
+        chapitres respectifs, elles ont puisé dans ces statistiques pour étayer 
+        leur analyse de l'état du Web. Leurs confrères et consœurs chargés de 
+        la relecture ont travaillé avec elles pour s’assurer de l’exactitude 
+        technique de leur analyse.
       </p>
 
       <p>
-        Pour rendre les résultats plus facilement compréhensibles, l'équipe de développement Web et les analystes ont créé des visualisations de données à intégrer dans chaque chapitre. Certaines visualisations sont simplifiées pour faciliter la compréhension des conclusions. Par exemple, plutôt que de montrer un histogramme complet d’une distribution, seule une poignée de percentiles sont affichés. Sauf indication contraire, toutes les distributions sont résumées à l’aide de percentiles, surtout les médianes (50e percentile), et non les moyennes.
+        Pour rendre les résultats plus facilement compréhensibles, l'équipe de 
+        développement Web et les analystes ont créé des visualisations de 
+        données à intégrer dans chaque chapitre. Certaines visualisations sont 
+        simplifiées pour faciliter la compréhension des conclusions. Par 
+        exemple, plutôt que de montrer un histogramme complet d’une 
+        distribution, seule une poignée de percentiles sont affichés. Sauf 
+        indication contraire, toutes les distributions sont résumées à l’aide 
+        de percentiles, surtout les médianes (50e percentile), et non les 
+        moyennes.
       </p>
 
       <p>
-        Enfin, l'équipe de rédaction a revu les chapitres pour corriger de simples erreurs grammaticales et assurer l’uniformité de l’expérience de lecture.
+        Enfin, l'équipe de rédaction a revu les chapitres pour corriger de 
+        simples erreurs grammaticales et assurer l’uniformité de l’expérience 
+        de lecture.
       </p>
     </section>
 
@@ -699,26 +760,37 @@ façon dont le projet a été exécuté.{% endblock %}
       <h2 id="looking-ahead">Perspectives</h2>
 
       <p>
-        L'édition 2019 du Web Almanac est la première de ce que nous espérons être une tradition annuelle d’introspection et d’investissement positif au sein de la communauté Web. Parvenir à ce résultat a demandé un effort monumental de la part de nombreux
+        L'édition 2019 du Web Almanac est la première de ce que nous espérons 
+        être une tradition annuelle d’introspection et d’investissement positif 
+        au sein de la communauté Web. Parvenir à ce résultat a demandé un 
+        effort monumental de la part de nombreux
         <a href="{{ url_for('contributors', year=year, lang=lang) }}"
           >contributeurs et contributrices</a
         >
-        et nous espérons pouvoir grandement tirer parti de ce travail pour faciliter les éditions futures.
+        et nous espérons pouvoir grandement tirer parti de ce travail pour 
+        faciliter les éditions futures.
       </p>
 
       <p>
-        Si vous souhaitez contribuer à l'édition 2020 du Web Almanac, n'hésitez pas à nous le dire via <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
+        Si vous souhaitez contribuer à l'édition 2020 du Web Almanac, n'hésitez 
+        pas à nous le dire via <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce 
+        formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre 
+        ce projet encore meilleur&nbsp;!
       </p>
     </section>
   </div>
 </article>
-{% endblock %} {% block scripts %} {{ super() }}
-<script nonce="{{ csp_nonce() }}">
-  var indexBox = document.querySelector(".index-box");
-  var indexBoxTitle = document.querySelector('.index .header');
+{% endblock %}
 
-  indexBoxTitle.addEventListener("click", function(e) {
-    indexBox.classList.toggle("show");
-  });
+{% block scripts %}
+{{ super() }}
+<script nonce="{{ csp_nonce() }}">
+
+var indexBox = document.querySelector('.index-box');
+var indexBoxTitle = document.querySelector('.index .header');
+
+indexBoxTitle.addEventListener('click', function(e) {
+  indexBox.classList.toggle('show');
+});
 </script>
 {% endblock %}
