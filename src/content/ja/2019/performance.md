@@ -8,7 +8,7 @@ reviewers: [JMPerez,obto,sergeychernyshev,zeman]
 translators: [MSakamaki]
 discuss: 1762
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-17T00:00:00.000Z
+last_updated: 2019-12-02T00:00:00.000Z
 ---
 
 ## 導入
@@ -64,12 +64,11 @@ Web Almanacにある他のほとんどの章は、[HTTP Archive](https://httparc
 ### コンテンツの初回ペイント(First Contentful Paint)
 
 <figure id="fig1">
-  <iframe aria-labelledby="fig1-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig1.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig1.png" aria-labelledby="fig1-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig1.png">
+    <img src="/static/images/2019/07_Performance/fig1.png" alt="図1. Webサイトの高速、適度、および低速のFCPパフォーマンスの分布。" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&amp;format=interactive">
   </a>
-  <div id="fig1-caption" class="visually-hidden">Webサイト1000個から見た、FCPが高速、適度、低速の分布。FCPが早いサイトの分布は100%から0%までが線形になっているように見えます。</div>
-  <figcaption>図1. Webサイトの高速、適度、および低速のFCPパフォーマンスの分布。</figcaption>
+  <div id="fig1-description" class="visually-hidden">Webサイト1000個から見た、FCPが高速、適度、低速の分布。FCPが早いサイトの分布は100%から0%までが線形になっているように見えます。</div>
+  <figcaption id="fig1-caption">図1. Webサイトの高速、適度、および低速のFCPパフォーマンスの分布。</figcaption>
 </figure>
 
 図1では、FCPの体験がWeb全体でどのように分散しているかを見ることができます。
@@ -87,12 +86,11 @@ Webサイトが十分に**高速**かどうかを分類するために、新し�
 どちらの条件も満たさない場合、Webサイトのパフォーマンスは**適度**です。
 
 <figure id="fig2">
-  <iframe aria-labelledby="fig2-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig2.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig2.png" aria-labelledby="fig2-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig2.png">
+    <img src="/static/images/2019/07_Performance/fig2.png" alt="図2. 高速、適度、低速のFCPラベルが貼られたWebサイトの分布。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&amp;format=interactive">
   </a>
-  <div id="fig2-caption" class="visually-hidden">Webサイトの13%が高速なFCPで、66%が適度のFCP、20%が低速のFCPを示す棒グラフ。</div>
-  <figcaption>図2. 高速、適度、低速のFCPラベルが貼られたWebサイトの分布。</figcaption>
+  <div id="fig2-description" class="visually-hidden">Webサイトの13%が高速なFCPで、66%が適度のFCP、20%が低速のFCPを示す棒グラフ。</div>
+  <figcaption id="fig2-caption" >図2. 高速、適度、低速のFCPラベルが貼られたWebサイトの分布。</figcaption>
 </figure>
 
 図2の結果は、Webサイトの13％だけが高速と判断されています。
@@ -104,21 +102,19 @@ Webサイトの３分の２は適度のFCP体験となっているようです�
 #### デバイス毎のFCP
 
 <figure id="fig3">
-  <iframe aria-labelledby="fig3-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig3.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig3.png" aria-labelledby="fig3-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig3.png">
+    <img src="/static/images/2019/07_Performance/fig3.png" alt="図3. 「デスクトップ向け」Webサイトの高速、適度、低速のFCPパフォーマンスの分布。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&amp;format=interactive">
   </a>
-  <div id="fig3-caption" class="visually-hidden">1,000個のデスクトップWebサイトの高速、適度、低速のFCP分布、高速なFCPの分布は100%から0%までが線形となっており、中央で少し膨らんでいます。</div>
-  <figcaption>図3. <em>デスクトップ</em>Webサイトの高速、適度、低速のFCPパフォーマンスの分布。</figcaption>
+  <div id="fig3-description" class="visually-hidden">1,000個のデスクトップWebサイトの高速、適度、低速のFCP分布、高速なFCPの分布は100%から0%までが線形となっており、中央で少し膨らんでいます。</div>
+  <figcaption id="fig3-caption">図3. <em>デスクトップ</em>Webサイトの高速、適度、低速のFCPパフォーマンスの分布。</figcaption>
 </figure>
 
 <figure id="fig4">
-  <iframe aria-labelledby="fig4-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig4.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig4.png" aria-labelledby="fig4-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig4.png">
+    <img src="/static/images/2019/07_Performance/fig4.png" alt="図4. 「携帯電話向け」Webサイトの高速、適度、低速のFCPパフォーマンスの分布。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&amp;format=interactive">
   </a>
-  <div id="fig4-caption" class="visually-hidden">1,000個の携帯電話向けWebサイトの高速、適度、低速のFCP分布、高速なFCPの分布は100%から0%までに膨らみが無く、線形に見えます。</div>
-  <figcaption>図4. <em>携帯電話向け</em>Webサイトの高速、適度、低速のFCPパフォーマンスの分布。</figcaption>
+  <div id="fig4-description" class="visually-hidden">1,000個の携帯電話向けWebサイトの高速、適度、低速のFCP分布、高速なFCPの分布は100%から0%までに膨らみが無く、線形に見えます。</div>
+  <figcaption id="fig4-caption" >図4. <em>携帯電話向け</em>Webサイトの高速、適度、低速のFCPパフォーマンスの分布。</figcaption>
 </figure>
 
 上の図3と図4は、FCPの分布をデスクトップと携帯電話で分類しています。
@@ -127,12 +123,11 @@ Webサイトの３分の２は適度のFCP体験となっているようです�
 これを検証するために、PSIという方法を各分布に適用していきます。
 
 <figure id="fig5">
-  <iframe aria-labelledby="fig5-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig5.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig5.png" aria-labelledby="fig5-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig5.png">
+    <img src="/static/images/2019/07_Performance/fig5.png" alt="図5.高速、適度、低速FCPのラベルが付けられたWebサイトの分布。デバイスの種類で分類されています。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" data-width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&amp;format=interactive">
   </a>
-  <div id="fig5-caption" class="visually-hidden">デスクトップとモバイルのFCP分布を示す棒グラフ。デスクトップは高速、適度、低速が17%、67%、16%となっており、モバイルは11%、66%、23%となっています。</div>
-  <figcaption>図5.高速、適度、低速FCPのラベルが付けられたWebサイトの分布。デバイスの種類で分類されています。</figcaption>
+  <div id="fig5-description" class="visually-hidden">デスクトップとモバイルのFCP分布を示す棒グラフ。デスクトップは高速、適度、低速が17%、67%、16%となっており、モバイルは11%、66%、23%となっています。</div>
+  <figcaption id="fig5-caption" >図5.高速、適度、低速FCPのラベルが付けられたWebサイトの分布。デバイスの種類で分類されています。</figcaption>
 </figure>
 
 PSIの分類によると、モバイルユーザーの11%と比べて、デスクトップユーザーは17%に対して高速なFCP体験が全体的に提供されています。
@@ -146,12 +141,11 @@ Webサイトでデスクトップユーザーが高確率で携帯電話のユ�
 #### 有効な接続タイプ毎のFCP
 
 <figure id="fig6">
-  <iframe aria-labelledby="fig6-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig6.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig6.png" aria-labelledby="fig6-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig6.png">
+    <img src="/static/images/2019/07_Performance/fig6.png" alt="図6. 高速、適度、低速のFCPでラベル付けされたWebサイトの分布。ECTで分類されています。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&amp;format=interactive">
   </a>
-  <div id="fig6-caption" class="visually-hidden">有効な接続タイプ毎のFCP分布棒グラフ。4Gの高速、適度、低速：14％、67％、19％。 3G：1％、38％、61％。 2G：0％、9％、90％。 低速な2G：0％、1％、99％。</div>
-  <figcaption>図6.高速、適度、低速のFCPでラベル付けされたWebサイトの分布。<abbr title="effective connection type">ECT</abbr>で分類されています。</figcaption>
+  <div id="fig6-description" class="visually-hidden">有効な接続タイプ毎のFCP分布棒グラフ。4Gの高速、適度、低速：14％、67％、19％。 3G：1％、38％、61％。 2G：0％、9％、90％。 低速な2G：0％、1％、99％。</div>
+  <figcaption id="fig6-caption" >図6. 高速、適度、低速のFCPでラベル付けされたWebサイトの分布。<abbr title="effective connection type">ECT</abbr>で分類されています。</figcaption>
 </figure>
 
 上の図6にあるFCP体験は、ユーザーの体験するECT毎にグループ化されています。
@@ -164,13 +158,11 @@ ECTが4Gのユーザーにサービスを提供しているWebサイトの14％�
 #### 地理によるFCP
 
 <figure id="fig7">
-  <iframe aria-labelledby="fig7-caption" width="600" height="940" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig7.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig7.png" aria-labelledby="fig7-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig7.png">
+    <img src="/static/images/2019/07_Performance/fig7.png" alt="図7. 高速、適度、低速FCPでラベル付を行ったWebサイトの分布を地域別に分類したもの。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive">
   </a>
-  <div id="fig7-caption" class="visually-hidden">最も人気があるトップ23地域のFCP分布棒グラフです。韓国は36%で最も早いWebサイトを持っています。そこから高速なWebサイトの割合は、日本28%、台湾26％、オランダ21%となり、そこから他の地域は急速に減少しています。
-</div>
-  <figcaption>図7.高速、適度、低速FCPでラベル付を行ったWebサイトの分布を地域別に分類したもの。</figcaption>
+  <div id="fig7-description" class="visually-hidden">最も人気があるトップ23地域のFCP分布棒グラフです。韓国は36%で最も早いWebサイトを持っています。そこから高速なWebサイトの割合は、日本28%、台湾26％、オランダ21%となり、そこから他の地域は急速に減少しています。</div>
+  <figcaption id="fig7-caption">図7. 高速、適度、低速FCPでラベル付を行ったWebサイトの分布を地域別に分類したもの。</figcaption>
 </figure>
 
 最後にユーザーの地理（geo）でFCPを切り分けてみましょう。
@@ -190,9 +182,10 @@ ECTが4Gのユーザーにサービスを提供しているWebサイトの14％�
 
 <figure id="fig8">
   <a href="/static/images/2019/07_Performance/nav-timing.png">
-    <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/07_Performance/nav-timing.png" alt="ページの読み込みにおけるネットワークフェーズのシーケンスを示す図：startTime（promptForUnload）、リダイレクト、AppCache、DNS、TCP、リクエスト、レスポンス、処理、読み込み。">
+    <img src="/static/images/2019/07_Performance/nav-timing.png" alt="図8.ページナビゲーションのイベントとNavigation Timing API の図表。" aria-labelledby="fig8-caption" aria-describedby="fig8-description">
   </a>
-  <figcaption>図8.ページナビゲーションのイベントとNavigation Timing API の図表。</figcaption>
+  <div id="fig8-description" class="visually-hidden">ページの読み込みにおけるネットワークフェーズのシーケンスを示す図：startTime（promptForUnload）、リダイレクト、AppCache、DNS、TCP、リクエスト、レスポンス、処理、読み込み。</div>
+  <figcaption id="fig8-caption">図8.ページナビゲーションのイベントとNavigation Timing API の図表。</figcaption>
 </figure>
 
 TTFBとそれに影響する多くの要因を説明するために、[Navigation Timing APIの仕様](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API)から図を借りました。
@@ -200,12 +193,11 @@ TTFBとそれに影響する多くの要因を説明するために、[Navigatio
 このようなコンテキストを考慮して、ユーザーがこの数値をどのように体験しているかを見てみましょう。
 
 <figure id="fig9">
-  <iframe aria-labelledby="fig9-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig9.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig9.png" aria-labelledby="fig9-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig9.png">
+    <img src="/static/images/2019/07_Performance/fig9.png" alt="図9. WebサイトのTTFBパフォーマンス、高速、適度、低速の分布。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&amp;format=interactive">
   </a>
-  <div id="fig9-caption" class="visually-hidden">Webサイト1,000個の高速、適度、低速のTTFBの配布。 高速TTFBの分布は、10番目まで早い割合で、そして約90％から50％に急速に低下します。 その後分布は50％から0％に徐々に減少し、最後の1割は底辺を這います。</div>
-  <figcaption>図9. WebサイトのTTFBパフォーマンス、高速、適度、低速の分布。</figcaption>
+  <div id="fig9-description" class="visually-hidden">Webサイト1,000個の高速、適度、低速のTTFBの配布。 高速TTFBの分布は、10番目まで早い割合で、そして約90％から50％に急速に低下します。 その後分布は50％から0％に徐々に減少し、最後の1割は底辺を這います。</div>
+  <figcaption id="fig9-caption">図9. WebサイトのTTFBパフォーマンス、高速、適度、低速の分布。</figcaption>
 </figure>
 
 図1のFCPチャートと同様に、これは高速TTFB毎に並べられた代表的な1,000個の値のサンプルのビューです。 [高速TTFB](https://developers.google.com/speed/docs/insights/Server#recommendations)は0.2秒（200ミリ秒）未満、低速TTFBは1秒以上、その間はすべて適度です。
@@ -219,12 +211,11 @@ TTFBとそれに影響する多くの要因を説明するために、[Navigatio
 この条件のどちらでもないものを**適度**とします
 
 <figure id="fig10">
-  <iframe aria-labelledby="fig10-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig10.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig10.png" aria-labelledby="fig10-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig10.png">
+    <img src="/static/images/2019/07_Performance/fig10.png" alt="図10. TTFBが高速、適度、低速としてラベル付けされたWebサイトの分布。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&amp;format=interactive">
   </a>
-  <div id="fig10-caption" class="visually-hidden">Webサイトの2%が高速なTTFBを、56%が適度のTTFBを、42%が低速なTTFBとなっていることを示す棒グラフ。</div>
-  <figcaption>図10. TTFBが高速、適度、低速としてラベル付けされたWebサイトの分布。</figcaption>
+  <div id="fig10-description" class="visually-hidden">Webサイトの2%が高速なTTFBを、56%が適度のTTFBを、42%が低速なTTFBとなっていることを示す棒グラフ。</div>
+  <figcaption id="fig10-caption">図10. TTFBが高速、適度、低速としてラベル付けされたWebサイトの分布。</figcaption>
 </figure>
 
 Webサイトの42%で低速のTTFB体験となっています。
@@ -234,13 +225,11 @@ _定義上は、TTFBに1秒以上かかる場合、ユーザーは高速なFCP�
 #### TTFB by geo
 
 <figure id="fig11">
-  <iframe aria-labelledby="fig11-caption" width="600" height="940" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=685447534&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig11.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig11.png" aria-labelledby="fig11-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig11.png">
+    <img src="/static/images/2019/07_Performance/fig11.png" alt="図11. 高速、適度、低速のTTFBそれぞれでラベル付けされたWebサイトの分布。地域別に分類されています。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=685447534&amp;format=interactive">
   </a>
-  <div id="fig11-caption" class="visually-hidden">最も人気のあるトップ23地域のTTFB分布の棒グラフ。韓国は14%で特に早いWebサイトを持っています。そこから、早いWebサイトの割合は台湾7%、日本5%、オランダ4%となり、他の地域では急速に減少していきます。
-</div>
-  <figcaption>図11. 高速、適度、低速のTTFBそれぞれでラベル付けされたWebサイトの分布。地域別に分類されています。</figcaption>
+  <div id="fig11-description" class="visually-hidden">最も人気のあるトップ23地域のTTFB分布の棒グラフ。韓国は14%で特に早いWebサイトを持っています。そこから、早いWebサイトの割合は台湾7%、日本5%、オランダ4%となり、他の地域では急速に減少していきます。</div>
+  <figcaption id="fig11-caption">図11. 高速、適度、低速のTTFBそれぞれでラベル付けされたWebサイトの分布。地域別に分類されています。</figcaption>
 </figure>
 
 次に、さまざまな地域で、高速なTTFBをユーザーに提供しているWebサイトの割合を見てみましょう。
@@ -261,12 +250,11 @@ _定義上は、TTFBに1秒以上かかる場合、ユーザーは高速なFCP�
 **低速**なFIDは300ミリ秒以上となっており、その間はすべて**適度**にあたります。
 
 <figure id="fig12">
-  <iframe aria-labelledby="fig12-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=60679078&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig12.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig12.png" aria-labelledby="fig12-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig12.png">
+    <img src="/static/images/2019/07_Performance/fig12.png" alt="図12. Webサイトの高速、適度、低速のFIDパフォーマンスの分布。" aria-labelledby="fig12-caption"  aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=60679078&amp;format=interactive">
   </a>
-  <div id="fig12-caption" class="visually-hidden">Webサイト1,000個の高速、適度、低速のFID配布。75%を超える高速なFIDの分布は、4分の3でもWebサイトがあり、その後急速に0％に低下します。</div>
-  <figcaption>図12. Webサイトの高速、適度、低速のFIDパフォーマンスの分布。</figcaption>
+  <div id="fig12-description" class="visually-hidden">Webサイト1,000個の高速、適度、低速のFID配布。75%を超える高速なFIDの分布は、4分の3でもWebサイトがあり、その後急速に0％に低下します。</div>
+  <figcaption id="fig12-caption">図12. Webサイトの高速、適度、低速のFIDパフォーマンスの分布。</figcaption>
 </figure>
 
 貴方はいま難題を抱えています。
@@ -276,12 +264,11 @@ _定義上は、TTFBに1秒以上かかる場合、ユーザーは高速なFCP�
 FIDの体験は、ほとんどのWebサイトでほぼ高速になっています。
 
 <figure id="fig13">
-  <iframe aria-labelledby="fig13-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig13.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig13.png" aria-labelledby="fig13-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig13.png">
+    <img src="/static/images/2019/07_Performance/fig13.png" alt="図13. 高速、適度、低速のTTFBでラベル付けされたWebサイトの分布。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&amp;format=interactive">
   </a>
-  <div id="fig13-caption" class="visually-hidden">40％のWebサイトが高速なFID、45％が適度のFID、15％が低速のFIDであることを示す棒グラフ。</div>
-  <figcaption>図13. 高速、適度、低速のTTFBでラベル付けされたWebサイトの分布。</figcaption>
+  <div id="fig13-description" class="visually-hidden">40％のWebサイトが高速なFID、45％が適度のFID、15％が低速のFIDであることを示す棒グラフ。</div>
+  <figcaption id="fig13-caption">図13. 高速、適度、低速のTTFBでラベル付けされたWebサイトの分布。</figcaption>
 </figure>
 
 十分に高速や低速のFIDとなるWebサイトのラベル付けを行うため、PSI方法論はFCPと少しだけ異なる方法を取ります。
@@ -295,21 +282,19 @@ FIDが対話性の計測であるという性質は、ネットワーク速度�
 #### デバイス毎のFID
 
 <figure id="fig14">
-  <iframe aria-labelledby="fig14-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig14.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig14.png" aria-labelledby="fig14-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig14.png">
+    <img src="/static/images/2019/07_Performance/fig14.png" alt="図14.  「デスクトップ」 WebサイトのFIDパフォーマンスの高速、適度、低速の分布。" aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&amp;format=interactive">
   </a>
-  <div id="fig14-caption" class="visually-hidden">デスクトップWebサイト1,000個の高速、適度、低速FIDの配布。 Webサイトの最速の4分の3で、高速FIDの分布は100％から90％にかけて非常にゆっくりと減少して、その後高速FIDは75％まで減少します。 ほぼすべてのデスクトップWebサイトは、75％以上の高速なFID体験を備えています。</div>
-  <figcaption>図14.  <em>デスクトップ</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。</figcaption>
+  <div id="fig14-description" class="visually-hidden">デスクトップWebサイト1,000個の高速、適度、低速FIDの配布。 Webサイトの最速の4分の3で、高速FIDの分布は100％から90％にかけて非常にゆっくりと減少して、その後高速FIDは75％まで減少します。 ほぼすべてのデスクトップWebサイトは、75％以上の高速なFID体験を備えています。</div>
+  <figcaption id="fig14-caption">図14.  <em>デスクトップ</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。</figcaption>
 </figure>
 
 <figure id="fig15">
-  <iframe aria-labelledby="fig15-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig15.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig15.png" aria-labelledby="fig15-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig15.png">
+    <img src="/static/images/2019/07_Performance/fig15.png" alt="図14.  「携帯電話向け」WebサイトのFIDパフォーマンスの高速、適度、低速の分布。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&amp;format=interactive">
   </a>
-  <div id="fig15-caption" class="visually-hidden">モバイルWebサイト1,000個の高速、適度、低速FIDの配布。 高速なFIDの分布は着実に減少していますが、デスクトップよりもはるかに速く減っています。 ウェブサイトの4分の3までが75％となる高速に達していますが、その後すぐに0％に低下します。</div>
-  <figcaption>図14.  <em>携帯電話向け</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。</figcaption>
+  <div id="fig15-description" class="visually-hidden">モバイルWebサイト1,000個の高速、適度、低速FIDの配布。 高速なFIDの分布は着実に減少していますが、デスクトップよりもはるかに速く減っています。 ウェブサイトの4分の3までが75％となる高速に達していますが、その後すぐに0％に低下します。</div>
+  <figcaption id="fig15-caption">図14.  <em>携帯電話向け</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。</figcaption>
 </figure>
 
 FIDをデバイスで分類してみると、この2つはまったく別の話となるようです。
@@ -320,12 +305,11 @@ FIDをデバイスで分類してみると、この2つはまったく別の話�
 後者はWebサイトの10%のみ体験しているようですが、これは大きな違いでしょう。
 
 <figure id="fig16">
-  <iframe aria-labelledby="fig16-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig16.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig16.png" aria-labelledby="fig16-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig16.png">
+    <img src="/static/images/2019/07_Performance/fig16.png" alt="図16. 高速、適度、低速FIDとしてラベル付けされたWebサイトの分布。デバイス種類別に分類されています。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&amp;format=interactive">
   </a>
-  <div id="fig16-caption" class="visually-hidden">デスクトップとモバイルFID分布の棒グラフ。 デスクトップは高速、適度、低速がそれぞれ82％、12％、5％。 モバイルの場合26％、52％、22％。</div>
-  <figcaption>図16. 高速、適度、低速FIDとしてラベル付けされたWebサイトの分布。デバイス種類別に分類されています。</figcaption>
+  <div id="fig16-description" class="visually-hidden">デスクトップとモバイルFID分布の棒グラフ。 デスクトップは高速、適度、低速がそれぞれ82％、12％、5％。 モバイルの場合26％、52％、22％。</div>
+  <figcaption id="fig16-caption">図16. 高速、適度、低速FIDとしてラベル付けされたWebサイトの分布。デバイス種類別に分類されています。</figcaption>
 </figure>
 
 PSIラベルをデスクトップと携帯電話の体験に適用してみると、差分が非常に明瞭になります。
@@ -336,12 +320,11 @@ PSIラベルをデスクトップと携帯電話の体験に適用してみる�
 #### 有効な接続タイプ別のFID
 
 <figure id="fig17">
-  <iframe aria-labelledby="fig17-caption" width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig17.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig17.png" aria-labelledby="fig17-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig17.png">
+    <img src="/static/images/2019/07_Performance/fig17.png" alt="図17. ECTによって分類された高速、適度、低速FIDとしてラベル付けされたWebサイトの分布" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&amp;format=interactive">
   </a>
-  <div id="fig17-caption" class="visually-hidden">有効な接続タイプ毎のFID分布の棒グラフ。4G高速、適度、低速がそれぞれ41％、45％、15％。3G：22％、52％、26％。 2G：19％、58％、23％。 低速な2G：15％、58％、27％。</div>
-  <figcaption>図17. <abbr title="effective connection type">ECT</abbr>ECTによって分類された高速、適度、低速FIDとしてラベル付けされたWebサイトの分布</figcaption>
+  <div id="fig17-description" class="visually-hidden">有効な接続タイプ毎のFID分布の棒グラフ。4G高速、適度、低速がそれぞれ41％、45％、15％。3G：22％、52％、26％。 2G：19％、58％、23％。 低速な2G：15％、58％、27％。</div>
+  <figcaption id="fig17-caption">図17. <abbr title="effective connection type">ECT</abbr>によって分類された高速、適度、低速FIDとしてラベル付けされたWebサイトの分布</figcaption>
 </figure>
 
 一見、FIDはCPUの動作速度が影響するように思えます。
@@ -354,12 +337,11 @@ PSIラベルをデスクトップと携帯電話の体験に適用してみる�
 #### FID by geo
 
 <figure id="fig18">
-  <iframe aria-labelledby="fig18-caption" width="600" height="940" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=11500240&amp;format=interactive"></iframe>
-  <a href="/static/images/2019/07_Performance/fig18.png" class="fig-mobile">
-    <img src="/static/images/2019/07_Performance/fig18.png" aria-labelledby="fig18-caption" width="600">
+  <a href="/static/images/2019/07_Performance/fig18.png">
+    <img src="/static/images/2019/07_Performance/fig18.png" alt="図18. 高速、適度、低速FIDでラベル付けされたWebサイトの分布を地域別に分類したもの。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=11500240&amp;format=interactive">
   </a>
-  <div id="fig18-caption" class="visually-hidden">最も人気のある上位23の地域のFID分布の棒グラフ。最速のWebサイトは韓国の69％です。そこから高速なWebサイトの割合は、オーストラリア55％、アメリカ合衆国52％、カナダ51％となり、他の地域で確実に減少しています。</div>
-  <figcaption>図18. 高速、適度、低速FIDでラベル付けされたWebサイトの分布を地域別に分類したもの。</figcaption>
+  <div id="fig18-description" class="visually-hidden">最も人気のある上位23の地域のFID分布の棒グラフ。最速のWebサイトは韓国の69％です。そこから高速なWebサイトの割合は、オーストラリア55％、アメリカ合衆国52％、カナダ51％となり、他の地域で確実に減少しています。</div>
+  <figcaption id="fig18-caption">図18. 高速、適度、低速FIDでラベル付けされたWebサイトの分布を地域別に分類したもの。</figcaption>
 </figure>
 
 この地理的な位置によるFIDの内訳では、韓国はまたもや他のすべてよりも抜きん出ています。
