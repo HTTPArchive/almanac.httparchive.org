@@ -1607,7 +1607,7 @@
       </figure>
       <h2 id="controlling-cdn-caching-behavior">Controlling CDN caching behavior</h2>
       <h3 id="vary"><code>Vary</code></h3>
-      <p>A website can control many the caching behavior of browsers and CDNs with the use of different HTTP headers. The most common is the <code>Cache-Control</code> header which specifically determines how long something can be cached before returning to the origin to ensure it is up-to-date.</p>
+      <p>A website can control the caching behavior of browsers and CDNs with the use of different HTTP headers. The most common is the <code>Cache-Control</code> header which specifically determines how long something can be cached before returning to the origin to ensure it is up-to-date.</p>
       <p>Another useful tool is the use of the <code>Vary</code> HTTP header. This header instructs both CDNs and browsers how to fragment a cache. The <code>Vary</code> header allows an origin to indicate that there are multiple representations of a resource, and the CDN should cache each variation separately. The most common example is <a href="./compression">compression</a>. Declaring a resource as <code>Vary: Accept-Encoding</code> allows the CDN to cache the same content, but in different forms like uncompressed, with gzip, or Brotli. Some CDNs even do this compression on the fly so as to keep only one copy available. This <code>Vary</code> header likewise also instructs the browser how to cache the content and when to request new content.</p>
       <figure id="fig-24">
         <a href="/static/images/2019/17_CDN/use_of_vary_on_cdn.png">
