@@ -336,9 +336,7 @@ If native modules are used, it's important to ensure that an appropriate fallbac
 <script nomodule src="fallback.js"></script>
 ```
 
-When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to [send modern code to modern browsers for faster page loads](https://web.dev/serve-modern-code-to-modern-browsers/).
-
-So, how many sites use `nomodule` for scripts on their page?
+When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to [send modern code to modern browsers for faster page loads](https://web.dev/serve-modern-code-to-modern-browsers/). So, how many sites use `nomodule` for scripts on their page?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig14.png">
@@ -355,7 +353,7 @@ Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scr
 [Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) and [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are [resource hints](./resource-hints) which enable you to aid the browser in determining what resources need to be downloaded.
 
 - Preloading a resource with `<link rel="preload">` tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., JavaScript located at the bottom of your HTML) and are otherwise downloaded last.
-- Using `<link rel="prefetch">` tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations
+- Using `<link rel="prefetch">` tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations 
 
 So, how many sites use preload and prefetch directives?
 
@@ -369,7 +367,7 @@ So, how many sites use preload and prefetch directives?
 
 For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mobile sites use `<link rel="preload">` for scripts on their page.
 
-For prefetch:
+For prefetch, we have the following:
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig16.png">
