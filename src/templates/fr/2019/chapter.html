@@ -12,7 +12,7 @@
 
 {% set metadata = <%- JSON.stringify(metadata) %> %}
 
-{% block description %}{{ metadata.get('description','Chapitre' + metadata.get('title') + ' du Web Almanac'+ year + " explorant l'utilisation des " + metadata.get('description',metadata.get('title')) + ' sur le web.') }}{% endblock %}
+{% block description %}{{ metadata.get('description','Chapitre' + metadata.get('title') + ' du Web Almanac'+ year + " explorant l’utilisation des " + metadata.get('description',metadata.get('title')) + ' sur le web.') }}{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
@@ -83,7 +83,7 @@
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "Page d'Accueil {{ year }} ({{ language }})",
+          "name": "Page d’Accueil {{ year }} ({{ language }})",
           "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
         },{
           "@type": "ListItem",
