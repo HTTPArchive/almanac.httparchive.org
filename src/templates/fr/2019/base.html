@@ -22,7 +22,7 @@
       <div class="cta">
         {% if request.endpoint == 'home' %}
           <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
-            Commencer l'exploration
+            Commencer l’exploration
           </a>
         {% endif %}
         {{ language_switcher() }}
@@ -36,7 +36,7 @@
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
         <div class="misc">
           <a href="https://httparchive.org/">
-            <img src="/static/images/ha-home.svg" alt="Page d'accueil HTTP Archive" height="35" width="70">
+            <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
           </a>
           <div class="social-media">
             <a href="https://twitter.com/HTTPArchive" class="twitter">
@@ -58,13 +58,13 @@
         <h2>
           Rapport annuel<br>
           de HTTP Archive sur<br>
-          <b>l'état du Web</b>
+          <b>l’état du Web</b>
         </h2>
         <p>
-          Notre mission est de combiner les statistiques brutes et les tendances de HTTP Archive avec l'expertise de la communauté web. Le Web Almanac est un rapport complet sur l'état du Web, soutenu par des données réelles et des experts du Web. Il est composé de 20 chapitres couvrant l'expérience utilisateur, le contenu des pages, leur publication et leur distribution.
+          Notre mission est de combiner les statistiques brutes et les tendances de HTTP Archive avec l’expertise de la communauté web. Le Web Almanac est un rapport complet sur l’état du Web, soutenu par des données réelles et des experts du Web. Il est composé de 20 chapitres couvrant l’expérience utilisateur, le contenu des pages, leur publication et leur distribution.
         </p>
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
-          Commencer l'exploration
+          Commencer l’exploration
         </a>
       </div>
       <img class="intro-image-2019" src="/static/images/home-hero-2019.png" alt="Édition 2019 du Web Almanac" />
@@ -80,7 +80,7 @@
     <footer class="alt-bg">
       <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive"></a>
       <a class="navigation-logo ha-logo" href="https://httparchive.org">
-        <img src="/static/images/ha-home.svg" alt="Page d'accueil HTTP Archive" height="35" width="70">
+        <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
       </a>
       <nav class="nav-items">
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
