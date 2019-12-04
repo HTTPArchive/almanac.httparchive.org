@@ -8,7 +8,7 @@ reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 translators: []
 discuss: 1772
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-23T00:00:00.000Z
+last_updated: 2019-12-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -47,7 +47,7 @@ There are many limits to the testing [methodology](./methodology) used for the W
 Most importantly, these results reflect a potential utilization but do not reflect actual impact. YouTube is more popular than "ShoesByColin" yet both will appear as equal value when comparing utilization.
 
 With this in mind, there are a few intentional statistics that were not measured with the context of a CDN:
-* **TTFB**: Measuring the Time to first byte _by CDN_ would be intellectually dishonest without proper knowledge about cacheability and cache effectiveness. If one site uses a CDN for round-trip-time (RTT) management but not for caching, this would create a disadvantage when comparing another site that uses a different CDN vendor but does also caches the content.  _(Note: this does not apply to the TTFB analysis in the [Performance](./performance#time-to-first-byte-ttfb) chapter because it does not draw conclusions about the performance of individual CDNs.)_
+* **TTFB**: Measuring the Time to first byte _by CDN_ would be intellectually dishonest without proper knowledge about cacheability and cache effectiveness. If one site uses a CDN for **round trip time** (RTT) management but not for caching, this would create a disadvantage when comparing another site that uses a different CDN vendor but does also caches the content.  _(Note: this does not apply to the TTFB analysis in the [Performance](./performance#time-to-first-byte-ttfb) chapter because it does not draw conclusions about the performance of individual CDNs.)_
 * **Cache Hit vs. Cache Miss performance**: As mentioned previously, this is opaque to the testing apparatus and therefore repeat tests to test page performance with a cold cache vs. a hot cache are unreliable.
 
 ### Further stats
@@ -58,7 +58,7 @@ In future versions of the Web Almanac, we would expect to look more closely at t
 
 For websites, a CDN can improve performance for the primary domain (`www.shoesbycolin.com`), sub-domains or sibling domains (`images.shoesbycolin.com` or `checkout.shoesbycolin.com`), and finally third parties (Google Analytics, etc.). Using a CDN for each of these use cases improves performance in different ways. 
 
-Historically, CDNs were used exclusively for static resources like [CSS](./css), [JavaScript](./javascript), and [images](./media). These resources would likely be versioned (include a unique number in the path) and cached long-term. In this way we should expect to see higher adoption of CDNs on sub-domains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that `www.shoesbycolin.com` would serve HTML directly from a datacenter (or ORIGIN) while `static.shoesbycolin.com` would use a CDN.
+Historically, CDNs were used exclusively for static resources like [CSS](./css), [JavaScript](./javascript), and [images](./media). These resources would likely be versioned (include a unique number in the path) and cached long-term. In this way we should expect to see higher adoption of CDNs on sub-domains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that `www.shoesbycolin.com` would serve HTML directly from a datacenter (or **origin**) while `static.shoesbycolin.com` would use a CDN.
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig1.png">
@@ -68,18 +68,18 @@ Historically, CDNs were used exclusively for static resources like [CSS](./css),
   <figcaption id="fig1-caption">Figure 1. CDN usage vs. origin-hosted resources.</figcaption>
 </figure>
 
-Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of web pages (80%) serve the base HTML from ORIGIN. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely due to the small continued use of mobile specific web pages ("mDot"), which more frequently use a CDN.
+Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of web pages (80%) serve the base HTML from origin. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely due to the small continued use of mobile specific web pages ("mDot"), which more frequently use a CDN.
 
 Likewise, resources served from sub-domains are more likely to utilize a CDN at 40% of sub-domain resources. Sub-domains are used either to partition resources like images and CSS or they are used to reflect organizational teams such as checkout or APIs.
 
-Despite first-party resources still largely being served directly from ORIGIN, third-party resources have a substantially higher adoption of CDNs. Nearly 66% of all third-party resources are served from a CDN. Since third-party domains are more likely a SaaS integration, the use of CDNs are more likely core to these business offerings. Most third-party content breaks down to shared resources (JavaScript or font CDNs), augmented content (advertisements), or statistics. In all these cases, using a CDN will improve the performance and offload for these SaaS solutions.
+Despite first-party resources still largely being served directly from origin, third-party resources have a substantially higher adoption of CDNs. Nearly 66% of all third-party resources are served from a CDN. Since third-party domains are more likely a SaaS integration, the use of CDNs are more likely core to these business offerings. Most third-party content breaks down to shared resources (JavaScript or font CDNs), augmented content (advertisements), or statistics. In all these cases, using a CDN will improve the performance and offload for these SaaS solutions.
 
 ## Top CDN providers
 There are two categories of CDN providers: the generic and the purpose-fit CDN. The generic CDN providers offer customization and flexibility to serve all kinds of content for many industries. In contrast, the purpose-fit CDN provider offers similar content distribution capabilities but are narrowly focused on a specific solution.
 
 This is clearly represented when looking at the top CDNs found serving the base HTML content. The most frequent CDNs serving HTML are generic CDNs (Cloudflare, Akamai, Fastly) and cloud solution providers who offer a bundled CDN (Google, Amazon) as part of the platform service offerings. In contrast, there are only a few purpose-fit CDN providers, such as Wordpress and Netlify, that deliver base HTML markup.
 
-<aside class="note">NB: this does not reflect traffic or usage, only the number of sites using them.</aside>
+<aside class="note">Note: This does not reflect traffic or usage, only the number of sites using them.</aside>
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_cdn_usage.png">
@@ -1068,7 +1068,7 @@ Along with RTT management and improving TLS performance, CDNs also enable new st
 
 CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin pages. Similarly, sub-domain and third-party resources on CDNs see an even higher adoption of HTTP/2 at 90% or higher while third-party resources served from origin infrastructure only has 31% adoption. The performance gains and other features of HTTP/2 are further covered in the [HTTP/2](./http2) chapter.
 
-<aside class="note">NB: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</aside>
+<aside class="note">Note: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</aside>
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig19.png">

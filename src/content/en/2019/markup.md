@@ -8,7 +8,7 @@ reviewers: [zcorpan, tomhodgins, matthewp]
 translators: []
 discuss: 1758
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-23T00:00:00.000Z
+last_updated: 2019-12-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -267,7 +267,7 @@ There are also lots of [accordions](https://rainy-periwinkle.glitch.me/permalink
 
 Perhaps we could research why we need [92 variants of button related elements that aren't a native button](https://rainy-periwinkle.glitch.me/permalink/5ae67c941395ca3125e42909c2c3881e27cb49cfa9aaf1cf59471e3779435339.html), for example, and try to fill the native gap.
 
-If we notice popular things pop up (like `<jdiv>`, solving chat) we can take knowledge of things we know (like, that that is what `<jdiv>` is about, or `<olark>`) and try to look [at at least 43 things we've built for tackling that](https://rainy-periwinkle.glitch.me/permalink/db8fc0e58d2d46d2e2a251ed13e3daab39eba864e46d14d69cc114ab5d684b00.html) and follow connections to survey the space.
+If we notice popular things pop up (like `<jdiv>`, solving chat) we can take knowledge of things we know (like, that is what `<jdiv>` is about, or `<olark>`) and try to look [at at least 43 things we've built for tackling that](https://rainy-periwinkle.glitch.me/permalink/db8fc0e58d2d46d2e2a251ed13e3daab39eba864e46d14d69cc114ab5d684b00.html) and follow connections to survey the space.
 
 ## Conclusion
 
