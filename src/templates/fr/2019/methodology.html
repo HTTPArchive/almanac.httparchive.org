@@ -129,15 +129,15 @@
         <h2 id="overview">Vue d’ensemble</h2>
 
         <p>
-        Le Web Almanac est un projet élaboré par <a href="https://httparchive.org">HTTP Archive</a>. HTTP Archive a été lancé en 2010 par Steve Souders avec pour mission d'étudier la manière dont le web est construit. Il évalue la composition de millions de pages Web sur une base mensuelle et met à disposition ses téraoctets de métadonnées pour analyse sur <a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>. En savoir plus <a href="https://httparchive.org/about">à propos de HTTP Archive</a>.
+        Le Web Almanac est un projet élaboré par <a href="https://httparchive.org">HTTP Archive</a>. HTTP Archive a été lancé en 2010 par Steve Souders avec pour mission d’étudier la manière dont le web est construit. Il évalue la composition de millions de pages Web sur une base mensuelle et met à disposition ses téraoctets de métadonnées pour analyse sur <a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>. En savoir plus <a href="https://httparchive.org/about">à propos de HTTP Archive</a>.
         </p>
 
         <p>
-        La mission du Web Almanac est de faciliter l’accès de la communauté Web au jeu de données de HTTP Archive en permettant aux expert·e·s du domaine d’y associer leur regard contextuel. On peut le considérer comme un référentiel annuel des connaissances sur l'état du web, 2019 étant sa première édition.
+        La mission du Web Almanac est de faciliter l’accès de la communauté Web au jeu de données de HTTP Archive en permettant aux expert·e·s du domaine d’y associer leur regard contextuel. On peut le considérer comme un référentiel annuel des connaissances sur l’état du web, 2019 étant sa première édition.
         </p>
 
         <p>
-        L'édition 2019 du Web Almanac repose sur quatre piliers&nbsp;: le contenu, l’expérience utilisateur, la publication et la distribution. Chaque partie du rapport constitue un pilier et se compose de chapitres explorant ses différents aspects. Par exemple, la Partie II représente l’expérience utilisateur et comprend les chapitres Performance, Sécurité, Accessibilité, SEO, PWA et Web mobile.
+        L’édition 2019 du Web Almanac repose sur quatre piliers&nbsp;: le contenu, l’expérience utilisateur, la publication et la distribution. Chaque partie du rapport constitue un pilier et se compose de chapitres explorant ses différents aspects. Par exemple, la Partie II représente l’expérience utilisateur et comprend les chapitres Performance, Sécurité, Accessibilité, SEO, PWA et Web mobile.
         </p>
     </section>
 
@@ -145,7 +145,7 @@
       <h2 id="dataset">À propos du jeu de données</h2>
 
         <p>
-        Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l'édition 2019 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de juillet 2019. Ces résultats sont <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2019_07_01</code>. 
+        Le jeu de données HTTP Archive est continuellement mis à jour avec de nouvelles données mensuelles. Pour l’édition 2019 du Web Almanac, sauf indication contraire dans le chapitre, tous les paramètres ont été obtenus à partir de l’index de juillet 2019. Ces résultats sont <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publiquement requêtables</a> sur BigQuery dans des tables préfixées par <code>2019_07_01</code>. 
         </p>
 
         <p>
@@ -199,7 +199,7 @@
         </p>
 
         <p>
-        HTTP Archive est également considéré comme un outil de test synthétique, ce qui signifie qu’il teste les sites Web à partir d’un datacenter et ne collecte pas de données à partir d’expériences utilisateur réelles. C’est pourquoi toutes les pages d’accueil du site Web sont testées avec un cache vide, à l'état déconnecté.
+        HTTP Archive est également considéré comme un outil de test synthétique, ce qui signifie qu’il teste les sites Web à partir d’un datacenter et ne collecte pas de données à partir d’expériences utilisateur réelles. C’est pourquoi toutes les pages d’accueil du site Web sont testées avec un cache vide, à l’état déconnecté.
         </p>
     </section>
 
@@ -239,7 +239,7 @@
       <h3 id="webpagetest">WebPageTest</h3>
 
       <p>
-        <a href="https://www.webpagetest.org/">WebPageTest</a> est un outil de test de performance Web incontournable et l'épine dorsale de HTTP Archive. Nous utilisons une <a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">instance privée</a> de WebPageTest avec des agents de test privés, c’est-à-dire de vrais navigateurs testant chaque page web. Les sites pour ordinateurs de bureau et périphériques mobiles sont testés avec différentes configurations&nbsp;:
+        <a href="https://www.webpagetest.org/">WebPageTest</a> est un outil de test de performance Web incontournable et l’épine dorsale de HTTP Archive. Nous utilisons une <a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">instance privée</a> de WebPageTest avec des agents de test privés, c’est-à-dire de vrais navigateurs testant chaque page web. Les sites pour ordinateurs de bureau et périphériques mobiles sont testés avec différentes configurations&nbsp;:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
@@ -307,7 +307,7 @@
       </p>
 
       <p>
-        L’instance privée de WebPageTest de HTTP Archive est synchronisée avec la dernière version publique et complétée par des <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">indicateurs personnalisés</a>. Ils sont collectés par des portions de JavaScript qui sont évaluées et exécutées sur chaque site web à la fin du test. Le script sur-mesure  <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> collecte plusieurs métriques qui sont autrement impossibles à calculer comme, par exemple,  celles qui dépendent de l'état du DOM.
+        L’instance privée de WebPageTest de HTTP Archive est synchronisée avec la dernière version publique et complétée par des <a href="https://github.com/HTTPArchive/legacy.httparchive.org/tree/master/custom_metrics">indicateurs personnalisés</a>. Ils sont collectés par des portions de JavaScript qui sont évaluées et exécutées sur chaque site web à la fin du test. Le script sur-mesure  <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/master/custom_metrics/almanac.js">almanac.js</a> collecte plusieurs métriques qui sont autrement impossibles à calculer comme, par exemple,  celles qui dépendent de l’état du DOM.
       </p>
 
       <p>
@@ -471,15 +471,15 @@
       <h3 id="interpretation">Interprétation</h3>
 
       <p>
-        Les auteurs et autrices ont travaillé avec les analystes pour interpréter correctement les résultats et tirer les conclusions appropriées. Au fur et à mesure que ces personnes ont rédigé leurs chapitres respectifs, elles ont puisé dans ces statistiques pour étayer leur analyse de l'état du Web. Leurs confrères et consœurs chargés de la relecture ont travaillé avec elles pour s’assurer de l’exactitude technique de leur analyse.
+        Les auteurs et autrices ont travaillé avec les analystes pour interpréter correctement les résultats et tirer les conclusions appropriées. Au fur et à mesure que ces personnes ont rédigé leurs chapitres respectifs, elles ont puisé dans ces statistiques pour étayer leur analyse de l’état du Web. Leurs confrères et consœurs chargés de la relecture ont travaillé avec elles pour s’assurer de l’exactitude technique de leur analyse.
       </p>
 
       <p>
-        Pour rendre les résultats plus facilement compréhensibles, l'équipe de développement Web et les analystes ont créé des visualisations de données à intégrer dans chaque chapitre. Certaines visualisations sont simplifiées pour faciliter la compréhension des conclusions. Par exemple, plutôt que de montrer un histogramme complet d’une distribution, seule une poignée de percentiles sont affichés. Sauf indication contraire, toutes les distributions sont résumées à l’aide de percentiles, surtout les médianes (50e percentile), et non les moyennes.
+        Pour rendre les résultats plus facilement compréhensibles, l’équipe de développement Web et les analystes ont créé des visualisations de données à intégrer dans chaque chapitre. Certaines visualisations sont simplifiées pour faciliter la compréhension des conclusions. Par exemple, plutôt que de montrer un histogramme complet d’une distribution, seule une poignée de percentiles sont affichés. Sauf indication contraire, toutes les distributions sont résumées à l’aide de percentiles, surtout les médianes (50e percentile), et non les moyennes.
       </p>
 
       <p>
-        Enfin, l'équipe de rédaction a revu les chapitres pour corriger de simples erreurs grammaticales et assurer l’uniformité de l’expérience de lecture.
+        Enfin, l’équipe de rédaction a revu les chapitres pour corriger de simples erreurs grammaticales et assurer l’uniformité de l’expérience de lecture.
       </p>
     </section>
 
@@ -487,11 +487,11 @@
       <h2 id="looking-ahead">Perspectives</h2>
 
       <p>
-        L'édition 2019 du Web Almanac est la première de ce que nous espérons  être une tradition annuelle d’introspection et d’investissement positif au sein de la communauté Web. Parvenir à ce résultat a demandé un effort monumental de la part de nombreux <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributeurs et contributrices</a> et nous espérons pouvoir grandement tirer parti de ce travail pour faciliter les éditions futures.
+        L’édition 2019 du Web Almanac est la première de ce que nous espérons  être une tradition annuelle d’introspection et d’investissement positif au sein de la communauté Web. Parvenir à ce résultat a demandé un effort monumental de la part de nombreux <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributeurs et contributrices</a> et nous espérons pouvoir grandement tirer parti de ce travail pour faciliter les éditions futures.
       </p>
 
       <p>
-        Si vous souhaitez contribuer à l'édition 2020 du Web Almanac, n’hésitez pas à nous le dire via <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
+        Si vous souhaitez contribuer à l’édition 2020 du Web Almanac, n’hésitez pas à nous le dire via <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
       </p>
     </section>
   </div>
