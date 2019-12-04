@@ -8,7 +8,7 @@ reviewers: [obto, paulcalvano, mathiasbynens]
 translators: []
 discuss: 1756
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-23T00:00:00.000Z
+last_updated: 2019-12-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -23,7 +23,7 @@ The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://
 
 JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, [download and execution have become the most expensive stages](https://v8.dev/blog/cost-of-javascript-2019) when JavaScript is processed by a web page.
 
-Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. **But how much JavaScript do we really use?**
+Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig1.png">
@@ -75,7 +75,7 @@ Although this data shows how much longer it can take for a mobile device to proc
 
 ### Number of requests
 
-One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With [HTTP/2](https://developers.google.com/web/fundamentals/performance/http2), sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, **how many requests are being fetched?**
+One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With [HTTP/2](./http2), sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, how many requests are being fetched?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig5.png">
@@ -89,9 +89,9 @@ At the median, 19 requests are sent for desktop and 18 for mobile.
 
 ### First-party vs. third-party
 
-Of the results analyzed so far, the entire size and number of requests were being considered. In a majority of websites however, a significant portion of the JavaScript code fetched and used comes from third-party sources.
+Of the results analyzed so far, the entire size and number of requests were being considered. In a majority of websites however, a significant portion of the JavaScript code fetched and used comes from [third-party](./third-party) sources.
 
-Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: **how many requests sent are third-party instead of first-party?**
+Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: how many requests sent are third-party instead of first-party?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig6.png">
@@ -127,7 +127,7 @@ For both mobile and desktop clients, more third-party requests are sent than fir
 	<figcaption id="fig9-caption">Figure 9. Distribution of total JavaScript downloaded on mobile.</figcaption>
 </figure>
 
-At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat.
+At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the ["Third Party"](./third-party) chapter.
 
 ## Resource compression
 
@@ -140,7 +140,7 @@ There are multiple text-compression algorithms, but only two are mostly used for
 
 Compressed scripts will always need to be uncompressed by the browser once transferred. This means its content remains the same and execution times are not optimized whatsoever. Resource compression, however, will always improve download times which also is one of the most expensive stages of JavaScript processing. Ensuring JavaScript files are compressed correctly can be one of the most significant factors in improving site performance.
 
-**How many sites are compressing their JavaScript resources?**
+How many sites are compressing their JavaScript resources?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig10.png">
@@ -156,9 +156,7 @@ For a deeper analysis on compression, refer to the ["Compression"](./compression
 
 ## Open source libraries and frameworks
 
-Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as [Chromium](https://www.chromium.org/Home) and [Firefox](https://www.openhub.net/p/firefox), open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages cam make feature development easier and faster.
-
-**Which JavaScript open-source libraries are used the most?**
+Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as [Chromium](https://www.chromium.org/Home) and [Firefox](https://www.openhub.net/p/firefox), open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages cam make feature development easier and faster. So which JavaScript open-source libraries are used the most?
 
 <figure>
 	<table>
@@ -291,9 +289,7 @@ Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQu
 
 ### Frameworks and UI libraries
 
-In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building **single-page applications** (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites.
-
-**How many sites use these types of frameworks?**
+In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building **single-page applications** (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig12.png">
@@ -316,13 +312,13 @@ Although this analysis is interesting, it's important to keep in mind that these
 
 [JavaScript modules](https://v8.dev/features/modules), or ES modules, are supported in [all major browsers](https://caniuse.com/#feat=es6-module). Modules provide the capability to create scripts that can import and export from other modules. This allows anyone to build their applications architected in a module pattern, importing and exporting wherever necessary, without relying on third-party module loaders.
 
-To declare a script as a module, the script tag must get the `type="module"`:
+To declare a script as a module, the script tag must get the `type="module"` attribute:
 
 ```html
 <script type="module" src="main.mjs"></script>
 ```
 
-**How many sites use `type="module"` for scripts on their page?**
+How many sites use `type="module"` for scripts on their page?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig13.png">
@@ -340,9 +336,7 @@ If native modules are used, it's important to ensure that an appropriate fallbac
 <script nomodule src="fallback.js"></script>
 ```
 
-When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to [send modern code to modern browsers for faster page loads](https://web.dev/serve-modern-code-to-modern-browsers/).
-
-So, **how many sites use `nomodule` for scripts on their page?**
+When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to [send modern code to modern browsers for faster page loads](https://web.dev/serve-modern-code-to-modern-browsers/). So, how many sites use `nomodule` for scripts on their page?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig14.png">
@@ -356,12 +350,12 @@ Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scr
 
 ## Preload and prefetch
 
-[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) and [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are directives which enable you to aid the browser in determining what resources need to be downloaded.
+[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) and [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are [resource hints](./resource-hints) which enable you to aid the browser in determining what resources need to be downloaded.
 
 - Preloading a resource with `<link rel="preload">` tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., JavaScript located at the bottom of your HTML) and are otherwise downloaded last.
-- Using `<link rel="prefetch">` tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations
+- Using `<link rel="prefetch">` tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations 
 
-**So, how many sites use preload and prefetch directives?**
+So, how many sites use preload and prefetch directives?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig15.png">
@@ -373,7 +367,7 @@ Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scr
 
 For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mobile sites use `<link rel="preload">` for scripts on their page.
 
-For prefetch:
+For prefetch, we have the following:
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig16.png">
@@ -391,7 +385,7 @@ JavaScript continues to evolve as a language. A new version of the language stan
 
 With HTTP Archive, we can take a look at any newer API that is supported (or is about to be) and see how widespread its usage is. These APIs may already be used in browsers that support them _or_ with an accompanying polyfill to make sure they still work for every user.
 
-**How many sites use the following APIs?**
+How many sites use the following APIs?
 
 - [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
 - [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
@@ -418,7 +412,7 @@ In many build systems, JavaScript files undergo minification to minimize its siz
 
 A **source map** is an additional file accompanying a JavaScript file that allows a browser to map the final output to its original source. This can make debugging and analyzing production bundles much simpler.
 
-Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. **So how many sites actually include sourcemaps?**
+Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. So how many sites actually include sourcemaps?
 
 <figure>
    <a href="/static/images/2019/01_JavaScript/fig18.png">
