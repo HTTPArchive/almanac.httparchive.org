@@ -26,41 +26,43 @@ Pour les premiers visiteurs, ou les visiteurs qui n'ont pas d'entrées dans leur
 
 
 
-Web architectures typically involve [multiple tiers of caching](https://blog.yoav.ws/tale-of-four-caches/). For example, an HTTP request may have the opportunity to be cached in:
+Les architectures Web impliquent généralement [plusieurs niveaux de mise en cache](https://blog.yoav.ws/tale-of-four-caches/).
 
-*   An end user's browser
-*   A service worker cache in the user's browser
-*   A shared gateway
-*   CDNs, which offer the ability to cache at the edge, close to end users
-*   A caching proxy in front of the application, to reduce the backend workload
-*   The application and database layers
+Par exemple une requette HTTP peut être mise en cache de différentes manière
+*   Dans le cache du navigateur
+*   Au niveau des [services workers API](https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API)
+*   Mise en cache des [requettes HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Cache)
+*   via les CDN, qui offrent la possibilité de mettre en cache à proximité des utilisateurs
+*   Dans un proxy cache devant les applications front pour réduire la charge sur les backends
+*   Au niveau de l'application et de la base de donnée
 
-This chapter will explore how resources are cached within web browsers.
 
-## Overview of HTTP caching
+Ce chapitre explique comment les ressources sont mises en cache dans les navigateurs Web.
 
-For an HTTP client to cache a resource, it needs to understand two pieces of information:
+## Présentation de la mise en chache HTTP
 
-*   "How long am I allowed to cache this for?"
-*   "How do I validate that the content is still fresh?"
+Pour qu'un client HTTP puisse mettre en cache une ressource, il doit répondre a deux questions :
 
-When a web browser sends a response to a client, it typically includes headers that indicate whether the resource is cacheable, how long to cache it for, and how old the resource is. RFC 7234 covers this in more detail in section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) and [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
+*   "Combien de temps dois-je mettre ceci en cache ?"
+*   "Comment puis-je valider que le contenu soit encore valide ?"
 
-The HTTP response headers typically used for conveying freshness lifetime are:
+Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralement dans sa réponse des en-têtes qui indiquent si la ressource peut être mise en cache, pour combien de temps elle doit l'être et quel est son âge. La RFC 7234 traite plus en détail de ce point dans la section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) et [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
 
-*   `Cache-Control` allows you to configure a cache lifetime duration (i.e. how long this is valid for).
-*   `Expires` provides an expiration date or time (i.e. when exactly this expires).
+Les en-têtes de réponse HTTP généralement utilisés pour transmettre la durée de vie de la validité sont :
 
-`Cache-Control` takes priority if both are present. These are [discussed in more detail below](#cache-control-vs-expires).
+*   `Cache-Control` vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
+*   `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
 
-The HTTP response headers for validating the responses stored within the cache, i.e. giving conditional requests something to compare to on the server side, are:
+`Cache-Control` takes priority if both are present. Celles-ci sont[abordées plus en détail ci-dessous](#cache-control-vs-expires).
 
-*   `Last-Modified` indicates when the object was last changed.
-*   Entity Tag (`ETag`) provides a unique identifier for the content.
+Les en-têtes de réponse HTTP pour valider les réponses stockées dans le cache , i.e. donner les conditions necessaires pour valider une requête coté serveur, sont:
 
-`ETag` takes priority if both are present. These are [discussed in more detail below](#validating-freshness).
+*   `Last-Modified` indique quand la ressource a été modifié pour la dernière fois.
+*   `ETag` fournit l'identifiant unique d'une entité.
 
-The example below contains an excerpt of a request/response header from HTTP Archive's main.js file. These headers indicate that the resource can be cached for 43,200 seconds (12 hours), and it was last modified more than two months ago (difference between the `Last-Modified` and `Date` headers).
+`ETag` est prioritaire si les deux sont présents. Celles-ci sont[abordées plus en détail ci-dessous](#validating-freshness).
+
+L'exemple ci-dessous contient un extrait d'un en-tête requête/réponse du fichier main.js de HTTP Archive. Ces en-têtes indiquent que la ressource peut être mise en cache pendant 43 200 secondes (12 heures),  et il a été modifié pour la dernière fois il y a plus de deux mois (différence entre les en-têtes `Last-Modified` et `Date`).
 
 ```
 > GET /static/js/main.js HTTP/1.1
@@ -80,37 +82,38 @@ The example below contains an excerpt of a request/response header from HTTP Arc
 < ETag: "1566748830.0-3052-3932359948"
 ```
 
-The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a detailed explanation of how the response would be cached based on these headers. For example, [a test for the URL above](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) would output the following:
+L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voir un rapport détaillé de la façon dont la réponse sera mise en cache en fonction de ses en-têtes. Par exemple,[un test pour l'URL ci-dessus](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) produirait ce qui suit :
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg">
     <img alt="Figure 1. Cache-Control information from RedBot." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600">
   </a>
-  <div id="fig1-description" class="visually-hidden">Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings.</div>
-  <figcaption d="fig1-caption">Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
+  <div id="fig1-description" class="visually-hidden">Exemple de réponse Redbot montrant des informations détaillées sur le moment où la ressource a été modifiée, si les caches peuvent le stocker, combien de temps il peut être considéré valide et si necessaire les avertissements.</div>
+  <figcaption d="fig1-caption">Figure 1. <code>Cache-Control</code> informations de RedBot.</figcaption>
 </figure>
 
-If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.
+Si aucun en-tête de mise en cache n'est présent dans une réponse, alors le [client est autorisé à mettre en cache heuristiquement la réponse](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). La plupart des clients mettent en œuvre une variante de l'heuristique suggérée par le RFC, qui est de 10 % du temps depuis que le `Last-Modified`. Cependant, certains peuvent mettre la réponse en cache indéfiniment. Il est donc important de définir des règles de mise en cache spécifiques pour s'assurer que vous êtes en contrôle de la cacheabilité.
 
-72% of responses are served with a `Cache-Control` header, and 56% of responses are served with an `Expires` header. However, 27% of responses did not use either header, and therefore are subject to heuristic caching. This is consistent across both desktop and mobile sites.
+72 % des réponses HTTP sont servies avec un en-tête `Cache-Control`, et 56% des réponses sont servies avec un en-tête `Expires`. Cependant, 27 % des réponses n'utilisaient ni l'un ni l'autre, et sont donc sujettes à la mise en cache heuristique. Ceci est cohérent entre les sites desktop et les sites mobiles.
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig2.png">
     <img src="/static/images/2019/16_Caching/fig2.png" alt="Figure 2. Presence of HTTP Cache-Control and Expires headers." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&amp;format=interactive">
   </a>
-  <div id="fig2-description" class="visually-hidden">Two identical bar charts for mobile and desktop showing 72% of requests use Cache-Control headers, 56% use Expires and the 27% use neither.</div>
-  <figcaption id="fig2-caption">Figure 2. Presence of HTTP <code>Cache-Control</code> and <code>Expires</code> headers.</figcaption>
+  <div id="fig2-description" class="visually-hidden">Deux diagrammes à barres identiques pour le mobile et le bureau montrant que 72% des requêtes utilisent des en-têtes Cache-Control, 56% utilisent Expires et les 27% n'utilisent aucun des deux.</div>
+  <figcaption id="fig2-caption">Figure 2. Présence de HTTP <code>Cache-Control</code> et <code>Expires</code> en en-tête.</figcaption>
 </figure>
 
-## What type of content are we caching?
+## Quel type de contenu met-on en cache ?
 
-A cacheable resource is stored by the client for a period of time and available for reuse on a subsequent request. Across all HTTP requests, 80% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these,
+Une ressource mise en cache est stockée par le client pendant un certain temps et peut être réutilisée sur demande ultérieure. Pour les requêtes HTTP, 80% des réponses sont considérées comme pouvant être mises en cache, ce qui signifie qu'un cache est autorisé à les stocker. En dehors de ça,
 
-*   6% of requests have a time to time (TTL) of 0 seconds, which immediately invalidates a cached entry.
-*   27% are cached heuristically because of a missing `Cache-Control` header.
-*   47% are cached for more than 0 seconds.
 
-The remaining responses are not permitted to be stored in browser caches.
+*   6 % des demandes ont un time to time (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
+*   27% sont mis en cache heuristiquement à cause d'un `Cache-Control` manquant en en-tête.
+*   47% sont mis en cache pendant plus de 0 seconde.
+
+Les autres réponses ne peuvent pas être stockées dans la mémoire cache du navigateur.
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig3.png">
