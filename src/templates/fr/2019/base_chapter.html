@@ -95,7 +95,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }} sur GitHub" height="80" width="78" loading="lazy" /></a>
                   {% endif %}
                   {% if authordata.website %}
-                  <a class="website" href="{{ authordata.website }}"><img src="/static/images/blog.png" alt="site web de {{ contributor.name }}" height="72" width="72" loading="lazy" /></a>
+                  <a class="website" href="{{ authordata.website }}"><img src="/static/images/blog.png" alt="site web de {{ authordata.name }}" height="72" width="72" loading="lazy" /></a>
                   {% endif %}
                   </span>
               {% endif %}
