@@ -94,6 +94,9 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   {% if authordata.github %}
                   <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }} on GitHub" height="80" width="78" loading="lazy" /></a>
                   {% endif %}
+                  {% if authordata.website %}
+                  <a class="website" href="{{ authordata.website }}"><img src="/static/images/blog.png" alt="{{ authordata.name }} website" height="72" width="72" loading="lazy" /></a>
+                  {% endif %}
                   </span>
               {% endif %}
               {% if authordata.tagline %}
