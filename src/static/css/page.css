@@ -43,7 +43,7 @@
   grid-area: index;
 }
 .index .index-box {
-  margin: 20px 8px 8px;
+  margin: 20px 0;
   padding: 8px 16px;
 }
 .index .header {
@@ -107,10 +107,7 @@
 
 .content {
   grid-area: content;
-  margin: 8px;
-  padding: 16px;
-  margin-top: 0;
-  padding-top: 0;
+  margin-left: 30px;
   min-width: 320px;
 }
 .content > section {
@@ -340,8 +337,7 @@ figure .fig-desktop {
     grid-template-columns: auto;
   }
   .main .content {
-    margin: 0;
-    padding: 0;
+    margin-left: 0;
   }
   .index {
     margin: 30px 0;
@@ -390,4 +386,38 @@ figure .fig-desktop {
     display: block;
     max-width: 100%;
   }
+}
+
+/* Code highlighting */
+.code-block {
+  margin: 8px 0;
+  padding: 16px;
+}
+.code-block .divider {
+  position: relative;
+  border: 1px solid #1A2B490A;
+  width: calc(100% + 32px);
+  left: -16px;
+}
+.code-block pre {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.code-block code {
+  width: 100%;
+}
+.code-comment {
+  color: #838689;
+}
+.code-keyword {
+  color: #4A3244;
+}
+.code-function {
+  color: #1A2B49;
+}
+.code-string {
+  color: #2C4A73;
+}
+.code-number {
+  color: #A8CABA;
 }

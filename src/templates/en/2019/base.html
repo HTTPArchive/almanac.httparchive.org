@@ -9,46 +9,48 @@
 {% block content%}
   {% block header %}
   <header class="alt-bg">
-    <div class="top-header">
-      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac by HTTP Archive"></a>
-      <nav>
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
-        {% if supported_years | length > 1 %}
-          {{ year_switcher() }}
-        {% endif %}
-      </nav>
-      <div class="cta">
-        {% if request.endpoint == 'home' %}
-          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
-            Start Exploring
-          </a>
-        {% endif %}
+    <div class="container">
+      <div class="top-header">
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac by HTTP Archive"></a>
+        <nav>
+          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
+          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+          {% if supported_years | length > 1 %}
+            {{ year_switcher() }}
+          {% endif %}
+        </nav>
         {{ language_switcher() }}
-      </div>
-      <button type="button" class="menu-btn" arial-label="Menu">
-        <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" />
-      </button>
-      <nav class="menu">
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
-        <div class="misc">
-          <a href="https://httparchive.org/">
-            <img src="/static/images/ha-home.svg" alt="HTTP Archive home" height="35" width="70">
-          </a>
-          <div class="social-media">
-            <a href="https://twitter.com/HTTPArchive" class="twitter">
-              <img src="/static/images/twitter.png" height="80" width="65" alt="Twitter" loading="lazy" />
-            </a>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-              <img src="/static/images/github.png" height="80" width="78" alt="GitHub" loading="lazy" />
+        {% if request.endpoint == 'home' %}
+          <div class="cta">
+            <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
+              Start Exploring
             </a>
           </div>
-          {{ language_switcher() }}
-        </div>
-      </nav>
+        {% endif %}
+        <button type="button" class="menu-btn" arial-label="Menu">
+          <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" />
+        </button>
+        <nav class="menu">
+          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table of Contents</a>
+          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
+          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
+          <div class="misc">
+            <a href="https://httparchive.org/">
+              <img src="/static/images/ha-home.svg" alt="HTTP Archive home" height="35" width="70">
+            </a>
+            <div class="social-media">
+              <a href="https://twitter.com/HTTPArchive" class="twitter">
+                <img src="/static/images/twitter.png" height="80" width="65" alt="Twitter" loading="lazy" />
+              </a>
+              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+                <img src="/static/images/github.png" height="80" width="78" alt="GitHub" loading="lazy" />
+              </a>
+            </div>
+            {{ language_switcher() }}
+          </div>
+        </nav>
+      </div>
     </div>
     {% if request.endpoint == 'home' %}
     <div class="intro-container">
@@ -73,7 +75,9 @@
   </header>
   {% endblock %}
 
-  {% block main %}{% endblock %}
+  <div class="container">
+    {% block main %}{% endblock %}
+  </div>
 
   {% block footer %}
     <footer class="alt-bg">
