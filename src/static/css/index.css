@@ -17,6 +17,19 @@ header.alt-bg {
   background-color: transparent;
 }
 
+header .container {
+  max-width: none;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (max-width: 600px) {
+  header .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 #home {
   /* -400px to overcome the `padding-bottom: 400px;` for the above adjacent header */
   margin-top: -400px;
@@ -27,6 +40,12 @@ header.alt-bg {
     'chapter'
     'contributors'
     'methodology';
+
+  /* Overcome the .container parent wrapper */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;  
 }
 
 #home section {
