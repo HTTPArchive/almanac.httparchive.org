@@ -287,6 +287,10 @@ There are a number of possible reasons:
 
 Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/) and so on.
 
+### Frameworks and UI libraries	
+
+Note: A previous version of this chapter discussed the usage of frameworks in this section. However, we are investigating queries around the accuracy of these statistics and have decided to remove this section temporarily while we complete this review.
+
 ## Differential loading
 
 [JavaScript modules](https://v8.dev/features/modules), or ES modules, are supported in [all major browsers](https://caniuse.com/#feat=es6-module). Modules provide the capability to create scripts that can import and export from other modules. This allows anyone to build their applications architected in a module pattern, importing and exporting wherever necessary, without relying on third-party module loaders.
