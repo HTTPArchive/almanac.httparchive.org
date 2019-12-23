@@ -65,7 +65,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endfor %}
   </div>
 
-  {% if metadata.get('translators') | length > 1 %}
+  {% if metadata.get('translators') | length >= 1 %}
   <div class="byline translators">Translated by
   {% for translator in metadata.get('translators') %}
     <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
