@@ -338,7 +338,7 @@ CSS tiene este increíble poder de interpolación que se puede usar simplemente 
   <a href="/static/images/2019/02_CSS/fig25.png">
     <img src="/static/images/2019/02_CSS/fig25.png" alt="Figura 25. Distribución del número de transiciones por página." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&amp;format=interactive">
   </a>
-  <div id="fig25-description" class="visually-hidden">Bar chart showing the distribution of transitions per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 2, 16, 49, and 118 transitions. The desktop distribution is much lower than mobile, by as many as 77 transitions at the 90th percentile.</div>
+  <div id="fig25-description" class="visually-hidden">Gráfico de barras que muestra la distribución de las transiciones por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 0, 2, 16, 49 y 118 transiciones. La distribución del escritorio es mucho más baja que la del móvil, hasta 77 transiciones en el percentil 90.</div>
   <figcaption id="fig25-caption">Figura 25. Distribución del número de transiciones por página.</figcaption>
 </figure>
 
@@ -352,7 +352,7 @@ Las animaciones de keyframe CSS son una excelente solución para sus animaciones
   <a href="/static/images/2019/02_CSS/fig26.png">
     <img src="/static/images/2019/02_CSS/fig26.png" alt="Figura 26. Distribución del número de keyframe por página." aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&amp;format=interactive">
   </a>
-  <div id="fig26-description" class="visually-hidden">Bar chart showing the distribution of keyframes per page. For mobile pages the 10, 25, 50, 75, and 90th percentiles are: 0, 0, 3, 18, and 76 keyframes. The mobile distribution is slightly higher than desktop by 6 keyframes at the 75th and 90th percentiles.</div>
+  <div id="fig26-description" class="visually-hidden">Gráfico de barras que muestra la distribución de keyframes por página. Para las páginas móviles, los percentiles 10, 25, 50, 75 y 90 son: 0, 0, 3, 18 y 76 fotogramas clave. La distribución móvil es ligeramente superior a la de escritorio en 6 fotogramas clave en los percentiles 75 y 90.</div>
   <figcaption id="fig26-caption">Figura 26. Distribución del número de keyframe por página.</figcaption>
 </figure>
 
