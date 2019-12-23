@@ -17,7 +17,7 @@ Le web ouvert a été conçu pour être vaste, interconnectable et interopérabl
 
 ## Définitions
 
-### Ressource "tierce"
+### "Tierce partie"
 
 Une tierce partie est une entité extérieure à la relation principale entre le site et l’utilisateur. Autrement dit, tous les aspects du site qui ne sont pas directement sous le contrôle du propriétaire du site mais qui sont présents avec son approbation. Par exemple, le script Google Analytics est un exemple de ressource tierce courante.
 
