@@ -1,8 +1,8 @@
 ---
 part_number: II
 chapter_number: 5
-title: Parties tierces
-description: Le chapitre sur les ressources tierces du Web Almanac 2019, qui aborde les parties tierces utilisées, pourquoi elles le sont et les répercussions de leur usage sur le rendu et la confidentialité.
+title: Tierces Parties
+description: Le chapitre sur les ressources tierces du Web Almanac 2019, qui aborde les tierces parties utilisées, pourquoi elles le sont et les répercussions de leur usage sur le rendu et la confidentialité.
 authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 translators: [borisschapira, JustinyAhin]
@@ -64,7 +64,7 @@ Le présent chapitre classe les fournisseurs tiers dans l’une de ces grandes c
   <figcaption>Figure 1. Pourcentage des pages destinées aux ordinateurs de bureau qui comprennent au moins une ressource tierce.</figcaption>
 </figure>
 
-Le code tiers est partout. 93 % des pages comprennent au moins une ressource tierce, 76 % des pages émettent une requête vers un domaine de télémétrie, une page requête, en médiane, du contenu en provenance d’au moins 9 domaines tiers _uniques_, ce qui représente 35 % de l’activité réseau totale. 10 % des pages, les plus "actives", émettent plus de 175 requêtes vers des ressources tierces. Il n’est pas exagéré de dire que les parties tierces font partie intégrante du web.
+Le code tiers est partout. 93 % des pages comprennent au moins une ressource tierce, 76 % des pages émettent une requête vers un domaine de télémétrie, une page requête, en médiane, du contenu en provenance d’au moins 9 domaines tiers _uniques_, ce qui représente 35 % de l’activité réseau totale. 10 % des pages, les plus "actives", émettent plus de 175 requêtes vers des ressources tierces. Il n’est pas exagéré de dire que les tierces parties font partie intégrante du web.
 
 <figure>
   <div class="big-number">55,63 %</div>
@@ -119,7 +119,7 @@ Rang | URL de ressource tierce | Pourcentage des requêtes
 
 ### Types de ressources
 
-La répartition du volume de contenu par type de ressource donne également un aperçu de la façon dont le code tiers est utilisé sur le web. Alors que les requêtes sur le domaine principal sont composées à 56 % d’images, à 23 % de scripts, à 14 % de CSS, et seulement à 4 % de HTML, les requêtes vers des domaines tiers contienne davantage de scripts et de code HTML (32 % de scripts, 34 % d’images, 12 % HTML, et seulement 6 % de CSS). On pourrait penser que le code d’une partie tierce est moins souvent utilisé pour faciliter la conception et plus fréquemment pour faciliter ou observer les interactions que le code du domaine principal, mais une ventilation des types de ressources par type de partie tierce apporte de la nuance à cette idée. Alors que les CSS et les images sont majoritairement issus du domaine principal (respectivement 70 % et 64 %), les polices sont largement servies par des fournisseurs tiers, avec seulement 28 % provenant du domaie principal. Nous explorerons plus en détails ces usages plus loin dans ce chapitre.
+La répartition du volume de contenu par type de ressource donne également un aperçu de la façon dont le code tiers est utilisé sur le web. Alors que les requêtes sur le domaine principal sont composées à 56 % d’images, à 23 % de scripts, à 14 % de CSS, et seulement à 4 % de HTML, les requêtes vers des domaines tiers contienne davantage de scripts et de code HTML (32 % de scripts, 34 % d’images, 12 % HTML, et seulement 6 % de CSS). On pourrait penser que le code d’une tierce partie est moins souvent utilisé pour faciliter la conception et plus fréquemment pour faciliter ou observer les interactions que le code du domaine principal, mais une ventilation des types de ressources par type de tierce partie apporte de la nuance à cette idée. Alors que les CSS et les images sont majoritairement issus du domaine principal (respectivement 70 % et 64 %), les polices sont largement servies par des fournisseurs tiers, avec seulement 28 % provenant du domaie principal. Nous explorerons plus en détails ces usages plus loin dans ce chapitre.
 
 <figure>
   <a href="/static/images/2019/05_Third_Parties/fig5.png">
@@ -228,7 +228,7 @@ La forte concentration de l’exécution des scripts est excellente au regard de
 
 Bien que le sujet de la sécurité soit traité plus en profondeur dans le chapitre [Sécurité](./sécurité), les conséquences de l’introduction de dépendances externes sur votre site en matière de sécurité sont indissociables de la protection de la vie privée. Permettre à des tiers d’exécuter des JavaScript arbitraires leur donne un contrôle total sur votre page. Quand un script peut contrôler le DOM et `window`, il peut tout faire. Même si le code n’a pas de problèmes de sécurité, il peut introduire un point unique de défaillance, [ce qui a été reconnu comme un problème potentiel depuis un certain temps maintenant](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
 
-[Auto-héberger du contenu de parties tierces](https://csswizardry.com/2019/05/self-host-your-static-assets/) répond à certaines des préoccupations mentionnées ici – et à d’autres. De plus, comme les navigateurs [partitionnement de plus en plus les caches HTTP](https://chromestatus.com/feature/5730772021411840), les avantages du chargement direct à partir de la tierce partie semblent plus que jamais incertains. Cette méthode est peut-être meilleure pour de nombreux cas d’utilisation, même si elle rend la mesure de son impact plus difficile.
+[Auto-héberger du contenu de tierces parties](https://csswizardry.com/2019/05/self-host-your-static-assets/) répond à certaines des préoccupations mentionnées ici – et à d’autres. De plus, comme les navigateurs [partitionnement de plus en plus les caches HTTP](https://chromestatus.com/feature/5730772021411840), les avantages du chargement direct à partir de la tierce partie semblent plus que jamais incertains. Cette méthode est peut-être meilleure pour de nombreux cas d’utilisation, même si elle rend la mesure de son impact plus difficile.
 
 ## Conclusion
 
