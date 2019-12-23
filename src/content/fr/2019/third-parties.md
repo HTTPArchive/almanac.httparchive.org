@@ -13,7 +13,7 @@ last_updated: 2019-12-21T00:00:00.000Z
 
 ## Introduction
 
-Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments `<link>` ou `<script>` a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
+Le web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments `<link>` ou `<script>` a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web. Par contre, l’immense popularité de quelques fournisseurs tiers pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le web en 2019, les modèles d’utilisation du web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des expériences sur le web.
 
 ## Définitions
 
