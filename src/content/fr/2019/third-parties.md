@@ -79,7 +79,7 @@ Alors que la publicité pourrait être l’exemple le plus visible de contenus t
 
 ### Fournisseurs
 
-Un nombre relativement restreint de fournisseurs dominent le paysage des services tiers : les 100 premiers domaines représentent 30 % des requêtes réseau sur le Web. Des moteurs comme Google, Facebook et YouTube sont en tête avec des pourcentages entiers de parts de marché chacun, mais des entités plus petites comme Wix et Shopify représentent aussi une partie substantielle de la popularité des tiers.
+Un nombre relativement restreint de fournisseurs dominent le paysage des services tiers : les 100 premiers domaines représentent 30 % des requêtes réseau sur le web. Des moteurs comme Google, Facebook et YouTube sont en tête avec des pourcentages entiers de parts de marché chacun, mais des entités plus petites comme Wix et Shopify représentent aussi une partie substantielle de la popularité des tiers.
 
 Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact de chaque fournisseur sur la performance, nous laissons au lecteur et à d’autres outils conçus à cet effet, tels que [third-party-web](https://thirdpartyweb.today), le soin de faire faire une analyse plus objective de ces questions.
 
