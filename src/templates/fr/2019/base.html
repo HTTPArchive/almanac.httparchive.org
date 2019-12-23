@@ -9,46 +9,48 @@
 {% block content%}
   {% block header %}
   <header class="alt-bg">
-    <div class="top-header">
-      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive"></a>
-      <nav>
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
-        {% if supported_years | length > 1 %}
-          {{ year_switcher() }}
-        {% endif %}
-      </nav>
-      <div class="cta">
+    <div class="container">
+      <div class="top-header">
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive"></a>
+        <nav>
+          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
+          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
+          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
+          {% if supported_years | length > 1 %}
+            {{ year_switcher() }}
+          {% endif %}
+        </nav>
+        {{ language_switcher() }}
         {% if request.endpoint == 'home' %}
+          <div class="cta">
           <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
             Commencer l’exploration
-          </a>
-        {% endif %}
-        {{ language_switcher() }}
-      </div>
-      <button type="button" class="menu-btn" arial-label="Menu">
-        <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" />
-      </button>
-      <nav class="menu">
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
-        <div class="misc">
-          <a href="https://httparchive.org/">
-            <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
-          </a>
-          <div class="social-media">
-            <a href="https://twitter.com/HTTPArchive" class="twitter">
-              <img src="/static/images/twitter.png" height="80" width="65" alt="Twitter" loading="lazy" />
-            </a>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-              <img src="/static/images/github.png" height="80" width="78" alt="GitHub" loading="lazy" />
             </a>
           </div>
-          {{ language_switcher() }}
-        </div>
-      </nav>
+        {% endif %}
+        <button type="button" class="menu-btn" arial-label="Menu">
+          <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" />
+        </button>
+        <nav class="menu">
+          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
+          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
+          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
+          <div class="misc">
+            <a href="https://httparchive.org/">
+              <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
+            </a>
+            <div class="social-media">
+              <a href="https://twitter.com/HTTPArchive" class="twitter">
+                <img src="/static/images/twitter.png" height="80" width="65" alt="Twitter" loading="lazy" />
+              </a>
+              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+                <img src="/static/images/github.png" height="80" width="78" alt="GitHub" loading="lazy" />
+              </a>
+            </div>
+            {{ language_switcher() }}
+          </div>
+        </nav>
+      </div>
     </div>
     {% if request.endpoint == 'home' %}
     <div class="intro-container">
@@ -56,9 +58,8 @@
         <div class="intro-year">2019</div>
         <h1 class="title title-lg title-alt">Web Almanac</h1>
         <h2>
-          Rapport annuel<br>
-          de HTTP Archive sur<br>
-          <b>l’état du Web</b>
+          Rapport annuel<br>de HTTP Archive
+          sur<br><b>l’état du Web</b>
         </h2>
         <p>
           Notre mission est de combiner les statistiques brutes et les tendances de HTTP Archive avec l’expertise de la communauté web. Le Web Almanac est un rapport complet sur l’état du Web, soutenu par des données réelles et des experts du Web. Il est composé de 20 chapitres couvrant l’expérience utilisateur, le contenu des pages, leur publication et leur distribution.
@@ -74,7 +75,9 @@
   </header>
   {% endblock %}
 
-  {% block main %}{% endblock %}
+  <div class="container">
+    {% block main %}{% endblock %}
+  </div>
 
   {% block footer %}
     <footer class="alt-bg">
