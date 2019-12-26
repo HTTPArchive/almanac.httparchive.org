@@ -246,8 +246,417 @@ Lorsque nous regardons de plus près les types de ressources qui se chargent sur
 L'impact n'est pas nécessairement en corrélation avec le nombre de requêtes, mais plutôt avec la quantité de données associées à ces requêtes individuelles. Par exemple, dans le cas des ressources vidéo dont seulement deux demandes sont faites à la médiane, elles ont un poids de plus de 1Mo. Les expériences multimédias s'accompagnent également de l'utilisation de scripts pour intégrer l'interactivité, fournir des fonctionnalités et des données, pour ne citer que quelques cas d'utilisation. Sur les pages mobiles comme sur les pages desktop, ces ressources sont les troisièmes plus lourdes.
 
 Avec nos expériences des CMS qui sont saturées de ces ressources, nous devons considérer l'impact que cela a sur les visiteurs du site web sur le front-end - leur expérience est-elle rapide ou lente ? De plus, lorsque l'on compare l'utilisation des ressources mobiles et desktop, la quantité de requêtes et le poids ne montrent que peu de différence. Cela signifie que la même quantité et le même poids de ressources alimentent à la fois les expériences CMS sur mobile et sur desktop. La variation de la vitesse de connexion et de la qualité des appareils mobiles ajoute [une autre couche de complexité] (https://medinathoughts.com/2017/12/03/the-perils-of-mobile-web-performance-part-iii/). Plus tard dans ce chapitre, nous utiliserons les données du CrUX pour évaluer l'expérience des utilisateurs dans l'écosystème des CMS.
+
 ### Ressources tierces
 
 Soulignons un sous-ensemble spécifique de ressources pour évaluer leur impact dans l'écosystème des CMS. Les ressources [Tierce partie](./third-parties) sont celles qui proviennent d'origines n'appartenant pas au nom de domaine ou aux serveurs du site de destination. Elles peuvent être des images, des vidéos, des scripts ou d'autres types de ressources. Parfois, ces ressources sont combinées entre elles, comme par exemple avec l'intégration d'une `iframe`. Nos données révèlent que la quantité médiane de ressources tierces sur desktop et sur mobile est très similaire.
 
-La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 et pèse 264,72 Ko, tandis que la médiane de ces requêtes sur les pages CMS desktop est de 16 et pèse 271,56 Ko. (Il est à noter que cela exclut les ressources 3P considérées comme faisant partie de l'"hébergement").
+La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 et pèse 264,72 Ko, tandis que la médiane de ces requêtes sur les pages CMS desktop est de 16 et pèse 271,56 Ko. (Il est à noter que cela exclut les ressources 3P considérées comme faisant partie de l' "hébergement".
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig10.png">
+    <img src="/static/images/2019/14_CMS/fig10.png" alt="Figure 10. Distribution of third-party weight (KB) on CMS pages." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&amp;format=interactive">
+  </a>
+  <div id="fig10-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third-party kilobytes on CMS pages for desktop and mobile. The median (50th percentile) desktop third-party weight is 272 KB. The 10th percentile is 27 KB, 25th 104 KB, 75th 577 KB, and 90th 940 KB. Mobile is slightly smaller in the smaller percentiles and slightly larger in the larger percentiles.</div>
+  <figcaption id="fig10-caption">Figure 10. Distribution of third-party weight (KB) on CMS pages.</figcaption>
+</figure>
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig11.png">
+    <img src="/static/images/2019/14_CMS/fig11.png" alt="" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
+  </a>
+  <div id="fig11-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third-party requests on CMS pages for desktop and mobile. The median (50th percentile) desktop third-party request count is 16. The 10th percentile is 3, 25th 7, 75th 31, and 90th 52. Desktop and mobile have nearly equivalent distributions.</div>
+  <figcaption id="fig11-caption">Figure 11. Distribution of the number of third-party requests on CMS pages.</figcaption>
+</figure>
+
+Nous savons que la valeur médiane indique qu'au moins la moitié des pages Web des CMS sont envoyées avec plus de ressources tierces que ce que nous signalons ici. Au 90e percentile, les pages des CMS peuvent livrer jusqu'à 52 ressources à environ 940 Ko, ce qui représente une augmentation considérable. 
+
+Étant donné que les ressources tierces proviennent de domaines et de serveurs distants, le site de destination a peu de contrôle sur la qualité et l'impact de ces ressources sur sa performance. Cette imprévisibilité pourrait entraîner des fluctuations de vitesse et affecter l'expérience de l'utilisateur, ce que nous allons bientôt explorer. 
+
+### Statistiques sur les images
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig12.png">
+    <img src="/static/images/2019/14_CMS/fig12.png" alt="Figure 12. Distribution of image weight (KB) on CMS pages." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&amp;format=interactive">
+  </a>
+  <div id="fig12-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of image kilobytes on CMS pages for desktop and mobile. The median (50th percentile) desktop image weight is 1,232 KB. The 10th percentile is 198 KB, 25th 507 KB, 75th 2,763 KB, and 90th 5,694 KB. Desktop and mobile have nearly equivalent distributions.</div>
+  <figcaption id="fig12-caption">Figure 12. Distribution of image weight (KB) on CMS pages.</figcaption>
+</figure>
+
+<figure>
+  <div class="big-number">1,232 KB</div>
+  <figcaption>Figure 13. The median number of image kilobytes loaded per desktop CMS page.</figcaption>
+</figure>
+
+Rappelez-vous des figures 8 et 9 précédentes, les images sont un grand contributeur au poids total des pages des CMS. Les figures 12 et 13 ci-dessus montrent que la page médiane des CMS sur desktop a 31 images et un poids total de 1 232 Ko, tandis que la page médiane des CMS sur mobile a 29 images et un poids total de 1 263 Ko. Encore une fois, les différences de poids de ces ressources sont très faibles, tant pour les expériences de bureau que pour les expériences mobiles. Le chapitre [Poids de la page](. /page-weight) montre en outre que les ressources en images dépassent largement le poids médian des pages ayant la même quantité d'images sur l'ensemble du Web, qui est de 983 Ko et de 893 Ko pour desktop et pour mobile respectivement. Le verdict : Les pages des CMS envoient des images lourdes.
+
+Quels sont les formats courants que l'on trouve sur les pages CMS desktop et mobile ? D'après nos données, les images JPG sont en moyenne le format d'image le plus populaire. Les formats PNG et GIF suivent, tandis que les formats comme SVG, ICO et WebP suivent de manière significative, avec environ un peu plus de 2% et 1%.
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig14.png">
+    <img src="/static/images/2019/14_CMS/fig14.png" alt="Figure 14. Adoption of image formats on CMS pages." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&amp;format=interactive">
+  </a>
+  <div id="fig14-description" class="visually-hidden">Bar chart of the adoption of image formats on CMS pages for desktop and mobile. JPEG makes up nearly half of all image formats, PNG comprises a third, GIF comprises a fifth, and the remaining 5% shared among SVG, ICO, and WebP. Desktop and mobile have nearly equivalent adoption.</div>
+  <figcaption id="fig14-caption">Figure 14. Adoption of image formats on CMS pages.</figcaption>
+</figure>
+
+Cette segmentation n'est peut-être pas surprenante étant donné les cas d'utilisation courants pour ces types d'images. Les SVG pour les logos et les icônes sont courants, tout comme les JPEG sont omniprésents. Le WebP est encore un format optimisé relativement nouveau avec [adoption croissante des navigateurs] (https://caniuse.com/#search=webp). Il sera intéressant de voir comment cela aura un impact sur son utilisation dans les prochaines années dans le monde des CMS. 
+
+## Expérience utilisateur sur les sites web propulsés par des CMS
+
+Le succès en tant que créateur de contenu web est lié à l'expérience utilisateur. Des facteurs tels que l'utilisation des ressources et d'autres statistiques concernant la composition des pages web sont des indicateurs importants de la qualité d'un site en termes de bonnes pratiques suivies lors de sa conception. Cependant, nous souhaitons en fin de compte faire la lumière sur la façon dont les utilisateurs vivent réellement le web lorsqu'ils consomment et s'engagent avec le contenu généré par ces plateformes. 
+
+Pour y parvenir, nous orientons notre analyse vers des [mesures de performance perçues par les utilisateurs] (https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics), qui sont enregistrées dans le jeu de données du CrUX. Ces mesures se rapportent d'une certaine manière à [la façon dont nous, en tant qu'humains, percevons le temps] (https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/).
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Duration</th>
+        <th>Perception</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>< 0.1 seconds</td>
+        <td>Instant</td>
+      </tr>
+      <tr>
+        <td>0.5-1 second</td>
+        <td>Immediate</td>
+      </tr>
+      <tr>
+        <td>2-5 seconds</td>
+        <td>Point of abandonment</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 15. How humans perceive short durations of time.</figcaption>
+</figure>
+
+Si les événements se produisent dans un délai de 0,1 seconde (100 millisecondes), pour nous tous, ils se produisent pratiquement instantanément. Et lorsque les événements durent plus de quelques secondes, la probabilité que nous poursuivions notre chemin sans attendre plus longtemps est très élevée. C'est très important pour les créateurs de contenu qui cherchent un succès continu sur le Web, car cela nous indique à quelle vitesse nos sites doivent se charger si nous voulons acquérir, engager et conserver notre base d'utilisateurs. 
+
+Dans cette section, nous examinons trois dimensions importantes qui peuvent éclairer notre compréhension de la façon dont les utilisateurs font l'expérience des pages web propulsées par les CMS dans la nature :
+
+* First Contentful Paint (FCP)
+* First Input Delay (FID)
+* Scores Lighthouse
+
+### First Contentful Paint
+
+Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint) mesure le temps qui s'écoule entre le début de la navigation et le premier affichage d'un contenu tel que du texte ou une image. Une expérience FCP réussie, ou pouvant être qualifiée de "rapide", implique la rapidité avec laquelle les éléments du DOM sont chargés pour assurer à l'utilisateur que le site web se charge avec succès. Bien qu'un bon score FCP ne soit pas une garantie que le site correspondant offre un bon UX, un mauvais FCP garantit presque certainement le contraire.
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig16.png">
+    <img src="/static/images/2019/14_CMS/fig16.png" alt="Figure 16. Average distribution of FCP experiences across CMSs." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&amp;format=interactive">
+  </a>
+  <div id="fig16-description" class="visually-hidden">Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 17 below for a data table of the top 5 CMSs.</div>
+  <figcaption id="fig16-caption">Figure 16. Average distribution of FCP experiences across CMSs.</figcaption>
+</figure>
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>CMS</th>
+        <th>Fast<br>(&lt; 1000ms)</th>
+        <th>Moderate</th>
+        <th>Slow<br>(&gt;= 3000ms)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WordPress</td>
+        <td class="numeric">24.33%</td>
+        <td class="numeric">40.24%</td>
+        <td class="numeric">35.42%</td>
+      </tr>
+      <tr>
+        <td>Drupal</td>
+        <td class="numeric">37.25%</td>
+        <td class="numeric">39.39%</td>
+        <td class="numeric">23.35%</td>
+      </tr>
+      <tr>
+        <td>Joomla</td>
+        <td class="numeric">22.66%</td>
+        <td class="numeric">46.48%</td>
+        <td class="numeric">30.86%</td>
+      </tr>
+      <tr>
+        <td>Wix</td>
+        <td class="numeric">14.25%</td>
+        <td class="numeric">62.84%</td>
+        <td class="numeric">22.91%</td>
+      </tr>
+      <tr>
+        <td>Squarespace</td>
+        <td class="numeric">26.23%</td>
+        <td class="numeric">43.79%</td>
+        <td class="numeric">29.98%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 17. Average distribution of FCP experiences for the top 5 CMSs.</figcaption>
+</figure>
+
+Le FCP dans l'écosystème des CMS tend surtout à se situer dans la plage des valeurs moyennes. La nécessité pour les plateformes CMS d'interroger le contenu d'une base de données, de l'envoyer, puis de le rendre dans le navigateur, pourrait être un facteur qui contribue au retard que connaissent les utilisateurs. Les charges de ressources dont nous avons discuté dans les sections précédentes pourraient également jouer un rôle. De plus, certaines de ces instances sont sur un hébergement partagé ou dans des environnements qui ne sont peut-être pas optimisés pour les performances, ce qui pourrait également avoir un impact sur l'expérience dans le navigateur.
+
+WordPress montre notamment des expériences FCP modérées et lentes sur le mobile et le bureau. Wix se situe fortement dans les expériences FCP moyennes sur sa plateforme propriétaire. TYPO3, une plateforme CMS open-source d'entreprise, a des expériences rapides et constantes sur mobile et sur desktop. TYPO3 annonce des fonctionnalités intégrées de performance et d'évolutivité qui peuvent avoir un impact positif pour les visiteurs du site web en frontend.
+
+### First Input Delay
+Le [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID) mesure le temps écoulé entre le moment où un utilisateur interagit pour la première fois avec votre site (c'est-à-dire lorsqu'il clique sur un lien, tape sur un bouton ou utilise une option paramétrée en JavaScript) et le moment où le navigateur est réellement capable de répondre à cette interaction. Du point de vue de l'utilisateur, un FID "rapide" serait une réponse immédiate à ses actions sur un site plutôt qu'une expérience retardée. Ce délai (un point sensible) pourrait être en corrélation avec l'interférence d'autres aspects du chargement du site lorsque l'utilisateur essaie d'interagir avec le site.
+
+Le FID dans l'écosystème CMS tend généralement vers des expériences rapides à la fois pour les ordinateurs de bureau et les mobiles en moyenne. Cependant, ce qui est remarquable, c'est la différence significative entre les expériences mobiles et desktop.
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig18.png">
+    <img src="/static/images/2019/14_CMS/fig18.png" alt="Figure 18. Average distribution of FID experiences across CMSs." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&amp;format=interactive">
+  </a>
+  <div id="fig18-description" class="visually-hidden">Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 19 below for a data table of the top 5 CMSs.</div>
+  <figcaption id="fig18-caption">Figure 18. Average distribution of FID experiences across CMSs.</figcaption>
+</figure>
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>CMS</th>
+        <th>Fast<br>(&lt; 100ms)</th>
+        <th>Moderate</th>
+        <th>Slow<br>(&gt;= 300ms)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WordPress</td>
+        <td class="numeric">80.25%</td>
+        <td class="numeric">13.55%</td>
+        <td class="numeric">6.20%</td>
+      </tr>
+      <tr>
+        <td>Drupal</td>
+        <td class="numeric">74.88%</td>
+        <td class="numeric">18.64%</td>
+        <td class="numeric">6.48%</td>
+      </tr>
+      <tr>
+        <td>Joomla</td>
+        <td class="numeric">68.82%</td>
+        <td class="numeric">22.61%</td>
+        <td class="numeric">8.57%</td>
+      </tr>
+      <tr>
+        <td>Squarespace</td>
+        <td class="numeric">84.55%</td>
+        <td class="numeric">9.13%</td>
+        <td class="numeric">6.31%</td>
+      </tr>
+      <tr>
+        <td>Wix</td>
+        <td class="numeric">63.06%</td>
+        <td class="numeric">16.99%</td>
+        <td class="numeric">19.95%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 19. Average distribution of FID experiences for the top 5 CMSs.</figcaption>
+</figure>
+
+Bien que cette différence soit présente dans les données du FCP, le FID a des écarts de performances plus importants. Par exemple, la différence entre les expériences FCP rapides pour les téléphones portables et les ordinateurs de bureau pour Joomla est d'environ 12,78 %, pour les expériences FID, la différence est significative : 27,76 %. La qualité des appareils mobiles et des connexions pourrait jouer un rôle dans les écarts de performance que nous constatons ici. Comme nous l'avons souligné précédemment, il y a une petite marge de différence entre les ressources envoyées aux versions desktop et mobile d'un site web. L'optimisation pour l'expérience mobile (interactive) devient plus évidente avec ces résultats.
+
+### Scores Lighthouse
+
+[Lighthouse](./methodology#lighthouse) est un outil automatisé et open-source conçu pour aider les développeurs à évaluer et à améliorer la qualité de leurs sites web. Un aspect clé de l'outil est qu'il fournit un ensemble d'audits pour évaluer le statut d'un site web en termes de **performance**, **accessibilité**, **applications web progressives**, et plus encore. Pour les besoins de ce chapitre, nous nous intéressons à deux catégories de vérifications spécifiques : les PWA et l'accessibilité.
+
+#### PWA
+
+Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expériences d'utilisateurs sur le Web qui sont considérées comme étant [fiables](https://developers.google.com/web/progressive-web-apps#reliable), [rapides](https://developers.google.com/web/progressive-web-apps#fast) et [engageantes](https://developers.google.com/web/progressive-web-apps#engaging). Lighthouse fournit un ensemble de vérifications qui donnent une note PWA entre 0 ( la plus mauvaise) et 1 ( la meilleure). Ces vérifications sont basées sur la [Checklist de référence des PWA] (https://developers.google.com/web/progressive-web-apps/checklist#baseline), qui contient 14 critères. Lighthouse a automatisé des vérifications pour 11 des 14 exigences. Les trois autres ne peuvent être vérifiées que manuellement. Chacune des 11 vérifications automatisées des PWA a une pondération égale, de sorte que chacune d'entre elles contribue à environ 9 points à votre note PWA.
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig20.png">
+    <img src="/static/images/2019/14_CMS/fig20.png" alt="Figure 20. Distribution of Lighthouse PWA category scores for CMS pages." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&amp;format=interactive">
+  </a>
+  <div id="fig20-description" class="visually-hidden">Bar chart showing the distribution of Lighthouse PWA category scores for all CMS pages. The most common score is 0.3 at 22% of CMS pages. There are two other peaks in the distribution: 11% of pages with scores of 0.15 and 8% of pages with scores of 0.56. Fewer than 1% of pages get a score above 0.6.</div>
+  <figcaption id="fig20-caption">Figure 20. Distribution of Lighthouse PWA category scores for CMS pages.</figcaption>
+</figure>
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig21.png">
+    <img src="/static/images/2019/14_CMS/fig21.png" alt="Figure 21. Median Lighthouse PWA category scores per CMS." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&amp;format=interactive">
+  </a>
+  <div id="fig21-description" class="visually-hidden">Bar chart showing the median Lighthouse PWA score per CMS. The median score for WordPress websites is 0.33. The next five CMSs (Joomla, Drupal, Wix, Squarespace, and 1C-Bitrix) all have a median score of 0.3. The CMSs with the top PWA scores are Jimdo with a score of 0.56 and TYPO3 at 0.41.</div>
+  <figcaption id="fig21-caption">Figure 21. Median Lighthouse PWA category scores per CMS.</figcaption>
+</figure>
+
+#### Accessibilité
+
+Un site web accessible est un site conçu et développé pour que les personnes souffrant d'un handicap puissent les utiliser. Lighthouse fournit un ensemble de vérifications de l'accessibilité et retourne une moyenne pondérée de toutes ces vérifications (voir la section [Détails des scores] (https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065) pour une liste complète de la pondération de chaque vérification). 
+
+Chaque audit d'accessibilité est réussi ou échoué, mais contrairement aux autres audits de Lighthouse, une page ne reçoit pas de points pour avoir partiellement réussi un audit d'accessibilité. Par exemple, si certains éléments ont des noms compréhensibles par les lecteurs d'écran, mais pas d'autres, cette page obtient un 0 pour l'audit *des noms compréhensibles par les lecteurs d'écran*.
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig22.png">
+    <img src="/static/images/2019/14_CMS/fig22.png" alt="Figure 22. Distribution of Lighthouse accessibility category scores for CMS pages." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&amp;format=interactive">
+  </a>
+  <div id="fig22-description" class="visually-hidden">Bar chart showing the distribution of CMS pages' Lighthouse accessibility scores. The distribution is heavily skewed to the higher scores with a mode of about 0.85.</div>
+  <figcaption id="fig22-caption">Figure 22. Distribution of Lighthouse accessibility category scores for CMS pages.</figcaption>
+</figure>
+
+<figure>
+  <a href="/static/images/2019/14_CMS/fig23.png">
+    <img src="/static/images/2019/14_CMS/fig23.png" alt="Figure 23. Median Lighthouse accessibility category scores per CMS." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&amp;format=interactive">
+  </a>
+  <div id="fig23-description" class="visually-hidden">Bar chart showing the median Lighthouse accessibility category score per CMS. Most CMSs get a score of about 0.75. Notable outliers include Wix with a median score of 0.93 and 1-C Bitrix with a score of 0.65.</div>
+  <figcaption id="fig23-caption">Figure 23. Median Lighthouse accessibility category scores per CMS.</figcaption>
+</figure>
+
+Actuellement, seulement 1,27% des pages d'accueil des CMS sur mobiles obtiennent un score parfait de 100%. Parmi les meilleurs CMS, Wix prend la tête en ayant le plus haut score médian d'accessibilité sur ses pages mobiles. Dans l'ensemble, ces chiffres sont lamentables quand on considère le nombre de sites web (la part du web qui est propulsée par des CMS) qui sont inaccessibles à un segment significatif de notre population. Autant les expériences numériques ont un impact sur de nombreux aspects de notre vie, autant cela devrait être un impératif pour nous encourager à *construire des expériences web accessibles dès le départ*, et à poursuivre le travail pour faire du web un espace inclusif.
+
+## Innovation en matière de CMS
+
+Bien que nous ayons pris un instantané du paysage actuel de l'écosystème des CMS, celui-ci est en pleine évolution. Dans le cadre des efforts visant à remédier aux lacunes en matière de [performance](./performance) et d'expérience utilisateur, nous constatons que des systèmes expérimentaux sont intégrés à l'infrastructure des CMS à la fois dans des cas couplés et découplés/headless. Des bibliothèques et des frameworks tels que React.js, ses dérivés comme Gatsby.js et Next.js, et le dérivé Nuxt.js de Vue.js font de légères avancées.
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>CMS</th>
+        <th>React</th>
+        <th>Nuxt.js,<br>React</th>
+        <th>Nuxt.js</th>
+        <th>Next.js,<br>React</th>
+        <th>Gatsby,<br>React</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WordPress</td>
+        <td class="numeric">131,507</td>
+        <td class="numeric"></td>
+        <td class="numeric">21</td>
+        <td class="numeric">18</td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>Wix</td>
+        <td class="numeric">50,247</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>Joomla</td>
+        <td class="numeric">3,457</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>Drupal</td>
+        <td class="numeric">2,940</td>
+        <td class="numeric"></td>
+        <td class="numeric">8</td>
+        <td class="numeric">15</td>
+        <td class="numeric">1</td>
+      </tr>
+      <tr>
+        <td>DataLife Engine</td>
+        <td class="numeric">1,137</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>Adobe Experience Manager</td>
+        <td class="numeric">723</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric">7</td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>Contentful</td>
+        <td class="numeric">492</td>
+        <td class="numeric">7</td>
+        <td class="numeric">114</td>
+        <td class="numeric">909</td>
+        <td class="numeric">394</td>
+      </tr>
+      <tr>
+        <td>Squarespace</td>
+        <td class="numeric">385</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>1C-Bitrix</td>
+        <td class="numeric">340</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>TYPO3 CMS</td>
+        <td class="numeric">265</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric">1</td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>Weebly</td>
+        <td class="numeric">263</td>
+        <td class="numeric"></td>
+        <td class="numeric">1</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>Jimdo</td>
+        <td class="numeric">248</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric">2</td>
+      </tr>
+      <tr>
+        <td>PrestaShop</td>
+        <td class="numeric">223</td>
+        <td class="numeric"></td>
+        <td class="numeric">1</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>SDL Tridion</td>
+        <td class="numeric">152</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+      <tr>
+        <td>Craft CMS</td>
+        <td class="numeric">123</td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+        <td class="numeric"></td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 24. Adoption (number of mobile websites) of React and companion frameworks per CMS.</figcaption>
+</figure>
+
+Nous voyons également des fournisseurs et des agences d'hébergement offrant des plateformes d'expérience numérique (DXP) comme solutions holistiques utilisant des CMS et d'autres technologies intégrées comme boîte à outils pour les stratégies d'entreprise axées sur le client. Ces innovations témoignent d'un effort pour créer des solutions clés en main, basées sur des CMS, qui permettent aux utilisateurs (et leurs utilisateurs finaux) d'obtenir par défaut le meilleur UX lors de la création et de la consommation du contenu de ces plateformes. L'objectif: de bonnes performances par défaut, une richesse de fonctionnalités et d'excellents environnements d'hébergement.
+
+## Conclusions
+ 
+L'espace des CMS est d'une importance primordiale. La grande partie du web dont ces applications propulsent et la masse critique d'utilisateurs qui créent et consultent ses pages sur une variété de terminaux et de connexions ne doivent pas être banalisées. Nous espérons que ce chapitre et les autres qui se trouvent ici dans le Web Almanac inspireront plus de recherche et d'innovation pour aider à rendre cet espace meilleur. Des enquêtes approfondies nous fourniraient un meilleur contexte sur les forces, les faiblesses et les opportunités que ces plateformes offrent au web dans son ensemble. Les systèmes de gestion de contenu peuvent avoir un impact sur la préservation de l'intégrité du web ouvert. Continuons à les faire avancer !
