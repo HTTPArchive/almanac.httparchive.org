@@ -221,7 +221,7 @@
         <source type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg 2x" />
         <source type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.webp" />
         <source type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
-        <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+        <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
