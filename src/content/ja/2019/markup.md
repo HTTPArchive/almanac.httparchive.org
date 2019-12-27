@@ -87,9 +87,9 @@ tr | span | option
 図2の2005年のHixieのレポートと図3の最新データを比較すると、DOMツリーの平均サイズが大きくなっていることがわかります。
 
 <figure id="fig4">
-  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="2005年にHixieが分析したページ毎の要素タイプのヒストグラム" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600">
+  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600">
    <div id="fig4-description" class="visually-hidden">相対周波数が19個の要素点の周りで釣鐘曲線となっていることを示すグラフ</div>
-  <figcaption id="fig4-caption">2005年にHixieが分析したページ毎の要素タイプのヒストグラム。</figcaption>
+  <figcaption id="fig4-caption">図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム。</figcaption>
 </figure>
 
 <figure id="fig5">
@@ -133,7 +133,7 @@ tr | span | option
     <a href="/static/images/2019/03_Markup/fig6.png">
       <img src="/static/images/2019/03_Markup/fig6.png" alt="図6.最も頻繁に使われている非推奨の要素。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
     </a>
-    <div id="fig6-description" class="visually-hidden">デスクトップの8.31％（モバイルの7.96％）で使用中の「center」、デスクトップサイトの8.01％（モバイルの7.38％）で使用中の「font」、デスクトップサイトの1.07％（モバイルの1.20％）で使用中の「marquee」 、デスクトップサイトの0.71％（モバイルの0.55％）で使用中の「nobr」、デスクトップサイトの0.53％（モバイルの0.47％）で使用中の「big」、デスクトップサイトの0.39%（モバイルの0.35％）で使用中の「frameset」、デスクトップサイトの0.39％（モバイルの0.35％）による「frame」の使用、デスクトップサイトの0.33％（モバイルの0.27％）による「strike」、デスクトップサイトの0.25％（モバイルの0.27％）で使用中の「フnoframes」を示す棒グラフ。</div>
+    <div id="fig6-description" class="visually-hidden">デスクトップの8.31％（モバイルの7.96％）で使用中の「center」、デスクトップサイトの8.01％（モバイルの7.38％）で使用中の「font」、デスクトップサイトの1.07％（モバイルの1.20％）で使用中の「marquee」 、デスクトップサイトの0.71％（モバイルの0.55％）で使用中の「nobr」、デスクトップサイトの0.53％（モバイルの0.47％）で使用中の「big」、デスクトップサイトの0.39%（モバイルの0.35％）で使用中の「frameset」、デスクトップサイトの0.39％（モバイルの0.35％）による「frame」の使用、デスクトップサイトの0.33％（モバイルの0.27％）による「strike」、デスクトップサイトの0.25％（モバイルの0.27％）で使用中の「noframes」を示す棒グラフ。</div>
   <figcaption id="fig6-caption">図6.最も頻繁に使われている非推奨の要素。</figcaption>
 </figure>
 
@@ -256,7 +256,7 @@ Webには約20億のWebサイトがあります。
 
 ### 製品（およびライブラリ）とそのカスタムマークアップ
 
-[Hixieが14年前に言及した](https://web.archive.org/web/20060203031245/http://code.google.com/webstats/2005-12/editors.html)要素のほとんどは減少しているように見えますが、大部分が残っています。
+いくつかの標準でない要素の普及率については、ファーストパーティの採用をしたというより、人気のあるサードパーティのツールに含まれていることが関係しているでしょう。たとえば `<fb:like>` 要素は0.03%のページで見つかります。これはサイト所有者が意図的に記述しているのではなく、Facebookウィジェットに含まれているためです。[Hixieが14年前に言及した](https://web.archive.org/web/20060203031245/http://code.google.com/webstats/2005-12/editors.html)要素のほとんどは減少しているように見えますが、大部分が残っています。
 
 - [Claris Home Page](https://en.wikipedia.org/wiki/Claris_Home_Page)（最後の安定版は21年前）で作られた一般的要素は、100ページ以上に*まだ*現れてます。 たとえば、[`<x-claris-window>`](https://rainy-periwinkle.glitch.me/permalink/28b0b7abb3980af793a2f63b484e7815365b91c04ae625dd4170389cc1ab0a52.html)は130ページに現れています。
 - 英国のeコマースプロバイダーである[Oxatis](https://www.oxatis.co.uk)の`<actinic:*>` 要素の一部はさらに多くのページに出現しています。たとえば、[`<actinic:basehref>`](https://rainy-periwinkle.glitch.me/permalink/30dfca0fde9fad9b2ec58b12cb2b0271a272fb5c8970cd40e316adc728a09d19.html)はデスクトップデータ中の154ページに出現しています。
@@ -286,7 +286,7 @@ Webには約20億のWebサイトがあります。
 このような興味深い洞察を一日中行うことができます。
 
 これは少々違うものですが、人気のある要素には製品のエラーによって引き起こされる可能性もあります。
-例えば1,000を超えるサイトで[`<pclass="ddc-font-size-large">`](https://rainy-periwinkle.glitch.me/permalink/3214f840b6ae3ef1074291f60fa1be4b9d9df401fe0190bfaff4bb078c8614a5.html) が出現しています。
+たとえば1,000を超えるサイトで`<pclass="ddc-font-size-large">` が出現しています。
 しかしこれは、これは人気のある"as-a-service"製品がスペースを取り忘れているために発生していました。
 幸いなことに、このエラーは調査中に報告されて、すぐに修正されました。
 
