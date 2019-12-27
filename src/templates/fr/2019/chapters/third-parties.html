@@ -203,7 +203,16 @@
         <span class="chapter-unedited">[non corrigé]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+        <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.webp" />
+        <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
+        <source type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.webp 2x" />
+        <source type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg 2x" />
+        <source type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.webp" />
+        <source type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+        <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      </picture>
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>Le web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link&gt;</code> ou <code>&lt;script&gt;</code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web. Par contre, l’immense popularité de quelques fournisseurs tiers pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le web en 2019, les modèles d’utilisation du web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des expériences sur le web.</p>

@@ -167,7 +167,16 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+        <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.webp" />
+        <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
+        <source type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.webp 2x" />
+        <source type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg 2x" />
+        <source type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.webp" />
+        <source type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+        <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      </picture>
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant <a href="./performance">performance</a> benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make," and caching is one of the key ways to avoid having to make requests.</p>

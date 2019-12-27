@@ -217,7 +217,16 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+        <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.webp" />
+        <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
+        <source type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.webp 2x" />
+        <source type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg 2x" />
+        <source type="image/webp" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.webp" />
+        <source type="image/jpeg" srcset="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_sm.jpg" />
+        <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" />
+      </picture>
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>The median web page is around 1900KB in size and contains 74 requests. That doesn't sound too bad, right?</p>
