@@ -95,17 +95,35 @@ p {
   font-family: 'Poppins', sans-serif;
 }
 
-.intro-image {
+.intro-image-wrapper {
   grid-area: image;
   display: none;
+  width: 100%;
+  padding-bottom: 78.6%;
+  position: relative;
 }
 
-.intro-image-2019 {
+.intro-image {
+  background-image: url(/static/images/home-hero.png);
+  background-size: cover;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
+.intro-image-2019-wrapper {
   grid-area: image;
   max-height: 470px;
   max-width: 100%;
   height: auto;
+  padding-bottom: 103%;
   margin-bottom: -90px;
+}
+
+.intro-image-2019 {
+  background-image: url(/static/images/home-hero-2019.png);
+  background-size: cover;
+  height: 470px;
+  width: 458px;
 }
 
 .intro .btn {
@@ -345,13 +363,13 @@ p {
     font-weight: bold;
   }
 
-  .intro-image {
+  .intro-image-wrapper {
     display: block;
     max-width: 100%;
     margin-top: 80px;
     margin-right: -46px;
   }
-  .intro-image-2019 {
+  .intro-image-2019-wrapper {
     display: none;
   }
 
@@ -490,14 +508,14 @@ p {
     font-weight: bold;
   }
 
-  .intro-image {
+  .intro-image-wrapper {
     display: block;
     max-width: 100%;
     margin-top: 60px;
     margin-right: -46px;
   }
 
-  .intro-image-2019 {
+  .intro-image-2019-wrapper {
     display: none;
   }
 
