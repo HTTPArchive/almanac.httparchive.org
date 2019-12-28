@@ -98,16 +98,14 @@ p {
 .intro-image-wrapper {
   grid-area: image;
   display: none;
-  width: 100%;
-  padding-bottom: 78.6%;
-  position: relative;
+  width:100%;
 }
 
 .intro-image {
   background-image: url(/static/images/home-hero.png);
   background-size: cover;
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
+  height: 67.5vw;
+  width: 86vw;
 }
 
 .intro-image-2019-wrapper {
@@ -119,17 +117,9 @@ p {
   background-image: url(/static/images/home-hero-2019.png);
   background-size: cover;
   max-height: 470px;
-  max-width: 100%;
-  height: auto;
-  padding-bottom: 103%;
-  margin-bottom: -90px;
-}
-
-.intro-image-2019 {
-  background-image: url(/static/images/home-hero-2019.png);
-  background-size: cover;
-  height: 470px;
-  width: 458px;
+  max-width: 458px;
+  height: 41vw;
+  width: 40vw;
 }
 
 .intro .btn {
