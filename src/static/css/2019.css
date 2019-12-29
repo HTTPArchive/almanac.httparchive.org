@@ -1,3 +1,122 @@
+/* Google Fonts downloaded locally for performance reasons */
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+        src:
+		local('Lato Regular'),
+		local('Lato-Regular'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXg.woff2 */
+		url('/static/fonts/Lato_400.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWA.woff */
+		url('/static/fonts/Lato_400.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+        src:
+		local('Lato Italic'),
+		local('Lato-Italic'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-q.woff2 */
+		url('/static/fonts/Lato_400i.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-s.woff */
+		url('/static/fonts/Lato_400i.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+        src:
+		local('Lato Bold'),
+		local('Lato-Bold'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPGQ.woff2 */
+		url('/static/fonts/Lato_700.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHw.woff */
+		url('/static/fonts/Lato_700.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+        src:
+		local('Lato Bold Italic'),
+		local('Lato-BoldItalic'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_Gwft.woff2 */
+		url('/static/fonts/Lato_700i.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_Gwfr.woff */
+		url('/static/fonts/Lato_700i.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+        src:
+		local('Lato Black'),
+		local('Lato-Black'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ.woff2 */
+		url('/static/fonts/Lato_900.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPHw.woff */
+		url('/static/fonts/Lato_900.woff') format('woff');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+        src:
+		local('Poppins Light'),
+		local('Poppins-Light'),
+		/* from https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2 */
+		url('/static/fonts/Poppins_300.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDz8Z1xlEw.woff */
+		url('/static/fonts/Poppins_300.woff') format('woff');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+        src:
+		local('Poppins Regular'),
+		local('Poppins-Regular'),
+		/* from https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfecg.woff2 */
+		url('/static/fonts/Poppins_400.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfedA.woff */
+		url('/static/fonts/Poppins_400.woff') format('woff');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+        src:
+		local('Poppins Bold'),
+		local('Poppins-Bold'),
+		/* from https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2 */
+		url('/static/fonts/Poppins_700.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff */
+		url('/static/fonts/Poppins_700.woff') format('woff');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+        src:
+		local('Poppins Black'),
+		local('Poppins-Black'),
+		/* from https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2 */
+		url('/static/fonts/Poppins_900.woff2') format('woff2'),
+		/* from https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLBT5Z1xlEw.woff */
+		url('/static/fonts/Poppins_900.woff') format('woff');
+}
+
 /* Browser elements */
 body {
   font-family: 'Lato', sans-serif;
