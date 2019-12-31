@@ -156,7 +156,7 @@ For a deeper analysis on compression, refer to the ["Compression"](./compression
 
 ## Open source libraries and frameworks
 
-Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as [Chromium](https://www.chromium.org/Home) and [Firefox](https://www.openhub.net/p/firefox), open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages cam make feature development easier and faster. So which JavaScript open-source libraries are used the most?
+Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as [Chromium](https://www.chromium.org/Home) and [Firefox](https://www.openhub.net/p/firefox), open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages can make feature development easier and faster. So which JavaScript open-source libraries are used the most?
 
 <figure>
 	<table>
