@@ -25,14 +25,14 @@ Lorsque nous parlons des CMS, nous devons tenir compte de tous les éléments qu
 
 Au début des temps ("de l'évolution du web"), l'écosystème du web était alimenté par une simple boucle de croissance, où les utilisateurs pouvaient devenir des créateurs simplement en visualisant la source d'une page web, en faisant du copier-coller selon leurs besoins, et en adaptant la nouvelle version avec des éléments individuels comme des images.
 
-Au fur et à mesure de son évolution, le web est devenu plus puissant, mais aussi plus compliqué. En conséquence, cette simple boucle de croissance a été rompue et il n'était plus possible que n'importe quel utilisateur devienne un créateur. Pour ceux qui pouvaient poursuivre le chemin de la création de contenu, la route devenait ardue et difficile à parcourir. Le [fossé des capacités d'utilisation] (https://medinathoughts.com/2018/05/17/progressive-wordpress/), c'est-à-dire la différence entre ce qui peut être fait sur le web et ce qui est réellement fait, a augmenté régulièrement.
+Au fur et à mesure de son évolution, le web est devenu plus puissant, mais aussi plus compliqué. En conséquence, cette simple boucle de croissance a été rompue et il n'était plus possible que n'importe quel utilisateur devienne un créateur. Pour ceux qui pouvaient poursuivre le chemin de la création de contenu, la route devenait ardue et difficile à parcourir. Le [fossé des capacités d'utilisation](https://medinathoughts.com/2018/05/17/progressive-wordpress/), c'est-à-dire la différence entre ce qui peut être fait sur le web et ce qui est réellement fait, a augmenté régulièrement.
 
 <figure>
   <a href="/static/images/2019/14_CMS/web-evolution.png">
-    <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018." width="600">
+    <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Graphique illustrant l'augmentation des fonctionnalités du web de 1999 à 2018." width="600">
   </a>
-  <div id="fig1-description" class="visually-hidden">On the left, labeled circa 1999, we have a bar chart with two bars showing what can be done is close to what is actually done. On the right, labeled 2018, we have a similar bar chart but what can be done is much larger, and what is done is slightly larger. The gap between what can be done and what is actually done has greatly increased.</div>
-  <figcaption id="fig1-caption">Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018.</figcaption>
+  <div id="fig1-description" class="visually-hidden">Sur la gauche, intitulée circa 1999, nous avons un diagramme à barres avec deux barres montrant que ce qui peut être fait est proche de ce qui est réellement fait. Sur la droite, intitulée 2018, nous avons un diagramme en bâtons similaire, mais ce qui peut être fait est beaucoup plus grand, et ce qui est fait est légèrement plus grand. L'écart entre ce qui peut être fait et ce qui est réellement fait a beaucoup augmenté.</div>
+  <figcaption id="fig1-caption">Figure 1. Graphique illustrant l'augmentation des fonctionnalités du web de 1999 à 2018.</figcaption>
 </figure>
 
 C'est ici qu'un CMS joue un rôle très important en permettant à des utilisateurs ayant différents degrés d'expertise technique d'entrer facilement dans la boucle de l'écosystème web en tant que créateurs de contenu. En abaissant la barrière d'entrée pour la création de contenu, les CMS activent la boucle de croissance du web en transformant les utilisateurs en créateurs. D'où leur popularité.
@@ -47,7 +47,7 @@ Dans ce chapitre, nous cherchons à explorer la surface du vaste univers des CMS
 
 <figure>
   <div class="big-number">40%</div>
-  <figcaption>Figure 2. Percent of web pages powered by a CMS.</figcaption>
+  <figcaption>Figure 2. Pourcentage de pages web propulsées par un CMS.</figcaption>
 </figure>
 
 Aujourd'hui, nous remarquons que plus de 40% des pages web sont propulsées par une plateforme CMS ; 40.01% pour les mobiles et 39.61% pour les desktop plus précisément.
@@ -58,10 +58,10 @@ En gros, cela signifie qu'il existe de nombreuses plateformes CMS disponibles su
 
 <figure>
   <a href="/static/images/2019/14_CMS/cms-logos.png">
-    <img src="/static/images/2019/14_CMS/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. The top content management systems." width="600">
+    <img src="/static/images/2019/14_CMS/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. Les principaux systèmes de gestion de contenu." width="600">
   </a>
-  <div id="fig3-description" class="visually-hidden">Logos of the top CMS providers, including WordPress, Drupal, Wix, etc.</div>
-  <figcaption id="fig3-caption">Figure 3. The top content management systems.</figcaption>
+  <div id="fig3-description" class="visually-hidden">Logos des principaux fournisseurs de CMS, notamment WordPress, Drupal, Wix, etc.</div>
+  <figcaption id="fig3-caption">Figure 3. Les principaux systèmes de gestion de contenu.</figcaption>
 </figure>
 
 Certains d'entre eux sont open source (par exemple WordPress, Drupal, et autres) et d'autres sont propriétaires ( comme AEM, et autres). Certaines plates-formes CMS peuvent être utilisées sur des formules "gratuites" hébergées ou auto-hébergées, et il existe également des options avancées pour utiliser ces plates-formes sur des formules de niveau supérieur, y compris au sein des entreprises. Dans son ensemble, le secteur des CMS est un univers complexe et fédéré d' *écosystèmes CMS*, tous séparés et en même temps entrelacés dans le vaste tissu du web.
@@ -76,10 +76,10 @@ En examinant les pages web servies sur les appareils de bureau et mobiles, nous 
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig4.png">
-    <img src="/static/images/2019/14_CMS/fig4.png" alt="Figure 4. Percent of desktop and mobile websites that use a CMS." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig4.png" alt="Figure 4. Pourcentage de sites web desktop et mobiles qui utilisent un CMS." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&amp;format=interactive">
   </a>
-  <div id="fig4-description" class="visually-hidden">Bar chart showing that 40% of desktop and 40% of mobile websites are built using a CMS.</div>
-  <figcaption id="fig4-caption">Figure 4. Percent of desktop and mobile websites that use a CMS.</figcaption>
+  <div id="fig4-description" class="visually-hidden">Diagramme en bâtons montrant que 40 % des sites web desktop et 40 % des sites web mobiles sont construits à l'aide d'un CMS.</div>
+  <figcaption id="fig4-caption">Figure 4. Pourcentage de sites web desktop et mobiles qui utilisent un CMS.</figcaption>
 </figure>
 
 Les pages web propulsées par les CMS sont générées par un large ensemble des plateformes CMS existantes. Le choix de ces plateformes est très vaste, et de nombreux facteurs peuvent être pris en compte lorsqu'on décide d'utiliser l'une ou l'autre, notamment:
@@ -95,10 +95,10 @@ Les jeux de données CrUX et HTTP Archive contiennent des pages web propulsées 
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig5.png">
-    <img src="/static/images/2019/14_CMS/fig5.png" alt="Figure 5. Top CMS platforms as a percent of all CMS websites." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-data-width="600" data-height="600" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1652315665&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig5.png" alt="Figure 5. Principales plateformes CMS en pourcentage de tous les sites web CMS." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-data-width="600" data-height="600" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1652315665&amp;format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">Bar chart showing WordPress making up 75% of all CMS websites. The next biggest CMS, Drupal, has about 6% of the CMS market share. The rest of the CMSs quickly shrink in adoption to less than 1%.</div>
-  <figcaption id="fig5-caption">Figure 5. Top CMS platforms as a percent of all CMS websites.</figcaption>
+  <div id="fig5-description" class="visually-hidden">Diagramme en bâtons montrant que WordPress représente 75% de tous les sites web créés avec un CMS. Le deuxième plus grand CMS, Drupal, a environ 6% de la part de marché des CMS. Le reste des CMS se réduit rapidement à moins de 1%.</div>
+  <figcaption id="fig5-caption">Figure 5. Principales plateformes CMS en pourcentage de tous les sites web CMS.</figcaption>
 </figure>
  
 Les principales plates-formes CMS présentes dans les jeux de données sont indiquées ci-dessus à la figure 5. WordPress est utilisé par 74,19 % des sites web utilisant un CMS pour les téléphones mobiles et 73,47 % des sites web utilisant un CMS pour les ordinateurs de bureau. Sa domination dans le milieu des CMS peut être attribuée à un certain nombre de facteurs dont nous parlerons plus loin, mais c'est un acteur _major_. Les plateformes open source comme Drupal et Joomla, et les solutions SaaS propriétaires comme Squarespace et Wix, complètent le top 5 des CMS. La diversité de ces plateformes reflète l'écosystème des CMS, composé de nombreuses plateformes où la démographie des utilisateurs et le parcours de création de sites web varient. Ce qui est également intéressant, c'est la longue liste des plateformes CMS de petites tailles qui se trouvent dans le top 20. Des offres d'entreprise aux applications propriétaires développées en interne pour une utilisation spécifique à un secteur, les systèmes de gestion de contenu fournissent une infrastructure personnalisable permettant aux groupes de gérer, de publier et de faire des affaires sur le web. 
@@ -121,18 +121,18 @@ Les éléments de base de tout site web constituent également un site web gér�
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig6.png">
-    <img src="/static/images/2019/14_CMS/fig6.png" alt="Figure 6. Distribution of CMS page weight." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig6.png" alt="Figure 6. Répartition du poids des pages sur les CMS." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&amp;format=interactive">
   </a>
-  <div id="fig6-description" class="visually-hidden">Bar chart showing the distribution of CMS page weight. The median desktop CMS page weighs 2.3 MB. At the 10th percentile it is 0.7 MB, 25th percentile 1.2 MB, 75th percentile 4.2 MB, and 90th percentile 7.4 MB. Desktop values are very slightly higher than mobile.</div>
-  <figcaption id="fig6-caption">Figure 6. Distribution of CMS page weight.</figcaption>
+  <div id="fig6-description" class="visually-hidden">Diagramme en bâtons montrant la distribution du poids des pages CMS. La page CMS moyenne sur desktop pèse 2.3 MB. Au 10e percentile, elle pèse 0,7 Mo, au 25e percentile, 1,2 Mo, au 75e percentile, 4,2 Mo et au 90e percentile, 7,4 Mo. Les valeurs pour les ordinateurs de bureau sont très légèrement supérieures à celles des mobiles.</div>
+  <figcaption id="fig6-caption">Figure 6. Répartition du poids des pages sur les CMS.</figcaption>
 </figure>
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig7.png">
-    <img src="/static/images/2019/14_CMS/fig7.png" alt="Figure 7. Distribution of CMS requests per page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig7.png" alt="Figure 7. Répartition des requêtes des CMS par page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&amp;format=interactive">
   </a>
-  <div id="fig7-description" class="visually-hidden">Bar chart showing the distribution of CMS requests per page. The median desktop CMS page loads 86 resources. At the 10th percentile it loads 39 resources, 25th percentile 57 resources, 75th percentile 127 resources, and 90th percentile 183 resources. Desktop is consistently higher than mobile by a small margin of 3-6 resources.</div>
-  <figcaption id="fig7-caption">Figure 7. Distribution of CMS requests per page.</figcaption>
+  <div id="fig7-description" class="visually-hidden">Diagramme en bâtons montrant la répartition des requêtes des CMS par page. La page CMS moyenne sur desktop charge 86 ressources. Au 10e percentile, elle charge 39 ressources, au 25e percentile 57 ressources, au 75e percentile 127 ressources et au 90e percentile 183 ressources. Le desktop est constamment plus élevé que le mobile par une petite marge de 3-6 ressources.</div>
+  <figcaption id="fig7-caption">Figure 7. Répartition des requêtes des CMS par page.</figcaption>
 </figure>
 
 Dans les figures 6 et 7 ci-dessus, nous voyons que la page médiane sur un CMS sur un desktop charge 86 ressources et pèse 2,29 Mo. L'utilisation des ressources des pages mobiles n'est pas très loin derrière avec 83 ressources et 2,25 Mo.
@@ -188,7 +188,7 @@ Comment sont les pages CMS par rapport aux pages du web dans son ensemble ? Dans
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 8. Distribution of desktop CMS page kilobytes per resource type.</figcaption>
+  <figcaption>Figure 8. Répartition des kilo-octets des pages CMS de bureau par type de ressources.</figcaption>
 </figure>
 
 <figure>
@@ -238,7 +238,7 @@ Comment sont les pages CMS par rapport aux pages du web dans son ensemble ? Dans
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 9. Distribution of mobile CMS page kilobytes per resource type.</figcaption>
+  <figcaption>Figure 9. Répartition des kilo-octets des pages CMS de bureau par type de ressources.</figcaption>
 </figure>
 
 Lorsque nous regardons de plus près les types de ressources qui se chargent sur les pages sur les CMS sur mobile ou sur desktop, les images et la vidéo apparaissent immédiatement comme les principaux contributeurs à leur poids.
@@ -255,10 +255,10 @@ La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 e
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig10.png">
-    <img src="/static/images/2019/14_CMS/fig10.png" alt="Figure 10. Distribution of third-party weight (KB) on CMS pages." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig10.png" alt="Figure 10. Répartition du poids des tierces parties (en Ko) sur les pages CMS." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&amp;format=interactive">
   </a>
-  <div id="fig10-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third-party kilobytes on CMS pages for desktop and mobile. The median (50th percentile) desktop third-party weight is 272 KB. The 10th percentile is 27 KB, 25th 104 KB, 75th 577 KB, and 90th 940 KB. Mobile is slightly smaller in the smaller percentiles and slightly larger in the larger percentiles.</div>
-  <figcaption id="fig10-caption">Figure 10. Distribution of third-party weight (KB) on CMS pages.</figcaption>
+  <div id="fig10-description" class="visually-hidden">Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des kilo-octets de tierces parties sur les pages CMS pour les ordinateurs de bureau et les mobiles. Le poids médian (50e percentile) des pages de bureau de tierces parties est de 272 Ko. Le 10e percentile est de 27 Ko, le 25e de 104 Ko, le 75e de 577 Ko et le 90e de 940 Ko. Le mobile est légèrement plus petit dans les petits percentiles et légèrement plus grand dans les grands percentiles.</div>
+  <figcaption id="fig10-caption">Figure 10. Répartition du poids des tierces parties (en Ko) sur les pages CMS.</figcaption>
 </figure>
 
 <figure>
