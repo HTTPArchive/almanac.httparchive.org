@@ -289,7 +289,12 @@ Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQu
 
 ### Frameworks and UI libraries	
 
-Note: A previous version of this chapter discussed the usage of frameworks in this section. However, we are investigating queries around the accuracy of these statistics and have decided to remove this section temporarily while we complete this review.
+<aside class="note">Note: A previous version of this chapter discussed the usage of frameworks in this section. However, we are investigating queries around the accuracy of these statistics and have decided to remove this section temporarily while we complete this review.</aside>
+
+<!-- Empty figure to keep figure numbers the same
+<figure>
+</figure>
+-->
 
 ## Differential loading
 

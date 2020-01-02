@@ -406,13 +406,17 @@
       </ul>
       <p>Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), <a href="https://modernizr.com/">Modernizr</a>, <a href="https://momentjs.com/">Moment.js</a>, <a href="https://underscorejs.org/">Underscore.js</a> and so on.</p>
       <h3 id="frameworks-and-ui-libraries">Frameworks and UI libraries</h3>
-      <p>Note: A previous version of this chapter discussed the usage of frameworks in this section. However, we are investigating queries around the accuracy of these statistics and have decided to remove this section temporarily while we complete this review.</p>
+      <aside class="note">Note: A previous version of this chapter discussed the usage of frameworks in this section. However, we are investigating queries around the accuracy of these statistics and have decided to remove this section temporarily while we complete this review.</aside>
+      <!-- Empty figure to keep figure numbers the same
+<figure id='fig-12'>
+</figure>
+-->
       <h2 id="differential-loading">Differential loading</h2>
       <p><a href="https://v8.dev/features/modules">JavaScript modules</a>, or ES modules, are supported in <a href="https://caniuse.com/#feat=es6-module">all major browsers</a>. Modules provide the capability to create scripts that can import and export from other modules. This allows anyone to build their applications architected in a module pattern, importing and exporting wherever necessary, without relying on third-party module loaders.</p>
       <p>To declare a script as a module, the script tag must get the <code>type="module"</code> attribute:</p>
       <pre><code class="html language-html">&lt;script type="module" src="main.mjs"&gt;&lt;/script&gt;</code></pre>
       <p>How many sites use <code>type="module"</code> for scripts on their page?</p>
-      <figure id="fig-12">
+      <figure id="fig-13">
         <a href="/static/images/2019/01_JavaScript/fig13.png">
           <img src="/static/images/2019/01_JavaScript/fig13.png" alt="Figure 13. Percentage of sites utilizing type=module." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&amp;format=interactive" loading="lazy" />
         </a>
@@ -423,7 +427,7 @@
       <p>If native modules are used, it's important to ensure that an appropriate fallback script is used for browsers that do not yet support modules. This can be done by including an additional script with a <code>nomodule</code> attribute.</p>
       <pre><code class="html language-html">&lt;script nomodule src="fallback.js"&gt;&lt;/script&gt;</code></pre>
       <p>When used together, browsers that support modules will completely ignore any scripts containing the <code>nomodule</code> attribute. On the other hand, browsers that do not yet support modules will not download any scripts with <code>type="module"</code>. Since they do not recognize <code>nomodule</code> either, they will download scripts with the attribute normally. Using this approach can allow developers to <a href="https://web.dev/serve-modern-code-to-modern-browsers/">send modern code to modern browsers for faster page loads</a>. So, how many sites use <code>nomodule</code> for scripts on their page?</p>
-      <figure id="fig-13">
+      <figure id="fig-14">
         <a href="/static/images/2019/01_JavaScript/fig14.png">
           <img src="/static/images/2019/01_JavaScript/fig14.png" alt="Figure 14. Percentage of sites using nomodule." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&amp;format=interactive" loading="lazy" />
         </a>
@@ -438,7 +442,7 @@
         <li>Using <code>&lt;link rel="prefetch"&gt;</code> tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations</li>
       </ul>
       <p>So, how many sites use preload and prefetch directives?</p>
-      <figure id="fig-14">
+      <figure id="fig-15">
         <a href="/static/images/2019/01_JavaScript/fig15.png">
           <img src="/static/images/2019/01_JavaScript/fig15.png" alt="Figure 15. Percentage of sites using rel=preload for scripts." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&amp;format=interactive" loading="lazy" />
         </a>
@@ -447,7 +451,7 @@
       </figure>
       <p>For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mobile sites use <code>&lt;link rel="preload"&gt;</code> for scripts on their page.</p>
       <p>For prefetch, we have the following:</p>
-      <figure id="fig-15">
+      <figure id="fig-16">
         <a href="/static/images/2019/01_JavaScript/fig16.png">
           <img src="/static/images/2019/01_JavaScript/fig16.png" alt="Figure 16. Percentage of sites using rel=prefetch for scripts." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&amp;format=interactive" loading="lazy" />
         </a>
@@ -467,7 +471,7 @@
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap">WeakMap</a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet">WeakSet</a></li>
       </ul>
-      <figure id="fig-16">
+      <figure id="fig-17">
         <a href="/static/images/2019/01_JavaScript/fig17.png">
           <img src="/static/images/2019/01_JavaScript/fig17.png" alt="Figure 17. Usage of new JavaScript APIs." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&amp;format=interactive" loading="lazy" />
         </a>
@@ -480,7 +484,7 @@
       <p>In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like <a href="https://www.typescriptlang.org/">TypeScript</a> compile to an output that can look noticeably different from the original source code. For all these reasons, the final code served to the browser can be unreadable and hard to decipher.</p>
       <p>A <strong>source map</strong> is an additional file accompanying a JavaScript file that allows a browser to map the final output to its original source. This can make debugging and analyzing production bundles much simpler.</p>
       <p>Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. So how many sites actually include sourcemaps?</p>
-      <figure id="fig-17">
+      <figure id="fig-18">
         <a href="/static/images/2019/01_JavaScript/fig18.png">
           <img src="/static/images/2019/01_JavaScript/fig18.png" alt="Figure 18. Percentage of sites using source maps." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&amp;format=interactive" loading="lazy" />
         </a>
