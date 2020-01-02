@@ -73,7 +73,7 @@ Webページの主な目的はユーザーの興味を引くコンテンツを�
 
 Webには驚くべき大量のコンテンツが溢れていますが、ここには大きな落とし穴があります。世界には1,000以上の異なる言語が存在しており、探しているコンテンツが流暢な言葉で書かれていない可能性があります。昨今、私たちは翻訳技術で大きな進歩を遂げており、貴方はおそらくその1つをWebで利用しているでしょう（例：Google翻訳）
 
-この機能を円滑に行うために、翻訳エンジンはあなたのページがどの言語で書かれているかを知る必要があります。これには[`lang`属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang)が使われます。lang属性がないと、コンピューターはページが記述されている言語を推測する必要が出てきます。想像できると思いますが、ページ中で複数の言語が使われている場合、これは多くの間違いを引き起こします（たとえば、ページナビゲーションは英語なのに投稿されているコンテンツが日本語のような場合）。
+この機能を円滑に行うために、翻訳エンジンはあなたのページがどの言語で書かれているかを知る必要があります。これには[`lang`属性](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/lang)が使われます。lang属性がないと、コンピューターはページが記述されている言語を推測する必要が出てきます。想像できると思いますが、ページ中で複数の言語が使われている場合、これは多くの間違いを引き起こします（たとえば、ページナビゲーションは英語なのに投稿されているコンテンツが日本語のような場合）。
 
 この言語が指定されていない場合の問題は、規定のユーザー言語でテキストを読む傾向があるスクリーンリーダーのようなテキスト読み上げ支援技術で顕著になります。
 
@@ -83,7 +83,7 @@ Webには驚くべき大量のコンテンツが溢れていますが、ここ�
 
 認知障害などの一部のユーザーは、1つの作業に対して長時間集中することが困難です。こういったユーザーは、とくに表面的なエフェクトが多く、それが目の前の作業に関わらない場合、動きやアニメーションが多く含まれるページを利用したくありません。
 
-残念なことに、私達の調査結果では無限ループアニメーションがWebでは非常に一般的であり、21.04％のページが無限CSSアニメーションや[`<marquee>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee)および[`<blink>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink)要素が使われている事を示しています。
+残念なことに、私達の調査結果では無限ループアニメーションがWebでは非常に一般的であり、21.04％のページが無限CSSアニメーションや[`<marquee>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/marquee)および[`<blink>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/blink)要素が使われている事を示しています。
 
 ただし、この問題の大部分は人気のあるサードパーティー製のスタイルシートが規定で無限ループのCSSアニメーションが含まれている事が原因であることに注意してください。このようなアニメーションスタイルを実際に適用したページ数がいくつあるのか、私達は特定できませんでした。
 
@@ -99,7 +99,7 @@ alt属性は25年前から存在していますが、49.91％のページで画�
 
 画像が強力なストーリーテラーであるように、オーディオとビデオも注目を集めたりアイデアを表現する事ができます。オーディオやビデオコンテンツに字幕が付けられていない場合、コンテンツが聞こえないユーザーはWebのほとんどを見逃してしてしまいます。耳が聞こえない、もしくは難聴のユーザーから一番よく聞くのは、すべてのオーディオとビデオコンテンツに字幕を含めて欲しいというお話です。
 
-[`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)や[`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)要素を使うサイトのうち、字幕を提供しているのは0.54％のみでした（[`<track>`](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)要素を含むサイトで測定）一部のWebサイトには、ユーザーにビデオとオーディオの字幕を提供するカスタムソリューションがあります。これらは検出できなかったので、字幕を利用しているサイトの本当の割合は、おそらく少し高いでしょう。
+[`<audio>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/audio)や[`<video>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/video)要素を使うサイトのうち、字幕を提供しているのは0.54％のみでした（[`<track>`](https://developer.mozilla.org/ja/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)要素を含むサイトで測定）一部のWebサイトには、ユーザーにビデオとオーディオの字幕を提供するカスタムソリューションがあります。これらは検出できなかったので、字幕を利用しているサイトの本当の割合は、おそらく少し高いでしょう。
 
 ## 使いやすいページナビゲーション
 
@@ -129,7 +129,7 @@ alt属性は25年前から存在していますが、49.91％のページで画�
 
 ### Mainランドマーク
 
-[mainランドマーク](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role)はWebページのメインコンテンツが始まる場所をスクリーンリーダーに示すことで、ユーザーがーすぐその場所に飛ぶことができます。mainランドマークがない場合、スクリーンリーダーのユーザーはサイト内の新しいページにアクセスするたび、手動でナビゲーションをスキップする必要が出てきます。これは明らかにイライラするでしょう。
+[mainランドマーク](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Roles/Main_role)はWebページのメインコンテンツが始まる場所をスクリーンリーダーに示すことで、ユーザーがーすぐその場所に飛ぶことができます。mainランドマークがない場合、スクリーンリーダーのユーザーはサイト内の新しいページにアクセスするたび、手動でナビゲーションをスキップする必要が出てきます。これは明らかにイライラするでしょう。
 
 ページの4分の1（26.03％）にだけmainランドマークが含まれていることが判明しました。さらに驚くべきことに、8.06％のページに複数のmainランドマークが誤って含まれているため、ユーザーは実際のメインコンテンツがどのランドマークなのかを推測する必要が出ていました。
 
@@ -145,9 +145,9 @@ alt属性は25年前から存在していますが、49.91％のページで画�
 
 HTML5は2008年リリースされ、2014年に公式の標準となっているので、コンピューターとスクリーンリーダーがページの見た目と構造を理解するのに有用なHTML要素がたくさんあります。
 
-[`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)、[`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)、[`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)、[`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)などの要素は特定の種類のコンテンツがどこにあるか明示的にして、ユーザーがそのページへ素早く飛ぶことを可能にします。これらはWeb全体で幅広く使われており、ほとんどがページの50％以上で使われています。(`<main>`は外れ値です。)
+[`<header>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/header)、[`<footer>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/footer)、[`<navigation>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/nav)、[`<main>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/main)などの要素は特定の種類のコンテンツがどこにあるか明示的にして、ユーザーがそのページへ素早く飛ぶことを可能にします。これらはWeb全体で幅広く使われており、ほとんどがページの50％以上で使われています。(`<main>`は外れ値です。)
 
-[`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)、[`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr)、[`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside)のようなものは、読者がページのメインコンテンツを理解するのに役立ちます。たとえば、`<article>`は記事が終了して別の記事が開始される場所を示します。これらの要素はほとんど使われておらず、使用率は約20％ですが、これらはすべてのWebページで必要となるわけではないため、とくに驚くべき統計ではありません。
+[`<article>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/article)、[`<hr>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/hr)、[`<aside>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/aside)のようなものは、読者がページのメインコンテンツを理解するのに役立ちます。たとえば、`<article>`は記事が終了して別の記事が開始される場所を示します。これらの要素はほとんど使われておらず、使用率は約20％ですが、これらはすべてのWebページで必要となるわけではないため、とくに驚くべき統計ではありません。
 
 これらの要素はすべてアクセシビリティサポートを主目的として設計されており、見た目の変化はありません。つまりこれは、既存の要素を安全に置き換えることが可能なので意図しない影響で苦しむことはないでしょう。
 
@@ -189,13 +189,13 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
 
 ### ショートカット
 
-[`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts)や[`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)属性を介して設定されたショートカットキーは、次の2つの方法のどちらかで使うことができます。
+[`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts)や[`accesskey`](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/accesskey)属性を介して設定されたショートカットキーは、次の2つの方法のどちらかで使うことができます。
 
 1. リンクやボタンなどのページ上の要素を活性化させます。
 
 2. 特定の要素に対するページフォーカスを提供します。たとえばページ上にある特定の入力にフォーカスを移動させて、すぐさまユーザーが入力できるようにします。
 
-サンプルを見る限り[`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts)はほとんど採用されておらず、400万以上ある分析対象のうち、たった159のサイトでだけ使われていました。[`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)属性はかなり利用されており、Webページの2.47％（モバイルだと1.74％）で使われています。デスクトップでショートカットの利用率が多いのは、開発者がモバイルでサイトにアクセスする時、キーボードでなくタッチスクリーンのみで利用することを期待しているためと考えています。
+サンプルを見る限り[`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts)はほとんど採用されておらず、400万以上ある分析対象のうち、たった159のサイトでだけ使われていました。[`accesskey`](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/accesskey)属性はかなり利用されており、Webページの2.47％（モバイルだと1.74％）で使われています。デスクトップでショートカットの利用率が多いのは、開発者がモバイルでサイトにアクセスする時、キーボードでなくタッチスクリーンのみで利用することを期待しているためと考えています。
 
 とくに驚くべき点は、ショートカットキーを適用しているモバイルサイトの15.56％とデスクトップサイトの13.03％で、1つのショートカットキーを複数の要素に割り当てている事です。これはブラウザがショートカットキーの対象となる要素を推測する必要があることを意味しています。
 
@@ -207,13 +207,13 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
 
 テーブルの詳細な構造に対応したテーブルヘッダーを使うことで、特定の列または行が参照するコンテキストを失うこと無く、列や行全体を簡単に読み取り可能とします。ヘッダー行や列のないテーブルを操作しないといけないのは、スクリーンリーダーのユーザーにとっては使いづらいでしょう。これは、テーブルが非常に大きい時にスクリーンリーダーのユーザーはヘッダーのないテーブルだと自分の場所を把握するのが難しいからです。
 
-テーブルのヘッダーをマークアップするには、シンプルに（[`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)タグの代わりに）[`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th)タグを使うか、ARIAの [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role)か[`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role)ロールのどれかを使います。この方法のどれかでテーブルがマークアップされていたのは、テーブルを含むページの24.5％だけでした。そのため、テーブルにヘッダーが含まれない四分の三のページは、スクリーンリーダーのユーザーにとって非常に深刻な課題を持っています。
+テーブルのヘッダーをマークアップするには、シンプルに（[`<td>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/td)タグの代わりに）[`<th>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/th)タグを使うか、ARIAの [`columnheader`](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Roles/Table_Role)か[`rowheader`](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Roles/Table_Role)ロールのどれかを使います。この方法のどれかでテーブルがマークアップされていたのは、テーブルを含むページの24.5％だけでした。そのため、テーブルにヘッダーが含まれない四分の三のページは、スクリーンリーダーのユーザーにとって非常に深刻な課題を持っています。
 
 `<th>`と `<td>`を利用するのは、テーブルにヘッダーをマークアップするもっとも一般的な方法のようです。`columnheader`と`rowheader`のロールを使っているサイトはほとんど存在せず、使っているサイトは合計677個（0.058％）のみでした。
 
 #### キャプション
 
-[`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption)要素が使われているテーブルキャプションは、さまざまな読者に対してより多くのコンテキストを提供できます。キャプションはテーブルが共有している情報を読む準備ができてる人や、集中できない環境だったり、作業の中断が必要な人々にとってとくに便利になります。また、スクリーンリーダーユーザーや学習障害、知的障害のある人などの、大きなテーブルだと自分の見ている場所で迷子になる可能性がある人々にとっても有用です。読者が分析している内容を理解しやすくすればするほど、より良い結果を得られるでしょう。
+[`<caption>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/caption)要素が使われているテーブルキャプションは、さまざまな読者に対してより多くのコンテキストを提供できます。キャプションはテーブルが共有している情報を読む準備ができてる人や、集中できない環境だったり、作業の中断が必要な人々にとってとくに便利になります。また、スクリーンリーダーユーザーや学習障害、知的障害のある人などの、大きなテーブルだと自分の見ている場所で迷子になる可能性がある人々にとっても有用です。読者が分析している内容を理解しやすくすればするほど、より良い結果を得られるでしょう。
 
 にもかかわらず、表が含まれるページでは4.32％だけでしかキャプションを提供していません。
 
@@ -259,7 +259,7 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
 
 ##### 多くのサイトは、ダイアログをアクセス可能にしようとしています
 
-スクリーンリーダーを使っているユーザーはーダイアログへのアクセスが難しく、見るからにそれが[ダイアログロール](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)その相対的な人気となっています。そのため、分析されたページの約8％で挑戦しはじめているのを見るのは興奮します。繰り返しますが、これはいくつかのUIフレームワークを使った結果に思えます。
+スクリーンリーダーを使っているユーザーはーダイアログへのアクセスが難しく、見るからにそれが[ダイアログロール](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Roles/dialog_role)その相対的な人気となっています。そのため、分析されたページの約8％で挑戦しはじめているのを見るのは興奮します。繰り返しますが、これはいくつかのUIフレームワークを使った結果に思えます。
 
 #### 対話的要素のあるラベル
 
@@ -271,11 +271,11 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
 
 ### フォームコントロールのアクセシビリティ
 
-フォームへの入力は私達が毎日行う沢山行う作業です。ショッピングや旅行の予約、仕事の申込みなど、フォームはユーザーがWebページと情報を共有する主な方法です。そのため、フォームを便利にすることは非常に重要です。これを達成するための簡単な方法は、各入力にラベルを提供することです（[`<label>`要素](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)や[`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)または[`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)を用いて）。悲しいことに、すべてのフォーム入力にラベルを提供しているのページは22.33％しかありませんでした。つまり、5ページあるうちの4ページは非常に記入が難しいフォームを持っています。
+フォームへの入力は私達が毎日行う沢山行う作業です。ショッピングや旅行の予約、仕事の申込みなど、フォームはユーザーがWebページと情報を共有する主な方法です。そのため、フォームを便利にすることは非常に重要です。これを達成するための簡単な方法は、各入力にラベルを提供することです（[`<label>`要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element/label)や[`aria-label`](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)または[`aria-labelledby`](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)を用いて）。悲しいことに、すべてのフォーム入力にラベルを提供しているのページは22.33％しかありませんでした。つまり、5ページあるうちの4ページは非常に記入が難しいフォームを持っています。
 
 #### 必須や無効なフィールドであることを示す手がかり
 
-大きなアスタリスクがあるフィールドに出会うと、それが必須フィールドだと理解できます。もしくは、サブミットをクリックして無効な入力があると通知された場合に、異なる色で強調表示されているものは全てを修正してから再送信する必要があります。しかし、視力が低い人や無い人はこのような視覚的合図に頼ることができないため、htmlの入力属性である `required`や`aria-required`と`aria-invalid` などが非常に重要になります。これらは、スクリーンリーダーに対して赤いアスタリスクや赤い強調表示されたフィールドと同等の物を提供します。更に良いことに、必要なフィールドをブラウザに教えれば[フォームの一部を検証](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation)することも可能です。これにはJavaScriptが必要ありません。
+大きなアスタリスクがあるフィールドに出会うと、それが必須フィールドだと理解できます。もしくは、サブミットをクリックして無効な入力があると通知された場合に、異なる色で強調表示されているものは全てを修正してから再送信する必要があります。しかし、視力が低い人や無い人はこのような視覚的合図に頼ることができないため、htmlの入力属性である `required`や`aria-required`と`aria-invalid` などが非常に重要になります。これらは、スクリーンリーダーに対して赤いアスタリスクや赤い強調表示されたフィールドと同等の物を提供します。更に良いことに、必要なフィールドをブラウザに教えれば[フォームの一部を検証](https://developer.mozilla.org/ja/docs/Learn/HTML/Forms/Form_validation)することも可能です。これにはJavaScriptが必要ありません。
 
 フォームを使っているページのうち21.73％は必須フィールドをマークアップするときに `required`か`aria-required` を適用しています。５分の１のサイトでだけ、これらは使用されています。これはサイトを使いやすくするための簡単な手続きです、すべてのユーザーに対してブラウザの役立つ機能を開放します。
 
@@ -283,11 +283,11 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
 
 #### 重複したID
 
-HTMLでIDを使い２つの要素をリンクさせることができます。例えば[`<label>`要素](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)は次のように機能します。ラベルにinputフィールドのIDを指定し、ブラウザはその２つをリンクさせます。結果はどうなるか？　ユーザーはこのラベルをクリックすることでユーザーはinputフィールドにフォーカスすることが可能になり、スクリーンリーダーはこのラベルを説明として使うことができます。
+HTMLでIDを使い２つの要素をリンクさせることができます。例えば[`<label>`要素](https://developer.mozilla.org/ja/docs/Web/HTML/Element/label)は次のように機能します。ラベルにinputフィールドのIDを指定し、ブラウザはその２つをリンクさせます。結果はどうなるか？　ユーザーはこのラベルをクリックすることでユーザーはinputフィールドにフォーカスすることが可能になり、スクリーンリーダーはこのラベルを説明として使うことができます。
 
 残念ながら34.62％のサイトで重複したIDが確認できます、つまり多くのサイトではユーザーの指定したIDが複数の異なったinputを参照しています。そのため、ユーザーがラベルをクリックしてフィールドを選択すると、意図したものと[違う項目が選択される](https://www.deque.com/blog/unique-id-attributes-matter/)可能性を持っています。想像されている通り、これはショッピングカートのようなものに対して良くない結果をもたらす可能性があります。
 
-この問題はユーザーが選択肢の内容を視覚的に再確認できないスクリーンリーダーユーザーに対してさらに際立ちます。そして、[`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute)や[`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)などのARIA属性は上で説明したlabel要素と同じように機能します。つまり、サイトを操作しやすくするには、最初に重複するIDを全て削除するのが良いでしょう。
+この問題はユーザーが選択肢の内容を視覚的に再確認できないスクリーンリーダーユーザーに対してさらに際立ちます。そして、[`aria-describedby`](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute)や[`aria-labelledby`](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)などのARIA属性は上で説明したlabel要素と同じように機能します。つまり、サイトを操作しやすくするには、最初に重複するIDを全て削除するのが良いでしょう。
 
 ## 結論
 
