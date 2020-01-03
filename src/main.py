@@ -7,12 +7,35 @@ import logging
 import random
 from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
 
-app = Flask(__name__)
+# Set WOFF and WOFF2 caching to return 1 year as they should never change
+# Note this requires similar set up in app.yaml for Google App Engine
+class MyFlask(Flask):
+    def get_send_file_max_age(self, name):
+        if name.lower().endswith('.woff') or name.lower().endswith('.woff2'):
+            return 31536000
+        return Flask.get_send_file_max_age(self, name)
+
+app = MyFlask(__name__)
+# Cache static resources for 10800 secs (3 hrs) with SEND_FILE_MAX_AGE_DEFAULT.
+# Flask default if not set is 12 hours but we want to match app.yaml
+# which is used by Google App Engine as it serves static files directly
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 10800
 Talisman(app,
          content_security_policy=csp,
          content_security_policy_nonce_in=['script-src'])
 logging.basicConfig(level=logging.DEBUG)
 
+@app.after_request
+def add_header(response):
+    # Cache responses for 3 hours if no other Cache-Control header set
+    # This is used for the dynamically generated files (e.g. the HTML)
+    # (currently don't use unique filenames so cannot use long caches and
+    # some say they are overrated anyway as caches smaller than we think).
+    # Note this IS used by Google App Engine as dynamic content.
+    if 'Cache-Control' not in response.headers:
+        response.cache_control.public = True
+        response.cache_control.max_age = 10800
+    return response
 
 def render_template(template, *args, **kwargs):
     year = request.view_args.get('year', DEFAULT_YEAR)
@@ -104,7 +127,6 @@ def sitemap():
 @app.route('/<lang>/<year>/<chapter>')
 @validate
 def chapter(lang, year, chapter):
-    # TODO: Validate the chapter.
     config = config_util.get_config(year)
     (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
     return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config, prev_chapter=prev_chapter, next_chapter=next_chapter)
