@@ -90,30 +90,47 @@
 {% endblock %}
 
 {% block main %}
+{%- set featured_chapter = ("third-parties","third-parties") | random %}
+{%- if featured_chapter == "third-parties" %}
+  {%- set featured_chapter_name = "Tierces Parties" %}
+  {%- set featured_chapter_quote = "Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link></code> ou <code>&lt;script></code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité." %}
+  {%- set featured_chapter_stat1 = "93%" %}
+  {%- set featured_chapter_stat1_text = "pages avec 3P" %}
+  {%- set featured_chapter_stat2 = "49%" %}
+  {%- set featured_chapter_stat2_text = "des equêtes" %}
+  {%- set featured_chapter_stat3 = "28%" %}
+  {%- set featured_chapter_stat3_text = "des octets" %}
+{%- endif %}
 <div id="home">
   <section class="featured-chapter">
     <div class="featured-chapter-content">
       <h2 class="title title-center">Focus sur le chapitre…</h2>
-      <h3>Tierces Parties (3P)</h3>
+      <h3>{{ featured_chapter_name }}</h3>
       <blockquote>
-          Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link></code> ou <code>&lt;script></code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
+        {{ featured_chapter_quote|safe }}
       </blockquote>
       <div class="featured-chapter-content-data">
+        {% if featured_chapter_stat1 %}
         <div class="featured-chapter-content-data-item">
-          <div>93&nbsp;%</div>
-          <div>pages avec 3P</div>
+          <div>{{ featured_chapter_stat1 }}</div>
+          <div>{{ featured_chapter_stat1_text }}</div>
         </div>
+        {% endif %}
+        {% if featured_chapter_stat2 %}
         <div class="featured-chapter-content-data-item">
-          <div>49&nbsp;%</div>
-          <div>des equêtes</div>
+          <div>{{ featured_chapter_stat2 }}</div>
+          <div>{{ featured_chapter_stat2_text }}</div>
         </div>
+        {% endif %}
+        {% if featured_chapter_stat3 %}
         <div class="featured-chapter-content-data-item">
-          <div>28&nbsp;%</div>
-          <div>des octets</div>
+          <div>{{ featured_chapter_stat3 }}</div>
+          <div>{{ featured_chapter_stat3_text }}</div>
         </div>
+        {% endif %}
       </div>
-      <a href="{{ url_for('chapter', year=year, chapter='third-parties', lang=lang) }}" class="btn">
-        Lire le chapitre sur les Tierces Parties
+      <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
+        Lire le chapitre: {{ featured_chapter_name }}
       </a>
     </div>
   </section>
