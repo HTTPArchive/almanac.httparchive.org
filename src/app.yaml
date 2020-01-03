@@ -1,7 +1,13 @@
 runtime: python37
 entrypoint: gunicorn -b :$PORT main:app
+default_expiration: 3h
 
 handlers:
+- url: /static/(.*\.(woff|woff2))$
+  static_files: static/\1
+  secure: always
+  expiration: 365d
+
 - url: /static
   static_dir: static
   secure: always
