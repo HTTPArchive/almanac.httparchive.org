@@ -25,10 +25,6 @@ class _Language(object):
   def lang_code(self):
     return self._lang_code
 
-  @property
-  def region_code(self):
-    return self._region_code
-
 # Currently we are only supporting languages and not regions
 class Language(object):
   JAPANESE = _Language('日本語', 'ja', 'JP')

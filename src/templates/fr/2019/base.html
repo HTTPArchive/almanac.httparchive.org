@@ -138,11 +138,6 @@
 {% macro language_switcher() %}
 {% if supported_languages | length > 1%}
 <div class="language-switcher">
-  {% if language is not none %}
-    <img src="/static/images/flags/{{ language.region_code }}.svg" class="flag" height="20" width="25" loading="lazy" />
-  {% else %}
-    <img src="/static/images/flags/EN.svg" class="flag" height="20" width="25" loading="lazy" />
-  {% endif %}
   <select>
     {% for l in supported_languages %}
       <option
