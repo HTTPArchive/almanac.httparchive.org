@@ -92,7 +92,7 @@
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributors</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Methodology</a>
       </nav>
-      <div class="language-switcher">{{ language_switcher() }}</div>
+      {{ language_switcher() }}
       <p class="copyright"><span>© 2019 Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span></p>
       <div class="social-media">
         <a href="https://twitter.com/HTTPArchive" class="twitter">
@@ -136,11 +136,6 @@
 {% macro language_switcher() %}
 {% if supported_languages | length > 1%}
 <div class="language-switcher">
-  {% if language is not none %}
-    <img src="/static/images/{{ language }}.png" class="flag" height="25" width="25" loading="lazy" />
-  {% else %}
-    <img src="/static/images/English.png" class="flag" height="25" width="25" loading="lazy" />
-  {% endif %}
   <select>
     {% for l in supported_languages %}
       <option
