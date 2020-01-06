@@ -15,7 +15,7 @@ last_updated: 2019-12-02T00:00:00.000Z
 
 パフォーマンスはユーザー体験で大切なものの一つです。
 多くのWebサイトでは、ページの読み込み時間を早くする事によるユーザー体験の向上と、コンバージョン率の上昇は一致しています。
-逆に、パフォーマンスが低い場合、ユーザーはコンバージョンを達成せず、不満を持ち、ページをクリックする毎に怒りを覚えることさえあります。
+逆に、パフォーマンスが低い場合、ユーザーはコンバージョンを達成せず、不満を持ち、ページをクリックすると怒りを覚えることさえあります。
 
 Webのパフォーマンスを定量化する方法は色々とあります。
 ここで一番大切なのは、ユーザーにとって特に重要な点を計測することです。
@@ -291,10 +291,10 @@ FIDが対話性の計測であるという性質は、ネットワーク速度�
 
 <figure id="fig15">
   <a href="/static/images/2019/07_Performance/fig15.png">
-    <img src="/static/images/2019/07_Performance/fig15.png" alt="図14.  「携帯電話向け」WebサイトのFIDパフォーマンスの高速、適度、低速の分布。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig15.png" alt="図15.  「携帯電話向け」WebサイトのFIDパフォーマンスの高速、適度、低速の分布。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&amp;format=interactive">
   </a>
-  <div id="fig15-description" class="visually-hidden">モバイルWebサイト1,000個の高速、適度、低速FIDの配布。 高速なFIDの分布は着実に減少していますが、デスクトップよりもはるかに速く減っています。 ウェブサイトの4分の3までが75％となる高速に達していますが、その後すぐに0％に低下します。</div>
-  <figcaption id="fig15-caption">図14.  <em>携帯電話向け</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。</figcaption>
+  <div id="fig15-description" class="visually-hidden">モバイルWebサイト1,000個の高速、適度、低速FIDの配布。 高速なFIDの分布は着実に減少していますが、デスクトップよりもはるかに速く減っています。 ウェブサイトの4分の3までが75％となる高速に達していますが、その後すぐに0％に低下します。</div>
+  <figcaption id="fig15-caption">図15.  <em>携帯電話向け</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。</figcaption>
 </figure>
 
 FIDをデバイスで分類してみると、この2つはまったく別の話となるようです。

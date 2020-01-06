@@ -118,7 +118,7 @@
 }
 .content ul li::before {
   position: absolute;
-  content: "•";
+  content: "\2022";
   font-size: 16px;
   color: #a9cbbb;
   display: inline-block;
