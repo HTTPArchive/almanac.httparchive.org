@@ -125,7 +125,16 @@
     <h1 class="title title-lg">Methodology</h1>
 
     <section>
-      <img class="content-banner" src="/static/images/methodology-banner.png" alt="">
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+          <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/methodology-banner.webp" />
+          <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/methodology-banner.png" />
+          <source type="image/webp" srcset="/static/images/methodology-banner.webp 2x" />
+          <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x" />
+          <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp" />
+          <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png" />
+          <img class="content-banner" src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
+        </picture>
         <h2 id="overview">Overview</h2>
 
         <p>

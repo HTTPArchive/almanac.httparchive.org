@@ -63,8 +63,12 @@
           Empieza a explorar
         </a>
       </div>
-      <img class="intro-image-2019" src="/static/images/home-hero-2019.png" alt="Web Almanac edición 2019" />
-      <img class="intro-image" src="/static/images/home-hero.png" alt="Web Almanac edición 2019" />
+      <div class="intro-image-2019-wrapper">
+        <div class="intro-image-2019"></div>
+      </div>
+      <div class="intro-image-wrapper">
+        <div class="intro-image"></div>
+      </div>
     </div>
     {% endif %}    
   </header>
@@ -82,8 +86,8 @@
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
+        {{ language_switcher() }}
       </nav>
-      <div class="language-switcher">{{ language_switcher() }}</div>
       <p class="copyright">Copyright © 2019 Web Almanac. Todos los derechos reservados.</p>
       <div class="social-media">
         <a href="https://twitter.com/HTTPArchive" class="twitter">
@@ -127,11 +131,6 @@
 {% macro language_switcher() %}
 {% if supported_languages | length > 1%}
 <div class="language-switcher">
-  {% if language is not none %}
-    <img src="/static/images/{{ language.lang_code }}.png" class="flag" height="25" width="25" loading="lazy" />
-  {% else %}
-    <img src="/static/images/English.png" class="flag" height="25" width="25" loading="lazy" />
-  {% endif %}
   <select>
     {% for l in supported_languages %}
       <option
