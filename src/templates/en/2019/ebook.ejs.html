@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+<!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
+{% set metadata = {} %}
+{% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %} 
+
+{% block head %}
+    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js" nonce="{{ csp_nonce() }}"></script>
+{% endblock %}
+
+{% block styles %}
+<style>
+  @media print{
+    #toc a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section id="title">
+    <h1>The Web Almanac 2019</h1>
+</section>
+
+<section id="toc">
+    <h1>Table of contents:</h1>
+    <ul>
+      <% for (let part of ebook.parts) { %>
+        <li>
+          Part <%= part.title %> 
+          <ul>
+            <% for (let chapter of part.chapters) { %>
+              <li>
+                  <a href="#chapter-<%= chapter.metadata.chapter_number%>">
+                    Chapter <%= chapter.metadata.chapter_number %>. <%= chapter.metadata.title %>
+                  </a>
+              </li>
+            <% } %>
+          </ul>
+        </li>
+      <% } %>
+    </ul>
+</section>
+
+<% for (let part of ebook.parts) { %>
+<section class="part">
+  <section>
+    <h1>Part <%= part.title %></h1>
+  </section>
+
+  <% for (let chapter of part.chapters) { %>
+  <section class="chapter">
+    <section class="body">
+      <h1 id="chapter-<%= chapter.metadata.chapter_number %>" class="title title-lg">
+        <%= chapter.metadata.title %>
+      </h1>
+      <h2 class="subtitle">
+        Part <%= chapter.metadata.part_number %> Chapter <%= chapter.metadata.chapter_number %>
+      </h2>
+
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+        <source
+          media="(min-width: 327px)"
+          type="image/webp"
+          srcset="{{ chapter_image_dir }}/hero_lg.webp"
+        />
+        <source
+          media="(min-width: 327px)"
+          type="image/jpeg"
+          srcset="{{ chapter_image_dir }}/hero_lg.jpg"
+        />
+        <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
+        <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
+        <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
+        <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
+        <img
+          src="{{ chapter_image_dir }}/hero_lg.jpg"
+          class="content-banner"
+          alt=""
+          loading="eager"
+        />
+      </picture>
+      <%- chapter.body %>
+    </section>
+
+    <section class="authors">
+      
+    </section>
+  </section>
+  <% } %>
+</section>
+<% } %>
+{% endblock %} 

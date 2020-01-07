@@ -8,7 +8,8 @@ csp = {
     'script-src': [
         '\'self\'',
         'www.google-analytics.com',
-        'www.googletagmanager.com'
+        'www.googletagmanager.com',
+        'unpkg.com'
     ],
     'font-src': [
         '\'self\'',
