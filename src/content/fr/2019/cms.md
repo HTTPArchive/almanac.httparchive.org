@@ -266,7 +266,7 @@ La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 e
     <img src="/static/images/2019/14_CMS/fig11.png" alt="" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
   </a>
   <div id="fig11-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third-party requests on CMS pages for desktop and mobile. The median (50th percentile) desktop third-party request count is 16. The 10th percentile is 3, 25th 7, 75th 31, and 90th 52. Desktop and mobile have nearly equivalent distributions.</div>
-  <figcaption id="fig11-caption">Figure 11. Distribution of the number of third-party requests on CMS pages.</figcaption>
+  <figcaption id="fig11-caption">Figure 11. Répartition du nombre de requêtes de tiers sur les pages CMS.</figcaption>
 </figure>
 
 Nous savons que la valeur médiane indique qu'au moins la moitié des pages Web des CMS sont envoyées avec plus de ressources tierces que ce que nous signalons ici. Au 90e percentile, les pages des CMS peuvent livrer jusqu'à 52 ressources à environ 940 Ko, ce qui représente une augmentation considérable. 
@@ -277,15 +277,15 @@ Nous savons que la valeur médiane indique qu'au moins la moitié des pages Web 
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig12.png">
-    <img src="/static/images/2019/14_CMS/fig12.png" alt="Figure 12. Distribution of image weight (KB) on CMS pages." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig12.png" alt="Figure 12. Répartition du poids des images (KB) sur les pages CMS." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&amp;format=interactive">
   </a>
   <div id="fig12-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of image kilobytes on CMS pages for desktop and mobile. The median (50th percentile) desktop image weight is 1,232 KB. The 10th percentile is 198 KB, 25th 507 KB, 75th 2,763 KB, and 90th 5,694 KB. Desktop and mobile have nearly equivalent distributions.</div>
-  <figcaption id="fig12-caption">Figure 12. Distribution of image weight (KB) on CMS pages.</figcaption>
+  <figcaption id="fig12-caption">Figure 12. Répartition du poids des images (KB) sur les pages CMS.</figcaption>
 </figure>
 
 <figure>
   <div class="big-number">1,232 KB</div>
-  <figcaption>Figure 13. The median number of image kilobytes loaded per desktop CMS page.</figcaption>
+  <figcaption>Figure 13. Nombre médian de kilo-octets d'images chargés par page CMS sur desktop.</figcaption>
 </figure>
 
 Rappelez-vous des figures 8 et 9 précédentes, les images sont un grand contributeur au poids total des pages des CMS. Les figures 12 et 13 ci-dessus montrent que la page médiane des CMS sur desktop a 31 images et un poids total de 1 232 Ko, tandis que la page médiane des CMS sur mobile a 29 images et un poids total de 1 263 Ko. Encore une fois, les différences de poids de ces ressources sont très faibles, tant pour les expériences de bureau que pour les expériences mobiles. Le chapitre [Poids de la page](. /page-weight) montre en outre que les ressources en images dépassent largement le poids médian des pages ayant la même quantité d'images sur l'ensemble du Web, qui est de 983 Ko et de 893 Ko pour desktop et pour mobile respectivement. Le verdict : Les pages des CMS envoient des images lourdes.
@@ -294,10 +294,10 @@ Quels sont les formats courants que l'on trouve sur les pages CMS desktop et mob
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig14.png">
-    <img src="/static/images/2019/14_CMS/fig14.png" alt="Figure 14. Adoption of image formats on CMS pages." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig14.png" alt="Figure 14. Adoption de formats d'images sur les pages CMS." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&amp;format=interactive">
   </a>
   <div id="fig14-description" class="visually-hidden">Bar chart of the adoption of image formats on CMS pages for desktop and mobile. JPEG makes up nearly half of all image formats, PNG comprises a third, GIF comprises a fifth, and the remaining 5% shared among SVG, ICO, and WebP. Desktop and mobile have nearly equivalent adoption.</div>
-  <figcaption id="fig14-caption">Figure 14. Adoption of image formats on CMS pages.</figcaption>
+  <figcaption id="fig14-caption">Figure 14. Adoption de formats d'images sur les pages CMS.</figcaption>
 </figure>
 
 Cette segmentation n'est peut-être pas surprenante étant donné les cas d'utilisation courants pour ces types d'images. Les SVG pour les logos et les icônes sont courants, tout comme les JPEG sont omniprésents. Le WebP est encore un format optimisé relativement nouveau avec [adoption croissante des navigateurs] (https://caniuse.com/#search=webp). Il sera intéressant de voir comment cela aura un impact sur son utilisation dans les prochaines années dans le monde des CMS. 
@@ -312,26 +312,26 @@ Pour y parvenir, nous orientons notre analyse vers des [mesures de performance p
   <table>
     <thead>
       <tr>
-        <th>Duration</th>
+        <th>Durée</th>
         <th>Perception</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>< 0.1 seconds</td>
+        <td>< 0.1 secondes</td>
         <td>Instant</td>
       </tr>
       <tr>
-        <td>0.5-1 second</td>
-        <td>Immediate</td>
+        <td>0.5-1 seconde</td>
+        <td>Immédiat</td>
       </tr>
       <tr>
-        <td>2-5 seconds</td>
-        <td>Point of abandonment</td>
+        <td>2-5 secondes</td>
+        <td>Point d'abandon</td>
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 15. How humans perceive short durations of time.</figcaption>
+  <figcaption>Figure 15. Comment les humains perçoivent les courtes durées de temps.</figcaption>
 </figure>
 
 Si les événements se produisent dans un délai de 0,1 seconde (100 millisecondes), pour nous tous, ils se produisent pratiquement instantanément. Et lorsque les événements durent plus de quelques secondes, la probabilité que nous poursuivions notre chemin sans attendre plus longtemps est très élevée. C'est très important pour les créateurs de contenu qui cherchent un succès continu sur le Web, car cela nous indique à quelle vitesse nos sites doivent se charger si nous voulons acquérir, engager et conserver notre base d'utilisateurs. 
@@ -348,10 +348,10 @@ Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/a
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig16.png">
-    <img src="/static/images/2019/14_CMS/fig16.png" alt="Figure 16. Average distribution of FCP experiences across CMSs." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig16.png" alt="Figure 16. Répartition moyenne des expériences de FCP entre les CMS." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&amp;format=interactive">
   </a>
   <div id="fig16-description" class="visually-hidden">Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 17 below for a data table of the top 5 CMSs.</div>
-  <figcaption id="fig16-caption">Figure 16. Average distribution of FCP experiences across CMSs.</figcaption>
+  <figcaption id="fig16-caption">Figure 16. Répartition moyenne des expériences de FCP entre les CMS.</figcaption>
 </figure>
 
 <figure>
@@ -359,9 +359,9 @@ Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/a
     <thead>
       <tr>
         <th>CMS</th>
-        <th>Fast<br>(&lt; 1000ms)</th>
-        <th>Moderate</th>
-        <th>Slow<br>(&gt;= 3000ms)</th>
+        <th>Rapide<br>(&lt; 1000ms)</th>
+        <th>Moderé</th>
+        <th>Lent<br>(&gt;= 3000ms)</th>
       </tr>
     </thead>
     <tbody>
@@ -397,7 +397,7 @@ Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/a
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 17. Average distribution of FCP experiences for the top 5 CMSs.</figcaption>
+  <figcaption>Figure 17. Répartition moyenne des expériences de FCP entre les CMS.</figcaption>
 </figure>
 
 Le FCP dans l'écosystème des CMS tend surtout à se situer dans la plage des valeurs moyennes. La nécessité pour les plateformes CMS d'interroger le contenu d'une base de données, de l'envoyer, puis de le rendre dans le navigateur, pourrait être un facteur qui contribue au retard que connaissent les utilisateurs. Les charges de ressources dont nous avons discuté dans les sections précédentes pourraient également jouer un rôle. De plus, certaines de ces instances sont sur un hébergement partagé ou dans des environnements qui ne sont peut-être pas optimisés pour les performances, ce qui pourrait également avoir un impact sur l'expérience dans le navigateur.
@@ -411,10 +411,10 @@ Le FID dans l'écosystème CMS tend généralement vers des expériences rapides
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig18.png">
-    <img src="/static/images/2019/14_CMS/fig18.png" alt="Figure 18. Average distribution of FID experiences across CMSs." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig18.png" alt="Figure 18. Répartition moyenne des expériences de FID entre les CMS." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&amp;format=interactive">
   </a>
-  <div id="fig18-description" class="visually-hidden">Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 19 below for a data table of the top 5 CMSs.</div>
-  <figcaption id="fig18-caption">Figure 18. Average distribution of FID experiences across CMSs.</figcaption>
+  <div id="fig18-description" class="visually-hidden">Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 19 ci-dessous pour un tableau des données des cinq CMS les plus populaires.</div>
+  <figcaption id="fig18-caption">Figure 18. Répartition moyenne des expériences de FID entre les CMS.</figcaption>
 </figure>
 
 <figure>
@@ -422,9 +422,9 @@ Le FID dans l'écosystème CMS tend généralement vers des expériences rapides
     <thead>
       <tr>
         <th>CMS</th>
-        <th>Fast<br>(&lt; 100ms)</th>
-        <th>Moderate</th>
-        <th>Slow<br>(&gt;= 300ms)</th>
+        <th>Rapide<br>(&lt; 100ms)</th>
+        <th>Moderé</th>
+        <th>Lent<br>(&gt;= 300ms)</th>
       </tr>
     </thead>
     <tbody>
@@ -460,7 +460,7 @@ Le FID dans l'écosystème CMS tend généralement vers des expériences rapides
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 19. Average distribution of FID experiences for the top 5 CMSs.</figcaption>
+  <figcaption>Figure 19. Répartition moyenne des expériences de FID pour les cinq CMS les plus populaires.</figcaption>
 </figure>
 
 Bien que cette différence soit présente dans les données du FCP, le FID a des écarts de performances plus importants. Par exemple, la différence entre les expériences FCP rapides pour les téléphones portables et les ordinateurs de bureau pour Joomla est d'environ 12,78 %, pour les expériences FID, la différence est significative : 27,76 %. La qualité des appareils mobiles et des connexions pourrait jouer un rôle dans les écarts de performance que nous constatons ici. Comme nous l'avons souligné précédemment, il y a une petite marge de différence entre les ressources envoyées aux versions desktop et mobile d'un site web. L'optimisation pour l'expérience mobile (interactive) devient plus évidente avec ces résultats.
@@ -475,18 +475,18 @@ Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expérience
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig20.png">
-    <img src="/static/images/2019/14_CMS/fig20.png" alt="Figure 20. Distribution of Lighthouse PWA category scores for CMS pages." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig20.png" alt="Figure 20. Distribution des notes Lighthouse de la catégorie PWA pour les pages CMS." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&amp;format=interactive">
   </a>
-  <div id="fig20-description" class="visually-hidden">Bar chart showing the distribution of Lighthouse PWA category scores for all CMS pages. The most common score is 0.3 at 22% of CMS pages. There are two other peaks in the distribution: 11% of pages with scores of 0.15 and 8% of pages with scores of 0.56. Fewer than 1% of pages get a score above 0.6.</div>
-  <figcaption id="fig20-caption">Figure 20. Distribution of Lighthouse PWA category scores for CMS pages.</figcaption>
+  <div id="fig20-description" class="visually-hidden">Diagramme en bâtons montrant la distribution des notes Lighthouse de la catégorie PWA pour toutes les pages CMS. La note la plus fréquente est de 0,3 pour 22 % des pages CMS. Il y a deux autres pics dans la distribution : 11 % des pages avec un score de 0,15 et 8 % des pages avec un score de 0,56. Moins de 1% des pages obtiennent un score supérieur à 0,6.</div>
+  <figcaption id="fig20-caption">Figure 20. Distribution des notes Lighthouse de la catégorie PWA pour les pages CMS.</figcaption>
 </figure>
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig21.png">
-    <img src="/static/images/2019/14_CMS/fig21.png" alt="Figure 21. Median Lighthouse PWA category scores per CMS." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig21.png" alt="Figure 21. Notes Lighthouse médianes de la catégorie PWA par CMS." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&amp;format=interactive">
   </a>
-  <div id="fig21-description" class="visually-hidden">Bar chart showing the median Lighthouse PWA score per CMS. The median score for WordPress websites is 0.33. The next five CMSs (Joomla, Drupal, Wix, Squarespace, and 1C-Bitrix) all have a median score of 0.3. The CMSs with the top PWA scores are Jimdo with a score of 0.56 and TYPO3 at 0.41.</div>
-  <figcaption id="fig21-caption">Figure 21. Median Lighthouse PWA category scores per CMS.</figcaption>
+  <div id="fig21-description" class="visually-hidden">Diagramme en bâtons montrant la note médiane Lighthouse PWA par CMS. Le score médian pour les sites web WordPress est de 0,33. Les cinq prochains CMS (Joomla, Drupal, Wix, Squarespace et 1C-Bitrix) ont tous un score médian de 0,3. Les CMS avec les meilleurs scores PWA sont Jimdo avec un score de 0,56 et TYPO3 à 0,41.</div>
+  <figcaption id="fig21-caption">Figure 21. Notes Lighthouse médianes de la catégorie PWA par CMS.</figcaption>
 </figure>
 
 #### Accessibilité
@@ -497,18 +497,18 @@ Chaque audit d'accessibilité est réussi ou échoué, mais contrairement aux au
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig22.png">
-    <img src="/static/images/2019/14_CMS/fig22.png" alt="Figure 22. Distribution of Lighthouse accessibility category scores for CMS pages." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig22.png" alt="Figure 22. Distribution des scores d'accessibilité de Lighthouse pour les pages CMS." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&amp;format=interactive">
   </a>
-  <div id="fig22-description" class="visually-hidden">Bar chart showing the distribution of CMS pages' Lighthouse accessibility scores. The distribution is heavily skewed to the higher scores with a mode of about 0.85.</div>
-  <figcaption id="fig22-caption">Figure 22. Distribution of Lighthouse accessibility category scores for CMS pages.</figcaption>
+  <div id="fig22-description" class="visually-hidden">Diagramme en bâtons montrant la distribution des scores d'accessibilité Lighthouse des pages CMS. La distribution est fortement asymétrique vers les scores les plus élevés avec un mode d'environ 0,85.</div>
+  <figcaption id="fig22-caption">Figure 22. Distribution des scores d'accessibilité de Lighthouse pour les pages CMS.</figcaption>
 </figure>
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig23.png">
-    <img src="/static/images/2019/14_CMS/fig23.png" alt="Figure 23. Median Lighthouse accessibility category scores per CMS." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig23.png" alt="Figure 23. Notes médianes Lighthouse d'accessibilité par CMS." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&amp;format=interactive">
   </a>
-  <div id="fig23-description" class="visually-hidden">Bar chart showing the median Lighthouse accessibility category score per CMS. Most CMSs get a score of about 0.75. Notable outliers include Wix with a median score of 0.93 and 1-C Bitrix with a score of 0.65.</div>
-  <figcaption id="fig23-caption">Figure 23. Median Lighthouse accessibility category scores per CMS.</figcaption>
+  <div id="fig23-description" class="visually-hidden">Diagramme en bâtons montrant la note Lighthouse médiane d'accessibilité par CMS. La plupart des CMS obtiennent un score d'environ 0,75. Parmi les valeurs les plus aberrantes, on retrouve Wix avec un score médian de 0,93 et 1-C Bitrix avec un score de 0,65.</div>
+  <figcaption id="fig23-caption">Figure 23. Notes médianes Lighthouse d'accessibilité par CMS.</figcaption>
 </figure>
 
 Actuellement, seulement 1,27% des pages d'accueil des CMS sur mobiles obtiennent un score parfait de 100%. Parmi les meilleurs CMS, Wix prend la tête en ayant le plus haut score médian d'accessibilité sur ses pages mobiles. Dans l'ensemble, ces chiffres sont lamentables quand on considère le nombre de sites web (la part du web qui est propulsée par des CMS) qui sont inaccessibles à un segment significatif de notre population. Autant les expériences numériques ont un impact sur de nombreux aspects de notre vie, autant cela devrait être un impératif pour nous encourager à *construire des expériences web accessibles dès le départ*, et à poursuivre le travail pour faire du web un espace inclusif.
@@ -652,7 +652,7 @@ Bien que nous ayons pris un instantané du paysage actuel de l'écosystème des 
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 24. Adoption (number of mobile websites) of React and companion frameworks per CMS.</figcaption>
+  <figcaption>Figure 24. Adoption (nombre de sites web mobiles) de React et des frameworks connexes par CMS.</figcaption>
 </figure>
 
 Nous voyons également des fournisseurs et des agences d'hébergement offrant des plateformes d'expérience numérique (DXP) comme solutions holistiques utilisant des CMS et d'autres technologies intégrées comme boîte à outils pour les stratégies d'entreprise axées sur le client. Ces innovations témoignent d'un effort pour créer des solutions clés en main, basées sur des CMS, qui permettent aux utilisateurs (et leurs utilisateurs finaux) d'obtenir par défaut le meilleur UX lors de la création et de la consommation du contenu de ces plateformes. L'objectif: de bonnes performances par défaut, une richesse de fonctionnalités et d'excellents environnements d'hébergement.
