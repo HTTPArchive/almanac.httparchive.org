@@ -294,11 +294,11 @@ Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQu
 In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building **single-page applications** (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig12.png">	
-      <img src="/static/images/2019/01_JavaScript/fig12.png" alt="Figure 12. Most frequently used frameworks on desktop." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive">	
-   </a>	
-	<div id="fig12-description" class="visually-hidden">Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.</div>	
-	<figcaption id="fig12-caption">Figure 12. Most frequently used frameworks on desktop.</figcaption>	
+   <a href="/static/images/2019/01_JavaScript/fig12.png">
+      <img src="/static/images/2019/01_JavaScript/fig12.png" alt="Figure 12. Most frequently used frameworks on desktop." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive">
+   </a>
+	<div id="fig12-description" class="visually-hidden">Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.</div>
+	<figcaption id="fig12-caption">Figure 12. Most frequently used frameworks on desktop.</figcaption>
 </figure>
 
 Only a subset of popular frameworks are being analyzed here, but it's important to note that all of them either follow one of these two approaches:	
