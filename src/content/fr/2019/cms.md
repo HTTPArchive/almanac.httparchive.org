@@ -13,7 +13,7 @@ last_updated:
 
 ## Introduction
 
-Le terme général **Système de gestion de contenu (SGC)** désigne les systèmes permettant aux personnes et aux organisations de créer, de gérer et de publier du contenu. Un CMS pour le contenu web, plus précisément, est un système visant à créer, gérer et publier du contenu à consommer et à expérimenter via le web ouvert.
+Le terme général **Système de gestion de contenu (SGC, ou CMS pour Content Management System en anglais)** désigne les systèmes permettant aux personnes et aux organisations de créer, de gérer et de publier du contenu. Un CMS pour le contenu web, plus précisément, est un système visant à créer, gérer et publier du contenu à consommer et à expérimenter via le web ouvert.
 
 Chaque CMS met en œuvre un sous-ensemble d'un large éventail de capacités de gestion de contenu et les mécanismes correspondants pour permettre aux utilisateurs de construire facilement et efficacement des sites web autour de leur contenu. Ce contenu est souvent stocké dans un certain type de base de données, ce qui permet aux utilisateurs de le réutiliser partout où cela est nécessaire pour leur stratégie de contenu. Les CMS offrent également des capacités d'administration visant à faciliter le téléversement et la gestion du contenu par les utilisateurs, selon leurs besoins.
 
