@@ -50,7 +50,7 @@ Dans ce chapitre, nous cherchons à explorer la surface du vaste univers des CMS
   <figcaption>Figure 2. Pourcentage de pages web propulsées par un CMS.</figcaption>
 </figure>
 
-Aujourd'hui, nous remarquons que plus de 40% des pages web sont propulsées par une plateforme CMS ; 40.01% pour les mobiles et 39.61% pour les desktop plus précisément.
+Aujourd'hui, nous remarquons que plus de 40% des pages web sont propulsées par une plateforme CMS ; 40.01% pour les mobiles et 39.61% pour les ordinateur de bureau plus précisément.
 
 Il existe d'autres ensembles de données qui suivent la part de marché des plateformes CMS, comme [W3Techs](https://w3techs.com/technologies/history_overview/content_management), et ils reflètent des pourcentages plus élevés de plus de 50% de pages web propulsées par des plateformes CMS. De plus, ils indiquent également que les plateformes CMS sont en expansion, jusqu'à 12 % de croissance d'une année à l'autre dans certains cas ! L'écart entre notre analyse et celle de W3Tech pourrait s'expliquer par une différence dans les méthodologies de recherche. Vous pouvez en lire plus sur la nôtre sur la page [Méthodologie](./methodology).
 
@@ -76,7 +76,7 @@ En examinant les pages web servies sur les appareils de bureau et mobiles, nous 
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig4.png">
-    <img src="/static/images/2019/14_CMS/fig4.png" alt="Figure 4. Pourcentage de sites web desktop et mobiles qui utilisent un CMS." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig4.png" alt="Figure 4. Pourcentage de sites web sur desktop et mobiles qui utilisent un CMS." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">Diagramme en bâtons montrant que 40 % des sites web desktop et 40 % des sites web mobiles sont construits à l'aide d'un CMS.</div>
   <figcaption id="fig4-caption">Figure 4. Pourcentage de sites web desktop et mobiles qui utilisent un CMS.</figcaption>
@@ -123,7 +123,7 @@ Les éléments de base de tout site web constituent également un site web gér�
   <a href="/static/images/2019/14_CMS/fig6.png">
     <img src="/static/images/2019/14_CMS/fig6.png" alt="Figure 6. Répartition du poids des pages sur les CMS." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&amp;format=interactive">
   </a>
-  <div id="fig6-description" class="visually-hidden">Diagramme en bâtons montrant la distribution du poids des pages CMS. La page CMS moyenne sur desktop pèse 2.3 MB. Au 10e percentile, elle pèse 0,7 Mo, au 25e percentile, 1,2 Mo, au 75e percentile, 4,2 Mo et au 90e percentile, 7,4 Mo. Les valeurs pour les ordinateurs de bureau sont très légèrement supérieures à celles des mobiles.</div>
+  <div id="fig6-description" class="visually-hidden">Diagramme en bâtons montrant la distribution du poids des pages CMS. La page CMS moyenne sur ordinateur de bureau pèse 2.3 MB. Au 10e percentile, elle pèse 0,7 Mo, au 25e percentile, 1,2 Mo, au 75e percentile, 4,2 Mo et au 90e percentile, 7,4 Mo. Les valeurs pour les ordinateurs de bureau sont très légèrement supérieures à celles des mobiles.</div>
   <figcaption id="fig6-caption">Figure 6. Répartition du poids des pages sur les CMS.</figcaption>
 </figure>
 
@@ -131,11 +131,11 @@ Les éléments de base de tout site web constituent également un site web gér�
   <a href="/static/images/2019/14_CMS/fig7.png">
     <img src="/static/images/2019/14_CMS/fig7.png" alt="Figure 7. Répartition des requêtes des CMS par page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&amp;format=interactive">
   </a>
-  <div id="fig7-description" class="visually-hidden">Diagramme en bâtons montrant la répartition des requêtes des CMS par page. La page CMS moyenne sur desktop charge 86 ressources. Au 10e percentile, elle charge 39 ressources, au 25e percentile 57 ressources, au 75e percentile 127 ressources et au 90e percentile 183 ressources. Le desktop est constamment plus élevé que le mobile par une petite marge de 3-6 ressources.</div>
+  <div id="fig7-description" class="visually-hidden">Diagramme en bâtons montrant la répartition des requêtes des CMS par page. La page CMS moyenne sur ordinateur de bureau charge 86 ressources. Au 10e percentile, elle charge 39 ressources, au 25e percentile 57 ressources, au 75e percentile 127 ressources et au 90e percentile 183 ressources. Le desktop est constamment plus élevé que le mobile par une petite marge de 3-6 ressources.</div>
   <figcaption id="fig7-caption">Figure 7. Répartition des requêtes des CMS par page.</figcaption>
 </figure>
 
-Dans les figures 6 et 7 ci-dessus, nous voyons que la page médiane sur un CMS sur un desktop charge 86 ressources et pèse 2,29 Mo. L'utilisation des ressources des pages mobiles n'est pas très loin derrière avec 83 ressources et 2,25 Mo.
+Dans les figures 6 et 7 ci-dessus, nous voyons que la page médiane sur un CMS sur un ordinateur de bureau charge 86 ressources et pèse 2,29 Mo. L'utilisation des ressources des pages mobiles n'est pas très loin derrière avec 83 ressources et 2,25 Mo.
 
 La médiane indique le point médian où toutes les pages du CMS se situent soit au-dessus, soit au-dessous. En bref, la moitié de toutes les pages web sur un CMS chargent moins de requêtes et sont moins lourdes, tandis que l'autre moitié charge plus de requêtes et est plus lourde. Au 10e percentile, les pages mobiles et sur bureau ont moins de 40 requêtes et pèsent moins de 1 Mo, mais au 90e percentile, nous avons des pages avec plus de 170 requêtes et pesant 7 Mo, soit presque trois fois plus que la médiane.  
 
@@ -243,15 +243,15 @@ Comment sont les pages CMS par rapport aux pages du web dans son ensemble ? Dans
 
 Lorsque nous regardons de plus près les types de ressources qui se chargent sur les pages sur les CMS sur mobile ou sur desktop, les images et la vidéo apparaissent immédiatement comme les principaux contributeurs à leur poids.
 
-L'impact n'est pas nécessairement en corrélation avec le nombre de requêtes, mais plutôt avec la quantité de données associées à ces requêtes individuelles. Par exemple, dans le cas des ressources vidéo dont seulement deux demandes sont faites à la médiane, elles ont un poids de plus de 1Mo. Les expériences multimédias s'accompagnent également de l'utilisation de scripts pour intégrer l'interactivité, fournir des fonctionnalités et des données, pour ne citer que quelques cas d'utilisation. Sur les pages mobiles comme sur les pages desktop, ces ressources sont les troisièmes plus lourdes.
+L'impact n'est pas nécessairement en corrélation avec le nombre de requêtes, mais plutôt avec la quantité de données associées à ces requêtes individuelles. Par exemple, dans le cas des ressources vidéo dont seulement deux demandes sont faites à la médiane, elles ont un poids de plus de 1Mo. Les expériences multimédias s'accompagnent également de l'utilisation de scripts pour intégrer l'interactivité, fournir des fonctionnalités et des données, pour ne citer que quelques cas d'utilisation. Sur les pages mobiles comme sur les pages sur ordinateur de bureau, ces ressources sont les troisièmes plus lourdes.
 
-Avec nos expériences des CMS qui sont saturées de ces ressources, nous devons considérer l'impact que cela a sur les visiteurs du site web sur le front-end - leur expérience est-elle rapide ou lente ? De plus, lorsque l'on compare l'utilisation des ressources mobiles et desktop, la quantité de requêtes et le poids ne montrent que peu de différence. Cela signifie que la même quantité et le même poids de ressources alimentent à la fois les expériences CMS sur mobile et sur desktop. La variation de la vitesse de connexion et de la qualité des appareils mobiles ajoute [une autre couche de complexité] (https://medinathoughts.com/2017/12/03/the-perils-of-mobile-web-performance-part-iii/). Plus tard dans ce chapitre, nous utiliserons les données du CrUX pour évaluer l'expérience des utilisateurs dans l'écosystème des CMS.
+Avec nos expériences des CMS qui sont saturées de ces ressources, nous devons considérer l'impact que cela a sur les visiteurs du site web sur le front-end - leur expérience est-elle rapide ou lente ? De plus, lorsque l'on compare l'utilisation des ressources mobiles et ordinateur de bureau, la quantité de requêtes et le poids ne montrent que peu de différence. Cela signifie que la même quantité et le même poids de ressources alimentent à la fois les expériences CMS sur mobile et sur ordinateur de bureau. La variation de la vitesse de connexion et de la qualité des appareils mobiles ajoute [une autre couche de complexité] (https://medinathoughts.com/2017/12/03/the-perils-of-mobile-web-performance-part-iii/). Plus tard dans ce chapitre, nous utiliserons les données du CrUX pour évaluer l'expérience des utilisateurs dans l'écosystème des CMS.
 
 ### Ressources tierces
 
-Soulignons un sous-ensemble spécifique de ressources pour évaluer leur impact dans l'écosystème des CMS. Les ressources [Tierce partie](./third-parties) sont celles qui proviennent d'origines n'appartenant pas au nom de domaine ou aux serveurs du site de destination. Elles peuvent être des images, des vidéos, des scripts ou d'autres types de ressources. Parfois, ces ressources sont combinées entre elles, comme par exemple avec l'intégration d'une `iframe`. Nos données révèlent que la quantité médiane de ressources tierces sur desktop et sur mobile est très similaire.
+Soulignons un sous-ensemble spécifique de ressources pour évaluer leur impact dans l'écosystème des CMS. Les ressources [Tierce partie](./third-parties) sont celles qui proviennent d'origines n'appartenant pas au nom de domaine ou aux serveurs du site de destination. Elles peuvent être des images, des vidéos, des scripts ou d'autres types de ressources. Parfois, ces ressources sont combinées entre elles, comme par exemple avec l'intégration d'une `iframe`. Nos données révèlent que la quantité médiane de ressources tierces sur ordinateur de bureau et sur mobile est très similaire.
 
-La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 et pèse 264,72 Ko, tandis que la médiane de ces requêtes sur les pages CMS desktop est de 16 et pèse 271,56 Ko. (Il est à noter que cela exclut les ressources 3P considérées comme faisant partie de l' "hébergement".
+La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 et pèse 264,72 Ko, tandis que la médiane de ces requêtes sur les pages CMS sur ordinateur de bureau est de 16 et pèse 271,56 Ko. (Il est à noter que cela exclut les ressources 3P considérées comme faisant partie de l' "hébergement".
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig10.png">
@@ -265,7 +265,7 @@ La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 e
   <a href="/static/images/2019/14_CMS/fig11.png">
     <img src="/static/images/2019/14_CMS/fig11.png" alt="" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third-party requests on CMS pages for desktop and mobile. The median (50th percentile) desktop third-party request count is 16. The 10th percentile is 3, 25th 7, 75th 31, and 90th 52. Desktop and mobile have nearly equivalent distributions.</div>
+  <div id="fig11-description" class="visually-hidden">Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des requêtes de tierces-parties sur les pages CMS sur ordinateur de bureau et mobile. Le nombre médian (50e percentile) de requêtes de tierces-parties sur ordinateur de bureau est de 16. Le 10e percentile est 3, le 25e 7, le 75e 31 et le 90e 52. Les ordinateurs de bureau et les mobiles ont des distributions presque équivalentes.</div>
   <figcaption id="fig11-caption">Figure 11. Répartition du nombre de requêtes de tiers sur les pages CMS.</figcaption>
 </figure>
 
@@ -279,24 +279,24 @@ Nous savons que la valeur médiane indique qu'au moins la moitié des pages Web 
   <a href="/static/images/2019/14_CMS/fig12.png">
     <img src="/static/images/2019/14_CMS/fig12.png" alt="Figure 12. Répartition du poids des images (KB) sur les pages CMS." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&amp;format=interactive">
   </a>
-  <div id="fig12-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of image kilobytes on CMS pages for desktop and mobile. The median (50th percentile) desktop image weight is 1,232 KB. The 10th percentile is 198 KB, 25th 507 KB, 75th 2,763 KB, and 90th 5,694 KB. Desktop and mobile have nearly equivalent distributions.</div>
+  <div id="fig12-description" class="visually-hidden">Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des kilo-octets d'images sur les pages CMS bureau et mobile. Le poids médian (50e percentile) des images sur bureau est de 1 232 Ko. Le 10e percentile est de 198 Ko, le 25e de 507 Ko, le 75e de 2 763 Ko et le 90e de 5 694 Ko. Les ordinateurs de bureau et les mobiles ont des distributions presque équivalentes.</div>
   <figcaption id="fig12-caption">Figure 12. Répartition du poids des images (KB) sur les pages CMS.</figcaption>
 </figure>
 
 <figure>
   <div class="big-number">1,232 KB</div>
-  <figcaption>Figure 13. Nombre médian de kilo-octets d'images chargés par page CMS sur desktop.</figcaption>
+  <figcaption>Figure 13. Nombre médian de kilo-octets d'images chargés par page CMS sur ordinateur de bureau.</figcaption>
 </figure>
 
-Rappelez-vous des figures 8 et 9 précédentes, les images sont un grand contributeur au poids total des pages des CMS. Les figures 12 et 13 ci-dessus montrent que la page médiane des CMS sur desktop a 31 images et un poids total de 1 232 Ko, tandis que la page médiane des CMS sur mobile a 29 images et un poids total de 1 263 Ko. Encore une fois, les différences de poids de ces ressources sont très faibles, tant pour les expériences de bureau que pour les expériences mobiles. Le chapitre [Poids de la page](. /page-weight) montre en outre que les ressources en images dépassent largement le poids médian des pages ayant la même quantité d'images sur l'ensemble du Web, qui est de 983 Ko et de 893 Ko pour desktop et pour mobile respectivement. Le verdict : Les pages des CMS envoient des images lourdes.
+Rappelez-vous des figures 8 et 9 précédentes, les images sont un grand contributeur au poids total des pages des CMS. Les figures 12 et 13 ci-dessus montrent que la page médiane des CMS sur ordinateur de bureau a 31 images et un poids total de 1 232 Ko, tandis que la page médiane des CMS sur mobile a 29 images et un poids total de 1 263 Ko. Encore une fois, les différences de poids de ces ressources sont très faibles, tant pour les expériences de bureau que pour les expériences mobiles. Le chapitre [Poids de la page](. /page-weight) montre en outre que les ressources en images dépassent largement le poids médian des pages ayant la même quantité d'images sur l'ensemble du Web, qui est de 983 Ko et de 893 Ko pour ordinateur de bureau et pour mobile respectivement. Le verdict : Les pages des CMS envoient des images lourdes.
 
-Quels sont les formats courants que l'on trouve sur les pages CMS desktop et mobile ? D'après nos données, les images JPG sont en moyenne le format d'image le plus populaire. Les formats PNG et GIF suivent, tandis que les formats comme SVG, ICO et WebP suivent de manière significative, avec environ un peu plus de 2% et 1%.
+Quels sont les formats courants que l'on trouve sur les pages CMS sur ordinateur de bureau et mobile ? D'après nos données, les images JPG sont en moyenne le format d'image le plus populaire. Les formats PNG et GIF suivent, tandis que les formats comme SVG, ICO et WebP suivent de manière significative, avec environ un peu plus de 2% et 1%.
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig14.png">
     <img src="/static/images/2019/14_CMS/fig14.png" alt="Figure 14. Adoption de formats d'images sur les pages CMS." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&amp;format=interactive">
   </a>
-  <div id="fig14-description" class="visually-hidden">Bar chart of the adoption of image formats on CMS pages for desktop and mobile. JPEG makes up nearly half of all image formats, PNG comprises a third, GIF comprises a fifth, and the remaining 5% shared among SVG, ICO, and WebP. Desktop and mobile have nearly equivalent adoption.</div>
+  <div id="fig14-description" class="visually-hidden">Diagramme en bâtons illustrant l'adoption de formats d'images sur les pages CMS pour les ordinateurs de bureau et les mobiles. Le JPEG représente près de la moitié de tous les formats d'image, le PNG en représente un tiers, le GIF un cinquième, et les 5% restants sont partagés entre le SVG, l'ICO et le WebP. Les ordinateurs de bureau et les téléphones portables ont une adoption presque équivalente.</div>
   <figcaption id="fig14-caption">Figure 14. Adoption de formats d'images sur les pages CMS.</figcaption>
 </figure>
 
@@ -350,7 +350,7 @@ Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/a
   <a href="/static/images/2019/14_CMS/fig16.png">
     <img src="/static/images/2019/14_CMS/fig16.png" alt="Figure 16. Répartition moyenne des expériences de FCP entre les CMS." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&amp;format=interactive">
   </a>
-  <div id="fig16-description" class="visually-hidden">Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 17 below for a data table of the top 5 CMSs.</div>
+  <div id="fig16-description" class="visually-hidden">Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 17 ci-dessous pour un tableau des données des cinq CMS les plus populaires.</div>
   <figcaption id="fig16-caption">Figure 16. Répartition moyenne des expériences de FCP entre les CMS.</figcaption>
 </figure>
 
@@ -402,12 +402,12 @@ Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/a
 
 Le FCP dans l'écosystème des CMS tend surtout à se situer dans la plage des valeurs moyennes. La nécessité pour les plateformes CMS d'interroger le contenu d'une base de données, de l'envoyer, puis de le rendre dans le navigateur, pourrait être un facteur qui contribue au retard que connaissent les utilisateurs. Les charges de ressources dont nous avons discuté dans les sections précédentes pourraient également jouer un rôle. De plus, certaines de ces instances sont sur un hébergement partagé ou dans des environnements qui ne sont peut-être pas optimisés pour les performances, ce qui pourrait également avoir un impact sur l'expérience dans le navigateur.
 
-WordPress montre notamment des expériences FCP modérées et lentes sur le mobile et le bureau. Wix se situe fortement dans les expériences FCP moyennes sur sa plateforme propriétaire. TYPO3, une plateforme CMS open-source d'entreprise, a des expériences rapides et constantes sur mobile et sur desktop. TYPO3 annonce des fonctionnalités intégrées de performance et d'évolutivité qui peuvent avoir un impact positif pour les visiteurs du site web en frontend.
+WordPress montre notamment des expériences FCP modérées et lentes sur le mobile et le bureau. Wix se situe fortement dans les expériences FCP moyennes sur sa plateforme propriétaire. TYPO3, une plateforme CMS open-source d'entreprise, a des expériences rapides et constantes sur mobile et sur ordinateur de bureau. TYPO3 annonce des fonctionnalités intégrées de performance et d'évolutivité qui peuvent avoir un impact positif pour les visiteurs du site web en frontend.
 
 ### First Input Delay
 Le [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID) mesure le temps écoulé entre le moment où un utilisateur interagit pour la première fois avec votre site (c'est-à-dire lorsqu'il clique sur un lien, tape sur un bouton ou utilise une option paramétrée en JavaScript) et le moment où le navigateur est réellement capable de répondre à cette interaction. Du point de vue de l'utilisateur, un FID "rapide" serait une réponse immédiate à ses actions sur un site plutôt qu'une expérience retardée. Ce délai (un point sensible) pourrait être en corrélation avec l'interférence d'autres aspects du chargement du site lorsque l'utilisateur essaie d'interagir avec le site.
 
-Le FID dans l'écosystème CMS tend généralement vers des expériences rapides à la fois pour les ordinateurs de bureau et les mobiles en moyenne. Cependant, ce qui est remarquable, c'est la différence significative entre les expériences mobiles et desktop.
+Le FID dans l'écosystème CMS tend généralement vers des expériences rapides à la fois pour les ordinateurs de bureau et les mobiles en moyenne. Cependant, ce qui est remarquable, c'est la différence significative entre les expériences mobiles et sur ordinateur de bureau.
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig18.png">
@@ -463,7 +463,7 @@ Le FID dans l'écosystème CMS tend généralement vers des expériences rapides
   <figcaption>Figure 19. Répartition moyenne des expériences de FID pour les cinq CMS les plus populaires.</figcaption>
 </figure>
 
-Bien que cette différence soit présente dans les données du FCP, le FID a des écarts de performances plus importants. Par exemple, la différence entre les expériences FCP rapides pour les téléphones portables et les ordinateurs de bureau pour Joomla est d'environ 12,78 %, pour les expériences FID, la différence est significative : 27,76 %. La qualité des appareils mobiles et des connexions pourrait jouer un rôle dans les écarts de performance que nous constatons ici. Comme nous l'avons souligné précédemment, il y a une petite marge de différence entre les ressources envoyées aux versions desktop et mobile d'un site web. L'optimisation pour l'expérience mobile (interactive) devient plus évidente avec ces résultats.
+Bien que cette différence soit présente dans les données du FCP, le FID a des écarts de performances plus importants. Par exemple, la différence entre les expériences FCP rapides pour les téléphones portables et les ordinateurs de bureau pour Joomla est d'environ 12,78 %, pour les expériences FID, la différence est significative : 27,76 %. La qualité des appareils mobiles et des connexions pourrait jouer un rôle dans les écarts de performance que nous constatons ici. Comme nous l'avons souligné précédemment, il y a une petite marge de différence entre les ressources envoyées aux versions ordinateur de bureau et mobile d'un site web. L'optimisation pour l'expérience mobile (interactive) devient plus évidente avec ces résultats.
 
 ### Scores Lighthouse
 
