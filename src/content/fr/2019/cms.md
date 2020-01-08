@@ -91,7 +91,7 @@ Les pages web propulsées par les CMS sont générées par un large ensemble des
 * Communauté
 * Et beaucoup d'autres.
 
-Les jeux de données CrUX et HTTP Archive contiennent des pages web propulsées par un ensemble d'environ 103 plateformes CMS. La plupart de ces plates-formes sont très petites en termes de part de marché relative. Pour les besoins de notre analyse, nous nous concentrerons sur les principales plates-formes CMS en termes de leur impact sur le web, tel que reflété par les données. Pour une analyse complète, [voir la feuille de calcul des résultats de ce chapitre] (https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/edit#gid=0).
+Les jeux de données CrUX et HTTP Archive contiennent des pages web propulsées par un ensemble d'environ 103 plateformes CMS. La plupart de ces plates-formes sont très petites en termes de part de marché relative. Pour les besoins de notre analyse, nous nous concentrerons sur les principales plates-formes CMS en termes de leur impact sur le web, tel que reflété par les données. Pour une analyse complète, [voir la feuille de calcul des résultats de ce chapitre](https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/edit#gid=0).
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig5.png">
