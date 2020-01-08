@@ -44,6 +44,10 @@
 }
 
 @media print {
+  .content {
+    margin: 0;
+  }
+
   .content > section {
     page-break-after: always;
   }  
@@ -63,7 +67,19 @@
 
   figure,
   figure a,
+  figure div,
   figure img {
     max-width: 100%;
   }
+
+
+}
+
+
+.content section.authors li {
+  display: flex;
+}
+
+.content section.authors li *:first-child {
+  flex: 0 0 76px;
 }
