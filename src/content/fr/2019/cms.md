@@ -4,7 +4,7 @@ chapter_number: 14
 title: CMS
 description: Chapitre CMS de l'Almanach Web 2019 couvrant l'adoption des CMS, la façon dont les solutions CMS sont construites, l'expérience utilisateur des sites web propulsés par les CMS et l'innovation des CMS.
 authors: [ernee, amedina]
-reviewers: []
+reviewers: [sirjonathan]
 translators: [JustinyAhin]
 discuss: 
 published: 
