@@ -1,96 +1,142 @@
-{% extends "base.html" %}
+{% extends "en/2019/base_chapter.html" %}
 
 <!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
 {% set metadata = {} %}
-{% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %} 
-
-{% block head %}
-    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js" nonce="{{ csp_nonce() }}"></script>
-{% endblock %}
 
 {% block styles %}
-<style>
-  @media print{
-    #toc a::after {
-      content: leader('.') target-counter(attr(href), page);
-    }
-  }
-</style>
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900%7CPoppins:300,400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/2019.css">
+  <link rel="stylesheet" href="/static/css/page.css">
+  <link rel="stylesheet" href="/static/css/ebook.css">
 {% endblock %}
 
 {% block content %}
+<section class="content">
+    <section id="title">
+        <h1 class="title-lg">The Web Almanac 2019</h1>
+        <p> HTTP Archive's annual state of the web report </p>
+        <p> Our mission is to combine the raw stats and trends of the HTTP Archive 
+            with the expertise of the web community. The Web Almanac is a comprehensive 
+            report on the state of the web, backed by real data and trusted web experts. 
+            It is comprised of 20 chapters spanning aspects of page content, user experience,
+            publishing, and distribution.</p>
+    </section>
 
-<section id="title">
-    <h1>The Web Almanac 2019</h1>
-</section>
+    <section id="toc">
+        <h1 class="title-lg">Table of contents:</h1>
+        <ul>
+        <% for (let part of ebook.parts) { %>
+            <li>
+            Part <%= part.title %> 
+            <ul>
+                <% for (let chapter of part.chapters) { %>
+                <li>
+                    <a href="#chapter-<%= chapter.metadata.chapter_number%>">
+                        Chapter <%= chapter.metadata.chapter_number %>. <%= chapter.metadata.title %>
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+            </li>
+        <% } %>
+        </ul>
+    </section>
 
-<section id="toc">
-    <h1>Table of contents:</h1>
-    <ul>
-      <% for (let part of ebook.parts) { %>
-        <li>
-          Part <%= part.title %> 
-          <ul>
-            <% for (let chapter of part.chapters) { %>
-              <li>
-                  <a href="#chapter-<%= chapter.metadata.chapter_number%>">
-                    Chapter <%= chapter.metadata.chapter_number %>. <%= chapter.metadata.title %>
-                  </a>
-              </li>
+    <% for (let part of ebook.parts) { %>
+    <% for (let chapter of part.chapters) { %>
+    <section class="chapter">
+        <section class="body">
+        <div class="subtitle">
+            Part <%= chapter.metadata.part_number %> Chapter <%= chapter.metadata.chapter_number %>
+        </div>
+        <h1 id="chapter-<%= chapter.metadata.chapter_number %>" class="title title-lg">
+            <%= chapter.metadata.title %>
+        </h1>
+        
+        {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
+        {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %} 
+
+        <!-- Show large image for large screens and high density screens and use webp when supported -->
+        <picture>
+            <source
+            media="(min-width: 327px)"
+            type="image/webp"
+            srcset="{{ chapter_image_dir }}/hero_lg.webp"
+            />
+            <source
+            media="(min-width: 327px)"
+            type="image/jpeg"
+            srcset="{{ chapter_image_dir }}/hero_lg.jpg"
+            />
+            <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
+            <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
+            <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
+            <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
+            <img
+            src="{{ chapter_image_dir }}/hero_lg.jpg"
+            class="content-banner"
+            alt=""
+            loading="eager"
+            />
+        </picture>
+
+        <% const byline = (prefix, contributor_type) => { 
+            if (!chapter.metadata[contributor_type].length || chapter.metadata[contributor_type][0] == '') return;
+
+            let contributors = chapter.metadata[contributor_type].map(x => ebook.config.contributors[x].name);
+            let contributors_sentence = contributors.join(', ').replace(/,(?=[^,]*$)/, ' and');
+
+            return `<div class="byline ${contributor_type}">${prefix} by ${contributors_sentence}</div>`;
+        } %>
+
+        <%- byline('Written', 'authors') %>
+        <%- byline('Reviewed', 'reviewers') %>
+        <%- byline('Translated', 'translators') %>
+
+        <%- chapter.body %>
+        </section>
+
+        <section class="authors">
+        <% let authors = chapter.metadata['authors'].map(x => ebook.config.contributors[x]); %>
+        <h1><%= (authors.length > 1) ? 'Authors' : 'Author' %></h1>
+        <ul>
+            <% for(let authordata of authors) { %>
+                <li>
+                    <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="<%= authordata.name %> avatar" src="<%= authordata.avatar_url %>" height="200" width="200" loading="lazy" /></a>
+                    <div class="info">
+                        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name"><%= authordata.name %></span></a>
+                        <% if( authordata.twitter || authordata.github) { %>
+                            <span class="social">
+                                <% if (authordata.twitter) { %>
+                                <a class="twitter" href="https://twitter.com/<%=authordata.twitter%>"><img src="/static/images/twitter.png" alt="@<%=authordata.twitter%> on Twitter" height="80" width="65" loading="lazy" /></a>
+                                <% } %>
+                                <% if (authordata.github) { %>
+                                <a class="github" href="https://github.com/<%=authordata.github%>"><img src="/static/images/github.png" alt="<%=authordata.github %> on GitHub" height="80" width="78" loading="lazy" /></a>
+                                <% } %>
+                                <% if (authordata.website) { %>
+                                <a class="website" href="<%=authordata.website %>"><img src="/static/images/blog.png" alt="<%= authordata.name %> website" height="72" width="72" loading="lazy" /></a>
+                                <% } %>
+                            </span>
+                        <% } %>
+                        <% if (authordata.tagline) { %>
+                            <div class="tagline">
+                                <%= authordata.tagline %>
+                            </div>
+                        <% } %>
+                        <% if (authordata.bio) { %>
+                        <div class="bio">
+                            <%- authordata.bio %>
+                        </div>
+                        <% } %>
+                    </div>
+                </li>
             <% } %>
-          </ul>
-        </li>
-      <% } %>
-    </ul>
-</section>
-
-<% for (let part of ebook.parts) { %>
-<section class="part">
-  <section>
-    <h1>Part <%= part.title %></h1>
-  </section>
-
-  <% for (let chapter of part.chapters) { %>
-  <section class="chapter">
-    <section class="body">
-      <h1 id="chapter-<%= chapter.metadata.chapter_number %>" class="title title-lg">
-        <%= chapter.metadata.title %>
-      </h1>
-      <h2 class="subtitle">
-        Part <%= chapter.metadata.part_number %> Chapter <%= chapter.metadata.chapter_number %>
-      </h2>
-
-      <!-- Show large image for large screens and high density screens and use webp when supported -->
-      <picture>
-        <source
-          media="(min-width: 327px)"
-          type="image/webp"
-          srcset="{{ chapter_image_dir }}/hero_lg.webp"
-        />
-        <source
-          media="(min-width: 327px)"
-          type="image/jpeg"
-          srcset="{{ chapter_image_dir }}/hero_lg.jpg"
-        />
-        <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
-        <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
-        <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
-        <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
-        <img
-          src="{{ chapter_image_dir }}/hero_lg.jpg"
-          class="content-banner"
-          alt=""
-          loading="eager"
-        />
-      </picture>
-      <%- chapter.body %>
+        </ul>
+        </section>
     </section>
-
-    <section class="authors">
-      
-    </section>
-  </section>
   <% } %>
-</section>
 <% } %>
+</section>
+
 {% endblock %} 

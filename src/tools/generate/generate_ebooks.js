@@ -14,7 +14,7 @@ const generate_ebooks = async (ebook_chapters) => {
     let config = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
 
     for (let language of languages) {
-      let ebook = { language, toc: [], parts: [] };
+      let ebook = { language, config, toc: [], parts: [] };
 
       for (let part_config of config.outline) {
         let part = {

@@ -1,180 +1,175 @@
-{% extends "base.html" %}
+{% extends "en/2019/base_chapter.html" %}
 
 <!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
-{% set metadata = {} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %} {% block head %}
-<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js" nonce="{{ csp_nonce() }}"></script>
-{% endblock %} {% block styles %}
-<style>
-  @media print {
-    #toc a::after {
-      content: leader(".") target-counter(attr(href), page);
-    }
-  }
-</style>
+{% set metadata = {} %} {% block styles %}
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900%7CPoppins:300,400,700,900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/static/css/2019.css" />
+<link rel="stylesheet" href="/static/css/page.css" />
+<link rel="stylesheet" href="/static/css/ebook.css" />
 {% endblock %} {% block content %}
+<section class="content">
+  <section id="title">
+    <h1 class="title-lg">The Web Almanac 2019</h1>
+    <p>HTTP Archive's annual state of the web report</p>
+    <p>Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20 chapters spanning aspects of page content, user experience, publishing, and distribution.</p>
+  </section>
 
-<section id="title">
-  <h1>The Web Almanac 2019</h1>
-</section>
+  <section id="toc">
+    <h1 class="title-lg">Table of contents:</h1>
+    <ul>
+      <li>
+        Part I. Page Content
+        <ul>
+          <li>
+            <a href="#chapter-1">
+              Chapter 1. JavaScript
+            </a>
+          </li>
 
-<section id="toc">
-  <h1>Table of contents:</h1>
-  <ul>
-    <li>
-      Part I. Page Content
-      <ul>
-        <li>
-          <a href="#chapter-1">
-            Chapter 1. JavaScript
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-2">
+              Chapter 2. CSS
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-2">
-            Chapter 2. CSS
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-3">
+              Chapter 3. Markup
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-3">
-            Chapter 3. Markup
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-4">
+              Chapter 4. Media
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-4">
-            Chapter 4. Media
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-5">
+              Chapter 5. Third Parties
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-5">
-            Chapter 5. Third Parties
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-6">
+              Chapter 6. Fonts
+            </a>
+          </li>
+        </ul>
+      </li>
 
-        <li>
-          <a href="#chapter-6">
-            Chapter 6. Fonts
-          </a>
-        </li>
-      </ul>
-    </li>
+      <li>
+        Part II. User Experience
+        <ul>
+          <li>
+            <a href="#chapter-7">
+              Chapter 7. Performance
+            </a>
+          </li>
 
-    <li>
-      Part II. User Experience
-      <ul>
-        <li>
-          <a href="#chapter-7">
-            Chapter 7. Performance
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-8">
+              Chapter 8. Security
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-8">
-            Chapter 8. Security
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-9">
+              Chapter 9. Accessibility
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-9">
-            Chapter 9. Accessibility
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-10">
+              Chapter 10. SEO
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-10">
-            Chapter 10. SEO
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-11">
+              Chapter 11. PWA
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-11">
-            Chapter 11. PWA
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-12">
+              Chapter 12. Mobile Web
+            </a>
+          </li>
+        </ul>
+      </li>
 
-        <li>
-          <a href="#chapter-12">
-            Chapter 12. Mobile Web
-          </a>
-        </li>
-      </ul>
-    </li>
+      <li>
+        Part III. Content Publishing
+        <ul>
+          <li>
+            <a href="#chapter-13">
+              Chapter 13. Ecommerce
+            </a>
+          </li>
 
-    <li>
-      Part III. Content Publishing
-      <ul>
-        <li>
-          <a href="#chapter-13">
-            Chapter 13. Ecommerce
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-14">
+              Chapter 14. CMS
+            </a>
+          </li>
+        </ul>
+      </li>
 
-        <li>
-          <a href="#chapter-14">
-            Chapter 14. CMS
-          </a>
-        </li>
-      </ul>
-    </li>
+      <li>
+        Part IV. Content Distribution
+        <ul>
+          <li>
+            <a href="#chapter-15">
+              Chapter 15. Compression
+            </a>
+          </li>
 
-    <li>
-      Part IV. Content Distribution
-      <ul>
-        <li>
-          <a href="#chapter-15">
-            Chapter 15. Compression
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-16">
+              Chapter 16. Caching
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-16">
-            Chapter 16. Caching
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-17">
+              Chapter 17. CDN
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-17">
-            Chapter 17. CDN
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-18">
+              Chapter 18. Page Weight
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-18">
-            Chapter 18. Page Weight
-          </a>
-        </li>
+          <li>
+            <a href="#chapter-19">
+              Chapter 19. Resource Hints
+            </a>
+          </li>
 
-        <li>
-          <a href="#chapter-19">
-            Chapter 19. Resource Hints
-          </a>
-        </li>
-
-        <li>
-          <a href="#chapter-20">
-            Chapter 20. HTTP/2
-          </a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</section>
-
-<section class="part">
-  <section>
-    <h1>Part I. Page Content</h1>
+          <li>
+            <a href="#chapter-20">
+              Chapter 20. HTTP/2
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part I Chapter 1
+      </div>
       <h1 id="chapter-1" class="title title-lg">
         JavaScript
       </h1>
-      <h2 class="subtitle">
-        Part I Chapter 1
-      </h2>
+
+      {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":[""],"discuss":"1756","published":"2019-11-11","last_updated":"2019-12-31"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -186,6 +181,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Houssein Djirdeh</div>
+      <div class="byline reviewers">Reviewed by David Fox, Paul Calvano and Mathias Bynens</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>JavaScript is a scripting language that makes it possible to build interactive and complex experiences on the web. This includes responding to user interactions, updating dynamic content on a page, and so forth. Anything involving how a web page should behave when an event occurs is what JavaScript is used for.</p>
       <p>The language specification itself, along with many community-built libraries and frameworks used by developers around the world, has changed and evolved ever since the language was created in 1995. JavaScript implementations and interpreters have also continued to progress, making the language usable in many environments, not only web browsers.</p>
@@ -524,17 +523,39 @@
       <p>Without JavaScript, the web would not be where it is today, and all the data gathered for this article only proves this.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Houssein Djirdeh avatar" src="https://avatars3.githubusercontent.com/u/12476932?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Houssein Djirdeh</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/hdjirdeh"><img src="/static/images/twitter.png" alt="@hdjirdeh on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/housseindjirdeh"><img src="/static/images/github.png" alt="housseindjirdeh on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://houssein.me"><img src="/static/images/blog.png" alt="Houssein Djirdeh website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Houssein is a Developer Advocate at Google working on speed, performance and the web framework ecosystem. He tweets at <a href="https://twitter.com/hdjirdeh">@hdjirdeh</a> and blogs at <a href="https://houssein.me/">https://houssein.me/</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part I Chapter 2
+      </div>
       <h1 id="chapter-2" class="title title-lg">
         CSS
       </h1>
-      <h2 class="subtitle">
-        Part I Chapter 2
-      </h2>
+
+      {% set metadata = {"part_number":"I","chapter_number":2,"title":"CSS","description":"CSS chapter of the 2019 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.","authors":["una","argyleink"],"reviewers":["meyerweb","huijing"],"translators":[""],"discuss":"1757","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -546,6 +567,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Una Kravets and Adam Argyle</div>
+      <div class="byline reviewers">Reviewed by Eric A. Meyer and Chen Hui Jing</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user.</p>
       <p>When describing CSS to those not familiar with web technology, it can be helpful to think of it as the language to paint the walls of the house; describing the size and position of windows and doors, as well as flourishing decorations such as wallpaper or plant life. The fun twist to that story is that depending on the user walking through the house, a developer can adapt the house to that specific user's preferences or contexts!</p>
@@ -1097,17 +1122,56 @@
       <p>We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to <a href="https://twitter.com/una">@una</a> or <a href="https://twitter.com/argyleink">@argyleink</a> in the comments with your queries, questions, and assertions. We'd love to hear them!</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Una Kravets avatar" src="https://avatars1.githubusercontent.com/u/1693164?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Una Kravets</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/una"><img src="/static/images/twitter.png" alt="@una on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/una"><img src="/static/images/github.png" alt="una on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="http://una.im"><img src="/static/images/blog.png" alt="Una Kravets website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Una Kravets is a Brooklyn-based international public speaker, technical writer, and Developer Advocate for Material Design at Google. Una hosts the <a href="https://www.youtube.com/watch?v=YK8GZBx3hpg">Designing the Browser</a> web series and the <a href="https://spec.fm/podcasts/toolsday">Toolsday</a> developer podcast. Follow her on <a href="https://twitter.com/una">Twitter</a> to find her musings on creative CSS, user experiences, and web development best practices.</div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Adam Argyle avatar" src="https://avatars3.githubusercontent.com/u/1134620?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Adam Argyle</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/argyleink"><img src="/static/images/twitter.png" alt="@argyleink on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/argyleink"><img src="/static/images/github.png" alt="argyleink on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://nerdy.dev"><img src="/static/images/blog.png" alt="Adam Argyle website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX &amp; UI; Find him on the web <a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>;</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part I Chapter 3
+      </div>
       <h1 id="chapter-3" class="title title-lg">
         Markup
       </h1>
-      <h2 class="subtitle">
-        Part I Chapter 3
-      </h2>
+
+      {% set metadata = {"part_number":"I","chapter_number":3,"title":"Markup","description":"Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.","authors":["bkardell"],"reviewers":["zcorpan","tomhodgins","matthewp"],"translators":[""],"discuss":"1758","published":"2019-11-11","last_updated":"2019-12-04"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -1119,6 +1183,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Brian Kardell</div>
+      <div class="byline reviewers">Reviewed by Simon Pieters, Tommy Hodgins and Matthew Phillips</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>In 2005, Ian "Hixie" Hickson posted <a href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">some analysis of markup data</a> building upon various previous work. Much of this work aimed to investigate class names to see if there were common informal semantics that were being adopted by developers which it might make sense to standardize upon. Some of this research helped inform new elements in HTML5.</p>
       <p>14 years later, it's time to take a fresh look. Since then, we've also had the introduction of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">Custom Elements</a> and the <a href="https://extensiblewebmanifesto.org/">Extensible Web Manifesto</a> encouraging that we find better ways to pave the cowpaths by allowing developers to explore the space of elements themselves and allow standards bodies to<a href="https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html"> act more like dictionary editors</a>. Unlike CSS class names, which might be used for anything, we can be far more certain that authors who used a non-standard <em>element</em> really intended this to be an element.</p>
@@ -1409,17 +1477,39 @@
       <p>That last one is where you come in. We'd love to tap into the creativity and curiosity of the larger community to help explore this data using some of the tools (like <a href="https://rainy-periwinkle.glitch.me/">https://rainy-periwinkle.glitch.me/</a>). Please share your interesting observations and help build our commons of knowledge and understanding.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Brian Kardell avatar" src="https://avatars1.githubusercontent.com/u/870501?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Brian Kardell</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/briankardell"><img src="/static/images/twitter.png" alt="@briankardell on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/bkardell"><img src="/static/images/github.png" alt="bkardell on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://bkardell.com"><img src="/static/images/blog.png" alt="Brian Kardell website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Brian Kardell is developer advocate at <a href="https://igalia.com">Igalia</a>, standards contributor, <a href="https://bkardell.com">blogger</a>, and is currently the W3C Advisory Committee Representative for the <a href="https://openjsf.org/">Open JS Foundation</a>. He was a founder of the Extensible Web Community Group and co-author of <a href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part I Chapter 4
+      </div>
       <h1 id="chapter-4" class="title title-lg">
         Media
       </h1>
-      <h2 class="subtitle">
-        Part I Chapter 4
-      </h2>
+
+      {% set metadata = {"part_number":"I","chapter_number":4,"title":"Media","description":"Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.","authors":["colinbendell","dougsillars"],"discuss":"1759","reviewers":["ahmadawais","eeeps"],"translators":[""],"published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -1431,6 +1521,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Colin Bendell and Doug Sillars</div>
+      <div class="byline reviewers">Reviewed by Ahmad Awais and Eric Portis</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.</p>
       <p>From a pure bytes perspective, HTTP Archive has <a href="https://legacy.httparchive.org/interesting.php#bytesperpage">historically reported</a> an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every web page depends on images and videos. Even at the tenth percentile, we see that 44% of the bytes are from media and can rise to 91% of the total bytes at the 90th percentile of pages.</p>
@@ -1842,17 +1936,56 @@
       <p>Nearly all web pages use images and video to some degree to enhance the user experience and create meaning. These media files utilize a large amount of resources and are a large percentage of the tonnage of websites (and they are not going away!) Utilization of alternative formats, lazy loading, responsive images, and image optimization can go a long way to lower the size of media on the web.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Colin Bendell avatar" src="https://avatars0.githubusercontent.com/u/1622597?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Colin Bendell</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/colinbendell"><img src="/static/images/twitter.png" alt="@colinbendell on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/colinbendell"><img src="/static/images/github.png" alt="colinbendell on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Colin is part of the CTO Office at <a href="https://cloudinary.com/">Cloudinary</a> and co-author of the O'Reilly book <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a href="https://bendell.ca/">https://bendell.ca</a>.</div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Doug Sillars avatar" src="https://avatars3.githubusercontent.com/u/1514288?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Doug Sillars</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/dougsillars"><img src="/static/images/twitter.png" alt="@dougsillars on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/dougsillars"><img src="/static/images/github.png" alt="dougsillars on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://dougsillars.com"><img src="/static/images/blog.png" alt="Doug Sillars website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets @dougsillars, and blogs regularly at dougsillars.com.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part II Chapter 5
+      </div>
       <h1 id="chapter-5" class="title title-lg">
         Third Parties
       </h1>
-      <h2 class="subtitle">
-        Part II Chapter 5
-      </h2>
+
+      {% set metadata = {"part_number":"II","chapter_number":5,"title":"Third Parties","description":"Third Parties chapter of the 2019 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.","authors":["patrickhulce"],"reviewers":["zcorpan","obto","jasti"],"translators":[""],"discuss":"1760","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -1864,6 +1997,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Patrick Hulce</div>
+      <div class="byline reviewers">Reviewed by Simon Pieters, David Fox and Vamsee Jasti</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>The open web is vast, linkable, and interoperable by design. The ability to grab someone else's complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers' productivity and enabled awesome new web experiences. On the flip side, the immense popularity of a select few third-party providers raises important performance, privacy, and security concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web experiences.</p>
       <h2 id="definitions">Definitions</h2>
@@ -2121,17 +2258,39 @@
       <p>Regardless of the important question of how third-party content is added to a page, the conclusion is the same: third parties are an integral part of the web!</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Patrick Hulce avatar" src="https://avatars2.githubusercontent.com/u/2301202?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Patrick Hulce</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/patrickhulce"><img src="/static/images/twitter.png" alt="@patrickhulce on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/patrickhulce"><img src="/static/images/github.png" alt="patrickhulce on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="http://patrickhulce.com"><img src="/static/images/blog.png" alt="Patrick Hulce website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Patrick Hulce is an ex-Chrome engineer, founder of <a href="https://eris.ventures/">Eris Ventures</a>, core team member of <a href="https://github.com/GoogleChrome/lighthouse">Lighthouse</a> and <a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a>, co-organizer of the <a href="https://www.meetup.com/DallasJS/">DallasJS</a> meetup, and author of the <a href="https://github.com/patrickhulce/third-party-web">third-party-web</a> project.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part I Chapter 6
+      </div>
       <h1 id="chapter-6" class="title title-lg">
         Fonts
       </h1>
-      <h2 class="subtitle">
-        Part I Chapter 6
-      </h2>
+
+      {% set metadata = {"part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"translators":[""],"discuss":"1761","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -2143,6 +2302,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Zach Leatherman</div>
+      <div class="byline reviewers">Reviewed by John Teague and Aymen Loukil</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.</p>
       <p>Are they a net positive for the web? Do they provide more benefit than harm? Are the web standards cowpaths sufficiently paved to encourage web font loading best practices by default? And if not, what needs to change? Let's take a data-driven peek at whether or not we can answer those questions by inspecting how web fonts are used on the web today.</p>
@@ -2720,23 +2883,39 @@
       <p>Keep those fonts frosty, y'all.</p>
     </section>
 
-    <section class="authors"></section>
-  </section>
-</section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Zach Leatherman avatar" src="https://avatars2.githubusercontent.com/u/39355?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Zach Leatherman</span></a>
 
-<section class="part">
-  <section>
-    <h1>Part II. User Experience</h1>
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/zachleat"><img src="/static/images/twitter.png" alt="@zachleat on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/zachleat"><img src="/static/images/github.png" alt="zachleat on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://zachleat.com/"><img src="/static/images/blog.png" alt="Zach Leatherman website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Zach is a Web Developer with <a href="https://www.filamentgroup.com/">Filament Group</a>. He’s currently fixated on <a href="https://www.zachleat.com/web/fonts/">web fonts</a> and <a href="https://www.zachleat.com/web/introducing-eleventy/">static site generators</a>. His <a href="https://www.zachleat.com/web/speaking/">public speaking résumé</a> includes talks in eight different countries at events like JAMstack_conf, Beyond Tellerrand, Smashing Conference, CSSConf, and <a href="https://www.zachleat.com/web/whitehouse/">The White House</a>. He also helps herd <a href="http://nejsconf.com/">NEJS CONF</a> and the <a href="http://nebraskajs.com">NebraskaJS</a> meetup.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part II Chapter 7
+      </div>
       <h1 id="chapter-7" class="title title-lg">
         Performance
       </h1>
-      <h2 class="subtitle">
-        Part II Chapter 7
-      </h2>
+
+      {% set metadata = {"part_number":"II","chapter_number":7,"title":"Performance","description":"Performance chapter of the 2019 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and First Input Delay (FID).","authors":["rviscomi"],"reviewers":["JMPerez","obto","sergeychernyshev","zeman"],"translators":[""],"discuss":"1762","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -2748,6 +2927,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Rick Viscomi</div>
+      <div class="byline reviewers">Reviewed by José M. Pérez, David Fox, Sergey Chernyshev and Mark Zeman</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Performance is a visceral part of the user experience. For <a href="https://wpostats.com/">many websites</a>, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be <a href="https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/">rage clicking</a> on the page in frustration.</p>
       <p>There are many ways to quantify web performance. The most important thing is to measure what actually matters to users. However, events like <code>onload</code> or <code>DOMContentLoaded</code> may not necessarily reflect what users experience visually. For example, when loading an email client, it might show an interstitial progress bar while the inbox contents load asynchronously. The problem is that the <code>onload</code> event doesn't wait for the inbox to asynchronously load. In this example, the loading metric that matters most to users is the "time to inbox", and focusing on the <code>onload</code> event may be misleading. For that reason, this chapter will look at more modern and universally applicable paint, load, and interactivity metrics to try to capture how users are actually experiencing the page.</p>
@@ -2949,17 +3132,37 @@
       <p>Equipped with these new metrics, the web in 2020 will become even more transparent, better understood, and give developers an advantage to make more meaningful progress to improve performance and contribute to positive user experiences.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Rick Viscomi avatar" src="https://avatars0.githubusercontent.com/u/1120896?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Rick Viscomi</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/rick_viscomi"><img src="/static/images/twitter.png" alt="@rick_viscomi on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/rviscomi"><img src="/static/images/github.png" alt="rviscomi on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Rick Viscomi is a Senior Developer Programs Engineer at Google, working on web transparency projects like the HTTP Archive and Chrome UX Report, and studying the intersection of how websites are built and experienced. Rick is the host of <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ">The State of the Web</a> in which experts discuss how the web is trending. Rick is the coauthor of <a href="https://usingwpt.com">Using WebPageTest</a>, a guide for testing web performance, and writes frequently about the web on <a href="https://dev.to/rick_viscomi">dev.to</a> and on Twitter at <a href="https://twitter.com/rick_viscomi">@rick_viscomi</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part II Chapter 8
+      </div>
       <h1 id="chapter-8" class="title title-lg">
         Security
       </h1>
-      <h2 class="subtitle">
-        Part II Chapter 8
-      </h2>
+
+      {% set metadata = {"part_number":"II","chapter_number":8,"title":"Security","description":"Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":[""],"discuss":"1763","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -2971,6 +3174,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Scott Helme and Artur Janc</div>
+      <div class="byline reviewers">Reviewed by Barry Pollard, Alessandro Ghedini and Paul Calvano</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>This chapter of the Web Almanac looks at the current status of security on the web. With security and privacy becoming increasingly more important online there has been an increase in the availability of features to protect site operators and users. We're going to look at the adoption of these new features across the web.</p>
       <h2 id="transport-layer-security">Transport Layer Security</h2>
@@ -3697,17 +3904,54 @@
       <p>If your web application handles sensitive user data, consider enabling the security mechanisms outlined in this section to protect your users and make the web safer.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Scott Helme avatar" src="https://avatars1.githubusercontent.com/u/5352840?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Scott Helme</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/Scott_Helme"><img src="/static/images/twitter.png" alt="@Scott_Helme on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/ScottHelme"><img src="/static/images/github.png" alt="ScottHelme on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://scotthelme.co.uk"><img src="/static/images/blog.png" alt="Scott Helme website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Scott Helme is a Security Researcher and founder of <a href="https://report-uri.com">report-uri.com</a> and <a href="https://securityheaders.com">securityheaders.com</a>. You can find him talking about security on Twitter <a href="https://twitter.com/Scott_Helme">@Scott_Helme</a> and blogging at <a href="https://scotthelme.co.uk">scotthelme.co.uk</a>.</div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Artur Janc avatar" src="https://avatars2.githubusercontent.com/u/665379?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Artur Janc</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/arturjanc"><img src="/static/images/twitter.png" alt="@arturjanc on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/arturjanc"><img src="/static/images/github.png" alt="arturjanc on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Artur Janc is an Information Security Engineer at Google, working on designing and adopting web platform security mechanisms across Google and the web at large. He argues with people on the internet as <a href="https://twitter.com/arturjanc">@arturjanc on Twitter</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part II Chapter 9
+      </div>
       <h1 id="chapter-9" class="title title-lg">
         Accessibility
       </h1>
-      <h2 class="subtitle">
-        Part II Chapter 9
-      </h2>
+
+      {% set metadata = {"part_number":"II","chapter_number":9,"title":"Accessibility","description":"Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":[""],"discuss":"1764","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -3719,6 +3963,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Nektarios Paisios, David Fox and Abigail Klein</div>
+      <div class="byline reviewers">Reviewed by Laura Eberly</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.</p>
       <p>When thinking about users with disabilities, we should remember that their user journeys are often the same—they just use different tools. These popular tools include but are not limited to: screen readers, screen magnifiers, browser or text size zooming, and voice controls.</p>
@@ -3941,17 +4189,65 @@
       <p>The next frontier, in our opinion, is making widgets which are available through UI frameworks more accessible. Since many complex widgets used in the wild (e.g., calendar pickers) are sourced from a UI library, it would be great for these widgets to be accessible out of the box. We hope that when we collect our results next time, the usage of more properly implemented complex ARIA roles is on the rise—signifying more complex widgets have also been made accessible. In addition, we hope to see more accessible media, like images and video, so all users can enjoy the richness of the web.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Nektarios Paisios avatar" src="" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Nektarios Paisios</span></a>
+
+            <div class="bio">
+              Nektarios Paisios is a software engineer working on Chrome accessibility for the last 5 years. He primarily focuses on making Chrome compatible with third party assistive software such as screen readers and screen magnifiers. Before working on Chrome accessibility, Nektarios worked in various other roles at the company, such as GSuite accessibility and display ads. Nektarios holds a Ph.D. in Computer Science from New York University.
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="David Fox avatar" src="https://avatars2.githubusercontent.com/u/684747?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">David Fox</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/theobto"><img src="/static/images/twitter.png" alt="@theobto on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/obto"><img src="/static/images/github.png" alt="obto on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://www.lookzook.com"><img src="/static/images/blog.png" alt="David Fox website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              David Fox is the lead usability researcher and founder of LookZook, a company obsessed with finding out everything there is to know about building web experiences that meet user expectations. He is a website psychologist who digs into sites to learn not just what users are struggling with, but why, and how to best improve their experience. He is also a Google Chromium contributor, speaker, and provider of webinars and UX training.
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Abigail Klein avatar" src="https://avatars2.githubusercontent.com/u/1319324?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Abigail Klein</span></a>
+
+            <span class="social">
+              <a class="github" href="https://github.com/kleinab"><img src="/static/images/github.png" alt="kleinab on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she added <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">automatic captions to Google Slides</a>, as well as improving screen reader, braille, screen magnifier, and high contrast support. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor's and master's degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part I Chapter 10
+      </div>
       <h1 id="chapter-10" class="title title-lg">
         SEO
       </h1>
-      <h2 class="subtitle">
-        Part I Chapter 10
-      </h2>
+
+      {% set metadata = {"part_number":"I","chapter_number":10,"title":"SEO","description":"SEO chapter of the 2019 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.","authors":["ymschaap","rachellcostello","AVGP"],"reviewers":["clarkeclark","andylimn","AymenLoukil","catalinred","mattludwig"],"translators":[""],"discuss":"1765","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -3963,6 +4259,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Yvo Schaap, Rachel Costello and Martin Splitt</div>
+      <div class="byline reviewers">Reviewed by John Fox, Andrew Limn, Aymen Loukil, Catalin Rosu and Matt Ludwig</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers.</p>
       <p>Let's put the importance of SEO into perspective. Earlier this year, the SEO industry looked on in horror (and fascination) as <a href="https://www.bbc.co.uk/news/business-47877688">ASOS reported an 87% decrease in profits</a> after a "difficult year". The brand attributed their issues to a drop in search engine rankings which occurred after they launched over 200 microsites and significant changes to their website's navigation, among other technical changes. Yikes.</p>
@@ -4291,17 +4591,73 @@
       <p>There is a lot more that we can all be doing to learn about SEO best practices and industry developments. This is essential due to the evolving nature of the search industry and the rate at which changes happen. Search engines make thousands of improvements to their algorithms each year, and we need to keep up if we want our websites to reach more visitors in organic search.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Yvo Schaap avatar" src="https://avatars1.githubusercontent.com/u/91795?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Yvo Schaap</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/yvoschaap"><img src="/static/images/twitter.png" alt="@yvoschaap on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/ymschaap"><img src="/static/images/github.png" alt="ymschaap on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://build.amsterdam/"><img src="/static/images/blog.png" alt="Yvo Schaap website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Founder at technical SEO consultancy <a href="https://build.amsterdam/">build.amsterdam</a>. Previously founded several web companies that reached over 1 billions users. Blogging about his latest (ad)ventures since 2005 on <a href="https://yvoschaap.com/">yvoschaap.com</a>.</div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Rachel Costello avatar" src="https://avatars2.githubusercontent.com/u/49983543?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Rachel Costello</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/rachellcostello"><img src="/static/images/twitter.png" alt="@rachellcostello on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/rachellcostello"><img src="/static/images/github.png" alt="rachellcostello on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Rachel Costello is a Technical SEO &amp; Content Manager at <a href="https://www.deepcrawl.com/">DeepCrawl</a> and an international conference speaker who spends her time researching and communicating the latest developments in search. Rachel currently manages the production of <a href="https://www.deepcrawl.com/knowledge/white-papers/">technical SEO white papers</a> and research pieces for DeepCrawl, and is a regular columnist for <a href="https://www.searchenginejournal.com/author/rachel-costello/">Search Engine Journal</a>.</div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Martin Splitt avatar" src="https://avatars2.githubusercontent.com/u/370246?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Martin Splitt</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/g33konaut"><img src="/static/images/twitter.png" alt="@g33konaut on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/AVGP"><img src="/static/images/github.png" alt="AVGP on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="http://geekonaut.de"><img src="/static/images/blog.png" alt="Martin Splitt website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part II Chapter 11
+      </div>
       <h1 id="chapter-11" class="title title-lg">
         PWA
       </h1>
-      <h2 class="subtitle">
-        Part II Chapter 11
-      </h2>
+
+      {% set metadata = {"part_number":"II","chapter_number":11,"title":"PWA","description":"PWA chapter of the 2019 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.","authors":["tomayac","jeffposnick"],"reviewers":["hyperpress","ahmadawais"],"translators":[""],"discuss":"1766","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -4313,6 +4669,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Tom Steiner and Jeff Posnick</div>
+      <div class="byline reviewers">Reviewed by John Teague and Ahmad Awais</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the <a href="https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API">Service Worker APIs</a>. Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses. Service workers can receive push notifications and synchronize data in the background even when the corresponding app is not running. Additionally, service workers, together with <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">Web App Manifests</a>, allow users to install PWAs to their devices' home screens.</p>
       <p>Service workers were <a href="https://blog.chromium.org/2014/12/chrome-40-beta-powerful-offline-and.html">first implemented in Chrome 40</a>, back in December 2014, and the term Progressive Web Apps was <a href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/">coined by Frances Berriman and Alex Russell</a> in 2015. As service workers are now finally <a href="https://jakearchibald.github.io/isserviceworkerready/">implemented in all major browsers</a>, the goal for this chapter is to determine how many PWAs are actually out there, and how they make use of these new technologies. Certain advanced APIs like <a href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync</a> are currently still <a href="https://caniuse.com/#feat=background-sync">only available on Chromium-based browsers</a>, so as an additional question, we looked into which features these PWAs actually use.</p>
@@ -4466,17 +4826,56 @@
       <p>PWAs provide a path forward for developers who would prefer to build and release on the web instead of on native platforms and app stores. Not every operating system and browser offers full parity with native software, but improvements continue, and perhaps 2020 is the year where we see an explosion in deployments?</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Tom Steiner avatar" src="https://avatars3.githubusercontent.com/u/145676?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Tom Steiner</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/tomayac"><img src="/static/images/twitter.png" alt="@tomayac on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/tomayac"><img src="/static/images/github.png" alt="tomayac on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://blog.tomayac.com/"><img src="/static/images/blog.png" alt="Tom Steiner website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a href="https://blog.tomayac.com/">blog.tomayac.com</a> and tweets as <a href="https://twitter.com/tomayac">@tomayac</a>.</div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Jeff Posnick avatar" src="https://avatars1.githubusercontent.com/u/1749548?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Jeff Posnick</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/jeffposnick"><img src="/static/images/twitter.png" alt="@jeffposnick on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/jeffposnick"><img src="/static/images/github.png" alt="jeffposnick on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://jeffy.info"><img src="/static/images/blog.png" alt="Jeff Posnick website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Jeff Posnick is a member of Google's Web Developer Relations team, based in New York. His focus is on <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>, a set of service worker libraries for Progressive Web Apps. He blogs at <a href="https://jeffy.info">https://jeffy.info</a> and tweets as <a href="https://twitter.com/jeffposnick">@jeffposnick</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part II Chapter 12
+      </div>
       <h1 id="chapter-12" class="title title-lg">
         Mobile Web
       </h1>
-      <h2 class="subtitle">
-        Part II Chapter 12
-      </h2>
+
+      {% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":[""],"discuss":"1767","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -4488,6 +4887,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by David Fox</div>
+      <div class="byline reviewers">Reviewed by Aymen Loukil and John Teague</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Let's step back for a moment, to the year 2007. The "mobile web" is currently just a blip on the radar, and for good reason too. Why? Mobile browsers have little to no CSS support, meaning sites look nothing like they do on desktop — some browsers can only display text. Screens are incredibly small and can only display a few lines of text at a time. And the replacements for a mouse are these tiny little arrow keys you use to "tab around". Needless to say, browsing the web on a phone is truly a labor of love. However, all of this is just about to change.</p>
       <p>In the middle of his presentation, Steve Jobs takes the newly unveiled iPhone, sits down, and begins to surf the web in a way we had only previously dreamed of. A large screen and fully featured browser displaying websites in their full glory. And most importantly, surfing the web using the most intuitive pointer device known to man: our fingers. No more tabbing around with tiny little arrow keys.</p>
@@ -4710,23 +5113,41 @@
       </aside>
     </section>
 
-    <section class="authors"></section>
-  </section>
-</section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="David Fox avatar" src="https://avatars2.githubusercontent.com/u/684747?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">David Fox</span></a>
 
-<section class="part">
-  <section>
-    <h1>Part III. Content Publishing</h1>
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/theobto"><img src="/static/images/twitter.png" alt="@theobto on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/obto"><img src="/static/images/github.png" alt="obto on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://www.lookzook.com"><img src="/static/images/blog.png" alt="David Fox website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              David Fox is the lead usability researcher and founder of LookZook, a company obsessed with finding out everything there is to know about building web experiences that meet user expectations. He is a website psychologist who digs into sites to learn not just what users are struggling with, but why, and how to best improve their experience. He is also a Google Chromium contributor, speaker, and provider of webinars and UX training.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part III Chapter 13
+      </div>
       <h1 id="chapter-13" class="title title-lg">
         Ecommerce
       </h1>
-      <h2 class="subtitle">
-        Part III Chapter 13
-      </h2>
+
+      {% set metadata = {"part_number":"III","chapter_number":13,"title":"Ecommerce","description":"Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, seo, and PWAs.","authors":["samdutton","alankent"],"reviewers":["voltek62"],"translators":[""],"discuss":"1768","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -4738,6 +5159,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Sam Dutton and Alan Kent</div>
+      <div class="byline reviewers">Reviewed by Vincent Terrasi</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Nearly 10% of the home pages in this study were found to be on an ecommerce platform. An "ecommerce platform" is a set of software or services that enables you to create and operate an online store. There are several types of ecommerce platforms, for example:</p>
       <ul>
@@ -5267,17 +5692,56 @@
       <p>This comprehensive study of ecommerce usage shows some interesting data and also the wide variations in ecommerce sites, even among those built on the same ecommerce platform. Even though we have gone into a lot of detail here, there is much more analysis we could do in this space. For example, we didn't get accessibility scores this year (checkout the <a href="./accessibility">accessibility chapter</a> for more on that). Likewise, it would be interesting to segment these metrics by geography. This study detected 246 ad providers on home pages on ecommerce platforms. Further studies (perhaps in next year's Web Almanac?) could calculate what proportion of sites on ecommerce platforms shows ads. WooCommerce got very high numbers in this study so another interesting statistic we could look at next year is if some hosting providers are installing WooCommerce but not enabling it, thereby causing inflated figures.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Sam Dutton avatar" src="https://avatars0.githubusercontent.com/u/205226?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Sam Dutton</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/sw12"><img src="/static/images/twitter.png" alt="@sw12 on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/samdutton"><img src="/static/images/github.png" alt="samdutton on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://simpl.info"><img src="/static/images/blog.png" alt="Sam Dutton website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a href="https://simpl.info">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.</div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Alan Kent avatar" src="https://avatars0.githubusercontent.com/u/5702163?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Alan Kent</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/akent99"><img src="/static/images/twitter.png" alt="@akent99 on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/alankent"><img src="/static/images/github.png" alt="alankent on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at alankent.me and tweets as @akent99.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part III Chapter 14
+      </div>
       <h1 id="chapter-14" class="title title-lg">
         CMS
       </h1>
-      <h2 class="subtitle">
-        Part III Chapter 14
-      </h2>
+
+      {% set metadata = {"part_number":"III","chapter_number":14,"title":"CMS","description":"CMS chapter of the 2019 Web Almanac covering CMS adoption, how CMS suites are built, User experience of CMS powered websites, and CMS innovation.","authors":["ernee","amedina"],"reviewers":["sirjonathan"],"translators":[""],"discuss":"1769","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -5289,6 +5753,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Renee Johnson and Alberto Medina</div>
+      <div class="byline reviewers">Reviewed by Jonathan Wold</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>The general term <strong>Content Management System (CMS)</strong> refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content, specifically, is a system aimed at creating, managing, and publishing content to be consumed and experienced via the open web.</p>
       <p>Each CMS implements some subset of a wide range of content management capabilities and the corresponding mechanisms for users to build websites easily and effectively around their content. Such content is often stored in some type of database, providing users with the flexibility to reuse it wherever needed for their content strategy. CMSs also provide admin capabilities aimed at making it easy for users to upload and manage content as needed.</p>
@@ -5871,23 +6339,58 @@
       <p>The CMS space is of paramount importance. The large portion of the web these applications power and the critical mass of users both creating and encountering its pages on a variety of devices and connections should not be trivialized. We hope this chapter and the others found here in the Web Almanac inspire more research and innovation to help make the space better. Deep investigations would provide us better context about the strengths, weaknesses, and opportunities these platforms provide the web as a whole. Content management systems can make an impact on preserving the integrity of the open web. Let's keep moving them forward!</p>
     </section>
 
-    <section class="authors"></section>
-  </section>
-</section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Renee Johnson avatar" src="https://avatars1.githubusercontent.com/u/8108643?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Renee Johnson</span></a>
 
-<section class="part">
-  <section>
-    <h1>Part IV. Content Distribution</h1>
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/reneesoffice"><img src="/static/images/twitter.png" alt="@reneesoffice on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/ernee"><img src="/static/images/github.png" alt="ernee on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://reneesvirtualoffice.com"><img src="/static/images/blog.png" alt="Renee Johnson website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              Renee Johnson is a web and product consultant, a WordPress enthusiast, and frequent WordCamp organizer and volunteer. She's currently working with the Content Management System Developer Relations team at Google as a Product Support Specialist.
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Alberto Medina avatar" src="https://avatars0.githubusercontent.com/u/506089?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Alberto Medina</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/iAlbMedina"><img src="/static/images/twitter.png" alt="@iAlbMedina on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/amedina"><img src="/static/images/github.png" alt="amedina on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              Alberto Medina is a Developer Advocate in the Web Content Ecosystems Team at Google, focusing on advancing the proliferation of quality content on the web via progressive technologies such as Amp, and the use of modern Web APIs. Alberto's work currently has a strong focus on Content Management Systems as he leads an area of Content Ecosystem called CMS Developer Relations.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part IV Chapter 15
+      </div>
       <h1 id="chapter-15" class="title title-lg">
         Compression
       </h1>
-      <h2 class="subtitle">
-        Part IV Chapter 15
-      </h2>
+
+      {% set metadata = {"part_number":"IV","chapter_number":15,"title":"Compression","description":"Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.","authors":["paulcalvano"],"reviewers":["obto","yoavweiss"],"translators":[""],"discuss":"1770","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -5899,6 +6402,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Paul Calvano</div>
+      <div class="byline reviewers">Reviewed by David Fox and Yoav Weiss</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client's available bandwidth, reduces <a href="./page-weight">page weight</a>, and improves <a href="./performance">web performance</a>.</p>
       <p>Compression algorithms are often categorized as lossy or lossless:</p>
@@ -6172,17 +6679,37 @@
       <p>At a minimum, websites should use gzip compression for all text-based resources, since it is widely supported, easily implemented, and has a low processing overhead. Additional savings can be found with brotli compression, although compression levels should be chosen carefully based on whether a resource can be precompressed.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Paul Calvano avatar" src="https://avatars3.githubusercontent.com/u/7459458?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Paul Calvano</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/paulcalvano"><img src="/static/images/twitter.png" alt="@paulcalvano on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/paulcalvano"><img src="/static/images/github.png" alt="paulcalvano on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Paul Calvano is a Web Performance Architect at <a href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part IV Chapter 16
+      </div>
       <h1 id="chapter-16" class="title title-lg">
         Caching
       </h1>
-      <h2 class="subtitle">
-        Part IV Chapter 16
-      </h2>
+
+      {% set metadata = {"part_number":"IV","chapter_number":16,"title":"Caching","description":"Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"translators":[""],"discuss":"1771","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -6194,6 +6721,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Paul Calvano</div>
+      <div class="byline reviewers">Reviewed by David Fox and Brian Kardell</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant <a href="./performance">performance</a> benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make," and caching is one of the key ways to avoid having to make requests.</p>
       <p>There are three guiding principles to caching web content: cache as much as you can, for as long as you can, as close as you can to end users.</p>
@@ -6784,17 +7315,37 @@
       <p>Caching is also a very complex topic. There are numerous HTTP response headers that can convey freshness as well as validate cached entries, and <code>Cache-Control</code> directives provide a tremendous amount of flexibility and control. However, developers should be cautious about the additional opportunities for mistakes that it comes with. Regularly auditing your site to ensure that cacheable resources are cached appropriately is recommended, and tools like <a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> and <a href="https://redbot.org/">REDbot</a> do an excellent job of helping to simplify the analysis.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Paul Calvano avatar" src="https://avatars3.githubusercontent.com/u/7459458?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Paul Calvano</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/paulcalvano"><img src="/static/images/twitter.png" alt="@paulcalvano on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/paulcalvano"><img src="/static/images/github.png" alt="paulcalvano on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Paul Calvano is a Web Performance Architect at <a href="https://www.akamai.com/">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href="https://twitter.com/paulcalvano">@paulcalvano</a>, blogging at <a href="https://paulcalvano.com">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href="https://discuss.httparchive.org">https://discuss.httparchive.org</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part IV Chapter 17
+      </div>
       <h1 id="chapter-17" class="title title-lg">
         CDN
       </h1>
-      <h2 class="subtitle">
-        Part IV Chapter 17
-      </h2>
+
+      {% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT &amp; TLS management, HTTP/2 adoption, caching and common library and content CDNs.","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":[""],"discuss":"1772","published":"2019-11-11","last_updated":"2019-12-04"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -6806,6 +7357,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Andy Davies and Colin Bendell</div>
+      <div class="byline reviewers">Reviewed by Yoav Weiss, Paul Calvano, Patrick Meenan and Erik Nygren</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>"Use a Content Delivery Network" was one of <a href="http://stevesouders.com/hpws/rules.php">Steve Souders original recommendations</a> for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using.</p>
       <p>Fundamentally, CDNs reduce latency—the time it takes for packets to travel between two points on a network, say from a visitor's device to a server—and latency is a key factor in how quickly pages load.</p>
@@ -8295,17 +8850,54 @@
       <p>As the web continues to evolve, CDN vendors innovate, and sites use new practices CDN adoption remains an area rich for further research in future editions of the Web Almanac.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Andy Davies avatar" src="https://avatars1.githubusercontent.com/u/427052?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Andy Davies</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/AndyDavies"><img src="/static/images/twitter.png" alt="@AndyDavies on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/andydavies"><img src="/static/images/github.png" alt="andydavies on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="http://andydavies.me/"><img src="/static/images/blog.png" alt="Andy Davies website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK's leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is co-author of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href="https://twitter.com/andydavies">@AndyDavies</a>, and he occasionally blogs at <a href="https://andydavies.me">https://andydavies.me</a></div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Colin Bendell avatar" src="https://avatars0.githubusercontent.com/u/1622597?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Colin Bendell</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/colinbendell"><img src="/static/images/twitter.png" alt="@colinbendell on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/colinbendell"><img src="/static/images/github.png" alt="colinbendell on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Colin is part of the CTO Office at <a href="https://cloudinary.com/">Cloudinary</a> and co-author of the O'Reilly book <a href="https://www.oreilly.com/library/view/high-performance-images/9781491925799/">High Performance Images</a>. He spends much of his time at the intersection of high volume data, media, browsers and standards. You can find him on tweeting <a href="https://twitter.com/colinbendell">@colinbendell</a> and at blogging at <a href="https://bendell.ca/">https://bendell.ca</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part IV Chapter 18
+      </div>
       <h1 id="chapter-18" class="title title-lg">
         Page Weight
       </h1>
-      <h2 class="subtitle">
-        Part IV Chapter 18
-      </h2>
+
+      {% set metadata = {"part_number":"IV","chapter_number":18,"title":"Page Weight","description":"Page Weight chapter of the 2019 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.","authors":["tammyeverts","khempenius"],"reviewers":["paulcalvano"],"translators":[""],"discuss":"1773","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -8317,6 +8909,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Tammy Everts and Katie Hempenius</div>
+      <div class="byline reviewers">Reviewed by Paul Calvano</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>The median web page is around 1900KB in size and contains 74 requests. That doesn't sound too bad, right?</p>
       <p>Here's the issue with medians: they mask problems. By definition, they focus only on the middle of the distribution. We need to consider percentiles at both extremes to get an understanding of the bigger picture.</p>
@@ -9099,17 +9695,59 @@
       <p>Over the past year, pages increased in size by roughly 10%. Brotli, performance budgets, and basic image optimization best practices are probably the three techniques which show the most promise for maintaining or improving page weight while also being widely applicable and fairly easy to implement. That being said, in recent years, improvements in page weight have been more constrained by the low adoption of best practices than by the technology itself. In other words, although there are many existing techniques for improving page weight, they won't make a difference if they aren't put to use.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Authors</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Tammy Everts avatar" src="https://avatars0.githubusercontent.com/u/15661032?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Tammy Everts</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/tameverts"><img src="/static/images/twitter.png" alt="@tameverts on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/tammyeverts"><img src="/static/images/github.png" alt="tammyeverts on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://speedcurve.com/"><img src="/static/images/blog.png" alt="Tammy Everts website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              Tammy Everts has spent more than two decades studying usability and UX. For the past ten years, she's focused on the intersection of UX with web performance and business. She is CXO at <a href="https://speedcurve.com/">SpeedCurve</a>, co-chair of the <a href="https://perfnow.nl/">performance.now() conference</a>, and author of the O'Reilly book <em><a href="http://shop.oreilly.com/product/0636920041450.do">Time Is Money: The Business Value of Performance</a></em
+              >.
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Katie Hempenius avatar" src="https://avatars3.githubusercontent.com/u/6076184?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Katie Hempenius</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/katiehempenius"><img src="/static/images/twitter.png" alt="@katiehempenius on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/khempenius"><img src="/static/images/github.png" alt="khempenius on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part IV Chapter 19
+      </div>
       <h1 id="chapter-19" class="title title-lg">
         Resource Hints
       </h1>
-      <h2 class="subtitle">
-        Part IV Chapter 19
-      </h2>
+
+      {% set metadata = {"part_number":"IV","chapter_number":19,"title":"Resource Hints","description":"Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":[""],"discuss":"1774","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -9121,6 +9759,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Katie Hempenius</div>
+      <div class="byline reviewers">Reviewed by Andy Davies, Barry Pollard and Yoav Weiss</div>
+
       <h2 id="introduction">Introduction</h2>
       <p><a href="https://www.w3.org/TR/resource-hints/">Resource hints</a> provide "hints" to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.</p>
       <p><a href="https://youtu.be/YJGCZCaIZkQ?t=1956">Examples</a> of performance improvements as a result of resource hints include:</p>
@@ -9307,17 +9949,39 @@
       <p>Overall, this data seems to suggest that there is still room for further adoption of resource hints. Most sites would benefit from adopting and/or switching to <code>preconnect</code> from <code>dns-prefetch</code>. A much smaller subset of sites would benefit from adopting <code>prefetch</code> and/or <code>preload</code>. There is greater nuance in successfully using <code>prefetch</code> and <code>preload</code>, which constrains its adoption to a certain extent, but the potential payoff is also greater. HTTP/2 Push and the maturation of machine learning technologies is also likely to increase the adoption of <code>preload</code> and `prefetch.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Katie Hempenius avatar" src="https://avatars3.githubusercontent.com/u/6076184?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Katie Hempenius</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/katiehempenius"><img src="/static/images/twitter.png" alt="@katiehempenius on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/khempenius"><img src="/static/images/github.png" alt="khempenius on GitHub" height="80" width="78" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">
+              Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section class="chapter">
     <section class="body">
+      <div class="subtitle">
+        Part IV Chapter 20
+      </div>
       <h1 id="chapter-20" class="title title-lg">
         HTTP/2
       </h1>
-      <h2 class="subtitle">
-        Part IV Chapter 20
-      </h2>
+
+      {% set metadata = {"part_number":"IV","chapter_number":20,"title":"HTTP/2","description":"HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.","authors":["bazzadp"],"reviewers":["bagder","rmarx","dotjs"],"translators":[""],"discuss":"1775","published":"2019-11-11","last_updated":"2019-11-23"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
       <!-- Show large image for large screens and high density screens and use webp when supported -->
       <picture>
@@ -9329,6 +9993,10 @@
         <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
         <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
       </picture>
+
+      <div class="byline authors">Written by Barry Pollard</div>
+      <div class="byline reviewers">Reviewed by Daniel Stenberg, Robin Marx and Andrew Galloni</div>
+
       <h2 id="introduction">Introduction</h2>
       <p>HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default.</p>
       <p>This meant that even those without the skills and resources to concentrate on <a href="./performance">web performance</a> would suddenly have performant websites. However, the reality has been, as ever, a little more nuanced than that. It has been over four years since the formal approval of HTTP/2 as a standard in May 2015 as <a href="https://tools.ietf.org/html/rfc7540">RFC 7540</a>, so now is a good time to look over how this relatively new technology has fared in the real world.</p>
@@ -9970,7 +10638,27 @@
       <p>On that note it would be great if the CDNs prioritized these issues (pun definitely intended!), though I suspect with the advent of a new prioritization method in HTTP/3, many will hold tight. The next year will prove yet more interesting times in the HTTP world.</p>
     </section>
 
-    <section class="authors"></section>
+    <section class="authors">
+      <h1>Author</h1>
+      <ul>
+        <li>
+          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="Barry Pollard avatar" src="https://avatars3.githubusercontent.com/u/10931297?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">Barry Pollard</span></a>
+
+            <span class="social">
+              <a class="twitter" href="https://twitter.com/tunetheweb"><img src="/static/images/twitter.png" alt="@tunetheweb on Twitter" height="80" width="65" loading="lazy"/></a>
+
+              <a class="github" href="https://github.com/bazzadp"><img src="/static/images/github.png" alt="bazzadp on GitHub" height="80" width="78" loading="lazy"/></a>
+
+              <a class="website" href="https://www.tunetheweb.com"><img src="/static/images/blog.png" alt="Barry Pollard website" height="72" width="72" loading="lazy"/></a>
+            </span>
+
+            <div class="bio">Barry Pollard is a software developer and author of the Manning book <a href="https://www.manning.com/books/http2-in-action">HTTP/2 in Action</a>. He thinks the web is amazing but wants to make it even better. You can find him tweeting <a href="https://twitter.com/tunetheweb">@tunetheweb</a> and blogging at <a href="https://www.tunetheweb.com">www.tunetheweb.com</a>.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 </section>
 
