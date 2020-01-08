@@ -6,7 +6,7 @@ description: Chapitre CMS de l'Almanach Web 2019 couvrant l'adoption des CMS, la
 authors: [ernee, amedina]
 reviewers: [sirjonathan]
 translators: [JustinyAhin]
-discuss: 
+discuss: 1769
 published: 
 last_updated: 
 ---
