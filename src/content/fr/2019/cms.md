@@ -306,7 +306,7 @@ Cette segmentation n'est peut-être pas surprenante étant donné les cas d'util
 
 Le succès en tant que créateur de contenu web est lié à l'expérience utilisateur. Des facteurs tels que l'utilisation des ressources et d'autres statistiques concernant la composition des pages web sont des indicateurs importants de la qualité d'un site en termes de bonnes pratiques suivies lors de sa conception. Cependant, nous souhaitons en fin de compte faire la lumière sur la façon dont les utilisateurs vivent réellement le web lorsqu'ils consomment et s'engagent avec le contenu généré par ces plateformes. 
 
-Pour y parvenir, nous orientons notre analyse vers des [mesures de performance perçues par les utilisateurs] (https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics), qui sont enregistrées dans le jeu de données du CrUX. Ces mesures se rapportent d'une certaine manière à [la façon dont nous, en tant qu'humains, percevons le temps] (https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/).
+Pour y parvenir, nous orientons notre analyse vers des [mesures de performance perçues par les utilisateurs](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics), qui sont enregistrées dans le jeu de données du CrUX. Ces mesures se rapportent d'une certaine manière à [la façon dont nous, en tant qu'humains, percevons le temps](https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/).
 
 <figure>
   <table>
@@ -471,7 +471,7 @@ Bien que cette différence soit présente dans les données du FCP, le FID a des
 
 #### PWA
 
-Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expériences d'utilisateurs sur le Web qui sont considérées comme étant [fiables](https://developers.google.com/web/progressive-web-apps#reliable), [rapides](https://developers.google.com/web/progressive-web-apps#fast) et [engageantes](https://developers.google.com/web/progressive-web-apps#engaging). Lighthouse fournit un ensemble de vérifications qui donnent une note PWA entre 0 ( la plus mauvaise) et 1 ( la meilleure). Ces vérifications sont basées sur la [Checklist de référence des PWA] (https://developers.google.com/web/progressive-web-apps/checklist#baseline), qui contient 14 critères. Lighthouse a automatisé des vérifications pour 11 des 14 exigences. Les trois autres ne peuvent être vérifiées que manuellement. Chacune des 11 vérifications automatisées des PWA a une pondération égale, de sorte que chacune d'entre elles contribue à environ 9 points à votre note PWA.
+Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expériences d'utilisateurs sur le Web qui sont considérées comme étant [fiables](https://developers.google.com/web/progressive-web-apps#reliable), [rapides](https://developers.google.com/web/progressive-web-apps#fast) et [engageantes](https://developers.google.com/web/progressive-web-apps#engaging). Lighthouse fournit un ensemble de vérifications qui donnent une note PWA entre 0 ( la plus mauvaise) et 1 ( la meilleure). Ces vérifications sont basées sur la [Checklist de référence des PWA](https://developers.google.com/web/progressive-web-apps/checklist#baseline), qui contient 14 critères. Lighthouse a automatisé des vérifications pour 11 des 14 exigences. Les trois autres ne peuvent être vérifiées que manuellement. Chacune des 11 vérifications automatisées des PWA a une pondération égale, de sorte que chacune d'entre elles contribue à environ 9 points à votre note PWA.
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig20.png">
@@ -491,7 +491,7 @@ Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expérience
 
 #### Accessibilité
 
-Un site web accessible est un site conçu et développé pour que les personnes souffrant d'un handicap puissent les utiliser. Lighthouse fournit un ensemble de vérifications de l'accessibilité et retourne une moyenne pondérée de toutes ces vérifications (voir la section [Détails des scores] (https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065) pour une liste complète de la pondération de chaque vérification). 
+Un site web accessible est un site conçu et développé pour que les personnes souffrant d'un handicap puissent les utiliser. Lighthouse fournit un ensemble de vérifications de l'accessibilité et retourne une moyenne pondérée de toutes ces vérifications (voir la section [Détails des scores](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065) pour une liste complète de la pondération de chaque vérification). 
 
 Chaque audit d'accessibilité est réussi ou échoué, mais contrairement aux autres audits de Lighthouse, une page ne reçoit pas de points pour avoir partiellement réussi un audit d'accessibilité. Par exemple, si certains éléments ont des noms compréhensibles par les lecteurs d'écran, mais pas d'autres, cette page obtient un 0 pour l'audit *des noms compréhensibles par les lecteurs d'écran*.
 
