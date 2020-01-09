@@ -300,7 +300,7 @@ Quels sont les formats courants que l'on trouve sur les pages CMS sur ordinateur
   <figcaption id="fig14-caption">Figure 14. Adoption de formats d'images sur les pages CMS.</figcaption>
 </figure>
 
-Cette segmentation n'est peut-être pas surprenante étant donné les cas d'utilisation courants pour ces types d'images. Les SVG pour les logos et les icônes sont courants, tout comme les JPEG sont omniprésents. Le WebP est encore un format optimisé relativement nouveau avec [adoption croissante des navigateurs] (https://caniuse.com/#search=webp). Il sera intéressant de voir comment cela aura un impact sur son utilisation dans les prochaines années dans le monde des CMS. 
+Cette segmentation n'est peut-être pas surprenante étant donné les cas d'utilisation courants pour ces types d'images. Les SVG pour les logos et les icônes sont courants, tout comme les JPEG sont omniprésents. Le WebP est encore un format optimisé relativement nouveau avec [adoption croissante des navigateurs](https://caniuse.com/#search=webp). Il sera intéressant de voir comment cela aura un impact sur son utilisation dans les prochaines années dans le monde des CMS. 
 
 ## Expérience utilisateur sur les sites web propulsés par des CMS
 
