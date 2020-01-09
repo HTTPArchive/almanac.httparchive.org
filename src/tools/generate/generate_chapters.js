@@ -23,7 +23,9 @@ converter.setOption('ghMentions', false);
 const generate_chapters = async () => {
   let sitemap = [];
   for (const file of await find_files()) {
-    const re = /content\/(.*)\/(.*)\/(.*).md/;
+    const re = (process.platform != 'win32') 
+                  ? /content\/(.*)\/(.*)\/(.*).md/ 
+                  : /content\\(.*)\\(.*)\\(.*).md/;
     const [path, language, year, chapter] = file.match(re);
 
     try {
