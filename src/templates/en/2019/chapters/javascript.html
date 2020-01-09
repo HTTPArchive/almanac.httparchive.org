@@ -415,12 +415,13 @@
       </ul>
       <p>Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), <a href="https://modernizr.com/">Modernizr</a>, <a href="https://momentjs.com/">Moment.js</a>, <a href="https://underscorejs.org/">Underscore.js</a> and so on.</p>
       <h3 id="frameworks-and-ui-libraries">Frameworks and UI libraries</h3>
+      <aside class="note">As mentioned in our <a href="./methodology#wappalyzer">methodology</a>, the third-party detection library used in HTTP Archive (Wappalyzer) has a number of limitations with regards to how it detects certain tools. For JavaScript libraries and frameworks, the limitations are described in more detail <a href="https://github.com/AliasIO/wappalyzer/issues/2450">here.</a></aside>
       <p>In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building <strong>single-page applications</strong> (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?</p>
       <figure id="fig-12">
         <a href="/static/images/2019/01_JavaScript/fig12.png">
           <img src="/static/images/2019/01_JavaScript/fig12.png" alt="Figure 12. Most frequently used frameworks on desktop." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&amp;format=interactive" loading="lazy" />
         </a>
-        <div id="fig12-description" class="visually-hidden">Bar chart showing 4.6% of sites use React, 2.0% AngiularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.</div>
+        <div id="fig12-description" class="visually-hidden">Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.</div>
         <figcaption id="fig12-caption">Figure 12. Most frequently used frameworks on desktop.</figcaption>
       </figure>
       <p>Only a subset of popular frameworks are being analyzed here, but it's important to note that all of them either follow one of these two approaches:</p>
@@ -429,7 +430,6 @@
         <li>A component-based architecture</li>
       </ul>
       <p>Although there has been a shift towards a component-based model, many older frameworks that follow the MVC paradigm (<a href="https://angularjs.org/">AngularJS</a>, <a href="https://backbonejs.org/">Backbone.js</a>, <a href="https://emberjs.com/">Ember</a>) are still being used in thousands of pages. However, <a href="https://reactjs.org/">React</a>, <a href="https://vuejs.org/">Vue</a> and <a href="https://angular.io/">Angular</a> are the most popular component-based frameworks (<a href="https://github.com/angular/zone.js">Zone.js</a> is a package that is now part of Angular core).</p>
-      <p>Although this analysis is interesting, it's important to keep in mind that these results rely on a third-party detection library - <a href="https://www.wappalyzer.com">Wappalyzer</a>. All these usage numbers depend on the accuracy of each <a href="https://github.com/AliasIO/Wappalyzer/blob/master/src/apps.json">detection mechanism</a> in place.</p>
       <h2 id="differential-loading">Differential loading</h2>
       <p><a href="https://v8.dev/features/modules">JavaScript modules</a>, or ES modules, are supported in <a href="https://caniuse.com/#feat=es6-module">all major browsers</a>. Modules provide the capability to create scripts that can import and export from other modules. This allows anyone to build their applications architected in a module pattern, importing and exporting wherever necessary, without relying on third-party module loaders.</p>
       <p>To declare a script as a module, the script tag must get the <code>type="module"</code> attribute:</p>
