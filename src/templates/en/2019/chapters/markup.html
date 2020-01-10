@@ -10,11 +10,11 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":3,"title":"Markup","description":"Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.","authors":["bkardell"],"reviewers":["zcorpan","tomhodgins","matthewp"],"translators":[""],"discuss":"1758","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-23T00:00:00.000Z"} %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"I","chapter_number":3,"title":"Markup","description":"Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.","authors":["bkardell"],"reviewers":["zcorpan","tomhodgins","matthewp"],"translators":[""],"discuss":"1758","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-12-04T00:00:00.000Z"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
-<meta property="og:image" content="https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
+<meta property="og:image" content="https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg" />
 <meta property="og:image:height" content="433" />
 <meta property="og:image:width" content="866" />
 <meta property="og:type" content="article" />
@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@HTTPArchive" />
 <meta name="twitter:title" content="{{ self.title() }}" />
-<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" />
+<meta name="twitter:image" content="https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg" />
 <meta name="twitter:image:alt" content="Chapter image for the {{ metadata.get('title') }} chapter of the {{ year }} Web Almanac" />
 <meta name="twitter:description" content="{{ self.description() }}" />
 
@@ -38,7 +38,7 @@
     "headline": "{{ metadata.get('title') }}",
     "image": {
     	  "@type": "ImageObject",
-    	  "url": "https://almanac.httparchive.org/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg",
+    	  "url": "https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg",
     	  "height": 433,
     	  "width": 866
     },
@@ -155,7 +155,16 @@
         <span class="chapter-unedited">[Unedited]</span>
         {% endif %}
       </h1>
-      <img src="/static/images/{{ year }}/{{ get_chapter_image_dir(metadata) }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+        <source media="(min-width: 327px)" type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp" />
+        <source media="(min-width: 327px)" type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg" />
+        <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
+        <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
+        <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
+        <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
+        <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
+      </picture>
       {{ render_byline() }}
       <h2 id="introduction">Introduction</h2>
       <p>In 2005, Ian "Hixie" Hickson posted <a href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">some analysis of markup data</a> building upon various previous work. Much of this work aimed to investigate class names to see if there were common informal semantics that were being adopted by developers which it might make sense to standardize upon. Some of this research helped inform new elements in HTML5.</p>
@@ -433,7 +442,7 @@
       <p>What if, for example, we were interested in people solving common use cases? This could be because we're looking for solutions to use cases that we currently have ourselves, or for researching more broadly what common use cases people are solving with an eye toward incubating some standardization effort. Let's take a common example: tabs. Over the years there have been a lot of requests for things like tabs. We can use a fuzzy search here and find that there are <a href="https://rainy-periwinkle.glitch.me/permalink/c6d39f24d61d811b55fc032806cade9f0be437dcb2f5735a4291adb04aa7a0ea.html">many variants of tabs</a>. It's a little harder to count usage here since we can't as easily distinguish if two elements appear on the same page, so the count provided there conservatively simply takes the one with the largest count. In most cases the real number of pages is probably significantly larger.</p>
       <p>There are also lots of <a href="https://rainy-periwinkle.glitch.me/permalink/e573cf279bf1d2f0f98a90f0d7e507ac8dbd3e570336b20c6befc9370146220b.html">accordions</a>, <a href="https://rainy-periwinkle.glitch.me/permalink/0bb74b808e7850a441fc9b93b61abf053efc28f05e0a1bc2382937e3b78695d9.html">dialogs</a>, at least 65 variants of <a href="https://rainy-periwinkle.glitch.me/permalink/651e592cb2957c14cdb43d6610b6acf696272b2fbd0d58a74c283e5ad4c79a12.html">carousels</a>, lots of stuff about <a href="https://rainy-periwinkle.glitch.me/permalink/981967b19a9346ac466482c51b35c49fc1c1cc66177ede440ab3ee51a7912187.html">popups</a>, at least 27 variants of <a href="https://rainy-periwinkle.glitch.me/permalink/2e6827af7c9d2530cb3d2f39a3f904091c523c2ead14daccd4a41428f34da5e8.html">toggles and switches</a>, and so on.</p>
       <p>Perhaps we could research why we need <a href="https://rainy-periwinkle.glitch.me/permalink/5ae67c941395ca3125e42909c2c3881e27cb49cfa9aaf1cf59471e3779435339.html">92 variants of button related elements that aren't a native button</a>, for example, and try to fill the native gap.</p>
-      <p>If we notice popular things pop up (like <code>&lt;jdiv&gt;</code>, solving chat) we can take knowledge of things we know (like, that that is what <code>&lt;jdiv&gt;</code> is about, or <code>&lt;olark&gt;</code>) and try to look <a href="https://rainy-periwinkle.glitch.me/permalink/db8fc0e58d2d46d2e2a251ed13e3daab39eba864e46d14d69cc114ab5d684b00.html">at at least 43 things we've built for tackling that</a> and follow connections to survey the space.</p>
+      <p>If we notice popular things pop up (like <code>&lt;jdiv&gt;</code>, solving chat) we can take knowledge of things we know (like, that is what <code>&lt;jdiv&gt;</code> is about, or <code>&lt;olark&gt;</code>) and try to look <a href="https://rainy-periwinkle.glitch.me/permalink/db8fc0e58d2d46d2e2a251ed13e3daab39eba864e46d14d69cc114ab5d684b00.html">at at least 43 things we've built for tackling that</a> and follow connections to survey the space.</p>
       <h2 id="conclusion">Conclusion</h2>
       <p>So, there's lots of data here, but to summarize:</p>
       <ul>

@@ -178,19 +178,51 @@
 
   </section>
 
+  {% 
+    set localizedPartTitles = {
+      "I. Page Content": "I. Page Content",
+      "II. User Experience": "II. User Experience",
+      "III. Content Publishing": "III. Content Publishing",
+      "IV. Content Distribution": "IV. Content Distribution"
+    }
+  %}
+  {%
+    set localizedChapterTitles = {
+      "JavaScript": "JavaScript",
+      "CSS": "CSS",
+      "Markup": "Markup",
+      "Media": "Media",
+      "Third Parties": "Third Parties",
+      "Fonts": "Fonts",
+      "Performance": "Performance",
+      "Security": "Security",
+      "Accessibility": "Accessibility",
+      "SEO": "SEO",
+      "PWA": "PWA",
+      "Mobile Web": "Mobile Web",
+      "Ecommerce": "Ecommerce",
+      "CMS": "CMS",
+      "Compression": "Compression",
+      "Caching": "Caching",
+      "CDN": "CDN",
+      "Page Weight": "Page Weight",
+      "Resource Hints": "Resource Hints",
+      "HTTP/2": "HTTP/2"
+    }
+  %}
   <div class="contents-wrapper">
     <div class="parts">
       {% for part_config in config.outline %}
         <section class="part">
-          <h2 class="part-name">Part {{ part_config.part }}</h2>
+          <h2 class="part-name">Part {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</h2>
           <div class="chapters">
             {% for chapter_config in part_config.chapters %}
               <div class="chapter">
                 {% if chapter_config.todo %}
-                <span class="todo">Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}</span>
+                <span class="todo">Chapter {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}</span>
                 {% else %}
                 <a href="{{ url_for('chapter', year=year, lang=lang, chapter=get_chapter_slug(chapter_config)) }}">
-                  Chapter {{ chapter_config.chapter }}: {{ chapter_config.title }}
+                  Chapter {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}
                 </a>
                 {% endif %}
               </div>

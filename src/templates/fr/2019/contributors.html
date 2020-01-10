@@ -69,7 +69,7 @@
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
-        "name": "Page d'accueil {{ year }} ({{ language }})",
+        "name": "Page d’accueil {{ year }} ({{ language }})",
         "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
       },{
         "@type": "ListItem",
@@ -106,11 +106,6 @@
 
 .filter-container {
   margin-bottom: 30px;
-}
-.contributors-count {
-  position: absolute;
-  right: 0;
-  top: 20px;
 }
 
 .filter-container button {
@@ -299,9 +294,11 @@
       <img src="/static/images/avatars/9.jpg" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
-    <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> personnes</div>
     <div class="filter-container">
-      <p>Filtrer par équipe&nbsp;:</p>
+      <p>
+        Filtrer par équipe&nbsp;:
+        <span id="filtered-contributors">{{ config.contributors.items() | length }}</span> personnes
+      </p>
       {% set localizedTeamNames = {
             "analysts": "Analyse",
             "authors": "Rédaction",

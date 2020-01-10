@@ -107,11 +107,6 @@
 .filter-container {
   margin-bottom: 30px;
 }
-.contributors-count {
-  position: absolute;
-  right: 0;
-  top: 20px;
-}
 
 .filter-container button {
   font-size: 1rem;
@@ -167,7 +162,7 @@
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
   padding: 24px 34px;
   width: 230px;
-  margin: 15px;
+  margin: 10px;
 }
 
 .contributor:focus .contributor-avatar{
@@ -299,9 +294,11 @@
       <img src="/static/images/avatars/9.jpg" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
-    <div class="contributors-count"><span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors</div>
     <div class="filter-container">
-      <p>Filter by team:</p>
+      <p>
+        Filter by team:
+        <span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors
+      </p>
       {% set localizedTeamNames = {
         "analysts": "Analysts",
         "authors": "Authors",

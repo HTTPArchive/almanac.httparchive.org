@@ -17,6 +17,19 @@ header.alt-bg {
   background-color: transparent;
 }
 
+header .container {
+  max-width: none;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (max-width: 600px) {
+  header .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 #home {
   /* -400px to overcome the `padding-bottom: 400px;` for the above adjacent header */
   margin-top: -400px;
@@ -27,6 +40,12 @@ header.alt-bg {
     'chapter'
     'contributors'
     'methodology';
+
+  /* Overcome the .container parent wrapper */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;  
 }
 
 #home section {
@@ -76,17 +95,31 @@ p {
   font-family: 'Poppins', sans-serif;
 }
 
-.intro-image {
+.intro-image-wrapper {
   grid-area: image;
   display: none;
+  width:100%;
+}
+
+.intro-image {
+  background-image: url(/static/images/home-hero.png);
+  background-size: cover;
+  height: 67.5vw;
+  width: 86vw;
+}
+
+.intro-image-2019-wrapper {
+  grid-area: image;
+  width:100%;
 }
 
 .intro-image-2019 {
-  grid-area: image;
+  background-image: url(/static/images/home-hero-2019.png);
+  background-size: cover;
   max-height: 470px;
-  max-width: 100%;
-  height: auto;
-  margin-bottom: -90px;
+  max-width: 458px;
+  height: 41vw;
+  width: 40vw;
 }
 
 .intro .btn {
@@ -326,13 +359,13 @@ p {
     font-weight: bold;
   }
 
-  .intro-image {
+  .intro-image-wrapper {
     display: block;
     max-width: 100%;
     margin-top: 80px;
     margin-right: -46px;
   }
-  .intro-image-2019 {
+  .intro-image-2019-wrapper {
     display: none;
   }
 
@@ -471,14 +504,14 @@ p {
     font-weight: bold;
   }
 
-  .intro-image {
+  .intro-image-wrapper {
     display: block;
     max-width: 100%;
     margin-top: 60px;
     margin-right: -46px;
   }
 
-  .intro-image-2019 {
+  .intro-image-2019-wrapper {
     display: none;
   }
 
