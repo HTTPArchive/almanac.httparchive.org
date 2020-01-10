@@ -162,6 +162,10 @@
         </p>
 
         <p>
+          <aside>Please note that some of these queries are quite large and can be <a href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec's post <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.</aside>
+        </p>
+
+        <p>
           For example, to understand the median number of bytes of JavaScript per desktop and mobile page, see <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>:
         </p>
 
@@ -389,6 +393,10 @@
 
       <p>
         Wappalyzer powers many chapters that analyze the popularity of developer tools like WordPress, Bootstrap, and jQuery. For example, the <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">Ecommerce</a> and <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> chapters rely heavily on the respective <a href="https://www.wappalyzer.com/categories/ecommerce">Ecommerce</a> and <a href="https://www.wappalyzer.com/categories/cms">CMS</a> categories of technologies detected by Wappalyzer.
+      </p>
+
+      <p>
+        All detection tools, including Wappalyzer, have their limitations. The validity of their results will always depend on how accurate their detection mechansims are. The Web Almanac will add a note in every chapter where Wappalyzer is used but its analysis may not be accurate due to a specific reason. 
       </p>
     </section>
 
