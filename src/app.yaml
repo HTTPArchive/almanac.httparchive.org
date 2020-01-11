@@ -3,9 +3,9 @@ entrypoint: gunicorn -b :$PORT main:app
 default_expiration: 3h
 
 handlers:
-- url: /(.*\.(woff|woff2))$
-  static_files: static/\1
-  upload: static/.*\.(woff|woff2)$
+- url: /static/fonts/(.*\.(woff|woff2))$
+  static_files: static/fonts/\1
+  upload: static/fonts/.*\.(woff|woff2)$
   secure: always
   expiration: 365d
 
