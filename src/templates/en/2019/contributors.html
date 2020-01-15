@@ -277,6 +277,22 @@
     opacity: 1;
     }
 }
+
+.contributor-join {
+  border: 5px dashed #5e687c;  
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: none;
+}
+
+.contributor-join:hover {
+  transform: scale(1.05);
+}
+
+.contributor-join svg {
+  margin-bottom: -10px;
+  z-index: 1;
+}
 </style>
 {% endblock %}
 
@@ -315,6 +331,15 @@
     </div>
 
     <div class="contributor-grid">
+      <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5" class="contributor contributor-join analysts authors brainstormers designers developers editors reviewers translators">
+        <svg xmlns="http://www.w3.org/2000/svg" width="174" height="100" viewBox="0 0 203 117">
+          <path fill="#5e687c" fill-rule="evenodd" d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z" clip-rule="evenodd"/>
+          <text x="50%" y="45%" fill="#fff" font-weight="bold" text-anchor="middle">
+            Join the team!
+          </text>
+        </svg>
+        <img src="/static/images/avatars/12.jpg" height="100" width="100" loading="lazy" />
+      </a>  
     {% for id, contributor in config.contributors.items() %}
       <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
