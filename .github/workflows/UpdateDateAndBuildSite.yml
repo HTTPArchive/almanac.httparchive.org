@@ -5,8 +5,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Run a multi-line script
+    - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
+      with:
+        version:  12.x
+    - name: Checkout and build the site
       run: |
         echo Checking out master
         git checkout master
