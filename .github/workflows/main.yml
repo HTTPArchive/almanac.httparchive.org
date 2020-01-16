@@ -1,0 +1,16 @@
+name: UpdateDateAndBuildSite
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run a multi-line script
+      uses: actions/setup-node@v1.1.0
+      run: |
+        echo Checking out master
+        git checkout master
+        echo Running "npm run generate"
+        cd src
+        npm install
+        npm run generate
