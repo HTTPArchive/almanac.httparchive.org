@@ -1,5 +1,6 @@
 name: Compress images
-on: pull_request:
+on:
+  pull_request:
     paths:
       - '**.jpg'
       - '**.png'
