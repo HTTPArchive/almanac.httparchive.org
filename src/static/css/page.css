@@ -155,10 +155,15 @@
   display: none;
 }
 
-.authors h4{
+.authors_heading {
   padding: 16px 0;
+  margin-top: 2em;
+  font-family: 'Poppins', san-serif;
+  line-height: 1.2em;
+  display: block;
+  font-weight: bold;
 }
-.authors,.authors h4{
+.authors, .authors_heading {
   border-bottom: 1px solid #1A2B490A;
 }
 .content .authors ul{
