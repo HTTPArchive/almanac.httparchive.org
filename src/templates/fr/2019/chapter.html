@@ -98,7 +98,7 @@
 {% endblock %}
 
 {% block main %}
-<div id="chapter" class="main">
+<main id="chapter" class="main">
     <nav class="index">
         <div class="index-box floating-card">
             <h2 class="header">Index</h2>
@@ -129,7 +129,7 @@
             </picture>
             {{ render_byline() }}
             <%- body %>
-          </article>
+        </article>
         {{ render_actions() }}
         <section class="authors">
             {{ render_authors() }}
@@ -138,6 +138,6 @@
         <nav id="chapter-navigation">
             {{ render_prevnext() }}
         </nav>
-      </div>
     </div>
+  </main>
 {% endblock %}
