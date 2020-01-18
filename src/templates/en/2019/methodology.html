@@ -90,7 +90,7 @@
 <article id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header" tabindex=0>Index</h2>
       <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#dataset">About the dataset</a>
@@ -523,6 +523,9 @@ var indexBox = document.querySelector('.index-box');
 var indexBoxTitle = document.querySelector('.index .header');
 
 indexBoxTitle.addEventListener('click', function(e) {
+  indexBox.classList.toggle('show');
+});
+indexBoxTitle.addEventListener('keydown', function(e) {
   indexBox.classList.toggle('show');
 });
 </script>
