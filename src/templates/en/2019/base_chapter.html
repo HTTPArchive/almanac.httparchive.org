@@ -80,8 +80,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_authors() %}
   {% for author in metadata.get('authors') %}
-  {% if loop.length == 1 %}<h4>Author</h4>{% endif -%}
-  {% if loop.length > 1 and loop.index == 1 %}<h4>Authors</h4>{% endif %}
+  {% if loop.length == 1 %}<h2>Author</h2>{% endif -%}
+  {% if loop.length > 1 and loop.index == 1 %}<h2>Authors</h2>{% endif %}
   {% if loop.index == 1 %}<ul>{% endif %}
       {% set authordata = config.contributors[author] if author in config.contributors else None %}
     {% if authordata %}

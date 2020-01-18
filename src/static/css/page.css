@@ -154,11 +154,12 @@
   display: none;
 }
 
-.authors h4{
+.authors h2{
   padding: 16px 0;
 }
-.authors,.authors h4{
+.authors,.authors h2{
   border-bottom: 1px solid #1A2B490A;
+  font-size: 17px;
 }
 .content .authors ul{
   margin:16px 0;
