@@ -93,7 +93,7 @@
   }
 </script>
 {% endblock %} {% block main %}
-<section id="chapter" class="main">
+<div id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
@@ -129,7 +129,7 @@
     </div>
   </nav>
 
-  <section class="content">
+  <div class="content">
     <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
@@ -430,6 +430,6 @@
     <nav id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</section>
+  </div>
+</div>
 {% endblock %}
