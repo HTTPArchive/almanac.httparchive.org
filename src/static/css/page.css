@@ -406,7 +406,7 @@ figure .fig-desktop {
   width: 100%;
 }
 .code-comment {
-  color: #838689;
+  color: #006400;
 }
 .code-keyword {
   color: #4A3244;
@@ -418,5 +418,5 @@ figure .fig-desktop {
   color: #2C4A73;
 }
 .code-number {
-  color: #A8CABA;
+  color: #0000ff;
 }
