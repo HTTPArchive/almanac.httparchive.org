@@ -1560,7 +1560,6 @@ The reduction in latency that CDNs deliver along with their ability to store con
 
 Steve Souders' recommendation to use a CDN remains as valid today as it was 12 years ago, yet only 20% of sites serve their HTML content via a CDN, and only 40% are using a CDN for resources, so there's plenty of opportunity for their usage to grow further.
 
-There are some aspects of CDN adoption that aren't included in this analysis, sometimes 
-this was due to the limitations of the dataset and how it's collected, in other cases new research questions emerged during the analysis.
+There are some aspects of CDN adoption that aren't included in this analysis, sometimes this was due to the limitations of the dataset and how it's collected, in other cases new research questions emerged during the analysis.
 
 As the web continues to evolve, CDN vendors innovate, and sites use new practices CDN adoption remains an area rich for further research in future editions of the Web Almanac.
