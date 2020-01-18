@@ -52,7 +52,7 @@
     </div>
     {% if request.endpoint == 'home' %}
     <div class="intro-container">
-      <div class="intro">
+      <div id="maincontent" class="intro">
         <div class="intro-year">2019</div>
         <h1 class="title title-lg title-alt">Web Almanac</h1>
         <h2>
@@ -130,7 +130,7 @@
           var menuOpen = document.body.classList.toggle('menu-open');
           menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
         });
-        
+
       })();
     </script>
   {% endblock %}
