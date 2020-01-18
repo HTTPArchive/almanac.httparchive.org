@@ -13,7 +13,7 @@ last_updated: 2019-12-04T00:00:00.000Z
 
 ## 導入
 
-「CDNを使用する」は、Webサイトの読み込みを高速化するための[Steve Soudersの最初の推奨事項](http://stevesouders.com/hpws/rules.php)の1つでした。今日でも有効なアドバイスです。WebAlmanacのこの章ではSteveの推奨事項がどの程度広く採用されているか、サイトがコンテンツ配信ネットワーク（CDN）をどのように使用しているか、およびそれらが使用している機能のいくつかを検討します。
+「CDNの使用」は、Webサイトの読み込みを高速化するための[Steve Soudersの最初の推奨事項](http://stevesouders.com/hpws/rules.php)の1つでした。今日でも有効なアドバイスです。Web年鑑のこの章ではSteveの推奨事項がどの程度広く採用されているか、サイトがコンテンツ配信ネットワーク（CDN）をどのように使用しているか、およびそれらが使用している機能のいくつかを検討します。
 
 基本的にCDNは待ち時間（パケットがネットワーク上の2つのポイント間、たとえば訪問者のデバイスからサーバーに移動する時間）を短縮します、待ち時間はページの読み込み速度の重要な要素です。
 
@@ -463,7 +463,7 @@ CDNは、Webサイトのパフォーマンスのために単純なキャッシ�
 
   RTTの削減には、3つの直接的な利点があります。まず、TCP + TLS接続時間はRTTにバインドされているため、ユーザーがデータを受信する時間を短縮します。第二に、これにより輻輳ウィンドウを拡大し、ユーザーが利用できる帯域幅を最大限活用するのにかかる時間が改善されます。最後に、パケット損失の可能性を減らします。 RTTが高い場合、ネットワークインタフェースは要求をタイムアウトし、パケットを再送信します。これにより、二重パケットを配信される可能性があります。
 
-2. CDNは、バックエンドoriginへの事前に暖められたTCP接続を利用できます。ユーザーに近い接続を終了すると、輻輳ウィンドウの拡大にかかる時間が改善されるのと同様に、CDNは輻輳ウィンドウを既に最大化した事前に確立されたTCP接続で要求をoriginにリレーできます。このようにして、originはより少ないTCPラウンドトリップで動的コンテンツを返すことができ、コンテンツを待機中のユーザーに配信する準備をより効果的に行うことができます。
+2. CDNは、バックエンドoriginへの事前に暖められたTCP接続を利用できます。ユーザーに近い接続を終了すると、輻輳ウィンドウの拡大にかかる時間が改善されるのと同様に、CDNは輻輳ウィンドウを既に最大化して事前に確立したTCP接続で要求をoriginにリレーできます。このようにして、originはより少ないTCPラウンドトリップで動的コンテンツを返すことができ、コンテンツを待機中のユーザーに配信する準備をより効果的に行うことができます。
 
 ## TLSネゴシエーション時間：originはCDNの3倍遅い
 
@@ -471,7 +471,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
 
 対照的に、大半のCDNプロバイダーのTLSネゴシエーションの中央値は60〜70ミリ秒です。 HTMLページに対するOrigin要求は、CDNを使用するWebページよりも、TLSネゴシエーションを完了するのにほぼ3倍時間がかかります。 90パーセンタイルでも、140ミリ秒未満で完了するほとんどのCDNと比較して、この格差は427ミリ秒のoriginTLSネゴシエーションレートで永続します。
 
-<aside class="note">これらのチャートを解釈する際の注意事項：実際のTLSネゴシエーションのパフォーマンスに影響する多くの要因があるため、ベンダーを比較するとき、桁違いに焦点を合わせることが重要です。これらのテストは、制御された条件下で単一のデータセンターから完了したものであり、インターネットおよびユーザーエクスペリエンスの変動を反映していません。</aside>
+<aside class="note">これらのチャートを解釈する際の注意事項：実際のTLSネゴシエーションのパフォーマンスに影響する多くの要因があるため、ベンダーを比較するとき、桁の違いに焦点を合わせることが重要です。これらのテストは、制御された条件下で単一のデータセンターから完了したものであり、インターネットおよびユーザーエクスペリエンスの変動を反映していません。</aside>
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
@@ -643,7 +643,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
   <figcaption>図9. HTML TLS接続時間（ミリ秒）。</figcaption>
 </figure>
 
-リソース要求（同一ドメインおよびサードパーティを含む）の場合、TLSネゴシエーション時間が長くなり、差異が増加します。これは、ネットワークの飽和とネットワークの輻輳のために予想されます。サードパーティの接続が確立されるまでに（リソースヒントまたはリソースリクエストにより）、ブラウザはレンダリングと他の並列リクエストの実行に忙しくなります。これにより、ネットワーク上で競合が発生します。この欠点にもかかわらず、originソリューションを使用するよりもCDNを使用するサードパーティリソースには明らかな利点があります。
+リソース要求（同一ドメインおよびサードパーティを含む）の場合、TLSネゴシエーション時間が長くなり、差異が増加します。これは、ネットワークの飽和とネットワークの輻輳のためと予想されます。サードパーティの接続が確立されるまでに（リソースヒントまたはリソースリクエストにより）、ブラウザはレンダリングと他の並列リクエストの実行でビジー状態となります。これにより、ネットワーク上で競合が発生します。この欠点にもかかわらず、originソリューションを使用するよりもCDNを使用するサードパーティリソースに明らかな利点があります。
 
 <figure>
   <a href="/static/images/2019/17_CDN/resource_tls_negotiation_time.png">
@@ -662,11 +662,11 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
 
 極端なサイズの証明書は障害を引き起こす可能性がありますが、適度に大きな証明書を送信してもパフォーマンスに影響があります。証明書は、`Subject-Alternative-Name`（SAN）にリストされている1つ以上のホスト名に対して有効です。 SANが多いほど、証明書は大きくなります。パフォーマンスの低下を引き起こすのは、検証中のこれらのSANの処理です。明確にするため、証明書サイズのパフォーマンスはTCPオーバーヘッドに関するものではなく、クライアントの処理パフォーマンスに関するものです。
 
-技術的に、TCPスロースタートはこのネゴシエーションに影響を与える可能性がありますが、そんなことはありません。 TLSレコードの長さは16 KBに制限されており、通常の初期の10の輻輳ウィンドウに適合します。一部のISPはパケットスプライサーを使用し、他のツールは輻輳ウィンドウを断片化して帯域幅を人為的に絞る場合がありますが、これはWebサイトの所有者が変更できるものではありませんまたは操作します。
+技術的に、TCPスロースタートはこのネゴシエーションに影響を与える可能性がありますが、そんなことはありません。 TLSレコードの長さは16KBに制限されており、通常の初期の10の輻輳ウィンドウに適合します。一部のISPはパケットスプライサーを使用し、他のツールは輻輳ウィンドウを断片化して帯域幅を人為的に絞る場合がありますが、これはWebサイトの所有者が変更または操作できるものではありません。
 
-ただし、多くのCDNは共有TLS証明書に依存しており、証明書のSANの多くの顧客をリストします。これは、IPv4アドレスが不足しているため、必要になることがよくあります。エンドユーザーが`Server-Name-Indicator`（SNI）を採用する前は、クライアントはサーバーに接続し証明書を検査した後にのみ、クライアントはユーザーユーザーが探しているホスト名を示唆します（HTTPで`ホスト`ヘッダーを使用する）。これにより、IPアドレスと証明書が1：1で関連付けられます。物理的な場所が多数あるCDNの場合、各場所に専用IPが必要になる可能性があり、IPv4アドレスの枯渇をさらに悪化させます。したがって、SNIをサポートしていないユーザーがまだいるWebサイトにCDNがTLS証明書を提供する最も簡単で効率的な方法は、共有証明書を提供することです。
+ただし、多くのCDNは共有TLS証明書に依存しており、証明書のSANの多くの顧客をリストします。これはIPv4アドレスが不足しているため、必要になることがよくあります。エンドユーザーが`Server-Name-Indicator`（SNI）を採用する前は、クライアントはサーバーに接続し証明書を検査した後にのみ、クライアントはユーザーが探しているホスト名を示唆します（HTTPで`Host`ヘッダーを使用する）。これにより、IPアドレスと証明書が1：1で関連付けられます。物理的な場所が多数あるCDNの場合、各場所に専用IPが必要になる可能性があり、IPv4アドレスの枯渇をさらに悪化させます。したがって、SNIをサポートしていないユーザーがまだいるWebサイトにCDNがTLS証明書を提供する最も簡単で効率的な方法は、共有証明書を提供することです。
 
-アカマイによると、SNIの採用はまだ世界的に[100％ではありません](https://datatracker.ietf.org/meeting/101/materials/slides-101-maprg-update-on-tls-sni-and-ipv6-client-adoption-00)。幸いなことに、近年急速な変化がありました。最大の犯人はもはやWindows XPとVistaではなく、Androidアプリ、ボット、および企業アプリケーションです。採用率が99％であっても、インターネット上の35億人のユーザーの残り1％は、Webサイトの所有者が非SNI証明書を要求する非常に魅力的な動機を生み出すことができます。別の言い方をすれば、純粋なプレイWebサイトは、標準ブラウザ間でほぼ100％SNIを採用できます。それでもアプリ、特にAndroidアプリでAPIまたはWebViewをサポートするためにWebサイトが使用されている場合、この分布は急速に低下する可能性があります。
+アカマイによると、SNIの採用はまだ世界的に[100％ではありません](https://datatracker.ietf.org/meeting/101/materials/slides-101-maprg-update-on-tls-sni-and-ipv6-client-adoption-00)。幸いなことに、近年急速な変化がありました。最大の犯人はもはやWindows XPとVistaではなく、Androidアプリ、ボット、および企業アプリケーションです。SNI採用率が99％であっても、インターネット上の35億人のユーザーの残り1％は、Webサイトの所有者が非SNI証明書を要求する非常に魅力的な動機を生み出すことができます。別の言い方をすれば、特定製品、活動に注力してる(pure play)Webサイトは、標準ブラウザ間でほぼ100％SNIを採用できます。それでもアプリ、特にAndroidアプリでAPIまたはWebViewをサポートするためにWebサイトが使用されている場合、この分布は急速に低下する可能性があります。
 
 ほとんどのCDNは、共有証明書の必要性とパフォーマンスのバランスをとります。ほとんどの場合、SANの数の上限は100〜150です。この制限は多くの場合、証明書プロバイダーに由来します。たとえば、[LetsEncrypt](https://letsencrypt.org/docs/rate-limits/)、[DigiCert](https://www.websecurity.digicert.com/security-topics/san-ssl-certificates)、[GoDaddy](https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate)はすべて、SAN証明書を100個のホスト名に制限しますが、[Comodo](https://comodosslstore.com/comodo-mdc-ssl.aspx)の制限は2,000個です。これにより、一部のCDNがこの制限を超えて、単一の証明書で800を超えるSANを使用できるようになります。 TLSパフォーマンスと証明書のSANの数には強い負の相関があります。
 
@@ -1020,23 +1020,23 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
 
 ## TLSの採用
 
-TLSおよびRTTのパフォーマンスにCDNを使用することに加えて、CDNはTLS暗号およびTLSバージョンのパッチ適用および採用を確実とするため、よく使用されます。一般に、メインHTMLページでのTLSの採用は、CDNを使用するWebサイトの方がはるかに高くなっています。 HTMLページの76％以上がTLSで提供されているのに対し、originホストページからの62％です。
+TLSおよびRTTのパフォーマンスにCDNを使用することに加えて、TLS暗号およびTLSバージョンのパッチ適用および採用を確実とするため、CDNがよく使用されます。一般に、メインHTMLページでのTLSの採用は、CDNを使用するWebサイトの方がはるかに高くなっています。 HTMLページの76％以上がTLSで提供されているのに対し、originホストページからは62％です。
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig15.png">
     <img src="/static/images/2019/17_CDN/fig15.png" alt="図15. HTML TLSバージョンの採用（CDNとorigin）。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive">
   </a>
-  <div id="fig15-description" class="visually-hidden">TLS 1.0が発信元の時間の0.86％、TLS 1.2が55％、TLS 1.3が6％、暗号化されていない38％の時間を示す積み上げ棒グラフ。 CDNの場合、これはTLS 1.2では35％、TLS 1.3では41％、暗号化されていない場合は24％に変更されます。</div>
+  <div id="fig15-description" class="visually-hidden">TLS1.0が発信元の時間の0.86％、TLS1.2が55％、TLS1.3が6％、暗号化されていない38％の時間を示す積み上げ棒グラフ。 CDNの場合、これはTLS1.2では35％、TLS1.3では41％、暗号化されていない場合は24％に変更されます。</div>
   <figcaption id="fig15-caption">図15. HTML TLSバージョンの採用（CDNとorigin）。</figcaption>
 </figure>
 
-各CDNは、TLSと提供される相対的な暗号とバージョンの両方に異なる採用率を提供します。一部のCDNはより積極的であり、これらの変更をすべての顧客に展開しますが他のCDNはWebサイトの所有者が最新の変更をオプトインし、変更管理を提供してこれらの暗号とバージョンを促進する必要があります。
+各CDNは、TLSと提供される相対的な暗号とバージョンの両方に異なる採用率を提供します。一部のCDNはより積極的で、これらの変更をすべての顧客に展開しますが他のCDNはWebサイトの所有者に最新の変更をオプトインして、これらの暗号とバージョンを容易にする変更管理を提供することを要求します。
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig16.png">
     <img src="/static/images/2019/17_CDN/fig16.png" alt="図16. CDNによるHTML TLSの採用。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive">
   </a>
-  <div id="fig16-description" class="visually-hidden">いくつかのCDN（Wordpressなど）を100％、ほとんどは80％-100％で、次にORIGINを62％、Googleを51％、ChinaNetCenterをCDNで分解した最初のHTML要求に対して確立されたセキュア接続と非セキュア接続の区分36％、ユンジアスは29％。</div>
+  <div id="fig16-description" class="visually-hidden">いくつかのCDN（Wordpressなど）が100％、ほとんどは80％-100％で、次にORIGINを62％、Googleを51％、ChinaNetCenterをCDNで分解した最初のHTML要求に対して確立されたセキュア接続と非セキュア接続の区分36％、ユンジアスは29％。</div>
   <figcaption id="fig16-caption">図16. CDNによるHTML TLSの採用。</figcaption>
 </figure>
 
@@ -1048,9 +1048,9 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
   <figcaption id="fig17-caption">図17. CDNによるサードパーティTLSの採用。</figcaption>
 </figure>
 
-このTLSの一般的な採用に加えて、CDNの使用では、TLS 1.3などの新しいTLSバージョンの採用も増えています。
+このTLSの一般的な採用に加えて、CDNの使用では、TLS1.3などの新しいTLSバージョンの採用も増えています。
 
-一般にCDNの使用は、TLS 1.0のような非常に古くて侵害されたTLSバージョンの使用率が高いoriginホストサービスと比較して、強力な暗号およびTLSバージョンの迅速な採用と高い相関があります。
+一般にCDNの使用は、TLS1.0のような非常に古くて侵害されたTLSバージョンの使用率が高いoriginホストサービスと比較して、強力な暗号およびTLSバージョンの迅速な採用と高い相関があります。
 
 <aside class="note">Web年鑑で使用されるChromeは、ホストが提供する最新のTLSバージョンと暗号にバイアスをかけることを強調することが重要です。また、これらのWebページは2019年7月にクロールされ、新しいバージョンを有効にしたWebサイトの採用を反映しています。</aside> 
 
@@ -1058,7 +1058,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
   <a href="/static/images/2019/17_CDN/fig18.png">
     <img src="/static/images/2019/17_CDN/fig18.png" alt="図18. CDNによるHTML TLSバージョン。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive">
   </a>
-  <div id="fig18-description" class="visually-hidden">TLSが使用される場合、TLS 1.3またはTLS 1.2がすべてのCDNによって使用されることを示す棒グラフ。いくつかのCDNはTLS 1.3を完全に採用していますが、一部は一部であり、TLS 1.2のみを使用して大部分が採用されています。</div>
+  <div id="fig18-description" class="visually-hidden">TLSが使用される場合、TLS1.3またはTLS1.2がすべてのCDNによって使用されることを示す棒グラフ。いくつかのCDNはTLS1.3を完全に採用していますが、一部ではTLS1.2が大部分を採用されています。</div>
   <figcaption id="fig18-caption">図18. CDNによるHTML TLSバージョン。</figcaption>
 </figure>
 
@@ -1068,7 +1068,7 @@ TLSバージョンと暗号の詳細については、[セキュリティ](./sec
 
 RTT管理とTLSパフォーマンスの向上に加えて、CDNはHTTP/2やIPv6などの新しい標準も有効にします。ほとんどのCDNはHTTP/2のサポートを提供し、多くはまだ標準以下の開発HTTP/3の早期サポートを示していますが、これらの新機能を有効にするかどうかは依然としてWebサイト所有者に依存しています。変更管理のオーバーヘッドにもかかわらず、CDNから提供されるHTMLの大部分ではHTTP/2が有効になっています。
 
-CDNのHTTP/2の採用率は70％を超えていますが、originページのほぼ27％です。同様に、CDNのサブドメインリソースとサードパーティリソースでは90％以上のHTTP/2の採用がさらに高くなりますが、originインフラストラクチャから提供されるサードパーティリソースは31％しか採用されていません。 [HTTP/2](./http2) のパフォーマンス向上およびその他の機能については、HTTP/2の章でさらに説明します。
+CDNのHTTP/2の採用率は70％を超えていますが、originページはほぼ27％です。同様にCDNのサブドメインリソースとサードパーティリソースでは90％以上がHTTP/2を採用していて、さらに高くなりますが、originインフラストラクチャから提供されるサードパーティリソースは31％しか採用されていません。 [HTTP/2](./http2) のパフォーマンス向上およびその他の機能については、HTTP/2の章でさらに説明します。
 
 <aside class="note">注：すべてのリクエストは、HTTP/2をサポートするChromeの最新バージョンで行われました。 HTTP/1.1のみが報告される場合、これは暗号化されていない（非TLS）サーバーまたはHTTP/2をサポートしないサーバーを示します。</aside>
 
@@ -1076,7 +1076,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページのほ
   <a href="/static/images/2019/17_CDN/fig19.png">
     <img src="/static/images/2019/17_CDN/fig19.png" alt="図19. HTTP / 2の採用（CDNとorigin）。" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive">
   </a>
-  <div id="fig19-description" class="visually-hidden">Origin接続の73％がHTTP/1.1を使用し、27％がHTTP/2を使用する積み上げ棒グラフ。これは、29％がHTTP/1.1と71％HTTP/2を使用しているCDNと比較しています。</div>
+  <div id="fig19-description" class="visually-hidden">origin接続の73％がHTTP/1.1を使用し、27％がHTTP/2を使用する積み上げ棒グラフ。これは、29％がHTTP/1.1と71％がHTTP/2を使用しているCDNと比較しています。</div>
   <figcaption id="fig19-caption">図19. HTTP/2の採用（CDNとorigin）。</figcaption>
 </figure>
 
@@ -1486,13 +1486,13 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページのほ
 
 Webサイトは、さまざまなHTTPヘッダーを使用して、ブラウザーとCDNのキャッシュ動作を制御できます。 最も一般的なのは、最新のものであることを保証するためにoriginへ戻る前に何かをキャッシュできる期間を具体的に決定する `Cache-Control`ヘッダーです。
 
-別の便利なツールは、`Vary` HTTPヘッダーの使用です。このヘッダーは、CDNとブラウザーの両方にキャッシュのフラグメント化方法を指示します。 `Vary`ヘッダーにより、originはリソースの複数の表現があることを示すことができ、CDNは各バリエーションを個別にキャッシュする必要があります。最も一般的な例は[圧縮](./compression)です。リソースを`Vary`として宣言：`Accept-Encoding`を使用すると、CDNは同じコンテンツを、非圧縮、gzip、Brotliなどの異なる形式でキャッシュできます。一部のCDNでは、使用可能なコピーを1つだけ保持するために、この圧縮をオンザフライで実行します。同様に、この`Vary`ヘッダーは、コンテンツをキャッシュする方法と新しいコンテンツを要求するタイミングをブラウザーに指示します。
+別の便利なツールは、`Vary` HTTPヘッダーの使用です。このヘッダーは、キャッシュをフラグメント化する方法をCDNとブラウザーの両方に指示します。`Vary`ヘッダーにより、originはリソースの表現が複数あることを示すことができ、CDNは各バリエーションを個別にキャッシュする必要があります。最も一般的な例は[圧縮](./compression)です。リソースを`Vary：Accept-Encoding`を使用すると、CDNは同じコンテンツを、非圧縮、gzip、Brotliなどの異なる形式でキャッシュできます。一部のCDNでは、使用可能なコピーを1つだけ保持するために、この圧縮を急いで実行します。同様に、この`Vary`ヘッダーは、コンテンツをキャッシュする方法と新しいコンテンツを要求するタイミングをブラウザーに指示します。
 
 <figure>
   <a href="/static/images/2019/17_CDN/use_of_vary_on_cdn.png">
     <img alt="CDNから提供されるHTMLコンテンツのVaryヘッダー値の内訳" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600">
   </a>
-  <div id="fig24-description" class="visually-hidden">Accept-Encodingを支配するツリーマップグラフは使用率が異なり、チャートの73％が使用されます。 Cookie（13％）とユーザーエージェント（8％）がある程度使用され、その後に他のヘッダーが完全に混在しています。</div>
+  <div id="fig24-description" class="visually-hidden">accept-encodingを示すツリーマップグラフは使用率が異なり、チャートの73％が使用されます。 Cookie（13％）とユーザーエージェント（8％）がある程度使用され、その後に他のヘッダーが完全に混在しています。</div>
   <figcaption id="fig24-caption">図24. CDNから提供されるHTMLの<code>Vary</code>の使用法。</figcaption>
 </figure>
 
@@ -1506,7 +1506,7 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
   <a href="/static/images/2019/17_CDN/use_of_vary.png">
     <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="図25. HTMLとoriginとCDNから提供されるリソースのVary使用の比較。" aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600">
   </a>
-  <div id="fig25-description" class="visually-hidden">ホームページを提供するCDNの場合、Varyの最大の用途はCookieであり、その後にユーザーエージェントが続くことを示す4つのツリーマップグラフのセット他のリソースを提供するCDNの場合は、originであり、その後にaccept、user-agent、x-origin、およびreferrerが続きます。 Originsとホームページの場合、それはユーザーエージェントであり、その後にクッキーが続きます。最後に、Originsおよびその他のリソースについては、主にユーザーエージェントであり、その後に発信元、受け入れ、範囲、ホストが続きます。</div>
+  <div id="fig25-description" class="visually-hidden">ホームページを提供するCDNの場合、Varyの最大の用途はCookieであり、その後にuser-agentが続くことを示す4つのツリーマップグラフのセット、他のリソースを提供するCDNの場合は、originであり、その後にaccept、user-agent、x-origin、およびreferrerが続きます。 originsとホームページの場合、それはuser-agentであり、その後にcookieが続きます。最後に、originsおよびその他のリソースについては、主にuser-agentであり、その後にorigin、accept、range、hostが続きます。</div>
   <figcaption id="fig25-caption">図25. HTMLとoriginとCDNから提供されるリソースの<code>Vary</code>使用の比較。</figcaption>
 </figure>
 
@@ -1514,17 +1514,17 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
 
 `Vary`ヘッダーには、CDNチェインの証拠も含まれています。これらは、`Accept-Encoding、Accept-Encoding`、または`Accept-Encoding、Accept-Encoding、Accept-Encoding`などの`Vary`ヘッダーで確認できます。これらのチェインと`Via`ヘッダーエントリをさらに分析すると、たとえば、サードパーティタグをプロキシしているサイトの数など興味深いデータが明らかになる可能性があります。
 
-`Vary`の使用の多くは無関係です。ほとんどのブラウザがダブルキーキャッシングを採用しているため、`Vary：Origin`の使用は冗長です。`Vary：Range`または`Vary：Host`または`Vary：*`。 `Vary`のワイルドで可変的な使用は、インターネットが奇妙であることの実証可能な証拠です。
+`Vary`の使用の多くは無関係です。ほとんどのブラウザがダブルキーキャッシングを採用しているため、`Vary：Origin`の使用は冗長です。`Vary：Range`または`Vary：Host`または`Vary：*`のように。 `Vary`のワイルドで可変的な使用は、インターネットが奇妙であることの実証可能な証拠です。
 
-### `Surrogate-Control`, `s-maxage`, and `Pre-Check`
+### `Surrogate-Control`, `s-maxage`, `Pre-Check`
 
-`Cache-Control`ヘッダーの`Surrogate-Control`、`s-maxage`、`pre-check`、`post-check`の値など、特にCDNまたは他のプロキシキャッシュを対象とする他のHTTPヘッダーがあります。一般的に、これらのヘッダーの使用は少ないです。
+`Cache-Control`ヘッダーの`Surrogate-Control`、`s-maxage`、`pre-check`、`post-check`の値など、特にCDNまたは他のプロキシキャッシュを対象とする他のHTTPヘッダーがあります。一般的に、これらのヘッダーを使う事は少ないでしょう。
 
-`Surrogate-Control`を使用すると、originはCDNに対してのみキャッシュルールを指定できます。CDNは応答を提供する前にヘッダーを削除する可能性が高いため、目に見える低い使用量について驚くことはありません（それも、状態、彼らはそれを取り除くことを、いくつかのCDNから見ました）。
+`Surrogate-Control`を使用すると、originはCDNに対してのみキャッシュルールを指定できます。CDNは応答を提供する前にヘッダーを削除する可能性が高いため、使用量が低いと驚くことはありません（いくつかのCDNもヘッダーを削除しているように見えました）。
 
-一部のCDNは、リソースが古くなった場合にリソースを更新できるようにする方法として`事後チェック`をサポートし、同等の`最大値`として`事前チェック`をサポートしています。ほとんどのCDNでは、`事前チェック`と`事後チェック`の使用率は1％未満でした。Yahoo!はこの例外であり、リクエストの約15％に`pre-check = 0、post-check = 0`がありました。残念ながら、これは積極的な使用ではなく、古いInternet Explorerパターンの名残です。この上のより多くの議論では、[キャッシング](./caching)の章に記載されています。
+一部のCDNは、リソースが古くなった場合にリソースを更新できるようにする方法として`pre-check`をサポートし、最大値`maxage`として`pre-check`をサポートしています。ほとんどのCDNでは、`pre-check`と`post-check`の使用率は1％未満でした。Yahoo!はこの例外であり、リクエストの約15％に`pre-check = 0、post-check = 0`がありました。残念ながら、これは積極的な使用ではなく、古いInternet Explorerパターンの名残です。この上のより多くの議論では、[キャッシング](./caching)の章に記載されています。
 
-`s-maxage`ディレクティブは、応答をキャッシュできる期間をプロキシに通知します。 Web年鑑データセット全体で、jsDelivrは複数のリソースで高いレベルの使用が見られた唯一のCDNです。これは、jsDelivrのライブラリのパブリックCDNとしての役割を考えると驚くことではありません。他のCDN全体での使用は、特定のCDNを使用するサードパーティのスクリプトやSaaSプロバイダーなど、個々の顧客によって推進されているようです。
+`s-maxage`ディレクティブは、応答をキャッシュできる期間をプロキシに通知します。 Web年鑑データセット全体で、jsDelivrは複数のリソースで高いレベルの使用が見られた唯一のCDNです。これは、jsDelivrのライブラリのパブリックCDNとしての役割を考えると驚くことではありません。他のCDNでの使用は、個々の顧客、たとえばその特定のCDNを使用するサードパーティのスクリプトまたはSaaSプロバイダーによって推進されているようです。
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig26.png">
@@ -1558,7 +1558,7 @@ GoogleフォントはコンテンツCDNの中で最も人気があり、55％の
 
 ## 結論
 
-CDNが配信するレイテンシーの短縮と、訪問者の近くにコンテンツを保存する機能により、サイトはoriginの負荷を軽減しながらより高速なエクスペリエンスを提供できます。
+CDNが配信するレイテンシーの短縮と、訪問者の近くにコンテンツを保存する機能により、サイトはoriginの負荷を軽減しながらより高速体験を提供できます。
 
 Steve SoudersによるCDNの使用の推奨は、12年前と同じように今日でも有効ですがCDNを介してHTMLコンテンツを提供しているサイトは20％のみであり、リソースにCDNを使用しているサイトは40％のみです。それらの使用法はさらに成長します。
 
