@@ -154,7 +154,8 @@
   animation-duration: 600ms;
 }
 
-.contributor {
+.contributor,
+.contributor-join {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -277,6 +278,39 @@
     opacity: 1;
     }
 }
+
+/* Join the team card */
+.contributor-join {
+  display: flex;
+  border: 5px dashed #5e687c;  
+  justify-content: center;
+}
+
+.contributor-join:hover {
+  transform: scale(1.05);
+}
+
+.contributor-join svg {
+  margin-bottom: -10px;
+  z-index: 1;
+}
+
+.contributor-join path {
+  fill: #5e687c;
+}
+
+.contributor-join text {
+  fill: #fff; 
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+@media (max-width: 600px) {
+  .contributor-join {
+    flex: 1;
+    padding: 20px 16px;
+  }
+}
 </style>
 {% endblock %}
 
@@ -315,6 +349,15 @@
     </div>
 
     <div class="contributor-grid">
+      <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5" class="contributor-join" aria-label="Join the Web Almanac team">
+        <svg xmlns="http://www.w3.org/2000/svg" width="174" height="100" viewBox="0 0 203 117">
+          <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z"/>
+          <text x="50%" y="47%">
+            Join the team!
+          </text>
+        </svg>
+        <img src="/static/images/avatars/12.jpg" height="100" width="100" loading="lazy" />
+      </a>  
     {% for id, contributor in config.contributors.items() %}
       <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />

@@ -162,6 +162,10 @@
         </p>
 
         <p>
+          <aside>Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.</aside>
+        </p>
+
+        <p>
         Par exemple, pour obtenir le nombre médian d’octets de JavaScript servis sur les pages pour ordinateurs de bureau et périphériques mobiles, regardez <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>:
         </p>
 
@@ -389,6 +393,10 @@
 
       <p>
         Wappalyzer fournit des informations que vous retrouverez dans de nombreux chapitres analysant la popularité des outils de développement comme WordPress, Bootstrap, et jQuery. Par exemple, les chapitres <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">E-commerce</a> et <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> s’appuient fortement sur les catégories de technologies <a href="https://www.wappalyzer.com/categories/ecommerce">E-commerce</a> et <a href="https://www.wappalyzer.com/categories/cms">CMS</a> détectées par Wappalyzer.
+      </p>
+
+      <p>
+        Tous les outils de détection, y compris le Wappalyzer, ont leurs inconvénients. La validité de leurs résultats dépendra toujours de la précision de leurs mécanismes de détection. Le Web Almanac ajoutera une note dans chaque chapitre où le Wappalyzer est utilisé mais son analyse peut ne pas être précise pour une raison spécifique.
       </p>
     </section>
 

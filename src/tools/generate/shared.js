@@ -27,10 +27,10 @@ const size_of = async (path) => {
 };
 
 const parse_array = (array_as_string) => {
-  return array_as_string
+  return (array_as_string == "[]" ? null : array_as_string
     .substring(1, array_as_string.length - 1)
     .split(',')
-    .map((value) => value.trim());
+    .map((value) => value.trim()));
 };
 
 module.exports = {
