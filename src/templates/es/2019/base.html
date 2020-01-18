@@ -123,6 +123,11 @@
           var menuOpen = document.body.classList.toggle('menu-open');
           menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
         });
+        document.querySelector('.menu-btn').addEventListener('keydown', function() {
+          var menuOpen = document.body.classList.toggle('menu-open');
+          menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
+        });
+        
       })();
     </script>
   {% endblock %}

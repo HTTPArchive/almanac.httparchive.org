@@ -17,6 +17,9 @@ var indexBoxTitle = document.querySelector('.index .header');
 indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');
 });
+indexBoxTitle.addEventListener('keydown', function(e) {
+  indexBox.classList.toggle('show');
+});
 
 document.addEventListener("keypress", function onPress(event) {
  	if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
@@ -31,6 +34,9 @@ document.addEventListener("keypress", function onPress(event) {
  		  next.click();
  		}
  	}
+ 	if (event.key === 'i' || event.key === 'I') {
+    indexBox.classList.toggle('show');
+   }
 });
 
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
