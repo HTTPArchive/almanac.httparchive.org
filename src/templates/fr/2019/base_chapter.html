@@ -89,10 +89,10 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               {% if authordata.twitter or authordata.github %}
                   <span class="social">
                   {% if authordata.twitter %}
-                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="@{{ authordata.twitter }} sur Twitter" height="80" width="65" loading="lazy" /></a>
+                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="@{{ authordata.twitter }} sur Twitter" height="65" width="80" loading="lazy" /></a>
                   {% endif %}
                   {% if authordata.github %}
-                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }} sur GitHub" height="80" width="78" loading="lazy" /></a>
+                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ authordata.github }} sur GitHub" height="78" width="80" loading="lazy" /></a>
                   {% endif %}
                   {% if authordata.website %}
                   <a class="website" href="{{ authordata.website }}"><img src="/static/images/blog.png" alt="site web de {{ authordata.name }}" height="72" width="72" loading="lazy" /></a>
