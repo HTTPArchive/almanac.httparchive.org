@@ -33,10 +33,6 @@ document.addEventListener("keypress", function onPress(event) {
  		if (next) {
  		  next.click();
  		}
- 	}
- 	if (event.key === 'i' || event.key === 'I') {
-    indexBox.classList.toggle('show');
-   }
 });
 
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
