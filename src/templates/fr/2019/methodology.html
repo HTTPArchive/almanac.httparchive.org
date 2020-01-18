@@ -87,7 +87,7 @@
 {% endblock %}
 
 {% block main %}
-<article id="methodology" class="main">
+<section id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex=0>Index</h2>
@@ -121,7 +121,7 @@
     </div>
   </nav>
 
-  <div id="maincontent" class="content">
+  <article id="maincontent" class="content">
     <h1 class="title title-lg">Méthodologie</h1>
 
     <section>
@@ -133,7 +133,7 @@
           <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x" />
           <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp" />
           <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png" />
-          <img class="content-banner" src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
         </picture>
         <h2 id="overview">Vue d’ensemble</h2>
 
@@ -161,9 +161,7 @@
         Toutes les statistiques présentées dans le Web Almanac sont reproductibles publiquement à l’aide de l’ensemble de données sur BigQuery. Vous pouvez parcourir les requêtes utilisées par tous les chapitres dans notre <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/master/sql/2019">dépôt GitHub</a>.
         </p>
 
-        <p>
-          <aside>Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.</aside>
-        </p>
+        <aside>Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.</aside>
 
         <p>
         Par exemple, pour obtenir le nombre médian d’octets de JavaScript servis sur les pages pour ordinateurs de bureau et périphériques mobiles, regardez <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>:
@@ -510,9 +508,9 @@
       <p>
         Si vous souhaitez contribuer à l’édition 2020 du Web Almanac, n’hésitez pas à nous le dire via <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
       </p>
-    </section>
+    </article>
   </div>
-</article>
+</div>
 {% endblock %}
 
 {% block scripts %}

@@ -87,7 +87,7 @@
 {% endblock %}
 
 {% block main %}
-<article id="methodology" class="main">
+<div id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex=0>Index</h2>
@@ -121,7 +121,7 @@
     </div>
   </nav>
 
-  <div id="maincontent" class="content">
+  <article id="maincontent" class="content">
     <h1 class="title title-lg">Methodology</h1>
 
     <section>
@@ -133,7 +133,7 @@
           <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x" />
           <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp" />
           <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png" />
-          <img class="content-banner" src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
         </picture>
         <h2 id="overview">Overview</h2>
 
@@ -161,9 +161,7 @@
           All of the metrics presented in the Web Almanac are publicly reproducible using the dataset on BigQuery. You can browse the queries used by all chapters in our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/master/sql/2019">GitHub repository</a>.
         </p>
 
-        <p>
-          <aside>Please note that some of these queries are quite large and can be <a href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec's post <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.</aside>
-        </p>
+        <aside>Please note that some of these queries are quite large and can be <a href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec's post <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.</aside>
 
         <p>
           For example, to understand the median number of bytes of JavaScript per desktop and mobile page, see <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>:
@@ -511,8 +509,8 @@
         If you're interested in contributing to the 2020 edition of the Web Almanac, please fill out our <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">interest form</a>. We'd love to hear your ideas for making this project even better!
       </p>
     </section>
-  </div>
-</article>
+  </article>
+</div>
 {% endblock %}
 
 {% block scripts %}
