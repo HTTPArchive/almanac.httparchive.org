@@ -93,7 +93,7 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
+<section id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
@@ -194,7 +194,7 @@
   </nav>
 
   <section class="content">
-    <section id="maincontent" class="body">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -469,7 +469,7 @@
       <p>Third-party content is everywhere. This is hardly surprising; the entire basis of the web is to allow interconnectedness and linking. In this chapter we have examined third-party content in terms of assets hosted away from the main domain. If we had included self-hosted third-party content (e.g. common open source libraries hosted on the main domain), third-party usage would have been even larger!</p>
       <p>While <a href="https://en.wikipedia.org/wiki/Code_reuse">reuse in computer technologies</a> is generally a best practice, third parties on the web introduce dependencies that have a considerable impact on the performance, privacy, and security of a page. Self-hosting and careful provider selection can go a long way to mitigate these effects</p>
       <p>Regardless of the important question of how third-party content is added to a page, the conclusion is the same: third parties are an integral part of the web!</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
@@ -479,5 +479,5 @@
       {{ render_prevnext() }}
     </nav>
   </section>
-</article>
+</section>
 {% endblock %}

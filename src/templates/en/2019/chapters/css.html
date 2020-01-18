@@ -93,7 +93,7 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
+<section id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
@@ -310,7 +310,7 @@
   </nav>
 
   <section class="content">
-    <section id="maincontent" class="body">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -879,7 +879,7 @@
       <p>There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made the summarizing very fun, and left us with lots of clues and trails to investigate if we want to hunt down the reasons <em>why</em> some of the results are the way they are.</p>
       <p>Which results did you find the most alarming? Which results make you head to your codebase for a quick query?</p>
       <p>We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to <a href="https://twitter.com/una">@una</a> or <a href="https://twitter.com/argyleink">@argyleink</a> in the comments with your queries, questions, and assertions. We'd love to hear them!</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
@@ -889,5 +889,5 @@
       {{ render_prevnext() }}
     </nav>
   </section>
-</article>
+</section>
 {% endblock %}

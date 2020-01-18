@@ -93,7 +93,7 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
+<section id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
@@ -162,7 +162,7 @@
   </nav>
 
   <section class="content">
-    <section id="maincontent" class="body">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -1669,7 +1669,7 @@
       <p>Steve Souders' recommendation to use a CDN remains as valid today as it was 12 years ago, yet only 20% of sites serve their HTML content via a CDN, and only 40% are using a CDN for resources, so there's plenty of opportunity for their usage to grow further.</p>
       <p>There are some aspects of CDN adoption that aren't included in this analysis, sometimes this was due to the limitations of the dataset and how it's collected, in other cases new research questions emerged during the analysis.</p>
       <p>As the web continues to evolve, CDN vendors innovate, and sites use new practices CDN adoption remains an area rich for further research in future editions of the Web Almanac.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
@@ -1679,5 +1679,5 @@
       {{ render_prevnext() }}
     </nav>
   </section>
-</article>
+</section>
 {% endblock %}

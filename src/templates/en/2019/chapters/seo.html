@@ -93,7 +93,7 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
+<section id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
@@ -204,7 +204,7 @@
   </nav>
 
   <section class="content">
-    <section id="maincontent" class="body">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -550,7 +550,7 @@
       <p>Through our analysis, we observed that the majority of websites are getting the fundamentals right, in that their home pages are crawlable, indexable, and include the key content required to rank well in search engines' results pages. Not every person who owns a website will be aware of SEO at all, let alone its best practice guidelines, so it is promising to see that so many sites have got the basics covered.</p>
       <p>However, more sites are missing the mark than expected when it comes to some of the more advanced aspects of SEO and accessibility. Site speed is one of these factors that many websites are struggling with, especially on mobile. This is a significant problem, as speed is one of the biggest contributors to UX, which is something that can impact rankings. The number of websites that aren't yet served over HTTPS is also problematic to see, considering the importance of security and keeping user data safe.</p>
       <p>There is a lot more that we can all be doing to learn about SEO best practices and industry developments. This is essential due to the evolving nature of the search industry and the rate at which changes happen. Search engines make thousands of improvements to their algorithms each year, and we need to keep up if we want our websites to reach more visitors in organic search.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
@@ -560,5 +560,5 @@
       {{ render_prevnext() }}
     </nav>
   </section>
-</article>
+</section>
 {% endblock %}

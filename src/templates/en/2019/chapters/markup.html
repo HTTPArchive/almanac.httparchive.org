@@ -93,7 +93,7 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
+<section id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
@@ -146,7 +146,7 @@
   </nav>
 
   <section class="content">
-    <section id="maincontent" class="body">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -454,7 +454,7 @@
         <li>We need to increasingly study this data and come up with good observations to help find and pave the cowpaths.</li>
       </ul>
       <p>That last one is where you come in. We'd love to tap into the creativity and curiosity of the larger community to help explore this data using some of the tools (like <a href="https://rainy-periwinkle.glitch.me/">https://rainy-periwinkle.glitch.me/</a>). Please share your interesting observations and help build our commons of knowledge and understanding.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
@@ -464,5 +464,5 @@
       {{ render_prevnext() }}
     </nav>
   </section>
-</article>
+</section>
 {% endblock %}

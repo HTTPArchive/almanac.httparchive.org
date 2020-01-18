@@ -93,7 +93,7 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
+<section id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
@@ -180,7 +180,7 @@
   </nav>
 
   <section class="content">
-    <section id="maincontent" class="body">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Partie {{ metadata.get('part_number') }} Chapitre {{ metadata.get('chapter_number') }}
       </div>
@@ -780,7 +780,7 @@
       <p>Nous voyons également des fournisseurs et des agences d'hébergement offrant des plateformes d'expérience numérique (DXP) comme solutions holistiques utilisant des CMS et d'autres technologies intégrées comme boîte à outils pour les stratégies d'entreprise axées sur le client. Ces innovations témoignent d'un effort pour créer des solutions clés en main, basées sur des CMS, qui permettent aux utilisateurs (et leurs utilisateurs finaux) d'obtenir par défaut le meilleur UX lors de la création et de la consommation du contenu de ces plateformes. L'objectif: de bonnes performances par défaut, une richesse de fonctionnalités et d'excellents environnements d'hébergement.</p>
       <h2 id="conclusions">Conclusions</h2>
       <p>L'espace des CMS est d'une importance primordiale. La grande partie du web dont ces applications propulsent et la masse critique d'utilisateurs qui créent et consultent ses pages sur une variété de terminaux et de connexions ne doivent pas être banalisées. Nous espérons que ce chapitre et les autres qui se trouvent ici dans le Web Almanac inspireront plus de recherche et d'innovation pour aider à rendre cet espace meilleur. Des enquêtes approfondies nous fourniraient un meilleur contexte sur les forces, les faiblesses et les opportunités que ces plateformes offrent au web dans son ensemble. Les systèmes de gestion de contenu peuvent avoir un impact sur la préservation de l'intégrité du web ouvert. Continuons à les faire avancer !</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
@@ -790,5 +790,5 @@
       {{ render_prevnext() }}
     </nav>
   </section>
-</article>
+</section>
 {% endblock %}

@@ -110,7 +110,7 @@
   margin-left: 30px;
   min-width: 320px;
 }
-.content > section {
+.content > section, .content > article {
   margin-bottom: 64px;
 }
 .content ul li {

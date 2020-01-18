@@ -93,7 +93,7 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
+<section id="chapter" class="main">
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">Index</h2>
@@ -194,7 +194,7 @@
   </nav>
 
   <section class="content">
-    <section id="maincontent" class="body">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Partie {{ metadata.get('part_number') }} Chapitre {{ metadata.get('chapter_number') }}
       </div>
@@ -469,7 +469,7 @@
       <p>Le contenu tiers est partout. Cela n’est guère surprenant&nbsp;; le principe de base du web est de permettre l’interconnexion et la mise en relation. Dans ce chapitre, nous avons examiné les contenus de tiers en termes de ressources hébergées en dehors du domaine principal. Si nous avions inclus les contenus tiers auto-hébergés (par exemple, les bibliothèques open source communes hébergées sur le domaine principal), l’utilisation de contenus tiers aurait été encore plus importante&nbsp;!</p>
       <p>Bien que la <a href="https://en.wikipedia.org/wiki/Code_reuse">réutilisation dans les technologies informatiques</a> soit généralement une pratique exemplaire, les tiers sur le web introduisent des dépendances qui ont un impact considérable sur la performance, la confidentialité et la sécurité d’une page. L’auto-hébergement et la sélection minutieuse des fournisseurs peuvent grandement contribuer à atténuer ces effets.</p>
       <p>Indépendamment de la question importante de savoir comment les contenus de tiers sont ajoutés à une page, la conclusion est la même&nbsp;: les tiers font partie intégrante du web&nbsp;!</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
@@ -479,5 +479,5 @@
       {{ render_prevnext() }}
     </nav>
   </section>
-</article>
+</section>
 {% endblock %}
