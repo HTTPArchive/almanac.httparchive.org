@@ -364,11 +364,11 @@
         <div class="contributor-name">{{ contributor.name }}</div>
 
         <div class="contributor-social">
-          {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ contributor.github }} on GitHub"><img src="/static/images/github.png" alt="GitHub" height="80" width="78" loading="lazy" /></a>
-          {% endif %}
           {% if contributor.twitter %}
-          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" title="{{ contributor.twitter }} on Twitter"><img src="/static/images/twitter.png" alt="Twitter" height="80" width="65" loading="lazy" /></a>
+          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" title="{{ contributor.twitter }} on Twitter"><img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" /></a>
+          {% endif %}
+          {% if contributor.github %}
+          <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ contributor.github }} on GitHub"><img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" /></a>
           {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" target="_blank" title="{{ contributor.name }} website"><img src="/static/images/blog.png" alt="website" height="72" width="72" loading="lazy" /></a>
