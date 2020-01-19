@@ -48,7 +48,6 @@
 }
 .index .header {
   color: #1A2B49;
-  margin: 0;
 }
 .index-box .index-btn {
   padding: 14px;
@@ -356,6 +355,7 @@ figure .fig-desktop {
   .index-box .header {
     display: flex;
     justify-content: space-between;
+    margin: 0;
   }
   .index-box .index-btn {
     display: block;

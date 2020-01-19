@@ -101,9 +101,11 @@
 <main id="chapter" class="main">
     <nav title="Table des matières du chapitre" class="index">
         <div class="index-box floating-card">
-          <h2 class="header"><button class="index-btn">Index</button></h2>
-          <h2 class="header no-button">Index</h2>
-            <%- include('toc.html', { headings: toc }) %>
+          <h2 class="header">
+            <button class="index-btn">Index</button>
+            <span class="no-button">Index</span>
+          </h2>
+          <%- include('toc.html', { headings: toc }) %>
         </div>
     </nav>
 
