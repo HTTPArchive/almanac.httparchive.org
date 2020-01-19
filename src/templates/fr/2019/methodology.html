@@ -90,7 +90,8 @@
 <main id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
-      <h2 class="header" tabindex=0>Index</h2>
+      <button class="index-btn"><h2 class="header">Index</h2></button>
+      <h2 class="header no-button">Index</h2>
       <ul>
         <li><a href="#overview">Vue d’ensemble</a></li>
         <li><a href="#dataset">À propos du jeu de données</a>
@@ -254,7 +255,7 @@
       <p>
         <a href="https://www.webpagetest.org/">WebPageTest</a> est un outil de test de performance Web incontournable et l’épine dorsale de HTTP Archive. Nous utilisons une <a href="https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Private%20Instances/README.md">instance privée</a> de WebPageTest avec des agents de test privés, c’est-à-dire de vrais navigateurs testant chaque page web. Les sites pour ordinateurs de bureau et périphériques mobiles sont testés avec différentes configurations&nbsp;:
       </p>
-      <div class="table-wrap"><div class="table-wrap-container" tabindex="0">
+      <div class="table-wrap"><div class="table-wrap-container">
       <table>
         <thead>
           <tr>
@@ -520,12 +521,9 @@
 <script nonce="{{ csp_nonce() }}">
 
 var indexBox = document.querySelector('.index-box');
-var indexBoxTitle = document.querySelector('.index .header');
+var indexBoxTitle = document.querySelector('.index .index-btn');
 
 indexBoxTitle.addEventListener('click', function(e) {
-  indexBox.classList.toggle('show');
-});
-indexBoxTitle.addEventListener('keydown', function(e) {
   indexBox.classList.toggle('show');
 });
 </script>

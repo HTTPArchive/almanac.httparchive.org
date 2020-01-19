@@ -46,6 +46,15 @@
   margin: 20px 0;
   padding: 8px 16px;
 }
+.index-box .index-btn {
+  padding: 0;
+  width: 100%;
+  border: 0;
+  background: none;
+  display: none;
+  cursor: pointer;
+  text-align: left;
+}
 .index .header {
   color: #1A2B49;
 }
@@ -346,6 +355,12 @@ figure .fig-desktop {
     display: flex;
     justify-content: space-between;
   }
+  .index-box .index-btn {
+    display: block;
+  }
+  .index-box .no-button {
+    display: none;
+  }
   .index-box  h2.header::after {
     font-weight: normal;
     content: '+';
@@ -356,15 +371,16 @@ figure .fig-desktop {
 
   .index-box ul {
     max-height: 0;
+    display: none;
     border-top: 0px solid #FFFFFFFF;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
   }
   .index-box.show ul {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 2px;
     border-top: 1px solid #1A2B490A;
     max-height: 100%;
+    display: block;
     transition: max-height 0.25s ease-in;
   }
   .table-wrap {
