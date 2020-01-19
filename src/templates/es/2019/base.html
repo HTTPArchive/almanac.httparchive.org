@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block content%}
+  <div id="skiptocontent"><a href="#maincontent">Saltar navegación</a></div>
   {% block header %}
     <header class="alt-bg">
       <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive" height="39" width="202"></a>
-      <nav>
+      <nav title="Page navigation">
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
@@ -27,7 +28,7 @@
       <button type="button" class="menu-btn" aria-label="Menú">
         <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
       </button>
-      <nav class="menu">
+      <nav title="Page menu" class="menu">
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>

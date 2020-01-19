@@ -94,7 +94,7 @@
 </script>
 {% endblock %} {% block main %}
 <main id="chapter" class="main">
-  <nav class="index">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
       <ul>
@@ -274,7 +274,7 @@
         <figcaption id="fig1-caption">Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
       </figure>
       <p>Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.</p>
-      <aside class="note">Note that we weren't able to analyze any text inside of images, so our reported metric is an upper-bound of the total number of websites passing the color contrast test.</aside>
+      <p class="note">Note that we weren't able to analyze any text inside of images, so our reported metric is an upper-bound of the total number of websites passing the color contrast test.</p>
       <h3 id="zooming-and-scaling-pages">Zooming and scaling pages</h3>
       <p>Using a <a href="https://accessibleweb.com/question-answer/minimum-font-size/">legible font size</a> and <a href="https://www.w3.org/WAI/WCAG21/quickref/#target-size">target size</a> helps users read and interact with your website. But even websites perfectly following all of these guidelines can't meet the specific needs of each visitor. This is why device features like pinch-to-zoom and scaling are so important: they allow users to tweak your pages so their needs are met. Or in the case of particularly inaccessible sites using tiny fonts and buttons, it gives users the chance to even use the site.</p>
       <p>There are rare cases when disabling scaling is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, ironically making it inaccessible.</p>
@@ -480,7 +480,7 @@
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
   </div>

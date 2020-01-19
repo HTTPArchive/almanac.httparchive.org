@@ -161,7 +161,9 @@
         Toutes les statistiques présentées dans le Web Almanac sont reproductibles publiquement à l’aide de l’ensemble de données sur BigQuery. Vous pouvez parcourir les requêtes utilisées par tous les chapitres dans notre <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/master/sql/2019">dépôt GitHub</a>.
         </p>
 
-        <aside>Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.</aside>
+        <p class="note">
+          Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.
+        </p>
 
         <p>
         Par exemple, pour obtenir le nombre médian d’octets de JavaScript servis sur les pages pour ordinateurs de bureau et périphériques mobiles, regardez <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>:
@@ -369,9 +371,9 @@
       </table>
       </div></div>
 
-      <aside>
+      <p class="note">
         * Notez que Lighthouse est normalement configuré pour avoir un ralentissement CPU de 4x, mais en raison d’un <a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> dans WebPageTest, il était de 1x au moment des tests.
-      </aside>
+      </p>
 
       <p>
         Pour plus d’informations sur Lighthouse et les audits disponibles dans HTTP Archive, reportez-vous à la section <a href="https://developers.google.com/web/tools/lighthouse/">documentation de Lighthouse relative au développement</a>.

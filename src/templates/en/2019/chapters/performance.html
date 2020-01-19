@@ -94,7 +94,7 @@
 </script>
 {% endblock %} {% block main %}
 <main id="chapter" class="main">
-  <nav class="index">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
       <ul>
@@ -220,7 +220,7 @@
         <figcaption id="fig1-caption">Figure 1. Distribution of websites' fast, moderate, and slow FCP performance.</figcaption>
       </figure>
       <p>In Figure 1 above, you can see how FCP experiences are distributed across the web. Out of the millions of websites in the CrUX dataset, this chart compresses the distribution down to 1,000 websites, where each vertical slice represents a single website. The chart is sorted by the percent of fast FCP experiences, which are those occurring in less than 1 second. Slow experiences occur in 3 seconds or more, and moderate (formerly known as "average") experiences are everything in between. At the extremes of the chart, there are some websites with almost 100% fast experiences and some websites with almost 100% slow experiences. In between that, websites that have a combination of fast, moderate, and slow performance seem to lean more towards fast or moderate than slow, which is good.</p>
-      <aside class="note">Note: When a user experiences slow performance, it's hard to say what the reason might be. It could be that the website itself was built poorly and inefficiently. Or there could be other environmental factors like the user's slow connection, empty cache, etc. So, when looking at this field data we prefer to say that the user experiences themselves are slow, and not necessarily the websites.</aside>
+      <p class="note">Note: When a user experiences slow performance, it's hard to say what the reason might be. It could be that the website itself was built poorly and inefficiently. Or there could be other environmental factors like the user's slow connection, empty cache, etc. So, when looking at this field data we prefer to say that the user experiences themselves are slow, and not necessarily the websites.</p>
       <p>In order to categorize whether a website is sufficiently <strong>fast</strong> we will use the new <a href="https://developers.google.com/speed/docs/insights/v5/about#categories">PageSpeed Insights</a> (PSI) methodology, where at least 75% of the website's FCP experiences must be faster than 1 second. Similarly, a sufficiently <strong>slow</strong> website has 25% or more FCP experiences slower than 3 seconds. We say a website has <strong>moderate</strong> performance when it doesn't meet either of these conditions.</p>
       <figure id="fig2">
         <a href="/static/images/2019/07_Performance/fig2.png">
@@ -387,7 +387,7 @@
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
   </div>

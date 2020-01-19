@@ -94,7 +94,7 @@
 </script>
 {% endblock %} {% block main %}
 <main id="chapter" class="main">
-  <nav class="index">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
       <h2 class="header" tabindex="0">Index</h2>
       <ul>
@@ -243,7 +243,7 @@
         <li><strong>Video</strong> - providers that host the arbitrary video content of their users</li>
         <li><strong>Other</strong> - uncategorized or non-conforming activity</li>
       </ul>
-      <aside><strong>Note on CDNs</strong>: The CDN category here includes providers that provide resources on <strong>public</strong> CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does <strong>not</strong> include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</aside>
+      <p class="note"><strong>Note on CDNs</strong>: The CDN category here includes providers that provide resources on <strong>public</strong> CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does <strong>not</strong> include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</p>
       <h3 id="caveats">Caveats</h3>
       <ul>
         <li>All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.</li>
@@ -475,7 +475,7 @@
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
   </div>
