@@ -81,16 +81,16 @@
   {% block footer %}
     <footer class="alt-bg">
       <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive" height="39" width="202"></a>
-      <a class="navigation-logo ha-logo" href="https://httparchive.org">
-        <img src="/static/images/ha-home.svg" alt="Página de Inicio HTTP Archive" height="35" width="70">
-      </a>
       <nav class="nav-items">
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
         <a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a>
         {{ language_switcher() }}
       </nav>
-      <p class="copyright">Copyright © 2019 Web Almanac. Todos los derechos reservados.</p>
+      <p class="copyright"><span>© 2019 Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span></p>
+      <a class="navigation-logo ha-logo" href="https://httparchive.org">
+        <img src="/static/images/ha-home.svg" alt="Página de Inicio HTTP Archive" height="35" width="70">
+      </a>
       <div class="social-media">
         <a href="https://twitter.com/HTTPArchive" class="twitter">
           <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
