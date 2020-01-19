@@ -7,7 +7,7 @@
 {% block content%}
   {% block header %}
     <header class="alt-bg">
-      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive"></a>
+      <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive" height="39" width="202"></a>
       <nav>
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a>
@@ -78,7 +78,7 @@
 
   {% block footer %}
     <footer class="alt-bg">
-      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive"></a>
+      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive" height="39" width="202"></a>
       <a class="navigation-logo ha-logo" href="https://httparchive.org">
         <img src="/static/images/ha-home.svg" alt="Página de Inicio HTTP Archive" height="35" width="70">
       </a>
