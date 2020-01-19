@@ -11,7 +11,7 @@
     <div class="container">
       <div class="top-header">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive" height="39" width="202"></a>
-        <nav>
+        <nav title="Navigation de page">
           <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
           <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
           <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
@@ -30,7 +30,7 @@
         <button type="button" class="menu-btn" aria-label="Menu">
           <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
         </button>
-        <nav class="menu">
+        <nav title="Menu de la page" class="menu">
           <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
           <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
           <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
