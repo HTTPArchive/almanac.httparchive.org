@@ -46,17 +46,19 @@
   margin: 20px 0;
   padding: 8px 16px;
 }
+.index .header {
+  color: #1A2B49;
+  margin: 0;
+}
 .index-box .index-btn {
-  padding: 0;
+  padding: 14px;
   width: 100%;
   border: 0;
   background: none;
   display: none;
   cursor: pointer;
   text-align: left;
-}
-.index .header {
-  color: #1A2B49;
+  font-weight: bold;
 }
 .index .header-mobile {
   display: none;
@@ -361,11 +363,12 @@ figure .fig-desktop {
   .index-box .no-button {
     display: none;
   }
-  .index-box  h2.header::after {
+  .index-box .index-btn::after {
     font-weight: normal;
+    float: right;
     content: '+';
   }
-  .index-box.show  h2.header::after {
+  .index-box.show .index-btn::after {
     content: '-';
   }
 
