@@ -98,16 +98,19 @@
 {% endblock %}
 
 {% block main %}
-<article id="chapter" class="main">
-    <nav class="index">
+<main id="chapter" class="main">
+    <nav title="Table des matières du chapitre" class="index">
         <div class="index-box floating-card">
-            <h2 class="header">Index</h2>
-            <%- include('toc.html', { headings: toc }) %>
+          <h2 class="header">
+            <button class="index-btn">Index</button>
+            <span class="no-button">Index</span>
+          </h2>
+          <%- include('toc.html', { headings: toc }) %>
         </div>
     </nav>
 
-    <section class="content">
-        <section class="body">
+    <div class="content">
+        <article id="maincontent" class="body">
             <div class="subtitle">
                 Partie {{ metadata.get('part_number') }} Chapitre {{ metadata.get('chapter_number') }}
             </div>
@@ -129,15 +132,15 @@
             </picture>
             {{ render_byline() }}
             <%- body %>
-        </section>
+        </article>
         {{ render_actions() }}
         <section class="authors">
             {{ render_authors() }}
         </section>
 
-        <nav id="chapter-navigation">
+        <nav title="Navigation pour le chapitre précédent et suivant" id="chapter-navigation">
             {{ render_prevnext() }}
         </nav>
-    </section>
-</article>
+    </div>
+  </main>
 {% endblock %}

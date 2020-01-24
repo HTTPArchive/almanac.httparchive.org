@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -157,8 +160,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -329,15 +332,15 @@
       <p>The stats in this chapter show that PWAs are still only used by a small percentage of sites. However, this relatively small usage is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more: we showed that 15% of page loads use a service workers. The advantages they give for <a href="./performance">performance</a> and greater control over <a href="./caching">caching</a> particularly for <a href="./mobile-web">mobile</a> should mean that usage will continue to grow.</p>
       <p>PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the underlying technologies, although first-class installability lags on some platforms. It's positive to see support becoming more widespread. <a href="https://twitter.com/firt">Maximiliano Firtman</a> does a great job of tracking this on iOS, including <a href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">explaining Safari PWA support</a>. Apple doesn't use the term PWA much, and has <a href="https://developer.apple.com/news/?id=09062019b">explicitly stated that these HTML5 apps are best delivered outside of the App Store</a>. Microsoft went the opposite direction, not only <a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">encouraging PWAs in its app store, but even automatically shortlisting PWAs to be added that were found via the Bing web crawler</a>. Google has also provided a method for listing web apps in the Google Play Store, via <a href="https://developers.google.com/web/updates/2019/02/using-twa">Trusted Web Activities</a>.</p>
       <p>PWAs provide a path forward for developers who would prefer to build and release on the web instead of on native platforms and app stores. Not every operating system and browser offers full parity with native software, but improvements continue, and perhaps 2020 is the year where we see an explosion in deployments?</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

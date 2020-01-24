@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -157,8 +160,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -210,7 +213,7 @@
       <p>Only 3% of resource hint usage used <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">HTTP headers</a> to specify resource hints. For example, <code>Link: &lt;https://example.com/shopping-cart.js&gt;; rel=prefetch</code>.</p>
       <p>Because the usage of resource hints in HTTP headers is so low, the remainder of this chapter will focus solely on analyzing the usage of resource hints in conjunction with the <code>&lt;link&gt;</code> tag. However, it's worth noting that in future years, usage of resource hints in HTTP headers may increase as <a href="./http2#http2-push">HTTP/2 Push</a> is adopted. This is due to the fact that HTTP/2 Push has repurposed the HTTP preload <code>Link</code> header as a signal to push resources.</p>
       <h2 id="resource-hints">Resource hints</h2>
-      <aside class="note">Note: There was no noticeable difference between the usage patterns for resource hints on mobile versus desktop. Thus, for the sake of conciseness, this chapter only includes the statistics for mobile.</aside>
+      <p class="note">Note: There was no noticeable difference between the usage patterns for resource hints on mobile versus desktop. Thus, for the sake of conciseness, this chapter only includes the statistics for mobile.</p>
       <figure id="fig-1">
         <div class="table-wrap">
           <div class="table-wrap-container">
@@ -362,15 +365,15 @@
       <p>Native lazy loading is available in browsers based on Chromium 76 and up. The API was announced too late for it to be included in the dataset for this year's Web Almanac, but it is something to keep an eye out for in the coming year.</p>
       <h2 id="conclusion">Conclusion</h2>
       <p>Overall, this data seems to suggest that there is still room for further adoption of resource hints. Most sites would benefit from adopting and/or switching to <code>preconnect</code> from <code>dns-prefetch</code>. A much smaller subset of sites would benefit from adopting <code>prefetch</code> and/or <code>preload</code>. There is greater nuance in successfully using <code>prefetch</code> and <code>preload</code>, which constrains its adoption to a certain extent, but the potential payoff is also greater. HTTP/2 Push and the maturation of machine learning technologies is also likely to increase the adoption of <code>preload</code> and `prefetch.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

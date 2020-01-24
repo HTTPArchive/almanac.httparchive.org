@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -191,8 +194,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -260,7 +263,7 @@
         <li>It's also delivered as text to the browser. So it compresses well, and should be delivered faster than just a screenshot of the page.</li>
         <li>So if the total amount of JavaScript a page downloads <em>alone</em> (not including images, css, etc) is larger than a PNG screenshot of the viewport, we are using far too much JavaScript. At this point, it'd be faster just to send that screenshot to get the initial page state!</li>
       </ul>
-      <aside>The *JavaScript Bloat Score* is defined as: (total JavaScript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it's faster to send a screenshot.</aside>
+      <p class="note">The *JavaScript Bloat Score* is defined as: (total JavaScript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it's faster to send a screenshot.</p>
       <p>The results of this? Of the 5+ million websites analyzed, 75.52% were bloated with JavaScript. We have a long way to go.</p>
       <p>Note that we were not able to capture and measure the screenshots of all 5 million+ sites we analyzed. Instead, we took a random sampling of 1000 sites to find what the median viewport screenshot size is (140 KB), and then compared each site's JavaScript download size to this number.</p>
       <p>For a more in-depth breakdown of the effects of JavaScript, check out <a href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">The Cost of JavaScript in 2018</a> by Addy Osmani.</p>
@@ -354,7 +357,7 @@
       <h3 id="labeling-buttons">Labeling buttons</h3>
       <p>Some designers love to use icons in place of text — they can make our sites look cleaner and more elegant. But while you and everyone on your team may know what these icons mean, many of your users will not. This is even the case with the infamous hamburger icon! If you don't believe us, do some user testing and see how often users get confused. You'll be astounded.</p>
       <p>This is why it's important to avoid any confusion and add supporting text and labels to your buttons. As of now, at least 28.59% of sites include a button with only a single icon with no supporting text.</p>
-      <aside class="note">Note: The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.</aside>
+      <p class="note">Note: The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.</p>
       <h2 id="semantic-form-fields">Semantic form fields</h2>
       <p>From signing up for a new service, buying something online, or even to receive notifications of new posts from a blog, form fields are an essential part of the web and something we use daily. Unfortunately, these fields are infamous for how much of a pain they are to fill out on mobile. Thankfully, in recent years browsers have given developers new tools to help ease the pain of completing these fields we know all too well. So let's take a look at how much they've been getting used.</p>
       <h3 id="new-input-types">New input types</h3>
@@ -400,7 +403,7 @@
       <p>Currently, only 29.62% of pages with input fields utilize this feature.</p>
       <h3 id="pasting-into-password-fields">Pasting into password fields</h3>
       <p>Enabling users to copy and paste their passwords into your page is one way that allows them to use password managers. Password managers help users generate (and remember) strong passwords and fill them out automatically on web pages. Only 0.02% of web pages tested disable this functionality.</p>
-      <aside class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="./methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</aside>
+      <p class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="./methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</p>
       <h2 id="conclusion">Conclusion</h2>
       <p>
         For over 13 years we've been treating the <em>mobile</em> web as an afterthought, like a mere exception to desktop. But it's time for this to change. The mobile web is now <em><em>the</em></em> web, and desktop is becoming the legacy one. There are now 4 billion active smartphones in the world, covering 70% of all potential users. What about desktops? They currently sit at 1.6 billion, and account for less and less of web usage every month.
@@ -414,33 +417,32 @@
         <div id="fig9-description" class="visually-hidden">A photograph of an AOL CD-ROM offering 1,000 hours free.</div>
         <figcaption id="fig9-caption">Figure 9. 1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
       </figure>
-      <aside class="note" markdown="">
-        <p>Notes:</p>
-        <ol>
-          <li><p>We defined sites making a mobile effort as those who adjust their designs for smaller screens. Or rather, those which have at least one CSS breakpoint at 600px or less.</p></li>
-          <li>
-            <p>Potential users, or the total addressable market, are those who are 15+ years old: <a href="https://www.prb.org/international/geography/world">5.7 billion people</a>.</p>
-          </li>
-          <li>
-            <p><a href="https://www.merkleinc.com/thought-leadership/digital-marketing-report">Desktop search</a> and <a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/#monthly-201205-201909">web traffic share</a> has been on the decline for years</p>
-          </li>
-          <li>
-            <p>The total number of active smartphones was found by totaling the number of active Androids and iPhones (made public by Apple and Google), and a bit of math to account for Chinese internet-connected phones. <a href="https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile">More info here</a>.</p>
-          </li>
-          <li>
-            <p>The 1.6 billion desktops is calculated by numbers made public by <a href="https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices">Microsoft</a> and <a href="https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users">Apple</a>. It does not include linux PC users.</p>
-          </li>
-        </ol>
-      </aside>
-    </section>
+      <p class="note" markdown=""></p>
+      <p>Notes:</p>
+      <ol>
+        <li><p>We defined sites making a mobile effort as those who adjust their designs for smaller screens. Or rather, those which have at least one CSS breakpoint at 600px or less.</p></li>
+        <li>
+          <p>Potential users, or the total addressable market, are those who are 15+ years old: <a href="https://www.prb.org/international/geography/world">5.7 billion people</a>.</p>
+        </li>
+        <li>
+          <p><a href="https://www.merkleinc.com/thought-leadership/digital-marketing-report">Desktop search</a> and <a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/#monthly-201205-201909">web traffic share</a> has been on the decline for years</p>
+        </li>
+        <li>
+          <p>The total number of active smartphones was found by totaling the number of active Androids and iPhones (made public by Apple and Google), and a bit of math to account for Chinese internet-connected phones. <a href="https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile">More info here</a>.</p>
+        </li>
+        <li>
+          <p>The 1.6 billion desktops is calculated by numbers made public by <a href="https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices">Microsoft</a> and <a href="https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users">Apple</a>. It does not include linux PC users.</p>
+        </li>
+      </ol>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

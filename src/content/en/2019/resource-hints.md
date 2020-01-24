@@ -49,7 +49,7 @@ Because the usage of resource hints in HTTP headers is so low, the remainder of 
 
 ## Resource hints
 
-<aside class="note">Note: There was no noticeable difference between the usage patterns for resource hints on mobile versus desktop. Thus, for the sake of conciseness, this chapter only includes the statistics for mobile.</aside>
+<p class="note">Note: There was no noticeable difference between the usage patterns for resource hints on mobile versus desktop. Thus, for the sake of conciseness, this chapter only includes the statistics for mobile.</p>
 
 <figure>
   <table>

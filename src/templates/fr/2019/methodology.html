@@ -87,10 +87,13 @@
 {% endblock %}
 
 {% block main %}
-<article id="methodology" class="main">
+<main id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li><a href="#overview">Vue d’ensemble</a></li>
         <li><a href="#dataset">À propos du jeu de données</a>
@@ -121,7 +124,7 @@
     </div>
   </nav>
 
-  <div class="content">
+  <article id="maincontent" class="content">
     <h1 class="title title-lg">Méthodologie</h1>
 
     <section>
@@ -133,7 +136,7 @@
           <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x" />
           <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp" />
           <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png" />
-          <img class="content-banner" src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
         </picture>
         <h2 id="overview">Vue d’ensemble</h2>
 
@@ -161,8 +164,8 @@
         Toutes les statistiques présentées dans le Web Almanac sont reproductibles publiquement à l’aide de l’ensemble de données sur BigQuery. Vous pouvez parcourir les requêtes utilisées par tous les chapitres dans notre <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/master/sql/2019">dépôt GitHub</a>.
         </p>
 
-        <p>
-          <aside>Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.</aside>
+        <p class="note">
+          Veuillez noter que certaines de ces requêtes sont assez volumineuses et peuvent être <a href="https://cloud.google.com/bigquery/pricing">coûteuses</a> à exécuter par vous-même, dans la mesure où BigQuery facture au téraoctet. Pour vous aider à contrôler vos dépenses, consultez l'article de blog de Tim Kadlec <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Utiliser BigQuery sans faire sauter la banque (en anglais)</a>.
         </p>
 
         <p>
@@ -170,7 +173,7 @@
         </p>
 
         <div class="code-block floating-card">
-          <pre><code><span class="code-comment">#standardSQL
+          <pre><code tabindex="0"><span class="code-comment">#standardSQL
 # 01_01b: Distribution of JS bytes by client</span>
 <span class="code-keyword">SELECT</span>
   percentile,
@@ -371,9 +374,9 @@
       </table>
       </div></div>
 
-      <aside>
+      <p class="note">
         * Notez que Lighthouse est normalement configuré pour avoir un ralentissement CPU de 4x, mais en raison d’un <a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> dans WebPageTest, il était de 1x au moment des tests.
-      </aside>
+      </p>
 
       <p>
         Pour plus d’informations sur Lighthouse et les audits disponibles dans HTTP Archive, reportez-vous à la section <a href="https://developers.google.com/web/tools/lighthouse/">documentation de Lighthouse relative au développement</a>.
@@ -510,9 +513,9 @@
       <p>
         Si vous souhaitez contribuer à l’édition 2020 du Web Almanac, n’hésitez pas à nous le dire via <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">ce formulaire</a>. Nous serions ravi·e·s d’entendre vos idées pour rendre ce projet encore meilleur&nbsp;!
       </p>
-    </section>
+    </article>
   </div>
-</article>
+</main>
 {% endblock %}
 
 {% block scripts %}
@@ -520,7 +523,7 @@
 <script nonce="{{ csp_nonce() }}">
 
 var indexBox = document.querySelector('.index-box');
-var indexBoxTitle = document.querySelector('.index .header');
+var indexBoxTitle = document.querySelector('.index .index-btn');
 
 indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');

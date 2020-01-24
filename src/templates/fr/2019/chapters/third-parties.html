@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Table des matières du chapitre" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -193,8 +196,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Partie {{ metadata.get('part_number') }} Chapitre {{ metadata.get('chapter_number') }}
       </div>
@@ -243,7 +246,7 @@
         <li><strong>Video</strong> - fournisseurs qui hébergent un contenu vidéo quelconque de leurs utilisateurs</li>
         <li><strong>Autre (Other)</strong> - activité non classée ou considérée comme non conforme</li>
       </ul>
-      <aside><strong>Note sur les CDN</strong>&nbsp;: d’après les critères que nous utilisons, seuls sont comptabilisés dans la catégorie CDN les fournisseurs qui fournissent des ressources sur des domaines de CDN <strong>publics</strong> (par exemple bootstrapcdn.com, cdnjs.cloudflare.com, etc.). Cela n’inclut <strong>pas</strong> les ressources qui sont simplement servies sur un CDN. Exemple&nbsp;: même si vous mettez Cloudflare devant une page, nous la considérerons comme une première partie.</aside>
+      <p class="note"><strong>Note sur les CDN</strong>&nbsp;: d’après les critères que nous utilisons, seuls sont comptabilisés dans la catégorie CDN les fournisseurs qui fournissent des ressources sur des domaines de CDN <strong>publics</strong> (par exemple bootstrapcdn.com, cdnjs.cloudflare.com, etc.). Cela n’inclut <strong>pas</strong> les ressources qui sont simplement servies sur un CDN. Exemple&nbsp;: même si vous mettez Cloudflare devant une page, nous la considérerons comme une première partie.</p>
       <h3 id="quelques-réserves">Quelques réserves</h3>
       <ul>
         <li>Toutes les données présentées ici sont basées sur une sollicitation à froid, sans interaction. Ces valeurs seraient rapidement très différentes après l’interaction d’un utilisateur ou d’une utilisatrice.</li>
@@ -469,15 +472,15 @@
       <p>Le contenu tiers est partout. Cela n’est guère surprenant&nbsp;; le principe de base du web est de permettre l’interconnexion et la mise en relation. Dans ce chapitre, nous avons examiné les contenus de tiers en termes de ressources hébergées en dehors du domaine principal. Si nous avions inclus les contenus tiers auto-hébergés (par exemple, les bibliothèques open source communes hébergées sur le domaine principal), l’utilisation de contenus tiers aurait été encore plus importante&nbsp;!</p>
       <p>Bien que la <a href="https://en.wikipedia.org/wiki/Code_reuse">réutilisation dans les technologies informatiques</a> soit généralement une pratique exemplaire, les tiers sur le web introduisent des dépendances qui ont un impact considérable sur la performance, la confidentialité et la sécurité d’une page. L’auto-hébergement et la sélection minutieuse des fournisseurs peuvent grandement contribuer à atténuer ces effets.</p>
       <p>Indépendamment de la question importante de savoir comment les contenus de tiers sont ajoutés à une page, la conclusion est la même&nbsp;: les tiers font partie intégrante du web&nbsp;!</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Navigation pour le chapitre précédent et suivant" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

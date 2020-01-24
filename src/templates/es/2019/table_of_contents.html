@@ -152,7 +152,7 @@
 {% endblock %}
 
 {% block main %}
-<section class="main">
+<main id="maincontent" class="main">
   <h1 class="title title-lg">Tabla de Contenidos</h1>
 
   <section>
@@ -211,12 +211,12 @@
       </section>
     </div>
 
-    <section class="characters">
-      <img class="character" src="/static/images/character-painter.png" alt="" loading="lazy" />
-      <img class="character" src="/static/images/character-file.png" alt="" loading="lazy" />
-      <img class="character" src="/static/images/character-star.png" alt="" loading="lazy" />
-      <img class="character" src="/static/images/character-hat.png" alt="" loading="lazy" />
-    </section>
+    <div class="characters">
+      <img class="character" src="/static/images/character-painter.png" alt="" loading="lazy" height="202" width="226" />
+      <img class="character" src="/static/images/character-file.png" alt="" loading="lazy" height="158" width="161" />
+      <img class="character" src="/static/images/character-star.png" alt="" loading="lazy" height="254" width="245" />
+      <img class="character" src="/static/images/character-hat.png" alt="" loading="lazy" height="207" width="186" />
+    </div>
   </div>
-</section>
+</main>
 {% endblock %}

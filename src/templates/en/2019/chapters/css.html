@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -309,8 +312,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -386,7 +389,7 @@
       <h3 id="length-and-sizing">Length and sizing</h3>
       <p>Unsurprisingly, In Figure 5 above, <code>px</code> is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, and so on). However, the <code>em</code> unit is almost as popular, with about 90% usage. This is over 2x more popular than the <code>rem</code> unit, which has only 40% frequency in web pages. If you're wondering what the difference is, <code>em</code> is based on the parent font size, while <code>rem</code> is based on the base font size set to the page. It doesn't change per-component like <code>em</code> could, and thus allows for adjustment of all spacing evenly.</p>
       <p>When it comes to units based on physical space, the <code>cm</code> (or centimeter) unit is the most popular by far, followed by <code>in</code> (inches), and then <code>Q</code>. We know these types of units are specifically useful for print stylesheets, but we didn't even know the <code>Q</code> unit existed until this survey! Did you?</p>
-      <aside>An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 5 accordingly.</aside>
+      <p class="note">An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 5 accordingly.</p>
       <h3 id="viewport-based-units">Viewport-based units</h3>
       <p>We saw larger differences in unit types when it comes to mobile and desktop usage for viewport-based units. 36.8% of mobile sites use <code>vh</code> (viewport height), while only 31% of desktop sites do. We also found that <code>vh</code> is more common than <code>vw</code> (viewport width) by about 11%. <code>vmin</code> (viewport minimum) is more popular than <code>vmax</code> (viewport maximum), with about 8% usage of <code>vmin</code> on mobile while <code>vmax</code> is only used by 1% of websites.</p>
       <h3 id="custom-properties">Custom properties</h3>
@@ -760,7 +763,7 @@
       </figure>
       <p>See the <a href="./page-weight">Page Weight</a> chapter for a more in-depth look at the number of bytes websites are loading for each content type.</p>
       <h3 id="libraries">Libraries</h3>
-      <p>It's common, popular, convenient, and powerful to reach for a CSS library to kick start a new project. While you may not be one to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.</p>
+      <p>It's common, popular, convenient, and powerful to reach for a CSS library to kick start a new project. While you may not be one to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web is inquired, reality is a bit different.</p>
       <figure id="fig-36">
         <div class="table-wrap">
           <div class="table-wrap-container">
@@ -879,15 +882,15 @@
       <p>There is so much more here to datamine! Many of the results surprised us, and we can only hope that they've surprised you as well. This surprising data set made the summarizing very fun, and left us with lots of clues and trails to investigate if we want to hunt down the reasons <em>why</em> some of the results are the way they are.</p>
       <p>Which results did you find the most alarming? Which results make you head to your codebase for a quick query?</p>
       <p>We felt the biggest takeaway from these results is that custom properties offer the most bang for your buck in terms of performance, DRYness, and scalability of your stylesheets. We look forward to scrubbing the internet's stylesheets again, hunting for new datums and provocative chart treats. Reach out to <a href="https://twitter.com/una">@una</a> or <a href="https://twitter.com/argyleink">@argyleink</a> in the comments with your queries, questions, and assertions. We'd love to hear them!</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

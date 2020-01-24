@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -157,8 +160,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -415,7 +418,7 @@
       </ul>
       <p>Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), <a href="https://modernizr.com/">Modernizr</a>, <a href="https://momentjs.com/">Moment.js</a>, <a href="https://underscorejs.org/">Underscore.js</a> and so on.</p>
       <h3 id="frameworks-and-ui-libraries">Frameworks and UI libraries</h3>
-      <aside class="note">As mentioned in our <a href="./methodology#wappalyzer">methodology</a>, the third-party detection library used in HTTP Archive (Wappalyzer) has a number of limitations with regards to how it detects certain tools. There is an open issue <a href="https://github.com/AliasIO/wappalyzer/issues/2450">to improve detection of JavaScript libraries and frameworks</a>, which will have impacted the results presented here.</aside>
+      <p class="note">As mentioned in our <a href="./methodology#wappalyzer">methodology</a>, the third-party detection library used in HTTP Archive (Wappalyzer) has a number of limitations with regards to how it detects certain tools. There is an open issue <a href="https://github.com/AliasIO/wappalyzer/issues/2450">to improve detection of JavaScript libraries and frameworks</a>, which will have impacted the results presented here.</p>
       <p>In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building <strong>single-page applications</strong> (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?</p>
       <figure id="fig-12">
         <a href="/static/images/2019/01_JavaScript/fig12.png">
@@ -514,15 +517,15 @@
       <h2 id="conclusion">Conclusion</h2>
       <p>The JavaScript ecosystem continues to change and evolve every year. Newer APIs, improved browser engines, and fresh libraries and frameworks are all things we can expect to happen indefinitely. HTTP Archive provides us with valuable insight on how sites in the wild use the language.</p>
       <p>Without JavaScript, the web would not be where it is today, and all the data gathered for this article only proves this.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

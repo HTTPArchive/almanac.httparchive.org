@@ -5,12 +5,13 @@
 {% endblock %}
 
 {% block content%}
+  <div id="skiptocontent"><a href="#maincontent">Sauter la navigation</a></div>
   {% block header %}
   <header class="alt-bg">
     <div class="container">
       <div class="top-header">
-        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive"></a>
-        <nav>
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive" height="39" width="202"></a>
+        <nav title="Navigation de page">
           <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
           <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
           <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
@@ -27,9 +28,9 @@
           </div>
         {% endif %}
         <button type="button" class="menu-btn" aria-label="Menu">
-          <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" />
+          <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
         </button>
-        <nav class="menu">
+        <nav title="Menu de la page" class="menu">
           <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
           <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
           <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
@@ -52,7 +53,7 @@
     </div>
     {% if request.endpoint == 'home' %}
     <div class="intro-container">
-      <div class="intro">
+      <div id="maincontent" class="intro">
         <div class="intro-year">2019</div>
         <h1 class="title title-lg title-alt">Web Almanac</h1>
         <h2>
@@ -83,10 +84,7 @@
 
   {% block footer %}
     <footer class="alt-bg">
-      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive"></a>
-      <a class="navigation-logo ha-logo" href="https://httparchive.org">
-        <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
-      </a>
+      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive" height="39" width="202"></a>
       <nav class="nav-items">
         <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
         <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
@@ -94,6 +92,9 @@
         {{ language_switcher() }}
       </nav>
       <p class="copyright"><span>© 2019 Web Almanac. Sous licence <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span></p>
+      <a class="navigation-logo ha-logo" href="https://httparchive.org">
+        <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
+      </a>
       <div class="social-media">
         <a href="https://twitter.com/HTTPArchive" class="twitter">
           <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
@@ -128,6 +129,7 @@
           var menuOpen = document.body.classList.toggle('menu-open');
           menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
         });
+
       })();
     </script>
   {% endblock %}
