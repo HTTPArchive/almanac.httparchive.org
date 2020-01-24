@@ -137,6 +137,7 @@
 
 .content-banner {
   max-width: 100%;
+  height: auto;
   border-radius: 8px;
   border: 1px solid #E5E5E5;
 }
@@ -274,6 +275,7 @@ img,
 table,
 figure {
   max-width: 100%;
+  height: auto;
 }
 figure {
   display: flex;
@@ -404,6 +406,7 @@ figure .fig-desktop {
   figure .fig-mobile {
     display: block;
     max-width: 100%;
+    height: auto;
   }
 }
 
