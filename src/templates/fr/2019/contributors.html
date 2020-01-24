@@ -154,7 +154,8 @@
   animation-duration: 600ms;
 }
 
-.contributor {
+.contributor,
+.contributor-join {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -162,7 +163,7 @@
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
   padding: 24px 34px;
   width: 230px;
-  margin: 15px;
+  margin: 10px;
 }
 
 .contributor:focus .contributor-avatar{
@@ -202,7 +203,7 @@
 
 .contributor-team {
   font-size: 14px;
-  color: #868686;
+  color: #757575;
 }
 .contributor-team::after {
   content: ', ';
@@ -277,21 +278,54 @@
     opacity: 1;
     }
 }
+
+/* Join the team card */
+.contributor-join {
+  display: flex;
+  border: 5px dashed #5e687c;  
+  justify-content: center;
+}
+
+.contributor-join:hover {
+  transform: scale(1.05);
+}
+
+.contributor-join svg {
+  margin-bottom: -10px;
+  z-index: 1;
+}
+
+.contributor-join path {
+  fill: #5e687c;
+}
+
+.contributor-join text {
+  fill: #fff; 
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+@media (max-width: 600px) {
+  .contributor-join {
+    flex: 1;
+    padding: 20px 16px;
+  }
+}
 </style>
 {% endblock %}
 
 {% block main %}
-<section class="main">
+<main id="maincontent" class="main">
   <h1 class="title title-lg">
     Contributeurs et contributrices
   </h1>
   <div class="team">
-      <img src="/static/images/avatars/1.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/8.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/4.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/0.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/11.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/9.jpg" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/1.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/8.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/4.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/0.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/11.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/9.jpg" alt="" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
     <div class="filter-container">
@@ -315,8 +349,18 @@
     </div>
 
     <div class="contributor-grid">
+      <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5" class="contributor-join" aria-labelledby="jointheteam">
+        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 203 117">
+          <title id="jointheteam">Rejoignez les équipe Web Almanac</title>
+          <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z"/>
+          <text x="50%" y="47%">
+            Rejoignez les équipe!
+          </text>
+        </svg>
+        <img src="/static/images/avatars/12.jpg" alt="" height="100" width="100" loading="lazy" />
+      </a>  
     {% for id, contributor in config.contributors.items() %}
-      <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
+      <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="avatar de {{ contributor.name }}" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
@@ -341,7 +385,7 @@
     {% endfor %}
     </div>
   </div>
-</section>
+</main>
 {% endblock %}
 
 {% block scripts %}
@@ -436,4 +480,6 @@
 })();
 
   </script>
+  <!-- add chapter.js to handle print mode and avoid duplicating code -->
+  <script src='/static/js/chapter.js' defer></script>
 {% endblock %}

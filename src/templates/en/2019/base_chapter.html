@@ -12,7 +12,7 @@
 <script nonce="{{ csp_nonce() }}">
   
 var indexBox = document.querySelector('.index-box');
-var indexBoxTitle = document.querySelector('.index .header');
+var indexBoxTitle = document.querySelector('.index .index-btn');
  
 indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');
@@ -20,16 +20,16 @@ indexBoxTitle.addEventListener('click', function(e) {
 
 document.addEventListener("keypress", function onPress(event) {
  	if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
- 		var previous = document.getElementById('previous-chapter');
- 		if (previous) {
- 		  previous.click();
+ 	  var previous = document.getElementById('previous-chapter');
+ 	  if (previous) {
+ 	    previous.click();
  		}
  	}
  	if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>') {
- 		var next = document.getElementById('next-chapter');
- 		if (next) {
- 		  next.click();
- 		}
+ 	  var next = document.getElementById('next-chapter');
+ 	  if (next) {
+ 	    next.click();
+ 	  }
  	}
 });
 
@@ -77,8 +77,8 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_authors() %}
   {% for author in metadata.get('authors') %}
-  {% if loop.length == 1 %}<h4>Author</h4>{% endif -%}
-  {% if loop.length > 1 and loop.index == 1 %}<h4>Authors</h4>{% endif %}
+  {% if loop.length == 1 %}<h2>Author</h2>{% endif -%}
+  {% if loop.length > 1 and loop.index == 1 %}<h2>Authors</h2>{% endif %}
   {% if loop.index == 1 %}<ul>{% endif %}
       {% set authordata = config.contributors[author] if author in config.contributors else None %}
     {% if authordata %}

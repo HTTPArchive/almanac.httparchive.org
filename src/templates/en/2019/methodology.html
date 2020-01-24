@@ -87,10 +87,13 @@
 {% endblock %}
 
 {% block main %}
-<article id="methodology" class="main">
+<main id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#dataset">About the dataset</a>
@@ -121,7 +124,7 @@
     </div>
   </nav>
 
-  <div class="content">
+  <article id="maincontent" class="content">
     <h1 class="title title-lg">Methodology</h1>
 
     <section>
@@ -133,7 +136,7 @@
           <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x" />
           <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp" />
           <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png" />
-          <img class="content-banner" src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" loading="eager" />
         </picture>
         <h2 id="overview">Overview</h2>
 
@@ -161,8 +164,8 @@
           All of the metrics presented in the Web Almanac are publicly reproducible using the dataset on BigQuery. You can browse the queries used by all chapters in our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/master/sql/2019">GitHub repository</a>.
         </p>
 
-        <p>
-          <aside>Please note that some of these queries are quite large and can be <a href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec's post <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.</aside>
+        <p class="note">
+          Please note that some of these queries are quite large and can be <a href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec's post <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.
         </p>
 
         <p>
@@ -371,9 +374,9 @@
       </table>
       </div></div>
 
-      <aside>
+      <p class="note">
         * Note that Lighthouse is normally configured to have a CPU slowdown of 4x, but due to a <a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> in WebPageTest, this was 1x at the time of the tests.
-      </aside>
+      </p>
 
       <p>
         For more information about Lighthouse and the audits available in HTTP Archive, refer to the <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse developer documentation</a>.
@@ -511,8 +514,8 @@
         If you're interested in contributing to the 2020 edition of the Web Almanac, please fill out our <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">interest form</a>. We'd love to hear your ideas for making this project even better!
       </p>
     </section>
-  </div>
-</article>
+  </article>
+</main>
 {% endblock %}
 
 {% block scripts %}
@@ -520,7 +523,7 @@
 <script nonce="{{ csp_nonce() }}">
 
 var indexBox = document.querySelector('.index-box');
-var indexBoxTitle = document.querySelector('.index .header');
+var indexBoxTitle = document.querySelector('.index .index-btn');
 
 indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');
