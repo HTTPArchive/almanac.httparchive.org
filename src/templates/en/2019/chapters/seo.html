@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -203,8 +206,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -230,7 +233,7 @@
       <p>The purpose of the SEO chapter of the Web Almanac is to analyze on-site elements of the web that impact the crawling and indexing of content for search engines, and ultimately, website performance. In this chapter, we'll take a look at how well-equipped the top websites are to provide a great experience for users and search engines, and which ones still have work to do.</p>
       <p>Our analysis includes data from <a href="./methodology#lighthouse">Lighthouse</a>, the <a href="./methodology#chrome-ux-report">Chrome UX Report</a>, and HTML element analysis. We focused on SEO fundamentals like <code>&lt;title&gt;</code> elements, the different types of on-page links, content, and loading speed, but also the more technical aspects of SEO, including indexability, structured data, internationalization, and AMP across over 5 million websites.</p>
       <p>Our custom metrics provide insights that, up until now, have not been exposed before. We are now able to make claims about the adoption and implementation of elements such as the <code>hreflang</code> tag, rich results eligibility, heading tag usage, and even anchor-based navigation for single page apps.</p>
-      <aside>Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric. Learn more about these limitations in our <a href="./methodology">Methodology</a>.</aside>
+      <p class="note">Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric. Learn more about these limitations in our <a href="./methodology">Methodology</a>.</p>
       <p>Read on to find out more about the current state of the web and its search engine friendliness.</p>
       <h2 id="fundamentals">Fundamentals</h2>
       <p>Search engines have a three-step process: crawling, indexing, and ranking. To be search engine-friendly, a page needs to be discoverable, understandable, and contain quality content that would provide value to a user who is browsing the search engine results pages (SERPs).</p>
@@ -305,11 +308,11 @@
       <h4 id="status-codes">Status codes</h4>
       <p>It is recommended to maintain a <code>200 OK</code> status code for any important pages that you want search engines to index. The majority of pages tested were available for search engines to access, with 87.03% of initial HTML requests on desktop returning a <code>200</code> status code. The results were slightly lower for mobile pages, with only 82.95% of pages returning a <code>200</code> status code.</p>
       <p>The next most commonly found status code on mobile was <code>302</code>, a temporary redirect, which was found on 10.45% of mobile pages. This was higher than on desktop, with only 6.71% desktop home pages returning a <code>302</code> status code. This could be due to the fact that the <a href="https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls">mobile home pages were alternates</a> to an equivalent desktop page, such as on non-responsive sites that have separate versions of the website for each device.</p>
-      <aside>Note: Our results didn't include <code>4xx</code> or <code>5xx</code> status codes.</aside>
+      <p class="note">Note: Our results didn't include <code>4xx</code> or <code>5xx</code> status codes.</p>
       <h4 id="noindex"><code>noindex</code></h4>
       <p>A <code>noindex</code> directive can be served in the HTML <code>&lt;head&gt;</code> or in the HTTP headers as an <code>X-Robots</code> directive. A <code>noindex</code> directive basically tells a search engine not to include that page in its SERPs, but the page will still be accessible for users when they are navigating through the website. <code>noindex</code> directives are usually added to duplicate versions of pages that serve the same content, or low quality pages that provide no value to users coming to a website from organic search, such as filtered, faceted, or internal search pages.</p>
       <p>96.93% of mobile pages passed the <a href="https://developers.google.com/web/tools/lighthouse/audits/indexing">Lighthouse indexing audit</a>, meaning that these pages didn't contain a <code>noindex</code> directive. However, this means that 3.07% of mobile home pages <em>did</em> have a <code>noindex</code> directive, which is cause for concern, meaning that Google was prevented from indexing these pages.</p>
-      <aside>The websites included in our research are sourced from the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
+      <p class="note">The websites included in our research are sourced from the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</p>
       <h4 id="canonicalization">Canonicalization</h4>
       <p>Canonical tags are used to specify duplicate pages and their preferred alternates, so that search engines can consolidate authority which might be spread across multiple pages within the group onto one main page for improved rankings.</p>
       <p>48.34% of mobile home pages were <a href="https://developers.google.com/web/tools/lighthouse/audits/canonical">detected</a> to have a canonical tag. Self-referencing canonical tags aren't essential, and canonical tags are usually required for duplicate pages. Home pages are rarely duplicated anywhere else across the site so seeing that less than half of pages have a canonical tag isn't surprising.</p>
@@ -550,15 +553,15 @@
       <p>Through our analysis, we observed that the majority of websites are getting the fundamentals right, in that their home pages are crawlable, indexable, and include the key content required to rank well in search engines' results pages. Not every person who owns a website will be aware of SEO at all, let alone its best practice guidelines, so it is promising to see that so many sites have got the basics covered.</p>
       <p>However, more sites are missing the mark than expected when it comes to some of the more advanced aspects of SEO and accessibility. Site speed is one of these factors that many websites are struggling with, especially on mobile. This is a significant problem, as speed is one of the biggest contributors to UX, which is something that can impact rankings. The number of websites that aren't yet served over HTTPS is also problematic to see, considering the importance of security and keeping user data safe.</p>
       <p>There is a lot more that we can all be doing to learn about SEO best practices and industry developments. This is essential due to the evolving nature of the search industry and the rate at which changes happen. Search engines make thousands of improvements to their algorithms each year, and we need to keep up if we want our websites to reach more visitors in organic search.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

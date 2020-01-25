@@ -49,6 +49,16 @@
 .index .header {
   color: #1A2B49;
 }
+.index-box .index-btn {
+  padding: 14px;
+  width: 100%;
+  border: 0;
+  background: none;
+  display: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: bold;
+}
 .index .header-mobile {
   display: none;
 }
@@ -110,7 +120,7 @@
   margin-left: 30px;
   min-width: 320px;
 }
-.content > section {
+.content > section, .content > article {
   margin-bottom: 64px;
 }
 .content ul li {
@@ -120,7 +130,6 @@
   position: absolute;
   content: "\2022";
   font-size: 16px;
-  color: #a9cbbb;
   display: inline-block;
   width: 1em;
   margin-left: -1em
@@ -155,11 +164,12 @@
   display: none;
 }
 
-.authors h4{
+.authors h2{
   padding: 16px 0;
 }
-.authors,.authors h4{
+.authors,.authors h2{
   border-bottom: 1px solid #1A2B490A;
+  font-size: 17px;
 }
 .content .authors ul{
   margin:16px 0;
@@ -256,7 +266,7 @@
   right:-24px;
 }
 
-aside {
+aside, .note {
   font-style: italic;
 }
 
@@ -345,26 +355,35 @@ figure .fig-desktop {
   .index-box .header {
     display: flex;
     justify-content: space-between;
+    margin: 0;
   }
-  .index-box  h2.header::after {
+  .index-box .index-btn {
+    display: block;
+  }
+  .index-box .no-button {
+    display: none;
+  }
+  .index-box .index-btn::after {
     font-weight: normal;
+    float: right;
     content: '+';
   }
-  .index-box.show  h2.header::after {
+  .index-box.show .index-btn::after {
     content: '-';
   }
 
   .index-box ul {
     max-height: 0;
+    display: none;
     border-top: 0px solid #FFFFFFFF;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
   }
   .index-box.show ul {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 2px;
     border-top: 1px solid #1A2B490A;
     max-height: 100%;
+    display: block;
     transition: max-height 0.25s ease-in;
   }
   .table-wrap {
@@ -407,7 +426,7 @@ figure .fig-desktop {
   width: 100%;
 }
 .code-comment {
-  color: #838689;
+  color: #006400;
 }
 .code-keyword {
   color: #4A3244;
@@ -419,5 +438,5 @@ figure .fig-desktop {
   color: #2C4A73;
 }
 .code-number {
-  color: #A8CABA;
+  color: #0000ff;
 }

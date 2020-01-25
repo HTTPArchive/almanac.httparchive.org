@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -161,8 +164,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -232,7 +235,7 @@
       <h2 id="top-cdn-providers">Top CDN providers</h2>
       <p>There are two categories of CDN providers: the generic and the purpose-fit CDN. The generic CDN providers offer customization and flexibility to serve all kinds of content for many industries. In contrast, the purpose-fit CDN provider offers similar content distribution capabilities but are narrowly focused on a specific solution.</p>
       <p>This is clearly represented when looking at the top CDNs found serving the base HTML content. The most frequent CDNs serving HTML are generic CDNs (Cloudflare, Akamai, Fastly) and cloud solution providers who offer a bundled CDN (Google, Amazon) as part of the platform service offerings. In contrast, there are only a few purpose-fit CDN providers, such as Wordpress and Netlify, that deliver base HTML markup.</p>
-      <aside class="note">Note: This does not reflect traffic or usage, only the number of sites using them.</aside>
+      <p class="note">Note: This does not reflect traffic or usage, only the number of sites using them.</p>
       <figure id="fig-2">
         <a href="/static/images/2019/17_CDN/html_cdn_usage.png">
           <img alt="Most popular CDNs used to serve base HTML pages" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600" loading="lazy" />
@@ -620,7 +623,7 @@
       <h2 id="tls-negotiation-time-origin-3x-slower-than-cdns">TLS negotiation time: origin 3x slower than CDNs</h2>
       <p>Since TLS negotiations require multiple TCP round trips before data can be sent from a server, simply improving the RTT can significantly improve the page performance. For example, looking at the base HTML page, the median TLS negotiation time for origin requests is 207 ms (for desktop WebPageTest). This alone accounts for 10% of a 2 second performance budget, and this is under ideal network conditions where there is no latency applied on the request.</p>
       <p>In contrast, the median TLS negotiation for the majority of CDN providers is between 60 and 70 ms. Origin requests for HTML pages take almost 3x longer to complete TLS negotiation than those web pages that use a CDN. Even at the 90th percentile, this disparity perpetuates with origin TLS negotiation rates of 427 ms compared to most CDNs which complete under 140 ms!</p>
-      <aside class="note">A word of caution when interpreting these charts: it is important to focus on orders of magnitude when comparing vendors as there are many factors that impact the actual TLS negotiation performance. These tests were completed from a single datacenter under controlled conditions and do not reflect the variability of the internet and user experiences.</aside>
+      <p class="note">A word of caution when interpreting these charts: it is important to focus on orders of magnitude when comparing vendors as there are many factors that impact the actual TLS negotiation performance. These tests were completed from a single datacenter under controlled conditions and do not reflect the variability of the internet and user experiences.</p>
       <figure id="fig-8">
         <a href="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
           <img alt="Distribution of TLS negotiation time for initial HTML request broken down by CDN" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600" loading="lazy" />
@@ -1190,7 +1193,7 @@
       </figure>
       <p>Along with this general adoption of TLS, CDN use also sees higher adoption of emerging TLS versions like TLS 1.3.</p>
       <p>In general, the use of a CDN is highly correlated with a more rapid adoption of stronger ciphers and stronger TLS versions compared to origin-hosted services where there is a higher usage of very old and compromised TLS versions like TLS 1.0.</p>
-      <aside class="note">It is important to emphasize that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions.</aside>
+      <p class="note">It is important to emphasize that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions.</p>
       <figure id="fig-18">
         <a href="/static/images/2019/17_CDN/fig18.png">
           <img src="/static/images/2019/17_CDN/fig18.png" alt="Figure 18. HTML TLS version by CDN." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&amp;format=interactive" loading="lazy" />
@@ -1202,7 +1205,7 @@
       <h2 id="http2-adoption">HTTP/2 adoption</h2>
       <p>Along with RTT management and improving TLS performance, CDNs also enable new standards like HTTP/2 and IPv6. While most CDNs offer support for HTTP/2 and many have signaled early support of the still-under-standards-development HTTP/3, adoption still depends on website owners to enable these new features. Despite the change-management overhead, the majority of the HTML served from CDNs has HTTP/2 enabled.</p>
       <p>CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin pages. Similarly, sub-domain and third-party resources on CDNs see an even higher adoption of HTTP/2 at 90% or higher while third-party resources served from origin infrastructure only has 31% adoption. The performance gains and other features of HTTP/2 are further covered in the <a href="./http2">HTTP/2</a> chapter.</p>
-      <aside class="note">Note: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</aside>
+      <p class="note">Note: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</p>
       <figure id="fig-19">
         <a href="/static/images/2019/17_CDN/fig19.png">
           <img src="/static/images/2019/17_CDN/fig19.png" alt="Figure 19. HTTP/2 adoption (CDN vs. origin)." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&amp;format=interactive" loading="lazy" />
@@ -1669,15 +1672,15 @@
       <p>Steve Souders' recommendation to use a CDN remains as valid today as it was 12 years ago, yet only 20% of sites serve their HTML content via a CDN, and only 40% are using a CDN for resources, so there's plenty of opportunity for their usage to grow further.</p>
       <p>There are some aspects of CDN adoption that aren't included in this analysis, sometimes this was due to the limitations of the dataset and how it's collected, in other cases new research questions emerged during the analysis.</p>
       <p>As the web continues to evolve, CDN vendors innovate, and sites use new practices CDN adoption remains an area rich for further research in future editions of the Web Almanac.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

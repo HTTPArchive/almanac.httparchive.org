@@ -66,7 +66,7 @@ Let's delve deeper and look at another metric that focuses more on *how well* ea
 - It's also delivered as text to the browser. So it compresses well, and should be delivered faster than just a screenshot of the page.
 - So if the total amount of JavaScript a page downloads _alone_ (not including images, css, etc) is larger than a PNG screenshot of the viewport, we are using far too much JavaScript. At this point, it'd be faster just to send that screenshot to get the initial page state!
 
-<aside>The *JavaScript Bloat Score* is defined as: (total JavaScript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it's faster to send a screenshot.</aside>
+<p class="note">The *JavaScript Bloat Score* is defined as: (total JavaScript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it's faster to send a screenshot.</p>
 
 The results of this? Of the 5+ million websites analyzed, 75.52% were bloated with JavaScript. We have a long way to go.
 
@@ -200,7 +200,7 @@ Some designers love to use icons in place of text — they can make our sites lo
 
 This is why it's important to avoid any confusion and add supporting text and labels to your buttons. As of now, at least 28.59% of sites include a button with only a single icon with no supporting text.
 
-<aside class="note">Note: The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.</aside>
+<p class="note">Note: The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.</p>
 
 ## Semantic form fields
 
@@ -253,7 +253,7 @@ Currently, only 29.62% of pages with input fields utilize this feature.
 
 Enabling users to copy and paste their passwords into your page is one way that allows them to use password managers. Password managers help users generate (and remember) strong passwords and fill them out automatically on web pages. Only 0.02% of web pages tested disable this functionality.
 
-<aside class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="./methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</aside>
+<p class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="./methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</p>
 
 ## Conclusion
 
@@ -271,7 +271,7 @@ The mobile web has now been around long enough for there to be an entire generat
   <figcaption id="fig9-caption">Figure 9. 1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
 </figure>
 
-<aside class="note" markdown>Notes:
+<p class="note" markdown>Notes:
 
 1. We defined sites making a mobile effort as those who adjust their designs for smaller screens. Or rather, those which have at least one CSS breakpoint at 600px or less.
 
@@ -282,4 +282,4 @@ The mobile web has now been around long enough for there to be an entire generat
 4. The total number of active smartphones was found by totaling the number of active Androids and iPhones (made public by Apple and Google), and a bit of math to account for Chinese internet-connected phones. [More info here](https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile).
 
 5. The 1.6 billion desktops is calculated by numbers made public by [Microsoft](https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices) and [Apple](https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users). It does not include linux PC users.
-</aside>
+</p>
