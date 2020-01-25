@@ -29,7 +29,7 @@ Mirar un recuento de frecuencia sin procesar no es especialmente útil, incluso 
 
 En lugar, como en el estudio original de Hixie, Lo que veremos es cuántos sitios incluyen cada elemento al menos una vez en su página de inicio.
 
-<aside class="note">Nota: Esto es, en sí mismo, no sin algunos sesgos potenciales. Varios sitios pueden utilizar productos populares, lo que introduce un marcado no estándar, incluso "invisible" para autores individuales. Por lo tanto, se debe tener cuidado al reconocer que el uso no implica necesariamente el conocimiento directo del autor y la adopción consciente tanto como el servicio de una necesidad común, de una manera común. Durante nuestra investigación, encontramos varios ejemplos de esto, algunos los indicaremos.</aside>
+<p class="note">Nota: Esto es, en sí mismo, no sin algunos sesgos potenciales. Varios sitios pueden utilizar productos populares, lo que introduce un marcado no estándar, incluso "invisible" para autores individuales. Por lo tanto, se debe tener cuidado al reconocer que el uso no implica necesariamente el conocimiento directo del autor y la adopción consciente tanto como el servicio de una necesidad común, de una manera común. Durante nuestra investigación, encontramos varios ejemplos de esto, algunos los indicaremos.</p>
 
 ## Principales elementos e información general
 
@@ -101,7 +101,7 @@ En el conjunto de datos de escritorio, recopilamos datos para los principales 4,
 
 Además, el 15% de las páginas de escritorio y el 16% de las páginas móviles contienen elementos obsoletos.
 
-<aside class="note">Nota: Mucho de esto es muy probable debido al uso de productos en lugar de que los autores individuales sigan creando manualmente el marcado.</aside>
+<p class="note">Nota: Mucho de esto es muy probable debido al uso de productos en lugar de que los autores individuales sigan creando manualmente el marcado.</p>
 
 <figure id="fig6">
   <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive"></iframe>

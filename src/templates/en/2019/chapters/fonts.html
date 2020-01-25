@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"translators":[""],"discuss":"1761","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-23T00:00:00.000Z"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
+{% set metadata = {"part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"translators":null,"discuss":"1761","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-23T00:00:00.000Z"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %} {% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %} {% block meta %}
 <meta name="description" content="{{ self.description() }}" />
 <meta property="og:title" content="{{ self.title() }}" />
 <meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -175,8 +178,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -771,15 +774,15 @@
       <p>I fully expect that in the future we'll see the "Rise of the Variable Font". This <em>should</em> be paired with a decline in web font requests, as Variable Fonts combine multiple individual font files into a single composite font file. But history has shown us that what usually happens here is that we optimize a thing and then add more things to fill the vacancy.</p>
       <p>It will be very interesting to see if color fonts increase in popularity. I expect these to be far more niche than variable fonts but may see a lifeline in the icon font space.</p>
       <p>Keep those fonts frosty, y'all.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

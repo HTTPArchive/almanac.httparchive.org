@@ -421,7 +421,7 @@ Los tamaños de HTML en móvil no son muy diferentes de los de escritorio. En ot
   <figcaption>Figura 13. Distribución de peticiones de imágenes por página de comercio electrónico.</figcaption>
 </figure>
 
-<aside class="note">Tenga en cuenta que debido a que nuestra <a href="./methodology">metodología</a> de recopilación de datos no simula las interacciones del usuario en páginas como hacer clic o scroll, las imágenes cargadas de forma diferida (_lazy loading_) no se representarían en estos resultados.</aside>
+<p class="note">Tenga en cuenta que debido a que nuestra <a href="./methodology">metodología</a> de recopilación de datos no simula las interacciones del usuario en páginas como hacer clic o scroll, las imágenes cargadas de forma diferida (_lazy loading_) no se representarían en estos resultados.</p>
 
 Las Figuras 12 y 13 muestran que la página de comercio electrónico promedio tiene 37 imágenes y representan un tráfico de 1.517 KB en dispositivos móviles, 40 imágenes y 1.524 KB en computadoras de escritorio. ¡El 10% de las páginas de inicio tienen 90 o más imágenes y representan en total casi 6 MB!
 
@@ -447,7 +447,7 @@ Necesitamos hacer más análisis para comprender mejor por qué algunos sitios n
   <figcaption>Figura 15. Formatos de imagen populares.</figcaption>
 </figure>
 
-<aside class="note">Tenga en cuenta que algunos servicios de imágenes o CDN entregarán automáticamente WebP (en lugar de JPEG o PNG) a plataformas que admitan WebP, incluso para una URL con el sufijo `.jpg` o` .png`. Por ejemplo, <a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> devuelve una imagen WebP en Chrome. Sin embargo, la forma en que HTTP Archive <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detecta los formatos de imagen</a> es verificar primero las palabras clave en el tipo MIME y usar como alternativa la extensión de archivo. Esto significa que el formato para imágenes con una URL como la anterior se clasifica como WebP, ya que WebP es compatible con HTTP Archive como agente de usuario.</aside>
+<p class="note">Tenga en cuenta que algunos servicios de imágenes o CDN entregarán automáticamente WebP (en lugar de JPEG o PNG) a plataformas que admitan WebP, incluso para una URL con el sufijo `.jpg` o` .png`. Por ejemplo, <a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> devuelve una imagen WebP en Chrome. Sin embargo, la forma en que HTTP Archive <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detecta los formatos de imagen</a> es verificar primero las palabras clave en el tipo MIME y usar como alternativa la extensión de archivo. Esto significa que el formato para imágenes con una URL como la anterior se clasifica como WebP, ya que WebP es compatible con HTTP Archive como agente de usuario.</p>
 
 ### PNG
 

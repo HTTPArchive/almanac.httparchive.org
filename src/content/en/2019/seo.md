@@ -23,7 +23,7 @@ Our analysis includes data from [Lighthouse](./methodology#lighthouse), the [Chr
 
 Our custom metrics provide insights that, up until now, have not been exposed before. We are now able to make claims about the adoption and implementation of elements such as the `hreflang` tag, rich results eligibility, heading tag usage, and even anchor-based navigation for single page apps.
 
-<aside>Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric. Learn more about these limitations in our <a href="./methodology">Methodology</a>.</aside>
+<p class="note">Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric. Learn more about these limitations in our <a href="./methodology">Methodology</a>.</p>
 
 Read on to find out more about the current state of the web and its search engine friendliness.
 
@@ -133,7 +133,7 @@ It is recommended to maintain a `200 OK` status code for any important pages tha
 
 The next most commonly found status code on mobile was `302`, a temporary redirect, which was found on 10.45% of mobile pages. This was higher than on desktop, with only 6.71% desktop home pages returning a `302` status code. This could be due to the fact that the [mobile home pages were alternates](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls) to an equivalent desktop page, such as on non-responsive sites that have separate versions of the website for each device.
 
-<aside>Note: Our results didn't include <code>4xx</code> or <code>5xx</code> status codes.</aside>
+<p class="note">Note: Our results didn't include <code>4xx</code> or <code>5xx</code> status codes.</p>
 
 #### `noindex`
 
@@ -141,7 +141,7 @@ A `noindex` directive can be served in the HTML `<head>` or in the HTTP headers 
 
 96.93% of mobile pages passed the [Lighthouse indexing audit](https://developers.google.com/web/tools/lighthouse/audits/indexing), meaning that these pages didn't contain a `noindex` directive. However, this means that 3.07% of mobile home pages _did_ have a `noindex` directive, which is cause for concern, meaning that Google was prevented from indexing these pages.
 
-<aside>The websites included in our research are sourced from the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</aside>
+<p class="note">The websites included in our research are sourced from the <a href="./methodology#chrome-ux-report">Chrome UX Report</a> dataset, which excludes websites that are not publicly discoverable. This is a significant source of bias because we're unable to analyze sites that Chrome determines to be non-public. Learn more about our <a href="./methodology#websites">methodology</a>.</p>
 
 #### Canonicalization
 
