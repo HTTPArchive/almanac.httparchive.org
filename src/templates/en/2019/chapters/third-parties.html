@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -193,8 +196,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -243,7 +246,7 @@
         <li><strong>Video</strong> - providers that host the arbitrary video content of their users</li>
         <li><strong>Other</strong> - uncategorized or non-conforming activity</li>
       </ul>
-      <aside><strong>Note on CDNs</strong>: The CDN category here includes providers that provide resources on <strong>public</strong> CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does <strong>not</strong> include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</aside>
+      <p class="note"><strong>Note on CDNs</strong>: The CDN category here includes providers that provide resources on <strong>public</strong> CDN domains (e.g. bootstrapcdn.com, cdnjs.cloudflare.com, etc.) and does <strong>not</strong> include resources that are simply served over a CDN. i.e. putting Cloudflare in front of a page would not influence its first-party designation according to our criteria.</p>
       <h3 id="caveats">Caveats</h3>
       <ul>
         <li>All data presented here is based on a non-interactive, cold load. These values could start to look quite different after user interaction.</li>
@@ -469,15 +472,15 @@
       <p>Third-party content is everywhere. This is hardly surprising; the entire basis of the web is to allow interconnectedness and linking. In this chapter we have examined third-party content in terms of assets hosted away from the main domain. If we had included self-hosted third-party content (e.g. common open source libraries hosted on the main domain), third-party usage would have been even larger!</p>
       <p>While <a href="https://en.wikipedia.org/wiki/Code_reuse">reuse in computer technologies</a> is generally a best practice, third parties on the web introduce dependencies that have a considerable impact on the performance, privacy, and security of a page. Self-hosting and careful provider selection can go a long way to mitigate these effects</p>
       <p>Regardless of the important question of how third-party content is added to a page, the conclusion is the same: third parties are an integral part of the web!</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

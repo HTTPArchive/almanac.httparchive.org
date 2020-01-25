@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Table des matières du chapitre" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -145,8 +148,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Partie {{ metadata.get('part_number') }} Chapitre {{ metadata.get('chapter_number') }}
       </div>
@@ -177,7 +180,7 @@
       <p>Les noms des éléments sur chaque page ont été collectés à partir du <a href="https://fr.wikipedia.org/wiki/Document_Object_Model">DOM</a> lui-même, après l’exécution initiale de JavaScript.</p>
       <p>Examiner un nombre de fréquences brut n’est pas particulièrement utile, même pour les éléments standards&nbsp;: environ 25&nbsp;% des éléments rencontrés sont des <code>&lt;div&gt;</code>. Environ 17&nbsp;% sont des <code>&lt;a&gt;</code>, environ 11&nbsp;% sont des <code>&lt;span&gt;</code> – et ce sont les seuls éléments qui comptent pour plus de 10&nbsp;% des occurrences. C’est un peu comme ça <a href="https://www.youtube.com/watch?v=fCn8zs912OE">dans toutes les langues</a>&nbsp;; un petit nombre de termes est surreprésenté en termes de fréquence. D’autant plus que, si nous commençons à examiner l’adoption des éléments non standards, cela peut être très trompeur. Il suffirait qu’un site utilise un certain élément mille fois pour lui conférer artificiellement une grande popularité.</p>
       <p>Au lieu de faire ça, nous allons examiner combien de sites incluent chaque élément au moins une fois dans leur page d’accueil, comme dans l’étude originale de Hixie.</p>
-      <aside class="note">Remarque&nbsp;: cette démarche n’est pas dénuée, en soi, de biais potentiels. Des solutions populaires, pouvant être utilisées par plusieurs sites, peuvent introduire un balisage non standard "invisible" à chaque auteur. Ainsi, il faut veiller à reconnaître que l’utilisation n’implique pas nécessairement la connaissance directe de l’auteur et l’adoption consciente puisqu’elle répond à un besoin commun, d’une manière commune. Au cours de notre recherche, nous avons trouvé plusieurs exemples, dont certains seront explicités.</aside>
+      <p class="note">Remarque&nbsp;: cette démarche n’est pas dénuée, en soi, de biais potentiels. Des solutions populaires, pouvant être utilisées par plusieurs sites, peuvent introduire un balisage non standard "invisible" à chaque auteur. Ainsi, il faut veiller à reconnaître que l’utilisation n’implique pas nécessairement la connaissance directe de l’auteur et l’adoption consciente puisqu’elle répond à un besoin commun, d’une manière commune. Au cours de notre recherche, nous avons trouvé plusieurs exemples, dont certains seront explicités.</p>
       <h2 id="principaux-éléments-de-balisage-et-généralités">Principaux éléments de balisage et généralités</h2>
       <p>En 2005, l’enquête de Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient <code>html</code>, <code>head</code> et <code>body</code>, ce qu’il a noté comme intéressant, car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM après interprétation, ils apparaissent universellement dans nos données. C’est pourquoi nous commencerons par le 4<sup>e</sup> élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données collectées à son époque et aujourd’hui (j’ai inclus ici la comparaison en fréquence, pour le plaisir).</p>
       <figure id="fig1" markdown="">
@@ -291,7 +294,7 @@
         </li>
       </ul>
       <p>En outre, 15&nbsp;% des pages pour ordinateurs de bureau et 16&nbsp;% des pages mobiles contiennent des éléments obsolètes.</p>
-      <aside class="note">Remarque&nbsp;: Il est très probable que cela soit dû en grande partie à l’utilisation de solutions plutôt qu’à des auteurs isolés qui continueraient à créer manuellement ce balisage.</aside>
+      <p class="note">Remarque&nbsp;: Il est très probable que cela soit dû en grande partie à l’utilisation de solutions plutôt qu’à des auteurs isolés qui continueraient à créer manuellement ce balisage.</p>
       <figure id="fig6">
         <a href="/static/images/2019/03_Markup/fig6.png">
           <img src="/static/images/2019/03_Markup/fig6.png" alt="Figure 6. Éléments obsolètes les plus fréquemment utilisés." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive" loading="lazy" />
@@ -455,15 +458,15 @@
         <li>Nous devons de plus en plus étudier ces données et faire de bonnes observations pour identifier les pratiques et standardiser.</li>
       </ul>
       <p>C’est dans ce dernier cas que vous intervenez. Nous aimerions profiter de la créativité et de la curiosité de la communauté pour aider à explorer ces données en utilisant certains des outils (comme <a href="https://rainy-periwinkle.glitch.me/">https://rainy-periwinkle.glitch.me/</a>). Veuillez nous faire part de vos précieuses observations et nous aider à bâtir notre patrimoine commun de connaissances et de compréhension.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Navigation pour le chapitre précédent et suivant" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

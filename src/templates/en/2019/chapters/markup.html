@@ -93,10 +93,13 @@
   }
 </script>
 {% endblock %} {% block main %}
-<article id="chapter" class="main">
-  <nav class="index">
+<main id="chapter" class="main">
+  <nav title="Chapter table of contents" class="index">
     <div class="index-box floating-card">
-      <h2 class="header">Index</h2>
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
       <ul>
         <li>
           <a href="#introduction">Introduction</a>
@@ -145,8 +148,8 @@
     </div>
   </nav>
 
-  <section class="content">
-    <section class="body">
+  <div class="content">
+    <article id="maincontent" class="body">
       <div class="subtitle">
         Part {{ metadata.get('part_number') }} Chapter {{ metadata.get('chapter_number') }}
       </div>
@@ -177,7 +180,7 @@
       <p>Names of elements on each page were collected from the DOM itself, after the initial run of JavaScript.</p>
       <p>Looking at a raw frequency count isn't especially helpful, even for standard elements: About 25% of all elements encountered are <code>&lt;div&gt;</code>. About 17% are <code>&lt;a&gt;</code>, about 11% are <code>&lt;span&gt;</code> -- and those are the only elements that account for more than 10% of occurrences. Languages are <a href="https://www.youtube.com/watch?v=fCn8zs912OE">generally like this</a>; a small number of terms are astoundingly used by comparison. Further, when we start looking at non-standard elements for uptake, this would be very misleading as one site could use a certain element a thousand times and thus make it look artificially very popular.</p>
       <p>Instead, as in Hixie's original study, what we will look at is how many sites include each element at least once in their homepage.</p>
-      <aside class="note">Note: This is, itself, not without some potential biases. Popular products can be used by several sites, which introduce non-standard markup, even "invisibly" to individual authors. Thus, care must be taken to acknowledge that usage doesn't necessarily imply direct author knowledge and conscious adoption as much as it does the servicing of a common need, in a common way. During our research, we found several examples of this, some we will call out.</aside>
+      <p class="note">Note: This is, itself, not without some potential biases. Popular products can be used by several sites, which introduce non-standard markup, even "invisibly" to individual authors. Thus, care must be taken to acknowledge that usage doesn't necessarily imply direct author knowledge and conscious adoption as much as it does the servicing of a common need, in a common way. During our research, we found several examples of this, some we will call out.</p>
       <h2 id="top-elements-and-general-info">Top elements and general info</h2>
       <p>In 2005, Hixie's survey listed the top few most commonly used elements on pages. The top 3 were <code>html</code>, <code>head</code> and <code>body</code> which he noted as interesting because they are optional and created by the parser if omitted. Given that we use the post-parsed DOM, they'll show up universally in our data. Thus, we'll begin with the 4th most used element. Below is a comparison of the data from then to now (I've included the frequency comparison here as well just for fun).</p>
       <figure id="fig1" markdown="">
@@ -291,7 +294,7 @@
         </li>
       </ul>
       <p>Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated elements.</p>
-      <aside class="note">Note: A lot of this is very likely due to the use of products rather than individual authors continuing to manually create this markup.</aside>
+      <p class="note">Note: A lot of this is very likely due to the use of products rather than individual authors continuing to manually create this markup.</p>
       <figure id="fig6">
         <a href="/static/images/2019/03_Markup/fig6.png">
           <img src="/static/images/2019/03_Markup/fig6.png" alt="Figure 6. Most frequently used deprecated elements." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive" loading="lazy" />
@@ -454,15 +457,15 @@
         <li>We need to increasingly study this data and come up with good observations to help find and pave the cowpaths.</li>
       </ul>
       <p>That last one is where you come in. We'd love to tap into the creativity and curiosity of the larger community to help explore this data using some of the tools (like <a href="https://rainy-periwinkle.glitch.me/">https://rainy-periwinkle.glitch.me/</a>). Please share your interesting observations and help build our commons of knowledge and understanding.</p>
-    </section>
+    </article>
     {{ render_actions() }}
     <section class="authors">
       {{ render_authors() }}
     </section>
 
-    <nav id="chapter-navigation">
+    <nav title="Previous and next chapter navigation" id="chapter-navigation">
       {{ render_prevnext() }}
     </nav>
-  </section>
-</article>
+  </div>
+</main>
 {% endblock %}

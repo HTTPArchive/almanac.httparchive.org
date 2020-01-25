@@ -93,7 +93,7 @@ Unsurprisingly, In Figure 5 above, `px` is the most used unit type, with about 9
 
 When it comes to units based on physical space, the `cm` (or centimeter) unit is the most popular by far, followed by `in` (inches), and then `Q`. We know these types of units are specifically useful for print stylesheets, but we didn't even know the `Q` unit existed until this survey! Did you?
 
-<aside>An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 5 accordingly.</aside>
+<p class="note">An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 5 accordingly.</p>
 
 ### Viewport-based units
 
@@ -577,7 +577,7 @@ See the [Page Weight](./page-weight) chapter for a more in-depth look at the num
 
 ### Libraries
 
-It's common, popular, convenient, and powerful to reach for a CSS library to kick start a new project. While you may not be one to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web in inquired, reality is a bit different.
+It's common, popular, convenient, and powerful to reach for a CSS library to kick start a new project. While you may not be one to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web is inquired, reality is a bit different.
 
 <figure>
   <table>

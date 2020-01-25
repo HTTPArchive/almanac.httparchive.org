@@ -203,7 +203,7 @@
 
 .contributor-team {
   font-size: 14px;
-  color: #868686;
+  color: #757575;
 }
 .contributor-team::after {
   content: ', ';
@@ -315,17 +315,17 @@
 {% endblock %}
 
 {% block main %}
-<section class="main">
+<main id="maincontent" class="main">
   <h1 class="title title-lg">
     Contributors
   </h1>
   <div class="team">
-      <img src="/static/images/avatars/1.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/8.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/4.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/0.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/11.jpg" height="100" width="100" loading="lazy" />
-      <img src="/static/images/avatars/9.jpg" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/1.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/8.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/4.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/0.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/11.jpg" alt="" height="100" width="100" loading="lazy" />
+      <img src="/static/images/avatars/9.jpg" alt="" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
     <div class="filter-container">
@@ -349,17 +349,18 @@
     </div>
 
     <div class="contributor-grid">
-      <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5" class="contributor-join" aria-label="Join the Web Almanac team">
-        <svg xmlns="http://www.w3.org/2000/svg" width="174" height="100" viewBox="0 0 203 117">
-          <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z"/>
+      <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5" class="contributor-join" aria-labelledby="jointheteam">
+        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 203 117">
+          <title id="jointheteam">Join the Web Almanac team</title>
+          <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z" />
           <text x="50%" y="47%">
             Join the team!
           </text>
         </svg>
-        <img src="/static/images/avatars/12.jpg" height="100" width="100" loading="lazy" />
+        <img src="/static/images/avatars/12.jpg" alt="" height="100" width="100" loading="lazy" />
       </a>  
     {% for id, contributor in config.contributors.items() %}
-      <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
+      <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
@@ -384,7 +385,7 @@
     {% endfor %}
     </div>
   </div>
-</section>
+</main>
 {% endblock %}
 
 {% block scripts %}
