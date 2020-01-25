@@ -271,9 +271,11 @@ aside, .note {
   font-style: italic;
 }
 
-img,
 table,
 figure {
+  max-width: 100%;
+}
+img {
   max-width: 100%;
   height: auto;
 }
