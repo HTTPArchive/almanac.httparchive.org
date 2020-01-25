@@ -61,7 +61,7 @@ There were three really important takeaways from this research:
 
 <figure>
   <a href="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="Figure 1. Converted sessions vs non-converted sessions." aria-labelledby="fig1-caption" aria-describedby="fig1-description">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="Figure 1. Converted sessions vs non-converted sessions." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="432">
   </a>
   <div id="fig1-description" class="visually-hidden">Chart showing 19 converted sessions vs. 31 non-converted sessions</div>
   <figcaption id="fig1-caption">Figure 1. Converted sessions vs non-converted sessions.</figcaption>
@@ -71,7 +71,7 @@ There were three really important takeaways from this research:
 
 <figure>
   <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg" alt="" aria-labelledby="fig2-caption" aria-describedby="fig2-description">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg" alt="" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="336">
   </a>
   <div id="fig2-description" class="visually-hidden">Chart showing conversion rate climbing up until 80 scripts, and then dropping off as scripts increase up to 1440 scripts.</div>
   <figcaption id="fig2-caption">Figure 2. Conversion rate dropping off as scripts increase.</figcaption>
@@ -542,7 +542,7 @@ Further investigation into the data set revealed that 62% of GIFs are 43 bytes o
 
 <figure>
   <a href="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Figure 10. Cumulative distribution function of GIF file sizes." aria-labelledby="fig10-caption" aria-describedby="fig10-description">
+    <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Figure 10. Cumulative distribution function of GIF file sizes." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="330">
   </a>
   <div id="fig10-description" class="visually-hidden">Chart showing 25% of GIFs are 35 bytes or smaller (which is the optimal size of a 1x1 white GIF) and 62% of GIFs are 43 bytes or smaller (which is the optimal size of a 1x1 transparent GIF). This increases to just over 75% of GIFs being 100 bytes or less.</div>
   <figcaption id="fig10-caption">Figure 10. Cumulative distribution function of GIF file sizes.</figcaption>
