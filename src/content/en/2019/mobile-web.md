@@ -164,7 +164,7 @@ Because of this, developers are given the ability to disable this feature by set
 
 <figure>
   <a href="/static/images/2019/12_Mobile_Web/fig5.png">
-    <img src="/static/images/2019/12_Mobile_Web/fig5.png" alt="Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
+    <img src="/static/images/2019/12_Mobile_Web/fig5.png" alt="Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
   <figcaption id="fig5-caption">Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>

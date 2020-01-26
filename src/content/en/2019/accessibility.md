@@ -63,7 +63,7 @@ Sadly, developers have misused this so much that almost one out of every three s
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig2.png">
-    <img src="/static/images/2019/09_Accessibility/fig2.png" alt="Figure 2. Percentage of sites that disable zooming and scaling vs device type." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig2.png" alt="Figure 2. Percentage of sites that disable zooming and scaling vs device type." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">Vertical measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
   <figcaption id="fig2-caption">Figure 2. Percentage of sites that disable zooming and scaling vs device type.</figcaption>
@@ -121,7 +121,7 @@ With that being said, here are our results:
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig3.png">
-    <img src="/static/images/2019/09_Accessibility/fig3.png" alt="Figure 3. Popularity of heading levels." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig3.png" alt="Figure 3. Popularity of heading levels." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
   </a>
   <div id="fig3-description" class="visually-hidden">Vertical bar chart measuring percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing each heading level h1 through h6.  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.</div>
   <figcaption id="fig3-caption">Figure 3. Popularity of heading levels.</figcaption>
@@ -135,7 +135,7 @@ We found only one in every four pages (26.03%) include a main landmark. And surp
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig4.png">
-    <img src="/static/images/2019/09_Accessibility/fig4.png" alt="Figure 4. Percent of pages by their number of 'main' landmarks." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig4.png" alt="Figure 4. Percent of pages by their number of 'main' landmarks." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">Vertical bar chart displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of “main” landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%.</div>
   <figcaption id="fig4-caption" >Figure 4. Percent of pages by their number of "main" landmarks.</figcaption>
@@ -153,7 +153,7 @@ All of these elements are primarily designed for accessibility support and have 
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig5.png">
-    <img src="/static/images/2019/09_Accessibility/fig5.png" alt="Figure 5. Usage of various HTML semantic elements." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig5.png" alt="Figure 5. Usage of various HTML semantic elements." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Horizontal bar chart with bars for each element type vs percent of pages ranging from 0 to 60 in increments of 20. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%.</div>
   <figcaption id="fig5-caption" >Figure 5. Usage of various HTML semantic elements.</figcaption>
@@ -165,7 +165,7 @@ Many popular screen readers also allow users to navigate by quickly jumping thro
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig6.png">
-    <img src="/static/images/2019/09_Accessibility/fig6.png" alt="Figure 6. Other HTML elements used for navigation" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig6.png" alt="Figure 6. Other HTML elements used for navigation" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">Horizontal bar chart with bars for each element type vs percent of pages ranging from 0 to 100 in increments of 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%.</div>
   <figcaption id="fig6-caption">Figure 6. Other HTML elements used for navigation.</figcaption>
@@ -227,7 +227,7 @@ Using ARIA correctly and appropriately can be challenging. For example, of pages
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig8.png">
-    <img src="/static/images/2019/09_Accessibility/fig8.png" alt="Figure 8. Percent of total pages vs ARIA attribute." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig8.png" alt="Figure 8. Percent of total pages vs ARIA attribute." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
   </a>
   <div id="fig8-description" class="visually-hidden">Vertical bar chart displaying percentage data, ranging from 0 to 25 in increments of 5, vs. bars representing each attribute. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%</div>
   <figcaption id="fig8-caption" >Figure 8. Percent of total pages vs ARIA attribute.</figcaption>
@@ -241,7 +241,7 @@ Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9 bel
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig9.png">
-    <img src="/static/images/2019/09_Accessibility/fig9.png" alt="Figure 9. Top 10 aria roles." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig9.png" alt="Figure 9. Top 10 aria roles." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">Horizontal bar chart with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%</div>
   <figcaption id="fig9-caption" >Figure 9. Top 10 aria roles.</figcaption>

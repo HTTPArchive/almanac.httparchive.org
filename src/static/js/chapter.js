@@ -169,7 +169,7 @@ function upgradeInteractiveFigures() {
       for (index = 0; index < all_fig_imgs.length; ++index) {
         var fig_img = all_fig_imgs[index];
 
-        if (fig_img.getAttribute('data-src')) {
+        if (fig_img.getAttribute('data-iframe')) {
 
           var iframe = document.createElement('iframe');
 
@@ -188,7 +188,7 @@ function upgradeInteractiveFigures() {
           iframe.setAttribute('frameborder', fig_img.dataset.frameborder || '0');
           iframe.setAttribute('scrolling', fig_img.dataset.scrolling || 'no');
           iframe.setAttribute('loading', fig_img.dataset.loading || 'lazy');
-          iframe.setAttribute('src', fig_img.dataset.src);
+          iframe.setAttribute('src', fig_img.dataset.iframe);
 
           //The figure should have a link
           var parentLink = fig_img.parentNode;

@@ -106,7 +106,7 @@ Además, el 15% de las páginas de escritorio y el 16% de las páginas móviles 
 
 <figure id="fig6">
   <a href="/static/images/2019/03_Markup/fig6.png">
-    <img src="/static/images/2019/03_Markup/fig6.png" alt="Figura 6. Elementos en desuso más utilizados." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
+    <img src="/static/images/2019/03_Markup/fig6.png" alt="Figura 6. Elementos en desuso más utilizados." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">Bar chart showing 'center' in use by 8.31% of desktop sites (7.96% of mobile), 'font' in use by 8.01% of desktop sites (7.38% of mobile), 'marquee' in use by 1.07% of desktop sites (1.20% of mobile), 'nobr' in use by 0.71% of desktop sites (0.55% of mobile), 'big' in use by 0.53% of desktop sites (0.47% of mobile), 'frameset' in use by 0.39% of desktop sites (0.35% of mobile), 'frame' in use by 0.39% of desktop sites (0.35% of mobile), 'strike' in use by 0.33% of desktop sites (0.27% of mobile), and 'noframes' in use by 0.25% of desktop sites (0.27% of mobile).</div>
   <figcaption id="fig6-caption">Figura 6. Elementos en desuso más utilizados.</figcaption>
@@ -120,7 +120,7 @@ Para discutir números sobre el uso de elementos (estándar, obsoleto o personal
 
 <figure id="fig7">
   <a href="/static/images/2019/03_Markup/fig7.png">
-    <img src="/static/images/2019/03_Markup/fig7.png" alt="Figura 7. Principales 150 elementos." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
+    <img src="/static/images/2019/03_Markup/fig7.png" alt="Figura 7. Principales 150 elementos." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Bar chart showing a decreasing used of elements in descending order: html, head, body, title at above 99% usage, meta, a, div above 98% usage, link, script, img, span above 90% usage, ul, li , p, style, input, br, form above 70% usage, h2, h1, iframe, h3, button, footer, header, nav above 50% usage and other less well-known tags trailing down from below 50% to almost 0% usage.</div>
   <figcaption>Figura 7. Principales 150 elementos.</figcaption>
@@ -218,7 +218,7 @@ Comparemos esto con algunos de los elementos HTML nativos que están por debajo 
 
 <figure id="fig9">
   <a href="/static/images/2019/03_Markup/fig9.png">
-    <img src="/static/images/2019/03_Markup/fig9.png" alt="Figura 9. Popularidad de elementos nativos y específicos del producto por debajo del 5% de adopción." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
+    <img src="/static/images/2019/03_Markup/fig9.png" alt="Figura 9. Popularidad de elementos nativos y específicos del producto por debajo del 5% de adopción." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">Bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure (a product-specific tag) by 52,146, code by 25,075, g:plusone (a product-specific tag) by 21,098, fb:like (a product-specific tag) by 12,773, fb:like-box (a product-specific tag) by 6,792, app-root (a product-specific tag) by 8,468, summary by 6,578, template by 5,913, and meter by 0.</div>
   <figcaption id="fig9-caption">Figura 9. Popularidad de elementos nativos y específicos del producto por debajo del 5% de adopción.</figcaption>
@@ -244,7 +244,7 @@ Colocar estos elementos en nuestro mismo cuadro anterior para obtener una perspe
 
 <figure id="fig10">
     <a href="/static/images/2019/03_Markup/fig10.png">
-      <img src="/static/images/2019/03_Markup/fig10.png" alt="Figura 10. Otros elementos populares en el contexto de elementos nativos y específicos del producto con menos del 5% de adopción." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
+      <img src="/static/images/2019/03_Markup/fig10.png" alt="Figura 10. Otros elementos populares en el contexto de elementos nativos y específicos del producto con menos del 5% de adopción." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
     </a>
     <div id="fig10-description" class="visually-hidden">A bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure by 52,416, code by 25,075, g:plusone by 21,098, db:like by 12,773, cufon by 10,523, ymaps by 8,303, fb:like-box by 6,972, app-root by 8,468, summary by 6,578, template by 5,913, and meter by 0</div>
   <figcaption id="fig10-caption">Figura 10. Otros elementos populares en el contexto de elementos nativos y específicos del producto con menos del 5% de adopción.</figcaption>
