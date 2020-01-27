@@ -43,7 +43,7 @@ We assessed the content on the pages by looking for groups of at least 3 words a
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig1.png">
-    <img src="/static/images/2019/10_SEO/fig1.png" alt="Figure 1. Distribution of the number of words per page." aria-labelledby="fig1-caption" aria-describedby="fig1-caption" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig1.png" alt="Figure 1. Distribution of the number of words per page." aria-labelledby="fig1-caption" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">Distribution of words per page. The median number of words per desktop page is 346 and 306 for mobile pages. Desktop pages have more word throughout the percentiles, by as many as 120 words at the 90th percentile.</div>
   <figcaption id="fig1-caption" >Figure 1. Distribution of the number of words per page.</figcaption>
@@ -57,7 +57,7 @@ We also looked at whether pages are structured in a way that provides the right 
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig2.png">
-    <img src="/static/images/2019/10_SEO/fig2.png" alt="Figure 2. Distribution of the number of headings per page." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig2.png" alt="Figure 2. Distribution of the number of headings per page." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">Distribution of headings per page. The median number of headings per desktop and mobile page is 10. At the 10, 25, 75, and 90th percentiles, the number of headings per desktop page are: 0, 3, 21, and 39. This is slightly higher than the distribution of mobile headings per page.</div>
   <figcaption id="fig2-caption" >Figure 2. Distribution of the number of headings per page.</figcaption>
@@ -67,7 +67,7 @@ The median number of heading elements per page is 10. Headings contain 30 words 
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig3.png">
-    <img src="/static/images/2019/10_SEO/fig3.png" alt="Figure 3. Distribution of H1 length per page." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig3.png" alt="Figure 3. Distribution of H1 length per page." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive">
   </a>
   <div id="fig3-description" class="visually-hidden">Distribution of the number of characters in the first H1 per page. The desktop and mobile distributions are nearly identical, with the 10, 25, 50, 75, and 90th percentiles as: 6, 11, 19, 31, and 47 characters.</div>
   <figcaption id="fig3-caption" >Figure 3. Distribution of H1 length per page.</figcaption>
@@ -92,7 +92,7 @@ Page titles are an important way of communicating the purpose of a page to a use
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig5.png">
-    <img src="/static/images/2019/10_SEO/fig5.png" alt="Figure 5. Distribution of title length per page." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig5.png" alt="Figure 5. Distribution of title length per page." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Distribution of the number of characters per title element per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 4, 9, 20, 40, and 66 characters. The mobile distribution is very similar.</div>
   <figcaption id="fig5-caption">Figure 5. Distribution of title length per page.</figcaption>
@@ -106,7 +106,7 @@ Compared to the `<title>` tag, fewer pages were detected to have a meta descript
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig6.png">
-    <img src="/static/images/2019/10_SEO/fig6.png" alt="Figure 6. Distribution of meta description length per page." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig6.png" alt="Figure 6. Distribution of meta description length per page." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">Distribution of the number of characters per meta description per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 9, 48, 123, 162, and 230 characters. The mobile distribution is slightly higher by fewer than 10 characters at any given percentile.</div>
   <figcaption id="fig6-caption" >Figure 6. Distribution of meta description length per page.</figcaption>
@@ -165,7 +165,7 @@ It's important to bear in mind that fewer internal links on the mobile version o
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig7.png">
-    <img src="/static/images/2019/10_SEO/fig7.png" alt="Figure 7. Distribution of internal links per page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig7.png" alt="Figure 7. Distribution of internal links per page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Distribution of the number of internal links per page. The 10, 25, 50, 75, and 90th percentiles of internal links for desktop are: 7, 29, 70, 142, and 261. The mobile distribution is much lower, by 30 links at the 90th percentile and 10 at the median.</div>
   <figcaption id="fig7-caption" >Figure 7. Distribution of internal links per page.</figcaption>
@@ -173,7 +173,7 @@ It's important to bear in mind that fewer internal links on the mobile version o
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig8.png">
-    <img src="/static/images/2019/10_SEO/fig8.png" alt="Figure 8. Distribution of external links per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-idth="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig8.png" alt="Figure 8. Distribution of external links per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive">
   </a>
   <div id="fig8-description" class="visually-hidden">Distribution of the number of external links per page. The 10, 25, 50, 75, and 90th percentiles of external links for desktop are: 1, 4, 10, 22, and 51. The mobile distribution is much lower, by 11 links at the 90th percentile and 2 at the median.</div>
   <figcaption id="fig8-caption" >Figure 8. Distribution of external links per page.</figcaption>
@@ -183,7 +183,7 @@ The median desktop page includes 70 internal (same-site) links, whereas the medi
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig9.png">
-    <img src="/static/images/2019/10_SEO/fig9.png" alt="Figure 9. Distribution of anchor links per page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig9.png" alt="Figure 9. Distribution of anchor links per page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">Distribution of the number of anchor links per page. The 10, 25, 50, 75, and 90th percentiles of internal anchor for desktop are: 0, 0, 0, 1, and 3. The mobile distribution is identical.</div>
   <figcaption id="fig9-caption">Figure 9. Distribution of anchor links per page.</figcaption>
@@ -209,7 +209,7 @@ The metrics we used for our analysis of load speed across the web is based on th
 
 <figure>
   <a href="/static/images/2019/10_SEO/fig10.png">
-    <img src="/static/images/2019/10_SEO/fig10.png" alt="Figure 10. Distribution of the performance of user experiences by device type." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive">
+    <img src="/static/images/2019/10_SEO/fig10.png" alt="Figure 10. Distribution of the performance of user experiences by device type." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive">
   </a>
   <div id="fig10-description" class="visually-hidden">Distribution of the performance of desktop, phone, and tablet user experiences. Desktop: 2% fast, 52% moderate, 46% slow. Phone: 1% fast, 41% moderate, 58% slow. Tablet: 0% fast, 35% moderate, 65% slow.</div>
   <figcaption id="fig10-caption">Figure 10. Distribution of the performance of user experiences by device type.</figcaption>

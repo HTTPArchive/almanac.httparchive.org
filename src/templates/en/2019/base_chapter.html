@@ -4,7 +4,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css">
+<link rel="stylesheet" href="/static/css/page.css?v=2">
 {% endblock %}
 
 {% block scripts %}
@@ -36,7 +36,7 @@ document.addEventListener("keypress", function onPress(event) {
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
 </script>
 
-<script src='/static/js/chapter.js' defer></script>
+<script src='/static/js/chapter.js?v=2' defer></script>
 
 {% endblock %}
 
