@@ -37,7 +37,7 @@ Webページの主な目的はユーザーの興味を引くコンテンツを�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img alt="図1.色のコントラストが不十分なテキストの表示例 LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600">
+    <img alt="図1.色のコントラストが不十分なテキストの表示例 LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/09_Accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600" height="278">
   </a>
   <div id="fig1-description" class="visually-hidden">オレンジとグレー4色のボックスに白いテキストがあり、2列に並んでいます。左の列は、色の薄い、#FCA469と書かれたオレンジ色の背景色があります。右の列は、推奨と表示されており、オレンジ色の背景色に#F56905と書かれています。各列の上のボックスには白いテキスト#FFFFFFにオレンジ色の背景で、下のボックスは灰色の背景に白いテキスト#FFFFFFとなっています。灰色の背景は、オレンジ色をグレースケールにしたものです。LookZook提供。</div>
   <figcaption id="fig1-caption">図1.色のコントラストが不十分なテキストの表示例 LookZook提供</figcaption>
@@ -63,7 +63,7 @@ Webページの主な目的はユーザーの興味を引くコンテンツを�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig2.png">
-    <img src="/static/images/2019/09_Accessibility/fig2.png" alt="図2. ズームとスケーリングを無効にしているサイトとデバイスの種類の割合。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig2.png" alt="図2. ズームとスケーリングを無効にしているサイトとデバイスの種類の割合。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">20刻みの0から80までの垂直測定パーセンテージデータ。デバイスタイプをデスクトップとモバイルでグループ化しています。デスクトップで有効なのは 75.46%無効が24.54%、モバイルで有効なのは67.79%無効が32.21%.</div>
   <figcaption id="fig2-caption">図2. ズームとスケーリングを無効にしているサイトとデバイスの種類の割合。</figcaption>
@@ -121,7 +121,7 @@ alt属性は25年前から存在していますが、49.91％のページで画�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig3.png">
-    <img src="/static/images/2019/09_Accessibility/fig3.png" alt="図3. 見出しレベルの人気。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig3.png" alt="図3. 見出しレベルの人気。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
   </a>
   <div id="fig3-description" class="visually-hidden">20毎に0から80の範囲のパーセンテージデータを測定する垂直棒グラフ。各見出しはh1〜h6レベルを表します。H1：63.25％、H2：67.86％、H3：58.63％、H4：36.38％、H5：14.64％、H6：6.91％。</div>
   <figcaption id="fig3-caption">図3. 見出しレベルの人気。</figcaption>
@@ -135,7 +135,7 @@ alt属性は25年前から存在していますが、49.91％のページで画�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig4.png">
-    <img src="/static/images/2019/09_Accessibility/fig4.png" alt="図4. 「main」ランドマークの数によるページの割合。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig4.png" alt="図4. 「main」ランドマークの数によるページの割合。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">20毎に0〜80の範囲のパーセントデータを表示する垂直棒グラフと、0〜4のページごとの「main」ランドマークの数を表すバー。ソース：HTTP Archive （2019年7月）。 0：73.97％、1：17.97％、2：7.41％、3：0.15％; 4：0.06％。</div>
   <figcaption id="fig4-caption" >図4. 「main」ランドマークの数によるページの割合。</figcaption>
@@ -153,7 +153,7 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig5.png">
-    <img src="/static/images/2019/09_Accessibility/fig5.png" alt="図5. 色々なHTMLセマンティック要素の利用率。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig5.png" alt="図5. 色々なHTMLセマンティック要素の利用率。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">各要素のバーと20毎に0〜60の範囲のページの割合を表す水平線を含む縦棒グラフ。nav：53.94％、header：54.82％、footer：55.92％、main：18.47％、aside：16.99％、article：22.59％、hr：19.1％、section：36.55%。</div>
   <figcaption id="fig5-caption" >図5. 色々なHTMLセマンティック要素の利用率。</figcaption>
@@ -165,7 +165,7 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig6.png">
-    <img src="/static/images/2019/09_Accessibility/fig6.png" alt="図6. ナビゲーションで使われるその他のHTML要素。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig6.png" alt="図6. ナビゲーションで使われるその他のHTML要素。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">各要素を示すバーと、25毎に0~100の範囲でページの割合を示す縦棒グラフ。a：98.22％、ul：88.62％、input：76.63％、iframe：60.39％、button：56.74％、select：19.68％、textarea：12.03%。</div>
   <figcaption id="fig6-caption">図6. ナビゲーションで使われるその他のHTML要素。</figcaption>
@@ -179,7 +179,7 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png">
-    <img alt="図7. google.comのスキップリンク外観。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png" width="600">
+    <img alt="図7. google.comのスキップリンク外観。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/09_Accessibility/example-of-a-skip-link-on-google.com.png" width="600" height="333">
   </a>
   <div id="fig7-description" class="visually-hidden">「Http Archive」を検索するためのGoogle検索結果ページのスクリーンショット。表示される「メインコンテンツにスキップ」のリンクは青色のフォーカスハイライトと、スキップリンクを示す赤い矢印の付いた黄色のオーバーレイボックスに囲まれ「google.comのスキップリンク」と表示されます。</div>
   <figcaption id="fig7-caption">図7. google.comのスキップリンク外観。</figcaption>
@@ -227,7 +227,7 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig8.png">
-    <img src="/static/images/2019/09_Accessibility/fig8.png" alt="図8. 総ページ数とARIA属性の割合。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig8.png" alt="図8. 総ページ数とARIA属性の割合。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
   </a>
   <div id="fig8-description" class="visually-hidden">0〜25の範囲で5ずつ増加するパーセントデータと、各属性のバーを表示する垂直棒グラフ。 aria-hidden：23.46％、aria-label：17.67％、aria-expanded：8.68％、aria-current：7.76％、aria-labelledby：6.85％、aria-controls：3.56％、aria-haspopup：2.62％、aria-invalid：2.68％、aria-describedby：1.69％、aria-live：1.04％、aria-required：1％</div>
   <figcaption id="fig8-caption" >図8. 総ページ数とARIA属性の割合。</figcaption>
@@ -241,7 +241,7 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
 
 <figure>
   <a href="/static/images/2019/09_Accessibility/fig9.png">
-    <img src="/static/images/2019/09_Accessibility/fig9.png" alt="図9. ariaロールトップ10。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
+    <img src="/static/images/2019/09_Accessibility/fig9.png" alt="図9. ariaロールトップ10。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">0から25までの範囲で5ずつ増加サイトの割合と各ロールタイプのバーを備えた垂直棒グラフ。Navigation：20.4％。 search：15.49％; main：14.39％; banner：13.62％; contentinfo：11.23％; button：10.59％; dialog：7.87％; complementary：6.06％; menu：4.71％; form：3.75％</div>
   <figcaption id="fig9-caption" >図9. ariaロールトップ10。</figcaption>

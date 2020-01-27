@@ -31,7 +31,7 @@ Hex es la forma más popular de describir el color por mucho, con un 93% de uso,
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig1.png">
-    <img src="/static/images/2019/02_CSS/fig1.png" alt="Figura 1. Popularidad de los formatos de color." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig1.png" alt="Figura 1. Popularidad de los formatos de color." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&amp;format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">Gráfico de barras que muestra la adopción de los formatos HSL, HSLA, RGB, RGBA y hexadecimal. Hex se usa en el 93% de las páginas de escritorio, RGBA en el 83%, RGB en el 22%, HSLA 19% y HSL 1%. La adopción móvil y de escritorio es similar para todos los formatos de color, excepto HSL, para el cual la adopción móvil es del 9% (9 veces mayor).</div>
   <figcaption id="fig1-caption">Figura 1. Popularidad de los formatos de color.</figcaption>
@@ -43,7 +43,7 @@ Existen [148 colores de CSS nombrados](https://www.w3.org/TR/css-color-4/#named-
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig2.png">
-    <img src="/static/images/2019/02_CSS/fig2.png" alt="Figura 2. Principales colores con nombre." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="415" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1985913808&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig2.png" alt="Figura 2. Principales colores con nombre." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="415" data-width="600" data-height="415" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1985913808&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">Gráfico circular que muestra los colores con nombre más populares. El blanco es el más popular al 40%, luego el negro al 22%, el rojo al 11% y el azul al 5%.</div>
   <figcaption id="fig2-caption">Figura 2. Principales colores con nombre.</figcaption>
@@ -57,7 +57,7 @@ El idioma también se infiere de manera interesante a través del color. Hay má
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig3.png">
-    <img src="/static/images/2019/02_CSS/fig3.png" alt="Figura 3. Distribución de colores por página." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig3.png" alt="Figura 3. Distribución de colores por página." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&amp;format=interactive">
   </a>
   <div id="fig3-description" class="visually-hidden">Distribución que muestra los percentiles 10, 25, 50, 75 y 90 de colores por computadoras de escritorio y página móvil. En computadoras de  escritorio, la distribución es 8, 22, 48, 83 y 131. Las páginas móviles tienden a tener más colores entre 1 y 10.</div>
   <figcaption id="fig3-caption">Figura 3. Distribución de colores por página.</figcaption>
@@ -69,7 +69,7 @@ Bueno, tenemos curiosidad aquí y queríamos inspeccionar cuántos colores dupli
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig4.png">
-    <img src="/static/images/2019/02_CSS/fig4.png" alt="Figura 4. Distribución de colores duplicados por página." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig4.png" alt="Figura 4. Distribución de colores duplicados por página." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">Gráfico de barras que muestra la distribución de colores por página. La página de escritorio promedio tiene 24 colores duplicados. El percentil 10 es de 4 colores duplicados y el percentil 90 es de 62. Las distribuciones de escritorio y móviles son similares.</div>
   <figcaption id="fig4-caption">Figura 4. Distribución de colores duplicados por página.</figcaption>
@@ -81,7 +81,7 @@ En CSS, hay muchas formas diferentes de lograr el mismo resultado visual utiliza
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig5.png">
-    <img src="/static/images/2019/02_CSS/fig5.png" alt="Figura 5. Popularidad de los tipos de unidades." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig5.png" alt="Figura 5. Popularidad de los tipos de unidades." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Gráfico de barras de la popularidad de varios tipos de unidades.Las unidades px y em se utilizan en más del 90% de las páginas. La unidad rem es el siguiente tipo de unidad más popular en el 40% de las páginas y la popularidad cae rápidamente para los tipos de unidades restantes.</div>
   <figcaption id="fig5-caption">Figura 5. Popularidad de los tipos de unidades.</figcaption>
@@ -118,7 +118,7 @@ CSS tiene algunas formas de encontrar elementos en la página para el estilo, as
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig7.png">
-    <img src="/static/images/2019/02_CSS/fig7.png" alt="Figura 7. Popularidad de los tipos de selector por página." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig7.png" alt="Figura 7. Popularidad de los tipos de selector por página." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Gráfico de barras que muestra la adopción de ID y tipos de selector de clase. Las clases se usan en el 95% de las páginas de escritorio y móviles. Las ID se usan en el 89% de las páginas de escritorio y el 87% de las páginas móviles.</div>
   <figcaption id="fig7-caption">Figura 7. Popularidad de los tipos de selector por página.</figcaption>
@@ -128,7 +128,7 @@ Un buen cuadro de seguimiento es este, que muestra que las clases ocupan el 93% 
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig8.png">
-    <img src="/static/images/2019/02_CSS/fig8.png" alt="Figura 8. Popularidad de los tipos de selector por selector." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig8.png" alt="Figura 8. Popularidad de los tipos de selector por selector." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&amp;format=interactive">
   </a>
   <div id="fig8-description" class="visually-hidden">Gráfico de barras que muestra que el 94% de los selectores incluyen el selector de clase para computadoras de escritorio y dispositivos móviles, mientras que el 7% de los selectores de escritorio incluyen el selector de ID (8% para dispositivos móviles).</div>
   <figcaption id="fig8-caption">Figura 8. Popularidad de los tipos de selector por selector.</figcaption>
@@ -140,7 +140,7 @@ CSS tiene algunos selectores de comparación muy potentes. Estos son selectores 
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig9.png">
-    <img src="/static/images/2019/02_CSS/fig9.png" alt="Figura 9. Popularidad de operadores por selector de atributo ID." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig9.png" alt="Figura 9. Popularidad de operadores por selector de atributo ID." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">Gráfico de barras que muestra la popularidad de los operadores utilizados por los selectores de atributos de ID. Alrededor del 4% de las páginas de escritorio y móviles usan asterisco igual y signo de intercalación igual. El 1% de las páginas usan igual y dólar igual. 0% usa virgulilla igual.</div>
   <figcaption id="fig9-caption">Figura 9. Popularidad de operadores por selector de atributo ID.</figcaption>
@@ -148,7 +148,7 @@ CSS tiene algunos selectores de comparación muy potentes. Estos son selectores 
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig10.png">
-    <img src="/static/images/2019/02_CSS/fig10.png" alt="Figura 10. Popularidad de operadores por selector de atributo de clase." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig10.png" alt="Figura 10. Popularidad de operadores por selector de atributo de clase." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&amp;format=interactive">
   </a>
   <div id="fig10-description" class="visually-hidden">Gráfico de barras que muestra la popularidad de los operadores utilizados por los selectores de atributos de clase. El 57% de las páginas usan asterisco igual. El 36% usa signo de interalación igual. El 1% usa igual y dólar igual. 0% usa virgulilla igual.</div>
   <figcaption id="fig10-caption">Figura 10. Popularidad de operadores por selector de atributo de clase.</figcaption>
@@ -173,7 +173,7 @@ Con el surgimiento de las estrategias OOCSS, atómicas y funcionales de CSS que 
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig12.png">
-    <img src="/static/images/2019/02_CSS/fig12.png" alt="Figura 12. Adopción de flexbox." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig12.png" alt="Figura 12. Adopción de flexbox." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&amp;format=interactive">
   </a>
   <div id="fig12-description" class="visually-hidden">Gráfico de barras que muestra el 49% de las páginas de escritorio y el 52% de las páginas móviles usan flexbox.</div>
   <figcaption id="fig12-caption">Figura 12. Adopción de flexbox.</figcaption>
@@ -198,7 +198,7 @@ La web y CSS son características de la plataforma internacional, y los modos de
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig14.png">
-    <img src="/static/images/2019/02_CSS/fig14.png" alt="Figura 14. Popularidad de los valores de dirección." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig14.png" alt="Figura 14. Popularidad de los valores de dirección." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&amp;format=interactive">
   </a>
   <div id="fig14-description" class="visually-hidden">Gráfico de barras que muestra la popularidad de los valores de dirección ltr y rtl. ltr es utilizado por el 32% de las páginas de escritorio y el 40% de las páginas móviles. rtl es utilizado por el 32% de las páginas de escritorio y el 36% de las páginas móviles.</div>
   <figcaption id="fig14-caption">Figura 14. Popularidad de los valores de dirección.</figcaption>
@@ -212,7 +212,7 @@ La web y CSS son características de la plataforma internacional, y los modos de
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig15.png">
-    <img src="/static/images/2019/02_CSS/fig15.png" alt="Figura 15. Distribución de la cantidad de fuentes web cargadas por página." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig15.png" alt="Figura 15. Distribución de la cantidad de fuentes web cargadas por página." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&amp;format=interactive">
   </a>
   <div id="fig15-description" class="visually-hidden">Distribución de la cantidad de fuentes web cargadas por página. En computadoras de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 0, 1, 3, 6 y 9. Esto es ligeramente más alto que la distribución para dispositivos móviles, que es una fuente menos en los percentiles 75 y 90.</div>
   <figcaption id="fig15-caption">Figura 15. Distribución de la cantidad de fuentes web cargadas por página.</figcaption>
@@ -224,7 +224,7 @@ Una pregunta de seguimineto a la consulta del número total de fuentes por pági
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig16.png">
-    <img src="/static/images/2019/02_CSS/fig16.png" alt="Figura 16. Principales fuentes web." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="450.5" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1883567922&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig16.png" alt="Figura 16. Principales fuentes web." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="450.5" data-width="600" data-height="450.5" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1883567922&amp;format=interactive">
   </a>
   <div id="fig16-description" class="visually-hidden">Gráfico de barras de las fuentes más populares. Entre las páginas de escritorio, están Open Sans (24%), Roboto (15%), Montserrat (5%), Source Sans Pro (4%), Noto Sans JP (3%) y Lato (3%). En los dispositivos móviles, las diferencias más notables son que Open Sans se usa el 22% del tiempo (en lugar del 24%) y Roboto se usa el 19% del tiempo (en lugar del 15%).</div>
   <figcaption id="fig16-caption">Figura 16. Principales fuentes web.</figcaption>
@@ -240,7 +240,7 @@ Esta es divertida, porque si le pregunta a un usuario cuántos tamaños de fuent
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig17.png">
-    <img src="/static/images/2019/02_CSS/fig17.png" alt="Figura 17. Distribución del número de tamaños de fuente distintos por página." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig17.png" alt="Figura 17. Distribución del número de tamaños de fuente distintos por página." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&amp;format=interactive">
   </a>
   <div id="fig17-description" class="visually-hidden">Gráfico de barras que muestra la distribución de distintos tamaños de fuente por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 8, 20, 40, 66 y 92 tamaños de fuente. La distribución de escritorio difiere de la móvil en el percentil 75, donde es más grande en 7 tamaños distintos y para el percentil 90 en 13 tamaños.</div>
   <figcaption id="fig17-caption">Figura 17. Distribución del número de tamaños de fuente distintos por página.</figcaption>
@@ -254,7 +254,7 @@ Un margen es el espacio fuera de los elementos, como el espacio que exige cuando
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig18.png">
-    <img src="/static/images/2019/02_CSS/fig18.png" alt="Figura 18. Distribución del número de valores de margen distintos por página." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig18.png" alt="Figura 18. Distribución del número de valores de margen distintos por página." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&amp;format=interactive">
   </a>
   <div id="fig18-description" class="visually-hidden">Gráfico de barras que muestra la distribución de valores de margen distintos por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 12, 47, 96, 167 y 248 valores de margen distintos. La distribución de escritorio difiere de la móvil en el percentil 75, donde es más pequeña en 12 a 31 valores distintos.</div>
   <figcaption id="fig18-caption">Figura 18. Distribución del número de valores de margen distintos por página.</figcaption>
@@ -277,7 +277,7 @@ Las capas verticales, o apilamiento, se pueden administrar con `z-index` en CSS.
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig20.png">
-    <img src="/static/images/2019/02_CSS/fig20.png" alt="Figura 20. Distribución del número de valores distintos de 'z-index' por página." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig20.png" alt="Figura 20. Distribución del número de valores distintos de 'z-index' por página." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&amp;format=interactive">
   </a>
   <div id="fig20-description" class="visually-hidden">Gráfico de barras que muestra la distribución de distintos valores de z-index por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 1, 7, 16, 26 y 36 valores distintos de z-index. La distribución de escritorio es mucho más alta que la móvil, en hasta 16 valores distintos en el percentil 90.</div>
   <figcaption id="fig20-caption">Figura 20. Distribución del número de valores distintos de <code>z-index</code> por página.</figcaption>
@@ -289,7 +289,7 @@ Según nuestra experiencia laboral, cualquier número con 9s parecía ser la opc
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig21.png">
-    <img src="/static/images/2019/02_CSS/fig21.png" alt="Figura 21. Los valores de 'z-index' más utilizados." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig21.png" alt="Figura 21. Los valores de 'z-index' más utilizados." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&amp;format=interactive">
   </a>
   <div id="fig21-description" class="visually-hidden">Diagrama de dispersión de todos los valores de z-index conocidos y la cantidad de veces que se usan, tanto para escritorio como para dispositivos móviles. 1 y 2 son los más utilizados, pero el resto de los valores populares explotan en órdenes de magnitud: 10, 100, 1,000, y así sucesivamente hasta números con cientos de dígitos.</div>
   <figcaption id="fig21-caption">Figura 21. Los valores de <code>z-index</code> más utilizados.</figcaption>
@@ -336,7 +336,7 @@ CSS tiene este increíble poder de interpolación que se puede usar simplemente 
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig25.png">
-    <img src="/static/images/2019/02_CSS/fig25.png" alt="Figura 25. Distribución del número de transiciones por página." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig25.png" alt="Figura 25. Distribución del número de transiciones por página." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&amp;format=interactive">
   </a>
   <div id="fig25-description" class="visually-hidden">Gráfico de barras que muestra la distribución de las transiciones por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 0, 2, 16, 49 y 118 transiciones. La distribución del escritorio es mucho más baja que la del móvil, hasta 77 transiciones en el percentil 90.</div>
   <figcaption id="fig25-caption">Figura 25. Distribución del número de transiciones por página.</figcaption>
@@ -350,7 +350,7 @@ Las animaciones de keyframe CSS son una excelente solución para sus animaciones
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig26.png">
-    <img src="/static/images/2019/02_CSS/fig26.png" alt="Figura 26. Distribución del número de keyframe por página." aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig26.png" alt="Figura 26. Distribución del número de keyframe por página." aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&amp;format=interactive">
   </a>
   <div id="fig26-description" class="visually-hidden">Gráfico de barras que muestra la distribución de keyframes por página. Para las páginas móviles, los percentiles 10, 25, 50, 75 y 90 son: 0, 0, 3, 18 y 76 fotogramas clave. La distribución móvil es ligeramente superior a la de escritorio en 6 fotogramas clave en los percentiles 75 y 90.</div>
   <figcaption id="fig26-caption">Figura 26. Distribución del número de keyframe por página.</figcaption>
@@ -364,7 +364,7 @@ Un buen lugar para comenzar con las _media queries_, ¿es aproximadamente cuánt
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig27.png">
-    <img src="/static/images/2019/02_CSS/fig27.png" alt="Figura 27. Distribución del número de media queries por página." aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig27.png" alt="Figura 27. Distribución del número de media queries por página." aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&amp;format=interactive">
   </a>
   <div id="fig27-description" class="visually-hidden">Gráfico de barras que muestra la distribución de consultas de medios por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 0, 3, 14, 27 y 43 media queries. La distribución de escritorio es similar a la distribución móvil.</div>
   <figcaption id="fig27-caption">Figura 27. Distribución del número de consultas de media queries por página.</figcaption>
@@ -376,7 +376,7 @@ Para media queries de ventana gráfica, cualquier tipo de unidad CSS se puede pa
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig28.png">
-    <img src="/static/images/2019/02_CSS/fig28.png" alt="Figura 28. Puntos de ajuste más utilizados en media queries." aria-labelledby="fig28-caption" aria-describedby="fig28-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig28.png" alt="Figura 28. Puntos de ajuste más utilizados en media queries." aria-labelledby="fig28-caption" aria-describedby="fig28-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&amp;format=interactive">
   </a>
   <div id="fig28-description" class="visually-hidden">Gráfico de barras de los puntos de referencia de media queries más populares. 768px y 767px son los más populares con 23% y 16%, respectivamente. La lista cae rápidamente después de eso, con 992px usado el 6% del tiempo y 1200px usado el 4% del tiempo. Las computadoras de escritorio y los dispositivos móviles tienen un uso similar.</div>
   <figcaption id="fig28-caption">Figura 28. Puntos de ajuste más utilizados en media queries.</figcaption>
@@ -390,7 +390,7 @@ El valor de _media query_ más popular de los tamaños de punto de interrupción
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig29.png">
-    <img src="/static/images/2019/02_CSS/fig29.png" alt="Figura 29. Adopción de modos de orientación en media queries." aria-labelledby="fig29-caption" aria-describedby="fig29-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig29.png" alt="Figura 29. Adopción de modos de orientación en media queries." aria-labelledby="fig29-caption" aria-describedby="fig29-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&amp;format=interactive">
   </a>
   <div id="fig29-description" class="visually-hidden">Gráfico de barras que muestra la adopción de modos de orientación vertical y horizontal en media queries. El 31% de las páginas especifican horizontal, el 8% especifica vertical y el 7% especifica ambas. La adopción es la misma para páginas de escritorio y móviles.</div>
   <figcaption id="fig29-caption">Figura 29. Adopción de modos de orientación en media queries.</figcaption>
@@ -404,7 +404,7 @@ En las media queries de ancho y alto que hemos visto hasta ahora, los píxeles s
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig30.png">
-    <img src="/static/images/2019/02_CSS/fig30.png" alt="Figura 30. Adopción de unidades en puntos de referencia de media queries." aria-labelledby="fig30-caption" aria-describedby="fig30-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig30.png" alt="Figura 30. Adopción de unidades en puntos de referencia de media queries." aria-labelledby="fig30-caption" aria-describedby="fig30-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&amp;format=interactive">
   </a>
   <div id="fig30-description" class="visually-hidden">Gráfico de barras que muestra el 75% de los puntos de referencia de las media queries especifican píxeles, el 8% que especifica ems y el 1% que especifica rems.</div>
   <figcaption id="fig30-caption">Figura 30. Adopción de unidades en puntos de referencia de media queries.</figcaption>
@@ -416,7 +416,7 @@ Cuando las personas escriben una _media query_, ¿están generalmente buscando u
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig31.png">
-    <img src="/static/images/2019/02_CSS/fig31.png" alt="Figura 31. Adopción de propiedades utilizadas en puntos de referencia de media queries." aria-labelledby="fig31-caption" aria-describedby="fig31-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig31.png" alt="Figura 31. Adopción de propiedades utilizadas en puntos de referencia de media queries." aria-labelledby="fig31-caption" aria-describedby="fig31-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&amp;format=interactive">
   </a>
   <div id="fig31-description" class="visually-hidden">Gráfico de barras que muestra el 74% de las páginas de escritorio usan max-width, el 70% con min-width y el 68% con ambas propiedades. La adopción es similar para páginas móviles.</div>
   <figcaption id="fig31-caption">Figura 31. Adopción de propiedades utilizadas en puntos de referencia de media queries.</figcaption>
@@ -430,7 +430,7 @@ Los sitios web se sienten como papel digital, ¿verdad? Como usuarios, generalme
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig32.png">
-    <img src="/static/images/2019/02_CSS/fig32.png" alt="Figura 32. Adopción de las media queries para todos, impresión, pantalla y voz." aria-labelledby="fig32-caption" aria-describedby="fig32-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig32.png" alt="Figura 32. Adopción de las media queries para todos, impresión, pantalla y voz." aria-labelledby="fig32-caption" aria-describedby="fig32-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&amp;format=interactive">
   </a>
   <div id="fig32-description" class="visually-hidden">Gráfico de barras que muestra el 35% de las páginas de escritorio con el tipo de media query "todos", el 46% con impresión, el 72% con pantalla y el 0% con voz. La adopción es inferior en aproximadamente 5 puntos porcentuales para el escritorio en comparación con el móvil.</div>
   <figcaption id="fig32-caption">Figura 32. Adopción de las media queries para todos, impresión, pantalla y voz.</figcaption>
@@ -444,7 +444,7 @@ Los sitios web se sienten como papel digital, ¿verdad? Como usuarios, generalme
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig33.png">
-    <img src="/static/images/2019/02_CSS/fig33.png" alt="Figura 33. Distribución del número de hojas de estilo cargadas por página." aria-labelledby="fig33-caption" aria-describedby="fig33-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig33.png" alt="Figura 33. Distribución del número de hojas de estilo cargadas por página." aria-labelledby="fig33-caption" aria-describedby="fig33-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&amp;format=interactive">
   </a>
   <div id="fig33-description" class="visually-hidden">Distribución de la cantidad de hojas de estilo cargadas por página. Las computadoras de escritorio y los dispositivos móviles tienen distribuciones idénticas con percentiles 10, 25, 50, 75 y 90: 1, 3, 6, 12 y 20 hojas de estilo por página.</div>
   <figcaption id="fig33-caption">Figura 33. Distribución del número de hojas de estilo cargadas por página.</figcaption>
@@ -567,7 +567,7 @@ Los sitios web se sienten como papel digital, ¿verdad? Como usuarios, generalme
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig35.png">
-    <img src="/static/images/2019/02_CSS/fig35.png" alt="Figura 35. Distribución del número de bytes de hoja de estilo (KB) cargados por página." aria-labelledby="fig35-caption" aria-describedby="fig35-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig35.png" alt="Figura 35. Distribución del número de bytes de hoja de estilo (KB) cargados por página." aria-labelledby="fig35-caption" aria-describedby="fig35-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&amp;format=interactive">
   </a>
   <div id="fig35-description" class="visually-hidden">Distribución del número de bytes de hoja de estilo cargados por página. Los percentiles 10, 25, 50, 75 y 90 de la página de escritorio son: 8, 26, 62, 129 y 240 KB. La distribución de escritorio es ligeramente superior a la distribución móvil en 5 a 10 KB.</div>
   <figcaption id="fig35-caption">Figura 35. Distribución del número de bytes de hoja de estilo (KB) cargados por página.</figcaption>
@@ -674,7 +674,7 @@ Las utilidades de restablecimiento de CSS tienen la intención de normalizar o c
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig37.png">
-    <img src="/static/images/2019/02_CSS/fig37.png" alt="Figura 37. Adopción de utilidades de restablecimiento CSS." aria-labelledby="fig37-caption" aria-describedby="fig37-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig37.png" alt="Figura 37. Adopción de utilidades de restablecimiento CSS." aria-labelledby="fig37-caption" aria-describedby="fig37-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&amp;format=interactive">
   </a>
   <div id="fig37-description" class="visually-hidden">Gráfico de barras que muestra la adopción de tres utilidades de restablecimiento de CSS: Normalize.css (33%), Reset CSS (3%) y Pure CSS (0%). No hay diferencia en la adopción en páginas de escritorio y móviles.</div>
   <figcaption id="fig37-caption">Figura 37. Adopción de utilidades de restablecimiento CSS.</figcaption>
@@ -688,7 +688,7 @@ CSS `@supports` es una forma para que el navegador verifique si una combinación
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig38.png">
-    <img src="/static/images/2019/02_CSS/fig38.png" alt="Figura 38. Popularidad de las reglas CSS 'arroba'" aria-labelledby="fig38-caption" aria-describedby="fig38-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig38.png" alt="Figura 38. Popularidad de las reglas CSS 'arroba'" aria-labelledby="fig38-caption" aria-describedby="fig38-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&amp;format=interactive">
   </a>
   <div id="fig38-description" class="visually-hidden">Gráfico de barras que muestra la popularidad de las reglas @import y @supports "arroba". En el escritorio, @import se usa en el 28% de las páginas y @supports se usa en el 31%. Para dispositivos móviles, @import se usa en el 26% de las páginas y @supports se usa en el 29%.</div>
   <figcaption id="fig38-caption">Figura 38. Popularidad de las reglas CSS 'arroba'.</figcaption>

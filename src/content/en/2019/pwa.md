@@ -30,7 +30,7 @@ The first metric we explore are service worker installations. Looking at the dat
 
 <figure>
   <a href="/static/images/2019/11_PWA/fig2.png" class="fig-mobile">
-    <img src="/static/images/2019/11_PWA/fig2.png" alt="Figure 2. Service Worker installation over time for desktop and mobile." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive">
+    <img src="/static/images/2019/11_PWA/fig2.png" alt="Figure 2. Service Worker installation over time for desktop and mobile." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.</div>
   <figcaption id="fig2-caption">Figure 2. Service Worker installation over time for desktop and mobile.</figcaption>
@@ -62,7 +62,7 @@ In a service worker one can [listen for a number of events](https://developers.g
 
 <figure>
   <a href="/static/images/2019/11_PWA/fig4.png">
-    <img src="/static/images/2019/11_PWA/fig4.png" alt="Figure 4. Popularity of service worker events." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2110574556&amp;format=interactive">
+    <img src="/static/images/2019/11_PWA/fig4.png" alt="Figure 4. Popularity of service worker events." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2110574556&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">Bar chart showing the popularity of various service worker events. Fetch is used on 73% of mobile service workers, install 71%, activate 56%, notification click 10%, push 8%, message 5%, notification close 2%, and sync 1%. The usage on desktop service workers is similar, but slightly lower for fetch, install, and activate.</div>
   <figcaption id="fig4-caption">Figure 4. Popularity of service worker events.</figcaption>
@@ -76,7 +76,7 @@ File size or lines of code are generally a bad proxy for the complexity of the t
 
 <figure>
   <a href="/static/images/2019/11_PWA/fig5.png">
-    <img src="/static/images/2019/11_PWA/fig5.png" alt="Figure 5. Distribution of service worker transfer size." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=345926232&amp;format=interactive">
+    <img src="/static/images/2019/11_PWA/fig5.png" alt="Figure 5. Distribution of service worker transfer size." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=345926232&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Bar chart showing the distribution of transfer sizes of service workers. The 10, 25, 50, 75, and 90th percentiles for desktop service worker transfer sizes are: 176, 350, 895, 2,010, and 4,138 bytes. Desktop service workers are larger across each percentile from as many as 1,000 bytes at the 90th percentile.</div>
   <figcaption id="fig5-caption">Figure 5. Distribution of service worker transfer size.</figcaption>
@@ -115,7 +115,7 @@ The only property that we didn't observe in the wild was `iarc_rating_id`, which
 
 <figure>
   <a href="/static/images/2019/11_PWA/fig6.png">
-    <img src="/static/images/2019/11_PWA/fig6.png" alt="Figure 6. Popularity of web app manifest properties." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="452" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1904325089&amp;format=interactive">
+    <img src="/static/images/2019/11_PWA/fig6.png" alt="Figure 6. Popularity of web app manifest properties." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="452" data-width="600" data-height="452" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1904325089&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">Bar chart showing the popularity of web app manifest properties for desktop and mobile. 88% of desktop web app manifests include the name property, 82% icons, 61% display, 55% theme color, 49% background color, 45% short name, 36% start URL, 19% GCM sender ID, 9% GCM user visible only, 9% orientation, 7% description, 5% scope, and 4% lang. The popularity of properties on mobile web app manifests is similar, plus or minus 2 percentage points.</div>
   <figcaption id="fig6-caption">Figure 6. Popularity of web app manifest properties.</figcaption>
@@ -129,7 +129,7 @@ Looking at the values developers set for the `display` property, it becomes imme
 
 <figure>
   <a href="/static/images/2019/11_PWA/fig7.png">
-    <img src="/static/images/2019/11_PWA/fig7.png" alt="Figure 7. Usage of web app manifest display properties." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&amp;format=interactive">
+    <img src="/static/images/2019/11_PWA/fig7.png" alt="Figure 7. Usage of web app manifest display properties." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Bar chart showing how the display property of web app manifests is used by desktop and mobile websites. In both cases, the "standalone" value is used 57% of the time. The property is not set at all in 38% of manifests. The "minimal UI", "browser", and "fullscreen" values each make up only 1 or 2% of usage.</div>
   <figcaption id="fig7-caption">Figure 7. Usage of web app manifest <code>display</code> properties.</figcaption>
@@ -143,7 +143,7 @@ The `categories` property describes the expected application categories to which
 
 <figure>
   <a href="/static/images/2019/11_PWA/fig8.png">
-    <img src="/static/images/2019/11_PWA/fig8.png" alt="Figure 8. Top web app manifest categories." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1609487902&amp;format=interactive">
+    <img src="/static/images/2019/11_PWA/fig8.png" alt="Figure 8. Top web app manifest categories." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1609487902&amp;format=interactive">
   </a>
   <div id="fig8-description" class="visually-hidden">Bar chart showing the top web app manifest categories. 60 mobile manifests are in the "shopping" category, 15 "business", 9 "web", 9 "technology", 8 "games", 8 "entertainment", 7 "social", etc. Desktop manifests follow a similar distribution except for "shopping", for which there is only 1 desktop manifest.</div>
   <figcaption id="fig8-caption">Figure 8. Top web app manifest categories.</figcaption>
@@ -157,7 +157,7 @@ Lighthouse [requires](https://developers.google.com/web/tools/lighthouse/audits/
 
 <figure>
   <a href="/static/images/2019/11_PWA/fig9.png">
-    <img src="/static/images/2019/11_PWA/fig9.png" alt="Figure 9. Top web app manifest icon sizes." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1369881840&amp;format=interactive">
+    <img src="/static/images/2019/11_PWA/fig9.png" alt="Figure 9. Top web app manifest icon sizes." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1369881840&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">Bar chart showing the usage of top web app manifest icon size property values. All values are given in height and width pixels, for example the top value in 23% of manifests is 192 by 192 pixels. The next most popular sizes are 144 at 11%, 96 at 11%, 72 at 10%, 48 at 10%, 512 at 9%, 36% at 9%, 256 at 5%, 384 at 2%, 128 at 1%, and 152 at 1%. Desktop and mobile have identical usage patterns.</div>
   <figcaption id="fig9-caption">Figure 9. Top web app manifest icon sizes.</figcaption>
@@ -180,7 +180,7 @@ The valid values for the `orientation` property are defined in the [Screen Orien
 
 <figure>
   <a href="/static/images/2019/11_PWA/fig10.png">
-    <img src="/static/images/2019/11_PWA/fig10.png" alt="Figure 10. Top web app manifest orientation values." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2065142361&amp;format=interactive">
+    <img src="/static/images/2019/11_PWA/fig10.png" alt="Figure 10. Top web app manifest orientation values." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2065142361&amp;format=interactive">
   </a>
   <div id="fig10-description" class="visually-hidden">Bar chart showing the top web app manifest orientation values. "Portrait" is set in 6% of desktop manifests, followed by "any" in 2%, and the everything else in fewer than 1% of manifests. This is similar to usage in mobile manifests, except "portrait" is set in 8% of manifests and "portrait-primary" in 1%.</div>
   <figcaption id="fig10-caption">Figure 10. Top web app manifest orientation values.</figcaption>
