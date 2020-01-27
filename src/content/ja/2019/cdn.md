@@ -62,7 +62,7 @@ Web年鑑の将来のバージョンでは、CDNベンダー間のTLSおよびRT
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig1.png">
-    <img src="/static/images/2019/17_CDN/fig1.png" alt="図 1. CDN使用量 vs. originがホストするリソース" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig1.png" alt="図 1. CDN使用量 vs. originがホストするリソース" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">HTMLがoriginから提供される80％、CDNから20％、サブドメインが61％と39％、サードパーティが34％と66％である積層棒グラフ。</div>
   <figcaption id="fig1-caption">図 1. CDN使用量 vs. originがホストするリソース</figcaption>
@@ -83,7 +83,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_cdn_usage.png">
-    <img alt="ベースHTMLページの提供に使用される最も人気のあるCDN" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600">
+    <img alt="ベースHTMLページの提供に使用される最も人気のあるCDN" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600" height="371.47">
   </a>
   <div id="fig2-description" class="visually-hidden">表3のデータを示すツリーマップグラフ。</div>
   <figcaption id="fig2-caption">図 2: HTML CDNの使用</figcaption>
@@ -207,7 +207,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 
 <figure>
   <a href="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png">
-    <img alt="サブドメインから提供されるリソースに使用される最も一般的なCDN" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png" width="600">
+    <img alt="サブドメインから提供されるリソースに使用される最も一般的なCDN" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png" width="600" height="371.47">
   </a>
   <div id="fig4-description" class="visually-hidden">表5のデータを示すツリーマップグラフ。</div>
   <figcaption id="fig4-caption">図4.サブドメインリソースのCDNの使用。</figcaption>
@@ -331,7 +331,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 
 <figure>
   <a href="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png">
-    <img alt="サードパーティのリソースで使用される最も人気のあるCDN" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png" width="600">
+    <img alt="サードパーティのリソースで使用される最も人気のあるCDN" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png" width="600" height="376.47">
   </a>
   <div id="fig6-description" class="visually-hidden">表7のデータを示すツリーマップグラフ。</div>
   <figcaption id="fig6-caption">図6.サードパーティのリソースCDN使用。</figcaption>
@@ -473,7 +473,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
-    <img alt="CDNによって分類された初期HTML要求のTLSネゴシエーション時間の分布" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600">
+    <img alt="CDNによって分類された初期HTML要求のTLSネゴシエーション時間の分布" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600" height="371.47">
   </a>
   <div id="fig8-description" class="visually-hidden">表9のデータを示すグラフ。</div>
   <figcaption id="fig8-caption">図8. HTML TLSネゴシエーション時間。</figcaption>
@@ -645,7 +645,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
 
 <figure>
   <a href="/static/images/2019/17_CDN/resource_tls_negotiation_time.png">
-    <img alt="CDNによって分類されたサイトリソースのTLSネゴシエーション時間の分布" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png" width="600">
+    <img alt="CDNによって分類されたサイトリソースのTLSネゴシエーション時間の分布" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png" width="600" height="371.47">
   </a>
   <div id="fig10-description" class="visually-hidden">ほとんどのCDNを示すグラフのTLSネゴシエーション時間は約80ミリ秒ですが、一部（Microsoft Azure、Yahoo、Edgecast、ORIGIN、およびCDNetworks）は、特にp50パーセンタイルを超えると、200ミリ秒に向かって徐々に変化し始めます。</div>
   <figcaption id="fig10-caption">図10.リソースTLSネゴシエーション時間。</figcaption>
@@ -670,7 +670,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig11.png">
-    <img src="/static/images/2019/17_CDN/fig11.png" alt="図11. HTMLのTLS SANカウント。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig11.png" alt="図11. HTMLのTLS SANカウント。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive">
   </a>
   <div id="fig11-description" class="visually-hidden">表12のデータを示す棒グラフ。</div>
   <figcaption id="fig11-caption">図11. HTMLのTLS SANカウント。</figcaption>
@@ -840,7 +840,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig13.png">
-    <img src="/static/images/2019/17_CDN/fig13.png" alt="図13.リソースSANカウント（p50）。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig13.png" alt="図13.リソースSANカウント（p50）。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive">
   </a>
   <div id="fig13-description" class="visually-hidden">p50パーセンタイルの表14のデータを示す棒グラフ。</div>
   <figcaption id="fig13-caption">図13.リソースSANカウント（p50）。</figcaption>
@@ -1022,7 +1022,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig15.png">
-    <img src="/static/images/2019/17_CDN/fig15.png" alt="図15. HTML TLSバージョンの採用（CDNとorigin）。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig15.png" alt="図15. HTML TLSバージョンの採用（CDNとorigin）。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive">
   </a>
   <div id="fig15-description" class="visually-hidden">TLS1.0が発信元の時間の0.86％、TLS1.2が55％、TLS1.3が6％、暗号化されていない38％の時間を示す積み上げ棒グラフ。 CDNの場合、これはTLS1.2では35％、TLS1.3では41％、暗号化されていない場合は24％に変更されます。</div>
   <figcaption id="fig15-caption">図15. HTML TLSバージョンの採用（CDNとorigin）。</figcaption>
@@ -1032,7 +1032,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig16.png">
-    <img src="/static/images/2019/17_CDN/fig16.png" alt="図16. CDNによるHTML TLSの採用。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig16.png" alt="図16. CDNによるHTML TLSの採用。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive">
   </a>
   <div id="fig16-description" class="visually-hidden">いくつかのCDN（Wordpressなど）が100％、ほとんどは80％-100％で、次にORIGINを62％、Googleを51％、ChinaNetCenterをCDNで分解した最初のHTML要求に対して確立されたセキュア接続と非セキュア接続の区分36％、ユンジアスは29％。</div>
   <figcaption id="fig16-caption">図16. CDNによるHTML TLSの採用。</figcaption>
@@ -1040,7 +1040,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig17.png">
-    <img src="/static/images/2019/17_CDN/fig17.png" alt="図17. CDNによるサードパーティTLSの採用。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig17.png" alt="図17. CDNによるサードパーティTLSの採用。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive">
   </a>
   <div id="fig17-description" class="visually-hidden">CDNの大部分を示す積み上げ棒グラフは、サードパーティリクエストの90％以上でTLSを使用し、75％から90％の範囲のストラグラーがいくつかあり、ORIGINはそれらすべてよりも68％低くなっています。</div>
   <figcaption id="fig17-caption">図17. CDNによるサードパーティTLSの採用。</figcaption>
@@ -1054,7 +1054,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig18.png">
-    <img src="/static/images/2019/17_CDN/fig18.png" alt="図18. CDNによるHTML TLSバージョン。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig18.png" alt="図18. CDNによるHTML TLSバージョン。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive">
   </a>
   <div id="fig18-description" class="visually-hidden">TLSが使用される場合、TLS1.3またはTLS1.2がすべてのCDNによって使用されることを示す棒グラフ。いくつかのCDNはTLS1.3を完全に採用していますが、一部ではTLS1.2が大部分を採用されています。</div>
   <figcaption id="fig18-caption">図18. CDNによるHTML TLSバージョン。</figcaption>
@@ -1072,7 +1072,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig19.png">
-    <img src="/static/images/2019/17_CDN/fig19.png" alt="図19. HTTP / 2の採用（CDNとorigin）。" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig19.png" alt="図19. HTTP / 2の採用（CDNとorigin）。" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive">
   </a>
   <div id="fig19-description" class="visually-hidden">origin接続の73％がHTTP/1.1を使用し、27％がHTTP/2を使用する積み上げ棒グラフ。これは、29％がHTTP/1.1と71％がHTTP/2を使用しているCDNと比較しています。</div>
   <figcaption id="fig19-caption">図19. HTTP/2の採用（CDNとorigin）。</figcaption>
@@ -1080,7 +1080,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig20.png">
-    <img src="/static/images/2019/17_CDN/fig20.png" alt="図20. HTTP/2のHTML採用。" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig20.png" alt="図20. HTTP/2のHTML採用。" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive">
   </a>
   <div id="fig20-description" class="visually-hidden">表21のデータを示す棒グラフ。</div>
   <figcaption id="fig20-caption">図20. HTTP/2のHTML採用。</figcaption>
@@ -1280,7 +1280,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig22.png">
-    <img src="/static/images/2019/17_CDN/fig22.png" alt="図22. HTML/2の採用：サードパーティのリソース。" aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig22.png" alt="図22. HTML/2の採用：サードパーティのリソース。" aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive">
   </a>
   <div id="fig22-description" class="visually-hidden">表23のデータを示す棒グラフ。</div>
   <figcaption id="fig22-caption">図22. HTML/2の採用：サードパーティのリソース。</figcaption>
@@ -1488,7 +1488,7 @@ Webサイトは、さまざまなHTTPヘッダーを使用して、ブラウザ�
 
 <figure>
   <a href="/static/images/2019/17_CDN/use_of_vary_on_cdn.png">
-    <img alt="CDNから提供されるHTMLコンテンツのVaryヘッダー値の内訳" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600">
+    <img alt="CDNから提供されるHTMLコンテンツのVaryヘッダー値の内訳" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376.47">
   </a>
   <div id="fig24-description" class="visually-hidden">accept-encodingを示すツリーマップグラフは使用率が異なり、チャートの73％が使用されます。 Cookie（13％）とユーザーエージェント（8％）がある程度使用され、その後に他のヘッダーが完全に混在しています。</div>
   <figcaption id="fig24-caption">図24. CDNから提供されるHTMLの<code>Vary</code>の使用法。</figcaption>
@@ -1502,7 +1502,7 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
 
 <figure>
   <a href="/static/images/2019/17_CDN/use_of_vary.png">
-    <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="図25. HTMLとoriginとCDNから提供されるリソースのVary使用の比較。" aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600">
+    <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="図25. HTMLとoriginとCDNから提供されるリソースのVary使用の比較。" aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371.33">
   </a>
   <div id="fig25-description" class="visually-hidden">ホームページを提供するCDNの場合、Varyの最大の用途はCookieであり、その後にuser-agentが続くことを示す4つのツリーマップグラフのセット、他のリソースを提供するCDNの場合は、originであり、その後にaccept、user-agent、x-origin、およびreferrerが続きます。 originsとホームページの場合、それはuser-agentであり、その後にcookieが続きます。最後に、originsおよびその他のリソースについては、主にuser-agentであり、その後にorigin、accept、range、hostが続きます。</div>
   <figcaption id="fig25-caption">図25. HTMLとoriginとCDNから提供されるリソースの<code>Vary</code>使用の比較。</figcaption>
@@ -1526,7 +1526,7 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig26.png">
-    <img src="/static/images/2019/17_CDN/fig26.png" alt="図26. CDN応答全体でのs-maxageの採用。" aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig26.png" alt="図26. CDN応答全体でのs-maxageの採用。" aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive">
   </a>
   <div id="fig26-description" class="visually-hidden">jsDelivrの82％がs-maxage、レベル3の14％、Amazon CloudFrontの6.3％、Akamaiの3.3％、Fastlyの3.1％、Highwindsの3％、Cloudflareの2％、ORIGINの0.91％の応答を提供する棒グラフ、Edgecastの0.75％、Googleの0.07％。</div>
   <figcaption id="fig26-caption">図26. CDN応答全体での<code>s-maxage</code>の採用。</figcaption>
@@ -1546,7 +1546,7 @@ GoogleフォントはコンテンツCDNの中で最も人気があり、55％の
 
 <figure>
   <a href="/static/images/2019/17_CDN/fig27.png">
-    <img src="/static/images/2019/17_CDN/fig27.png" alt="図27.パブリックコンテンツCDNの使用。" aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive">
+    <img src="/static/images/2019/17_CDN/fig27.png" alt="図27.パブリックコンテンツCDNの使用。" aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive">
   </a>
   <div id="fig27-description" class="visually-hidden">パブリックコンテンツのCDNの55.33％がfonts.googleapis.com、19.86％がajax.googleapis.com、10.47％がcdnjs.cloudflare.com、9.83％がmaxcdn.bootstrapcdn.com、コードが5.95％の棒グラフです。 jquery.com、cdn.jsdelivr.netに4.29％、use.fontawesome.comに3.22％、stackpath.bootstrapcdn.comに0.7％、unpkg.comに0.67％、ajax.aspnetcdn.comに0.52％。</div>
   <figcaption id="fig27-caption">図27.パブリックコンテンツCDNの使用。</figcaption>

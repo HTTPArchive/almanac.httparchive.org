@@ -43,7 +43,7 @@ So let's dive in and see what insights we can find.
 
 <figure id="fig1">
   <a href="/static/images/2019/07_Performance/fig1.png">
-    <img src="/static/images/2019/07_Performance/fig1.png" alt="Figure 1. Distribution of websites' fast, moderate, and slow FCP performance." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig1.png" alt="Figure 1. Distribution of websites' fast, moderate, and slow FCP performance." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&amp;format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">Distribution of 1,000 websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0%.</div>
   <figcaption id="fig1-caption">Figure 1. Distribution of websites' fast, moderate, and slow FCP performance.</figcaption>
@@ -57,10 +57,10 @@ In order to categorize whether a website is sufficiently **fast** we will use th
 
 <figure id="fig2">
   <a href="/static/images/2019/07_Performance/fig2.png">
-    <img src="/static/images/2019/07_Performance/fig2.png" alt="Figure 2. Distribution of websites labeled as having fast, moderate, or slow FCP." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig2.png" alt="Figure 2. Distribution of websites labeled as having fast, moderate, or slow FCP." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">Bar chart showing that 13% of websites have fast FCP, 66% have moderate FCP, and 20% have slow FCP.</div>
-  <figcaption id="fig2-caption" >Figure 2. Distribution of websites labeled as having fast, moderate, or slow FCP.</figcaption>
+  <figcaption id="fig2-caption">Figure 2. Distribution of websites labeled as having fast, moderate, or slow FCP.</figcaption>
 </figure>
 
 The results in Figure 2 show that only 13% of websites are considered fast. This is a sign that there is still a lot of room for improvement, but many websites are painting meaningful content quickly and consistently. Two thirds of websites have moderate FCP experiences.
@@ -71,7 +71,7 @@ To help us understand how users experience FCP across different devices, let's s
 
 <figure id="fig3">
   <a href="/static/images/2019/07_Performance/fig3.png">
-    <img src="/static/images/2019/07_Performance/fig3.png" alt="Figure 3. Distribution of <em>desktop</em> websites' fast, moderate, and slow FCP performance." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig3.png" alt="Figure 3. Distribution of <em>desktop</em> websites' fast, moderate, and slow FCP performance." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&amp;format=interactive">
   </a>
   <div id="fig3-description" class="visually-hidden">Distribution of 1,000 desktop websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0% with a slight bulge in the middle.</div>
   <figcaption id="fig3-caption">Figure 3. Distribution of <em>desktop</em> websites' fast, moderate, and slow FCP performance.</figcaption>
@@ -79,20 +79,20 @@ To help us understand how users experience FCP across different devices, let's s
 
 <figure id="fig4">
   <a href="/static/images/2019/07_Performance/fig4.png">
-    <img src="/static/images/2019/07_Performance/fig4.png" alt="Figure 4. Distribution of 'phone' websites' fast, moderate, and slow FCP performance." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig4.png" alt="Figure 4. Distribution of 'phone' websites' fast, moderate, and slow FCP performance." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">Distribution of 1,000 mobile websites' fast, moderate, and slow FCP. The distribution of fast FCP appears to be linear from 100% to 0% without the same middle bulge seen for desktop websites.</div>
-  <figcaption id="fig4-caption" >Figure 4. Distribution of <em>phone</em> websites' fast, moderate, and slow FCP performance.</figcaption>
+  <figcaption id="fig4-caption">Figure 4. Distribution of <em>phone</em> websites' fast, moderate, and slow FCP performance.</figcaption>
 </figure>
 
 In Figures 3 and 4 above, the FCP distributions are broken down by desktop and phone. It's subtle, but the torso of the desktop fast FCP distribution appears to be more convex than the distribution for phone users. This visual approximation suggests that desktop users experience a higher overall proportion of fast FCP. To verify this, we can apply the PSI methodology to each distribution.
 
 <figure id="fig5">
   <a href="/static/images/2019/07_Performance/fig5.png">
-    <img src="/static/images/2019/07_Performance/fig5.png" alt="Figure 5. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by device type." aria-labelledby="fig5-caption" aria-describedby="fig5-description" data-width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig5.png" alt="Figure 5. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by device type." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Bar chart of the desktop and mobile FCP distributions. Desktop fast, moderate, slow: 17%, 67%, and 16% respectively. Mobile: 11%, 66%, and 23%.</div>
-  <figcaption id="fig5-caption" >Figure 5. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by device type.</figcaption>
+  <figcaption id="fig5-caption">Figure 5. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by device type.</figcaption>
 </figure>
 
 According to PSI's classification, 17% of websites have fast FCP experiences overall for desktop users, compared to 11% for mobile users. The entire distribution is skewed to being slightly faster for desktop experiences, with fewer slow websites and more in the fast and moderate category.
@@ -103,10 +103,10 @@ Why might desktop users experience fast FCP on a higher proportion of websites t
 
 <figure id="fig6">
   <a href="/static/images/2019/07_Performance/fig6.png">
-    <img src="/static/images/2019/07_Performance/fig6.png" alt="Figure 6. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by ECT." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig6.png" alt="Figure 6. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by ECT." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">Bar chart of FCP distributions per effective connection type. 4G fast, moderate, slow: 14%, 67%, and 19% respectively. 3G: 1%, 38%, and 61%. 2G: 0%, 9%, 90%. Slow 2G: 0%, 1%, 99%.</div>
-  <figcaption id="fig6-caption" >Figure 6. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>
+  <figcaption id="fig6-caption">Figure 6. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>
 </figure>
 
 In Figure 6 above, FCP experiences are grouped by the ECT of the user experience. Interestingly, there is a correlation between ECT speed and the percent of websites serving fast FCP. As the ECT speeds decrease, the proportion of fast experiences approaches zero. 14% of websites that serve users with 4G ECT have fast FCP experiences, while 19% of those websites have slow experiences. 61% of websites serve slow FCP to users with 3G ECT, 90% to 2G ECT, and 99% to slow-2G ECT. These results suggest that websites seldom serve fast FCP consistently to users on connections effectively slower than 4G.
@@ -115,7 +115,7 @@ In Figure 6 above, FCP experiences are grouped by the ECT of the user experience
 
 <figure id="fig7">
   <a href="/static/images/2019/07_Performance/fig7.png">
-    <img src="/static/images/2019/07_Performance/fig7.png" alt="Figure 7. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by geo." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig7.png" alt="Figure 7. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by geo." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Bar chart of FCP distributions for the top 23 most popular geographies. Korea has the most fast websites at 36%. From there, the percent of fast websites declines rapidly for other geographies: Japan 28%, Taiwan 26%, Netherlands 21%, etc.</div>
   <figcaption id="fig7-caption">Figure 7. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by geo.</figcaption>
@@ -131,7 +131,7 @@ Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India 
 
 <figure id="fig8">
   <a href="/static/images/2019/07_Performance/nav-timing.png">
-    <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/07_Performance/nav-timing.png" alt="Figure 8. Navigation Timing API diagram of the events in a page navigation." aria-labelledby="fig8-caption" aria-describedby="fig8-description">
+    <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/07_Performance/nav-timing.png" alt="Figure 8. Navigation Timing API diagram of the events in a page navigation." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="2580" height="868">
   </a>
   <div id="fig8-description" class="visually-hidden">Diagram showing the sequence of network phases in a page load: startTime (promptForUnload), redirect, AppCache, DNS, TCP, request, response, processing, and load.</div>
   <figcaption id="fig8-caption">Figure 8. Navigation Timing API diagram of the events in a page navigation.</figcaption>
@@ -141,7 +141,7 @@ To help explain TTFB and the many factors that affect it, let's borrow a diagram
 
 <figure id="fig9">
   <a href="/static/images/2019/07_Performance/fig9.png">
-    <img src="/static/images/2019/07_Performance/fig9.png" alt="Figure 9. Distribution of websites' fast, moderate, and slow TTFB performance." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig9.png" alt="Figure 9. Distribution of websites' fast, moderate, and slow TTFB performance." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">Distribution of 1,000 websites' fast, moderate, and slow TTFB. The distribution of fast TTFB drops quickly from about 90% to 50% at the 10th fastest percentile. Then the distribution gradually decreases from 50% to 0% all the way down the remaining 90 percentiles.</div>
   <figcaption id="fig9-caption">Figure 9. Distribution of websites' fast, moderate, and slow TTFB performance.</figcaption>
@@ -155,7 +155,7 @@ Let's apply a TTFB speed label to each website, taking inspiration from the PSI 
 
 <figure id="fig10">
   <a href="/static/images/2019/07_Performance/fig10.png">
-    <img src="/static/images/2019/07_Performance/fig10.png" alt="Figure 10. Distribution of websites labeled as having fast, moderate, or slow TTFB." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig10.png" alt="Figure 10. Distribution of websites labeled as having fast, moderate, or slow TTFB." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&amp;format=interactive">
   </a>
   <div id="fig10-description" class="visually-hidden">Bar chart showing that 2% of websites have fast TTFB, 56% have moderate TTFB, and 42% have slow TTFB.</div>
   <figcaption id="fig10-caption">Figure 10. Distribution of websites labeled as having fast, moderate, or slow TTFB.</figcaption>
@@ -167,7 +167,7 @@ Let's apply a TTFB speed label to each website, taking inspiration from the PSI 
 
 <figure id="fig11">
   <a href="/static/images/2019/07_Performance/fig11.png">
-    <img src="/static/images/2019/07_Performance/fig11.png" alt="Figure 11. Distribution of websites labeled as having fast, moderate, or slow TTFB, broken down by geo." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=685447534&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig11.png" alt="Figure 11. Distribution of websites labeled as having fast, moderate, or slow TTFB, broken down by geo." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=685447534&amp;format=interactive">
   </a>
   <div id="fig11-description" class="visually-hidden">Bar chart of TTFB distributions for the top 23 most popular geographies. Korea has the most fast websites at 14%. From there, the percent of fast websites declines rapidly for other geographies: Taiwan 7%, Japan 5%, Netherlands 4%, etc.</div>
   <figcaption id="fig11-caption">Figure 11. Distribution of websites labeled as having fast, moderate, or slow TTFB, broken down by geo.</figcaption>
@@ -183,7 +183,7 @@ Let's start by defining some thresholds. According to the new PSI methodology, a
 
 <figure id="fig12">
   <a href="/static/images/2019/07_Performance/fig12.png">
-    <img src="/static/images/2019/07_Performance/fig12.png" alt="Figure 12. Distribution of websites' fast, moderate, and slow FID performance." aria-labelledby="fig12-caption"  aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=60679078&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig12.png" alt="Figure 12. Distribution of websites' fast, moderate, and slow FID performance." aria-labelledby="fig12-caption"  aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=60679078&amp;format=interactive">
   </a>
   <div id="fig12-description" class="visually-hidden">Distribution of 1,000 websites' fast, moderate, and slow FID. The distribution of fast FID holds above 75% for the fastest three quarters of websites, then drops quickly to 0%.</div>
   <figcaption id="fig12-caption">Figure 12. Distribution of websites' fast, moderate, and slow FID performance.</figcaption>
@@ -193,7 +193,7 @@ You know the drill by now. This chart shows the distribution of websites' fast, 
 
 <figure id="fig13">
   <a href="/static/images/2019/07_Performance/fig13.png">
-    <img src="/static/images/2019/07_Performance/fig13.png" alt="Figure 13. Distribution of websites labeled as having fast, moderate, or slow TTFB." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig13.png" alt="Figure 13. Distribution of websites labeled as having fast, moderate, or slow TTFB." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&amp;format=interactive">
   </a>
   <div id="fig13-description" class="visually-hidden">Bar chart showing that 40% of websites have fast FID, 45% have moderate FID, and 15% have slow FID.</div>
   <figcaption id="fig13-caption">Figure 13. Distribution of websites labeled as having fast, moderate, or slow TTFB.</figcaption>
@@ -207,7 +207,7 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 
 <figure id="fig14">
   <a href="/static/images/2019/07_Performance/fig14.png">
-    <img src="/static/images/2019/07_Performance/fig14.png" alt="Figure 14. Distribution of 'desktop' websites' fast, moderate, and slow FID performance." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig14.png" alt="Figure 14. Distribution of 'desktop' websites' fast, moderate, and slow FID performance." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&amp;format=interactive">
   </a>
   <div id="fig14-description" class="visually-hidden">Distribution of 1,000 desktop websites' fast, moderate, and slow FID. The distribution of fast FID decreases very slowly from 100% to 90% for the fastest three quarters of websites. After that, fast FID decreases slightly to 75%. Nearly all desktop websites have more than 75% fast FID experiences.</div>
   <figcaption id="fig14-caption">Figure 14. Distribution of <em>desktop</em> websites' fast, moderate, and slow FID performance.</figcaption>
@@ -215,7 +215,7 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 
 <figure id="fig15">
   <a href="/static/images/2019/07_Performance/fig15.png">
-    <img src="/static/images/2019/07_Performance/fig15.png" alt="Figure 15. Distribution of 'phone' websites' fast, moderate, and slow FID performance." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig15.png" alt="Figure 15. Distribution of 'phone' websites' fast, moderate, and slow FID performance." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&amp;format=interactive">
   </a>
   <div id="fig15-description" class="visually-hidden">Distribution of 1,000 mobile websites' fast, moderate, and slow FID. The distribution of fast FID declines steadily but much more quickly than desktop. It reaches 75% fast for at three quarters of websites then quickly drops to 0%.</div>
   <figcaption id="fig15-caption">Figure 15. Distribution of <em>phone</em> websites' fast, moderate, and slow FID performance.</figcaption>
@@ -225,7 +225,7 @@ By breaking FID down by device, it becomes clear that there are two very differe
 
 <figure id="fig16">
   <a href="/static/images/2019/07_Performance/fig16.png">
-    <img src="/static/images/2019/07_Performance/fig16.png" alt="Figure 16. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by device type." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig16.png" alt="Figure 16. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by device type." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&amp;format=interactive">
   </a>
   <div id="fig16-description" class="visually-hidden">Bar chart of the desktop and mobile FID distributions. Desktop fast, moderate, slow: 82%, 12%, and 5% respectively. Mobile: 26%, 52%, and 22%.</div>
   <figcaption id="fig16-caption">Figure 16. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by device type.</figcaption>
@@ -237,7 +237,7 @@ When we apply the PSI labeling to desktop and phone experiences, the distinction
 
 <figure id="fig17">
   <a href="/static/images/2019/07_Performance/fig17.png">
-    <img src="/static/images/2019/07_Performance/fig17.png" alt="Figure 17. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by ECT." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig17.png" alt="Figure 17. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by ECT." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&amp;format=interactive">
   </a>
   <div id="fig17-description" class="visually-hidden">Bar chart of FID distributions per effective connection type. 4G fast, moderate, slow: 41%, 45%, and 15% respectively. 3G: 22%, 52%, and 26%. 2G: 19%, 58%, 23%. Slow 2G: 15%, 58%, 27%.</div>
   <figcaption id="fig17-caption">Figure 17. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by <abbr title="effective connection type">ECT</abbr>.</figcaption>
@@ -251,7 +251,7 @@ The ECT results above seem to suggest that there is a correlation between connec
 
 <figure id="fig18">
   <a href="/static/images/2019/07_Performance/fig18.png">
-    <img src="/static/images/2019/07_Performance/fig18.png" alt="Figure 18. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by geo." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=11500240&amp;format=interactive">
+    <img src="/static/images/2019/07_Performance/fig18.png" alt="Figure 18. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by geo." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=11500240&amp;format=interactive">
   </a>
   <div id="fig18-description" class="visually-hidden">Bar chart of FID distributions for the top 23 most popular geographies. Korea has the most fast websites at 69%. From there, the percent of fast websites declines steadily for other geographies: Australia 55%, United States 52%, Canada 51%, etc.</div>
   <figcaption id="fig18-caption">Figure 18. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by geo.</figcaption>
