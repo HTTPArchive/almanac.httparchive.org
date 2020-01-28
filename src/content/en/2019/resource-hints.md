@@ -233,7 +233,7 @@ For example, if you had an image carousel, priority hints could be used to prior
   <figcaption>Figure 6. The rate of priority hint adoption.</figcaption>
 </figure>
 
-Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901737472) and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is onl used by 0.04% of sites.
+Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901737472) and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is only used by 0.04% of sites.
 
 85% of priority hint usage is with `<img>` tags. Priority hints are mostly used to deprioritize resources: 72% of usage is `importance="low"`; 28% of usage is `importance="high"`.
 
