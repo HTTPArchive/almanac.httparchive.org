@@ -13,19 +13,19 @@ last_updated: 2019-12-24T00:00:00.000Z
 
 ## Introduction
 
-Les [indices de ressources](https://www.w3.org/TR/resource-hints/) fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L'action que le navigateur entreprend à la suite de cet indice varie selon le type d'indices ; différents indices déclenchent différentes actions. Lorsqu'ils sont utilisées correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
+Les [indices de ressources](https://www.w3.org/TR/resource-hints/) fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L'action que le navigateur entreprend à la suite de cet indice varie selon le type d'indice&nbsp;; différents indices déclenchent différentes actions. Lorsqu'ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.
 
 [Quelques exemples](https://youtu.be/YJGCZCaIZkQ?t=1956) d'amélioration de performance suite à l'usage d'indices des ressources&nbsp;:
 
 *   Jabong a réduit son Time To Interactive de 1,5 seconde en préchargeant les scripts critiques.
 *   Barefoot Wine a réduit le Time To Interactive des futures pages de 2,7 secondes en préchargeant les liens visibles. 
-*   Chrome.com a réduit sa latence de 0,7 secondes en se préconnectant à des domaines critiques.
+*   Chrome.com a réduit sa latence de 0,7 seconde en se préconnectant à des domaines critiques.
 
 La plupart des navigateurs actuels prennent en charge quatre indices de ressources distincts&nbsp;: `dns-prefetch`, `preconnect`, `preload` et `prefetch`.
 
 ### `dns-prefetch`
 
-Le rôle de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch) est de lancer une résolution DNS par anticipation. On peut ainsi anticiper la résolutions DNS de tierces parties. Par exemple, la résolution DNS d'un CDN, d'un fournisseur de polices d'écriture ou d'une API en tierce partie.
+Le rôle de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch) est de lancer une résolution DNS par anticipation. On peut ainsi anticiper la résolution DNS de tierces parties. Par exemple, la résolution DNS d'un CDN, d'un fournisseur de polices d'écriture ou d'une API en tierce partie.
 
 ### `preconnect`
 
@@ -91,11 +91,11 @@ Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très 
   <figcaption>Figure 1. Adoption des indices de ressources.</figcaption>
 </figure>
 
-La popularité relative de `dns-prefetch` n'est pas surprenante ; c'est une API bien connue (elle est apparue pour la première fois en [2009](https://caniuse.com/#feat=link-rel-dns-prefetch)), elle est prise en charge par tous les principaux navigateurs et c'est le moins "coûteux" de tous les indices de ressources. Parce que `dns-prefetch` n'effectue que des recherches DNS, il consomme très peu de données et il y a donc très peu d'inconvénients à l'utiliser. `dns-prefetch` est particulièrement utile dans les situations de latence élevée.
+La popularité relative de `dns-prefetch` n'est pas surprenante&nbps;: c'est une API bien connue (elle est apparue pour la première fois en [2009](https://caniuse.com/#feat=link-rel-dns-prefetch)), elle est prise en charge par tous les principaux navigateurs et c'est le moins "coûteux" de tous les indices de ressources. Parce que `dns-prefetch` n'effectue que des recherches DNS, il consomme très peu de données et il y a donc très peu d'inconvénients à l'utiliser. `dns-prefetch` est particulièrement utile dans les situations de latence élevée.
 
 Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inférieures, passer de `dns-prefetch` à `preconnect` est probablement une bonne idée. À une époque où le HTTPS est omniprésent, `preconnect` permet d'améliorer les performances tout en restant peu risqué. Notez que contrairement à `dns-prefetch`, `preconnect` initie non seulement la recherche DNS, mais aussi la poignée de main TCP et la négociation TLS. La [chaîne de certificats] (https://knowledge.digicert.com/solution/SO16297.html) est téléchargée pendant la négociation TLS et cela coûte généralement quelques kilo-octets.
 
-`prefetch` est utilisé par 3&nbsp;% des sites, ce qui en fait l'indices de ressources le moins utilisé. Cette faible utilisation peut s'expliquer par le fait que `prefetch` est utile pour améliorer le chargement des pages suivantes, plutôt que celui de la page actuelle. Ainsi, il sera négligé si un site se concentre uniquement sur l'amélioration de sa page d'accueil, ou sur les performances de la première page consultée.
+`prefetch` est utilisé par 3&nbsp;% des sites, ce qui en fait l'indice de ressources le moins utilisé. Cette faible utilisation peut s'expliquer par le fait que `prefetch` est utile pour améliorer le chargement des pages suivantes, plutôt que celui de la page actuelle. Ainsi, il sera négligé si un site se concentre uniquement sur l'amélioration de sa page d'accueil, ou sur les performances de la première page consultée.
 
 <figure>
   <table>
@@ -145,10 +145,10 @@ Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inf
      </td>
     </tr>
   </table>
-  <figcaption>Figure 2. Médiane en 90e percentile du nombre d'indices de ressources utilisé par page, sur toutes les pages utilisant un resource hint.</figcaption>
+  <figcaption>Figure 2. Médiane en 90e percentile du nombre d'indices de ressources utilisés sur les pages en utilisant au moins un.</figcaption>
 </figure>
 
-Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (_"quand tout est important, rien ne l'est"_). La figure 2 ci-dessus montre le nombre d'indices de ressources par page pour les pages utilisant au moins un indice de ressource. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites utilisent les indices de ressources de manière appropriée.
+Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (_"quand tout est important, rien ne l'est"_). La figure 2 ci-dessus montre le nombre d'indices de ressources sur les pages en utilisant au moins un. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites les utilisent de manière appropriée.
 
 ## L'attribut `crossorigin`
 
@@ -178,7 +178,7 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
      </td>
      <td>7&nbsp;%
      </td>
-     <td>Exécute une requête <code>crossorigin</code> qui ne comprend pas d'identifiants.
+     <td>Exécute une requête <code>crossorigin</code> qui ne comprend pas d'identifiant.
      </td>
     </tr>
     <tr>
@@ -190,7 +190,7 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
      </td>
     </tr>
   </table>
-  <figcaption>Figure 3. Adoption de l'attribut <code>crossorigin</code> attribute en pourcentage du nombre d'indices de ressources.</figcaption>
+  <figcaption>Figure 3. Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.</figcaption>
 </figure>
 
 Dans le contexte des indices de ressources, l'utilisation de l'attribut `crossorigin` leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple : `<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">` active le mode CORS et indique qu'aucun identifiants ne doit être inclus pour ces requêtes `cross-origin`.
@@ -210,7 +210,7 @@ Bien que d'autres éléments HTML prennent en charge l'attribut `crossorigin`, c
 
 ## Le futur
 
-Pour le moment, il n'y a pas de propositions visant à élargir le jeu actuel d'indices de ressources. Cependant, les indices de priorités et le <i lang="en">lazy loading</i> natif sont deux technologies proposées qui s'apparentent aux indices de ressources en ce qu'elles fournissent des API pour optimiser le processus de chargement.
+Pour le moment, il n'y a pas de propositions visant à élargir le jeu actuel d'indices de ressources. Cependant, les indices de priorités et le <i lang="en">lazy loading</i> natif sont deux technologies proposées qui s'apparentent aux indices de ressources dans la mesure où elles fournissent, elles aussi, des API pour optimiser le processus de chargement.
 
 ### Les indices de priorités
 
