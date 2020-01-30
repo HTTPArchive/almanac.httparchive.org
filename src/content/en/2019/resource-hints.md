@@ -214,7 +214,7 @@ At the moment, there are no proposals to expand the current set of resource hint
 
 ### Priority Hints
 
-[Priority hints](https://wicg.github.io/priority-hints/) are an API for expressing the fetch priority of a resource a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
+[Priority hints](https://wicg.github.io/priority-hints/) are an API for expressing the fetch priority of a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
 
 <figure>
 <div class="code-block floating-card">
