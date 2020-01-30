@@ -193,13 +193,13 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
   <figcaption>Figure 3. Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.</figcaption>
 </figure>
 
-Dans le contexte des indices de ressources, l'utilisation de l'attribut `crossorigin` leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple : `<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">` active le mode CORS et indique qu'aucun identifiants ne doit être inclus pour ces requêtes `cross-origin`.
+Dans le contexte des indices de ressources, l'utilisation de l'attribut `crossorigin` leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple : `<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">` active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes `cross-origin`.
 
 Bien que d'autres éléments HTML prennent en charge l'attribut `crossorigin`, cette analyse ne porte que sur l'utilisation avec des indices de ressources.
 
 ## L'attribut `as`
 
-`as` est un attribut qui doit être utilisé avec le indices de ressources `preload` pour informer le navigateur du type (par exemple, image, script, style, etc.) de la ressource demandée. Cela aide le navigateur à classer correctement la requête par ordre de priorité et à appliquer la politique de sécurité du contenu (ou <i lang="en">Content Security Policy</i>, [CSP](https://developers.google.com/web/fundamentals/security/csp)). La CSP est un mécanisme de [sécurité](./security), exprimé par un en-tête HTTP, qui contribue à atténuer l'impact des attaques XSS et autres attaques malveillantes en déclarant une liste de sources fiables ; seul le contenu de ces sources peut alors être rendu ou exécuté.
+`as` est un attribut qui doit être utilisé avec le indices de ressources `preload` pour informer le navigateur du type (par exemple, image, script, style, etc.) de la ressource demandée. Cela aide le navigateur à classer correctement la requête par ordre de priorité et à appliquer la politique de sécurité du contenu (ou <i lang="en">Content Security Policy</i>, [CSP](https://developers.google.com/web/fundamentals/security/csp)). La CSP est un mécanisme de [sécurité](./security), exprimé par un en-tête HTTP, qui contribue à atténuer l'impact des attaques XSS et d'autres attaques malveillantes en déclarant une liste de sources fiables ; seul le contenu de ces sources peut alors être rendu ou exécuté.
 
 <figure>
   <div class="big-number">88&nbsp;%</div>
