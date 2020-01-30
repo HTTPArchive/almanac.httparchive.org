@@ -137,7 +137,7 @@ Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inf
      </td>
     </tr>
     <tr>
-     <td><code>prerender</code> (deprecated)
+     <td><code>prerender</code> (déprécié)
      </td>
      <td>1
      </td>
