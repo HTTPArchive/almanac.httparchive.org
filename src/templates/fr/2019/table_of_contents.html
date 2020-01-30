@@ -222,7 +222,7 @@
                 <span class="todo">Chapitre {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}</span>
                 {% else %}
                 <a href="{{ url_for('chapter', year=year, lang=lang, chapter=get_chapter_slug(chapter_config)) }}">
-                  Chapitre {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}
+                  Chapitre {{ chapter_config.chapter }}&nbsp;: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}
                 </a>
                 {% endif %}
               </div>
