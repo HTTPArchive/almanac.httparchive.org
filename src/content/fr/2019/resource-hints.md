@@ -100,7 +100,7 @@ Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inf
 <figure>
   <table>
     <tr>
-     <th>Resource Hint</th>
+     <th>Indice de ressource</th>
      <th>Indices de ressources par page&nbsp;:<br>Médiane</th>
      <th>Indices de ressources par page&nbsp;:<br>90e percentile</th>
     </tr>
@@ -161,7 +161,7 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
 <figure>
   <table>
     <tr>
-     <th>valeur <code>crossorigin</code></th>
+     <th>Valeur <code>crossorigin</code></th>
      <th>Utilisation</th>
      <th>Explication</th>
     </tr>
