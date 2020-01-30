@@ -54,7 +54,7 @@ Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très 
 <figure>
   <table>
     <tr>
-     <th>Resource Hint</th>
+     <th>Type d'indice de ressource</th>
      <th>Utilisation (pourcentage de sites)</th>
     </tr>
     <tr>
