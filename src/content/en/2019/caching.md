@@ -84,7 +84,7 @@ The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a d
     <img alt="Figure 1. Cache-Control information from RedBot." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="138">
   </a>
   <div id="fig1-description" class="visually-hidden">Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings.</div>
-  <figcaption d="fig1-caption">Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
+  <figcaption id="fig1-caption">Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
 </figure>
 
 If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability. 

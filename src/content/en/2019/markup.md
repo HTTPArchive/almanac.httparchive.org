@@ -35,7 +35,7 @@ Instead, as in Hixie's original study,  what we will look at is how many sites i
 
 In 2005, Hixie's survey listed the top few most commonly used elements on pages.  The top 3 were `html`, `head` and `body` which he noted as interesting because they are optional and created by the parser if omitted.  Given that we use the post-parsed DOM,  they'll show up universally in our data.  Thus, we'll begin with the 4th most used element. Below is a comparison of the data from then to now (I've included the frequency comparison here as well just for fun).
 
-<figure id="fig1" markdown>
+<figure id="fig1" data-markdown="1">
 
 2005 (per site) | 2019 (per site) | 2019 (frequency)
 -- | -- | --

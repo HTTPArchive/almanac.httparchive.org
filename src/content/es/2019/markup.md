@@ -35,7 +35,7 @@ En lugar, como en el estudio original de Hixie, Lo que veremos es cuántos sitio
 
 En 2005, la encuesta de Hixie enumeró los elementos más comunes utilizados en las páginas. Los 3 principales fueron `html`, `head` y `body` lo que señaló como interesante porque son opcionales y creados por el _parser_ si se omiten. Dado que utilizamos el DOM después del _parseo_ , aparecerán universalmente en nuestros datos. Por lo tanto, comenzaremos con el cuarto elemento más utilizado. A continuación se muestra una comparación de los datos de entonces a ahora. (También he incluido la comparación de frecuencias aquí solo por diversión).
 
-<figure id="fig1" markdown>
+<figure id="fig1" data-markdown="1">
 
 2005 (por sitio) | 2019 (por sitio) | 2019 (frecuencia)
 -- | -- | --

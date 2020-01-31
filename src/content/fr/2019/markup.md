@@ -35,7 +35,7 @@ Au lieu de faire ça, nous allons examiner combien de sites incluent chaque él�
 
 En 2005, l’enquête de Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient `html`, `head` et `body`, ce qu’il a noté comme intéressant, car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM après interprétation, ils apparaissent universellement dans nos données. C’est pourquoi nous commencerons par le 4<sup>e</sup> élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données collectées à son époque et aujourd’hui (j’ai inclus ici la comparaison en fréquence, pour le plaisir).
 
-<figure id="fig1" markdown>
+<figure id="fig1" data-markdown="1">
 
 2005 (par site) | 2019 (par site) | 2019 (fréquence)
 -- | -- | --

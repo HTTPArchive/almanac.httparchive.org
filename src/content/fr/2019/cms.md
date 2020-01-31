@@ -263,7 +263,7 @@ La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 e
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig11.png">
-    <img src="/static/images/2019/14_CMS/fig11.png" alt="" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig11.png" alt="Figure 11. Répartition du nombre de requêtes de tiers sur les pages CMS." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
   </a>
   <div id="fig11-description" class="visually-hidden">Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des requêtes de tierces-parties sur les pages CMS sur ordinateur de bureau et mobile. Le nombre médian (50e percentile) de requêtes de tierces-parties sur ordinateur de bureau est de 16. Le 10e percentile est 3, le 25e 7, le 75e 31 et le 90e 52. Les ordinateurs de bureau et les mobiles ont des distributions presque équivalentes.</div>
   <figcaption id="fig11-caption">Figure 11. Répartition du nombre de requêtes de tiers sur les pages CMS.</figcaption>

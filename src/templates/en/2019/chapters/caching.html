@@ -238,7 +238,7 @@
           <img alt="Figure 1. Cache-Control information from RedBot." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="138" loading="lazy" />
         </a>
         <div id="fig1-description" class="visually-hidden">Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings.</div>
-        <figcaption d="fig1-caption">Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
+        <figcaption id="fig1-caption">Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
       </figure>
       <p>If no caching headers are present in a response, then the <a href="https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/">client is permitted to heuristically cache the response</a>. Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since <code>Last-Modified</code>. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability.</p>
       <p>72% of responses are served with a <code>Cache-Control</code> header, and 56% of responses are served with an <code>Expires</code> header. However, 27% of responses did not use either header, and therefore are subject to heuristic caching. This is consistent across both desktop and mobile sites.</p>
