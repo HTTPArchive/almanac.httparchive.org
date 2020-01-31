@@ -575,6 +575,7 @@ In fact, one of the [HTTP Archive trend reports shows the adoption of service wo
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">
     <img src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="Figure 17. Timeseries of service worker controlled pages." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311">
+  </a>
   <div id="fig17-description" class="visually-hidden">A time series chart showing service worker controlled site usage from October 2016 until July 2019. Usage has been steadily growing throughout the years for both mobile and desktop but is still less than 0.6% for both.</div>
   <figcaption id="fig17-caption">Figure 17. Timeseries of service worker controlled pages. (Source: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
 </figure>
