@@ -93,7 +93,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>HTML CDNの使用率 (%)</th>
       </tr>
     </thead>
@@ -217,7 +217,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>サブドメインのCDN使用率(%)</th>
       </tr>
     </thead>
@@ -341,7 +341,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>サードパーティのCDN使用率(%)</th>
       </tr>
     </thead>
@@ -483,7 +483,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>p10</th>
         <th>p25</th>
         <th>p50</th>
@@ -680,7 +680,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>p10</th>
         <th>p25</th>
         <th>p50</th>
@@ -850,7 +850,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>p10</th>
         <th>p25</th>
         <th>p50</th>
@@ -1090,7 +1090,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>HTTP/0.9</th>
         <th>HTTP/1.0</th>
         <th>HTTP/1.1</th>

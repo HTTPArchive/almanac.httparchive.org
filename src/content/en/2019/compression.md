@@ -57,16 +57,16 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
 <figure>
   <table>
     <tr>
-     <th></th>
-     <th colspan="2" >Percent of Requests</th>
-     <th colspan="2" >Requests</th>
+     <td></td>
+     <th scope="colgroup" colspan="2" >Percent of Requests</th>
+     <th scope="colgroup" colspan="2" >Requests</th>
     </tr>
     <tr>
-     <th>Content Encoding</th>
-     <th>Desktop</th>
-     <th>Mobile</th>
-     <th>Desktop</th>
-     <th>Mobile</th>
+     <th scope="col">Content Encoding</th>
+     <th scope="col">Desktop</th>
+     <th scope="col">Mobile</th>
+     <th scope="col">Desktop</th>
+     <th scope="col">Mobile</th>
     </tr>
     <tr>
      <td><em>No Text Compression</em></td>
@@ -230,16 +230,16 @@ Additionally, the percentage of brotli compression is higher for third-party con
 <figure>
   <table>
     <tr>
-     <th></th>
-     <th colspan="2">Desktop</th>
-     <th colspan="2">Mobile</th>
+     <td></td>
+     <th scope="colgroup" colspan="2">Desktop</th>
+     <th scope="colgroup" colspan="2">Mobile</th>
     </tr>
     <tr>
-     <th>Content Encoding</th>
-     <th>First-Party</th>
-     <th>Third-Party</th>
-     <th>First-Party</th>
-     <th>Third-Party</th>
+     <th scope="col">Content Encoding</th>
+     <th scope="col">First-Party</th>
+     <th scope="col">Third-Party</th>
+     <th scope="col">First-Party</th>
+     <th scope="col">Third-Party</th>
     </tr>
     <tr>
      <td><em>No Text Compression</em></td>
