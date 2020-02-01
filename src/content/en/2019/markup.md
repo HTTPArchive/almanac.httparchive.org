@@ -70,7 +70,7 @@ tr | span | option
 Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Figure 2, we can see that the average size of DOM trees has gotten bigger.
 
 <figure id="fig4">
-  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320.64">
+  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
    <div id="fig4-description" class="visually-hidden">Graph that relative frequency is a bell curve around the 19 elements point.</div>
   <figcaption id="fig4-caption">Figure 4. Histogram of Hixie's 2005 analysis of element types per page.</figcaption>
 </figure>

@@ -29,7 +29,7 @@ Au fur et à mesure de son évolution, le web est devenu plus puissant, mais aus
 
 <figure>
   <a href="/static/images/2019/14_CMS/web-evolution.png">
-    <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Graphique illustrant l'augmentation des fonctionnalités du web de 1999 à 2018." width="600" height="491.53">
+    <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Graphique illustrant l'augmentation des fonctionnalités du web de 1999 à 2018." width="600" height="492">
   </a>
   <div id="fig1-description" class="visually-hidden">Sur la gauche, intitulée circa 1999, nous avons un diagramme à barres avec deux barres montrant que ce qui peut être fait est proche de ce qui est réellement fait. Sur la droite, intitulée 2018, nous avons un diagramme en bâtons similaire, mais ce qui peut être fait est beaucoup plus grand, et ce qui est fait est légèrement plus grand. L'écart entre ce qui peut être fait et ce qui est réellement fait a beaucoup augmenté.</div>
   <figcaption id="fig1-caption">Figure 1. Graphique illustrant l'augmentation des fonctionnalités du web de 1999 à 2018.</figcaption>
@@ -58,7 +58,7 @@ En gros, cela signifie qu'il existe de nombreuses plateformes CMS disponibles su
 
 <figure>
   <a href="/static/images/2019/14_CMS/cms-logos.png">
-    <img src="/static/images/2019/14_CMS/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. Les principaux systèmes de gestion de contenu." width="600" height="559.11">
+    <img src="/static/images/2019/14_CMS/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. Les principaux systèmes de gestion de contenu." width="600" height="559">
   </a>
   <div id="fig3-description" class="visually-hidden">Logos des principaux fournisseurs de CMS, notamment WordPress, Drupal, Wix, etc.</div>
   <figcaption id="fig3-caption">Figure 3. Les principaux systèmes de gestion de contenu.</figcaption>

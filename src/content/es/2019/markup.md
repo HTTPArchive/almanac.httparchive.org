@@ -66,7 +66,7 @@ tr | span | option
 Comparando los últimos datos en la Figura 3 con los del informe de Hixie de 2005 en la Figura 2, podemos ver que el tamaño promedio de los árboles DOM ha aumentado.
 
 <figure id="fig4">
-  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histograma del análisis de Hixie de 2005 de los tipos de elementos por página." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320.64">
+  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histograma del análisis de Hixie de 2005 de los tipos de elementos por página." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
   <div id="fig4-description" class="visually-hidden">Graph that relative frequency is a bell curve around the 19 elements point.</div>
   <figcaption id="fig4-caption">Figura 4. Histograma del análisis de Hixie de 2005 de los tipos de elementos por página.</figcaption>
 </figure>

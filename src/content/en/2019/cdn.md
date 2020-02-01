@@ -83,7 +83,7 @@ This is clearly represented when looking at the top CDNs found serving the base 
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_cdn_usage.png">
-    <img alt="Most popular CDNs used to serve base HTML pages" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600" height="371.47">
+    <img alt="Most popular CDNs used to serve base HTML pages" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600" height="371">
   </a>
   <div id="fig2-description" class="visually-hidden">Treemap graph showing the data from Table 3.</div>
   <figcaption id="fig2-caption">Figure 2: HTML CDN usage.</figcaption>
@@ -207,7 +207,7 @@ Sub-domain requests have a very similar composition. Since many websites use sub
 
 <figure>
   <a href="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png">
-    <img alt="Most popular CDNs used for resources served from a sub-domain" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png" width="600" height="371.47">
+    <img alt="Most popular CDNs used for resources served from a sub-domain" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png" width="600" height="371">
   </a>
   <div id="fig4-description" class="visually-hidden">Treemap graph showing the data from Table 5.</div>
   <figcaption id="fig4-caption">Figure 4. Sub-domain resource CDN usage.</figcaption>
@@ -331,7 +331,7 @@ The composition of top CDN providers dramatically shifts for third-party resourc
 
 <figure>
   <a href="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png">
-    <img alt="Most popular CDNs used by third-party resources" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png" width="600" height="376.47">
+    <img alt="Most popular CDNs used by third-party resources" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png" width="600" height="376">
   </a>
   <div id="fig6-description" class="visually-hidden">Treemap graph showing the data from Table 7.</div>
   <figcaption id="fig6-caption">Figure 6. Third-party resource CDN usage.</figcaption>
@@ -473,7 +473,7 @@ In contrast, the median TLS negotiation for the majority of CDN providers is bet
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
-    <img alt="Distribution of TLS negotiation time for initial HTML request broken down by CDN" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600" height="371.47">
+    <img alt="Distribution of TLS negotiation time for initial HTML request broken down by CDN" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600" height="371">
   </a>
   <div id="fig8-description" class="visually-hidden">Graph showing the data from Table 9.</div>
   <figcaption id="fig8-caption">Figure 8. HTML TLS negotiation time.</figcaption>
@@ -645,7 +645,7 @@ For resource requests (including same-domain and third-party), the TLS negotiati
 
 <figure>
   <a href="/static/images/2019/17_CDN/resource_tls_negotiation_time.png">
-    <img alt="Distribution of TLS negotiation time for site resources broken down by CDN" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png" width="600" height="371.47">
+    <img alt="Distribution of TLS negotiation time for site resources broken down by CDN" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png" width="600" height="371">
   </a>
   <div id="fig10-description" class="visually-hidden">Graph showing most CDNs have a TLS negotiation time of around 80 ms, but some (Microsoft Azure, Yahoo, Edgecast, ORIGIN, and CDNetworks) start to creep out towards 200 ms - especially when going above the p50 percentile.</div>
   <figcaption id="fig10-caption">Figure 10. Resource TLS negotiation time.</figcaption>
@@ -1488,7 +1488,7 @@ Another useful tool is the use of the `Vary` HTTP header. This header instructs 
 
 <figure>
   <a href="/static/images/2019/17_CDN/use_of_vary_on_cdn.png">
-    <img alt="Breakdown of Vary header values for HTML content served from a CDN" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376.47">
+    <img alt="Breakdown of Vary header values for HTML content served from a CDN" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376">
   </a>
   <div id="fig24-description" class="visually-hidden">Treemap graph showing accept-encoding dominates vary usage with 73% of the chart taken up with that. Cookie (13%) and user-agent (8%) having some usage, then a complete mixed of other headers.</div>
   <figcaption id="fig24-caption">Figure 24. Usage of <code>Vary</code> for HTML served from CDNs.</figcaption>
@@ -1502,7 +1502,7 @@ In a similar way, `Vary: Cookie` usually indicates that content that will change
 
 <figure>
   <a href="/static/images/2019/17_CDN/use_of_vary.png">
-    <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="Figure 25. Comparison of Vary usage for HTML and resources served from origin and CDN." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371.33">
+    <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="Figure 25. Comparison of Vary usage for HTML and resources served from origin and CDN." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371">
   </a>
   <div id="fig25-description" class="visually-hidden">Set of four treemap graphs showing that for CDNs serving home pages the biggest use of Vary is for Cookie, followed by User-agent. For CDNs serving other resources it's origin, followed by accept, user-agent, x-origin and referrer. For Origins and home pages it's user-agent, followed by cookie. Finally for Origins and other resources it's primarily user-agent followed by origin, accept, then range and host.</div>
   <figcaption id="fig25-caption">Figure 25. Comparison of <code>Vary</code> usage for HTML and resources served from origin and CDN.</figcaption>
