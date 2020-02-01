@@ -123,7 +123,7 @@ The resource type breakdown of third-party content also lends insight into how t
 
 <figure>
   <a href="/static/images/2019/05_Third_Parties/fig5.png">
-    <img src="/static/images/2019/05_Third_Parties/fig5.png" alt="Figure 5. Percent of third-party requests by category and content type." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive">
+    <img src="/static/images/2019/05_Third_Parties/fig5.png" alt="Figure 5. Percent of third-party requests by category and content type." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.</div>
   <figcaption id="fig5-caption">Figure 5. Percent of third-party requests by category and content type.</figcaption>
@@ -147,7 +147,7 @@ Despite serving 57% of scripts, third parties comprise 64% of script bytes. mean
 
 <figure>
   <a href="/static/images/2019/05_Third_Parties/fig7.png">
-    <img src="/static/images/2019/05_Third_Parties/fig7.png" alt="Figure 7. Distributions of resource bytes per third-party category." aria-labelledby="fig7-caption" aria-describedby="fig7-description"  width="600" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
+    <img src="/static/images/2019/05_Third_Parties/fig7.png" alt="Figure 7. Distributions of resource bytes per third-party category." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Chart showing the breakdown of bytes for each content type per third party category. Images and scripts are relatively evenly distributed across categories. 80% of fonts come from CDNs. Video comes from "content" third-parties.</div>
   <figcaption id="fig7-caption" >Figure 7. Distributions of resource bytes per third-party category.</figcaption>

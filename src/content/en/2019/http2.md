@@ -67,7 +67,7 @@ Our analysis is sourced from the HTTP Archive, which tests approximately 5 milli
 
 <figure>
   <a href="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png">
-    <img alt="Figure 2. HTTP/2 usage by request." aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png" width="600">
+    <img alt="Figure 2. HTTP/2 usage by request." aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png" width="600" height="321">
   </a>
   <div id="fig2-description" class="visually-hidden">Timeseries chart of HTTP/2 usage showing adoption at 55% for both desktop and mobile as of July 2019. The trend is growing steadily at about 15 points per year.</div>
   <figcaption id="fig2-caption">Figure 2. HTTP/2 usage by request. (Source: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
@@ -200,7 +200,7 @@ One impact that can be measured is in the changing use of HTTP now that we are i
 
 <figure>
   <a href="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png">
-    <img alt="Figure 9. TCP connections per page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" src="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png" width="600">
+    <img alt="Figure 9. TCP connections per page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" src="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png" width="600" height="320">
   </a>
   <div id="fig9-description" class="visually-hidden">Timeseries chart of the number of TCP connections per page, with the median desktop page having 14 connections and the median mobile page having 16 connections as of July 2019.</div>
   <figcaption id="fig9-caption">Figure 9. TCP connections per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
@@ -210,7 +210,7 @@ HTTP Archive measures the number of TCP connections per page, and that is droppi
 
 <figure>
   <a href="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png">
-    <img alt="Figure 10. Total requests per page." aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png" width="600">
+    <img alt="Figure 10. Total requests per page." aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png" width="600" height="320">
   </a>
   <div id="fig10-description" class="visually-hidden">Timeseries chart of the number of requests per page, with the median desktop page having 74 requests and the median mobile page having 69 requests as of July 2019. The trend is relatively flat.</div>
   <figcaption id="fig10-caption">Figure 10. Total requests per page. (Source: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
@@ -259,7 +259,7 @@ This is a concern as previous advice has been to be conservative with push and t
 
 <figure>
   <a href="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png">
-    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="Figure 13. What asset types is push used for?" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
+    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="Figure 13. What asset types is push used for?" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
   </a>
   <div id="fig13-description" class="visually-hidden">Pie chart breaking down the percent of asset types that are pushed. JavaScript makes up almost half of the assets, then CSS with about a quarter, images about an eighth, and various text-based types making up the rest.</div>
   <figcaption id="fig13-caption">Figure 13. What asset types is push used for?</figcaption>
