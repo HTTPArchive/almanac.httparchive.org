@@ -90,7 +90,7 @@
 {% endblock %}
 
 {% block main %}
-<div id="home">
+<main id="home">
   <section class="featured-chapter">
     <div class="featured-chapter-content">
       <h2 class="title title-center">Focus sur le chapitre…</h2>
@@ -128,7 +128,7 @@
         Voir les contributeurs et contributrices
       </a>
     </div>
-    <div class="people">
+    <div class="people" aria-hidden="true">
       <div class="people-number">{{ contributors }}</div>
       <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
       <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
@@ -165,5 +165,5 @@
       <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
     </div>
   </section>
-</div>
+</main>
 {% endblock %}
