@@ -165,12 +165,12 @@ Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age ` d
   <table>
     <tr>
      <td></td>
-     <th colspan="2" >Client</th>
+     <th scope="colgroup" colspan="2" >Client</th>
     </tr>
     <tr>
-     <th>Percentile</th>
-     <th>Desktop</th>
-     <th>Mobile</th>
+     <th scope="col">Percentile</th>
+     <th scope="col">Desktop</th>
+     <th scope="col">Mobile</th>
     </tr>
     <tr>
      <td>10</td>
@@ -407,15 +407,15 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
   <table>
     <tr>
      <td></td>
-     <th colspan="2" >No. of Home Pages</th>
-     <th colspan="2" >% of Home Pages</th>
+     <th scope="colgroup" colspan="2" >No. of Home Pages</th>
+     <th scope="colgroup" colspan="2" >% of Home Pages</th>
     </tr>
     <tr>
-     <th>prefix value</th>
-     <th>Desktop</th>
-     <th>Mobile</th>
-     <th>Desktop</th>
-     <th>Mobile</th>
+     <th scope="col">prefix value</th>
+     <th scope="col">Desktop</th>
+     <th scope="col">Mobile</th>
+     <th scope="col">Desktop</th>
+     <th scope="col">Mobile</th>
     </tr>
     <tr>
      <td>__Secure-</td>

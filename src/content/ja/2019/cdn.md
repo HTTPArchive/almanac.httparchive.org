@@ -83,7 +83,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_cdn_usage.png">
-    <img alt="ベースHTMLページの提供に使用される最も人気のあるCDN" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600" height="371.47">
+    <img alt="ベースHTMLページの提供に使用される最も人気のあるCDN" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600" height="371">
   </a>
   <div id="fig2-description" class="visually-hidden">表3のデータを示すツリーマップグラフ。</div>
   <figcaption id="fig2-caption">図 2: HTML CDNの使用</figcaption>
@@ -93,7 +93,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>HTML CDNの使用率 (%)</th>
       </tr>
     </thead>
@@ -207,7 +207,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 
 <figure>
   <a href="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png">
-    <img alt="サブドメインから提供されるリソースに使用される最も一般的なCDN" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png" width="600" height="371.47">
+    <img alt="サブドメインから提供されるリソースに使用される最も一般的なCDN" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png" width="600" height="371">
   </a>
   <div id="fig4-description" class="visually-hidden">表5のデータを示すツリーマップグラフ。</div>
   <figcaption id="fig4-caption">図4.サブドメインリソースのCDNの使用。</figcaption>
@@ -217,7 +217,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>サブドメインのCDN使用率(%)</th>
       </tr>
     </thead>
@@ -331,7 +331,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 
 <figure>
   <a href="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png">
-    <img alt="サードパーティのリソースで使用される最も人気のあるCDN" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png" width="600" height="376.47">
+    <img alt="サードパーティのリソースで使用される最も人気のあるCDN" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png" width="600" height="376">
   </a>
   <div id="fig6-description" class="visually-hidden">表7のデータを示すツリーマップグラフ。</div>
   <figcaption id="fig6-caption">図6.サードパーティのリソースCDN使用。</figcaption>
@@ -341,7 +341,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>サードパーティのCDN使用率(%)</th>
       </tr>
     </thead>
@@ -473,7 +473,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
 
 <figure>
   <a href="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
-    <img alt="CDNによって分類された初期HTML要求のTLSネゴシエーション時間の分布" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600" height="371.47">
+    <img alt="CDNによって分類された初期HTML要求のTLSネゴシエーション時間の分布" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600" height="371">
   </a>
   <div id="fig8-description" class="visually-hidden">表9のデータを示すグラフ。</div>
   <figcaption id="fig8-caption">図8. HTML TLSネゴシエーション時間。</figcaption>
@@ -483,7 +483,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>p10</th>
         <th>p25</th>
         <th>p50</th>
@@ -645,7 +645,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
 
 <figure>
   <a href="/static/images/2019/17_CDN/resource_tls_negotiation_time.png">
-    <img alt="CDNによって分類されたサイトリソースのTLSネゴシエーション時間の分布" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png" width="600" height="371.47">
+    <img alt="CDNによって分類されたサイトリソースのTLSネゴシエーション時間の分布" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png" width="600" height="371">
   </a>
   <div id="fig10-description" class="visually-hidden">ほとんどのCDNを示すグラフのTLSネゴシエーション時間は約80ミリ秒ですが、一部（Microsoft Azure、Yahoo、Edgecast、ORIGIN、およびCDNetworks）は、特にp50パーセンタイルを超えると、200ミリ秒に向かって徐々に変化し始めます。</div>
   <figcaption id="fig10-caption">図10.リソースTLSネゴシエーション時間。</figcaption>
@@ -680,7 +680,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>p10</th>
         <th>p25</th>
         <th>p50</th>
@@ -850,7 +850,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>p10</th>
         <th>p25</th>
         <th>p50</th>
@@ -1090,7 +1090,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>HTTP/0.9</th>
         <th>HTTP/1.0</th>
         <th>HTTP/1.1</th>
@@ -1488,7 +1488,7 @@ Webサイトは、さまざまなHTTPヘッダーを使用して、ブラウザ�
 
 <figure>
   <a href="/static/images/2019/17_CDN/use_of_vary_on_cdn.png">
-    <img alt="CDNから提供されるHTMLコンテンツのVaryヘッダー値の内訳" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376.47">
+    <img alt="CDNから提供されるHTMLコンテンツのVaryヘッダー値の内訳" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376">
   </a>
   <div id="fig24-description" class="visually-hidden">accept-encodingを示すツリーマップグラフは使用率が異なり、チャートの73％が使用されます。 Cookie（13％）とユーザーエージェント（8％）がある程度使用され、その後に他のヘッダーが完全に混在しています。</div>
   <figcaption id="fig24-caption">図24. CDNから提供されるHTMLの<code>Vary</code>の使用法。</figcaption>
@@ -1502,7 +1502,7 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
 
 <figure>
   <a href="/static/images/2019/17_CDN/use_of_vary.png">
-    <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="図25. HTMLとoriginとCDNから提供されるリソースのVary使用の比較。" aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371.33">
+    <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="図25. HTMLとoriginとCDNから提供されるリソースのVary使用の比較。" aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371">
   </a>
   <div id="fig25-description" class="visually-hidden">ホームページを提供するCDNの場合、Varyの最大の用途はCookieであり、その後にuser-agentが続くことを示す4つのツリーマップグラフのセット、他のリソースを提供するCDNの場合は、originであり、その後にaccept、user-agent、x-origin、およびreferrerが続きます。 originsとホームページの場合、それはuser-agentであり、その後にcookieが続きます。最後に、originsおよびその他のリソースについては、主にuser-agentであり、その後にorigin、accept、range、hostが続きます。</div>
   <figcaption id="fig25-caption">図25. HTMLとoriginとCDNから提供されるリソースの<code>Vary</code>使用の比較。</figcaption>

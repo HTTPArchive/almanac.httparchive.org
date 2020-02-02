@@ -35,7 +35,7 @@ Instead, as in Hixie's original study,  what we will look at is how many sites i
 
 In 2005, Hixie's survey listed the top few most commonly used elements on pages.  The top 3 were `html`, `head` and `body` which he noted as interesting because they are optional and created by the parser if omitted.  Given that we use the post-parsed DOM,  they'll show up universally in our data.  Thus, we'll begin with the 4th most used element. Below is a comparison of the data from then to now (I've included the frequency comparison here as well just for fun).
 
-<figure id="fig1" markdown>
+<figure id="fig1" data-markdown="1">
 
 2005 (per site) | 2019 (per site) | 2019 (frequency)
 -- | -- | --
@@ -70,7 +70,7 @@ tr | span | option
 Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Figure 2, we can see that the average size of DOM trees has gotten bigger.
 
 <figure id="fig4">
-  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320.64">
+  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
    <div id="fig4-description" class="visually-hidden">Graph that relative frequency is a bell curve around the 19 elements point.</div>
   <figcaption id="fig4-caption">Figure 4. Histogram of Hixie's 2005 analysis of element types per page.</figcaption>
 </figure>

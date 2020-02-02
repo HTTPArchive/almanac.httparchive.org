@@ -271,7 +271,7 @@ The mobile web has now been around long enough for there to be an entire generat
   <figcaption id="fig9-caption">Figure 9. 1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
 </figure>
 
-<p class="note" markdown>Notes:
+<p class="note" data-markdown="1">Notes:
 
 1. We defined sites making a mobile effort as those who adjust their designs for smaller screens. Or rather, those which have at least one CSS breakpoint at 600px or less.
 
