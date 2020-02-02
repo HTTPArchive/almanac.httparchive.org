@@ -214,7 +214,7 @@ At the moment, there are no proposals to expand the current set of resource hint
 
 ### Priority Hints
 
-[Priority hints](https://wicg.github.io/priority-hints/) are an API for expressing the fetch priority of a resource a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
+[Priority hints](https://wicg.github.io/priority-hints/) are an API for expressing the fetch priority of a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
 
 <figure>
 <div class="code-block floating-card">
@@ -233,7 +233,7 @@ For example, if you had an image carousel, priority hints could be used to prior
   <figcaption>Figure 6. The rate of priority hint adoption.</figcaption>
 </figure>
 
-Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901737472) and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is onl used by 0.04% of sites.
+Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901737472) and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is only used by 0.04% of sites.
 
 85% of priority hint usage is with `<img>` tags. Priority hints are mostly used to deprioritize resources: 72% of usage is `importance="low"`; 28% of usage is `importance="high"`.
 
@@ -247,4 +247,4 @@ Native lazy loading is available in browsers based on Chromium 76 and up. The AP
 
 ## Conclusion
 
-Overall, this data seems to suggest that there is still room for further adoption of resource hints. Most sites would benefit from adopting and/or switching to `preconnect` from `dns-prefetch`. A much smaller subset of sites would benefit from adopting `prefetch` and/or `preload`. There is greater nuance in successfully using `prefetch` and `preload`, which constrains its adoption to a certain extent, but the potential payoff is also greater. HTTP/2 Push and the maturation of machine learning technologies is also likely to increase the adoption of `preload` and `prefetch.
+Overall, this data seems to suggest that there is still room for further adoption of resource hints. Most sites would benefit from adopting and/or switching to `preconnect` from `dns-prefetch`. A much smaller subset of sites would benefit from adopting `prefetch` and/or `preload`. There is greater nuance in successfully using `prefetch` and `preload`, which constrains its adoption to a certain extent, but the potential payoff is also greater. HTTP/2 Push and the maturation of machine learning technologies is also likely to increase the adoption of `preload` and `prefetch`.
