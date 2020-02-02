@@ -126,9 +126,10 @@ It should be noticed that these were the cipher suites used for the crawl using 
 Most sites on the web originally existed as HTTP websites and have had to migrate their site to HTTPS. This 'lift and shift' operation can be difficult and sometimes things get missed or left behind. This results in sites having mixed content, where their pages load over HTTPS but something on the page, perhaps an image or a style, is loaded over HTTP. Mixed content is bad for security and privacy and can be difficult to find and fix.
 
 <figure data-markdown="1">
-| Cipher Suite                    | Desktop | Mobile |
+
+| Mixed Content Type              | Desktop | Mobile |
 |---------------------------------|---------|--------|
-| Pages with Mixed Content        | 16.27%  | 15.37% |
+| Pages with Any Mixed Content    | 16.27%  | 15.37% |
 | Pages with Active Mixed Content |  3.99%  |  4.13% |
 
 <figcaption>Figure 7. Mixed content usage.</figcaption>
@@ -153,6 +154,7 @@ Many new and recent features for site operators to better protect their users ha
 The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instruct a browser that it should only ever communicate with the site over a secure HTTPS connection. This means that any attempts to use a http:// URL will automatically be converted to https:// before a request is made. Given that over 40% of requests were capable of using TLS, we see a much lower % of requests instructing the browser to require it.
 
 <figure data-markdown="1">
+
 | HSTS Directive      | Desktop | Mobile |
 |---------------------|---------|--------|
 | `max-age`           | 14.80%  | 12.81% |
@@ -258,6 +260,7 @@ A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Po
 
 
 <figure data-markdown="1">
+
 | Configuration                     | Desktop | Mobile |
 |-----------------------------------|---------|--------|
 | `no-referrer-when-downgrade`      | 39.16%  | 41.52% |
@@ -316,6 +319,7 @@ The [`X-Frame-Options`](https://tools.ietf.org/html/rfc7034) header allows a pag
 We see that the usage of the `X-Frame-Options` header is quite high on both desktop (16.99%) and mobile (14.77%) and can also look more closely at the specific configurations used.
 
 <figure data-markdown="1">
+
 | Configuration | Desktop | Mobile |
 |---------------|---------|--------|
 | `sameorigin`  | 84.92%  | 83.86% |
@@ -338,6 +342,7 @@ The [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Heade
 14.69% of Desktop requests, and 15.2% of mobile requests used the `X-XSS-Protection` header. Digging into the data we can see what the intention for most site operators was in figure 13.
 
 <figure data-markdown="1">
+
 | Configuration  | Desktop | Mobile |
 |----------------|---------|--------|
 | `1;mode=block` | 91.77%  | 91.46% |
@@ -388,6 +393,7 @@ These attacks work by using the fact that browsers will typically include releva
 Being a recently introduced mechanism, the usage of Same-Site cookies is much lower as we would expect at 0.1% of requests on both desktop and mobile. There are use cases when a cookie should be sent cross-site. For example, single sign-on sites implicitly work by setting the cookie along with an authentication token.
 
 <figure data-markdown="1">
+
 | Configuration | Desktop | Mobile |
 |---------------|---------|--------|
 | `strict`      | 53.14%  | 50.64% |
@@ -415,7 +421,7 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
      <th scope="colgroup" colspan="2" >% of Home Pages</th>
     </tr>
     <tr>
-     <th scope="col">prefix value</th>
+     <th scope="col">Prefix value</th>
      <th scope="col">Desktop</th>
      <th scope="col">Mobile</th>
      <th scope="col">Desktop</th>
