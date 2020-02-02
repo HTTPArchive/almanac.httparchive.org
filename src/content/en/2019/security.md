@@ -54,7 +54,8 @@ On the other hand, the [methodology](./methodology) used by the Web Almanac will
 ### Certificate Authorities 
 Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority (CA). With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top ten certificate issuers based on the volume of TLS requests that use their certificate.
 
-<figure markdown>
+<figure data-markdown="1">
+
 | Issuing Certificate Authority                   | Desktop | Mobile |
 |-------------------------------------------------|---------|--------|
 | Google Internet Authority G3                    | 19.26%  | 19.68% |
@@ -83,11 +84,12 @@ Alongside the important requirement to use HTTPS is the requirement to also use 
 
 First of all, we'll look at the keys used for authentication purposes. Traditionally certificates have been issued based on keys using the RSA algorithm, however a newer and better algorithm uses ECDSA (Elliptic Curve Digital Signature Algorithm) which allows the use of smaller keys that demonstrate better performance than their RSA counterparts. Looking at the results of our crawl we still see a large % of the web using RSA.
 
-<figure markdown>
-| Key Type      | Desktop | Mobile |
-|---------------|---------|--------|
-| RSA Keys (%)  | 48.67%  | 58.8%  |
-| ECDA Keys (%) | 21.47%  | 26.41% |
+<figure data-markdown="1">
+
+| Key Type  | Desktop | Mobile |
+|-----------|---------|--------|
+| RSA Keys  | 48.67%  | 58.8%  |
+| ECDA Keys | 21.47%  | 26.41% |
 
 <figcaption>Figure 5. Authentication key types used.</figcaption>
 </figure>
@@ -102,15 +104,16 @@ Looking at the % of TLS requests that provide Forward Secrecy, we can see that s
 ### Cipher suites
 TLS allows the use of various cipher suites - some newer and more secure, and some older and insecure. Traditionally newer TLS versions have added cipher suites but have been reluctant to remove older cipher suites. TLSv1.3 aims to simplify this by offering a reduced set of ciphers suites and will not permit the older, insecure, cipher suites to be used. Tools like [SSL Labs](https://www.ssllabs.com/) allow the TLS setup of a website (including the cipher suites supported and their preferred order) to be easily seen, which helps drive better configurations. We can see that the majority of cipher suites negotiated for TLS requests were indeed excellent:
 
-<figure markdown>
-| Cipher Suite      | Desktop | Mobile |
-|-------------------|---------|--------|
-| AES_128_GCM       | 75.87%  | 76.71% |
-| AES_256_GCM       | 19.73%  | 18.49% |
-| AES_256_CBC       |  2.22%  |  2.26% |
-| AES_128_CBC       |  1.43%  |  1.72% |
-| CHACHA20_POLY1305 |  0.69%  |  0.79% |
-| 3DES_EDE_CBC      |  0.06%  |  0.04% |
+<figure data-markdown="1">
+
+| Cipher Suite        | Desktop | Mobile |
+|---------------------|---------|--------|
+| `AES_128_GCM`       | 75.87%  | 76.71% |
+| `AES_256_GCM`       | 19.73%  | 18.49% |
+| `AES_256_CBC`       |  2.22%  |  2.26% |
+| `AES_128_CBC`       |  1.43%  |  1.72% |
+| `CHACHA20_POLY1305` |  0.69%  |  0.79% |
+| `3DES_EDE_CBC`      |  0.06%  |  0.04% |
 
 <figcaption>Figure 6. Cipher suite usage used.</figcaption>
 </figure>
@@ -122,7 +125,7 @@ It should be noticed that these were the cipher suites used for the crawl using 
 ## Mixed content
 Most sites on the web originally existed as HTTP websites and have had to migrate their site to HTTPS. This 'lift and shift' operation can be difficult and sometimes things get missed or left behind. This results in sites having mixed content, where their pages load over HTTPS but something on the page, perhaps an image or a style, is loaded over HTTP. Mixed content is bad for security and privacy and can be difficult to find and fix.
 
-<figure markdown>
+<figure data-markdown="1">
 | Cipher Suite                    | Desktop | Mobile |
 |---------------------------------|---------|--------|
 | Pages with Mixed Content        | 16.27%  | 15.37% |
@@ -149,7 +152,7 @@ Many new and recent features for site operators to better protect their users ha
 ### HTTP Strict Transport Security
 The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instruct a browser that it should only ever communicate with the site over a secure HTTPS connection. This means that any attempts to use a http:// URL will automatically be converted to https:// before a request is made. Given that over 40% of requests were capable of using TLS, we see a much lower % of requests instructing the browser to require it.
 
-<figure markdown>
+<figure data-markdown="1">
 | HSTS Directive      | Desktop | Mobile |
 |---------------------|---------|--------|
 | `max-age`           | 14.80%  | 12.81% |
@@ -254,7 +257,7 @@ Note the Referrer Policy does not follow the `Referer` header's misspelling [whi
 A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Policy` header and below we can see the configurations those pages used.
 
 
-<figure markdown>
+<figure data-markdown="1">
 | Configuration                     | Desktop | Mobile |
 |-----------------------------------|---------|--------|
 | `no-referrer-when-downgrade`      | 39.16%  | 41.52% |
@@ -276,30 +279,31 @@ As the web platform becomes more powerful and feature rich, attackers can abuse 
 
 Here are the 5 most popular features that are controlled with a Feature Policy.
 
-<figure markdown>
+<figure data-markdown="1">
+
 | Feature           | Desktop | Mobile |
 |-------------------|---------|--------|
 | `microphone`      | 10.78%  | 10.98% |
 | `camera`          |  9.95%  | 10.19% |
-| `payment`         | 9.54%   |  9.54% |
-| `geolocation`     | 9.38%   |  9.41% |
-| `gyroscope`       | 7.92%   |  7.90% |
+| `payment`         |  9.54%  |  9.54% |
+| `geolocation`     |  9.38%  |  9.41% |
+| `gyroscope`       |  7.92%  |  7.90% |
 
 <figcaption>Figure 12. Top 5 `Feature-Policy` options used.</figcaption>
 </figure>
 
 We can see that the most popular feature to take control of is the microphone, with almost 11% of desktop and mobile pages issuing a policy that includes it. Delving deeper into the data we can look at what those pages are allowing or blocking.
 
-<figure markdown>
+<figure data-markdown="1">
 
-| Feature    | Configuration | Usage |
-|------------|---------------|-------|
-| microphone | none          | 9.09% |
-| microphone | none          | 8.97% |
-| microphone | self          | 0.86% |
-| microphone | self          | 0.85% |
-| microphone | *             | 0.64% |
-| microphone | *             | 0.53% |
+| Feature      | Configuration | Usage |
+|--------------|---------------|-------|
+| `microphone` | `none`        | 9.09% |
+| `microphone` | `none`        | 8.97% |
+| `microphone` | `self`        | 0.86% |
+| `microphone` | `self`        | 0.85% |
+| `microphone` | `*`           | 0.64% |
+| `microphone` | `*`           | 0.53% |
 
 <figcaption>Figure 13. Settings used for `microphone` feature.</figcaption>
 </figure>
@@ -311,7 +315,7 @@ The [`X-Frame-Options`](https://tools.ietf.org/html/rfc7034) header allows a pag
 
 We see that the usage of the `X-Frame-Options` header is quite high on both desktop (16.99%) and mobile (14.77%) and can also look more closely at the specific configurations used.
 
-<figure markdown>
+<figure data-markdown="1">
 | Configuration | Desktop | Mobile |
 |---------------|---------|--------|
 | `sameorigin`  | 84.92%  | 83.86% |
@@ -333,7 +337,7 @@ The [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Heade
 
 14.69% of Desktop requests, and 15.2% of mobile requests used the `X-XSS-Protection` header. Digging into the data we can see what the intention for most site operators was in figure 13.
 
-<figure markdown>
+<figure data-markdown="1">
 | Configuration  | Desktop | Mobile |
 |----------------|---------|--------|
 | `1;mode=block` | 91.77%  | 91.46% |
@@ -383,7 +387,7 @@ These attacks work by using the fact that browsers will typically include releva
 
 Being a recently introduced mechanism, the usage of Same-Site cookies is much lower as we would expect at 0.1% of requests on both desktop and mobile. There are use cases when a cookie should be sent cross-site. For example, single sign-on sites implicitly work by setting the cookie along with an authentication token.
 
-<figure markdown>
+<figure data-markdown="1">
 | Configuration | Desktop | Mobile |
 |---------------|---------|--------|
 | `strict`      | 53.14%  | 50.64% |
@@ -418,14 +422,14 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
      <th scope="col">Mobile</th>
     </tr>
     <tr>
-     <td>__Secure-</td>
+     <td><code>__Secure-</code></td>
      <td>640</td>
      <td>628</td>
      <td>0.01%</td>
      <td>0.01%</td>
     </tr>
     <tr>
-     <td>__Host-</td>
+     <td><code>__Host-</code></td>
      <td>154</td>
      <td>157</td>
      <td>0.00%</td>

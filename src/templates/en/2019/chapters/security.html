@@ -317,7 +317,7 @@
       <p>On the other hand, the <a href="./methodology">methodology</a> used by the Web Almanac will also <em>under-report</em> usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.</p>
       <h3 id="certificate-authorities">Certificate Authorities</h3>
       <p>Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority (CA). With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top ten certificate issuers based on the volume of TLS requests that use their certificate.</p>
-      <figure id="fig-4">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -391,7 +391,7 @@
       <h3 id="authentication-key-type">Authentication key type</h3>
       <p>Alongside the important requirement to use HTTPS is the requirement to also use a good configuration. With so many configuration options and choices to make, this is a careful balance.</p>
       <p>First of all, we'll look at the keys used for authentication purposes. Traditionally certificates have been issued based on keys using the RSA algorithm, however a newer and better algorithm uses ECDSA (Elliptic Curve Digital Signature Algorithm) which allows the use of smaller keys that demonstrate better performance than their RSA counterparts. Looking at the results of our crawl we still see a large % of the web using RSA.</p>
-      <figure id="fig-5">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -404,12 +404,12 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>RSA Keys (%)</td>
+                  <td>RSA Keys</td>
                   <td>48.67%</td>
                   <td>58.8%</td>
                 </tr>
                 <tr>
-                  <td>ECDA Keys (%)</td>
+                  <td>ECDA Keys</td>
                   <td>21.47%</td>
                   <td>26.41%</td>
                 </tr>
@@ -425,7 +425,7 @@
       <p>Looking at the % of TLS requests that provide Forward Secrecy, we can see that support is tremendous. 96.92% of Desktop and 96.49% of mobile requests use Forward secrecy. We'd expect that the continuing increase in the adoption of TLSv1.3 will further increase these numbers.</p>
       <h3 id="cipher-suites">Cipher suites</h3>
       <p>TLS allows the use of various cipher suites - some newer and more secure, and some older and insecure. Traditionally newer TLS versions have added cipher suites but have been reluctant to remove older cipher suites. TLSv1.3 aims to simplify this by offering a reduced set of ciphers suites and will not permit the older, insecure, cipher suites to be used. Tools like <a href="https://www.ssllabs.com/">SSL Labs</a> allow the TLS setup of a website (including the cipher suites supported and their preferred order) to be easily seen, which helps drive better configurations. We can see that the majority of cipher suites negotiated for TLS requests were indeed excellent:</p>
-      <figure id="fig-6">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -438,32 +438,32 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>AES_128_GCM</td>
+                  <td><code>AES_128_GCM</code></td>
                   <td>75.87%</td>
                   <td>76.71%</td>
                 </tr>
                 <tr>
-                  <td>AES_256_GCM</td>
+                  <td><code>AES_256_GCM</code></td>
                   <td>19.73%</td>
                   <td>18.49%</td>
                 </tr>
                 <tr>
-                  <td>AES_256_CBC</td>
+                  <td><code>AES_256_CBC</code></td>
                   <td>2.22%</td>
                   <td>2.26%</td>
                 </tr>
                 <tr>
-                  <td>AES_128_CBC</td>
+                  <td><code>AES_128_CBC</code></td>
                   <td>1.43%</td>
                   <td>1.72%</td>
                 </tr>
                 <tr>
-                  <td>CHACHA20_POLY1305</td>
+                  <td><code>CHACHA20_POLY1305</code></td>
                   <td>0.69%</td>
                   <td>0.79%</td>
                 </tr>
                 <tr>
-                  <td>3DES_EDE_CBC</td>
+                  <td><code>3DES_EDE_CBC</code></td>
                   <td>0.06%</td>
                   <td>0.04%</td>
                 </tr>
@@ -477,7 +477,7 @@
       <p>It should be noticed that these were the cipher suites used for the crawl using Chrome, but sites will likely also support other cipher suites as well for older browsers. Other sources, for example <a href="https://www.ssllabs.com/ssl-pulse/">SSL Pulse</a>, can provide more detail on the range of all cipher suites and protocols supported.</p>
       <h2 id="mixed-content">Mixed content</h2>
       <p>Most sites on the web originally existed as HTTP websites and have had to migrate their site to HTTPS. This 'lift and shift' operation can be difficult and sometimes things get missed or left behind. This results in sites having mixed content, where their pages load over HTTPS but something on the page, perhaps an image or a style, is loaded over HTTP. Mixed content is bad for security and privacy and can be difficult to find and fix.</p>
-      <figure id="fig-7">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -509,7 +509,7 @@
       <p>In the past web browsers have allowed passive mixed content and flagged it with a warning but blocked active mixed content. More recently however, Chrome <a href="https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html">announced</a> it intends to improve here and as HTTPS becomes the norm it will block all mixed content instead.</p>
       <h2 id="security-headers">Security headers</h2>
       <p>Many new and recent features for site operators to better protect their users have come in the form of new HTTP response headers that can configure and control security protections built into the browser. Some of these features are easy to enable and provide a huge level of protection whilst others require a little more work from site operators. If you wish to check if a site is using these headers and has them correctly configured, you can use the <a href="https://securityheaders.com/">Security Headers</a> tool to scan it.</p>
-      <figure id="fig-8">
+      <figure id="fig-4">
         <a href="/static/images/2019/08_Security/fig8.png">
           <img src="/static/images/2019/08_Security/fig8.png" alt="Figure 8. Usage of Security Headers" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="760" height="450" data-width="760" data-height="450" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive" loading="lazy" />
         </a>
@@ -518,7 +518,7 @@
       </figure>
       <h3 id="http-strict-transport-security">HTTP Strict Transport Security</h3>
       <p>The <a href="https://tools.ietf.org/html/rfc6797">HSTS</a> header allows a website to instruct a browser that it should only ever communicate with the site over a secure HTTPS connection. This means that any attempts to use a http:// URL will automatically be converted to https:// before a request is made. Given that over 40% of requests were capable of using TLS, we see a much lower % of requests instructing the browser to require it.</p>
-      <figure id="fig-9">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -552,7 +552,7 @@
         <figcaption>Figure 9. HSTS directive usage.</figcaption>
       </figure>
       <p>Less than 15% of mobile and desktop pages are issuing a HSTS with a <code>max-age</code> directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the <code>includeSubDomains</code> directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS <code>max-age</code>, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration representing half a year (60 x 60 x 24 x 365/2).</p>
-      <figure id="fig-10">
+      <figure id="fig-5">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -631,7 +631,7 @@
       </p>
       <p>Note the Referrer Policy does not follow the <code>Referer</code> header's misspelling <a href="https://stackoverflow.com/questions/3087626/was-the-misspelling-of-the-http-field-name-referer-intentional">which has become a well-known error</a>.</p>
       <p>A total of 3.25% of desktop pages and 2.95% of mobile pages issue a <code>Referrer-Policy</code> header and below we can see the configurations those pages used.</p>
-      <figure id="fig-11">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -695,7 +695,7 @@
         As the web platform becomes more powerful and feature rich, attackers can abuse these new APIs in interesting ways. In order to limit misuse of powerful APIs, a site operator can issue a <a href="https://w3c.github.io/webappsec-feature-policy/"><code>Feature-Policy</code></a> header to disable features that are not required, preventing them from being abused.
       </p>
       <p>Here are the 5 most popular features that are controlled with a Feature Policy.</p>
-      <figure id="fig-12">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -739,7 +739,7 @@
         <figcaption>Figure 12. Top 5 <code>Feature-Policy</code> options used.</figcaption>
       </figure>
       <p>We can see that the most popular feature to take control of is the microphone, with almost 11% of desktop and mobile pages issuing a policy that includes it. Delving deeper into the data we can look at what those pages are allowing or blocking.</p>
-      <figure id="fig-13">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -752,33 +752,33 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>microphone</td>
-                  <td>none</td>
+                  <td><code>microphone</code></td>
+                  <td><code>none</code></td>
                   <td>9.09%</td>
                 </tr>
                 <tr>
-                  <td>microphone</td>
-                  <td>none</td>
+                  <td><code>microphone</code></td>
+                  <td><code>none</code></td>
                   <td>8.97%</td>
                 </tr>
                 <tr>
-                  <td>microphone</td>
-                  <td>self</td>
+                  <td><code>microphone</code></td>
+                  <td><code>self</code></td>
                   <td>0.86%</td>
                 </tr>
                 <tr>
-                  <td>microphone</td>
-                  <td>self</td>
+                  <td><code>microphone</code></td>
+                  <td><code>self</code></td>
                   <td>0.85%</td>
                 </tr>
                 <tr>
-                  <td>microphone</td>
-                  <td>*</td>
+                  <td><code>microphone</code></td>
+                  <td><code>*</code></td>
                   <td>0.64%</td>
                 </tr>
                 <tr>
-                  <td>microphone</td>
-                  <td>*</td>
+                  <td><code>microphone</code></td>
+                  <td><code>*</code></td>
                   <td>0.53%</td>
                 </tr>
               </tbody>
@@ -793,7 +793,7 @@
         The <a href="https://tools.ietf.org/html/rfc7034"><code>X-Frame-Options</code></a> header allows a page to control whether or not it can be placed in an iframe by another page. Whilst lacking the flexibility of <code>frame-ancestors</code> in CSP, mentioned above, it was effective if you didn't require fine grained control of framing.
       </p>
       <p>We see that the usage of the <code>X-Frame-Options</code> header is quite high on both desktop (16.99%) and mobile (14.77%) and can also look more closely at the specific configurations used.</p>
-      <figure id="fig-14">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -837,7 +837,7 @@
         The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection"><code>X-XSS-Protection</code></a> header allows a site to control the XSS Auditor or XSS Filter built into a browser, which should in theory provide some XSS protection.
       </p>
       <p>14.69% of Desktop requests, and 15.2% of mobile requests used the <code>X-XSS-Protection</code> header. Digging into the data we can see what the intention for most site operators was in figure 13.</p>
-      <figure id="fig-15">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -898,7 +898,7 @@
       <p>As a much more recent addition to cookie protections, the <code>SameSite</code> flag is a powerful protection against <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">Cross-Site Request Forgery (CSRF)</a> attacks (often also known as XSRF).</p>
       <p>These attacks work by using the fact that browsers will typically include relevant cookies in all requests. Therefore, if you are logged in, and so have cookies set, and then visit a malicious site, it can make a call for an API and the browser will "helpfully" send the cookies. Adding the <code>SameSite</code> attribute to a Cookie, allows a website to inform the browser not to send the cookies when calls are issued from third-party sites and hence the attack fails.</p>
       <p>Being a recently introduced mechanism, the usage of Same-Site cookies is much lower as we would expect at 0.1% of requests on both desktop and mobile. There are use cases when a cookie should be sent cross-site. For example, single sign-on sites implicitly work by setting the cookie along with an authentication token.</p>
-      <figure id="fig-16">
+      <figure data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -954,14 +954,14 @@
                   <th scope="col">Mobile</th>
                 </tr>
                 <tr>
-                  <td>__Secure-</td>
+                  <td><code>__Secure-</code></td>
                   <td>640</td>
                   <td>628</td>
                   <td>0.01%</td>
                   <td>0.01%</td>
                 </tr>
                 <tr>
-                  <td>__Host-</td>
+                  <td><code>__Host-</code></td>
                   <td>154</td>
                   <td>157</td>
                   <td>0.00%</td>
