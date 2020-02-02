@@ -18,14 +18,15 @@ indexBoxTitle.addEventListener('click', function(e) {
   indexBox.classList.toggle('show');
 });
 
-document.addEventListener("keypress", function onPress(event) {
- 	if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<') {
+document.addEventListener("keyup", function onPress(event) {
+
+ 	if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<' || event.key === 'ArrowLeft') {
  	  var previous = document.getElementById('previous-chapter');
  	  if (previous) {
  	    previous.click();
  		}
  	}
- 	if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>') {
+ 	if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>' || event.key === 'ArrowRight') {
  	  var next = document.getElementById('next-chapter');
  	  if (next) {
  	    next.click();
@@ -83,7 +84,11 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
       {% set authordata = config.contributors[author] if author in config.contributors else None %}
     {% if authordata %}
       <li>
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" /></a>
+          <div aria-hidden="true">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}" tabindex="-1">
+              <img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" />
+            </a>
+          </div>
           <div class="info">
             <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
               {% if authordata.twitter or authordata.github %}

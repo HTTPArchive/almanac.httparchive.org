@@ -38,7 +38,7 @@ La detección de páginas no siempre es confiable, y algunos sitios bloquean exp
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>Móvil</th>
         <th>Escritorio</th>
       </tr>
@@ -458,16 +458,16 @@ Nosotros, como comunidad web, podemos abogar por proporcionar transparencia usan
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th colspan="2">Móvil</th>
-        <th colspan="2">Escritorio</th>
+        <td></td>
+        <th scope="colgroup" colspan="2">Móvil</th>
+        <th scope="colgroup" colspan="2">Escritorio</th>
       </tr>
       <tr>
-        <th>Percentil</th>
-        <th>Ancho (px)</th>
-        <th>Alto (px)</th>
-        <th>Ancho (px)</th>
-        <th>Alto (px)</th>
+        <th scope="col">Percentil</th>
+        <th scope="col">Ancho (px)</th>
+        <th scope="col">Alto (px)</th>
+        <th scope="col">Ancho (px)</th>
+        <th scope="col">Alto (px)</th>
       </tr>
     </thead>
     <tbody>

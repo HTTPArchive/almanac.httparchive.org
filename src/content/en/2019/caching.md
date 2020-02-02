@@ -84,7 +84,7 @@ The tool [RedBot.org](https://redbot.org/) allows you to input a URL and see a d
     <img alt="Figure 1. Cache-Control information from RedBot." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="138">
   </a>
   <div id="fig1-description" class="visually-hidden">Redbot example response showing detailed information about when the resource was changed, whether caches can store it, how long it can be considered fresh for and warnings.</div>
-  <figcaption d="fig1-caption">Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
+  <figcaption id="fig1-caption">Figure 1. <code>Cache-Control</code> information from RedBot.</figcaption>
 </figure>
 
 If no caching headers are present in a response, then the [client is permitted to heuristically cache the response](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). Most clients implement a variation of the RFC's suggested heuristic, which is 10% of the time since `Last-Modified`. However, some may cache the response indefinitely. So, it is important to set specific caching rules to ensure that you are in control of the cacheability. 
@@ -122,19 +122,19 @@ The table below details the cache TTL values for desktop requests by type. Most 
 <figure>
   <table>
     <tr>
-     <th></th>
-     <th colspan="5" >Desktop Cache TTL Percentiles (Hours)</th>
+     <td></td>
+     <th scope="colgroup" colspan="5" >Desktop Cache TTL Percentiles (Hours)</th>
     </tr>
     <tr>
-     <th></th>
-     <th>10</th>
-     <th>25</th>
-     <th>50</th>
-     <th>75</th>
-     <th>90</th>
+     <td></td>
+     <th scope="col">10</th>
+     <th scope="col">25</th>
+     <th scope="col">50</th>
+     <th scope="col">75</th>
+     <th scope="col">90</th>
     </tr>
     <tr>
-     <th>Audio</th>
+     <th scope="row">Audio</th>
      <td><p style="text-align: right">12</p></td>
      <td><p style="text-align: right">24</p></td>
      <td><p style="text-align: right">720</p></td>
@@ -142,7 +142,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">8,760</p></td>
     </tr>
     <tr>
-     <th>CSS</th>
+     <th scope="row">CSS</th>
      <td><p style="text-align: right">720</p></td>
      <td><p style="text-align: right">8,760</p></td>
      <td><p style="text-align: right">8,760</p></td>
@@ -150,7 +150,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">8,760</p></td>
     </tr>
     <tr>
-     <th>Font</th>
+     <th scope="row">Font</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">3</p></td>
      <td><p style="text-align: right">336</p></td>
@@ -158,7 +158,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">87,600</p></td>
     </tr>
     <tr>
-     <th>HTML</th>
+     <th scope="row">HTML</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">168</p></td>
      <td><p style="text-align: right">720</p></td>
@@ -166,7 +166,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">8,766</p></td>
     </tr>
     <tr>
-     <th>Image</th>
+     <th scope="row">Image</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">1</p></td>
      <td><p style="text-align: right">28</p></td>
@@ -174,7 +174,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">8,760</p></td>
     </tr>
     <tr>
-     <th>Other</th>
+     <th scope="row">Other</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">2</p></td>
      <td><p style="text-align: right">336</p></td>
@@ -182,7 +182,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">8,760</p></td>
     </tr>
     <tr>
-     <th>Script</th>
+     <th scope="row">Script</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">1</p></td>
@@ -190,7 +190,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">720</p></td>
     </tr>
     <tr>
-     <th>Text</th>
+     <th scope="row">Text</th>
      <td><p style="text-align: right">21</p></td>
      <td><p style="text-align: right">336</p></td>
      <td><p style="text-align: right">7,902</p></td>
@@ -198,7 +198,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">8,740</p></td>
     </tr>
     <tr>
-     <th>Video</th>
+     <th scope="row">Video</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">4</p></td>
      <td><p style="text-align: right">24</p></td>
@@ -206,7 +206,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
      <td><p style="text-align: right">336</p></td>
     </tr>
     <tr>
-     <th>XML</th>
+     <th scope="row">XML</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">< 1</p></td>
@@ -575,6 +575,7 @@ In fact, one of the [HTTP Archive trend reports shows the adoption of service wo
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">
     <img src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="Figure 17. Timeseries of service worker controlled pages." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311">
+  </a>
   <div id="fig17-description" class="visually-hidden">A time series chart showing service worker controlled site usage from October 2016 until July 2019. Usage has been steadily growing throughout the years for both mobile and desktop but is still less than 0.6% for both.</div>
   <figcaption id="fig17-caption">Figure 17. Timeseries of service worker controlled pages. (Source: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
 </figure>
@@ -586,7 +587,7 @@ In the table below, you can see a summary of AppCache vs service worker usage. 3
 <figure>
   <table>
     <tr>
-     <th></th>
+     <td></td>
      <th>Does Not Use Server Worker</th>
      <th>Uses Service Worker</th>
      <th>Total</th>
@@ -618,13 +619,13 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. 581
 <figure>
   <table>
     <tr>
-     <th></th>
-     <th></th>
-     <th>Does Not Use Service Worker</th>
-     <th>Uses Service Worker</th>
+     <td></td>
+     <td></td>
+     <th scope="col">Does Not Use Service Worker</th>
+     <th scope="col">Uses Service Worker</th>
     </tr>
     <tr>
-     <th rowspan="2" >HTTP</th>
+     <th scope="rowgroup" rowspan="2" >HTTP</th>
      <td>Does Not Use AppCache</td>
      <td><p style="text-align: right">1,968,736</p></td>
      <td><p style="text-align: right">907</p></td>
@@ -635,7 +636,7 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. 581
      <td><p style="text-align: right">1</p></td>
     </tr>
     <tr>
-     <th rowspan="2" >HTTPS</th>
+     <th scope="rowgroup" rowspan="2" >HTTPS</th>
      <td>Does Not Use AppCache</td>
      <td><p style="text-align: right">3,076,601</p></td>
      <td><p style="text-align: right">31,334</p></td>
