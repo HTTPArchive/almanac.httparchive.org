@@ -29,7 +29,7 @@ As the web evolved, it became more powerful, but also more complicated. As a con
 
 <figure>
   <a href="/static/images/2019/14_CMS/web-evolution.png">
-    <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018." width="600" height="491.53">
+    <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018." width="600" height="492">
   </a>
   <div id="fig1-description" class="visually-hidden">On the left, labeled circa 1999, we have a bar chart with two bars showing what can be done is close to what is actually done. On the right, labeled 2018, we have a similar bar chart but what can be done is much larger, and what is done is slightly larger. The gap between what can be done and what is actually done has greatly increased.</div>
   <figcaption id="fig1-caption">Figure 1. Chart illustrating the increase in web capabilities from 1999 to 2018.</figcaption>
@@ -58,7 +58,7 @@ In essence, this means that there are many CMS platforms available out there. Th
 
 <figure>
   <a href="/static/images/2019/14_CMS/cms-logos.png">
-    <img src="/static/images/2019/14_CMS/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. The top content management systems." width="600" height="559.11">
+    <img src="/static/images/2019/14_CMS/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. The top content management systems." width="600" height="559">
   </a>
   <div id="fig3-description" class="visually-hidden">Logos of the top CMS providers, including WordPress, Drupal, Wix, etc.</div>
   <figcaption id="fig3-caption">Figure 3. The top content management systems.</figcaption>
@@ -263,7 +263,7 @@ The median amount of 3rd party requests on mobile CMS pages is 15 and weigh 264.
 
 <figure>
   <a href="/static/images/2019/14_CMS/fig11.png">
-    <img src="/static/images/2019/14_CMS/fig11.png" alt="" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
+    <img src="/static/images/2019/14_CMS/fig11.png" alt="Figure 11. Distribution of the number of third-party requests on CMS pages." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
   </a>
   <div id="fig11-description" class="visually-hidden">Bar chart of percentiles 10, 25, 50, 75, and 90 representing the distribution of third-party requests on CMS pages for desktop and mobile. The median (50th percentile) desktop third-party request count is 16. The 10th percentile is 3, 25th 7, 75th 31, and 90th 52. Desktop and mobile have nearly equivalent distributions.</div>
   <figcaption id="fig11-caption">Figure 11. Distribution of the number of third-party requests on CMS pages.</figcaption>

@@ -221,13 +221,13 @@ Although the numbers are bleak for the speed of the web, the good news is that S
 
 ### Structured data
 
-Structured data allows website owners to add additional semantic data to their web pages, by adding [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) snippets or [Microdata](https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata), for example. Search engines parse this data to better understand these pages and sometimes use the markup to display additional relevant information in the search results. The most commonly found types of structured data are:
+Structured data allows website owners to add additional semantic data to their web pages, by adding [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) snippets or [Microdata](https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata), for example. Search engines parse this data to better understand these pages and sometimes use the markup to display additional relevant information in the search results. Some of the useful types of structured data are:
 
 - [reviews](https://developers.google.com/search/docs/data-types/review-snippet)
 - [products](https://developers.google.com/search/docs/data-types/product)
 - [businesses](https://developers.google.com/search/docs/data-types/local-business)
 - [movies](https://developers.google.com/search/docs/data-types/movie)
-- and [more](https://developers.google.com/search/docs/guides/search-gallery)
+- and [you can search for more types of supported structured data types](https://developers.google.com/search/docs/guides/search-gallery)
 
 The [extra visibility](https://developers.google.com/search/docs/guides/enhance-site) that structured data can provide for websites is interesting for site owners, given that it can help to create more opportunities for traffic. For example, the relatively new [FAQ schema](https://developers.google.com/search/docs/data-types/faqpage) will double the size of your snippet and the real estate of your site in the SERP.
 

@@ -54,7 +54,7 @@ After being parsed and compiled, JavaScript fetched by the browser needs to proc
 We can get an idea by analyzing main thread processing times for V8 at different percentiles:
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig2.png">
+   <a href="/static/images/2019/01_JavaScript/fig3.png">
       <img src="/static/images/2019/01_JavaScript/fig3.png" alt="Figure 3. V8 Main thread processing times by device." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive">
    </a>
 	<div id="fig3-description" class="visually-hidden">Bar chart showing 141 ms/377 ms of processing time is used in the p10 percentile on desktop and mobile respectively, 352/988 ms for p25, 849/2,437 ms for p50, 1,850/5,518 ms for p75, and 3,543/10,735 ms for p90.</div>
@@ -67,7 +67,7 @@ Although this data shows how much longer it can take for a mobile device to proc
 
 <figure>
 	<a href="/static/images/2019/01_JavaScript/js-processing-reddit.png">
-		<img src="/static/images/2019/01_JavaScript/js-processing-reddit.png" alt="JavaScript processing times for Reddit.com" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="363.59">
+		<img src="/static/images/2019/01_JavaScript/js-processing-reddit.png" alt="JavaScript processing times for Reddit.com" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="363">
 	</a>
 	<div id="fig4-description" class="visually-hidden">Bar chart showing 3 different devices: at the top a Pixel 3 has small amount on both the main thread and the worker thread of less than 400ms. For a Moto G4 it is approximately 900 ms on main thread and a further 300 ms on worker thread. And the final bar is an Alcatel 1X 5059D with over 2,000 ms on the main thread and over 500 ms on worker thread.</div>
 	<figcaption id="fig4-caption">Figure 4. JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.</figcaption>

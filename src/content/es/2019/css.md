@@ -224,7 +224,7 @@ Una pregunta de seguimineto a la consulta del número total de fuentes por pági
 
 <figure>
   <a href="/static/images/2019/02_CSS/fig16.png">
-    <img src="/static/images/2019/02_CSS/fig16.png" alt="Figura 16. Principales fuentes web." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="450.5" data-width="600" data-height="450.5" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1883567922&amp;format=interactive">
+    <img src="/static/images/2019/02_CSS/fig16.png" alt="Figura 16. Principales fuentes web." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="450" data-width="600" data-height="450" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1883567922&amp;format=interactive">
   </a>
   <div id="fig16-description" class="visually-hidden">Gráfico de barras de las fuentes más populares. Entre las páginas de escritorio, están Open Sans (24%), Roboto (15%), Montserrat (5%), Source Sans Pro (4%), Noto Sans JP (3%) y Lato (3%). En los dispositivos móviles, las diferencias más notables son que Open Sans se usa el 22% del tiempo (en lugar del 24%) y Roboto se usa el 19% del tiempo (en lugar del 15%).</div>
   <figcaption id="fig16-caption">Figura 16. Principales fuentes web.</figcaption>
