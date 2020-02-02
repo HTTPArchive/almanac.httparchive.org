@@ -185,6 +185,8 @@ If you'd like to see a skip link in action for yourself, you can! Just do a quic
   <figcaption id="fig7-caption">Figure 7. What a skip link looks like on google.com.</figcaption>
 </figure>
 
+In fact you don't need to even leave this site as we [use them here too](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)!
+
 It's hard to accurately determine what a skip link is when analyzing sites. For this analysis, if we found an anchor link (`href=#heading1`) within the first 3 links on the page, we defined this as a page with a skip link. So 14.19% is a strict upper bound.
 
 ### Shortcuts

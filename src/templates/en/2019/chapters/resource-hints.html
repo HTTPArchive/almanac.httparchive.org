@@ -341,7 +341,7 @@
       <h2 id="the-future">The future</h2>
       <p>At the moment, there are no proposals to expand the current set of resource hints. However, priority hints and native lazy loading are two proposed technologies that are similar in spirit to resource hints in that they provide APIs for optimizing the loading process.</p>
       <h3 id="priority-hints">Priority Hints</h3>
-      <p><a href="https://wicg.github.io/priority-hints/">Priority hints</a> are an API for expressing the fetch priority of a resource a resource: <code>high</code>, <code>low</code>, or <code>auto</code>. They can be used with a wide range of HTML tags: specifically <code>&lt;image&gt;</code>, <code>&lt;link</code>&gt;, <code>&lt;script&gt;</code>, and <code>&lt;iframe&gt;</code>.</p>
+      <p><a href="https://wicg.github.io/priority-hints/">Priority hints</a> are an API for expressing the fetch priority of a resource: <code>high</code>, <code>low</code>, or <code>auto</code>. They can be used with a wide range of HTML tags: specifically <code>&lt;image&gt;</code>, <code>&lt;link</code>&gt;, <code>&lt;script&gt;</code>, and <code>&lt;iframe&gt;</code>.</p>
       <figure id="fig-5">
         <div class="code-block floating-card">
           <pre><code>&lt;carousel&gt;
@@ -364,7 +364,7 @@
       <p>The API for native lazy loading looks like this: <code>&lt;img src="cat.jpg" loading="lazy"&gt;</code>.</p>
       <p>Native lazy loading is available in browsers based on Chromium 76 and up. The API was announced too late for it to be included in the dataset for this year's Web Almanac, but it is something to keep an eye out for in the coming year.</p>
       <h2 id="conclusion">Conclusion</h2>
-      <p>Overall, this data seems to suggest that there is still room for further adoption of resource hints. Most sites would benefit from adopting and/or switching to <code>preconnect</code> from <code>dns-prefetch</code>. A much smaller subset of sites would benefit from adopting <code>prefetch</code> and/or <code>preload</code>. There is greater nuance in successfully using <code>prefetch</code> and <code>preload</code>, which constrains its adoption to a certain extent, but the potential payoff is also greater. HTTP/2 Push and the maturation of machine learning technologies is also likely to increase the adoption of <code>preload</code> and `prefetch.</p>
+      <p>Overall, this data seems to suggest that there is still room for further adoption of resource hints. Most sites would benefit from adopting and/or switching to <code>preconnect</code> from <code>dns-prefetch</code>. A much smaller subset of sites would benefit from adopting <code>prefetch</code> and/or <code>preload</code>. There is greater nuance in successfully using <code>prefetch</code> and <code>preload</code>, which constrains its adoption to a certain extent, but the potential payoff is also greater. HTTP/2 Push and the maturation of machine learning technologies is also likely to increase the adoption of <code>preload</code> and <code>prefetch</code>.</p>
     </article>
     {{ render_actions() }}
     <section class="authors">

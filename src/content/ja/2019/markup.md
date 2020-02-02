@@ -50,7 +50,7 @@ last_updated: 2019-12-02T00:00:00.000Z
 パーサーによる解析後のDOMを使って調査すると、データは普遍的に表示されます。なので、４番目に使用頻度の高い要素からはじめました。
 以下は、その時点から現在までのデータの比較です。(ここでは面白いので出現数を含めました)
 
-<figure id="fig1" markdown>
+<figure id="fig1" data-markdown="1">
 
 2005 (サイト毎) | 2019 (サイト毎) | 2019 (出現数)
 -- | -- | --
@@ -87,7 +87,7 @@ tr | span | option
 図2の2005年のHixieのレポートと図3の最新データを比較すると、DOMツリーの平均サイズが大きくなっていることがわかります。
 
 <figure id="fig4">
-  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320.64">
+  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
    <div id="fig4-description" class="visually-hidden">相対周波数が19個の要素点の周りで釣鐘曲線となっていることを示すグラフ</div>
   <figcaption id="fig4-caption">図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム。</figcaption>
 </figure>
