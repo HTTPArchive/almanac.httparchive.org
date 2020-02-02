@@ -183,7 +183,7 @@
       <p class="note">Remarque&nbsp;: cette démarche n’est pas dénuée, en soi, de biais potentiels. Des solutions populaires, pouvant être utilisées par plusieurs sites, peuvent introduire un balisage non standard "invisible" à chaque auteur. Ainsi, il faut veiller à reconnaître que l’utilisation n’implique pas nécessairement la connaissance directe de l’auteur et l’adoption consciente puisqu’elle répond à un besoin commun, d’une manière commune. Au cours de notre recherche, nous avons trouvé plusieurs exemples, dont certains seront explicités.</p>
       <h2 id="principaux-éléments-de-balisage-et-généralités">Principaux éléments de balisage et généralités</h2>
       <p>En 2005, l’enquête de Hixie a listé les principaux éléments les plus fréquemment utilisés sur les pages. Les 3 premiers étaient <code>html</code>, <code>head</code> et <code>body</code>, ce qu’il a noté comme intéressant, car ils sont facultatifs et créés par l’analyseur s’ils sont omis. Étant donné que nous utilisons le DOM après interprétation, ils apparaissent universellement dans nos données. C’est pourquoi nous commencerons par le 4<sup>e</sup> élément le plus utilisé. Vous trouverez ci-dessous une comparaison des données collectées à son époque et aujourd’hui (j’ai inclus ici la comparaison en fréquence, pour le plaisir).</p>
-      <figure id="fig1" markdown="">
+      <figure id="fig1" data-markdown="1">
         <div class="table-wrap">
           <div class="table-wrap-container">
             <table>
@@ -256,7 +256,7 @@
       </figure>
       <p>En comparant les dernières données de la figure 3 à celles du rapport d’Hixie de 2005 à la figure 2, nous pouvons constater que la taille moyenne des arbres DOM a augmenté.</p>
       <figure id="fig4">
-        <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogramme des types d’éléments par page, d’après l’étude de Hixie en 2005" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320.64" loading="lazy" />
+        <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histogramme des types d’éléments par page, d’après l’étude de Hixie en 2005" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320" loading="lazy" />
         <div id="fig4-description" class="visually-hidden">Graphique montrant que la fréquence relative est une courbe en cloche autour d’un point culminant correspondant à 19 éléments.</div>
         <figcaption id="fig4-caption">Figure 4. Histogramme des types d’éléments par page, d’après l’étude de Hixie en 2005</figcaption>
       </figure>

@@ -38,7 +38,7 @@ Page detection is not always reliable, and some sites explicitly block detection
   <table>
     <thead>
       <tr>
-        <th></th>
+        <td></td>
         <th>Mobile</th>
         <th>Desktop</th>
       </tr>
@@ -458,16 +458,16 @@ We as a web community can provide better guidance/advocacy for enabling transpar
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th colspan="2">Mobile</th>
-        <th colspan="2">Desktop</th>
+        <td></td>
+        <th scope="colgroup" colspan="2">Mobile</th>
+        <th scope="colgroup" colspan="2">Desktop</th>
       </tr>
       <tr>
-        <th>Percentile</th>
-        <th>Width (px)</th>
-        <th>Height (px)</th>
-        <th>Width (px)</th>
-        <th>Height (px)</th>
+        <th scope="col">Percentile</th>
+        <th scope="col">Width (px)</th>
+        <th scope="col">Height (px)</th>
+        <th scope="col">Width (px)</th>
+        <th scope="col">Height (px)</th>
       </tr>
     </thead>
     <tbody>
