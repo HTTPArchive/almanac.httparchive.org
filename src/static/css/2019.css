@@ -596,7 +596,7 @@ footer {
     'home-logo nav-items nav-items nav-items'
     'hr hr hr hr'
     'copyright accessibility ha-logo social-media';
-  grid-template-columns: 300px 1fr 1fr 120px 0 0;
+  grid-template-columns: 400px 1fr 1fr 120px 0 0;
   /* 20px same as .container padding */
   padding-left: 20px;
   padding-right: 20px;
@@ -637,6 +637,12 @@ footer .accessibility {
   align-items: center;
   justify-content: center;
 }
+footer .accessibility a{
+  text-decoration: none;
+}
+footer .accessibility a:hover, footer .accessibility a:focus{
+  text-decoration: underline;
+}
 footer .social-media {
   grid-area: social-media;
   display: flex;
@@ -655,7 +661,7 @@ footer hr:last-of-type {
 
 p.copyright, p.accessibility {
   margin: 0;
-  font-size: 12px;
+  font-size: 16px;
   color: #F2F2F2;
 }
 p.copyright a, p.accessibility a {
@@ -695,7 +701,7 @@ p.copyright a, p.accessibility a {
       'nav-items nav-items nav-items nav-items'
       'hr-last hr-last hr-last hr-last'
       'copyright accessibility ha-logo social-media';
-    grid-template-columns: 2fr 1fr 1fr 120px 0 0;
+    grid-template-columns: 3fr 1fr 1fr 120px 0 0;
     grid-template-rows: 60px auto auto;
   }
   footer .nav-items {
@@ -854,6 +860,9 @@ p.copyright a, p.accessibility a {
   }
   footer .language-switcher {
     grid-area: language-switcher;
+  }
+  p.copyright, p.accessibility {
+    font-size: 12px;
   }
   footer .copyright {
     grid-area: copyright;
