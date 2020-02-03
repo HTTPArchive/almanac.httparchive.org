@@ -595,7 +595,7 @@ footer {
   grid-template-areas:
     'home-logo nav-items nav-items nav-items'
     'hr hr hr hr'
-    'copyright copyright ha-logo social-media';
+    'copyright accessibility ha-logo social-media';
   grid-template-columns: 300px 1fr 1fr 120px 0 0;
   /* 20px same as .container padding */
   padding-left: 20px;
@@ -631,6 +631,12 @@ footer .copyright {
   display: flex;
   align-items: center;
 }
+footer .accessibility {
+  grid-area: accessibility;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 footer .social-media {
   grid-area: social-media;
   display: flex;
@@ -647,12 +653,12 @@ footer hr:last-of-type {
   display: none;
 }
 
-p.copyright {
+p.copyright, p.accessibility {
   margin: 0;
   font-size: 12px;
   color: #F2F2F2;
 }
-p.copyright a {
+p.copyright a, p.accessibility a {
   color: white;
 }
 
@@ -684,12 +690,12 @@ p.copyright a {
   footer {
     display: grid;
     grid-template-areas:
-      'home-logo  home-logo  language-switcher'
-      'hr hr hr'
-      'nav-items nav-items nav-items'
-      'hr-last hr-last hr-last'
-      'copyright ha-logo social-media';
-    grid-template-columns: 1fr 1fr 120px 0 0;
+      'home-logo home-logo language-switcher language-switcher'
+      'hr hr hr hr'
+      'nav-items nav-items nav-items nav-items'
+      'hr-last hr-last hr-last hr-last'
+      'copyright accessibility ha-logo social-media';
+    grid-template-columns: 2fr 1fr 1fr 120px 0 0;
     grid-template-rows: 60px auto auto;
   }
   footer .nav-items {
@@ -815,6 +821,7 @@ p.copyright a {
       'nav-items nav-items'
       'ha-logo  social-media'
       'hr-last hr-last'
+      'accessibility accessibility'
       'copyright copyright';
     grid-template-columns: 1fr 120px 0 0;
     grid-template-rows: auto;
@@ -850,6 +857,13 @@ p.copyright a {
   }
   footer .copyright {
     grid-area: copyright;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  footer .accessibility {
+    grid-area: accessibility;
     display: flex;
     justify-content: center;
     align-items: center;

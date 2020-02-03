@@ -8,7 +8,8 @@ const static_pages = [
   'index.html',
   'table_of_contents.html',
   'methodology.html',
-  'contributors.html'
+  'contributors.html',
+  'accessibility_statement.html'
 ];
 
 const generate_sitemap = async (sitemap_chapters) => {
