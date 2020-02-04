@@ -6,13 +6,18 @@ header.alt-bg {
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  padding-bottom: 400px;
+  padding-bottom: 900px;
+  margin-bottom: -900px;
 }
 
 @media (max-width: 600px) {
-  header {
+
+  header.alt-bg {
     background-size: cover;
+    padding-bottom: 1650px;
+    margin-bottom: -1650px;
   }
+
 }
 
 header .container {
@@ -28,9 +33,7 @@ header .container {
   }
 }
 
-#home {
-  /* -400px to overcome the `padding-bottom: 400px;` for the above adjacent header */
-  margin-top: -400px;
+#maincontent {
   overflow: hidden;
   display: grid;
   grid-template-areas:
@@ -46,7 +49,7 @@ header .container {
   margin-left: -50vw;  
 }
 
-#home section {
+#maincontent section {
   max-width: 100vw;
   position: relative;
 }
@@ -333,6 +336,12 @@ p {
 }
 
 @media (max-width: 900px) and (min-width: 601px) {
+
+  header.alt-bg {
+    padding-bottom: 1800px;
+    margin-bottom: -1800px;
+  }
+
   .intro-container {
     grid-template-areas:
       'year'
