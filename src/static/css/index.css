@@ -10,6 +10,14 @@ header.alt-bg {
   margin-bottom: -900px;
 }
 
+header .top-header {
+  background-color: #5C687D;
+}
+
+.intro {
+  background-color: #5C687D;
+}
+
 @media (max-width: 600px) {
 
   header.alt-bg {
