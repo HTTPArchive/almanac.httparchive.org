@@ -57,7 +57,7 @@ HTTP/2には次の重要な概念があります。
 
 <figure>
   <div class="big-number">95%</div>
-  <figcaption>図1. HTTP / 2を使用できるグローバルユーザーの割合。</figcaption>
+  <figcaption>図1. HTTP/2を使用できるグローバルユーザーの割合。</figcaption>
 </figure>
 
 ただし、HTTP/2はHTTPSで事実上隠されていたため異なってました（少なくともブラウザーの使用例では）、ブラウザーとサーバーの両方がサポートしている限り、採用の障壁を取り除いてきました。ブラウザーのサポートはしばらく前から非常に強力であり、*最新バージョン*へ自動更新するブラウザーの出現により、[グローバルユーザーの推定95％がHTTP/2をサポートするようになりました](https://caniuse.com/#feat=http2)。
@@ -70,7 +70,7 @@ HTTP/2には次の重要な概念があります。
     <img alt="図2.要求によるHTTP/2の使用。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png" width="600" height="321">
   </a>
   <div id="fig2-description" class="visually-hidden">2019年7月現在、デスクトップとモバイルの両方で55％採用されているHTTP/2使用の時系列チャート。傾向は年間約15ポイントで着実に増加しています。</div>
-  <figcaption id="fig2-caption">図2.要求によるHTTP / 2の使用。(引用: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTPアーカイブ</a>)</figcaption>
+  <figcaption id="fig2-caption">図2.要求によるHTTP/2の使用。(引用: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTPアーカイブ</a>)</figcaption>
 </figure>
 
 結果は、HTTP/2の使用が、現在過半数のプロトコルであることを示しています。これは、正式な標準化からわずか4年後の目覚しい偉業です。要求ごとのすべてのHTTPバージョンの内訳を見ると、次のことがわかります。
@@ -142,7 +142,7 @@ HTTP/2のブラウザサポートは強力であり、採用への安全な方�
 | openresty     |      2.15% |  2.01% |  2.07% |
 | ...           |      ...   |  ...   |  ...   |
 
-<figcaption>図6. HTTP / 2に使用されるサーバー。</figcaption>
+<figcaption>図6. HTTP/2に使用されるサーバー。</figcaption>
 </figure>
 
 nginxは、最新バージョンへのインストールまたはアップグレードを容易にするパッケージリポジトリを提供しているため、ここをリードしていることについて驚くことではありません。 cloudflareは最も人気のある[CDN](./cdn)で、デフォルトでHTTP/2を有効にしているため、HTTP/2サイトの大部分をホストしていることについて驚くことはありません。ちなみに、cloudflareは、Webサーバーとして[大幅にカスタマイズ](https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/)されたバージョンのnginxを使用しています。その後、Apacheの使用率は約20％であり、次に何が隠されているかを選択するサーバー、LiteSpeed、IIS、Google Servlet Engine、nginxベースのopenrestyなどの小さなプレイヤーが続きます。
@@ -174,7 +174,7 @@ Linuxディストリビューションの最新バージョン（RHELおよびCe
 これら2つの統計をマージすると、サーバーごとのインストールの割合を見ることができます。
 
 <figure markdown>
-| Server        | デスクトップ | モバイル |
+| サーバー       | デスクトップ | モバイル |
 | ------------- | ---------- | -------|
 | cloudflare    |     85.40% | 83.46% |
 | LiteSpeed     |     70.80% | 63.08% |
@@ -259,7 +259,7 @@ HTTP/2プッシュは、HTTP/2の大いに宣伝された新機能であるに�
 
 <figure>
   <a href="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png">
-    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="図13.プッシュはどのアセットタイプに使用されますか？" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
+    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="図13.プッシュはどのアセットタイプに使用されますか？" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
   </a>
   <div id="fig13-description" class="visually-hidden">プッシュされるアセットタイプの割合を分類する円グラフ。 JavaScriptがアセットのほぼ半分を構成し、次にCSSが約4分の1、画像が約8分の1、残りをテキストベースのさまざまなタイプで構成します。</div>
   <figcaption id="fig13-caption">図13.プッシュはどの資産タイプに使用されますか？</figcaption>
