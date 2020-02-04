@@ -18,27 +18,10 @@ header .top-header {
   background-color: #5C687D;
 }
 
-@media (max-width: 600px) {
-
-  header.alt-bg {
-    background-size: cover;
-    padding-bottom: 1650px;
-    margin-bottom: -1650px;
-  }
-
-}
-
 header .container {
   max-width: none;
   padding-left: 60px;
   padding-right: 60px;
-}
-
-@media (max-width: 600px) {
-  header .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
 }
 
 #maincontent {
@@ -478,6 +461,18 @@ p {
 
 /* Mobile View */
 @media (max-width: 600px) {
+
+  header.alt-bg {
+    background-size: cover;
+    padding-bottom: 1650px;
+    margin-bottom: -1650px;
+  }
+  
+  header .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .intro-container {
     grid-template-areas:
       'year'
