@@ -1,13 +1,26 @@
 header.alt-bg {
   background: #5C687D;
   background: transparent linear-gradient(#5C687D 70%, transparent 30%);
-  /* background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat; */
-  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTF7ZmlsbDojYThjYWJhO2ZpbGwtcnVsZTpldmVub2RkO29wYWNpdHk6LjA1fQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNLTIzMSA4OWgyMDg4djY1MWwtMjA4OCAzNjBWODl6Ii8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNLTQ3MCAyMzloMjA4OHY2NTFsLTIwODggMzYwVjIzOXoiLz4KICA8cGF0aCBkPSJNLTE0NC0xOWgyMDg4djY1MUwtMTQ0IDk5MlYtMTl6IiBmaWxsPSIjMWEyYjQ5IiBvcGFjaXR5PSIuNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS00NzAtODNoMjA4OHY2NTFMLTQ3MCA5MjhWLTgzeiIvPgogIDxwYXRoIGQ9Ik0tMjMyLTQ4aDIwODh2NjUxTC0yMzIgOTYzVi00OHoiIGZpbGw9IiNmMmYyZjIiIG9wYWNpdHk9Ii4wNSIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo=);
+  background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJiYWNrZ3JvdW5kOndoaXRlOyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMXtmaWxsOiNhOGNhYmE7ZmlsbC1ydWxlOmV2ZW5vZGQ7b3BhY2l0eTouMDV9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tMjMxIDg5aDIwODh2NjUxbC0yMDg4IDM2MFY4OXoiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPgogIDxwYXRoIGQ9Ik0tMTQ0LTE5aDIwODh2NjUxTC0xNDQgOTkyVi0xOXoiIGZpbGw9IiMxYTJiNDkiIG9wYWNpdHk9Ii43NSIgZmlsbC1ydWxlPSJldmVub2RkIi8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNLTQ3MC04M2gyMDg4djY1MUwtNDcwIDkyOFYtODN6Ii8+CiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg==);
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding-bottom: 900px;
   margin-bottom: -900px;
+}
+
+/* Add fall back background color in case CSS fails to load so text is still readable */
+header::after, .intro::after {
+  content: "";
+  background: #5C687D;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  position: absolute;
+  z-index: -1; 
 }
 
 header .container {
