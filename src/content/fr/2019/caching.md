@@ -13,20 +13,18 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 ## Introduction
 
-La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de [performance] (./performance) en évitant de rejouer les requêtes, qui mises bout a bout peuvent se révéler couteuses en temps et énergie. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau. Un vieux dicton qui dit que ` la requête la plus rapide est celle que vous n'avez pas à faire ` et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
+La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de [performance] (./performance) en évitant de rejouer les requêtes, qui mises bout a bout peuvent se révéler couteuses en temps et énergie. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau. Un vieux dicton qui dit que "la requête la plus rapide est celle que vous n'avez pas à faire " et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
 
-La mise en cache sur le web s'appuie sur trois principes fondamentaux : mettre en cache autant que possible, aussi longtemps que possible et aussi près que possible des utilisateurs finaux.
+La mise en cache sur le web s'appuie sur trois principes fondamentaux&nbsp;: mettre en cache autant que possible, aussi longtemps que possible et aussi près que possible des utilisateurs finaux.
 
 **Mettre en cache autant que vous le pouvez.** Lorsque l'on s'intéresse aux données pouvant être mises en cache, il est important de débuter en identifiant les réponses statiques et dynamiques, qui évoluent ou non en fonction du contexte d'appel. Généralement, les réponses statiques, ne changeant pas, peuvent être mises en cache. Mettre en cache les réponses statiques permettra de les partager entre les utilisateurs. Les contenus dynamiques nécessitent quand a eux une analyse plus poussée.
 
 **Mettre en cache aussi longtemps que possible.** La durée de mise en cache d'une ressource dépend fortement de sa sensibilité et de son contenu. Une ressource JavaScript versionnée peut être mise en cache pendant très longtemps, alors qu'une ressource non versionnée peut nécessiter une durée de cache plus courte afin de garantir aux utilisateurs de disposer des données a jour.
 
-**Cachez le plus près possible des utilisateurs finaux.** Une mise en cache proche des utilisateurs réduit les temps de téléchargement en réduisant les latences réseau. Par exemple,pour une ressource mise en cache sur le navigateur de l'utilisateur, la requête ne sera jamais envoyée sur le réseau et le temps de téléchargement sera aussi rapide que les I/O de la machine.
-Pour les premiers visiteurs, ou les visiteurs qui n'ont pas encore leurs données cachées, un CDN est généralement la prochaine localisation d'une ressource cachée. Dans la plupart des cas, il sera plus rapide de récupérer une ressource à partir d'un cache local ou d'un CDN que sur le serveur d'origine.
+**Cachez le plus près possible des utilisateurs finaux.** Une mise en cache proche des utilisateurs réduit les temps de téléchargement en réduisant les latences réseau. Par exemple,pour une ressource mise en cache sur le navigateur de l'utilisateur, la requête ne sera jamais envoyée sur le réseau et le temps de téléchargement sera aussi rapide que les I/O de la machine. Pour les premiers visiteurs, ou les visiteurs qui n'ont pas encore leurs données cachées, un CDN est généralement la prochaine localisation d'une ressource cachée. Dans la plupart des cas, il sera plus rapide de récupérer une ressource à partir d'un cache local ou d'un CDN que sur le serveur d'origine.
 
-Les architectures Web impliquent généralement [une mise en cache en plusieurs niveaux](https://blog.yoav.ws/tale-of-four-caches/).
+Les architectures Web impliquent généralement [une mise en cache en plusieurs niveaux](https://blog.yoav.ws/tale-of-four-caches/). Par exemple une requête HTTP peut être mise en cache de différentes manière&nbsp;:
 
-Par exemple une requête HTTP peut être mise en cache de différentes manière
 *   Dans le cache du navigateur
 *   Au niveau des [services d'API](https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API)
 *   Mise en cache des [requêtes HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Cache)
@@ -38,29 +36,28 @@ Ce chapitre explique comment les ressources sont mises en cache dans les navigat
 
 ## Présentation de la mise en cache HTTP
 
-Pour qu'un client HTTP mette en cache une ressource, il doit répondre a deux questions :
+Pour qu'un client HTTP mette en cache une ressource, il doit répondre a deux questions&nbsp;:
 
-*   `Combien de temps dois-je mettre en cache ?`
-*   `Comment puis-je valider que le contenu soit encore valide ?`
+*   "Combien de temps dois-je mettre en cache&nbsp;?"
+*   "Comment puis-je valider que le contenu soit encore valide&nbsp;?"
 
 Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralement dans sa réponse des en-têtes qui indiquent si la ressource peut être mise en cache,pour combien de temps et quel est son âge. La RFC 7234 traite plus en détail de ce point dans la section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) et [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
 
-Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie de la validité sont :
+Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie de la validité sont&nbsp;:
 
 *   `Cache-Control` vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
 *   `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
 
 `Cache-Control` est prioritaire si les deux champs sont renseignés. Celles-ci sont [abordées plus en détail ci-dessous](#cache-control-vs-expires).
 
-Pour les réponses, ces deux en-têtes permettent de valider les données stockées en cache,  i.e. donner les conditions nécessaires pour valider une requête côté serveur :
+Pour les réponses, ces deux en-têtes permettent de valider les données stockées en cache,  i.e. donner les conditions nécessaires pour valider une requête côté serveur&nbsp;:
 
 *   `Last-Modified` indique quand la ressource a été modifiée pour la dernière fois.
 *   `ETag` fournit l'identifiant unique d'une entité.
 
 `ETag` est prioritaire si les deux champs sont renseignés. Celles-ci sont [abordées plus en détail ci-dessous](#validating-freshness).
 
-L'exemple ci-dessous contient un extrait d'un en-tête requête/réponse du fichier main.js de HTTP Archive.
-Ces en-têtes indiquent que la ressource peut être mise en cache pendant 43&nbsp;200 secondes (12 heures), et il a été modifié pour la dernière fois il y a plus de deux mois (différence entre les en-têtes `Last-Modified` et `Date`).
+L'exemple ci-dessous contient un extrait d'un en-tête requête/réponse du fichier main.js de HTTP Archive. Ces en-têtes indiquent que la ressource peut être mise en cache pendant 43&nbsp;200 secondes (12 heures), et il a été modifié pour la dernière fois il y a plus de deux mois (différence entre les en-têtes `Last-Modified` et `Date`).
 
 ```
 > GET /static/js/main.js HTTP/1.1
@@ -77,11 +74,10 @@ Ces en-têtes indiquent que la ressource peut être mise en cache pendant 43&nbs
 < Last-Modified: Sun, 25 Aug 2019 16:00:30 GMT
 < Cache-Control: public, max-age=43200
 < Expires: Mon, 14 Oct 2019 07:36:57 GMT
-< ETag: `1566748830.0-3052-3932359948`
+< ETag: "1566748830.0-3052-3932359948"
 ```
 
-L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voir un rapport détaillé de la façon dont la réponse sera mise en cache en fonction de ses en-têtes.
-Par exemple,[un test pour l'URL ci-dessus](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) produirait ce qui suit :
+L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voir un rapport détaillé de la façon dont la réponse sera mise en cache en fonction de ses en-têtes. Par exemple,[un test pour l'URL ci-dessus](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) produirait ce qui suit&nbsp;:
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg">
@@ -103,8 +99,7 @@ Si aucun champ de mise en cache n'est renseigné dans la réponse, alors [l'appl
   <figcaption id="fig2-caption">Figure 2. Présence de HTTP <code>Cache-Control</code> et <code>Expires</code> en en-tête.</figcaption>
 </figure>
 
-
-## Quel type de contenu met-on en cache ?
+## Quel type de contenu met-on en cache&nbsp;?
 
 Une ressource mise en cache est stockée par le client pendant un certain temps et peut être réutilisée ultérieurement. Pour les requêtes HTTP, 80&nbsp;% des réponses peuvent certainement être mises en cache, ce qui signifie qu'un systeme de cache peut les stocker. En dehors de ça,
 
@@ -113,6 +108,7 @@ Une ressource mise en cache est stockée par le client pendant un certain temps 
 *   47&nbsp;% sont mis en cache pendant plus de 0 seconde.
 
 Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
+
 <figure>
   <a href="/static/images/2019/16_Caching/fig3.png">
     <img src="/static/images/2019/16_Caching/fig3.png" alt="Figure 3. Distribution des réponses pouvant être mises en cache." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&amp;format=interactive">
@@ -127,15 +123,15 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
   <table>
     <tr>
      <th></th>
-     <th colspan="5" >Percentiles TTL du cache des ordinateurs de bureau (Heures)</th>
+     <th scope="colgroup" colspan="5" >Percentiles TTL du cache des ordinateurs de bureau (Heures)</th>
     </tr>
     <tr>
-     <th></th>
-     <th>10</th>
-     <th>25</th>
-     <th>50</th>
-     <th>75</th>
-     <th>90</th>
+     <td></td>
+     <th scope="col">10</th>
+     <th scope="col">25</th>
+     <th scope="col">50</th>
+     <th scope="col">75</th>
+     <th scope="col">90</th>
     </tr>
     <tr>
      <th>Audio</th>
@@ -246,10 +242,11 @@ Les mêmes données pour le mobile sont indiquées ci-dessous. Comme on peut le 
 
 ## Cache-Control vs Expires
 
-Dans HTTP/1.0, l'en-tête `Expires` était utilisé pour indiquer la date/heure après laquelle la réponse est considérée comme périmée. Sa valeur est un horodatage de la date, par exemple 
+Dans HTTP/1.0, l'en-tête `Expires` était utilisé pour indiquer la date/heure après laquelle la réponse est considérée comme périmée. Sa valeur est un horodatage de la date, par exemple&nbsp;:
+
 `Expires: Thu, 01 Dec 1994 16:00:00 GMT`
 
-HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients modernes supportent les deux en-têtes. Cet en-tête fournit beaucoup plus d'extensibilité via les directives de mise en cache. Par exemple:
+HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients modernes supportent les deux en-têtes. Cet en-tête fournit beaucoup plus d'extensibilité via les directives de mise en cache. Par exemple&nbsp;:
 
 * `no-store` peut être utilisé pour indiquer qu'une ressource ne doit pas être mise en cache.
 * `max-age` peut être utilisé pour indiquer une durée de vie.
@@ -262,7 +259,7 @@ HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients moder
   <a href="/static/images/2019/16_Caching/fig7.png">
     <img src="/static/images/2019/16_Caching/fig7.png" alt="Figure 7. Utilisation comparée des en-têtes Cache-Control et Expires." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&amp;format=interactive">
   </a>
-  <div id="fig7-description" class="visually-hidden">Un diagramme à barres montrant que 53&nbsp;% des réponses ont un `Cache-Control: âge maximum `, 54&nbsp;%-55&nbsp;% utilisent `Expire`, 41&nbsp;%-42&nbsp;% utilisent les deux, et 34&nbsp;% n'utilisent aucun des deux. Les chiffres sont donnés à la fois pour les ordinateurs de bureau et les mobiles, mais les chiffres sont presque identiques, les mobiles ayant un point de pourcentage d'utilisation des expirations plus élevé.</div>
+  <div id="fig7-description" class="visually-hidden">Un diagramme à barres montrant que 53&nbsp;% des réponses ont un `Cache-Control: max-age`, 54&nbsp;%-55&nbsp;% utilisent `Expire`, 41&nbsp;%-42&nbsp;% utilisent les deux, et 34&nbsp;% n'utilisent aucun des deux. Les chiffres sont donnés à la fois pour les ordinateurs de bureau et les mobiles, mais les chiffres sont presque identiques, les mobiles ayant un point de pourcentage d'utilisation des expirations plus élevé.</div>
   <figcaption id="fig7-caption">Figure 7. Utilisation comparée des en-têtes <code>Cache-Control</code> et <code>Expires</code>.</figcaption>
 </figure>
 
@@ -334,18 +331,17 @@ Par exemple, `cache-control:public, max-age=43200` indique qu'une entrée mise e
   <a href="/static/images/2019/16_Caching/fig9.png">
     <img src="/static/images/2019/16_Caching/fig9.png" alt="Figure 9. Utilisation de la directive Cache-Control sur mobile." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="662" data-seamless data-rameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&amp;format=interactive">
   </a>
-  <div id="fig9-description" class="visually-hidden">
-  Un diagramme à barres de 15 directives `Cache-Control` et leur utilisation allant de 74,8&nbsp;% pour max-age, 37,8&nbsp;% pour public, 27,8&nbsp;% pour no-cache, 18&nbsp;% pour no-store, 14,3&nbsp;% pour private, 3,4&nbsp;% pour l'immutable, 3.3. 3&nbsp;% pour no-transform, 2,4&nbsp;% pour le stale-while-revalidate, 2,2&nbsp;% pour pre-check, 2,2&nbsp;% pour post-check, 1,9&nbsp;% pour s-maxage, 1,6&nbsp;% pour proxy-revalidate, 0,3&nbsp;% pour le set-cookie et 0,2&nbsp;% pour le stale-if-error. Les statistiques sont presque identiques pour les ordinateurs de bureaux et les téléphones portables. </div>
+  <div id="fig9-description" class="visually-hidden">Un diagramme à barres de 15 directives `Cache-Control` et leur utilisation allant de 74,8&nbsp;% pour max-age, 37,8&nbsp;% pour public, 27,8&nbsp;% pour no-cache, 18&nbsp;% pour no-store, 14,3&nbsp;% pour private, 3,4&nbsp;% pour l'immutable, 3.3. 3&nbsp;% pour no-transform, 2,4&nbsp;% pour le stale-while-revalidate, 2,2&nbsp;% pour pre-check, 2,2&nbsp;% pour post-check, 1,9&nbsp;% pour s-maxage, 1,6&nbsp;% pour proxy-revalidate, 0,3&nbsp;% pour le set-cookie et 0,2&nbsp;% pour le stale-if-error. Les statistiques sont presque identiques pour les ordinateurs de bureaux et les téléphones portables. </div>
   <figcaption id="fig9-caption">Figure 9. Utilisation de la directive <code>Cache-Control</code> sur mobile.</figcaption>
 </figure>
 
-La figure 9 ci-dessus illustre les 15 principales directives `Cache-Control` utilisées sur les sites Web mobiles. Les résultats pour les sites destinés aux ordinateurs de bureau et les sites mobiles sont très similaires. Il y a quelques observations intéressantes sur la popularité de ces directives de cache :
+La figure 9 ci-dessus illustre les 15 principales directives `Cache-Control` utilisées sur les sites Web mobiles. Les résultats pour les sites destinés aux ordinateurs de bureau et les sites mobiles sont très similaires. Il y a quelques observations intéressantes sur la popularité de ces directives de cache&nbsp;:
 
 * `max-age` est utilisé par presque 75&nbsp;% des en-têtes `Cache-Control`, et `no-store` est utilisé par 18&nbsp;%.
-* `public` est rarement nécessaire car les entrées en cache sont supposées `publiques` à moins que `privé` ne soit spécifié. Environ 38&nbsp;% des réponses incluent `public`.
+* `public` est rarement nécessaire car les entrées en cache sont supposées `public` à moins que `private` ne soit spécifié. Environ 38&nbsp;% des réponses incluent `public`.
 * La directive `immuable` est relativement nouvelle, [introduite en 2017](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook) et est [supportée par Firefox et Safari](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility). Son utilisation a augmenté à 3,4&nbsp;% et elle est largement utilisée dans [les réponses de tiers sur Facebook et Google](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195).
 
-Un autre ensemble intéressant de directives à faire apparaître dans cette liste sont `pre-check` et `post-check`, qui sont utilisées dans 2,2&nbsp;% des en-têtes `Cache-Control` (environ 7,8 millions de réponses). Cette paire d'en-têtes a été [introduite dans Internet Explorer 5 pour fournir une validation en arrière-plan](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/) et a rarement été implémentée correctement par les sites web. 99,2&nbsp;% des réponses utilisant ces en-têtes avaient utilisé la combinaison `pre-check=0` et `post-check=0`. Quand ces deux directives sont mises à 0, alors les deux directives sont ignorées. Il semble donc que ces directives n'aient jamais été utilisées correctement !
+Un autre ensemble intéressant de directives à faire apparaître dans cette liste sont `pre-check` et `post-check`, qui sont utilisées dans 2,2&nbsp;% des en-têtes `Cache-Control` (environ 7,8 millions de réponses). Cette paire d'en-têtes a été [introduite dans Internet Explorer 5 pour fournir une validation en arrière-plan](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/) et a rarement été implémentée correctement par les sites web. 99,2&nbsp;% des réponses utilisant ces en-têtes avaient utilisé la combinaison `pre-check=0` et `post-check=0`. Quand ces deux directives sont mises à 0, alors les deux directives sont ignorées. Il semble donc que ces directives n'aient jamais été utilisées correctement&nbsp;!
 
 Il y a plus de 1&nbsp;500 directives erronées utilisées dans 0,28&nbsp;% des réponses. Ces directives sont ignorées par les clients, comprennent des erreurs d'orthographe telles que `nocache`, `s-max-age`, `smax-age` et `maxage`. Il y a aussi de nombreuses directives inexistantes comme `max-stale`, `proxy-public`, `subsrogate-control`, etc.
 
@@ -353,7 +349,7 @@ Il y a plus de 1&nbsp;500 directives erronées utilisées dans 0,28&nbsp;% des r
 
 Lorsqu'une réponse n'est pas cachable, la directive `Cache-Control` `no-store` doit être utilisée. Si cette directive n'est pas utilisée, alors la réponse peut être mise en cache.
 
-Il y a quelques erreurs courantes, commises lorsqu'on essaie de configurer une réponse pour qu'elle ne puisse pas être mise en cache :
+Il y a quelques erreurs courantes, commises lorsqu'on essaie de configurer une réponse pour qu'elle ne puisse pas être mise en cache&nbsp;:
 
 * `Cache-Control: no-cache` peut donner l'impression que la ressource ne sera pas cachable. Cependant, `no-cache` exige que l'entrée mise en cache soit revalidée avant d'être utilisée et n'est pas la même chose qu'une ressource qui ne peut pas être mise en cache.
 * `Cache-Control: max-age=0` fixe le TTL à 0 seconde, mais ce n'est pas la même chose que d'être non cachable. Quand `max-age` est fixé à 0, la ressource est stockée dans le cache du navigateur et immédiatement invalidée. Le navigateur doit donc effectuer une requête conditionnelle pour valider la fraîcheur de la ressource.
@@ -370,19 +366,15 @@ La directive `max-age=0` est présente sur 1,1&nbsp;% des réponses (plus de qua
 
 Jusqu'à présent, nous avons parlé de la façon dont les serveurs Web indiquent à un client ce qui peut être mis en cache, et pedant combien de temps. Lors de la conception des règles de mise en cache, il est également important de comprendre l'âge du contenu que vous servez.
 
-Lorsque vous choisissez un cache TTL, demandez-vous : `à quelle fréquence mettez-vous à jour ces ressources ?` et `quelle est leur sensibilité au contenu ?`. Par exemple, si une image de héros va être modifiée peu fréquemment, alors cachez-la avec un TTL très long. Si vous vous attendez à ce qu'une ressource JavaScript soit modifiée fréquemment, alors versionnez-la et cachez-la avec un long TTL ou cachez-la avec un TTL plus court.
+Lorsque vous choisissez un cache TTL, demandez-vous&nbsp;: "à quelle fréquence mettez-vous à jour ces ressources&nbsp;?" et "quelle est leur sensibilité au contenu&nbsp;?". Par exemple, si une image de héros va être modifiée peu fréquemment, alors cachez-la avec un TTL très long. Si vous vous attendez à ce qu'une ressource JavaScript soit modifiée fréquemment, alors versionnez-la et cachez-la avec un long TTL ou cachez-la avec un TTL plus court.
 
-Le graphique ci-dessous illustre l'âge relatif des ressources par type de contenu, et vous pouvez lire une [analyse plus détaillée ici](https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659).
-Le HTML tend à être le type de contenu ayant l'âge le plus court, et un très grand pourcentage des ressources traditionnellement cachables ([scripts](./javascript), [CSS](./css), et [polices d'écriture](./fonts)) ont plus d'un an !
-
-
+Le graphique ci-dessous illustre l'âge relatif des ressources par type de contenu, et vous pouvez lire une [analyse plus détaillée ici](https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659). Le HTML tend à être le type de contenu ayant l'âge le plus court, et un très grand pourcentage des ressources traditionnellement cachables ([scripts](./javascript), [CSS](./css), et [polices d'écriture](./fonts)) ont plus d'un an&nbsp;!
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg">
     <img src="/static/images/2019/16_Caching/ch16_fig8_resource_age.jpg" alt="Figure 10. Répartition de l'âge des ressources par type de contenu." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600">
   </a>
-  <div id="fig10-description" class="visually-hidden">
-  Un diagramme à barres indiquant l'âge du contenu, divisé en semaines 0-52, > un an et > deux ans, avec des chiffres nuls et négatifs. Les statistiques sont divisées en première partie et en tiers. La valeur 0 est utilisée plus particulièrement pour le HTML, le texte et le xml de première partie, et pour jusqu'à 50&nbsp;% des requêtes de tiers dans tous les types d'actifs. Il existe un mélange utilisant les années intermédiaires, puis une utilisation considérable pendant un an et deux ans.</div>
+  <div id="fig10-description" class="visually-hidden">Un diagramme à barres indiquant l'âge du contenu, divisé en semaines 0-52, > un an et > deux ans, avec des chiffres nuls et négatifs. Les statistiques sont divisées en première partie et en tiers. La valeur 0 est utilisée plus particulièrement pour le HTML, le texte et le xml de première partie, et pour jusqu'à 50&nbsp;% des requêtes de tiers dans tous les types d'actifs. Il existe un mélange utilisant les années intermédiaires, puis une utilisation considérable pendant un an et deux ans.</div>
   <figcaption id="fig10-caption">Figure 10. Répartition de l'âge des ressources par type de contenu.</figcaption>
 </figure>
 
@@ -398,7 +390,7 @@ En comparant la capacité de mise en cache d'une ressource à son âge, nous pou
 < Last-Modified: Sun, 25 Aug 2019 16:00:30 GMT
 < Cache-Control: public, max-age=43200
 < Expires: Mon, 14 Oct 2019 07:36:57 GMT
-< ETag: `1566748830.0-3052-3932359948`
+< ETag: "1566748830.0-3052-3932359948" 
 ```
 
 Dans l'ensemble, 59&nbsp;% des ressources servies sur le Web ont un TTL de cache trop court par rapport à l'âge de leur contenu. De plus, le delta médian entre le TTL et l'âge est de 25 jours.
@@ -409,8 +401,8 @@ Si l'on compare les ressources de la première partie et celles des tiers, on co
   <table>
     <tr>
      <th>Client</th>
-     <th>1er partie</th>
-     <th>3eme partie</th>
+     <th>1ere partie</th>
+     <th>3e partie</th>
      <th>Global</th>
     </tr>
     <tr>
@@ -426,15 +418,14 @@ Si l'on compare les ressources de la première partie et celles des tiers, on co
      <td><p style="text-align: right">59.6&nbsp;%</p></td>
     </tr>
   </table>
-  <figcaption>Figure 11.
-  Pourcentage des requêtes avec des TTL courts.</figcaption>
+  <figcaption>Figure 11. Pourcentage des requêtes avec des TTL courts.</figcaption>
 </figure>
 
 ## Validation de la fraîcheur des information
 
 Les en-têtes HTTP utilisés pour valider les réponses stockées dans un cache sont `Last-Modified` et `ETag`. L'en-tête `Last-Modified` fait exactement ce que son nom implique et fournit l'heure à laquelle l'objet a été modifié pour la dernière fois. L'en-tête `ETag` fournit un identifiant unique pour le contenu.
 
-Par exemple, la réponse ci-dessous a été modifiée pour la dernière fois le 25 août 2019 et elle a une valeur `ETag` de ``1566748830.0-3052-3932359948``.
+Par exemple, la réponse ci-dessous a été modifiée pour la dernière fois le 25 août 2019 et elle a une valeur `ETag` de `1566748830.0-3052-3932359948`.
 
 ```
 < HTTP/1.1 200
@@ -446,7 +437,7 @@ Par exemple, la réponse ci-dessous a été modifiée pour la dernière fois le 
 < Last-Modified: Sun, 25 Aug 2019 16:00:30 GMT
 < Cache-Control: public, max-age=43200
 < Expires: Mon, 14 Oct 2019 07:36:57 GMT
-< ETag: `1566748830.0-3052-3932359948`
+< ETag: "1566748830.0-3052-3932359948"
 ```
 
 Un client peut envoyer une requête conditionnelle pour valider une entrée en cache en utilisant la valeur `Last-Modified` dans un en-tête de requête nommé `If-Modified-Since`. De même, il pourrait aussi valider la ressource avec un en-tête de requête `If-None-Match`, qui valide par rapport à la valeur `ETag` que le client a pour la ressource dans son cache.
@@ -465,20 +456,17 @@ Dans l'exemple ci-dessous, le cache semble toujours valide, et un `HTTP 304` a �
 < Server: gunicorn/19.7.1
 < Cache-Control: public, max-age=43200
 < Expires: Thu, 17 Oct 2019 14:31:08 GMT
-< ETag: `1566748830.0-3052-3932359948`
+< ETag: "1566748830.0-3052-3932359948"
 < Accept-Ranges: bytes
 ```
 
 Dans l'ensemble, 65&nbsp;% des réponses sont servies avec un en-tête `Last-Modified`, 42&nbsp;% sont servies avec un `ETag`, et 38&nbsp;% utilisent les deux. Cependant, 30&nbsp;% des réponses n'incluent ni un en-tête `Last-Modified` ni un en-tête `ETag`.
 
-
 <figure>
   <a href="/static/images/2019/16_Caching/fig12.png">
     <img src="/static/images/2019/16_Caching/fig12.png" alt="Figure 12. Adoption de la validation de la fraîcheur par en-têtes Last-Modified et ETag pour sites sur ordinateurs de bureau." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&amp;format=interactive">
   </a>
-  <div id="fig12-description" class="visually-hidden">
-  Le diagramme à barres montre que 64,4&nbsp;% des requêtes sur ordinateurs de bureau ont une dernière modification, 42,8&nbsp;% ont un ETag, 37,9&nbsp;% ont les deux et 30,7&nbsp;% n'ont ni l'un ni l'autre. Les statistiques pour les mobiles sont presque identiques : 65,3&nbsp;% pour la dernière modification, 42,8&nbsp;% pour l'ETag, 38,0&nbsp;% pour les deux et 29,9&nbsp;% pour aucune des deux.
-  </div>
+  <div id="fig12-description" class="visually-hidden">Le diagramme à barres montre que 64,4&nbsp;% des requêtes sur ordinateurs de bureau ont une dernière modification, 42,8&nbsp;% ont un ETag, 37,9&nbsp;% ont les deux et 30,7&nbsp;% n'ont ni l'un ni l'autre. Les statistiques pour les mobiles sont presque identiques&nbsp;: 65,3&nbsp;% pour la dernière modification, 42,8&nbsp;% pour l'ETag, 38,0&nbsp;% pour les deux et 29,9&nbsp;% pour aucune des deux.</div>
   <figcaption id="fig12-caption">Figure 12. Adoption de la validation de la fraîcheur par en-têtes <code>Last-Modified</code> et <code>ETag</code> pour sites sur ordinateurs de bureau.</figcaption>
 </figure>
 
@@ -488,7 +476,8 @@ Le format  des en-têtes HTTP utilisés pour transmettre les horodatages, est im
 
 Toutes ces en-têtes HTTP formatent les dates sous forme de chaine de carractères.
 
-Par exemple:
+Par exemple&nbsp;:
+
 ```
 > GET /static/js/main.js HTTP/1.1
 > Host: httparchive.org
@@ -504,23 +493,22 @@ Par exemple:
 < Last-modified: Sun, 25 Aug 2019 16:00:30 GMT
 < Cache-Control: public, max-age=43200
 < Expires: Mon, 14 Oct 2019 07:36:57 GMT
-< ETag: `1566748830.0-3052-3932359948`
+< ETag: "1566748830.0-3052-3932359948"
 ```
 
 La plupart des clients ignorent les dates invalides, ce qui les rend incapables de comprendre la réponse qui leur est servie. Cela peut avoir des conséquences sur la possibilité de mise en cache, puisqu'un en-tête `Last-Modified` erroné sera mis en cache sans l'horodatage `Last-Modified`, ce qui rendra impossible l'exécution d'une requête conditionnelle.
 
-L'en-tête de réponse HTTP `Date` est généralement généré par le serveur web ou le CDN qui sert la réponse à un client. Comme l'en-tête est généralement généré automatiquement par le serveur, il a tendance à être moins sujet aux erreurs, ce qui se reflète dans le très faible pourcentage d'en-têtes `Date` invalides. Les en-têtes `Last-Modified` sont très similaires, avec seulement 0,67&nbsp;% d'en-têtes invalides. Ce qui est très surprenant, c'est que 3,64&nbsp;% des en-têtes `Expires` utilisent un format de date invalide !
+L'en-tête de réponse HTTP `Date` est généralement généré par le serveur web ou le CDN qui sert la réponse à un client. Comme l'en-tête est généralement généré automatiquement par le serveur, il a tendance à être moins sujet aux erreurs, ce qui se reflète dans le très faible pourcentage d'en-têtes `Date` invalides. Les en-têtes `Last-Modified` sont très similaires, avec seulement 0,67&nbsp;% d'en-têtes invalides. Ce qui est très surprenant, c'est que 3,64&nbsp;% des en-têtes `Expires` utilisent un format de date invalide&nbsp;!
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig13.png">
     <img src="/static/images/2019/16_Caching/fig13.png" alt="Figure 13. Formats de date non valides dans les en-têtes de réponse." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&amp;format=interactive">
   </a>
-  <div id="fig13-description" class="visually-hidden">
-  Le diagramme à barres montre que 0,10&nbsp;% des réponses sur ordinateurs de bureau ont une date non valide, 0,67&nbsp;% ont une date Last-Modified non valide et 3,64&nbsp;% ont une date d'Expires non valide. Les statistiques pour les mobiles sont très similaires avec 0,06&nbsp;% des réponses ayant une date non valide, 0,68&nbsp;% ayant une date Last-Modified non valide et 3,50&nbsp;% ayant une date d'Expires non valide.</div>
+  <div id="fig13-description" class="visually-hidden">Le diagramme à barres montre que 0,10&nbsp;% des réponses sur ordinateurs de bureau ont une date non valide, 0,67&nbsp;% ont une date Last-Modified non valide et 3,64&nbsp;% ont une date d'Expires non valide. Les statistiques pour les mobiles sont très similaires avec 0,06&nbsp;% des réponses ayant une date non valide, 0,68&nbsp;% ayant une date Last-Modified non valide et 3,50&nbsp;% ayant une date d'Expires non valide.</div>
   <figcaption id="fig13-caption">Figure 13. Formats de date non valides dans les en-têtes de réponse.</figcaption>
 </figure>
 
-Voici des exemples d'utilisations incorrectes de l'en-tête `Expires` :
+Voici des exemples d'utilisations incorrectes de l'en-tête `Expires`&nbsp;:
 
 *   Formats de date valides, mais utilisant un fuseau horaire autre que GMT
 *   Valeurs numériques telles que 0 ou -1
@@ -534,11 +522,12 @@ L'une des étapes les plus importantes de la mise en cache est de déterminer si
 
 Pour résoudre ce problème, les clients donnent à chaque ressource mise en cache un identifiant unique (une clé de cache). Par défaut, cette clé de cache est simplement l'URL de la ressource, mais les développeurs peuvent ajouter d'autres éléments (comme la méthode de compression) en utilisant l'en-tête `Vary`.
 
-Un `Vary` header demande au client d'ajouter la valeur d'une ou plusieurs valeurs d'en-tête de requête à la clé de cache. L'exemple le plus courant est `Vary : Accept-Encoding`, qui se traduira par différentes entrées en cache pour les valeurs d'en-tête de requête `Accept-Encoding` (c'est-à-dire `gzip`, `br`, `deflate`).
+Un `Vary` header demande au client d'ajouter la valeur d'une ou plusieurs valeurs d'en-tête de requête à la clé de cache. L'exemple le plus courant est `Vary&nbsp;: Accept-Encoding`, qui se traduira par différentes entrées en cache pour les valeurs d'en-tête de requête `Accept-Encoding` (c'est-à-dire `gzip`, `br`, `deflate`).
 
 Une autre valeur commune est `Vary: Accept-Encoding, User-Agent`, qui demande au client de varier l'entrée en cache à la fois par les valeurs de `Accept-Encoding` et par la chaîne `User-Agent`. Lorsqu'il s'agit de proxies et de CDN partagés, l'utilisation de valeurs autres que `Accept-Encoding` peut être problématique car elle dilue les clés de cache et peut réduire le volume de trafic servi à partir du cache.
 
 En général, vous ne devez modifier le cache que si vous servez un contenu alternatif aux clients en fonction de cet en-tête.
+
 L'en-tête `Vary` est utilisé sur 39&nbsp;% des réponses HTTP, et 45&nbsp;% des réponses qui incluent un en-tête `Cache-Control`.
 
 Le graphique ci-dessous détaille la popularité des 10 premières valeurs d'en-tête `Vary`. L'`Accept-Encoding` représente 90&nbsp;% de l'utilisation de `Vary`, avec `User-Agent` (11&nbsp;%), `Origin` (9&nbsp;%), et `Accept` (3&nbsp;%) constituant la majeure partie du reste.
@@ -547,8 +536,7 @@ Le graphique ci-dessous détaille la popularité des 10 premières valeurs d'en-
   <a href="/static/images/2019/16_Caching/fig14.png">
     <img src="/static/images/2019/16_Caching/fig14.png" alt="Figure 14. Utilisation de l'en-tête Vary." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" data-width="600" data-height="655" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=384675253&amp;format=interactive">
   </a>
-  <div id="fig14-description" class="visually-hidden">
-  Le diagramme à barres montre que 90&nbsp;% des utilisations se basent sur accept-encoding, et pour le reste des valeurs beaucoup plus petites avec 10 à 11&nbsp;% pour l'user-agent, environ 7 à 8&nbsp;% pour origin et moins pour accept, presque pas d'utilisation pour les en-têtes cookie, x-forward-proto, accept-language, host, x-origin, access-control-request-method, et access-control-request-heads</div>
+  <div id="fig14-description" class="visually-hidden">Le diagramme à barres montre que 90&nbsp;% des utilisations se basent sur accept-encoding, et pour le reste des valeurs beaucoup plus petites avec 10 à 11&nbsp;% pour l'user-agent, environ 7 à 8&nbsp;% pour origin et moins pour accept, presque pas d'utilisation pour les en-têtes cookie, x-forward-proto, accept-language, host, x-origin, access-control-request-method, et access-control-request-heads</div>
   <figcaption id="fig14-caption">Figure 14. Utilisation de l'en-tête Vary.</figcaption>
 </figure>
 
@@ -564,7 +552,7 @@ Lorsqu'une réponse est mise en cache, tous ses en-têtes sont également stock�
   <figcaption id="fig15-caption">Figure 15. Outils de développement Chrome pour une ressource en cache.</figcaption>
 </figure>
 
-Mais que se passe-t-il si vous avez un `Set-Cookie` dans une réponse ? Selon la [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), la présence d'un en-tête de réponse `Set-Cookie` n'empêche pas la mise en cache. Cela signifie qu'une entrée mise en cache peut contenir un `Set-Cookie` si elle a été mise en cache avec. La RFC recommande ensuite que vous configuriez des en-têtes `Cache-Control` appropriés pour contrôler la mise en cache des réponses.
+Mais que se passe-t-il si vous avez un `Set-Cookie` dans une réponse&nbsp;? Selon la [RFC 7234 Section 8](https://tools.ietf.org/html/rfc7234#section-8), la présence d'un en-tête de réponse `Set-Cookie` n'empêche pas la mise en cache. Cela signifie qu'une entrée mise en cache peut contenir un `Set-Cookie` si elle a été mise en cache avec. La RFC recommande ensuite que vous configuriez des en-têtes `Cache-Control` appropriés pour contrôler la mise en cache des réponses.
 
 L'un des risques de la mise en cache avec `Set-Cookie` est que les valeurs des cookies puissent être stockées et servies à des requêtes ultérieures. Suivant l'objectif du cookie, cela pourrait avoir des résultats inquiétants. Par exemple, si un cookie de connexion ou un cookie de session est présent dans un cache partagé, alors ce cookie pourrait être réutilisé par un autre client. Une façon d'éviter cela est d'utiliser la directive `private` `Cache-Control`, qui permet uniquement la mise en cache de la réponse par le navigateur du client.
 
@@ -574,8 +562,7 @@ L'un des risques de la mise en cache avec `Set-Cookie` est que les valeurs des c
   <a href="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg">
     <img src="/static/images/2019/16_Caching/ch16_fig16_cacheable_responses_set_cookie.jpg" alt="Figure 16. Réponses cachables avec Set-Cookie." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600">
   </a>
-  <div id="fig16-description" class="visually-hidden">
-  Le graphique à barres montre que 97&nbsp;% des réponses n'utilisent pas Set-Cookie alors que 3&nbsp;% le font. Ces 3&nbsp;% sont zoomés pour obtenir un autre diagramme à barres montrant la répartition entre 15,3&nbsp;% de réponses privées, 84,7&nbsp;% de réponses publiques pour les ordinateurs de bureau et similaires pour les téléphones portables, 18,4&nbsp;% de réponses publiques et 81,6&nbsp;% de réponses privées.</div>
+  <div id="fig16-description" class="visually-hidden">Le graphique à barres montre que 97&nbsp;% des réponses n'utilisent pas Set-Cookie alors que 3&nbsp;% le font. Ces 3&nbsp;% sont zoomés pour obtenir un autre diagramme à barres montrant la répartition entre 15,3&nbsp;% de réponses privées, 84,7&nbsp;% de réponses publiques pour les ordinateurs de bureau et similaires pour les téléphones portables, 18,4&nbsp;% de réponses publiques et 81,6&nbsp;% de réponses privées.</div>
   <figcaption id="fig16-caption">Figure 16. Réponses cachables avec <code>Set-Cookie</code>.</figcaption>
 </figure>
 
@@ -583,19 +570,17 @@ L'un des risques de la mise en cache avec `Set-Cookie` est que les valeurs des c
 
 L'Application Cache ou AppCache est une fonctionnalité de HTML5 qui permet aux développeurs de spécifier les ressources que le navigateur doit mettre en cache et mettre à disposition des utilisateurs hors ligne. Cette fonctionnalité a été [dépréciée et supprimée des standards du web](https://html.spec.whatwg.org/multipage/offline.html#offline), et sa prise en charge par les navigateurs a diminué. En fait, lorsque son utilisation est détectée, [Firefox v44+ recommande aux développeurs d'utiliser plutôt des service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers). [Chrome 70 limite le cache d'application au seul contexte sécurisé](https://www.chromestatus.com/feature/5714236168732672). Le secteur s'est davantage orienté vers la mise en œuvre de ce type de fonctionnalité avec des service workers - et [la prise en charge des navigateurs](https://caniuse.com/#feat=serviceworkers) a connu une croissance rapide dans ce domaine.
 
-En fait, l'un des [rapports de tendance des archives HTTP montre l'adoption des travailleurs des services](https://httparchive.org/reports/progressive-web-apps#swControlledPages) présenté ci-dessous :
-
+En fait, l'un des [rapports de tendance des archives HTTP montre l'adoption des travailleurs des services](https://httparchive.org/reports/progressive-web-apps#swControlledPages) présenté ci-dessous&nbsp;:
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">
     <img src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="Figure 17. Série chronologique de pages contrôlées par des service worker." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600">
   <div id="fig17-description" class="visually-hidden">
   Un graphique de séries chronologiques montre l'utilisation des sites contrôlés par les service worker d'octobre 2016 à juillet 2019. L'utilisation a augmenté régulièrement au fil des ans, tant pour les téléphones portables que pour les ordinateurs de bureau, mais reste inférieure à 0,6&nbsp;% pour les deux.</div>
-  <figcaption id="fig17-caption">Figure 17. Série chronologique de pages contrôlées par des service worker. (Source: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
+  <figcaption id="fig17-caption">Figure 17. Série chronologique de pages contrôlées par des service worker. (Source&nbsp;: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
 </figure>
 
 L'adoption est toujours inférieure à 1&nbsp;% des sites web, mais elle est en constante augmentation depuis janvier 2017. Le chapitre [Progressive Web App](./pwa) en parle davantage, notamment du fait qu'il est beaucoup plus utilisé que ne le suggère ce graphique en raison de son utilisation sur des sites populaires, qui ne sont comptés qu'une fois dans le graphique ci-dessus.
-
 
 Dans le tableau ci-dessous, vous pouvez voir un résumé de l'utilisation d'AppCache par rapport aux service worker. 32&nbsp;292 sites web ont mis en place un service worker, tandis que 1&nbsp;867 sites utilisent toujours la fonctionnalité AppCache, qui est obsolète.
 
@@ -683,21 +668,19 @@ Lighthouse calcule un score pour chaque audit, allant de 0 à 100&nbsp;%, et ces
   <a href="/static/images/2019/16_Caching/fig21.png">
     <img src="/static/images/2019/16_Caching/fig21.png" alt="Figure 21. Distribution des scores Lighthouse pour l'audit &quot;Uses Long Cache TTL&quot; pour les pages web mobiles." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive">
   </a>
-  <div id="fig21-description" class="visually-hidden">Un diagramme à barres superposées : 38,2&nbsp;% des sites web obtiennent un score de < 10&nbsp;%, 29,0&nbsp;% des sites web obtiennent un score entre 10 et 39&nbsp;%, 18,7&nbsp;% des sites web obtiennent un score de 40 à 79&nbsp;%, 10,7&nbsp;% des sites web obtiennent un score de 80 à 99&nbsp;%, et 3,4&nbsp;% des sites web obtiennent un score de 100&nbsp;%.</div>
+  <div id="fig21-description" class="visually-hidden">Un diagramme à barres superposées&nbsp;: 38,2&nbsp;% des sites web obtiennent un score de < 10&nbsp;%, 29,0&nbsp;% des sites web obtiennent un score entre 10 et 39&nbsp;%, 18,7&nbsp;% des sites web obtiennent un score de 40 à 79&nbsp;%, 10,7&nbsp;% des sites web obtiennent un score de 80 à 99&nbsp;%, et 3,4&nbsp;% des sites web obtiennent un score de 100&nbsp;%.</div>
   <figcaption id="fig21-caption">Figure 21. Distribution des scores Lighthouse pour l'audit "Uses Long Cache TTL" pour les pages web mobiles.</figcaption>
 </figure>
 
 Seuls 3,4&nbsp;% des sites ont obtenu un score de 100&nbsp;%, ce qui signifie que la plupart des sites peuvent bénéficier de certaines optimisations du cache. La grande majorité des sites ont un score inférieur à 40&nbsp;%, 38&nbsp;% ayant un score inférieur à 10&nbsp;%. Sur cette base, il existe un nombre important de possibilités de mise en cache sur le web.
 
-Lighthouse indique également combien d'octets pourraient être économisés sur les vues répétées en permettant une politique de cache plus longue. Parmi les sites qui pourraient bénéficier d'une mise en cache supplémentaire, 82&nbsp;% d'entre eux peuvent réduire le poids de leurs pages jusqu'à un Mb entier !
-
+Lighthouse indique également combien d'octets pourraient être économisés sur les vues répétées en permettant une politique de cache plus longue. Parmi les sites qui pourraient bénéficier d'une mise en cache supplémentaire, 82&nbsp;% d'entre eux peuvent réduire le poids de leurs pages jusqu'à un Mb entier&nbsp;!
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig22.png">
     <img src="/static/images/2019/16_Caching/fig22.png" alt="Figure 22. Répartition des économies potentielles d'octets résultant de l'audit de la mise en cache de Lighthouse." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&amp;format=interactive">
   </a>
-  <div id="fig22-description" class="visually-hidden">
-  Un diagramme à barres superposées montrant que 56,8&nbsp;% des sites web ont un potentiel d'économie d'octets de moins d'un Mo, 22,1&nbsp;% pourraient avoir une économie d'un à deux Mo, 8,3&nbsp;% pourraient économiser deux à trois Mo. 4,3&nbsp;% pourraient permettre d'économiser trois à quatre Mo et 6,0&nbsp;% pourraient permettre d'économiser plus de quatre Mo.</div>
+  <div id="fig22-description" class="visually-hidden">Un diagramme à barres superposées montrant que 56,8&nbsp;% des sites web ont un potentiel d'économie d'octets de moins d'un Mo, 22,1&nbsp;% pourraient avoir une économie d'un à deux Mo, 8,3&nbsp;% pourraient économiser deux à trois Mo. 4,3&nbsp;% pourraient permettre d'économiser trois à quatre Mo et 6,0&nbsp;% pourraient permettre d'économiser plus de quatre Mo.</div>
   <figcaption id="fig22-caption">Figure 22. Répartition des économies potentielles d'octets résultant de l'audit de la mise en cache de Lighthouse.</figcaption>
 </figure>
 
