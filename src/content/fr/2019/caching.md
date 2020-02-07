@@ -13,24 +13,24 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 ## Introduction
 
-La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de [performance] (./performance) en évitant de rejouer les requêtes, qui mises bout a bout peuvent se révéler couteuses en temps et énergie. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau. Un vieux dicton qui dit que "la requête la plus rapide est celle que vous n'avez pas à faire " et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
+La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de [performance](./performance) en évitant de rejouer de coûteuses requêtes. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau à destination du serveur d'origine. Un vieux dicton dit que "la requête la plus rapide est celle que vous n'avez pas à faire " et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
 
 La mise en cache sur le web s'appuie sur trois principes fondamentaux&nbsp;: mettre en cache autant que possible, aussi longtemps que possible et aussi près que possible des utilisateurs finaux.
 
-**Mettre en cache autant que vous le pouvez.** Lorsque l'on s'intéresse aux données pouvant être mises en cache, il est important de débuter en identifiant les réponses statiques et dynamiques, qui évoluent ou non en fonction du contexte d'appel. Généralement, les réponses statiques, ne changeant pas, peuvent être mises en cache. Mettre en cache les réponses statiques permettra de les partager entre les utilisateurs. Les contenus dynamiques nécessitent quand a eux une analyse plus poussée.
+**Mettre en cache autant que vous le pouvez.** Lorsque l'on s'intéresse aux données pouvant être mises en cache, il est important de débuter en identifiant les réponses statiques et dynamiques, qui évoluent ou non en fonction du contexte d'appel. Généralement, les réponses statiques, ne changeant pas, peuvent être mises en cache. Mettre en cache les réponses statiques permettra de les partager entre les utilisateurs. Les contenus dynamiques nécessitent, quant à eux, une analyse plus poussée.
 
 **Mettre en cache aussi longtemps que possible.** La durée de mise en cache d'une ressource dépend fortement de sa sensibilité et de son contenu. Une ressource JavaScript versionnée peut être mise en cache pendant très longtemps, alors qu'une ressource non versionnée peut nécessiter une durée de cache plus courte afin de garantir aux utilisateurs de disposer des données a jour.
 
-**Cachez le plus près possible des utilisateurs finaux.** Une mise en cache proche des utilisateurs réduit les temps de téléchargement en réduisant les latences réseau. Par exemple,pour une ressource mise en cache sur le navigateur de l'utilisateur, la requête ne sera jamais envoyée sur le réseau et le temps de téléchargement sera aussi rapide que les I/O de la machine. Pour les premiers visiteurs, ou les visiteurs qui n'ont pas encore leurs données cachées, un CDN est généralement la prochaine localisation d'une ressource cachée. Dans la plupart des cas, il sera plus rapide de récupérer une ressource à partir d'un cache local ou d'un CDN que sur le serveur d'origine.
+**Cachez le plus près possible des utilisateurs finaux.** Une mise en cache proche des utilisateurs réduit les temps de téléchargement en réduisant les latences réseau. Par exemple, pour une ressource mise en cache sur le navigateur de l'utilisateur, la requête ne sera jamais envoyée sur le réseau et le temps de téléchargement sera aussi rapide que les I/O de la machine. Pour les premiers visiteurs, ou les visiteurs qui n'ont pas encore leurs données cachées, un CDN est généralement la prochaine localisation d'une ressource cachée. Dans la plupart des cas, il sera plus rapide de récupérer une ressource à partir d'un cache local ou d'un CDN que sur le serveur d'origine.
 
 Les architectures Web impliquent généralement [une mise en cache en plusieurs niveaux](https://blog.yoav.ws/tale-of-four-caches/). Par exemple une requête HTTP peut être mise en cache de différentes manière&nbsp;:
 
-*   Dans le cache du navigateur
-*   Au niveau des [services d'API](https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API)
-*   Mise en cache des [requêtes HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Cache)
-*   via les CDN, qui offrent la possibilité de mettre en cache à proximité des utilisateurs
-*   Dans un proxy cache en amont des applications pour réduire la charge sur les serveurs back-end
-*   Au niveau de l'application et de la base de données
+*   dans le cache du navigateur&nbsp;;
+*   dans le cache d'un <i lang="en">service worker</i> dans le navigateur&nbsp;;
+*   dans une passerelle partagée&nbsp;;
+*   au niveau des CDN, qui offrent la possibilité de mettre en cache à proximité des utilisateurs&nbsp;;
+*   dans un proxy de cache en amont des applications pour réduire la charge sur les serveurs back-end&nbsp;;
+*   au niveau de l'application et de la base de données.
 
 Ce chapitre explique comment les ressources sont mises en cache dans les navigateurs Web.
 
@@ -39,25 +39,25 @@ Ce chapitre explique comment les ressources sont mises en cache dans les navigat
 Pour qu'un client HTTP mette en cache une ressource, il doit répondre a deux questions&nbsp;:
 
 *   "Combien de temps dois-je mettre en cache&nbsp;?"
-*   "Comment puis-je valider que le contenu soit encore valide&nbsp;?"
+*   "Comment puis-je valider que le contenu est encore frais&nbsp;?"
 
-Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralement dans sa réponse des en-têtes qui indiquent si la ressource peut être mise en cache,pour combien de temps et quel est son âge. La RFC 7234 traite plus en détail de ce point dans la section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) et [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
+Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralement dans sa réponse des en-têtes qui indiquent si la ressource peut être mise en cache, pour combien de temps et quel est son âge. La RFC 7234 traite plus en détail de ce point dans la section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) et [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
 
-Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie de la validité sont&nbsp;:
+Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie sont&nbsp;:
 
 *   `Cache-Control` vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
 *   `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
 
-`Cache-Control` est prioritaire si les deux champs sont renseignés. Celles-ci sont [abordées plus en détail ci-dessous](#cache-control-vs-expires).
+`Cache-Control` est prioritaire si les deux champs sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#cache-control-vs-expires).
 
-Pour les réponses, ces deux en-têtes permettent de valider les données stockées en cache,  i.e. donner les conditions nécessaires pour valider une requête côté serveur&nbsp;:
+Les en-têtes de réponse HTTP permettant de valider les données stockées en cache, c'est à dire donner les informations nécessaires pour comparer une ressource à sa contrepartie côté serveur&nbsp;:
 
 *   `Last-Modified` indique quand la ressource a été modifiée pour la dernière fois.
-*   `ETag` fournit l'identifiant unique d'une entité.
+*   `ETag` fournit l'identifiant unique d'une ressource.
 
-`ETag` est prioritaire si les deux champs sont renseignés. Celles-ci sont [abordées plus en détail ci-dessous](#validating-freshness).
+`ETag` est prioritaire si les deux en-têtes sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#validating-freshness).
 
-L'exemple ci-dessous contient un extrait d'un en-tête requête/réponse du fichier main.js de HTTP Archive. Ces en-têtes indiquent que la ressource peut être mise en cache pendant 43&nbsp;200 secondes (12 heures), et il a été modifié pour la dernière fois il y a plus de deux mois (différence entre les en-têtes `Last-Modified` et `Date`).
+L'exemple ci-dessous contient un extrait d'un en-tête requête/réponse du fichier main.js de HTTP Archive. Ces en-têtes indiquent que la ressource peut être mise en cache pendant 43&nbsp;200 secondes (12 heures), et qu'elle a été modifiée pour la dernière fois il y a plus de deux mois (différence entre les en-têtes `Last-Modified` et `Date`).
 
 ```
 > GET /static/js/main.js HTTP/1.1
@@ -81,29 +81,29 @@ L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voi
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg">
-    <img alt="Figure 1. Informations de RedBot relatives au Cache-Control." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600">
+    <img alt="Figure 1. Informations de RedBot relatives au Cache-Control." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="138">
   </a>
-  <div id="fig1-description" class="visually-hidden">Exemple de réponse Redbot montrant des informations détaillées sur le moment où la ressource a été modifiée, si les caches peuvent la stocker et pour combien de temps elle peut être considérée valide avec si nécessaire les avertissements.</div>
+  <div id="fig1-description" class="visually-hidden">Exemple de réponse Redbot montrant des informations détaillées sur le moment où la ressource a été modifiée ; si les caches peuvent la stocker ; pour combien de temps elle peut être considérée valide ; si nécessaire les avertissements.</div>
   <figcaption d="fig1-caption">Figure 1. Informations de RedBot relatives au <code>Cache-Control</code>.</figcaption>
 </figure>
 
-Si aucun champ de mise en cache n'est renseigné dans la réponse, alors [l'application peut mettre en cache en suivant un heuristique générique](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/) et mettre en cache le contenu pendant une durée représentant 10&nbsp;% de la durée entre la date a laquelle la requête a été faite et la date renseigné par `Last-Modified`. Il est important de définir un cadre de mise en cache, pour s'assurer de la validité des données et éviter certaines mauvaises pratiques, comme mettre en cache des ressources pendant un temps infini.
+Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'application peut mettre en cache en suivant une heuristique générique](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). La plupart des clients implémentent une variation de l'heuristique suggérée par le RFC, qui est 10&nbsp;% du temps depuis le `Last-Modified`. Toutefois, certains peuvent mettre la réponse en cache indéfiniment. Il est donc important de définir des règles de mise en cache spécifiques pour s'assurer que vous maîtrisez la cachabilité. 
 
-72&nbsp;% des réponses HTTP sont servies avec un en-tête `Cache-Control`, et 56&nbsp;% des réponses sont servies avec un en-tête `Expires`. Cependant, 27&nbsp;% des réponses n'utilisaient ni l'un ni l'autre, et peuvent alors être mises en cache en suivant cet heuristique. **[Ceci est cohérent entre les sites pour ordinateurs de bureau et les sites mobiles.]**
+72&nbsp;% des réponses HTTP sont servies avec un en-tête `Cache-Control`, et 56&nbsp;% des réponses sont servies avec un en-tête `Expires`. Cependant, 27&nbsp;% des réponses n'utilisaient ni l'un ni l'autre, et peuvent alors être mises en cache en suivant cette heuristique. C'est un constat partagé par les sites pour ordinateurs de bureau et les sites mobiles.
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig2.png">
-    <img src="/static/images/2019/16_Caching/fig2.png" alt="Figure 2. Présence de HTTP Cache-Control et Expires en en-tête." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&amp;format=interactive">
+    <img src="/static/images/2019/16_Caching/fig2.png" alt="Figure 2. Présence des en-têtes HTTP Cache-Control et Expires." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">Ces deux diagrammes à barres identiques pour le mobile et les ordinateurs de bureau montrent que 72&nbsp;% des requêtes utilisent des en-têtes Cache-Control et que 56&nbsp;% utilisent Expires et les 27&nbsp;% n'utilisent aucun des deux.</div>
-  <figcaption id="fig2-caption">Figure 2. Présence de HTTP <code>Cache-Control</code> et <code>Expires</code> en en-tête.</figcaption>
+  <figcaption id="fig2-caption">Figure 2. Présence des en-tête HTTP <code>Cache-Control</code> et <code>Expires</code>.</figcaption>
 </figure>
 
 ## Quel type de contenu met-on en cache&nbsp;?
 
-Une ressource mise en cache est stockée par le client pendant un certain temps et peut être réutilisée ultérieurement. Pour les requêtes HTTP, 80&nbsp;% des réponses peuvent certainement être mises en cache, ce qui signifie qu'un systeme de cache peut les stocker. En dehors de ça,
+Une ressource mise en cache est stockée par le client pendant un certain temps et peut être réutilisée ultérieurement. Pour les requêtes HTTP, 80&nbsp;% des réponses peuvent certainement être mises en cache, ce qui signifie qu'un système de cache peut les stocker. En dehors de ça,
 
-*   6&nbsp;% des demandes ont un time to leave (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
+*   6&nbsp;% des requêtes ont un <i lang="en">Time To Leave</i> (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
 *   27&nbsp;% sont mis en cache par heuristique, à cause d'un `Cache-Control` manquant en en-tête.
 *   47&nbsp;% sont mis en cache pendant plus de 0 seconde.
 
@@ -111,7 +111,7 @@ Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig3.png">
-    <img src="/static/images/2019/16_Caching/fig3.png" alt="Figure 3. Distribution des réponses pouvant être mises en cache." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&amp;format=interactive">
+    <img src="/static/images/2019/16_Caching/fig3.png" alt="Figure 3. Distribution des réponses pouvant être mises en cache." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&amp;format=interactive">
   </a>
   <div id="fig3-description" class="visually-hidden">Un graphique à barres superposées montrant que 20&nbsp;% des réponses pour ordinateurs de bureau ne peuvent être mises en cache, 47&nbsp;% ont un cache supérieur à zéro, 27&nbsp;% sont mises en cache de manière heuristique et 6&nbsp;% ont un TTL de 0. Les statistiques pour les mobiles sont très similaires (19&nbsp;%, 47&nbsp;%, 27&nbsp;% et 7&nbsp;%)</div>
   <figcaption id="fig3-caption">Figure 3. Distribution des réponses pouvant être mises en cache.</figcaption>
@@ -134,7 +134,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <th scope="col">90</th>
     </tr>
     <tr>
-     <th>Audio</th>
+     <th scope="row">Audio</th>
      <td><p style="text-align: right">12</p></td>
      <td><p style="text-align: right">24</p></td>
      <td><p style="text-align: right">720</p></td>
@@ -142,7 +142,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">8,760</p></td>
     </tr>
     <tr>
-     <th>CSS</th>
+     <th scope="row">CSS</th>
      <td><p style="text-align: right">720</p></td>
      <td><p style="text-align: right">8,760</p></td>
      <td><p style="text-align: right">8,760</p></td>
@@ -150,7 +150,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">8,760</p></td>
     </tr>
     <tr>
-     <th>Police d'écriture</th>
+     <th scope="row">Police d'écriture</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">3</p></td>
      <td><p style="text-align: right">336</p></td>
@@ -158,7 +158,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">87,600</p></td>
     </tr>
     <tr>
-     <th>HTML</th>
+     <th scope="row">HTML</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">168</p></td>
      <td><p style="text-align: right">720</p></td>
@@ -166,7 +166,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">8,766</p></td>
     </tr>
     <tr>
-     <th>Image</th>
+     <th scope="row">Image</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">1</p></td>
      <td><p style="text-align: right">28</p></td>
@@ -174,7 +174,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">8,760</p></td>
     </tr>
     <tr>
-     <th>Other</th>
+     <th scope="row">Autre</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">2</p></td>
      <td><p style="text-align: right">336</p></td>
@@ -182,7 +182,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">8,760</p></td>
     </tr>
     <tr>
-     <th>Script</th>
+     <th scope="row">Script</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">1</p></td>
@@ -190,7 +190,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">720</p></td>
     </tr>
     <tr>
-     <th>Text</th>
+     <th scope="row">Texte</th>
      <td><p style="text-align: right">21</p></td>
      <td><p style="text-align: right">336</p></td>
      <td><p style="text-align: right">7,902</p></td>
@@ -198,7 +198,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">8,740</p></td>
     </tr>
     <tr>
-     <th>Video</th>
+     <th scope="row">Vidéo</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">4</p></td>
      <td><p style="text-align: right">24</p></td>
@@ -206,7 +206,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
      <td><p style="text-align: right">336</p></td>
     </tr>
     <tr>
-     <th>XML</th>
+     <th scope="row">XML</th>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">< 1</p></td>
      <td><p style="text-align: right">< 1</p></td>
@@ -223,30 +223,30 @@ En explorant plus en détail les possibilités de mise en cache par type de cont
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig5.png">
-    <img src="/static/images/2019/16_Caching/fig5.png" alt="Figure 5. Distribution de la cachabilité pour les types de contenu destinés aux ordinateurs de bureau." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&amp;format=interactive">
+    <img src="/static/images/2019/16_Caching/fig5.png" alt="Figure 5. Distribution de la cachabilité pour les types de contenu destinés aux ordinateurs de bureau." aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&amp;format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">Un diagramme à barres montrant la répartition des éléments non cachables, mis en cache pendant plus de 0 seconde et mis en cache pendant seulement 0 seconde par type pour les ordinateurs de bureau. Une petite, mais significative proportion n'est pas cachable et cela va jusqu'à 50&nbsp;% pour le HTML, la plupart ont une mise en cache supérieure et 0 et une plus petite quantité a un TTL de 0</div>
+  <div id="fig5-description" class="visually-hidden">Un diagramme à barres montrant la répartition des éléments non cachables, mis en cache pendant plus de 0 seconde et mis en cache pendant seulement 0 seconde par type pour les ordinateurs de bureau. Une petite, mais significative proportion n'est pas cachable et cela va jusqu'à 50&nbsp;% pour le HTML, la plupart ont une mise en cache supérieure à 0 et une plus petite quantité a un TTL de 0</div>
   <figcaption id="fig5-caption">Figure 5. Distribution de la cachabilité pour les types de contenu destinés aux ordinateurs de bureau.</figcaption>
 </figure>
 
-Les mêmes données pour le mobile sont indiquées ci-dessous. Comme on peut le voir, la possibilité de mise en cache des types de contenu est cohérente entre les ordinateurs de bureau et les mobiles.
+Les mêmes données pour le mobile sont présentées ci-dessous. Comme on peut le voir, la mise en cache des types de contenu est similaire entre les ordinateurs de bureau et les mobiles.
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig6.png">
-    <img src="/static/images/2019/16_Caching/fig6.png" alt="Figure 6. Distribution de la cachabilité pour les types de contenu mobile." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&amp;format=interactive">
+    <img src="/static/images/2019/16_Caching/fig6.png" alt="Figure 6. Distribution de la cachabilité pour les types de contenu mobile." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&amp;format=interactive">
   </a>
-  <div id="fig6-description" class="visually-hidden">Un diagramme à barres montrant la répartition des éléments non cachables, mis en cache pendant plus de 0 seconde et mis en cache pendant seulement 0 seconde par type pour les ordinateurs de bureau. Une petite, mais significative proportion n'est pas cachable et cela va jusqu'à 50&nbsp;% pour le HTML, la plupart ont une mise en cache supérieure et 0 et une plus petite quantité a un TTL de 0</div>
+  <div id="fig6-description" class="visually-hidden">Un diagramme à barres montrant la répartition des éléments non cachables, mis en cache pendant plus de 0 seconde et mis en cache pendant seulement 0 seconde par type pour les ordinateurs de bureau. Une petite, mais significative proportion n'est pas cachable et cela va jusqu'à 50&nbsp;% pour le HTML, la plupart ont une mise en cache supérieure à 0 et une plus petite quantité a un TTL de 0</div>
   <figcaption id="fig6-caption">Figure 6. Distribution de la cachabilité pour les types de contenu mobile.</figcaption>
 </figure>
 
 
 ## Cache-Control vs Expires
 
-Dans HTTP/1.0, l'en-tête `Expires` était utilisé pour indiquer la date/heure après laquelle la réponse est considérée comme périmée. Sa valeur est un horodatage de la date, par exemple&nbsp;:
+Dans HTTP/1.0, l'en-tête `Expires` était utilisé pour indiquer la date/heure après laquelle la réponse était considérée comme périmée. Sa valeur est un horodatage, par exemple&nbsp;:
 
 `Expires: Thu, 01 Dec 1994 16:00:00 GMT`
 
-HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients modernes supportent les deux en-têtes. Cet en-tête fournit beaucoup plus d'extensibilité via les directives de mise en cache. Par exemple&nbsp;:
+HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients modernes supportent les deux en-têtes. Cet en-tête est beaucoup plus extensible, via des directives de mise en cache. Par exemple&nbsp;:
 
 * `no-store` peut être utilisé pour indiquer qu'une ressource ne doit pas être mise en cache.
 * `max-age` peut être utilisé pour indiquer une durée de vie.
@@ -257,7 +257,7 @@ HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients moder
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig7.png">
-    <img src="/static/images/2019/16_Caching/fig7.png" alt="Figure 7. Utilisation comparée des en-têtes Cache-Control et Expires." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&amp;format=interactive">
+    <img src="/static/images/2019/16_Caching/fig7.png" alt="Figure 7. Utilisation comparée des en-têtes Cache-Control et Expires." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Un diagramme à barres montrant que 53&nbsp;% des réponses ont un `Cache-Control: max-age`, 54&nbsp;%-55&nbsp;% utilisent `Expire`, 41&nbsp;%-42&nbsp;% utilisent les deux, et 34&nbsp;% n'utilisent aucun des deux. Les chiffres sont donnés à la fois pour les ordinateurs de bureau et les mobiles, mais les chiffres sont presque identiques, les mobiles ayant un point de pourcentage d'utilisation des expirations plus élevé.</div>
   <figcaption id="fig7-caption">Figure 7. Utilisation comparée des en-têtes <code>Cache-Control</code> et <code>Expires</code>.</figcaption>
@@ -291,7 +291,7 @@ La [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1)  HTTP/1.1 
     </tr>
     <tr>
      <td>no-store</td>
-     <td>Indique qu'une réponse n'est pas cachable.</td>
+     <td>Indique qu'une réponse ne doit pas être mise en cache.</td>
     </tr>
     <tr>
      <td>private</td>
@@ -303,11 +303,11 @@ La [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1)  HTTP/1.1 
     </tr>
     <tr>
      <td>proxy-revalidate</td>
-     <td>Identique à must-revalidate mais s'applique aux caches partagées.</td>
+     <td>Identique à must-revalidate mais pour les caches partagés.</td>
     </tr>
     <tr>
      <td>s-maxage</td>
-     <td>Identique à l'âge maximum mais ne s'applique qu'aux caches partagées.</td>
+     <td>Identique à l'âge maximum mais pour les caches partagés.</td>
     </tr>
     <tr>
      <td>immutable</td>
@@ -315,11 +315,11 @@ La [specification](https://tools.ietf.org/html/rfc7234#section-5.2.1)  HTTP/1.1 
     </tr>
     <tr>
      <td>stale-while-revalidate</td>
-     <td>Indique que le client est prêt à accepter une réponse périmée tout en vérifiant de manière asynchrone en arrière-plan pour en trouver une nouvelle.</td>
+     <td>Indique que le client est prêt à accepter une réponse périmée tout en vérifiant de manière asynchrone en arrière-plan l'existence d'une ressource plus fraiche.</td>
     </tr>
     <tr>
      <td>stale-if-error</td>
-     <td>Indique que le client est prêt à accepter une réponse périmée si la vérification d'une nouvelle réponse échoue.</td>
+     <td>Indique que le client est prêt à accepter une réponse périmée même si la vérification qu'une ressource plus fraiche échoue.</td>
     </tr>
   </table>
   <figcaption>Figure 8. <code>Cache-Control</code> directives.</figcaption>
@@ -329,7 +329,7 @@ Par exemple, `cache-control:public, max-age=43200` indique qu'une entrée mise e
 
 <figure>
   <a href="/static/images/2019/16_Caching/fig9.png">
-    <img src="/static/images/2019/16_Caching/fig9.png" alt="Figure 9. Utilisation de la directive Cache-Control sur mobile." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" data-width="600" data-height="662" data-seamless data-rameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&amp;format=interactive">
+    <img src="/static/images/2019/16_Caching/fig9.png" alt="Figure 9. Utilisation de la directive Cache-Control sur mobile." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="662" data-width="600" data-height="662" data-seamless data-rameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">Un diagramme à barres de 15 directives `Cache-Control` et leur utilisation allant de 74,8&nbsp;% pour max-age, 37,8&nbsp;% pour public, 27,8&nbsp;% pour no-cache, 18&nbsp;% pour no-store, 14,3&nbsp;% pour private, 3,4&nbsp;% pour l'immutable, 3.3. 3&nbsp;% pour no-transform, 2,4&nbsp;% pour le stale-while-revalidate, 2,2&nbsp;% pour pre-check, 2,2&nbsp;% pour post-check, 1,9&nbsp;% pour s-maxage, 1,6&nbsp;% pour proxy-revalidate, 0,3&nbsp;% pour le set-cookie et 0,2&nbsp;% pour le stale-if-error. Les statistiques sont presque identiques pour les ordinateurs de bureaux et les téléphones portables. </div>
   <figcaption id="fig9-caption">Figure 9. Utilisation de la directive <code>Cache-Control</code> sur mobile.</figcaption>
@@ -518,7 +518,7 @@ La plus grande source d'en-têtes `Expires` invalides provient de biens desservi
 
 ## Varier l'en-tête
 
-L'une des étapes les plus importantes de la mise en cache est de déterminer si la ressource demandée est mise en cache ou non. Bien que cela puisse paraître simple, il arrive souvent que l'URL seule ne suffise pas à le déterminer. Par exemple, les requêtes ayant la même URL peuvent varier en fonction de la [compression] (./compression) utilisée (gzip, brotli, etc.) ou être modifiées et adaptées aux visiteurs mobiles.
+L'une des étapes les plus importantes de la mise en cache est de déterminer si la ressource demandée est mise en cache ou non. Bien que cela puisse paraître simple, il arrive souvent que l'URL seule ne suffise pas à le déterminer. Par exemple, les requêtes ayant la même URL peuvent varier en fonction de la [compression](./compression) utilisée (gzip, brotli, etc.) ou être modifiées et adaptées aux visiteurs mobiles.
 
 Pour résoudre ce problème, les clients donnent à chaque ressource mise en cache un identifiant unique (une clé de cache). Par défaut, cette clé de cache est simplement l'URL de la ressource, mais les développeurs peuvent ajouter d'autres éléments (comme la méthode de compression) en utilisant l'en-tête `Vary`.
 
