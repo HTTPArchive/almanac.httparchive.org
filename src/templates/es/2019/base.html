@@ -16,8 +16,16 @@
             <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a></li>
             <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a></li>
             <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a></li>
-            {% if supported_years | length > 1 %}<li>{{ year_switcher() }}</li>{% endif %}
-            {% if supported_languages | length > 1%}<li>{{ language_switcher() }}</li>{% endif %}
+            {% if supported_years | length > 1 %}
+            <li>
+              {{ year_switcher() }}
+            </li>
+            {% endif %}
+            {% if supported_languages | length > 1%}
+            <li>
+              {{ language_switcher() }}
+            </li>
+            {% endif %}
           </ul>
         </nav>
         {% if request.endpoint == 'home' %}
@@ -57,10 +65,14 @@
                   </ul>
                 </li>
                 {% if supported_years | length > 1 %}
-                <li>{{ year_switcher() }}</li>
+                <li>
+                  {{ year_switcher() }}
+                </li>
                 {% endif %}
                 {% if supported_languages | length > 1%}
-                <li>{{ language_switcher() }}</li>
+                <li>
+                  {{ language_switcher() }}
+                </li>
                 {% endif %}
               </ul>
             </li>
@@ -107,8 +119,16 @@
           <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a></li>
           <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a></li>
           <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a></li>
-          {% if supported_years | length > 1 %}<li>{{ year_switcher() }}</li>{% endif %}
-          {% if supported_languages | length > 1%}<li>{{ language_switcher() }}</li>{% endif %}
+          {% if supported_years | length > 1 %}
+          <li>
+            {{ year_switcher() }}
+          </li>
+          {% endif %}
+          {% if supported_languages | length > 1%}
+          <li>
+            {{ language_switcher() }}
+          </li>
+          {% endif %}
           </ul>
       </nav>
       <p class="copyright"><span>© 2019 Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span></p>
@@ -149,6 +169,7 @@
         var menuIconInitialSrc = document.querySelector('.menu-icon').src;
         var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
         var menuBtn = document.querySelector('.menu-btn');
+        var menuNav = document.querySelector('#Menu');
         var menu = document.querySelector('#Menu');
         var closeMenuEventListener;
 
@@ -179,7 +200,7 @@
           event.stopPropagation();
         });
         
-        menu.addEventListener("keydown", function onPress(event) {
+        menuNav.addEventListener("keydown", function onPress(event) {
           if (event.key === 'Escape') {
             if (menuBtn.getAttribute('aria-expanded') === 'true') {
               menuBtn.click();

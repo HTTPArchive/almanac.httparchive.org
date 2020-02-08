@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css">
+  <link rel="stylesheet" href="/static/css/2019.css?v=2">
 {% endblock %}
 
 {% block content%}
@@ -16,8 +16,16 @@
             <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a></li>
             <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a></li>
             <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
-            {% if supported_years | length > 1 %}<li>{{ year_switcher() }}</li>{% endif %}
-            {% if supported_languages | length > 1%}<li>{{ language_switcher() }}</li> {% endif %}
+            {% if supported_years | length > 1 %}
+            <li>
+              {{ year_switcher() }}
+            </li>
+            {% endif %}
+            {% if supported_languages | length > 1%}
+            <li>
+              {{ language_switcher() }}
+            </li>
+            {% endif %}
           </ul>
         </nav>
         {% if request.endpoint == 'home' %}
@@ -149,6 +157,7 @@
         var menuIconInitialSrc = document.querySelector('.menu-icon').src;
         var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
         var menuBtn = document.querySelector('.menu-btn');
+        var menuNav = document.querySelector('#Menu');
         var menu = document.querySelector('#Menu');
         var closeMenuEventListener;
 
@@ -179,7 +188,7 @@
           event.stopPropagation();
         });
         
-        menu.addEventListener("keydown", function onPress(event) {
+        menuNav.addEventListener("keydown", function onPress(event) {
           if (event.key === 'Escape') {
             if (menuBtn.getAttribute('aria-expanded') === 'true') {
               menuBtn.click();
