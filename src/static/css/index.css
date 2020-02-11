@@ -1,7 +1,7 @@
 header.alt-bg {
   background: #5C687D;
   background: transparent linear-gradient(#5C687D 70%, transparent 30%);
-  background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat;
+  /* background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat; */
   background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHN0eWxlPSJiYWNrZ3JvdW5kOndoaXRlOyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMXtmaWxsOiNhOGNhYmE7ZmlsbC1ydWxlOmV2ZW5vZGQ7b3BhY2l0eTouMDV9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tMjMxIDg5aDIwODh2NjUxbC0yMDg4IDM2MFY4OXoiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPgogIDxwYXRoIGQ9Ik0tMTQ0LTE5aDIwODh2NjUxTC0xNDQgOTkyVi0xOXoiIGZpbGw9IiMxYTJiNDkiIG9wYWNpdHk9Ii43NSIgZmlsbC1ydWxlPSJldmVub2RkIi8+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNLTQ3MC04M2gyMDg4djY1MUwtNDcwIDkyOFYtODN6Ii8+CiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4KPC9zdmc+Cg==);
   background-position: bottom left;
   background-repeat: no-repeat;
