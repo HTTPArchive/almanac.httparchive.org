@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1250" viewBox="0 0 1920 1250" preserveAspectRatio="none" style="background:white;">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1250" viewBox="0 0 1920 1250" preserveAspectRatio="none">
   <defs>
     <style>
+      svg{background:#fff}
       .cls-1{fill:#a8caba;fill-rule:evenodd;opacity:.05}
     </style>
   </defs>
