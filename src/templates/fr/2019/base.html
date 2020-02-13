@@ -51,30 +51,6 @@
         </nav>
       </div>
     </div>
-    {% if request.endpoint == 'home' %}
-    <div class="intro-container">
-      <div id="maincontent" class="intro">
-        <div class="intro-year">2019</div>
-        <h1 class="title title-lg title-alt">Web Almanac</h1>
-        <h2>
-          Rapport annuel<br>de HTTP Archive
-          sur<br><b>l’état du Web</b>
-        </h2>
-        <p>
-          Notre mission est de combiner les statistiques brutes et les tendances de HTTP Archive avec l’expertise de la communauté web. Le Web Almanac est un rapport complet sur l’état du Web, soutenu par des données réelles et des experts du Web. Il est composé de 20 chapitres couvrant l’expérience utilisateur, le contenu des pages, leur publication et leur distribution.
-        </p>
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
-          Commencer l’exploration
-        </a>
-      </div>
-      <div class="intro-image-2019-wrapper">
-        <div class="intro-image-2019"></div>
-      </div>
-      <div class="intro-image-wrapper">
-        <div class="intro-image"></div>
-      </div>
-    </div>
-    {% endif %}
   </header>
   {% endblock %}
 
