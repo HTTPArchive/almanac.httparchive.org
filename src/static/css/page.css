@@ -370,10 +370,10 @@ figure .fig-desktop {
   .index-box .index-btn::after {
     font-weight: normal;
     float: right;
-    content: '+';
+    content: "+" / "";
   }
   .index-box.show .index-btn::after {
-    content: '-';
+    content: "-" / "";
   }
 
   .index-box ul {
