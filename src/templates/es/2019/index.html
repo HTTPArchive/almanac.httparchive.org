@@ -90,7 +90,29 @@
 {% endblock %}
 
 {% block main %}
-<div id="home">
+<main id="maincontent">
+  <section class="intro-container">
+    <div class="intro">
+      <div class="intro-year">2019</div>
+      <h1 class="title title-alt">Web Almanac</h1>
+      <h2>
+        HTTP Archive informe del<br>
+        <b>estado de la web</b> anual
+      </h2>
+      <p>
+        Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de 20 capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
+      </p>
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
+        Empieza a explorar
+      </a>
+    </div>
+    <div class="intro-image-2019-wrapper">
+      <div class="intro-image-2019"></div>
+    </div>
+    <div class="intro-image-wrapper">
+      <div class="intro-image"></div>
+    </div>
+  </section>
   <section class="featured-chapter">
     <div class="featured-chapter-content">
       <h2 class="title title-center">Capítulo Destacado</h2>
@@ -128,7 +150,7 @@
         Ver los contribuidores
       </a>
     </div>
-    <div class="people">
+    <div class="people" aria-hidden="true">
       <div class="people-number">{{ contributors }}</div>
       <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
       <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
@@ -165,5 +187,5 @@
       <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
     </div>
   </section>
-</div>
+</main>
 {% endblock %}

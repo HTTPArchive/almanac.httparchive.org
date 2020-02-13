@@ -225,7 +225,7 @@ By exploring the cacheability by content type in more detail in figure 5 below, 
   <a href="/static/images/2019/16_Caching/fig5.png">
     <img src="/static/images/2019/16_Caching/fig5.png" alt="Figure 5. Distribution of cacheability by content type for desktop." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&amp;format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for desktop. A small, but significant proportion are not cacheable and this goes up to 50% for HTML, most have caching greater and 0 and a smaller amount has a 0 TTL</div>
+  <div id="fig5-description" class="visually-hidden">A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for desktop. A small, but significant proportion are not cacheable and this goes up to 50% for HTML, most have caching greater than 0 and a smaller amount has a 0 TTL</div>
   <figcaption id="fig5-caption">Figure 5. Distribution of cacheability by content type for desktop.</figcaption>
 </figure>
 
@@ -235,7 +235,7 @@ The same data for mobile is shown below. As can be seen, the cacheability of con
   <a href="/static/images/2019/16_Caching/fig6.png">
     <img src="/static/images/2019/16_Caching/fig6.png" alt="Figure 6. Distribution of cacheability by content type for mobile." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&amp;format=interactive">
   </a>
-  <div id="fig6-description" class="visually-hidden">A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for mobile. A small, but significant proportion are not cacheable and this goes up to 50% for HTML, most have caching greater and 0 and a smaller amount has a 0 TTL</div>
+  <div id="fig6-description" class="visually-hidden">A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for mobile. A small, but significant proportion are not cacheable and this goes up to 50% for HTML, most have caching greater than 0 and a smaller amount has a 0 TTL</div>
   <figcaption id="fig6-caption">Figure 6. Distribution of cacheability by content type for mobile.</figcaption>
 </figure>
 
