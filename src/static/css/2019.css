@@ -578,7 +578,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: '"';
+  content: '"' / "";
   position: absolute;
   z-index: -1;
   top: -4rem;
