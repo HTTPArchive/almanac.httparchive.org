@@ -548,7 +548,7 @@ header .btn + .language-switcher {
 }
 
 .menu-btn,
-#Menu,
+#menu,
 .menu {
   display: none;
 }
@@ -804,7 +804,7 @@ p.copyright a {
     display: inline;
   }
 
-  #Menu {
+  #menu {
     display: block;
   }
   .menu {
@@ -818,9 +818,10 @@ p.copyright a {
     border-top: 1px solid rgba(242, 242, 242, 0.2);
     padding: 60px 30px 30px;
     background-color: #677486;
-    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
+    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 1);
     z-index: 1;
   }
+
   .menu-btn {
     background: none;
     border: 0;

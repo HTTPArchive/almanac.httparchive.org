@@ -37,8 +37,8 @@
           </a>
         </div>
         {% endif %}
-        <nav title="Page menu" id="Menu" aria-labelledby="MenuBtn">
-          <button type="button" id="MenuBtn" class="menu-btn" aria-label="Open the menu" aria-expanded="false">
+        <nav title="Page menu" id="menu" aria-labelledby="menu-btn">
+          <button type="button" id="menu-btn" class="menu-btn" aria-label="Open the menu" aria-expanded="false" data-open-text="Open the menu" data-close-text="Close the menu">
             <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
           </button>
           <ul class="menu">
@@ -73,8 +73,8 @@
                 {% endif %}
                 {% if supported_languages | length > 1%}
                 <li>
-                  {{ language_switcher() }
-                }</li>
+                  {{ language_switcher() }}
+                </li>
                 {% endif %}
               </ul>
             </li>
@@ -147,41 +147,38 @@
         var menuIconInitialSrc = document.querySelector('.menu-icon').src;
         var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
         var menuBtn = document.querySelector('.menu-btn');
-        var menuNav = document.querySelector('#Menu');
-        var menu = document.querySelector('#Menu');
+        var menuNav = document.querySelector('#menu');
 
-        function triggerMenu() {
-          menuBtn.click();
-        }
-
-        menuBtn.addEventListener('click', function() {
+        function toggleNavMenu() {
           var menuOpen = document.body.classList.toggle('menu-open');
           menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
-          menuBtn.setAttribute('aria-expanded',menuOpen);
-          var ariaLabel = menuOpen ?  "Close the menu" : "Open the menu";
-          menuBtn.setAttribute('aria-label',ariaLabel);
-          event.stopPropagation();
+          menuBtn.setAttribute('aria-expanded', menuOpen);
+          var ariaLabel = menuOpen ?  menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
+          menuBtn.setAttribute('aria-label', ariaLabel);
 
           /* When you open the menu, add an event listener to close it when clicking outside the menu area */
           /* Remove it on closing the menu */
           if (menuBtn.getAttribute('aria-expanded') === 'true') {
-            document.body.addEventListener('click', triggerMenu, false);
+            document.body.addEventListener('click', toggleNavMenu, false);
           } else {
-            document.body.removeEventListener('click', triggerMenu, false);
+            document.body.removeEventListener('click', toggleNavMenu, false);
           }
+        }
 
-        });
-        
-        /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
-        menu.addEventListener("click", function () {
+        menuBtn.addEventListener('click', function() {
+          toggleNavMenu();
           event.stopPropagation();
         });
         
+        /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
+        menuNav.addEventListener('click', function () {
+          event.stopPropagation();
+        });
         
-        menuNav.addEventListener("keydown", function onPress(event) {
+        menuNav.addEventListener('keydown', function (event) {
           if (event.key === 'Escape') {
             if (menuBtn.getAttribute('aria-expanded') === 'true') {
-              menuBtn.click();
+              toggleNavMenu();
               menuBtn.focus();
             }
           }
