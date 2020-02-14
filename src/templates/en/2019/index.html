@@ -113,32 +113,7 @@
       <div class="intro-image"></div>
     </div>
   </section>
-  <section class="featured-chapter">
-    <div class="featured-chapter-content">
-      <h2 class="title title-center">Featured Chapter</h2>
-      <h3>Third Parties</h3>
-      <blockquote>
-        The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link></code> or <code>&lt;script></code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.
-      </blockquote>
-      <div class="featured-chapter-content-data">
-        <div class="featured-chapter-content-data-item">
-          <div>93%</div>
-          <div>Pages with 3P</div>
-        </div>
-        <div class="featured-chapter-content-data-item">
-          <div>49%</div>
-          <div>3P requests</div>
-        </div>
-        <div class="featured-chapter-content-data-item">
-          <div>28%</div>
-          <div>3P bytes</div>
-        </div>
-      </div>
-      <a href="{{ url_for('chapter', year=year, chapter='third-parties', lang=lang) }}" class="btn">
-        Read the Third Parties Chapter
-      </a>
-    </div>
-  </section>
+  {% include "en/2019/featured_chapters.html" %}
   <section class="contributors-container alt-bg">
     {% set contributors = config.contributors.keys() | length %}
     <div class="contributors">
