@@ -113,32 +113,7 @@
       <div class="intro-image"></div>
     </div>
   </section>
-  <section class="featured-chapter">
-    <div class="featured-chapter-content">
-      <h2 class="title title-center">Focus sur le chapitre…</h2>
-      <h3>Tierces Parties (3P)</h3>
-      <blockquote>
-          Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link></code> ou <code>&lt;script></code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.
-      </blockquote>
-      <div class="featured-chapter-content-data">
-        <div class="featured-chapter-content-data-item">
-          <div>93&nbsp;%</div>
-          <div>pages avec 3P</div>
-        </div>
-        <div class="featured-chapter-content-data-item">
-          <div>49&nbsp;%</div>
-          <div>des equêtes</div>
-        </div>
-        <div class="featured-chapter-content-data-item">
-          <div>28&nbsp;%</div>
-          <div>des octets</div>
-        </div>
-      </div>
-      <a href="{{ url_for('chapter', year=year, chapter='third-parties', lang=lang) }}" class="btn">
-        Lire le chapitre sur les Tierces Parties
-      </a>
-    </div>
-  </section>
+  {% include "fr/2019/featured_chapters.html" %}
   <section class="contributors-container alt-bg">
     {% set contributors = config.contributors.keys() | length %}
     <div class="contributors">
