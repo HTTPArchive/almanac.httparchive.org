@@ -595,7 +595,7 @@ footer {
   grid-template-areas:
     'home-logo nav-items nav-items nav-items'
     'hr hr hr hr'
-    'copyright accessibility ha-logo social-media';
+    'copyright copyright ha-logo social-media';
   grid-template-columns: 400px 1fr 1fr 120px 0 0;
   /* 20px same as .container padding */
   padding-left: 20px;
@@ -628,20 +628,8 @@ footer .language-switcher {
 }
 footer .copyright {
   grid-area: copyright;
-  display: flex;
+  display: block;
   align-items: center;
-}
-footer .accessibility {
-  grid-area: accessibility;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-footer .accessibility a{
-  text-decoration: none;
-}
-footer .accessibility a:hover, footer .accessibility a:focus{
-  text-decoration: underline;
 }
 footer .social-media {
   grid-area: social-media;
@@ -659,12 +647,12 @@ footer hr:last-of-type {
   display: none;
 }
 
-p.copyright, p.accessibility {
+p.copyright {
   margin: 0;
   font-size: 16px;
   color: #F2F2F2;
 }
-p.copyright a, p.accessibility a {
+p.copyright a {
   color: white;
 }
 
@@ -700,7 +688,7 @@ p.copyright a, p.accessibility a {
       'hr hr hr hr'
       'nav-items nav-items nav-items nav-items'
       'hr-last hr-last hr-last hr-last'
-      'copyright accessibility ha-logo social-media';
+      'copyright copyright ha-logo social-media';
     grid-template-columns: 3fr 1fr 1fr 120px 0 0;
     grid-template-rows: 60px auto auto;
   }
@@ -827,7 +815,6 @@ p.copyright a, p.accessibility a {
       'nav-items nav-items'
       'ha-logo  social-media'
       'hr-last hr-last'
-      'accessibility accessibility'
       'copyright copyright';
     grid-template-columns: 1fr 120px 0 0;
     grid-template-rows: auto;
@@ -861,19 +848,12 @@ p.copyright a, p.accessibility a {
   footer .language-switcher {
     grid-area: language-switcher;
   }
-  p.copyright, p.accessibility {
+  p.copyright {
     font-size: 12px;
   }
   footer .copyright {
     grid-area: copyright;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  footer .accessibility {
-    grid-area: accessibility;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
