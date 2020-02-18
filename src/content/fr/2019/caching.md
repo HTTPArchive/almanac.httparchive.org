@@ -15,7 +15,6 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. elle offre un avantage significatif en termes de [performance] (./performance) en évitant de rejouer les requêtes, qui mises bout a bout peuvent se révéler couteuses en temps et énergie. La mise en cache facilite la monté en charge d'une application, en réduisant le trafic sur le reseau. Un vieux dicton qui dit que ` la requête la plus rapide est celle que vous n'avez pas à faire ` et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes.
 
-
 La mise en cache sur le web s'appuie sur trois principes fondamentaux : mettre en cache autant que possible, aussi longtemps que possible et aussi près que possible des utilisateurs finaux.
 
 **Mettre en cache autant que vous le pouvez.** Lorsque l'on s'intéresse aux données pouvant être mises en cache, il est important de débuter en identifiant les réponses statiques et dynamiques, qui évoluent ou non en fonction du contexte d'appel. Généralement, les réponses statiques, ne changeant pas, peuvent être mises en cache. Mettres en cache les réponses statiques permettra de les partager entre les utilisateurs. Les contenus dynamiques necessitent quand a eux une analyse plus poussée.
@@ -81,7 +80,8 @@ Ces en-têtes indiquent que la ressource peut être mise en cache pendant 43 200
 < ETag: `1566748830.0-3052-3932359948`
 ```
 
-L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voir un rapport détaillé de la façon dont la réponse sera mise en cache en fonction de ses en-têtes.Par exemple,[un test pour l'URL ci-dessus](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) produirait ce qui suit :
+L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voir un rapport détaillé de la façon dont la réponse sera mise en cache en fonction de ses en-têtes.
+Par exemple,[un test pour l'URL ci-dessus](https://redbot.org/?uri=https%3A%2F%2Fhttparchive.org%2Fstatic%2Fjs%2Fmain.js) produirait ce qui suit :
 
 <figure>
   <a href=`/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg`>
@@ -113,7 +113,6 @@ Une ressource mise en cache est stockée par le client pendant un certain temps 
 *   47% sont mis en cache pendant plus de 0 seconde.
 
 Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
-
 <figure>
   <a href=`/static/images/2019/16_Caching/fig3.png`>
     <img src=`/static/images/2019/16_Caching/fig3.png` alt=`Figure 3. Distribution of cacheable responses.` aria-labelledby=`fig3-caption` aria-describedby=`fig3-description` width=`600` data-width=`600` data-height=`371` data-seamless data-frameborder=`0` data-scrolling=`no` data-src=`https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&amp;format=interactive`>
@@ -123,8 +122,6 @@ Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
 </figure>
 
 Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_Live) du cache pour les requêtes de type desktop. La plupart des types de contenu sont mis en cache, mais les ressources CSS semblent toujours être mises en cache à des valeurs TTL élevées.
-
-Le tableau ci-dessous détaille la durée de vie des valeurs mises en cache ([TTL](https://fr.wikipedia.org/wiki/Time_to_Live)) par type de données. Si la plus part des types sont cachable, une tendance apparait pour les ressources de type CSS qui semblent être systématiquement mises en cache à des TTL élevés.
 
 <figure>
   <table>
@@ -223,7 +220,6 @@ Le tableau ci-dessous détaille la durée de vie des valeurs mises en cache ([TT
   </table>
   <figcaption>Figure 4. Desktop TTL percentiles par type de ressources.</figcaption>
 </figure>
-
 
 Bien que la plupart des TTL médians sont élevées, les percentiles inférieurs mettent en évidence certaines occasions manquées de mise en cache. Par exemple, le TTL médian pour les images est de 28 heures, mais le 25e percentile n'est que d'une à deux heures et le 10e percentile indique que 10 % du volume d'images en cache l'est pendant moins d'une heure.
 
@@ -371,8 +367,6 @@ Plus de 3 millions de réponses comprennent la combinaison de `no-store`, `no-ca
 La directive `max-age=0` est présente sur 1,1% des réponses (plus de quatre millions de réponses) où `no-store` n'est pas présent. Ces ressources seront mises en cache dans le navigateur mais devront être revalidées car elles sont immédiatement expirées.
 
 ## Comment comparer les TTL de cache face a l'age des ressources?
-
-Jusqu'à présent, nous avons parlé de la façon dont les serveurs Web indiquent à un client ce qui peut être mis en cache, et pedant combien de temps. Lors de la conception des règles de mise en cache, il est également important de comprendre l'âge du contenu que vous servez.
 
 Jusqu'à présent, nous avons parlé de la façon dont les serveurs Web indiquent à un client ce qui peut être mis en cache, et pedant combien de temps. Lors de la conception des règles de mise en cache, il est également important de comprendre l'âge du contenu que vous servez.
 
