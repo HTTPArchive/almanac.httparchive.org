@@ -87,7 +87,7 @@ L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voi
   <figcaption d="fig1-caption">Figure 1. Informations de RedBot relatives au <code>Cache-Control</code>.</figcaption>
 </figure>
 
-Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'application peut mettre en cache en suivant une heuristique générique](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). La plupart des clients implémentent une variation de l'heuristique suggérée par le RFC, qui est 10&nbsp;% du temps depuis le `Last-Modified`. Toutefois, certains peuvent mettre la réponse en cache indéfiniment. Il est donc important de définir des règles de mise en cache spécifiques pour s'assurer que vous maîtrisez la cachabilité. 
+Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'application peut mettre en cache en suivant une heuristique générique](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). La plupart des clients implémentent une variation de l'heuristique suggérée par le RFC, qui est 10&nbsp;% du temps depuis le `Last-Modified`. Toutefois, certains peuvent mettre la réponse en cache indéfiniment. Il est donc important de définir des règles de mise en cache spécifiques pour s'assurer que vous maîtrisez la cachabilité.
 
 72&nbsp;% des réponses HTTP sont servies avec un en-tête `Cache-Control`, et 56&nbsp;% des réponses sont servies avec un en-tête `Expires`. Cependant, 27&nbsp;% des réponses n'utilisaient ni l'un ni l'autre, et peuvent alors être mises en cache en suivant cette heuristique. C'est un constat partagé par les sites pour ordinateurs de bureau et les sites mobiles.
 
@@ -390,7 +390,7 @@ En comparant la capacité de mise en cache d'une ressource à son âge, nous pou
 < Last-Modified: Sun, 25 Aug 2019 16:00:30 GMT
 < Cache-Control: public, max-age=43200
 < Expires: Mon, 14 Oct 2019 07:36:57 GMT
-< ETag: "1566748830.0-3052-3932359948" 
+< ETag: "1566748830.0-3052-3932359948"
 ```
 
 Dans l'ensemble, 59&nbsp;% des ressources servies sur le Web ont un TTL de cache trop court par rapport à l'âge de leur contenu. De plus, le delta médian entre le TTL et l'âge est de 25 jours.
