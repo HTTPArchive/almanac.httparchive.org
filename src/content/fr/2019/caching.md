@@ -84,7 +84,7 @@ L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voi
     <img alt="Figure 1. Informations de RedBot relatives au Cache-Control." src="/static/images/2019/16_Caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="138">
   </a>
   <div id="fig1-description" class="visually-hidden">Exemple de réponse Redbot montrant des informations détaillées sur le moment où la ressource a été modifiée ; si les caches peuvent la stocker ; pour combien de temps elle peut être considérée valide ; si nécessaire les avertissements.</div>
-  <figcaption d="fig1-caption">Figure 1. Informations de RedBot relatives au <code>Cache-Control</code>.</figcaption>
+  <figcaption id="fig1-caption">Figure 1. Informations de RedBot relatives au <code>Cache-Control</code>.</figcaption>
 </figure>
 
 Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'application peut mettre en cache en suivant une heuristique générique](https://paulcalvano.com/index.php/2018/03/14/http-heuristic-caching-missing-cache-control-and-expires-headers-explained/). La plupart des clients implémentent une variation de l'heuristique suggérée par le RFC, qui est 10&nbsp;% du temps depuis le `Last-Modified`. Toutefois, certains peuvent mettre la réponse en cache indéfiniment. Il est donc important de définir des règles de mise en cache spécifiques pour s'assurer que vous maîtrisez la cachabilité.
@@ -122,7 +122,7 @@ Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_
 <figure>
   <table>
     <tr>
-     <th></th>
+     <td></td>
      <th scope="colgroup" colspan="5" >Percentiles TTL du cache des ordinateurs de bureau (Heures)</th>
     </tr>
     <tr>
@@ -575,6 +575,7 @@ En fait, l'un des [rapports de tendance des archives HTTP montre l'adoption des 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">
     <img src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="Figure 17. Série chronologique de pages contrôlées par des service worker." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311">
+    </a>
   <div id="fig17-description" class="visually-hidden">
   Un graphique de séries chronologiques montre l'utilisation des sites contrôlés par les service worker d'octobre 2016 à juillet 2019. L'utilisation a augmenté régulièrement au fil des ans, tant pour les téléphones portables que pour les ordinateurs de bureau, mais reste inférieure à 0,6&nbsp;% pour les deux.</div>
   <figcaption id="fig17-caption">Figure 17. Série chronologique de pages contrôlées par des service workers. (Source&nbsp;: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
@@ -587,7 +588,7 @@ Dans le tableau ci-dessous, vous pouvez voir un résumé de l'utilisation d'AppC
 <figure>
   <table>
     <tr>
-     <th></th>
+     <td></td>
      <th>N'utilisent pas de Server Worker</th>
      <th>Utilisent un Service Worker</th>
      <th>Total</th>
@@ -619,13 +620,13 @@ Si on fait une comparaison entre HTTP et HTTPS, cela devient encore plus intére
 <figure>
   <table>
     <tr>
-     <th></th>
-     <th></th>
-     <th>N'utilise pas Service Worker</th>
-     <th>Utilise Service Worker</th>
+     <td></td>
+     <td></td>
+     <th scope="col">N'utilise pas Service Worker</th>
+     <th scope="col">Utilise Service Worker</th>
     </tr>
     <tr>
-     <th rowspan="2" >HTTP</th>
+     <th scope="rowgroup" rowspan="2" >HTTP</th>
      <td>N'utilise pas AppCache</td>
      <td><p style="text-align: right">1,968,736</p></td>
      <td><p style="text-align: right">907</p></td>
@@ -636,7 +637,7 @@ Si on fait une comparaison entre HTTP et HTTPS, cela devient encore plus intére
      <td><p style="text-align: right">1</p></td>
     </tr>
     <tr>
-     <th rowspan="2" >HTTPS</th>
+     <th scope="rowgroup" rowspan="2" >HTTPS</th>
      <td>N'utilise pas AppCache</td>
      <td><p style="text-align: right">3,076,601</p></td>
      <td><p style="text-align: right">31,334</p></td>
