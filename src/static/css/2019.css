@@ -464,15 +464,28 @@ header.alt-bg a:focus, footer.alt-bg a:focus {
   align-items: center;
 }
 
+header nav ul, footer nav ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-inline-start: 0;
+}
+
+header nav li, footer nav li {
+  display: flex;
+  line-height: 1.4em;
+}
+
 header nav {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
-header nav > * {
+header nav > ul > li > * {
   margin-right: 50px;
 }
-header nav > *:last-child {
+header nav > ul > li:last-child  > * {
   margin-right: 0;
 }
 nav a {
@@ -535,6 +548,7 @@ header .btn + .language-switcher {
 }
 
 .menu-btn,
+#menu,
 .menu {
   display: none;
 }
@@ -578,7 +592,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: '"';
+  content: '"' / "";
   position: absolute;
   z-index: -1;
   top: -4rem;
@@ -596,7 +610,7 @@ footer {
     'home-logo nav-items nav-items nav-items'
     'hr hr hr hr'
     'copyright copyright ha-logo social-media';
-  grid-template-columns: 300px 1fr 1fr 120px 0 0;
+  grid-template-columns: 400px 1fr 1fr 120px 0 0;
   /* 20px same as .container padding */
   padding-left: 20px;
   padding-right: 20px;
@@ -620,7 +634,7 @@ footer .ha-logo {
   justify-content: flex-end;
   align-items: center;
 }
-footer .nav-items > * {
+footer .nav-items ul li > * {
   margin-left: 50px;
 }
 footer .language-switcher {
@@ -628,7 +642,7 @@ footer .language-switcher {
 }
 footer .copyright {
   grid-area: copyright;
-  display: flex;
+  display: block;
   align-items: center;
 }
 footer .social-media {
@@ -636,6 +650,10 @@ footer .social-media {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+footer ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 footer hr {
   grid-area: hr;
@@ -649,7 +667,7 @@ footer hr:last-of-type {
 
 p.copyright {
   margin: 0;
-  font-size: 12px;
+  font-size: 16px;
   color: #F2F2F2;
 }
 p.copyright a {
@@ -660,8 +678,12 @@ p.copyright a {
   padding: 0 20px;
 }
 
-.social-media a:first-child {
+.social-media li:first-child a {
   margin-right: 30px;
+}
+
+.social-media li {
+  display: flex;
 }
 .social-media img {
   height: auto;
@@ -684,22 +706,27 @@ p.copyright a {
   footer {
     display: grid;
     grid-template-areas:
-      'home-logo  home-logo  language-switcher'
-      'hr hr hr'
-      'nav-items nav-items nav-items'
-      'hr-last hr-last hr-last'
-      'copyright ha-logo social-media';
-    grid-template-columns: 1fr 1fr 120px 0 0;
+      'home-logo home-logo language-switcher language-switcher'
+      'hr hr hr hr'
+      'nav-items nav-items nav-items nav-items'
+      'hr-last hr-last hr-last hr-last'
+      'copyright copyright ha-logo social-media';
+    grid-template-columns: 3fr 1fr 1fr 120px 0 0;
     grid-template-rows: 60px auto auto;
   }
   footer .nav-items {
     grid-area: nav-items;
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .nav-items ul {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  footer .nav-items > * {
+  footer .nav-items ul li > * {
     margin-left: 0;
     margin: 20px 0px;
     font-size: 16px;
@@ -762,15 +789,23 @@ p.copyright a {
   header .cta {
     display: none;
   }
-  header nav > * {
+  header nav > ul > li > * {
     margin: 0;
   }
-  header nav > a{
+  header nav > ul > li > a {
     margin-bottom: 50px;
     font-size: 16px;
+    line-height: 1.4em
   }
-  header nav > a:last-child {
+  header nav > ul > li:last-child {
     margin: 0;
+  }
+  header .social-media li {
+    display: inline;
+  }
+
+  #menu {
+    display: block;
   }
   .menu {
     position: absolute;
@@ -783,10 +818,10 @@ p.copyright a {
     border-top: 1px solid rgba(242, 242, 242, 0.2);
     padding: 60px 30px 30px;
     background-color: #677486;
-    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
-    opacity: 0.95;
+    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 1);
     z-index: 1;
   }
+
   .menu-btn {
     background: none;
     border: 0;
@@ -836,11 +871,16 @@ p.copyright a {
   footer .nav-items {
     grid-area: nav-items;
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .nav-items ul {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  footer .nav-items > * {
+  footer .nav-items ul li > * {
     margin-left: 0;
     margin: 20px 0px;
     font-size: 16px;
@@ -848,9 +888,12 @@ p.copyright a {
   footer .language-switcher {
     grid-area: language-switcher;
   }
+  p.copyright {
+    font-size: 12px;
+  }
   footer .copyright {
     grid-area: copyright;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
