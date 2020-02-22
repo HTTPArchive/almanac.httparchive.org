@@ -55,7 +55,7 @@ Les en-têtes de réponse HTTP permettant de valider les données stockées en c
 *   `Last-Modified` indique quand la ressource a été modifiée pour la dernière fois.
 *   `ETag` fournit l'identifiant unique d'une ressource.
 
-`ETag` est prioritaire si les deux en-têtes sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#validating-freshness).
+`ETag` est prioritaire si les deux en-têtes sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#validation-de-la-fraîcheur-des-informations).
 
 L'exemple ci-dessous contient un extrait d'un en-tête requête/réponse du fichier main.js de HTTP Archive. Ces en-têtes indiquent que la ressource peut être mise en cache pendant 43&nbsp;200 secondes (12 heures), et qu'elle a été modifiée pour la dernière fois il y a plus de deux mois (différence entre les en-têtes `Last-Modified` et `Date`).
 
