@@ -16,7 +16,7 @@ header::after {
   background: #5C687D;
   top: 0;
   left: 0;
-  bottom: 0;
+  bottom: 600px;
   right: 0;
   display: block;
   position: absolute;
@@ -338,6 +338,10 @@ p {
     margin-bottom: -1800px;
   }
 
+  header::after {
+    bottom: 450px;
+  }
+
   .intro-container {
     grid-template-areas:
       'year'
@@ -471,6 +475,10 @@ p {
     background-size: cover;
     padding-bottom: 1650px;
     margin-bottom: -1650px;
+  }
+
+  header::after {
+    bottom: 200px;
   }
   
   header .container {
