@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css">
+  <link rel="stylesheet" href="/static/css/2019.css?v=2">
 {% endblock %}
 
 {% block content%}
@@ -12,42 +12,71 @@
       <div class="top-header">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive" height="39" width="202"></a>
         <nav title="Navigation de page">
-          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
-          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
-          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
-          {% if supported_years | length > 1 %}
-            {{ year_switcher() }}
-          {% endif %}
+          <ul>
+            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a></li>
+            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a></li>
+            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
+            {% if supported_years | length > 1 %}
+            <li>
+              {{ year_switcher() }}
+            </li>
+            {% endif %}
+            {% if supported_languages | length > 1%}
+            <li>
+              {{ language_switcher() }}
+            </li>
+            {% endif %}
+          </ul>
         </nav>
-        {{ language_switcher() }}
         {% if request.endpoint == 'home' %}
-          <div class="cta">
+        <div class="cta">
           <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
             Commencer l’exploration
-            </a>
-          </div>
+          </a>
+        </div>
         {% endif %}
-        <button type="button" class="menu-btn" aria-label="Menu">
-          <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
-        </button>
-        <nav title="Menu de la page" class="menu">
-          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
-          <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
-          <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
-          <div class="misc">
-            <a href="https://httparchive.org/">
-              <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
-            </a>
-            <div class="social-media">
-              <a href="https://twitter.com/HTTPArchive" class="twitter">
-                <img src="/static/images/twitter.png" height="65" width="80" alt="Twitter" loading="lazy" />
-              </a>
-              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-                <img src="/static/images/github.png" height="78" width="80" alt="GitHub" loading="lazy" />
-              </a>
-            </div>
-            {{ language_switcher() }}
-          </div>
+        <nav title="Menu de la page" id="menu" aria-labelledby="menu-btn">
+          <button type="button" id="menu-btn" class="menu-btn" aria-label="Ouvrez le menu" aria-expanded="false" data-open-text="Ouvrez le menu" data-close-text="Fermez le menu">
+            <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
+          </button>
+          <ul class="menu">
+            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a></li>
+            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a></li>
+            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a></li>
+            <li class="misc">
+              <ul class="misc">
+                <li>
+                  <a href="https://httparchive.org/">
+                    <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
+                  </a>
+                </li>
+                <li>
+                  <ul class="social-media">
+                    <li>
+                      <a href="https://twitter.com/HTTPArchive" class="twitter">
+                        <img src="/static/images/twitter.png" height="65" width="80" alt="Twitter" loading="lazy" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+                        <img src="/static/images/github.png" height="78" width="80" alt="GitHub" loading="lazy" />
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                {% if supported_years | length > 1 %}
+                <li>
+                  {{ year_switcher() }}
+                </li>
+                {% endif %}
+                {% if supported_languages | length > 1%}
+                <li>
+                  {{ language_switcher() }}
+                </li>
+                {% endif %}
+              </ul>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
@@ -61,24 +90,39 @@
   {% block footer %}
     <footer class="alt-bg">
       <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac par HTTP Archive" height="39" width="202"></a>
-      <nav class="nav-items">
-        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a>
-        <a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a>
-        <a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a>
-        {{ language_switcher() }}
+      <nav title="Navigation dans le pied de page" class="nav-items">
+        <ul>
+          <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Table des matières</a></li>
+          <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contributeurs et contributrices</a></li>
+          <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Méthodologie</a></li>
+          {% if supported_years | length > 1 %}
+          <li>
+            {{ year_switcher() }}
+          </li>
+          {% endif %}
+          {% if supported_languages | length > 1%}
+          <li>
+            {{ language_switcher() }}
+          </li>
+          {% endif %}
+        </ul>
       </nav>
       <p class="copyright"><span>© 2019 Web Almanac. Sous licence <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span></p>
       <a class="navigation-logo ha-logo" href="https://httparchive.org">
         <img src="/static/images/ha-home.svg" alt="Page d’accueil HTTP Archive" height="35" width="70">
       </a>
-      <div class="social-media">
-        <a href="https://twitter.com/HTTPArchive" class="twitter">
-          <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
-        </a>
-        <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-          <img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" />
-        </a>
-      </div>
+      <ul class="social-media">
+        <li>
+          <a href="https://twitter.com/HTTPArchive" class="twitter">
+            <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+            <img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" />
+          </a>
+        </li>
+      </ul>
       <hr>
       <hr>
     </footer>
@@ -100,10 +144,42 @@
         var menuIcon = document.querySelector('.menu-icon');
         var menuIconInitialSrc = document.querySelector('.menu-icon').src;
         var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
+        var menuBtn = document.querySelector('.menu-btn');
+        var menuNav = document.querySelector('#menu');
 
-        document.querySelector('.menu-btn').addEventListener('click', function() {
+        function toggleNavMenu() {
           var menuOpen = document.body.classList.toggle('menu-open');
           menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
+          menuBtn.setAttribute('aria-expanded', menuOpen);
+          var ariaLabel = menuOpen ?  menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
+          menuBtn.setAttribute('aria-label', ariaLabel);
+
+          /* When you open the menu, add an event listener to close it when clicking outside the menu area */
+          /* Remove it on closing the menu */
+          if (menuBtn.getAttribute('aria-expanded') === 'true') {
+            document.body.addEventListener('click', toggleNavMenu, false);
+          } else {
+            document.body.removeEventListener('click', toggleNavMenu, false);
+          }
+        }
+
+        menuBtn.addEventListener('click', function() {
+          toggleNavMenu();
+          event.stopPropagation();
+        });
+        
+        /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
+        menuNav.addEventListener('click', function () {
+          event.stopPropagation();
+        });
+        
+        menuNav.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            if (menuBtn.getAttribute('aria-expanded') === 'true') {
+              toggleNavMenu();
+              menuBtn.focus();
+            }
+          }
         });
 
       })();

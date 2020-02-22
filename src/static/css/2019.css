@@ -464,15 +464,28 @@ header.alt-bg a:focus, footer.alt-bg a:focus {
   align-items: center;
 }
 
+header nav ul, footer nav ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-inline-start: 0;
+}
+
+header nav li, footer nav li {
+  display: flex;
+  line-height: 1.4em;
+}
+
 header nav {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
-header nav > * {
+header nav > ul > li > * {
   margin-right: 50px;
 }
-header nav > *:last-child {
+header nav > ul > li:last-child  > * {
   margin-right: 0;
 }
 nav a {
@@ -535,6 +548,7 @@ header .btn + .language-switcher {
 }
 
 .menu-btn,
+#menu,
 .menu {
   display: none;
 }
@@ -620,7 +634,7 @@ footer .ha-logo {
   justify-content: flex-end;
   align-items: center;
 }
-footer .nav-items > * {
+footer .nav-items ul li > * {
   margin-left: 50px;
 }
 footer .language-switcher {
@@ -636,6 +650,10 @@ footer .social-media {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+footer ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 footer hr {
   grid-area: hr;
@@ -660,8 +678,12 @@ p.copyright a {
   padding: 0 20px;
 }
 
-.social-media a:first-child {
+.social-media li:first-child a {
   margin-right: 30px;
+}
+
+.social-media li {
+  display: flex;
 }
 .social-media img {
   height: auto;
@@ -695,11 +717,16 @@ p.copyright a {
   footer .nav-items {
     grid-area: nav-items;
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .nav-items ul {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  footer .nav-items > * {
+  footer .nav-items ul li > * {
     margin-left: 0;
     margin: 20px 0px;
     font-size: 16px;
@@ -762,15 +789,23 @@ p.copyright a {
   header .cta {
     display: none;
   }
-  header nav > * {
+  header nav > ul > li > * {
     margin: 0;
   }
-  header nav > a{
+  header nav > ul > li > a {
     margin-bottom: 50px;
     font-size: 16px;
+    line-height: 1.4em
   }
-  header nav > a:last-child {
+  header nav > ul > li:last-child {
     margin: 0;
+  }
+  header .social-media li {
+    display: inline;
+  }
+
+  #menu {
+    display: block;
   }
   .menu {
     position: absolute;
@@ -783,10 +818,10 @@ p.copyright a {
     border-top: 1px solid rgba(242, 242, 242, 0.2);
     padding: 60px 30px 30px;
     background-color: #677486;
-    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
-    opacity: 0.95;
+    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 1);
     z-index: 1;
   }
+
   .menu-btn {
     background: none;
     border: 0;
@@ -836,11 +871,16 @@ p.copyright a {
   footer .nav-items {
     grid-area: nav-items;
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .nav-items ul {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  footer .nav-items > * {
+  footer .nav-items ul li > * {
     margin-left: 0;
     margin: 20px 0px;
     font-size: 16px;
