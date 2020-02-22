@@ -576,8 +576,7 @@ En fait, l'un des [rapports de tendance des archives HTTP montre l'adoption des 
   <a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">
     <img src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="Figure 17. Série chronologique de pages contrôlées par des service worker." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311">
     </a>
-  <div id="fig17-description" class="visually-hidden">
-  Un graphique de séries chronologiques montre l'utilisation des sites contrôlés par les service worker d'octobre 2016 à juillet 2019. L'utilisation a augmenté régulièrement au fil des ans, tant pour les téléphones portables que pour les ordinateurs de bureau, mais reste inférieure à 0,6&nbsp;% pour les deux.</div>
+  <div id="fig17-description" class="visually-hidden">Un graphique de séries chronologiques montre l'utilisation des sites contrôlés par les service worker d'octobre 2016 à juillet 2019. L'utilisation a augmenté régulièrement au fil des ans, tant pour les téléphones portables que pour les ordinateurs de bureau, mais reste inférieure à 0,6&nbsp;% pour les deux.</div>
   <figcaption id="fig17-caption">Figure 17. Série chronologique de pages contrôlées par des service workers. (Source&nbsp;: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
 </figure>
 
