@@ -526,7 +526,19 @@ var indexBox = document.querySelector('.index-box');
 var indexBoxTitle = document.querySelector('.index .index-btn');
 
 indexBoxTitle.addEventListener('click', function(e) {
-  indexBox.classList.toggle('show');
+  var indexOpen = indexBox.classList.toggle('show');
+  indexBoxTitle.setAttribute('aria-expanded',indexOpen);
+  var ariaLabel = indexOpen ?  "Close the Table of Contents" : "Open the Table of Contents";
+  indexBoxTitle.setAttribute('aria-label',ariaLabel);
+});
+        
+indexBox.addEventListener("keydown", function onPress(event) {
+  if (event.key === 'Escape') {
+    if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {
+      indexBoxTitle.click();
+      indexBoxTitle.focus();
+    }
+  }
 });
 </script>
 {% endblock %}

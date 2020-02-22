@@ -1,0 +1,215 @@
+{% extends "en/2019/base.html" %}
+
+{% block title %}Accessibility Statement | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}Describes the accessibility goals of the Web Almanac{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ self.description() }}">
+
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
+<meta property="og:image:height" content="984">
+<meta property="og:image:width" content="1200">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{ self.description() }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@HTTPArchive">
+<meta name="twitter:title" content="{{ self.title() }}">
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
+<meta name="twitter:image:alt" content="Web Almanac Accessibility Statement " />
+<meta name="twitter:description" content="{{ self.description() }}">
+
+<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}"
+	  },
+	  "headline": "{{ self.title() }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "https://almanac.httparchive.org/static/images/methodology-banner.png",
+	  	  "height": 984,
+	  	  "width": 1200
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "HTTP Archive",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+    "author":
+      {
+	  	  "@type": "Person",
+          "sameas": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=2019, lang=lang, _anchor='bazzadp') }}",
+            "https://twitter.com/tunetheweb",
+            "https://github.com/bazzadp"
+            ],
+	  	  "name": "Barry Pollard"
+      },
+      "description": "{{ self.description() }}",
+      "datePublished": "2020-02-03T12:00:00+00:00:00",
+      "dateModified": "2020-02-03T12:00:00+00:00:00"
+	}
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://almanac.httparchive.org/{{lang}}/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Accessibility Statement",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}"
+      }]
+    }
+    </script>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css?v=2">
+{% endblock %}
+
+{% block main %}
+<main id="accessibility_statement" class="main">
+  <nav class="index">
+    <div class="index-box floating-card">
+      <h2 class="header">
+        <button class="index-btn">Index</button>
+        <span class="no-button">Index</span>
+      </h2>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#measures">Measures to support accessibility</a></li>
+        <li><a href="#conformance-status">Conformance status</a></li>
+        <li><a href="#external-content">External content</a></li>
+        <li><a href="#compatibility">Compatibility with browsers and assistive technology</a></li>
+        <li><a href="#technical-specifications">Technical Specifications</a></li>
+        <li><a href="#assessment-approach">Assessment Approach</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article id="maincontent" class="content">
+    <h1 class="title title-lg">Accessibility Statement</h1>
+      
+        <h2 id="overview">Overview</h2>
+
+        <p>
+          The Web Almanac is committed to ensuring digital accessibility for all people. We are continually improving the user experience for everyone and applying the relevant accessibility standards.
+        </p>
+      
+        <h2 id="measures">Measures to support accessibility</h2>
+
+        <p>
+          The Web Almanac takes the following measures to ensure accessibility of this website:
+        </p>
+        <ul>
+          <li>Include accessibility as part of the development of this website.</li>
+          <li>Review the accessibility using whatever tools are available.</li>
+          <li>Be transparent about Accessibility issues <a href="https://github.com/HTTPArchive/almanac.httparchive.org/search?q=accessibility&type=Issues">on our GitHub pages</a>.</li>
+          <li>Address accessibility issues raised in a timely manner.</li>
+          <li>Publish, and keep up to date, this accessibility statement.</li>
+        </ul>
+      
+        <h2 id="conformance-status">Conformance status</h2>
+
+        <p>
+          The <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA. The Web Almanac is partially conformant with <a href="https://www.w3.org/WAI/WCAG21/">WCAG 2.1</a> level AAA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.
+        </p>
+
+        <p>
+          We consider ourselves partially conformant because we have not completed a full, externally verified, audit of the website so cannot be confident of our current status. We have audited all the pages on the website using a number of tools, including the <a href="https://wave.webaim.org/">WAVE Accessibility Tool</a>, the <a href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/">Firefox Accessibility Inspector</a> and the <a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" rel="nofollow">AXE Chrome plugin</a>. We have not completed any manual Accessibility Audits or had the website professionally audited by accessibility experts.
+        </p>
+
+        <p>
+          The Web Almanac's purpose is to provide detailed information about the status of the web. While we aim to ensure all content is easily read even by non-experts, the nature of the material may mean there may be a level of expertise and technology understanding needed to understand some chapters and some metrics, which may not meet the <a href="https://www.w3.org/WAI/WCAG21/quickref/#reading-level">WCAG 2.1 level AAA reading level guidelines</a>.
+        </p>
+
+        <p>
+          We also use Google Sheets for some interactive visualizations, which may also not be conformant to WCAG accessibility standards. We do provide images to for all our figures, and only display interactive visualizations when the client software supports this. If using a web browser and you do not wish to view the interactive visualizations, then the images can be enforce by adding a <code>?print</code> query param to any of the chapters, <a href="./accessibility?print">view the Accessibility chapter in print mode</a> for one such example.
+        </p>
+
+        <p>
+          In some chapters, we also include other content on the site, no created by ourselves, including YouTube videos, which do not meet the strict criteria required of WCAG 2.1 level AAA. See note below on external content.
+        </p>
+      
+        <h2 id="external-content">External content</h2>
+
+        <p>
+          Many chapters link to other content (videos, PDFs, articles) which are not under our control and which may not meet the high levels of conformance that we have achieved. Were possible, we will provide links to articles in the same language as the page being viewed, but this is not always provided.
+        </p>
+      
+        <h2 id="compatibility">Compatibility with browsers and assistive technology</h2>
+
+        <p>
+          The Web Almanac is designed to be compatible with as many browsers and assistive technologies as possible. The website has been built in a progressive manner, and is fully functionality even without supporting all the modern browser features we use but you may notice a deterioration in visuals, and lack of some functionality (interactive visuals, comment counts etc.) when not using a modern browser such as a recent version of Chrome, Safari, Firefox or Edge.
+        </p>
+        
+        <p>
+          At this time, we have not completed testing in assistive technology hardware or software but have used tools as above to attempt to address any issues in these devices.
+        </p>
+      
+        <h2 id="technical-specifications">Technical Specifications</h2>
+        
+        <p>
+          The website is built on well structured, semantic HTML (including <a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a> where appropriate), enhanced with CSS for styling and limited JavaScript for some interactive components. The website makes use of modern development practices such as CSS Grid, Fetch, and WOFF2 Fonts, which are not supported in older browsers such as IE 11. The website is still fully functional in those browsers but may not be as visually appealing. No extra plugins or libraries should be required to view the website.
+        </p>
+      
+        <h2 id="assessment-approach">Assessment Approach</h2>
+        
+        <p>
+          Self-evaluation: the content was evaluated by the Web Almanac team using their own expertise and a number of tools including the <a href="https://wave.webaim.org/">WAVE Accessibility Tool</a>, the <a href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/">Firefox Accessibility Inspector</a> and the <a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" rel="nofollow">AXE Chrome plugin</a>.
+        </p>
+      
+        <h2 id="feedback">Feedback</h2>
+
+        <p>
+          We welcome feedback on the accessibility of this website. The best ways to reach us would be to <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues">raise an issue on GitHub</a> or email us at <a href="mailto:team@httparchive.org">team@httparchive.org</a>. We would also welcome pull requests for those that wish to contribute directly. The Web Almanac is a community based project, managed by volunteers, and so we cannot guarantee a timeframe for responding to feedback but will respond as soon as possible.
+        </p>
+
+  </article>
+</main>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script nonce="{{ csp_nonce() }}">
+
+var indexBox = document.querySelector('.index-box');
+var indexBoxTitle = document.querySelector('.index .index-btn');
+
+indexBoxTitle.addEventListener('click', function(e) {
+  var indexOpen = indexBox.classList.toggle('show');
+  indexBoxTitle.setAttribute('aria-expanded',indexOpen);
+  var ariaLabel = indexOpen ?  "Close the Table of Contents" : "Open the Table of Contents";
+  indexBoxTitle.setAttribute('aria-label',ariaLabel);
+});
+
+indexBox.addEventListener("keydown", function onPress(event) {
+  if (event.key === 'Escape') {
+    if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {
+      indexBoxTitle.click();
+      indexBoxTitle.focus();
+    }
+  }
+});
+</script>
+{% endblock %}
