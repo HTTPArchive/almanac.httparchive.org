@@ -8,18 +8,18 @@
 <meta name="description" content="{{ self.description() }}">
 
 <meta property="og:title" content="{{ self.title() }}">
-<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint , year=year, lang=lang) }}">
-<meta property="og:image" content="https://almanac.httparchive.org/static/images/home-hero-bg.png">
-<meta property="og:image:height" content="562">
-<meta property="og:image:width" content="715">
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
+<meta property="og:image:height" content="984">
+<meta property="og:image:width" content="1200">
 <meta property="og:type" content="article">
 <meta property="og:description" content="{{ self.description() }}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@HTTPArchive">
 <meta name="twitter:title" content="{{ self.title() }}">
-<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/home-hero-bg.png">
-<meta name="twitter:image:alt" content="{{ year }} Web Almanac methodology" />
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
+<meta name="twitter:image:alt" content="Web Almanac Accessibility Statement " />
 <meta name="twitter:description" content="{{ self.description() }}">
 
 <script type="application/ld+json">
@@ -28,7 +28,7 @@
 	  "@type": "Article",
 	  "mainEntityOfPage": {
 	  	  "@type": "WebPage",
-	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}"
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}"
 	  },
 	  "headline": "{{ self.title() }}",
 	  "image": {
@@ -51,7 +51,7 @@
       {
 	  	  "@type": "Person",
           "sameas": [
-            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='bazzadp') }}",
+            "https://almanac.httparchive.org{{ url_for('contributors', year=2019, lang=lang, _anchor='bazzadp') }}",
             "https://twitter.com/tunetheweb",
             "https://github.com/bazzadp"
             ],
@@ -69,13 +69,13 @@
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
-        "name": "{{ year }} Home ({{ language }})",
-        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+        "name": "Home",
+        "item": "https://almanac.httparchive.org/{{lang}}/"
       },{
         "@type": "ListItem",
         "position": 2,
-        "name": "{{ year }} Accessibility Statement",
-        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, year=year, lang=lang) }}"
+        "name": "Accessibility Statement",
+        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}"
       }]
     }
     </script>
@@ -108,7 +108,7 @@
   </nav>
 
   <article id="maincontent" class="content">
-    <h1 class="title title-lg">Accessibility Statement for the Web Almanac</h1>
+    <h1 class="title title-lg">Accessibility Statement</h1>
       
         <h2 id="overview">Overview</h2>
 
@@ -144,7 +144,7 @@
         </p>
 
         <p>
-          We also Google Sheets for some interactive visualizations, which may also not be conformant to WCAG accessibility standards. We do provide images to for all our figures, and only display interactive visualizations when the client software supports this. If using a web browser and you do not wish to view the interactive visualizations, then the images can be enforce by adding a <code>?print</code> query param to any of the chapters, <a href="./accessibility?print">view the Accessibility chapter in print mode</a> for one such example.
+          We also use Google Sheets for some interactive visualizations, which may also not be conformant to WCAG accessibility standards. We do provide images to for all our figures, and only display interactive visualizations when the client software supports this. If using a web browser and you do not wish to view the interactive visualizations, then the images can be enforce by adding a <code>?print</code> query param to any of the chapters, <a href="./accessibility?print">view the Accessibility chapter in print mode</a> for one such example.
         </p>
 
         <p>
@@ -170,7 +170,7 @@
         <h2 id="technical-specifications">Technical Specifications</h2>
         
         <p>
-          The website is built on well structured, semantic HTML (including WAI-ARIA where appropriate), enhanced with CSS for styling and limited JavaScript for some interactive components. The website makes use of modern development practices such as CSS Grid, Fetch, and WOFF2 Fonts, which are not supported in older browsers such as IE 11. The website is still fully functional in those browsers but may not be as visually appealing. No extra plugins or libraries should be required to view the website.
+          The website is built on well structured, semantic HTML (including <a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a> where appropriate), enhanced with CSS for styling and limited JavaScript for some interactive components. The website makes use of modern development practices such as CSS Grid, Fetch, and WOFF2 Fonts, which are not supported in older browsers such as IE 11. The website is still fully functional in those browsers but may not be as visually appealing. No extra plugins or libraries should be required to view the website.
         </p>
       
         <h2 id="assessment-approach">Assessment Approach</h2>
@@ -197,7 +197,19 @@ var indexBox = document.querySelector('.index-box');
 var indexBoxTitle = document.querySelector('.index .index-btn');
 
 indexBoxTitle.addEventListener('click', function(e) {
-  indexBox.classList.toggle('show');
+  var indexOpen = indexBox.classList.toggle('show');
+  indexBoxTitle.setAttribute('aria-expanded',indexOpen);
+  var ariaLabel = indexOpen ?  "Close the Table of Contents" : "Open the Table of Contents";
+  indexBoxTitle.setAttribute('aria-label',ariaLabel);
+});
+
+indexBox.addEventListener("keydown", function onPress(event) {
+  if (event.key === 'Escape') {
+    if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {
+      indexBoxTitle.click();
+      indexBoxTitle.focus();
+    }
+  }
 });
 </script>
 {% endblock %}
