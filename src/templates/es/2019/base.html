@@ -107,7 +107,11 @@
           {% endif %}
           </ul>
       </nav>
-      <p class="copyright"><span>© 2019 Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span></p>
+      <p class="copyright">
+        <span>© 2019 Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span>
+        <br>
+        <a href="{{ url_for('accessibility_statement', lang=lang) }}">Declaración de accesibilidad</a>
+      </p>
       <a class="navigation-logo ha-logo" href="https://httparchive.org">
         <img src="/static/images/ha-home.svg" alt="Página de Inicio HTTP Archive" height="35" width="70">
       </a>

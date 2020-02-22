@@ -115,6 +115,12 @@ def methodology(lang, year):
     return render_template('%s/%s/methodology.html' % (lang, year))
 
 
+@app.route('/<lang>/accessibility-statement')
+@validate
+def accessibility_statement(lang):
+    return render_template('%s/2019/accessibility_statement.html' % (lang))
+
+
 @app.route('/sitemap.xml')
 @validate
 def sitemap():
