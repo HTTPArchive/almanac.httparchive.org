@@ -1,8 +1,8 @@
 {% extends "%s/2019/base.html" % lang %}
 
-{% block imageURL %}https://almanac.httparchive.org/static/images/methodology-characters-bg.png{% endblock %}
-{% block imageHeight %}354{% endblock %}
-{% block imageWidth %}984{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/methodology-characters-bg.png{% endblock %}
+{% block image_height %}354{% endblock %}
+{% block image_width %}984{% endblock %}
 
 {% block styles %}
 {{ super() }}
@@ -240,7 +240,7 @@
 {% block main %}
 <main id="maincontent" class="main">
   <h1 class="title title-lg">
-    {{ self.contributorsTitle() }}
+    {{ self.contributors_title() }}
   </h1>
   <div class="team">
       <img src="/static/images/avatars/1.jpg" alt="" height="100" width="100" loading="lazy" />
@@ -253,7 +253,7 @@
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
     <div class="filter-container">
       <p>
-        {{ self.filterByTeam() }}
+        {{ self.filter_by_team() }}
         <span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors
       </p>
         {% for id, team in config.teams.items() %}
@@ -264,10 +264,10 @@
     <div class="contributor-grid">
       <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5" class="contributor-join" aria-labelledby="jointheteam">
         <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 203 117">
-          <title id="jointheteam">{{ self.joinTheTeamTitle() }}</title>
+          <title id="jointheteam">{{ self.join_the_team_title() }}</title>
           <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z" />
           <text x="50%" y="47%">
-            {{ self.joinTheTeamText() }}
+            {{ self.join_the_team_text() }}
           </text>
         </svg>
         <img src="/static/images/avatars/12.jpg" alt="" height="100" width="100" loading="lazy" />

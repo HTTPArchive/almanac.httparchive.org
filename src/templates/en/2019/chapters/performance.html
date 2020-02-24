@@ -73,7 +73,7 @@
   </li>
 </ul>
 
-{% endblock %} {% block mainContent %}
+{% endblock %} {% block main_content %}
 <h2 id="introduction">Introduction</h2>
 <p>Performance is a visceral part of the user experience. For <a href="https://wpostats.com/">many websites</a>, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be <a href="https://blog.fullstory.com/rage-clicks-turn-analytics-into-actionable-insights/">rage clicking</a> on the page in frustration.</p>
 <p>There are many ways to quantify web performance. The most important thing is to measure what actually matters to users. However, events like <code>onload</code> or <code>DOMContentLoaded</code> may not necessarily reflect what users experience visually. For example, when loading an email client, it might show an interstitial progress bar while the inbox contents load asynchronously. The problem is that the <code>onload</code> event doesn't wait for the inbox to asynchronously load. In this example, the loading metric that matters most to users is the "time to inbox", and focusing on the <code>onload</code> event may be misleading. For that reason, this chapter will look at more modern and universally applicable paint, load, and interactivity metrics to try to capture how users are actually experiencing the page.</p>

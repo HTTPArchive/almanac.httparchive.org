@@ -1,8 +1,8 @@
 {% extends "%s/2019/base.html" % lang %}
 
-{% block imageURL %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
-{% block imageHeight %}562{% endblock %}
-{% block imageWidth %}715{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
+{% block image_height %}562{% endblock %}
+{% block image_width %}715{% endblock %}
 
 {% block breadcrumb %}
   <script type="application/ld+json">
@@ -12,7 +12,7 @@
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
-        "name": "{{ self.breadcrumbName1() }}",
+        "name": "{{ self.breadcrumb_name_1() }}",
         "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
       }]
     }
@@ -29,11 +29,11 @@
   <section class="intro-container">
     <div class="intro">
       <div class="intro-year">{{ year }}</div>
-      <h1 class="title title-lg title-alt">{{ self.introTitle() }}</h1>
-      <h2>{{ self.introSubTitle() }}</h2>
+      <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
+      <h2>{{ self.intro_sub_title() }}</h2>
       <p>{{ self.mission() }}</p>
       <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
-        {{ self.startExploring() }}
+        {{ self.start_exploring() }}
       </a>
     </div>
     <div class="intro-image-2019-wrapper">
@@ -47,10 +47,10 @@
   <section class="contributors-container alt-bg">
     {% set contributors = config.contributors.keys() | length %}
     <div class="contributors">
-      <h2 class="title title-alt">{{ self.contributorsTitle() }}</h2>
-      <p>{{ self.contributorsDescription() }}</p>
+      <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
+      <p>{{ self.contributors_description() }}</p>
       <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
-        {{ self.contributorsLink() }}
+        {{ self.contributors_link() }}
       </a>
     </div>
     <div class="people" aria-hidden="true">
@@ -62,30 +62,30 @@
   </section>
   <section class="methodology-container">
     <div class="methodology">
-      <h2 class="title title-center">{{ self.methodologyTitle() }}</h2>
+      <h2 class="title title-center">{{ self.methodology_title() }}</h2>
       <div class="methodology-data">
         <div class="websites-tested">
           <div>
-            {{ self.methodologyStat1Title() }}
+            {{ self.methodology_stat_1_title() }}
           </div>
           <div>
-            {{ self.methodologyStat1() }}
+            {{ self.methodology_stat_1() }}
           </div>
         </div>
         <div class="data-processed">
           <div>
-            {{ self.methodologyStat2Title() }}
+            {{ self.methodology_stat_2_title() }}
           </div>
           <div>
-            {{ self.methodologyStat2() }}
+            {{ self.methodology_stat_2() }}
           </div>
         </div>
       </div>
       <p class="methodology-info">
-        {{ self.methodologyDescription() }}
+        {{ self.methodology_description() }}
       </p>
       <a href="{{ url_for('methodology', year=year, lang=lang) }}" class="alt btn">
-        {{ self.methodologyLink() }}
+        {{ self.methodology_link() }}
       </a>
       <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
     </div>

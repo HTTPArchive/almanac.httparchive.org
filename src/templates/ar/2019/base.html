@@ -1,42 +1,42 @@
-{% extends "base/2019/base.html" %}
+{% extends "base.html" {% extends "base/2019/base.html" %}
 
 {% block dir_attribute %}dir="rtl"{% endblock %}
 
 {% block description %}The Web Almanac is an annual state of the web report combining the expertise of the web community with the data and trends of the HTTP Archive.{% endblock %}
 
-{% block twitterImageAlt %}{{ year }} Web Almanac{% endblock %}
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-{% block datePublished %}2019-11-04T12:00:00+00:00:00{% endblock %}
-{% block dateModified %}2019-11-04T12:00:00+00:00:00{% endblock %}
+{% block date_published %}2019-11-04T12:00:00+00:00:00{% endblock %}
+{% block date_modified %}2019-11-04T12:00:00+00:00:00{% endblock %}
 
-{% block breadcrumbName1 %}{{ year }} Home{% endblock %}
-{% block breadcrumbName2 %}{% endblock %}
+{% block breadcrumb_name_1 %}{{ year }} Home{% endblock %}
+{% block breadcrumb_name_2 %}{% endblock %}
 
-{% block skipNavigation %}Skip navigation{% endblock %}
+{% block skip_navigation %}Skip navigation{% endblock %}
 
 {% block organization %}Web Almanac by HTTP Archive{% endblock %}
 
-{% block httpArchiveLink %}HTTP Archive home{% endblock %}
+{% block http_archive_link %}HTTP Archive home{% endblock %}
 
-{% block pageNavigation %}Page navigation{% endblock %}
+{% block page_navigation %}Page navigation{% endblock %}
 
-{% block tableOfContentsTitle %}Table of Contents{% endblock %}
-{% block contributorsTitle %}Contributors{% endblock %}
-{% block methodologyTitle %}Methodology{% endblock %}
+{% block table_of_contents_title %}Table of Contents{% endblock %}
+{% block contributors_title %}Contributors{% endblock %}
+{% block methodology_title %}Methodology{% endblock %}
 
 {% block part %}Part{% endblock %}
 {% block chapter %}Chapter{% endblock %}
 
-{% block startExploring %}Start exploring{% endblock %}
+{% block start_exploring %}Start exploring{% endblock %}
 
-{% block menuTitle %}Page menu{% endblock %}
-{% block openTheMenu %}Open the menu{% endblock %}
-{% block closeTheMenu %}Close the menu{% endblock %}
+{% block menu_title %}Page menu{% endblock %}
+{% block open_the_menu %}Open the menu{% endblock %}
+{% block close_the_menu %}Close the menu{% endblock %}
 
-{% block indexNavTitle %}Chapter table of contents{% endblock %}
-{% block indexTitle %}Index{% endblock %}
-{% block openTheIndex %}Open the Table of Contents{% endblock %}
-{% block closeTheIndex %}Close the Table of Contents{% endblock %}
+{% block index_nav_title %}Chapter table of contents{% endblock %}
+{% block index_title %}Index{% endblock %}
+{% block open_the_index %}Open the Table of Contents{% endblock %}
+{% block close_the_index %}Close the Table of Contents{% endblock %}
 
 {% block open %}Open{% endblock %}
 {% block close %}Close{% endblock %}
@@ -47,9 +47,9 @@
 
 {% macro edition(year) %}{{ year }} Edition{% endmacro %}
 
-{% block footerTitle %}Footer navigation{% endblock %}
+{% block footer_title %}Footer navigation{% endblock %}
 {% block copyright %}© 2019 Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.{% endblock %}
-{% block accessibilityStatement %}Accessibility Statement{% endblock %}
+{% block accessibility_statement %}Accessibility Statement{% endblock %}
 
 {% 
   set localizedPartTitles = {

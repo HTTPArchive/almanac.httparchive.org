@@ -1,8 +1,8 @@
 {% extends "%s/2019/base.html" % lang %}
 
-{% block imageURL %}https://almanac.httparchive.org/static/images/methodology-characters-bg.png{% endblock %}
-{% block imageHeight %}354{% endblock %}
-{% block imageWidth %}984{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/methodology-characters-bg.png{% endblock %}
+{% block image_height %}354{% endblock %}
+{% block image_width %}984{% endblock %}
 
 {% block styles %}
 {{ super() }}
@@ -76,7 +76,7 @@
 
 {% block main %}
 <main id="maincontent" class="main">
-  <h1 class="title title-lg">{{ self.tableOfContentsTitle() }}</h1>
+  <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
 
   <section>
     {{ self.foreward() }}
@@ -106,10 +106,10 @@
         <h2 class="part-name">{{ self.appendix() }}</h2>
         <div class="chapters">
           <div class="chapter">
-            <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodologyTitle() }}</a>
+            <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
           </div>
           <div class="chapter">
-            <a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributorsTitle() }}</a>
+            <a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a>
           </div>
         </div>
       </section>

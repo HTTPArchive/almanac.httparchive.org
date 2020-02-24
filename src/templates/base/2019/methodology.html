@@ -14,8 +14,8 @@
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">
-        <button class="index-btn">{{ self.indexTitle() }}</button>
-        <span class="no-button">{{ self.indexTitle() }}</span>
+        <button class="index-btn">{{ self.index_title() }}</button>
+        <span class="no-button">{{ self.index_title() }}</span>
       </h2>
         {{ self.index() }}
     </div>
@@ -23,12 +23,12 @@
 
   <article id="maincontent" class="content">
     <h1 class="title title-lg">Methodology</h1>
-    {{ self.mainContent() }}
+    {{ self.main_content() }}
   </article>
 </main>
 {% endblock %}
 
 {% block scripts %}
 {{ super() }}
-{{ self.indexMenu() }}
+{{ self.index_menu_script() }}
 {% endblock %}

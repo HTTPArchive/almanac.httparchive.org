@@ -2,14 +2,14 @@
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
 
-{% block imageURL %}https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg{% endblock %}
-{% block imageHeight %}433{% endblock %}
-{% block imageWidth %}866{% endblock %}
+{% block image_url %}https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg{% endblock %}
+{% block image_height %}433{% endblock %}
+{% block image_width %}866{% endblock %}
 
-{% block datePublished %}{{ metadata.get('published','2019-11-04') + 'T12:00:00+00:00:00' }}{% endblock %}
-{% block dateModified %}{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00+00:00:00' }}{% endblock %}
+{% block date_published %}{{ metadata.get('published','2019-11-04') + 'T12:00:00+00:00:00' }}{% endblock %}
+{% block date_modified %}{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00+00:00:00' }}{% endblock %}
 
-{% block authorStructuredData %}
+{% block author_structured_data %}
       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
       {% if authordata -%}
@@ -33,7 +33,7 @@
 
 {% block scripts %}
 {{ super() }}
-{{ self.indexMenu() }}
+{{ self.index_menu_script() }}
 <script nonce="{{ csp_nonce() }}">
 
 document.addEventListener("keyup", function onPress(event) {
@@ -62,21 +62,21 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_actions() %}
   <div class="discuss">
     <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
-      <img src="/static/images/discuss.png" alt="{{ self.discussThisChapter() }}" height="24" width="24" loading="lazy" /><span id="num_comments"></span> <span data-translation id="comment-singular">{{ self.comment() }}</span><span data-translation id="comment-plural">{{ self.comments() }}</span>
+      <img src="/static/images/discuss.png" alt="{{ self.discuss_this_chapter() }}" height="24" width="24" loading="lazy" /><span id="num_comments"></span> <span data-translation id="comment-singular">{{ self.comment() }}</span><span data-translation id="comment-plural">{{ self.comments() }}</span>
     </a>
   </div>
 {% endmacro %}
 
 
 {% macro render_byline() %}
-  <div class="byline">{{ self.writtenBy() }}
+  <div class="byline">{{ self.written_by() }}
   {% for author in metadata.get('authors') %}
     <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
     {% if loop.index == loop.length - 1 %} and{% endif %}
   {% endfor %}
   </div>
 
-  <div class="byline reviewers">{{ self.reviewedBy() }}
+  <div class="byline reviewers">{{ self.reviewed_by() }}
   {% for reviewer in metadata.get('reviewers') %}
     <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
     {% if loop.index == loop.length - 1 %} and{% endif %}
@@ -84,7 +84,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   </div>
 
   {% if metadata.get('translators') | length >= 1 %}
-  <div class="byline translators">{{ self.translatedBy() }}
+  <div class="byline translators">{{ self.translated_by() }}
   {% for translator in metadata.get('translators') %}
     <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
     {% if loop.index == loop.length - 1 %} and{% endif %}
@@ -174,11 +174,11 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% block main %}
 <main id="chapter" class="main">
-    <nav title="{{ self.indexNavTitle() }}" class="index">
+    <nav title="{{ self.index_nav_title() }}" class="index">
         <div class="index-box floating-card">
           <h2 class="header">
-            <button class="index-btn" aria-expanded="false" aria-label="{{ self.openTheIndex() }}">{{ self.indexTitle() }}</button>
-            <span class="no-button">{{ self.indexTitle() }}</span>
+            <button class="index-btn" aria-expanded="false" aria-label="{{ self.open_the_index() }}">{{ self.index_title() }}</button>
+            <span class="no-button">{{ self.index_title() }}</span>
           </h2>
           {{ self.index() }}
         </div>
@@ -206,14 +206,14 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" loading="eager" />
             </picture>
             {{ render_byline() }}
-            {{ self.mainContent() }}
+            {{ self.main_content() }}
         </article>
         {{ render_actions() }}
         <section class="authors">
             {{ render_authors() }}
         </section>
 
-        <nav title="{{ self.prevNextTitle() }}" id="chapter-navigation">
+        <nav title="{{ self.prev_next_title() }}" id="chapter-navigation">
             {{ render_prevnext() }}
         </nav>
     </div>

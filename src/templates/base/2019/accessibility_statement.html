@@ -4,9 +4,9 @@
 
 {% block description %}Describes the accessibility goals of the Web Almanac{% endblock %}
 
-{% block pageURL %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}{% endblock %}
+{% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}{% endblock %}
 
-{% block authorStructuredData %}
+{% block author_structured_data %}
 {
   "@type": "Person",
   "sameas": [
@@ -28,8 +28,8 @@
   <nav class="index">
     <div class="index-box floating-card">
       <h2 class="header">
-        <button class="index-btn">{{ self.indexTitle() }}</button>
-        <span class="no-button">{{ self.indexTitle() }}</span>
+        <button class="index-btn">{{ self.index_title() }}</button>
+        <span class="no-button">{{ self.index_title() }}</span>
       </h2>
       {{ self.index() }}
     </div>
@@ -38,7 +38,7 @@
   <article id="maincontent" class="content">
     <h1 class="title title-lg">Accessibility Statement</h1>
       
-    {{ self.mainContent() }}
+    {{ self.main_content() }}
 
   </article>
 </main>
@@ -46,5 +46,5 @@
 
 {% block scripts %}
 {{ super() }}
-{{ self.indexMenu() }}
+{{ self.index_menu_script() }}
 {% endblock %}

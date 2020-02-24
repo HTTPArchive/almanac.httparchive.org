@@ -4,20 +4,20 @@
 
 {% block description %}{{ metadata.get('description','Chapitre' + metadata.get('title') + ' du Web Almanac'+ year + " explorant l’utilisation des " + metadata.get('description',metadata.get('title')) + ' sur le web.') }}{% endblock %}
 
-{% block twitterImageAlt %}Image du chapitre {{ metadata.get('title') }} du Web Almanac {{ year }}{% endblock %}
+{% block twitter_image_alt %}Image du chapitre {{ metadata.get('title') }} du Web Almanac {{ year }}{% endblock %}
 
-{% block breadcrumbName2 %}{{ metadata.get('title') }}{% endblock %}
+{% block breadcrumb_name_2 %}{{ metadata.get('title') }}{% endblock %}
 
 {% block unedited %}[non corrigé]{% endblock %}
 
-{% block prevNextTitle %}Navigation vers les chapitres précédent et suivant{% endblock %}
+{% block prev_next_title %}Navigation vers les chapitres précédent et suivant{% endblock %}
 
-{% block discussThisChapter %}Discuter de ce chapitre{% endblock %}
+{% block discuss_this_chapter %}Discuter de ce chapitre{% endblock %}
 {% block comment %}commentaire{% endblock %}
 {% block comments %}commentaires{% endblock %}
-{% block writtenBy %}Écrit par{% endblock %}
-{% block reviewedBy %}Relu par{% endblock %}
-{% block translatedBy %}Traduit par{% endblock %}
+{% block written_by %}Écrit par{% endblock %}
+{% block reviewed_by %}Relu par{% endblock %}
+{% block translated_by %}Traduit par{% endblock %}
 
 {% block author %}Auteur·ice{% endblock %}
 {% block authors %}Auteur·ice·s{% endblock %}
