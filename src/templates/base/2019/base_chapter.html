@@ -1,0 +1,278 @@
+{% extends "%s/2019/base.html" % lang %}
+
+{% set chapter_image_dir = ("/static/images/2019/%s" % get_chapter_image_dir(metadata)) %}
+
+{% block meta %}
+<meta name="description" content="{{ self.description() }}" />
+<meta property="og:title" content="{{ self.title() }}" />
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}" />
+<meta property="og:image" content="https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg" />
+<meta property="og:image:height" content="433" />
+<meta property="og:image:width" content="866" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{ self.description() }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@HTTPArchive" />
+<meta name="twitter:title" content="{{ self.title() }}" />
+<meta name="twitter:image" content="https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg" />
+<meta name="twitter:image:alt" content="{{ self.twitterImageAlt() }}" />
+<meta name="twitter:description" content="{{ self.description() }}" />
+
+<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+	  },
+	  "headline": "{{ metadata.get('title') }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg",
+	  	  "height": 433,
+	  	  "width": 866
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "HTTP Archive",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+	  "author":
+      {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
+      {% set authordata = config.contributors[author] if author in config.contributors else None -%}
+      {% if authordata -%}
+	  {
+	  	  "@type": "Person",
+          "sameas": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"
+            {% if authordata.twitter %},"https://twitter.com/{{ authordata.twitter }}"{% endif %}
+            {% if authordata.github %},"https://github.com/{{ authordata.github }}"{% endif %}
+            ],
+	  	  "name": "{{ authordata.name if authordata.name else author }}"
+      }{% if loop.index < loop.length %},{% endif %}
+      {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
+      {% endfor %},
+      "description": "{{ self.description() }}",
+      "datePublished": "{{ metadata.get('published','2019-11-04') + 'T12:00:00+00:00:00' }}",
+      "dateModified": "{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00+00:00:00' }}"
+	}
+	</script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "{{ self.breadcrumbName1() }}",
+          "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ self.breadcrumbName2() }}",
+          "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+        }]
+      }
+      </script>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css?v=2">
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ self.indexMenu() }}
+<script nonce="{{ csp_nonce() }}">
+
+document.addEventListener("keyup", function onPress(event) {
+ 	if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<' || event.key === 'ArrowLeft') {
+ 	  var previous = document.getElementById('previous-chapter');
+ 	  if (previous) {
+ 	    previous.click();
+ 		}
+ 	}
+ 	if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>' || event.key === 'ArrowRight') {
+ 	  var next = document.getElementById('next-chapter');
+ 	  if (next) {
+ 	    next.click();
+ 	  }
+ 	}
+});
+
+window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
+</script>
+
+<script src='/static/js/chapter.js?v=2' defer></script>
+
+{% endblock %}
+
+{# Calls to action for readers who want to engage more with this chapter. #}
+{% macro render_actions() %}
+  <div class="discuss">
+    <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
+      <img src="/static/images/discuss.png" alt="{{ self.discussThisChapter() }}" height="24" width="24" loading="lazy" /><span id="num_comments"></span> <span data-translation id="comment-singular">{{ self.comment() }}</span><span data-translation id="comment-plural">{{ self.comments() }}</span>
+    </a>
+  </div>
+{% endmacro %}
+
+
+{% macro render_byline() %}
+  <div class="byline">{{ self.writtenBy() }}
+  {% for author in metadata.get('authors') %}
+    <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    {% if loop.index == loop.length - 1 %} and{% endif %}
+  {% endfor %}
+  </div>
+
+  <div class="byline reviewers">{{ self.reviewedBy() }}
+  {% for reviewer in metadata.get('reviewers') %}
+    <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    {% if loop.index == loop.length - 1 %} and{% endif %}
+  {% endfor %}
+  </div>
+
+  {% if metadata.get('translators') | length >= 1 %}
+  <div class="byline translators">{{ self.translatedBy() }}
+  {% for translator in metadata.get('translators') %}
+    <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    {% if loop.index == loop.length - 1 %} and{% endif %}
+  {% endfor %}
+  </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro render_authors() %}
+  {% for author in metadata.get('authors') %}
+  {% if loop.length == 1 %}<h2>{{ self.author() }}</h2>{% endif -%}
+  {% if loop.length > 1 and loop.index == 1 %}<h2>{{ self.authors() }}</h2>{% endif %}
+  {% if loop.index == 1 %}<ul>{% endif %}
+      {% set authordata = config.contributors[author] if author in config.contributors else None %}
+    {% if authordata %}
+      <li>
+          <div aria-hidden="true">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}" tabindex="-1">
+              <img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" />
+            </a>
+          </div>
+          <div class="info">
+            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
+              {% if authordata.twitter or authordata.github %}
+                  <span class="social">
+                  {% if authordata.twitter %}
+                  <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}"><img src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="65" width="80" loading="lazy" /></a>
+                  {% endif %}
+                  {% if authordata.github %}
+                  <a class="github" href="https://github.com/{{ authordata.github }}"><img src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="78" width="80" loading="lazy" /></a>
+                  {% endif %}
+                  {% if authordata.website %}
+                  <a class="website" href="{{ authordata.website }}"><img src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="72" width="72" loading="lazy" /></a>
+                  {% endif %}
+                  </span>
+              {% endif %}
+              {% if authordata.tagline %}
+                  <div class="tagline">
+                      {{ authordata.tagline }}
+                  </div>
+              {% endif %}
+              {% if authordata.bio %}
+              <div class="bio">
+                  {{ authordata.bio | safe }}
+              </div>
+          {% endif %}
+          </div>
+      </li>
+    {% else %}
+      <li>
+          <div class="info">
+            <span class="name">{{ author }}</span>
+          </div>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro render_prevnext() %}
+  {% if prev_chapter %}
+      <a id="previous-chapter" title="{{ self.previous() }}" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+          <span class="arrow">&#8963;</span>
+          <span class="chapter-no">
+            {{ self.chapter() }} {{ prev_chapter['chapter'] }}
+          </span>
+          <span class="chapter-title">
+              {{ prev_chapter['title'] }}
+          </span>
+      </a>
+  {% endif %}
+
+  {% if next_chapter %}
+      <a id="next-chapter" title="{{ self.next() }}" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
+              <span class="arrow">&#8963;</span>
+              <span class="chapter-no">
+                {{ self.chapter() }} {{ next_chapter['chapter'] }}
+              </span>
+              <span class="chapter-title">
+                  {{ next_chapter['title'] }}
+              </span>
+      </a>
+  {% endif %}
+{% endmacro %}
+
+
+
+{% block main %}
+<main id="chapter" class="main">
+    <nav title="{{ self.indexNavTitle() }}" class="index">
+        <div class="index-box floating-card">
+          <h2 class="header">
+            <button class="index-btn" aria-expanded="false" aria-label="{{ self.openTheIndex() }}">{{ self.indexTitle() }}</button>
+            <span class="no-button">{{ self.indexTitle() }}</span>
+          </h2>
+          {{ self.index() }}
+        </div>
+    </nav>
+
+    <div class="content">
+        <article id="maincontent" class="body">
+            <div class="subtitle">
+                {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
+            </div>
+            <h1 class="title title-lg">
+                {{ metadata.get('title') }}
+                {% if metadata.get('unedited', false) %}
+                <span class="chapter-unedited">{{ self.unedited() }}</span>
+                {% endif %}
+            </h1>
+            <!-- Show large image for large screens and high density screens and use webp when supported -->
+            <picture>
+              <source media="(min-width: 327px)" type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp" />
+              <source media="(min-width: 327px)" type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg" />
+              <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
+              <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
+              <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
+              <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
+              <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" loading="eager" />
+            </picture>
+            {{ render_byline() }}
+            {{ self.mainContent() }}
+        </article>
+        {{ render_actions() }}
+        <section class="authors">
+            {{ render_authors() }}
+        </section>
+
+        <nav title="{{ self.prevNextTitle() }}" id="chapter-navigation">
+            {{ render_prevnext() }}
+        </nav>
+    </div>
+  </main>
+{% endblock %}

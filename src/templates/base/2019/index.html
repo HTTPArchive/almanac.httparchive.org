@@ -1,0 +1,155 @@
+{% extends "%s/2019/base.html" % lang %}
+
+{% block meta %}
+<meta name="description" content="{{ self.description() }}">
+
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint , year=year, lang=lang) }}">
+<meta property="og:image" content="https://almanac.httparchive.org/static/images/home-hero-bg.png">
+<meta property="og:image:height" content="562">
+<meta property="og:image:width" content="715">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{ self.description() }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@HTTPArchive">
+<meta name="twitter:title" content="{{ self.title() }}">
+<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/home-hero-bg.png">
+<meta name="twitter:image:alt" content="{{ self.twitterImageAlt() }}" />
+<meta name="twitter:description" content="{{ self.description() }}">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "https://almanac.httparchive.org",
+    "logo": "https://almanac.httparchive.org/static/images/ha.png"
+  }
+  </script>
+  <script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
+	  },
+	  "headline": "{{ self.title() }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "https://almanac.httparchive.org/static/images/home-hero-bg.png",
+	  	  "height": 562,
+	  	  "width": 715
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "{{ self.organization() }}",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+    "author":
+      {
+	  	  "@type": "Person",
+          "sameas": [
+            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+            "https://twitter.com/rick_viscomi",
+            "https://github.com/rviscomi"
+            ],
+	  	  "name": "Rick Viscomi"
+      },
+      "description": "{{ self.description() }}",
+      "datePublished": "{{ self.datePublished() }}",
+      "dateModified": "{{ self.dateModified() }}"
+	}
+	</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ self.breadcrumbName1() }}",
+        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
+      }]
+    }
+    </script>
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+
+{% block main %}
+<main id="maincontent">
+  <section class="intro-container">
+    <div class="intro">
+      <div class="intro-year">{{ year }}</div>
+      <h1 class="title title-lg title-alt">{{ self.introTitle() }}</h1>
+      <h2>{{ self.introSubTitle() }}</h2>
+      <p>{{ self.mission() }}</p>
+      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
+        {{ self.startExploring() }}
+      </a>
+    </div>
+    <div class="intro-image-2019-wrapper">
+      <div class="intro-image-2019"></div>
+    </div>
+    <div class="intro-image-wrapper">
+      <div class="intro-image"></div>
+    </div>
+  </section>
+  {% include "%s/2019/featured_chapters.html" % lang %}
+  <section class="contributors-container alt-bg">
+    {% set contributors = config.contributors.keys() | length %}
+    <div class="contributors">
+      <h2 class="title title-alt">{{ self.contributorsTitle() }}</h2>
+      <p>{{ self.contributorsDescription() }}</p>
+      <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
+        {{ self.contributorsLink() }}
+      </a>
+    </div>
+    <div class="people" aria-hidden="true">
+      <div class="people-number">{{ contributors }}</div>
+      <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
+      <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
+      <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
+    </div>
+  </section>
+  <section class="methodology-container">
+    <div class="methodology">
+      <h2 class="title title-center">{{ self.methodologyTitle() }}</h2>
+      <div class="methodology-data">
+        <div class="websites-tested">
+          <div>
+            {{ self.methodologyStat1Title() }}
+          </div>
+          <div>
+            {{ self.methodologyStat1() }}
+          </div>
+        </div>
+        <div class="data-processed">
+          <div>
+            {{ self.methodologyStat2Title() }}
+          </div>
+          <div>
+            {{ self.methodologyStat2() }}
+          </div>
+        </div>
+      </div>
+      <p class="methodology-info">
+        {{ self.methodologyDescription() }}
+      </p>
+      <a href="{{ url_for('methodology', year=year, lang=lang) }}" class="alt btn">
+        {{ self.methodologyLink() }}
+      </a>
+      <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
+    </div>
+  </section>
+</main>
+{% endblock %}
