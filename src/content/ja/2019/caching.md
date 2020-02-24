@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 16
 title: Caching
-description: 2019Web年鑑のキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、サービスワーカー、および機会について説明します。
+description: 2019Web年鑑のキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
 translators: [ksakae]
@@ -26,7 +26,7 @@ Webコンテンツのキャッシュには、3つの基本原則があります�
 通常、Webアーキテクチャには[複数のキャッシュ層](https://blog.yoav.ws/tale-of-four-caches/)が含まれます。たとえば、HTTPリクエストは次の場所にキャッシュされる可能性があります。
 
 *   エンドユーザーのブラウザ
-*   ユーザーのブラウザーのサービスワーカーキャッシュ
+*   ユーザーのブラウザーのService Workerキャッシュ
 *   共有ゲートウェイ
 *   エンドユーザーに近い側でキャッシュする機能を提供するCDN
 *   バックエンドの仕事長を削減するための、アプリケーションの前のキャッシングプロキシ
@@ -566,30 +566,30 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
   <figcaption id="fig16-caption">図16. <code>Set-Cookie</code>応答のキャッシュ可能な応答。</figcaption>
 </figure>
 
-## AppCacheおよびサービスワーカー
+## AppCacheおよびService Worker
 
-アプリケーションキャッシュまたはAppCacheはHTML5の機能であり、開発者はブラウザがキャッシュするリソースを指定し、オフラインユーザーが利用できるようにできます。この機能は[廃止、Web標準から削除](https://html.spec.whatwg.org/multipage/offline.html#offline)され、ブラウザーのサポートは減少しています。実際、その使用が検出された場合、[Firefox v44 +は、開発者が代わりにサービスワーカーを使用することを推奨しています](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)。 [Chrome 70は、アプリケーションキャッシュをセキュリティで保護されたコンテキストのみに制限します](https://www.chromestatus.com/feature/5714236168732672)。業界は、このタイプの機能をサービスワーカーに実装する方向へ移行しており、[ブラウザサポート](https://caniuse.com/#feat=serviceworkers)は急速に成長しています。
+アプリケーションキャッシュまたはAppCacheはHTML5の機能であり、開発者はブラウザがキャッシュするリソースを指定し、オフラインユーザーが利用できるようにできます。この機能は[廃止、Web標準から削除](https://html.spec.whatwg.org/multipage/offline.html#offline)され、ブラウザーのサポートは減少しています。実際、その使用が検出された場合、[Firefox v44 +は、開発者が代わりにService Workerを使用することを推奨しています](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)。 [Chrome 70は、アプリケーションキャッシュをセキュリティで保護されたコンテキストのみに制限します](https://www.chromestatus.com/feature/5714236168732672)。業界は、このタイプの機能をService Workerに実装する方向へ移行しており、[ブラウザサポート](https://caniuse.com/#feat=serviceworkers)は急速に成長しています。
 
-実際、[HTTPアーカイブトレンドレポートの1つは、以下に示すサービスワーカー](https://httparchive.org/reports/progressive-web-apps#swControlledPages)の採用を示しています。
+実際、[HTTPアーカイブトレンドレポートの1つは、以下に示すService Worker](https://httparchive.org/reports/progressive-web-apps#swControlledPages)の採用を示しています。
 
 <figure>
   <a href="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg">
-    <img src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="図17.サービスワーカーが制御するページの時系列。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311">
+    <img src="/static/images/2019/16_Caching/ch16_fig14_service_worker_adoption.jpg" alt="図17.Service Workerが制御するページの時系列。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311">
   </a>
-  <div id="fig17-description" class="visually-hidden">2016年10月から2019年7月までのサービスワーカーが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。</div>
-  <figcaption id="fig17-caption">図17.サービスワーカーが制御するページの時系列。 (引用: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTPアーカイブ</a>)</figcaption>
+  <div id="fig17-description" class="visually-hidden">2016年10月から2019年7月までのService Workerが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。</div>
+  <figcaption id="fig17-caption">図17.Service Workerが制御するページの時系列。 (引用: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTPアーカイブ</a>)</figcaption>
 </figure>
 
 採用率はまだウェブサイトの1％を下回っていますが、2017年1月から着実に増加しています。[プログレッシブWebアプリ](./pwa)の章では、人気サイトでの使用によりこのグラフが示唆するよりも多く使用されているという事実を含め、上記のグラフでは1回のみカウントされます。
 
-次の表では、AppCacheとService Workerの使用状況の概要を確認できます。 32,292のWebサイトでサービスワーカーが実装されていますが、1,867のサイトでは非推奨のAppCache機能が引き続き使用されています。
+次の表では、AppCacheとService Workerの使用状況の概要を確認できます。 32,292のWebサイトでService Workerが実装されていますが、1,867のサイトでは非推奨のAppCache機能が引き続き使用されています。
 
 <figure>
   <table>
     <tr>
      <td></td>
-     <th>サーバーワーカーを使用しない</th>
-     <th>サーバーワーカーを使用する</th>
+     <th>Service Workerを使用しない</th>
+     <th>Service Workerを使用する</th>
      <th>合計</th>
     </tr>
     <tr>
@@ -611,18 +611,18 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
      <td><p style="text-align: right">5,079,445</p></td>
     </tr>
   </table>
-  <figcaption>図18. AppCacheを使用するWebサイトとサービスワーカーの数。</figcaption>
+  <figcaption>図18. AppCacheを使用するWebサイトとService Workerの数。</figcaption>
 </figure>
 
-これをHTTPとHTTPSで分類すると、さらに興味深いものになります。 581のAppCache対応サイトはHTTP経由で提供されます。つまり、Chromeがこの機能を無効にしている可能性があります。 HTTPSはサービスワーカーを使用するための要件ですが、それらを使用するサイトの907はHTTP経由で提供されます。
+これをHTTPとHTTPSで分類すると、さらに興味深いものになります。 581のAppCache対応サイトはHTTP経由で提供されます。つまり、Chromeがこの機能を無効にしている可能性があります。 HTTPSはService Workerを使用するための要件ですが、それらを使用するサイトの907はHTTP経由で提供されます。
 
 <figure>
   <table>
     <tr>
      <td></td>
      <td></td>
-     <th scope="col">サーバーワーカーを使用しない</th>
-     <th scope="col">サーバーワーカーを使用する</th>
+     <th scope="col">Service Workerを使用しない</th>
+     <th scope="col">Service Workerを使用する</th>
     </tr>
     <tr>
      <th scope="rowgroup" rowspan="2" >HTTP</th>
@@ -647,7 +647,7 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
      <td><p style="text-align: right">50</p></td>
     </tr>
   </table>
-  <figcaption>図19. AppCacheを使用するWebサイト数とHTTP/HTTPSによるサービスワーカーの使用量。</figcaption>
+  <figcaption>図19. AppCacheを使用するWebサイト数とHTTP/HTTPSによるService Workerの使用量。</figcaption>
 </figure>
 
 ## キャッシングの機会を特定する
