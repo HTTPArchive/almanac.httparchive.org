@@ -159,7 +159,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
   {% if next_chapter %}
       <a id="next-chapter" title="{{ self.next() }}" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
-              <span class="arrow" aria-hidden="true>&#8963;</span>
+              <span class="arrow" aria-hidden="true">&#8963;</span>
               <span class="chapter-no">
                 {{ self.chapter() }} {{ next_chapter['chapter'] }}
               </span>
