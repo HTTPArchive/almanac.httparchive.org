@@ -147,7 +147,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_prevnext() %}
   {% if prev_chapter %}
       <a id="previous-chapter" title="{{ self.previous() }}" href="/{{lang}}/{{year}}/{{prev_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
-          <span class="arrow">&#8963;</span>
+          <span class="arrow" aria-hidden="true">&#8963;</span>
           <span class="chapter-no">
             {{ self.chapter() }} {{ prev_chapter['chapter'] }}
           </span>
@@ -159,7 +159,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
   {% if next_chapter %}
       <a id="next-chapter" title="{{ self.next() }}" href="/{{lang}}/{{year}}/{{next_chapter['title'].lower().replace(' ', '-').replace('/', '')}}">
-              <span class="arrow">&#8963;</span>
+              <span class="arrow" aria-hidden="true>&#8963;</span>
               <span class="chapter-no">
                 {{ self.chapter() }} {{ next_chapter['chapter'] }}
               </span>
@@ -174,7 +174,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% block main %}
 <main id="chapter" class="main">
-    <nav title="{{ self.index_nav_title() }}" class="index">
+    <nav aria-label="{{ self.index_nav_title() }}" class="index">
         <div class="index-box floating-card">
           <h2 class="header">
             <button class="index-btn" aria-expanded="false" aria-label="{{ self.open_the_index() }}">{{ self.index_title() }}</button>
@@ -213,7 +213,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             {{ render_authors() }}
         </section>
 
-        <nav title="{{ self.prev_next_title() }}" id="chapter-navigation">
+        <nav aria-label="{{ self.prev_next_title() }}" id="chapter-navigation">
             {{ render_prevnext() }}
         </nav>
     </div>

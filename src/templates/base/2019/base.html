@@ -104,7 +104,7 @@
     <div class="container">
       <div class="top-header">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
-        <nav title="{{ self.page_navigation() }}">
+        <nav aria-label="{{ self.page_navigation() }}">
           <ul>
             <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
             <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
@@ -128,7 +128,7 @@
           </a>
         </div>
         {% endif %}
-        <nav title="{{ self.menu_title() }}" id="menu" aria-labelledby="menu-btn">
+        <nav aria-label="{{ self.menu_title() }}" id="menu" aria-labelledby="menu-btn">
           <button type="button" id="menu-btn" class="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
             <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
           </button>
@@ -183,7 +183,7 @@
   {% block footer %}
     <footer class="alt-bg">
       <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
-      <nav title="{{ self.footer_title() }}" class="nav-items">
+      <nav aria-label="{{ self.footer_title() }}" class="nav-items">
         <ul>
           <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
           <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
