@@ -45,7 +45,7 @@ Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralem
 
 Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie sont&nbsp;:
 
-*   <i lang="en">`Cache-Control`<span> vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
+*   <i lang="en">`Cache-Control`</i> vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
 *   `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
 
 `Cache-Control` est prioritaire si les deux champs sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#cache-control-vs-expires).
