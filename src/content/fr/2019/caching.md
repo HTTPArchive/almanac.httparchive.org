@@ -117,7 +117,7 @@ Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
   <figcaption id="fig3-caption">Figure 3. Distribution des réponses pouvant être mises en cache.</figcaption>
 </figure>
 
-Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_Live) du cache pour les requêtes en provenance d'ordinateurs de bureau. La plupart des types de contenu sont mis en cache, mais les ressources CSS semblent toujours être mises en cache à des valeurs TTL élevées.
+Le tableau ci-dessous détaille les TTL du cache pour les requêtes en provenance d'ordinateurs de bureau. La plupart des types de contenu sont mis en cache, mais les ressources CSS semblent toujours être mises en cache à des valeurs TTL élevées.
 
 <figure>
   <table>
