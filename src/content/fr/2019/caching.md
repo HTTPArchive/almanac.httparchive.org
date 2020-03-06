@@ -103,7 +103,7 @@ Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'a
 
 Une ressource mise en cache est stockée par le client pendant un certain temps et peut être réutilisée ultérieurement. Pour les requêtes HTTP, 80&nbsp;% des réponses peuvent certainement être mises en cache, ce qui signifie qu'un système de cache peut les stocker. En dehors de ça,
 
-*   6&nbsp;% des requêtes ont un <i lang="en">Time To Leave</i> (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
+*   6&nbsp;% des requêtes ont un <i lang="en">Time To Live</i> (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
 *   27&nbsp;% sont mis en cache par heuristique, à cause d'un `Cache-Control` manquant en en-tête.
 *   47&nbsp;% sont mis en cache pendant plus de 0 seconde.
 
