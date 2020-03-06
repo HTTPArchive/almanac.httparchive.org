@@ -45,7 +45,7 @@ Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralem
 
 Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie sont&nbsp;:
 
-*   <i lang="en">`Cache-Control`<span> vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
+*   <i lang="en">`Cache-Control`</i> vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
 *   `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
 
 `Cache-Control` est prioritaire si les deux champs sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#cache-control-vs-expires).
@@ -117,8 +117,7 @@ Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
   <figcaption id="fig3-caption">Figure 3. Distribution des réponses pouvant être mises en cache.</figcaption>
 </figure>
 
-Le tableau ci-dessous détaille les [TTL](https://fr.wikipedia.org/wiki/Time_to_Live) du cache pour les requêtes en provenance d'ordinateurs de bureau. La plupart des types de contenu sont mis en cache, mais les ressources CSS semblent toujours être mises en cache à des valeurs TTL élevées.
-
+Le tableau ci-dessous détaille les TTL du cache pour les requêtes en provenance d'ordinateurs de bureau. La plupart des types de contenu sont mis en cache, mais les ressources CSS semblent toujours être mises en cache à des valeurs TTL élevées.
 <figure>
   <table>
     <tr>
