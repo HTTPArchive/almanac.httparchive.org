@@ -1,0 +1,342 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/static/css/2019.css?v=2">
+{% endblock %}
+
+{% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
+{% block image_url %}https://almanac.httparchive.org/static/images/methodology-banner.png{% endblock %}
+{% block image_height %}984{% endblock %}
+{% block image_width %}1200{% endblock %}
+
+{% block author_structured_data %}
+{
+  "@type": "Person",
+  "sameas": [
+    "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
+    "https://twitter.com/rick_viscomi",
+    "https://github.com/rviscomi"
+    ],
+  "name": "Rick Viscomi"
+}
+{% endblock %}
+
+
+{% block meta %}
+<meta name="description" content="{{ self.description() }}">
+
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:url" content="{{ self.page_url() }}">
+<meta property="og:image" content="{{ self.image_url() }}">
+<meta property="og:image:height" content="{{ self.image_height() }}">
+<meta property="og:image:width" content="{{ self.image_width() }}">
+<meta property="og:type" content="article">
+<meta property="og:description" content="{{ self.description() }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@HTTPArchive">
+<meta name="twitter:title" content="{{ self.title() }}">
+<meta name="twitter:image" content="{{ self.image_url() }}">
+<meta name="twitter:image:alt" content="{{ self.twitter_image_alt() }}" />
+<meta name="twitter:description" content="{{ self.description() }}">
+
+{% block structured_data %}
+<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Article",
+	  "mainEntityOfPage": {
+	  	  "@type": "WebPage",
+	  	  "@id": "{{ self.page_url() }}"
+	  },
+	  "headline": "{{ self.title() }}",
+	  "image": {
+	  	  "@type": "ImageObject",
+	  	  "url": "{{ self.image_url() }}",
+	  	  "height": {{ self.image_height() }},
+	  	  "width": {{ self.image_width() }}
+	  },
+	  "publisher": {
+	  	  "@type": "Organization",
+	  	  "name": "HTTP Archive",
+	  	  "logo": {
+	  	      "@type": "ImageObject",
+	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
+	  	      "height": 160,
+	  	      "width": 320
+	  	  }
+      },
+    "author":
+      {{ self.author_structured_data() }},
+      "description": "{{ self.description() }}",
+      "datePublished": "{{ self.date_published() }}",
+      "dateModified": "{{ self.date_modified() }}"
+	}
+  </script>
+  {% endblock %}
+
+  {% block breadcrumb %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "{{ self.breadcrumb_name_1() }}",
+        "item": "https://almanac.httparchive.org/{{lang}}/{{year}}"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ self.breadcrumb_name_2() }}",
+        "item": "{{ self.page_url() }}"
+      }]
+    }
+  </script>
+{% endblock %}
+
+{% endblock %}
+
+{% block content%}
+  <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
+  {% block header %}
+  <header class="alt-bg">
+    <div class="container">
+      <div class="top-header">
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
+        <nav aria-label="{{ self.page_navigation() }}">
+          <ul>
+            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
+            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
+            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+            {% if supported_years | length > 1 %}
+            <li>
+              {{ year_switcher() }}
+            </li>
+            {% endif %}
+            {% if supported_languages | length > 1%}
+            <li>
+              {{ language_switcher() }}
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+        {% if request.endpoint == 'home' %}
+        <div class="cta">
+          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
+            {{ self.start_exploring() }}
+          </a>
+        </div>
+        {% endif %}
+        <nav aria-label="{{ self.menu_title() }}" id="menu" aria-labelledby="menu-btn">
+          <button type="button" id="menu-btn" class="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
+            <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
+          </button>
+          <ul class="menu">
+            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
+            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
+            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+            <li class="misc">
+              <ul class="misc">
+                <li>
+                  <a href="https://httparchive.org/">
+                    <img src="/static/images/ha-home.svg" alt="{{ self.http_archive_link() }}" height="35" width="70">
+                  </a>
+                </li>
+                <li>
+                  <ul class="social-media">
+                    <li>
+                      <a href="https://twitter.com/HTTPArchive" class="twitter">
+                        <img src="/static/images/twitter.png" height="65" width="80" alt="Twitter" loading="lazy" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+                        <img src="/static/images/github.png" height="78" width="80" alt="GitHub" loading="lazy" />
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                {% if supported_years | length > 1 %}
+                <li>
+                  {{ year_switcher() }}
+                </li>
+                {% endif %}
+                {% if supported_languages | length > 1%}
+                <li>
+                  {{ language_switcher() }}
+                </li>
+                {% endif %}
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  {% endblock %}
+
+  <div class="container">
+    {% block main %}{% endblock %}
+  </div>
+
+  {% block footer %}
+    <footer class="alt-bg">
+      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
+      <nav aria-label="{{ self.footer_title() }}" class="nav-items">
+        <ul>
+          <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
+          <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
+          <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+          {% if supported_years | length > 1 %}
+          <li>
+            {{ year_switcher() }}
+          </li>
+          {% endif %}
+          {% if supported_languages | length > 1%}
+          <li>
+            {{ language_switcher() }}
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      <p class="copyright">
+        <span>{{ self.copyright() }}</span>
+        <br>
+        <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
+      </p>
+      <a class="navigation-logo ha-logo" href="https://httparchive.org/">
+        <img src="/static/images/ha-home.svg" alt="{{ self.http_archive_link() }}" height="35" width="70">
+      </a>
+      <ul class="social-media">
+        <li>
+          <a href="https://twitter.com/HTTPArchive" class="twitter">
+            <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+            <img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" />
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <hr>
+    </footer>
+  {% endblock %}
+  {% block scripts %}
+    <script nonce="{{ csp_nonce() }}">
+      (function() {
+        // Language switching
+        var languageSwitchers = document.querySelectorAll('.language-switcher select');
+        for (var i = 0; i < languageSwitchers.length; i++) {
+          languageSwitchers[i].addEventListener('change', function(e) {
+            if (e.target.value) {
+              window.location = e.target.value;
+            }
+          });
+        }
+
+        // Mobile menu
+        var menuIcon = document.querySelector('.menu-icon');
+        var menuIconInitialSrc = document.querySelector('.menu-icon').src;
+        var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
+        var menuBtn = document.querySelector('.menu-btn');
+        var menuNav = document.querySelector('#menu');
+
+        function toggleNavMenu() {
+          var menuOpen = document.body.classList.toggle('menu-open');
+          menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
+          menuBtn.setAttribute('aria-expanded', menuOpen);
+          var ariaLabel = menuOpen ?  menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
+          menuBtn.setAttribute('aria-label', ariaLabel);
+
+          /* When you open the menu, add an event listener to close it when clicking outside the menu area */
+          /* Remove it on closing the menu */
+          if (menuBtn.getAttribute('aria-expanded') === 'true') {
+            document.body.addEventListener('click', toggleNavMenu, false);
+          } else {
+            document.body.removeEventListener('click', toggleNavMenu, false);
+          }
+        }
+
+        menuBtn.addEventListener('click', function() {
+          toggleNavMenu();
+          event.stopPropagation();
+        });
+        
+        /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
+        menuNav.addEventListener('click', function () {
+          event.stopPropagation();
+        });
+        
+        menuNav.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            if (menuBtn.getAttribute('aria-expanded') === 'true') {
+              toggleNavMenu();
+              menuBtn.focus();
+            }
+          }
+        });
+
+      })();
+    </script>
+  {% endblock %}
+{% endblock %}
+
+{% macro language_switcher() %}
+{% if supported_languages | length > 1%}
+<div class="language-switcher">
+  <select>
+    {% for l in supported_languages %}
+      <option
+        {% if l == language %}selected="selected"{% endif %}
+        value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+        {{ l }}
+      </option>
+    {% endfor %}
+  </select>
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="{{ self.open() }}" height="20" width="20" loading="lazy" />
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro year_switcher() %}
+<div class="year-switcher">
+  <select>
+      {% for y in supported_years %}
+        <option
+          {% if y == year %}selected="selected"{% endif %}
+          value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
+          {{ edition(y) }}
+        </option>
+      {% endfor %}
+  </select>
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="{{ self.open() }}" height="20" width="20" loading="lazy" />
+</div>
+{% endmacro %}
+
+
+{% block index_menu_script %}
+<script nonce="{{ csp_nonce() }}">
+
+  var indexBox = document.querySelector('.index-box');
+  var indexBoxTitle = document.querySelector('.index .index-btn');
+  
+  indexBoxTitle.addEventListener('click', function(e) {
+    var indexOpen = indexBox.classList.toggle('show');
+    indexBoxTitle.setAttribute('aria-expanded',indexOpen);
+    var ariaLabel = indexOpen ?  "{{ self.close_the_index() }}" : "{{ self.open_the_index() }}";
+    indexBoxTitle.setAttribute('aria-label',ariaLabel);
+  });
+  
+  indexBox.addEventListener("keydown", function onPress(event) {
+    if (event.key === 'Escape') {
+      if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {
+        indexBoxTitle.click();
+        indexBoxTitle.focus();
+      }
+    }
+  });
+</script>
+{% endblock %}

@@ -1,191 +1,32 @@
-{% extends "es/2019/base.html" %}
+{% extends "base/2019/index.html" %}
 
-{% block title %}Web Almanac 2019 por HTTP Archive{% endblock %}
+{% block title %}Web Almanac {{ year }}{% endblock %}
+{% block description %}Web Almanac es un estado anual de la web que combina las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web{% endblock %}
 
-{% block description %}Web Almanac 2019 por HTTP Archive es un estado anual de la web que combina las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web{% endblock %}
+{% block twitter_image_alt %}Web Almanac {{ year }}{% endblock %}
 
-{% block meta %}
-<meta name="description" content="{{ self.description() }}">
+{% block date_published %}2019-11-04T12:00:00+00:00:00{% endblock %}
+{% block date_modified %}2019-11-04T12:00:00+00:00:00{% endblock %}
 
-<meta property="og:title" content="{{ self.title() }}">
-<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint , year=year, lang=lang) }}">
-<meta property="og:image" content="https://almanac.httparchive.org/static/images/home-hero-2019-bg.png">
-<meta property="og:image:height" content="734">
-<meta property="og:image:width" content="715">
-<meta property="og:type" content="article">
-<meta property="og:description" content="{{ self.description() }}">
+{% block breadcrumb_name_1 %}{{ year }} Home{% endblock %}
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@HTTPArchive">
-<meta name="twitter:title" content="{{ self.title() }}">
-<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/home-hero-2019-bg.png">
-<meta name="twitter:image:alt" content="{{ year }} Web Almanac methodology" />
-<meta name="twitter:description" content="{{ self.description() }}">
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}HTTP Archive informe del<br><b>estado de la web</b> anual{% endblock %}
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "url": "https://almanac.httparchive.org",
-    "logo": "https://almanac.httparchive.org/static/images/ha.png"
-  }
-  </script>
-  <script type="application/ld+json">
-	{
-	  "@context": "http://schema.org",
-	  "@type": "Article",
-	  "mainEntityOfPage": {
-	  	  "@type": "WebPage",
-	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}"
-	  },
-	  "headline": "{{ self.title() }}",
-	  "image": {
-	  	  "@type": "ImageObject",
-	  	  "url": "https://almanac.httparchive.org/static/images/home-hero-2019-bg.png",
-	  	  "height": 734,
-	  	  "width": 715
-	  },
-	  "publisher": {
-	  	  "@type": "Organization",
-	  	  "name": "Web Almanac by HTTP Archive",
-	  	  "logo": {
-	  	      "@type": "ImageObject",
-	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
-	  	      "height": 160,
-	  	      "width": 320
-	  	  }
-      },
-    "author":
-      {
-	  	  "@type": "Person",
-          "sameas": [
-            "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}",
-            "https://twitter.com/rick_viscomi",
-            "https://github.com/rviscomi"
-            ],
-	  	  "name": "Rick Viscomi"
-      },
-      "description": "{{ self.description() }}",
-      "datePublished": "2019-11-04T12:00:00+00:00:00",
-      "dateModified": "2019-11-04T12:00:00+00:00:00"
-	}
-	</script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "{{ year }} Home ({{ language }})",
-        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
-      }]
-    }
-    </script>
+{% block mission %}
+Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de 20 capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
 {% endblock %}
 
-{% block styles %}
-  {{ super() }}
-  <link rel="stylesheet" href="/static/css/index.css">
+{% block contributors_description %}
+Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ contributors }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.
 {% endblock %}
+{% block contributors_link %}Ver los contribuidores{% endblock %}
 
-{% block main %}
-<main id="maincontent">
-  <section class="intro-container">
-    <div class="intro">
-      <div class="intro-year">2019</div>
-      <h1 class="title title-alt">Web Almanac</h1>
-      <h2>
-        HTTP Archive informe del<br>
-        <b>estado de la web</b> anual
-      </h2>
-      <p>
-        Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web. Web Almanac es un informe exhaustivo sobre el estado de la web, respaldado por datos reales y expertos web de confianza. Se compone de 20 capítulos que abarcan aspectos del contenido de la página, la experiencia del usuario, la publicación y la distribución.
-      </p>
-      <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
-        Empieza a explorar
-      </a>
-    </div>
-    <div class="intro-image-2019-wrapper">
-      <div class="intro-image-2019"></div>
-    </div>
-    <div class="intro-image-wrapper">
-      <div class="intro-image"></div>
-    </div>
-  </section>
-  <section class="featured-chapter">
-    <div class="featured-chapter-content">
-      <h2 class="title title-center">Capítulo Destacado</h2>
-      <h3>Third Parties</h3>
-      <blockquote>
-        La web abierta es vasta, enlazable e interoperable por diseño. La capacidad de tomar la biblioteca compleja de otra persona y usarla en su sitio con un solo elemento <code>&lt;link></code> or <code>&lt;script></code> ha incrementado la productividad de los desarrolladores y ha permitido nuevas e increíbles experiencias web; por otro lado, la inmensa popularidad de unos pocos servicios de terceros seleccionados plantea importantes problemas de rendimiento y privacidad. Este capítulo examina la prevalencia y el impacto del código de servicios de terceros en la web en 2019, los patrones de uso de la web que conducen a la popularidad de las soluciones de servicios de terceros y las posibles repercusiones para el futuro del rendimiento y la privacidad de la web.
-      </blockquote>
-      <div class="featured-chapter-content-data">
-        <div class="featured-chapter-content-data-item">
-          <div>93%</div>
-          <div>Páginas con SdT</div>
-        </div>
-        <div class="featured-chapter-content-data-item">
-          <div>49%</div>
-          <div>Peticiones SdT</div>
-        </div>
-        <div class="featured-chapter-content-data-item">
-          <div>28%</div>
-          <div>Bytes SdT</div>
-        </div>
-      </div>
-      <a href="{{ url_for('chapter', year=year, chapter='third-parties', lang=lang) }}" class="btn">
-        Lea el Capítulo Third Parties
-      </a>
-    </div>
-  </section>
-  <section class="contributors-container alt-bg">
-    {% set contributors = config.contributors.keys() | length %}
-    <div class="contributors">
-      <h2 class="title title-alt">Contribuidores</h2>
-      <p>
-        Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ contributors }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.
-      </p>
-      <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
-        Ver los contribuidores
-      </a>
-    </div>
-    <div class="people" aria-hidden="true">
-      <div class="people-number">{{ contributors }}</div>
-      <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
-      <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
-      <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
-    </div>
-  </section>
-  <section class="methodology-container">
-    <div class="methodology">
-      <h2 class="title title-lg title-center">Metodología</h2>
-      <div class="methodology-data">
-        <div class="websites-tested">
-          <div>
-            Sitios Web Analizados
-          </div>
-          <div>
-            5,8M
-          </div>
-        </div>
-        <div class="data-processed">
-          <div>
-            Información Procesada
-          </div>
-          <div>
-            20,9 TB
-          </div>
-        </div>
-      </div>
-      <p class="methodology-info">
-        A menos que se indique lo contrario, las métricas en los 20 capítulos del Web Almanac provienen del conjunto de datos del HTTP Archive. HTTP Archive es un proyecto administrado por la comunidad que ha estado rastreando cómo se construye la web desde 2010. Utilizando WebPageTest y Lighthouse bajo el capó, se prueban metadatos de aproximadamente 6 millones de sitios web mensualmente y se incluyen en una base de datos pública de BigQuery para su análisis. El conjunto de datos de Julio de 2019 se utilizó como base para las métricas de Web Almanac. Para obtener más información, consulte la página de Metodología.
-      </p>
-      <a href="{{ url_for('methodology', year=year, lang=lang) }}" class="alt btn">
-        Conozca nuestra Metodología
-      </a>
-      <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
-    </div>
-  </section>
-</main>
+{% block methodology_stat_1_title %}Sitios Web Analizados{% endblock %}
+{% block methodology_stat_1 %}5,8M{% endblock %}
+{% block methodology_stat_2_title %}Información Procesada{% endblock %}
+{% block methodology_stat_2 %}20,9 TB{% endblock %}
+{% block methodology_description %}
+A menos que se indique lo contrario, las métricas en los 20 capítulos del Web Almanac provienen del conjunto de datos del HTTP Archive. HTTP Archive es un proyecto administrado por la comunidad que ha estado rastreando cómo se construye la web desde 2010. Utilizando WebPageTest y Lighthouse bajo el capó, se prueban metadatos de aproximadamente 6 millones de sitios web mensualmente y se incluyen en una base de datos pública de BigQuery para su análisis. El conjunto de datos de Julio de 2019 se utilizó como base para las métricas de Web Almanac. Para obtener más información, consulte la página de Metodología.
 {% endblock %}
+{% block methodology_link %}Conozca nuestra Metodología{% endblock %}
