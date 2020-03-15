@@ -103,7 +103,7 @@ If no caching headers are present in a response, then the [client is permitted t
 
 A cacheable resource is stored by the client for a period of time and available for reuse on a subsequent request. Across all HTTP requests, 80% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these, 
 
-*   6% of requests have a time to time (TTL) of 0 seconds, which immediately invalidates a cached entry.
+*   6% of requests have a time to live (TTL) of 0 seconds, which immediately invalidates a cached entry.
 *   27% are cached heuristically because of a missing `Cache-Control` header.
 *   47% are cached for more than 0 seconds.
 
