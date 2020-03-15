@@ -252,7 +252,7 @@
       <h2 id="what-type-of-content-are-we-caching">What type of content are we caching?</h2>
       <p>A cacheable resource is stored by the client for a period of time and available for reuse on a subsequent request. Across all HTTP requests, 80% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these,</p>
       <ul>
-        <li>6% of requests have a time to time (TTL) of 0 seconds, which immediately invalidates a cached entry.</li>
+        <li>6% of requests have a time to live (TTL) of 0 seconds, which immediately invalidates a cached entry.</li>
         <li>27% are cached heuristically because of a missing <code>Cache-Control</code> header.</li>
         <li>47% are cached for more than 0 seconds.</li>
       </ul>
