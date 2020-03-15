@@ -53,7 +53,7 @@ const get_static_pages = async (sitemap_chapters) => {
   for (const loc of await files) {
     if (fs.existsSync(`templates/${loc}`)) {
       const file = await fs.readFile(`templates/${loc}`, 'utf-8');
-      const match = file.match(/"dateModified": "([0-9\-\+\:T]*)"/);
+      const match = file.match(/{% block date_modified %}([0-9\-\+\:T]*)/);
       const lastmod = set_min_date(match[1]);
       const url = strip_html_extension(loc);
 

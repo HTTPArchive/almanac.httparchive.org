@@ -1,224 +1,91 @@
-{% extends "base.html" %}
+{% extends "base/2019/base.html" %}
 
-{% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css?v=2">
-{% endblock %}
+{% block description %}Web Almanac 2019 por HTTP Archive es un estado anual de la web que combina las estadísticas y tendencias sin procesar del HTTP Archive con la experiencia de la comunidad web{% endblock %}
 
-{% block content%}
-  <div id="skiptocontent"><a href="#maincontent">Saltar navegación</a></div>
-  {% block header %}
-  <header class="alt-bg">
-    <div class="container">
-      <div class="top-header">
-        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive" height="39" width="202"></a>
-        <nav title="Navegación de página">
-          <ul>
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a></li>
-            {% if supported_years | length > 1 %}
-            <li>
-              {{ year_switcher() }}
-            </li>
-            {% endif %}
-            {% if supported_languages | length > 1%}
-            <li>
-              {{ language_switcher() }}
-            </li>
-            {% endif %}
-          </ul>
-        </nav>
-        {% if request.endpoint == 'home' %}
-        <div class="cta">
-          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
-            Empieza a Explorar
-          </a>
-        </div>
-        {% endif %}
-        <nav title="Menú de página" id="menu" aria-labelledby="menu-btn">
-          <button type="button" id="menu-btn" class="menu-btn" aria-label="Abre el menu" aria-expanded="false" data-open-text="Abre el menu" data-close-text="Cierra el menú">
-            <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
-          </button>
-          <ul class="menu">
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a></li>
-            <li class="misc">
-              <ul class="misc">
-                <li>
-                  <a href="https://httparchive.org/">
-                    <img src="/static/images/ha-home.svg" alt="Página de Inicio HTTP Archive" height="35" width="70">
-                  </a>
-                </li>
-                <li>
-                  <ul class="social-media">
-                    <li>
-                      <a href="https://twitter.com/HTTPArchive" class="twitter">
-                        <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-                        <img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" />
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                {% if supported_years | length > 1 %}
-                <li>
-                  {{ year_switcher() }}
-                </li>
-                {% endif %}
-                {% if supported_languages | length > 1%}
-                <li>
-                  {{ language_switcher() }}
-                </li>
-                {% endif %}
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-  {% endblock %}
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-  <div class="container">
-    {% block main %}{% endblock %}
-  </div>
+{% block date_published %}2019-11-04T12:00:00+00:00:00{% endblock %}
+{% block date_modified %}2019-11-04T12:00:00+00:00:00{% endblock %}
 
-  {% block footer %}
-    <footer class="alt-bg">
-      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="Web Almanac por HTTP Archive" height="39" width="202"></a>
-      <nav title="Navegación de pie de página" class="nav-items">
-        <ul>
-          <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">Tabla de Contenidos</a></li>
-          <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">Contribuidores</a></li>
-          <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">Metodología</a></li>
-          {% if supported_years | length > 1 %}
-          <li>
-            {{ year_switcher() }}
-          </li>
-          {% endif %}
-          {% if supported_languages | length > 1%}
-          <li>
-            {{ language_switcher() }}
-          </li>
-          {% endif %}
-          </ul>
-      </nav>
-      <p class="copyright">
-        <span>© 2019 Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.</span>
-        <br>
-        <a href="{{ url_for('accessibility_statement', lang=lang) }}">Declaración de accesibilidad</a>
-      </p>
-      <a class="navigation-logo ha-logo" href="https://httparchive.org">
-        <img src="/static/images/ha-home.svg" alt="Página de Inicio HTTP Archive" height="35" width="70">
-      </a>
-      <ul class="social-media">
-        <li>
-          <a href="https://twitter.com/HTTPArchive" class="twitter">
-            <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-            <img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" />
-          </a>
-        </li>
-      </ul>
-      <hr>
-      <hr>
-    </footer>
-  {% endblock %}
-  {% block scripts %}
-    <script nonce="{{ csp_nonce() }}">
-      (function() {
-        // Language switching
-        var languageSwitchers = document.querySelectorAll('.language-switcher select');
-        for (var i = 0; i < languageSwitchers.length; i++) {
-          languageSwitchers[i].addEventListener('change', function(e) {
-            if (e.target.value) {
-              window.location = e.target.value;
-            }
-          });
-        }
+{% block breadcrumb_name_1 %}{{ year }} Home{% endblock %}
+{% block breadcrumb_name_2 %}{% endblock %}
 
-        // Mobile menu
-        var menuIcon = document.querySelector('.menu-icon');
-        var menuIconInitialSrc = document.querySelector('.menu-icon').src;
-        var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
-        var menuBtn = document.querySelector('.menu-btn');
-        var menuNav = document.querySelector('#menu');
+{% block skip_navigation %}Saltar navegación{% endblock %}
 
-        function toggleNavMenu() {
-          var menuOpen = document.body.classList.toggle('menu-open');
-          menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
-          menuBtn.setAttribute('aria-expanded', menuOpen);
-          var ariaLabel = menuOpen ?  menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
-          menuBtn.setAttribute('aria-label', ariaLabel);
+{% block organization %}Web Almanac por HTTP Archive{% endblock %}
 
-          /* When you open the menu, add an event listener to close it when clicking outside the menu area */
-          /* Remove it on closing the menu */
-          if (menuBtn.getAttribute('aria-expanded') === 'true') {
-            document.body.addEventListener('click', toggleNavMenu, false);
-          } else {
-            document.body.removeEventListener('click', toggleNavMenu, false);
-          }
-        }
+{% block http_archive_link %}Página de Inicio HTTP Archive{% endblock %}
 
-        menuBtn.addEventListener('click', function() {
-          toggleNavMenu();
-          event.stopPropagation();
-        });
-        
-        /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
-        menuNav.addEventListener('click', function () {
-          event.stopPropagation();
-        });
-        
-        menuNav.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') {
-            if (menuBtn.getAttribute('aria-expanded') === 'true') {
-              toggleNavMenu();
-              menuBtn.focus();
-            }
-          }
-        });
+{% block page_navigation %}Navegación de página{% endblock %}
 
-      })();
-    </script>
-  {% endblock %}
-{% endblock %}
+{% block table_of_contents_title %}Tabla de Contenidos{% endblock %}
+{% block contributors_title %}Contribuidores{% endblock %}
+{% block methodology_title %}Metodología{% endblock %}
 
-{% macro language_switcher() %}
-{% if supported_languages | length > 1%}
-<div class="language-switcher">
-  <select>
-    {% for l in supported_languages %}
-      <option
-        {% if l == language %}selected="selected"{% endif %}
-        value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-        {{ l }}
-      </option>
-    {% endfor %}
-  </select>
-  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="abrir" height="20" width="20" loading="lazy" />
-</div>
-{% endif %}
-{% endmacro %}
+{% block part %}Parte{% endblock %}
+{% block chapter %}Capítulo{% endblock %}
 
-{% macro year_switcher() %}
-<div class="year-switcher">
-  <select>
-      {% for y in supported_years %}
-        <option
-          {% if y == year %}selected="selected"{% endif %}
-          value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
-          Edición de {{ y }} 
-        </option>
-      {% endfor %}
-  </select>
-  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="abir" height="20" width="20" loading="lazy" />
-</div>
-{% endmacro %}
+{% block start_exploring %}Empieza a Explorar{% endblock %}
+
+{% block menu_title %}Menú de página{% endblock %}
+{% block open_the_menu %}Abre el menu{% endblock %}
+{% block close_the_menu %}Cierra el menú{% endblock %}
+
+{% block open %}Abre{% endblock %}
+{% block close %}Cierra{% endblock %}
+
+{% macro on_twitter(twitterHandle) %}@{{twitterHandle}} en Twitter{% endmacro %}
+{% macro on_github(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
+{% macro website(authorName) %}{{authorName}} sitio web{% endmacro %}
+
+{% macro edition(year) %}{{ year }} Edition{% endmacro %}
+
+{% block footer_title %}Navegación de pie de página{% endblock %}
+{% block copyright %}© 2019 Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
+
+{% 
+    set localizedPartTitles = {
+      "I. Page Content": "I. Page Content",
+      "II. User Experience": "II. User Experience",
+      "III. Content Publishing": "III. Content Publishing",
+      "IV. Content Distribution": "IV. Content Distribution"
+    }
+  %}
+  {%
+    set localizedChapterTitles = {
+      "JavaScript": "JavaScript",
+      "CSS": "CSS",
+      "Markup": "Markup",
+      "Media": "Media",
+      "Third Parties": "Third Parties",
+      "Fonts": "Fonts",
+      "Performance": "Performance",
+      "Security": "Security",
+      "Accessibility": "Accessibility",
+      "SEO": "SEO",
+      "PWA": "PWA",
+      "Mobile Web": "Mobile Web",
+      "Ecommerce": "Ecommerce",
+      "CMS": "CMS",
+      "Compression": "Compression",
+      "Caching": "Caching",
+      "CDN": "CDN",
+      "Page Weight": "Page Weight",
+      "Resource Hints": "Resource Hints",
+      "HTTP/2": "HTTP/2"
+    }
+  %}
+  
+  {% set localizedTeamNames = {
+    "analysts": "Analysts",
+    "authors": "Authors",
+    "brainstormers": "Brainstormers",
+    "designers": "Designers",
+    "developers": "Developers",
+    "editors": "Editors",
+    "reviewers": "Reviewers",
+    "translators": "Translators", 
+    }
+  %}
+  
