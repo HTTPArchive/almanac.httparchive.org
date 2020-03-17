@@ -114,20 +114,11 @@
               {{ year_switcher() }}
             </li>
             {% endif %}
-            {% if supported_languages | length > 1%}
             <li>
               {{ language_switcher() }}
             </li>
-            {% endif %}
           </ul>
         </nav>
-        {% if request.endpoint == 'home' %}
-        <div class="cta">
-          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="alt btn">
-            {{ self.start_exploring() }}
-          </a>
-        </div>
-        {% endif %}
         <nav aria-label="{{ self.menu_title() }}" id="menu" aria-labelledby="menu-btn">
           <button type="button" id="menu-btn" class="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
             <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
@@ -193,11 +184,9 @@
             {{ year_switcher() }}
           </li>
           {% endif %}
-          {% if supported_languages | length > 1%}
           <li>
             {{ language_switcher() }}
           </li>
-          {% endif %}
         </ul>
       </nav>
       <p class="copyright">
@@ -285,20 +274,24 @@
 {% endblock %}
 
 {% macro language_switcher() %}
-{% if supported_languages | length > 1%}
 <div class="language-switcher">
   <select>
     {% for l in supported_languages %}
-      <option
-        {% if l == language %}selected="selected"{% endif %}
-        value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-        {{ l }}
-      </option>
+    <option
+      {% if l == language %}selected="selected"{% endif %}
+      value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+      {{ l }}
+    </option>
     {% endfor %}
+    <option disabled="disabled">
+      ────
+    </option>
+    <option value="https://github.com/HTTPArchive/almanac.httparchive.org/labels/Translation">
+      {{ self.help_translate() }}
+    </option>
   </select>
-  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="{{ self.open() }}" height="20" width="20" loading="lazy" />
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="{{ self.open() }}" height="20" width="20" />
 </div>
-{% endif %}
 {% endmacro %}
 
 {% macro year_switcher() %}
@@ -312,7 +305,7 @@
         </option>
       {% endfor %}
   </select>
-  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="{{ self.open() }}" height="20" width="20" loading="lazy" />
+  <img class="dropdown-arrow" src="/static/images/dropdown-arrow.png" alt="{{ self.open() }}" height="20" width="20" />
 </div>
 {% endmacro %}
 

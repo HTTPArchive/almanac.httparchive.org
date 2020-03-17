@@ -6,32 +6,38 @@
         {
           "part": "I",
           "chapter": "1",
-          "title": "JavaScript"
+          "title": "JavaScript",
+          "slug": "javascript"
         },
         {
           "part": "I",
           "chapter": "2",
-          "title": "CSS"
+          "title": "CSS",
+          "slug": "css"
         },
         {
           "part": "I",
           "chapter": "3",
-          "title": "Markup"
+          "title": "Markup",
+          "slug": "markup"
         },
         {
           "part": "I",
           "chapter": "4",
-          "title": "Media"
+          "title": "Media",
+          "slug": "media"
         },
         {
           "part": "I",
           "chapter": "5",
-          "title": "Third Parties"
+          "title": "Third Parties",
+          "slug": "third-parties"
         },
         {
           "part": "I",
           "chapter": "6",
-          "title": "Fonts"
+          "title": "Fonts",
+          "slug": "fonts"
         }
       ]
     },
@@ -41,32 +47,38 @@
         {
           "part": "II",
           "chapter": "7",
-          "title": "Performance"
+          "title": "Performance",
+          "slug": "performance"
         },
         {
           "part": "II",
           "chapter": "8",
-          "title": "Security"
+          "title": "Security",
+          "slug": "security"
         },
         {
           "part": "II",
           "chapter": "9",
-          "title": "Accessibility"
+          "title": "Accessibility",
+          "slug": "accessibility"
         },
         {
           "part": "II",
           "chapter": "10",
-          "title": "SEO"
+          "title": "SEO",
+          "slug": "seo"
         },
         {
           "part": "II",
           "chapter": "11",
-          "title": "PWA"
+          "title": "PWA",
+          "slug": "pwa"
         },
         {
           "part": "II",
           "chapter": "12",
-          "title": "Mobile Web"
+          "title": "Mobile Web",
+          "slug": "mobile-web"
         }
       ]
     },
@@ -76,12 +88,14 @@
         {
           "part": "III",
           "chapter": "13",
-          "title": "Ecommerce"
+          "title": "Ecommerce",
+          "slug": "ecommerce"
         },
         {
           "part": "III",
           "chapter": "14",
-          "title": "CMS"
+          "title": "CMS",
+          "slug": "cms"
         }
       ]
     },
@@ -91,32 +105,38 @@
         {
           "part": "IV",
           "chapter": "15",
-          "title": "Compression"
+          "title": "Compression",
+          "slug": "compression"
         },
         {
           "part": "IV",
           "chapter": "16",
-          "title": "Caching"
+          "title": "Caching",
+          "slug": "caching"
         },
         {
           "part": "IV",
           "chapter": "17",
-          "title": "CDN"
+          "title": "CDN",
+          "slug": "cdn"
         },
         {
           "part": "IV",
           "chapter": "18",
-          "title": "Page Weight"
+          "title": "Page Weight",
+          "slug": "page-weight"
         },
         {
           "part": "IV",
           "chapter": "19",
-          "title": "Resource Hints"
+          "title": "Resource Hints",
+          "slug": "resource-hints"
         },
         {
           "part": "IV",
           "chapter": "20",
-          "title": "HTTP/2"
+          "title": "HTTP/2",
+          "slug": "http2"
         }
       ]
     }
