@@ -18,8 +18,8 @@ This chapter of the Web Almanac looks at the current status of security on the w
 Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security (TLS). TLS (or the older version, SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great [increase in the use of HTTPS across the web](https://httparchive.org/reports/state-of-the-web#pctHttps), but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.
 
 <figure>
-  <a href="/static/images/2019/08_Security/fig1.png">
-    <img src="/static/images/2019/08_Security/fig1.png" alt="Figure 1. Usage of HTTP versus HTTPS." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive">
+  <a href="/static/images/2019/security/fig1.png">
+    <img src="/static/images/2019/security/fig1.png" alt="Figure 1. Usage of HTTP versus HTTPS." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">Horizontal bar chart showing mobile HTTPS at 79% and HTTP at 21%, and beneath that desktop HTTPS is 80.51% and HTTP is 19.49%</div>
   <figcaption id="fig1-caption" >Figure 1. Usage of HTTP versus HTTPS.</figcaption>
@@ -28,8 +28,8 @@ Perhaps the largest push to increasing security and privacy online we're seeing 
 ### Protocol versions
 
 <figure>
-  <a href="/static/images/2019/08_Security/fig2.png">
-    <img src="/static/images/2019/08_Security/fig2.png" alt="Figure 2. Usage of TLS protocol versions." aria-labelledby="fig2-caption"  aria-describedby="fig2-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive">
+  <a href="/static/images/2019/security/fig2.png">
+    <img src="/static/images/2019/security/fig2.png" alt="Figure 2. Usage of TLS protocol versions." aria-labelledby="fig2-caption"  aria-describedby="fig2-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">Horizontal bar chart showing desktop and mobile on similar TLS usage: 58% on TLSv1.2, 41% on TLSv1.3 and very little usage of TLSv1.0 (0.75%) and a tiny usage of TLSv1.1.</div>
   <figcaption id="fig2-caption" >Figure 2. Usage of TLS protocol versions.</figcaption>
@@ -42,8 +42,8 @@ This is likely due to many sites using requests from the larger players for [thi
 If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to [CMS](./cms) sites like Wordpress and [CDNs](./cdn):
 
 <figure>
-   <a href="/static/images/2019/08_Security/fig3.png">
-    <img src="/static/images/2019/08_Security/fig3.png" alt="Figure 3. Usage of TLS protocol versions for home page requests only." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive">
+   <a href="/static/images/2019/security/fig3.png">
+    <img src="/static/images/2019/security/fig3.png" alt="Figure 3. Usage of TLS protocol versions for home page requests only." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive">
   </a>
   <div id="fig3-description" class="visually-hidden">Horizontal bar chart showing desktop and mobile on similar TLS usage: 47% on desktop (43% on mobile) on TLSv1.2, 20.2% on desktop (19.7% on mobile) on TLSv1.3 and very little usage of TLSv1.0 (1.1% - 1.2%) and a tiny usage of TLSv1.1.</div>
   <figcaption id="fig3-caption">Figure 3. Usage of TLS protocol versions for home page requests only.</figcaption>
@@ -143,8 +143,8 @@ In the past web browsers have allowed passive mixed content and flagged it with 
 Many new and recent features for site operators to better protect their users have come in the form of new HTTP response headers that can configure and control security protections built into the browser. Some of these features are easy to enable and provide a huge level of protection whilst others require a little more work from site operators. If you wish to check if a site is using these headers and has them correctly configured, you can use the [Security Headers](https://securityheaders.com/) tool to scan it.
 
 <figure>
-   <a href="/static/images/2019/08_Security/fig8.png">
-    <img src="/static/images/2019/08_Security/fig8.png" alt="Figure 8. Usage of Security Headers" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="760" height="450" data-width="760" data-height="450" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive">
+   <a href="/static/images/2019/security/fig8.png">
+    <img src="/static/images/2019/security/fig8.png" alt="Figure 8. Usage of Security Headers" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="760" height="450" data-width="760" data-height="450" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive">
   </a>
   <div id="fig8-description" class="visually-hidden">A vertical bar graph showing increasing usage of security headers list for both desktop and mobile listing from left to right: cross-origin-resource-policy (0 sites on both), feature policy (approx 8k desktop and mobile) report-to (74k desktop and 83k mobile), nel (74k desktop and 83k mobile), referrer-policy (142k desktop, 156k mobile), content-security-policy (240k desktop, 252k mobile), strict-transport-security (648k desktop, 679k mobile), x-xss-protection (642k desktop, 805k mobile), x-frame-options (743k desktop, 782k mobile) and finally x-content-type-options (770k desktop, 932k mobile).</div>
   <figcaption id="fig8-caption" >Figure 8. Usage of Security Headers</figcaption>

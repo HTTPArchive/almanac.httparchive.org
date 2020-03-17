@@ -32,7 +32,7 @@ const generate_chapters = async () => {
       console.log(`\n Generating chapter: ${language}, ${year}, ${chapter}`);
 
       const markdown = await fs.readFile(file, 'utf-8');
-      const { metadata, body, toc } = await parse_file(markdown);
+      const { metadata, body, toc } = await parse_file(markdown,chapter);
       if ( sitemap_languages.includes(language) ) {
         sitemap.push({ language, year, chapter, metadata });
       }
@@ -47,7 +47,7 @@ const generate_chapters = async () => {
   await size_of(sitemap_path);
 };
 
-const parse_file = async (markdown) => {
+const parse_file = async (markdown,chapter) => {
   const html = converter.makeHtml(markdown);
   let body = html;
 
@@ -69,6 +69,7 @@ const parse_file = async (markdown) => {
   const metadata = {
     ...m,
     chapter_number,
+    chapter,
     authors,
     reviewers,
     translators
@@ -78,7 +79,7 @@ const parse_file = async (markdown) => {
 };
 
 const write_template = async (language, year, chapter, metadata, body, toc) => {
-  const template = `templates/${language}/${year}/chapter.html`;
+  const template = `templates/base/${year}/chapter.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   if (fs.existsSync(template)) {

@@ -54,7 +54,7 @@ tr | span | option
 ### Elementos por página
 
 <figure id="fig2">
-  <img src="/static/images/2019/03_Markup/hixie_elements_per_page.png" alt="Distribución del análisis de Hixie en 2005 de las frecuencias de los elementos." width="600" height="318">
+  <img src="/static/images/2019/markup/hixie_elements_per_page.png" alt="Distribución del análisis de Hixie en 2005 de las frecuencias de los elementos." width="600" height="318">
   <figcaption>Figura 2. Distribución del análisis de Hixie en 2005 de las frecuencias de los elementos.</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ tr | span | option
 Comparando los últimos datos en la Figura 3 con los del informe de Hixie de 2005 en la Figura 2, podemos ver que el tamaño promedio de los árboles DOM ha aumentado.
 
 <figure id="fig4">
-  <img src="/static/images/2019/03_Markup/hixie_element_types_per_page.png" alt="Histograma del análisis de Hixie de 2005 de los tipos de elementos por página." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
+  <img src="/static/images/2019/markup/hixie_element_types_per_page.png" alt="Histograma del análisis de Hixie de 2005 de los tipos de elementos por página." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
   <div id="fig4-description" class="visually-hidden">Graph that relative frequency is a bell curve around the 19 elements point.</div>
   <figcaption id="fig4-caption">Figura 4. Histograma del análisis de Hixie de 2005 de los tipos de elementos por página.</figcaption>
 </figure>
@@ -105,8 +105,8 @@ Además, el 15% de las páginas de escritorio y el 16% de las páginas móviles 
 <p class="note">Nota: Mucho de esto es muy probable debido al uso de productos en lugar de que los autores individuales sigan creando manualmente el marcado.</p>
 
 <figure id="fig6">
-  <a href="/static/images/2019/03_Markup/fig6.png">
-    <img src="/static/images/2019/03_Markup/fig6.png" alt="Figura 6. Elementos en desuso más utilizados." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
+  <a href="/static/images/2019/markup/fig6.png">
+    <img src="/static/images/2019/markup/fig6.png" alt="Figura 6. Elementos en desuso más utilizados." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">Bar chart showing 'center' in use by 8.31% of desktop sites (7.96% of mobile), 'font' in use by 8.01% of desktop sites (7.38% of mobile), 'marquee' in use by 1.07% of desktop sites (1.20% of mobile), 'nobr' in use by 0.71% of desktop sites (0.55% of mobile), 'big' in use by 0.53% of desktop sites (0.47% of mobile), 'frameset' in use by 0.39% of desktop sites (0.35% of mobile), 'frame' in use by 0.39% of desktop sites (0.35% of mobile), 'strike' in use by 0.33% of desktop sites (0.27% of mobile), and 'noframes' in use by 0.25% of desktop sites (0.27% of mobile).</div>
   <figcaption id="fig6-caption">Figura 6. Elementos en desuso más utilizados.</figcaption>
@@ -119,8 +119,8 @@ La Figura 6 anterior muestra los 10 elementos obsoletos más utilizados. La mayo
 Para discutir números sobre el uso de elementos (estándar, obsoleto o personalizado), primero necesitamos establecer alguna perspectiva.
 
 <figure id="fig7">
-  <a href="/static/images/2019/03_Markup/fig7.png">
-    <img src="/static/images/2019/03_Markup/fig7.png" alt="Figura 7. Principales 150 elementos." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
+  <a href="/static/images/2019/markup/fig7.png">
+    <img src="/static/images/2019/markup/fig7.png" alt="Figura 7. Principales 150 elementos." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Bar chart showing a decreasing used of elements in descending order: html, head, body, title at above 99% usage, meta, a, div above 98% usage, link, script, img, span above 90% usage, ul, li , p, style, input, br, form above 70% usage, h2, h1, iframe, h3, button, footer, header, nav above 50% usage and other less well-known tags trailing down from below 50% to almost 0% usage.</div>
   <figcaption>Figura 7. Principales 150 elementos.</figcaption>
@@ -168,7 +168,7 @@ Es interesante, entonces, ver cómo se ve la distribución de estos elementos y 
 
 <figure id="fig8">
   <a href="https://rainy-periwinkle.glitch.me/scatter/html">
-    <img src="/static/images/2019/03_Markup/element_categories.png" alt="Elemento de popularidad categorizado por estandarización" aria-labelledby="fig8-caption" width="600" height="1065">
+    <img src="/static/images/2019/markup/element_categories.png" alt="Elemento de popularidad categorizado por estandarización" aria-labelledby="fig8-caption" width="600" height="1065">
   </a>
   <div id="fig8-description" class="visually-hidden">Scatter graph showing HTML, SVG, and Math ML use relatively few tags while non-standard elements (split into "in global ns", "dasherized" and "colon") are much more spread out.</div>
   <figcaption id="fig8-caption">Figura 8. Elemento de popularidad categorizado por estandarización.</figcaption>
@@ -217,8 +217,8 @@ Pero hay muchos recién llegados que tampoco estaban en el informe original de H
 Comparemos esto con algunos de los elementos HTML nativos que están por debajo de la barra del 5%, por perspectiva.
 
 <figure id="fig9">
-  <a href="/static/images/2019/03_Markup/fig9.png">
-    <img src="/static/images/2019/03_Markup/fig9.png" alt="Figura 9. Popularidad de elementos nativos y específicos del producto por debajo del 5% de adopción." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
+  <a href="/static/images/2019/markup/fig9.png">
+    <img src="/static/images/2019/markup/fig9.png" alt="Figura 9. Popularidad de elementos nativos y específicos del producto por debajo del 5% de adopción." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
   </a>
   <div id="fig9-description" class="visually-hidden">Bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure (a product-specific tag) by 52,146, code by 25,075, g:plusone (a product-specific tag) by 21,098, fb:like (a product-specific tag) by 12,773, fb:like-box (a product-specific tag) by 6,792, app-root (a product-specific tag) by 8,468, summary by 6,578, template by 5,913, and meter by 0.</div>
   <figcaption id="fig9-caption">Figura 9. Popularidad de elementos nativos y específicos del producto por debajo del 5% de adopción.</figcaption>
@@ -243,8 +243,8 @@ Hay algunos elementos populares que probablemente no sean tan desafiantes:
 Colocar estos elementos en nuestro mismo cuadro anterior para obtener una perspectiva se parece a esto (nuevamente, varía ligeramente según el conjunto de datos)
 
 <figure id="fig10">
-    <a href="/static/images/2019/03_Markup/fig10.png">
-      <img src="/static/images/2019/03_Markup/fig10.png" alt="Figura 10. Otros elementos populares en el contexto de elementos nativos y específicos del producto con menos del 5% de adopción." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
+    <a href="/static/images/2019/markup/fig10.png">
+      <img src="/static/images/2019/markup/fig10.png" alt="Figura 10. Otros elementos populares en el contexto de elementos nativos y específicos del producto con menos del 5% de adopción." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
     </a>
     <div id="fig10-description" class="visually-hidden">A bar chart showing video is used by 184,149 sites, canvas by 108,355, ym-measure by 52,416, code by 25,075, g:plusone by 21,098, db:like by 12,773, cufon by 10,523, ymaps by 8,303, fb:like-box by 6,972, app-root by 8,468, summary by 6,578, template by 5,913, and meter by 0</div>
   <figcaption id="fig10-caption">Figura 10. Otros elementos populares en el contexto de elementos nativos y específicos del producto con menos del 5% de adopción.</figcaption>

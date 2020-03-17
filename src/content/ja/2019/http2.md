@@ -66,8 +66,8 @@ HTTP/2には次の重要な概念があります。
 
 
 <figure>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png">
-    <img alt="図2.要求によるHTTP/2の使用。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/20_HTTP_2/ch20_fig2_http2_usage_by_request.png" width="600" height="321">
+  <a href="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png">
+    <img alt="図2.要求によるHTTP/2の使用。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png" width="600" height="321">
   </a>
   <div id="fig2-description" class="visually-hidden">2019年7月現在、デスクトップとモバイルの両方で55％採用されているHTTP/2使用の時系列チャート。傾向は年間約15ポイントで着実に増加しています。</div>
   <figcaption id="fig2-caption">図2.要求によるHTTP/2の使用。(引用: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTPアーカイブ</a>)</figcaption>
@@ -199,8 +199,8 @@ HTTP/2の影響は、特にHTTPアーカイブ[方法論](./methodology)を使�
 測定できる影響の1つは、現在HTTP/2の世界にいるHTTP使用の変化です。複数の接続は、限られた形式の並列化を可能にするHTTP/1.1の回避策でしたが、これは実際、HTTP/2で通常最もよく機能することの反対になります。単一の接続でTCPセットアップ、TCPスロースタート、およびHTTPSネゴシエーションのオーバーヘッドが削減され、クロスリクエストの優先順位付けが可能になります。
 
 <figure>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png">
-    <img alt="図9.ページごとのTCP接続。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" src="/static/images/2019/20_HTTP_2/ch20_fig9_num_tcp_connections_trend_over_years.png" width="600" height="320">
+  <a href="/static/images/2019/http2/ch20_fig9_num_tcp_connections_trend_over_years.png">
+    <img alt="図9.ページごとのTCP接続。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" src="/static/images/2019/http2/ch20_fig9_num_tcp_connections_trend_over_years.png" width="600" height="320">
   </a>
   <div id="fig9-description" class="visually-hidden">ページあたりのTCP接続数の時系列グラフ。2019年7月現在、デスクトップページの中央値には14の接続があり、モバイルページの中央値には16の接続があります。</div>
   <figcaption id="fig9-caption">図9.ページごとのTCP接続。 (引用: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTPアーカイブ</a>)</figcaption>
@@ -209,8 +209,8 @@ HTTP/2の影響は、特にHTTPアーカイブ[方法論](./methodology)を使�
 HTTPアーカイブは、ページあたりのTCP接続数を測定します。これは、HTTP/2をサポートするサイトが増え、6つの個別の接続の代わりに単一の接続を使用するため、徐々に減少しています。
 
 <figure>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png">
-    <img alt="図10.ページごとの合計リクエスト。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/20_HTTP_2/ch20_fig10_total_requests_per_page_trend_over_years.png" width="600" height="321">
+  <a href="/static/images/2019/http2/ch20_fig10_total_requests_per_page_trend_over_years.png">
+    <img alt="図10.ページごとの合計リクエスト。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/http2/ch20_fig10_total_requests_per_page_trend_over_years.png" width="600" height="321">
   </a>
   <div id="fig10-description" class="visually-hidden">ページあたりのリクエスト数の時系列チャート。2019年7月現在、デスクトップページの中央値は74リクエスト、モバイルページの中央値は69リクエストです。傾向は比較的横ばいです。</div>
   <figcaption id="fig10-caption">図10.ページごとの合計リクエスト。 (引用: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTPアーカイブ</a>)</figcaption>
@@ -258,8 +258,8 @@ HTTP/2プッシュは、HTTP/2の大いに宣伝された新機能であるに�
 これは以前のアドバイスでプッシュを控えめにし、「[アイドル状態のネットワーク時間を埋めるのに十分なリソースだけをプッシュし、それ以上はプッシュしない](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit)」ということでした。上記の統計は、大きなサイズの多くのリソースがプッシュされることを示しています。
 
 <figure>
-  <a href="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png">
-    <img src="/static/images/2019/20_HTTP_2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="図13.プッシュはどのアセットタイプに使用されますか？" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
+  <a href="/static/images/2019/http2/ch20_fig13_what_push_is_used_for.png">
+    <img src="/static/images/2019/http2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="図13.プッシュはどのアセットタイプに使用されますか？" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
   </a>
   <div id="fig13-description" class="visually-hidden">プッシュされるアセットタイプの割合を分類する円グラフ。 JavaScriptがアセットのほぼ半分を構成し、次にCSSが約4分の1、画像が約8分の1、残りをテキストベースのさまざまなタイプで構成します。</div>
   <figcaption id="fig13-caption">図13.プッシュはどの資産タイプに使用されますか？</figcaption>
