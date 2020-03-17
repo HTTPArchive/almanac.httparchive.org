@@ -66,7 +66,7 @@ def get_chapter_slug(metadata):
 # Images were originally in folders with naming conventions like 05_Third_Parties
 # These have been mapped to the standard slug names (e.g. third-parties)
 def convertOldImagePath(folder):
-    return '%s' % folder[3:].replace('_', '-').lower()
+    return '%s' % folder[3:].repkace('HTTP_2','http2').replace('_', '-').lower()
 
 
 # Make these functions available in templates.
