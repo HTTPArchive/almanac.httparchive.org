@@ -6,6 +6,7 @@ from language import DEFAULT_LANGUAGE, get_language
 import logging
 import random
 from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
+import os.path
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
 # Note this requires similar set up in app.yaml for Google App Engine
@@ -43,7 +44,21 @@ def render_template(template, *args, **kwargs):
 
     lang = request.view_args.get('lang')
     language = get_language(lang)
-    kwargs.update(supported_languages=supported_languages, year=year, lang=lang, language=language, supported_years=list(SUPPORTED_YEARS.keys()))
+    langcode_length = len(lang) + 1 # Probably always 2-character language codes but who knows!
+
+    # If the template does not exist, then redirect to English version
+    if (lang != 'en' and not(os.path.isfile('templates/%s' % template))):
+        return redirect('/en%s' % (request.full_path[langcode_length:]), code=302)
+
+    # Although a langauge may be enabled, all templates may not have been translated yet
+    # So check if each language exists and only return languages for templates that do exist
+    template_supported_languages = []
+    for l in supported_languages:
+        langTemplate = 'templates/%s/%s' % (l.lang_code, template[langcode_length:])
+        if (os.path.isfile(langTemplate)):
+            template_supported_languages.append(l)
+
+    kwargs.update(supported_languages=template_supported_languages, year=year, lang=lang, language=language, supported_years=list(SUPPORTED_YEARS.keys()))
     return flask_render_template(template, *args, **kwargs)
 
 
