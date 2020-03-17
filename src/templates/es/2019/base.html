@@ -19,7 +19,7 @@
 {% block page_navigation %}Navegación de página{% endblock %}
 
 {% block help_translate %}Ayuda a traducir{% endblock %}
-{% block translation_not_available %}en inglés - no disponible en francés{% endblock %}
+{% block translation_not_available %}en inglés - no disponible en español{% endblock %}
 
 {% block table_of_contents_title %}Tabla de Contenidos{% endblock %}
 {% block contributors_title %}Contribuidores{% endblock %}
@@ -41,7 +41,7 @@
 {% macro on_github(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
 {% macro website(authorName) %}{{authorName}} sitio web{% endmacro %}
 
-{% macro edition(year) %}{{ year }} Edition{% endmacro %}
+{% macro edition(year) %}Edición {{ year }}{% endmacro %}
 
 {% block footer_title %}Navegación de pie de página{% endblock %}
 {% block copyright %}© 2019 Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.{% endblock %}
@@ -49,46 +49,46 @@
 
 {% 
     set localizedPartTitles = {
-      "I. Page Content": "I. Page Content",
-      "II. User Experience": "II. User Experience",
-      "III. Content Publishing": "III. Content Publishing",
-      "IV. Content Distribution": "IV. Content Distribution"
+      "I. Page Content": "I. Contenido de las Páginas",
+      "II. User Experience": "II. Experiencia de Usuario",
+      "III. Content Publishing": "III. Publicación de Contenido",
+      "IV. Content Distribution": "IV. Distribución de Contenido"
     }
   %}
   {%
     set localizedChapterTitles = {
       "JavaScript": "JavaScript",
       "CSS": "CSS",
-      "Markup": "Markup",
+      "Markup": "Marcado Web",
       "Media": "Media",
-      "Third Parties": "Third Parties",
-      "Fonts": "Fonts",
+      "Third Parties": "Contenido de Terceros",
+      "Fonts": "Fuentes",
       "Performance": "Performance",
-      "Security": "Security",
-      "Accessibility": "Accessibility",
+      "Security": "Seguridad",
+      "Accessibility": "Accesibilidad",
       "SEO": "SEO",
       "PWA": "PWA",
-      "Mobile Web": "Mobile Web",
-      "Ecommerce": "Ecommerce",
+      "Mobile Web": "Web Móvil",
+      "Ecommerce": "E-commerce",
       "CMS": "CMS",
-      "Compression": "Compression",
-      "Caching": "Caching",
+      "Compression": "Compresión",
+      "Caching": "Almacenamiento en Caché",
       "CDN": "CDN",
-      "Page Weight": "Page Weight",
-      "Resource Hints": "Resource Hints",
+      "Page Weight": "Peso de las Páginas",
+      "Resource Hints": "Sugerencias de Recursos",
       "HTTP/2": "HTTP/2"
     }
   %}
   
   {% set localizedTeamNames = {
-    "analysts": "Analysts",
-    "authors": "Authors",
-    "brainstormers": "Brainstormers",
-    "designers": "Designers",
-    "developers": "Developers",
-    "editors": "Editors",
-    "reviewers": "Reviewers",
-    "translators": "Translators", 
+    "analysts": "Analistas",
+    "authors": "Autores",
+    "brainstormers": "Pensadores",
+    "designers": "Diseñadores",
+    "developers": "Desarrolladores",
+    "editors": "Editores",
+    "reviewers": "Revisores",
+    "translators": "Traductores", 
     }
   %}
   
