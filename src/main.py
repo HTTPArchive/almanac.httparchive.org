@@ -63,6 +63,13 @@ def render_template(template, *args, **kwargs):
     return flask_render_template(template, *args, **kwargs)
 
 
+def chapter_lang_exists(lang, year, chapter):
+    if os.path.isfile('templates/%s/%s/chapters/%s.html' % (lang, year, chapter)):
+        return True
+    else:
+        return False
+
+
 def get_view_args(lang=None, year=None):
     view_args = request.view_args.copy()
     if lang:
@@ -73,11 +80,6 @@ def get_view_args(lang=None, year=None):
     return view_args
 
 
-def get_chapter_slug(metadata):
-    title = metadata.get('title')
-    return title.lower().replace(' ', '-').replace('/', '')
-
-
 # Images were originally in folders with naming conventions like 05_Third_Parties
 # These have been mapped to the standard slug names (e.g. third-parties)
 def convertOldImagePath(folder):
@@ -86,7 +88,7 @@ def convertOldImagePath(folder):
 
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
-app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
+app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
 
 
 @app.route('/<lang>/<year>/')
@@ -164,7 +166,7 @@ def get_chapter_nextprev(config, chapter_slug):
             if found and 'todo' not in chapter:
                 next_chapter = chapter
                 break
-            elif get_chapter_slug(chapter) == chapter_slug and 'todo' not in chapter:
+            elif chapter.get('slug') == chapter_slug and 'todo' not in chapter:
                 found = True
             elif 'todo' not in chapter:
                 prev_chapter = chapter

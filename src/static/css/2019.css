@@ -544,6 +544,11 @@ header .btn + .language-switcher {
   pointer-events: none;
 }
 
+.not-translated {
+  font-style: italic;
+  font-size: 0.9em;
+}
+
 .dropdown-arrow {
   filter: invert(100%) sepia(0%) saturate(953%) hue-rotate(229deg) brightness(116%) contrast(100%);
 }
