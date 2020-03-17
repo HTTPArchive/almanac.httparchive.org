@@ -7,6 +7,7 @@ import logging
 import random
 from werkzeug.routing import BaseConverter
 from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
+import os.path
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
 # Note this requires similar set up in app.yaml for Google App Engine
@@ -44,8 +45,29 @@ def render_template(template, *args, **kwargs):
 
     lang = request.view_args.get('lang')
     language = get_language(lang)
-    kwargs.update(supported_languages=supported_languages, year=year, lang=lang, language=language, supported_years=list(SUPPORTED_YEARS.keys()))
+    langcode_length = len(lang) + 1 # Probably always 2-character language codes but who knows!
+
+    # If the template does not exist, then redirect to English version
+    if (lang != 'en' and not(os.path.isfile('templates/%s' % template))):
+        return redirect('/en%s' % (request.full_path[langcode_length:]), code=302)
+
+    # Although a langauge may be enabled, all templates may not have been translated yet
+    # So check if each language exists and only return languages for templates that do exist
+    template_supported_languages = []
+    for l in supported_languages:
+        langTemplate = 'templates/%s/%s' % (l.lang_code, template[langcode_length:])
+        if (os.path.isfile(langTemplate)):
+            template_supported_languages.append(l)
+
+    kwargs.update(supported_languages=template_supported_languages, year=year, lang=lang, language=language, supported_years=list(SUPPORTED_YEARS.keys()))
     return flask_render_template(template, *args, **kwargs)
+
+
+def chapter_lang_exists(lang, year, chapter):
+    if os.path.isfile('templates/%s/%s/chapters/%s.html' % (lang, year, chapter)):
+        return True
+    else:
+        return False
 
 
 def get_view_args(lang=None, year=None):
@@ -58,11 +80,6 @@ def get_view_args(lang=None, year=None):
     return view_args
 
 
-def get_chapter_slug(metadata):
-    title = metadata.get('title')
-    return title.lower().replace(' ', '-').replace('/', '')
-
-
 # Images were originally in folders with naming conventions like 05_Third_Parties
 # These have been mapped to the standard slug names (e.g. third-parties)
 def convertOldImagePath(folder):
@@ -71,7 +88,7 @@ def convertOldImagePath(folder):
 
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
-app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
+app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
 
 
 @app.route('/<lang>/<year>/')
@@ -149,7 +166,7 @@ def get_chapter_nextprev(config, chapter_slug):
             if found and 'todo' not in chapter:
                 next_chapter = chapter
                 break
-            elif get_chapter_slug(chapter) == chapter_slug and 'todo' not in chapter:
+            elif chapter.get('slug') == chapter_slug and 'todo' not in chapter:
                 found = True
             elif 'todo' not in chapter:
                 prev_chapter = chapter
