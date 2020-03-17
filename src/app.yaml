@@ -9,6 +9,10 @@ handlers:
   secure: always
   expiration: 365d
 
+- url: /static/images/2019/[0-2][0-9]_.*/.*$
+  script: auto
+  secure: always
+
 - url: /static
   static_dir: static
   secure: always
