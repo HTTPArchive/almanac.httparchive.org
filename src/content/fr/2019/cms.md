@@ -28,8 +28,8 @@ Au début des temps ("de l'évolution du web"), l'écosystème du web était ali
 Au fur et à mesure de son évolution, le web est devenu plus puissant, mais aussi plus compliqué. En conséquence, cette simple boucle de croissance a été rompue et il n'était plus possible que n'importe quel utilisateur devienne un créateur. Pour ceux qui pouvaient poursuivre le chemin de la création de contenu, la route devenait ardue et difficile à parcourir. Le [fossé des capacités d'utilisation](https://medinathoughts.com/2018/05/17/progressive-wordpress/), c'est-à-dire la différence entre ce qui peut être fait sur le web et ce qui est réellement fait, a augmenté régulièrement.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/web-evolution.png">
-    <img src="/static/images/2019/14_CMS/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Graphique illustrant l'augmentation des fonctionnalités du web de 1999 à 2018." width="600" height="492">
+  <a href="/static/images/2019/cms/web-evolution.png">
+    <img src="/static/images/2019/cms/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="Figure 1. Graphique illustrant l'augmentation des fonctionnalités du web de 1999 à 2018." width="600" height="492">
   </a>
   <div id="fig1-description" class="visually-hidden">Sur la gauche, intitulée circa 1999, nous avons un diagramme à barres avec deux barres montrant que ce qui peut être fait est proche de ce qui est réellement fait. Sur la droite, intitulée 2018, nous avons un diagramme en bâtons similaire, mais ce qui peut être fait est beaucoup plus grand, et ce qui est fait est légèrement plus grand. L'écart entre ce qui peut être fait et ce qui est réellement fait a beaucoup augmenté.</div>
   <figcaption id="fig1-caption">Figure 1. Graphique illustrant l'augmentation des fonctionnalités du web de 1999 à 2018.</figcaption>
@@ -57,8 +57,8 @@ Il existe d'autres ensembles de données qui suivent la part de marché des plat
 En gros, cela signifie qu'il existe de nombreuses plateformes CMS disponibles sur le marché. L'image suivante montre une vue réduite du paysage CMS.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/cms-logos.png">
-    <img src="/static/images/2019/14_CMS/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. Les principaux systèmes de gestion de contenu." width="600" height="559">
+  <a href="/static/images/2019/cms/cms-logos.png">
+    <img src="/static/images/2019/cms/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="Figure 3. Les principaux systèmes de gestion de contenu." width="600" height="559">
   </a>
   <div id="fig3-description" class="visually-hidden">Logos des principaux fournisseurs de CMS, notamment WordPress, Drupal, Wix, etc.</div>
   <figcaption id="fig3-caption">Figure 3. Les principaux systèmes de gestion de contenu.</figcaption>
@@ -75,8 +75,8 @@ Une grande partie du web aujourd'hui est alimentée par un type de plateforme CM
 En examinant les pages web servies sur les appareils de bureau et mobiles, nous observons une répartition approximative de 60-40 dans le pourcentage de ces pages qui ont été générées par une sorte de plateforme CMS, et celles qui ne le sont pas.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig4.png">
-    <img src="/static/images/2019/14_CMS/fig4.png" alt="Figure 4. Pourcentage de sites web sur desktop et mobiles qui utilisent un CMS." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig4.png">
+    <img src="/static/images/2019/cms/fig4.png" alt="Figure 4. Pourcentage de sites web sur desktop et mobiles qui utilisent un CMS." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">Diagramme en bâtons montrant que 40 % des sites web desktop et 40 % des sites web mobiles sont construits à l'aide d'un CMS.</div>
   <figcaption id="fig4-caption">Figure 4. Pourcentage de sites web desktop et mobiles qui utilisent un CMS.</figcaption>
@@ -94,8 +94,8 @@ Les pages web propulsées par les CMS sont générées par un large ensemble des
 Les jeux de données CrUX et HTTP Archive contiennent des pages web propulsées par un ensemble d'environ 103 plateformes CMS. La plupart de ces plates-formes sont très petites en termes de part de marché relative. Pour les besoins de notre analyse, nous nous concentrerons sur les principales plates-formes CMS en termes de leur impact sur le web, tel que reflété par les données. Pour une analyse complète, [voir la feuille de calcul des résultats de ce chapitre](https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/edit#gid=0).
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig5.png">
-    <img src="/static/images/2019/14_CMS/fig5.png" alt="Figure 5. Principales plateformes CMS en pourcentage de tous les sites web CMS." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="600" data-width="600" data-height="600" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1652315665&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig5.png">
+    <img src="/static/images/2019/cms/fig5.png" alt="Figure 5. Principales plateformes CMS en pourcentage de tous les sites web CMS." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="600" data-width="600" data-height="600" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1652315665&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Diagramme en bâtons montrant que WordPress représente 75% de tous les sites web créés avec un CMS. Le deuxième plus grand CMS, Drupal, a environ 6% de la part de marché des CMS. Le reste des CMS se réduit rapidement à moins de 1%.</div>
   <figcaption id="fig5-caption">Figure 5. Principales plateformes CMS en pourcentage de tous les sites web CMS.</figcaption>
@@ -120,16 +120,16 @@ Dans cette section, nous examinons brièvement le statu quo de l'espace CMS en t
 Les éléments de base de tout site web constituent également un site web géré par un CMS : [HTML](. /markup), [CSS](. /css), [JavaScript](. /javascript), et [media](. /media) (images et vidéo). Les CMS offrent aux utilisateurs des fonctionnalités de gestion puissamment optimisées pour intégrer ces ressources afin de créer des expériences web. Bien que ce soit l'un des aspects les plus inclusifs de ces applications, il est possible qu'il ait des effets négatifs sur le web en général.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig6.png">
-    <img src="/static/images/2019/14_CMS/fig6.png" alt="Figure 6. Répartition du poids des pages sur les CMS." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig6.png">
+    <img src="/static/images/2019/cms/fig6.png" alt="Figure 6. Répartition du poids des pages sur les CMS." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&amp;format=interactive">
   </a>
   <div id="fig6-description" class="visually-hidden">Diagramme en bâtons montrant la distribution du poids des pages CMS. La page CMS moyenne sur ordinateur de bureau pèse 2.3 MB. Au 10e percentile, elle pèse 0,7 Mo, au 25e percentile, 1,2 Mo, au 75e percentile, 4,2 Mo et au 90e percentile, 7,4 Mo. Les valeurs pour les ordinateurs de bureau sont très légèrement supérieures à celles des mobiles.</div>
   <figcaption id="fig6-caption">Figure 6. Répartition du poids des pages sur les CMS.</figcaption>
 </figure>
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig7.png">
-    <img src="/static/images/2019/14_CMS/fig7.png" alt="Figure 7. Répartition des requêtes des CMS par page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig7.png">
+    <img src="/static/images/2019/cms/fig7.png" alt="Figure 7. Répartition des requêtes des CMS par page." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Diagramme en bâtons montrant la répartition des requêtes des CMS par page. La page CMS moyenne sur ordinateur de bureau charge 86 ressources. Au 10e percentile, elle charge 39 ressources, au 25e percentile 57 ressources, au 75e percentile 127 ressources et au 90e percentile 183 ressources. Le desktop est constamment plus élevé que le mobile par une petite marge de 3-6 ressources.</div>
   <figcaption id="fig7-caption">Figure 7. Répartition des requêtes des CMS par page.</figcaption>
@@ -254,16 +254,16 @@ Soulignons un sous-ensemble spécifique de ressources pour évaluer leur impact 
 La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 et pèse 264,72 Ko, tandis que la médiane de ces requêtes sur les pages CMS sur ordinateur de bureau est de 16 et pèse 271,56 Ko. (Il est à noter que cela exclut les ressources 3P considérées comme faisant partie de l' "hébergement".
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig10.png">
-    <img src="/static/images/2019/14_CMS/fig10.png" alt="Figure 10. Répartition du poids des tierces parties (en Ko) sur les pages CMS." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig10.png">
+    <img src="/static/images/2019/cms/fig10.png" alt="Figure 10. Répartition du poids des tierces parties (en Ko) sur les pages CMS." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&amp;format=interactive">
   </a>
   <div id="fig10-description" class="visually-hidden">Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des kilo-octets de tierces parties sur les pages CMS pour les ordinateurs de bureau et les mobiles. Le poids médian (50e percentile) des pages de bureau de tierces parties est de 272 Ko. Le 10e percentile est de 27 Ko, le 25e de 104 Ko, le 75e de 577 Ko et le 90e de 940 Ko. Le mobile est légèrement plus petit dans les petits percentiles et légèrement plus grand dans les grands percentiles.</div>
   <figcaption id="fig10-caption">Figure 10. Répartition du poids des tierces parties (en Ko) sur les pages CMS.</figcaption>
 </figure>
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig11.png">
-    <img src="/static/images/2019/14_CMS/fig11.png" alt="Figure 11. Répartition du nombre de requêtes de tiers sur les pages CMS." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig11.png">
+    <img src="/static/images/2019/cms/fig11.png" alt="Figure 11. Répartition du nombre de requêtes de tiers sur les pages CMS." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
   </a>
   <div id="fig11-description" class="visually-hidden">Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des requêtes de tierces-parties sur les pages CMS sur ordinateur de bureau et mobile. Le nombre médian (50e percentile) de requêtes de tierces-parties sur ordinateur de bureau est de 16. Le 10e percentile est 3, le 25e 7, le 75e 31 et le 90e 52. Les ordinateurs de bureau et les mobiles ont des distributions presque équivalentes.</div>
   <figcaption id="fig11-caption">Figure 11. Répartition du nombre de requêtes de tiers sur les pages CMS.</figcaption>
@@ -276,8 +276,8 @@ Nous savons que la valeur médiane indique qu'au moins la moitié des pages Web 
 ### Statistiques sur les images
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig12.png">
-    <img src="/static/images/2019/14_CMS/fig12.png" alt="Figure 12. Répartition du poids des images (KB) sur les pages CMS." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig12.png">
+    <img src="/static/images/2019/cms/fig12.png" alt="Figure 12. Répartition du poids des images (KB) sur les pages CMS." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&amp;format=interactive">
   </a>
   <div id="fig12-description" class="visually-hidden">Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des kilo-octets d'images sur les pages CMS bureau et mobile. Le poids médian (50e percentile) des images sur bureau est de 1 232 Ko. Le 10e percentile est de 198 Ko, le 25e de 507 Ko, le 75e de 2 763 Ko et le 90e de 5 694 Ko. Les ordinateurs de bureau et les mobiles ont des distributions presque équivalentes.</div>
   <figcaption id="fig12-caption">Figure 12. Répartition du poids des images (KB) sur les pages CMS.</figcaption>
@@ -293,8 +293,8 @@ Rappelez-vous des figures 8 et 9 précédentes, les images sont un grand contrib
 Quels sont les formats courants que l'on trouve sur les pages CMS sur ordinateur de bureau et mobile ? D'après nos données, les images JPG sont en moyenne le format d'image le plus populaire. Les formats PNG et GIF suivent, tandis que les formats comme SVG, ICO et WebP suivent de manière significative, avec environ un peu plus de 2% et 1%.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig14.png">
-    <img src="/static/images/2019/14_CMS/fig14.png" alt="Figure 14. Adoption de formats d'images sur les pages CMS." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig14.png">
+    <img src="/static/images/2019/cms/fig14.png" alt="Figure 14. Adoption de formats d'images sur les pages CMS." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&amp;format=interactive">
   </a>
   <div id="fig14-description" class="visually-hidden">Diagramme en bâtons illustrant l'adoption de formats d'images sur les pages CMS pour les ordinateurs de bureau et les mobiles. Le JPEG représente près de la moitié de tous les formats d'image, le PNG en représente un tiers, le GIF un cinquième, et les 5% restants sont partagés entre le SVG, l'ICO et le WebP. Les ordinateurs de bureau et les téléphones portables ont une adoption presque équivalente.</div>
   <figcaption id="fig14-caption">Figure 14. Adoption de formats d'images sur les pages CMS.</figcaption>
@@ -347,8 +347,8 @@ Dans cette section, nous examinons trois dimensions importantes qui peuvent écl
 Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint) mesure le temps qui s'écoule entre le début de la navigation et le premier affichage d'un contenu tel que du texte ou une image. Une expérience FCP réussie, ou pouvant être qualifiée de "rapide", implique la rapidité avec laquelle les éléments du DOM sont chargés pour assurer à l'utilisateur que le site web se charge avec succès. Bien qu'un bon score FCP ne soit pas une garantie que le site correspondant offre un bon UX, un mauvais FCP garantit presque certainement le contraire.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig16.png">
-    <img src="/static/images/2019/14_CMS/fig16.png" alt="Figure 16. Répartition moyenne des expériences de FCP entre les CMS." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig16.png">
+    <img src="/static/images/2019/cms/fig16.png" alt="Figure 16. Répartition moyenne des expériences de FCP entre les CMS." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&amp;format=interactive">
   </a>
   <div id="fig16-description" class="visually-hidden">Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 17 ci-dessous pour un tableau des données des cinq CMS les plus populaires.</div>
   <figcaption id="fig16-caption">Figure 16. Répartition moyenne des expériences de FCP entre les CMS.</figcaption>
@@ -410,8 +410,8 @@ Le [First Input Delay](https://developers.google.com/web/updates/2018/05/first-i
 Le FID dans l'écosystème CMS tend généralement vers des expériences rapides à la fois pour les ordinateurs de bureau et les mobiles en moyenne. Cependant, ce qui est remarquable, c'est la différence significative entre les expériences mobiles et sur ordinateur de bureau.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig18.png">
-    <img src="/static/images/2019/14_CMS/fig18.png" alt="Figure 18. Répartition moyenne des expériences de FID entre les CMS." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig18.png">
+    <img src="/static/images/2019/cms/fig18.png" alt="Figure 18. Répartition moyenne des expériences de FID entre les CMS." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&amp;format=interactive">
   </a>
   <div id="fig18-description" class="visually-hidden">Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 19 ci-dessous pour un tableau des données des cinq CMS les plus populaires.</div>
   <figcaption id="fig18-caption">Figure 18. Répartition moyenne des expériences de FID entre les CMS.</figcaption>
@@ -474,16 +474,16 @@ Bien que cette différence soit présente dans les données du FCP, le FID a des
 Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expériences d'utilisateurs sur le Web qui sont considérées comme étant [fiables](https://developers.google.com/web/progressive-web-apps#reliable), [rapides](https://developers.google.com/web/progressive-web-apps#fast) et [engageantes](https://developers.google.com/web/progressive-web-apps#engaging). Lighthouse fournit un ensemble de vérifications qui donnent une note PWA entre 0 ( la plus mauvaise) et 1 ( la meilleure). Ces vérifications sont basées sur la [Checklist de référence des PWA](https://developers.google.com/web/progressive-web-apps/checklist#baseline), qui contient 14 critères. Lighthouse a automatisé des vérifications pour 11 des 14 exigences. Les trois autres ne peuvent être vérifiées que manuellement. Chacune des 11 vérifications automatisées des PWA a une pondération égale, de sorte que chacune d'entre elles contribue à environ 9 points à votre note PWA.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig20.png">
-    <img src="/static/images/2019/14_CMS/fig20.png" alt="Figure 20. Distribution des notes Lighthouse de la catégorie PWA pour les pages CMS." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig20.png">
+    <img src="/static/images/2019/cms/fig20.png" alt="Figure 20. Distribution des notes Lighthouse de la catégorie PWA pour les pages CMS." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&amp;format=interactive">
   </a>
   <div id="fig20-description" class="visually-hidden">Diagramme en bâtons montrant la distribution des notes Lighthouse de la catégorie PWA pour toutes les pages CMS. La note la plus fréquente est de 0,3 pour 22 % des pages CMS. Il y a deux autres pics dans la distribution : 11 % des pages avec un score de 0,15 et 8 % des pages avec un score de 0,56. Moins de 1% des pages obtiennent un score supérieur à 0,6.</div>
   <figcaption id="fig20-caption">Figure 20. Distribution des notes Lighthouse de la catégorie PWA pour les pages CMS.</figcaption>
 </figure>
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig21.png">
-    <img src="/static/images/2019/14_CMS/fig21.png" alt="Figure 21. Notes Lighthouse médianes de la catégorie PWA par CMS." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig21.png">
+    <img src="/static/images/2019/cms/fig21.png" alt="Figure 21. Notes Lighthouse médianes de la catégorie PWA par CMS." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&amp;format=interactive">
   </a>
   <div id="fig21-description" class="visually-hidden">Diagramme en bâtons montrant la note médiane Lighthouse PWA par CMS. Le score médian pour les sites web WordPress est de 0,33. Les cinq prochains CMS (Joomla, Drupal, Wix, Squarespace et 1C-Bitrix) ont tous un score médian de 0,3. Les CMS avec les meilleurs scores PWA sont Jimdo avec un score de 0,56 et TYPO3 à 0,41.</div>
   <figcaption id="fig21-caption">Figure 21. Notes Lighthouse médianes de la catégorie PWA par CMS.</figcaption>
@@ -496,16 +496,16 @@ Un site web accessible est un site conçu et développé pour que les personnes 
 Chaque audit d'accessibilité est réussi ou échoué, mais contrairement aux autres audits de Lighthouse, une page ne reçoit pas de points pour avoir partiellement réussi un audit d'accessibilité. Par exemple, si certains éléments ont des noms compréhensibles par les lecteurs d'écran, mais pas d'autres, cette page obtient un 0 pour l'audit *des noms compréhensibles par les lecteurs d'écran*.
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig22.png">
-    <img src="/static/images/2019/14_CMS/fig22.png" alt="Figure 22. Distribution des scores d'accessibilité de Lighthouse pour les pages CMS." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig22.png">
+    <img src="/static/images/2019/cms/fig22.png" alt="Figure 22. Distribution des scores d'accessibilité de Lighthouse pour les pages CMS." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&amp;format=interactive">
   </a>
   <div id="fig22-description" class="visually-hidden">Diagramme en bâtons montrant la distribution des scores d'accessibilité Lighthouse des pages CMS. La distribution est fortement asymétrique vers les scores les plus élevés avec un mode d'environ 0,85.</div>
   <figcaption id="fig22-caption">Figure 22. Distribution des scores d'accessibilité de Lighthouse pour les pages CMS.</figcaption>
 </figure>
 
 <figure>
-  <a href="/static/images/2019/14_CMS/fig23.png">
-    <img src="/static/images/2019/14_CMS/fig23.png" alt="Figure 23. Notes médianes Lighthouse d'accessibilité par CMS." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&amp;format=interactive">
+  <a href="/static/images/2019/cms/fig23.png">
+    <img src="/static/images/2019/cms/fig23.png" alt="Figure 23. Notes médianes Lighthouse d'accessibilité par CMS." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&amp;format=interactive">
   </a>
   <div id="fig23-description" class="visually-hidden">Diagramme en bâtons montrant la note Lighthouse médiane d'accessibilité par CMS. La plupart des CMS obtiennent un score d'environ 0,75. Parmi les valeurs les plus aberrantes, on retrouve Wix avec un score médian de 0,93 et 1-C Bitrix avec un score de 0,65.</div>
   <figcaption id="fig23-caption">Figure 23. Notes médianes Lighthouse d'accessibilité par CMS.</figcaption>

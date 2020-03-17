@@ -26,8 +26,8 @@ JavaScript es el recurso más costoso que enviamos a los navegadores, ya que tie
 Enviar paquetes de JavaScript más pequeños al navegador es la mejor manera de reducir los tiempos de descarga y, a su vez, mejorar el rendimiento de la página.**Pero, ¿cuánto JavaScript utilizamos realmente?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig1.png">
-      <img src="/static/images/2019/01_JavaScript/fig1.png" alt="Figura 1. Distribución de bytes de JavaScript por página." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive">
+   <a href="/static/images/2019/javascript/fig1.png">
+      <img src="/static/images/2019/javascript/fig1.png" alt="Figura 1. Distribución de bytes de JavaScript por página." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive">
    </a>
 	<div id="fig1-description" class="visually-hidden">Gráfico de barras que muestra que 70 bytes de JavaScript se usa en el percentil p10, 174 bytes para p25, 373 bytes para p50, 693 bytes para p75 y 1.093 bytes para p90</div>
 	<figcaption id="fig1-caption">Figura 1. Distribución de bytes de JavaScript por página.</figcaption>
@@ -38,8 +38,8 @@ La Figura 1 anterior muestra que utilizamos 373 KB de JavaScript en el percentil
 Mirando estos números, es natural preguntarse si esto es demasiado JavaScript. Sin embargo, en términos de rendimiento de la página, el impacto depende completamente de las conexiones de red y los dispositivos utilizados. Lo que nos lleva a nuestra siguiente pregunta: ¿cuánto JavaScript enviamos cuando comparamos clientes móviles y de escritorio?
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig2.png">
-      <img src="/static/images/2019/01_JavaScript/fig2.png" alt="Figura 2. Distribución de JavaScript por página por dispositivo." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive">
+   <a href="/static/images/2019/javascript/fig2.png">
+      <img src="/static/images/2019/javascript/fig2.png" alt="Figura 2. Distribución de JavaScript por página por dispositivo." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive">
    </a>
 	<div id="fig2-description" class="visually-hidden">Gráfico de barras que muestra 76 bytes / 65 bytes de JavaScript se usa en el percentil p10 en computadoras de escritorio y dispositivos móviles respectivamente, 186/164 bytes para p25, 391/359 bytes para p50, 721/668 bytes para p75 y 1.131 / 1.060 bytes para p90 .</div>
 	<figcaption id="fig2-caption">Figura 2. Distribución de JavaScript por página por dispositivo.</figcaption>
@@ -54,8 +54,8 @@ Después de ser analizado y compilado, el JavaScript cargado por el navegador de
 Podemos tener una idea analizando los tiempos de procesamiento de subprocesos principales para V8 en diferentes percentiles:
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig2.png">
-      <img src="/static/images/2019/01_JavaScript/fig3.png" alt="Figura 3. Tiempos de procesamiento de subprocesos principales según V8 por dispositivo." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive">
+   <a href="/static/images/2019/javascript/fig2.png">
+      <img src="/static/images/2019/javascript/fig3.png" alt="Figura 3. Tiempos de procesamiento de subprocesos principales según V8 por dispositivo." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive">
    </a>
 	<div id="fig3-description" class="visually-hidden">Gráfico de barras que muestra 141 ms / 377 ms de tiempo de procesamiento se utiliza en el percentil p10 en computadoras de escritorio y dispositivos móviles respectivamente, 352/988 ms para p25, 849 / 2.437 ms para p50, 1.850 / 5.518 ms para p75 y 3.543 / 10.735 ms para p90.</div>
 	<figcaption id="fig3-caption">Figura 3. Tiempos de procesamiento de subprocesos principales según V8 por dispositivo.</figcaption>
@@ -66,8 +66,8 @@ En cada percentil, los tiempos de procesamiento son más largos para las página
 Aunque estos datos muestran cuánto tiempo puede llevar un dispositivo móvil procesar JavaScript en comparación con una máquina de escritorio más potente, los dispositivos móviles también varían en términos de potencia informática. El siguiente cuadro muestra cómo los tiempos de procesamiento en una sola página web pueden variar significativamente según la clase de dispositivo móvil.
 
 <figure>
-	<a href="/static/images/2019/01_JavaScript/js-processing-reddit.png">
-		<img src="/static/images/2019/01_JavaScript/js-processing-reddit.png" alt="Figura 4. Tiempos de procesamiento de JavaScript para Reddit.com" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="363">
+	<a href="/static/images/2019/javascript/js-processing-reddit.png">
+		<img src="/static/images/2019/javascript/js-processing-reddit.png" alt="Figura 4. Tiempos de procesamiento de JavaScript para Reddit.com" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="363">
 	</a>
 	<div id="fig4-description" class="visually-hidden">Gráfico de barras que muestra 3 dispositivos diferentes: en la parte superior, un Pixel 3, que tiene un tiempo de procesamiento pequeño tanto en el hilo principal como en el hilo worker de menos de 400 ms. Para un Moto G4 es de aproximadamente 900 ms en el subproceso principal y otros 300 ms en el subproceso del worker. Y la barra final es un Alcatel 1X 5059D con más de 2.000 ms en el subproceso principal y más de 500 ms en el subproceso del worker.</div>
 	<figcaption id="fig4-caption">Figura 4. Tiempos de procesamiento de JavaScript para Reddit.com. Tomado de <a href="https://v8.dev/blog/cost-of-javascript-2019">El costo de JavaScript en 2019</a>.</figcaption>
@@ -78,8 +78,8 @@ Aunque estos datos muestran cuánto tiempo puede llevar un dispositivo móvil pr
 Una vía que vale la pena explorar al tratar de analizar la cantidad de JavaScript utilizado por las páginas web es la cantidad de solicitudes enviadas. Con [HTTP/2](https://developers.google.com/web/fundamentals/performance/http2) el envío de múltiples fragmentos más pequeños puede mejorar la carga de la página sobre el envío de un paquete monolítico más grande. Si también lo desglosamos por tipo de dispositivo, **¿cuántas solicitudes se están enviando?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig5.png">
-      <img src="/static/images/2019/01_JavaScript/fig5.png" alt="Figura 5. Distribución del total de solicitudes de JavaScript." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive">
+   <a href="/static/images/2019/javascript/fig5.png">
+      <img src="/static/images/2019/javascript/fig5.png" alt="Figura 5. Distribución del total de solicitudes de JavaScript." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive">
    </a>
 	<div id="fig5-description" class="visually-hidden">Gráfico de barras que muestra 4/4 solicitudes se utilizan para computadoras de escritorio y dispositivos móviles respectivamente en el percentil p10, 10/9 en p25, 19/18 en p50, 33/32 en p75 y 53/52 en p90.</div>
 	<figcaption id="fig5-caption">Figura 5. Distribución del total de solicitudes de JavaScript.</figcaption>
@@ -94,16 +94,16 @@ De los resultados analizados hasta ahora, se estaban considerando el tamaño com
 JavaScript de contenido de terceros puede provenir de cualquier fuente externa de terceros. Los anuncios, herramientas de análisis y contenido de redes sociales son casos de uso comunes para obtener scripts de terceros. Entonces, naturalmente, esto nos lleva a nuestra siguiente pregunta: **¿cuántas solicitudes enviadas son de contenido de terceros en lugar de de contenido de origen?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig6.png">
-      <img src="/static/images/2019/01_JavaScript/fig6.png" alt="Figura 6. Distribución de scripts de origen y de terceros en dispositivos de escritorio." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive">
+   <a href="/static/images/2019/javascript/fig6.png">
+      <img src="/static/images/2019/javascript/fig6.png" alt="Figura 6. Distribución de scripts de origen y de terceros en dispositivos de escritorio." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive">
    </a>
 	<div id="fig6-description" class="visually-hidden">Gráfico de barras que muestra las solicitudes 0/1 en el escritorio es contenido de origen y contenido de terceros, respectivamente, en el percentil p10, 2/4 en la p25, 6/10 en la p50, 13/21 en la p75 y 24/38 en la p90.</div>
 	<figcaption id="fig6-caption">Figura 6. Distribución de scripts de origen y de terceros en dispositivos de escritorio.</figcaption>
 </figure>
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig7.png">
-      <img src="/static/images/2019/01_JavaScript/fig7.png" alt="Figura 7. Distribución de scripts de origen  y de terceros en dispositivos móviles." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive">
+   <a href="/static/images/2019/javascript/fig7.png">
+      <img src="/static/images/2019/javascript/fig7.png" alt="Figura 7. Distribución de scripts de origen  y de terceros en dispositivos móviles." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive">
    </a>
 	<div id="fig7-description" class="visually-hidden">Gráfico de barras que muestra las solicitudes 0/1 en dispositivos móviles es de contenido de origen y contenido de terceros, respectivamente, en el percentil p10, 2/3 en la p25, 5/9 en la p50, 13/20 en la p75 y 23/36 en la p90.</div>
 	<figcaption id="fig7-caption">Figura 7. Distribución de scripts de origen  y de terceros en dispositivos móviles.</figcaption>
@@ -112,16 +112,16 @@ JavaScript de contenido de terceros puede provenir de cualquier fuente externa d
 Para clientes móviles y de escritorio, se envían más solicitudes de contenido de terceros que de contenido de origen en cada percentil. Si esto parece sorprendente, descubramos cuánto código real enviado proviene de proveedores externos.
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig8.png">
-      <img src="/static/images/2019/01_JavaScript/fig8.png" alt="Figura 8. Distribución del JavaScript total descargado en dispositivos de escritorio." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive">
+   <a href="/static/images/2019/javascript/fig8.png">
+      <img src="/static/images/2019/javascript/fig8.png" alt="Figura 8. Distribución del JavaScript total descargado en dispositivos de escritorio." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive">
    </a>
 	<div id="fig8-description" class="visually-hidden">Gráfico de barras que muestra 0/17 bytes de JavaScript se descarga en dispositivos de escritorio para contenido de origen y contenido de terceros, respectivamente, en el percentil p10, 11/62 en p25, 89/232 en p50, 200/525 en p75 y 404/900 en p90.</div>
 	<figcaption id="fig8-caption">Figura 8. Distribución del JavaScript total descargado en dispositivos de escritorio.</figcaption>
 </figure>
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig9.png">
-      <img src="/static/images/2019/01_JavaScript/fig9.png" alt="Figura 9. Distribución del JavaScript total descargado en dispositivos móviles." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive">
+   <a href="/static/images/2019/javascript/fig9.png">
+      <img src="/static/images/2019/javascript/fig9.png" alt="Figura 9. Distribución del JavaScript total descargado en dispositivos móviles." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive">
    </a>
 	<div id="fig9-description" class="visually-hidden">Gráfico de barras que muestra 0/17 bytes de JavaScript se descarga en dispositivos móviles para contenido de origen y contenido de terceros, respectivamente, en el percentil p10, 6/54 en p25, 83/217 en p50, 189/477 en p75 y 380/827 en p90.</div>
 	<figcaption id="fig9-caption">Figura 9. Distribución del JavaScript total descargado en dispositivos móviles.</figcaption>
@@ -143,8 +143,8 @@ Los scripts comprimidos siempre deberán ser descomprimidos por el navegador una
 **¿Cuántos sitios están comprimiendo sus recursos de JavaScript?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig10.png">
-      <img src="/static/images/2019/01_JavaScript/fig10.png" alt="Figura 10. Porcentaje de sitios que comprimen recursos de JavaScript con gzip o brotli." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive">
+   <a href="/static/images/2019/javascript/fig10.png">
+      <img src="/static/images/2019/javascript/fig10.png" alt="Figura 10. Porcentaje de sitios que comprimen recursos de JavaScript con gzip o brotli." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive">
    </a>
 	<div id="fig10-description" class="visually-hidden">Gráfico de barras que muestra el 67% / 65% de los recursos de JavaScript se comprime con gzip en computadoras de escritorio y dispositivos móviles respectivamente, y el 15% / 14% se comprime con Brotli.</div>
 	<figcaption id="fig10-caption">Figura 10. Porcentaje de sitios que comprimen recursos de JavaScript con gzip o brotli.</figcaption>
@@ -296,8 +296,8 @@ En los últimos años, el ecosistema de JavaScript ha visto un aumento en las bi
 **¿Cuántos sitios usan este tipo de frameworks?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig12.png">
-      <img src="/static/images/2019/01_JavaScript/fig12.png" alt="Figura 12. Los frameworks más utilizados en el escritorio." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive">
+   <a href="/static/images/2019/javascript/fig12.png">
+      <img src="/static/images/2019/javascript/fig12.png" alt="Figura 12. Los frameworks más utilizados en el escritorio." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive">
    </a>
 	<div id="fig12-description" class="visually-hidden">Gráfico de barras que muestra que el 4,6% de los sitios usan React, 2,0% AngiularJS, 1,8% Backbone.js, 0,8% Vue.js, 0,4% Knockout.js, 0,3% Zone.js, 0,3% Angular, 0,1% AMP, 0,1% Ember. js.</div>
 	<figcaption id="fig12-caption">Figura 12. Los frameworks más utilizados en el escritorio.</figcaption>
@@ -325,8 +325,8 @@ Para declarar un script como módulo, la etiqueta del script debe tener el códi
 **¿Cuántos sitios usan `type ="module"` para los scripts en su página?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig13.png">
-      <img src="/static/images/2019/01_JavaScript/fig13.png" alt="Figura 13. Porcentaje de sitios que utilizan type=module." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive">
+   <a href="/static/images/2019/javascript/fig13.png">
+      <img src="/static/images/2019/javascript/fig13.png" alt="Figura 13. Porcentaje de sitios que utilizan type=module." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive">
    </a>
 	<div id="fig13-description" class="visually-hidden">Gráfico de barras que muestra el 0,6% de los sitios en computadoras de escritorio usan 'type=module' y el 0,8% de los sitios en dispositivos móviles.</div>
 	<figcaption id="fig13-caption">Figura 13. Porcentaje de sitios que utilizan type=module.</figcaption>
@@ -345,8 +345,8 @@ Cuando se usan juntos, los navegadores que admiten módulos ignorarán por compl
 Así que, **¿Cuántos sitios usan `nomodule` para los scripts en su página?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig14.png">
-      <img src="/static/images/2019/01_JavaScript/fig14.png" alt="Figura 14. Porcentaje de sitios que usan nomodule." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive">
+   <a href="/static/images/2019/javascript/fig14.png">
+      <img src="/static/images/2019/javascript/fig14.png" alt="Figura 14. Porcentaje de sitios que usan nomodule." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive">
    </a>
 	<div id="fig14-description" class="visually-hidden">Gráfico de barras que muestra el 0,8% de los sitios en computadoras de escritorio usan 'nomodule' y el 0,5% de los sitios en dispositivos móviles.</div>
 	<figcaption id="fig14-caption">Figura 14. Porcentaje de sitios que usan nomodule.</figcaption>
@@ -364,8 +364,8 @@ Del mismo modo, muy pocos sitios (0,50% - 0,80%) usan el atributo `nomodule` par
 **Entonces, ¿cuántos sitios usan directivas de preload y prefetch?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig15.png">
-      <img src="/static/images/2019/01_JavaScript/fig15.png" alt="Figura 15. Porcentaje de sitios que usan rel=preload para scripts." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive">
+   <a href="/static/images/2019/javascript/fig15.png">
+      <img src="/static/images/2019/javascript/fig15.png" alt="Figura 15. Porcentaje de sitios que usan rel=preload para scripts." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive">
    </a>
 	<div id="fig15-description" class="visually-hidden">Gráfico de barras que muestra que el 14% de los sitios en computadoras de escritorio usan 'rel=preload 'para scripts, y el 15% de los sitios en dispositivos móviles.</div>
 	<figcaption id="fig15-caption">Figura 15. Porcentaje de sitios que usan rel=preload para scripts.</figcaption>
@@ -376,8 +376,8 @@ Para todos los sitios medidos en HTTP Archive, el 14.33% de los sitios de comput
 Para _prefetch_:
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig16.png">
-      <img src="/static/images/2019/01_JavaScript/fig16.png" alt="Figura 16. Porcentaje de sitios que usan rel=prefetch para scripts." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive">
+   <a href="/static/images/2019/javascript/fig16.png">
+      <img src="/static/images/2019/javascript/fig16.png" alt="Figura 16. Porcentaje de sitios que usan rel=prefetch para scripts." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive">
    </a>
 	<div id="fig16-description" class="visually-hidden">Gráfico de barras que muestra el 0,08% de los sitios en computadoras de escritorio usan 'rel=prefetch' y el 0,08% de los sitios en dispositivos móviles.</div>
 	<figcaption id="fig16-caption">Figura 16. Porcentaje de sitios que usan rel=prefetch para scripts.</figcaption>
@@ -401,8 +401,8 @@ Con HTTP Archive, podemos echar un vistazo a cualquier API más nueva que sea co
 - [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig17.png">
-      <img src="/static/images/2019/01_JavaScript/fig17.png" alt="Figura 17. Uso de nuevas API de JavaScript." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive">
+   <a href="/static/images/2019/javascript/fig17.png">
+      <img src="/static/images/2019/javascript/fig17.png" alt="Figura 17. Uso de nuevas API de JavaScript." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive">
    </a>
 	<div id="fig17-description" class="visually-hidden">Gráfico de barras que muestra el 25,5% / 36,2% de los sitios en computadoras de escritorio y dispositivos móviles usa WeakMap, 6,1% / 17,2% usa WeakSet, 3,9% / 14,0% usa Intl, 3,9% / 4,4% usa Proxy, 0,4% / 0,4% usa Atomics, y 0,2% / 0,2% usan SharedArrayBuffer.</div>
 	<figcaption id="fig17-caption">Figura 17. Uso de nuevas API de JavaScript.</figcaption>
@@ -421,8 +421,8 @@ Un **mapa fuente** es un archivo adicional que acompaña a un archivo JavaScript
 Aunque es útil, hay una serie de razones por las cuales muchos sitios pueden no querer incluir mapas fuente en su sitio de producción final, como elegir no exponer el código fuente completo al público. **Entonces, ¿cuántos sitios realmente incluyen mapas fuente?**
 
 <figure>
-   <a href="/static/images/2019/01_JavaScript/fig18.png">
-      <img src="/static/images/2019/01_JavaScript/fig18.png" alt="Figura 18. Porcentaje de sitios que usan mapas fuente." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive">
+   <a href="/static/images/2019/javascript/fig18.png">
+      <img src="/static/images/2019/javascript/fig18.png" alt="Figura 18. Porcentaje de sitios que usan mapas fuente." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive">
    </a>
 	<div id="fig18-description" class="visually-hidden">Gráfico de barras que muestra el 18% de los sitios de escritorio y el 17% de los sitios móviles utilizan mapas fuente.</div>
 	<figcaption id="fig18-caption">Figura 18. Porcentaje de sitios que usan mapas fuente.</figcaption>
