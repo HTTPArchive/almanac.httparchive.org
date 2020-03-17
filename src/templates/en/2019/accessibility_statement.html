@@ -1,99 +1,17 @@
-{% extends "en/2019/base.html" %}
+{% extends "base/2019/accessibility_statement.html" %}
 
 {% block title %}Accessibility Statement | The Web Almanac by HTTP Archive{% endblock %}
 
 {% block description %}Describes the accessibility goals of the Web Almanac{% endblock %}
 
-{% block meta %}
-<meta name="description" content="{{ self.description() }}">
+{% block twitter_image_alt %}Web Almanac Accessibility Statement{% endblock %}
 
-<meta property="og:title" content="{{ self.title() }}">
-<meta property="og:url" content="https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}">
-<meta property="og:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
-<meta property="og:image:height" content="984">
-<meta property="og:image:width" content="1200">
-<meta property="og:type" content="article">
-<meta property="og:description" content="{{ self.description() }}">
+{% block date_published %}2020-02-03T12:00:00+00:00:00{% endblock %}
+{% block date_modified %}2020-02-03T12:00:00+00:00:00{% endblock %}
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@HTTPArchive">
-<meta name="twitter:title" content="{{ self.title() }}">
-<meta name="twitter:image" content="https://almanac.httparchive.org/static/images/methodology-banner.png">
-<meta name="twitter:image:alt" content="Web Almanac Accessibility Statement " />
-<meta name="twitter:description" content="{{ self.description() }}">
+{% block breadcrumb_name_2 %}Accessibility Statement{% endblock %}
 
-<script type="application/ld+json">
-	{
-	  "@context": "http://schema.org",
-	  "@type": "Article",
-	  "mainEntityOfPage": {
-	  	  "@type": "WebPage",
-	  	  "@id": "https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}"
-	  },
-	  "headline": "{{ self.title() }}",
-	  "image": {
-	  	  "@type": "ImageObject",
-	  	  "url": "https://almanac.httparchive.org/static/images/methodology-banner.png",
-	  	  "height": 984,
-	  	  "width": 1200
-	  },
-	  "publisher": {
-	  	  "@type": "Organization",
-	  	  "name": "HTTP Archive",
-	  	  "logo": {
-	  	      "@type": "ImageObject",
-	  	      "url": "https://almanac.httparchive.org/static/images/ha.png",
-	  	      "height": 160,
-	  	      "width": 320
-	  	  }
-      },
-    "author":
-      {
-	  	  "@type": "Person",
-          "sameas": [
-            "https://almanac.httparchive.org{{ url_for('contributors', year=2019, lang=lang, _anchor='bazzadp') }}",
-            "https://twitter.com/tunetheweb",
-            "https://github.com/bazzadp"
-            ],
-	  	  "name": "Barry Pollard"
-      },
-      "description": "{{ self.description() }}",
-      "datePublished": "2020-02-03T12:00:00+00:00:00",
-      "dateModified": "2020-02-03T12:00:00+00:00:00"
-	}
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://almanac.httparchive.org/{{lang}}/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Accessibility Statement",
-        "item": "https://almanac.httparchive.org{{  url_for(request.endpoint, lang=lang) }}"
-      }]
-    }
-    </script>
-{% endblock %}
-
-{% block styles %}
-{{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=2">
-{% endblock %}
-
-{% block main %}
-<main id="accessibility_statement" class="main">
-  <nav class="index">
-    <div class="index-box floating-card">
-      <h2 class="header">
-        <button class="index-btn">Index</button>
-        <span class="no-button">Index</span>
-      </h2>
+{% block index %}
       <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#measures">Measures to support accessibility</a></li>
@@ -104,12 +22,9 @@
         <li><a href="#assessment-approach">Assessment Approach</a></li>
         <li><a href="#feedback">Feedback</a></li>
       </ul>
-    </div>
-  </nav>
+{% endblock %}
 
-  <article id="maincontent" class="content">
-    <h1 class="title title-lg">Accessibility Statement</h1>
-      
+{% block main_content %}
         <h2 id="overview">Overview</h2>
 
         <p>
@@ -184,32 +99,4 @@
         <p>
           We welcome feedback on the accessibility of this website. The best ways to reach us would be to <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues">raise an issue on GitHub</a> or email us at <a href="mailto:team@httparchive.org">team@httparchive.org</a>. We would also welcome pull requests for those that wish to contribute directly. The Web Almanac is a community based project, managed by volunteers, and so we cannot guarantee a timeframe for responding to feedback but will respond as soon as possible.
         </p>
-
-  </article>
-</main>
-{% endblock %}
-
-{% block scripts %}
-{{ super() }}
-<script nonce="{{ csp_nonce() }}">
-
-var indexBox = document.querySelector('.index-box');
-var indexBoxTitle = document.querySelector('.index .index-btn');
-
-indexBoxTitle.addEventListener('click', function(e) {
-  var indexOpen = indexBox.classList.toggle('show');
-  indexBoxTitle.setAttribute('aria-expanded',indexOpen);
-  var ariaLabel = indexOpen ?  "Close the Table of Contents" : "Open the Table of Contents";
-  indexBoxTitle.setAttribute('aria-label',ariaLabel);
-});
-
-indexBox.addEventListener("keydown", function onPress(event) {
-  if (event.key === 'Escape') {
-    if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {
-      indexBoxTitle.click();
-      indexBoxTitle.focus();
-    }
-  }
-});
-</script>
 {% endblock %}

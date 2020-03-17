@@ -1,0 +1,50 @@
+{% extends "%s/2019/base.html" % lang %}
+
+{% block title %}Accessibility Statement | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}Describes the accessibility goals of the Web Almanac{% endblock %}
+
+{% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}{% endblock %}
+
+{% block author_structured_data %}
+{
+  "@type": "Person",
+  "sameas": [
+    "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='bazzadp') }}",
+    "https://twitter.com/tunetheweb",
+    "https://github.com/bazzadp"
+    ],
+  "name": "Barry Pollard"
+}
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css?v=2">
+{% endblock %}
+
+{% block main %}
+<main id="accessibility_statement" class="main">
+  <nav class="index">
+    <div class="index-box floating-card">
+      <h2 class="header">
+        <button class="index-btn">{{ self.index_title() }}</button>
+        <span class="no-button">{{ self.index_title() }}</span>
+      </h2>
+      {{ self.index() }}
+    </div>
+  </nav>
+
+  <article id="maincontent" class="content">
+    <h1 class="title title-lg">Accessibility Statement</h1>
+      
+    {{ self.main_content() }}
+
+  </article>
+</main>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ self.index_menu_script() }}
+{% endblock %}
