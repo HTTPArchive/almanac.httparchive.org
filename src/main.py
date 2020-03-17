@@ -5,6 +5,7 @@ from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
 import random
+from werkzeug.routing import BaseConverter
 from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
@@ -62,15 +63,15 @@ def get_chapter_slug(metadata):
     return title.lower().replace(' ', '-').replace('/', '')
 
 
-def get_chapter_image_dir(metadata):
-    title = metadata.get('title', 'NO TITLE FOUND').replace('/', '_').replace(' ', '_')
-    return '%.2d_%s' % (metadata.get('chapter_number', 0), title)
+# Images were originally in folders with naming conventions like 05_Third_Parties
+# These have been mapped to the standard slug names (e.g. third-parties)
+def convertOldImagePath(folder):
+    return '%s' % folder[3:].replace('HTTP_2','http2').replace('_', '-').lower()
 
 
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['get_chapter_slug'] = get_chapter_slug
-app.jinja_env.globals['get_chapter_image_dir'] = get_chapter_image_dir
 
 
 @app.route('/<lang>/<year>/')
@@ -166,6 +167,21 @@ def static_from_root():
 @app.route('/favicon.ico')
 def default_favicon():
     return send_from_directory(app.static_folder, 'images/favicon.ico')
+
+
+class RegexConverter(BaseConverter):
+    def __init__(self, url_map, *items):
+        super(RegexConverter, self).__init__(url_map)
+        self.regex = items[0]
+
+
+app.url_map.converters['regex'] = RegexConverter
+
+
+# Redirect requests for the older image URLs to new URLs
+@app.route('/static/images/2019/<regex("[0-2][0-9]_.*"):folder>/<image>')
+def redirect_old_images(folder, image):
+    return redirect("/static/images/2019/%s/%s" % (convertOldImagePath(folder), image)), 301
 
 
 # Catch all route for everything not matched elsewhere

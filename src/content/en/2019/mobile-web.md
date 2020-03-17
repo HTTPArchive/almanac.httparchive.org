@@ -85,8 +85,8 @@ Despite being available since 2016 and implemented on every major browser, only 
 One of the most beautiful parts of the web is how web pages load progressively by nature. Browsers download and display content as soon as they are able, so users can engage with your content as soon as possible. However, this can have a detrimental effect if you don't design your site with this in mind. Specifically, content can shift position as resources load and impede the user experience.
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
-    <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="360" height="640">
+  <a href="/static/images/2019/mobile-web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
+    <img src="/static/images/2019/mobile-web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="360" height="640">
   </a>
   <div id="fig3-description" class="visually-hidden">A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook</div>
   <figcaption id="fig3-caption">Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook</figcaption>
@@ -133,8 +133,8 @@ When designing our sites we tend to be in more optimal conditions, and have far 
 To help us mitigate this problem, there are [accessibility guidelines](https://dequeuniversity.com/rules/axe/2.2/color-contrast) we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="650" height="300">
+  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
+    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="650" height="300">
   </a>
   <div id="fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook</div>
   <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
@@ -163,8 +163,8 @@ Because of this, developers are given the ability to disable this feature by set
 2. `maximum-scale` set to `1`, `1.0`, etc
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/fig5.png">
-    <img src="/static/images/2019/12_Mobile_Web/fig5.png" alt="Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
+  <a href="/static/images/2019/mobile-web/fig5.png">
+    <img src="/static/images/2019/mobile-web/fig5.png" alt="Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
   <figcaption id="fig5-caption">Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>
@@ -185,8 +185,8 @@ We're used to having precise devices like mice while on desktop, but the story i
 Designing tap targets appropriately to mitigate this issue can be difficult because of how widely fingers vary in size. However, lots of research has now been done and there are safe [standards](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) for how large buttons should be and how far apart they need to be separated.
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
-    <img src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png" alt="Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="800" height="430">
+  <a href="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png">
+    <img src="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png" alt="Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="800" height="430">
   </a>
   <div id="fig6-description" class="visually-hidden">A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook</div>
   <figcaption id="fig6-caption">Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook</figcaption>
@@ -264,8 +264,8 @@ How well are we doing catering to mobile users? According to our research, even 
 The mobile web has now been around long enough for there to be an entire generation of kids where this is the only internet they've ever known. And what kind of experience are we giving them? We're essentially taking them back to the dial-up era. (Good thing I hear AOL still sells those CDs providing 1000 hours of free internet access!)
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg">
-    <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="300" height="285">
+  <a href="/static/images/2019/mobile-web/america-online-1000-hours-free.jpg">
+    <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/mobile-web/america-online-1000-hours-free.jpg" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="300" height="285">
   </a>
   <div id="fig9-description" class="visually-hidden">A photograph of an AOL CD-ROM offering 1,000 hours free.</div>
   <figcaption id="fig9-caption">Figure 9. 1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
