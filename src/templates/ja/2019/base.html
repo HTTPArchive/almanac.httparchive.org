@@ -1,0 +1,98 @@
+{% extends "base/2019/base.html" %}
+
+{% block description %}The Web Almanac is an annual state of the web report combining the expertise of the web community with the data and trends of the HTTP Archive.{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web年鑑{% endblock %}
+
+{% block date_published %}2019-11-04T12:00:00+00:00:00{% endblock %}
+{% block date_modified %}2019-11-04T12:00:00+00:00:00{% endblock %}
+
+{% block breadcrumb_name_1 %}{{ year }} Home{% endblock %}
+{% block breadcrumb_name_2 %}{% endblock %}
+
+{% block skip_navigation %}Skip navigation{% endblock %}
+
+{% block organization %}HTTP ArchiveによるWeb年鑑{% endblock %}
+
+{% block http_archive_link %}HTTP ArchiveによるWeb年鑑{% endblock %}
+
+{% block page_navigation %}Page navigation{% endblock %}
+
+{% block help_translate %}Help Translate{% endblock %}
+{% block translation_not_available %}英語-日本語では使用できません{% endblock %}
+
+{% block table_of_contents_title %}目次{% endblock %}
+{% block contributors_title %}貢献者{% endblock %}
+{% block methodology_title %}方法論{% endblock %}
+
+{% block part %}部{% endblock %}
+{% block chapter %}章{% endblock %}
+
+{% block start_exploring %}Start exploring{% endblock %}
+
+{% block menu_title %}Page menu{% endblock %}
+{% block open_the_menu %}Open the menu{% endblock %}
+{% block close_the_menu %}Close the menu{% endblock %}
+
+{% block index_nav_title %}Chapter table of contents{% endblock %}
+{% block index_title %}Index{% endblock %}
+{% block open_the_index %}Open the Table of Contents{% endblock %}
+{% block close_the_index %}Close the Table of Contents{% endblock %}
+
+{% block open %}Open{% endblock %}
+{% block close %}Close{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}
+{% macro website(authorName) %}{{authorName}} website{% endmacro %}
+
+{% macro edition(year) %}{{ year }} Edition{% endmacro %}
+
+{% block footer_title %}Footer navigation{% endblock %}
+{% block copyright %}© 2019 Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Accessibility Statement{% endblock %}
+
+{% 
+  set localizedPartTitles = {
+    "I. Page Content": "I. Page Content",
+    "II. User Experience": "II. User Experience",
+    "III. Content Publishing": "III. Content Publishing",
+    "IV. Content Distribution": "IV. Content Distribution"
+  }
+%}
+{%
+  set localizedChapterTitles = {
+    "JavaScript": "JavaScript",
+    "CSS": "CSS",
+    "Markup": "マークアップ",
+    "Media": "Media",
+    "Third Parties": "Third Parties",
+    "Fonts": "Fonts",
+    "Performance": "パフォーマンス",
+    "Security": "セキュリティ",
+    "Accessibility": "アクセシビリティ",
+    "SEO": "SEO",
+    "PWA": "PWA",
+    "Mobile Web": "Mobile Web",
+    "Ecommerce": "Ecommerce",
+    "CMS": "CMS",
+    "Compression": "Compression",
+    "Caching": "Caching",
+    "CDN": "CDN",
+    "Page Weight": "Page Weight",
+    "Resource Hints": "Resource Hints",
+    "HTTP/2": "HTTP/2"
+  }
+%}
+
+{% set localizedTeamNames = {
+  "analysts": "Analysts",
+  "authors": "Authors",
+  "brainstormers": "Brainstormers",
+  "designers": "Designers",
+  "developers": "Developers",
+  "editors": "Editors",
+  "reviewers": "Reviewers",
+  "translators": "Translators", 
+  }
+%}
