@@ -127,6 +127,15 @@
             <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
             <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
             <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+            <li>
+            {% if supported_years | length > 1 %}
+            <li>
+              {{ year_switcher() }}
+            </li>
+            {% endif %}
+            <li>
+              {{ language_switcher() }}
+            </li>
             <li class="misc">
               <ul class="misc">
                 <li>
@@ -149,15 +158,6 @@
                   </ul>
                 </li>
               </ul>
-            </li>
-            <li>
-            {% if supported_years | length > 1 %}
-            <li>
-              {{ year_switcher() }}
-            </li>
-            {% endif %}
-            <li>
-              {{ language_switcher() }}
             </li>
           </ul>
         </nav>
