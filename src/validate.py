@@ -11,7 +11,7 @@ import config as config_util
 DEFAULT_YEAR = '2019'
 SUPPORTED_YEARS = {
     # When there is one supported language, it must have a trailing comma.
-    '2019': (Language.ENGLISH,)
+    '2019': (Language.ENGLISH,Language.FRENCH,Language.SPANISH)
 }
 
 #TO DO - Stop Hardcoding these

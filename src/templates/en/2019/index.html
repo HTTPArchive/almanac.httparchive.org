@@ -18,7 +18,8 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% endblock %}
 
 {% block contributors_description %}
-The Web Almanac has been made possible by the hard work of the web community. {{ contributors }} people have volunteered countless hours in the planning, research, writing and production phases.{% endblock %}
+The Web Almanac has been made possible by the hard work of the web community. {{ self.contributors() }} people have volunteered countless hours in the planning, research, writing and production phases.
+{% endblock %}
 {% block contributors_link %}See the contributors{% endblock %}
 
 {% block methodology_stat_1_title %}Websites Tested{% endblock %}

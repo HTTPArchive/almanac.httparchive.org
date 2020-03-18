@@ -4,7 +4,7 @@ const ejs = require('ejs');
 const prettier = require('prettier');
 
 //Chapters may exist but not be ready to be launched so do not include in sitemap
-const sitemap_languages = ['en'];
+const sitemap_languages = ['en','es','fr'];
 
 const { find_files, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');

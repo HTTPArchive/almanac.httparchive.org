@@ -125,5 +125,85 @@
         <loc>https://almanac.httparchive.org/en/2019/third-parties</loc>
         <lastmod>2019-11-23</lastmod>
     </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/es/2019/</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/es/2019/css</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/es/2019/ecommerce</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/es/2019/javascript</loc>
+        <lastmod>2019-11-22</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/es/2019/markup</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/es/2019/performance</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/es/2019/table_of_contents</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/caching</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/cms</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/contributors</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/markup</loc>
+        <lastmod>2019-12-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/methodology</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/resource-hints</loc>
+        <lastmod>2019-12-24</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/table_of_contents</loc>
+        <lastmod>2019-11-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/third-parties</loc>
+        <lastmod>2019-12-23</lastmod>
+    </url>
    
 </urlset>
