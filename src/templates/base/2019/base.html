@@ -148,17 +148,16 @@
                     </li>
                   </ul>
                 </li>
-                {% if supported_years | length > 1 %}
-                <li>
-                  {{ year_switcher() }}
-                </li>
-                {% endif %}
-                {% if supported_languages | length > 1%}
-                <li>
-                  {{ language_switcher() }}
-                </li>
-                {% endif %}
               </ul>
+            </li>
+            <li>
+            {% if supported_years | length > 1 %}
+            <li>
+              {{ year_switcher() }}
+            </li>
+            {% endif %}
+            <li>
+              {{ language_switcher() }}
             </li>
           </ul>
         </nav>
