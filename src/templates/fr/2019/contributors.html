@@ -11,7 +11,7 @@
 
 {% block breadcrumb_name_2 %}{{ year }} Contributeurs et contributrices{% endblock %}
 
-{% block filter_by_team %}Filtrer par équipe&nbsp;:{% endblock %}
+{% block filter_by_team %}Filtrer par équipe&nbsp;:<span id="filtered-contributors">{{ self.contributors() }}</span> contributeurs et contributrices{% endblock %}
 
 {% block join_the_team_title %}Rejoignez les équipe Web Almanac{% endblock %}
 {% block join_the_team_text %}Rejoignez les équipe!{% endblock %}

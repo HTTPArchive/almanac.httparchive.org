@@ -237,6 +237,8 @@
 </style>
 {% endblock %}
 
+{% block contributors %}{{ config.contributors.keys() | length }} {% endblock %}
+
 {% block main %}
 <main id="maincontent" class="main">
   <h1 class="title title-lg">
@@ -254,7 +256,6 @@
     <div class="filter-container">
       <p>
         {{ self.filter_by_team() }}
-        <span id="filtered-contributors">{{ config.contributors.items() | length }}</span> contributors
       </p>
         {% for id, team in config.teams.items() %}
           <button class="{{ id }}" type="button">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</button>

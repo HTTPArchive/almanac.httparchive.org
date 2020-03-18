@@ -540,7 +540,7 @@ header .btn + .language-switcher {
 .language-switcher img:last-of-type,
 .year-switcher img:last-of-type {
   position: absolute;
-  right: 0px;
+  right: 1rem;
   pointer-events: none;
 }
 
@@ -846,6 +846,7 @@ p.copyright a {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 2rem;
   }
 
   /* Footer */
