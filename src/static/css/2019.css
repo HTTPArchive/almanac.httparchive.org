@@ -540,7 +540,7 @@ header .btn + .language-switcher {
 .language-switcher img:last-of-type,
 .year-switcher img:last-of-type {
   position: absolute;
-  right: 0px;
+  right: 1rem;
   pointer-events: none;
 }
 
