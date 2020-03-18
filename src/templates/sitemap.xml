@@ -205,5 +205,55 @@
         <loc>https://almanac.httparchive.org/fr/2019/third-parties</loc>
         <lastmod>2019-12-23</lastmod>
     </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/accessibility</loc>
+        <lastmod>2019-12-31</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/caching</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/cdn</loc>
+        <lastmod>2019-12-04</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/css</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/http2</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/markup</loc>
+        <lastmod>2019-12-02</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/page-weight</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/performance</loc>
+        <lastmod>2019-12-02</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/pwa</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/seo</loc>
+        <lastmod>2019-12-02</lastmod>
+    </url>
    
 </urlset>

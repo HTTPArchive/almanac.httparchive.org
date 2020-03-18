@@ -237,7 +237,7 @@
 </style>
 {% endblock %}
 
-{% block contributors %}{{ config.contributors.keys() | length }} {% endblock %}
+{% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
 {% block main %}
 <main id="maincontent" class="main">
@@ -292,7 +292,7 @@
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-            <span class="contributor-team team-{{ id }}">{{ config.teams[id].name }}</span>
+            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
           {% endfor %}
         </div>
       </div>

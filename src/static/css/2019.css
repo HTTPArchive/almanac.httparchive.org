@@ -846,7 +846,7 @@ p.copyright a {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 2rem;
+    margin-top: 20px;
   }
 
   /* Footer */

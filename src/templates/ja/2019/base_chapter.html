@@ -1,0 +1,26 @@
+{% extends "base/2019/base_chapter.html" %}
+
+{% block title %}{{ metadata.get('title') }} | 2019 | HTTP ArchiveによるWeb年鑑{% endblock %}
+
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' chapter of the ' + year + ' Web Almanac probing into the use of ' + metadata.get('description',metadata.get('title')) + ' on the web.') }}{% endblock %}
+
+{% block twitter_image_alt %}Chapter image for the {{ metadata.get('title') }} chapter of the {{ year }} Web Almanac{% endblock %}
+
+{% block breadcrumb_name_2 %}{{ metadata.get('title') }}{% endblock %}
+
+{% block unedited %}[Unedited]{% endblock %}
+
+{% block prev_next_title %}Previous and next chapter navigation{% endblock %}
+
+{% block discuss_this_chapter %}Discuss this chapter{% endblock %}
+{% block comment %}comment{% endblock %}
+{% block comments %}comments{% endblock %}
+{% block written_by %}Written by{% endblock %}
+{% block reviewed_by %}Reviewed by{% endblock %}
+{% block translated_by %}Translated by{% endblock %}
+
+{% block author %}Author{% endblock %}
+{% block authors %}Authors{% endblock %}
+
+{% block previous %}Previous Chapter (press 'p' or ','){% endblock %}
+{% block next %}Next Chapter (press 'n' or '.'){% endblock %}

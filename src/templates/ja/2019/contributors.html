@@ -1,13 +1,13 @@
 {% extends "base/2019/contributors.html" %}
 
-{% block title %}2019 Contributors | The Web Almanac by HTTP Archive{% endblock %}
+{% block title %}2019 貢献者 | HTTP ArchiveによるWeb年鑑{% endblock %}
 
 {% block description %}The {{ config.contributors.items() | length }} people who contributed to the 2019 Web Almanac as Analysts, Authors, Brainstormers, Designers, Developers, Editors, Reviewers and Translators.{% endblock %}
 
 {% block date_published %}2019-11-04T12:00:00+00:00:00{% endblock %}
 {% block date_modified %}2019-11-04T12:00:00+00:00:00{% endblock %}
 
-{% block breadcrumb_name_2 %}{{ year }} Contributors{% endblock %}
+{% block breadcrumb_name_2 %}{{ year }} 貢献者{% endblock %}
 
 {% block filter_by_team %}Filter by team: <span id="filtered-contributors">{{ self.contributors() }}</span> contributors{% endblock %}
 
