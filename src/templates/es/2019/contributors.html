@@ -1,0 +1,15 @@
+{% extends "base/2019/contributors.html" %}
+
+{% block title %}2019 Contribuidores | Web Almanac por HTTP Archive{% endblock %}
+
+{% block description %}El {{ config.contributors.items() | length }} personas que contribuyeron al 2019 Web Almanac commo Analistas, Autores, Pensadores, Diseñadores, Desarrolladores, Editores, Revisores y Traductores.{% endblock %}
+
+{% block date_published %}2019-11-04T12:00:00+00:00:00{% endblock %}
+{% block date_modified %}2019-11-04T12:00:00+00:00:00{% endblock %}
+
+{% block breadcrumb_name_2 %}{{ year }} Contribuidores{% endblock %}
+
+{% block filter_by_team %}Filtrar por equipo: <span id="filtered-contributors">{{ self.contributors() }}</span> contributors{% endblock %}
+
+{% block join_the_team_title%}Únete al equipo de Web Almanac{% endblock %}
+{% block join_the_team_text%}¡Únete al equipo!{% endblock %}
