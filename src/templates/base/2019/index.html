@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="/static/css/index.css">
 {% endblock %}
 
+{% block contributors %}{{ config.contributors.keys() | length }} {% endblock %}
+
 {% block main %}
 <main id="maincontent">
   <section class="intro-container">
@@ -45,7 +47,6 @@
   </section>
   {% include "%s/2019/featured_chapters.html" % lang %}
   <section class="contributors-container alt-bg">
-    {% set contributors = config.contributors.keys() | length %}
     <div class="contributors">
       <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
       <p>{{ self.contributors_description() }}</p>
@@ -54,7 +55,7 @@
       </a>
     </div>
     <div class="people" aria-hidden="true">
-      <div class="people-number">{{ contributors }}</div>
+      <div class="people-number">{{ self.contributors() }}</div>
       <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
       <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
       <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
