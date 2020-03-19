@@ -600,6 +600,7 @@ blockquote {
 }
 
 blockquote::before {
+  content: '"';
   content: '"' / "";
   position: absolute;
   top: -4rem;
