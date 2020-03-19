@@ -676,7 +676,7 @@
 <p>Because HTTP/3 uses QUIC over UDP rather than TCP, it makes the discovery of HTTP/3 support a bigger challenge than HTTP/2 discovery. With HTTP/2 we can mostly use the HTTPS handshake, but as HTTP/3 is on a completely different connection, that is not an option here. HTTP/2 also used the <code>upgrade</code> HTTP header to inform the browser of HTTP/2 support, and although that was not that useful for HTTP/2, a similar mechanism has been put in place for QUIC that is more useful. The <em>alternative services</em> HTTP header (<code>alt-svc</code>) advertises alternative protocols that can be used on completely different connections, as opposed to alternative protocols that can be used on this connection, which is what the <code>upgrade</code> HTTP header is used for.</p>
 <figure id="fig-16">
   <div class="big-number">8.38%</div>
-  <figcaption>Figure 15. The percent of mobile sites which support QUIC.</figcaption>
+  <figcaption>Figure 16. The percent of mobile sites which support QUIC.</figcaption>
 </figure>
 <p>Analysis of this header shows that 7.67% of desktop sites and 8.38% of mobile sites already support QUIC, which roughly represents Google's percentage of traffic, unsurprisingly enough, as it has been using this for a while. And 0.04% are already supporting HTTP/3. I would imagine by next year's Web Almanac, this number will have increased significantly.</p>
 <h2 id="conclusion">Conclusion</h2>

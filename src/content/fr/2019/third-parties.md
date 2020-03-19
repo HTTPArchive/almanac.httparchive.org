@@ -123,7 +123,7 @@ La répartition du volume de contenu par type de ressource donne également un a
 
 <figure>
   <a href="/static/images/2019/third-parties/fig5.png">
-    <img src="/static/images/2019/third-parties/fig5.png" alt="Figure 5. Pourcentage de requêtes de ressources tierces par catégorie et par type de contenu." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart ?oid=488955458&amp;format=interactive">
+    <img src="/static/images/2019/third-parties/fig5.png" alt="Figure 5. Pourcentage de requêtes de ressources tierces par catégorie et par type de contenu." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Graphique montrant la répartition des types de contenu pour chaque catégorie de tiers. Les images et les scripts constituent la majorité des requêtes pour chaque catégorie. Les requêtes CDN présentent une proportion particulièrement importante de polices d’écriture.</div>
   <figcaption id="fig5-caption">Figure 5. Pourcentage de requêtes de ressources tierces par catégorie et par type de contenu.</figcaption>
@@ -147,7 +147,7 @@ Bien qu’ils servent 57 % des scripts, les tiers représentent 64 % des octet
 
 <figure>
   <a href="/static/images/2019/third-parties/fig7.png">
-    <img src="/static/images/2019/third-parties/fig7.png" alt="Figure 7. Répartition des octets de ressource par catégorie de tiers." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart ?oid=1167032693&amp;format=interactive">
+    <img src="/static/images/2019/third-parties/fig7.png" alt="Figure 7. Répartition des octets de ressource par catégorie de tiers." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80 % des polices proviennent de CDN. La vidéo provient de tiers spécialisés en "Contenus".</div>
   <figcaption id="fig7-caption" >Figure 7. Répartition des octets de ressource par catégorie de tiers.</figcaption>

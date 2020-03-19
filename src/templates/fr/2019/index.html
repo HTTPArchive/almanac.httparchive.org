@@ -18,15 +18,15 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% endblock %}
 
 {% block contributors_description %}
-Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ contributors }} personnes ont consacré bénévolement d’innombrables heures à le planifier, faire des recherches, le rédiger et le mettre à votre disposition.
+Le Web Almanac a été rendu possible grâce au travail acharné de la communauté Web. {{ self.contributors() }} personnes ont consacré bénévolement d’innombrables heures à le planifier, faire des recherches, le rédiger et le mettre à votre disposition.
 {% endblock %}
-{% block contributors_link %}See the contributors{% endblock %}
+{% block contributors_link %}Voir les contributeurs et contributrices{% endblock %}
 
 {% block methodology_stat_1_title %}Sites Web testés{% endblock %}
 {% block methodology_stat_1 %}5,8&nbsp;M{% endblock %}
 {% block methodology_stat_2_title %}Données traitées{% endblock %}
 {% block methodology_stat_2 %}20,9&nbsp;TB{% endblock %}
 {% block methodology_description %}
-Sauf indication contraire, les statistiques des 20 chapitres du Web Almanac proviennent du jeu de données HTTP Archiven, un projet communautaire qui suit l’évolution de la construction du web depuis 2010. Grâce à WebPageTest et Lighthouse, HTTP Archive collecte chaque mois les métadonnées de près de 6 millions de sites Web et les insère dans une base de données publique BigQuery pour les analyser. Le jeu de données de juillet 2019 a servi de base aux mesures du Web Almanac. Pour plus d’informations, consultez la page Méthodologie.
+Sauf indication contraire, les statistiques des 20 chapitres du Web Almanac proviennent du jeu de données HTTP Archive, un projet communautaire qui suit l’évolution de la construction du web depuis 2010. Grâce à WebPageTest et Lighthouse, HTTP Archive collecte chaque mois les métadonnées de près de 6 millions de sites Web et les insère dans une base de données publique BigQuery pour les analyser. Le jeu de données de juillet 2019 a servi de base aux mesures du Web Almanac. Pour plus d’informations, consultez la page Méthodologie.
 {% endblock %}
 {% block methodology_link %}En savoir plus sur la Méthodologie{% endblock %}

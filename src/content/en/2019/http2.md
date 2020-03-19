@@ -337,7 +337,7 @@ Because HTTP/3 uses QUIC over UDP rather than TCP, it makes the discovery of HTT
 
 <figure>
   <div class="big-number">8.38%</div>
-  <figcaption>Figure 15. The percent of mobile sites which support QUIC.</figcaption>
+  <figcaption>Figure 16. The percent of mobile sites which support QUIC.</figcaption>
 </figure>
 
 Analysis of this header shows that 7.67% of desktop sites and 8.38% of mobile sites already support QUIC, which roughly represents Google's percentage of traffic, unsurprisingly enough, as it has been using this for a while. And 0.04% are already supporting HTTP/3. I would imagine by next year's Web Almanac, this number will have increased significantly.

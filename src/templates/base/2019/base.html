@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css?v=2">
+  <link rel="stylesheet" href="/static/css/2019.css?v=3">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -127,6 +127,15 @@
             <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
             <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
             <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+            <li>
+            {% if supported_years | length > 1 %}
+            <li>
+              {{ year_switcher() }}
+            </li>
+            {% endif %}
+            <li>
+              {{ language_switcher() }}
+            </li>
             <li class="misc">
               <ul class="misc">
                 <li>
@@ -148,16 +157,6 @@
                     </li>
                   </ul>
                 </li>
-                {% if supported_years | length > 1 %}
-                <li>
-                  {{ year_switcher() }}
-                </li>
-                {% endif %}
-                {% if supported_languages | length > 1%}
-                <li>
-                  {{ language_switcher() }}
-                </li>
-                {% endif %}
               </ul>
             </li>
           </ul>
@@ -220,8 +219,11 @@
         var languageSwitchers = document.querySelectorAll('.language-switcher select');
         for (var i = 0; i < languageSwitchers.length; i++) {
           languageSwitchers[i].addEventListener('change', function(e) {
-            if (e.target.value) {
-              window.location = e.target.value;
+            //Reset the selector back in case user uses Back button
+            var selectedLanguage = e.target.value;
+            if (selectedLanguage && selectedLanguage !== window.location.pathname) {
+              e.target.value = window.location.pathname;
+              window.location = selectedLanguage;
             }
           });
         }
@@ -286,7 +288,7 @@
     <option disabled="disabled">
       ────
     </option>
-    <option value="https://github.com/HTTPArchive/almanac.httparchive.org/labels/Translation">
+    <option value="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide">
       {{ self.help_translate() }}
     </option>
   </select>
