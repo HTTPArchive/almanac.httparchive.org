@@ -111,11 +111,11 @@
             <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
             {% if supported_years | length > 1 %}
             <li>
-              {{ year_switcher() }}
+              {{ year_switcher('header') }}
             </li>
             {% endif %}
             <li>
-              {{ language_switcher() }}
+              {{ language_switcher('header') }}
             </li>
           </ul>
         </nav>
@@ -130,11 +130,11 @@
             <li>
             {% if supported_years | length > 1 %}
             <li>
-              {{ year_switcher() }}
+              {{ year_switcher('mobile') }}
             </li>
             {% endif %}
             <li>
-              {{ language_switcher() }}
+              {{ language_switcher('mobile') }}
             </li>
             <li class="misc">
               <ul class="misc">
@@ -180,11 +180,11 @@
           <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
           {% if supported_years | length > 1 %}
           <li>
-            {{ year_switcher() }}
+            {{ year_switcher('footer') }}
           </li>
           {% endif %}
           <li>
-            {{ language_switcher() }}
+            {{ language_switcher('footer') }}
           </li>
         </ul>
       </nav>
@@ -275,13 +275,14 @@
   {% endblock %}
 {% endblock %}
 
-{% macro language_switcher() %}
+{% macro language_switcher(switcher_name) %}
 <div class="language-switcher">
-  <select>
+  <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
+  <select id="language-switcher-{{switcher_name}}">
     {% for l in supported_languages %}
     <option
       {% if l == language %}selected="selected"{% endif %}
-      value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+      lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" >
       {{ l }}
     </option>
     {% endfor %}
@@ -296,9 +297,10 @@
 </div>
 {% endmacro %}
 
-{% macro year_switcher() %}
+{% macro year_switcher(switcher_name) %}
 <div class="year-switcher">
-  <select>
+  <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
+  <select id="year-switcher-{{switcher_name}}">
       {% for y in supported_years %}
         <option
           {% if y == year %}selected="selected"{% endif %}
