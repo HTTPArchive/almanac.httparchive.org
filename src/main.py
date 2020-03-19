@@ -43,12 +43,12 @@ def render_template(template, *args, **kwargs):
     year = request.view_args.get('year', DEFAULT_YEAR)
     supported_languages = SUPPORTED_YEARS.get(year, (DEFAULT_LANGUAGE,))
 
-    lang = request.view_args.get('lang')
+    lang = request.view_args.get('lang') or ''
     language = get_language(lang)
     langcode_length = len(lang) + 1 # Probably always 2-character language codes but who knows!
 
     # If the template does not exist, then redirect to English version
-    if (lang != 'en' and not(os.path.isfile('templates/%s' % template))):
+    if (lang != '' and lang != 'en' and not(os.path.isfile('templates/%s' % template))):
         return redirect('/en%s' % (request.full_path[langcode_length:]), code=302)
 
     # Although a langauge may be enabled, all templates may not have been translated yet
