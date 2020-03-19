@@ -219,8 +219,11 @@
         var languageSwitchers = document.querySelectorAll('.language-switcher select');
         for (var i = 0; i < languageSwitchers.length; i++) {
           languageSwitchers[i].addEventListener('change', function(e) {
-            if (e.target.value) {
-              window.location = e.target.value;
+            //Reset the selector back in case user uses Back button
+            var selectedLanguage = e.target.value;
+            if (selectedLanguage && selectedLanguage !== window.location.pathname) {
+              e.target.value = window.location.pathname;
+              window.location = selectedLanguage;
             }
           });
         }
