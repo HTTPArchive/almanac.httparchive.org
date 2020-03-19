@@ -1,4 +1,9 @@
-{%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}
+{%- set featured_chapter = ("http2","http2") | random %}
+{#
+  Below is the full set of chapters. If all are translated then replace above line with this one.
+  Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
+  {%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}
+#}
 {%- if featured_chapter == "javascript" %}
   {%- set featured_chapter_name = "JavaScript" %}
   {%- set featured_chapter_quote = "JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page." %}
@@ -77,8 +82,8 @@
   {%- set featured_chapter_stats = {"stat1":"29%","label1":"Sites using <code>dns-prefetch</code>","stat2":"88%","label2":"Resource hints using the <code>as</code> attribute.","stat3":"0.04%","label3":"Usage of priority hints"} %}
 {%- elif featured_chapter == "http2" %}
   {%- set featured_chapter_name = "HTTP/2" %}
-  {%- set featured_chapter_quote = "HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default. This chapter examines how this relatively new technology has fared in the real world." %}
-  {%- set featured_chapter_stats = {"stat1":"95%","label1":"Users who can use HTTP/2","stat2":"27.83%","label2":"Requests with HTTP/2 prioritisation issues","stat3":"8.38%","label3":"Sites supporting QUIC"} %}
+  {%- set featured_chapter_quote = "HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。" %}
+  {%- set featured_chapter_stats = {"stat1":"95%","label1":"HTTP/2を使用できるグローバルユーザーの割合。","stat2":"27.83%","label2":"準最適なHTTP/2優先順位付けによるモバイル要求の割合。","stat3":"8.38%","label3":"QUICをサポートするモバイルサイトの割合。"} %}
 {%- endif %}
 <section class="featured-chapter">
   <div class="featured-chapter-content">
