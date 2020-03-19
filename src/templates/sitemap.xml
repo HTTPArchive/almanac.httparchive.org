@@ -12,11 +12,6 @@
     </url>
 
     <url>
-        <loc>https://almanac.httparchive.org/en/2019/accessibility_statement</loc>
-        <lastmod>2020-02-03</lastmod>
-    </url>
-
-    <url>
         <loc>https://almanac.httparchive.org/en/2019/caching</loc>
         <lastmod>2019-11-23</lastmod>
     </url>
@@ -117,13 +112,18 @@
     </url>
 
     <url>
-        <loc>https://almanac.httparchive.org/en/2019/table_of_contents</loc>
+        <loc>https://almanac.httparchive.org/en/2019/table-of-contents</loc>
         <lastmod>2019-11-11</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/third-parties</loc>
         <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/en/accessibility-statement</loc>
+        <lastmod>2020-02-03</lastmod>
     </url>
 
     <url>
@@ -162,7 +162,7 @@
     </url>
 
     <url>
-        <loc>https://almanac.httparchive.org/es/2019/table_of_contents</loc>
+        <loc>https://almanac.httparchive.org/es/2019/table-of-contents</loc>
         <lastmod>2019-11-11</lastmod>
     </url>
 
@@ -202,7 +202,7 @@
     </url>
 
     <url>
-        <loc>https://almanac.httparchive.org/fr/2019/table_of_contents</loc>
+        <loc>https://almanac.httparchive.org/fr/2019/table-of-contents</loc>
         <lastmod>2019-11-11</lastmod>
     </url>
 
@@ -272,7 +272,7 @@
     </url>
 
     <url>
-        <loc>https://almanac.httparchive.org/ja/2019/table_of_contents</loc>
+        <loc>https://almanac.httparchive.org/ja/2019/table-of-contents</loc>
         <lastmod>2019-11-11</lastmod>
     </url>
    
