@@ -337,7 +337,7 @@ HTTP/3はTCPではなくUDPでQUICを使用するため、HTTP/3の検出はHTTP
 
 <figure>
   <div class="big-number">8.38%</div>
-  <figcaption>図15. QUICをサポートするモバイルサイトの割合。</figcaption>
+  <figcaption>図16. QUICをサポートするモバイルサイトの割合。</figcaption>
 </figure>
 
 このヘッダーを分析すると、デスクトップサイトの7.67％とモバイルサイトの8.38％がすでにQUICをサポートしていることがわかります。QUICは、Googleのトラフィックの割合を表します。また、0.04％はすでにHTTP/3をサポートしています。来年のWeb年鑑では、この数は大幅に増加すると予想しています。
