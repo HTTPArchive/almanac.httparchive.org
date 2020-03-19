@@ -428,6 +428,7 @@ a.navigation-logo {
   color: white;
   min-width: 280px;
 }
+
 a.navigation-logo img:hover,
 a.navigation-logo:focus img {
   filter: brightness(0) saturate(100%) invert(86%) sepia(4%) saturate(4357%) hue-rotate(16deg) brightness(136%) contrast(94%);
@@ -855,6 +856,9 @@ p.copyright a {
   header nav:first-of-type,
   header .cta {
     display: none;
+  }
+  a.navigation-logo {
+    min-width: auto;
   }
   header nav > ul > li > * {
     margin: 0;
