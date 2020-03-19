@@ -96,7 +96,14 @@ const convert_file_name = (url) => {
     return url.substr(0, url.length - 10);
   };
   if ( url.substr(url.length - 5) == ".html" ) {
-    return url.substr(0, url.length - 5).replace(/_/g,'-');
+    if ( url.substr(url.length - 28) == "accessibility_statement.html" ) {
+      // Strip year from Accessibility Statement
+      // TODO must fix this properly to avoid clashes
+      // once we know how we'll handle this in future years
+      return url.substr(0, url.length - 5).replace(/_/g,'-').replace(/\/[0-9]{4}/,'');
+    } else {
+      return url.substr(0, url.length - 5).replace(/_/g,'-');
+    }
   };
   return url.replace(/_/g,'-');
 };
