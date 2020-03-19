@@ -426,6 +426,7 @@ h2.header {
 
 a.navigation-logo {
   color: white;
+  min-width: 250px;
 }
 a.navigation-logo img:hover,
 a.navigation-logo:focus img {
@@ -525,7 +526,6 @@ header .btn + .language-switcher {
   color: inherit;
   cursor: pointer;
   border-color: #f2f2f2;
-  padding-right: 2rem;
 }
 
 .language-switcher option,
@@ -705,8 +705,69 @@ p.copyright a {
 }
 
 @media (max-width: 900px) and (min-width: 601px) {
+  
+  /* Header */
+  .top-header, footer {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  header nav:first-of-type,
   header .cta {
     display: none;
+  }
+  header nav > ul > li > * {
+    margin: 0;
+  }
+  header nav > ul > li > a {
+    margin-bottom: 50px;
+    font-size: 16px;
+    line-height: 1.4em
+  }
+  header nav > ul > li:last-child {
+    margin: 0;
+  }
+  header .social-media li {
+    display: inline;
+  }
+
+  #menu {
+    display: block;
+  }
+  .menu {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 100%;
+    /* overcome the parent container's 20px side padding */    
+    left: -20px;
+    right: -20px;
+    border-top: 1px solid rgba(242, 242, 242, 0.2);
+    padding: 60px 30px 30px;
+    background-color: #677486;
+    box-shadow: 0 0 16px 0 rgba(78, 85, 100, 1);
+    z-index: 1;
+  }
+
+  .menu-btn {
+    background: none;
+    border: 0;
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-open .menu {
+    display: flex;
+  }
+  .menu-open header {
+    background-color: #667384;
+  }
+  .menu .misc {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
   }
 
   footer {
