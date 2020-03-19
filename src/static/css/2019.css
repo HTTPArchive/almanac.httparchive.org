@@ -525,6 +525,7 @@ header .btn + .language-switcher {
   color: inherit;
   cursor: pointer;
   border-color: #f2f2f2;
+  padding-right: 2rem;
 }
 
 .language-switcher option,
@@ -600,7 +601,6 @@ blockquote {
 blockquote::before {
   content: '"' / "";
   position: absolute;
-  z-index: -1;
   top: -4rem;
   left: -7rem;
   opacity: .05;
