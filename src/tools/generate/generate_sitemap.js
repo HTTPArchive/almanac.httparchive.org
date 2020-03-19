@@ -23,7 +23,7 @@ const generate_sitemap = async (sitemap_chapters) => {
 
     const loc = `${language}/${year}/${chapter}`;
     const lastmod = metadata.last_updated;
-    const url = strip_html_extension(loc);
+    const url = convert_file_name(loc);
 
     urls.push({ url, lastmod });
   }
@@ -55,7 +55,7 @@ const get_static_pages = async (sitemap_chapters) => {
       const file = await fs.readFile(`templates/${loc}`, 'utf-8');
       const match = file.match(/{% block date_modified %}([0-9\-\+\:T]*)/);
       const lastmod = set_min_date(match[1]);
-      const url = strip_html_extension(loc);
+      const url = convert_file_name(loc);
 
       urls.push({ url, lastmod });
     }
@@ -91,14 +91,14 @@ const set_min_date = (date) => {
   }
 };
 
-const strip_html_extension = (url) => {
+const convert_file_name = (url) => {
   if ( url.substr(url.length - 10) == "index.html" ) {
     return url.substr(0, url.length - 10);
   };
   if ( url.substr(url.length - 5) == ".html" ) {
-    return url.substr(0, url.length - 5);
+    return url.substr(0, url.length - 5).replace('_','-');
   };
-  return url;
+  return url.replace('_','-');
 };
 
 module.exports = {
