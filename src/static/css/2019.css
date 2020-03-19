@@ -536,7 +536,8 @@ header .btn + .language-switcher {
 
 .language-switcher select:focus,
 .year-switcher select:focus {
-  border-color: #f2f2f2;
+  border-color: #F7F779;
+  color: #F7F779;
 }
 
 .language-switcher img:last-of-type,
