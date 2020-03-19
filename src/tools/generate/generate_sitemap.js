@@ -95,8 +95,8 @@ const convert_file_name = (url) => {
   if ( url.substr(url.length - 10) == "index.html" ) {
     return url.substr(0, url.length - 10);
   };
-  if ( url.substr(url.length - 5) == ".html" ) {
-    if ( url.substr(url.length - 28) == "accessibility_statement.html" ) {
+  if ( url.endsWith(".html")) {
+    if ( url.endsWith("accessibility_statement.html")) {
       // Strip year from Accessibility Statement
       // TODO must fix this properly to avoid clashes
       // once we know how we'll handle this in future years
