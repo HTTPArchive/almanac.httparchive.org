@@ -619,7 +619,7 @@
     "Pavel-Evdokimov": {
       "name": "Pavel Evdokimov",
       "teams": [
-        "translators"
+        "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/6407114?v=4&s=200",
       "github": "Pavel-Evdokimov",
@@ -1096,6 +1096,24 @@
       "website": "https:\/\/segbedji.com\/",
       "github": "JustinyAhin",
       "twitter": "justinahinon1"
+    },
+    "ksakae1216": {
+      "name": "ksakae1216",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1982567?v=4&s=200",
+      "github": "ksakae1216"
+    },
+    "nico3333fr": {
+      "name": "Nicolas Hoffmann",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2578321?v=4&s=200",
+      "website": "https://www.nicolas-hoffmann.net/",
+      "github": "nico3333fr",
+      "twitter": "Nico3333fr"
     }
   }
 }

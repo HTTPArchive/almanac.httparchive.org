@@ -128,7 +128,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               {% endif %}
               {% if authordata.bio %}
               <div class="bio">
-                  {{ authordata.bio | safe }}
+                {{ localizedContributors[author] | safe if localizedContributors[author]|length else authordata.bio | safe }}
               </div>
           {% endif %}
           </div>
