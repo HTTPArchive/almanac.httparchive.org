@@ -179,7 +179,7 @@
     },
     "argyleink": {
       "name": "Adam Argyle",
-      "bio":"Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX &amp; UI; Find him on the web <a href=\"https://twitter.com/argyleink\">@argyleink</a> or checkout his website <a href=\"https://nerdy.dev\">https://nerdy.dev</a>;",
+      "bio": "Adam Argyle is a Google Chrome developer relations member focused on CSS; He's a web addict with an insatiable lust for great UX &amp; UI; Find him on the web <a href=\"https://twitter.com/argyleink\">@argyleink</a> or checkout his website <a href=\"https://nerdy.dev\">https://nerdy.dev</a>;",
       "teams": [
         "brainstormers",
         "authors"
@@ -263,7 +263,7 @@
     },
     "andydavies": {
       "name": "Andy Davies",
-      "bio":"Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK's leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is co-author of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href=\"https://twitter.com/andydavies\">@AndyDavies</a>, and he occasionally blogs at <a href=\"https://andydavies.me\">https://andydavies.me</a>",
+      "bio": "Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK's leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is co-author of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href=\"https://twitter.com/andydavies\">@AndyDavies</a>, and he occasionally blogs at <a href=\"https://andydavies.me\">https://andydavies.me</a>",
       "teams": [
         "authors"
       ],
@@ -511,7 +511,7 @@
     },
     "jeffposnick": {
       "name": "Jeff Posnick",
-      "bio":"Jeff Posnick is a member of Google's Web Developer Relations team, based in New York. His focus is on <a href=\"https://developers.google.com/web/tools/workbox/\">Workbox</a>, a set of service worker libraries for Progressive Web Apps. He blogs at <a href=\"https://jeffy.info\">https://jeffy.info</a> and tweets as <a href=\"https://twitter.com/jeffposnick\">@jeffposnick</a>.",
+      "bio": "Jeff Posnick is a member of Google's Web Developer Relations team, based in New York. His focus is on <a href=\"https://developers.google.com/web/tools/workbox/\">Workbox</a>, a set of service worker libraries for Progressive Web Apps. He blogs at <a href=\"https://jeffy.info\">https://jeffy.info</a> and tweets as <a href=\"https://twitter.com/jeffposnick\">@jeffposnick</a>.",
       "teams": [
         "brainstormers",
         "authors"
@@ -576,7 +576,7 @@
     },
     "khempenius": {
       "name": "Katie Hempenius",
-      "bio":"Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.",
+      "bio": "Katie Hempenius is an engineer on the Chrome team where she works on making the web faster.",
       "teams": [
         "brainstormers",
         "authors",
@@ -656,7 +656,7 @@
     },
     "AVGP": {
       "name": "Martin Splitt",
-      "bio":"Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.",
+      "bio": "Martin Splitt is a developer advocate on the web ecosystem team at Google where he works on keeping the web discoverable.",
       "teams": [
         "authors",
         "brainstormers"
@@ -735,7 +735,7 @@
     },
     "patrickhulce": {
       "name": "Patrick Hulce",
-      "bio":"Patrick Hulce is an ex-Chrome engineer, founder of <a href=\"https://eris.ventures/\">Eris Ventures</a>, core team member of <a href=\"https://github.com/GoogleChrome/lighthouse\">Lighthouse</a> and <a href=\"https://github.com/GoogleChrome/lighthouse-ci\">Lighthouse CI</a>, co-organizer of the <a href=\"https://www.meetup.com/DallasJS/\">DallasJS</a> meetup, and author of the <a href=\"https://github.com/patrickhulce/third-party-web\">third-party-web</a> project.",
+      "bio": "Patrick Hulce is an ex-Chrome engineer, founder of <a href=\"https://eris.ventures/\">Eris Ventures</a>, core team member of <a href=\"https://github.com/GoogleChrome/lighthouse\">Lighthouse</a> and <a href=\"https://github.com/GoogleChrome/lighthouse-ci\">Lighthouse CI</a>, co-organizer of the <a href=\"https://www.meetup.com/DallasJS/\">DallasJS</a> meetup, and author of the <a href=\"https://github.com/patrickhulce/third-party-web\">third-party-web</a> project.",
       "teams": [
         "brainstormers",
         "authors",
@@ -748,7 +748,7 @@
     },
     "paulcalvano": {
       "name": "Paul Calvano",
-      "bio":"Paul Calvano is a Web Performance Architect at <a href=\"https://www.akamai.com/\">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href=\"https://twitter.com/paulcalvano\">@paulcalvano</a>, blogging at <a href=\"https://paulcalvano.com\">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href=\"https://discuss.httparchive.org\">https://discuss.httparchive.org</a>.",
+      "bio": "Paul Calvano is a Web Performance Architect at <a href=\"https://www.akamai.com/\">Akamai</a>, where he helps businesses improve the performance of their websites. He's also a co-maintainer of the HTTP Archive project. You can find him tweeting at <a href=\"https://twitter.com/paulcalvano\">@paulcalvano</a>, blogging at <a href=\"https://paulcalvano.com\">http://paulcalvano.com</a> and sharing HTTP Archive research at <a href=\"https://discuss.httparchive.org\">https://discuss.httparchive.org</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -761,7 +761,7 @@
     },
     "rachellcostello": {
       "name": "Rachel Costello",
-      "bio":"Rachel Costello is a Technical SEO &amp; Content Manager at <a href=\"https://www.deepcrawl.com/\">DeepCrawl</a> and an international conference speaker who spends her time researching and communicating the latest developments in search. Rachel currently manages the production of <a href=\"https://www.deepcrawl.com/knowledge/white-papers/\">technical SEO white papers</a> and research pieces for DeepCrawl, and is a regular columnist for <a href=\"https://www.searchenginejournal.com/author/rachel-costello/\">Search Engine Journal</a>.",
+      "bio": "Rachel Costello is a Technical SEO &amp; Content Manager at <a href=\"https://www.deepcrawl.com/\">DeepCrawl</a> and an international conference speaker who spends her time researching and communicating the latest developments in search. Rachel currently manages the production of <a href=\"https://www.deepcrawl.com/knowledge/white-papers/\">technical SEO white papers</a> and research pieces for DeepCrawl, and is a regular columnist for <a href=\"https://www.searchenginejournal.com/author/rachel-costello/\">Search Engine Journal</a>.",
       "teams": [
         "brainstormers",
         "authors",
@@ -831,7 +831,7 @@
     },
     "samdutton": {
       "name": "Sam Dutton",
-      "bio":"Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a href=\"https://simpl.info\">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.",
+      "bio": "Sam Dutton has worked with the Google Chrome team as a Developer Advocate since 2011. He has organized and presented at a number of events, created and taught several web development courses, and worked on a range of videos, codelabs and written guidance covering PWA, performance, media, image and 'Next Billion Users' initiatives. He maintains <a href=\"https://simpl.info\">simpl.info</a>, which provides simplest possible examples of HTML, CSS and JavaScript. Sam grew up in South Australia, went to university in Sydney, and has lived since 1986 in London.",
       "teams": [
         "brainstormers",
         "authors"
@@ -843,7 +843,7 @@
     },
     "ScottHelme": {
       "name": "Scott Helme",
-      "bio":"Scott Helme is a Security Researcher and founder of <a href=\"https://report-uri.com\">report-uri.com</a> and <a href=\"https://securityheaders.com\">securityheaders.com</a>. You can find him talking about security on Twitter <a href=\"https://twitter.com/Scott_Helme\">@Scott_Helme</a> and blogging at <a href=\"https://scotthelme.co.uk\">scotthelme.co.uk</a>.",
+      "bio": "Scott Helme is a Security Researcher and founder of <a href=\"https://report-uri.com\">report-uri.com</a> and <a href=\"https://securityheaders.com\">securityheaders.com</a>. You can find him talking about security on Twitter <a href=\"https://twitter.com/Scott_Helme\">@Scott_Helme</a> and blogging at <a href=\"https://scotthelme.co.uk\">scotthelme.co.uk</a>.",
       "teams": [
         "brainstormers",
         "authors"
@@ -912,7 +912,7 @@
     },
     "tomayac": {
       "name": "Tom Steiner",
-      "bio" : "Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a href=\"https://blog.tomayac.com/\">blog.tomayac.com</a> and tweets as <a href=\"https://twitter.com/tomayac\">@tomayac</a>.",
+      "bio": "Thomas Steiner is a Web Developer Advocate at Google Hamburg, focused on making the Web a better place through standardization, creating and sharing best practices, and doing research. He blogs at <a href=\"https://blog.tomayac.com/\">blog.tomayac.com</a> and tweets as <a href=\"https://twitter.com/tomayac\">@tomayac</a>.",
       "teams": [
         "brainstormers",
         "authors"
@@ -1078,7 +1078,7 @@
       "github": "pmeenan",
       "twitter": "patmeenan"
     },
-      "SilentJMA": {
+    "SilentJMA": {
       "name": "JABANE Mohamed Ayoub",
       "teams": [
         "translators"
@@ -1103,7 +1103,8 @@
         "translators"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1982567?v=4&s=200",
-      "github": "ksakae1216"
+      "github": "ksakae1216",
+      "twitter": "beltway7"
     },
     "nico3333fr": {
       "name": "Nicolas Hoffmann",
