@@ -1,7 +1,7 @@
 ---
 part_number: IV
 chapter_number: 16
-title: Caching
+title: キャッシング
 description: 2019Web年鑑のキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
