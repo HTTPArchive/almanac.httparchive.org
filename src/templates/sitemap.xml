@@ -280,5 +280,10 @@
         <loc>https://almanac.httparchive.org/ja/2019/table-of-contents</loc>
         <lastmod>2019-11-11</lastmod>
     </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/2019/third-parties</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
    
 </urlset>
