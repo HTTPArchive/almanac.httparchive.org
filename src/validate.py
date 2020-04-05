@@ -19,7 +19,6 @@ SUPPORTED_YEARS = {
     '2019': (Language.ENGLISH,Language.FRENCH,Language.JAPANESE,Language.SPANISH)
 }
 
-#TO DO - Stop Hardcoding these
 CHAPTERS = {}
 
 TYPO_CHAPTERS = {
