@@ -13,7 +13,6 @@ import config as config_util
 
 CONFIG_DIR = './config'
 
-#DEFAULT_YEAR = '2019'
 SUPPORTED_YEARS = {
     # When there is one supported language, it must have a trailing comma.
     '2019': (Language.ENGLISH,Language.FRENCH,Language.JAPANESE,Language.SPANISH)
