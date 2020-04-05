@@ -46,9 +46,10 @@ def update_config():
 
   # TODO(rviscomi): Dynamically handle multiple annual configs.
   with open('config/2019.json', 'r') as config_file:
-    config_json['2019'] = json.load(config_file)
+    json_config = json.load(config_file)
+    config_json['2019'] = json_config
 
-    for contributor_id, contributor in config_json['2019']['contributors'].items():
+    for contributor_id, contributor in json_config['contributors'].items():
       if 'avatar_url' not in contributor:
         if 'gravatar' in contributor:
           gravatar_url = 'https://www.gravatar.com/avatar/' + hashlib.md5(contributor['gravatar'].lower().encode()).hexdigest() + '.jpg?'
@@ -57,7 +58,6 @@ def update_config():
         else:
           contributor['avatar_url'] = DEFAULT_AVATAR_FOLDER_PATH + str(hash(contributor_id) % AVATARS_NUMBER) + '.jpg'
     
-
-    CHAPTERS.update({'2019' : set(get_chapters(config_json['2019']))})
+    CHAPTERS.update({'2019' : set(get_chapters(json_config))})
         
 update_config()
