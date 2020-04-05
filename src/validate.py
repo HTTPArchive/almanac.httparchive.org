@@ -1,8 +1,6 @@
 import logging
 import re
 import inspect
-import json
-import os
 
 from flask import request, abort, redirect
 from functools import wraps
@@ -10,14 +8,11 @@ from language import Language, DEFAULT_LANGUAGE
 
 from config import CHAPTERS
 
-CONFIG_DIR = './config'
-
+DEFAULT_YEAR = '2019'
 SUPPORTED_YEARS = {
     # When there is one supported language, it must have a trailing comma.
     '2019': (Language.ENGLISH,Language.FRENCH,Language.JAPANESE,Language.SPANISH)
 }
-
-DEFAULT_YEAR = '2019'
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
