@@ -1,4 +1,4 @@
-from config import get_config, SUPPORTED_YEARS, LANGUAGES, DEFAULT_YEAR
+from config import get_config, SUPPORTED_YEARS, SUPPORTED_LANGUAGES, DEFAULT_YEAR
 from csp import csp
 from flask import Flask, abort, redirect, render_template as flask_render_template, request, send_from_directory, url_for
 from flask_talisman import Talisman
@@ -41,7 +41,7 @@ def add_header(response):
 
 def render_template(template, *args, **kwargs):
     year = request.view_args.get('year', DEFAULT_YEAR)
-    supported_languages = LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
+    supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
 
     lang = request.view_args.get('lang') or ''
     language = get_language(lang)

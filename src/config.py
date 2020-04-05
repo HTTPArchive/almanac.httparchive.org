@@ -16,8 +16,8 @@ DEFAULT_AVATAR_FOLDER_PATH = '/static/images/avatars/'
 AVATAR_SIZE = 200
 AVATARS_NUMBER = 15
 
-CHAPTERS = {}
-LANGUAGES = {}
+SUPPORTED_CHAPTERS = {}
+SUPPORTED_LANGUAGES = {}
 
 def get_config(year):
   global config_json
@@ -52,8 +52,8 @@ def get_languages(json_config):
 
 def update_config():
   global SUPPORTED_YEARS
-  global CHAPTERS
-  global LANGUAGES
+  global SUPPORTED_CHAPTERS
+  global SUPPORTED_LANGUAGES
   global config_json
 
   for root, directories, files in os.walk('config'):
@@ -69,8 +69,8 @@ def update_config():
       json_config = json.load(config_file)
       config_json[year] = json_config
 
-      LANGUAGES.update({year : get_languages(json_config)})
-      CHAPTERS.update({year : set(get_chapters(json_config))})
+      SUPPORTED_LANGUAGES.update({year : get_languages(json_config)})
+      SUPPORTED_CHAPTERS.update({year : set(get_chapters(json_config))})
 
       for contributor_id, contributor in json_config['contributors'].items():
         if 'avatar_url' not in contributor:

@@ -6,7 +6,7 @@ from flask import request, abort, redirect
 from functools import wraps
 from language import Language, DEFAULT_LANGUAGE
 
-from config import SUPPORTED_YEARS, DEFAULT_YEAR, CHAPTERS, LANGUAGES
+from config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
@@ -48,7 +48,7 @@ def validate(func):
 
 def validate_chapter(chapter,year):
 
-    chapters_for_year = CHAPTERS.get(year)
+    chapters_for_year = SUPPORTED_CHAPTERS.get(year)
     if chapter not in chapters_for_year:
         if chapter in TYPO_CHAPTERS:
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
@@ -71,7 +71,7 @@ def validate_lang_and_year(lang, year):
         logging.debug('Unsupported year requested: %s' % year)
         abort(404, 'Unsupported year requested')
 
-    supported_langs = [l.lang_code for l in LANGUAGES.get(year)]
+    supported_langs = [l.lang_code for l in SUPPORTED_LANGUAGES.get(year)]
     logging.debug('Languages supported for %s: %s.' % (year, supported_langs))
 
     # If an unsupported language code is passed in, abort.
