@@ -40,7 +40,7 @@ Service Workerは2014年12月に[Chrome 40で初めて実装](https://blog.chrom
 
 <figure>
   <div class="big-number">15%</div>
-  <figcaption>図3.Service Workerを登録するページのページビューの割合。 （出典：Chromeプラットフォームステータス） (出典: <a href="(https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chromeプラットフォームステータス</a>)</figcaption>
+  <figcaption>図3.Service Workerを登録するページのページビューの割合。 （出典：Chromeプラットフォームステータス） (出典: <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chromeプラットフォームステータス</a>)</figcaption>
 </figure>
 
 [Lighthouse](./methodology#lighthouse)は、ページが[インストールプロンプト](https://developers.google.com/web/tools/lighthouse/audits/install-prompt)の対象かどうかを確認します。モバイルページの1.56％に[インストール可能なマニフェスト](https://web.dev/installable-manifest/)があります。
