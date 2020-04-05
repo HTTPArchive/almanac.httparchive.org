@@ -6,13 +6,7 @@ from flask import request, abort, redirect
 from functools import wraps
 from language import Language, DEFAULT_LANGUAGE
 
-from config import CHAPTERS
-
-DEFAULT_YEAR = '2019'
-SUPPORTED_YEARS = {
-    # When there is one supported language, it must have a trailing comma.
-    '2019': (Language.ENGLISH,Language.FRENCH,Language.JAPANESE,Language.SPANISH)
-}
+from config import SUPPORTED_YEARS, DEFAULT_YEAR, CHAPTERS, LANGUAGES
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
@@ -77,7 +71,7 @@ def validate_lang_and_year(lang, year):
         logging.debug('Unsupported year requested: %s' % year)
         abort(404, 'Unsupported year requested')
 
-    supported_langs = [l.lang_code for l in SUPPORTED_YEARS.get(year)]
+    supported_langs = [l.lang_code for l in LANGUAGES.get(year)]
     logging.debug('Languages supported for %s: %s.' % (year, supported_langs))
 
     # If an unsupported language code is passed in, abort.

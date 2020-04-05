@@ -1,4 +1,9 @@
 {
+  "settings": [
+    {
+      "supported_languages": ["en","es","fr","ja"]
+    }
+  ],
   "outline": [
     {
       "part": "I. Page Content",

@@ -27,12 +27,12 @@ class _Language(object):
 
 # Currently we are only supporting languages and not regions
 class Language(object):
-  JAPANESE = _Language('日本語', 'ja', 'JP')
-  ENGLISH = _Language('English', 'en', 'US')
-  SPANISH = _Language('Español', 'es', 'ES')
-  FRENCH = _Language('Français', 'fr', 'FR')
+  ja = _Language('日本語', 'ja', 'JP')
+  en = _Language('English', 'en', 'US')
+  es = _Language('Español', 'es', 'ES')
+  fr = _Language('Français', 'fr', 'FR')
 
-DEFAULT_LANGUAGE = Language.ENGLISH
+DEFAULT_LANGUAGE = Language.en
 
 # Maps language codes to _Language objects.
 language_map = {v.lang_code: v for k,v in Language.__dict__.items() if k[:1] != '_'}
