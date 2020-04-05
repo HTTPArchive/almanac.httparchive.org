@@ -1,43 +1,26 @@
 import logging
 import re
 import inspect
+import json
+import os
 
 from flask import request, abort, redirect
 from functools import wraps
 from language import Language, DEFAULT_LANGUAGE
+from datetime import date
 
 import config as config_util
 
-DEFAULT_YEAR = '2019'
+CONFIG_DIR = './config'
+
+#DEFAULT_YEAR = '2019'
 SUPPORTED_YEARS = {
     # When there is one supported language, it must have a trailing comma.
     '2019': (Language.ENGLISH,Language.FRENCH,Language.JAPANESE,Language.SPANISH)
 }
 
 #TO DO - Stop Hardcoding these
-CHAPTERS = {
-    'accessibility',
-    'caching',
-    'cdn',
-    'cms',
-    'compression',
-    'css',
-    'ecommerce',
-    'fonts',
-    'javascript',
-    'http2',
-    'markup',
-    'media',
-    'page-weight',
-    'performance',
-    'pwa',
-    'resource-hints',
-    'seo',
-    'security',
-    'third-parties',
-    'media',
-    'mobile-web'
-}
+CHAPTERS = {}
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
@@ -59,7 +42,7 @@ def validate(func):
 
         if chapter:
 
-            validated_chapter = validate_chapter(chapter)
+            validated_chapter = validate_chapter(chapter,year)
 
             if chapter != validated_chapter:
                 return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
@@ -77,9 +60,10 @@ def validate(func):
     return decorated_function
 
 
-def validate_chapter(chapter):
+def validate_chapter(chapter,year):
 
-    if chapter not in CHAPTERS:
+    chapters_for_year = CHAPTERS.get(year)
+    if chapter not in chapters_for_year:
         if chapter in TYPO_CHAPTERS:
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
             return TYPO_CHAPTERS.get(chapter)
@@ -144,3 +128,54 @@ def parse_accept_language(header, supported_langs):
 
     # If all else fails, default the language.
     return DEFAULT_LANGUAGE.lang_code
+
+
+def get_json_files(path):
+
+    files_found = []
+    for root, directories, files in os.walk(path):
+        for file in files:
+            if '.json' in file:
+                files_found.append(os.path.join(root, file))
+
+    return files_found
+
+
+def get_entries_from_json(path, p_key, s_key):
+
+    with open(path) as json_file:
+        data = json.load(json_file)
+
+    entries = []
+
+    if p_key in data:
+        for values in data.get(p_key):
+             entries.append(values.get(s_key))
+
+    return entries
+
+
+def get_chapters(file):
+
+    chapters = []
+
+    data = get_entries_from_json(file,'outline','chapters')
+    for list in data:
+        for entry in list:
+            logging.debug('Adding chapter:' + entry.get('slug'))
+            chapters.append(entry.get('slug'))
+	
+    return chapters
+
+
+def init():
+    year_config_files = get_json_files(CONFIG_DIR)
+
+    for file in year_config_files:
+        logging.debug('Reading file:' + file)
+        CHAPTERS.update({file[9:-5] : set(get_chapters(file))})
+
+    return sorted(CHAPTERS.keys())[-1]
+
+
+DEFAULT_YEAR = init()
