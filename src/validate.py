@@ -7,7 +7,6 @@ import os
 from flask import request, abort, redirect
 from functools import wraps
 from language import Language, DEFAULT_LANGUAGE
-from datetime import date
 
 import config as config_util
 
