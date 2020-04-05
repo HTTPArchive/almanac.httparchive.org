@@ -40,7 +40,7 @@ Now this might not look overly impressive, but taking traffic data from Chrome P
 
 <figure>
   <div class="big-number">15%</div>
-  <figcaption>Figure 3. Percent of page views on a page that registers a service worker. (Source: <a href="(https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)</figcaption>
+  <figcaption>Figure 3. Percent of page views on a page that registers a service worker. (Source: <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chrome Platform Status</a>)</figcaption>
 </figure>
 
 [Lighthouse](./methodology#lighthouse) checks whether a page is eligible for an [install prompt](https://developers.google.com/web/tools/lighthouse/audits/install-prompt). 1.56% of mobile pages have an [installable manifest](https://web.dev/installable-manifest/).
