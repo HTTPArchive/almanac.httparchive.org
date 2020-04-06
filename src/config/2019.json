@@ -1,6 +1,7 @@
 {
   "settings": [
     {
+      "isLive": true,
       "supported_languages": ["en","es","fr","ja"]
     }
   ],
