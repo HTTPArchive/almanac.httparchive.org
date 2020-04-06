@@ -819,6 +819,10 @@ p.copyright a {
   white-space: nowrap; /* added line */
 }
 
+.hidden {
+  display: none;
+}
+
 #skiptocontent a {
   padding: 6px;
   position: absolute;
