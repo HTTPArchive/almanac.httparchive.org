@@ -9,7 +9,7 @@
 
 {% block breadcrumb_name_2 %}{{ year }} Contribuidores{% endblock %}
 
-{% block filter_by_team %}Filtrar por equipo: <span id="filtered-contributors">{{ self.contributors() }}</span> contributors{% endblock %}
+{% block filter_by_team %}Filtrar por equipo: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> de <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> contributors.{% endblock %}
 
 {% block join_the_team_title%}Únete al equipo de Web Almanac{% endblock %}
 {% block join_the_team_text%}¡Únete al equipo!{% endblock %}
