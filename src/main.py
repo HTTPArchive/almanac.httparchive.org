@@ -1,4 +1,4 @@
-import config as config_util
+from config import get_config, SUPPORTED_YEARS, SUPPORTED_LANGUAGES, DEFAULT_YEAR
 from csp import csp
 from flask import Flask, abort, redirect, render_template as flask_render_template, request, send_from_directory, url_for
 from flask_talisman import Talisman
@@ -6,7 +6,7 @@ from language import DEFAULT_LANGUAGE, get_language
 import logging
 import random
 from werkzeug.routing import BaseConverter
-from validate import validate, SUPPORTED_YEARS, DEFAULT_YEAR
+from validate import validate
 import os.path
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
@@ -41,7 +41,7 @@ def add_header(response):
 
 def render_template(template, *args, **kwargs):
     year = request.view_args.get('year', DEFAULT_YEAR)
-    supported_languages = SUPPORTED_YEARS.get(year, (DEFAULT_LANGUAGE,))
+    supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
 
     lang = request.view_args.get('lang') or ''
     language = get_language(lang)
@@ -59,7 +59,7 @@ def render_template(template, *args, **kwargs):
         if (os.path.isfile(langTemplate)):
             template_supported_languages.append(l)
 
-    kwargs.update(supported_languages=template_supported_languages, year=year, lang=lang, language=language, supported_years=list(SUPPORTED_YEARS.keys()))
+    kwargs.update(supported_languages=template_supported_languages, year=year, lang=lang, language=language, supported_years=SUPPORTED_YEARS)
     return flask_render_template(template, *args, **kwargs)
 
 
@@ -94,7 +94,7 @@ app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
 @app.route('/<lang>/<year>/')
 @validate
 def home(lang, year):
-    config = config_util.get_config(year)
+    config = get_config(year)
     return render_template('%s/%s/index.html' % (lang, year), config=config)
 
 
@@ -113,14 +113,14 @@ def root(lang):
 @app.route('/<lang>/<year>/table-of-contents')
 @validate
 def table_of_contents(lang, year):
-    config = config_util.get_config(year)
+    config = get_config(year)
     return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config)
 
 
 @app.route('/<lang>/<year>/contributors')
 @validate
 def contributors(lang, year):
-    config = config_util.get_config(year)
+    config = get_config(year)
     contributors = list(config["contributors"].items())
     random.shuffle(contributors)
     config["contributors"] = dict(contributors)
@@ -151,7 +151,7 @@ def sitemap():
 @app.route('/<lang>/<year>/<chapter>')
 @validate
 def chapter(lang, year, chapter):
-    config = config_util.get_config(year)
+    config = get_config(year)
     (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
     return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config, prev_chapter=prev_chapter, next_chapter=next_chapter)
 

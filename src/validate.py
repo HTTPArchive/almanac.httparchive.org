@@ -6,38 +6,7 @@ from flask import request, abort, redirect
 from functools import wraps
 from language import Language, DEFAULT_LANGUAGE
 
-import config as config_util
-
-DEFAULT_YEAR = '2019'
-SUPPORTED_YEARS = {
-    # When there is one supported language, it must have a trailing comma.
-    '2019': (Language.ENGLISH,Language.FRENCH,Language.JAPANESE,Language.SPANISH)
-}
-
-#TO DO - Stop Hardcoding these
-CHAPTERS = {
-    'accessibility',
-    'caching',
-    'cdn',
-    'cms',
-    'compression',
-    'css',
-    'ecommerce',
-    'fonts',
-    'javascript',
-    'http2',
-    'markup',
-    'media',
-    'page-weight',
-    'performance',
-    'pwa',
-    'resource-hints',
-    'seo',
-    'security',
-    'third-parties',
-    'media',
-    'mobile-web'
-}
+from config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
@@ -59,7 +28,7 @@ def validate(func):
 
         if chapter:
 
-            validated_chapter = validate_chapter(chapter)
+            validated_chapter = validate_chapter(chapter,year)
 
             if chapter != validated_chapter:
                 return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
@@ -77,9 +46,10 @@ def validate(func):
     return decorated_function
 
 
-def validate_chapter(chapter):
+def validate_chapter(chapter,year):
 
-    if chapter not in CHAPTERS:
+    chapters_for_year = SUPPORTED_CHAPTERS.get(year)
+    if chapter not in chapters_for_year:
         if chapter in TYPO_CHAPTERS:
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
             return TYPO_CHAPTERS.get(chapter)
@@ -101,7 +71,7 @@ def validate_lang_and_year(lang, year):
         logging.debug('Unsupported year requested: %s' % year)
         abort(404, 'Unsupported year requested')
 
-    supported_langs = [l.lang_code for l in SUPPORTED_YEARS.get(year)]
+    supported_langs = [l.lang_code for l in SUPPORTED_LANGUAGES.get(year)]
     logging.debug('Languages supported for %s: %s.' % (year, supported_langs))
 
     # If an unsupported language code is passed in, abort.
