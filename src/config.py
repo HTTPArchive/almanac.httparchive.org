@@ -44,17 +44,17 @@ def get_languages(json_config):
   data = get_entries_from_json(json_config,'settings','supported_languages')
   for list in data:
     for entry in list:
-      languages.append(getattr(Language,entry))
+      languages.append(getattr(Language,entry.upper()))
   return languages
 
 
 def get_live(json_config):
-  isLive = False
+  is_live = False
   data = get_entries_from_json(json_config,'settings','isLive')
   for list in data:
     if list == True:
-      isLive = True      
-  return isLive
+      is_live = True
+  return is_live
 
 
 def update_config():
@@ -89,5 +89,5 @@ def update_config():
               contributor['avatar_url'] = gravatar_url
             else:
               contributor['avatar_url'] = DEFAULT_AVATAR_FOLDER_PATH + str(hash(contributor_id) % AVATARS_NUMBER) + '.jpg'
-              
+
 update_config()
