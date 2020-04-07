@@ -1,4 +1,10 @@
 {
+  "settings": [
+    {
+      "isLive": true,
+      "supported_languages": ["en","es","fr","ja"]
+    }
+  ],
   "outline": [
     {
       "part": "I. Page Content",
@@ -476,7 +482,7 @@
         "brainstormers"
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/50970808?v=4&s=200",
-      "github": "henrisGH",
+      "github": "henrihelvetica",
       "twitter": "HenriHelvetica"
     },
     "housseindjirdeh": {
@@ -539,7 +545,7 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/25212653?v=4&s=200",
       "website": "https:\/\/gemservers.com",
-      "github": "hyperpress",
+      "github": "logicalphase",
       "twitter": "jtteag"
     },
     "sirjonathan": {

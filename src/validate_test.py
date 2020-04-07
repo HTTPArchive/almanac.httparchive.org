@@ -1,9 +1,10 @@
+from config import DEFAULT_YEAR, SUPPORTED_YEARS
 from language import Language, DEFAULT_LANGUAGE
-from validate import parse_accept_language, DEFAULT_YEAR, SUPPORTED_YEARS
+from validate import parse_accept_language
 
-SUPPORTED_LANGUAGES = (Language.ENGLISH.lang_code, Language.JAPANESE.lang_code)
+SUPPORTED_LANGUAGES = (Language.EN.lang_code, Language.JA.lang_code)
 DEFAULT_LANGUAGE_CODE = DEFAULT_LANGUAGE.lang_code
-JAPANESE_LANGUAGE_CODE = Language.JAPANESE.lang_code
+JAPANESE_LANGUAGE_CODE = Language.JA.lang_code
 
 
 def assert_language(accept_language_header, expected_lang):

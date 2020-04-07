@@ -311,6 +311,8 @@
     var contributors = document.querySelector('.contributors');
     var contributorsGrid = document.querySelector('.contributor-grid');
     var counter = document.querySelector('#filtered-contributors');
+    var totalText = document.querySelector('#contributors-total-text');
+    var totalContributors = document.querySelector('#contributors-total');
     var shadowNode = document.createElement('div');
     var urlObject = new URL(document.location);
 
@@ -360,7 +362,6 @@
             handleFilterUrl();
         }
 
-        counter.innerText = getFilteredContributorCount();
       });
     }
 
@@ -385,6 +386,13 @@
             }
         } else {
             contributors.classList.add(...teams);
+        }
+        var filteredCount = getFilteredContributorCount();
+        counter.innerText = filteredCount;
+        if ( counter.innerText ===  totalContributors.innerText ) {
+          totalText.classList.add('hidden')
+        } else {
+          totalText.classList.remove('hidden')
         }
     }
     window.addEventListener('popstate', handleFilterUrl);
