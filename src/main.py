@@ -107,7 +107,9 @@ def lang_only(lang):
 @app.route('/')
 @validate
 def root(lang):
-    return redirect(url_for('home', lang=lang, year=DEFAULT_YEAR))
+    response = redirect(url_for('home', lang=lang, year=DEFAULT_YEAR))
+    response.vary = 'Accept-Language'
+    return response
 
 
 @app.route('/<lang>/<year>/table-of-contents')
