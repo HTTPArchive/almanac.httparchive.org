@@ -89,7 +89,7 @@ At the median, 19 requests are sent for desktop and 18 for mobile.
 
 ### First-party vs. third-party
 
-Of the results analyzed so far, the entire size and number of requests were being considered. In a majority of websites however, a significant portion of the JavaScript code fetched and used comes from [third-party](./third-party) sources.
+Of the results analyzed so far, the entire size and number of requests were being considered. In a majority of websites however, a significant portion of the JavaScript code fetched and used comes from [third-party](./third-parties) sources.
 
 Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: how many requests sent are third-party instead of first-party?
 
@@ -127,7 +127,7 @@ For both mobile and desktop clients, more third-party requests are sent than fir
 	<figcaption id="fig9-caption">Figure 9. Distribution of total JavaScript downloaded on mobile.</figcaption>
 </figure>
 
-At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the ["Third Party"](./third-party) chapter.
+At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the ["Third Parties"](./third-parties) chapter.
 
 ## Resource compression
 
