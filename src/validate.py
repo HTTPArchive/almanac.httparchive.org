@@ -13,7 +13,9 @@ TYPO_CHAPTERS = {
     'mobileweb': 'mobile-web',
     'pageweight': 'page-weight',
     'resourcehints': 'resource-hints',
-    'thirdparties': 'third-parties'
+    'thirdparties': 'third-parties',
+    'third-party': 'third-parties',
+    'sécurité': 'security'
 }
 
 
