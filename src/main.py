@@ -218,7 +218,6 @@ def bad_request(e):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    logging.exception('An error occurred during a request due to page not found: %s', request.path)
     return render_template('error/404.html', error=e), 404
 
 
