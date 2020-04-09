@@ -40,7 +40,7 @@
 {% endblock %}
 
 {% block main %}
-  <section class="main">
+  <main class="main">
     <h1>
       Error: {{ self.error() }}
     </h1>
@@ -51,5 +51,8 @@
       <a href="{{ url_for('home', lang=lang, year=year) }}" class="btn">Home</a>
     </div>
     <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" />
-  </section>
+  </main>
+  <script nonce="{{ csp_nonce() }}">
+    gtag('event', '{{ self.error() }}', { 'event_category': 'error', 'event_label': '{{ request.path }}', 'value': 1 });
+  </script>
 {% endblock %}
