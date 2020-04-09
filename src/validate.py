@@ -59,8 +59,6 @@ def validate_chapter(chapter,year):
             logging.debug('Unsupported chapter requested: %s' % chapter)
             abort(404, 'Unsupported chapter requested')
     
-    logging.debug('Using chapter: "%s ' % (chapter))
-
     return chapter
 
 
@@ -74,7 +72,6 @@ def validate_lang_and_year(lang, year):
         abort(404, 'Unsupported year requested')
 
     supported_langs = [l.lang_code for l in SUPPORTED_LANGUAGES.get(year)]
-    logging.debug('Languages supported for %s: %s.' % (year, supported_langs))
 
     # If an unsupported language code is passed in, abort.
     if lang is not None and lang not in supported_langs:
@@ -87,8 +84,6 @@ def validate_lang_and_year(lang, year):
         # Extract the language from the Accept-Language header.
         accept_language_header = request.headers.get('Accept-Language')
         lang = parse_accept_language(accept_language_header, supported_langs)
-
-    logging.debug('Using lang: "%s" and year: "%s" ' % (lang, year))
 
     return lang, year
 
