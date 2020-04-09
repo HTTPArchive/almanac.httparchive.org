@@ -28,13 +28,6 @@ def validate(func):
 
         accepted_args = inspect.getargspec(func).args
 
-        if chapter:
-
-            validated_chapter = validate_chapter(chapter,year)
-
-            if chapter != validated_chapter:
-                return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
-
         lang, year = validate_lang_and_year(lang, year)
 
         if 'lang' in accepted_args:
@@ -42,6 +35,13 @@ def validate(func):
 
         if 'year' in accepted_args:
             kwargs.update({'year': year})
+
+        if chapter:
+
+            validated_chapter = validate_chapter(chapter,year)
+
+            if chapter != validated_chapter:
+                return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
 
         return func(*args, **kwargs)
 
