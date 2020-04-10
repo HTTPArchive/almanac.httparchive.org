@@ -1,6 +1,4 @@
-{% extends "en/2019/base.html" %}
-{% set year = '2019' %}
-{% set lang = 'en' %}
+{% extends "%s/2019/base.html" % lang %}
 
 {% block title %}
   {% block error %}Unknown Error{% endblock %}
@@ -42,17 +40,24 @@
 {% block main %}
   <main class="main">
     <h1>
-      Error: {{ self.error() }}
+      {{ localizedErrorTitle[error.code]|safe if localizedErrorTitle[error.code]|length else error.code }}
     </h1>
+    {{ DEFAULT_LANGUAGE }}
     {% block custom %}
-      <p class="error-message">{{ error }}</p>
+      <p class="error-message">
+        {% if localizedErrorDescription[error.code]|length %}
+        {{ error.code }} {{ localizedErrorDescription[error.code]|safe }}: {{ localizedErrorMessage[error.description] }}
+        {% else %}
+        {{ error }}
+        {% endif %}
+      </p>
     {% endblock %}
     <div class="escape-hatch">
-      <a href="{{ url_for('home', lang=lang, year=year) }}" class="btn">Home</a>
+      <a href="{{ url_for('home', lang=lang, year=year) }}" class="btn">{{ self.home() }}</a>
     </div>
     <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" />
   </main>
   <script nonce="{{ csp_nonce() }}">
-    gtag('event', '{{ self.error() }}', { 'event_category': 'error', 'event_label': '{{ request.path }}', 'value': 1 });
+    //gtag('event', '{{ self.error() }}', { 'event_category': 'error', 'event_label': '{{ request.path }}', 'value': 1 });
   </script>
 {% endblock %}

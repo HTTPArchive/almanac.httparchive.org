@@ -1,0 +1,27 @@
+{% extends "base/2019/error.html" %}
+
+{% block home %}ホームページ{% endblock %}
+
+{% 
+  set localizedErrorTitle = {
+    400: "Error: 要求の形式が正しくありません",
+    404: "Error: ページが見つかりません",
+    500: "Error: 内部サーバーエラー",
+    502: "Error: 一時的なサーバーエラー"
+  }
+%}
+{%
+  set localizedErrorDescription = {
+    400: "<i lang=\"en\">Bad Request</i>",
+    404: "<i lang=\"en\">Not Found</i>",
+    500: "<i lang=\"en\">Internal Server Error</i>",
+    502: "<i lang=\"en\">Temporary Server Error</i>"
+  }
+%}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "サポートされていない年がリクエストされました",
+    "Unsupported chapter requested": "サポートされていない章が要求されました",
+    "Unsupported language requested": "サポートされていない言語がリクエストされました"
+  }
+%}
