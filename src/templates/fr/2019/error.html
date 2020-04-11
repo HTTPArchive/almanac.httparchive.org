@@ -2,28 +2,26 @@
 
 {% block home %}Accueil{% endblock %}
 
+{% block unknown_error %}Erreur inconnue{% endblock %}
+
 {% 
-  set localizedErrorTitle = {
-    400: "Erreur:&nbsp;Mauvaise Demande",
-    404: "Erreur:&nbsp;Page Non Trouvée",
-    500: "Erreur:&nbsp;Erreur Interne du Serveur",
-    502: "Erreur:&nbsp;Erreur de Serveur Temporaire"
+  set localizedStatusCode = {
+    400: "Mauvaise Demande",
+    404: "Page Non Trouvée",
+    500: "Erreur Interne du Serveur",
+    502: "Erreur de Serveur Temporaire"
   }
 %}
-{%
-  set localizedErrorDescription = {
-    400: "<i lang=\"en\">Bad Request</i>",
-    404: "<i lang=\"en\">Not Found</i>",
-    500: "<i lang=\"en\">Internal Server Error</i>",
-    502: "<i lang=\"en\">Temporary Server Error</i>"
-  }
-%}
+{% macro expandedTitle(errorTitle) %}Erreur&nbsp;: {{ errorTitle }}{% endmacro %}
 {%
   set localizedErrorMessage = {
     "Unsupported year requested": "Année non prise en charge demandée",
     "Unsupported chapter requested": "Chapitre non pris en charge demandé",
     "Unsupported language requested": "Langue non prise en charge demandée",
     "Not Found": "L'URL demandée est introuvable sur le serveur. Si vous avez entré l'URL manuellement, vérifiez l'orthographe et réessayez."
-
   }
 %}
+
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>&nbsp;: {{ errorMessage }}
+{% endmacro %}

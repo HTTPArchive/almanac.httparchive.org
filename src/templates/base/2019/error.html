@@ -2,7 +2,7 @@
 
 {% block title %}
   {% block error %}
-    {{ localizedErrorTitle[error.code]|safe if localizedErrorTitle[error.code]|length else "Unknown Error" }}
+    {{ localizedStatusCode[error.code] if localizedStatusCode[error.code]|length else self.unknown_error() }}
   {% endblock %}
 {% endblock %}
 
@@ -42,15 +42,15 @@
 {% block main %}
   <main class="main">
     <h1>
-      {{ localizedErrorTitle[error.code]|safe if localizedErrorTitle[error.code]|length else error.code }}
+      {{ expandedTitle(self.error()) }}
     </h1>
     {% block custom %}
       <p class="error-message">
-        {% if localizedErrorMessage[error.description]|length %}
-        {{ error.code }} {{ localizedErrorDescription[error.code]|safe }}: {{ localizedErrorMessage[error.description] }}
-        {% else %}
+      {% if error.description|length %}
+        {{ expandedErrorMessage(error.code, HTTP_STATUS_CODES[error.code], localizedErrorMessage[error.description] if localizedErrorMessage[error.description]|length else error.Description) }}
+      {% else %}
         {{ error }}
-        {% endif %}
+      {% endif %}
       </p>
     {% endblock %}
     <div class="escape-hatch">

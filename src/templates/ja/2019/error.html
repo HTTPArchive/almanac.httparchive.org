@@ -2,22 +2,17 @@
 
 {% block home %}ホームページ{% endblock %}
 
+{% block unknown_error %}不明なエラー{% endblock %}
+
 {% 
-  set localizedErrorTitle = {
-    400: "Error: 要求の形式が正しくありません",
-    404: "Error: ページが見つかりません",
-    500: "Error: 内部サーバーエラー",
-    502: "Error: 一時的なサーバーエラー"
+  set localizedStatusCode = {
+    400: "要求の形式が正しくありません",
+    404: "ページが見つかりません",
+    500: "内部サーバーエラー",
+    502: "一時的なサーバーエラー"
   }
 %}
-{%
-  set localizedErrorDescription = {
-    400: "<i lang=\"en\">Bad Request</i>",
-    404: "<i lang=\"en\">Not Found</i>",
-    500: "<i lang=\"en\">Internal Server Error</i>",
-    502: "<i lang=\"en\">Temporary Server Error</i>"
-  }
-%}
+{% macro expandedTitle(errorTitle) %}エラー: {{ errorTitle }}{% endmacro %}
 {%
   set localizedErrorMessage = {
     "Unsupported year requested": "サポートされていない年がリクエストされました",
@@ -26,3 +21,6 @@
     "Not Found": "要求されたURLはサーバーで見つかりませんでした。 URLを手動で入力した場合は、スペルを確認してもう一度お試しください。"
   }
 %}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
+{% endmacro %}

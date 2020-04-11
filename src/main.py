@@ -6,6 +6,7 @@ from language import DEFAULT_LANGUAGE, get_language
 import logging
 import random
 from werkzeug.routing import BaseConverter
+from werkzeug.http import HTTP_STATUS_CODES
 from validate import validate
 import os.path
 
@@ -102,6 +103,7 @@ def convertOldImagePath(folder):
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
+app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
 
 
 @app.route('/<lang>/<year>/')

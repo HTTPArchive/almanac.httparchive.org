@@ -2,22 +2,17 @@
 
 {% block home %}Home{% endblock %}
 
+{% block unknown_error %}Unknown Error{% endblock %}
+
 {% 
-  set localizedErrorTitle = {
-    400: "Error: Bad Request",
-    404: "Error: Page Not Found",
-    500: "Error: Internal Server Error",
-    502: "Error: Temporary Server Error"
-  }
-%}
-{%
-  set localizedErrorDescription = {
+  set localizedStatusCode = {
     400: "Bad Request",
-    404: "Not Found",
+    404: "Page Not Found",
     500: "Internal Server Error",
     502: "Temporary Server Error"
   }
 %}
+{% macro expandedTitle(errorTitle) %}Error: {{ errorTitle }}{% endmacro %}
 {%
   set localizedErrorMessage = {
     "Unsupported year requested": "Unsupported year requested",
@@ -26,3 +21,6 @@
     "Not Found": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again."
   }
 %}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} {{ errorDescription }}: {{ errorMessage }}
+{% endmacro %}
