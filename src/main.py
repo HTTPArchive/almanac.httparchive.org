@@ -163,7 +163,7 @@ def sitemap():
     return resp
 
 
-@app.route('/<lang>/<year>/<chapter>')
+@app.route('/<lang>/<year>/<path:chapter>')
 @validate
 def chapter(lang, year, chapter):
     config = get_config(year)
@@ -220,7 +220,7 @@ def redirect_old_images(folder, image):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
-    abort(404)
+    abort(404,"Not Found")
 
 
 @app.errorhandler(400)

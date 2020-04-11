@@ -1,7 +1,9 @@
 {% extends "%s/2019/base.html" % lang %}
 
 {% block title %}
-  {% block error %}Unknown Error{% endblock %}
+  {% block error %}
+    {{ localizedErrorTitle[error.code]|safe if localizedErrorTitle[error.code]|length else "Unknown Error" }}
+  {% endblock %}
 {% endblock %}
 
 {% block styles %}
@@ -42,10 +44,9 @@
     <h1>
       {{ localizedErrorTitle[error.code]|safe if localizedErrorTitle[error.code]|length else error.code }}
     </h1>
-    {{ DEFAULT_LANGUAGE }}
     {% block custom %}
       <p class="error-message">
-        {% if localizedErrorDescription[error.code]|length %}
+        {% if localizedErrorMessage[error.description]|length %}
         {{ error.code }} {{ localizedErrorDescription[error.code]|safe }}: {{ localizedErrorMessage[error.description] }}
         {% else %}
         {{ error }}
@@ -58,6 +59,6 @@
     <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" />
   </main>
   <script nonce="{{ csp_nonce() }}">
-    //gtag('event', '{{ self.error() }}', { 'event_category': 'error', 'event_label': '{{ request.path }}', 'value': 1 });
+    gtag('event', '{{ self.error() }}', { 'event_category': 'error', 'event_label': '{{ request.path }}', 'value': 1 });
   </script>
 {% endblock %}
