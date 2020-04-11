@@ -119,11 +119,11 @@ La Figura 6 anterior muestra los 10 elementos obsoletos más utilizados. La mayo
 Para discutir números sobre el uso de elementos (estándar, obsoleto o personalizado), primero necesitamos establecer alguna perspectiva.
 
 <figure id="fig7">
-  <a href="/static/images/2019/markup/fig7.png">
+  <a href="/static/images/2019/markup/fig7_full.png">
     <img src="/static/images/2019/markup/fig7.png" alt="Figura 7. Principales 150 elementos." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Bar chart showing a decreasing used of elements in descending order: html, head, body, title at above 99% usage, meta, a, div above 98% usage, link, script, img, span above 90% usage, ul, li , p, style, input, br, form above 70% usage, h2, h1, iframe, h3, button, footer, header, nav above 50% usage and other less well-known tags trailing down from below 50% to almost 0% usage.</div>
-  <figcaption>Figura 7. Principales 150 elementos.</figcaption>
+  <figcaption>Figura 7. Principales 150 elementos (<a href="/static/images/2019/markup/fig7_full.png">detalle completo</a>).</figcaption>
 </figure>
 
 En la Figura 7 anterior, se muestran los 150 nombres de elementos principales, contando el número de páginas donde aparecen. Observe lo rápido que se cae el uso.
