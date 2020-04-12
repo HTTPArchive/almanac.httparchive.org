@@ -7,6 +7,8 @@ authors: [ScottHelme, arturjanc]
 reviewers: [bazzadp, ghedo, paulcalvano]
 translators: []
 discuss: 1763
+results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
+queries: 08_Security
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z
 ---
