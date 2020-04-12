@@ -38,7 +38,7 @@ def validate(func):
 
         if chapter:
 
-            validated_chapter = validate_chapter(chapter,year)
+            validated_chapter = validate_chapter(chapter, year)
 
             if chapter != validated_chapter:
                 return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
@@ -59,12 +59,11 @@ def validate_chapter(chapter,year):
             logging.debug('Unsupported chapter requested: %s' % chapter)
             abort(404, 'Unsupported chapter requested')
     
-    logging.debug('Using chapter: "%s ' % (chapter))
-
     return chapter
 
 
 def validate_lang_and_year(lang, year):
+
     if year is None:
         logging.debug('Defaulting the year to: %s' % year)
         year = DEFAULT_YEAR
@@ -73,22 +72,17 @@ def validate_lang_and_year(lang, year):
         logging.debug('Unsupported year requested: %s' % year)
         abort(404, 'Unsupported year requested')
 
-    supported_langs = [l.lang_code for l in SUPPORTED_LANGUAGES.get(year)]
-    logging.debug('Languages supported for %s: %s.' % (year, supported_langs))
+    supported_langs = [l.lang_code for l in (SUPPORTED_LANGUAGES.get(year) or [DEFAULT_LANGUAGE])]
 
     # If an unsupported language code is passed in, abort.
     if lang is not None and lang not in supported_langs:
         logging.debug('Unsupported language set: %s.' % lang)
-        # TODO: Return this as an  error message to the user, and display
-        # it in the custom error page.
-        abort(404)
+        abort(404, 'Unsupported language requested')
 
     if lang is None:
         # Extract the language from the Accept-Language header.
         accept_language_header = request.headers.get('Accept-Language')
         lang = parse_accept_language(accept_language_header, supported_langs)
-
-    logging.debug('Using lang: "%s" and year: "%s" ' % (lang, year))
 
     return lang, year
 
