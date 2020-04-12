@@ -41,9 +41,13 @@ def add_header(response):
     return response
 
 def render_template(template, *args, **kwargs):
+    # If the year has already been set (e.g. for error pages) then use that
+    # Otherwise the requested year, otherwise the default year
     year = kwargs.get('year',request.view_args.get('year', DEFAULT_YEAR))
     supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
 
+    # If the lang has already been set (e.g. for error pages) then use that
+    # Otherwise the requested lang, otherwise the default lang
     lang = kwargs.get('lang',request.view_args.get('lang', DEFAULT_LANGUAGE))
 
     language = get_language(lang)
@@ -65,6 +69,7 @@ def render_template(template, *args, **kwargs):
     return flask_render_template(template, *args, **kwargs)
 
 
+# Render any error template by falling back to Default Year and also Default Lang if needed
 def render_error_template(error, status_code):
     lang = request.view_args.get('lang')
     year = request.view_args.get('year')
@@ -165,6 +170,8 @@ def sitemap():
     return resp
 
 
+# Assume anything else with at least 3 directories is a chapter
+# so we can give lany and year specific error messages
 @app.route('/<lang>/<year>/<path:chapter>')
 @validate
 def chapter(lang, year, chapter):
