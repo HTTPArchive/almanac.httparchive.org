@@ -43,12 +43,12 @@ def add_header(response):
 def render_template(template, *args, **kwargs):
     # If the year has already been set (e.g. for error pages) then use that
     # Otherwise the requested year, otherwise the default year
-    year = kwargs.get('year',request.view_args.get('year', DEFAULT_YEAR))
+    year = kwargs.get('year', request.view_args.get('year', DEFAULT_YEAR))
     supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
 
     # If the lang has already been set (e.g. for error pages) then use that
     # Otherwise the requested lang, otherwise the default lang
-    lang = kwargs.get('lang',request.view_args.get('lang', DEFAULT_LANGUAGE))
+    lang = kwargs.get('lang', request.view_args.get('lang', DEFAULT_LANGUAGE.lang_code))
 
     language = get_language(lang)
     langcode_length = len(lang) + 1 # Probably always 2-character language codes but who knows!
@@ -162,7 +162,6 @@ def accessibility_statement(lang):
 
 
 @app.route('/sitemap.xml')
-@validate
 def sitemap():
     xml = render_template('sitemap.xml')
     resp = app.make_response(xml)

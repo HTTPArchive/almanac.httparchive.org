@@ -26,6 +26,13 @@ def validate(func):
         year = kwargs.get('year')
         chapter = kwargs.get('chapter')
 
+        # Handle the pages that don't follow /lang/year/page
+        # which can end up here if they have trailing slashes
+        if lang == "sitemap.xml":
+            return redirect('/sitemap.xml', code=301)
+        if year == "accessibility-statement":
+            return redirect('/%s/accessibility-statement' % lang, code=301)
+
         accepted_args = inspect.getargspec(func).args
 
         lang, year = validate_lang_and_year(lang, year)
@@ -49,7 +56,6 @@ def validate(func):
 
 
 def validate_chapter(chapter,year):
-
     chapters_for_year = SUPPORTED_CHAPTERS.get(year)
     if chapter not in chapters_for_year:
         if (chapter[-1] == "/"):
@@ -66,7 +72,6 @@ def validate_chapter(chapter,year):
 
 
 def validate_lang_and_year(lang, year):
-
     if year is None:
         logging.debug('Defaulting the year to: %s' % year)
         year = DEFAULT_YEAR
