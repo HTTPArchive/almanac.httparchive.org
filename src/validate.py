@@ -26,8 +26,8 @@ def validate(func):
         year = kwargs.get('year')
         chapter = kwargs.get('chapter')
 
-        # Handle the pages that don't follow /lang/year/page
-        # which can end up here if they have trailing slashes
+        # Handle the pages that don't follow /lang/year/page structure
+        # which can end up here if they have trailing slashes in URL
         if lang == "sitemap.xml":
             return redirect('/sitemap.xml', code=301)
         if year == "accessibility-statement":
@@ -62,6 +62,7 @@ def validate_chapter(chapter,year):
             # Automatically remove any trailing slashes
             return chapter[:-1]
         elif chapter in TYPO_CHAPTERS:
+            # Automatically redirect for configured typos
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
             return TYPO_CHAPTERS.get(chapter)
         else:
