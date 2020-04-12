@@ -6,6 +6,7 @@ from language import DEFAULT_LANGUAGE, get_language
 import logging
 import random
 from werkzeug.routing import BaseConverter
+from werkzeug.http import HTTP_STATUS_CODES
 from validate import validate
 import os.path
 
@@ -40,10 +41,11 @@ def add_header(response):
     return response
 
 def render_template(template, *args, **kwargs):
-    year = request.view_args.get('year', DEFAULT_YEAR)
+    year = kwargs.get('year',request.view_args.get('year', DEFAULT_YEAR))
     supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
 
-    lang = request.view_args.get('lang') or ''
+    lang = kwargs.get('lang',request.view_args.get('lang', DEFAULT_LANGUAGE))
+
     language = get_language(lang)
     langcode_length = len(lang) + 1 # Probably always 2-character language codes but who knows!
 
@@ -61,6 +63,18 @@ def render_template(template, *args, **kwargs):
 
     kwargs.update(supported_languages=template_supported_languages, year=year, lang=lang, language=language, supported_years=SUPPORTED_YEARS)
     return flask_render_template(template, *args, **kwargs)
+
+
+def render_error_template(error, status_code):
+    lang = request.view_args.get('lang')
+    year = request.view_args.get('year')
+    if (not(os.path.isfile('templates/%s/%s/error.html' % (lang, year)))):
+        if (os.path.isfile('templates/%s/%s/error.html' % (lang, DEFAULT_YEAR))):
+            year = DEFAULT_YEAR
+        elif (os.path.isfile('templates/%s/%s/error.html' % (DEFAULT_LANGUAGE.lang_code, DEFAULT_YEAR))):
+            lang = DEFAULT_LANGUAGE.lang_code
+            year = DEFAULT_YEAR
+    return render_template('%s/%s/error.html' % (lang, year), lang=lang, year=year, error=error), status_code
 
 
 def chapter_lang_exists(lang, year, chapter):
@@ -89,6 +103,7 @@ def convertOldImagePath(folder):
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
+app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
 
 
 @app.route('/<lang>/<year>/')
@@ -150,7 +165,7 @@ def sitemap():
     return resp
 
 
-@app.route('/<lang>/<year>/<chapter>')
+@app.route('/<lang>/<year>/<path:chapter>')
 @validate
 def chapter(lang, year, chapter):
     config = get_config(year)
@@ -207,30 +222,30 @@ def redirect_old_images(folder, image):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
-    abort(404)
+    abort(404,"Not Found")
 
 
 @app.errorhandler(400)
 def bad_request(e):
     logging.exception('An error occurred during a request due to bad request error: %s', request.path)
-    return render_template('error/400.html', error=e), 400
+    return render_error_template(error=e, status_code=400)
 
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('error/404.html', error=e), 404
+    return render_error_template(error=e, status_code=404)
 
 
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request due to internal server error: %s', request.path)
-    return render_template('error/500.html', error=e), 500
+    return render_error_template(error=e, status_code=500)
 
 
 @app.errorhandler(502)
 def server_error(e):
     logging.exception('An error occurred during a request due to bad gateway: %s', request.path)
-    return render_template('error/502.html', error=e), 502
+    return render_error_template(error=e, status_code=502)
 
 
 if __name__ == '__main__':
