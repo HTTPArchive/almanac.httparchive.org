@@ -126,11 +126,11 @@ La figure 6 ci-dessus montre les 10 éléments les plus fréquemment utilisés. 
 Afin de discuter des chiffres sur l’utilisation d’éléments (standards, obsolètes ou personnalisés), nous devons d’abord prendre un peu de recul.
 
 <figure id="fig7">
-  <a href="/static/images/2019/markup/fig7.png">
+  <a href="/static/images/2019/markup/fig7_full.png">
    <img src="/static/images/2019/markup/fig7.png" alt="Figure 7. 150 premiers éléments." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Diagramme à barres illustrant une décroissance des éléments par ordre descendant : html, head, body, title au dessus de 99 % d’utilisation, meta, a, div plus de 98 % d’utilisation, link, script, img, span plus de 90 % d’utilisation, ul, li , p, style, input, br, form plus de 70 % d’utilisation, h2, h1, iframe, h3, button, footer, header, nav plus de 50 % d’utilisation et d’autres tags moins connus passant de moins de 50 % à presque 0 %.</div>
- <figcaption id="fig7-caption">Figure 7. 150 premiers éléments.</figcaption>
+ <figcaption id="fig7-caption">Figure 7. 150 premiers éléments (<a href="/static/images/2019/markup/fig7_full.png">détail complet</a>).</figcaption>
 </figure>
 
 Dans la figure 7 ci-dessus, sont affichés les 150 premiers noms d’éléments, en comptant le nombre de pages où ils apparaissent. Notez la rapidité avec laquelle l’utilisation diminue.
