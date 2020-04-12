@@ -44,12 +44,10 @@ def render_template(template, *args, **kwargs):
     # If the year has already been set (e.g. for error pages) then use that
     # Otherwise the requested year, otherwise the default year
     year = kwargs.get('year', request.view_args.get('year', DEFAULT_YEAR))
-    supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
-
+    
     # If the lang has already been set (e.g. for error pages) then use that
     # Otherwise the requested lang, otherwise the default lang
     lang = kwargs.get('lang', request.view_args.get('lang', DEFAULT_LANGUAGE.lang_code))
-
     language = get_language(lang)
     langcode_length = len(lang) + 1 # Probably always 2-character language codes but who knows!
 
@@ -59,6 +57,7 @@ def render_template(template, *args, **kwargs):
 
     # Although a langauge may be enabled, all templates may not have been translated yet
     # So check if each language exists and only return languages for templates that do exist
+    supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
     template_supported_languages = []
     for l in supported_languages:
         langTemplate = 'templates/%s/%s' % (l.lang_code, template[langcode_length:])
