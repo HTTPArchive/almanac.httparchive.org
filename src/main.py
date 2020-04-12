@@ -170,11 +170,8 @@ def sitemap():
     return resp
 
 
-<<<<<<< HEAD
 # Assume anything else with at least 3 directories is a chapter
 # so we can give lany and year specific error messages
-=======
->>>>>>> master
 @app.route('/<lang>/<year>/<path:chapter>')
 @validate
 def chapter(lang, year, chapter):
