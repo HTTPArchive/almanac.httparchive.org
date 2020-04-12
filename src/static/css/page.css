@@ -121,7 +121,7 @@
   min-width: 320px;
 }
 .content > section, .content > article {
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 }
 .content ul li {
   list-style: none;
