@@ -63,7 +63,6 @@ def validate_chapter(chapter,year):
 
 
 def validate_lang_and_year(lang, year):
-
     if year is None:
         logging.debug('Defaulting the year to: %s' % year)
         year = DEFAULT_YEAR
