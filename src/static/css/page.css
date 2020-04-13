@@ -2,6 +2,7 @@
   display: grid;
   grid-template-areas: 'index content';
   grid-template-columns: 300px auto;
+  grid-template-columns: 300px calc(100% - 300px); /* auto sometimes not set correctly on font zoom */
 }
 .table-wrap-container,
 .floating-card {
@@ -118,7 +119,6 @@
 .content {
   grid-area: content;
   margin-left: 30px;
-  min-width: 320px;
 }
 .content > section, .content > article {
   margin-bottom: 64px;
@@ -194,6 +194,7 @@
   display: grid;
   grid-template-areas: 'avatar info';
   grid-template-columns: 76px auto;
+  grid-template-columns: 76px calc(100% - 76px); /* auto sometimes not set correctly on font zoom */
 }
 .authors .name{
   font-size: 24px;
@@ -232,6 +233,7 @@
 #chapter-navigation>a{
   color:#1A2B49;
   width:50%;
+  min-width: 100px;
   display:inline-block;
   position:relative;
 }
@@ -357,6 +359,7 @@ figure .fig-desktop {
       'index'
       'content';
     grid-template-columns: auto;
+    grid-template-columns: 100%; /* auto sometimes not set correctly on font zoom */
   }
   .main .content {
     margin-left: 0;

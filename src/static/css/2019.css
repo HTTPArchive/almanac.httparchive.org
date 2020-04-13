@@ -342,6 +342,11 @@ a:focus, a:hover {
   text-decoration: underline;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* The main wrapper, center aligned */
 .container {
   max-width: 1280px;
@@ -405,13 +410,6 @@ a:focus, a:hover {
 .title-center::before {
   margin-left: auto;
   margin-right: auto;
-}
-
-@media (max-width: 600px) {  
-  .title-lg {
-    font-size: 40px;
-    font-size: 2.5rem;
-  }
 }
 
 @media (max-width: 900px) {
@@ -673,6 +671,9 @@ footer .nav-items {
   justify-content: flex-end;
   align-items: center;
 }
+footer .mobile-ha-social-media {
+  display: none;
+}
 footer .ha-logo {
   grid-area: ha-logo;
   display: flex;
@@ -891,10 +892,21 @@ p.copyright a {
 
 /* Mobile View */
 @media (max-width: 600px) {
-   body, p, td, th, code, li {
-     font-size: 16px;
-     font-size: 1rem;
-   }
+  body, p, td, th, code, li {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  .title-lg {
+    font-size: 40px;
+    font-size: 2.5rem;
+    font-size: min(2.5rem,15vw); /* Cap max font size on mobile, if possible. Allows 200% font-size. */
+  }
+
+  h2 {
+    font-size: min(1.5rem,12vw); /* Cap max font size on mobile, if possible. Allows 200% font-size. */
+  }
+
   /* Header */
   .top-header, footer {
     position: relative;
@@ -907,6 +919,7 @@ p.copyright a {
   }
   a.navigation-logo {
     min-width: auto;
+    max-width: 75vw;
   }
   header nav > ul > li > * {
     margin: 0;
@@ -963,24 +976,31 @@ p.copyright a {
     margin-top: 20px;
   }
 
+  .main {
+    display: block;
+  }
+
   /* Footer */
   footer {
     grid-template-areas:
-      'home-logo language-switcher'
-      'hr hr'
-      'nav-items nav-items'
-      'ha-logo  social-media'
-      'hr-last hr-last'
-      'copyright copyright';
-    grid-template-columns: 1fr 120px 0 0;
+      'home-logo'
+      'hr'
+      'nav-items'
+      'ha-social-media'
+      'hr-last'
+      'copyright';
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
   footer .home-logo {
     grid-area: home-logo;
     margin: 20px 0px;
   }
-  footer .home-logo > img {
-    max-width: 40vw;
+  footer .mobile-ha-social-media {
+    display: grid;
+    grid-area: ha-social-media;
+    grid-template-areas:
+      'ha-logo social-media';
   }
   footer .ha-logo {
     grid-area: ha-logo;
@@ -1029,5 +1049,9 @@ p.copyright a {
   }
   footer hr:last-of-type {
     display: block;
+  }
+
+  .not-mobile {
+    display: none !important;
   }
 }
