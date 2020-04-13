@@ -287,6 +287,29 @@
 }
 
 /* Browser elements */
+
+/**
+ * A word on font-sizing units
+ * ---------------------------
+ * Font-sizes should in general be sized in rem (1rem usually equals 16px)
+ * This allows fonts to be resized in browser, which is better for accessibility
+ * (see https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html).
+ *
+ * We can also use ems, if you wish to nest elements and scale (components), but
+ * this gets tricky quite quickly, so for the most part we use rems.
+ *
+ * We show the px value before, as a fallback for non-rem browsers and to remind
+ * us of the calculated size.
+ *
+ * Margins and paddings should be considered if the need to be relative (em or rem)
+ * or happy not to scale with fonts and want set about in px.
+ * If scaling, then in general top and bottom should scale with element (em), and
+ * left and right with root element (rem) to have consistent alignment so like this:
+ *    margin: 0.56em 0.875rem
+ * (and remember ems are relative to current font size, and rems to root (16px)
+ * see: https://zellwk.com/blog/rem-vs-em/#rems-or-ems%3F for why
+ */
+
 body {
   font-family: 'Lato', sans-serif;
   color: #1A2B49;
@@ -294,6 +317,7 @@ body {
   font-weight: inherit;
   -webkit-font-smoothing: antialiased;
   font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.4em;
 }
 
@@ -334,7 +358,9 @@ a:focus, a:hover {
 
 .subtitle {
   font-size: 28px;
+  font-size: 1.75rem;
   line-height: 42px;
+  line-height: 1.5em;
   font-weight: bold;
 }
 
@@ -365,6 +391,7 @@ a:focus, a:hover {
 
 .title-lg {
   font-size: 48px;
+  font-size: 3rem;
 }
 
 .title-alt::before {
@@ -383,6 +410,7 @@ a:focus, a:hover {
 @media (max-width: 600px) {  
   .title-lg {
     font-size: 40px;
+    font-size: 2.5rem;
   }
 }
 
@@ -395,16 +423,20 @@ a:focus, a:hover {
 
 h2.header {
   font-size: 25px;
+  font-size: 1.5625rem;
   margin: 14px;
+  margin: 0.56em 0.875rem
 }
 
 .btn {
   border: 1px solid #1A2B49;
   border-radius: 50px;
   padding: 15px 30px;
+  padding: 1.07em 1.875rem;
   background: #1A2B49;
   color: #FFFFFF;
   font-size: 14px;
+  font-size: 0.875rem;
   text-decoration: none;
 }
 .btn:hover,
@@ -516,6 +548,7 @@ header .btn + .language-switcher {
   align-items: center;
   position: relative;
   font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .language-switcher select,
@@ -565,6 +598,7 @@ header .btn + .language-switcher {
 .main {
   margin: 0px auto;
   font-size: 17px;
+  font-size: 1.0625rem;
 }
 
 .main a,
@@ -583,6 +617,7 @@ h4 code {
 
 p, td, th, code, li {
   font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.5em;
 }
 
@@ -598,6 +633,7 @@ blockquote {
   position: relative;
   font-style: italic;
   font-size: 19px;
+  font-size: 1.1875rem;
 }
 
 blockquote::before {
@@ -677,6 +713,7 @@ footer hr:last-of-type {
 p.copyright {
   margin: 0;
   font-size: 16px;
+  font-size: 1rem;
   color: #F2F2F2;
 }
 p.copyright a {
@@ -724,7 +761,9 @@ p.copyright a {
   }
   header nav > ul > li > a {
     margin-bottom: 50px;
+    margin-bottom: 3.125rem;
     font-size: 16px;
+    font-size: 1rem;
     line-height: 1.4em
   }
   header nav > ul > li:last-child {
@@ -800,6 +839,7 @@ p.copyright a {
     margin-left: 0;
     margin: 20px 0px;
     font-size: 16px;
+    font-size: 1rem;
   }
   footer hr {
     margin: 20px 0px;
@@ -852,6 +892,7 @@ p.copyright a {
 @media (max-width: 600px) {
    body, p, td, th, code, li {
      font-size: 16px;
+     font-size: 1rem;
    }
   /* Header */
   .top-header, footer {
@@ -872,6 +913,7 @@ p.copyright a {
   header nav > ul > li > a {
     margin-bottom: 50px;
     font-size: 16px;
+    font-size: 1rem;
     line-height: 1.4em
   }
   header nav > ul > li:last-child {
@@ -962,12 +1004,14 @@ p.copyright a {
     margin-left: 0;
     margin: 20px 0px;
     font-size: 16px;
+    font-size: 1rem;
   }
   footer .language-switcher {
     grid-area: language-switcher;
   }
   p.copyright {
     font-size: 12px;
+    font-size: 0.75rem;
   }
   footer .copyright {
     grid-area: copyright;

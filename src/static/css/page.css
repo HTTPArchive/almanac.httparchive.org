@@ -130,6 +130,7 @@
   position: absolute;
   content: "\2022";
   font-size: 16px;
+  font-size: 16rem;
   display: inline-block;
   width: 1em;
   margin-left: -1em
@@ -171,6 +172,7 @@
 .authors,.authors h2{
   border-bottom: 1px solid #1A2B490A;
   font-size: 17px;
+  font-size: 1.0625rem;
 }
 .content .authors ul{
   margin:16px 0;
@@ -195,10 +197,12 @@
 }
 .authors .name{
   font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .authors .tagline{
   font-size: 16px;
+  font-size: 1rem;
 }
 
 .authors .avatar{
@@ -238,18 +242,22 @@
 
 #chapter-navigation .chapter-no{
   font-size:22px;
+  font-size:1.375rem;
   font-weight:bold;
   font-style: italic
 }
 
 #chapter-navigation .chapter-title{
   font-size:18px;
+  font-size:1.125rem;
 }
 
 #chapter-navigation .arrow{
   position:absolute;
   font-size:24px;
+  font-size:1.5rem;
   top:12px;
+  top:0.5em;
 }
 
 #previous-chapter .arrow{
