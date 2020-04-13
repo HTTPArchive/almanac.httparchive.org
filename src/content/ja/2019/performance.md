@@ -7,6 +7,8 @@ authors: [rviscomi]
 reviewers: [JMPerez,obto,sergeychernyshev,zeman]
 translators: [MSakamaki]
 discuss: 1762
+results: https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/
+queries: 07_Performance
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-12-02T00:00:00.000Z
 ---
