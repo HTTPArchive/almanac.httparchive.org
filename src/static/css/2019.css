@@ -304,10 +304,18 @@
  * Margins and paddings should be considered if the need to be relative (em or rem)
  * or happy not to scale with fonts and want set about in px.
  * If scaling, then in general top and bottom should scale with element (em), and
- * left and right with root element (rem) to have consistent alignment so like this:
- *    margin: 0.56em 0.875rem
- * (and remember ems are relative to current font size, and rems to root (16px)
- * see: https://zellwk.com/blog/rem-vs-em/#rems-or-ems%3F for why
+ * left and right with root element (rem) to have consistent alignment (see 
+ * https://zellwk.com/blog/rem-vs-em/#rems-or-ems%3F for why).
+ * So we set margin like this:
+ *
+ *   h2.header {
+ *     font-size: 25px;
+ *     font-size: 1.5625rem;
+ *     margin: 14px;
+ *     margin: 0.56em 0.875rem
+ *   }
+ *
+ * and remember for the non-font elements, ems are relative to current font size (25px in above example), and rems to root (16px)
  */
 
 body {
