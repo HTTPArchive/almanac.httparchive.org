@@ -867,6 +867,7 @@ p.copyright a {
   padding: 6px;
   position: absolute;
   top: -40px;
+  top: -2.35em;
   left: 0px;
   color: white;
   border-right: 1px solid white;
