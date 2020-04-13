@@ -99,9 +99,6 @@
 .index li li a {
   padding-left: 32px;
 }
-.index .current-section {
-  background-color: #c0c0c0;
-}
 .index li li:last-child {
   border-bottom: none;
 }

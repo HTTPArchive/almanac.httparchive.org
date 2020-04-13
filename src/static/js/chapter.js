@@ -277,9 +277,9 @@ function indexHighlighter() {
           var oldItem = currentItem;
           var newItem = indexItems[link];
           if (newItem){
-            newItem.classList.add('current-section');
+            newItem.classList.add('active');
             if (oldItem && oldItem !== newItem) {
-              oldItem.classList.remove('current-section');
+              oldItem.classList.remove('active');
             }
             currentItem = newItem;
 
@@ -339,7 +339,7 @@ function indexHighlighter() {
         var href = indexEntry.getAttribute('href');
         if (href && href.length > 1) {
           href = href.substr(1);
-          indexItems[href] = indexEntry;
+          indexItems[href] = indexEntry.parentNode;
         }
       }
     }
