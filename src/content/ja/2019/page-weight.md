@@ -7,6 +7,8 @@ authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 translators: [ksakae]
 discuss: 1773
+results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
+queries: 18_PageWeight
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z
 ---

@@ -121,7 +121,7 @@
   min-width: 320px;
 }
 .content > section, .content > article {
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 }
 .content ul li {
   list-style: none;
@@ -150,12 +150,17 @@
   font-weight: normal;
 }
 
-.discuss img {
+.chapter_links .btn {
+  display: inline-block;
+  margin: 10px;
+}
+
+.chapter_links img {
   margin-right: 10px;
   vertical-align: top;
 }
-.discuss a:hover img,
-.discuss a:focus img {
+.chapter_links a:hover img,
+.chapter_links a:focus img {
   filter: brightness(0) saturate(100%) invert(86%) sepia(4%) saturate(4357%) hue-rotate(16deg) brightness(136%) contrast(94%);
 }
 #num_comments {
@@ -412,6 +417,7 @@ figure .fig-desktop {
     max-width: 100%;
     height: auto;
   }
+
 }
 
 /* Code highlighting */

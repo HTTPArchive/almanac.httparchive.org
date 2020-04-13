@@ -7,6 +7,8 @@ authors: [ernee, amedina]
 reviewers: [sirjonathan]
 translators: []
 discuss: 1769
+results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
+queries: 14_CMS
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z
 ---
