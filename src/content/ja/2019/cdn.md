@@ -7,6 +7,8 @@ authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 translators: [ksakae]
 discuss: 1772
+results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
+queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-12-04T00:00:00.000Z
 ---

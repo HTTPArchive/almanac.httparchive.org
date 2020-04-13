@@ -7,6 +7,8 @@ authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 translators: [MSakamaki]
 discuss: 1765
+results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
+queries: 10_SEO
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-12-02T00:00:00.000Z
 ---
