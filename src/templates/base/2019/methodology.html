@@ -13,11 +13,13 @@
 <main id="methodology" class="main">
   <nav class="index">
     <div class="index-box floating-card">
-      <h2 class="header">
-        <button class="index-btn">{{ self.index_title() }}</button>
-        <span class="no-button">{{ self.index_title() }}</span>
-      </h2>
+      <div class="index-scroller">
+        <h2 class="header">
+          <button class="index-btn">{{ self.index_title() }}</button>
+          <span class="no-button">{{ self.index_title() }}</span>
+        </h2>
         {{ self.index() }}
+      </div>
     </div>
   </nav>
 
@@ -31,4 +33,5 @@
 {% block scripts %}
 {{ super() }}
 {{ self.index_menu_script() }}
+<script src='/static/js/chapter.js?v=2' defer></script>
 {% endblock %}

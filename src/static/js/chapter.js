@@ -257,81 +257,92 @@ function setDiscussionCount() {
 }
 
 function indexHighlighter() {
+  
+    //Only active this if IntersectionObserver is supported
   if('IntersectionObserver' in window){
-
-    indexItems = {};
-    var currentItem;
     indexScroller = document.querySelector('.index-scroller');
-    console.log
 
-    function highlightIndexEntry(link) {
-      // Don't action this in mobile and slim tablet view as no point 
-      if (window.matchMedia('(min-width: 900px)').matches) {
-        var oldItem = currentItem;
-        var newItem = indexItems[link];
-        if (newItem){
-          newItem.classList.add('current-section');
-          if (oldItem && oldItem !== newItem) {
-            oldItem.classList.remove('current-section');
-          }
-          currentItem = newItem;
+    //Only active this if sticky is supported
+    if (indexScroller && getComputedStyle(indexScroller.parentNode).position === 'sticky') {
 
-          // If the index is too large to display in full then might need to change scroll
-          if (indexScroller.scrollHeight > indexScroller.clientHeight) {
-            if (link === 'introduction') {
-              // If at the index then just reset scroll to 0
-              indexScroller.scrollTop = 0;
-            } else {
-              // Otherise scroll the index scoller to match the window scroller
-              // Which hopefully shows the current highlighted chapter in most cases
-              var scrolledPct = document.documentElement.scrollTop / document.documentElement.scrollHeight;
-              var newIndexScrollPosition =  indexScroller.scrollHeight * scrolledPct;
-              // Set a threshold of 70% so we're not continually moving the menu distracting the reader
-              var threshHold = indexScroller.clientHeight * 0.70;
-              if (newIndexScrollPosition < indexScroller.scrollTop
-                   || (newIndexScrollPosition - indexScroller.scrollTop) > threshHold) {
-                indexScroller.scrollTop = newIndexScrollPosition;
+      // Restrict the page height of the index as we're going to scroll this.
+      indexScroller.classList.add('page-height');
+
+      var indexItems = {};
+      var currentItem;
+
+      function highlightIndexEntry(link) {
+        // Don't action this in mobile and slim tablet view as no point 
+        if (window.matchMedia('(min-width: 900px)').matches) {
+          var oldItem = currentItem;
+          var newItem = indexItems[link];
+          if (newItem){
+            newItem.classList.add('current-section');
+            if (oldItem && oldItem !== newItem) {
+              oldItem.classList.remove('current-section');
+            }
+            currentItem = newItem;
+
+            // If the index is too large to display in full then might need to change scroll
+            if (indexScroller.scrollHeight > indexScroller.clientHeight) {
+              if (link === 'introduction' || link === 'overview') {
+                // If at the index then just reset scroll to 0
+                indexScroller.scrollTop = 0;
+              } else if (link === 'conclusion' || link === 'looking-ahead') {
+                // If at the index then just reset scroll to 0
+                indexScroller.scrollTop = indexScroller.scrollHeight;
+              } else {
+                // Otherise scroll the index scoller to match the window scroller
+                // Which hopefully shows the current highlighted chapter in most cases
+                var scrolledPct = document.documentElement.scrollTop / document.documentElement.scrollHeight;
+                var newIndexScrollPosition =  indexScroller.scrollHeight * scrolledPct;
+                // Set a threshold of 70% so we're not continually moving the menu distracting the reader
+                var threshHold = indexScroller.clientHeight * 0.50;
+                if (newIndexScrollPosition < indexScroller.scrollTop
+                    || (newIndexScrollPosition - indexScroller.scrollTop) > threshHold) {
+                  indexScroller.scrollTop = newIndexScrollPosition;
+                }
               }
             }
           }
         }
       }
-    }
 
-    // Set up a new Interstection Observer for when you're 80% from the top of the page
-    var observer;
-    var options = {
-      root: null,
-      rootMargin: "0px 0px -80% 0px",
-      threshold: null
-    };
-    observer = new IntersectionObserver(function(entries) {
-      for (index = 0; index < entries.length; ++index) {
-        var entry = entries[index];
+      // Set up a new Interstection Observer for when you're 80% from the top of the page
+      var observer;
+      var options = {
+        root: null,
+        rootMargin: "0px 0px -80% 0px",
+        threshold: null
+      };
+      observer = new IntersectionObserver(function(entries) {
+        for (index = 0; index < entries.length; ++index) {
+          var entry = entries[index];
 
-        if (entry.isIntersecting && entry.target && entry.target.id) {
-          highlightIndexEntry(entry.target.id);
+          if (entry.isIntersecting && entry.target && entry.target.id) {
+            highlightIndexEntry(entry.target.id);
+          }
+        }
+      }, options);
+
+      // Add an intersection observer to each heading
+      var all_headings = document.querySelectorAll('article h1, article h2, article h3');
+      for (index = 0; index < all_headings.length; ++index) {
+        var heading = all_headings[index];
+        observer.observe(heading);
+      };
+
+      // Let's create an index of all the index entries once for performance reasons
+      var all_index_entries = document.querySelectorAll('.index a');
+      for (index = 0; index < all_index_entries.length; ++index) {
+        var indexEntry = all_index_entries[index];
+        var href = indexEntry.getAttribute('href');
+        if (href && href.length > 1) {
+          href = href.substr(1);
+          indexItems[href] = indexEntry;
         }
       }
-    }, options);
-
-    // Add an intersection observer to each heading
-    var all_headings = document.querySelectorAll('article h1, article h2, article h3');
-    for (index = 0; index < all_headings.length; ++index) {
-      var heading = all_headings[index];
-      observer.observe(heading);
-    };
-
-    // Let's create an index of all the index entries once for performance reasons
-    var all_index_entries = document.querySelectorAll('.index a');
-    for (index = 0; index < all_index_entries.length; ++index) {
-      var indexEntry = all_index_entries[index];
-      var href = indexEntry.getAttribute('href');
-      if (href && href.length > 1) {
-        href = href.substr(1);
-        indexItems[href] = indexEntry;
-      }
-    };
+    }
   }
 }
 
