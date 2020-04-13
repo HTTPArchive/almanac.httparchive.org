@@ -7,6 +7,8 @@ authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
 translators: [borisschapira, SilentJMA]
 discuss: 1758
+results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
+queries: 03_Markup
 published: 2019-12-23T00:00:00.000Z
 last_updated: 2019-12-23T00:00:00.000Z
 ---
