@@ -28,8 +28,6 @@ def validate(func):
 
         # Handle the pages that don't follow /lang/year/page structure
         # which can end up here if they have trailing slashes in URL
-        if lang == "sitemap.xml":
-            return redirect('/sitemap.xml', code=301)
         if year == "accessibility-statement":
             return redirect('/%s/accessibility-statement' % lang, code=301)
 
