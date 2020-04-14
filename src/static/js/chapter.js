@@ -257,98 +257,95 @@ function setDiscussionCount() {
 }
 
 function indexHighlighter() {
-  
+
     //Only activate this if IntersectionObserver is supported
   if('IntersectionObserver' in window){
     var indexScroller = document.querySelector('.index-scroller');
-    var stickySupported = false;
 
-    // Check if stick is supported. Probably everything that supports IO supports Sticky,
-    // but since we only want to set it to sticky when this works (as confusing UX when not),
-    // so might as well test it.
-    indexScroller && indexScroller.parentNode && indexScroller.parentNode.classList.add('sticky');
-    if (indexScroller && getComputedStyle(indexScroller.parentNode).position === 'sticky') {
-      stickySupported = true;
-    }
-
-    // Check if user has set reduced motion
+    // Check if user has set reduced motion and only continue if not
     var hasOSReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (hasOSReducedMotion) {
       console.log('User has set prefers-reduced-motion to ' + hasOSReducedMotion + ' so not highlighting the current section in chapter index');
-      indexScroller.parentNode.classList.remove('sticky');
-    }
+    } else {
 
-    //Only activate this if sticky is supported and user has not set prefers-reduced-motion
-    if (stickySupported && !hasOSReducedMotion) {
+      // Check if 'position:sticky' is supported (as this is not great UX when not so don't bother)
+      // Add the sticky class (which sets 'position:sticky') and then test if that stuck :-)
+      indexScroller && indexScroller.parentNode && indexScroller.parentNode.classList.add('sticky');
+      var indexScrollerStyles = getComputedStyle(indexScroller.parentNode);
+      if (indexScrollerStyles && indexScrollerStyles.position) {
+        //Handle vendor prefixes (still required for Safari 12)
+        if (indexScrollerStyles.position.endsWith('sticky')) {
 
-      // Restrict the page height of the index as we're going to scroll this.
-      indexScroller.classList.add('page-height');
+          // Restrict the page height of the index to the page-height, as we're going to scroll this.
+          indexScroller.classList.add('page-height');
 
-      var indexItems = {};
-      var currentItem;
+          var indexItems = {};
+          var currentItem;
 
-      function highlightIndexEntry(link) {
-        
-        var oldItem = currentItem;
-        var newItem = indexItems[link];
-        if (newItem){
-          newItem.classList.add('active');
-          if (oldItem && oldItem !== newItem) {
-            oldItem.classList.remove('active');
-          }
-          currentItem = newItem;
+          // Create a function to handle highlighting a new index item
+          // that will be called y bthe IntersectionObserver
+          function highlightIndexEntry(link) {
+            
+            var oldItem = currentItem;
+            var newItem = indexItems[link];
+            if (newItem){
+              newItem.classList.add('active');
+              if (oldItem && oldItem !== newItem) {
+                oldItem.classList.remove('active');
+              }
+              currentItem = newItem;
 
-          // If the index is too large to display in full then might need to change scroll
-          if (indexScroller.scrollHeight > indexScroller.clientHeight) {
-            var currentPosition = currentItem.scrollTop;
-            var currentNode = currentItem;
-            // Walk the node back up to the index-scroller to get the total position of the element
-            while (currentNode && !currentNode.parentNode.classList.contains('index-scroller')) {
-              currentPosition = currentPosition + currentNode.offsetTop;
-              currentNode = currentNode.parentNode;
+              // If the index is too large to display in full then might need to change scroll
+              if (indexScroller.scrollHeight > indexScroller.clientHeight) {
+                var currentPosition = currentItem.scrollTop;
+                var currentNode = currentItem;
+                // Walk the node back up to the index-scroller to get the total position of the element
+                while (currentNode && !currentNode.parentNode.classList.contains('index-scroller')) {
+                  currentPosition = currentPosition + currentNode.offsetTop;
+                  currentNode = currentNode.parentNode;
+                }
+
+                // Show the current image in the middle of the screen
+                indexScroller.scrollTop = currentPosition - (indexScroller.clientHeight / 2);
+                  
+              }
             }
-
-            var indexHeight = indexScroller.clientHeight
-
-            // Show the current image in the middle of the screen
-            indexScroller.scrollTop = currentPosition - (indexHeight / 2);
-              
           }
-        }
-      }
 
-      // Set up a new Interstection Observer for when you're 80% from the top of the page
-      var observer;
-      var options = {
-        root: null,
-        rootMargin: "0px 0px -80% 0px",
-        threshold: null
-      };
-      observer = new IntersectionObserver(function(entries) {
-        for (index = 0; index < entries.length; ++index) {
-          var entry = entries[index];
+          // Set up a new Interstection Observer for when the title is 80% from the bottom of the page
+          var options = {
+            root: null,
+            rootMargin: "0px 0px -80% 0px",
+            threshold: null
+          };
+          var observer = new IntersectionObserver(function(entries) {
+            for (index = 0; index < entries.length; ++index) {
+              var entry = entries[index];
 
-          if (entry.isIntersecting && entry.target && entry.target.id) {
-            highlightIndexEntry(entry.target.id);
+              if (entry.isIntersecting && entry.target && entry.target.id) {
+                highlightIndexEntry(entry.target.id);
+              }
+            }
+          }, options);
+
+          // Add an intersection observer to each heading
+          var all_headings = document.querySelectorAll('article h1, article h2, article h3');
+          for (index = 0; index < all_headings.length; ++index) {
+            var heading = all_headings[index];
+            observer.observe(heading);
+          };
+
+          // Let's create an index of all the index entries once, at page load
+          // This is done for performance reasons to save doing a DOM lookup each time
+          var all_index_entries = document.querySelectorAll('.index a');
+          for (index = 0; index < all_index_entries.length; ++index) {
+            var indexEntry = all_index_entries[index];
+            var href = indexEntry.getAttribute('href');
+            if (href && href.length > 1) {
+              href = href.substr(1);
+              indexItems[href] = indexEntry.parentNode;
+            }
           }
-        }
-      }, options);
-
-      // Add an intersection observer to each heading
-      var all_headings = document.querySelectorAll('article h1, article h2, article h3');
-      for (index = 0; index < all_headings.length; ++index) {
-        var heading = all_headings[index];
-        observer.observe(heading);
-      };
-
-      // Let's create an index of all the index entries once for performance reasons
-      var all_index_entries = document.querySelectorAll('.index a');
-      for (index = 0; index < all_index_entries.length; ++index) {
-        var indexEntry = all_index_entries[index];
-        var href = indexEntry.getAttribute('href');
-        if (href && href.length > 1) {
-          href = href.substr(1);
-          indexItems[href] = indexEntry.parentNode;
         }
       }
     }
