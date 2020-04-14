@@ -260,7 +260,8 @@ function indexHighlighter() {
   
     //Only active this if IntersectionObserver is supported
   if('IntersectionObserver' in window){
-    indexScroller = document.querySelector('.index-scroller');
+    var indexScroller = document.querySelector('.index-scroller');
+    var menu = indexScroller.querySelector('ul');
 
     //Only active this if sticky is supported
     if (indexScroller && getComputedStyle(indexScroller.parentNode).position === 'sticky') {
@@ -272,38 +273,31 @@ function indexHighlighter() {
       var currentItem;
 
       function highlightIndexEntry(link) {
-        // Don't action this in mobile and slim tablet view as no point 
-        if (window.matchMedia('(min-width: 900px)').matches) {
-          var oldItem = currentItem;
-          var newItem = indexItems[link];
-          if (newItem){
-            newItem.classList.add('active');
-            if (oldItem && oldItem !== newItem) {
-              oldItem.classList.remove('active');
-            }
-            currentItem = newItem;
+        
+        var oldItem = currentItem;
+        var newItem = indexItems[link];
+        if (newItem){
+          newItem.classList.add('active');
+          if (oldItem && oldItem !== newItem) {
+            oldItem.classList.remove('active');
+          }
+          currentItem = newItem;
 
-            // If the index is too large to display in full then might need to change scroll
-            if (indexScroller.scrollHeight > indexScroller.clientHeight) {
-              if (link === 'introduction' || link === 'overview') {
-                // If at the index then just reset scroll to 0
-                indexScroller.scrollTop = 0;
-              } else if (link === 'conclusion' || link === 'looking-ahead') {
-                // If at the index then just reset scroll to 0
-                indexScroller.scrollTop = indexScroller.scrollHeight;
-              } else {
-                // Otherise scroll the index scoller to match the window scroller
-                // Which hopefully shows the current highlighted chapter in most cases
-                var scrolledPct = document.documentElement.scrollTop / document.documentElement.scrollHeight;
-                var newIndexScrollPosition =  indexScroller.scrollHeight * scrolledPct;
-                // Set a threshold of 70% so we're not continually moving the menu distracting the reader
-                var threshHold = indexScroller.clientHeight * 0.50;
-                if (newIndexScrollPosition < indexScroller.scrollTop
-                    || (newIndexScrollPosition - indexScroller.scrollTop) > threshHold) {
-                  indexScroller.scrollTop = newIndexScrollPosition;
-                }
-              }
+          // If the index is too large to display in full then might need to change scroll
+          if (indexScroller.scrollHeight > indexScroller.clientHeight) {
+            var currentPosition = currentItem.scrollTop;
+            var currentNode = currentItem;
+            // Walk the node back up to the index-scroller to get the total position of the element
+            while (currentNode && !currentNode.parentNode.classList.contains('index-scroller')) {
+              currentPosition = currentPosition + currentNode.offsetTop;
+              currentNode = currentNode.parentNode;
             }
+
+            var indexHeight = indexScroller.clientHeight
+
+            // Show the current image in the middle of the screen
+            indexScroller.scrollTop = currentPosition - (indexHeight / 2);
+              
           }
         }
       }
