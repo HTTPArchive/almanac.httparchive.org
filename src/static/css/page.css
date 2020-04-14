@@ -49,6 +49,7 @@
 }
 
 .index .index-box.sticky {
+  position: -webkit-sticky;
   position: sticky;
 }
 
