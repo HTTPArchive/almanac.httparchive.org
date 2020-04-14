@@ -355,7 +355,7 @@ function indexHighlighter() {
   }
 }
 
+indexHighlighter();
 removeLazyLoadingOnPrint();
 upgradeInteractiveFigures();
 setDiscussionCount();
-indexHighlighter();
