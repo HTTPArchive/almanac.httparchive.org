@@ -55,6 +55,7 @@
 
 .page-height {
   max-height: 100vh;
+  overflow: auto;
 }
 .index .header {
   color: #1A2B49;

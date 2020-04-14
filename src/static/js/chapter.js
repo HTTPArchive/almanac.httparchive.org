@@ -257,7 +257,6 @@ function setDiscussionCount() {
 }
 
 function indexHighlighter() {
-
     //Only activate this if IntersectionObserver is supported
   if('IntersectionObserver' in window){
     var indexScroller = document.querySelector('.index-scroller');
