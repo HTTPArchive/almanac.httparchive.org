@@ -258,13 +258,28 @@ function setDiscussionCount() {
 
 function indexHighlighter() {
   
-    //Only active this if IntersectionObserver is supported
+    //Only activate this if IntersectionObserver is supported
   if('IntersectionObserver' in window){
     var indexScroller = document.querySelector('.index-scroller');
-    var menu = indexScroller.querySelector('ul');
+    var stickySupported = false;
 
-    //Only active this if sticky is supported
+    // Check if stick is supported. Probably everything that supports IO supports Sticky,
+    // but since we only want to set it to sticky when this works (as confusing UX when not),
+    // so might as well test it.
+    indexScroller && indexScroller.parentNode && indexScroller.parentNode.classList.add('sticky');
     if (indexScroller && getComputedStyle(indexScroller.parentNode).position === 'sticky') {
+      stickySupported = true;
+    }
+
+    // Check if user has set reduced motion
+    var hasOSReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (hasOSReducedMotion) {
+      console.log('User has set prefers-reduced-motion to ' + hasOSReducedMotion + ' so not highlighting the current section in chapter index');
+      indexScroller.parentNode.classList.remove('sticky');
+    }
+
+    //Only activate this if sticky is supported and user has not set prefers-reduced-motion
+    if (stickySupported && !hasOSReducedMotion) {
 
       // Restrict the page height of the index as we're going to scroll this.
       indexScroller.classList.add('page-height');
