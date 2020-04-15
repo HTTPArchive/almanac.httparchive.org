@@ -263,7 +263,7 @@ function indexHighlighter() {
     return;
   }
 
-  var indexScroller = document.querySelector('.index-scroller');
+  var chapterIndex = document.querySelector('.index-box');
 
   // Check if user has set reduced motion and only continue if not
   var hasOSReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -277,31 +277,41 @@ function indexHighlighter() {
   // Check if 'position:sticky' is supported (as this is not great UX when not so don't bother)
   // Add the sticky class (which sets 'position:sticky') and then test if that stuck :-)
   // Also use endsWith to support vendor prefixes (Safari v12 needs this)
-  indexScroller && indexScroller.parentNode && indexScroller.parentNode.classList.add('sticky');
-  var indexScrollerStyles = getComputedStyle(indexScroller.parentNode);
-  if (!indexScrollerStyles || !indexScrollerStyles.position || !indexScrollerStyles.position.endsWith('sticky')) {
+  chapterIndex && chapterIndex.classList.add('sticky');
+  var chapterIndexStyles = getComputedStyle(chapterIndex);
+  if (!chapterIndexStyles || !chapterIndexStyles.position || !chapterIndexStyles.position.endsWith('sticky')) {
     gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
     return
   }
 
   // Restrict the page height of the index to the page-height, as we're going to scroll this.
-  indexScroller.classList.add('page-height');
+  chapterIndex.classList.add('page-height');
 
   // Create a function to handle highlighting a new index item
   // that will be called by the IntersectionObserver
   function highlightIndexEntry(link) {
     
-    var indexLink = document.querySelector('.index-scroller a[href="#' + link + '"]');
-    if (indexLink){
-      var oldIndexLink = document.querySelector('.index-scroller .active');
+    var indexLink = document.querySelector('.index-box a[href="#' + link + '"]');
+    var oldIndexLink = document.querySelector('.index-box .active');
+
+    if (indexLink && indexLink != oldIndexLink) {
       if(oldIndexLink) {
         oldIndexLink.classList.remove('active');
       }
       indexLink.parentNode.classList.add('active');
 
       // If the index is too large to display in full then might need to change scroll
-      if (indexScroller.scrollHeight > indexScroller.clientHeight) {
-        indexLink.scrollIntoView({behavior: 'smooth', block: 'center'});
+      if (chapterIndex.scrollHeight > chapterIndex.clientHeight) {
+        var currentPosition = indexLink.scrollTop;
+        var currentNode = indexLink;
+        // Walk the node back up to the index-scroller to get the total position of the element
+        while (currentNode && currentNode.parentNode != chapterIndex) {
+          currentPosition = currentPosition + currentNode.offsetTop;
+          currentNode = currentNode.parentNode;
+        }
+
+        // Show the current image in the middle of the screen
+        chapterIndex.scrollTop = currentPosition - (chapterIndex.clientHeight / 2);
       }
     }
   }

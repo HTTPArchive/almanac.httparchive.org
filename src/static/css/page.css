@@ -428,10 +428,10 @@ figure .fig-desktop {
     max-width: 100%;
     height: auto;
   }
-  .index .index-box.sticky {
+  .index .sticky {
     position: static;
   }
-  .index .index-scroller {
+  .index .index-box {
     max-height: 100%;
   }
 }
