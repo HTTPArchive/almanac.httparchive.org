@@ -45,6 +45,17 @@
 .index .index-box {
   margin: 20px 0;
   padding: 8px 16px;
+  top: 0;
+}
+
+.index .index-box.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.page-height {
+  max-height: 100vh;
+  overflow: auto;
 }
 .index .header {
   color: #1A2B49;
@@ -417,7 +428,12 @@ figure .fig-desktop {
     max-width: 100%;
     height: auto;
   }
-
+  .index .sticky {
+    position: static;
+  }
+  .index .index-box {
+    max-height: 100%;
+  }
 }
 
 /* Code highlighting */
