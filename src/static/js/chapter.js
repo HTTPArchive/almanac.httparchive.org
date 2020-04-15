@@ -308,7 +308,9 @@ function indexHighlighter() {
       return;
     }
     // Otherwise if too large to display in full then scroll to this element
-    var currentPosition = indexLink.scrollTop;
+    // We'd love to use scrollIntoView but unfortunately won't work if user
+    // is still scrolling in main doc, so do it the old fashioned way
+    var currentPosition = indexLink.offsetTop;
     var currentNode = indexLink;
     // Walk the node back up to the index-scroller to get the total offset
     // of this entry, relative to the full Index
