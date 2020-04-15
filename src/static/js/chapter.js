@@ -256,6 +256,100 @@ function setDiscussionCount() {
   }
 }
 
+function indexHighlighter() {
+    //Only activate this if IntersectionObserver is supported
+  if(!('IntersectionObserver' in window)) {
+    gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
+    return;
+  }
+
+  var chapterIndex = document.querySelector('.index-box');
+
+  // Check if user has set reduced motion and only continue if not
+  var hasOSReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (hasOSReducedMotion) {
+    console.log('User has set prefers-reduced-motion to ' + hasOSReducedMotion + ' so not highlighting the current section in chapter index');
+    gtag('event', 'prefers-reduced-motion', { 'event_category': 'user', 'event_label': 'reduce', 'value': 0 });
+    gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
+    return;
+  }
+
+  // Check if 'position:sticky' is supported (as this is not great UX when not so don't bother)
+  // Add the sticky class (which sets 'position:sticky') and then test if that stuck :-)
+  // Also use endsWith to support vendor prefixes (Safari v12 needs this)
+  chapterIndex && chapterIndex.classList.add('sticky');
+  var chapterIndexStyles = getComputedStyle(chapterIndex);
+  if (!chapterIndexStyles || !chapterIndexStyles.position || !chapterIndexStyles.position.endsWith('sticky')) {
+    gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
+    return;
+  }
+
+  // Restrict the page height of the index to the page-height, as we're going to scroll this.
+  chapterIndex.classList.add('page-height');
+
+  // Create a function to handle highlighting a new index item
+  // that will be called by the IntersectionObserver
+  function highlightIndexEntry(link) {
+    
+    var indexLink = document.querySelector('.index-box a[href="#' + link + '"]');
+    var oldIndexLink = document.querySelector('.index-box .active');
+
+    if (!indexLink || indexLink.isEqualNode(oldIndexLink)) {
+      return;
+    }
+
+    if(oldIndexLink) {
+      oldIndexLink.classList.remove('active');
+    }
+    indexLink.parentNode.classList.add('active');
+
+    // If the index is displayed in full then we're done!
+    if (chapterIndex.scrollHeight <= chapterIndex.clientHeight) {
+      return;
+    }
+    // Otherwise if too large to display in full then scroll to this element
+    // We'd love to use scrollIntoView but unfortunately won't work if user
+    // is still scrolling in main doc, so do it the old fashioned way
+    var currentPosition = indexLink.offsetTop;
+    var currentNode = indexLink;
+    // Walk the node back up to the index-scroller to get the total offset
+    // of this entry, relative to the full Index
+    while (currentNode && currentNode.parentNode != chapterIndex) {
+      currentPosition = currentPosition + currentNode.offsetTop;
+      currentNode = currentNode.parentNode;
+    }
+    // Show the current image in the middle of the screen
+    chapterIndex.scrollTop = currentPosition - (chapterIndex.clientHeight / 2);
+  }
+
+  // Set up a new Interstection Observer for when the title is 80% from the bottom of the page
+  var options = {
+    root: null,
+    rootMargin: "0px 0px -80% 0px",
+    threshold: null
+  };
+  var observer = new IntersectionObserver(function(entries) {
+    for (index = 0; index < entries.length; ++index) {
+      var entry = entries[index];
+
+      if (entry.isIntersecting && entry.target && entry.target.id) {
+        highlightIndexEntry(entry.target.id);
+      }
+    }
+  }, options);
+
+  // Add an intersection observer to each heading
+  var all_headings = document.querySelectorAll('article h1, article h2, article h3');
+  for (index = 0; index < all_headings.length; ++index) {
+    var heading = all_headings[index];
+    observer.observe(heading);
+  };
+
+  gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'enabled', 'value': 0 });
+
+}
+
+indexHighlighter();
 removeLazyLoadingOnPrint();
 upgradeInteractiveFigures();
 setDiscussionCount();
