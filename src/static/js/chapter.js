@@ -265,6 +265,11 @@ function indexHighlighter() {
 
   var chapterIndex = document.querySelector('.index-box');
 
+  // If not index - then nothing to do!
+  if (!chapterIndex) {
+    return;
+  }
+
   // Check if user has set reduced motion and only continue if not
   var hasOSReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (hasOSReducedMotion) {
