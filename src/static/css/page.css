@@ -33,7 +33,7 @@
 }
 .code-block, pre {
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .code-block code {
   width: 100%;
@@ -449,7 +449,7 @@ figure .fig-desktop {
 }
 .code-block pre {
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .code-block code {
   width: 100%;
