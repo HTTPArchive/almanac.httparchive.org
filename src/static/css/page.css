@@ -297,13 +297,14 @@ img {
   height: auto;
 }
 
-.header-anchor-link {
-  text-decoration: none;
-}
-
 .anchor-link {
+  text-decoration: none;
   padding-left: 30px;
   margin-left: -30px;
+}
+
+figure .anchor-link {
+  text-decoration: underline;
 }
 
 .anchor-link:hover::before,
