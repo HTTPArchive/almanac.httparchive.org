@@ -51,6 +51,9 @@ const parse_file = async (markdown,chapter) => {
   const html = converter.makeHtml(markdown);
   let body = html;
 
+  // Make headers links
+  const header_regex = /<h([2-6]) id="(.*?)">(.*?)<\/h[2-6]>/gi;
+  body = body.replace(header_regex, "<h$1 id=\"$2\"><a href=\"#$2\">$3</a></h$1>");
   body = generate_figure_ids(body);
   body = wrap_tables(body);
   body = lazy_load_content(body);
