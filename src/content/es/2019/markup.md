@@ -37,7 +37,7 @@ En lugar, como en el estudio original de Hixie, Lo que veremos es cuántos sitio
 
 En 2005, la encuesta de Hixie enumeró los elementos más comunes utilizados en las páginas. Los 3 principales fueron `html`, `head` y `body` lo que señaló como interesante porque son opcionales y creados por el _parser_ si se omiten. Dado que utilizamos el DOM después del _parseo_ , aparecerán universalmente en nuestros datos. Por lo tanto, comenzaremos con el cuarto elemento más utilizado. A continuación se muestra una comparación de los datos de entonces a ahora. (También he incluido la comparación de frecuencias aquí solo por diversión).
 
-<figure id="fig-1" data-markdown="1">
+<figure id="fig1" data-markdown="1">
 
 2005 (por sitio) | 2019 (por sitio) | 2019 (frecuencia)
 -- | -- | --
@@ -55,25 +55,25 @@ tr | span | option
 
 ### Elementos por página
 
-<figure id="fig-2">
+<figure id="fig2">
   <img src="/static/images/2019/markup/hixie_elements_per_page.png" alt="Distribución del análisis de Hixie en 2005 de las frecuencias de los elementos." width="600" height="318">
   <figcaption>Figura 2. Distribución del análisis de Hixie en 2005 de las frecuencias de los elementos.</figcaption>
 </figure>
 
-<figure id="fig-3">
+<figure id="fig3">
     <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
   <figcaption>Figura 3. Frecuencias de elementos de acuerdo al 2019.</figcaption>
 </figure>
 
 Comparando los últimos datos en la Figura 3 con los del informe de Hixie de 2005 en la Figura 2, podemos ver que el tamaño promedio de los árboles DOM ha aumentado.
 
-<figure id="fig-4">
+<figure id="fig4">
   <img src="/static/images/2019/markup/hixie_element_types_per_page.png" alt="Histograma del análisis de Hixie de 2005 de los tipos de elementos por página." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
   <div id="fig4-description" class="visually-hidden">Graph that relative frequency is a bell curve around the 19 elements point.</div>
   <figcaption id="fig4-caption">Figura 4. Histograma del análisis de Hixie de 2005 de los tipos de elementos por página.</figcaption>
 </figure>
 
-<figure id="fig-5">
+<figure id="fig5">
     <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive"></iframe>
   <figcaption>Figura 5. Histograma de tipos de elementos por página a partir de 2019.</figcaption>
 </figure>
@@ -106,7 +106,7 @@ Además, el 15% de las páginas de escritorio y el 16% de las páginas móviles 
 
 <p class="note">Nota: Mucho de esto es muy probable debido al uso de productos en lugar de que los autores individuales sigan creando manualmente el marcado.</p>
 
-<figure id="fig-6">
+<figure id="fig6">
   <a href="/static/images/2019/markup/fig6.png">
     <img src="/static/images/2019/markup/fig6.png" alt="Figura 6. Elementos en desuso más utilizados." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
   </a>
@@ -120,7 +120,7 @@ La Figura 6 anterior muestra los 10 elementos obsoletos más utilizados. La mayo
 
 Para discutir números sobre el uso de elementos (estándar, obsoleto o personalizado), primero necesitamos establecer alguna perspectiva.
 
-<figure id="fig-7">
+<figure id="fig7">
   <a href="/static/images/2019/markup/fig7_full.png">
     <img src="/static/images/2019/markup/fig7.png" alt="Figura 7. Principales 150 elementos." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
   </a>
@@ -168,7 +168,7 @@ Incluso `<video>`, por ejemplo, no cumple con el corte. Aparece solo en el 4% de
 
 Es interesante, entonces, ver cómo se ve la distribución de estos elementos y cuáles tienen más del 1% de uso.
 
-<figure id="fig-8">
+<figure id="fig8">
   <a href="https://rainy-periwinkle.glitch.me/scatter/html">
     <img src="/static/images/2019/markup/element_categories.png" alt="Elemento de popularidad categorizado por estandarización" aria-labelledby="fig8-caption" width="600" height="1065">
   </a>
@@ -218,7 +218,7 @@ Pero hay muchos recién llegados que tampoco estaban en el informe original de H
 
 Comparemos esto con algunos de los elementos HTML nativos que están por debajo de la barra del 5%, por perspectiva.
 
-<figure id="fig-9">
+<figure id="fig9">
   <a href="/static/images/2019/markup/fig9.png">
     <img src="/static/images/2019/markup/fig9.png" alt="Figura 9. Popularidad de elementos nativos y específicos del producto por debajo del 5% de adopción." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
   </a>
@@ -244,7 +244,7 @@ Hay algunos elementos populares que probablemente no sean tan desafiantes:
 
 Colocar estos elementos en nuestro mismo cuadro anterior para obtener una perspectiva se parece a esto (nuevamente, varía ligeramente según el conjunto de datos)
 
-<figure id="fig-10">
+<figure id="fig10">
     <a href="/static/images/2019/markup/fig10.png">
       <img src="/static/images/2019/markup/fig10.png" alt="Figura 10. Otros elementos populares en el contexto de elementos nativos y específicos del producto con menos del 5% de adopción." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
     </a>

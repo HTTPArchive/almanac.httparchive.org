@@ -37,7 +37,7 @@ Instead, as in Hixie's original study,  what we will look at is how many sites i
 
 In 2005, Hixie's survey listed the top few most commonly used elements on pages.  The top 3 were `html`, `head` and `body` which he noted as interesting because they are optional and created by the parser if omitted.  Given that we use the post-parsed DOM,  they'll show up universally in our data.  Thus, we'll begin with the 4th most used element. Below is a comparison of the data from then to now (I've included the frequency comparison here as well just for fun).
 
-<figure id="fig-1" data-markdown="1">
+<figure id="fig1" data-markdown="1">
 
 2005 (per site) | 2019 (per site) | 2019 (frequency)
 -- | -- | --
@@ -55,13 +55,13 @@ tr | span | option
 
 ### Elements per page
 
-<figure id="fig-2">
+<figure id="fig2">
   <img src="/static/images/2019/markup/hixie_elements_per_page.png" alt="Distribution of Hixie's 2005 analysis of element frequencies" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="318">
     <div id="fig2-description" class="visually-hidden">Graph showing a decreasing distribution of relative frequency as the number of elements increases</div>
   <figcaption id="fig2-caption">Figure 2. Distribution of Hixie's 2005 analysis of element frequencies.</figcaption>
 </figure>
 
-<figure id="fig-3">
+<figure id="fig3">
   <a href="/static/images/2019/markup/fig3.png">
     <img src="/static/images/2019/markup/fig3.png" alt="Figure 3. Element frequencies as of 2019" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
   </a>
@@ -71,13 +71,13 @@ tr | span | option
 
 Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Figure 2, we can see that the average size of DOM trees has gotten bigger.
 
-<figure id="fig-4">
+<figure id="fig4">
   <img src="/static/images/2019/markup/hixie_element_types_per_page.png" alt="Histogram of Hixie's 2005 analysis of element types per page" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
    <div id="fig4-description" class="visually-hidden">Graph that relative frequency is a bell curve around the 19 elements point.</div>
   <figcaption id="fig4-caption">Figure 4. Histogram of Hixie's 2005 analysis of element types per page.</figcaption>
 </figure>
 
-<figure id="fig-5">
+<figure id="fig5">
     <a href="/static/images/2019/markup/fig5.png">
       <img src="/static/images/2019/markup/fig5.png" alt="Figure 5. Histogram of element types per page as of 2019." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
     </a>
@@ -113,7 +113,7 @@ Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated el
 
 <p class="note">Note: A lot of this is very likely due to the use of products rather than individual authors continuing to manually create this markup.</p>
 
-<figure id="fig-6">
+<figure id="fig6">
   <a href="/static/images/2019/markup/fig6.png">
     <img src="/static/images/2019/markup/fig6.png" alt="Figure 6. Most frequently used deprecated elements." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
   </a>
@@ -127,7 +127,7 @@ Figure 6 above shows the top 10 most frequently used deprecated elements. Most o
 
 In order to discuss numbers about the use of elements (standard, deprecated or custom), we first need to establish some perspective.
 
-<figure id="fig-7">
+<figure id="fig7">
   <a href="/static/images/2019/markup/fig7_full.png">
     <img src="/static/images/2019/markup/fig7.png" alt="Figure 7. Top 150 elements." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
   </a>
@@ -175,7 +175,7 @@ Even `<video>`, for example, doesn't make that cut. It appears on only 4% of des
 
 It's interesting, then, to see what the distribution of these elements looks like and which ones have more than 1% use.
 
-<figure id="fig-8">
+<figure id="fig8">
   <a href="https://rainy-periwinkle.glitch.me/scatter/html">
     <img src="/static/images/2019/markup/element_categories.png" alt="Figure 8. Element popularity categorized by standardization" aria-labelledby="fig8-caption" width="600" height="1065">
   </a>
@@ -225,7 +225,7 @@ But there are plenty of newcomers that weren't in Hixie's original report too, a
 
 Let's compare these to a few of the native HTML elements that are below the 5% bar, for perspective.
 
-<figure id="fig-9">
+<figure id="fig9">
   <a href="/static/images/2019/markup/fig9.png">
     <img src="/static/images/2019/markup/fig9.png" alt="Figure 9. Popularity of product-specific and native elements under 5% adoption." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
   </a>
@@ -251,7 +251,7 @@ There are some popular elements that are probably not so challenging:
 
 Placing these into our same chart as above for perspective looks something like this (again, it varies slightly based on the dataset)
 
-<figure id="fig-10">
+<figure id="fig10">
     <a href="/static/images/2019/markup/fig10.png">
       <img src="/static/images/2019/markup/fig10.png" alt="Figure 10. Other popular elements in the context of product-specific and native elements with under 5% adoption." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
     </a>
