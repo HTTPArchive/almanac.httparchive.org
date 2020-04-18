@@ -311,7 +311,7 @@ figure .anchor-link {
 .anchor-link:focus::before {
   content: url('/static/images/link.svg');
   content: url('/static/images/link.svg') / '';
-  left: -30px;
+  left: -25px;
   position: relative;
   float: left;
   width: 0px;
