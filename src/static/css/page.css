@@ -301,7 +301,8 @@ article h2 a,
 article h3 a,
 article h4 a,
 article h5 a,
-article h6 a {
+article h6 a,
+.authors h2 a {
   text-decoration: none;
   padding-left: 30px;
   margin-left: -30px;
@@ -322,6 +323,8 @@ article h5 a:hover::before,
 article h5 a:focus::before,
 article h6 a:hover::before,
 article h6 a:focus::before,
+.authors h2 a:hover::before,
+.authors h2 a:focus::before,
 article figcaption a:first-child:hover::before,
 article figcaption a:first-child:focus::before {
   content: url('/static/images/link.png');
