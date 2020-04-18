@@ -7,6 +7,8 @@ authors: [samdutton, alankent]
 reviewers: [voltek62]
 translators: [JMPerez]
 discuss: 1768
+results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
+queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-07T00:00:00.000Z
 ---

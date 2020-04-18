@@ -7,6 +7,8 @@ authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
 translators: [borisschapira]
 discuss: 1774
+results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
+queries: 19_Resource_Hints
 published: 2019-12-24T00:00:00.000Z
 last_updated: 2019-12-24T00:00:00.000Z
 ---

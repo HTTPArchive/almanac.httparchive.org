@@ -28,7 +28,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=2">
+<link rel="stylesheet" href="/static/css/page.css?v=3">
 {% endblock %}
 
 {% block scripts %}
@@ -60,9 +60,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {# Calls to action for readers who want to engage more with this chapter. #}
 {% macro render_actions() %}
-  <div class="discuss">
+  <div class="chapter_links">
     <a class="alt btn" href="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}">
       <img src="/static/images/discuss.png" alt="{{ self.discuss_this_chapter() }}" height="24" width="24" loading="lazy" /><span id="num_comments"></span> <span data-translation id="comment-singular">{{ self.comment() }}</span><span data-translation id="comment-plural">{{ self.comments() }}</span>
+    </a>
+    <a class="alt btn" href="{{ metadata.get('results') }}/">
+      <img src="/static/images/results.png" alt="" height="24" width="24" loading="lazy" />{{ self.results() }}
+    </a>
+    <a class="alt btn" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/master/sql/{{ year }}/{{ metadata.get('queries')  }}/">
+      <img src="/static/images/queries.png" alt="" height="24" width="24" loading="lazy" />{{ self.queries() }}
     </a>
   </div>
 {% endmacro %}
