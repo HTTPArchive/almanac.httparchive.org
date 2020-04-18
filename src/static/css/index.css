@@ -268,7 +268,8 @@ p {
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: bold;
-  margin: 0.714em 0.714rem;
+  margin: 10px 10px;
+  margin: 0.714em 0.625rem;
 }
 
 .websites-tested div:last-of-type,

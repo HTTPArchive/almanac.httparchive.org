@@ -141,7 +141,7 @@
   position: absolute;
   content: "\2022";
   font-size: 16px;
-  font-size: 16rem;
+  font-size: 1rem;
   display: inline-block;
   width: 1em;
   margin-left: -1em
