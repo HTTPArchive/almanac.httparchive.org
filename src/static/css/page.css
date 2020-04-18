@@ -297,36 +297,17 @@ img {
   height: auto;
 }
 
-article h2 a,
-article h3 a,
-article h4 a,
-article h5 a,
-article h6 a,
-.authors h2 a {
+.header-anchor-link {
   text-decoration: none;
+}
+
+.anchor-link {
   padding-left: 30px;
   margin-left: -30px;
 }
 
-figcaption a:first-child {
-  padding-left: 30px;
-  margin-left: -30px;
-}
-
-article h2 a:hover::before,
-article h2 a:focus::before,
-article h3 a:hover::before,
-article h3 a:focus::before,
-article h4 a:hover::before,
-article h4 a:focus::before,
-article h5 a:hover::before,
-article h5 a:focus::before,
-article h6 a:hover::before,
-article h6 a:focus::before,
-.authors h2 a:hover::before,
-.authors h2 a:focus::before,
-article figcaption a:first-child:hover::before,
-article figcaption a:first-child:focus::before {
+.anchor-link:hover::before,
+.anchor-link:focus::before {
   content: url('/static/images/link.png');
   content: url('/static/images/link.png') / '';
   left: -30px;

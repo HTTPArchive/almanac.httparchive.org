@@ -4,7 +4,7 @@ const generate_figure_ids = (html) => {
   let i = 1;
   html = html.replace(re, () => `<figure id='fig-${i++}'>`);
   const figcaption_regex = /<figcaption(.*?)>(.*?)([0-9]+)\./gi;
-  return html.replace(figcaption_regex, "<figcaption$1><a href=\"#fig-$3\">$2 $3.</a>");
+  return html.replace(figcaption_regex, "<figcaption$1><a href=\"#fig-$3\" class=\"anchor-link\">$2 $3.</a>");
 };
 
 module.exports = {

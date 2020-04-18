@@ -102,7 +102,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_authors() %}
   {% for author in metadata.get('authors') %}
   <h2 id="authors">
-    <a href="#authors">
+    <a href="#authors" class="anchor-link header-anchor-link">
     {% if loop.length == 1 %}{{ self.author() }}{% endif -%}
     {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
     </a>
