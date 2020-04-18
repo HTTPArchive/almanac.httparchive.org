@@ -43,7 +43,7 @@ Así que vamos a profundizar y ver qué resultados podemos encontrar.
 
 ### First Contentful Paint
 
-<figure id="fig1">
+<figure id="fig-1">
   <a href="/static/images/2019/performance/fig1.png">
     <img src="/static/images/2019/performance/fig1.png" alt="Figura 1. Distribución del rendimiento rápido, moderado y lento de FCP." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&amp;format=interactive">
   </a>
@@ -57,7 +57,7 @@ En la Figura 1 anterior, se puede ver cómo se distribuyen las experiencias de F
 
 Para clasificar si un sitio web es lo suficientemente **rápido** utilizaremos la nueva metodología [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#categories) (PSI), donde al menos el 75% de las experiencias de FCP del sitio web deben ser más rápidas que 1 segundo. Del mismo modo, un sitio web lo suficientemente **lento** tiene un 25% o más de experiencias FCP más lentas que 3 segundos. Decimos que un sitio web tiene un rendimiento **moderado** cuando no cumple con ninguna de estas condiciones.
 
-<figure id="fig2">
+<figure id="fig-2">
   <a href="/static/images/2019/performance/fig2.png">
     <img src="/static/images/2019/performance/fig2.png" alt="Figure 2. Distribución de sitios web etiquetados con FCP rápido, moderado o lento." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&amp;format=interactive">
   </a>
@@ -71,7 +71,7 @@ Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes di
 
 #### FCP por dispositivo
 
-<figure id="fig3">
+<figure id="fig-3">
   <a href="/static/images/2019/performance/fig3.png">
     <img src="/static/images/2019/performance/fig3.png" alt="Figura 3. Distribución del rendimiento en sitios 'de escritorio' según su FCP, entre rápidos, moderados y lentos." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&amp;format=interactive">
   </a>
@@ -79,7 +79,7 @@ Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes di
   <figcaption id="fig3-caption">Figura 3. Distribución del rendimiento en sitios <em>de escritorio</em> según su FCP, entre rápidos, moderados y lentos.</figcaption>
 </figure>
 
-<figure id="fig4">
+<figure id="fig-4">
   <a href="/static/images/2019/performance/fig4.png">
     <img src="/static/images/2019/performance/fig4.png" alt="Figura 4. Distribución del rendimiento en sitios 'móviles' según su FCP, entre rápidos, moderados y lentos." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&amp;format=interactive">
   </a>
@@ -89,7 +89,7 @@ Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes di
 
 En las Figuras 3 y 4 anteriores las distribuciones de FCP se desglosan por computadora y teléfono. Es sutil, pero el torso de la distribución rápida de FCP en escritorio parece ser más convexo que la distribución para usuarios de teléfonos. Esta aproximación visual sugiere que los usuarios de escritorio experimentan una mayor proporción general de FCP rápido. Para verificar esto, podemos aplicar la metodología PSI a cada distribución.
 
-<figure id="fig5">
+<figure id="fig-5">
   <a href="/static/images/2019/performance/fig5.png">
     <img src="/static/images/2019/performance/fig5.png" alt="Figura 5. Distribución de sitios web etiquetados como que tienen FCP rápido, moderado o lento, desglosados por tipo de dispositivo." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&amp;format=interactive">
   </a>
@@ -103,7 +103,7 @@ Según la clasificación de PSI, el 17% de los sitios web tienen experiencias r�
 
 #### FCP por tipo de conexión efectiva
 
-<figure id="fig6">
+<figure id="fig-6">
   <a href="/static/images/2019/performance/fig6.png">
     <img src="/static/images/2019/performance/fig6.png" alt="Figura 6. Distribución de sitios web etiquetados como que tienen FCP rápido, moderado o lento, desglosados por ECT." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&amp;format=interactive">
   </a>
@@ -115,7 +115,7 @@ En la Figura 6 anterior, las experiencias de FCP se agrupan por la ECT de la exp
 
 #### FCP por geografía
 
-<figure id="fig7">
+<figure id="fig-7">
   <a href="/static/images/2019/performance/fig7.png">
     <img src="/static/images/2019/performance/fig7.png" alt="Figura 7. Distribución de sitios web etiquetados como que tienen FCP rápido, moderado o lento, desglosados por geo." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive">
   </a>
@@ -131,7 +131,7 @@ Otros geos de APAC cuentan una historia diferente. Tailandia, Vietnam, Indonesia
 
 [Time to First Byte](https://web.dev/time-to-first-byte) (TTFB) es una medida de cuánto tiempo tarda la página web desde el momento de la navegación del usuario hasta que recibe el primer byte de la respuesta.
 
-<figure id="fig8">
+<figure id="fig-8">
   <a href="/static/images/2019/performance/nav-timing.png">
     <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/performance/nav-timing.png" alt="Figura 8. Diagrama de la API de Navigation Timing de los eventos en la navegación de una página." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="2580" height="868">
   </a>
@@ -141,7 +141,7 @@ Otros geos de APAC cuentan una historia diferente. Tailandia, Vietnam, Indonesia
 
 Para ayudar a explicar TTFB y los muchos factores que lo afectan, tomemos prestado un diagrama de la [especificación de la API de Navigation Timing](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API). En la Figura 8 anterior, TTFB es la duración desde `startTime` hasta` responseStart`, que incluye todo lo que se encuentra entre: `unload`, `redirects`, `AppCache`,` DNS`, `SSL`,` TCP` y el tiempo el servidor pasa gestionando la petición. Dado ese contexto, veamos cómo los usuarios están experimentando esta métrica.
 
-<figure id="fig9">
+<figure id="fig-9">
   <a href="/static/images/2019/performance/fig9.png">
     <img src="/static/images/2019/performance/fig9.png" alt="Figura 9. Distribución del rendimiento TTFB rápido, moderado y lento." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&amp;format=interactive">
   </a>
@@ -155,7 +155,7 @@ Mirando la curva de las proporciones rápidas, la forma es bastante diferente de
 
 Apliquemos una etiqueta de velocidad TTFB a cada sitio web, inspirándonos en la metodología PSI utilizada anteriormente para FCP. Si un sitio web ofrece TTFB rápido al 75% o más de experiencias de usuario, se etiqueta como **rápido**. De lo contrario, si sirve TTFB **lento** al 25% o más de experiencias de usuario, es lento. Si ninguna de esas condiciones se aplica, es **moderada**.
 
-<figure id="fig10">
+<figure id="fig-10">
   <a href="/static/images/2019/performance/fig10.png">
     <img src="/static/images/2019/performance/fig10.png" alt="Figura 10. Distribución de sitios web etiquetados como que tienen TTFB rápido, moderado o lento." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&amp;format=interactive">
   </a>
@@ -167,7 +167,7 @@ El 42% de los sitios web tienen experiencias de TTFB lento. Esto es significativ
 
 #### TTFB por geo
 
-<figure id="fig11">
+<figure id="fig-11">
   <a href="/static/images/2019/performance/fig11.png">
     <img src="/static/images/2019/performance/fig11.png" alt="Figura 11. Distribución de sitios web etiquetados como que tienen TTFB rápido, moderado o lento, desglosados por geo." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=685447534&amp;format=interactive">
   </a>
@@ -183,7 +183,7 @@ La última métrica de campo que veremos es [First Input Delay](https://develope
 
 Comencemos definiendo algunos umbrales. De acuerdo con la nueva metodología PSI, un FID **rápido** es uno que ocurre en menos de 100 ms. Esto le da a la aplicación suficiente tiempo para manejar el evento de entrada y proporcionar feedback al usuario en un momento que se siente instantáneo. Un FID **lento** es uno que ocurre en 300 ms o más. Todo entre medias es **moderado**.
 
-<figure id="fig12">
+<figure id="fig-12">
   <a href="/static/images/2019/performance/fig12.png">
     <img src="/static/images/2019/performance/fig12.png" alt="Figura 12. Distribución de sitios web según si su rendimiento FID  es rápido, moderado o lento." aria-labelledby="fig12-caption"  aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=60679078&amp;format=interactive">
   </a>
@@ -193,7 +193,7 @@ Comencemos definiendo algunos umbrales. De acuerdo con la nueva metodología PSI
 
 Seguimos el mismo procedimiento que hasta ahora. Este gráfico muestra la distribución de las experiencias FID rápidas, moderadas y lentas de los sitios web. Éste es un gráfico dramáticamente diferente de los gráficos anteriores para FCP y TTFB. (Ver [Figura 1](#fig1) y [Figura 9](#fig9) respectivamente). La curva de FID rápido desciende muy lentamente del 100% al 75% y luego cae en picada. La gran mayoría de las experiencias de FID son rápidas para la mayoría de los sitios web.
 
-<figure id="fig13">
+<figure id="fig-13">
   <a href="/static/images/2019/performance/fig13.png">
     <img src="/static/images/2019/performance/fig13.png" alt="Figura 13. Distribución de sitios web etiquetados como que tienen un TTFB rápido, moderado o lento." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&amp;format=interactive">
   </a>
@@ -207,7 +207,7 @@ En comparación con las métricas anteriores, la distribución del rendimiento a
 
 #### FID por dispositivo
 
-<figure id="fig14">
+<figure id="fig-14">
   <a href="/static/images/2019/performance/fig14.png">
     <img src="/static/images/2019/performance/fig14.png" alt="Figura 14. Distribución de sitios web de 'escritorio' según si su rendimiento de FID es rápido, moderado o lento." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&amp;format=interactive">
   </a>
@@ -215,7 +215,7 @@ En comparación con las métricas anteriores, la distribución del rendimiento a
   <figcaption id="fig14-caption">Figura 14. Distribución de sitios web de <em>escritorio</em> según si su rendimiento de FID es rápido, moderado o lento.</figcaption>
 </figure>
 
-<figure id="fig15">
+<figure id="fig-15">
   <a href="/static/images/2019/performance/fig15.png">
     <img src="/static/images/2019/performance/fig15.png" alt="Figura 15. Distribución de sitios web <em>móviles</em> según si su rendimiento de FID es rápido, moderado o lento." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&amp;format=interactive">
   </a>
@@ -225,7 +225,7 @@ En comparación con las métricas anteriores, la distribución del rendimiento a
 
 Al desglosar el FID por dispositivo queda claro que hay dos historias muy diferentes. Los usuarios de escritorio disfrutan de un FID rápido casi todo el tiempo. Por supuesto, hay algunos sitios web que sirven una experiencia lenta de vez en cuando, pero los resultados son predominantemente rápidos. Los usuarios móviles, por otro lado, tienen lo que parece ser una de dos posibles experiencias: bastante rápido (pero no tan a menudo como en escritorio) y casi nunca rápido. Los usuarios experimentan este último sólo en un ~10% de los sitios web situados en la cola, pero esto sigue siendo una diferencia sustancial.
 
-<figure id="fig16">
+<figure id="fig-16">
   <a href="/static/images/2019/performance/fig16.png">
     <img src="/static/images/2019/performance/fig16.png" alt="Figura 16. Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosado por tipo de dispositivo." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&amp;format=interactive">
   </a>
@@ -237,7 +237,7 @@ Cuando aplicamos el etiquetado PSI a las experiencias de escritorio y móvil, la
 
 #### FID por tipo de conexión efectiva
 
-<figure id="fig17">
+<figure id="fig-17">
   <a href="/static/images/2019/performance/fig17.png">
     <img src="/static/images/2019/performance/fig17.png" alt="Figura 17. Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por ECT." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&amp;format=interactive">
   </a>
@@ -251,7 +251,7 @@ Los resultados de ECT anteriores parecen sugerir que existe una correlación ent
 
 #### FID por geo
 
-<figure id="fig18">
+<figure id="fig-18">
   <a href="/static/images/2019/performance/fig18.png">
     <img src="/static/images/2019/performance/fig18.png" alt="Figura 18. Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por geo." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=11500240&amp;format=interactive">
   </a>

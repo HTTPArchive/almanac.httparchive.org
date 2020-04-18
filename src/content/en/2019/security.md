@@ -415,7 +415,7 @@ Another recent addition to cookies are Cookie Prefixes. These use the name of yo
 
 Currently the name of your cookie can be prefixed with either `__Secure-` or `__Host-`, with both offering additional security to the cookie.
 
-<figure >
+<figure>
   <table>
     <tr>
      <td></td>

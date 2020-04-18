@@ -43,7 +43,7 @@ So let's dive in and see what insights we can find.
 
 ### First Contentful Paint
 
-<figure id="fig1">
+<figure id="fig-1">
   <a href="/static/images/2019/performance/fig1.png">
     <img src="/static/images/2019/performance/fig1.png" alt="Figure 1. Distribution of websites' fast, moderate, and slow FCP performance." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&amp;format=interactive">
   </a>
@@ -57,7 +57,7 @@ In Figure 1 above, you can see how FCP experiences are distributed across the we
 
 In order to categorize whether a website is sufficiently **fast** we will use the new [PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#categories) (PSI) methodology, where at least 75% of the website's FCP experiences must be faster than 1 second. Similarly, a sufficiently **slow** website has 25% or more FCP experiences slower than 3 seconds. We say a website has **moderate** performance when it doesn't meet either of these conditions.
 
-<figure id="fig2">
+<figure id="fig-2">
   <a href="/static/images/2019/performance/fig2.png">
     <img src="/static/images/2019/performance/fig2.png" alt="Figure 2. Distribution of websites labeled as having fast, moderate, or slow FCP." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&amp;format=interactive">
   </a>
@@ -71,7 +71,7 @@ To help us understand how users experience FCP across different devices, let's s
 
 #### FCP by device
 
-<figure id="fig3">
+<figure id="fig-3">
   <a href="/static/images/2019/performance/fig3.png">
     <img src="/static/images/2019/performance/fig3.png" alt="Figure 3. Distribution of <em>desktop</em> websites' fast, moderate, and slow FCP performance." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&amp;format=interactive">
   </a>
@@ -79,7 +79,7 @@ To help us understand how users experience FCP across different devices, let's s
   <figcaption id="fig3-caption">Figure 3. Distribution of <em>desktop</em> websites' fast, moderate, and slow FCP performance.</figcaption>
 </figure>
 
-<figure id="fig4">
+<figure id="fig-4">
   <a href="/static/images/2019/performance/fig4.png">
     <img src="/static/images/2019/performance/fig4.png" alt="Figure 4. Distribution of 'phone' websites' fast, moderate, and slow FCP performance." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&amp;format=interactive">
   </a>
@@ -89,7 +89,7 @@ To help us understand how users experience FCP across different devices, let's s
 
 In Figures 3 and 4 above, the FCP distributions are broken down by desktop and phone. It's subtle, but the torso of the desktop fast FCP distribution appears to be more convex than the distribution for phone users. This visual approximation suggests that desktop users experience a higher overall proportion of fast FCP. To verify this, we can apply the PSI methodology to each distribution.
 
-<figure id="fig5">
+<figure id="fig-5">
   <a href="/static/images/2019/performance/fig5.png">
     <img src="/static/images/2019/performance/fig5.png" alt="Figure 5. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by device type." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&amp;format=interactive">
   </a>
@@ -103,7 +103,7 @@ Why might desktop users experience fast FCP on a higher proportion of websites t
 
 #### FCP by effective connection type
 
-<figure id="fig6">
+<figure id="fig-6">
   <a href="/static/images/2019/performance/fig6.png">
     <img src="/static/images/2019/performance/fig6.png" alt="Figure 6. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by ECT." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&amp;format=interactive">
   </a>
@@ -115,7 +115,7 @@ In Figure 6 above, FCP experiences are grouped by the ECT of the user experience
 
 #### FCP by geography
 
-<figure id="fig7">
+<figure id="fig-7">
   <a href="/static/images/2019/performance/fig7.png">
     <img src="/static/images/2019/performance/fig7.png" alt="Figure 7. Distribution of websites labeled as having fast, moderate, or slow FCP, broken down by geo." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=792398959&amp;format=interactive">
   </a>
@@ -131,7 +131,7 @@ Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India 
 
 [Time to First Byte](https://web.dev/time-to-first-byte) (TTFB) is a measure of how long the web page took from the time of the user's navigation until they received the first byte of the response.
 
-<figure id="fig8">
+<figure id="fig-8">
   <a href="/static/images/2019/performance/nav-timing.png">
     <img alt="Navigation Timing API diagram of the events in a page navigation" src="/static/images/2019/performance/nav-timing.png" alt="Figure 8. Navigation Timing API diagram of the events in a page navigation." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="2580" height="868">
   </a>
@@ -141,7 +141,7 @@ Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India 
 
 To help explain TTFB and the many factors that affect it, let's borrow a diagram from the [Navigation Timing API spec](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API). In Figure 8 above, TTFB is the duration from `startTime` to `responseStart`, including everything in between: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`, `TCP`, and the time the server spends handling the request. Given that context, let's see how users are experiencing this metric.
 
-<figure id="fig9">
+<figure id="fig-9">
   <a href="/static/images/2019/performance/fig9.png">
     <img src="/static/images/2019/performance/fig9.png" alt="Figure 9. Distribution of websites' fast, moderate, and slow TTFB performance." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&amp;format=interactive">
   </a>
@@ -155,7 +155,7 @@ Looking at the curve of the fast proportions, the shape is quite different from 
 
 Let's apply a TTFB speed label to each website, taking inspiration from the PSI methodology used above for FCP. If a website serves fast TTFB to 75% or more user experiences, it's labeled as **fast**. Otherwise, if it serves **slow** TTFB to 25% or more user experiences, it's slow. If neither of those conditions apply, it's **moderate**.
 
-<figure id="fig10">
+<figure id="fig-10">
   <a href="/static/images/2019/performance/fig10.png">
     <img src="/static/images/2019/performance/fig10.png" alt="Figure 10. Distribution of websites labeled as having fast, moderate, or slow TTFB." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&amp;format=interactive">
   </a>
@@ -167,7 +167,7 @@ Let's apply a TTFB speed label to each website, taking inspiration from the PSI 
 
 #### TTFB by geo
 
-<figure id="fig11">
+<figure id="fig-11">
   <a href="/static/images/2019/performance/fig11.png">
     <img src="/static/images/2019/performance/fig11.png" alt="Figure 11. Distribution of websites labeled as having fast, moderate, or slow TTFB, broken down by geo." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=685447534&amp;format=interactive">
   </a>
@@ -183,7 +183,7 @@ The last field metric we'll look at is [First Input Delay](https://developers.go
 
 Let's start by defining some thresholds. According to the new PSI methodology, a **fast** FID is one that happens in less than 100 ms. This gives the application enough time to handle the input event and provide feedback to the user in a time that feels instantaneous. A **slow** FID is one that happens in 300 ms or more. Everything in between is **moderate**.
 
-<figure id="fig12">
+<figure id="fig-12">
   <a href="/static/images/2019/performance/fig12.png">
     <img src="/static/images/2019/performance/fig12.png" alt="Figure 12. Distribution of websites' fast, moderate, and slow FID performance." aria-labelledby="fig12-caption"  aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=60679078&amp;format=interactive">
   </a>
@@ -193,7 +193,7 @@ Let's start by defining some thresholds. According to the new PSI methodology, a
 
 You know the drill by now. This chart shows the distribution of websites' fast, moderate, and slow FID experiences. This is a dramatically different chart from the previous charts for FCP and TTFB. (See [Figure 1](#fig1) and [Figure 9](#fig9), respectively). The curve of fast FID very slowly descends from 100% to 75%, then takes a nosedive. The overwhelming majority of FID experiences are fast for most websites.
 
-<figure id="fig13">
+<figure id="fig-13">
   <a href="/static/images/2019/performance/fig13.png">
     <img src="/static/images/2019/performance/fig13.png" alt="Figure 13. Distribution of websites labeled as having fast, moderate, or slow TTFB." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&amp;format=interactive">
   </a>
@@ -207,7 +207,7 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 
 #### FID by device
 
-<figure id="fig14">
+<figure id="fig-14">
   <a href="/static/images/2019/performance/fig14.png">
     <img src="/static/images/2019/performance/fig14.png" alt="Figure 14. Distribution of 'desktop' websites' fast, moderate, and slow FID performance." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&amp;format=interactive">
   </a>
@@ -215,7 +215,7 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
   <figcaption id="fig14-caption">Figure 14. Distribution of <em>desktop</em> websites' fast, moderate, and slow FID performance.</figcaption>
 </figure>
 
-<figure id="fig15">
+<figure id="fig-15">
   <a href="/static/images/2019/performance/fig15.png">
     <img src="/static/images/2019/performance/fig15.png" alt="Figure 15. Distribution of 'phone' websites' fast, moderate, and slow FID performance." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&amp;format=interactive">
   </a>
@@ -225,7 +225,7 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 
 By breaking FID down by device, it becomes clear that there are two very different stories. Desktop users enjoy fast FID almost all the time. Sure, there are some websites that throw out a slow experience now and then, but the results are predominantly fast. Mobile users, on the other hand, have what seem to be one of two experiences: pretty fast (but not quite as often as desktop) and almost never fast. The latter is experienced by users on only the tail 10% of websites, but this is still a substantial difference.
 
-<figure id="fig16">
+<figure id="fig-16">
   <a href="/static/images/2019/performance/fig16.png">
     <img src="/static/images/2019/performance/fig16.png" alt="Figure 16. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by device type." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&amp;format=interactive">
   </a>
@@ -237,7 +237,7 @@ When we apply the PSI labeling to desktop and phone experiences, the distinction
 
 #### FID by effective connection type
 
-<figure id="fig17">
+<figure id="fig-17">
   <a href="/static/images/2019/performance/fig17.png">
     <img src="/static/images/2019/performance/fig17.png" alt="Figure 17. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by ECT." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&amp;format=interactive">
   </a>
@@ -251,7 +251,7 @@ The ECT results above seem to suggest that there is a correlation between connec
 
 #### FID by geo
 
-<figure id="fig18">
+<figure id="fig-18">
   <a href="/static/images/2019/performance/fig18.png">
     <img src="/static/images/2019/performance/fig18.png" alt="Figure 18. Distribution of websites labeled as having fast, moderate, or slow FID, broken down by geo." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="940" data-width="600" data-height="940" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=11500240&amp;format=interactive">
   </a>
