@@ -1,5 +1,5 @@
 const generate_figure_ids = (html) => {
-  const re = /<figure>|<figure data-markdown>/gi;
+  const re = /<figure>|<figure markdown>|<figure data-markdown="1">/gi;
 
   let i = 1;
   html = html.replace(re, () => `<figure id='fig-${i++}'>`);
