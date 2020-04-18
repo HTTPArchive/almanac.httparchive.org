@@ -308,8 +308,8 @@ img {
 
 .anchor-link:hover::before,
 .anchor-link:focus::before {
-  content: url('/static/images/link.png');
-  content: url('/static/images/link.png') / '';
+  content: url('/static/images/link.svg');
+  content: url('/static/images/link.svg') / '';
   left: -30px;
   position: relative;
   float: left;
