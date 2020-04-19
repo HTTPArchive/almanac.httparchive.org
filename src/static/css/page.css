@@ -456,9 +456,6 @@ figure .fig-desktop {
   .index .index-box {
     max-height: 100%;
   }
-  .content > section, .content > article {
-    margin-left: 0;
-  }
   .anchor-link:hover::before,
   .anchor-link:focus::before {
     content: '';
