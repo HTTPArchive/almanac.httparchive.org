@@ -128,12 +128,11 @@
 
 .content {
   grid-area: content;
-  margin-left: 30px;
+  margin-left: 40px;
   min-width: 320px;
 }
 .content > section, .content > article {
   margin-bottom: 32px;
-  margin-left: 10px;
 }
 .content ul li {
   list-style: none;
