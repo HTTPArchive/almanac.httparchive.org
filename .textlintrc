@@ -1,0 +1,15 @@
+{
+  "rules": 
+  {
+    "preset-japanese" : {
+      "sentence-length": false,
+    },
+    "preset-ja-technical-writing": {
+      "sentence-length": false,
+      "ja-no-weak-phrase": false,
+      "no-exclamation-question-mark": false
+    },
+    "spellcheck-tech-word": true,
+    "textlint-rule-preset-ja-spacing": true
+  }
+}
