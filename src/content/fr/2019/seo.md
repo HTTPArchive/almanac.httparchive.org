@@ -7,6 +7,8 @@ authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
 translators: [AymenLoukil]
 discuss: 1765
+results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
+queries: 10_SEO
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2019-11-23T00:00:00.000Z
 ---
@@ -15,7 +17,7 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 L'optimisation pour les moteurs de recherche (SEO) n'est pas seulement un passe-temps ou un projet parallèle pour les spécialistes du marketing digital, ce métier est crucial pour le succès d'un site web. Le but principal du référencement naturel est de s'assurer qu'un site internet est optimisé pour les robots des moteurs de recherche qui ont besoin d'explorer et d'indexer ses pages, ainsi que pour les utilisateurs qui naviguent et consomment des contenus. Le référencement a un impact sur tous ceux qui travaillent sur un site web, du développeur qui le construit au marketeur digital qui en fait la promotion auprès de nouveaux clients potentiels.
 
-Mettons en perspective l'importance du référencement naturel. En Avril 2019, l'industrie du référencement a regardé avec horreur et fascination [ASOS a signalé une baisse de revenues de 87%](https://www.bbc.co.uk/news/business-47877688) après une "année difficile". La marque a attribué ce résultat à une baisse de classement et de visibilité dans les moteurs de recherche survenue après le lancement de plus de 200 microsites et à des changements importants dans la navigation de leur site web, entre autres changements techniques. Ouch.
+Mettons en perspective l'importance du référencement naturel. En Avril 2019, l'industrie du référencement a regardé avec horreur et fascination [ASOS a signalé une baisse de revenues de 87&nbsp;%](https://www.bbc.co.uk/news/business-47877688) après une "année difficile". La marque a attribué ce résultat à une baisse de classement et de visibilité dans les moteurs de recherche survenue après le lancement de plus de 200 microsites et à des changements importants dans la navigation de leur site web, entre autres changements techniques. Ouch.
 
 L'objectif du chapitre SEO du web Almanac est d'analyser les éléments des sites web qui ont un impact sur l'exploration et l'indexation des contenus pour les moteurs de recherche et, par conséquence, sur leurs performances. Dans ce chapitre, nous allons voir dans quelle mesure les sites web les plus fréquentés sont prêts à offrir une excellente expérience aux utilisateurs et aux moteurs de recherche, et quels sont ceux qui ont encore du travail à faire.
 
