@@ -53,7 +53,6 @@ Nous avons évalué le contenu des pages en recherchant des groupes d'au moins 3
 
 La page d'accueil médiane du bureau contient 346 mots et la page d'accueil médiane du mobile a un nombre de mots légèrement inférieur à 306 mots. Cela montre que les sites mobiles offrent un peu moins de contenu à leurs utilisateurs, mais à plus de 300 mots, c'est toujours une quantité raisonnable à lire. Cela est particulièrement vrai pour les pages d'accueil qui contiennent naturellement moins de contenu que les pages d'article, par exemple. Dans l'ensemble, la distribution des mots est large, avec entre 22 mots au 10e centile et jusqu'à 1 361 au 90e centile.
 
-
 #### Éléments d'entête
 
 Nous avons également examiné si les pages sont structurées de manière à fournir le bon contexte pour le contenu qu'elles contiennent. Les éléments d'en-tête («H1», «H2», «H3», etc.) sont utilisés pour formater et structurer une page et rendre le contenu plus facile à lire et à analyser. Malgré l’importance des titres, 10,67% des pages ne en comportent pas.
