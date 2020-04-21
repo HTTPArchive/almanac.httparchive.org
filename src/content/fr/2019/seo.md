@@ -48,14 +48,14 @@ Nous avons évalué le contenu des pages en recherchant des groupes d'au moins 3
     <img src="/static/images/2019/seo/fig1.png" alt="Figure 1. Distribution du nombre de mots par pages." aria-labelledby="fig1-caption" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden"> Distribution du nombre de mots par page. Le nombre médian de mots par page de bureau est de 346 et 306 pour les pages mobiles. Les pages de bureau contiennent plus de mots dans les centiles, jusqu'à 120 mots au 90e centile</div>
-  <figcaption id="fig1-caption" >Figure 1. Distribution des pages par nombre de mots.</figcaption>
+  <figcaption id="fig1-caption" >Figure 1. Distribution du nombre de mots par page.</figcaption>
 </figure>
 
 La page d'accueil médiane du bureau contient 346 mots et la page d'accueil médiane du mobile a un nombre de mots légèrement inférieur à 306 mots. Cela montre que les sites mobiles offrent un peu moins de contenu à leurs utilisateurs, mais à plus de 300 mots, c'est toujours une quantité raisonnable à lire. Cela est particulièrement vrai pour les pages d'accueil qui contiennent naturellement moins de contenu que les pages d'article, par exemple. Dans l'ensemble, la distribution des mots est large, avec entre 22 mots au 10e centile et jusqu'à 1 361 au 90e centile.
 
 #### Éléments d'entête
 
-Nous avons également examiné si les pages sont structurées de manière à fournir le bon contexte pour le contenu qu'elles contiennent. Les éléments d'en-tête («H1», «H2», «H3», etc.) sont utilisés pour formater et structurer une page et rendre le contenu plus facile à lire et à analyser. Malgré l’importance des titres, 10,67% des pages ne en comportent pas.
+Nous avons également examiné si les pages sont structurées de manière à fournir le bon contexte pour le contenu qu'elles contiennent. Les éléments d'en-tête (`H1`, `H2`, `H3`, etc.) sont utilisés pour formater et structurer une page et rendre le contenu plus facile à lire et à analyser. Malgré l’importance des titres, 10,67&nbsp;% des pages ne en comportent pas.
 
 <figure>
   <a href="/static/images/2019/seo/fig2.png">
@@ -76,7 +76,6 @@ Le nombre médian d'éléments de titre par page est de 10. Les titres contienne
 
 En termes de longueur de titre spécifique, la longueur médiane du premier élément «H1» trouvé sur le bureau est de 19 caractères.
 Pour obtenir des conseils sur la façon de gérer les `` H1 '' et les rubriques pour le référencement et l'accessibilité, jetez un œil à cette [réponse vidéo de John Mueller](https://www.youtube.com/watch?v=zyqJJXWk0gk) dans le Ask Google Série de webmasters.
-
 
 ### Balises meta
 
@@ -99,15 +98,13 @@ Les titres de page sont un moyen important de communiquer l'objectif d'une page 
   <figcaption id="fig5-caption">Figure 5. Distribution de la longueur du titre par page.</figcaption>
 </figure>
 
-Même si [Google affiche généralement les 50 à 60 premiers caractères d'un titre de page](https://moz.com/learn/seo/title-tag)dans une page de résultats de recherche. La longueur médiane {title25} de la balise `` ne comportait que 21 caractères pour les pages mobiles et 20 caractères pour les pages de bureau. Même le 75e centile est toujours inférieur à la longueur préconisée. Cela suggère que certains SEO et rédacteurs de contenu ne profitent pas de l'espace qui leur est alloué par les moteurs de recherche pour décrire leurs pages d'accueil dans les SERP.
-
+Même si [Google affiche généralement les 50 à 60 premiers caractères d'un titre de page](https://moz.com/learn/seo/title-tag)dans une page de résultats de recherche. La longueur médiane `title` de la balise ne comportait que 21 caractères pour les pages mobiles et 20 caractères pour les pages de bureau. Même le 75e centile est toujours inférieur à la longueur préconisée. Cela suggère que certains SEO et rédacteurs de contenu ne profitent pas de l'espace qui leur est alloué par les moteurs de recherche pour décrire leurs pages d'accueil dans les SERP.
 
 #### Meta descriptions
 
 Compared to the `<title>` tag, fewer pages were detected to have a meta description, as only 64.02% of mobile home pages have a meta description. Considering that Google often rewrites meta descriptions in the SERPs in response to the searcher's query, perhaps website owners place less importance on including a meta description at all.
 
 Par rapport à la balise de titre, moins de pages ont implémenté une méta description. Seulement 64,02% des pages d'accueil mobiles ont une méta description. Étant donné que Google réécrit souvent les descriptions méta dans le SERP en réponse à la requête de l'internaute, les propriétaires de sites web accordent peut-être moins d'importance à l'inclusion des metas descriptions.
-
 
 <figure>
   <a href="/static/images/2019/seo/fig6.png">
@@ -121,7 +118,7 @@ La longueur médiane de la description de la méta était également inférieure
 
 #### Attributs Alt pour les images
 
-Compte tenu de l'importance de l'attribut «alt» pour le référencement et l'accessibilité, il est loin d'être idéal de voir que seulement 46,71% des pages mobiles utilisent des attributs «alt» sur toutes leurs images. Cela signifie qu'il y a encore des améliorations à faire pour rendre les images sur le web plus accessibles aux utilisateurs et compréhensibles pour les moteurs de recherche. En savoir plus sur ces problèmes dans le chapitre [Accessibilité](./accessibilité).
+Compte tenu de l'importance de l'attribut «alt» pour le référencement et l'accessibilité, il est loin d'être idéal de voir que seulement 46,71% des pages mobiles utilisent des attributs «alt» sur toutes leurs images. Cela signifie qu'il y a encore des améliorations à faire pour rendre les images sur le web plus accessibles aux utilisateurs et compréhensibles pour les moteurs de recherche. En savoir plus sur ces problèmes dans le chapitre [Accessibilité](./accessibility).
 
 ### Indexabilité
 
@@ -139,13 +136,12 @@ Le code de réponse suivant le plus fréquemment trouvé sur mobile était le «
 
 <p class="note">Remarque: nos résultats n'incluaient pas les codes d'état 4xx ou 5xx.</p>
 
-
 #### `noindex`
 
 La directive `noindex` peut être indiquée dans le `HTML` ou bien dans les entêtes HTT¨P `X-Robots`. Une directive `noindex` indique essentiellement à un moteur de recherche de ne pas inclure cette page dans ses SERPs, mais la page sera toujours accessible aux utilisateurs lorsqu'ils naviguent sur le site web. Les directives `noindex` sont généralement ajoutées aux versions en double des pages qui servent le même contenu, ou aux pages de faible qualité qui n'apportent aucune valeur aux utilisateurs qui arrivent sur un site web à partir d'une recherche organique, telles que les pages de recherche filtrées, à facettes ou internes.
 96,93% des pages mobiles ont réussi [l'audit d'indexation de Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/indexing), ce qui signifie que ces pages ne contenaient pas de directive «noindex». Cependant, cela signifie que 3,07% des pages d'accueil mobiles ont une directive `noindex`, ce qui est préoccupant et signifie que Google n'a pas pu indexer ces pages.
 
-<p class="note">Les sites web inclus dans notre recherche proviennent de {a36 href="./methodology#chrome-ux-report"}{/a36}Chrome UX Report, qui exclut les site web non publiques. Il s'agit d'une source importante de biais, car nous ne sommes pas en mesure d'analyser les sites que Chrome juge non publics. Plus de détails sur notre <a href="./methodology#websites">méthodologie/a>.</p>
+<p class="note">Les sites web inclus dans notre recherche proviennent de <a href="./methodology#chrome-ux-report">Chrome UX Report</a>, qui exclut les site web non publiques. Il s'agit d'une source importante de biais, car nous ne sommes pas en mesure d'analyser les sites que Chrome juge non publics. Plus de détails sur notre <a href="./methodology#websites">méthodologie/a>.</p>
 
 #### Canonicalisation
 
@@ -198,7 +194,6 @@ Il y a de bonnes nouvelles de notre analyse de la métrique de texte du lien des
 Avoir un contenu descriptif et utile sur une page qui n'est pas bloquée des moteurs de recherche avec une directive `noindex` ou `Disallow` n'est pas suffisant pour qu'un site web réussisse dans la recherche organique. Ce ne sont que les bases. Il y a beaucoup plus que ce qui peut être fait pour améliorer les performances d'un site web et son apparence dans les SERPs.
 Certains des aspects les plus complexes sur le plan technique qui ont gagné en importance dans l'indexation et le classement réussis des sites web comprennent la performance web (vitesse de chargement), les données structurées, l'internationalisation, la sécurité et la compatibilité mobile.
 
-
 ### Performance web
 
 La vitesse de chargement des sites mobiles a été d'abord [annoncée comme facteur de positionnement](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) par Google en 2018. La vitesse n'est pas un nouvel objectif pour Google. En 2010, il a été [révélé que la vitesse avait été introduite comme facteurde classement](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html).
@@ -206,7 +201,7 @@ Un site web à chargement rapide est également essentiel pour une bonne expéri
 
 The metrics we used for our analysis of load speed across the web is based on the [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), which collects data from real-world Chrome users. This data shows that an astonishing 48% of websites are labeled as **slow**. A website is labeled slow if it more than 25% of FCP experiences slower than 3 seconds _or_ 5% of FID experiences slower than 300 ms.
 
-Les métriques que nous avons utilisées pour notre analyse de la vitesse de chargement sur le web sont basées sur le [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), qui recueille des données auprès des utilisateurs réels de Chrome. Ces données montrent qu'un que 48% des sites web sont étiquetés comme ** lents **. Un site web est considéré lent s'il présente plus de 25% d'expériences FCP (First Contentful Paint) plus lentes que 3 secondes _ou_ 5% d'expériences FID (First input Delay) plus lentes que 300 ms.
+Les métriques que nous avons utilisées pour notre analyse de la vitesse de chargement sur le web sont basées sur le [<i lang="en">Chrome UX Report</i>](./methodology#chrome-ux-report) (CrUX), qui recueille des données auprès des utilisateurs réels de Chrome. Ces données montrent qu'un que 48% des sites web sont étiquetés comme **lents**. Un site web est considéré lent s'il présente plus de 25% d'expériences FCP (<i lang="en">First Contentful Paint</i>) plus lentes que 3 secondes _ou_ 5% d'expériences FID (<i lang="en">First input Delay</i>) plus lentes que 300 ms.
 
 <figure>
   <a href="/static/images/2019/seo/fig10.png">
@@ -217,7 +212,7 @@ Les métriques que nous avons utilisées pour notre analyse de la vitesse de cha
 </figure>
 
 Segmentée par type d'appareil, cette image est encore plus sombre pour la tablette (65%) et le mobile (58%).
-Bien que les chiffres soient inquiétants pour la vitesse du web, la bonne nouvelle est que les experts et les outils SEO se concentrent de plus en plus sur les défis techniques de l'accélération des sites. Vous pouvez en savoir plus sur l'état des performances web dans le chapitre [Performances](./performances).
+Bien que les chiffres soient inquiétants pour la vitesse du web, la bonne nouvelle est que les experts et les outils SEO se concentrent de plus en plus sur les défis techniques de l'accélération des sites. Vous pouvez en savoir plus sur l'état des performances web dans le chapitre [Performances](./performance).
 
 ### Données structurées
 
@@ -384,7 +379,7 @@ Alors que 38,40% des sites de bureau (33,79% sur mobile) ont l'attribut HTML lan
   <figcaption>Figure 11. Les 25 valeurs <code>hreflang</code> les plus utilisées.</figcaption>
 </figure>
 
-À côté de l'anglais, les langues les plus courantes sont le français, l'espagnol et l'allemand. Ils sont suivis de langues ciblées vers des zones géographiques spécifiques comme l'anglais pour les américains («en-us») ou des combinaisons plus obscures comme l'espagnol pour l'irlandais («es-ie»).
+À côté de l'anglais, les langues les plus courantes sont le français, l'espagnol et l'allemand. Ils sont suivis de langues ciblées vers des zones géographiques spécifiques comme l'anglais pour les américains (`en-us`) ou des combinaisons plus obscures comme l'espagnol pour l'irlandais (`es-ie`).
 
 L'analyse n'a pas vérifié la bonne mise en œuvre, par exemple si les différentes versions linguistiques se lient correctement les unes aux autres. Cependant, en examinant la faible adoption d'une version x-default (seulement 3,77% sur ordinateur et 1,30% sur mobile), [comme cela est recommandé](https://support.google.com/webmasters/answer/189077?hl=fr), c'est un indicateur que cet élément est complexe et pas toujours facile à bien faire.
 
@@ -412,7 +407,7 @@ Nous avons constaté que 67,06% des sites web sur ordinateur sont désormais ser
 
 Le [Rapport de transparence HTTPS] de Google (https://transparencyreport.google.com/https/overview) signale une adoption de 90% de HTTPS pour les 100 principaux domaines non Google (ce qui représente 25% de tout le trafic de sites web dans le monde). La différence entre ce nombre et le nôtre pourrait s'expliquer par le fait que des sites relativement plus petits adoptent le HTTPS à un rythme plus lent.
 
-En savoir plus sur l'état de la sécurité dans le chapitre [Sécurité](./sécurité).
+En savoir plus sur l'état de la sécurité dans le chapitre [Sécurité](./security).
 ## Conclusion
 
 Grâce à notre analyse, nous avons observé que la majorité des sites web suivent les bonnes pratiques, dans la mesure où leurs pages d'accueil sont explorables, indexables et incluent le contenu clé requis pour bien se classer dans les pages de résultats des moteurs de recherche. Toutes les personnes qui possèdent un site web ne sont pas du tout au courant du SEO, sans parler des directives de meilleures pratiques, il est donc prometteur de voir que tant de sites ont couvert les bases.
