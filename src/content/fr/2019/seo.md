@@ -47,7 +47,7 @@ Nous avons évalué le contenu des pages en recherchant des groupes d'au moins 3
   <a href="/static/images/2019/seo/fig1.png">
     <img src="/static/images/2019/seo/fig1.png" alt="Figure 1. Distribution des pages par nombre de mots." aria-labelledby="fig1-caption" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive">
   </a>
-  <div id="fig1-description" class="visually-hidden"> Distribution des pages par nombre de mots. Le nombre médian de mots par page de bureau est de 346 et 306 pour les pages mobiles. Les pages de bureau contiennent plus de mots dans les centiles, jusqu'à 120 mots au 90e centile</div>
+  <div id="fig1-description" class="visually-hidden"> Distribution du nombre de mots par page. Le nombre médian de mots par page de bureau est de 346 et 306 pour les pages mobiles. Les pages de bureau contiennent plus de mots dans les centiles, jusqu'à 120 mots au 90e centile</div>
   <figcaption id="fig1-caption" >Figure 1. Distribution des pages par nombre de mots.</figcaption>
 </figure>
 
