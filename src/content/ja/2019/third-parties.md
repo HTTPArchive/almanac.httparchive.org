@@ -147,7 +147,7 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 スクリプトの57％を提供しているにもかかわらず、サードパーティはスクリプトバイトの64％を占めています。つまり、サードパーティのスクリプトはファーストパーティのスクリプトよりも平均で大きくなっています。これは、次のいくつかのセクションで述べるパフォーマンスへの影響を示す早期警告の兆候です。
 
-<figure>
+<figure id="fig-7">
   <a href="/static/images/2019/third-parties/fig7.png">
     <img src="/static/images/2019/third-parties/fig7.png" alt="図7. サードパーティカテゴリ毎のリソースバイトの分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
   </a>

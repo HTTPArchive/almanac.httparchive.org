@@ -147,12 +147,12 @@ While 49% of requests are third-party, their share of the web in terms of bytes 
 
 Despite serving 57% of scripts, third parties comprise 64% of script bytes. meaning their scripts are larger on average than first-party scripts. This is an early warning sign for their performance impact to come in the next few sections.
 
-<figure>
+<figure id="fig-7">
   <a href="/static/images/2019/third-parties/fig7.png">
     <img src="/static/images/2019/third-parties/fig7.png" alt="Figure 7. Distributions of resource bytes per third-party category." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Chart showing the breakdown of bytes for each content type per third party category. Images and scripts are relatively evenly distributed across categories. 80% of fonts come from CDNs. Video comes from "content" third-parties.</div>
-  <figcaption id="fig7-caption" >Figure 7. Distributions of resource bytes per third-party category.</figcaption>
+  <figcaption id="fig7-caption">Figure 7. Distributions of resource bytes per third-party category.</figcaption>
 </figure>
 
 <!--
