@@ -232,6 +232,11 @@
     </url>
 
     <url>
+        <loc>https://almanac.httparchive.org/ja/2019/cms</loc>
+        <lastmod>2019-11-23</lastmod>
+    </url>
+
+    <url>
         <loc>https://almanac.httparchive.org/ja/2019/compression</loc>
         <lastmod>2019-11-23</lastmod>
     </url>
