@@ -23,7 +23,7 @@ L'objectif du chapitre SEO du web Almanac est d'analyser les éléments des site
 
 Notre étude se base sur des données de [Lighthouse](./methodology#lighthouse), de [Chrome UX Report](./methodology#chrome-ux-report), et l'analyse des balises HTML. Nous nous sommes concentrés sur les fondements du SEO comme la balise `<title>`, les différents types de liens HTML, le contenu et la vitesse de chargement, mais aussi d'autres aspects techniques du référencement à savoir l'indexation, les données structurées, l'internationalisation, et les pages accélérées pour mobile (AMP) à travers 5 millions de sites web.
 
-Nos métriques personnalisées fournissent des informations qui, jusqu'à présent, n'avaient pas été exposées auparavant. Nous sommes maintenant en mesure de faire des constats sur l'adoption et la mise en œuvre d'éléments tels que la balise `link` alternate hreflang, l'éligibilité des résultats enrichis, l'utilisation de la balise `title` et même la navigation basée sur les ancres pour les applications d'une seule page (SPA).
+Nos métriques personnalisées fournissent des informations qui, jusqu'à présent, n'avaient pas été exposées auparavant. Nous sommes maintenant en mesure de faire des constats sur l'adoption et la mise en œuvre d'éléments tels que des balises `link` avec attribut `hreflang`, l'éligibilité des résultats enrichis, l'utilisation de la balise `title` et même la navigation basée sur les ancres pour les applications d'une seule page (SPA).
 
 <p class="note">Remarque&nbsp;: nos données se limitent à l'analyse des pages d'accueil uniquement et n'ont pas été collectées à partir d'analyses de toutes les pages des sites web. Cela aura un impact sur de nombreuses mesures dont nous discuterons, nous avons donc ajouté toutes les limitations pertinentes à chaque fois que nous mentionnons une mesure personnalisée. En savoir plus sur ces limitations dans notre <a href="./methodology">méthodologie</a>.</p>
 
@@ -77,7 +77,7 @@ Le nombre médian d'éléments de titre par page est de 10. Les titres contienne
 
 En termes de longueur de titre spécifique, la longueur médiane du premier élément `H1` trouvé sur le bureau est de 19 caractères.
 
-Pour obtenir des conseils sur la façon de gérer les `` H1 '' et les rubriques pour le référencement et l'accessibilité, jetez un œil à cette [réponse vidéo de John Mueller](https://www.youtube.com/watch?v=zyqJJXWk0gk) dans le Ask Google Série de webmasters.
+Pour obtenir des conseils sur la façon de gérer les `H1` et les rubriques pour le référencement et l'accessibilité, jetez un œil à cette [réponse vidéo de John Mueller](https://www.youtube.com/watch?v=zyqJJXWk0gk) dans le Ask Google Série de webmasters.
 
 ### Balises meta
 
@@ -193,7 +193,7 @@ La page de bureau médiane comprend 70 liens internes (même site), tandis que l
 
 Les liens d'ancrage, qui pointent vers une certaine position de défilement sur la même page, ne sont pas très populaires. Plus de 65 % des pages d'accueil n'ont pas de liens d'ancrage. Cela est probablement dû au fait que les pages d'accueil ne contiennent généralement pas de contenu long.
 
-Il y a de bonnes nouvelles de notre analyse de la métrique de texte du lien descriptif. 89,94 % des pages mobiles réussissent [l'audit de texte du lien descriptif] de Lighthouse (https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text). Cela signifie que ces pages n'ont pas de liens génériques "cliquez ici", "aller", "ici" ou "en savoir plus", mais utilisent un texte de lien plus significatif qui aide les utilisateurs et les moteurs de recherche à mieux comprendre le contexte des pages et comment elles se connectent les uns aux autres.
+Il y a de bonnes nouvelles de notre analyse de la métrique de texte du lien descriptif. 89,94 % des pages mobiles réussissent [l'audit de texte du lien descriptif] de Lighthouse (https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text). Cela signifie que ces pages n'ont pas de liens génériques "cliquez ici", "aller", "ici" ou "en savoir plus", mais utilisent un texte de lien plus significatif qui aide les utilisateurs et les moteurs de recherche à mieux comprendre le contexte des pages et comment elles se connectent les unes aux autres.
 
 ## Avancé
 
@@ -205,7 +205,7 @@ Certains des aspects les plus complexes sur le plan technique qui ont gagné en 
 
 La vitesse de chargement des sites mobiles a été d'abord [annoncée comme facteur de positionnement](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) par Google en 2018. La vitesse n'est pas un nouvel objectif pour Google. En 2010, il a été [révélé que la vitesse avait été introduite comme facteur de classement](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html).
 
-Un site web à chargement rapide est également essentiel pour une bonne expérience utilisateur. Les utilisateurs qui doivent attendre même quelques secondes pour qu'un site se charge ont tendance à rebondir et à essayer un autre résultat de l'un de vos concurrents qui se charge rapidement et répond à leurs attentes de performances.
+Un site web à chargement rapide est également essentiel pour une bonne expérience utilisateur. Les utilisateurs qui doivent attendre, même quelques secondes, pour qu'un site se charge ont tendance à rebondir et à essayer un autre résultat de l'un de vos concurrents qui se charge rapidement et répond à leurs attentes de performances.
 
 Les métriques que nous avons utilisées pour notre analyse de la vitesse de chargement sur le web sont basées sur le [<i lang="en">Chrome UX Report</i>](./methodology#chrome-ux-report) (CrUX), qui recueille des données auprès des utilisateurs réels de Chrome. Ces données montrent qu'un que 48 % des sites web sont étiquetés comme **lents**. Un site web est considéré lent s'il présente plus de 25 % d'expériences FCP (<i lang="en">First Contentful Paint</i>) plus lentes que 3 secondes _ou_ 5 % d'expériences FID (<i lang="en">First input Delay</i>) plus lentes que 300 ms.
 
@@ -411,7 +411,7 @@ Le nombre plus élevé d'URL de hachage dans les pages React est surprenant, en 
 
 ### AMP
 
-AMP (Pages mobiles accélérées) a été introduit pour la première fois en 2015 par Google en tant que framework HTML open source. Il fournit des composants et une infrastructure aux sites web pour offrir une expérience plus rapide aux utilisateurs, en utilisant des optimisations telles que la mise en cache, le chargement différé et des images optimisées. Notamment, Google a adopté cela pour son moteur de recherche, où les pages AMP sont également servies à partir de leur propre CDN. Cette fonctionnalité est devenue plus tard une proposition de normes sous le nom [échanges HTTP signés](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html).
+AMP (<i lang="en">Accelerated Mobile Pages</i>, Pages Mobiles Accélérées en français) a été introduit pour la première fois en 2015 par Google en tant que framework HTML open source. Il fournit des composants et une infrastructure aux sites web pour offrir une expérience plus rapide aux utilisateurs, en utilisant des optimisations telles que la mise en cache, le chargement différé et des images optimisées. Notamment, Google a adopté cela pour son moteur de recherche, où les pages AMP sont également servies à partir de leur propre CDN. Cette fonctionnalité est devenue plus tard une proposition de normes sous le nom [échanges HTTP signés](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html).
 
 Malgré cela, seulement 0,62 % des pages d'accueil mobiles contiennent un lien vers une version AMP. Compte tenu de la visibilité de ce projet, cela suggère qu'il a été relativement peu adopté. Cependant, AMP peut être plus utile pour diffuser des pages d'articles, de sorte que notre analyse axée sur la page d'accueil ne reflétera pas l'adoption sur d'autres types de page.
 
