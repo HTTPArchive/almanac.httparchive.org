@@ -121,7 +121,7 @@ Figure 3 above shows that WooCommerce has the largest adoption at around 4% of d
 
 <figure>
   <a href="/static/images/2019/ecommerce/fig4.png">
-    <img src="/static/images/2019/ecommerce/fig4.png" alt="Figure 4. Adoption of top ecommerce platforms." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414.5" data-width="600" data-height="414.5" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
+    <img src="/static/images/2019/ecommerce/fig4.png" alt="Figure 4. Adoption of top ecommerce platforms." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414" data-width="600" data-height="414" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">Bar chart of the adoption of top 20 ecommerce platforms. Refer to Figure 3 above for a data table of adoption of the top six platforms.</div>
   <figcaption id="fig4-caption">Figure 4. Adoption of top ecommerce platforms.</figcaption>
