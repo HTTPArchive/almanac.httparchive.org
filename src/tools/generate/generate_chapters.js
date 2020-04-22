@@ -8,6 +8,7 @@ const sitemap_languages = ['en','es','fr','ja'];
 
 const { find_files, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
+const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
 const { generate_sitemap } = require('./generate_sitemap');
 const { lazy_load_content } = require('./lazy_load_content');
@@ -51,6 +52,7 @@ const parse_file = async (markdown,chapter) => {
   const html = converter.makeHtml(markdown);
   let body = html;
 
+  body = generate_header_links(body);
   body = generate_figure_ids(body);
   body = wrap_tables(body);
   body = lazy_load_content(body);
