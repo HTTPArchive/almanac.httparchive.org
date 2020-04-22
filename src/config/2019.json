@@ -219,12 +219,13 @@
     },
     "alankent": {
       "name": "Alan Kent",
-      "bio": "Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at alankent.me and tweets as @akent99.",
+      "bio": "Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a href=\"https://alankent.me\">alankent.me</a> and tweets as <a href=\"https://twitter.com/akent99\">@akent99</a>.",
       "teams": [
         "brainstormers",
         "authors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/5702163?v=4&s=200",
+      "website": "https:\/\/alankent.me",
       "github": "alankent",
       "twitter": "akent99"
     },
@@ -428,7 +429,7 @@
     },
     "dougsillars": {
       "name": "Doug Sillars",
-      "bio": "Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets @dougsillars, and blogs regularly at dougsillars.com.",
+      "bio": "Doug Sillars is a freelance digital nomad working on the intersection of performance and media. He tweets <a href=\"https://twitter.com/dougsillars\">@dougsillars</a>, and blogs regularly at <a href=\"https://dougsillars.com\">dougsillars.com</a>.",
       "teams": [
         "brainstormers",
         "authors",
