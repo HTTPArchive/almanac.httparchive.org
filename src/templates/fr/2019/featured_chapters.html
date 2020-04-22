@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("third-parties","third-parties") | random %}
+{%- set featured_chapter = ("third-parties","seo") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -42,8 +42,8 @@
   {%- set featured_chapter_stats = {"stat1":"22%","label1":"Sites using sufficient colour contrast","stat2":"50%","label2":"Sites with missing image alt attributes","stat3":"14%","label3":"Sites using a skip link"} %}
 {%- elif featured_chapter == "seo" %}
   {%- set featured_chapter_name = "SEO" %}
-  {%- set featured_chapter_quote = "Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers." %}
-  {%- set featured_chapter_stats = {"stat1":"346","label1":"No. of words on median page","stat2":"11%","label2":"Pages with no heading tags","stat3":"15%","label3":"Sites eligible for rich results"} %}
+  {%- set featured_chapter_quote = "L'optimisation pour les moteurs de recherche (SEO) n'est pas seulement un passe-temps ou un projet parallèle pour les spécialistes du marketing digital, ce métier est crucial pour le succès d'un site web. Le but principal du référencement naturel est de s'assurer qu'un site internet est optimisé pour les robots des moteurs de recherche qui ont besoin d'explorer et d'indexer ses pages, ainsi que pour les utilisateurs qui naviguent et consomment des contenus. Le référencement a un impact sur tous ceux qui travaillent sur un site web, du développeur qui le construit au marketeur digital qui en fait la promotion auprès de nouveaux clients potentiels." %}
+  {%- set featured_chapter_stats = {"stat1":"346","label1":"Médiane de nombre de mots par page","stat2":"11%","label2":"Des pages sans entête HTML (Hn)","stat3":"15%","label3":"Sites éligibles pour les résultats enrichis"} %}
 {%- elif featured_chapter == "pwa" %}
   {%- set featured_chapter_name = "PWA" %}
   {%- set featured_chapter_quote = "Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the Service Worker APIs. Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses." %}
