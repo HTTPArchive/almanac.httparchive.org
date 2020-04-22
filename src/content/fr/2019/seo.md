@@ -17,7 +17,7 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 L'optimisation pour les moteurs de recherche (SEO) n'est pas seulement un passe-temps ou un projet parallèle pour les spécialistes du marketing digital, ce métier est crucial pour le succès d'un site web. Le but principal du référencement naturel est de s'assurer qu'un site internet est optimisé pour les robots des moteurs de recherche qui ont besoin d'explorer et d'indexer ses pages, ainsi que pour les utilisateurs qui naviguent et consomment des contenus. Le référencement a un impact sur tous ceux qui travaillent sur un site web, du développeur qui le construit au marketeur digital qui en fait la promotion auprès de nouveaux clients potentiels.
 
-Mettons en perspective l'importance du référencement naturel. En avril 2019, l'industrie du référencement a regardé avec horreur et fascination [ASOS signaler une baisse de revenus de 87 %](https://www.bbc.co.uk/news/business-47877688) après une "année difficile". La marque a attribué ce résultat à une baisse de classement et de visibilité dans les moteurs de recherche survenue après le lancement de plus de 200 microsites et à des changements importants dans la navigation de leur site web, entre autres changements techniques. Ouch.
+Mettons en perspective l'importance du référencement naturel. En avril 2019, l'industrie du référencement a regardé avec horreur et fascination [ASOS signaler une baisse de revenus de 87 %](https://www.bbc.co.uk/news/business-47877688) après une "année difficile". La marque a attribué ce résultat à une baisse de classement et de visibilité dans les moteurs de recherche survenue après le lancement de plus de 200 microsites et à des changements importants dans la navigation de leur site web, entre autres changements techniques. Ouch.
 
 L'objectif du chapitre SEO du web Almanac est d'analyser les éléments des sites web qui ont un impact sur l'exploration et l'indexation des contenus pour les moteurs de recherche et, par conséquence, sur leurs performances. Dans ce chapitre, nous allons voir dans quelle mesure les sites web les plus fréquentés sont prêts à offrir une excellente expérience aux utilisateurs et aux moteurs de recherche, et quels sont ceux qui ont encore du travail à faire.
 
@@ -41,7 +41,7 @@ Pour pouvoir comprendre ce qu'est une page web et décider pour quelles requête
 
 #### Nombre de mots
 
-Nous avons évalué le contenu des pages en recherchant des groupes d'au moins 3 mots et en comptant le nombre total de mots trouvés. Nous avons trouvé 2,73% des pages sur ordinateur qui ne comportaient aucun groupe de mots, ce qui signifie qu'elles n'ont pas de contenu principal pour aider les moteurs de recherche à comprendre le sujet du site web.
+Nous avons évalué le contenu des pages en recherchant des groupes d'au moins 3 mots et en comptant le nombre total de mots trouvés. Nous avons trouvé 2,73 % des pages sur ordinateur qui ne comportaient aucun groupe de mots, ce qui signifie qu'elles n'ont pas de contenu principal pour aider les moteurs de recherche à comprendre le sujet du site web.
 
 <figure>
   <a href="/static/images/2019/seo/fig1.png">
@@ -86,11 +86,11 @@ Les balises meta nous permettent de donner des instructions et des informations 
 #### Balise title
 
 <figure>
-  <div class="big-number">97%</div>
+  <div class="big-number">97 %</div>
   <figcaption>Figure 4. Pourcentage des pages mobiles qui ont une balise title</figcaption>
 </figure>
 
-Les titres de page sont un moyen important de communiquer l'objectif d'une page à un utilisateur ou à un moteur de recherche. Les balises sont également utilisées comme en-têtes dans le SERPS et comme titre pour l'onglet du navigateur lors de la visite d'une page, il n'est donc pas surprenant de voir que 97,1% des pages mobiles ont un titre de document.
+Les titres de page sont un moyen important de communiquer l'objectif d'une page à un utilisateur ou à un moteur de recherche. Les balises sont également utilisées comme en-têtes dans le SERPS et comme titre pour l'onglet du navigateur lors de la visite d'une page, il n'est donc pas surprenant de voir que 97,1 % des pages mobiles ont un titre de document.
 
 <figure>
   <a href="/static/images/2019/seo/fig5.png">
@@ -104,7 +104,7 @@ Même si [Google affiche généralement les 50 à 60 premiers caractères d'un t
 
 #### Meta descriptions
 
-Par rapport à la balise `title`, moins de pages ont implémenté une méta description. Seulement 64,02% des pages d'accueil mobiles ont une méta description. Étant donné que Google réécrit souvent les descriptions méta dans le SERP en réponse à la requête de l'internaute, les propriétaires de sites web accordent peut-être moins d'importance à l'inclusion des metas descriptions.
+Par rapport à la balise `title`, moins de pages ont implémenté une méta description. Seulement 64,02 % des pages d'accueil mobiles ont une méta description. Étant donné que Google réécrit souvent les descriptions méta dans le SERP en réponse à la requête de l'internaute, les propriétaires de sites web accordent peut-être moins d'importance à l'inclusion des metas descriptions.
 
 <figure>
   <a href="/static/images/2019/seo/fig6.png">
@@ -118,7 +118,7 @@ La longueur médiane de la description de la méta était également inférieure
 
 #### Attributs Alt pour les images
 
-Compte tenu de l'importance de l'attribut `Alt` pour le référencement et l'accessibilité, il est loin d'être idéal de voir que seulement 46,71% des pages mobiles utilisent des attributs «alt» sur toutes leurs images. Cela signifie qu'il y a encore des améliorations à faire pour rendre les images sur le web plus accessibles aux utilisateurs et compréhensibles pour les moteurs de recherche. En savoir plus sur ces problèmes dans le chapitre [Accessibilité](./accessibility).
+Compte tenu de l'importance de l'attribut `Alt` pour le référencement et l'accessibilité, il est loin d'être idéal de voir que seulement 46,71 % des pages mobiles utilisent des attributs `alt` sur toutes leurs images. Cela signifie qu'il y a encore des améliorations à faire pour rendre les images sur le web plus accessibles aux utilisateurs et compréhensibles pour les moteurs de recherche. En savoir plus sur ces problèmes dans le chapitre [Accessibilité](./accessibility).
 
 ### Indexabilité
 
@@ -131,9 +131,9 @@ Pour afficher le contenu d'une page aux utilisateurs dans les SERP, les robots d
 
 #### Codes de réponses HTTP
 
-Il est recommandé de conserver un code de réponse HTTP «200 OK» pour toutes les pages importantes que vous souhaitez voir indexées par les moteurs de recherche. La majorité des pages testées étaient accessibles aux moteurs de recherche, 87,03% des demandes HTML initiales sur le bureau renvoyant un code d'état «200». Les résultats étaient légèrement inférieurs pour les pages mobiles, avec seulement 82,95% des pages renvoyant un code d'état «200».
+Il est recommandé de conserver un code de réponse HTTP `200 OK` pour toutes les pages importantes que vous souhaitez voir indexées par les moteurs de recherche. La majorité des pages testées étaient accessibles aux moteurs de recherche, 87,03 % des demandes HTML initiales sur le bureau renvoyant un code d'état `200`. Les résultats étaient légèrement inférieurs pour les pages mobiles, avec seulement 82,95 % des pages renvoyant un code d'état `200`.
 
-Le code de réponse suivant le plus fréquemment trouvé sur mobile était le «302», une redirection temporaire, qui a été trouvée sur 10,45% des pages mobiles. C'était plus élevé que sur le bureau, avec seulement 6,71% des pages d'accueil du bureau renvoyant un code d'état «302». Cela pourrait être dû au fait que les [pages d'accueil mobiles étaient des alternatives](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls) vers une page de bureau équivalente, comme sur des sites non responsive qui ont des versions distinctes du site web pour chaque appareil.
+Le code de réponse suivant le plus fréquemment trouvé sur mobile était le `302`, une redirection temporaire, qui a été trouvée sur 10,45 % des pages mobiles. C'était plus élevé que sur le bureau, avec seulement 6,71 % des pages d'accueil du bureau renvoyant un code d'état `302`. Cela pourrait être dû au fait que les [pages d'accueil mobiles étaient des alternatives](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls) vers une page de bureau équivalente, comme sur des sites non responsive qui ont des versions distinctes du site web pour chaque appareil.
 
 <p class="note">Remarque&nbsp;: nos résultats n'incluaient pas les codes d'état 4xx ou 5xx.</p>
 
@@ -141,7 +141,7 @@ Le code de réponse suivant le plus fréquemment trouvé sur mobile était le «
 
 La directive `noindex` peut être indiquée dans le `HTML` ou bien dans les entêtes HTTP `X-Robots`. Une directive `noindex` indique essentiellement à un moteur de recherche de ne pas inclure cette page dans ses SERPs, mais la page sera toujours accessible aux utilisateurs lorsqu'ils naviguent sur le site web. Les directives `noindex` sont généralement ajoutées aux versions en double des pages qui servent le même contenu, ou aux pages de faible qualité qui n'apportent aucune valeur aux utilisateurs qui arrivent sur un site web à partir d'une recherche organique, telles que les pages de recherche filtrées, à facettes ou internes.
 
-96,93% des pages mobiles ont réussi [l'audit d'indexation de Lighthouse](https&nbsp;://developers.google.com/web/tools/lighthouse/audits/indexing), ce qui signifie que ces pages ne contenaient pas de directive «noindex». Cependant, cela signifie que 3,07% des pages d'accueil mobiles ont une directive `noindex`, ce qui est préoccupant et signifie que Google n'a pas pu indexer ces pages.
+96,93 % des pages mobiles ont réussi [l'audit d'indexation de Lighthouse](https&nbsp;://developers.google.com/web/tools/lighthouse/audits/indexing), ce qui signifie que ces pages ne contenaient pas de directive `noindex`. Cependant, cela signifie que 3,07 % des pages d'accueil mobiles ont une directive `noindex`, ce qui est préoccupant et signifie que Google n'a pas pu indexer ces pages.
 
 <p class="note">Les sites web inclus dans notre recherche proviennent de <a href="./methodology#chrome-ux-report">Chrome UX Report</a>, qui exclut les site web non publiques. Il s'agit d'une source importante de biais, car nous ne sommes pas en mesure d'analyser les sites que Chrome juge non publics. Plus de détails sur notre <a href="./methodology#websites">méthodologie/a>.</p>
 
@@ -149,17 +149,17 @@ La directive `noindex` peut être indiquée dans le `HTML` ou bien dans les ent�
 
 Les balises canoniques sont utilisées pour spécifier les pages en double et leurs alternatives préférées, afin que les moteurs de recherche puissent consolider l'autorité qui pourrait être répartie sur plusieurs pages du groupe sur une seule page principale pour un meilleur classement.
 
-48,34% des pages d'accueil mobiles ont été [détectées](https://developers.google.com/web/tools/lighthouse/audits/canonical) avoir une balise canonique. Les balises canoniques auto-référencées ne sont pas essentielles et les balises canoniques sont généralement requises pour les pages en double. Les pages d'accueil sont rarement dupliquées ailleurs sur le site, il n'est donc pas surprenant de constater que moins de la moitié des pages ont une balise canonique.
+48,34 % des pages d'accueil mobiles ont été [détectées](https://developers.google.com/web/tools/lighthouse/audits/canonical) avoir une balise canonique. Les balises canoniques auto-référencées ne sont pas essentielles et les balises canoniques sont généralement requises pour les pages en double. Les pages d'accueil sont rarement dupliquées ailleurs sur le site, il n'est donc pas surprenant de constater que moins de la moitié des pages ont une balise canonique.
 
 #### robots.txt
 
 L'une des méthodes les plus efficaces pour contrôler l'exploration des moteurs de recherche est le fichier [robots.txt]. Il s'agit d'un fichier qui se trouve sur le domaine racine d'un site web et spécifie quelles URL et chemins d'URL doivent être interdits à l'exploration par les moteurs de recherche.
 
-Il était intéressant de constater que seulement 72,16 % des sites mobiles ont un `robots.txt` valide, [selon Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/robots). Les principaux problèmes que nous avons constatés sont répartis entre 22% des sites n'ayant aucun fichier `robots.txt` et ~ 6% servant un fichier` robots.txt` non valide, et échouent ainsi à l'audit. Bien qu'il existe de nombreuses raisons valables de ne pas avoir de fichier `robots.txt`, comme avoir un petit site web qui n'a pas [de soucis de budget de crawl](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html), avoir un `robots.txt` invalide peut être problématique surtout avec le Mobile First Index.
+Il était intéressant de constater que seulement 72,16 % des sites mobiles ont un `robots.txt` valide, [selon Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/robots). Les principaux problèmes que nous avons constatés sont répartis entre 22 % des sites n'ayant aucun fichier `robots.txt` et ~ 6 % servant un fichier `robots.txt` non valide, et échouent ainsi à l'audit. Bien qu'il existe de nombreuses raisons valables de ne pas avoir de fichier `robots.txt`, comme avoir un petit site web qui n'a pas [de soucis de budget de crawl](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html), avoir un `robots.txt` invalide peut être problématique surtout avec le Mobile First Index.
 
 ### Liens
 
-Les liens sont l'un des attributs les plus importants d'une page web. Les liens aident les moteurs de recherche à découvrir de nouvelles pages pertinentes à ajouter à leur index et à naviguer sur les sites web. 96% des pages web de notre ensemble de données contiennent au moins un lien interne et 93% contiennent au moins un lien externe vers un autre domaine. La petite minorité de pages qui n'ont pas de liens internes ou externes passeront à côté de l'immense valeur que les liens transmettent aux pages cibles.
+Les liens sont l'un des attributs les plus importants d'une page web. Les liens aident les moteurs de recherche à découvrir de nouvelles pages pertinentes à ajouter à leur index et à naviguer sur les sites web. 96 % des pages web de notre ensemble de données contiennent au moins un lien interne et 93 % contiennent au moins un lien externe vers un autre domaine. La petite minorité de pages qui n'ont pas de liens internes ou externes passeront à côté de l'immense valeur que les liens transmettent aux pages cibles.
 
 Le nombre de liens internes et externes inclus sur les pages de bureau était constamment supérieur au nombre trouvé sur les pages mobiles. Souvent, un espace limité sur une fenêtre plus petite entraîne moins de liens à inclure dans la conception d'une page mobile par rapport au bureau.
 
@@ -191,9 +191,9 @@ La page de bureau médiane comprend 70 liens internes (même site), tandis que l
   <figcaption id="fig9-caption">Figure 9. Répartition du nombre de liens d'ancrage par page.</figcaption>
 </figure>
 
-Les liens d'ancrage, qui pointent vers une certaine position de défilement sur la même page, ne sont pas très populaires. Plus de 65% des pages d'accueil n'ont pas de liens d'ancrage. Cela est probablement dû au fait que les pages d'accueil ne contiennent généralement pas de contenu long.
+Les liens d'ancrage, qui pointent vers une certaine position de défilement sur la même page, ne sont pas très populaires. Plus de 65 % des pages d'accueil n'ont pas de liens d'ancrage. Cela est probablement dû au fait que les pages d'accueil ne contiennent généralement pas de contenu long.
 
-Il y a de bonnes nouvelles de notre analyse de la métrique de texte du lien descriptif. 89,94% des pages mobiles réussissent [l'audit de texte du lien descriptif] de Lighthouse (https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text). Cela signifie que ces pages n'ont pas de liens génériques "cliquez ici", "aller", "ici" ou "en savoir plus", mais utilisent un texte de lien plus significatif qui aide les utilisateurs et les moteurs de recherche à mieux comprendre le contexte des pages et comment elles se connectent les uns aux autres.
+Il y a de bonnes nouvelles de notre analyse de la métrique de texte du lien descriptif. 89,94 % des pages mobiles réussissent [l'audit de texte du lien descriptif] de Lighthouse (https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text). Cela signifie que ces pages n'ont pas de liens génériques "cliquez ici", "aller", "ici" ou "en savoir plus", mais utilisent un texte de lien plus significatif qui aide les utilisateurs et les moteurs de recherche à mieux comprendre le contexte des pages et comment elles se connectent les uns aux autres.
 
 ## Avancé
 
@@ -207,17 +207,17 @@ La vitesse de chargement des sites mobiles a été d'abord [annoncée comme fact
 
 Un site web à chargement rapide est également essentiel pour une bonne expérience utilisateur. Les utilisateurs qui doivent attendre même quelques secondes pour qu'un site se charge ont tendance à rebondir et à essayer un autre résultat de l'un de vos concurrents qui se charge rapidement et répond à leurs attentes de performances.
 
-Les métriques que nous avons utilisées pour notre analyse de la vitesse de chargement sur le web sont basées sur le [<i lang="en">Chrome UX Report</i>](./methodology#chrome-ux-report) (CrUX), qui recueille des données auprès des utilisateurs réels de Chrome. Ces données montrent qu'un que 48% des sites web sont étiquetés comme **lents**. Un site web est considéré lent s'il présente plus de 25% d'expériences FCP (<i lang="en">First Contentful Paint</i>) plus lentes que 3 secondes _ou_ 5% d'expériences FID (<i lang="en">First input Delay</i>) plus lentes que 300 ms.
+Les métriques que nous avons utilisées pour notre analyse de la vitesse de chargement sur le web sont basées sur le [<i lang="en">Chrome UX Report</i>](./methodology#chrome-ux-report) (CrUX), qui recueille des données auprès des utilisateurs réels de Chrome. Ces données montrent qu'un que 48 % des sites web sont étiquetés comme **lents**. Un site web est considéré lent s'il présente plus de 25 % d'expériences FCP (<i lang="en">First Contentful Paint</i>) plus lentes que 3 secondes _ou_ 5 % d'expériences FID (<i lang="en">First input Delay</i>) plus lentes que 300 ms.
 
 <figure>
   <a href="/static/images/2019/seo/fig10.png">
     <img src="/static/images/2019/seo/fig10.png" alt="Figure 10. Répartition des performances des expériences utilisateur par type d'appareil." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive">
   </a>
-  <div id="fig10-description" class="visually-hidden">Distribution des performances des expériences utilisateur des ordinateurs de bureau, des téléphones et des tablettes. Ordinateur de bureau&nbsp;: 2% rapide, 52% modéré, 46% lent. Téléphone&nbsp;: 1% rapide, 41% modéré, 58% lent. Tablette&nbsp;: 0% rapide, 35% modérée, 65% lente.</div>
-  <figcaption id="fig10-caption">Figure 10. Distribution des performances des expériences utilisateur par type d'appareil</figcaption>
+  <div id="fig10-description" class="visually-hidden">Distribution des performances des expériences utilisateur des ordinateurs de bureau, des téléphones et des tablettes. Ordinateur de bureau&nbsp;: 2 % rapide, 52 % modéré, 46 % lent. Téléphone&nbsp;: 1 % rapide, 41 % modéré, 58 % lent. Tablette&nbsp;: 0 % rapide, 35 % modérée, 65 % lente.</div>
+  <figcaption id="fig10-caption">Figure 10. Distribution des performances des expériences utilisateur par type d'appareil.</figcaption>
 </figure>
 
-Segmentée par type d'appareil, cette image est encore plus sombre pour la tablette (65%) et le mobile (58%).
+Segmentée par type d'appareil, cette image est encore plus sombre pour la tablette (65 %) et le mobile (58 %).
 
 Bien que les chiffres soient inquiétants pour la vitesse du web, la bonne nouvelle est que les experts et les outils SEO se concentrent de plus en plus sur les défis techniques de l'accélération des sites. Vous pouvez en savoir plus sur l'état des performances web dans le chapitre [Performances](./performance).
 
@@ -232,28 +232,30 @@ Les données structurées permettent aux propriétaires de sites web d'ajouter d
 - et [D'autres](https://developers.google.com/search/docs/guides/search-gallery)
 
 La [visibilité supplémentaire](https://developers.google.com/search/docs/guides/enhance-site) que les données structurées peuvent fournir aux sites web est intéressante pour les propriétaires de sites, car elle peut aider à créer plus d'opportunités de trafic . Par exemple, le [schéma de FAQ] relativement nouveau (https://developers.google.com/search/docs/data-types/faqpage) doublera la taille de votre extrait sur les pages de résultats de recherche.
-Au cours de nos recherches, nous avons constaté que seuls 14,67% des sites sont éligibles pour des résultats riches sur mobile. Fait intéressant, l'admissibilité au site de bureau est légèrement inférieure à 12,46%. Cela suggère que les propriétaires de sites peuvent faire beaucoup plus pour optimiser la façon dont leurs pages d'accueil apparaissent dans la recherche.
+
+Au cours de nos recherches, nous avons constaté que seuls 14,67 % des sites sont éligibles pour des résultats riches sur mobile. Fait intéressant, l'admissibilité au site de bureau est légèrement inférieure à 12,46 %. Cela suggère que les propriétaires de sites peuvent faire beaucoup plus pour optimiser la façon dont leurs pages d'accueil apparaissent dans la recherche.
+
 Parmi les sites avec un balisage de données structuré, les cinq types les plus implémentés sont:
 
-1. `webSite` (16,02%)
-2. `SearchAction` (14,35%)
-3. `Organisation` (12,89%)
-4. `webPage` (11,58%)
-5. `ImageObject` (5,35%)
+1. `webSite` (16,02 %)
+2. `SearchAction` (14,35 %)
+3. `Organisation` (12,89 %)
+4. `webPage` (11,58 %)
+5. `ImageObject` (5,35 %)
 
-Fait intéressant, l'un des types de données les plus populaires qui déclenche une fonctionnalité de moteur de recherche est «SearchAction», qui alimente la [boîte de recherche des liens annexes](https://developers.google.com/search/docs/data-types/sitelinks-searchbox).
+Fait intéressant, l'un des types de données les plus populaires qui déclenche une fonctionnalité de moteur de recherche est `SearchAction`, qui alimente la [boîte de recherche des liens annexes](https://developers.google.com/search/docs/data-types/sitelinks-searchbox).
 
 Les cinq principaux types de balisage conduisent tous à une plus grande visibilité dans les résultats de recherche de Google, ce qui pourrait être le facteur d'une adoption plus répandue de ces types de données structurées.
 
 Étant donné que nous n'avons examiné que les pages d'accueil, les résultats pourraient sembler très différents si nous considérions également les pages intérieures.
 
-Les étoiles d'avis ne se trouvent que sur 1,09% des pages d'accueil du web (via [AggregateRating](https://schema.org/AggregateRating)). En outre, le [QAPage] nouvellement introduit (https://schema.org/QAPage) n'est apparu que dans 48 cas, et le [FAQPage](https://schema.org/FAQPage) à une fréquence légèrement plus élevée de 218 fois. Ces deux derniers décomptes devraient augmenter à l'avenir alors que nous effectuons davantage d'analyses et approfondissons l'analyse Web Almanac.
+Les étoiles d'avis ne se trouvent que sur 1,09 % des pages d'accueil du web (via [AggregateRating](https://schema.org/AggregateRating)). En outre, le [QAPage] nouvellement introduit (https://schema.org/QAPage) n'est apparu que dans 48 cas, et le [FAQPage](https://schema.org/FAQPage) à une fréquence légèrement plus élevée de 218 fois. Ces deux derniers décomptes devraient augmenter à l'avenir alors que nous effectuons davantage d'analyses et approfondissons l'analyse Web Almanac.
 
 ### Internationalisation
 
 L'internationalisation est l'un des aspects les plus complexes du référencement naturel, même [selon certains employés de la recherche Google](https://twitter.com/JohnMu/status/965507331369984002). L'internationalisation du référencement se concentre sur la diffusion du bon contenu à partir d'un site web avec plusieurs versions linguistiques ou nationales et sur le ciblage du contenu vers la langue et l'emplacement spécifiques de l'utilisateur.
 
-Alors que 38,40% des sites de bureau (33,79% sur mobile) ont l'attribut HTML `lang` réglé sur anglais, seulement 7,43% (6,79% sur mobile) des sites contiennent également un lien «hreflang» vers une autre version linguistique. Cela suggère que la grande majorité des sites web que nous avons analysés n'offrent pas de versions distinctes de leur page d'accueil qui nécessiteraient un ciblage linguistique - sauf si ces versions distinctes existent mais n'ont pas été configurées correctement.
+Alors que 38,40 % des sites de bureau (33,79 % sur mobile) ont l'attribut HTML `lang` réglé sur anglais, seulement 7,43 % (6,79 % sur mobile) des sites contiennent également un attribut `hreflang` de balise `link` pointant vers une autre version linguistique. Cela suggère que la grande majorité des sites web que nous avons analysés n'offrent pas de versions distinctes de leur page d'accueil qui nécessiteraient un ciblage linguistique - sauf si ces versions distinctes existent mais n'ont pas été configurées correctement.
 
 <figure>
   <table>
@@ -267,128 +269,128 @@ Alors que 38,40% des sites de bureau (33,79% sur mobile) ont l'attribut HTML `la
     <tbody>
       <tr>
         <td>en</td>
-        <td class="numeric">12.19%</td>
-        <td class="numeric">2.80%</td>
+        <td class="numeric">12.19 %</td>
+        <td class="numeric">2.80 %</td>
       </tr>
       <tr>
         <td>x-default</td>
-        <td class="numeric">5.58%</td>
-        <td class="numeric">1.44%</td>
+        <td class="numeric">5.58 %</td>
+        <td class="numeric">1.44 %</td>
       </tr>
       <tr>
         <td>fr</td>
-        <td class="numeric">5.23%</td>
-        <td class="numeric">1.28%</td>
+        <td class="numeric">5.23 %</td>
+        <td class="numeric">1.28 %</td>
       </tr>
       <tr>
         <td>es</td>
-        <td class="numeric">5.08%</td>
-        <td class="numeric">1.25%</td>
+        <td class="numeric">5.08 %</td>
+        <td class="numeric">1.25 %</td>
       </tr>
       <tr>
         <td>de</td>
-        <td class="numeric">4.91%</td>
-        <td class="numeric">1.24%</td>
+        <td class="numeric">4.91 %</td>
+        <td class="numeric">1.24 %</td>
       </tr>
       <tr>
         <td>en-us</td>
-        <td class="numeric">4.22%</td>
-        <td class="numeric">2.95%</td>
+        <td class="numeric">4.22 %</td>
+        <td class="numeric">2.95 %</td>
       </tr>
       <tr>
         <td>it</td>
-        <td class="numeric">3.58%</td>
-        <td class="numeric">0.92%</td>
+        <td class="numeric">3.58 %</td>
+        <td class="numeric">0.92 %</td>
       </tr>
       <tr>
         <td>ru</td>
-        <td class="numeric">3.13%</td>
-        <td class="numeric">0.80%</td>
+        <td class="numeric">3.13 %</td>
+        <td class="numeric">0.80 %</td>
       </tr>
       <tr>
         <td>en-gb</td>
-        <td class="numeric">3.04%</td>
-        <td class="numeric">2.79%</td>
+        <td class="numeric">3.04 %</td>
+        <td class="numeric">2.79 %</td>
       </tr>
       <tr>
         <td>de-de</td>
-        <td class="numeric">2.34%</td>
-        <td class="numeric">2.58%</td>
+        <td class="numeric">2.34 %</td>
+        <td class="numeric">2.58 %</td>
       </tr>
       <tr>
         <td>nl</td>
-        <td class="numeric">2.28%</td>
-        <td class="numeric">0.55%</td>
+        <td class="numeric">2.28 %</td>
+        <td class="numeric">0.55 %</td>
       </tr>
       <tr>
         <td>fr-fr</td>
-        <td class="numeric">2.28%</td>
-        <td class="numeric">2.56%</td>
+        <td class="numeric">2.28 %</td>
+        <td class="numeric">2.56 %</td>
       </tr>
       <tr>
         <td>es-es</td>
-        <td class="numeric">2.08%</td>
-        <td class="numeric">2.51%</td>
+        <td class="numeric">2.08 %</td>
+        <td class="numeric">2.51 %</td>
       </tr>
       <tr>
         <td>pt</td>
-        <td class="numeric">2.07%</td>
-        <td class="numeric">0.48%</td>
+        <td class="numeric">2.07 %</td>
+        <td class="numeric">0.48 %</td>
       </tr>
       <tr>
         <td>pl</td>
-        <td class="numeric">2.01%</td>
-        <td class="numeric">0.50%</td>
+        <td class="numeric">2.01 %</td>
+        <td class="numeric">0.50 %</td>
       </tr>
       <tr>
         <td>ja</td>
-        <td class="numeric">2.00%</td>
-        <td class="numeric">0.43%</td>
+        <td class="numeric">2.00 %</td>
+        <td class="numeric">0.43 %</td>
       </tr>
       <tr>
         <td>tr</td>
-        <td class="numeric">1.78%</td>
-        <td class="numeric">0.49%</td>
+        <td class="numeric">1.78 %</td>
+        <td class="numeric">0.49 %</td>
       </tr>
       <tr>
         <td>it-it</td>
-        <td class="numeric">1.62%</td>
-        <td class="numeric">2.40%</td>
+        <td class="numeric">1.62 %</td>
+        <td class="numeric">2.40 %</td>
       </tr>
       <tr>
         <td>ar</td>
-        <td class="numeric">1.59%</td>
-        <td class="numeric">0.43%</td>
+        <td class="numeric">1.59 %</td>
+        <td class="numeric">0.43 %</td>
       </tr>
       <tr>
         <td>pt-br</td>
-        <td class="numeric">1.52%</td>
-        <td class="numeric">2.38%</td>
+        <td class="numeric">1.52 %</td>
+        <td class="numeric">2.38 %</td>
       </tr>
       <tr>
         <td>th</td>
-        <td class="numeric">1.40%</td>
-        <td class="numeric">0.42%</td>
+        <td class="numeric">1.40 %</td>
+        <td class="numeric">0.42 %</td>
       </tr>
       <tr>
         <td>ko</td>
-        <td class="numeric">1.33%</td>
-        <td class="numeric">0.28%</td>
+        <td class="numeric">1.33 %</td>
+        <td class="numeric">0.28 %</td>
       </tr>
       <tr>
         <td>zh</td>
-        <td class="numeric">1.30%</td>
-        <td class="numeric">0.27%</td>
+        <td class="numeric">1.30 %</td>
+        <td class="numeric">0.27 %</td>
       </tr>
       <tr>
         <td>sv</td>
-        <td class="numeric">1.22%</td>
-        <td class="numeric">0.30%</td>
+        <td class="numeric">1.22 %</td>
+        <td class="numeric">0.30 %</td>
       </tr>
       <tr>
         <td>en-au</td>
-        <td class="numeric">1.20%</td>
-        <td class="numeric">2.31%</td>
+        <td class="numeric">1.20 %</td>
+        <td class="numeric">2.31 %</td>
       </tr>
     </tbody>
   </table>
@@ -397,13 +399,13 @@ Alors que 38,40% des sites de bureau (33,79% sur mobile) ont l'attribut HTML `la
 
 À côté de l'anglais, les langues les plus courantes sont le français, l'espagnol et l'allemand. Ils sont suivis de langues ciblées vers des zones géographiques spécifiques comme l'anglais pour les américains (`en-us`) ou des combinaisons plus obscures comme l'espagnol pour l'irlandais (`es-ie`).
 
-L'analyse n'a pas vérifié la bonne mise en œuvre, par exemple si les différentes versions linguistiques se lient correctement les unes aux autres. Cependant, en examinant la faible adoption d'une version x-default (seulement 3,77% sur ordinateur et 1,30% sur mobile), [comme cela est recommandé](https://support.google.com/webmasters/answer/189077?hl=fr), c'est un indicateur que cet élément est complexe et pas toujours facile à bien faire.
+L'analyse n'a pas vérifié la bonne mise en œuvre, par exemple si les différentes versions linguistiques se lient correctement les unes aux autres. Cependant, en examinant la faible adoption d'une version x-default (seulement 3,77 % sur ordinateur et 1,30 % sur mobile), [comme cela est recommandé](https://support.google.com/webmasters/answer/189077?hl=fr), c'est un indicateur que cet élément est complexe et pas toujours facile à bien faire.
 
 ### Exploration des SPA (Single Page Application)
 
 Les applications monopages (SPA) construites avec des frameworks comme React et Vue.js ont leur propre complexité SEO. Les sites web utilisant une navigation basée sur le hachage, rendent particulièrement difficile pour les moteurs de recherche de les explorer et de les indexer correctement. Par exemple, Google avait une solution de contournement "AJAX crawling scheme" qui s'est avérée complexe pour les moteurs de recherche ainsi que pour les développeurs, elle a donc été [déconseillée en 2015](https://webmasters.googleblog.com/2015/10/deprecating-notre-ajax-crawling-scheme.html).
 
-Le nombre de SPA testés avait un nombre relativement faible de liens servis via des URL de hachage, avec 13,08% des pages mobiles React utilisant des URL de hachage pour la navigation, 8,15% des pages mobiles Vue.js les utilisant et 2,37% des pages angulaires mobiles les utiliser. Ces résultats étaient également très similaires pour les pages de bureau. Cela est positif à voir du point de vue du référencement, compte tenu de l'impact que les URL de hachage peuvent avoir sur la découverte de contenu.
+Le nombre de SPA testés avait un nombre relativement faible de liens servis via des URL de hachage, avec 13,08 % des pages mobiles React utilisant des URL de hachage pour la navigation, 8,15 % des pages mobiles Vue.js les utilisant et 2,37 % des pages angulaires mobiles les utiliser. Ces résultats étaient également très similaires pour les pages de bureau. Cela est positif à voir du point de vue du référencement, compte tenu de l'impact que les URL de hachage peuvent avoir sur la découverte de contenu.
 
 Le nombre plus élevé d'URL de hachage dans les pages React est surprenant, en particulier contrairement au nombre plus faible d'URL de hachage trouvées sur les pages angulaires. Les deux frameworks favorisent l'adoption de packages de routage où [API historique](https://developer.mozilla.org/en-US/docs/web/API/History) est la valeur par défaut pour les liens, au lieu de s'appuyer sur des URL de hachage. Vue.js [envisage de passer à l'utilisation de l'API Historique par défaut](https://github.com/vuejs/rfcs/pull/40) ainsi que dans la version 3 de leur package `vue-router`.
 
@@ -411,7 +413,7 @@ Le nombre plus élevé d'URL de hachage dans les pages React est surprenant, en 
 
 AMP (Pages mobiles accélérées) a été introduit pour la première fois en 2015 par Google en tant que framework HTML open source. Il fournit des composants et une infrastructure aux sites web pour offrir une expérience plus rapide aux utilisateurs, en utilisant des optimisations telles que la mise en cache, le chargement différé et des images optimisées. Notamment, Google a adopté cela pour son moteur de recherche, où les pages AMP sont également servies à partir de leur propre CDN. Cette fonctionnalité est devenue plus tard une proposition de normes sous le nom [échanges HTTP signés](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html).
 
-Malgré cela, seulement 0,62% des pages d'accueil mobiles contiennent un lien vers une version AMP. Compte tenu de la visibilité de ce projet, cela suggère qu'il a été relativement peu adopté. Cependant, AMP peut être plus utile pour diffuser des pages d'articles, de sorte que notre analyse axée sur la page d'accueil ne reflétera pas l'adoption sur d'autres types de page.
+Malgré cela, seulement 0,62 % des pages d'accueil mobiles contiennent un lien vers une version AMP. Compte tenu de la visibilité de ce projet, cela suggère qu'il a été relativement peu adopté. Cependant, AMP peut être plus utile pour diffuser des pages d'articles, de sorte que notre analyse axée sur la page d'accueil ne reflétera pas l'adoption sur d'autres types de page.
 
 ### Securité
 
@@ -419,9 +421,9 @@ Le passage en HTTPS par défaut, était un fort changement sur le web ces derni�
 
 Pour plus d'informations et des conseils de Google sur l'importance du HTTPS et comment l'adopter, veuillez consulter [Pourquoi le HTTPS est important](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 
-Nous avons constaté que 67,06% des sites web sur ordinateur sont désormais servis via HTTPS. Un peu moins de la moitié des sites web n'ont toujours pas migré vers HTTPS et fournissent des pages non sécurisées à leurs utilisateurs. C'est un nombre important. Les migrations peuvent être un travail difficile, donc cela pourrait être une raison pour laquelle le taux d'adoption n'est pas plus élevé, mais une migration HTTPS nécessite généralement un certificat SSL et une simple modification du fichier `.htaccess`. Il n'y a aucune vraie raison de ne pas passer en HTTPS.
+Nous avons constaté que 67,06 % des sites web sur ordinateur sont désormais servis via HTTPS. Un peu moins de la moitié des sites web n'ont toujours pas migré vers HTTPS et fournissent des pages non sécurisées à leurs utilisateurs. C'est un nombre important. Les migrations peuvent être un travail difficile, donc cela pourrait être une raison pour laquelle le taux d'adoption n'est pas plus élevé, mais une migration HTTPS nécessite généralement un certificat SSL et une simple modification du fichier `.htaccess`. Il n'y a aucune vraie raison de ne pas passer en HTTPS.
 
-Le [Rapport de transparence HTTPS] de Google (https://transparencyreport.google.com/https/overview) signale une adoption de 90% de HTTPS pour les 100 principaux domaines non Google (ce qui représente 25% de tout le trafic de sites web dans le monde). La différence entre ce nombre et le nôtre pourrait s'expliquer par le fait que des sites relativement plus petits adoptent le HTTPS à un rythme plus lent.
+Le [Rapport de transparence HTTPS] de Google (https://transparencyreport.google.com/https/overview) signale une adoption de 90 % de HTTPS pour les 100 principaux domaines non Google (ce qui représente 25 % de tout le trafic de sites web dans le monde). La différence entre ce nombre et le nôtre pourrait s'expliquer par le fait que des sites relativement plus petits adoptent le HTTPS à un rythme plus lent.
 
 En savoir plus sur l'état de la sécurité dans le chapitre [Sécurité](./security).
 
