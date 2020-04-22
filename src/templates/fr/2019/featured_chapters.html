@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("third-parties","seo","markup","cms") | random %}
+{%- set featured_chapter = ("third-parties","seo","markup","cms", "caching") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -65,9 +65,9 @@
   {%- set featured_chapter_quote = "JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page." %}
   {%- set featured_chapter_stats = {"stat1":"38%","label1":"HTTP responses using text-based compression","stat2":"80%","label2":"Use of gzip compression","stat3":"56%","label3":"HTML responses not using compression"} %}
 {%- elif featured_chapter == "caching" %}
-  {%- set featured_chapter_name = "Caching" %}
-  {%- set featured_chapter_quote = "Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, &quot;the fastest request is the one that you don't have to make,&quot; and caching is one of the key ways to avoid having to make requests." %}
-  {%- set featured_chapter_stats = {"stat1":"27%","label1":"Responses not using any caching headers","stat2":"39%","label2":"Responses using the <code>Vary</code> header","stat3":"82%","label3":"Sites that could save 1Mb by optimising caching better"} %}
+  {%- set featured_chapter_name = "Mise en cache" %}
+  {%- set featured_chapter_quote = "La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de performance en évitant de rejouer de coûteuses requêtes. La mise en cache facilite la montée en charge d'une application, en réduisant le trafic sur le réseau à destination du serveur d'origine. Un vieux dicton dit que \"la requête la plus rapide est celle que vous n'avez pas à faire\" et la mise en cache est l'un des principaux moyens d'éviter d'avoir à refaire des requêtes." %}
+  {%- set featured_chapter_stats = {"stat1":"27 %","label1":"des réponses n'utilisent aucun en-tête de cache.","stat2":"39 %","label2":"des réponses utilisent l'en-tête <code>Vary</code>.","stat3":"82 %","label3":"des sites pourraient économiser 1 Mo en optimisant le cache."} %}
 {%- elif featured_chapter == "cdn" %}
   {%- set featured_chapter_name = "CDN" %}
   {%- set featured_chapter_quote = "&quot;Use a Content Delivery Network&quot; was one of Steve Souders original recommendations for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using." %}
