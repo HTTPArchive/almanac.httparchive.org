@@ -99,13 +99,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 
 {% macro render_authors() %}
   {% for author in metadata.get('authors') %}
-  <h2 id="authors">
-    <a href="#authors" class="anchor-link">
-    {% if loop.length == 1 %}{{ self.author() }}{% endif -%}
-    {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-    </a>
-  </h2>
-  {% if loop.index == 1 %}<ul>{% endif %}
+  {% if loop.index == 1 %}
+    <h2 id="authors">
+      <a href="#authors" class="anchor-link">
+      {% if loop.length == 1 %}{{ self.author() }}{% endif -%}
+      {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
+      </a>
+    </h2>
+    <ul>
+    {% endif %}
       {% set authordata = config.contributors[author] if author in config.contributors else None %}
     {% if authordata %}
       <li>
@@ -246,9 +248,9 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             {{ render_byline() }}
             {{ self.main_content() }}
         </article>
-        <section class="chapter_links">
+        <div class="chapter_links">
             {{ render_actions() }}
-        </section>
+        </div>
         <section class="authors">
             {{ render_authors() }}
         </section>

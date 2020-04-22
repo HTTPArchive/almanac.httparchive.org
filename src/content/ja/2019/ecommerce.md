@@ -121,7 +121,7 @@ last_updated: 2020-01-10T00:00:00.000Z
 
 <figure>
   <a href="/static/images/2019/ecommerce/fig4.png">
-    <img src="/static/images/2019/ecommerce/fig4.png" alt="図4. トップのEコマースプラットフォームの採用。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414.5" data-width="600" data-height="414.5" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
+    <img src="/static/images/2019/ecommerce/fig4.png" alt="図4. トップのEコマースプラットフォームの採用。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414" data-width="600" data-height="414" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">上位20のEコマースプラットフォームの採用状況の棒グラフ。上位6プラットフォームの採用状況のデータ表は、上記の図3を参照してください。</div>
   <figcaption id="fig4-caption">図4. トップのEコマースプラットフォームの採用。</figcaption>
