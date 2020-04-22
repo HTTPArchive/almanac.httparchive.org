@@ -239,7 +239,7 @@ Parmi les sites avec un balisage de données structuré, les cinq types les plus
 
 1. `WebSite` (16,02 %)
 2. `SearchAction` (14,35 %)
-3. `Organisation` (12,89 %)
+3. `Organization` (12,89 %)
 4. `WebPage` (11,58 %)
 5. `ImageObject` (5,35 %)
 
