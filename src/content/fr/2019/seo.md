@@ -193,7 +193,7 @@ La page de bureau médiane comprend 70 liens internes (même site), tandis que l
 
 Les liens d'ancrage, qui pointent vers une certaine position de défilement sur la même page, ne sont pas très populaires. Plus de 65 % des pages d'accueil n'ont pas de liens d'ancrage. Cela est probablement dû au fait que les pages d'accueil ne contiennent généralement pas de contenu long.
 
-Il y a de bonnes nouvelles de notre analyse de la métrique de texte du lien descriptif. 89,94 % des pages mobiles réussissent [l'audit de texte du lien descriptif] de Lighthouse (https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text). Cela signifie que ces pages n'ont pas de liens génériques "cliquez ici", "aller", "ici" ou "en savoir plus", mais utilisent un texte de lien plus significatif qui aide les utilisateurs et les moteurs de recherche à mieux comprendre le contexte des pages et comment elles se connectent les uns aux autres.
+Il y a de bonnes nouvelles de notre analyse de la métrique de texte du lien descriptif. 89,94 % des pages mobiles réussissent [l'audit de texte du lien descriptif] de Lighthouse (https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text). Cela signifie que ces pages n'ont pas de liens génériques "cliquez ici", "aller", "ici" ou "en savoir plus", mais utilisent un texte de lien plus significatif qui aide les utilisateurs et les moteurs de recherche à mieux comprendre le contexte des pages et comment elles se connectent les unes aux autres.
 
 ## Avancé
 
