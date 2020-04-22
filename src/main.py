@@ -160,6 +160,13 @@ def accessibility_statement(lang):
     return render_template('%s/2019/accessibility_statement.html' % (lang))
 
 
+# Handle trailing slashes for accessibility statement (as it's a special case)
+@app.route('/<lang>/accessibility-statement/')
+@validate
+def accessibility_statement_with_trailing_slash(lang):
+    return redirect("/%s/accessibility-statement" % (lang)), 301
+
+
 @app.route('/sitemap.xml')
 def sitemap():
     xml = render_template('sitemap.xml')

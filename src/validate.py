@@ -26,11 +26,6 @@ def validate(func):
         year = kwargs.get('year')
         chapter = kwargs.get('chapter')
 
-        # Handle the pages that don't follow /lang/year/page structure
-        # which can end up here if they have trailing slashes in URL
-        if year == "accessibility-statement":
-            return redirect('/%s/accessibility-statement' % lang, code=301)
-
         accepted_args = inspect.getargspec(func).args
 
         lang, year = validate_lang_and_year(lang, year)
