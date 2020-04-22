@@ -237,7 +237,7 @@ Au cours de nos recherches, nous avons constaté que seuls 14,67 % des sites so
 
 Parmi les sites avec un balisage de données structuré, les cinq types les plus implémentés sont:
 
-1. `webSite` (16,02 %)
+1. `WebSite` (16,02 %)
 2. `SearchAction` (14,35 %)
 3. `Organisation` (12,89 %)
 4. `webPage` (11,58 %)
