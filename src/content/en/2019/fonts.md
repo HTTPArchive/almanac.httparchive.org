@@ -603,7 +603,7 @@ It should also be noted here that it has been said by smarter people than I (Bra
 
 <figure>
   <div class="big-number">7%</div>
-  <figcaption>Figure 16. Percent of desktop and mobile pages that include a style with the <code>font-stretch</code> property.</figcaption>
+  <figcaption>Figure 17. Percent of desktop and mobile pages that include a style with the <code>font-stretch</code> property.</figcaption>
 </figure>
 
 Historically, `font-stretch` has suffered from poor browser support and was not a well-known `@font-face` property. Read more about [`font-stretch` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). But [browser support](https://caniuse.com/#feat=css-font-stretch) has broadened.
@@ -616,17 +616,17 @@ It has been suggested that using condensed fonts on smaller viewports allows mor
 
 <figure>
   <div class="big-number">1.8%</div>
-  <figcaption>Figure 16. Percent of pages that include a variable font.</figcaption>
+  <figcaption>Figure 18. Percent of pages that include a variable font.</figcaption>
 </figure>
 
 Even at 1.8% this was higher than expected, although I am excited to see this take off. [Google Fonts v2](https://developers.google.com/fonts/docs/css2) does include some support for variable fonts.
 
 <figure>
-  <a href="/static/images/2019/fonts/fig17.png">
-    <img src="/static/images/2019/fonts/fig17.png" alt="Figure 17. Usage of 'font-variation-settings' axes." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&amp;format=interactive">
+  <a href="/static/images/2019/fonts/fig19.png">
+    <img src="/static/images/2019/fonts/fig19.png" alt="Figure 19. Usage of 'font-variation-settings' axes." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&amp;format=interactive">
   </a>
-  <div id="fig17-description" class="visually-hidden">Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the "opsz" value, 32% to "wght", 16% to "wdth", 2% or fewer to "roun", "crsb", "slnt", "inln", and more. The most notable differences between desktop and mobile pages are 26% usage of "opsz", 38% of "wght", and 23% of "wdth".</div>
-  <figcaption id="fig17-caption">Figure 17. Usage of <code>font-variation-settings</code> axes.</figcaption>
+  <div id="fig19-description" class="visually-hidden">Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the "opsz" value, 32% to "wght", 16% to "wdth", 2% or fewer to "roun", "crsb", "slnt", "inln", and more. The most notable differences between desktop and mobile pages are 26% usage of "opsz", 38% of "wght", and 23% of "wdth".</div>
+  <figcaption id="fig19-caption">Figure 19. Usage of <code>font-variation-settings</code> axes.</figcaption>
 </figure>
 
 Through the lens of this large data set, these are very low sample sizes-take these results with a grain of salt. However, `opsz` as the most common axis on desktop pages is notable, with `wght` and `wdth` trailing. In my experience, the introductory demos for variable fonts are usually weight-based.
@@ -635,7 +635,7 @@ Through the lens of this large data set, these are very low sample sizes-take th
 
 <figure>
   <div class="big-number">117</div>
-  <figcaption>Figure 18. The number of desktop web pages that include a color font.</figcaption>
+  <figcaption>Figure 20. The number of desktop web pages that include a color font.</figcaption>
 </figure>
 
 Usage here of these is basically nonexistent but you can check out the excellent resource [Color Fonts! WTF?](https://www.colorfonts.wtf/) for more information. Similar (but not at all) to the SVG format for fonts (which is bad and going away), this allows you to embed SVG inside of OpenType files, which is awesome and cool.

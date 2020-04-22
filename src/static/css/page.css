@@ -128,7 +128,7 @@
 
 .content {
   grid-area: content;
-  margin-left: 30px;
+  margin-left: 40px;
   min-width: 320px;
 }
 .content > section, .content > article {
@@ -295,6 +295,28 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.anchor-link {
+  text-decoration: none;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+figure .anchor-link {
+  text-decoration: underline;
+}
+
+.anchor-link:hover::before,
+.anchor-link:focus::before {
+  content: url('/static/images/link.svg');
+  content: url('/static/images/link.svg') / '';
+  left: -25px;
+  position: relative;
+  float: left;
+  width: 0px;
+  height: 0px;
+}
+
 figure {
   display: flex;
   flex-direction: column;
@@ -322,7 +344,7 @@ figure .code-block {
   margin: 10px auto;
 }
 figcaption {
-  margin-top: 8px;
+  margin: 8px auto 0;
   text-align: center;
 }
 table {
@@ -433,6 +455,10 @@ figure .fig-desktop {
   }
   .index .index-box {
     max-height: 100%;
+  }
+  .anchor-link:hover::before,
+  .anchor-link:focus::before {
+    content: '';
   }
 }
 
