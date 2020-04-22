@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("third-parties","seo","markup") | random %}
+{%- set featured_chapter = ("third-parties","seo","markup","cms") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -58,8 +58,8 @@
   {%- set featured_chapter_stats = {"stat1":"3.98%","label1":"Sites using WooCommerce the most popular ecommerce platform","stat2":"116","label2":"Number of ecommerce platforms detected","stat3":"1,517 KB","label3":"Median image bytes per mobile ecommerce page."} %}
 {%- elif featured_chapter == "cms" %}
   {%- set featured_chapter_name = "CMS" %}
-  {%- set featured_chapter_quote = "The general term Content Management System (CMS) refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content, specifically, is a system aimed at creating, managing, and publishing content to be consumed and experienced via the open web. Each CMS implements some subset of a wide range of content management capabilities and the corresponding mechanisms for users to build websites easily and effectively around their content." %}
-  {%- set featured_chapter_stats = {"stat1":"40%","label1":"Pages powered by a CMS","stat2":"74%","label2":"CMS sites that use WordPress","stat3":"1,232 KB","label3":"Median image KB loaded per desktop CMS page."} %}
+  {%- set featured_chapter_quote = "Le terme général Système de gestion de contenu (SGC, ou CMS pour Content Management System en anglais) désigne les systèmes permettant aux personnes et aux organisations de créer, de gérer et de publier du contenu. Un CMS pour le contenu web, plus précisément, est un système visant à créer, gérer et publier du contenu à consommer et à expérimenter via le web ouvert. Chaque CMS met en œuvre un sous-ensemble d'un large éventail de capacités de gestion de contenu et les mécanismes correspondants pour permettre aux utilisateurs de construire facilement et efficacement des sites web autour de leur contenu." %}
+  {%- set featured_chapter_stats = {"stat1":"40 %","label1":"des pages web sont propulsées par un CMS","stat2":"74 %","label2":"des sites utilisant un CMS utilisent WordPress","stat3":"1232 Ko","label3":"poids des images sur page CMS (bureau)"} %}
 {%- elif featured_chapter == "compression" %}
   {%- set featured_chapter_name = "Compression" %}
   {%- set featured_chapter_quote = "JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page." %}
