@@ -77,7 +77,7 @@ Le nombre médian d'éléments de titre par page est de 10. Les titres contienne
 
 En termes de longueur de titre spécifique, la longueur médiane du premier élément `H1` trouvé sur le bureau est de 19 caractères.
 
-Pour obtenir des conseils sur la façon de gérer les `` H1 '' et les rubriques pour le référencement et l'accessibilité, jetez un œil à cette [réponse vidéo de John Mueller](https://www.youtube.com/watch?v=zyqJJXWk0gk) dans le Ask Google Série de webmasters.
+Pour obtenir des conseils sur la façon de gérer les `H1` et les rubriques pour le référencement et l'accessibilité, jetez un œil à cette [réponse vidéo de John Mueller](https://www.youtube.com/watch?v=zyqJJXWk0gk) dans le Ask Google Série de webmasters.
 
 ### Balises meta
 
