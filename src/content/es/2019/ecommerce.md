@@ -121,7 +121,7 @@ La Figura 3 anterior muestra que WooCommerce tiene la mayor adopción con alrede
 
 <figure>
   <a href="/static/images/2019/ecommerce/fig4.png">
-    <img src="/static/images/2019/ecommerce/fig4.png" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414.5" data-width="600" data-height="414.5" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
+    <img src="/static/images/2019/ecommerce/fig4.png" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414" data-width="600" data-height="414" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">Gráfico de barras de la adopción de las 20 principales plataformas de comercio electrónico. Consulte la Figura 3 anterior para obtener una tabla de datos de adopción de las 6 plataformas principales.</div>
   <figcaption id="fig4-caption">Figura 4. Adopción de las principales plataformas de comercio electrónico.</figcaption>
