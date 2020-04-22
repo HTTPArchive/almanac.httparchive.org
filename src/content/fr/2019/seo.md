@@ -118,7 +118,7 @@ La longueur médiane de la description de la méta était également inférieure
 
 #### Attributs Alt pour les images
 
-Compte tenu de l'importance de l'attribut `Alt` pour le référencement et l'accessibilité, il est loin d'être idéal de voir que seulement 46,71 % des pages mobiles utilisent des attributs «alt» sur toutes leurs images. Cela signifie qu'il y a encore des améliorations à faire pour rendre les images sur le web plus accessibles aux utilisateurs et compréhensibles pour les moteurs de recherche. En savoir plus sur ces problèmes dans le chapitre [Accessibilité](./accessibility).
+Compte tenu de l'importance de l'attribut `Alt` pour le référencement et l'accessibilité, il est loin d'être idéal de voir que seulement 46,71 % des pages mobiles utilisent des attributs `alt` sur toutes leurs images. Cela signifie qu'il y a encore des améliorations à faire pour rendre les images sur le web plus accessibles aux utilisateurs et compréhensibles pour les moteurs de recherche. En savoir plus sur ces problèmes dans le chapitre [Accessibilité](./accessibility).
 
 ### Indexabilité
 
@@ -131,9 +131,9 @@ Pour afficher le contenu d'une page aux utilisateurs dans les SERP, les robots d
 
 #### Codes de réponses HTTP
 
-Il est recommandé de conserver un code de réponse HTTP «200 OK» pour toutes les pages importantes que vous souhaitez voir indexées par les moteurs de recherche. La majorité des pages testées étaient accessibles aux moteurs de recherche, 87,03 % des demandes HTML initiales sur le bureau renvoyant un code d'état «200». Les résultats étaient légèrement inférieurs pour les pages mobiles, avec seulement 82,95 % des pages renvoyant un code d'état «200».
+Il est recommandé de conserver un code de réponse HTTP `200 OK` pour toutes les pages importantes que vous souhaitez voir indexées par les moteurs de recherche. La majorité des pages testées étaient accessibles aux moteurs de recherche, 87,03 % des demandes HTML initiales sur le bureau renvoyant un code d'état `200`. Les résultats étaient légèrement inférieurs pour les pages mobiles, avec seulement 82,95 % des pages renvoyant un code d'état `200`.
 
-Le code de réponse suivant le plus fréquemment trouvé sur mobile était le «302», une redirection temporaire, qui a été trouvée sur 10,45 % des pages mobiles. C'était plus élevé que sur le bureau, avec seulement 6,71 % des pages d'accueil du bureau renvoyant un code d'état «302». Cela pourrait être dû au fait que les [pages d'accueil mobiles étaient des alternatives](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls) vers une page de bureau équivalente, comme sur des sites non responsive qui ont des versions distinctes du site web pour chaque appareil.
+Le code de réponse suivant le plus fréquemment trouvé sur mobile était le `302`, une redirection temporaire, qui a été trouvée sur 10,45 % des pages mobiles. C'était plus élevé que sur le bureau, avec seulement 6,71 % des pages d'accueil du bureau renvoyant un code d'état `302`. Cela pourrait être dû au fait que les [pages d'accueil mobiles étaient des alternatives](https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls) vers une page de bureau équivalente, comme sur des sites non responsive qui ont des versions distinctes du site web pour chaque appareil.
 
 <p class="note">Remarque&nbsp;: nos résultats n'incluaient pas les codes d'état 4xx ou 5xx.</p>
 
@@ -141,7 +141,7 @@ Le code de réponse suivant le plus fréquemment trouvé sur mobile était le «
 
 La directive `noindex` peut être indiquée dans le `HTML` ou bien dans les entêtes HTTP `X-Robots`. Une directive `noindex` indique essentiellement à un moteur de recherche de ne pas inclure cette page dans ses SERPs, mais la page sera toujours accessible aux utilisateurs lorsqu'ils naviguent sur le site web. Les directives `noindex` sont généralement ajoutées aux versions en double des pages qui servent le même contenu, ou aux pages de faible qualité qui n'apportent aucune valeur aux utilisateurs qui arrivent sur un site web à partir d'une recherche organique, telles que les pages de recherche filtrées, à facettes ou internes.
 
-96,93 % des pages mobiles ont réussi [l'audit d'indexation de Lighthouse](https&nbsp;://developers.google.com/web/tools/lighthouse/audits/indexing), ce qui signifie que ces pages ne contenaient pas de directive «noindex». Cependant, cela signifie que 3,07 % des pages d'accueil mobiles ont une directive `noindex`, ce qui est préoccupant et signifie que Google n'a pas pu indexer ces pages.
+96,93 % des pages mobiles ont réussi [l'audit d'indexation de Lighthouse](https&nbsp;://developers.google.com/web/tools/lighthouse/audits/indexing), ce qui signifie que ces pages ne contenaient pas de directive `noindex`. Cependant, cela signifie que 3,07 % des pages d'accueil mobiles ont une directive `noindex`, ce qui est préoccupant et signifie que Google n'a pas pu indexer ces pages.
 
 <p class="note">Les sites web inclus dans notre recherche proviennent de <a href="./methodology#chrome-ux-report">Chrome UX Report</a>, qui exclut les site web non publiques. Il s'agit d'une source importante de biais, car nous ne sommes pas en mesure d'analyser les sites que Chrome juge non publics. Plus de détails sur notre <a href="./methodology#websites">méthodologie/a>.</p>
 
@@ -243,7 +243,7 @@ Parmi les sites avec un balisage de données structuré, les cinq types les plus
 4. `webPage` (11,58 %)
 5. `ImageObject` (5,35 %)
 
-Fait intéressant, l'un des types de données les plus populaires qui déclenche une fonctionnalité de moteur de recherche est «SearchAction», qui alimente la [boîte de recherche des liens annexes](https://developers.google.com/search/docs/data-types/sitelinks-searchbox).
+Fait intéressant, l'un des types de données les plus populaires qui déclenche une fonctionnalité de moteur de recherche est `SearchAction`, qui alimente la [boîte de recherche des liens annexes](https://developers.google.com/search/docs/data-types/sitelinks-searchbox).
 
 Les cinq principaux types de balisage conduisent tous à une plus grande visibilité dans les résultats de recherche de Google, ce qui pourrait être le facteur d'une adoption plus répandue de ces types de données structurées.
 
@@ -255,7 +255,7 @@ Les étoiles d'avis ne se trouvent que sur 1,09 % des pages d'accueil du web (v
 
 L'internationalisation est l'un des aspects les plus complexes du référencement naturel, même [selon certains employés de la recherche Google](https://twitter.com/JohnMu/status/965507331369984002). L'internationalisation du référencement se concentre sur la diffusion du bon contenu à partir d'un site web avec plusieurs versions linguistiques ou nationales et sur le ciblage du contenu vers la langue et l'emplacement spécifiques de l'utilisateur.
 
-Alors que 38,40 % des sites de bureau (33,79 % sur mobile) ont l'attribut HTML `lang` réglé sur anglais, seulement 7,43 % (6,79 % sur mobile) des sites contiennent également un lien «hreflang» vers une autre version linguistique. Cela suggère que la grande majorité des sites web que nous avons analysés n'offrent pas de versions distinctes de leur page d'accueil qui nécessiteraient un ciblage linguistique - sauf si ces versions distinctes existent mais n'ont pas été configurées correctement.
+Alors que 38,40 % des sites de bureau (33,79 % sur mobile) ont l'attribut HTML `lang` réglé sur anglais, seulement 7,43 % (6,79 % sur mobile) des sites contiennent également un attribut `hreflang` de balise `link` pointant vers une autre version linguistique. Cela suggère que la grande majorité des sites web que nous avons analysés n'offrent pas de versions distinctes de leur page d'accueil qui nécessiteraient un ciblage linguistique - sauf si ces versions distinctes existent mais n'ont pas été configurées correctement.
 
 <figure>
   <table>
