@@ -66,6 +66,7 @@ Nous avons également examiné si les pages sont structurées de manière à fou
 </figure>
 
 Le nombre médian d'éléments de titre par page est de 10. Les titres contiennent 30 mots sur les pages mobiles et 32 mots sur les pages de bureau. Cela implique que les sites web qui utilisent des titres mettent beaucoup d'efforts pour s'assurer que leurs pages sont lisibles, descriptives et décrivent clairement la structure de la page et le contexte du moteur de recherche.
+
 <figure>
   <a href="/static/images/2019/seo/fig3.png">
     <img src="/static/images/2019/seo/fig3.png" alt="Figure 3. Répartition du nombre de caractères dans le premier H1 par page." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive">
@@ -99,7 +100,7 @@ Les titres de page sont un moyen important de communiquer l'objectif d'une page 
   <figcaption id="fig5-caption">Figure 5. Distribution de la longueur du titre par page.</figcaption>
 </figure>
 
-Même si [Google affiche généralement les 50 à 60 premiers caractères d'un titre de page](https://moz.com/learn/seo/title-tag)dans une page de résultats de recherche. La longueur médiane `title` de la balise ne comportait que 21 caractères pour les pages mobiles et 20 caractères pour les pages de bureau. Même le 75e centile est toujours inférieur à la longueur préconisée. Cela suggère que certains SEO et rédacteurs de contenu ne profitent pas de l'espace qui leur est alloué par les moteurs de recherche pour décrire leurs pages d'accueil dans les SERP.
+Même si [Google affiche généralement les 50 à 60 premiers caractères d'un titre de page](https://moz.com/learn/seo/title-tag) dans une page de résultats de recherche. La longueur médiane `title` de la balise ne comportait que 21 caractères pour les pages mobiles et 20 caractères pour les pages de bureau. Même le 75e centile est toujours inférieur à la longueur préconisée. Cela suggère que certains SEO et rédacteurs de contenu ne profitent pas de l'espace qui leur est alloué par les moteurs de recherche pour décrire leurs pages d'accueil dans les SERP.
 
 #### Meta descriptions
 
@@ -122,6 +123,7 @@ Compte tenu de l'importance de l'attribut `Alt` pour le référencement et l'acc
 ### Indexabilité
 
 Pour afficher le contenu d'une page aux utilisateurs dans les SERP, les robots des moteurs de recherche doivent d'abord être autorisés à accéder à cette page et à l'indexer. Certains des facteurs qui influent sur la capacité d'un moteur de recherche à explorer et à indexer des pages sont les suivants:
+
 - Codes de réponse HTTP
 - Balise `noindex` 
 - Balise link canonical 
@@ -138,6 +140,7 @@ Le code de réponse suivant le plus fréquemment trouvé sur mobile était le «
 #### `noindex`
 
 La directive `noindex` peut être indiquée dans le `HTML` ou bien dans les entêtes HTTP `X-Robots`. Une directive `noindex` indique essentiellement à un moteur de recherche de ne pas inclure cette page dans ses SERPs, mais la page sera toujours accessible aux utilisateurs lorsqu'ils naviguent sur le site web. Les directives `noindex` sont généralement ajoutées aux versions en double des pages qui servent le même contenu, ou aux pages de faible qualité qui n'apportent aucune valeur aux utilisateurs qui arrivent sur un site web à partir d'une recherche organique, telles que les pages de recherche filtrées, à facettes ou internes.
+
 96,93% des pages mobiles ont réussi [l'audit d'indexation de Lighthouse](https&nbsp;://developers.google.com/web/tools/lighthouse/audits/indexing), ce qui signifie que ces pages ne contenaient pas de directive «noindex». Cependant, cela signifie que 3,07% des pages d'accueil mobiles ont une directive `noindex`, ce qui est préoccupant et signifie que Google n'a pas pu indexer ces pages.
 
 <p class="note">Les sites web inclus dans notre recherche proviennent de <a href="./methodology#chrome-ux-report">Chrome UX Report</a>, qui exclut les site web non publiques. Il s'agit d'une source importante de biais, car nous ne sommes pas en mesure d'analyser les sites que Chrome juge non publics. Plus de détails sur notre <a href="./methodology#websites">méthodologie/a>.</p>
@@ -152,12 +155,14 @@ Les balises canoniques sont utilisées pour spécifier les pages en double et le
 
 L'une des méthodes les plus efficaces pour contrôler l'exploration des moteurs de recherche est le fichier [robots.txt]. Il s'agit d'un fichier qui se trouve sur le domaine racine d'un site web et spécifie quelles URL et chemins d'URL doivent être interdits à l'exploration par les moteurs de recherche.
 
-Il était intéressant de constater que seulement 72,16% des sites mobiles ont un «robots.txt» valide, [selon Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/robots). Les principaux problèmes que nous avons constatés sont répartis entre 22% des sites n'ayant aucun fichier `robots.txt` et ~ 6% servant un fichier` robots.txt` non valide, et échouent ainsi à l'audit. Bien qu'il existe de nombreuses raisons valables de ne pas avoir de fichier `robots.txt`, comme avoir un petit site web qui n'a pas [de soucis de budget de crawl](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html), avoir un `robots.txt` invalide peut être problématique surtout avec le Mobile First Index.
+Il était intéressant de constater que seulement 72,16 % des sites mobiles ont un `robots.txt` valide, [selon Lighthouse](https://developers.google.com/web/tools/lighthouse/audits/robots). Les principaux problèmes que nous avons constatés sont répartis entre 22% des sites n'ayant aucun fichier `robots.txt` et ~ 6% servant un fichier` robots.txt` non valide, et échouent ainsi à l'audit. Bien qu'il existe de nombreuses raisons valables de ne pas avoir de fichier `robots.txt`, comme avoir un petit site web qui n'a pas [de soucis de budget de crawl](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html), avoir un `robots.txt` invalide peut être problématique surtout avec le Mobile First Index.
 
 ### Liens
 
 Les liens sont l'un des attributs les plus importants d'une page web. Les liens aident les moteurs de recherche à découvrir de nouvelles pages pertinentes à ajouter à leur index et à naviguer sur les sites web. 96% des pages web de notre ensemble de données contiennent au moins un lien interne et 93% contiennent au moins un lien externe vers un autre domaine. La petite minorité de pages qui n'ont pas de liens internes ou externes passeront à côté de l'immense valeur que les liens transmettent aux pages cibles.
+
 Le nombre de liens internes et externes inclus sur les pages de bureau était constamment supérieur au nombre trouvé sur les pages mobiles. Souvent, un espace limité sur une fenêtre plus petite entraîne moins de liens à inclure dans la conception d'une page mobile par rapport au bureau.
+
 Il est important de garder à l'esprit que moins de liens internes sur la version mobile d'une page [pourraient causer un problème](https://moz.com/blog/internal-linking-mobile-first-crawl-paths) pour votre site web. Avec le Mobile-First index, si une page est uniquement liée à partir de la version bureau, Google ne prendra pas compte de ses liens si le site fait partie de l'index Mobile.
 
 <figure>
@@ -177,6 +182,7 @@ Il est important de garder à l'esprit que moins de liens internes sur la versio
 </figure>
 
 La page de bureau médiane comprend 70 liens internes (même site), tandis que la page mobile médiane comporte 60 liens internes. Le nombre médian de liens externes par page suit une tendance similaire, avec des pages de bureau comprenant 10 liens externes et des pages mobiles 8.
+
 <figure>
   <a href="/static/images/2019/seo/fig9.png">
     <img src="/static/images/2019/seo/fig9.png" alt="Figure 9. Répartition du nombre de liens d'ancrage par page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive">
@@ -186,16 +192,19 @@ La page de bureau médiane comprend 70 liens internes (même site), tandis que l
 </figure>
 
 Les liens d'ancrage, qui pointent vers une certaine position de défilement sur la même page, ne sont pas très populaires. Plus de 65% des pages d'accueil n'ont pas de liens d'ancrage. Cela est probablement dû au fait que les pages d'accueil ne contiennent généralement pas de contenu long.
+
 Il y a de bonnes nouvelles de notre analyse de la métrique de texte du lien descriptif. 89,94% des pages mobiles réussissent [l'audit de texte du lien descriptif] de Lighthouse (https://developers.google.com/web/tools/lighthouse/audits/descriptive-link-text). Cela signifie que ces pages n'ont pas de liens génériques "cliquez ici", "aller", "ici" ou "en savoir plus", mais utilisent un texte de lien plus significatif qui aide les utilisateurs et les moteurs de recherche à mieux comprendre le contexte des pages et comment elles se connectent les uns aux autres.
 
 ## Avancé
 
 Avoir un contenu descriptif et utile sur une page qui n'est pas bloquée des moteurs de recherche avec une directive `noindex` ou `Disallow` n'est pas suffisant pour qu'un site web réussisse dans la recherche organique. Ce ne sont que les bases. Il y a beaucoup plus que ce qui peut être fait pour améliorer les performances d'un site web et son apparence dans les SERPs.
+
 Certains des aspects les plus complexes sur le plan technique qui ont gagné en importance dans l'indexation et le classement réussi des sites web comprennent la performance web (vitesse de chargement), les données structurées, l'internationalisation, la sécurité et la compatibilité mobile.
 
 ### Performance web
 
 La vitesse de chargement des sites mobiles a été d'abord [annoncée comme facteur de positionnement](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html) par Google en 2018. La vitesse n'est pas un nouvel objectif pour Google. En 2010, il a été [révélé que la vitesse avait été introduite comme facteur de classement](https://webmasters.googleblog.com/2010/04/using-site-speed-in-web-search-ranking.html).
+
 Un site web à chargement rapide est également essentiel pour une bonne expérience utilisateur. Les utilisateurs qui doivent attendre même quelques secondes pour qu'un site se charge ont tendance à rebondir et à essayer un autre résultat de l'un de vos concurrents qui se charge rapidement et répond à leurs attentes de performances.
 
 Les métriques que nous avons utilisées pour notre analyse de la vitesse de chargement sur le web sont basées sur le [<i lang="en">Chrome UX Report</i>](./methodology#chrome-ux-report) (CrUX), qui recueille des données auprès des utilisateurs réels de Chrome. Ces données montrent qu'un que 48% des sites web sont étiquetés comme **lents**. Un site web est considéré lent s'il présente plus de 25% d'expériences FCP (<i lang="en">First Contentful Paint</i>) plus lentes que 3 secondes _ou_ 5% d'expériences FID (<i lang="en">First input Delay</i>) plus lentes que 300 ms.
@@ -205,37 +214,47 @@ Les métriques que nous avons utilisées pour notre analyse de la vitesse de cha
     <img src="/static/images/2019/seo/fig10.png" alt="Figure 10. Répartition des performances des expériences utilisateur par type d'appareil." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive">
   </a>
   <div id="fig10-description" class="visually-hidden">Distribution des performances des expériences utilisateur des ordinateurs de bureau, des téléphones et des tablettes. Ordinateur de bureau&nbsp;: 2% rapide, 52% modéré, 46% lent. Téléphone&nbsp;: 1% rapide, 41% modéré, 58% lent. Tablette&nbsp;: 0% rapide, 35% modérée, 65% lente.</div>
-  <figcaption id="fig10-caption">Figure 10. Distribution of the performance of user experiences by device type.</figcaption>
+  <figcaption id="fig10-caption">Figure 10. Distribution des performances des expériences utilisateur par type d'appareil</figcaption>
 </figure>
 
 Segmentée par type d'appareil, cette image est encore plus sombre pour la tablette (65%) et le mobile (58%).
+
 Bien que les chiffres soient inquiétants pour la vitesse du web, la bonne nouvelle est que les experts et les outils SEO se concentrent de plus en plus sur les défis techniques de l'accélération des sites. Vous pouvez en savoir plus sur l'état des performances web dans le chapitre [Performances](./performance).
 
 ### Données structurées
 
 Les données structurées permettent aux propriétaires de sites web d'ajouter des données sémantiques supplémentaires à leurs pages web, en ajoutant des extraits de code [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) ou des [microdonnées](https://developer.mozilla.org/fr/docs/web/HTML/Microdonn%C3%A9es), par exemple. Les moteurs de recherche analysent ces données pour mieux comprendre ces pages et utilisent parfois le balisage pour afficher des informations pertinentes supplémentaires dans les résultats de la recherche. Les types de données structurées les plus courants sont&nbsp;:
+
 - [Review](https://developers.google.com/search/docs/data-types/review-snippet)
 - [Product](https://developers.google.com/search/docs/data-types/product)
 - [Local Bussiness](https://developers.google.com/search/docs/data-types/local-business)
 - [Movie](https://developers.google.com/search/docs/data-types/movie)
 - et [D'autres](https://developers.google.com/search/docs/guides/search-gallery)
+
 La [visibilité supplémentaire](https://developers.google.com/search/docs/guides/enhance-site) que les données structurées peuvent fournir aux sites web est intéressante pour les propriétaires de sites, car elle peut aider à créer plus d'opportunités de trafic . Par exemple, le [schéma de FAQ] relativement nouveau (https://developers.google.com/search/docs/data-types/faqpage) doublera la taille de votre extrait sur les pages de résultats de recherche.
 Au cours de nos recherches, nous avons constaté que seuls 14,67% des sites sont éligibles pour des résultats riches sur mobile. Fait intéressant, l'admissibilité au site de bureau est légèrement inférieure à 12,46%. Cela suggère que les propriétaires de sites peuvent faire beaucoup plus pour optimiser la façon dont leurs pages d'accueil apparaissent dans la recherche.
 Parmi les sites avec un balisage de données structuré, les cinq types les plus implémentés sont:
+
 1. `webSite` (16,02%)
 2. `SearchAction` (14,35%)
 3. `Organisation` (12,89%)
 4. `webPage` (11,58%)
 5. `ImageObject` (5,35%)
-Fait intéressant, l'un des types de données les plus populaires qui déclenche une fonctionnalité de moteur de recherche est «SearchAction», qui alimente la [boîte de recherche des liens annexes](https://developers.google.com/search/docs/data-types/sitelinks-searchbox) .
+
+Fait intéressant, l'un des types de données les plus populaires qui déclenche une fonctionnalité de moteur de recherche est «SearchAction», qui alimente la [boîte de recherche des liens annexes](https://developers.google.com/search/docs/data-types/sitelinks-searchbox).
+
 Les cinq principaux types de balisage conduisent tous à une plus grande visibilité dans les résultats de recherche de Google, ce qui pourrait être le facteur d'une adoption plus répandue de ces types de données structurées.
+
 Étant donné que nous n'avons examiné que les pages d'accueil, les résultats pourraient sembler très différents si nous considérions également les pages intérieures.
+
 Les étoiles d'avis ne se trouvent que sur 1,09% des pages d'accueil du web (via [AggregateRating](https://schema.org/AggregateRating)). En outre, le [QAPage] nouvellement introduit (https://schema.org/QAPage) n'est apparu que dans 48 cas, et le [FAQPage](https://schema.org/FAQPage) à une fréquence légèrement plus élevée de 218 fois. Ces deux derniers décomptes devraient augmenter à l'avenir alors que nous effectuons davantage d'analyses et approfondissons l'analyse Web Almanac.
 
 ### Internationalisation
 
 L'internationalisation est l'un des aspects les plus complexes du référencement naturel, même [selon certains employés de la recherche Google](https://twitter.com/JohnMu/status/965507331369984002). L'internationalisation du référencement se concentre sur la diffusion du bon contenu à partir d'un site web avec plusieurs versions linguistiques ou nationales et sur le ciblage du contenu vers la langue et l'emplacement spécifiques de l'utilisateur.
+
 Alors que 38,40% des sites de bureau (33,79% sur mobile) ont l'attribut HTML `lang` réglé sur anglais, seulement 7,43% (6,79% sur mobile) des sites contiennent également un lien «hreflang» vers une autre version linguistique. Cela suggère que la grande majorité des sites web que nous avons analysés n'offrent pas de versions distinctes de leur page d'accueil qui nécessiteraient un ciblage linguistique - sauf si ces versions distinctes existent mais n'ont pas été configurées correctement.
+
 <figure>
   <table>
     <thead>
@@ -405,6 +424,7 @@ Nous avons constaté que 67,06% des sites web sur ordinateur sont désormais ser
 Le [Rapport de transparence HTTPS] de Google (https://transparencyreport.google.com/https/overview) signale une adoption de 90% de HTTPS pour les 100 principaux domaines non Google (ce qui représente 25% de tout le trafic de sites web dans le monde). La différence entre ce nombre et le nôtre pourrait s'expliquer par le fait que des sites relativement plus petits adoptent le HTTPS à un rythme plus lent.
 
 En savoir plus sur l'état de la sécurité dans le chapitre [Sécurité](./security).
+
 ## Conclusion
 
 Grâce à notre analyse, nous avons observé que la majorité des sites web suivent les bonnes pratiques, dans la mesure où leurs pages d'accueil sont explorables, indexables et incluent le contenu clé requis pour bien se classer dans les pages de résultats des moteurs de recherche. Toutes les personnes qui possèdent un site web ne sont pas du tout au courant du SEO, sans parler des directives de meilleures pratiques, il est donc prometteur de voir que tant de sites ont couvert les bases.
