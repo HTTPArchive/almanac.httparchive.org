@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("third-parties","seo","markup","cms", "caching") | random %}
+{%- set featured_chapter = ("third-parties","seo","markup","cms", "caching","resource-hints") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -14,8 +14,8 @@
   {%- set featured_chapter_stats = {"stat1":"5%","label1":"Pages using custom properties","stat2":"2%","label2":"Sites that use CSS Grid","stat3":"780","label3":"Number of digits in largest Z-Index value"} %}
 {%- elif featured_chapter == "markup" %}
   {%- set featured_chapter_name = "Balisage Web" %}
-  {%- set featured_chapter_quote = "À partir de juillet 2019, HTTP Archive a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d’accueil pour ordinateurs de bureau et environ 5,3 millions de pages d’accueil sur mobiles que nous pouvons maintenant commencer à analyser et à disséquer. Lors de cette collecte, nous avons découvert *plus de 5 000 noms d’éléments non standard distincts* dans les pages. Nous avons donc limité le nombre total d’éléments distincts que nous comptons aux 5 048 'premiers'." %}
-  {%- set featured_chapter_stats = {"stat1":"11","label1":"Éléments utilisés sur plus de 90 % des pages","stat2":"15 %","label2":"des pages contiennent des éléments dépréciés","stat3":"65","label3":"Variantes de carrousels trouvées"} %}
+  {%- set featured_chapter_quote = "À partir de juillet 2019, HTTP Archive a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d’accueil pour ordinateurs de bureau et environ 5,3 millions de pages d’accueil sur mobiles que nous pouvons maintenant commencer à analyser et à disséquer. Lors de cette collecte, nous avons découvert *plus de 5 000 noms d’éléments non standard distincts* dans les pages. Nous avons donc limité le nombre total d’éléments distincts que nous comptons aux 5 048 \"premiers\"." %}
+  {%- set featured_chapter_stats = {"stat1":"11","label1":"éléments sont utilisés sur plus de 90 % des pages.","stat2":"15 %","label2":"des pages contiennent des éléments dépréciés.","stat3":"65","label3":"variantes de carrousels trouvées."} %}
 {%- elif featured_chapter == "media" %}
   {%- set featured_chapter_name = "Media" %}
   {%- set featured_chapter_quote = "Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media." %}
@@ -23,7 +23,7 @@
 {%- elif featured_chapter == "third-parties" %}
   {%- set featured_chapter_name = "Tierces Parties" %}
   {%- set featured_chapter_quote = "Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link&gt;</code> ou <code>&lt;script&gt;</code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers (3P) pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité." %}
-  {%- set featured_chapter_stats = {"stat1":"93&nbsp;%","label1":"pages avec 3P","stat2":"49&nbsp;%","label2":"des requêtes","stat3":"28&nbsp;%","label3":"des octets"} %}
+  {%- set featured_chapter_stats = {"stat1":"93 %","label1":"pages avec 3P","stat2":"49 %","label2":"des requêtes","stat3":"28 %","label3":"des octets"} %}
 {%- elif featured_chapter == "fonts" %}
   {%- set featured_chapter_name = "Fonts" %}
   {%- set featured_chapter_quote = "Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly." %}
@@ -77,9 +77,9 @@
   {%- set featured_chapter_quote = "The common argument as to why page size doesn't matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine, as long as you're okay with ignoring the vast swathe of internet users who don't have access to said high-speed internet and souped-up devices." %}
   {%- set featured_chapter_stats = {"stat1":"10%","label1":"Sites sending more than 6 MB of Data","stat2":"434 KB","label2":"Increase in median desktop size in last year","stat3":"69","label3":"Median requests per home page"} %}
 {%- elif featured_chapter == "resource-hints" %}
-  {%- set featured_chapter_name = "Resource Hints" %}
-  {%- set featured_chapter_quote = "Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions." %}
-  {%- set featured_chapter_stats = {"stat1":"29%","label1":"Sites using <code>dns-prefetch</code>","stat2":"88%","label2":"Resource hints using the <code>as</code> attribute.","stat3":"0.04%","label3":"Usage of priority hints"} %}
+  {%- set featured_chapter_name = "Indices de Ressources" %}
+  {%- set featured_chapter_quote = "Les indices de ressources fournissent des \"suggestions\" au navigateur sur les ressources qui seront rapidement nécessaires. L'action que le navigateur entreprend à la suite de cet indice varie selon le type d'indice ; différents indices déclenchent différentes actions. Lorsqu'ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation." %}
+  {%- set featured_chapter_stats = {"stat1":"29 %","label1":"des sites utilisent <code>dns-prefetch</code>.","stat2":"88 %","label2":"des indices de ressources utilisent l'attribut <code>as</code>.","stat3":"0,04 %","label3":"des pages utilisent des indices de priorité."} %}
 {%- elif featured_chapter == "http2" %}
   {%- set featured_chapter_name = "HTTP/2" %}
   {%- set featured_chapter_quote = "HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default. This chapter examines how this relatively new technology has fared in the real world." %}
