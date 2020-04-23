@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("ecommerce","http2") | random %}
+{%- set featured_chapter = ("css","markup","third-parties","performance","security","accessibility","seo","pwa","mobile-web","ecommerce","cms","compression","caching","cdn","page-weight","http2") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -10,72 +10,72 @@
   {%- set featured_chapter_stats = {"stat1":"89%","label1":"Sites with more 3P code that 1P","stat2":"83%","label2":"Sites that use jQuery","stat3":"4.6%","label3":"Home pages using React"} %}
 {%- elif featured_chapter == "css" %}
   {%- set featured_chapter_name = "CSS" %}
-  {%- set featured_chapter_quote = "Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user." %}
-  {%- set featured_chapter_stats = {"stat1":"5%","label1":"Pages using custom properties","stat2":"2%","label2":"Sites that use CSS Grid","stat3":"780","label3":"Number of digits in largest Z-Index value"} %}
+  {%- set featured_chapter_quote = "Cascading Style Sheets (CSS) は、Web ページのペイント、フォーマット、レイアウトに使用されます。その機能は、テキストの色から3Dパースペクティブと、シンプルな概念にまで及びます。また、さまざまな画面サイズ、表示コンテキスト、および印刷を処理するために開発者に力を与えるフックを持っています。CSS は、開発者がコンテンツを調整し、ユーザーに適切に適応することを確認するのに役立ちます。" %}
+  {%- set featured_chapter_stats = {"stat1":"5%","label1":"Pages using custom properties","stat2":"2%","label2":"CSS Gridを使用しているサイト","stat3":"780","label3":"Z-Indexの最大値の桁数"} %}
 {%- elif featured_chapter == "markup" %}
-  {%- set featured_chapter_name = "Markup" %}
-  {%- set featured_chapter_quote = "As of July 2019, the HTTP Archive has begun collecting all used <em>element</em> names in the DOM for about 4.4 million desktop home pages, and about 5.3 million mobile home pages which we can now begin to research and dissect. This crawl encountered over 5,000 distinct <em>non-standard element names</em> in these pages, so we capped the total distinct number of elements that we count to the 'top' 5,048." %}
-  {%- set featured_chapter_stats = {"stat1":"11","label1":"Elements used on more than 90% of pages","stat2":"15%","label2":"Pages that contain deprecated elements","stat3":"65","label3":"Variants of carousels found"} %}
+  {%- set featured_chapter_name = "マークアップ" %}
+  {%- set featured_chapter_quote = "2019年7月現在、HTTP Archiveは、約440万件のデスクトップホームページと約530万件のモバイルホームページについて、DOM内で使用されているすべての<em>要素</em>名の収集を開始しており、これにより調査と解剖を開始することができるようになりました。このクロールでは、これらのページで5,000以上の明確な<em>非標準要素名</em>に遭遇したので、私たちがカウントしている要素の合計の明確な数を「トップ」の5,048に制限しました。" %}
+  {%- set featured_chapter_stats = {"stat1":"11","label1":"90%以上のページで使用されている要素","stat2":"15%","label2":"非推奨の要素を含むページ","stat3":"65","label3":"カルーセルのバリエーションが見つかりました"} %}
 {%- elif featured_chapter == "media" %}
   {%- set featured_chapter_name = "Media" %}
   {%- set featured_chapter_quote = "Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media." %}
   {%- set featured_chapter_stats = {"stat1":"1 MB","label1":"Median size of home pages","stat2":"60%","label2":"JPEG use amongst images","stat3":"2%","label3":"Use of <code>&lt;picture&gt;</code> element"} %}
 {%- elif featured_chapter == "third-parties" %}
-  {%- set featured_chapter_name = "Third Parties" %}
-  {%- set featured_chapter_quote = "The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy." %}
-  {%- set featured_chapter_stats = {"stat1":"93%","label1":"Pages with 3P","stat2":"49%","label2":"3P requests","stat3":"28%","label3":"3P bytes"} %}
+  {%- set featured_chapter_name = "サードパーティ" %}
+  {%- set featured_chapter_quote = "オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。" %}
+  {%- set featured_chapter_stats = {"stat1":"93%","label1":"サードパーティを含むページ","stat2":"49%","label2":"サードパーティのリクエスト","stat3":"28%","label3":"サードパーティのバイト数"} %}
 {%- elif featured_chapter == "fonts" %}
   {%- set featured_chapter_name = "Fonts" %}
   {%- set featured_chapter_quote = "Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly." %}
   {%- set featured_chapter_stats = {"stat1":"74.9%","label1":"3P Font Requests that use Google Fonts","stat2":"29%","label2":"Percent of pages that include a Google Fonts stylesheet link","stat3":"718","label3":"Most font requests on a single page"} %}
 {%- elif featured_chapter == "performance" %}
-  {%- set featured_chapter_name = "Performance" %}
-  {%- set featured_chapter_quote = "Performance is a visceral part of the user experience. For many websites, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be rage clicking on the page in frustration." %}
-  {%- set featured_chapter_stats = {"stat1":"13%","label1":"Sites with fast FCP","stat2":"42%","label2":"Sites with slow TTFB","stat3":"40%","label3":"Sites with fast FID"} %}
+  {%- set featured_chapter_name = "パフォーマンス" %}
+  {%- set featured_chapter_quote = "パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。" %}
+  {%- set featured_chapter_stats = {"stat1":"13%","label1":"FCPが速いサイト","stat2":"42%","label2":"TTFBが遅いサイト","stat3":"40%","label3":"FIDが速いサイト"} %}
 {%- elif featured_chapter == "security" %}
-  {%- set featured_chapter_name = "Security" %}
-  {%- set featured_chapter_quote = "As the web grows in capabilities and allows access to more and more sensitive data, it becomes increasingly important for developers to adopt web security features to protect their applications. The security features reviewed in this chapter are defenses built into the web platform itself, available to every web author." %}
-  {%- set featured_chapter_stats = {"stat1":"79%","label1":"Sites using HTTPS","stat2":"41%","label2":"Sites using TLSv1.3","stat3":"4.43%","label3":"Sites using CSP"} %}
+  {%- set featured_chapter_name = "セキュリティ" %}
+  {%- set featured_chapter_quote = "Webの機能が向上し、より多くの機密データへのアクセスが可能になるにつれ、開発者が自社のアプリケーションを保護するためにWebセキュリティ機能を採用することがますます重要になってきています。この章で紹介するセキュリティ機能は、Webプラットフォーム自体に組み込まれた防御機能であり、すべてのWeb制作者が利用できます。" %}
+  {%- set featured_chapter_stats = {"stat1":"79%","label1":"HTTPSを使用しているサイト","stat2":"41%","label2":"TLSv1.3を使用しているサイト","stat3":"4.43%","label3":"CSPを使用しているサイト"} %}
 {%- elif featured_chapter == "accessibility" %}
-  {%- set featured_chapter_name = "Accessibility" %}
-  {%- set featured_chapter_quote = "Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on." %}
-  {%- set featured_chapter_stats = {"stat1":"22%","label1":"Sites using sufficient colour contrast","stat2":"50%","label2":"Sites with missing image alt attributes","stat3":"14%","label3":"Sites using a skip link"} %}
+  {%- set featured_chapter_name = "アクセンシビリティ" %}
+  {%- set featured_chapter_quote = "ウェブ上のアクセシビリティは、包括的で公平な社会にとって不可欠です。私たちの社会生活や仕事の多くがオンラインの世界に移行するにつれ、障害を持つ人々が障害なくすべてのオンライン上の交流に参加できることがさらに重要になってきています。建築家が車椅子用スロープなどのアクセシビリティ機能を作成したり省略したりできるように、ウェブ開発者はユーザーが利用する支援技術を支援したり、妨げたりすることができます。" %}
+  {%- set featured_chapter_stats = {"stat1":"22%","label1":"十分なカラーコントラストを使用しているサイト","stat2":"50%","label2":"画像のalt属性がないサイト","stat3":"14%","label3":"スキップリンクを使用しているサイト"} %}
 {%- elif featured_chapter == "seo" %}
   {%- set featured_chapter_name = "SEO" %}
-  {%- set featured_chapter_quote = "Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers." %}
-  {%- set featured_chapter_stats = {"stat1":"346","label1":"No. of words on median page","stat2":"11%","label2":"Pages with no heading tags","stat3":"15%","label3":"Sites eligible for rich results"} %}
+  {%- set featured_chapter_quote = "検索エンジン最適化（SEO）は、デジタルマーケッターの趣味やサイドプロジェクトではなく、ウェブサイトの成功に欠かせないものです。SEOの主な目標は、ウェブサイトが検索エンジンのボットに最適化されていることを確認し、ページをクロールしてインデックスを作成し、ウェブサイトをナビゲートしてコンテンツを消費するユーザーのために最適化することです。SEOは、それを構築している開発者から、新しい潜在的な顧客にそれを促進する必要がありますデジタルマーケッターまで、ウェブサイト上で働くすべての人に影響を与えます。" %}
+  {%- set featured_chapter_stats = {"stat1":"346","label1":"中央値ページの単語数","stat2":"11%","label2":"見出しタグのないページ","stat3":"15%","label3":"リッチな結果の対象となるサイト"} %}
 {%- elif featured_chapter == "pwa" %}
   {%- set featured_chapter_name = "PWA" %}
-  {%- set featured_chapter_quote = "Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the Service Worker APIs. Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses." %}
-  {%- set featured_chapter_stats = {"stat1":"0.44%","label1":"Sites that register a service worker","stat2":"15%","label2":"Pageviews that use a Service Worker","stat3":"57%","label3":"PWAs that use the <code>standalone</code> <code>display</code> property"} %}
+  {%- set featured_chapter_quote = "プログレッシブウェブアプリ（PWA）は、サービスワーカーAPIのようなプラットフォームプリミティブの上に構築された新しいクラスのウェブアプリケーションです。サービスワーカーは、アプリケーションがネットワークプロキシとして動作し、ウェブアプリの送信要求を傍受し、プログラム的な応答またはキャッシュされた応答で応答することで、ネットワークに依存しないロードをサポートすることを可能にします。" %}
+  {%- set featured_chapter_stats = {"stat1":"0.44%","label1":"サービスワーカーを登録しているサイト","stat2":"15%","label2":"サービスワーカーを利用したページビュー","stat3":"57%","label3":"<code>standalone</code> <code>display</code>プロパティを使用するPWA"} %}
 {%- elif featured_chapter == "mobile-web" %}
-  {%- set featured_chapter_name = "Mobile Web" %}
-  {%- set featured_chapter_quote = "Since 2007, the mobile web has grown at an explosive rate. And now, 13 years later, mobile accounts for 59% of all searches and 58.7% of all web traffic, according to Akamai mPulse data in July 2019. It's no longer an afterthought, but the primary way people experience the web. So given how significant mobile is, what kind of experience are we providing our visitors? Where are we falling short? Let's find out." %}
-  {%- set featured_chapter_stats = {"stat1":"65%","label1":"Sites with medium or large content shifts during load","stat2":"32%","label2":"Sites that disable zooming","stat3":"34%","label3":"Sites with sufficiently sized tap targets"} %}
+  {%- set featured_chapter_name = "モバイルウェブ" %}
+  {%- set featured_chapter_quote = "2007年以降、モバイルウェブは爆発的な成長を遂げました。そして13年後の現在、2019年7月のAkamaimPulseのデータによると、モバイルはすべての検索の59%を占め、ウェブトラフィックの58.7%を占めています。モバイルはもはや余計なものではなく、人々がウェブを体験する主要な手段となっています。モバイルの重要性を考えると、当社は訪問者にどのような体験を提供しているのでしょうか？どこが不足しているのか？それを探ってみましょう。" %}
+  {%- set featured_chapter_stats = {"stat1":"65%","label1":"ロード中に中または大きくシフトするサイト","stat2":"32%","label2":"ズームを無効にしているサイト","stat3":"34%","label3":"十分なサイズのタップターゲットを持つサイト"} %}
 {%- elif featured_chapter == "ecommerce" %}
   {%- set featured_chapter_name = "Eコマース" %}
   {%- set featured_chapter_quote = "この調査では、ホームページの10%近くがeコマース・プラットフォーム上にあることが判明しました。<em>eコマースプラットフォーム</em> は、オンラインストアを作成して運営することを可能にするソフトウェア ソフトウェアまたはサービスのセットです。Shopifyなどの有料サービス、Magentoオープンソースなどのソフトウェアプラットフォーム、およびMagento Commerceなどのホスト型プラットフォームなどが含まれます。" %}
   {%- set featured_chapter_stats = {"stat1":"3.98%","label1":"WooCommerceを使用してサイト最も人気のあるEコマースプラットフォーム","stat2":"116","label2":"検出されたEコマースプラットフォームの数","stat3":"1,517 KB","label3":"モバイルEコマースページあたりの画像バイト数の中央値。"} %}
 {%- elif featured_chapter == "cms" %}
   {%- set featured_chapter_name = "CMS" %}
-  {%- set featured_chapter_quote = "The general term Content Management System (CMS) refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content, specifically, is a system aimed at creating, managing, and publishing content to be consumed and experienced via the open web. Each CMS implements some subset of a wide range of content management capabilities and the corresponding mechanisms for users to build websites easily and effectively around their content." %}
-  {%- set featured_chapter_stats = {"stat1":"40%","label1":"Pages powered by a CMS","stat2":"74%","label2":"CMS sites that use WordPress","stat3":"1,232 KB","label3":"Median image KB loaded per desktop CMS page."} %}
+  {%- set featured_chapter_quote = "一般的にコンテンツ管理システム（CMS）とは、個人や組織がコンテンツを作成、管理、公開するためのシステムのことを指します。特にウェブコンテンツのためのCMSとは、オープンウェブを介して消費され、体験されるコンテンツを作成、管理、公開することを目的としたシステムのことです。各CMSは、コンテンツ管理機能の一部を実装しており、ユーザーがコンテンツを中心としたウェブサイトを簡単かつ効果的に構築するための仕組みを提供しています。" %}
+  {%- set featured_chapter_stats = {"stat1":"40%","label1":"CMSを利用したページ","stat2":"74%","label2":"WordPressを利用したCMSサイト","stat3":"1,232 KB","label3":"デスクトップCMSページごとに読み込まれる画像KBの中央値。"} %}
 {%- elif featured_chapter == "compression" %}
-  {%- set featured_chapter_name = "Compression" %}
-  {%- set featured_chapter_quote = "JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page." %}
-  {%- set featured_chapter_stats = {"stat1":"38%","label1":"HTTP responses using text-based compression","stat2":"80%","label2":"Use of gzip compression","stat3":"56%","label3":"HTML responses not using compression"} %}
+  {%- set featured_chapter_name = "圧縮" %}
+  {%- set featured_chapter_quote = "JavaScriptは、ブラウザに送信するリソースの中で最もコストのかかるもので、ダウンロード、解析、コンパイル、そして最終的に実行されます。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、ダウンロードと実行は、JavaScriptがウェブページで処理される際に最もコストのかかる段階となっています。" %}
+  {%- set featured_chapter_stats = {"stat1":"38%","label1":"テキストベースの圧縮を使用したHTTPレスポンス","stat2":"80%","label2":"gzip圧縮の使用","stat3":"56%","label3":"圧縮を使用していないHTMLレスポンス"} %}
 {%- elif featured_chapter == "caching" %}
-  {%- set featured_chapter_name = "Caching" %}
-  {%- set featured_chapter_quote = "Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, &quot;the fastest request is the one that you don't have to make,&quot; and caching is one of the key ways to avoid having to make requests." %}
-  {%- set featured_chapter_stats = {"stat1":"27%","label1":"Responses not using any caching headers","stat2":"39%","label2":"Responses using the <code>Vary</code> header","stat3":"82%","label3":"Sites that could save 1Mb by optimising caching better"} %}
+  {%- set featured_chapter_name = "キャッシング" %}
+  {%- set featured_chapter_quote = "キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする技術です。高価なネットワークリクエストを回避することでパフォーマンスに大きなメリットがあり、また、ウェブサイトのオリジンインフラストラクチャへのトラフィックを減らすことでアプリケーションの拡張性を高めることができます。古いことわざに「最速のリクエストは、作る必要のないものである」というものがありますが、キャッシングはリクエストをしなくても済むようにするための重要な方法の一つです。" %}
+  {%- set featured_chapter_stats = {"stat1":"27%","label1":"キャッシングヘッダを使用していないレスポンス","stat2":"39%","label2":"<code>Vary</code>ヘッダーを使用したレスポンス","stat3":"82%","label3":"キャッシングを最適化することで1Mbを節約できるサイト"} %}
 {%- elif featured_chapter == "cdn" %}
   {%- set featured_chapter_name = "CDN" %}
-  {%- set featured_chapter_quote = "&quot;Use a Content Delivery Network&quot; was one of Steve Souders original recommendations for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using." %}
-  {%- set featured_chapter_stats = {"stat1":"20%","label1":"Home pages served by CDN","stat2":"9.61%","label2":"Homepages served by most popular CDN (Cloudflare)","stat3":"30%","label3":"3P CDN requests that use Google"} %}
+  {%- set featured_chapter_quote = "コンテンツデリバリネットワークを使用する&quot;は、Webサイトの読み込みを高速化するためのSteve Soudersのオリジナルの推奨事項の1つです。Web年鑑のこの章では、スティーブの推奨事項がどれだけ広く採用されているか、サイトがどのようにコンテンツデリバリネットワーク(CDN)を使用しているか、そして使用している機能のいくつかを探っていきます。" %}
+  {%- set featured_chapter_stats = {"stat1":"20%","label1":"CDNが提供するホームページ","stat2":"9.61%","label2":"最も人気のあるCDN（Cloudflare）が提供するホームページ","stat3":"30%","label3":"Googleを利用したサードパーティCDNリクエスト"} %}
 {%- elif featured_chapter == "page-weight" %}
   {%- set featured_chapter_name = "Page Weight" %}
-  {%- set featured_chapter_quote = "The common argument as to why page size doesn't matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine, as long as you're okay with ignoring the vast swathe of internet users who don't have access to said high-speed internet and souped-up devices." %}
-  {%- set featured_chapter_stats = {"stat1":"10%","label1":"Sites sending more than 6 MB of Data","stat2":"434 KB","label2":"Increase in median desktop size in last year","stat3":"69","label3":"Median requests per home page"} %}
+  {%- set featured_chapter_quote = "なぜページサイズはもう重要ではないのかという共通の議論は、高速インターネットとスープアップされたデバイスのおかげで、私たちは一般の人々に大規模で複雑な（そして大規模に複雑な）ページを提供することができるということです。この仮定は、あなたが言った高速インターネットとスープアップデバイスへのアクセスを持っていないインターネットユーザーの広大な範囲を無視して大丈夫だとしている限り、うまく動作します。" %}
+  {%- set featured_chapter_stats = {"stat1":"10%","label1":"6MB以上のデータを送信しているサイト","stat2":"434 KB","label2":"昨年のデスクトップサイズ中央値の増加","stat3":"69","label3":"ホームページあたりのリクエストの中央値"} %}
 {%- elif featured_chapter == "resource-hints" %}
   {%- set featured_chapter_name = "Resource Hints" %}
   {%- set featured_chapter_quote = "Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions." %}
@@ -87,7 +87,7 @@
 {%- endif %}
 <section class="featured-chapter">
   <div class="featured-chapter-content">
-    <h2 class="title title-center">Featured Chapter</h2>
+    <h2 class="title title-center">注目の章</h2>
     <h3>{{ featured_chapter_name }}</h3>
     <blockquote>
       {{ featured_chapter_quote|safe }}
@@ -113,7 +113,7 @@
       {% endif %}
     </div>
     <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-      Read the {{ featured_chapter_name }} Chapter
+      {{ featured_chapter_name }}の章を読む
     </a>
   </div>
 </section>
