@@ -2,7 +2,7 @@
 part_number: I
 chapter_number: 6
 title: フォント
-description: フォントがどこから読み込まれるか、フォントのフォーマット、フォントの読み込み性能、可変フォント、カラーフォントを網羅した2019年Web年鑑のFontsの章。
+description: フォントがどこから読み込まれるか、フォントのフォーマット、フォントの読み込み性能、可変フォント、カラーフォントを網羅した2019年Web AlmanacのFontsの章。
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 translators: [ksakae]
@@ -586,7 +586,7 @@ Webフォントのリクエストがデスクトップとモバイルの間で�
 
 [`unicode-range`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/unicode-range)は、ブラウザに、ページがフォントファイルで使用したいコードポイントを具体的に知らせるための優れたCSSプロパティです。`@font-face`宣言に`unicode-range`がある場合、ページ上のコンテンツは、フォントが要求される前に、その範囲内のコードポイントのいずれかにマッチしなければなりません。これは非常に良いことです。
 
-Google FontsはそのCSSのほとんど（すべてではないにしても）で`unicode-range`を使用しているので、これもGoogle Fontsの使用状況によって偏っていると予想される指標です。ユーザーの世界でこれはあまり一般的でないと思いますが、Web年鑑の次の版ではGoogle Fontsのリクエストをフィルタリングして除外することが可能かもしれません。
+Google FontsはそのCSSのほとんど（すべてではないにしても）で`unicode-range`を使用しているので、これもGoogle Fontsの使用状況によって偏っていると予想される指標です。ユーザーの世界でこれはあまり一般的でないと思いますが、Web Almanacの次の版ではGoogle Fontsのリクエストをフィルタリングして除外することが可能かもしれません。
 
 ## システムフォントが存在する場合、ウェブフォントを要求しないようにする
 
