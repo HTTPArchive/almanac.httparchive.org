@@ -166,7 +166,7 @@ The dominance of Google Fonts here was simultaneously surprising and unsurprisin
 
 <figure>
   <div class="big-number">29%</div>
-  <figcaption>Figure 3. Percent of pages that include a Google Fonts stylesheet link in the document <code>&lt;head></code>.</figcaption>
+  <figcaption>Figure 3. Percent of pages that include a Google Fonts stylesheet link in the document <code>&lt;head&gt;</code>.</figcaption>
 </figure>
 
 While the high usage of Google Fonts here is very impressive, it is also noteworthy that only 29% of pages included a Google Fonts `<link>` element. This could mean a few things:
@@ -177,7 +177,7 @@ While the high usage of Google Fonts here is very impressive, it is also notewor
 
 <figure>
   <div class="big-number">0.4%</div>
-  <figcaption>Figure 4. Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code>&lt;head></code>.</figcaption>
+  <figcaption>Figure 4. Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code>&lt;head&gt;</code>.</figcaption>
 </figure>
 
 Google Fonts documentation encourages the `<link>` for the Google Fonts CSS to be placed as the first child in the `<head>` of a page. This is a big ask! In practice, this is not common as only half a percent of all pages (about 20,000 pages) took this advice.
