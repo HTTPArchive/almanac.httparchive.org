@@ -29,7 +29,7 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 サードパーティのホスティングに対するセルフホスティングの差別化は、[HTTP/2](./http2)の世界ではますます重要になってきています。同一ホストのリクエストには、ウォーターフォール内の他の同一ホストのリクエストに対して優先順位をつける可能性が高いという大きな利点があります。
 
-別のホストからウェブフォントを読み込む際のパフォーマンスコストを軽減するための推奨事項としては、`preconnect`、`dns-prefetch`、`preload` [resource-hints](./resource-hints)の使用がありますが、優先度の高いウェブフォントは、ウェブフォントのパフォーマンスへの影響を最小限に抑えるため、同一ホストからのリクエストにすべきです。これは視覚的に、非常に目立つコンテンツやページの大部分を占める本文コピーで使用されるフォントへ対して特に重要です。
+別のホストからウェブフォントを読み込む際のパフォーマンスコストを軽減するための推奨事項としては、`preconnect`、`dns-prefetch`、`preload` [リソースのヒント](./resource-hints)の使用がありますが、優先度の高いウェブフォントは、ウェブフォントのパフォーマンスへの影響を最小限に抑えるため、同一ホストからのリクエストにすべきです。これは視覚的に、非常に目立つコンテンツやページの大部分を占める本文コピーで使用されるフォントへ対して特に重要です。
 
 <figure>
   <a href="/static/images/2019/fonts/fig1.png">
@@ -177,7 +177,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 
 <figure>
   <div class="big-number">0.4%</div>
-  <figcaption>図4. ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head></code>。</figcaption>
+  <figcaption>図4. ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code>。</figcaption>
 </figure>
 
 Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はページの`<head>`の最初の子として配置することを推奨しています。これは大きなお願いです！　実際、これは一般的でありません。全ページの半分のパーセント（約20,000ページ）しかこのアドバイスを受けていないので、これは一般的でありません。
@@ -361,7 +361,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
   <a href="/static/images/2019/fonts/fig8.png">
     <img src="/static/images/2019/fonts/fig8.png" alt="図8. <code>@font-face</code>宣言におけるフォントフォーマットの人気度。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&amp;format=interactive">
   </a>
-  <div id="fig8-description" class="visually-hidden">Bar chart showing the popularity of formats used in font-face declarations. 69% of desktop pages' @font-face declarations specify the WOFF2 format, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT, and fewer than 1% OpenType, TTF, and OTF. The distribution for mobile pages is similar.</div>
+  <div id="fig8-description" class="visually-hidden">フォントフェイス宣言で使用されるフォーマットの人気を示す棒グラフ。デスクトップページの@font-face宣言の 69%がWOFF2形式を指定しており、11%がWOFF、10%がTrueType、8%がSVG、2%がEOT、1%未満でOpenType、TTF、OTFを指定しています。モバイルページの分布も同様です。</div>
   <figcaption id="fig8-caption">図8. <code>@font-face</code>宣言におけるフォントフォーマットの人気度。</figcaption>
 </figure>
 
@@ -532,7 +532,7 @@ Google Fontsを使っているなら、スニペットを更新しよう！　Go
   <a href="/static/images/2019/fonts/fig11.png">
     <img src="/static/images/2019/fonts/fig11.png" alt="図11. `font-display'の値の使用法。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&amp;format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden">Bar chart showing the usage of the font-display style. 2.6% of mobile pages set this style to "swap", 1.5% to "auto", 0.7% to "block", 0.4% to "fallback", 0.2% to optional, and 0.1% to "swap" enclosed in quotes, which is invalid. The desktop distribution is similar except "swap" usage is lower by 0.4 percentage points and "auto" usage is higher by 0.1 percentage points.</div>
+  <div id="fig11-description" class="visually-hidden">フォント表示スタイルの利用状況を示す棒グラフ。モバイルページの2.6％がこのスタイルを「swap」、1.5％が「auto」、0.7％が「block」、0.4％が「fallback」、0.2％が「optional」、0.1％が引用符で囲んだ「swap」に設定しているが、これは無効である。デスクトップの分布は、「swap」の利用率が0.4％ポイント低く、「auto」の利用率が0.1％ポイント高くなっている以外は似ている。</div>
   <figcaption id="fig11-caption">図11. <code>font-display</code>の値の使用法。</figcaption>
 </figure>
 
