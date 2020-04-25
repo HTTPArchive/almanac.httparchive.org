@@ -166,7 +166,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 
 <figure>
   <div class="big-number">29%</div>
-  <figcaption>図3. ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head></code>。</figcaption>
+  <figcaption>図3. ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code>。</figcaption>
 </figure>
 
 ここでのGoogle Fontsの使用率の高さは非常に印象的だが、Google Fonts`<link>`要素を含むページが29％しかなかったことも注目に値する。これはいくつかのことを意味しているかもしれない。
