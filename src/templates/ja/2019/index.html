@@ -1,32 +1,32 @@
 {% extends "base/2019/index.html" %}
 
 {% block title %}The {{ year }} Web Almanac{% endblock %}
-{% block description %}The Web Almanac is an annual state of the web report combining the expertise of the web community with the data and trends of the HTTP Archive.{% endblock %}
+{% block description %}Web Almanacは、Webコミュニティの専門知識とHTTP Archiveのデータやトレンドを組み合わせた、毎年恒例のWeb状態のレポートです。{% endblock %}
 
 {% block twitter_image_alt %}The {{ year }} Web Almanac{% endblock %}
 
 {% block date_published %}2019-11-04T12:00:00+00:00:00{% endblock %}
 {% block date_modified %}2019-11-04T12:00:00+00:00:00{% endblock %}
 
-{% block breadcrumb_name_1 %}{{ year }} Home{% endblock %}
+{% block breadcrumb_name_1 %}{{ year }} ホーム{% endblock %}
 
 {% block intro_title %}Web Almanac{% endblock %}
-{% block intro_sub_title %}HTTP Archive's annual<br> <b>state of the web</b> report{% endblock %}
+{% block intro_sub_title %}HTTP Archiveの年次報告書<br> <b>ウェブの状態</b>レポート{% endblock %}
 
 {% block mission %}
-Our mission is to combine the raw stats and trends of the HTTP Archive with the expertise of the web community. The Web Almanac is a comprehensive report on the state of the web, backed by real data and trusted web experts. It is comprised of 20 chapters spanning aspects of page content, user experience, publishing, and distribution.
+私たちの使命は、HTTPアーカイブの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web年鑑は、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した20の章で構成されています。
 {% endblock %}
 
 {% block contributors_description %}
-The Web Almanac has been made possible by the hard work of the web community. {{ self.contributors() }} people have volunteered countless hours in the planning, research, writing and production phases.
+Web年鑑は、ウェブ・コミュニティの努力によって実現しています。{{ self.contributors() }}人々は、企画、調査、執筆、制作の段階で数え切れないほどの時間をボランティアで費やしてきました。
 {% endblock %}
-{% block contributors_link %}See the contributors{% endblock %}
+{% block contributors_link %}投稿者を見る{% endblock %}
 
-{% block methodology_stat_1_title %}Websites Tested{% endblock %}
+{% block methodology_stat_1_title %}テストしたウェブサイト{% endblock %}
 {% block methodology_stat_1 %}5.8M{% endblock %}
-{% block methodology_stat_2_title %}Data Processed{% endblock %}
+{% block methodology_stat_2_title %}処理されたデータ{% endblock %}
 {% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
-Unless otherwise noted, the metrics in all of the 20 chapters of the Web Almanac are sourced from the HTTP Archive dataset. HTTP Archive is a community-run project that has been tracking how the web is built since 2010. Using WebPageTest and Lighthouse under the hood, metadata about nearly 6 million websites are tested monthly and included in a public BigQuery database for analysis. The July 2019 dataset was used as the basis for the Web Almanac's metrics. For more information, see the Methodology page.
+特に断りのない限り、Web Almanacの20章すべてのメトリクスは、HTTP Archiveのデータセットから取得しています。HTTP Archiveは、2010年以来、ウェブの構築方法を追跡してきたコミュニティが運営するプロジェクトです。WebPageTestとLighthouseをアンダーグラウンドに使用して、約600万のWebサイトに関するメタデータが毎月テストされ、分析のために公開されているBigQueryデータベースに含まれています。2019年7月のデータセットは、Web Almanacのメトリクスの基礎として使用されました。詳細については、方法論のページを参照してください。
 {% endblock %}
-{% block methodology_link %}Learn about our Methodology{% endblock %}
+{% block methodology_link %}方法論についてはこちらをご覧ください。{% endblock %}

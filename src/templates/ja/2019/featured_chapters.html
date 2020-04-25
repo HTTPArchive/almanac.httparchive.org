@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("css","markup","third-parties","performance","security","accessibility","seo","pwa","mobile-web","ecommerce","cms","compression","caching","cdn","page-weight","http2") | random %}
+{%- set featured_chapter = ("css","markup","third-parties","fonts","performance","security","accessibility","seo","pwa","mobile-web","ecommerce","cms","compression","caching","cdn","page-weight","http2") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -25,9 +25,9 @@
   {%- set featured_chapter_quote = "オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。" %}
   {%- set featured_chapter_stats = {"stat1":"93%","label1":"サードパーティを含むページ","stat2":"49%","label2":"サードパーティのリクエスト","stat3":"28%","label3":"サードパーティのバイト数"} %}
 {%- elif featured_chapter == "fonts" %}
-  {%- set featured_chapter_name = "Fonts" %}
-  {%- set featured_chapter_quote = "Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly." %}
-  {%- set featured_chapter_stats = {"stat1":"74.9%","label1":"3P Font Requests that use Google Fonts","stat2":"29%","label2":"Percent of pages that include a Google Fonts stylesheet link","stat3":"718","label3":"Most font requests on a single page"} %}
+  {%- set featured_chapter_name = "フォント" %}
+  {%- set featured_chapter_quote = "ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあっても、ウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。" %}
+  {%- set featured_chapter_stats = {"stat1":"74.9%","label1":"3P Googleフォントを使用したフォントリクエスト","stat2":"29%","label2":"Google Fontsスタイルシートのリンクを含むページの割合","stat3":"718","label3":"1ページでのフォントのリクエストが多い"} %}
 {%- elif featured_chapter == "performance" %}
   {%- set featured_chapter_name = "パフォーマンス" %}
   {%- set featured_chapter_quote = "パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。" %}
