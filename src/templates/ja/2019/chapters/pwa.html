@@ -79,7 +79,7 @@
   <div class="big-number">0.44%</div>
   <figcaption><a href="#fig-1" class="anchor-link">図 1.</a> Service Workerを登録するデスクトップページの割合。</figcaption>
 </figure>
-<p>最初に検討する指標は、Service Workerのインストールです。 HTTPアーカイブの機能カウンターを介して公開されたデータを見ると、すべてのデスクトップの0.44％とすべてのモバイルページの0.37％がService Workerを登録しており、時間の経過に伴う両方の曲線が急成長しています。</p>
+<p>最初に検討する指標は、Service Workerのインストールです。 HTTP Archiveの機能カウンターを介して公開されたデータを見ると、すべてのデスクトップの0.44％とすべてのモバイルページの0.37％がService Workerを登録しており、時間の経過に伴う両方の曲線が急成長しています。</p>
 <figure id="fig-2">
   <a href="/static/images/2019/pwa/fig2.png" class="fig-mobile">
     <img src="/static/images/2019/pwa/fig2.png" alt="図2.デスクトップおよびモバイルのService Workerの経時的なインストール。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive" loading="lazy" />
@@ -115,7 +115,7 @@
   <div id="fig4-description" class="visually-hidden">さまざまなService Workerイベントの人気を示す棒グラフ。 Fetchは、モバイルService Workerの73％、インストール71％、アクティブ化56％、通知クリック10％、プッシュ8％、メッセージ5％、通知クローズ2％、同期1％で使用されます。デスクトップService Workerの使用方法は似ていますが、取得、インストール、およびアクティブ化の場合は若干低くなります。</div>
   <figcaption id="fig4-caption"><a href="#fig-4" class="anchor-link">図 4.</a> Service Workerイベントの人気。</figcaption>
 </figure>
-<p>HTTPアーカイブで見つけることのできるService Workerがこれらのイベントのどれをリッスンしているかを調べました。モバイルとデスクトップの結果は非常によく似ており、<code>fetch</code>、<code>install</code>、および<code>activate</code>が3つの最も人気のあるイベントであり、それに続いて<code>notificationclick</code>と<code>push</code>が行われます。これらの結果を解釈すると、Service Workerが有効にするオフラインユースケースは、プッシュ通知よりもはるかに先のアプリ開発者にとって最も魅力的な機能です。可用性が限られているため、あまり一般的ではないユースケースのため、現時点ではバックグラウンド同期は重要な役割を果たしていません。</p>
+<p>HTTP Archiveで見つけることのできるService Workerがこれらのイベントのどれをリッスンしているかを調べました。モバイルとデスクトップの結果は非常によく似ており、<code>fetch</code>、<code>install</code>、および<code>activate</code>が3つの最も人気のあるイベントであり、それに続いて<code>notificationclick</code>と<code>push</code>が行われます。これらの結果を解釈すると、Service Workerが有効にするオフラインユースケースは、プッシュ通知よりもはるかに先のアプリ開発者にとって最も魅力的な機能です。可用性が限られているため、あまり一般的ではないユースケースのため、現時点ではバックグラウンド同期は重要な役割を果たしていません。</p>
 <h3 id="service-workerのファイルサイズ"><a href="#service-workerのファイルサイズ" class="anchor-link">Service Workerのファイルサイズ</a></h3>
 <p>一般に、ファイルサイズまたはコード行は、手元のタスクの複雑さの悪いプロキシです。ただし、この場合、モバイルとデスクトップのService Workerの（圧縮された）ファイルサイズを比較することは間違いなく興味深いです。</p>
 <figure id="fig-5">
@@ -218,7 +218,7 @@
   Service Worker APIの低レベルの性質を考慮すると、多くの開発者は、Service Workerロジックをより高レベルで再利用可能なコードの塊に構造化する方法としてWorkboxに注目しています。 Workboxの採用は、<a href="https://create-react-app.dev/"><code>create-react-app</code></a
   >や<a href="https://www.npmjs.com/package/@vue/cli-plugin-pwa">VueのPWAプラグイン</a>など、多くの一般的なJavaScriptフレームワークスターターキットの機能として含まれることによっても促進されます。
 </p>
-<p>HTTPアーカイブは、Service Workerを登録するWebサイトの12.71％が少なくとも1つのWorkboxライブラリを使用していることを示しています。この割合は、デスクトップ（14.36％）と比較してモバイルではわずかに低い割合（11.46％）で、デスクトップとモバイルでほぼ一貫しています。</p>
+<p>HTTP Archiveは、Service Workerを登録するWebサイトの12.71％が少なくとも1つのWorkboxライブラリを使用していることを示しています。この割合は、デスクトップ（14.36％）と比較してモバイルではわずかに低い割合（11.46％）で、デスクトップとモバイルでほぼ一貫しています。</p>
 <h2 id="結論"><a href="#結論" class="anchor-link">結論</a></h2>
 <p>この章の統計は、PWAがまだごく一部のサイトでしか使用されていないことを示しています。ただし、この比較的少ない使用量はトラフィックのシェアがはるかに大きい人気のあるサイトによってもたらされ、ホームページ以外のページはこれをさらに使用する可能性があります。ページのロードの15％がService Workerを使用することがわかりました。特に<a href="./mobile-web">モバイル</a>向けの<a href="./performance">パフォーマンス</a>と<a href="./caching">キャッシング</a>のより優れた制御に与える利点は、使用が増え続けることを意味するはずです。</p>
 <p>PWAは、Chrome主導のテクノロジーと見なされることがよくあります。一部のプラットフォームでは一流のインストール可能性が遅れているものの、他のブラウザは、基盤となるテクノロジーのほとんどを実装するために最近大きく進歩しました。サポートがさらに普及するのを前向きに見る事ができます。 <a href="https://twitter.com/firt">Maximiliano Firtman</a>は、<a href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">Safari PWAサポートの説明</a>など、iOSでこれを追跡する素晴らしい仕事をしています。 AppleはPWAという用語をあまり使用せず、<a href="https://developer.apple.com/news/?id=09062019b">HTML5アプリはApp Storeの外部に最適配信されると明示的に述べています</a>。Microsoftは逆の方向に進み、<a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">アプリストアでPWAを奨励するだけでなく、Bing Webクローラーを介して検出されたPWAを自動的にショートリストに追加しました</a>。 Googleは、<a href="https://developers.google.com/web/updates/2019/02/using-twa">信頼できるWebアクティビティ</a>を介して、Google PlayストアにWebアプリをリストする方法も提供しています。</p>
