@@ -2,7 +2,7 @@
 part_number: II
 chapter_number: 12
 title: モバイルウェブ
-description: 2019年Web年鑑のモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。
+description: 2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
 translators: [ksakae]
