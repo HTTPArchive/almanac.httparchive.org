@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":5,"title":"サードパーティ","description":"2019 Web年鑑のサードパーティの章。サードパーティの使用目的、パフォーマンスへの影響、プライバシーへの影響について説明しています。","authors":["patrickhulce"],"reviewers":["zcorpan","obto","jasti"],"translators":["ksakae"],"discuss":"1760","results":"https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/","queries":"05_Third_Parties","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-23T00:00:00.000Z","chapter":"third-parties"} %} {% block index %}
+{% set metadata = {"part_number":"II","chapter_number":5,"title":"サードパーティ","description":"2019 Web Almanacのサードパーティの章。サードパーティの使用目的、パフォーマンスへの影響、プライバシーへの影響について説明しています。","authors":["patrickhulce"],"reviewers":["zcorpan","obto","jasti"],"translators":["ksakae"],"discuss":"1760","results":"https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/","queries":"05_Third_Parties","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-23T00:00:00.000Z","chapter":"third-parties"} %} {% block index %}
 <ul>
   <li>
     <a href="#導入">導入</a>
@@ -117,7 +117,7 @@
   <li>さまざまなサイトで広く使用されています</li>
   <li>個々のサイト所有者の影響を受けない</li>
 </ul>
-<p>これらの目標を可能な限り正確に一致させるために、この章で使用されるサードパーティリソースの正式な定義は、HTTPアーカイブデータセット内の少なくとも50のユニークなページにリソースを見つけることができるドメインに由来するリソースです。</p>
+<p>これらの目標を可能な限り正確に一致させるために、この章で使用されるサードパーティリソースの正式な定義は、HTTP Archiveデータセット内の少なくとも50のユニークなページにリソースを見つけることができるドメインに由来するリソースです。</p>
 <p>これらの定義を使用して、ファーストパーティ・ドメインから提供されたサードパーティ・コンテンツはファーストパーティ・コンテンツとしてカウントされることに注意してください。例えば、セルフホスティングのGoogle Fontsやbootstrap.cssは、ファースト・パーティ・コンテンツとしてカウントされます。同様に、サードパーティのドメインから提供されたファーストパーティのコンテンツは、サードパーティのコンテンツとしてカウントされます。たとえば、サードパーティ・ドメインでCDNを介して提供されるファーストパーティの画像は、サードパーティ・コンテンツとみなされます。</p>
 <h3 id="プロバイダーカテゴリー"><a href="#プロバイダーカテゴリー" class="anchor-link">プロバイダーカテゴリー</a></h3>
 <p>この章では、サードパーティプロバイダをこれらの大まかなカテゴリのいずれかに分類しています。以下に簡単な説明を記載し、ドメインとカテゴリのマッピングについては、<a href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">サードパーティ・ウェブ・リポジトリ</a>を参照してください。</p>

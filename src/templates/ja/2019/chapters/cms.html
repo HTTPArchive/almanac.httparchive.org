@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"III","chapter_number":14,"title":"CMS","description":"2019年版Web年鑑CMS章では、CMSの採用、CMS組み合わせの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションを取り上げています。","authors":["ernee","amedina"],"reviewers":["sirjonathan"],"translators":["ksakae"],"discuss":"1769","results":"https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/","queries":"14_CMS","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-23T00:00:00.000Z","chapter":"cms"} %} {% block index %}
+{% set metadata = {"part_number":"III","chapter_number":14,"title":"CMS","description":"2019年版Web AlmanacCMS章では、CMSの採用、CMS組み合わせの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションを取り上げています。","authors":["ernee","amedina"],"reviewers":["sirjonathan"],"translators":["ksakae"],"discuss":"1769","results":"https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/","queries":"14_CMS","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-11-23T00:00:00.000Z","chapter":"cms"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -110,7 +110,7 @@
 <p>ここでCMSが果たす役割は、技術的な専門性の異なるユーザーがコンテンツ制作者としてウェブのエコシステムのループに入りやすくするという非常に重要なものです。コンテンツ制作への参入障壁を下げることで、ユーザーをクリエイターに変えることで、ウェブの成長ループを活性化させます。それが人気の理由です。</p>
 <h3 id="この章の目標"><a href="#この章の目標" class="anchor-link">この章の目標</a></h3>
 <p>私たちはCMS空間とウェブの現在と未来におけるその役割を理解するための探求の中で、分析すべき多くの興味深い重要な側面があり、答えるべき質問があります。私たちはCMSプラットフォーム空間の広大さと複雑さを認識しており、そこにあるすべてのプラットフォームに関わるすべての側面を完全にカバーする全知全能の知識を主張しているわけではありませんが、私たちはこの空間への魅力を主張しこの空間の主要なプレイヤーのいくつかについて深い専門知識を持っています。</p>
-<p>この章では広大なCMSの空間の表面領域のスクラッチを試み、CMSエコシステムの現状とコンテンツがウェブ上でどのように消費され、どのように体験されるかについてのユーザーの認識を形成する上でのCMSの役割について私たちの全体的な理解に光を当てようとしています。私たちの目標はCMSの状況を網羅的に見ることではなく、CMSの状況全般に関連するいくつかの側面と、これらのシステムによって生成されたウェブページの特徴について論じていきたいと思います。このWeb年鑑の初版はベースラインを確立するものであり、将来的には、トレンド分析のためにこのバージョンとデータを比較できるようになるでしょう。</p>
+<p>この章では広大なCMSの空間の表面領域のスクラッチを試み、CMSエコシステムの現状とコンテンツがウェブ上でどのように消費され、どのように体験されるかについてのユーザーの認識を形成する上でのCMSの役割について私たちの全体的な理解に光を当てようとしています。私たちの目標はCMSの状況を網羅的に見ることではなく、CMSの状況全般に関連するいくつかの側面と、これらのシステムによって生成されたウェブページの特徴について論じていきたいと思います。このWeb Almanacの初版はベースラインを確立するものであり、将来的には、トレンド分析のためにこのバージョンとデータを比較できるようになるでしょう。</p>
 <h2 id="cms導入"><a href="#cms導入" class="anchor-link">CMS導入</a></h2>
 <figure id="fig-2">
   <div class="big-number">40%</div>
@@ -129,7 +129,7 @@
 <p>その中には、オープンソース（WordPress、Drupalなど）のものもあれば、有償（AEMなど）のものもあります。CMSプラットフォームの中には「無料」のホスティングプランやセルフホスティングプランで利用できるものもありますし、企業レベルでも、より高い階層のプランで利用できる高度なオプションもあります。CMS空間全体として複雑で連携した<em>CMSエコシステム</em>の世界であり、全てが分離され、同時にウェブの広大な構造に絡み合っています。</p>
 <p>またCMSプラットフォームを利用したウェブサイトが何億もあり、これらのプラットフォームを利用してウェブにアクセスし、コンテンツを消費するユーザーが桁違いに増えていることを意味しています。このように、これらのプラットフォームは、常緑で健康的で活力に満ちたウェブを目指す私たちの集団的な探求を成功させるために重要な役割を果たしています。</p>
 <h3 id="cmsの風景"><a href="#cmsの風景" class="anchor-link">CMSの風景</a></h3>
-<p>今日のウェブの大部分は、ある種のCMSプラットフォームを利用しています。この現実を反映して、さまざまな組織が収集した統計となります。<a href="./methodology#chrome-ux-report">Chrome UXレポート</a>(CrUX)とHTTPアーカイブのデータセットを見ると、データセットの特殊性を反映して定量的には記載されている割合は異なるかもしれませんが、他の場所で発表されている統計と一致している図が得られます。</p>
+<p>今日のウェブの大部分は、ある種のCMSプラットフォームを利用しています。この現実を反映して、さまざまな組織が収集した統計となります。<a href="./methodology#chrome-ux-report">Chrome UXレポート</a>(CrUX)とHTTP Archiveのデータセットを見ると、データセットの特殊性を反映して定量的には記載されている割合は異なるかもしれませんが、他の場所で発表されている統計と一致している図が得られます。</p>
 <p>デスクトップとモバイルデバイスで提供されているウェブページを見てみると、何らかのCMSプラットフォームによって生成されたページとそうでないページの割合が約60-40％に分かれていることがわかります。</p>
 <figure id="fig-4">
   <a href="/static/images/2019/cms/fig4.png">
@@ -147,7 +147,7 @@
   <li>コミュニティ</li>
   <li>他にもたくさん</li>
 </ul>
-<p>CrUXとHTTPアーカイブのデータセットには、約103のCMSプラットフォームが、混在したウェブページが含まれています。これらのプラットフォームのほとんどは、相対的な市場シェアが非常に小さいものです。今回の分析では、データに反映されているウェブ上でのフットプリントという観点から、上位のCMSプラットフォームに焦点を当ててみたいと思います。完全な分析については、<a href="https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/edit#gid=0">この章の結果のスプレッドシートを参照してください</a>。</p>
+<p>CrUXとHTTP Archiveのデータセットには、約103のCMSプラットフォームが、混在したウェブページが含まれています。これらのプラットフォームのほとんどは、相対的な市場シェアが非常に小さいものです。今回の分析では、データに反映されているウェブ上でのフットプリントという観点から、上位のCMSプラットフォームに焦点を当ててみたいと思います。完全な分析については、<a href="https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/edit#gid=0">この章の結果のスプレッドシートを参照してください</a>。</p>
 <figure id="fig-5">
   <a href="/static/images/2019/cms/fig5.png">
     <img src="/static/images/2019/cms/fig5.png" alt="図5. 全CMSウェブサイトに占めるトップCMSプラットフォームの割合。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="600" data-width="600" data-height="600" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1652315665&amp;format=interactive" loading="lazy" />

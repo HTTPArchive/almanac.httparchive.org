@@ -7,7 +7,9 @@ header.alt-bg {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding-bottom: 900px;
+  padding-bottom: 52.94em;
   margin-bottom: -900px;
+  margin-bottom: -52.94em;
 }
 
 /* Add fall back background color in case SVG fails to load so text is still readable */
@@ -64,6 +66,7 @@ header .container {
 .intro h2 {
   font-weight: 300;
   font-size: 30px;
+  font-size: 1.875rem;
 }
 
 p {
@@ -145,6 +148,7 @@ p {
 .featured-chapter h2 {
   margin-top: 0;
   font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -262,8 +266,10 @@ p {
 .websites-tested div,
 .data-processed div {
   font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   margin: 10px 10px;
+  margin: 0.714em 0.625rem;
 }
 
 .websites-tested div:last-of-type,
@@ -335,7 +341,9 @@ p {
 
   header.alt-bg {
     padding-bottom: 1800px;
+    padding-bottom: 105.88em;
     margin-bottom: -1800px;
+    margin-bottom: -105.88em;
   }
 
   header::after {
@@ -474,7 +482,9 @@ p {
   header.alt-bg {
     background-size: cover;
     padding-bottom: 1650px;
+    padding-bottom: 103.125em;
     margin-bottom: -1650px;
+    margin-bottom: -103.125em;
   }
 
   header::after {

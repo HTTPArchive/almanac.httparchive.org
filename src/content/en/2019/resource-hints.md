@@ -43,9 +43,15 @@ The [`preload`](https://medium.com/reloading/preload-prefetch-and-priorities-in-
 
 ## Syntax
 
-97% of resource hint usage relied on using the [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to specify a resource hint. For example, `<link rel="prefetch" href="shopping-cart.js">`.
+97% of resource hint usage relied on using the [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to specify a resource hint. For example:
+```
+<link rel="prefetch" href="shopping-cart.js">
+```
 
-Only 3% of resource hint usage used [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) to specify resource hints. For example, `Link: <https://example.com/shopping-cart.js>; rel=prefetch`.
+Only 3% of resource hint usage used [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) to specify resource hints. For example:
+```
+Link: <https://example.com/shopping-cart.js>; rel=prefetch
+```
 
 Because the usage of resource hints in HTTP headers is so low, the remainder of this chapter will focus solely on analyzing the usage of resource hints in conjunction with the `<link>` tag. However, it's worth noting that in future years, usage of resource hints in HTTP headers may increase as [HTTP/2 Push](./http2#http2-push) is adopted. This is due to the fact that HTTP/2 Push has repurposed the HTTP preload `Link` header as a signal to push resources.
 
@@ -195,7 +201,10 @@ For newer resource types (e.g. fonts, `fetch()` requests, ES modules), the brows
   <figcaption>Figure 3. Adoption of the <code>crossorigin</code> attribute as a percent of resource hint instances.</figcaption>
 </figure>
 
-In the context of resource hints, usage of the `crossorigin` attribute enables them to match the CORS mode of the resources they are supposed to match and indicates the credentials to include in the request. For example: `<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">` enables CORS and indicates that no credentials should be included for those cross-origin requests.
+In the context of resource hints, usage of the `crossorigin` attribute enables them to match the CORS mode of the resources they are supposed to match and indicates the credentials to include in the request. For example, `anonymous` enables CORS and indicates that no credentials should be included for those cross-origin requests:
+```
+<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">
+```
 
 Although other HTML elements support the crossorigin attribute, this analysis only looks at usage with resource hints.
 
