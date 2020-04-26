@@ -155,11 +155,12 @@ def methodology(lang, year):
 
 
 # Accessibility Statement needs special case handling for trailing slashes
-# as validate function won't catch it.
+# as, unlike Flask, we generally prefer no trailing slashes
+# For chapters we handle this in the validate function
 @app.route('/<lang>/accessibility-statement', strict_slashes=False)
 @validate
 def accessibility_statement(lang):
-    if request.url[-1] == "/":
+    if request.base_url[-1] == "/":
         return redirect("/%s/accessibility-statement" % (lang)), 301
     else:
         return render_template('%s/2019/accessibility_statement.html' % (lang))
