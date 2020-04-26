@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 16
 title: キャッシング
-description: 2019Web年鑑のキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。
+description: 2019 Web Almanacのキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。
 authors: [paulcalvano]
 reviewers: [obto, bkardell]
 translators: [ksakae]
@@ -59,7 +59,7 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
 
 `ETag` 両方が存在する場合に優先されます。これらについては、以下で詳しく説明します。
 
-以下の例には、HTTPアーカイブのmain.jsファイルからのリクエスト/レスポンスヘッダーの抜粋が含まれています。これらのヘッダーは、リソースを43,200秒（12時間）キャッシュでき、最後は2か月以上前に変更されたことを示します（`Last-Modified`ヘッダーと`Date`ヘッダーの違い）。
+以下の例には、HTTP Archiveのmain.jsファイルからのリクエスト/レスポンスヘッダーの抜粋が含まれています。これらのヘッダーは、リソースを43,200秒（12時間）キャッシュでき、最後は2か月以上前に変更されたことを示します（`Last-Modified`ヘッダーと`Date`ヘッダーの違い）。
 
 ```
 > GET /static/js/main.js HTTP/1.1
@@ -572,14 +572,14 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
 
 アプリケーションキャッシュまたはAppCacheはHTML5の機能であり、開発者はブラウザがキャッシュするリソースを指定し、オフラインユーザーが利用できるようにできます。この機能は[廃止されており、Web標準からも削除](https://html.spec.whatwg.org/multipage/offline.html#offline)され、ブラウザーのサポートは減少しています。実際、使われているのが見つかった場合、[Firefox v44 +は、開発者に対して代わりにService Workerを使用することを推奨しています](https://developer.mozilla.org/ja-JP/docs/Web/API/Service_Worker_API/Using_Service_Workers)。 [Chrome 70は、アプリケーションキャッシュをセキュリティで保護されたコンテキストのみに制限します](https://www.chromestatus.com/feature/5714236168732672)。業界では、このタイプの機能をService Workerに実装する方向へ移行しており、[ブラウザサポート](https://caniuse.com/#feat=serviceworkers)は急速に成長しています。
 
-実際、[HTTPアーカイブトレンドレポートの1つは、以下に示すService Worker](https://httparchive.org/reports/progressive-web-apps#swControlledPages)の採用を示しています。
+実際、[HTTP Archiveトレンドレポートの1つは、以下に示すService Worker](https://httparchive.org/reports/progressive-web-apps#swControlledPages)の採用を示しています。
 
 <figure>
   <a href="/static/images/2019/caching/ch16_fig14_service_worker_adoption.jpg">
     <img src="/static/images/2019/caching/ch16_fig14_service_worker_adoption.jpg" alt="図17.Service Workerが制御するページの時系列。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311">
   </a>
   <div id="fig17-description" class="visually-hidden">2016年10月から2019年7月までのService Workerが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。</div>
-  <figcaption id="fig17-caption">図17.Service Workerが制御するページの時系列。 (引用: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTPアーカイブ</a>)</figcaption>
+  <figcaption id="fig17-caption">図17.Service Workerが制御するページの時系列。 (引用: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
 </figure>
 
 採用率はまだウェブサイトの1％を下回っていますが、2017年1月から着実に増加しています。[プログレッシブWebアプリ](./pwa)の章では、人気サイトでの使用によりこのグラフが示唆するよりも多く使用されているという事実を含め、上記のグラフでは1回のみカウントされます。
