@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 15
 title: 圧縮
-description: HTTP圧縮、アルゴリズム、コンテンツタイプ、ファーストパーティとサードパーティの圧縮および機会をカバーする2019 Web年鑑の圧縮の章。
+description: HTTP圧縮、アルゴリズム、コンテンツタイプ、ファーストパーティとサードパーティの圧縮および機会をカバーする2019 Web Almanacの圧縮の章。
 authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
 translators: [ksakae]
@@ -43,7 +43,7 @@ HTTP圧縮は、元の表現よりも少ないビットを使用して情報を�
 ```
 
 
-HTTPアーカイブには、530万のWebサイトの測定値が含まれており、各サイトには少なくとも1つの圧縮テキストリソースがホームページにロードされています。さらに、リソースはWebサイトの81％のプライマリドメインで圧縮されました。
+HTTP Archiveには、530万のWebサイトの測定値が含まれており、各サイトには少なくとも1つの圧縮テキストリソースがホームページにロードされています。さらに、リソースはWebサイトの81％のプライマリドメインで圧縮されました。
 
 
 ## 圧縮アルゴリズム
@@ -150,7 +150,7 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
 
 さらに「none」「UTF-8」「base64」「text」など、無効な`Content-Encoding`を返す67Kのリクエストがあります。これらのリソースは圧縮されていない状態で提供される可能性があります。
 
-HTTPアーカイブによって収集された診断から圧縮レベルを判断することはできませんが、コンテンツを圧縮するためのベストプラクティスは次のとおりです。
+HTTP Archiveによって収集された診断から圧縮レベルを判断することはできませんが、コンテンツを圧縮するためのベストプラクティスは次のとおりです。
 
 *   少なくとも、テキストベースのアセットに対してgzip圧縮レベル6を有効にします。これは、計算コストと圧縮率の間の公平なトレードオフを提供し、[多くのWebサーバーのデフォルト](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)にもかかわらず、[Nginxは依然として低すぎることが多いレベル1のままです](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level)。
 *   brotliおよびprecompressリソースをサポートできる場合は、brotliレベル11に圧縮します。これはgzipよりも計算コストが高くなります。したがって、遅延を避けるためには、事前圧縮が絶対に必要です。
@@ -294,7 +294,7 @@ Googleの[Lighthouse](https://developers.google.com/web/tools/lighthouse)ツー�
   <figcaption id="fig10-caption">図10.Lighthouse圧縮の提案</figcaption>
 </figure>
 
-各モバイルページに対して[HTTPアーカイブはLighthouse監査を実行する](./methodology#lighthouse)ため、すべてのサイトのスコアを集計して、より多くのコンテンツを圧縮する機会があるかどうかを知ることができます。全体として、ウェブサイトの62％がこの監査に合格しており、ウェブサイトのほぼ23％が40を下回っています。これは、120万を超えるウェブサイトが追加のテキストベースの圧縮を有効にすることを意味します。
+各モバイルページに対して[HTTP ArchiveはLighthouse監査を実行する](./methodology#lighthouse)ため、すべてのサイトのスコアを集計して、より多くのコンテンツを圧縮する機会があるかどうかを知ることができます。全体として、ウェブサイトの62％がこの監査に合格しており、ウェブサイトのほぼ23％が40を下回っています。これは、120万を超えるウェブサイトが追加のテキストベースの圧縮を有効にすることを意味します。
 
 <figure>
   <a href="/static/images/2019/compression/fig11.png">

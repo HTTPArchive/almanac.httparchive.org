@@ -28,7 +28,7 @@ Service Workerは2014年12月に[Chrome 40で初めて実装](https://blog.chrom
   <figcaption>図1. Service Workerを登録するデスクトップページの割合。</figcaption>
 </figure>
 
-最初に検討する指標は、Service Workerのインストールです。 HTTPアーカイブの機能カウンターを介して公開されたデータを見ると、すべてのデスクトップの0.44％とすべてのモバイルページの0.37％がService Workerを登録しており、時間の経過に伴う両方の曲線が急成長しています。
+最初に検討する指標は、Service Workerのインストールです。 HTTP Archiveの機能カウンターを介して公開されたデータを見ると、すべてのデスクトップの0.44％とすべてのモバイルページの0.37％がService Workerを登録しており、時間の経過に伴う両方の曲線が急成長しています。
 
 <figure>
   <a href="/static/images/2019/pwa/fig2.png" class="fig-mobile">
@@ -70,7 +70,7 @@ Service Workerでは、[いくつかのイベントをリッスンできます](
   <figcaption id="fig4-caption">図4. Service Workerイベントの人気。</figcaption>
 </figure>
 
-HTTPアーカイブで見つけることのできるService Workerがこれらのイベントのどれをリッスンしているかを調べました。モバイルとデスクトップの結果は非常によく似ており、`fetch`、`install`、および`activate`が3つの最も人気のあるイベントであり、それに続いて`notificationclick`と`push`が行われます。これらの結果を解釈すると、Service Workerが有効にするオフラインユースケースは、プッシュ通知よりもはるかに先のアプリ開発者にとって最も魅力的な機能です。可用性が限られているため、あまり一般的ではないユースケースのため、現時点ではバックグラウンド同期は重要な役割を果たしていません。
+HTTP Archiveで見つけることのできるService Workerがこれらのイベントのどれをリッスンしているかを調べました。モバイルとデスクトップの結果は非常によく似ており、`fetch`、`install`、および`activate`が3つの最も人気のあるイベントであり、それに続いて`notificationclick`と`push`が行われます。これらの結果を解釈すると、Service Workerが有効にするオフラインユースケースは、プッシュ通知よりもはるかに先のアプリ開発者にとって最も魅力的な機能です。可用性が限られているため、あまり一般的ではないユースケースのため、現時点ではバックグラウンド同期は重要な役割を果たしていません。
 
 ### Service Workerのファイルサイズ
 
@@ -196,7 +196,7 @@ Lighthouseのルールが、おそらくアイコンサイズ選択の犯人で�
 
 Service Worker APIの低レベルの性質を考慮すると、多くの開発者は、Service Workerロジックをより高レベルで再利用可能なコードの塊に構造化する方法としてWorkboxに注目しています。 Workboxの採用は、[`create-react-app`](https://create-react-app.dev/)や[VueのPWAプラグイン](https://www.npmjs.com/package/@vue/cli-plugin-pwa)など、多くの一般的なJavaScriptフレームワークスターターキットの機能として含まれることによっても促進されます。
 
-HTTPアーカイブは、Service Workerを登録するWebサイトの12.71％が少なくとも1つのWorkboxライブラリを使用していることを示しています。この割合は、デスクトップ（14.36％）と比較してモバイルではわずかに低い割合（11.46％）で、デスクトップとモバイルでほぼ一貫しています。
+HTTP Archiveは、Service Workerを登録するWebサイトの12.71％が少なくとも1つのWorkboxライブラリを使用していることを示しています。この割合は、デスクトップ（14.36％）と比較してモバイルではわずかに低い割合（11.46％）で、デスクトップとモバイルでほぼ一貫しています。
 
 ## 結論
 
