@@ -106,9 +106,11 @@
 <h2 id="syntaxe"><a href="#syntaxe" class="anchor-link">Syntaxe</a></h2>
 <p>
   97&nbsp;% des usages d'indices de ressources sont spécifiés par le tag <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link"><code>&lt;link&gt;</code></a
-  >. Par exemple, <code>&lt;link rel="prefetch" href="shopping-cart.js"&gt;</code>.
+  >. Par exemple&nbsp;:
 </p>
-<p>Seuls 3&nbsp;% des indices de ressources proviennent <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">d'en-têtes HTTP</a> permettant de les spécifier. Par exemple, <code>Link: &lt;https://example.com/shopping-cart.js&gt;; rel=prefetch</code>.</p>
+<pre><code>&lt;link rel="prefetch" href="shopping-cart.js"&gt;</code></pre>
+<p>Seuls 3&nbsp;% des indices de ressources proviennent <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">d'en-têtes HTTP</a> permettant de les spécifier. Par exemple&nbsp;:</p>
+<pre><code>Link: &lt;https://example.com/shopping-cart.js&gt;; rel=prefetch</code></pre>
 <p>Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très faible, le reste de ce chapitre se concentrera uniquement sur l'analyse de l'utilisation des indices de ressources passant par la balise <code>&lt;link&gt;</code>. Cependant, il convient de noter que dans les années à venir, l'utilisation des indices de ressources dans les en-têtes HTTP pourrait augmenter avec l'adoption de <a href="./http2#http2-push">HTTP/2 Push</a>. En effet, HTTP/2 Push réutilise l'en-tête HTTP de préchargement <code>Link</code> comme un signal permettant de pousser des ressources.</p>
 <h2 id="les-indices-de-ressources"><a href="#les-indices-de-ressources" class="anchor-link">Les indices de ressources</a></h2>
 <p class="note">Note: il n'y a pas de différence notable entre l'usage des indices de ressources sur les pages web destinées aux ordinateurs ou périphériques mobiles. C'est pourquoi, par souci de concision, ce chapitre n'inclut que les statistiques relatives aux mobiles.</p>
@@ -229,7 +231,8 @@
   </div>
   <figcaption><a href="#fig-3" class="anchor-link">Figure 3.</a> Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.</figcaption>
 </figure>
-<p>Dans le contexte des indices de ressources, l'utilisation de l'attribut <code>crossorigin</code> leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple : <code>&lt;link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous"&gt;</code> active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes <code>cross-origin</code>.</p>
+<p>Dans le contexte des indices de ressources, l'utilisation de l'attribut <code>crossorigin</code> leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple, <code>anonymous</code> active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes <code>cross-origin</code>&nbsp;:</p>
+<pre><code>&lt;link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous"&gt;</code></pre>
 <p>Bien que d'autres éléments HTML prennent en charge l'attribut <code>crossorigin</code>, cette analyse ne porte que sur l'utilisation avec des indices de ressources.</p>
 <h2 id="lattribut-as">
   <a href="#lattribut-as" class="anchor-link">L'attribut <code>as</code></a>

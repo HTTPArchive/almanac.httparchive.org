@@ -43,9 +43,15 @@ Le rôle de [`dns-prefetch`](https://developer.mozilla.org/en-US/docs/Learn/Perf
 
 ## Syntaxe
 
-97&nbsp;% des usages d'indices de ressources sont spécifiés par le tag [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link). Par exemple, `<link rel="prefetch" href="shopping-cart.js">`.
+97&nbsp;% des usages d'indices de ressources sont spécifiés par le tag [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link). Par exemple&nbsp;:
+```
+<link rel="prefetch" href="shopping-cart.js">
+```
 
-Seuls 3&nbsp;% des indices de ressources proviennent [d'en-têtes HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) permettant de les spécifier. Par exemple, `Link: <https://example.com/shopping-cart.js>; rel=prefetch`.
+Seuls 3&nbsp;% des indices de ressources proviennent [d'en-têtes HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) permettant de les spécifier. Par exemple&nbsp;:
+```
+Link: <https://example.com/shopping-cart.js>; rel=prefetch
+```
 
 Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très faible, le reste de ce chapitre se concentrera uniquement sur l'analyse de l'utilisation des indices de ressources passant par la balise `<link>`. Cependant, il convient de noter que dans les années à venir, l'utilisation des indices de ressources dans les en-têtes HTTP pourrait augmenter avec l'adoption de [HTTP/2 Push](./http2#http2-push). En effet, HTTP/2 Push réutilise l'en-tête HTTP de préchargement `Link` comme un signal permettant de pousser des ressources.
 
@@ -195,7 +201,10 @@ Pour les types de ressources plus récentes (par exemple les polices, les requê
   <figcaption>Figure 3. Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.</figcaption>
 </figure>
 
-Dans le contexte des indices de ressources, l'utilisation de l'attribut `crossorigin` leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple : `<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">` active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes `cross-origin`.
+Dans le contexte des indices de ressources, l'utilisation de l'attribut `crossorigin` leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple, `anonymous` active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes `cross-origin`&nbsp;:
+```
+<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">
+```
 
 Bien que d'autres éléments HTML prennent en charge l'attribut `crossorigin`, cette analyse ne porte que sur l'utilisation avec des indices de ressources.
 

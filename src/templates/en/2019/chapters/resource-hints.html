@@ -105,9 +105,11 @@
 </p>
 <h2 id="syntax"><a href="#syntax" class="anchor-link">Syntax</a></h2>
 <p>
-  97% of resource hint usage relied on using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link"><code>&lt;link&gt;</code></a> tag to specify a resource hint. For example, <code>&lt;link rel="prefetch" href="shopping-cart.js"&gt;</code>.
+  97% of resource hint usage relied on using the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link"><code>&lt;link&gt;</code></a> tag to specify a resource hint. For example:
 </p>
-<p>Only 3% of resource hint usage used <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">HTTP headers</a> to specify resource hints. For example, <code>Link: &lt;https://example.com/shopping-cart.js&gt;; rel=prefetch</code>.</p>
+<pre><code>&lt;link rel="prefetch" href="shopping-cart.js"&gt;</code></pre>
+<p>Only 3% of resource hint usage used <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">HTTP headers</a> to specify resource hints. For example:</p>
+<pre><code>Link: &lt;https://example.com/shopping-cart.js&gt;; rel=prefetch</code></pre>
 <p>Because the usage of resource hints in HTTP headers is so low, the remainder of this chapter will focus solely on analyzing the usage of resource hints in conjunction with the <code>&lt;link&gt;</code> tag. However, it's worth noting that in future years, usage of resource hints in HTTP headers may increase as <a href="./http2#http2-push">HTTP/2 Push</a> is adopted. This is due to the fact that HTTP/2 Push has repurposed the HTTP preload <code>Link</code> header as a signal to push resources.</p>
 <h2 id="resource-hints"><a href="#resource-hints" class="anchor-link">Resource hints</a></h2>
 <p class="note">Note: There was no noticeable difference between the usage patterns for resource hints on mobile versus desktop. Thus, for the sake of conciseness, this chapter only includes the statistics for mobile.</p>
@@ -228,7 +230,8 @@
   </div>
   <figcaption><a href="#fig-3" class="anchor-link">Figure 3.</a> Adoption of the <code>crossorigin</code> attribute as a percent of resource hint instances.</figcaption>
 </figure>
-<p>In the context of resource hints, usage of the <code>crossorigin</code> attribute enables them to match the CORS mode of the resources they are supposed to match and indicates the credentials to include in the request. For example: <code>&lt;link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous"&gt;</code> enables CORS and indicates that no credentials should be included for those cross-origin requests.</p>
+<p>In the context of resource hints, usage of the <code>crossorigin</code> attribute enables them to match the CORS mode of the resources they are supposed to match and indicates the credentials to include in the request. For example, <code>anonymous</code> enables CORS and indicates that no credentials should be included for those cross-origin requests:</p>
+<pre><code>&lt;link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous"&gt;</code></pre>
 <p>Although other HTML elements support the crossorigin attribute, this analysis only looks at usage with resource hints.</p>
 <h2 id="the-as-attribute">
   <a href="#the-as-attribute" class="anchor-link">The <code>as</code> attribute</a>
