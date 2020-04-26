@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 20
 title: HTTP/2
-description: HTTP/2、HTTP/2プッシュ、HTTP/2の問題、およびHTTP/3の採用と影響をカバーするWeb Almanac2019のHTTP/2章
+description: HTTP/2、HTTP/2プッシュ、HTTP/2の問題、およびHTTP/3の採用と影響をカバーするWeb Almanac 2019のHTTP/2章
 authors: [bazzadp]
 reviewers: [bagder, rmarx, dotjs]
 translators: [ksakae]
