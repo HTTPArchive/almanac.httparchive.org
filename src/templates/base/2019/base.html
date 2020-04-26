@@ -173,6 +173,7 @@
   {% block footer %}
     <footer class="alt-bg">
       <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
+      <hr>
       <nav aria-label="{{ self.footer_title() }}" class="nav-items">
         <ul>
           <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
@@ -188,15 +189,33 @@
           </li>
         </ul>
       </nav>
+      <div class="mobile-ha-social-media">
+        <a class="navigation-logo ha-logo" href="https://httparchive.org/">
+          <img src="/static/images/ha-home.svg" alt="{{ self.http_archive_link() }}" height="35" width="70">
+        </a>
+        <ul class="social-media">
+          <li>
+            <a href="https://twitter.com/HTTPArchive" class="twitter">
+              <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
+              <img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <hr>
       <p class="copyright">
         <span>{{ self.copyright() }}</span>
         <br>
         <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
       </p>
-      <a class="navigation-logo ha-logo" href="https://httparchive.org/">
+      <a class="navigation-logo ha-logo not-mobile" href="https://httparchive.org/">
         <img src="/static/images/ha-home.svg" alt="{{ self.http_archive_link() }}" height="35" width="70">
       </a>
-      <ul class="social-media">
+      <ul class="social-media not-mobile">
         <li>
           <a href="https://twitter.com/HTTPArchive" class="twitter">
             <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
@@ -208,8 +227,6 @@
           </a>
         </li>
       </ul>
-      <hr>
-      <hr>
     </footer>
   {% endblock %}
   {% block scripts %}

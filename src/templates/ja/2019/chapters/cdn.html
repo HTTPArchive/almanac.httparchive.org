@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDNの採用と使用法、RTTとTLSの管理、HTTP/2の採用、キャッシング、および共通ライブラリとコンテンツCDNをカバーする2019 Web年鑑のCDNの章。","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":["ksakae"],"discuss":"1772","results":"https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/","queries":"17_CDN","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-12-04T00:00:00.000Z","chapter":"cdn"} %} {% block index %}
+{% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDNの採用と使用法、RTTとTLSの管理、HTTP/2の採用、キャッシング、および共通ライブラリとコンテンツCDNをカバーする2019 Web AlmanacのCDNの章。","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":["ksakae"],"discuss":"1772","results":"https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/","queries":"17_CDN","published":"2019-11-11T00:00:00.000Z","last_updated":"2019-12-04T00:00:00.000Z","chapter":"cdn"} %} {% block index %}
 <ul>
   <li>
     <a href="#導入">導入</a>
@@ -75,7 +75,7 @@
 
 {% endblock %} {% block main_content %}
 <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
-<p>「コンテンツ配信ネットワーク」は、Webサイトの読み込みを高速化するための<a href="http://stevesouders.com/examples/rules.php">Steve Soudersによる独自の推奨事項</a>の1つでした。昨今でも有効なアドバイスです。Web年鑑のこの章ではSteveの推奨事項がどの程度広く採用されているか、サイトがコンテンツ配信ネットワーク（CDN）をどのように使用しているか、およびそれらが使用している機能のいくつかを検討します。</p>
+<p>「コンテンツ配信ネットワーク」は、Webサイトの読み込みを高速化するための<a href="http://stevesouders.com/examples/rules.php">Steve Soudersによる独自の推奨事項</a>の1つでした。昨今でも有効なアドバイスです。Web Almanacのこの章ではSteveの推奨事項がどの程度広く採用されているか、サイトがコンテンツ配信ネットワーク（CDN）をどのように使用しているか、およびそれらが使用している機能のいくつかを検討します。</p>
 <p>基本的にCDNは待ち時間（パケットがネットワーク上の2つのポイント間、たとえば訪問者のデバイスからサーバーに移動する時間）を短縮します、待ち時間はページの読み込み速度の重要な要素です。</p>
 <p>CDNは、2つの方法で待機時間を短縮します。ユーザーに近い場所からコンテンツを提供すること、2番目はエンドユーザーに近いTCP接続を終了することです。</p>
 <p>歴史的にユーザーからバイトへの論理パスが短くなるように、CDNはバイトのキャッシュまたはコピーに使用されていました。多くの人が要求するファイルは、origin（サーバー）から一度取得してユーザーに近いサーバーへ保存できるため、転送時間を節約できます。</p>
@@ -89,10 +89,10 @@
 </ul>
 <p>最後にCDNもまた、originサーバーがサポートしていない場合でもエッジからブラウザーまでHTTP/2、TLS1.3、またはIPv6を有効にできるなどoriginでの変更を必要とせずにサイトが新しいテクノロジーを採用できるようにします。</p>
 <h3 id="警告と免責事項"><a href="#警告と免責事項" class="anchor-link">警告と免責事項</a></h3>
-<p>他の観察研究と同様に、測定できる範囲と影響には限界があります。 Web年鑑のCDN使用に関して収集された統計は、特定のCDNベンダーのパフォーマンスや有効性を意味するものではありません。</p>
-<p>Web年鑑に使用されるテスト<a href="./methodology">方法</a>には多くの制限があります。これらには以下が含まれます。</p>
+<p>他の観察研究と同様に、測定できる範囲と影響には限界があります。 Web AlmanacのCDN使用に関して収集された統計は、特定のCDNベンダーのパフォーマンスや有効性を意味するものではありません。</p>
+<p>Web Almanacに使用されるテスト<a href="./methodology">方法</a>には多くの制限があります。これらには以下が含まれます。</p>
 <ul>
-  <li><strong>シミュレートされたネットワーク遅延</strong>：Web年鑑は、<a href="./methodology#webpagetest">トラフィックを総合的に形成する</a>専用ネットワーク接続を使用します。</li>
+  <li><strong>シミュレートされたネットワーク遅延</strong>：Web Almanacは、<a href="./methodology#webpagetest">トラフィックを総合的に形成する</a>専用ネットワーク接続を使用します。</li>
   <li><strong>単一の地理的場所</strong>：テストは<a href="https://httparchive.org/faq#how-is-the-data-gathered">単一のデータセンター</a>から実行されるため、多くのCDNベンダーの地理的分布をテストすることはできません。</li>
   <li><strong>キャッシュの有効性</strong>：各CDNは独自の技術を使用しており、多くの場合、セキュリティ上の理由により、キャッシュのパフォーマンスは公開されていません。</li>
   <li><strong>ローカライゼーションと国際化</strong>：地理的分布と同様に言語、地理固有のドメインの影響もテストに対して不透明です。</li>
@@ -105,7 +105,7 @@
   <li><strong>キャッシュヒットとキャッシュミスのパフォーマンス</strong>：前述のようにこれは正確にテストできません、なのでコールドキャッシュとホットキャッシュでページのパフォーマンステストを繰り返すことは信頼できません。</li>
 </ul>
 <h3 id="さらなる統計"><a href="#さらなる統計" class="anchor-link">さらなる統計</a></h3>
-<p>Web年鑑の将来のバージョンでは、CDNベンダー間のTLSおよびRTTの管理をより詳細に検討する予定です。興味深いのは、OCSP Staplingの影響、TLS暗号パフォーマンスの違いです。 CWND（TCP輻輳ウィンドウ）成長率、特にBBR v1、v2、従来のTCP Cubicの採用。</p>
+<p>Web Almanacの将来のバージョンでは、CDNベンダー間のTLSおよびRTTの管理をより詳細に検討する予定です。興味深いのは、OCSP Staplingの影響、TLS暗号パフォーマンスの違いです。 CWND（TCP輻輳ウィンドウ）成長率、特にBBR v1、v2、従来のTCP Cubicの採用。</p>
 <h2 id="cdnの採用と使い方"><a href="#cdnの採用と使い方" class="anchor-link">CDNの採用と使い方</a></h2>
 <p>ウェブサイトの場合、CDNはプライマリドメイン（<code>www.shoesbycolin.com</code>）、サブドメインまたは兄弟ドメイン（<code>images.shoesbycolin.com</code>または<code>checkout.shoesbycolin.com</code>）、そして最後にサードパーティ（Google Analyticsなど）のパフォーマンスを改善できます。これらの各ユースケースにCDNを使用すると、さまざまな方法でパフォーマンスが向上します。</p>
 <p>歴史的に、CDNは<a href="./css">CSS</a>、<a href="./javascript">JavaScript</a>、<a href="./media">画像</a>などの静的リソース専用に使用されていました。これらのリソースはおそらくバージョン管理され（パスに一意の番号を含む）、長期的にキャッシュされます。このようにして、ベースHTMLドメインと比較して、サブドメインまたは兄弟ドメインでのCDNの採用が増加することを期待する必要があります。従来のデザインパターンでは、<code>www.shoesbycolin.com</code>がデータセンター（又は<strong>origin</strong>）から直接HTMLを提供し、<code>static.shoesbycolin.com</code>がCDNを使用することを想定していました。</p>
@@ -1080,7 +1080,7 @@
 </figure>
 <p>このTLSの一般的な採用に加えて、CDNの使用では、TLS1.3などの新しいTLSバージョンの採用も増えています。</p>
 <p>一般にCDNの使用は、TLS1.0のような非常に古くて侵害されたTLSバージョンの使用率が高いoriginホストサービスと比較して、強力な暗号およびTLSバージョンの迅速な採用と高い相関があります。</p>
-<p class="note">Web年鑑で使用されるChromeは、ホストが提供する最新のTLSバージョンと暗号にバイアスをかけることを強調することが重要です。また、これらのWebページは2019年7月にクロールされ、新しいバージョンを有効にしたWebサイトの採用を反映しています。</p>
+<p class="note">Web Almanacで使用されるChromeは、ホストが提供する最新のTLSバージョンと暗号にバイアスをかけることを強調することが重要です。また、これらのWebページは2019年7月にクロールされ、新しいバージョンを有効にしたWebサイトの採用を反映しています。</p>
 <figure id="fig-18">
   <a href="/static/images/2019/cdn/fig18.png">
     <img src="/static/images/2019/cdn/fig18.png" alt="図18. CDNによるHTML TLSバージョン。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&amp;format=interactive" loading="lazy" />
@@ -1536,7 +1536,7 @@
 <p><code>Cache-Control</code>ヘッダーの<code>Surrogate-Control</code>、<code>s-maxage</code>、<code>pre-check</code>、<code>post-check</code>の値など、特にCDNまたは他のプロキシキャッシュを対象とする他のHTTPヘッダーがあります。一般的に、これらのヘッダーを使う事は少ないでしょう。</p>
 <p><code>Surrogate-Control</code>を使用すると、originはCDNに対してのみキャッシュルールを指定できます。CDNは応答を提供する前にヘッダーを削除する可能性が高いため、使用量が低いと驚くことはありません（いくつかのCDNもヘッダーを削除しているように見えました）。</p>
 <p>一部のCDNは、リソースが古くなった場合にリソースを更新できるようにする方法として<code>pre-check</code>をサポートし、最大値<code>maxage</code>として<code>pre-check</code>をサポートしています。ほとんどのCDNでは、<code>pre-check</code>と<code>post-check</code>の使用率は1％未満でした。Yahoo!はこの例外であり、リクエストの約15％に<code>pre-check = 0、post-check = 0</code>がありました。残念ながら、これは積極的な使用ではなく、古いInternet Explorerパターンの名残です。この上のより多くの議論では、<a href="./caching">キャッシング</a>の章に記載されています。</p>
-<p><code>s-maxage</code>ディレクティブは、応答をキャッシュできる期間をプロキシに通知します。 Web年鑑データセット全体で、jsDelivrは複数のリソースで高いレベルの使用が見られた唯一のCDNです。これは、jsDelivrのライブラリのパブリックCDNとしての役割を考えると驚くことではありません。他のCDNでの使用は、個々の顧客、たとえばその特定のCDNを使用するサードパーティのスクリプトまたはSaaSプロバイダーによって推進されているようです。</p>
+<p><code>s-maxage</code>ディレクティブは、応答をキャッシュできる期間をプロキシに通知します。 Web Almanacデータセット全体で、jsDelivrは複数のリソースで高いレベルの使用が見られた唯一のCDNです。これは、jsDelivrのライブラリのパブリックCDNとしての役割を考えると驚くことではありません。他のCDNでの使用は、個々の顧客、たとえばその特定のCDNを使用するサードパーティのスクリプトまたはSaaSプロバイダーによって推進されているようです。</p>
 <figure id="fig-26">
   <a href="/static/images/2019/cdn/fig26.png">
     <img src="/static/images/2019/cdn/fig26.png" alt="図26. CDN応答全体でのs-maxageの採用。" aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&amp;format=interactive" loading="lazy" />
@@ -1562,5 +1562,5 @@
 <p>CDN配信によるレイテンシーの短縮と、訪問者の近くにコンテンツを保存する機能により、サイトはoriginの負荷を軽減しながらより高速な体験を提供できます。</p>
 <p>Steve SoudersによるCDNの使用の推奨は、12年前と同じように今日でも有効ですがCDNを介してHTMLコンテンツを提供しているサイトは20％のみであり、リソースにCDNを使用しているサイトは40％のみです。それらの使用法はさらに成長します。</p>
 <p>この分析に含まれていないCDNの採用にはいくつかの側面があります、これはデータセットの制限と収集方法が原因である場合で、他の場合は分析中に新しい研究の質問が出てきました。</p>
-<p>Webの進化に伴い、CDNベンダーは革新しサイトの新しいプラクティスを使用します、CDNの採用はWeb年鑑の将来のエディションでのさらなる研究のために豊富な領域のままです。</p>
+<p>Webの進化に伴い、CDNベンダーは革新しサイトの新しいプラクティスを使用します、CDNの採用はWeb Almanacの将来のエディションでのさらなる研究のために豊富な領域のままです。</p>
 {% endblock %}

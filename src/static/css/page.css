@@ -2,6 +2,7 @@
   display: grid;
   grid-template-areas: 'index content';
   grid-template-columns: 300px auto;
+  grid-template-columns: 300px calc(100% - 300px); /* auto sometimes not set correctly on font zoom */
 }
 .table-wrap-container,
 .floating-card {
@@ -141,6 +142,7 @@
   position: absolute;
   content: "\2022";
   font-size: 16px;
+  font-size: 1rem;
   display: inline-block;
   width: 1em;
   margin-left: -1em
@@ -187,6 +189,7 @@
 .authors,.authors h2{
   border-bottom: 1px solid #1A2B490A;
   font-size: 17px;
+  font-size: 1.0625rem;
 }
 .content .authors ul{
   margin:16px 0;
@@ -208,13 +211,16 @@
   display: grid;
   grid-template-areas: 'avatar info';
   grid-template-columns: 76px auto;
+  grid-template-columns: 76px calc(100% - 76px); /* auto sometimes not set correctly on font zoom */
 }
 .authors .name{
   font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .authors .tagline{
   font-size: 16px;
+  font-size: 1rem;
 }
 
 .authors .avatar{
@@ -244,6 +250,7 @@
 #chapter-navigation>a{
   color:#1A2B49;
   width:50%;
+  min-width: 100px;
   display:inline-block;
   position:relative;
 }
@@ -254,18 +261,22 @@
 
 #chapter-navigation .chapter-no{
   font-size:22px;
+  font-size:1.375rem;
   font-weight:bold;
   font-style: italic
 }
 
 #chapter-navigation .chapter-title{
   font-size:18px;
+  font-size:1.125rem;
 }
 
 #chapter-navigation .arrow{
   position:absolute;
   font-size:24px;
+  font-size:1.5rem;
   top:12px;
+  top:0.5em;
 }
 
 #previous-chapter .arrow{
@@ -387,6 +398,7 @@ figure .fig-desktop {
       'index'
       'content';
     grid-template-columns: auto;
+    grid-template-columns: 100%; /* auto sometimes not set correctly on font zoom */
   }
   .main .content {
     margin-left: 0;
