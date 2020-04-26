@@ -49,10 +49,13 @@ def validate(func):
 
 
 def validate_chapter(chapter,year):
-
     chapters_for_year = SUPPORTED_CHAPTERS.get(year)
     if chapter not in chapters_for_year:
-        if chapter in TYPO_CHAPTERS:
+        if (chapter[-1] == "/"):
+            # Automatically remove any trailing slashes
+            return chapter[:-1]
+        elif chapter in TYPO_CHAPTERS:
+            # Automatically redirect for configured typos
             logging.debug('Typo chapter requested: %s, redirecting to %s' % (chapter, TYPO_CHAPTERS.get(chapter)))
             return TYPO_CHAPTERS.get(chapter)
         else:
@@ -63,7 +66,6 @@ def validate_chapter(chapter,year):
 
 
 def validate_lang_and_year(lang, year):
-
     if year is None:
         logging.debug('Defaulting the year to: %s' % year)
         year = DEFAULT_YEAR
