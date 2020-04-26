@@ -154,10 +154,13 @@ def methodology(lang, year):
     return render_template('%s/%s/methodology.html' % (lang, year))
 
 
-@app.route('/<lang>/accessibility-statement')
+@app.route('/<lang>/accessibility-statement', strict_slashes=False)
 @validate
 def accessibility_statement(lang):
-    return render_template('%s/2019/accessibility_statement.html' % (lang))
+    if request.url[-1] == "/":
+        return redirect("/%s/accessibility-statement" % (lang)), 301
+    else:
+        return render_template('%s/2019/accessibility_statement.html' % (lang))
 
 
 # Handle trailing slashes for accessibility statement (as it's a special case)
