@@ -33,7 +33,7 @@ Le principal objectif d’une page Web est de fournir du contenu avec lequel les
 
 ### Contraste des couleurs
 
-Il existe de nombreux cas où les visiteurs de votre site peuvent ne pas le voir parfaitement. Les visiteurs peuvent être daltoniens et être dans l’impossibilité de faire la distinction entre la police et la couleur d’arrière-plan ([1 homme sur 12 et 1 femme sur 200](http://www.cvrl.org/people/stockman/pubs/1999&nbsp;%20Genetics&nbsp;%20chapter&nbsp;%20SSJN.pdf) en Europe). Peut-être qu’ils lisent simplement en extérieur avec un soleil créant des tonnes de reflets sur leur écran — ce qui nuit considérablement à leur vision. Ou peut-être qu’ils ont simplement vieilli et que leurs yeux ne peuvent pas distinguer les couleurs aussi bien qu’auparavant.
+Il existe de nombreux cas où les visiteurs de votre site peuvent ne pas le voir parfaitement. Les visiteurs peuvent être daltoniens et être dans l’impossibilité de faire la distinction entre la police et la couleur d’arrière-plan ([1 homme sur 12 et 1 femme sur 200](http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf) en Europe). Peut-être qu’ils lisent simplement en extérieur avec un soleil créant des tonnes de reflets sur leur écran — ce qui nuit considérablement à leur vision. Ou peut-être qu’ils ont simplement vieilli et que leurs yeux ne peuvent pas distinguer les couleurs aussi bien qu’auparavant.
 
 Afin de vous assurer que votre site Web soit lisible dans ces conditions, un contraste de couleur suffisant entre le texte et son arrière-plan est capital.
 
@@ -263,7 +263,7 @@ Un autre résultat amenant à cette conclusion est le fait que les attributs ARI
 
 ##### De nombreux sites tentent de rendre les modales accessibles
 
-La popularité relative du [rôle `dialog`](https://developer.mozilla.org/fr/docs/Accessibilit&nbsp;%C3&nbsp;%A9/ARIA/Techniques_ARIA/Utiliser_le_r&nbsp;%C3&nbsp;%B4le_dialog) se démarque car rendre les modales accessibles aux utilisateurs de lecteurs d’écran est très difficile. Il est donc passionnant de voir environ 8&nbsp;% des pages analysées relever le défi. Encore une fois, nous pensons que cela pourrait être dû à l’utilisation de certains <i lang="en">frameworks</i> d’interface.
+La popularité relative du [rôle `dialog`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_le_r%C3%B4le_dialog) se démarque car rendre les modales accessibles aux utilisateurs de lecteurs d’écran est très difficile. Il est donc passionnant de voir environ 8&nbsp;% des pages analysées relever le défi. Encore une fois, nous pensons que cela pourrait être dû à l’utilisation de certains <i lang="en">frameworks</i> d’interface.
 
 #### Étiquettes sur les éléments interactifs
 
@@ -275,7 +275,7 @@ Les boutons et les liens sont presque toujours inclus dans l’ordre de tabulati
 
 ### Accessibilité des contrôles de formulaire
 
-Remplir des formulaires est une tâche que beaucoup d’entre nous accomplissent chaque jour. Que nous achetions, réservions un voyage ou postulions, les formulaires sont le principal moyen utilisé pour partager des informations avec des pages Web. Pour cette raison, il est extrêmement important de s’assurer que vos formulaires sont accessibles. Le moyen le plus simple d’y parvenir est de fournir des étiquettes (via l’élément [`<label>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Label), [`aria-label`](https://developer.mozilla.org/fr/docs/Accessibilit&nbsp;%C3&nbsp;%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-label) ou [`aria-labelledby`](https://developer.mozilla.org/fr/docs/Accessibilit&nbsp;%C3&nbsp;%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby)) pour chacune de vos entrées. Malheureusement, seulement 22,33&nbsp;% des pages fournissent des étiquettes pour toutes leurs entrées de formulaire, ce qui signifie que 4 pages sur 5 ont des formulaires qui peuvent être très difficiles à remplir.
+Remplir des formulaires est une tâche que beaucoup d’entre nous accomplissent chaque jour. Que nous achetions, réservions un voyage ou postulions, les formulaires sont le principal moyen utilisé pour partager des informations avec des pages Web. Pour cette raison, il est extrêmement important de s’assurer que vos formulaires sont accessibles. Le moyen le plus simple d’y parvenir est de fournir des étiquettes (via l’élément [`<label>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Label), [`aria-label`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-label) ou [`aria-labelledby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby)) pour chacune de vos entrées. Malheureusement, seulement 22,33&nbsp;% des pages fournissent des étiquettes pour toutes leurs entrées de formulaire, ce qui signifie que 4 pages sur 5 ont des formulaires qui peuvent être très difficiles à remplir.
 
 #### Indicateurs des champs obligatoires et invalides
 
@@ -291,7 +291,7 @@ Les `id` peuvent être utilisés en HTML pour lier deux éléments ensemble. Par
 
 Malheureusement, 34,62&nbsp;% des sites ont des `id` en double, ce qui signifie que sur de nombreux sites, l’`id` spécifié par l’utilisateur peut faire référence à plusieurs entrées différentes. Ainsi, lorsqu’un utilisateur clique sur l’étiquette pour sélectionner un champ, il peut finir par [sélectionner quelque chose de différent](https://www.deque.com/blog/unique-id-attributes-matter/) que ce qui était souhaité. Comme vous pouvez l’imaginer, cela pourrait avoir des conséquences négatives dans un cas comme un panier d’achat.
 
-Ce problème est encore plus prononcé pour les lecteurs d’écran car leurs utilisateurs peuvent ne pas être en mesure de vérifier visuellement ce qui est sélectionné. De plus, de nombreux attributs ARIA, tels que [`aria-describedby`](https://developer.mozilla.org/fr/docs/Accessibilit&nbsp;%C3&nbsp;%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-describedby) et [`aria-labelledby`](https://developer.mozilla.org/fr/docs/Accessibilit&nbsp;%C3&nbsp;%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby), fonctionnent de manière similaire à l’élément d’étiquette détaillé ci-dessus. Donc, pour rendre votre site accessible, la suppression de tous les `id` en double est une bonne première étape.
+Ce problème est encore plus prononcé pour les lecteurs d’écran car leurs utilisateurs peuvent ne pas être en mesure de vérifier visuellement ce qui est sélectionné. De plus, de nombreux attributs ARIA, tels que [`aria-describedby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-describedby) et [`aria-labelledby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby),   fonctionnent de manière similaire à l’élément d’étiquette détaillé ci-dessus. Donc, pour rendre votre site accessible, la suppression de tous les `id` en double est une bonne première étape.
 
 ## Conclusion
 
