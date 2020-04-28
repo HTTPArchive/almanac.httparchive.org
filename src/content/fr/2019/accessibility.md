@@ -15,7 +15,7 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 ## Introduction
 
-L’accessibilité sur le Web est essentielle pour une société inclusive et équitable. Alors que de plus en plus de nos vies sociales et professionnelles se déplacent vers le monde en ligne, il devient encore plus important pour les personnes handicapées de pouvoir participer à toutes les interactions en ligne sans barrières. Tout comme les architectes en bâtiment peuvent créer ou omettre des fonctionnalités d’accessibilité telles que des rampes pour fauteuils roulants, les développeurs Web peuvent aider ou entraver la technologie d’assistance sur laquelle les utilisateurs se basent.
+L’accessibilité sur le Web est essentielle pour une société inclusive et équitable. Alors que nos vies sociales et professionnelles se déplacent de plus en plus vers le monde en ligne, il devient encore plus important pour les personnes handicapées de pouvoir participer à toutes les interactions en ligne sans barrières. Tout comme les architectes en bâtiment peuvent créer ou omettre des fonctionnalités d’accessibilité telles que des rampes pour fauteuils roulants, les développeurs Web peuvent aider ou entraver la technologie d’assistance sur laquelle les utilisateurs se basent.
 
 Lorsque nous pensons aux utilisateurs handicapés, nous devons nous rappeler que leur parcours utilisateur est souvent le même — ils utilisent simplement des outils différents. Ces outils populaires incluent, sans s’y limiter&nbsp;: les lecteurs d’écran, les loupes d’écran, le zoom global ou de la taille du texte du navigateur et les commandes vocales.
 
