@@ -157,7 +157,7 @@ All of these elements are primarily designed for accessibility support and have 
   <a href="/static/images/2019/accessibility/fig5.png">
     <img src="/static/images/2019/accessibility/fig5.png" alt="Figure 5. Usage of various HTML semantic elements." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">Horizontal bar chart with bars for each element type vs percent of pages ranging from 0 to 60 in increments of 20. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%.</div>
+  <div id="fig5-description" class="visually-hidden">Vertical bar chart with bars for each element type vs percent of pages ranging from 0 to 60 in increments of 20. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%.</div>
   <figcaption id="fig5-caption" >Figure 5. Usage of various HTML semantic elements.</figcaption>
 </figure>
 
@@ -169,7 +169,7 @@ Many popular screen readers also allow users to navigate by quickly jumping thro
   <a href="/static/images/2019/accessibility/fig6.png">
     <img src="/static/images/2019/accessibility/fig6.png" alt="Figure 6. Other HTML elements used for navigation" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
   </a>
-  <div id="fig6-description" class="visually-hidden">Horizontal bar chart with bars for each element type vs percent of pages ranging from 0 to 100 in increments of 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%.</div>
+  <div id="fig6-description" class="visually-hidden">Vertical bar chart with bars for each element type vs percent of pages ranging from 0 to 100 in increments of 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%.</div>
   <figcaption id="fig6-caption">Figure 6. Other HTML elements used for navigation.</figcaption>
 </figure>
 
@@ -247,7 +247,7 @@ Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9 bel
   <a href="/static/images/2019/accessibility/fig9.png">
     <img src="/static/images/2019/accessibility/fig9.png" alt="Figure 9. Top 10 aria roles." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
   </a>
-  <div id="fig9-description" class="visually-hidden">Horizontal bar chart with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%</div>
+  <div id="fig9-description" class="visually-hidden">Vertical bar chart with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%</div>
   <figcaption id="fig9-caption" >Figure 9. Top 10 aria roles.</figcaption>
 </figure>
 
