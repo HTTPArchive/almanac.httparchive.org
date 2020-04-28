@@ -41,7 +41,7 @@ Afin de vous assurer que votre site Web soit lisible dans ces conditions, un con
   <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
     <img alt="Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600" height="278">
   </a>
-  <div id="fig1-description" class="visually-hidden">Quatre boîtes colorées de nuances orange et grises avec, par dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond orange écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan orange est écrite comme `#F56905`. La zone supérieure de chaque colonne a un fond orange avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Le fond gris montre la couleur orange en niveaux de gris. Gracieusement mis à disposition par LookZook</div>
+  <div id="fig1-description" class="visually-hidden">Quatre boîtes colorées de nuances orange et grises avec, par-dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond orange écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan orange est écrite comme `#F56905`. La zone supérieure de chaque colonne a un fond orange avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Le fond gris montre la couleur orange en niveaux de gris. Gracieusement mis à disposition par LookZook</div>
   <figcaption id="fig1-caption">Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook</figcaption>
 </figure>
 
@@ -73,7 +73,7 @@ Malheureusement, les développeurs ont tellement abusé de cela que près d’un
 
 ### Identification de la langue
 
-Le Web regorge de merveilleuses quantités de contenus. Cependant, il y a un hic&nbsp;: plus de 1000 langues différentes existent dans le monde, et le contenu que vous recherchez peut ne pas être écrit dans une langue que vous maîtrisez. Ces dernières années, nous avons fait de grands progrès dans les technologies de traduction et vous avez probablement ont utilisé l’un d’eux sur le Web (par exemple, <i lang="en">Google translate</i>).
+Le Web regorge de merveilleuses quantités de contenus. Cependant, il y a un hic&nbsp;: plus de 1000 langues différentes existent dans le monde, et le contenu que vous recherchez peut ne pas être écrit dans une langue que vous maîtrisez. Ces dernières années, nous avons fait de grands progrès dans les technologies de traduction et vous avez probablement utilisé l’un d’eux sur le Web (par exemple, <i lang="en">Google translate</i>).
 
 Afin de faciliter cette fonctionnalité, les moteurs de traduction doivent savoir dans quelle langue vos pages sont écrites. Cela se fait en utilisant [l’attribut `lang`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/lang). Sans cela, les ordinateurs doivent deviner dans quelle langue votre page est écrite. Comme vous pouvez l’imaginer, cela conduit à de nombreuses erreurs, en particulier lorsque les pages utilisent plusieurs langues (par exemple, la navigation de votre page est en anglais, mais le contenu de la publication est en japonais).
 
@@ -187,7 +187,7 @@ Si vous souhaitez voir un lien d’évitement en action par vous-même, vous pou
   <figcaption id="fig7-caption">Figure 7. Ce à quoi un lien d’évitement ressemble sur google.com.</figcaption>
 </figure>
 
-En fait, vous n’avez même pas besoin de quitter ce site car nous [les utilisons ici aussi](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)&nbsp;!
+En fait, vous n’avez même pas besoin de quitter ce site, car nous [les utilisons ici aussi](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)&nbsp;!
 
 Il est difficile de déterminer avec précision ce qu’est un lien d’évitement lors de l’analyse des sites. Pour cette analyse, si nous avons trouvé un lien-ancre (`href=#heading1`) dans les 3 premiers liens de la page, nous l’avons défini comme une page avec un lien d’évitement. Donc, 14,19&nbsp;% est une limite supérieure stricte.
 
@@ -217,7 +217,7 @@ L’utilisation de `<th>` et `<td>` était de loin la méthode la plus courammen
 
 #### Légendes
 
-La légende (ou titre) de tableau via l’élément [`<caption>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/caption) est utile pour fournir plus de contexte aux lecteurs de toutes sortes. Une légende peut préparer un lecteur à saisir les informations que votre tableau partage, et elle peut être particulièrement utile pour les personnes qui peuvent être distraites ou interrompues facilement. Elles sont également utiles pour les personnes qui peuvent se perdre dans un grande tableau, comme un utilisateur de lecteur d’écran ou une personne ayant une déficience cognitive ou intellectuelle. Plus il est facile pour les lecteurs de comprendre ce qu’ils analysent, mieux c’est.
+La légende (ou titre) de tableau via l’élément [`<caption>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/caption) est utile pour fournir plus de contexte aux lecteurs de toutes sortes. Une légende peut préparer un lecteur à saisir les informations que votre tableau partage, et elle peut être particulièrement utile pour les personnes qui peuvent être distraites ou interrompues facilement. Elles sont également utiles pour les personnes qui peuvent se perdre dans un grand tableau, comme un utilisateur de lecteur d’écran ou une personne ayant une déficience cognitive ou intellectuelle. Plus il est facile pour les lecteurs de comprendre ce qu’ils analysent, mieux c’est.
 
 Malgré cela, seulement 4,32&nbsp;% des pages avec des tableaux fournissent des légendes à ces derniers.
 
@@ -255,7 +255,7 @@ En examinant les résultats de la figure 9, nous avons trouvé deux informations
 
 ##### Mettre à jour les <i lang="en">frameworks</i> d’interface pourrait être la voie à suivre pour l’accessibilité du Web
 
-Les 5 premiers rôles, tous apparaissant sur 11&nbsp;% des pages ou plus, sont des rôles de type <i lang="en">landmark</i>. Ils sont utilisés pour faciliter la navigation, pas pour décrire les fonctionnalités d’un widget, comme une zone de liste déroulante. C’est un résultat surprenant car le principal facteur de motivation du développement d’ARIA était justement de donner aux développeurs Web la possibilité de décrire la fonctionnalité de widgets constitués d’éléments HTML génériques (comme un `<div>`).
+Les 5 premiers rôles, tous apparaissant sur 11&nbsp;% des pages ou plus, sont des rôles de type <i lang="en">landmark</i>. Ils sont utilisés pour faciliter la navigation, pas pour décrire les fonctionnalités d’un widget, comme une zone de liste déroulante. C’est un résultat surprenant, car le principal facteur de motivation du développement d’ARIA était justement de donner aux développeurs Web la possibilité de décrire la fonctionnalité de widgets constitués d’éléments HTML génériques (comme un `<div>`).
 
 Nous pensons que certains des <i lang="en">frameworks</i> d’interface les plus populaires incluent des rôles de navigation dans leurs modèles. Cela expliquerait la prévalence d’attributs de type <i lang="en">landmark</i>. Si cette théorie est correcte, la mise à jour des <i lang="en">frameworks</i> d’interface populaires pour inclure davantage de prise en charge de l’accessibilité peut avoir un impact énorme sur l’accessibilité du Web.
 
@@ -263,7 +263,7 @@ Un autre résultat amenant à cette conclusion est le fait que les attributs ARI
 
 ##### De nombreux sites tentent de rendre les modales accessibles
 
-La popularité relative du [rôle `dialog`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_le_r%C3%B4le_dialog) se démarque car rendre les modales accessibles aux utilisateurs de lecteurs d’écran est très difficile. Il est donc passionnant de voir environ 8&nbsp;% des pages analysées relever le défi. Encore une fois, nous pensons que cela pourrait être dû à l’utilisation de certains <i lang="en">frameworks</i> d’interface.
+La popularité relative du [rôle `dialog`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_le_r%C3%B4le_dialog) se démarque, car rendre les modales accessibles aux utilisateurs de lecteurs d’écran est très difficile. Il est donc passionnant de voir environ 8&nbsp;% des pages analysées relever le défi. Encore une fois, nous pensons que cela pourrait être dû à l’utilisation de certains <i lang="en">frameworks</i> d’interface.
 
 #### Étiquettes sur les éléments interactifs
 
@@ -291,7 +291,7 @@ Les `id` peuvent être utilisés en HTML pour lier deux éléments ensemble. Par
 
 Malheureusement, 34,62&nbsp;% des sites ont des `id` en double, ce qui signifie que sur de nombreux sites, l’`id` spécifié par l’utilisateur peut faire référence à plusieurs entrées différentes. Ainsi, lorsqu’un utilisateur clique sur l’étiquette pour sélectionner un champ, il peut finir par [sélectionner quelque chose de différent](https://www.deque.com/blog/unique-id-attributes-matter/) que ce qui était souhaité. Comme vous pouvez l’imaginer, cela pourrait avoir des conséquences négatives dans un cas comme un panier d’achat.
 
-Ce problème est encore plus prononcé pour les lecteurs d’écran car leurs utilisateurs peuvent ne pas être en mesure de vérifier visuellement ce qui est sélectionné. De plus, de nombreux attributs ARIA, tels que [`aria-describedby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-describedby) et [`aria-labelledby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby),   fonctionnent de manière similaire à l’élément d’étiquette détaillé ci-dessus. Donc, pour rendre votre site accessible, la suppression de tous les `id` en double est une bonne première étape.
+Ce problème est encore plus prononcé pour les lecteurs d’écran, car leurs utilisateurs peuvent ne pas être en mesure de vérifier visuellement ce qui est sélectionné. De plus, de nombreux attributs ARIA, tels que [`aria-describedby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-describedby) et [`aria-labelledby`](https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby),   fonctionnent de manière similaire à l’élément d’étiquette détaillé ci-dessus. Donc, pour rendre votre site accessible, la suppression de tous les `id` en double est une bonne première étape.
 
 ## Conclusion
 
@@ -304,6 +304,6 @@ De même, les logiciels d’assistance ne s’adressent pas seulement aux person
 
 Une fois un site Web créé, il est souvent difficile de moderniser l’accessibilité par-dessus les structures et widgets du site existants. L’accessibilité n’est pas quelque chose qui peut être facilement saupoudré par la suite, mais doit plutôt faire partie du processus de conception et de mise en œuvre. Malheureusement, soit par manque de sensibilisation, soit par des outils de test faciles à utiliser, de nombreux développeurs ne connaissent pas les besoins de tous leurs utilisateurs et les exigences des logiciels d’assistance qu’ils utilisent.
 
-Bien qu’ils ne soient pas concluants, nos résultats indiquent que l’utilisation de normes d’accessibilité comme ARIA et les meilleures pratiques d’accessibilité (par exemple, utiliser du texte alternatif) se trouvent sur une partie *importante, mais non substantielle* du Web. À première vue, cela est encourageant, mais nous soupçonnons que bon nombre de ces tendances positives sont dues à la popularité de certains <i lang="en">frameworks</i> d’interface. D’une part, cela est décevant car les développeurs Web ne peuvent pas simplement s’appuyer sur des <i lang="en">frameworks</i> d’interface pour injecter dans leurs sites un support d’accessibilité. D’un autre côté cependant, il est encourageant de voir à quel point les <i lang="en">frameworks</i> d’interface peuvent avoir un effet sur l’accessibilité du Web.
+Bien qu’ils ne soient pas concluants, nos résultats indiquent que l’utilisation de normes d’accessibilité comme ARIA et les meilleures pratiques d’accessibilité (par exemple, utiliser du texte alternatif) se trouvent sur une partie *importante, mais non substantielle* du Web. À première vue, cela est encourageant, mais nous soupçonnons que bon nombre de ces tendances positives sont dues à la popularité de certains <i lang="en">frameworks</i> d’interface. D’une part, cela est décevant, car les développeurs Web ne peuvent pas simplement s’appuyer sur des <i lang="en">frameworks</i> d’interface pour injecter dans leurs sites un support d’accessibilité. D’un autre côté cependant, il est encourageant de voir à quel point les <i lang="en">frameworks</i> d’interface peuvent avoir un effet sur l’accessibilité du Web.
 
 À notre avis, la prochaine frontière est de rendre les widgets disponibles via les <i lang="en">frameworks</i> d’interface plus accessibles. Étant donné que de nombreux widgets complexes utilisés (par exemple, les sélecteurs de calendrier) proviennent d’une bibliothèque d’interface utilisateur, il serait formidable que ces widgets soient accessibles dès la sortie de la boîte. Nous espérons que lorsque nous collecterons nos résultats la prochaine fois, l’utilisation de rôles ARIA complexes plus correctement mis en œuvre augmentera - ce qui signifie que des widgets plus complexes auront également été rendus accessibles. De plus, nous espérons voir des médias plus accessibles, comme des images et des vidéos, afin que tous les utilisateurs puissent profiter de la richesse du Web.
