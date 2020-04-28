@@ -53,11 +53,11 @@ Seuls 22,04&nbsp;% des sites ont donné à l’ensemble de leurs textes un contr
 
 Utiliser une [taille de police lisible](https://accessibleweb.com/question-answer/minimum-font-size/) et [une taille de cible raisonnablement grande](https://www.w3.org/WAI/WCAG21/quickref/#target-size) aide les utilisateurs à lire et à interagir avec votre site web. Mais même les sites web qui suivent parfaitement toutes ces directives ne peuvent pas répondre aux besoins spécifiques de chaque visiteur. C’est pourquoi les fonctionnalités de l’appareil telles que le pincement au zoom et la mise à l’échelle sont si importantes&nbsp;: elles permettent aux utilisateurs de modifier vos pages pour répondre à leurs besoins. Ou dans le cas de sites particulièrement inaccessibles utilisant de minuscules polices et boutons, cela donne aux utilisateurs la possibilité même d’utiliser le site.
 
-Il existe de rares cas où la désactivation de la mise à l’échelle est acceptable, comme lorsque la page en question est un jeu web utilisant des commandes tactiles. Si laissé activé dans ce cas, les téléphones des joueurs et joueuses feront un zoom avant et arrière à chaque fois qu’ils tapoteront deux fois sur le jeu, ce qui — ironiquement — le rendra inaccessible.
+Il existe de rares cas où la désactivation de la mise à l’échelle est acceptable, comme lorsque la page en question est un jeu web utilisant des commandes tactiles. Si laissé activé dans ce cas, les téléphones des joueurs et joueuses feront un zoom avant et arrière à chaque fois qu’ils tapoteront deux fois sur le jeu, ce qui —&nbsp;ironiquement&nbsp;— le rendra inaccessible.
 
 De fait, les développeurs et développeuses ont la possibilité de désactiver cette fonctionnalité en définissant l’une des deux propriétés suivantes dans la [balise meta viewport](https://developer.mozilla.org/fr/docs/Mozilla/Mobile/Balise_meta_viewport)&nbsp;:
 
-1. `user-scalable` mis à `0` ou `no`
+1. `user-scalable` mis à `0` ou `no`&nbsp;;
 
 2. `maximum-scale` mis à `1`, `1.0`, etc.
 
@@ -117,8 +117,8 @@ Afin d’éviter de dérouter les utilisateurs de lecteurs d’écran, assurez-v
 
 Cela étant dit, voici nos résultats&nbsp;:
 
-1. 89,36&nbsp;% des pages utilisent des titres d’une manière ou d’une autre. Impressionnant.
-2. 38,6&nbsp;% des pages sautent des niveaux de titre.
+1. 89,36&nbsp;% des pages utilisent des titres d’une manière ou d’une autre&nbsp;; impressionnant&nbsp;;
+2. 38,6&nbsp;% des pages sautent des niveaux de titre&nbsp;;
 3. Curieusement, les `h2` se trouvent sur plus de sites que les `h1`.
 
 <figure>
@@ -195,9 +195,9 @@ Il est difficile de déterminer avec précision ce qu’est un lien d’éviteme
 
 Des raccourcis clavier définis via [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) ou [`accesskey`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/accesskey) peuvent être utilisés de deux manières&nbsp;:
 
-1. Activer un élément sur la page, comme un lien ou un bouton.
+1. activer un élément sur la page, comme un lien ou un bouton&nbsp;;
 
-2. Donner le focus à un certain élément de la page. Par exemple, déplacer le focus sur un champ de la page, permettant à l’utilisateur ou l’utilisatrice de commencer à taper dedans.
+2. donner le focus à un certain élément de la page. Par exemple, déplacer le focus sur un champ de la page, permettant à l’utilisateur ou l’utilisatrice de commencer à taper dedans.
 
 L’adoption de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) était quasiment absente de notre échantillon, elle n’était utilisée que sur 159 sites sur plus de 4 millions analysés. L’attribut [`accesskey`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/accesskey) a été utilisé plus fréquemment, se trouvant sur 2,47&nbsp;% des pages web (1,74&nbsp;% sur les mobiles). Nous pensons que l’utilisation accrue des raccourcis sur le bureau est due au fait que les développeurs et développeuses s’attendent à ce que les sites mobiles ne soient accessibles que via un écran tactile et non un clavier.
 
@@ -298,9 +298,9 @@ Ce problème est encore plus prononcé pour les lecteurs d’écran, car leurs u
 Les personnes handicapées ne sont pas les seules à avoir des besoins d’accessibilité. Par exemple, toute personne qui a subi une blessure temporaire au poignet a eu du mal à taper sur de petites cibles. La vue diminue souvent avec l’âge, ce qui rend le texte écrit en petites polices difficile à lire. La dextérité des doigts n’est pas la même pour toutes les tranches d’âge, ce qui rend plus difficile l’utilisation de commandes interactives ou le balayage de contenu sur des sites web mobiles pour un pourcentage important d’utilisateurs.
 
 De même, les logiciels d’assistance ne s’adressent pas seulement aux personnes handicapées mais améliorent l’expérience quotidienne de chacun&nbsp;:
-- La popularité récente de l’assistance vocale, à la fois sur les appareils mobiles et à domicile, a démontré que le contrôle d’un appareil informatique à l’aide de commandes vocales est à la fois souhaitable et essentiel pour de nombreux utilisateurs. Les commandes vocales comme celles-ci n’étaient auparavant qu’une fonctionnalité d’accessibilité, mais se transforment désormais en un produit traditionnel.
-- Les conducteurs bénéficieraient d’une fonction de lecture d’écran qui, tout en gardant les yeux sur la route, lit à haute voix de longs textes comme des actualités.
-- Les sous-titres sont appréciés non seulement par les personnes qui ne peuvent pas entendre une vidéo, mais aussi par les personnes qui veulent regarder une vidéo dans un restaurant bruyant ou dans une bibliothèque.
+- la popularité récente de l’assistance vocale, à la fois sur les appareils mobiles et à domicile, a démontré que le contrôle d’un appareil informatique à l’aide de commandes vocales est à la fois souhaitable et essentiel pour de nombreux utilisateurs. Les commandes vocales comme celles-ci n’étaient auparavant qu’une fonctionnalité d’accessibilité, mais se transforment désormais en un produit traditionnel&nbsp;;
+- les conducteurs bénéficieraient d’une fonction de lecture d’écran qui, tout en gardant les yeux sur la route, lit à haute voix de longs textes comme des actualités&nbsp;;
+- les sous-titres sont appréciés non seulement par les personnes qui ne peuvent pas entendre une vidéo, mais aussi par les personnes qui veulent regarder une vidéo dans un restaurant bruyant ou dans une bibliothèque.
 
 Une fois un site web créé, il est souvent difficile de moderniser l’accessibilité par-dessus les structures et widgets du site existants. L’accessibilité n’est pas quelque chose qui peut être facilement saupoudré par la suite, mais doit plutôt faire partie du processus de conception et de mise en œuvre. Malheureusement, soit par manque de sensibilisation, soit par des outils de test faciles à utiliser, de nombreux développeurs et développeuses ne connaissent pas les besoins de tous leurs utilisateurs et les exigences des logiciels d’assistance qu’ils utilisent.
 
