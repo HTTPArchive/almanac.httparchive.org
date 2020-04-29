@@ -77,9 +77,9 @@
   {%- set featured_chapter_quote = "なぜページサイズはもう重要ではないのかという共通の議論は、高速インターネットとスープアップされたデバイスのおかげで、私たちは一般の人々に大規模で複雑な（そして大規模に複雑な）ページを提供することができるということです。この仮定は、あなたが言った高速インターネットとスープアップデバイスへのアクセスを持っていないインターネットユーザーの広大な範囲を無視して大丈夫だとしている限り、うまく動作します。" %}
   {%- set featured_chapter_stats = {"stat1":"10%","label1":"6MB以上のデータを送信しているサイト","stat2":"434 KB","label2":"昨年のデスクトップサイズ中央値の増加","stat3":"69","label3":"ホームページあたりのリクエストの中央値"} %}
 {%- elif featured_chapter == "resource-hints" %}
-  {%- set featured_chapter_name = "Resource Hints" %}
-  {%- set featured_chapter_quote = "Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions." %}
-  {%- set featured_chapter_stats = {"stat1":"29%","label1":"Sites using <code>dns-prefetch</code>","stat2":"88%","label2":"Resource hints using the <code>as</code> attribute.","stat3":"0.04%","label3":"Usage of priority hints"} %}
+  {%- set featured_chapter_name = "リソースヒント" %}
+  {%- set featured_chapter_quote = "リソースヒントは、どのようなリソースがすぐに必要になるかについてブラウザに<em>ヒント</em>を提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントのタイプによって異なります。リソースヒントが正しく使用されていれば、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。" %}
+  {%- set featured_chapter_stats = {"stat1":"29%","label1":"<code>dns-prefetch</code>を使用しているサイト","stat2":"88%","label2":"<code>as</code>属性を使用したリソースヒント。","stat3":"0.04%","label3":"優先順位のヒントの使い方"} %}
 {%- elif featured_chapter == "http2" %}
   {%- set featured_chapter_name = "HTTP/2" %}
   {%- set featured_chapter_quote = "HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。" %}
