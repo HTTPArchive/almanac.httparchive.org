@@ -442,6 +442,9 @@ figure .fig-desktop {
     display: block;
     transition: max-height 0.25s ease-in;
   }
+  .index li.active:before{
+    background-color: transparent;
+  }
   .table-wrap {
     justify-content: left;
   }
