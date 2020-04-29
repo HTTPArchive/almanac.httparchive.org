@@ -257,6 +257,13 @@ function setDiscussionCount() {
 }
 
 function indexHighlighter() {
+
+  // Don't implement this on mobile as won't be used
+  // Note: do show on tablet in case needed when rotating into landscape
+  if (window.matchMedia('(max-width: 600px)').matches) {
+    return;
+  }
+
     //Only activate this if IntersectionObserver is supported
   if(!('IntersectionObserver' in window)) {
     gtag('event', 'index-highlighter', { 'event_category': 'user', 'event_label': 'not-enabled', 'value': 0 });
@@ -265,7 +272,7 @@ function indexHighlighter() {
 
   var chapterIndex = document.querySelector('.index-box');
 
-  // If not index - then nothing to do!
+  // If no index - then nothing to do!
   if (!chapterIndex) {
     return;
   }
