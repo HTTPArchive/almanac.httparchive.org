@@ -1,8 +1,8 @@
 ---
 part_number: IV
 chapter_number: 19
-title: リソースのヒント
-description: 2019年のWeb Almanacのリソースのヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。
+title: リソースヒント
+description: 2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。
 authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
 translators: [ksakae]
@@ -15,7 +15,7 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 ## 序章
 
-[リソースのヒント](https://www.w3.org/TR/resource-hints/) は、どのようなリソースがすぐに必要になるかについての「ヒント」をブラウザに提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントの種類によって異なります。リソースヒントは正しく使用されると、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。
+[リソースヒント](https://www.w3.org/TR/resource-hints/) は、どのようなリソースがすぐに必要になるかについての「ヒント」をブラウザに提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントの種類によって異なります。リソースヒントは正しく使用されると、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。
 
 [例](https://youtu.be/YJGCZCaIZkQ?t=1956)は、リソースヒントの結果としてパフォーマンスが向上しています。
 
@@ -55,14 +55,14 @@ Link: <https://example.com/shopping-cart.js>; rel=prefetch
 
 HTTPヘッダー内のリソースヒントの使用量が非常に少ないため、本章の残りの部分では、`<link>`タグと組み合わせたリソースヒントの使用量の分析のみに焦点を当てています。しかし、今後、[HTTP/2 Push](./http2#http2-push)が採用されるようになると、HTTPヘッダーでのリソースヒントの使用量が増える可能性のあることは注目に値します。これは、HTTP/2 Pushがリソースをプッシュするためのシグナルとして、HTTPのプリロード `Link` ヘッダーを再利用していることに起因しています。
 
-## リソースのヒント
+## リソースヒント
 
 <p class="note">注: モバイルとデスクトップでは、リソースヒントの利用パターンに目立った違いはありませんでした。そのため、簡潔にするために、本章ではモバイルの統計のみを掲載しています。</p>
 
 <figure>
   <table>
     <tr>
-     <th>リソースのヒント</th>
+     <th>リソースヒント</th>
      <th>利用状況（サイトの割合）</th>
     </tr>
     <tr>
@@ -108,7 +108,7 @@ HTTPヘッダー内のリソースヒントの使用量が非常に少ないた�
 <figure>
   <table>
     <tr>
-     <th>リソースのヒント</th>
+     <th>リソースヒント</th>
      <th>ページごとのリソースヒント<br>中央値</th>
      <th>ページごとのリソースヒント<br>90パーセンタイル</th>
     </tr>
