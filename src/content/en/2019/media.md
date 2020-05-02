@@ -331,7 +331,7 @@ Earlier, in <a href="#fig-5">Figure 5</a>, we showed that the volume of image co
   <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
     <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="Figure 19. Lighthouse audit: Offscreen." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
   </a>
-  <div id="fig19-description" class="visually-hidden">A bar chart showing in the 010 percentile 0% of images are offscreen, in the p25 percentile 2% are offscreen, in the p50 percentile, 27% are offscreen, in the p75 percentile 64% are offscreen, and in the p90 percentile 84% of images are offscreen.</div>
+  <div id="fig19-description" class="visually-hidden">A bar chart showing in the p10 percentile 0% of images are offscreen, in the p25 percentile 2% are offscreen, in the p50 percentile, 27% are offscreen, in the p75 percentile 64% are offscreen, and in the p90 percentile 84% of images are offscreen.</div>
   <figcaption id="fig19-caption">Figure 19. Lighthouse audit: Offscreen.</figcaption>
 </figure>
 
