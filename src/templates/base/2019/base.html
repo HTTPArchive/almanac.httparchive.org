@@ -120,8 +120,10 @@
           </ul>
         </nav>
         <nav aria-label="{{ self.menu_title() }}" id="menu" aria-labelledby="menu-btn">
-          <button type="button" id="menu-btn" class="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
-            <img class="menu-icon" src="/static/images/menu.png" data-src-close="/static/images/close.png" alt="" height="21" width="27" />
+          <button type="button" class="menu-btn" id="menu-btn" aria-label="{{ self.open_the_menu() }}" aria-expanded="false" data-open-text="{{ self.open_the_menu() }}" data-close-text="{{ self.close_the_menu() }}">
+            <span class="menu-btn__bar"></span>
+            <span class="menu-btn__bar"></span>
+            <span class="menu-btn__bar"></span>
           </button>
           <ul class="menu">
             <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
@@ -246,15 +248,12 @@
         }
 
         // Mobile menu
-        var menuIcon = document.querySelector('.menu-icon');
-        var menuIconInitialSrc = document.querySelector('.menu-icon').src;
-        var menuIconSrcClose = document.querySelector('.menu-icon').dataset.srcClose;
         var menuBtn = document.querySelector('.menu-btn');
         var menuNav = document.querySelector('#menu');
 
         function toggleNavMenu() {
           var menuOpen = document.body.classList.toggle('menu-open');
-          menuIcon.src = menuOpen ? menuIconSrcClose : menuIconInitialSrc;
+          menuBtn.classList.toggle("menu-btn--active");
           menuBtn.setAttribute('aria-expanded', menuOpen);
           var ariaLabel = menuOpen ?  menuBtn.getAttribute('data-close-text') : menuBtn.getAttribute('data-open-text');
           menuBtn.setAttribute('aria-label', ariaLabel);
