@@ -331,7 +331,7 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
   <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
     <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="図19. Lighthouse監査：オフスクリーン。" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
   </a>
-  <div id="fig19-description" class="visually-hidden">10パーセンタイルでは画像の0%が画面外、P25パーセンタイルでは2%が画面外、P50パーセンタイルでは27%が画面外、P75パーセンタイルでは64%が画面外、P90パーセンタイルでは 84%が画面外であることを示す棒グラフです。</div>
+  <div id="fig19-description" class="visually-hidden">P10パーセンタイルでは画像の0%が画面外、P25パーセンタイルでは2%が画面外、P50パーセンタイルでは27%が画面外、P75パーセンタイルでは64%が画面外、P90パーセンタイルでは 84%が画面外であることを示す棒グラフです。</div>
   <figcaption id="fig19-caption">図19. Lighthouse監査：オフスクリーン。</figcaption>
 </figure>
 
