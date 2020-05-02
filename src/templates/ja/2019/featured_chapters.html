@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("css","markup","third-parties","fonts","performance","security","accessibility","seo","pwa","mobile-web","ecommerce","cms","compression","caching","cdn","page-weight","resource-hints","http2") | random %}
+{%- set featured_chapter = ("css","markup","media","third-parties","fonts","performance","security","accessibility","seo","pwa","mobile-web","ecommerce","cms","compression","caching","cdn","page-weight","resource-hints","http2") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -17,9 +17,9 @@
   {%- set featured_chapter_quote = "2019年7月現在、HTTP Archiveは、約440万件のデスクトップホームページと約530万件のモバイルホームページについて、DOM内で使用されているすべての<em>要素</em>名の収集を開始しており、これにより調査と解剖を開始することができるようになりました。このクロールでは、これらのページで5,000以上の明確な<em>非標準要素名</em>に遭遇したので、私たちがカウントしている要素の合計の明確な数を「トップ」の5,048に制限しました。" %}
   {%- set featured_chapter_stats = {"stat1":"11","label1":"90%以上のページで使用されている要素","stat2":"15%","label2":"非推奨の要素を含むページ","stat3":"65","label3":"カルーセルのバリエーションが見つかりました"} %}
 {%- elif featured_chapter == "media" %}
-  {%- set featured_chapter_name = "Media" %}
-  {%- set featured_chapter_quote = "Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media." %}
-  {%- set featured_chapter_stats = {"stat1":"1 MB","label1":"Median size of home pages","stat2":"60%","label2":"JPEG use amongst images","stat3":"2%","label3":"Use of <code>&lt;picture&gt;</code> element"} %}
+  {%- set featured_chapter_name = "メディア" %}
+  {%- set featured_chapter_quote = "画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つは、メディアで描かれたピクセル数の多さです。" %}
+  {%- set featured_chapter_stats = {"stat1":"1 MB","label1":"ホームページのサイズの中央値","stat2":"60%","label2":"画像間でのJPEG利用","stat3":"2%","label3":"<code>&lt;picture&gt;</code>要素の使用"} %}
 {%- elif featured_chapter == "third-parties" %}
   {%- set featured_chapter_name = "サードパーティ" %}
   {%- set featured_chapter_quote = "オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。" %}
