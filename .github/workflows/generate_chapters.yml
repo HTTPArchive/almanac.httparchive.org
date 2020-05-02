@@ -40,4 +40,4 @@ jobs:
         git add src/templates/sitemap.xml
         echo "Commiting changes"
         git diff-index --quiet HEAD || git commit -m "Regenerated chapters"
-        git push
+        git push --force
