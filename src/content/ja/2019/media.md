@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-23T00:00:00.000Z
+last_updated: 2020-05-02T00:00:00.000Z
 ---
 
 ## 序章
@@ -289,7 +289,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   <a href="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png">
     <img src="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png" alt="図16. 'img sizes'のトップパターン。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive">
   </a>
-  <div id="fig16-description" class="visually-hidden">Bar chart showing 11.3 million images use 'img sizes="(max-width: 300px) 100vw, 300px"', 1.60 million use 'auto', 1.00 million use 'img sizes="(max-width: 767px) 89vw...etc."', 0.23 million use '100vw' and 0.13 million use '300px'</div>
+  <div id="fig16-description" class="visually-hidden">1,130万枚の画像が「img sizes="(max-width: 300px) 100vw, 300px"」を使用しており、「auto」が160万枚、「img sizes="(max-width: 767px) 89vwなどなど"」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。</div>
   <figcaption id="fig16-caption" >図16. <code>&lt;img sizes&gt;</code>のトップパターン。</figcaption>
 </figure>
 
