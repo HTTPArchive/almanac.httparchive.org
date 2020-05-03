@@ -230,6 +230,10 @@
     </url>
 
     <url>
+        <loc>https://almanac.httparchive.org/ja/2019/methodology</loc>
+    </url>
+
+    <url>
         <loc>https://almanac.httparchive.org/ja/2019/mobile-web</loc>
     </url>
 
@@ -263,6 +267,10 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/third-parties</loc>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/ja/accessibility-statement</loc>
     </url>
    
 </urlset>
