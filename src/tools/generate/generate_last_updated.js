@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const { execSync } = require('child_process');
 const { find_files } = require('./shared');
+const { find_template_files } = require('./shared');
 
 const generate_last_updated = async () => {
   const command = `git config --get remote.origin.url | cat`;
@@ -33,6 +34,26 @@ const generate_last_updated = async () => {
     // Overwrite the file with the updated date.
     await fs.outputFile(file, content, 'utf8');
   }
+
+  for (const file of await find_template_files()) {
+    console.log(`\n Setting the last_updated field on ${file}`);
+
+    // Fetch the last modified date, according to the git log.
+    const date = get_last_updated_date(file);
+    console.log(`  last_updated: ${date}:`);
+
+    // Read the content of the file
+    let content = await fs.readFile(file, 'utf-8');
+
+    // Replace the frontmatter last_updated field. This is not
+    // greedy, so it will match the first instance (which must be
+    // in the frontmatter).
+    //content = content.replace(/last_updated: [0-9:TZ-]*.*$/, `last_updated: ${date}`);
+    content = content.replace(/{% block date_modified %}20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9:]*/, `{% block date_modified %}${date}`);
+
+    // Overwrite the file with the updated date.
+    await fs.outputFile(file, content, 'utf8');
+  }
 };
 
 const get_last_updated_date = (path) => {
@@ -49,8 +70,6 @@ const get_last_updated_date = (path) => {
   const sec = ('0' + date.getUTCSeconds()).substring(-2,2);
 
   const formatted_date = year + "-" + month + "-" + day + "T" + hour + ":" + min + ":" + sec + ".000Z";
-
-  console.log("BARRY:"+formatted_date+":")
 
   return formatted_date;
 };
