@@ -23,7 +23,7 @@ jobs:
       if: github.event_name == 'pull_request'
       with:
         fetch-depth: 0
-        repository: ${{ github.event.pull_requests.head.repo.full_name }}
+        repository: bazzadp/almanac.httparchive.org
         ref: ${{ github.event.pull_request.head.ref }}
     - name: Update timestamp for modified files
       run: |
