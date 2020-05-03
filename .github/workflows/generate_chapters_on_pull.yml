@@ -23,7 +23,7 @@ jobs:
       if: github.event_name == 'pull_request'
       with:
         fetch-depth: 0
-        repository: bazzadp/almanac.httparchive.org
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
         ref: ${{ github.event.pull_request.head.ref }}
     - name: Update timestamp for modified files
       run: |
@@ -35,6 +35,7 @@ jobs:
         git diff-tree --no-commit-id --name-only -r $GITHUB_SHA | grep "^src\/templates\/[a-z]*/[0-9]*\/[a-z0-9-]*.html" | xargs -r sed -i "s/\"dateModified\": \"[0-9-]*T/\"dateModified\": \"$(date '+%Y-%m-%d')T/"
         echo "Updated timestamps:"
         git diff
+        exit 0
     - name: Generate the chapters
       run: |
         echo "regenerating chapters"
