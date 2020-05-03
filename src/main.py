@@ -30,14 +30,21 @@ logging.basicConfig(level=logging.DEBUG)
 
 @app.after_request
 def add_header(response):
-    # Cache responses for 3 hours if no other Cache-Control header set
+    # Make sure bad responses are not cached
+    # 
+    # Cache good responses for 3 hours if no other Cache-Control header set
     # This is used for the dynamically generated files (e.g. the HTML)
     # (currently don't use unique filenames so cannot use long caches and
     # some say they are overrated anyway as caches smaller than we think).
     # Note this IS used by Google App Engine as dynamic content.
     if 'Cache-Control' not in response.headers:
-        response.cache_control.public = True
-        response.cache_control.max_age = 10800
+        if response.status_code != 200 and response.status_code != 304:
+            response.cache_control.no_store = True
+            response.cache_control.no_cache = True
+            response.cache_control.max_age = 0
+        if response.status_code == 200 or response.status_code == 304:
+            response.cache_control.public = True
+            response.cache_control.max_age = 10800
     return response
 
 def render_template(template, *args, **kwargs):
@@ -248,13 +255,13 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-def server_error(e):
+def server_error_500(e):
     logging.exception('An error occurred during a request due to internal server error: %s', request.path)
     return render_error_template(error=e, status_code=500)
 
 
 @app.errorhandler(502)
-def server_error(e):
+def server_error_502(e):
     logging.exception('An error occurred during a request due to bad gateway: %s', request.path)
     return render_error_template(error=e, status_code=502)
 
