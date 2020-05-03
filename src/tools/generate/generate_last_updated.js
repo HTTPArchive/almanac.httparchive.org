@@ -1,3 +1,8 @@
+// This file generally isn't used as updating the timestamps
+// Creates a new commit, so you end up in a never ending loop
+// Instead we do this in a GitHub action (see #783)
+// But leaving here as can be useful to do a complete check
+// Against git if you want to. 
 const fs = require('fs-extra');
 const { execSync } = require('child_process');
 const { find_files } = require('./shared');
@@ -49,7 +54,7 @@ const generate_last_updated = async () => {
     // greedy, so it will match the first instance (which must be
     // in the frontmatter).
     //content = content.replace(/last_updated: [0-9:TZ-]*.*$/, `last_updated: ${date}`);
-    content = content.replace(/{% block date_modified %}20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9:]*/, `{% block date_modified %}${date}`);
+    content = content.replace(/{% block date_modified %}[0-9:TZ.+-]*{% endblock %}/, `{% block date_modified %}${date}{% endblock %}`);
 
     // Overwrite the file with the updated date.
     await fs.outputFile(file, content, 'utf8');
