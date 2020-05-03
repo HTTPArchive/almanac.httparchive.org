@@ -3,7 +3,7 @@ let { generate_chapters } = require('./generate_chapters');
 
 (async () => {
   // TODO: Only regenerate for changed contents.
-  //await generate_last_updated();
+  await generate_last_updated();
 
   // TODO: Generate visualisations
   await generate_chapters();
