@@ -27,12 +27,12 @@ jobs:
         ref: ${{ github.event.pull_request.head.ref }}
     - name: Update timestamp for modified files
       run: |
-        echo "files changed in commit $GITHUB_SHA:"
-        git diff-tree --no-commit-id --name-only -r $GITHUB_SHA
+        echo "files changed in this PR:"
+        git whatchanged --name-only --pretty="" origin..HEAD | sort -u
         echo "Updating timestamp in any markdown chapter files"
-        git diff-tree --no-commit-id --name-only -r $GITHUB_SHA | grep "^src\/content\/[a-z]*\/[0-9]*\/[a-z0-9-]*.md" | xargs -r sed -i "s/^last_updated: [0-9-]*T/last_updated: $(date '+%Y-%m-%d')T/"
+        git whatchanged --name-only --pretty="" origin..HEAD content | sort -u | grep "^src\/content\/[a-z]*\/[0-9]*\/[a-z0-9-]*.md" | xargs -r sed -i "s/^last_updated: [0-9-]*T/last_updated: $(date '+%Y-%m-%d')T/"
         echo "Updating timestamp in any template files"
-        git diff-tree --no-commit-id --name-only -r $GITHUB_SHA | grep "^src\/templates\/[a-z]*/[0-9]*\/[a-z0-9-]*.html" | xargs -r sed -i "s/\"dateModified\": \"[0-9-]*T/\"dateModified\": \"$(date '+%Y-%m-%d')T/"
+        git whatchanged --name-only --pretty="" origin..HEAD templates | sort -u | grep "^src\/templates\/[a-z]*/[0-9]*\/[a-z0-9-]*.html" | xargs -r sed -i "s/\"dateModified\": \"[0-9-]*T/\"dateModified\": \"$(date '+%Y-%m-%d')T/"
         echo "Updated timestamps:"
         git diff
         exit 0
