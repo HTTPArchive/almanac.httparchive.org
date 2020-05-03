@@ -141,20 +141,26 @@
             <li class="misc">
               <ul class="misc">
                 <li>
-                  <a href="https://httparchive.org/">
-                    <img src="/static/images/ha-home.svg" alt="{{ self.http_archive_link() }}" height="35" width="70">
+                  <a href="https://httparchive.org/" class="navigation-logo" aria-label="{{ self.http_archive_link() }}">
+                    <svg width="70" height="35">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+                    </svg>
                   </a>
                 </li>
                 <li>
                   <ul class="social-media">
                     <li>
-                      <a href="https://twitter.com/HTTPArchive" class="twitter">
-                        <img src="/static/images/twitter.png" height="65" width="80" alt="Twitter" loading="lazy" />
+                      <a href="https://twitter.com/HTTPArchive" aria-label="Twitter">
+                        <svg width="20" height="20">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                        </svg>
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-                        <img src="/static/images/github.png" height="78" width="80" alt="GitHub" loading="lazy" />
+                      <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-label="GitHub">
+                        <svg width="20" height="20">
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                        </svg>
                       </a>
                     </li>
                   </ul>
@@ -192,18 +198,24 @@
         </ul>
       </nav>
       <div class="mobile-ha-social-media">
-        <a class="navigation-logo ha-logo" href="https://httparchive.org/">
-          <img src="/static/images/ha-home.svg" alt="{{ self.http_archive_link() }}" height="35" width="70">
+        <a class="navigation-logo ha-logo" href="https://httparchive.org/" aria-label="{{ self.http_archive_link() }}">
+          <svg width="70" height="35">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+          </svg>
         </a>
         <ul class="social-media">
           <li>
-            <a href="https://twitter.com/HTTPArchive" class="twitter">
-              <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
+            <a href="https://twitter.com/HTTPArchive" aria-label="Twitter">
+              <svg width="20" height="20">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
           </li>
           <li>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-              <img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" />
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-label="GitHub">
+              <svg width="20" height="20">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
           </li>
         </ul>
@@ -215,17 +227,23 @@
         <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
       </p>
       <a class="navigation-logo ha-logo not-mobile" href="https://httparchive.org/">
-        <img src="/static/images/ha-home.svg" alt="{{ self.http_archive_link() }}" height="35" width="70">
+        <svg width="70" height="35" aria-label="{{ self.http_archive_link() }}">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>        
       </a>
       <ul class="social-media not-mobile">
         <li>
-          <a href="https://twitter.com/HTTPArchive" class="twitter">
-            <img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" />
+          <a href="https://twitter.com/HTTPArchive" aria-label="Twitter">
+            <svg width="20" height="20">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+            </svg>
           </a>
         </li>
         <li>
-          <a href="https://github.com/HTTPArchive/almanac.httparchive.org" class="github">
-            <img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" />
+          <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-label="GitHub">
+            <svg width="20" height="20">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+            </svg>
           </a>
         </li>
       </ul>

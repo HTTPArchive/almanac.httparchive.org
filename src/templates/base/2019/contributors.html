@@ -115,10 +115,9 @@
   flex: 1
 }
 
-.contributor-social img {
-  height: auto;
-  width: 18px;
-  margin: 0 6px 0 0;
+.contributor-social a {
+  display: inline-block;
+  margin: 0 5px;
 }
 
 .contributor-teams {
@@ -283,13 +282,25 @@
 
         <div class="contributor-social">
           {% if contributor.twitter %}
-          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" title="{{ onTwitter(contributor.twitter) }}"><img src="/static/images/twitter.png" alt="Twitter" height="65" width="80" loading="lazy" /></a>
+          <a href="https://twitter.com/{{ contributor.twitter }}" target="_blank" aria-label="{{ onTwitter(contributor.twitter) }}">
+            <svg width="18" height="18">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+            </svg>
+          </a>
           {% endif %}
           {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}" target="_blank" title="{{ onGitHub(contributor.github) }}"><img src="/static/images/github.png" alt="GitHub" height="78" width="80" loading="lazy" /></a>
+          <a href="https://github.com/{{ contributor.github }}" target="_blank" aria-label="{{ onGitHub(contributor.github) }}">
+            <svg width="18" height="18">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+            </svg>
+          </a>
           {% endif %}
           {% if contributor.website %}
-          <a href="{{ contributor.website }}" target="_blank" title="{{ website(contributor.name) }}"><img src="/static/images/blog.png" alt="{{ website(contributor.name) }}" height="72" width="72" loading="lazy" /></a>
+          <a href="{{ contributor.website }}" target="_blank" aria-label="{{ website(contributor.name) }}">
+            <svg width="18" height="18">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+            </svg>
+          </a>
           {% endif %}
         </div>
 
