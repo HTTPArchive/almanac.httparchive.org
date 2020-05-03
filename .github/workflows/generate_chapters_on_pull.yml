@@ -23,6 +23,7 @@ jobs:
       if: github.event_name == 'pull_request'
       with:
         fetch-depth: 0
+        repository: ${{ event.repository }}
         ref: ${{ github.event.pull_request.head.ref }}
     - name: Update timestamp for modified files
       run: |
