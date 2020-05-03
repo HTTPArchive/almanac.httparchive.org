@@ -34,6 +34,8 @@ jobs:
         echo "Checking git status"
         git status
         echo "Adding templates and content directory"
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git config --global user.name "${GITHUB_ACTOR}"
         git add src/templates/*/*/chapters/
         git add src/templates/sitemap.xml
         echo "Commiting changes"
