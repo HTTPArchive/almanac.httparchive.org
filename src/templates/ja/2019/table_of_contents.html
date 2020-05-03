@@ -1,36 +1,36 @@
 {% extends "base/2019/table_of_contents.html" %}
 
-{% block title %}Table of Contents | Web Almanac 2019{% endblock %}
+{% block title %}目次 | Web Almanac 2019{% endblock %}
 
-{% block description %}Table of Contents for the 2019 Web Almanac, listing each section: Page Contents, User Experience, Content Publishing, Content Distribution.{% endblock %}
+{% block description %}2019年版Web Almanacの目次、各セクションを一覧表示しています。ページコンテンツ、ユーザー体験、コンテンツ公開、コンテンツ配信。{% endblock %}
 
-{% block twitter_image_alt %}{{ year }} Web Almanac methodology{% endblock %}
+{% block twitter_image_alt %}{{ year }} Web Almanac方法論{% endblock %}
 
 {% block date_published %}2019-11-04T12:00:00+00:00:00{% endblock %}
 {% block date_modified %}2019-11-04T12:00:00+00:00:00{% endblock %}
 
-{% block breadcrumb_name_2 %}{{ year }} Table of Contents{% endblock %}
+{% block breadcrumb_name_2 %}{{ year }} 目次{% endblock %}
 
 {% block foreward %}
-    <h2>Foreword</h2>
+    <h2>序章</h2>
 
     <p>
-      The open web is an amazingly complex, evolving network of technologies. Entire industries and careers are built on the web and depend on its vibrant ecosystem to succeed. As critical as the web is, understanding how it's doing has been surprisingly elusive. Since 2010, the mission of the HTTP Archive project has been to track how the web is built, and it's been doing an amazing job of it. However, there has been one gap that has been especially challenging to close: bringing meaning to the data that the HTTP Archive project has been collecting and enabling the community to easily understand how the web is performing. That's where the Web Almanac comes in.
+      オープンウェブは、驚くほど複雑で進化するテクノロジーのネットワークです。あらゆる産業やキャリアはウェブの上に構築されており、成功するためにはウェブの活気あるエコシステムに依存しています。ウェブが非常に重要であるにもかかわらず、ウェブがどのように機能しているかを理解することは、驚くほど難しいものでした。2010年以来、HTTP Archiveプロジェクトの使命は、ウェブがどのように構築されているかを追跡することであり、それは素晴らしい仕事をしてきました。それは、HTTP Archiveプロジェクトが収集してきたデータに意味を持たせ、コミュニティがウェブのパフォーマンスを簡単に理解できるようにすることです。そこでWeb Almanacの出番です。
     </p>
 
     <p>
-      The mission of the Web Almanac is to take the treasure trove of insights that would otherwise be accessible only to intrepid data miners, and package it up in a way that's easy to understand. This is made possible with the help of industry experts who can make sense of the data and tell us what it means. Each of the 20 chapters in the Web Almanac focuses on a specific aspect of the web, and each one has been authored and peer reviewed by experts in their field. The strength of the Web Almanac flows directly from the expertise of the people who write it.
+      Web Almanacの使命は、データを掘り起こす勇気のある人しかアクセスできないような洞察の宝庫を、理解しやすい形でパッケージ化することにあります。これは、データの意味を理解し、それが何を意味するのかを教えてくれる業界の専門家の助けを借りて可能にしたものです。Web Almanacの20の章はそれぞれ、ウェブの特定の側面に焦点を当てており、各章はそれぞれの分野の専門家によって執筆され、レビューを受けています。Web Almanacの強みは、執筆者の専門知識から生まれます。
     </p>
 
     <p>
-      Many of the findings in the Web Almanac are worthy of celebration, but it's also an important reminder of the work still required to deliver high-quality user experiences. The data-driven analyses in each chapter are a form of accountability we all share for developing a better web. It's not about shaming those that are getting it wrong, but about shining a guiding light on the path of best practices so there is a clear, right way to do things. With the continued help of the web community, we hope to make this an annual tradition, so each year we can track our progress and make course corrections as needed.
+      Web Almanacに掲載されている調査結果の多くは、賞賛に値するものですが、高品質のユーザー体験を提供するためには、まだまだ必要な作業があることを思い出させてくれる重要なものでもあります。各章のデータに基づいた分析は、より良いWebを開発するために私たちが共有している説明責任の一形態です。それは、間違ったやり方をしている人たちを非難することではなく、ベストプラクティスの道筋に光を当てることで、明確で正しいやり方があることを示しています。ウェブコミュニティの継続的な支援を得て、これを毎年の恒例行事にしたいと考えています。
     </p>
 
     <p>
-      There is so much to learn in this report, so start exploring and share your takeaways with the community so we can collectively advance our understanding of the state of the web.
+      このレポートには学ぶべきことがたくさんありますので、あなたが得たものをコミュニティで共有することで、ウェブの状態についての理解を深めることができます。
     </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, creator of the Web Almanac</em></p>
+    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanacの作成者。</em></p>
 {% endblock %}
 
 {% block appendix %}Appendix{% endblock %}
