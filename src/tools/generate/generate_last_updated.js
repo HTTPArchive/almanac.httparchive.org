@@ -45,7 +45,6 @@ const generate_last_updated = async () => {
 
     // Fetch the last modified date, according to the git log.
     const date = get_last_updated_date(file);
-    console.log(`  last_updated: ${date}:`);
 
     // Read the content of the file
     let content = await fs.readFile(file, 'utf-8');
@@ -70,9 +69,12 @@ const get_last_updated_date = (path) => {
   const year = date.getUTCFullYear();
   const month = ('0' + date.getUTCMonth() + 1).substring(-2,2);
   const day = ('0' + date.getUTCDate()).substring(-2,2);
-  const hour = ('0' + date.getUTCHours()).substring(-2,2);
-  const min = ('0' + date.getUTCMinutes()).substring(-2,2);
-  const sec = ('0' + date.getUTCSeconds()).substring(-2,2);
+  //const hour = ('0' + date.getUTCHours()).substring(-2,2);
+  //const min = ('0' + date.getUTCMinutes()).substring(-2,2);
+  //const sec = ('0' + date.getUTCSeconds()).substring(-2,2);
+  const hour = '00';
+  const min = '00';
+  const sec = '00';
 
   const formatted_date = year + "-" + month + "-" + day + "T" + hour + ":" + min + ":" + sec + ".000Z";
 
