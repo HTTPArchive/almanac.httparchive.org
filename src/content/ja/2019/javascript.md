@@ -5,7 +5,7 @@ title: JavaScript
 description: 2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens]
-translators: [javascript]
+translators: [ksakae]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
@@ -91,7 +91,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
 
 ### ファーストパーティ対サードパーティ
 
-これまでに分析した結果のうち、全体のサイズとリクエスト数が考慮されていました。しかし、大多数のウェブサイトでは、取得して使用しているJavaScriptコードのかなりの部分が[サードパーティ](./サードパーティ)のソースから来ています。
+これまでに分析した結果のうち、全体のサイズとリクエスト数が考慮されていました。しかし、大多数のウェブサイトでは、取得して使用しているJavaScriptコードのかなりの部分が[サードパーティ](./third-parties)のソースから来ています。
 
 サードパーティのJavaScriptは、外部のサードパーティのソースから取得できます。広告、分析、ソーシャルメディアの埋め込みなどは、サードパーティのスクリプトを取得するための一般的なユースケースです。そこで当然のことながら、次の質問に移ります。
 
@@ -129,7 +129,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
 	<figcaption id="fig9-caption">図9. モバイルでダウンロードされたJavaScriptの総ダウンロード数の分布。</figcaption>
 </figure>
 
-中央値では、モバイルとデスクトップの両方で、開発者が作成したファーストパーティのコードよりもサードパーティのコードの方が89％多く使用されています。これは、サードパーティのコードが肥大化の最大の要因の1つであることを明確に示しています。サードパーティの影響についての詳細は、["サードパーティ"](./third-party)の章を参照してください。
+中央値では、モバイルとデスクトップの両方で、開発者が作成したファーストパーティのコードよりもサードパーティのコードの方が89％多く使用されています。これは、サードパーティのコードが肥大化の最大の要因の1つであることを明確に示しています。サードパーティの影響についての詳細は、["サードパーティ"](./third-parties)の章を参照してください。
 
 ## リソース圧縮
 
@@ -280,7 +280,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 	<figcaption>図11. デスクトップとモバイルでのトップ JavaScript ライブラリ</figcaption>
 </figure>
 
-これまでに作成された中で最も人気のあるJavaScriptライブラリである[jQuery](https://jquery.com/)は、デスクトップページの85.03％、モバイルページの83.46％で使用されています。[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)や[querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)など、多くのブラウザAPIやメソッドの出現により、ライブラリが提供する機能の多くがネイティブ形式に標準化されました。jQueryの人気は衰退しているように見えるかもしれませんが、なぜ今でもウェブの大部分で使われているのでしょうか？
+これまでに作成された中で最も人気のあるJavaScriptライブラリである[jQuery](https://jquery.com/)は、デスクトップページの85.03％、モバイルページの83.46％で使用されています。[Fetch](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API)や[querySelector](https://developer.mozilla.org/ja/docs/Web/API/Document/querySelector)など、多くのブラウザAPIやメソッドの出現により、ライブラリが提供する機能の多くがネイティブ形式に標準化されました。jQueryの人気は衰退しているように見えるかもしれませんが、なぜ今でもウェブの大部分で使われているのでしょうか？
 
 理由はいくつか考えられます。
 
@@ -326,7 +326,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
    <a href="/static/images/2019/javascript/fig13.png">
       <img src="/static/images/2019/javascript/fig13.png" alt="図13. type=moduleを利用しているサイトの割合。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive">
    </a>
-	<div id="fig13-description" class="visually-hidden">Bar chart showing 0.6% of sites on desktop use 'type=module', and 0.8% of sites on mobile.</div>
+	<div id="fig13-description" class="visually-hidden">デスクトップでは0.6%のサイトが「type=module」を使用しており、モバイルでは0.8%のサイトが使用していることを示す棒グラフです。</div>
 	<figcaption id="fig13-caption">図13. type=moduleを利用しているサイトの割合。</figcaption>
 </figure>
 
