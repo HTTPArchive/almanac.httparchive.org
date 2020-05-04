@@ -3,6 +3,7 @@
 <% for (let url of urls ) { %>
     <url>
         <loc>https://almanac.httparchive.org/<%= url.url %></loc>
+        <% if (url.lastmod) { %><lastmod><%= url.lastmod %></lastmod><% } %>
     </url>
 <% } %>   
 </urlset>
