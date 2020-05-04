@@ -33,6 +33,7 @@ header .container {
 
 #maincontent {
   overflow: hidden;
+  display: -ms-grid;
   display: grid;
   grid-template-areas:
     'intro'
@@ -76,6 +77,9 @@ p {
 .intro-container {
   color: #FFFFFF;
   grid-area: intro;
+  display: -ms-grid;
+  -ms-grid-row: 1;
+  -ms-grid-columns: 2fr 1fr;
   display: grid;
   grid-template-areas:
     'intro image';
@@ -84,18 +88,22 @@ p {
 }
 
 .intro {
+  -ms-grid-column: 1;
   grid-area: intro;
   width: 100%;
   max-width: 420px;
 }
 
 .intro-year {
+  -ms-grid-row: 1;
   grid-area: year;
   display: none;
   font-family: 'Poppins', sans-serif;
 }
 
 .intro-image-wrapper {
+  -ms-grid-column: 1;
+  -ms-grid-row: 2;
   grid-area: image;
   display: none;
   width:100%;
@@ -109,6 +117,7 @@ p {
 }
 
 .intro-image-2019-wrapper {
+  -ms-grid-column: 2;
   grid-area: image;
   width:100%;
 }
@@ -135,6 +144,7 @@ p {
 
 /* Featured Chapter */
 .featured-chapter {
+  -ms-grid-row: 2;
   grid-area: chapter;
   padding: 120px 0;
 }
@@ -178,6 +188,7 @@ p {
 
 /* Contributors */
 .contributors-container {
+  -ms-grid-row: 3;
   grid-area: contributors;
   display: flex;
   align-items: center;
@@ -230,6 +241,7 @@ p {
 
 /* Methodology */
 .methodology-container {
+  -ms-grid-row: 4;
   grid-area: methodology;
   padding: 0 60px;
 }
