@@ -1,10 +1,9 @@
-let { generate_last_updated } = require('./generate_last_updated');
 let { generate_chapters } = require('./generate_chapters');
 
 (async () => {
-  // TODO: Only regenerate for changed contents.
-  //await generate_last_updated();
+  // Can uncomment this to get latest timestamps from origin:master
+  // let { generate_last_updated } = require('./generate_last_updated');
+  // await generate_last_updated();
 
-  // TODO: Generate visualisations
   await generate_chapters();
 })();
