@@ -1,6 +1,17 @@
 const fs = require('fs-extra');
 const recursive = require('recursive-readdir');
 
+const find_template_files = async () => {
+  const filter = (file, stats) => {
+    const isHtml = file && file.endsWith('.html');
+    const isDirectory = stats && stats.isDirectory();
+
+    return !isHtml && !isDirectory;
+  };
+
+  return await recursive('templates', [filter]);
+};
+
 const find_files = async () => {
   const filter = (file, stats) => {
     const isMd = file && file.endsWith('.md');
@@ -35,6 +46,7 @@ const parse_array = (array_as_string) => {
 
 module.exports = {
   find_files,
+  find_template_files,
   size_of,
   parse_array
 };
