@@ -10,11 +10,7 @@ name: Generate Chapters on Push
 on:
   push:
     branches:
-      - master
-    paths:
-      - src/content/**
-      - src/templates/**
-      - tools/generate/**
+      - test_github_action
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -61,7 +57,7 @@ jobs:
 
             [1]: https://github.com/peter-evans/create-pull-request
         labels: generate chapters
-        project: Web Almanac
+        project: HTTPArchive/Web Almanac
         project-column: TODO
     - name: Check outputs
       run: |
