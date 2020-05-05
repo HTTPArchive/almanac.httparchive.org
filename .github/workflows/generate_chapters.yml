@@ -58,7 +58,7 @@ jobs:
             [1]: https://github.com/peter-evans/create-pull-request
         labels: generate chapters
         project: Web Almanac
-        project-column: 
+        project-column: None
     - name: Check outputs
       run: |
         echo "Pull Request Number - ${{ env.PULL_REQUEST_NUMBER }}"
