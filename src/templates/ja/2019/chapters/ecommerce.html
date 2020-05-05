@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"III","chapter_number":13,"title":"Eコマース","description":"2019年Web AlmanacのEコマースの章では、Eコマースのプラットフォーム、ペイロード、画像、サードパーティ、パフォーマンス、SEO、PWAをカバーしています。","authors":["samdutton","alankent"],"reviewers":["voltek62"],"translators":["ksakae"],"discuss":"1768","results":"https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/","queries":"13_Ecommerce","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-02T00:00:00.000Z","chapter":"ecommerce"} %} {% block index %}
+{% set metadata = {"part_number":"III","chapter_number":13,"title":"Eコマース","description":"2019年Web AlmanacのEコマースの章では、Eコマースのプラットフォーム、ペイロード、画像、サードパーティ、パフォーマンス、SEO、PWAをカバーしています。","authors":["samdutton","alankent"],"reviewers":["voltek62"],"translators":["ksakae"],"discuss":"1768","results":"https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/","queries":"13_Ecommerce","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-05T00:00:00.000Z","chapter":"ecommerce"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -104,7 +104,7 @@
 <p>この分析では、Eコマース・プラットフォーム上に構築されたサイトのみを検出できました。つまり、Amazon、JD、eBayなどの大規模なオンラインストアやマーケットプレイスはここには含まれていません。また、ここでのデータはホームページのみを対象としており、カテゴリ、商品、その他のページは含まれていないことにも注意してください。当社の<a href="./methodology">方法論</a>の詳細については、こちらをご覧ください。</p>
 <h2 id="プラットフォーム検出"><a href="#プラットフォーム検出" class="anchor-link">プラットフォーム検出</a></h2>
 <p>ページがEコマースプラットフォーム上にあるかどうかを確認するにはどうすればいいですか？</p>
-<p>検出は<a href="./methodology#wappalyzer">Wappalyzer</a>で行います。Wappalyzerは、Webサイトで使用されている技術を発見するためのクロスプラットフォームユーティリティです。<a href="./cms">コンテンツ管理システム</a>、Eコマースプラットフォーム、Webサーバー、<a href="./javascript">JavaScript</a>フレームワーク、<a href="./サードパーティ">アナリティクス</a>ツールなどを検出します。</p>
+<p>検出は<a href="./methodology#wappalyzer">Wappalyzer</a>で行います。Wappalyzerは、Webサイトで使用されている技術を発見するためのクロスプラットフォームユーティリティです。<a href="./cms">コンテンツ管理システム</a>、Eコマースプラットフォーム、Webサーバー、<a href="./javascript">JavaScript</a>フレームワーク、<a href="./third-parties">アナリティクス</a>ツールなどを検出します。</p>
 <p>ページ検出は常に信頼できるものでなく、サイトによっては自動攻撃から保護するために検出を明示的にブロックしている場合もあります。特定のEコマースプラットフォームを使用しているすべてのウェブサイトを捕捉することはできないかもしれませんが、検出したウェブサイトは実際にそのプラットフォームを使用していると確信しています。</p>
 <figure id="fig-2">
   <div class="table-wrap">

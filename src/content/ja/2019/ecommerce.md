@@ -10,7 +10,7 @@ discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-05-05T00:00:00.000Z
 ---
 
 ## 序章
@@ -32,7 +32,7 @@ last_updated: 2020-03-02T00:00:00.000Z
 
 ページがEコマースプラットフォーム上にあるかどうかを確認するにはどうすればいいですか？
 
-検出は[Wappalyzer](./methodology#wappalyzer)で行います。Wappalyzerは、Webサイトで使用されている技術を発見するためのクロスプラットフォームユーティリティです。[コンテンツ管理システム](./cms)、Eコマースプラットフォーム、Webサーバー、[JavaScript](./javascript)フレームワーク、[アナリティクス](./サードパーティ)ツールなどを検出します。
+検出は[Wappalyzer](./methodology#wappalyzer)で行います。Wappalyzerは、Webサイトで使用されている技術を発見するためのクロスプラットフォームユーティリティです。[コンテンツ管理システム](./cms)、Eコマースプラットフォーム、Webサーバー、[JavaScript](./javascript)フレームワーク、[アナリティクス](./third-parties)ツールなどを検出します。
 
 ページ検出は常に信頼できるものでなく、サイトによっては自動攻撃から保護するために検出を明示的にブロックしている場合もあります。特定のEコマースプラットフォームを使用しているすべてのウェブサイトを捕捉することはできないかもしれませんが、検出したウェブサイトは実際にそのプラットフォームを使用していると確信しています。
 
