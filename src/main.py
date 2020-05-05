@@ -255,7 +255,7 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-def server_error_500(e):
+def handle_internal_server_error(e):
     logging.exception('An error occurred during a request due to internal server error: %s', request.path)
     return render_error_template(error=e, status_code=500)
 
