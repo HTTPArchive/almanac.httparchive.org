@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":19,"title":"リソースヒント","description":"2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":["ksakae"],"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-02T00:00:00.000Z","chapter":"resource-hints"} %} {% block index %}
+{% set metadata = {"part_number":"IV","chapter_number":19,"title":"リソースヒント","description":"2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":["ksakae"],"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-05T00:00:00.000Z","chapter":"resource-hints"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -154,7 +154,7 @@
   <figcaption><a href="#fig-1" class="anchor-link">図 1.</a> リソースヒントの採用。</figcaption>
 </figure>
 <p><code>dns-prefetch</code>の相対的な人気は驚くに値しません。これはよく知られたAPIであり（<a href="https://caniuse.com/#feat=link-rel-dns-prefetch">2009</a>ではじめて登場しました）、すべての主要なブラウザでサポートされており、すべてのリソースヒントの中でもっとも「安価」なものです。<code>dns-prefetch</code>はDNSの検索を行うだけなので、データの消費量が非常に少なく、使用する上でのデメリットはほとんどありません。<code>dns-prefetch</code>はレイテンシの高い状況でもっとも有用である。</p>
-<p>つまり、IE11以下をサポートする必要がないサイトであれば、<code>dns-prefetch</code>から<code>preconnect</code>に切り替えるのが良いでしょう。HTTPSがユビキタスな時代には、<code>preconnect</code>は安価でありながら、より大きな<a href="./パフォーマンス">パフォーマンス</a>の向上をもたらします。<code>dns-prefetch</code>とは異なり、<code>preconnect</code>はDNSの検索だけでなく、TCPハンドシェイクとTLSネゴシエーションも開始することに注意してください。<a href="https://knowledge.digicert.com/solution/SO16297.html">証明書チェーン</a>はTLSネゴシエーション中にダウンロードされるが、これには通常数キロバイトのコストがかかります。</p>
+<p>つまり、IE11以下をサポートする必要がないサイトであれば、<code>dns-prefetch</code>から<code>preconnect</code>に切り替えるのが良いでしょう。HTTPSがユビキタスな時代には、<code>preconnect</code>は安価でありながら、より大きな<a href="./performance">パフォーマンス</a>の向上をもたらします。<code>dns-prefetch</code>とは異なり、<code>preconnect</code>はDNSの検索だけでなく、TCPハンドシェイクとTLSネゴシエーションも開始することに注意してください。<a href="https://knowledge.digicert.com/solution/SO16297.html">証明書チェーン</a>はTLSネゴシエーション中にダウンロードされるが、これには通常数キロバイトのコストがかかります。</p>
 <p><code>prefetch</code>は3%のサイトで利用されており、もっとも広く利用されていないリソースヒントである。この使用率の低さは、<code>prefetch</code>が現在のページの読み込みよりも後続のページの読み込みを改善するのに有用であるという事実によって説明できるかもしれません。したがって、ランディングページの改善や最初に閲覧されたページのパフォーマンスを向上させることだけに焦点を当てているサイトでは、これは見過ごされてしまうだろう。</p>
 <figure id="fig-2">
   <div class="table-wrap">
