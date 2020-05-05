@@ -172,14 +172,11 @@
   margin: 10px;
 }
 
-.chapter_links img {
+.chapter_links svg {
   margin-right: 10px;
-  vertical-align: top;
+  vertical-align: middle;
 }
-.chapter_links a:hover img,
-.chapter_links a:focus img {
-  filter: brightness(0) saturate(100%) invert(86%) sepia(4%) saturate(4357%) hue-rotate(16deg) brightness(136%) contrast(94%);
-}
+
 #num_comments {
   line-height: 24px;
 }
@@ -236,12 +233,10 @@
   display: inline-block;
   vertical-align: top;
 }
-.authors .social img{
-  width: auto;
-  height: 18px;
+.authors .social a {
   display: inline-block;
-  margin-left: 16px;
   vertical-align: middle;
+  margin: 0 5px;
 }
 
 #chapter-navigation{
