@@ -261,7 +261,7 @@ def handle_internal_server_error(e):
 
 
 @app.errorhandler(502)
-def server_error_502(e):
+def handle_bad_gateway(e):
     logging.exception('An error occurred during a request due to bad gateway: %s', request.path)
     return render_error_template(error=e, status_code=502)
 
