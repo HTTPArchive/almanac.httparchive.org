@@ -45,8 +45,6 @@ jobs:
 
             [1]: https://github.com/peter-evans/create-pull-request
         labels: development
-        project: 2020
-        project-column: TODO
     - name: Check outputs
       run: |
         echo "Pull Request Number - ${{ env.PULL_REQUEST_NUMBER }}"
