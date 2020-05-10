@@ -1,0 +1,85 @@
+.byline {
+    font-style: italic;
+}
+
+.byline.authors {
+    font-weight: bold;
+}
+
+#toc ul {
+  list-style-type: none;
+}
+
+#toc a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@page {
+  margin: 2.5cm;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 10pt;
+
+  @bottom-left {
+    width: 100%;
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: "The Web Almanac 2019 by HTTP Archive";
+    color: #333;
+  }
+
+  @bottom-right { 
+    width: 100px;
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: "pg. " counter(page);
+  }
+
+  @top-right {
+    content: string(chapter_subtitle) string(chapter_title);
+    margin: 30pt 0 10pt 0;
+    color: #333;
+  }
+}
+
+@media print {
+  .content {
+    margin: 0;
+  }
+
+  .content > section {
+    page-break-after: always;
+  }  
+  
+  #toc a::after {
+    float: right;
+    content: "pg. " target-counter(attr(href), page);
+  }
+
+  section.chapter h1.title {
+    string-set: chapter_title content();
+  }
+
+  section.chapter div.subtitle {
+    string-set: chapter_subtitle content() " - ";
+  }
+
+  figure,
+  figure a,
+  figure div,
+  figure img {
+    max-width: 100%;
+  }
+
+
+}
+
+
+.content section.authors li {
+  display: flex;
+}
+
+.content section.authors li *:first-child {
+  flex: 0 0 76px;
+}
