@@ -7,7 +7,7 @@
   <h1 class="title-lg">{{ self.table_of_contents_title() }}:</h1>
   <ul>
     <li>
-      {{ self.part() }} {{ localizedPartTitles['I. Page Content'] if localizedPartTitles['I. Page Content']|length else 'I. Page Content' }}
+      {{ self.part() }} {{ localizedPartTitles['I. Page Content'] if localizedPartTitles['I. Page Content']|length else 'I. Page Content'}}
       <ul>
         <li>
           <a href="#chapter-1">
@@ -48,7 +48,7 @@
     </li>
 
     <li>
-      {{ self.part() }} {{ localizedPartTitles['II. User Experience'] if localizedPartTitles['II. User Experience']|length else 'II. User Experience' }}
+      {{ self.part() }} {{ localizedPartTitles['II. User Experience'] if localizedPartTitles['II. User Experience']|length else 'II. User Experience'}}
       <ul>
         <li>
           <a href="#chapter-7">
@@ -89,7 +89,7 @@
     </li>
 
     <li>
-      {{ self.part() }} {{ localizedPartTitles['III. Content Publishing'] if localizedPartTitles['III. Content Publishing']|length else 'III. Content Publishing' }}
+      {{ self.part() }} {{ localizedPartTitles['III. Content Publishing'] if localizedPartTitles['III. Content Publishing']|length else 'III. Content Publishing'}}
       <ul>
         <li>
           <a href="#chapter-13">
@@ -106,7 +106,7 @@
     </li>
 
     <li>
-      {{ self.part() }} {{ localizedPartTitles['IV. Content Distribution'] if localizedPartTitles['IV. Content Distribution']|length else 'IV. Content Distribution' }}
+      {{ self.part() }} {{ localizedPartTitles['IV. Content Distribution'] if localizedPartTitles['IV. Content Distribution']|length else 'IV. Content Distribution'}}
       <ul>
         <li>
           <a href="#chapter-15">
@@ -170,9 +170,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Houssein Djirdeh</div>
-    <div class="byline reviewers">Reviewed by David Fox, Paul Calvano and Mathias Bynens</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Houssein Djirdeh{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} David Fox, Paul Calvano, {{ self.and() }} Mathias Bynens{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p>JavaScriptはウェブ上で、対話可能で複雑な体験を構築することを可能にするスクリプト言語です。これには、ユーザーの会話への応答、ページ上の動的コンテンツの更新などが含まれます。イベントが発生したときにウェブページがどのように振る舞うべきかに関係するものはすべて、JavaScriptが使用されています。</p>
@@ -574,9 +574,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Una Kravets and Adam Argyle</div>
-    <div class="byline reviewers">Reviewed by Eric A. Meyer and Chen Hui Jing</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Una Kravets, {{ self.and() }} Adam Argyle{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Eric A. Meyer, {{ self.and() }} Chen Hui Jing{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>カスケードスタイルシート（CSS）は、Webページの描画、書式設定、およびレイアウトに使用されます。それらの機能は、テキストの色から3Dパースペクティブまでの単純な概念に及びます。また、さまざまな画面サイズ、コンテキストの表示、印刷を処理する開発者を支援するフックもあります。 CSSは、開発者がコンテンツを絞り込み、ユーザーに適切に適合させることを支援します。</p>
@@ -1229,9 +1229,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Brian Kardell</div>
-    <div class="byline reviewers">Reviewed by Simon Pieters, Tommy Hodgins and Matthew Phillips</div>
-    <div class="byline translators">Translated by M.Sakamaki</div>
+    <div class="byline authors">{{ self.written_by_before() }} Brian Kardell{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Simon Pieters, Tommy Hodgins, {{ self.and() }} Matthew Phillips{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} M.Sakamaki{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>2005年にIan "Hixie" Hicksonはこれまでの研究に基づいた<a href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">マークアップデータの分析</a>を投稿しました。 この作業のほとんどは、クラス名を調査して、内々で開発者が採用しているセマンティクスを確認し、標準化する意味があるかの確認をすることが目的でした。 この研究の一部は、HTML5の新要素の参考として役に立ちました。</p>
@@ -1595,9 +1595,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Colin Bendell and Doug Sillars</div>
-    <div class="byline reviewers">Reviewed by Ahmad Awais and Eric Portis</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Colin Bendell, {{ self.and() }} Doug Sillars{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Ahmad Awais, {{ self.and() }} Eric Portis{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p>画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つはメディアで描かれたピクセル数の多さです。</p>
@@ -2099,9 +2099,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Patrick Hulce</div>
-    <div class="byline reviewers">Reviewed by Simon Pieters, David Fox and Vamsee Jasti</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Patrick Hulce{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Simon Pieters, David Fox, {{ self.and() }} Vamsee Jasti{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>オープンWebは広大で、リンク可能で、設計により相互運用可能です。他の誰かの複雑なライブラリを取得し、単一の<code>&lt;link&gt;</code>または<code>&lt;script&gt;</code>要素を使用してサイトで使用する機能により開発者の生産性が大幅に向上し、素晴らしく新しいWeb体験を実現しました。反対に、一部のサードパーティプロバイダーが非常に人気があるため、パフォーマンス、プライバシー、およびセキュリティに関する重要な懸念が生じています。この章では、2019年のWebに対するサードパーティコードの普及と影響、サードパーティソリューションの人気につながる使用パターンと、Web体験の将来への影響の可能性について検討します。</p>
@@ -2422,9 +2422,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Zach Leatherman</div>
-    <div class="byline reviewers">Reviewed by John Teague and Aymen Loukil</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Zach Leatherman{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} John Teague, {{ self.and() }} Aymen Loukil{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p>ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあってもウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。</p>
@@ -3066,9 +3066,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Rick Viscomi</div>
-    <div class="byline reviewers">Reviewed by José M. Pérez, David Fox, Sergey Chernyshev and Mark Zeman</div>
-    <div class="byline translators">Translated by M.Sakamaki</div>
+    <div class="byline authors">{{ self.written_by_before() }} Rick Viscomi{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} José M. Pérez, David Fox, Sergey Chernyshev, {{ self.and() }} Mark Zeman{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} M.Sakamaki{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>パフォーマンスはユーザー体験で大切なものの一つです。 多くのWebサイトでは、ページの読み込み時間を早くする事によるユーザー体験の向上と、コンバージョン率の上昇は一致しています。 逆に、パフォーマンスが低い場合、ユーザーはコンバージョンを達成せず、不満を持ち、ページをクリックすると怒りを覚えることさえあります。</p>
@@ -3326,9 +3326,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Scott Helme and Artur Janc</div>
-    <div class="byline reviewers">Reviewed by Barry Pollard, Alessandro Ghedini and Paul Calvano</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Scott Helme, {{ self.and() }} Artur Janc{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Barry Pollard, Alessandro Ghedini, {{ self.and() }} Paul Calvano{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p>Web Almanacのこの章では、Web上のセキュリティの現状を見ていきます。オンラインでのセキュリティとプライバシーの重要性がますます高まる中、サイト運営者とユーザーを保護するための機能が増えています。ここでは、ウェブ上でのこれらの新機能の採用状況を見ていきます。</p>
@@ -4173,9 +4173,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Nektarios Paisios, David Fox and Abigail Klein</div>
-    <div class="byline reviewers">Reviewed by Laura Eberly</div>
-    <div class="byline translators">Translated by M.Sakamaki</div>
+    <div class="byline authors">{{ self.written_by_before() }} Nektarios Paisios, David Fox, {{ self.and() }} Abigail Klein{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Laura Eberly{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} M.Sakamaki{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>Webのアクセシビリティは、包摂的で公平な社会の上では無くてはならない存在です。私たちの社会性と仕事や生活の多くがオンラインの世界に推移するにつれて、障害のある人々も分け隔てなく、すべてのオンラインの対話に参加できることがさらに重要になってきます。建築家が車椅子用の傾斜路のようなアクセシビリティ機能を作成や省略できるように、Web開発者はユーザーが頼りにしている支援技術を助けたり邪魔したりできます。</p>
@@ -4511,9 +4511,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Yvo Schaap, Rachel Costello and Martin Splitt</div>
-    <div class="byline reviewers">Reviewed by John Fox, Andrew Limn, Aymen Loukil, Catalin Rosu and Matt Ludwig</div>
-    <div class="byline translators">Translated by M.Sakamaki</div>
+    <div class="byline authors">{{ self.written_by_before() }} Yvo Schaap, Rachel Costello, {{ self.and() }} Martin Splitt{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} John Fox, Andrew Limn, Aymen Loukil, Catalin Rosu, {{ self.and() }} Matt Ludwig{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} M.Sakamaki{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>検索エンジン最適化（SEO）はデジタルマーケティングの担当者にとって、単なる趣味やサイドプロジェクトではなくWebサイトを成功に導くための重要な要素です。 SEOの主な目標は、Webサイトをクロールする必要のある検索エンジンボットと、Webサイトを操作するコンテンツの消費者向けにWebサイトを最適化することです。 SEOはWebサイトを作っている開発者から、新しい潜在顧客に対して宣伝する必要のあるデジタルマーケティング担当者に至るまで、すべてのWebサイトに関わる人に影響を及ぼします。</p>
@@ -4969,9 +4969,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Tom Steiner and Jeff Posnick</div>
-    <div class="byline reviewers">Reviewed by John Teague and Ahmad Awais</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Tom Steiner, {{ self.and() }} Jeff Posnick{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} John Teague, {{ self.and() }} Ahmad Awais{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>プログレッシブWebアプリ（PWA）は、<a href="https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API">Service Worker API</a>などのプラットフォームプリミティブ上に構築される新しいクラスのWebアプリケーションです。Service Workerは、ネットワークプロキシとして機能し、Webアプリの発信要求をインターセプトしプログラムまたはキャッシュされた内容で応答することによりアプリがネットワークに依存しない読み込みをサポートできるようにします。Service Workerは、プッシュ通知を受信し、対応するアプリが実行されていなくてもバックグラウンドでデータを同期できます。さらに、Service Workerは、<a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">Webアプリマニフェスト</a>と共にユーザーがデバイスのホーム画面にPWAをインストールできるようにします。</p>
@@ -5224,9 +5224,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by David Fox</div>
-    <div class="byline reviewers">Reviewed by Aymen Loukil and John Teague</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} David Fox{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Aymen Loukil, {{ self.and() }} John Teague{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章introduction"><a href="#序章introduction" class="anchor-link">序章Introduction</a></h2>
     <p>2007年に少し戻ってみましょう。「モバイルウェブ」は現在、レーダー上ではほんの一瞬の出来事に過ぎませんが、それには正当な理由があります。なぜでしょうか？　モバイルブラウザはCSSをほとんどサポートしていないため、サイトの見た目がデスクトップとは全く異なります。画面は信じられないほど小さく、一度に数行のテキストしか表示できません。また、マウスの代わりとなるのは、「タブを使って移動する」ための小さな矢印キーです。言うまでもなく、携帯電話でウェブを閲覧することは本当に愛の労働です。 しかし、このすべてをちょうど変更しようとしている。</p>
@@ -5509,9 +5509,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Sam Dutton and Alan Kent</div>
-    <div class="byline reviewers">Reviewed by Vincent Terrasi</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Sam Dutton, {{ self.and() }} Alan Kent{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Vincent Terrasi{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p>この調査では、ホームページの10％近くがEコマース・プラットフォーム上にあることが判明しました。「Eコマースプラットフォーム」は、オンラインストアを作成し、運営することを可能にするソフトウェアまたはサービスのセットです。Eコマースプラットフォームのいくつかのタイプがあります。</p>
@@ -6138,9 +6138,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Renee Johnson and Alberto Medina</div>
-    <div class="byline reviewers">Reviewed by Jonathan Wold</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Renee Johnson, {{ self.and() }} Alberto Medina{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Jonathan Wold{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p><strong>コンテンツ管理システム（CMS）</strong>とは、個人や組織がコンテンツを作成・管理・公開するためのシステムを総称しています。具体的には、オープンウェブを介して消費・体験できるコンテンツを作成・管理・公開することを目的としたシステムのことを指します。</p>
@@ -6813,9 +6813,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Paul Calvano</div>
-    <div class="byline reviewers">Reviewed by David Fox and Yoav Weiss</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Paul Calvano{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} David Fox, {{ self.and() }} Yoav Weiss{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p>HTTP圧縮は、元の表現よりも少ないビットを使用して情報をエンコードできる技術です。 Webコンテンツの配信に使用すると、Webサーバーはクライアントに送信されるデータ量を削減できます。これにより、クライアントの利用可能な帯域幅の効率が向上し、<a href="./page-weight">ページの重さ</a>が軽減され、<a href="./performance">Webパフォーマンス</a>が向上します。</p>
@@ -7148,9 +7148,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Paul Calvano</div>
-    <div class="byline reviewers">Reviewed by David Fox and Brian Kardell</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Paul Calvano{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} David Fox, {{ self.and() }} Brian Kardell{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする手法です。コストのかかるネットワークリクエストを回避することにより、<a href="./performance">パフォーマンス</a>が大幅に向上します。また、Webサイトのオリジンインフラストラクチャへのトラフィックを削減することで、アプリケーションの拡張にも役立ちます。「最速のリクエストはあなたがする必要のないものです」という古い格言があり、キャッシュはリクエストを行わなくて済むようにするための重要な方法の1つです。</p>
@@ -7799,9 +7799,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Andy Davies and Colin Bendell</div>
-    <div class="byline reviewers">Reviewed by Yoav Weiss, Paul Calvano, Patrick Meenan and Erik Nygren</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Andy Davies, {{ self.and() }} Colin Bendell{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Yoav Weiss, Paul Calvano, Patrick Meenan, {{ self.and() }} Erik Nygren{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>「コンテンツ配信ネットワーク」は、Webサイトの読み込みを高速化するための<a href="http://stevesouders.com/examples/rules.php">Steve Soudersによる独自の推奨事項</a>の1つでした。昨今でも有効なアドバイスです。Web Almanacのこの章ではSteveの推奨事項がどの程度広く採用されているか、サイトがコンテンツ配信ネットワーク（CDN）をどのように使用しているか、およびそれらが使用している機能のいくつかを検討します。</p>
@@ -9383,9 +9383,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Tammy Everts and Katie Hempenius</div>
-    <div class="byline reviewers">Reviewed by Paul Calvano</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Tammy Everts, {{ self.and() }} Katie Hempenius{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Paul Calvano{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p>中央Webページのサイズは約1900KBで、74のリクエストが含まれています。悪くないですね。</p>
@@ -10251,9 +10251,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Katie Hempenius</div>
-    <div class="byline reviewers">Reviewed by Andy Davies, Barry Pollard and Yoav Weiss</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Katie Hempenius{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Andy Davies, Barry Pollard, {{ self.and() }} Yoav Weiss{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
     <p><a href="https://www.w3.org/TR/resource-hints/">リソースヒント</a> は、どのようなリソースがすぐに必要になるかについての「ヒント」をブラウザに提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントの種類によって異なります。リソースヒントは正しく使用されると、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。</p>
@@ -10516,9 +10516,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">Written by Barry Pollard</div>
-    <div class="byline reviewers">Reviewed by Daniel Stenberg, Robin Marx and Andrew Galloni</div>
-    <div class="byline translators">Translated by Sakae Kotaro</div>
+    <div class="byline authors">{{ self.written_by_before() }} Barry Pollard{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} Daniel Stenberg, Robin Marx, {{ self.and() }} Andrew Galloni{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
 
     <h2 id="導入"><a href="#導入" class="anchor-link">導入</a></h2>
     <p>HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。</p>

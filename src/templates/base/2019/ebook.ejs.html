@@ -10,7 +10,7 @@
         <ul>
         <% for (let part of ebook.parts) { %>
             <li>
-            {{ self.part() }} {{ localizedPartTitles['<%= part.title %>'] if localizedPartTitles['<%= part.title %>']|length else '<%= part.title %>' }}
+            {{ self.part() }} {{ localizedPartTitles['<%= part.title %>'] if localizedPartTitles['<%= part.title %>']|length else '<%= part.title %>'}}
             <ul>
                 <% for (let chapter of part.chapters) { %>
                 <li>
@@ -63,18 +63,18 @@
             />
         </picture>
 
-        <% const byline = (prefix, contributor_type) => { 
+        <% const byline = (prefix, suffix, contributor_type) => { 
             if (!chapter.metadata[contributor_type] || !chapter.metadata[contributor_type].length || chapter.metadata[contributor_type][0] == '') return;
 
             let contributors = chapter.metadata[contributor_type].map(x => ebook.config.contributors[x].name);
-            let contributors_sentence = contributors.join(', ').replace(/,(?=[^,]*$)/, ' and');
+            let contributors_sentence = contributors.join(', ').replace(/,(?=[^,]*$)/, ', {{ self.and() }}');
 
-            return `<div class="byline ${contributor_type}">${prefix} by ${contributors_sentence}</div>`;
+            return `<div class="byline ${contributor_type}">${prefix} ${contributors_sentence}${suffix}</div>`;
         } %>
 
-        <%- byline('Written', 'authors') %>
-        <%- byline('Reviewed', 'reviewers') %>
-        <%- byline('Translated', 'translators') %>
+        <%- byline('{{ self.written_by_before() }}', '{{ self.written_by_after() }}', 'authors') %>
+        <%- byline('{{ self.reviewed_by_before() }}', '{{ self.reviewed_by_after() }}', 'reviewers') %>
+        <%- byline('{{ self.translated_by_before() }}', '{{ self.translated_by_after() }}', 'translators') %>
 
         <%- chapter.body %>
         </section>
