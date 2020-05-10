@@ -1,0 +1,21 @@
+{% extends "%s/2019/base.html" % lang %}
+<!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
+{% set metadata = {"authors":["nektarios-paisios","obto","kleinab"]} %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css?v=4" />
+<link rel="stylesheet" href="/static/css/ebook.css?v=1" />
+{% endblock %}
+
+{% block content %}
+<section class="content">
+    <section id="title">
+        <h1 class="title-lg">{{ self.intro_title() }}</h1>
+        <p>{{ self.intro_sub_title() }}</p>
+        {{ self.mission() }}
+    </section>
+
+    {{ self.chapters() }}
+</section>
+{% endblock %} 

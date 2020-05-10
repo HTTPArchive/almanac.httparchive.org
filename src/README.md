@@ -58,6 +58,12 @@ npm install
 npm run generate
 ```
 
+3. For generating PDFs of the ebook, WeasyPrint will need some libraries:
+
+```
+brew install cairo
+brew install pango
+
 ## Deploying changes
 
 If you've been added to the "App Engine Deployers" role in the GCP project, you're able to push code changes to the production website.

@@ -1,0 +1,143 @@
+{% extends "%s/2019/base_ebook.html" % lang %}
+
+<!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
+{% set metadata = {} %}
+
+{% block chapters %}
+
+    <section id="toc">
+        <h1 class="title-lg">{{ self.table_of_contents_title() }}:</h1>
+        <ul>
+        <% for (let part of ebook.parts) { %>
+            <li>
+            {{ self.part() }} {{ localizedPartTitles['<%= part.title %>'] if localizedPartTitles['<%= part.title %>']|length else '<%= part.title %>' }}
+            <ul>
+                <% for (let chapter of part.chapters) { %>
+                <li>
+                    <a href="#chapter-<%= chapter.metadata.chapter_number%>">
+                        {{ self.chapter() }} <%= chapter.metadata.chapter_number %>. <%= chapter.metadata.title %>
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+            </li>
+        <% } %>
+        </ul>
+    </section>
+
+    <% for (let part of ebook.parts) { %>
+    <% for (let chapter of part.chapters) { %>
+    <section class="chapter">
+        <section class="body">
+        <div class="subtitle">
+            Part <%= chapter.metadata.part_number %> Chapter <%= chapter.metadata.chapter_number %>
+        </div>
+        <h1 id="chapter-<%= chapter.metadata.chapter_number %>" class="title title-lg">
+            <%= chapter.metadata.title %>
+        </h1>
+        
+        {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
+        {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}       
+
+        <!-- Show large image for large screens and high density screens and use webp when supported -->
+        <picture>
+            <source
+            media="(min-width: 327px)"
+            type="image/webp"
+            srcset="{{ chapter_image_dir }}/hero_lg.webp"
+            />
+            <source
+            media="(min-width: 327px)"
+            type="image/jpeg"
+            srcset="{{ chapter_image_dir }}/hero_lg.jpg"
+            />
+            <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
+            <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
+            <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
+            <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
+            <img
+            src="{{ chapter_image_dir }}/hero_lg.jpg"
+            class="content-banner"
+            alt=""
+            loading="eager"
+            />
+        </picture>
+
+        <% const byline = (prefix, contributor_type) => { 
+            if (!chapter.metadata[contributor_type] || !chapter.metadata[contributor_type].length || chapter.metadata[contributor_type][0] == '') return;
+
+            let contributors = chapter.metadata[contributor_type].map(x => ebook.config.contributors[x].name);
+            let contributors_sentence = contributors.join(', ').replace(/,(?=[^,]*$)/, ' and');
+
+            return `<div class="byline ${contributor_type}">${prefix} by ${contributors_sentence}</div>`;
+        } %>
+
+        <%- byline('Written', 'authors') %>
+        <%- byline('Reviewed', 'reviewers') %>
+        <%- byline('Translated', 'translators') %>
+
+        <%- chapter.body %>
+        </section>
+
+        <section class="authors">
+        <% let authors = chapter.metadata['authors'].map(x => {
+            var authordata = ebook.config.contributors[x];
+            authordata.id=x;
+            return authordata;
+        });
+        %>
+        <h1><%= (authors.length > 1) ? 'Authors' : 'Author' %></h1>
+        <ul>
+            <% for(let authordata of authors) { %>
+                <li>
+                    <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='<%= authordata.id %>') }}"><img class="avatar" alt="<%= authordata.name %> avatar" src="<%= authordata.avatar_url %>" height="200" width="200" loading="lazy" /></a>
+                    <div class="info">
+                        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='<%= authordata.id %>') }}"><span class="name"><%= authordata.name %></span></a>
+                        <% if( authordata.twitter || authordata.github) { %>
+                            <span class="social">
+                                <% if (authordata.twitter) { %>
+                                <a class="twitter" href="https://twitter.com/<%= authordata.twitter %>" aria-labelledby="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_twitter">
+                                  <svg width="18" height="18" role="img">
+                                    <title id="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_twitter">{{ onTwitter('<%= authordata.twitter %>') }}</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                                  </svg>
+                                </a>
+                                <% } %>
+                                <% if (authordata.github) { %>
+                                <a class="github" href="https://github.com/<%= authordata.github %>" aria-labelledby="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_github">
+                                  <svg width="18" height="18" role="img">
+                                    <title id="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_github">{{ onGitHub('<%= authordata.github %>') }}</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                                  </svg>
+                                </a>
+                                <% } %>
+                                <% if (authordata.website) { %>
+                                <a class="website" href="<%= authordata.website %>" aria-labelledby="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_website">
+                                  <svg width="18" height="18" role="img">
+                                    <title id="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>website">{{ website('<%= authordata.name %>') }}</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+                                  </svg>
+                                </a>
+                                <% } %>
+                            </span>
+                        <% } %>
+                        <% if (authordata.tagline) { %>
+                            <div class="tagline">
+                                <%= authordata.tagline %>
+                            </div>
+                        <% } %>
+                        <% if (authordata.bio) { %>
+                        <div class="bio">
+                            {{ localizedContributors['<%= authordata.id %>'] | safe if localizedContributors['<%= authordata.id %>']|length else  '<%= authordata.bio %>' | safe }}
+                        </div>
+                        <% } %>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+        </section>
+    </section>
+    <% } %>
+    <% } %>
+
+{% endblock %} 

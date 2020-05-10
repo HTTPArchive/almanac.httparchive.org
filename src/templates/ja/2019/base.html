@@ -14,6 +14,10 @@
 
 {% block organization %}HTTP ArchiveによるWeb Almanac{% endblock %}
 
+{% block mission %}
+私たちの使命は、HTTP Archiveの生の統計やトレンドを、ウェブコミュニティの専門知識と組み合わせることです。Web Almanacは、実際のデータと信頼できるウェブの専門家に裏付けられた、ウェブの状態に関する包括的なレポートです。ページコンテンツ、ユーザー体験、パブリッシング、配布などの側面を網羅した20の章で構成されています。
+{% endblock %}
+
 {% block http_archive_link %}HTTP ArchiveによるWeb Almanac{% endblock %}
 
 {% block page_navigation %}ページナビゲーション{% endblock %}
@@ -45,6 +49,16 @@
 
 {% block open %}開く{% endblock %}
 {% block close %}閉じる{% endblock %}
+
+{% block written_by_before %}{% endblock %}
+{% block reviewed_by_before %}{% endblock %}
+{% block translated_by_before %}{% endblock %}
+{% block written_by_after %}によって書かれた。{% endblock %}
+{% block reviewed_by_after %}によってレビュ。{% endblock %}
+{% block translated_by_after %}によって翻訳された。{% endblock %}
+
+{% block author %}著者{% endblock %}
+{% block authors %}著者{% endblock %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}

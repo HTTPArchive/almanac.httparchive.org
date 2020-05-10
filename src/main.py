@@ -223,7 +223,7 @@ def default_favicon():
 @app.route('/<lang>/<year>/ebook')
 @validate
 def ebook(lang, year):
-    config = config_util.get_config(year)
+    config = get_config(year)
     return render_template('%s/%s/ebook.html' % (lang, year), config=config)
 
 class RegexConverter(BaseConverter):

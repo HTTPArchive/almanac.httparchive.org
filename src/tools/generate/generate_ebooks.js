@@ -6,7 +6,7 @@ const { size_of } = require('./shared');
 
 // TODO: Make this more dynamic.
 const ebooks_to_generate = {
-  '2019': ['en']
+  '2019': ['en','ja']
 };
 
 const generate_ebooks = async (ebook_chapters) => {
@@ -34,13 +34,13 @@ const generate_ebooks = async (ebook_chapters) => {
       }
 
       console.log(`\n Generating ebook: ${language}, ${year}`);
-      await write_template(languages, year, ebook);
+      await write_template(language, year, ebook);
     }
   }
 };
 
 const write_template = async (language, year, ebook) => {
-  const template = `templates/${language}/${year}/ebook.ejs.html`;
+  const template = `templates/base/${year}/ebook.ejs.html`;
   const path = `templates/${language}/${year}/ebook.html`;
 
   if (fs.existsSync(template)) {
