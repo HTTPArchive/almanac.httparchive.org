@@ -2,6 +2,15 @@
 <!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
 {% set metadata = {"authors":["rviscomi"]} %}
 
+{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
+{% block image_height %}562{% endblock %}
+{% block image_width %}715{% endblock %}
+
+{% block head %}
+{{ super() }}
+<meta name="robots" content="noindex">
+{% endblock %}
+
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="/static/css/page.css?v=4" />
