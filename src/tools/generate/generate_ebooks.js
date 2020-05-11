@@ -9,6 +9,16 @@ const ebooks_to_generate = {
   '2019': ['en','ja']
 };
 
+const update_links = (chapter) => {
+  let body = chapter.body;
+  body = body.replace(/href="#/g,'href="#' + chapter.metadata.chapter + '-');
+  body = body.replace(/id="fig([0-9_-])/g,'id="' + chapter.metadata.chapter + '-fig$1');
+  body = body.replace(/<h([0-9]) id="/g,'<h$1 id="' + chapter.metadata.chapter + '-');
+  body = body.replace(/<a href=".\/([a-z0-9-]+)#/g,'<a href="#$1-');
+  body = body.replace(/<a href=".\//g,'<a href="#chapter-');
+  return body;
+}
+
 const generate_ebooks = async (ebook_chapters) => {
   for (let [year, languages] of Object.entries(ebooks_to_generate)) {
     let config = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
@@ -26,6 +36,8 @@ const generate_ebooks = async (ebook_chapters) => {
           let chapter = ebook_chapters.find(
             (c) => c.language === language && c.metadata.chapter_number == chapter_config.chapter
           );
+
+          chapter.body = update_links(chapter);
 
           part.chapters.push({ ...chapter_config, ...chapter });
         }

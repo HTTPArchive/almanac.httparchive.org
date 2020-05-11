@@ -15,6 +15,15 @@
 {{ super() }}
 <link rel="stylesheet" href="/static/css/page.css?v=4" />
 <link rel="stylesheet" href="/static/css/ebook.css?v=1" />
+
+<style>
+@page {
+
+  @bottom-left {
+    content: "{{ year }} {{ self.organization() }}";
+  }
+}
+</style>
 {% endblock %}
 
 {% block content %}

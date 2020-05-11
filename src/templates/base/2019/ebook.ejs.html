@@ -27,10 +27,10 @@
 
     <% for (let part of ebook.parts) { %>
     <% for (let chapter of part.chapters) { %>
-    <section class="chapter">
+    <section class="chapter" id="chapter-<%= chapter.metadata.chapter %>">
         <section class="body">
         <div class="subtitle">
-            Part <%= chapter.metadata.part_number %> Chapter <%= chapter.metadata.chapter_number %>
+            {{ self.part() }} <%= chapter.metadata.part_number %> {{ self.chapter() }} <%= chapter.metadata.chapter_number %>
         </div>
         <h1 id="chapter-<%= chapter.metadata.chapter_number %>" class="title title-lg">
             <%= chapter.metadata.title %>

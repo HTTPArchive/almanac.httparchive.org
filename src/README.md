@@ -63,6 +63,7 @@ npm run generate
 ```
 brew install cairo
 brew install pango
+brew install gdk-pixbuf
 ```
 
 4. To actually generate the ebooks, start your local server, then run the following:
