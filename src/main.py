@@ -1,6 +1,6 @@
 from config import get_config, SUPPORTED_YEARS, SUPPORTED_LANGUAGES, DEFAULT_YEAR
 from csp import csp
-from flask import Flask, abort, redirect, render_template as flask_render_template, request, send_from_directory, url_for
+from flask import Flask, abort, redirect, render_template as flask_render_template, request, send_from_directory, url_for, get_template_attribute
 from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
 import logging
@@ -9,6 +9,7 @@ from werkzeug.routing import BaseConverter
 from werkzeug.http import HTTP_STATUS_CODES
 from validate import validate
 import os.path
+import re
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
 # Note this requires similar set up in app.yaml for Google App Engine
@@ -111,10 +112,28 @@ def convertOldImagePath(folder):
     return '%s' % folder[3:].replace('HTTP_2','http2').replace('_', '-').lower()
 
 
+# Render the methodolgoy chapter and pull out the section
+# Also applies some regexs to change links as appropriate
+def get_ebook_methodology(lang, year):
+    config = get_config(year)
+    methodology_template = render_template('%s/%s/methodology.html' % (lang, year), config=config)
+    methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>', methodology_template, re.DOTALL|re.MULTILINE)
+    if methodology_maincontent:
+        methodology_maincontent = methodology_maincontent.group(1)
+        methodology_maincontent = re.sub('href="#', 'href="#methodology-', methodology_maincontent)
+        methodology_maincontent = re.sub('<h([0-6]) id="', '<h\\1 id="methodology-', methodology_maincontent)
+        methodology_maincontent = re.sub('href="\.\/', 'href="#chapter-', methodology_maincontent)
+        methodology_maincontent = re.sub('href="#chapter-contributors#', 'href="#contributors-', methodology_maincontent)
+        methodology_maincontent = re.sub('href="#([a-z0-9-]*)#', 'href="#\\1-', methodology_maincontent)
+        return methodology_maincontent
+    return False
+
+
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
 app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
+app.jinja_env.globals['get_ebook_methodology'] = get_ebook_methodology
 
 
 @app.route('/<lang>/<year>/')

@@ -21,6 +21,99 @@
   color: #0b1423;
 }
 
+.intro-image {
+  background-color: grey;
+  border-radius: 10px;
+  display: block;
+  margin: 20px 0;
+}
+
+
+.team {
+  overflow: hidden;
+  height: 100px;
+  margin: 0 0 24px 0;
+}
+
+.team img {
+  height: 100px;
+  width: 100px;
+}
+
+
+.filter-container {
+  display: none;
+}
+
+.contributor-grid {
+  margin: 0 -15px;
+  justify-content: center;
+  width: 10000px;
+  max-width: 100%;
+}
+
+.contributor {
+  display: inline-block;
+  height: 300px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 24px 34px;
+  width: 225px;
+  margin: 10px;
+  vertical-align:top
+}
+
+.contributor-avatar {
+  border-radius: 50px;
+  background-color: #f7f779;
+  margin-bottom: 10px;
+  width: 100px;
+  height: auto;
+  transition-duration: .3s;
+}
+
+.contributor-name {
+  text-align: center;
+  font-style: italic;
+  font-size: 17px;
+  font-size: 1.0625rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.588em;
+}
+
+.contributor-social a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.contributor-teams {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.contributor-team {
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #757575;
+}
+.contributor-team::after {
+  content: ', ';
+}
+.contributor-team:last-child::after {
+  content: '';
+}
+
+.contributors button {
+  background: #f7f779;
+  color: #333;
+}
+
+/* Join the team card */
+.contributor-join {
+  display: none;
+}
+
 @page {
   margin: 2.5cm;
   padding: 0;

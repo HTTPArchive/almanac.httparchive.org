@@ -5,26 +5,6 @@
 
 {% block chapters %}
 
-    <section id="toc">
-        <h1 class="title-lg">{{ self.table_of_contents_title() }}:</h1>
-        <ul>
-        <% for (let part of ebook.parts) { %>
-            <li>
-            {{ self.part() }} {{ localizedPartTitles['<%= part.title %>'] if localizedPartTitles['<%= part.title %>']|length else '<%= part.title %>'}}
-            <ul>
-                <% for (let chapter of part.chapters) { %>
-                <li>
-                    <a href="#chapter-<%= chapter.metadata.chapter_number%>">
-                        {{ self.chapter() }} <%= chapter.metadata.chapter_number %>. <%= chapter.metadata.title %>
-                    </a>
-                </li>
-                <% } %>
-            </ul>
-            </li>
-        <% } %>
-        </ul>
-    </section>
-
     <% for (let part of ebook.parts) { %>
     <% for (let chapter of part.chapters) { %>
     <section class="chapter" id="chapter-<%= chapter.metadata.chapter %>">
