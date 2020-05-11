@@ -102,7 +102,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 2. あなたが追跡したすべてのシフトを取り、それらを一緒に追加します。その結果が [累積レイアウトシフト](https://web.dev/layout-instability-api#a-cumulative-layout-shift-score)(CLS)スコアと呼ばれるものです。
 
-訪問者ごとに異なるCLSを持つことができるため、[Chrome UX Report](./methodology#chrome-UX-report) (./methodology#chrome-UX-report)(CrUX)を使用してウェブ全体でこのメトリックを分析するために、すべての体験を3つの異なるバケットにまとめています。
+訪問者ごとに異なるCLSを持つことができるため、[Chrome UX Report](./methodology#chrome-ux-report) (./methodology#chrome-UX-report)(CrUX)を使用してウェブ全体でこのメトリックを分析するために、すべての体験を3つの異なるバケットにまとめています。
 
 - **Small**CLSを持っている方。CLSが*5%未満*になった経験あり。つまり、ページはほとんど安定していて、まったくズレないということです。参考までに、上の動画のページのCLSは42.59％です。
 - **Large**CLSを持っている方。CLSが*100%以上*ある経験。これは小さな個別シフトが多い場合と、大きく目立つシフトが多い場合の2つあります。
