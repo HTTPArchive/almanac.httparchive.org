@@ -112,8 +112,12 @@ def convertOldImagePath(folder):
     return '%s' % folder[3:].replace('HTTP_2','http2').replace('_', '-').lower()
 
 
-# Render the methodolgoy chapter and pull out the section
-# Also applies some regexs to change links as appropriate
+# Render the methodolgoy chapter and pull out the section. Also applies some
+# regexs to change links as appropriate.
+# It's a bit messy, but can't use get_template_attribute as doesn't take context
+# which is needed for the way our templates work. So it's either this, or just
+# read the file, or move the content to base.html, or duplicate the content. I\
+# think this is the cleanest.
 def get_ebook_methodology(lang, year):
     config = get_config(year)
     methodology_template = render_template('%s/%s/methodology.html' % (lang, year), config=config)

@@ -25,9 +25,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Houssein Djirdeh{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} David Fox, Paul Calvano, {{ self.and() }} Mathias Bynens{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-housseindjirdeh">Houssein Djirdeh</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-obto">David Fox</a>, <a href="#contributors-paulcalvano">Paul Calvano</a>, {{ self.and() }} <a href="#contributors-mathiasbynens">Mathias Bynens</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="javascript-序章"><a href="#javascript-序章" class="anchor-link">序章</a></h2>
     <p>JavaScriptはウェブ上で、対話可能で複雑な体験を構築することを可能にするスクリプト言語です。これには、ユーザーの会話への応答、ページ上の動的コンテンツの更新などが含まれます。イベントが発生したときにウェブページがどのように振る舞うべきかに関係するものはすべて、JavaScriptが使用されています。</p>
@@ -371,30 +371,25 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='housseindjirdeh') }}"><img class="avatar" alt="Houssein Djirdeh avatar" src="https://avatars3.githubusercontent.com/u/12476932?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-housseindjirdeh"><img class="avatar" alt="Houssein Djirdeh avatar" src="https://avatars3.githubusercontent.com/u/12476932?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='housseindjirdeh') }}"><span class="name">Houssein Djirdeh</span></a>
+          <a href="#contributors-housseindjirdeh"><span class="name">Houssein Djirdeh</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/hdjirdeh" aria-labelledby="1_author_housseindjirdeh_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="1_author_housseindjirdeh_twitter">{{ onTwitter('hdjirdeh') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/hdjirdeh">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('hdjirdeh') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/housseindjirdeh" aria-labelledby="1_author_housseindjirdeh_github">
+            <a class="github" href="https://github.com/housseindjirdeh">
               <svg width="18" height="18" role="img">
                 <title id="1_author_housseindjirdeh_github">{{ onGitHub('housseindjirdeh') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('housseindjirdeh') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://houssein.me" aria-labelledby="1_author_housseindjirdeh_website">
-              <svg width="18" height="18" role="img">
-                <title id="1_author_housseindjirdehwebsite">{{ website('Houssein Djirdeh') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://houssein.me">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Houssein Djirdeh') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -429,9 +424,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Una Kravets, {{ self.and() }} Adam Argyle{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Eric A. Meyer, {{ self.and() }} Chen Hui Jing{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-una">Una Kravets</a>, {{ self.and() }} <a href="#contributors-argyleink">Adam Argyle</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-meyerweb">Eric A. Meyer</a>, {{ self.and() }} <a href="#contributors-huijing">Chen Hui Jing</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="css-導入"><a href="#css-導入" class="anchor-link">導入</a></h2>
     <p>カスケードスタイルシート（CSS）は、Webページの描画、書式設定、およびレイアウトに使用されます。それらの機能は、テキストの色から3Dパースペクティブまでの単純な概念に及びます。また、さまざまな画面サイズ、コンテキストの表示、印刷を処理する開発者を支援するフックもあります。 CSSは、開発者がコンテンツを絞り込み、ユーザーに適切に適合させることを支援します。</p>
@@ -992,30 +987,25 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='una') }}"><img class="avatar" alt="Una Kravets avatar" src="https://avatars1.githubusercontent.com/u/1693164?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-una"><img class="avatar" alt="Una Kravets avatar" src="https://avatars1.githubusercontent.com/u/1693164?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='una') }}"><span class="name">Una Kravets</span></a>
+          <a href="#contributors-una"><span class="name">Una Kravets</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/una" aria-labelledby="2_author_una_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="2_author_una_twitter">{{ onTwitter('una') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/una">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('una') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/una" aria-labelledby="2_author_una_github">
+            <a class="github" href="https://github.com/una">
               <svg width="18" height="18" role="img">
                 <title id="2_author_una_github">{{ onGitHub('una') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('una') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="http://una.im" aria-labelledby="2_author_una_website">
-              <svg width="18" height="18" role="img">
-                <title id="2_author_unawebsite">{{ website('Una Kravets') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="http://una.im">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Una Kravets') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -1026,30 +1016,25 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='argyleink') }}"><img class="avatar" alt="Adam Argyle avatar" src="https://avatars3.githubusercontent.com/u/1134620?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-argyleink"><img class="avatar" alt="Adam Argyle avatar" src="https://avatars3.githubusercontent.com/u/1134620?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='argyleink') }}"><span class="name">Adam Argyle</span></a>
+          <a href="#contributors-argyleink"><span class="name">Adam Argyle</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/argyleink" aria-labelledby="2_author_argyleink_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="2_author_argyleink_twitter">{{ onTwitter('argyleink') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/argyleink">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('argyleink') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/argyleink" aria-labelledby="2_author_argyleink_github">
+            <a class="github" href="https://github.com/argyleink">
               <svg width="18" height="18" role="img">
                 <title id="2_author_argyleink_github">{{ onGitHub('argyleink') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('argyleink') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://nerdy.dev" aria-labelledby="2_author_argyleink_website">
-              <svg width="18" height="18" role="img">
-                <title id="2_author_argyleinkwebsite">{{ website('Adam Argyle') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://nerdy.dev">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Adam Argyle') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -1084,9 +1069,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Brian Kardell{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Simon Pieters, Tommy Hodgins, {{ self.and() }} Matthew Phillips{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} M.Sakamaki{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-bkardell">Brian Kardell</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-zcorpan">Simon Pieters</a>, <a href="#contributors-tomhodgins">Tommy Hodgins</a>, {{ self.and() }} <a href="#contributors-matthewp">Matthew Phillips</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-MSakamaki">M.Sakamaki</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="markup-導入"><a href="#markup-導入" class="anchor-link">導入</a></h2>
     <p>2005年にIan "Hixie" Hicksonはこれまでの研究に基づいた<a href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">マークアップデータの分析</a>を投稿しました。 この作業のほとんどは、クラス名を調査して、内々で開発者が採用しているセマンティクスを確認し、標準化する意味があるかの確認をすることが目的でした。 この研究の一部は、HTML5の新要素の参考として役に立ちました。</p>
@@ -1392,30 +1377,25 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='bkardell') }}"><img class="avatar" alt="Brian Kardell avatar" src="https://avatars1.githubusercontent.com/u/870501?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-bkardell"><img class="avatar" alt="Brian Kardell avatar" src="https://avatars1.githubusercontent.com/u/870501?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='bkardell') }}"><span class="name">Brian Kardell</span></a>
+          <a href="#contributors-bkardell"><span class="name">Brian Kardell</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/briankardell" aria-labelledby="3_author_bkardell_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="3_author_bkardell_twitter">{{ onTwitter('briankardell') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/briankardell">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('briankardell') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/bkardell" aria-labelledby="3_author_bkardell_github">
+            <a class="github" href="https://github.com/bkardell">
               <svg width="18" height="18" role="img">
                 <title id="3_author_bkardell_github">{{ onGitHub('bkardell') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('bkardell') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://bkardell.com" aria-labelledby="3_author_bkardell_website">
-              <svg width="18" height="18" role="img">
-                <title id="3_author_bkardellwebsite">{{ website('Brian Kardell') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://bkardell.com">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Brian Kardell') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -1450,9 +1430,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Colin Bendell, {{ self.and() }} Doug Sillars{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Ahmad Awais, {{ self.and() }} Eric Portis{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-colinbendell">Colin Bendell</a>, {{ self.and() }} <a href="#contributors-dougsillars">Doug Sillars</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-ahmadawais">Ahmad Awais</a>, {{ self.and() }} <a href="#contributors-eeeps">Eric Portis</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="media-序章"><a href="#media-序章" class="anchor-link">序章</a></h2>
     <p>画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つはメディアで描かれたピクセル数の多さです。</p>
@@ -1869,23 +1849,21 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='colinbendell') }}"><img class="avatar" alt="Colin Bendell avatar" src="https://avatars0.githubusercontent.com/u/1622597?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-colinbendell"><img class="avatar" alt="Colin Bendell avatar" src="https://avatars0.githubusercontent.com/u/1622597?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='colinbendell') }}"><span class="name">Colin Bendell</span></a>
+          <a href="#contributors-colinbendell"><span class="name">Colin Bendell</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/colinbendell" aria-labelledby="4_author_colinbendell_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="4_author_colinbendell_twitter">{{ onTwitter('colinbendell') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/colinbendell">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('colinbendell') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/colinbendell" aria-labelledby="4_author_colinbendell_github">
+            <a class="github" href="https://github.com/colinbendell">
               <svg width="18" height="18" role="img">
                 <title id="4_author_colinbendell_github">{{ onGitHub('colinbendell') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('colinbendell') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -1896,30 +1874,25 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='dougsillars') }}"><img class="avatar" alt="Doug Sillars avatar" src="https://avatars3.githubusercontent.com/u/1514288?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-dougsillars"><img class="avatar" alt="Doug Sillars avatar" src="https://avatars3.githubusercontent.com/u/1514288?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='dougsillars') }}"><span class="name">Doug Sillars</span></a>
+          <a href="#contributors-dougsillars"><span class="name">Doug Sillars</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/dougsillars" aria-labelledby="4_author_dougsillars_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="4_author_dougsillars_twitter">{{ onTwitter('dougsillars') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/dougsillars">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('dougsillars') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/dougsillars" aria-labelledby="4_author_dougsillars_github">
+            <a class="github" href="https://github.com/dougsillars">
               <svg width="18" height="18" role="img">
                 <title id="4_author_dougsillars_github">{{ onGitHub('dougsillars') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('dougsillars') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://dougsillars.com" aria-labelledby="4_author_dougsillars_website">
-              <svg width="18" height="18" role="img">
-                <title id="4_author_dougsillarswebsite">{{ website('Doug Sillars') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://dougsillars.com">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Doug Sillars') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -1954,9 +1927,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Patrick Hulce{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Simon Pieters, David Fox, {{ self.and() }} Vamsee Jasti{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-patrickhulce">Patrick Hulce</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-zcorpan">Simon Pieters</a>, <a href="#contributors-obto">David Fox</a>, {{ self.and() }} <a href="#contributors-jasti">Vamsee Jasti</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="third-parties-導入"><a href="#third-parties-導入" class="anchor-link">導入</a></h2>
     <p>オープンWebは広大で、リンク可能で、設計により相互運用可能です。他の誰かの複雑なライブラリを取得し、単一の<code>&lt;link&gt;</code>または<code>&lt;script&gt;</code>要素を使用してサイトで使用する機能により開発者の生産性が大幅に向上し、素晴らしく新しいWeb体験を実現しました。反対に、一部のサードパーティプロバイダーが非常に人気があるため、パフォーマンス、プライバシー、およびセキュリティに関する重要な懸念が生じています。この章では、2019年のWebに対するサードパーティコードの普及と影響、サードパーティソリューションの人気につながる使用パターンと、Web体験の将来への影響の可能性について検討します。</p>
@@ -2219,30 +2192,25 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}"><img class="avatar" alt="Patrick Hulce avatar" src="https://avatars2.githubusercontent.com/u/2301202?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-patrickhulce"><img class="avatar" alt="Patrick Hulce avatar" src="https://avatars2.githubusercontent.com/u/2301202?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}"><span class="name">Patrick Hulce</span></a>
+          <a href="#contributors-patrickhulce"><span class="name">Patrick Hulce</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/patrickhulce" aria-labelledby="5_author_patrickhulce_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="5_author_patrickhulce_twitter">{{ onTwitter('patrickhulce') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/patrickhulce">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('patrickhulce') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/patrickhulce" aria-labelledby="5_author_patrickhulce_github">
+            <a class="github" href="https://github.com/patrickhulce">
               <svg width="18" height="18" role="img">
                 <title id="5_author_patrickhulce_github">{{ onGitHub('patrickhulce') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('patrickhulce') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="http://patrickhulce.com" aria-labelledby="5_author_patrickhulce_website">
-              <svg width="18" height="18" role="img">
-                <title id="5_author_patrickhulcewebsite">{{ website('Patrick Hulce') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="http://patrickhulce.com">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Patrick Hulce') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -2277,9 +2245,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Zach Leatherman{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} John Teague, {{ self.and() }} Aymen Loukil{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-zachleat">Zach Leatherman</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-hyperpress">John Teague</a>, {{ self.and() }} <a href="#contributors-AymenLoukil">Aymen Loukil</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="fonts-序章"><a href="#fonts-序章" class="anchor-link">序章</a></h2>
     <p>ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあってもウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。</p>
@@ -2863,30 +2831,25 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='zachleat') }}"><img class="avatar" alt="Zach Leatherman avatar" src="https://avatars2.githubusercontent.com/u/39355?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-zachleat"><img class="avatar" alt="Zach Leatherman avatar" src="https://avatars2.githubusercontent.com/u/39355?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='zachleat') }}"><span class="name">Zach Leatherman</span></a>
+          <a href="#contributors-zachleat"><span class="name">Zach Leatherman</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/zachleat" aria-labelledby="6_author_zachleat_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="6_author_zachleat_twitter">{{ onTwitter('zachleat') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/zachleat">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('zachleat') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/zachleat" aria-labelledby="6_author_zachleat_github">
+            <a class="github" href="https://github.com/zachleat">
               <svg width="18" height="18" role="img">
                 <title id="6_author_zachleat_github">{{ onGitHub('zachleat') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('zachleat') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://zachleat.com/" aria-labelledby="6_author_zachleat_website">
-              <svg width="18" height="18" role="img">
-                <title id="6_author_zachleatwebsite">{{ website('Zach Leatherman') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://zachleat.com/">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Zach Leatherman') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -2921,9 +2884,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Rick Viscomi{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} José M. Pérez, David Fox, Sergey Chernyshev, {{ self.and() }} Mark Zeman{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} M.Sakamaki{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-rviscomi">Rick Viscomi</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-JMPerez">José M. Pérez</a>, <a href="#contributors-obto">David Fox</a>, <a href="#contributors-sergeychernyshev">Sergey Chernyshev</a>, {{ self.and() }} <a href="#contributors-zeman">Mark Zeman</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-MSakamaki">M.Sakamaki</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="performance-導入"><a href="#performance-導入" class="anchor-link">導入</a></h2>
     <p>パフォーマンスはユーザー体験で大切なものの一つです。 多くのWebサイトでは、ページの読み込み時間を早くする事によるユーザー体験の向上と、コンバージョン率の上昇は一致しています。 逆に、パフォーマンスが低い場合、ユーザーはコンバージョンを達成せず、不満を持ち、ページをクリックすると怒りを覚えることさえあります。</p>
@@ -3130,23 +3093,21 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}"><img class="avatar" alt="Rick Viscomi avatar" src="https://avatars0.githubusercontent.com/u/1120896?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-rviscomi"><img class="avatar" alt="Rick Viscomi avatar" src="https://avatars0.githubusercontent.com/u/1120896?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}"><span class="name">Rick Viscomi</span></a>
+          <a href="#contributors-rviscomi"><span class="name">Rick Viscomi</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/rick_viscomi" aria-labelledby="7_author_rviscomi_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="7_author_rviscomi_twitter">{{ onTwitter('rick_viscomi') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/rick_viscomi">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('rick_viscomi') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/rviscomi" aria-labelledby="7_author_rviscomi_github">
+            <a class="github" href="https://github.com/rviscomi">
               <svg width="18" height="18" role="img">
                 <title id="7_author_rviscomi_github">{{ onGitHub('rviscomi') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('rviscomi') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -3181,9 +3142,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Scott Helme, {{ self.and() }} Artur Janc{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Barry Pollard, Alessandro Ghedini, {{ self.and() }} Paul Calvano{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-ScottHelme">Scott Helme</a>, {{ self.and() }} <a href="#contributors-arturjanc">Artur Janc</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-bazzadp">Barry Pollard</a>, <a href="#contributors-ghedo">Alessandro Ghedini</a>, {{ self.and() }} <a href="#contributors-paulcalvano">Paul Calvano</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="security-序章"><a href="#security-序章" class="anchor-link">序章</a></h2>
     <p>Web Almanacのこの章では、Web上のセキュリティの現状を見ていきます。オンラインでのセキュリティとプライバシーの重要性がますます高まる中、サイト運営者とユーザーを保護するための機能が増えています。ここでは、ウェブ上でのこれらの新機能の採用状況を見ていきます。</p>
@@ -3943,30 +3904,25 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='ScottHelme') }}"><img class="avatar" alt="Scott Helme avatar" src="https://avatars1.githubusercontent.com/u/5352840?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-ScottHelme"><img class="avatar" alt="Scott Helme avatar" src="https://avatars1.githubusercontent.com/u/5352840?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='ScottHelme') }}"><span class="name">Scott Helme</span></a>
+          <a href="#contributors-ScottHelme"><span class="name">Scott Helme</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/Scott_Helme" aria-labelledby="8_author_ScottHelme_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="8_author_ScottHelme_twitter">{{ onTwitter('Scott_Helme') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/Scott_Helme">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('Scott_Helme') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/ScottHelme" aria-labelledby="8_author_ScottHelme_github">
+            <a class="github" href="https://github.com/ScottHelme">
               <svg width="18" height="18" role="img">
                 <title id="8_author_ScottHelme_github">{{ onGitHub('ScottHelme') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('ScottHelme') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://scotthelme.co.uk" aria-labelledby="8_author_ScottHelme_website">
-              <svg width="18" height="18" role="img">
-                <title id="8_author_ScottHelmewebsite">{{ website('Scott Helme') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://scotthelme.co.uk">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Scott Helme') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -3977,23 +3933,21 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='arturjanc') }}"><img class="avatar" alt="Artur Janc avatar" src="https://avatars2.githubusercontent.com/u/665379?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-arturjanc"><img class="avatar" alt="Artur Janc avatar" src="https://avatars2.githubusercontent.com/u/665379?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='arturjanc') }}"><span class="name">Artur Janc</span></a>
+          <a href="#contributors-arturjanc"><span class="name">Artur Janc</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/arturjanc" aria-labelledby="8_author_arturjanc_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="8_author_arturjanc_twitter">{{ onTwitter('arturjanc') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/arturjanc">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('arturjanc') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/arturjanc" aria-labelledby="8_author_arturjanc_github">
+            <a class="github" href="https://github.com/arturjanc">
               <svg width="18" height="18" role="img">
                 <title id="8_author_arturjanc_github">{{ onGitHub('arturjanc') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('arturjanc') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -4028,9 +3982,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Nektarios Paisios, David Fox, {{ self.and() }} Abigail Klein{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Laura Eberly{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} M.Sakamaki{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-nektarios-paisios">Nektarios Paisios</a>, <a href="#contributors-obto">David Fox</a>, {{ self.and() }} <a href="#contributors-kleinab">Abigail Klein</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-ljme">Laura Eberly</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-MSakamaki">M.Sakamaki</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="accessibility-導入"><a href="#accessibility-導入" class="anchor-link">導入</a></h2>
     <p>Webのアクセシビリティは、包摂的で公平な社会の上では無くてはならない存在です。私たちの社会性と仕事や生活の多くがオンラインの世界に推移するにつれて、障害のある人々も分け隔てなく、すべてのオンラインの対話に参加できることがさらに重要になってきます。建築家が車椅子用の傾斜路のようなアクセシビリティ機能を作成や省略できるように、Web開発者はユーザーが頼りにしている支援技術を助けたり邪魔したりできます。</p>
@@ -4277,9 +4231,9 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='nektarios-paisios') }}"><img class="avatar" alt="Nektarios Paisios avatar" src="" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-nektarios-paisios"><img class="avatar" alt="Nektarios Paisios avatar" src="" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='nektarios-paisios') }}"><span class="name">Nektarios Paisios</span></a>
+          <a href="#contributors-nektarios-paisios"><span class="name">Nektarios Paisios</span></a>
 
           <div class="bio">
             {{ localizedContributors['nektarios-paisios'] | safe if localizedContributors['nektarios-paisios']|length else 'Nektarios Paisios is a software engineer working on Chrome accessibility for the last 5 years. He primarily focuses on making Chrome compatible with third party assistive software such as screen readers and screen magnifiers. Before working on Chrome accessibility, Nektarios worked in various other roles at the company, such as GSuite accessibility and display ads. Nektarios holds a Ph.D. in Computer Science from New York University.' | safe }}
@@ -4288,30 +4242,25 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='obto') }}"><img class="avatar" alt="David Fox avatar" src="https://avatars2.githubusercontent.com/u/684747?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-obto"><img class="avatar" alt="David Fox avatar" src="https://avatars2.githubusercontent.com/u/684747?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='obto') }}"><span class="name">David Fox</span></a>
+          <a href="#contributors-obto"><span class="name">David Fox</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/theobto" aria-labelledby="9_author_obto_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="9_author_obto_twitter">{{ onTwitter('theobto') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/theobto">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('theobto') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/obto" aria-labelledby="9_author_obto_github">
+            <a class="github" href="https://github.com/obto">
               <svg width="18" height="18" role="img">
                 <title id="9_author_obto_github">{{ onGitHub('obto') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('obto') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://www.lookzook.com" aria-labelledby="9_author_obto_website">
-              <svg width="18" height="18" role="img">
-                <title id="9_author_obtowebsite">{{ website('David Fox') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://www.lookzook.com">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('David Fox') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -4322,16 +4271,17 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='kleinab') }}"><img class="avatar" alt="Abigail Klein avatar" src="https://avatars2.githubusercontent.com/u/1319324?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-kleinab"><img class="avatar" alt="Abigail Klein avatar" src="https://avatars2.githubusercontent.com/u/1319324?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='kleinab') }}"><span class="name">Abigail Klein</span></a>
+          <a href="#contributors-kleinab"><span class="name">Abigail Klein</span></a>
 
           <span class="social">
-            <a class="github" href="https://github.com/kleinab" aria-labelledby="9_author_kleinab_github">
+            <a class="github" href="https://github.com/kleinab">
               <svg width="18" height="18" role="img">
                 <title id="9_author_kleinab_github">{{ onGitHub('kleinab') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('kleinab') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -4366,9 +4316,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Yvo Schaap, Rachel Costello, {{ self.and() }} Martin Splitt{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} John Fox, Andrew Limn, Aymen Loukil, Catalin Rosu, {{ self.and() }} Matt Ludwig{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} M.Sakamaki{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-ymschaap">Yvo Schaap</a>, <a href="#contributors-rachellcostello">Rachel Costello</a>, {{ self.and() }} <a href="#contributors-AVGP">Martin Splitt</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-clarkeclark">John Fox</a>, <a href="#contributors-andylimn">Andrew Limn</a>, <a href="#contributors-AymenLoukil">Aymen Loukil</a>, <a href="#contributors-catalinred">Catalin Rosu</a>, {{ self.and() }} <a href="#contributors-mattludwig">Matt Ludwig</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-MSakamaki">M.Sakamaki</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="seo-導入"><a href="#seo-導入" class="anchor-link">導入</a></h2>
     <p>検索エンジン最適化（SEO）はデジタルマーケティングの担当者にとって、単なる趣味やサイドプロジェクトではなくWebサイトを成功に導くための重要な要素です。 SEOの主な目標は、Webサイトをクロールする必要のある検索エンジンボットと、Webサイトを操作するコンテンツの消費者向けにWebサイトを最適化することです。 SEOはWebサイトを作っている開発者から、新しい潜在顧客に対して宣伝する必要のあるデジタルマーケティング担当者に至るまで、すべてのWebサイトに関わる人に影響を及ぼします。</p>
@@ -4705,30 +4655,25 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='ymschaap') }}"><img class="avatar" alt="Yvo Schaap avatar" src="https://avatars1.githubusercontent.com/u/91795?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-ymschaap"><img class="avatar" alt="Yvo Schaap avatar" src="https://avatars1.githubusercontent.com/u/91795?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='ymschaap') }}"><span class="name">Yvo Schaap</span></a>
+          <a href="#contributors-ymschaap"><span class="name">Yvo Schaap</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/yvoschaap" aria-labelledby="10_author_ymschaap_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="10_author_ymschaap_twitter">{{ onTwitter('yvoschaap') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/yvoschaap">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('yvoschaap') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/ymschaap" aria-labelledby="10_author_ymschaap_github">
+            <a class="github" href="https://github.com/ymschaap">
               <svg width="18" height="18" role="img">
                 <title id="10_author_ymschaap_github">{{ onGitHub('ymschaap') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('ymschaap') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://build.amsterdam/" aria-labelledby="10_author_ymschaap_website">
-              <svg width="18" height="18" role="img">
-                <title id="10_author_ymschaapwebsite">{{ website('Yvo Schaap') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://build.amsterdam/">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Yvo Schaap') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -4739,23 +4684,21 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rachellcostello') }}"><img class="avatar" alt="Rachel Costello avatar" src="https://avatars2.githubusercontent.com/u/49983543?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-rachellcostello"><img class="avatar" alt="Rachel Costello avatar" src="https://avatars2.githubusercontent.com/u/49983543?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='rachellcostello') }}"><span class="name">Rachel Costello</span></a>
+          <a href="#contributors-rachellcostello"><span class="name">Rachel Costello</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/rachellcostello" aria-labelledby="10_author_rachellcostello_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="10_author_rachellcostello_twitter">{{ onTwitter('rachellcostello') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/rachellcostello">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('rachellcostello') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/rachellcostello" aria-labelledby="10_author_rachellcostello_github">
+            <a class="github" href="https://github.com/rachellcostello">
               <svg width="18" height="18" role="img">
                 <title id="10_author_rachellcostello_github">{{ onGitHub('rachellcostello') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('rachellcostello') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -4766,30 +4709,25 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='AVGP') }}"><img class="avatar" alt="Martin Splitt avatar" src="https://avatars2.githubusercontent.com/u/370246?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-AVGP"><img class="avatar" alt="Martin Splitt avatar" src="https://avatars2.githubusercontent.com/u/370246?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='AVGP') }}"><span class="name">Martin Splitt</span></a>
+          <a href="#contributors-AVGP"><span class="name">Martin Splitt</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/g33konaut" aria-labelledby="10_author_AVGP_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="10_author_AVGP_twitter">{{ onTwitter('g33konaut') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/g33konaut">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('g33konaut') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/AVGP" aria-labelledby="10_author_AVGP_github">
+            <a class="github" href="https://github.com/AVGP">
               <svg width="18" height="18" role="img">
                 <title id="10_author_AVGP_github">{{ onGitHub('AVGP') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('AVGP') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="http://geekonaut.de" aria-labelledby="10_author_AVGP_website">
-              <svg width="18" height="18" role="img">
-                <title id="10_author_AVGPwebsite">{{ website('Martin Splitt') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="http://geekonaut.de">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Martin Splitt') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -4824,9 +4762,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Tom Steiner, {{ self.and() }} Jeff Posnick{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} John Teague, {{ self.and() }} Ahmad Awais{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-tomayac">Tom Steiner</a>, {{ self.and() }} <a href="#contributors-jeffposnick">Jeff Posnick</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-hyperpress">John Teague</a>, {{ self.and() }} <a href="#contributors-ahmadawais">Ahmad Awais</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="pwa-導入"><a href="#pwa-導入" class="anchor-link">導入</a></h2>
     <p>プログレッシブWebアプリ（PWA）は、<a href="https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API">Service Worker API</a>などのプラットフォームプリミティブ上に構築される新しいクラスのWebアプリケーションです。Service Workerは、ネットワークプロキシとして機能し、Webアプリの発信要求をインターセプトしプログラムまたはキャッシュされた内容で応答することによりアプリがネットワークに依存しない読み込みをサポートできるようにします。Service Workerは、プッシュ通知を受信し、対応するアプリが実行されていなくてもバックグラウンドでデータを同期できます。さらに、Service Workerは、<a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">Webアプリマニフェスト</a>と共にユーザーがデバイスのホーム画面にPWAをインストールできるようにします。</p>
@@ -4987,30 +4925,25 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='tomayac') }}"><img class="avatar" alt="Tom Steiner avatar" src="https://avatars3.githubusercontent.com/u/145676?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-tomayac"><img class="avatar" alt="Tom Steiner avatar" src="https://avatars3.githubusercontent.com/u/145676?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='tomayac') }}"><span class="name">Tom Steiner</span></a>
+          <a href="#contributors-tomayac"><span class="name">Tom Steiner</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/tomayac" aria-labelledby="11_author_tomayac_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="11_author_tomayac_twitter">{{ onTwitter('tomayac') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/tomayac">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('tomayac') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/tomayac" aria-labelledby="11_author_tomayac_github">
+            <a class="github" href="https://github.com/tomayac">
               <svg width="18" height="18" role="img">
                 <title id="11_author_tomayac_github">{{ onGitHub('tomayac') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('tomayac') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://blog.tomayac.com/" aria-labelledby="11_author_tomayac_website">
-              <svg width="18" height="18" role="img">
-                <title id="11_author_tomayacwebsite">{{ website('Tom Steiner') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://blog.tomayac.com/">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Tom Steiner') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -5021,30 +4954,25 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='jeffposnick') }}"><img class="avatar" alt="Jeff Posnick avatar" src="https://avatars1.githubusercontent.com/u/1749548?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-jeffposnick"><img class="avatar" alt="Jeff Posnick avatar" src="https://avatars1.githubusercontent.com/u/1749548?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='jeffposnick') }}"><span class="name">Jeff Posnick</span></a>
+          <a href="#contributors-jeffposnick"><span class="name">Jeff Posnick</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/jeffposnick" aria-labelledby="11_author_jeffposnick_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="11_author_jeffposnick_twitter">{{ onTwitter('jeffposnick') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/jeffposnick">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('jeffposnick') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/jeffposnick" aria-labelledby="11_author_jeffposnick_github">
+            <a class="github" href="https://github.com/jeffposnick">
               <svg width="18" height="18" role="img">
                 <title id="11_author_jeffposnick_github">{{ onGitHub('jeffposnick') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('jeffposnick') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://jeffy.info" aria-labelledby="11_author_jeffposnick_website">
-              <svg width="18" height="18" role="img">
-                <title id="11_author_jeffposnickwebsite">{{ website('Jeff Posnick') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://jeffy.info">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Jeff Posnick') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -5079,9 +5007,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} David Fox{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Aymen Loukil, {{ self.and() }} John Teague{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-obto">David Fox</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-AymenLoukil">Aymen Loukil</a>, {{ self.and() }} <a href="#contributors-hyperpress">John Teague</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="mobile-web-序章introduction"><a href="#mobile-web-序章introduction" class="anchor-link">序章Introduction</a></h2>
     <p>2007年に少し戻ってみましょう。「モバイルウェブ」は現在、レーダー上ではほんの一瞬の出来事に過ぎませんが、それには正当な理由があります。なぜでしょうか？　モバイルブラウザはCSSをほとんどサポートしていないため、サイトの見た目がデスクトップとは全く異なります。画面は信じられないほど小さく、一度に数行のテキストしか表示できません。また、マウスの代わりとなるのは、「タブを使って移動する」ための小さな矢印キーです。言うまでもなく、携帯電話でウェブを閲覧することは本当に愛の労働です。 しかし、このすべてをちょうど変更しようとしている。</p>
@@ -5306,30 +5234,25 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='obto') }}"><img class="avatar" alt="David Fox avatar" src="https://avatars2.githubusercontent.com/u/684747?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-obto"><img class="avatar" alt="David Fox avatar" src="https://avatars2.githubusercontent.com/u/684747?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='obto') }}"><span class="name">David Fox</span></a>
+          <a href="#contributors-obto"><span class="name">David Fox</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/theobto" aria-labelledby="12_author_obto_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="12_author_obto_twitter">{{ onTwitter('theobto') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/theobto">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('theobto') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/obto" aria-labelledby="12_author_obto_github">
+            <a class="github" href="https://github.com/obto">
               <svg width="18" height="18" role="img">
                 <title id="12_author_obto_github">{{ onGitHub('obto') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('obto') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://www.lookzook.com" aria-labelledby="12_author_obto_website">
-              <svg width="18" height="18" role="img">
-                <title id="12_author_obtowebsite">{{ website('David Fox') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://www.lookzook.com">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('David Fox') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -5364,9 +5287,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Sam Dutton, {{ self.and() }} Alan Kent{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Vincent Terrasi{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-samdutton">Sam Dutton</a>, {{ self.and() }} <a href="#contributors-alankent">Alan Kent</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-voltek62">Vincent Terrasi</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="ecommerce-序章"><a href="#ecommerce-序章" class="anchor-link">序章</a></h2>
     <p>この調査では、ホームページの10％近くがEコマース・プラットフォーム上にあることが判明しました。「Eコマースプラットフォーム」は、オンラインストアを作成し、運営することを可能にするソフトウェアまたはサービスのセットです。Eコマースプラットフォームのいくつかのタイプがあります。</p>
@@ -5901,30 +5824,25 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='samdutton') }}"><img class="avatar" alt="Sam Dutton avatar" src="https://avatars0.githubusercontent.com/u/205226?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-samdutton"><img class="avatar" alt="Sam Dutton avatar" src="https://avatars0.githubusercontent.com/u/205226?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='samdutton') }}"><span class="name">Sam Dutton</span></a>
+          <a href="#contributors-samdutton"><span class="name">Sam Dutton</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/sw12" aria-labelledby="13_author_samdutton_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="13_author_samdutton_twitter">{{ onTwitter('sw12') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/sw12">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('sw12') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/samdutton" aria-labelledby="13_author_samdutton_github">
+            <a class="github" href="https://github.com/samdutton">
               <svg width="18" height="18" role="img">
                 <title id="13_author_samdutton_github">{{ onGitHub('samdutton') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('samdutton') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://simpl.info" aria-labelledby="13_author_samdutton_website">
-              <svg width="18" height="18" role="img">
-                <title id="13_author_samduttonwebsite">{{ website('Sam Dutton') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://simpl.info">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Sam Dutton') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -5935,30 +5853,25 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='alankent') }}"><img class="avatar" alt="Alan Kent avatar" src="https://avatars0.githubusercontent.com/u/5702163?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-alankent"><img class="avatar" alt="Alan Kent avatar" src="https://avatars0.githubusercontent.com/u/5702163?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='alankent') }}"><span class="name">Alan Kent</span></a>
+          <a href="#contributors-alankent"><span class="name">Alan Kent</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/akent99" aria-labelledby="13_author_alankent_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="13_author_alankent_twitter">{{ onTwitter('akent99') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/akent99">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('akent99') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/alankent" aria-labelledby="13_author_alankent_github">
+            <a class="github" href="https://github.com/alankent">
               <svg width="18" height="18" role="img">
                 <title id="13_author_alankent_github">{{ onGitHub('alankent') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('alankent') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://alankent.me" aria-labelledby="13_author_alankent_website">
-              <svg width="18" height="18" role="img">
-                <title id="13_author_alankentwebsite">{{ website('Alan Kent') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://alankent.me">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Alan Kent') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -5993,9 +5906,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Renee Johnson, {{ self.and() }} Alberto Medina{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Jonathan Wold{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-ernee">Renee Johnson</a>, {{ self.and() }} <a href="#contributors-amedina">Alberto Medina</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-sirjonathan">Jonathan Wold</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="cms-序章"><a href="#cms-序章" class="anchor-link">序章</a></h2>
     <p><strong>コンテンツ管理システム（CMS）</strong>とは、個人や組織がコンテンツを作成・管理・公開するためのシステムを総称しています。具体的には、オープンウェブを介して消費・体験できるコンテンツを作成・管理・公開することを目的としたシステムのことを指します。</p>
@@ -6583,30 +6496,25 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='ernee') }}"><img class="avatar" alt="Renee Johnson avatar" src="https://avatars1.githubusercontent.com/u/8108643?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-ernee"><img class="avatar" alt="Renee Johnson avatar" src="https://avatars1.githubusercontent.com/u/8108643?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='ernee') }}"><span class="name">Renee Johnson</span></a>
+          <a href="#contributors-ernee"><span class="name">Renee Johnson</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/reneesoffice" aria-labelledby="14_author_ernee_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="14_author_ernee_twitter">{{ onTwitter('reneesoffice') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/reneesoffice">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('reneesoffice') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/ernee" aria-labelledby="14_author_ernee_github">
+            <a class="github" href="https://github.com/ernee">
               <svg width="18" height="18" role="img">
                 <title id="14_author_ernee_github">{{ onGitHub('ernee') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('ernee') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://reneesvirtualoffice.com" aria-labelledby="14_author_ernee_website">
-              <svg width="18" height="18" role="img">
-                <title id="14_author_erneewebsite">{{ website('Renee Johnson') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://reneesvirtualoffice.com">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Renee Johnson') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -6617,23 +6525,21 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='amedina') }}"><img class="avatar" alt="Alberto Medina avatar" src="https://avatars0.githubusercontent.com/u/506089?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-amedina"><img class="avatar" alt="Alberto Medina avatar" src="https://avatars0.githubusercontent.com/u/506089?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='amedina') }}"><span class="name">Alberto Medina</span></a>
+          <a href="#contributors-amedina"><span class="name">Alberto Medina</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/iAlbMedina" aria-labelledby="14_author_amedina_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="14_author_amedina_twitter">{{ onTwitter('iAlbMedina') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/iAlbMedina">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('iAlbMedina') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/amedina" aria-labelledby="14_author_amedina_github">
+            <a class="github" href="https://github.com/amedina">
               <svg width="18" height="18" role="img">
                 <title id="14_author_amedina_github">{{ onGitHub('amedina') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('amedina') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -6668,9 +6574,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Paul Calvano{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} David Fox, {{ self.and() }} Yoav Weiss{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-paulcalvano">Paul Calvano</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-obto">David Fox</a>, {{ self.and() }} <a href="#contributors-yoavweiss">Yoav Weiss</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="compression-序章"><a href="#compression-序章" class="anchor-link">序章</a></h2>
     <p>HTTP圧縮は、元の表現よりも少ないビットを使用して情報をエンコードできる技術です。 Webコンテンツの配信に使用すると、Webサーバーはクライアントに送信されるデータ量を削減できます。これにより、クライアントの利用可能な帯域幅の効率が向上し、<a href="#chapter-page-weight">ページの重さ</a>が軽減され、<a href="#chapter-performance">Webパフォーマンス</a>が向上します。</p>
@@ -6952,23 +6858,21 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}"><img class="avatar" alt="Paul Calvano avatar" src="https://avatars3.githubusercontent.com/u/7459458?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-paulcalvano"><img class="avatar" alt="Paul Calvano avatar" src="https://avatars3.githubusercontent.com/u/7459458?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}"><span class="name">Paul Calvano</span></a>
+          <a href="#contributors-paulcalvano"><span class="name">Paul Calvano</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/paulcalvano" aria-labelledby="15_author_paulcalvano_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="15_author_paulcalvano_twitter">{{ onTwitter('paulcalvano') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/paulcalvano">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('paulcalvano') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/paulcalvano" aria-labelledby="15_author_paulcalvano_github">
+            <a class="github" href="https://github.com/paulcalvano">
               <svg width="18" height="18" role="img">
                 <title id="15_author_paulcalvano_github">{{ onGitHub('paulcalvano') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('paulcalvano') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -7003,9 +6907,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Paul Calvano{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} David Fox, {{ self.and() }} Brian Kardell{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-paulcalvano">Paul Calvano</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-obto">David Fox</a>, {{ self.and() }} <a href="#contributors-bkardell">Brian Kardell</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="caching-導入"><a href="#caching-導入" class="anchor-link">導入</a></h2>
     <p>キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする手法です。コストのかかるネットワークリクエストを回避することにより、<a href="#chapter-performance">パフォーマンス</a>が大幅に向上します。また、Webサイトのオリジンインフラストラクチャへのトラフィックを削減することで、アプリケーションの拡張にも役立ちます。「最速のリクエストはあなたがする必要のないものです」という古い格言があり、キャッシュはリクエストを行わなくて済むようにするための重要な方法の1つです。</p>
@@ -7603,23 +7507,21 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}"><img class="avatar" alt="Paul Calvano avatar" src="https://avatars3.githubusercontent.com/u/7459458?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-paulcalvano"><img class="avatar" alt="Paul Calvano avatar" src="https://avatars3.githubusercontent.com/u/7459458?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='paulcalvano') }}"><span class="name">Paul Calvano</span></a>
+          <a href="#contributors-paulcalvano"><span class="name">Paul Calvano</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/paulcalvano" aria-labelledby="16_author_paulcalvano_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="16_author_paulcalvano_twitter">{{ onTwitter('paulcalvano') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/paulcalvano">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('paulcalvano') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/paulcalvano" aria-labelledby="16_author_paulcalvano_github">
+            <a class="github" href="https://github.com/paulcalvano">
               <svg width="18" height="18" role="img">
                 <title id="16_author_paulcalvano_github">{{ onGitHub('paulcalvano') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('paulcalvano') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -7654,9 +7556,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Andy Davies, {{ self.and() }} Colin Bendell{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Yoav Weiss, Paul Calvano, Patrick Meenan, {{ self.and() }} Erik Nygren{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-andydavies">Andy Davies</a>, {{ self.and() }} <a href="#contributors-colinbendell">Colin Bendell</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-yoavweiss">Yoav Weiss</a>, <a href="#contributors-paulcalvano">Paul Calvano</a>, <a href="#contributors-pmeenan">Patrick Meenan</a>, {{ self.and() }} <a href="#contributors-enygren">Erik Nygren</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="cdn-導入"><a href="#cdn-導入" class="anchor-link">導入</a></h2>
     <p>「コンテンツ配信ネットワーク」は、Webサイトの読み込みを高速化するための<a href="http://stevesouders.com/examples/rules.php">Steve Soudersによる独自の推奨事項</a>の1つでした。昨今でも有効なアドバイスです。Web Almanacのこの章ではSteveの推奨事項がどの程度広く採用されているか、サイトがコンテンツ配信ネットワーク（CDN）をどのように使用しているか、およびそれらが使用している機能のいくつかを検討します。</p>
@@ -9153,30 +9055,25 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='andydavies') }}"><img class="avatar" alt="Andy Davies avatar" src="https://avatars1.githubusercontent.com/u/427052?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-andydavies"><img class="avatar" alt="Andy Davies avatar" src="https://avatars1.githubusercontent.com/u/427052?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='andydavies') }}"><span class="name">Andy Davies</span></a>
+          <a href="#contributors-andydavies"><span class="name">Andy Davies</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/AndyDavies" aria-labelledby="17_author_andydavies_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="17_author_andydavies_twitter">{{ onTwitter('AndyDavies') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/AndyDavies">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('AndyDavies') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/andydavies" aria-labelledby="17_author_andydavies_github">
+            <a class="github" href="https://github.com/andydavies">
               <svg width="18" height="18" role="img">
                 <title id="17_author_andydavies_github">{{ onGitHub('andydavies') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('andydavies') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="http://andydavies.me/" aria-labelledby="17_author_andydavies_website">
-              <svg width="18" height="18" role="img">
-                <title id="17_author_andydavieswebsite">{{ website('Andy Davies') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="http://andydavies.me/">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Andy Davies') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -9187,23 +9084,21 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='colinbendell') }}"><img class="avatar" alt="Colin Bendell avatar" src="https://avatars0.githubusercontent.com/u/1622597?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-colinbendell"><img class="avatar" alt="Colin Bendell avatar" src="https://avatars0.githubusercontent.com/u/1622597?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='colinbendell') }}"><span class="name">Colin Bendell</span></a>
+          <a href="#contributors-colinbendell"><span class="name">Colin Bendell</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/colinbendell" aria-labelledby="17_author_colinbendell_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="17_author_colinbendell_twitter">{{ onTwitter('colinbendell') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/colinbendell">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('colinbendell') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/colinbendell" aria-labelledby="17_author_colinbendell_github">
+            <a class="github" href="https://github.com/colinbendell">
               <svg width="18" height="18" role="img">
                 <title id="17_author_colinbendell_github">{{ onGitHub('colinbendell') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('colinbendell') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -9238,9 +9133,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Tammy Everts, {{ self.and() }} Katie Hempenius{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Paul Calvano{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-tammyeverts">Tammy Everts</a>, {{ self.and() }} <a href="#contributors-khempenius">Katie Hempenius</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-paulcalvano">Paul Calvano</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="page-weight-序章"><a href="#page-weight-序章" class="anchor-link">序章</a></h2>
     <p>中央Webページのサイズは約1900KBで、74のリクエストが含まれています。悪くないですね。</p>
@@ -10021,30 +9916,25 @@
     <h1>Authors</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='tammyeverts') }}"><img class="avatar" alt="Tammy Everts avatar" src="https://avatars0.githubusercontent.com/u/15661032?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-tammyeverts"><img class="avatar" alt="Tammy Everts avatar" src="https://avatars0.githubusercontent.com/u/15661032?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='tammyeverts') }}"><span class="name">Tammy Everts</span></a>
+          <a href="#contributors-tammyeverts"><span class="name">Tammy Everts</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/tameverts" aria-labelledby="18_author_tammyeverts_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="18_author_tammyeverts_twitter">{{ onTwitter('tameverts') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/tameverts">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('tameverts') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/tammyeverts" aria-labelledby="18_author_tammyeverts_github">
+            <a class="github" href="https://github.com/tammyeverts">
               <svg width="18" height="18" role="img">
                 <title id="18_author_tammyeverts_github">{{ onGitHub('tammyeverts') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('tammyeverts') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://speedcurve.com/" aria-labelledby="18_author_tammyeverts_website">
-              <svg width="18" height="18" role="img">
-                <title id="18_author_tammyevertswebsite">{{ website('Tammy Everts') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://speedcurve.com/">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Tammy Everts') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -10055,23 +9945,21 @@
       </li>
 
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='khempenius') }}"><img class="avatar" alt="Katie Hempenius avatar" src="https://avatars3.githubusercontent.com/u/6076184?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-khempenius"><img class="avatar" alt="Katie Hempenius avatar" src="https://avatars3.githubusercontent.com/u/6076184?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='khempenius') }}"><span class="name">Katie Hempenius</span></a>
+          <a href="#contributors-khempenius"><span class="name">Katie Hempenius</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/katiehempenius" aria-labelledby="18_author_khempenius_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="18_author_khempenius_twitter">{{ onTwitter('katiehempenius') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/katiehempenius">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('katiehempenius') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/khempenius" aria-labelledby="18_author_khempenius_github">
+            <a class="github" href="https://github.com/khempenius">
               <svg width="18" height="18" role="img">
                 <title id="18_author_khempenius_github">{{ onGitHub('khempenius') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('khempenius') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -10106,9 +9994,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Katie Hempenius{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Andy Davies, Barry Pollard, {{ self.and() }} Yoav Weiss{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-khempenius">Katie Hempenius</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-andydavies">Andy Davies</a>, <a href="#contributors-bazzadp">Barry Pollard</a>, {{ self.and() }} <a href="#contributors-yoavweiss">Yoav Weiss</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="resource-hints-序章"><a href="#resource-hints-序章" class="anchor-link">序章</a></h2>
     <p><a href="https://www.w3.org/TR/resource-hints/">リソースヒント</a> は、どのようなリソースがすぐに必要になるかについての「ヒント」をブラウザに提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントの種類によって異なります。リソースヒントは正しく使用されると、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。</p>
@@ -10320,23 +10208,21 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='khempenius') }}"><img class="avatar" alt="Katie Hempenius avatar" src="https://avatars3.githubusercontent.com/u/6076184?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-khempenius"><img class="avatar" alt="Katie Hempenius avatar" src="https://avatars3.githubusercontent.com/u/6076184?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='khempenius') }}"><span class="name">Katie Hempenius</span></a>
+          <a href="#contributors-khempenius"><span class="name">Katie Hempenius</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/katiehempenius" aria-labelledby="19_author_khempenius_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="19_author_khempenius_twitter">{{ onTwitter('katiehempenius') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/katiehempenius">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('katiehempenius') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/khempenius" aria-labelledby="19_author_khempenius_github">
+            <a class="github" href="https://github.com/khempenius">
               <svg width="18" height="18" role="img">
                 <title id="19_author_khempenius_github">{{ onGitHub('khempenius') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('khempenius') }}" height="20" width="20" />
             </a>
           </span>
 
@@ -10371,9 +10257,9 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" loading="eager" />
     </picture>
 
-    <div class="byline authors">{{ self.written_by_before() }} Barry Pollard{{ self.written_by_after() }}</div>
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} Daniel Stenberg, Robin Marx, {{ self.and() }} Andrew Galloni{{ self.reviewed_by_after() }}</div>
-    <div class="byline translators">{{ self.translated_by_before() }} Sakae Kotaro{{ self.translated_by_after() }}</div>
+    <div class="byline authors">{{ self.written_by_before() }} <a href="#contributors-bazzadp">Barry Pollard</a>{{ self.written_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-bagder">Daniel Stenberg</a>, <a href="#contributors-rmarx">Robin Marx</a>, {{ self.and() }} <a href="#contributors-dotjs">Andrew Galloni</a>{{ self.reviewed_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="http2-導入"><a href="#http2-導入" class="anchor-link">導入</a></h2>
     <p>HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。</p>
@@ -11020,30 +10906,25 @@
     <h1>Author</h1>
     <ul>
       <li>
-        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='bazzadp') }}"><img class="avatar" alt="Barry Pollard avatar" src="https://avatars3.githubusercontent.com/u/10931297?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
+        <a href="#contributors-bazzadp"><img class="avatar" alt="Barry Pollard avatar" src="https://avatars3.githubusercontent.com/u/10931297?v=4&amp;s=200" height="200" width="200" loading="lazy"/></a>
         <div class="info">
-          <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='bazzadp') }}"><span class="name">Barry Pollard</span></a>
+          <a href="#contributors-bazzadp"><span class="name">Barry Pollard</span></a>
 
           <span class="social">
-            <a class="twitter" href="https://twitter.com/tunetheweb" aria-labelledby="20_author_bazzadp_twitter">
-              <svg width="18" height="18" role="img">
-                <title id="20_author_bazzadp_twitter">{{ onTwitter('tunetheweb') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
+            <a class="twitter" href="https://twitter.com/tunetheweb">
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('tunetheweb') }}" height="20" width="20" />
             </a>
 
-            <a class="github" href="https://github.com/bazzadp" aria-labelledby="20_author_bazzadp_github">
+            <a class="github" href="https://github.com/bazzadp">
               <svg width="18" height="18" role="img">
                 <title id="20_author_bazzadp_github">{{ onGitHub('bazzadp') }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('bazzadp') }}" height="20" width="20" />
             </a>
 
-            <a class="website" href="https://www.tunetheweb.com" aria-labelledby="20_author_bazzadp_website">
-              <svg width="18" height="18" role="img">
-                <title id="20_author_bazzadpwebsite">{{ website('Barry Pollard') }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-              </svg>
+            <a class="website" href="https://www.tunetheweb.com">
+              <img class="social-icon" src="/static/images/blog.png" alt="{{ website('Barry Pollard') }}" height="20" width="20" />
             </a>
           </span>
 

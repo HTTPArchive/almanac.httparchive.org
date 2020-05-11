@@ -46,7 +46,7 @@
         <% const byline = (prefix, suffix, contributor_type) => { 
             if (!chapter.metadata[contributor_type] || !chapter.metadata[contributor_type].length || chapter.metadata[contributor_type][0] == '') return;
 
-            let contributors = chapter.metadata[contributor_type].map(x => ebook.config.contributors[x].name);
+            let contributors = chapter.metadata[contributor_type].map(function(x) { return '<a href="#contributors-' + x + '">' + ebook.config.contributors[x].name + '</a>' });
             let contributors_sentence = contributors.join(', ').replace(/,(?=[^,]*$)/, ', {{ self.and() }}');
 
             return `<div class="byline ${contributor_type}">${prefix} ${contributors_sentence}${suffix}</div>`;
@@ -70,33 +70,28 @@
         <ul>
             <% for(let authordata of authors) { %>
                 <li>
-                    <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='<%= authordata.id %>') }}"><img class="avatar" alt="<%= authordata.name %> avatar" src="<%= authordata.avatar_url %>" height="200" width="200" loading="lazy" /></a>
+                    <a href="#contributors-<%= authordata.id %>"><img class="avatar" alt="<%= authordata.name %> avatar" src="<%= authordata.avatar_url %>" height="200" width="200" loading="lazy" /></a>
                     <div class="info">
-                        <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor='<%= authordata.id %>') }}"><span class="name"><%= authordata.name %></span></a>
+                        <a href="#contributors-<%= authordata.id %>"><span class="name"><%= authordata.name %></span></a>
                         <% if( authordata.twitter || authordata.github) { %>
                             <span class="social">
                                 <% if (authordata.twitter) { %>
-                                <a class="twitter" href="https://twitter.com/<%= authordata.twitter %>" aria-labelledby="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_twitter">
-                                  <svg width="18" height="18" role="img">
-                                    <title id="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_twitter">{{ onTwitter('<%= authordata.twitter %>') }}</title>
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-                                  </svg>
+                                <a class="twitter" href="https://twitter.com/<%= authordata.twitter %>">
+                                  <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('<%= authordata.twitter %>') }}" height="20" width="20">
                                 </a>
                                 <% } %>
                                 <% if (authordata.github) { %>
-                                <a class="github" href="https://github.com/<%= authordata.github %>" aria-labelledby="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_github">
+                                <a class="github" href="https://github.com/<%= authordata.github %>">
                                   <svg width="18" height="18" role="img">
                                     <title id="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_github">{{ onGitHub('<%= authordata.github %>') }}</title>
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
                                   </svg>
+                                  <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('<%= authordata.github %>') }}" height="20" width="20">
                                 </a>
                                 <% } %>
                                 <% if (authordata.website) { %>
-                                <a class="website" href="<%= authordata.website %>" aria-labelledby="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_website">
-                                  <svg width="18" height="18" role="img">
-                                    <title id="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>website">{{ website('<%= authordata.name %>') }}</title>
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-                                  </svg>
+                                <a class="website" href="<%= authordata.website %>">
+                                  <img class="social-icon" src="/static/images/blog.png" alt="{{ website('<%= authordata.name %>') }}" height="20" width="20">
                                 </a>
                                 <% } %>
                             </span>

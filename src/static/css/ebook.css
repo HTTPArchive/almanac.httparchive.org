@@ -1,3 +1,6 @@
+h2 {
+  font-size: 1.2em
+}
 
 .byline {
     font-style: italic;
@@ -6,6 +9,29 @@
 .byline.authors {
     font-weight: bold;
     border-bottom: none;
+}
+
+.table-wrap-container {
+  border: none;
+  box-shadow: 0 0 16px 0 grey;
+}
+
+.table-wrap {
+  display: block;
+  width: 1000px;
+  max-width: 100%;
+}
+
+/* We have some big tables that can't be force to break
+ * So we cheat and make them small enough to fit on a page
+ */
+figure table td {
+  font-size: 10px;
+  font-size: 0.625rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 #toc ul {
@@ -28,7 +54,6 @@
   margin: 20px 0;
 }
 
-
 .team {
   overflow: hidden;
   height: 100px;
@@ -36,13 +61,13 @@
 }
 
 .team img {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
 }
 
 
-.filter-container {
-  display: none;
+.contributors {
+  padding: 0;
 }
 
 .contributor-grid {
@@ -53,33 +78,26 @@
 }
 
 .contributor {
-  display: inline-block;
-  height: 300px;
-  text-align: center;
-  border: 1px solid;
-  border-radius: 15px;
-  padding: 24px 34px;
-  width: 225px;
-  margin: 10px;
-  vertical-align:top
+  margin-top: 20px;
+  width: 600px;
+  max-width: 100%;
+  vertical-align: top;
+  overflow: auto;
 }
 
 .contributor-avatar {
   border-radius: 50px;
   background-color: #f7f779;
   margin-bottom: 10px;
-  width: 100px;
+  margin-right: 10px;
+  width: 50px;
   height: auto;
   transition-duration: .3s;
+  float: left;
 }
 
-.contributor-name {
-  text-align: center;
-  font-style: italic;
-  font-size: 17px;
-  font-size: 1.0625rem;
-  margin-bottom: 10px;
-  margin-bottom: 0.588em;
+ul li.contributor::before {
+  content: "";
 }
 
 .contributor-social a {
@@ -89,7 +107,6 @@
 
 .contributor-teams {
   margin-top: 5px;
-  text-align: center;
 }
 
 .contributor-team {
@@ -112,6 +129,11 @@
 /* Join the team card */
 .contributor-join {
   display: none;
+}
+
+.social-icon {
+  height: 20px;
+  width: 20px;
 }
 
 @page {
@@ -151,6 +173,11 @@
     page-break-after: always;
   }  
   
+  #toc a {
+    display: table;
+    min-width: 500px;
+  }
+  
   #toc a::after {
     float: right;
     content: "pg. " target-counter(attr(href), page);
@@ -170,8 +197,11 @@
   figure img,
   figcaption {
     max-width: 100%;
-    max-height: 800px;
     text-align: center;
+  }
+
+  figure img {
+    max-height: 800px;
   }
 
   figcaption {
