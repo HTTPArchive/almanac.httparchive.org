@@ -112,7 +112,7 @@ def convertOldImagePath(folder):
     return '%s' % folder[3:].replace('HTTP_2','http2').replace('_', '-').lower()
 
 
-# Render the methodolgoy chapter and pull out the section. Also applies some
+# Render the methodology chapter and pull out the section. Also applies some
 # regexs to change links as appropriate.
 # It's a bit messy, but can't use get_template_attribute as doesn't take context
 # which is needed for the way our templates work. So it's either this, or just
@@ -126,8 +126,7 @@ def get_ebook_methodology(lang, year):
         methodology_maincontent = methodology_maincontent.group(1)
         methodology_maincontent = re.sub('href="#', 'href="#methodology-', methodology_maincontent)
         methodology_maincontent = re.sub('<h([0-6]) id="', '<h\\1 id="methodology-', methodology_maincontent)
-        methodology_maincontent = re.sub('href="\.\/', 'href="#chapter-', methodology_maincontent)
-        methodology_maincontent = re.sub('href="#chapter-contributors#', 'href="#contributors-', methodology_maincontent)
+        methodology_maincontent = re.sub('href="\.\/', 'href="#', methodology_maincontent)
         methodology_maincontent = re.sub('href="#([a-z0-9-]*)#', 'href="#\\1-', methodology_maincontent)
         return methodology_maincontent
     return False

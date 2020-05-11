@@ -1,5 +1,5 @@
-h2 {
-  font-size: 1.2em
+#title img {
+  margin: 0 auto;
 }
 
 .byline {
@@ -12,22 +12,17 @@ h2 {
 }
 
 .table-wrap-container {
-  border: none;
-  box-shadow: 0 0 16px 0 grey;
+  margin: 0;
 }
 
 .table-wrap {
   display: block;
-  width: 1000px;
   max-width: 100%;
+  text-align: center;
 }
 
-/* We have some big tables that can't be force to break
- * So we cheat and make them small enough to fit on a page
- */
-figure table td {
-  font-size: 10px;
-  font-size: 0.625rem;
+th, td {
+  padding: 5px;
 }
 
 tbody tr:nth-child(even) {
@@ -164,7 +159,35 @@ ul li.contributor::before {
   }
 }
 
+@page :first {
+
+  @bottom-left {
+    content: '';
+    border: none;
+  }
+  @bottom-right {
+    content: '';
+    border: none;
+  }
+  @top-right {
+    content: '';
+  }
+}
+
 @media print {
+  
+  :root {
+    font-size: 14px;
+  }
+
+  /* We have some big tables that can't be force to break
+   * So we cheat and make them small enough to fit on a page
+   */
+  figure table td, figure table td li, figure table td p {
+    font-size: 12px;
+    font-size: 0.85rem;
+  }
+
   .content {
     margin: 0;
   }
@@ -180,7 +203,7 @@ ul li.contributor::before {
   
   #toc a::after {
     float: right;
-    content: "pg. " target-counter(attr(href), page);
+    content: target-counter(attr(href), page);
   }
 
   section.chapter h1.title {

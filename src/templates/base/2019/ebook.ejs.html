@@ -1,18 +1,17 @@
 {% extends "%s/2019/base_ebook.html" % lang %}
 
-<!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
 {% set metadata = {} %}
 
 {% block chapters %}
 
     <% for (let part of ebook.parts) { %>
     <% for (let chapter of part.chapters) { %>
-    <section class="chapter" id="chapter-<%= chapter.metadata.chapter %>">
+    <section class="chapter" id="<%= chapter.metadata.chapter %>">
         <section class="body">
         <div class="subtitle">
             {{ self.part() }} <%= chapter.metadata.part_number %> {{ self.chapter() }} <%= chapter.metadata.chapter_number %>
         </div>
-        <h1 id="chapter-<%= chapter.metadata.chapter_number %>" class="title title-lg">
+        <h1 id="<%= chapter.metadata.chapter_number %>" class="title title-lg">
             <%= chapter.metadata.title %>
         </h1>
         

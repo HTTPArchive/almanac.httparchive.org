@@ -1,14 +1,13 @@
 {% extends "%s/2019/base_ebook.html" % lang %}
 
-<!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
 {% set metadata = {} %} {% block chapters %}
 
-<section class="chapter" id="chapter-javascript">
+<section class="chapter" id="javascript">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 1
     </div>
-    <h1 id="chapter-1" class="title title-lg">
+    <h1 id="1" class="title title-lg">
       JavaScript
     </h1>
 
@@ -32,7 +31,7 @@
     <h2 id="javascript-序章"><a href="#javascript-序章" class="anchor-link">序章</a></h2>
     <p>JavaScriptはウェブ上で、対話可能で複雑な体験を構築することを可能にするスクリプト言語です。これには、ユーザーの会話への応答、ページ上の動的コンテンツの更新などが含まれます。イベントが発生したときにウェブページがどのように振る舞うべきかに関係するものはすべて、JavaScriptが使用されています。</p>
     <p>言語の仕様自体は、世界中の開発者が利用している多くのコミュニティビルドのライブラリやフレームワークとともに、1995年に言語が作成されて以来、変化と進化を続けてきました。JavaScriptの実装やインタプリタも進歩を続けており、ブラウザだけでなく多くの環境で利用できるようになっています。</p>
-    <p><a href="https://httparchive.org/">HTTP Archive</a>は毎月<a href="https://httparchive.org/reports/state-of-the-web#numUrls">数百万ページ</a>をクロールし、<a href="https://webpagetest.org/">WebPageTest</a> のプライベートインスタンスを通して実行し、各ページのキー情報を保存しています（これについての詳細は<a href="#chapter-methodology">方法論</a> で学べます）。JavaScriptのコンテキストでは、HTTP Archiveはウェブ全体の言語の使用法に関する広範な情報を提供しています。この章では、これらの傾向の多くを集約して分析します。</p>
+    <p><a href="https://httparchive.org/">HTTP Archive</a>は毎月<a href="https://httparchive.org/reports/state-of-the-web#numUrls">数百万ページ</a>をクロールし、<a href="https://webpagetest.org/">WebPageTest</a> のプライベートインスタンスを通して実行し、各ページのキー情報を保存しています（これについての詳細は<a href="#methodology">方法論</a> で学べます）。JavaScriptのコンテキストでは、HTTP Archiveはウェブ全体の言語の使用法に関する広範な情報を提供しています。この章では、これらの傾向の多くを集約して分析します。</p>
     <h2 id="javascript-どのくらいのjavascriptを使っているのか？"><a href="#javascript-どのくらいのjavascriptを使っているのか？" class="anchor-link">どのくらいのJavaScriptを使っているのか？</a></h2>
     <p>JavaScriptは、私たちがブラウザに送るリソースの中で最もコストのかかるものでダウンロード、解析、コンパイル、そして最終的に実行されなければなりません。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、WebページでJavaScriptが処理される際には、<a href="https://v8.dev/blog/cost-of-javascript-2019">ダウンロードと実行が最もコストのかかる段階になっています</a>。</p>
     <p>ブラウザに小さなJavaScriptのバンドルを送ることは、ダウンロード時間を短縮し、ひいてはページパフォーマンスを向上させるための最良の方法です。しかし、実際にどのくらいのJavaScriptを使っているのでしょうか？</p>
@@ -73,7 +72,7 @@
       <figcaption id="javascript-fig4-caption"><a href="#javascript-fig-4" class="anchor-link">図 4.</a> reddit.comのJavaScript処理時間。<a href="https://v8.dev/blog/cost-of-javascript-2019">2019年のJavaScriptのコスト</a>より。</figcaption>
     </figure>
     <h3 id="javascript-リクエスト数"><a href="#javascript-リクエスト数" class="anchor-link">リクエスト数</a></h3>
-    <p>Webページで使用されているJavaScriptの量を分析しようとする場合、1つの方法として、送信されたリクエスト数を調べる価値があります。<a href="#chapter-http2">HTTP/2</a>では、複数の小さなチャンクを送信することで、より大きなモノリシックなバンドルを送信するよりもページの負荷を改善できます。また、デバイスクライアント別に分解してみると、どのくらいのリクエストがフェッチされているのでしょうか。</p>
+    <p>Webページで使用されているJavaScriptの量を分析しようとする場合、1つの方法として、送信されたリクエスト数を調べる価値があります。<a href="#http2">HTTP/2</a>では、複数の小さなチャンクを送信することで、より大きなモノリシックなバンドルを送信するよりもページの負荷を改善できます。また、デバイスクライアント別に分解してみると、どのくらいのリクエストがフェッチされているのでしょうか。</p>
     <figure id="javascript-fig-5">
       <a href="/static/images/2019/javascript/fig5.png">
         <img src="/static/images/2019/javascript/fig5.png" alt="図5. 総JavaScriptリクエスト数の分布。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&amp;format=interactive" loading="lazy" />
@@ -83,7 +82,7 @@
     </figure>
     <p>中央値では、デスクトップ用に19件、モバイル用に18件のリクエストが送信されています。</p>
     <h3 id="javascript-ファーストパーティ対サードパーティ"><a href="#javascript-ファーストパーティ対サードパーティ" class="anchor-link">ファーストパーティ対サードパーティ</a></h3>
-    <p>これまでに分析した結果のうち、全体のサイズとリクエスト数が考慮されていました。しかし、大多数のウェブサイトでは、取得して使用しているJavaScriptコードのかなりの部分が<a href="#chapter-third-parties">サードパーティ</a>のソースから来ています。</p>
+    <p>これまでに分析した結果のうち、全体のサイズとリクエスト数が考慮されていました。しかし、大多数のウェブサイトでは、取得して使用しているJavaScriptコードのかなりの部分が<a href="#third-parties">サードパーティ</a>のソースから来ています。</p>
     <p>サードパーティのJavaScriptは、外部のサードパーティのソースから取得できます。広告、分析、ソーシャルメディアの埋め込みなどは、サードパーティのスクリプトを取得するための一般的なユースケースです。そこで当然のことながら、次の質問に移ります。</p>
     <figure id="javascript-fig-6">
       <a href="/static/images/2019/javascript/fig6.png">
@@ -114,7 +113,7 @@
       <div id="javascript-fig9-description" class="visually-hidden">棒グラフは、p10パーセンタイルではファーストパーティとサードパーティのリクエストでそれぞれ0/17バイトの JavaScriptがモバイルでダウンロードされていることを示していますが、p25では6/54、p50では83/217、p75では189/477、p90では380/827です。</div>
       <figcaption id="javascript-fig9-caption"><a href="#javascript-fig-9" class="anchor-link">図 9.</a> モバイルでダウンロードされたJavaScriptの総ダウンロード数の分布。</figcaption>
     </figure>
-    <p>中央値では、モバイルとデスクトップの両方で、開発者が作成したファーストパーティのコードよりもサードパーティのコードの方が89％多く使用されています。これは、サードパーティのコードが肥大化の最大の要因の1つであることを明確に示しています。サードパーティの影響についての詳細は、<a href="#chapter-third-parties">"サードパーティ"</a>の章を参照してください。</p>
+    <p>中央値では、モバイルとデスクトップの両方で、開発者が作成したファーストパーティのコードよりもサードパーティのコードの方が89％多く使用されています。これは、サードパーティのコードが肥大化の最大の要因の1つであることを明確に示しています。サードパーティの影響についての詳細は、<a href="#third-parties">"サードパーティ"</a>の章を参照してください。</p>
     <h2 id="javascript-リソース圧縮"><a href="#javascript-リソース圧縮" class="anchor-link">リソース圧縮</a></h2>
     <p>ブラウザとサーバの会話のコンテキストで、リソース圧縮とは、データ圧縮アルゴリズムを使用して変更されたコードを指します。リソースは事前に静的に圧縮することも、ブラウザからの要求に応じて急ぎ圧縮することもでき、どちらの方法でも転送されるリソースサイズが大幅に削減されページパフォーマンスが向上します。</p>
     <p>テキスト圧縮アルゴリズムは複数ありますが、HTTPネットワークリクエストの圧縮（および解凍）に使われることが多いのはこの2つだけです。</p>
@@ -132,7 +131,7 @@
       <figcaption id="javascript-fig10-caption"><a href="#javascript-fig-10" class="anchor-link">図 10.</a> JavaScript リソースをgzipまたはbrotliで圧縮しているサイトの割合。</figcaption>
     </figure>
     <p>大多数のサイトではJavaScriptのリソースを圧縮しています。Gzipエンコーディングはサイトの〜64-67％で、Brotliは〜14％で使用されています。圧縮率はデスクトップとモバイルの両方でほぼ同じです。</p>
-    <p>圧縮に関するより深い分析については、<a href="#chapter-compression">"圧縮"</a>の章を参照してください。</p>
+    <p>圧縮に関するより深い分析については、<a href="#compression">"圧縮"</a>の章を参照してください。</p>
     <h2 id="javascript-オープンソースのライブラリとフレームワーク"><a href="#javascript-オープンソースのライブラリとフレームワーク" class="anchor-link">オープンソースのライブラリとフレームワーク</a></h2>
     <p>オープンソースコード、または誰でもアクセス、閲覧、修正が可能な寛容なライセンスを持つコード。小さなライブラリから、<a href="https://www.chromium.org/Home">Chromium</a>や<a href="https://www.openhub.net/p/firefox">Firefox</a>のようなブラウザ全体に至るまで、オープンソースコードはウェブ開発の世界で重要な役割を果たしています。JavaScriptの文脈では、開発者はオープンソースのツールに依存して、あらゆるタイプの機能をWebページに組み込んでいます。開発者が小さなユーティリティライブラリを使用するか、アプリケーション全体のアーキテクチャを決定する大規模なフレームワークを使用するかにかかわらずオープンソースのパッケージに依存することで、機能開発をより簡単かつ迅速にできます。では、どのJavaScriptオープンソースライブラリが最もよく使われているのでしょうか？</p>
     <figure id="javascript-fig-11">
@@ -306,7 +305,7 @@
     </figure>
     <p>同様に、スクリプトに<code>nomodule</code>属性を使用しているサイトはほとんどありません（0.50％-0.80％）。</p>
     <h2 id="javascript-プリロードとプリフェッチ"><a href="#javascript-プリロードとプリフェッチ" class="anchor-link">プリロードとプリフェッチ</a></h2>
-    <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Preloading_content">プリロード</a> と <a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Link_prefetching_FAQ">プリフェッチ</a>は<a href="#chapter-resource-hints">リソースヒント</a>であり、どのリソースをダウンロードする必要があるかを判断する際にブラウザを助けることができます。</p>
+    <p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Preloading_content">プリロード</a> と <a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Link_prefetching_FAQ">プリフェッチ</a>は<a href="#resource-hints">リソースヒント</a>であり、どのリソースをダウンロードする必要があるかを判断する際にブラウザを助けることができます。</p>
     <ul>
       <li><code>&lt;link rel="preload"&gt;</code>でリソースをプリロードすると、ブラウザはこのリソースをできるだけ早くダウンロードするように指示します。これは、ページの読み込みプロセスの後半に発見され、最後にダウンロードされてしまう重要なリソース（例えば、HTMLの下部にあるJavaScriptなど）に特に役立ちます。</li>
       <li><code>&lt;link rel="prefetch"&gt;</code>を使用することで、ブラウザが将来のナビゲーションに必要なリソースを取得するためのアイドル時間を利用できるようにします。</li>
@@ -402,12 +401,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-css">
+<section class="chapter" id="css">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 2
     </div>
-    <h1 id="chapter-2" class="title title-lg">
+    <h1 id="2" class="title title-lg">
       CSS
     </h1>
 
@@ -858,7 +857,7 @@
       <div id="css-fig35-description" class="visually-hidden">ページごとにロードされるスタイルシートのバイト数の分布。デスクトップページの10、25、50、75、および90パーセンタイルは、8、26、62、129、および240KBです。デスクトップ配布は、モバイル配布より5〜10KBわずかに高くなっています。</div>
       <figcaption id="css-fig35-caption"><a href="#css-fig-35" class="anchor-link">図 35.</a>ページごとにロードされるスタイルシートのバイト数（KB）の分布。</figcaption>
     </figure>
-    <p>Webサイトが各コンテンツタイプにロードするバイト数の詳細については、<a href="#chapter-page-weight">ページウェイト</a>の章を参照してください。</p>
+    <p>Webサイトが各コンテンツタイプにロードするバイト数の詳細については、<a href="#page-weight">ページウェイト</a>の章を参照してください。</p>
     <h3 id="css-ライブラリ"><a href="#css-ライブラリ" class="anchor-link">ライブラリ</a></h3>
     <p>新しいプロジェクトをスタートする事にCSSライブラリへ手を出すのは一般的で、人気があり、便利で強力です。あなたはライブラリに手を伸ばす人ではないかもしれませんが、私たちは2019年にウェブへ問い合わせて、どれが群を抜いているか調べました。彼らが私たちと同じように結果に驚くなら、開発者バブルがどれだけ小さいかを知る手がかりになると思います。物事は非常に人気がありますが、ウェブに問い合わせると、現実は少し異なります。</p>
     <figure id="css-fig-36">
@@ -1047,12 +1046,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-markup">
+<section class="chapter" id="markup">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 3
     </div>
-    <h1 id="chapter-3" class="title title-lg">
+    <h1 id="3" class="title title-lg">
       マークアップ
     </h1>
 
@@ -1077,7 +1076,7 @@
     <p>2005年にIan "Hixie" Hicksonはこれまでの研究に基づいた<a href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">マークアップデータの分析</a>を投稿しました。 この作業のほとんどは、クラス名を調査して、内々で開発者が採用しているセマンティクスを確認し、標準化する意味があるかの確認をすることが目的でした。 この研究の一部は、HTML5の新要素の参考として役に立ちました。</p>
     <p>14年すぎて、新しい見方をする時が来ました。 以降、<a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">カスタム要素(Custom Elements)</a>と<a href="https://extensiblewebmanifesto.org/">Extensible Web Manifesto</a>の導入により、開発者は要素そのものの空間を探し、標準化団体が<a href="https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html">辞書編集者のようになる</a>ことで、牛の通り道を舗装する(pave the cowpaths)よりよい方法を見つけることを推奨しています。 様々なものに使われる可能性があるCSSクラス名とは異なり、非標準の<em>要素</em>は作成者が要素であることを意識しているため、さらに確実なものとなります。</p>
     <p>
-      2019年7月の時点で、HTTP Archiveは、約440万のデスクトップホームページと約530万のモバイルホームページのDOMで使用されているすべての<em>要素</em>名の収集を開始しました。 <em>(<a href="#chapter-methodology">方法論</a>の詳細を御覧ください)</em>
+      2019年7月の時点で、HTTP Archiveは、約440万のデスクトップホームページと約530万のモバイルホームページのDOMで使用されているすべての<em>要素</em>名の収集を開始しました。 <em>(<a href="#methodology">方法論</a>の詳細を御覧ください)</em>
     </p>
     <p>このクロールの結果、<em>5,000種類を超える非標準の要素</em>が検出されたため、計測する要素の合計数を「トップ」（以下で説明）5,048種類に制限しました。</p>
     <h2 id="markup-方法論"><a href="#markup-方法論" class="anchor-link">方法論</a></h2>
@@ -1408,12 +1407,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-media">
+<section class="chapter" id="media">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 4
     </div>
-    <h1 id="chapter-4" class="title title-lg">
+    <h1 id="4" class="title title-lg">
       メディア
     </h1>
 
@@ -1445,7 +1444,7 @@
       <figcaption id="media-fig1-caption"><a href="#media-fig-1" class="anchor-link">図 1.</a> Webページのバイト：画像と動画対その他。</figcaption>
     </figure>
     <p>メディアは視覚体験には欠かせないものですが、この大量のバイトのインパクトには2つの副作用があります。</p>
-    <p>まず、これらのバイトをダウンロードするために必要なネットワークのオーバーヘッドは大きく、携帯電話や低速ネットワーク環境（コーヒーショップやUberに乗っているときのテザリングのような）では劇的にページの<a href="#chapter-performance">パフォーマンス</a>を遅くできます。画像はブラウザによる優先度の低いリクエストですが、ダウンロード中のCSSやJavaScriptを簡単にブロックできます。これ自体がページのレンダリングを遅らせることになります。しかし、画像コンテンツは、ページの準備ができたことをユーザーに視覚的に伝える手がかりとなります。そのため、画像コンテンツの転送が遅いと、ウェブページが遅いという印象を与えることがあります。</p>
+    <p>まず、これらのバイトをダウンロードするために必要なネットワークのオーバーヘッドは大きく、携帯電話や低速ネットワーク環境（コーヒーショップやUberに乗っているときのテザリングのような）では劇的にページの<a href="#performance">パフォーマンス</a>を遅くできます。画像はブラウザによる優先度の低いリクエストですが、ダウンロード中のCSSやJavaScriptを簡単にブロックできます。これ自体がページのレンダリングを遅らせることになります。しかし、画像コンテンツは、ページの準備ができたことをユーザーに視覚的に伝える手がかりとなります。そのため、画像コンテンツの転送が遅いと、ウェブページが遅いという印象を与えることがあります。</p>
     <p>2つ目の影響は、ユーザーへの金銭的なコストです。これはウェブサイトの所有者の負担ではなく、エンドユーザーの負担となるため、しばしば無視されがちな側面です。逸話として、<a href="https://twitter.com/yoavweiss/status/1195036487538003968?s=20">日本のような</a>という市場では、データの上限に達した月末近くは学生の購買意欲が低下し、ユーザーはビジュアルコンテンツを見ることができなくなるということが伝えられています。</p>
     <p>さらに、世界のさまざまな地域でこれらのウェブサイトを訪問するための金銭的コストは不釣り合いです。中央値と90パーセンタイルでは、画像のバイト数はそれぞれ1MBと1.9MBです。<a href="https://whatdoesmysitecost.com/#gniCost">WhatDoesMySiteCost.com</a>を使用すると、マダガスカルのユーザーの一人当たりの国民総所得（GNI）コストは90パーセンタイルでウェブページを1回読み込んだだけで、一日の総所得の2.6％になることがわかります。対照的に、ドイツでは、これは1日の総所得の0.3％になります。</p>
     <figure id="media-fig-2">
@@ -1507,7 +1506,7 @@
       <li><strong>遅延ローディング</strong> - 人が見たときだけコンテンツを転送する</li>
       <li><strong>アクセシビリティ</strong> - 全人類に一貫した体験を提供する</li>
     </ul>
-    <p class="note">これらの結果を解釈する際には注意が必要です。Web Almanacのためにクロールされたウェブページは、Chromeブラウザでクロールされました。これは、SafariやFirefoxに適したコンテンツネゴシエーションが、このデータセットでは表現されていない可能性があることを意味しています。例えば、JPEG2000、JPEG-XR、HEVC、HEICなどのファイル形式は、Chromeではネイティブにサポートされていないため、使用されていません。これは、ウェブにこれらの他の形式や経験が含まれていないことを意味するものではありません。同様に、Chrome には遅延読み込みのネイティブサポートがあります（v76 以降）が、他のブラウザではまだ利用できません。これらの注意事項については、<a href="#chapter-methodology">方法論</a>をご覧ください。</p>
+    <p class="note">これらの結果を解釈する際には注意が必要です。Web Almanacのためにクロールされたウェブページは、Chromeブラウザでクロールされました。これは、SafariやFirefoxに適したコンテンツネゴシエーションが、このデータセットでは表現されていない可能性があることを意味しています。例えば、JPEG2000、JPEG-XR、HEVC、HEICなどのファイル形式は、Chromeではネイティブにサポートされていないため、使用されていません。これは、ウェブにこれらの他の形式や経験が含まれていないことを意味するものではありません。同様に、Chrome には遅延読み込みのネイティブサポートがあります（v76 以降）が、他のブラウザではまだ利用できません。これらの注意事項については、<a href="#methodology">方法論</a>をご覧ください。</p>
     <p>画像を利用していないウェブページを見つけることは稀です。長年にわたり、ウェブ上でコンテンツを表示するためのさまざまなファイルフォーマットが登場してきましたが、それぞれが異なる問題に対処してきました。主に4つの普遍的な画像フォーマットがあります。JPEG、PNG、GIF、およびSVGです。さらに、Chromeではメディア パイプラインが強化され、5つ目の画像フォーマットのサポートが追加されました。WebP。他のブラウザでも同様にJPEG2000（Safari）、JPEG-XL（IEとEdge）、HEIC（SafariではWebViewのみ）のサポートが追加されています。</p>
     <p>それぞれのフォーマットにはそれぞれメリットがあり、Web上での理想的な使い方があります。とても簡単にまとめると以下のようになります。</p>
     <figure id="media-fig-6">
@@ -1905,12 +1904,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-third-parties">
+<section class="chapter" id="third-parties">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 5
     </div>
-    <h1 id="chapter-5" class="title title-lg">
+    <h1 id="5" class="title title-lg">
       サードパーティ
     </h1>
 
@@ -2169,7 +2168,7 @@
     <p>サードパーティ・プロバイダの残りの部分も、この使用パターンに当てはまる傾向がある。フロントエンド開発者が使用するためのjQueryなどのユーティリティライブラリのホスティングであれ、Cloudflareのエッジサーバーにキャッシュされているものであれ人気の高いGoogleCDNから提供されている一般的なフォントの膨大なライブラリであれサードパーティのコンテンツはサイトオーナーが心配することを1つ減らし、もしかしたら素晴らしい体験を提供する仕事を少しだけ楽にしてくれるもう1つの方法です。</p>
     <h2 id="third-parties-反響"><a href="#third-parties-反響" class="anchor-link">反響</a></h2>
     <h3 id="third-parties-パフォーマンス"><a href="#third-parties-パフォーマンス" class="anchor-link">パフォーマンス</a></h3>
-    <p>サードパーティコンテンツの<a href="#chapter-performance">パフォーマンス</a>の影響は、カテゴリ的に良い悪いはありません。善良な行為者と悪良な行為者が存在し、カテゴリーの種類によって影響力のレベルが異なります。</p>
+    <p>サードパーティコンテンツの<a href="#performance">パフォーマンス</a>の影響は、カテゴリ的に良い悪いはありません。善良な行為者と悪良な行為者が存在し、カテゴリーの種類によって影響力のレベルが異なります。</p>
     <p>良い点：サードパーティ製のフォントやスタイルシートの共有ユーティリティは、平均的にファーストパーティ製のものよりも効率的に提供されます。</p>
     <p>ユーティリティ、CDN、およびコンテンツの各カテゴリーは、サードパーティのパフォーマンスにおいて最も輝かしい存在です。これらのカテゴリは、ファーストパーティのソースから提供されるコンテンツと同じ種類のコンテンツの最適化されたバージョンを提供しています。GoogleFontsとTypekitはファーストパーティのフォントよりも平均的に小さい最適化されたフォントを提供し、CloudflareCDNはサイト所有者によっては開発モードで誤って提供されてしまう可能性のあるオープンソースのライブラリをミニ化したバージョンを提供し、GoogleMapsSDKはそうでなければ素朴に大きな画像として提供されてしまう複雑な地図を効率的に配信します。</p>
     <p>悪い：非常に小さなエンティティのセットは、ページ上の機能の狭いセットを実行するJavaScriptの実行時間の非常に大きなチャンクを表しています。</p>
@@ -2180,7 +2179,7 @@
     <p>ユーザーの行動を理解して分析することに対するサイト所有者の関心、それ自体は悪意のあるものではありませんが、ウェブ解析の普及した比較的裏方的な性質は有効な懸念を引き起こし、ヨーロッパの<a href="https://ja.wikipedia.org/wiki/EU%E4%B8%80%E8%88%AC%E3%83%87%E3%83%BC%E3%82%BF%E4%BF%9D%E8%AD%B7%E8%A6%8F%E5%89%87">GDPR</a>やカリフォルニア州の<a href="https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act">CCPA</a>などのプライバシー規制によりユーザー、企業、法律家は近年注目を集めています。開発者がユーザーデータを責任を持って扱い、ユーザーを尊重して扱い、収集されたデータが透明であることを保証することは、アナリティクスを最も人気のあるサードパーティのカテゴリーとして維持し、将来のユーザー価値を提供するためにユーザーの行動を分析するという共生的な性質を維持するための鍵となります。</p>
     <p>スクリプトの実行が上位に集中していることは、パフォーマンス向上の潜在的な影響を考えると素晴らしいことですが、プライバシーへの影響を考えるとあまり刺激的ではありません。ウェブ上の全スクリプト実行時間の29％は、GoogleやFacebookが所有するドメイン上のスクリプトだけです。これは、たった2つの事業体によって制御されているCPU時間の非常に大きな割合です。アナリティクスプロバイダーに適用されているのと同じプライバシー保護が、他の広告、ソーシャル、開発者向けユーティリティカテゴリにも適用されるようにすることが重要です。</p>
     <h3 id="third-parties-セキュリティ"><a href="#third-parties-セキュリティ" class="anchor-link">セキュリティ</a></h3>
-    <p>セキュリティのトピックについては <a href="#chapter-security">セキュリティ</a> の章で詳しく説明していますが、サイトに外部の依存関係を導入することによるセキュリティへの影響は、プライバシーへの懸念と密接に関連しています。第三者が任意のJavaScriptを実行できるようにすることは、あなたのページを完全に制御できます。スクリプトがDOMと<code>window</code>を制御できれば、すべてのことができるようになります。たとえコードにセキュリティ上の懸念がなくても、単一の障害点を導入できます<a href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">これは以前から潜在的な問題として認識されていました</a>。</p>
+    <p>セキュリティのトピックについては <a href="#security">セキュリティ</a> の章で詳しく説明していますが、サイトに外部の依存関係を導入することによるセキュリティへの影響は、プライバシーへの懸念と密接に関連しています。第三者が任意のJavaScriptを実行できるようにすることは、あなたのページを完全に制御できます。スクリプトがDOMと<code>window</code>を制御できれば、すべてのことができるようになります。たとえコードにセキュリティ上の懸念がなくても、単一の障害点を導入できます<a href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">これは以前から潜在的な問題として認識されていました</a>。</p>
     <p><a href="https://csswizardry.com/2019/05/self-host-your-static-assets/">サードパーティのコンテンツをセルフホスティングする</a> は、ここで述べた懸念事項のいくつかとその他の懸念事項に対応しています。さらに、ブラウザが <a href="https://chromestatus.com/feature/5730772021411840">HTTPキャッシュのパーティショニング</a> を増やしていることから、サードパーティから直接読み込むことのメリットはますます疑問視されています。おそらく多くのユースケースでサードパーティのコンテンツを利用するには、その影響を測定することが難しくなってもこの方法の方が良いでしょう。</p>
     <h2 id="third-parties-結論"><a href="#third-parties-結論" class="anchor-link">結論</a></h2>
     <p>サードパーティのコンテンツはどこにでもあります。これは驚くべきことでありません。ウェブの基本は、相互接続とリンクを可能にすることです。この章では、メインドメインから離れてホストされている資産という観点から、サードパーティコンテンツを調べてみました。もし、自己ホスト型のサードパーティ・コンテンツ（例えば、メイン・ドメインにホストされている一般的なオープンソース・ライブラリなど）を含めるとサードパーティの利用率はさらに高まっていたでしょう。</p>
@@ -2223,12 +2222,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-fonts">
+<section class="chapter" id="fonts">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 6
     </div>
-    <h1 id="chapter-6" class="title title-lg">
+    <h1 id="6" class="title title-lg">
       フォント
     </h1>
 
@@ -2253,11 +2252,11 @@
     <p>ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあってもウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。</p>
     <p>それらはウェブにとってプラスになるのか？　それらは害よりも多くの利益を提供しているか?　Web標準の牛道は、デフォルトでWebフォントの読み込みのベストプラクティスを奨励するために十分に舗装されているだろうか？　そうでない場合、何を変える必要があるのでしょうか？　今日のウェブ上でウェブフォントがどのように使用されているかを調べることで、これらの疑問に答えられるかどうかをデータ駆動型で覗いてみましょう。</p>
     <h2 id="fonts-そのウェブフォントはどこで手に入れたの？"><a href="#fonts-そのウェブフォントはどこで手に入れたの？" class="anchor-link">そのウェブフォントはどこで手に入れたの？</a></h2>
-    <p>最初の、そして最も顕著な問題は、パフォーマンスです。<a href="#chapter-performance">パフォーマンス</a>に特化した章がありますが、ここではフォント固有のパフォーマンスの問題について少し掘り下げてみましょう。</p>
+    <p>最初の、そして最も顕著な問題は、パフォーマンスです。<a href="#performance">パフォーマンス</a>に特化した章がありますが、ここではフォント固有のパフォーマンスの問題について少し掘り下げてみましょう。</p>
     <p>ホストされたWebフォントを使用すると、実装やメンテナンスが容易になりますが、セルフホスティングは最高のパフォーマンスを提供します。Webフォントはデフォルトで、Webフォントの読み込み中にテキストを非表示にする（<a href="https://css-tricks.com/fout-foit-foft/">Flash of Invisible Text</a>、またはFOITとしても知られています）ことを考えると、Webフォントのパフォーマンスは画像のような非ブロッキング資産よりも重要になる可能性があります。</p>
     <h3 id="fonts-フォントは同じホストでホストされているのか、それとも別のホストでホストされているのか？"><a href="#fonts-フォントは同じホストでホストされているのか、それとも別のホストでホストされているのか？" class="anchor-link">フォントは同じホストでホストされているのか、それとも別のホストでホストされているのか？</a></h3>
-    <p>サードパーティのホスティングに対するセルフホスティングの差別化は、<a href="#chapter-http2">HTTP/2</a>の世界ではますます重要になってきています。同一ホストのリクエストには、ウォーターフォール内の他の同一ホストのリクエストに対して優先順位をつける可能性が高いという大きな利点があります。</p>
-    <p>別のホストからウェブフォントを読み込む際のパフォーマンスコストを軽減するための推奨事項としては、<code>preconnect</code>、<code>dns-prefetch</code>、<code>preload</code> <a href="#chapter-resource-hints">リソースのヒント</a>の使用がありますが、優先度の高いウェブフォントは、ウェブフォントのパフォーマンスへの影響を最小限に抑えるため、同一ホストからのリクエストにすべきです。これは視覚的に、非常に目立つコンテンツやページの大部分を占める本文コピーで使用されるフォントへ対して特に重要です。</p>
+    <p>サードパーティのホスティングに対するセルフホスティングの差別化は、<a href="#http2">HTTP/2</a>の世界ではますます重要になってきています。同一ホストのリクエストには、ウォーターフォール内の他の同一ホストのリクエストに対して優先順位をつける可能性が高いという大きな利点があります。</p>
+    <p>別のホストからウェブフォントを読み込む際のパフォーマンスコストを軽減するための推奨事項としては、<code>preconnect</code>、<code>dns-prefetch</code>、<code>preload</code> <a href="#resource-hints">リソースのヒント</a>の使用がありますが、優先度の高いウェブフォントは、ウェブフォントのパフォーマンスへの影響を最小限に抑えるため、同一ホストからのリクエストにすべきです。これは視覚的に、非常に目立つコンテンツやページの大部分を占める本文コピーで使用されるフォントへ対して特に重要です。</p>
     <figure id="fonts-fig-1">
       <a href="/static/images/2019/fonts/fig1.png">
         <img src="/static/images/2019/fonts/fig1.png" alt="図1. 人気のあるウェブフォントのホスティング戦略。" aria-labelledby="fig1-description" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy" />
@@ -2407,7 +2406,7 @@
     <p>Google Fontsのドキュメントでは、Google Fonts CSSの<code>&lt;link&gt;</code>はページの<code>&lt;head&gt;</code>の最初の子として配置することを推奨しています。これは大きなお願いです！　実際、これは一般的でありません。全ページの半分のパーセント（約20,000ページ）しかこのアドバイスを受けていないので、これは一般的でありません。</p>
     <p>さらに言えば、ページが<code>preconnect</code>や<code>dns-prefetch</code>を<code>&lt;link&gt;</code>要素として使用している場合、これらはいずれにしてもGoogle Fonts CSSの前へ来ることになります。これらのリソースのヒントについては、続きを読んでください。</p>
     <h3 id="fonts-サードパーティホスティングの高速化"><a href="#fonts-サードパーティホスティングの高速化" class="anchor-link">サードパーティホスティングの高速化</a></h3>
-    <p>上述したように、サードパーティホストへのウェブフォント要求を高速化する超簡単な方法は、<code>preconnect</code><a href="#chapter-resource-hints">リソースヒント</a>を使用することです。</p>
+    <p>上述したように、サードパーティホストへのウェブフォント要求を高速化する超簡単な方法は、<code>preconnect</code><a href="#resource-hints">リソースヒント</a>を使用することです。</p>
     <figure id="fonts-fig-5">
       <div class="big-number">1.7%</div>
       <figcaption><a href="#fonts-fig-5" class="anchor-link">図 5.</a> モバイルページがウェブフォントホストにプリコネクティングしている割合。</figcaption>
@@ -2862,12 +2861,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-performance">
+<section class="chapter" id="performance">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 7
     </div>
-    <h1 id="chapter-7" class="title title-lg">
+    <h1 id="7" class="title title-lg">
       パフォーマンス
     </h1>
 
@@ -3120,12 +3119,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-security">
+<section class="chapter" id="security">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 8
     </div>
-    <h1 id="chapter-8" class="title title-lg">
+    <h1 id="8" class="title title-lg">
       セキュリティ
     </h1>
 
@@ -3166,8 +3165,8 @@
       <figcaption id="security-fig2-caption"><a href="#security-fig-2" class="anchor-link">図 2.</a> TLSプロトコルのバージョン使用状況</figcaption>
     </figure>
     <p>図2は、さまざまなプロトコルバージョンのサポートを示しています。TLSv1.0やTLSv1.1のようなレガシーなTLSバージョンの使用は最小限であり、ほとんどすべてのサポートはプロトコルの新しいバージョンであるTLSv1.2やTLSv1.3に対応しています。TLSv1.3はまだ標準としては非常に若いですが（TLSv1.3は<a href="https://tools.ietf.org/html/rfc8446">2018年8月</a>に正式に承認されたばかりです）、TLSを使用するリクエストの40％以上が最新バージョンを使用しています！　TLSv1.0やTLSv1.1のようなレガシーバージョンの使用はほとんどありません。</p>
-    <p>これは、多くのサイトが<a href="#chapter-third-parties">サードパーティコンテンツ</a>のために大きなプレイヤーからのリクエストを使用していることが原因であると考えられます。例えば、どのようなサイトでもGoogle Analytics、Google AdWords、またはGoogle FontsをロードしGoogleのような大規模なプレイヤーは通常新しいプロトコルのためのアーリーアダプターです。</p>
-    <p>ホームページだけを見て、それ以外のサイトのリクエストをすべて見ない場合、TLSの使用率は予想通りかなり高いですが、Wordpressのような<a href="#chapter-cms">CMS</a>サイトや<a href="#chapter-cdn">CDN</a>のようなサイトが原因である可能性は高いです。</p>
+    <p>これは、多くのサイトが<a href="#third-parties">サードパーティコンテンツ</a>のために大きなプレイヤーからのリクエストを使用していることが原因であると考えられます。例えば、どのようなサイトでもGoogle Analytics、Google AdWords、またはGoogle FontsをロードしGoogleのような大規模なプレイヤーは通常新しいプロトコルのためのアーリーアダプターです。</p>
+    <p>ホームページだけを見て、それ以外のサイトのリクエストをすべて見ない場合、TLSの使用率は予想通りかなり高いですが、Wordpressのような<a href="#cms">CMS</a>サイトや<a href="#cdn">CDN</a>のようなサイトが原因である可能性は高いです。</p>
     <figure id="security-fig-3">
       <a href="/static/images/2019/security/fig3.png">
         <img src="/static/images/2019/security/fig3.png" alt="図3. ホームページリクエストだけのTLSプロトコルバージョン使用状況。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="760" height="470" data-width="760" data-height="470" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive" loading="lazy" />
@@ -3175,7 +3174,7 @@
       <div id="security-fig3-description" class="visually-hidden">横棒グラフは、デスクトップとモバイルの類似したTLSの使用状況を示しています。デスクトップでは47%(モバイルでは43%)がTLSv1.2、デスクトップでは20.2%(モバイルでは19.7%)がTLSv1.3を使用しており、TLSv1.0の使用量はほとんどなく(1.1%～1.2%)、TLSv1.1の使用量はわずかです。</div>
       <figcaption id="security-fig3-caption"><a href="#security-fig-3" class="anchor-link">図 3.</a> ホームページリクエストだけのTLSプロトコルバージョン使用状況。</figcaption>
     </figure>
-    <p>一方で、Web Almanacが使用している<a href="#chapter-methodology">方法論</a>は、大規模サイトの利用状況を<em>過小評価</em>します。なぜなら、大規模サイトはそのサイト自体が現実世界ではより大きなインターネット・トラフィックを形成している可能性が高いにもかかわらず、これらの統計のために一度しかクロールされないからです。</p>
+    <p>一方で、Web Almanacが使用している<a href="#methodology">方法論</a>は、大規模サイトの利用状況を<em>過小評価</em>します。なぜなら、大規模サイトはそのサイト自体が現実世界ではより大きなインターネット・トラフィックを形成している可能性が高いにもかかわらず、これらの統計のために一度しかクロールされないからです。</p>
     <h3 id="security-証明書発行者"><a href="#security-証明書発行者" class="anchor-link">証明書発行者</a></h3>
     <p>もちろん、ウェブサイトでHTTPSを使用するには、認証局（CA）からの証明書が必要です。HTTPSの使用の増加に伴い、CAとその製品／サービスの使用も増加しています。ここでは、証明書を使用するTLSリクエストの量に基づいて、上位10社の証明書発行者を紹介します。</p>
     <figure id="security-fig-4">
@@ -3564,7 +3563,7 @@
         <figcapti on="">図11. <code>Referrer-Policy</code> 設定オプションの使用法。</figcapti>
       </p>
     </figure>
-    <p>この表はページによって設定された有効な値を示しており、このヘッダーを使用するページのうち、デスクトップでは99.75％、モバイルでは96.55％のページが有効なポリシーを設定していることがわかる。最も人気のある設定は<code>no-referrer-when-downgrade</code>で、これはユーザがHTTPSページからHTTPページに移動する際<code>Refererer</code>ヘッダが送信されないようにするものです。2番目に人気のある選択は<code>strict-origin-when-cross-origin</code>で、これはスキームのダウングレード(HTTPSからHTTPナビゲーション)時に情報が送信されるのを防ぎ、<code>Refererer</code>で情報が送信される際にはソースのオリジンのみを含み、完全なURLは含まれません(例えば、<code>https://www.example.com/page/</code>ではなく<code>https://www.example.com</code>)。その他の有効な設定の詳細は、<a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrerer Policy specification</a>に記載されています、<code>unsafe-url</code>の多用はさらなる調査を必要としますが、アナリティクスや広告ライブラリのような<a href="#chapter-third-parties">サードパーティ</a>コンポーネントである可能性が高いです。</p>
+    <p>この表はページによって設定された有効な値を示しており、このヘッダーを使用するページのうち、デスクトップでは99.75％、モバイルでは96.55％のページが有効なポリシーを設定していることがわかる。最も人気のある設定は<code>no-referrer-when-downgrade</code>で、これはユーザがHTTPSページからHTTPページに移動する際<code>Refererer</code>ヘッダが送信されないようにするものです。2番目に人気のある選択は<code>strict-origin-when-cross-origin</code>で、これはスキームのダウングレード(HTTPSからHTTPナビゲーション)時に情報が送信されるのを防ぎ、<code>Refererer</code>で情報が送信される際にはソースのオリジンのみを含み、完全なURLは含まれません(例えば、<code>https://www.example.com/page/</code>ではなく<code>https://www.example.com</code>)。その他の有効な設定の詳細は、<a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrerer Policy specification</a>に記載されています、<code>unsafe-url</code>の多用はさらなる調査を必要としますが、アナリティクスや広告ライブラリのような<a href="#third-parties">サードパーティ</a>コンポーネントである可能性が高いです。</p>
     <h3 id="security-機能方針"><a href="#security-機能方針" class="anchor-link">機能方針</a></h3>
     <p>
       ウェブプラットフォームがより強力で機能も豊富になるにつれ、攻撃者はこれらの新しいAPIを興味深い方法で悪用できるようになります。強力なAPIの悪用を制限するために、サイト運営者は<a href="https://w3c.github.io/webappsec-feature-policy/"><code>Feature-Policy</code></a
@@ -3775,7 +3774,7 @@
     <h3 id="security-secure">
       <a href="#security-secure" class="anchor-link"><code>Secure</code></a>
     </h3>
-    <p>クッキーの<code>Secure</code>フラグは、ブラウザに安全な(HTTPS)接続でのみクッキーを送信するように指示し、ホームページでセキュアフラグが設定されたクッキーを発行しているサイトはごくわずかな割合(デスクトップでは4.22％、モバイルでは3.68％)であることがわかります。この機能が比較的簡単に使用できることを考えると、これは憂慮すべきことです。繰り返しになりますが、HTTPとHTTPSの両方でデータを収集したいと考えている分析や広告<a href="#chapter-third-parties">サードパーティ</a>リクエストの高い使用率がこれらの数字を歪めている可能性が高く、認証クッキーのような他のクッキーでの使用状況を見るのは興味深い調査でしょう。</p>
+    <p>クッキーの<code>Secure</code>フラグは、ブラウザに安全な(HTTPS)接続でのみクッキーを送信するように指示し、ホームページでセキュアフラグが設定されたクッキーを発行しているサイトはごくわずかな割合(デスクトップでは4.22％、モバイルでは3.68％)であることがわかります。この機能が比較的簡単に使用できることを考えると、これは憂慮すべきことです。繰り返しになりますが、HTTPとHTTPSの両方でデータを収集したいと考えている分析や広告<a href="#third-parties">サードパーティ</a>リクエストの高い使用率がこれらの数字を歪めている可能性が高く、認証クッキーのような他のクッキーでの使用状況を見るのは興味深い調査でしょう。</p>
     <h3 id="security-httponly">
       <a href="#security-httponly" class="anchor-link"><code>HttpOnly</code></a>
     </h3>
@@ -3960,12 +3959,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-accessibility">
+<section class="chapter" id="accessibility">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 9
     </div>
-    <h1 id="chapter-9" class="title title-lg">
+    <h1 id="9" class="title title-lg">
       アクセシビリティ
     </h1>
 
@@ -4294,12 +4293,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-seo">
+<section class="chapter" id="seo">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 10
     </div>
-    <h1 id="chapter-10" class="title title-lg">
+    <h1 id="10" class="title title-lg">
       SEO
     </h1>
 
@@ -4326,7 +4325,7 @@
     <p>Web AlmanacのSEOの章の目的は、検索エンジンによるコンテンツのクロールとインデックス付け、そして最終的にWebサイトのパフォーマンスに影響を与えるWebのオンサイト要素を分析することです。 この章では、上位のWebサイトがユーザーおよび検索エンジンに優れた体験を提供するためにどれだけ十分な整備がされているか、そしてどのような作業を行うべきかについて見ていきます。</p>
     <p>この分析には、<a href="#methodology-lighthouse">Lighthouse</a>と、<a href="#methodology-chrome-ux-report">Chrome UX Report</a>、HTML要素の分析データが含まれています。 <code>&lt;title&gt;</code>要素、様々な種類のページ上リンク、コンテンツ、読み込み速度などによるSEOの基礎だけではなく、500万以上のインデクサビリティ、構造化データ、国際化、AMPなどSEOのさらなる技術的な面にも注目しています。</p>
     <p>カスタムメトリクスはこれまで公開されていなかった洞察を提供します。<code>hreflang</code>タグ、リッチリザルトの適格性、見出しタグの使用、さらにシングルページアプリケーションのアンカーによるナビゲーション要素などの採用と実装について断言できるようになりました。</p>
-    <p class="note">注意：データはホームページの分析のみに限定されており、サイト全体のクロールから集計はされていません。 そのようにした理由は、以降説明する多くの指標に影響を与えるため、特定の指標について言及する場合に関連する制限を追加しました。制限の詳しい内容は<a href="#chapter-methodology">Methodology</a>を御覧ください。</p>
+    <p class="note">注意：データはホームページの分析のみに限定されており、サイト全体のクロールから集計はされていません。 そのようにした理由は、以降説明する多くの指標に影響を与えるため、特定の指標について言及する場合に関連する制限を追加しました。制限の詳しい内容は<a href="#methodology">Methodology</a>を御覧ください。</p>
     <p>では、Webの現状と検索エンジンの使いやすさについての詳細をお読みください。</p>
     <h2 id="seo-基本"><a href="#seo-基本" class="anchor-link">基本</a></h2>
     <p>検索エンジンにはクロール、インデックスの作成、ランキングの３つの手順があります。 それには検索エンジンにとって、ページを見つけやすく、理解でき、search engine results pages(SERPs)（検索エンジンの結果ページ）を閲覧しているユーザーにとって価値が有り高品質なコンテンツが含まれている必要があります。</p>
@@ -4389,7 +4388,7 @@
     </figure>
     <p>メタディスクリプションの長さは<a href="https://moz.com/learn/seo/meta-description">155-160文字が推奨</a>となっていますが、デスクトップページの中央値ははそれより短い123文字となっています。 さらに興味深い事があります、モバイルのSERPはピクセル制限により従来よりも短かくなるにも関わらず、メタディスクリプションは一貫してデスクトップよりもモバイルが長くなっています。 この制約は最近拡張されたばかりなので、おそらく多くのWebサイトの所有者がモバイルの結果に対して、より長くて説明的なメタディスクリプションの影響を確認しているのでしょう。</p>
     <h4 id="seo-画像のaltタグ"><a href="#seo-画像のaltタグ" class="anchor-link">画像の<code>alt</code>タグ</a></h4>
-    <p>SEOとアクセシビリティのための<code>alt</code>テキストの重要性を考えたとき、モバイルページの46.71%でしか画像に<code>alt</code>属性が使われていないのを見ると理想とはほど遠い状況です。 これは、Web上の画像をユーザーにとってさらにアクセスしやすく、検索エンジンにとって理解しやすくすることに関しては、まだ改善する点が多く有ることを意味します。 この問題に対する詳細については<a href="#chapter-accessibility">アクセシビリティ</a>の章を御覧ください。</p>
+    <p>SEOとアクセシビリティのための<code>alt</code>テキストの重要性を考えたとき、モバイルページの46.71%でしか画像に<code>alt</code>属性が使われていないのを見ると理想とはほど遠い状況です。 これは、Web上の画像をユーザーにとってさらにアクセスしやすく、検索エンジンにとって理解しやすくすることに関しては、まだ改善する点が多く有ることを意味します。 この問題に対する詳細については<a href="#accessibility">アクセシビリティ</a>の章を御覧ください。</p>
     <h3 id="seo-インデクサビリティ"><a href="#seo-インデクサビリティ" class="anchor-link">インデクサビリティ</a></h3>
     <p>SERPでユーザーにページのコンテンツを表示するためには検索エンジンのクローラーがそのページにアクセスしてインデックスを作れるようにする必要があります。検索エンジンによるページのクロールとインデックス登録の機能に影響を与える要因には次の様なものがあります。</p>
     <ul>
@@ -4459,7 +4458,7 @@
       <figcaption id="seo-fig10-caption"><a href="#seo-fig-10" class="anchor-link">図 10.</a>デバイスタイプごとのユーザー体験パフォーマンスの分布。</figcaption>
     </figure>
     <p>デバイスごとに分けるとより鮮明になります、この画像ではタブレット(65%)、電話(58%)を示しています。</p>
-    <p>数字だけ見るとWebの速度には暗雲が立ち込めるように思えますが、良いニュースもあります。 それはSEOの専門家とツールがWebサイトの高速化のための技術課題に集中しているという点です。 Webパフォーマンスの状態については<a href="#chapter-performance">パフォーマンス</a>の章で詳しく知ることができます。</p>
+    <p>数字だけ見るとWebの速度には暗雲が立ち込めるように思えますが、良いニュースもあります。 それはSEOの専門家とツールがWebサイトの高速化のための技術課題に集中しているという点です。 Webパフォーマンスの状態については<a href="#performance">パフォーマンス</a>の章で詳しく知ることができます。</p>
     <h3 id="seo-構造化データ"><a href="#seo-構造化データ" class="anchor-link">構造化データ</a></h3>
     <p>構造化データを使うことでWebサイトの所有者は、<a href="https://en.wikipedia.org/wiki/JSON-LD">JSON-LD</a>スニペットや<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata">Microdata</a>などを加える事で、Webページに付属的なセマンティックデータを付与できます。 検索エンジンはこのデータを解析してこれらのページを深く理解し、マークアップにより検索結果に追加の関連情報を表示も行う事ができます。</p>
     <p>よく見る構造化データの種類には次のようなものがあります。</p>
@@ -4644,7 +4643,7 @@
     <p>HTTPSの重要性とその採用方法に関するGoogleの詳細な情報と手引については、<a href="https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https">HTTPSが重要な理由</a>をご覧ください。</p>
     <p>現在、デスクトップ用Webサイトの67.06%がHTTPS経由で配信されています。 Webサイトの半分以下がまだHTTPSに移行しておらず、ユーザーに安全でないページを提供しています。 これはかなりの数です。 移行は大変な作業になる場合が多く、そのために採用率が高くない可能性がありますが、HTTPSの移行に必要なのは大抵の場合SSL証明書と<code>.htaccess</code>ファイルの簡単な変更です。&nbsp; HTTPSに切り替えない理由はありません。</p>
     <p><a href="https://transparencyreport.google.com/https/overview">Googleの透明性レポート</a>では、Google以外の上位100ドメインでhttpsの採用率は90%であると報告されています(これは世界中のWebサイトトラフィックの25%です)。 この数字と私たちの数字の違いから、比較的小規模なサイトはゆるやかにHTTPSを採用しているという事実によって説明できます。</p>
-    <p>セキュリティの状態の詳細については、<a href="#chapter-security">セキュリティ</a>の章を御覧ください。</p>
+    <p>セキュリティの状態の詳細については、<a href="#security">セキュリティ</a>の章を御覧ください。</p>
     <h2 id="seo-結論"><a href="#seo-結論" class="anchor-link">結論</a></h2>
     <p>分析の結果、ほとんどのWebサイトでは基礎がしっかりしている事が判明しました。ホームページはクロール可能で、インデックス付け可能で、検索エンジンの結果ページでのランキングに必要な主要コンテンツが存在しています。 Webサイトを所有する人々がSEOを熟知しているわけではなく、ベストプラクティスの指針などは言うまでもありません。つまり、これらの非常に多くのサイトが基本をカバーしていることは非常に頼もしいことです。</p>
     <p>しかし、SEOとアクセシビリティのより高度な面のいくつかに関しては、予想していたよりも多くのサイトが注目していません。 サイトの速度については、特にモバイルのときに多くのWebサイトが苦労している要因の一つになっており、これは大きな問題です。なぜなら速度はUXの最大の要因の1つで、ランキングに影響を与える可能性があるためです。 HTTPS経由でまだ提供されていないWebサイトの数も、セキュリティの重要性を考慮してユーザーデータを安全に保つという点に問題があるように見えます。</p>
@@ -4740,12 +4739,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-pwa">
+<section class="chapter" id="pwa">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 11
     </div>
-    <h1 id="chapter-11" class="title title-lg">
+    <h1 id="11" class="title title-lg">
       PWA
     </h1>
 
@@ -4916,7 +4915,7 @@
     </p>
     <p>HTTP Archiveは、Service Workerを登録するWebサイトの12.71％が少なくとも1つのWorkboxライブラリを使用していることを示しています。この割合は、デスクトップ（14.36％）と比較してモバイルではわずかに低い割合（11.46％）で、デスクトップとモバイルでほぼ一貫しています。</p>
     <h2 id="pwa-結論"><a href="#pwa-結論" class="anchor-link">結論</a></h2>
-    <p>この章の統計は、PWAがまだごく一部のサイトでしか使用されていないことを示しています。ただし、この比較的少ない使用量はトラフィックのシェアがはるかに大きい人気のあるサイトによってもたらされ、ホームページ以外のページはこれをさらに使用する可能性があります。ページのロードの15％がService Workerを使用することがわかりました。特に<a href="#chapter-mobile-web">モバイル</a>向けの<a href="#chapter-performance">パフォーマンス</a>と<a href="#chapter-caching">キャッシング</a>のより優れた制御に与える利点は、使用が増え続けることを意味するはずです。</p>
+    <p>この章の統計は、PWAがまだごく一部のサイトでしか使用されていないことを示しています。ただし、この比較的少ない使用量はトラフィックのシェアがはるかに大きい人気のあるサイトによってもたらされ、ホームページ以外のページはこれをさらに使用する可能性があります。ページのロードの15％がService Workerを使用することがわかりました。特に<a href="#mobile-web">モバイル</a>向けの<a href="#performance">パフォーマンス</a>と<a href="#caching">キャッシング</a>のより優れた制御に与える利点は、使用が増え続けることを意味するはずです。</p>
     <p>PWAは、Chrome主導のテクノロジーと見なされることがよくあります。一部のプラットフォームでは一流のインストール可能性が遅れているものの、他のブラウザは、基盤となるテクノロジーのほとんどを実装するために最近大きく進歩しました。サポートがさらに普及するのを前向きに見る事ができます。 <a href="https://twitter.com/firt">Maximiliano Firtman</a>は、<a href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">Safari PWAサポートの説明</a>など、iOSでこれを追跡する素晴らしい仕事をしています。 AppleはPWAという用語をあまり使用せず、<a href="https://developer.apple.com/news/?id=09062019b">HTML5アプリはApp Storeの外部に最適配信されると明示的に述べています</a>。Microsoftは逆の方向に進み、<a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">アプリストアでPWAを奨励するだけでなく、Bing Webクローラーを介して検出されたPWAを自動的にショートリストに追加しました</a>。 Googleは、<a href="https://developers.google.com/web/updates/2019/02/using-twa">信頼できるWebアクティビティ</a>を介して、Google PlayストアにWebアプリをリストする方法も提供しています。</p>
     <p>PWAは、ネイティブプラットフォームやアプリストアではなくWeb上でビルドおよびリリースすることを希望する開発者に道を提供します。すべてのOSとブラウザがネイティブソフトウェアと完全に同等であるとは限りませんが、改善は継続され、おそらく2020年は展開が爆発的に増加する年になるでしょうか？</p>
   </section>
@@ -4985,12 +4984,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-mobile-web">
+<section class="chapter" id="mobile-web">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 12
     </div>
-    <h1 id="chapter-12" class="title title-lg">
+    <h1 id="12" class="title title-lg">
       モバイルウェブ
     </h1>
 
@@ -5098,7 +5097,7 @@
     <h3 id="mobile-web-パーミッションリクエスト"><a href="#mobile-web-パーミッションリクエスト" class="anchor-link">パーミッションリクエスト</a></h3>
     <p>ここ数年、ウェブサイトと「アプリストア」アプリの境界線が曖昧になり続けています。今でもユーザーのマイク、ビデオカメラ、ジオロケーション、通知を表示する機能などへのアクセスを要求する機能があります。</p>
     <p>これは開発者にとってさらに多くの機能を開放していますが、これらのパーミッションを不必要に要求するとユーザーがあなたのウェブページを警戒していると感じたままになり、不信感を抱くことになりかねません。これは私たちが常に「私の近くの劇場を探す」ボタンをタップするようなユーザーのジェスチャーにパーミッションリクエストを結びつけることをお勧めする理由です。</p>
-    <p>現在、1.52％のサイトがユーザーとの対話なしに許可を要求しています。このような低い数字を見ると励みになります。しかし、我々はホームページのみを分析できたことに注意することが重要です。そのため、例えば、コンテンツページ（例えばブログ記事）のみにパーミッションを要求しているサイトは考慮されていませんでした。詳細については、<a href="#chapter-methodology">方法論</a>のページを参照してください。</p>
+    <p>現在、1.52％のサイトがユーザーとの対話なしに許可を要求しています。このような低い数字を見ると励みになります。しかし、我々はホームページのみを分析できたことに注意することが重要です。そのため、例えば、コンテンツページ（例えばブログ記事）のみにパーミッションを要求しているサイトは考慮されていませんでした。詳細については、<a href="#methodology">方法論</a>のページを参照してください。</p>
     <h2 id="mobile-web-テキストの内容"><a href="#mobile-web-テキストの内容" class="anchor-link">テキストの内容</a></h2>
     <p>ウェブページの第一の目標は、ユーザーが興味を持ってくれるコンテンツを配信することです。このコンテンツは、YouTubeのビデオや画像の詰め合わせかもしれませんが、多くの場合、ページ上のテキストだけかもしれません。テキストコンテンツが訪問者にとって読みやすいものであることが非常に重要であることは言うまでもありません。なぜなら、訪問者が読めなければ何も残っておらず、離脱してしまうからです。テキストが読みやすいかどうかを確認するには、色のコントラストとフォントサイズの2つが重要です。</p>
     <h3 id="mobile-web-カラーコントラスト"><a href="#mobile-web-カラーコントラスト" class="anchor-link">カラーコントラスト</a></h3>
@@ -5199,7 +5198,7 @@
     <p>現在、入力フィールドを持つページのうち、この機能を利用しているのは29.62％に過ぎません。</p>
     <h3 id="mobile-web-パスワードフィールドへの貼り付け"><a href="#mobile-web-パスワードフィールドへの貼り付け" class="anchor-link">パスワードフィールドへの貼り付け</a></h3>
     <p>ユーザーがパスワードをコピーしてページに貼り付けることができるようにすることは、パスワードマネージャーを使用するための1つの方法です。パスワードマネージャーは、ユーザーが強力なパスワードを生成（記憶）し、ウェブページ上で自動的に記入するのに役立ちます。テストしたウェブページの0.02％だけがこの機能を無効にしています。</p>
-    <p class="note">注: これは非常に励みになりますが、<a href="#chapter-methodology">方法論</a>ではホームページのみをテストするという要件があるため、過小評価されている可能性があります。ログインページのような内部ページはテストされません。</p>
+    <p class="note">注: これは非常に励みになりますが、<a href="#methodology">方法論</a>ではホームページのみをテストするという要件があるため、過小評価されている可能性があります。ログインページのような内部ページはテストされません。</p>
     <h2 id="mobile-web-結論"><a href="#mobile-web-結論" class="anchor-link">結論</a></h2>
     <p>13年以上もの間、私たちは<em>モバイル</em>ウェブをデスクトップの単なる例外のように後回しにしてきました。しかし、今こそこの状況を変える時です。モバイル・ウェブは今や「<em>ウェブ</em>」であり、デスクトップはレガシーウェブになりつつあります。現在、世界では40億台のアクティブなスマートフォンが存在し、潜在的なユーザーの70％をカバーしています。デスクトップはどうでしょうか？　デスクトップは現在16億台となっており、毎月のウェブ利用の割合は少なくなっています。</p>
     <p>モバイルユーザーへの対応はどの程度できているのでしょうか？　当社の調査によると、71％のサイトがモバイル向けに何らかの努力をしているにもかかわらず、その目標を大きく下回っています。ページの読み込みに時間がかかり、JavaScriptの乱用により使用不能になり、テキストは読めないことが多く、リンクやボタンをクリックしてサイトにアクセスするとエラーが発生しやすくイライラさせられます。</p>
@@ -5265,12 +5264,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-ecommerce">
+<section class="chapter" id="ecommerce">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} III {{ self.chapter() }} 13
     </div>
-    <h1 id="chapter-13" class="title title-lg">
+    <h1 id="13" class="title title-lg">
       Eコマース
     </h1>
 
@@ -5302,10 +5301,10 @@
       <div class="big-number">10%</div>
       <figcaption><a href="#ecommerce-fig-1" class="anchor-link">図 1.</a> Eコマースプラットフォーム上のページの割合。</figcaption>
     </figure>
-    <p>この分析では、Eコマース・プラットフォーム上に構築されたサイトのみを検出できました。つまり、Amazon、JD、eBayなどの大規模なオンラインストアやマーケットプレイスはここには含まれていません。また、ここでのデータはホームページのみを対象としており、カテゴリ、商品、その他のページは含まれていないことにも注意してください。当社の<a href="#chapter-methodology">方法論</a>の詳細については、こちらをご覧ください。</p>
+    <p>この分析では、Eコマース・プラットフォーム上に構築されたサイトのみを検出できました。つまり、Amazon、JD、eBayなどの大規模なオンラインストアやマーケットプレイスはここには含まれていません。また、ここでのデータはホームページのみを対象としており、カテゴリ、商品、その他のページは含まれていないことにも注意してください。当社の<a href="#methodology">方法論</a>の詳細については、こちらをご覧ください。</p>
     <h2 id="ecommerce-プラットフォーム検出"><a href="#ecommerce-プラットフォーム検出" class="anchor-link">プラットフォーム検出</a></h2>
     <p>ページがEコマースプラットフォーム上にあるかどうかを確認するにはどうすればいいですか？</p>
-    <p>検出は<a href="#methodology-wappalyzer">Wappalyzer</a>で行います。Wappalyzerは、Webサイトで使用されている技術を発見するためのクロスプラットフォームユーティリティです。<a href="#chapter-cms">コンテンツ管理システム</a>、Eコマースプラットフォーム、Webサーバー、<a href="#chapter-javascript">JavaScript</a>フレームワーク、<a href="#chapter-third-parties">アナリティクス</a>ツールなどを検出します。</p>
+    <p>検出は<a href="#methodology-wappalyzer">Wappalyzer</a>で行います。Wappalyzerは、Webサイトで使用されている技術を発見するためのクロスプラットフォームユーティリティです。<a href="#cms">コンテンツ管理システム</a>、Eコマースプラットフォーム、Webサーバー、<a href="#javascript">JavaScript</a>フレームワーク、<a href="#third-parties">アナリティクス</a>ツールなどを検出します。</p>
     <p>ページ検出は常に信頼できるものでなく、サイトによっては自動攻撃から保護するために検出を明示的にブロックしている場合もあります。特定のEコマースプラットフォームを使用しているすべてのウェブサイトを捕捉することはできないかもしれませんが、検出したウェブサイトは実際にそのプラットフォームを使用していると確信しています。</p>
     <figure id="ecommerce-fig-2">
       <div class="table-wrap">
@@ -5419,7 +5418,7 @@
     </figure>
     <p>ウェブサイトのデスクトップ比率は全体的に若干高くなっていますが、一部の人気プラットフォーム（WooCommerce、PrestaShop、Shopwareを含む）では、実際にはデスクトップウェブサイトよりもモバイル性が高くなっています。</p>
     <h2 id="ecommerce-ページの重さと要望"><a href="#ecommerce-ページの重さと要望" class="anchor-link">ページの重さと要望</a></h2>
-    <p>Eコマースプラットフォームの<a href="#chapter-page-weight">ページの重さ</a>は、すべてのHTML、CSS、JavaScript、JSON、XML、画像、オーディオ、およびビデオを含んでいます。</p>
+    <p>Eコマースプラットフォームの<a href="#page-weight">ページの重さ</a>は、すべてのHTML、CSS、JavaScript、JSON、XML、画像、オーディオ、およびビデオを含んでいます。</p>
     <figure id="ecommerce-fig-7">
       <a href="/static/images/2019/ecommerce/fig7.png">
         <img src="/static/images/2019/ecommerce/fig7.png" alt="図7. Eコマースのページ重量の分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="363" data-width="600" data-height="363" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&amp;format=interactive" loading="lazy" />
@@ -5642,7 +5641,7 @@
       <figcaption>図10リソースタイプ別の1ページあたりのリクエストの分布のパーセンタイル。</figcaption>
     </figure>
     <p>Eコマースページでは、画像が最大のリクエスト数とバイト数の割合を占めています。デスクトップEコマースページの中央値には、1,514KB(1.5MB)の重さの画像が39枚含まれています。</p>
-    <p><a href="#chapter-javascript">JavaScript</a>リクエストの数は、より良いバンドル(および/または<a href="#chapter-http2">HTTP/2</a>多重化)によってパフォーマンスを向上する可能性があることを示しています。JavaScriptファイルの総バイト数はそれほど大きくありませんが、個別のリクエストが多くなっています。<a href="#http2-http2の採用">HTTP/2</a>の章によると、リクエストの40％以上はHTTP/2経由ではないそうです。同様に、CSSファイルは3番目にリクエスト数が多いですが、一般的には少ないです。CSSファイル(またはHTTP/2)をマージすることで、そのようなサイトのパフォーマンスを向上させることができるかもしれません。著者の経験では、多くのEコマースページでは、未使用のCSSとJavaScriptの割合が高い。<a href="#chapter-media">ビデオ</a> のリクエスト数は少ないかもしれませんが、(驚くことではありません) 特にペイロードが重いサイトでは、ページの重量の割合が高くなります。</p>
+    <p><a href="#javascript">JavaScript</a>リクエストの数は、より良いバンドル(および/または<a href="#http2">HTTP/2</a>多重化)によってパフォーマンスを向上する可能性があることを示しています。JavaScriptファイルの総バイト数はそれほど大きくありませんが、個別のリクエストが多くなっています。<a href="#http2-http2の採用">HTTP/2</a>の章によると、リクエストの40％以上はHTTP/2経由ではないそうです。同様に、CSSファイルは3番目にリクエスト数が多いですが、一般的には少ないです。CSSファイル(またはHTTP/2)をマージすることで、そのようなサイトのパフォーマンスを向上させることができるかもしれません。著者の経験では、多くのEコマースページでは、未使用のCSSとJavaScriptの割合が高い。<a href="#media">ビデオ</a> のリクエスト数は少ないかもしれませんが、(驚くことではありません) 特にペイロードが重いサイトでは、ページの重量の割合が高くなります。</p>
     <h2 id="ecommerce-htmlペイロードサイズ"><a href="#ecommerce-htmlペイロードサイズ" class="anchor-link">HTMLペイロードサイズ</a></h2>
     <figure id="ecommerce-fig-11">
       <a href="/static/images/2019/ecommerce/fig11.png">
@@ -5668,13 +5667,13 @@
       <div id="ecommerce-fig13-description" class="visually-hidden">Eコマースページあたりの画像リクエストの10、25、50、75、および90パーセンタイルの分布。中央値のデスクトップEコマースページでは、40件の画像リクエストが発生します。10パーセンタイルはリクエストが16件、25パーセンタイルは25件、75パーセンタイルは62件、90パーセンタイルは97件です。デスクトップの分布は、各パーセンタイルで2～10件のリクエストがモバイルよりもわずかに高くなっています。</div>
       <figcaption id="ecommerce-fig13-caption"><a href="#ecommerce-fig-13" class="anchor-link">図 13.</a> Eコマースページごとの画像リクエストの分布。</figcaption>
     </figure>
-    <p class="note">私たちのデータ収集<a href="#chapter-methodology">方法論</a>はクリックやスクロールなど、ページ上でのユーザー操作をシミュレートしていないため、遅延して読み込まれた画像はこれらの結果には表示されないことに注意してください。</p>
+    <p class="note">私たちのデータ収集<a href="#methodology">方法論</a>はクリックやスクロールなど、ページ上でのユーザー操作をシミュレートしていないため、遅延して読み込まれた画像はこれらの結果には表示されないことに注意してください。</p>
     <p>上記の図12と13で中央値のEコマースページには、モバイルでは37枚の画像と1,517KBの画像ペイロードがあり、デスクトップでは40枚の画像と1,524KBの画像ペイロードがあることを示しています。ホームページの10％は、90以上の画像と6MB近くの画像ペイロードを持っています！</p>
     <figure id="ecommerce-fig-14">
       <div class="big-number">1,517 KB</div>
       <figcaption><a href="#ecommerce-fig-14" class="anchor-link">図 14.</a> モバイルEコマースページあたりの画像バイト数の中央値。</figcaption>
     </figure>
-    <p>Eコマースページのかなりの割合で、大きな画像ペイロードを持ち、最初のロード時に大量の画像リクエストを行います。詳細については、HTTP Archiveの<a href="https://httparchive.org/reports/state-of-images">State of Images</a>レポート、および<a href="#chapter-media">media</a>と[page weight](./page weight)の章を参照してください。</p>
+    <p>Eコマースページのかなりの割合で、大きな画像ペイロードを持ち、最初のロード時に大量の画像リクエストを行います。詳細については、HTTP Archiveの<a href="https://httparchive.org/reports/state-of-images">State of Images</a>レポート、および<a href="#media">media</a>と[page weight](./page weight)の章を参照してください。</p>
     <p>ウェブサイトの所有者は、自分のサイトを最新のデバイスで見栄えの良いものにしたいと考えています。その結果、多くのサイトでは、画面の解像度やサイズに関係なく、すべてのユーザーに同じ高解像度の製品画像を配信しています。開発者は、異なるユーザーに可能な限り最高の画像を効率的に配信できるレスポンシブ技術に気づいていない（または使いたくない）かもしれません。高解像度の画像が必ずしもコンバージョン率を高めるとは限らないことを覚えておきましょう。逆に重い画像の使いすぎは、ページの速度に影響を与える可能性が高く、それによってコンバージョン率を低下させる可能性があります。サイトレビューやイベントでの著者の経験では、開発者やその他の関係者の中には、画像に遅延ローディングを使用することにSEOなどの懸念を持っている人もいます。</p>
     <p>一部のサイトがレスポンシブ画像技術や遅延読み込みを使用していない理由をよりよく理解するために、より多くの分析を行う必要があります。またEコマースプラットフォームが、ハイエンドのデバイスや接続性の良いサイトに美しい画像を確実に配信すると同時に、ローエンドのデバイスや接続性の悪いサイトにも最高の体験を提供できるようなガイダンスを提供する必要があります。</p>
     <h2 id="ecommerce-popular-image-formats"><a href="#ecommerce-popular-image-formats" class="anchor-link">Popular image formats</a></h2>
@@ -5757,7 +5756,7 @@
     <p>中央値までの各パーセンタイルでの画像のサイズがモバイルとデスクトップで似ていることを考えると、多くのサイトではビューポートごとに異なるサイズの画像を配信していない、言い換えればレスポンシブ画像技術を使用していないように思えます。モバイル向けに大きな画像が配信されている場合もありますが、これはデバイス検出や画面検出を使用しているサイトによって説明できるかもしれません（そうでないかもしれません！）。</p>
     <p>なぜ多くのサイトが（一見して）異なる画像サイズを異なるビューポートに配信していないのか、もっと研究する必要があります。</p>
     <h2 id="ecommerce-サードパーティからのリクエストとバイト"><a href="#ecommerce-サードパーティからのリクエストとバイト" class="anchor-link">サードパーティからのリクエストとバイト</a></h2>
-    <p>多くのウェブサイト、特にオンラインストアでは、分析、A/Bテスト、顧客行動追跡、広告、ソーシャルメディアのサポートなどのためにサードパーティのコードやコンテンツを大量にロードしています。サードパーティのコンテンツは、<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">パフォーマンスに大きな影響を与える</a>ことがあります。 <a href="https://twitter.com/patrickhulce">Patrick Hulce</a>の<a href="https://github.com/patrickhulce/third-party-web">サードパーティウェブツール</a>は、本レポートのサードパーティのリクエストを判断するために使用されており、これについては<a href="#chapter-third-parties">サードパーティ</a>の章で詳しく説明しています。</p>
+    <p>多くのウェブサイト、特にオンラインストアでは、分析、A/Bテスト、顧客行動追跡、広告、ソーシャルメディアのサポートなどのためにサードパーティのコードやコンテンツを大量にロードしています。サードパーティのコンテンツは、<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">パフォーマンスに大きな影響を与える</a>ことがあります。 <a href="https://twitter.com/patrickhulce">Patrick Hulce</a>の<a href="https://github.com/patrickhulce/third-party-web">サードパーティウェブツール</a>は、本レポートのサードパーティのリクエストを判断するために使用されており、これについては<a href="#third-parties">サードパーティ</a>の章で詳しく説明しています。</p>
     <figure id="ecommerce-fig-17">
       <a href="/static/images/2019/ecommerce/fig17.png">
         <img src="/static/images/2019/ecommerce/fig17.png" alt="図17. Eコマースページごとのサードパーティリクエストの分布。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&amp;format=interactive" loading="lazy" />
@@ -5804,7 +5803,7 @@
     <p>上位6つのEコマースプラットフォームはすべて、モバイルでのFCPがデスクトップよりも悪くなっています。FCPは、接続性だけでなく、デバイスの能力（処理能力、メモリなど）にも影響されることに注意してください。</p>
     <p>FCPがデスクトップよりもモバイルの方が悪い理由を明らかにする必要があります。原因は何でしょうか？　接続性やデバイスの能力、それとも何か他の要因でしょうか？</p>
     <h2 id="ecommerce-プログレッシブウェブアプリ（pwa）のスコア"><a href="#ecommerce-プログレッシブウェブアプリ（pwa）のスコア" class="anchor-link">プログレッシブウェブアプリ（PWA）のスコア</a></h2>
-    <p>Eコマースサイト以外のこのトピックの詳細については、<a href="#chapter-pwa">PWAの章</a>も参照してください。</p>
+    <p>Eコマースサイト以外のこのトピックの詳細については、<a href="#pwa">PWAの章</a>も参照してください。</p>
     <figure id="ecommerce-fig-22">
       <a href="/static/images/2019/ecommerce/fig22.png">
         <img src="/static/images/2019/ecommerce/fig22.png" alt="図22. モバイルEコマースページのLighthouse PWAカテゴリスコアの分布。" aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&amp;format=interactive" loading="lazy" />
@@ -5817,7 +5816,7 @@
     <p>PWA監査のうち少なくとも1つがnullスコアを取得した場合、LighthouseはPWAカテゴリ全体のスコアをnullアウトします。これは、モバイルページの2.32％が該当しました。</p>
     <p>明らかに、大多数のEコマースページは、ほとんどの<a href="https://developers.google.com/web/progressive-web-apps/checklist">PWA チェックリスト監査</a> に失敗しています。どの監査が失敗しているのか、なぜ失敗しているのかをよりよく理解するために、さらに分析を行う必要があります。</p>
     <h2 id="ecommerce-結論"><a href="#ecommerce-結論" class="anchor-link">結論</a></h2>
-    <p>Eコマースの使用法のこの包括的な研究はいくつかの興味深いデータを示し、また同じEコマースのプラットフォーム上に構築されたものの間でも、Eコマースのサイトの広いバリエーションを示しています。ここでは多くの詳細を説明しましたが、この分野ではもっと多くの分析が可能です。例えば、今年はアクセシビリティのスコアを取得していませんでした（それについての詳細は<a href="#chapter-accessibility">アクセシビリティの章</a>をチェックアウトしてください）。同様に、これらのメトリクスを地域別にセグメント化することも興味深いことでしょう。この調査では、Eコマース・プラットフォームのホームページ上で246の広告プロバイダーが検出されました。さらなる調査（おそらく来年のWeb Almanacに掲載されるかもしれません）では、Eコマースプラットフォーム上で広告を表示しているサイトの割合を計算できます。この調査ではWooCommerceが非常に高い数値を記録していますので、来年の調査では一部のホスティングプロバイダーがWooCommerceをインストールしているにもかかわらず、有効にしていないために数値が膨らんでいるのではないかという興味深い統計を見ることができます。</p>
+    <p>Eコマースの使用法のこの包括的な研究はいくつかの興味深いデータを示し、また同じEコマースのプラットフォーム上に構築されたものの間でも、Eコマースのサイトの広いバリエーションを示しています。ここでは多くの詳細を説明しましたが、この分野ではもっと多くの分析が可能です。例えば、今年はアクセシビリティのスコアを取得していませんでした（それについての詳細は<a href="#accessibility">アクセシビリティの章</a>をチェックアウトしてください）。同様に、これらのメトリクスを地域別にセグメント化することも興味深いことでしょう。この調査では、Eコマース・プラットフォームのホームページ上で246の広告プロバイダーが検出されました。さらなる調査（おそらく来年のWeb Almanacに掲載されるかもしれません）では、Eコマースプラットフォーム上で広告を表示しているサイトの割合を計算できます。この調査ではWooCommerceが非常に高い数値を記録していますので、来年の調査では一部のホスティングプロバイダーがWooCommerceをインストールしているにもかかわらず、有効にしていないために数値が膨らんでいるのではないかという興味深い統計を見ることができます。</p>
   </section>
 
   <section class="authors">
@@ -5884,12 +5883,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-cms">
+<section class="chapter" id="cms">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} III {{ self.chapter() }} 14
     </div>
-    <h1 id="chapter-14" class="title title-lg">
+    <h1 id="14" class="title title-lg">
       CMS
     </h1>
 
@@ -5935,7 +5934,7 @@
       <figcaption><a href="#cms-fig-2" class="anchor-link">図 2.</a> CMSを搭載したウェブページの割合。</figcaption>
     </figure>
     <p>今日では、ウェブページの40％以上が何らかのCMSプラットフォームを利用していることがわかります。40.01％がモバイル用で、39.61％がデスクトップ用です。</p>
-    <p>他にも<a href="https://w3techs.com/technologies/history_overview/content_management">W3Techs</a>のようにCMSプラットフォームの市場シェアを追跡しているデータセットがあり、CMSプラットフォームを利用したウェブページの割合が50％を超えていることを反映しています。さらに、これらのデータはCMSプラットフォームが成長しており、場合によっては前年比12％の成長率を記録しています。弊社の分析とW3Techの分析との乖離は、調査方法の違いによって説明できるかもしれません。我々の分析については、<a href="#chapter-methodology">方法論</a>のページを参照してください。</p>
+    <p>他にも<a href="https://w3techs.com/technologies/history_overview/content_management">W3Techs</a>のようにCMSプラットフォームの市場シェアを追跡しているデータセットがあり、CMSプラットフォームを利用したウェブページの割合が50％を超えていることを反映しています。さらに、これらのデータはCMSプラットフォームが成長しており、場合によっては前年比12％の成長率を記録しています。弊社の分析とW3Techの分析との乖離は、調査方法の違いによって説明できるかもしれません。我々の分析については、<a href="#methodology">方法論</a>のページを参照してください。</p>
     <p>要するに、多くのCMSプラットフォームが存在するということです。下の写真は、CMSの風景を縮小したものです。</p>
     <figure id="cms-fig-3">
       <a href="/static/images/2019/cms/cms-logos.png">
@@ -5981,7 +5980,7 @@
     <p>それぞれのCMSプラットフォームのニュアンスや特殊性とは無関係に、最終的な目標は、オープンウェブの広大なリーチを介してユーザーに提供するウェブページを出力することにあります。CMSを搭載したウェブページとそうでないウェブページの違いは、前者では最終的な結果の構築方法のほとんどをCMSプラットフォームが決定するのに対し後者ではそのような抽象化された層がなく、すべての決定は開発者が直接またはライブラリの設定を介して行うという点にあります。</p>
     <p>このセクションでは、CMS空間の現状を出力の特徴（使用された総リソース、画像統計など）の観点から簡単に見ていき、ウェブエコシステム全体とどのように比較するかを見ていきます。</p>
     <h3 id="cms-リソースの総使用量"><a href="#cms-リソースの総使用量" class="anchor-link">リソースの総使用量</a></h3>
-    <p>どんなWebサイトでも、その構成要素がCMSサイトを作っています。<a href="#chapter-markup">HTML</a>、<a href="#chapter-css">CSS</a>、<a href="#chapter-javascript">JavaScript</a>、<a href="#chapter-media">media</a>（画像や動画）です。CMSプラットフォームは、これらのリソースを統合してWeb体験を作成するための強力に合理化された管理機能をユーザーに提供します。これは、これらのアプリケーションの最も包括的な側面の1つですが、より広いウェブに悪影響を及ぼす可能性があります。</p>
+    <p>どんなWebサイトでも、その構成要素がCMSサイトを作っています。<a href="#markup">HTML</a>、<a href="#css">CSS</a>、<a href="#javascript">JavaScript</a>、<a href="#media">media</a>（画像や動画）です。CMSプラットフォームは、これらのリソースを統合してWeb体験を作成するための強力に合理化された管理機能をユーザーに提供します。これは、これらのアプリケーションの最も包括的な側面の1つですが、より広いウェブに悪影響を及ぼす可能性があります。</p>
     <figure id="cms-fig-6">
       <a href="/static/images/2019/cms/fig6.png">
         <img src="/static/images/2019/cms/fig6.png" alt="図6. CMSページ重量の分布。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&amp;format=interactive" loading="lazy" />
@@ -5998,7 +5997,7 @@
     </figure>
     <p>上の図6と7では、デスクトップCMSページの中央値は86のリソースと2.29MBの重さをロードしていることがわかります。モバイルページのリソース使用量は、83のリソースと2.25 MBと、それほど大きくはありません。</p>
     <p>中央値は、すべてのCMSページが上か下かの中間点を示しています。つまり全CMSページの半分はリクエスト数が少なく、重量が少ないのに対し、半分はリクエスト数が多く、重量が多いということになります。10パーセンタイルではモバイルとデスクトップのページはリクエスト数が40以下で重量が1MBですが、90パーセンタイルではリクエスト数が170以上で重量が7MBとなり、中央値の3倍近くになっています。</p>
-    <p>CMSのページは、ウェブ全体のページと比較してどうでしょうか？ <a href="#chapter-page-weight">ページ重量</a>の章では、リソースの使用量についてのデータを見つけることができます。中央値では、デスクトップページは74リクエストで1.9MBを読み込み、ウェブ上のモバイルページは69リクエストで1.7MBを読み込みます。中央値では、CMSページはこれを上回っています。また、CMSページは90パーセンタイルでウェブ上のリソースを上回っていますが、その差はもっと小さいです。要するに、CMSページは最も重いページの1つと考えられます。</p>
+    <p>CMSのページは、ウェブ全体のページと比較してどうでしょうか？ <a href="#page-weight">ページ重量</a>の章では、リソースの使用量についてのデータを見つけることができます。中央値では、デスクトップページは74リクエストで1.9MBを読み込み、ウェブ上のモバイルページは69リクエストで1.7MBを読み込みます。中央値では、CMSページはこれを上回っています。また、CMSページは90パーセンタイルでウェブ上のリソースを上回っていますが、その差はもっと小さいです。要するに、CMSページは最も重いページの1つと考えられます。</p>
     <figure id="cms-fig-8">
       <div class="table-wrap">
         <div class="table-wrap-container">
@@ -6109,7 +6108,7 @@
     <p>影響は必ずしもリクエスト数と相関するわけではなく、個々のリクエストにどれだけのデータが関連付けられているかということです。例えば、中央値で2つのリクエストしかない動画リソースの場合、1MB以上の負荷がかかります。マルチメディア体験には、スクリプトを使用してインタラクティブ性を統合したり、機能やデータを提供したりすることもあります。モバイルページとデスクトップページの両方で、これらは3番目に重いリソースです。</p>
     <p>CMSの経験がこれらのリソースで飽和状態にある中で、フロントエンドのウェブサイト訪問者に与える影響を考慮しなければなりません。さらに、モバイルとデスクトップのリソース使用量を比較すると、リクエストの量と重さにはほとんど差がありません。つまり、同じ量と重量のリソースがモバイルとデスクトップの両方のCMS体験を動かしていることになります。接続速度とモバイルデバイスの品質のばらつきは、<a href="https://medinathoughts.com/2017/12/03/the-perils-of-mobile-web-performance-part-iii/">もう一つの複雑さの層</a>を追加します。この章の後半では、CrUXのデータを使用して、CMS空間でのユーザー体験を評価します。</p>
     <h3 id="cms-サードパーティのリソース"><a href="#cms-サードパーティのリソース" class="anchor-link">サードパーティのリソース</a></h3>
-    <p>リソースの特定のサブセットを強調して、CMSの世界での影響を評価してみましょう。<a href="#chapter-third-parties">サードパーティ</a>リソースとは、送信先サイトのドメイン名やサーバーに属さないオリジンからのリソースです。画像、動画、スクリプト、その他のリソースタイプがあります。これらのリソースは、例えば<code>iframe</code>を埋め込むなど、組み合わせてパッケージ化されていることもあります。当社のデータによると、デスクトップとモバイルの両方で、サードパーティのリソースの中央値は近いことがわかります。</p>
+    <p>リソースの特定のサブセットを強調して、CMSの世界での影響を評価してみましょう。<a href="#third-parties">サードパーティ</a>リソースとは、送信先サイトのドメイン名やサーバーに属さないオリジンからのリソースです。画像、動画、スクリプト、その他のリソースタイプがあります。これらのリソースは、例えば<code>iframe</code>を埋め込むなど、組み合わせてパッケージ化されていることもあります。当社のデータによると、デスクトップとモバイルの両方で、サードパーティのリソースの中央値は近いことがわかります。</p>
     <p>モバイルCMSページのサードパーティリクエストの中央値は15、重さ264.72KBでデスクトップCMSページのサードパーティリクエストの中央値は16、重さ271.56KBです。(これは「ホスティング」の一部とみなされる3Pリソースを除いたものであることに注意)。</p>
     <figure id="cms-fig-10">
       <a href="/static/images/2019/cms/fig10.png">
@@ -6139,7 +6138,7 @@
       <div class="big-number">1,232 KB</div>
       <figcaption><a href="#cms-fig-13" class="anchor-link">図 13.</a> デスクトップCMSページあたりの画像の読み込みキロバイト数の中央値。</figcaption>
     </figure>
-    <p>先に図8と9を見て、画像はCMSページの総重量に大きく寄与していることを思い出してください。上記の図12と13は、デスクトップCMSページの中央値は31枚の画像とペイロードが1,232KBであるのに対し、モバイルCMSページの中央値は29枚の画像とペイロードが1,263KBであることを示しています。ここでも私たちは、デスクトップとモバイルの両方の経験のためのこれらのリソースの重量のための非常に近いマージンを持っています。<a href="#chapter-page-weight">ページ重量</a>の章では、さらに、画像リソースがウェブ全体で同じ量の画像を持つページの重量の中央値を十分に上回っていることが示されています。その結果は以下の通りです。CMSページは重い画像を供給している。</p>
+    <p>先に図8と9を見て、画像はCMSページの総重量に大きく寄与していることを思い出してください。上記の図12と13は、デスクトップCMSページの中央値は31枚の画像とペイロードが1,232KBであるのに対し、モバイルCMSページの中央値は29枚の画像とペイロードが1,263KBであることを示しています。ここでも私たちは、デスクトップとモバイルの両方の経験のためのこれらのリソースの重量のための非常に近いマージンを持っています。<a href="#page-weight">ページ重量</a>の章では、さらに、画像リソースがウェブ全体で同じ量の画像を持つページの重量の中央値を十分に上回っていることが示されています。その結果は以下の通りです。CMSページは重い画像を供給している。</p>
     <p>モバイルやデスクトップのCMSページでよく見られるフォーマットは何ですか？　当社のデータによると、平均的にJPG画像が最も人気のある画像フォーマットです。次いでPNG、GIFが続き、SVG、ICO、WebPのようなフォーマットが2％強、1％強と大きく後れを取っています。</p>
     <figure id="cms-fig-14">
       <a href="/static/images/2019/cms/fig14.png">
@@ -6311,7 +6310,7 @@
     <h3 id="cms-lighthouseスコア"><a href="#cms-lighthouseスコア" class="anchor-link">Lighthouseスコア</a></h3>
     <p><a href="#methodology-lighthouse">Lighthouse</a> は、開発者がWebサイトの品質を評価して改善するのに役立つように設計された、オープンソースの自動化ツールです。このツールの重要な側面の1つは、<strong>パフォーマンス</strong>、<strong>アクセシビリティ</strong>、<strong>プログレッシブなWebアプリ</strong>などの観点からWebサイトの状態を評価するための監査のセットを提供することです。この章の目的のために、2つの特定の監査カテゴリに興味を持っています。PWAとアクセシビリティです。</p>
     <h4 id="cms-pwa"><a href="#cms-pwa" class="anchor-link">PWA</a></h4>
-    <p><strong>プログレッシブウェブアプリ</strong> (<a href="#chapter-pwa">PWA</a>)という用語は、<a href="https://developers.google.com/web/progressive-web-apps#reliable">信頼できる</a>、<a href="https://developers.google.com/web/progressive-web-apps#fast">速い</a>、<a href="https://developers.google.com/web/progressive-web-apps#engaging">魅力的</a>とみなされるウェブベースのユーザー体験を指します。Lighthouseは、0（最悪）から1（最高）の間のPWAスコアを返す一連の監査を提供しています。これらの監査は、14の要件をリストアップした<a href="https://developers.google.com/web/progressive-web-apps/checklist#baseline">ベースラインPWAチェックリスト</a>に基づいています。Lighthouseは、14の要件のうち11の要件について自動監査を実施しています。残りの3つは手動でしかテストできません。11の自動PWA監査はそれぞれ均等に重み付けされているため、それぞれがPWAスコアに約9ポイント寄与します。</p>
+    <p><strong>プログレッシブウェブアプリ</strong> (<a href="#pwa">PWA</a>)という用語は、<a href="https://developers.google.com/web/progressive-web-apps#reliable">信頼できる</a>、<a href="https://developers.google.com/web/progressive-web-apps#fast">速い</a>、<a href="https://developers.google.com/web/progressive-web-apps#engaging">魅力的</a>とみなされるウェブベースのユーザー体験を指します。Lighthouseは、0（最悪）から1（最高）の間のPWAスコアを返す一連の監査を提供しています。これらの監査は、14の要件をリストアップした<a href="https://developers.google.com/web/progressive-web-apps/checklist#baseline">ベースラインPWAチェックリスト</a>に基づいています。Lighthouseは、14の要件のうち11の要件について自動監査を実施しています。残りの3つは手動でしかテストできません。11の自動PWA監査はそれぞれ均等に重み付けされているため、それぞれがPWAスコアに約9ポイント寄与します。</p>
     <figure id="cms-fig-20">
       <a href="/static/images/2019/cms/fig20.png">
         <img src="/static/images/2019/cms/fig20.png" alt="図20. CMSページのLighthouse PWAカテゴリスコアの分布。" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&amp;format=interactive" loading="lazy" />
@@ -6345,7 +6344,7 @@
     </figure>
     <p>現在、モバイルCMSのホームページで100％のパーフェクトスコアを獲得しているのは1.27％しかありません。上位のCMSの中では、Wixがモバイルページのアクセシビリティスコアの中央値が最も高く、トップに立っています。全体的に見て、これらの数字は、私たちの人口のかなりの部分がアクセスできないウェブサイトはどれだけ多いか（CMSによって駆動されているウェブのどれだけの部分か）を考えると悲惨なものとなります。デジタル体験が私たちの生活の多くの側面に影響を与えるのと同様に、この数字は私たちに <em>最初からアクセシブルなウェブ体験を構築すること</em> を奨励し、ウェブを包括的な空間にする作業を継続するための指令であるべきです。</p>
     <h2 id="cms-cmsイノベーション"><a href="#cms-cmsイノベーション" class="anchor-link">CMSイノベーション</a></h2>
-    <p>ここまでCMSエコシステムの現状をスナップショットで紹介してきましたが、この分野は進化しています。<a href="#chapter-performance">パフォーマンス</a>とユーザー体験の欠点に対処するため、実験的なフレームワークがCMSインフラストラクチャに統合されているのを目の当たりにしています。React.jsやGatsby.js、Next.jsなどの派生フレームワーク、Vue.jsの派生フレームワークであるNuxt.jsなどのライブラリやフレームワークが少しずつ採用されてきています。</p>
+    <p>ここまでCMSエコシステムの現状をスナップショットで紹介してきましたが、この分野は進化しています。<a href="#performance">パフォーマンス</a>とユーザー体験の欠点に対処するため、実験的なフレームワークがCMSインフラストラクチャに統合されているのを目の当たりにしています。React.jsやGatsby.js、Next.jsなどの派生フレームワーク、Vue.jsの派生フレームワークであるNuxt.jsなどのライブラリやフレームワークが少しずつ採用されてきています。</p>
     <figure id="cms-fig-24">
       <div class="table-wrap">
         <div class="table-wrap-container">
@@ -6552,12 +6551,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-compression">
+<section class="chapter" id="compression">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 15
     </div>
-    <h1 id="chapter-15" class="title title-lg">
+    <h1 id="15" class="title title-lg">
       圧縮
     </h1>
 
@@ -6579,13 +6578,13 @@
     <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="compression-序章"><a href="#compression-序章" class="anchor-link">序章</a></h2>
-    <p>HTTP圧縮は、元の表現よりも少ないビットを使用して情報をエンコードできる技術です。 Webコンテンツの配信に使用すると、Webサーバーはクライアントに送信されるデータ量を削減できます。これにより、クライアントの利用可能な帯域幅の効率が向上し、<a href="#chapter-page-weight">ページの重さ</a>が軽減され、<a href="#chapter-performance">Webパフォーマンス</a>が向上します。</p>
+    <p>HTTP圧縮は、元の表現よりも少ないビットを使用して情報をエンコードできる技術です。 Webコンテンツの配信に使用すると、Webサーバーはクライアントに送信されるデータ量を削減できます。これにより、クライアントの利用可能な帯域幅の効率が向上し、<a href="#page-weight">ページの重さ</a>が軽減され、<a href="#performance">Webパフォーマンス</a>が向上します。</p>
     <p>圧縮アルゴリズムは、多くの場合、非可逆または可逆に分類されます。</p>
     <ul>
       <li>非可逆圧縮アルゴリズムが使用される場合、プロセスは不可逆的であり、元のファイルを圧縮解除しても復元できません。これは一般に、一部のデータを失ってもリソースに重大な影響を与えない画像やビデオコンテンツなどのメディアリソースを圧縮するために使用されます。</li>
-      <li>ロスレス圧縮は完全に可逆的なプロセスであり、<a href="#chapter-markup">HTML</a>、<a href="#chapter-javascript">JavaScript</a>、<a href="#chapter-css">CSS</a>などのテキストベースのリソースを圧縮するために一般的に使用されます。</li>
+      <li>ロスレス圧縮は完全に可逆的なプロセスであり、<a href="#markup">HTML</a>、<a href="#javascript">JavaScript</a>、<a href="#css">CSS</a>などのテキストベースのリソースを圧縮するために一般的に使用されます。</li>
     </ul>
-    <p>この章では、テキストベースのコンテンツがWeb上でどのように圧縮されるかを検討します。非テキストベースのコンテンツの分析は、<a href="#chapter-media">メディア</a>の章の一部を形成します。</p>
+    <p>この章では、テキストベースのコンテンツがWeb上でどのように圧縮されるかを検討します。非テキストベースのコンテンツの分析は、<a href="#media">メディア</a>の章の一部を形成します。</p>
     <h2 id="compression-http圧縮の仕組み"><a href="#compression-http圧縮の仕組み" class="anchor-link">HTTP圧縮の仕組み</a></h2>
     <p>
       クライアントがHTTPリクエストを作成する場合、多くの場合、デコード可能な圧縮アルゴリズムを示す<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding"><code>Accept-Encoding</code></a
@@ -6763,7 +6762,7 @@
     </figure>
     <p>すべてのコンテンツタイプで、gzipは最も一般的な圧縮アルゴリズムです。新しいbrotli圧縮はあまり頻繁に使用されず、最も多く表示されるコンテンツタイプは<code>application/javascript</code>、<code>text/css</code>、<code>application/x-javascript</code>です。これは、CDNが通過するトラフィックにbrotli圧縮を自動的に適用することの原因である可能性があります。</p>
     <h2 id="compression-ファーストパーティとサードパーティの圧縮"><a href="#compression-ファーストパーティとサードパーティの圧縮" class="anchor-link">ファーストパーティとサードパーティの圧縮</a></h2>
-    <p><a href="#chapter-third-parties">サードパーティ</a>の章では、サードパーティとパフォーマンスへの影響について学びました。ファーストパーティとサードパーティの圧縮技術を比較すると、サードパーティのコンテンツはファーストパーティのコンテンツよりも圧縮される傾向であることがわかります。</p>
+    <p><a href="#third-parties">サードパーティ</a>の章では、サードパーティとパフォーマンスへの影響について学びました。ファーストパーティとサードパーティの圧縮技術を比較すると、サードパーティのコンテンツはファーストパーティのコンテンツよりも圧縮される傾向であることがわかります。</p>
     <p>さらに、サードパーティのコンテンツの場合、brotli圧縮の割合が高くなります。これは、GoogleやFacebookなど、通常brotliをサポートする大規模なサードパーティから提供されるリソースの数が原因である可能性と考えられます。</p>
     <figure id="compression-fig-9">
       <div class="table-wrap">
@@ -6885,12 +6884,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-caching">
+<section class="chapter" id="caching">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 16
     </div>
-    <h1 id="chapter-16" class="title title-lg">
+    <h1 id="16" class="title title-lg">
       キャッシング
     </h1>
 
@@ -6912,7 +6911,7 @@
     <div class="byline translators">{{ self.translated_by_before() }} <a href="#contributors-ksakae">Sakae Kotaro</a>{{ self.translated_by_after() }}</div>
 
     <h2 id="caching-導入"><a href="#caching-導入" class="anchor-link">導入</a></h2>
-    <p>キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする手法です。コストのかかるネットワークリクエストを回避することにより、<a href="#chapter-performance">パフォーマンス</a>が大幅に向上します。また、Webサイトのオリジンインフラストラクチャへのトラフィックを削減することで、アプリケーションの拡張にも役立ちます。「最速のリクエストはあなたがする必要のないものです」という古い格言があり、キャッシュはリクエストを行わなくて済むようにするための重要な方法の1つです。</p>
+    <p>キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする手法です。コストのかかるネットワークリクエストを回避することにより、<a href="#performance">パフォーマンス</a>が大幅に向上します。また、Webサイトのオリジンインフラストラクチャへのトラフィックを削減することで、アプリケーションの拡張にも役立ちます。「最速のリクエストはあなたがする必要のないものです」という古い格言があり、キャッシュはリクエストを行わなくて済むようにするための重要な方法の1つです。</p>
     <p>Webコンテンツのキャッシュには、3つの基本原則があります。可能な限りキャッシュする、できる限りキャッシュする、エンドユーザーのできるだけ近くでキャッシュする。</p>
     <p><strong>可能な限りキャッシュする。</strong> キャッシュできる量を検討する場合、レスポンスが静的か動的かを理解することが重要です。静的なレスポンスとして提供される要求は、リソースとそれを要求するユーザーとの間に1対多の関係があるため、通常はキャッシュ可能です。動的に生成されたコンテンツはより微妙である可能性があり、慎重に検討する必要があります。</p>
     <p><strong>できるだけ長くキャッシュする。</strong>リソースをキャッシュする時間の長さは、キャッシュされるコンテンツの機密性に大きく依存します。バージョン管理されたJavaScriptリソースは非常に長い時間キャッシュされる可能性がありますが、バージョン管理されていないリソースはユーザーが最新バージョンを取得できるように、より短いキャッシュ期間を必要とする場合があります。</p>
@@ -7228,7 +7227,7 @@
     <h2 id="caching-キャッシュttlとリソースの経過時間はどのように比較されますか？"><a href="#caching-キャッシュttlとリソースの経過時間はどのように比較されますか？" class="anchor-link">キャッシュTTLとリソースの経過時間はどのように比較されますか？</a></h2>
     <p>これまで、Webサーバーがキャッシュ可能なものをクライアントに通知する方法と、キャッシュされる期間について説明してきました。キャッシュルールを設計するときは、提供しているコンテンツの古さを理解することも重要です。</p>
     <p>キャッシュTTLを選択するときは、「これらのアセットをどのくらいの頻度で更新しますか？」と自問してください。そして「彼らのコンテンツの感度は何ですか？」。たとえば、ヒーローのイメージがたまに更新される場合、非常に長いTTLでキャッシュします。 JavaScriptリソースが頻繁に変更されることが予想される場合は、バージョン管理して長いTTLでキャッシュするか、短いTTLでキャッシュします。</p>
-    <p>以下のグラフは、コンテンツタイプごとのリソースの相対的な年を示しています。ここで、<a href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">より詳細な分析</a>を読むことができます。 HTMLは最も短い年齢のコンテンツタイプである傾向があり、伝統的にキャッシュ可能なリソース（<a href="#chapter-javascript">スクリプト</a>、<a href="#chapter-css">CSS</a>、および<a href="#chapter-fonts">フォント</a>）の非常に大きな割合が1年以上古いです！</p>
+    <p>以下のグラフは、コンテンツタイプごとのリソースの相対的な年を示しています。ここで、<a href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">より詳細な分析</a>を読むことができます。 HTMLは最も短い年齢のコンテンツタイプである傾向があり、伝統的にキャッシュ可能なリソース（<a href="#javascript">スクリプト</a>、<a href="#css">CSS</a>、および<a href="#fonts">フォント</a>）の非常に大きな割合が1年以上古いです！</p>
     <figure id="caching-fig-10">
       <a href="/static/images/2019/caching/ch16_fig8_resource_age.jpg">
         <img src="/static/images/2019/caching/ch16_fig8_resource_age.jpg" alt="図10.コンテンツタイプ別のリソース年分布。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="325" loading="lazy" />
@@ -7352,7 +7351,7 @@
       </li>
     </ul>
     <h2 id="caching-ヘッダーを変更"><a href="#caching-ヘッダーを変更" class="anchor-link">ヘッダーを変更</a></h2>
-    <p>キャッシングで最も重要な手順の1つは、要求されているリソースがキャッシュされているかどうかを判断することです。これは単純に見えるかもしれませんが、多くの場合、URLだけではこれを判断するには不十分です。たとえば同じURLのリクエストは、使用する<a href="#chapter-compression">圧縮</a>（gzip、brotliなど）が異なる場合や、モバイルの訪問者に合わせて変更および調整できます。</p>
+    <p>キャッシングで最も重要な手順の1つは、要求されているリソースがキャッシュされているかどうかを判断することです。これは単純に見えるかもしれませんが、多くの場合、URLだけではこれを判断するには不十分です。たとえば同じURLのリクエストは、使用する<a href="#compression">圧縮</a>（gzip、brotliなど）が異なる場合や、モバイルの訪問者に合わせて変更および調整できます。</p>
     <p>この問題を解決するために、クライアントはキャッシュされた各リソースに一意の識別子（キャッシュキー）を与えます。デフォルトでは、このキャッシュキーは単にリソースのURLですが、開発者はVaryヘッダーを使用して他の要素（圧縮方法など）を追加できます。</p>
     <p>Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュキーに追加するようにクライアントに指示します。この最も一般的な例は、<code>Vary：Accept-Encoding</code>です。これにより、<code>Accept-Encoding</code>リクエストヘッダー値（<code>gzip</code>、<code>br</code>、<code>deflate</code>など）のキャッシュエントリが別になります。</p>
     <p>別の一般的な値は<code>Vary：Accept-Encoding</code>、<code>User-Agent</code>です。これは、Accept-Encoding値と<code>User-Agent</code>文字列の両方によってキャッシュエントリを変更するようにクライアントに指示します。共有プロキシとCDNを扱う場合、<code>Accept-Encoding</code>以外の値を使用すると、キャッシュキーが弱められ、キャッシュから提供されるトラフィックの量が減少するため、問題発生の可能性があります。</p>
@@ -7395,7 +7394,7 @@
       <div id="caching-fig17-description" class="visually-hidden">2016年10月から2019年7月までのService Workerが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。</div>
       <figcaption id="caching-fig17-caption"><a href="#caching-fig-17" class="anchor-link">図 17.</a>Service Workerが制御するページの時系列。 (引用: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
     </figure>
-    <p>採用率はまだウェブサイトの1％を下回っていますが、2017年1月から着実に増加しています。<a href="#chapter-pwa">プログレッシブWebアプリ</a>の章では、人気サイトでの使用によりこのグラフが示唆するよりも多く使用されているという事実を含め、上記のグラフでは1回のみカウントされます。</p>
+    <p>採用率はまだウェブサイトの1％を下回っていますが、2017年1月から着実に増加しています。<a href="#pwa">プログレッシブWebアプリ</a>の章では、人気サイトでの使用によりこのグラフが示唆するよりも多く使用されているという事実を含め、上記のグラフでは1回のみカウントされます。</p>
     <p>次の表では、AppCacheとService Workerの使用状況の概要を確認できます。 32,292のWebサイトでService Workerが実装されていますが、1,867のサイトでは非推奨のAppCache機能が引き続き使用されています。</p>
     <figure id="caching-fig-18">
       <div class="table-wrap">
@@ -7534,12 +7533,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-cdn">
+<section class="chapter" id="cdn">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 17
     </div>
-    <h1 id="chapter-17" class="title title-lg">
+    <h1 id="17" class="title title-lg">
       CDN
     </h1>
 
@@ -7570,13 +7569,13 @@
     <ul>
       <li>CDNを使用して動的コンテンツ（ベースHTMLページ、API応答など）をプロキシすることにより、ブラウザーとCDN自身のネットワークとの間の遅延が短縮され、元の速度に戻ることができます。</li>
       <li>一部のCDNは、ページを最適化してダウンロードとレンダリングを高速化する変換を提供するか、画像を最適化して表示するデバイスに適したサイズ（画像の大きさとファイルサイズの両方）に変換します。</li>
-      <li><a href="#chapter-security">セキュリティ</a>の観点から、悪意のあるトラフィックとボットは要求がoriginへ到達する前にCDNによって除外される可能性があり、その幅広い顧客ベースによりCDNが新しい脅威をより早く発見して対応できることを意味します。</li>
+      <li><a href="#security">セキュリティ</a>の観点から、悪意のあるトラフィックとボットは要求がoriginへ到達する前にCDNによって除外される可能性があり、その幅広い顧客ベースによりCDNが新しい脅威をより早く発見して対応できることを意味します。</li>
       <li><a href="https://en.wikipedia.org/wiki/Edge_computing">エッジコンピューティング</a>の台頭により、サイトは訪問者の近くで独自のコードを実行できるようになりパフォーマンスが向上し、originの負荷が軽減されました。</li>
     </ul>
     <p>最後にCDNもまた、originサーバーがサポートしていない場合でもエッジからブラウザーまでHTTP/2、TLS1.3、またはIPv6を有効にできるなどoriginでの変更を必要とせずにサイトが新しいテクノロジーを採用できるようにします。</p>
     <h3 id="cdn-警告と免責事項"><a href="#cdn-警告と免責事項" class="anchor-link">警告と免責事項</a></h3>
     <p>他の観察研究と同様に、測定できる範囲と影響には限界があります。 Web AlmanacのCDN使用に関して収集された統計は、特定のCDNベンダーのパフォーマンスや有効性を意味するものではありません。</p>
-    <p>Web Almanacに使用されるテスト<a href="#chapter-methodology">方法</a>には多くの制限があります。これらには以下が含まれます。</p>
+    <p>Web Almanacに使用されるテスト<a href="#methodology">方法</a>には多くの制限があります。これらには以下が含まれます。</p>
     <ul>
       <li><strong>シミュレートされたネットワーク遅延</strong>：Web Almanacは、<a href="#methodology-webpagetest">トラフィックを総合的に形成する</a>専用ネットワーク接続を使用します。</li>
       <li><strong>単一の地理的場所</strong>：テストは<a href="https://httparchive.org/faq#how-is-the-data-gathered">単一のデータセンター</a>から実行されるため、多くのCDNベンダーの地理的分布をテストすることはできません。</li>
@@ -7594,7 +7593,7 @@
     <p>Web Almanacの将来のバージョンでは、CDNベンダー間のTLSおよびRTTの管理をより詳細に検討する予定です。興味深いのは、OCSP Staplingの影響、TLS暗号パフォーマンスの違いです。 CWND（TCP輻輳ウィンドウ）成長率、特にBBR v1、v2、従来のTCP Cubicの採用。</p>
     <h2 id="cdn-cdnの採用と使い方"><a href="#cdn-cdnの採用と使い方" class="anchor-link">CDNの採用と使い方</a></h2>
     <p>ウェブサイトの場合、CDNはプライマリドメイン（<code>www.shoesbycolin.com</code>）、サブドメインまたは兄弟ドメイン（<code>images.shoesbycolin.com</code>または<code>checkout.shoesbycolin.com</code>）、そして最後にサードパーティ（Google Analyticsなど）のパフォーマンスを改善できます。これらの各ユースケースにCDNを使用すると、さまざまな方法でパフォーマンスが向上します。</p>
-    <p>歴史的に、CDNは<a href="#chapter-css">CSS</a>、<a href="#chapter-javascript">JavaScript</a>、<a href="#chapter-media">画像</a>などの静的リソース専用に使用されていました。これらのリソースはおそらくバージョン管理され（パスに一意の番号を含む）、長期的にキャッシュされます。このようにして、ベースHTMLドメインと比較して、サブドメインまたは兄弟ドメインでのCDNの採用が増加することを期待する必要があります。従来のデザインパターンでは、<code>www.shoesbycolin.com</code>がデータセンター（又は<strong>origin</strong>）から直接HTMLを提供し、<code>static.shoesbycolin.com</code>がCDNを使用することを想定していました。</p>
+    <p>歴史的に、CDNは<a href="#css">CSS</a>、<a href="#javascript">JavaScript</a>、<a href="#media">画像</a>などの静的リソース専用に使用されていました。これらのリソースはおそらくバージョン管理され（パスに一意の番号を含む）、長期的にキャッシュされます。このようにして、ベースHTMLドメインと比較して、サブドメインまたは兄弟ドメインでのCDNの採用が増加することを期待する必要があります。従来のデザインパターンでは、<code>www.shoesbycolin.com</code>がデータセンター（又は<strong>origin</strong>）から直接HTMLを提供し、<code>static.shoesbycolin.com</code>がCDNを使用することを想定していました。</p>
     <figure id="cdn-fig-1">
       <a href="/static/images/2019/cdn/fig1.png">
         <img src="/static/images/2019/cdn/fig1.png" alt="図 1. CDN使用量 vs. originがホストするリソース" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&amp;format=interactive" loading="lazy" />
@@ -8574,10 +8573,10 @@
       <div id="cdn-fig18-description" class="visually-hidden">TLSが使用される場合、TLS1.3またはTLS1.2がすべてのCDNによって使用されることを示す棒グラフ。いくつかのCDNはTLS1.3を完全に採用していますが、一部ではTLS1.2が大部分を採用されています。</div>
       <figcaption id="cdn-fig18-caption"><a href="#cdn-fig-18" class="anchor-link">図 18.</a> CDNによるHTML TLSバージョン。</figcaption>
     </figure>
-    <p>TLSバージョンと暗号の詳細については、<a href="#chapter-security">セキュリティ</a>と<a href="#chapter-http2">HTTP/2</a>の章を参照してください。</p>
+    <p>TLSバージョンと暗号の詳細については、<a href="#security">セキュリティ</a>と<a href="#http2">HTTP/2</a>の章を参照してください。</p>
     <h2 id="cdn-http2採用"><a href="#cdn-http2採用" class="anchor-link">HTTP/2採用</a></h2>
     <p>RTT管理とTLSパフォーマンスの向上に加えて、CDNはHTTP/2やIPv6などの新しい標準も有効にします。ほとんどのCDNはHTTP/2のサポートを提供し、多くはまだ標準以下の開発HTTP/3の早期サポートを示していますが、これらの新機能を有効にするかどうかは依然としてWebサイト所有者に依存しています。変更管理のオーバーヘッドにもかかわらず、CDNから提供されるHTMLの大部分ではHTTP/2が有効になっています。</p>
-    <p>CDNのHTTP/2の採用率は70％を超えていますが、originページはほぼ27％です。同様にCDNのサブドメインリソースとサードパーティリソースでは90％以上がHTTP/2を採用していて、さらに高くなりますが、originインフラストラクチャから提供されるサードパーティリソースは31％しか採用されていません。 <a href="#chapter-http2">HTTP/2</a> のパフォーマンス向上およびその他の機能については、HTTP/2の章でさらに説明します。</p>
+    <p>CDNのHTTP/2の採用率は70％を超えていますが、originページはほぼ27％です。同様にCDNのサブドメインリソースとサードパーティリソースでは90％以上がHTTP/2を採用していて、さらに高くなりますが、originインフラストラクチャから提供されるサードパーティリソースは31％しか採用されていません。 <a href="#http2">HTTP/2</a> のパフォーマンス向上およびその他の機能については、HTTP/2の章でさらに説明します。</p>
     <p class="note">注：すべてのリクエストは、HTTP/2をサポートするChromeの最新バージョンで行われました。 HTTP/1.1のみが報告される場合、これは暗号化されていない（非TLS）サーバーまたはHTTP/2をサポートしないサーバーを示します。</p>
     <figure id="cdn-fig-19">
       <a href="/static/images/2019/cdn/fig19.png">
@@ -8995,7 +8994,7 @@
       <a href="#cdn-vary" class="anchor-link"><code>Vary</code></a>
     </h3>
     <p>Webサイトは、さまざまなHTTPヘッダーを使用して、ブラウザーとCDNのキャッシュ動作を制御できます。 最も一般的なのは、最新のものであることを保証するためにoriginへ戻る前に何かをキャッシュできる期間を具体的に決定する <code>Cache-Control</code>ヘッダーです。</p>
-    <p>別の便利なツールは、<code>Vary</code> HTTPヘッダーの使用です。このヘッダーは、キャッシュをフラグメント化する方法をCDNとブラウザーの両方に指示します。<code>Vary</code>ヘッダーにより、originはリソースの表現が複数あることを示すことができ、CDNは各バリエーションを個別にキャッシュする必要があります。最も一般的な例は<a href="#chapter-compression">圧縮</a>です。リソースを<code>Vary：Accept-Encoding</code>を使用すると、CDNは同じコンテンツを、非圧縮、gzip、Brotliなどの異なる形式でキャッシュできます。一部のCDNでは、使用可能なコピーを1つだけ保持するために、この圧縮を急いで実行します。同様に、この<code>Vary</code>ヘッダーは、コンテンツをキャッシュする方法と新しいコンテンツを要求するタイミングをブラウザーに指示します。</p>
+    <p>別の便利なツールは、<code>Vary</code> HTTPヘッダーの使用です。このヘッダーは、キャッシュをフラグメント化する方法をCDNとブラウザーの両方に指示します。<code>Vary</code>ヘッダーにより、originはリソースの表現が複数あることを示すことができ、CDNは各バリエーションを個別にキャッシュする必要があります。最も一般的な例は<a href="#compression">圧縮</a>です。リソースを<code>Vary：Accept-Encoding</code>を使用すると、CDNは同じコンテンツを、非圧縮、gzip、Brotliなどの異なる形式でキャッシュできます。一部のCDNでは、使用可能なコピーを1つだけ保持するために、この圧縮を急いで実行します。同様に、この<code>Vary</code>ヘッダーは、コンテンツをキャッシュする方法と新しいコンテンツを要求するタイミングをブラウザーに指示します。</p>
     <figure id="cdn-fig-24">
       <a href="/static/images/2019/cdn/use_of_vary_on_cdn.png">
         <img alt="CDNから提供されるHTMLコンテンツのVaryヘッダー値の内訳" src="/static/images/2019/cdn/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376" loading="lazy" />
@@ -9021,7 +9020,7 @@
     </h3>
     <p><code>Cache-Control</code>ヘッダーの<code>Surrogate-Control</code>、<code>s-maxage</code>、<code>pre-check</code>、<code>post-check</code>の値など、特にCDNまたは他のプロキシキャッシュを対象とする他のHTTPヘッダーがあります。一般的に、これらのヘッダーを使う事は少ないでしょう。</p>
     <p><code>Surrogate-Control</code>を使用すると、originはCDNに対してのみキャッシュルールを指定できます。CDNは応答を提供する前にヘッダーを削除する可能性が高いため、使用量が低いと驚くことはありません（いくつかのCDNもヘッダーを削除しているように見えました）。</p>
-    <p>一部のCDNは、リソースが古くなった場合にリソースを更新できるようにする方法として<code>pre-check</code>をサポートし、最大値<code>maxage</code>として<code>pre-check</code>をサポートしています。ほとんどのCDNでは、<code>pre-check</code>と<code>post-check</code>の使用率は1％未満でした。Yahoo!はこの例外であり、リクエストの約15％に<code>pre-check = 0、post-check = 0</code>がありました。残念ながら、これは積極的な使用ではなく、古いInternet Explorerパターンの名残です。この上のより多くの議論では、<a href="#chapter-caching">キャッシング</a>の章に記載されています。</p>
+    <p>一部のCDNは、リソースが古くなった場合にリソースを更新できるようにする方法として<code>pre-check</code>をサポートし、最大値<code>maxage</code>として<code>pre-check</code>をサポートしています。ほとんどのCDNでは、<code>pre-check</code>と<code>post-check</code>の使用率は1％未満でした。Yahoo!はこの例外であり、リクエストの約15％に<code>pre-check = 0、post-check = 0</code>がありました。残念ながら、これは積極的な使用ではなく、古いInternet Explorerパターンの名残です。この上のより多くの議論では、<a href="#caching">キャッシング</a>の章に記載されています。</p>
     <p><code>s-maxage</code>ディレクティブは、応答をキャッシュできる期間をプロキシに通知します。 Web Almanacデータセット全体で、jsDelivrは複数のリソースで高いレベルの使用が見られた唯一のCDNです。これは、jsDelivrのライブラリのパブリックCDNとしての役割を考えると驚くことではありません。他のCDNでの使用は、個々の顧客、たとえばその特定のCDNを使用するサードパーティのスクリプトまたはSaaSプロバイダーによって推進されているようです。</p>
     <figure id="cdn-fig-26">
       <a href="/static/images/2019/cdn/fig26.png">
@@ -9111,12 +9110,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-page-weight">
+<section class="chapter" id="page-weight">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 18
     </div>
-    <h1 id="chapter-18" class="title title-lg">
+    <h1 id="18" class="title title-lg">
       Page Weight
     </h1>
 
@@ -9972,12 +9971,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-resource-hints">
+<section class="chapter" id="resource-hints">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 19
     </div>
-    <h1 id="chapter-19" class="title title-lg">
+    <h1 id="19" class="title title-lg">
       リソースヒント
     </h1>
 
@@ -10082,7 +10081,7 @@
       <figcaption><a href="#resource-hints-fig-1" class="anchor-link">図 1.</a> リソースヒントの採用。</figcaption>
     </figure>
     <p><code>dns-prefetch</code>の相対的な人気は驚くに値しません。これはよく知られたAPIであり（<a href="https://caniuse.com/#feat=link-rel-dns-prefetch">2009</a>ではじめて登場しました）、すべての主要なブラウザでサポートされており、すべてのリソースヒントの中でもっとも「安価」なものです。<code>dns-prefetch</code>はDNSの検索を行うだけなので、データの消費量が非常に少なく、使用する上でのデメリットはほとんどありません。<code>dns-prefetch</code>はレイテンシの高い状況でもっとも有用である。</p>
-    <p>つまり、IE11以下をサポートする必要がないサイトであれば、<code>dns-prefetch</code>から<code>preconnect</code>に切り替えるのが良いでしょう。HTTPSがユビキタスな時代には、<code>preconnect</code>は安価でありながら、より大きな<a href="#chapter-performance">パフォーマンス</a>の向上をもたらします。<code>dns-prefetch</code>とは異なり、<code>preconnect</code>はDNSの検索だけでなく、TCPハンドシェイクとTLSネゴシエーションも開始することに注意してください。<a href="https://knowledge.digicert.com/solution/SO16297.html">証明書チェーン</a>はTLSネゴシエーション中にダウンロードされるが、これには通常数キロバイトのコストがかかります。</p>
+    <p>つまり、IE11以下をサポートする必要がないサイトであれば、<code>dns-prefetch</code>から<code>preconnect</code>に切り替えるのが良いでしょう。HTTPSがユビキタスな時代には、<code>preconnect</code>は安価でありながら、より大きな<a href="#performance">パフォーマンス</a>の向上をもたらします。<code>dns-prefetch</code>とは異なり、<code>preconnect</code>はDNSの検索だけでなく、TCPハンドシェイクとTLSネゴシエーションも開始することに注意してください。<a href="https://knowledge.digicert.com/solution/SO16297.html">証明書チェーン</a>はTLSネゴシエーション中にダウンロードされるが、これには通常数キロバイトのコストがかかります。</p>
     <p><code>prefetch</code>は3%のサイトで利用されており、もっとも広く利用されていないリソースヒントである。この使用率の低さは、<code>prefetch</code>が現在のページの読み込みよりも後続のページの読み込みを改善するのに有用であるという事実によって説明できるかもしれません。したがって、ランディングページの改善や最初に閲覧されたページのパフォーマンスを向上させることだけに焦点を当てているサイトでは、これは見過ごされてしまうだろう。</p>
     <figure id="resource-hints-fig-2">
       <div class="table-wrap">
@@ -10129,7 +10128,7 @@
     <h2 id="resource-hints-crossorigin属性">
       <a href="#resource-hints-crossorigin属性" class="anchor-link"><code>crossorigin</code>属性</a>
     </h2>
-    <p>ウェブ上に取り込まれるほとんどの「伝統的な」リソース（<a href="#chapter-media">images</a>、<a href="#chapter-css">stylesheets</a>、<a href="#chapter-javascript">script</a>）は、クロスオリジンリソース共有（<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/CORS">CORS</a>）を選択せずに取り込まれています。つまり、これらのリソースがクロスオリジンサーバーからフェッチされた場合、デフォルトでは同一オリジンポリシーのために、その内容をページで読み返すことができないということです。</p>
+    <p>ウェブ上に取り込まれるほとんどの「伝統的な」リソース（<a href="#media">images</a>、<a href="#css">stylesheets</a>、<a href="#javascript">script</a>）は、クロスオリジンリソース共有（<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/CORS">CORS</a>）を選択せずに取り込まれています。つまり、これらのリソースがクロスオリジンサーバーからフェッチされた場合、デフォルトでは同一オリジンポリシーのために、その内容をページで読み返すことができないということです。</p>
     <p>場合によっては、ページはコンテンツを読む必要がある場合、CORSを使用してリソースを取得するようにオプトインできます。CORSは、ブラウザが「許可を求める」ことを可能にし、それらのクロスオリジンリソースへのアクセスを取得します。</p>
     <p>新しいリソースタイプ（フォント、<code>fetch()</code> リクエスト、ESモジュールなど）では、ブラウザはデフォルトでCORSを使用してリソースをリクエストし、サーバーがアクセス許可を与えていない場合はリクエストを完全に失敗させます。</p>
     <figure id="resource-hints-fig-3">
@@ -10169,7 +10168,7 @@
     <h2 id="resource-hints-as属性">
       <a href="#resource-hints-as属性" class="anchor-link"><code>as</code>属性</a>
     </h2>
-    <p><code>as</code>は<code>preload</code>リソースヒントと一緒に使用されるべき属性で、要求されたリソースの種類（画像、スクリプト、スタイルなど）をブラウザに知らせるため使用されます。これにより、ブラウザがリクエストに正しく優先順位をつけ、正しいコンテンツセキュリティポリシー(<a href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>)を適用するのに役立ちます。CSPはHTTPヘッダーで表現される<a href="#chapter-security">セキュリティ</a>メカニズムです、信頼できるソースのセーフリストを宣言することで、XSSやその他の悪意のある攻撃の影響を緩和するのに役立ちます。</p>
+    <p><code>as</code>は<code>preload</code>リソースヒントと一緒に使用されるべき属性で、要求されたリソースの種類（画像、スクリプト、スタイルなど）をブラウザに知らせるため使用されます。これにより、ブラウザがリクエストに正しく優先順位をつけ、正しいコンテンツセキュリティポリシー(<a href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>)を適用するのに役立ちます。CSPはHTTPヘッダーで表現される<a href="#security">セキュリティ</a>メカニズムです、信頼できるソースのセーフリストを宣言することで、XSSやその他の悪意のある攻撃の影響を緩和するのに役立ちます。</p>
     <figure id="resource-hints-fig-4">
       <div class="big-number">88%</div>
       <figcaption><a href="#resource-hints-fig-4" class="anchor-link">図 4.</a> <code>as</code>属性を使用したリソースヒントインスタンスの割合。</figcaption>
@@ -10197,7 +10196,7 @@
     <p>優先度ヒントは<a href="https://www.chromestatus.com/feature/5273474901737472">実装</a>されており、Chromiumブラウザのバージョン70以降では機能フラグを使ってテストできます。まだ実験的な技術であることを考えると、0.04%のサイトでしか使用されていないのは当然のことです。</p>
     <p>優先度ヒントの85%は<code>&lt;img&gt;</code>タグを使用しています。優先度ヒントはほとんどがリソースの優先順位を下げるために使われます。使用率の72%は<code>importance="low"</code>で、28%は<code>importance="high"</code>です。</p>
     <h3 id="resource-hints-ネイティブの遅延ローディング"><a href="#resource-hints-ネイティブの遅延ローディング" class="anchor-link">ネイティブの遅延ローディング</a></h3>
-    <p><a href="https://web.dev/native-lazy-loading">ネイティブの遅延ローディング</a>は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの<a href="#chapter-javascript">JavaScript</a>ライブラリでしか実現できませんでした。</p>
+    <p><a href="https://web.dev/native-lazy-loading">ネイティブの遅延ローディング</a>は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの<a href="#javascript">JavaScript</a>ライブラリでしか実現できませんでした。</p>
     <p>ネイティブな遅延読み込みのためのAPIはこのようになります。<code>&lt;img src="cat.jpg" loading="lazy"&gt;</code>.</p>
     <p>ネイティブな遅延ローディングは、Chromium76以上をベースにしたブラウザで利用可能です。このAPIは発表が遅すぎて今年のWeb Almanacのデータセットには含まれていませんが、来年に向けて注目しておきたいものです。</p>
     <h2 id="resource-hints-結論"><a href="#resource-hints-結論" class="anchor-link">結論</a></h2>
@@ -10235,12 +10234,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-http2">
+<section class="chapter" id="http2">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 20
     </div>
-    <h1 id="chapter-20" class="title title-lg">
+    <h1 id="20" class="title title-lg">
       HTTP/2
     </h1>
 
@@ -10263,13 +10262,13 @@
 
     <h2 id="http2-導入"><a href="#http2-導入" class="anchor-link">導入</a></h2>
     <p>HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。</p>
-    <p>これは、<a href="#chapter-performance">Webパフォーマンス</a>に集中するスキルとリソースを持たない人でも、すぐにパフォーマンスの高いWebサイトにできます。しかし現実はほぼ相変わらずです。 2015年5月に<a href="https://tools.ietf.org/html/rfc7540">RFC 7540</a>で標準としてHTTP/2に正式承認されてから4年以上経過してます。ということでこの比較的新しい技術が現実の世界でどのように発展したかを見てみる良い機会です。</p>
+    <p>これは、<a href="#performance">Webパフォーマンス</a>に集中するスキルとリソースを持たない人でも、すぐにパフォーマンスの高いWebサイトにできます。しかし現実はほぼ相変わらずです。 2015年5月に<a href="https://tools.ietf.org/html/rfc7540">RFC 7540</a>で標準としてHTTP/2に正式承認されてから4年以上経過してます。ということでこの比較的新しい技術が現実の世界でどのように発展したかを見てみる良い機会です。</p>
     <h2 id="http2-http2とは"><a href="#http2-http2とは" class="anchor-link">HTTP/2とは?</a></h2>
     <p>この技術に精通していない人にとって、この章のメトリックと調査結果を最大限に活用するには、ちょっとした背景が役立ちます。最近までHTTPは常にテキストベースのプロトコルでした。 WebブラウザーのようなHTTPクライアントがサーバーへのTCP接続を開き、<code>GET /index.html</code>のようなHTTPコマンドを送信して、リソースを要求します。</p>
     <p>これは<em>HTTPヘッダー</em>を追加するためにHTTP/1.0で拡張されました、なのでリクエストに加えてブラウザの種類、理解できる形式などさまざまなメタデータを含めることができます。これらのHTTPヘッダーもテキストベースであり改行文字で区切られていました。サーバーは、要求とHTTPヘッダーを1行ずつ読み取ることで着信要求を解析し、サーバーは要求されている実際のリソースに加えて独自のHTTP応答ヘッダーで応答しました。</p>
     <p>プロトコルはシンプルに見えましたが制限もありました。 なぜならHTTPは本質的に同期であるため、HTTP要求が送信されると応答が返され、読み取られ、処理されるまでTCP接続全体が基本的に他のすべてに対して制限されていました。これは非常に効率が悪く、限られた形式の並列化を可能にするため複数のTCP接続（ブラウザーは通常6接続を使用）が必要でした。</p>
     <p>特に暗号化を設定するための追加の手順を必要とするHTTPSを使用する場合、TCP接続は設定と完全な効率を得るのに時間とリソースを要するため、それ自体に問題が生じます。 HTTP/1.1はこれを幾分改善し、後続のリクエストでTCP接続を再利用できるようにしましたが、それでも並列化の問題は解決しませんでした。</p>
-    <p>HTTPはテキストベースですが、実際、少なくとも生の形式でテキストを転送するために使用されることはほとんどありませんでした。 HTTPヘッダーがテキストのままであることは事実でしたが、ペイロード自体しばしばそうではありませんでした。 <a href="#chapter-markup">HTML</a>、<a href="#chapter-javascript">JS</a>、<a href="#chapter-css">CSS</a>などのテキストファイルは通常、gzip、brotliなどを使用してバイナリ形式に転送するため<a href="#chapter-compression">圧縮</a>されます。<a href="#chapter-media">画像や動画</a> などの非テキストファイルは、独自の形式で提供されます。その後、<a href="#chapter-security">セキュリティ</a>上の理由からメッセージ全体を暗号化するために、HTTPメッセージ全体がHTTPSでラップされることがよくあります。</p>
+    <p>HTTPはテキストベースですが、実際、少なくとも生の形式でテキストを転送するために使用されることはほとんどありませんでした。 HTTPヘッダーがテキストのままであることは事実でしたが、ペイロード自体しばしばそうではありませんでした。 <a href="#markup">HTML</a>、<a href="#javascript">JS</a>、<a href="#css">CSS</a>などのテキストファイルは通常、gzip、brotliなどを使用してバイナリ形式に転送するため<a href="#compression">圧縮</a>されます。<a href="#media">画像や動画</a> などの非テキストファイルは、独自の形式で提供されます。その後、<a href="#security">セキュリティ</a>上の理由からメッセージ全体を暗号化するために、HTTPメッセージ全体がHTTPSでラップされることがよくあります。</p>
     <p>そのため、Webは基本的に長い間テキストベースの転送から移行していましたが、HTTPは違いました。この停滞の1つの理由は、HTTPのようなユビキタスプロトコルに重大な変更を導入することが非常に困難だったためです（以前努力しましたが、失敗しました）。多くのルーター、ファイアウォール、およびその他のミドルボックスはHTTPを理解しており、HTTPへの大きな変更に対して過剰に反応します。それらをすべてアップグレードして新しいバージョンをサポートすることは、単に不可能でした。</p>
     <p>2009年に、Googleは<a href="https://www.chromium.org/spdy">SPDY</a>と呼ばれるテキストベースのHTTPに代わるものへ取り組んでいると発表しましたが、SPDYは非推奨です。これはHTTPメッセージがしばしばHTTPSで暗号化されるという事実を利用しており、メッセージが読み取られ途中で干渉されるのを防ぎます。</p>
     <p>Googleは、最も人気のあるブラウザー（Chrome）と最も人気のあるWebサイト（Google、YouTube、Gmailなど）の1つを制御しました。 Googleのアイデアは、HTTPメッセージを独自の形式にパックし、インターネット経由で送信してから反対側でアンパックすることでした。独自の形式であるSPDYは、テキストベースではなくバイナリベースでした。これにより、単一のTCP接続をより効率的に使用できるようになり、HTTP/1.1で標準になっていた6つの接続を開く必要がなくなりHTTP/1.1の主要なパフォーマンス問題の一部が解決しました。</p>
@@ -10294,7 +10293,7 @@
       <figcaption><a href="#http2-fig-1" class="anchor-link">図 1.</a> HTTP/2を使用できるグローバルユーザーの割合。</figcaption>
     </figure>
     <p>ただし、HTTP/2はHTTPSで事実上隠されていたため異なってました（少なくともブラウザーの使用例では）、ブラウザーとサーバーの両方がサポートしている限り、採用の障壁を取り除いてきました。ブラウザーのサポートはしばらく前から非常に強力であり、<em>最新バージョン</em>へ自動更新するブラウザーの出現により、<a href="https://caniuse.com/#feat=http2">グローバルユーザーの推定95％がHTTP/2をサポートするようになりました</a>。</p>
-    <p>私たちの分析は、Chromeブラウザで約500万の上位デスクトップおよびモバイルWebサイトをテストするHTTP Archiveから提供されています。(<a href="#chapter-methodology">方法論</a>の詳細をご覧ください。)</p>
+    <p>私たちの分析は、Chromeブラウザで約500万の上位デスクトップおよびモバイルWebサイトをテストするHTTP Archiveから提供されています。(<a href="#methodology">方法論</a>の詳細をご覧ください。)</p>
     <figure id="http2-fig-2">
       <a href="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png">
         <img alt="図2.要求によるHTTP/2の使用。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png" width="600" height="321" loading="lazy" />
@@ -10521,7 +10520,7 @@
       </div>
       <figcaption><a href="#http2-fig-6" class="anchor-link">図 6.</a> HTTP/2に使用されるサーバー。</figcaption>
     </figure>
-    <p>nginxは、最新バージョンへのインストールまたはアップグレードを容易にするパッケージリポジトリを提供しているため、ここをリードしていることについて驚くことではありません。 cloudflareは最も人気のある<a href="#chapter-cdn">CDN</a>で、デフォルトでHTTP/2を有効にしているため、HTTP/2サイトの大部分をホストしていることについて驚くことはありません。ちなみに、cloudflareは、Webサーバーとして<a href="https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/">大幅にカスタマイズ</a>されたバージョンのnginxを使用しています。その後、Apacheの使用率は約20％であり、次に何が隠されているかを選択するサーバー、LiteSpeed、IIS、Google Servlet Engine、nginxベースのopenrestyなどの小さなプレイヤーが続きます。</p>
+    <p>nginxは、最新バージョンへのインストールまたはアップグレードを容易にするパッケージリポジトリを提供しているため、ここをリードしていることについて驚くことではありません。 cloudflareは最も人気のある<a href="#cdn">CDN</a>で、デフォルトでHTTP/2を有効にしているため、HTTP/2サイトの大部分をホストしていることについて驚くことはありません。ちなみに、cloudflareは、Webサーバーとして<a href="https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/">大幅にカスタマイズ</a>されたバージョンのnginxを使用しています。その後、Apacheの使用率は約20％であり、次に何が隠されているかを選択するサーバー、LiteSpeed、IIS、Google Servlet Engine、nginxベースのopenrestyなどの小さなプレイヤーが続きます。</p>
     <p>さらに興味深いのは、HTTP/2をサポート<em>しない</em>サーバーです。</p>
     <figure id="http2-fig-7">
       <div class="table-wrap">
@@ -10666,7 +10665,7 @@
     <p>ApacheとIISがインストールベースのHTTP/2サポートで1​​8％、14％と遅れを取っていることは明らかです。これは（少なくとも部分的に）アップグレードがより困難であるためです。多くのサーバーがこのサポートを簡単に取得するには、多くの場合、OSの完全なアップグレードが必要です。新しいバージョンのOSが標準になると、これが簡単になることを願っています。</p>
     <p>ここで、HTTP/2実装に関するコメントはありません（<a href="https://twitter.com/tunetheweb/status/988196156697169920?s=20">Apacheが最高の実装の1つであると思います</a>）が、これらの各サーバーでHTTP/2を有効にすることの容易さ、またはその欠如に関する詳細です。</p>
     <h2 id="http2-http2の影響"><a href="#http2-http2の影響" class="anchor-link">HTTP/2の影響</a></h2>
-    <p>HTTP/2の影響は、特にHTTP Archive<a href="#chapter-methodology">方法論</a>を使用して測定するのがはるかに困難です。理想的には、サイトをHTTP/1.1とHTTP/2の両方でクロールし、その差を測定する必要がありますがここで調査している統計では不可能です。さらに、平均的なHTTP/2サイトが平均的なHTTP/1.1サイトよりも高速であるかどうかを測定すると、ここで説明するよりも徹底的な調査を必要とする他の変数が多くなりすぎます。</p>
+    <p>HTTP/2の影響は、特にHTTP Archive<a href="#methodology">方法論</a>を使用して測定するのがはるかに困難です。理想的には、サイトをHTTP/1.1とHTTP/2の両方でクロールし、その差を測定する必要がありますがここで調査している統計では不可能です。さらに、平均的なHTTP/2サイトが平均的なHTTP/1.1サイトよりも高速であるかどうかを測定すると、ここで説明するよりも徹底的な調査を必要とする他の変数が多くなりすぎます。</p>
     <p>測定できる影響の1つは、現在HTTP/2の世界にいるHTTP使用の変化です。複数の接続は、限られた形式の並列化を可能にするHTTP/1.1の回避策でしたが、これは実際、HTTP/2で通常最もよく機能することの反対になります。単一の接続でTCPセットアップ、TCPスロースタート、およびHTTPSネゴシエーションのオーバーヘッドが削減され、クロスリクエストの優先順位付けが可能になります。</p>
     <figure id="http2-fig-9">
       <a href="/static/images/2019/http2/ch20_fig9_num_tcp_connections_trend_over_years.png">
@@ -10685,7 +10684,7 @@
     </figure>
     <p>より少ないリクエストを取得するためのアセットのバンドルは、バンドル、連結、パッケージ化、分割など多くの名前で行われた別のHTTP/1.1回避策でした。HTTP/2を使用する場合、リクエストのオーバーヘッドが少ないため、これはあまり必要ありませんが、注意する必要がありますその要求はHTTP/2で無料ではなく、<a href="https://engineering.khanacademy.org/posts/js-packaging-http2.htm">バンドルを完全に削除する実験を行った人はパフォーマンスの低下に気付きました</a>。ページごとにロードされるリクエストの数を時間毎に見ると、予想される増加ではなく、リクエストのわずかな減少が見られます。</p>
     <p>この減少は、おそらくパフォーマンスへの悪影響なしにバンドルを削除できない（少なくとも完全にではない）という前述の観察と、HTTP/1.1の推奨事項に基づく歴史的な理由で現在多くのビルドツールがバンドルされていることに起因する可能性があります。また、多くのサイトがHTTP/1.1のパフォーマンスハッキングを戻すことでHTTP/1.1ユーザーにペナルティを課す気がないかもしれません、少なくともこれに価値があると感じる確信（または時間！）を持っていない可能性があります。</p>
-    <p>増加する<a href="#chapter-page-weight">ページの重み</a>を考えると、リクエストの数がほぼ静的なままであるという事実は興味深いですが、これはおそらくHTTP/2に完全に関連しているわけではありません。</p>
+    <p>増加する<a href="#page-weight">ページの重み</a>を考えると、リクエストの数がほぼ静的なままであるという事実は興味深いですが、これはおそらくHTTP/2に完全に関連しているわけではありません。</p>
     <h2 id="http2-http2プッシュ"><a href="#http2-http2プッシュ" class="anchor-link">HTTP/2プッシュ</a></h2>
     <p>HTTP/2プッシュは、HTTP/2の大いに宣伝された新機能であるにもかかわらず、複雑な歴史を持っています。他の機能は基本的に内部のパフォーマンスの向上でしたが、プッシュはHTTPの単一の要求から単一の応答への性質を完全に破ったまったく新しい概念で、追加の応答を返すことができました。 Webページを要求すると、サーバーは通常どおりHTMLページで応答しますが、重要なCSSとJavaScriptも送信するため、特定のリソースへ追加の往復が回避されます。理論的には、CSSとJavaScriptをHTMLにインライン化するのをやめ、それでも同じようにパフォーマンスを向上させることができます。それを解決した後、潜在的にあらゆる種類の新しくて興味深いユースケースにつながる可能性があります。</p>
     <p>現実は、まあ、少し残念です。 HTTP/2プッシュは、当初想定されていたよりも効果的に使用することがはるかに困難であることが証明されています。これのいくつかは、<a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">HTTP/2プッシュの動作の複雑さ</a>、およびそれによる実装の問題によるものです。</p>
@@ -10760,7 +10759,7 @@
     </figure>
     <p>図13は、最も一般的にプッシュされるアセットを示しています。 JavaScriptとCSSは、ボリュームとバイトの両方で、プッシュされるアイテムの圧倒的多数です。この後、画像、フォント、およびデータのラグタグの種類があります。最後にビデオをプッシュしているサイトは約100あることがわかりますが、これは意図的なものであるか、間違ったタイプのアセットを過剰にプッシュしている兆候かもしれません！</p>
     <p>一部の人が提起する懸念の1つは、HTTP/2実装が<code>プリロード</code>HTTP<code>リンク</code>ヘッダーをプッシュする信号として再利用したことです。<code>プリロード</code>の最も一般的な使用法の1つは、CSSが要求、ダウンロード、解析されるまでブラウザに表示されない、フォントや画像などの遅れて発見されたリソースをブラウザに通知することです。これらが現在そのヘッダーに基づいてプッシュされる場合、これを再利用すると多くの意図しないプッシュを発生する可能性があるという懸念はありました。</p>
-    <p>ただし、フォントと画像の使用率が比較的低いことは、恐れられているほどリスクが見られないことを意味する場合があります。 <link rel="preload" …="" />タグは、HTTPリンクヘッダーではなくHTMLでよく使用され、メタタグはプッシュするシグナルではありません。<a href="#chapter-resource-hints">リソースヒント</a>の章の統計では、サイトの1％未満がプリロードHTTPリンクヘッダーを使用しており、ほぼ同じ量がHTTP/2で意味のないプリコネクトを使用しているため、これはそれほど問題ではないことが示唆されます。プッシュされているフォントやその他のアセットがいくつかありますが、これはその兆候かもしれません。</p>
+    <p>ただし、フォントと画像の使用率が比較的低いことは、恐れられているほどリスクが見られないことを意味する場合があります。 <link rel="preload" …="" />タグは、HTTPリンクヘッダーではなくHTMLでよく使用され、メタタグはプッシュするシグナルではありません。<a href="#resource-hints">リソースヒント</a>の章の統計では、サイトの1％未満がプリロードHTTPリンクヘッダーを使用しており、ほぼ同じ量がHTTP/2で意味のないプリコネクトを使用しているため、これはそれほど問題ではないことが示唆されます。プッシュされているフォントやその他のアセットがいくつかありますが、これはその兆候かもしれません。</p>
     <p>これらの苦情に対する反論として、アセットがプリロードするのに十分に重要である場合、ブラウザはプリロードヒントを非常に高い優先度のリクエストとして処理するため、可能であればこれらのアセットをプッシュする必要があると主張できます。したがって、パフォーマンスの懸念は、（これも間違いなく）このために発生するHTTP/2プッシュではなくプリロードの過剰使用にあります。</p>
     <p>この意図しないプッシュを回避するには、プリロードヘッダーで<code>nopush</code>属性を指定できます。</p>
     <pre><code>link: &lt;/assets/jquery.js&gt;; rel=preload; as=script; nopush</code></pre>

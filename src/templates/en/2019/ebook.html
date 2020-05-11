@@ -1,14 +1,13 @@
 {% extends "%s/2019/base_ebook.html" % lang %}
 
-<!-- TODO: I'm not sure what meta tags would be appropriate for a single-page ebook -->
 {% set metadata = {} %} {% block chapters %}
 
-<section class="chapter" id="chapter-javascript">
+<section class="chapter" id="javascript">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 1
     </div>
-    <h1 id="chapter-1" class="title title-lg">
+    <h1 id="1" class="title title-lg">
       JavaScript
     </h1>
 
@@ -31,7 +30,7 @@
     <h2 id="javascript-introduction"><a href="#javascript-introduction" class="anchor-link">Introduction</a></h2>
     <p>JavaScript is a scripting language that makes it possible to build interactive and complex experiences on the web. This includes responding to user interactions, updating dynamic content on a page, and so forth. Anything involving how a web page should behave when an event occurs is what JavaScript is used for.</p>
     <p>The language specification itself, along with many community-built libraries and frameworks used by developers around the world, has changed and evolved ever since the language was created in 1995. JavaScript implementations and interpreters have also continued to progress, making the language usable in many environments, not only web browsers.</p>
-    <p>The <a href="https://httparchive.org/">HTTP Archive</a> crawls <a href="https://httparchive.org/reports/state-of-the-web#numUrls">millions of pages</a> every month and runs them through a private instance of <a href="https://webpagetest.org/">WebPageTest</a> to store key information of every page. (You can learn more about this in our <a href="#chapter-methodology">methodology</a>). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.</p>
+    <p>The <a href="https://httparchive.org/">HTTP Archive</a> crawls <a href="https://httparchive.org/reports/state-of-the-web#numUrls">millions of pages</a> every month and runs them through a private instance of <a href="https://webpagetest.org/">WebPageTest</a> to store key information of every page. (You can learn more about this in our <a href="#methodology">methodology</a>). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.</p>
     <h2 id="javascript-how-much-javascript-do-we-use"><a href="#javascript-how-much-javascript-do-we-use" class="anchor-link">How much JavaScript do we use?</a></h2>
     <p>JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, <a href="https://v8.dev/blog/cost-of-javascript-2019">download and execution have become the most expensive stages</a> when JavaScript is processed by a web page.</p>
     <p>Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?</p>
@@ -72,7 +71,7 @@
       <figcaption id="javascript-fig4-caption"><a href="#javascript-fig-4" class="anchor-link">Figure 4.</a> JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.</figcaption>
     </figure>
     <h3 id="javascript-number-of-requests"><a href="#javascript-number-of-requests" class="anchor-link">Number of requests</a></h3>
-    <p>One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With <a href="#chapter-http2">HTTP/2</a>, sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, how many requests are being fetched?</p>
+    <p>One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With <a href="#http2">HTTP/2</a>, sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, how many requests are being fetched?</p>
     <figure id="javascript-fig-5">
       <a href="/static/images/2019/javascript/fig5.png">
         <img src="/static/images/2019/javascript/fig5.png" alt="Figure 5. Distribution of total JavaScript requests." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&amp;format=interactive" loading="lazy" />
@@ -82,7 +81,7 @@
     </figure>
     <p>At the median, 19 requests are sent for desktop and 18 for mobile.</p>
     <h3 id="javascript-first-party-vs-third-party"><a href="#javascript-first-party-vs-third-party" class="anchor-link">First-party vs. third-party</a></h3>
-    <p>Of the results analyzed so far, the entire size and number of requests were being considered. In a majority of websites however, a significant portion of the JavaScript code fetched and used comes from <a href="#chapter-third-parties">third-party</a> sources.</p>
+    <p>Of the results analyzed so far, the entire size and number of requests were being considered. In a majority of websites however, a significant portion of the JavaScript code fetched and used comes from <a href="#third-parties">third-party</a> sources.</p>
     <p>Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: how many requests sent are third-party instead of first-party?</p>
     <figure id="javascript-fig-6">
       <a href="/static/images/2019/javascript/fig6.png">
@@ -113,7 +112,7 @@
       <div id="javascript-fig9-description" class="visually-hidden">Bar chart showing 0/17 bytes of JavaScript are downloaded on mobile for first-party and third-party requests respectively in the p10 percentile, 6/54 in p25, 83/217 in p50, 189/477 in p75, and 380/827 in p90.</div>
       <figcaption id="javascript-fig9-caption"><a href="#javascript-fig-9" class="anchor-link">Figure 9.</a> Distribution of total JavaScript downloaded on mobile.</figcaption>
     </figure>
-    <p>At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the <a href="#chapter-third-parties">"Third Parties"</a> chapter.</p>
+    <p>At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the <a href="#third-parties">"Third Parties"</a> chapter.</p>
     <h2 id="javascript-resource-compression"><a href="#javascript-resource-compression" class="anchor-link">Resource compression</a></h2>
     <p>In the context of browser-server interactions, resource compression refers to code that has been modified using a data compression algorithm. Resources can be compressed statically ahead of time or on-the-fly as they are requested by the browser, and for either approach the transferred resource size is significantly reduced which improves page performance.</p>
     <p>There are multiple text-compression algorithms, but only two are mostly used for the compression (and decompression) of HTTP network requests:</p>
@@ -131,7 +130,7 @@
       <figcaption id="javascript-fig10-caption"><a href="#javascript-fig-10" class="anchor-link">Figure 10.</a> Percentage of sites compressing JavaScript resources with gzip or brotli.</figcaption>
     </figure>
     <p>The majority of sites are compressing their JavaScript resources. Gzip encoding is used on ~64-67% of sites and Brotli on ~14%. Compression ratios are similar for both desktop and mobile.</p>
-    <p>For a deeper analysis on compression, refer to the <a href="#chapter-compression">"Compression"</a> chapter.</p>
+    <p>For a deeper analysis on compression, refer to the <a href="#compression">"Compression"</a> chapter.</p>
     <h2 id="javascript-open-source-libraries-and-frameworks"><a href="#javascript-open-source-libraries-and-frameworks" class="anchor-link">Open source libraries and frameworks</a></h2>
     <p>Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as <a href="https://www.chromium.org/Home">Chromium</a> and <a href="https://www.openhub.net/p/firefox">Firefox</a>, open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages can make feature development easier and faster. So which JavaScript open-source libraries are used the most?</p>
     <figure id="javascript-fig-11">
@@ -305,7 +304,7 @@
     </figure>
     <p>Similarly, very few sites (0.50%-0.80%) use the <code>nomodule</code> attribute for any scripts.</p>
     <h2 id="javascript-preload-and-prefetch"><a href="#javascript-preload-and-prefetch" class="anchor-link">Preload and prefetch</a></h2>
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content">Preload</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ">prefetch</a> are <a href="#chapter-resource-hints">resource hints</a> which enable you to aid the browser in determining what resources need to be downloaded.</p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content">Preload</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ">prefetch</a> are <a href="#resource-hints">resource hints</a> which enable you to aid the browser in determining what resources need to be downloaded.</p>
     <ul>
       <li>Preloading a resource with <code>&lt;link rel="preload"&gt;</code> tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., JavaScript located at the bottom of your HTML) and are otherwise downloaded last.</li>
       <li>Using <code>&lt;link rel="prefetch"&gt;</code> tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations</li>
@@ -401,12 +400,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-css">
+<section class="chapter" id="css">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 2
     </div>
-    <h1 id="chapter-2" class="title title-lg">
+    <h1 id="2" class="title title-lg">
       CSS
     </h1>
 
@@ -856,7 +855,7 @@
       <div id="css-fig35-description" class="visually-hidden">Distribution of the number of stylesheet bytes loaded per page. The desktop page's 10, 25, 50, 75, and 90th percentiles are: 8, 26, 62, 129, and 240 KB. The desktop distribution is slightly higher than the mobile distribution by 5 to 10 KB.</div>
       <figcaption id="css-fig35-caption"><a href="#css-fig-35" class="anchor-link">Figure 35.</a> Distribution of the number of stylesheet bytes (KB) loaded per page.</figcaption>
     </figure>
-    <p>See the <a href="#chapter-page-weight">Page Weight</a> chapter for a more in-depth look at the number of bytes websites are loading for each content type.</p>
+    <p>See the <a href="#page-weight">Page Weight</a> chapter for a more in-depth look at the number of bytes websites are loading for each content type.</p>
     <h3 id="css-libraries"><a href="#css-libraries" class="anchor-link">Libraries</a></h3>
     <p>It's common, popular, convenient, and powerful to reach for a CSS library to kick start a new project. While you may not be one to reach for a library, we've queried the web in 2019 to see which are leading the pack. If the results astound you, like they did us, I think it's an interesting clue to just how small of a developer bubble we can live in. Things can feel massively popular, but when the web is inquired, reality is a bit different.</p>
     <figure id="css-fig-36">
@@ -1045,12 +1044,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-markup">
+<section class="chapter" id="markup">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 3
     </div>
-    <h1 id="chapter-3" class="title title-lg">
+    <h1 id="3" class="title title-lg">
       Markup
     </h1>
 
@@ -1074,7 +1073,7 @@
     <p>In 2005, Ian "Hixie" Hickson posted <a href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">some analysis of markup data</a> building upon various previous work. Much of this work aimed to investigate class names to see if there were common informal semantics that were being adopted by developers which it might make sense to standardize upon. Some of this research helped inform new elements in HTML5.</p>
     <p>14 years later, it's time to take a fresh look. Since then, we've also had the introduction of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">Custom Elements</a> and the <a href="https://extensiblewebmanifesto.org/">Extensible Web Manifesto</a> encouraging that we find better ways to pave the cowpaths by allowing developers to explore the space of elements themselves and allow standards bodies to<a href="https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html"> act more like dictionary editors</a>. Unlike CSS class names, which might be used for anything, we can be far more certain that authors who used a non-standard <em>element</em> really intended this to be an element.</p>
     <p>
-      As of July 2019, the HTTP Archive has begun collecting all used <em>element</em> names in the DOM for about 4.4 million desktop home pages, and about 5.3 million mobile home pages which we can now begin to research and dissect. <em>(Learn more about our <a href="#chapter-methodology">Methodology</a>.)</em>
+      As of July 2019, the HTTP Archive has begun collecting all used <em>element</em> names in the DOM for about 4.4 million desktop home pages, and about 5.3 million mobile home pages which we can now begin to research and dissect. <em>(Learn more about our <a href="#methodology">Methodology</a>.)</em>
     </p>
     <p>This crawl encountered <em>over 5,000 distinct non-standard element names</em> in these pages, so we capped the total distinct number of elements that we count to the 'top' (explained below) 5,048.</p>
     <h2 id="markup-methodology"><a href="#markup-methodology" class="anchor-link">Methodology</a></h2>
@@ -1391,12 +1390,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-media">
+<section class="chapter" id="media">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 4
     </div>
-    <h1 id="chapter-4" class="title title-lg">
+    <h1 id="4" class="title title-lg">
       Media
     </h1>
 
@@ -1427,7 +1426,7 @@
       <figcaption id="media-fig1-caption"><a href="#media-fig-1" class="anchor-link">Figure 1.</a> Web page bytes: image and video versus other.</figcaption>
     </figure>
     <p>While media are critical for the visual experience, the impact of this high volume of bytes has two side effects.</p>
-    <p>First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an Uber) can dramatically slow down the page <a href="#chapter-performance">performance</a>. Images are a lower priority request by the browser but can easily block CSS and JavaScript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual cue to the user that the page is ready. Slow transfers of visual content, therefore, can give the perception of a slow web page.</p>
+    <p>First, the network overhead required to download these bytes can be large and in cellular or slow network environments (like coffee shops or tethering when in an Uber) can dramatically slow down the page <a href="#performance">performance</a>. Images are a lower priority request by the browser but can easily block CSS and JavaScript in the download. This by itself can delay the page rendering. Yet at other times, the image content is the visual cue to the user that the page is ready. Slow transfers of visual content, therefore, can give the perception of a slow web page.</p>
     <p>The second impact is on the financial cost to the user. This is often an ignored aspect since it is not a burden on the website owner but a burden to the end-user. Anecdotally, it has been shared that some markets, <a href="https://twitter.com/yoavweiss/status/1195036487538003968?s=20">like Japan</a>, see a drop in purchases by students near the end of the month when data caps are reached, and users cannot see the visual content.</p>
     <p>Further, the financial cost of visiting these websites in different parts of the world is disproportionate. At the median and 90th percentile, the volume of image bytes is 1 MB and 1.9 MB respectively. Using <a href="https://whatdoesmysitecost.com/#gniCost">WhatDoesMySiteCost.com</a> we can see that the gross national income (GNI) per capita cost to a user in Madagascar a single web page load at the 90th percentile would cost 2.6% of the daily gross income. By contrast, in Germany this would be 0.3% of the daily gross income.</p>
     <figure id="media-fig-2">
@@ -1489,7 +1488,7 @@
       <li><strong>Lazy loading</strong> - to transfer content only when a human will see it</li>
       <li><strong>Accessibility</strong> - ensuring a consistent experience for all humans</li>
     </ul>
-    <p class="note">A word of caution when interpreting these results. The web pages crawled for the Web Almanac were crawled on a Chrome browser. This implies that any content negotiation that might better apply for Safari or Firefox might not be represented in this dataset. For example, the use of file formats like JPEG2000, JPEG-XR, HEVC and HEIC are absent because these are not supported natively by Chrome. This does not mean that the web does not contain these other formats or experiences. Likewise, Chrome has native support for lazy loading (since v76) which is not yet available in other browsers. Read more about these caveats in our <a href="#chapter-methodology">Methodology</a>.</p>
+    <p class="note">A word of caution when interpreting these results. The web pages crawled for the Web Almanac were crawled on a Chrome browser. This implies that any content negotiation that might better apply for Safari or Firefox might not be represented in this dataset. For example, the use of file formats like JPEG2000, JPEG-XR, HEVC and HEIC are absent because these are not supported natively by Chrome. This does not mean that the web does not contain these other formats or experiences. Likewise, Chrome has native support for lazy loading (since v76) which is not yet available in other browsers. Read more about these caveats in our <a href="#methodology">Methodology</a>.</p>
     <p>It is rare to find a web page that does not utilize images. Over the years, many different file formats have emerged to help present content on the web, each addressing a different problem. Predominantly, there are 4 main universal image formats: JPEG, PNG, GIF, and SVG. In addition, Chrome has enhanced the media pipeline and added support for a fifth image format: WebP. Other browsers have likewise added support for JPEG2000 (Safari), JPEG-XL (IE and Edge) and HEIC (WebView only in Safari).</p>
     <p>Each format has its own merits and has ideal uses for the web. A very simplified summary would break down as:</p>
     <figure id="media-fig-6">
@@ -1887,12 +1886,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-third-parties">
+<section class="chapter" id="third-parties">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 5
     </div>
-    <h1 id="chapter-5" class="title title-lg">
+    <h1 id="5" class="title title-lg">
       Third Parties
     </h1>
 
@@ -2150,7 +2149,7 @@
     <p>The remainder of third-party providers also tend to fall into this usage pattern. Whether it's hosting of a utility library such as jQuery for usage by front-end developers cached on Cloudflare's edge servers or a vast library of common fonts served from a popular Google CDN, third-party content is another way to give the site owner one fewer thing to worry about and, maybe, just maybe, make the job of delivering a great experience a little bit easier.</p>
     <h2 id="third-parties-repercussions"><a href="#third-parties-repercussions" class="anchor-link">Repercussions</a></h2>
     <h3 id="third-parties-performance"><a href="#third-parties-performance" class="anchor-link">Performance</a></h3>
-    <p>The <a href="#chapter-performance">performance</a> impact of third-party content is neither categorically good nor bad. There are good and bad actors across the spectrum and different category types have varying levels of influence.</p>
+    <p>The <a href="#performance">performance</a> impact of third-party content is neither categorically good nor bad. There are good and bad actors across the spectrum and different category types have varying levels of influence.</p>
     <p>The good: shared third-party font and stylesheet utilities are, on average, delivered more efficiently than their first-party counterparts.</p>
     <p>Utilities, CDNs, and Content categories are the brightest spots on the third-party performance landscape. They offer optimized versions of the same sort of content that would otherwise be served from first-party sources. Google Fonts and Typekit serve optimized fonts that are smaller on average than first-party fonts, Cloudflare CDN serves a minified version of open source libraries that might be accidentally served in development mode by some site owners, Google Maps SDK efficiently delivers complex maps that might otherwise be naively shipped as large images.</p>
     <p>The bad: a very small set of entities represent a very large chunk of JavaScript execution time carrying out narrow set of functionality on pages.</p>
@@ -2161,7 +2160,7 @@
     <p>The interest of site owners in understanding and analyzing user behavior is not malicious on its own, but the widespread and relatively behind-the-scenes nature of web analytics raises valid concerns, and users, companies, and lawmakers have taken notice in recent years with privacy regulation such as <a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">GDPR</a> in Europe and the <a href="https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act">CCPA</a> in California. Ensuring that developers handle user data responsibly, treat the user respectfully, and are transparent with what data is collected is key to keeping analytics the most popular third-party category and maintaining the symbiotic nature of analyzing user behavior to deliver future user value.</p>
     <p>The top-heavy concentration of script execution is great for the potential impact of performance improvements, but less exciting for the privacy ramifications. 29% of <em>all</em> script execution time across the web is just from scripts on domains owned by Google or Facebook. That's a very large percentage of CPU time that is controlled by just two entities. It's critical to ensure that the same privacy protections held to analytics providers be applied in these other ad, social, and developer utility categories as well.</p>
     <h3 id="third-parties-security"><a href="#third-parties-security" class="anchor-link">Security</a></h3>
-    <p>While the topic of security is covered more in-depth in the <a href="#chapter-security">Security</a> chapter, the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and <code>window</code>, it can do everything. Even if code has no security concerns, it can introduce a single point of failure, <a href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">which has been recognized as a potential problem for some time now</a>.</p>
+    <p>While the topic of security is covered more in-depth in the <a href="#security">Security</a> chapter, the security implications of introducing external dependencies to your site go hand-in-hand with privacy concerns. Allowing third parties to execute arbitrary JavaScript effectively provides them with complete control over your page. When a script can control the DOM and <code>window</code>, it can do everything. Even if code has no security concerns, it can introduce a single point of failure, <a href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">which has been recognized as a potential problem for some time now</a>.</p>
     <p><a href="https://csswizardry.com/2019/05/self-host-your-static-assets/">Self-hosting third-party content</a> addresses some of the concerns mentioned here - and others. Additionally with browsers increasingly <a href="https://chromestatus.com/feature/5730772021411840">partitioning HTTP caches</a> the benefits of loading directly from the third-party are increasingly questionable. Perhaps this is a better way to consume third-party content for many use cases, even if it makes measuring its impact more difficult.</p>
     <h2 id="third-parties-conclusion"><a href="#third-parties-conclusion" class="anchor-link">Conclusion</a></h2>
     <p>Third-party content is everywhere. This is hardly surprising; the entire basis of the web is to allow interconnectedness and linking. In this chapter we have examined third-party content in terms of assets hosted away from the main domain. If we had included self-hosted third-party content (e.g. common open source libraries hosted on the main domain), third-party usage would have been even larger!</p>
@@ -2204,12 +2203,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-fonts">
+<section class="chapter" id="fonts">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 6
     </div>
-    <h1 id="chapter-6" class="title title-lg">
+    <h1 id="6" class="title title-lg">
       Fonts
     </h1>
 
@@ -2233,11 +2232,11 @@
     <p>Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.</p>
     <p>Are they a net positive for the web? Do they provide more benefit than harm? Are the web standards cowpaths sufficiently paved to encourage web font loading best practices by default? And if not, what needs to change? Let's take a data-driven peek at whether or not we can answer those questions by inspecting how web fonts are used on the web today.</p>
     <h2 id="fonts-where-did-you-get-those-web-fonts"><a href="#fonts-where-did-you-get-those-web-fonts" class="anchor-link">Where did you get those web fonts?</a></h2>
-    <p>The first and most prominent question: performance. There is a whole chapter dedicated to <a href="#chapter-performance">performance</a> but we will delve a little into font-specific performance issues here.</p>
+    <p>The first and most prominent question: performance. There is a whole chapter dedicated to <a href="#performance">performance</a> but we will delve a little into font-specific performance issues here.</p>
     <p>Using hosted web fonts enables ease of implementation and maintenance, but self-hosting offers the best performance. Given that web fonts by default make text invisible while the web font is loading (also known as the <a href="https://css-tricks.com/fout-foit-foft/">Flash of Invisible Text</a>, or FOIT), the performance of web fonts can be more critical than non-blocking assets like images.</p>
     <h3 id="fonts-are-fonts-being-hosted-on-the-same-host-or-by-a-different-host"><a href="#fonts-are-fonts-being-hosted-on-the-same-host-or-by-a-different-host" class="anchor-link">Are fonts being hosted on the same host or by a different host?</a></h3>
-    <p>Differentiating self-hosting against third-party hosting is increasingly relevant in an <a href="#chapter-http2">HTTP/2</a> world, where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of a better potential for prioritization against other same-host requests in the waterfall.</p>
-    <p>Recommendations to mitigate the performance costs of loading web fonts from another host include using the <code>preconnect</code>, <code>dns-prefetch</code>, and <code>preload</code> <a href="#chapter-resource-hints">resource hints</a>, but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.</p>
+    <p>Differentiating self-hosting against third-party hosting is increasingly relevant in an <a href="#http2">HTTP/2</a> world, where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of a better potential for prioritization against other same-host requests in the waterfall.</p>
+    <p>Recommendations to mitigate the performance costs of loading web fonts from another host include using the <code>preconnect</code>, <code>dns-prefetch</code>, and <code>preload</code> <a href="#resource-hints">resource hints</a>, but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.</p>
     <figure id="fonts-fig-1">
       <a href="/static/images/2019/fonts/fig1.png">
         <img src="/static/images/2019/fonts/fig1.png" alt="Figure 1. Popular web font hosting strategies." aria-labelledby="fig1-description" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive" loading="lazy" />
@@ -2387,7 +2386,7 @@
     <p>Google Fonts documentation encourages the <code>&lt;link&gt;</code> for the Google Fonts CSS to be placed as the first child in the <code>&lt;head&gt;</code> of a page. This is a big ask! In practice, this is not common as only half a percent of all pages (about 20,000 pages) took this advice.</p>
     <p>More so, if a page is using <code>preconnect</code> or <code>dns-prefetch</code> as <code>&lt;link&gt;</code> elements, these would come before the Google Fonts CSS anyway. Read on for more about these resource hints.</p>
     <h3 id="fonts-speeding-up-third-party-hosting"><a href="#fonts-speeding-up-third-party-hosting" class="anchor-link">Speeding up third-party hosting</a></h3>
-    <p>As mentioned above, a super easy way to speed up web font requests to a third-party host is to use the <code>preconnect</code> <a href="#chapter-resource-hints">resource hint</a>.</p>
+    <p>As mentioned above, a super easy way to speed up web font requests to a third-party host is to use the <code>preconnect</code> <a href="#resource-hints">resource hint</a>.</p>
     <figure id="fonts-fig-5">
       <div class="big-number">1.7%</div>
       <figcaption><a href="#fonts-fig-5" class="anchor-link">Figure 5.</a> Percent of mobile pages preconnecting to a web font host.</figcaption>
@@ -2845,12 +2844,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-performance">
+<section class="chapter" id="performance">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 7
     </div>
-    <h1 id="chapter-7" class="title title-lg">
+    <h1 id="7" class="title title-lg">
       Performance
     </h1>
 
@@ -3102,12 +3101,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-security">
+<section class="chapter" id="security">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 8
     </div>
-    <h1 id="chapter-8" class="title title-lg">
+    <h1 id="8" class="title title-lg">
       Security
     </h1>
 
@@ -3147,8 +3146,8 @@
       <figcaption id="security-fig2-caption"><a href="#security-fig-2" class="anchor-link">Figure 2.</a> Usage of TLS protocol versions.</figcaption>
     </figure>
     <p>Figure 2 shows the support for various protocol versions. Use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in <a href="https://tools.ietf.org/html/rfc8446">August 2018</a>), over 40% of requests using TLS are using the latest version!</p>
-    <p>This is likely due to many sites using requests from the larger players for <a href="#chapter-third-parties">third-party content</a>. For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.</p>
-    <p>If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to <a href="#chapter-cms">CMS</a> sites like Wordpress and <a href="#chapter-cdn">CDNs</a>:</p>
+    <p>This is likely due to many sites using requests from the larger players for <a href="#third-parties">third-party content</a>. For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.</p>
+    <p>If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to <a href="#cms">CMS</a> sites like Wordpress and <a href="#cdn">CDNs</a>:</p>
     <figure id="security-fig-3">
       <a href="/static/images/2019/security/fig3.png">
         <img src="/static/images/2019/security/fig3.png" alt="Figure 3. Usage of TLS protocol versions for home page requests only." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="760" height="470" data-width="760" data-height="470" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive" loading="lazy" />
@@ -3156,7 +3155,7 @@
       <div id="security-fig3-description" class="visually-hidden">Horizontal bar chart showing desktop and mobile on similar TLS usage: 47% on desktop (43% on mobile) on TLSv1.2, 20.2% on desktop (19.7% on mobile) on TLSv1.3 and very little usage of TLSv1.0 (1.1% - 1.2%) and a tiny usage of TLSv1.1.</div>
       <figcaption id="security-fig3-caption"><a href="#security-fig-3" class="anchor-link">Figure 3.</a> Usage of TLS protocol versions for home page requests only.</figcaption>
     </figure>
-    <p>On the other hand, the <a href="#chapter-methodology">methodology</a> used by the Web Almanac will also <em>under-report</em> usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.</p>
+    <p>On the other hand, the <a href="#methodology">methodology</a> used by the Web Almanac will also <em>under-report</em> usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.</p>
     <h3 id="security-certificate-authorities"><a href="#security-certificate-authorities" class="anchor-link">Certificate Authorities</a></h3>
     <p>Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority (CA). With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top ten certificate issuers based on the volume of TLS requests that use their certificate.</p>
     <figure id="security-fig-4">
@@ -3541,7 +3540,7 @@
       </div>
       <figcaption><a href="#security-fig-11" class="anchor-link">Figure 11.</a> <code>Referrer-Policy</code> configuration option usage.</figcaption>
     </figure>
-    <p>This table shows the valid values set by pages and that, of the pages which use this header, 99.75% of them on desktop and 96.55% of them on mobile are setting a valid policy. The most popular choice of configuration is <code>no-referrer-when-downgrade</code> which will prevent the <code>Referer</code> header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is <code>strict-origin-when-cross-origin</code> which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the <code>Referer</code> it will only contain the origin of the source and not the full URL (for example <code>https://www.example.com</code> rather than <code>https://www.example.com/page/</code>). Details on the other valid configurations can be found in the <a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrer Policy specification</a>, though such a high usage of <code>unsafe-url</code> warrants further investigation but is likely to be a <a href="#chapter-third-parties">third-party</a> component like analytics or advertisement libraries.</p>
+    <p>This table shows the valid values set by pages and that, of the pages which use this header, 99.75% of them on desktop and 96.55% of them on mobile are setting a valid policy. The most popular choice of configuration is <code>no-referrer-when-downgrade</code> which will prevent the <code>Referer</code> header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is <code>strict-origin-when-cross-origin</code> which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the <code>Referer</code> it will only contain the origin of the source and not the full URL (for example <code>https://www.example.com</code> rather than <code>https://www.example.com/page/</code>). Details on the other valid configurations can be found in the <a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrer Policy specification</a>, though such a high usage of <code>unsafe-url</code> warrants further investigation but is likely to be a <a href="#third-parties">third-party</a> component like analytics or advertisement libraries.</p>
     <h3 id="security-feature-policy"><a href="#security-feature-policy" class="anchor-link">Feature Policy</a></h3>
     <p>
       As the web platform becomes more powerful and feature rich, attackers can abuse these new APIs in interesting ways. In order to limit misuse of powerful APIs, a site operator can issue a <a href="https://w3c.github.io/webappsec-feature-policy/"><code>Feature-Policy</code></a> header to disable features that are not required, preventing them from being abused.
@@ -3751,7 +3750,7 @@
     <h3 id="security-secure">
       <a href="#security-secure" class="anchor-link"><code>Secure</code></a>
     </h3>
-    <p>The <code>Secure</code> flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find only a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement <a href="#chapter-third-parties">third-party</a> requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.</p>
+    <p>The <code>Secure</code> flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find only a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement <a href="#third-parties">third-party</a> requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.</p>
     <h3 id="security-httponly">
       <a href="#security-httponly" class="anchor-link"><code>HttpOnly</code></a>
     </h3>
@@ -3935,12 +3934,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-accessibility">
+<section class="chapter" id="accessibility">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 9
     </div>
-    <h1 id="chapter-9" class="title title-lg">
+    <h1 id="9" class="title title-lg">
       Accessibility
     </h1>
 
@@ -4252,12 +4251,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-seo">
+<section class="chapter" id="seo">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} I {{ self.chapter() }} 10
     </div>
-    <h1 id="chapter-10" class="title title-lg">
+    <h1 id="10" class="title title-lg">
       SEO
     </h1>
 
@@ -4283,7 +4282,7 @@
     <p>The purpose of the SEO chapter of the Web Almanac is to analyze on-site elements of the web that impact the crawling and indexing of content for search engines, and ultimately, website performance. In this chapter, we'll take a look at how well-equipped the top websites are to provide a great experience for users and search engines, and which ones still have work to do.</p>
     <p>Our analysis includes data from <a href="#methodology-lighthouse">Lighthouse</a>, the <a href="#methodology-chrome-ux-report">Chrome UX Report</a>, and HTML element analysis. We focused on SEO fundamentals like <code>&lt;title&gt;</code> elements, the different types of on-page links, content, and loading speed, but also the more technical aspects of SEO, including indexability, structured data, internationalization, and AMP across over 5 million websites.</p>
     <p>Our custom metrics provide insights that, up until now, have not been exposed before. We are now able to make claims about the adoption and implementation of elements such as the <code>hreflang</code> tag, rich results eligibility, heading tag usage, and even anchor-based navigation for single page apps.</p>
-    <p class="note">Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric. Learn more about these limitations in our <a href="#chapter-methodology">Methodology</a>.</p>
+    <p class="note">Note: Our data is limited to analyzing home pages only and has not been gathered from site-wide crawls. This will impact many metrics we'll discuss, so we've added any relevant limitations in this case whenever we mention a specific metric. Learn more about these limitations in our <a href="#methodology">Methodology</a>.</p>
     <p>Read on to find out more about the current state of the web and its search engine friendliness.</p>
     <h2 id="seo-fundamentals"><a href="#seo-fundamentals" class="anchor-link">Fundamentals</a></h2>
     <p>Search engines have a three-step process: crawling, indexing, and ranking. To be search engine-friendly, a page needs to be discoverable, understandable, and contain quality content that would provide value to a user who is browsing the search engine results pages (SERPs).</p>
@@ -4346,7 +4345,7 @@
     </figure>
     <p>The median meta description length was also lower than the <a href="https://moz.com/learn/seo/meta-description">recommended length of 155-160 characters</a>, with desktop pages having descriptions of 123 characters. Interestingly, meta descriptions were consistently longer on mobile than on desktop, despite mobile SERPs traditionally having a shorter pixel limit. This limit has only been extended recently, so perhaps more website owners have been testing the impact of having longer, more descriptive meta descriptions for mobile results.</p>
     <h4 id="seo-image-alt-tags"><a href="#seo-image-alt-tags" class="anchor-link">Image alt tags</a></h4>
-    <p>Considering the importance of <code>alt</code> text for SEO and accessibility, it is far from ideal to see that only 46.71% of mobile pages use <code>alt</code> attributes on all of their images. This means that there are still improvements to be made with regard to making images across the web more accessible to users and understandable for search engines. Learn more about issues like these in the <a href="#chapter-accessibility">Accessibility</a> chapter.</p>
+    <p>Considering the importance of <code>alt</code> text for SEO and accessibility, it is far from ideal to see that only 46.71% of mobile pages use <code>alt</code> attributes on all of their images. This means that there are still improvements to be made with regard to making images across the web more accessible to users and understandable for search engines. Learn more about issues like these in the <a href="#accessibility">Accessibility</a> chapter.</p>
     <h3 id="seo-indexability"><a href="#seo-indexability" class="anchor-link">Indexability</a></h3>
     <p>To show a page's content to users in the SERPs, search engine crawlers must first be permitted to access and index that page. Some of the factors that impact a search engine's ability to crawl and index pages include:</p>
     <ul>
@@ -4416,7 +4415,7 @@
       <figcaption id="seo-fig10-caption"><a href="#seo-fig-10" class="anchor-link">Figure 10.</a> Distribution of the performance of user experiences by device type.</figcaption>
     </figure>
     <p>Split by device, this picture is even bleaker for tablet (65%) and phone (58%).</p>
-    <p>Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the <a href="#chapter-performance">Performance</a> chapter.</p>
+    <p>Although the numbers are bleak for the speed of the web, the good news is that SEO experts and tools have been focusing more and more on the technical challenges of speeding up websites. You can learn more about the state of web performance in the <a href="#performance">Performance</a> chapter.</p>
     <h3 id="seo-structured-data"><a href="#seo-structured-data" class="anchor-link">Structured data</a></h3>
     <p>Structured data allows website owners to add additional semantic data to their web pages, by adding <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON-LD</a> snippets or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata">Microdata</a>, for example. Search engines parse this data to better understand these pages and sometimes use the markup to display additional relevant information in the search results. Some of the useful types of structured data are:</p>
     <ul>
@@ -4600,7 +4599,7 @@
     <p>For more information and guidance from Google on the importance of HTTPS and how to adopt it, please see <a href="https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https">Why HTTPS Matters</a>.</p>
     <p>We found that 67.06% of websites on desktop are now served over HTTPS. Just under half of websites still haven't migrated to HTTPS and are serving non-secure pages to their users. This is a significant number. Migrations can be hard work, so this could be a reason why the adoption rate isn't higher, but an HTTPS migration usually require an SSL certificate and a simple change to the <code>.htaccess</code> file. There's no real reason not to switch to HTTPS.</p>
     <p>Google's <a href="https://transparencyreport.google.com/https/overview">HTTPS Transparency Report</a> reports a 90% adoption of HTTPS for the top 100 non-Google domains (representing 25% of all website traffic worldwide). The difference between this number and ours could be explained by the fact that relatively smaller sites are adopting HTTPS at a slower rate.</p>
-    <p>Learn more about the state of security in the <a href="#chapter-security">Security</a> chapter.</p>
+    <p>Learn more about the state of security in the <a href="#security">Security</a> chapter.</p>
     <h2 id="seo-conclusion"><a href="#seo-conclusion" class="anchor-link">Conclusion</a></h2>
     <p>Through our analysis, we observed that the majority of websites are getting the fundamentals right, in that their home pages are crawlable, indexable, and include the key content required to rank well in search engines' results pages. Not every person who owns a website will be aware of SEO at all, let alone its best practice guidelines, so it is promising to see that so many sites have got the basics covered.</p>
     <p>However, more sites are missing the mark than expected when it comes to some of the more advanced aspects of SEO and accessibility. Site speed is one of these factors that many websites are struggling with, especially on mobile. This is a significant problem, as speed is one of the biggest contributors to UX, which is something that can impact rankings. The number of websites that aren't yet served over HTTPS is also problematic to see, considering the importance of security and keeping user data safe.</p>
@@ -4696,12 +4695,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-pwa">
+<section class="chapter" id="pwa">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 11
     </div>
-    <h1 id="chapter-11" class="title title-lg">
+    <h1 id="11" class="title title-lg">
       PWA
     </h1>
 
@@ -4869,7 +4868,7 @@
     </p>
     <p>The HTTP Archive shows that 12.71% of websites that register a service worker are using at least one of the Workbox libraries. This percentage is roughly consistent across desktop and mobile, with a slightly lower percentage (11.46%) on mobile compared to desktop (14.36%).</p>
     <h2 id="pwa-conclusion"><a href="#pwa-conclusion" class="anchor-link">Conclusion</a></h2>
-    <p>The stats in this chapter show that PWAs are still only used by a small percentage of sites. However, this relatively small usage is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more: we showed that 15% of page loads use a service workers. The advantages they give for <a href="#chapter-performance">performance</a> and greater control over <a href="#chapter-caching">caching</a> particularly for <a href="#chapter-mobile-web">mobile</a> should mean that usage will continue to grow.</p>
+    <p>The stats in this chapter show that PWAs are still only used by a small percentage of sites. However, this relatively small usage is driven by the more popular sites which have a much larger share of traffic, and pages beyond the home page may use this more: we showed that 15% of page loads use a service workers. The advantages they give for <a href="#performance">performance</a> and greater control over <a href="#caching">caching</a> particularly for <a href="#mobile-web">mobile</a> should mean that usage will continue to grow.</p>
     <p>PWAs have often been seen as Chrome-driven technology. Other browsers have made great strides recently to implement most of the underlying technologies, although first-class installability lags on some platforms. It's positive to see support becoming more widespread. <a href="https://twitter.com/firt">Maximiliano Firtman</a> does a great job of tracking this on iOS, including <a href="https://medium.com/@firt/iphone-11-ipados-and-ios-13-for-pwas-and-web-development-5d5d9071cc49">explaining Safari PWA support</a>. Apple doesn't use the term PWA much, and has <a href="https://developer.apple.com/news/?id=09062019b">explicitly stated that these HTML5 apps are best delivered outside of the App Store</a>. Microsoft went the opposite direction, not only <a href="https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/microsoft-store">encouraging PWAs in its app store, but even automatically shortlisting PWAs to be added that were found via the Bing web crawler</a>. Google has also provided a method for listing web apps in the Google Play Store, via <a href="https://developers.google.com/web/updates/2019/02/using-twa">Trusted Web Activities</a>.</p>
     <p>PWAs provide a path forward for developers who would prefer to build and release on the web instead of on native platforms and app stores. Not every operating system and browser offers full parity with native software, but improvements continue, and perhaps 2020 is the year where we see an explosion in deployments?</p>
   </section>
@@ -4938,12 +4937,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-mobile-web">
+<section class="chapter" id="mobile-web">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} II {{ self.chapter() }} 12
     </div>
-    <h1 id="chapter-12" class="title title-lg">
+    <h1 id="12" class="title title-lg">
       Mobile Web
     </h1>
 
@@ -5050,7 +5049,7 @@
     <h3 id="mobile-web-permission-requests"><a href="#mobile-web-permission-requests" class="anchor-link">Permission requests</a></h3>
     <p>Over the last few years, the line between websites and "app store" apps has continued to blur. Even now, you have the ability to request access to a user's microphone, video camera, geolocation, ability to display notifications, and more.</p>
     <p>While this has opened up even more capabilities for developers, needlessly requesting these permissions may leave users feeling wary of your web page, and can build mistrust. This is why we recommend to always tie a permission request to a user gesture, like tapping a "Find theaters near me" button.</p>
-    <p>Right now 1.52% of sites request permissions without a user interaction. Seeing such a low number is encouraging. However, it's important to note that we were only able to analyze home pages. So for example, sites requesting permissions only on their content pages (e.g., their blog posts) were not accounted for. See our <a href="#chapter-methodology">Methodology</a> page for more info.</p>
+    <p>Right now 1.52% of sites request permissions without a user interaction. Seeing such a low number is encouraging. However, it's important to note that we were only able to analyze home pages. So for example, sites requesting permissions only on their content pages (e.g., their blog posts) were not accounted for. See our <a href="#methodology">Methodology</a> page for more info.</p>
     <h2 id="mobile-web-textual-content"><a href="#mobile-web-textual-content" class="anchor-link">Textual content</a></h2>
     <p>The primary goal of a web page is to deliver content users want to engage with. This content might be a YouTube video or an assortment of images, but often times, it's simply the text on the page. It goes without saying that ensuring our textual content is legible to our visitors is extremely important. Because if visitors can't read it, there's nothing left to engage with, and they'll leave. There are two key things to check when ensuring your text is legible to readers: color contrast and font sizes.</p>
     <h3 id="mobile-web-color-contrast"><a href="#mobile-web-color-contrast" class="anchor-link">Color contrast</a></h3>
@@ -5151,7 +5150,7 @@
     <p>Currently, only 29.62% of pages with input fields utilize this feature.</p>
     <h3 id="mobile-web-pasting-into-password-fields"><a href="#mobile-web-pasting-into-password-fields" class="anchor-link">Pasting into password fields</a></h3>
     <p>Enabling users to copy and paste their passwords into your page is one way that allows them to use password managers. Password managers help users generate (and remember) strong passwords and fill them out automatically on web pages. Only 0.02% of web pages tested disable this functionality.</p>
-    <p class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="#chapter-methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</p>
+    <p class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="#methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</p>
     <h2 id="mobile-web-conclusion"><a href="#mobile-web-conclusion" class="anchor-link">Conclusion</a></h2>
     <p>
       For over 13 years we've been treating the <em>mobile</em> web as an afterthought, like a mere exception to desktop. But it's time for this to change. The mobile web is now <em><em>the</em></em> web, and desktop is becoming the legacy one. There are now 4 billion active smartphones in the world, covering 70% of all potential users. What about desktops? They currently sit at 1.6 billion, and account for less and less of web usage every month.
@@ -5219,12 +5218,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-ecommerce">
+<section class="chapter" id="ecommerce">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} III {{ self.chapter() }} 13
     </div>
-    <h1 id="chapter-13" class="title title-lg">
+    <h1 id="13" class="title title-lg">
       Ecommerce
     </h1>
 
@@ -5255,10 +5254,10 @@
       <div class="big-number">10%</div>
       <figcaption><a href="#ecommerce-fig-1" class="anchor-link">Figure 1.</a> Percent of pages on an ecommerce platform.</figcaption>
     </figure>
-    <p>This analysis could only detect sites built on an ecommerce platform. This means that most large online stores and marketplaces—such as Amazon, JD, and eBay—are not included here. Also note that the data here is for home pages only: not category, product or other pages. Learn more about our <a href="#chapter-methodology">methodology</a>.</p>
+    <p>This analysis could only detect sites built on an ecommerce platform. This means that most large online stores and marketplaces—such as Amazon, JD, and eBay—are not included here. Also note that the data here is for home pages only: not category, product or other pages. Learn more about our <a href="#methodology">methodology</a>.</p>
     <h2 id="ecommerce-platform-detection"><a href="#ecommerce-platform-detection" class="anchor-link">Platform detection</a></h2>
     <p>How do we check if a page is on an ecommerce platform?</p>
-    <p>Detection is done through <a href="#methodology-wappalyzer">Wappalyzer</a>. Wappalyzer is a cross-platform utility that uncovers the technologies used on websites. It detects <a href="#chapter-cms">content management systems</a>, ecommerce platforms, web servers, <a href="#chapter-javascript">JavaScript</a> frameworks, <a href="#chapter-third-parties">analytics</a> tools, and many more.</p>
+    <p>Detection is done through <a href="#methodology-wappalyzer">Wappalyzer</a>. Wappalyzer is a cross-platform utility that uncovers the technologies used on websites. It detects <a href="#cms">content management systems</a>, ecommerce platforms, web servers, <a href="#javascript">JavaScript</a> frameworks, <a href="#third-parties">analytics</a> tools, and many more.</p>
     <p>Page detection is not always reliable, and some sites explicitly block detection to protect against automated attacks. We might not be able to catch all websites that use a particular ecommerce platform, but we're confident that the ones we do detect are actually on that platform.</p>
     <figure id="ecommerce-fig-2">
       <div class="table-wrap">
@@ -5372,7 +5371,7 @@
     </figure>
     <p>Although the desktop proportion of websites was slightly higher overall, some popular platforms (including WooCommerce, PrestaShop and Shopware) actually have more mobile than desktop websites.</p>
     <h2 id="ecommerce-page-weight-and-requests"><a href="#ecommerce-page-weight-and-requests" class="anchor-link">Page weight and requests</a></h2>
-    <p>The <a href="#chapter-page-weight">page weight</a> of an ecommerce platform includes all HTML, CSS, JavaScript, JSON, XML, images, audio, and video.</p>
+    <p>The <a href="#page-weight">page weight</a> of an ecommerce platform includes all HTML, CSS, JavaScript, JSON, XML, images, audio, and video.</p>
     <figure id="ecommerce-fig-7">
       <a href="/static/images/2019/ecommerce/fig7.png">
         <img src="/static/images/2019/ecommerce/fig7.png" alt="Figure 7. Distribution of ecommerce page weight." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="363" data-width="600" data-height="363" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&amp;format=interactive" loading="lazy" />
@@ -5595,7 +5594,7 @@
       <figcaption><a href="#ecommerce-fig-10" class="anchor-link">Figure 10.</a> Percentiles of the distribution of requests per page by resource type.</figcaption>
     </figure>
     <p>Images constitute the largest number of requests and the highest proportion of bytes for ecommerce pages. The median desktop ecommerce page includes 39 images weighing 1,514 KB (1.5 MB).</p>
-    <p>The number of <a href="#chapter-javascript">JavaScript</a> requests indicates that better bundling (and/or <a href="#chapter-http2">HTTP/2</a> multiplexing) could improve performance. JavaScript files are not significantly large in terms of total bytes, but many separate requests are made. According to the <a href="#http2-adoption-of-http2">HTTP/2</a> chapter, more than 40% of requests are not via HTTP/2. Similarly, CSS files have the third highest number of requests but are generally small. Merging CSS files (and/or HTTP/2) could improve performance of such sites. In the authors' experience, many ecommerce pages have a high proportion of unused CSS and JavaScript. <a href="#chapter-media">Videos</a> may require a small number of requests, but (not surprisingly) consume a high proportion of the page weight, particularly on sites with heavy payloads.</p>
+    <p>The number of <a href="#javascript">JavaScript</a> requests indicates that better bundling (and/or <a href="#http2">HTTP/2</a> multiplexing) could improve performance. JavaScript files are not significantly large in terms of total bytes, but many separate requests are made. According to the <a href="#http2-adoption-of-http2">HTTP/2</a> chapter, more than 40% of requests are not via HTTP/2. Similarly, CSS files have the third highest number of requests but are generally small. Merging CSS files (and/or HTTP/2) could improve performance of such sites. In the authors' experience, many ecommerce pages have a high proportion of unused CSS and JavaScript. <a href="#media">Videos</a> may require a small number of requests, but (not surprisingly) consume a high proportion of the page weight, particularly on sites with heavy payloads.</p>
     <h2 id="ecommerce-html-payload-size"><a href="#ecommerce-html-payload-size" class="anchor-link">HTML payload size</a></h2>
     <figure id="ecommerce-fig-11">
       <a href="/static/images/2019/ecommerce/fig11.png">
@@ -5621,13 +5620,13 @@
       <div id="ecommerce-fig13-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of image requests per ecommerce page. The median desktop ecommerce page makes 40 image requests. The 10th percentile is 16 requests, 25th 25, 75th 62, and 90th 97. The desktop distribution is slightly higher than mobile by 2-10 requests at each percentile.</div>
       <figcaption id="ecommerce-fig13-caption"><a href="#ecommerce-fig-13" class="anchor-link">Figure 13.</a> Distribution of image requests per ecommerce page.</figcaption>
     </figure>
-    <p class="note">Note that because our data collection <a href="#chapter-methodology">methodology</a> does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</p>
+    <p class="note">Note that because our data collection <a href="#methodology">methodology</a> does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</p>
     <p>Figures 12 and 13 above show that the median ecommerce page has 37 images and an image payload of 1,517 KB on mobile, 40 images and 1,524 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly 6&nbsp;MB!</p>
     <figure id="ecommerce-fig-14">
       <div class="big-number">1,517 KB</div>
       <figcaption><a href="#ecommerce-fig-14" class="anchor-link">Figure 14.</a> The median number of image bytes per mobile ecommerce page.</figcaption>
     </figure>
-    <p>A significant proportion of ecommerce pages have sizable image payloads and make a large number of image requests on first load. See HTTP Archive's <a href="https://httparchive.org/reports/state-of-images">State of Images</a> report and the <a href="#chapter-media">media</a> and <a href="#chapter-page-weight">page weight</a> chapters for more context.</p>
+    <p>A significant proportion of ecommerce pages have sizable image payloads and make a large number of image requests on first load. See HTTP Archive's <a href="https://httparchive.org/reports/state-of-images">State of Images</a> report and the <a href="#media">media</a> and <a href="#page-weight">page weight</a> chapters for more context.</p>
     <p>Website owners want their sites to look good on modern devices. As a result, many sites deliver the same high resolution product images to every user <em>without regard for screen resolution or size</em>. Developers may not be aware of (or not want to use) responsive techniques that enable efficient delivery of the best possible image to different users. It's worth remembering that high-resolution images may not necessarily increase conversion rates. Conversely, overuse of heavy images is likely to impact page speed and can&nbsp;thereby <em>reduce</em> conversion rates. In the authors' experience from site reviews and events, some developers and other stakeholders have SEO or other concerns about using lazy loading for images.</p>
     <p>We need to do more analysis to better understand why some sites are not using responsive image techniques or lazy loading. We also need to provide guidance that helps ecommerce platforms to reliably deliver beautiful images to those with high end devices and good connectivity, while simultaneously providing a best-possible experience to lower-end devices and those with poor connectivity.</p>
     <h2 id="ecommerce-popular-image-formats"><a href="#ecommerce-popular-image-formats" class="anchor-link">Popular image formats</a></h2>
@@ -5710,7 +5709,7 @@
     <p>Given that image dimensions at each percentile up to the median are similar on mobile and desktop, or even slightly <em>larger</em> on mobile in some cases, it would seem that many sites are not delivering different image dimensions for different viewports, or in other words, not using responsive image techniques. The delivery of <em>larger</em> images to mobile in some cases may (or may not!) be explained by sites using device or screen detection.</p>
     <p>We need to do more research into why many sites are (apparently) not delivering different image sizes to different viewports.</p>
     <h2 id="ecommerce-third-party-requests-and-bytes"><a href="#ecommerce-third-party-requests-and-bytes" class="anchor-link">Third-party requests and bytes</a></h2>
-    <p>Many websites—especially online stores—load a significant amount of code and content from third-parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third-party content can have a <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">significant impact on performance</a>. <a href="https://twitter.com/patrickhulce">Patrick Hulce</a>'s <a href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> is used to determine third-party requests for this report, and this is discussed more in the <a href="#chapter-third-parties">Third Parties</a> chapter.</p>
+    <p>Many websites—especially online stores—load a significant amount of code and content from third-parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third-party content can have a <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript">significant impact on performance</a>. <a href="https://twitter.com/patrickhulce">Patrick Hulce</a>'s <a href="https://github.com/patrickhulce/third-party-web">third-party-web tool</a> is used to determine third-party requests for this report, and this is discussed more in the <a href="#third-parties">Third Parties</a> chapter.</p>
     <figure id="ecommerce-fig-17">
       <a href="/static/images/2019/ecommerce/fig17.png">
         <img src="/static/images/2019/ecommerce/fig17.png" alt="Figure 17. Distribution of third-party requests per ecommerce page." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&amp;format=interactive" loading="lazy" />
@@ -5757,7 +5756,7 @@
     <p>All top-six ecommerce platforms have worse FCP on mobile than desktop: less fast and more slow. Note that FCP is affected by device capability (processing power, memory, etc.) as well as connectivity.</p>
     <p>We need to establish why FCP is worse on mobile than desktop. What are the causes: connectivity and/or device capability, or something else?</p>
     <h2 id="ecommerce-progressive-web-app-pwa-scores"><a href="#ecommerce-progressive-web-app-pwa-scores" class="anchor-link">Progressive Web App (PWA) scores</a></h2>
-    <p>See also the <a href="#chapter-pwa">PWA chapter</a> for more information on this topic beyond just ecommerce sites.</p>
+    <p>See also the <a href="#pwa">PWA chapter</a> for more information on this topic beyond just ecommerce sites.</p>
     <figure id="ecommerce-fig-22">
       <a href="/static/images/2019/ecommerce/fig22.png">
         <img src="/static/images/2019/ecommerce/fig22.png" alt="Figure 22. Distribution of Lighthouse PWA category scores for mobile ecommerce pages." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&amp;format=interactive" loading="lazy" />
@@ -5770,7 +5769,7 @@
     <p>If at least one of the PWA audits got a null score, Lighthouse nulls out the score for the entire PWA category. This was the case for 2.32% of mobile pages.</p>
     <p>Clearly, the majority of ecommerce pages are failing most <a href="https://developers.google.com/web/progressive-web-apps/checklist">PWA checklist audits</a>. We need to do further analysis to better understand which audits are failing and why.</p>
     <h2 id="ecommerce-conclusion"><a href="#ecommerce-conclusion" class="anchor-link">Conclusion</a></h2>
-    <p>This comprehensive study of ecommerce usage shows some interesting data and also the wide variations in ecommerce sites, even among those built on the same ecommerce platform. Even though we have gone into a lot of detail here, there is much more analysis we could do in this space. For example, we didn't get accessibility scores this year (checkout the <a href="#chapter-accessibility">accessibility chapter</a> for more on that). Likewise, it would be interesting to segment these metrics by geography. This study detected 246 ad providers on home pages on ecommerce platforms. Further studies (perhaps in next year's Web Almanac?) could calculate what proportion of sites on ecommerce platforms shows ads. WooCommerce got very high numbers in this study so another interesting statistic we could look at next year is if some hosting providers are installing WooCommerce but not enabling it, thereby causing inflated figures.</p>
+    <p>This comprehensive study of ecommerce usage shows some interesting data and also the wide variations in ecommerce sites, even among those built on the same ecommerce platform. Even though we have gone into a lot of detail here, there is much more analysis we could do in this space. For example, we didn't get accessibility scores this year (checkout the <a href="#accessibility">accessibility chapter</a> for more on that). Likewise, it would be interesting to segment these metrics by geography. This study detected 246 ad providers on home pages on ecommerce platforms. Further studies (perhaps in next year's Web Almanac?) could calculate what proportion of sites on ecommerce platforms shows ads. WooCommerce got very high numbers in this study so another interesting statistic we could look at next year is if some hosting providers are installing WooCommerce but not enabling it, thereby causing inflated figures.</p>
   </section>
 
   <section class="authors">
@@ -5837,12 +5836,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-cms">
+<section class="chapter" id="cms">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} III {{ self.chapter() }} 14
     </div>
-    <h1 id="chapter-14" class="title title-lg">
+    <h1 id="14" class="title title-lg">
       CMS
     </h1>
 
@@ -5887,7 +5886,7 @@
       <figcaption><a href="#cms-fig-2" class="anchor-link">Figure 2.</a> Percent of web pages powered by a CMS.</figcaption>
     </figure>
     <p>Today, we can observe that more than 40% of the web pages are powered by some CMS platform; 40.01% for mobile and 39.61% for desktop more precisely.</p>
-    <p>There are other datasets tracking market share of CMS platforms, such as <a href="https://w3techs.com/technologies/history_overview/content_management">W3Techs</a>, and they reflect higher percentages of more than 50% of web pages powered by CMS platforms. Furthermore, they observe also that CMS platforms are growing, as fast as 12% year-over-year growth in some cases! The deviation between our analysis and W3Tech's analysis could be explained by a difference in research methodologies. You can read more about ours on the <a href="#chapter-methodology">Methodology</a> page.</p>
+    <p>There are other datasets tracking market share of CMS platforms, such as <a href="https://w3techs.com/technologies/history_overview/content_management">W3Techs</a>, and they reflect higher percentages of more than 50% of web pages powered by CMS platforms. Furthermore, they observe also that CMS platforms are growing, as fast as 12% year-over-year growth in some cases! The deviation between our analysis and W3Tech's analysis could be explained by a difference in research methodologies. You can read more about ours on the <a href="#methodology">Methodology</a> page.</p>
     <p>In essence, this means that there are many CMS platforms available out there. The following picture shows a reduced view of the CMS landscape.</p>
     <figure id="cms-fig-3">
       <a href="/static/images/2019/cms/cms-logos.png">
@@ -5933,7 +5932,7 @@
     <p>Independent of the specific nuances and idiosyncrasies of different CMS platforms, the end goal for all of them is to output web pages to be served to users via the vast reach of the open web. The difference between CMS-powered and non-CMS-powered web pages is that in the former, the CMS platform makes most of the decisions of how the end result is built, while in the latter there are not such layers of abstraction and decisions are all made by developers either directly or via library configurations.</p>
     <p>In this section we take a brief look at the status quo of the CMS space in terms of the characteristics of their output (e.g. total resources used, image statistics, etc.), and how they compare with the web ecosystem as a whole.</p>
     <h3 id="cms-total-resource-usage"><a href="#cms-total-resource-usage" class="anchor-link">Total resource usage</a></h3>
-    <p>The building blocks of any website also make a CMS website: <a href="#chapter-markup">HTML</a>, <a href="#chapter-css">CSS</a>, <a href="#chapter-javascript">JavaScript</a>, and <a href="#chapter-media">media</a> (images and video). CMS platforms give users powerfully streamlined administrative capabilities to integrate these resources to create web experiences. While this is one of the most inclusive aspects of these applications, it could have some adverse effects on the wider web.</p>
+    <p>The building blocks of any website also make a CMS website: <a href="#markup">HTML</a>, <a href="#css">CSS</a>, <a href="#javascript">JavaScript</a>, and <a href="#media">media</a> (images and video). CMS platforms give users powerfully streamlined administrative capabilities to integrate these resources to create web experiences. While this is one of the most inclusive aspects of these applications, it could have some adverse effects on the wider web.</p>
     <figure id="cms-fig-6">
       <a href="/static/images/2019/cms/fig6.png">
         <img src="/static/images/2019/cms/fig6.png" alt="Figure 6. Distribution of CMS page weight." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&amp;format=interactive" loading="lazy" />
@@ -5950,7 +5949,7 @@
     </figure>
     <p>In Figures 6 and 7 above, we see the median desktop CMS page loads 86 resources and weighs 2.29 MB. Mobile page resource usage is not too far behind with 83 resources and 2.25 MB.</p>
     <p>The median indicates the halfway point that all CMS pages either fall above or below. In short, half of all CMS pages load fewer requests and weigh less, while half load more requests and weigh more. At the 10th percentile, mobile and desktop pages have under 40 requests and 1 MB in weight, but at the 90th percentile we see pages with over 170 requests and at 7 MB, almost tripling in weight from the median.</p>
-    <p>How do CMS pages compare to pages on the web as a whole? In the <a href="#chapter-page-weight">Page Weight</a> chapter, we find some telling data about resource usage. At the median, desktop pages load 74 requests and weigh 1.9 MB, and mobile pages on the web load 69 requests and weigh 1.7 MB. The median CMS page exceeds this. CMS pages also exceed resources on the web at the 90th percentile, but by a smaller margin. In short: CMS pages could be considered as some of the heaviest.</p>
+    <p>How do CMS pages compare to pages on the web as a whole? In the <a href="#page-weight">Page Weight</a> chapter, we find some telling data about resource usage. At the median, desktop pages load 74 requests and weigh 1.9 MB, and mobile pages on the web load 69 requests and weigh 1.7 MB. The median CMS page exceeds this. CMS pages also exceed resources on the web at the 90th percentile, but by a smaller margin. In short: CMS pages could be considered as some of the heaviest.</p>
     <figure id="cms-fig-8">
       <div class="table-wrap">
         <div class="table-wrap-container">
@@ -6061,7 +6060,7 @@
     <p>The impact doesn't necessarily correlate with the number of requests, but rather how much data is associated with those individual requests. For example, in the case of video resources with only two requests made at the median, they carry more than 1MB of associated load. Multimedia experiences also come with the use of scripts to integrate interactivity, deliver functionality and data to name a few use cases. In both mobile and desktop pages, those are the 3rd heaviest resource.</p>
     <p>With our CMS experiences saturated with these resources, we must consider the impact this has on website visitors on the frontend- is their experience fast or slow? Additionally, when comparing mobile and desktop resource usage, the amount of requests and weight show little difference. This means that the same amount and weight of resources are powering both mobile and desktop CMS experiences. Variation in connection speed and mobile device quality adds <a href="https://medinathoughts.com/2017/12/03/the-perils-of-mobile-web-performance-part-iii/">another layer of complexity</a>. Later in this chapter, we'll use data from CrUX to assess user experience in the CMS space.</p>
     <h3 id="cms-third-party-resources"><a href="#cms-third-party-resources" class="anchor-link">Third-party resources</a></h3>
-    <p>Let's highlight a particular subset of resources to assess their impact in the CMS landscape. <a href="#chapter-third-parties">Third-party</a> resources are those from origins not belonging to the destination site's domain name or servers. They can be images, videos, scripts, or other resource types. Sometimes these resources are packaged in combination such as with embedding an <code>iframe</code> for example. Our data reveals that the median amount of 3rd party resources for both desktop and mobile are close.</p>
+    <p>Let's highlight a particular subset of resources to assess their impact in the CMS landscape. <a href="#third-parties">Third-party</a> resources are those from origins not belonging to the destination site's domain name or servers. They can be images, videos, scripts, or other resource types. Sometimes these resources are packaged in combination such as with embedding an <code>iframe</code> for example. Our data reveals that the median amount of 3rd party resources for both desktop and mobile are close.</p>
     <p>The median amount of 3rd party requests on mobile CMS pages is 15 and weigh 264.72 KB, while the median for these requests on desktop CMS pages is 16 and weigh 271.56 KB. (Note that this excludes 3P resources considered part of "hosting").</p>
     <figure id="cms-fig-10">
       <a href="/static/images/2019/cms/fig10.png">
@@ -6091,7 +6090,7 @@
       <div class="big-number">1,232 KB</div>
       <figcaption><a href="#cms-fig-13" class="anchor-link">Figure 13.</a> The median number of image kilobytes loaded per desktop CMS page.</figcaption>
     </figure>
-    <p>Recall from Figures 8 and 9 earlier, images are a big contributor to the total weight of CMS pages. Figures 12 and 13 above show that the median desktop CMS page has 31 images and payload of 1,232 KB, while the median mobile CMS page has 29 images and payload of 1,263 KB. Again we have very close margins for the weight of these resources for both desktop and mobile experiences. The <a href="#chapter-page-weight">Page Weight</a> chapter additionally shows that image resources well exceed the median weight of pages with the same amount of images on the web as a whole, which is 983 KB and 893 KB for desktop and mobile respectively. The verdict: CMS pages ship heavy images.</p>
+    <p>Recall from Figures 8 and 9 earlier, images are a big contributor to the total weight of CMS pages. Figures 12 and 13 above show that the median desktop CMS page has 31 images and payload of 1,232 KB, while the median mobile CMS page has 29 images and payload of 1,263 KB. Again we have very close margins for the weight of these resources for both desktop and mobile experiences. The <a href="#page-weight">Page Weight</a> chapter additionally shows that image resources well exceed the median weight of pages with the same amount of images on the web as a whole, which is 983 KB and 893 KB for desktop and mobile respectively. The verdict: CMS pages ship heavy images.</p>
     <p>Which are the common formats found on mobile and desktop CMS pages? From our data JPG images on average are the most popular image format. PNG and GIF formats follow, while formats like SVG, ICO, and WebP trail significantly comprising approximately a little over 2% and 1%.</p>
     <figure id="cms-fig-14">
       <a href="/static/images/2019/cms/fig14.png">
@@ -6263,7 +6262,7 @@
     <h3 id="cms-lighthouse-scores"><a href="#cms-lighthouse-scores" class="anchor-link">Lighthouse scores</a></h3>
     <p><a href="#methodology-lighthouse">Lighthouse</a> is an open-source, automated tool designed to help developers assess and improve the quality of their websites. One key aspect of the tool is that it provides a set of audits to assess the status of a website in terms of <strong>performance</strong>, <strong>accessibility</strong>, <strong>progressive web apps</strong>, and more. For the purposes of this chapter, we are interested in two specific audits categories: PWA and accessibility.</p>
     <h4 id="cms-pwa"><a href="#cms-pwa" class="anchor-link">PWA</a></h4>
-    <p>The term <strong>Progressive Web App</strong> (<a href="#chapter-pwa">PWA</a>) refers to web-based user experiences that are considered as being <a href="https://developers.google.com/web/progressive-web-apps#reliable">reliable</a>, <a href="https://developers.google.com/web/progressive-web-apps#fast">fast</a>, and <a href="https://developers.google.com/web/progressive-web-apps#engaging">engaging</a>. Lighthouse provides a set of audits which returns a PWA score between 0 (worst) and 1 (best). These audits are based on the <a href="https://developers.google.com/web/progressive-web-apps/checklist#baseline">Baseline PWA Checklist</a>, which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.</p>
+    <p>The term <strong>Progressive Web App</strong> (<a href="#pwa">PWA</a>) refers to web-based user experiences that are considered as being <a href="https://developers.google.com/web/progressive-web-apps#reliable">reliable</a>, <a href="https://developers.google.com/web/progressive-web-apps#fast">fast</a>, and <a href="https://developers.google.com/web/progressive-web-apps#engaging">engaging</a>. Lighthouse provides a set of audits which returns a PWA score between 0 (worst) and 1 (best). These audits are based on the <a href="https://developers.google.com/web/progressive-web-apps/checklist#baseline">Baseline PWA Checklist</a>, which lists 14 requirements. Lighthouse has automated audits for 11 of the 14 requirements. The remaining 3 can only be tested manually. Each of the 11 automated PWA audits are weighted equally, so each one contributes approximately 9 points to your PWA score.</p>
     <figure id="cms-fig-20">
       <a href="/static/images/2019/cms/fig20.png">
         <img src="/static/images/2019/cms/fig20.png" alt="Figure 20. Distribution of Lighthouse PWA category scores for CMS pages." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&amp;format=interactive" loading="lazy" />
@@ -6297,7 +6296,7 @@
     </figure>
     <p>As it stands now, only 1.27% of mobile CMS home pages get a perfect score of 100%. Of the top CMSs, Wix takes the lead by having the highest median accessibility score on its mobile pages. Overall, these figures are dismal when you consider how many websites (how much of the web that is powered by CMSs) are inaccessible to a significant segment of our population. As much as digital experiences impact so many aspects of our lives, this should be a mandate to encourage us to <em>build accessible web experiences from the start</em>, and to continue the work of making the web an inclusive space.</p>
     <h2 id="cms-cms-innovation"><a href="#cms-cms-innovation" class="anchor-link">CMS innovation</a></h2>
-    <p>While we've taken a snapshot of the current landscape of the CMS ecosystem, the space is evolving. In efforts to address <a href="#chapter-performance">performance</a> and user experience shortcomings, we're seeing experimental frameworks being integrated with the CMS infrastructure in both coupled and decoupled/ headless instances. Libraries and frameworks such as React.js, its derivatives like Gatsby.js and Next.js, and Vue.js derivative Nuxt.js are making slight marks of adoption.</p>
+    <p>While we've taken a snapshot of the current landscape of the CMS ecosystem, the space is evolving. In efforts to address <a href="#performance">performance</a> and user experience shortcomings, we're seeing experimental frameworks being integrated with the CMS infrastructure in both coupled and decoupled/ headless instances. Libraries and frameworks such as React.js, its derivatives like Gatsby.js and Next.js, and Vue.js derivative Nuxt.js are making slight marks of adoption.</p>
     <figure id="cms-fig-24">
       <div class="table-wrap">
         <div class="table-wrap-container">
@@ -6504,12 +6503,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-compression">
+<section class="chapter" id="compression">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 15
     </div>
-    <h1 id="chapter-15" class="title title-lg">
+    <h1 id="15" class="title title-lg">
       Compression
     </h1>
 
@@ -6530,13 +6529,13 @@
     <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-obto">David Fox</a>, {{ self.and() }} <a href="#contributors-yoavweiss">Yoav Weiss</a>{{ self.reviewed_by_after() }}</div>
 
     <h2 id="compression-introduction"><a href="#compression-introduction" class="anchor-link">Introduction</a></h2>
-    <p>HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client's available bandwidth, reduces <a href="#chapter-page-weight">page weight</a>, and improves <a href="#chapter-performance">web performance</a>.</p>
+    <p>HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client's available bandwidth, reduces <a href="#page-weight">page weight</a>, and improves <a href="#performance">web performance</a>.</p>
     <p>Compression algorithms are often categorized as lossy or lossless:</p>
     <ul>
       <li>When a lossy compression algorithm is used, the process is irreversible, and the original file cannot be restored via decompression. This is commonly used to compress media resources, such as image and video content where losing some data will not materially affect the resource.</li>
-      <li>Lossless compression is a completely reversible process, and is commonly used to compress text based resources, such as <a href="#chapter-markup">HTML</a>, <a href="#chapter-javascript">JavaScript</a>, <a href="#chapter-css">CSS</a>, etc.</li>
+      <li>Lossless compression is a completely reversible process, and is commonly used to compress text based resources, such as <a href="#markup">HTML</a>, <a href="#javascript">JavaScript</a>, <a href="#css">CSS</a>, etc.</li>
     </ul>
-    <p>In this chapter, we are going to explore how text-based content is compressed on the web. Analysis of non-text-based content forms part of the <a href="#chapter-media">Media</a> chapter.</p>
+    <p>In this chapter, we are going to explore how text-based content is compressed on the web. Analysis of non-text-based content forms part of the <a href="#media">Media</a> chapter.</p>
     <h2 id="compression-how-http-compression-works"><a href="#compression-how-http-compression-works" class="anchor-link">How HTTP compression works</a></h2>
     <p>
       When a client makes an HTTP request, it often includes an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding"><code>Accept-Encoding</code></a> header to advertise the compression algorithms it is capable of decoding. The server can then select from one of the advertised encodings it supports and serve a compressed response. The compressed response would include a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding"><code>Content-Encoding</code></a> header so that the client is aware of which compression was used. Additionally, a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type"><code>Content-Type</code></a> header is often used to indicate the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types">MIME type</a> of the resource being served.
@@ -6711,7 +6710,7 @@
     </figure>
     <p>Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are <code>application/javascript</code>, <code>text/css</code> and <code>application/x-javascript</code>. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them.</p>
     <h2 id="compression-first-party-vs-third-party-compression"><a href="#compression-first-party-vs-third-party-compression" class="anchor-link">First-party vs third-party compression</a></h2>
-    <p>In the <a href="#chapter-third-parties">Third Parties</a> chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content.</p>
+    <p>In the <a href="#third-parties">Third Parties</a> chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content.</p>
     <p>Additionally, the percentage of brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.</p>
     <figure id="compression-fig-9">
       <div class="table-wrap">
@@ -6833,12 +6832,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-caching">
+<section class="chapter" id="caching">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 16
     </div>
-    <h1 id="chapter-16" class="title title-lg">
+    <h1 id="16" class="title title-lg">
       Caching
     </h1>
 
@@ -6859,7 +6858,7 @@
     <div class="byline reviewers">{{ self.reviewed_by_before() }} <a href="#contributors-obto">David Fox</a>, {{ self.and() }} <a href="#contributors-bkardell">Brian Kardell</a>{{ self.reviewed_by_after() }}</div>
 
     <h2 id="caching-introduction"><a href="#caching-introduction" class="anchor-link">Introduction</a></h2>
-    <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant <a href="#chapter-performance">performance</a> benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make," and caching is one of the key ways to avoid having to make requests.</p>
+    <p>Caching is a technique that enables the reuse of previously downloaded content. It provides a significant <a href="#performance">performance</a> benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, "the fastest request is the one that you don't have to make," and caching is one of the key ways to avoid having to make requests.</p>
     <p>There are three guiding principles to caching web content: cache as much as you can, for as long as you can, as close as you can to end users.</p>
     <p><strong>Cache as much as you can.</strong> When considering how much can be cached, it is important to understand whether a response is static or dynamic. Requests that are served as a static response are typically cacheable, as they have a one-to-many relationship between the resource and the users requesting it. Dynamically generated content can be more nuanced and require careful consideration.</p>
     <p><strong>Cache for as long as you can.</strong> The length of time you would cache a resource is highly dependent on the sensitivity of the content being cached. A versioned JavaScript resource could be cached for a very long time, while a non-versioned resource may need a shorter cache duration to ensure users get a fresh version.</p>
@@ -7175,7 +7174,7 @@
     <h2 id="caching-how-do-cache-ttls-compare-to-resource-age"><a href="#caching-how-do-cache-ttls-compare-to-resource-age" class="anchor-link">How do cache TTLs compare to resource age?</a></h2>
     <p>So far we've talked about how web servers tell a client what is cacheable, and how long it has been cached for. When designing cache rules, it is also important to understand how old the content you are serving is.</p>
     <p>When you are selecting a cache TTL, ask yourself: "how often are you updating these assets?" and "what is their content sensitivity?". For example, if a hero image is going to be modified infrequently, then cache it with a very long TTL. If you expect a JavaScript resource to change frequently, then version it and cache it with a long TTL or cache it with a shorter TTL.</p>
-    <p>The graph below illustrates the relative age of resources by content type, and you can read a <a href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">more detailed analysis here</a>. HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources (<a href="#chapter-javascript">scripts</a>, <a href="#chapter-css">CSS</a>, and <a href="#chapter-fonts">fonts</a>) are older than one year!</p>
+    <p>The graph below illustrates the relative age of resources by content type, and you can read a <a href="https://discuss.httparchive.org/t/analyzing-resource-age-by-content-type/1659">more detailed analysis here</a>. HTML tends to be the content type with the shortest age, and a very large % of traditionally cacheable resources (<a href="#javascript">scripts</a>, <a href="#css">CSS</a>, and <a href="#fonts">fonts</a>) are older than one year!</p>
     <figure id="caching-fig-10">
       <a href="/static/images/2019/caching/ch16_fig8_resource_age.jpg">
         <img src="/static/images/2019/caching/ch16_fig8_resource_age.jpg" alt="Figure 10. Resource age distribution by content type." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="325" loading="lazy" />
@@ -7297,7 +7296,7 @@
     </ul>
     <p>The largest source of invalid <code>Expires</code> headers is from assets served from a popular third-party, in which a date/time uses the EST time zone, for example <code>Expires: Tue, 27 Apr 1971 19:44:06 EST</code>.</p>
     <h2 id="caching-vary-header"><a href="#caching-vary-header" class="anchor-link">Vary header</a></h2>
-    <p>One of the most important steps in caching is determining if the resource being requested is cached or not. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what <a href="#chapter-compression">compression</a> they used (gzip, brotli, etc.) or be modified and tailored for mobile visitors.</p>
+    <p>One of the most important steps in caching is determining if the resource being requested is cached or not. While this may seem simple, many times the URL alone is not enough to determine this. For example, requests with the same URL could vary in what <a href="#compression">compression</a> they used (gzip, brotli, etc.) or be modified and tailored for mobile visitors.</p>
     <p>To solve this problem, clients give each cached resource a unique identifier (a cache key). By default, this cache key is simply the URL of the resource, but developers can add other elements (like compression method) by using the Vary header.</p>
     <p>A Vary header instructs a client to add the value of one or more request header values to the cache key. The most common example of this is <code>Vary: Accept-Encoding</code>, which will result in different cached entries for <code>Accept-Encoding</code> request header values (i.e. <code>gzip</code>, <code>br</code>, <code>deflate</code>).</p>
     <p>Another common value is <code>Vary: Accept-Encoding, User-Agent</code>, which instructs the client to vary the cached entry by both the Accept-Encoding values and the <code>User-Agent</code> string. When dealing with shared proxies and CDNs, using values other than <code>Accept-Encoding</code> can be problematic as it dilutes the cache keys and can reduce the amount of traffic served from cache.</p>
@@ -7340,7 +7339,7 @@
       <div id="caching-fig17-description" class="visually-hidden">A time series chart showing service worker controlled site usage from October 2016 until July 2019. Usage has been steadily growing throughout the years for both mobile and desktop but is still less than 0.6% for both.</div>
       <figcaption id="caching-fig17-caption"><a href="#caching-fig-17" class="anchor-link">Figure 17.</a> Timeseries of service worker controlled pages. (Source: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
     </figure>
-    <p>Adoption is still below 1% of websites, but it has been steadily increasing since January 2017. The <a href="#chapter-pwa">Progressive Web App</a> chapter discusses this more, including the fact that it is used a lot more than this graph suggests due to its usage on popular sites, which are only counted once in above graph.</p>
+    <p>Adoption is still below 1% of websites, but it has been steadily increasing since January 2017. The <a href="#pwa">Progressive Web App</a> chapter discusses this more, including the fact that it is used a lot more than this graph suggests due to its usage on popular sites, which are only counted once in above graph.</p>
     <p>In the table below, you can see a summary of AppCache vs service worker usage. 32,292 websites have implemented a service worker, while 1,867 sites are still utilizing the deprecated AppCache feature.</p>
     <figure id="caching-fig-18">
       <div class="table-wrap">
@@ -7479,12 +7478,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-cdn">
+<section class="chapter" id="cdn">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 17
     </div>
-    <h1 id="chapter-17" class="title title-lg">
+    <h1 id="17" class="title title-lg">
       CDN
     </h1>
 
@@ -7514,13 +7513,13 @@
     <ul>
       <li>Using a CDN to proxy dynamic content (base HTML page, API responses, etc.) can take advantage of both the reduced latency between the browser and the CDN's own network back to the origin.</li>
       <li>Some CDNs offer transformations that optimize pages so they download and render more quickly, or optimize images so they're the appropriate size (both dimensions and file size) for the device on which they're going to be viewed.</li>
-      <li>From a <a href="#chapter-security">security</a> perspective, malicious traffic and bots can be filtered out by a CDN before the requests even reach the origin, and their wide customer base means CDNs can often see and react to new threats sooner.</li>
+      <li>From a <a href="#security">security</a> perspective, malicious traffic and bots can be filtered out by a CDN before the requests even reach the origin, and their wide customer base means CDNs can often see and react to new threats sooner.</li>
       <li>The rise of <a href="https://en.wikipedia.org/wiki/Edge_computing">edge computing</a> allows sites to run their own code close to their visitors, both improving performance and reducing the load on the origin.</li>
     </ul>
-    <p>Finally, CDNs also help sites to adopt new technologies without requiring changes at the origin, for example <a href="#chapter-http2">HTTP/2</a>, TLS 1.3, and/or IPv6 can be enabled from the edge to the browser, even if the origin servers don't support it yet.</p>
+    <p>Finally, CDNs also help sites to adopt new technologies without requiring changes at the origin, for example <a href="#http2">HTTP/2</a>, TLS 1.3, and/or IPv6 can be enabled from the edge to the browser, even if the origin servers don't support it yet.</p>
     <h3 id="cdn-caveats-and-disclaimers"><a href="#cdn-caveats-and-disclaimers" class="anchor-link">Caveats and disclaimers</a></h3>
     <p>As with any observational study, there are limits to the scope and impact that can be measured. The statistics gathered on CDN usage for the the Web Almanac does not imply performance nor effectiveness of a specific CDN vendor.</p>
-    <p>There are many limits to the testing <a href="#chapter-methodology">methodology</a> used for the Web Almanac. These include:</p>
+    <p>There are many limits to the testing <a href="#methodology">methodology</a> used for the Web Almanac. These include:</p>
     <ul>
       <li><strong>Simulated network latency</strong>: The Web Almanac uses a dedicated network connection that <a href="#methodology-webpagetest">synthetically shapes traffic</a>.</li>
       <li><strong>Single geographic location</strong>: Tests are run from <a href="https://httparchive.org/faq#how-is-the-data-gathered">a single datacenter</a> and cannot test the geographic distribution of many CDN vendors.</li>
@@ -7540,7 +7539,7 @@
     <p>In future versions of the Web Almanac, we would expect to look more closely at the TLS and RTT management between CDN vendors. Of interest would the impact of OCSP stapling, differences in TLS Cipher performance. CWND (TCP congestion window) growth rate, and specifically the adoption of BBR v1, v2, and traditional TCP Cubic.</p>
     <h2 id="cdn-cdn-adoption-and-usage"><a href="#cdn-cdn-adoption-and-usage" class="anchor-link">CDN adoption and usage</a></h2>
     <p>For websites, a CDN can improve performance for the primary domain (<code>www.shoesbycolin.com</code>), sub-domains or sibling domains (<code>images.shoesbycolin.com</code> or <code>checkout.shoesbycolin.com</code>), and finally third parties (Google Analytics, etc.). Using a CDN for each of these use cases improves performance in different ways.</p>
-    <p>Historically, CDNs were used exclusively for static resources like <a href="#chapter-css">CSS</a>, <a href="#chapter-javascript">JavaScript</a>, and <a href="#chapter-media">images</a>. These resources would likely be versioned (include a unique number in the path) and cached long-term. In this way we should expect to see higher adoption of CDNs on sub-domains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that <code>www.shoesbycolin.com</code> would serve HTML directly from a datacenter (or <strong>origin</strong>) while <code>static.shoesbycolin.com</code> would use a CDN.</p>
+    <p>Historically, CDNs were used exclusively for static resources like <a href="#css">CSS</a>, <a href="#javascript">JavaScript</a>, and <a href="#media">images</a>. These resources would likely be versioned (include a unique number in the path) and cached long-term. In this way we should expect to see higher adoption of CDNs on sub-domains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that <code>www.shoesbycolin.com</code> would serve HTML directly from a datacenter (or <strong>origin</strong>) while <code>static.shoesbycolin.com</code> would use a CDN.</p>
     <figure id="cdn-fig-1">
       <a href="/static/images/2019/cdn/fig1.png">
         <img src="/static/images/2019/cdn/fig1.png" alt="Figure 1. CDN usage vs. origin-hosted resources." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&amp;format=interactive" loading="lazy" />
@@ -8520,10 +8519,10 @@
       <div id="cdn-fig18-description" class="visually-hidden">Bar chart showing that TLS 1.3 or TLS 1.2 is used by all CDNs when TLS is used. A few CDNs have adopted TLS 1.3 completely, some partially and a large proportion not at all and only using TLS 1.2.</div>
       <figcaption id="cdn-fig18-caption"><a href="#cdn-fig-18" class="anchor-link">Figure 18.</a> HTML TLS version by CDN.</figcaption>
     </figure>
-    <p>More discussion of TLS versions and ciphers can be found in the <a href="#chapter-security">Security</a> and <a href="#chapter-http2">HTTP/2</a> chapters.</p>
+    <p>More discussion of TLS versions and ciphers can be found in the <a href="#security">Security</a> and <a href="#http2">HTTP/2</a> chapters.</p>
     <h2 id="cdn-http2-adoption"><a href="#cdn-http2-adoption" class="anchor-link">HTTP/2 adoption</a></h2>
     <p>Along with RTT management and improving TLS performance, CDNs also enable new standards like HTTP/2 and IPv6. While most CDNs offer support for HTTP/2 and many have signaled early support of the still-under-standards-development HTTP/3, adoption still depends on website owners to enable these new features. Despite the change-management overhead, the majority of the HTML served from CDNs has HTTP/2 enabled.</p>
-    <p>CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin pages. Similarly, sub-domain and third-party resources on CDNs see an even higher adoption of HTTP/2 at 90% or higher while third-party resources served from origin infrastructure only has 31% adoption. The performance gains and other features of HTTP/2 are further covered in the <a href="#chapter-http2">HTTP/2</a> chapter.</p>
+    <p>CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin pages. Similarly, sub-domain and third-party resources on CDNs see an even higher adoption of HTTP/2 at 90% or higher while third-party resources served from origin infrastructure only has 31% adoption. The performance gains and other features of HTTP/2 are further covered in the <a href="#http2">HTTP/2</a> chapter.</p>
     <p class="note">Note: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</p>
     <figure id="cdn-fig-19">
       <a href="/static/images/2019/cdn/fig19.png">
@@ -8941,7 +8940,7 @@
       <a href="#cdn-vary" class="anchor-link"><code>Vary</code></a>
     </h3>
     <p>A website can control the caching behavior of browsers and CDNs with the use of different HTTP headers. The most common is the <code>Cache-Control</code> header which specifically determines how long something can be cached before returning to the origin to ensure it is up-to-date.</p>
-    <p>Another useful tool is the use of the <code>Vary</code> HTTP header. This header instructs both CDNs and browsers how to fragment a cache. The <code>Vary</code> header allows an origin to indicate that there are multiple representations of a resource, and the CDN should cache each variation separately. The most common example is <a href="#chapter-compression">compression</a>. Declaring a resource as <code>Vary: Accept-Encoding</code> allows the CDN to cache the same content, but in different forms like uncompressed, with gzip, or Brotli. Some CDNs even do this compression on the fly so as to keep only one copy available. This <code>Vary</code> header likewise also instructs the browser how to cache the content and when to request new content.</p>
+    <p>Another useful tool is the use of the <code>Vary</code> HTTP header. This header instructs both CDNs and browsers how to fragment a cache. The <code>Vary</code> header allows an origin to indicate that there are multiple representations of a resource, and the CDN should cache each variation separately. The most common example is <a href="#compression">compression</a>. Declaring a resource as <code>Vary: Accept-Encoding</code> allows the CDN to cache the same content, but in different forms like uncompressed, with gzip, or Brotli. Some CDNs even do this compression on the fly so as to keep only one copy available. This <code>Vary</code> header likewise also instructs the browser how to cache the content and when to request new content.</p>
     <figure id="cdn-fig-24">
       <a href="/static/images/2019/cdn/use_of_vary_on_cdn.png">
         <img alt="Breakdown of Vary header values for HTML content served from a CDN" src="/static/images/2019/cdn/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376" loading="lazy" />
@@ -8967,7 +8966,7 @@
     </h3>
     <p>There are other HTTP headers that specifically target CDNs, or other proxy caches, such as the <code>Surrogate-Control</code>, <code>s-maxage</code>, <code>pre-check</code>, and <code>post-check</code> values in the <code>Cache-Control</code> header. In general usage of these headers is low.</p>
     <p><code>Surrogate-Control</code> allows origins to specify caching rules just for CDNs, and as CDNs are likely to strip the header before serving responses, its low visible usage isn't a surprise, in fact it's surprising that it's actually in any responses at all! (It was even seen from some CDNs that state they strip it).</p>
-    <p>Some CDNs support <code>post-check</code> as a method to allow a resource to be refreshed when it goes stale, and <code>pre-check</code> as a <code>maxage</code> equivalent. For most CDNs, usage of <code>pre-check</code> and <code>post-check</code> was below 1%. Yahoo was the exception to this and about 15% of requests had <code>pre-check=0, post-check=0</code>. Unfortunately this seems to be a remnant of an old Internet Explorer pattern rather than active usage. More discussion on this can be found in the <a href="#chapter-caching">Caching</a> chapter.</p>
+    <p>Some CDNs support <code>post-check</code> as a method to allow a resource to be refreshed when it goes stale, and <code>pre-check</code> as a <code>maxage</code> equivalent. For most CDNs, usage of <code>pre-check</code> and <code>post-check</code> was below 1%. Yahoo was the exception to this and about 15% of requests had <code>pre-check=0, post-check=0</code>. Unfortunately this seems to be a remnant of an old Internet Explorer pattern rather than active usage. More discussion on this can be found in the <a href="#caching">Caching</a> chapter.</p>
     <p>The <code>s-maxage</code> directive informs proxies for how long they may cache a response. Across the Web Almanac dataset, jsDelivr is the only CDN where a high level of usage was seen across multiple resources—this isn't surprising given jsDelivr's role as a public CDN for libraries. Usage across other CDNs seems to be driven by individual customers, for example third-party scripts or SaaS providers using that particular CDN.</p>
     <figure id="cdn-fig-26">
       <a href="/static/images/2019/cdn/fig26.png">
@@ -9057,12 +9056,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-page-weight">
+<section class="chapter" id="page-weight">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 18
     </div>
-    <h1 id="chapter-18" class="title title-lg">
+    <h1 id="18" class="title title-lg">
       Page Weight
     </h1>
 
@@ -9923,12 +9922,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-resource-hints">
+<section class="chapter" id="resource-hints">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 19
     </div>
-    <h1 id="chapter-19" class="title title-lg">
+    <h1 id="19" class="title title-lg">
       Resource Hints
     </h1>
 
@@ -10027,7 +10026,7 @@
       <figcaption><a href="#resource-hints-fig-1" class="anchor-link">Figure 1.</a> Adoption of resource hints.</figcaption>
     </figure>
     <p>The relative popularity of <code>dns-prefetch</code> is unsurprising; it's a well-established API (it first appeared in <a href="https://caniuse.com/#feat=link-rel-dns-prefetch">2009</a>), it is supported by all major browsers, and it is the most "inexpensive" of all resource hints. Because <code>dns-prefetch</code> only performs DNS lookups, it consumes very little data, and therefore there is very little downside to using it. <code>dns-prefetch</code> is most useful in high-latency situations.</p>
-    <p>That being said, if a site does not need to support IE11 and below, switching from <code>dns-prefetch</code> to <code>preconnect</code> is probably a good idea. In an era where HTTPS is ubiquitous, <code>preconnect</code> yields greater <a href="#chapter-performance">performance</a> improvements while still being inexpensive. Note that unlike <code>dns-prefetch</code>, <code>preconnect</code> not only initiates the DNS lookup, but also the TCP handshake and TLS negotiation. The <a href="https://knowledge.digicert.com/solution/SO16297.html">certificate chain</a> is downloaded during TLS negotiation and this typically costs a couple of kilobytes.</p>
+    <p>That being said, if a site does not need to support IE11 and below, switching from <code>dns-prefetch</code> to <code>preconnect</code> is probably a good idea. In an era where HTTPS is ubiquitous, <code>preconnect</code> yields greater <a href="#performance">performance</a> improvements while still being inexpensive. Note that unlike <code>dns-prefetch</code>, <code>preconnect</code> not only initiates the DNS lookup, but also the TCP handshake and TLS negotiation. The <a href="https://knowledge.digicert.com/solution/SO16297.html">certificate chain</a> is downloaded during TLS negotiation and this typically costs a couple of kilobytes.</p>
     <p><code>prefetch</code> is used by 3% of sites, making it the least widely used resource hint. This low usage may be explained by the fact that <code>prefetch</code> is useful for improving subsequent—rather than current—page loads. Thus, it will be overlooked if a site is only focused on improving their landing page, or the performance of the first page viewed.</p>
     <figure id="resource-hints-fig-2">
       <div class="table-wrap">
@@ -10074,7 +10073,7 @@
     <h2 id="resource-hints-the-crossorigin-attribute">
       <a href="#resource-hints-the-crossorigin-attribute" class="anchor-link">The <code>crossorigin</code> attribute</a>
     </h2>
-    <p>Most "traditional" resources fetched on the web (<a href="#chapter-media">images</a>, <a href="#chapter-css">stylesheets</a>, and <a href="#chapter-javascript">scripts</a>) are fetched without opting in to Cross-Origin Resource Sharing (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a>). That means that if those resources are fetched from a cross-origin server, by default their contents cannot be read back by the page, due to the same-origin policy.</p>
+    <p>Most "traditional" resources fetched on the web (<a href="#media">images</a>, <a href="#css">stylesheets</a>, and <a href="#javascript">scripts</a>) are fetched without opting in to Cross-Origin Resource Sharing (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a>). That means that if those resources are fetched from a cross-origin server, by default their contents cannot be read back by the page, due to the same-origin policy.</p>
     <p>In some cases, the page can opt-in to fetch the resource using CORS if it needs to read its content. CORS enables the browser to "ask permission" and get access to those cross-origin resources.</p>
     <p>For newer resource types (e.g. fonts, <code>fetch()</code> requests, ES modules), the browser defaults to requesting those resources using CORS, failing the requests entirely if the server does not grant it permission to access them.</p>
     <figure id="resource-hints-fig-3">
@@ -10114,7 +10113,7 @@
     <h2 id="resource-hints-the-as-attribute">
       <a href="#resource-hints-the-as-attribute" class="anchor-link">The <code>as</code> attribute</a>
     </h2>
-    <p><code>as</code> is an attribute that should be used with the <code>preload</code> resource hint to inform the browser of the type (e.g. image, script, style, etc.) of the requested resource. This helps the browser correctly prioritize the request and apply the correct Content Security Policy (<a href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>). CSP is a <a href="#chapter-security">security</a> mechanism, expressed via HTTP header, that helps mitigate the impact of XSS and other malicious attacks by declaring a safelist of trusted sources; only content from these sources can be rendered or executed.</p>
+    <p><code>as</code> is an attribute that should be used with the <code>preload</code> resource hint to inform the browser of the type (e.g. image, script, style, etc.) of the requested resource. This helps the browser correctly prioritize the request and apply the correct Content Security Policy (<a href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>). CSP is a <a href="#security">security</a> mechanism, expressed via HTTP header, that helps mitigate the impact of XSS and other malicious attacks by declaring a safelist of trusted sources; only content from these sources can be rendered or executed.</p>
     <figure id="resource-hints-fig-4">
       <div class="big-number">88%</div>
       <figcaption><a href="#resource-hints-fig-4" class="anchor-link">Figure 4.</a> The percent of resource hint instances using the <code>as</code> attribute.</figcaption>
@@ -10142,7 +10141,7 @@
     <p>Priority hints are <a href="https://www.chromestatus.com/feature/5273474901737472">implemented</a> and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is only used by 0.04% of sites.</p>
     <p>85% of priority hint usage is with <code>&lt;img&gt;</code> tags. Priority hints are mostly used to deprioritize resources: 72% of usage is <code>importance="low"</code>; 28% of usage is <code>importance="high"</code>.</p>
     <h3 id="resource-hints-native-lazy-loading"><a href="#resource-hints-native-lazy-loading" class="anchor-link">Native lazy loading</a></h3>
-    <p><a href="https://web.dev/native-lazy-loading">Native lazy loading</a> is a native API for deferring the load of off-screen images and iframes. This frees up resources during the initial page load and avoids loading assets that are never used. Previously, this technique could only be achieved through third-party <a href="#chapter-javascript">JavaScript</a> libraries.</p>
+    <p><a href="https://web.dev/native-lazy-loading">Native lazy loading</a> is a native API for deferring the load of off-screen images and iframes. This frees up resources during the initial page load and avoids loading assets that are never used. Previously, this technique could only be achieved through third-party <a href="#javascript">JavaScript</a> libraries.</p>
     <p>The API for native lazy loading looks like this: <code>&lt;img src="cat.jpg" loading="lazy"&gt;</code>.</p>
     <p>Native lazy loading is available in browsers based on Chromium 76 and up. The API was announced too late for it to be included in the dataset for this year's Web Almanac, but it is something to keep an eye out for in the coming year.</p>
     <h2 id="resource-hints-conclusion"><a href="#resource-hints-conclusion" class="anchor-link">Conclusion</a></h2>
@@ -10180,12 +10179,12 @@
   </section>
 </section>
 
-<section class="chapter" id="chapter-http2">
+<section class="chapter" id="http2">
   <section class="body">
     <div class="subtitle">
       {{ self.part() }} IV {{ self.chapter() }} 20
     </div>
-    <h1 id="chapter-20" class="title title-lg">
+    <h1 id="20" class="title title-lg">
       HTTP/2
     </h1>
 
@@ -10207,13 +10206,13 @@
 
     <h2 id="http2-introduction"><a href="#http2-introduction" class="anchor-link">Introduction</a></h2>
     <p>HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default.</p>
-    <p>This meant that even those without the skills and resources to concentrate on <a href="#chapter-performance">web performance</a> would suddenly have performant websites. However, the reality has been, as ever, a little more nuanced than that. It has been over four years since the formal approval of HTTP/2 as a standard in May 2015 as <a href="https://tools.ietf.org/html/rfc7540">RFC 7540</a>, so now is a good time to look over how this relatively new technology has fared in the real world.</p>
+    <p>This meant that even those without the skills and resources to concentrate on <a href="#performance">web performance</a> would suddenly have performant websites. However, the reality has been, as ever, a little more nuanced than that. It has been over four years since the formal approval of HTTP/2 as a standard in May 2015 as <a href="https://tools.ietf.org/html/rfc7540">RFC 7540</a>, so now is a good time to look over how this relatively new technology has fared in the real world.</p>
     <h2 id="http2-what-is-http2"><a href="#http2-what-is-http2" class="anchor-link">What is HTTP/2?</a></h2>
     <p>For those not familiar with the technology, a bit of background is helpful to make the most of the metrics and findings in this chapter. Up until recently, HTTP has always been a text-based protocol. An HTTP client like a web browser opened a TCP connection to a server, and then sent an HTTP command like <code>GET /index.html</code> to ask for a resource.</p>
     <p>This was enhanced in HTTP/1.0 to add <em>HTTP headers</em>, so various pieces of metadata could be included in addition to the request, such as what browser it is, the formats it understands, etc. These HTTP headers were also text-based and separated by newline characters. Servers parsed the incoming requests by reading the request and any HTTP headers line by line, and then the server responded with its own HTTP response headers in addition to the actual resource being requested.</p>
     <p>The protocol seemed simple, but it also came with limitations. Because HTTP was essentially synchronous, once an HTTP request had been sent, the whole TCP connection was basically off limits to anything else until the response had been returned, read, and processed. This was incredibly inefficient and required multiple TCP connections (browsers typically use 6) to allow a limited form of parallelization.</p>
     <p>That in itself brings its own issues as TCP connections take time and resources to set up and get to full efficiency, especially when using HTTPS, which requires additional steps to set up the encryption. HTTP/1.1 improved this somewhat, allowing reuse of TCP connections for subsequent requests, but still did not solve the parallelization issue.</p>
-    <p>Despite HTTP being text-based, the reality is that it was rarely used to transport text, at least in its raw format. While it was true that HTTP headers were still text, the payloads themselves often were not. Text files like <a href="#chapter-markup">HTML</a>, <a href="#chapter-javascript">JS</a>, and <a href="#chapter-css">CSS</a> are usually <a href="#chapter-compression">compressed</a> for transport into a binary format using gzip, brotli, or similar. Non-text files like <a href="#chapter-media">images and videos</a> are served in their own formats. The whole HTTP message is then often wrapped in HTTPS to encrypt the messages for <a href="#chapter-security">security</a> reasons.</p>
+    <p>Despite HTTP being text-based, the reality is that it was rarely used to transport text, at least in its raw format. While it was true that HTTP headers were still text, the payloads themselves often were not. Text files like <a href="#markup">HTML</a>, <a href="#javascript">JS</a>, and <a href="#css">CSS</a> are usually <a href="#compression">compressed</a> for transport into a binary format using gzip, brotli, or similar. Non-text files like <a href="#media">images and videos</a> are served in their own formats. The whole HTTP message is then often wrapped in HTTPS to encrypt the messages for <a href="#security">security</a> reasons.</p>
     <p>So, the web had basically moved on from text-based transport a long time ago, but HTTP had not. One reason for this stagnation was because it was so difficult to introduce any breaking changes to such a ubiquitous protocol like HTTP (previous efforts had tried and failed). Many routers, firewalls, and other middleboxes understood HTTP and would react badly to major changes to it. Upgrading them all to support a new version was simply not possible.</p>
     <p>In 2009, Google announced that they were working on an alternative to the text-based HTTP called <a href="https://www.chromium.org/spdy">SPDY</a>, which has since been deprecated. This would take advantage of the fact that HTTP messages were often encrypted in HTTPS, which prevents them being read and interfered with en route.</p>
     <p>Google controlled one of the most popular browsers (Chrome) and some of the most popular websites (Google, YouTube, Gmail…etc.) - so both ends of the connection when both were used together. Google's idea was to pack HTTP messages into a proprietary format, send them across the internet, and then unpack them on the other side. The proprietary format, SPDY, was binary-based rather than text-based. This solved some of the main performance problems with HTTP/1.1 by allowing more efficient use of a single TCP connection, negating the need to open the six connections that had become the norm under HTTP/1.1.</p>
@@ -10238,7 +10237,7 @@
       <figcaption><a href="#http2-fig-1" class="anchor-link">Figure 1.</a> The percent of global users who can use HTTP/2.</figcaption>
     </figure>
     <p>HTTP/2 however, was different as it was effectively hidden in HTTPS (at least for the browser uses cases), removing barriers to adoption as long as both the browser and server supported it. Browser support has been very strong for some time and the advent of auto updating <em>evergreen</em> browsers has meant that an estimated <a href="https://caniuse.com/#feat=http2">95% of global users now support HTTP/2</a>.</p>
-    <p>Our analysis is sourced from the HTTP Archive, which tests approximately 5 million of the top desktop and mobile websites in the Chrome browser. (Learn more about our <a href="#chapter-methodology">methodology</a>.)</p>
+    <p>Our analysis is sourced from the HTTP Archive, which tests approximately 5 million of the top desktop and mobile websites in the Chrome browser. (Learn more about our <a href="#methodology">methodology</a>.)</p>
     <figure id="http2-fig-2">
       <a href="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png">
         <img alt="Figure 2. HTTP/2 usage by request." aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png" width="600" height="321" loading="lazy" />
@@ -10465,7 +10464,7 @@
       </div>
       <figcaption><a href="#http2-fig-6" class="anchor-link">Figure 6.</a> Servers used for HTTP/2.</figcaption>
     </figure>
-    <p>Nginx provides package repositories that allow ease of installing or upgrading to the latest version, so it is no surprise to see it leading the way here. Cloudflare is the most popular <a href="#chapter-cdn">CDN</a> and enables HTTP/2 by default, so again it is not surprising to see it hosts a large percentage of HTTP/2 sites. Incidently, Cloudflare uses a <a href="https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/">heavily customized</a> version of nginx as their web server. After those, we see Apache at around 20% of usage, followed by some servers who choose to hide what they are, and then the smaller players such as LiteSpeed, IIS, Google Servlet Engine, and openresty, which is nginx based.</p>
+    <p>Nginx provides package repositories that allow ease of installing or upgrading to the latest version, so it is no surprise to see it leading the way here. Cloudflare is the most popular <a href="#cdn">CDN</a> and enables HTTP/2 by default, so again it is not surprising to see it hosts a large percentage of HTTP/2 sites. Incidently, Cloudflare uses a <a href="https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/">heavily customized</a> version of nginx as their web server. After those, we see Apache at around 20% of usage, followed by some servers who choose to hide what they are, and then the smaller players such as LiteSpeed, IIS, Google Servlet Engine, and openresty, which is nginx based.</p>
     <p>What is more interesting is those servers that that do <em>not</em> support HTTP/2:</p>
     <figure id="http2-fig-7">
       <div class="table-wrap">
@@ -10610,7 +10609,7 @@
     <p>It's clear that Apache and IIS fall way behind with 18% and 14% of their installed based supporting HTTP/2, which has to be (at least in part) a consequence of it being more difficult to upgrade them. A full operating system upgrade is often required for many servers to get this support easily. Hopefully this will get easier as new versions of operating systems become the norm.</p>
     <p>None of this is a comment on the HTTP/2 implementations here (<a href="https://twitter.com/tunetheweb/status/988196156697169920?s=20">I happen to think Apache has one of the best implementations</a>), but more about the ease of enabling HTTP/2 in each of these servers-or lack thereof.</p>
     <h2 id="http2-impact-of-http2"><a href="#http2-impact-of-http2" class="anchor-link">Impact of HTTP/2</a></h2>
-    <p>The impact of HTTP/2 is much more difficult to measure, especially using the HTTP Archive <a href="#chapter-methodology">methodology</a>. Ideally, sites should be crawled with both HTTP/1.1 and HTTP/2 and the difference measured, but that is not possible with the statistics we are investigating here. Additionally, measuring whether the average HTTP/2 site is faster than the average HTTP/1.1 site introduces too many other variables that require a more exhaustive study than we can cover here.</p>
+    <p>The impact of HTTP/2 is much more difficult to measure, especially using the HTTP Archive <a href="#methodology">methodology</a>. Ideally, sites should be crawled with both HTTP/1.1 and HTTP/2 and the difference measured, but that is not possible with the statistics we are investigating here. Additionally, measuring whether the average HTTP/2 site is faster than the average HTTP/1.1 site introduces too many other variables that require a more exhaustive study than we can cover here.</p>
     <p>One impact that can be measured is in the changing use of HTTP now that we are in an HTTP/2 world. Multiple connections were a workaround with HTTP/1.1 to allow a limited form of parallelization, but this is in fact the opposite of what usually works best with HTTP/2. A single connection reduces the overhead of TCP setup, TCP slow start, and HTTPS negotiation, and it also allows the potential of cross-request prioritization.</p>
     <figure id="http2-fig-9">
       <a href="/static/images/2019/http2/ch20_fig9_num_tcp_connections_trend_over_years.png">
@@ -10629,7 +10628,7 @@
     </figure>
     <p>Bundling assets to obtain fewer requests was another HTTP/1.1 workaround that went by many names: bundling, concatenation, packaging, spriting, etc. This is less necessary when using HTTP/2 as there is less overhead with requests, but it should be noted that requests are not free in HTTP/2, and <a href="https://engineering.khanacademy.org/posts/js-packaging-http2.htm">those that experimented with removing bundling completely have noticed a loss in performance</a>. Looking at the number of requests loaded per page over time, we do see a slight decrease in requests, rather than the expected increase.</p>
     <p>This low rate of change can perhaps be attributed to the aforementioned observations that bundling cannot be removed (at least, not completely) without a negative performance impact and that many build tools currently bundle for historical reasons based on HTTP/1.1 recommendations. It is also likely that many sites may not be willing to penalize HTTP/1.1 users by undoing their HTTP/1.1 performance hacks just yet, or at least that they do not have the confidence (or time!) to feel that this is worthwhile.</p>
-    <p>The fact that the number of requests is staying roughly static is interesting, given the ever-increasing <a href="#chapter-page-weight">page weight</a>, though perhaps this is not entirely related to HTTP/2.</p>
+    <p>The fact that the number of requests is staying roughly static is interesting, given the ever-increasing <a href="#page-weight">page weight</a>, though perhaps this is not entirely related to HTTP/2.</p>
     <h2 id="http2-http2-push"><a href="#http2-http2-push" class="anchor-link">HTTP/2 Push</a></h2>
     <p>HTTP/2 push has a mixed history despite being a much-hyped new feature of HTTP/2. The other features were basically performance improvements under the hood, but push was a brand new concept that completely broke the single request to single response nature of HTTP. It allowed extra responses to be returned; when you asked for the web page, the server could respond with the HTML page as usual, but then also send you the critical CSS and JavaScript, thus avoiding any additional round trips for certain resources. It would, in theory, allow us to stop inlining CSS and JavaScript into our HTML, and still get the same performance gains of doing so. After solving that, it could potentially lead to all sorts of new and interesting use cases.</p>
     <p>The reality has been, well, a bit disappointing. HTTP/2 push has proved much harder to use effectively than originally envisaged. Some of this has been due to <a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">the complexity of how HTTP/2 push works</a>, and the implementation issues due to that.</p>
@@ -10704,7 +10703,7 @@
     </figure>
     <p>Figure 13 shows us which assets are most commonly pushed. JavaScript and CSS are the overwhelming majority of pushed items, both by volume and by bytes. After this, there is a ragtag assortment of images, fonts, and data. At the tail end we see around 100 sites pushing video, which may be intentional, or it may be a sign of over-pushing the wrong types of assets!</p>
     <p>One concern raised by some is that HTTP/2 implementations have repurposed the <code>preload</code> HTTP <code>link</code> header as a signal to push. One of the most popular uses of the <code>preload</code> resource hint is to inform the browser of late-discovered resources, like fonts and images, that the browser will not see until the CSS has been requested, downloaded, and parsed. If these are now pushed based on that header, there was a concern that reusing this may result in a lot of unintended pushes.</p>
-    <p>However, the relatively low usage of fonts and images may mean that risk is not being seen as much as was feared. <code>&lt;link rel="preload" ... &gt;</code> tags are often used in the HTML rather than HTTP <code>link</code> headers and the meta tags are not a signal to push. Statistics in the <a href="#chapter-resource-hints">Resource Hints</a> chapter show that fewer than 1% of sites use the preload HTTP <code>link</code> header, and about the same amount use preconnect which has no meaning in HTTP/2, so this would suggest this is not so much of an issue. Though there are a number of fonts and other assets being pushed, which may be a signal of this.</p>
+    <p>However, the relatively low usage of fonts and images may mean that risk is not being seen as much as was feared. <code>&lt;link rel="preload" ... &gt;</code> tags are often used in the HTML rather than HTTP <code>link</code> headers and the meta tags are not a signal to push. Statistics in the <a href="#resource-hints">Resource Hints</a> chapter show that fewer than 1% of sites use the preload HTTP <code>link</code> header, and about the same amount use preconnect which has no meaning in HTTP/2, so this would suggest this is not so much of an issue. Though there are a number of fonts and other assets being pushed, which may be a signal of this.</p>
     <p>As a counter argument to those complaints, if an asset is important enough to preload, then it could be argued these assets should be pushed if possible as browsers treat a preload hint as very high priority requests anyway. Any performance concern is therefore (again arguably) at the overuse of preload, rather than the resulting HTTP/2 push that happens because of this.</p>
     <p>To get around this unintended push, you can provide the <code>nopush</code> attribute in your preload header:</p>
     <pre><code>link: &lt;/assets/jquery.js&gt;; rel=preload; as=script; nopush</code></pre>

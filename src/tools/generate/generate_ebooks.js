@@ -15,7 +15,7 @@ const update_links = (chapter) => {
   body = body.replace(/id="fig([0-9_-])/g,'id="' + chapter.metadata.chapter + '-fig$1');
   body = body.replace(/<h([0-9]) id="/g,'<h$1 id="' + chapter.metadata.chapter + '-');
   body = body.replace(/<a href=".\/([a-z0-9-]+)#/g,'<a href="#$1-');
-  body = body.replace(/<a href=".\//g,'<a href="#chapter-');
+  body = body.replace(/<a href=".\//g,'<a href="#');
   return body;
 }
 
