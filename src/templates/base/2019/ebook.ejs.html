@@ -100,11 +100,9 @@
                                 <%= authordata.tagline %>
                             </div>
                         <% } %>
-                        <% if (authordata.bio) { %>
                         <div class="bio">
-                            {{ localizedContributors['<%= authordata.id %>'] | safe if localizedContributors['<%= authordata.id %>']|length else  '<%= authordata.bio %>' | safe }}
+                            {{ localizedContributors['<%= authordata.id %>'] | safe if localizedContributors['<%= authordata.id %>']|length }}
                         </div>
-                        <% } %>
                     </div>
                 </li>
             <% } %>
