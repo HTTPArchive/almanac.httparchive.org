@@ -254,6 +254,8 @@ def default_favicon():
 @validate
 def ebook(lang, year):
     config = get_config(year)
+    sorted_contributors = sorted(config["contributors"].items(), key=lambda items: items[1]['name'])
+    config["contributors"] = dict(sorted_contributors)
     return render_template('%s/%s/ebook.html' % (lang, year), config=config)
 
 class RegexConverter(BaseConverter):
