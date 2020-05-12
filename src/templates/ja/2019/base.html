@@ -89,7 +89,7 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
 {% block foreword_title %}序章{% endblock %}
 
 {% block foreword %}
-    <h2>{{ self.foreword_title() }}</h2>
+    <h1>{{ self.foreword_title() }}</h1>
 
     <p>
       オープンウェブは、驚くほど複雑で進化するテクノロジーのネットワークです。あらゆる産業やキャリアはウェブの上に構築されており、成功するためにはウェブの活気あるエコシステムに依存しています。ウェブが非常に重要であるにもかかわらず、ウェブがどのように機能しているかを理解することは、驚くほど難しいものでした。2010年以来、HTTP Archiveプロジェクトの使命は、ウェブがどのように構築されているかを追跡することであり、それは素晴らしい仕事をしてきました。それは、HTTP Archiveプロジェクトが収集してきたデータに意味を持たせ、コミュニティがウェブのパフォーマンスを簡単に理解できるようにすることです。そこでWeb Almanacの出番です。
@@ -111,6 +111,8 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
 {% endblock %}
 
 {% block appendix %}Appendix{% endblock %}
+
+{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format{% endblock %}
 
 {% 
   set localizedPartTitles = {

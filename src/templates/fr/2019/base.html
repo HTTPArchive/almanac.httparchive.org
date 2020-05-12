@@ -89,7 +89,7 @@ Sauf indication contraire, les statistiques des 20 chapitres du Web Almanac prov
 {% block foreword_title %}Avant-propos{% endblock %}
 
 {% block foreword %}
-    <h2>{{ self.foreword_title() }}</h2>
+    <h1>{{ self.foreword_title() }}</h1>
 
     <p>
       Le Web ouvert est un réseau de technologies étonnamment complexe et évolutif. Des industries et des carrières entières sont bâties sur le Web et dépendent de son écosystème dynamique pour réussir. Aussi crucial que soit le Web, il a été étonnamment difficile de comprendre comment il fonctionne. Depuis 2010, la mission du projet HTTP Archive est de suivre comment le web est construit, et un travail incroyable a été accompli dans ce domaine. Cependant, une lacune s’est révélée particulièrement difficile à combler : donner un sens aux données que le projet HTTP Archive a collectées et permettre à la communauté de comprendre facilement les performances du Web. C’est là qu’intervient le Web Almanac.
@@ -111,6 +111,8 @@ Sauf indication contraire, les statistiques des 20 chapitres du Web Almanac prov
 {% endblock %}
 
 {% block appendix %}Annexes{% endblock %}
+
+{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format{% endblock %}
 
 {% 
   set localizedPartTitles = {

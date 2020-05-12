@@ -63,6 +63,7 @@
     </section>
 
     <section id="toc" class="contents-wrapper">
+      <h1>{{ self.table_of_contents_title() }}</h1>
       <div class="parts">
         <section class="part">
           <h2 class="part-name">{{ self.introduction() }}</h2>
@@ -91,7 +92,7 @@
                     </a>
                     {% endif %}
                   {% endif %}
-                </div>
+                  </div>
               {% endfor %}
             </div>
           </section>

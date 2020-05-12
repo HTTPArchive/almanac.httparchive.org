@@ -121,6 +121,12 @@
       </section>
     </div>
 
+    <section class="ebookd-download">
+      {% if ebook_exists(lang, year) %}
+      <p><a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a></p>
+      {% endif %}
+    </section>
+
     <div class="characters">
       <img class="character" src="/static/images/character-painter.png" alt="" loading="lazy" height="202" width="226" />
       <img class="character" src="/static/images/character-file.png" alt="" loading="lazy" height="158" width="161" />

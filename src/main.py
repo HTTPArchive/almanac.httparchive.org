@@ -96,6 +96,13 @@ def chapter_lang_exists(lang, year, chapter):
         return False
 
 
+def ebook_exists(lang, year):
+    if os.path.isfile('templates/%s/%s/ebook.html' % (lang, year)):
+        return True
+    else:
+        return False
+
+
 def get_view_args(lang=None, year=None):
     view_args = request.view_args.copy()
     if lang:
@@ -135,6 +142,7 @@ def get_ebook_methodology(lang, year):
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
+app.jinja_env.globals['ebook_exists'] = ebook_exists
 app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
 app.jinja_env.globals['get_ebook_methodology'] = get_ebook_methodology
 
