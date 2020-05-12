@@ -11,11 +11,18 @@ const ebooks_to_generate = {
 
 const update_links = (chapter) => {
   let body = chapter.body;
+  // Replace current chapter links to full anchor link (e.g. #introduction -> #javascript-introduction)
   body = body.replace(/href="#/g,'href="#' + chapter.metadata.chapter + '-');
+  // Replace current chapter fig ids to full id (e.g. id="fig-1" -> id="javascript-fig-1")
   body = body.replace(/id="fig([0-9_-])/g,'id="' + chapter.metadata.chapter + '-fig$1');
+  // Replace current chapter  header ids to full id (e.g. <h2 id="introduction"> -> <h2 id="javascript-introduction">)
   body = body.replace(/<h([0-9]) id="/g,'<h$1 id="' + chapter.metadata.chapter + '-');
+  // Replace other chapter references with hash to anchor link (e.g. ./javascript#fig-1 -> #javascript-fig-1)
   body = body.replace(/<a href=".\/([a-z0-9-]+)#/g,'<a href="#$1-');
+  // Replace other chapter references to anchor link (e.g. ./javascript -> #javascript)
   body = body.replace(/<a href=".\//g,'<a href="#');
+  // Replace figure image links to full site, to avoid 127.0.0.1:8080 links
+  body = body.replace(/<a href="\/static\/images/g,'<a href="https://almanac.httparchive.org/static/images');
   return body;
 }
 
