@@ -55,7 +55,7 @@ last_updated: 2020-05-05T00:00:00.000Z
 
 モバイルウェブのJavaScriptの状態が恐ろしい。HTTP Archiveの [JavaScript レポート](https://httparchive.org/reports/state-of-javascript?start=2016_05_15&end=2019_07_01&view=list#bytesJs)によると、モバイルサイトの中央値では、携帯電話が375KBのJavaScriptをダウンロードする必要があります。圧縮率を70％と仮定すると、携帯電話は中央値で1.25MBのJavaScriptを解析、コンパイル、実行しなければならないことになります。
 
-なぜこれが問題なのでしょうか？　なぜなら、これだけの量のJSをロードしているサイトは、インタラクティブになるまでに[10秒](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci)以上かかるからです。言い換えれば、ページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックしてもJavaScriptの実行が終了していないため、何も起こりません。ユーザーは、実際に何かが起こる魔法のような瞬間を待つために、10秒以上もボタンをクリックし続けなければなりません。それがどれほど混乱し、イライラさせるかを考えてみてください。
+なぜこれが問題なのでしょうか？　なぜなら、これだけの量のJSをロードしているサイトは、一貫してインタラクティブになるまで[10秒](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci)以上かかるからです。言い換えればページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックするとJavaScriptの実行が終了していないために、ユーザーは多少の速度低下を経験するかもしれません。最悪の場合、ユーザーは10秒以上ボタンをクリックし続けなければならず、何かが実際に起こる魔法のような瞬間を待つことになります。それがどれほど混乱し、イライラさせるかを考えてみてください。
 
 <figure>
   <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
