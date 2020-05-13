@@ -223,6 +223,10 @@ ul li.contributor::before {
     text-align: center;
   }
 
+  figure .anchor-link {
+    text-decoration: none;
+  }
+
   figure img {
     max-height: 800px;
   }
