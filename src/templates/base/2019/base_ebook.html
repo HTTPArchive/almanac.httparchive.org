@@ -111,7 +111,7 @@
       </section>
 
       <section id="foreword">
-        {{ self.foreword() | replace('./contributors#', '#contributors-') }}
+        {{ self.foreword() | replace('/%s/%s/contributors#' % (lang, year), '#contributors-') }}
       </section>
 
     {{ self.chapters() }}
