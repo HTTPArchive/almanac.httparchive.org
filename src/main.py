@@ -126,14 +126,15 @@ def get_ebook_methodology(lang, year):
     config = get_config(year)
     methodology_template = render_template('%s/%s/methodology.html' % (lang, year), config=config)
     methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>', methodology_template, re.DOTALL|re.MULTILINE)
-    if methodology_maincontent:
-        methodology_maincontent = methodology_maincontent.group(1)
-        methodology_maincontent = re.sub('href="#', 'href="#methodology-', methodology_maincontent)
-        methodology_maincontent = re.sub('<h([0-6]) id="', '<h\\1 id="methodology-', methodology_maincontent)
-        methodology_maincontent = re.sub('href="\.\/', 'href="#', methodology_maincontent)
-        methodology_maincontent = re.sub('href="#([a-z0-9-]*)#', 'href="#\\1-', methodology_maincontent)
-        return methodology_maincontent
-    return False
+    if not methodology_maincontent:
+        return False
+        
+    methodology_maincontent = methodology_maincontent.group(1)
+    methodology_maincontent = re.sub('href="#', 'href="#methodology-', methodology_maincontent)
+    methodology_maincontent = re.sub('<h([0-6]) id="', '<h\\1 id="methodology-', methodology_maincontent)
+    methodology_maincontent = re.sub('href="\.\/', 'href="#', methodology_maincontent)
+    methodology_maincontent = re.sub('href="#([a-z0-9-]*)#', 'href="#\\1-', methodology_maincontent)
+    return methodology_maincontent
 
 
 # Make these functions available in templates.
