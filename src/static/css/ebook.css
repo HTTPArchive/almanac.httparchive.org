@@ -141,7 +141,6 @@ ul li.contributor::before {
     width: 100%;
     margin: 10pt 0 30pt 0;
     border-top: .25pt solid #666;
-    content: "The Web Almanac 2019 by HTTP Archive";
     color: #333;
   }
 
