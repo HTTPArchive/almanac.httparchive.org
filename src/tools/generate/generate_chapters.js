@@ -14,6 +14,7 @@ const { generate_sitemap } = require('./generate_sitemap');
 const { lazy_load_content } = require('./lazy_load_content');
 const { wrap_tables } = require('./wrap_tables');
 const { remove_unnecessary_markup } = require('./remove_unnecessary_markup');
+const { generate_ebooks } = require('./generate_ebooks');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -23,6 +24,8 @@ converter.setOption('ghMentions', false);
 
 const generate_chapters = async () => {
   let sitemap = [];
+  let ebook_chapters = [];
+
   for (const file of await find_files()) {
     const re = (process.platform != 'win32') 
                   ? /content\/(.*)\/(.*)\/(.*).md/ 
@@ -37,6 +40,8 @@ const generate_chapters = async () => {
       if ( sitemap_languages.includes(language) ) {
         sitemap.push({ language, year, chapter, metadata });
       }
+      ebook_chapters.push({ language, year, chapter, metadata, body, toc });
+
       await write_template(language, year, chapter, metadata, body, toc);
     } catch (error) {
       console.error(error);
@@ -46,6 +51,8 @@ const generate_chapters = async () => {
 
   const sitemap_path = await generate_sitemap(sitemap);
   await size_of(sitemap_path);
+
+  await generate_ebooks(ebook_chapters);
 };
 
 const parse_file = async (markdown,chapter) => {

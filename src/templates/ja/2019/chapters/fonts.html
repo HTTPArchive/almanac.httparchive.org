@@ -104,7 +104,7 @@
   <div id="fig1-description" class="visually-hidden">ウェブフォントのサードパーティおよびセルフホスティング戦略の人気を示す棒グラフ。モバイルWebページの75%がサードパーティ製ホストを使用し、25%がセルフホストを使用しています。デスクトップのウェブサイトでも、同様の利用状況です。</div>
   <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">図 1.</a> 人気のあるウェブフォントのホスティング戦略。font hosting strategies.</figcaption>
 </figure>
-<p>4分の3がホストされているという事実は、おそらく我々が議論するGoogle Fontsの優位性を考えると意外と知られていません<a href="#what-are-the-most-popular-third-party-hosts">以下</a>。</p>
+<p>4分の3がホストされているという事実は、おそらく我々が議論するGoogle Fontsの優位性を考えると意外と知られていません<a href="#最も人気のあるサードパーティ製のホストは何ですか？">以下</a>。</p>
 <p>Googleは<code>https://fonts.googleapis.com</code>でホストされているサードパーティのCSSファイルを使ってフォントを提供しています。開発者は、マークアップの<code>&lt;link&gt;</code>タグを使ってこれらのスタイルシートにリクエストを追加します。これらのスタイルシートはレンダーブロッキングされていますが、そのサイズは非常に小さいです。しかし、フォントファイルは<code>https://fonts.gstatic.com</code>という別のドメインでホストされています。2つの異なるドメインへの2つの別々のホップを必要とするモデルでは、CSSがダウンロードされるまで発見されない2つ目のリクエストには<code>preconnect</code>が最適な選択肢となります。</p>
 <p><code>preload</code>はリクエストのウォーターフォールの上位にフォントファイルをロードするための素晴らしい追加機能ですが（<code>preconnect</code>は接続を設定するもので、ファイルの内容をリクエストするものではないことを覚えておいてください）、<code>preload</code>はGoogle Fontsではまだ利用できません。Google Fontsはフォントファイル用のユニークなURLを生成します<a href="https://github.com/google/fonts/issues/1067">これは変更される可能性があります</a>。</p>
 <h3 id="最も人気のあるサードパーティ製のホストは何ですか？"><a href="#最も人気のあるサードパーティ製のホストは何ですか？" class="anchor-link">最も人気のあるサードパーティ製のホストは何ですか？</a></h3>

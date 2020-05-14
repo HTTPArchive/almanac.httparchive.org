@@ -310,7 +310,7 @@
       </p>
 
       <p>
-        Wappalyzerは、WordPress、Bootstrap、jQueryのような開発者ツールの人気を分析する多くの章を強力にしています。例えば、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce')}}">Eコマース</a> と <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms')}}">CMS</a> の各章は、それぞれの <a href="https://www.wappalyzer.com/categories/ecommerce">Eコマース</a> と <a href="https://www.wappalyzer.com/categories/cms">CMS</a> の各チャプターは、Wappalyzer が検出した技術のカテゴリに大きく依存しています。
+        Wappalyzerは、WordPress、Bootstrap、jQueryのような開発者ツールの人気を分析する多くの章を強力にしています。例えば、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">Eコマース</a> と <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> の各章は、それぞれの <a href="https://www.wappalyzer.com/categories/ecommerce">Eコマース</a> と <a href="https://www.wappalyzer.com/categories/cms">CMS</a> の各チャプターは、Wappalyzer が検出した技術のカテゴリに大きく依存しています。
       </p>
 
       <p>
@@ -338,7 +338,7 @@
       <h3 id="third-party-web"><a href="#third-party-web">サードパーティウェブ</a></h3>
 
       <p>
-        <a href="https://www.thirdpartyweb.today/">サードパーティウェブ</a>は、<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce')}}">Patrick Hulce</a>の研究プロジェクトで、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='third-parties')}}">サードパーティ</a>の章では、HTTP ArchiveとLighthouseのデータを使用して、サードパーティのリソースがウェブに与える影響を特定して分析しています。
+        <a href="https://www.thirdpartyweb.today/">サードパーティウェブ</a>は、<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>の研究プロジェクトで、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='third-parties') }}">サードパーティ</a>の章では、HTTP ArchiveとLighthouseのデータを使用して、サードパーティのリソースがウェブに与える影響を特定して分析しています。
       </p>
 
       <p>
@@ -358,7 +358,7 @@
       </p>
 
       <p>
-        この特別な目的のツールは、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css')}}">CSS</a>章の多くのメトリクスの精度を大幅に向上させました。各ページのすべての外部スタイルシートとインラインスタイルブロックのCSSを解析し、解析可能な状態にするために問い合わせを行いました。BigQueryのHTTP Archiveデータセットとの統合方法については、<a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">このスレッド</a>を参照してください。
+        この特別な目的のツールは、<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>章の多くのメトリクスの精度を大幅に向上させました。各ページのすべての外部スタイルシートとインラインスタイルブロックのCSSを解析し、解析可能な状態にするために問い合わせを行いました。BigQueryのHTTP Archiveデータセットとの統合方法については、<a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">このスレッド</a>を参照してください。
       </p>
     </section>
 
@@ -422,11 +422,11 @@
       <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">将来を見据えて</a></h2>
 
       <p>
-        2019年版のWeb Almanacは、ウェブコミュニティにおける内省と積極的な変化へのコミットメントの年に一度の伝統となることを願っての第一回目です。ここまで来れたのは、多くの献身的な<a href="{{ url_for('contributors', year=year, lang=lang)}}">コントリビューター</a>のおかげで、記念碑的な努力をしてきました。
+        2019年版のWeb Almanacは、ウェブコミュニティにおける内省と積極的な変化へのコミットメントの年に一度の伝統となることを願っての第一回目です。ここまで来れたのは、多くの献身的な<a href="{{ url_for('contributors', year=year, lang=lang) }}">コントリビューター</a>のおかげで、記念碑的な努力をしてきました。
       </p>
 
       <p>
         Web Almanacの2020年版への貢献にご興味のある方は、<a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">関心フォーム</a>にご記入ください。このプロジェクトをより良いものにするためのアイデアをお待ちしています！
       </p>
     </section>
-{% endblock %}
+{% endblock main_content %}

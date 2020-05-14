@@ -9,6 +9,7 @@ from werkzeug.routing import BaseConverter
 from werkzeug.http import HTTP_STATUS_CODES
 from validate import validate
 import os.path
+import re
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
 # Note this requires similar set up in app.yaml for Google App Engine
@@ -95,6 +96,10 @@ def chapter_lang_exists(lang, year, chapter):
         return False
 
 
+def ebook_exists(lang, year):
+    return os.path.isfile('templates/%s/%s/ebook.html' % (lang, year))
+
+
 def get_view_args(lang=None, year=None):
     view_args = request.view_args.copy()
     if lang:
@@ -111,10 +116,35 @@ def convertOldImagePath(folder):
     return '%s' % folder[3:].replace('HTTP_2','http2').replace('_', '-').lower()
 
 
+# Render the methodology chapter and pull out the section. Also applies some
+# regexs to change links as appropriate. It's a bit messy, but can't use
+# get_template_attribute as doesn't take context which is needed for the way
+# our templates work. So it's either this, or just read the file, or move the
+# content to base.html, or duplicate the content, but all will need regexs
+# anyway, so I think this is the cleanest.
+def get_ebook_methodology(lang, year):
+    config = get_config(year)
+    methodology_template = render_template('%s/%s/methodology.html' % (lang, year), config=config)
+    methodology_maincontent = re.search('<article id="maincontent" class="content">(.+?)</article>', methodology_template, re.DOTALL|re.MULTILINE)
+    if not methodology_maincontent:
+        return False
+        
+    methodology_maincontent = methodology_maincontent.group(1)
+    methodology_maincontent = re.sub('href="#', 'href="#methodology-', methodology_maincontent)
+    methodology_maincontent = re.sub('<h([0-6]) id="', '<h\\1 id="methodology-', methodology_maincontent)
+    methodology_maincontent = re.sub('href="\/%s\/%s\/' % (lang, year), 'href="#', methodology_maincontent)
+    methodology_maincontent = re.sub('href="\/', 'href="https://almanac.httparchive.org/', methodology_maincontent)
+    methodology_maincontent = re.sub('href="\.\/', 'href="#', methodology_maincontent)
+    methodology_maincontent = re.sub('href="#([a-z0-9-]*)#', 'href="#\\1-', methodology_maincontent)
+    return methodology_maincontent
+
+
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
+app.jinja_env.globals['ebook_exists'] = ebook_exists
 app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
+app.jinja_env.globals['get_ebook_methodology'] = get_ebook_methodology
 
 
 @app.route('/<lang>/<year>/')
@@ -220,6 +250,13 @@ def static_from_root():
 def default_favicon():
     return send_from_directory(app.static_folder, 'images/favicon.ico')
 
+@app.route('/<lang>/<year>/ebook')
+@validate
+def ebook(lang, year):
+    config = get_config(year)
+    sorted_contributors = sorted(config["contributors"].items(), key=lambda items: items[1]['name'])
+    config["contributors"] = dict(sorted_contributors)
+    return render_template('%s/%s/ebook.html' % (lang, year), config=config)
 
 class RegexConverter(BaseConverter):
     def __init__(self, url_map, *items):

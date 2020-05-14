@@ -1,0 +1,115 @@
+{% extends "%s/2019/base_ebook.html" % lang %}
+
+{% set metadata = {} %}
+
+{% block chapters %}
+
+    <% for (let part of ebook.parts) { %>
+    <% for (let chapter of part.chapters) { %>
+    <section class="chapter" id="<%= chapter.metadata.chapter %>">
+        <section class="body">
+        <div class="subtitle">
+            {{ self.part() }} <%= chapter.metadata.part_number %> {{ self.chapter() }} <%= chapter.metadata.chapter_number %>
+        </div>
+        <h1 id="<%= chapter.metadata.chapter_number %>" class="title title-lg">
+            <%= chapter.metadata.title %>
+        </h1>
+        
+        {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
+        {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}       
+
+        <!-- Show large image for large screens and high density screens and use webp when supported -->
+        <picture>
+            <source
+            media="(min-width: 327px)"
+            type="image/webp"
+            srcset="{{ chapter_image_dir }}/hero_lg.webp"
+            />
+            <source
+            media="(min-width: 327px)"
+            type="image/jpeg"
+            srcset="{{ chapter_image_dir }}/hero_lg.jpg"
+            />
+            <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_lg.webp 2x" />
+            <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_lg.jpg 2x" />
+            <source type="image/webp" srcset="{{ chapter_image_dir }}/hero_sm.webp" />
+            <source type="image/jpeg" srcset="{{ chapter_image_dir }}/hero_sm.jpg" />
+            <img
+            src="{{ chapter_image_dir }}/hero_lg.jpg"
+            class="content-banner"
+            alt=""
+            loading="eager"
+            />
+        </picture>
+
+        <% const byline = (prefix, suffix, contributor_type) => { 
+            if (!chapter.metadata[contributor_type] || !chapter.metadata[contributor_type].length || chapter.metadata[contributor_type][0] == '') return;
+
+            let contributors = chapter.metadata[contributor_type].map(function(x) { return '<a href="#contributors-' + x + '">' + ebook.config.contributors[x].name + '</a>' });
+            let contributors_sentence = contributors.join(', ').replace(/,(?=[^,]*$)/, ', {{ self.and() }}');
+
+            return `<div class="byline ${contributor_type}">${prefix} ${contributors_sentence}${suffix}</div>`;
+        } %>
+
+        <%- byline('{{ self.written_by_before() }}', '{{ self.written_by_after() }}', 'authors') %>
+        <%- byline('{{ self.reviewed_by_before() }}', '{{ self.reviewed_by_after() }}', 'reviewers') %>
+        <%- byline('{{ self.translated_by_before() }}', '{{ self.translated_by_after() }}', 'translators') %>
+
+        <%- chapter.body %>
+        </section>
+
+        <section class="authors">
+        <% let authors = chapter.metadata['authors'].map(x => {
+            var authordata = ebook.config.contributors[x];
+            authordata.id=x;
+            return authordata;
+        });
+        %>
+        <h2><%= (authors.length > 1) ? 'Authors' : 'Author' %></h2>
+        <ul>
+            <% for(let authordata of authors) { %>
+                <li>
+                    <a href="#contributors-<%= authordata.id %>"><img class="avatar" alt="<%= authordata.name %> avatar" src="<%= authordata.avatar_url %>" height="200" width="200" loading="lazy" /></a>
+                    <div class="info">
+                        <a href="#contributors-<%= authordata.id %>"><span class="name"><%= authordata.name %></span></a>
+                        <% if( authordata.twitter || authordata.github) { %>
+                            <span class="social">
+                                <% if (authordata.twitter) { %>
+                                <a class="twitter" href="https://twitter.com/<%= authordata.twitter %>">
+                                  <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter('<%= authordata.twitter %>') }}" height="20" width="20">
+                                </a>
+                                <% } %>
+                                <% if (authordata.github) { %>
+                                <a class="github" href="https://github.com/<%= authordata.github %>">
+                                  <svg width="18" height="18" role="img">
+                                    <title id="<%= chapter.metadata.chapter_number %>_author_<%= authordata.id %>_github">{{ onGitHub('<%= authordata.github %>') }}</title>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                                  </svg>
+                                  <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub('<%= authordata.github %>') }}" height="20" width="20">
+                                </a>
+                                <% } %>
+                                <% if (authordata.website) { %>
+                                <a class="website" href="<%= authordata.website %>">
+                                  <img class="social-icon" src="/static/images/blog.png" alt="{{ website('<%= authordata.name %>') }}" height="20" width="20">
+                                </a>
+                                <% } %>
+                            </span>
+                        <% } %>
+                        <% if (authordata.tagline) { %>
+                            <div class="tagline">
+                                <%= authordata.tagline %>
+                            </div>
+                        <% } %>
+                        <div class="bio">
+                            {{ localizedContributors['<%= authordata.id %>'] | safe if localizedContributors['<%= authordata.id %>']|length }}
+                        </div>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+        </section>
+    </section>
+    <% } %>
+    <% } %>
+
+{% endblock %} 
