@@ -1,0 +1,251 @@
+#title img {
+  margin: 0 auto;
+}
+
+.byline {
+    font-style: italic;
+}
+
+.byline.authors {
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.table-wrap-container {
+  margin: 0;
+}
+
+.table-wrap {
+  display: block;
+  max-width: 100%;
+  text-align: center;
+}
+
+th, td {
+  padding: 5px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#toc ul {
+  list-style-type: none;
+}
+
+#toc a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.content a, .content a:visited {
+  color: #0b1423;
+}
+
+.intro-image {
+  background-color: grey;
+  border-radius: 10px;
+  display: block;
+  margin: 20px 0;
+}
+
+.team {
+  overflow: hidden;
+  height: 100px;
+  margin: 0 0 24px 0;
+}
+
+.team img {
+  height: 80px;
+  width: 80px;
+}
+
+
+.contributors {
+  padding: 0;
+}
+
+.contributor-grid {
+  margin: 0 -15px;
+  justify-content: center;
+  width: 10000px;
+  max-width: 100%;
+}
+
+.contributor {
+  margin-top: 20px;
+  width: 600px;
+  max-width: 100%;
+  vertical-align: top;
+  overflow: auto;
+}
+
+.contributor-avatar {
+  border-radius: 50px;
+  background-color: #f7f779;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 50px;
+  height: auto;
+  transition-duration: .3s;
+  float: left;
+}
+
+ul li.contributor::before {
+  content: "";
+}
+
+.contributor-social a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.contributor-teams {
+  margin-top: 5px;
+}
+
+.contributor-team {
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #757575;
+}
+.contributor-team::after {
+  content: ', ';
+}
+.contributor-team:last-child::after {
+  content: '';
+}
+
+.contributors button {
+  background: #f7f779;
+  color: #333;
+}
+
+/* Join the team card */
+.contributor-join {
+  display: none;
+}
+
+.social-icon {
+  height: 20px;
+  width: 20px;
+}
+
+@page {
+  margin: 2.5cm;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 10pt;
+
+  @bottom-left {
+    width: 100%;
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    color: #333;
+  }
+
+  @bottom-right { 
+    width: 100px;
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: counter(page);
+  }
+
+  @top-right {
+    content: string(chapter_subtitle) string(chapter_title);
+    margin: 30pt 0 10pt 0;
+    color: #333;
+  }
+}
+
+@page :first {
+
+  @bottom-left {
+    content: '';
+    border: none;
+  }
+  @bottom-right {
+    content: '';
+    border: none;
+  }
+  @top-right {
+    content: '';
+  }
+}
+
+@media print {
+  
+  :root {
+    font-size: 14px;
+  }
+
+  /* We have some big tables that can't be force to break
+   * So we cheat and make them small enough to fit on a page
+   */
+  figure table td, figure table td li, figure table td p {
+    font-size: 12px;
+    font-size: 0.85rem;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .content > section {
+    page-break-after: always;
+  }  
+  
+  #toc a {
+    display: table;
+    min-width: 500px;
+  }
+  
+  #toc a::after {
+    float: right;
+    content: target-counter(attr(href), page);
+  }
+
+  section.chapter h1.title {
+    string-set: chapter_title content();
+  }
+
+  section.chapter div.subtitle {
+    string-set: chapter_subtitle content() " - ";
+  }
+
+  figure,
+  figure a,
+  figure div,
+  figure img,
+  figcaption {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  figure .anchor-link {
+    text-decoration: none;
+  }
+
+  figure img {
+    max-height: 800px;
+  }
+
+  figcaption {
+    width: 1000px;
+  }
+
+  table {
+    display: table;
+    border-spacing: 2px;
+    border-color: grey;
+  }
+}
+
+
+.content section.authors li {
+  display: flex;
+}
+
+.content section.authors li *:first-child {
+  flex: 0 0 76px;
+}

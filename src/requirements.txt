@@ -7,3 +7,4 @@ pandas
 pytest
 pytest-watch
 scour
+WeasyPrint

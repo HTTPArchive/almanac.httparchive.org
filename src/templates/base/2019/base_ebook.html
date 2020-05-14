@@ -1,0 +1,177 @@
+{% extends "%s/2019/base.html" % lang %}
+
+{% set metadata = {"authors":["rviscomi"]} %}
+
+{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
+{% block image_height %}562{% endblock %}
+{% block image_width %}715{% endblock %}
+
+{% block head %}
+{{ super() }}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/page.css?v=4" />
+<link rel="stylesheet" href="/static/css/ebook.css?v=1" />
+
+<style>
+@page {
+
+  @bottom-left {
+    content: "{{ year }} {{ self.organization() }}";
+  }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="content">
+
+  <section id="title">
+      <h1 class="title title-center">{{ self.intro_title() }}</h1>
+      <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
+
+      <img class="intro-image" src="/static/images/home-hero.png" alt="" width="984" height="354" loading="lazy" />
+    </section>
+
+    <section>
+      <h1>{{ self.about_title() }}</h1>
+
+      {{ self.mission() }}
+
+      <div class="contributors">
+        <h2 class="title">{{ self.contributors_title() }}</h2>
+        <p>{{ self.contributors_description() }}
+          <a href="#contributors" class="alt">
+            {{ self.contributors_link() }}
+          </a>
+        </p>
+      </div>
+
+      <div class="methodology">
+        <h2 class="title">{{ self.methodology_title() }}</h2>
+        <p class="methodology-info">
+          {{ self.methodology_description() }}
+          <a href="#methodology" class="alt">
+            {{ self.methodology_link() }}
+          </a>
+        </p>
+        <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="toc" class="contents-wrapper">
+      <h1>{{ self.table_of_contents_title() }}</h1>
+      <div class="parts">
+        <section class="part">
+          <h2 class="part-name">{{ self.introduction() }}</h2>
+          <div class="chapters">
+            <div class="chapter">
+              <a href="#foreword">{{ self.foreword_title() }}</a>
+            </div>
+          </div>
+        </section>
+        {% for part_config in config.outline %}
+          <section class="part">
+            <h2 class="part-name">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</h2>
+            <div class="chapters">
+              {% for chapter_config in part_config.chapters %}
+                <div class="chapter">
+                  {% if chapter_config.todo %}
+                  <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}</span>
+                  {% else %}
+                    {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+                    <a href="#{{ chapter_config.chapter }}">
+                      {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}
+                    </a>
+                    {% else %}
+                    <a href="#{{ chapter_config.chapter }}">
+                      {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+                    </a>
+                    {% endif %}
+                  {% endif %}
+                  </div>
+              {% endfor %}
+            </div>
+          </section>
+        {% endfor %}
+        <section class="part">
+          <h2 class="part-name">{{ self.appendix() }}</h2>
+          <div class="chapters">
+            <div class="chapter">
+              <a href="#methodology">{{ self.methodology_title() }}</a>
+            </div>
+            <div class="chapter">
+              <a href="#contributors">{{ self.contributors_title() }}</a>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="foreword">
+        <h1>{{ self.foreword_title() }}</h1>
+        {{ self.foreword() | replace('/%s/%s/contributors#' % (lang, year), '#contributors-') }}
+      </section>
+
+    {{ self.chapters() }}
+
+    <section class="chapter" id="methodology">
+      <div class="subtitle">Appendix A</div>
+      {{ get_ebook_methodology(lang,year) | safe }}
+    </section>
+
+    <section class="chapter" id="contributors">
+      <div class="subtitle">Appendix B</div>
+    
+        <h1 class="title title-lg">
+          {{ self.contributors_title() }}
+        </h1>
+        <div class="team">
+            <img src="/static/images/avatars/1.jpg" alt="" height="100" width="100" loading="lazy" />
+            <img src="/static/images/avatars/8.jpg" alt="" height="100" width="100" loading="lazy" />
+            <img src="/static/images/avatars/4.jpg" alt="" height="100" width="100" loading="lazy" />
+            <img src="/static/images/avatars/0.jpg" alt="" height="100" width="100" loading="lazy" />
+            <img src="/static/images/avatars/11.jpg" alt="" height="100" width="100" loading="lazy" />
+            <img src="/static/images/avatars/9.jpg" alt="" height="100" width="100" loading="lazy" />
+        </div>
+        <p>{{ self.contributors_description() }}</p>
+        <ul class="contributors">
+        {% for id, contributor in config.contributors.items() %}
+        <li class="contributor" id="contributors-{{ id }}">
+          <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" />
+          <div>
+          <span class="contributor-name">{{ contributor.name }}</span>
+          <span class="contributor-social">
+          {% if contributor.twitter %}
+            <a href="https://twitter.com/{{ contributor.twitter }}>
+              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(contributor.twitter) }}" height="20" width="20" />
+            </a>
+          {% endif %}
+          {% if contributor.github %}
+          <a href="https://github.com/{{ contributor.github }}">
+            <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(contributor.github) }}" height="20" width="20" />
+          </a>
+          {% endif %}
+          {% if contributor.website %}
+          <a href="{{ contributor.website }}" target="_blank" aria-label="{{ website(contributor.name) }}">
+            <img class="social-icon" src="/static/images/blog.png" alt="{{ website(contributor.name) }}" height="20" width="20" />
+          </a>
+          {% endif %}
+        </span>
+          <br>
+          <span class="contributor-teams">
+            {% for id in contributor.teams | sort() %}
+              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+            {% endfor %}
+          </span>
+        </div>
+        </li>
+        {% endfor %}
+        </ul>
+    </section>
+
+</section>
+
+{% endblock %} 

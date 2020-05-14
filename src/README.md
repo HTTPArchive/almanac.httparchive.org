@@ -58,9 +58,28 @@ npm install
 npm run generate
 ```
 
+3. For generating PDFs of the ebook, WeasyPrint will need some additional libraries:
+
+```
+brew install cairo
+brew install pango
+brew install gdk-pixbuf
+```
+
+4. To actually generate the ebooks, start your local server, then run the following:
+
+```
+npm run ebook_2019_en
+npm run ebook_2019_ja
+```
+
+(TODO: make this a script to handle all languages and years at some point)
+
 ## Deploying changes
 
 If you've been added to the "App Engine Deployers" role in the GCP project, you're able to push code changes to the production website.
+
+_Make sure you have generated the ebooks PDFs as that currently requires some extra steps that are not automated!_
 
 1. Install the [`gcloud`](https://cloud.google.com/sdk/install) Google Cloud SDK.
 

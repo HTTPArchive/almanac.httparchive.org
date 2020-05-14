@@ -123,12 +123,12 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     {% if authordata %}
       <li>
           <div aria-hidden="true">
-            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}" tabindex="-1">
+            <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}" tabindex="-1">
               <img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" />
             </a>
           </div>
           <div class="info">
-            <a href="https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
+            <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
               {% if authordata.twitter or authordata.github %}
                   <span class="social">
                   {% if authordata.twitter %}
@@ -162,11 +162,9 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                       {{ authordata.tagline }}
                   </div>
               {% endif %}
-              {% if authordata.bio %}
               <div class="bio">
-                {{ localizedContributors[author] | safe if localizedContributors[author]|length else authordata.bio | safe }}
+                {{ localizedContributors[author] | safe if localizedContributors[author]|length }}
               </div>
-          {% endif %}
           </div>
       </li>
     {% else %}
