@@ -97,10 +97,7 @@ def chapter_lang_exists(lang, year, chapter):
 
 
 def ebook_exists(lang, year):
-    if os.path.isfile('templates/%s/%s/ebook.html' % (lang, year)):
-        return True
-    else:
-        return False
+    return os.path.isfile('templates/%s/%s/ebook.html' % (lang, year))
 
 
 def get_view_args(lang=None, year=None):
