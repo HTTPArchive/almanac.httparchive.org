@@ -79,6 +79,7 @@
   <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
 
   <section>
+    <h2>{{ self.foreword_title() }}</h2>
     {{ self.foreword() }}
   </section>
 
@@ -121,11 +122,11 @@
       </section>
     </div>
 
-    <section class="ebook-download">
+    <div class="ebook-download">
       {% if ebook_exists(lang, year) %}
       <p><a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a></p>
       {% endif %}
-    </section>
+    </div>
 
     <div class="characters">
       <img class="character" src="/static/images/character-painter.png" alt="" loading="lazy" height="202" width="226" />
