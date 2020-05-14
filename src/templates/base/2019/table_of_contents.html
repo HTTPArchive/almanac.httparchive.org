@@ -122,7 +122,7 @@
       </section>
     </div>
 
-    <div class="ebook-download">
+    <div id="ebook-download">
       {% if ebook_exists(lang, year) %}
       <p><a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a></p>
       {% endif %}
@@ -136,4 +136,16 @@
     </div>
   </div>
 </main>
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+<script nonce="{{ csp_nonce() }}">
+  var ebookLink = document.querySelector('#ebook-download');
+
+  ebookLink && ebookLink.addEventListener("click", function (event) {
+    gtag('event', 'ebook-click', { 'event_category': 'clicks', 'event_label': 'toc-page', 'value': 1 })
+  });
+</script>
 {% endblock %}
