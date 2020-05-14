@@ -132,6 +132,8 @@ def get_ebook_methodology(lang, year):
     methodology_maincontent = methodology_maincontent.group(1)
     methodology_maincontent = re.sub('href="#', 'href="#methodology-', methodology_maincontent)
     methodology_maincontent = re.sub('<h([0-6]) id="', '<h\\1 id="methodology-', methodology_maincontent)
+    methodology_maincontent = re.sub('href="\/%s\/%s\/' % (lang, year), 'href="#', methodology_maincontent)
+    methodology_maincontent = re.sub('href="\/', 'href="https://almanac.httparchive.org/', methodology_maincontent)
     methodology_maincontent = re.sub('href="\.\/', 'href="#', methodology_maincontent)
     methodology_maincontent = re.sub('href="#([a-z0-9-]*)#', 'href="#\\1-', methodology_maincontent)
     return methodology_maincontent

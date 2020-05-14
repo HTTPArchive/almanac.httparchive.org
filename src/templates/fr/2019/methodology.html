@@ -310,7 +310,7 @@
       </p>
 
       <p>
-        Wappalyzer fournit des informations que vous retrouverez dans de nombreux chapitres analysant la popularité des outils de développement comme WordPress, Bootstrap, et jQuery. Par exemple, les chapitres <a href="./ecommerce">E-commerce</a> et <a href="./cms">CMS</a> s’appuient fortement sur les catégories de technologies <a href="https://www.wappalyzer.com/categories/ecommerce">E-commerce</a> et <a href="https://www.wappalyzer.com/categories/cms">CMS</a> détectées par Wappalyzer.
+        Wappalyzer fournit des informations que vous retrouverez dans de nombreux chapitres analysant la popularité des outils de développement comme WordPress, Bootstrap, et jQuery. Par exemple, les chapitres <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">E-commerce</a> et <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> s’appuient fortement sur les catégories de technologies <a href="https://www.wappalyzer.com/categories/ecommerce">E-commerce</a> et <a href="https://www.wappalyzer.com/categories/cms">CMS</a> détectées par Wappalyzer.
       </p>
 
       <p>
@@ -338,7 +338,7 @@
       <h3 id="third-party-web"><a href="#third-party-web" class="anchor-link">Third Party Web</a></h3>
 
       <p>
-        <a href="https://www.thirdpartyweb.today/">Third Party Web</a> est un projet de recherche de <a href="./contributors#patrickhulce">Patrick Hulce</a>, auteur du chapitre sur les <a href="./third-parties">Tierces Parties</a>, qui utilise les données de HTTP Archive et Lighthouse pour identifier et analyser l’impact des ressources tierces sur le Web.
+        <a href="https://www.thirdpartyweb.today/">Third Party Web</a> est un projet de recherche de <a href="{{ url_for('chapter', year=year, lang=lang, chapter='contributors', _anchor='patrickhulce') }}">Patrick Hulce</a>, auteur du chapitre sur les <a href="{{ url_for('chapter', year=year, lang=lang, chapter='third-parties') }}">Tierces Parties</a>, qui utilise les données de HTTP Archive et Lighthouse pour identifier et analyser l’impact des ressources tierces sur le Web.
       </p>
 
       <p>
@@ -358,7 +358,7 @@
       </p>
 
       <p>
-        Cet outil dédié à l’analyse CSS a amélioré de manière significative la précision de beaucoup d’indicateurs dans le chapitre <a href="./css">CSS</a>. Pour rendre l’analyse possible, toutes les feuilles de style externes et les styles en ligne ont été parcourus et analysés. Voir <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">ce fil de discussion</a> pour plus d’informations sur la façon dont il a été intégré avec l’ensemble de données HTTP Archive sur BigQuery.
+        Cet outil dédié à l’analyse CSS a amélioré de manière significative la précision de beaucoup d’indicateurs dans le chapitre <a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a>. Pour rendre l’analyse possible, toutes les feuilles de style externes et les styles en ligne ont été parcourus et analysés. Voir <a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">ce fil de discussion</a> pour plus d’informations sur la façon dont il a été intégré avec l’ensemble de données HTTP Archive sur BigQuery.
       </p>
     </section>
 
@@ -422,7 +422,7 @@
       <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">Perspectives</a></h2>
 
       <p>
-        L’édition 2019 du Web Almanac est la première de ce que nous espérons  être une tradition annuelle d’introspection et d’investissement positif au sein de la communauté Web. Parvenir à ce résultat a demandé un effort monumental de la part de nombreux <a href="./contributors">contributeurs et contributrices</a> et nous espérons pouvoir grandement tirer parti de ce travail pour faciliter les éditions futures.
+        L’édition 2019 du Web Almanac est la première de ce que nous espérons  être une tradition annuelle d’introspection et d’investissement positif au sein de la communauté Web. Parvenir à ce résultat a demandé un effort monumental de la part de nombreux <a href="{{ url_for('chapter', year=year, lang=lang, chapter='contributors') }}">contributeurs et contributrices</a> et nous espérons pouvoir grandement tirer parti de ce travail pour faciliter les éditions futures.
       </p>
 
       <p>
