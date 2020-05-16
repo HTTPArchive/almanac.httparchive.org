@@ -107,6 +107,7 @@ tbody tr:nth-child(even) {
   max-width: 100%;
   vertical-align: top;
   overflow: auto;
+  min-height: 70px;
 }
 
 .contributor-avatar {
