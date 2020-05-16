@@ -40,9 +40,9 @@ last_updated: 2020-05-14T00:00:00.000Z
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>モバイル</th>
-        <th>デスクトップ</th>
+        <td scope="col"></td>
+        <th scope="col">モバイル</th>
+        <th scope="col">デスクトップ</th>
       </tr>
     </thead>
     <tbody>
@@ -460,7 +460,7 @@ WebPをPNGのフォールバックで使用したり、無地の色の背景でW
   <table>
     <thead>
       <tr>
-        <td></td>
+        <td scope="col"></td>
         <th scope="colgroup" colspan="2">モバイル</th>
         <th scope="colgroup" colspan="2">デスクトップ</th>
       </tr>

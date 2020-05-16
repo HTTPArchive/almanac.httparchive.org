@@ -40,9 +40,9 @@ La detección de páginas no siempre es confiable, y algunos sitios bloquean exp
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>Móvil</th>
-        <th>Escritorio</th>
+        <td scope="col"></td>
+        <th scope="col">Móvil</th>
+        <th scope="col">Escritorio</th>
       </tr>
     </thead>
     <tbody>
@@ -460,7 +460,7 @@ Nosotros, como comunidad web, podemos abogar por proporcionar transparencia usan
   <table>
     <thead>
       <tr>
-        <td></td>
+        <td scope="col"></td>
         <th scope="colgroup" colspan="2">Móvil</th>
         <th scope="colgroup" colspan="2">Escritorio</th>
       </tr>
