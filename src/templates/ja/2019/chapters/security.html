@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":8,"title":"セキュリティ","description":"トランスポート・レイヤー・セキュリティ(TLS()、混合コンテンツ、セキュリティヘッダ、Cookie、サブリソース完全性を網羅した2019年版Web Almanacのセキュリティの章。","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":["ksakae"],"discuss":"1763","results":"https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/","queries":"08_Security","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-14T00:00:00.000Z","chapter":"security"} %} {% block index %}
+{% set metadata = {"part_number":"II","chapter_number":8,"title":"セキュリティ","description":"トランスポート・レイヤー・セキュリティ(TLS()、混合コンテンツ、セキュリティヘッダ、Cookie、サブリソース完全性を網羅した2019年版Web Almanacのセキュリティの章。","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":["ksakae"],"discuss":"1763","results":"https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/","queries":"08_Security","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-16T00:00:00.000Z","chapter":"security"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -445,9 +445,9 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th scope="colgroup" colspan="2">クライアント</th>
           </tr>
           <tr>
@@ -455,6 +455,8 @@
             <th scope="col">デスクトップ</th>
             <th scope="col">モバイル</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>10</td>
             <td>300</td>
@@ -856,9 +858,9 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
+            <td col="scope"></td>
             <th scope="colgroup" colspan="2">ホームページ数</th>
             <th scope="colgroup" colspan="2">ホームページの割合</th>
           </tr>
@@ -869,6 +871,8 @@
             <th scope="col">デスクトップ</th>
             <th scope="col">モバイル</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td><code>__Secure-</code></td>
             <td>640</td>

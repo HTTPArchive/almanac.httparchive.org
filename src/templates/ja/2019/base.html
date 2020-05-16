@@ -5,7 +5,7 @@
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
 {% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-05-14T00:00:00.000Z{% endblock %}
+{% block date_modified %}2020-05-16T00:00:00.000Z{% endblock %}
 
 {% block breadcrumb_name_1 %}{{ year }} ホーム{% endblock %}
 {% block breadcrumb_name_2 %}{% endblock %}
@@ -108,9 +108,9 @@ Web Almanacは、ウェブ・コミュニティの努力によって実現して
     <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>、Web Almanacの作成者。</em></p>
 {% endblock %}
 
-{% block appendix %}Appendix{% endblock %}
+{% block appendix %}付属資料{% endblock %}
 
-{% block ebook_download %}Download the entire {{ year }} Web Almanac in PDF format{% endblock %}
+{% block ebook_download %} {{ year }} Web AlmanacのPDFファイルをダウンロードする{% endblock %}
 
 {% 
   set localizedPartTitles = {

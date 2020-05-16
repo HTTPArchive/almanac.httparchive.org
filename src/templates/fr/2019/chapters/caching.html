@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":16,"title":"Mise en cache","description":"Le chapitre sur la mise en cache de Web Almanac couvre la gestion de la mise en cache, sa validité, les TTLs, les headers Vary, les cookies, l'AppCache, les service workers et d'autres possibilités.","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"translators":["allemas"],"discuss":"1771","results":"https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/","queries":"16_Caching","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-01T00:00:00.000Z","chapter":"caching"} %} {% block index %}
+{% set metadata = {"part_number":"IV","chapter_number":16,"title":"Mise en cache","description":"Le chapitre sur la mise en cache de Web Almanac couvre la gestion de la mise en cache, sa validité, les TTLs, les headers Vary, les cookies, l'AppCache, les service workers et d'autres possibilités.","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"translators":["allemas"],"discuss":"1771","results":"https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/","queries":"16_Caching","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-16T00:00:00.000Z","chapter":"caching"} %} {% block index %}
 <ul>
   <li>
     <a href="#introduction">Introduction</a>
@@ -160,19 +160,21 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th scope="colgroup" colspan="5">Percentiles TTL du cache des ordinateurs de bureau (Heures)</th>
           </tr>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th scope="col">10</th>
             <th scope="col">25</th>
             <th scope="col">50</th>
             <th scope="col">75</th>
             <th scope="col">90</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <th scope="row">Audio</th>
             <td><p style="text-align: right">12</p></td>
@@ -560,13 +562,15 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th>N'utilisent pas de Server Worker</th>
             <th>Utilisent un Service Worker</th>
             <th>Total</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>N'utilise pas AppCache</td>
             <td><p style="text-align: right">5,045,337</p></td>
@@ -596,13 +600,15 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
-            <td></td>
+            <td scoppe="col"></td>
+            <td scope="col"></td>
             <th scope="col">N'utilise pas Service Worker</th>
             <th scope="col">Utilise Service Worker</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <th scope="rowgroup" rowspan="2">HTTP</th>
             <td>N'utilise pas AppCache</td>

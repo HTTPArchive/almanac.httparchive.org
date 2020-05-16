@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":16,"title":"キャッシング","description":"2019 Web Almanacのキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"translators":["ksakae"],"discuss":"1771","results":"https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/","queries":"16_Caching","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-14T00:00:00.000Z","chapter":"caching"} %} {% block index %}
+{% set metadata = {"part_number":"IV","chapter_number":16,"title":"キャッシング","description":"2019 Web Almanacのキャッシュの章は、キャッシュコントロール、有効期限、TTL、有効性、変化、Cookieの設定、アプリケーションキャッシュ、Service Worker、および機会について説明します。","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"translators":["ksakae"],"discuss":"1771","results":"https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/","queries":"16_Caching","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-16T00:00:00.000Z","chapter":"caching"} %} {% block index %}
 <ul>
   <li>
     <a href="#導入">導入</a>
@@ -158,19 +158,21 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th scope="colgroup" colspan="5">デスクトップキャッシュTTLパーセンタイル（時間）</th>
           </tr>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th scope="col">10</th>
             <th scope="col">25</th>
             <th scope="col">50</th>
             <th scope="col">75</th>
             <th scope="col">90</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <th scope="row">Audio</th>
             <td><p style="text-align: right">12</p></td>
@@ -560,13 +562,15 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th>Service Workerを使用しない</th>
             <th>Service Workerを使用する</th>
             <th>合計</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>AppCacheを使用しない</td>
             <td><p style="text-align: right">5,045,337</p></td>
@@ -596,13 +600,15 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
-            <td></td>
+            <td scope="col"></td>
+            <td scope="col"></td>
             <th scope="col">Service Workerを使用しない</th>
             <th scope="col">Service Workerを使用する</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <th scope="rowgroup" rowspan="2">HTTP</th>
             <td>AppCacheを使用しない</td>
