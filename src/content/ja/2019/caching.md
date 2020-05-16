@@ -595,9 +595,9 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
     <thead>
       <tr>
         <td scope="col"></td>
-        <th>Service Workerを使用しない</th>
-        <th>Service Workerを使用する</th>
-        <th>合計</th>
+        <th scope="col">Service Workerを使用しない</th>
+        <th scope="col">Service Workerを使用する</th>
+        <th scope="col">合計</th>
       </tr>
     </thead>
     <tbody>
