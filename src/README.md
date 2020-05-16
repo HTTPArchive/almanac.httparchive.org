@@ -58,13 +58,7 @@ npm install
 npm run generate
 ```
 
-3. For generating PDFs of the ebook, WeasyPrint will need some additional libraries:
-
-```
-brew install cairo
-brew install pango
-brew install gdk-pixbuf
-```
+3. For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/).
 
 4. To actually generate the ebooks, start your local server, then run the following:
 
