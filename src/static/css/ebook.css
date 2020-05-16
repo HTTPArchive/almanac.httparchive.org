@@ -1,3 +1,31 @@
+#title .title {
+  color: white;
+  background-color: #5C687D;
+}
+
+.intro-year {
+  margin: 0;
+  width: auto;
+  color: #F7F779;
+  font-size: 10rem;
+  line-height: 100%;
+  font-weight: bold;
+}
+
+#title h1.title::before {
+  border-bottom: none;
+}
+
+#title h1.title {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+#title h2.title {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
 #title img {
   margin: 0 auto;
 }
@@ -37,10 +65,10 @@ tbody tr:nth-child(even) {
 }
 
 .intro-image {
-  background-color: grey;
   border-radius: 10px;
   display: block;
   margin: 20px 0;
+  background-color: #5C687D;
 }
 
 .team {
@@ -124,6 +152,11 @@ ul li.contributor::before {
   prince-pdf-display-doc-title: true;
 }
 
+
+@page:first {
+  background-color: #5C687D;
+}
+
 @page {
   margin: 2.5cm;
   padding: 0;
@@ -193,12 +226,12 @@ ul li.contributor::before {
   }  
   
   #toc a {
-    display: block;
+    display: inline-block;
     min-width: 500px;
   }
   
   #toc a::after {
-    display: block;
+    display: inline-block;
     float: right;
     content: target-counter(attr(href), page);
   }

@@ -35,37 +35,11 @@
 <div class="content">
 
   <section id="title">
+    
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
     <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
 
     <img class="intro-image" src="/static/images/home-hero.png" alt="" width="984" height="354" />
-  </section>
-
-  <section>
-    <h1>{{ self.about_title() }}</h1>
-    <div class="subtitle"></div>
-
-    {{ self.mission() }}
-
-    <div class="contributors">
-      <h2 class="title">{{ self.contributors_title() }}</h2>
-      <p>{{ self.contributors_description() }}
-        <a href="#contributors" class="alt">
-          {{ self.contributors_link() }}
-        </a>
-      </p>
-    </div>
-
-    <div class="methodology">
-      <h2 class="title">{{ self.methodology_title() }}</h2>
-      <p class="methodology-info">
-        {{ self.methodology_description() }}
-        <a href="#methodology" class="alt">
-          {{ self.methodology_link() }}
-        </a>
-      </p>
-      <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" />
-    </div>
   </section>
 
   <section id="toc" class="contents-wrapper">
