@@ -1,4 +1,4 @@
-  const fs = require('fs-extra');
+const fs = require('fs-extra');
 const ejs = require('ejs');
 const prettier = require('prettier');
 
