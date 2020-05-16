@@ -131,27 +131,35 @@ ul li.contributor::before {
   width: 20px;
 }
 
+@prince-pdf {
+  prince-pdf-display-doc-title: true;
+}
+
 @page {
   margin: 2.5cm;
   padding: 0;
   font-family: 'Lato', sans-serif;
   font-size: 10pt;
+  size: A4;
 
   @bottom-left {
     width: 100%;
     margin: 10pt 0 30pt 0;
     border-top: .25pt solid #666;
     color: #333;
+    font-family: 'Poppins', sans-serif;
   }
 
   @bottom-right { 
     width: 100px;
     margin: 10pt 0 30pt 0;
     border-top: .25pt solid #666;
+    font-family: 'Poppins', sans-serif;
     content: counter(page);
   }
 
   @top-right {
+    font-family: 'Poppins', sans-serif;
     content: string(chapter_subtitle) string(chapter_title);
     margin: 30pt 0 10pt 0;
     color: #333;
@@ -196,21 +204,34 @@ ul li.contributor::before {
   }  
   
   #toc a {
-    display: table;
+    display: block;
     min-width: 500px;
   }
   
   #toc a::after {
+    display: block;
     float: right;
     content: target-counter(attr(href), page);
   }
 
-  section.chapter h1.title {
+  section h1 {
     string-set: chapter_title content();
+  }
+
+  section div.subtitle {
+    string-set: chapter_subtitle "";
   }
 
   section.chapter div.subtitle {
     string-set: chapter_subtitle content() " - ";
+  }
+
+  .content ul li::before {
+    content: none;
+  }
+
+  .content ul li {
+    list-style: disc;
   }
 
   figure,
