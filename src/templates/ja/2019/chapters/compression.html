@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":15,"title":"圧縮","description":"HTTP圧縮、アルゴリズム、コンテンツタイプ、ファーストパーティとサードパーティの圧縮および機会をカバーする2019 Web Almanacの圧縮の章。","authors":["paulcalvano"],"reviewers":["obto","yoavweiss"],"translators":["ksakae"],"discuss":"1770","results":"https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/","queries":"15_Compression","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-02T00:00:00.000Z","chapter":"compression"} %} {% block index %}
+{% set metadata = {"part_number":"IV","chapter_number":15,"title":"圧縮","description":"HTTP圧縮、アルゴリズム、コンテンツタイプ、ファーストパーティとサードパーティの圧縮および機会をカバーする2019 Web Almanacの圧縮の章。","authors":["paulcalvano"],"reviewers":["obto","yoavweiss"],"translators":["ksakae"],"discuss":"1770","results":"https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/","queries":"15_Compression","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-16T00:00:00.000Z","chapter":"compression"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -78,9 +78,9 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th scope="colgroup" colspan="2">リクエストの割合</th>
             <th scope="colgroup" colspan="2">リクエスト</th>
           </tr>
@@ -91,6 +91,8 @@
             <th scope="col">デスクトップ</th>
             <th scope="col">モバイル</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td><em>テキスト圧縮なし</em></td>
             <td><p style="text-align: right">62.87%</p></td>
@@ -233,9 +235,9 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
-            <td></td>
+            <td scope="col"></td>
             <th scope="colgroup" colspan="2">デスクトップ</th>
             <th scope="colgroup" colspan="2">モバイル</th>
           </tr>
@@ -246,6 +248,8 @@
             <th scope="col">ファーストパーティ</th>
             <th scope="col">サードパーティ</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td><em>テキスト圧縮なし</em></td>
             <td><p style="text-align: right">66.23%</p></td>
