@@ -619,7 +619,7 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
         <td><p style="text-align: right">32,292</p></td>
         <td><p style="text-align: right">5,079,445</p></td>
       </tr>
-    <tbody>
+    </tbody>
   </table>
   <figcaption>図18. AppCacheを使用するWebサイトとService Workerの数。</figcaption>
 </figure>

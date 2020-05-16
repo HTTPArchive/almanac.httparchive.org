@@ -218,7 +218,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
         <td><p style="text-align: right">< 1</p></td>
         <td><p style="text-align: right">< 1</p></td>
       </tr>
-    <tbody>
+    </tbody>
   </table>
   <figcaption>Figure 4. Desktop cache TTL percentiles by resource type.</figcaption>
 </figure>
@@ -619,7 +619,7 @@ In the table below, you can see a summary of AppCache vs service worker usage. 3
         <td><p style="text-align: right">32,292</p></td>
         <td><p style="text-align: right">5,079,445</p></td>
       </tr>
-    <tbody>
+    </tbody>
   </table>
   <figcaption>Figure 18. Number of websites using AppCache versus service worker.</figcaption>
 </figure>
@@ -659,7 +659,7 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. 581
         <td><p style="text-align: right">1,236</p></td>
         <td><p style="text-align: right">50</p></td>
       </tr>
-    <tbody>
+    </tbody>
   </table>
   <figcaption>Figure 19. Number of websites using AppCache versus service worker usage by HTTP/HTTPS.</figcaption>
 </figure>

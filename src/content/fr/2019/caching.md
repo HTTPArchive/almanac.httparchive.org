@@ -217,7 +217,7 @@ Le tableau ci-dessous détaille les TTL du cache pour les requêtes en provenanc
         <td><p style="text-align: right">< 1</p></td>
         <td><p style="text-align: right">< 1</p></td>
       </tr>
-    <tbody>
+    </tbody>
   </table>
   <figcaption>Figure 4. Percentiles du TTL par type de ressources, pour ordinateurs de bureau.</figcaption>
 </figure>
@@ -618,7 +618,7 @@ Dans le tableau ci-dessous, vous pouvez voir un résumé de l'utilisation d'AppC
         <td><p style="text-align: right">32,292</p></td>
         <td><p style="text-align: right">5,079,445</p></td>
       </tr>
-    <tbody>
+    </tbody>
   </table>
   <figcaption>Figure 18.  Nombre de sites web utilisant AppCache par rapport aux Service Workers.</figcaption>
 </figure>
