@@ -58,82 +58,85 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="2" >Percent of Requests</th>
-     <th scope="colgroup" colspan="2" >Requests</th>
-    </tr>
-    <tr>
-     <th scope="col">Content Encoding</th>
-     <th scope="col">Desktop</th>
-     <th scope="col">Mobile</th>
-     <th scope="col">Desktop</th>
-     <th scope="col">Mobile</th>
-    </tr>
-    <tr>
-     <td><em>No Text Compression</em></td>
-     <td><p style="text-align: right">62.87%</p></td>
-     <td><p style="text-align: right">61.47%</p></td>
-     <td><p style="text-align: right">260,245,106</p></td>
-     <td><p style="text-align: right">285,158,644</p></td>
-    </tr>
-    <tr>
-     <td>gzip</td>
-     <td><p style="text-align: right">29.66%</p></td>
-     <td><p style="text-align: right">30.95%</p></td>
-     <td><p style="text-align: right">122,789,094</p></td>
-     <td><p style="text-align: right">143,549,122</p></td>
-    </tr>
-    <tr>
-     <td>br
-     </td>
-     <td><p style="text-align: right">7.43%</p></td>
-     <td><p style="text-align: right">7.55%</p></td>
-     <td><p style="text-align: right">30,750,681</p></td>
-     <td><p style="text-align: right">35,012,368</p></td>
-    </tr>
-    <tr>
-     <td>deflate</td>
-     <td><p style="text-align: right">0.02%</p></td>
-     <td><p style="text-align: right">0.02%</p></td>
-     <td><p style="text-align: right">68,802</p></td>
-     <td><p style="text-align: right">70,679</p></td>
-    </tr>
-    <tr>
-     <td><em>Other / Invalid</em></td>
-     <td><p style="text-align: right">0.02%</p></td>
-     <td><p style="text-align: right">0.01%</p></td>
-     <td><p style="text-align: right">67,527</p></td>
-     <td><p style="text-align: right">68,352</p></td>
-    </tr>
-    <tr>
-     <td>identity</td>
-     <td><p style="text-align: right">0.000709%</p></td>
-     <td><p style="text-align: right">0.000563%</p></td>
-     <td><p style="text-align: right">2,935</p></td>
-     <td><p style="text-align: right">2,611</p></td>
-    </tr>
-    <tr>
-     <td>x-gzip</td>
-     <td><p style="text-align: right">0.000193%</p></td>
-     <td><p style="text-align: right">0.000179%</p></td>
-     <td><p style="text-align: right">800</p></td>
-     <td><p style="text-align: right">829</p></td>
-    </tr>
-    <tr>
-     <td>compress</td>
-     <td><p style="text-align: right">0.000008%</p></td>
-     <td><p style="text-align: right">0.000007%</p></td>
-     <td><p style="text-align: right">33</p></td>
-     <td><p style="text-align: right">32</p></td>
-    </tr>
-    <tr>
-     <td>x-compress</td>
-     <td><p style="text-align: right">0.000002%</p></td>
-     <td><p style="text-align: right">0.000006%</p></td>
-     <td><p style="text-align: right">8</p></td>
-     <td><p style="text-align: right">29</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <td scope="col"></td>
+        <th scope="colgroup" colspan="2" >Percent of Requests</th>
+        <th scope="colgroup" colspan="2" >Requests</th>
+      </tr>
+      <tr>
+        <th scope="col">Content Encoding</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>No Text Compression</em></td>
+        <td><p style="text-align: right">62.87%</p></td>
+        <td><p style="text-align: right">61.47%</p></td>
+        <td><p style="text-align: right">260,245,106</p></td>
+        <td><p style="text-align: right">285,158,644</p></td>
+      </tr>
+      <tr>
+        <td>gzip</td>
+        <td><p style="text-align: right">29.66%</p></td>
+        <td><p style="text-align: right">30.95%</p></td>
+        <td><p style="text-align: right">122,789,094</p></td>
+        <td><p style="text-align: right">143,549,122</p></td>
+      </tr>
+      <tr>
+        <td>br</td>
+        <td><p style="text-align: right">7.43%</p></td>
+        <td><p style="text-align: right">7.55%</p></td>
+        <td><p style="text-align: right">30,750,681</p></td>
+        <td><p style="text-align: right">35,012,368</p></td>
+      </tr>
+      <tr>
+        <td>deflate</td>
+        <td><p style="text-align: right">0.02%</p></td>
+        <td><p style="text-align: right">0.02%</p></td>
+        <td><p style="text-align: right">68,802</p></td>
+        <td><p style="text-align: right">70,679</p></td>
+      </tr>
+      <tr>
+        <td><em>Other / Invalid</em></td>
+        <td><p style="text-align: right">0.02%</p></td>
+        <td><p style="text-align: right">0.01%</p></td>
+        <td><p style="text-align: right">67,527</p></td>
+        <td><p style="text-align: right">68,352</p></td>
+      </tr>
+      <tr>
+        <td>identity</td>
+        <td><p style="text-align: right">0.000709%</p></td>
+        <td><p style="text-align: right">0.000563%</p></td>
+        <td><p style="text-align: right">2,935</p></td>
+        <td><p style="text-align: right">2,611</p></td>
+      </tr>
+      <tr>
+        <td>x-gzip</td>
+        <td><p style="text-align: right">0.000193%</p></td>
+        <td><p style="text-align: right">0.000179%</p></td>
+        <td><p style="text-align: right">800</p></td>
+        <td><p style="text-align: right">829</p></td>
+      </tr>
+      <tr>
+        <td>compress</td>
+        <td><p style="text-align: right">0.000008%</p></td>
+        <td><p style="text-align: right">0.000007%</p></td>
+        <td><p style="text-align: right">33</p></td>
+        <td><p style="text-align: right">32</p></td>
+      </tr>
+      <tr>
+        <td>x-compress</td>
+        <td><p style="text-align: right">0.000002%</p></td>
+        <td><p style="text-align: right">0.000006%</p></td>
+        <td><p style="text-align: right">8</p></td>
+        <td><p style="text-align: right">29</p></td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>Figure 1. Adoption of compression algorithms.</figcaption>
 </figure>
@@ -231,53 +234,57 @@ Additionally, the percentage of brotli compression is higher for third-party con
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="2">Desktop</th>
-     <th scope="colgroup" colspan="2">Mobile</th>
-    </tr>
-    <tr>
-     <th scope="col">Content Encoding</th>
-     <th scope="col">First-Party</th>
-     <th scope="col">Third-Party</th>
-     <th scope="col">First-Party</th>
-     <th scope="col">Third-Party</th>
-    </tr>
-    <tr>
-     <td><em>No Text Compression</em></td>
-     <td><p style="text-align: right">66.23%</p></td>
-     <td><p style="text-align: right">59.28%</p></td>
-     <td><p style="text-align: right">64.54%</p></td>
-     <td><p style="text-align: right">58.26%</p></td>
-    </tr>
-    <tr>
-     <td>gzip</td>
-     <td><p style="text-align: right">29.33%</p></td>
-     <td><p style="text-align: right">30.20%</p></td>
-     <td><p style="text-align: right">30.87%</p></td>
-     <td><p style="text-align: right">31.22%</p></td>
-    </tr>
-    <tr>
-     <td>br</td>
-     <td><p style="text-align: right">4.41%</p></td>
-     <td><p style="text-align: right">10.49%</p></td>
-     <td><p style="text-align: right">4.56%</p></td>
-     <td><p style="text-align: right">10.49%</p></td>
-    </tr>
-    <tr>
-     <td>deflate</td>
-     <td><p style="text-align: right">0.02%</p></td>
-     <td><p style="text-align: right">0.01%</p></td>
-     <td><p style="text-align: right">0.02%</p></td>
-     <td><p style="text-align: right">0.01%</p></td>
-    </tr>
-    <tr>
-     <td><em>Other / Invalid</em></td>
-     <td><p style="text-align: right">0.01%</p></td>
-     <td><p style="text-align: right">0.02%</p></td>
-     <td><p style="text-align: right">0.01%</p></td>
-     <td><p style="text-align: right">0.02%</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <td scope="col"></td>
+        <th scope="colgroup" colspan="2">Desktop</th>
+        <th scope="colgroup" colspan="2">Mobile</th>
+      </tr>
+      <tr>
+        <th scope="col">Content Encoding</th>
+        <th scope="col">First-Party</th>
+        <th scope="col">Third-Party</th>
+        <th scope="col">First-Party</th>
+        <th scope="col">Third-Party</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>No Text Compression</em></td>
+        <td><p style="text-align: right">66.23%</p></td>
+        <td><p style="text-align: right">59.28%</p></td>
+        <td><p style="text-align: right">64.54%</p></td>
+        <td><p style="text-align: right">58.26%</p></td>
+      </tr>
+      <tr>
+        <td>gzip</td>
+        <td><p style="text-align: right">29.33%</p></td>
+        <td><p style="text-align: right">30.20%</p></td>
+        <td><p style="text-align: right">30.87%</p></td>
+        <td><p style="text-align: right">31.22%</p></td>
+      </tr>
+      <tr>
+        <td>br</td>
+        <td><p style="text-align: right">4.41%</p></td>
+        <td><p style="text-align: right">10.49%</p></td>
+        <td><p style="text-align: right">4.56%</p></td>
+        <td><p style="text-align: right">10.49%</p></td>
+      </tr>
+      <tr>
+        <td>deflate</td>
+        <td><p style="text-align: right">0.02%</p></td>
+        <td><p style="text-align: right">0.01%</p></td>
+        <td><p style="text-align: right">0.02%</p></td>
+        <td><p style="text-align: right">0.01%</p></td>
+      </tr>
+      <tr>
+        <td><em>Other / Invalid</em></td>
+        <td><p style="text-align: right">0.01%</p></td>
+        <td><p style="text-align: right">0.02%</p></td>
+        <td><p style="text-align: right">0.01%</p></td>
+        <td><p style="text-align: right">0.02%</p></td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>Figure 9. First-party versus third-party compression by device type.</figcaption>
 </figure>

@@ -95,8 +95,8 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>HTML CDNの使用率 (%)</th>
+        <td scope="col"></td>
+        <th scope="col">HTML CDNの使用率 (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -219,8 +219,8 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>サブドメインのCDN使用率(%)</th>
+        <td scope="col"></td>
+        <th scope="col">サブドメインのCDN使用率(%)</th>
       </tr>
     </thead>
     <tbody>
@@ -343,8 +343,8 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>サードパーティのCDN使用率(%)</th>
+        <td scope="col"></td>
+        <th scope="col">サードパーティのCDN使用率(%)</th>
       </tr>
     </thead>
     <tbody>
@@ -485,12 +485,12 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <td scope="col"></td>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -682,12 +682,12 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <td scope="col"></td>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -852,12 +852,12 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <td scope="col"></td>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -1092,11 +1092,11 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
   <table>
     <thead>
       <tr>
-        <td></td>
-        <th>HTTP/0.9</th>
-        <th>HTTP/1.0</th>
-        <th>HTTP/1.1</th>
-        <th>HTTP/2</th>
+        <td scope="col"></td>
+        <th scope="col">HTTP/0.9</th>
+        <th scope="col">HTTP/1.0</th>
+        <th scope="col">HTTP/1.1</th>
+        <th scope="col">HTTP/2</th>
       </tr>
     </thead>
     <tbody>

@@ -170,40 +170,44 @@ TLSでは、さまざまな暗号スイートを使用できます。従来、TL
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="2" >クライアント</th>
-    </tr>
-    <tr>
-     <th scope="col">パーセンタイル</th>
-     <th scope="col">デスクトップ</th>
-     <th scope="col">モバイル</th>
-    </tr>
-    <tr>
-     <td>10</td>
-     <td>300</td>
-     <td>300</td>
-    </tr>
-    <tr>
-     <td>25</td>
-     <td>7889238</td>
-     <td>7889238</td>
-    </tr>
-    <tr>
-     <td>50</td>
-     <td>15768000</td>
-     <td>15768000</td>
-    </tr>
-    <tr>
-     <td>75</td>
-     <td>31536000</td>
-     <td>31536000</td>
-    </tr>
-    <tr>
-     <td>90</td>
-     <td>63072000</td>
-     <td>63072000</td>
-    </tr>
+    <thead>
+      <tr>
+        <td scope="col"></td>
+        <th scope="colgroup" colspan="2" >クライアント</th>
+      </tr>
+      <tr>
+        <th scope="col">パーセンタイル</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td>300</td>
+        <td>300</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>7889238</td>
+        <td>7889238</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>15768000</td>
+        <td>15768000</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td>31536000</td>
+        <td>31536000</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td>63072000</td>
+        <td>63072000</td>
+      </tr>
+    </tbody>
   </table>
 
 <figcaption>図10. HSTSの`max-age`ポリシーのパーセンタイル別の中値。</figcaption>
@@ -417,32 +421,36 @@ NELは信じられないほど貴重な情報を提供しており、情報の�
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="2" >ホームページ数</th>
-     <th scope="colgroup" colspan="2" >ホームページの割合</th>
-    </tr>
-    <tr>
-     <th scope="col">プレフィックス値</th>
-     <th scope="col">デスクトップ</th>
-     <th scope="col">モバイル</th>
-     <th scope="col">デスクトップ</th>
-     <th scope="col">モバイル</th>
-    </tr>
-    <tr>
-     <td><code>__Secure-</code></td>
-     <td>640</td>
-     <td>628</td>
-     <td>0.01%</td>
-     <td>0.01%</td>
-    </tr>
-    <tr>
-     <td><code>__Host-</code></td>
-     <td>154</td>
-     <td>157</td>
-     <td>0.00%</td>
-     <td>0.00%</td>
-    </tr>
+    <thead>
+      <tr>
+        <td col="scope"></td>
+        <th scope="colgroup" colspan="2" >ホームページ数</th>
+        <th scope="colgroup" colspan="2" >ホームページの割合</th>
+      </tr>
+      <tr>
+        <th scope="col">プレフィックス値</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>__Secure-</code></td>
+        <td>640</td>
+        <td>628</td>
+        <td>0.01%</td>
+        <td>0.01%</td>
+      </tr>
+      <tr>
+        <td><code>__Host-</code></td>
+        <td>154</td>
+        <td>157</td>
+        <td>0.00%</td>
+        <td>0.00%</td>
+      </tr>
+    </tbody>
   </table>
 
 <figcaption>図17. クッキーのプレフィックスの使用法</figcaption>
