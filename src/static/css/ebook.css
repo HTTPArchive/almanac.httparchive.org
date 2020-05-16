@@ -15,12 +15,6 @@
   margin: 0;
 }
 
-.table-wrap {
-  display: block;
-  max-width: 100%;
-  text-align: center;
-}
-
 th, td {
   padding: 5px;
 }
@@ -119,11 +113,6 @@ ul li.contributor::before {
 .contributors button {
   background: #f7f779;
   color: #333;
-}
-
-/* Join the team card */
-.contributor-join {
-  display: none;
 }
 
 .social-icon {
@@ -241,6 +230,7 @@ ul li.contributor::before {
   figcaption {
     max-width: 100%;
     text-align: center;
+    page-break-inside: avoid;
   }
 
   figure .anchor-link {
@@ -255,11 +245,24 @@ ul li.contributor::before {
     width: 1000px;
   }
 
+  figure iframe.video-embed {
+    display: none;
+  }
+
+  figure .video-fallback-image {
+    display: block;
+  }
+
   table {
     display: table;
     border-spacing: 2px;
     border-color: grey;
   }
+
+  .authors li {
+    page-break-inside: avoid;
+  }
+
 }
 
 

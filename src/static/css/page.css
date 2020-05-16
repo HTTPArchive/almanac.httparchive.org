@@ -387,6 +387,14 @@ figure .fig-desktop {
   display: block;
 }
 
+.video-embed {
+  display: block;
+}
+
+.video-fallback-image {
+  display: none;
+}
+
 .bio {
   margin-top: 10px;
 }
