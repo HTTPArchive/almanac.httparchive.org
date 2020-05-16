@@ -170,40 +170,44 @@ Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age ` d
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="2" >Client</th>
-    </tr>
-    <tr>
-     <th scope="col">Percentile</th>
-     <th scope="col">Desktop</th>
-     <th scope="col">Mobile</th>
-    </tr>
-    <tr>
-     <td>10</td>
-     <td>300</td>
-     <td>300</td>
-    </tr>
-    <tr>
-     <td>25</td>
-     <td>7889238</td>
-     <td>7889238</td>
-    </tr>
-    <tr>
-     <td>50</td>
-     <td>15768000</td>
-     <td>15768000</td>
-    </tr>
-    <tr>
-     <td>75</td>
-     <td>31536000</td>
-     <td>31536000</td>
-    </tr>
-    <tr>
-     <td>90</td>
-     <td>63072000</td>
-     <td>63072000</td>
-    </tr>
+    <thead>
+      <tr>
+        <td scope="col"></td>
+        <th scope="colgroup" colspan="2" >Client</th>
+      </tr>
+      <tr>
+        <th scope="col">Percentile</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td>300</td>
+        <td>300</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>7889238</td>
+        <td>7889238</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>15768000</td>
+        <td>15768000</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td>31536000</td>
+        <td>31536000</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td>63072000</td>
+        <td>63072000</td>
+      </tr>
+    </tbody>
   </table>
 
 <figcaption>Figure 10. Medium values of HSTS `max-age` policy by percentile.</figcaption>
@@ -417,32 +421,36 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="2" >No. of Home Pages</th>
-     <th scope="colgroup" colspan="2" >% of Home Pages</th>
-    </tr>
-    <tr>
-     <th scope="col">Prefix value</th>
-     <th scope="col">Desktop</th>
-     <th scope="col">Mobile</th>
-     <th scope="col">Desktop</th>
-     <th scope="col">Mobile</th>
-    </tr>
-    <tr>
-     <td><code>__Secure-</code></td>
-     <td>640</td>
-     <td>628</td>
-     <td>0.01%</td>
-     <td>0.01%</td>
-    </tr>
-    <tr>
-     <td><code>__Host-</code></td>
-     <td>154</td>
-     <td>157</td>
-     <td>0.00%</td>
-     <td>0.00%</td>
-    </tr>
+    <thead>
+      <tr>
+        <td scope="col"></td>
+        <th scope="colgroup" colspan="2" >No. of Home Pages</th>
+        <th scope="colgroup" colspan="2" >% of Home Pages</th>
+      </tr>
+      <tr>
+        <th scope="col">Prefix value</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Desktop</th>
+        <th scope="col">Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>__Secure-</code></td>
+        <td>640</td>
+        <td>628</td>
+        <td>0.01%</td>
+        <td>0.01%</td>
+      </tr>
+      <tr>
+        <td><code>__Host-</code></td>
+        <td>154</td>
+        <td>157</td>
+        <td>0.00%</td>
+        <td>0.00%</td>
+      </tr>
+    </tbody>
   </table>
 
 <figcaption>Figure 17. Cookie prefix usage.</figcaption>

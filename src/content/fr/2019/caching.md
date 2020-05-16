@@ -122,98 +122,102 @@ Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
 Le tableau ci-dessous détaille les TTL du cache pour les requêtes en provenance d'ordinateurs de bureau. La plupart des types de contenu sont mis en cache, mais les ressources CSS semblent toujours être mises en cache à des valeurs TTL élevées.
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="5" >Percentiles TTL du cache des ordinateurs de bureau (Heures)</th>
-    </tr>
-    <tr>
-     <td></td>
-     <th scope="col">10</th>
-     <th scope="col">25</th>
-     <th scope="col">50</th>
-     <th scope="col">75</th>
-     <th scope="col">90</th>
-    </tr>
-    <tr>
-     <th scope="row">Audio</th>
-     <td><p style="text-align: right">12</p></td>
-     <td><p style="text-align: right">24</p></td>
-     <td><p style="text-align: right">720</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-    </tr>
-    <tr>
-     <th scope="row">CSS</th>
-     <td><p style="text-align: right">720</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Police d'écriture</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">3</p></td>
-     <td><p style="text-align: right">336</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">87,600</p></td>
-    </tr>
-    <tr>
-     <th scope="row">HTML</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">168</p></td>
-     <td><p style="text-align: right">720</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,766</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Image</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">1</p></td>
-     <td><p style="text-align: right">28</p></td>
-     <td><p style="text-align: right">48</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Autre</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">2</p></td>
-     <td><p style="text-align: right">336</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Script</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">1</p></td>
-     <td><p style="text-align: right">6</p></td>
-     <td><p style="text-align: right">720</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Texte</th>
-     <td><p style="text-align: right">21</p></td>
-     <td><p style="text-align: right">336</p></td>
-     <td><p style="text-align: right">7,902</p></td>
-     <td><p style="text-align: right">8,357</p></td>
-     <td><p style="text-align: right">8,740</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Vidéo</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">4</p></td>
-     <td><p style="text-align: right">24</p></td>
-     <td><p style="text-align: right">24</p></td>
-     <td><p style="text-align: right">336</p></td>
-    </tr>
-    <tr>
-     <th scope="row">XML</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <td scope="col"></td>
+        <th scope="colgroup" colspan="5" >Percentiles TTL du cache des ordinateurs de bureau (Heures)</th>
+      </tr>
+      <tr>
+        <td scope="col"></td>
+        <th scope="col">10</th>
+        <th scope="col">25</th>
+        <th scope="col">50</th>
+        <th scope="col">75</th>
+        <th scope="col">90</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Audio</th>
+        <td><p style="text-align: right">12</p></td>
+        <td><p style="text-align: right">24</p></td>
+        <td><p style="text-align: right">720</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+      </tr>
+      <tr>
+        <th scope="row">CSS</th>
+        <td><p style="text-align: right">720</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Police d'écriture</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">3</p></td>
+        <td><p style="text-align: right">336</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">87,600</p></td>
+      </tr>
+      <tr>
+        <th scope="row">HTML</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">168</p></td>
+        <td><p style="text-align: right">720</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,766</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Image</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">1</p></td>
+        <td><p style="text-align: right">28</p></td>
+        <td><p style="text-align: right">48</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Autre</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">2</p></td>
+        <td><p style="text-align: right">336</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Script</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">1</p></td>
+        <td><p style="text-align: right">6</p></td>
+        <td><p style="text-align: right">720</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Texte</th>
+        <td><p style="text-align: right">21</p></td>
+        <td><p style="text-align: right">336</p></td>
+        <td><p style="text-align: right">7,902</p></td>
+        <td><p style="text-align: right">8,357</p></td>
+        <td><p style="text-align: right">8,740</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Vidéo</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">4</p></td>
+        <td><p style="text-align: right">24</p></td>
+        <td><p style="text-align: right">24</p></td>
+        <td><p style="text-align: right">336</p></td>
+      </tr>
+      <tr>
+        <th scope="row">XML</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>Figure 4. Percentiles du TTL par type de ressources, pour ordinateurs de bureau.</figcaption>
 </figure>
@@ -587,30 +591,34 @@ Dans le tableau ci-dessous, vous pouvez voir un résumé de l'utilisation d'AppC
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th>N'utilisent pas de Server Worker</th>
-     <th>Utilisent un Service Worker</th>
-     <th>Total</th>
-    </tr>
-    <tr>
-     <td>N'utilise pas AppCache</td>
-     <td><p style="text-align: right">5,045,337</p></td>
-     <td><p style="text-align: right">32,241</p></td>
-     <td><p style="text-align: right">5,077,578</p></td>
-    </tr>
-    <tr>
-     <td>Utilise AppCache</td>
-     <td><p style="text-align: right">1,816</p></td>
-     <td><p style="text-align: right">51</p></td>
-     <td><p style="text-align: right">1,867</p></td>
-    </tr>
-    <tr>
-     <td>Total</td>
-     <td><p style="text-align: right">5,047,153</p></td>
-     <td><p style="text-align: right">32,292</p></td>
-     <td><p style="text-align: right">5,079,445</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <td scope="col"></td>
+        <th>N'utilisent pas de Server Worker</th>
+        <th>Utilisent un Service Worker</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>N'utilise pas AppCache</td>
+        <td><p style="text-align: right">5,045,337</p></td>
+        <td><p style="text-align: right">32,241</p></td>
+        <td><p style="text-align: right">5,077,578</p></td>
+      </tr>
+      <tr>
+        <td>Utilise AppCache</td>
+        <td><p style="text-align: right">1,816</p></td>
+        <td><p style="text-align: right">51</p></td>
+        <td><p style="text-align: right">1,867</p></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td><p style="text-align: right">5,047,153</p></td>
+        <td><p style="text-align: right">32,292</p></td>
+        <td><p style="text-align: right">5,079,445</p></td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>Figure 18.  Nombre de sites web utilisant AppCache par rapport aux Service Workers.</figcaption>
 </figure>
@@ -619,34 +627,38 @@ Si on fait une comparaison entre HTTP et HTTPS, cela devient encore plus intére
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <td></td>
-     <th scope="col">N'utilise pas Service Worker</th>
-     <th scope="col">Utilise Service Worker</th>
-    </tr>
-    <tr>
-     <th scope="rowgroup" rowspan="2" >HTTP</th>
-     <td>N'utilise pas AppCache</td>
-     <td><p style="text-align: right">1,968,736</p></td>
-     <td><p style="text-align: right">907</p></td>
-    </tr>
-    <tr>
-     <td>Utilise AppCache</td>
-     <td><p style="text-align: right">580</p></td>
-     <td><p style="text-align: right">1</p></td>
-    </tr>
-    <tr>
-     <th scope="rowgroup" rowspan="2" >HTTPS</th>
-     <td>N'utilise pas AppCache</td>
-     <td><p style="text-align: right">3,076,601</p></td>
-     <td><p style="text-align: right">31,334</p></td>
-    </tr>
-    <tr>
-     <td>Utilise AppCache</td>
-     <td><p style="text-align: right">1,236</p></td>
-     <td><p style="text-align: right">50</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <td scoppe="col"></td>
+        <td scope="col"></td>
+        <th scope="col">N'utilise pas Service Worker</th>
+        <th scope="col">Utilise Service Worker</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="rowgroup" rowspan="2" >HTTP</th>
+        <td>N'utilise pas AppCache</td>
+        <td><p style="text-align: right">1,968,736</p></td>
+        <td><p style="text-align: right">907</p></td>
+      </tr>
+      <tr>
+        <td>Utilise AppCache</td>
+        <td><p style="text-align: right">580</p></td>
+        <td><p style="text-align: right">1</p></td>
+      </tr>
+      <tr>
+        <th scope="rowgroup" rowspan="2" >HTTPS</th>
+        <td>N'utilise pas AppCache</td>
+        <td><p style="text-align: right">3,076,601</p></td>
+        <td><p style="text-align: right">31,334</p></td>
+      </tr>
+      <tr>
+        <td>Utilise AppCache</td>
+        <td><p style="text-align: right">1,236</p></td>
+        <td><p style="text-align: right">50</p></td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>Figure 19. Nombre de sites web utilisant AppCache par rapport à l'utilisation des service worker par HTTP/HTTPS.</figcaption>
 </figure>

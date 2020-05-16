@@ -203,137 +203,137 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 <figure markdown>
   <table>
-      <thead>
-        <tr>
-          <th>ランク</th>
-          <th>フォントファミリー</th>
-          <th>デスクトップ</th>
-          <th>モバイル</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="numeric">1</td>
-          <td>Open Sans</td>
-          <td class="numeric">24%</td>
-          <td class="numeric">22%</td>
-        </tr>
-        <tr>
-          <td class="numeric">2</td>
-          <td>Roboto</td>
-          <td class="numeric">15%</td>
-          <td class="numeric">19%</td>
-        </tr>
-        <tr>
-          <td class="numeric">3</td>
-          <td>Montserrat</td>
-          <td class="numeric">5%</td>
-          <td class="numeric">4%</td>
-        </tr>
-        <tr>
-          <td class="numeric">4</td>
-          <td>Source Sans Pro</td>
-          <td class="numeric">4%</td>
-          <td class="numeric">3%</td>
-        </tr>
-        <tr>
-          <td class="numeric">5</td>
-          <td>Noto Sans JP</td>
-          <td class="numeric">3%</td>
-          <td class="numeric">3%</td>
-        </tr>
-        <tr>
-          <td class="numeric">6</td>
-          <td>Lato</td>
-          <td class="numeric">3%</td>
-          <td class="numeric">3%</td>
-        </tr>
-        <tr>
-          <td class="numeric">7</td>
-          <td>Nanum Gothic</td>
-          <td class="numeric">4%</td>
-          <td class="numeric">2%</td>
-        </tr>
-        <tr>
-          <td class="numeric">8</td>
-          <td>Noto Sans KR</td>
-          <td class="numeric">3%</td>
-          <td class="numeric">2%</td>
-        </tr>
-        <tr>
-          <td class="numeric">9</td>
-          <td>Roboto Condensed</td>
-          <td class="numeric">2%</td>
-          <td class="numeric">2%</td>
-        </tr>
-        <tr>
-          <td class="numeric">10</td>
-          <td>Raleway</td>
-          <td class="numeric">2%</td>
-          <td class="numeric">2%</td>
-        </tr>
-        <tr>
-          <td class="numeric">11</td>
-          <td>FontAwesome</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">12</td>
-          <td>Roboto Slab</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">13</td>
-          <td>Noto Sans TC</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">14</td>
-          <td>Poppins</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">15</td>
-          <td>Ubuntu</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">16</td>
-          <td>Oswald</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">17</td>
-          <td>Merriweather</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">18</td>
-          <td>PT Sans</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">19</td>
-          <td>Playfair Display</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-        <tr>
-          <td class="numeric">20</td>
-          <td>Noto Sans</td>
-          <td class="numeric">1%</td>
-          <td class="numeric">1%</td>
-        </tr>
-      </tbody>
-    </table>
+    <thead>
+      <tr>
+        <th>ランク</th>
+        <th>フォントファミリー</th>
+        <th>デスクトップ</th>
+        <th>モバイル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="numeric">1</td>
+        <td>Open Sans</td>
+        <td class="numeric">24%</td>
+        <td class="numeric">22%</td>
+      </tr>
+      <tr>
+        <td class="numeric">2</td>
+        <td>Roboto</td>
+        <td class="numeric">15%</td>
+        <td class="numeric">19%</td>
+      </tr>
+      <tr>
+        <td class="numeric">3</td>
+        <td>Montserrat</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">4%</td>
+      </tr>
+      <tr>
+        <td class="numeric">4</td>
+        <td>Source Sans Pro</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">3%</td>
+      </tr>
+      <tr>
+        <td class="numeric">5</td>
+        <td>Noto Sans JP</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
+      </tr>
+      <tr>
+        <td class="numeric">6</td>
+        <td>Lato</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
+      </tr>
+      <tr>
+        <td class="numeric">7</td>
+        <td>Nanum Gothic</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td class="numeric">8</td>
+        <td>Noto Sans KR</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td class="numeric">9</td>
+        <td>Roboto Condensed</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td class="numeric">10</td>
+        <td>Raleway</td>
+        <td class="numeric">2%</td>
+        <td class="numeric">2%</td>
+      </tr>
+      <tr>
+        <td class="numeric">11</td>
+        <td>FontAwesome</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">12</td>
+        <td>Roboto Slab</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">13</td>
+        <td>Noto Sans TC</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">14</td>
+        <td>Poppins</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">15</td>
+        <td>Ubuntu</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">16</td>
+        <td>Oswald</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">17</td>
+        <td>Merriweather</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">18</td>
+        <td>PT Sans</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">19</td>
+        <td>Playfair Display</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+      <tr>
+        <td class="numeric">20</td>
+        <td>Noto Sans</td>
+        <td class="numeric">1%</td>
+        <td class="numeric">1%</td>
+      </tr>
+    </tbody>
+  </table>
   <figcaption>図6. 全フォント宣言に占める上位20のフォントファミリーの割合。</figcaption>
 </figure>
 
