@@ -110,7 +110,7 @@
         </section>
       {% endfor %}
       <section class="part">
-        <h2 class="part-name">{{ self.appendix() }}</h2>
+        <h2 class="part-name">{{ self.appendices() }}</h2>
         <div class="chapters">
           <div class="chapter">
             <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>

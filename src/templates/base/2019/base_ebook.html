@@ -78,7 +78,7 @@
       </div>
       {% endfor %}
       <div class="part">
-        <h2 class="part-name">{{ self.appendix() }}</h2>
+        <h2 class="part-name">{{ self.appendices() }}</h2>
         <div class="chapters">
           <div class="chapter">
             <a href="#methodology">{{ self.methodology_title() }}</a>
@@ -99,12 +99,12 @@
   {{ self.chapters() }}
 
   <section class="chapter" id="methodology">
-    <div class="subtitle">Appendix A</div>
+    <div class="subtitle">{{ self.appendix() }} A</div>
     {{ get_ebook_methodology(lang,year) | safe }}
   </section>
 
   <section class="chapter" id="contributors">
-    <div class="subtitle">Appendix B</div>
+    <div class="subtitle">{{ self.appendix() }} B</div>
   
     <h1 class="title title-lg">
       {{ self.contributors_title() }}

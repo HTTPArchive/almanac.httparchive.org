@@ -97,17 +97,12 @@ tbody tr:nth-child(even) {
 .contributors {
   padding: 0;
   columns: 2;
-}
-
-.contributor-grid {
-  margin: 0 -15px;
-  justify-content: center;
-  width: 10000px;
-  max-width: 100%;
+  column-gap: 30px;
+  margin: 50px 0 0 0;
 }
 
 .contributor {
-  margin-top: 20px;
+  margin-bottom: 20px;
   width: 600px;
   max-width: 100%;
   vertical-align: top;
@@ -145,15 +140,9 @@ tbody tr:nth-child(even) {
 .contributor-team:last-child::after {
   content: '';
 }
-
-.contributors button {
-  background: #f7f779;
-  color: #333;
-}
-
 .social-icon {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
 }
 
 .content ul li::before {
@@ -166,23 +155,13 @@ tbody tr:nth-child(even) {
 
 .content ul li.contributor {
   list-style: none;
+  page-break-inside: avoid;
 }
 
 section.chapter {prince-pdf-tag-type: Art;}
 
 @prince-pdf {
   prince-pdf-display-doc-title: true;
-}
-
-
-@page:first {
-  background: #5C687D;
-  background: transparent linear-gradient(#5C687D 70%, transparent 30%);
-  /* background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat; */
-  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICBzdmd7YmFja2dyb3VuZDojZmZmfQ0KICAgICAgLmNscy0xe2ZpbGw6I2E4Y2FiYTtmaWxsLXJ1bGU6ZXZlbm9kZDtvcGFjaXR5Oi4wNX0NCiAgICA8L3N0eWxlPg0KICA8L2RlZnM+DQogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS0yMzEgODloMjA4OHY2NTFsLTIwODggMzYwVjg5eiIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPg0KICA8cGF0aCBkPSJNLTE0NC0xOWgyMDg4djY1MUwtMTQ0IDk5MlYtMTl6IiBmaWxsPSIjMWEyYjQ5IiBvcGFjaXR5PSIuNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwLTgzaDIwODh2NjUxTC00NzAgOTI4Vi04M3oiLz4NCiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4NCjwvc3ZnPg0K);
-  background-position: bottom left;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
 
 @page {
@@ -218,6 +197,14 @@ section.chapter {prince-pdf-tag-type: Art;}
 
 @page :first {
 
+  background: #5C687D;
+  background: transparent linear-gradient(#5C687D 70%, transparent 30%);
+  /* background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat; */
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICBzdmd7YmFja2dyb3VuZDojZmZmfQ0KICAgICAgLmNscy0xe2ZpbGw6I2E4Y2FiYTtmaWxsLXJ1bGU6ZXZlbm9kZDtvcGFjaXR5Oi4wNX0NCiAgICA8L3N0eWxlPg0KICA8L2RlZnM+DQogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS0yMzEgODloMjA4OHY2NTFsLTIwODggMzYwVjg5eiIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPg0KICA8cGF0aCBkPSJNLTE0NC0xOWgyMDg4djY1MUwtMTQ0IDk5MlYtMTl6IiBmaWxsPSIjMWEyYjQ5IiBvcGFjaXR5PSIuNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwLTgzaDIwODh2NjUxTC00NzAgOTI4Vi04M3oiLz4NCiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4NCjwvc3ZnPg0K);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
   @bottom-left {
     content: '';
     border: none;
@@ -236,7 +223,7 @@ section.chapter {prince-pdf-tag-type: Art;}
   #title {
     background: none;
   }
-  
+
   :root {
     font-size: 14px;
   }
@@ -255,11 +242,11 @@ section.chapter {prince-pdf-tag-type: Art;}
 
   .content > section {
     page-break-after: always;
-  }  
+  }
   
   #toc a {
-    display: inline-block;
-    min-width: 500px;
+    display: block;
+    min-width: 100%;
   }
   
   #toc a::after {
@@ -277,7 +264,7 @@ section.chapter {prince-pdf-tag-type: Art;}
   }
 
   section.chapter div.subtitle {
-    string-set: chapter_subtitle content() " - ";
+    string-set: chapter_subtitle content() " : ";
   }
 
   figure,

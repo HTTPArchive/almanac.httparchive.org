@@ -9,7 +9,7 @@
         
     {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
     {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
-    <section class="chapter" id="{{ metadata.get('chapter') }}" role="article">
+    <section class="chapter" id="{{ metadata.get('chapter') }}">
         <div class="body">
 
             <div class="subtitle">
