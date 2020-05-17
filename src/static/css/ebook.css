@@ -159,6 +159,11 @@ tbody tr:nth-child(even) {
   page-break-inside: avoid;
 }
 
+.code-block pre {
+  overflow: visible;
+  white-space: pre-wrap;
+}
+
 section.chapter {prince-pdf-tag-type: Art;}
 
 @prince-pdf {
