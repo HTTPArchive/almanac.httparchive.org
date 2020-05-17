@@ -382,16 +382,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -1011,16 +1020,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -1383,16 +1401,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -1868,16 +1895,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -2199,16 +2235,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -2851,16 +2896,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -3126,16 +3180,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -3956,16 +4019,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -4271,16 +4343,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -4676,16 +4757,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -4905,16 +4995,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -5202,16 +5301,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -5805,16 +5913,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -6461,16 +6578,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -6815,16 +6941,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -7487,16 +7622,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -9052,16 +9196,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -9901,16 +10054,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -10181,16 +10343,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>
@@ -10896,16 +11067,25 @@
           {% if authordata.twitter or authordata.github %}
           <span class="social">
             {% if authordata.twitter %}
-            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(authordata.twitter) }}" height="20" width="20" />
+            <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.github %}
-            <a class="github" href="https://github.com/{{ authordata.github }}">
-              <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(authordata.github) }}" height="20" width="20" />
+            <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
             </a>
             {% endif %} {% if authordata.website %}
-            <a class="website" href="{{ authordata.website }}">
-              <img class="social-icon" src="/static/images/blog.png" alt="{{ website(authordata.name) }}" height="20" width="20" />
+            <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
+              <svg width="18" height="18" role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
             </a>
             {% endif %}
           </span>

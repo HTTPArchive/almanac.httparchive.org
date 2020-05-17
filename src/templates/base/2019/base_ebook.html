@@ -126,18 +126,27 @@
           <span class="contributor-name">{{ contributor.name }}</span>
           <span class="contributor-social">
           {% if contributor.twitter %}
-            <a href="https://twitter.com/{{ contributor.twitter }}">
-              <img class="social-icon" src="/static/images/twitter.png" alt="{{ onTwitter(contributor.twitter) }}" height="20" width="20" />
+            <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
+              <svg width="18" height="18" role="img">
+                <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
             </a>
           {% endif %}
           {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}">
-            <img class="social-icon" src="/static/images/github.png" alt="{{ onGitHub(contributor.github) }}" height="20" width="20" />
+          <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
+            <svg width="18" height="18" role="img">
+              <title id="contributors-{{ id }}-github">{{ onGitHub(contributor.github) }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+            </svg>
           </a>
           {% endif %}
           {% if contributor.website %}
-          <a href="{{ contributor.website }}" aria-label="{{ website(contributor.name) }}">
-            <img class="social-icon" src="/static/images/blog.png" alt="{{ website(contributor.name) }}" height="20" width="20" />
+          <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
+            <svg width="18" height="18" role="img">
+              <title id="contributors-{{ id }}-website">{{ website(contributor.name) }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+            </svg>
           </a>
           {% endif %}
         </span>
