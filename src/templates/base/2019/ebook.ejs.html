@@ -9,13 +9,13 @@
         
     {% set metadata = <%- JSON.stringify(chapter.metadata) %> %}
     {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
-    <section class="chapter" id="{{ metadata.get('chapter') }}">
-        <div class="body">
+    <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
+        <div class="body" id="{{ metadata.get('chapter') }}">
 
             <div class="subtitle">
                 {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
             </div>
-            <h1 id="{{ metadata.get('chapter_number') }}" class="title title-lg">
+            <h1 class="title title-lg">
                 {{ metadata.get('title') }}
                 {% if metadata.get('unedited', false) %}
                 <span class="chapter-unedited">{{ self.unedited() }}</span>

@@ -22,19 +22,63 @@
 <link rel="stylesheet" href="/static/css/ebook.css?v=1" />
 
 <style>
-@page {
-
-  @bottom-left {
-    content: "{{ year }} {{ self.organization() }}";
+{% if request.args.get('print') == None %}
+  /* Add a print query param to format the book for printer (mirror headers and footers) */
+  @page {
+    @top-left { content: ''; }
+    @top-right { content: string(chapter_subtitle) string(chapter_title); }
+    @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
+    @bottom-right { content: counter(page); }
   }
-}
+{% else %}
+  @page :left {
+    @top-left { content: string(chapter_subtitle) string(chapter_title); }
+    @top-right { content: ''; }
+    @bottom-left { content: counter(page); }
+    @bottom-right { content: "{{ year }} {{ self.organization() }}"; }
+    margin-right: 4cm;
+  }
+
+  @page :right {
+    @top-left { content: ''; }
+    @top-right { content: string(chapter_subtitle) string(chapter_title); }
+    @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
+    @bottom-right { content: counter(page); }
+    margin-left: 4cm;
+  }
+
+  @page front-matter:left {
+    @bottom-left { content: counter(page, lower-roman); }
+  }
+
+  @page front-matter:right {
+    @bottom-right { content: counter(page, lower-roman); }
+  }
+
+  #toc .front-matter::after {
+    content: target-counter(attr(href), page, lower-roman);
+  }
+
+  #toc, .chapter {
+    break-before: right;
+  }
+
+  #toc, #chapter-1 {
+    counter-reset: page 1;
+  }
+{% endif %}
+
+{% if request.args.get('page-size') != None %}
+  @page { size: {{ request.args.get('page-size') }}; }
+{% endif %}
+
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="content">
 
-  <section id="title">
+  <section id="title" class="no-header-or-footer">
     
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
     <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
@@ -47,27 +91,27 @@
     <div class="parts">
       <div class="part">
         <h2 class="part-name">{{ self.introduction() }}</h2>
-        <div class="chapters">
-          <div class="chapter">
-            <a href="#foreword">{{ self.foreword_title() }}</a>
+        <div class="toc-chapters">
+          <div class="toc-chapter">
+            <a class="front-matter" href="#foreword">{{ self.foreword_title() }}</a>
           </div>
         </div>
       </div>
       {% for part_config in config.outline %}
       <div class="part">
         <h2 class="part-name">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</h2>
-        <div class="chapters">
+        <div class="toc-chapters">
           {% for chapter_config in part_config.chapters %}
-            <div class="chapter">
+            <div class="toc-chapter">
               {% if chapter_config.todo %}
               <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}</span>
               {% else %}
                 {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
-                <a href="#{{ chapter_config.chapter }}">
+                <a href="#chapter-{{ chapter_config.chapter }}">
                   {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}
                 </a>
                 {% else %}
-                <a href="#{{ chapter_config.chapter }}">
+                <a href="#chapter-{{ chapter_config.chapter }}">
                   {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
                 </a>
                 {% endif %}
@@ -79,11 +123,11 @@
       {% endfor %}
       <div class="part">
         <h2 class="part-name">{{ self.appendices() }}</h2>
-        <div class="chapters">
-          <div class="chapter">
+        <div class="toc-chapters">
+          <div class="toc-chapter">
             <a href="#methodology">{{ self.methodology_title() }}</a>
           </div>
-          <div class="chapter">
+          <div class="toc-chapter">
             <a href="#contributors">{{ self.contributors_title() }}</a>
           </div>
         </div>
@@ -127,7 +171,7 @@
           <span class="contributor-social">
           {% if contributor.twitter %}
             <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
-              <svg width="18" height="18" role="img">
+              <svg width="15" height="15" role="img">
                 <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
@@ -135,7 +179,7 @@
           {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
-            <svg width="18" height="18" role="img">
+            <svg width="15" height="15" role="img">
               <title id="contributors-{{ id }}-github">{{ onGitHub(contributor.github) }}</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
             </svg>
@@ -143,7 +187,7 @@
           {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
-            <svg width="18" height="18" role="img">
+            <svg width="15" height="15" role="img">
               <title id="contributors-{{ id }}-website">{{ website(contributor.name) }}</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
             </svg>

@@ -16,30 +16,34 @@
   margin: 0;
   width: auto;
   color: #F7F779;
+  font-size: 160px;
   font-size: 10rem;
   line-height: 100%;
   font-weight: bold;
 }
-
-.intro-image {
-  border-radius: 10px;
-  display: block;
-  margin: 20px 0;
-}
-
 
 #title h1.title::before {
   border-bottom: none;
 }
 
 #title h1.title {
+  font-size: 80px;
   font-size: 5rem;
   font-weight: 700;
 }
 
 #title h2.title {
+  font-size: 32px;
   font-size: 2rem;
   font-weight: 300;
+}
+
+.intro-image {
+  border-radius: 10px;
+  display: block;
+  margin: 20px 0;
+  width: 80%;
+  height: auto;
 }
 
 #title img {
@@ -177,6 +181,20 @@ section.chapter {prince-pdf-tag-type: Art;}
   font-size: 10pt;
   size: A4;
 
+  @top-left {
+    width: 100%;
+    margin: 30pt 0 10pt 0;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @top-right {
+    width: 100%;
+    margin: 30pt 0 10pt 0;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+
   @bottom-left {
     width: 100%;
     margin: 10pt 0 30pt 0;
@@ -186,19 +204,51 @@ section.chapter {prince-pdf-tag-type: Art;}
   }
 
   @bottom-right { 
-    width: 100px;
+    width: 100%;
     margin: 10pt 0 30pt 0;
     border-top: .25pt solid #666;
+    color: #333;
     font-family: 'Poppins', sans-serif;
-    content: counter(page);
   }
 
-  @top-right {
-    font-family: 'Poppins', sans-serif;
-    content: string(chapter_subtitle) string(chapter_title);
-    margin: 30pt 0 10pt 0;
-    color: #333;
+}
+
+@page :blank {
+
+  @top-left {
+    content: '';
   }
+  @top-right {
+    content: '';
+  }
+
+}
+
+.no-header-or-footer {
+  page: no-header-or-footer;
+}
+
+@page no-header-or-footer {
+
+  @top-left {
+    content: '';
+  }
+  @top-right {
+    content: '';
+  }
+  @bottom-left {
+    content: '';
+    border: none;
+  }
+  @bottom-right {
+    content: '';
+    border: none;
+  }
+
+}
+
+#toc, #foreword {
+  page: front-matter;
 }
 
 @page :first {
@@ -211,6 +261,12 @@ section.chapter {prince-pdf-tag-type: Art;}
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
+  @top-left {
+    content: '';
+  }
+  @top-right {
+    content: '';
+  }
   @bottom-left {
     content: '';
     border: none;
@@ -219,9 +275,7 @@ section.chapter {prince-pdf-tag-type: Art;}
     content: '';
     border: none;
   }
-  @top-right {
-    content: '';
-  }
+
 }
 
 @media print {
