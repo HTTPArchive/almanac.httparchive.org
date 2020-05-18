@@ -31,6 +31,15 @@
     @bottom-right { content: counter(page); }
   }
 {% else %}
+
+  @page {
+    @footnote {
+      float: bottom;
+      border-top: .25pt solid #666;
+      margin-top: 10px;
+      padding: 5px 0;
+    }
+  }
   @page :left {
     @top-left { content: string(chapter_subtitle) string(chapter_title); }
     @top-right { content: ''; }
@@ -69,7 +78,13 @@
 
   a {
     text-decoration: none !important;
+
   }
+
+  figure, p, ul {
+    prince-footnote-policy: keep-with-line;
+  }
+
 {% endif %}
 
 {% if request.args.get('page-size') != None %}

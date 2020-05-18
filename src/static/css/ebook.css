@@ -67,6 +67,14 @@ th, td {
   padding: 5px;
 }
 
+th {
+  text-align: center;
+}
+
+td {
+  text-align: left;
+}
+
 tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
@@ -170,6 +178,10 @@ tbody tr:nth-child(even) {
 
 section.chapter {prince-pdf-tag-type: Art;}
 
+.fn {
+  display: none;
+}
+
 @prince-pdf {
   prince-pdf-display-doc-title: true;
 }
@@ -184,6 +196,7 @@ section.chapter {prince-pdf-tag-type: Art;}
   @top-left {
     width: 100%;
     margin: 30pt 0 10pt 0;
+    border-bottom: .50pt solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -198,7 +211,7 @@ section.chapter {prince-pdf-tag-type: Art;}
   @bottom-left {
     width: 100%;
     margin: 10pt 0 30pt 0;
-    border-top: .25pt solid #666;
+    border-top: .50pt solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -263,6 +276,7 @@ section.chapter {prince-pdf-tag-type: Art;}
 
   @top-left {
     content: '';
+    border-bottom: none;
   }
   @top-right {
     content: '';
@@ -367,8 +381,34 @@ section.chapter {prince-pdf-tag-type: Art;}
     page-break-inside: avoid;
   }
 
-}
+  .fn {
+    display: inline;
+    float: footnote;
+    counter-increment: footnote;
+    font-size: 10px;
+    font-size: 0.625rem;
+    font-style: italic;
+    text-align: left;
+    margin: 0 0 0 18px;
+    line-height: normal;
+  }
 
+  .fn::footnote-call {
+    content: counter(footnote);
+    font-size: 6px;
+    font-size: 0.375rem;
+    vertical-align: super;
+    line-height: none;
+  }
+
+  .fn::footnote-marker {
+    text-align: left;
+    font-size: 10px;
+    font-size: 0.625rem;
+    font-weight: normal;
+    min-width: 18px;
+  }
+}
 
 .content section.authors li {
   display: flex;
