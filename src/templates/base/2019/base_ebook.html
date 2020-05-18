@@ -66,6 +66,10 @@
   #toc, #chapter-1 {
     counter-reset: page 1;
   }
+
+  a {
+    text-decoration: none !important;
+  }
 {% endif %}
 
 {% if request.args.get('page-size') != None %}
