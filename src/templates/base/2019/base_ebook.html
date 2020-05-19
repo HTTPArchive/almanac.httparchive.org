@@ -26,7 +26,7 @@
   /* Add a print query param to format the book for printer (mirror headers and footers) */
   @page {
     @top-left { content: ''; }
-    @top-right { content: string(chapter_subtitle) string(chapter_title); }
+    @top-right { content: string(chapter-subtitle) string(chapter-title); }
     @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
     @bottom-right { content: counter(page); }
   }
@@ -41,7 +41,7 @@
     }
   }
   @page :left {
-    @top-left { content: string(chapter_subtitle) string(chapter_title); }
+    @top-left { content: string(chapter-subtitle) string(chapter-title); }
     @top-right { content: ''; }
     @bottom-left { content: counter(page); }
     @bottom-right { content: "{{ year }} {{ self.organization() }}"; }
@@ -50,7 +50,7 @@
 
   @page :right {
     @top-left { content: ''; }
-    @top-right { content: string(chapter_subtitle) string(chapter_title); }
+    @top-right { content: string(chapter-subtitle) string(chapter-title); }
     @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
     @bottom-right { content: counter(page); }
     margin-left: 4cm;

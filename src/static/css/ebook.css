@@ -318,27 +318,21 @@ section.chapter {prince-pdf-tag-type: Art;}
     page-break-after: always;
   }
   
-  #toc a {
-    display: block;
-    min-width: 100%;
-  }
-  
   #toc a::after {
-    display: inline-block;
-    float: right;
-    content: target-counter(attr(href), page);
+    content: leader('.') target-counter(attr(href), page);
+}
   }
 
   section h1 {
-    string-set: chapter_title content();
+    string-set: chapter-title content();
   }
 
   section div.subtitle {
-    string-set: chapter_subtitle "";
+    string-set: chapter-subtitle "";
   }
 
   section.chapter div.subtitle {
-    string-set: chapter_subtitle content() " : ";
+    string-set: chapter-subtitle content() " : ";
   }
 
   figure,
