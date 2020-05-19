@@ -369,6 +369,17 @@ section.chapter {prince-pdf-tag-type: Art;}
     display: table;
     border-spacing: 2px;
     border-color: grey;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    page-break-after: avoid;
+    page-break-inside:avoid;
+  }
+  
+  h1+p, h2+p, h3+p {
+    page-break-before: avoid;
   }
 
   .authors li {
