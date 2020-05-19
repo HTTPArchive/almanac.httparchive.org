@@ -10,7 +10,7 @@ discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-16T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## 序章
@@ -40,7 +40,7 @@ last_updated: 2020-05-16T00:00:00.000Z
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">モバイル</th>
         <th scope="col">デスクトップ</th>
       </tr>
@@ -460,7 +460,7 @@ WebPをPNGのフォールバックで使用したり、無地の色の背景でW
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2">モバイル</th>
         <th scope="colgroup" colspan="2">デスクトップ</th>
       </tr>

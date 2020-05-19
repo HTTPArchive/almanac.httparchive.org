@@ -10,7 +10,7 @@ discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-16T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## 導入
@@ -95,7 +95,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">HTML CDNの使用率 (%)</th>
       </tr>
     </thead>
@@ -219,7 +219,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">サブドメインのCDN使用率(%)</th>
       </tr>
     </thead>
@@ -343,7 +343,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">サードパーティのCDN使用率(%)</th>
       </tr>
     </thead>
@@ -485,7 +485,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">p10</th>
         <th scope="col">p25</th>
         <th scope="col">p50</th>
@@ -682,7 +682,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">p10</th>
         <th scope="col">p25</th>
         <th scope="col">p50</th>
@@ -852,7 +852,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">p10</th>
         <th scope="col">p25</th>
         <th scope="col">p50</th>
@@ -1092,7 +1092,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">HTTP/0.9</th>
         <th scope="col">HTTP/1.0</th>
         <th scope="col">HTTP/1.1</th>

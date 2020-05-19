@@ -10,7 +10,7 @@ discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
 queries: 15_Compression
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-16T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## 序章
@@ -60,7 +60,7 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2" >リクエストの割合</th>
         <th scope="colgroup" colspan="2" >リクエスト</th>
       </tr>
@@ -236,7 +236,7 @@ HTTP Archiveによって収集された診断から圧縮レベルを判断す�
   <table>
     <thead>
         <tr>
-          <td scope="col"></td>
+          <td></td>
           <th scope="colgroup" colspan="2">デスクトップ</th>
           <th scope="colgroup" colspan="2">モバイル</th>
         </tr>

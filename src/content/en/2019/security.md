@@ -10,7 +10,7 @@ discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-16T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## Introduction
@@ -172,7 +172,7 @@ Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age ` d
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2" >Client</th>
       </tr>
       <tr>
@@ -423,7 +423,7 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2" >No. of Home Pages</th>
         <th scope="colgroup" colspan="2" >% of Home Pages</th>
       </tr>

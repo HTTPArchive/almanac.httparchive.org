@@ -10,7 +10,7 @@ discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-16T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## Introduction
@@ -40,7 +40,7 @@ Page detection is not always reliable, and some sites explicitly block detection
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">Mobile</th>
         <th scope="col">Desktop</th>
       </tr>
@@ -460,7 +460,7 @@ We as a web community can provide better guidance/advocacy for enabling transpar
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2">Mobile</th>
         <th scope="colgroup" colspan="2">Desktop</th>
       </tr>
