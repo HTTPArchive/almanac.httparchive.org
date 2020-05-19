@@ -114,8 +114,8 @@ Each format has its own merits and has ideal uses for the web. A very simplified
 <thead>
 <tr>
 <th>Format</th>
-<th>Highlights</th>
-<th>Drawbacks</th>
+<th style="width: 45%">Highlights</th>
+<th style="width: 45%">Drawbacks</th>
 </tr>
 </thead>
 <tbody>

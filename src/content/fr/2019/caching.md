@@ -124,11 +124,11 @@ Le tableau ci-dessous détaille les TTL du cache pour les requêtes en provenanc
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="5" >Percentiles TTL du cache des ordinateurs de bureau (Heures)</th>
       </tr>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">10</th>
         <th scope="col">25</th>
         <th scope="col">50</th>
@@ -593,7 +593,7 @@ Dans le tableau ci-dessous, vous pouvez voir un résumé de l'utilisation d'AppC
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th>N'utilisent pas de Server Worker</th>
         <th>Utilisent un Service Worker</th>
         <th>Total</th>
@@ -630,7 +630,7 @@ Si on fait une comparaison entre HTTP et HTTPS, cela devient encore plus intére
     <thead>
       <tr>
         <td scoppe="col"></td>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">N'utilise pas Service Worker</th>
         <th scope="col">Utilise Service Worker</th>
       </tr>

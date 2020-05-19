@@ -60,7 +60,7 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2" >Percent of Requests</th>
         <th scope="colgroup" colspan="2" >Requests</th>
       </tr>
@@ -236,7 +236,7 @@ Additionally, the percentage of brotli compression is higher for third-party con
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2">Desktop</th>
         <th scope="colgroup" colspan="2">Mobile</th>
       </tr>
