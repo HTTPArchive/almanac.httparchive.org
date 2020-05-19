@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("accessibility","third-parties","seo","markup","cms", "caching","resource-hints") | random %}
+{%- set featured_chapter = ("accessibility","third-parties","seo","markup","cms","caching","mobile-web","resource-hints") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
@@ -49,9 +49,9 @@
   {%- set featured_chapter_quote = "Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the Service Worker APIs. Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses." %}
   {%- set featured_chapter_stats = {"stat1":"0.44%","label1":"Sites that register a service worker","stat2":"15%","label2":"Pageviews that use a Service Worker","stat3":"57%","label3":"PWAs that use the <code>standalone</code> <code>display</code> property"} %}
 {%- elif featured_chapter == "mobile-web" %}
-  {%- set featured_chapter_name = "Mobile Web" %}
-  {%- set featured_chapter_quote = "Since 2007, the mobile web has grown at an explosive rate. And now, 13 years later, mobile accounts for 59% of all searches and 58.7% of all web traffic, according to Akamai mPulse data in July 2019. It's no longer an afterthought, but the primary way people experience the web. So given how significant mobile is, what kind of experience are we providing our visitors? Where are we falling short? Let's find out." %}
-  {%- set featured_chapter_stats = {"stat1":"65%","label1":"Sites with medium or large content shifts during load","stat2":"32%","label2":"Sites that disable zooming","stat3":"34%","label3":"Sites with sufficiently sized tap targets"} %}
+  {%- set featured_chapter_name = "Web Mobile" %}
+  {%- set featured_chapter_quote = "Depuis 2007, le web mobile s’est développé à un rythme explosif. Aujourd’hui, 13 ans plus tard, le mobile représente 59&nbsp;% de toutes les recherches et 58,7&nbsp;% de tout le trafic web, selon les données de Akamai mPulse en juillet 2019. Ce n’est plus un usage secondaire, mais la principale façon dont les gens vivent le web. Alors, étant donné l’importance du mobile, quel genre d’expérience offrons-nous à nos visiteurs et visiteuses&nbsp;? Quels sont les points faibles&nbsp;? C’est ce que nous allons découvrir." %}
+  {%- set featured_chapter_stats = {"stat1":"65&nbsp;%","label1":"des sites sont victimes de déplacements de contenu moyens ou importants pendant le chargement","stat2":"32&nbsp;%","label2":"des sites désactive le zoom","stat3":"34&nbsp;%","label3":"des sites ont des cibles d'appui de tailles suffisantes"} %}
 {%- elif featured_chapter == "ecommerce" %}
   {%- set featured_chapter_name = "Ecommerce" %}
   {%- set featured_chapter_quote = "Nearly 10% of the home pages in this study were found to be on an ecommerce platform. An <em>ecommerce platform</em> is a set of software or services that enables you to create and operate an online store, including Paid-for services such as Shopify, software platforms such as Magento Open Source, and Hosted platforms such as Magento Commerce." %}
