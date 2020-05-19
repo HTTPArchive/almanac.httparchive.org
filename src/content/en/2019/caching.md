@@ -125,11 +125,11 @@ The table below details the cache TTL values for desktop requests by type. Most 
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="5" >Desktop Cache TTL Percentiles (Hours)</th>
       </tr>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">10</th>
         <th scope="col">25</th>
         <th scope="col">50</th>
@@ -594,7 +594,7 @@ In the table below, you can see a summary of AppCache vs service worker usage. 3
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">Does Not Use Server Worker</th>
         <th scope="col">Uses Service Worker</th>
         <th scope="col">Total</th>
@@ -630,8 +630,8 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. 581
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
-        <td scope="col"></td>
+        <td></td>
+        <td></td>
         <th scope="col">Does Not Use Service Worker</th>
         <th scope="col">Uses Service Worker</th>
       </tr>

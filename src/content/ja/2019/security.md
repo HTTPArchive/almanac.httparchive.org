@@ -172,7 +172,7 @@ TLSでは、さまざまな暗号スイートを使用できます。従来、TL
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2" >クライアント</th>
       </tr>
       <tr>
@@ -278,7 +278,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `strict-origin `                  |     4.35%  |   4.14% |
 | `origin`                          |     3.63%  |   3.23% |
    
-<figcapti on>図11. `Referrer-Policy` 設定オプションの使用法。</figcaption>
+<figcaption>図11. `Referrer-Policy` 設定オプションの使用法。</figcaption>
 </figure>
 
 この表はページによって設定された有効な値を示しており、このヘッダーを使用するページのうち、デスクトップでは99.75％、モバイルでは96.55％のページが有効なポリシーを設定していることがわかる。最も人気のある設定は`no-referrer-when-downgrade`で、これはユーザがHTTPSページからHTTPページに移動する際`Refererer`ヘッダが送信されないようにするものです。2番目に人気のある選択は`strict-origin-when-cross-origin`で、これはスキームのダウングレード(HTTPSからHTTPナビゲーション)時に情報が送信されるのを防ぎ、`Refererer`で情報が送信される際にはソースのオリジンのみを含み、完全なURLは含まれません(例えば、`https://www.example.com/page/`ではなく`https://www.example.com`)。その他の有効な設定の詳細は、[Referrerer Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policies)に記載されています、`unsafe-url`の多用はさらなる調査を必要としますが、アナリティクスや広告ライブラリのような[サードパーティ](./third-parties)コンポーネントである可能性が高いです。

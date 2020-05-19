@@ -125,11 +125,11 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="5" >デスクトップキャッシュTTLパーセンタイル（時間）</th>
       </tr>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">10</th>
         <th scope="col">25</th>
         <th scope="col">50</th>
@@ -594,10 +594,10 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
-        <th>Service Workerを使用しない</th>
-        <th>Service Workerを使用する</th>
-        <th>合計</th>
+        <td></td>
+        <th scope="col">Service Workerを使用しない</th>
+        <th scope="col">Service Workerを使用する</th>
+        <th scope="col">合計</th>
       </tr>
     </thead>
     <tbody>
@@ -630,8 +630,8 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
-        <td scope="col"></td>
+        <td></td>
+        <td></td>
         <th scope="col">Service Workerを使用しない</th>
         <th scope="col">Service Workerを使用する</th>
       </tr>
