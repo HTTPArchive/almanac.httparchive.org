@@ -58,8 +58,12 @@ last_updated: 2020-05-14T00:00:00.000Z
 なぜこれが問題なのでしょうか？　なぜなら、これだけの量のJSをロードしているサイトは、一貫してインタラクティブになるまで[10秒](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci)以上かかるからです。言い換えればページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックするとJavaScriptの実行が終了していないために、ユーザーは多少の速度低下を経験するかもしれません。最悪の場合、ユーザーは10秒以上ボタンをクリックし続けなければならず、何かが実際に起こる魔法のような瞬間を待つことになります。それがどれほど混乱し、イライラさせるかを考えてみてください。
 
 <figure>
-  <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <figcaption>図2. JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
+  <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-labelledby="fig2-caption" aria-describedby="fig2-description"></iframe>
+  <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
+    <img src="/static/images/2019/mobile-web/fig2.png" alt="Figure 2. Example of how painful of an experience waiting for JS to load can be." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="343">
+  </a>
+  <div id="fig2-description" class="visually-hidden">Video showing two web pages loading and each page has a figure tapping repeatedly on a button throughout the video, to no effect. There is a clock ticking up from 0 seconds at the top, and an initial happy emoji face for each website, that starts to turn less happy as clock passes 6 seconds, wide-eyed at 8 seconds, angry at 10 seconds, really angry at 13 seconds and crying at 19 seconds shortly after which the video ends.</div>
+  <figcaption id="fig2-caption">図2. JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
 </figure>
 
 さらに深く掘り下げて、各ページがJavaScriptをどの程度利用しているかに焦点を当てた別の指標を見てみましょう。例えば、読み込み中のページは本当に多くのJavaScriptを必要としているのでしょうか？　私たちはこの指標を[Web bloat score](https://www.webbloatscore.com/)に基づいた*JavaScript Bloat Score*と呼んでいます。その背後にある考え方は次のようなものです。

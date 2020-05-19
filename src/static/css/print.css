@@ -25,3 +25,11 @@ figure .fig-mobile {
     display: block;
     max-width: 100%;
 }
+
+figure iframe.video-embed {
+    display: none;
+}
+
+figure .video-fallback-image {
+    display: block;
+}
