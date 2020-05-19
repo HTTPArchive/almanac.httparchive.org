@@ -60,7 +60,7 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2" >リクエストの割合</th>
         <th scope="colgroup" colspan="2" >リクエスト</th>
       </tr>
@@ -236,7 +236,7 @@ HTTP Archiveによって収集された診断から圧縮レベルを判断す�
   <table>
     <thead>
         <tr>
-          <td scope="col"></td>
+          <td></td>
           <th scope="colgroup" colspan="2">デスクトップ</th>
           <th scope="colgroup" colspan="2">モバイル</th>
         </tr>

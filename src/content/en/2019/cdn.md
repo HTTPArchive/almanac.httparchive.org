@@ -95,7 +95,7 @@ This is clearly represented when looking at the top CDNs found serving the base 
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">HTML CDN Usage (%)</th>
       </tr>
     </thead>
@@ -219,7 +219,7 @@ Sub-domain requests have a very similar composition. Since many websites use sub
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">Sub-Domain CDN Usage (%)</th>
       </tr>
     </thead>
@@ -343,7 +343,7 @@ The composition of top CDN providers dramatically shifts for third-party resourc
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">Third-Party CDN Usage (%)</th>
       </tr>
     </thead>
@@ -485,7 +485,7 @@ In contrast, the median TLS negotiation for the majority of CDN providers is bet
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">p10</th>
         <th scope="col">p25</th>
         <th scope="col">p50</th>
@@ -682,7 +682,7 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">p10</th>
         <th scope="col">p25</th>
         <th scope="col">p50</th>
@@ -852,7 +852,7 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">p10</th>
         <th scope="col">p25</th>
         <th scope="col">p50</th>
@@ -1092,7 +1092,7 @@ CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin page
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">HTTP/0.9</th>
         <th scope="col">HTTP/1.0</th>
         <th scope="col">HTTP/1.1</th>

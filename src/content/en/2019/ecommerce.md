@@ -40,7 +40,7 @@ Page detection is not always reliable, and some sites explicitly block detection
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="col">Mobile</th>
         <th scope="col">Desktop</th>
       </tr>
@@ -460,7 +460,7 @@ We as a web community can provide better guidance/advocacy for enabling transpar
   <table>
     <thead>
       <tr>
-        <td scope="col"></td>
+        <td></td>
         <th scope="colgroup" colspan="2">Mobile</th>
         <th scope="colgroup" colspan="2">Desktop</th>
       </tr>

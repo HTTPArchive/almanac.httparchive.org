@@ -1149,8 +1149,6 @@
       <img src="/static/images/2019/markup/hixie_elements_per_page.png" alt="Hixieによる2005年の要素頻度の分布" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="318" loading="lazy" />
       <div id="markup-fig2-description" class="visually-hidden">要素数が増加するにつれて相対頻度の分布が減少することを示すグラフ</div>
       <figcaption id="markup-fig2-caption"><a href="#markup-fig2" class="anchor-link">図 2.</a> Hixieによる2005年の要素頻度の分布。</figcaption>
-
-      <figcaption></figcaption>
     </figure>
     <figure id="markup-fig3">
       <a href="https://almanac.httparchive.org/static/images/2019/markup/fig3.png">
@@ -1514,8 +1512,8 @@
             <thead>
               <tr>
                 <th>フォーマット</th>
-                <th>ハイライト</th>
-                <th>欠点</th>
+                <th style="width: 45%">ハイライト</th>
+                <th style="width: 45%">欠点</th>
               </tr>
             </thead>
             <tbody>
@@ -3416,7 +3414,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="colgroup" colspan="2">クライアント</th>
               </tr>
               <tr>
@@ -3559,9 +3557,7 @@
           </table>
         </div>
       </div>
-      <p>
-        <figcapti on="">図11. <code>Referrer-Policy</code> 設定オプションの使用法。</figcapti>
-      </p>
+      <figcaption><a href="#security-fig-11" class="anchor-link">図 11.</a> <code>Referrer-Policy</code> 設定オプションの使用法。</figcaption>
     </figure>
     <p>この表はページによって設定された有効な値を示しており、このヘッダーを使用するページのうち、デスクトップでは99.75％、モバイルでは96.55％のページが有効なポリシーを設定していることがわかる。最も人気のある設定は<code>no-referrer-when-downgrade</code>で、これはユーザがHTTPSページからHTTPページに移動する際<code>Refererer</code>ヘッダが送信されないようにするものです。2番目に人気のある選択は<code>strict-origin-when-cross-origin</code>で、これはスキームのダウングレード(HTTPSからHTTPナビゲーション)時に情報が送信されるのを防ぎ、<code>Refererer</code>で情報が送信される際にはソースのオリジンのみを含み、完全なURLは含まれません(例えば、<code>https://www.example.com/page/</code>ではなく<code>https://www.example.com</code>)。その他の有効な設定の詳細は、<a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrerer Policy specification</a>に記載されています、<code>unsafe-url</code>の多用はさらなる調査を必要としますが、アナリティクスや広告ライブラリのような<a href="#third-parties">サードパーティ</a>コンポーネントである可能性が高いです。</p>
     <h3 id="security-機能方針"><a href="#security-機能方針" class="anchor-link">機能方針</a></h3>
@@ -5314,7 +5310,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">モバイル</th>
                 <th scope="col">デスクトップ</th>
               </tr>
@@ -5700,7 +5696,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="colgroup" colspan="2">モバイル</th>
                 <th scope="colgroup" colspan="2">デスクトップ</th>
               </tr>
@@ -6617,7 +6613,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="colgroup" colspan="2">リクエストの割合</th>
                 <th scope="colgroup" colspan="2">リクエスト</th>
               </tr>
@@ -6774,7 +6770,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="colgroup" colspan="2">デスクトップ</th>
                 <th scope="colgroup" colspan="2">モバイル</th>
               </tr>
@@ -7006,11 +7002,11 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="colgroup" colspan="5">デスクトップキャッシュTTLパーセンタイル（時間）</th>
               </tr>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">10</th>
                 <th scope="col">25</th>
                 <th scope="col">50</th>
@@ -7410,10 +7406,10 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
-                <th>Service Workerを使用しない</th>
-                <th>Service Workerを使用する</th>
-                <th>合計</th>
+                <td></td>
+                <th scope="col">Service Workerを使用しない</th>
+                <th scope="col">Service Workerを使用する</th>
+                <th scope="col">合計</th>
               </tr>
             </thead>
             <tbody>
@@ -7448,8 +7444,8 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
-                <td scope="col"></td>
+                <td></td>
+                <td></td>
                 <th scope="col">Service Workerを使用しない</th>
                 <th scope="col">Service Workerを使用する</th>
               </tr>
@@ -7633,7 +7629,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">HTML CDNの使用率 (%)</th>
               </tr>
             </thead>
@@ -7758,7 +7754,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">サブドメインのCDN使用率(%)</th>
               </tr>
             </thead>
@@ -7883,7 +7879,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">サードパーティのCDN使用率(%)</th>
               </tr>
             </thead>
@@ -8021,7 +8017,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">p10</th>
                 <th scope="col">p25</th>
                 <th scope="col">p50</th>
@@ -8212,7 +8208,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">p10</th>
                 <th scope="col">p25</th>
                 <th scope="col">p50</th>
@@ -8384,7 +8380,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">p10</th>
                 <th scope="col">p25</th>
                 <th scope="col">p50</th>
@@ -8610,7 +8606,7 @@
           <table>
             <thead>
               <tr>
-                <td scope="col"></td>
+                <td></td>
                 <th scope="col">HTTP/0.9</th>
                 <th scope="col">HTTP/1.0</th>
                 <th scope="col">HTTP/1.1</th>
@@ -10771,7 +10767,7 @@
     </figure>
     <p>図13は、最も一般的にプッシュされるアセットを示しています。 JavaScriptとCSSは、ボリュームとバイトの両方で、プッシュされるアイテムの圧倒的多数です。この後、画像、フォント、およびデータのラグタグの種類があります。最後にビデオをプッシュしているサイトは約100あることがわかりますが、これは意図的なものであるか、間違ったタイプのアセットを過剰にプッシュしている兆候かもしれません！</p>
     <p>一部の人が提起する懸念の1つは、HTTP/2実装が<code>プリロード</code>HTTP<code>リンク</code>ヘッダーをプッシュする信号として再利用したことです。<code>プリロード</code>の最も一般的な使用法の1つは、CSSが要求、ダウンロード、解析されるまでブラウザに表示されない、フォントや画像などの遅れて発見されたリソースをブラウザに通知することです。これらが現在そのヘッダーに基づいてプッシュされる場合、これを再利用すると多くの意図しないプッシュを発生する可能性があるという懸念はありました。</p>
-    <p>ただし、フォントと画像の使用率が比較的低いことは、恐れられているほどリスクが見られないことを意味する場合があります。 <link rel="preload" …="" />タグは、HTTPリンクヘッダーではなくHTMLでよく使用され、メタタグはプッシュするシグナルではありません。<a href="#resource-hints">リソースヒント</a>の章の統計では、サイトの1％未満がプリロードHTTPリンクヘッダーを使用しており、ほぼ同じ量がHTTP/2で意味のないプリコネクトを使用しているため、これはそれほど問題ではないことが示唆されます。プッシュされているフォントやその他のアセットがいくつかありますが、これはその兆候かもしれません。</p>
+    <p>ただし、フォントと画像の使用率が比較的低いことは、恐れられているほどリスクが見られないことを意味する場合があります。 <code>&lt;link rel="preload" ...&gt;</code>タグは、HTTPリンクヘッダーではなくHTMLでよく使用され、メタタグはプッシュするシグナルではありません。<a href="#resource-hints">リソースヒント</a>の章の統計では、サイトの1％未満がプリロードHTTPリンクヘッダーを使用しており、ほぼ同じ量がHTTP/2で意味のないプリコネクトを使用しているため、これはそれほど問題ではないことが示唆されます。プッシュされているフォントやその他のアセットがいくつかありますが、これはその兆候かもしれません。</p>
     <p>これらの苦情に対する反論として、アセットがプリロードするのに十分に重要である場合、ブラウザはプリロードヒントを非常に高い優先度のリクエストとして処理するため、可能であればこれらのアセットをプッシュする必要があると主張できます。したがって、パフォーマンスの懸念は、（これも間違いなく）このために発生するHTTP/2プッシュではなくプリロードの過剰使用にあります。</p>
     <p>この意図しないプッシュを回避するには、プリロードヘッダーで<code>nopush</code>属性を指定できます。</p>
     <pre><code>link: &lt;/assets/jquery.js&gt;; rel=preload; as=script; nopush</code></pre>
