@@ -58,8 +58,12 @@ La quantité de code JavaScript sur le web mobile est alarmante. Selon le [rappo
 Pourquoi est-ce un problème&nbsp;? Parce que les sites qui chargent autant de JS prennent plus de [10 secondes](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) pour devenir durablement interactifs. En d’autres termes, votre page peut sembler entièrement chargée, mais lorsqu’un utilisateur clique sur l’un de vos boutons ou menus, il peut ne rien se passer parce que le JavaScript n’a pas fini de s’exécuter. Dans le pire des scénarios, les utilisateurs se sentiront obligés de cliquer sur le bouton pendant plus de 10 secondes, en attendant le moment magique où quelque chose se passe enfin. Pensez à combien cela peut être déroutant et frustrant.
 
 <figure>
-  <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <figcaption>Figure 2. Exemple d’une expérience pénible où l’on attend que JS se charge.</figcaption>
+  <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-labelledby="fig2-caption" aria-describedby="fig2-description"></iframe>
+  <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
+    <img src="/static/images/2019/mobile-web/fig2.png" alt="Figure 2. Exemple d’une expérience pénible où l’on attend que JS se charge." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="343">
+  </a>
+  <div id="fig2-description" class="visually-hidden">Vidéo montrant deux pages web en train de se charger. Sur chaque page, un doigt tape à plusieurs reprises sur un bouton tout au long de la vidéo, sans effet. Il y a une horloge qui fait tic-tac à partir de 0 seconde en haut, et un premier visage d'emoji heureux pour chaque site web, qui commence à devenir moins heureux lorsque l'horloge passe 6 secondes, les yeux écarquillés à 8 secondes, en colère à 10 secondes, vraiment en colère à 13 secondes et pleurant à 19 secondes, peu de temps après que la vidéo se soit terminée.</div>
+  <figcaption id="fig2-caption">Figure 2. Exemple d’une expérience pénible où l’on attend que JS se charge.</figcaption>
 </figure>
 
 Allons plus loin et examinons une autre mesure qui se concentre davantage sur _comment_ chaque page utilise JavaScript. Par exemple, a-t-elle vraiment besoin d’autant de JavaScript pendant qu’elle se charge&nbsp;? Nous appelons cette mesure le _JavaScript Bloat Score_ (en français, score de surcharge de JavaScript), basé sur le [web bloat score](https://www.webbloatscore.com/). L’idée derrière tout cela est la suivante&nbsp;:
