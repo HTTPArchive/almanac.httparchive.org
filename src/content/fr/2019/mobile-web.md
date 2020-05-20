@@ -102,7 +102,7 @@ Imaginez que vous êtes en train de lire un article quand, tout à coup, une ima
 
 Alors, comment mesurer à quel point nos sites se transforment&nbsp;? Dans le passé, c’était assez difficile (voire impossible), mais grâce à la nouvelle <a href="https://web.dev/layout-instability-api" lang="en">Layout Instability API</a> (en français, «&nbsp;API relatives à l’instabilité de la mise en page&nbsp;»), nous pouvons le faire en deux étapes&nbsp;:
 
-1. via l’API Layout Instability, vous pouvez mesurer l’impact de chaque mouvement dans la page. Cette mesure vous est communiqué sous la forme d’un pourcentage de la quantité de contenu du viewport (la fenêtre de visualisation) qui a changé.
+1. via l’API <em lang="en">Layout Instability</em>, vous pouvez mesurer l’impact de chaque mouvement dans la page. Cette mesure vous est communiqué sous la forme d’un pourcentage de la quantité de contenu du viewport (la fenêtre de visualisation) qui a changé.
 
 2. additionnez tous les changements que vous avez relevés. Le résultat est ce que nous appelons le score de [Cumulative Layout Shift](https://web.dev/layout-instability-api#a-cumulative-layout-shift-score) (CLS).
 
