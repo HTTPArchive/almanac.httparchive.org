@@ -58,13 +58,7 @@ npm install
 npm run generate
 ```
 
-3. For generating PDFs of the ebook, WeasyPrint will need some additional libraries:
-
-```
-brew install cairo
-brew install pango
-brew install gdk-pixbuf
-```
+3. For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/).
 
 4. To actually generate the ebooks, start your local server, then run the following:
 
@@ -74,6 +68,22 @@ npm run ebook_2019_ja
 ```
 
 (TODO: make this a script to handle all languages and years at some point)
+
+It is also possible to generate the ebook from the website, with some optional params (e.g. to print it!)
+
+```
+prince "https://almanac.httparchive.org/en/2019/ebook?print&inside-margin=4cm" -o web_almanac_2019_en.pdf --pdf-profile='PDF/UA-1'
+```
+
+Note `--pdf-profile='PDF/UA-1'` may not be needed if just intend to print.
+
+Params accepted are:
+
+- print - this ads left, right pages, footnotes, and sets roman numerals for front matter page numbers and adds footnotes. It is used by default when running `npm run ebook_2019_en` but we could change that if prefer a less print-like ebook.
+- page-size - this allows you to override the default page size of A4
+- inside-margin - this allows you to set an inside margin for binding (e.g. on right for left hand pages and vice versa)
+
+You can also download the HTML and override the inline styles there if you want to customise this for something we haven;t exposed as a param.
 
 ## Deploying changes
 
