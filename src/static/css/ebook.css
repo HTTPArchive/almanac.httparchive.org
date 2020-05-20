@@ -42,6 +42,7 @@
   border-radius: 10px;
   display: block;
   margin: 20px 0;
+  padding-left: 10.5%;
   width: 80%;
   height: auto;
 }
@@ -320,8 +321,8 @@ section.chapter {prince-pdf-tag-type: Art;}
   
   #toc a::after {
     content: leader('.') target-counter(attr(href), page);
-}
   }
+}
 
   section h1 {
     string-set: chapter-title content();
@@ -333,6 +334,10 @@ section.chapter {prince-pdf-tag-type: Art;}
 
   section.chapter div.subtitle {
     string-set: chapter-subtitle content() " : ";
+  }
+
+  figure {
+   margin: 0; 
   }
 
   figure,

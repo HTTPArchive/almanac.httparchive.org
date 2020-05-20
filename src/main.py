@@ -151,12 +151,18 @@ def get_ebook_methodology(lang, year):
     return methodology_maincontent
 
 
+# This function takes a string and adds the footnote links for printing
+def add_footnote_links(html):
+    return re.sub('href="http(.*?)"(.*?)>(.*?)<\/a>', 'href="http\\1"\\2>\\3<span class="fn">http\\1</span></a>', html)
+
+
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
 app.jinja_env.globals['ebook_exists'] = ebook_exists
 app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
 app.jinja_env.globals['get_ebook_methodology'] = get_ebook_methodology
+app.jinja_env.globals['add_footnote_links'] = add_footnote_links
 
 
 @app.route('/<lang>/<year>/')
