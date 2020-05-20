@@ -74,7 +74,7 @@ Allons plus loin et examinons une autre mesure qui se concentre davantage sur _c
 
 <p class="note">Le <strong>JavaScript Bloat Score</strong> est défini comme suit&nbsp;: (taille totale du JavaScript) / (taille de la capture d’écran PNG du port d’affichage). Tout nombre supérieur à 1 signifie qu’il est plus rapide d’envoyer une capture d’écran.</p>
 
-Quels en sont les résultats&nbsp;? Sur les plus de 5 millions de sites web analysés, 75,52 % étaient surchargés de JavaScript. Nous avons encore un long chemin à parcourir.
+Quels en sont les résultats&nbsp;? Sur les plus de 5 millions de sites web analysés, 75,52&nbsp;% étaient surchargés de JavaScript. Nous avons encore un long chemin à parcourir.
 
 Notez que nous n’avons pas été en mesure de capturer et de mesurer les captures d’écran de plus de 5 millions de sites que nous avons analysés. Nous avons plutôt pris un échantillon aléatoire de 1000 sites pour trouver la taille médiane des captures d’écran (140&nbsp;Ko), puis nous avons comparé la taille de téléchargement de JavaScript de chaque site à ce nombre.
 
@@ -180,7 +180,7 @@ Cependant, les équipes de développement ont tellement abusé de cette fonction
 
 ### Rotation des pages
 
-Certains appareils mobiles peuvent être tournés afin que votre site web soit affiché au format préféré des utilisateurs et utilisatrices. Cependant, les gens ne gardent pas toujours la même orientation tout au long d’une session. Lorsqu’ils remplissent des formulaires, ils peuvent passer en mode paysage pour utiliser le clavier plus grand. Ou bien, lorsqu’ils naviguent sur les produits, certains peuvent préférer les images de produits plus grandes que leur propose le mode paysage. En raison de ces types de cas d’utilisation, il est très important de ne pas les priver de cette capacité intégrée des appareils mobiles. Et la bonne nouvelle, c’est que nous n’avons trouvé pratiquement aucun site qui désactive cette fonction. Seuls 87 sites au total (soit 0,0016 %) désactivent cette fonction. C’est fantastique.
+Certains appareils mobiles peuvent être tournés afin que votre site web soit affiché au format préféré des utilisateurs et utilisatrices. Cependant, les gens ne gardent pas toujours la même orientation tout au long d’une session. Lorsqu’ils remplissent des formulaires, ils peuvent passer en mode paysage pour utiliser le clavier plus grand. Ou bien, lorsqu’ils naviguent sur les produits, certains peuvent préférer les images de produits plus grandes que leur propose le mode paysage. En raison de ces types de cas d’utilisation, il est très important de ne pas les priver de cette capacité intégrée des appareils mobiles. Et la bonne nouvelle, c’est que nous n’avons trouvé pratiquement aucun site qui désactive cette fonction. Seuls 87 sites au total (soit 0,0016&nbsp;%) désactivent cette fonction. C’est fantastique.
 
 ## Boutons et liens
 
@@ -253,7 +253,7 @@ L’attribut [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/
   <figcaption>Figure 8. Pourcentage des pages utilisant <code>autocomplete</code>.</figcaption>
 </figure>
 
-Actuellement, seules 29,62 % des pages comportant des champs de saisie utilisent cette fonction.
+Actuellement, seules 29,62&nbsp;% des pages comportant des champs de saisie utilisent cette fonction.
 
 ### Saisie des champs de mot de passe
 
