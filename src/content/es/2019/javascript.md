@@ -10,7 +10,7 @@ discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-01T00:00:00.000Z
+last_updated: 2020-05-20T00:00:00.000Z
 ---
 
 ## Introducción
@@ -56,14 +56,14 @@ Después de ser analizado y compilado, el JavaScript cargado por el navegador de
 Podemos tener una idea analizando los tiempos de procesamiento de subprocesos principales para V8 en diferentes percentiles:
 
 <figure>
-   <a href="/static/images/2019/javascript/fig2.png">
+   <a href="/static/images/2019/javascript/fig3.png">
       <img src="/static/images/2019/javascript/fig3.png" alt="Figura 3. Tiempos de procesamiento de subprocesos principales según V8 por dispositivo." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive">
    </a>
 	<div id="fig3-description" class="visually-hidden">Gráfico de barras que muestra 141 ms / 377 ms de tiempo de procesamiento se utiliza en el percentil p10 en computadoras de escritorio y dispositivos móviles respectivamente, 352/988 ms para p25, 849 / 2.437 ms para p50, 1.850 / 5.518 ms para p75 y 3.543 / 10.735 ms para p90.</div>
 	<figcaption id="fig3-caption">Figura 3. Tiempos de procesamiento de subprocesos principales según V8 por dispositivo.</figcaption>
 </figure>
 
-En cada percentil, los tiempos de procesamiento son más largos para las páginas web móviles que para las computadoras de escritorio. La mediana del tiempo total de subprocesos principales en el escritorio es de 849 ms, mientras que el móvil está en un número mayor: 2.436 ms.
+En cada percentil, los tiempos de procesamiento son más largos para las páginas web móviles que para las computadoras de escritorio. La mediana del tiempo total de subprocesos principales en el escritorio es de 849 ms, mientras que el móvil está en un número mayor: 2.437 ms.
 
 Aunque estos datos muestran cuánto tiempo puede llevar un dispositivo móvil procesar JavaScript en comparación con una máquina de escritorio más potente, los dispositivos móviles también varían en términos de potencia informática. El siguiente cuadro muestra cómo los tiempos de procesamiento en una sola página web pueden variar significativamente según la clase de dispositivo móvil.
 
@@ -437,5 +437,3 @@ Para las páginas de escritorio y móviles, los resultados son casi los mismos. 
 El ecosistema de JavaScript continúa cambiando y evolucionando cada año. Las API más nuevas, los motores de navegador mejorados y las bibliotecas y frameworks nuevos son cosas que podemos esperar que sucedan indefinidamente. HTTP Archive nos proporciona información valiosa sobre cómo los sitios en la naturaleza usan el lenguaje.
 
 Sin JavaScript, la web no estaría donde está hoy, y todos los datos recopilados para este artículo solo lo demuestran.
-
-<script src='/static/js/chapter.js' defer></script>
