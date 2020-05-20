@@ -58,8 +58,12 @@ The state of JavaScript on the mobile web is terrifying. According to HTTP Archi
 Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) to become consistently interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, the user may experience some slowdown because the JavaScript hasn't finished executing. In the worst case scenario, users may be forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.
 
 <figure>
-  <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
+  <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-labelledby="fig2-caption" aria-describedby="fig2-description"></iframe>
+  <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
+    <img src="/static/images/2019/mobile-web/fig2.png" alt="Figure 2. Example of how painful of an experience waiting for JS to load can be." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="343">
+  </a>
+  <div id="fig2-description" class="visually-hidden">Video showing two web pages loading and each page has a figure tapping repeatedly on a button throughout the video, to no effect. There is a clock ticking up from 0 seconds at the top, and an initial happy emoji face for each website, that starts to turn less happy as clock passes 6 seconds, wide-eyed at 8 seconds, angry at 10 seconds, really angry at 13 seconds and crying at 19 seconds shortly after which the video ends.</div>
+  <figcaption id="fig2-caption">Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
 </figure>
 
 Let's delve deeper and look at another metric that focuses more on *how well* each page utilizes JavaScript. For example, does it really need as much JavaScript as it's loading? We call this metric the *JavaScript Bloat Score*, based on the [web bloat score](https://www.webbloatscore.com/). The idea behind it is this:
@@ -138,7 +142,7 @@ To help us mitigate this problem, there are [accessibility guidelines](https://d
   <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
     <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="650" height="300">
   </a>
-  <div id="fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook</div>
+  <div id="fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is <code>#FFFFFF</code>, the light shade of orange background is <code>#FCA469</code>, and the recommended shade of orange background is <code>#F56905</code>. Image courtesy of LookZook</div>
   <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
@@ -259,7 +263,7 @@ Enabling users to copy and paste their passwords into your page is one way that 
 
 ## Conclusion
 
-For over 13 years we've been treating the *mobile* web as an afterthought, like a mere exception to desktop. But it's time for this to change. The mobile web is now _*the*_ web, and desktop is becoming the legacy one. There are now 4 billion active smartphones in the world, covering 70% of all potential users. What about desktops? They currently sit at 1.6 billion, and account for less and less of web usage every month.
+For over 13 years we've been treating the *mobile* web as an afterthought, like a mere exception to desktop. But it's time for this to change. The mobile web is now *the* web, and desktop is becoming the legacy one. There are now 4 billion active smartphones in the world, covering 70% of all potential users. What about desktops? They currently sit at 1.6 billion, and account for less and less of web usage every month.
 
 How well are we doing catering to mobile users? According to our research, even though 71% of sites make some kind of effort to adjust their site for mobile, they're falling well below the mark. Pages take forever to load and become unusable thanks to an abuse of JavaScript, text is often impossible to read, engaging with sites via clicking links or buttons is error-prone and infuriating, and tons of great technologies invented to mitigate these problems (Service Workers, autocomplete, zooming, new image formats, etc) are barely being used at all.
 
