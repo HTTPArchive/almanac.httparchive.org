@@ -106,7 +106,7 @@ Alors, comment mesurer à quel point nos sites se transforment&nbsp;? Dans le pa
 
 2. additionnez tous les changements que vous avez relevés. Le résultat est ce que nous appelons le score de [Cumulative Layout Shift](https://web.dev/layout-instability-api#a-cumulative-layout-shift-score) (CLS).
 
-Comme chaque visiteur peut avoir un CLS différent, afin d’analyser cette mesure sur le web avec le [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), nous rangeons chaque expérience dans l'un de ces trois ensembles distincts&nbsp;:
+Comme chaque visiteur peut avoir un CLS différent, afin d’analyser cette mesure sur le web avec le [Chrome UX Report](./methodology#chrome-ux-report) (CrUX), nous rangeons chaque expérience dans l’un de ces trois ensembles distincts&nbsp;:
 
 - **Petit** CLS&nbsp;: regroupe les expériences ayant des CLS _en dessous de 5&nbsp;%_. C’est-à-dire que la page est globalement stable&nbsp;; ne varie pas beaucoup voire pas du tout. Pour mettre les choses en perspective, la page de la vidéo ci-dessus a un CLS de 42,59&nbsp;%.
 - **Grand** CLS&nbsp;: regroupe les expériences ayant un CLS de _100&nbsp;% ou plus_. Il peut s’agir de nombreuses petites variations individuelles ou d’un nombre plus réduit de changements importants et significatifs.
