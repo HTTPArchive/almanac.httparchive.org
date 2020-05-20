@@ -202,6 +202,11 @@
     </url>
 
     <url>
+        <loc>https://almanac.httparchive.org/fr/2019/mobile-web</loc>
+        <lastmod>2020-05-20</lastmod>
+    </url>
+
+    <url>
         <loc>https://almanac.httparchive.org/fr/2019/resource-hints</loc>
         <lastmod>2020-03-02</lastmod>
     </url>
