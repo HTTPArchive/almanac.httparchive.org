@@ -242,7 +242,7 @@ Lors de l’analyse des sites contenant une saisie d’email, 56,42&nbsp;% utili
   <figcaption>Figure 7. Types de saisie invalides les plus couramment utilisés</figcaption>
 </figure>
 
-Assurez-vous de bien vous informer et de renseigner les autres sur la grande quantité de types de saisie disponibles et vérifiez que vous n’avez pas de fautes de frappe, à l’image de des plus courantes, reprises dans la figure 7 ci-dessus.
+Assurez-vous de bien vous informer et de renseigner les autres sur la grande quantité de types de saisie disponibles et vérifiez que vous n’avez pas de fautes de frappe, à l’image des plus courantes, reprises dans la figure 7 ci-dessus.
 
 ### Activation de l’autocomplétion pour les saisies
 
