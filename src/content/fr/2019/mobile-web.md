@@ -100,7 +100,7 @@ L’une des plus belles réussites du web est la façon dont les pages web se ch
 
 Imaginez que vous êtes en train de lire un article quand, tout à coup, une image se charge et repousse le texte que vous lisez tout en bas de l’écran. Vous devez maintenant chercher où vous étiez ou simplement abandonner la lecture de l’article. Ou, pire encore, vous commencez à cliquer sur un lien juste avant qu’une annonce se charge au même endroit, ce qui se traduit par un clic accidentel sur l’annonce au lieu du lien.
 
-Alors, comment mesurer à quel point nos sites se transforment&nbsp;? Dans le passé, c’était assez difficile (voire impossible), mais grâce à la nouvelle [API Layout Instability](https://web.dev/layout-instability-api) (en français, «&nbsp;instabilité de la mise en page&nbsp;»), nous pouvons le faire en deux étapes&nbsp;:
+Alors, comment mesurer à quel point nos sites se transforment&nbsp;? Dans le passé, c’était assez difficile (voire impossible), mais grâce à la nouvelle <a href="https://web.dev/layout-instability-api" lang="en">Layout Instability API</a> (en français, «&nbsp;API relatives à l’instabilité de la mise en page&nbsp;»), nous pouvons le faire en deux étapes&nbsp;:
 
 1. via l’API Layout Instability, vous pouvez mesurer l’impact de chaque mouvement dans la page. Cette mesure vous est communiqué sous la forme d’un pourcentage de la quantité de contenu du viewport (la fenêtre de visualisation) qui a changé.
 
