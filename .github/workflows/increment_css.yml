@@ -31,8 +31,8 @@ jobs:
         echo "files changed in commit $COMMIT_SHA:"
         git diff-tree --no-commit-id --name-only -r $COMMIT_SHA
         echo "Incrementing any references to changed CSS files"
-        git diff-tree --no-commit-id --name-only -r $COMMIT_SHA src/static/css | grep "\.css" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base/*/*.html"
-        git diff-tree --no-commit-id --name-only -r $COMMIT_SHA src/static/css | grep "\.css" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base/*.html"
+        git diff-tree --no-commit-id --name-only -r $COMMIT_SHA src/static/css | grep "\.css" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base/*/*.html
+        git diff-tree --no-commit-id --name-only -r $COMMIT_SHA src/static/css | grep "\.css" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base.html
         git diff
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v2

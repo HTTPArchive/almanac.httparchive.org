@@ -21,7 +21,6 @@
 }
 {% endblock %}
 
-
 {% block meta %}
 <meta name="description" content="{{ self.description() }}">
 
@@ -93,9 +92,11 @@
       }]
     }
   </script>
-{% endblock %}
+  {% endblock %}
 
 {% endblock %}
+
+{% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>

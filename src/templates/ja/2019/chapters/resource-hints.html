@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":19,"title":"リソースヒント","description":"2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":["ksakae"],"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-05T00:00:00.000Z","chapter":"resource-hints"} %} {% block index %}
+{% set metadata = {"part_number":"IV","chapter_number":19,"title":"リソースヒント","description":"2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":["ksakae"],"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-14T00:00:00.000Z","chapter":"resource-hints"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -115,7 +115,7 @@
 <pre><code>&lt;link rel="prefetch" href="shopping-cart.js"&gt;</code></pre>
 <p>リソースヒント使用率のわずか3%は、リソースヒントの指定に<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">HTTPヘッダ</a>を使用しました。たとえば、以下のようになります。</p>
 <pre><code>Link: &lt;https://example.com/shopping-cart.js&gt;; rel=prefetch</code></pre>
-<p>HTTPヘッダー内のリソースヒントの使用量が非常に少ないため、本章の残りの部分では、<code>&lt;link&gt;</code>タグと組み合わせたリソースヒントの使用量の分析のみに焦点を当てています。しかし、今後、<a href="./http2#http2-push">HTTP/2 Push</a>が採用されるようになると、HTTPヘッダーでのリソースヒントの使用量が増える可能性のあることは注目に値します。これは、HTTP/2 Pushがリソースをプッシュするためのシグナルとして、HTTPのプリロード <code>Link</code> ヘッダーを再利用していることに起因しています。</p>
+<p>HTTPヘッダー内のリソースヒントの使用量が非常に少ないため、本章の残りの部分では、<code>&lt;link&gt;</code>タグと組み合わせたリソースヒントの使用量の分析のみに焦点を当てています。しかし、今後、<a href="./http2#http2プッシュ">HTTP/2 Push</a>が採用されるようになると、HTTPヘッダーでのリソースヒントの使用量が増える可能性のあることは注目に値します。これは、HTTP/2 Pushがリソースをプッシュするためのシグナルとして、HTTPのプリロード <code>Link</code> ヘッダーを再利用していることに起因しています。</p>
 <h2 id="リソースヒント"><a href="#リソースヒント" class="anchor-link">リソースヒント</a></h2>
 <p class="note">注: モバイルとデスクトップでは、リソースヒントの利用パターンに目立った違いはありませんでした。そのため、簡潔にするために、本章ではモバイルの統計のみを掲載しています。</p>
 <figure id="fig-1">

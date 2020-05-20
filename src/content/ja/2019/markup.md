@@ -10,7 +10,7 @@ discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-01T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## 導入
@@ -74,8 +74,6 @@ tr | span | option
   <img src="/static/images/2019/markup/hixie_elements_per_page.png" alt="Hixieによる2005年の要素頻度の分布" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="318">
     <div id="fig2-description" class="visually-hidden">要素数が増加するにつれて相対頻度の分布が減少することを示すグラフ</div>
   <figcaption id="fig2-caption">図2. Hixieによる2005年の要素頻度の分布。</figcaption>
-
-  <figcaption></figcaption>
 </figure>
 
 <figure id="fig3">

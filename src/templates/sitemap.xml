@@ -3,7 +3,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/</loc>
-        <lastmod>2020-03-07</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
@@ -13,12 +13,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/caching</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/cdn</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
@@ -28,7 +28,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/compression</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
@@ -38,12 +38,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/css</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/ecommerce</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
@@ -58,7 +58,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/javascript</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -68,17 +68,17 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/media</loc>
-        <lastmod>2020-04-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/methodology</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/mobile-web</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -103,7 +103,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/security</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
@@ -113,7 +113,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/table-of-contents</loc>
-        <lastmod>2020-02-01</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
@@ -123,12 +123,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/accessibility-statement</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/es/2019/</loc>
-        <lastmod>2020-02-01</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
@@ -143,12 +143,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/es/2019/ecommerce</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/es/2019/javascript</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -163,12 +163,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/es/2019/table-of-contents</loc>
-        <lastmod>2020-02-01</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/fr/2019/</loc>
-        <lastmod>2020-02-01</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
@@ -178,7 +178,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/fr/2019/caching</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
@@ -198,7 +198,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/fr/2019/methodology</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-14</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/mobile-web</loc>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -213,7 +218,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/fr/2019/table-of-contents</loc>
-        <lastmod>2020-02-01</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
@@ -223,7 +228,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/</loc>
-        <lastmod>2020-04-03</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
@@ -233,12 +238,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/caching</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/cdn</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
@@ -248,7 +253,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/compression</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
@@ -263,42 +268,42 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/ecommerce</loc>
-        <lastmod>2020-05-05</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/fonts</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-16</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/http2</loc>
-        <lastmod>2020-05-05</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/javascript</loc>
-        <lastmod>2020-05-04</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/markup</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/media</loc>
-        <lastmod>2020-04-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/methodology</loc>
-        <lastmod>2020-04-03</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/mobile-web</loc>
-        <lastmod>2020-05-05</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -318,12 +323,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/resource-hints</loc>
-        <lastmod>2020-05-05</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/security</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-19</lastmod>
     </url>
 
     <url>
@@ -333,12 +338,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/table-of-contents</loc>
-        <lastmod>2020-04-03</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/third-parties</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-05-14</lastmod>
     </url>
 
     <url>

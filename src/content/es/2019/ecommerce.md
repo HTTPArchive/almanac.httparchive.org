@@ -10,7 +10,7 @@ discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## Introducción
@@ -41,8 +41,8 @@ La detección de páginas no siempre es confiable, y algunos sitios bloquean exp
     <thead>
       <tr>
         <td></td>
-        <th>Móvil</th>
-        <th>Escritorio</th>
+        <th scope="col">Móvil</th>
+        <th scope="col">Escritorio</th>
       </tr>
     </thead>
     <tbody>

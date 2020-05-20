@@ -10,7 +10,7 @@ discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## 導入
@@ -49,7 +49,7 @@ Web Almanacに使用されるテスト[方法](./methodology)には多くの制�
 最も重要なことは、これらの結果は潜在的な使用率を反映しているが、実際の影響を反映していないことです。 YouTubeは「ShoesByColin」よりも人気がありますが、使用率を比較するとどちらも同じ値として表示されます。
 
 これを念頭に置いて、CDNのコンテキストで測定されなかったいくつかの意図的な統計があります。
-* **TTFB**：CDNによる最初のバイトまでの時間について、キャッシュ可能とキャッシュの有効性についての正しい知識がなければ正しく測定できません。1つのサイトには、**ラウンドトリップタイム**（RTT）の管理にCDNを使用してるがキャッシュには使用してない場合、別のCDNベンダーを使用してコンテンツをキャッシュしてる別サイトと比較する時不利になります（注：これは、個々のCDNの[パフォーマンス](./performance#time-to-first-byte-ttfb)についての結論を出していないので、パフォーマンスの章でTTFB分析には適用されません）。
+* **TTFB**：CDNによる最初のバイトまでの時間について、キャッシュ可能とキャッシュの有効性についての正しい知識がなければ正しく測定できません。1つのサイトには、**ラウンドトリップタイム**（RTT）の管理にCDNを使用してるがキャッシュには使用してない場合、別のCDNベンダーを使用してコンテンツをキャッシュしてる別サイトと比較する時不利になります（注：これは、個々のCDNの[パフォーマンス](./performance#最初のバイトまでの時間time-to-first-byte-ttfb)についての結論を出していないので、パフォーマンスの章でTTFB分析には適用されません）。
 * **キャッシュヒットとキャッシュミスのパフォーマンス**：前述のようにこれは正確にテストできません、なのでコールドキャッシュとホットキャッシュでページのパフォーマンステストを繰り返すことは信頼できません。
 
 ### さらなる統計
@@ -96,7 +96,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
     <thead>
       <tr>
         <td></td>
-        <th>HTML CDNの使用率 (%)</th>
+        <th scope="col">HTML CDNの使用率 (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -220,7 +220,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
     <thead>
       <tr>
         <td></td>
-        <th>サブドメインのCDN使用率(%)</th>
+        <th scope="col">サブドメインのCDN使用率(%)</th>
       </tr>
     </thead>
     <tbody>
@@ -344,7 +344,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
     <thead>
       <tr>
         <td></td>
-        <th>サードパーティのCDN使用率(%)</th>
+        <th scope="col">サードパーティのCDN使用率(%)</th>
       </tr>
     </thead>
     <tbody>
@@ -486,11 +486,11 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
     <thead>
       <tr>
         <td></td>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -683,11 +683,11 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
     <thead>
       <tr>
         <td></td>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -853,11 +853,11 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
     <thead>
       <tr>
         <td></td>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -1093,10 +1093,10 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
     <thead>
       <tr>
         <td></td>
-        <th>HTTP/0.9</th>
-        <th>HTTP/1.0</th>
-        <th>HTTP/1.1</th>
-        <th>HTTP/2</th>
+        <th scope="col">HTTP/0.9</th>
+        <th scope="col">HTTP/1.0</th>
+        <th scope="col">HTTP/1.1</th>
+        <th scope="col">HTTP/2</th>
       </tr>
     </thead>
     <tbody>
