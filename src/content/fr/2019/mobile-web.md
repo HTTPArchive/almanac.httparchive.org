@@ -15,7 +15,7 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 ## Introduction
 
-Remontons un instant dans le temps, jusqu’à l’année 2007. Le "web mobile" n’est pour l’instant que balbutiant, et pour de bonnes raisons. Pourquoi&nbsp;? Les navigateurs mobiles ne prennent pas ou peu en charge le CSS, ce qui signifie que les sites ne ressemblent pas du tout à leur version sur ordinateur de bureau –&nbsp;certains navigateurs ne peuvent afficher que du texte. Les écrans sont incroyablement petits et ne peuvent afficher que quelques lignes de texte à la fois. Et en guise de souris, de minuscules touches fléchées utilisées pour "tabuler". Il va sans dire que naviguer sur le web avec un téléphone est un véritable sacerdoce. Mais tout est sur le point de changer.
+Remontons un instant dans le temps, jusqu’à l’année 2007. Le «&nbsp;web mobile&nbsp;» n’est pour l’instant que balbutiant, et pour de bonnes raisons. Pourquoi&nbsp;? Les navigateurs mobiles ne prennent pas ou peu en charge le CSS, ce qui signifie que les sites ne ressemblent pas du tout à leur version sur ordinateur de bureau –&nbsp;certains navigateurs ne peuvent afficher que du texte. Les écrans sont incroyablement petits et ne peuvent afficher que quelques lignes de texte à la fois. Et en guise de souris, de minuscules touches fléchées utilisées pour «&nbsp;tabuler&nbsp;». Il va sans dire que naviguer sur le web avec un téléphone est un véritable sacerdoce. Mais tout est sur le point de changer.
 
 Au milieu de sa présentation, Steve Jobs prend l’iPhone qu’il vient juste de dévoiler, s’assoit et commence à surfer sur le web d’une manière dont nous n’avions jamais rêvé auparavant. Un grand écran et un navigateur complet affichant les sites web dans toute leur splendeur. Et surtout, en surfant sur le web à l’aide du dispositif de pointage le plus intuitif connu de l’Homme&nbsp;: ses doigts. Plus besoin de tabulations avec de minuscules touches fléchées.
 
@@ -122,9 +122,9 @@ Nous pensons que cette situation est due en grande partie au fait que les sites 
 
 ### Demandes d’autorisation
 
-Ces dernières années, la démarcation entre les sites web et les applications "app store" n’a cessé de s’estomper. Au point qu'aujourd’hui, vous avez la possibilité de demander l’accès au microphone, à la caméra vidéo, à la géolocalisation, à la possibilité d’afficher des notifications, etc.
+Ces dernières années, la démarcation entre les sites web et les applications «&nbsp;App Store&nbsp;» n’a cessé de s’estomper. Au point qu'aujourd’hui, vous avez la possibilité de demander l’accès au microphone, à la caméra vidéo, à la géolocalisation, à la possibilité d’afficher des notifications, etc.
 
-Bien que cela ait ouvert encore plus de possibilités aux équipes de développement, le fait de demander inutilement ces autorisations peut inciter les utilisateurs et utilisatrices à se méfier de votre page web. C’est pourquoi nous recommandons de toujours lier une demande de permission à une action de la personne utilisant le site, par exemple en appuyant sur le bouton "Trouver des cinémas près de chez moi".
+Bien que cela ait ouvert encore plus de possibilités aux équipes de développement, le fait de demander inutilement ces autorisations peut inciter les utilisateurs et utilisatrices à se méfier de votre page web. C’est pourquoi nous recommandons de toujours lier une demande de permission à une action de la personne utilisant le site, par exemple en appuyant sur le bouton «&nbsp;Trouver des cinémas près de chez moi&nbsp;».
 
 Actuellement, 1,52&nbsp;% des sites demandent des autorisations sans aucune intervention. Il est encourageant de voir un nombre aussi faible. Cependant, il est important de noter que nous n’avons pu analyser que les pages d’accueil. Ainsi, par exemple, les sites ne demandant des autorisations que sur leurs pages de contenu (par exemple, leurs articles de blog) n’ont pas été pris en compte. Voir notre page [Méthodologie](./methodology) pour plus d’informations.
 
@@ -172,7 +172,7 @@ Pour cette raison, les équipes de développement ont la possibilité de désact
   <a href="/static/images/2019/mobile-web/fig5.png">
     <img src="/static/images/2019/mobile-web/fig5.png" alt="Figure 5. Pourcentage de sites web de bureau et mobiles qui activent ou désactivent la possibilité de zoomer&nbsp;/&nbsp;la mise à l’échelle." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">Diagramme à barres verticales groupées intitulé "Le zoom et la mise à l’échelle sont-ils activés&nbsp;?" mesurant les données en pourcentage, allant de 0 à 80 par incréments de 20, par rapport au type d’appareil, regroupées en bureau et mobile. Activé sur le bureau&nbsp;: 75,46&nbsp;%&nbsp;; bureau désactivé 24,54&nbsp;%&nbsp;; mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.</div>
+  <div id="fig5-description" class="visually-hidden">Diagramme à barres verticales groupées intitulé «&nbsp;Le zoom et la mise à l’échelle sont-ils activés&nbsp;?&nbsp;» mesurant les données en pourcentage, allant de 0 à 80 par incréments de 20, par rapport au type d’appareil, regroupées en bureau et mobile. Activé sur le bureau&nbsp;: 75,46&nbsp;%&nbsp;; bureau désactivé 24,54&nbsp;%&nbsp;; mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.</div>
   <figcaption id="fig5-caption">Figure 5. Pourcentage de sites web de bureau et mobiles qui activent ou désactivent la possibilité de zoomer&nbsp;/&nbsp;la mise à l’échelle.</figcaption>
 </figure>
 
@@ -198,7 +198,7 @@ Il peut être difficile de concevoir des cibles d’appui appropriées pour att�
   <figcaption id="fig6-caption">Figure 6. Normes de dimensionnement et d’espacement des cibles d’appui. Image reproduite avec l’aimable autorisation de LookZook.</figcaption>
 </figure>
 
-À l’heure actuelle, 34,43&nbsp;% des sites ont des cibles d’appui suffisamment grandes. Nous avons donc encore beaucoup de chemin à parcourir avant que les erreurs liées aux "gros doigts" soient derrière nous.
+À l’heure actuelle, 34,43&nbsp;% des sites ont des cibles d’appui suffisamment grandes. Nous avons donc encore beaucoup de chemin à parcourir avant que les erreurs liées aux «&nbsp;gros doigts&nbsp;» soient derrière nous.
 
 ### Libellés des boutons
 
@@ -216,7 +216,7 @@ Qu’il s’agisse de s’inscrire à un nouveau service, d’acheter quelque ch
 
 Dans le passé, `text` et `password` étaient parmi les seuls types de saisie (`<input>`) disponibles pour les équipes de développement, car ils répondaient à presque tous nos besoins sur ordinateurs de bureau. Ce n’est pas le cas pour les appareils mobiles. Les claviers mobiles sont incroyablement petits, et une tâche simple, comme la saisie d’une adresse électronique, peut obliger les utilisateurs à passer d’un clavier à l’autre&nbsp;: le clavier standard et le clavier à caractères spéciaux pour le symbole "@". La simple saisie d’un numéro de téléphone peut être difficile en utilisant les minuscules chiffres du clavier par défaut.
 
-De nombreux [nouveaux types de saisies](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) ont été introduits depuis, permettant aux équipes de développement d’informer les navigateurs du type de données attendu et permettant aux navigateurs de fournir des claviers personnalisés spécifiquement pour ces types de saisie. Par exemple, le type `email` permet au navigateur de fournir un clavier alphanumérique comprenant le symbole "@", et le type `tel`, un clavier numérique.
+De nombreux [nouveaux types de saisies](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) ont été introduits depuis, permettant aux équipes de développement d’informer les navigateurs du type de données attendu et permettant aux navigateurs de fournir des claviers personnalisés spécifiquement pour ces types de saisie. Par exemple, le type `email` permet au navigateur de fournir un clavier alphanumérique comprenant le symbole `@`, et le type `tel`, un clavier numérique.
 
 Lors de l’analyse des sites contenant une saisie d’email, 56,42&nbsp;% utilisent `type="email"`. De même, pour les saisies de numéros de téléphone, `type="tel"` est utilisé 36,7&nbsp;% du temps. Les autres nouveaux types de saisie ont un taux d’adoption encore plus faible.
 
