@@ -2,7 +2,7 @@
 part_number: II
 chapter_number: 12
 title: Web Mobile
-description: Chapitre sur les web mobile du Web Almanac 2019, couvrant le chargement des pages, du contenu textuel, du zoom et de la mise à l’échelle, des boutons et des liens, et de la facilité à remplir les formulaires.
+description: Chapitre sur les web mobile du Web Almanac 2019, couvrant le chargement des pages, du contenu textuel, du zoom et de la mise à l’échelle, des boutons et des liens, ainsi que de la facilité à remplir les formulaires.
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
 translators: [borisschapira]
