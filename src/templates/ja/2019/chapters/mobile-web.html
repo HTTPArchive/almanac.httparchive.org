@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":12,"title":"モバイルウェブ","description":"2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":["ksakae"],"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-14T00:00:00.000Z","chapter":"mobile-web"} %} {% block index %}
+{% set metadata = {"part_number":"II","chapter_number":12,"title":"モバイルウェブ","description":"2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":["ksakae"],"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-20T00:00:00.000Z","chapter":"mobile-web"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章introduction">序章Introduction</a>
@@ -143,8 +143,12 @@
 <p>モバイルウェブのJavaScriptの状態が恐ろしい。HTTP Archiveの <a href="https://httparchive.org/reports/state-of-javascript?start=2016_05_15&amp;end=2019_07_01&amp;view=list#bytesJs">JavaScript レポート</a>によると、モバイルサイトの中央値では、携帯電話が375KBのJavaScriptをダウンロードする必要があります。圧縮率を70％と仮定すると、携帯電話は中央値で1.25MBのJavaScriptを解析、コンパイル、実行しなければならないことになります。</p>
 <p>なぜこれが問題なのでしょうか？　なぜなら、これだけの量のJSをロードしているサイトは、一貫してインタラクティブになるまで<a href="https://httparchive.org/reports/loading-speed?start=earliest&amp;end=2019_07_01&amp;view=list#ttci">10秒</a>以上かかるからです。言い換えればページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックするとJavaScriptの実行が終了していないために、ユーザーは多少の速度低下を経験するかもしれません。最悪の場合、ユーザーは10秒以上ボタンをクリックし続けなければならず、何かが実際に起こる魔法のような瞬間を待つことになります。それがどれほど混乱し、イライラさせるかを考えてみてください。</p>
 <figure id="fig-2">
-  <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy"></iframe>
-  <figcaption><a href="#fig-2" class="anchor-link">図 2.</a> JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
+  <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" aria-labelledby="fig2-caption" aria-describedby="fig2-description" loading="lazy"></iframe>
+  <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
+    <img src="/static/images/2019/mobile-web/fig2.png" alt="図2. JS がロードされるのを待つのがいかに苦痛であるかの例。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="343" loading="lazy" />
+  </a>
+  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページには、ビデオ全体でボタンを繰り返したたく図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎるにつれて幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了</div>
+  <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">図 2.</a> JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
 </figure>
 <p>さらに深く掘り下げて、各ページがJavaScriptをどの程度利用しているかに焦点を当てた別の指標を見てみましょう。例えば、読み込み中のページは本当に多くのJavaScriptを必要としているのでしょうか？　私たちはこの指標を<a href="https://www.webbloatscore.com/">Web bloat score</a>に基づいた<em>JavaScript Bloat Score</em>と呼んでいます。その背後にある考え方は次のようなものです。</p>
 <ul>
@@ -201,7 +205,7 @@
   <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
     <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="650" height="300" loading="lazy" />
   </a>
-  <div id="fig4-description" class="visually-hidden">オレンジとグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は#FFFFFF、オレンジ色の背景の薄い色合いは#FCA469、オレンジ色の背景の推奨色合いは#F56905となっています。画像提供：LookZook</div>
+  <div id="fig4-description" class="visually-hidden">オレンジとグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、オレンジ色の背景の薄い色合いは<code>#FCA469</code>、オレンジ色の背景の推奨色合いは<code>#F56905</code>となっています。画像提供：LookZook</div>
   <figcaption id="fig4-caption"><a href="#fig-4" class="anchor-link">図 4.</a> 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook</figcaption>
 </figure>
 <p>他の人口統計における色覚異常の統計については、<a href="https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf">本論文</a>を参照してください。</p>
