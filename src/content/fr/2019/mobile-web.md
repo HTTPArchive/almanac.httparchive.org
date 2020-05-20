@@ -176,7 +176,7 @@ Pour cette raison, les équipes de développement ont la possibilité de désact
   <figcaption id="fig5-caption">Figure 5. Pourcentage de sites web de bureau et mobiles qui activent ou désactivent la possibilité de zoomer&nbsp;/&nbsp;la mise à l’échelle.</figcaption>
 </figure>
 
-Cependant, les équipes de développement ont tellement abusé de cette fonctionnalité qu’aujourd’hui, près d’un site sur trois (32,21&nbsp;%) la désactive, et Apple (à partir d’iOS 10) ne permet plus aux équipes de développement web de désactiver le zoom. Safari Mobile ignore simplement [la balise](https://archive.org/details/ios-10-beta-release-notes). Tous les sites, quoi qu’il en soit, peuvent être zoomés et mis à l’échelle sur les nouveaux appareils Apple, qui représentent plus de [11%](https://gs.statcounter.com/) de tout le trafic web dans le monde&nbsp;!
+Cependant, les équipes de développement ont tellement abusé de cette fonctionnalité qu’aujourd’hui, près d’un site sur trois (32,21&nbsp;%) la désactive, et Apple (à partir d’iOS 10) ne permet plus aux équipes de développement web de désactiver le zoom. Safari Mobile ignore simplement [la balise](https://archive.org/details/ios-10-beta-release-notes). Tous les sites, quoi qu’il en soit, peuvent être zoomés et mis à l’échelle sur les nouveaux appareils Apple, qui représentent plus de [11&nbsp;%](https://gs.statcounter.com/) de tout le trafic web dans le monde&nbsp;!
 
 ### Rotation des pages
 
