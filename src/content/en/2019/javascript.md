@@ -63,7 +63,7 @@ We can get an idea by analyzing main thread processing times for V8 at different
 	<figcaption id="fig3-caption">Figure 3. V8 Main thread processing times by device.</figcaption>
 </figure>
 
-At every percentile, processing times are longer for mobile web pages than on desktop. The median total main thread time on desktop is 849 ms, while mobile is at a larger number: 2,436 ms.
+At every percentile, processing times are longer for mobile web pages than on desktop. The median total main thread time on desktop is 849 ms, while mobile is at a larger number: 2,437 ms.
 
 Although this data shows how much longer it can take for a mobile device to process JavaScript compared to a more powerful desktop machine, mobile devices also vary in terms of computing power. The following chart shows how processing times on a single web page can vary significantly depending on the mobile device class.
 
