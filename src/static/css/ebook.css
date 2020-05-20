@@ -118,7 +118,7 @@ tbody tr:nth-child(even) {
   margin-bottom: 20px;
   width: 600px;
   max-width: 100%;
-  vertical-align: top;
+  vertical-align: middle;
   overflow: auto;
   min-height: 70px;
 }
@@ -136,6 +136,7 @@ tbody tr:nth-child(even) {
 
 .contributor-social a {
   display: inline-block;
+  vertical-align: middle;
   margin: 0 5px;
 }
 

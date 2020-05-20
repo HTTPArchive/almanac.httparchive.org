@@ -217,6 +217,9 @@
 .authors .name{
   font-size: 24px;
   font-size: 1.5rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .authors .tagline{
@@ -231,7 +234,7 @@
 }
 .authors .social {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
 }
 .authors .social a {
   display: inline-block;
