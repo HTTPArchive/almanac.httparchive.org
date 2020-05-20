@@ -78,7 +78,7 @@ Quels en sont les résultats&nbsp;? Sur les plus de 5 millions de sites web anal
 
 Notez que nous n’avons pas été en mesure de capturer et de mesurer les captures d’écran de plus de 5 millions de sites que nous avons analysés. Nous avons plutôt pris un échantillon aléatoire de 1000 sites pour trouver la taille médiane des captures d’écran (140&nbsp;Ko), puis nous avons comparé la taille de téléchargement de JavaScript de chaque site à ce nombre.
 
-Pour une analyse plus approfondie des effets de JavaScript, consultez [«&nbsp;The Cost of JavaScript&nbsp;» (le coût de JavaScript) écrit en 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) par Addy Osmani.
+Pour une analyse plus approfondie des effets de JavaScript, consultez [«&nbsp;<i lang="en">The Cost of JavaScript</i>&nbsp;» (le coût de JavaScript) écrit en 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) par Addy Osmani.
 
 ### Utilisation de Service Workers
 
