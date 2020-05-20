@@ -1,4 +1,4 @@
-{% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["ksakae"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11","last_updated":"2020-05-04","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["ksakae"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11","last_updated":"2020-05-20","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -69,7 +69,7 @@
       <div id="javascript-fig3-description" class="visually-hidden">処理時間をデスクトップとモバイルでそれぞれp10パーセンタイルで141ms/377ms、p25で352/988ms、p50で849/2,437ms、p75で1,850/5,518ms、p90で3,543/10,735msとした棒グラフ。</div>
       <figcaption id="javascript-fig3-caption"><a href="#javascript-fig-3" class="anchor-link">図 3.</a> デバイス別のV8メインスレッド処理時間。</figcaption>
     </figure>
-    <p>すべてのパーセンタイルにおいて、処理時間はデスクトップよりもモバイルの方が長くなっています。メインスレッドの合計時間の中央値はデスクトップでは849msであるのに対し、モバイルでは2,436msと大きくなっています。</p>
+    <p>すべてのパーセンタイルにおいて、処理時間はデスクトップよりもモバイルの方が長くなっています。メインスレッドの合計時間の中央値はデスクトップでは849msであるのに対し、モバイルでは2,437msと大きくなっています。</p>
     <p>このデータはモバイルデバイスがJavaScriptを処理するのにかかる時間が、より強力なデスクトップマシンに比べてどれだけ長いかを示していますが、モバイルデバイスは計算能力の点でも違いがあります。次の表は、1つのWebページの処理時間がモバイルデバイスのクラスによって大きく異なることを示しています。</p>
     <figure id="javascript-fig-4">
       <a href="https://almanac.httparchive.org/static/images/2019/javascript/js-processing-reddit.png">
@@ -5570,7 +5570,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"II","chapter_number":12,"title":"モバイルウェブ","description":"2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":["ksakae"],"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11","last_updated":"2020-05-14","chapter":"mobile-web"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"II","chapter_number":12,"title":"モバイルウェブ","description":"2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":["ksakae"],"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11","last_updated":"2020-05-20","chapter":"mobile-web"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -5659,11 +5659,11 @@
       >以上かかるからです。言い換えればページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックするとJavaScriptの実行が終了していないために、ユーザーは多少の速度低下を経験するかもしれません。最悪の場合、ユーザーは10秒以上ボタンをクリックし続けなければならず、何かが実際に起こる魔法のような瞬間を待つことになります。それがどれほど混乱し、イライラさせるかを考えてみてください。
     </p>
     <figure id="mobile-web-fig-2">
-      <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" aria-labelledby="mobile-web-fig2-caption" aria-describedby="mobile-web-fig2-description"></iframe>
-      <a class="video-fallback-image" href="/static/images/2019/mobile-web/fig2.png">
+      <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" aria-labelledby="mobile-web-fig2-caption" aria-describedby="mobile-web-fig2-description"></iframe>
+      <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
         <img src="/static/images/2019/mobile-web/fig2.png" alt="図2. JS がロードされるのを待つのがいかに苦痛であるかの例。" aria-labelledby="mobile-web-fig2-caption" aria-describedby="mobile-web-fig2-description" width="600" height="343" />
       </a>
-      <div id="mobile-web-fig2-description" class="visually-hidden">Video showing two web pages loading and each page has a figure tapping repeatedly on a button throughout the video, to no effect. There is a clock ticking up from 0 seconds at the top, and an initial happy emoji face for each website, that starts to turn less happy as clock passes 6 seconds, wide-eyed at 8 seconds, angry at 10 seconds, really angry at 13 seconds and crying at 19 seconds shortly after which the video ends.</div>
+      <div id="mobile-web-fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページには、ビデオ全体でボタンを繰り返したたく図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎるにつれて幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了</div>
       <figcaption id="mobile-web-fig2-caption"><a href="#mobile-web-fig-2" class="anchor-link">図 2.</a> JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
     </figure>
     <p>
@@ -5741,7 +5741,7 @@
       <a href="https://almanac.httparchive.org/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
         <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="mobile-web-fig4-caption" aria-describedby="mobile-web-fig4-description" width="650" height="300" />
       </a>
-      <div id="mobile-web-fig4-description" class="visually-hidden">オレンジとグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は#FFFFFF、オレンジ色の背景の薄い色合いは#FCA469、オレンジ色の背景の推奨色合いは#F56905となっています。画像提供：LookZook</div>
+      <div id="mobile-web-fig4-description" class="visually-hidden">オレンジとグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、オレンジ色の背景の薄い色合いは<code>#FCA469</code>、オレンジ色の背景の推奨色合いは<code>#F56905</code>となっています。画像提供：LookZook</div>
       <figcaption id="mobile-web-fig4-caption"><a href="#mobile-web-fig-4" class="anchor-link">図 4.</a> 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook</figcaption>
     </figure>
     <p>

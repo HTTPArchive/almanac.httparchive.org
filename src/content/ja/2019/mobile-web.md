@@ -10,7 +10,7 @@ discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-14T00:00:00.000Z
+last_updated: 2020-05-20T00:00:00.000Z
 ---
 
 ## 序章Introduction
@@ -58,11 +58,11 @@ last_updated: 2020-05-14T00:00:00.000Z
 なぜこれが問題なのでしょうか？　なぜなら、これだけの量のJSをロードしているサイトは、一貫してインタラクティブになるまで[10秒](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci)以上かかるからです。言い換えればページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックするとJavaScriptの実行が終了していないために、ユーザーは多少の速度低下を経験するかもしれません。最悪の場合、ユーザーは10秒以上ボタンをクリックし続けなければならず、何かが実際に起こる魔法のような瞬間を待つことになります。それがどれほど混乱し、イライラさせるかを考えてみてください。
 
 <figure>
-  <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-labelledby="fig2-caption" aria-describedby="fig2-description"></iframe>
-  <a class="video-fallback-image" href="/static/images/2019/mobile-web/fig2.png">
+  <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-labelledby="fig2-caption" aria-describedby="fig2-description"></iframe>
+  <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
     <img src="/static/images/2019/mobile-web/fig2.png" alt="図2. JS がロードされるのを待つのがいかに苦痛であるかの例。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="343">
   </a>
-  <div id="fig2-description" class="visually-hidden">Video showing two web pages loading and each page has a figure tapping repeatedly on a button throughout the video, to no effect. There is a clock ticking up from 0 seconds at the top, and an initial happy emoji face for each website, that starts to turn less happy as clock passes 6 seconds, wide-eyed at 8 seconds, angry at 10 seconds, really angry at 13 seconds and crying at 19 seconds shortly after which the video ends.</div>
+  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページには、ビデオ全体でボタンを繰り返したたく図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎるにつれて幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了</div>
   <figcaption id="fig2-caption">図2. JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
 </figure>
 
@@ -142,7 +142,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
   <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
     <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="650" height="300">
   </a>
-  <div id="fig4-description" class="visually-hidden">オレンジとグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は#FFFFFF、オレンジ色の背景の薄い色合いは#FCA469、オレンジ色の背景の推奨色合いは#F56905となっています。画像提供：LookZook</div>
+  <div id="fig4-description" class="visually-hidden">オレンジとグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、オレンジ色の背景の薄い色合いは<code>#FCA469</code>、オレンジ色の背景の推奨色合いは<code>#F56905</code>となっています。画像提供：LookZook</div>
   <figcaption id="fig4-caption">図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook</figcaption>
 </figure>
 

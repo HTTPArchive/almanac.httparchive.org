@@ -58,7 +58,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/javascript</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -78,7 +78,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/mobile-web</loc>
-        <lastmod>2020-05-13</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -148,7 +148,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/es/2019/javascript</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -199,6 +199,11 @@
     <url>
         <loc>https://almanac.httparchive.org/fr/2019/methodology</loc>
         <lastmod>2020-05-14</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/2019/mobile-web</loc>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -278,7 +283,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/javascript</loc>
-        <lastmod>2020-05-04</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
@@ -298,7 +303,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/mobile-web</loc>
-        <lastmod>2020-05-14</lastmod>
+        <lastmod>2020-05-20</lastmod>
     </url>
 
     <url>
