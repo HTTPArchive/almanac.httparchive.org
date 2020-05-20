@@ -158,7 +158,7 @@ Sur l’ensemble du web, nous avons constaté que 80,66&nbsp;% des pages web ré
 
 ### Zoom et mise à l’échelle
 
-Il est incroyablement difficile de concevoir un site qui fonctionne parfaitement sur des dizaines de milliers de tailles d’écran et de dispositifs. Certaines personnes ont besoin d’une taille de police plus importante pour lire, zoomer sur les images de vos produits, ou ont besoin d’un bouton plus grand parce qu’il est trop petit et a échappé à votre équipe d’assurance qualité. C’est pour de telles raisons que les fonctions de zoom et de mise à l’échelle des appareils sont si importantes&nbsp;; elles permettent aux gens de modifier nos pages pour qu’elles répondent à leurs besoins.
+Il est incroyablement difficile de concevoir un site qui fonctionne parfaitement sur des dizaines de milliers de tailles d’écran et de dispositifs. Certaines personnes ont besoin d’une taille de police plus importante pour lire, zoomer sur les images de vos produits, ou ont besoin d’un bouton plus grand parce qu’il est trop petit et a échappé à votre équipe d’assurance qualité. C’est pour de telles raisons que les fonctions de zoom et de mise à l’échelle des appareils sont si importantes&nbsp;: elles permettent aux gens de modifier nos pages pour qu’elles répondent à leurs besoins.
 
 Il existe de très rares cas où la désactivation est acceptable, par exemple lorsque la page en question est un jeu en ligne utilisant des commandes tactiles. Si cette option est laissée activée dans ce cas, les téléphones des joueurs feront un zoom avant et arrière chaque fois que le joueur tapera deux fois sur le jeu, ce qui rendra l’expérience inutilisable.
 
