@@ -66,7 +66,7 @@ Pourquoi est-ce un problème&nbsp;? Parce que les sites qui chargent autant de J
   <figcaption id="fig2-caption">Figure 2. Exemple d’une expérience pénible où l’on attend que JS se charge.</figcaption>
 </figure>
 
-Allons plus loin et examinons une autre mesure qui se concentre davantage sur _comment_ chaque page utilise JavaScript. Par exemple, a-t-elle vraiment besoin d’autant de JavaScript pendant qu’elle se charge&nbsp;? Nous appelons cette mesure le _JavaScript Bloat Score_ (en français, score de surcharge de JavaScript), basé sur le [web bloat score](https://www.webbloatscore.com/). L’idée derrière tout cela est la suivante&nbsp;:
+Allons plus loin et examinons une autre mesure qui se concentre davantage sur _comment_ chaque page utilise JavaScript. Par exemple, a-t-elle vraiment besoin d’autant de JavaScript pendant qu’elle se charge&nbsp;? Nous appelons cette mesure le <i lang="en">JavaScript Bloat Score</i> (en français, score de surcharge de JavaScript), basé sur le [web bloat score](https://www.webbloatscore.com/). L’idée derrière tout cela est la suivante&nbsp;:
 
 - JavaScript est souvent utilisé pour générer et modifier la page lors de son chargement&nbsp;;
 - il est également livré sous forme de texte au navigateur. Il se compresse donc bien et devrait être livré plus rapidement qu’une simple capture d’écran de la page&nbsp;;
