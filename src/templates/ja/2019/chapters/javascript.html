@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["ksakae"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-04T00:00:00.000Z","chapter":"javascript"} %} {% block index %}
+{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["ksakae"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-20T00:00:00.000Z","chapter":"javascript"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -104,7 +104,7 @@
   <div id="fig3-description" class="visually-hidden">処理時間をデスクトップとモバイルでそれぞれp10パーセンタイルで141ms/377ms、p25で352/988ms、p50で849/2,437ms、p75で1,850/5,518ms、p90で3,543/10,735msとした棒グラフ。</div>
   <figcaption id="fig3-caption"><a href="#fig-3" class="anchor-link">図 3.</a> デバイス別のV8メインスレッド処理時間。</figcaption>
 </figure>
-<p>すべてのパーセンタイルにおいて、処理時間はデスクトップよりもモバイルの方が長くなっています。メインスレッドの合計時間の中央値はデスクトップでは849msであるのに対し、モバイルでは2,436msと大きくなっています。</p>
+<p>すべてのパーセンタイルにおいて、処理時間はデスクトップよりもモバイルの方が長くなっています。メインスレッドの合計時間の中央値はデスクトップでは849msであるのに対し、モバイルでは2,437msと大きくなっています。</p>
 <p>このデータはモバイルデバイスがJavaScriptを処理するのにかかる時間が、より強力なデスクトップマシンに比べてどれだけ長いかを示していますが、モバイルデバイスは計算能力の点でも違いがあります。次の表は、1つのWebページの処理時間がモバイルデバイスのクラスによって大きく異なることを示しています。</p>
 <figure id="fig-4">
   <a href="/static/images/2019/javascript/js-processing-reddit.png">

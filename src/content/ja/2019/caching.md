@@ -10,7 +10,7 @@ discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## 導入
@@ -50,7 +50,7 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
 *   `Cache-Control` キャッシュの生存期間（つまり、有効期間）を設定できます。
 *   `Expires` 有効期限の日付または時刻を提供します（つまり、期限切れになるとき）。
 
-`Cache-Control` 両方が存在する場合に優先されます。これらについては、[以下で詳しく説明します](#cache-control-vs-expires)。
+`Cache-Control` 両方が存在する場合に優先されます。これらについては、[以下で詳しく説明します](#cache-controlとexpires)。
 
 キャッシュ内に保存された応答を検証するためのHTTPレスポンスヘッダー、つまりサーバー側で比較するため、条件付き要求を提供するHTTPレスポンスヘッダーは次のとおりです。
 
@@ -123,98 +123,102 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="5" >デスクトップキャッシュTTLパーセンタイル（時間）</th>
-    </tr>
-    <tr>
-     <td></td>
-     <th scope="col">10</th>
-     <th scope="col">25</th>
-     <th scope="col">50</th>
-     <th scope="col">75</th>
-     <th scope="col">90</th>
-    </tr>
-    <tr>
-     <th scope="row">Audio</th>
-     <td><p style="text-align: right">12</p></td>
-     <td><p style="text-align: right">24</p></td>
-     <td><p style="text-align: right">720</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-    </tr>
-    <tr>
-     <th scope="row">CSS</th>
-     <td><p style="text-align: right">720</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Font</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">3</p></td>
-     <td><p style="text-align: right">336</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">87,600</p></td>
-    </tr>
-    <tr>
-     <th scope="row">HTML</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">168</p></td>
-     <td><p style="text-align: right">720</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,766</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Image</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">1</p></td>
-     <td><p style="text-align: right">28</p></td>
-     <td><p style="text-align: right">48</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Other</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">2</p></td>
-     <td><p style="text-align: right">336</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-     <td><p style="text-align: right">8,760</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Script</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">1</p></td>
-     <td><p style="text-align: right">6</p></td>
-     <td><p style="text-align: right">720</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Text</th>
-     <td><p style="text-align: right">21</p></td>
-     <td><p style="text-align: right">336</p></td>
-     <td><p style="text-align: right">7,902</p></td>
-     <td><p style="text-align: right">8,357</p></td>
-     <td><p style="text-align: right">8,740</p></td>
-    </tr>
-    <tr>
-     <th scope="row">Video</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">4</p></td>
-     <td><p style="text-align: right">24</p></td>
-     <td><p style="text-align: right">24</p></td>
-     <td><p style="text-align: right">336</p></td>
-    </tr>
-    <tr>
-     <th scope="row">XML</th>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-     <td><p style="text-align: right">< 1</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="colgroup" colspan="5" >デスクトップキャッシュTTLパーセンタイル（時間）</th>
+      </tr>
+      <tr>
+        <td></td>
+        <th scope="col">10</th>
+        <th scope="col">25</th>
+        <th scope="col">50</th>
+        <th scope="col">75</th>
+        <th scope="col">90</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Audio</th>
+        <td><p style="text-align: right">12</p></td>
+        <td><p style="text-align: right">24</p></td>
+        <td><p style="text-align: right">720</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+      </tr>
+      <tr>
+        <th scope="row">CSS</th>
+        <td><p style="text-align: right">720</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Font</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">3</p></td>
+        <td><p style="text-align: right">336</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">87,600</p></td>
+      </tr>
+      <tr>
+        <th scope="row">HTML</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">168</p></td>
+        <td><p style="text-align: right">720</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,766</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Image</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">1</p></td>
+        <td><p style="text-align: right">28</p></td>
+        <td><p style="text-align: right">48</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Other</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">2</p></td>
+        <td><p style="text-align: right">336</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+        <td><p style="text-align: right">8,760</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Script</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">1</p></td>
+        <td><p style="text-align: right">6</p></td>
+        <td><p style="text-align: right">720</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Text</th>
+        <td><p style="text-align: right">21</p></td>
+        <td><p style="text-align: right">336</p></td>
+        <td><p style="text-align: right">7,902</p></td>
+        <td><p style="text-align: right">8,357</p></td>
+        <td><p style="text-align: right">8,740</p></td>
+      </tr>
+      <tr>
+        <th scope="row">Video</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">4</p></td>
+        <td><p style="text-align: right">24</p></td>
+        <td><p style="text-align: right">24</p></td>
+        <td><p style="text-align: right">336</p></td>
+      </tr>
+      <tr>
+        <th scope="row">XML</th>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+        <td><p style="text-align: right">< 1</p></td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>図4.リソースタイプ別のデスクトップキャッシュTTLパーセンタイル。</figcaption>
 </figure>
@@ -588,30 +592,34 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th>Service Workerを使用しない</th>
-     <th>Service Workerを使用する</th>
-     <th>合計</th>
-    </tr>
-    <tr>
-     <td>AppCacheを使用しない</td>
-     <td><p style="text-align: right">5,045,337</p></td>
-     <td><p style="text-align: right">32,241</p></td>
-     <td><p style="text-align: right">5,077,578</p></td>
-    </tr>
-    <tr>
-     <td>AppCacheを使用する</td>
-     <td><p style="text-align: right">1,816</p></td>
-     <td><p style="text-align: right">51</p></td>
-     <td><p style="text-align: right">1,867</p></td>
-    </tr>
-    <tr>
-     <td>合計</td>
-     <td><p style="text-align: right">5,047,153</p></td>
-     <td><p style="text-align: right">32,292</p></td>
-     <td><p style="text-align: right">5,079,445</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="col">Service Workerを使用しない</th>
+        <th scope="col">Service Workerを使用する</th>
+        <th scope="col">合計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AppCacheを使用しない</td>
+        <td><p style="text-align: right">5,045,337</p></td>
+        <td><p style="text-align: right">32,241</p></td>
+        <td><p style="text-align: right">5,077,578</p></td>
+      </tr>
+      <tr>
+        <td>AppCacheを使用する</td>
+        <td><p style="text-align: right">1,816</p></td>
+        <td><p style="text-align: right">51</p></td>
+        <td><p style="text-align: right">1,867</p></td>
+      </tr>
+      <tr>
+        <td>合計</td>
+        <td><p style="text-align: right">5,047,153</p></td>
+        <td><p style="text-align: right">32,292</p></td>
+        <td><p style="text-align: right">5,079,445</p></td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>図18. AppCacheを使用するWebサイトとService Workerの数。</figcaption>
 </figure>
@@ -620,34 +628,38 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <td></td>
-     <th scope="col">Service Workerを使用しない</th>
-     <th scope="col">Service Workerを使用する</th>
-    </tr>
-    <tr>
-     <th scope="rowgroup" rowspan="2" >HTTP</th>
-     <td>AppCacheを使用しない</td>
-     <td><p style="text-align: right">1,968,736</p></td>
-     <td><p style="text-align: right">907</p></td>
-    </tr>
-    <tr>
-     <td>AppCacheを使用する</td>
-     <td><p style="text-align: right">580</p></td>
-     <td><p style="text-align: right">1</p></td>
-    </tr>
-    <tr>
-     <th scope="rowgroup" rowspan="2" >HTTPS</th>
-     <td>AppCacheを使用しない</td>
-     <td><p style="text-align: right">3,076,601</p></td>
-     <td><p style="text-align: right">31,334</p></td>
-    </tr>
-    <tr>
-     <td>AppCacheを使用する</td>
-     <td><p style="text-align: right">1,236</p></td>
-     <td><p style="text-align: right">50</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <td></td>
+        <td></td>
+        <th scope="col">Service Workerを使用しない</th>
+        <th scope="col">Service Workerを使用する</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="rowgroup" rowspan="2" >HTTP</th>
+        <td>AppCacheを使用しない</td>
+        <td><p style="text-align: right">1,968,736</p></td>
+        <td><p style="text-align: right">907</p></td>
+      </tr>
+      <tr>
+        <td>AppCacheを使用する</td>
+        <td><p style="text-align: right">580</p></td>
+        <td><p style="text-align: right">1</p></td>
+      </tr>
+      <tr>
+        <th scope="rowgroup" rowspan="2" >HTTPS</th>
+        <td>AppCacheを使用しない</td>
+        <td><p style="text-align: right">3,076,601</p></td>
+        <td><p style="text-align: right">31,334</p></td>
+      </tr>
+      <tr>
+        <td>AppCacheを使用する</td>
+        <td><p style="text-align: right">1,236</p></td>
+        <td><p style="text-align: right">50</p></td>
+      </tr>
+    </tbody>
   </table>
   <figcaption>図19. AppCacheを使用するWebサイト数とHTTP/HTTPSによるService Workerの使用量。</figcaption>
 </figure>

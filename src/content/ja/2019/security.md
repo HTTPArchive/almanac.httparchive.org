@@ -10,7 +10,7 @@ discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## 序章
@@ -170,40 +170,44 @@ TLSでは、さまざまな暗号スイートを使用できます。従来、TL
 
 <figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="2" >クライアント</th>
-    </tr>
-    <tr>
-     <th scope="col">パーセンタイル</th>
-     <th scope="col">デスクトップ</th>
-     <th scope="col">モバイル</th>
-    </tr>
-    <tr>
-     <td>10</td>
-     <td>300</td>
-     <td>300</td>
-    </tr>
-    <tr>
-     <td>25</td>
-     <td>7889238</td>
-     <td>7889238</td>
-    </tr>
-    <tr>
-     <td>50</td>
-     <td>15768000</td>
-     <td>15768000</td>
-    </tr>
-    <tr>
-     <td>75</td>
-     <td>31536000</td>
-     <td>31536000</td>
-    </tr>
-    <tr>
-     <td>90</td>
-     <td>63072000</td>
-     <td>63072000</td>
-    </tr>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="colgroup" colspan="2" >クライアント</th>
+      </tr>
+      <tr>
+        <th scope="col">パーセンタイル</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10</td>
+        <td>300</td>
+        <td>300</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>7889238</td>
+        <td>7889238</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>15768000</td>
+        <td>15768000</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td>31536000</td>
+        <td>31536000</td>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td>63072000</td>
+        <td>63072000</td>
+      </tr>
+    </tbody>
   </table>
 
 <figcaption>図10. HSTSの`max-age`ポリシーのパーセンタイル別の中値。</figcaption>
@@ -274,7 +278,7 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `strict-origin `                  |     4.35%  |   4.14% |
 | `origin`                          |     3.63%  |   3.23% |
    
-<figcapti on>図11. `Referrer-Policy` 設定オプションの使用法。</figcaption>
+<figcaption>図11. `Referrer-Policy` 設定オプションの使用法。</figcaption>
 </figure>
 
 この表はページによって設定された有効な値を示しており、このヘッダーを使用するページのうち、デスクトップでは99.75％、モバイルでは96.55％のページが有効なポリシーを設定していることがわかる。最も人気のある設定は`no-referrer-when-downgrade`で、これはユーザがHTTPSページからHTTPページに移動する際`Refererer`ヘッダが送信されないようにするものです。2番目に人気のある選択は`strict-origin-when-cross-origin`で、これはスキームのダウングレード(HTTPSからHTTPナビゲーション)時に情報が送信されるのを防ぎ、`Refererer`で情報が送信される際にはソースのオリジンのみを含み、完全なURLは含まれません(例えば、`https://www.example.com/page/`ではなく`https://www.example.com`)。その他の有効な設定の詳細は、[Referrerer Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policies)に記載されています、`unsafe-url`の多用はさらなる調査を必要としますが、アナリティクスや広告ライブラリのような[サードパーティ](./third-parties)コンポーネントである可能性が高いです。
@@ -415,34 +419,38 @@ NELは信じられないほど貴重な情報を提供しており、情報の�
 
 現在のところ、クッキーの名前の前には`__Secure-`か`__Host-`のどちらかを付けることができ、どちらもクッキーに追加のセキュリティを提供しています。
 
-<figure >
+<figure>
   <table>
-    <tr>
-     <td></td>
-     <th scope="colgroup" colspan="2" >ホームページ数</th>
-     <th scope="colgroup" colspan="2" >ホームページの割合</th>
-    </tr>
-    <tr>
-     <th scope="col">プレフィックス値</th>
-     <th scope="col">デスクトップ</th>
-     <th scope="col">モバイル</th>
-     <th scope="col">デスクトップ</th>
-     <th scope="col">モバイル</th>
-    </tr>
-    <tr>
-     <td><code>__Secure-</code></td>
-     <td>640</td>
-     <td>628</td>
-     <td>0.01%</td>
-     <td>0.01%</td>
-    </tr>
-    <tr>
-     <td><code>__Host-</code></td>
-     <td>154</td>
-     <td>157</td>
-     <td>0.00%</td>
-     <td>0.00%</td>
-    </tr>
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="colgroup" colspan="2" >ホームページ数</th>
+        <th scope="colgroup" colspan="2" >ホームページの割合</th>
+      </tr>
+      <tr>
+        <th scope="col">プレフィックス値</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
+        <th scope="col">デスクトップ</th>
+        <th scope="col">モバイル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>__Secure-</code></td>
+        <td>640</td>
+        <td>628</td>
+        <td>0.01%</td>
+        <td>0.01%</td>
+      </tr>
+      <tr>
+        <td><code>__Host-</code></td>
+        <td>154</td>
+        <td>157</td>
+        <td>0.00%</td>
+        <td>0.00%</td>
+      </tr>
+    </tbody>
   </table>
 
 <figcaption>図17. クッキーのプレフィックスの使用法</figcaption>
@@ -482,7 +490,7 @@ Webの機能が向上し、より多くの機密データへのアクセスが�
 
 ### 現代のウェブプラットフォームの防御
 
-近年、ブラウザーは、主要な脆弱性や新たなWeb脅威からの保護を提供する強力な新しいメカニズムを実装しています; これには、[サブリソースの完全性](#サブリソースの完全性)、[同じサイトのクッキー](#同じサイトのクッキー)、および[クッキーのプレフィックス](#クッキーのプレフィックス)が含まれます。
+近年、ブラウザーは、主要な脆弱性や新たなWeb脅威からの保護を提供する強力な新しいメカニズムを実装しています; これには、[サブリソースの完全性](#サブリソースの完全性)、[同じサイトのクッキー](#samesite)、および[クッキーのプレフィックス](#プレフィックス)が含まれます。
 
 これらの機能は比較的少数のウェブサイトでしか採用されていません。[Trusted Types](https://w3c.github.io/webappsec-trusted-types/dist/spec/)、[オリジン間リソース共有](https://developer.mozilla.org/ja/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))、[オリジン間オープナー共有](https://www.chromestatus.com/feature/5432089535053824)のような、さらに最近のセキュリティメカニズムは、まだ広く採用されていません。
 

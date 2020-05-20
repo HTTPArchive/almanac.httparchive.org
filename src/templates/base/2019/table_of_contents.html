@@ -79,7 +79,8 @@
   <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
 
   <section>
-    {{ self.foreward() }}
+    <h2>{{ self.foreword_title() }}</h2>
+    {{ self.foreword() }}
   </section>
 
   <div class="contents-wrapper">
@@ -109,7 +110,7 @@
         </section>
       {% endfor %}
       <section class="part">
-        <h2 class="part-name">{{ self.appendix() }}</h2>
+        <h2 class="part-name">{{ self.appendices() }}</h2>
         <div class="chapters">
           <div class="chapter">
             <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
@@ -121,6 +122,15 @@
       </section>
     </div>
 
+    <div id="ebook-download">
+      {% if ebook_exists(lang, year) %}
+      <p>
+        <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a><br>
+        <small>{{ self.ebook_download_note() }}</small>
+      </p>
+      {% endif %}
+    </div>
+
     <div class="characters">
       <img class="character" src="/static/images/character-painter.png" alt="" loading="lazy" height="202" width="226" />
       <img class="character" src="/static/images/character-file.png" alt="" loading="lazy" height="158" width="161" />
@@ -129,4 +139,16 @@
     </div>
   </div>
 </main>
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+<script nonce="{{ csp_nonce() }}">
+  var ebookLink = document.querySelector('#ebook-download');
+
+  ebookLink && ebookLink.addEventListener("click", function (event) {
+    gtag('event', 'ebook-click', { 'event_category': 'clicks', 'event_label': 'toc-page', 'value': 1 })
+  });
+</script>
 {% endblock %}

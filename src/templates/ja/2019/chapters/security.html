@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":8,"title":"セキュリティ","description":"トランスポート・レイヤー・セキュリティ(TLS()、混合コンテンツ、セキュリティヘッダ、Cookie、サブリソース完全性を網羅した2019年版Web Almanacのセキュリティの章。","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":["ksakae"],"discuss":"1763","results":"https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/","queries":"08_Security","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-02T00:00:00.000Z","chapter":"security"} %} {% block index %}
+{% set metadata = {"part_number":"II","chapter_number":8,"title":"セキュリティ","description":"トランスポート・レイヤー・セキュリティ(TLS()、混合コンテンツ、セキュリティヘッダ、Cookie、サブリソース完全性を網羅した2019年版Web Almanacのセキュリティの章。","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":["ksakae"],"discuss":"1763","results":"https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/","queries":"08_Security","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-19T00:00:00.000Z","chapter":"security"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -445,7 +445,7 @@
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
             <td></td>
             <th scope="colgroup" colspan="2">クライアント</th>
@@ -455,6 +455,8 @@
             <th scope="col">デスクトップ</th>
             <th scope="col">モバイル</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>10</td>
             <td>300</td>
@@ -588,9 +590,7 @@
       </table>
     </div>
   </div>
-  <p>
-    <figcapti on="">図11. <code>Referrer-Policy</code> 設定オプションの使用法。</figcapti>
-  </p>
+  <figcaption><a href="#fig-11" class="anchor-link">図 11.</a> <code>Referrer-Policy</code> 設定オプションの使用法。</figcaption>
 </figure>
 <p>この表はページによって設定された有効な値を示しており、このヘッダーを使用するページのうち、デスクトップでは99.75％、モバイルでは96.55％のページが有効なポリシーを設定していることがわかる。最も人気のある設定は<code>no-referrer-when-downgrade</code>で、これはユーザがHTTPSページからHTTPページに移動する際<code>Refererer</code>ヘッダが送信されないようにするものです。2番目に人気のある選択は<code>strict-origin-when-cross-origin</code>で、これはスキームのダウングレード(HTTPSからHTTPナビゲーション)時に情報が送信されるのを防ぎ、<code>Refererer</code>で情報が送信される際にはソースのオリジンのみを含み、完全なURLは含まれません(例えば、<code>https://www.example.com/page/</code>ではなく<code>https://www.example.com</code>)。その他の有効な設定の詳細は、<a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrerer Policy specification</a>に記載されています、<code>unsafe-url</code>の多用はさらなる調査を必要としますが、アナリティクスや広告ライブラリのような<a href="./third-parties">サードパーティ</a>コンポーネントである可能性が高いです。</p>
 <h3 id="機能方針"><a href="#機能方針" class="anchor-link">機能方針</a></h3>
@@ -852,11 +852,11 @@
 <h3 id="プレフィックス"><a href="#プレフィックス" class="anchor-link">プレフィックス</a></h3>
 <p>クッキーに最近追加されたもう一つの方法として、クッキープレフィックスがあります。これらはクッキーの名前を使用して、すでにカバーされている保護に加えて、2つのさらなる保護のうちの1つを追加します。上記のフラグはクッキー上で誤って設定を解除される可能性がありますが、名前は変更されませんので、セキュリティ属性を定義するために名前を使用することでより確実にフラグを強制できます。</p>
 <p>現在のところ、クッキーの名前の前には<code>__Secure-</code>か<code>__Host-</code>のどちらかを付けることができ、どちらもクッキーに追加のセキュリティを提供しています。</p>
-<figure>
+<figure id="fig-17">
   <div class="table-wrap">
     <div class="table-wrap-container">
       <table>
-        <tbody>
+        <thead>
           <tr>
             <td></td>
             <th scope="colgroup" colspan="2">ホームページ数</th>
@@ -869,6 +869,8 @@
             <th scope="col">デスクトップ</th>
             <th scope="col">モバイル</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td><code>__Secure-</code></td>
             <td>640</td>
@@ -916,7 +918,7 @@
   >は、<code>Referer</code>ヘッダーで第三者に送信される情報量を減らすことを目的としているが、同様に使用しているのは3％のウェブサイトのみです。
 </p>
 <h3 id="現代のウェブプラットフォームの防御"><a href="#現代のウェブプラットフォームの防御" class="anchor-link">現代のウェブプラットフォームの防御</a></h3>
-<p>近年、ブラウザーは、主要な脆弱性や新たなWeb脅威からの保護を提供する強力な新しいメカニズムを実装しています; これには、<a href="#サブリソースの完全性">サブリソースの完全性</a>、<a href="#同じサイトのクッキー">同じサイトのクッキー</a>、および<a href="#クッキーのプレフィックス">クッキーのプレフィックス</a>が含まれます。</p>
+<p>近年、ブラウザーは、主要な脆弱性や新たなWeb脅威からの保護を提供する強力な新しいメカニズムを実装しています; これには、<a href="#サブリソースの完全性">サブリソースの完全性</a>、<a href="#samesite">同じサイトのクッキー</a>、および<a href="#プレフィックス">クッキーのプレフィックス</a>が含まれます。</p>
 <p>これらの機能は比較的少数のウェブサイトでしか採用されていません。<a href="https://w3c.github.io/webappsec-trusted-types/dist/spec/">Trusted Types</a>、<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)">オリジン間リソース共有</a>、<a href="https://www.chromestatus.com/feature/5432089535053824">オリジン間オープナー共有</a>のような、さらに最近のセキュリティメカニズムは、まだ広く採用されていません。</p>
 <p>
   同様に、<a href="#report-to">Reporting API</a>、<a href="#ネットワークエラーロギング">ネットワークエラーロギング</a>、<a href="#クリアサイトデータ"><code>Clear-Site-Data</code></a

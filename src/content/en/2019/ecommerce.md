@@ -10,7 +10,7 @@ discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## Introduction
@@ -41,8 +41,8 @@ Page detection is not always reliable, and some sites explicitly block detection
     <thead>
       <tr>
         <td></td>
-        <th>Mobile</th>
-        <th>Desktop</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Desktop</th>
       </tr>
     </thead>
     <tbody>
@@ -381,7 +381,7 @@ The charts below are for desktop requests:
 
 Images constitute the largest number of requests and the highest proportion of bytes for ecommerce pages. The median desktop ecommerce page includes 39 images weighing 1,514 KB (1.5 MB).
 
-The number of [JavaScript](./javascript) requests indicates that better bundling (and/or [HTTP/2](./http2) multiplexing) could improve performance. JavaScript files are not significantly large in terms of total bytes, but many separate requests are made. According to the [HTTP/2](./http2#user-content-adoption-of-http2) chapter, more than 40% of requests are not via HTTP/2. Similarly, CSS files have the third highest number of requests but are generally small. Merging CSS files (and/or HTTP/2) could improve performance of such sites. In the authors' experience, many ecommerce pages have a high proportion of unused CSS and JavaScript. [Videos](./media) may require a small number of requests, but (not surprisingly) consume a high proportion of the page weight, particularly on sites with heavy payloads.
+The number of [JavaScript](./javascript) requests indicates that better bundling (and/or [HTTP/2](./http2) multiplexing) could improve performance. JavaScript files are not significantly large in terms of total bytes, but many separate requests are made. According to the [HTTP/2](./http2#adoption-of-http2) chapter, more than 40% of requests are not via HTTP/2. Similarly, CSS files have the third highest number of requests but are generally small. Merging CSS files (and/or HTTP/2) could improve performance of such sites. In the authors' experience, many ecommerce pages have a high proportion of unused CSS and JavaScript. [Videos](./media) may require a small number of requests, but (not surprisingly) consume a high proportion of the page weight, particularly on sites with heavy payloads.
 
 ## HTML payload size
 
