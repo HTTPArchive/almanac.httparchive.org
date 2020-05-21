@@ -50,8 +50,8 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block open %}Open{% endblock %}
 {% block close %}Close{% endblock %}
 
-{% block show_description %}Show description{% endblock %}
-{% block hide_description %}Hide description{% endblock %}
+{% macro show_description(id) %}Show description of Figure {{ id }}{% endmacro %}
+{% macro hide_description(id) %}Hide description of Figure {{ id }}{% endmacro %}
 
 {% block written_by_before %}Written by{% endblock %}
 {% block reviewed_by_before %}Reviewed by{% endblock %}

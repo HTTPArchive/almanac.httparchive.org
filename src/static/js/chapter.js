@@ -366,7 +366,8 @@ function toggleDescription(event) {
   if (!event_button) {
     return;
   }
-  description_id = event_button.getAttribute('data-link-id');
+  description_id = event_button.getAttribute('aria-controls');
+  console.log('BARRY:',description_id)
   if (!description_id) {
     return;
   }
@@ -389,7 +390,7 @@ function addShowDescription() {
     var desc_button = all_desc_buttons[index];
     desc_button.addEventListener('click', toggleDescription);
     desc_button.hidden = false;
-    description = document.querySelector('#' + desc_button.getAttribute('data-link-id'));
+    description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
     if(description) {
       description.classList.remove('visually-hidden');
       description.classList.add('fig-description');

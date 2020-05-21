@@ -50,8 +50,8 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block open %}Ouvrez{% endblock %}
 {% block close %}Fermez{% endblock %}
 
-{% block show_description %}Montrer la description{% endblock %}
-{% block hide_description %}Masquer la description{% endblock %}
+{% macro show_description(id) %}Afficher la description de la figure {{ id }}{% endmacro %}
+{% macro hide_description(id) %}Masquer la description de la figure  {{ id }}{% endmacro %}
 
 {% block written_by_before %}Écrit par{% endblock %}
 {% block reviewed_by_before %}Relu par{% endblock %}
