@@ -337,6 +337,7 @@ figure .anchor-link {
   background-color: white;
   border: 1px solid #E5E5E5;
   border-radius: 4px;
+  padding: 5px;
 }
 
 .fig-description {

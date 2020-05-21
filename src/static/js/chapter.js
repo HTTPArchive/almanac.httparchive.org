@@ -367,7 +367,6 @@ function toggleDescription(event) {
     return;
   }
   description_id = event_button.getAttribute('aria-controls');
-  console.log('BARRY:',description_id)
   if (!description_id) {
     return;
   }
