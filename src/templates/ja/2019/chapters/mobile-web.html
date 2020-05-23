@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":12,"title":"モバイルウェブ","description":"2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":["ksakae"],"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-20T00:00:00.000Z","chapter":"mobile-web"} %} {% block index %}
+{% set metadata = {"part_number":"II","chapter_number":12,"title":"モバイルウェブ","description":"2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":["ksakae"],"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-23T00:00:00.000Z","chapter":"mobile-web"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章introduction">序章Introduction</a>
@@ -147,7 +147,7 @@
   <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
     <img src="/static/images/2019/mobile-web/fig2.png" alt="図2. JS がロードされるのを待つのがいかに苦痛であるかの例。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="610" height="343" loading="lazy" />
   </a>
-  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページには、ビデオ全体でボタンを繰り返したたく図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎるにつれて幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了</div>
+  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページは、ビデオ全体でボタンを繰り返しタップする図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎると幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了します。</div>
   <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">図 2.</a> JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
 </figure>
 <p>さらに深く掘り下げて、各ページがJavaScriptをどの程度利用しているかに焦点を当てた別の指標を見てみましょう。例えば、読み込み中のページは本当に多くのJavaScriptを必要としているのでしょうか？　私たちはこの指標を<a href="https://www.webbloatscore.com/">Web bloat score</a>に基づいた<em>JavaScript Bloat Score</em>と呼んでいます。その背後にある考え方は次のようなものです。</p>
