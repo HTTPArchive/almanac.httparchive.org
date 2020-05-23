@@ -16,6 +16,7 @@ on:
       - src/templates/**
       - tools/generate/**
       - src/static/css/**
+      - src/static/js/**
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,6 +35,16 @@ jobs:
         echo "Incrementing any references to changed CSS files"
         git diff-tree --no-commit-id --name-only -r $COMMIT_SHA src/static/css | grep "\.css" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base/*/*.html
         git diff-tree --no-commit-id --name-only -r $COMMIT_SHA src/static/css | grep "\.css" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base.html
+        git diff
+    - name: Update JS version for modified CSS files
+      env:
+        COMMIT_SHA: ${{ github.event.commits[0].id }}
+      run: |
+        echo "files changed in commit $COMMIT_SHA:"
+        git diff-tree --no-commit-id --name-only -r $COMMIT_SHA
+        echo "Incrementing any references to changed JS files"
+        git diff-tree --no-commit-id --name-only -r $COMMIT_SHA src/static/js | grep "\.js" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base/*/*.html
+        git diff-tree --no-commit-id --name-only -r $COMMIT_SHA src/static/js | grep "\.js" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base.html
         git diff
     - name: Update timestamp for modified files
       env:
