@@ -62,7 +62,7 @@ last_updated: 2020-05-20T00:00:00.000Z
   <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
     <img src="/static/images/2019/mobile-web/fig2.png" alt="図2. JS がロードされるのを待つのがいかに苦痛であるかの例。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="610" height="343" loading="lazy">
   </a>
-  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページには、ビデオ全体でボタンを繰り返したたく図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎるにつれて幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了</div>
+  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページは、ビデオ全体でボタンを繰り返しタップする図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎると幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了します。</div>
   <figcaption id="fig2-caption">図2. JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
 </figure>
 
