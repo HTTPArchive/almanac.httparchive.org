@@ -41,7 +41,7 @@ Webページの主な目的はユーザーの興味を引くコンテンツを�
   <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
     <img alt="図1.色のコントラストが不十分なテキストの表示例 LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="720" height="380">
   </a>
-  <div id="fig1-description" class="visually-hidden">褐色とグレー4色のボックスに白いテキストがあり、2列に並んでいます。左の列は、色の薄い、#FCA469と書かれた褐色色の背景色があります。右の列は、推奨と表示されており、褐色色の背景色に#BD5B0Eと書かれています。各列の上のボックスには白いテキスト#FFFFFFに褐色色の背景で、下のボックスは灰色の背景に白いテキスト#FFFFFFとなっています。灰色の背景は、褐色色をグレースケールにしたものです。LookZook提供。</div>
+  <div id="fig1-description" class="visually-hidden">褐色とグレー4色のボックスに白いテキストがあり、2列に並んでいます。左の列は、色の薄い、<code>#FCA469</code>と書かれた褐色色の背景色があります。右の列は、推奨と表示されており、褐色色の背景色に<code>#BD5B0E</code>と書かれています。各列の上のボックスには白いテキスト#FFFFFFに褐色色の背景で、下のボックスは灰色の背景に白いテキスト#FFFFFFとなっています。同等のグレースケールは、それぞれ<code>＃B8B8B8</code>および<code>＃707070</code>です。LookZook提供。</div>
   <figcaption id="fig1-caption">図1.色のコントラストが不十分なテキストの表示例 LookZook提供</figcaption>
 </figure>
 
