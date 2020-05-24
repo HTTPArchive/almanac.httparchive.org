@@ -35,14 +35,14 @@ The primary goal of a web page is to deliver content users want to engage with. 
 
 There are many cases where visitors to your site may not be able see it perfectly. Visitors may be colorblind and unable to distinguish between the font and background color ([1 in every 12 men and 1 in 200 women](http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf) of European descent). Perhaps they're simply reading while the sun is out and creating tons of glare on their screen—significantly impairing their vision. Or maybe they've just grown older and their eyes can't distinguish colors as well as they used to.
 
-In order to make sure your website is readable under these conditions, making sure your text has sufficient color contrast with its background is critical.
+In order to make sure your website is readable under these conditions, making sure your text has sufficient color contrast with its background is critical. It is also important to consider what contrasts will be shown when the colors are converted to greyscale.
 
 <figure>
-  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img alt="Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600" height="278">
+  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
+    <img alt="Figure 1. Example of what text with insufficient color contrast looks like." aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="720" height="380">
   </a>
-  <div id="fig1-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in greyscale. Courtesy of LookZook.</div>
-  <figcaption id="fig1-caption">Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
+  <div id="fig1-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the brown background color written as #FCA469. The right column says Recommended and the brown background color is written as #BD5B0E. The top box in each column has an brown background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the brown range color in greyscale.</div>
+  <figcaption id="fig1-caption">Figure 1. Example of what text with insufficient color contrast looks like.</figcaption>
 </figure>
 
 Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.
