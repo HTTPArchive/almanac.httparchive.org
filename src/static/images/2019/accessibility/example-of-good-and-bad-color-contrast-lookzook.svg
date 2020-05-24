@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4f, 2020-05-01)"
-   sodipodi:docname="example-of-good-and-bad-color-contrast-lookzook.svg"
-   xml:space="preserve"
-   enable-background="new 0 0 720 380"
    viewBox="0 0 720 380"
    height="380"
-   width="720"
-   y="0"
-   x="0"
-   id="contrasts"
-   version="1.1"><metadata
-   id="metadata250"><rdf:RDF><cc:Work
-       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
-   id="defs248" /><sodipodi:namedview
-   inkscape:current-layer="g193"
-   inkscape:window-maximized="0"
-   inkscape:window-y="23"
-   inkscape:window-x="0"
-   inkscape:cy="281.65851"
-   inkscape:cx="360"
-   inkscape:zoom="1.4105263"
-   showgrid="false"
-   id="namedview246"
-   inkscape:window-height="701"
-   inkscape:window-width="1246"
-   inkscape:pageshadow="2"
-   inkscape:pageopacity="0"
-   guidetolerance="10"
-   gridtolerance="10"
-   objecttolerance="10"
-   borderopacity="1"
-   bordercolor="#666666"
-   pagecolor="#ffffff" />
+   width="720">
 <style
    id="style165">text{font-family:Arial, sans-serif;font-weight:bold;}</style>
 <g
@@ -177,8 +140,7 @@
      style="stroke-width:0.41251"
      y="371.35739"
      x="600.92896"
-     id="tspan252"
-     sodipodi:role="line">©</tspan></text>
+     id="tspan252">©</tspan></text>
 <g
    transform="matrix(0.45805481,0,0,0.45805481,616.53895,354.71119)"
    id="g243">
