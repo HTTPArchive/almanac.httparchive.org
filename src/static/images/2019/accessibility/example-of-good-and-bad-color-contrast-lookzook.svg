@@ -72,7 +72,7 @@
 		<text
    id="text177"
    font-size="24"
-   transform="matrix(1 0 0 1 51.3335 200)">Greyscale: #B8B8B8</text>
+   transform="matrix(1 0 0 1 51.3335 200)">Grayscale: #B8B8B8</text>
 		<g
    id="g183">
 			<rect
@@ -134,7 +134,7 @@
 		<text
    id="text205"
    font-size="24"
-   transform="matrix(1 0 0 1 397.3335 199)">Greyscale: #707070</text>
+   transform="matrix(1 0 0 1 397.3335 199)">Grayscale: #707070</text>
 		<g
    id="g211">
 			<rect

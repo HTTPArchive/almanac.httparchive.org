@@ -35,13 +35,13 @@ The primary goal of a web page is to deliver content users want to engage with. 
 
 There are many cases where visitors to your site may not be able see it perfectly. Visitors may be colorblind and unable to distinguish between the font and background color ([1 in every 12 men and 1 in 200 women](http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf) of European descent). Perhaps they're simply reading while the sun is out and creating tons of glare on their screen—significantly impairing their vision. Or maybe they've just grown older and their eyes can't distinguish colors as well as they used to.
 
-In order to make sure your website is readable under these conditions, making sure your text has sufficient color contrast with its background is critical. It is also important to consider what contrasts will be shown when the colors are converted to greyscale.
+In order to make sure your website is readable under these conditions, making sure your text has sufficient color contrast with its background is critical. It is also important to consider what contrasts will be shown when the colors are converted to grayscale.
 
 <figure>
   <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
     <img alt="Figure 1. Example of what text with insufficient color contrast looks like." aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="720" height="380">
   </a>
-  <div id="fig1-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the brown background color written as #FCA469. The right column says Recommended and the brown background color is written as #BD5B0E. The top box in each column has an brown background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the brown range color in greyscale.</div>
+  <div id="fig1-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the brown background color written as #FCA469. The right column says Recommended and the brown background color is written as #BD5B0E. The top box in each column has an brown background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The gray background shows the brown range color in grayscale.</div>
   <figcaption id="fig1-caption">Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
