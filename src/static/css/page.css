@@ -330,6 +330,24 @@ figure .anchor-link {
   height: 0px;
 }
 
+.fig-description-button {
+  margin: 5px auto 0;
+  font-size: 12px;
+  font-size: 0.75rem;
+  background-color: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.fig-description {
+  border: 1px solid;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #E5E5E5;
+}
+
 figure {
   display: flex;
   flex-direction: column;
@@ -480,6 +498,14 @@ figure .fig-desktop {
     max-width: 100%;
     height: auto;
   }
+
+  .fig-description-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+
   .index .sticky {
     position: static;
   }

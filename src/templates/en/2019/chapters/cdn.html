@@ -115,6 +115,7 @@
   <a href="/static/images/2019/cdn/fig1.png">
     <img src="/static/images/2019/cdn/fig1.png" alt="Figure 1. CDN usage vs. origin-hosted resources." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig1-description" data-show-text="{{ show_description(1) }}" data-hide-text="{{ hide_description(1) }}">{{ show_description(1) }}</button>
   <div id="fig1-description" class="visually-hidden">Stacked bar chart showing HTML is 80% served from origin, 20% from CDN, Sub-domains are 61%/39%, third-party is 34%/66%.</div>
   <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">Figure 1.</a> CDN usage vs. origin-hosted resources.</figcaption>
 </figure>
@@ -129,6 +130,7 @@
   <a href="/static/images/2019/cdn/html_cdn_usage.png">
     <img alt="Most popular CDNs used to serve base HTML pages" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/cdn/html_cdn_usage.png" width="600" height="371" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
   <div id="fig2-description" class="visually-hidden">Treemap graph showing the data from Table 3.</div>
   <figcaption id="fig2-caption">Figure 2: HTML CDN usage.</figcaption>
 </figure>
@@ -254,6 +256,7 @@
   <a href="/static/images/2019/cdn/subdomain_resource_cdn_usage.png">
     <img alt="Most popular CDNs used for resources served from a sub-domain" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/cdn/subdomain_resource_cdn_usage.png" width="600" height="371" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig4-description" data-show-text="{{ show_description(4) }}" data-hide-text="{{ hide_description(4) }}">{{ show_description(4) }}</button>
   <div id="fig4-description" class="visually-hidden">Treemap graph showing the data from Table 5.</div>
   <figcaption id="fig4-caption"><a href="#fig-4" class="anchor-link">Figure 4.</a> Sub-domain resource CDN usage.</figcaption>
 </figure>
@@ -379,6 +382,7 @@
   <a href="/static/images/2019/cdn/thirdparty_resource_cdn_usage.png">
     <img alt="Most popular CDNs used by third-party resources" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/cdn/thirdparty_resource_cdn_usage.png" width="600" height="376" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig6-description" data-show-text="{{ show_description(6) }}" data-hide-text="{{ hide_description(6) }}">{{ show_description(6) }}</button>
   <div id="fig6-description" class="visually-hidden">Treemap graph showing the data from Table 7.</div>
   <figcaption id="fig6-caption"><a href="#fig-6" class="anchor-link">Figure 6.</a> Third-party resource CDN usage.</figcaption>
 </figure>
@@ -517,6 +521,7 @@
   <a href="/static/images/2019/cdn/html_tls_negotiation_time.png">
     <img alt="Distribution of TLS negotiation time for initial HTML request broken down by CDN" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/cdn/html_tls_negotiation_time.png" width="600" height="371" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig8-description" data-show-text="{{ show_description(8) }}" data-hide-text="{{ hide_description(8) }}">{{ show_description(8) }}</button>
   <div id="fig8-description" class="visually-hidden">Graph showing the data from Table 9.</div>
   <figcaption id="fig8-caption"><a href="#fig-8" class="anchor-link">Figure 8.</a> HTML TLS negotiation time.</figcaption>
 </figure>
@@ -690,6 +695,7 @@
   <a href="/static/images/2019/cdn/resource_tls_negotiation_time.png">
     <img alt="Distribution of TLS negotiation time for site resources broken down by CDN" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/cdn/resource_tls_negotiation_time.png" width="600" height="371" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig10-description" data-show-text="{{ show_description(10) }}" data-hide-text="{{ hide_description(10) }}">{{ show_description(10) }}</button>
   <div id="fig10-description" class="visually-hidden">Graph showing most CDNs have a TLS negotiation time of around 80 ms, but some (Microsoft Azure, Yahoo, Edgecast, ORIGIN, and CDNetworks) start to creep out towards 200 ms - especially when going above the p50 percentile.</div>
   <figcaption id="fig10-caption"><a href="#fig-10" class="anchor-link">Figure 10.</a> Resource TLS negotiation time.</figcaption>
 </figure>
@@ -708,6 +714,7 @@
   <a href="/static/images/2019/cdn/fig11.png">
     <img src="/static/images/2019/cdn/fig11.png" alt="Figure 11. TLS SAN count for HTML." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig11-description" data-show-text="{{ show_description(11) }}" data-hide-text="{{ hide_description(11) }}">{{ show_description(11) }}</button>
   <div id="fig11-description" class="visually-hidden">Bar chart showing data from table 12.</div>
   <figcaption id="fig11-caption"><a href="#fig-11" class="anchor-link">Figure 11.</a> TLS SAN count for HTML.</figcaption>
 </figure>
@@ -880,6 +887,7 @@
   <a href="/static/images/2019/cdn/fig13.png">
     <img src="/static/images/2019/cdn/fig13.png" alt="Figure 13. Resource SAN count (p50)." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig13-description" data-show-text="{{ show_description(13) }}" data-hide-text="{{ hide_description(13) }}">{{ show_description(13) }}</button>
   <div id="fig13-description" class="visually-hidden">Bar chart showing the data from Table 14 for the p50 percentile.</div>
   <figcaption id="fig13-caption"><a href="#fig-13" class="anchor-link">Figure 13.</a> Resource SAN count (p50).</figcaption>
 </figure>
@@ -1062,6 +1070,7 @@
   <a href="/static/images/2019/cdn/fig15.png">
     <img src="/static/images/2019/cdn/fig15.png" alt="Figure 15. HTML TLS version adoption (CDN vs. origin)." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig15-description" data-show-text="{{ show_description(15) }}" data-hide-text="{{ hide_description(15) }}">{{ show_description(15) }}</button>
   <div id="fig15-description" class="visually-hidden">Stacked bar chart showing TLS 1.0 is used 0.86% of the time for origin, TLS 1.2 55% of the time, TLS 1.3 6% of the time, and unencrypted 38% of the time. For CDN this changes to 35% for TLS 1.2, 41% for TLS 1.3, and 24% for unencrypted.</div>
   <figcaption id="fig15-caption"><a href="#fig-15" class="anchor-link">Figure 15.</a> HTML TLS version adoption (CDN vs. origin).</figcaption>
 </figure>
@@ -1070,6 +1079,7 @@
   <a href="/static/images/2019/cdn/fig16.png">
     <img src="/static/images/2019/cdn/fig16.png" alt="Figure 16. HTML TLS adoption by CDN." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig16-description" data-show-text="{{ show_description(16) }}" data-hide-text="{{ hide_description(16) }}">{{ show_description(16) }}</button>
   <div id="fig16-description" class="visually-hidden">Division of secure vs non-secure connections established for initial HTML request broken down by CDN with some CDNs (e.g. Wordpress) at 100%, most between 80%-100%, and then ORIGIN at 62%, Google at 51%, ChinaNetCenter at 36%, and Yunjiasu at 29%.</div>
   <figcaption id="fig16-caption"><a href="#fig-16" class="anchor-link">Figure 16.</a> HTML TLS adoption by CDN.</figcaption>
 </figure>
@@ -1077,6 +1087,7 @@
   <a href="/static/images/2019/cdn/fig17.png">
     <img src="/static/images/2019/cdn/fig17.png" alt="Figure 17. Third-party TLS adoption by CDN." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig17-description" data-show-text="{{ show_description(17) }}" data-hide-text="{{ hide_description(17) }}">{{ show_description(17) }}</button>
   <div id="fig17-description" class="visually-hidden">Stacked bar chart showing the vast majority of CDNs use TLS for over 90% of third-party requests, with a few stragglers in the 75% - 90% range, and ORIGIN lower than them all at 68%.</div>
   <figcaption id="fig17-caption"><a href="#fig-17" class="anchor-link">Figure 17.</a> Third-party TLS adoption by CDN.</figcaption>
 </figure>
@@ -1087,6 +1098,7 @@
   <a href="/static/images/2019/cdn/fig18.png">
     <img src="/static/images/2019/cdn/fig18.png" alt="Figure 18. HTML TLS version by CDN." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig18-description" data-show-text="{{ show_description(18) }}" data-hide-text="{{ hide_description(18) }}">{{ show_description(18) }}</button>
   <div id="fig18-description" class="visually-hidden">Bar chart showing that TLS 1.3 or TLS 1.2 is used by all CDNs when TLS is used. A few CDNs have adopted TLS 1.3 completely, some partially and a large proportion not at all and only using TLS 1.2.</div>
   <figcaption id="fig18-caption"><a href="#fig-18" class="anchor-link">Figure 18.</a> HTML TLS version by CDN.</figcaption>
 </figure>
@@ -1099,6 +1111,7 @@
   <a href="/static/images/2019/cdn/fig19.png">
     <img src="/static/images/2019/cdn/fig19.png" alt="Figure 19. HTTP/2 adoption (CDN vs. origin)." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig19-description" data-show-text="{{ show_description(19) }}" data-hide-text="{{ hide_description(19) }}">{{ show_description(19) }}</button>
   <div id="fig19-description" class="visually-hidden">Stacked bar chart showing 73% of Origin connections use HTTP/1.1, and 27% HTTP/2. This compares to CDNs where 29% are using HTTP/1.1 and 71% HTTP/2.</div>
   <figcaption id="fig19-caption"><a href="#fig-19" class="anchor-link">Figure 19.</a> HTTP/2 adoption (CDN vs. origin).</figcaption>
 </figure>
@@ -1106,6 +1119,7 @@
   <a href="/static/images/2019/cdn/fig20.png">
     <img src="/static/images/2019/cdn/fig20.png" alt="Figure 20. HTML adoption of HTTP/2." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig20-description" data-show-text="{{ show_description(20) }}" data-hide-text="{{ hide_description(20) }}">{{ show_description(20) }}</button>
   <div id="fig20-description" class="visually-hidden">Bar chart showing the data from Table 21.</div>
   <figcaption id="fig20-caption"><a href="#fig-20" class="anchor-link">Figure 20.</a> HTML adoption of HTTP/2.</figcaption>
 </figure>
@@ -1308,6 +1322,7 @@
   <a href="/static/images/2019/cdn/fig22.png">
     <img src="/static/images/2019/cdn/fig22.png" alt="Figure 22. HTML/2 adoption: third-party resources." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig22-description" data-show-text="{{ show_description(22) }}" data-hide-text="{{ hide_description(22) }}">{{ show_description(22) }}</button>
   <div id="fig22-description" class="visually-hidden">Bar chart showing the data from Table 23.</div>
   <figcaption id="fig22-caption"><a href="#fig-22" class="anchor-link">Figure 22.</a> HTML/2 adoption: third-party resources.</figcaption>
 </figure>
@@ -1516,6 +1531,7 @@
   <a href="/static/images/2019/cdn/use_of_vary_on_cdn.png">
     <img alt="Breakdown of Vary header values for HTML content served from a CDN" src="/static/images/2019/cdn/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig24-description" data-show-text="{{ show_description(24) }}" data-hide-text="{{ hide_description(24) }}">{{ show_description(24) }}</button>
   <div id="fig24-description" class="visually-hidden">Treemap graph showing accept-encoding dominates vary usage with 73% of the chart taken up with that. Cookie (13%) and user-agent (8%) having some usage, then a complete mixed of other headers.</div>
   <figcaption id="fig24-caption"><a href="#fig-24" class="anchor-link">Figure 24.</a> Usage of <code>Vary</code> for HTML served from CDNs.</figcaption>
 </figure>
@@ -1526,6 +1542,7 @@
   <a href="/static/images/2019/cdn/use_of_vary.png">
     <img src="/static/images/2019/cdn/use_of_vary.png" alt="Figure 25. Comparison of Vary usage for HTML and resources served from origin and CDN." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig25-description" data-show-text="{{ show_description(25) }}" data-hide-text="{{ hide_description(25) }}">{{ show_description(25) }}</button>
   <div id="fig25-description" class="visually-hidden">Set of four treemap graphs showing that for CDNs serving home pages the biggest use of Vary is for Cookie, followed by User-agent. For CDNs serving other resources it's origin, followed by accept, user-agent, x-origin and referrer. For Origins and home pages it's user-agent, followed by cookie. Finally for Origins and other resources it's primarily user-agent followed by origin, accept, then range and host.</div>
   <figcaption id="fig25-caption"><a href="#fig-25" class="anchor-link">Figure 25.</a> Comparison of <code>Vary</code> usage for HTML and resources served from origin and CDN.</figcaption>
 </figure>
@@ -1543,6 +1560,7 @@
   <a href="/static/images/2019/cdn/fig26.png">
     <img src="/static/images/2019/cdn/fig26.png" alt="Figure 26. Adoption of s-maxage across CDN responses." aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig26-description" data-show-text="{{ show_description(26) }}" data-hide-text="{{ hide_description(26) }}">{{ show_description(26) }}</button>
   <div id="fig26-description" class="visually-hidden">Bar chart showing 82% of jsDelivr serves responses with s-maxage, 14% of Level 3, 6.3% of Amazon CloudFront, 3.3% of Akamai, 3.1% of Fastly, 3% of Highwinds, 2% of Cloudflare, 0.91% of ORIGIN, 0.75% of Edgecast, 0.07% of Google.</div>
   <figcaption id="fig26-caption"><a href="#fig-26" class="anchor-link">Figure 26.</a> Adoption of <code>s-maxage</code> across CDN responses.</figcaption>
 </figure>
@@ -1556,6 +1574,7 @@
   <a href="/static/images/2019/cdn/fig27.png">
     <img src="/static/images/2019/cdn/fig27.png" alt="Figure 27. Usage of public content CDNs." aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig27-description" data-show-text="{{ show_description(27) }}" data-hide-text="{{ hide_description(27) }}">{{ show_description(27) }}</button>
   <div id="fig27-description" class="visually-hidden">Bar chart showing 55.33% of public content CDNs are made to fonts.googleapis.com, 19.86% to ajax.googleapis.com, 10.47% to cdnjs.cloudflare.com, 9.83% to maxcdn.bootstrapcdn.com, 5.95% to code.jquery.com, 4.29% to cdn.jsdelivr.net, 3.22% to use.fontawesome.com, 0.7% to stackpath.bootstrapcdn.com, 0.67% to unpkg.com, and 0.52% to ajax.aspnetcdn.com.</div>
   <figcaption id="fig27-caption"><a href="#fig-27" class="anchor-link">Figure 27.</a> Usage of public content CDNs.</figcaption>
 </figure>
