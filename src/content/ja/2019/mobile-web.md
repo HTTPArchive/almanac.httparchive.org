@@ -140,7 +140,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 <figure>
   <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="720" height="380">
+    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
   </a>
   <div id="fig4-description" class="visually-hidden">褐色とグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、褐色色の背景の薄い色合いは<code>#FCA469</code>、褐色色の背景の推奨色合いは<code>#BD5B0E</code>となっています。同等のグレースケールは、それぞれ<code>＃B8B8B8</code>および<code>＃707070</code>です。画像提供：LookZook</div>
   <figcaption id="fig4-caption">図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook</figcaption>

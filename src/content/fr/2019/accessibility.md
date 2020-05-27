@@ -39,7 +39,7 @@ Afin de vous assurer que votre site web soit lisible dans ces conditions, un con
 
 <figure>
   <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img alt="Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="720" height="380">
+    <img alt="Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
   </a>
   <div id="fig1-description" class="visually-hidden">Quatre boîtes colorées de nuances marron et grises avec, par-dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond marron écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan marron est écrite comme `#BD5B0E`. La zone supérieure de chaque colonne a un fond marron avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Gracieusement mis à disposition par LookZook</div>
   <figcaption id="fig1-caption">Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook</figcaption>

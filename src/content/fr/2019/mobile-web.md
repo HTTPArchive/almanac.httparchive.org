@@ -140,7 +140,7 @@ Pour nous aider à surmonter ces problèmes, il existe des [directives d’acces
 
 <figure>
   <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="Figure 4. Exemple de ce à quoi ressemble un texte dont le contraste des couleurs est insuffisant. Avec l’aimable autorisation de LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="720" height="380">
+    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="Figure 4. Exemple de ce à quoi ressemble un texte dont le contraste des couleurs est insuffisant. Avec l’aimable autorisation de LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
   </a>
   <div id="fig4-description" class="visually-hidden">Quatre cases colorées de tons marron et gris avec du texte blanc superposé à l’intérieur créant deux colonnes, une où la couleur de fond n’est pas assez colorée par rapport au texte blanc et une où la couleur de fond est recommandée par rapport au texte blanc. Le code hexadécimal de chaque couleur est affiché, le blanc est <code>#FFFFFF</code>, la nuance claire du fond marron est <code>#FCA469</code>, et la nuance recommandée du fond marron est <code>#BD5B0E</code>. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Image reproduite avec l’aimable autorisation de LookZook</div>
   <figcaption id="fig4-caption">Figure 4. Exemple de ce à quoi ressemble un texte dont le contraste des couleurs est insuffisant. Avec l’aimable autorisation de LookZook</figcaption>

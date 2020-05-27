@@ -140,7 +140,7 @@ To help us mitigate this problem, there are [accessibility guidelines](https://d
 
 <figure>
   <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="720" height="380">
+    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
   </a>
   <div id="fig4-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is <code>#FFFFFF</code>, the light shade of brown background is <code>#FCA469</code>, and the recommended shade of brown background is <code>#BD5B0E</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Image courtesy of LookZook</div>
   <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook.</figcaption>
