@@ -126,6 +126,7 @@
   <a href="/static/images/2019/caching/ch16_fig1_redbot_example.jpg">
     <img alt="図1. RedBotからのCache-Control情報。" src="/static/images/2019/caching/ch16_fig1_redbot_example.jpg" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="138" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig1-description" data-show-text="{{ show_description(1) }}" data-hide-text="{{ hide_description(1) }}">{{ show_description(1) }}</button>
   <div id="fig1-description" class="visually-hidden">リソースがいつ変更されたか、キャッシュがそれを保存できるかどうか、リソースが新鮮であると見なされる期間、および警告に関する詳細情報を示すRedbotの応答例。</div>
   <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">図 1.</a> ロボットからの<code>Cache-Control</code>情報</figcaption>
 </figure>
@@ -135,6 +136,7 @@
   <a href="/static/images/2019/caching/fig2.png">
     <img src="/static/images/2019/caching/fig2.png" alt="図2. HTTP Cache-ControlおよびExpiresヘッダーの存在" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
   <div id="fig2-description" class="visually-hidden">リクエストの72％がCache-Controlヘッダーを使用し、56％がExpiresを使用し、27％がどちらも使用しないことを示す、モバイルとデスクトップの棒グラフ。</div>
   <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">図 2.</a> HTTP <code>Cache-Control</code>および<code>Expires</code>ヘッダーの存在</figcaption>
 </figure>
@@ -150,6 +152,7 @@
   <a href="/static/images/2019/caching/fig3.png">
     <img src="/static/images/2019/caching/fig3.png" alt="図3.キャッシュ可能なレスポンスの分布。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig3-description" data-show-text="{{ show_description(3) }}" data-hide-text="{{ hide_description(3) }}">{{ show_description(3) }}</button>
   <div id="fig3-description" class="visually-hidden">デスクトップレスポンスの20％がキャッシュ不可、47％が0秒以上のキャッシュ、27％がヒューリスティックにキャッシュ、6％が0秒のTTLを示す積み上げ棒グラフ。モバイルの統計は非常に似ています（19％、47％ 、27％および7％）</div>
   <figcaption id="fig3-caption"><a href="#fig-3" class="anchor-link">図 3.</a>キャッシュ可能なレスポンスの分布。</figcaption>
 </figure>
@@ -265,6 +268,7 @@
   <a href="/static/images/2019/caching/fig5.png">
     <img src="/static/images/2019/caching/fig5.png" alt="図5.デスクトップのコンテンツタイプごとのキャッシュ可能性の分布。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig5-description" data-show-text="{{ show_description(5) }}" data-hide-text="{{ hide_description(5) }}">{{ show_description(5) }}</button>
   <div id="fig5-description" class="visually-hidden">キャッシュ不可、0秒を超えたキャッシュ、デスクトップのタイプごとに0秒だけキャッシュの分割を示す積み上げ棒グラフ。小さいがかなりの割合でキャッシュ不可能でHTMLでは最大50％になり、ほとんどはキャッシュが大きく0で、小さいキャッシュは0 TTLです。</div>
   <figcaption id="fig5-caption"><a href="#fig-5" class="anchor-link">図 5.</a>デスクトップのコンテンツタイプごとのキャッシュ可能性の分布。</figcaption>
 </figure>
@@ -273,6 +277,7 @@
   <a href="/static/images/2019/caching/fig6.png">
     <img src="/static/images/2019/caching/fig6.png" alt="図6.モバイルのコンテンツタイプ別のキャッシュ可能性の分布。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig6-description" data-show-text="{{ show_description(6) }}" data-hide-text="{{ hide_description(6) }}">{{ show_description(6) }}</button>
   <div id="fig6-description" class="visually-hidden">キャッシュ不可、0秒を超えたキャッシュ、デスクトップのタイプごとに0秒だけキャッシュの分割を示す積み上げ棒グラフ。小さいがかなりの割合でキャッシュ不可能でHTMLでは最大50％になり、ほとんどはキャッシュが大きく0で、小さいキャッシュは0 TTLです。</div>
   <figcaption id="fig6-caption"><a href="#fig-6" class="anchor-link">図 6.</a>モバイルのコンテンツタイプ別のキャッシュ可能性の分布。</figcaption>
 </figure>
@@ -291,6 +296,7 @@
   <a href="/static/images/2019/caching/fig7.png">
     <img src="/static/images/2019/caching/fig7.png" alt="図7. Cache-ControlとExpiresヘッダーの使用法。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig7-description" data-show-text="{{ show_description(7) }}" data-hide-text="{{ hide_description(7) }}">{{ show_description(7) }}</button>
   <div id="fig7-description" class="visually-hidden">レスポンスの53％を示す棒グラフには、「Cache-Control：max-age」、54％-55％が「Expires」、41％-42％が両方を使用し、34％がどちらも使用していません。数字は、デスクトップとモバイルの両方について示されていますが、有効期限の使用率が高いモバイルとほぼ同じです。</div>
   <figcaption id="fig7-caption"><a href="#fig-7" class="anchor-link">図 7.</a> <code>Cache-Control</code>と<code>Expires</code>ヘッダーの使用法。</figcaption>
 </figure>
@@ -364,6 +370,7 @@
   <a href="/static/images/2019/caching/fig9.png">
     <img src="/static/images/2019/caching/fig9.png" alt="図9.モバイルでのCache-Controlディレクティブの使用。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="662" data-width="600" data-height="662" data-seamless="" data-rameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig9-description" data-show-text="{{ show_description(9) }}" data-hide-text="{{ hide_description(9) }}">{{ show_description(9) }}</button>
   <div id="fig9-description" class="visually-hidden">15のcache-controlディレクティブとその使用量の棒グラフ。74.8％のmax-age、37.8％のpublic、27.8％のno-cache、18％のno-store、14.3％のprivate、3.4％のimmutable、3.3％のno-transform、2.4％のstale-while-revalidate、2.2％のpre-check、2.2％のpost-check、1.9％のs-maxage、1.6％のproxy-revalidate、0.3％set-cookieおよび0.2％のstale-if-error。統計は、デスクトップとモバイルでほぼ同じです。</div>
   <figcaption id="fig9-caption"><a href="#fig-9" class="anchor-link">図 9.</a>モバイルでの<code>Cache-Control</code>ディレクティブの使用。</figcaption>
 </figure>
@@ -394,6 +401,7 @@
   <a href="/static/images/2019/caching/ch16_fig8_resource_age.jpg">
     <img src="/static/images/2019/caching/ch16_fig8_resource_age.jpg" alt="図10.コンテンツタイプ別のリソース年分布。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="325" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig10-description" data-show-text="{{ show_description(10) }}" data-hide-text="{{ hide_description(10) }}">{{ show_description(10) }}</button>
   <div id="fig10-description" class="visually-hidden">コンテンツの年を示すスタック棒グラフ。0〜52週に分割され、1年以上と2年以上で、nullと負の数字も表示されます。統計は、ファーストパーティとサードパーティに分かれています。値0は、特にファーストパーティのHTML、テキスト、およびxml、およびすべてのアセットタイプのサードパーティリクエストの最大50％に使用されます。中間年を使用し、その後1年と2年の間かなりの使用量を使用するミックスがあります。</div>
   <figcaption id="fig10-caption"><a href="#fig-10" class="anchor-link">図 10.</a>コンテンツタイプ別のリソース年分布。</figcaption>
 </figure>
@@ -472,6 +480,7 @@
   <a href="/static/images/2019/caching/fig12.png">
     <img src="/static/images/2019/caching/fig12.png" alt="図12.デスクトップWebサイトのLast-ModifiedおよびETa`ヘッダーを介した鮮度の検証の採用。" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig12-description" data-show-text="{{ show_description(12) }}" data-hide-text="{{ hide_description(12) }}">{{ show_description(12) }}</button>
   <div id="fig12-description" class="visually-hidden">デスクトップリクエストの64.4％が最後に変更され、42.8％がETagを持ち、37.9％が両方を持ち、30.7％がどちらも持たないことを示す棒グラフ。モバイルの統計は、最終変更が65.3％、ETagが42.8％、両方が38.0％、どちらも29.9％というほぼ同じです。</div>
   <figcaption id="fig12-caption"><a href="#fig-12" class="anchor-link">図 12.</a>デスクトップWebサイトの<code>Last-Modified</code>および<code>ETag</code>ヘッダーを介した鮮度の検証の採用。</figcaption>
 </figure>
@@ -500,6 +509,7 @@
   <a href="/static/images/2019/caching/fig13.png">
     <img src="/static/images/2019/caching/fig13.png" alt="図13.レスポンスヘッダーの無効な日付形式。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig13-description" data-show-text="{{ show_description(13) }}" data-hide-text="{{ hide_description(13) }}">{{ show_description(13) }}</button>
   <div id="fig13-description" class="visually-hidden">デスクトップレスポンスの0.10％に無効な日付があり、0.67％に無効なLast-Modifiedがあり、3.64％に無効なExpiresがあることを示す棒グラフ。モバイルの統計は非常によく似ており、レスポンスの0.06％に無効な日付があり、0.68％に無効なLast-Modifiedがあり、3.50％に無効な有効期限があります。</div>
   <figcaption id="fig13-caption"><a href="#fig-13" class="anchor-link">図 13.</a>レスポンスヘッダーの無効な日付形式。</figcaption>
 </figure>
@@ -524,6 +534,7 @@
   <a href="/static/images/2019/caching/fig14.png">
     <img src="/static/images/2019/caching/fig14.png" alt="図14.Varyヘッダーの使用率。" aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="655" data-width="600" data-height="655" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=384675253&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig14-description" data-show-text="{{ show_description(14) }}" data-hide-text="{{ hide_description(14) }}">{{ show_description(14) }}</button>
   <div id="fig14-description" class="visually-hidden">accept-encodingは90％で使用、ユーザーエージェントは10％-11％、オリジンは約7％-8％、acceptは少なく、cookie、x-forward-proto、accept-language、host、x-origin、access-control-request-method、およびaccess-control-request-headersの使用はほとんどありません</div>
   <figcaption id="fig14-caption"><a href="#fig-14" class="anchor-link">図 14.</a>Varyヘッダーの使用率。</figcaption>
 </figure>
@@ -533,6 +544,7 @@
   <a href="/static/images/2019/caching/ch16_fig12_header_example_with_cookie.jpg">
     <img src="/static/images/2019/caching/ch16_fig12_header_example_with_cookie.jpg" alt="図15.キャッシュされたリソースのChrome開発ツール。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="359" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig15-description" data-show-text="{{ show_description(15) }}" data-hide-text="{{ hide_description(15) }}">{{ show_description(15) }}</button>
   <div id="fig15-description" class="visually-hidden">キャッシュされたレスポンスのHTTPレスポンスヘッダーを示すChrome開発者ツールのスクリーンショット。</div>
   <figcaption id="fig15-caption"><a href="#fig-15" class="anchor-link">図 15.</a>キャッシュされたリソースのChrome開発ツール。</figcaption>
 </figure>
@@ -543,6 +555,7 @@
   <a href="/static/images/2019/caching/ch16_fig16_cacheable_responses_set_cookie.jpg">
     <img src="/static/images/2019/caching/ch16_fig16_cacheable_responses_set_cookie.jpg" alt="図16. Set-Cookieレスポンスのキャッシュ可能なレスポンス。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="567" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig16-description" data-show-text="{{ show_description(16) }}" data-hide-text="{{ hide_description(16) }}">{{ show_description(16) }}</button>
   <div id="fig16-description" class="visually-hidden">レスポンスの97％を示す棒グラフはSet-Cookieを使用せず、3％が使用します。この3％の内、15.3％がプライベート、84.7％がデスクトップ、モバイルは18.4％がパブリック、81.6％がプライベートであるという別の棒グラフに拡大されています。</div>
   <figcaption id="fig16-caption"><a href="#fig-16" class="anchor-link">図 16.</a> <code>Set-Cookie</code>レスポンスのキャッシュ可能なレスポンス。</figcaption>
 </figure>
@@ -553,6 +566,7 @@
   <a href="/static/images/2019/caching/ch16_fig14_service_worker_adoption.jpg">
     <img src="/static/images/2019/caching/ch16_fig14_service_worker_adoption.jpg" alt="図17.Service Workerが制御するページの時系列。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="311" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig17-description" data-show-text="{{ show_description(17) }}" data-hide-text="{{ hide_description(17) }}">{{ show_description(17) }}</button>
   <div id="fig17-description" class="visually-hidden">2016年10月から2019年7月までのService Workerが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。</div>
   <figcaption id="fig17-caption"><a href="#fig-17" class="anchor-link">図 17.</a>Service Workerが制御するページの時系列。 (引用: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)</figcaption>
 </figure>
@@ -643,6 +657,7 @@
   <a href="/static/images/2019/caching/ch16_fig15_lighthouse_example.jpg">
     <img src="/static/images/2019/caching/ch16_fig15_lighthouse_example.jpg" alt="図20.キャッシュポリシーの改善の可能性を強調したLighthouseレポート。" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="459" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig20-description" data-show-text="{{ show_description(20) }}" data-hide-text="{{ hide_description(20) }}">{{ show_description(20) }}</button>
   <div id="fig20-description" class="visually-hidden">Google Lighthouseツールからのレポートの一部のスクリーンショット。「効率的なキャッシュポリシーを使用した静的アセットの提供」セクションが開いており、多数のリソース、名前が編集された人、キャッシュTTLとサイズのリストが表示されます。</div>
   <figcaption id="fig20-caption"><a href="#fig-20" class="anchor-link">図 20.</a>キャッシュポリシーの改善の可能性を強調したLighthouseレポート。</figcaption>
 </figure>
@@ -651,6 +666,7 @@
   <a href="/static/images/2019/caching/fig21.png">
     <img src="/static/images/2019/caching/fig21.png" alt="図21.モバイルWebページの「Use Long Cache TTL」監査のLighthouseスコアの分布。" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig21-description" data-show-text="{{ show_description(21) }}" data-hide-text="{{ hide_description(21) }}">{{ show_description(21) }}</button>
   <div id="fig21-description" class="visually-hidden">積み上げ棒グラフの38.2％のウェブサイトのスコアは10％未満、29.0％のウェブサイトのスコアは10％〜39％、18.7％のウェブサイトのスコアは40％〜79％、10.7％のウェブサイトは80％から99％のスコア、および3.4​​％のWebサイトが100％のスコアを取得します。</div>
   <figcaption id="fig21-caption"><a href="#fig-21" class="anchor-link">図 21.</a>モバイルWebページの「Use Long Cache TTL」監査のLighthouseスコアの分布。</figcaption>
 </figure>
@@ -660,6 +676,7 @@
   <a href="/static/images/2019/caching/fig22.png">
     <img src="/static/images/2019/caching/fig22.png" alt="図22. Lighthouseキャッシング監査による潜在的なバイト節約の分布。" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig22-description" data-show-text="{{ show_description(22) }}" data-hide-text="{{ hide_description(22) }}">{{ show_description(22) }}</button>
   <div id="fig22-description" class="visually-hidden">Webサイトの56.8％が1MB未満の潜在的なバイト節約を示す積み上げ棒グラフ、22.1％は1〜2MBの節約、8.3％は2〜3MBの節約になります。 4.3％は3〜4MB節約でき、6.0％は4MB以上節約できました。</div>
   <figcaption id="fig22-caption"><a href="#fig-22" class="anchor-link">図 22.</a> Lighthouseキャッシング監査による潜在的なバイト節約の分布。</figcaption>
 </figure>

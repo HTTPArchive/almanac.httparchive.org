@@ -81,6 +81,7 @@
   <a href="/static/images/2019/javascript/fig1.png">
     <img src="/static/images/2019/javascript/fig1.png" alt="図1. ページあたりのJavaScriptバイト数の分布" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig1-description" data-show-text="{{ show_description(1) }}" data-hide-text="{{ hide_description(1) }}">{{ show_description(1) }}</button>
   <div id="fig1-description" class="visually-hidden">p10パーセンタイルで70バイト、p25で174バイト、p50で373バイト、p75で693バイト、p90で1,093バイトのJavaScriptを使用していることを示す棒グラフ</div>
   <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">図 1.</a> ページあたりのJavaScriptバイト数の分布</figcaption>
 </figure>
@@ -90,6 +91,7 @@
   <a href="/static/images/2019/javascript/fig2.png">
     <img src="/static/images/2019/javascript/fig2.png" alt="図2. デバイス別のページあたりのJavaScriptの分布。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
   <div id="fig2-description" class="visually-hidden">デスクトップとモバイルでそれぞれp10パーセンタイルで76バイト/65バイトのJavaScriptを使用していることを示す棒グラフで、p25で186/164バイト、p50で391/359バイト、p75で721/668バイト、p90で1,131/1,060バイトとなっています。</div>
   <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">図 2.</a> デバイス別のページあたりのJavaScriptの分布。</figcaption>
 </figure>
@@ -101,6 +103,7 @@
   <a href="/static/images/2019/javascript/fig3.png">
     <img src="/static/images/2019/javascript/fig3.png" alt="図3. デバイス別のV8メインスレッド処理時間。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig3-description" data-show-text="{{ show_description(3) }}" data-hide-text="{{ hide_description(3) }}">{{ show_description(3) }}</button>
   <div id="fig3-description" class="visually-hidden">処理時間をデスクトップとモバイルでそれぞれp10パーセンタイルで141ms/377ms、p25で352/988ms、p50で849/2,437ms、p75で1,850/5,518ms、p90で3,543/10,735msとした棒グラフ。</div>
   <figcaption id="fig3-caption"><a href="#fig-3" class="anchor-link">図 3.</a> デバイス別のV8メインスレッド処理時間。</figcaption>
 </figure>
@@ -110,6 +113,7 @@
   <a href="/static/images/2019/javascript/js-processing-reddit.png">
     <img src="/static/images/2019/javascript/js-processing-reddit.png" alt="Reddit.comのJavaScript処理時間" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="363" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig4-description" data-show-text="{{ show_description(4) }}" data-hide-text="{{ hide_description(4) }}">{{ show_description(4) }}</button>
   <div id="fig4-description" class="visually-hidden">3つの異なるデバイスを示す棒グラフ: 上部のPixel3は、メインスレッドとワーカースレッドの両方で400ms未満と量が少ないです。Moto G4の場合、メインスレッドで約900ms、ワーカースレッドでさらに300msです。そして最後のバーはAlcatel 1X 5059Dで、メインスレッドで2,000ms以上、ワーカースレッドで500ms以上となっています。</div>
   <figcaption id="fig4-caption"><a href="#fig-4" class="anchor-link">図 4.</a> reddit.comのJavaScript処理時間。<a href="https://v8.dev/blog/cost-of-javascript-2019">2019年のJavaScriptのコスト</a>より。</figcaption>
 </figure>
@@ -119,6 +123,7 @@
   <a href="/static/images/2019/javascript/fig5.png">
     <img src="/static/images/2019/javascript/fig5.png" alt="図5. 総JavaScriptリクエスト数の分布。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig5-description" data-show-text="{{ show_description(5) }}" data-hide-text="{{ hide_description(5) }}">{{ show_description(5) }}</button>
   <div id="fig5-description" class="visually-hidden">p10パーセンタイルではデスクトップとモバイルそれぞれ4/4のリクエストを示す棒グラフ、p25では10/9、p50では19/18、p75では33/32、p90では53/52が使用されています。</div>
   <figcaption id="fig5-caption"><a href="#fig-5" class="anchor-link">図 5.</a> 総JavaScriptリクエスト数の分布。</figcaption>
 </figure>
@@ -130,6 +135,7 @@
   <a href="/static/images/2019/javascript/fig6.png">
     <img src="/static/images/2019/javascript/fig6.png" alt="図6. デスクトップ上のファーストスクリプトとサードパーティスクリプトの分布。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig6-description" data-show-text="{{ show_description(6) }}" data-hide-text="{{ hide_description(6) }}">{{ show_description(6) }}</button>
   <div id="fig6-description" class="visually-hidden">デスクトップ上でp10パーセンタイルでは0/1リクエストがファーストパーティとサードパーティであることを示す棒グラフが表示されています、p25では2/4、p50では6/10、p75では13/21、p90では24/38となっています。</div>
   <figcaption id="fig6-caption"><a href="#fig-6" class="anchor-link">図 6.</a> デスクトップ上のファーストスクリプトとサードパーティスクリプトの分布。</figcaption>
 </figure>
@@ -137,6 +143,7 @@
   <a href="/static/images/2019/javascript/fig7.png">
     <img src="/static/images/2019/javascript/fig7.png" alt="図7. モバイル上のファーストパーティとサードパーティのスクリプトの分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig7-description" data-show-text="{{ show_description(7) }}" data-hide-text="{{ hide_description(7) }}">{{ show_description(7) }}</button>
   <div id="fig7-description" class="visually-hidden">モバイルでp10パーセンタイルでは0/1リクエストがファーストパーティとサードパーティであることを示す棒グラフが表示されています、p25では2/3、p50では5/9、p75では13/20、p90では23/36となっています。</div>
   <figcaption id="fig7-caption"><a href="#fig-7" class="anchor-link">図 7.</a> モバイル上のファーストパーティとサードパーティのスクリプトの分布。</figcaption>
 </figure>
@@ -145,6 +152,7 @@
   <a href="/static/images/2019/javascript/fig8.png">
     <img src="/static/images/2019/javascript/fig8.png" alt="図8. デスクトップ上でダウンロードされたJavaScriptの総ダウンロード数の分布。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig8-description" data-show-text="{{ show_description(8) }}" data-hide-text="{{ hide_description(8) }}">{{ show_description(8) }}</button>
   <div id="fig8-description" class="visually-hidden">p10パーセンタイルでは、ファーストパーティとサードパーティのリクエストに対してデスクトップ上で0/17バイトのJavaScriptがダウンロードされていることを示す棒グラフ、p25では11/62、p50では89/232、p75では200/525、p90では404/900である。</div>
   <figcaption id="fig8-caption"><a href="#fig-8" class="anchor-link">図 8.</a> デスクトップ上でダウンロードされたJavaScriptの総ダウンロード数の分布。</figcaption>
 </figure>
@@ -152,6 +160,7 @@
   <a href="/static/images/2019/javascript/fig9.png">
     <img src="/static/images/2019/javascript/fig9.png" alt="図9. モバイルでダウンロードされたJavaScriptの総ダウンロード数の分布。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig9-description" data-show-text="{{ show_description(9) }}" data-hide-text="{{ hide_description(9) }}">{{ show_description(9) }}</button>
   <div id="fig9-description" class="visually-hidden">棒グラフは、p10パーセンタイルではファーストパーティとサードパーティのリクエストでそれぞれ0/17バイトの JavaScriptがモバイルでダウンロードされていることを示していますが、p25では6/54、p50では83/217、p75では189/477、p90では380/827です。</div>
   <figcaption id="fig9-caption"><a href="#fig-9" class="anchor-link">図 9.</a> モバイルでダウンロードされたJavaScriptの総ダウンロード数の分布。</figcaption>
 </figure>
@@ -169,6 +178,7 @@
   <a href="/static/images/2019/javascript/fig10.png">
     <img src="/static/images/2019/javascript/fig10.png" alt="図10. JavaScript リソースをgzipまたはbrotliで圧縮しているサイトの割合。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig10-description" data-show-text="{{ show_description(10) }}" data-hide-text="{{ hide_description(10) }}">{{ show_description(10) }}</button>
   <div id="fig10-description" class="visually-hidden">バーチャートを見ると、デスクトップとモバイルでそれぞれJavaScriptリソースの67%/65%がgzipで圧縮されており、15%/14%がBrotliで圧縮されていることがわかります。</div>
   <figcaption id="fig10-caption"><a href="#fig-10" class="anchor-link">図 10.</a> JavaScript リソースをgzipまたはbrotliで圧縮しているサイトの割合。</figcaption>
 </figure>
@@ -313,6 +323,7 @@
   <a href="/static/images/2019/javascript/fig12.png">
     <img src="/static/images/2019/javascript/fig12.png" alt="図12. デスクトップで最もよく使われるフレームワーク" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig12-description" data-show-text="{{ show_description(12) }}" data-hide-text="{{ hide_description(12) }}">{{ show_description(12) }}</button>
   <div id="fig12-description" class="visually-hidden">Reactを使用しているサイトは4.6％、AngularJSを使用しているサイトは2.0％、Backbone.jsを使用しているサイトは1.8％、Vue.jsを使用しているサイトは0.8％、Knockout.jsを使用しているサイトは0.4％、Zone.jsを使用しているサイトは0.3％、Angularを使用しているサイトは0.3％、AMPを使用しているサイトは0.1％、Ember.jsを使用しているサイトは0.1％という棒グラフになっています。</div>
   <figcaption id="fig12-caption"><a href="#fig-12" class="anchor-link">図 12.</a> デスクトップで最もよく使われるフレームワーク</figcaption>
 </figure>
@@ -331,6 +342,7 @@
   <a href="/static/images/2019/javascript/fig13.png">
     <img src="/static/images/2019/javascript/fig13.png" alt="図13. type=moduleを利用しているサイトの割合。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig13-description" data-show-text="{{ show_description(13) }}" data-hide-text="{{ hide_description(13) }}">{{ show_description(13) }}</button>
   <div id="fig13-description" class="visually-hidden">デスクトップでは0.6%のサイトが「type=module」を使用しており、モバイルでは0.8%のサイトが使用していることを示す棒グラフです。</div>
   <figcaption id="fig13-caption"><a href="#fig-13" class="anchor-link">図 13.</a> type=moduleを利用しているサイトの割合。</figcaption>
 </figure>
@@ -342,6 +354,7 @@
   <a href="/static/images/2019/javascript/fig14.png">
     <img src="/static/images/2019/javascript/fig14.png" alt="図14. nomoduleを使用しているサイトの割合。" aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig14-description" data-show-text="{{ show_description(14) }}" data-hide-text="{{ hide_description(14) }}">{{ show_description(14) }}</button>
   <div id="fig14-description" class="visually-hidden">デスクトップでは0.8％のサイトが「nomobule」を利用しており、モバイルでは0.5％のサイトが利用していることを示す棒グラフ。</div>
   <figcaption id="fig14-caption"><a href="#fig-14" class="anchor-link">図 14.</a> nomoduleを使用しているサイトの割合。</figcaption>
 </figure>
@@ -357,6 +370,7 @@
   <a href="/static/images/2019/javascript/fig15.png">
     <img src="/static/images/2019/javascript/fig15.png" alt="図15. スクリプトにrel=preloadを使用しているサイトの割合。" aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig15-description" data-show-text="{{ show_description(15) }}" data-hide-text="{{ hide_description(15) }}">{{ show_description(15) }}</button>
   <div id="fig15-description" class="visually-hidden">バーチャートを見ると、デスクトップでは14%のサイトがスクリプトに'rel=preload'を使用しており、モバイルでは15%のサイトがスクリプトにrel=preloadを使用していることがわかります。</div>
   <figcaption id="fig15-caption"><a href="#fig-15" class="anchor-link">図 15.</a> スクリプトにrel=preloadを使用しているサイトの割合。</figcaption>
 </figure>
@@ -366,6 +380,7 @@
   <a href="/static/images/2019/javascript/fig16.png">
     <img src="/static/images/2019/javascript/fig16.png" alt="図16. スクリプトにrel=prefetchを使用しているサイトの割合。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig16-description" data-show-text="{{ show_description(16) }}" data-hide-text="{{ hide_description(16) }}">{{ show_description(16) }}</button>
   <div id="fig16-description" class="visually-hidden">デスクトップでは0.08%のサイトが「rel=prefetch」を使用しており、モバイルでは0.08%のサイトが使用していることを示す棒グラフ。</div>
   <figcaption id="fig16-caption"><a href="#fig-16" class="anchor-link">図 16.</a> スクリプトにrel=prefetchを使用しているサイトの割合。</figcaption>
 </figure>
@@ -386,6 +401,7 @@
   <a href="/static/images/2019/javascript/fig17.png">
     <img src="/static/images/2019/javascript/fig17.png" alt="図17. 新しいJavaScript APIの利用法" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig17-description" data-show-text="{{ show_description(17) }}" data-hide-text="{{ hide_description(17) }}">{{ show_description(17) }}</button>
   <div id="fig17-description" class="visually-hidden">バーチャートを見ると、デスクトップとモバイルのサイトの25.5%/36.2%がWeakMap、6.1%/17.2%がWeakSet、3.9%/14.0%がIntl、3.9%/4.4%がProxy、0.4%/0.4%がAtomics、0.2%/0.2%がSharedArrayBufferを使用していることがわかります。</div>
   <figcaption id="fig17-caption"><a href="#fig-17" class="anchor-link">図 17.</a> 新しいJavaScript APIの利用法</figcaption>
 </figure>
@@ -399,6 +415,7 @@
   <a href="/static/images/2019/javascript/fig18.png">
     <img src="/static/images/2019/javascript/fig18.png" alt="図18. ソースマップを使用しているサイトの割合。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&amp;format=interactive" loading="lazy" />
   </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig18-description" data-show-text="{{ show_description(18) }}" data-hide-text="{{ hide_description(18) }}">{{ show_description(18) }}</button>
   <div id="fig18-description" class="visually-hidden">デスクトップサイトの18％、モバイルサイトの17％がソースマップを使用していることを示す棒グラフ。</div>
   <figcaption id="fig18-caption"><a href="#fig-18" class="anchor-link">図 18.</a> ソースマップを使用しているサイトの割合。</figcaption>
 </figure>
