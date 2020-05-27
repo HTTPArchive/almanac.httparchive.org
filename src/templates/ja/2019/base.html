@@ -60,6 +60,9 @@
 {% block author %}著者{% endblock %}
 {% block authors %}著者{% endblock %}
 
+{% macro show_description(id) %}図{{ id }}の説明を表示{% endmacro %}
+{% macro hide_description(id) %}図{{ id }}の説明を非表示{% endmacro %}
+
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}
 {% macro website(authorName) %}{{authorName}} ウェブサイト{% endmacro %}

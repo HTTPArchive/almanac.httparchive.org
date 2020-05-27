@@ -361,7 +361,46 @@ function indexHighlighter() {
 
 }
 
+function toggleDescription(event) {
+  event_button = event.target;
+  if (!event_button) {
+    return;
+  }
+  description_id = event_button.getAttribute('aria-controls');
+  if (!description_id) {
+    return;
+  }
+
+  description = document.querySelector('#' + description_id);
+  if (!description) {
+    return;
+  }
+
+  description.hidden = !description.hidden;
+  event_button.setAttribute('aria-expanded', event_button.getAttribute('aria-expanded') == 'true' ? 'false' : 'true');
+  event_button.innerHTML = event_button.getAttribute('aria-expanded') == 'true' ? event_button.getAttribute('data-hide-text') : event_button.getAttribute('data-show-text');
+
+}
+
+function addShowDescription() {
+  var all_desc_buttons = document.querySelectorAll('.fig-description-button');
+
+  for (index = 0; index < all_desc_buttons.length; ++index) {
+    var desc_button = all_desc_buttons[index];
+    desc_button.addEventListener('click', toggleDescription);
+    desc_button.hidden = false;
+    description = document.querySelector('#' + desc_button.getAttribute('aria-controls'));
+    if(description) {
+      description.classList.remove('visually-hidden');
+      description.classList.add('fig-description');
+      description.hidden = true;
+    }
+  }
+
+}
+
 indexHighlighter();
+addShowDescription();
 removeLazyLoadingOnPrint();
 upgradeInteractiveFigures();
 setDiscussionCount();
