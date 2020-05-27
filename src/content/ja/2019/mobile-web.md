@@ -139,10 +139,10 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 この問題を軽減するために、テキストや背景色を選択する際に従うことのできる[アクセシビリティ・ガイドライン](https://dequeuniversity.com/rules/axe/2.2/color-contrast)があります。では、これらの基準を満たすにはどうすればよいのでしょうか？　すべてのテキストに十分な色のコントラストを与えているサイトは22.04％にすぎません。この値は実際には下限値であり、背景が無地のテキストのみを分析したためです。画像やグラデーションの背景は分析できませんでした。
 
 <figure>
-  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="650" height="300">
+  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
+    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
   </a>
-  <div id="fig4-description" class="visually-hidden">オレンジとグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、オレンジ色の背景の薄い色合いは<code>#FCA469</code>、オレンジ色の背景の推奨色合いは<code>#F56905</code>となっています。画像提供：LookZook</div>
+  <div id="fig4-description" class="visually-hidden">褐色とグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、褐色色の背景の薄い色合いは<code>#FCA469</code>、褐色色の背景の推奨色合いは<code>#BD5B0E</code>となっています。同等のグレースケールは、それぞれ<code>＃B8B8B8</code>および<code>＃707070</code>です。画像提供：LookZook</div>
   <figcaption id="fig4-caption">図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook</figcaption>
 </figure>
 
