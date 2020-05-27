@@ -5,7 +5,7 @@
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
 {% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-05-20T00:00:00.000Z{% endblock %}
+{% block date_modified %}2020-05-27T00:00:00.000Z{% endblock %}
 
 {% block breadcrumb_name_1 %}{{ year }} Home{% endblock %}
 {% block breadcrumb_name_2 %}{% endblock %}
@@ -49,6 +49,9 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 
 {% block open %}Abre{% endblock %}
 {% block close %}Cierra{% endblock %}
+
+{% macro show_description(id) %}Mostrar descripción de la Figura {{ id }}{% endmacro %}
+{% macro hide_description(id) %}Ocultar descripción de la Figura {{ id }}{% endmacro %}
 
 {% block written_by_before %}Escrito por{% endblock %}
 {% block reviewed_by_before %}Revisado por{% endblock %}

@@ -5,7 +5,7 @@
 {% block twitter_image_alt %}Web Almanac {{ year }}{% endblock %}
 
 {% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-05-20T00:00:00.000Z{% endblock %}
+{% block date_modified %}2020-05-27T00:00:00.000Z{% endblock %}
 
 {% block breadcrumb_name_1 %}Page d’accueil {{ year }}{% endblock %}
 {% block breadcrumb_name_2 %}{% endblock %}
@@ -49,6 +49,9 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 
 {% block open %}Ouvrez{% endblock %}
 {% block close %}Fermez{% endblock %}
+
+{% macro show_description(id) %}Afficher la description de la figure {{ id }}{% endmacro %}
+{% macro hide_description(id) %}Masquer la description de la figure  {{ id }}{% endmacro %}
 
 {% block written_by_before %}Écrit par{% endblock %}
 {% block reviewed_by_before %}Relu par{% endblock %}

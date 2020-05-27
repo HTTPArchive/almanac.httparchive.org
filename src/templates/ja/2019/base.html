@@ -5,7 +5,7 @@
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
 {% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-05-20T00:00:00.000Z{% endblock %}
+{% block date_modified %}2020-05-27T00:00:00.000Z{% endblock %}
 
 {% block breadcrumb_name_1 %}{{ year }} ホーム{% endblock %}
 {% block breadcrumb_name_2 %}{% endblock %}
@@ -59,6 +59,9 @@
 
 {% block author %}著者{% endblock %}
 {% block authors %}著者{% endblock %}
+
+{% macro show_description(id) %}図{{ id }}の説明を表示{% endmacro %}
+{% macro hide_description(id) %}図{{ id }}の説明を非表示{% endmacro %}
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}

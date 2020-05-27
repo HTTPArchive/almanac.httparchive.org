@@ -33,3 +33,7 @@ figure iframe.video-embed {
 figure .video-fallback-image {
     display: block;
 }
+
+.fig-description-button {
+    display: none;
+}
