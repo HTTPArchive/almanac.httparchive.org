@@ -35,13 +35,13 @@ Le principal objectif d’une page web est de fournir du contenu avec lequel les
 
 Il existe de nombreux cas où les visiteurs de votre site peuvent ne pas le voir parfaitement. Les visiteurs peuvent être daltoniens et être dans l’impossibilité de faire la distinction entre la police et la couleur d’arrière-plan ([1 homme sur 12 et 1 femme sur 200](http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf) en Europe). Peut-être qu’ils lisent simplement en extérieur avec un soleil créant des tonnes de reflets sur leur écran — ce qui nuit considérablement à leur vision. Ou peut-être qu’ils ont simplement vieilli et que leurs yeux ne peuvent pas distinguer les couleurs aussi bien qu’auparavant.
 
-Afin de vous assurer que votre site web soit lisible dans ces conditions, un contraste de couleur suffisant entre le texte et son arrière-plan est capital.
+Afin de vous assurer que votre site web soit lisible dans ces conditions, un contraste de couleur suffisant entre le texte et son arrière-plan est capital. また、色がグレースケールに変換されるときにどのようなコントラストが表示されるかを考慮することも重要です。
 
 <figure>
-  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img alt="Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600" height="278">
+  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
+    <img alt="Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
   </a>
-  <div id="fig1-description" class="visually-hidden">Quatre boîtes colorées de nuances orange et grises avec, par-dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond orange écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan orange est écrite comme `#F56905`. La zone supérieure de chaque colonne a un fond orange avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Le fond gris montre la couleur orange en niveaux de gris. Gracieusement mis à disposition par LookZook</div>
+  <div id="fig1-description" class="visually-hidden">Quatre boîtes colorées de nuances marron et grises avec, par-dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond marron écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan marron est écrite comme `#BD5B0E`. La zone supérieure de chaque colonne a un fond marron avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Gracieusement mis à disposition par LookZook</div>
   <figcaption id="fig1-caption">Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook</figcaption>
 </figure>
 

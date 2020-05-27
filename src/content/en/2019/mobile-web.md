@@ -139,11 +139,11 @@ When designing our sites we tend to be in more optimal conditions, and have far 
 To help us mitigate this problem, there are [accessibility guidelines](https://dequeuniversity.com/rules/axe/2.2/color-contrast) we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
 
 <figure>
-  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="650" height="300">
+  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
+    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
   </a>
-  <div id="fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is <code>#FFFFFF</code>, the light shade of orange background is <code>#FCA469</code>, and the recommended shade of orange background is <code>#F56905</code>. Image courtesy of LookZook</div>
-  <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
+  <div id="fig4-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is <code>#FFFFFF</code>, the light shade of brown background is <code>#FCA469</code>, and the recommended shade of brown background is <code>#BD5B0E</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Image courtesy of LookZook</div>
+  <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook.</figcaption>
 </figure>
 
 For colorblindness stats for other demographics, see [this paper](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf).
