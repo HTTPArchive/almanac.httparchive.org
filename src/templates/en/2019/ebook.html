@@ -4330,7 +4330,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"II","chapter_number":9,"title":"Accessibility","description":"Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":null,"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11","last_updated":"2020-03-02","chapter":"accessibility"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"II","chapter_number":9,"title":"Accessibility","description":"Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":null,"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11","last_updated":"2020-05-27","chapter":"accessibility"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -4375,12 +4375,14 @@
     <p>
       There are many cases where visitors to your site may not be able see it perfectly. Visitors may be colorblind and unable to distinguish between the font and background color (<a href="http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf">1 in every 12 men and 1 in 200 women<span class="fn">http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf</span></a> of European descent). Perhaps they're simply reading while the sun is out and creating tons of glare on their screen—significantly impairing their vision. Or maybe they've just grown older and their eyes can't distinguish colors as well as they used to.
     </p>
-    <p>In order to make sure your website is readable under these conditions, making sure your text has sufficient color contrast with its background is critical.</p>
+    <p>In order to make sure your website is readable under these conditions, making sure your text has sufficient color contrast with its background is critical. It is also important to consider what contrasts will be shown when the colors are converted to grayscale.</p>
     <figure id="accessibility-fig-1">
-      <a href="https://almanac.httparchive.org/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
-        <img alt="Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="accessibility-fig1-caption" aria-describedby="accessibility-fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600" height="278" />
+      <a href="https://almanac.httparchive.org/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
+        <img alt="Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="accessibility-fig1-caption" aria-describedby="accessibility-fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300" />
       </a>
-      <div id="accessibility-fig1-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the orange background color written as #FCA469. The right column says Recommended and the orange background color is written as #F56905. The top box in each column has an orange background with white text #FFFFFF and the bottom box has a gray background with white text #FFFFFF. The grey background shows the orange color in greyscale. Courtesy of LookZook.</div>
+      <div id="accessibility-fig1-description" class="visually-hidden">
+        Four colored boxes of brown and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the brown background color written as <coce>#FCA469. The right column says Recommended and the brown background color is written as <code>#BD5B0E</code>. The top box in each column has an brown background with white text <code>#FFFFFF</code> and the bottom box has a gray background with white text <code>#FFFFFF</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Courtesy of LookZook</coce>
+      </div>
       <figcaption id="accessibility-fig1-caption"><a href="#accessibility-fig-1" class="anchor-link">Figure 1.</a> Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
     </figure>
     <p>Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.</p>
@@ -5435,7 +5437,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":null,"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11","last_updated":"2020-05-20","chapter":"mobile-web"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":null,"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11","last_updated":"2020-05-27","chapter":"mobile-web"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -5592,11 +5594,11 @@
       To help us mitigate this problem, there are <a href="https://dequeuniversity.com/rules/axe/2.2/color-contrast">accessibility guidelines<span class="fn">https://dequeuniversity.com/rules/axe/2.2/color-contrast</span></a> we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
     </p>
     <figure id="mobile-web-fig-4">
-      <a href="https://almanac.httparchive.org/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
-        <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="mobile-web-fig4-caption" aria-describedby="mobile-web-fig4-description" width="650" height="300" />
+      <a href="https://almanac.httparchive.org/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
+        <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook." aria-labelledby="mobile-web-fig4-caption" aria-describedby="mobile-web-fig4-description" width="568" height="300" />
       </a>
-      <div id="mobile-web-fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is <code>#FFFFFF</code>, the light shade of orange background is <code>#FCA469</code>, and the recommended shade of orange background is <code>#F56905</code>. Image courtesy of LookZook</div>
-      <figcaption id="mobile-web-fig4-caption"><a href="#mobile-web-fig-4" class="anchor-link">Figure 4.</a> Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
+      <div id="mobile-web-fig4-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is <code>#FFFFFF</code>, the light shade of brown background is <code>#FCA469</code>, and the recommended shade of brown background is <code>#BD5B0E</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Image courtesy of LookZook</div>
+      <figcaption id="mobile-web-fig4-caption"><a href="#mobile-web-fig-4" class="anchor-link">Figure 4.</a> Example of what text with insufficient color contrast looks like. Courtesy of LookZook.</figcaption>
     </figure>
     <p>
       For colorblindness stats for other demographics, see <a href="https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf">this paper<span class="fn">https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf</span></a
