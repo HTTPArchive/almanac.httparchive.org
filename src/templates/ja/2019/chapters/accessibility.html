@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":9,"title":"アクセシビリティ","description":"読みやすさ、メディア、操作性の容易さ、および支援技術とその互換性をカバーする2019 Web Almanacアクセシビリティの章。","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":["MSakamaki"],"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-01T00:00:00.000Z","chapter":"accessibility"} %} {% block index %}
+{% set metadata = {"part_number":"II","chapter_number":9,"title":"アクセシビリティ","description":"読みやすさ、メディア、操作性の容易さ、および支援技術とその互換性をカバーする2019 Web Almanacアクセシビリティの章。","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":["MSakamaki"],"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-27T00:00:00.000Z","chapter":"accessibility"} %} {% block index %}
 <ul>
   <li>
     <a href="#導入">導入</a>
@@ -159,10 +159,10 @@
 <p>あなたのサイトの訪問者が完璧な内容を見ることができない、さまざまな可能性があります。訪問者は色覚多様性を持ち、フォントと背景色を区別できない場合があります（ヨーロッパ系の<a href="http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf">男性12人に1人、女性200人に1人</a>）。おそらく、彼らは太陽の下で画面の明るさを最大にして読んでいるため、視力を著しく損なっているのでしょう。もしくは年をとってしまい、彼らの目が以前と同じように色を区別できなくなったのでしょう。</p>
 <p>このような条件下であっても、あなたのWebサイトが確実に読めるようにするため、テキストと背景で十分な色のコントラストがあることを確認することは重要です。</p>
 <figure id="fig-1">
-  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img alt="図1.色のコントラストが不十分なテキストの表示例 LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.png" width="600" height="278" loading="lazy" />
+  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
+    <img alt="図1.色のコントラストが不十分なテキストの表示例 LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300" loading="lazy" />
   </a>
-  <div id="fig1-description" class="visually-hidden">オレンジとグレー4色のボックスに白いテキストがあり、2列に並んでいます。左の列は、色の薄い、#FCA469と書かれたオレンジ色の背景色があります。右の列は、推奨と表示されており、オレンジ色の背景色に#F56905と書かれています。各列の上のボックスには白いテキスト#FFFFFFにオレンジ色の背景で、下のボックスは灰色の背景に白いテキスト#FFFFFFとなっています。灰色の背景は、オレンジ色をグレースケールにしたものです。LookZook提供。</div>
+  <div id="fig1-description" class="visually-hidden">褐色とグレー4色のボックスに白いテキストがあり、2列に並んでいます。左の列は、色の薄い、<code>#FCA469</code>と書かれた褐色色の背景色があります。右の列は、推奨と表示されており、褐色色の背景色に<code>#BD5B0E</code>と書かれています。各列の上のボックスには白いテキスト#FFFFFFに褐色色の背景で、下のボックスは灰色の背景に白いテキスト#FFFFFFとなっています。同等のグレースケールは、それぞれ<code>＃B8B8B8</code>および<code>＃707070</code>です。LookZook提供。</div>
   <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">図 1.</a>色のコントラストが不十分なテキストの表示例 LookZook提供</figcaption>
 </figure>
 <p>すべてのテキストに十分な色のコントラストが適用されているサイトは22.04％のみでした。これは言い換えると、5つのサイトのうち4つは背景に溶け込んで読みにくいテキストを持っていると言うことです。</p>

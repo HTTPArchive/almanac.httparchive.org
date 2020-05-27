@@ -10,7 +10,7 @@ discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-20T00:00:00.000Z
+last_updated: 2020-05-27T00:00:00.000Z
 ---
 
 ## 序章Introduction
@@ -62,7 +62,7 @@ last_updated: 2020-05-20T00:00:00.000Z
   <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
     <img src="/static/images/2019/mobile-web/fig2.png" alt="図2. JS がロードされるのを待つのがいかに苦痛であるかの例。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="610" height="343" loading="lazy">
   </a>
-  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページには、ビデオ全体でボタンを繰り返したたく図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎるにつれて幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了</div>
+  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページは、ビデオ全体でボタンを繰り返しタップする図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎると幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了します。</div>
   <figcaption id="fig2-caption">図2. JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
 </figure>
 
@@ -139,10 +139,10 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 この問題を軽減するために、テキストや背景色を選択する際に従うことのできる[アクセシビリティ・ガイドライン](https://dequeuniversity.com/rules/axe/2.2/color-contrast)があります。では、これらの基準を満たすにはどうすればよいのでしょうか？　すべてのテキストに十分な色のコントラストを与えているサイトは22.04％にすぎません。この値は実際には下限値であり、背景が無地のテキストのみを分析したためです。画像やグラデーションの背景は分析できませんでした。
 
 <figure>
-  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.png" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="650" height="300">
+  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
+    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
   </a>
-  <div id="fig4-description" class="visually-hidden">オレンジとグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、オレンジ色の背景の薄い色合いは<code>#FCA469</code>、オレンジ色の背景の推奨色合いは<code>#F56905</code>となっています。画像提供：LookZook</div>
+  <div id="fig4-description" class="visually-hidden">褐色とグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、褐色色の背景の薄い色合いは<code>#FCA469</code>、褐色色の背景の推奨色合いは<code>#BD5B0E</code>となっています。同等のグレースケールは、それぞれ<code>＃B8B8B8</code>および<code>＃707070</code>です。画像提供：LookZook</div>
   <figcaption id="fig4-caption">図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook</figcaption>
 </figure>
 
