@@ -5,7 +5,7 @@
 // Against git if you want to. 
 const fs = require('fs-extra');
 const { execSync } = require('child_process');
-const { find_files } = require('./shared');
+const { find_markdown_files } = require('./shared');
 const { find_template_files } = require('./shared');
 
 const generate_last_updated = async () => {
@@ -20,7 +20,7 @@ const generate_last_updated = async () => {
     return
   }
 
-  for (const file of await find_files()) {
+  for (const file of await find_markdown_files()) {
     console.log(`\n Setting the last_updated field on ${file}`);
 
     // Fetch the last modified date, according to the git log.

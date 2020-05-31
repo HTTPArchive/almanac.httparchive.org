@@ -29,14 +29,14 @@ const update_links = (chapter) => {
   return body;
 }
 
-const generate_ebooks = async (ebook_chapters) => {
+const generate_ebooks = async (ebook_chapters,configs) => {
 
   // Get distinct years
   const years = [...new Set(ebook_chapters.map((x) => `${x.year}`))];
 
   for (const year of years) {
 
-    let config = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
+    const config = configs[year];
 
     const languages = config.settings[0].ebook_languages;
 
