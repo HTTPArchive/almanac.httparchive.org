@@ -15,8 +15,7 @@
   "homepage": "https://github.com/HTTPArchive/almanac.httparchive.org#readme",
   "scripts": {
     "generate": "node ./tools/generate",
-    "ebook_2019_en": "prince http://127.0.0.1:8080/en/2019/ebook?print -o static/pdfs/web_almanac_2019_en.pdf --pdf-profile='PDF/UA-1'",
-    "ebook_2019_ja": "prince http://127.0.0.1:8080/ja/2019/ebook?print -o static/pdfs/web_almanac_2019_ja.pdf --pdf-profile='PDF/UA-1'",
+    "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version"
   },
   "devDependencies": {

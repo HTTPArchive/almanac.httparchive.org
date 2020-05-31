@@ -37,7 +37,6 @@ const generate_ebooks = async (ebook_chapters,configs) => {
   for (const year of years) {
 
     const config = configs[year];
-
     const languages = config.settings[0].ebook_languages;
 
     for (let language of languages) {
