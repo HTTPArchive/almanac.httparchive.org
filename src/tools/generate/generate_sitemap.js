@@ -62,14 +62,14 @@ const get_static_pages = async (sitemap_chapters) => {
       urls.push({ url, lastmod });
     }
   }
-  
+
   // For ebooks find out if the PDF exists, get lastmod from template
   const years = [...new Set(sitemap_chapters.map((x) => `${x.year}`))];
   const languages = [...new Set(sitemap_chapters.map((x) => `${x.language}`))];
   for (const year of years) {
     for (const language of languages) {
-      const ebook_pdf = ebook_path.concat(year,'_',language,'.pdf');
-      const ebook_html = 'templates/'.concat(language,'/',year,'/ebook.html');
+      const ebook_pdf = ebook_path + year + '_' + language + '.pdf';
+      const ebook_html = 'templates/' + language + '/' + year + '/ebook.html';
       if (fs.existsSync(ebook_pdf)) {
         if (fs.existsSync(ebook_html)) {
           const file = await fs.readFile(ebook_html, 'utf-8');
