@@ -4,11 +4,6 @@ const prettier = require('prettier');
 
 const { size_of } = require('./shared');
 
-// TODO: Make this more dynamic.
-const ebooks_to_generate = {
-  '2019': ['en','ja']
-};
-
 const update_links = (chapter) => {
   let body = chapter.body;
   // Replace current chapter links to full anchor link (e.g. #introduction -> #javascript-introduction)
@@ -35,8 +30,15 @@ const update_links = (chapter) => {
 }
 
 const generate_ebooks = async (ebook_chapters) => {
-  for (let [year, languages] of Object.entries(ebooks_to_generate)) {
+
+  // Get distinct years
+  const years = [...new Set(ebook_chapters.map((x) => `${x.year}`))];
+
+  for (const year of years) {
+
     let config = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
+
+    const languages = config.settings[0].ebook_languages;
 
     for (let language of languages) {
       let ebook = { language, config, toc: [], parts: [] };

@@ -23,6 +23,7 @@ converter.setOption('tablesHeaderId', false);
 converter.setOption('ghMentions', false);
 
 const generate_chapters = async () => {
+  
   let sitemap = [];
   let ebook_chapters = [];
 
@@ -49,10 +50,10 @@ const generate_chapters = async () => {
     }
   }
 
+  await generate_ebooks(ebook_chapters);
+
   const sitemap_path = await generate_sitemap(sitemap);
   await size_of(sitemap_path);
-
-  await generate_ebooks(ebook_chapters);
 };
 
 const parse_file = async (markdown,chapter) => {
