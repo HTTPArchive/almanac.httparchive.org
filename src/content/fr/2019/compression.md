@@ -5,6 +5,7 @@ title: Compression
 description: Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.
 authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
+translators: [allemas]
 translators: []
 discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
@@ -15,46 +16,47 @@ last_updated: 2020-05-19T00:00:00.000Z
 
 ## Introduction
 
-HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client's available bandwidth, reduces [page weight](./page-weight), and improves [web performance](./performance).
+La compression HTTP est une technique qui permet de coder des informations en utilisant moins de bits que la représentation originale. Lorsqu'il est utilisé pour la diffusion de contenu web, il permet aux serveurs web de réduire la quantité de données transmises aux clients.
+Cela augmente l'efficacité de la bande passante disponible du client, réduit [le poids des pages](./page-weight), et améliore [les performances web](./performance).
 
-Compression algorithms are often categorized as lossy or lossless: 
+Les algorithmes de compression sont souvent classés comme perdants ou sans perte :
 
-*   When a lossy compression algorithm is used, the process is irreversible, and the original file cannot be restored via decompression. This is commonly used to compress media resources, such as image and video content where losing some data will not materially affect the resource.
-*   Lossless compression is a completely reversible process, and is commonly used to compress text based resources, such as [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc. 
+*  Lorsqu'un algorithme de compression est utilisé et subit des pertes, le processus est irréversible et le fichier original ne peut pas être restauré par décompression. Cette méthode est couramment utilisée pour comprimer les ressources médiatiques, telles que les images et les contenus vidéo, lorsque la perte de certaines données n'affecte pas matériellement la ressource.
+*  La compression sans perte est un processus entièrement réversible, et est couramment utilisée pour comprimer les ressources textuelles, comme [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
 
-In this chapter, we are going to explore how text-based content is compressed on the web. Analysis of non-text-based content forms part of the [Media](./media) chapter.
+Dans ce chapitre, nous allons examiner comment le contenu textuel est compressé sur le web. L'analyse des contenus non textuels fait partie de la [Media](./media).
 
 
-## How HTTP compression works
+## Comment fonctionne la compression HTTP
 
-When a client makes an HTTP request, it often includes an [`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) header to advertise the compression algorithms it is capable of decoding. The server can then select from one of the advertised encodings it supports and serve a compressed response. The compressed response would include a [`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) header so that the client is aware of which compression was used. Additionally, a [`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) header is often used to indicate the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the resource being served. 
+Lorsqu'un client effectue une requête HTTP, celle-ci comprend souvent un header [`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) pour communiqer les algorithmes de compression qu'il est capable de décoder. Le serveur peut alors choisir l'un des codages annoncés qu'il prend en charge et servir une réponse compressée. La réponse compressée comprendra un header [`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)  afin que le client sache quelle compression a été utilisée. En outre, un header [`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) est souvent utilisé pour indiquer le [type MIME](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) de la ressource desservie.
 
-In the example below, the client advertised support for gzip, brotli, and deflate compression. The server decided to return a gzip compressed response containing a `text/html` document.
-
+Dans l'exemple ci-dessous, le client indique qu'il supporte de la compression gzip, brotli et deflate et le serveur a décidé de renvoyer une réponse compressée gzip contenant un document `text/html`.
 
 ```
     > GET / HTTP/1.1
     > Host: httparchive.org
     > Accept-Encoding: gzip, deflate, br
 
-    < HTTP/1.1 200  
+    < HTTP/1.1 200
     < Content-type: text/html; charset=utf-8
     < Content-encoding: gzip
 ```
 
+The HTTP Archive contient des mesures pour 5,3 millions de sites web, et chaque site a chargé au moins une ressource texte compressée sur sa page d'accueil. En outre, les ressources ont été compressées dans le domaine principal sur 81 % des sites web.
 
-The HTTP Archive contains measurements for 5.3 million web sites, and each site loaded at least 1 compressed text resource on their home page. Additionally, resources were compressed on the primary domain on 81% of web sites.
+## Algorithmes de compression
+
+L'IANA tient à jour une [liste des encodages de contenu HTTP valide](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) qui peuvent être utilisés avec les header "Accept-Encoding" et "Content-Encoding". Il s'agit notamment de gzip, deflate, br (brotli), ainsi que de quelques autres. De brèves descriptions de ces algorithmes sont données ci-dessous :
 
 
-## Compression algorithms
+*   [Gzip](https://tools.ietf.org/html/rfc1952) utilise les techniques de compression [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) et  [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) qui sont plus ancienes que le web lui-même.  Il a été développé à l'origine pour le programme gzip d'UNIX en 1992. Une implémentation pour la diffusion sur le web existe depuis HTTP/1.1, et la plupart des navigateurs et clients web la prennent en charge.
+*   [Deflate](https://tools.ietf.org/html/rfc1951) utilise le même algorithme que gzip, mais avec un conteneur différent. Son utilisation n'a pas été largement adoptée pour le web pour des raisons de [questions de compatibilité](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) avec d'autres serveurs et navigateurs.
+*   [Brotli](https://tools.ietf.org/html/rfc7932) est un algorithme de compression plus récent qui a été [inventé par Google](https://github.com/google/brotli). Il utilise la combinaison d'une variante moderne de l'algorithme LZ77, le codage de Huffman et la modélisation du contexte du second ordre.
 
-IANA maintains a [list of valid HTTP content encodings](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) that can be used with the `Accept-Encoding` and `Content-Encoding` headers. These include gzip, deflate, br (brotli), as well as a few others. Brief descriptions of these algorithms are given below:
+La compression via brotli est plus coûteuse en termes de calcul par rapport à gzip, mais l'algorithme est capable de réduire les fichiers de [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) plus que la compression gzip. Brotli a été utilisé pour la première fois pour la compression de contenu web en 2015 et est [supporté par tous les navigateurs web modernes](https://caniuse.com/#feat=brotli).
 
-*   [Gzip](https://tools.ietf.org/html/rfc1952) uses the [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) and [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) compression techniques, and is older than the web itself. It was originally developed for the UNIX gzip program in 1992. An implementation for web delivery has existed since HTTP/1.1, and most web browsers and clients support it.
-*   [Deflate](https://tools.ietf.org/html/rfc1951) uses the same algorithm as gzip, just with a different container. Its use was not widely adopted for the web because of [compatibility issues](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) with some servers and browsers.
-*   [Brotli](https://tools.ietf.org/html/rfc7932) is a newer compression algorithm that was [invented by Google](https://github.com/google/brotli). It uses the combination of a modern variant of the LZ77 algorithm, Huffman coding, and second order context modeling. Compression via brotli is more computationally expensive compared to gzip, but the algorithm is able to reduce files by [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) more than gzip compression. Brotli was first used for compressing web content in 2015 and is [supported by all modern web browsers](https://caniuse.com/#feat=brotli).
-
-Approximately 38% of HTTP responses are delivered with text-based compression. This may seem like a surprising statistic, but keep in mind that it is based on all HTTP requests in the dataset. Some content, such as images, will not benefit from these compression algorithms. The table below summarizes the percentage of requests served with each content encoding.
+Environ 38 % des réponses HTTP sont fournies avec une compression de texte. Cette statistique peut sembler surprenante, mais n'oubliez pas qu'elle est basée sur toutes les requêtes HTTP de l'ensemble de données. Certains contenus, tels que les images, ne bénéficieront pas de ces algorithmes de compression. Le tableau ci-dessous résume le pourcentage de requêtes servies avec chaque codage de contenu.
 
 <figure>
   <table>
@@ -138,33 +140,35 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 1. Adoption of compression algorithms.</figcaption>
+  <figcaption>Figure 1. Adoption d'algorithmes de compression.</figcaption>
 </figure>
 
-Of the resources that are served compressed, the majority are using either gzip (80%) or brotli (20%). The other compression algorithms are infrequently used.
+Parmi les ressources qui sont servies compressées, la majorité utilise soit gzip (80%), soit brotli (20%). Les autres algorithmes de compression sont peu utilisés.
 
 <figure>
   <a href="/static/images/2019/compression/fig2.png">
-    <img src="/static/images/2019/compression/fig2.png" alt="Figure 2. Adoption of compression algorithms on desktop pages." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2052550005&amp;format=interactive">
+    <img src="/static/images/2019/compression/fig2.png" alt="Figure 2. Adoption d'algorithmes de compression sur les pages desktop." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2052550005&amp;format=interactive">
   </a>
   <div id="fig2-description" class="visually-hidden">Pie chart of the data table in Figure 1.</div>
   <figcaption id="fig2-caption">Figure 2. Adoption of compression algorithms on desktop pages.</figcaption>
 </figure>
 
-Additionally, there are 67K requests that return an invalid `Content-Encoding`, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.
+De plus, il y a 67K requetes qui renvoient un `Content-Encoding` invalide, tel que "none", "UTF-8", "base64", "text", etc. Ces ressources sont probablement servies sans compression.
 
-We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:
+Nous ne pouvons pas déterminer les niveaux de compression à partir des diagnostics recueillis par the HTTP Archive, mais la meilleure pratique pour compresser le contenu l'est :
 
-*   At a minimum, enable gzip compression level 6 for text based assets. This provides a fair trade-off between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)—though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
-*   If you can support brotli and precompress resources, then compress to brotli level 11.  This is more computationally expensive than gzip - so precompression is an absolute must to avoid delays. 
-*   If you can support brotli and are unable to precompress, then compress to brotli level 5. This level will result in smaller payloads compared to gzip, with a similar computational overhead.
+*   Au minimum, activez le niveau 6 de compression gzip pour les ressources textuelles. Cela permet un compromis équitable entre le coût de calcul et le taux de compression et est le [par défaut pour de nombreux serveurs web](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/) mais [Nginx se situe toujours par défaut au niveau 1, souvent trop bas](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
+*   Si vous pouvez prendre en charge  brotli et la précompression des ressources, alors compressez au niveau 11.  Cette méthode est plus coûteuse en termes de calcul que gzip - la précompression est donc absolument nécessaire pour éviter les délais.
+*   Si vous pouvez supporter le brotli et que vous ne pouvez pas le précompresser, alors compressez au niveau 5. Ce niveau se traduira par des charges utiles plus petites que celles de gzip, avec un surcoût de calcul similaire.
 
+## Quels types de contenus compressons-nous ?
 
-## What types of content are we compressing?
+La plupart des ressources textuelles (telles que HTML, CSS et JavaScript) peuvent bénéficier de la compression gzip ou brotli.
+Cependant, il n'est souvent pas nécessaire d'utiliser ces techniques de compression sur des ressources binaires, telles que les images, les vidéos et certaines polices Web, car leurs formats de fichiers sont déjà compressés.
 
-Most text based resources (such as HTML, CSS, and JavaScript) can benefit from gzip or brotli compression. However, it's often not necessary to use these compression techniques on binary resources, such as images, video, and some web fonts because their file formats are already compressed.
+Dans le graphique ci-dessous, les 25 premiers types de contenu sont affichés avec des tailles de boîte représentant le nombre relatif de demandes.
+La couleur de chaque boîte représente le nombre de ces ressources qui ont été servies compressées. La plupart des contenus médiatiques sont ombragés en orange, ce qui est attendu puisque gzip et brotli n'auraient que peu ou pas d'avantages pour eux. La plupart des contenus textuels sont ombrés en bleu pour indiquer qu'ils sont en cours de compression. Cependant, l'ombrage bleu clair de certains types de contenu indique qu'ils ne sont pas compressés de manière aussi cohérente que les autres.
 
-In the graph below, the top 25 content types are displayed with box sizes representing the relative number of requests. The color of each box represents how many of these resources were served compressed. Most of the media content is shaded orange, which is expected since gzip and brotli would have little to no benefit for them.  Most of the text content is shaded blue to indicate that they are being compressed. However, the light blue shading for some content types indicate that they are not compressed as consistently as the others. 
 
 <figure>
   <a href="/static/images/2019/compression/fig3.png">
@@ -224,11 +228,11 @@ The content types with the lowest compression rates include `application/json`, 
   <figcaption id="fig8-caption">Figure 8. Compression by content type as a percent for mobile.</figcaption>
 </figure>
 
-Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are `application/javascript`, `text/css` and `application/x-javascript`. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them. 
+Across all content types, gzip is the most popular compression algorithm. The newer brotli compression is used less frequently, and the content types where it appears most are `application/javascript`, `text/css` and `application/x-javascript`. This is likely due to CDNs that automatically apply brotli compression for traffic that passes through them.
 
 ## First-party vs third-party compression
 
-In the [Third Parties](./third-parties) chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content. 
+In the [Third Parties](./third-parties) chapter, we learned about third parties and their impact on performance. When we compare compression techniques between first and third parties, we can see that third-party content tends to be compressed more than first-party content.
 
 Additionally, the percentage of brotli compression is higher for third-party content. This is likely due to the number of resources served from the larger third parties that typically support brotli, such as Google and Facebook.
 
