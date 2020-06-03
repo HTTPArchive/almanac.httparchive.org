@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css?v=20200603105238">
+  <link rel="stylesheet" href="/static/css/2019.css?v=20200603181334">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -330,7 +330,7 @@
       {{ l }}
     </option>
     {% endfor %}
-    <option disabled="disabled">
+    <option disabled="disabled" aria-hidden="true">
       ────
     </option>
     <option value="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide">
