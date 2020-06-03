@@ -512,6 +512,10 @@ figure .fig-desktop {
   .index .index-box {
     max-height: 100%;
   }
+  .anchor-link {
+    padding-left: 0;
+    margin-left: 0;
+  }
   .anchor-link:hover::before,
   .anchor-link:focus::before {
     content: '';

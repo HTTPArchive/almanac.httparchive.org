@@ -97,7 +97,7 @@ def chapter_lang_exists(lang, year, chapter):
 
 
 def ebook_exists(lang, year):
-    return os.path.isfile('templates/%s/%s/ebook.html' % (lang, year))
+    return os.path.isfile('static/pdfs/web_almanac_%s_%s.pdf' % (year, lang))
 
 
 def get_view_args(lang=None, year=None):
