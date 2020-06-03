@@ -3,10 +3,7 @@ const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
 
-//Chapters may exist but not be ready to be launched so do not include in sitemap
-const sitemap_languages = ['en','es','fr','ja'];
-
-const { find_files, size_of, parse_array } = require('./shared');
+const { find_markdown_files, find_config_files, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
@@ -23,10 +20,24 @@ converter.setOption('tablesHeaderId', false);
 converter.setOption('ghMentions', false);
 
 const generate_chapters = async () => {
-  let sitemap = [];
-  let ebook_chapters = [];
 
-  for (const file of await find_files()) {
+  let sitemap = [];
+  let sitemap_languages = {};
+  let ebook_chapters = [];
+  let configs = {};
+  
+  for (const config_file of await find_config_files()) {
+    const re = (process.platform != 'win32') 
+                  ? /config\/([0-9]*).json/ 
+                  : /config\\([0-9]*).json/;
+    const [path,year] = config_file.match(re);
+    
+    configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
+    sitemap_languages[year] = configs[year].settings[0].supported_languages
+
+  }
+
+  for (const file of await find_markdown_files()) {
     const re = (process.platform != 'win32') 
                   ? /content\/(.*)\/(.*)\/(.*).md/ 
                   : /content\\(.*)\\(.*)\\(.*).md/;
@@ -37,7 +48,7 @@ const generate_chapters = async () => {
 
       const markdown = await fs.readFile(file, 'utf-8');
       const { metadata, body, toc } = await parse_file(markdown,chapter);
-      if ( sitemap_languages.includes(language) ) {
+      if ( sitemap_languages[year].includes(language) ) {
         sitemap.push({ language, year, chapter, metadata });
       }
       ebook_chapters.push({ language, year, chapter, metadata, body, toc });
@@ -49,10 +60,10 @@ const generate_chapters = async () => {
     }
   }
 
+  await generate_ebooks(ebook_chapters,configs);
+
   const sitemap_path = await generate_sitemap(sitemap);
   await size_of(sitemap_path);
-
-  await generate_ebooks(ebook_chapters);
 };
 
 const parse_file = async (markdown,chapter) => {

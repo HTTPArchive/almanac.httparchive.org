@@ -63,11 +63,8 @@ npm run generate
 4. To actually generate the ebooks, start your local server, then run the following:
 
 ```
-npm run ebook_2019_en
-npm run ebook_2019_ja
+npm run ebooks
 ```
-
-(TODO: make this a script to handle all languages and years at some point)
 
 It is also possible to generate the ebook from the website, with some optional params (e.g. to print it!)
 
@@ -79,7 +76,7 @@ Note `--pdf-profile='PDF/UA-1'` may not be needed if just intend to print.
 
 Params accepted are:
 
-- print - this ads left, right pages, footnotes, and sets roman numerals for front matter page numbers and adds footnotes. It is used by default when running `npm run ebook_2019_en` but we could change that if prefer a less print-like ebook.
+- print - this ads left, right pages, footnotes, and sets roman numerals for front matter page numbers and adds footnotes. It is used by default when running `npm run ebooks` but we could change that if prefer a less print-like ebook.
 - page-size - this allows you to override the default page size of A4
 - inside-margin - this allows you to set an inside margin for binding (e.g. on right for left hand pages and vice versa)
 
