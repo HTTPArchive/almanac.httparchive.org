@@ -9,6 +9,8 @@
 <style>
 .main {
   margin-bottom: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .contents-wrapper {
@@ -60,15 +62,42 @@
 .chapter a:focus {
   text-decoration: underline;
 }
+.anchor-link {
+    text-decoration: none;
+    padding-left: 30px;
+    margin-left: -30px;
+}
+.anchor-link:hover::before,
+.anchor-link:focus::before {
+  content: url('/static/images/link.svg');
+  content: url('/static/images/link.svg') / '';
+  left: -25px;
+  position: relative;
+  float: left;
+  width: 0px;
+  height: 0px;
+}
+
 @media (max-width: 600px) {
   .contents-wrapper {
     display: block;
+  }
+  .main {
+    padding-left: 0;
+    padding-right: 0;
   }
   .parts {
     max-width: 100%;
   }
   .characters {
     display: none;
+  }
+  .anchor-link {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .anchor-link:hover::before, .anchor-link:focus::before {
+    content: '';
   }
 }
 </style>
@@ -79,7 +108,7 @@
   <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
 
   <section>
-    <h2>{{ self.foreword_title() }}</h2>
+    <h2 id="forward"><a href="#forward" class="anchor-link">{{ self.foreword_title() }}</a></h2>
     {{ self.foreword() }}
   </section>
 
@@ -87,7 +116,7 @@
     <div class="parts">
       {% for part_config in config.outline %}
         <section class="part">
-          <h2 class="part-name">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</h2>
+          <h2 id="part-{{ part_config.part_number }}" class="part-name"><a href="#part-{{ part_config.part_number }}" class="anchor-link">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</a></h2>
           <div class="chapters">
             {% for chapter_config in part_config.chapters %}
               <div class="chapter">
@@ -110,7 +139,7 @@
         </section>
       {% endfor %}
       <section class="part">
-        <h2 class="part-name">{{ self.appendices() }}</h2>
+        <h2 id="appendices" class="part-name"><a href="#appendices" class="anchor-link">{{ self.appendices() }}</a></h2>
         <div class="chapters">
           <div class="chapter">
             <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
@@ -122,14 +151,17 @@
       </section>
     </div>
 
-    <div id="ebook-download">
-      {% if ebook_exists(lang, year) %}
-      <p>
-        <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a><br>
-        <small>{{ self.ebook_download_note() }}</small>
-      </p>
-      {% endif %}
-    </div>
+    {% if ebook_exists(lang, year) %}
+    <section class="part">
+      <h2 id="ebook" class="part-name"><a href="#ebook" class="anchor-link">{{ self.ebook_title() }}</a></h2>
+      <div class="chapters">
+        <div id="ebook-download" class="chapter">
+          <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a><br>
+          <small>{{ self.ebook_download_note() }}</small>
+        </div>
+      </div>
+    </section>
+    {% endif %}
 
     <div class="characters">
       <img class="character" src="/static/images/character-painter.png" alt="" loading="lazy" height="202" width="226" />
