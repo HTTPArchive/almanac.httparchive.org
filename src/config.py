@@ -50,7 +50,7 @@ def get_languages(json_config):
 
 def get_live(json_config):
   is_live = False
-  data = get_entries_from_json(json_config,'settings','isLive')
+  data = get_entries_from_json(json_config,'settings','is_live')
   for list in data:
     if list == True:
       is_live = True

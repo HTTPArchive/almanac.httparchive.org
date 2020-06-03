@@ -11,6 +11,7 @@ const static_pages = [
   'contributors.html',
   'accessibility_statement.html'
 ];
+const ebook_path = "static/pdfs/web_almanac_";
 
 const generate_sitemap = async (sitemap_chapters) => {
 
@@ -39,6 +40,7 @@ const generate_sitemap = async (sitemap_chapters) => {
 };
 
 const get_static_pages = async (sitemap_chapters) => {
+
   // Get distinct languages and years
   const languages_and_years = [...new Set(sitemap_chapters.map((x) => `${x.language}/${x.year}`))];
 
@@ -58,6 +60,25 @@ const get_static_pages = async (sitemap_chapters) => {
       const url = convert_file_name(loc);
 
       urls.push({ url, lastmod });
+    }
+  }
+
+  // For ebooks find out if the PDF exists, get lastmod from template
+  const years = [...new Set(sitemap_chapters.map((x) => `${x.year}`))];
+  const languages = [...new Set(sitemap_chapters.map((x) => `${x.language}`))];
+  for (const year of years) {
+    for (const language of languages) {
+      const ebook_pdf = ebook_path + year + '_' + language + '.pdf';
+      const ebook_html = 'templates/' + language + '/' + year + '/ebook.html';
+      if (fs.existsSync(ebook_pdf)) {
+        if (fs.existsSync(ebook_html)) {
+          const file = await fs.readFile(ebook_html, 'utf-8');
+          const match = file.match(/"last_updated":"([0-9\-\+\:T]*)/);
+          const lastmod = set_min_date(match[1]);
+          const url = ebook_pdf;
+          urls.push({ url, lastmod });
+        }
+      }
     }
   }
 
