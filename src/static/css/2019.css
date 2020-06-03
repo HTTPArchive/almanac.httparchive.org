@@ -588,6 +588,7 @@ header .cta {
 .language-switcher option,
 .year-switcher option {
   color: #1A2B49;
+  background-color: #F2F2F2;
 }
 
 .language-switcher:focus-within,
