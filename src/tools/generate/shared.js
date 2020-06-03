@@ -12,7 +12,7 @@ const find_template_files = async () => {
   return await recursive('templates', [filter]);
 };
 
-const find_files = async () => {
+const find_markdown_files = async () => {
   const filter = (file, stats) => {
     const isMd = file && file.endsWith('.md');
     const isDirectory = stats && stats.isDirectory();
@@ -21,6 +21,16 @@ const find_files = async () => {
   };
 
   return await recursive('content', [filter]);
+};
+
+const find_config_files = async () => {
+  const filter = (file, stats) => {
+    const isJSON = file && file.endsWith('.json')
+
+    return !isJSON;
+  };
+
+  return await recursive('config', [filter]);
 };
 
 const size_of = async (path) => {
@@ -45,8 +55,9 @@ const parse_array = (array_as_string) => {
 };
 
 module.exports = {
-  find_files,
+  find_markdown_files,
   find_template_files,
+  find_config_files,
   size_of,
   parse_array
 };
