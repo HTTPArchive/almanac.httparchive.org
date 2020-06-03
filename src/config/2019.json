@@ -1,13 +1,15 @@
 {
   "settings": [
     {
-      "isLive": true,
-      "supported_languages": ["en","es","fr","ja"]
+      "is_live": true,
+      "supported_languages": ["en","es","fr","ja"],
+      "ebook_languages": ["en","ja"]
     }
   ],
   "outline": [
     {
       "part": "I. Page Content",
+      "part_number": "1",
       "chapters": [
         {
           "part": "I",
@@ -49,6 +51,7 @@
     },
     {
       "part": "II. User Experience",
+      "part_number": "2",
       "chapters": [
         {
           "part": "II",
@@ -90,6 +93,7 @@
     },
     {
       "part": "III. Content Publishing",
+      "part_number": "3",
       "chapters": [
         {
           "part": "III",
@@ -107,6 +111,7 @@
     },
     {
       "part": "IV. Content Distribution",
+      "part_number": "4",
       "chapters": [
         {
           "part": "IV",
