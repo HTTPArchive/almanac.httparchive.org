@@ -41,6 +41,14 @@ If you're interested in contributing to the project, please follow the links abo
 - October 2020: Writing, editing, and translating content
 - November 2020: Publishing the 2020 edition
 
+## Where to find us
+
+We do almost all of our project planning here on GitHub. Browse the open [issues](https://github.com/HTTPArchive/almanac.httparchive.org/issues) to see what we're working on and what may be [suitable for new contributors](https://github.com/HTTPArchive/almanac.httparchive.org/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+
+We also have a [`#web-almanac`](https://join.slack.com/t/httparchive/shared_invite/zt-45sgwmnb-eDEatOhqssqNAKxxOSLAaA) channel on the HTTP Archive Slack where we chat about project updates.
+
+For news and announcements, follow [@HTTPArchive](https://twitter.com/HTTPArchive) on Twitter.
+
 ## [License](https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE)
 
 The Web Almanac is licensed under the Apache License 2.0.
