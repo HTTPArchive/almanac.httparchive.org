@@ -2,7 +2,7 @@
 part_number: IV
 chapter_number: 15
 title: Compression
-description: Chapitre sur la compression du Web Almanac 2019 couvrant la compression HTTP, les algorithmes, les types de contenu, la compression 1ere partie et tierce partie et les possibilités.
+description: Chapitre sur la compression par Web Almanac 2019, les algorithmes, les types de contenu, la compression 1ere partie et tierce partie et les possibilités.
 authors: [paulcalvano]
 reviewers: [obto, yoavweiss]
 translators: [allemas]
@@ -15,19 +15,19 @@ last_updated: 2020-05-19T00:00:00.000Z
 
 ## Introduction
 
-La compression HTTP est une technique qui permet de coder des informations en utilisant moins de bits que la représentation originale. Lorsqu'elle est utilisée pour la diffusion de contenu web, il permet aux serveurs web de réduire la quantité de données transmises aux clients. La compression HTTP augmente l'efficacité de la bande passante disponible au client, réduit [le poids des pages](./page-weight), et améliore [les performances web](./performance).
+La compression HTTP est une technique qui permet de coder des informations en utilisant moins de bits que la représentation originale. Lorsqu'elle est utilisée pour la diffusion de contenu web, elle permet aux serveurs web de réduire la quantité de données transmises aux clients. La compression HTTP augmente l'efficacité de la bande passante disponible au client, réduit [le poids des pages](./page-weight), et améliore [les performances web](./performance).
 
 Les algorithmes de compression sont souvent classés comme avec ou sans perte :
 
 *  Lorsqu'un algorithme de compression avec perte est utilisé , le processus est irréversible et le fichier original ne peut pas être restauré par décompression. Cette méthode est couramment utilisée pour comprimer les ressources medias, comme les images et les contenus vidéo, lorsque la perte de certaines données n'affecte pas sensiblement la ressource.
-*  La compression sans perte est un processus entièrement réversible, et est couramment utilisée pour comprimer les ressources textuelles, comme [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
+*  La compression sans perte est un processus entièrement réversible, et est couramment utilisée pour compresser les ressources textuelles, comme [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
 
-Dans ce chapitre, nous allons examiner comment le contenu textuel est compressé sur le web. L'analyse des contenus non textuels est traité dans le chapitre [Media](./media).
+Dans ce chapitre, nous allons analyser comment le contenu textuel est compressé sur le web. L'analyse des contenus non textuels est traité dans le chapitre [Media](./media).
 
 
 ## Comment fonctionne la compression HTTP
 
-Lorsqu'un client effectue une requête HTTP, celle-ci comprend souvent un header [`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) pour communiquer les algorithmes qu'il est capable de décoder. Le serveur peut alors choisir parmi eux un encodage pris en charge et servir une réponse compressée. La réponse compressée comprendra un header [`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) afin que le client sache quelle compression a été utilisée. En outre, le header [`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) est souvent utilisé pour indiquer le [type MIME](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) de la ressource servie.
+Lorsqu'un client effectue une requête HTTP, celle-ci comprend souvent un header [`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) pour communiquer les algorithmes qu'il est capable de décoder. Le serveur peut alors choisir parmi eux un encodage qu'il prend en charge et servir la réponse compressée. La réponse compressée comprendra un header [`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding) afin que le client sache quelle compression a été utilisée. En outre, le header [`Content-Type`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) est souvent utilisé pour indiquer le [type MIME](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) de la ressource servie.
 
 Dans l'exemple ci-dessous, le client indique supporter la compression gzip, brotli et deflate et le serveur a décidé de renvoyer une réponse compressée gzip contenant un document `text/html`.
 
@@ -230,7 +230,7 @@ Dans tous les types de contenu, gzip est l'algorithme de compression le plus pop
 
 ## Compression de première partie et tierce partie
 
-Dans le chapitre les [tierces parties](./third-parties), nous avons appris sur le rôle ses tiers et leur impact sur les performances. Lorsque nous comparons les techniques de compression entre les premières et les tierces parties, nous pouvons constater que le contenu des tierces parties a tendance à être plus compressé que le contenu des premières parties.
+Dans le chapitre les [tierces parties](./third-parties), nous avons appris le rôle des tiers et leur impact sur les performances. Lorsque nous comparons les techniques de compression entre les premières et les tierces parties, nous pouvons constater que le contenu des tierces parties a tendance à être plus compressé que le contenu des premières parties.
 
 En outre, le pourcentage de compression brotli est plus élevé pour les contenus tiers. Cela est probablement dû au nombre de ressources servies par les grands tiers qui soutiennent généralement le brotli, comme Google et Facebook.
 
@@ -300,7 +300,7 @@ L'outil Google [Lighthouse](https://developers.google.com/web/tools/lighthouse) 
     <img src="/static/images/2019/compression/ch15_fig8_lighthouse.jpg" alt="Illustration 10. Suggestions de compression Lighthouse" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="303">
   </a>
   <div id="fig10-description" class="visually-hidden">Une capture d'écran d'un rapport Lighthouse montrant une liste de ressources (avec les noms flouté) et montrant la taille et l'économie potentielle. Pour le premier élément, il y a une économie potentiellement importante de 91 KB à 73 KB, tandis que pour d'autres fichiers plus petits de 6 KB ou moins, il y a une économie plus faible de 4 KB à 1 KB.</div>
-  <figcaption id="fig10-caption">Illustration 10. Lighthouse compression suggestions.</figcaption>
+  <figcaption id="fig10-caption">Illustration 10. Lighthouse suggestions de compressions.</figcaption>
 </figure>
 
 Comme [HTTP Archive effectue des audits Lighthouse](./methodology#lighthouse) pour chaque page mobile, nous pouvons agréger les scores de tous les sites pour savoir dans quelle mesure il est possible de compresser davantage le contenu. Dans l'ensemble, 62 % des sites web ont réussi cet audit et près de 23 % des sites web ont obtenu une note inférieure à 40. Cela signifie que plus de 1,2 million de sites web pourraient bénéficier d'une compression du texte supplémentaire .
