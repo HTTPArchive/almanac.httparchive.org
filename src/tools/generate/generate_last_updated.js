@@ -61,7 +61,7 @@ const generate_last_updated = async () => {
 };
 
 const get_last_updated_date = (path) => {
-  const command = `git log origin/master -1 --date=iso-strict-local ${path} | cat`;
+  const command = `git log origin/main -1 --date=iso-strict-local ${path} | cat`;
   const stdout = execSync(command).toString();
   const date_string = /Date:\s+(\S*)/g.exec(stdout)[1];
   const date = new Date(date_string);

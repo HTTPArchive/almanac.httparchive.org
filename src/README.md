@@ -102,13 +102,13 @@ gcloud init
 git checkout production
 git status
 git pull
-git pull origin master
+git pull origin main
 git push
 ```
 
   - Check out the `production` branch
   - Run `git status` to ensure you don't have any uncommitted changes locally
-  - Merge any remote changes (both origin/production and origin/master branches)
+  - Merge any remote changes (both origin/production and origin/main branches)
   - Push the merge-commit back up to origin/production
 
 4. Browse the website locally as one final QA test, then deploy the changes live:
