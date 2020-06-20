@@ -49,6 +49,6 @@ We also have a [`#web-almanac`](https://join.slack.com/t/httparchive/shared_invi
 
 For news and announcements, follow [@HTTPArchive](https://twitter.com/HTTPArchive) on Twitter.
 
-## [License](https://github.com/HTTPArchive/almanac.httparchive.org/blob/master/LICENSE)
+## [License](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE)
 
 The Web Almanac is licensed under the Apache License 2.0.
