@@ -1,16 +1,16 @@
 # Updates timestamps, increments CSS, and then runs "npm run generate"
-# on any pushes to master for markdown, templates or generate scripts
+# on any pushes to main for markdown, templates or generate scripts
 #
 # Then we open a Pull Request for any changes generated.
 #
-# We do it on a push, rather than on pull request, and only on master to
+# We do it on a push, rather than on pull request, and only on main to
 # avoid needing GitHub Personal access tokens and to avoid merge conflicts
 #
 name: Generate Chapters on Push
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - src/content/**
       - src/templates/**

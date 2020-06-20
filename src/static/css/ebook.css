@@ -323,7 +323,6 @@ section.chapter {prince-pdf-tag-type: Art;}
   #toc a::after {
     content: leader('.') target-counter(attr(href), page);
   }
-}
 
   section h1 {
     string-set: chapter-title content();
