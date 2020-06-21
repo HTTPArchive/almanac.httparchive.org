@@ -4,24 +4,24 @@
 {% block image_height %}562{% endblock %}
 {% block image_width %}715{% endblock %}
 
-{% block breadcrumb %}
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "{{ self.breadcrumb_name_1() }}",
-        "item": "https://almanac.httparchive.org{{  url_for('home', year=year, lang=lang) }}"
-      }]
-    }
-    </script>
-{% endblock %}
-
 {% block styles %}
   {{ super() }}
   <link rel="stylesheet" href="/static/css/index.css?v=2">
+{% endblock %}
+
+{% block breadcrumb %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ lang }}",
+      "item": "https://almanac.httparchive.org/{{lang}}/"
+    }]
+  }
+</script>
 {% endblock %}
 
 {% block main %}
