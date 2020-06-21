@@ -10,7 +10,7 @@ discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-06-20T00:00:00.000Z
 ---
 
 ## Introduction
@@ -228,12 +228,12 @@ Despite the many benefits of CSP, it can be complicated to implement on websites
 We find that only 5.51% of desktop pages include a CSP and only 4.73% of mobile pages include a CSP, likely due to the complexity of deployment.
 
 #### Hash/nonce
-A common approach to CSP is to create a whitelist of 3rd party domains that are permitted to load content, such as JavaScript, into your pages. Creating and managing these whitelists can be difficult so [hashes](https://www.w3.org/TR/CSP2/#source-list-valid-hashes) and [nonces](https://www.w3.org/TR/CSP2/#source-list-valid-nonces) were introduced as an alternative approach. A hash is calculated based on contents of the script so if this is published by the website operator and the script is changed, or another script is added, then it will not match the hash and will be blocked. A nonce is a one-time code (which should be changed each time the page is loaded to prevent it being guessed) which is allowed by the CSP and which the script is tagged with. You can see an example of a nonce on this page by viewing the source to see how Google Tag Manager is loaded.
+A common approach to CSP is to create an allowlist of 3rd party domains that are permitted to load content, such as JavaScript, into your pages. Creating and managing these lists can be difficult so [hashes](https://www.w3.org/TR/CSP2/#source-list-valid-hashes) and [nonces](https://www.w3.org/TR/CSP2/#source-list-valid-nonces) were introduced as an alternative approach. A hash is calculated based on contents of the script so if this is published by the website operator and the script is changed, or another script is added, then it will not match the hash and will be blocked. A nonce is a one-time code (which should be changed each time the page is loaded to prevent it being guessed) which is allowed by the CSP and which the script is tagged with. You can see an example of a nonce on this page by viewing the source to see how Google Tag Manager is loaded.
 
 Of the sites surveyed only 0.09% of desktop pages use a nonce source and only 0.02% of desktop pages use a hash source. The number of mobile pages use a nonce source is slightly higher at 0.13% but the use of hash sources is lower on mobile pages at 0.01%.
 
 #### `strict-dynamic`
-The proposal of [`strict-dynamic`](https://www.w3.org/TR/CSP3/#strict-dynamic-usage) in the next iteration of [CSP](https://www.w3.org/TR/CSP3/) further reduces the burden on site operators for using CSP by allowing a whitelisted script to load further script dependencies. Despite the introduction of this feature, which already has [support in some modern browsers](https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic), only 0.03% of desktop pages and 0.1% of mobile pages include it in their policy.  
+The proposal of [`strict-dynamic`](https://www.w3.org/TR/CSP3/#strict-dynamic-usage) in the next iteration of [CSP](https://www.w3.org/TR/CSP3/) further reduces the burden on site operators for using CSP by allowing an approved script to load further script dependencies. Despite the introduction of this feature, which already has [support in some modern browsers](https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic), only 0.03% of desktop pages and 0.1% of mobile pages include it in their policy.  
 
 #### `trusted-types`
 XSS attacks come in various forms and [Trusted-Types](https://github.com/w3c/webappsec-trusted-types) was created to help specifically with DOM-XSS. Despite being an effective mechanism, our data shows that only 2 mobile and desktop pages use the Trusted-Types directive.
@@ -246,7 +246,7 @@ We mentioned earlier that a common problem that site operators face in their mig
 
 We showed earlier in figure 7 that, of the HTTPS pages surveyed on the desktop, 16.27% of them loaded mixed-content with 3.99% of pages loading active mixed-content like JS/CSS/fonts. On mobile pages we see 15.37% of HTTPS pages loading mixed-content with 4.13% loading active mixed-content. By loading active content such as JavaScript over HTTP an attacker can easily inject hostile code into the page to launch an attack. This is what the `upgrade-insecure-requests` directive in CSP protects against.
 
-The `upgrade-insecure-requests` directive is found in the CSP of 3.24% of desktop pages and 2.84% of mobile pages, indicating that an increase in adoption would provide substantial benefits. It could be introduced with relative ease, without requiring a fully locked-down CSP and the complexity that would entail, by whitelisting broad categories and including `unsafe-inline` and `unsafe-eval` with a policy like below:
+The `upgrade-insecure-requests` directive is found in the CSP of 3.24% of desktop pages and 2.84% of mobile pages, indicating that an increase in adoption would provide substantial benefits. It could be introduced with relative ease, without requiring a fully locked-down CSP and the complexity that would entail, by allowing broad categories with a policy like below, or even including `unsafe-inline` and `unsafe-eval`:
 
 ```
 Content-Security-Policy: upgrade-insecure-requests; default-src https:
