@@ -4,11 +4,6 @@
 {% block image_height %}562{% endblock %}
 {% block image_width %}715{% endblock %}
 
-{% block styles %}
-  {{ super() }}
-  <link rel="stylesheet" href="/static/css/index.css?v=2">
-{% endblock %}
-
 {% block breadcrumb %}
 <script type="application/ld+json">
   {
@@ -22,6 +17,11 @@
     }]
   }
 </script>
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/index.css?v=2">
 {% endblock %}
 
 {% block main %}
