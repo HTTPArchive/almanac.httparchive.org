@@ -458,6 +458,11 @@ h2.header {
   color: #f2f2f2;
 }
 
+.year-2020 .alt-bg {
+  background-color: black;
+  color: #f2f2f2;
+}
+
 a.navigation-logo {
   color: white;
   min-width: 280px;
@@ -494,6 +499,13 @@ header.alt-bg a:focus, footer.alt-bg a:focus {
   justify-content: space-between;
   align-items: center;
 }
+
+.year-2020 nav ul .toc,
+.year-2020 nav ul .contributors,
+.year-2020 nav ul .methodology {
+  display:none;
+}
+
 
 header nav ul, footer nav ul {
   display: flex;
@@ -541,7 +553,9 @@ header .cta {
 }
 
 .language-switcher:hover,
-.year-switcher:hover {
+.year-switcher:hover,
+.language-switcher::after:hover,
+.year-switcher::after:hover {
   color: #F7F779;
 }
 
@@ -578,6 +592,7 @@ header .cta {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;  
+  min-width: 100px;
 }
 
 .language-switcher select::-ms-expand,

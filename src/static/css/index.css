@@ -1,6 +1,6 @@
 header.alt-bg {
-  background: #5C687D;
-  background: transparent linear-gradient(#5C687D 70%, transparent 30%);
+  background: black;
+  background: transparent linear-gradient(black 70%, transparent 30%);
   /* background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat; */
   background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICBzdmd7YmFja2dyb3VuZDojZmZmfQ0KICAgICAgLmNscy0xe2ZpbGw6I2E4Y2FiYTtmaWxsLXJ1bGU6ZXZlbm9kZDtvcGFjaXR5Oi4wNX0NCiAgICA8L3N0eWxlPg0KICA8L2RlZnM+DQogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS0yMzEgODloMjA4OHY2NTFsLTIwODggMzYwVjg5eiIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPg0KICA8cGF0aCBkPSJNLTE0NC0xOWgyMDg4djY1MUwtMTQ0IDk5MlYtMTl6IiBmaWxsPSIjMWEyYjQ5IiBvcGFjaXR5PSIuNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwLTgzaDIwODh2NjUxTC00NzAgOTI4Vi04M3oiLz4NCiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4NCjwvc3ZnPg0K);
   background-position: bottom left;
@@ -12,10 +12,28 @@ header.alt-bg {
   margin-bottom: -52.94em;
 }
 
+.year-2020 header.alt-bg {
+  background: black;
+  /* background: transparent linear-gradient(black 70%, transparent 30%); */
+  /* background: transparent url(/static/images/intro-background-fit-2020.svg) bottom left / 100% 100% no-repeat; */
+  /* background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICBzdmd7YmFja2dyb3VuZDojZmZmfQ0KICAgICAgLmNscy0xe2ZpbGw6I2E4Y2FiYTtmaWxsLXJ1bGU6ZXZlbm9kZDtvcGFjaXR5Oi4wNX0NCiAgICA8L3N0eWxlPg0KICA8L2RlZnM+DQogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS0yMzEgODloMjA4OHY2NTFsLTIwODggMzYwVjg5eiIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPg0KICA8cGF0aCBkPSJNLTE0NC0xOWgyMDg4djY1MUwtMTQ0IDk5MlYtMTl6IiBmaWxsPSIjMWEyYjQ5IiBvcGFjaXR5PSIuNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwLTgzaDIwODh2NjUxTC00NzAgOTI4Vi04M3oiLz4NCiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4NCjwvc3ZnPg0K); */
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 714x;
+  padding-bottom: 42em;
+  margin-bottom: -714px;
+  margin-bottom: -42em;
+}
+
+.year-2020 .intro .btn {
+  display: none;
+}
+
 /* Add fall back background color in case SVG fails to load so text is still readable */
 header::after {
   content: "";
-  background: #5C687D;
+  background: black;
   top: 0;
   left: 0;
   bottom: 600px;
@@ -116,7 +134,8 @@ p {
   width: 86vw;
 }
 
-.intro-image-2019-wrapper {
+.intro-image-2019-wrapper,
+.intro-image-2020-wrapper {
   -ms-grid-column: 2;
   grid-area: image;
   width:100%;
@@ -124,6 +143,15 @@ p {
 
 .intro-image-2019 {
   background-image: url(/static/images/home-hero-2019.png);
+  background-size: cover;
+  max-height: 470px;
+  max-width: 458px;
+  height: 41vw;
+  width: 40vw;
+}
+
+.intro-image-2020 {
+  background-image: url(/static/images/home-hero-2020.png);
   background-size: cover;
   max-height: 470px;
   max-width: 458px;
@@ -351,7 +379,8 @@ p {
 
 @media (max-width: 900px) and (min-width: 601px) {
 
-  header.alt-bg {
+  header.alt-bg,
+  .year-2020 header.alt-bg {
     padding-bottom: 1800px;
     padding-bottom: 105.88em;
     margin-bottom: -1800px;
@@ -392,7 +421,8 @@ p {
     margin-top: 80px;
     margin-right: -46px;
   }
-  .intro-image-2019-wrapper {
+  .intro-image-2019-wrapper,
+  .intro-image-2020-wrapper {
     display: none;
   }
 
@@ -491,7 +521,8 @@ p {
 /* Mobile View */
 @media (max-width: 600px) {
 
-  header.alt-bg {
+  header.alt-bg,
+  .year-2020 header.alt-bg {
     background-size: cover;
     padding-bottom: 1650px;
     padding-bottom: 103.125em;
@@ -556,7 +587,8 @@ p {
     margin-right: -46px;
   }
 
-  .intro-image-2019-wrapper {
+  .intro-image-2019-wrapper,
+  .intro-image-2020-wrapper {
     display: none;
   }
 
