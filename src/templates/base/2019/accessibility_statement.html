@@ -18,6 +18,21 @@
 }
 {% endblock %}
 
+{% block breadcrumb %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ lang }}",
+      "item": "https://almanac.httparchive.org/{{lang}}/"
+    }]
+  }
+</script>
+{% endblock %}
+
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="/static/css/page.css?v=20200603172138">
