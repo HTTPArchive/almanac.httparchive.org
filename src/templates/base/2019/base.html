@@ -98,7 +98,7 @@
 
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
-{% block non_chapters_nav_links %}
+{% block non_chapter_nav_links %}
 <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
 <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
@@ -113,7 +113,7 @@
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
         <nav aria-label="{{ self.page_navigation() }}">
           <ul>
-            {{ self.non_chapters_nav_links() }}
+            {{ self.non_chapter_nav_links() }}
             <li>
               {{ year_switcher('header') }}
             </li>
@@ -129,7 +129,7 @@
             <span class="menu-btn__bar"></span>
           </button>
           <ul class="menu">
-            {{ self.non_chapters_nav_links() }}
+            {{ self.non_chapter_nav_links() }}
             <li>
             <li>
               {{ year_switcher('mobile') }}
@@ -186,7 +186,7 @@
       <hr>
       <nav aria-label="{{ self.footer_title() }}" class="nav-items">
         <ul>
-          {{ self.non_chapters_nav_links() }}
+          {{ self.non_chapter_nav_links() }}
           <li>
             {{ year_switcher('footer') }}
           </li>
