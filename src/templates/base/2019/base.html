@@ -256,27 +256,15 @@
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
       (function() {
-        // Language switching
-        var languageSwitchers = document.querySelectorAll('.language-switcher select');
-        for (var i = 0; i < languageSwitchers.length; i++) {
-          languageSwitchers[i].addEventListener('change', function(e) {
+        // Language and Year switching
+        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select');
+        for (var i = 0; i < languageYearSwitchers.length; i++) {
+          languageYearSwitchers[i].addEventListener('change', function(e) {
             //Reset the selector back in case user uses Back button
-            var selectedLanguage = e.target.value;
-            if (selectedLanguage && selectedLanguage !== window.location.pathname) {
+            var selectedValue = e.target.value;
+            if (selectedValue && selectedValue !== window.location.pathname) {
               e.target.value = window.location.pathname;
-              window.location = selectedLanguage;
-            }
-          });
-        }
-        // Year switching
-        var yearSwitchers = document.querySelectorAll('.year-switcher select');
-        for (var i = 0; i < yearSwitchers.length; i++) {
-          yearSwitchers[i].addEventListener('change', function(e) {
-            //Reset the selector back in case user uses Back button
-            var selectedYear = e.target.value;
-            if (selectedYear && selectedYear !== window.location.pathname) {
-              e.target.value = window.location.pathname;
-              window.location = selectedYear;
+              window.location = selectedValue;
             }
           });
         }
