@@ -350,7 +350,7 @@
               </option>
             {% endfor %}
             {# If the current page doesn't support a year, then show a home link for that year #}
-            {% if (supported_years | length < all_supported_years | length %}
+            {% if supported_years|length < all_supported_years|length %}
               <option disabled="disabled" aria-hidden="true">
                 ────
               </option>
