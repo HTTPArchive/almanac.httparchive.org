@@ -519,6 +519,10 @@ header nav li, footer nav li {
   line-height: 1.4em;
 }
 
+header nav li .year-switcher, header nav li .language-switcher {
+  margin-bottom: 4em;
+}
+
 header nav {
   display: flex;
   align-items: center;
@@ -553,9 +557,7 @@ header .cta {
 }
 
 .language-switcher:hover,
-.year-switcher:hover,
-.language-switcher::after:hover,
-.year-switcher::after:hover {
+.year-switcher:hover {
   color: #F7F779;
 }
 
