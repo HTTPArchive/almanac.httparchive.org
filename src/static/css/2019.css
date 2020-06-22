@@ -519,7 +519,7 @@ header nav li, footer nav li {
   line-height: 1.4em;
 }
 
-header nav li .year-switcher, header nav li .language-switcher {
+header nav .menu li .year-switcher, header nav .menu li .language-switcher {
   margin-bottom: 4em;
 }
 
