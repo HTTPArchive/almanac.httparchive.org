@@ -186,9 +186,7 @@
       <hr>
       <nav aria-label="{{ self.footer_title() }}" class="nav-items">
         <ul>
-          {% if year != '2020' %}
           {{ self.non_chapters_nav_links() }}
-          {% endif %}
           <li>
             {{ year_switcher('footer') }}
           </li>
