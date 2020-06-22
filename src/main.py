@@ -168,12 +168,8 @@ def add_footnote_links(html):
     return re.sub('href="http(.*?)"(.*?)>(.*?)<\/a>', 'href="http\\1"\\2>\\3<span class="fn">http\\1</span></a>', html)
 
 
-# This function takes a string and adds the footnote links for printing
+# This checks whether a requested year is live - used to control the year selector
 def year_live(year):
-    if (year in SUPPORTED_YEARS):
-        logging.debug('%s Yes! %s' % (year, SUPPORTED_YEARS))
-    else:
-        logging.debug('%s No :-( %s' % (year, SUPPORTED_YEARS))
     return year in SUPPORTED_YEARS
 
 
