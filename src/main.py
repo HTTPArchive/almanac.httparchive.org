@@ -66,7 +66,7 @@ def render_template(template, *args, **kwargs):
         else:
             return redirect(url_for('home', lang=lang, year=year))
 
-    # Although a langauge may be enabled, all templates may not have been translated yet
+    # Although a language may be enabled, all templates may not have been translated yet
     # So check if each language exists and only return languages for templates that do exist
     supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
     template_supported_languages = []
@@ -75,8 +75,8 @@ def render_template(template, *args, **kwargs):
         if (os.path.isfile(langTemplate)):
             template_supported_languages.append(l)
 
-    # Although a langauge may be enabled, all templates may not have been translated yet
-    # So check if each language exists and only return languages for templates that do exist
+    # Although a year may be enabled, all templates may not exist yet
+    # So check if each template exists and only return years for templates that do exist
     supported_years = SUPPORTED_YEARS
     template_supported_years = []
     for y in supported_years:
@@ -84,7 +84,7 @@ def render_template(template, *args, **kwargs):
         if (os.path.isfile(yearLangTemplate)):
             template_supported_years.append(y)
 
-    kwargs.update(supported_languages=template_supported_languages, year=year, lang=lang, language=language, supported_years=template_supported_years)
+    kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages, supported_years=template_supported_years)
     return flask_render_template(template, *args, **kwargs)
 
 

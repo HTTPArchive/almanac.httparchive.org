@@ -125,9 +125,9 @@
             <span class="menu-btn__bar"></span>
           </button>
           <ul class="menu">
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="toc">{{ self.table_of_contents_title() }}</a></li>
+            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}" class="contributors">{{ self.contributors_title() }}</a></li>
+            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}" class="methodology">{{ self.methodology_title() }}</a></li>
             <li>
             <li>
               {{ year_switcher('mobile') }}

@@ -500,12 +500,12 @@ header.alt-bg a:focus, footer.alt-bg a:focus {
   align-items: center;
 }
 
+.year-2020 .btn,
 .year-2020 nav ul .toc,
 .year-2020 nav ul .contributors,
 .year-2020 nav ul .methodology {
   display:none;
 }
-
 
 header nav ul, footer nav ul {
   display: flex;
