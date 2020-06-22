@@ -334,39 +334,39 @@
 </div>
 {% endmacro %}
 
-{% macro year_switcher(switcher_name) %}
-{# Only show if we currently support multi-year #}
-{% if year_live('2020') %}
-<div class="year-switcher">
-  <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
-  <select id="year-switcher-{{switcher_name}}">
-      {% for y in supported_years %}
-        <option
-          {% if y == year %}selected="selected"{% endif %}
-          value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-          {{ y }}
-        </option>
-      {% endfor %}
-      {# If the current page doesn't support a year, then show a home link for that year #}
-      {% if '2019' not in supported_years or '2020' not in supported_years %}
-      <option disabled="disabled" aria-hidden="true">
-        ────
-      </option>
-      {% endif %}
-      {% if '2019' not in supported_years %}
-      <option value="{{ url_for('home', lang=lang,year=2019) }}">
-        2019 {{ self.home() }}
-      </option>
-      {% endif %}
-      {% if '2020' not in supported_years %}
-      <option value="{{ url_for('home', lang=lang,year=2020) }}">
-        2020 {{ self.home() }}
-      </option>
-      {% endif %}
-  </select>
-</div>
+{# Check if year_switcher already defined in child template as macros can't be overridden #}
+{% if not year_switcher %}
+  {% macro year_switcher(switcher_name) %}
+    {# Only show if we currently support multi-year #}
+    {% if all_supported_years|length > 1  %}
+      <div class="year-switcher">
+        <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
+        <select id="year-switcher-{{switcher_name}}">
+            {% for y in supported_years %}
+              <option
+                {% if y == year %}selected="selected"{% endif %}
+                value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
+                {{ y }}
+              </option>
+            {% endfor %}
+            {# If the current page doesn't support a year, then show a home link for that year #}
+            {% if (supported_years | length < all_supported_years | length %}
+              <option disabled="disabled" aria-hidden="true">
+                ────
+              </option>
+              {% for y in all_supported_years %}
+              {% if y not in supported_years %}
+              <option value="{{ url_for('home', lang=lang,year=y) }}">
+                {{ y }} {{ self.home() }}
+              </option>
+              {% endif %}
+              {% endfor %}
+            {% endif %}
+        </select>
+      </div>
+    {% endif %}
+  {% endmacro %}
 {% endif %}
-{% endmacro %}
 
 
 {% block index_menu_script %}

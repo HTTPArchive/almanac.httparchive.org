@@ -84,7 +84,7 @@ def render_template(template, *args, **kwargs):
         if (os.path.isfile(yearLangTemplate)):
             template_supported_years.append(y)
 
-    kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages, supported_years=template_supported_years)
+    kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages, supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS)
     return flask_render_template(template, *args, **kwargs)
 
 
