@@ -317,7 +317,7 @@
 <div class="language-switcher">
   <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
   <select id="language-switcher-{{switcher_name}}">
-    {% for l in supported_languages %}
+    {% for l in supported_languages | sort(attribute='_local_name') %}
     <option
       {% if l == language %}selected="selected"{% endif %}
       lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" >
@@ -342,7 +342,7 @@
       <div class="year-switcher">
         <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
         <select id="year-switcher-{{switcher_name}}">
-            {% for y in supported_years %}
+            {% for y in supported_years | sort %}
               <option
                 {% if y == year %}selected="selected"{% endif %}
                 value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
@@ -354,7 +354,7 @@
               <option disabled="disabled" aria-hidden="true">
                 ────
               </option>
-              {% for y in all_supported_years %}
+              {% for y in all_supported_years | sort %}
               {% if y not in supported_years %}
               <option value="{{ url_for('home', lang=lang,year=y) }}">
                 {{ y }} {{ self.home() }}
