@@ -98,6 +98,12 @@
 
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
+{% block non_chapters_nav_links %}
+<li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
+<li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
+<li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+{% endblock %}
+
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
   {% block header %}
@@ -107,9 +113,7 @@
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
         <nav aria-label="{{ self.page_navigation() }}">
           <ul>
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="toc">{{ self.table_of_contents_title() }}</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}" class="contributors">{{ self.contributors_title() }}</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}" class="methodology">{{ self.methodology_title() }}</a></li>
+            {{ self.non_chapters_nav_links() }}
             <li>
               {{ year_switcher('header') }}
             </li>
@@ -125,9 +129,7 @@
             <span class="menu-btn__bar"></span>
           </button>
           <ul class="menu">
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="toc">{{ self.table_of_contents_title() }}</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}" class="contributors">{{ self.contributors_title() }}</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}" class="methodology">{{ self.methodology_title() }}</a></li>
+            {{ self.non_chapters_nav_links() }}
             <li>
             <li>
               {{ year_switcher('mobile') }}
@@ -184,9 +186,9 @@
       <hr>
       <nav aria-label="{{ self.footer_title() }}" class="nav-items">
         <ul>
-          <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="toc">{{ self.table_of_contents_title() }}</a></li>
-          <li><a href="{{ url_for('contributors', year=year, lang=lang) }}" class="contributors">{{ self.contributors_title() }}</a></li>
-          <li><a href="{{ url_for('methodology', year=year, lang=lang) }}" class="methodology">{{ self.methodology_title() }}</a></li>
+          {% if year != '2020' %}
+          {{ self.non_chapters_nav_links() }}
+          {% endif %}
           <li>
             {{ year_switcher('footer') }}
           </li>
