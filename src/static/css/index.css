@@ -116,19 +116,27 @@ p {
   width: 86vw;
 }
 
-.intro-image-2019-wrapper {
+.intro-image-year-wrapper {
   -ms-grid-column: 2;
   grid-area: image;
   width:100%;
 }
 
-.intro-image-2019 {
-  background-image: url(/static/images/home-hero-2019.png);
+.intro-image-year {
+  background-image: url(/static/images/home-hero.png);
   background-size: cover;
   max-height: 470px;
   max-width: 458px;
   height: 41vw;
   width: 40vw;
+}
+
+.year-2019 .intro-image-year {
+  background-image: url(/static/images/home-hero-2019.png);
+}
+
+.year-2020 .intro-image-year {
+  background-image: url(/static/images/home-hero-2020.png);
 }
 
 .intro .btn {
@@ -392,7 +400,7 @@ p {
     margin-top: 80px;
     margin-right: -46px;
   }
-  .intro-image-2019-wrapper {
+  .intro-image-year-wrapper {
     display: none;
   }
 
@@ -556,7 +564,7 @@ p {
     margin-right: -46px;
   }
 
-  .intro-image-2019-wrapper {
+  .intro-image-year-wrapper {
     display: none;
   }
 

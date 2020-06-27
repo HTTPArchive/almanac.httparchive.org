@@ -59,11 +59,14 @@ def render_template(template, *args, **kwargs):
     language = get_language(lang)
     langcode_length = len(lang) + 1 # Probably always 2-character language codes but who knows!
 
-    # If the template does not exist, then redirect to English version
-    if (lang != '' and lang != 'en' and not(os.path.isfile('templates/%s' % template))):
-        return redirect('/en%s' % (request.full_path[langcode_length:]), code=302)
+    # If the template does not exist, then redirect to English version if it exists, else home
+    if (lang != '' and not(os.path.isfile('templates/%s' % template))):
+        if (os.path.isfile('templates/en%s' % (request.full_path[langcode_length:]))):
+            return redirect('/en%s' % (request.full_path[langcode_length:]), code=302)
+        else:
+            return redirect(url_for('home', lang=lang, year=year))
 
-    # Although a langauge may be enabled, all templates may not have been translated yet
+    # Although a language may be enabled, all templates may not have been translated yet
     # So check if each language exists and only return languages for templates that do exist
     supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
     template_supported_languages = []
@@ -72,7 +75,16 @@ def render_template(template, *args, **kwargs):
         if (os.path.isfile(langTemplate)):
             template_supported_languages.append(l)
 
-    kwargs.update(supported_languages=template_supported_languages, year=year, lang=lang, language=language, supported_years=SUPPORTED_YEARS)
+    # Although a year may be enabled, all templates may not exist yet
+    # So check if each template exists and only return years for templates that do exist
+    supported_years = SUPPORTED_YEARS
+    template_supported_years = []
+    for y in supported_years:
+        yearLangTemplate = 'templates/%s/%s/%s' % (lang, y, template[langcode_length+1+4:])
+        if (os.path.isfile(yearLangTemplate)):
+            template_supported_years.append(y)
+
+    kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages, supported_years=template_supported_years, all_supported_years=SUPPORTED_YEARS)
     return flask_render_template(template, *args, **kwargs)
 
 
@@ -156,6 +168,11 @@ def add_footnote_links(html):
     return re.sub('href="http(.*?)"(.*?)>(.*?)<\/a>', 'href="http\\1"\\2>\\3<span class="fn">http\\1</span></a>', html)
 
 
+# This checks whether a requested year is live - used to control the year selector
+def year_live(year):
+    return year in SUPPORTED_YEARS
+
+
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
@@ -163,6 +180,7 @@ app.jinja_env.globals['ebook_exists'] = ebook_exists
 app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
 app.jinja_env.globals['get_ebook_methodology'] = get_ebook_methodology
 app.jinja_env.globals['add_footnote_links'] = add_footnote_links
+app.jinja_env.globals['year_live'] = year_live
 
 
 @app.route('/<lang>/<year>/')

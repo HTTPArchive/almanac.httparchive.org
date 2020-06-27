@@ -1,0 +1,48 @@
+{% extends "%s/2019/base.html" % lang %}
+
+{% block image_url %}https://almanac.httparchive.org/static/images/home-hero-bg.png{% endblock %}
+{% block image_height %}562{% endblock %}
+{% block image_width %}715{% endblock %}
+
+{% block breadcrumb %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ lang }}",
+      "item": "https://almanac.httparchive.org/{{lang}}/"
+    }]
+  }
+</script>
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="/static/css/index.css?v=2">
+{% endblock %}
+
+{# Hide the TOC, Contributors and Methodology for now #}
+{% block non_chapter_nav_links %}
+{% endblock %}
+
+{% block main %}
+<main id="maincontent">
+  <section class="intro-container">
+    <div class="intro">
+      <div class="intro-year">{{ year }}</div>
+      <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
+      <h2>{{ self.intro_sub_title() }}</h2>
+      <p>{{ self.mission() }}</p>
+    </div>
+    <div class="intro-image-year-wrapper">
+      <div class="intro-image-year"></div>
+    </div>
+    <div class="intro-image-wrapper">
+      <div class="intro-image"></div>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -38,6 +38,10 @@
 <link rel="stylesheet" href="/static/css/page.css?v=20200603172138">
 {% endblock %}
 
+{# Don't need year switcher for this template so blank it out #}
+{% macro year_switcher(switcher_name) %}
+{% endmacro %}
+
 {% block main %}
 <main id="accessibility_statement" class="main">
   <nav class="index">

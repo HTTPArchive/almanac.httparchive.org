@@ -1,0 +1,225 @@
+{
+  "settings": [
+    {
+      "is_live": false,
+      "supported_languages": ["en","es","fr","ja"],
+      "ebook_languages": []
+    }
+  ],
+  "outline": [
+    {
+      "part": "I. Page Content",
+      "part_number": "1",
+      "chapters": [
+        {
+          "part": "I",
+          "chapter": "1",
+          "title": "JavaScript",
+          "slug": "javascript"
+        },
+        {
+          "part": "I",
+          "chapter": "2",
+          "title": "CSS",
+          "slug": "css"
+        },
+        {
+          "part": "I",
+          "chapter": "3",
+          "title": "Markup",
+          "slug": "markup"
+        },
+        {
+          "part": "I",
+          "chapter": "4",
+          "title": "Media",
+          "slug": "media"
+        },
+        {
+          "part": "I",
+          "chapter": "5",
+          "title": "Third Parties",
+          "slug": "third-parties"
+        },
+        {
+          "part": "I",
+          "chapter": "6",
+          "title": "Fonts",
+          "slug": "fonts"
+        }
+      ]
+    },
+    {
+      "part": "II. User Experience",
+      "part_number": "2",
+      "chapters": [
+        {
+          "part": "II",
+          "chapter": "7",
+          "title": "Performance",
+          "slug": "performance"
+        },
+        {
+          "part": "II",
+          "chapter": "8",
+          "title": "Security",
+          "slug": "security"
+        },
+        {
+          "part": "II",
+          "chapter": "9",
+          "title": "Accessibility",
+          "slug": "accessibility"
+        },
+        {
+          "part": "II",
+          "chapter": "10",
+          "title": "SEO",
+          "slug": "seo"
+        },
+        {
+          "part": "II",
+          "chapter": "11",
+          "title": "PWA",
+          "slug": "pwa"
+        },
+        {
+          "part": "II",
+          "chapter": "12",
+          "title": "Mobile Web",
+          "slug": "mobile-web"
+        }
+      ]
+    },
+    {
+      "part": "III. Content Publishing",
+      "part_number": "3",
+      "chapters": [
+        {
+          "part": "III",
+          "chapter": "13",
+          "title": "Ecommerce",
+          "slug": "ecommerce"
+        },
+        {
+          "part": "III",
+          "chapter": "14",
+          "title": "CMS",
+          "slug": "cms"
+        }
+      ]
+    },
+    {
+      "part": "IV. Content Distribution",
+      "part_number": "4",
+      "chapters": [
+        {
+          "part": "IV",
+          "chapter": "15",
+          "title": "Compression",
+          "slug": "compression"
+        },
+        {
+          "part": "IV",
+          "chapter": "16",
+          "title": "Caching",
+          "slug": "caching"
+        },
+        {
+          "part": "IV",
+          "chapter": "17",
+          "title": "CDN",
+          "slug": "cdn"
+        },
+        {
+          "part": "IV",
+          "chapter": "18",
+          "title": "Page Weight",
+          "slug": "page-weight"
+        },
+        {
+          "part": "IV",
+          "chapter": "19",
+          "title": "Resource Hints",
+          "slug": "resource-hints"
+        },
+        {
+          "part": "IV",
+          "chapter": "20",
+          "title": "HTTP/2",
+          "slug": "http2"
+        }
+      ]
+    }
+  ],
+  "teams": {
+    "analysts": {
+      "name": "Analysts"
+    },
+    "authors": {
+      "name": "Authors"
+    },
+    "brainstormers": {
+      "name": "Brainstormers"
+    },
+    "designers": {
+      "name": "Designers"
+    },
+    "developers": {
+      "name": "Developers"
+    },
+    "editors": {
+      "name": "Editors"
+    },
+    "reviewers": {
+      "name": "Reviewers"
+    },
+    "translators": {
+      "name": "Translators"
+    }
+  },
+  "contributors": {
+    "bazzadp": {
+      "name": "Barry Pollard",
+      "teams": [
+        "brainstormers",
+        "authors",
+        "reviewers",
+        "editors",
+        "developers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/10931297?v=4&s=200",
+      "website": "https:\/\/www.tunetheweb.com",
+      "github": "bazzadp",
+      "twitter": "tunetheweb"
+    },
+    "obto": {
+      "name": "David Fox",
+      "teams": [
+        "brainstormers",
+        "authors",
+        "reviewers",
+        "analysts",
+        "editors"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/684747?v=4&s=200",
+      "website": "https:\/\/www.lookzook.com",
+      "github": "obto",
+      "twitter": "theobto"
+    },
+    "rviscomi": {
+      "name": "Rick Viscomi",
+      "teams": [
+        "brainstormers",
+        "authors",
+        "reviewers",
+        "analysts",
+        "developers",
+        "editors"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1120896?v=4&s=200",
+      "github": "rviscomi",
+      "twitter": "rick_viscomi"
+    }
+  }
+}
