@@ -40,6 +40,7 @@ _Note: To ensure that you get notifications when tagged, you must be "[watching]
 
 ### [**2. Gather data**](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Chapter-Lifecycle#1-plan-content)
 + [ ] **Jul 27th**: Analysts have prepared all feasible metrics for testing and added queries to the [sql directory](#~sql-dir)
+- **Aug 1 - 31**: August crawl
 + [ ] **Sep 7th**: Analysts have queried all metrics and saved the output to the [results sheet](#~results-sheet)
 
 ### [**3. Validate results**](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Chapter-Lifecycle#3-validate-results)
