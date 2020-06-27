@@ -98,6 +98,12 @@
 
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
+{% block non_chapter_nav_links %}
+<li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
+<li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
+<li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+{% endblock %}
+
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
   {% block header %}
@@ -107,14 +113,10 @@
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
         <nav aria-label="{{ self.page_navigation() }}">
           <ul>
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
-            {% if supported_years | length > 1 %}
+            {{ self.non_chapter_nav_links() }}
             <li>
               {{ year_switcher('header') }}
             </li>
-            {% endif %}
             <li>
               {{ language_switcher('header') }}
             </li>
@@ -127,15 +129,11 @@
             <span class="menu-btn__bar"></span>
           </button>
           <ul class="menu">
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+            {{ self.non_chapter_nav_links() }}
             <li>
-            {% if supported_years | length > 1 %}
             <li>
               {{ year_switcher('mobile') }}
             </li>
-            {% endif %}
             <li>
               {{ language_switcher('mobile') }}
             </li>
@@ -188,14 +186,10 @@
       <hr>
       <nav aria-label="{{ self.footer_title() }}" class="nav-items">
         <ul>
-          <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
-          <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-          <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
-          {% if supported_years | length > 1 %}
+          {{ self.non_chapter_nav_links() }}
           <li>
             {{ year_switcher('footer') }}
           </li>
-          {% endif %}
           <li>
             {{ language_switcher('footer') }}
           </li>
@@ -262,15 +256,15 @@
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
       (function() {
-        // Language switching
-        var languageSwitchers = document.querySelectorAll('.language-switcher select');
-        for (var i = 0; i < languageSwitchers.length; i++) {
-          languageSwitchers[i].addEventListener('change', function(e) {
+        // Language and Year switching
+        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select');
+        for (var i = 0; i < languageYearSwitchers.length; i++) {
+          languageYearSwitchers[i].addEventListener('change', function(e) {
             //Reset the selector back in case user uses Back button
-            var selectedLanguage = e.target.value;
-            if (selectedLanguage && selectedLanguage !== window.location.pathname) {
+            var selectedValue = e.target.value;
+            if (selectedValue && selectedValue !== window.location.pathname) {
               e.target.value = window.location.pathname;
-              window.location = selectedLanguage;
+              window.location = selectedValue;
             }
           });
         }
@@ -323,7 +317,7 @@
 <div class="language-switcher">
   <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
   <select id="language-switcher-{{switcher_name}}">
-    {% for l in supported_languages %}
+    {% for l in supported_languages | sort(attribute='_local_name') %}
     <option
       {% if l == language %}selected="selected"{% endif %}
       lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" >
@@ -340,20 +334,39 @@
 </div>
 {% endmacro %}
 
-{% macro year_switcher(switcher_name) %}
-<div class="year-switcher">
-  <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
-  <select id="year-switcher-{{switcher_name}}">
-      {% for y in supported_years %}
-        <option
-          {% if y == year %}selected="selected"{% endif %}
-          value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
-          {{ edition(y) }}
-        </option>
-      {% endfor %}
-  </select>
-</div>
-{% endmacro %}
+{# Check if year_switcher already defined in child template as macros can't be overridden #}
+{% if not year_switcher %}
+  {% macro year_switcher(switcher_name) %}
+    {# Only show if we currently support multi-year #}
+    {% if all_supported_years|length > 1  %}
+      <div class="year-switcher">
+        <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
+        <select id="year-switcher-{{switcher_name}}">
+            {% for y in supported_years | sort %}
+              <option
+                {% if y == year %}selected="selected"{% endif %}
+                value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
+                {{ y }}
+              </option>
+            {% endfor %}
+            {# If the current page doesn't support a year, then show a home link for that year #}
+            {% if supported_years|length < all_supported_years|length %}
+              <option disabled="disabled" aria-hidden="true">
+                ────
+              </option>
+              {% for y in all_supported_years | sort %}
+              {% if y not in supported_years %}
+              <option value="{{ url_for('home', lang=lang,year=y) }}">
+                {{ y }} {{ self.home() }}
+              </option>
+              {% endif %}
+              {% endfor %}
+            {% endif %}
+        </select>
+      </div>
+    {% endif %}
+  {% endmacro %}
+{% endif %}
 
 
 {% block index_menu_script %}

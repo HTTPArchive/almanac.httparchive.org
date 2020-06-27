@@ -507,6 +507,10 @@ header nav li, footer nav li {
   line-height: 1.4em;
 }
 
+header nav .menu li .year-switcher, header nav .menu li .language-switcher {
+  margin-bottom: 4em;
+}
+
 header nav {
   display: flex;
   align-items: center;
@@ -578,6 +582,7 @@ header .cta {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;  
+  min-width: 100px;
 }
 
 .language-switcher select::-ms-expand,
