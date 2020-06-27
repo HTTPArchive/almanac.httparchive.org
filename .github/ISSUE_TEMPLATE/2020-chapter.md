@@ -26,7 +26,7 @@ The **content team** is made up of the following contributors:
 
 **New contributors:** If you're interested in joining the content team for this chapter, just leave a comment below and the content team lead will loop you in.
 
-_Note: To ensure that you get notifications when tagged, you must be "[watching](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Chapter-Lifecycle/_edit#notifications)" this repository._
+_Note: To ensure that you get notifications when tagged, you must be "[watching](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Chapter-Lifecycle#notifications)" this repository._
 
 ## Milestones
 
