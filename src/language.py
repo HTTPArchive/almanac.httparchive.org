@@ -31,6 +31,7 @@ class Language(object):
   EN = _Language('English', 'en', 'US')
   ES = _Language('Español', 'es', 'ES')
   FR = _Language('Français', 'fr', 'FR')
+  KO = _Language('한국어', 'ko', 'KR')
 
 DEFAULT_LANGUAGE = Language.EN
 

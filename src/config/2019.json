@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja"],
+      "supported_languages": ["en","es","fr","ja", "ko"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -1100,6 +1100,16 @@
       "website": "https:\/\/www.nicolas-hoffmann.net\/",
       "github": "nico3333fr",
       "twitter": "Nico3333fr"
+    },
+    "techhtml": {
+      "name": "Eun Cho",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/6267393?s=460&u=d38d108d959a115b8a0263d7d2ecfba10713c72b&v=4",
+      "website": "https:\/\/medium.com\/@euncho",
+      "github": "techhtml",
+      "twitter": "euncho__"
     }
   }
 }
