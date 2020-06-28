@@ -10,6 +10,7 @@ from werkzeug.http import HTTP_STATUS_CODES
 from validate import validate
 import os.path
 import re
+import sys
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
 # Note this requires similar set up in app.yaml for Google App Engine
@@ -24,7 +25,7 @@ app = MyFlask(__name__)
 # Flask default if not set is 12 hours but we want to match app.yaml
 # which is used by Google App Engine as it serves static files directly
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 10800
-Talisman(app,
+talisman = Talisman(app,
          content_security_policy=csp,
          content_security_policy_nonce_in=['script-src'])
 logging.basicConfig(level=logging.DEBUG)
@@ -342,4 +343,14 @@ def handle_bad_gateway(e):
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
     # application on Google App Engine. See entrypoint in app.yaml.
-    app.run(host='127.0.0.1', port=8080, debug=True)
+
+    # If the 'background' command line argument is given:
+    #    python main.py background &
+    # then run in non-debug mode, as debug mode can't be backgrounded
+    # but debug mode is useful in general (as auto reloads on change)
+    if (len(sys.argv) > 1 and sys.argv[1] == 'background'):
+        # Turn off HTTPS redirects (automatically turned off for debug)
+        talisman.force_https=False
+        app.run(host='127.0.0.1', port=8080)
+    else:
+        app.run(host='127.0.0.1', port=8080, debug=True)
