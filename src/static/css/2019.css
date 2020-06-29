@@ -458,9 +458,48 @@ h2.header {
   color: #f2f2f2;
 }
 
-a.navigation-logo {
-  color: white;
-  min-width: 280px;
+.navigation-logo {
+  color: #fff;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navigation-logo:hover,
+.navigation-logo:focus {
+  text-decoration: none;
+}
+
+.navigation-logo .line-group {
+  display: block;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+  overflow: hidden;  
+}
+
+.navigation-logo .line-group::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #f7f779;
+  bottom: calc(.4em - 1px);
+  margin-inline-start: .5em; /* cover both rtl and ltr scenarios */
+}
+
+.navigation-logo .wa {  
+  font-weight: 600;
+  letter-spacing: 5px;
+  font-size: 1.3em;
+  margin-right: -5px; /* fix letter spacing issue for the last letter */
+  font-family: 'Poppins', sans-serif;
+}
+
+.navigation-logo .pre,
+.navigation-logo .ha {  
+  font-size: .8em;
+  letter-spacing: 2px;
 }
 
 header.alt-bg a:hover, footer.alt-bg a:hover,
@@ -701,6 +740,7 @@ footer .ha-logo {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  color: currentColor;
 }
 footer .nav-items ul li > * {
   margin-left: 50px;
@@ -893,7 +933,7 @@ p.copyright a {
   header .cta {
     display: none;
   }
-  a.navigation-logo {
+  .navigation-logo {
     min-width: auto;
     max-width: 75vw;
   }

@@ -1,3 +1,8 @@
+/* Related to #maincontent's vw unit width */
+body {
+  overflow-x: hidden;
+}
+
 header.alt-bg {
   background: #5C687D;
   background: transparent linear-gradient(#5C687D 70%, transparent 30%);

@@ -110,7 +110,9 @@
   <header class="alt-bg">
     <div class="container">
       <div class="top-header">
-        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
+          {{ self.web_almanac_logo() }}
+        </a>
         <nav aria-label="{{ self.page_navigation() }}">
           <ul>
             {{ self.non_chapter_nav_links() }}
@@ -140,7 +142,7 @@
             <li class="misc">
               <ul class="misc">
                 <li>
-                  <a href="https://httparchive.org/" class="navigation-logo" aria-labelledby="ha-logo-mobile">
+                  <a href="https://httparchive.org/" aria-labelledby="ha-logo-mobile">
                     <svg width="70" height="35" role="img">
                       <title id="ha-logo-mobile">{{ self.http_archive_link() }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
@@ -182,7 +184,11 @@
 
   {% block footer %}
     <footer class="alt-bg">
-      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
+      <div class="home-logo">
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
+          {{ self.web_almanac_logo() }}
+        </a>
+      </div>
       <hr>
       <nav aria-label="{{ self.footer_title() }}" class="nav-items">
         <ul>
@@ -196,7 +202,7 @@
         </ul>
       </nav>
       <div class="mobile-ha-social-media">
-        <a class="navigation-logo ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
+        <a class="ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
           <svg width="70" height="35" role="img">
             <title id="httparchive-logo-footer-mobile">{{ self.http_archive_link() }}</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
@@ -227,7 +233,7 @@
         <br>
         <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
       </p>
-      <a class="navigation-logo ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
+      <a class="ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
         <svg width="70" height="35" role="img">
           <title id="ha-logo-footer">{{ self.http_archive_link() }}</title>
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
