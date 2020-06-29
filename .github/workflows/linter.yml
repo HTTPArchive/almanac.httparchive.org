@@ -1,4 +1,3 @@
----
 ###########################
 ###########################
 ## Linter GitHub Actions ##
@@ -10,6 +9,14 @@ name: Lint Code Base
 # Documentation:
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 #
+# For the Web Almanac we have the following rule changes from the defaults:
+#  * Markdown - we're a bit more relaxed about this since authors may be less technical
+#  * Python - Only change from default is to set ignored-modules=flask, flask-talisman...etc.
+#  * CSS - Tweaked to ignore some Prince/Normalise exceptions and some whitespace exceptions
+#  * JS - default rules
+#  * JSON - default rules
+#  * YML - default rules
+# Exception config files are in the .github/linters directory
 
 #############################
 # Start the job on all push #
@@ -51,5 +58,6 @@ jobs:
           VALIDATE_JSON: true
           VALIDATE_PYTHON: true
           VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JAVASCRIPT_STANDARD: true
           VALIDATE_CSS: true
           VALIDATE_MD: true
