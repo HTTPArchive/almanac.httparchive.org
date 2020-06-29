@@ -395,7 +395,7 @@ img {
   text-transform: uppercase;
   color: red;
   vertical-align: super;
-  font-size: .5em;
+  font-size: 0.5em;
 }
 
 .title-lg {
@@ -427,7 +427,7 @@ h2.header {
   font-size: 25px;
   font-size: 1.5625rem;
   margin: 14px;
-  margin: 0.56em 0.875rem
+  margin: 0.56em 0.875rem;
 }
 
 .btn {
@@ -486,7 +486,7 @@ h2.header {
   width: 100%;
   background-color: #f7f779;
   bottom: calc(.4em - 1px);
-  margin-inline-start: .5em; /* cover both rtl and ltr scenarios */
+  margin-inline-start: 0.5em; /* cover both rtl and ltr scenarios */
 }
 
 .navigation-logo .wa {  
@@ -499,7 +499,7 @@ h2.header {
 
 .navigation-logo .pre,
 .navigation-logo .ha {  
-  font-size: .8em;
+  font-size: 0.8em;
   letter-spacing: 2px;
 }
 
@@ -597,8 +597,8 @@ header .cta {
   border-style: solid;
   border-width: 2px 2px 0 0;
   border-color: currentColor;
-  height: .4em;
-  width: .4em;
+  height: 0.4em;
+  width: 0.4em;
   top: 50%;
   margin-top: -.4em;
   /* 
@@ -702,7 +702,7 @@ blockquote::before {
   position: absolute;
   top: -4rem;
   left: -7rem;
-  opacity: .05;
+  opacity: 0.05;
   font-size: 20rem;
   font-family: 'Courier New', Courier, monospace;
   line-height: 1;

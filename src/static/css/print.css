@@ -6,12 +6,12 @@
     background-color: white;
 }
 
-a.btn  {
+a.btn {
     display: none;
 }
 
 h1, h2, h3, p, p.copyright, p.copyright a {
-    color:black;
+    color: black;
 }
 
 p.copyright {

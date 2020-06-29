@@ -111,7 +111,7 @@ p {
   -ms-grid-row: 2;
   grid-area: image;
   display: none;
-  width:100%;
+  width: 100%;
 }
 
 .intro-image {
@@ -124,7 +124,7 @@ p {
 .intro-image-year-wrapper {
   -ms-grid-column: 2;
   grid-area: image;
-  width:100%;
+  width: 100%;
 }
 
 .intro-image-year {
@@ -322,9 +322,9 @@ p {
   height: auto;
   z-index: -1;
   background: linear-gradient(180deg,
-    rgba(0,0,0,0) calc(70% - 1px),
+    rgba(0, 0, 0, 0) calc(70% - 1px),
     rgb(192, 192, 192) calc(50%),
-    rgba(0,0,0,0) calc(70% + 1px)
+    rgba(0, 0, 0, 0) calc(70% + 1px)
   );
 }
 
@@ -419,7 +419,6 @@ p {
   .contributors-container {
     background-image: none;
     flex-direction: column;
-    background-image: none;
     padding-left: 0;
     padding: 40px 60px;
   }
@@ -626,6 +625,7 @@ p {
     bottom: 0;
     height: auto;
   }
+
   .people-number {
     font-size: 300px;
     letter-spacing: 27px;
@@ -635,17 +635,21 @@ p {
     position: relative;
     left: 25px;
   }
+
   .people .character {
     width: 80px;
   }
+
   #character-markup {
     top: -55px;
-    right: 60px
+    right: 60px;
   }
+
   #character-star {
     bottom: -20px;
     left: 130px;
   }
+
   #character-hat {
     right: 0px;
     bottom: -15px;

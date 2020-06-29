@@ -30,6 +30,8 @@
 .code-block, pre {
   margin: 8px 0;
   padding: 24px;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .code-block .divider {
@@ -37,11 +39,6 @@
   border: 1px solid #1A2B490A;
   width: calc(100% + 32px);
   left: -24px;
-}
-
-.code-block, pre {
-  overflow-y: hidden;
-  overflow-x: auto;
 }
 
 .code-block code {
@@ -222,8 +219,8 @@
 }
 
 .content .authors ul {
-  margin:16px 0;
-  padding:0;
+  margin: 16px 0;
+  padding: 0;
 }
 
 .content .authors li::before {
@@ -275,57 +272,57 @@
 }
 
 #chapter-navigation {
-  padding:50px 36px;
-  border:1px solid #1A2B490A;
+  padding: 50px 36px;
+  border: 1px solid #1A2B490A;
   margin: 20px 0;
   overflow: hidden;
 }
 
 #chapter-navigation > a {
-  color:#1A2B49;
-  width:50%;
+  color: #1A2B49;
+  width: 50%;
   min-width: 100px;
-  display:inline-block;
-  position:relative;
+  display: inline-block;
+  position: relative;
 }
 
 #chapter-navigation span {
-  display:block;
+  display: block;
 }
 
 #chapter-navigation .chapter-no {
-  font-size:22px;
-  font-size:1.375rem;
-  font-weight:bold;
-  font-style: italic
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-style: italic;
 }
 
 #chapter-navigation .chapter-title {
-  font-size:18px;
-  font-size:1.125rem;
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 #chapter-navigation .arrow {
-  position:absolute;
-  font-size:24px;
-  font-size:1.5rem;
-  top:12px;
-  top:0.5em;
+  position: absolute;
+  font-size: 24px;
+  font-size: 1.5rem;
+  top: 12px;
+  top: 0.5em;
 }
 
 #previous-chapter .arrow {
   transform: rotate(-90deg);
-  left:-24px;
+  left: -24px;
 }
 
 #next-chapter {
-  text-align:right;
-  float:right;
+  text-align: right;
+  float: right;
 }
 
 #next-chapter .arrow {
   transform: rotate(90deg);
-  right:-24px;
+  right: -24px;
 }
 
 aside, .note {
@@ -359,8 +356,8 @@ figure .anchor-link {
   left: -25px;
   position: relative;
   float: left;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
 }
 
 .fig-description-button {
@@ -518,7 +515,7 @@ figure .fig-desktop {
   .index-box ul {
     max-height: 0;
     display: none;
-    border-top: 0px solid #FFFFFFFF;
+    border-top: 0px solid #FFFF;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
   }
@@ -531,7 +528,7 @@ figure .fig-desktop {
     transition: max-height 0.25s ease-in;
   }
 
-  .index li.active::before{
+  .index li.active::before {
     background-color: transparent;
   }
 
@@ -540,9 +537,8 @@ figure .fig-desktop {
   }
 
   table {
-    font-size: .8em;
+    font-size: 0.8em;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -585,7 +581,6 @@ figure .fig-desktop {
   .anchor-link:focus::before {
     content: '';
   }
-
 }
 
 /* Code highlighting */
