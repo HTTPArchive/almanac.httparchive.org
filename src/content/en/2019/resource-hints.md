@@ -19,9 +19,9 @@ last_updated: 2020-03-02T00:00:00.000Z
 
 [Examples](https://youtu.be/YJGCZCaIZkQ?t=1956) of performance improvements as a result of resource hints include:
 
-*   Jabong decreased Time to Interactive by 1.5 seconds by preloading critical scripts.
-*   Barefoot Wine decreased Time to Interactive of future pages by 2.7 seconds by prefetching visible links. 
-*   Chrome.com decreased latency by 0.7 seconds by preconnecting to critical origins.
+* Jabong decreased Time to Interactive by 1.5 seconds by preloading critical scripts.
+* Barefoot Wine decreased Time to Interactive of future pages by 2.7 seconds by prefetching visible links. 
+* Chrome.com decreased latency by 0.7 seconds by preconnecting to critical origins.
 
 There are four separate resource hints supported by most browsers today: `dns-prefetch`, `preconnect`, `preload`, and `prefetch`.
 

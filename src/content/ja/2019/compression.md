@@ -19,8 +19,8 @@ HTTP圧縮は、元の表現よりも少ないビットを使用して情報を�
 
 圧縮アルゴリズムは、多くの場合、非可逆または可逆に分類されます。
 
-*   非可逆圧縮アルゴリズムが使用される場合、プロセスは不可逆的であり、元のファイルを圧縮解除しても復元できません。これは一般に、一部のデータを失ってもリソースに重大な影響を与えない画像やビデオコンテンツなどのメディアリソースを圧縮するために使用されます。
-*   ロスレス圧縮は完全に可逆的なプロセスであり、[HTML](./markup)、[JavaScript](./javascript)、[CSS](./css)などのテキストベースのリソースを圧縮するために一般的に使用されます。
+* 非可逆圧縮アルゴリズムが使用される場合、プロセスは不可逆的であり、元のファイルを圧縮解除しても復元できません。これは一般に、一部のデータを失ってもリソースに重大な影響を与えない画像やビデオコンテンツなどのメディアリソースを圧縮するために使用されます。
+* ロスレス圧縮は完全に可逆的なプロセスであり、[HTML](./markup)、[JavaScript](./javascript)、[CSS](./css)などのテキストベースのリソースを圧縮するために一般的に使用されます。
 
 この章では、テキストベースのコンテンツがWeb上でどのように圧縮されるかを検討します。非テキストベースのコンテンツの分析は、[メディア](./media)の章の一部を形成します。
 
@@ -50,9 +50,9 @@ HTTP Archiveには、530万のWebサイトの測定値が含まれており、�
 
 IANAは、`Accept-Encoding`および`Content-Encoding`ヘッダーで使用できる有効な[HTTPコンテンツエンコーディングのリスト](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding)を保持しています。これらには、gzip、deflate、br（brotli）などが含まれます。これらのアルゴリズムの簡単な説明を以下に示します。
 
-*   [Gzip](https://tools.ietf.org/html/rfc1952)は、[LZ77](https://ja.wikipedia.org/wiki/LZ77)および[ハフマンコーディング](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%95%E3%83%9E%E3%83%B3%E7%AC%A6%E5%8F%B7)圧縮技術を使用しており、Web自体よりも古い。もともと1992年にUNIX gzipプログラム用として開発されました。HTTP/ 1.1以降、Web配信の実装が存在し、ほとんどのブラウザーとクライアントがそれをサポートしています。
-*   [Deflate](https://tools.ietf.org/html/rfc1951)はgzipと同じアルゴリズムを使用しますが、コンテナは異なります。一部のサーバーおよびブラウザとの互換性の問題のため、Webでの使用は広く採用されていません。
-*   [Brotli](https://tools.ietf.org/html/rfc7932)は、[Googleが発明](https://github.com/google/brotli)した新しい圧縮アルゴリズムです。 LZ77アルゴリズムの最新のバリアント、ハフマンコーディング、および2次コンテキストモデリングの組み合わせを使用します。 Brotliを介した圧縮はgzipと比較して計算コストが高くなりますが、アルゴリズムはgzip圧縮よりもファイルを[15〜25％](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf)削減できます。 Brotliは2015年にWebコンテンツの圧縮に初めて使用され、[すべての最新のWebブラウザーでサポートされています](https://caniuse.com/#feat=brotli)。
+* [Gzip](https://tools.ietf.org/html/rfc1952)は、[LZ77](https://ja.wikipedia.org/wiki/LZ77)および[ハフマンコーディング](https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%95%E3%83%9E%E3%83%B3%E7%AC%A6%E5%8F%B7)圧縮技術を使用しており、Web自体よりも古い。もともと1992年にUNIX gzipプログラム用として開発されました。HTTP/ 1.1以降、Web配信の実装が存在し、ほとんどのブラウザーとクライアントがそれをサポートしています。
+* [Deflate](https://tools.ietf.org/html/rfc1951)はgzipと同じアルゴリズムを使用しますが、コンテナは異なります。一部のサーバーおよびブラウザとの互換性の問題のため、Webでの使用は広く採用されていません。
+* [Brotli](https://tools.ietf.org/html/rfc7932)は、[Googleが発明](https://github.com/google/brotli)した新しい圧縮アルゴリズムです。 LZ77アルゴリズムの最新のバリアント、ハフマンコーディング、および2次コンテキストモデリングの組み合わせを使用します。 Brotliを介した圧縮はgzipと比較して計算コストが高くなりますが、アルゴリズムはgzip圧縮よりもファイルを[15〜25％](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf)削減できます。 Brotliは2015年にWebコンテンツの圧縮に初めて使用され、[すべての最新のWebブラウザーでサポートされています](https://caniuse.com/#feat=brotli)。
 
 HTTPレスポンスの約38％はテキストベースの圧縮で配信されます。これは驚くべき統計のように思えるかもしれませんが、データセット内のすべてのHTTP要求に基づいていることに留意してください。画像などの一部のコンテンツは、これらの圧縮アルゴリズムの恩恵を受けません。次の表は、各コンテンツエンコーディングで処理されるリクエストの割合をまとめたものです。
 
@@ -155,9 +155,9 @@ HTTPレスポンスの約38％はテキストベースの圧縮で配信され�
 
 HTTP Archiveによって収集された診断から圧縮レベルを判断することはできませんが、コンテンツを圧縮するためのベストプラクティスは次のとおりです。
 
-*   少なくとも、テキストベースのアセットに対してgzip圧縮レベル6を有効にします。これは、計算コストと圧縮率の間の公平なトレードオフを提供し、[多くのWebサーバーのデフォルト](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)にもかかわらず、[Nginxは依然として低すぎることが多いレベル1のままです](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level)。
-*   brotliおよびprecompressリソースをサポートできる場合は、brotliレベル11に圧縮します。これはgzipよりも計算コストが高くなります。したがって、遅延を避けるためには、事前圧縮が絶対に必要です。
-*   brotliをサポートでき、事前圧縮できない場合は、brotliレベル5に圧縮します。このレベルでは、gzipと比較してペイロードが小さくなり、同様の計算オーバーヘッドが発生します。
+* 少なくとも、テキストベースのアセットに対してgzip圧縮レベル6を有効にします。これは、計算コストと圧縮率の間の公平なトレードオフを提供し、[多くのWebサーバーのデフォルト](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)にもかかわらず、[Nginxは依然として低すぎることが多いレベル1のままです](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level)。
+* brotliおよびprecompressリソースをサポートできる場合は、brotliレベル11に圧縮します。これはgzipよりも計算コストが高くなります。したがって、遅延を避けるためには、事前圧縮が絶対に必要です。
+* brotliをサポートでき、事前圧縮できない場合は、brotliレベル5に圧縮します。このレベルでは、gzipと比較してペイロードが小さくなり、同様の計算オーバーヘッドが発生します。
 
 
 ## どの種類のコンテンツを圧縮していますか？

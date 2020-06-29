@@ -1,3 +1,7 @@
+# Developing the Web Almanac
+
+The Web Almanac can be developed on MacOs, Windows or Linux. It required node v12 and python v3 to be installed.
+
 ## Run Locally
 
 Make sure you run the following commands from within the `src` directory by executing `cd src` first.
