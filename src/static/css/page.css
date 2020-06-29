@@ -99,6 +99,7 @@
   display: block;
   padding: 24px 16px;
   line-height: 24px;
+  line-height: 1.5rem;
   color: #1A2B49;
 }
 .index li li {
