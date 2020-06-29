@@ -148,12 +148,15 @@ tbody tr:nth-child(even) {
   font-size: 0.875rem;
   color: #757575;
 }
+
 .contributor-team::after {
   content: ', ';
 }
+
 .contributor-team:last-child::after {
   content: '';
 }
+
 .social-icon {
   height: 15px;
   width: 15px;
@@ -229,10 +232,10 @@ section.chapter {
 }
 
 @page :blank {
-
   @top-left {
     content: '';
   }
+
   @top-right {
     content: '';
   }
@@ -243,17 +246,19 @@ section.chapter {
 }
 
 @page no-header-or-footer {
-
   @top-left {
     content: '';
   }
+
   @top-right {
     content: '';
   }
+
   @bottom-left {
     content: '';
     border: none;
   }
+
   @bottom-right {
     content: '';
     border: none;
@@ -277,13 +282,16 @@ section.chapter {
     content: '';
     border-bottom: none;
   }
+
   @top-right {
     content: '';
   }
+
   @bottom-left {
     content: '';
     border: none;
   }
+
   @bottom-right {
     content: '';
     border: none;
@@ -291,7 +299,6 @@ section.chapter {
 }
 
 @media print {
-
   #title {
     background: none;
   }
@@ -333,7 +340,7 @@ section.chapter {
   }
 
   figure {
-   margin: 0;
+    margin: 0;
   }
 
   figure,

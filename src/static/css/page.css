@@ -31,6 +31,7 @@
   grid-area: index;
   -ms-grid-column: 1;
 }
+
 .index .index-box {
   margin: 20px 0;
   padding: 8px 16px;
@@ -447,7 +448,6 @@ figure .fig-desktop {
 }
 
 @media (max-width: 900px) {
-
   .main {
     -ms-grid-columns: 1fr;
     grid-template-areas:
@@ -524,7 +524,6 @@ figure .fig-desktop {
 }
 
 @media (max-width: 600px) {
-
   figure .big-number {
     font-size: 5rem;
   }

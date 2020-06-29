@@ -148,6 +148,7 @@ p {
   background-color: #F7F779;
   color: #1A2B49;
 }
+
 .intro .btn:hover,
 .intro .btn:focus {
   background-color: transparent;
@@ -327,6 +328,7 @@ p {
   .people {
     height: auto;
   }
+
   .people-number {
     font-size: 300px;
     overflow: visible;
@@ -335,21 +337,25 @@ p {
     position: relative;
     left: 50px;
   }
+
   .people .character {
     width: 8vw;
     height: auto;
   }
+
   #character-markup {
     position: absolute;
     top: auto;
     right: 10%;
     bottom: 65%;
   }
+
   #character-star {
     position: absolute;
     bottom: 0;
     left: 30%;
   }
+
   #character-hat {
     position: absolute;
     bottom: 0;
@@ -379,11 +385,13 @@ p {
     justify-content: center;
     padding: 40px 60px;
   }
+
   .intro {
     margin: 0;
     width: auto;
     text-align: center;
   }
+
   .intro-year {
     display: block;
     margin: 0;
@@ -400,6 +408,7 @@ p {
     margin-top: 80px;
     margin-right: -46px;
   }
+
   .intro-image-year-wrapper {
     display: none;
   }
@@ -437,6 +446,7 @@ p {
   .people {
     height: auto;
   }
+
   .people-number {
     font-size: 300px;
     overflow: visible;
@@ -540,6 +550,7 @@ p {
   .intro button {
     margin-bottom: 20px;
   }
+  
   .intro-image-container {
     display: flex;
     justify-content: center;
