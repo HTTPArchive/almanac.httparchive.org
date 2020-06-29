@@ -27,7 +27,7 @@ header::after {
   right: 0;
   display: block;
   position: absolute;
-  z-index: -1; 
+  z-index: -1;
 }
 
 header .container {
@@ -50,7 +50,7 @@ header .container {
   width: 100vw;
   position: relative;
   left: 50%;
-  margin-left: -50vw;  
+  margin-left: -50vw;
 }
 
 #maincontent section {
@@ -82,12 +82,11 @@ p {
 .intro-container {
   color: #FFFFFF;
   grid-area: intro;
-  display: -ms-grid;
   -ms-grid-row: 1;
   -ms-grid-columns: 2fr 1fr;
+  display: -ms-grid;
   display: grid;
-  grid-template-areas:
-    'intro image';
+  grid-template-areas: 'intro image';
   justify-content: space-between;
   padding: 0 60px;
 }
@@ -321,11 +320,7 @@ p {
   max-width: 100%;
   height: auto;
   z-index: -1;
-  background: linear-gradient(180deg,
-    rgba(0, 0, 0, 0) calc(70% - 1px),
-    rgb(192, 192, 192) calc(50%),
-    rgba(0, 0, 0, 0) calc(70% + 1px)
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgba(0, 0, 0, 0) calc(70% + 1px));
 }
 
 @media (max-width: 1280px) and (min-width: 901px) {
@@ -419,7 +414,6 @@ p {
   .contributors-container {
     background-image: none;
     flex-direction: column;
-    padding-left: 0;
     padding: 40px 60px;
   }
 

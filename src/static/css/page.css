@@ -27,24 +27,6 @@
   margin: 0 -16px;
 }
 
-.code-block, pre {
-  margin: 8px 0;
-  padding: 24px;
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-
-.code-block .divider {
-  position: relative;
-  border: 1px solid #1A2B490A;
-  width: calc(100% + 32px);
-  left: -24px;
-}
-
-.code-block code {
-  width: 100%;
-}
-
 .index {
   grid-area: index;
   -ms-grid-column: 1;
@@ -599,6 +581,8 @@ figure .fig-desktop {
 .code-block pre {
   overflow-y: hidden;
   overflow-x: auto;
+  margin: 8px 0;
+  padding: 24px;
 }
 
 .code-block code {

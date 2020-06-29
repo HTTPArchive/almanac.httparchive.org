@@ -106,7 +106,6 @@ tbody tr:nth-child(even) {
   width: 80px;
 }
 
-
 .contributors {
   padding: 0;
   columns: 2;
@@ -227,7 +226,6 @@ section.chapter {
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
-
 }
 
 @page :blank {
@@ -238,7 +236,6 @@ section.chapter {
   @top-right {
     content: '';
   }
-
 }
 
 .no-header-or-footer {
@@ -269,7 +266,6 @@ section.chapter {
 }
 
 @page :first {
-
   background: #5C687D;
   background: transparent linear-gradient(#5C687D 70%, transparent 30%);
   /* background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat; */
@@ -293,7 +289,6 @@ section.chapter {
     content: '';
     border: none;
   }
-
 }
 
 @media print {

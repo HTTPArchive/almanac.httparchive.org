@@ -476,7 +476,7 @@ h2.header {
   position: relative;
   z-index: 1;
   line-height: 1;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .navigation-logo .line-group::after {
@@ -485,11 +485,11 @@ h2.header {
   height: 1px;
   width: 100%;
   background-color: #f7f779;
-  bottom: calc(.4em - 1px);
+  bottom: calc(0.4em - 1px);
   margin-inline-start: 0.5em; /* cover both rtl and ltr scenarios */
 }
 
-.navigation-logo .wa {  
+.navigation-logo .wa {
   font-weight: 600;
   letter-spacing: 5px;
   font-size: 1.3em;
@@ -498,7 +498,7 @@ h2.header {
 }
 
 .navigation-logo .pre,
-.navigation-logo .ha {  
+.navigation-logo .ha {
   font-size: 0.8em;
   letter-spacing: 2px;
 }
@@ -560,7 +560,7 @@ header nav {
 header nav > ul > li > * {
   margin-right: 50px;
 }
-header nav > ul > li:last-child  > * {
+header nav > ul > li:last-child > * {
   margin-right: 0;
 }
 nav a {
@@ -593,14 +593,14 @@ header .cta {
 .year-switcher::after {
   content: "";
   position: absolute;
-  pointer-events: none;  
+  pointer-events: none;
   border-style: solid;
   border-width: 2px 2px 0 0;
   border-color: currentColor;
   height: 0.4em;
   width: 0.4em;
   top: 50%;
-  margin-top: -.4em;
+  margin-top: -0.4em;
   /* 
     22px is a magic number 
     equal to the select right computed padding + 2px total sides border
@@ -608,7 +608,7 @@ header .cta {
   right: 22px;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
-  transform: rotate(135deg)  
+  transform: rotate(135deg);
 }
 
 .language-switcher select,
@@ -621,7 +621,7 @@ header .cta {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;  
+  appearance: none;
   min-width: 100px;
 }
 
@@ -800,7 +800,6 @@ p.copyright a {
   color: #8c99a3;
 }
 
-
 @media (max-width: 900px) and (min-width: 601px) {
   
   /* Header */
@@ -821,7 +820,7 @@ p.copyright a {
     margin-bottom: 3.125rem;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 1.4em
+    line-height: 1.4em;
   }
   header nav > ul > li:last-child {
     margin: 0;
@@ -854,7 +853,6 @@ p.copyright a {
     align-items: center;
   }
   footer .nav-items ul li > * {
-    margin-left: 0;
     margin: 20px 0px;
     font-size: 16px;
     font-size: 1rem;
@@ -887,7 +885,6 @@ p.copyright a {
   top: -40px;
   top: -2.35em;
   left: 0px;
-  color: white;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
   border-bottom-right-radius: 8px;
@@ -903,8 +900,8 @@ p.copyright a {
   left: 0px;
   top: 0px;
   outline-color: transparent;
-  -webkit-transition: top .1s ease-in;
-  transition: top .1s ease-in;
+  -webkit-transition: top 0.1s ease-in;
+  transition: top 0.1s ease-in;
 }
 
 /* Mobile View */
@@ -917,11 +914,11 @@ p.copyright a {
   .title-lg {
     font-size: 40px;
     font-size: 2.5rem;
-    font-size: min(2.5rem,15vw); /* Cap max font size on mobile, if possible. Allows 200% font-size. */
+    font-size: min(2.5rem, 15vw); /* Cap max font size on mobile, if possible. Allows 200% font-size. */
   }
 
   h2 {
-    font-size: min(1.5rem,12vw); /* Cap max font size on mobile, if possible. Allows 200% font-size. */
+    font-size: min(1.5rem, 12vw); /* Cap max font size on mobile, if possible. Allows 200% font-size. */
   }
 
   /* Header */
@@ -945,7 +942,7 @@ p.copyright a {
     margin-bottom: 50px;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 1.4em
+    line-height: 1.4em;
   }
   header nav > ul > li:last-child {
     margin: 0;
@@ -977,8 +974,7 @@ p.copyright a {
   footer .mobile-ha-social-media {
     display: grid;
     grid-area: ha-social-media;
-    grid-template-areas:
-      'ha-logo social-media';
+    grid-template-areas: 'ha-logo social-media';
   }
   footer .ha-logo {
     grid-area: ha-logo;
@@ -1000,7 +996,6 @@ p.copyright a {
     align-items: center;
   }
   footer .nav-items ul li > * {
-    margin-left: 0;
     margin: 20px 0px;
     font-size: 16px;
     font-size: 1rem;
@@ -1042,10 +1037,9 @@ p.copyright a {
     position: absolute;
     display: none;
     flex-direction: column;
-    top: 100%;
-    /* overcome the parent container's 20px side padding */    
-    left: -20px;
-    right: -20px;
+    top: 100%;   
+    left: -20px; /* overcome the parent container's 20px side padding */
+    right: -20px; /* overcome the parent container's 20px side padding */
     border-top: 1px solid rgba(242, 242, 242, 0.2);
     padding: 60px 30px 30px;
     background-color: #677486;
@@ -1061,11 +1055,11 @@ p.copyright a {
     padding: 5px;
     height: 40px;
     width: 37px;
-    color: #f2f2f2;     
+    color: #f2f2f2;
   }
 
   .menu-btn:hover {
-    color: #f7f779;     
+    color: #f7f779;
   }
 
   .menu-btn__bar {
@@ -1074,7 +1068,7 @@ p.copyright a {
     height: 2px;
     background-color: currentColor;
     border-radius: 2px;
-    transition: 0.15s cubic-bezier(0.75, -0.55, 0.25, 1.55) 
+    transition: 0.15s cubic-bezier(0.75, -0.55, 0.25, 1.55);
   }
 
   .menu-btn__bar + .menu-btn__bar {
@@ -1088,7 +1082,7 @@ p.copyright a {
 
   .menu-btn--active .menu-btn__bar {
     margin: 0;
-    position: absolute; 
+    position: absolute;
   }
 
   .menu-btn--active .menu-btn__bar:nth-child(1) {
@@ -1097,12 +1091,12 @@ p.copyright a {
   }
 
   .menu-btn--active .menu-btn__bar:nth-child(2) {
-    opacity: 0 
+    opacity: 0;
   }
   
   .menu-btn--active .menu-btn__bar:nth-child(3) {
     -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg); 
+    transform: rotate(-45deg);
   }
 
   .menu-open .menu {
