@@ -52,12 +52,12 @@
 }
 
 .byline {
-    font-style: italic;
+  font-style: italic;
 }
 
 .byline.authors {
-    font-weight: bold;
-    border-bottom: none;
+  font-weight: bold;
+  border-bottom: none;
 }
 
 .table-wrap-container {
@@ -130,7 +130,7 @@ tbody tr:nth-child(even) {
   margin-right: 10px;
   width: 50px;
   height: auto;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   float: left;
 }
 
@@ -178,7 +178,9 @@ tbody tr:nth-child(even) {
   white-space: pre-wrap;
 }
 
-section.chapter {prince-pdf-tag-type: Art;}
+section.chapter {
+  prince-pdf-tag-type: Art;
+}
 
 .fn {
   display: none;
@@ -198,7 +200,7 @@ section.chapter {prince-pdf-tag-type: Art;}
   @top-left {
     width: 100%;
     margin: 30pt 0 10pt 0;
-    border-bottom: .50pt solid #666;
+    border-bottom: 0.5pt solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -213,7 +215,7 @@ section.chapter {prince-pdf-tag-type: Art;}
   @bottom-left {
     width: 100%;
     margin: 10pt 0 30pt 0;
-    border-top: .50pt solid #666;
+    border-top: 0.5pt solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -221,7 +223,7 @@ section.chapter {prince-pdf-tag-type: Art;}
   @bottom-right { 
     width: 100%;
     margin: 10pt 0 30pt 0;
-    border-top: .25pt solid #666;
+    border-top: 0.25pt solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }

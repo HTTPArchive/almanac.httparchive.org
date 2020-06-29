@@ -1,0 +1,28 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "color-hex-case": null,
+        "comment-empty-line-before": null,
+        "selector-list-comma-newline-after": null,
+        "no-descending-specificity": null,
+        "max-empty-lines": 2,
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": ["prince-pdf"]
+            }
+        ],
+        "property-no-unknown": [
+            true,
+            {
+                "ignoreProperties": ["prince-pdf-display-doc-title"]
+            }
+        ],
+        "value-keyword-case": [
+            "lower",
+            {
+                "ignoreKeywords": ["A4"]
+            }
+        ]
+    }
+}
