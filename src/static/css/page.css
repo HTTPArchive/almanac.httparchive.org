@@ -196,7 +196,7 @@
 }
 
 .authors,.authors h2 {
-  border-bottom: 1px solid #1a2b490A;
+  border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
 }
@@ -256,7 +256,7 @@
 
 #chapter-navigation {
   padding: 50px 36px;
-  border: 1px solid #1a2b490A;
+  border: 1px solid #1a2b490a;
   margin: 20px 0;
   overflow: hidden;
 }
@@ -497,14 +497,14 @@ figure .fig-desktop {
   .index-box ul {
     max-height: 0;
     display: none;
-    border-top: 0 solid #FFFF;
+    border-top: 0 solid #fff;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
   }
 
   .index-box.show ul {
     margin-top: 2px;
-    border-top: 1px solid #1a2b490A;
+    border-top: 1px solid #1a2b490a;
     max-height: 100%;
     display: block;
     transition: max-height 0.25s ease-in;

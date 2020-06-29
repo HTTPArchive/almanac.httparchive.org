@@ -14,7 +14,6 @@
                 "ignoreFontFamilyNames": ["monospace"]
             }
         ],
-        "no-descending-specificity": null,
         "no-eol-whitespace": [
             true,
             {
@@ -27,7 +26,6 @@
                 "ignoreProperties": ["prince-pdf-display-doc-title","prince-pdf-tag-type"]
             }
         ],
-        "selector-list-comma-newline-after": null,
         "selector-pseudo-element-no-unknown": [
             true,
             {

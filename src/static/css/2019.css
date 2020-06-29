@@ -806,7 +806,7 @@ footer ul {
 footer hr {
   grid-area: hr;
   width: 100%;
-  margin: 40px 0px 20px 0;
+  margin: 40px 0 20px 0;
 }
 
 footer hr:last-of-type {
@@ -901,13 +901,13 @@ p.copyright a {
   }
 
   footer .nav-items ul li > * {
-    margin: 20px 0px;
+    margin: 20px 0;
     font-size: 16px;
     font-size: 1rem;
   }
 
   footer hr {
-    margin: 20px 0px;
+    margin: 20px 0;
   }
 
   footer hr:last-of-type {
@@ -1026,7 +1026,7 @@ p.copyright a {
 
   footer .home-logo {
     grid-area: home-logo;
-    margin: 20px 0px;
+    margin: 20px 0;
   }
 
   footer .mobile-ha-social-media {
@@ -1040,7 +1040,7 @@ p.copyright a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 20px 0px;
+    margin: 20px 0;
   }
 
   footer .nav-items {
@@ -1058,7 +1058,7 @@ p.copyright a {
   }
 
   footer .nav-items ul li > * {
-    margin: 20px 0px;
+    margin: 20px 0;
     font-size: 16px;
     font-size: 1rem;
   }
@@ -1085,7 +1085,7 @@ p.copyright a {
   }
 
   footer hr {
-    margin: 20px 0px;
+    margin: 20px 0;
   }
 
   footer hr:last-of-type {
