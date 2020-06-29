@@ -119,7 +119,7 @@
 .index li li li a {
   padding-left: 48px;
 }
-.index li:before{
+.index li::before{
   content: "";
   width: 8px;
   display: inline-block;
@@ -127,7 +127,7 @@
   top: 24px;
   bottom: 24px;
 }
-.index li.active:before{
+.index li.active::before{
   background-color: #A8CABA;
 }
 
@@ -476,7 +476,7 @@ figure .fig-desktop {
     display: block;
     transition: max-height 0.25s ease-in;
   }
-  .index li.active:before{
+  .index li.active::before{
     background-color: transparent;
   }
   .table-wrap {

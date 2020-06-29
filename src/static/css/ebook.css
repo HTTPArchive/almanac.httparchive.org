@@ -220,7 +220,7 @@ section.chapter {
     font-family: 'Poppins', sans-serif;
   }
 
-  @bottom-right { 
+  @bottom-right {
     width: 100%;
     margin: 10pt 0 30pt 0;
     border-top: 0.25pt solid #666;
@@ -321,7 +321,7 @@ section.chapter {
   .content > section {
     page-break-after: always;
   }
-  
+
   #toc a::after {
     content: leader('.') target-counter(attr(href), page);
   }
@@ -339,7 +339,7 @@ section.chapter {
   }
 
   figure {
-   margin: 0; 
+   margin: 0;
   }
 
   figure,
@@ -382,10 +382,10 @@ section.chapter {
   h1, h2, h3, h4, h5 {
     font-weight: bold;
     page-break-after: avoid;
-    page-break-inside:avoid;
+    page-break-inside: avoid;
   }
-  
-  h1+p, h2+p, h3+p {
+
+  h1 + p, h2 + p, h3 + p {
     page-break-before: avoid;
   }
 

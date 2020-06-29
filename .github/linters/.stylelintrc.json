@@ -1,27 +1,37 @@
 {
     "extends": "stylelint-config-standard",
     "rules": {
-        "color-hex-case": null,
-        "comment-empty-line-before": null,
-        "selector-list-comma-newline-after": null,
-        "no-descending-specificity": null,
-        "max-empty-lines": 2,
+        "at-rule-empty-line-before": null,
         "at-rule-no-unknown": [
             true,
             {
                 "ignoreAtRules": ["prince-pdf"]
             }
         ],
+        "color-hex-case": null,
+        "comment-empty-line-before": null,
+        "indentation": null,
+        "max-empty-lines": 2,
+        "no-descending-specificity": null,
+        "no-eol-whitespace": null,
         "property-no-unknown": [
             true,
             {
-                "ignoreProperties": ["prince-pdf-display-doc-title"]
+                "ignoreProperties": ["prince-pdf-display-doc-title","prince-pdf-tag-type"]
+            }
+        ],
+        "rule-empty-line-before": null,
+        "selector-list-comma-newline-after": null,
+        "selector-pseudo-element-no-unknown": [
+            true,
+            {
+                "ignorePseudoElements": ["footnote-call","footnote-marker"]
             }
         ],
         "value-keyword-case": [
             "lower",
             {
-                "ignoreKeywords": ["A4"]
+                "ignoreKeywords": ["Art","A4"]
             }
         ]
     }
