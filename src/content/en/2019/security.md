@@ -166,7 +166,7 @@ The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instr
 <figcaption>Figure 9. HSTS directive usage.</figcaption>
 </figure>
 
-Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age ` directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration representing half a year (60 x 60 x 24 x 365/2).
+Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age` directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration representing half a year (60 x 60 x 24 x 365/2).
 
 <figure>
   <table>

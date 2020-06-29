@@ -139,7 +139,7 @@ Otros geos de APAC cuentan una historia diferente. Tailandia, Vietnam, Indonesia
   <figcaption id="fig8-caption">Figura 8. Diagrama de la API de Navigation Timing de los eventos en la navegación de una página.</figcaption>
 </figure>
 
-Para ayudar a explicar TTFB y los muchos factores que lo afectan, tomemos prestado un diagrama de la [especificación de la API de Navigation Timing](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API). En la Figura 8 anterior, TTFB es la duración desde `startTime` hasta `responseStart`, que incluye todo lo que se encuentra entre: `unload`, `redirects`, `AppCache`,` DNS`, `SSL`,` TCP` y el tiempo el servidor pasa gestionando la petición. Dado ese contexto, veamos cómo los usuarios están experimentando esta métrica.
+Para ayudar a explicar TTFB y los muchos factores que lo afectan, tomemos prestado un diagrama de la [especificación de la API de Navigation Timing](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API). En la Figura 8 anterior, TTFB es la duración desde `startTime` hasta `responseStart`, que incluye todo lo que se encuentra entre: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`,` TCP` y el tiempo el servidor pasa gestionando la petición. Dado ese contexto, veamos cómo los usuarios están experimentando esta métrica.
 
 <figure id="fig9">
   <a href="/static/images/2019/performance/fig9.png">
