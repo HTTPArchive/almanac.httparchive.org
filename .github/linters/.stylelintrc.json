@@ -7,17 +7,13 @@
                 "ignoreAtRules": ["prince-pdf"]
             }
         ],
-        "color-hex-case": null,
-        "color-hex-length": null,
         "comment-empty-line-before": null,
-        "declaration-colon-newline-after": null,
         "font-family-no-duplicate-names": [
             true,
             {
                 "ignoreFontFamilyNames": ["monospace"]
             }
         ],
-        "length-zero-no-unit": null,
         "no-descending-specificity": null,
         "no-eol-whitespace": [
             true,
