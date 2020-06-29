@@ -243,7 +243,15 @@ ignored-classes=optparse.Values,thread._local,_thread._local
 # (useful for modules/projects where namespaces are manipulated during runtime
 # and thus existing member attributes cannot be deduced by static analysis. It
 # supports qualified module names, as well as Unix pattern matching.
-ignored-modules=
+ignored-modules=flask,
+                flask_talisman,
+                matplotlib,
+                matplotlib.pyplot,
+                mistune,
+                pandas,
+                scour,
+                werkzeug.routing,
+                werkzeug.http
 
 # Show a hint with possible names when a member name was not found. The aspect
 # of finding the hint is based on edit distance.
@@ -511,16 +519,7 @@ int-import-graph=
 known-standard-library=
 
 # Force import order to recognize a module as part of a third party library.
-known-third-party=enchant,
-                  flask,
-                  flask_talisman,
-                  matplotlib,
-                  matplotlib.pyplot,
-                  mistune,
-                  pandas,
-                  scour,
-                  werkzeug.routing,
-                  werkzeug.http
+known-third-party=enchant
 
 
 [CLASSES]
