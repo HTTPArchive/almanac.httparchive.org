@@ -28,7 +28,7 @@
   @page {
     @top-left { content: ''; }
     @top-right { content: string(chapter-subtitle) string(chapter-title); }
-    @bottom-left { content: "{{ year }} {{ self.web_almanac() }} {{ self.preposition() }} {{ self.http_archive() }}"; }
+    @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
     @bottom-right { content: counter(page); }
   }
 {% else %}
@@ -45,7 +45,7 @@
     @top-left { content: string(chapter-subtitle) string(chapter-title); }
     @top-right { content: ''; }
     @bottom-left { content: counter(page); }
-    @bottom-right { content: "{{ year }} {{ self.web_almanac() }} {{ self.preposition() }} {{ self.http_archive() }}"; }
+    @bottom-right { content: "{{ year }} {{ self.organization() }}"; }
     {% if request.args.get('inside-margin') != None %}
     margin-right: {{ request.args.get('inside-margin') }};
     {% endif %}
@@ -54,7 +54,7 @@
   @page :right {
     @top-left { content: ''; }
     @top-right { content: string(chapter-subtitle) string(chapter-title); }
-    @bottom-left { content: "{{ year }} {{ self.web_almanac() }} {{ self.preposition() }} {{ self.http_archive() }}"; }
+    @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
     @bottom-right { content: counter(page); }
     {% if request.args.get('inside-margin') != None %}
     margin-left: {{ request.args.get('inside-margin') }};
