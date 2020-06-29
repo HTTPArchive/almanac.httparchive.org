@@ -108,17 +108,7 @@
     <div class="container">
       <div class="top-header">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
-          {% if language.lang_code != 'ja' %}
-            <span class="wa">{{ self.web_almanac() }}</span>
-            <span class="line-group">  
-              <span class="pre">{{ self.preposition() }}</span>
-              <span class="ha">{{ self.http_archive() }}</span>
-            </span>
-          {% else %}
-            <span class="ha line-group">{{ self.http_archive() }}</span>            
-            <span class="pre">{{ self.preposition() }}</span>
-            <span class="wa">{{ self.web_almanac() }}</span>                        
-          {% endif %}
+          {{ self.web_almanac_logo() }}
         </a>
         <nav aria-label="{{ self.page_navigation() }}">
           <ul>
@@ -201,17 +191,7 @@
     <footer class="alt-bg">
       <div class="home-logo">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
-          {% if language.lang_code != 'ja' %}
-            <span class="wa">{{ self.web_almanac() }}</span>
-            <span class="line-group">  
-              <span class="pre">{{ self.preposition() }}</span>
-              <span class="ha">{{ self.http_archive() }}</span>
-            </span>
-          {% else %}
-            <span class="ha line-group">{{ self.http_archive() }}</span>            
-            <span class="pre">{{ self.preposition() }}</span>
-            <span class="wa">{{ self.web_almanac() }}</span>                        
-          {% endif %}
+          {{ self.web_almanac_logo() }}
         </a>
       </div>
       <hr>
