@@ -19,6 +19,12 @@
         ],
         "length-zero-no-unit": null,
         "no-descending-specificity": null,
+        "no-eol-whitespace": [
+            true,
+            {
+                "ignore": ["empty-lines"]
+            }
+        ],
         "property-no-unknown": [
             true,
             {

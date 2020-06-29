@@ -364,7 +364,6 @@ p {
 }
 
 @media (max-width: 900px) and (min-width: 601px) {
-
   header.alt-bg {
     padding-bottom: 1800px;
     padding-bottom: 105.88em;
@@ -506,7 +505,6 @@ p {
 
 /* Mobile View */
 @media (max-width: 600px) {
-
   header.alt-bg {
     background-size: cover;
     padding-bottom: 1650px;
@@ -550,7 +548,7 @@ p {
   .intro button {
     margin-bottom: 20px;
   }
-  
+
   .intro-image-container {
     display: flex;
     justify-content: center;
