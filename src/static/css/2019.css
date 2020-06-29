@@ -342,7 +342,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  color: #1A2B49;
+  color: #1a2b49;
   margin: 0;
   font-weight: inherit;
   -webkit-font-smoothing: antialiased;
@@ -453,12 +453,12 @@ h2.header {
 }
 
 .btn {
-  border: 1px solid #1A2B49;
+  border: 1px solid #1a2b49;
   border-radius: 50px;
   padding: 15px 30px;
   padding: 1.07em 1.875rem;
-  background: #1A2B49;
-  color: #FFFFFF;
+  background: #1a2b49;
+  color: #fff;
   font-size: 14px;
   font-size: 0.875rem;
   text-decoration: none;
@@ -467,18 +467,18 @@ h2.header {
 .btn:hover,
 .btn:focus,
 .alt.btn {
-  background: #FFFFFF;
-  color: #1A2B49;
+  background: #fff;
+  color: #1a2b49;
 }
 
 .alt.btn:hover,
 .alt.btn:focus {
-  background: #1A2B49;
-  color: #FFFFFF;
+  background: #1a2b49;
+  color: #fff;
 }
 
 .alt-bg {
-  background-color: #5C687D;
+  background-color: #5c687d;
   color: #f2f2f2;
 }
 
@@ -529,26 +529,26 @@ h2.header {
 
 header.alt-bg a:hover, footer.alt-bg a:hover,
 header.alt-bg a:focus, footer.alt-bg a:focus {
-  color: #F7F779;
+  color: #f7f779;
 }
 
 .alt-bg .btn {
-  border-color: #F7F779;
-  background-color: #F7F779;
-  color: #1A2B49;
+  border-color: #f7f779;
+  background-color: #f7f779;
+  color: #1a2b49;
 }
 
 .alt-bg .btn:hover,
 .alt-bg .btn:focus,
 .alt-bg .alt.btn {
   background-color: transparent;
-  color: #F7F779;
+  color: #f7f779;
 }
 
 .alt-bg .alt.btn:hover,
 .alt-bg .alt.btn:focus {
-  background-color: #F7F779;
-  color: #1A2B49;
+  background-color: #f7f779;
+  color: #1a2b49;
 }
 
 .top-header, footer {
@@ -594,7 +594,7 @@ header nav > ul > li:last-child > * {
 
 nav a {
   text-decoration: none;
-  color: #F2F2F2;
+  color: #f2f2f2;
 }
 
 header .cta {
@@ -615,7 +615,7 @@ header .cta {
 
 .language-switcher:hover,
 .year-switcher:hover {
-  color: #F7F779;
+  color: #f7f779;
 }
 
 .language-switcher::after,
@@ -661,7 +661,7 @@ header .cta {
 
 .language-switcher option,
 .year-switcher option {
-  color: #1A2B49;
+  color: #1a2b49;
   background-color: white;
 }
 
@@ -669,8 +669,8 @@ header .cta {
 .year-switcher:focus-within,
 .language-switcher select:focus,
 .year-switcher select:focus {
-  border-color: #F7F779;
-  color: #F7F779;
+  border-color: #f7f779;
+  color: #f7f779;
 }
 
 .not-translated {
@@ -685,7 +685,7 @@ header .cta {
 }
 
 .main {
-  margin: 0px auto;
+  margin: 0 auto;
   font-size: 17px;
   font-size: 1.0625rem;
 }
@@ -818,7 +818,7 @@ p.copyright {
   margin: 0;
   font-size: 16px;
   font-size: 1rem;
-  color: #F2F2F2;
+  color: #f2f2f2;
 }
 
 p.copyright a {
@@ -934,7 +934,7 @@ p.copyright a {
   position: absolute;
   top: -40px;
   top: -2.35em;
-  left: 0px;
+  left: 0;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
   border-bottom-right-radius: 8px;
@@ -947,8 +947,8 @@ p.copyright a {
 
 #skiptocontent a:focus {
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   outline-color: transparent;
   -webkit-transition: top 0.1s ease-in;
   transition: top 0.1s ease-in;
@@ -1101,7 +1101,7 @@ p.copyright a {
   #menu {
     display: block;
   }
-  
+
   .menu {
     position: absolute;
     display: none;

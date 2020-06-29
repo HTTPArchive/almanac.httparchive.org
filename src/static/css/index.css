@@ -4,8 +4,8 @@ body {
 }
 
 header.alt-bg {
-  background: #5C687D;
-  background: transparent linear-gradient(#5C687D 70%, transparent 30%);
+  background: #5c687d;
+  background: transparent linear-gradient(#5c687d 70%, transparent 30%);
   /* background: transparent url(/static/images/intro-background-fit.svg) bottom left / 100% 100% no-repeat; */
   background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICBzdmd7YmFja2dyb3VuZDojZmZmfQ0KICAgICAgLmNscy0xe2ZpbGw6I2E4Y2FiYTtmaWxsLXJ1bGU6ZXZlbm9kZDtvcGFjaXR5Oi4wNX0NCiAgICA8L3N0eWxlPg0KICA8L2RlZnM+DQogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS0yMzEgODloMjA4OHY2NTFsLTIwODggMzYwVjg5eiIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPg0KICA8cGF0aCBkPSJNLTE0NC0xOWgyMDg4djY1MUwtMTQ0IDk5MlYtMTl6IiBmaWxsPSIjMWEyYjQ5IiBvcGFjaXR5PSIuNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwLTgzaDIwODh2NjUxTC00NzAgOTI4Vi04M3oiLz4NCiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4NCjwvc3ZnPg0K);
   background-position: bottom left;
@@ -20,7 +20,7 @@ header.alt-bg {
 /* Add fall back background color in case SVG fails to load so text is still readable */
 header::after {
   content: "";
-  background: #5C687D;
+  background: #5c687d;
   top: 0;
   left: 0;
   bottom: 600px;
@@ -80,7 +80,7 @@ p {
 }
 
 .intro-container {
-  color: #FFFFFF;
+  color: #fff;
   grid-area: intro;
   -ms-grid-row: 1;
   -ms-grid-columns: 2fr 1fr;
@@ -144,15 +144,15 @@ p {
 }
 
 .intro .btn {
-  border-color: #F7F779;
-  background-color: #F7F779;
-  color: #1A2B49;
+  border-color: #f7f779;
+  background-color: #f7f779;
+  color: #1a2b49;
 }
 
 .intro .btn:hover,
 .intro .btn:focus {
   background-color: transparent;
-  color: #F7F779;
+  color: #f7f779;
 }
 
 /* Featured Chapter */
@@ -242,7 +242,7 @@ p {
 
 .people-number {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #fff;
   font-size: 600px;
   font-weight: bold;
   letter-spacing: 50px;
@@ -395,7 +395,7 @@ p {
     display: block;
     margin: 0;
     width: auto;
-    color: #F7F779;
+    color: #f7f779;
     font-size: 190px;
     line-height: 160px;
     font-weight: bold;
@@ -558,7 +558,7 @@ p {
     display: block;
     margin: 0;
     width: auto;
-    color: #F7F779;
+    color: #f7f779;
     font-size: 40vw;
     line-height: 100%;
     font-weight: bold;
@@ -654,7 +654,7 @@ p {
   }
 
   #character-hat {
-    right: 0px;
+    right: 0;
     bottom: -15px;
   }
 

@@ -49,7 +49,7 @@
 }
 
 .index .header {
-  color: #1A2B49;
+  color: #1a2b49;
 }
 
 .index-box .index-btn {
@@ -69,8 +69,8 @@
 
 .index ul {
   width: 100%;
-  margin: 0px;
-  padding-left: 0px;
+  margin: 0;
+  padding-left: 0;
   border-top: 1px solid rgba(26, 43, 73, 0.1);
 }
 
@@ -94,7 +94,7 @@
   padding: 24px 16px;
   line-height: 24px;
   line-height: 1.5rem;
-  color: #1A2B49;
+  color: #1a2b49;
 }
 
 .index li li {
@@ -129,7 +129,7 @@
 }
 
 .index li.active::before {
-  background-color: #A8CABA;
+  background-color: #1a2b49;
 }
 
 .content {
@@ -161,7 +161,7 @@
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
 }
 
 .byline {
@@ -196,7 +196,7 @@
 }
 
 .authors,.authors h2 {
-  border-bottom: 1px solid #1A2B490A;
+  border-bottom: 1px solid #1a2b490A;
   font-size: 17px;
   font-size: 1.0625rem;
 }
@@ -256,13 +256,13 @@
 
 #chapter-navigation {
   padding: 50px 36px;
-  border: 1px solid #1A2B490A;
+  border: 1px solid #1a2b490A;
   margin: 20px 0;
   overflow: hidden;
 }
 
 #chapter-navigation > a {
-  color: #1A2B49;
+  color: #1a2b49;
   width: 50%;
   min-width: 100px;
   display: inline-block;
@@ -348,7 +348,7 @@ figure .anchor-link {
   font-size: 12px;
   font-size: 0.75rem;
   background-color: white;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   border-radius: 4px;
   padding: 5px;
 }
@@ -358,7 +358,7 @@ figure .anchor-link {
   border-radius: 10px;
   margin-top: 10px;
   padding: 10px;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
 
 figure {
@@ -381,7 +381,7 @@ figure > a {
 figure img {
   margin: 0 auto;
   border-radius: 8px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
 }
 
 figure iframe {
@@ -497,14 +497,14 @@ figure .fig-desktop {
   .index-box ul {
     max-height: 0;
     display: none;
-    border-top: 0px solid #FFFF;
+    border-top: 0 solid #FFFF;
     transition: max-height 0.15s ease-out;
     overflow: hidden;
   }
 
   .index-box.show ul {
     margin-top: 2px;
-    border-top: 1px solid #1A2B490A;
+    border-top: 1px solid #1a2b490A;
     max-height: 100%;
     display: block;
     transition: max-height 0.25s ease-in;
@@ -572,7 +572,7 @@ figure .fig-desktop {
 
 .code-block .divider {
   position: relative;
-  border: 1px solid #1A2B490A;
+  border: 1px solid #1a2b490a;
   width: calc(100% + 32px);
   left: -16px;
 }
@@ -593,17 +593,17 @@ figure .fig-desktop {
 }
 
 .code-keyword {
-  color: #4A3244;
+  color: #4a3244;
 }
 
 .code-function {
-  color: #1A2B49;
+  color: #1a2b49;
 }
 
 .code-string {
-  color: #2C4A73;
+  color: #2c4a73;
 }
 
 .code-number {
-  color: #0000ff;
+  color: #00f;
 }
