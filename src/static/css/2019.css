@@ -1037,7 +1037,7 @@ p.copyright a {
     position: absolute;
     display: none;
     flex-direction: column;
-    top: 100%;   
+    top: 100%;
     left: -20px; /* overcome the parent container's 20px side padding */
     right: -20px; /* overcome the parent container's 20px side padding */
     border-top: 1px solid rgba(242, 242, 242, 0.2);
