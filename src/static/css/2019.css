@@ -724,6 +724,7 @@ blockquote {
   font-style: italic;
   font-size: 19px;
   font-size: 1.1875rem;
+  line-height: 1.5em;
 }
 
 blockquote::before {
