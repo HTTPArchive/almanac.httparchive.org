@@ -1,10 +1,6 @@
 ###########################
-###########################
 ## Linter GitHub Actions ##
 ###########################
-###########################
-name: Lint Code Base
-
 #
 # Documentation:
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
@@ -17,41 +13,28 @@ name: Lint Code Base
 #  * JSON - default rules
 #  * YML - default rules
 # Exception config files are in the .github/linters directory
-
-######################################
-# Start the job on all pull requests #
-######################################
+#
+name: Lint Code Base
+# Start the job on all push and pull requests #
 on:
   - push
   - pull_request
 
-###############
-# Set the Job #
-###############
+# Set the Job
 jobs:
-  build:
+  lint:
     # Name the Job
     name: Lint Code Base
-    ########################################
-    # Skip duplicate job for local brances #
-    ########################################
+    # Skip duplicate job for local brances
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     # Set the agent to run on
     runs-on: ubuntu-latest
-
-    ##################
-    # Load all steps #
-    ##################
     steps:
-      ##########################
-      # Checkout the code base #
-      ##########################
+      # Checkout the code base
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      ################################
       # Run Linter against code base #
-      ################################
       - name: Lint Code Base
         uses: docker://github/super-linter:v2.2.0
         env:
