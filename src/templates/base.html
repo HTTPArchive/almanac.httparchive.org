@@ -23,9 +23,9 @@
       </script>
       <link rel="shortcut icon" href="/static/images/favicon.ico">
       <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
-      <link rel="stylesheet" href="/static/css/normalize.css?v=1">
+      <link rel="stylesheet" href="/static/css/normalize.css?v=20200630133215">
       {% block styles %}{% endblock %}
-      <link rel="stylesheet" media="print" href="/static/css/print.css?v=20200527181403">
+      <link rel="stylesheet" media="print" href="/static/css/print.css?v=20200630133215">
     {% endblock %}
     <link rel="canonical" href="https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code)) }}" />
     {% if supported_languages | length > 1%}
