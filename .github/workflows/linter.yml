@@ -21,7 +21,9 @@ name: Lint Code Base
 ######################################
 # Start the job on all pull requests #
 ######################################
-on: pull_request
+on:
+  - push
+  - pull_request
 
 ###############
 # Set the Job #
@@ -30,6 +32,10 @@ jobs:
   build:
     # Name the Job
     name: Lint Code Base
+    ########################################
+    # Skip duplicate job for local brances #
+    ########################################
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     # Set the agent to run on
     runs-on: ubuntu-latest
 
