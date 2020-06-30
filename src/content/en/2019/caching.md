@@ -27,12 +27,12 @@ There are three guiding principles to caching web content: cache as much as you 
 
 Web architectures typically involve [multiple tiers of caching](https://blog.yoav.ws/tale-of-four-caches/). For example, an HTTP request may have the opportunity to be cached in:
 
-*   An end user's browser
-*   A service worker cache in the user's browser
-*   A shared gateway 
-*   CDNs, which offer the ability to cache at the edge, close to end users
-*   A caching proxy in front of the application, to reduce the backend workload
-*   The application and database layers
+* An end user's browser
+* A service worker cache in the user's browser
+* A shared gateway 
+* CDNs, which offer the ability to cache at the edge, close to end users
+* A caching proxy in front of the application, to reduce the backend workload
+* The application and database layers
 
 This chapter will explore how resources are cached within web browsers.
 
@@ -40,22 +40,22 @@ This chapter will explore how resources are cached within web browsers.
 
 For an HTTP client to cache a resource, it needs to understand two pieces of information:
 
-*   "How long am I allowed to cache this for?"
-*   "How do I validate that the content is still fresh?"
+* "How long am I allowed to cache this for?"
+* "How do I validate that the content is still fresh?"
 
 When a web browser sends a response to a client, it typically includes headers that indicate whether the resource is cacheable, how long to cache it for, and how old the resource is. RFC 7234 covers this in more detail in section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) and [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
 
 The HTTP response headers typically used for conveying freshness lifetime are:
 
-*   `Cache-Control` allows you to configure a cache lifetime duration (i.e. how long this is valid for).
-*   `Expires` provides an expiration date or time (i.e. when exactly this expires).
+* `Cache-Control` allows you to configure a cache lifetime duration (i.e. how long this is valid for).
+* `Expires` provides an expiration date or time (i.e. when exactly this expires).
 
 `Cache-Control` takes priority if both are present. These are [discussed in more detail below](#cache-control-vs-expires).
 
 The HTTP response headers for validating the responses stored within the cache, i.e. giving conditional requests something to compare to on the server side, are:
 
-*   `Last-Modified` indicates when the object was last changed.
-*   Entity Tag (`ETag`) provides a unique identifier for the content.
+* `Last-Modified` indicates when the object was last changed.
+* Entity Tag (`ETag`) provides a unique identifier for the content.
 
 `ETag` takes priority if both are present. These are [discussed in more detail below](#validating-freshness).
 
@@ -105,9 +105,9 @@ If no caching headers are present in a response, then the [client is permitted t
 
 A cacheable resource is stored by the client for a period of time and available for reuse on a subsequent request. Across all HTTP requests, 80% of responses are considered cacheable, meaning that a cache is permitted to store them. Out of these, 
 
-*   6% of requests have a time to live (TTL) of 0 seconds, which immediately invalidates a cached entry.
-*   27% are cached heuristically because of a missing `Cache-Control` header.
-*   47% are cached for more than 0 seconds.
+* 6% of requests have a time to live (TTL) of 0 seconds, which immediately invalidates a cached entry.
+* 27% are cached heuristically because of a missing `Cache-Control` header.
+* 47% are cached for more than 0 seconds.
 
 The remaining responses are not permitted to be stored in browser caches.
 
@@ -254,10 +254,10 @@ In HTTP/1.0, the `Expires` header was used to indicate the date/time after which
 
 HTTP/1.1 introduced the `Cache-Control` header, and most modern clients support both headers. This header provides much more extensibility via caching directives. For example:
 
-*   `no-store` can be used to indicate that a resource should not be cached.
-*   `max-age` can be used to indicate a freshness lifetime.
-*   `must-revalidate` tells the client a cached entry must be validated with a conditional request prior to its use.
-*   `private` indicates a response should only be cached by a browser, and not by an intermediary that would serve multiple clients.
+* `no-store` can be used to indicate that a resource should not be cached.
+* `max-age` can be used to indicate a freshness lifetime.
+* `must-revalidate` tells the client a cached entry must be validated with a conditional request prior to its use.
+* `private` indicates a response should only be cached by a browser, and not by an intermediary that would serve multiple clients.
 
 53% of HTTP responses include a `Cache-Control` header with the `max-age` directive, and 54% include the Expires header. However, only 41% of these responses use both headers, which means that 13% of responses are caching solely based on the older `Expires` header. 
 
@@ -343,9 +343,9 @@ For example, `cache-control: public, max-age=43200` indicates that a cached entr
 
 Figure 9 above illustrates the top 15 `Cache-Control` directives in use on mobile websites. The results for desktop and mobile are very similar. There are a few interesting observations about the popularity of these cache directives:
 
-*   `max-age` is used by almost 75% of `Cache-Control` headers, and `no-store` is used by 18%. 
-*   `public` is rarely necessary since cached entries are assumed `public` unless `private` is specified. Approximately 38% of responses include `public`.
-*   The `immutable` directive is relatively new, [introduced in 2017](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook) and is [supported on Firefox and Safari](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility). Its usage has grown to 3.4%, and it is widely used in [Facebook and Google third-party responses](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195).
+* `max-age` is used by almost 75% of `Cache-Control` headers, and `no-store` is used by 18%. 
+* `public` is rarely necessary since cached entries are assumed `public` unless `private` is specified. Approximately 38% of responses include `public`.
+* The `immutable` directive is relatively new, [introduced in 2017](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook) and is [supported on Firefox and Safari](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility). Its usage has grown to 3.4%, and it is widely used in [Facebook and Google third-party responses](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195).
 
 Another interesting set of directives to show up in this list are `pre-check` and `post-check`, which are used in 2.2% of `Cache-Control` response headers (approximately 7.8 million responses). This pair of headers was [introduced in Internet Explorer 5 to provide a background validation](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/) and was rarely implemented correctly by websites. 99.2% of responses using these headers had used the combination of `pre-check=0` and `post-check=0`. When both of these directives are set to 0, then both directives are ignored. So, it seems these directives were never used correctly!  
 
@@ -357,8 +357,8 @@ When a response is not cacheable, the `Cache-Control` `no-store` directive shoul
 
 There are a few common errors that are made when attempting to configure a response to be non-cacheable:
 
-*   Setting `Cache-Control: no-cache` may sound like the resource will not be cacheable. However, the `no-cache` directive requires the cached entry to be revalidated prior to use and is not the same as being non-cacheable.
-*   Setting `Cache-Control: max-age=0` sets the TTL to 0 seconds, but that is not the same as being non-cacheable. When `max-age` is set to 0, the resource is stored in the browser cache and immediately invalidated. This results in the browser having to perform a conditional request to validate the resource's freshness.
+* Setting `Cache-Control: no-cache` may sound like the resource will not be cacheable. However, the `no-cache` directive requires the cached entry to be revalidated prior to use and is not the same as being non-cacheable.
+* Setting `Cache-Control: max-age=0` sets the TTL to 0 seconds, but that is not the same as being non-cacheable. When `max-age` is set to 0, the resource is stored in the browser cache and immediately invalidated. This results in the browser having to perform a conditional request to validate the resource's freshness.
 
 Functionally, `no-cache` and `max-age=0` are similar, since they both require revalidation of a cached resource. The `no-cache` directive can also be used alongside a `max-age` directive that is greater than 0.
 
@@ -516,9 +516,9 @@ The `Date` HTTP response header is usually generated by the web server or CDN se
 
 Examples of some of the invalid uses of the `Expires` header are:
 
-*   Valid date formats, but using a time zone other than GMT
-*   Numerical values such as 0 or -1
-*   Values that would be valid in a `Cache-Control` header
+* Valid date formats, but using a time zone other than GMT
+* Numerical values such as 0 or -1
+* Values that would be valid in a `Cache-Control` header
 
 The largest source of invalid `Expires` headers is from assets served from a popular third-party, in which a date/time uses the EST time zone, for example `Expires: Tue, 27 Apr 1971 19:44:06 EST`.
 

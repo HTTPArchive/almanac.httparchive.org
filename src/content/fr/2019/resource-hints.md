@@ -19,9 +19,9 @@ Les [indices de ressources](https://www.w3.org/TR/resource-hints/) fournissent d
 
 [Quelques exemples](https://youtu.be/YJGCZCaIZkQ?t=1956) d'amélioration de performance suite à l'usage d'indices des ressources&nbsp;:
 
-*   Jabong a réduit son Time To Interactive de 1,5 seconde en préchargeant les scripts critiques.
-*   Barefoot Wine a réduit le Time To Interactive des futures pages de 2,7 secondes en préchargeant les liens visibles. 
-*   Chrome.com a réduit sa latence de 0,7 seconde en se préconnectant à des domaines critiques.
+* Jabong a réduit son Time To Interactive de 1,5 seconde en préchargeant les scripts critiques.
+* Barefoot Wine a réduit le Time To Interactive des futures pages de 2,7 secondes en préchargeant les liens visibles. 
+* Chrome.com a réduit sa latence de 0,7 seconde en se préconnectant à des domaines critiques.
 
 La plupart des navigateurs actuels prennent en charge quatre indices de ressources distincts&nbsp;: `dns-prefetch`, `preconnect`, `preload` et `prefetch`.
 

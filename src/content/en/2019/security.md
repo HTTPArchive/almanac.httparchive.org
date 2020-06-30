@@ -166,7 +166,7 @@ The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instr
 <figcaption>Figure 9. HSTS directive usage.</figcaption>
 </figure>
 
-Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age ` directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration representing half a year (60 x 60 x 24 x 365/2).
+Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age` directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration representing half a year (60 x 60 x 24 x 365/2).
 
 <figure>
   <table>
@@ -272,10 +272,10 @@ A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Po
 | `no-referrer-when-downgrade`      | 39.16%  | 41.52% |
 | `strict-origin-when-cross-origin` | 39.16%  | 22.17% |
 | `unsafe-url`                      | 22.17%  | 22.17% |
-| `same-origin `                    |  7.97%  |  7.97% |
+| `same-origin`                     |  7.97%  |  7.97% |
 | `origin-when-cross-origin`        |  6.76%  |  6.44% |
 | `no-referrer`                     |  5.65%  |  5.38% |
-| `strict-origin `                  |  4.35%  |  4.14% |
+| `strict-origin`                   |  4.35%  |  4.14% |
 | `origin`                          |  3.63%  |  3.23% |
 
 <figcaption>Figure 11. `Referrer-Policy` configuration option usage.</figcaption>
