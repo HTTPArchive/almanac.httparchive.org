@@ -21,10 +21,7 @@ name: Lint Code Base
 #############################
 # Start the job on all push #
 #############################
-on:
-  push:
-    branches-ignore:
-      - 'main'
+on: pull_request
 
 ###############
 # Set the Job #

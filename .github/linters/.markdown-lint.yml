@@ -35,4 +35,4 @@ MD040: false                  # Don't demand language for all code blocks
 #################
 # Rules by tags #
 #################
-blank_lines: false  # Error on blank lines
+blank_lines: false             # Error on blank lines
