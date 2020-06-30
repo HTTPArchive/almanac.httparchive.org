@@ -27,12 +27,12 @@ La mise en cache sur le web s'appuie sur trois principes fondamentaux&nbsp;: met
 
 Les architectures Web impliquent généralement [une mise en cache en plusieurs niveaux](https://blog.yoav.ws/tale-of-four-caches/). Par exemple une requête HTTP peut être mise en cache de différentes manière&nbsp;:
 
-*   dans le cache du navigateur&nbsp;;
-*   dans le cache d'un <i lang="en">service worker</i> dans le navigateur&nbsp;;
-*   dans une passerelle partagée&nbsp;;
-*   au niveau des CDN, qui offrent la possibilité de mettre en cache à proximité des utilisateurs&nbsp;;
-*   dans un proxy de cache en amont des applications pour réduire la charge sur les serveurs back-end&nbsp;;
-*   au niveau de l'application et de la base de données.
+* dans le cache du navigateur&nbsp;;
+* dans le cache d'un <i lang="en">service worker</i> dans le navigateur&nbsp;;
+* dans une passerelle partagée&nbsp;;
+* au niveau des CDN, qui offrent la possibilité de mettre en cache à proximité des utilisateurs&nbsp;;
+* dans un proxy de cache en amont des applications pour réduire la charge sur les serveurs back-end&nbsp;;
+* au niveau de l'application et de la base de données.
 
 Ce chapitre explique comment les ressources sont mises en cache dans les navigateurs Web.
 
@@ -40,22 +40,22 @@ Ce chapitre explique comment les ressources sont mises en cache dans les navigat
 
 Pour qu'un client HTTP mette en cache une ressource, il doit répondre a deux questions&nbsp;:
 
-*   "Combien de temps dois-je mettre en cache&nbsp;?"
-*   "Comment puis-je valider que le contenu est encore frais&nbsp;?"
+* "Combien de temps dois-je mettre en cache&nbsp;?"
+* "Comment puis-je valider que le contenu est encore frais&nbsp;?"
 
 Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralement dans sa réponse des en-têtes qui indiquent si la ressource peut être mise en cache, pour combien de temps et quel est son âge. La RFC 7234 traite plus en détail de ce point dans la section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) et [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
 
 Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie sont&nbsp;:
 
-*   <i lang="en">`Cache-Control`</i> vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
-*   `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
+* <i lang="en">`Cache-Control`</i> vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
+* `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
 
 `Cache-Control` est prioritaire si les deux champs sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#cache-control-vs-expires).
 
 Les en-têtes de réponse HTTP permettant de valider les données stockées en cache, c'est à dire donner les informations nécessaires pour comparer une ressource à sa contrepartie côté serveur&nbsp;:
 
-*   `Last-Modified` indique quand la ressource a été modifiée pour la dernière fois.
-*   `ETag` fournit l'identifiant unique d'une ressource.
+* `Last-Modified` indique quand la ressource a été modifiée pour la dernière fois.
+* `ETag` fournit l'identifiant unique d'une ressource.
 
 `ETag` est prioritaire si les deux en-têtes sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#validation-de-la-fraîcheur-des-informations).
 
@@ -105,9 +105,9 @@ Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'a
 
 Une ressource mise en cache est stockée par le client pendant un certain temps et peut être réutilisée ultérieurement. Pour les requêtes HTTP, 80&nbsp;% des réponses peuvent certainement être mises en cache, ce qui signifie qu'un système de cache peut les stocker. En dehors de ça,
 
-*   6&nbsp;% des requêtes ont un <i lang="en">Time To Live</i> (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
-*   27&nbsp;% sont mis en cache par heuristique, à cause d'un `Cache-Control` manquant en en-tête.
-*   47&nbsp;% sont mis en cache pendant plus de 0 seconde.
+* 6&nbsp;% des requêtes ont un <i lang="en">Time To Live</i> (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
+* 27&nbsp;% sont mis en cache par heuristique, à cause d'un `Cache-Control` manquant en en-tête.
+* 47&nbsp;% sont mis en cache pendant plus de 0 seconde.
 
 Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
 
@@ -515,9 +515,9 @@ L'en-tête de réponse HTTP `Date` est généralement généré par le serveur w
 
 Voici des exemples d'utilisations incorrectes de l'en-tête `Expires`&nbsp;:
 
-*   Formats de date valides, mais utilisant un fuseau horaire autre que GMT
-*   Valeurs numériques telles que 0 ou -1
-*   Valeurs qui seraient valides dans un en-tête `Cache-Control`
+* Formats de date valides, mais utilisant un fuseau horaire autre que GMT
+* Valeurs numériques telles que 0 ou -1
+* Valeurs qui seraient valides dans un en-tête `Cache-Control`
 
 La plus grande source d'en-têtes `Expires` invalides provient de ressources servies par une tierce partie , dans lesquels un horodatage utilise le fuseau horaire EST, par exemple `Expires: Tue, 27 Apr 1971 19:44:06 EST`.
 
