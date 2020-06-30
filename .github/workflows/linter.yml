@@ -18,9 +18,9 @@ name: Lint Code Base
 #  * YML - default rules
 # Exception config files are in the .github/linters directory
 
-#############################
-# Start the job on all push #
-#############################
+######################################
+# Start the job on all pull requests #
+######################################
 on: pull_request
 
 ###############
