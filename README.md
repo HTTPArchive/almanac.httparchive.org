@@ -22,7 +22,7 @@ There are several ways to contribute to the Web Almanac:
 
 **[Developers](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Developers'-Guide)** are responsible for the technical infrastructure of the website and solve complex problems about accessibility, performance, internationalization, SEO, and more.
 
-**[Editors](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Editors'-Wiki)** are technical writers who have a penchant for both technical and non-technical content correctness. Editors have a mastery of the English language and work closely with authors to help wordsmith content and ensure that everything fits together as a cohesive unit.
+**[Editors](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Editors'-Guide)** are technical writers who have a penchant for both technical and non-technical content correctness. Editors have a mastery of the English language and work closely with authors to help wordsmith content and ensure that everything fits together as a cohesive unit.
 
 **[Translators](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide)** are technical writers who help internationalize the Almanac and make it globally accessible to the web community.
 
@@ -32,7 +32,7 @@ We strive to make the Web Almanac a diverse and inclusive project. If you bring 
 
 If you're interested in contributing to the project, please follow the links above.
 
-## Timeline
+## 2020 Timeline
 
 - June 2020: Nominating and selecting authors for chapters
 - July 2020: Selecting peer reviewers and analysts for chapters, planning content

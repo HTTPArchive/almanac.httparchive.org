@@ -25,7 +25,7 @@ const generate_ebook_pdfs = async () => {
     console.log('Ebooks configured for',year, ':',ebook_languages[year]);
     ebook_languages[year].forEach((language) => {
       console.log('Generating ebook for',year,language);
-      const command = `prince http://127.0.0.1:8080/${language}/${year}/ebook?print -o static/pdfs/web_almanac_${year}_${language}.pdf --pdf-profile='PDF/UA-1'`;
+      const command = `prince http://127.0.0.1:8080/${language}/${year}/ebook?print -o static/pdfs/web_almanac_${year}_${language}.pdf --pdf-profile="PDF/UA-1"`;
       exec (command, (err, stdout, stderr) => {
         if (err) {
           //some err occurred

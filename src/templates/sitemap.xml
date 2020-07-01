@@ -13,7 +13,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/caching</loc>
-        <lastmod>2020-05-19</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -28,7 +28,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/compression</loc>
-        <lastmod>2020-05-19</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -43,7 +43,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/ecommerce</loc>
-        <lastmod>2020-05-19</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -58,12 +58,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/javascript</loc>
-        <lastmod>2020-05-20</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/markup</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -98,12 +98,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/resource-hints</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/security</loc>
-        <lastmod>2020-06-21</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -148,7 +148,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/es/2019/javascript</loc>
-        <lastmod>2020-05-20</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -158,7 +158,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/es/2019/performance</loc>
-        <lastmod>2020-03-01</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -173,12 +173,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/fr/2019/accessibility</loc>
-        <lastmod>2020-05-27</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/fr/2019/caching</loc>
-        <lastmod>2020-05-19</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -208,7 +208,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/fr/2019/resource-hints</loc>
-        <lastmod>2020-03-02</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -238,7 +238,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/caching</loc>
-        <lastmod>2020-05-19</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -253,7 +253,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/compression</loc>
-        <lastmod>2020-05-19</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -268,12 +268,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/ecommerce</loc>
-        <lastmod>2020-05-19</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/fonts</loc>
-        <lastmod>2020-05-16</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -283,7 +283,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/javascript</loc>
-        <lastmod>2020-05-20</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -323,12 +323,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/resource-hints</loc>
-        <lastmod>2020-05-14</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/ja/2019/security</loc>
-        <lastmod>2020-05-19</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
@@ -353,12 +353,12 @@
 
     <url>
         <loc>https://almanac.httparchive.org/static/pdfs/web_almanac_2019_en.pdf</loc>
-        <lastmod>2020-05-20</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/static/pdfs/web_almanac_2019_ja.pdf</loc>
-        <lastmod>2020-05-20</lastmod>
+        <lastmod>2020-06-30</lastmod>
     </url>
    
 </urlset>

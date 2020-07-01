@@ -10,7 +10,7 @@ discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-16T00:00:00.000Z
+last_updated: 2020-06-30T00:00:00.000Z
 ---
 
 ## 序章
@@ -577,7 +577,7 @@ Webフォントのリクエストがデスクトップとモバイルの間で�
 
 パフォーマンス最適化プラグインは、あなたのパフォーマンスをはるかに悪化させることができることを皮肉っています！
 
-## `Unicode-range`を使うとより正確なマッチングが可能になります。
+## `Unicode-range`を使うとより正確なマッチングが可能になります
 
 <figure>
   <div class="big-number">56%</div>
