@@ -241,6 +241,15 @@
       "github": "amedina",
       "twitter": "iAlbMedina"
     },
+    "ghedo": {
+      "name": "Alessandro Ghedini",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/117643?v=4&s=200",
+      "website": "https:\/\/ghedini.me\/",
+      "github": "ghedo"
+    },
     "slightlyoff": {
       "name": "Alex Russell",
       "teams": [
@@ -251,6 +260,14 @@
       "github": "slightlyoff",
       "twitter": "slightlylate"
     },
+    "ndrnmnn": {
+      "name": "André Naumann",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/22891577?v=4&s=200",
+      "github": "ndrnmnn"
+    },
     "dotjs": {
       "name": "Andrew Galloni",
       "teams": [
@@ -260,6 +277,16 @@
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2914966?v=4&s=200",
       "github": "dotjs",
       "twitter": "dot_js"
+    },
+    "andylimn": {
+      "name": "Andrew Limn",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/38131750?v=4&s=200",
+      "website": "https:\/\/artefact.com\/gb-en\/",
+      "github": "andylimn",
+      "twitter": "Artefact_Andy"
     },
     "anoblet": {
       "name": "Andrew Noblet",
@@ -278,16 +305,6 @@
       "website": "http:\/\/andydavies.me\/",
       "github": "andydavies",
       "twitter": "AndyDavies"
-    },
-    "andylimn": {
-      "name": "Andrew Limn",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/38131750?v=4&s=200",
-      "website": "https:\/\/artefact.com\/gb-en\/",
-      "github": "andylimn",
-      "twitter": "Artefact_Andy"
     },
     "arturjanc": {
       "name": "Artur Janc",
@@ -324,17 +341,6 @@
       "github": "bazzadp",
       "twitter": "tunetheweb"
     },
-    "bkardell": {
-      "name": "Brian Kardell",
-      "teams": [
-        "brainstormers",
-        "authors"
-      ],
-      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/870501?v=4&s=200",
-      "website": "https:\/\/bkardell.com",
-      "github": "bkardell",
-      "twitter": "briankardell"
-    },
     "borisschapira": {
       "name": "Boris Schapira",
       "teams": [
@@ -346,6 +352,17 @@
       "github": "borisschapira",
       "twitter": "boostmarks"
     },
+    "bkardell": {
+      "name": "Brian Kardell",
+      "teams": [
+        "brainstormers",
+        "authors"
+      ],
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/870501?v=4&s=200",
+      "website": "https:\/\/bkardell.com",
+      "github": "bkardell",
+      "twitter": "briankardell"
+    },
     "caraya": {
       "name": "Carlos Araya",
       "teams": [
@@ -355,6 +372,16 @@
       "website": "http:\/\/publishing-project.rivendellweb.net\/",
       "github": "caraya",
       "twitter": "elrond25"
+    },
+    "c-torres": {
+      "name": "Carlos Torres",
+      "teams": [
+        "developers",
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/6588246?v=4&s=200",
+      "github": "c-torres",
+      "twitter": "carlos_catb"
     },
     "catalinred": {
       "name": "Catalin Rosu",
@@ -434,6 +461,17 @@
       "github": "dougsillars",
       "twitter": "dougsillars"
     },
+    "meyerweb": {
+      "name": "Eric A. Meyer",
+      "teams": [
+        "reviewers",
+        "editors"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/939727?v=4&s=200",
+      "website": "https:\/\/meyerweb.com",
+      "github": "meyerweb",
+      "twitter": "meyerweb"
+    },
     "eeeps": {
       "name": "Eric Portis",
       "teams": [
@@ -443,6 +481,16 @@
       "website": "https:\/\/ericportis.com",
       "github": "eeeps",
       "twitter": "etportis"
+    },
+    "enygren": {
+      "name": "Erik Nygren",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/6840678?v=4&s=200",
+      "website": "https:\/\/erik.nygren.org\/",
+      "github": "enygren",
+      "twitter": "akanygren"
     },
     "gabriel-de-gennaro": {
       "name": "Gabriel De Gennaro",
@@ -490,6 +538,15 @@
       "website": "https:\/\/houssein.me",
       "github": "housseindjirdeh",
       "twitter": "hdjirdeh"
+    },
+    "SilentJMA": {
+      "name": "JABANE Mohamed Ayoub",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/16384750?s=4&s=200",
+      "github": "SilentJMA",
+      "twitter": "SilentJMA"
     },
     "jaredcwhite": {
       "name": "Jared White",
@@ -552,7 +609,7 @@
       "twitter": "sirjonathan"
     },
     "JMPerez": {
-      "name": "Jos\u00e9 M. P\u00e9rez",
+      "name": "José M. Pérez",
       "teams": [
         "developers",
         "reviewers",
@@ -562,6 +619,24 @@
       "website": "https:\/\/jmperezperez.com",
       "github": "JMPerez",
       "twitter": "jmperezperez"
+    },
+    "JustinyAhin": {
+      "name": "Justin Ahinon",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/33403964?v=4&s=200",
+      "website": "https:\/\/segbedji.com\/",
+      "github": "JustinyAhin",
+      "twitter": "justinahinon1"
+    },
+    "welenofsky": {
+      "name": "Justin Welenofsky",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3008677?v=4&s=200",
+      "github": "welenofsky"
     },
     "KJLarson": {
       "name": "Kari Larson",
@@ -592,17 +667,6 @@
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/3392338?v=4&s=200",
       "github": "ljme"
     },
-    "meyerweb": {
-      "name": "Eric A. Meyer",
-      "teams": [
-        "reviewers",
-        "editors"
-      ],
-      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/939727?v=4&s=200",
-      "website": "https:\/\/meyerweb.com",
-      "github": "meyerweb",
-      "twitter": "meyerweb"
-    },
     "MSakamaki": {
       "name": "M.Sakamaki",
       "teams": [
@@ -613,15 +677,6 @@
       "website": "https:\/\/twitter.com\/msakamaki2",
       "github": "MSakamaki",
       "twitter": "msakamaki2"
-    },
-    "Pavel-Evdokimov": {
-      "name": "Pavel Evdokimov",
-      "teams": [
-        "brainstormers"
-      ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/6407114?v=4&s=200",
-      "github": "Pavel-Evdokimov",
-      "twitter": "Pavel_Evdokimov"
     },
     "hakimelek": {
       "name": "Malek Hakim",
@@ -699,6 +754,16 @@
       "github": "mikegeyser",
       "twitter": "mikegeyser"
     },
+    "mor10": {
+      "name": "Morten Rand-Hendriksen",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1132200?v=4&s=200",
+      "website": "http:\/\/mor10.com\/",
+      "github": "mor10",
+      "twitter": "mor10"
+    },
     "natasha-kosoglov": {
       "name": "Natasha Kosoglov",
       "teams": [
@@ -711,13 +776,15 @@
         "authors"
       ]
     },
-    "welenofsky": {
-      "name": "Justin Welenofsky",
+    "nico3333fr": {
+      "name": "Nicolas Hoffmann",
       "teams": [
-        "developers"
+        "translators"
       ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/3008677?v=4&s=200",
-      "github": "welenofsky"
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2578321?v=4&s=200",
+      "website": "https:\/\/www.nicolas-hoffmann.net\/",
+      "github": "nico3333fr",
+      "twitter": "Nico3333fr"
     },
     "noahblon": {
       "name": "Noah Blon",
@@ -741,6 +808,17 @@
       "github": "patrickhulce",
       "twitter": "patrickhulce"
     },
+    "pmeenan": {
+      "name": "Patrick Meenan",
+      "teams": [
+        "brainstormers",
+        "reviewers"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/444165?v=4&s=200",
+      "website": "https:\/\/www.webpagetest.org\/",
+      "github": "pmeenan",
+      "twitter": "patmeenan"
+    },
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
@@ -752,6 +830,15 @@
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/7459458?v=4&s=200",
       "github": "paulcalvano",
       "twitter": "paulcalvano"
+    },
+    "Pavel-Evdokimov": {
+      "name": "Pavel Evdokimov",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/6407114?v=4&s=200",
+      "github": "Pavel-Evdokimov",
+      "twitter": "Pavel_Evdokimov"
     },
     "rachellcostello": {
       "name": "Rachel Costello",
@@ -781,15 +868,6 @@
       "github": "arsenicraghav",
       "twitter": "mail_raghvendra"
     },
-    "rmarx": {
-      "name": "Robin Marx",
-      "teams": [
-        "reviewers"
-      ],
-      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/2240689?s=460&v=4&s=200",
-      "github": "rmarx",
-      "twitter": "programmingart"
-    },
     "ernee": {
       "name": "Renee Johnson",
       "teams": [
@@ -814,11 +892,30 @@
       "github": "rviscomi",
       "twitter": "rick_viscomi"
     },
+    "rmarx": {
+      "name": "Robin Marx",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/2240689?s=460&v=4&s=200",
+      "github": "rmarx",
+      "twitter": "programmingart"
+    },
     "rory-hewitt": {
       "name": "Rory Hewitt",
       "teams": [
         "brainstormers"
       ]
+    },
+    "ksakae": {
+      "name": "Sakae Kotaro",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1982567?v=4&s=200",
+      "website": "https:\/\/www.ksakae1216.com\/archive",
+      "github": "ksakae1216",
+      "twitter": "beltway7"
     },
     "samdutton": {
       "name": "Sam Dutton",
@@ -970,6 +1067,16 @@
       "github": "tyohan",
       "twitter": "tyohan"
     },
+    "westonruter": {
+      "name": "Weston Ruter",
+      "teams": [
+        "brainstormers"
+      ],
+      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/134745?v=4&s=200",
+      "website": "https:\/\/weston.ruter.net\/",
+      "github": "westonruter",
+      "twitter": "westonruter"
+    },
     "ymschaap": {
       "name": "Yvo Schaap",
       "teams": [
@@ -993,113 +1100,6 @@
       "website": "https:\/\/zachleat.com\/",
       "github": "zachleat",
       "twitter": "zachleat"
-    },
-    "ghedo": {
-      "name": "Alessandro Ghedini",
-      "teams": [
-        "brainstormers"
-      ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/117643?v=4&s=200",
-      "website": "https:\/\/ghedini.me\/",
-      "github": "ghedo"
-    },
-    "ndrnmnn": {
-      "name": "André Naumann",
-      "teams": [
-        "brainstormers"
-      ],
-      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/22891577?v=4&s=200",
-      "github": "ndrnmnn"
-    },
-    "mor10": {
-      "name": "Morten Rand-Hendriksen",
-      "teams": [
-        "brainstormers"
-      ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1132200?v=4&s=200",
-      "website": "http:\/\/mor10.com\/",
-      "github": "mor10",
-      "twitter": "mor10"
-    },
-    "westonruter": {
-      "name": "Weston Ruter",
-      "teams": [
-        "brainstormers"
-      ],
-      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/134745?v=4&s=200",
-      "website": "https:\/\/weston.ruter.net\/",
-      "github": "westonruter",
-      "twitter": "westonruter"
-    },
-    "enygren": {
-      "name": "Erik Nygren",
-      "teams": [
-        "brainstormers"
-      ],
-      "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/6840678?v=4&s=200",
-      "website": "https:\/\/erik.nygren.org\/",
-      "github": "enygren",
-      "twitter": "akanygren"
-    },
-    "c-torres": {
-      "name": "Carlos Torres",
-      "teams": [
-        "developers",
-        "translators"
-      ],
-      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/6588246?v=4&s=200",
-      "github": "c-torres",
-      "twitter": "carlos_catb"
-    },
-    "pmeenan": {
-      "name": "Patrick Meenan",
-      "teams": [
-        "brainstormers",
-        "reviewers"
-      ],
-      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/444165?v=4&s=200",
-      "website": "https:\/\/www.webpagetest.org\/",
-      "github": "pmeenan",
-      "twitter": "patmeenan"
-    },
-    "SilentJMA": {
-      "name": "JABANE Mohamed Ayoub",
-      "teams": [
-        "translators"
-      ],
-      "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/16384750?s=4&s=200",
-      "github": "SilentJMA",
-      "twitter": "SilentJMA"
-    },
-    "JustinyAhin": {
-      "name": "Justin Ahinon",
-      "teams": [
-        "translators"
-      ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/33403964?v=4&s=200",
-      "website": "https:\/\/segbedji.com\/",
-      "github": "JustinyAhin",
-      "twitter": "justinahinon1"
-    },
-    "ksakae": {
-      "name": "Sakae Kotaro",
-      "teams": [
-        "translators"
-      ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/1982567?v=4&s=200",
-      "website": "https:\/\/www.ksakae1216.com\/archive",
-      "github": "ksakae1216",
-      "twitter": "beltway7"
-    },
-    "nico3333fr": {
-      "name": "Nicolas Hoffmann",
-      "teams": [
-        "translators"
-      ],
-      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2578321?v=4&s=200",
-      "website": "https:\/\/www.nicolas-hoffmann.net\/",
-      "github": "nico3333fr",
-      "twitter": "Nico3333fr"
     }
   }
 }

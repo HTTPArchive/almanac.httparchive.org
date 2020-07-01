@@ -10,7 +10,7 @@ discuss: 1763
 results: https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/
 queries: 08_Security
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-06-30T00:00:00.000Z
 ---
 
 ## 序章
@@ -272,10 +272,10 @@ Content-Security-Policy: upgrade-insecure-requests; default-src https:
 | `no-referrer-when-downgrade`      |    39.16%  |  41.52% |
 | `strict-origin-when-cross-origin` |    39.16%  |  22.17% |
 | `unsafe-url`                      |    22.17%  |  22.17% |
-| `same-origin `                    |     7.97%  |   7.97% |
+| `same-origin`                     |     7.97%  |   7.97% |
 | `origin-when-cross-origin`        |     6.76%  |   6.44% |
 | `no-referrer`                     |     5.65%  |   5.38% |
-| `strict-origin `                  |     4.35%  |   4.14% |
+| `strict-origin`                   |     4.35%  |   4.14% |
 | `origin`                          |     3.63%  |   3.23% |
    
 <figcaption>図11. `Referrer-Policy` 設定オプションの使用法。</figcaption>

@@ -10,14 +10,14 @@ discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-01T00:00:00.000Z
+last_updated: 2020-06-30T00:00:00.000Z
 ---
 
 ## Introduction
 
 In 2005, Ian "Hixie" Hickson posted [some analysis of markup data](https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html)  building upon various previous work. Much of this work aimed to investigate class names to see if there were common informal semantics that were being adopted by developers which it might make sense to standardize upon.  Some of this research helped inform new elements in HTML5.
 
-14 years later, it's time to take a fresh look.  Since then, we've also had the introduction of [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) and the [Extensible Web Manifesto](https://extensiblewebmanifesto.org/) encouraging that we find better ways to pave the cowpaths by allowing developers to explore the space of elements themselves and allow standards bodies to[ act more like dictionary editors](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html).  Unlike CSS class names, which might be used for anything, we can be far more certain that authors who used a non-standard *element* really intended this to be an element.  
+14 years later, it's time to take a fresh look.  Since then, we've also had the introduction of [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) and the [Extensible Web Manifesto](https://extensiblewebmanifesto.org/) encouraging that we find better ways to pave the cowpaths by allowing developers to explore the space of elements themselves and allow standards bodies to [act more like dictionary editors](https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html).  Unlike CSS class names, which might be used for anything, we can be far more certain that authors who used a non-standard *element* really intended this to be an element.  
 
 As of July 2019, the HTTP Archive has begun collecting all used *element* names in the DOM for about 4.4 million desktop home pages, and about 5.3 million mobile home pages which we can now begin to research and dissect. _(Learn more about our [Methodology](./methodology).)_
 

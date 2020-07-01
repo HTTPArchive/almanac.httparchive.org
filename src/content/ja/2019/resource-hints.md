@@ -10,7 +10,7 @@ discuss: 1774
 results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
 queries: 19_Resource_Hints
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-14T00:00:00.000Z
+last_updated: 2020-06-30T00:00:00.000Z
 ---
 
 ## 序章
@@ -19,9 +19,9 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 [例](https://youtu.be/YJGCZCaIZkQ?t=1956)は、リソースヒントの結果としてパフォーマンスが向上しています。
 
-*   Jabongは、重要なスクリプトをプリロードすることで、対話までの時間を1.5秒短縮しました。
-*   Barefoot Wineは、目に見えるリンクを先読みすることで、将来のページの対話までの時間を2.7秒短縮しました。
-*   Chrome.comは、クリティカルなオリジンに事前接続することで、待ち時間を0.7秒短縮しました。
+* Jabongは、重要なスクリプトをプリロードすることで、対話までの時間を1.5秒短縮しました。
+* Barefoot Wineは、目に見えるリンクを先読みすることで、将来のページの対話までの時間を2.7秒短縮しました。
+* Chrome.comは、クリティカルなオリジンに事前接続することで、待ち時間を0.7秒短縮しました。
 
 今日、ほとんどのブラウザでサポートされているリソースヒントには、4つの独立したものがあります。`dns-prefetch`, `preconnect`, `preload`, `prefetch` です。
 
