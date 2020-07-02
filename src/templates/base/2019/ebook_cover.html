@@ -22,81 +22,6 @@
 <link rel="stylesheet" href="/static/css/ebook_cover.css?v=20200630133215" />
 
 <style>
-/* Add a print query param to format the book for printer (mirror headers and footers) */
-/* Do this as an inline-style, rather than with JavaScript in case PDF generator doesn't execute JavaScript */
-{% if request.args.get('print') == None %}
-  @page {
-    @top-left { content: ''; }
-    @top-right { content: string(chapter-subtitle) string(chapter-title); }
-    @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
-    @bottom-right { content: counter(page); }
-  }
-{% else %}
-
-  @page {
-    marks: crop cross;
-    bleed: 3mm;
-    prince-trim: 5mm;
-    
-    @footnote {
-      float: bottom;
-      border-top: .25pt solid #666;
-      margin-top: 10px;
-      padding: 5px 0;
-    }
-  }
-  @page :left {
-    @top-left { content: string(chapter-subtitle) string(chapter-title); }
-    @top-right { content: ''; }
-    @bottom-left { content: counter(page); }
-    @bottom-right { content: "{{ year }} {{ self.organization() }}"; }
-    {% if request.args.get('inside-margin') != None %}
-    margin-right: {{ request.args.get('inside-margin') }};
-    {% endif %}
-  }
-
-  @page :right {
-    @top-left { content: ''; }
-    @top-right { content: string(chapter-subtitle) string(chapter-title); }
-    @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
-    @bottom-right { content: counter(page); }
-    {% if request.args.get('inside-margin') != None %}
-    margin-left: {{ request.args.get('inside-margin') }};
-    {% endif %}
-  }
-
-  @page front-matter:left {
-    @bottom-left { content: counter(page, lower-roman); }
-  }
-
-  @page front-matter:right {
-    @bottom-right { content: counter(page, lower-roman); }
-  }
-
-  #toc .front-matter::after {
-    content: leader('.') target-counter(attr(href), page, lower-roman);
-  }
-
-  /* ensure chapters start on right hand side page */
-  #toc, .chapter {
-    break-before: right;
-  }
-
-  /* Front matter are on roman numeral pages (i,ii...etc.), so reset chapters to be on page numbers */
-  #toc, #chapter-1 {
-    counter-reset: page 1;
-  }
-
-  a {
-    text-decoration: none !important;
-
-  }
-
-  figure, p, ul {
-    prince-footnote-policy: keep-with-line;
-  }
-
-{% endif %}
 
 {% if request.args.get('page-size') != None %}
   @page { size: {{ request.args.get('page-size') }}; }
@@ -119,7 +44,7 @@
 {% block content %}
 <div class="content">
 
-  <section class="no-header-or-footer">
+  <section>
   </section>
 
   <section id="title" class="no-color no-header-or-footer">
@@ -131,7 +56,7 @@
 
   </section>
 
-  <section class="no-header-or-footer">
+  <section>
   </section>
 
 </div>
