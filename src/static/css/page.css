@@ -10,13 +10,16 @@
 .table-wrap-container,
 .floating-card {
   border-radius: 16px;
+  border-radius: 2rem;
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
+  box-shadow: 0 0 2rem 0 rgba(78, 85, 100, 0.2);
 }
 
 .table-wrap {
   display: flex;
   margin: 0 auto;
   padding: 16px;
+  padding: 1rem;
   max-width: 100%;
   justify-content: center;
 }
@@ -25,6 +28,7 @@
   overflow: auto;
   display: inline-block;
   margin: 0 -16px;
+  margin: 0 -2rem;
 }
 
 .index {
@@ -176,15 +180,18 @@
 .chapter_links .btn {
   display: inline-block;
   margin: 10px;
+  margin: 0.625rem;
 }
 
 .chapter_links svg {
   margin-right: 10px;
+  margin-right: 0.625rem;
   vertical-align: middle;
 }
 
 #num_comments {
   line-height: 24px;
+  line-height: 1.5rem;
 }
 
 [data-translation] {
@@ -193,6 +200,7 @@
 
 .authors h2 {
   padding: 16px 0;
+  padding: 2rem 0;
 }
 
 .authors,.authors h2 {
@@ -203,6 +211,7 @@
 
 .content .authors ul {
   margin: 16px 0;
+  margin: 1rem 0;
   padding: 0;
 }
 
@@ -217,6 +226,7 @@
   margin: 0;
   padding: 0;
   margin-top: 32px;
+  margin-top: 2rem;
   overflow: visible;
   display: grid;
   grid-template-areas: 'avatar info';
@@ -228,7 +238,9 @@
   font-size: 24px;
   font-size: 1.5rem;
   margin-right: 10px;
+  margin-right: 0.625rem;
   margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   display: inline-block;
 }
 
@@ -252,6 +264,7 @@
   display: inline-block;
   vertical-align: middle;
   margin: 0 5px;
+  margin: 0 0.3125rem;
 }
 
 #chapter-navigation {
@@ -356,8 +369,11 @@ figure .anchor-link {
 .fig-description {
   border: 1px solid;
   border-radius: 10px;
+  border-radius: 0.625rem;
   margin-top: 10px;
+  margin-top: 0.625rem;
   padding: 10px;
+  padding: 0.625rem;
   background-color: #e5e5e5;
 }
 
@@ -365,7 +381,9 @@ figure {
   display: flex;
   flex-direction: column;
   margin: 15px -8px;
+  margin: 0.9375rem -0.5rem;
   padding: 8px;
+  padding: 0.5rem;
   font-style: italic;
   overflow-x: auto;
 }
@@ -381,6 +399,7 @@ figure > a {
 figure img {
   margin: 0 auto;
   border-radius: 8px;
+  border-radius: 0.5rem;
   border: 1px solid #e5e5e5;
 }
 
@@ -391,10 +410,12 @@ figure iframe {
 
 figure .code-block {
   margin: 10px auto;
+  margin: 0.625rem auto;
 }
 
 figcaption {
   margin: 8px auto 0;
+  margin: 0.5rem auto 0;
   text-align: center;
 }
 
@@ -567,21 +588,27 @@ figure .fig-desktop {
 /* Code highlighting */
 .code-block {
   margin: 8px 0;
+  margin: 0.5rem 0;
   padding: 16px;
+  padding: 1rem;
 }
 
 .code-block .divider {
   position: relative;
   border: 1px solid #1a2b490a;
   width: calc(100% + 32px);
+  width: calc(100% + 2rem);
   left: -16px;
+  left: -1rem;
 }
 
 .code-block pre {
   overflow-y: hidden;
   overflow-x: auto;
   margin: 8px 0;
+  margin: 0.5rem 0;
   padding: 24px;
+  padding: 1.5rem;
 }
 
 .code-block code {

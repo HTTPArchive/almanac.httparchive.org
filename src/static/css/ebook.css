@@ -38,6 +38,12 @@
   font-weight: 300;
 }
 
+#title.no-color .intro-year,
+#title.no-color h1.title,
+#title.no-color h2.title {
+  color: #5c687d;
+}
+
 .intro-image {
   border-radius: 10px;
   display: block;
@@ -66,6 +72,7 @@
 
 th, td {
   padding: 5px;
+  padding: 0.357rem;
 }
 
 th {
@@ -159,7 +166,9 @@ tbody tr:nth-child(even) {
 
 .social-icon {
   height: 15px;
+  height: 1.07rem;
   width: 15px;
+  width: 1.07rem;
 }
 
 .content ul li::before {
@@ -193,15 +202,17 @@ section.chapter {
 }
 
 @page {
-  margin: 2.5cm;
+  margin: 1.25cm;
   padding: 0;
   font-family: 'Lato', sans-serif;
-  font-size: 10pt;
-  size: A4;
+  font-size: 8px;
+  font-size: 0.8rem;
+  size: A5;
 
   @top-left {
     width: 100%;
     margin: 30pt 0 10pt 0;
+    margin: 2rem 0 1rem 0;
     border-bottom: 0.5pt solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
@@ -210,6 +221,7 @@ section.chapter {
   @top-right {
     width: 100%;
     margin: 30pt 0 10pt 0;
+    margin: 2rem 0 1rem 0;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -217,6 +229,7 @@ section.chapter {
   @bottom-left {
     width: 100%;
     margin: 10pt 0 30pt 0;
+    margin: 1rem 0 2rem 0;
     border-top: 0.5pt solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
@@ -224,7 +237,7 @@ section.chapter {
 
   @bottom-right {
     width: 100%;
-    margin: 10pt 0 30pt 0;
+    margin: 1rem 0 2rem 0;
     border-top: 0.25pt solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
@@ -304,7 +317,7 @@ section.chapter {
   }
 
   :root {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   /* We have some big tables that can't be force to break
@@ -380,6 +393,14 @@ section.chapter {
     page-break-inside: avoid;
   }
 
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.17em;
+  }
+
   h1, h2, h3, h4, h5 {
     font-weight: bold;
     page-break-after: avoid;
@@ -394,6 +415,12 @@ section.chapter {
     page-break-inside: avoid;
   }
 
+  .authors .avatar {
+    height: auto;
+    width: 60px;
+    width: 4.29rem;
+  }
+
   .fn {
     display: inline;
     float: footnote;
@@ -403,6 +430,7 @@ section.chapter {
     font-style: italic;
     text-align: left;
     margin: 0 0 0 18px;
+    margin: 0 0 0 1.5rem;
     line-height: normal;
   }
 

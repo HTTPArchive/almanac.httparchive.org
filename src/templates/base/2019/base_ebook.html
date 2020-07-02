@@ -34,6 +34,10 @@
 {% else %}
 
   @page {
+    marks: crop cross;
+    bleed: 3mm;
+    prince-trim: 5mm;
+    
     @footnote {
       float: bottom;
       border-top: .25pt solid #666;
@@ -98,19 +102,49 @@
   @page { size: {{ request.args.get('page-size') }}; }
 {% endif %}
 
+{% if request.args.get('print-base-font-size') != None %}
+
+  @media print {
+
+    :root {
+      font-size: {{ request.args.get('print-base-font-size') }};
+    }
+
+  }
+{% endif %}
+
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="content">
 
+  {% if request.args.get('print') == None %}
   <section id="title" class="no-header-or-footer">
     
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
     <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
 
     <img class="intro-image" src="/static/images/home-hero.png" alt="" width="984" height="354" />
+
   </section>
+
+  {% else %}
+
+  <section class="no-header-or-footer">
+  </section>
+
+  <section class="no-header-or-footer">
+  </section>
+
+  <section id="title" class="no-color no-header-or-footer">
+    
+    <h1 class="title title-center">{{ self.intro_title() }}</h1>
+    <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
+
+  </section>
+
+  {% endif %}
 
   <section id="toc" class="contents-wrapper">
     <h1>{{ self.table_of_contents_title() }}</h1>
@@ -197,7 +231,7 @@
           <span class="contributor-social">
           {% if contributor.twitter %}
             <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
-              <svg width="15" height="15" role="img">
+              <svg width="11" height="11" role="img">
                 <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
@@ -205,7 +239,7 @@
           {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
-            <svg width="15" height="15" role="img">
+            <svg width="11" height="11" role="img">
               <title id="contributors-{{ id }}-github">{{ onGitHub(contributor.github) }}</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
             </svg>
@@ -213,7 +247,7 @@
           {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
-            <svg width="15" height="15" role="img">
+            <svg width="11" height="11" role="img">
               <title id="contributors-{{ id }}-website">{{ website(contributor.name) }}</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
             </svg>
