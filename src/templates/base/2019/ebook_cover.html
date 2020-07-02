@@ -119,18 +119,6 @@
 {% block content %}
 <div class="content">
 
-  {% if request.args.get('print') == None %}
-  <section id="title" class="no-header-or-footer">
-    
-    <h1 class="title title-center">{{ self.intro_title() }}</h1>
-    <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
-
-    <img class="intro-image" src="/static/images/home-hero.png" alt="" width="984" height="354" />
-
-  </section>
-
-  {% else %}
-
   <section class="no-header-or-footer">
   </section>
 
@@ -139,9 +127,12 @@
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
     <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
 
+    <img class="intro-image" src="/static/images/home-hero.png" alt="" width="984" height="354" />
+
   </section>
 
-  {% endif %}
+  <section class="no-header-or-footer">
+  </section>
 
 </div>
 
