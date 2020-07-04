@@ -752,6 +752,15 @@ footer {
   padding-right: 20px;
 }
 
+
+/* padding match with header content for non-mobile viewports */
+@media (min-width: 601px) {
+  footer {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
 footer .home-logo {
   grid-area: home-logo;
   display: flex;
