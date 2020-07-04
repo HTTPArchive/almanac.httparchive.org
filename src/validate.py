@@ -98,7 +98,7 @@ def parse_accept_language(header, supported_langs):
 
     if header is not None:
 
-        accepted_languages = re.findall('(?:^|\s|,)(\w+)', header)
+        accepted_languages = re.findall(r'(?:^|\s|,)(\w+)', header)
 
         logging.debug('Accepted languages: %s' % accepted_languages)
 
