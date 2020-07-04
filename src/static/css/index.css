@@ -639,7 +639,7 @@ p {
 @media (max-width: 900px) {
   .intro-year {
     display: block;
-    color: #F7F779;
+    color: #f7f779;
     font-size: min(190px, 40vw);
     line-height: 1;
     font-weight: bold;
@@ -648,7 +648,7 @@ p {
   .intro-image-wrapper {
     margin: 3rem 0;
     max-width: 100vw;
-  }  
+  }
 
   .intro-image-wrapper svg {
     display: none;
