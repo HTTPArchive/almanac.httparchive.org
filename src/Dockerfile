@@ -1,4 +1,4 @@
-ARG     PYTAG=latest
+ARG     PYTAG=3
 FROM    python:${PYTAG}
 
 # Enable unbuffered STDOUT logging
