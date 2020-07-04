@@ -131,14 +131,6 @@ p {
   font-weight: 700;
 }
 
-.year-2019 .intro-image-year {
-  background-image: url(/static/images/home-hero-2019.png);
-}
-
-.year-2020 .intro-image-year {
-  background-image: url(/static/images/home-hero-2020.png);
-}
-
 .intro .btn {
   border-color: #f7f779;
   background-color: #f7f779;
