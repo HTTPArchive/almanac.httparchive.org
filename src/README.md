@@ -153,5 +153,7 @@ docker container run --rm -it -v "$PWD":/app webalmanac pytest
 docker container run --rm -it -v "$PWD":/app -v /app/node_modules -p 8080:8080 webalmanac bash
 root@[CID]:/app# pytest
 root@[CID]:/app# python main.py
+^C
 root@[CID]:/app# npm run generate
+root@[CID]:/app# exit
 ```
