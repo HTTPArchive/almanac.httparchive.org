@@ -16,7 +16,8 @@
   "scripts": {
     "generate": "node ./tools/generate",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
-    "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version"
+    "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version",
+    "browserify": "node ./tools/generate/generate_js_bundle"
   },
   "devDependencies": {
     "ejs": "^2.7.1",
@@ -24,6 +25,11 @@
     "jsdom": "^15.2.1",
     "prettier": "^1.18.2",
     "recursive-readdir": "^2.2.2",
-    "showdown": "^1.9.0"
+    "showdown": "^1.9.0",
+    "web-vitals": "^0.2.3",
+    "browserify": "^16.5.1",
+    "babelify": "^10.0.0",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4"
   }
 }
