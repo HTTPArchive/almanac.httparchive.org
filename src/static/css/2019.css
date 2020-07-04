@@ -752,7 +752,6 @@ footer {
   padding-right: 20px;
 }
 
-
 /* padding match with header content for non-mobile viewports */
 @media (min-width: 601px) {
   footer {
