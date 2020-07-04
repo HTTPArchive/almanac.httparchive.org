@@ -128,7 +128,7 @@ p {
 
 .intro-image-wrapper text {
   font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .year-2019 .intro-image-year {
@@ -642,7 +642,7 @@ p {
     color: #f7f779;
     font-size: min(190px, 40vw);
     line-height: 1;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   .intro-image-wrapper {
