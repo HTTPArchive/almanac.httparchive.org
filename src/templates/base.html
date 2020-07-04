@@ -13,6 +13,7 @@
     {% block head %}
       <title>{% block title %}The Web Almanac{% endblock %}</title>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3" nonce="{{ csp_nonce() }}"></script>
+      <script async src="/static/js/web-vitals.js" ></script>
       <script nonce="{{ csp_nonce() }}">
           window.dataLayer = window.dataLayer || [];
           function gtag() {
@@ -20,8 +21,36 @@
           }
           gtag('js', new Date());
           gtag('config', 'UA-22381566-3');
+
+          function sendWebVitalsGAEvents(metric) {
+            let event_value = 0;
+            switch (metric.name) {
+              case 'CLS':
+                // For CLS event value is first multiplied by 1000 for greater precision.
+                event_value = Math.round(metric.delta * 1000);
+                break;
+              default:
+                event_value = metric.delta;
+            }
+
+            gtag('event', metric.name, {
+              event_category: 'Web Vitals',
+              value: event_value,
+              event_label: metric.id,
+              non_interaction: true,
+            });
+          }
+
+          window.addEventListener('load', function() {
+            console.log(google_tag_manager);
+            webVitals.getFCP(sendWebVitalsGAEvents);
+            webVitals.getLCP(sendWebVitalsGAEvents, true);
+            webVitals.getCLS(sendWebVitalsGAEvents, true);
+            webVitals.getTTFB(sendWebVitalsGAEvents);
+            webVitals.getFID(sendWebVitalsGAEvents);
+          });
+
       </script>
-      <script defer src="/static/js/bundle.js" nonce="{{ csp_nonce() }}"></script>
       <link rel="shortcut icon" href="/static/images/favicon.ico">
       <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
       <link rel="stylesheet" href="/static/css/normalize.css?v=20200630133215">
