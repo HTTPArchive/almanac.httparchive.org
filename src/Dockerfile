@@ -1,5 +1,5 @@
-ARG     PYTAG=3
-FROM    python:${PYTAG}
+ARG     PYVER=3
+FROM    python:${PYVER}
 
 # Enable unbuffered STDOUT logging
 ENV     PYTHONUNBUFFERED=1
