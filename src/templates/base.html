@@ -23,8 +23,6 @@
           gtag('config', 'UA-22381566-3');
 
           function sendWebVitalsGAEvents(metric) {
-            console.log(metric);
-
             gtag('event', metric.name, {
               event_category: 'Web Vitals',
               value: Math.round(metric.name === 'CLS' ? metric.delta * 1000 : metric.delta),
