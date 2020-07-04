@@ -6,21 +6,36 @@
 
 var _webVitals = require("web-vitals");
 
-function sendToGoogleAnalytics(_ref) {
-  var name = _ref.name,
-      delta = _ref.delta,
-      id = _ref.id;
-  gtag('event', name, {
+function sendToGoogleAnalytics(metric) {
+  var event_value = 0;
+
+  switch (metric.name) {
+    case 'CLS':
+      // For CLS the event value is first multiplied by 1000 for greater precision
+      event_value = metric.delta * 1000;
+      break;
+
+    case 'TTFB':
+      // For TTFB event value excludes DNS lookup, connection negotiation, network latency, and unloading the previous document.
+      event_value = metric.value - metric.entries[0].requestStart;
+      break;
+
+    default:
+      event_value = metric.delta;
+  }
+
+  gtag('event', metric.name, {
     event_category: 'Web Vitals',
-    value: Math.round(name === 'CLS' ? delta * 1000 : delta),
-    event_label: id,
+    value: event_value,
+    event_label: metric.id,
     non_interaction: true
   });
 }
 
-(0, _webVitals.getCLS)(sendToGoogleAnalytics, true);
-(0, _webVitals.getFID)(sendToGoogleAnalytics);
-(0, _webVitals.getLCP)(sendToGoogleAnalytics);
 (0, _webVitals.getFCP)(sendToGoogleAnalytics);
+(0, _webVitals.getLCP)(sendToGoogleAnalytics, false);
+(0, _webVitals.getCLS)(sendToGoogleAnalytics, true);
+(0, _webVitals.getTTFB)(sendToGoogleAnalytics);
+(0, _webVitals.getFID)(sendToGoogleAnalytics);
 
 },{"web-vitals":1}]},{},[2]);
