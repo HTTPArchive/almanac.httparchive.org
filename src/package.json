@@ -16,8 +16,7 @@
   "scripts": {
     "generate": "node ./tools/generate",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
-    "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version",
-    "browserify": "node ./tools/generate/generate_js_bundle"
+    "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version"
   },
   "devDependencies": {
     "ejs": "^2.7.1",
