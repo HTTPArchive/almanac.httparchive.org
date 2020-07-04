@@ -23,26 +23,17 @@
           gtag('config', 'UA-22381566-3');
 
           function sendWebVitalsGAEvents(metric) {
-            let event_value = 0;
-            switch (metric.name) {
-              case 'CLS':
-                // For CLS event value is first multiplied by 1000 for greater precision.
-                event_value = Math.round(metric.delta * 1000);
-                break;
-              default:
-                event_value = metric.delta;
-            }
+            console.log(metric);
 
             gtag('event', metric.name, {
               event_category: 'Web Vitals',
-              value: event_value,
+              value: Math.round(metric.name === 'CLS' ? metric.delta * 1000 : metric.delta),
               event_label: metric.id,
               non_interaction: true,
             });
           }
 
           window.addEventListener('load', function() {
-            console.log(google_tag_manager);
             webVitals.getFCP(sendWebVitalsGAEvents);
             webVitals.getLCP(sendWebVitalsGAEvents, true);
             webVitals.getCLS(sendWebVitalsGAEvents, true);
