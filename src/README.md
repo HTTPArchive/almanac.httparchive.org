@@ -139,7 +139,7 @@ docker image build -t webalmanac .
 docker container run --rm -it -v "$PWD":/app -p 8080:8080 webalmanac
 ```
 
-3. Open http://localhost:8080 in your web browser to access the site then kill the server (using `Ctrl+C`)
+3. Open http://localhost:8080 in your web browser to access the site. You can kill the server when it is no longer needed using `Ctrl+C`.
 
 4. Make changes in the code using any text editor and run tests (need to build the image again if any Python or Node dependencies are changed):
 
