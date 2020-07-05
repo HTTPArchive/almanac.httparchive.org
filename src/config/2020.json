@@ -220,6 +220,17 @@
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1120896?v=4&s=200",
       "github": "rviscomi",
       "twitter": "rick_viscomi"
+    },
+    "ibnesayeed": {
+      "name": "Sawood Alam",
+      "teams": [
+        "reviewers",
+        "developers"
+      ],
+      "avatar_url": "https:\/\/avatars0.githubusercontent.com/u/65147?v=4&s=200",
+      "website": "https:\/\/www.cs.odu.edu/~salam/",
+      "github": "ibnesayeed",
+      "twitter": "ibnesayeed"
     }
   }
 }
