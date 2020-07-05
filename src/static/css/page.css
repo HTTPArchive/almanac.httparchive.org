@@ -417,7 +417,7 @@ th, td {
   padding: 10px;
 }
 
-th.numeric, td.numeric, td p.numeric {
+th.numeric, td.numeric {
   text-align: right;
 }
 
