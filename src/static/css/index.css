@@ -88,6 +88,7 @@ p {
   display: -ms-grid;
   display: grid;
   grid-template-areas: 'intro image';
+  grid-gap: 2rem;
   justify-content: space-between;
   padding: 0 60px;
 }
