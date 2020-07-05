@@ -1,4 +1,4 @@
-Flask==1.0.4
+Flask
 flask-talisman
 gunicorn==19.9.0
 matplotlib
