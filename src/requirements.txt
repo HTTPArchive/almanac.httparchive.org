@@ -1,6 +1,6 @@
-Flask==1.0.2
+Flask
 flask-talisman
-gunicorn==19.9.0
+gunicorn
 matplotlib
 mistune
 pandas
