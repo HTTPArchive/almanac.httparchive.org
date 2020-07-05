@@ -126,6 +126,13 @@ p {
   fill: #f7f779;
 }
 
+/* IE11 hack */
+@media all and (-ms-high-contrast: none) {
+  .intro-image-wrapper svg {
+    height: 180px;
+  }
+}
+
 .intro-image-wrapper text {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
