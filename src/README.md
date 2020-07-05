@@ -157,3 +157,9 @@ root@[CID]:/app# python main.py
 root@[CID]:/app# npm run generate
 root@[CID]:/app# exit
 ```
+
+6. To customize the image use `PYVER`, `NODEVER`, and `SKIPGC` build arguments to control which versions of Python and Node are used and whether Google Cloud SDK is installed.
+
+```
+docker image build --build-arg PYVER=3.7 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
+```
