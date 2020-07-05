@@ -184,79 +184,81 @@
 
   {% block footer %}
     <footer class="alt-bg">
-      <div class="home-logo">
-        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
-          {{ self.web_almanac_logo() }}
-        </a>
-      </div>
-      <hr>
-      <nav aria-label="{{ self.footer_title() }}" class="nav-items">
-        <ul>
-          {{ self.non_chapter_nav_links() }}
-          <li>
-            {{ year_switcher('footer') }}
-          </li>
-          <li>
-            {{ language_switcher('footer') }}
-          </li>
-        </ul>
-      </nav>
-      <div class="mobile-ha-social-media">
-        <a class="ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
+      <div class="container">
+        <div class="home-logo">
+          <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
+            {{ self.web_almanac_logo() }}
+          </a>
+        </div>
+        <hr>
+        <nav aria-label="{{ self.footer_title() }}" class="nav-items">
+          <ul>
+            {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ year_switcher('footer') }}
+            </li>
+            <li>
+              {{ language_switcher('footer') }}
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-ha-social-media">
+          <a class="ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
+            <svg width="70" height="35" role="img">
+              <title id="httparchive-logo-footer-mobile">{{ self.http_archive_link() }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+            </svg>
+          </a>
+          <ul class="social-media">
+            <li>
+              <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer-mobile">
+                <svg width="20" height="20" role="img">
+                  <title id="twitter-logo-footer-mobile">Twitter</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer-mobile">
+                <svg width="20" height="20" role="img">
+                  <title id="github-logo-footer-mobile">GitHub</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+        <p class="copyright">
+          <span>{{ self.copyright() }}</span>
+          <br>
+          <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
+        </p>
+        <a class="ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
           <svg width="70" height="35" role="img">
-            <title id="httparchive-logo-footer-mobile">{{ self.http_archive_link() }}</title>
+            <title id="ha-logo-footer">{{ self.http_archive_link() }}</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
           </svg>
         </a>
-        <ul class="social-media">
+        <ul class="social-media not-mobile">
           <li>
-            <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer-mobile">
+            <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer">
               <svg width="20" height="20" role="img">
-                <title id="twitter-logo-footer-mobile">Twitter</title>
+                <title id="twitter-logo-footer">Twitter</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
           </li>
           <li>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer-mobile">
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer">
               <svg width="20" height="20" role="img">
-                <title id="github-logo-footer-mobile">GitHub</title>
+                <title id="github-logo-footer">GitHub</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
           </li>
         </ul>
       </div>
-      <hr>
-      <p class="copyright">
-        <span>{{ self.copyright() }}</span>
-        <br>
-        <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
-      </p>
-      <a class="ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
-        <svg width="70" height="35" role="img">
-          <title id="ha-logo-footer">{{ self.http_archive_link() }}</title>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
-        </svg>        
-      </a>
-      <ul class="social-media not-mobile">
-        <li>
-          <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer">
-            <svg width="20" height="20" role="img">
-              <title id="twitter-logo-footer">Twitter</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer">
-            <svg width="20" height="20" role="img">
-              <title id="github-logo-footer">GitHub</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
     </footer>
   {% endblock %}
   {% block scripts %}
