@@ -22,6 +22,39 @@
 {% block styles %}
   {{ super() }}
   <link rel="stylesheet" href="/static/css/index.css?v=20200705203914">
+  <style>
+.intro {
+  max-width: 600px;
+}
+.intro p {
+  font-style: italic;
+}
+.intro p:first-child {
+  margin-bottom: 20px;
+}
+.methodology-container {
+  margin-top: 150px;
+}
+.methodology-characters {
+  z-index: unset;
+}
+@media (max-width: 600px) {
+  .intro h2 {
+    font-size: 2rem;
+  }
+  .intro h2 b {
+    display: block;
+  }
+  .intro-image-wrapper {
+    margin-right: -100px;
+  }
+  .methodology-container {
+    margin-top: 200px;
+    padding: 0;
+  }
+}
+
+  </style>
 {% endblock %}
 
 {# Hide the TOC, Contributors and Methodology for now #}
@@ -35,13 +68,18 @@
       <div class="intro-year">{{ year }}</div>
       <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
       <h2>{{ self.intro_sub_title() }}</h2>
-      <p>{{ self.mission() }}</p>
+      <div>{{ self.mission() }}</div>
     </div>
     <div class="intro-image-year-wrapper">
       <div class="intro-image-year"></div>
     </div>
     <div class="intro-image-wrapper">
       <div class="intro-image"></div>
+    </div>
+  </section>
+  <section class="methodology-container">
+    <div class="methodology">
+      <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
     </div>
   </section>
 </main>
