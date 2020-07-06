@@ -22,7 +22,7 @@ const update_links = (chapter) => {
   body = body.replace(/<a href=".\//g,'<a href="#');
   // For external links add footnote span
   body = body.replace(/href="(http.*?)"(.*?)>(.*?)<\/a>/g,'href="$1"$2>$3<span class="fn">$1</span></a>');
-  // Replace figure image links to full site, to avoid 127.0.0.1:8080 links
+  // Replace figure image links to full site, to avoid 0.0.0.0:8080 links
   body = body.replace(/<a href="\/static\/images/g,'<a href="https://almanac.httparchive.org/static/images');
   // Remove lazy-loading attributes
   body = body.replace(/ loading="lazy"/g,'');
