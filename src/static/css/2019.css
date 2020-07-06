@@ -740,16 +740,13 @@ blockquote::before {
 }
 
 /* Footer */
-footer {
+footer .container {
   display: grid;
   grid-template-areas:
     'home-logo nav-items nav-items nav-items'
     'hr hr hr hr'
     'copyright copyright ha-logo social-media';
   grid-template-columns: 280px 1fr 1fr 120px 0 0;
-  /* 20px same as .container padding */
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 footer .home-logo {
@@ -875,16 +872,21 @@ p.copyright a {
     display: inline;
   }
 
-  footer {
+  footer .container {
     display: grid;
     grid-template-areas:
-      'home-logo home-logo language-switcher language-switcher'
+      'home-logo home-logo home-logo home-logo'
+      'language-switcher language-switcher language-switcher language-switcher'
       'hr hr hr hr'
       'nav-items nav-items nav-items nav-items'
       'hr-last hr-last hr-last hr-last'
       'copyright copyright ha-logo social-media';
     grid-template-columns: 3fr 1fr 1fr 120px 0 0;
     grid-template-rows: 60px auto auto;
+  }
+
+  footer .home-logo {
+    justify-content: center;
   }
 
   footer .nav-items {
@@ -1013,7 +1015,7 @@ p.copyright a {
   }
 
   /* Footer */
-  footer {
+  footer .container {
     grid-template-areas:
       'home-logo'
       'hr'
@@ -1028,6 +1030,7 @@ p.copyright a {
   footer .home-logo {
     grid-area: home-logo;
     margin: 20px 0;
+    justify-content: center;
   }
 
   footer .mobile-ha-social-media {
@@ -1079,6 +1082,7 @@ p.copyright a {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    text-align: center;
   }
 
   footer .social-media {
