@@ -27,6 +27,10 @@
   margin: 0 -16px;
 }
 
+.width-45 {
+  width: 45%;
+}
+
 .index {
   grid-area: index;
   -ms-grid-column: 1;
@@ -423,8 +427,18 @@ tbody tr:nth-child(even) {
 
 figure .big-number {
   text-align: center;
+  font: bold 128px/1em Poppins, sans-serif;
   font: bold 8rem/1em Poppins, sans-serif;
   color: #62718b;
+}
+
+figure .really-big-number {
+  text-align: center;
+  font: bold 24px/1em Poppins, sans-serif;
+  font: bold 1.5rem/1em Poppins, sans-serif;
+  color: #62718b;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 figure .fig-mobile {
@@ -525,6 +539,7 @@ figure .fig-desktop {
 
 @media (max-width: 600px) {
   figure .big-number {
+    font-size: 80px;
     font-size: 5rem;
   }
 

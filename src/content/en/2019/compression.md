@@ -75,66 +75,66 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
     <tbody>
       <tr>
         <td><em>No Text Compression</em></td>
-        <td><p style="text-align: right">62.87%</p></td>
-        <td><p style="text-align: right">61.47%</p></td>
-        <td><p style="text-align: right">260,245,106</p></td>
-        <td><p style="text-align: right">285,158,644</p></td>
+        <td class="numeric">62.87%</td>
+        <td class="numeric">61.47%</td>
+        <td class="numeric">260,245,106</td>
+        <td class="numeric">285,158,644</td>
       </tr>
       <tr>
         <td>gzip</td>
-        <td><p style="text-align: right">29.66%</p></td>
-        <td><p style="text-align: right">30.95%</p></td>
-        <td><p style="text-align: right">122,789,094</p></td>
-        <td><p style="text-align: right">143,549,122</p></td>
+        <td class="numeric">29.66%</td>
+        <td class="numeric">30.95%</td>
+        <td class="numeric">122,789,094</td>
+        <td class="numeric">143,549,122</td>
       </tr>
       <tr>
         <td>br</td>
-        <td><p style="text-align: right">7.43%</p></td>
-        <td><p style="text-align: right">7.55%</p></td>
-        <td><p style="text-align: right">30,750,681</p></td>
-        <td><p style="text-align: right">35,012,368</p></td>
+        <td class="numeric">7.43%</td>
+        <td class="numeric">7.55%</td>
+        <td class="numeric">30,750,681</td>
+        <td class="numeric">35,012,368</td>
       </tr>
       <tr>
         <td>deflate</td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">68,802</p></td>
-        <td><p style="text-align: right">70,679</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">68,802</td>
+        <td class="numeric">70,679</td>
       </tr>
       <tr>
         <td><em>Other / Invalid</em></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">67,527</p></td>
-        <td><p style="text-align: right">68,352</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">67,527</td>
+        <td class="numeric">68,352</td>
       </tr>
       <tr>
         <td>identity</td>
-        <td><p style="text-align: right">0.000709%</p></td>
-        <td><p style="text-align: right">0.000563%</p></td>
-        <td><p style="text-align: right">2,935</p></td>
-        <td><p style="text-align: right">2,611</p></td>
+        <td class="numeric">0.000709%</td>
+        <td class="numeric">0.000563%</td>
+        <td class="numeric">2,935</td>
+        <td class="numeric">2,611</td>
       </tr>
       <tr>
         <td>x-gzip</td>
-        <td><p style="text-align: right">0.000193%</p></td>
-        <td><p style="text-align: right">0.000179%</p></td>
-        <td><p style="text-align: right">800</p></td>
-        <td><p style="text-align: right">829</p></td>
+        <td class="numeric">0.000193%</td>
+        <td class="numeric">0.000179%</td>
+        <td class="numeric">800</td>
+        <td class="numeric">829</td>
       </tr>
       <tr>
         <td>compress</td>
-        <td><p style="text-align: right">0.000008%</p></td>
-        <td><p style="text-align: right">0.000007%</p></td>
-        <td><p style="text-align: right">33</p></td>
-        <td><p style="text-align: right">32</p></td>
+        <td class="numeric">0.000008%</td>
+        <td class="numeric">0.000007%</td>
+        <td class="numeric">33</td>
+        <td class="numeric">32</td>
       </tr>
       <tr>
         <td>x-compress</td>
-        <td><p style="text-align: right">0.000002%</p></td>
-        <td><p style="text-align: right">0.000006%</p></td>
-        <td><p style="text-align: right">8</p></td>
-        <td><p style="text-align: right">29</p></td>
+        <td class="numeric">0.000002%</td>
+        <td class="numeric">0.000006%</td>
+        <td class="numeric">8</td>
+        <td class="numeric">29</td>
       </tr>
     </tbody>
   </table>
@@ -251,38 +251,38 @@ Additionally, the percentage of brotli compression is higher for third-party con
     <tbody>
       <tr>
         <td><em>No Text Compression</em></td>
-        <td><p style="text-align: right">66.23%</p></td>
-        <td><p style="text-align: right">59.28%</p></td>
-        <td><p style="text-align: right">64.54%</p></td>
-        <td><p style="text-align: right">58.26%</p></td>
+        <td class="numeric">66.23%</td>
+        <td class="numeric">59.28%</td>
+        <td class="numeric">64.54%</td>
+        <td class="numeric">58.26%</td>
       </tr>
       <tr>
         <td>gzip</td>
-        <td><p style="text-align: right">29.33%</p></td>
-        <td><p style="text-align: right">30.20%</p></td>
-        <td><p style="text-align: right">30.87%</p></td>
-        <td><p style="text-align: right">31.22%</p></td>
+        <td class="numeric">29.33%</td>
+        <td class="numeric">30.20%</td>
+        <td class="numeric">30.87%</td>
+        <td class="numeric">31.22%</td>
       </tr>
       <tr>
         <td>br</td>
-        <td><p style="text-align: right">4.41%</p></td>
-        <td><p style="text-align: right">10.49%</p></td>
-        <td><p style="text-align: right">4.56%</p></td>
-        <td><p style="text-align: right">10.49%</p></td>
+        <td class="numeric">4.41%</td>
+        <td class="numeric">10.49%</td>
+        <td class="numeric">4.56%</td>
+        <td class="numeric">10.49%</td>
       </tr>
       <tr>
         <td>deflate</td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
       </tr>
       <tr>
         <td><em>Other / Invalid</em></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
       </tr>
     </tbody>
   </table>
