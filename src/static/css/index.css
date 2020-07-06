@@ -30,7 +30,8 @@ header::after {
   z-index: -1;
 }
 
-header .container {
+header .container,
+footer .container {
   max-width: none;
   padding-left: 60px;
   padding-right: 60px;
@@ -516,8 +517,9 @@ p {
   header::after {
     bottom: 200px;
   }
-  
-  header .container {
+
+  header .container,
+  footer .container {
     padding-left: 20px;
     padding-right: 20px;
   }

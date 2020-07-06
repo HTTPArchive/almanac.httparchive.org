@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-07-06T00:00:00.000Z
 ---
 
 ## 序章
@@ -114,8 +114,8 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 <thead>
 <tr>
 <th>フォーマット</th>
-<th style="width: 45%">ハイライト</th>
-<th style="width: 45%">欠点</th>
+<th class="width-45">ハイライト</th>
+<th class="width-45">欠点</th>
 </tr>
 </thead>
 <tbody>
