@@ -151,7 +151,7 @@ def get_ebook_methodology(lang, year):
     methodology_maincontent = re.sub('href="\/%s\/%s\/' % (lang, year), 'href="#', methodology_maincontent)
     # For external links add footnote span
     methodology_maincontent = re.sub('href="http(.*?)"(.*?)>(.*?)<\/a>', 'href="http\\1"\\2>\\3<span class="fn">http\\1</span></a>', methodology_maincontent)
-    # Replace figure image links to full site, to avoid 127.0.0.1:8080 links
+    # Replace figure image links to full site, to avoid 0.0.0.0:8080 links
     methodology_maincontent = re.sub('href="\/', 'href="https://almanac.httparchive.org/', methodology_maincontent)
     # Replace other chapter references with hash to anchor link (e.g. ./javascript#fig-1 -> #javascript-fig-1)
     methodology_maincontent = re.sub('href="./([a-z0-9-]*)#', 'href="#\\1-', methodology_maincontent)
@@ -351,6 +351,6 @@ if __name__ == '__main__':
     if (len(sys.argv) > 1 and sys.argv[1] == 'background'):
         # Turn off HTTPS redirects (automatically turned off for debug)
         talisman.force_https=False
-        app.run(host='127.0.0.1', port=8080)
+        app.run(host='0.0.0.0', port=8080)
     else:
-        app.run(host='127.0.0.1', port=8080, debug=True)
+        app.run(host='0.0.0.0', port=8080, debug=True)
