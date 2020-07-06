@@ -114,8 +114,8 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 <thead>
 <tr>
 <th>フォーマット</th>
-<th style="width: 45%">ハイライト</th>
-<th style="width: 45%">欠点</th>
+<th class="width-45">ハイライト</th>
+<th class="width-45">欠点</th>
 </tr>
 </thead>
 <tbody>
