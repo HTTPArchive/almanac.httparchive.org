@@ -140,83 +140,83 @@ The table below details the cache TTL values for desktop requests by type. Most 
     <tbody>
       <tr>
         <th scope="row">Audio</th>
-        <td><p style="text-align: right">12</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">12</td>
+        <td class="numeric">24</td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">CSS</th>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Font</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">3</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">87,600</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">3</td>
+        <td class="numeric">336</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">87,600</td>
       </tr>
       <tr>
         <th scope="row">HTML</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">168</p></td>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,766</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">168</td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,766</td>
       </tr>
       <tr>
         <th scope="row">Image</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">1</p></td>
-        <td><p style="text-align: right">28</p></td>
-        <td><p style="text-align: right">48</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">28</td>
+        <td class="numeric">48</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Other</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">2</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">2</td>
+        <td class="numeric">336</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Script</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">1</p></td>
-        <td><p style="text-align: right">6</p></td>
-        <td><p style="text-align: right">720</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">6</td>
+        <td class="numeric">720</td>
       </tr>
       <tr>
         <th scope="row">Text</th>
-        <td><p style="text-align: right">21</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">7,902</p></td>
-        <td><p style="text-align: right">8,357</p></td>
-        <td><p style="text-align: right">8,740</p></td>
+        <td class="numeric">21</td>
+        <td class="numeric">336</td>
+        <td class="numeric">7,902</td>
+        <td class="numeric">8,357</td>
+        <td class="numeric">8,740</td>
       </tr>
       <tr>
         <th scope="row">Video</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">4</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">336</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">4</td>
+        <td class="numeric">24</td>
+        <td class="numeric">24</td>
+        <td class="numeric">336</td>
       </tr>
       <tr>
         <th scope="row">XML</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
       </tr>
     </tbody>
   </table>
@@ -413,15 +413,15 @@ When we break this out by first vs third-party, we can also see that 70% of firs
     </tr>
     <tr>
      <td>Desktop</td>
-     <td><p style="text-align: right">70.7%</p></td>
-     <td><p style="text-align: right">47.9%</p></td>
-     <td><p style="text-align: right">59.2%</p></td>
+     <td class="numeric">70.7%</td>
+     <td class="numeric">47.9%</td>
+     <td class="numeric">59.2%</td>
     </tr>
     <tr>
      <td>Mobile</td>
-     <td><p style="text-align: right">71.4%</p></td>
-     <td><p style="text-align: right">46.8%</p></td>
-     <td><p style="text-align: right">59.6%</p></td>
+     <td class="numeric">71.4%</td>
+     <td class="numeric">46.8%</td>
+     <td class="numeric">59.6%</td>
     </tr>
   </table>
   <figcaption>Figure 11. Percent of requests with short TTLs.</figcaption>
@@ -603,21 +603,21 @@ In the table below, you can see a summary of AppCache vs service worker usage. 3
     <tbody>
       <tr>
         <td>Does Not Use AppCache</td>
-        <td><p style="text-align: right">5,045,337</p></td>
-        <td><p style="text-align: right">32,241</p></td>
-        <td><p style="text-align: right">5,077,578</p></td>
+        <td class="numeric">5,045,337</td>
+        <td class="numeric">32,241</td>
+        <td class="numeric">5,077,578</td>
       </tr>
       <tr>
         <td>Uses AppCache</td>
-        <td><p style="text-align: right">1,816</p></td>
-        <td><p style="text-align: right">51</p></td>
-        <td><p style="text-align: right">1,867</p></td>
+        <td class="numeric">1,816</td>
+        <td class="numeric">51</td>
+        <td class="numeric">1,867</td>
       </tr>
       <tr>
         <td>Total</td>
-        <td><p style="text-align: right">5,047,153</p></td>
-        <td><p style="text-align: right">32,292</p></td>
-        <td><p style="text-align: right">5,079,445</p></td>
+        <td class="numeric">5,047,153</td>
+        <td class="numeric">32,292</td>
+        <td class="numeric">5,079,445</td>
       </tr>
     </tbody>
   </table>
@@ -640,24 +640,24 @@ If we break this out by HTTP vs HTTPS, then this gets even more interesting. 581
       <tr>
         <th scope="rowgroup" rowspan="2" >HTTP</th>
         <td>Does Not Use AppCache</td>
-        <td><p style="text-align: right">1,968,736</p></td>
-        <td><p style="text-align: right">907</p></td>
+        <td class="numeric">1,968,736</td>
+        <td class="numeric">907</td>
       </tr>
       <tr>
         <td>Uses AppCache</td>
-        <td><p style="text-align: right">580</p></td>
-        <td><p style="text-align: right">1</p></td>
+        <td class="numeric">580</td>
+        <td class="numeric">1</td>
       </tr>
       <tr>
         <th scope="rowgroup" rowspan="2" >HTTPS</th>
         <td>Does Not Use AppCache</td>
-        <td><p style="text-align: right">3,076,601</p></td>
-        <td><p style="text-align: right">31,334</p></td>
+        <td class="numeric">3,076,601</td>
+        <td class="numeric">31,334</td>
       </tr>
       <tr>
         <td>Uses AppCache</td>
-        <td><p style="text-align: right">1,236</p></td>
-        <td><p style="text-align: right">50</p></td>
+        <td class="numeric">1,236</td>
+        <td class="numeric">50</td>
       </tr>
     </tbody>
   </table>
