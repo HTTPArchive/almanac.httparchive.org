@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-07-06T00:00:00.000Z
 ---
 
 ## Introduction
@@ -114,8 +114,8 @@ Each format has its own merits and has ideal uses for the web. A very simplified
 <thead>
 <tr>
 <th>Format</th>
-<th style="width: 45%">Highlights</th>
-<th style="width: 45%">Drawbacks</th>
+<th class="width-45">Highlights</th>
+<th class="width-45">Drawbacks</th>
 </tr>
 </thead>
 <tbody>
