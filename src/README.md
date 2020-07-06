@@ -1,6 +1,6 @@
 # Developing the Web Almanac
 
-The Web Almanac can be developed on MacOs, Windows or Linux. It required node v12 and python v3 to be installed.
+The Web Almanac can be developed on macOS, Windows or Linux. It requires Node v12 and Python v3 to be installed. Alternatively, use Docker to avoid manually configuring the development environment.
 
 ## Run Locally
 
@@ -122,3 +122,44 @@ npm run deploy
 ```
 
 5. Browse the website in production to verify that the new changes have taken effect
+
+## Developing in Docker
+
+Assuming that you have Docker installed and running, ensure that the working directory is `src`, where the `Dockerfile` is present, before running the following commands.
+
+1. Build a Docker image named `webalmanac` (if you choose a different name, adjust following commands accordingly):
+
+```
+docker image build -t webalmanac .
+```
+
+2. Run the application server (which is the default command of the Docker image, so no need to explicitly supply it as an argument):
+
+```
+docker container run --rm -it -v "$PWD":/app -p 8080:8080 webalmanac
+```
+
+3. Open http://localhost:8080 in your web browser to access the site. You can kill the server when it is no longer needed using `Ctrl+C`.
+
+4. Make changes in the code using any text editor and run tests (need to build the image again if any Python or Node dependencies are changed):
+
+```
+docker container run --rm -it -v "$PWD":/app webalmanac pytest
+```
+
+5. To avoid running commands in one-off mode run `bash` in a container (with necessary volumes mounted and ports mapped) then run successive commands:
+
+```
+docker container run --rm -it -v "$PWD":/app -v /app/node_modules -p 8080:8080 webalmanac bash
+root@[CID]:/app# pytest
+root@[CID]:/app# python main.py
+^C
+root@[CID]:/app# npm run generate
+root@[CID]:/app# exit
+```
+
+6. To customize the image use `PYVER`, `NODEVER`, and `SKIPGC` build arguments to control which versions of Python and Node are used and whether Google Cloud SDK is installed.
+
+```
+docker image build --build-arg PYVER=3.7 --build-arg NODEVER=14.x --build-arg SKIPGC=false -t webalmanac:custom .
+```

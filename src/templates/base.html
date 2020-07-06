@@ -13,6 +13,7 @@
     {% block head %}
       <title>{% block title %}The Web Almanac{% endblock %}</title>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22381566-3" nonce="{{ csp_nonce() }}"></script>
+      <script async src="/static/js/web-vitals.js" ></script>
       <script nonce="{{ csp_nonce() }}">
           window.dataLayer = window.dataLayer || [];
           function gtag() {
@@ -20,6 +21,24 @@
           }
           gtag('js', new Date());
           gtag('config', 'UA-22381566-3');
+
+          function sendWebVitalsGAEvents(metric) {
+            gtag('event', metric.name, {
+              event_category: 'Web Vitals',
+              value: Math.round(metric.name === 'CLS' ? metric.delta * 1000 : metric.delta),
+              event_label: metric.id,
+              non_interaction: true,
+            });
+          }
+
+          window.addEventListener('load', function() {
+            webVitals.getFCP(sendWebVitalsGAEvents);
+            webVitals.getLCP(sendWebVitalsGAEvents);
+            webVitals.getCLS(sendWebVitalsGAEvents);
+            webVitals.getTTFB(sendWebVitalsGAEvents);
+            webVitals.getFID(sendWebVitalsGAEvents);
+          });
+
       </script>
       <link rel="shortcut icon" href="/static/images/favicon.ico">
       <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">

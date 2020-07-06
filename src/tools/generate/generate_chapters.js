@@ -12,6 +12,7 @@ const { lazy_load_content } = require('./lazy_load_content');
 const { wrap_tables } = require('./wrap_tables');
 const { remove_unnecessary_markup } = require('./remove_unnecessary_markup');
 const { generate_ebooks } = require('./generate_ebooks');
+const { generate_js } = require('./generate_js');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -59,8 +60,9 @@ const generate_chapters = async () => {
       console.error('  Failed to generate chapter, moving onto the next one. ');
     }
   }
-
+  
   await generate_ebooks(ebook_chapters,configs);
+  await generate_js();
 
   const sitemap_path = await generate_sitemap(sitemap);
   await size_of(sitemap_path);
