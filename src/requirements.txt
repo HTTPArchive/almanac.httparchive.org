@@ -1,10 +1,5 @@
 Flask
 flask-talisman
 gunicorn
-matplotlib
-mistune
-pandas
 pytest
 pytest-watch
-scour
-WeasyPrint
