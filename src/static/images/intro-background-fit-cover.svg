@@ -6,8 +6,8 @@
     </style>
   </defs>
   <path class="cls-1" d="M-231 89h2088v551l-2088 360V89z"/>
-  <path class="cls-1" d="M-470 239h2088v551l-2088 360V239z"/>
+  <path class="cls-1" d="M-470 239h2088v551l-2088 551V239z"/>
   <path d="M-144-19h2088v551L-144 1492V-19z" fill="#1a2b49" opacity=".75" fill-rule="evenodd"/>
-  <path class="cls-1" d="M-390-83h2088v551L-390 1428V-83z"/>
+  <path class="cls-1" d="M-470-83h2088v551L-470 1428V-83z"/>
   <path d="M-302-48h2088v551L-302 1463V-48z" fill="#f2f2f2" opacity=".05" fill-rule="evenodd"/>
 </svg>

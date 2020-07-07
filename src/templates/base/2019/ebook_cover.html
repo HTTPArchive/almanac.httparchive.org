@@ -22,7 +22,17 @@
 
 <style>
 
-#title .title {
+#front-cover {
+  position: absolute;
+  width: 148mm;
+  text-align: center;
+  left: 173mm;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.title {
   color: white;
 }
 
@@ -36,45 +46,207 @@
   font-weight: bold;
 }
 
-#title h1.title::before {
+#front-cover h1.title::before {
   border-bottom: none;
 }
 
-#title h1.title {
+#front-cover h1.title {
   font-size: 40px;
   font-size: 5rem;
   font-weight: 700;
-  width: 148mm;
   text-align: center;
-  margin-left: 173mm;
 }
 
-#title h2.title {
+#front-cover h2.title {
   font-size: 16px;
   font-size: 2rem;
   font-weight: 300;
-  width: 148mm;
   text-align: center;
-  margin-left: 173mm;
 }
 
-.intro-image-wrapper {
-  width: 148mm;
+#front-cover .intro-image-wrapper {
   text-align: center;
-  margin-left: 173mm;
 }
 
-.intro-image {
+#front-cover .intro-image {
   border-radius: 10px;
   display: block;
-  margin: 10px 0;
+  margin: 10px auto;
   padding-top: 40px;
   width: 80%;
   height: auto;
 }
 
-#title img {
+#front-cover img {
   margin: 0 auto;
+}
+
+#front-cover .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  right: 1rem;
+  margin: 0 auto 4rem;
+  max-width: 25mm;
+  padding: 10px;
+  height: 12.5mm;
+}
+
+#front-cover .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+}
+
+#spine {
+  position: absolute;
+  top: 0;
+  left: 148mm;
+  width: 25mm;
+  bottom: 0;
+}
+
+#spine .spine-author {
+  fill: #fff;
+  width: 100%;
+  font-weight: 300;
+}
+
+#spine .spine-year {
+  margin: 0;
+  color: #f7f779;
+  line-height: 100%;
+  font-weight: bold;
+  font-size: 10rem;
+  width: 100%;
+}
+
+.spine-year svg {
+  fill: #f7f779;
+  width: 100%;
+}
+
+#spine .intro-image-wrapper {
+}
+
+#spine .intro-image {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  height: auto;
+}
+
+#spine .title-wrapper {
+  position: relative;
+}
+
+#spine .title {
+  top: 50%;
+  left: 50%;
+  transform:  translateX(-50%) translateY(-50%) rotate(90deg);
+  font-size: 40px;
+  font-size: 4rem;
+  font-weight: 700;
+  overflow: visible;
+  width: 0;
+  margin: 0 auto;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#spine .title .intro-year {
+  font-size: 4rem;
+  vertical-align: middle;
+  padding-right: 1rem;
+}
+
+#spine .title br {
+  display: none;
+}
+
+#spine .title::before {
+  margin: 0 auto;
+  border-bottom: initial;
+  content: '';
+}
+
+#spine .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  margin: 0 auto 4rem;
+  max-width: 25mm;
+  padding: 10px;
+  height: 12.5mm;
+}
+
+#spine .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+}
+
+#back-cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 148mm;
+}
+
+#back-cover .description {
+  position: absolute;
+  margin: 40px 40px;
+}
+
+#back-cover .description p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#back-cover .description img {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.methodology-data {
+  display: block;
+  margin: 1.5rem 0;
+  color: #fff;
+}
+
+.websites-tested,
+.data-processed {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 1.5rem 0;
+}
+
+.websites-tested div,
+.data-processed div {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.websites-tested div:last-of-type,
+.data-processed div:last-of-type {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+#back-cover .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  left: 1rem;
+  margin: 0 auto 4rem;
+  max-width: 25mm;
+  padding: 10px;
+  height: 12.5mm;
+}
+
+#back-cover .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+  filter:  brightness(0) invert(1);
 }
 
 @prince-pdf {
@@ -82,9 +254,8 @@
 }
 
 @page {
-  margin: 1.25cm;
+  margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
   font-size: 5pt;
   size: 321mm 210mm;
   marks: crop cross;
@@ -135,7 +306,7 @@
   }
 
   :root {
-    font-size: 7px;
+    font-size: 10px;
   }
 }
 
@@ -161,21 +332,99 @@
 {% block content %}
 <div class="content">
 
-  <section>
+  <section id="blank-page">
   </section>
 
-  <section id="title" class="no-color no-header-or-footer">
-    
-    <h1 class="title title-center">{{ self.intro_title() }}</h1>
-    <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
+  <section id="cover" class="no-color no-header-or-footer">
 
-    <div class="intro-image-wrapper"> 
-      <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
+    <div id="front-cover">
+      
+      <h1 class="title title-center">{{ self.cover_title() }}</h1>
+      <h2 class="title title-center">{{ self.cover_sub_title() }}</h2>
+
+      <div class="intro-image-wrapper"> 
+        <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+    
+    </div>
+
+    <div id="spine">
+
+      <h3 class="spine-author">
+        <svg viewBox="0 0 90 16">
+          <text x="8" y="15">Viscomi</text>
+        </svg>
+      </h3>
+  
+      <div class="intro-image-wrapper"> 
+        <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
+      </div>
+
+      <div class="spine-title-wrapper">
+        <h2 class="title">{{ self.cover_title() }}</h2>
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+
+    </div>
+
+    <div id="back-cover">
+
+      <div class="description">
+
+        <p>{{ self.mission() }}</p>
+
+        <div class="methodology-data">
+          <div class="websites-tested">
+            <div>
+              {{ self.methodology_stat_1_title() }}
+            </div>
+            <div>
+              {{ self.methodology_stat_1() }}
+            </div>
+          </div>
+          <div class="data-processed">
+            <div>
+              {{ self.methodology_stat_2_title() }}
+            </div>
+            <div>
+              {{ self.methodology_stat_2() }}
+            </div>
+          </div>
+        </div>
+        <!--
+        <p>{{ self.methodology_description() }}</p>
+        <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" />
+        -->
+
+        <p>{{ self.contributors_description() }}</p>
+
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+
     </div>
 
   </section>
 
-  <section>
+  <section id=inside-cover>
   </section>
 
 </div>
