@@ -109,23 +109,28 @@ tbody tr:nth-child(even) {
 
 .team img {
   height: 80px;
+  height: 5rem;
   width: 80px;
+  width: 5rem;
 }
 
 .contributors {
   padding: 0;
   columns: 2;
   column-gap: 30px;
-  margin: 50px 0 0 0;
+  margin: 24px 0 0 0;
+  margin: 1.5rem 0 0 0;
 }
 
 .contributor {
-  margin-bottom: 20px;
+  padding-top: 24px;
+  padding-top: 1.5rem;
   width: 600px;
   max-width: 100%;
   vertical-align: middle;
   overflow: auto;
   min-height: 70px;
+  min-height: calc(50px+1.25rem);
 }
 
 .contributor-avatar {

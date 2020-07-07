@@ -34,9 +34,12 @@
 {% else %}
 
   @page {
+
+    {% if request.args.get('printer') != None %}
     marks: crop cross;
     bleed: 3mm;
     prince-trim: 5mm;
+    {% endif %}
     
     @footnote {
       float: bottom;
@@ -119,7 +122,7 @@
 {% block content %}
 <div class="content">
 
-  {% if request.args.get('print') == None %}
+  {% if request.args.get('printer') == None %}
   <section id="title" class="no-header-or-footer">
     
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
