@@ -633,6 +633,7 @@ p {
   .intro-year {
     display: block;
     color: #f7f779;
+    font-size: 190px;
     font-size: min(190px, 40vw);
     line-height: 1;
     font-weight: 700;
