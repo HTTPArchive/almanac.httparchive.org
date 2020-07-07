@@ -88,6 +88,7 @@ p {
   display: -ms-grid;
   display: grid;
   grid-template-areas: 'intro image';
+  grid-gap: 2rem;
   justify-content: space-between;
   padding: 0 60px;
 }
@@ -107,41 +108,28 @@ p {
 }
 
 .intro-image-wrapper {
-  -ms-grid-column: 1;
-  -ms-grid-row: 2;
-  grid-area: image;
-  display: none;
-  width: 100%;
-}
-
-.intro-image {
-  background-image: url(/static/images/home-hero.png);
-  background-size: cover;
-  height: 67.5vw;
-  width: 86vw;
-}
-
-.intro-image-year-wrapper {
   -ms-grid-column: 2;
   grid-area: image;
-  width: 100%;
+  max-height: 485px;
+  max-width: 485px;
 }
 
-.intro-image-year {
-  background-image: url(/static/images/home-hero.png);
-  background-size: cover;
-  max-height: 470px;
-  max-width: 458px;
-  height: 41vw;
-  width: 40vw;
+.intro-image-wrapper svg {
+  position: relative;
+  top: 28px;
+  fill: #f7f779;
 }
 
-.year-2019 .intro-image-year {
-  background-image: url(/static/images/home-hero-2019.png);
+/* IE11 hack */
+@media all and (-ms-high-contrast: none) {
+  .intro-image-wrapper svg {
+    height: 180px;
+  }
 }
 
-.year-2020 .intro-image-year {
-  background-image: url(/static/images/home-hero-2020.png);
+.intro-image-wrapper text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
 .intro .btn {
@@ -392,27 +380,6 @@ p {
     text-align: center;
   }
 
-  .intro-year {
-    display: block;
-    margin: 0;
-    width: auto;
-    color: #f7f779;
-    font-size: 190px;
-    line-height: 160px;
-    font-weight: bold;
-  }
-
-  .intro-image-wrapper {
-    display: block;
-    max-width: 100%;
-    margin-top: 80px;
-    margin-right: -46px;
-  }
-
-  .intro-image-year-wrapper {
-    display: none;
-  }
-
   .featured-chapter,
   .featured-chapter-content-data {
     flex-direction: column;
@@ -556,27 +523,6 @@ p {
     justify-content: center;
   }
 
-  .intro-year {
-    display: block;
-    margin: 0;
-    width: auto;
-    color: #f7f779;
-    font-size: 40vw;
-    line-height: 100%;
-    font-weight: bold;
-  }
-
-  .intro-image-wrapper {
-    display: block;
-    max-width: 100%;
-    margin-top: 60px;
-    margin-right: -46px;
-  }
-
-  .intro-image-year-wrapper {
-    display: none;
-  }
-
   /* Featured Chapter */
   .featured-chapter,
   .featured-chapter-content-data {
@@ -680,5 +626,25 @@ p {
   .data-processed {
     flex-direction: column;
     margin: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro-year {
+    display: block;
+    color: #f7f779;
+    font-size: 190px;
+    font-size: min(190px, 40vw);
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .intro-image-wrapper {
+    margin: 3rem 0;
+    max-width: 100vw;
+  }
+
+  .intro-image-wrapper svg {
+    display: none;
   }
 }
