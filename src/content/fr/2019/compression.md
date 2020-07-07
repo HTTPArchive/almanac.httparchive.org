@@ -10,7 +10,7 @@ discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
 queries: 15_Compression
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-07-06T00:00:00.000Z
 ---
 
 ## Introduction
@@ -19,8 +19,8 @@ La compression HTTP est une technique qui permet de coder des informations en ut
 
 Les algorithmes de compression sont souvent classés comme avec ou sans perte :
 
-*   Lorsqu'un algorithme de compression avec perte est utilisé , le processus est irréversible et le fichier original ne peut pas être restauré par décompression. Cette méthode est couramment utilisée pour comprimer les ressources medias, comme les images et les contenus vidéo, lorsque la perte de certaines données n'affecte pas sensiblement la ressource.
-*   La compression sans perte est un processus entièrement réversible, et est couramment utilisée pour compresser les ressources textuelles, comme [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
+* Lorsqu'un algorithme de compression avec perte est utilisé , le processus est irréversible et le fichier original ne peut pas être restauré par décompression. Cette méthode est couramment utilisée pour comprimer les ressources medias, comme les images et les contenus vidéo, lorsque la perte de certaines données n'affecte pas sensiblement la ressource.
+* La compression sans perte est un processus entièrement réversible, et est couramment utilisée pour compresser les ressources textuelles, comme [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc.
 
 Dans ce chapitre, nous allons analyser comment le contenu textuel est compressé sur le web. L'analyse des contenus non textuels est traité dans le chapitre [Media](./media).
 
@@ -50,9 +50,9 @@ HTTP Archive contient des mesures pour 5,3 millions de sites web, et chaque site
 
 L'IANA tient à jour une [liste des encodages de contenu HTTP valide](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) qui peuvent être utilisés avec les header "Accept-Encoding" et "Content-Encoding". On y retrouve notamment gzip, deflate, br (brotli), ainsi que de quelques autres. De brèves descriptions de ces algorithmes sont données ci-dessous :
 
-*   [Gzip](https://tools.ietf.org/html/rfc1952) utilise les techniques de compression [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) et [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) qui sont plus ancienes que le web lui-même. Elles ont été développé à l'origine pour le programme gzip d'UNIX en 1992. Une implémentation pour la diffusion sur le web existe depuis HTTP/1.1, et la plupart des navigateurs et clients web la prennent en charge.
-*   [Deflate](https://tools.ietf.org/html/rfc1951) utilise le même algorithme que gzip, mais avec un conteneur différent. Son utilisation n'a pas été largement adoptée sur le web pour des [raisons de compatibilité](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) avec d'autres serveurs et navigateurs.
-*   [Brotli](https://tools.ietf.org/html/rfc7932) est un algorithme de compression plus récent qui a été [inventé par Google](https://github.com/google/brotli). Il utilise la combinaison d'une variante moderne de l'algorithme LZ77, le codage de Huffman et la modélisation du contexte du second ordre. La compression via brotli est plus coûteuse en termes de calcul par rapport à gzip, mais l'algorithme est capable de réduire les fichiers de [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) de plus que la compression gzip. Brotli a été utilisé pour la première fois pour la compression de contenu web en 2015 et est [supporté par tous les navigateurs web modernes](https://caniuse.com/#feat=brotli).
+* [Gzip](https://tools.ietf.org/html/rfc1952) utilise les techniques de compression [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) et [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) qui sont plus ancienes que le web lui-même. Elles ont été développé à l'origine pour le programme gzip d'UNIX en 1992. Une implémentation pour la diffusion sur le web existe depuis HTTP/1.1, et la plupart des navigateurs et clients web la prennent en charge.
+* [Deflate](https://tools.ietf.org/html/rfc1951) utilise le même algorithme que gzip, mais avec un conteneur différent. Son utilisation n'a pas été largement adoptée sur le web pour des [raisons de compatibilité](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) avec d'autres serveurs et navigateurs.
+* [Brotli](https://tools.ietf.org/html/rfc7932) est un algorithme de compression plus récent qui a été [inventé par Google](https://github.com/google/brotli). Il utilise la combinaison d'une variante moderne de l'algorithme LZ77, le codage de Huffman et la modélisation du contexte du second ordre. La compression via brotli est plus coûteuse en termes de calcul par rapport à gzip, mais l'algorithme est capable de réduire les fichiers de [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) de plus que la compression gzip. Brotli a été utilisé pour la première fois pour la compression de contenu web en 2015 et est [supporté par tous les navigateurs web modernes](https://caniuse.com/#feat=brotli).
 
 Environ 38 % des réponses HTTP sont fournies avec de la compression de texte. Cette statistique peut sembler surprenante, mais n'oubliez pas qu'elle est basée sur toutes les requêtes HTTP de l'ensemble de données. Certains contenus, tels que les images, ne bénéficieront pas de ces algorithmes de compression. Le tableau ci-dessous résume le pourcentage de requêtes servies pour chaque type de compression.
 
@@ -75,66 +75,66 @@ Environ 38 % des réponses HTTP sont fournies avec de la compression de texte. C
     <tbody>
       <tr>
         <td><em>Pas de compression de texte</em></td>
-        <td><p style="text-align: right">62.87%</p></td>
-        <td><p style="text-align: right">61.47%</p></td>
-        <td><p style="text-align: right">260,245,106</p></td>
-        <td><p style="text-align: right">285,158,644</p></td>
+        <td class="numeric">62.87%</td>
+        <td class="numeric">61.47%</td>
+        <td class="numeric">260,245,106</td>
+        <td class="numeric">285,158,644</td>
       </tr>
       <tr>
         <td>gzip</td>
-        <td><p style="text-align: right">29.66%</p></td>
-        <td><p style="text-align: right">30.95%</p></td>
-        <td><p style="text-align: right">122,789,094</p></td>
-        <td><p style="text-align: right">143,549,122</p></td>
+        <td class="numeric">29.66%</td>
+        <td class="numeric">30.95%</td>
+        <td class="numeric">122,789,094</td>
+        <td class="numeric">143,549,122</td>
       </tr>
       <tr>
         <td>br</td>
-        <td><p style="text-align: right">7.43%</p></td>
-        <td><p style="text-align: right">7.55%</p></td>
-        <td><p style="text-align: right">30,750,681</p></td>
-        <td><p style="text-align: right">35,012,368</p></td>
+        <td class="numeric">7.43%</td>
+        <td class="numeric">7.55%</td>
+        <td class="numeric">30,750,681</td>
+        <td class="numeric">35,012,368</td>
       </tr>
       <tr>
         <td>deflate</td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">68,802</p></td>
-        <td><p style="text-align: right">70,679</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">68,802</td>
+        <td class="numeric">70,679</td>
       </tr>
       <tr>
         <td><em>Autre / Invalide</em></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">67,527</p></td>
-        <td><p style="text-align: right">68,352</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">67,527</td>
+        <td class="numeric">68,352</td>
       </tr>
       <tr>
         <td>identité</td>
-        <td><p style="text-align: right">0.000709%</p></td>
-        <td><p style="text-align: right">0.000563%</p></td>
-        <td><p style="text-align: right">2,935</p></td>
-        <td><p style="text-align: right">2,611</p></td>
+        <td class="numeric">0.000709%</td>
+        <td class="numeric">0.000563%</td>
+        <td class="numeric">2,935</td>
+        <td class="numeric">2,611</td>
       </tr>
       <tr>
         <td>x-gzip</td>
-        <td><p style="text-align: right">0.000193%</p></td>
-        <td><p style="text-align: right">0.000179%</p></td>
-        <td><p style="text-align: right">800</p></td>
-        <td><p style="text-align: right">829</p></td>
+        <td class="numeric">0.000193%</td>
+        <td class="numeric">0.000179%</td>
+        <td class="numeric">800</td>
+        <td class="numeric">829</td>
       </tr>
       <tr>
         <td>compress</td>
-        <td><p style="text-align: right">0.000008%</p></td>
-        <td><p style="text-align: right">0.000007%</p></td>
-        <td><p style="text-align: right">33</p></td>
-        <td><p style="text-align: right">32</p></td>
+        <td class="numeric">0.000008%</td>
+        <td class="numeric">0.000007%</td>
+        <td class="numeric">33</td>
+        <td class="numeric">32</td>
       </tr>
       <tr>
         <td>x-compress</td>
-        <td><p style="text-align: right">0.000002%</p></td>
-        <td><p style="text-align: right">0.000006%</p></td>
-        <td><p style="text-align: right">8</p></td>
-        <td><p style="text-align: right">29</p></td>
+        <td class="numeric">0.000002%</td>
+        <td class="numeric">0.000006%</td>
+        <td class="numeric">8</td>
+        <td class="numeric">29</td>
       </tr>
     </tbody>
   </table>
@@ -155,9 +155,9 @@ De plus, il y a 67K requêtes qui renvoient un `Content-Encoding` invalide, tel 
 
 Nous ne pouvons pas déterminer les niveaux de compression à partir des diagnostics recueillis par HTTP Archive, mais les bonnes pratiques pour compresser du contenu sont :
 
-*   Au minimum, activez le niveau 6 de compression gzip pour les ressources textuelles. Cela permet un bon compromis entre le coût de calcul et le taux de compression et est la [valeur par défaut pour de nombreux serveurs web](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/) toutefois [Nginx utilise  par défaut le niveau 1, c'est souvent trop bas](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
-*   Si vous pouvez supporter brotli et la précompression des ressources, alors compressez au niveau 11. Cette méthode est plus coûteuse en termes de calcul que gzip - la précompression est donc absolument nécessaire pour éviter les délais.
-*   Si vous pouvez supporter le brotli et que vous ne pouvez pas le précompresser, alors compressez au niveau 5. Ce niveau se traduira par un cout de compression plus petit que gzip, avec un surcoût de calcul similaire.
+* Au minimum, activez le niveau 6 de compression gzip pour les ressources textuelles. Cela permet un bon compromis entre le coût de calcul et le taux de compression et est la [valeur par défaut pour de nombreux serveurs web](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/) toutefois [Nginx utilise  par défaut le niveau 1, c'est souvent trop bas](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
+* Si vous pouvez supporter brotli et la précompression des ressources, alors compressez au niveau 11. Cette méthode est plus coûteuse en termes de calcul que gzip - la précompression est donc absolument nécessaire pour éviter les délais.
+* Si vous pouvez supporter le brotli et que vous ne pouvez pas le précompresser, alors compressez au niveau 5. Ce niveau se traduira par un cout de compression plus petit que gzip, avec un surcoût de calcul similaire.
 
 
 ## Quels types de contenus compressons-nous ?
@@ -251,38 +251,38 @@ En outre, le pourcentage de compression brotli est plus élevé pour les contenu
     <tbody>
       <tr>
         <td><em>Pas de compression de texte</em></td>
-        <td><p style="text-align: right">66.23%</p></td>
-        <td><p style="text-align: right">59.28%</p></td>
-        <td><p style="text-align: right">64.54%</p></td>
-        <td><p style="text-align: right">58.26%</p></td>
+        <td class="numeric">66.23%</td>
+        <td class="numeric">59.28%</td>
+        <td class="numeric">64.54%</td>
+        <td class="numeric">58.26%</td>
       </tr>
       <tr>
         <td>gzip</td>
-        <td><p style="text-align: right">29.33%</p></td>
-        <td><p style="text-align: right">30.20%</p></td>
-        <td><p style="text-align: right">30.87%</p></td>
-        <td><p style="text-align: right">31.22%</p></td>
+        <td class="numeric">29.33%</td>
+        <td class="numeric">30.20%</td>
+        <td class="numeric">30.87%</td>
+        <td class="numeric">31.22%</td>
       </tr>
       <tr>
         <td>br</td>
-        <td><p style="text-align: right">4.41%</p></td>
-        <td><p style="text-align: right">10.49%</p></td>
-        <td><p style="text-align: right">4.56%</p></td>
-        <td><p style="text-align: right">10.49%</p></td>
+        <td class="numeric">4.41%</td>
+        <td class="numeric">10.49%</td>
+        <td class="numeric">4.56%</td>
+        <td class="numeric">10.49%</td>
       </tr>
       <tr>
         <td>deflate</td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
       </tr>
       <tr>
         <td><em>Autre / Invalide</em></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
       </tr>
     </tbody>
   </table>
