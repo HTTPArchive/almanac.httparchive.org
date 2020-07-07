@@ -19,9 +19,126 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="/static/css/page.css?v=20200630133215" />
-<link rel="stylesheet" href="/static/css/ebook_cover.css?v=20200630133215" />
 
 <style>
+
+#title .title {
+  color: white;
+}
+
+.intro-year {
+  margin: 0;
+  width: auto;
+  color: #f7f779;
+  font-size: 80px;
+  font-size: 8rem;
+  line-height: 100%;
+  font-weight: bold;
+}
+
+#title h1.title::before {
+  border-bottom: none;
+}
+
+#title h1.title {
+  font-size: 40px;
+  font-size: 5rem;
+  font-weight: 700;
+  width: 148mm;
+  text-align: center;
+  margin-left: 173mm;
+}
+
+#title h2.title {
+  font-size: 16px;
+  font-size: 2rem;
+  font-weight: 300;
+  width: 148mm;
+  text-align: center;
+  margin-left: 173mm;
+}
+
+.intro-image-wrapper {
+  width: 148mm;
+  text-align: center;
+  margin-left: 173mm;
+}
+
+.intro-image {
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+  padding-top: 40px;
+  width: 80%;
+  height: auto;
+}
+
+#title img {
+  margin: 0 auto;
+}
+
+@prince-pdf {
+  prince-pdf-display-doc-title: true;
+}
+
+@page {
+  margin: 1.25cm;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 5pt;
+  size: 321mm 210mm;
+  marks: crop cross;
+  bleed: 3mm;
+  prince-trim: 5mm;
+}
+
+@page :left {
+  background: #5c687d;
+  background: transparent linear-gradient(#5c687d 70%, transparent 30%);
+  background: transparent url(/static/images/intro-background-fit-cover.svg) bottom left / 100% 100% no-repeat;
+  /* background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICBzdmd7YmFja2dyb3VuZDojZmZmfQ0KICAgICAgLmNscy0xe2ZpbGw6I2E4Y2FiYTtmaWxsLXJ1bGU6ZXZlbm9kZDtvcGFjaXR5Oi4wNX0NCiAgICA8L3N0eWxlPg0KICA8L2RlZnM+DQogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS0yMzEgODloMjA4OHY2NTFsLTIwODggMzYwVjg5eiIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPg0KICA8cGF0aCBkPSJNLTE0NC0xOWgyMDg4djY1MUwtMTQ0IDk5MlYtMTl6IiBmaWxsPSIjMWEyYjQ5IiBvcGFjaXR5PSIuNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwLTgzaDIwODh2NjUxTC00NzAgOTI4Vi04M3oiLz4NCiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4NCjwvc3ZnPg0K); */
+  background-position: -20px -20px;
+  background-repeat: no-repeat;
+  background-size: 105% 105%;
+
+  @top-left {
+    content: '';
+    border-bottom: none;
+  }
+
+  @top-right {
+    content: '';
+  }
+
+  @bottom-left {
+    content: '';
+    border: none;
+  }
+
+  @bottom-right {
+    content: '';
+    border: none;
+  }
+}
+
+.content {
+  margin: 0;
+}
+
+.content > section {
+  page-break-after: always;
+}
+
+@media print {
+  #title {
+    background: none;
+  }
+
+  :root {
+    font-size: 7px;
+  }
+}
+
 
 {% if request.args.get('page-size') != None %}
   @page { size: {{ request.args.get('page-size') }}; }
@@ -52,7 +169,9 @@
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
     <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
 
-    <img class="intro-image" src="/static/images/home-hero.png" alt="" width="984" height="354" />
+    <div class="intro-image-wrapper"> 
+      <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
+    </div>
 
   </section>
 
