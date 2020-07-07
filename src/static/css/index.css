@@ -116,8 +116,12 @@ p {
 
 .intro-image-wrapper svg {
   position: relative;
-  top: 28px;
+  top: 25.5px;
   fill: #f7f779;
+}
+
+.intro-image-wrapper img {
+  position: relative;
 }
 
 /* IE11 hack */
