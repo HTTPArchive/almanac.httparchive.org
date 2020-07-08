@@ -40,11 +40,19 @@
     bleed: 3mm;
     prince-trim: 5mm;
     {% endif %}
+
+    {% if request.args.get('bleed') != None %}
+    bleed: {{ request.args.get('bleed') }};
+    {% endif %}
+
+    {% if request.args.get('prince-trim') != None %}
+    prince-trim: {{ request.args.get('prince-trim') }};
+    {% endif %}
     
     @footnote {
       float: bottom;
       border-top: .25pt solid #666;
-      margin-top: 10px;
+      margin-top: 1rem;
       padding: 5px 0;
     }
   }
@@ -234,7 +242,7 @@
           <span class="contributor-social">
           {% if contributor.twitter %}
             <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
-              <svg width="11" height="11" role="img">
+              <svg role="img">
                 <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
@@ -242,7 +250,7 @@
           {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
-            <svg width="11" height="11" role="img">
+            <svg role="img">
               <title id="contributors-{{ id }}-github">{{ onGitHub(contributor.github) }}</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
             </svg>
@@ -250,7 +258,7 @@
           {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
-            <svg width="11" height="11" role="img">
+            <svg role="img">
               <title id="contributors-{{ id }}-website">{{ website(contributor.name) }}</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
             </svg>

@@ -22,11 +22,25 @@
 
 <style>
 
+{% set measurement = 'mm' %}
+{% set spine = 25 %}
+{% set pageWidth = 148 %}
+{% set pageHeight = 210 %}
+{% set totalWidth = 321 %}
+{% if request.args.get('measurement') != None %}{% set measurement = request.args.get('measurement') %}{% endif %}
+{% if request.args.get('spine') != None %}{% set spine = request.args.get('spine')|float %}{% endif %}
+{% if request.args.get('pageWidth') != None %}{% set pageWidth = request.args.get('pageWidth')|float %}{% endif %}
+{% if request.args.get('pageHeight') != None %}{% set pageHeight = request.args.get('pageHeight')|float %}{% endif %}
+{% set totalWidth = pageWidth + spine + pageWidth %}
+{% set pageAndSpine = pageWidth + spine %}
+{% set halfSpine =  spine / 2 %}
+
+
 #front-cover {
   position: absolute;
-  width: 148mm;
+  width: {{ pageWidth }}{{ measurement }};
   text-align: center;
-  left: 173mm;
+  left: {{ pageAndSpine }}{{ measurement }};
   right: 0;
   top: 0;
   bottom: 0;
@@ -86,9 +100,9 @@
   bottom: 12.5mm;
   right: 1rem;
   margin: 0 auto 4rem;
-  max-width: 25mm;
+  max-width: {{ spine }}{{ measurement }};
   padding: 10px;
-  height: 12.5mm;
+  height: {{ halfSpine }}{{ measurement }};
 }
 
 #front-cover .ha-logo-wrapper svg {
@@ -99,8 +113,8 @@
 #spine {
   position: absolute;
   top: 0;
-  left: 148mm;
-  width: 25mm;
+  left: {{ pageWidth }}{{ measurement }};;
+  width: {{ spine }}{{ measurement }};
   bottom: 0;
 }
 
@@ -172,9 +186,9 @@
   position: absolute;
   bottom: 12.5mm;
   margin: 0 auto 4rem;
-  max-width: 25mm;
+  max-width: {{ spine }}{{ measurement }};
   padding: 10px;
-  height: 12.5mm;
+  height: {{ halfSpine }}{{ measurement }};
 }
 
 #spine .ha-logo-wrapper svg {
@@ -187,12 +201,12 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 148mm;
+  width: {{ pageWidth }}{{ measurement }};;
 }
 
 #back-cover .description {
   position: absolute;
-  margin: 40px 40px;
+  margin: 4rem 4rem;
 }
 
 #back-cover .description p {
@@ -238,9 +252,9 @@
   bottom: 12.5mm;
   left: 1rem;
   margin: 0 auto 4rem;
-  max-width: 25mm;
+  max-width: {{ spine }}{{ measurement }};
   padding: 10px;
-  height: 12.5mm;
+  height: {{ halfSpine }}{{ measurement }};
 }
 
 #back-cover .ha-logo-wrapper svg {
@@ -257,7 +271,7 @@
   margin: 0;
   padding: 0;
   font-size: 5pt;
-  size: 321mm 210mm;
+  size: {{ totalWidth }}{{ measurement }} {{ pageHeight }}{{ measurement }};
   marks: crop cross;
   bleed: 3mm;
   prince-trim: 5mm;
@@ -315,12 +329,12 @@
   @page { size: {{ request.args.get('page-size') }}; }
 {% endif %}
 
-{% if request.args.get('print-base-font-size') != None %}
+{% if request.args.get('base-font-size') != None %}
 
   @media print {
 
     :root {
-      font-size: {{ request.args.get('print-base-font-size') }};
+      font-size: {{ request.args.get('base-font-size') }};
     }
 
   }

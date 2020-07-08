@@ -69,16 +69,17 @@
   margin: 0;
 }
 
-th, td {
-  padding: 5px;
-  padding: 0.357rem;
+.table-wrap {
+  padding: 0;
 }
 
 th {
+  padding: 0.75rem;
   text-align: center;
 }
 
 td {
+  padding: 0.625rem;
   text-align: left;
 }
 
@@ -118,27 +119,26 @@ tbody tr:nth-child(even) {
   padding: 0;
   columns: 2;
   column-gap: 30px;
-  margin: 24px 0 0 0;
+  margin: 15px 0 0 0;
   margin: 1.5rem 0 0 0;
 }
 
 .contributor {
-  padding-top: 24px;
+  padding-top: 15px;
   padding-top: 1.5rem;
   width: 600px;
   max-width: 100%;
   vertical-align: middle;
   overflow: auto;
-  min-height: 70px;
-  min-height: calc(50px+1.25rem);
+  min-height: 7rem;
 }
 
 .contributor-avatar {
   border-radius: 50px;
   background-color: #f7f779;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  width: 50px;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  width: 5rem;
   height: auto;
   transition-duration: 0.3s;
   float: left;
@@ -148,6 +148,13 @@ tbody tr:nth-child(even) {
   display: inline-block;
   vertical-align: middle;
   margin: 0 5px;
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+.contributor-social svg {
+  height: 1.1rem;
+  width: 1.1rem;
 }
 
 .contributor-teams {
@@ -206,7 +213,7 @@ section.chapter {
 }
 
 @page {
-  margin: 1.25cm;
+  margin: 4.7rem;
   padding: 0;
   font-family: 'Lato', sans-serif;
   font-size: 8px;
@@ -215,16 +222,16 @@ section.chapter {
 
   @top-left {
     width: 100%;
-    margin: 30pt 0 10pt 0;
+    margin: 30px 0 10px 0;
     margin: 2rem 0 1rem 0;
-    border-bottom: 0.5pt solid #666;
+    border-bottom: 0.5px solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
 
   @top-right {
     width: 100%;
-    margin: 30pt 0 10pt 0;
+    margin: 30px 0 10px 0;
     margin: 2rem 0 1rem 0;
     color: #333;
     font-family: 'Poppins', sans-serif;
@@ -232,9 +239,9 @@ section.chapter {
 
   @bottom-left {
     width: 100%;
-    margin: 10pt 0 30pt 0;
+    margin: 10px 0 30px 0;
     margin: 1rem 0 2rem 0;
-    border-top: 0.5pt solid #666;
+    border-top: 0.5px solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -242,7 +249,7 @@ section.chapter {
   @bottom-right {
     width: 100%;
     margin: 1rem 0 2rem 0;
-    border-top: 0.25pt solid #666;
+    border-top: 0.25px solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -423,6 +430,11 @@ section.chapter {
     height: auto;
     width: 60px;
     width: 4.29rem;
+  }
+
+  .authors .social svg {
+    height: 1.5rem;
+    width: 1.5rem;
   }
 
   .fn {
