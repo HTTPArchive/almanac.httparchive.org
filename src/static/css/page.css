@@ -247,6 +247,7 @@
   display: grid;
   grid-template-areas: 'avatar info';
   grid-template-columns: 76px auto;
+  grid-template-columns: 4.75rem auto;
   grid-template-columns: 4.75rem calc(100% - 4.75rem); /* auto sometimes not set correctly on font zoom */
 }
 
@@ -631,6 +632,15 @@ figure .fig-desktop {
   margin: 0.5rem 0;
   padding: 16px;
   padding: 1rem;
+}
+
+.code-block .divider {	
+  position: relative;	
+  border: 1px solid #1a2b490a;	
+  width: calc(100% + 32px);	
+  width: calc(100% + 2rem);	
+  left: -16px;	
+  left: -1rem;	
 }
 
 .code-block pre {
