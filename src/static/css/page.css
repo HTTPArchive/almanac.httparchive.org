@@ -4,19 +4,22 @@
   grid-template-areas: 'index content';
   -ms-grid-columns: 300px calc(100% - 300px);
   grid-template-columns: 300px auto;
-  grid-template-columns: 300px calc(100% - 300px); /* auto sometimes not set correctly on font zoom */
+  grid-template-columns: 18.75rem calc(100% - 18.75rem); /* auto sometimes not set correctly on font zoom */
 }
 
 .table-wrap-container,
 .floating-card {
   border-radius: 16px;
+  border-radius: 1rem;
   box-shadow: 0 0 16px 0 rgba(78, 85, 100, 0.2);
+  box-shadow: 0 0 1rem 0 rgba(78, 85, 100, 0.2);
 }
 
 .table-wrap {
   display: flex;
   margin: 0 auto;
   padding: 16px;
+  padding: 1rem;
   max-width: 100%;
   justify-content: center;
 }
@@ -25,6 +28,7 @@
   overflow: auto;
   display: inline-block;
   margin: 0 -16px;
+  margin: 0 -1rem;
 }
 
 .width-45 {
@@ -38,7 +42,9 @@
 
 .index .index-box {
   margin: 20px 0;
+  margin: 1.25rem 0;
   padding: 8px 16px;
+  padding: 0.5rem 1rem;
   top: 0;
 }
 
@@ -58,6 +64,7 @@
 
 .index-box .index-btn {
   padding: 14px;
+  padding: 0.875rem;
   width: 100%;
   border: 0;
   background: none;
@@ -96,6 +103,7 @@
 .index li a {
   display: block;
   padding: 24px 16px;
+  padding: 1.5rem 1rem;
   line-height: 24px;
   line-height: 1.5rem;
   color: #1a2b49;
@@ -108,6 +116,7 @@
 
 .index li li a {
   padding-left: 32px;
+  padding-left: 2rem;
 }
 
 .index li li:last-child {
@@ -126,10 +135,13 @@
 .index li::before {
   content: "";
   width: 8px;
+  width: 0.5rem;
   display: inline-block;
   position: absolute;
   top: 24px;
+  top: 1.5rem;
   bottom: 24px;
+  bottom: 1.5rem;
 }
 
 .index li.active::before {
@@ -140,11 +152,14 @@
   grid-area: content;
   -ms-grid-column: 2;
   margin-left: 40px;
+  margin-left: 2.5rem;
   min-width: 320px;
+  min-width: 20rem;
 }
 
 .content > section, .content > article {
   margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 .content ul li {
@@ -165,6 +180,7 @@
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  border-radius: 0.5rem;
   border: 1px solid #e5e5e5;
 }
 
@@ -180,15 +196,18 @@
 .chapter_links .btn {
   display: inline-block;
   margin: 10px;
+  margin: 0.625rem;
 }
 
 .chapter_links svg {
   margin-right: 10px;
+  margin-right: 0.625rem;
   vertical-align: middle;
 }
 
 #num_comments {
   line-height: 24px;
+  line-height: 1.5rem;
 }
 
 [data-translation] {
@@ -197,6 +216,7 @@
 
 .authors h2 {
   padding: 16px 0;
+  padding: 1rem 0;
 }
 
 .authors,.authors h2 {
@@ -207,6 +227,7 @@
 
 .content .authors ul {
   margin: 16px 0;
+  margin: 1rem 0;
   padding: 0;
 }
 
@@ -221,18 +242,22 @@
   margin: 0;
   padding: 0;
   margin-top: 32px;
+  margin-top: 2rem;
   overflow: visible;
   display: grid;
   grid-template-areas: 'avatar info';
   grid-template-columns: 76px auto;
-  grid-template-columns: 76px calc(100% - 76px); /* auto sometimes not set correctly on font zoom */
+  grid-template-columns: 4.75rem auto;
+  grid-template-columns: 4.75rem calc(100% - 4.75rem); /* auto sometimes not set correctly on font zoom */
 }
 
 .authors .name {
   font-size: 24px;
   font-size: 1.5rem;
   margin-right: 10px;
+  margin-right: 0.625rem;
   margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   display: inline-block;
 }
 
@@ -256,12 +281,15 @@
   display: inline-block;
   vertical-align: middle;
   margin: 0 5px;
+  margin: 0 0.3125rem;
 }
 
 #chapter-navigation {
   padding: 50px 36px;
+  padding: 31.25rem 2rem;
   border: 1px solid #1a2b490a;
   margin: 20px 0;
+  margin: 1.25rem 0;
   overflow: hidden;
 }
 
@@ -269,6 +297,7 @@
   color: #1a2b49;
   width: 50%;
   min-width: 100px;
+  min-width: 6.25rem;
   display: inline-block;
   position: relative;
 }
@@ -294,12 +323,13 @@
   font-size: 24px;
   font-size: 1.5rem;
   top: 12px;
-  top: 0.5em;
+  top: 0.75em;
 }
 
 #previous-chapter .arrow {
   transform: rotate(-90deg);
   left: -24px;
+  left: -1.5rem;
 }
 
 #next-chapter {
@@ -310,6 +340,7 @@
 #next-chapter .arrow {
   transform: rotate(90deg);
   right: -24px;
+  right: -1.5rem;
 }
 
 aside, .note {
@@ -349,19 +380,25 @@ figure .anchor-link {
 
 .fig-description-button {
   margin: 5px auto 0;
+  margin: 0.3125rem auto 0;
   font-size: 12px;
   font-size: 0.75rem;
   background-color: white;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
+  border-radius: 0.25rem;
   padding: 5px;
+  padding: 0.3125rem;
 }
 
 .fig-description {
   border: 1px solid;
   border-radius: 10px;
+  border-radius: 0.625rem;
   margin-top: 10px;
+  margin-top: 0.625rem;
   padding: 10px;
+  padding: 0.625rem;
   background-color: #e5e5e5;
 }
 
@@ -369,7 +406,9 @@ figure {
   display: flex;
   flex-direction: column;
   margin: 15px -8px;
+  margin: 0.9375rem -0.5rem;
   padding: 8px;
+  padding: 0.5rem;
   font-style: italic;
   overflow-x: auto;
 }
@@ -385,6 +424,7 @@ figure > a {
 figure img {
   margin: 0 auto;
   border-radius: 8px;
+  border-radius: 0.5rem;
   border: 1px solid #e5e5e5;
 }
 
@@ -395,10 +435,12 @@ figure iframe {
 
 figure .code-block {
   margin: 10px auto;
+  margin: 0.625rem auto;
 }
 
 figcaption {
   margin: 8px auto 0;
+  margin: 0.5rem auto 0;
   text-align: center;
 }
 
@@ -415,6 +457,7 @@ thead {
 
 th, td {
   padding: 10px;
+  padding: 0.625rem;
 }
 
 th.numeric, td.numeric {
@@ -459,6 +502,7 @@ figure .fig-desktop {
 
 .bio {
   margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 @media (max-width: 900px) {
@@ -480,6 +524,7 @@ figure .fig-desktop {
   .index {
     -ms-grid-row: 1;
     margin: 30px 0;
+    margin: 1.875rem 0;
   }
 
   .index-box .header {
@@ -555,7 +600,9 @@ figure .fig-desktop {
 
   .fig-description-button {
     margin-top: 10px;
+    margin-top: 0.625rem;
     margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     font-size: 16px;
     font-size: 1rem;
   }
@@ -582,21 +629,27 @@ figure .fig-desktop {
 /* Code highlighting */
 .code-block {
   margin: 8px 0;
+  margin: 0.5rem 0;
   padding: 16px;
+  padding: 1rem;
 }
 
 .code-block .divider {
   position: relative;
   border: 1px solid #1a2b490a;
   width: calc(100% + 32px);
+  width: calc(100% + 2rem);
   left: -16px;
+  left: -1rem;
 }
 
 .code-block pre {
   overflow-y: hidden;
   overflow-x: auto;
   margin: 8px 0;
+  margin: 0.5rem 0;
   padding: 24px;
+  padding: 1.5rem;
 }
 
 .code-block code {
