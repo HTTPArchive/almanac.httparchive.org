@@ -104,7 +104,7 @@ Though this is the same as below since it uses a lot of the default settings:
 prince "https://almanac.httparchive.org/en/2019/ebook?print&printer" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
 ```
 
-Note this will create two extra pages at the begining which will need to be removed with a PDF editor to start with a clean page for printing.
+Note this will create two extra pages at the begining which will need to be removed with a PDF editor to start with a clean page starting on right hand side for printing. Please remove these before checking in versions to git.
 
 It is also possible to generate a cover using the `ebook_cover` route. This consists of basically 2 pages - the front and back cover as one page (with spine in between) and the inside two pages as another page.
 
@@ -120,7 +120,7 @@ Params accepted are:
 - unit - which unit the above measurements are in (defaults to mm)
 - base-font-size - set the base font-size (10px by default), which may need to be increased if changing page size.
 
-Note this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing.
+Note this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing. Please remove this before checking in versions to git.
 
 With the print-ready eBook and Cover you can send them to a printer. I used https://www.digitalprintingireland.ie/ before and they were excellent and charge about €35 for a full-colour A5 ebook. Most of the settings above are for them, so tweak them based on your own printers requirements.
 
