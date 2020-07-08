@@ -381,10 +381,6 @@ section.chapter {
     text-decoration: none;
   }
 
-  figure img {
-    max-height: 800px;
-  }
-
   figcaption {
     width: 1000px;
   }

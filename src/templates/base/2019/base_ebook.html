@@ -126,6 +126,17 @@
   }
 {% endif %}
 
+/* Prince does not support vh yet so limit the height of images */
+{% if request.args.get('max-fig-height') != None %}
+  figure img {
+    max-height: {{ request.args.get('max-fig-height') }};
+  }
+{% else %}
+  figure img {
+    max-height: 610px;
+  }
+{% endif %}
+
 </style>
 {% endblock %}
 
