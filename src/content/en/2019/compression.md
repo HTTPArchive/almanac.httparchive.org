@@ -151,7 +151,7 @@ Of the resources that are served compressed, the majority are using either gzip 
   <figcaption id="fig2-caption">Figure 2. Adoption of compression algorithms on desktop pages.</figcaption>
 </figure>
 
-Additionally, there are 67K requests that return an invalid `Content-Encoding`, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.
+Additionally, there are 67k requests that return an invalid `Content-Encoding`, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.
 
 We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:
 
