@@ -634,13 +634,13 @@ figure .fig-desktop {
   padding: 1rem;
 }
 
-.code-block .divider {	
-  position: relative;	
-  border: 1px solid #1a2b490a;	
-  width: calc(100% + 32px);	
-  width: calc(100% + 2rem);	
-  left: -16px;	
-  left: -1rem;	
+.code-block .divider {
+  position: relative;
+  border: 1px solid #1a2b490a;
+  width: calc(100% + 32px);
+  width: calc(100% + 2rem);
+  left: -16px;
+  left: -1rem;
 }
 
 .code-block pre {
