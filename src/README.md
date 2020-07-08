@@ -70,15 +70,17 @@ npm run generate
 npm run ebooks
 ```
 
+## Generating ebooks - including print-ready ebooks if you want a hardcopy.
+
 It is also possible to generate the ebook from the website (either production or 127.0.0.1), with some optional params (e.g. to print it!)
 
 ```
-prince "https://almanac.httparchive.org/en/2019/ebook?print&printer=Y" -o web_almanac_2019_en.pdf --pdf-profile='PDF/UA-1'
+prince "https://almanac.httparchive.org/en/2019/ebook?print" -o web_almanac_2019_en.pdf --pdf-profile='PDF/UA-1'
 ```
 
 Note `--pdf-profile='PDF/UA-1'` may not be needed if just intend to print.
 
-Params accepted are:
+Query params accepted are:
 
 - print - this adds left, right pages, footnotes, and sets roman numerals for front matter page numbers and adds footnotes. It is used by default when running `npm run ebooks` but we could change that if prefer a less print-like ebook.
 - printer - this adds crop marks, bleeds and trims. Also adds two additional pages at front which will need to be deleted in Acrobat or similar to get clean starting page.
@@ -90,9 +92,25 @@ Params accepted are:
 
 You can also download the HTML and override the inline styles there if you want to customise this for something we haven't exposed as a param.
 
-It is also possible to generate a cover. This consists of basically 2 pages - the front and back cover as one gae (with spine in between) and the inside two pages as another page.
+So for a printer-ready version (if you want a hardcopy) you can do the following:
 
+```
+prince "https://almanac.httparchive.org/en/2019/ebook?print&printer&page-size=A5&inside-margin=19.5mm&bleed=3mm&prince-trim=5mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
+```
+
+Though this is the same as below since it uses a lot of the default settings:
+
+```
+prince "https://almanac.httparchive.org/en/2019/ebook?print&printer" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
+```
+
+Note this will create two extra pages at the begining which will need to be removed with a PDF editor to start with a clean page for printing.
+
+It is also possible to generate a cover using the `ebook_cover` route. This consists of basically 2 pages - the front and back cover as one page (with spine in between) and the inside two pages as another page.
+
+```
 prince "http://127.0.0.1:8080/en/2019/ebook_cover?print" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
+```
 
 Params accepted are:
 
@@ -100,8 +118,11 @@ Params accepted are:
 - pageWidth - defaults to 148 (for A5)
 - pageHeight - defaults to 210 (for A5)
 - unit - which unit the above measurements are in (defaults to mm)
-- base-font-size - set the base font-size (10px by default), which is useful if changing page size.
+- base-font-size - set the base font-size (10px by default), which may need to be increased if changing page size.
 
+Note this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing.
+
+With the print-ready eBook and Cover you can send them to a printer. I used https://www.digitalprintingireland.ie/ before and they were excellent and charge about €35 for a full-colour A5 ebook. Most of the settings above are for them, so tweak them based on your own printers requirements.
 
 ## Deploying changes
 
