@@ -10,7 +10,7 @@ discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-07-06T00:00:00.000Z
+last_updated: 2020-07-08T00:00:00.000Z
 ---
 
 ## Introduction
@@ -629,7 +629,7 @@ Si on fait une comparaison entre HTTP et HTTPS, cela devient encore plus intére
   <table>
     <thead>
       <tr>
-        <td scoppe="col"></td>
+        <td scope="col"></td>
         <td></td>
         <th scope="col">N'utilise pas Service Worker</th>
         <th scope="col">Utilise Service Worker</th>
