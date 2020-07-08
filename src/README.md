@@ -70,21 +70,38 @@ npm run generate
 npm run ebooks
 ```
 
-It is also possible to generate the ebook from the website, with some optional params (e.g. to print it!)
+It is also possible to generate the ebook from the website (either production or 127.0.0.1), with some optional params (e.g. to print it!)
 
 ```
-prince "https://almanac.httparchive.org/en/2019/ebook?print&inside-margin=4cm" -o web_almanac_2019_en.pdf --pdf-profile='PDF/UA-1'
+prince "https://almanac.httparchive.org/en/2019/ebook?print&printer=Y" -o web_almanac_2019_en.pdf --pdf-profile='PDF/UA-1'
 ```
 
 Note `--pdf-profile='PDF/UA-1'` may not be needed if just intend to print.
 
 Params accepted are:
 
-- print - this ads left, right pages, footnotes, and sets roman numerals for front matter page numbers and adds footnotes. It is used by default when running `npm run ebooks` but we could change that if prefer a less print-like ebook.
-- page-size - this allows you to override the default page size of A4
+- print - this adds left, right pages, footnotes, and sets roman numerals for front matter page numbers and adds footnotes. It is used by default when running `npm run ebooks` but we could change that if prefer a less print-like ebook.
+- printer - this adds crop marks, bleeds and trims. Also adds two additional pages at front which will need to be deleted in Acrobat or similar to get clean starting page.
+- page-size - this allows you to override the default page size of A5.
 - inside-margin - this allows you to set an inside margin for binding (e.g. on right for left hand pages and vice versa)
+- bleed - add a bleed for printing (3mm by default)
+- prince-trim - add a bleed for printing (5mm by default)
+- base-font-size - set the base font-size (10px by default), which is useful if changing page size.
 
-You can also download the HTML and override the inline styles there if you want to customise this for something we haven;t exposed as a param.
+You can also download the HTML and override the inline styles there if you want to customise this for something we haven't exposed as a param.
+
+It is also possible to generate a cover. This consists of basically 2 pages - the front and back cover as one gae (with spine in between) and the inside two pages as another page.
+
+prince "http://127.0.0.1:8080/en/2019/ebook_cover?print" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
+
+Params accepted are:
+
+- spine - defaults to 25
+- pageWidth - defaults to 148 (for A5)
+- pageHeight - defaults to 210 (for A5)
+- unit - which unit the above measurements are in (defaults to mm)
+- base-font-size - set the base font-size (10px by default), which is useful if changing page size.
+
 
 ## Deploying changes
 

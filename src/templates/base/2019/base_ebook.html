@@ -48,6 +48,12 @@
     {% if request.args.get('prince-trim') != None %}
     prince-trim: {{ request.args.get('prince-trim') }};
     {% endif %}
+
+    {% if request.args.get('inside-margin') != None %}
+    {% set insideMargin = request.args.get('inside-margin') %}
+    {% else %}
+    {% set insideMargin = "19.5mm" %}
+    {% endif %}
     
     @footnote {
       float: bottom;
@@ -61,9 +67,7 @@
     @top-right { content: ''; }
     @bottom-left { content: counter(page); }
     @bottom-right { content: "{{ year }} {{ self.organization() }}"; }
-    {% if request.args.get('inside-margin') != None %}
-    margin-right: {{ request.args.get('inside-margin') }};
-    {% endif %}
+    margin-right: {{ insideMargin }};
   }
 
   @page :right {
@@ -71,9 +75,7 @@
     @top-right { content: string(chapter-subtitle) string(chapter-title); }
     @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
     @bottom-right { content: counter(page); }
-    {% if request.args.get('inside-margin') != None %}
-    margin-left: {{ request.args.get('inside-margin') }};
-    {% endif %}
+    margin-left: {{ insideMargin }};
   }
 
   @page front-matter:left {
@@ -113,12 +115,12 @@
   @page { size: {{ request.args.get('page-size') }}; }
 {% endif %}
 
-{% if request.args.get('print-base-font-size') != None %}
+{% if request.args.get('base-font-size') != None %}
 
   @media print {
 
     :root {
-      font-size: {{ request.args.get('print-base-font-size') }};
+      font-size: {{ request.args.get('base-font-size') }};
     }
 
   }
@@ -131,6 +133,7 @@
 <div class="content">
 
   {% if request.args.get('printer') == None %}
+
   <section id="title" class="no-header-or-footer">
     
     <h1 class="title title-center">{{ self.intro_title() }}</h1>
