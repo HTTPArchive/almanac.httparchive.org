@@ -168,7 +168,7 @@
   <div id="fig2-description" class="visually-hidden">Pie chart of the data table in Figure 1.</div>
   <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">Figure 2.</a> Adoption of compression algorithms on desktop pages.</figcaption>
 </figure>
-<p>Additionally, there are 67K requests that return an invalid <code>Content-Encoding</code>, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.</p>
+<p>Additionally, there are 67k requests that return an invalid <code>Content-Encoding</code>, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.</p>
 <p>We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:</p>
 <ul>
   <li>At a minimum, enable gzip compression level 6 for text based assets. This provides a fair trade-off between computational cost and compression ratio and is the <a href="https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/">default for many web servers</a>—though <a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level">Nginx still defaults to the, often too low, level 1</a>.</li>
