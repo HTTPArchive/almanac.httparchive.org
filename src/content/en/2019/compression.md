@@ -307,7 +307,7 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
   <a href="/static/images/2019/compression/fig11.png">
     <img src="/static/images/2019/compression/fig11.png" alt="Figure 11. Lighthouse 'enable text compression' audit scores." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="760" height="331" data-width="760" data-height="331" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&amp;format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden">Stacked bar chart showing 7.6% are cosing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% os sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.</div>
+  <div id="fig11-description" class="visually-hidden">Stacked bar chart showing 7.6% are costing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% of sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.</div>
   <figcaption id="fig11-caption">Figure 11. Lighthouse "enable text compression" audit scores.</figcaption>
 </figure>
 
