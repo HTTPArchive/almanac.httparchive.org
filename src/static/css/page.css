@@ -4,7 +4,7 @@
   grid-template-areas: 'index content';
   -ms-grid-columns: 300px calc(100% - 300px);
   grid-template-columns: 300px auto;
-  grid-template-columns: 300px calc(100% - 300px); /* auto sometimes not set correctly on font zoom */
+  grid-template-columns: 18.75rem calc(100% - 18.75rem); /* auto sometimes not set correctly on font zoom */
 }
 
 .table-wrap-container,
@@ -64,6 +64,7 @@
 
 .index-box .index-btn {
   padding: 14px;
+  padding: 0.875rem;
   width: 100%;
   border: 0;
   background: none;
@@ -115,6 +116,7 @@
 
 .index li li a {
   padding-left: 32px;
+  padding-left: 2rem;
 }
 
 .index li li:last-child {
@@ -133,10 +135,13 @@
 .index li::before {
   content: "";
   width: 8px;
+  width: 0.5rem;
   display: inline-block;
   position: absolute;
   top: 24px;
+  top: 1.5rem;
   bottom: 24px;
+  bottom: 1.5rem;
 }
 
 .index li.active::before {
@@ -147,7 +152,9 @@
   grid-area: content;
   -ms-grid-column: 2;
   margin-left: 40px;
+  margin-left: 2.5rem;
   min-width: 320px;
+  min-width: 20rem;
 }
 
 .content > section, .content > article {
@@ -240,7 +247,8 @@
   display: grid;
   grid-template-areas: 'avatar info';
   grid-template-columns: 76px auto;
-  grid-template-columns: 76px calc(100% - 76px); /* auto sometimes not set correctly on font zoom */
+  grid-template-columns: 4.75rem auto;
+  grid-template-columns: 4.75rem calc(100% - 4.75rem); /* auto sometimes not set correctly on font zoom */
 }
 
 .authors .name {
@@ -278,8 +286,10 @@
 
 #chapter-navigation {
   padding: 50px 36px;
+  padding: 31.25rem 2rem;
   border: 1px solid #1a2b490a;
   margin: 20px 0;
+  margin: 1.25rem 0;
   overflow: hidden;
 }
 
@@ -287,6 +297,7 @@
   color: #1a2b49;
   width: 50%;
   min-width: 100px;
+  min-width: 6.25rem;
   display: inline-block;
   position: relative;
 }
@@ -312,12 +323,13 @@
   font-size: 24px;
   font-size: 1.5rem;
   top: 12px;
-  top: 0.5em;
+  top: 0.75em;
 }
 
 #previous-chapter .arrow {
   transform: rotate(-90deg);
   left: -24px;
+  left: -1.5rem;
 }
 
 #next-chapter {
@@ -328,6 +340,7 @@
 #next-chapter .arrow {
   transform: rotate(90deg);
   right: -24px;
+  right: -1.5rem;
 }
 
 aside, .note {
@@ -367,12 +380,15 @@ figure .anchor-link {
 
 .fig-description-button {
   margin: 5px auto 0;
+  margin: 0.3125rem auto 0;
   font-size: 12px;
   font-size: 0.75rem;
   background-color: white;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
+  border-radius: 0.25rem;
   padding: 5px;
+  padding: 0.3125rem;
 }
 
 .fig-description {
@@ -441,6 +457,7 @@ thead {
 
 th, td {
   padding: 10px;
+  padding: 0.625rem;
 }
 
 th.numeric, td.numeric {
@@ -485,6 +502,7 @@ figure .fig-desktop {
 
 .bio {
   margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 @media (max-width: 900px) {
@@ -506,6 +524,7 @@ figure .fig-desktop {
   .index {
     -ms-grid-row: 1;
     margin: 30px 0;
+    margin: 1.875rem 0;
   }
 
   .index-box .header {
@@ -581,7 +600,9 @@ figure .fig-desktop {
 
   .fig-description-button {
     margin-top: 10px;
+    margin-top: 0.625rem;
     margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     font-size: 16px;
     font-size: 1rem;
   }
@@ -613,13 +634,13 @@ figure .fig-desktop {
   padding: 1rem;
 }
 
-.code-block .divider {
-  position: relative;
-  border: 1px solid #1a2b490a;
-  width: calc(100% + 32px);
-  width: calc(100% + 2rem);
-  left: -16px;
-  left: -1rem;
+.code-block .divider {	
+  position: relative;	
+  border: 1px solid #1a2b490a;	
+  width: calc(100% + 32px);	
+  width: calc(100% + 2rem);	
+  left: -16px;	
+  left: -1rem;	
 }
 
 .code-block pre {
