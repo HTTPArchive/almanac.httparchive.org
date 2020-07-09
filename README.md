@@ -52,3 +52,5 @@ For news and announcements, follow [@HTTPArchive](https://twitter.com/HTTPArchiv
 ## [License](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE)
 
 The Web Almanac is licensed under the Apache License 2.0.
+
+![](https://almanac.httparchive.org/static/images/methodology-characters.png)
