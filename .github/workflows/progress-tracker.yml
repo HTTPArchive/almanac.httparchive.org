@@ -72,7 +72,7 @@ jobs:
 
             const formatLinks = links => {
               const icons = {
-                draft: '🖺',
+                draft: '📄',
                 sql: '🔍',
                 results: '📊'
               }
