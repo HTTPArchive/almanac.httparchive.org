@@ -1,0 +1,60 @@
+name: Progress Tracker
+
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - edited
+
+jobs:
+  track-progress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v2
+        with:
+          script: |
+            const filterLabel = '2020 chapter'
+            const trackerIssueID = 989
+
+            const parseTasks = text => {
+              const tasks = []
+              text.split('\n').forEach(line => {
+                if (/^(\s{2,})?([*+-]|\d+\.)\s+\[ \]\s+\S+/.test(line)) {
+                  tasks.push('☐')
+                }
+                if (/^(\s{2,})?([*+-]|\d+\.)\s+\[[xX]\]\s+\S+/.test(line)) {
+                  tasks.push('☑')
+                }
+              })
+              return tasks
+            }
+
+            const taskIssues = await github.paginate(github.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              direction: 'asc',
+              labels: filterLabel
+            })
+
+            let report = ''
+            for (const issue of taskIssues) {
+              tasksStatus = parseTasks(issue.body)
+              if(!report) {
+                report = `Milestones | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
+                report += `:----------|:${tasksStatus.map(() => '-').join(':|:')}:\n`
+              }
+              report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) | ${tasksStatus.join(' | ')}\n`
+            }
+
+            const progressIssue = await github.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: trackerIssueID
+            })
+
+            github.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: trackerIssueID,
+              body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}<!-- REPORT END -->`)
+            })
