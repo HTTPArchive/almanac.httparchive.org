@@ -87,15 +87,18 @@ jobs:
             })
 
             let report = ''
-            let taskCount = 0
+            let totalTrackedTasks = 0
             for (const issue of taskIssues) {
               const tasksStatus = parseTasks(issue.body)
+              const tasksCount = tasksStatus.length
               if(!report) {
-                taskCount = tasksStatus.length
+                totalTrackedTasks = tasksCount
+                core.info(`Setting total tracked tasks to ${totalTrackedTasks} via issue #${issue.id}`)
                 report = `Chapters | Links | Team | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
                 report += `:--------|:------|:----:|:${tasksStatus.map(() => '-').join(':|:')}:\n`
               }
-              if(!tasksStatus.length || tasksStatus.length != taskCount) {
+              if(!tasksCount || tasksCount != totalTrackedTasks) {
+                core.info(`Skipping issue #${issue.id} with ${tasksCount} tasks`)
                 continue
               }
               const links = formatLinks(parseLinks(issue.body))
