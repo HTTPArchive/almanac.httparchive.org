@@ -48,6 +48,32 @@ jobs:
               return links
             }
 
+            const parseTeam = text => {
+              const team = {}
+              text.split('\n').forEach(line => {
+                if (/\|\s*\[Sheet\]\[~results-sheet\]\s*\|/.test(line)) {
+                  const [, authors, reviewers, analysts] = line.split('|')
+                  team.authors = [...authors.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+                  team.reviewers = [...reviewers.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+                  team.analysts = [...analysts.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+                }
+              })
+              return team
+            }
+
+            const formatLinks = links => {
+              const icons = {
+                draft: '🗎',
+                sql: '⛁',
+                results: '⚝'
+              }
+              return Object.entries(links).filter(l => l[1] && l[1] != '#').map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
+            }
+
+            const formatTeam = team => {
+              return Object.entries(team).map(m => m[1].length).join('/')
+            }
+
             const taskIssues = await github.paginate(github.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -59,11 +85,14 @@ jobs:
             for (const issue of taskIssues) {
               const tasksStatus = parseTasks(issue.body)
               const links = parseLinks(issue.body)
+              const linkify = formatLinks(links)
+              const team = parseTeam(issue.body)
+              const teamify = formatTeam(team)
               if(!report) {
-                report = `Milestones | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
-                report += `:----------|:${tasksStatus.map(() => '-').join(':|:')}:\n`
+                report = `Chapters | Links | Team | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
+                report += `:--------|:------|:----:|:${tasksStatus.map(() => '-').join(':|:')}:\n`
               }
-              report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) ${links.draft && links.draft != '#' ? `• [🗎](${links.draft})` : ''} | ${tasksStatus.join(' | ')}\n`
+              report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) | ${linkify} | ${teamify} | ${tasksStatus.join(' | ')}\n`
             }
 
             const progressIssue = await github.issues.get({
