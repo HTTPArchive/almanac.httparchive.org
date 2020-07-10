@@ -3,7 +3,7 @@ name: Progress Tracker
 env:
   # Update these environment variables every year
   FILTER_LABEL: '2020 chapter'
-  TRACKER_ISSUE_ID: 989
+  TRACKER_ISSUE_NUMBER: 989
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
         with:
           script: |
             const FILTER_LABEL = process.env.FILTER_LABEL
-            const TRACKER_ISSUE_ID = process.env.TRACKER_ISSUE_ID
+            const TRACKER_ISSUE_NUMBER = process.env.TRACKER_ISSUE_NUMBER
 
             const parseTasks = text => {
               const tasks = []
@@ -93,12 +93,12 @@ jobs:
               const tasksCount = tasksStatus.length
               if(!report) {
                 totalTrackedTasks = tasksCount
-                core.info(`Setting total tracked tasks to ${totalTrackedTasks} via issue #${issue.id}`)
+                core.info(`Setting total tracked tasks to ${totalTrackedTasks} via issue #${issue.number}`)
                 report = `Chapters | Links | Team | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
                 report += `:--------|:------|:----:|:${tasksStatus.map(() => '-').join(':|:')}:\n`
               }
               if(!tasksCount || tasksCount != totalTrackedTasks) {
-                core.info(`Skipping issue #${issue.id} with ${tasksCount} tasks`)
+                core.info(`Skipping issue #${issue.number} with ${tasksCount} tasks`)
                 continue
               }
               const links = formatLinks(parseLinks(issue.body))
@@ -109,12 +109,12 @@ jobs:
             const progressIssue = await github.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: TRACKER_ISSUE_ID
+              issue_number: TRACKER_ISSUE_NUMBER
             })
 
             github.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: TRACKER_ISSUE_ID,
+              issue_number: TRACKER_ISSUE_NUMBER,
               body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}<!-- REPORT END -->`)
             })
