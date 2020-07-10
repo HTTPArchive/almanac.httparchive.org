@@ -91,13 +91,17 @@ jobs:
             for (const issue of taskIssues) {
               const tasksStatus = parseTasks(issue.body)
               const tasksCount = tasksStatus.length
+              if(!tasksCount) {
+                core.info(`Skipping issue #${issue.number} with zero tasks`)
+                continue
+              }
               if(!report) {
                 totalTrackedTasks = tasksCount
                 core.info(`Setting total tracked tasks to ${totalTrackedTasks} via issue #${issue.number}`)
                 report = `Chapters | Links | Team | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
                 report += `:--------|:------|:----:|:${tasksStatus.map(() => '-').join(':|:')}:\n`
               }
-              if(!tasksCount || tasksCount != totalTrackedTasks) {
+              if(tasksCount != totalTrackedTasks) {
                 core.info(`Skipping issue #${issue.number} with ${tasksCount} tasks`)
                 continue
               }
