@@ -4,6 +4,7 @@ env:
   # Update these environment variables every year
   FILTER_LABEL: '2020 chapter'
   TRACKER_ISSUE_NUMBER: 989
+  TOTAL_TRACKED_TASKS: 10
 
 on:
   workflow_dispatch:
@@ -21,8 +22,9 @@ jobs:
         if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
         with:
           script: |
-            const FILTER_LABEL = process.env.FILTER_LABEL
-            const TRACKER_ISSUE_NUMBER = process.env.TRACKER_ISSUE_NUMBER
+            const filterLabel = process.env.FILTER_LABEL
+            const trackerIssueNumber = process.env.TRACKER_ISSUE_NUMBER
+            const totalTrackedTasks = process.env.TOTAL_TRACKED_TASKS
 
             const parseTasks = text => {
               const tasks = []
@@ -70,9 +72,9 @@ jobs:
 
             const formatLinks = links => {
               const icons = {
-                draft: '🗎',
-                sql: '⛁',
-                results: '⚝'
+                draft: '🖺',
+                sql: '🔍',
+                results: '📊'
               }
               return Object.entries(links).filter(l => l[1] && l[1] != '#').map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
             }
@@ -85,27 +87,21 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               direction: 'asc',
-              labels: FILTER_LABEL
+              labels: filterLabel
             })
 
             let report = ''
-            let totalTrackedTasks = 0
             for (const issue of taskIssues) {
               const tasksStatus = parseTasks(issue.body)
               const tasksCount = tasksStatus.length
-              if(!tasksCount) {
-                core.info(`Skipping issue #${issue.number} with zero tasks`)
-                continue
-              }
-              if(!report) {
-                totalTrackedTasks = tasksCount
-                core.info(`Setting total tracked tasks to ${totalTrackedTasks} via issue #${issue.number}`)
-                report = `Chapters | Links | Team | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
-                report += `:--------|:------|:----:|:${tasksStatus.map(() => '-').join(':|:')}:\n`
-              }
               if(tasksCount != totalTrackedTasks) {
                 core.info(`Skipping issue #${issue.number} with ${tasksCount} tasks`)
                 continue
+              }
+              if(!report) {
+                core.info(`Setting total tracked tasks to ${totalTrackedTasks} via issue #${issue.number}`)
+                report = `Chapters | Links | Team | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
+                report += `:--------|:------|:----:|:${tasksStatus.map(() => '-').join(':|:')}:\n`
               }
               const links = formatLinks(parseLinks(issue.body))
               const team = formatTeam(parseTeam(issue.body))
@@ -115,12 +111,12 @@ jobs:
             const progressIssue = await github.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: TRACKER_ISSUE_NUMBER
+              issue_number: trackerIssueNumber
             })
 
             github.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: TRACKER_ISSUE_NUMBER,
+              issue_number: trackerIssueNumber,
               body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}<!-- REPORT END -->`)
             })
