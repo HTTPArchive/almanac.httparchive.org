@@ -1,21 +1,26 @@
 name: Progress Tracker
 
+env:
+  # Update these environment variables every year
+  FILTER_LABEL: '2020 chapter'
+  TRACKER_ISSUE_ID: 989
+
 on:
   workflow_dispatch:
-  issues:
-    types:
-      - edited
+  schedule:
+    - cron: '0 6,18 * * *'
 
 jobs:
   track-progress:
+    name: Track Progress
+    if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v2
         with:
           script: |
-            // Update the following two constants each year
-            const FILTER_LABEL = '2020 chapter'
-            const TRACKER_ISSUE_ID = 989
+            const FILTER_LABEL = process.env.FILTER_LABEL
+            const TRACKER_ISSUE_ID = process.env.TRACKER_ISSUE_ID
 
             const parseTasks = text => {
               const tasks = []
