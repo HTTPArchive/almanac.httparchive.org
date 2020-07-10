@@ -91,11 +91,12 @@ jobs:
             })
 
             let report = ''
+            let chapters = 0
             for (const issue of taskIssues) {
               const tasksStatus = parseTasks(issue.body)
               const tasksCount = tasksStatus.length
               if(tasksCount != totalTrackedTasks) {
-                core.info(`Skipping issue #${issue.number} with ${tasksCount} tasks`)
+                core.info(`Skipping issue #${issue.number} with ${tasksCount} instead of ${totalTrackedTasks} tasks`)
                 continue
               }
               if(!report) {
@@ -104,6 +105,8 @@ jobs:
               }
               const links = formatLinks(parseLinks(issue.body))
               const team = formatTeam(parseTeam(issue.body))
+              core.info(`Adding issue #${issue.number} with ${tasksCount} tasks`)
+              chapters++
               report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) | ${links} | ${team} | ${tasksStatus.join(' | ')}\n`
             }
 
@@ -119,3 +122,4 @@ jobs:
               issue_number: trackerIssueNumber,
               body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}<!-- REPORT END -->`)
             })
+            core.info(`Updated report in issue #${trackerIssueNumber} with ${chapters} chapters`)
