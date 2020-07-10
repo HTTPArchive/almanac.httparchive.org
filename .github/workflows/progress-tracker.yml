@@ -24,7 +24,7 @@ jobs:
           script: |
             const filterLabel = process.env.FILTER_LABEL
             const trackerIssueNumber = process.env.TRACKER_ISSUE_NUMBER
-            const totalTrackedTasks = process.env.TOTAL_TRACKED_TASKS
+            const totalTrackedTasks = parseInt(process.env.TOTAL_TRACKED_TASKS, 10)
 
             const parseTasks = text => {
               const tasks = []
