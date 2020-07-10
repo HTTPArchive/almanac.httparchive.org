@@ -5,6 +5,7 @@ env:
   FILTER_LABEL: '2020 chapter'
   TRACKER_ISSUE_NUMBER: 989
   TOTAL_TRACKED_TASKS: 10
+  SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/'
 
 on:
   workflow_dispatch:
@@ -25,6 +26,7 @@ jobs:
             const filterLabel = process.env.FILTER_LABEL
             const trackerIssueNumber = process.env.TRACKER_ISSUE_NUMBER
             const totalTrackedTasks = parseInt(process.env.TOTAL_TRACKED_TASKS, 10)
+            const sqlBaseDir = process.env.SQL_BASE_DIR
 
             const parseTasks = text => {
               const tasks = []
@@ -76,7 +78,7 @@ jobs:
                 sql: '🔍',
                 results: '📊'
               }
-              return Object.entries(links).filter(l => l[1] && l[1] != '#').map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
+              return Object.entries(links).filter(l => !['', '#', sqlBaseDir].includes(l[1])).map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
             }
 
             const formatTeam = team => {
