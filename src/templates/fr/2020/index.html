@@ -1,6 +1,6 @@
 {% extends "base/2020/index.html" %}
 
-{% block title %}Web Almanac 2019{% endblock %}
+{% block title %}Web Almanac {{ year }}{% endblock %}
 {% block description %}Le Web Almanac est un rapport annuel sur l’état du Web qui combine l’expertise de la communauté Web avec les données et tendances de HTTP Archive.{% endblock %}
 
 {% block twitter_image_alt %}Web Almanac {{ year }}{% endblock %}
@@ -8,17 +8,17 @@
 {% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
 {% block date_modified %}2020-07-06T00:00:00.000Z{% endblock %}
 
-{% block intro_title %}Coming soon!{% endblock %}
-{% block intro_sub_title %}The 2020 <b>state of the web</b> report{% endblock %}
+{% block intro_title %}Bientôt disponible&nbsp;!{% endblock %}
+{% block intro_sub_title %}Le rapport {{ year }} sur <b>l’état du Web</b>{% endblock %}
 
 {% block mission %}
 <p>
-  Experts from around the web community are currently hard at work planning, analyzing, and writing content for the 2020 edition of the Web Almanac, which is on track to be published at the end of the year.
+  Des expertes et experts de toute la communauté du web travaillent actuellement à la planification, l'analyse et la rédaction du contenu de l'édition {{ year }} du Web Almanac, qui devrait être publiée à la fin de l'année.
 </p>
 
 <p>
-  There are many opportunities available for new contributors to join the project, including: authors, reviewers, analysts, editors, translators, and developers. If you're interested in contributing to the 2020 edition, we'd love to have you!
+  De nombreuses possibilités s'offrent aux personnes qui souhaitent rejoindre le projet. Vous pouvez participer à l’écriture, à la relecture, à l’analyse des données, à l’édition, la traduction, ou au développement. Si vous souhaitez contribuer à l'édition {{ year }}, l'équipe serait ravie de vous accueillir !
 </p>
 
-<a href="https://github.com/HTTPArchive/almanac.httparchive.org#contributing" class="btn">Rejoignez les équipe!</a>
+<a href="https://github.com/HTTPArchive/almanac.httparchive.org#contributing" class="btn">Rejoignez l'équipe&nbsp;!</a>
 {% endblock %}
