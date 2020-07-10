@@ -30,6 +30,24 @@ jobs:
               return tasks
             }
 
+            const parseLinks = text => {
+              const links = {}
+              text.split('\n').forEach(line => {
+                const linkMap = {
+                  draft: /^\[~draft-doc\]:\s*(?<link>\S+)/,
+                  sql: /^\[~sql-dir\]:\s*(?<link>\S+)/,
+                  results: /^\[~results-sheet\]:\s*(?<link>\S+)/
+                }
+                for (const [k, v] of Object.entries(linkMap)) {
+                  const m = line.match(v)
+                  if (m) {
+                    links[k] = m.groups.link
+                  }
+                }
+              })
+              return links
+            }
+
             const taskIssues = await github.paginate(github.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -39,12 +57,13 @@ jobs:
 
             let report = ''
             for (const issue of taskIssues) {
-              tasksStatus = parseTasks(issue.body)
+              const tasksStatus = parseTasks(issue.body)
+              const links = parseLinks(issue.body)
               if(!report) {
                 report = `Milestones | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
                 report += `:----------|:${tasksStatus.map(() => '-').join(':|:')}:\n`
               }
-              report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) | ${tasksStatus.join(' | ')}\n`
+              report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) ${links.draft && links.draft != '#' ? `• [🗎](${links.draft})` : ''} | ${tasksStatus.join(' | ')}\n`
             }
 
             const progressIssue = await github.issues.get({
