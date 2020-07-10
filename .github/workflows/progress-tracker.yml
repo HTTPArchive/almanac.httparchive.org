@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v2
-        if: contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
         with:
           script: |
             const FILTER_LABEL = process.env.FILTER_LABEL
