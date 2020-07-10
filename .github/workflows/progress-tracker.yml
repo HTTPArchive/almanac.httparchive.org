@@ -13,8 +13,9 @@ jobs:
       - uses: actions/github-script@v2
         with:
           script: |
-            const filterLabel = '2020 chapter'
-            const trackerIssueID = 989
+            // Update the following two constants each year
+            const FILTER_LABEL = '2020 chapter'
+            const TRACKER_ISSUE_ID = 989
 
             const parseTasks = text => {
               const tasks = []
@@ -33,7 +34,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               direction: 'asc',
-              labels: filterLabel
+              labels: FILTER_LABEL
             })
 
             let report = ''
@@ -49,12 +50,12 @@ jobs:
             const progressIssue = await github.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: trackerIssueID
+              issue_number: TRACKER_ISSUE_ID
             })
 
             github.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: trackerIssueID,
+              issue_number: TRACKER_ISSUE_ID,
               body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}<!-- REPORT END -->`)
             })
