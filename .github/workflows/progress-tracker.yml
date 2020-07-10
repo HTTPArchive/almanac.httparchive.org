@@ -82,17 +82,20 @@ jobs:
             })
 
             let report = ''
+            let taskCount = 0
             for (const issue of taskIssues) {
               const tasksStatus = parseTasks(issue.body)
-              const links = parseLinks(issue.body)
-              const linkify = formatLinks(links)
-              const team = parseTeam(issue.body)
-              const teamify = formatTeam(team)
               if(!report) {
+                taskCount = tasksStatus.length
                 report = `Chapters | Links | Team | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
                 report += `:--------|:------|:----:|:${tasksStatus.map(() => '-').join(':|:')}:\n`
               }
-              report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) | ${linkify} | ${teamify} | ${tasksStatus.join(' | ')}\n`
+              if(!tasksStatus.length || tasksStatus.length != taskCount) {
+                continue
+              }
+              const links = formatLinks(parseLinks(issue.body))
+              const team = formatTeam(parseTeam(issue.body))
+              report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) | ${links} | ${team} | ${tasksStatus.join(' | ')}\n`
             }
 
             const progressIssue = await github.issues.get({
