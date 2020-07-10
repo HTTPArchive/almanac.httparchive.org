@@ -404,7 +404,8 @@ section.chapter {
     font-size: 1.5em;
   }
 
-  h3 {
+  /* For some reason this is breaking the spine on the cover and can't override it, so scope it */
+  .chapter h3 {
     font-size: 1.17em;
   }
 
@@ -469,4 +470,222 @@ section.chapter {
 
 .content section.authors li *:first-child {
   flex: 0 0 76px;
+}
+
+
+#front-cover {
+  position: absolute;
+  text-align: center;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#front-cover .title {
+  color: white;
+}
+
+#front-cover .intro-year {
+  margin: 0;
+  width: auto;
+  color: #f7f779;
+  font-size: 80px;
+  font-size: 8rem;
+  line-height: 100%;
+  font-weight: bold;
+}
+
+#front-cover h1.title::before {
+  border-bottom: none;
+}
+
+#front-cover h1.title {
+  font-size: 40px;
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+#front-cover h2.title {
+  font-size: 16px;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+#front-cover .intro-image-wrapper {
+  text-align: center;
+}
+
+#front-cover .intro-image {
+  border-radius: 10px;
+  display: block;
+  margin: 10px auto;
+  padding-top: 40px;
+  width: 80%;
+  height: auto;
+}
+
+#front-cover img {
+  margin: 0 auto;
+}
+
+#front-cover .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  right: 1rem;
+  margin: 0 auto 4rem;
+  padding: 10px;
+}
+
+#front-cover .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+}
+
+#spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+#spine .spine-author {
+  fill: #fff;
+  width: 100%;
+  font-weight: 300;
+}
+
+#spine .spine-year {
+  margin: 0;
+  color: #f7f779;
+  line-height: 100%;
+  font-weight: bold;
+  font-size: 10rem;
+  width: 100%;
+}
+
+#spine .title {
+  color: white;
+}
+
+.spine-year svg {
+  fill: #f7f779;
+  width: 100%;
+}
+
+#spine .intro-image {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  height: auto;
+}
+
+#spine .title-wrapper {
+  position: relative;
+}
+
+#spine .title {
+  top: 50%;
+  left: 50%;
+  transform:  translateX(-50%) translateY(-50%) rotate(90deg);
+  font-size: 40px;
+  font-size: 4rem;
+  font-weight: 700;
+  overflow: visible;
+  width: 0;
+  margin: 0 auto;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#spine .title .intro-year {
+  font-size: 4rem;
+  vertical-align: middle;
+  padding-right: 1rem;
+}
+
+#spine .title br {
+  display: none;
+}
+
+#spine .title::before {
+  margin: 0 auto;
+  border-bottom: initial;
+  content: '';
+}
+
+#spine .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  margin: 0 auto 4rem;
+  padding: 10px;
+}
+
+#spine .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+}
+
+#back-cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#back-cover .description {
+  position: absolute;
+  margin: 4rem 4rem;
+}
+
+#back-cover .description p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#back-cover .description img {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#back-cover .methodology-data {
+  display: block;
+  margin: 1.5rem 0;
+  color: #fff;
+}
+
+#back-cover .websites-tested,
+#back-cover .data-processed {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 1.5rem 0;
+}
+
+#back-cover .websites-tested div,
+#back-cover .data-processed div {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+#back-cover .websites-tested div:last-of-type,
+#back-cover .data-processed div:last-of-type {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+#back-cover .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  left: 1rem;
+  margin: 0 auto 4rem;
+  padding: 10px;
+}
+
+#back-cover .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+  filter:  brightness(0) invert(1);
 }

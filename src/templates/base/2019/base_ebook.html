@@ -31,7 +31,7 @@
     @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
     @bottom-right { content: counter(page); }
   }
-{% else %}
+{% elif request.args.get('cover') == None %}
 
   @page {
 
@@ -109,6 +109,96 @@
     prince-footnote-policy: keep-with-line;
   }
 
+{% else %}
+
+{% set unit = 'mm' %}
+{% set spine = 25 %}
+{% set pageWidth = 148 %}
+{% set pageHeight = 210 %}
+{% if request.args.get('unit') != None %}{% set unit = request.args.get('unit') %}{% endif %}
+{% if request.args.get('spine') != None %}{% set spine = request.args.get('spine')|float %}{% endif %}
+{% if request.args.get('pageWidth') != None %}{% set pageWidth = request.args.get('pageWidth')|float %}{% endif %}
+{% if request.args.get('pageHeight') != None %}{% set pageHeight = request.args.get('pageHeight')|float %}{% endif %}
+{% set totalWidth = pageWidth + spine + pageWidth %}
+{% set pageAndSpine = pageWidth + spine %}
+{% set halfSpine =  spine / 2 %}
+
+#front-cover {
+  width: {{ pageWidth }}{{ unit }};
+  left: {{ pageAndSpine }}{{ unit }};
+}
+
+#front-cover .ha-logo-wrapper {
+  max-width: {{ spine }}{{ unit }};
+  height: {{ halfSpine }}{{ unit }};
+}
+
+#spine {
+  left: {{ pageWidth }}{{ unit }};
+  width: {{ spine }}{{ unit }};
+}
+
+#spine .ha-logo-wrapper {
+  max-width: {{ spine }}{{ unit }};
+  height: {{ halfSpine }}{{ unit }};
+}
+
+#back-cover {
+  width: {{ pageWidth }}{{ unit }};
+}
+
+#back-cover .ha-logo-wrapper {
+  max-width: {{ spine }}{{ unit }};
+  height: {{ halfSpine }}{{ unit }};
+}
+
+@prince-pdf {
+  prince-pdf-display-doc-title: true;
+}
+
+@page {
+  margin: 0;
+  padding: 0;
+  font-size: 5pt;
+  size: {{ totalWidth }}{{ unit }} {{ pageHeight }}{{ unit }};
+  marks: crop cross;
+  bleed: 3mm;
+  prince-trim: 5mm;
+}
+
+@page :left {
+  background: #5c687d;
+  background: transparent linear-gradient(#5c687d 70%, transparent 30%);
+  background: transparent url(/static/images/intro-background-fit-cover.svg) bottom left / 100% 100% no-repeat;
+  /* background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEyNTAiIHZpZXdCb3g9IjAgMCAxOTIwIDEyNTAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICBzdmd7YmFja2dyb3VuZDojZmZmfQ0KICAgICAgLmNscy0xe2ZpbGw6I2E4Y2FiYTtmaWxsLXJ1bGU6ZXZlbm9kZDtvcGFjaXR5Oi4wNX0NCiAgICA8L3N0eWxlPg0KICA8L2RlZnM+DQogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS0yMzEgODloMjA4OHY2NTFsLTIwODggMzYwVjg5eiIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwIDIzOWgyMDg4djY1MWwtMjA4OCAzNjBWMjM5eiIvPg0KICA8cGF0aCBkPSJNLTE0NC0xOWgyMDg4djY1MUwtMTQ0IDk5MlYtMTl6IiBmaWxsPSIjMWEyYjQ5IiBvcGFjaXR5PSIuNzUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tNDcwLTgzaDIwODh2NjUxTC00NzAgOTI4Vi04M3oiLz4NCiAgPHBhdGggZD0iTS0yMzItNDhoMjA4OHY2NTFMLTIzMiA5NjNWLTQ4eiIgZmlsbD0iI2YyZjJmMiIgb3BhY2l0eT0iLjA1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz4NCjwvc3ZnPg0K); */
+  background-position: -20px -20px;
+  background-repeat: no-repeat;
+  background-size: 105% 105%;
+
+  @top-left {
+    content: '';
+    border-bottom: none;
+  }
+
+  @top-right {
+    content: '';
+  }
+
+  @bottom-left {
+    content: '';
+    border: none;
+  }
+
+  @bottom-right {
+    content: '';
+    border: none;
+  }
+}
+
+@page :first {
+  background: none;
+}
+
 {% endif %}
 
 {% if request.args.get('page-size') != None %}
@@ -141,6 +231,8 @@
 {% endblock %}
 
 {% block content %}
+
+{% if request.args.get('cover') == None %}
 <div class="content">
 
   {% if request.args.get('printer') == None %}
@@ -293,4 +385,105 @@
 
 </div>
 
+{% else %}
+
+<div class="content">
+
+  <section id="blank-page">
+  </section>
+
+  <section id="cover" class="no-color no-header-or-footer">
+
+    <div id="front-cover">
+      
+      <h1 class="title title-center">{{ self.intro_title() }}</h1>
+      <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
+
+      <div class="intro-image-wrapper"> 
+        <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+    
+    </div>
+
+    <div id="spine">
+
+      <h3 class="spine-author">
+        <svg viewBox="0 0 90 16">
+          <text x="8" y="15">Viscomi</text>
+        </svg>
+      </h3>
+  
+      <div class="intro-image-wrapper"> 
+        <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
+      </div>
+
+      <div class="spine-title-wrapper">
+        <h2 class="title">{{ self.intro_title() }}</h2>
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+
+    </div>
+
+    <div id="back-cover">
+
+      <div class="description">
+
+        <p>{{ self.mission() }}</p>
+
+        <div class="methodology-data">
+          <div class="websites-tested">
+            <div>
+              {{ self.methodology_stat_1_title() }}
+            </div>
+            <div>
+              {{ self.methodology_stat_1() }}
+            </div>
+          </div>
+          <div class="data-processed">
+            <div>
+              {{ self.methodology_stat_2_title() }}
+            </div>
+            <div>
+              {{ self.methodology_stat_2() }}
+            </div>
+          </div>
+        </div>
+        <!--
+        <p>{{ self.methodology_description() }}</p>
+        <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" />
+        -->
+
+        <p>{{ self.contributors_description() }}</p>
+
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id=inside-cover>
+  </section>
+
+</div>
+{% endif %} 
 {% endblock %} 
