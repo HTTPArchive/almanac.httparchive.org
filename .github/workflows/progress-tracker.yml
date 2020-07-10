@@ -7,8 +7,9 @@ env:
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 6,18 * * *'
+  issues:
+    types:
+      - edited
 
 jobs:
   track-progress:
@@ -17,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v2
+        if: contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
         with:
           script: |
             const FILTER_LABEL = process.env.FILTER_LABEL
