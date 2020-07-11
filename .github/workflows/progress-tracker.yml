@@ -1,0 +1,127 @@
+name: Progress Tracker
+
+env:
+  # Update these environment variables every year
+  FILTER_LABEL: '2020 chapter'
+  TRACKER_ISSUE_NUMBER: 989
+  TOTAL_TRACKED_TASKS: 10
+  SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/'
+
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - edited
+
+jobs:
+  track-progress:
+    name: Track Progress
+    if: github.repository == 'HTTPArchive/almanac.httparchive.org'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v2
+        if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, env.FILTER_LABEL)
+        with:
+          script: |
+            const filterLabel = process.env.FILTER_LABEL
+            const trackerIssueNumber = process.env.TRACKER_ISSUE_NUMBER
+            const totalTrackedTasks = parseInt(process.env.TOTAL_TRACKED_TASKS, 10)
+            const sqlBaseDir = process.env.SQL_BASE_DIR
+
+            const parseTasks = text => {
+              const tasks = []
+              text.split('\n').forEach(line => {
+                if (/^(\s{2,})?([*+-]|\d+\.)\s+\[ \]\s+\S+/.test(line)) {
+                  tasks.push('')
+                }
+                if (/^(\s{2,})?([*+-]|\d+\.)\s+\[[xX]\]\s+\S+/.test(line)) {
+                  tasks.push('☑')
+                }
+              })
+              return tasks
+            }
+
+            const parseLinks = text => {
+              const links = {}
+              text.split('\n').forEach(line => {
+                const linkMap = {
+                  draft: /^\[~draft-doc\]:\s*(?<link>\S+)/,
+                  sql: /^\[~sql-dir\]:\s*(?<link>\S+)/,
+                  results: /^\[~results-sheet\]:\s*(?<link>\S+)/
+                }
+                for (const [k, v] of Object.entries(linkMap)) {
+                  const m = line.match(v)
+                  if (m) {
+                    links[k] = m.groups.link
+                  }
+                }
+              })
+              return links
+            }
+
+            const parseTeam = text => {
+              const team = {}
+              text.split('\n').forEach(line => {
+                if (/\|\s*\[Sheet\]\[~results-sheet\]\s*\|/.test(line)) {
+                  const [, authors, reviewers, analysts] = line.split('|')
+                  team.authors = [...authors.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+                  team.reviewers = [...reviewers.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+                  team.analysts = [...analysts.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+                }
+              })
+              return team
+            }
+
+            const formatLinks = links => {
+              const icons = {
+                draft: '📄',
+                sql: '🔍',
+                results: '📊'
+              }
+              return Object.entries(links).filter(l => !['', '#', sqlBaseDir].includes(l[1])).map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
+            }
+
+            const formatTeam = team => {
+              return Object.entries(team).map(m => m[1].length).join('/')
+            }
+
+            const taskIssues = await github.paginate(github.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              direction: 'asc',
+              labels: filterLabel
+            })
+
+            let report = ''
+            let chapters = 0
+            for (const issue of taskIssues) {
+              const tasksStatus = parseTasks(issue.body)
+              const tasksCount = tasksStatus.length
+              if(tasksCount != totalTrackedTasks) {
+                core.info(`Skipping issue #${issue.number} with ${tasksCount} instead of ${totalTrackedTasks} tasks`)
+                continue
+              }
+              if(!report) {
+                report = `Chapters | Links | Team | ${tasksStatus.map((v, i) => i + 1).join(' | ')}\n`
+                report += `:--------|:------|:----:|:${tasksStatus.map(() => '-').join(':|:')}:\n`
+              }
+              const links = formatLinks(parseLinks(issue.body))
+              const team = formatTeam(parseTeam(issue.body))
+              core.info(`Adding issue #${issue.number} with ${tasksCount} tasks`)
+              chapters++
+              report += `[${issue.title.replace(/\s+\d+$/, '')}](${issue.html_url}) | ${links} | ${team} | ${tasksStatus.join(' | ')}\n`
+            }
+
+            const progressIssue = await github.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: trackerIssueNumber
+            })
+
+            github.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: trackerIssueNumber,
+              body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}<!-- REPORT END -->`)
+            })
+            core.info(`Updated report in issue #${trackerIssueNumber} with ${chapters} chapters`)
