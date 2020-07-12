@@ -1,5 +1,6 @@
 from config import get_config, SUPPORTED_YEARS, SUPPORTED_LANGUAGES, DEFAULT_YEAR
 from csp import csp
+from feature_policy import feature_policy
 from flask import Flask, abort, redirect, render_template as flask_render_template, request, send_from_directory, url_for
 from flask_talisman import Talisman
 from language import DEFAULT_LANGUAGE, get_language
@@ -27,7 +28,8 @@ app = MyFlask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 10800
 talisman = Talisman(app,
          content_security_policy=csp,
-         content_security_policy_nonce_in=['script-src'])
+         content_security_policy_nonce_in=['script-src'],
+         feature_policy=feature_policy)
 logging.basicConfig(level=logging.DEBUG)
 
 @app.after_request
