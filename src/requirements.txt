@@ -1,5 +1,5 @@
-Flask
-flask-talisman
-gunicorn
-pytest
-pytest-watch
+flask==1.1.1
+flask-talisman==0.7.0
+gunicorn==20.0.4
+pytest==4.6.11
+pytest-watch==4.2.0
