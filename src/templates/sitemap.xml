@@ -187,6 +187,11 @@
     </url>
 
     <url>
+        <loc>https://almanac.httparchive.org/fr/2019/compression</loc>
+        <lastmod>2020-07-12</lastmod>
+    </url>
+
+    <url>
         <loc>https://almanac.httparchive.org/fr/2019/contributors</loc>
         <lastmod>2020-07-10</lastmod>
     </url>
