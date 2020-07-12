@@ -133,7 +133,6 @@
           <ul class="menu">
             {{ self.non_chapter_nav_links() }}
             <li>
-            <li>
               {{ year_switcher('mobile') }}
             </li>
             <li>
@@ -326,11 +325,15 @@
   <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
   <select id="language-switcher-{{switcher_name}}">
     {% for l in supported_languages | sort(attribute='_local_name') %}
-    <option
-      {% if l == language %}selected="selected"{% endif %}
-      lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" >
+    {% if l == language %}
+    <option selected="selected" lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
       {{ l }}
     </option>
+    {% else %}
+    <option lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+      {{ l }}
+    </option>
+    {% endif %}
     {% endfor %}
     <option disabled="disabled" aria-hidden="true">
       ────
@@ -351,11 +354,15 @@
         <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
         <select id="year-switcher-{{switcher_name}}">
             {% for y in supported_years | sort %}
-              <option
-                {% if y == year %}selected="selected"{% endif %}
-                value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
+              {% if y == year %}
+              <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
                 {{ y }}
               </option>
+              {% else %}
+              <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
+                {{ y }}
+              </option>
+              {% endif %}
             {% endfor %}
             {# If the current page doesn't support a year, then show a home link for that year #}
             {% if supported_years|length < all_supported_years|length %}
@@ -375,7 +382,6 @@
     {% endif %}
   {% endmacro %}
 {% endif %}
-
 
 {% block index_menu_script %}
 <script nonce="{{ csp_nonce() }}">
