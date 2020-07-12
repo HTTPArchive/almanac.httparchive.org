@@ -13,14 +13,14 @@
       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
       {% if authordata -%}
-	  {
-	  	  "@type": "Person",
+    {
+        "@type": "Person",
           "sameas": [
             "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"
             {% if authordata.twitter %},"https://twitter.com/{{ authordata.twitter }}"{% endif %}
             {% if authordata.github %},"https://github.com/{{ authordata.github }}"{% endif %}
             ],
-	  	  "name": "{{ authordata.name if authordata.name else author }}"
+        "name": "{{ authordata.name if authordata.name else author }}"
       }{% if loop.index < loop.length %},{% endif %}
       {%- endif %}{% if loop.index > 1 and loop.index == loop.length %}]{% endif -%}
       {% endfor %}
@@ -37,24 +37,24 @@
 <script nonce="{{ csp_nonce() }}">
 
 document.addEventListener("keyup", function onPress(event) {
- 	if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<' || event.key === 'ArrowLeft') {
- 	  var previous = document.getElementById('previous-chapter');
- 	  if (previous) {
- 	    previous.click();
- 		}
- 	}
- 	if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>' || event.key === 'ArrowRight') {
- 	  var next = document.getElementById('next-chapter');
- 	  if (next) {
- 	    next.click();
- 	  }
- 	}
+   if (event.key === 'p' || event.key === 'P' || event.key === ',' || event.key === '<' || event.key === 'ArrowLeft') {
+     var previous = document.getElementById('previous-chapter');
+     if (previous) {
+       previous.click();
+     }
+   }
+   if (event.key === 'n' || event.key === 'N' || event.key === '.' || event.key === '>' || event.key === 'ArrowRight') {
+     var next = document.getElementById('next-chapter');
+     if (next) {
+       next.click();
+     }
+   }
 });
 
 window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discuss') }}.json";
 </script>
 
-<script src='/static/js/chapter.js?v=20200527181403' defer></script>
+<script src="/static/js/chapter.js?v=20200527181403" defer></script>
 
 {% endblock %}
 
