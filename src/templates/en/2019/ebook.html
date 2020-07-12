@@ -1,4 +1,4 @@
-{% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":null,"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-20T00:00:00.000Z","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":null,"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -456,7 +456,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -499,7 +499,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"I","chapter_number":2,"title":"CSS","description":"CSS chapter of the 2019 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.","authors":["una","argyleink"],"reviewers":["meyerweb","huijing"],"translators":null,"discuss":"1757","results":"https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/","queries":"02_CSS","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-14T00:00:00.000Z","chapter":"css"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"I","chapter_number":2,"title":"CSS","description":"CSS chapter of the 2019 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.","authors":["una","argyleink"],"reviewers":["meyerweb","huijing"],"translators":null,"discuss":"1757","results":"https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/","queries":"02_CSS","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"css"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -760,7 +760,9 @@
       <figcaption id="css-fig21-caption"><a href="#css-fig-21" class="anchor-link">Figure 21.</a> Most frequently used <code>z-index</code> values.</figcaption>
     </figure>
     <figure id="css-fig-22">
-      <div class="big-number" style="overflow-wrap: break-word; word-break: break-all; font-size: 24px">999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important</div>
+      <div class="really-big-number">
+        999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important
+      </div>
       <figcaption><a href="#css-fig-22" class="anchor-link">Figure 22.</a> The largest known <code>z-index</code> value.</figcaption>
     </figure>
     <h2 id="css-decoration"><a href="#css-decoration" class="anchor-link">Decoration</a></h2>
@@ -1144,7 +1146,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -1187,7 +1189,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"I","chapter_number":3,"title":"Markup","description":"Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.","authors":["bkardell"],"reviewers":["zcorpan","tomhodgins","matthewp"],"translators":null,"discuss":"1758","results":"https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/","queries":"03_Markup","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-01T00:00:00.000Z","chapter":"markup"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"I","chapter_number":3,"title":"Markup","description":"Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.","authors":["bkardell"],"reviewers":["zcorpan","tomhodgins","matthewp"],"translators":null,"discuss":"1758","results":"https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/","queries":"03_Markup","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"markup"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -1222,7 +1224,7 @@
       In 2005, Ian "Hixie" Hickson posted <a href="https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html">some analysis of markup data<span class="fn">https://web.archive.org/web/20060203035414/http://code.google.com/webstats/index.html</span></a> building upon various previous work. Much of this work aimed to investigate class names to see if there were common informal semantics that were being adopted by developers which it might make sense to standardize upon. Some of this research helped inform new elements in HTML5.
     </p>
     <p>
-      14 years later, it's time to take a fresh look. Since then, we've also had the introduction of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">Custom Elements<span class="fn">https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements</span></a> and the <a href="https://extensiblewebmanifesto.org/">Extensible Web Manifesto<span class="fn">https://extensiblewebmanifesto.org/</span></a> encouraging that we find better ways to pave the cowpaths by allowing developers to explore the space of elements themselves and allow standards bodies to<a href="https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html"> act more like dictionary editors<span class="fn">https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html</span></a
+      14 years later, it's time to take a fresh look. Since then, we've also had the introduction of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">Custom Elements<span class="fn">https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements</span></a> and the <a href="https://extensiblewebmanifesto.org/">Extensible Web Manifesto<span class="fn">https://extensiblewebmanifesto.org/</span></a> encouraging that we find better ways to pave the cowpaths by allowing developers to explore the space of elements themselves and allow standards bodies to <a href="https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html">act more like dictionary editors<span class="fn">https://bkardell.com/blog/Dropping-The-F-Bomb-On-Standards.html</span></a
       >. Unlike CSS class names, which might be used for anything, we can be far more certain that authors who used a non-standard <em>element</em> really intended this to be an element.
     </p>
     <p>
@@ -1558,7 +1560,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -1601,7 +1603,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"I","chapter_number":4,"title":"Media","description":"Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":null,"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-19T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"I","chapter_number":4,"title":"Media","description":"Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":null,"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -1726,8 +1728,8 @@
             <thead>
               <tr>
                 <th>Format</th>
-                <th style="width: 45%">Highlights</th>
-                <th style="width: 45%">Drawbacks</th>
+                <th class="width-45">Highlights</th>
+                <th class="width-45">Drawbacks</th>
               </tr>
             </thead>
             <tbody>
@@ -2094,7 +2096,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -2456,7 +2458,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -3153,7 +3155,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -3479,7 +3481,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -3522,7 +3524,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"II","chapter_number":8,"title":"Security","description":"Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":null,"discuss":"1763","results":"https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/","queries":"08_Security","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-19T00:00:00.000Z","chapter":"security"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"II","chapter_number":8,"title":"Security","description":"Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":null,"discuss":"1763","results":"https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/","queries":"08_Security","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"security"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -3916,14 +3918,14 @@
     <p>We find that only 5.51% of desktop pages include a CSP and only 4.73% of mobile pages include a CSP, likely due to the complexity of deployment.</p>
     <h4 id="security-hashnonce"><a href="#security-hashnonce" class="anchor-link">Hash/nonce</a></h4>
     <p>
-      A common approach to CSP is to create a whitelist of 3rd party domains that are permitted to load content, such as JavaScript, into your pages. Creating and managing these whitelists can be difficult so <a href="https://www.w3.org/TR/CSP2/#source-list-valid-hashes">hashes<span class="fn">https://www.w3.org/TR/CSP2/#source-list-valid-hashes</span></a> and <a href="https://www.w3.org/TR/CSP2/#source-list-valid-nonces">nonces<span class="fn">https://www.w3.org/TR/CSP2/#source-list-valid-nonces</span></a> were introduced as an alternative approach. A hash is calculated based on contents of the script so if this is published by the website operator and the script is changed, or another script is added, then it will not match the hash and will be blocked. A nonce is a one-time code (which should be changed each time the page is loaded to prevent it being guessed) which is allowed by the CSP and which the script is tagged with. You can see an example of a nonce on this page by viewing the source to see how Google Tag Manager is loaded.
+      A common approach to CSP is to create an allowlist of 3rd party domains that are permitted to load content, such as JavaScript, into your pages. Creating and managing these lists can be difficult so <a href="https://www.w3.org/TR/CSP2/#source-list-valid-hashes">hashes<span class="fn">https://www.w3.org/TR/CSP2/#source-list-valid-hashes</span></a> and <a href="https://www.w3.org/TR/CSP2/#source-list-valid-nonces">nonces<span class="fn">https://www.w3.org/TR/CSP2/#source-list-valid-nonces</span></a> were introduced as an alternative approach. A hash is calculated based on contents of the script so if this is published by the website operator and the script is changed, or another script is added, then it will not match the hash and will be blocked. A nonce is a one-time code (which should be changed each time the page is loaded to prevent it being guessed) which is allowed by the CSP and which the script is tagged with. You can see an example of a nonce on this page by viewing the source to see how Google Tag Manager is loaded.
     </p>
     <p>Of the sites surveyed only 0.09% of desktop pages use a nonce source and only 0.02% of desktop pages use a hash source. The number of mobile pages use a nonce source is slightly higher at 0.13% but the use of hash sources is lower on mobile pages at 0.01%.</p>
     <h4 id="security-strict-dynamic">
       <a href="#security-strict-dynamic" class="anchor-link"><code>strict-dynamic</code></a>
     </h4>
     <p>
-      The proposal of <a href="https://www.w3.org/TR/CSP3/#strict-dynamic-usage"><code>strict-dynamic</code><span class="fn">https://www.w3.org/TR/CSP3/#strict-dynamic-usage</span></a> in the next iteration of <a href="https://www.w3.org/TR/CSP3/">CSP<span class="fn">https://www.w3.org/TR/CSP3/</span></a> further reduces the burden on site operators for using CSP by allowing a whitelisted script to load further script dependencies. Despite the introduction of this feature, which already has <a href="https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic">support in some modern browsers<span class="fn">https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic</span></a
+      The proposal of <a href="https://www.w3.org/TR/CSP3/#strict-dynamic-usage"><code>strict-dynamic</code><span class="fn">https://www.w3.org/TR/CSP3/#strict-dynamic-usage</span></a> in the next iteration of <a href="https://www.w3.org/TR/CSP3/">CSP<span class="fn">https://www.w3.org/TR/CSP3/</span></a> further reduces the burden on site operators for using CSP by allowing an approved script to load further script dependencies. Despite the introduction of this feature, which already has <a href="https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic">support in some modern browsers<span class="fn">https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic</span></a
       >, only 0.03% of desktop pages and 0.1% of mobile pages include it in their policy.
     </p>
     <h4 id="security-trusted-types">
@@ -3941,7 +3943,7 @@
     </h4>
     <p>We mentioned earlier that a common problem that site operators face in their migration from HTTP to HTTPS is that some content can still be accidentally loaded over HTTP on their HTTPS page. This problem is known as mixed content and CSP provides an effective way to solve this problem. The <code>upgrade-insecure-requests</code> directive instructs a browser to load all subresources on a page over a secure connection, automatically upgrading HTTP requests to HTTPS requests as an example. Think of it like HSTS for subresources on a page.</p>
     <p>We showed earlier in figure 7 that, of the HTTPS pages surveyed on the desktop, 16.27% of them loaded mixed-content with 3.99% of pages loading active mixed-content like JS/CSS/fonts. On mobile pages we see 15.37% of HTTPS pages loading mixed-content with 4.13% loading active mixed-content. By loading active content such as JavaScript over HTTP an attacker can easily inject hostile code into the page to launch an attack. This is what the <code>upgrade-insecure-requests</code> directive in CSP protects against.</p>
-    <p>The <code>upgrade-insecure-requests</code> directive is found in the CSP of 3.24% of desktop pages and 2.84% of mobile pages, indicating that an increase in adoption would provide substantial benefits. It could be introduced with relative ease, without requiring a fully locked-down CSP and the complexity that would entail, by whitelisting broad categories and including <code>unsafe-inline</code> and <code>unsafe-eval</code> with a policy like below:</p>
+    <p>The <code>upgrade-insecure-requests</code> directive is found in the CSP of 3.24% of desktop pages and 2.84% of mobile pages, indicating that an increase in adoption would provide substantial benefits. It could be introduced with relative ease, without requiring a fully locked-down CSP and the complexity that would entail, by allowing broad categories with a policy like below, or even including <code>unsafe-inline</code> and <code>unsafe-eval</code>:</p>
     <pre><code>Content-Security-Policy: upgrade-insecure-requests; default-src https:</code></pre>
     <h4 id="security-frame-ancestors">
       <a href="#security-frame-ancestors" class="anchor-link"><code>frame-ancestors</code></a>
@@ -4394,7 +4396,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -4745,7 +4747,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -5240,7 +5242,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -5527,7 +5529,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -5892,7 +5894,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -5935,7 +5937,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"III","chapter_number":13,"title":"Ecommerce","description":"Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, seo, and PWAs.","authors":["samdutton","alankent"],"reviewers":["voltek62"],"translators":null,"discuss":"1768","results":"https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/","queries":"13_Ecommerce","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-19T00:00:00.000Z","chapter":"ecommerce"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"III","chapter_number":13,"title":"Ecommerce","description":"Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, seo, and PWAs.","authors":["samdutton","alankent"],"reviewers":["voltek62"],"translators":null,"discuss":"1768","results":"https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/","queries":"13_Ecommerce","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"ecommerce"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -6554,7 +6556,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -7268,7 +7270,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -7311,7 +7313,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"IV","chapter_number":15,"title":"Compression","description":"Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.","authors":["paulcalvano"],"reviewers":["obto","yoavweiss"],"translators":null,"discuss":"1770","results":"https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/","queries":"15_Compression","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-19T00:00:00.000Z","chapter":"compression"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"IV","chapter_number":15,"title":"Compression","description":"Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.","authors":["paulcalvano"],"reviewers":["obto","yoavweiss"],"translators":null,"discuss":"1770","results":"https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/","queries":"15_Compression","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-08T00:00:00.000Z","chapter":"compression"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -7401,66 +7403,66 @@
             <tbody>
               <tr>
                 <td><em>No Text Compression</em></td>
-                <td><p style="text-align: right">62.87%</p></td>
-                <td><p style="text-align: right">61.47%</p></td>
-                <td><p style="text-align: right">260,245,106</p></td>
-                <td><p style="text-align: right">285,158,644</p></td>
+                <td class="numeric">62.87%</td>
+                <td class="numeric">61.47%</td>
+                <td class="numeric">260,245,106</td>
+                <td class="numeric">285,158,644</td>
               </tr>
               <tr>
                 <td>gzip</td>
-                <td><p style="text-align: right">29.66%</p></td>
-                <td><p style="text-align: right">30.95%</p></td>
-                <td><p style="text-align: right">122,789,094</p></td>
-                <td><p style="text-align: right">143,549,122</p></td>
+                <td class="numeric">29.66%</td>
+                <td class="numeric">30.95%</td>
+                <td class="numeric">122,789,094</td>
+                <td class="numeric">143,549,122</td>
               </tr>
               <tr>
                 <td>br</td>
-                <td><p style="text-align: right">7.43%</p></td>
-                <td><p style="text-align: right">7.55%</p></td>
-                <td><p style="text-align: right">30,750,681</p></td>
-                <td><p style="text-align: right">35,012,368</p></td>
+                <td class="numeric">7.43%</td>
+                <td class="numeric">7.55%</td>
+                <td class="numeric">30,750,681</td>
+                <td class="numeric">35,012,368</td>
               </tr>
               <tr>
                 <td>deflate</td>
-                <td><p style="text-align: right">0.02%</p></td>
-                <td><p style="text-align: right">0.02%</p></td>
-                <td><p style="text-align: right">68,802</p></td>
-                <td><p style="text-align: right">70,679</p></td>
+                <td class="numeric">0.02%</td>
+                <td class="numeric">0.02%</td>
+                <td class="numeric">68,802</td>
+                <td class="numeric">70,679</td>
               </tr>
               <tr>
                 <td><em>Other / Invalid</em></td>
-                <td><p style="text-align: right">0.02%</p></td>
-                <td><p style="text-align: right">0.01%</p></td>
-                <td><p style="text-align: right">67,527</p></td>
-                <td><p style="text-align: right">68,352</p></td>
+                <td class="numeric">0.02%</td>
+                <td class="numeric">0.01%</td>
+                <td class="numeric">67,527</td>
+                <td class="numeric">68,352</td>
               </tr>
               <tr>
                 <td>identity</td>
-                <td><p style="text-align: right">0.000709%</p></td>
-                <td><p style="text-align: right">0.000563%</p></td>
-                <td><p style="text-align: right">2,935</p></td>
-                <td><p style="text-align: right">2,611</p></td>
+                <td class="numeric">0.000709%</td>
+                <td class="numeric">0.000563%</td>
+                <td class="numeric">2,935</td>
+                <td class="numeric">2,611</td>
               </tr>
               <tr>
                 <td>x-gzip</td>
-                <td><p style="text-align: right">0.000193%</p></td>
-                <td><p style="text-align: right">0.000179%</p></td>
-                <td><p style="text-align: right">800</p></td>
-                <td><p style="text-align: right">829</p></td>
+                <td class="numeric">0.000193%</td>
+                <td class="numeric">0.000179%</td>
+                <td class="numeric">800</td>
+                <td class="numeric">829</td>
               </tr>
               <tr>
                 <td>compress</td>
-                <td><p style="text-align: right">0.000008%</p></td>
-                <td><p style="text-align: right">0.000007%</p></td>
-                <td><p style="text-align: right">33</p></td>
-                <td><p style="text-align: right">32</p></td>
+                <td class="numeric">0.000008%</td>
+                <td class="numeric">0.000007%</td>
+                <td class="numeric">33</td>
+                <td class="numeric">32</td>
               </tr>
               <tr>
                 <td>x-compress</td>
-                <td><p style="text-align: right">0.000002%</p></td>
-                <td><p style="text-align: right">0.000006%</p></td>
-                <td><p style="text-align: right">8</p></td>
-                <td><p style="text-align: right">29</p></td>
+                <td class="numeric">0.000002%</td>
+                <td class="numeric">0.000006%</td>
+                <td class="numeric">8</td>
+                <td class="numeric">29</td>
               </tr>
             </tbody>
           </table>
@@ -7477,7 +7479,7 @@
       <div id="compression-fig2-description" class="visually-hidden">Pie chart of the data table in Figure 1.</div>
       <figcaption id="compression-fig2-caption"><a href="#compression-fig-2" class="anchor-link">Figure 2.</a> Adoption of compression algorithms on desktop pages.</figcaption>
     </figure>
-    <p>Additionally, there are 67K requests that return an invalid <code>Content-Encoding</code>, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.</p>
+    <p>Additionally, there are 67k requests that return an invalid <code>Content-Encoding</code>, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.</p>
     <p>We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:</p>
     <ul>
       <li>
@@ -7569,38 +7571,38 @@
             <tbody>
               <tr>
                 <td><em>No Text Compression</em></td>
-                <td><p style="text-align: right">66.23%</p></td>
-                <td><p style="text-align: right">59.28%</p></td>
-                <td><p style="text-align: right">64.54%</p></td>
-                <td><p style="text-align: right">58.26%</p></td>
+                <td class="numeric">66.23%</td>
+                <td class="numeric">59.28%</td>
+                <td class="numeric">64.54%</td>
+                <td class="numeric">58.26%</td>
               </tr>
               <tr>
                 <td>gzip</td>
-                <td><p style="text-align: right">29.33%</p></td>
-                <td><p style="text-align: right">30.20%</p></td>
-                <td><p style="text-align: right">30.87%</p></td>
-                <td><p style="text-align: right">31.22%</p></td>
+                <td class="numeric">29.33%</td>
+                <td class="numeric">30.20%</td>
+                <td class="numeric">30.87%</td>
+                <td class="numeric">31.22%</td>
               </tr>
               <tr>
                 <td>br</td>
-                <td><p style="text-align: right">4.41%</p></td>
-                <td><p style="text-align: right">10.49%</p></td>
-                <td><p style="text-align: right">4.56%</p></td>
-                <td><p style="text-align: right">10.49%</p></td>
+                <td class="numeric">4.41%</td>
+                <td class="numeric">10.49%</td>
+                <td class="numeric">4.56%</td>
+                <td class="numeric">10.49%</td>
               </tr>
               <tr>
                 <td>deflate</td>
-                <td><p style="text-align: right">0.02%</p></td>
-                <td><p style="text-align: right">0.01%</p></td>
-                <td><p style="text-align: right">0.02%</p></td>
-                <td><p style="text-align: right">0.01%</p></td>
+                <td class="numeric">0.02%</td>
+                <td class="numeric">0.01%</td>
+                <td class="numeric">0.02%</td>
+                <td class="numeric">0.01%</td>
               </tr>
               <tr>
                 <td><em>Other / Invalid</em></td>
-                <td><p style="text-align: right">0.01%</p></td>
-                <td><p style="text-align: right">0.02%</p></td>
-                <td><p style="text-align: right">0.01%</p></td>
-                <td><p style="text-align: right">0.02%</p></td>
+                <td class="numeric">0.01%</td>
+                <td class="numeric">0.02%</td>
+                <td class="numeric">0.01%</td>
+                <td class="numeric">0.02%</td>
               </tr>
             </tbody>
           </table>
@@ -7626,7 +7628,7 @@
         <img src="/static/images/2019/compression/fig11.png" alt="Figure 11. Lighthouse 'enable text compression' audit scores." aria-labelledby="compression-fig11-caption" aria-describedby="compression-fig11-description" width="760" height="331" data-width="760" data-height="331" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&amp;format=interactive" />
       </a>
       <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig11-description" data-show-text="{{ show_description(11) }}" data-hide-text="{{ hide_description(11) }}">{{ show_description(11) }}</button>
-      <div id="compression-fig11-description" class="visually-hidden">Stacked bar chart showing 7.6% are cosing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% os sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.</div>
+      <div id="compression-fig11-description" class="visually-hidden">Stacked bar chart showing 7.6% are costing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% of sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.</div>
       <figcaption id="compression-fig11-caption"><a href="#compression-fig-11" class="anchor-link">Figure 11.</a> Lighthouse "enable text compression" audit scores.</figcaption>
     </figure>
     <p>Lighthouse also indicates how many bytes could be saved by enabling text-based compression. Of the sites that could benefit from text compression, 82% of them can reduce their page weight by up to 1 MB!</p>
@@ -7654,7 +7656,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -7697,7 +7699,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"IV","chapter_number":16,"title":"Caching","description":"Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"translators":null,"discuss":"1771","results":"https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/","queries":"16_Caching","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-19T00:00:00.000Z","chapter":"caching"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"IV","chapter_number":16,"title":"Caching","description":"Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"translators":null,"discuss":"1771","results":"https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/","queries":"16_Caching","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"caching"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -7846,83 +7848,83 @@
             <tbody>
               <tr>
                 <th scope="row">Audio</th>
-                <td><p style="text-align: right">12</p></td>
-                <td><p style="text-align: right">24</p></td>
-                <td><p style="text-align: right">720</p></td>
-                <td><p style="text-align: right">8,760</p></td>
-                <td><p style="text-align: right">8,760</p></td>
+                <td class="numeric">12</td>
+                <td class="numeric">24</td>
+                <td class="numeric">720</td>
+                <td class="numeric">8,760</td>
+                <td class="numeric">8,760</td>
               </tr>
               <tr>
                 <th scope="row">CSS</th>
-                <td><p style="text-align: right">720</p></td>
-                <td><p style="text-align: right">8,760</p></td>
-                <td><p style="text-align: right">8,760</p></td>
-                <td><p style="text-align: right">8,760</p></td>
-                <td><p style="text-align: right">8,760</p></td>
+                <td class="numeric">720</td>
+                <td class="numeric">8,760</td>
+                <td class="numeric">8,760</td>
+                <td class="numeric">8,760</td>
+                <td class="numeric">8,760</td>
               </tr>
               <tr>
                 <th scope="row">Font</th>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">3</p></td>
-                <td><p style="text-align: right">336</p></td>
-                <td><p style="text-align: right">8,760</p></td>
-                <td><p style="text-align: right">87,600</p></td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">3</td>
+                <td class="numeric">336</td>
+                <td class="numeric">8,760</td>
+                <td class="numeric">87,600</td>
               </tr>
               <tr>
                 <th scope="row">HTML</th>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">168</p></td>
-                <td><p style="text-align: right">720</p></td>
-                <td><p style="text-align: right">8,760</p></td>
-                <td><p style="text-align: right">8,766</p></td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">168</td>
+                <td class="numeric">720</td>
+                <td class="numeric">8,760</td>
+                <td class="numeric">8,766</td>
               </tr>
               <tr>
                 <th scope="row">Image</th>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">1</p></td>
-                <td><p style="text-align: right">28</p></td>
-                <td><p style="text-align: right">48</p></td>
-                <td><p style="text-align: right">8,760</p></td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">1</td>
+                <td class="numeric">28</td>
+                <td class="numeric">48</td>
+                <td class="numeric">8,760</td>
               </tr>
               <tr>
                 <th scope="row">Other</th>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">2</p></td>
-                <td><p style="text-align: right">336</p></td>
-                <td><p style="text-align: right">8,760</p></td>
-                <td><p style="text-align: right">8,760</p></td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">2</td>
+                <td class="numeric">336</td>
+                <td class="numeric">8,760</td>
+                <td class="numeric">8,760</td>
               </tr>
               <tr>
                 <th scope="row">Script</th>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">1</p></td>
-                <td><p style="text-align: right">6</p></td>
-                <td><p style="text-align: right">720</p></td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">1</td>
+                <td class="numeric">6</td>
+                <td class="numeric">720</td>
               </tr>
               <tr>
                 <th scope="row">Text</th>
-                <td><p style="text-align: right">21</p></td>
-                <td><p style="text-align: right">336</p></td>
-                <td><p style="text-align: right">7,902</p></td>
-                <td><p style="text-align: right">8,357</p></td>
-                <td><p style="text-align: right">8,740</p></td>
+                <td class="numeric">21</td>
+                <td class="numeric">336</td>
+                <td class="numeric">7,902</td>
+                <td class="numeric">8,357</td>
+                <td class="numeric">8,740</td>
               </tr>
               <tr>
                 <th scope="row">Video</th>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">4</p></td>
-                <td><p style="text-align: right">24</p></td>
-                <td><p style="text-align: right">24</p></td>
-                <td><p style="text-align: right">336</p></td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">4</td>
+                <td class="numeric">24</td>
+                <td class="numeric">24</td>
+                <td class="numeric">336</td>
               </tr>
               <tr>
                 <th scope="row">XML</th>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
-                <td><p style="text-align: right">&lt; 1</p></td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">&lt; 1</td>
+                <td class="numeric">&lt; 1</td>
               </tr>
             </tbody>
           </table>
@@ -8110,15 +8112,15 @@
               </tr>
               <tr>
                 <td>Desktop</td>
-                <td><p style="text-align: right">70.7%</p></td>
-                <td><p style="text-align: right">47.9%</p></td>
-                <td><p style="text-align: right">59.2%</p></td>
+                <td class="numeric">70.7%</td>
+                <td class="numeric">47.9%</td>
+                <td class="numeric">59.2%</td>
               </tr>
               <tr>
                 <td>Mobile</td>
-                <td><p style="text-align: right">71.4%</p></td>
-                <td><p style="text-align: right">46.8%</p></td>
-                <td><p style="text-align: right">59.6%</p></td>
+                <td class="numeric">71.4%</td>
+                <td class="numeric">46.8%</td>
+                <td class="numeric">59.6%</td>
               </tr>
             </tbody>
           </table>
@@ -8277,21 +8279,21 @@
             <tbody>
               <tr>
                 <td>Does Not Use AppCache</td>
-                <td><p style="text-align: right">5,045,337</p></td>
-                <td><p style="text-align: right">32,241</p></td>
-                <td><p style="text-align: right">5,077,578</p></td>
+                <td class="numeric">5,045,337</td>
+                <td class="numeric">32,241</td>
+                <td class="numeric">5,077,578</td>
               </tr>
               <tr>
                 <td>Uses AppCache</td>
-                <td><p style="text-align: right">1,816</p></td>
-                <td><p style="text-align: right">51</p></td>
-                <td><p style="text-align: right">1,867</p></td>
+                <td class="numeric">1,816</td>
+                <td class="numeric">51</td>
+                <td class="numeric">1,867</td>
               </tr>
               <tr>
                 <td>Total</td>
-                <td><p style="text-align: right">5,047,153</p></td>
-                <td><p style="text-align: right">32,292</p></td>
-                <td><p style="text-align: right">5,079,445</p></td>
+                <td class="numeric">5,047,153</td>
+                <td class="numeric">32,292</td>
+                <td class="numeric">5,079,445</td>
               </tr>
             </tbody>
           </table>
@@ -8316,24 +8318,24 @@
               <tr>
                 <th scope="rowgroup" rowspan="2">HTTP</th>
                 <td>Does Not Use AppCache</td>
-                <td><p style="text-align: right">1,968,736</p></td>
-                <td><p style="text-align: right">907</p></td>
+                <td class="numeric">1,968,736</td>
+                <td class="numeric">907</td>
               </tr>
               <tr>
                 <td>Uses AppCache</td>
-                <td><p style="text-align: right">580</p></td>
-                <td><p style="text-align: right">1</p></td>
+                <td class="numeric">580</td>
+                <td class="numeric">1</td>
               </tr>
               <tr>
                 <th scope="rowgroup" rowspan="2">HTTPS</th>
                 <td>Does Not Use AppCache</td>
-                <td><p style="text-align: right">3,076,601</p></td>
-                <td><p style="text-align: right">31,334</p></td>
+                <td class="numeric">3,076,601</td>
+                <td class="numeric">31,334</td>
               </tr>
               <tr>
                 <td>Uses AppCache</td>
-                <td><p style="text-align: right">1,236</p></td>
-                <td><p style="text-align: right">50</p></td>
+                <td class="numeric">1,236</td>
+                <td class="numeric">50</td>
               </tr>
             </tbody>
           </table>
@@ -8391,7 +8393,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -10008,7 +10010,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -10888,7 +10890,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -10931,7 +10933,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"IV","chapter_number":19,"title":"Resource Hints","description":"Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":null,"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-02T00:00:00.000Z","chapter":"resource-hints"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"IV","chapter_number":19,"title":"Resource Hints","description":"Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":null,"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"resource-hints"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -11195,7 +11197,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}
@@ -11993,7 +11995,7 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200"/></a>
+        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
           {% if authordata.twitter or authordata.github %}

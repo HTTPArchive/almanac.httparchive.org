@@ -10,7 +10,7 @@ discuss: 1770
 results: https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/
 queries: 15_Compression
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-07-08T00:00:00.000Z
 ---
 
 ## Introduction
@@ -19,8 +19,8 @@ HTTP compression is a technique that allows you to encode information using fewe
 
 Compression algorithms are often categorized as lossy or lossless: 
 
-*   When a lossy compression algorithm is used, the process is irreversible, and the original file cannot be restored via decompression. This is commonly used to compress media resources, such as image and video content where losing some data will not materially affect the resource.
-*   Lossless compression is a completely reversible process, and is commonly used to compress text based resources, such as [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc. 
+* When a lossy compression algorithm is used, the process is irreversible, and the original file cannot be restored via decompression. This is commonly used to compress media resources, such as image and video content where losing some data will not materially affect the resource.
+* Lossless compression is a completely reversible process, and is commonly used to compress text based resources, such as [HTML](./markup), [JavaScript](./javascript), [CSS](./css), etc. 
 
 In this chapter, we are going to explore how text-based content is compressed on the web. Analysis of non-text-based content forms part of the [Media](./media) chapter.
 
@@ -50,9 +50,9 @@ The HTTP Archive contains measurements for 5.3 million web sites, and each site 
 
 IANA maintains a [list of valid HTTP content encodings](https://www.iana.org/assignments/http-parameters/http-parameters.xml#content-coding) that can be used with the `Accept-Encoding` and `Content-Encoding` headers. These include gzip, deflate, br (brotli), as well as a few others. Brief descriptions of these algorithms are given below:
 
-*   [Gzip](https://tools.ietf.org/html/rfc1952) uses the [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) and [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) compression techniques, and is older than the web itself. It was originally developed for the UNIX gzip program in 1992. An implementation for web delivery has existed since HTTP/1.1, and most web browsers and clients support it.
-*   [Deflate](https://tools.ietf.org/html/rfc1951) uses the same algorithm as gzip, just with a different container. Its use was not widely adopted for the web because of [compatibility issues](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) with some servers and browsers.
-*   [Brotli](https://tools.ietf.org/html/rfc7932) is a newer compression algorithm that was [invented by Google](https://github.com/google/brotli). It uses the combination of a modern variant of the LZ77 algorithm, Huffman coding, and second order context modeling. Compression via brotli is more computationally expensive compared to gzip, but the algorithm is able to reduce files by [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) more than gzip compression. Brotli was first used for compressing web content in 2015 and is [supported by all modern web browsers](https://caniuse.com/#feat=brotli).
+* [Gzip](https://tools.ietf.org/html/rfc1952) uses the [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77) and [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding) compression techniques, and is older than the web itself. It was originally developed for the UNIX gzip program in 1992. An implementation for web delivery has existed since HTTP/1.1, and most web browsers and clients support it.
+* [Deflate](https://tools.ietf.org/html/rfc1951) uses the same algorithm as gzip, just with a different container. Its use was not widely adopted for the web because of [compatibility issues](https://en.wikipedia.org/wiki/HTTP_compression#Problems_preventing_the_use_of_HTTP_compression) with some servers and browsers.
+* [Brotli](https://tools.ietf.org/html/rfc7932) is a newer compression algorithm that was [invented by Google](https://github.com/google/brotli). It uses the combination of a modern variant of the LZ77 algorithm, Huffman coding, and second order context modeling. Compression via brotli is more computationally expensive compared to gzip, but the algorithm is able to reduce files by [15-25%](https://cran.r-project.org/web/packages/brotli/vignettes/brotli-2015-09-22.pdf) more than gzip compression. Brotli was first used for compressing web content in 2015 and is [supported by all modern web browsers](https://caniuse.com/#feat=brotli).
 
 Approximately 38% of HTTP responses are delivered with text-based compression. This may seem like a surprising statistic, but keep in mind that it is based on all HTTP requests in the dataset. Some content, such as images, will not benefit from these compression algorithms. The table below summarizes the percentage of requests served with each content encoding.
 
@@ -75,66 +75,66 @@ Approximately 38% of HTTP responses are delivered with text-based compression. T
     <tbody>
       <tr>
         <td><em>No Text Compression</em></td>
-        <td><p style="text-align: right">62.87%</p></td>
-        <td><p style="text-align: right">61.47%</p></td>
-        <td><p style="text-align: right">260,245,106</p></td>
-        <td><p style="text-align: right">285,158,644</p></td>
+        <td class="numeric">62.87%</td>
+        <td class="numeric">61.47%</td>
+        <td class="numeric">260,245,106</td>
+        <td class="numeric">285,158,644</td>
       </tr>
       <tr>
         <td>gzip</td>
-        <td><p style="text-align: right">29.66%</p></td>
-        <td><p style="text-align: right">30.95%</p></td>
-        <td><p style="text-align: right">122,789,094</p></td>
-        <td><p style="text-align: right">143,549,122</p></td>
+        <td class="numeric">29.66%</td>
+        <td class="numeric">30.95%</td>
+        <td class="numeric">122,789,094</td>
+        <td class="numeric">143,549,122</td>
       </tr>
       <tr>
         <td>br</td>
-        <td><p style="text-align: right">7.43%</p></td>
-        <td><p style="text-align: right">7.55%</p></td>
-        <td><p style="text-align: right">30,750,681</p></td>
-        <td><p style="text-align: right">35,012,368</p></td>
+        <td class="numeric">7.43%</td>
+        <td class="numeric">7.55%</td>
+        <td class="numeric">30,750,681</td>
+        <td class="numeric">35,012,368</td>
       </tr>
       <tr>
         <td>deflate</td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">68,802</p></td>
-        <td><p style="text-align: right">70,679</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">68,802</td>
+        <td class="numeric">70,679</td>
       </tr>
       <tr>
         <td><em>Other / Invalid</em></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">67,527</p></td>
-        <td><p style="text-align: right">68,352</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">67,527</td>
+        <td class="numeric">68,352</td>
       </tr>
       <tr>
         <td>identity</td>
-        <td><p style="text-align: right">0.000709%</p></td>
-        <td><p style="text-align: right">0.000563%</p></td>
-        <td><p style="text-align: right">2,935</p></td>
-        <td><p style="text-align: right">2,611</p></td>
+        <td class="numeric">0.000709%</td>
+        <td class="numeric">0.000563%</td>
+        <td class="numeric">2,935</td>
+        <td class="numeric">2,611</td>
       </tr>
       <tr>
         <td>x-gzip</td>
-        <td><p style="text-align: right">0.000193%</p></td>
-        <td><p style="text-align: right">0.000179%</p></td>
-        <td><p style="text-align: right">800</p></td>
-        <td><p style="text-align: right">829</p></td>
+        <td class="numeric">0.000193%</td>
+        <td class="numeric">0.000179%</td>
+        <td class="numeric">800</td>
+        <td class="numeric">829</td>
       </tr>
       <tr>
         <td>compress</td>
-        <td><p style="text-align: right">0.000008%</p></td>
-        <td><p style="text-align: right">0.000007%</p></td>
-        <td><p style="text-align: right">33</p></td>
-        <td><p style="text-align: right">32</p></td>
+        <td class="numeric">0.000008%</td>
+        <td class="numeric">0.000007%</td>
+        <td class="numeric">33</td>
+        <td class="numeric">32</td>
       </tr>
       <tr>
         <td>x-compress</td>
-        <td><p style="text-align: right">0.000002%</p></td>
-        <td><p style="text-align: right">0.000006%</p></td>
-        <td><p style="text-align: right">8</p></td>
-        <td><p style="text-align: right">29</p></td>
+        <td class="numeric">0.000002%</td>
+        <td class="numeric">0.000006%</td>
+        <td class="numeric">8</td>
+        <td class="numeric">29</td>
       </tr>
     </tbody>
   </table>
@@ -151,13 +151,13 @@ Of the resources that are served compressed, the majority are using either gzip 
   <figcaption id="fig2-caption">Figure 2. Adoption of compression algorithms on desktop pages.</figcaption>
 </figure>
 
-Additionally, there are 67K requests that return an invalid `Content-Encoding`, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.
+Additionally, there are 67k requests that return an invalid `Content-Encoding`, such as "none", "UTF-8", "base64", "text", etc. These resources are likely served uncompressed.
 
 We can't determine the compression levels from any of the diagnostics collected by the HTTP Archive, but the best practice for compressing content is:
 
-*   At a minimum, enable gzip compression level 6 for text based assets. This provides a fair trade-off between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)—though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
-*   If you can support brotli and precompress resources, then compress to brotli level 11.  This is more computationally expensive than gzip - so precompression is an absolute must to avoid delays. 
-*   If you can support brotli and are unable to precompress, then compress to brotli level 5. This level will result in smaller payloads compared to gzip, with a similar computational overhead.
+* At a minimum, enable gzip compression level 6 for text based assets. This provides a fair trade-off between computational cost and compression ratio and is the [default for many web servers](https://paulcalvano.com/index.php/2018/07/25/brotli-compression-how-much-will-it-reduce-your-content/)—though [Nginx still defaults to the, often too low, level 1](http://nginx.org/en/docs/http/ngx_http_gzip_module.html#gzip_comp_level).
+* If you can support brotli and precompress resources, then compress to brotli level 11.  This is more computationally expensive than gzip - so precompression is an absolute must to avoid delays. 
+* If you can support brotli and are unable to precompress, then compress to brotli level 5. This level will result in smaller payloads compared to gzip, with a similar computational overhead.
 
 
 ## What types of content are we compressing?
@@ -251,38 +251,38 @@ Additionally, the percentage of brotli compression is higher for third-party con
     <tbody>
       <tr>
         <td><em>No Text Compression</em></td>
-        <td><p style="text-align: right">66.23%</p></td>
-        <td><p style="text-align: right">59.28%</p></td>
-        <td><p style="text-align: right">64.54%</p></td>
-        <td><p style="text-align: right">58.26%</p></td>
+        <td class="numeric">66.23%</td>
+        <td class="numeric">59.28%</td>
+        <td class="numeric">64.54%</td>
+        <td class="numeric">58.26%</td>
       </tr>
       <tr>
         <td>gzip</td>
-        <td><p style="text-align: right">29.33%</p></td>
-        <td><p style="text-align: right">30.20%</p></td>
-        <td><p style="text-align: right">30.87%</p></td>
-        <td><p style="text-align: right">31.22%</p></td>
+        <td class="numeric">29.33%</td>
+        <td class="numeric">30.20%</td>
+        <td class="numeric">30.87%</td>
+        <td class="numeric">31.22%</td>
       </tr>
       <tr>
         <td>br</td>
-        <td><p style="text-align: right">4.41%</p></td>
-        <td><p style="text-align: right">10.49%</p></td>
-        <td><p style="text-align: right">4.56%</p></td>
-        <td><p style="text-align: right">10.49%</p></td>
+        <td class="numeric">4.41%</td>
+        <td class="numeric">10.49%</td>
+        <td class="numeric">4.56%</td>
+        <td class="numeric">10.49%</td>
       </tr>
       <tr>
         <td>deflate</td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
       </tr>
       <tr>
         <td><em>Other / Invalid</em></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
-        <td><p style="text-align: right">0.01%</p></td>
-        <td><p style="text-align: right">0.02%</p></td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.02%</td>
       </tr>
     </tbody>
   </table>
@@ -307,7 +307,7 @@ Because the [HTTP Archive runs Lighthouse audits](./methodology#lighthouse) for 
   <a href="/static/images/2019/compression/fig11.png">
     <img src="/static/images/2019/compression/fig11.png" alt="Figure 11. Lighthouse 'enable text compression' audit scores." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="760" height="331" data-width="760" data-height="331" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2048155673&amp;format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden">Stacked bar chart showing 7.6% are cosing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% os sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.</div>
+  <div id="fig11-description" class="visually-hidden">Stacked bar chart showing 7.6% are costing less than 10%, 13.2% of sites are scoring between 10-39%, 13.7% of sites scoring between 40-79%, 2.9% of sites scoring between 80-99%, and 62.5% of sites have a pass with over 100% of text assets being compressed.</div>
   <figcaption id="fig11-caption">Figure 11. Lighthouse "enable text compression" audit scores.</figcaption>
 </figure>
 

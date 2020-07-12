@@ -10,7 +10,7 @@ discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-07-12T00:00:00.000Z
 ---
 
 ## Introduction
@@ -27,12 +27,12 @@ La mise en cache sur le web s'appuie sur trois principes fondamentaux&nbsp;: met
 
 Les architectures Web impliquent généralement [une mise en cache en plusieurs niveaux](https://blog.yoav.ws/tale-of-four-caches/). Par exemple une requête HTTP peut être mise en cache de différentes manière&nbsp;:
 
-*   dans le cache du navigateur&nbsp;;
-*   dans le cache d'un <i lang="en">service worker</i> dans le navigateur&nbsp;;
-*   dans une passerelle partagée&nbsp;;
-*   au niveau des CDN, qui offrent la possibilité de mettre en cache à proximité des utilisateurs&nbsp;;
-*   dans un proxy de cache en amont des applications pour réduire la charge sur les serveurs back-end&nbsp;;
-*   au niveau de l'application et de la base de données.
+* dans le cache du navigateur&nbsp;;
+* dans le cache d'un <i lang="en">service worker</i> dans le navigateur&nbsp;;
+* dans une passerelle partagée&nbsp;;
+* au niveau des CDN, qui offrent la possibilité de mettre en cache à proximité des utilisateurs&nbsp;;
+* dans un proxy de cache en amont des applications pour réduire la charge sur les serveurs back-end&nbsp;;
+* au niveau de l'application et de la base de données.
 
 Ce chapitre explique comment les ressources sont mises en cache dans les navigateurs Web.
 
@@ -40,22 +40,22 @@ Ce chapitre explique comment les ressources sont mises en cache dans les navigat
 
 Pour qu'un client HTTP mette en cache une ressource, il doit répondre a deux questions&nbsp;:
 
-*   "Combien de temps dois-je mettre en cache&nbsp;?"
-*   "Comment puis-je valider que le contenu est encore frais&nbsp;?"
+* "Combien de temps dois-je mettre en cache&nbsp;?"
+* "Comment puis-je valider que le contenu est encore frais&nbsp;?"
 
 Lorsqu'un navigateur Web envoie une réponse à un client, il inclut généralement dans sa réponse des en-têtes qui indiquent si la ressource peut être mise en cache, pour combien de temps et quel est son âge. La RFC 7234 traite plus en détail de ce point dans la section [4.2 (Freshness)](https://tools.ietf.org/html/rfc7234#section-4.2) et [4.3 (Validation)](https://tools.ietf.org/html/rfc7234#section-4.3).
 
 Les en-têtes de réponse HTTP généralement utilisées pour transmettre la durée de vie sont&nbsp;:
 
-*   <i lang="en">`Cache-Control`</i> vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
-*   `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
+* <i lang="en">`Cache-Control`</i> vous permet de configurer la durée de vie du cache (c'est-à-dire sa durée de validité).
+* `Expires` fournit une date ou une heure d'expiration (c.-à-d. quand exactement celle-ci expire).
 
 `Cache-Control` est prioritaire si les deux champs sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#cache-control-vs-expires).
 
 Les en-têtes de réponse HTTP permettant de valider les données stockées en cache, c'est à dire donner les informations nécessaires pour comparer une ressource à sa contrepartie côté serveur&nbsp;:
 
-*   `Last-Modified` indique quand la ressource a été modifiée pour la dernière fois.
-*   `ETag` fournit l'identifiant unique d'une ressource.
+* `Last-Modified` indique quand la ressource a été modifiée pour la dernière fois.
+* `ETag` fournit l'identifiant unique d'une ressource.
 
 `ETag` est prioritaire si les deux en-têtes sont renseignés. Ces en-têtes sont [abordés plus en détail ci-dessous](#validation-de-la-fraîcheur-des-informations).
 
@@ -105,9 +105,9 @@ Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'a
 
 Une ressource mise en cache est stockée par le client pendant un certain temps et peut être réutilisée ultérieurement. Pour les requêtes HTTP, 80&nbsp;% des réponses peuvent certainement être mises en cache, ce qui signifie qu'un système de cache peut les stocker. En dehors de ça,
 
-*   6&nbsp;% des requêtes ont un <i lang="en">Time To Live</i> (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
-*   27&nbsp;% sont mis en cache par heuristique, à cause d'un `Cache-Control` manquant en en-tête.
-*   47&nbsp;% sont mis en cache pendant plus de 0 seconde.
+* 6&nbsp;% des requêtes ont un <i lang="en">Time To Live</i> (TTL) de 0 seconde, qui invalide immédiatement une entrée en cache.
+* 27&nbsp;% sont mis en cache par heuristique, à cause d'un `Cache-Control` manquant en en-tête.
+* 47&nbsp;% sont mis en cache pendant plus de 0 seconde.
 
 Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
 
@@ -139,83 +139,83 @@ Le tableau ci-dessous détaille les TTL du cache pour les requêtes en provenanc
     <tbody>
       <tr>
         <th scope="row">Audio</th>
-        <td><p style="text-align: right">12</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">12</td>
+        <td class="numeric">24</td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">CSS</th>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Police d'écriture</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">3</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">87,600</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">3</td>
+        <td class="numeric">336</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">87,600</td>
       </tr>
       <tr>
         <th scope="row">HTML</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">168</p></td>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,766</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">168</td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,766</td>
       </tr>
       <tr>
         <th scope="row">Image</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">1</p></td>
-        <td><p style="text-align: right">28</p></td>
-        <td><p style="text-align: right">48</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">28</td>
+        <td class="numeric">48</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Autre</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">2</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">2</td>
+        <td class="numeric">336</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Script</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">1</p></td>
-        <td><p style="text-align: right">6</p></td>
-        <td><p style="text-align: right">720</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">6</td>
+        <td class="numeric">720</td>
       </tr>
       <tr>
         <th scope="row">Texte</th>
-        <td><p style="text-align: right">21</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">7,902</p></td>
-        <td><p style="text-align: right">8,357</p></td>
-        <td><p style="text-align: right">8,740</p></td>
+        <td class="numeric">21</td>
+        <td class="numeric">336</td>
+        <td class="numeric">7,902</td>
+        <td class="numeric">8,357</td>
+        <td class="numeric">8,740</td>
       </tr>
       <tr>
         <th scope="row">Vidéo</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">4</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">336</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">4</td>
+        <td class="numeric">24</td>
+        <td class="numeric">24</td>
+        <td class="numeric">336</td>
       </tr>
       <tr>
         <th scope="row">XML</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
       </tr>
     </tbody>
   </table>
@@ -412,15 +412,15 @@ Si l'on compare les ressources du domaine principal et celles des tierces partie
     </tr>
     <tr>
      <td>Bureau</td>
-     <td><p style="text-align: right">70.7&nbsp;%</p></td>
-     <td><p style="text-align: right">47.9&nbsp;%</p></td>
-     <td><p style="text-align: right">59.2&nbsp;%</p></td>
+     <td class="numeric">70.7&nbsp;%</td>
+     <td class="numeric">47.9&nbsp;%</td>
+     <td class="numeric">59.2&nbsp;%</td>
     </tr>
     <tr>
      <td>Mobile</td>
-     <td><p style="text-align: right">71.4&nbsp;%</p></td>
-     <td><p style="text-align: right">46.8&nbsp;%</p></td>
-     <td><p style="text-align: right">59.6&nbsp;%</p></td>
+     <td class="numeric">71.4&nbsp;%</td>
+     <td class="numeric">46.8&nbsp;%</td>
+     <td class="numeric">59.6&nbsp;%</td>
     </tr>
   </table>
   <figcaption>Figure 11. Pourcentage des requêtes avec des TTL courts.</figcaption>
@@ -515,9 +515,9 @@ L'en-tête de réponse HTTP `Date` est généralement généré par le serveur w
 
 Voici des exemples d'utilisations incorrectes de l'en-tête `Expires`&nbsp;:
 
-*   Formats de date valides, mais utilisant un fuseau horaire autre que GMT
-*   Valeurs numériques telles que 0 ou -1
-*   Valeurs qui seraient valides dans un en-tête `Cache-Control`
+* Formats de date valides, mais utilisant un fuseau horaire autre que GMT
+* Valeurs numériques telles que 0 ou -1
+* Valeurs qui seraient valides dans un en-tête `Cache-Control`
 
 La plus grande source d'en-têtes `Expires` invalides provient de ressources servies par une tierce partie , dans lesquels un horodatage utilise le fuseau horaire EST, par exemple `Expires: Tue, 27 Apr 1971 19:44:06 EST`.
 
@@ -602,21 +602,21 @@ Dans le tableau ci-dessous, vous pouvez voir un résumé de l'utilisation d'AppC
     <tbody>
       <tr>
         <td>N'utilise pas AppCache</td>
-        <td><p style="text-align: right">5,045,337</p></td>
-        <td><p style="text-align: right">32,241</p></td>
-        <td><p style="text-align: right">5,077,578</p></td>
+        <td class="numeric">5,045,337</td>
+        <td class="numeric">32,241</td>
+        <td class="numeric">5,077,578</td>
       </tr>
       <tr>
         <td>Utilise AppCache</td>
-        <td><p style="text-align: right">1,816</p></td>
-        <td><p style="text-align: right">51</p></td>
-        <td><p style="text-align: right">1,867</p></td>
+        <td class="numeric">1,816</td>
+        <td class="numeric">51</td>
+        <td class="numeric">1,867</td>
       </tr>
       <tr>
         <td>Total</td>
-        <td><p style="text-align: right">5,047,153</p></td>
-        <td><p style="text-align: right">32,292</p></td>
-        <td><p style="text-align: right">5,079,445</p></td>
+        <td class="numeric">5,047,153</td>
+        <td class="numeric">32,292</td>
+        <td class="numeric">5,079,445</td>
       </tr>
     </tbody>
   </table>
@@ -629,7 +629,7 @@ Si on fait une comparaison entre HTTP et HTTPS, cela devient encore plus intére
   <table>
     <thead>
       <tr>
-        <td scoppe="col"></td>
+        <td scope="col"></td>
         <td></td>
         <th scope="col">N'utilise pas Service Worker</th>
         <th scope="col">Utilise Service Worker</th>
@@ -639,24 +639,24 @@ Si on fait une comparaison entre HTTP et HTTPS, cela devient encore plus intére
       <tr>
         <th scope="rowgroup" rowspan="2" >HTTP</th>
         <td>N'utilise pas AppCache</td>
-        <td><p style="text-align: right">1,968,736</p></td>
-        <td><p style="text-align: right">907</p></td>
+        <td class="numeric">1,968,736</td>
+        <td class="numeric">907</td>
       </tr>
       <tr>
         <td>Utilise AppCache</td>
-        <td><p style="text-align: right">580</p></td>
-        <td><p style="text-align: right">1</p></td>
+        <td class="numeric">580</td>
+        <td class="numeric">1</td>
       </tr>
       <tr>
         <th scope="rowgroup" rowspan="2" >HTTPS</th>
         <td>N'utilise pas AppCache</td>
-        <td><p style="text-align: right">3,076,601</p></td>
-        <td><p style="text-align: right">31,334</p></td>
+        <td class="numeric">3,076,601</td>
+        <td class="numeric">31,334</td>
       </tr>
       <tr>
         <td>Utilise AppCache</td>
-        <td><p style="text-align: right">1,236</p></td>
-        <td><p style="text-align: right">50</p></td>
+        <td class="numeric">1,236</td>
+        <td class="numeric">50</td>
       </tr>
     </tbody>
   </table>
@@ -679,7 +679,7 @@ Lighthouse calcule un score pour chaque audit, allant de 0 à 100&nbsp;%, et ces
 
 <figure>
   <a href="/static/images/2019/caching/fig21.png">
-    <img src="/static/images/2019/caching/fig21.png" alt="Figure 21. Distribution des scores Lighthouse pour l'audit &quot;Définit un long cache TTL&quot; pour les pages web mobiles." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive">
+    <img src="/static/images/2019/caching/fig21.png" alt="Figure 21. Distribution des scores Lighthouse pour l'audit «Définit un long cache TTL» pour les pages web mobiles." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&amp;format=interactive">
   </a>
   <div id="fig21-description" class="visually-hidden">Un diagramme à barres superposées&nbsp;: 38,2&nbsp;% des sites web obtiennent un score de < 10&nbsp;%, 29,0&nbsp;% des sites web obtiennent un score entre 10 et 39&nbsp;%, 18,7&nbsp;% des sites web obtiennent un score de 40 à 79&nbsp;%, 10,7&nbsp;% des sites web obtiennent un score de 80 à 99&nbsp;%, et 3,4&nbsp;% des sites web obtiennent un score de 100&nbsp;%.</div>
   <figcaption id="fig21-caption">Figure 21. Distribution des scores Lighthouse pour l'audit "Définit un long cache TTL" pour les pages web mobiles.</figcaption>

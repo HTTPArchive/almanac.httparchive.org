@@ -39,15 +39,15 @@ a:hover {
 
 @media (min-width: 800px) {
   img {
-      margin-left: -20px;
+    margin-left: -20px;
   }
 
   section {
-      margin-top: 20vh;
+    margin-top: 20vh;
   }
 
   section > div {
-      max-width: 800px;
+    max-width: 800px;
   }
 }
 

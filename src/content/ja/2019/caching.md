@@ -10,7 +10,7 @@ discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-07-06T00:00:00.000Z
 ---
 
 ## 導入
@@ -27,12 +27,12 @@ Webコンテンツのキャッシュには、3つの基本原則があります�
 
 通常、Webアーキテクチャには[複数のキャッシュ層](https://blog.yoav.ws/tale-of-four-caches/)が含まれます。たとえば、HTTPリクエストは次の場所にキャッシュされる可能性があります。
 
-*   エンドユーザーのブラウザ
-*   ユーザーのブラウザーのService Workerキャッシュ
-*   共有ゲートウェイ
-*   エンドユーザーに近い側でキャッシュする機能を提供するCDN
-*   バックエンドの仕事長を削減するための、アプリケーションの前のキャッシングプロキシ
-*   アプリケーション層とデータベース層
+* エンドユーザーのブラウザ
+* ユーザーのブラウザーのService Workerキャッシュ
+* 共有ゲートウェイ
+* エンドユーザーに近い側でキャッシュする機能を提供するCDN
+* バックエンドの仕事長を削減するための、アプリケーションの前のキャッシングプロキシ
+* アプリケーション層とデータベース層
 
 この章では、Webブラウザー内でリソースがキャッシュされる方法について見ていきましょう。
 
@@ -40,22 +40,22 @@ Webコンテンツのキャッシュには、3つの基本原則があります�
 
 HTTPクライアントがリソースをキャッシュするには、2つの情報を理解する必要があります。
 
-*   「これをキャッシュできる期間はどれくらいですか？」
-*   「コンテンツがまだ新しいことを検証するにはどうすればよいですか？」
+* 「これをキャッシュできる期間はどれくらいですか？」
+* 「コンテンツがまだ新しいことを検証するにはどうすればよいですか？」
 
 Webブラウザーがクライアントにレスポンスを送信するとき、通常リソースにキャッシュ可能か、キャッシュする期間、リソースの古さを示すヘッダーが含まれます。 RFC 7234は、これをセクション[4.2（新しさ）](https://tools.ietf.org/html/rfc7234#section-4.2)および[4.3（検証）](https://tools.ietf.org/html/rfc7234#section-4.3)でより詳細にカバーしています。
 
 通常、有効期間を伝えるために使用されるHTTPレスポンスヘッダーは次のとおりです。
 
-*   `Cache-Control` キャッシュの生存期間（つまり、有効期間）を設定できます。
-*   `Expires` 有効期限の日付または時刻を提供します（つまり、期限切れになるとき）。
+* `Cache-Control` キャッシュの生存期間（つまり、有効期間）を設定できます。
+* `Expires` 有効期限の日付または時刻を提供します（つまり、期限切れになるとき）。
 
 `Cache-Control` 両方が存在する場合に優先されます。これらについては、[以下で詳しく説明します](#cache-controlとexpires)。
 
 キャッシュ内に保存された応答を検証するためのHTTPレスポンスヘッダー、つまりサーバー側で比較するため、条件付き要求を提供するHTTPレスポンスヘッダーは次のとおりです。
 
-*   `Last-Modified` オブジェクトが最後に変更された日時を示します。
-*   エンティティタグ (`ETag`) コンテンツの一意の識別子を提供します。
+* `Last-Modified` オブジェクトが最後に変更された日時を示します。
+* エンティティタグ (`ETag`) コンテンツの一意の識別子を提供します。
 
 `ETag` 両方が存在する場合に優先されます。これらについては、以下で詳しく説明します。
 
@@ -105,9 +105,9 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
 
 キャッシュ可能なリソースは、クライアントによって一定期間保存され、後続のリクエストで再利用できます。すべてのHTTPリクエスト全体で、レスポンスの80％はキャッシュ可能と見なされます。つまり、キャッシュがそれらを格納することを許可されています。
 
-*   要求の6％のTime To Time（TTL）は0秒で、キャッシュされたエントリはすぐに無効になります。
-*   27％は`Cache-Control`ヘッダーがないため、ヒューリスティックにキャッシュされます。
-*   47％は0秒以上キャッシュされます。
+* 要求の6％のTime To Time（TTL）は0秒で、キャッシュされたエントリはすぐに無効になります。
+* 27％は`Cache-Control`ヘッダーがないため、ヒューリスティックにキャッシュされます。
+* 47％は0秒以上キャッシュされます。
 
 残りのレスポンスは、ブラウザーのキャッシュに保存できません。
 
@@ -140,83 +140,83 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
     <tbody>
       <tr>
         <th scope="row">Audio</th>
-        <td><p style="text-align: right">12</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">12</td>
+        <td class="numeric">24</td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">CSS</th>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Font</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">3</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">87,600</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">3</td>
+        <td class="numeric">336</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">87,600</td>
       </tr>
       <tr>
         <th scope="row">HTML</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">168</p></td>
-        <td><p style="text-align: right">720</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,766</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">168</td>
+        <td class="numeric">720</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,766</td>
       </tr>
       <tr>
         <th scope="row">Image</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">1</p></td>
-        <td><p style="text-align: right">28</p></td>
-        <td><p style="text-align: right">48</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">28</td>
+        <td class="numeric">48</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Other</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">2</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">8,760</p></td>
-        <td><p style="text-align: right">8,760</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">2</td>
+        <td class="numeric">336</td>
+        <td class="numeric">8,760</td>
+        <td class="numeric">8,760</td>
       </tr>
       <tr>
         <th scope="row">Script</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">1</p></td>
-        <td><p style="text-align: right">6</p></td>
-        <td><p style="text-align: right">720</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">1</td>
+        <td class="numeric">6</td>
+        <td class="numeric">720</td>
       </tr>
       <tr>
         <th scope="row">Text</th>
-        <td><p style="text-align: right">21</p></td>
-        <td><p style="text-align: right">336</p></td>
-        <td><p style="text-align: right">7,902</p></td>
-        <td><p style="text-align: right">8,357</p></td>
-        <td><p style="text-align: right">8,740</p></td>
+        <td class="numeric">21</td>
+        <td class="numeric">336</td>
+        <td class="numeric">7,902</td>
+        <td class="numeric">8,357</td>
+        <td class="numeric">8,740</td>
       </tr>
       <tr>
         <th scope="row">Video</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">4</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">24</p></td>
-        <td><p style="text-align: right">336</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">4</td>
+        <td class="numeric">24</td>
+        <td class="numeric">24</td>
+        <td class="numeric">336</td>
       </tr>
       <tr>
         <th scope="row">XML</th>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
-        <td><p style="text-align: right">< 1</p></td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
+        <td class="numeric">< 1</td>
       </tr>
     </tbody>
   </table>
@@ -254,10 +254,10 @@ HTTP/1.0では、`Expires`ヘッダーは、レスポンスが古くなったと
 
 HTTP/1.1は`Cache-Control`ヘッダーを導入し、最新のクライアントのほとんどは両方のヘッダーをサポートしています。このヘッダーは、キャッシングディレクティブを介して、はるかに高い拡張性を提供します。例えば。
 
-*   `no-store` リソースをキャッシュしないことを示すために使用できます。
-*   `max-age` 鮮度の寿命を示すために使用できます。
-*   `must-revalidate` キャッシュされたエントリは、使用する前に条件付きリクエストで検証する必要があることをクライアントに伝えます。
-*   `private` レスポンスはブラウザによってのみキャッシュされ、複数のクライアントにサービスを提供する仲介者によってキャッシュされるべきではないことを示します。
+* `no-store` リソースをキャッシュしないことを示すために使用できます。
+* `max-age` 鮮度の寿命を示すために使用できます。
+* `must-revalidate` キャッシュされたエントリは、使用する前に条件付きリクエストで検証する必要があることをクライアントに伝えます。
+* `private` レスポンスはブラウザによってのみキャッシュされ、複数のクライアントにサービスを提供する仲介者によってキャッシュされるべきではないことを示します。
 
 HTTPレスポンスの53％は、`max-age`ディレクティブを持つ`Cache-Control`ヘッダーが含まれ、54％はExpiresヘッダーが含まれます。ただし、これらのレスポンスの41％のみが両方のヘッダーを使用します。つまり、レスポンスの13％が古い`Expires`ヘッダーのみに基づいてキャッシュされます。
 
@@ -343,9 +343,9 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 上記の図9は、モバイルWebサイトで使用されている上位15の`Cache-Control`ディレクティブを示しています。デスクトップとモバイルの結果は非常に似ています。これらのキャッシュディレクティブの人気について、興味深い観察結果がいくつかあります。
 
-*   `max-age`は`Cache-Control`ヘッダーのほぼ75％で使用され、`no-store`は18％で使用されます。
-*   `private`が指定されない限り、キャッシュされたエントリは`public`であると想定されるため、`public`が必要になることはほとんどありません。回答の約38％に`public`が含まれています。
-*   `immutable`ディレクティブは比較的新しく、[2017年に導入](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook)され、[FirefoxおよびSafariでサポート](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility)されています。その使用率は3.4％に拡大し、[Facebook、Googleのサードパーティのレスポンス](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195)で広く使用されています。
+* `max-age`は`Cache-Control`ヘッダーのほぼ75％で使用され、`no-store`は18％で使用されます。
+* `private`が指定されない限り、キャッシュされたエントリは`public`であると想定されるため、`public`が必要になることはほとんどありません。回答の約38％に`public`が含まれています。
+* `immutable`ディレクティブは比較的新しく、[2017年に導入](https://code.facebook.com/posts/557147474482256/this-browser-tweak-saved-60-of-requests-to-facebook)され、[FirefoxおよびSafariでサポート](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility)されています。その使用率は3.4％に拡大し、[Facebook、Googleのサードパーティのレスポンス](https://discuss.httparchive.org/t/cache-control-immutable-a-year-later/1195)で広く使用されています。
 
 このリストに表示される別の興味深いディレクティブセットは、`pre-check`と`post-check`です。これらは、`Cache-Control`レスポンスヘッダーの2.2％（約780万件のレスポンス）で使用されます。このヘッダーのペアは、[バックグラウンドで検証を提供するためにInternet Explorer 5で導入された](https://blogs.msdn.microsoft.com/ieinternals/2009/07/20/internet-explorers-cache-control-extensions/)ものですが、Webサイトによって正しく実装されることはほとんどありませんでした。これらのヘッダーを使用したレスポンスの99.2％は、`pre-check=0`と`post-check=0`の組み合わせを使用していました。これらのディレクティブの両方が0に設定されている場合、両方のディレクティブは無視されます。したがって、これらのディレクティブは正しく使用されなかったようです！
 
@@ -357,8 +357,8 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 レスポンスをキャッシュ不可に設定しようとすると、いくつかの一般的なエラーが発生します。
 
-*   `Cache-Control: no-cache`の設定は、リソースがキャッシュできないように聞こえるかもしれません。ただし、`no-cache`ディレクティブでは、使用する前にキャッシュされたエントリを再検証する必要があり、キャッシュ不可と同じではありません。
-*   `Cache-Control: max-age = 0`を設定すると、TTLが0秒に設定されますが、これはキャッシュ不可と同じではありません。 max-ageを0に設定すると、リソースはブラウザーのキャッシュに保存され、すぐに無効になります。これにより、ブラウザは条件付きリクエストを実行してリソースの新しさを検証する必要があります。
+* `Cache-Control: no-cache`の設定は、リソースがキャッシュできないように聞こえるかもしれません。ただし、`no-cache`ディレクティブでは、使用する前にキャッシュされたエントリを再検証する必要があり、キャッシュ不可と同じではありません。
+* `Cache-Control: max-age = 0`を設定すると、TTLが0秒に設定されますが、これはキャッシュ不可と同じではありません。 max-ageを0に設定すると、リソースはブラウザーのキャッシュに保存され、すぐに無効になります。これにより、ブラウザは条件付きリクエストを実行してリソースの新しさを検証する必要があります。
 
 機能的には、`no-cache`と`max-age=0`は似ています。どちらもキャッシュされたリソースの再検証を必要とするためです。 `no-cache`ディレクティブは、0より大きい`max-age`ディレクティブと一緒に使用することもできます。
 
@@ -413,15 +413,15 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
     </tr>
     <tr>
      <td>デスクトップ</td>
-     <td><p style="text-align: right">70.7%</p></td>
-     <td><p style="text-align: right">47.9%</p></td>
-     <td><p style="text-align: right">59.2%</p></td>
+     <td class="numeric">70.7%</td>
+     <td class="numeric">47.9%</td>
+     <td class="numeric">59.2%</td>
     </tr>
     <tr>
      <td>モバイル</td>
-     <td><p style="text-align: right">71.4%</p></td>
-     <td><p style="text-align: right">46.8%</p></td>
-     <td><p style="text-align: right">59.6%</p></td>
+     <td class="numeric">71.4%</td>
+     <td class="numeric">46.8%</td>
+     <td class="numeric">59.6%</td>
     </tr>
   </table>
   <figcaption>図11. TTLが短いリクエストの割合。</figcaption>
@@ -516,9 +516,9 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 `Expires`ヘッダーの無効な使用の例は次のとおりです。
 
-*   有効な日付形式ですが、GMT以外のタイムゾーンを使用しています
-*   0や-1などの数値
-*   `Cache-Control`ヘッダーで有効な値
+* 有効な日付形式ですが、GMT以外のタイムゾーンを使用しています
+* 0や-1などの数値
+* `Cache-Control`ヘッダーで有効な値
 
  無効な`Expires`ヘッダーの最大のソースは、人気のあるサードパーティから提供されるアセットからのものです。たとえば、`Expires：Tue、27 Apr 1971 19:44:06 EST`など、日付/時刻はESTタイムゾーンを使用します。
 
@@ -603,21 +603,21 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
     <tbody>
       <tr>
         <td>AppCacheを使用しない</td>
-        <td><p style="text-align: right">5,045,337</p></td>
-        <td><p style="text-align: right">32,241</p></td>
-        <td><p style="text-align: right">5,077,578</p></td>
+        <td class="numeric">5,045,337</td>
+        <td class="numeric">32,241</td>
+        <td class="numeric">5,077,578</td>
       </tr>
       <tr>
         <td>AppCacheを使用する</td>
-        <td><p style="text-align: right">1,816</p></td>
-        <td><p style="text-align: right">51</p></td>
-        <td><p style="text-align: right">1,867</p></td>
+        <td class="numeric">1,816</td>
+        <td class="numeric">51</td>
+        <td class="numeric">1,867</td>
       </tr>
       <tr>
         <td>合計</td>
-        <td><p style="text-align: right">5,047,153</p></td>
-        <td><p style="text-align: right">32,292</p></td>
-        <td><p style="text-align: right">5,079,445</p></td>
+        <td class="numeric">5,047,153</td>
+        <td class="numeric">32,292</td>
+        <td class="numeric">5,079,445</td>
       </tr>
     </tbody>
   </table>
@@ -640,24 +640,24 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
       <tr>
         <th scope="rowgroup" rowspan="2" >HTTP</th>
         <td>AppCacheを使用しない</td>
-        <td><p style="text-align: right">1,968,736</p></td>
-        <td><p style="text-align: right">907</p></td>
+        <td class="numeric">1,968,736</td>
+        <td class="numeric">907</td>
       </tr>
       <tr>
         <td>AppCacheを使用する</td>
-        <td><p style="text-align: right">580</p></td>
-        <td><p style="text-align: right">1</p></td>
+        <td class="numeric">580</td>
+        <td class="numeric">1</td>
       </tr>
       <tr>
         <th scope="rowgroup" rowspan="2" >HTTPS</th>
         <td>AppCacheを使用しない</td>
-        <td><p style="text-align: right">3,076,601</p></td>
-        <td><p style="text-align: right">31,334</p></td>
+        <td class="numeric">3,076,601</td>
+        <td class="numeric">31,334</td>
       </tr>
       <tr>
         <td>AppCacheを使用する</td>
-        <td><p style="text-align: right">1,236</p></td>
-        <td><p style="text-align: right">50</p></td>
+        <td class="numeric">1,236</td>
+        <td class="numeric">50</td>
       </tr>
     </tbody>
   </table>

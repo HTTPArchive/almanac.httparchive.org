@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css?v=20200603181334">
+  <link rel="stylesheet" href="/static/css/2019.css?v=20200707074028">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -82,13 +82,13 @@
       "itemListElement": [{
         "@type": "ListItem",
         "position": 1,
-        "name": "{{ self.breadcrumb_name_1() }}",
-        "item": "https://almanac.httparchive.org/{{lang}}/{{year}}"
+        "name": "{{ lang }}",
+        "item": "https://almanac.httparchive.org/{{lang}}/"
       },{
         "@type": "ListItem",
         "position": 2,
-        "name": "{{ self.breadcrumb_name_2() }}",
-        "item": "{{ self.page_url() }}"
+        "name": "{{ year }}",
+        "item": "https://almanac.httparchive.org/{{lang}}/{{year}}"
       }]
     }
   </script>
@@ -98,23 +98,27 @@
 
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
+{% block non_chapter_nav_links %}
+<li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
+<li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
+<li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
+{% endblock %}
+
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
   {% block header %}
   <header class="alt-bg">
     <div class="container">
       <div class="top-header">
-        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
+        <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
+          {{ self.web_almanac_logo() }}
+        </a>
         <nav aria-label="{{ self.page_navigation() }}">
           <ul>
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
-            {% if supported_years | length > 1 %}
+            {{ self.non_chapter_nav_links() }}
             <li>
               {{ year_switcher('header') }}
             </li>
-            {% endif %}
             <li>
               {{ language_switcher('header') }}
             </li>
@@ -127,22 +131,17 @@
             <span class="menu-btn__bar"></span>
           </button>
           <ul class="menu">
-            <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
-            <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-            <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
-            <li>
-            {% if supported_years | length > 1 %}
+            {{ self.non_chapter_nav_links() }}
             <li>
               {{ year_switcher('mobile') }}
             </li>
-            {% endif %}
             <li>
               {{ language_switcher('mobile') }}
             </li>
             <li class="misc">
               <ul class="misc">
                 <li>
-                  <a href="https://httparchive.org/" class="navigation-logo" aria-labelledby="ha-logo-mobile">
+                  <a href="https://httparchive.org/" aria-labelledby="ha-logo-mobile">
                     <svg width="70" height="35" role="img">
                       <title id="ha-logo-mobile">{{ self.http_archive_link() }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
@@ -184,93 +183,95 @@
 
   {% block footer %}
     <footer class="alt-bg">
-      <a class="navigation-logo home-logo" href="{{ url_for('home', year=year, lang=lang) }}"><img src="/static/images/logo.svg" alt="{{ self.organization() }}" height="39" width="202"></a>
-      <hr>
-      <nav aria-label="{{ self.footer_title() }}" class="nav-items">
-        <ul>
-          <li><a href="{{ url_for('table_of_contents', year=year, lang=lang) }}">{{ self.table_of_contents_title() }}</a></li>
-          <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
-          <li><a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a></li>
-          {% if supported_years | length > 1 %}
-          <li>
-            {{ year_switcher('footer') }}
-          </li>
-          {% endif %}
-          <li>
-            {{ language_switcher('footer') }}
-          </li>
-        </ul>
-      </nav>
-      <div class="mobile-ha-social-media">
-        <a class="navigation-logo ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
+      <div class="container">
+        <div class="home-logo">
+          <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
+            {{ self.web_almanac_logo() }}
+          </a>
+        </div>
+        <hr>
+        <nav aria-label="{{ self.footer_title() }}" class="nav-items">
+          <ul>
+            {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ year_switcher('footer') }}
+            </li>
+            <li>
+              {{ language_switcher('footer') }}
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-ha-social-media">
+          <a class="ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
+            <svg width="70" height="35" role="img">
+              <title id="httparchive-logo-footer-mobile">{{ self.http_archive_link() }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+            </svg>
+          </a>
+          <ul class="social-media">
+            <li>
+              <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer-mobile">
+                <svg width="20" height="20" role="img">
+                  <title id="twitter-logo-footer-mobile">Twitter</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer-mobile">
+                <svg width="20" height="20" role="img">
+                  <title id="github-logo-footer-mobile">GitHub</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr>
+        <p class="copyright">
+          <span>{{ self.copyright() }}</span>
+          <br>
+          <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
+        </p>
+        <a class="ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
           <svg width="70" height="35" role="img">
-            <title id="httparchive-logo-footer-mobile">{{ self.http_archive_link() }}</title>
+            <title id="ha-logo-footer">{{ self.http_archive_link() }}</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
           </svg>
         </a>
-        <ul class="social-media">
+        <ul class="social-media not-mobile">
           <li>
-            <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer-mobile">
+            <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer">
               <svg width="20" height="20" role="img">
-                <title id="twitter-logo-footer-mobile">Twitter</title>
+                <title id="twitter-logo-footer">Twitter</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
           </li>
           <li>
-            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer-mobile">
+            <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer">
               <svg width="20" height="20" role="img">
-                <title id="github-logo-footer-mobile">GitHub</title>
+                <title id="github-logo-footer">GitHub</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
           </li>
         </ul>
       </div>
-      <hr>
-      <p class="copyright">
-        <span>{{ self.copyright() }}</span>
-        <br>
-        <a href="{{ url_for('accessibility_statement', lang=lang) }}">{{ self.accessibility_statement() }}</a>
-      </p>
-      <a class="navigation-logo ha-logo not-mobile" href="https://httparchive.org/" aria-labelledby="ha-logo-footer">
-        <svg width="70" height="35" role="img">
-          <title id="ha-logo-footer">{{ self.http_archive_link() }}</title>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
-        </svg>        
-      </a>
-      <ul class="social-media not-mobile">
-        <li>
-          <a href="https://twitter.com/HTTPArchive" aria-labelledby="twitter-logo-footer">
-            <svg width="20" height="20" role="img">
-              <title id="twitter-logo-footer">Twitter</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/HTTPArchive/almanac.httparchive.org" aria-labelledby="github-logo-footer">
-            <svg width="20" height="20" role="img">
-              <title id="github-logo-footer">GitHub</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
     </footer>
   {% endblock %}
   {% block scripts %}
     <script nonce="{{ csp_nonce() }}">
       (function() {
-        // Language switching
-        var languageSwitchers = document.querySelectorAll('.language-switcher select');
-        for (var i = 0; i < languageSwitchers.length; i++) {
-          languageSwitchers[i].addEventListener('change', function(e) {
+        // Language and Year switching
+        var languageYearSwitchers = document.querySelectorAll('.language-switcher select, .year-switcher select');
+        for (var i = 0; i < languageYearSwitchers.length; i++) {
+          languageYearSwitchers[i].addEventListener('change', function(e) {
             //Reset the selector back in case user uses Back button
-            var selectedLanguage = e.target.value;
-            if (selectedLanguage && selectedLanguage !== window.location.pathname) {
+            var selectedValue = e.target.value;
+            if (selectedValue && selectedValue !== window.location.pathname) {
               e.target.value = window.location.pathname;
-              window.location = selectedLanguage;
+              window.location = selectedValue;
             }
           });
         }
@@ -323,12 +324,16 @@
 <div class="language-switcher">
   <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
   <select id="language-switcher-{{switcher_name}}">
-    {% for l in supported_languages %}
-    <option
-      {% if l == language %}selected="selected"{% endif %}
-      lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}" >
+    {% for l in supported_languages | sort(attribute='_local_name') %}
+    {% if l == language %}
+    <option selected="selected" lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
       {{ l }}
     </option>
+    {% else %}
+    <option lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+      {{ l }}
+    </option>
+    {% endif %}
     {% endfor %}
     <option disabled="disabled" aria-hidden="true">
       ────
@@ -340,21 +345,43 @@
 </div>
 {% endmacro %}
 
-{% macro year_switcher(switcher_name) %}
-<div class="year-switcher">
-  <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
-  <select id="year-switcher-{{switcher_name}}">
-      {% for y in supported_years %}
-        <option
-          {% if y == year %}selected="selected"{% endif %}
-          value="{{ url_for('table_of_contents', **get_view_args(year=y)) }}">
-          {{ edition(y) }}
-        </option>
-      {% endfor %}
-  </select>
-</div>
-{% endmacro %}
-
+{# Check if year_switcher already defined in child template as macros can't be overridden #}
+{% if not year_switcher %}
+  {% macro year_switcher(switcher_name) %}
+    {# Only show if we currently support multi-year #}
+    {% if all_supported_years|length > 1  %}
+      <div class="year-switcher">
+        <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
+        <select id="year-switcher-{{switcher_name}}">
+            {% for y in supported_years | sort %}
+              {% if y == year %}
+              <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
+                {{ y }}
+              </option>
+              {% else %}
+              <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
+                {{ y }}
+              </option>
+              {% endif %}
+            {% endfor %}
+            {# If the current page doesn't support a year, then show a home link for that year #}
+            {% if supported_years|length < all_supported_years|length %}
+              <option disabled="disabled" aria-hidden="true">
+                ────
+              </option>
+              {% for y in all_supported_years | sort %}
+              {% if y not in supported_years %}
+              <option value="{{ url_for('home', lang=lang,year=y) }}">
+                {{ y }} {{ self.home() }}
+              </option>
+              {% endif %}
+              {% endfor %}
+            {% endif %}
+        </select>
+      </div>
+    {% endif %}
+  {% endmacro %}
+{% endif %}
 
 {% block index_menu_script %}
 <script nonce="{{ csp_nonce() }}">
