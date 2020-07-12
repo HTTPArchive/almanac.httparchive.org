@@ -28,7 +28,7 @@ app = MyFlask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 10800
 talisman = Talisman(app,
          content_security_policy=csp,
-         content_security_policy_nonce_in=['script-src'],
+         content_security_policy_nonce_in=['script-src','style-src'],
          feature_policy=feature_policy)
 logging.basicConfig(level=logging.DEBUG)
 

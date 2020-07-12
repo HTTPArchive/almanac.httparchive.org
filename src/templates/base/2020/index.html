@@ -22,7 +22,7 @@
 {% block styles %}
   {{ super() }}
   <link rel="stylesheet" href="/static/css/index.css?v=20200707100400">
-  <style>
+  <style nonce="{{ csp_nonce() }}">
 .intro {
   max-width: 600px;
 }
