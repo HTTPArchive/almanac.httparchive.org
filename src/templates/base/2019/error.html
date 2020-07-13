@@ -8,7 +8,7 @@
 
 {% block styles %}
 {{ super() }}
-<style>
+<style nonce="{{ csp_nonce() }}">
 .main a.btn, .main a.btn:visited {
   color: #fff;
 }
