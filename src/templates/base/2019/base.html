@@ -107,13 +107,13 @@
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
   {% block header %}
-  <header class="alt-bg">
+  <header id="header" class="alt-bg">
     <div class="container">
       <div class="top-header">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
           {{ self.web_almanac_logo() }}
         </a>
-        <nav aria-label="{{ self.page_navigation() }}">
+        <nav id="header-page-navigation" aria-label="{{ self.page_navigation() }}">
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
@@ -138,7 +138,7 @@
             <li>
               {{ language_switcher('mobile') }}
             </li>
-            <li class="misc">
+            <li id="mobile-misc" class="misc">
               <ul class="misc">
                 <li>
                   <a href="https://httparchive.org/" aria-labelledby="ha-logo-mobile">
@@ -182,7 +182,7 @@
   </div>
 
   {% block footer %}
-    <footer class="alt-bg">
+    <footer id="footer" class="alt-bg">
       <div class="container">
         <div class="home-logo">
           <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
@@ -190,7 +190,7 @@
           </a>
         </div>
         <hr>
-        <nav aria-label="{{ self.footer_title() }}" class="nav-items">
+        <nav id="footer-nav-items" aria-label="{{ self.footer_title() }}" class="nav-items">
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
@@ -201,7 +201,7 @@
             </li>
           </ul>
         </nav>
-        <div class="mobile-ha-social-media">
+        <div id="footer-mobile-social-media" class="mobile-ha-social-media">
           <a class="ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
             <svg width="70" height="35" role="img">
               <title id="httparchive-logo-footer-mobile">{{ self.http_archive_link() }}</title>
