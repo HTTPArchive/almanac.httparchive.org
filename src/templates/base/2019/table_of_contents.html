@@ -6,7 +6,7 @@
 
 {% block styles %}
 {{ super() }}
-<style>
+<style nonce="{{ csp_nonce() }}">
 .main {
   margin-bottom: 100px;
   padding-left: 10px;
