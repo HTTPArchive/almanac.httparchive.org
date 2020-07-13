@@ -16,7 +16,7 @@ There are several ways to contribute to the Web Almanac:
 
 **[Authors](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide)** are subject matter experts and lead the content direction for each chapter. Chapters typically have one or two authors. Authors are responsible for planning the outline of the chapter, analyzing stats and trends, and writing the annual report.
 
-**[Revewiers](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Reviewers'-Guide)** are also subject matter experts and assist authors with technical reviews during the planning, analyzing, and writing phases.
+**[Reviewers](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Reviewers'-Guide)** are also subject matter experts and assist authors with technical reviews during the planning, analyzing, and writing phases.
 
 **[Analysts](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Analysts'-Guide)** are responsible for researching the stats and trends used throughout the Almanac. Analysts work closely with authors and reviewers during the planning phase to give direction on the types of stats that are possible from the dataset, and during the analyzing/writing phases to ensure that the stats are used correctly.
 
