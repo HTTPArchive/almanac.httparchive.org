@@ -107,7 +107,7 @@
 {% block content%}
   <div id="skiptocontent"><a href="#maincontent">{{ self.skip_navigation() }}</a></div>
   {% block header %}
-  <header class="alt-bg">
+  <header id="header" class="alt-bg">
     <div class="container">
       <div class="top-header">
         <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
@@ -182,7 +182,7 @@
   </div>
 
   {% block footer %}
-    <footer class="alt-bg">
+    <footer id="footer" class="alt-bg">
       <div class="container">
         <div class="home-logo">
           <a class="navigation-logo" href="{{ url_for('home', year=year, lang=lang) }}">
