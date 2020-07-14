@@ -1,9 +1,7 @@
 csp = {
     'default-src': '\'self\'',
     'style-src': [
-        '\'self\'',
-        '\'unsafe-inline\'',
-        'fonts.googleapis.com'
+        '\'self\''
     ],
     'script-src': [
         '\'self\'',
@@ -11,8 +9,7 @@ csp = {
         'www.googletagmanager.com'
     ],
     'font-src': [
-        '\'self\'',
-        'fonts.gstatic.com'
+        '\'self\''
     ],
     'connect-src': [
         '\'self\'',
@@ -24,7 +21,6 @@ csp = {
         '\'self\'',
         'www.google-analytics.com',
         'www.googletagmanager.com',
-        'stats.g.doubleclick.net',
         '*.githubusercontent.com',
         '*.google.com',
         'ssl.gstatic.com',

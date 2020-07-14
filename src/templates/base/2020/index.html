@@ -22,7 +22,7 @@
 {% block styles %}
   {{ super() }}
   <link rel="stylesheet" href="/static/css/index.css?v=20200707100400">
-  <style>
+  <style nonce="{{ csp_nonce() }}">
 .intro {
   max-width: 600px;
 }
@@ -45,7 +45,7 @@
   .intro h2 b {
     display: block;
   }
-  
+
   .methodology-container {
     margin-top: 200px;
     padding: 0;
@@ -55,13 +55,14 @@
   </style>
 {% endblock %}
 
-{# Hide the TOC, Contributors and Methodology for now #}
+{# Hide the TOC and Methodology for now #}
 {% block non_chapter_nav_links %}
+<li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 {% endblock %}
 
 {% block main %}
 <main id="maincontent">
-  <section class="intro-container">
+  <section id="intro" class="intro-container">
     <div class="intro">
       <div class="intro-year">{{ year }}</div>
       <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
@@ -71,11 +72,11 @@
     <div class="intro-image-wrapper">
       <svg viewBox="0 0 56 16">
         <text x="8" y="15">{{ year }}</text>
-      </svg>      
+      </svg>
       <img src="/static/images/home-hero.png" alt="">
     </div>
   </section>
-  <section class="methodology-container">
+  <section id="methodology" class="methodology-container">
     <div class="methodology">
       <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
     </div>
