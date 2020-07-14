@@ -266,6 +266,16 @@
       "github": "aleyda",
       "twitter": "aleyda"
     },
+    "triblondon": {
+      "name": "Andrew Betts",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1735391?v=4&s=200",
+      "website": "https://trib.tv/",
+      "github": "triblondon",
+      "twitter": "triblondon"
+    },
     "dotjs": {
       "name": "Andrew Galloni",
       "teams": [
@@ -901,6 +911,16 @@
       "website": "https://dimension85.com/",
       "github": "dimension85",
       "twitter": "dimension85"
+    },
+    "dooman87": {
+      "name": "Pokidov N. Dmitry",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars3.githubusercontent.com/u/124110?v=4&s=200",
+      "website": "https://pixboost.com",
+      "github": "dooman87",
+      "twitter": "otherpunk"
     },
     "rachelandrew": {
       "name": "Rachel Andrew",
