@@ -243,15 +243,22 @@ def accessibility_statement(lang):
 
 
 @app.route('/sitemap.xml')
+# Chrome and Safari use inline styles to display XMLs files.
+# https://bugs.chromium.org/p/chromium/issues/detail?id=924962
+# Override default CSP (including turning off nonce) to allow sitemap to display
+@talisman(
+    content_security_policy = { 'default-src': ['\'self\''], 'script-src': ['\'self\''], 'style-src': ['\'unsafe-inline\''], 'img-src': ['\'self\'', 'data:'] },
+    content_security_policy_nonce_in=['script-src']
+)
 def sitemap():
+    # Flask-Talisman doesn't allow override of content_security_policy_nonce_in
+    # per route yet
+    # https://github.com/GoogleCloudPlatform/flask-talisman/issues/62
+    # So remove Nonce value from request object for now which has same effect
+    delattr(request,'csp_nonce')
     xml = render_template('sitemap.xml')
     resp = app.make_response(xml)
     resp.mimetype = "text/xml"
-    # Chrome and Safari use inline styles to display XMLs files.
-    # https://bugs.chromium.org/p/chromium/issues/detail?id=924962
-    # Override default CSP (including turning off nonce) to allow sitemap to display
-    talisman.content_security_policy_nonce_in=[]
-    talisman.content_security_policy = {'default-src': ['\'self\''], 'style-src': ['\'unsafe-inline\''],'img-src': ['\'self\'','data:']}
     return resp
 
 
