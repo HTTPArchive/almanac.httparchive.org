@@ -215,7 +215,8 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/2914966?v=4&s=200",
-      "github": "dotjs"
+      "github": "dotjs",
+      "twitter": "dot_js"
     },
     "bazzadp": {
       "name": "Barry Pollard",
@@ -247,7 +248,8 @@
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/2506926?v=4&s=200",
       "website": "http:\/\/svgees.us\/",
-      "github": "svgeesus"
+      "github": "svgeesus",
+      "twitter": "svgeesus"
     },
     "obto": {
       "name": "David Fox",
@@ -279,7 +281,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/69888?v=4&s=200",
       "website": "http:\/\/standardista.com\/",
-      "github": "estelle"
+      "github": "estelle",
+      "estellevw": "estellevw"
     },
     "jyrkialakuijala": {
       "name": "Jyrki Alakuijala",
@@ -305,7 +308,8 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/50970808?v=4&s=200",
-      "github": "henrihelvetica"
+      "github": "henrihelvetica",
+      "twitter": "HenriHelvetica"
     },
     "iandevlin": {
       "name": "Ian Devlin",
@@ -314,7 +318,8 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/554326?v=4&s=200",
       "website": "https://iandevlin.com",
-      "github": "iandevlin"
+      "github": "iandevlin",
+      "twitter": "iandevlin"
     },
     "jpamental": {
       "name": "Jason Pamental",
@@ -323,7 +328,8 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/537413?v=4&s=200",
       "website": "http://rwt.io",
-      "github": "jpamental"
+      "github": "jpamental",
+      "twitter": "jpamental"
     },
     "j9t": {
       "name": "Jens Oliver Meiert",
@@ -341,7 +347,8 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/375731?v=4&s=200",
-      "github": "thefoxis"
+      "github": "thefoxis",
+      "twitter": "fox"
     },
     "LeaVerou": {
       "name": "Lea Verou",
@@ -360,7 +367,8 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/829214?v=4&s=200",
       "website": "https://twitter.com/zizzamia",
-      "github": "Zizzamia"
+      "github": "Zizzamia",
+      "twitter": "Zizzamia"
     },
     "max-ostapenko": {
       "name": "Max Ostapenko",
@@ -379,7 +387,8 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1043031?v=4&s=200",
-      "github": "ipullrank"
+      "github": "ipullrank",
+      "twitter": "IPullRank"
     },
     "notwaldorf": {
       "name": "Monica Dinculescu",
@@ -388,7 +397,18 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1369170?v=4&s=200",
       "website": "https://twitter.com/notwaldorf",
-      "github": "notwaldorf"
+      "github": "notwaldorf",
+      "twitter": "notwaldorf"
+    },
+    "phacks": {
+      "name": "Nicolas Goutay",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2587348?v=4&s=200",
+      "website": "https://twitter.com/notwaldorf",
+      "github": "phacks",
+      "twitter": "Phacks"
     },
     "nrllh": {
       "name": "Nurullah Demir",
@@ -429,7 +449,8 @@
       ],
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/2764898?v=4&s=200",
       "website": "https:\/\/rachelandrew.co.uk\/",
-      "github": "rachelandrew"
+      "github": "rachelandrew",
+      "twitter": "rachelandrew"
     },
     "rviscomi": {
       "name": "Rick Viscomi",
@@ -477,7 +498,8 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/4945616?v=4&s=200",
-      "github": "spanicker"
+      "github": "spanicker",
+      "twitter": "shubhie"
     },
     "simonhearne": {
       "name": "Simon Hearne",
@@ -486,16 +508,19 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/496189?v=4&s=200",
       "website": "https://simonhearne.com",
-      "github": "simonhearne"
+      "github": "simonhearne",
+      "twitter": "simonhearne"
     },
     "tpiros": {
       "name": "Tamas Piros",
       "teams": [
+        "analysts",
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/2042718?v=4&s=200",
       "website": "https://www.fullstacktraining.com",
-      "github": "tpiros"
+      "github": "tpiros",
+      "twitter": "tpiros"
     },
     "tkadlec": {
       "name": "Tim Kadlec",
@@ -503,7 +528,8 @@
         "authors"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com/u/66536?v=4&s=200",
-      "github": "tkadlec"
+      "github": "tkadlec",
+      "twitter": "tkadlec"
     },
     "tomvangoethem": {
       "name": "Tom Van Goethem",
@@ -511,7 +537,8 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/4355579?v=4&s=200",
-      "github": "tomvangoethem"
+      "github": "tomvangoethem",
+      "twitter": "tomvangoethem"
     },
     "ydimova": {
       "name": "Yana Dimova",
