@@ -204,8 +204,8 @@
     "editors": {
       "name": "Editors"
     },
-    "leaders": {
-      "name": "Leaders"
+    "leads": {
+      "name": "Leads"
     },
     "reviewers": {
       "name": "Reviewers"
@@ -337,7 +337,7 @@
       "teams": [
         "developers",
         "editors",
-        "leaders",
+        "leads",
         "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
@@ -422,7 +422,7 @@
       "teams": [
         "analysts",
         "editors",
-        "leaders",
+        "leads",
         "reviewers"
       ],
       "avatar_url": "https://avatars2.githubusercontent.com/u/684747?v=4&s=200",
@@ -886,7 +886,7 @@
       "teams": [
         "analysts",
         "developers",
-        "leaders",
+        "leads",
         "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/7459458?v=4&s=200",
@@ -948,7 +948,7 @@
         "analysts",
         "developers",
         "editors",
-        "leaders",
+        "leads",
         "reviewers"
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/1120896?v=4&s=200",
