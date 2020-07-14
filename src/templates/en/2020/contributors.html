@@ -1,11 +1,11 @@
-{% extends "base/2020/contributors.html" %}
+{% extends "base/{{ year }}/contributors.html" %}
 
-{% block title %}2020 Contributors | The Web Almanac by HTTP Archive{% endblock %}
+{% block title %}{{ year }} Contributors | The Web Almanac by HTTP Archive{% endblock %}
 
-{% block description %}The {{ config.contributors.items() | length }} people who contributed to the 2020 Web Almanac as Analysts, Authors, Brainstormers, Designers, Developers, Editors, Reviewers and Translators.{% endblock %}
+{% block description %}The {{ config.contributors.items() | length }} people who contributed to the {{ year }} Web Almanac as Analysts, Authors, Designers, Developers, Editors, Leaders, Reviewers and Translators.{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}
+{% block date_published %}2020-07-14T00:00:00.000Z{% endblock %}
+{% block date_modified %}2020-07-14T00:00:00.000Z{% endblock %}
 
 {% block filter_by_team %}Filter by team: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> of <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> contributors.{% endblock %}
 

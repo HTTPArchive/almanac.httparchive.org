@@ -159,9 +159,6 @@
     "authors": {
       "name": "Authors"
     },
-    "brainstormers": {
-      "name": "Brainstormers"
-    },
     "designers": {
       "name": "Designers"
     },
@@ -170,6 +167,9 @@
     },
     "editors": {
       "name": "Editors"
+    },
+    "leaders": {
+      "name": "Leaders"
     },
     "reviewers": {
       "name": "Reviewers"
@@ -220,9 +220,10 @@
     "bazzadp": {
       "name": "Barry Pollard",
       "teams": [
-        "reviewers",
+        "developers",
         "editors",
-        "developers"
+        "leaders",
+        "reviewers"
       ],
       "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/10931297?v=4&s=200",
       "website": "https:\/\/www.tunetheweb.com",
@@ -251,9 +252,10 @@
     "obto": {
       "name": "David Fox",
       "teams": [
-        "reviewers",
         "analysts",
-        "editors"
+        "editors",
+        "leaders",
+        "reviewers"
       ],
       "avatar_url": "https:\/\/avatars2.githubusercontent.com\/u\/684747?v=4&s=200",
       "website": "https:\/\/www.lookzook.com",
@@ -270,24 +272,6 @@
       "github": "dsadhanala",
       "twitter": "dsadhanala"
     },
-    "jyrkialakuijala": {
-      "name": "Jyrki Alakuijala",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "https://avatars1.githubusercontent.com/u/9086028?v=4&s=200",
-      "github": "jyrkialakuijala"
-    },
-    "LeaVerou": {
-      "name": "Lea Verou",
-      "teams": [
-        "authors"
-      ],
-      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/175836?v=4&s=200",
-      "website": "http:\/\/lea.verou.me\/",
-      "github": "LeaVerou",
-      "twitter": "leaverou"
-    },
     "estelle": {
       "name": "Estelle Weyl",
       "teams": [
@@ -296,6 +280,14 @@
       "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/69888?v=4&s=200",
       "website": "http:\/\/standardista.com\/",
       "github": "estelle"
+    },
+    "jyrkialakuijala": {
+      "name": "Jyrki Alakuijala",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9086028?v=4&s=200",
+      "github": "jyrkialakuijala"
     },
     "hemanth": {
       "name": "hemanth.hm",
@@ -350,6 +342,16 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/375731?v=4&s=200",
       "github": "thefoxis"
+    },
+    "LeaVerou": {
+      "name": "Lea Verou",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https:\/\/avatars1.githubusercontent.com\/u\/175836?v=4&s=200",
+      "website": "http:\/\/lea.verou.me\/",
+      "github": "LeaVerou",
+      "twitter": "leaverou"
     },
     "Zizzamia": {
       "name": "Leonardo Zizzamia",
@@ -407,6 +409,19 @@
       "website": "http://www.opentagclosetag.com/",
       "github": "oluoluoxenfree"
     },
+    "paulcalvano": {
+      "name": "Paul Calvano",
+      "teams": [
+        "analysts",
+        "brainstormers",
+        "authors",
+        "developers",
+        "leaders"
+      ],
+      "avatar_url": "https:\/\/avatars3.githubusercontent.com\/u\/7459458?v=4&s=200",
+      "github": "paulcalvano",
+      "twitter": "paulcalvano"
+    },
     "rachelandrew": {
       "name": "Rachel Andrew",
       "teams": [
@@ -419,10 +434,11 @@
     "rviscomi": {
       "name": "Rick Viscomi",
       "teams": [
-        "reviewers",
         "analysts",
         "developers",
-        "editors"
+        "editors",
+        "leaders",
+        "reviewers"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/1120896?v=4&s=200",
       "github": "rviscomi",
@@ -447,8 +463,8 @@
     "ibnesayeed": {
       "name": "Sawood Alam",
       "teams": [
-        "reviewers",
-        "developers"
+        "developers",
+        "reviewers"
       ],
       "avatar_url": "https:\/\/avatars0.githubusercontent.com\/u\/65147?v=4&s=200",
       "website": "https:\/\/www.cs.odu.edu\/~salam\/",
@@ -500,8 +516,8 @@
     "ydimova": {
       "name": "Yana Dimova",
       "teams": [
-        "authors",
-        "analysts"
+        "analysts",
+        "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/9135107?v=4&s=200",
       "github": "ydimova"
