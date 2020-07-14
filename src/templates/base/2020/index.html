@@ -45,7 +45,7 @@
   .intro h2 b {
     display: block;
   }
-  
+
   .methodology-container {
     margin-top: 200px;
     padding: 0;
@@ -55,8 +55,9 @@
   </style>
 {% endblock %}
 
-{# Hide the TOC, Contributors and Methodology for now #}
+{# Hide the TOC and Methodology for now #}
 {% block non_chapter_nav_links %}
+<li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 {% endblock %}
 
 {% block main %}
@@ -71,7 +72,7 @@
     <div class="intro-image-wrapper">
       <svg viewBox="0 0 56 16">
         <text x="8" y="15">{{ year }}</text>
-      </svg>      
+      </svg>
       <img src="/static/images/home-hero.png" alt="">
     </div>
   </section>
