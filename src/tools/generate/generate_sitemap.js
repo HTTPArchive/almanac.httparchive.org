@@ -13,9 +13,9 @@ const static_pages = [
 ];
 const ebook_path = "static/pdfs/web_almanac_";
 
-const generate_sitemap = async (sitemap_chapters) => {
+const generate_sitemap = async (sitemap_chapters,sitemap_languages) => {
 
-  const urls = await get_static_pages(sitemap_chapters);
+  const urls = await get_static_pages(sitemap_languages);
 
   for (let sitemap_chapter of sitemap_chapters) {
     let { language, year, chapter, metadata } = sitemap_chapter;
@@ -39,10 +39,15 @@ const generate_sitemap = async (sitemap_chapters) => {
   return sitemap_path;
 };
 
-const get_static_pages = async (sitemap_chapters) => {
+const get_static_pages = async (sitemap_languages) => {
 
-  // Get distinct languages and years
-  const languages_and_years = [...new Set(sitemap_chapters.map((x) => `${x.language}/${x.year}`))];
+  var languages_and_years = [];
+
+  for (const year in sitemap_languages) {
+    for (const languages in sitemap_languages[year]) {
+      languages_and_years.push(`${sitemap_languages[year][languages]}/${year}`);
+    }
+  }
 
   // Get all of the static pages for each combination
   const files = languages_and_years
@@ -64,10 +69,9 @@ const get_static_pages = async (sitemap_chapters) => {
   }
 
   // For ebooks find out if the PDF exists, get lastmod from template
-  const years = [...new Set(sitemap_chapters.map((x) => `${x.year}`))];
-  const languages = [...new Set(sitemap_chapters.map((x) => `${x.language}`))];
-  for (const year of years) {
-    for (const language of languages) {
+  for (const year in sitemap_languages) {
+    for (const languages in sitemap_languages[year]) {
+      const language = sitemap_languages[year][languages];
       const ebook_pdf = ebook_path + year + '_' + language + '.pdf';
       const ebook_html = 'templates/' + language + '/' + year + '/ebook.html';
       if (fs.existsSync(ebook_pdf)) {
