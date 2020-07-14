@@ -11,7 +11,7 @@
 {%- elif featured_chapter == "css" %}
   {%- set featured_chapter_name = "CSS" %}
   {%- set featured_chapter_quote = "Cascading Style Sheets (CSS) は、Web ページのペイント、フォーマット、レイアウトに使用されます。その機能は、テキストの色から3Dパースペクティブと、シンプルな概念にまで及びます。また、さまざまな画面サイズ、表示コンテキスト、および印刷を処理するために開発者に力を与えるフックを持っています。CSS は、開発者がコンテンツを調整し、ユーザーに適切に適応することを確認するのに役立ちます。" %}
-  {%- set featured_chapter_stats = {"stat1":"5%","label1":"Pages using custom properties","stat2":"2%","label2":"CSS Gridを使用しているサイト","stat3":"780","label3":"Z-Indexの最大値の桁数"} %}
+  {%- set featured_chapter_stats = {"stat1":"5%","label1":"カスタムプロパティを使用したページ","stat2":"2%","label2":"CSS Gridを使用しているサイト","stat3":"780","label3":"Z-Indexの最大値の桁数"} %}
 {%- elif featured_chapter == "markup" %}
   {%- set featured_chapter_name = "マークアップ" %}
   {%- set featured_chapter_quote = "2019年7月現在、HTTP Archiveは、約440万件のデスクトップホームページと約530万件のモバイルホームページについて、DOM内で使用されているすべての<em>要素</em>名の収集を開始しており、これにより調査と解剖を開始することができるようになりました。このクロールでは、これらのページで5,000以上の明確な<em>非標準要素名</em>に遭遇したので、私たちがカウントしている要素の合計の明確な数を「トップ」の5,048に制限しました。" %}
@@ -62,7 +62,7 @@
   {%- set featured_chapter_stats = {"stat1":"40%","label1":"CMSを利用したページ","stat2":"74%","label2":"WordPressを利用したCMSサイト","stat3":"1,232 KB","label3":"デスクトップCMSページごとに読み込まれる画像KBの中央値。"} %}
 {%- elif featured_chapter == "compression" %}
   {%- set featured_chapter_name = "圧縮" %}
-  {%- set featured_chapter_quote = "JavaScriptは、ブラウザに送信するリソースの中で最もコストのかかるもので、ダウンロード、解析、コンパイル、そして最終的に実行されます。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、ダウンロードと実行は、JavaScriptがウェブページで処理される際に最もコストのかかる段階となっています。" %}
+  {%- set featured_chapter_quote = "HTTP圧縮とは、元の表現よりも少ないビット数で情報をエンコードすることを可能にする技術です。ウェブコンテンツの配信に使用すると、ウェブサーバーがクライアントに送信するデータ量を減らすことができます。これにより、クライアントの利用可能な帯域幅の効率が向上し、ページの重さが軽減され、ウェブパフォーマンスが向上します。" %}
   {%- set featured_chapter_stats = {"stat1":"38%","label1":"テキストベースの圧縮を使用したHTTPレスポンス","stat2":"80%","label2":"gzip圧縮の使用","stat3":"56%","label3":"圧縮を使用していないHTMLレスポンス"} %}
 {%- elif featured_chapter == "caching" %}
   {%- set featured_chapter_name = "キャッシング" %}
@@ -85,7 +85,7 @@
   {%- set featured_chapter_quote = "HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。" %}
   {%- set featured_chapter_stats = {"stat1":"95%","label1":"HTTP/2を使用できるグローバルユーザーの割合。","stat2":"27.83%","label2":"準最適なHTTP/2優先順位付けによるモバイル要求の割合。","stat3":"8.38%","label3":"QUICをサポートするモバイルサイトの割合。"} %}
 {%- endif %}
-<section class="featured-chapter">
+<section id="featured-chapter" class="featured-chapter">
   <div class="featured-chapter-content">
     <h2 class="title title-center">注目の章</h2>
     <h3>{{ featured_chapter_name }}</h3>
