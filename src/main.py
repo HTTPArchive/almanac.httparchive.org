@@ -247,6 +247,11 @@ def sitemap():
     xml = render_template('sitemap.xml')
     resp = app.make_response(xml)
     resp.mimetype = "text/xml"
+    # Chrome and Safari use inline styles to display XMLs files.
+    # https://bugs.chromium.org/p/chromium/issues/detail?id=924962
+    # Override default CSP (including turning off nonce) to allow sitemap to display
+    talisman.content_security_policy_nonce_in=[]
+    talisman.content_security_policy = {'default-src': ['\'self\''], 'style-src': ['\'unsafe-inline\''],'img-src': ['\'self\'','data:']}
     return resp
 
 
