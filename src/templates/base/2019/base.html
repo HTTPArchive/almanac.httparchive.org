@@ -117,10 +117,10 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
-              {{ year_switcher('header') }}
+              {{ language_switcher('header') }}
             </li>
             <li>
-              {{ language_switcher('header') }}
+              {{ year_switcher('header') }}
             </li>
           </ul>
         </nav>
@@ -300,12 +300,12 @@
           toggleNavMenu();
           event.stopPropagation();
         });
-        
+
         /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
         menuNav.addEventListener('click', function () {
           event.stopPropagation();
         });
-        
+
         menuNav.addEventListener('keydown', function (event) {
           if (event.key === 'Escape') {
             if (menuBtn.getAttribute('aria-expanded') === 'true') {
@@ -388,14 +388,14 @@
 
   var indexBox = document.querySelector('.index-box');
   var indexBoxTitle = document.querySelector('.index .index-btn');
-  
+
   indexBoxTitle.addEventListener('click', function(e) {
     var indexOpen = indexBox.classList.toggle('show');
     indexBoxTitle.setAttribute('aria-expanded',indexOpen);
     var ariaLabel = indexOpen ?  "{{ self.close_the_index() }}" : "{{ self.open_the_index() }}";
     indexBoxTitle.setAttribute('aria-label',ariaLabel);
   });
-  
+
   indexBox.addEventListener("keydown", function onPress(event) {
     if (event.key === 'Escape') {
       if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {
