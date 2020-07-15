@@ -301,7 +301,6 @@ def static_from_root():
 def default_favicon():
     return send_from_directory(app.static_folder, 'images/favicon.ico')
 
-
 @app.route('/<lang>/<year>/ebook')
 @validate
 def ebook(lang, year):
