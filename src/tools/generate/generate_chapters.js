@@ -64,7 +64,7 @@ const generate_chapters = async () => {
   await generate_ebooks(ebook_chapters,configs);
   await generate_js();
 
-  const sitemap_path = await generate_sitemap(sitemap);
+  const sitemap_path = await generate_sitemap(sitemap,sitemap_languages);
   await size_of(sitemap_path);
 };
 

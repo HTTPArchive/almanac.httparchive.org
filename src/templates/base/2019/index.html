@@ -26,7 +26,7 @@
 
 {% block main %}
 <main id="maincontent">
-  <section class="intro-container">
+  <section id="intro" class="intro-container">
     <div class="intro">
       <div class="intro-year">{{ year }}</div>
       <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
@@ -44,7 +44,7 @@
     </div>
   </section>
   {% include "%s/2019/featured_chapters.html" % lang %}
-  <section class="contributors-container alt-bg">
+  <section id="contributors" class="contributors-container alt-bg">
     <div class="contributors">
       <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
       <p>{{ self.contributors_description() }}</p>
@@ -59,7 +59,7 @@
       <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
     </div>
   </section>
-  <section class="methodology-container">
+  <section id="methodology" class="methodology-container">
     <div class="methodology">
       <h2 class="title title-center">{{ self.methodology_title() }}</h2>
       <div class="methodology-data">
