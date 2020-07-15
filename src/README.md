@@ -93,16 +93,16 @@ Query params accepted are:
 
 You can also download the HTML and override the inline styles there if you want to customise this for something we haven't exposed as a param.
 
-So for a printer-ready version (if you want a hardcopy) you can do the following:
-
-```
-prince "http://127.0.0.1:8080/en/2019/ebook?print&printer&page-size=A5&inside-margin=19.5mm&bleed=3mm&prince-trim=5mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
-```
-
-This is the same as below since it uses a lot of the default settings:
+So for a printer-ready A5 version (if you want a hardcopy) you can do the following:
 
 ```
 prince "http://127.0.0.1:8080/en/2019/ebook?print&printer" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
+```
+
+This is the same as below since it uses all the default settings:
+
+```
+prince "http://127.0.0.1:8080/en/2019/ebook?print&printer&page-size=A5&inside-margin=19.5mm&bleed=3mm&prince-trim=5mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
 ```
 
 Note this will create two extra pages at the begining which will need to be removed with a PDF editor to start with a clean page starting on right hand side for printing. Please remove these before checking in versions into git.
@@ -110,7 +110,7 @@ Note this will create two extra pages at the begining which will need to be remo
 It is also possible to generate a cover using the `ebook_cover` route. This consists of basically 2 pages - the front and back cover as one page (with spine in between) and the inside two pages as another page.
 
 ```
-prince "http://127.0.0.1:8080/en/2019/ebook_cover?print" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
+prince "http://127.0.0.1:8080/en/2019/ebook?print&cover" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
 ```
 
 Params accepted are (note spine and pageWidth are unit-less to allow for easy addition):
@@ -124,7 +124,7 @@ Params accepted are (note spine and pageWidth are unit-less to allow for easy ad
 So default is the same as:
 
 ```
-prince "http://127.0.0.1:8080/en/2019/ebook_cover?print&spine=25&pageWidth=148&pageHeight=210&unit=mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
+prince "http://127.0.0.1:8080/en/2019/ebook?print&cover&spine=25&pageWidth=148&pageHeight=210&unit=mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
 ```
 
 Note this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing. Please remove this before checking in versions into git.
