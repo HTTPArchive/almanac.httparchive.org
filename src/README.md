@@ -90,10 +90,11 @@ Query params accepted are:
 - prince-trim - add a bleed for printing (5mm by default)
 - base-font-size - set the base font-size (10px by default), which is useful if changing page size.
 - max-fig-height - defaults to 610px (for A5) and prevents large images from causing overflows on to other pages with heading and caption.
+- cover - this genarates a 4 page cover (front cover + spine + back cover, and same on inside which is blank). This ignores above options but has further params discussed below.
 
 You can also download the HTML and override the inline styles there if you want to customise this for something we haven't exposed as a param.
 
-So for a printer-ready A5 version (if you want a hardcopy) you can do the following:
+So for a printer-ready A5 version, that you can send to a print to bind, you can do the following:
 
 ```
 prince "http://127.0.0.1:8080/en/2019/ebook?print&printer" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
@@ -105,18 +106,18 @@ This is the same as below since it uses all the default settings:
 prince "http://127.0.0.1:8080/en/2019/ebook?print&printer&page-size=A5&inside-margin=19.5mm&bleed=3mm&prince-trim=5mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_print_A5.pdf
 ```
 
-Note this will create two extra pages at the begining which will need to be removed with a PDF editor to start with a clean page starting on right hand side for printing. Please remove these before checking in versions into git.
+Note this will create two extra pages at the begining which will need to be removed with a PDF editor (e.g. Adobe Acrobat) to start with a clean page starting on right hand side for printing. Please remove these before checking in versions into git.
 
-It is also possible to generate a cover using the `ebook_cover` route. This consists of basically 2 pages - the front and back cover as one page (with spine in between) and the inside two pages as another page.
+It is also possible to generate a cover using the `&cover` URL param. This consists of basically 2 pages - the first page is a double width-page with front and back cover as one page (with spine in between) and the second page is a blank inside page.
 
 ```
 prince "http://127.0.0.1:8080/en/2019/ebook?cover" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
 ```
 
-Params accepted are (note spine and pageWidth are unit-less to allow for easy addition):
+Extra params accepted for the cover are are (note spine and pageWidth are unit-less to allow for easy addition in the code):
 
 - spine - defaults to 25
-- pageWidth - defaults to 148 (for A5)
+- pageWidth - defaults to 148 (for A5). Note this is the front cover width and not the full width of front cover and back cover and spine.
 - pageHeight - defaults to 210 (for A5)
 - unit - which unit the above measurements are in (defaults to mm)
 - base-font-size - set the base font-size (10px by default), which may need to be increased if changing page size.
@@ -127,9 +128,9 @@ So default is the same as:
 prince "http://127.0.0.1:8080/en/2019/ebook?cover&spine=25&pageWidth=148&pageHeight=210&unit=mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
 ```
 
-Note this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing. Please remove this before checking in versions into git.
+Note, simialr to above, this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing. Please remove this before checking in versions into git.
 
-With the print-ready eBook and Cover you can send them to a printer. I used https://www.digitalprintingireland.ie/ before and they were excellent and charge about €35 for a full-colour A5 ebook. Most of the settings above are for them, so tweak them based on your own printers requirements.
+With the print-ready eBook and Cover you can send them to a printer. I used https://www.digitalprintingireland.ie/ before and they were excellent and charge about €35 for a full-colour A5 ebook. Most of the settings above are for them, so tweak them based on your own printer's requirements.
 
 ## Deploying changes
 
