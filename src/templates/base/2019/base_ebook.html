@@ -24,7 +24,7 @@
 <style nonce="{{ csp_nonce() }}">
 /* Add a print query param to format the book for printer (mirror headers and footers) */
 /* Do this as an inline-style, rather than with JavaScript in case PDF generator doesn't execute JavaScript */
-{% if request.args.get('print') == None %}
+{% if request.args.get('print') == None and request.args.get('cover') == None %}
   @page {
     @top-left { content: ''; }
     @top-right { content: string(chapter-subtitle) string(chapter-title); }

@@ -504,6 +504,7 @@ section.chapter {
   font-size: 5rem;
   font-weight: 700;
   text-align: center;
+  padding-top: 40px;
 }
 
 #front-cover h2.title {
