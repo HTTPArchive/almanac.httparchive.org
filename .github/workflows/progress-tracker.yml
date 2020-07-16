@@ -59,14 +59,18 @@ jobs:
               return links
             }
 
+            const parseUserNames = members => {
+              return [...members.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+            }
+
             const parseTeam = text => {
               const team = {}
               text.split('\n').forEach(line => {
                 if (/\|\s*\[Sheet\]\[~results-sheet\]\s*\|/.test(line)) {
                   const [, authors, reviewers, analysts] = line.split('|')
-                  team.authors = [...authors.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
-                  team.reviewers = [...reviewers.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
-                  team.analysts = [...analysts.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+                  team.authors = parseUserNames(authors)
+                  team.reviewers = parseUserNames(reviewers)
+                  team.analysts = parseUserNames(analysts)
                 }
               })
               return team
