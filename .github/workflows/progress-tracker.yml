@@ -59,14 +59,18 @@ jobs:
               return links
             }
 
+            const parseUserNames = members => {
+              return [...members.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+            }
+
             const parseTeam = text => {
               const team = {}
               text.split('\n').forEach(line => {
                 if (/\|\s*\[Sheet\]\[~results-sheet\]\s*\|/.test(line)) {
                   const [, authors, reviewers, analysts] = line.split('|')
-                  team.authors = [...authors.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
-                  team.reviewers = [...reviewers.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
-                  team.analysts = [...analysts.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+                  team.Authors = parseUserNames(authors)
+                  team.Reviewers = parseUserNames(reviewers)
+                  team.Analysts = parseUserNames(analysts)
                 }
               })
               return team
@@ -78,11 +82,11 @@ jobs:
                 sql: '🔍',
                 results: '📊'
               }
-              return Object.entries(links).filter(l => !['', '#', sqlBaseDir].includes(l[1])).map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
+              return Object.entries(links).filter(l => !['#', sqlBaseDir].includes(l[1])).map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
             }
 
             const formatTeam = team => {
-              return Object.entries(team).map(m => m[1].length).join('/')
+              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('/')
             }
 
             const taskIssues = await github.paginate(github.issues.listForRepo, {
