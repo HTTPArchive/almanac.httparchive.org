@@ -424,11 +424,7 @@
 
             for (index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
-              if (hash.includes(button.classList)) {
-                button.setAttribute('aria-pressed',true);
-              } else {
-                button.setAttribute('aria-pressed',false);
-              }
+              button.setAttribute('aria-pressed', hash.includes(button.className));
             }
 
         } else {
