@@ -68,9 +68,9 @@ jobs:
               text.split('\n').forEach(line => {
                 if (/\|\s*\[Sheet\]\[~results-sheet\]\s*\|/.test(line)) {
                   const [, authors, reviewers, analysts] = line.split('|')
-                  team.authors = parseUserNames(authors)
-                  team.reviewers = parseUserNames(reviewers)
-                  team.analysts = parseUserNames(analysts)
+                  team.Authors = parseUserNames(authors)
+                  team.Reviewers = parseUserNames(reviewers)
+                  team.Analysts = parseUserNames(analysts)
                 }
               })
               return team
@@ -86,7 +86,7 @@ jobs:
             }
 
             const formatTeam = team => {
-              return Object.entries(team).map(m => m[1].length).join('/')
+              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('/')
             }
 
             const taskIssues = await github.paginate(github.issues.listForRepo, {
