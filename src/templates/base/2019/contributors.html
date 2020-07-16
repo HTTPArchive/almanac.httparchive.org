@@ -277,7 +277,7 @@
       <ul>
         {% for id, team in config.teams.items() %}
         <li>
-          <button class="{{ id }}" type="button" aria-pressed="true" title="{{ self.filter_by() }} {{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}">
+          <button class="{{ id }}" type="button" aria-pressed="false" title="{{ self.filter_by() }} {{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}">
             {{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}
           </button>
         </li>
@@ -435,7 +435,7 @@
             contributors.classList.add(...teams);
             for (index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
-              button.setAttribute('aria-pressed',true);
+              button.setAttribute('aria-pressed',false);
             }
         }
         var filteredCount = getFilteredContributorCount();
