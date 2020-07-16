@@ -82,7 +82,7 @@ jobs:
                 sql: '🔍',
                 results: '📊'
               }
-              return Object.entries(links).filter(l => !['', '#', sqlBaseDir].includes(l[1])).map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
+              return Object.entries(links).filter(l => !['#', sqlBaseDir].includes(l[1])).map(l => `[${icons[l[0]] || l[0]}](${l[1]})`).join(' ')
             }
 
             const formatTeam = team => {
