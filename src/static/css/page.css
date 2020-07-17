@@ -157,7 +157,8 @@
   min-width: 20rem;
 }
 
-.content > section, .content > article {
+.content > section,
+.content > article {
   margin-bottom: 32px;
   margin-bottom: 2rem;
 }
@@ -189,7 +190,8 @@
   font-style: italic;
 }
 
-.byline.reviewers, .byline.translators {
+.byline.reviewers,
+.byline.translators {
   font-weight: normal;
 }
 
@@ -219,7 +221,8 @@
   padding: 1rem 0;
 }
 
-.authors,.authors h2 {
+.authors,
+.authors h2 {
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
@@ -343,7 +346,8 @@
   right: -1.5rem;
 }
 
-aside, .note {
+aside,
+.note {
   font-style: italic;
 }
 
@@ -455,12 +459,14 @@ thead {
   border-bottom: 1px solid #eee;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   padding: 0.625rem;
 }
 
-th.numeric, td.numeric {
+th.numeric,
+td.numeric {
   text-align: right;
 }
 
@@ -643,7 +649,7 @@ figure .fig-desktop {
   left: -1rem;
 }
 
-.code-block, pre {
+.code-block pre {
   overflow-y: hidden;
   overflow-x: auto;
   margin: 8px 0;
