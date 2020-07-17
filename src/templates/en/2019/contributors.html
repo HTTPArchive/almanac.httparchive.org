@@ -8,6 +8,7 @@
 {% block date_modified %}2020-06-21T00:00:00.000Z{% endblock %}
 
 {% block filter_by_team %}Filter by team: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> of <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> contributors.{% endblock %}
+{% block filter_by %}Filter by{% endblock %}
 
 {% block join_the_team_title%}Join the Web Almanac team{% endblock %}
 {% block join_the_team_text%}Join the team!{% endblock %}

@@ -35,6 +35,11 @@
   margin-bottom: 30px;
 }
 
+.filter-container li {
+  list-style-type: none;
+  display: inline-block
+}
+
 .filter-container button {
   font-size: 1rem;
   font-family: inherit;
@@ -56,6 +61,10 @@
   flex-wrap: wrap;
   margin: 0 -15px;
   justify-content: center;
+}
+
+.contributor-grid li {
+  list-style-type: none;
 }
 
 .contributor-grid:not([data-rendered='true']) .contributor {
@@ -262,27 +271,37 @@
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
     <div class="filter-container">
-      <p>
+      <p aria-live="polite" aria-atomic="true">
         {{ self.filter_by_team() }}
       </p>
-        {% for id, team in config.teams.items() %}
-          <button class="{{ id }}" type="button">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</button>
+      <ul>
+        {% for id, team in localizedTeamNames.items() | accentless_sort() %}
+        {% if id in config.teams %} <!-- note not all team translations may be in this years config -->
+        <li>
+          <button class="{{ id }}" type="button" aria-pressed="false" title="{{ self.filter_by() }} {{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}">
+            {{ localizedTeamNames[id] }}
+          </button>
+        </li>
+        {% endif %}
         {% endfor %}
+      </ul>
     </div>
 
-    <div class="contributor-grid">
-      <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/README.md" class="contributor-join" aria-labelledby="jointheteam">
-        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 203 117">
-          <title id="jointheteam">{{ self.join_the_team_title() }}</title>
-          <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z" />
-          <text x="50%" y="47%">
-            {{ self.join_the_team_text() }}
-          </text>
-        </svg>
-        <img src="/static/images/avatars/12.jpg" alt="" height="100" width="100" loading="lazy" />
-      </a>
+    <ul class="contributor-grid">
+      <li>
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/README.md" class="contributor-join" aria-labelledby="jointheteam">
+          <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 203 117">
+            <title id="jointheteam">{{ self.join_the_team_title() }}</title>
+            <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z" />
+            <text x="50%" y="47%">
+              {{ self.join_the_team_text() }}
+            </text>
+          </svg>
+          <img src="/static/images/avatars/12.jpg" alt="" height="100" width="100" loading="lazy" />
+        </a>
+      </li>
     {% for id, contributor in config.contributors.items() %}
-      <div class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
+      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
@@ -315,9 +334,9 @@
             <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
           {% endfor %}
         </div>
-      </div>
+      </li>
     {% endfor %}
-    </div>
+    </ul>
   </div>
 </main>
 {% endblock %}
@@ -404,8 +423,18 @@
                 contributors.classList.remove(...teams);
                 contributors.classList.add(...filterTeams);
             }
+
+            for (index = 0; index < buttons.length; ++index) {
+              var button = buttons[index];
+              button.setAttribute('aria-pressed', hash.includes(button.className));
+            }
+
         } else {
             contributors.classList.add(...teams);
+            for (index = 0; index < buttons.length; ++index) {
+              var button = buttons[index];
+              button.setAttribute('aria-pressed',false);
+            }
         }
         var filteredCount = getFilteredContributorCount();
         counter.innerText = filteredCount;
