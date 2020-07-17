@@ -14,14 +14,14 @@
         {
           "part": "I",
           "chapter": "1",
-          "title": "JavaScript",
-          "slug": "javascript"
+          "title": "CSS",
+          "slug": "css"
         },
         {
           "part": "I",
           "chapter": "2",
-          "title": "CSS",
-          "slug": "css"
+          "title": "JavaScript",
+          "slug": "javascript"
         },
         {
           "part": "I",
@@ -32,26 +32,20 @@
         {
           "part": "I",
           "chapter": "4",
-          "title": "Media",
-          "slug": "media"
-        },
-        {
-          "part": "I",
-          "chapter": "5",
-          "title": "Third Parties",
-          "slug": "third-parties"
-        },
-        {
-          "part": "I",
-          "chapter": "6",
           "title": "Fonts",
           "slug": "fonts"
         },
         {
           "part": "I",
-          "chapter": "7",
-          "title": "JAMstack",
-          "slug": "jamstack"
+          "chapter": "5",
+          "title": "Media",
+          "slug": "media"
+        },
+        {
+          "part": "I",
+          "chapter": "6",
+          "title": "Third Parties",
+          "slug": "third-parties"
         }
       ]
     },
@@ -61,45 +55,45 @@
       "chapters": [
         {
           "part": "II",
-          "chapter": "8",
-          "title": "Performance",
-          "slug": "performance"
-        },
-        {
-          "part": "II",
-          "chapter": "9",
-          "title": "Security",
-          "slug": "security"
-        },
-        {
-          "part": "II",
-          "chapter": "10",
-          "title": "Accessibility",
-          "slug": "accessibility"
-        },
-        {
-          "part": "II",
-          "chapter": "11",
+          "chapter": "7",
           "title": "SEO",
           "slug": "seo"
         },
         {
           "part": "II",
-          "chapter": "12",
-          "title": "PWA",
-          "slug": "pwa"
+          "chapter": "8",
+          "title": "Accessibility",
+          "slug": "accessibility"
         },
         {
           "part": "II",
-          "chapter": "13",
+          "chapter": "9",
+          "title": "Performance",
+          "slug": "performance"
+        },
+        {
+          "part": "II",
+          "chapter": "10",
+          "title": "Privacy",
+          "slug": "privacy"
+        }
+        {
+          "part": "II",
+          "chapter": "11",
+          "title": "Security",
+          "slug": "security"
+        },
+        {
+          "part": "II",
+          "chapter": "12",
           "title": "Mobile Web",
           "slug": "mobile-web"
         },
         {
           "part": "II",
-          "chapter": "14",
-          "title": "Privacy",
-          "slug": "privacy"
+          "chapter": "13",
+          "title": "PWA",
+          "slug": "pwa"
         }
       ]
     },
@@ -109,15 +103,21 @@
       "chapters": [
         {
           "part": "III",
-          "chapter": "17",
+          "chapter": "14",
+          "title": "CMS",
+          "slug": "cms"
+        },
+        {
+          "part": "III",
+          "chapter": "15",
           "title": "Ecommerce",
           "slug": "ecommerce"
         },
         {
           "part": "III",
-          "chapter": "18",
-          "title": "CMS",
-          "slug": "cms"
+          "chapter": "16",
+          "title": "JAMstack",
+          "slug": "jamstack"
         }
       ]
     },
@@ -127,31 +127,31 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter": "19",
-          "title": "Compression",
-          "slug": "compression"
-        },
-        {
-          "part": "IV",
-          "chapter": "20",
-          "title": "Caching",
-          "slug": "caching"
-        },
-        {
-          "part": "IV",
-          "chapter": "21",
+          "chapter": "17",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter": "22",
+          "chapter": "18",
+          "title": "Compression",
+          "slug": "compression"
+        },
+        {
+          "part": "IV",
+          "chapter": "19",
+          "title": "Caching",
+          "slug": "caching"
+        },
+        {
+          "part": "IV",
+          "chapter": "20",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter": "23",
+          "chapter": "21",
           "title": "HTTP/2",
           "slug": "http2"
         }
