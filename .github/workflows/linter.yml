@@ -30,12 +30,12 @@ jobs:
       - name: Lint Code Base
         uses: docker://github/super-linter:v3.3.0
         env:
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: main
-          VALIDATE_YAML: true
-          VALIDATE_JSON: true
-          VALIDATE_PYTHON: true
-          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_YAML: false
+          VALIDATE_JSON: false
+          VALIDATE_PYTHON: false
+          VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_CSS: true
-          VALIDATE_MD: true
-          VALIDATE_HTML: true
+          VALIDATE_MD: false
+          VALIDATE_HTML: false
