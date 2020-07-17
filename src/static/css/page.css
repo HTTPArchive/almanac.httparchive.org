@@ -221,7 +221,8 @@
   padding: 1rem 0;
 }
 
-.authors,.authors h2 {
+.authors,
+.authors h2 {
   border-bottom: 1px solid #1a2b490a;
   font-size: 17px;
   font-size: 1.0625rem;
