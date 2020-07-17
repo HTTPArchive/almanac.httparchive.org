@@ -176,6 +176,20 @@ def year_live(year):
     return year in SUPPORTED_YEARS
 
 
+# A simple function to strip accents rather than having to import a 3rd party
+# library like unicodedata
+def strip_accents(string):
+    repl = str.maketrans(
+    "áéúíóÁÉÚÍÓ",
+    "aeuioAEUIO"
+    )
+    return string.translate(repl)
+
+
+def accentless_sort(value):
+  return sorted(value, key=lambda i: strip_accents(i[1]).lower())
+
+
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
@@ -184,6 +198,7 @@ app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
 app.jinja_env.globals['get_ebook_methodology'] = get_ebook_methodology
 app.jinja_env.globals['add_footnote_links'] = add_footnote_links
 app.jinja_env.globals['year_live'] = year_live
+app.jinja_env.filters['accentless_sort'] = accentless_sort
 
 
 @app.route('/<lang>/<year>/')
