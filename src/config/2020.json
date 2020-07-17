@@ -649,6 +649,14 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/9086028?v=4&s=200",
       "github": "jyrkialakuijala"
     },
+    "jzyang": {
+      "name": "jzyang",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2634031?v=4&s=200",
+      "github": "jzyang"
+    },
     "thefoxis": {
       "name": "Karolina Szczur",
       "teams": [
@@ -776,6 +784,16 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/4273797?v=4&s=200",
       "github": "MikeBishop"
+    },
+    "mgechev": {
+      "name": "Minko Gechev",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/455023?v=4&s=200",
+      "website": "https://blog.mgechev.com/",
+      "github": "mgechev",
+      "twitter": "mgechev"
     },
     "mirisuzanne": {
       "name": "Miriam Suzanne",
