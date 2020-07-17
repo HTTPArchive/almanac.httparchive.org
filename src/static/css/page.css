@@ -643,7 +643,7 @@ figure .fig-desktop {
   left: -1rem;
 }
 
-.code-block pre {
+.code-block, pre {
   overflow-y: hidden;
   overflow-x: auto;
   margin: 8px 0;
