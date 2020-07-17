@@ -275,12 +275,14 @@
         {{ self.filter_by_team() }}
       </p>
       <ul>
-        {% for id, team in config.teams.items() %}
+        {% for id, team in localizedTeamNames.items() | accentless_sort() %}
+        {% if id in config.teams %} <!-- note not all team translations may be in this years config -->
         <li>
           <button class="{{ id }}" type="button" aria-pressed="false" title="{{ self.filter_by() }} {{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}">
-            {{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}
+            {{ localizedTeamNames[id] }}
           </button>
         </li>
+        {% endif %}
         {% endfor %}
       </ul>
     </div>
