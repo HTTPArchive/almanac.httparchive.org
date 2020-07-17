@@ -157,8 +157,7 @@
   min-width: 20rem;
 }
 
-.content > section,
-.content > article {
+.content > section, .content > article {
   margin-bottom: 32px;
   margin-bottom: 2rem;
 }
@@ -190,8 +189,7 @@
   font-style: italic;
 }
 
-.byline.reviewers,
-.byline.translators {
+.byline.reviewers, .byline.translators {
   font-weight: normal;
 }
 
@@ -345,8 +343,7 @@
   right: -1.5rem;
 }
 
-aside,
-.note {
+aside, .note {
   font-style: italic;
 }
 
@@ -458,14 +455,12 @@ thead {
   border-bottom: 1px solid #eee;
 }
 
-th,
-td {
+th, td {
   padding: 10px;
   padding: 0.625rem;
 }
 
-th.numeric,
-td.numeric {
+th.numeric, td.numeric {
   text-align: right;
 }
 
