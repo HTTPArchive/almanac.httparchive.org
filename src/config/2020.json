@@ -545,6 +545,7 @@
     "jaisanth": {
       "name": "Jai Santhosh",
       "teams": [
+        "analysts",
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/679907?v=4&s=200",
@@ -948,6 +949,14 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/49983543?v=4&s=200",
       "github": "rachellcostello",
       "twitter": "rachellcostello"
+    },
+    "raghuramakrishnan71": {
+      "name": "Raghu Ramakrishnan",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/24447527?v=4&s=200",
+      "github": "raghuramakrishnan71"
     },
     "ernee": {
       "name": "Renee Johnson",
