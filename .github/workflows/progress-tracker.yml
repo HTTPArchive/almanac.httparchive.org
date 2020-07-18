@@ -40,6 +40,12 @@ jobs:
               Results: /^\[~results-sheet\]:\s*(?<link>\S+)/
             }
 
+            const teamMembers = {
+              Authors: {},
+              Reviewers: {},
+              Analysts: {}
+            }
+
             const parseTasks = text => {
               const tasks = []
               text.split('\n').forEach(line => {
@@ -136,10 +142,22 @@ jobs:
 
             chapters.sort((a, b) => a.number.localeCompare(b.number, undefined, {numeric: true}))
 
+            chapters.forEach(c => {
+              Object.entries(c.team).forEach(([k, v]) => {
+                v.forEach(m => {
+                  teamMembers[k][m] = (teamMembers[k][m] || []).concat(c.title)
+                })
+              })
+            })
+
             const report = [
-              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="Authors/Reviewers/Analysts">Team</span> | ${Array(totalTrackedTasks).fill().map((v, i) => i + 1).join(' | ')}`,
+              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('/')}">Team</span> | ${Array(totalTrackedTasks).fill().map((v, i) => i + 1).join(' | ')}`,
               `:--------|:------|:----:${'|:-:'.repeat(totalTrackedTasks)}`
             ].concat(chapters.map(formatRow)).join('\n')
+
+            const teams = Object.entries(teamMembers).map(([k, v]) => {
+              return `*${k} (${Object.keys(v).length})*: ${Object.entries(v).sort().map(([m, c]) => `<span title="Chapters: ${c.join(', ')}">@${m} (${c.length})</span>`).join(', ')}`
+            }).join('\n\n')
 
             const progressIssue = await github.issues.get({
               owner: context.repo.owner,
@@ -151,7 +169,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: trackerIssueNumber,
-              body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n<!-- REPORT END -->`)
+              body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n${teams}\n<!-- REPORT END -->`)
             })
 
             core.info(`Updated report in issue #${trackerIssueNumber} with ${chapters.length} chapters`)
