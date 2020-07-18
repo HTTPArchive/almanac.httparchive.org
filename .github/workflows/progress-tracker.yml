@@ -71,6 +71,21 @@ jobs:
             const totalTrackedTasks = trackedTasks.length
             core.info(`Tracking progress of ${totalTrackedTasks} tasks across chapters`)
 
+            const stats = nums => {
+              if (!nums.length) {
+                return [0, 0, 0, 0, 0]
+              }
+              nums.sort((a, b) => a - b)
+              const half = Math.floor(nums.length / 2)
+              return [
+                nums.reduce((a,b) => a + b, 0),
+                Math.min(...nums),
+                Math.max(...nums),
+                nums.reduce((a,b) => a + b, 0) / nums.length,
+                nums.length % 2 ? nums[half] : (nums[half - 1] + nums[half]) / 2.0
+              ]
+            }
+
             const parseTasks = text => {
               const tasks = []
               text.split('\n').forEach(line => {
