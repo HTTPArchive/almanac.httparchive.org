@@ -71,7 +71,7 @@ jobs:
             const totalTrackedTasks = trackedTasks.length
             core.info(`Tracking progress of ${totalTrackedTasks} tasks across chapters`)
 
-            const stats = nums => {
+            const calcStats = nums => {
               if (!nums.length) {
                 return [0, 0, 0, 0, 0]
               }
@@ -81,8 +81,8 @@ jobs:
                 nums.reduce((a,b) => a + b, 0),
                 Math.min(...nums),
                 Math.max(...nums),
-                nums.reduce((a,b) => a + b, 0) / nums.length,
-                nums.length % 2 ? nums[half] : (nums[half - 1] + nums[half]) / 2.0
+                (nums.reduce((a,b) => a + b, 0) / nums.length).toFixed(2),
+                (nums.length % 2 ? nums[half] : (nums[half - 1] + nums[half]) / 2.0).toFixed(2)
               ]
             }
 
@@ -180,6 +180,11 @@ jobs:
               return
             }
 
+            const teamStats = {}
+            Object.keys(teamMembers).forEach(t => {
+              teamStats[t] = calcStats(chapters.map(c => (c.team[t] || []).length))
+            })
+
             chapters.sort((a, b) => a.number.localeCompare(b.number, undefined, {numeric: true}))
 
             chapters.forEach(c => {
@@ -195,6 +200,11 @@ jobs:
               `:--------|:------|:----:${'|:-:'.repeat(totalTrackedTasks)}`
             ].concat(chapters.map(formatRow)).join('\n')
 
+            const stats = [
+              'Contributor Stats | Total | Min | Max | Mean | Median',
+              ':-----------------|------:|----:|----:|-----:|------:'
+            ].concat(Object.entries(teamStats).map(([k, v]) => `${k} | ${v.join(' | ')}`)).join('\n')
+
             const teams = Object.entries(teamMembers).map(([k, v]) => {
               return `### ${k} (${Object.keys(v).length})\n\n${Object.entries(v).sort().map(([m, c]) => `<span title="Chapters: ${c.join(', ')}">${m} (${c.length})</span>`).join(', ')}`
             }).join('\n\n')
@@ -203,7 +213,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: trackerIssueNumber,
-              body: progressContent.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n<details><summary>Contributors</summary>\n\n${teams}\n</details>\n<!-- REPORT END -->`)
+              body: progressContent.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n${stats}\n\n<details><summary>Contributors</summary>\n\n${teams}\n</details>\n<!-- REPORT END -->`)
             })
 
             core.info(`Updated report in issue #${trackerIssueNumber} with ${chapters.length} chapters`)
