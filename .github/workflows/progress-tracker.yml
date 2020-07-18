@@ -181,14 +181,14 @@ jobs:
             ].concat(chapters.map(formatRow)).join('\n')
 
             const teams = Object.entries(teamMembers).map(([k, v]) => {
-              return `*${k} (${Object.keys(v).length})*: ${Object.entries(v).sort().map(([m, c]) => `<span title="Chapters: ${c.join(', ')}">${m} (${c.length})</span>`).join(', ')}`
+              return `### ${k} (${Object.keys(v).length})\n\n${Object.entries(v).sort().map(([m, c]) => `<span title="Chapters: ${c.join(', ')}">${m} (${c.length})</span>`).join(', ')}`
             }).join('\n\n')
 
             github.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: trackerIssueNumber,
-              body: progressContent.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n${teams}\n<!-- REPORT END -->`)
+              body: progressContent.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n<details><summary>Contributors</summary>\n\n${teams}\n</details>\n<!-- REPORT END -->`)
             })
 
             core.info(`Updated report in issue #${trackerIssueNumber} with ${chapters.length} chapters`)
