@@ -181,7 +181,7 @@ jobs:
             ].concat(chapters.map(formatRow)).join('\n')
 
             const teams = Object.entries(teamMembers).map(([k, v]) => {
-              return `*${k} (${Object.keys(v).length})*: ${Object.entries(v).sort().map(([m, c]) => `<span title="Chapters: ${c.join(', ')}">@${m} (${c.length})</span>`).join(', ')}`
+              return `*${k} (${Object.keys(v).length})*: ${Object.entries(v).sort().map(([m, c]) => `<span title="Chapters: ${c.join(', ')}">${m} (${c.length})</span>`).join(', ')}`
             }).join('\n\n')
 
             github.issues.update({
