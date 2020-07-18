@@ -128,7 +128,7 @@ jobs:
             }
 
             const formatRow = chapter => {
-              return `${chapter.number ? `<span title="Part: ${chapter.part}, Chapter: ${chapter.number}">${chapter.number}</span> - ` : ''}[${chapter.title}](${chapter.url}) | ${formatLinks(chapter.links)} | ${formatTeam(chapter.team)} | ${chapter.tasks.join(' | ')}`
+              return `${chapter.number ? `<span title="Part: ${chapter.part}, Chapter: ${chapter.number}">${chapter.number}</span>. ` : ''}[${chapter.title}](${chapter.url}) | ${formatLinks(chapter.links)} | ${formatTeam(chapter.team)} | ${chapter.tasks.join(' | ')}`
             }
 
             const taskIssues = await github.paginate(github.issues.listForRepo, {
