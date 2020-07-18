@@ -213,7 +213,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: trackerIssueNumber,
-              body: progressContent.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n${stats}\n\n<details><summary>Contributors</summary>\n\n${teams}\n</details>\n<!-- REPORT END -->`)
+              body: progressContent.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n${stats}\n\n<details><summary><b>Contributor Details</b></summary>\n\n${teams}\n</details>\n<!-- REPORT END -->`)
             })
 
             core.info(`Updated report in issue #${trackerIssueNumber} with ${chapters.length} chapters`)
