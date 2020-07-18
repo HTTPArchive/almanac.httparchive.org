@@ -136,13 +136,10 @@ jobs:
 
             chapters.sort((a, b) => a.number.localeCompare(b.number, undefined, {numeric: true}))
 
-            let report = [
-              `Chapters | Links | Team | ${Array(totalTrackedTasks).fill().map((v, i) => i + 1).join(' | ')}`,
+            const report = [
+              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="Authors/Reviewers/Analysts">Team</span> | ${Array(totalTrackedTasks).fill().map((v, i) => i + 1).join(' | ')}`,
               `:--------|:------|:----:${'|:-:'.repeat(totalTrackedTasks)}`
             ].concat(chapters.map(formatRow)).join('\n')
-
-            report += `\n\n**Links** = ${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}\n**Team** = Authors/Reviewers/Analysts`
-            report += '\n\n✨ This issue is automatically maintained by [progress-tracker.yml](https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/.github/workflows/progress-tracker.yml) ✨'
 
             const progressIssue = await github.issues.get({
               owner: context.repo.owner,
