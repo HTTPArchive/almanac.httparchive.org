@@ -1,8 +1,8 @@
 ---
 part\_number: II
 chapter\_number: 9
-title: Accessibility
-description: Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
+title: 可访问性
+description: 2019 Web Almanac 的易访问性章节，涵盖易阅读、媒体、导航和与辅助技术的兼容性。
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 translators: []
@@ -45,23 +45,23 @@ last\_updated: 2020-05-27T00:00:00.000Z
   <figcaption id="fig1-caption">Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 
-Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.
+只有22.04%的网站给所有的文本提供了足够的颜色对比。或换句话说:每5个网站中就有4个网站的文字很容易和背景融合，导致难以阅读。
 
 <p class="note">Note that we weren't able to analyze any text inside of images, so our reported metric is an upper-bound of the total number of websites passing the color contrast test.</p>
 
-### Zooming and scaling pages
+### 缩放页面
 
-Using a [legible font size][3] and [target size][4] helps users read and interact with your website. But even websites perfectly following all of these guidelines can't meet the specific needs of each visitor. This is why device features like pinch-to-zoom and scaling are so important: they allow users to tweak your pages so their needs are met. Or in the case of particularly inaccessible sites using tiny fonts and buttons, it gives users the chance to even use the site.
+使用 [清晰的字体大小 ][3] 和 [目标大小][4] 帮助用户阅读网站以及与你的网站互动。但即使网站完全遵循所有这些准则，也不能满足每个访问者的特定需求。这就是为什么像掐拉缩放这样的设备特性如此重要:它们允许用户调整你的页面以满足他们的需求。在某些使用微小字体和按钮的难以访问的网站上，这些特性甚至给了用户使用该网站的机会。
 
-There are rare cases when disabling scaling is acceptable, like when the page in question is a web-based game using touch controls. If left enabled in this case, players' phones will zoom in and out every time the player taps twice on the game, ironically making it inaccessible.
+在少数情况下，禁用缩放是可以接受的，比如有问题的页面是一个使用触摸控制的基于web的游戏。如果在这种情况下保持开启状态，玩家的手机游戏会在玩家双击时放大或缩小，讽刺的是，这个功能反而使得游戏无法访问。
 
-Because of this, developers are given the ability to disable this feature by setting one of the following two properties in the [meta viewport tag][5]:
+因此，开发人员被赋予禁用此特性的能力。可以通过设置 [meta viewport tag][5]中的两个属性其中之一，:
 
-1. `user-scalable` set to `0` or `no`
+1. `user-scalable` 设为 `0` 或 `no`
 
-2. `maximum-scale` set to `1`, `1.0`, etc
+2. `maximum-scale` 设为 `1`, `1.0`, 等
 
-Sadly, developers have misused this so much that almost one out of every three sites on mobile (32.21%) disable this feature, and Apple (as of iOS 10) no longer allows web-developers to disable zooming. Mobile Safari simply [ignores the tag][6]. All sites, no matter what, can be zoomed and scaled on newer iOS devices.
+遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版 Safari 简单 [忽略了这个标记][6]. 无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。
 
 <figure>
   <a href="/static/images/2019/accessibility/fig2.png">
@@ -73,33 +73,33 @@ Sadly, developers have misused this so much that almost one out of every three s
 
 ### Language identification
 
-The web is full of wondrous amounts of content. However, there's a catch: over 1,000 different languages exist in the world, and the content you're looking for may not be written in one you are fluent in. In recent years, we've made great strides in translation technologies and you probably have used one of them on the web (e.g., Google translate).
+网络充满了惊人数量的内容。但是，这里有一个问题:世界上有超过1000种不同的语言，而你要找的内容可能不是用你能流利使用的语言书写的。近年来我们在翻译技术方面取得了很大的进步，你可能已经在网络上使用过其中的一种(例如，谷歌翻译)。
 
-In order to facilitate this feature, the translation engines need to know what language your pages are written in. This is done by using the [`lang` attribute][7]. Without this, computers must guess what language your page is written in. As you might imagine, this leads to many errors, especially when pages use multiple languages (e.g., your page navigation is in English, but the post content is in Japanese).
+为了方便使用这个功能，翻译引擎需要知道你的页面是用什么语言编写的。这是通过使用 [`lang` 属性][7] 来实现的。否则，计算机必须猜测你的页面是用什么语言写的。正如你所想象的那样，这会导致很多错误，特别是当页面使用多种语言时(例如，你的页面导航是英文的，但是发布的内容是日语的)。
 
-This problem is even more pronounced on text-to-speech assistive technologies like screen readers, where if no language has been specified, they tend to read the text in the default user language.
+这个问题在使用类似屏幕阅读器这样的文字转语音辅助技术时会更加明显，如果没有指定语言，它们倾向于使用默认的用户语言来读取文本。
 
-Of the pages analyzed, 26.13% do not specify a language with the `lang` attribute. This leaves over a quarter of pages susceptible to all of the problems described above. The good news? Of sites using the `lang` attribute, they specify a valid language code correctly 99.68% of the time.
+在被分析的页面中，26.13%的页面没有给语言指定带有 `lang` 属性。这使得超过四分之一的页面容易受到上述所有问题的影响。 好的方面呢? 在使用 `lang` 属性的站点中, 它们正确指定有效语言代码的几率为 99.68% 。
 
-### Distracting content
+### 分散注意力的内容
 
-Some users, such as those with cognitive disabilities, have difficulties concentrating on the same task for long periods of time. These users don't want to deal with pages that include lots of motion and animations, especially when these effects are purely cosmetic and not related to the task at hand. At a minimum, these users need a way to turn all distracting animations off.
+有些使用者，比如有认知障碍的人，很难长时间专注于同一项任务。这些用户不希望处理包含大量移动和动画的页面，特别是当这些效果是纯修饰性的、与手上的任务无关的时候。至少，这些用户需要一种方法来关闭所有分散注意力的动画。
 
-Unfortunately, our findings indicate that infinitely looping animations are quite common on the web, with 21.04% of pages using them through infinite CSS animations or [`<marquee>`][8] and [`<blink>`][9] elements.
+不幸的是，我们的发现表明无限循环动画在web上很常见，有21.04%的页面通过无限的CSS动画或者[`<marquee>`][8] 和[`<blink>`][9] 元素来使用它们
 
-It is interesting to note however, that the bulk of this problem appears to be a few popular third-party stylesheets which include infinitely looping CSS animations by default. We were unable to determine how many pages actually used these animation styles.
+有趣的是，这个问题大部分似乎是因为一些流行的第三方样式表默认包含了无限循环的CSS动画。我们无法确定有多少页面实际使用了这些动画样式。
 
-## Media on the web
+## 网上的媒体
 
-### Alternative text on images
+### 图像上的替代文本
 
-Images are an essential part of the web experience. They can tell powerful stories, grab attention, and elicit emotion. But not everyone can see these images that we rely on to tell parts of our stories. Thankfully, in 1995, HTML 2.0 provided a solution to this problem: [the alt attribute][10]. The alt attribute provides web developers with the capability of adding a textual description to the images we use, so that when someone is unable to see our images (or the images are unable to load), they can read the alt text for a description. The alt text fills them in on the part of the story they would have otherwise missed.
+图片是网络体验的重要组成部分。它们能讲述强有力的故事，吸引注意力，引发情感。但并不是每个人都能看到这些我们用于讲述部分故事的图像。幸运的是，在1995年，HTML 2.0为这个问题提供了一个解决方案： [alt 属性][10]。alt属性为web开发人员提供了向我们使用的图像添加文本描述的功能，这样当有人无法看到我们的图像(或图像无法加载)时，他们可以阅读alt文本以获得描述。alt文本将描述填充到读者可能错过的那部分故事。
 
-Even though alt attributes have been around for 25 years, 49.91% of pages still fail to provide alt attributes for some of their images, and 8.68% of pages never use them at all.
+尽管alt属性已经存在了25年，但是49.91%的页面仍然没有为一些图片提供alt属性，8.68%的页面从来没有使用过。
 
-### Captions for audio and video
+### 音频和视频的字幕
 
-Just as images are powerful storytellers, so too are audio and video in grabbing attention and expressing ideas. When audio and video content is not captioned, users who cannot hear this content miss out on large portions of the web. One of the most common things we hear from users who are Deaf or hard of hearing is the need to include captions for all audio and video content.
+正如图片是强有力的故事讲述者一样，音频和视频在吸引注意力和表达想法方面也是如此。当音频和视频内容没有字幕时，无法听到这些内容的用户会错过大部分web内容。我们从耳聋或重听的用户中最常听到的需求之一就是需要为所有音频和视频内容加上字幕。
 
 Of sites using [`<audio>`][11] or [`<video>`][12] elements, only 0.54% provide captions (as measured by those that include the [`<track>`][13] element). Note that some websites have custom solutions for providing video and audio captions to users. We were unable to detect these and thus the true percentage of sites utilizing captions is slightly higher.
 
