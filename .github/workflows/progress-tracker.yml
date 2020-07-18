@@ -4,7 +4,6 @@ env:
   # Update these environment variables every year
   FILTER_LABEL: '2020 chapter'
   TRACKER_ISSUE_NUMBER: 989
-  TOTAL_TRACKED_TASKS: 10
   SQL_BASE_DIR: 'https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2020/'
 
 on:
@@ -25,7 +24,6 @@ jobs:
           script: |
             const filterLabel = process.env.FILTER_LABEL
             const trackerIssueNumber = process.env.TRACKER_ISSUE_NUMBER
-            const totalTrackedTasks = parseInt(process.env.TOTAL_TRACKED_TASKS, 10)
             const sqlBaseDir = process.env.SQL_BASE_DIR
 
             const icons = {
@@ -45,6 +43,33 @@ jobs:
               Reviewers: {},
               Analysts: {}
             }
+
+            const parseListItems = text => {
+              const items = []
+              text.split('\n').forEach(line => {
+                const m = line.trim().match(/^([*+-]|\d+\.)\s+(?<item>.+)/)
+                if (m) {
+                  items.push(m.groups.item)
+                }
+              })
+              return items
+            }
+
+            const progressIssue = await github.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: trackerIssueNumber
+            })
+            const progressContent = progressIssue.data.body
+
+            const m = progressContent.match(/<!-- TASKS BEGIN -->(?<tasks>[\s\S]*)<!-- TASKS END -->/)
+            if (!m) {
+              core.info(`Tasks list marker not found in issue #${trackerIssueNumber}, add list of tracked tasks as: <!-- TASKS BEGIN -->TRACKED TASKS LIST<!-- TASKS END -->`)
+              return
+            }
+            const trackedTasks = parseListItems(m.groups.tasks)
+            const totalTrackedTasks = trackedTasks.length
+            core.info(`Tracking progress of ${totalTrackedTasks} tasks across chapters`)
 
             const parseTasks = text => {
               const tasks = []
@@ -151,7 +176,7 @@ jobs:
             })
 
             const report = [
-              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('/')}">Team</span> | ${Array(totalTrackedTasks).fill().map((v, i) => i + 1).join(' | ')}`,
+              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('/')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i + 1}<span>`).join(' | ')}`,
               `:--------|:------|:----:${'|:-:'.repeat(totalTrackedTasks)}`
             ].concat(chapters.map(formatRow)).join('\n')
 
@@ -159,17 +184,11 @@ jobs:
               return `*${k} (${Object.keys(v).length})*: ${Object.entries(v).sort().map(([m, c]) => `<span title="Chapters: ${c.join(', ')}">@${m} (${c.length})</span>`).join(', ')}`
             }).join('\n\n')
 
-            const progressIssue = await github.issues.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: trackerIssueNumber
-            })
-
             github.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: trackerIssueNumber,
-              body: progressIssue.data.body.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n${teams}\n<!-- REPORT END -->`)
+              body: progressContent.replace(/<!-- REPORT START -->[\s\S]*<!-- REPORT END -->/, `<!-- REPORT START -->\n${report}\n\n${teams}\n<!-- REPORT END -->`)
             })
 
             core.info(`Updated report in issue #${trackerIssueNumber} with ${chapters.length} chapters`)
