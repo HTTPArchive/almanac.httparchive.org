@@ -205,13 +205,13 @@ jobs:
               ':-----------------|------:|----:|----:|-----:|------:'
             ].concat(Object.entries(teamStats).map(([k, v]) => `${k} | ${v.join(' | ')}`)).join('\n')
 
-            const teams = Object.entries(teamMembers).sort().map(([team, contributors]) => {
-              const contributorList = Object.entries(contributors).sort(([x, a], [y, b]) => {
+            const teams = Object.entries(teamMembers).sort().map(([team, members]) => {
+              const memberList = Object.entries(members).sort(([x, a], [y, b]) => {
                 return b.length - a.length
-              }).map(([name, chapters]) => {
-                return `<span title="Chapters: ${chapters.join(', ')}">${name} (${chapters.length})</span>`
+              }).map(([member, chapters]) => {
+                return `<span title="Chapters: ${chapters.join(', ')}">${member} (${chapters.length})</span>`
               }).join(', ')
-              return `### ${team} (${Object.keys(contributors).length})\n\n${contributorList}`
+              return `### ${team} (${Object.keys(members).length})\n\n${memberList}`
             }).join('\n\n')
 
             github.issues.update({
