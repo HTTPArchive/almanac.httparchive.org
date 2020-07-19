@@ -75,14 +75,14 @@ jobs:
               if (!nums.length) {
                 return [0, 0, 0, 0, 0]
               }
-              nums.sort()
+              nums.sort((a, b) => a - b)
               const half = Math.floor(nums.length / 2)
               return [
                 nums.reduce((a,b) => a + b, 0),
                 Math.min(...nums),
                 Math.max(...nums),
                 (nums.reduce((a,b) => a + b, 0) / nums.length).toFixed(2),
-                (nums.length % 2 == 0 ? nums[half] : (nums[half - 1] + nums[half]) / 2.0)
+                nums[half]
               ]
             }
 
@@ -205,7 +205,7 @@ jobs:
               ':-----------------|------:|----:|----:|-----:|------:'
             ].concat(Object.entries(teamStats).map(([k, v]) => `${k} | ${v.join(' | ')}`)).join('\n')
 
-            const teams = Object.entries(teamMembers).map(([team, contributors]) => {
+            const teams = Object.entries(teamMembers).sort().map(([team, contributors]) => {
               const contributorList = ${Object.entries(contributors).sort(([x, a], [y, b]) => {
                 return b.length - a.length
               }).map(([name, chapters]) => {
