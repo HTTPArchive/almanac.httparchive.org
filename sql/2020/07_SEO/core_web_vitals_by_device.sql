@@ -7,32 +7,32 @@ device,
 # using adjusted values where fast+avg+slow add up to 1 (100%) for each row/metric group
 
 # Core Web Vitals indicate 75% good for all metrics is a pass
-ROUND(COUNTIF( fast_lcp_adjusted  > 0.75 AND fast_fid_adjusted  > 0.75 AND small_cls_adjusted  > 0.75) / COUNT(0), 2) AS corewebvitals_pass_pct,
+ROUND(COUNTIF( fast_lcp_adjusted  > 0.75 AND fast_fid_adjusted  > 0.75 AND small_cls_adjusted  > 0.75) * 100 / COUNT(0), 2) AS corewebvitals_pass_pct,
 # pass based on each metric
-ROUND(COUNTIF( fast_lcp_adjusted  > 0.75) / COUNT(0), 2) AS corewebvitals_pass_pct_lcp,
-ROUND(COUNTIF( fast_fid_adjusted  > 0.75) / COUNT(0), 2) AS corewebvitals_pass_pct_fid,
-ROUND(COUNTIF( small_cls_adjusted  > 0.75) / COUNT(0), 2) AS corewebvitals_pass_pct_cls,
+ROUND(COUNTIF( fast_lcp_adjusted  > 0.75) * 100 / COUNT(0), 2) AS corewebvitals_pass_pct_lcp,
+ROUND(COUNTIF( fast_fid_adjusted  > 0.75) * 100 / COUNT(0), 2) AS corewebvitals_pass_pct_fid,
+ROUND(COUNTIF( small_cls_adjusted  > 0.75) * 100 / COUNT(0), 2) AS corewebvitals_pass_pct_cls,
 
 # work out the grouped percents
-ROUND(AVG( fast_lcp_adjusted), 2) AS fast_lcp_pct,
-ROUND(AVG( avg_lcp_adjusted), 2) AS avg_lcp_pct,
-ROUND(AVG( slow_lcp_adjusted), 2) AS slow_lcp_pct,
+ROUND(AVG( fast_lcp_adjusted) * 100, 2) AS fast_lcp_pct,
+ROUND(AVG( avg_lcp_adjusted) * 100, 2) AS avg_lcp_pct,
+ROUND(AVG( slow_lcp_adjusted) * 100, 2) AS slow_lcp_pct,
 
-ROUND(AVG( fast_fid_adjusted), 2) AS fast_fid_pct,
-ROUND(AVG( avg_fid_adjusted), 2) AS avg_fid_pct,
-ROUND(AVG( slow_fid_adjusted), 2) AS slow_fid_pct,
+ROUND(AVG( fast_fid_adjusted) * 100, 2) AS fast_fid_pct,
+ROUND(AVG( avg_fid_adjusted) * 100, 2) AS avg_fid_pct,
+ROUND(AVG( slow_fid_adjusted) * 100, 2) AS slow_fid_pct,
 
-ROUND(AVG( small_cls_adjusted), 2) AS small_cls_pct,
-ROUND(AVG( medium_cls_adjusted), 2) AS medium_cls_pct,
-ROUND(AVG( large_cls_adjusted), 2) AS large_cls_pct,
+ROUND(AVG( small_cls_adjusted) * 100, 2) AS small_cls_pct,
+ROUND(AVG( medium_cls_adjusted) * 100, 2) AS medium_cls_pct,
+ROUND(AVG( large_cls_adjusted) * 100, 2) AS large_cls_pct,
 
-ROUND(AVG( fast_ttfb_adjusted), 2) AS fast_ttfb_pct,
-ROUND(AVG( avg_ttfb_adjusted), 2) AS avg_ttfb_pct,
-ROUND(AVG( slow_ttfb_adjusted), 2) AS slow_ttfb_pct,
+ROUND(AVG( fast_ttfb_adjusted) * 100, 2) AS fast_ttfb_pct,
+ROUND(AVG( avg_ttfb_adjusted) * 100, 2) AS avg_ttfb_pct,
+ROUND(AVG( slow_ttfb_adjusted) * 100, 2) AS slow_ttfb_pct,
 
-ROUND(AVG( fast_fcp_adjusted), 2) AS fast_fcp_pct,
-ROUND(AVG( avg_fcp_adjusted), 2) AS avg_fcp_pct,
-ROUND(AVG( slow_fcp_adjusted), 2) AS slow_fcp_pct,
+ROUND(AVG( fast_fcp_adjusted) * 100, 2) AS fast_fcp_pct,
+ROUND(AVG( avg_fcp_adjusted) * 100, 2) AS avg_fcp_pct,
+ROUND(AVG( slow_fcp_adjusted) * 100, 2) AS slow_fcp_pct,
 
 # from 2019 07_05b - Older metrics for speed scores
 ROUND(COUNTIF(fast_fcp_adjusted >= .9 AND fast_fid_adjusted >= .95) * 100 / COUNT(0), 2) AS pct_fast,
