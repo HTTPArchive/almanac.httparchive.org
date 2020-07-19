@@ -75,14 +75,14 @@ jobs:
               if (!nums.length) {
                 return [0, 0, 0, 0, 0]
               }
-              nums.sort((a, b) => a - b)
+              nums.sort()
               const half = Math.floor(nums.length / 2)
               return [
                 nums.reduce((a,b) => a + b, 0),
                 Math.min(...nums),
                 Math.max(...nums),
                 (nums.reduce((a,b) => a + b, 0) / nums.length).toFixed(2),
-                (nums.length % 2 ? nums[half] : (nums[half - 1] + nums[half]) / 2.0).toFixed(2)
+                (nums.length % 2 == 0 ? nums[half] : (nums[half - 1] + nums[half]) / 2.0)
               ]
             }
 
