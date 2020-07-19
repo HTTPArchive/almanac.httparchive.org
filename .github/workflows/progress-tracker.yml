@@ -205,8 +205,10 @@ jobs:
               ':-----------------|------:|----:|----:|-----:|------:'
             ].concat(Object.entries(teamStats).map(([k, v]) => `${k} | ${v.join(' | ')}`)).join('\n')
 
-            const teams = Object.entries(teamMembers).sort().map(([team, members]) => {
+            const teams = Object.entries(teamMembers).map(([team, members]) => {
               const memberList = Object.entries(members).sort(([x, a], [y, b]) => {
+                return x.toLocaleLowerCase().localeCompare(y.toLocaleLowerCase())
+              }).sort(([x, a], [y, b]) => {
                 return b.length - a.length
               }).map(([member, chapters]) => {
                 return `<span title="Chapters: ${chapters.join(', ')}">${member} (${chapters.length})</span>`
