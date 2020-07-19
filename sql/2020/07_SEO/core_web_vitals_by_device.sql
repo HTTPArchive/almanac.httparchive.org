@@ -1,5 +1,6 @@
 #standardSQL
 # Core Web Vitals by device
+# Tests and notes at core_web_vitals_by_device.txt
 
 SELECT 
 device,
