@@ -1,8 +1,8 @@
 {% extends "base/2019/methodology.html" %}
 
-{% block title %}Methodology | The Web Almanac by HTTP Archive{% endblock %}
+{% block title %}方法论 | The Web Almanac by HTTP Archive{% endblock %}
 
-{% block description %}Describes how the 2019 Web Almanac was put together: The Datasets and Tools used and how the project was run.{% endblock %}
+{% block description %}描述 2019 Web Almanac 是如何构成的: 使用的数据集和工具，以及项目是如何运行的。{% endblock %}
 
 {% block twitter_image_alt %}{{ year }} Web Almanac methodology{% endblock %}
 
@@ -11,14 +11,14 @@
 
 {% block index %}
       <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#dataset">About the dataset</a>
+        <li><a href="#overview">概述</a></li>
+        <li><a href="#dataset">关于数据集</a>
           <ul>
-            <li><a href="#websites">Websites</a></li>
-            <li><a href="#metrics">Metrics</a></li>
+            <li><a href="#websites">网站</a></li>
+            <li><a href="#metrics">指标</a></li>
           </ul>
         </li>
-        <li><a href="#tools">Tools</a>
+        <li><a href="#tools">工具</a>
           <ul>
             <li><a href="#webpagetest">WebPageTest</a></li>
             <li><a href="#lighthouse">Lighthouse</a></li>
@@ -28,14 +28,14 @@
             <li><a href="#rework-css">Rework CSS</a></li>
           </ul>
         </li>
-        <li><a href="#process">Analytical process</a>
+        <li><a href="#process">分析过程</a>
           <ul>
-            <li><a href="#brainstorming">Brainstorming</a></li>
-            <li><a href="#analysis">Analysis</a></li>
-            <li><a href="#interpretation">Interpretation</a></li>
+            <li><a href="#brainstorming">头脑风暴</a></li>
+            <li><a href="#analysis">分析</a></li>
+            <li><a href="#interpretation">诠释</a></li>
           </ul>
         </li>
-        <li><a href="#looking-ahead">Looking ahead</a></li>
+        <li><a href="#looking-ahead">展望未来</a></li>
       </ul>
 {% endblock %}
 
@@ -54,15 +54,15 @@
         <h2 id="overview"><a href="#overview" class="anchor-link">Overview</a></h2>
 
         <p>
-          The Web Almanac is a project organized by <a href="https://httparchive.org">HTTP Archive</a>. HTTP Archive was started in 2010 by Steve Souders with the mission to track how the web is built. It evaluates the composition of millions of web pages on a monthly basis and makes its terabytes of metadata available for analysis on <a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>. Learn more <a href="https://httparchive.org/about">about HTTP Archive</a>.
+          Web Almanac 是一个由 <a href="https://httparchive.org">HTTP Archive</a>组织的项目. HTTP Archive 于2010年由Steve Souders创立，其任务是跟踪web是如何构建的。它按月评估数以百万计的网页，并使它的TB级别的元数据可供<a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>分析。了解更多 <a href="https://httparchive.org/about">HTTP Archive</a>.
         </p>
 
         <p>
-          The mission of the Web Almanac is to make the data warehouse of HTTP Archive even more accessible to the web community by having subject matter experts provide contextualized insights. You can think of it as an annual repository of knowledge about the state of the web, 2019 being its first edition.
+          Web Almanac 的任务是让主题专家提供情境化的见解，从而使Web社区更容易访问HTTP Archive的数据仓库。你可以把它看作为成一个关于web状态的年度知识库，2019是它的第一版。
         </p>
 
         <p>
-          2019年版的网络年鉴Web Almanac由四大支柱组成:内容、体验、发布和分发。书面报告的每一部分都是一个支柱，由探究其不同方面的章节组成。例如，第二部分表示用户体验，并包括性能、安全性、可访问性、SEO、PWA和移动Web章节。
+          2019年版的网络年鉴Webqing Almanac由四大支柱组成:内容、体验、发布和分发。书面报告的每一部分都是一个支柱，由探究其不同方面的章节组成。例如，第二部分表示用户体验，并包括性能、安全性、可访问性、SEO、PWA和移动Web章节。
         </p>
     </section>
 
@@ -70,19 +70,19 @@
         <h2 id="dataset"><a href="#dataset" class="anchor-link">About the dataset</a></h2>
 
         <p>
-          The HTTP Archive dataset is continuously updating with new data monthly. For the 2019 edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the July 2019 crawl. These results are <a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">publicly queryable</a> on BigQuery in tables prefixed with <code>2019_07_01</code>.
+          HTTP Archive 数据集每月持续更新新的数据。对于2019年版的Web Almanac，除非本章另有说明，否则所有的指标都来自于2019年7月的抓取。这些结果<a href="https://github.com/HTTPArchive/httparchive.org/blob/master/docs/gettingstarted_bigquery.md">可以用 <code>2019_07_01</code>为前缀在BigQuery公开的查询</a>
         </p>
 
         <p>
-          All of the metrics presented in the Web Almanac are publicly reproducible using the dataset on BigQuery. You can browse the queries used by all chapters in our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub repository</a>.
+          Web Almanac中列出的所有指标都可以通过BigQuery上的数据集公开重现。您可以在我们的<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub 仓库</a>浏览我们的所有章节使用的查询 .
         </p>
 
         <p class="note">
-          Please note that some of these queries are quite large and can be <a href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself, as BigQuery is billed by the terabyte. For help controlling your spending, refer to Tim Kadlec's post <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">Using BigQuery Without Breaking the Bank</a>.
+          请注意，其中一些查询相当大，如果你自己运行可能比较 <a href="https://cloud.google.com/bigquery/pricing">昂贵</a> , 因为BigQuery是按TB收费. 为了帮助控制你的开支, 请看 Tim Kadlec的文章 <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">在不破产的情况下来使用BigQuery</a>.
         </p>
 
         <p>
-          For example, to understand the median number of bytes of JavaScript per desktop and mobile page, see <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>:
+          例如，要了解每个桌面和移动页面的JavaScript字节数的中位数，请参阅 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2019/01_JavaScript/01_01b.sql">01_01b.sql</a>:
         </p>
 
         <div class="code-block floating-card">
@@ -104,7 +104,7 @@
         </div>
 
         <p>
-          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript results</a>.
+          每个指标的结果都可以在章节对应的电子表格中公开查看，例如<a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript 结果</a>.
         </p>
     </section>
 
@@ -112,23 +112,23 @@
         <h3 id="websites"><a href="#websites" class="anchor-link">Websites</a></h3>
 
         <p>
-          There are 5,790,700 websites in the dataset. Among those, 5,297,442 are mobile websites and 4,371,973 are desktop websites. Most websites are included in both the mobile and desktop subsets.
+          数据集中有 5,790,700 个网站。 其中，移动网站5,297,442 个，桌面网站4,371,973个。大多数网站都包括在移动和桌面子集中。
         </p>
 
         <p>
-          HTTP Archive sources the URLs for its websites from the <a href="#chrome-ux-report">Chrome UX Report</a>. The Chrome UX Report is a public dataset from Google that aggregates user experiences across millions of websites actively visited by Chrome users. This gives us a list of websites that are up-to-date and a reflection of real-world web usage. The Chrome UX Report dataset includes a form factor dimension, which we use to get all of the websites accessed by desktop or mobile users.
+          HTTP Archive 从 <a href="#chrome-ux-report">Chrome用户体验 报告</a>中获取其网站的URL。Chrome用户体验报告是谷歌的公共数据集，汇集了数百万Chrome用户活跃访问的网站的用户体验。这给了我们一个最新的网站列表，并反映了真实的web使用情况。Chrome用户体验报告数据集包括一个因子系数维度，我们使用它来获取桌面或移动用户访问的所有网站。
         </p>
 
         <p>
-          The July 2019 HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release, May 2019 (201905), for its list of websites. This dataset was released on June 11, 2019 and captures websites visited by Chrome users during the month of May.
+          Web Almanac使用的2019年七月的HTTP Archive爬取，是利用了最新可用的Chrome用户体验报告版本 2019 5月 (201905) 作为它的网站列表。 该数据集于2019年6月11日发布，收集了Chrome用户在5月份访问的网站。
         </p>
 
         <p>
-          Due to resource limitations, the HTTP Archive can only test one page from each website in the Chrome UX report. To reconcile this, only the home pages are included. Be aware that this will introduce some bias into the results because a home page is not necessarily representative of the entire website.
+          由于资源限制， HTTP Archive 只能对每个网站测试一个在Chrome UX报告之中的页面。为了兼顾这一点，只包括主页。请注意，这将引入一些偏见的结果，因为一个主页不一定代表整个网站。
         </p>
 
         <p>
-          HTTP Archive is also considered a lab testing tool, meaning it tests websites from a datacenter and does not collect data from real-world user experiences. Therefore, all website home pages are tested with an empty cache in a logged out state.
+          HTTP Archive 也被认为是一个实验室测试工具，这意味着它从数据中心测试网站，而不是从真实的用户体验收集数据。因此，所有网站主页都是在一个处于登出的空缓存状态进行测试的。
         </p>
     </section>
 
@@ -136,15 +136,15 @@
       <h3 id="metrics"><a href="#metrics" class="anchor-link">Metrics</a></h3>
 
       <p>
-        HTTP Archive collects metrics about how the web is built. It includes basic metrics like the number of bytes per page, whether the page was loaded over HTTPS, and individual request and response headers. The majority of these metrics are provided by <a href="#webpagetest">WebPageTest</a>, which acts as the test runner for each website.
+        HTTP Archive 收集关于如何构建web的指标。它包括一些基本指标，如每个页面的字节数、页面是否通过HTTPS加载，以及单个请求和响应头。这些指标中的大多数是由<a href="#webpagetest">WebPageTest</a>提供, 它作为每个网站的测试运行工具。
       </p>
 
       <p>
-        Other testing tools are used to provide more advanced metrics about the page. For example, <a href="#lighthouse">Lighthouse</a> is used to run audits against the page to analyze its quality in areas like accessibility and SEO. The <a href="#tools">Tools</a> section below goes into each of these tools in more detail.
+        其他测试工具用于提供关于页面的更高级的指标。 例如， <a href="#lighthouse">Lighthouse</a> 被用来对页面进行审计，以分析它在可访问性和SEO等方面的质量。下面的 <a href="#tools">工具</a>小节将更详细地介绍这些工具。
       </p>
 
       <p>
-        To work around some of the inherent limitations of a lab dataset, the Web Almanac also makes use of the <a href="#chrome-ux-report">Chrome UX Report</a> for metrics on user experiences, especially in the area of web performance.
+        为了解决实验室数据集的一些固有限制，Web Almanac 还利用了 <a href="#chrome-ux-report">Chrome UX Report</a> 来度量用户体验，特别是在Web性能方面。
       </p>
 
       <p>
@@ -152,7 +152,7 @@
       </p>
 
       <p>
-        Other metrics may not necessarily be impossible to measure but are challenging or unreliable. For example, aspects of web design are inherently visual and may be difficult to quantify, like whether a page has an intrusive modal dialog.
+        其他的指标不一定是不可能度量的，但是是具有挑战性的或者不可靠的。例如，web设计的某些方面本质上是可视化的，可能很难量化，比如页面是否有插入式模态对话框。
       </p>
     </section>
 
@@ -160,7 +160,7 @@
       <h2 id="tools"><a href="#tools" class="anchor-link">Tools</a></h2>
 
       <p>
-        The Web Almanac is made possible with the help of the following open source tools.
+        Web Almanac 是在以下开源工具的帮助下实现的。
       </p>
     </section>
 
@@ -404,7 +404,7 @@
       <h3 id="interpretation"><a href="#interpretation" class="anchor-link">Interpretation</a></h3>
 
       <p>
-        Authors worked with analysts to correctly interpret the results and draw appropriate conclusions. As authors wrote their respective chapters, they drew from these statistics to support their framing of the state of the web. Peer reviewers worked with authors to ensure the technical correctness of their analysis.
+        作者与分析人员一起正确地解释结果并得出适当的结论。当作者撰写他们各自的章节时，他们利用这些统计数据得出支持他们的web状态的框架。审稿人与作者一起工作，以确保他们的分析在技术上的正确性。
       </p>
 
       <p>

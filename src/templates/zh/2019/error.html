@@ -1,22 +1,22 @@
 {% extends "base/2019/error.html" %}
 
-{% block unknown_error %}Unknown Error{% endblock %}
+{% block unknown_error %}未知错误{% endblock %}
 
 {% 
   set localizedStatusCode = {
-    400: "Bad Request",
-    404: "Page Not Found",
-    500: "Internal Server Error",
-    502: "Temporary Server Error"
+    400: "错误的请求",
+    404: "页面未找到",
+    500: "内部服务器错误",
+    502: "临时服务器错误"
   }
 %}
-{% macro expandedTitle(errorTitle) %}Error: {{ errorTitle }}{% endmacro %}
+{% macro expandedTitle(errorTitle) %}错误: {{ errorTitle }}{% endmacro %}
 {%
   set localizedErrorMessage = {
-    "Unsupported year requested": "Unsupported year requested",
-    "Unsupported chapter requested": "Unsupported chapter requested",
-    "Unsupported language requested": "Unsupported language requested",
-    "Not Found": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again."
+    "Unsupported year requested": "不支持的年份请求",
+    "Unsupported chapter requested": "不支持的章节请求",
+    "Unsupported language requested": "不支持的语言请求",
+    "Not Found": "请求的 URL 在服务器上未找到。如果您是手动输入请检查拼写重试"
   }
 %}
 {% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
