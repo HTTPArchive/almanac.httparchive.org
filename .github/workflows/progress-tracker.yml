@@ -179,7 +179,7 @@ jobs:
             }
 
             if(!chapters.length) {
-              core.info(`Nothing to report`)
+              core.info('Nothing to report')
               return
             }
 
