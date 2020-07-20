@@ -35,6 +35,10 @@
   margin-bottom: 30px;
 }
 
+.filter-container ul {
+  padding: 0;
+}
+
 .filter-container li {
   list-style-type: none;
   display: inline-block
@@ -61,6 +65,7 @@
   flex-wrap: wrap;
   margin: 0 -15px;
   justify-content: center;
+  padding: 0;
 }
 
 .contributor-grid li {
@@ -270,7 +275,7 @@
       <img src="/static/images/avatars/9.jpg" alt="" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
-    <div class="filter-container">
+    <form class="filter-container">
       <p aria-live="polite" aria-atomic="true">
         {{ self.filter_by_team() }}
       </p>
@@ -285,7 +290,7 @@
         {% endif %}
         {% endfor %}
       </ul>
-    </div>
+    </form>
 
     <ul class="contributor-grid">
       <li>

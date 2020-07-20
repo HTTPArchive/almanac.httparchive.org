@@ -10,7 +10,7 @@ discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+last_updated: 2020-07-20T00:00:00.000Z
 ---
 
 ## 序章
@@ -35,7 +35,7 @@ JavaScriptは、私たちがブラウザに送るリソースの中で最もコ�
    <figcaption id="fig1-caption">図1. ページあたりのJavaScriptバイト数の分布</figcaption>
 </figure>
 
-上の図1を見ると、JavaScriptを373KB使用しているのは、50パーセンタイル（中央値）であることがわかります。つまり、全サイトの5％がこれだけのJavaScriptをユーザーに提供していることになります。
+上の図1を見ると、JavaScriptを373KB使用しているのは、50パーセンタイル（中央値）であることがわかります。つまり、全サイトの50％がこれだけのJavaScriptをユーザーに提供していることになります。
 
 この数字を見ると、これはJavaScriptの使いすぎではないかと思うのは当然のことです。しかし、ページのパフォーマンスに関しては、その影響はネットワーク接続や使用するデバイスに完全に依存します。モバイルクライアントとデスクトップクライアントを比較した場合、どのくらいのJavaScriptを提供しているのでしょうか？
 
