@@ -129,6 +129,7 @@ jobs:
                   team.Authors = parseUserNames(authors)
                   team.Reviewers = parseUserNames(reviewers)
                   team.Analysts = parseUserNames(analysts)
+                  team.All = [...team.Authors, ...team.Reviewers, ...team.Analysts]
                 }
               })
               return team
@@ -139,7 +140,7 @@ jobs:
             }
 
             const formatTeam = team => {
-              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('/')
+              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('+').replace(/\+([^+]*)$/, '=$1')
             }
 
             const formatRow = chapter => {
