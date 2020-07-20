@@ -41,7 +41,8 @@ jobs:
             const teamMembers = {
               Authors: {},
               Reviewers: {},
-              Analysts: {}
+              Analysts: {},
+              All: {}
             }
 
             const parseListItems = text => {
