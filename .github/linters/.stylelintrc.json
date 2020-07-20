@@ -28,7 +28,7 @@
                 "ignoreProperties": ["prince-pdf-display-doc-title","prince-pdf-tag-type"]
             }
         ],
-        "selector-list-comma-newline-after": null,
+        "selector-list-comma-newline-after": "always",
         "selector-pseudo-element-no-unknown": [
             true,
             {

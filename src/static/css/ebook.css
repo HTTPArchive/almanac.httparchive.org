@@ -96,7 +96,8 @@ tbody tr:nth-child(even) {
   text-decoration: none;
 }
 
-.content a, .content a:visited {
+.content a,
+.content a:visited {
   color: #0b1423;
 }
 
@@ -289,7 +290,8 @@ section.chapter {
   }
 }
 
-#toc, #foreword {
+#toc,
+#foreword {
   page: front-matter;
 }
 
@@ -334,7 +336,9 @@ section.chapter {
   /* We have some big tables that can't be force to break
    * So we cheat and make them small enough to fit on a page
    */
-  figure table td, figure table td li, figure table td p {
+  figure table td,
+  figure table td li,
+  figure table td p {
     font-size: 12px;
     font-size: 0.85rem;
   }
@@ -409,13 +413,19 @@ section.chapter {
     font-size: 1.17em;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-weight: bold;
     page-break-after: avoid;
     page-break-inside: avoid;
   }
 
-  h1 + p, h2 + p, h3 + p {
+  h1 + p,
+  h2 + p,
+  h3 + p {
     page-break-before: avoid;
   }
 
