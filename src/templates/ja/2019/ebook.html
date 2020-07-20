@@ -1,4 +1,4 @@
-{% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["ksakae"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["ksakae"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-20T00:00:00.000Z","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -50,7 +50,7 @@
       <div id="javascript-fig1-description" class="visually-hidden">p10パーセンタイルで70バイト、p25で174バイト、p50で373バイト、p75で693バイト、p90で1,093バイトのJavaScriptを使用していることを示す棒グラフ</div>
       <figcaption id="javascript-fig1-caption"><a href="#javascript-fig-1" class="anchor-link">図 1.</a> ページあたりのJavaScriptバイト数の分布</figcaption>
     </figure>
-    <p>上の図1を見ると、JavaScriptを373KB使用しているのは、50パーセンタイル（中央値）であることがわかります。つまり、全サイトの5％がこれだけのJavaScriptをユーザーに提供していることになります。</p>
+    <p>上の図1を見ると、JavaScriptを373KB使用しているのは、50パーセンタイル（中央値）であることがわかります。つまり、全サイトの50％がこれだけのJavaScriptをユーザーに提供していることになります。</p>
     <p>この数字を見ると、これはJavaScriptの使いすぎではないかと思うのは当然のことです。しかし、ページのパフォーマンスに関しては、その影響はネットワーク接続や使用するデバイスに完全に依存します。モバイルクライアントとデスクトップクライアントを比較した場合、どのくらいのJavaScriptを提供しているのでしょうか？</p>
     <figure id="javascript-fig-2">
       <a href="https://almanac.httparchive.org/static/images/2019/javascript/fig2.png">
