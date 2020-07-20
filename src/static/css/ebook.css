@@ -482,7 +482,6 @@ section.chapter {
   flex: 0 0 76px;
 }
 
-
 #front-cover {
   position: absolute;
   text-align: center;
@@ -575,10 +574,6 @@ section.chapter {
   width: 100%;
 }
 
-#spine .title {
-  color: white;
-}
-
 .spine-year svg {
   fill: #f7f779;
   width: 100%;
@@ -596,9 +591,10 @@ section.chapter {
 }
 
 #spine .title {
+  color: white;
   top: 50%;
   left: 50%;
-  transform:  translateX(-50%) translateY(-50%) rotate(90deg);
+  transform: translateX(-50%) translateY(-50%) rotate(90deg);
   font-size: 40px;
   font-size: 4rem;
   font-weight: 700;
@@ -698,5 +694,5 @@ section.chapter {
 #back-cover .ha-logo-wrapper svg {
   width: 100%;
   height: auto;
-  filter:  brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }

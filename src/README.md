@@ -70,7 +70,7 @@ npm run generate
 npm run ebooks
 ```
 
-## Generating ebooks - including print-ready ebooks if you want a hardcopy.
+## Generating ebooks - including print-ready ebooks if you want a hardcopy
 
 It is also possible to generate the ebook from the website (either production or 127.0.0.1), with some optional params (e.g. to print it!)
 
