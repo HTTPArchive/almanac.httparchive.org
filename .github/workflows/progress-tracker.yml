@@ -72,17 +72,18 @@ jobs:
             core.info(`Tracking progress of ${totalTrackedTasks} tasks across chapters`)
 
             const calcStats = nums => {
-              if (!nums.length) {
+              const size = nums.length
+              if (!size) {
                 return [0, 0, 0, 0, 0]
               }
               nums.sort((a, b) => a - b)
-              const half = Math.floor(nums.length / 2)
+              const sum = nums.reduce((a,b) => a + b, 0)
               return [
-                nums.reduce((a,b) => a + b, 0),
-                Math.min(...nums),
-                Math.max(...nums),
-                (nums.reduce((a,b) => a + b, 0) / nums.length).toFixed(2),
-                nums[half]
+                sum,
+                nums[0],
+                nums[size - 1],
+                (sum / size).toFixed(2),
+                nums[Math.floor(size / 2)]
               ]
             }
 
