@@ -6,13 +6,13 @@ RETURNS STRING LANGUAGE js AS '''
 try {
   var almanac = JSON.parse(almanacJsonString);
   
-  if (almanac['title-elements'] && almanac['title-elements'].length > 0) {
-      return almanac['title-elements'][0].text;
+  if (almanac['title'] && almanac['title'].length > 0) {
+      return almanac['title'][0].text;
   }
 
-  return null;//maybe empty string?
+  return null; //maybe empty string?
 } catch (e) {
-  return null;//maybe empty string?
+  return null; //maybe empty string?
 }
 ''';
 
@@ -25,7 +25,7 @@ try {
 
   if (description && description.content) return description.content;
 
-  return null;//maybe empty string?
+  return null; //maybe empty string?
 } catch (e) {
   return null; //maybe empty string?
 }
@@ -36,13 +36,13 @@ RETURNS STRING LANGUAGE js AS '''
 try {
   var almanac = JSON.parse(almanacJsonString);
   
-  if (almanac['content'] && almanac['content'].h1Array && almanac['content'].h1Array.length > 0) {
-      return almanac['content'].h1Array[0].text;
+  if (almanac['heading'] && almanac['heading'].h1Texts && almanac['heading'].h1.length > 0) {
+      return almanac['heading'].h1[0].text;
   }
 
-  return null;//maybe empty string?
+  return null; //maybe empty string?
 } catch (e) {
-  return null;//maybe empty string?
+  return null; //maybe empty string?
 }
 ''';
 
@@ -67,10 +67,13 @@ FROM (
     getDescriptionText(almanac) AS description,
     getH1Text(almanac) AS h1,
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-words'].wordsCount") AS INT64) AS words_count,
-    CAST(JSON_EXTRACT_SCALAR(almanac, "$['content'].visibleWords") AS INT64) AS visible_words,
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['visible-words']") AS INT64) AS visible_words,
+
+    # 2019 word gathering
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-words'].wordElements") AS INT64) AS word_elements,
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-titles'].titleWords") AS INT64) AS header_words_count,
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-titles'].titleElements") AS INT64) AS header_elements,
+
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].internal") AS INT64) AS internal_links,
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].external") AS INT64) AS external_links,
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].hash") AS INT64) AS hash_links
