@@ -1,11 +1,11 @@
-almanac.js queries are identified by rendered_ and body queries by raw_.
+almanac.js queries are identified by rendered\_ and body queries by raw\_.
 
 I've tried to merge as many queries as possible based on the data source and format of the results. This should make it a lot easier to manage as well as save on the number of queries made $$$
 
 lighthouse.sql - all data from lighthouse
-rendered_by_device.sql - rendered data from almanac.js grouped by device
-rendered_percentiles_by_device.txt - rendered data from almanac.js reported by percentiles and grouped by device
-raw_by_device.sql - data from the raw html - very expensive query when done on the real data - does not gather much at the moment. This could become our raw/rendered comparison query.
+rendered\_by\_device.sql - rendered data from almanac.js grouped by device
+rendered\_percentiles\_by\_device.txt - rendered data from almanac.js reported by percentiles and grouped by device
+raw\_by\_device.sql - data from the raw html - very expensive query when done on the real data - does not gather much at the moment. This could become our raw/rendered comparison query.
 
 Other scripts are ones that have a unique output so can't be merged. Typically because they group by the field they are analysing.
 
