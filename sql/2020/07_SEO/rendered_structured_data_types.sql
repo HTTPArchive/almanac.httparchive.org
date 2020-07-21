@@ -22,8 +22,8 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   ROUND(COUNT(schema_type) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
 FROM
-  `httparchive.pages.2019_07_01_*`,
-  UNNEST(getSchemaTypes(payload)) AS schema_type
+  `httparchive.almanac.pages_*`
+  , UNNEST(getSchemaTypes(payload)) AS schema_type
 GROUP BY
   client,
   schema_type
