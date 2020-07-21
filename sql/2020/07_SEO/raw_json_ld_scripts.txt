@@ -1,0 +1,10 @@
+# notes and test scripts
+
+#standardSQL
+# pages with 10 or more scripts
+SELECT 
+page,
+ARRAY_LENGTH(REGEXP_EXTRACT_ALL(body, '(?i)<script[^>]*type=[\'"]?application\\/ld\\+json[\'"]?[^>]*>(.*?)<\\/script>')) AS jsonld_scripts_count
+FROM `httparchive.sample_data.response_bodies_desktop_10k` 
+WHERE page = url
+AND ARRAY_LENGTH(REGEXP_EXTRACT_ALL(body, '(?i)<script[^>]*type=[\'"]?application\\/ld\\+json[\'"]?[^>]*>(.*?)<\\/script>')) > 10;
