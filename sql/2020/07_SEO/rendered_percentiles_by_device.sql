@@ -59,7 +59,10 @@ SELECT
   APPROX_QUANTILES(header_elements, 1000)[OFFSET(percentile * 10)] AS header_elements,
   APPROX_QUANTILES(internal_links, 1000)[OFFSET(percentile * 10)] AS internal_links,
   APPROX_QUANTILES(external_links, 1000)[OFFSET(percentile * 10)] AS external_links,
-  APPROX_QUANTILES(hash_links, 1000)[OFFSET(percentile * 10)] AS hash_links
+  APPROX_QUANTILES(hash_links, 1000)[OFFSET(percentile * 10)] AS hash_links,
+
+  APPROX_QUANTILES(jsonld_scripts_count, 1000)[OFFSET(percentile * 10)] AS jsonld_scripts_count,
+  APPROX_QUANTILES(jsonld_scripts_error_count, 1000)[OFFSET(percentile * 10)] AS jsonld_scripts_error_count
 FROM (
   SELECT
     client,
@@ -76,7 +79,10 @@ FROM (
 
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].internal") AS INT64) AS internal_links,
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].external") AS INT64) AS external_links,
-    CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].hash") AS INT64) AS hash_links
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].hash") AS INT64) AS hash_links,
+
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['structured-data'].jsonLdScriptCount") AS INT64) AS jsonld_scripts_count,
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['structured-data'].jsonLdScriptErrorCount") AS INT64) AS jsonld_scripts_error_count
   FROM
   ( 
     SELECT 

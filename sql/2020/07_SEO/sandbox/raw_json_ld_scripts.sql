@@ -1,3 +1,5 @@
+######### DON'T USE - caprutred in the rendered scripts
+
 #standardSQL
 # how many lson-ld scripts on a page
 # see raw_json_ld_scripts.txt for notes and test scripts

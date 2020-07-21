@@ -1,6 +1,7 @@
+######### DON'T USE - caprutred in the rendered scripts
+
 #standardSQL
 # hreflang implementation values
-# use the rendered one instead
 # See related: sql/2019/10_SEO/10_04b.sql
 
 SELECT
