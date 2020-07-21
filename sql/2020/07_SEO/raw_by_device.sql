@@ -17,8 +17,8 @@ SELECT
 FROM (
   SELECT
 ###   client,
-    # REGEXP_EXTRACT(body, '(?i)<title>([^(</title>)]*)</title>') AS titletag,
-    # REGEXP_EXTRACT(body, '(?i)<h1>([^(</h1>)]*)</h1>') AS h1
+    #REGEXP_EXTRACT(body, '(?i)<title>([^(</title>)]*)</title>') AS titletag,
+    #REGEXP_EXTRACT(body, '(?i)<h1>([^(</h1>)]*)</h1>') AS h1,
     ARRAY_LENGTH(REGEXP_EXTRACT_ALL(body, '(?i)<link[^>]*hreflang=[\'"]?([^\'"\\s>]+)')) AS raw_hreflang_count,
     ARRAY_LENGTH(REGEXP_EXTRACT_ALL(body, '(?i)<script[^>]*type=[\'"]?application\\/ld\\+json[\'"]?[^>]*>(.*?)<\\/script>')) AS raw_jsonld_scripts_count
   FROM

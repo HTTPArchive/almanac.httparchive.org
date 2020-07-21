@@ -38,14 +38,10 @@ try {
 }
 ''';
 
+
 SELECT
   client,
   COUNT(0) AS total,
-
-  # Structured Data
-  COUNTIF(sd_has_eligible_type) AS sd_has_eligible_type,
-  ROUND(COUNTIF(sd_has_eligible_type) * 100 / COUNT(0), 2) AS pct_sd_has_eligible_type,
-  ROUND(COUNTIF(sd_has_eligible_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct_overall_sd_has_eligible_type,
 
   # AMP
   COUNTIF(has_amp_link) AS has_amp_link,
@@ -68,9 +64,22 @@ SELECT
   ROUND(COUNTIF(STARTS_WITH(url, 'http:')) * 100 / COUNT(0), 2) AS pct_http,
 
   # zero links 
-  ROUND(COUNTIF(internal_links  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS internal_link_zero,
-  ROUND(COUNTIF(external_links  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS external_link_zero,
-  ROUND(COUNTIF(hash_links = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS _hash_link_zero
+  ROUND(COUNTIF(internal_links  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_internal_link_zero,
+  ROUND(COUNTIF(external_links  = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_external_link_zero,
+  ROUND(COUNTIF(hash_links = 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_hash_link_zero,
+
+  # Structured Data 
+  COUNTIF(sd_has_eligible_type) AS sd_has_eligible_type,
+  ROUND(COUNTIF(sd_has_eligible_type) * 100 / COUNT(0), 2) AS pct_sd_has_eligible_type,
+  ROUND(COUNTIF(sd_has_eligible_type) * 100 / SUM(COUNT(0)) OVER (), 2) AS pct_overall_sd_has_eligible_type,
+
+  COUNTIF(jsonld_scripts_count > 0) AS has_jsonld_scripts,
+  ROUND(COUNTIF(jsonld_scripts_count > 0) * 100 / COUNT(0), 2) AS pct_have_jsonld_scripts,
+  ROUND(COUNTIF(jsonld_scripts_count > 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_overall_have_jsonld_scripts,
+
+  COUNTIF(jsonld_scripts_error_count > 0) AS has_jsonld_script_errors,
+  ROUND(COUNTIF(jsonld_scripts_error_count > 0) * 100 / COUNT(0), 2) AS pct_have_jsonld_script_errors,
+  ROUND(COUNTIF(jsonld_scripts_error_count > 0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_overall_have_jsonld_script_errors
 FROM (
   SELECT
     client,
@@ -82,7 +91,9 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-titles'].titleElements") AS INT64) AS header_elements,
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].internal") AS INT64) AS internal_links,
     CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].external") AS INT64) AS external_links,
-    CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].hash") AS INT64) AS hash_links
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['seo-anchor-elements'].hash") AS INT64) AS hash_links,
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['structured-data'].jsonLdScriptCount") AS INT64) AS jsonld_scripts_count,
+    CAST(JSON_EXTRACT_SCALAR(almanac, "$['structured-data'].jsonLdScriptErrorCount") AS INT64) AS jsonld_scripts_error_count
   FROM
   ( 
     SELECT 

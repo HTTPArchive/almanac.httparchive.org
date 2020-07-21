@@ -1,3 +1,5 @@
+######### DON'T USE - caprutred in the rendered scripts
+
 #standardSQL
 # broken scripts summary
 # see raw_json_ld_scripts_broken.txt for notes and test scripts
