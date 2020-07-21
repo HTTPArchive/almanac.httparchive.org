@@ -1,11 +1,11 @@
 {%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}
 {%- if featured_chapter == "javascript" %}
   {%- set featured_chapter_name = "JavaScript" %}
-  {%- set featured_chapter_quote = "JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page." %}
-  {%- set featured_chapter_stats = {"stat1":"89%","label1":"Sites with more third-party code than first-party","stat2":"83%","label2":"Sites that use jQuery","stat3":"4.6%","label3":"Home pages using React"} %}
+  {%- set featured_chapter_quote = "JavaScript是我们发送给浏览器的最昂贵的资源;必须下载、解析、编译，最后执行。尽管浏览器大大减少了解析和编译脚本的时间，但在web页面处理JavaScript时，下载和执行已经成为最昂贵的阶段。" %}
+  {%- set featured_chapter_stats = {"stat1":"89%","label1":"第三方代码多于自有代码的站点","stat2":"83%","label2":"使用jQuery的站点","stat3":"4.6%","label3":"主页使用React"} %}
 {%- elif featured_chapter == "css" %}
   {%- set featured_chapter_name = "CSS" %}
-  {%- set featured_chapter_quote = "Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user." %}
+  {%- set featured_chapter_quote = "层叠样式表(CSS) 用于绘制、格式化和布局web页面。 它们的功能涵盖了从简单的文本颜色到3D透视图等概念。它还提供了钩子，使开发人员能够处理各种屏幕大小、查看上下文和打印。 CSS帮助开发人员处理内容，并确保其适当地适应用户。" %}
   {%- set featured_chapter_stats = {"stat1":"5%","label1":"Pages using custom properties","stat2":"2%","label2":"Sites that use CSS Grid","stat3":"780","label3":"Number of digits in largest Z-Index value"} %}
 {%- elif featured_chapter == "markup" %}
   {%- set featured_chapter_name = "Markup" %}
