@@ -1,3 +1,5 @@
+# Guide
+
 almanac.js queries are identified by rendered\_ and body queries by raw\_.
 
 I've tried to merge as many queries as possible based on the data source and format of the results. This should make it a lot easier to manage as well as save on the number of queries made $$$
