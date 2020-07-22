@@ -38,7 +38,7 @@
         "value-keyword-case": [
             "lower",
             {
-                "ignoreKeywords": ["Art","A4"]
+                "ignoreKeywords": ["Art","A4","A5"]
             }
         ]
     }
