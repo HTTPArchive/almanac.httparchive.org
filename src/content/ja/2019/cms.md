@@ -10,7 +10,7 @@ discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
 queries: 14_CMS
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-05T00:00:00.000Z
+last_updated: 2020-07-20T00:00:00.000Z
 ---
 
 ## 序章
@@ -492,7 +492,7 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
   <figcaption id="fig21-caption">図21. CMSごとの灯台PWAカテゴリスコアの中央値。</figcaption>
 </figure>
 
-#### アクセンシビリティ
+#### アクセシビリティ
 
 アクセシブルなウェブサイトとは、障害者が利用できるように設計・開発されたサイトのことです。Lighthouseは、一連のアクセシビリティ監査を提供し、それらすべての監査の加重平均を返します（各監査の加重方法の完全なリストについては、[スコアリングの詳細](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065)を参照してください）。
 
