@@ -1,7 +1,6 @@
 #standardSQL
-# LH5 vs LH6 score. WIP
 
-# Calculates minimum, maximum and average delta between LH5 and LH6 performance score
+# Calculates minimum, maximum and average delta between LH5 and LH6 performance score for mobile
 SELECT MIN(perf_score_delta) AS min_delta, MAX(perf_score_delta) AS max_delta, AVG(perf_score_delta) AS avg_delta
 FROM
 (
