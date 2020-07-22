@@ -99,7 +99,9 @@ FROM (
     SELECT 
     _TABLE_SUFFIX AS client,
     url,
+    #payload,
     JSON_EXTRACT_SCALAR(payload, '$._almanac') AS almanac
+    #JSON_EXTRACT_SCALAR(payload, '$._element_count') AS elements # all elements on the page?
     FROM
     `httparchive.almanac.pages_*`
   )
