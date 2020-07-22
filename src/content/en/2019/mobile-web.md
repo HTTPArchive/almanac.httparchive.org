@@ -7,8 +7,10 @@ authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
 translators: []
 discuss: 1767
+results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
+queries: 12_Mobile_Web
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-23T00:00:00.000Z
+last_updated: 2020-05-27T00:00:00.000Z
 ---
 
 ## Introduction
@@ -53,11 +55,15 @@ I imagine some of you are surprised by these results. They may be far worse cond
 
 The state of JavaScript on the mobile web is terrifying. According to HTTP Archive's [JavaScript report](https://httparchive.org/reports/state-of-javascript?start=2016_05_15&end=2019_07_01&view=list#bytesJs), the median mobile site requires phones to download 375 KB of JavaScript. Assuming a 70% compression ratio, this means that phones have to parse, compile, and execute 1.25 MB of JavaScript at the median.
 
-Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) to become interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, nothing happens because the JavaScript hasn't finished executing. Users are forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.
+Why is this a problem? Because sites loading this much JS take upwards of [10 seconds](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci) to become consistently interactive. Or in other words, your page may appear fully loaded, but when a user clicks any of your buttons or menus, the user may experience some slowdown because the JavaScript hasn't finished executing. In the worst case scenario, users may be forced to keep clicking the button for upwards of 10 seconds, just waiting for that magical moment where something actually happens. Think about how confusing and frustrating that can be.
 
 <figure>
-  <iframe class="fig-mobile fig-desktop" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <figcaption>Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
+  <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-labelledby="fig2-caption" aria-describedby="fig2-description"></iframe>
+  <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
+    <img src="/static/images/2019/mobile-web/fig2.png" alt="Figure 2. Example of how painful of an experience waiting for JS to load can be." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="610" height="343" loading="lazy">
+  </a>
+  <div id="fig2-description" class="visually-hidden">Video showing two web pages loading and each page has a figure tapping repeatedly on a button throughout the video, to no effect. There is a clock ticking up from 0 seconds at the top, and an initial happy emoji face for each website, that starts to turn less happy as clock passes 6 seconds, wide-eyed at 8 seconds, angry at 10 seconds, really angry at 13 seconds and crying at 19 seconds shortly after which the video ends.</div>
+  <figcaption id="fig2-caption">Figure 2. Example of how painful of an experience waiting for JS to load can be.</figcaption>
 </figure>
 
 Let's delve deeper and look at another metric that focuses more on *how well* each page utilizes JavaScript. For example, does it really need as much JavaScript as it's loading? We call this metric the *JavaScript Bloat Score*, based on the [web bloat score](https://www.webbloatscore.com/). The idea behind it is this:
@@ -66,7 +72,7 @@ Let's delve deeper and look at another metric that focuses more on *how well* ea
 - It's also delivered as text to the browser. So it compresses well, and should be delivered faster than just a screenshot of the page.
 - So if the total amount of JavaScript a page downloads _alone_ (not including images, css, etc) is larger than a PNG screenshot of the viewport, we are using far too much JavaScript. At this point, it'd be faster just to send that screenshot to get the initial page state!
 
-<aside>The *JavaScript Bloat Score* is defined as: (total JavaScript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it's faster to send a screenshot.</aside>
+<p class="note">The *JavaScript Bloat Score* is defined as: (total JavaScript size) / (size of PNG screenshot of viewport). Any number greater than 1.0 means it's faster to send a screenshot.</p>
 
 The results of this? Of the 5+ million websites analyzed, 75.52% were bloated with JavaScript. We have a long way to go.
 
@@ -85,8 +91,8 @@ Despite being available since 2016 and implemented on every major browser, only 
 One of the most beautiful parts of the web is how web pages load progressively by nature. Browsers download and display content as soon as they are able, so users can engage with your content as soon as possible. However, this can have a detrimental effect if you don't design your site with this in mind. Specifically, content can shift position as resources load and impede the user experience.
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
-    <img src="/static/images/2019/12_Mobile_Web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook" aria-labelledby="fig3-caption" aria-describedby="fig3-description">
+  <a href="/static/images/2019/mobile-web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
+    <img src="/static/images/2019/mobile-web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="360" height="640">
   </a>
   <div id="fig3-description" class="visually-hidden">A video showing a website progressively load. The text is displayed quickly, but as images continue to load the text gets shifted further and further down the page each time—making it very frustrating to read. The calculated CLS of this example is 42.59%. Image courtesy of LookZook</div>
   <figcaption id="fig3-caption">Figure 3. Example of shifting content distracting a reader. CLS total of 42.59%. Image courtesy of LookZook</figcaption>
@@ -133,11 +139,11 @@ When designing our sites we tend to be in more optimal conditions, and have far 
 To help us mitigate this problem, there are [accessibility guidelines](https://dequeuniversity.com/rules/axe/2.2/color-contrast) we can follow when choosing our text and background colors. So how are we doing in meeting these baselines? Only 22.04% of sites give all their text sufficient color contrast. This value is actually a lower limit, as we could only analyze text with solid backgrounds. Image and gradient backgrounds were unable to be analyzed.
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png">
-    <img src="/static/images/2019/12_Mobile_Web/example-of-good-and-bad-color-contrast-lookzook.png" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description">
+  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
+    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
   </a>
-  <div id="fig4-description" class="visually-hidden">Four colored boxes of orange and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is #FFFFFF, the light shade of orange background is #FCA469, and the recommended shade of orange background is #F56905. Image courtesy of LookZook</div>
-  <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
+  <div id="fig4-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns, one where the background color is too lightly colored compared to the white text and one where the background color is recommended compared to the white text. The hex code of each color is displayed, white is <code>#FFFFFF</code>, the light shade of brown background is <code>#FCA469</code>, and the recommended shade of brown background is <code>#BD5B0E</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Image courtesy of LookZook</div>
+  <figcaption id="fig4-caption">Figure 4. Example of what text with insufficient color contrast looks like. Courtesy of LookZook.</figcaption>
 </figure>
 
 For colorblindness stats for other demographics, see [this paper](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf).
@@ -163,8 +169,8 @@ Because of this, developers are given the ability to disable this feature by set
 2. `maximum-scale` set to `1`, `1.0`, etc
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/fig5.png">
-    <img src="/static/images/2019/12_Mobile_Web/fig5.png" alt="Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
+  <a href="/static/images/2019/mobile-web/fig5.png">
+    <img src="/static/images/2019/mobile-web/fig5.png" alt="Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Vertical grouped bar chart titled "Are zooming and scaling enabled?" measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.</div>
   <figcaption id="fig5-caption">Figure 5. Percent of desktop and mobile websites that enable or disable zooming/scaling.</figcaption>
@@ -185,8 +191,8 @@ We're used to having precise devices like mice while on desktop, but the story i
 Designing tap targets appropriately to mitigate this issue can be difficult because of how widely fingers vary in size. However, lots of research has now been done and there are safe [standards](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) for how large buttons should be and how far apart they need to be separated.
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png">
-    <img src="/static/images/2019/12_Mobile_Web/example-of-easy-to-hit-tap-targets-lookzook.png" alt="Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook" aria-labelledby="fig6-caption" aria-describedby="fig6-description">
+  <a href="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png">
+    <img src="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png" alt="Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="800" height="430">
   </a>
   <div id="fig6-description" class="visually-hidden">A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook</div>
   <figcaption id="fig6-caption">Figure 6. Standards for sizing and spacing tap targets. Image courtesy of LookZook</figcaption>
@@ -200,7 +206,7 @@ Some designers love to use icons in place of text — they can make our sites lo
 
 This is why it's important to avoid any confusion and add supporting text and labels to your buttons. As of now, at least 28.59% of sites include a button with only a single icon with no supporting text.
 
-<aside class="note">Note: The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.</aside>
+<p class="note">Note: The reported number above is only a lower bound. During our analysis, we only included buttons using font icons with no supporting text. Many buttons now use SVGs instead of font-icons however, so in future runs we will be including them as well.</p>
 
 ## Semantic form fields
 
@@ -253,25 +259,25 @@ Currently, only 29.62% of pages with input fields utilize this feature.
 
 Enabling users to copy and paste their passwords into your page is one way that allows them to use password managers. Password managers help users generate (and remember) strong passwords and fill them out automatically on web pages. Only 0.02% of web pages tested disable this functionality.
 
-<aside class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="./methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</aside>
+<p class="note">Note: While this is very encouraging, this may be an underestimation due to the requirement of our <a href="./methodology">Methodology</a> to only test home pages. Interior pages, like login pages, are not tested.</p>
 
 ## Conclusion
 
-For over 13 years we've been treating the *mobile* web as an afterthought, like a mere exception to desktop. But it's time for this to change. The mobile web is now _*the*_ web, and desktop is becoming the legacy one. There are now 4 billion active smartphones in the world, covering 70% of all potential users. What about desktops? They currently sit at 1.6 billion, and account for less and less of web usage every month.
+For over 13 years we've been treating the *mobile* web as an afterthought, like a mere exception to desktop. But it's time for this to change. The mobile web is now *the* web, and desktop is becoming the legacy one. There are now 4 billion active smartphones in the world, covering 70% of all potential users. What about desktops? They currently sit at 1.6 billion, and account for less and less of web usage every month.
 
 How well are we doing catering to mobile users? According to our research, even though 71% of sites make some kind of effort to adjust their site for mobile, they're falling well below the mark. Pages take forever to load and become unusable thanks to an abuse of JavaScript, text is often impossible to read, engaging with sites via clicking links or buttons is error-prone and infuriating, and tons of great technologies invented to mitigate these problems (Service Workers, autocomplete, zooming, new image formats, etc) are barely being used at all.
 
 The mobile web has now been around long enough for there to be an entire generation of kids where this is the only internet they've ever known. And what kind of experience are we giving them? We're essentially taking them back to the dial-up era. (Good thing I hear AOL still sells those CDs providing 1000 hours of free internet access!)
 
 <figure>
-  <a href="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg">
-    <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/12_Mobile_Web/america-online-1000-hours-free.jpg" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="300">
+  <a href="/static/images/2019/mobile-web/america-online-1000-hours-free.jpg">
+    <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/mobile-web/america-online-1000-hours-free.jpg" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="300" height="285">
   </a>
   <div id="fig9-description" class="visually-hidden">A photograph of an AOL CD-ROM offering 1,000 hours free.</div>
   <figcaption id="fig9-caption">Figure 9. 1000 hours of America Online for free, from <a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
 </figure>
 
-<aside class="note" markdown>Notes:
+<p class="note" data-markdown="1">Notes:
 
 1. We defined sites making a mobile effort as those who adjust their designs for smaller screens. Or rather, those which have at least one CSS breakpoint at 600px or less.
 
@@ -282,4 +288,4 @@ The mobile web has now been around long enough for there to be an entire generat
 4. The total number of active smartphones was found by totaling the number of active Androids and iPhones (made public by Apple and Google), and a bit of math to account for Chinese internet-connected phones. [More info here](https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile).
 
 5. The 1.6 billion desktops is calculated by numbers made public by [Microsoft](https://web.archive.org/web/20181030132235/https://news.microsoft.com/bythenumbers/en/windowsdevices) and [Apple](https://web.archive.org/web/20190628161024/https://appleinsider.com/articles/18/10/30/apple-passes-100m-active-mac-milestone-thanks-to-high-numbers-of-new-users). It does not include linux PC users.
-</aside>
+</p>

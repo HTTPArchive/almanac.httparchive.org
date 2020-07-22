@@ -7,8 +7,10 @@ authors: [patrickhulce]
 reviewers: [zcorpan, obto, jasti]
 translators: [borisschapira]
 discuss: 1760
+results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
+queries: 05_Third_Parties
 published: 2019-12-23T00:00:00.000Z
-last_updated: 2019-12-23T00:00:00.000Z
+last_updated: 2020-05-05T00:00:00.000Z
 ---
 
 ## Introduction
@@ -48,9 +50,9 @@ Le présent chapitre classe les fournisseurs tiers dans l’une de ces grandes c
 - **Video** - fournisseurs qui hébergent un contenu vidéo quelconque de leurs utilisateurs
 - **Autre (Other)** - activité non classée ou considérée comme non conforme
 
-<aside>
+<p class="note">
   <strong>Note sur les CDN</strong> : d’après les critères que nous utilisons, seuls sont comptabilisés dans la catégorie CDN les fournisseurs qui fournissent des ressources sur des domaines de CDN <strong>publics</strong> (par exemple bootstrapcdn.com, cdnjs.cloudflare.com, etc.). Cela n’inclut <strong>pas</strong> les ressources qui sont simplement servies sur un CDN. Exemple : même si vous mettez Cloudflare devant une page, nous la considérerons comme une première partie.
-</aside>
+</p>
 
 ### Quelques réserves
 
@@ -122,8 +124,8 @@ Rang | URL de ressource tierce | Pourcentage des requêtes
 La répartition du volume de contenu par type de ressource donne également un aperçu de la façon dont le code tiers est utilisé sur le web. Alors que les requêtes sur le domaine principal sont composées à 56 % d’images, à 23 % de scripts, à 14 % de CSS, et seulement à 4 % de HTML, les requêtes vers des domaines tiers contienne davantage de scripts et de code HTML (32 % de scripts, 34 % d’images, 12 % HTML, et seulement 6 % de CSS). On pourrait penser que le code d’une tierce partie est moins souvent utilisé pour faciliter la conception et plus fréquemment pour faciliter ou observer les interactions que le code du domaine principal, mais une ventilation des types de ressources par type de tierce partie apporte de la nuance à cette idée. Alors que les CSS et les images sont majoritairement issus du domaine principal (respectivement 70 % et 64 %), les polices sont largement servies par des fournisseurs tiers, avec seulement 28 % provenant du domaie principal. Nous explorerons plus en détails ces usages plus loin dans ce chapitre.
 
 <figure>
-  <a href="/static/images/2019/05_Third_Parties/fig5.png">
-    <img src="/static/images/2019/05_Third_Parties/fig5.png" alt="Figure 5. Pourcentage de requêtes de ressources tierces par catégorie et par type de contenu." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart ?oid=488955458&amp ;format=interactive">
+  <a href="/static/images/2019/third-parties/fig5.png">
+    <img src="/static/images/2019/third-parties/fig5.png" alt="Figure 5. Pourcentage de requêtes de ressources tierces par catégorie et par type de contenu." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive">
   </a>
   <div id="fig5-description" class="visually-hidden">Graphique montrant la répartition des types de contenu pour chaque catégorie de tiers. Les images et les scripts constituent la majorité des requêtes pour chaque catégorie. Les requêtes CDN présentent une proportion particulièrement importante de polices d’écriture.</div>
   <figcaption id="fig5-caption">Figure 5. Pourcentage de requêtes de ressources tierces par catégorie et par type de contenu.</figcaption>
@@ -146,8 +148,8 @@ Bien que 49 % des requêtes proviennent de tiers, leur part sur le web en terme
 Bien qu’ils servent 57 % des scripts, les tiers représentent 64 % des octets de script, ce qui signifie que leurs scripts sont en moyenne plus volumineux que les scripts des domaines principaux. C’est un signe avant-coureur de l’impact de leurs performances qui sera présenté dans les prochaines sections.
 
 <figure>
-  <a href="/static/images/2019/05_Third_Parties/fig7.png">
-    <img src="/static/images/2019/05_Third_Parties/fig7.png" alt="Figure 7. Répartition des octets de ressource par catégorie de tiers." aria-labelledby="fig7-caption" aria-describedby="fig7-description"  width="600" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart ?oid=1167032693&amp ;format=interactive">
+  <a href="/static/images/2019/third-parties/fig7.png">
+    <img src="/static/images/2019/third-parties/fig7.png" alt="Figure 7. Répartition des octets de ressource par catégorie de tiers." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80 % des polices proviennent de CDN. La vidéo provient de tiers spécialisés en "Contenus".</div>
   <figcaption id="fig7-caption" >Figure 7. Répartition des octets de ressource par catégorie de tiers.</figcaption>
@@ -220,13 +222,13 @@ Le bon côté de ce petit nombre d’entités jouissant d’une si grande part d
 
 L’abondance des fournisseurs de services de télémétrie et la forte concentration de l’exécution des scripts posent deux problèmes majeurs de confidentialité pour les visiteurs des sites : les propriétaires de sites sont très nombreux à pister leurs utilisateurs avec des scripts tiers, permettant à une poignée d’entreprises de recevoir des informations sur une grande partie du trafic web.
 
-L’intérêt des propriétaires de sites pour la compréhension et l’analyse du comportement des utilisateurs n’est pas malveillant en soi, mais le caractère généralisé et plutôt dissimulé du pistage sur le web soulève des préoccupations légitimes. Les utilisateurs et utilisatrices, les entreprises et les autorités législatives en ont pris conscience  ces dernières années, aboutissant aux réglementations sur la protection de la vie privée telles que le [RGPD](https://fr.wikipedia.org/wiki/R%C3 %A8glement_g%C3 %A9n%C3 %A9ral_sur_la_protection_des_donn%C3 %A9es) en Europe et le [CCPA](https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act) en Californie. Il est essentiel de s’assurer que les équipes de développement traitent les données des utilisateurs et utilisatrices de manière responsable, qu’elles les traitent avec respect et qu’elles soient transparentes quant aux données recueillies pour que la télémétrie demeure la catégorie de tiers la plus populaire et pour s’assurer que l’analyse du comportement des utilisateurs reste en symbiose avec l’amélioration de la valeur d’usage pour les utilisateurs et utilisatrices.
+L’intérêt des propriétaires de sites pour la compréhension et l’analyse du comportement des utilisateurs n’est pas malveillant en soi, mais le caractère généralisé et plutôt dissimulé du pistage sur le web soulève des préoccupations légitimes. Les utilisateurs et utilisatrices, les entreprises et les autorités législatives en ont pris conscience  ces dernières années, aboutissant aux réglementations sur la protection de la vie privée telles que le [RGPD](https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es) en Europe et le [CCPA](https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act) en Californie. Il est essentiel de s’assurer que les équipes de développement traitent les données des utilisateurs et utilisatrices de manière responsable, qu’elles les traitent avec respect et qu’elles soient transparentes quant aux données recueillies pour que la télémétrie demeure la catégorie de tiers la plus populaire et pour s’assurer que l’analyse du comportement des utilisateurs reste en symbiose avec l’amélioration de la valeur d’usage pour les utilisateurs et utilisatrices.
 
 La forte concentration de l’exécution des scripts est excellente au regard de l’impact potentiel des futures améliorations de performance, mais moins excitante pour ses implications en termes de confidentialité. 29 % de _tous_ les temps d’exécution de scripts sur le web proviennent uniquement de scripts sur des domaines appartenant à Google ou à Facebook. C’est un pourcentage très important du temps CPU qui est contrôlé par ces deux seules entités. Il est essentiel de s’assurer que les mêmes protections de la vie privée que celles dont bénéficient les fournisseurs de services de télémétrie sont également appliquées dans les autres catégories : services, publicités, réseaux sociaux et développement.
 
 ### Sécurité
 
-Bien que le sujet de la sécurité soit traité plus en profondeur dans le chapitre [Sécurité](./sécurité), les conséquences de l’introduction de dépendances externes sur votre site en matière de sécurité sont indissociables de la protection de la vie privée. Permettre à des tiers d’exécuter des JavaScript arbitraires leur donne un contrôle total sur votre page. Quand un script peut contrôler le DOM et `window`, il peut tout faire. Même si le code n’a pas de problèmes de sécurité, il peut introduire un point unique de défaillance, [ce qui a été reconnu comme un problème potentiel depuis un certain temps maintenant](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
+Bien que le sujet de la sécurité soit traité plus en profondeur dans le chapitre [Sécurité](./security), les conséquences de l’introduction de dépendances externes sur votre site en matière de sécurité sont indissociables de la protection de la vie privée. Permettre à des tiers d’exécuter des JavaScript arbitraires leur donne un contrôle total sur votre page. Quand un script peut contrôler le DOM et `window`, il peut tout faire. Même si le code n’a pas de problèmes de sécurité, il peut introduire un point unique de défaillance, [ce qui a été reconnu comme un problème potentiel depuis un certain temps maintenant](https://www.stevesouders.com/blog/2010/06/01/frontend-spof/).
 
 [Auto-héberger du contenu de tierces parties](https://csswizardry.com/2019/05/self-host-your-static-assets/) répond à certaines des préoccupations mentionnées ici – et à d’autres. De plus, comme les navigateurs [partitionnement de plus en plus les caches HTTP](https://chromestatus.com/feature/5730772021411840), les avantages du chargement direct à partir de la tierce partie semblent plus que jamais incertains. Cette méthode est peut-être meilleure pour de nombreux cas d’utilisation, même si elle rend la mesure de son impact plus difficile.
 

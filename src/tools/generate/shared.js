@@ -1,7 +1,18 @@
 const fs = require('fs-extra');
 const recursive = require('recursive-readdir');
 
-const find_files = async () => {
+const find_template_files = async () => {
+  const filter = (file, stats) => {
+    const isHtml = file && file.endsWith('.html');
+    const isDirectory = stats && stats.isDirectory();
+
+    return !isHtml && !isDirectory;
+  };
+
+  return await recursive('templates', [filter]);
+};
+
+const find_markdown_files = async () => {
   const filter = (file, stats) => {
     const isMd = file && file.endsWith('.md');
     const isDirectory = stats && stats.isDirectory();
@@ -10,6 +21,16 @@ const find_files = async () => {
   };
 
   return await recursive('content', [filter]);
+};
+
+const find_config_files = async () => {
+  const filter = (file, stats) => {
+    const isJSON = file && file.endsWith('.json')
+
+    return !isJSON;
+  };
+
+  return await recursive('config', [filter]);
 };
 
 const size_of = async (path) => {
@@ -27,14 +48,16 @@ const size_of = async (path) => {
 };
 
 const parse_array = (array_as_string) => {
-  return array_as_string
+  return (array_as_string == "[]" ? null : array_as_string
     .substring(1, array_as_string.length - 1)
     .split(',')
-    .map((value) => value.trim());
+    .map((value) => value.trim()));
 };
 
 module.exports = {
-  find_files,
+  find_markdown_files,
+  find_template_files,
+  find_config_files,
   size_of,
   parse_array
 };

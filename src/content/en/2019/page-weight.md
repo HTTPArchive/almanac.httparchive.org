@@ -7,8 +7,10 @@ authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
 translators: []
 discuss: 1773
+results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
+queries: 18_PageWeight
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-23T00:00:00.000Z
+last_updated: 2020-03-01T00:00:00.000Z
 ---
 
 ## Introduction
@@ -25,7 +27,7 @@ The common argument as to why page size doesn't matter anymore is that, thanks t
 
 Yes, you can build large robust pages that feel fast… to some users. But you should care about page bloat in terms of how it affects all your users, especially mobile-only users who deal with bandwidth constraints or data limits.
 
-<aside class="note" markdown>Check out Tim Kadlec's fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost—in dollars and Gross National Income per capita—of your pages in countries around the world. It's an eye-opener. For instance, Amazon's home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day's wages just to visit a few dozen pages?</aside>
+<p class="note" data-markdown="1">Check out Tim Kadlec's fascinating online calculator, [What Does My Site Cost?](https://whatdoesmysitecost.com/), which calculates the cost—in dollars and Gross National Income per capita—of your pages in countries around the world. It's an eye-opener. For instance, Amazon's home page, which at the time of writing weighs 2.79MB, costs 1.89% of the daily per capita GNI of Mauritania. How global is the world wide web when people in some parts of the world would have to give up a day's wages just to visit a few dozen pages?</p>
 
 ### More bandwidth isn't a magic bullet for web performance
 
@@ -60,8 +62,8 @@ There were three really important takeaways from this research:
 2. **The number of images on a page was the second greatest predictor of conversions.** Sessions in which users converted had 38% fewer images than in sessions that didn't convert.
 
 <figure>
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="Figure 1. Converted sessions vs non-converted sessions." aria-labelledby="fig1-caption" aria-describedby="fig1-description">
+  <a href="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png">
+    <img src="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png" alt="Figure 1. Converted sessions vs non-converted sessions." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="432">
   </a>
   <div id="fig1-description" class="visually-hidden">Chart showing 19 converted sessions vs. 31 non-converted sessions</div>
   <figcaption id="fig1-caption">Figure 1. Converted sessions vs non-converted sessions.</figcaption>
@@ -70,8 +72,8 @@ There were three really important takeaways from this research:
 3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the long tail that demonstrates how many retail sessions contained up to 1,440 scripts!
 
 <figure>
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg" alt="" aria-labelledby="fig2-caption" aria-describedby="fig2-description">
+  <a href="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg">
+    <img src="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg" alt="Figure 2. Conversion rate dropping off as scripts increase." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="336">
   </a>
   <div id="fig2-description" class="visually-hidden">Chart showing conversion rate climbing up until 80 scripts, and then dropping off as scripts increase up to 1440 scripts.</div>
   <figcaption id="fig2-caption">Figure 2. Conversion rate dropping off as scripts increase.</figcaption>
@@ -541,8 +543,8 @@ The data above obscures the fact that the vast majority of GIFs on the web are a
 Further investigation into the data set revealed that 62% of GIFs are 43 bytes or smaller (43 bytes is the size of a transparent, 1x1 pixel GIF) and 84% of GIFs are 1 KB or smaller.
 
 <figure>
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="Figure 10. Cumulative distribution function of GIF file sizes." aria-labelledby="fig10-caption" aria-describedby="fig10-description">
+  <a href="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png">
+    <img src="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png" alt="Figure 10. Cumulative distribution function of GIF file sizes." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="330">
   </a>
   <div id="fig10-description" class="visually-hidden">Chart showing 25% of GIFs are 35 bytes or smaller (which is the optimal size of a 1x1 white GIF) and 62% of GIFs are 43 bytes or smaller (which is the optimal size of a 1x1 transparent GIF). This increases to just over 75% of GIFs being 100 bytes or less.</div>
   <figcaption id="fig10-caption">Figure 10. Cumulative distribution function of GIF file sizes.</figcaption>
