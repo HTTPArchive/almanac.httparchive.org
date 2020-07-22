@@ -1,0 +1,275 @@
+{% extends "%s/2019/base_chapter.html" % lang %}
+
+<!--{# IMPORTANT!
+
+- `chapter.html` is a "template for templates" used by the `generate_chapters.js` script, hence the strange template syntax (eg, mixing ejs and jinja syntax)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}-->
+
+{% set metadata = {"part_number":"IV","chapter_number":19,"title":"Indices de Ressources","description":"Chapitre sur les indices de ressources du Web Almanac 2019, couvrant les usages de dns-prefetch, preconnect, preload, prefetch, les indices de priorités et le lazy loading natif.","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":["borisschapira"],"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-12-24T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"resource-hints"} %} {% block index %}
+<ul>
+  <li>
+    <a href="#introduction">Introduction</a>
+
+    <ul>
+      <li>
+        <a href="#dns-prefetch">dns-prefetch</a>
+      </li>
+
+      <li>
+        <a href="#preconnect">preconnect</a>
+      </li>
+
+      <li>
+        <a href="#preload">preload</a>
+      </li>
+
+      <li>
+        <a href="#prefetch">prefetch</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#syntaxe">Syntaxe</a>
+  </li>
+
+  <li>
+    <a href="#les-indices-de-ressources">Les indices de ressources</a>
+  </li>
+
+  <li>
+    <a href="#lattribut-crossorigin">L&#39;attribut crossorigin</a>
+  </li>
+
+  <li>
+    <a href="#lattribut-as">L&#39;attribut as</a>
+  </li>
+
+  <li>
+    <a href="#le-futur">Le futur</a>
+
+    <ul>
+      <li>
+        <a href="#les-indices-de-priorités">Les indices de priorités</a>
+      </li>
+
+      <li>
+        <a href="#le-lazy-loading-natif">Le lazy loading natif</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#conclusion">Conclusion</a>
+  </li>
+</ul>
+
+{% endblock %} {% block main_content %}
+<h2 id="introduction"><a href="#introduction" class="anchor-link">Introduction</a></h2>
+<p>Les <a href="https://www.w3.org/TR/resource-hints/">indices de ressources</a> fournissent des "suggestions" au navigateur sur les ressources qui seront rapidement nécessaires. L'action que le navigateur entreprend à la suite de cet indice varie selon le type d'indice&nbsp;; différents indices déclenchent différentes actions. Lorsqu'ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.</p>
+<p><a href="https://youtu.be/YJGCZCaIZkQ?t=1956">Quelques exemples</a> d'amélioration de performance suite à l'usage d'indices des ressources&nbsp;:</p>
+<ul>
+  <li>Jabong a réduit son Time To Interactive de 1,5 seconde en préchargeant les scripts critiques.</li>
+  <li>Barefoot Wine a réduit le Time To Interactive des futures pages de 2,7 secondes en préchargeant les liens visibles.</li>
+  <li>Chrome.com a réduit sa latence de 0,7 seconde en se préconnectant à des domaines critiques.</li>
+</ul>
+<p>La plupart des navigateurs actuels prennent en charge quatre indices de ressources distincts&nbsp;: <code>dns-prefetch</code>, <code>preconnect</code>, <code>preload</code> et <code>prefetch</code>.</p>
+<h3 id="dns-prefetch">
+  <a href="#dns-prefetch" class="anchor-link"><code>dns-prefetch</code></a>
+</h3>
+<p>
+  Le rôle de <a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch"><code>dns-prefetch</code></a> est de lancer une résolution DNS par anticipation. On peut ainsi anticiper la résolution DNS de tierces parties. Par exemple, la résolution DNS d'un CDN, d'un fournisseur de polices d'écriture ou d'une API en tierce partie.
+</p>
+<h3 id="preconnect">
+  <a href="#preconnect" class="anchor-link"><code>preconnect</code></a>
+</h3>
+<p>
+  <a href="https://web.dev/uses-rel-preconnect"><code>preconnect</code></a> initie une connexion anticipée, y compris la résolution DNS, la poignée de main TCP et la négociation TLS. Cette fonctionnalité est utile pour établir une connexion avec une tierce partie. Les utilisations de <code>preconnect</code> sont très similaires à celles de <code>dns-prefetch</code>, mais <code>preconnect</code> est moins bien supporté par les navigateurs. Cependant, si vous n'avez pas besoin du support d'IE 11, <code>preconnect</code> est probablement un meilleur choix.
+</p>
+<h3 id="preload">
+  <a href="#preload" class="anchor-link"><code>preload</code></a>
+</h3>
+<p>
+  <a href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf"><code>preload</code></a> initie une requête au plus tôt. Il permet de charger des ressources importantes plutôt que d'attendre que l'analyseur les découvre plus tardivement. Par exemple, si une image importante ne peut être découverte qu'une fois que le navigateur a reçu et analysé la feuille de style, il est peut-être judicieux de précharger l'image.
+</p>
+<h3 id="prefetch">
+  <a href="#prefetch" class="anchor-link"><code>prefetch</code></a>
+</h3>
+<p>
+  <a href="https://calendar.perfplanet.com/2018/all-about-prefetching/"><code>prefetch</code></a> lance une requête de faible priorité. C'est utile pour charger les ressources qui seront utilisées lors du chargement de la page suivante (plutôt que de la page actuelle). Une utilisation courante de <code>prefetch</code> est le chargement de ressources dont l'application "prédit" qu'elles seront utilisées lors du chargement de la page suivante. Ces prédictions peuvent être basées sur des signaux tels que le mouvement de la souris de l'utilisateur ou des scénarios / parcours utilisateurs courants.
+</p>
+<h2 id="syntaxe"><a href="#syntaxe" class="anchor-link">Syntaxe</a></h2>
+<p>
+  97&nbsp;% des usages d'indices de ressources sont spécifiés par le tag <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link"><code>&lt;link&gt;</code></a
+  >. Par exemple&nbsp;:
+</p>
+<pre><code>&lt;link rel="prefetch" href="shopping-cart.js"&gt;</code></pre>
+<p>Seuls 3&nbsp;% des indices de ressources proviennent <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">d'en-têtes HTTP</a> permettant de les spécifier. Par exemple&nbsp;:</p>
+<pre><code>Link: &lt;https://example.com/shopping-cart.js&gt;; rel=prefetch</code></pre>
+<p>Comme l'utilisation des indices de ressources dans les en-têtes HTTP est très faible, le reste de ce chapitre se concentrera uniquement sur l'analyse de l'utilisation des indices de ressources passant par la balise <code>&lt;link&gt;</code>. Cependant, il convient de noter que dans les années à venir, l'utilisation des indices de ressources dans les en-têtes HTTP pourrait augmenter avec l'adoption de <a href="./http2#http2-push">HTTP/2 Push</a>. En effet, HTTP/2 Push réutilise l'en-tête HTTP de préchargement <code>Link</code> comme un signal permettant de pousser des ressources.</p>
+<h2 id="les-indices-de-ressources"><a href="#les-indices-de-ressources" class="anchor-link">Les indices de ressources</a></h2>
+<p class="note">Note: il n'y a pas de différence notable entre l'usage des indices de ressources sur les pages web destinées aux ordinateurs ou périphériques mobiles. C'est pourquoi, par souci de concision, ce chapitre n'inclut que les statistiques relatives aux mobiles.</p>
+<figure id="fig-1">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <tbody>
+          <tr>
+            <th>Type d'indice de ressource</th>
+            <th>Utilisation (pourcentage de sites)</th>
+          </tr>
+          <tr>
+            <td><code>dns-prefetch</code></td>
+            <td>29&nbsp;%</td>
+          </tr>
+          <tr>
+            <td><code>preload</code></td>
+            <td>16&nbsp;%</td>
+          </tr>
+          <tr>
+            <td><code>preconnect</code></td>
+            <td>4&nbsp;%</td>
+          </tr>
+          <tr>
+            <td><code>prefetch</code></td>
+            <td>3&nbsp;%</td>
+          </tr>
+          <tr>
+            <td><code>prerender</code> (déprécié)</td>
+            <td>0,13&nbsp;%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-1" class="anchor-link">Figure 1.</a> Adoption des indices de ressources.</figcaption>
+</figure>
+<p>La popularité relative de <code>dns-prefetch</code> n'est pas surprenante&amp;nbps;: c'est une API bien connue (elle est apparue pour la première fois en <a href="https://caniuse.com/#feat=link-rel-dns-prefetch">2009</a>), elle est prise en charge par tous les principaux navigateurs et c'est le moins "coûteux" de tous les indices de ressources. Parce que <code>dns-prefetch</code> n'effectue que des recherches DNS, il consomme très peu de données et il y a donc très peu d'inconvénients à l'utiliser. <code>dns-prefetch</code> est particulièrement utile dans les situations de latence élevée.</p>
+<p>Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inférieures, passer de <code>dns-prefetch</code> à <code>preconnect</code> est probablement une bonne idée. À une époque où le HTTPS est omniprésent, <code>preconnect</code> permet d'améliorer les performances tout en restant peu risqué. Notez que contrairement à <code>dns-prefetch</code>, <code>preconnect</code> initie non seulement la recherche DNS, mais aussi la poignée de main TCP et la négociation TLS. La <a href="https://knowledge.digicert.com/solution/SO16297.html">chaîne de certificats</a> est téléchargée pendant la négociation TLS et cela coûte généralement quelques kilo-octets.</p>
+<p><code>prefetch</code> est utilisé par 3&nbsp;% des sites, ce qui en fait l'indice de ressources le moins utilisé. Cette faible utilisation peut s'expliquer par le fait que <code>prefetch</code> est utile pour améliorer le chargement des pages suivantes, plutôt que celui de la page actuelle. Ainsi, il sera négligé si un site se concentre uniquement sur l'amélioration de sa page d'accueil, ou sur les performances de la première page consultée.</p>
+<figure id="fig-2">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <tbody>
+          <tr>
+            <th>Indice de ressource</th>
+            <th>Indices de ressources par page&nbsp;:<br />Médiane</th>
+            <th>Indices de ressources par page&nbsp;:<br />90e percentile</th>
+          </tr>
+          <tr>
+            <td><code>dns-prefetch</code></td>
+            <td>2</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td><code>preload</code></td>
+            <td>2</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td><code>preconnect</code></td>
+            <td>2</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td><code>prefetch</code></td>
+            <td>1</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td><code>prerender</code> (déprécié)</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-2" class="anchor-link">Figure 2.</a> Médiane en 90e percentile du nombre d'indices de ressources utilisés sur les pages en utilisant au moins un.</figcaption>
+</figure>
+<p>Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (<em>"quand tout est important, rien ne l'est"</em>). La figure 2 ci-dessus montre le nombre d'indices de ressources sur les pages en utilisant au moins un. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites les utilisent de manière appropriée.</p>
+<h2 id="lattribut-crossorigin">
+  <a href="#lattribut-crossorigin" class="anchor-link">L'attribut <code>crossorigin</code></a>
+</h2>
+<p>La plupart des ressources "traditionnelles" récupérées sur le web (les <a href="./media">images</a>, les <a href="./css">feuilles de style</a> et les <a href="./javascript">scripts</a>) sont récupérées sans avoir à activer le partage de ressources entre origines multiples (en anglais, <i lang="en">Cross-Origin Resource Sharing</i> ou <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a>). Cela signifie que si ces ressources sont extraites d'un serveur <code>Cross-Origin</code>, par défaut, leur contenu ne peut pas être relu par la page, en raison de la politique <code>Same-Origin</code>.</p>
+<p>Dans certains cas, la page peut choisir d'aller chercher la ressource à l'aide de CORS si elle a besoin d'en lire le contenu. Le système CORS permet au navigateur de "demander la permission" et d'accéder à ces ressources d'origines mixtes.</p>
+<p>Pour les types de ressources plus récentes (par exemple les polices, les requêtes <code>fetch()</code>, les modules ES), le navigateur demande par défaut ces ressources en utilisant CORS et provoque l'échec total des requêtes si le serveur ne lui accorde pas la permission d'accéder aux ressources.</p>
+<figure id="fig-3">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <tbody>
+          <tr>
+            <th>Valeur <code>crossorigin</code></th>
+            <th>Utilisation</th>
+            <th>Explication</th>
+          </tr>
+          <tr>
+            <td>Non définie</td>
+            <td>92&nbsp;%</td>
+            <td>Si l'attribut <code>crossorigin</code> est absent, la requête suivra la politique d'origine unique.</td>
+          </tr>
+          <tr>
+            <td>anonyme (ou équivalent)</td>
+            <td>7&nbsp;%</td>
+            <td>Exécute une requête <code>crossorigin</code> qui ne comprend pas d'identifiant.</td>
+          </tr>
+          <tr>
+            <td>use-credentials</td>
+            <td>0,47&nbsp;%</td>
+            <td>Exécute une requête <code>crossorigin</code> qui inclut des identifiants.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-3" class="anchor-link">Figure 3.</a> Adoption de l'attribut <code>crossorigin</code> en pourcentage du nombre d'indices de ressources.</figcaption>
+</figure>
+<p>Dans le contexte des indices de ressources, l'utilisation de l'attribut <code>crossorigin</code> leur permet de correspondre au mode CORS des ressources auxquelles ils sont censés correspondre et indique les références à inclure dans la requête. Par exemple, <code>anonymous</code> active le mode CORS et indique qu'aucun identifiant ne doit être inclus pour ces requêtes <code>cross-origin</code>&nbsp;:</p>
+<pre><code>&lt;link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous"&gt;</code></pre>
+<p>Bien que d'autres éléments HTML prennent en charge l'attribut <code>crossorigin</code>, cette analyse ne porte que sur l'utilisation avec des indices de ressources.</p>
+<h2 id="lattribut-as">
+  <a href="#lattribut-as" class="anchor-link">L'attribut <code>as</code></a>
+</h2>
+<p><code>as</code> est un attribut qui doit être utilisé avec le indices de ressources <code>preload</code> pour informer le navigateur du type (par exemple, image, script, style, etc.) de la ressource demandée. Cela aide le navigateur à classer correctement la requête par ordre de priorité et à appliquer la politique de sécurité du contenu (ou <i lang="en">Content Security Policy</i>, <a href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>). La CSP est un mécanisme de <a href="./security">sécurité</a>, exprimé par un en-tête HTTP, qui contribue à atténuer l'impact des attaques XSS et d'autres attaques malveillantes en déclarant une liste de sources fiables ; seul le contenu de ces sources peut alors être rendu ou exécuté.</p>
+<figure id="fig-4">
+  <div class="big-number">88&nbsp;%</div>
+  <figcaption><a href="#fig-4" class="anchor-link">Figure 4.</a> Pourcentage des indices de ressources qui utilisent l'attribut <code>as</code>.</figcaption>
+</figure>
+<p>88&nbsp;% des indices de ressources utilisent l'attribut <code>as</code>. Quand <code>as</code> est spécifié, il est utilisé de façon écrasante pour les scripts : 92&nbsp;% de l'utilisation concerne les scripts, 3&nbsp;% les polices et 3&nbsp;% les styles. Ce n'est pas surprenant étant donné le rôle prépondérant que les scripts jouent dans l'architecture de la plupart des sites ainsi que la fréquence élevée à laquelle les scripts sont utilisés comme vecteurs d'attaque (d'où l'importance particulière de leur appliquer la bonne CSP).</p>
+<h2 id="le-futur"><a href="#le-futur" class="anchor-link">Le futur</a></h2>
+<p>Pour le moment, il n'y a pas de propositions visant à élargir le jeu actuel d'indices de ressources. Cependant, les indices de priorités et le <i lang="en">lazy loading</i> natif sont deux technologies proposées qui s'apparentent aux indices de ressources dans la mesure où elles fournissent, elles aussi, des API pour optimiser le processus de chargement.</p>
+<h3 id="les-indices-de-priorités"><a href="#les-indices-de-priorités" class="anchor-link">Les indices de priorités</a></h3>
+<p>Les <a href="https://wicg.github.io/priority-hints/">indices de priorités</a> sont une API permettant d'exprimer des priorités dans la récupération de certaines ressources&nbsp;: <code>high</code> (haute), <code>low</code> (basse), ou <code>auto</code>. Ils peuvent être utilisés avec un large éventail de balises HTML&nbsp;: spécifiquement <code>&lt;image&gt;</code>, <code>&lt;link</code>&gt;, <code>&lt;script&gt;</code> et <code>&lt;iframe&gt;</code>.</p>
+<figure id="fig-5">
+  <div class="code-block floating-card">
+    <pre><code>&lt;carousel&gt;
+  &lt;img src="cat1.jpg" importance="high"&gt;
+  &lt;img src="cat2.jpg" importance="low"&gt;
+  &lt;img src="cat3.jpg" importance="low"&gt;
+&lt;/carousel&gt;</code></pre>
+  </div>
+  <figcaption><a href="#fig-5" class="anchor-link">Figure 5.</a> Exemple HTML d'utilisation d'indices de priorités sur un carrousel d'images.</figcaption>
+</figure>
+<p>Par exemple, si vous disposez d'un carrousel d'images, des indices de priorités pourraient être utilisés pour prioriser l'image que les utilisateurs voient immédiatement et déprioriser les images ultérieures.</p>
+<figure id="fig-6">
+  <div class="big-number">0,04&nbsp;%</div>
+  <figcaption><a href="#fig-6" class="anchor-link">Figure 6.</a> Taux d'adoption des indices de priorités.</figcaption>
+</figure>
+<p>Les indices de priorités sont <a href="https://www.chromestatus.com/feature/5273474901737472">mis en œuvre</a> et peuvent être testés au moyen d'un drapeau de fonctionnalité dans les versions 70 et supérieures du navigateur Chromium. Étant donné qu'il s'agit encore d'une technologie expérimentale, il n'est pas surprenant qu'elle soit utilisée par 0,04&nbsp;% des sites.</p>
+<p>85 % de l'utilisation des indices de priorités se fait avec les balises <code>&lt;img&gt;</code>. Les indices de priorités sont surtout utilisés pour déprioriser des ressources : 72&nbsp;% de l'utilisation est <code>importance="low"</code> ; 28&nbsp;% de l'utilisation est <code>importance="high"</code>.</p>
+<h3 id="le-lazy-loading-natif"><a href="#le-lazy-loading-natif" class="anchor-link">Le lazy loading natif</a></h3>
+<p>
+  Le <a href="https://web.dev/native-lazy-loading"><i lang="en">lazy loading</i> natif</a> est une API native permettant de différer le chargement des images et des iframes situées hors écran. Cela permet de libérer des ressources lors du chargement initial de la page et d'éviter de charger des ressources qui ne sont jamais utilisées. Auparavant, cette technique ne pouvait être réalisée qu'à l'aide de bibliothèques <a href="./javascript">JavaScript</a> tierces.
+</p>
+<p>L'API pour le <i lang="en">lazy loading</i> natif se présente comme telle&nbsp;: <code>&lt;img src="cat.jpg" loading="lazy"&gt;</code>.</p>
+<p>Le <i lang="en">lazy loading</i> natif est disponible dans les navigateurs basés sur le Chrome 76 et plus. L'API a été annoncée trop tard pour être incluse dans l'ensemble de données du Web Almanac de cette année, mais il faut la surveiller pour l'année prochaine.</p>
+<h2 id="conclusion"><a href="#conclusion" class="anchor-link">Conclusion</a></h2>
+<p>Dans l'ensemble, ces données semblent suggérer qu'il est pertinent de poursuivre l'adoption des indices de ressources. La plupart des sites gagneraient à adopter et&nbsp;/&nbsp;ou à passer de <code>dns-prefetch</code> à <code>preconnect</code>. Un sous-ensemble de sites beaucoup plus restreint pourrait bénéficier de l'adoption de la fonction <code>prefetch</code> et&nbsp;/&nbsp;ou <code>preload</code>. Utiliser avec succès <code>prefetch</code> et <code>preload</code> peut être plus délicat, ce qui tend à limiter leur adoption, mais les bénéfices potentiels sont également plus importants. Le HTTP/2 Push et la maturation des technologies d'apprentissage machine sont également susceptibles d'accroître l'adoption de <code>preload</code> et <code>prefetch</code>.</p>
+{% endblock %}

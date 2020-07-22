@@ -3,16 +3,16 @@ const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
 
-//Chapters may exist but not be ready to be launched so do not include in sitemap
-const sitemap_languages = ['en'];
-
-const { find_files, size_of, parse_array } = require('./shared');
+const { find_markdown_files, find_config_files, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
+const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
 const { generate_sitemap } = require('./generate_sitemap');
 const { lazy_load_content } = require('./lazy_load_content');
 const { wrap_tables } = require('./wrap_tables');
 const { remove_unnecessary_markup } = require('./remove_unnecessary_markup');
+const { generate_ebooks } = require('./generate_ebooks');
+const { generate_js } = require('./generate_js');
 
 const converter = new showdown.Converter({ tables: true, metadata: true });
 converter.setFlavor('github');
@@ -21,8 +21,24 @@ converter.setOption('tablesHeaderId', false);
 converter.setOption('ghMentions', false);
 
 const generate_chapters = async () => {
+
   let sitemap = [];
-  for (const file of await find_files()) {
+  let sitemap_languages = {};
+  let ebook_chapters = [];
+  let configs = {};
+  
+  for (const config_file of await find_config_files()) {
+    const re = (process.platform != 'win32') 
+                  ? /config\/([0-9]*).json/ 
+                  : /config\\([0-9]*).json/;
+    const [path,year] = config_file.match(re);
+    
+    configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
+    sitemap_languages[year] = configs[year].settings[0].supported_languages
+
+  }
+
+  for (const file of await find_markdown_files()) {
     const re = (process.platform != 'win32') 
                   ? /content\/(.*)\/(.*)\/(.*).md/ 
                   : /content\\(.*)\\(.*)\\(.*).md/;
@@ -32,25 +48,31 @@ const generate_chapters = async () => {
       console.log(`\n Generating chapter: ${language}, ${year}, ${chapter}`);
 
       const markdown = await fs.readFile(file, 'utf-8');
-      const { metadata, body, toc } = await parse_file(markdown);
-      if ( sitemap_languages.includes(language) ) {
+      const { metadata, body, toc } = await parse_file(markdown,chapter);
+      if ( sitemap_languages[year].includes(language) ) {
         sitemap.push({ language, year, chapter, metadata });
       }
+      ebook_chapters.push({ language, year, chapter, metadata, body, toc });
+
       await write_template(language, year, chapter, metadata, body, toc);
     } catch (error) {
       console.error(error);
       console.error('  Failed to generate chapter, moving onto the next one. ');
     }
   }
+  
+  await generate_ebooks(ebook_chapters,configs);
+  await generate_js();
 
-  const sitemap_path = await generate_sitemap(sitemap);
+  const sitemap_path = await generate_sitemap(sitemap,sitemap_languages);
   await size_of(sitemap_path);
 };
 
-const parse_file = async (markdown) => {
+const parse_file = async (markdown,chapter) => {
   const html = converter.makeHtml(markdown);
   let body = html;
 
+  body = generate_header_links(body);
   body = generate_figure_ids(body);
   body = wrap_tables(body);
   body = lazy_load_content(body);
@@ -69,6 +91,7 @@ const parse_file = async (markdown) => {
   const metadata = {
     ...m,
     chapter_number,
+    chapter,
     authors,
     reviewers,
     translators
@@ -78,7 +101,7 @@ const parse_file = async (markdown) => {
 };
 
 const write_template = async (language, year, chapter, metadata, body, toc) => {
-  const template = `templates/${language}/${year}/chapter.html`;
+  const template = `templates/base/${year}/chapter.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   if (fs.existsSync(template)) {

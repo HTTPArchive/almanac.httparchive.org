@@ -7,13 +7,15 @@ authors: [andydavies, colinbendell]
 reviewers: [yoavweiss, paulcalvano, pmeenan, enygren]
 translators: []
 discuss: 1772
+results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
+queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-12-04T00:00:00.000Z
+last_updated: 2020-05-19T00:00:00.000Z
 ---
 
 ## Introduction
 
-"Use a Content Delivery Network" was one of [Steve Souders original recommendations](http://stevesouders.com/hpws/rules.php) for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using.
+"Use a Content Delivery Network" was one of [Steve Souders original recommendations](http://stevesouders.com/examples/rules.php) for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using.
 
 Fundamentally, CDNs reduce latency—the time it takes for packets to travel between two points on a network, say from a visitor's device to a server—and latency is a key factor in how quickly pages load.
 
@@ -61,8 +63,8 @@ For websites, a CDN can improve performance for the primary domain (`www.shoesby
 Historically, CDNs were used exclusively for static resources like [CSS](./css), [JavaScript](./javascript), and [images](./media). These resources would likely be versioned (include a unique number in the path) and cached long-term. In this way we should expect to see higher adoption of CDNs on sub-domains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that `www.shoesbycolin.com` would serve HTML directly from a datacenter (or **origin**) while `static.shoesbycolin.com` would use a CDN.
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig1.png">
-    <img src="/static/images/2019/17_CDN/fig1.png" alt="Figure 1. CDN usage vs. origin-hosted resources." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive">
+  <a href="/static/images/2019/cdn/fig1.png">
+    <img src="/static/images/2019/cdn/fig1.png" alt="Figure 1. CDN usage vs. origin-hosted resources." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">Stacked bar chart showing HTML is 80% served from origin, 20% from CDN, Sub-domains are 61%/39%, third-party is 34%/66%.</div>
   <figcaption id="fig1-caption">Figure 1. CDN usage vs. origin-hosted resources.</figcaption>
@@ -79,11 +81,11 @@ There are two categories of CDN providers: the generic and the purpose-fit CDN. 
 
 This is clearly represented when looking at the top CDNs found serving the base HTML content. The most frequent CDNs serving HTML are generic CDNs (Cloudflare, Akamai, Fastly) and cloud solution providers who offer a bundled CDN (Google, Amazon) as part of the platform service offerings. In contrast, there are only a few purpose-fit CDN providers, such as Wordpress and Netlify, that deliver base HTML markup.
 
-<aside class="note">Note: This does not reflect traffic or usage, only the number of sites using them.</aside>
+<p class="note">Note: This does not reflect traffic or usage, only the number of sites using them.</p>
 
 <figure>
-  <a href="/static/images/2019/17_CDN/html_cdn_usage.png">
-    <img alt="Most popular CDNs used to serve base HTML pages" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/17_CDN/html_cdn_usage.png" width="600">
+  <a href="/static/images/2019/cdn/html_cdn_usage.png">
+    <img alt="Most popular CDNs used to serve base HTML pages" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/cdn/html_cdn_usage.png" width="600" height="371">
   </a>
   <div id="fig2-description" class="visually-hidden">Treemap graph showing the data from Table 3.</div>
   <figcaption id="fig2-caption">Figure 2: HTML CDN usage.</figcaption>
@@ -93,8 +95,8 @@ This is clearly represented when looking at the top CDNs found serving the base 
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>HTML CDN Usage (%)</th>
+        <td></td>
+        <th scope="col">HTML CDN Usage (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -206,8 +208,8 @@ This is clearly represented when looking at the top CDNs found serving the base 
 Sub-domain requests have a very similar composition. Since many websites use sub-domains for static content, we see a shift to a higher CDN usage. Like the base page requests, the resources served from these sub-domains utilize generic CDN offerings.
 
 <figure>
-  <a href="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png">
-    <img alt="Most popular CDNs used for resources served from a sub-domain" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/17_CDN/subdomain_resource_cdn_usage.png" width="600">
+  <a href="/static/images/2019/cdn/subdomain_resource_cdn_usage.png">
+    <img alt="Most popular CDNs used for resources served from a sub-domain" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/cdn/subdomain_resource_cdn_usage.png" width="600" height="371">
   </a>
   <div id="fig4-description" class="visually-hidden">Treemap graph showing the data from Table 5.</div>
   <figcaption id="fig4-caption">Figure 4. Sub-domain resource CDN usage.</figcaption>
@@ -217,8 +219,8 @@ Sub-domain requests have a very similar composition. Since many websites use sub
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>Sub-Domain CDN Usage (%)</th>
+        <td></td>
+        <th scope="col">Sub-Domain CDN Usage (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -330,8 +332,8 @@ Sub-domain requests have a very similar composition. Since many websites use sub
 The composition of top CDN providers dramatically shifts for third-party resources. Not only are CDNs more frequently observed hosting third-party resources, there is also an increase in purpose-fit CDN providers such as Facebook, Twitter, and Google.
 
 <figure>
-  <a href="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png">
-    <img alt="Most popular CDNs used by third-party resources" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/17_CDN/thirdparty_resource_cdn_usage.png" width="600">
+  <a href="/static/images/2019/cdn/thirdparty_resource_cdn_usage.png">
+    <img alt="Most popular CDNs used by third-party resources" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/cdn/thirdparty_resource_cdn_usage.png" width="600" height="376">
   </a>
   <div id="fig6-description" class="visually-hidden">Treemap graph showing the data from Table 7.</div>
   <figcaption id="fig6-caption">Figure 6. Third-party resource CDN usage.</figcaption>
@@ -341,8 +343,8 @@ The composition of top CDN providers dramatically shifts for third-party resourc
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>Third-Party CDN Usage (%)</th>
+        <td></td>
+        <th scope="col">Third-Party CDN Usage (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -469,11 +471,11 @@ Since TLS negotiations require multiple TCP round trips before data can be sent 
 
 In contrast, the median TLS negotiation for the majority of CDN providers is between 60 and 70 ms. Origin requests for HTML pages take almost 3x longer to complete TLS negotiation than those web pages that use a CDN. Even at the 90th percentile, this disparity perpetuates with origin TLS negotiation rates of 427 ms compared to most CDNs which complete under 140 ms! 
 
-<aside class="note">A word of caution when interpreting these charts: it is important to focus on orders of magnitude when comparing vendors as there are many factors that impact the actual TLS negotiation performance. These tests were completed from a single datacenter under controlled conditions and do not reflect the variability of the internet and user experiences.</aside>
+<p class="note">A word of caution when interpreting these charts: it is important to focus on orders of magnitude when comparing vendors as there are many factors that impact the actual TLS negotiation performance. These tests were completed from a single datacenter under controlled conditions and do not reflect the variability of the internet and user experiences.</p>
 
 <figure>
-  <a href="/static/images/2019/17_CDN/html_tls_negotiation_time.png">
-    <img alt="Distribution of TLS negotiation time for initial HTML request broken down by CDN" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/17_CDN/html_tls_negotiation_time.png" width="600">
+  <a href="/static/images/2019/cdn/html_tls_negotiation_time.png">
+    <img alt="Distribution of TLS negotiation time for initial HTML request broken down by CDN" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/cdn/html_tls_negotiation_time.png" width="600" height="371">
   </a>
   <div id="fig8-description" class="visually-hidden">Graph showing the data from Table 9.</div>
   <figcaption id="fig8-caption">Figure 8. HTML TLS negotiation time.</figcaption>
@@ -483,12 +485,12 @@ In contrast, the median TLS negotiation for the majority of CDN providers is bet
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <td></td>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -644,8 +646,8 @@ In contrast, the median TLS negotiation for the majority of CDN providers is bet
 For resource requests (including same-domain and third-party), the TLS negotiation time takes longer and the variance increases. This is expected because of network saturation and network congestion. By the time that a third-party connection is established (by way of a resource hint or a resource request) the browser is busy rendering and making other parallel requests. This creates contention on the network. Despite this disadvantage, there is still a clear advantage for third-party resources that utilize a CDN over using an origin solution.  
 
 <figure>
-  <a href="/static/images/2019/17_CDN/resource_tls_negotiation_time.png">
-    <img alt="Distribution of TLS negotiation time for site resources broken down by CDN" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/17_CDN/resource_tls_negotiation_time.png" width="600">
+  <a href="/static/images/2019/cdn/resource_tls_negotiation_time.png">
+    <img alt="Distribution of TLS negotiation time for site resources broken down by CDN" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/cdn/resource_tls_negotiation_time.png" width="600" height="371">
   </a>
   <div id="fig10-description" class="visually-hidden">Graph showing most CDNs have a TLS negotiation time of around 80 ms, but some (Microsoft Azure, Yahoo, Edgecast, ORIGIN, and CDNetworks) start to creep out towards 200 ms - especially when going above the p50 percentile.</div>
   <figcaption id="fig10-caption">Figure 10. Resource TLS negotiation time.</figcaption>
@@ -669,8 +671,8 @@ According to Akamai, the adoption of SNI is [still not 100% globally](https://da
 Most CDNs balance the need for shared certificates and performance. Most cap the number of SANs between 100 and 150. This limit often derives from the certificate providers. For example, [LetsEncrypt](https://letsencrypt.org/docs/rate-limits/), [DigiCert](https://www.websecurity.digicert.com/security-topics/san-ssl-certificates), and [GoDaddy](https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate) all limit SAN certificates to 100 hostnames while [Comodo](https://comodosslstore.com/comodo-mdc-ssl.aspx)'s limit is 2,000. This, in turn, allows some CDNs to push this limit, cresting over 800 SANs on a single certificate. There is a strong negative correlation of TLS performance and the number of SANs on a certificate.
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig11.png">
-    <img src="/static/images/2019/17_CDN/fig11.png" alt="Figure 11. TLS SAN count for HTML." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive">
+  <a href="/static/images/2019/cdn/fig11.png">
+    <img src="/static/images/2019/cdn/fig11.png" alt="Figure 11. TLS SAN count for HTML." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive">
   </a>
   <div id="fig11-description" class="visually-hidden">Bar chart showing data from table 12.</div>
   <figcaption id="fig11-caption">Figure 11. TLS SAN count for HTML.</figcaption>
@@ -680,12 +682,12 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <td></td>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -839,8 +841,8 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 </figure>
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig13.png">
-    <img src="/static/images/2019/17_CDN/fig13.png" alt="Figure 13. Resource SAN count (p50)." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive">
+  <a href="/static/images/2019/cdn/fig13.png">
+    <img src="/static/images/2019/cdn/fig13.png" alt="Figure 13. Resource SAN count (p50)." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive">
   </a>
   <div id="fig13-description" class="visually-hidden">Bar chart showing the data from Table 14 for the p50 percentile.</div>
   <figcaption id="fig13-caption">Figure 13. Resource SAN count (p50).</figcaption>
@@ -850,12 +852,12 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>p10</th>
-        <th>p25</th>
-        <th>p50</th>
-        <th>p75</th>
-        <th>p90</th>
+        <td></td>
+        <th scope="col">p10</th>
+        <th scope="col">p25</th>
+        <th scope="col">p50</th>
+        <th scope="col">p75</th>
+        <th scope="col">p90</th>
       </tr>
     </thead>
     <tbody>
@@ -1021,8 +1023,8 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
 In addition to using a CDN for TLS and RTT performance, CDNs are often used to ensure patching and adoption of TLS ciphers and TLS versions. In general, the adoption of TLS on the main HTML page is much higher for websites that use a CDN. Over 76% of HTML pages are served with TLS compared to the 62% from origin-hosted pages. 
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig15.png">
-    <img src="/static/images/2019/17_CDN/fig15.png" alt="Figure 15. HTML TLS version adoption (CDN vs. origin)." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive">
+  <a href="/static/images/2019/cdn/fig15.png">
+    <img src="/static/images/2019/cdn/fig15.png" alt="Figure 15. HTML TLS version adoption (CDN vs. origin)." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive">
   </a>
   <div id="fig15-description" class="visually-hidden">Stacked bar chart showing TLS 1.0 is used 0.86% of the time for origin, TLS 1.2 55% of the time, TLS 1.3 6% of the time, and unencrypted 38% of the time. For CDN this changes to 35% for TLS 1.2, 41% for TLS 1.3, and 24% for unencrypted.</div>
   <figcaption id="fig15-caption">Figure 15. HTML TLS version adoption (CDN vs. origin).</figcaption>
@@ -1031,16 +1033,16 @@ In addition to using a CDN for TLS and RTT performance, CDNs are often used to e
 Each CDN offers different rates of adoption for both TLS and the relative ciphers and versions offered. Some CDNs are more aggressive and roll out these changes to all customers whereas other CDNs require website owners to opt-in to the latest changes and offer change-management to facilitate these ciphers and versions.
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig16.png">
-    <img src="/static/images/2019/17_CDN/fig16.png" alt="Figure 16. HTML TLS adoption by CDN." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive">
+  <a href="/static/images/2019/cdn/fig16.png">
+    <img src="/static/images/2019/cdn/fig16.png" alt="Figure 16. HTML TLS adoption by CDN." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive">
   </a>
   <div id="fig16-description" class="visually-hidden">Division of secure vs non-secure connections established for initial HTML request broken down by CDN with some  CDNs (e.g. Wordpress) at 100%, most between 80%-100%, and then ORIGIN at 62%, Google at 51%, ChinaNetCenter at 36%, and Yunjiasu at 29%.</div>
   <figcaption id="fig16-caption">Figure 16. HTML TLS adoption by CDN.</figcaption>
 </figure>
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig17.png">
-    <img src="/static/images/2019/17_CDN/fig17.png" alt="Figure 17. Third-party TLS adoption by CDN." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive">
+  <a href="/static/images/2019/cdn/fig17.png">
+    <img src="/static/images/2019/cdn/fig17.png" alt="Figure 17. Third-party TLS adoption by CDN." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive">
   </a>
   <div id="fig17-description" class="visually-hidden">Stacked bar chart showing the vast majority of CDNs use TLS for over 90% of third-party requests, with a few stragglers in the 75% - 90% range, and ORIGIN lower than them all at 68%.</div>
   <figcaption id="fig17-caption">Figure 17. Third-party TLS adoption by CDN.</figcaption>
@@ -1050,11 +1052,11 @@ Along with this general adoption of TLS, CDN use also sees higher adoption of em
 
 In general, the use of a CDN is highly correlated with a more rapid adoption of stronger ciphers and stronger TLS versions compared to origin-hosted services where there is a higher usage of very old and compromised TLS versions like TLS 1.0. 
 
-<aside class="note">It is important to emphasize that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions.</aside> 
+<p class="note">It is important to emphasize that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions.</p> 
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig18.png">
-    <img src="/static/images/2019/17_CDN/fig18.png" alt="Figure 18. HTML TLS version by CDN." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive">
+  <a href="/static/images/2019/cdn/fig18.png">
+    <img src="/static/images/2019/cdn/fig18.png" alt="Figure 18. HTML TLS version by CDN." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive">
   </a>
   <div id="fig18-description" class="visually-hidden">Bar chart showing that TLS 1.3 or TLS 1.2 is used by all CDNs when TLS is used. A few CDNs have adopted TLS 1.3 completely, some partially and a large proportion not at all and only using TLS 1.2.</div>
   <figcaption id="fig18-caption">Figure 18. HTML TLS version by CDN.</figcaption>
@@ -1068,19 +1070,19 @@ Along with RTT management and improving TLS performance, CDNs also enable new st
 
 CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin pages. Similarly, sub-domain and third-party resources on CDNs see an even higher adoption of HTTP/2 at 90% or higher while third-party resources served from origin infrastructure only has 31% adoption. The performance gains and other features of HTTP/2 are further covered in the [HTTP/2](./http2) chapter.
 
-<aside class="note">Note: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</aside>
+<p class="note">Note: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</p>
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig19.png">
-    <img src="/static/images/2019/17_CDN/fig19.png" alt="Figure 19. HTTP/2 adoption (CDN vs. origin)." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive">
+  <a href="/static/images/2019/cdn/fig19.png">
+    <img src="/static/images/2019/cdn/fig19.png" alt="Figure 19. HTTP/2 adoption (CDN vs. origin)." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive">
   </a>
   <div id="fig19-description" class="visually-hidden">Stacked bar chart showing 73% of Origin connections use HTTP/1.1, and 27% HTTP/2. This compares to CDNs where 29% are using HTTP/1.1 and 71% HTTP/2.</div>
   <figcaption id="fig19-caption">Figure 19. HTTP/2 adoption (CDN vs. origin).</figcaption>
 </figure>
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig20.png">
-    <img src="/static/images/2019/17_CDN/fig20.png" alt="Figure 20. HTML adoption of HTTP/2." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive">
+  <a href="/static/images/2019/cdn/fig20.png">
+    <img src="/static/images/2019/cdn/fig20.png" alt="Figure 20. HTML adoption of HTTP/2." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive">
   </a>
   <div id="fig20-description" class="visually-hidden">Bar chart showing the data from Table 21.</div>
   <figcaption id="fig20-caption">Figure 20. HTML adoption of HTTP/2.</figcaption>
@@ -1090,11 +1092,11 @@ CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin page
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th>HTTP/0.9</th>
-        <th>HTTP/1.0</th>
-        <th>HTTP/1.1</th>
-        <th>HTTP/2</th>
+        <td></td>
+        <th scope="col">HTTP/0.9</th>
+        <th scope="col">HTTP/1.0</th>
+        <th scope="col">HTTP/1.1</th>
+        <th scope="col">HTTP/2</th>
       </tr>
     </thead>
     <tbody>
@@ -1279,8 +1281,8 @@ CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin page
 </figure>
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig22.png">
-    <img src="/static/images/2019/17_CDN/fig22.png" alt="Figure 22. HTML/2 adoption: third-party resources." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive">
+  <a href="/static/images/2019/cdn/fig22.png">
+    <img src="/static/images/2019/cdn/fig22.png" alt="Figure 22. HTML/2 adoption: third-party resources." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive">
   </a>
   <div id="fig22-description" class="visually-hidden">Bar chart showing the data from Table 23.</div>
   <figcaption id="fig22-caption">Figure 22. HTML/2 adoption: third-party resources.</figcaption>
@@ -1487,8 +1489,8 @@ A website can control the caching behavior of browsers and CDNs with the use of 
 Another useful tool is the use of the `Vary` HTTP header. This header instructs both CDNs and browsers how to fragment a cache. The `Vary` header allows an origin to indicate that there are multiple representations of a resource, and the CDN should cache each variation separately. The most common example is [compression](./compression). Declaring a resource as `Vary: Accept-Encoding` allows the CDN to cache the same content, but in different forms like uncompressed, with gzip, or Brotli. Some CDNs even do this compression on the fly so as to keep only one copy available. This `Vary` header likewise also instructs the browser how to cache the content and when to request new content. 
 
 <figure>
-  <a href="/static/images/2019/17_CDN/use_of_vary_on_cdn.png">
-    <img alt="Breakdown of Vary header values for HTML content served from a CDN" src="/static/images/2019/17_CDN/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600">
+  <a href="/static/images/2019/cdn/use_of_vary_on_cdn.png">
+    <img alt="Breakdown of Vary header values for HTML content served from a CDN" src="/static/images/2019/cdn/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376">
   </a>
   <div id="fig24-description" class="visually-hidden">Treemap graph showing accept-encoding dominates vary usage with 73% of the chart taken up with that. Cookie (13%) and user-agent (8%) having some usage, then a complete mixed of other headers.</div>
   <figcaption id="fig24-caption">Figure 24. Usage of <code>Vary</code> for HTML served from CDNs.</figcaption>
@@ -1501,8 +1503,8 @@ For HTML pages, the most common use of `Vary` is to signal that the content will
 In a similar way, `Vary: Cookie` usually indicates that content that will change based on the logged-in state of the user or other personalization. 
 
 <figure>
-  <a href="/static/images/2019/17_CDN/use_of_vary.png">
-    <img src="/static/images/2019/17_CDN/use_of_vary.png" alt="Figure 25. Comparison of Vary usage for HTML and resources served from origin and CDN." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600">
+  <a href="/static/images/2019/cdn/use_of_vary.png">
+    <img src="/static/images/2019/cdn/use_of_vary.png" alt="Figure 25. Comparison of Vary usage for HTML and resources served from origin and CDN." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371">
   </a>
   <div id="fig25-description" class="visually-hidden">Set of four treemap graphs showing that for CDNs serving home pages the biggest use of Vary is for Cookie, followed by User-agent. For CDNs serving other resources it's origin, followed by accept, user-agent, x-origin and referrer. For Origins and home pages it's user-agent, followed by cookie. Finally for Origins and other resources it's primarily user-agent followed by origin, accept, then range and host.</div>
   <figcaption id="fig25-caption">Figure 25. Comparison of <code>Vary</code> usage for HTML and resources served from origin and CDN.</figcaption>
@@ -1525,8 +1527,8 @@ Some CDNs support `post-check` as a method to allow a resource to be refreshed w
 The `s-maxage` directive informs proxies for how long they may cache a response. Across the Web Almanac dataset, jsDelivr is the only CDN where a high level of usage was seen across multiple resources—this isn't surprising given jsDelivr's role as a public CDN for libraries. Usage across other CDNs seems to be driven by individual customers, for example third-party scripts or SaaS providers using that particular CDN.
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig26.png">
-    <img src="/static/images/2019/17_CDN/fig26.png" alt="Figure 26. Adoption of s-maxage across CDN responses." aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive">
+  <a href="/static/images/2019/cdn/fig26.png">
+    <img src="/static/images/2019/cdn/fig26.png" alt="Figure 26. Adoption of s-maxage across CDN responses." aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive">
   </a>
   <div id="fig26-description" class="visually-hidden">Bar chart showing 82% of jsDelivr serves responses with s-maxage, 14% of Level 3, 6.3% of Amazon CloudFront, 3.3% of Akamai, 3.1% of Fastly, 3% of Highwinds, 2% of Cloudflare, 0.91% of ORIGIN, 0.75% of Edgecast, 0.07% of Google.</div>
   <figcaption id="fig26-caption">Figure 26. Adoption of <code>s-maxage</code> across CDN responses.</figcaption>
@@ -1545,8 +1547,8 @@ Common libraries like jQuery and Bootstrap are also available from public CDNs h
 Google Fonts is the most popular of the content CDNs and is used by 55% of websites. For non-font content, Google API, Cloudflare's JS CDN, and the Bootstrap's CDN are the next most popular.
 
 <figure>
-  <a href="/static/images/2019/17_CDN/fig27.png">
-    <img src="/static/images/2019/17_CDN/fig27.png" alt="Figure 27. Usage of public content CDNs." aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive">
+  <a href="/static/images/2019/cdn/fig27.png">
+    <img src="/static/images/2019/cdn/fig27.png" alt="Figure 27. Usage of public content CDNs." aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive">
   </a>
   <div id="fig27-description" class="visually-hidden">Bar chart showing 55.33% of public content CDNs are made to fonts.googleapis.com, 19.86% to ajax.googleapis.com, 10.47% to cdnjs.cloudflare.com, 9.83% to maxcdn.bootstrapcdn.com, 5.95% to code.jquery.com, 4.29% to cdn.jsdelivr.net, 3.22% to use.fontawesome.com, 0.7% to stackpath.bootstrapcdn.com, 0.67% to unpkg.com, and 0.52% to ajax.aspnetcdn.com.</div>
   <figcaption id="fig27-caption">Figure 27. Usage of public content CDNs.</figcaption>
@@ -1560,7 +1562,6 @@ The reduction in latency that CDNs deliver along with their ability to store con
 
 Steve Souders' recommendation to use a CDN remains as valid today as it was 12 years ago, yet only 20% of sites serve their HTML content via a CDN, and only 40% are using a CDN for resources, so there's plenty of opportunity for their usage to grow further.
 
-There are some aspects of CDN adoption that aren't included in this analysis, sometimes 
-this was due to the limitations of the dataset and how it's collected, in other cases new research questions emerged during the analysis.
+There are some aspects of CDN adoption that aren't included in this analysis, sometimes this was due to the limitations of the dataset and how it's collected, in other cases new research questions emerged during the analysis.
 
 As the web continues to evolve, CDN vendors innovate, and sites use new practices CDN adoption remains an area rich for further research in future editions of the Web Almanac.

@@ -7,8 +7,10 @@ authors: [khempenius]
 reviewers: [andydavies, bazzadp, yoavweiss]
 translators: []
 discuss: 1774
+results: https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/
+queries: 19_Resource_Hints
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2019-11-23T00:00:00.000Z
+last_updated: 2020-06-30T00:00:00.000Z
 ---
 
 ## Introduction
@@ -17,9 +19,9 @@ last_updated: 2019-11-23T00:00:00.000Z
 
 [Examples](https://youtu.be/YJGCZCaIZkQ?t=1956) of performance improvements as a result of resource hints include:
 
-*   Jabong decreased Time to Interactive by 1.5 seconds by preloading critical scripts.
-*   Barefoot Wine decreased Time to Interactive of future pages by 2.7 seconds by prefetching visible links. 
-*   Chrome.com decreased latency by 0.7 seconds by preconnecting to critical origins.
+* Jabong decreased Time to Interactive by 1.5 seconds by preloading critical scripts.
+* Barefoot Wine decreased Time to Interactive of future pages by 2.7 seconds by prefetching visible links. 
+* Chrome.com decreased latency by 0.7 seconds by preconnecting to critical origins.
 
 There are four separate resource hints supported by most browsers today: `dns-prefetch`, `preconnect`, `preload`, and `prefetch`.
 
@@ -41,15 +43,21 @@ The [`preload`](https://medium.com/reloading/preload-prefetch-and-priorities-in-
 
 ## Syntax
 
-97% of resource hint usage relied on using the [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to specify a resource hint. For example, `<link rel="prefetch" href="shopping-cart.js">`.
+97% of resource hint usage relied on using the [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to specify a resource hint. For example:
+```
+<link rel="prefetch" href="shopping-cart.js">
+```
 
-Only 3% of resource hint usage used [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) to specify resource hints. For example, `Link: <https://example.com/shopping-cart.js>; rel=prefetch`.
+Only 3% of resource hint usage used [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) to specify resource hints. For example:
+```
+Link: <https://example.com/shopping-cart.js>; rel=prefetch
+```
 
 Because the usage of resource hints in HTTP headers is so low, the remainder of this chapter will focus solely on analyzing the usage of resource hints in conjunction with the `<link>` tag. However, it's worth noting that in future years, usage of resource hints in HTTP headers may increase as [HTTP/2 Push](./http2#http2-push) is adopted. This is due to the fact that HTTP/2 Push has repurposed the HTTP preload `Link` header as a signal to push resources.
 
 ## Resource hints
 
-<aside class="note">Note: There was no noticeable difference between the usage patterns for resource hints on mobile versus desktop. Thus, for the sake of conciseness, this chapter only includes the statistics for mobile.</aside>
+<p class="note">Note: There was no noticeable difference between the usage patterns for resource hints on mobile versus desktop. Thus, for the sake of conciseness, this chapter only includes the statistics for mobile.</p>
 
 <figure>
   <table>
@@ -193,7 +201,10 @@ For newer resource types (e.g. fonts, `fetch()` requests, ES modules), the brows
   <figcaption>Figure 3. Adoption of the <code>crossorigin</code> attribute as a percent of resource hint instances.</figcaption>
 </figure>
 
-In the context of resource hints, usage of the `crossorigin` attribute enables them to match the CORS mode of the resources they are supposed to match and indicates the credentials to include in the request. For example: `<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">` enables CORS and indicates that no credentials should be included for those cross-origin requests.
+In the context of resource hints, usage of the `crossorigin` attribute enables them to match the CORS mode of the resources they are supposed to match and indicates the credentials to include in the request. For example, `anonymous` enables CORS and indicates that no credentials should be included for those cross-origin requests:
+```
+<link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous">
+```
 
 Although other HTML elements support the crossorigin attribute, this analysis only looks at usage with resource hints.
 
@@ -214,7 +225,7 @@ At the moment, there are no proposals to expand the current set of resource hint
 
 ### Priority Hints
 
-[Priority hints](https://wicg.github.io/priority-hints/) are an API for expressing the fetch priority of a resource a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
+[Priority hints](https://wicg.github.io/priority-hints/) are an API for expressing the fetch priority of a resource: `high`, `low`, or `auto`. They can be used with a wide range of HTML tags: specifically `<image>`, `<link`>, `<script>`, and `<iframe>`.
 
 <figure>
 <div class="code-block floating-card">
@@ -233,7 +244,7 @@ For example, if you had an image carousel, priority hints could be used to prior
   <figcaption>Figure 6. The rate of priority hint adoption.</figcaption>
 </figure>
 
-Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901737472) and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is onl used by 0.04% of sites.
+Priority hints are [implemented](https://www.chromestatus.com/feature/5273474901737472) and can be tested via a feature flag in Chromium browsers versions 70 and up. Given that it is still an experimental technology, it is unsurprising that it is only used by 0.04% of sites.
 
 85% of priority hint usage is with `<img>` tags. Priority hints are mostly used to deprioritize resources: 72% of usage is `importance="low"`; 28% of usage is `importance="high"`.
 
@@ -247,4 +258,4 @@ Native lazy loading is available in browsers based on Chromium 76 and up. The AP
 
 ## Conclusion
 
-Overall, this data seems to suggest that there is still room for further adoption of resource hints. Most sites would benefit from adopting and/or switching to `preconnect` from `dns-prefetch`. A much smaller subset of sites would benefit from adopting `prefetch` and/or `preload`. There is greater nuance in successfully using `prefetch` and `preload`, which constrains its adoption to a certain extent, but the potential payoff is also greater. HTTP/2 Push and the maturation of machine learning technologies is also likely to increase the adoption of `preload` and `prefetch.
+Overall, this data seems to suggest that there is still room for further adoption of resource hints. Most sites would benefit from adopting and/or switching to `preconnect` from `dns-prefetch`. A much smaller subset of sites would benefit from adopting `prefetch` and/or `preload`. There is greater nuance in successfully using `prefetch` and `preload`, which constrains its adoption to a certain extent, but the potential payoff is also greater. HTTP/2 Push and the maturation of machine learning technologies is also likely to increase the adoption of `preload` and `prefetch`.
