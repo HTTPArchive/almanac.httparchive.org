@@ -1,5 +1,5 @@
 #standardSQL
-# gather data from almanac.js
+# percientile data per device
 
 CREATE TEMP FUNCTION getTitleText(almanacJsonString STRING)
 RETURNS STRING LANGUAGE js AS '''
@@ -36,7 +36,7 @@ RETURNS STRING LANGUAGE js AS '''
 try {
   var almanac = JSON.parse(almanacJsonString);
   
-  if (almanac['heading'] && almanac['heading'].h1Texts && almanac['heading'].h1.length > 0) {
+  if (almanac['heading'] && almanac['heading'].h1 && almanac['heading'].h1.length > 0) {
       return almanac['heading'].h1[0].text;
   }
 

@@ -8,9 +8,7 @@ RETURNS STRING LANGUAGE js AS '''
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);
 
-   return almanac['html-lang'].toLowerCase();
-   // return almanac['meta-nodes'].find(m => m.name === 'robots').content.toLowerCase(); // exception means it's not there. can't use ?
-   // return almanac['meta-nodes'][1].content.toLowerCase();  
+   return almanac['html-lang'].toLowerCase();  
   } catch (e) {
     return null;
   }
