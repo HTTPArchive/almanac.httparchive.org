@@ -11,7 +11,7 @@ FROM
 GROUP BY
   client,
   firstHtml,
-  http_version
+  http_version 
 ORDER BY 
   client,
   firstHtml,

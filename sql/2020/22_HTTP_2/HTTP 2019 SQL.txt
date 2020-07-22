@@ -25,7 +25,7 @@ SELECT
   client,
   JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
   COUNT(0) AS num_pages,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total, 
   COUNTIF(url LIKE "https://%") AS num_https_pages,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_pages,
   ROUND(COUNTIF(url LIKE "https://%") * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_https
