@@ -41,7 +41,8 @@ jobs:
             const teamMembers = {
               Authors: {},
               Reviewers: {},
-              Analysts: {}
+              Analysts: {},
+              All: {}
             }
 
             const parseListItems = text => {
@@ -72,17 +73,18 @@ jobs:
             core.info(`Tracking progress of ${totalTrackedTasks} tasks across chapters`)
 
             const calcStats = nums => {
-              if (!nums.length) {
+              const size = nums.length
+              if (!size) {
                 return [0, 0, 0, 0, 0]
               }
               nums.sort((a, b) => a - b)
-              const half = Math.floor(nums.length / 2)
+              const sum = nums.reduce((a,b) => a + b, 0)
               return [
-                nums.reduce((a,b) => a + b, 0),
-                Math.min(...nums),
-                Math.max(...nums),
-                (nums.reduce((a,b) => a + b, 0) / nums.length).toFixed(2),
-                (nums.length % 2 ? nums[half] : (nums[half - 1] + nums[half]) / 2.0).toFixed(2)
+                sum,
+                nums[0],
+                nums[size - 1],
+                (sum / size).toFixed(2),
+                nums[Math.floor(size / 2)]
               ]
             }
 
@@ -118,7 +120,7 @@ jobs:
             }
 
             const parseUserNames = members => {
-              return [...members.matchAll(/@(?<username>\w+)/g)].map(u => u.groups.username)
+              return [...members.matchAll(/@(?<username>[\w-]+)/g)].map(u => u.groups.username)
             }
 
             const parseTeam = text => {
@@ -129,6 +131,7 @@ jobs:
                   team.Authors = parseUserNames(authors)
                   team.Reviewers = parseUserNames(reviewers)
                   team.Analysts = parseUserNames(analysts)
+                  team.All = [...new Set([...team.Authors, ...team.Reviewers, ...team.Analysts])]
                 }
               })
               return team
@@ -139,7 +142,7 @@ jobs:
             }
 
             const formatTeam = team => {
-              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('/')
+              return Object.entries(team).map(([k, v]) => `<span title="${k}: ${v.length ? v.join(', ') : 'TBD'}">${v.length}</span>`).join('+').replace(/\+([^+]*)$/, '≥$1')
             }
 
             const formatRow = chapter => {
@@ -176,7 +179,7 @@ jobs:
             }
 
             if(!chapters.length) {
-              core.info(`Nothing to report`)
+              core.info('Nothing to report')
               return
             }
 
@@ -196,7 +199,7 @@ jobs:
             })
 
             const report = [
-              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('/')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i + 1}<span>`).join(' | ')}`,
+              `Chapters | <span title="${Object.entries(icons).map(([k, v]) => `${v} (${k})`).join(', ')}">Links</span> | <span title="${Object.keys(teamMembers).join('+').replace(/\+([^+]*)$/, '≥$1')}">Team</span> | ${trackedTasks.map((v, i) => `<span title="${v}">${i + 1}<span>`).join(' | ')}`,
               `:--------|:------|:----:${'|:-:'.repeat(totalTrackedTasks)}`
             ].concat(chapters.map(formatRow)).join('\n')
 
@@ -205,8 +208,15 @@ jobs:
               ':-----------------|------:|----:|----:|-----:|------:'
             ].concat(Object.entries(teamStats).map(([k, v]) => `${k} | ${v.join(' | ')}`)).join('\n')
 
-            const teams = Object.entries(teamMembers).map(([k, v]) => {
-              return `### ${k} (${Object.keys(v).length})\n\n${Object.entries(v).sort().map(([m, c]) => `<span title="Chapters: ${c.join(', ')}">${m} (${c.length})</span>`).join(', ')}`
+            const teams = Object.entries(teamMembers).map(([team, members]) => {
+              const memberList = Object.entries(members).sort(([x, a], [y, b]) => {
+                return x.toLocaleLowerCase().localeCompare(y.toLocaleLowerCase())
+              }).sort(([x, a], [y, b]) => {
+                return b.length - a.length
+              }).map(([member, chapters]) => {
+                return `<span title="Chapters: ${chapters.join(', ')}">${member} (${chapters.length})</span>`
+              }).join(', ')
+              return `### ${team} (${Object.keys(members).length})\n\n${memberList}`
             }).join('\n\n')
 
             github.issues.update({
