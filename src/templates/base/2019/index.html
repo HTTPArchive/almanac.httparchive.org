@@ -43,7 +43,89 @@
       <img src="/static/images/home-hero.png" alt="" width="562" height="820">
     </div>
   </section>
-  {% include "%s/2019/featured_chapters.html" % lang %}
+  {% if featured_quotes %}
+  {# Get a random quote server side for those without JS #}
+  {%- set random_chapter = featured_quotes.keys()|list()|random %}
+  {%- set featured_chapter_quotes = featured_quotes.get(random_chapter) %}
+  <script nonce={{ csp_nonce() }}>
+    // Get a random quote using JS for those reloading cached CDN page
+    // We do as much as possible before HTML so we can replace the quote
+    // without a flash of the server side quote
+    var chapter_names = {{ localizedChapterTitles|tojson }}
+    var featured_chapters = {{ featured_quotes|tojson }}
+    const keys = Object.keys(featured_chapters)
+    const randIndex = Math.floor(Math.random() * keys.length)
+    const randKey = keys[randIndex];
+  </script>
+  <section id="featured-chapter" class="featured-chapter">
+    <div class="featured-chapter-content">
+      <h2 class="title title-center">Featured Chapter</h2>
+      <h3 class="featured-chapter-name">{{ localizedChapterTitles[random_chapter] }}</h3>
+      <blockquote id="featured-quote">
+        {{ featured_chapter_quotes.get('quote') }}
+      </blockquote>
+      <div class="featured-chapter-content-data">
+        {% if featured_chapter_quotes %}
+        <div class="featured-chapter-content-data-item" {% if not featured_chapter_quotes.get('stat1') %} hidden {% endif %}></div>
+          <div id="featured-stat-1">
+            {{ featured_chapter_quotes.get('stat1') }}
+          </div>
+          <div id="featured-stat-label-1">{{ featured_chapter_quotes.get('label1')|safe }}</div>
+        </div>
+        <div class="featured-chapter-content-data-item" {% if not featured_chapter_quotes.get('stat2') %} hidden {% endif %}>
+          <div id="featured-stat-2">
+            {{ featured_chapter_quotes.get('stat2') }}
+          </div>
+          <div id="featured-stat-label-2">{{ featured_chapter_quotes.get('label2')|safe }}</div>
+        </div>
+        <div class="featured-chapter-content-data-item" {% if not featured_chapter_quotes.get('stat3') %} hidden {% endif %}>
+          <div id="featured-stat-3">
+            {{ featured_chapter_quotes.get('stat3') }}
+          </div>
+          <div id="featured-stat-label-3">
+            {{ featured_chapter_quotes.get('label3') }}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
+        Read the <span class="featured-chapter-name">{{ featured_chapter_name }}</span> Chapter
+      </a>
+    </div>
+  </section>
+  <script nonce={{ csp_nonce() }}>
+
+    // Replace the server-side generated random quote with JS-generated one
+    // so you get a new quote each time you come, even if page is cached:
+    var featured_quote = document.querySelector('#featured-quote');
+    if (featured_quote) {
+      featured_quote.innerHTML = featured_chapters[randKey].quote;
+    }
+
+    var featured_titles = document.querySelectorAll('.featured-chapter-name');
+    for (var i = 0; i < featured_titles.length; i++) {
+      featured_titles[i].innerHTML = chapter_names[randKey];
+    }
+
+    for (let i=1; i <= 3; i++) {
+      var stat = featured_chapters[randKey]['stat_' + i];
+      var stat_label = featured_chapters[randKey]['stat_label_' + i];
+      var stat_node = document.querySelector('#featured-stat-' + i);
+      var stat_label_node = document.querySelector('#featured-stat-label-' + i);
+      if (stat_node && stat_label_node) {
+        if (stat && stat_label) {
+          stat_node.innerHTML = stat;
+          stat_label_node.innerHTML = stat_label;
+          stat_node.hidden = false;
+          stat_label_node.hidden = false;
+        } else {
+          stat_node.hidden = true;
+          stat_label_node.hidden = true;
+        }
+      }
+    }
+  </script>
+  {% endif %}
   <section id="contributors" class="contributors-container alt-bg">
     <div class="contributors">
       <h2 class="title title-alt">{{ self.contributors_title() }}</h2>

@@ -12,6 +12,7 @@ from validate import validate
 import os.path
 import re
 import sys
+import json
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
 # Note this requires similar set up in app.yaml for Google App Engine
@@ -190,6 +191,15 @@ def accentless_sort(value):
   return sorted(value, key=lambda i: strip_accents(i[1]).lower())
 
 
+def get_featured_quotes(lang, year):
+    featured_quotes = {}
+    featured_quote_filename = 'templates/%s/%s/featured_chapters.json' % (lang, year)
+    if os.path.isfile(featured_quote_filename):
+        with open(featured_quote_filename, 'r') as featured_quotes_file:
+            featured_quotes = json.load(featured_quotes_file)
+    return featured_quotes
+
+
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
@@ -205,7 +215,8 @@ app.jinja_env.filters['accentless_sort'] = accentless_sort
 @validate
 def home(lang, year):
     config = get_config(year)
-    return render_template('%s/%s/index.html' % (lang, year), config=config)
+    featured_quotes = get_featured_quotes(lang, year)
+    return render_template('%s/%s/index.html' % (lang, year), config=config, featured_quotes=featured_quotes)
 
 
 @app.route('/<lang>/')
