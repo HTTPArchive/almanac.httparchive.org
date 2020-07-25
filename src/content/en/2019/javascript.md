@@ -25,6 +25,8 @@ The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://
 
 JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, [download and execution have become the most expensive stages](https://v8.dev/blog/cost-of-javascript-2019) when JavaScript is processed by a web page.
 
+<span id="featured-quote" hidden>JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page.</span>
+
 Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?
 
 <figure>
@@ -129,7 +131,9 @@ For both mobile and desktop clients, more third-party requests are sent than fir
    <figcaption id="fig9-caption">Figure 9. Distribution of total JavaScript downloaded on mobile.</figcaption>
 </figure>
 
-At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the ["Third Parties"](./third-parties) chapter.
+At the median, <span id="featured-stat-1">89%</span> more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the ["Third Parties"](./third-parties) chapter.
+
+<span id="featured-stat-label-1" hidden>Sites with more third-party code than first-party</span>
 
 ## Resource compression
 
@@ -282,6 +286,8 @@ Open source code, or code with a permissive license that can be accessed, viewed
 
 [jQuery](https://jquery.com/), the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
 
+<span id="featured-stat-2" hidden>83%</span><span id="featured-stat-label-2" hidden>Sites that use jQuery</span>
+
 There are a number of possible reasons:
 
 - [WordPress](https://wordpress.org/), which is used in more than 30% of sites, includes jQuery by default.
@@ -302,6 +308,8 @@ In the past number of years, the JavaScript ecosystem has seen a rise in open-so
    <div id="fig12-description" class="visually-hidden">Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.</div>
    <figcaption id="fig12-caption">Figure 12. Most frequently used frameworks on desktop.</figcaption>
 </figure>
+
+<span id="featured-stat-3" hidden>4.6%</span><span id="featured-stat-label-3" hidden>Home pages using React</span>
 
 Only a subset of popular frameworks are being analyzed here, but it's important to note that all of them either follow one of these two approaches:   
 

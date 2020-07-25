@@ -7,6 +7,8 @@ const { find_markdown_files, find_config_files, size_of, parse_array } = require
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
+const { generate_chapter_featured_quote } = require('./generate_chapter_featured_quote');
+const { generate_featured_chapters } = require('./generate_featured_chapters');
 const { generate_sitemap } = require('./generate_sitemap');
 const { lazy_load_content } = require('./lazy_load_content');
 const { wrap_tables } = require('./wrap_tables');
@@ -26,6 +28,7 @@ const generate_chapters = async () => {
   let sitemap_languages = {};
   let ebook_chapters = [];
   let configs = {};
+  let featured_quotes = {};
   
   for (const config_file of await find_config_files()) {
     const re = (process.platform != 'win32') 
@@ -49,6 +52,16 @@ const generate_chapters = async () => {
 
       const markdown = await fs.readFile(file, 'utf-8');
       const { metadata, body, toc } = await parse_file(markdown,chapter);
+      const chapter_featured_quote = generate_chapter_featured_quote(body);
+      if (Object.keys(chapter_featured_quote).length > 0) {
+        if (!(language in featured_quotes)) {
+          featured_quotes[language] = {};
+        }
+        if (!(year in featured_quotes[language])) {
+          featured_quotes[language][year] = {};
+        }
+        featured_quotes[language][year][chapter] = chapter_featured_quote;
+      }
       if ( sitemap_languages[year].includes(language) ) {
         sitemap.push({ language, year, chapter, metadata });
       }
@@ -60,8 +73,9 @@ const generate_chapters = async () => {
       console.error('  Failed to generate chapter, moving onto the next one. ');
     }
   }
-  
-  await generate_ebooks(ebook_chapters,configs);
+
+  await generate_featured_chapters(featured_quotes);
+  //await generate_ebooks(ebook_chapters,configs);
   await generate_js();
 
   const sitemap_path = await generate_sitemap(sitemap,sitemap_languages);
