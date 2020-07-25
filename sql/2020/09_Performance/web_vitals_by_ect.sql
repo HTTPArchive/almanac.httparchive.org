@@ -1,5 +1,5 @@
 #standardSQL
-# Core WebVitals per effective connection type
+# WebVitals by effective connection type
 
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   good / (good + needs_improvement + poor) >= 0.75
@@ -21,42 +21,19 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 WITH
   base AS (
   SELECT
-    yyyymm,
     origin,
-    'all' AS country_code,
-    'all' AS device,
     effective_connection_type.name AS network,
     layout_instability,
     largest_contentful_paint,
-    first_input
+    first_input,
+    first_contentful_paint,
+    experimental.time_to_first_byte AS time_to_first_byte
   FROM
-    `chrome-ux-report.experimental.country`
-  WHERE
-    form_factor.name in ('desktop','phone')
-    AND yyyymm = 202006
-  ),
-  dimensions AS (
-  SELECT
-    yyyymm,
-    country_code,
-    origin,
-    device,
-    network
-  FROM
-    base
-  GROUP BY
-    yyyymm,
-    country_code,
-    origin,
-    device,
-    network
+    `chrome-ux-report.all.202006`
   ),
   cls AS (
   SELECT
-    yyyymm,
-    country_code,
     origin,
-    device,
     network,
     SUM(IF(bin.start < 0.1, bin.density, 0)) AS small,
     SUM(IF(bin.start > 0.1 AND bin.start < 0.25, bin.density, 0)) AS medium,
@@ -66,21 +43,13 @@ WITH
     base
   LEFT JOIN
     UNNEST(layout_instability.cumulative_layout_shift.histogram.bin) AS bin
-  WHERE
-    bin IS NOT NULL
   GROUP BY
-    yyyymm,
-    country_code,
     origin,
-    device,
     network
   ),
   lcp AS (
   SELECT
-    yyyymm,
-    country_code,
     origin,
-    device,
     network,
     SUM(IF(bin.start < 2500, bin.density, 0)) AS fast,
     SUM(IF(bin.start >= 2500 AND bin.start < 4000, bin.density, 0)) AS avg,
@@ -90,21 +59,13 @@ WITH
     base
   LEFT JOIN
     UNNEST(largest_contentful_paint.histogram.bin) AS bin
-  WHERE
-    bin IS NOT NULL
   GROUP BY
-    yyyymm,
-    country_code,
     origin,
-    device,
     network
   ),
   fid AS (
   SELECT
-    yyyymm,
-    country_code,
     origin,
-    device,
     network,
     SUM(IF(bin.start < 100, bin.density, 0)) AS fast,
     SUM(IF(bin.start >= 100 AND bin.start < 300, bin.density, 0)) AS avg,
@@ -114,21 +75,45 @@ WITH
     base
   LEFT JOIN
     UNNEST(first_input.delay.histogram.bin) AS bin
-  WHERE
-    bin IS NOT NULL
   GROUP BY
-    yyyymm,
-    country_code,
     origin,
-    device,
+    network
+  ),
+  fcp AS (
+  SELECT
+    origin,
+    network,
+    SUM(IF(bin.start < 1500, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 1500 AND bin.start < 2500, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 2500, bin.density, 0)) AS slow,
+    `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
+  FROM
+    base
+  LEFT JOIN
+    UNNEST(first_contentful_paint.histogram.bin) AS bin
+  GROUP BY
+    origin,
+    network
+  ),
+  ttfb AS (
+  SELECT
+    origin,
+    network,
+    SUM(IF(bin.start < 500, bin.density, 0)) AS fast,
+    SUM(IF(bin.start >= 500 AND bin.start < 1500, bin.density, 0)) AS avg,
+    SUM(IF(bin.start >= 1500, bin.density, 0)) AS slow,
+    `chrome-ux-report`.experimental.PERCENTILE(ARRAY_AGG(bin), 75) AS p75
+  FROM
+      base
+  LEFT JOIN
+    UNNEST(time_to_first_byte.histogram.bin) AS bin
+  GROUP BY
+    origin,
     network
   ),
   granular_metrics AS (
   SELECT
-    yyyymm,
-    country_code,
     origin,
-    device,
     network,
     cls.small AS small_cls,
     cls.medium AS medium_cls,
@@ -144,25 +129,36 @@ WITH
     fid.avg AS avg_fid,
     fid.slow AS slow_fid,
     fid.p75 AS p75_fid,
+
+    fcp.fast AS fast_fcp,
+    fcp.avg AS avg_fcp,
+    fcp.slow AS slow_fcp,
+    fcp.p75 AS p75_fcp,
+
+    ttfb.fast AS fast_ttfb,
+    ttfb.avg AS avg_ttfb,
+    ttfb.slow AS slow_ttfb,
+    ttfb.p75 AS p75_ttfb,
   FROM
-    dimensions
-  LEFT JOIN
     cls
-  USING
-    (yyyymm, country_code, origin, device, network)
   LEFT JOIN
     lcp
   USING
-    (yyyymm, country_code, origin, device, network)
+    (origin, network)
   LEFT JOIN
     fid
   USING
-    (yyyymm, country_code, origin, device, network))
+    (origin, network)
+  LEFT JOIN
+    fcp
+  USING
+    (origin, network)
+  LEFT JOIN
+    ttfb
+  USING
+    (origin, network))
 
 SELECT
-  yyyymm,
-  country_code,
-  device,
   network,
   
   COUNT(DISTINCT origin) AS total_origins,
@@ -225,10 +221,39 @@ SELECT
       COUNT(DISTINCT IF(
           IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cls_poor,
 
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_GOOD(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_good,
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_NI(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_ni,
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_POOR(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_poor,
+
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_GOOD(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_good,
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_NI(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_ni,
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_POOR(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_poor,
+  
 FROM
   granular_metrics
 GROUP BY
-  yyyymm,
-  country_code,
-  device,
   network

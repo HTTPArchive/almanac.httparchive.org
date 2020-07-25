@@ -1,5 +1,5 @@
 #standardSQL
-# Core WebVitals per country
+# Core WebVitals by device
 
 CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   good / (good + needs_improvement + poor) >= 0.75
@@ -22,7 +22,7 @@ WITH
   base AS (
   SELECT
     origin,
-    country_code,
+    device,
 
     fast_fid,
     avg_fid,
@@ -34,15 +34,25 @@ WITH
     
     small_cls,
     medium_cls,
-    large_cls
+    large_cls,
+
+    fast_fcp,
+    avg_fcp,
+    slow_fcp,
+
+    fast_ttfb,
+    avg_ttfb,
+    slow_ttfb
+
   FROM
-    `chrome-ux-report.materialized.country_summary`
+    `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm = 202006
+    device in ('desktop','phone')
+    AND date = date('2020-06-01')
   )
 
 SELECT
-  country_code,
+  device,
   
   COUNT(DISTINCT origin) AS total_origins,
   
@@ -103,7 +113,40 @@ SELECT
           IS_POOR(small_cls, medium_cls, large_cls), origin, NULL)), 
       COUNT(DISTINCT IF(
           IS_NON_ZERO(small_cls, medium_cls, large_cls), origin, NULL))) AS pct_cls_poor,
+
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_GOOD(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_good,
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_NI(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_ni,
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_POOR(fast_fcp, avg_fcp, slow_fcp), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_fcp, avg_fcp, slow_fcp), origin, NULL))) AS pct_fcp_poor,
+
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_GOOD(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_good,
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_NI(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_ni,
+  SAFE_DIVIDE(
+      COUNT(DISTINCT IF(
+          IS_POOR(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL)), 
+      COUNT(DISTINCT IF(
+          IS_NON_ZERO(fast_ttfb, avg_ttfb, slow_ttfb), origin, NULL))) AS pct_ttfb_poor,
+
 FROM
   base
 GROUP BY
-  country_code
+  device
