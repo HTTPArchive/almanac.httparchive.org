@@ -18,9 +18,10 @@ on:
     paths:
       - src/content/**
       - src/templates/**
-      - tools/generate/**
+      - src/tools/generate/**
       - src/static/css/**
       - src/static/js/**
+      - src/package.json
 jobs:
   build:
     runs-on: ubuntu-latest
