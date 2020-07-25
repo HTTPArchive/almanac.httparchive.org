@@ -22,3 +22,6 @@
 
 <a href="https://github.com/HTTPArchive/almanac.httparchive.org#contributing" class="btn">Rejoignez l'équipe&nbsp;!</a>
 {% endblock %}
+
+{% block featured_chapter%}Focus sur le chapitre…{% endblock %}
+{% macro readChapter(chapter) %}Lire le chapitre&nbsp;: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}

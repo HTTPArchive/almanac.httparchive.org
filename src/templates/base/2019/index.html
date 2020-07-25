@@ -63,7 +63,7 @@
   </script>
   <section id="featured-chapter" class="featured-chapter">
     <div class="featured-chapter-content">
-      <h2 class="title title-center">Featured Chapter</h2>
+      <h2 class="title title-center">{{ self.featured_chapter() }}</h2>
       <h3 class="featured-chapter-name">{{ localizedChapterTitles[random_chapter] }}</h3>
       <blockquote id="featured-quote">
         {{ featured_chapter_quotes.get('quote')|safe }}
@@ -83,7 +83,7 @@
         </div>
       </div>
       <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-        Read the <span class="featured-chapter-name">{{ featured_chapter_name }}</span> Chapter
+        {{ readChapter(featured_chapter_name) }}
       </a>
     </div>
   </section>
