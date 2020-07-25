@@ -47,7 +47,8 @@
   {# Get a random quote server side for those without JS #}
   {%- set random_chapter = featured_quotes.keys()|list()|random %}
   {%- set featured_chapter_quotes = featured_quotes.get(random_chapter) %}
-  <script nonce={{ csp_nonce() }}>
+  {% if featured_chapter_quotes %}
+  <script nonce="{{ csp_nonce() }}">
     // Get a random quote using JS for those reloading cached CDN page
     // We do as much as possible before HTML so we can replace the quote
     // without a flash of the server side quote
@@ -65,20 +66,31 @@
         {{ featured_chapter_quotes.get('quote') }}
       </blockquote>
       <div class="featured-chapter-content-data">
-        {% if featured_chapter_quotes %}
-        <div class="featured-chapter-content-data-item" {% if not featured_chapter_quotes.get('stat1') %} hidden {% endif %}></div>
+        {% if featured_chapter_quotes.get('stat1') %}
+        <div class="featured-chapter-content-data-item">
+        {% else %}
+        <div class="featured-chapter-content-data-item" hidden>
+        {% endif %}>
           <div id="featured-stat-1">
             {{ featured_chapter_quotes.get('stat1') }}
           </div>
           <div id="featured-stat-label-1">{{ featured_chapter_quotes.get('label1')|safe }}</div>
         </div>
-        <div class="featured-chapter-content-data-item" {% if not featured_chapter_quotes.get('stat2') %} hidden {% endif %}>
+        {% if featured_chapter_quotes.get('stat2') %}
+        <div class="featured-chapter-content-data-item">
+        {% else %}
+        <div class="featured-chapter-content-data-item" hidden>
+        {% endif %}>
           <div id="featured-stat-2">
             {{ featured_chapter_quotes.get('stat2') }}
           </div>
           <div id="featured-stat-label-2">{{ featured_chapter_quotes.get('label2')|safe }}</div>
         </div>
-        <div class="featured-chapter-content-data-item" {% if not featured_chapter_quotes.get('stat3') %} hidden {% endif %}>
+        {% if featured_chapter_quotes.get('stat3') %}
+        <div class="featured-chapter-content-data-item">
+        {% else %}
+        <div class="featured-chapter-content-data-item" hidden>
+        {% endif %}>
           <div id="featured-stat-3">
             {{ featured_chapter_quotes.get('stat3') }}
           </div>
@@ -86,14 +98,14 @@
             {{ featured_chapter_quotes.get('label3') }}
           </div>
         </div>
-        {% endif %}
       </div>
       <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
         Read the <span class="featured-chapter-name">{{ featured_chapter_name }}</span> Chapter
       </a>
     </div>
   </section>
-  <script nonce={{ csp_nonce() }}>
+  {% endif %}
+  <script nonce="{{ csp_nonce() }"}>
 
     // Replace the server-side generated random quote with JS-generated one
     // so you get a new quote each time you come, even if page is cached:
