@@ -23,7 +23,7 @@ SELECT
   getUpgradeHeader(payload) AS upgrade,
   COUNT(*) AS num_requests
 FROM 
-  `httparchive.smaple_data.requests` 
+  `httparchive.sample_data.requests` 
 GROUP BY
   client,
   firstHtml,

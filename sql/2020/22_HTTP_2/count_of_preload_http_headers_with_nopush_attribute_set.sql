@@ -1,5 +1,5 @@
 #standardSQL
-# 22_HTTP_2 Count of preload HTTP Headers with nopush attribute set. Once off stat for last crawl
+# 22_HTTP_2 - Count of preload HTTP Headers with nopush attribute set. Once off stat for last crawl
 CREATE TEMPORARY FUNCTION getLinkHeaders(payload STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS """
@@ -32,5 +32,8 @@ CROSS JOIN
   UNNEST(link_headers) AS link_header
 WHERE 
   link_header LIKE '%preload%' 
-  AND link_header LIKE '%nopush%'
-GROUP BY client, firstHtml
+AND
+  link_header LIKE '%nopush%'
+GROUP BY
+	client, 
+	firstHtml
