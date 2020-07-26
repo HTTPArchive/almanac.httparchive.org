@@ -41,42 +41,42 @@
 
 {% block start_exploring %}开始探索{% endblock %}
 
-{% block menu_title %}Page menu{% endblock %}
-{% block open_the_menu %}Open the menu{% endblock %}
-{% block close_the_menu %}Close the menu{% endblock %}
+{% block menu_title %}页面菜单{% endblock %}
+{% block open_the_menu %}打开菜单{% endblock %}
+{% block close_the_menu %}关闭菜单{% endblock %}
 
-{% block index_nav_title %}Chapter table of contents{% endblock %}
-{% block index_title %}Index{% endblock %}
-{% block open_the_index %}Open the Table of Contents{% endblock %}
-{% block close_the_index %}Close the Table of Contents{% endblock %}
+{% block index_nav_title %}章节目录{% endblock %}
+{% block index_title %}索引{% endblock %}
+{% block open_the_index %}打开目录{% endblock %}
+{% block close_the_index %}关闭目录{% endblock %}
 
-{% block and %}and{% endblock %}
+{% block and %}和{% endblock %}
 
-{% block open %}Open{% endblock %}
-{% block close %}Close{% endblock %}
+{% block open %}打开{% endblock %}
+{% block close %}关闭{% endblock %}
 
-{% macro show_description(id) %}Show description of Figure {{ id }}{% endmacro %}
-{% macro hide_description(id) %}Hide description of Figure {{ id }}{% endmacro %}
+{% macro show_description(id) %}显示图像描述 {{ id }}{% endmacro %}
+{% macro hide_description(id) %}隐藏图像描述 {{ id }}{% endmacro %}
 
-{% block written_by_before %}Written by{% endblock %}
-{% block reviewed_by_before %}Reviewed by{% endblock %}
-{% block translated_by_before %}Translated by{% endblock %}
+{% block written_by_before %}撰写 by{% endblock %}
+{% block reviewed_by_before %}审阅 by{% endblock %}
+{% block translated_by_before %}翻译 by{% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
 
-{% block author %}Author{% endblock %}
-{% block authors %}Authors{% endblock %}
+{% block author %}作者{% endblock %}
+{% block authors %}作者{% endblock %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}
-{% macro website(authorName) %}{{authorName}} website{% endmacro %}
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
+{% macro website(authorName) %}{{authorName}} 网站{% endmacro %}
 
-{% macro edition(year) %}{{ year }} Edition{% endmacro %}
+{% macro edition(year) %}{{ year }} 版{% endmacro %}
 
-{% block footer_title %}Footer navigation{% endblock %}
-{% block copyright %}© 2019 Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
-{% block accessibility_statement %}Accessibility Statement{% endblock %}
+{% block footer_title %}页脚导航{% endblock %}
+{% block copyright %}© 2019 Web Almanac.的许可是基于 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}无障碍可访问声明{% endblock %}
 
 {% block contributors_description %}
 是web社区的辛勤工作才让 Web Almanac 网络年鉴成为可能。 {{ self.contributors() }} 成员在计划、研究、写作和发布阶段奉献投入了难以估量的时间。
@@ -113,7 +113,7 @@
       在这份报告中有太需要学习的东西，所以开始探索并与社区分享你的见解吧，这样我们就可以共同推进我们对网络状态的理解。
     </p>
 
-    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, creator of the Web Almanac</em></p>
+    <p>— <em><a href="{{ url_for('contributors', year=year, lang=lang, _anchor='rviscomi') }}">Rick Viscomi</a>, Web Almanac网络年鉴的创造者</em></p>
 {% endblock %}
 
 {% block appendix %}附录{% endblock %}
@@ -170,8 +170,8 @@
 %}
 
 {% set localizedContributors = {
-  "kleinab": 'Abigail Klein is a Google software engineer. She worked on Google Docs, Sheets, and Slides web accessibility where she added <a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">automatic captions to Google Slides</a>, as well as improving screen reader, braille, screen magnifier, and high contrast support. She currently works on Google Chrome and ChromeOS accessibility. She has a bachelor\'s and master\'s degree in computer science from MIT, where she co-founded an assistive technology hackathon and was a lab assistant and guest lecturer of the assistive technology class.',
-  "argyleink": 'Adam Argyle is a Google Chrome developer relations member focused on CSS; He\'s a web addict with an insatiable lust for great UX &amp; UI; Find him on the web <a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>;',
+  "kleinab": 'Abigail Klein 是谷歌的软件工程师. 她致力于谷歌文档、表格和幻灯片的web可访问性 她为谷歌幻灯片添加了<a href="https://www.blog.google/outreach-initiatives/accessibility/whats-you-say-present-captions-google-slides/">自动字幕</a>,并改进了屏幕阅读器、盲文、屏幕放大镜和高对比度支持。 她目前致力于谷歌Chrome和ChromeOS的可访问性。她拥有麻省理工学院(MIT)计算机科学学士和硕士学位，在那里她参与创立了一个辅助技术黑客马拉松，她还是该辅助技术课程的实验室助理和客座讲师。',
+  "argyleink": 'Adam Argyle 是一个谷歌Chrome开发者关系成员,聚焦于CSS; 他是一个对伟大的用户体验和UI贪得无厌的网络成瘾者; 在网上找到他 <a href="https://twitter.com/argyleink">@argyleink</a> or checkout his website <a href="https://nerdy.dev">https://nerdy.dev</a>;',
   "alankent": 'Alan Kent is a Developer Advocate at Google focusing on e-commerce and content ecosystems. He blogs at <a href="https://alankent.me">alankent.me</a> and tweets as <a href="https://twitter.com/akent99">@akent99</a>.',
   "amedina": 'Alberto Medina is a Developer Advocate in the Web Content Ecosystems Team at Google, focusing on advancing the proliferation of quality content on the web via progressive technologies such as Amp, and the use of modern Web APIs. Alberto\'s work currently has a strong focus on Content Management Systems as he leads an area of Content Ecosystem called CMS Developer Relations.',
   "andydavies": 'Andy Davies is a Freelance Web Performance Consultant and has helped some of the UK\'s leading retailers, newspapers and financial services companies to make their sites faster. He wrote The Pocket Guide to Web Performance, is co-author of Using WebPageTest and also an organizer of the London Web Performance meetup. You can find Andy on Twitter as <a href="https://twitter.com/andydavies">@AndyDavies</a>, and he occasionally blogs at <a href="https://andydavies.me">https://andydavies.me</a>',
