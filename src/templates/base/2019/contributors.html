@@ -362,7 +362,7 @@
   if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
       ||
         (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
-    console.log('This is a reload - regenerate featured chapter');
+    console.log('This is a reload - randomise contributor grid');
     var ul = document.querySelector('.contributor-grid');
     for (var i = ul.children.length; i >= 1; i--) {
         ul.appendChild(ul.children[Math.random() * i | 1]);
@@ -378,12 +378,19 @@
     var totalText = document.querySelector('#contributors-total-text');
     var totalContributors = document.querySelector('#contributors-total');
     var shadowNode = document.createElement('div');
-    var urlObject = new URL(document.location);
+    var urlObject;
+    
+    if (self.URLSearchParams) {
+      urlObject = new URL(document.location);
+    }
 
     function getFilteredContributorCount() {
-      return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
-        return getComputedStyle(el).display != 'none';
-      }).length;
+      if (Array.from) {
+        return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
+          return getComputedStyle(el).display != 'none';
+        }).length;
+      }
+      return null;
     }
 
     for (var i = 0; i < buttons.length; i++) {
@@ -416,14 +423,16 @@
             }
         });
 
-        if(selected.length > 0 && selected.length < teams.length){
-            urlObject.searchParams.set('teams', selected.join(','));
-            history.pushState(null, null, urlObject);
-            handleFilterUrl();
-        } else {
-            urlObject.searchParams.delete('teams');
-            history.pushState(null, null, urlObject);
-            handleFilterUrl();
+        if (self.URLSearchParams) {
+          if(selected.length > 0 && selected.length < teams.length){
+              urlObject.searchParams.set('teams', selected.join(','));
+              history.pushState(null, null, urlObject);
+              handleFilterUrl();
+          } else {
+              urlObject.searchParams.delete('teams');
+              history.pushState(null, null, urlObject);
+              handleFilterUrl();
+          }
         }
 
       });
@@ -438,8 +447,12 @@
     function handleFilterUrl(event) {
 
         event && event.preventDefault();
-        var urlObject = new URL(document.location);
-        if(urlObject.searchParams.has('teams')) {
+        var urlObject;
+        
+        if (self.URLSearchParams) {
+          urlObject = new URL(document.location);
+        }
+        if (urlObject && urlObject.searchParams.has('teams')) {
 
             var hash = urlObject.searchParams.get('teams');
             var filterTeams = hash.split(',');
@@ -461,12 +474,15 @@
               button.setAttribute('aria-pressed',false);
             }
         }
+        
         var filteredCount = getFilteredContributorCount();
-        counter.innerText = filteredCount;
-        if ( counter.innerText ===  totalContributors.innerText ) {
-          totalText.classList.add('hidden')
-        } else {
-          totalText.classList.remove('hidden')
+        if (filteredCount) {
+          counter.innerText = filteredCount;
+          if ( counter.innerText ===  totalContributors.innerText ) {
+            totalText.classList.add('hidden')
+          } else {
+            totalText.classList.remove('hidden')
+          }
         }
     }
     window.addEventListener('popstate', handleFilterUrl);
