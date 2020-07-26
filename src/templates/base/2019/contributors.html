@@ -445,8 +445,8 @@
             var filterTeams = hash.split(',');
 
             if(teams.includes(filterTeams[0])) {
-                contributors.classList.remove(...teams);
-                contributors.classList.add(...filterTeams);
+                contributors.classList.remove.apply(contributors.classList,teams);
+                contributors.classList.add.apply(contributors.classList,filterTeams);
             }
 
             for (index = 0; index < buttons.length; ++index) {
@@ -455,7 +455,7 @@
             }
 
         } else {
-            contributors.classList.add(...teams);
+            contributors.classList.add.apply(contributors.classList,teams);
             for (index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
               button.setAttribute('aria-pressed',false);
