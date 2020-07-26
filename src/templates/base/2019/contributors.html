@@ -362,7 +362,6 @@
   if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
       ||
         (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
-    console.log('This is a reload - randomise contributor grid');
     var ul = document.querySelector('.contributor-grid');
     for (var i = ul.children.length; i >= 1; i--) {
         ul.appendChild(ul.children[Math.random() * i | 1]);
