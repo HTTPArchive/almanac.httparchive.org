@@ -29,8 +29,8 @@ WITH
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    device in ('desktop','phone')
-    AND date = date('2020-06-01')
+    device IN ('desktop','phone')
+    AND date = '2020-06-01'
   ),
 fid AS (
   SELECT

@@ -5,13 +5,13 @@ CREATE TEMP FUNCTION IS_GOOD (good FLOAT64, needs_improvement FLOAT64, poor FLOA
   good / (good + needs_improvement + poor) >= 0.75
 );
 
-CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
-  good / (good + needs_improvement + poor) < 0.75
-  AND poor / (good + needs_improvement + poor) < 0.25
-);
-
 CREATE TEMP FUNCTION IS_POOR (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
   poor / (good + needs_improvement + poor) >= 0.25
+);
+
+CREATE TEMP FUNCTION IS_NI (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
+  NOT IS_GOOD(good, needs_improvement, poor)
+  AND NOT IS_POOR(good, needs_improvement, poor)
 );
 
 CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor FLOAT64) RETURNS BOOL AS (
@@ -24,30 +24,33 @@ WITH
     origin,
     country_code,
 
-    fast_fid,
-    avg_fid,
-    slow_fid,
+    SUM(fast_fid) / SUM(fast_fid + avg_fid + slow_fid) AS fast_fid,
+    SUM(avg_fid) / SUM(fast_fid + avg_fid + slow_fid) AS avg_fid,
+    SUM(slow_fid) / SUM(fast_fid + avg_fid + slow_fid) AS slow_fid,
     
-    fast_lcp,
-    avg_lcp,
-    slow_lcp,
+    SUM(fast_lcp) / SUM(fast_lcp + avg_lcp + slow_lcp) AS fast_lcp,
+    SUM(avg_lcp) / SUM(fast_lcp + avg_lcp + slow_lcp) AS avg_lcp,
+    SUM(slow_lcp) / SUM(fast_lcp + avg_lcp + slow_lcp) AS slow_lcp,
     
-    small_cls,
-    medium_cls,
-    large_cls,
+    SUM(small_cls) / SUM(small_cls + medium_cls + large_cls) AS small_cls,
+    SUM(medium_cls) / SUM(small_cls + medium_cls + large_cls) AS medium_cls,
+    SUM(large_cls) / SUM(small_cls + medium_cls + large_cls) AS large_cls,
 
-    fast_fcp,
-    avg_fcp,
-    slow_fcp,
+    SUM(fast_fcp) / SUM(fast_fcp + avg_fcp + slow_fcp) AS fast_fcp,
+    SUM(avg_fcp) / SUM(fast_fcp + avg_fcp + slow_fcp) AS avg_fcp,
+    SUM(slow_fcp) / SUM(fast_fcp + avg_fcp + slow_fcp) AS slow_fcp,
 
-    fast_ttfb,
-    avg_ttfb,
-    slow_ttfb,
+    SUM(fast_ttfb) / SUM(fast_ttfb + avg_ttfb + slow_ttfb) AS fast_ttfb,
+    SUM(avg_ttfb) / SUM(fast_ttfb + avg_ttfb + slow_ttfb) AS avg_ttfb,
+    SUM(slow_ttfb) / SUM(fast_ttfb + avg_ttfb + slow_ttfb) AS slow_ttfb,
 
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
     yyyymm = 202006
+  GROUP BY
+    origin,
+    country_code
   )
 
 SELECT
