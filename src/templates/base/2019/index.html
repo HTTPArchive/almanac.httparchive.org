@@ -52,14 +52,25 @@
   {%- if not featured_chapter_quotes.get('stat_3') %}{% set stat3_hidden = "hidden" %}{% endif %}
   {% if featured_chapter_quotes %}
   <script nonce="{{ csp_nonce() }}">
-    // Get a random quote using JS for those reloading cached CDN page
-    // We do as much as possible before HTML so we can replace the quote
-    // without a flash of the server side quote
+    // Get a random quote using JS for those reloading cached CDN page.
+    // We do as much as possible before HTML so we can replace the server
+    // generated quote quickly without a flash of the server side quote
     var chapter_names = {{ localizedChapterTitles|tojson }}
     var featured_chapters = {{ featured_quotes|tojson }}
-    const keys = Object.keys(featured_chapters)
-    const randIndex = Math.floor(Math.random() * keys.length)
-    const randKey = keys[randIndex];
+
+    var randomChapter="";
+    
+    // Only run this if the page is reloaded for performance reasons.
+    // Support both newer PerformanceNavigationTiming API for newer browsers
+    // and older Navigation Timing API for older browsers
+    if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
+        ||
+         (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
+      console.log('This is a reload - regenerate featured chapter');
+      const keys = Object.keys(featured_chapters)
+      const randIndex = Math.floor(Math.random() * keys.length)
+      randomChapter = keys[randIndex];
+    }
   </script>
   <section id="featured-chapter" class="featured-chapter">
     <div class="featured-chapter-content">
@@ -90,32 +101,33 @@
   {% endif %}
   <script nonce="{{ csp_nonce() }}">
 
-    // Replace the server-side generated random quote with JS-generated one
-    // so you get a new quote each time you come, even if cached page is served:
-    var featured_quote = document.querySelector('#featured-quote');
-    if (featured_quote) {
-      featured_quote.innerHTML = featured_chapters[randKey].quote;
-    }
+    // Replace the quote with the randomly generated one
+    if (randomChapter) {
+      var featured_quote = document.querySelector('#featured-quote');
+      if (featured_quote) {
+        featured_quote.innerHTML = featured_chapters[randomChapter].quote;
+      }
 
-    var featured_titles = document.querySelectorAll('.featured-chapter-name');
-    for (var i = 0; i < featured_titles.length; i++) {
-      featured_titles[i].innerHTML = chapter_names[randKey];
-    }
+      var featured_titles = document.querySelectorAll('.featured-chapter-name');
+      for (var i = 0; i < featured_titles.length; i++) {
+        featured_titles[i].innerHTML = chapter_names[randomChapter];
+      }
 
-    for (let i=1; i <= 3; i++) {
-      var stat = featured_chapters[randKey]['stat_' + i];
-      var stat_label = featured_chapters[randKey]['stat_label_' + i];
-      var stat_node = document.querySelector('#featured-stat-' + i);
-      var stat_label_node = document.querySelector('#featured-stat-label-' + i);
-      if (stat_node && stat_label_node) {
-        if (stat && stat_label) {
-          stat_node.innerHTML = stat;
-          stat_label_node.innerHTML = stat_label;
-          stat_node.hidden = false;
-          stat_label_node.hidden = false;
-        } else {
-          stat_node.hidden = true;
-          stat_label_node.hidden = true;
+      for (let i=1; i <= 3; i++) {
+        var stat = featured_chapters[randomChapter]['stat_' + i];
+        var stat_label = featured_chapters[randomChapter]['stat_label_' + i];
+        var stat_node = document.querySelector('#featured-stat-' + i);
+        var stat_label_node = document.querySelector('#featured-stat-label-' + i);
+        if (stat_node && stat_label_node) {
+          if (stat && stat_label) {
+            stat_node.innerHTML = stat;
+            stat_label_node.innerHTML = stat_label;
+            stat_node.hidden = false;
+            stat_label_node.hidden = false;
+          } else {
+            stat_node.hidden = true;
+            stat_label_node.hidden = true;
+          }
         }
       }
     }
