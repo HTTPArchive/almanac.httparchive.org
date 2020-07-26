@@ -353,6 +353,22 @@
 {% block scripts %}
   {{ super() }}
   <script nonce="{{ csp_nonce() }}">
+  
+  // Randomise the contributors on reload as server-side random will be cached at CDN.
+  // Only run this if the page is reloaded for performance reasons.
+  
+  // Support both newer PerformanceNavigationTiming API for newer browsers
+  // and older Navigation Timing API for older browsers
+  if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
+      ||
+        (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
+    console.log('This is a reload - regenerate featured chapter');
+    var ul = document.querySelector('.contributor-grid');
+    for (var i = ul.children.length; i >= 1; i--) {
+        ul.appendChild(ul.children[Math.random() * i | 1]);
+    }
+  }
+
 (function loaded() {
     var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
     var buttons = document.querySelectorAll('.filter-container button');
