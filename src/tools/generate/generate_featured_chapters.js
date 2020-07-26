@@ -57,9 +57,11 @@ const generate_featured_chapters = async (featured_quotes) => {
         sorted_quotes[key] = unsorted_quotes[key];
       });
       
-      console.log(`\n Generating templates/${language}/${year}/featured_quotes.json`);
-      await fs.outputFile(`templates/${language}/${year}/featured_quotes.json`, JSON.stringify(sorted_quotes,null,2), 'utf8');
-      await size_of(`templates/${language}/${year}/featured_quotes.json`);
+      const json_file = `templates/${language}/${year}/featured_chapters.json`;
+      
+      console.log(`\n Generating ${json_file}`);
+      await fs.outputFile(`${json_file}`, JSON.stringify(sorted_quotes,null,2), 'utf8');
+      await size_of(`${json_file}`);
 
     }
   }
