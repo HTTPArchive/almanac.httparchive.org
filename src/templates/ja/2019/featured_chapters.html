@@ -5,90 +5,70 @@
   {%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}
 #}
 {%- if featured_chapter == "javascript" %}
-  {%- set featured_chapter_name = "JavaScript" %}
   {%- set featured_chapter_quote = "JavaScript はブラウザに送信するリソースの中で最もコストのかかるもので、ダウンロード、解析、コンパイル、そして最終的に実行されます。ブラウザはスクリプトの解析とコンパイルにかかる時間を大幅に短縮しましたが、ダウンロードと実行は、JavaScriptがWebページで処理される際に最もコストのかかる段階となっています。" %}
   {%- set featured_chapter_stats = {"stat1":"89%","label1":"ファーストパーティよりもサードパーティのコードが多いサイト","stat2":"83%","label2":"jQueryを使用しているサイト","stat3":"4.6%","label3":"Reactを使ったホームページ"} %}
 {%- elif featured_chapter == "css" %}
-  {%- set featured_chapter_name = "CSS" %}
   {%- set featured_chapter_quote = "Cascading Style Sheets (CSS) は、Web ページのペイント、フォーマット、レイアウトに使用されます。その機能は、テキストの色から3Dパースペクティブと、シンプルな概念にまで及びます。また、さまざまな画面サイズ、表示コンテキスト、および印刷を処理するために開発者に力を与えるフックを持っています。CSS は、開発者がコンテンツを調整し、ユーザーに適切に適応することを確認するのに役立ちます。" %}
   {%- set featured_chapter_stats = {"stat1":"5%","label1":"カスタムプロパティを使用したページ","stat2":"2%","label2":"CSS Gridを使用しているサイト","stat3":"780","label3":"Z-Indexの最大値の桁数"} %}
 {%- elif featured_chapter == "markup" %}
-  {%- set featured_chapter_name = "マークアップ" %}
   {%- set featured_chapter_quote = "2019年7月現在、HTTP Archiveは、約440万件のデスクトップホームページと約530万件のモバイルホームページについて、DOM内で使用されているすべての<em>要素</em>名の収集を開始しており、これにより調査と解剖を開始することができるようになりました。このクロールでは、これらのページで5,000以上の明確な<em>非標準要素名</em>に遭遇したので、私たちがカウントしている要素の合計の明確な数を「トップ」の5,048に制限しました。" %}
   {%- set featured_chapter_stats = {"stat1":"11","label1":"90%以上のページで使用されている要素","stat2":"15%","label2":"非推奨の要素を含むページ","stat3":"65","label3":"カルーセルのバリエーションが見つかりました"} %}
 {%- elif featured_chapter == "media" %}
-  {%- set featured_chapter_name = "メディア" %}
   {%- set featured_chapter_quote = "画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つは、メディアで描かれたピクセル数の多さです。" %}
   {%- set featured_chapter_stats = {"stat1":"1 MB","label1":"ホームページのサイズの中央値","stat2":"60%","label2":"画像間でのJPEG利用","stat3":"2%","label3":"<code>&lt;picture&gt;</code>要素の使用"} %}
 {%- elif featured_chapter == "third-parties" %}
-  {%- set featured_chapter_name = "サードパーティ" %}
   {%- set featured_chapter_quote = "オープンウェブは広大で、リンク可能で、相互運用可能な設計になっています。他の誰かの複雑なライブラリを取得し、単一の <code>&lt;link&gt;</code> または <code>&lt;script&gt;</code> 要素を使用して自分のサイトで使用する能力は、開発者の生産性を高め、素晴らしい新しいウェブ体験を可能にしました。本章では、2019年のWebにおけるサードパーティコードの普及と影響、サードパーティソリューションの人気につながるWebの利用パターン、Webのパフォーマンスとプライバシーの将来に対する潜在的な影響を検証します。" %}
   {%- set featured_chapter_stats = {"stat1":"93%","label1":"サードパーティを含むページ","stat2":"49%","label2":"サードパーティのリクエスト","stat3":"28%","label3":"サードパーティのバイト数"} %}
 {%- elif featured_chapter == "fonts" %}
-  {%- set featured_chapter_name = "フォント" %}
   {%- set featured_chapter_quote = "ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあっても、ウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。" %}
   {%- set featured_chapter_stats = {"stat1":"74.9%","label1":"3P Googleフォントを使用したフォントリクエスト","stat2":"29%","label2":"Google Fontsスタイルシートのリンクを含むページの割合","stat3":"718","label3":"1ページでのフォントのリクエストが多い"} %}
 {%- elif featured_chapter == "performance" %}
-  {%- set featured_chapter_name = "パフォーマンス" %}
   {%- set featured_chapter_quote = "パフォーマンスはユーザー体験の内臓的な部分です。多くのウェブサイトでは、ページの読み込み時間を高速化してユーザー体験を向上させることは、コンバージョン率の向上につながります。逆に、パフォーマンスが悪いと、ユーザーは頻繁にコンバージョンしないし、不満でページを激怒してクリックしてしまうことさえ観察されています。" %}
   {%- set featured_chapter_stats = {"stat1":"13%","label1":"FCPが速いサイト","stat2":"42%","label2":"TTFBが遅いサイト","stat3":"40%","label3":"FIDが速いサイト"} %}
 {%- elif featured_chapter == "security" %}
-  {%- set featured_chapter_name = "セキュリティ" %}
   {%- set featured_chapter_quote = "Webの機能が向上し、より多くの機密データへのアクセスが可能になるにつれ、開発者が自社のアプリケーションを保護するためにWebセキュリティ機能を採用することがますます重要になってきています。この章で紹介するセキュリティ機能は、Webプラットフォーム自体に組み込まれた防御機能であり、すべてのWeb制作者が利用できます。" %}
   {%- set featured_chapter_stats = {"stat1":"79%","label1":"HTTPSを使用しているサイト","stat2":"41%","label2":"TLSv1.3を使用しているサイト","stat3":"4.43%","label3":"CSPを使用しているサイト"} %}
 {%- elif featured_chapter == "accessibility" %}
-  {%- set featured_chapter_name = "アクセシビリティ" %}
   {%- set featured_chapter_quote = "ウェブ上のアクセシビリティは、包括的で公平な社会にとって不可欠です。私たちの社会生活や仕事の多くがオンラインの世界に移行するにつれ、障害を持つ人々が障害なくすべてのオンライン上の交流に参加できることがさらに重要になってきています。建築家が車椅子用スロープなどのアクセシビリティ機能を作成したり省略したりできるように、ウェブ開発者はユーザーが利用する支援技術を支援したり、妨げたりすることができます。" %}
   {%- set featured_chapter_stats = {"stat1":"22%","label1":"十分なカラーコントラストを使用しているサイト","stat2":"50%","label2":"画像のalt属性がないサイト","stat3":"14%","label3":"スキップリンクを使用しているサイト"} %}
 {%- elif featured_chapter == "seo" %}
-  {%- set featured_chapter_name = "SEO" %}
   {%- set featured_chapter_quote = "検索エンジン最適化（SEO）は、デジタルマーケッターの趣味やサイドプロジェクトではなく、ウェブサイトの成功に欠かせないものです。SEOの主な目標は、ウェブサイトが検索エンジンのボットに最適化されていることを確認し、ページをクロールしてインデックスを作成し、ウェブサイトをナビゲートしてコンテンツを消費するユーザーのために最適化することです。SEOは、それを構築している開発者から、新しい潜在的な顧客にそれを促進する必要がありますデジタルマーケッターまで、ウェブサイト上で働くすべての人に影響を与えます。" %}
   {%- set featured_chapter_stats = {"stat1":"346","label1":"中央値ページの単語数","stat2":"11%","label2":"見出しタグのないページ","stat3":"15%","label3":"リッチな結果の対象となるサイト"} %}
 {%- elif featured_chapter == "pwa" %}
-  {%- set featured_chapter_name = "PWA" %}
   {%- set featured_chapter_quote = "プログレッシブウェブアプリ（PWA）は、サービスワーカーAPIのようなプラットフォームプリミティブの上に構築された新しいクラスのウェブアプリケーションです。サービスワーカーは、アプリケーションがネットワークプロキシとして動作し、ウェブアプリの送信要求を傍受し、プログラム的な応答またはキャッシュされた応答で応答することで、ネットワークに依存しないロードをサポートすることを可能にします。" %}
   {%- set featured_chapter_stats = {"stat1":"0.44%","label1":"サービスワーカーを登録しているサイト","stat2":"15%","label2":"サービスワーカーを利用したページビュー","stat3":"57%","label3":"<code>standalone</code> <code>display</code>プロパティを使用するPWA"} %}
 {%- elif featured_chapter == "mobile-web" %}
-  {%- set featured_chapter_name = "モバイルウェブ" %}
   {%- set featured_chapter_quote = "2007年以降、モバイルウェブは爆発的な成長を遂げました。そして13年後の現在、2019年7月のAkamaimPulseのデータによると、モバイルはすべての検索の59%を占め、ウェブトラフィックの58.7%を占めています。モバイルはもはや余計なものではなく、人々がウェブを体験する主要な手段となっています。モバイルの重要性を考えると、当社は訪問者にどのような体験を提供しているのでしょうか？どこが不足しているのか？それを探ってみましょう。" %}
   {%- set featured_chapter_stats = {"stat1":"65%","label1":"ロード中に中または大きくシフトするサイト","stat2":"32%","label2":"ズームを無効にしているサイト","stat3":"34%","label3":"十分なサイズのタップターゲットを持つサイト"} %}
 {%- elif featured_chapter == "ecommerce" %}
-  {%- set featured_chapter_name = "Eコマース" %}
   {%- set featured_chapter_quote = "この調査では、ホームページの10%近くがeコマース・プラットフォーム上にあることが判明しました。<em>eコマースプラットフォーム</em> は、オンラインストアを作成して運営することを可能にするソフトウェア ソフトウェアまたはサービスのセットです。Shopifyなどの有料サービス、Magentoオープンソースなどのソフトウェアプラットフォーム、およびMagento Commerceなどのホスト型プラットフォームなどが含まれます。" %}
   {%- set featured_chapter_stats = {"stat1":"3.98%","label1":"WooCommerceを使用してサイト最も人気のあるEコマースプラットフォーム","stat2":"116","label2":"検出されたEコマースプラットフォームの数","stat3":"1,517 KB","label3":"モバイルEコマースページあたりの画像バイト数の中央値。"} %}
 {%- elif featured_chapter == "cms" %}
-  {%- set featured_chapter_name = "CMS" %}
   {%- set featured_chapter_quote = "一般的にコンテンツ管理システム（CMS）とは、個人や組織がコンテンツを作成、管理、公開するためのシステムのことを指します。特にウェブコンテンツのためのCMSとは、オープンウェブを介して消費され、体験されるコンテンツを作成、管理、公開することを目的としたシステムのことです。各CMSは、コンテンツ管理機能の一部を実装しており、ユーザーがコンテンツを中心としたウェブサイトを簡単かつ効果的に構築するための仕組みを提供しています。" %}
   {%- set featured_chapter_stats = {"stat1":"40%","label1":"CMSを利用したページ","stat2":"74%","label2":"WordPressを利用したCMSサイト","stat3":"1,232 KB","label3":"デスクトップCMSページごとに読み込まれる画像KBの中央値。"} %}
 {%- elif featured_chapter == "compression" %}
-  {%- set featured_chapter_name = "圧縮" %}
   {%- set featured_chapter_quote = "HTTP圧縮とは、元の表現よりも少ないビット数で情報をエンコードすることを可能にする技術です。ウェブコンテンツの配信に使用すると、ウェブサーバーがクライアントに送信するデータ量を減らすことができます。これにより、クライアントの利用可能な帯域幅の効率が向上し、ページの重さが軽減され、ウェブパフォーマンスが向上します。" %}
   {%- set featured_chapter_stats = {"stat1":"38%","label1":"テキストベースの圧縮を使用したHTTPレスポンス","stat2":"80%","label2":"gzip圧縮の使用","stat3":"56%","label3":"圧縮を使用していないHTMLレスポンス"} %}
 {%- elif featured_chapter == "caching" %}
-  {%- set featured_chapter_name = "キャッシング" %}
   {%- set featured_chapter_quote = "キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする技術です。高価なネットワークリクエストを回避することでパフォーマンスに大きなメリットがあり、また、ウェブサイトのオリジンインフラストラクチャへのトラフィックを減らすことでアプリケーションの拡張性を高めることができます。古いことわざに「最速のリクエストは、作る必要のないものである」というものがありますが、キャッシングはリクエストをしなくても済むようにするための重要な方法の一つです。" %}
   {%- set featured_chapter_stats = {"stat1":"27%","label1":"キャッシングヘッダを使用していないレスポンス","stat2":"39%","label2":"<code>Vary</code>ヘッダーを使用したレスポンス","stat3":"82%","label3":"キャッシングを最適化することで1Mbを節約できるサイト"} %}
 {%- elif featured_chapter == "cdn" %}
-  {%- set featured_chapter_name = "CDN" %}
   {%- set featured_chapter_quote = "コンテンツデリバリネットワークを使用する&quot;は、Webサイトの読み込みを高速化するためのSteve Soudersのオリジナルの推奨事項の1つです。Web Almanacのこの章では、スティーブの推奨事項がどれだけ広く採用されているか、サイトがどのようにコンテンツデリバリネットワーク(CDN)を使用しているか、そして使用している機能のいくつかを探っていきます。" %}
   {%- set featured_chapter_stats = {"stat1":"20%","label1":"CDNが提供するホームページ","stat2":"9.61%","label2":"最も人気のあるCDN（Cloudflare）が提供するホームページ","stat3":"30%","label3":"Googleを利用したサードパーティCDNリクエスト"} %}
 {%- elif featured_chapter == "page-weight" %}
-  {%- set featured_chapter_name = "Page Weight" %}
   {%- set featured_chapter_quote = "なぜページサイズはもう重要ではないのかという共通の議論は、高速インターネットとスープアップされたデバイスのおかげで、私たちは一般の人々に大規模で複雑な（そして大規模に複雑な）ページを提供することができるということです。この仮定は、あなたが言った高速インターネットとスープアップデバイスへのアクセスを持っていないインターネットユーザーの広大な範囲を無視して大丈夫だとしている限り、うまく動作します。" %}
   {%- set featured_chapter_stats = {"stat1":"10%","label1":"6MB以上のデータを送信しているサイト","stat2":"434 KB","label2":"昨年のデスクトップサイズ中央値の増加","stat3":"69","label3":"ホームページあたりのリクエストの中央値"} %}
 {%- elif featured_chapter == "resource-hints" %}
-  {%- set featured_chapter_name = "リソースヒント" %}
   {%- set featured_chapter_quote = "リソースヒントは、どのようなリソースがすぐに必要になるかについてブラウザに<em>ヒント</em>を提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントのタイプによって異なります。リソースヒントが正しく使用されていれば、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。" %}
   {%- set featured_chapter_stats = {"stat1":"29%","label1":"<code>dns-prefetch</code>を使用しているサイト","stat2":"88%","label2":"<code>as</code>属性を使用したリソースヒント。","stat3":"0.04%","label3":"優先順位のヒントの使い方"} %}
 {%- elif featured_chapter == "http2" %}
-  {%- set featured_chapter_name = "HTTP/2" %}
   {%- set featured_chapter_quote = "HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。" %}
   {%- set featured_chapter_stats = {"stat1":"95%","label1":"HTTP/2を使用できるグローバルユーザーの割合。","stat2":"27.83%","label2":"準最適なHTTP/2優先順位付けによるモバイル要求の割合。","stat3":"8.38%","label3":"QUICをサポートするモバイルサイトの割合。"} %}
 {%- endif %}
 <section id="featured-chapter" class="featured-chapter">
   <div class="featured-chapter-content">
     <h2 class="title title-center">注目の章</h2>
-    <h3>{{ featured_chapter_name }}</h3>
+    <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
     <blockquote>
       {{ featured_chapter_quote|safe }}
     </blockquote>
@@ -113,7 +93,7 @@
       {% endif %}
     </div>
     <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-      {{ featured_chapter_name }}の章を読む
+      {{ localizedChapterTitles[featured_chapter] }}の章を読む
     </a>
   </div>
 </section>

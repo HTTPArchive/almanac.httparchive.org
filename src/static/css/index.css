@@ -17,19 +17,6 @@ header.alt-bg {
   margin-bottom: -52.94em;
 }
 
-/* Add fall back background color in case SVG fails to load so text is still readable */
-header::after {
-  content: "";
-  background: #5c687d;
-  top: 0;
-  left: 0;
-  bottom: 600px;
-  right: 0;
-  display: block;
-  position: absolute;
-  z-index: -1;
-}
-
 header .container,
 footer .container {
   max-width: none;
