@@ -1,5 +1,5 @@
 #standardSQL
-  # Largest contentful paint score thresholds by month
+# Median of Largest contentful paint 75% score by month
 
 SELECT
   date,
