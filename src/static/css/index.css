@@ -303,7 +303,7 @@ p {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgba(0, 0, 0, 0) calc(70% + 1px));
 }
 
-@media (max-width: 1280px) and (min-width: 901px) {
+@media (max-width: 1400px) and (min-width: 901px) {
   .people {
     height: auto;
   }
