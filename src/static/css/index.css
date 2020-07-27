@@ -225,7 +225,6 @@ p {
   color: #fff;
   font-size: 600px;
   font-weight: bold;
-  letter-spacing: 50px;
   pointer-events: none;
   height: 100%;
   width: auto;
@@ -411,7 +410,6 @@ p {
     line-height: 400px;
     top: 50px;
     position: relative;
-    left: 50px;
   }
 
   #character-markup {
@@ -569,13 +567,11 @@ p {
   }
 
   .people-number {
-    font-size: 300px;
-    letter-spacing: 27px;
+    font-size: 240px;
     line-height: 240px;
     overflow: visible;
     top: 40px;
     position: relative;
-    left: 25px;
   }
 
   .people .character {
