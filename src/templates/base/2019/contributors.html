@@ -147,6 +147,7 @@
   font-size: 14px;
   font-size: 0.875rem;
   color: #757575;
+  white-space: nowrap;
 }
 .contributor-team::after {
   content: ', ';
@@ -154,11 +155,6 @@
 .contributor-team:last-child::after {
   content: '';
 }
-{% if language.lang_attribute in ['ja'] %}
-.contributor-team {
-  white-space: nowrap;
-}
-{% endif %}
 
 {% for id in config.teams.keys() %}
 .contributors.{{ id }} .contributor.{{ id }} {
