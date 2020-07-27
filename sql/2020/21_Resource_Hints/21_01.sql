@@ -36,6 +36,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     getResourceHints(payload) AS hints
   FROM
-    `httparchive.almanac.pages`)
+    `httparchive.almanac.pages`
+  WHERE
+    edition = "2020")
 GROUP BY
   client

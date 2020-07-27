@@ -36,13 +36,13 @@ FROM (
     _TABLE_SUFFIX AS client,
     getResourceHints(payload) AS hints
   FROM
-    `httparchive.pages.2020_07_01_*` as pages
+    `httparchive.almanac.pages` as pages
   JOIN
-    `httparchive.blink_features.features` as features
+    `httparchive.almanac.blink_features.features` as features
   USING
   (url)
   WHERE
-    yyyymmdd = '20200701' AND
+    edition = "2020" AND
     feature = 'ServiceWorkerControlledPage'
 )
 GROUP BY

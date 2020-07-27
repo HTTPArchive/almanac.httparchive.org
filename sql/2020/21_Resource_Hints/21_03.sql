@@ -40,7 +40,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, hint.name) AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, hint.name), 2) AS pct
 FROM
-  `httparchive.almanac.pages`,
+  `httparchive.almanac.pages` WHERE edition = "2020",
   UNNEST(getResourceHints(payload)) AS hint
 GROUP BY
   client,

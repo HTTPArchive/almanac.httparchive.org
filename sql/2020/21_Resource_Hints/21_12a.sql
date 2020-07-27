@@ -5,3 +5,5 @@ SELECT
   COUNT(0) AS totalCount
 FROM
   `httparchive.almanac.response_bodies`
+WHERE
+  edition = "2020"

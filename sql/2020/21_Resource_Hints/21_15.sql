@@ -27,7 +27,9 @@ FROM (
         firstHtml,
         getLinkHeaders(payload) AS link_headers
     FROM
-        `httparchive.almanac.requests` 
+        `httparchive.almanac.requests`
+    WHERE
+        edition = "2020"
 )
 CROSS JOIN
   UNNEST(link_headers) AS link_header

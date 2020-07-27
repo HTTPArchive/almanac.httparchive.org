@@ -6,13 +6,15 @@ SELECT
 FROM (
 
   SELECT
-        client,
-        page
-    FROM
-        `httparchive.almanac.requests` 
+    client,
+    page
+  FROM
+    `httparchive.almanac.requests`
   WHERE 
     JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
     AND 
     JSON_EXTRACT_SCALAR(payload, "$._was_pushed") = "1")
+    AND
+    edition = "2020"
 GROUP BY
   client

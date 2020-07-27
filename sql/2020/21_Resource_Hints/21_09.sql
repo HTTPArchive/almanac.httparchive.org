@@ -18,7 +18,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
 FROM
-  `httparchive.almanac.pages`,
+  `httparchive.almanac.pages` WHERE edition = "2020",
   UNNEST(getPriorityHints(payload)) AS importance
 WHERE
   importance IS NOT NULL

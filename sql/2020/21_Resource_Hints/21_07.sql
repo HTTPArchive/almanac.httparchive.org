@@ -21,6 +21,8 @@ FROM (
     _TABLE_SUFFIX AS client,
     getPriorityHints(payload) AS has_hint
   FROM
-    `httparchive.almanac.pages`)
+    `httparchive.almanac.pages`
+  WHERE
+    edition = "2020")
 GROUP BY
   client

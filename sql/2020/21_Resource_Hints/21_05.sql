@@ -38,7 +38,8 @@ FROM (
   FROM `httparchive.almanac.pages`, UNNEST(getResourceHints(payload)) AS hint)
 LEFT JOIN (
   SELECT client AS _TABLE_SUFFIX, page, url, type
-  FROM `httparchive.almanac.summary_requests`)
+  FROM `httparchive.almanac.summary_requests`
+  WHERE edition = "2020")
 USING
   (_TABLE_SUFFIX, page, url)
 GROUP BY

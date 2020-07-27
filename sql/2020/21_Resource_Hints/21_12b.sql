@@ -7,3 +7,5 @@ SELECT
     SUM(ARRAY_LENGTH(REGEXP_EXTRACT_ALL(body, r'(?im)<(?:source|img)[^>]'))) as imgCount,
 FROM
   `httparchive.almanac.response_bodies`
+WHERE
+  edition = "2020"
