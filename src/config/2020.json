@@ -744,7 +744,8 @@
     "LeaVerou": {
       "name": "Lea Verou",
       "teams": [
-        "authors"
+        "authors",
+        "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/175836?v=4&s=200",
       "website": "http://lea.verou.me/",
