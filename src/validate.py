@@ -98,12 +98,21 @@ def parse_accept_language(header, supported_langs):
 
     if header is not None:
 
-        accepted_languages = re.findall(r'(?:^|\s|,)(\w+)', header)
-
+        # Looks for languages of the format en or en-US first
+        accepted_languages = re.findall(r'(?:^|\s|,)(\w+-?\w*)', header)
         logging.debug('Accepted languages: %s' % accepted_languages)
 
         # The header could contain multiple languages, in order of precedence
         # Limit the number of accepted languages tested to 10.
+        for lang in accepted_languages[:10]:
+            if lang in supported_langs:
+                # Return the first found supported language.
+                logging.debug('Using "%s" as the highest precedent language.' % lang)
+                return lang
+
+        # If that didn't find anything, then strip off the country code and try just the language
+        accepted_languages = re.findall(r'(?:^|\s|,)(\w+)', header)
+        logging.debug('Accepted languages (no country): %s' % accepted_languages)
         for lang in accepted_languages[:10]:
             if lang in supported_langs:
                 # Return the first found supported language.
