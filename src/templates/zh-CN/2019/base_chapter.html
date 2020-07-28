@@ -1,0 +1,20 @@
+{% extends "base/2019/base_chapter.html" %}
+
+{% block title %}{{ metadata.get('title') }} | 2019 | Web Almanac 源于 HTTP Archive{% endblock %}
+
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' 章节 ' + year + ' 调查Web Almanac的使用状况 ' + metadata.get('description',metadata.get('title')) + ' 在 web中。') }}{% endblock %}
+
+{% block twitter_image_alt %}的章节图像{{ metadata.get('title') }} 章节 {{ year }} Web Almanac{% endblock %}
+
+{% block unedited %}[未编辑]{% endblock %}
+
+{% block prev_next_title %}前一章和下一章导航{% endblock %}
+
+{% block discuss_this_chapter %}讨论本章节{% endblock %}
+{% block comment %}评论{% endblock %}
+{% block comments %}评论{% endblock %}
+{% block queries %}查看请求{% endblock %}
+{% block results %}查看结果{% endblock %}
+
+{% block previous %}上一章 (按 'p' 或 ','){% endblock %}
+{% block next %}下一章 (按 'n' 或 '.'){% endblock %}
