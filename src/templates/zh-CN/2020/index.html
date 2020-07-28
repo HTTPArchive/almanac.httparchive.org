@@ -11,6 +11,9 @@
 {% block intro_title %}即将到来！{% endblock %}
 {% block intro_sub_title %}{{ year }} <b>网络状态</b> 报告{% endblock %}
 
+{% block featured_chapter%}章节精选{% endblock %}
+{% macro readChapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 本章{% endmacro %}
+
 {% block mission %}
 <p>
   来自网络社区的专家们目前正在努力地为{{ year }}版本的 Web Almanac 网络年鉴规划、分析和编写内容，预计将在今年年底发布。
