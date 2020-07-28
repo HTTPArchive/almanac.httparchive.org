@@ -82,7 +82,7 @@
 {%- endif %}
 <section id="featured-chapter" class="featured-chapter">
   <div class="featured-chapter-content">
-    <h2 class="title title-center">Featured Chapter</h2>
+    <h2 class="title title-center">章节精选</h2>
     <h3>{{ featured_chapter_name }}</h3>
     <blockquote>
       {{ featured_chapter_quote|safe }}
@@ -108,7 +108,7 @@
       {% endif %}
     </div>
     <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-      Read the {{ featured_chapter_name }} Chapter
+      阅读 {{ featured_chapter_name }} 本章
     </a>
   </div>
 </section>
