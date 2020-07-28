@@ -78,12 +78,6 @@
   will-change: opacity;
 }
 
-@supports(animation-name) {
-  .contributor-grid:not([data-rendered='true']) .contributor {
-    opacity: 1;
-  }
-}
-
 .contributor-grid[data-rendered='true'] .contributor {
   animation-name: fade-in;
   animation-duration: 750ms;
