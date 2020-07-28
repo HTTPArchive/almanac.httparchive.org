@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","zh-CN"],
+      "supported_languages": ["en","es","fr","ja","zh_CN"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -418,10 +418,10 @@
     "chengxicn": {
       "name": "Cheng Xi",
       "teams": [
-        "translators",
+        "translators"
       ],
       "avatar_url": "https://avatars0.githubusercontent.com/u/30398527?v=4&s=200",
-      "github": "chengxicn",
+      "github": "chengxicn"
     },
     "bagder": {
       "name": "Daniel Stenberg",
