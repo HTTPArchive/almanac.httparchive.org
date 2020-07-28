@@ -192,6 +192,10 @@ p {
   padding-left: 180px;
 }
 
+.contributors .btn {
+  white-space: nowrap;
+}
+
 .people {
   position: relative;
   height: 400px;
@@ -405,7 +409,7 @@ p {
   }
 
   .people-number {
-    font-size: 300px;
+    font-size: 200px;
     overflow: visible;
     line-height: 400px;
     top: 50px;
