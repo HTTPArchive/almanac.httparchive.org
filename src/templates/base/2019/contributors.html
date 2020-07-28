@@ -263,6 +263,14 @@
   }
 }
 </style>
+<noscript>
+  <style nonce="{{ csp_nonce() }}">
+    .contributor-grid .contributor {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+    }
+  </style>
+</noscript>
 {% endblock %}
 
 {% block main %}
