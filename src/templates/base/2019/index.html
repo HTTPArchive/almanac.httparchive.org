@@ -93,7 +93,7 @@
           <div id="featured-stat-label-3" {{ stat3_hidden }}>{{ featured_chapter_quotes.get('stat_label_3')|safe }}</div>
         </div>
       </div>
-      <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
+      <a id="featured-link" href="{{ url_for('chapter', year=year, chapter=random_chapter, lang=lang) }}" class="btn">
         {{ readChapter(featured_chapter_name) }}
       </a>
     </div>
@@ -129,6 +129,11 @@
             stat_label_node.hidden = true;
           }
         }
+      }
+
+      var featured_link = document.querySelector('#featured-link');
+      if (featured_link) {
+        featured_link.href = featured_link.href.slice(0,featured_link.href.lastIndexOf('/')+1) + randomChapter;
       }
     }
   </script>
