@@ -192,6 +192,10 @@ p {
   padding-left: 180px;
 }
 
+.contributors .btn {
+  white-space: nowrap;
+}
+
 .people {
   position: relative;
   height: 400px;
@@ -225,7 +229,6 @@ p {
   color: #fff;
   font-size: 600px;
   font-weight: bold;
-  letter-spacing: 50px;
   pointer-events: none;
   height: 100%;
   width: auto;
@@ -304,7 +307,7 @@ p {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgba(0, 0, 0, 0) calc(70% + 1px));
 }
 
-@media (max-width: 1280px) and (min-width: 901px) {
+@media (max-width: 1400px) and (min-width: 901px) {
   .people {
     height: auto;
   }
@@ -411,7 +414,6 @@ p {
     line-height: 400px;
     top: 50px;
     position: relative;
-    left: 50px;
   }
 
   #character-markup {
@@ -569,13 +571,11 @@ p {
   }
 
   .people-number {
-    font-size: 300px;
-    letter-spacing: 27px;
+    font-size: 240px;
     line-height: 240px;
     overflow: visible;
     top: 40px;
     position: relative;
-    left: 25px;
   }
 
   .people .character {
