@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja"],
+      "supported_languages": ["en","es","fr","ja","zh_CN"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -414,6 +414,14 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/1622597?v=4&s=200",
       "github": "colinbendell",
       "twitter": "colinbendell"
+    },
+    "chengxicn": {
+      "name": "Cheng Xi",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30398527?v=4&s=200",
+      "github": "chengxicn"
     },
     "bagder": {
       "name": "Daniel Stenberg",
