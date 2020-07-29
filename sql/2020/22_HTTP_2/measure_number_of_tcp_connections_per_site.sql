@@ -8,9 +8,9 @@ SELECT
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(75)] AS p75,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(95)] AS p95
 FROM 
-  `httparchive.requests.2019_07_01_mobile` AS requests
+  `httparchive.requests.2020_07_01_mobile` AS requests
 INNER JOIN
-  `httparchive.summary_pages.2019_07_01_mobile` AS summary
+  `httparchive.summary_pages.2020_07_01_mobile` AS summary
 ON
   requests.url = summary.url
 WHERE
@@ -29,9 +29,9 @@ SELECT
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(75)] AS p75,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(95)] AS p95
 FROM 
-  `httparchive.requests.2019_07_01_desktop` AS requests
+  `httparchive.requests.2020_07_01_desktop` AS requests
 INNER JOIN
-  `httparchive.summary_pages.2019_07_01_desktop` AS summary
+  `httparchive.summary_pages.2020_07_01_desktop` AS summary
 ON
   requests.url = summary.url
 WHERE
