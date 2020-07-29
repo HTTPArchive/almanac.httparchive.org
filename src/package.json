@@ -25,6 +25,6 @@
     "prettier": "^2.0.5",
     "recursive-readdir": "^2.2.2",
     "showdown": "^1.9.1",
-    "web-vitals": "^0.2.3"
+    "web-vitals": "^0.2.4"
   }
 }
