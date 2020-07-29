@@ -1,5 +1,5 @@
 #standardSQL
-# Percent of pages that include third party resources.
+# Percent of pages with third party by device
 
 WITH
   requests AS (
