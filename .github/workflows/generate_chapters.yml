@@ -11,11 +11,20 @@
 # avoid needing GitHub Personal Access Tokens and to avoid merge conflicts
 #
 name: Generate Chapters on Push
+
+env:
+  # Update periodically from https://www.princexml.com/latest/
+  PRINCE_PACKAGE: 'prince_20200728-1_ubuntu20.04_amd64.deb'
+
 on:
   push:
     branches:
       - main
     paths:
+      - src/config/**
+      - src/**.py
+      - src/requirements.txt
+      - src/config/**
       - src/content/**
       - src/templates/**
       - src/tools/generate/**
@@ -24,8 +33,11 @@ on:
       - src/package.json
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Prince needs ubuntu 20 and ubuntu-latest is only on 18
+    runs-on: ubuntu-20.04
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
+    env:
+      gen_ebooks: false
     steps:
     - name: Checkout branch
       uses: actions/checkout@v2
@@ -75,6 +87,40 @@ jobs:
         npm install
         echo "regenerating chapters"
         npm run generate
+        if OUTPUT=$(git status | grep -s ebook); then
+          echo "::set-env name=gen_ebooks::true"
+        fi
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+    - name: Install Requirements
+      run: |
+        python -m pip install --upgrade pip
+        cd src
+        pip install -r requirements.txt
+    - name: Run pytest
+      run: |
+        cd src
+        pytest
+    - name: Run website
+      if: env.gen_ebooks == 'true'
+      run: |
+        cd src
+        python main.py background &
+    - name: Installing PrinceXML
+      if: env.gen_ebooks == 'true'
+      run: |
+        cd /tmp
+        sudo apt-get install -y aptitude
+        sudo aptitude install -y gdebi
+        wget https://www.princexml.com/download/${{ env.PRINCE_PACKAGE }}
+        sudo gdebi --non-interactive ${{ env.PRINCE_PACKAGE }}
+    - name: Generating Ebooks
+      if: env.gen_ebooks == 'true'
+      run: |
+        cd src
+        npm run ebooks
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v3
