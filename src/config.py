@@ -44,7 +44,7 @@ def get_languages(json_config):
   data = get_entries_from_json(json_config,'settings','supported_languages')
   for list in data:
     for entry in list:
-      languages.append(getattr(Language,entry.upper()))
+      languages.append(getattr(Language,entry.upper().replace('-','_')))
   return languages
 
 
