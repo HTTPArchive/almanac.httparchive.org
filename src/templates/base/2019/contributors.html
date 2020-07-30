@@ -382,24 +382,17 @@
     var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
     var buttons = document.querySelectorAll('.filter-container button');
     var contributors = document.querySelector('.contributors');
-    var contributorsGrid = document.querySelector('.contributor-grid');
     var counter = document.querySelector('#filtered-contributors');
     var totalText = document.querySelector('#contributors-total-text');
     var totalContributors = document.querySelector('#contributors-total');
     var shadowNode = document.createElement('div');
-    var urlObject;
-    
-    if (self.URL && typeof URL === "function") {
-      urlObject = new URL(document.location);
-    }
+
+    var urlObject = new URL(document.location);
 
     function getFilteredContributorCount() {
-      if (Array.from) {
-        return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
-          return getComputedStyle(el).display != 'none';
-        }).length;
-      }
-      return null;
+      return Array.from(document.querySelectorAll('.contributor')).filter(function(el) {
+        return getComputedStyle(el).display != 'none';
+      }).length;
     }
 
     for (var i = 0; i < buttons.length; i++) {
@@ -432,16 +425,14 @@
             }
         });
 
-        if (self.URLSearchParams) {
-          if(selected.length > 0 && selected.length < teams.length){
-              urlObject.searchParams.set('teams', selected.join(','));
-              history.pushState(null, null, urlObject);
-              handleFilterUrl();
-          } else {
-              urlObject.searchParams.delete('teams');
-              history.pushState(null, null, urlObject);
-              handleFilterUrl();
-          }
+        if(selected.length > 0 && selected.length < teams.length){
+            urlObject.searchParams.set('teams', selected.join(','));
+            history.pushState(null, null, urlObject);
+            handleFilterUrl();
+        } else {
+            urlObject.searchParams.delete('teams');
+            history.pushState(null, null, urlObject);
+            handleFilterUrl();
         }
 
       });
@@ -456,12 +447,9 @@
     function handleFilterUrl(event) {
 
         event && event.preventDefault();
-        var urlObject;
-        
-        if (self.URL && typeof URL === "function") {
-          urlObject = new URL(document.location);
-        }
-        if (urlObject && urlObject.searchParams.has('teams')) {
+        var urlObject = new URL(document.location);
+
+        if(urlObject.searchParams.has('teams')) {
 
             var hash = urlObject.searchParams.get('teams');
             var filterTeams = hash.split(',');
@@ -485,21 +473,24 @@
         }
         
         var filteredCount = getFilteredContributorCount();
-        if (filteredCount) {
-          counter.innerText = filteredCount;
-          if ( counter.innerText ===  totalContributors.innerText ) {
-            totalText.classList.add('hidden')
-          } else {
-            totalText.classList.remove('hidden')
-          }
+        counter.innerText = filteredCount;
+        if ( counter.innerText ===  totalContributors.innerText ) {
+          totalText.classList.add('hidden')
+        } else {
+          totalText.classList.remove('hidden')
         }
     }
     window.addEventListener('popstate', handleFilterUrl);
     handleFilterUrl();
+});
 
+    try {
+      loaded() 
+    } catch(e) { }
+
+    var contributorsGrid = document.querySelector('.contributor-grid');
     contributorsGrid.setAttribute('data-rendered', true);
-})();
-
+    
   </script>
   <!-- add chapter.js to handle print mode and avoid duplicating code -->
   <script src="/static/js/chapter.js?v=20200527181403" defer></script>
