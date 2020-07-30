@@ -667,6 +667,12 @@ header .cta {
   -moz-appearance: none;
   appearance: none;
   min-width: 100px;
+  min-width: 6.35rem;
+}
+
+.language-switcher select {
+  min-width: 120px;
+  min-width: 7.5rem;
 }
 
 .language-switcher select::-ms-expand,
