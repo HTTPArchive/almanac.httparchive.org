@@ -42,10 +42,8 @@ jobs:
     - name: Install PrinceXML
       run: |
         cd /tmp
-        sudo apt-get install -y aptitude
-        sudo aptitude install -y gdebi
         wget https://www.princexml.com/download/${{ env.PRINCE_PACKAGE }}
-        sudo gdebi --non-interactive ${{ env.PRINCE_PACKAGE }}
+        DEBIAN_FRONTEND=noninteractive sudo apt install -y /tmp/${{ env.PRINCE_PACKAGE }}
     - name: Run website
       run: |
         cd src
