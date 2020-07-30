@@ -669,6 +669,10 @@ header .cta {
   min-width: 100px;
 }
 
+.language-switcher select {
+  min-width: 120px;
+}
+
 .language-switcher select::-ms-expand,
 .year-switcher select::-ms-expand {
   display: none;
