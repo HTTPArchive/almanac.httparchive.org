@@ -187,7 +187,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             {{ self.chapter() }} {{ prev_chapter['chapter'] }}
           </span>
           <span class="chapter-title">
-              {{ localizedChapterTitles[prev_chapter['title']] if localizedChapterTitles[prev_chapter['title']]|length else prev_chapter['title'] }}
+              {{ localizedChapterTitles[prev_chapter['slug']] if localizedChapterTitles[prev_chapter['slug']]|length else prev_chapter['title'] }}
           </span>
       </a>
       {% else %}
@@ -197,7 +197,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
             {{ self.chapter() }} {{ prev_chapter['chapter'] }}
           </span>
           <span class="chapter-title">
-            {{ localizedChapterTitles[prev_chapter['title']] if localizedChapterTitles[prev_chapter['title']]|length else prev_chapter['title'] }}
+            {{ localizedChapterTitles[prev_chapter['slug']] if localizedChapterTitles[prev_chapter['slug']]|length else prev_chapter['title'] }}
           </span>
           <span class="not-translated">
             ({{ self.translation_not_available() }})
@@ -214,7 +214,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               {{ self.chapter() }} {{ next_chapter['chapter'] }}
             </span>
             <span class="chapter-title">
-              {{ localizedChapterTitles[next_chapter['title']] if localizedChapterTitles[next_chapter['title']]|length else next_chapter['title'] }}
+              {{ localizedChapterTitles[next_chapter['slug']] if localizedChapterTitles[next_chapter['slug']]|length else next_chapter['title'] }}
             </span>
     </a>
     {% else %}
@@ -224,7 +224,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
               {{ self.chapter() }} {{ next_chapter['chapter'] }}
             </span>
             <span class="chapter-title">
-              {{ localizedChapterTitles[next_chapter['title']] if localizedChapterTitles[next_chapter['title']]|length else next_chapter['title'] }}
+              {{ localizedChapterTitles[next_chapter['slug']] if localizedChapterTitles[next_chapter['slug']]|length else next_chapter['title'] }}
             </span>
             <span class="not-translated">
               ({{ self.translation_not_available() }})

@@ -147,6 +147,7 @@
   font-size: 14px;
   font-size: 0.875rem;
   color: #757575;
+  white-space: nowrap;
 }
 .contributor-team::after {
   content: ', ';
@@ -231,6 +232,7 @@
   display: flex;
   border: 5px dashed #5e687c;
   justify-content: center;
+  text-align: center;
 }
 
 .contributor-join:hover {
@@ -238,8 +240,10 @@
 }
 
 .contributor-join svg {
-  margin-bottom: -10px;
+  margin-bottom: -25px;
+  position: relative;
   z-index: 1;
+  display: block;
 }
 
 .contributor-join path {
@@ -250,6 +254,7 @@
   fill: #fff;
   font-weight: bold;
   text-anchor: middle;
+  font-size: .9rem;
 }
 
 @media (max-width: 600px) {
@@ -293,11 +298,11 @@
     </form>
 
     <ul class="contributor-grid">
-      <li>
-        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/README.md" class="contributor-join" aria-labelledby="jointheteam">
-          <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 203 117">
+      <li class="contributor-join">
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/README.md" aria-labelledby="jointheteam">
+          <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 173 96">
             <title id="jointheteam">{{ self.join_the_team_title() }}</title>
-            <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z" />
+            <path d="M0,0l8.4,75.1l88.7,0.8L93.3,96l24.9-19.1l50.6-1.8l3.7-67.5L0,0z"/>
             <text x="50%" y="47%">
               {{ self.join_the_team_text() }}
             </text>
