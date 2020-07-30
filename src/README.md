@@ -50,25 +50,31 @@ ptw
 
 The chapter generation is dependent on nodejs, so you will need to have [nodejs](https://nodejs.org/en/) installed as well. All of the following commands must be run from within the `src` directory by executing `cd src` first.
 
-1. Install the dependencies:
+Note this is run automatically by a GitHub Action on merges to main, so does not need to be run manually.
+
+Install the dependencies:
 
 ```
 npm install
 ```
 
-2. Run the generate chapters script:
+Run the generate chapters script:
 
 ```
 npm run generate
 ```
 
-3. For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/).
+## Generating Ebooks
 
-4. To actually generate the ebooks, start your local server, then run the following:
+For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/).
+
+To actually generate the ebooks, start your local server, then run the following:
 
 ```
 npm run ebooks
 ```
+
+There is a GitHub Action which can be run manually from the Actions tab to generate the Ebooks and open a Pull Request for them.
 
 ## Generating ebooks - including print-ready ebooks if you want a hardcopy
 
@@ -136,7 +142,7 @@ With the print-ready eBook and Cover you can send them to a printer. I used http
 
 If you've been added to the "App Engine Deployers" role in the GCP project, you're able to push code changes to the production website.
 
-_Make sure you have generated the ebooks PDFs as that currently requires some extra steps that are not automated!_
+_Make sure you have generated the ebooks PDFs by running the Generate Ebooks GitHub Action_
 
 1. Install the [`gcloud`](https://cloud.google.com/sdk/install) Google Cloud SDK.
 
