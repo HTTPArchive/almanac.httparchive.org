@@ -133,7 +133,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/accessibility-statement</loc>
-        <lastmod>2020-06-21</lastmod>
+        <lastmod>2020-07-29</lastmod>
     </url>
 
     <url>
@@ -393,7 +393,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/accessibility-statement</loc>
-        <lastmod>2020-06-21</lastmod>
+        <lastmod>2020-07-29</lastmod>
     </url>
 
     <url>
@@ -404,6 +404,41 @@
     <url>
         <loc>https://almanac.httparchive.org/static/pdfs/web_almanac_2019_ja.pdf</loc>
         <lastmod>2020-07-20</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/zh-CN/2019/</loc>
+        <lastmod>2020-06-21</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/zh-CN/2019/contributors</loc>
+        <lastmod>2020-06-21</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/zh-CN/2019/methodology</loc>
+        <lastmod>2020-06-21</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/zh-CN/2019/table-of-contents</loc>
+        <lastmod>2020-06-21</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/zh-CN/2020/</loc>
+        <lastmod>2020-07-11</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/zh-CN/2020/contributors</loc>
+        <lastmod>2020-07-14</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/zh-CN/accessibility-statement</loc>
+        <lastmod>2020-06-21</lastmod>
     </url>
    
 </urlset>
