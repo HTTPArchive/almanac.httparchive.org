@@ -32,18 +32,15 @@ jobs:
         python-version: '3.7'
     - name: Install Python requirements
       run: |
-        echo "Installing Python requirements"
         python -m pip install --upgrade pip
         cd src
         pip install -r requirements.txt
     - name: Install node modules
       run: |
-        echo "Running npm install"
         cd src
         npm install
     - name: Install PrinceXML
       run: |
-        echo "Installing PrinceXML"
         cd /tmp
         sudo apt-get install -y aptitude
         sudo aptitude install -y gdebi
@@ -51,12 +48,10 @@ jobs:
         sudo gdebi --non-interactive ${{ env.PRINCE_PACKAGE }}
     - name: Run website
       run: |
-        echo "Running website"
         cd src
         python main.py background &
     - name: Generating Ebooks
       run: |
-        echo "Generating ebooks"
         cd src
         npm run ebooks
     - name: Create Pull Request
