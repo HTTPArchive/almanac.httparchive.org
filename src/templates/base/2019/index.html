@@ -66,7 +66,6 @@
     if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
         ||
          (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
-      console.log('This is a reload - regenerate featured chapter');
       const keys = Object.keys(featured_chapters)
       const randIndex = Math.floor(Math.random() * keys.length)
       randomChapter = keys[randIndex];
@@ -133,7 +132,7 @@
 
       var featured_link = document.querySelector('#featured-link');
       if (featured_link) {
-        featured_link.href = featured_link.href.slice(0,featured_link.href.lastIndexOf('/')+1) + randomChapter;
+        featured_link.href = document.location.pathname + randomChapter;
       }
     }
   </script>
