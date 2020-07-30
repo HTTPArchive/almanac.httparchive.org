@@ -19,15 +19,13 @@ on:
     branches:
       - main
     paths:
-      - src/config/**
+      - src/**.js
+      - src/**.css
+      - src/**.html
+      - src/content/**.md
       - src/**.py
+      - src/**.json
       - src/requirements.txt
-      - src/content/**
-      - src/templates/**
-      - src/tools/**
-      - src/static/css/**
-      - src/static/js/**
-      - src/package.json
 jobs:
   build:
     runs-on: ubuntu-latest
