@@ -372,6 +372,7 @@
         (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
     var ul = document.querySelector('.contributor-grid');
     for (var i = ul.children.length; i >= 1; i--) {
+        // Ensure position 1 is minimum to leave "Join the team" icon at beginning
         ul.appendChild(ul.children[Math.floor(Math.random() * i) + 1]);
     }
   }
