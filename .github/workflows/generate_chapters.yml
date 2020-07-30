@@ -5,6 +5,8 @@
 # Updates timestamps, increments CSS, and then runs "npm run generate"
 # on any pushes to main for markdown, templates or generate scripts
 #
+# Then it tests the website
+#
 # Then we open a Pull Request for any changes generated.
 #
 # We do it on a push, rather than on pull request, and only on main to
@@ -12,13 +14,17 @@
 #
 name: Generate Chapters on Push
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
     paths:
+      - src/config/**
+      - src/**.py
+      - src/requirements.txt
       - src/content/**
       - src/templates/**
-      - src/tools/generate/**
+      - src/tools/**
       - src/static/css/**
       - src/static/js/**
       - src/package.json
@@ -32,6 +38,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Update CSS version for modified CSS files
+      if: github.event_name == 'push'
       env:
         COMMIT_SHA: ${{ github.event.commits[0].id }}
       run: |
@@ -42,6 +49,7 @@ jobs:
         git diff-tree --diff-filter=AM --no-commit-id --name-only -r $COMMIT_SHA src/static/css | grep "\.css" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base.html
         git diff
     - name: Update JS version for modified CSS files
+      if: github.event_name == 'push'
       env:
         COMMIT_SHA: ${{ github.event.commits[0].id }}
       run: |
@@ -52,6 +60,7 @@ jobs:
         git diff-tree --diff-filter=AM --no-commit-id --name-only -r $COMMIT_SHA src/static/js | grep "\.js" | sed 's!.*/!!' | sed "s/\(.*\)/s\/\1?v=[0-9][0-9]*\/\1?v=$(date +%Y%m%d%H%M%S)\//" | sed -f - -i src/templates/base.html
         git diff
     - name: Update timestamp for modified files
+      if: github.event_name == 'push'
       env:
         COMMIT_SHA: ${{ github.event.commits[0].id }}
       run: |
@@ -75,6 +84,27 @@ jobs:
         npm install
         echo "regenerating chapters"
         npm run generate
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+    - name: Install Requirements
+      run: |
+        python -m pip install --upgrade pip
+        cd src
+        pip install -r requirements.txt
+    - name: Run pytest
+      run: |
+        cd src
+        pytest
+    - name: Run website
+      run: |
+        cd src
+        python main.py background &
+    - name: Run tests
+      run: |
+        cd src
+        npm run tests
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v3
@@ -90,5 +120,4 @@ jobs:
           [1]: https://github.com/peter-evans/create-pull-request
         labels: generate chapters
     - name: Check outputs
-      run: |
-        echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+      run: echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
