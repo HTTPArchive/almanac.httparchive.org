@@ -265,7 +265,7 @@
 </style>
 <noscript>
   <style nonce="{{ csp_nonce() }}">
-    .contributor-grid .contributor {
+    .contributor-grid:not([data-rendered='true']) .contributor {
       transform: translateY(0) !important;
       opacity: 1 !important;
     }
@@ -372,7 +372,7 @@
         (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
     var ul = document.querySelector('.contributor-grid');
     for (var i = ul.children.length; i >= 1; i--) {
-        ul.appendChild(ul.children[Math.random() * i | 1]);
+        ul.appendChild(ul.children[Math.floor(Math.random() * i) + 1]);
     }
   }
 
@@ -387,7 +387,7 @@
     var shadowNode = document.createElement('div');
     var urlObject;
     
-    if (self.URLSearchParams) {
+    if (self.URL && typeof URL === "function") {
       urlObject = new URL(document.location);
     }
 
@@ -456,7 +456,7 @@
         event && event.preventDefault();
         var urlObject;
         
-        if (self.URLSearchParams) {
+        if (self.URL && typeof URL === "function") {
           urlObject = new URL(document.location);
         }
         if (urlObject && urlObject.searchParams.has('teams')) {
