@@ -7,7 +7,7 @@ const base_url = "http://127.0.0.1:8080";
 let failures = 0;
 let passes = 0;
 
-const test_status_code = async (page,status,location) => {
+const test_status_code = async (page, status, location) => {
 
   if (location == undefined) {
     location = null;
@@ -39,29 +39,29 @@ const test_status_code = async (page,status,location) => {
   }
 };
 
-const test_sitemap_pages = async (page,code) => {
+const test_sitemap_pages = async () => {
   const xml = await fs.readFile(`templates/sitemap.xml`, 'utf-8');
-  const sitemap = JSON.parse(convert.xml2json(xml,{compact: true}));
+  const sitemap = JSON.parse(convert.xml2json(xml, {compact: true}));
   const urls = sitemap['urlset']['url'];
   for ( var url in urls ) {
-    page = urls[url]['loc']['_text'];
-    page = page.replace('https://almanac.httparchive.org','');
-    await test_status_code(page,200);
+    let page = urls[url]['loc']['_text'].trim();
+    page = page.replace('https://almanac.httparchive.org', '');
+    await test_status_code(page, 200);
   }
 }
 
-const test_status_codes = async (page,code) => {
+const test_status_codes = async () => {
 
   // Test success pages
   await test_sitemap_pages();
-  await test_status_code('/sitemap.xml',200);
+  await test_status_code('/sitemap.xml', 200);
 
   // Test Redirects
-  await test_status_code('/',302,'/en/2019/');
-  await test_status_code('/en/',302,'/en/2019/');
+  await test_status_code('/', 302, '/en/2019/');
+  await test_status_code('/en/', 302, '/en/2019/');
 
   //Test 404
-  await test_status_code('/en/2019/random',404);
+  await test_status_code('/en/2019/random', 404);
   
   console.log('Passes:', passes, "Failures:", failures);
   process.exitCode = failures;
