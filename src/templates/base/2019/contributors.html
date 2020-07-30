@@ -378,7 +378,7 @@
     }
   }
 
-(function loaded() {
+  function loaded() {
     var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
     var buttons = document.querySelectorAll('.filter-container button');
     var contributors = document.querySelector('.contributors');
@@ -482,14 +482,19 @@
     }
     window.addEventListener('popstate', handleFilterUrl);
     handleFilterUrl();
-});
+  }
 
-    try {
-      loaded() 
-    } catch(e) { }
+  try {
+    loaded() 
+  } catch(e) {
+    gtag('event', 'exception', {
+      'description': e,
+      'fatal': false
+    });
+  }
 
-    var contributorsGrid = document.querySelector('.contributor-grid');
-    contributorsGrid.setAttribute('data-rendered', true);
+  var contributorsGrid = document.querySelector('.contributor-grid');
+  contributorsGrid.setAttribute('data-rendered', true);
     
   </script>
   <!-- add chapter.js to handle print mode and avoid duplicating code -->
