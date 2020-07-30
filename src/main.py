@@ -61,11 +61,11 @@ def render_template(template, *args, **kwargs):
     # Otherwise the requested lang, otherwise the default lang
     lang = kwargs.get('lang', request.view_args.get('lang', DEFAULT_LANGUAGE.lang_code))
     language = get_language(lang)
-    langcode_length = len(lang) + 1 # Probably always 2-character language codes but who knows!
+    langcode_length = len(lang) + 1
 
     # If the template does not exist, then redirect to English version if it exists, else home
     if (lang != '' and not(os.path.isfile('templates/%s' % template))):
-        if (os.path.isfile('templates/en%s' % (request.full_path[langcode_length:]))):
+        if (os.path.isfile('templates/en/%s' % (template[langcode_length:]))):
             return redirect('/en%s' % (request.full_path[langcode_length:]), code=302)
         else:
             return redirect(url_for('home', lang=lang, year=year))

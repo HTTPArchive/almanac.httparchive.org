@@ -41,7 +41,7 @@ def validate(func):
             validated_chapter = validate_chapter(chapter, year)
 
             if chapter != validated_chapter:
-                return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
+                return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=302)
 
         return func(*args, **kwargs)
 
