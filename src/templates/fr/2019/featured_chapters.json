@@ -1,5 +1,5 @@
 {
-   "markup": {
+  "markup": {
     "quote": "À partir de juillet 2019, HTTP Archive a commencé à collecter tous les noms de *éléments* utilisés dans le DOM, environ 4,4 millions de pages d’accueil pour ordinateurs de bureau et environ 5,3 millions de pages d’accueil sur mobiles que nous pouvons maintenant commencer à analyser et à disséquer. Lors de cette collecte, nous avons découvert *plus de 5 000 noms d’éléments non standard distincts* dans les pages. Nous avons donc limité le nombre total d’éléments distincts que nous comptons aux 5 048 \"premiers\".",
     "stat_1": "11",
     "stat_label_1": "éléments sont utilisés sur plus de 90 % des pages.",
@@ -7,8 +7,8 @@
     "stat_label_2": "des pages contiennent des éléments dépréciés.",
     "stat_3": "65",
     "stat_label_3": "variantes de carrousels trouvées."
-   },
-   "third-parties": {
+  },
+  "third-parties": {
     "quote": "Le Web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link&gt;</code> ou <code>&lt;script&gt;</code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web ; par contre, l’immense popularité de quelques fournisseurs tiers (3P) pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le Web en 2019, les modèles d’utilisation du Web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des performances Web et de la confidentialité.",
     "stat_1": "93 %",
     "stat_label_1": "pages avec 3P.",
@@ -16,8 +16,8 @@
     "stat_label_2": "des requêtes.",
     "stat_3": "28 %",
     "stat_label_3": "des octets."
-   },
-   "accessibility": {
+  },
+  "accessibility": {
     "quote": "L’accessibilité sur le web est essentielle pour une société inclusive et équitable. Alors que nos vies sociales et professionnelles se déplacent de plus en plus vers le monde en ligne, il devient encore plus important pour les personnes handicapées de pouvoir participer à toutes les interactions en ligne sans barrières. Tout comme les architectes en bâtiment peuvent créer ou omettre des fonctionnalités d’accessibilité telles que des rampes pour fauteuils roulants, les développeurs et développeuses web peuvent aider ou entraver la technologie d’assistance sur laquelle les utilisateurs se basent.",
     "stat_1": "22 %",
     "stat_label_1": "Sites ayant des contrastes de couleurs insuffisants",
@@ -25,8 +25,8 @@
     "stat_label_2": "Sites ayant des attributs alt manquants",
     "stat_3": "14 %",
     "stat_label_3": "Sites utilisant des liens d’évitement"
-   },
-   "seo": {
+  },
+  "seo": {
     "quote": "L’optimisation pour les moteurs de recherche (SEO) n'est pas seulement un passe-temps ou un projet parallèle pour les spécialistes du marketing digital, ce métier est crucial pour le succès d'un site web. Le but principal du référencement naturel est de s'assurer qu’un site internet est optimisé pour les robots des moteurs de recherche qui ont besoin d’explorer et d'indexer ses pages, ainsi que pour les utilisateurs qui naviguent et consomment des contenus. Le référencement a un impact sur tous ceux qui travaillent sur un site web, du développeur qui le construit au marketeur digital qui en fait la promotion auprès de nouveaux clients potentiels.",
     "stat_1": "346",
     "stat_label_1": "mots par page, en médiane.",
@@ -34,8 +34,8 @@
     "stat_label_2": "des pages n’ont pas de titres HTML (Hn).",
     "stat_3": "15 %",
     "stat_label_3": "des sites sont éligibles aux résultats enrichis."
-   },
-   "mobile-web": {
+  },
+  "mobile-web": {
     "quote": "Depuis 2007, le web mobile s’est développé à un rythme explosif. Aujourd’hui, 13 ans plus tard, le mobile représente 59&nbsp;% de toutes les recherches et 58,7&nbsp;% de tout le trafic web, selon les données de Akamai mPulse en juillet 2019. Ce n’est plus un usage secondaire, mais la principale façon dont les gens vivent le web. Alors, étant donné l’importance du mobile, quel genre d’expérience offrons-nous à nos visiteurs et visiteuses&nbsp;? Quels sont les points faibles&nbsp;? C’est ce que nous allons découvrir.",
     "stat_1": "65&nbsp;%",
     "stat_label_1": "des sites sont victimes de déplacements de contenu moyens ou importants pendant le chargement",
@@ -43,8 +43,8 @@
     "stat_label_2": "des sites désactive le zoom",
     "stat_3": "34&nbsp;%",
     "stat_label_3": "des sites ont des cibles d'appui de tailles suffisantes"
-   },
-   "cms": {
+  },
+  "cms": {
     "quote": "Le terme général Système de gestion de contenu (SGC, ou CMS pour Content Management System en anglais) désigne les systèmes permettant aux personnes et aux organisations de créer, de gérer et de publier du contenu. Un CMS pour le contenu web, plus précisément, est un système visant à créer, gérer et publier du contenu à consommer et à expérimenter via le web ouvert. Chaque CMS met en œuvre un sous-ensemble d’un large éventail de capacités de gestion de contenu et les mécanismes correspondants pour permettre aux utilisateurs de construire facilement et efficacement des sites web autour de leur contenu.",
     "stat_1": "40 %",
     "stat_label_1": "des pages web sont propulsées par un CMS",
@@ -52,8 +52,8 @@
     "stat_label_2": "des sites utilisant un CMS utilisent WordPress",
     "stat_3": "1 232 Ko",
     "stat_label_3": "poids des images sur page CMS (bureau)"
-   },
-   "compression": {
+  },
+  "compression": {
     "quote": "La compression HTTP est une technique qui permet de coder des informations en utilisant moins de bits que la représentation originale. Lorsqu’elle est utilisée pour la diffusion de contenu web, elle permet aux serveurs web de réduire la quantité de données transmises aux clients. La compression HTTP augmente l’efficacité de la bande passante disponible au client, réduit le poids des pages, et améliore les performances web.",
     "stat_1": "38%",
     "stat_label_1": "Réponses HTTP avec compression de texte",
@@ -61,8 +61,8 @@
     "stat_label_2": "Utilisent la compression gzip",
     "stat_3": "56%",
     "stat_label_3": "Réponses HTML n'utilisant pas de compression"
-   },
-   "caching": {
+  },
+  "caching": {
     "quote": "La mise en cache est une technique permettant de réutiliser un contenu précédemment téléchargé. Elle offre un avantage significatif en termes de performance en évitant de rejouer de coûteuses requêtes. La mise en cache facilite la montée en charge d’une application, en réduisant le trafic sur le réseau à destination du serveur d'origine. Un vieux dicton dit que \"la requête la plus rapide est celle que vous n’avez pas à faire\" et la mise en cache est l’un des principaux moyens d'éviter d'avoir à refaire des requêtes.",
     "stat_1": "27 %",
     "stat_label_1": "des réponses n’utilisent aucun en-tête de cache.",
@@ -70,8 +70,8 @@
     "stat_label_2": "des réponses utilisent l’en-tête <code>Vary</code>.",
     "stat_3": "82 %",
     "stat_label_3": "des sites pourraient économiser 1 Mo en optimisant le cache."
-   },
-   "resource-hints": {
+  },
+  "resource-hints": {
     "quote": "Les indices de ressources fournissent des \"suggestions\" au navigateur sur les ressources qui seront rapidement nécessaires. L’action que le navigateur entreprend à la suite de cet indice varie selon le type d’indice ; différents indices déclenchent différentes actions. Lorsqu’ils sont utilisés correctement, ils peuvent améliorer les performances de la page en donnant une longueur d'avance aux actions importantes, par anticipation.",
     "stat_1": "29 %",
     "stat_label_1": "des sites utilisent <code>dns-prefetch</code>.",
@@ -79,5 +79,5 @@
     "stat_label_2": "des indices de ressources utilisent l’attribut <code>as</code>.",
     "stat_3": "0,04 %",
     "stat_label_3": "des pages utilisent des indices de priorité."
-   }
+  }
 }

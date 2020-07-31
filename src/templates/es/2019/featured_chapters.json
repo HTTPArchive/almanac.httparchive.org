@@ -1,5 +1,5 @@
 {
-   "third-parties": {
+  "third-parties": {
     "quote": "La web abierta es vasta, enlazable e interoperable por diseño. La capacidad de tomar la biblioteca compleja de otra persona y usarla en su sitio con un solo elemento <code>&lt;link></code> or <code>&lt;script></code> ha incrementado la productividad de los desarrolladores y ha permitido nuevas e increíbles experiencias web; por otro lado, la inmensa popularidad de unos pocos servicios de terceros seleccionados plantea importantes problemas de rendimiento y privacidad. Este capítulo examina la prevalencia y el impacto del código de servicios de terceros en la web en 2019, los patrones de uso de la web que conducen a la popularidad de las soluciones de servicios de terceros y las posibles repercusiones para el futuro del rendimiento y la privacidad de la web.",
     "stat_1": "93%",
     "stat_label_1": "Páginas con SdT",
@@ -7,5 +7,5 @@
     "stat_label_2": "Peticiones SdT",
     "stat_3": "28%",
     "stat_label_3": "Bytes SdT"
-    }
+  }
 }

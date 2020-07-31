@@ -7,8 +7,8 @@
     "stat_label_2": "Sites that use jQuery",
     "stat_3": "4.6%",
     "stat_label_3": "Home pages using React"
-   },
-   "css": {
+  },
+  "css": {
     "quote": "Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user.",
     "stat_1": "5%",
     "stat_label_1": "Pages using custom properties",
@@ -16,8 +16,8 @@
     "stat_label_2": "Sites that use CSS Grid",
     "stat_3": "780",
     "stat_label_3": "Number of digits in largest Z-Index value"
-   },
-   "markup": {
+  },
+  "markup": {
     "quote": "As of July 2019, the HTTP Archive has begun collecting all used <em>element</em> names in the DOM for about 4.4 million desktop home pages, and about 5.3 million mobile home pages which we can now begin to research and dissect. This crawl encountered over 5,000 distinct <em>non-standard element names</em> in these pages, so we capped the total distinct number of elements that we count to the 'top' 5,048.",
     "stat_1": "11",
     "stat_label_1": "Elements used on more than 90% of pages",
@@ -25,8 +25,8 @@
     "stat_label_2": "Pages that contain deprecated elements",
     "stat_3": "65",
     "stat_label_3": "Variants of carousels found"
-   },
-   "media": {
+  },
+  "media": {
     "quote": "Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.",
     "stat_1": "1 MB",
     "stat_label_1": "Median size of home pages",
@@ -34,8 +34,8 @@
     "stat_label_2": "JPEG use amongst images",
     "stat_3": "2%",
     "stat_label_3": "Use of <code>&lt;picture&gt;</code> element"
-   },
-   "third-parties": {
+  },
+  "third-parties": {
     "quote": "The open web is vast, linkable, and interoperable by design. The ability to grab someone else’s complex library and use it on your site with a single <code>&lt;link&gt;</code> or <code>&lt;script&gt;</code> element has supercharged developers’ productivity and enabled awesome new web experiences; on the flip side, the immense popularity of a select few third-party providers raises important performance and privacy concerns. This chapter examines the prevalence and impact of third-party code on the web in 2019, the web usage patterns that lead to the popularity of third-party solutions, and potential repercussions for the future of web performance and privacy.",
     "stat_1": "93%",
     "stat_label_1": "Pages with 3P",
@@ -43,8 +43,8 @@
     "stat_label_2": "3P requests",
     "stat_3": "28%",
     "stat_label_3": "3P bytes"
-   },
-   "fonts": {
+  },
+  "fonts": {
     "quote": "Web fonts enable beautiful and functional typography on the web. Using web fonts not only empowers design, but it democratizes a subset of design, as it allows easier access to those who might not have particularly strong design skills. However, for all the good they can do, web fonts can also do great harm to your site's performance if they are not loaded properly.",
     "stat_1": "74.9%",
     "stat_label_1": "3P Font Requests that use Google Fonts",
@@ -52,8 +52,8 @@
     "stat_label_2": "Percent of pages that include a Google Fonts stylesheet link",
     "stat_3": "718",
     "stat_label_3": "Most font requests on a single page"
-   },
-   "performance": {
+  },
+  "performance": {
     "quote": "Performance is a visceral part of the user experience. For many websites, an improvement to the user experience by speeding up the page load time aligns with an improvement to conversion rates. Conversely, when performance is poor, users don't convert as often and have even been observed to be rage clicking on the page in frustration.",
     "stat_1": "13%",
     "stat_label_1": "Sites with fast FCP",
@@ -61,8 +61,8 @@
     "stat_label_2": "Sites with slow TTFB",
     "stat_3": "40%",
     "stat_label_3": "Sites with fast FID"
-   },
-   "security": {
+  },
+  "security": {
     "quote": "As the web grows in capabilities and allows access to more and more sensitive data, it becomes increasingly important for developers to adopt web security features to protect their applications. The security features reviewed in this chapter are defenses built into the web platform itself, available to every web author.",
     "stat_1": "79%",
     "stat_label_1": "Sites using HTTPS",
@@ -70,8 +70,8 @@
     "stat_label_2": "Sites using TLSv1.3",
     "stat_3": "4.43%",
     "stat_label_3": "Sites using CSP"
-   },
-   "accessibility": {
+  },
+  "accessibility": {
     "quote": "Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.",
     "stat_1": "22%",
     "stat_label_1": "Sites using sufficient colour contrast",
@@ -79,8 +79,8 @@
     "stat_label_2": "Sites with missing image alt attributes",
     "stat_3": "14%",
     "stat_label_3": "Sites using a skip link"
-   },
-   "seo": {
+  },
+  "seo": {
     "quote": "Search Engine Optimization (SEO) isn't just a hobby or a side project for digital marketers, it is crucial for the success of a website. The primary goal of SEO is to make sure that a website is optimized for the search engine bots that need to crawl and index its pages, as well as for the users that will be navigating the website and consuming its content. SEO impacts everyone working on a website, from the developer who is building it, through to the digital marketer who will need to promote it to new potential customers.",
     "stat_1": "346",
     "stat_label_1": "No. of words on median page",
@@ -88,8 +88,8 @@
     "stat_label_2": "Pages with no heading tags",
     "stat_3": "15%",
     "stat_label_3": "Sites eligible for rich results"
-   },
-   "pwa": {
+  },
+  "pwa": {
     "quote": "Progressive Web Apps (PWAs) are a new class of web applications, building on top of platform primitives like the Service Worker APIs. Service workers allow apps to support network-independent loading by acting as a network proxy, intercepting your web app's outgoing requests, and replying with programmatic or cached responses.",
     "stat_1": "0.44%",
     "stat_label_1": "Sites that register a service worker",
@@ -97,8 +97,8 @@
     "stat_label_2": "Pageviews that use a Service Worker",
     "stat_3": "57%",
     "stat_label_3": "PWAs that use the <code>standalone</code> <code>display</code> property"
-   },
-   "mobile-web": {
+  },
+  "mobile-web": {
     "quote": "Since 2007, the mobile web has grown at an explosive rate. And now, 13 years later, mobile accounts for 59% of all searches and 58.7% of all web traffic, according to Akamai mPulse data in July 2019. It's no longer an afterthought, but the primary way people experience the web. So given how significant mobile is, what kind of experience are we providing our visitors? Where are we falling short? Let's find out.",
     "stat_1": "65%",
     "stat_label_1": "Sites with medium or large content shifts during load",
@@ -106,8 +106,8 @@
     "stat_label_2": "Sites that disable zooming",
     "stat_3": "34%",
     "stat_label_3": "Sites with sufficiently sized tap targets"
-   },
-   "ecommerce": {
+  },
+  "ecommerce": {
     "quote": "Nearly 10% of the home pages in this study were found to be on an ecommerce platform. An <em>ecommerce platform</em> is a set of software or services that enables you to create and operate an online store, including Paid-for services such as Shopify, software platforms such as Magento Open Source, and Hosted platforms such as Magento Commerce.",
     "stat_1": "3.98%",
     "stat_label_1": "Sites using WooCommerce the most popular ecommerce platform",
@@ -115,8 +115,8 @@
     "stat_label_2": "Number of ecommerce platforms detected",
     "stat_3": "1,517 KB",
     "stat_label_3": "Median image bytes per mobile ecommerce page."
-   },
-   "cms": {
+  },
+  "cms": {
     "quote": "The general term Content Management System (CMS) refers to systems enabling individuals and organizations to create, manage, and publish content. A CMS for web content, specifically, is a system aimed at creating, managing, and publishing content to be consumed and experienced via the open web. Each CMS implements some subset of a wide range of content management capabilities and the corresponding mechanisms for users to build websites easily and effectively around their content.",
     "stat_1": "40%",
     "stat_label_1": "Pages powered by a CMS",
@@ -124,8 +124,8 @@
     "stat_label_2": "CMS sites that use WordPress",
     "stat_3": "1,232 KB",
     "stat_label_3": "Median image KB loaded per desktop CMS page."
-   },
-   "compression": {
+  },
+  "compression": {
     "quote": "HTTP compression is a technique that allows you to encode information using fewer bits than the original representation. When used for delivering web content, it enables web servers to reduce the amount of data transmitted to clients. This increases the efficiency of the client's available bandwidth, reduces page weight, and improves web performance.",
     "stat_1": "38%",
     "stat_label_1": "HTTP responses using text-based compression",
@@ -133,8 +133,8 @@
     "stat_label_2": "Use of gzip compression",
     "stat_3": "56%",
     "stat_label_3": "HTML responses not using compression"
-   },
-   "caching": {
+  },
+  "caching": {
     "quote": "Caching is a technique that enables the reuse of previously downloaded content. It provides a significant performance benefit by avoiding costly network requests and it also helps scale an application by reducing the traffic to a website's origin infrastructure. There's an old saying, \"the fastest request is the one that you don't have to make,\" and caching is one of the key ways to avoid having to make requests.",
     "stat_1": "27%",
     "stat_label_1": "Responses not using any caching headers",
@@ -142,8 +142,8 @@
     "stat_label_2": "Responses using the <code>Vary</code> header",
     "stat_3": "82%",
     "stat_label_3": "Sites that could save 1Mb by optimising caching better"
-   },
-   "cdn": {
+  },
+  "cdn": {
     "quote": "\"Use a Content Delivery Network\" was one of Steve Souders original recommendations for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using.",
     "stat_1": "20%",
     "stat_label_1": "Home pages served by CDN",
@@ -151,8 +151,8 @@
     "stat_label_2": "Homepages served by most popular CDN (Cloudflare)",
     "stat_3": "30%",
     "stat_label_3": "3P CDN requests that use Google"
-   },
-   "page-weight": {
+  },
+  "page-weight": {
     "quote": "The common argument as to why page size doesn't matter anymore is that, thanks to high-speed internet and our souped-up devices, we can serve massive, complex (and massively complex) pages to the general population. This assumption works fine, as long as you're okay with ignoring the vast swathe of internet users who don't have access to said high-speed internet and souped-up devices.",
     "stat_1": "10%",
     "stat_label_1": "Sites sending more than 6 MB of Data",
@@ -160,8 +160,8 @@
     "stat_label_2": "Increase in median desktop size in last year",
     "stat_3": "69",
     "stat_label_3": "Median requests per home page"
-   },
-   "resource-hints": {
+  },
+  "resource-hints": {
     "quote": "Resource hints provide <em>hints</em> to the browser about what resources will be needed soon. The action that the browser takes as a result of receiving this hint will vary depending on the type of resource hint; different resource hints kick off different actions. When used correctly, they can improve page performance by giving a head start to important anticipated actions.",
     "stat_1": "29%",
     "stat_label_1": "Sites using <code>dns-prefetch</code>",
@@ -169,8 +169,8 @@
     "stat_label_2": "Resource hints using the <code>as</code> attribute.",
     "stat_3": "0.04%",
     "stat_label_3": "Usage of priority hints"
-   },
-   "http2": {
+  },
+  "http2": {
     "quote": "HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default. This chapter examines how this relatively new technology has fared in the real world.",
     "stat_1": "95%",
     "stat_label_1": "Users who can use HTTP/2",
@@ -178,6 +178,5 @@
     "stat_label_2": "Requests with HTTP/2 prioritisation issues",
     "stat_3": "8.38%",
     "stat_label_3": "Sites supporting QUIC"
-   }
   }
-  
+}
