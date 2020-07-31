@@ -213,6 +213,17 @@
       "github": "AAgar",
       "twitter": "AAgar"
     },
+     "adityapandey1998": {
+      "name": "Aditya Pandey",
+      "teams": [
+       "analysts",
+        "developers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/31750960?v=4&s=200",
+      "github": "adityapandey1998",
+      "twitter": "adityapandey98",
+      "website": "https://www.linkedin.com/in/adityapandey98/"
+    },
     "alexdenning": {
       "name": "Alex Denning",
       "teams": [
@@ -1116,7 +1127,9 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
-      "github": "rockeynebhwani"
+      "github": "rockeynebhwani",
+      "twitter": "rnebhwani",
+      "website": "https://www.linkedin.com/in/rockeynebhwani"
     },
     "RoelN": {
       "name": "Roel Nieskens",
