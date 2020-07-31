@@ -67,8 +67,8 @@
     if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
         ||
          (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
-      const keys = Object.keys(featured_chapters)
-      const randIndex = Math.floor(Math.random() * keys.length)
+      var keys = Object.keys(featured_chapters)
+      var randIndex = Math.floor(Math.random() * keys.length)
       randomChapter = keys[randIndex];
     }
   </script>
