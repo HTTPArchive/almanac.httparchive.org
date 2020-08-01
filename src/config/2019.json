@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","zh_CN"],
+      "supported_languages": ["en","es","fr","ja","zh-CN"],
       "ebook_languages": ["en","ja"]
     }
   ],
