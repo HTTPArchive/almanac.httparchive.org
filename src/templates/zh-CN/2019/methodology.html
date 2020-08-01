@@ -54,7 +54,7 @@
         <h2 id="overview"><a href="#overview" class="anchor-link">概览</a></h2>
 
         <p>
-          Web Almanac 是一个由 <a href="https://httparchive.org">HTTP Archive</a>组织的项目. HTTP Archive 于2010年由Steve Souders创立，其任务是跟踪web是如何构建的。它按月评估数以百万计的网页，并使它的TB级别的元数据可供<a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>分析。了解更多 <a href="https://httparchive.org/about">HTTP Archive</a>.
+          Web Almanac 是一个由 <a href="https://httparchive.org">HTTP Archive</a>组织的项目. HTTP Archive 于2010年由Steve Souders创立，其任务是跟踪web是如何构建的。它按月评估数以百万计的网页，并使它的TB级别的元数据可供<a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>分析。了解更多 <a href="https://httparchive.org/about">HTTP Archive</a>。
         </p>
 
         <p>
@@ -74,11 +74,11 @@
         </p>
 
         <p>
-          Web Almanac中列出的所有指标都可以通过BigQuery上的数据集公开重现。您可以在我们的<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub 仓库</a>浏览我们的所有章节使用的查询 .
+          Web Almanac中列出的所有指标都可以通过BigQuery上的数据集公开重现。您可以在我们的<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub 仓库</a>浏览我们的所有章节使用的查询 。
         </p>
 
         <p class="note">
-          请注意，其中一些查询相当大，如果你自己运行可能比较 <a href="https://cloud.google.com/bigquery/pricing">昂贵</a> , 因为BigQuery是按TB收费. 为了帮助控制你的开支, 请看 Tim Kadlec的文章 <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">在不破产的情况下来使用BigQuery</a>.
+          请注意，其中一些查询相当大，如果你自己运行可能比较 <a href="https://cloud.google.com/bigquery/pricing">昂贵</a> , 因为BigQuery是按TB收费。为了帮助控制你的开支, 请看 Tim Kadlec的文章 <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">在不破产的情况下来使用BigQuery</a>。
         </p>
 
         <p>
@@ -104,7 +104,7 @@
         </div>
 
         <p>
-          每个指标的结果都可以在章节对应的电子表格中公开查看，例如<a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript 结果</a>.
+          每个指标的结果都可以在章节对应的电子表格中公开查看，例如<a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript 结果</a>。
         </p>
     </section>
 
@@ -288,11 +288,11 @@
       </div></div>
 
       <p class="note">
-        * 请注意，Lighthouse通常的配置是CPU减速4倍, 但是因为一个WebPageTest的<a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> , 在当时的测试是1倍。
+        * 请注意，Lighthouse通常的配置是CPU降速4倍, 但是因为一个WebPageTest的<a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> ， 在当时的测试是降速1倍。
       </p>
 
       <p>
-        如需了解更多关于 Lighthouse 以及 HTTP Archive中可用的审计, 请参考 <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse 开发者文档</a>.
+        如需了解更多关于 Lighthouse 以及 HTTP Archive中可用的审计, 请参考 <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse 开发者文档</a>。
       </p>
     </section>
 
@@ -328,7 +328,7 @@
       </p>
 
       <p>
-        关于数据集，你可以在这里了解更多 <a href="https://web.dev/chrome-ux-report-bigquery">在BigQuery使用Chrome UX报告</a> 指南<a href="https://web.dev/">web.dev</a>.
+        关于数据集，你可以在这里了解更多： <a href="https://web.dev/">web.dev</a>上的<a href="https://web.dev/chrome-ux-report-bigquery">在BigQuery使用Chrome UX报告</a> 指南。
       </p>
     </section>
 
@@ -356,7 +356,7 @@
       </p>
 
       <p>
-        在<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> 章节，这个特殊用途的工具显著地提高了数据库中许多度量标准的准确性。所有外部样式表中的CSS和每个页面的内联样式块都被解析和查询，让这个分析工作成为可能。阅读<a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">这段</a> 来了解更多关于它如何同BigQuery上的HTTP Archive数据集来集成.
+        在<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> 章节，这个特殊用途的工具显著地提高了数据库中许多度量标准的准确性。所有外部样式表中的CSS和每个页面的内联样式块都被解析和查询，让这个分析工作成为可能。阅读<a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">这段</a> 来了解更多关于它如何同BigQuery上的HTTP Archive数据集来集成。
       </p>
     </section>
 
@@ -392,7 +392,7 @@
       </p>
 
       <p>
-        整个2019年7月, HTTP Archive 数据管道爬取了数百万网站, 收集到的元数据用于了 Web Almanac 网络年鉴.
+        整个2019年7月, HTTP Archive 数据管道爬取了数百万网站, 收集到的元数据用于了 Web Almanac 网络年鉴。
       </p>
 
       <p>

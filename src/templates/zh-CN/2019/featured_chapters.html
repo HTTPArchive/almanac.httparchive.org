@@ -61,11 +61,11 @@
   {%- set featured_chapter_stats = {"stat1":"38%","label1":"使用基于文本压缩的HTTP响应","stat2":"80%","label2":"使用gzip压缩","stat3":"56%","label3":"HTML响应没有使用压缩"} %}
 {%- elif featured_chapter == "caching" %}
   {%- set featured_chapter_name = "缓存" %}
-  {%- set featured_chapter_quote = "缓存是一种支持重用以前下载的内容的技术。通过避免昂贵的网络请求，它提供了显著的性能优势，还通过减少对网站源站基础设施的流量来帮助扩展应用程序的范围。有句老话说， &quot;最快的请求是你不必提出的，&quot; 而缓存是避免发出请求的关键方法之一。" %}
+  {%- set featured_chapter_quote = "缓存是一种支持重复使用之前下载内容的技术。通过避免昂贵的网络请求，它提供了显著的性能优势，还通过减少对网站源站基础设施的流量来帮助扩展应用程序的范围。有句老话说， &quot;最快的请求就是你不用提出请求，&quot; 而缓存是避免发出请求的关键方法之一。" %}
   {%- set featured_chapter_stats = {"stat1":"27%","label1":"没有使用任何缓存头的响应","stat2":"39%","label2":"使用 <code>Vary</code> 头的响应","stat3":"82%","label3":"通过更好地优化缓存可以节省1Mb的站点"} %}
 {%- elif featured_chapter == "cdn" %}
   {%- set featured_chapter_name = "CDN" %}
-  {%- set featured_chapter_quote = "&quot;使用内容分发网络&quot; 是Steve Souders最初的建议之一，用来提高网站的加载速度。 这个建议今天仍然有效，在Web Almanac网络年鉴的这一章我们将探索Steve的建议被广泛采纳的程度，站点如何使用使用内容分发网络(CDN), 以及他们使用的一些功能特性。" %}
+  {%- set featured_chapter_quote = "&quot;使用内容分发网络CDN&quot; 是Steve Souders最初用来提高网站加载速度的建议之一。这个建议在今天仍然有效，在Web Almanac网络年鉴的这一章我们将探索Steve的建议被广泛采纳的程度，站点如何使用内容分发网络(CDN), 以及它们使用的一些功能特性。" %}
   {%- set featured_chapter_stats = {"stat1":"20%","label1":"使用CDN的主页","stat2":"9.61%","label2":"使用最流行的 CDN (Cloudflare)的主页","stat3":"30%","label3":"使用谷歌的第三方CDN请求"} %}
 {%- elif featured_chapter == "page-weight" %}
   {%- set featured_chapter_name = "页面重量" %}
@@ -108,7 +108,7 @@
       {% endif %}
     </div>
     <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-      阅读 {{ featured_chapter_name }} 本章
+      阅读 {{ featured_chapter_name }} 章节
     </a>
   </div>
 </section>
