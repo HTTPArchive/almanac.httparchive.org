@@ -122,7 +122,7 @@ prince "http://127.0.0.1:8080/en/2019/ebook?cover" -o static/pdfs/web_almanac_20
 
 Extra params accepted for the cover are are (note spine and pageWidth are unit-less to allow for easy addition in the code):
 
-- spine - the width if the spine (defaults to 25)
+- spine - the width of the spine (defaults to 25)
 - pageWidth - the front cover width (note is just the page width and not the full width of front cover and back cover and spine) - defaults to 148 (for A5).
 - pageHeight - defaults to 210 (for A5)
 - unit - which unit the above measurements are in (defaults to mm)
