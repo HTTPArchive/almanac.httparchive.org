@@ -20,20 +20,72 @@ const generate_ebook_pdfs = async () => {
 
   }
 
-  //Generate all the configured ebook pdfs
+  // Generate all the configured ebook pdfs
   for(let year in ebook_languages) {
     console.log('Ebooks configured for',year, ':',ebook_languages[year]);
     ebook_languages[year].forEach((language) => {
+
+      // Generate Ebook PDF
       console.log('Generating ebook for',year,language);
-      const command = `prince http://127.0.0.1:8080/${language}/${year}/ebook?print -o static/pdfs/web_almanac_${year}_${language}.pdf --pdf-profile="PDF/UA-1"`;
+      const command = `prince "http://127.0.0.1:8080/${language}/${year}/ebook?print" -o static/pdfs/web_almanac_${year}_${language}.pdf --pdf-profile="PDF/UA-1"`;
       exec (command, (err, stdout, stderr) => {
         if (err) {
-          //some err occurred
+          // some err occurred
           console.error(err)
         } else {
-        // the *entire* stdout and stderr (buffered)
-        console.log(`stdout: ${stdout}`);
-        console.log(`stderr: ${stderr}`);
+          // the *entire* stdout and stderr (buffered)
+          console.log(`stdout: ${stdout}`);
+          console.log(`stderr: ${stderr}`);
+        }
+      });
+
+      // Generate Printer Ebook PDF
+      const printer_pdf_file = 'static/pdfs/web_almanac_' + year + '_' + language + '_print_A5.pdf';
+      const printer_command = `prince "http://127.0.0.1:8080/${language}/${year}/ebook?print&printer" -o ${printer_pdf_file}`;
+      exec (printer_command, (err, stdout, stderr) => {
+        if (err) {
+          // some err occurred
+          console.error(err)
+        } else {
+          // the *entire* stdout and stderr (buffered)
+          console.log(`stdout: ${stdout}`);
+          console.log(`stderr: ${stderr}`);
+          const remove_cover_pages = `pdftk ${printer_pdf_file} cat 3-end output ${printer_pdf_file}.tmp && mv ${printer_pdf_file}.tmp ${printer_pdf_file}`;
+          exec (remove_cover_pages, (err, stdout, stderr) => {
+            if (err) {
+              // some err occurred
+              console.error(err)
+            } else {
+              // the *entire* stdout and stderr (buffered)
+              console.log(`stdout: ${stdout}`);
+              console.log(`stderr: ${stderr}`);
+            }
+          });
+        }
+      });
+
+      // Generate Printer Cover PDF
+      const cover_pdf_file = 'static/pdfs/web_almanac_' + year + '_' + language + '_cover_A5.pdf';
+      const cover_command = `prince "http://127.0.0.1:8080/${language}/${year}/ebook?cover" -o ${cover_pdf_file}`;
+      exec (cover_command, (err, stdout, stderr) => {
+        if (err) {
+          // some err occurred
+          console.error(err)
+        } else {
+          // the *entire* stdout and stderr (buffered)
+          console.log(`stdout: ${stdout}`);
+          console.log(`stderr: ${stderr}`);
+          const remove_cover_pages = `pdftk ${cover_pdf_file} cat 2-end output ${cover_pdf_file}.tmp && mv ${cover_pdf_file}.tmp ${cover_pdf_file}`;
+          exec (remove_cover_pages, (err, stdout, stderr) => {
+            if (err) {
+              // some err occurred
+              console.error(err)
+            } else {
+              // the *entire* stdout and stderr (buffered)
+              console.log(`stdout: ${stdout}`);
+              console.log(`stderr: ${stderr}`);
+            }
+          });
         }
       });
     });
@@ -41,9 +93,5 @@ const generate_ebook_pdfs = async () => {
 };
 
 (async () => {
-  // Can uncomment this to get latest timestamps from origin:main
-  // let { generate_last_updated } = require('./generate_last_updated');
-  // await generate_last_updated();
-
   await generate_ebook_pdfs();
 })();
