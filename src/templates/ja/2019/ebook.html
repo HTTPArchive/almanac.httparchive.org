@@ -471,10 +471,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -482,6 +482,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -489,6 +490,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -496,6 +498,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -1169,10 +1172,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -1180,6 +1183,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -1187,6 +1191,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -1194,6 +1199,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -1604,10 +1610,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -1615,6 +1621,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -1622,6 +1629,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -1629,6 +1637,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -2143,10 +2152,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -2154,6 +2163,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -2161,6 +2171,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -2168,6 +2179,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -2508,10 +2520,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -2519,6 +2531,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -2526,6 +2539,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -2533,6 +2547,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -3214,10 +3229,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -3225,6 +3240,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -3232,6 +3248,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -3239,6 +3256,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -3543,10 +3561,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -3554,6 +3572,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -3561,6 +3580,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -3568,6 +3588,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -4486,10 +4507,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -4497,6 +4518,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -4504,6 +4526,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -4511,6 +4534,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -4857,10 +4881,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -4868,6 +4892,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -4875,6 +4900,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -4882,6 +4908,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -5369,10 +5396,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -5380,6 +5407,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -5387,6 +5415,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -5394,6 +5423,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -5662,10 +5692,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -5673,6 +5703,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -5680,6 +5711,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -5687,6 +5719,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -6043,10 +6076,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -6054,6 +6087,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -6061,6 +6095,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -6068,6 +6103,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -6718,10 +6754,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -6729,6 +6765,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -6736,6 +6773,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -6743,6 +6781,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -7433,10 +7472,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -7444,6 +7483,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -7451,6 +7491,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -7458,6 +7499,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -7832,10 +7874,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -7843,6 +7885,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -7850,6 +7893,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -7857,6 +7901,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -8584,10 +8629,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -8595,6 +8640,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -8602,6 +8648,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -8609,6 +8656,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -10205,10 +10253,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -10216,6 +10264,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -10223,6 +10272,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -10230,6 +10280,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -11081,10 +11132,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -11092,6 +11143,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -11099,6 +11151,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -11106,6 +11159,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -11399,10 +11453,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -11410,6 +11464,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -11417,6 +11472,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -11424,6 +11480,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
@@ -12201,10 +12258,10 @@
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
       <li>
-        <a href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
+        <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
         <div class="info">
           <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-          {% if authordata.twitter or authordata.github %}
+          {% if authordata.twitter or authordata.github or authordata.website %}
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
@@ -12212,6 +12269,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              <span class="fn">https://twitter.com/{{ authordata.twitter }}</span>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
@@ -12219,6 +12277,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
+              <span class="fn">https://github.com/{{ authordata.github }}</span>
             </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
@@ -12226,6 +12285,7 @@
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
+              <span class="fn">{{ authordata.website }}</span>
             </a>
             {% endif %}
           </span>
