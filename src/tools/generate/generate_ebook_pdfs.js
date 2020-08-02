@@ -39,6 +39,11 @@ const generate_ebook_pdfs = async () => {
         }
       });
 
+      let move = "mv";
+      if (process.platform === 'win32') {
+        move = "move";
+      }
+
       // Generate Printer Ebook PDF
       const printer_pdf_file = 'static/pdfs/web_almanac_' + year + '_' + language + '_print_A5.pdf';
       const printer_command = `prince "http://127.0.0.1:8080/${language}/${year}/ebook?print&printer" -o ${printer_pdf_file}`;
@@ -50,7 +55,7 @@ const generate_ebook_pdfs = async () => {
           // the *entire* stdout and stderr (buffered)
           console.log(`stdout: ${stdout}`);
           console.log(`stderr: ${stderr}`);
-          const remove_cover_pages = `pdftk ${printer_pdf_file} cat 3-end output ${printer_pdf_file}.tmp && mv ${printer_pdf_file}.tmp ${printer_pdf_file}`;
+          const remove_cover_pages = `pdftk ${printer_pdf_file} cat 3-end output ${printer_pdf_file}.tmp && ${move} ${printer_pdf_file}.tmp ${printer_pdf_file}`;
           exec (remove_cover_pages, (err, stdout, stderr) => {
             if (err) {
               // some err occurred
@@ -75,7 +80,7 @@ const generate_ebook_pdfs = async () => {
           // the *entire* stdout and stderr (buffered)
           console.log(`stdout: ${stdout}`);
           console.log(`stderr: ${stderr}`);
-          const remove_cover_pages = `pdftk ${cover_pdf_file} cat 2-end output ${cover_pdf_file}.tmp && mv ${cover_pdf_file}.tmp ${cover_pdf_file}`;
+          const remove_cover_pages = `pdftk ${cover_pdf_file} cat 2-end output ${cover_pdf_file}.tmp && ${move} ${cover_pdf_file}.tmp ${cover_pdf_file}`;
           exec (remove_cover_pages, (err, stdout, stderr) => {
             if (err) {
               // some err occurred
