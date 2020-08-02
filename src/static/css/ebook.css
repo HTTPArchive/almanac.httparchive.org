@@ -441,7 +441,6 @@ section.chapter {
 
   /* Prince does not yet support Grid https://www.princexml.com/roadmap/ */
   @supports not (display: grid) {
-
     .content .authors li {
       display: flex;
       margin-bottom: 10px;
@@ -452,7 +451,6 @@ section.chapter {
       flex-basis: 60px;
       flex-shrink: 0;
     }
-
   }
 
   .authors .social svg {
