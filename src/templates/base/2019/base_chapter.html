@@ -129,7 +129,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
           </div>
           <div class="info">
             <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
-              {% if authordata.twitter or authordata.github %}
+              {% if authordata.twitter or authordata.github or authordata.website %}
                   <span class="social">
                   {% if authordata.twitter %}
                   <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="author-{{ author }}-twitter">

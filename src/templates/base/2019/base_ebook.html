@@ -345,30 +345,7 @@
         <div>
           <span class="contributor-name">{{ contributor.name }}</span>
           <span class="contributor-social">
-          {% if contributor.twitter %}
-            <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
-              <svg role="img">
-                <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-              </svg>
-            </a>
-          {% endif %}
-          {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
-            <svg role="img">
-              <title id="contributors-{{ id }}-github">{{ onGitHub(contributor.github) }}</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
-            </svg>
-          </a>
-          {% endif %}
-          {% if contributor.website %}
-          <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
-            <svg role="img">
-              <title id="contributors-{{ id }}-website">{{ website(contributor.name) }}</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-            </svg>
-          </a>
-          {% endif %}
+            {% if contributor.twitter %} (@{{ contributor.twitter }}){% endif %}
         </span>
           <br>
           <span class="contributor-teams">
