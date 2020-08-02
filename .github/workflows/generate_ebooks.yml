@@ -42,8 +42,11 @@ jobs:
     - name: Install PrinceXML
       run: |
         cd /tmp
+        sudo apt-get install -y fonts-takao-mincho
         wget https://www.princexml.com/download/${{ env.PRINCE_PACKAGE }}
         DEBIAN_FRONTEND=noninteractive sudo apt install -y /tmp/${{ env.PRINCE_PACKAGE }}
+    - name: Install pdftk
+      run: sudo apt install pdftk
     - name: Run website
       run: |
         cd src
