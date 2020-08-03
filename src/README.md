@@ -66,7 +66,7 @@ npm run generate
 
 ## Generating Ebooks
 
-For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/).
+For generating PDFs of the ebook, you need to install Prince. Follow the instructions on [the Prince Website](https://www.princexml.com/) and pdftk.
 
 To actually generate the ebooks, start your local server, then run the following:
 
@@ -74,11 +74,11 @@ To actually generate the ebooks, start your local server, then run the following
 npm run ebooks
 ```
 
-There is a GitHub Action which can be run manually from the Actions tab to generate the Ebooks and open a Pull Request for them.
+There is a GitHub Action which can be run manually from the Actions tab to generate the Ebooks and open a Pull Request for them. This is the easiest way to generate them.
 
 ## Generating ebooks - including print-ready ebooks if you want a hardcopy
 
-It is also possible to generate the ebook from the website (either production or 127.0.0.1), with some optional params (e.g. to print it!)
+It is also possible to generate the ebook from the website (either production or 127.0.0.1), with some optional params (e.g. to print it with different settings).
 
 ```
 prince "http://127.0.0.1:8080/en/2019/ebook?print" -o web_almanac_2019_en.pdf --pdf-profile='PDF/UA-1'
@@ -98,7 +98,7 @@ Query params accepted are:
 - max-fig-height - defaults to 610px (for A5) and prevents large images from causing overflows on to other pages with heading and caption.
 - cover - this genarates a 4 page cover (front cover + spine + back cover, and same on inside which is blank). This ignores above options but has further params discussed below.
 
-You can also download the HTML and override the inline styles there if you want to customise this for something we haven't exposed as a param.
+You can also download the HTML and override the inline styles there if you want to customise this for something we haven't exposed as a param, and then run prince against the file.
 
 So for a printer-ready A5 version, that you can send to a print to bind, you can do the following:
 
@@ -122,8 +122,8 @@ prince "http://127.0.0.1:8080/en/2019/ebook?cover" -o static/pdfs/web_almanac_20
 
 Extra params accepted for the cover are are (note spine and pageWidth are unit-less to allow for easy addition in the code):
 
-- spine - defaults to 25
-- pageWidth - defaults to 148 (for A5). Note this is the front cover width and not the full width of front cover and back cover and spine.
+- spine - the width of the spine (defaults to 25)
+- pageWidth - the front cover width (note is just the page width and not the full width of front cover and back cover and spine) - defaults to 148 (for A5).
 - pageHeight - defaults to 210 (for A5)
 - unit - which unit the above measurements are in (defaults to mm)
 - base-font-size - set the base font-size (10px by default), which may need to be increased if changing page size.
@@ -134,7 +134,7 @@ So default is the same as:
 prince "http://127.0.0.1:8080/en/2019/ebook?cover&spine=25&pageWidth=148&pageHeight=210&unit=mm&base-font-size=10px" -o static/pdfs/web_almanac_2019_en_cover_A5.pdf
 ```
 
-Note, simialr to above, this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing. Please remove this before checking in versions into git.
+Note, similar to above, this will create one extra page at the begining which will need to be removed with a PDF editor to start with a clean page for printing. Please remove this before checking in versions into git.
 
 With the print-ready eBook and Cover you can send them to a printer. I used https://www.digitalprintingireland.ie/ before and they were excellent and charge about €35 for a full-colour A5 ebook. Most of the settings above are for them, so tweak them based on your own printer's requirements.
 
@@ -142,7 +142,7 @@ With the print-ready eBook and Cover you can send them to a printer. I used http
 
 If you've been added to the "App Engine Deployers" role in the GCP project, you're able to push code changes to the production website.
 
-_Make sure you have generated the ebooks PDFs by running the Generate Ebooks GitHub Action_
+_Make sure you have generated the ebooks PDFs first in the main branch, by running the Generate Ebooks GitHub Action_
 
 1. Install the [`gcloud`](https://cloud.google.com/sdk/install) Google Cloud SDK.
 
