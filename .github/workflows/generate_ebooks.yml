@@ -39,10 +39,17 @@ jobs:
       run: |
         cd src
         npm install
+    - name: Install Asian Fonts
+      run: |
+        # Install Japanese san-serif font
+        sudo apt-get install -y fonts-ipafont-gothic
+        # Install Chinese san-serif font
+        sudo apt-get install -y fonts-arphic-uming
+        # Install Korean san-serif font
+        sudo apt-get install -y fonts-unfonts-core
     - name: Install PrinceXML
       run: |
         cd /tmp
-        sudo apt-get install -y fonts-takao-mincho
         wget https://www.princexml.com/download/${{ env.PRINCE_PACKAGE }}
         DEBIAN_FRONTEND=noninteractive sudo apt install -y /tmp/${{ env.PRINCE_PACKAGE }}
     - name: Install pdftk
