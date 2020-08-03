@@ -147,6 +147,14 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                     </svg>
                   </a>
                   {% endif %}
+                  {% if authordata.linkedin %}
+                  <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="author-{{ author }}-linkedin">
+                    <svg width="22" height="22" role="img">
+                      <title id="author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+                    </svg>
+                  </a>
+                  {% endif %}
                   {% if authordata.website %}
                   <a class="website" href="{{ authordata.website }}" aria-labelledby="author-{{ author }}-website">
                     <svg width="22" height="22" role="img">

@@ -338,6 +338,13 @@
             </svg>
           </a>
           {% endif %}
+          {% if contributor.linkedin %}
+          <a href="https://www.linkedin.com/in/{{ contributor.linkedin }}/" aria-label="{{ onLinkedIn(contributor.name) }}">
+            <svg width="22" height="22">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+            </svg>
+          </a>
+          {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-label="{{ website(contributor.name) }}">
             <svg width="22" height="22">
