@@ -35,7 +35,7 @@ Le principal objectif d’une page web est de fournir du contenu avec lequel les
 
 Il existe de nombreux cas où les visiteurs de votre site peuvent ne pas le voir parfaitement. Les visiteurs peuvent être daltoniens et être dans l’impossibilité de faire la distinction entre la police et la couleur d’arrière-plan ([1 homme sur 12 et 1 femme sur 200](http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf) en Europe). Peut-être qu’ils lisent simplement en extérieur avec un soleil créant des tonnes de reflets sur leur écran — ce qui nuit considérablement à leur vision. Ou peut-être qu’ils ont simplement vieilli et que leurs yeux ne peuvent pas distinguer les couleurs aussi bien qu’auparavant.
 
-Afin de vous assurer que votre site web soit lisible dans ces conditions, un contraste de couleur suffisant entre le texte et son arrière-plan est capital. また、色がグレースケールに変換されるときにどのようなコントラストが表示されるかを考慮することも重要です。
+Afin de vous assurer que votre site web soit lisible dans ces conditions, un contraste de couleur suffisant entre le texte et son arrière-plan est capital. Il est également important de prendre en compte les contrastes qui seront affichés lorsque les couleurs seront converties en niveaux de gris.
 
 <figure>
   <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
