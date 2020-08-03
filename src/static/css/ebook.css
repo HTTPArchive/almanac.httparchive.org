@@ -209,6 +209,11 @@ section.chapter {
   display: none;
 }
 
+.authors .social svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
 @prince-pdf {
   prince-pdf-display-doc-title: true;
 }
@@ -453,11 +458,6 @@ section.chapter {
     }
   }
 
-  .authors .social svg {
-    height: 1.5rem;
-    width: 1.5rem;
-  }
-
   .fn {
     display: inline;
     float: footnote;
@@ -480,7 +480,7 @@ section.chapter {
   }
 
   .authors .social .fn::footnote-call {
-    vertical-align: sub;
+    vertical-align: 1.3rem;
   }
 
   .fn::footnote-marker {
