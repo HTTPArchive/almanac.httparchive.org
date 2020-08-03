@@ -361,6 +361,14 @@
             </svg>
           </a>
           {% endif %}
+          {% if contributor.linkedin %}
+          <a href="https://github.com/{{ contributor.linkedin }}" aria-labelledby="contributors-{{ id }}-linkedin">
+            <svg role="img">
+              <title id="contributors-{{ id }}-linkedin">{{ onLinkedIn(contributor.name) }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+            </svg>
+          </a>
+          {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
             <svg role="img">
