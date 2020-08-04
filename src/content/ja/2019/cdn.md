@@ -88,7 +88,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
     <img alt="ベースHTMLページの提供に使用される最も人気のあるCDN" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/cdn/html_cdn_usage.png" width="600" height="371">
   </a>
   <div id="fig2-description" class="visually-hidden">表3のデータを示すツリーマップグラフ。</div>
-  <figcaption id="fig2-caption">図 2: HTML CDNの使用</figcaption>
+  <figcaption id="fig2-caption">図 2. HTML CDNの使用</figcaption>
 </figure>
 
 <figure>
