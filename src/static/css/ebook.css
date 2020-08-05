@@ -145,24 +145,20 @@ tbody tr:nth-child(even) {
   float: left;
 }
 
-.contributor-social a {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 5px;
-  height: 1.1rem;
-  width: 1.1rem;
-}
-
 .contributor-social svg {
-  height: 1.1rem;
-  width: 1.1rem;
+  height: 1rem;
+  width: 1rem;
+  vertical-align: middle;
 }
 
 .contributor-teams {
-  margin-top: 5px;
+  line-height: 1;
 }
 
-.contributor-team {
+.contributor-team,
+.contributor-social,
+.contributor-social a,
+.contributor-social a:visited {
   font-size: 14px;
   font-size: 0.875rem;
   color: #757575;

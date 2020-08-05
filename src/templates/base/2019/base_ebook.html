@@ -343,16 +343,23 @@
       <li class="contributor" id="contributors-{{ id }}">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" />
         <div>
-          <span class="contributor-name">{{ contributor.name }}</span>
-          <span class="contributor-social">
-            {% if contributor.twitter %} (@{{ contributor.twitter }}){% endif %}
-        </span>
-          <br>
-          <span class="contributor-teams">
+          <div class="contributor-name">{{ contributor.name }}</div>
+          {% if contributor.twitter %}
+          <div class="contributor-social">
+            <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
+              <svg>
+                <title id="author-{{ author }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+              </svg>
+              @{{ contributor.twitter }}
+            </a>
+          </div>
+          {% endif %}
+          <div class="contributor-teams">
             {% for id in contributor.teams | sort() %}
               <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
             {% endfor %}
-          </span>
+          </div>
         </div>
       </li>
     {% endfor %}
