@@ -62,7 +62,7 @@ CMSについて考えるとき、ウェブ上にコンテンツを公開する�
   <a href="/static/images/2019/cms/cms-logos.png">
     <img src="/static/images/2019/cms/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="図3. 上位のコンテンツ管理システム。" width="600" height="559">
   </a>
-  <div id="fig3-description" class="visually-hidden">Logos of the top CMS providers, including WordPress, Drupal, Wix, etc.</div>
+  <div id="fig3-description" class="visually-hidden">WordPress、Drupal、WixなどのトップCMSプロバイダーのロゴマーク。</div>
   <figcaption id="fig3-caption">図3. 上位のコンテンツ管理システム。</figcaption>
 </figure>
 
