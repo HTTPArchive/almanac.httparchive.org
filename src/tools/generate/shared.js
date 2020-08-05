@@ -33,6 +33,21 @@ const find_config_files = async () => {
   return await recursive('config', [filter]);
 };
 
+const get_config_files = async () => {
+
+  let configs = {};
+
+  for (const config_file of await find_config_files()) {
+    const re = (process.platform != 'win32') 
+                  ? /config\/([0-9]*).json/ 
+                  : /config\\([0-9]*).json/;
+    const [path,year] = config_file.match(re);
+    
+    configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
+  }
+  return configs;
+};
+
 const size_of = async (path) => {
   let b = (await fs.stat(path)).size;
 
@@ -58,6 +73,7 @@ module.exports = {
   find_markdown_files,
   find_template_files,
   find_config_files,
+  get_config_files,
   size_of,
   parse_array
 };
