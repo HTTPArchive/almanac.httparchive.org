@@ -153,6 +153,7 @@ tbody tr:nth-child(even) {
 
 .contributor-teams {
   line-height: 1;
+  color: #757575;
 }
 
 .contributor-team,
@@ -162,14 +163,7 @@ tbody tr:nth-child(even) {
   font-size: 14px;
   font-size: 0.875rem;
   color: #757575;
-}
-
-.contributor-team::after {
-  content: ', ';
-}
-
-.contributor-team:last-child::after {
-  content: '';
+  white-space: nowrap;
 }
 
 .social-icon {
