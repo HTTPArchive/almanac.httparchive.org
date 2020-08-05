@@ -126,5 +126,3 @@ jobs:
 
           [1]: https://github.com/peter-evans/create-pull-request
         labels: generate chapters
-    - name: Check outputs
-      run: echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
