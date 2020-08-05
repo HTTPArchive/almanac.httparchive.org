@@ -1,16 +1,6 @@
 name: Run Python Tests
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - src/config/**
-      - src/**.py
-      - src/requirements.txt
-  pull_request:
-    paths:
-      - src/config/**
-      - src/**.py
-      - src/requirements.txt
 jobs:
   tests:
     name: Run pytest
