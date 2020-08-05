@@ -113,7 +113,6 @@ jobs:
         npm run test
     - name: Create Pull Request
       if: github.event_name != 'pull_request'
-      id: cpr
       uses: peter-evans/create-pull-request@v3
       with:
         title: Update datestamps and generate chapters
