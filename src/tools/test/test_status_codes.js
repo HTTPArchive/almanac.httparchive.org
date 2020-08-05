@@ -2,7 +2,7 @@ const fs = require("fs-extra");
 const fetch = require("node-fetch");
 const convert = require('xml-js');
 
-const { get_config_files } = require('../generate/shared');
+const { get_yearly_configs } = require('../generate/shared');
 
 const default_year = 2019;
 const default_language = 'en';
@@ -17,7 +17,7 @@ let ebooks = {};
 
 const get_config = async () => {
 
-  configs = await get_config_files();
+  configs = await get_yearly_configs();
   for (const year in configs) {
     languages[year] = configs[year].settings[0].supported_languages;
     ebooks[year] = configs[year].settings[0].ebook_languages;

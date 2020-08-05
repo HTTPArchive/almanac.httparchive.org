@@ -3,7 +3,7 @@ const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
 
-const { find_markdown_files, get_config_files, size_of, parse_array } = require('./shared');
+const { find_markdown_files, get_yearly_configs, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
@@ -27,7 +27,7 @@ const generate_chapters = async () => {
   let ebook_chapters = [];
   let configs = {};
   
-  configs = await get_config_files();
+  configs = await get_yearly_configs();
   for (const year in configs) {  
     sitemap_languages[year] = configs[year].settings[0].supported_languages
   }

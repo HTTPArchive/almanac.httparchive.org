@@ -33,7 +33,7 @@ const find_config_files = async () => {
   return await recursive('config', [filter]);
 };
 
-const get_config_files = async () => {
+const get_yearly_configs = async () => {
 
   let configs = {};
 
@@ -73,7 +73,7 @@ module.exports = {
   find_markdown_files,
   find_template_files,
   find_config_files,
-  get_config_files,
+  get_yearly_configs,
   size_of,
   parse_array
 };
