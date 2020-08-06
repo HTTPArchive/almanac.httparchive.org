@@ -132,6 +132,8 @@ tbody tr:nth-child(even) {
   vertical-align: middle;
   overflow: auto;
   min-height: 7rem;
+  display: flex;
+  flex: column;
 }
 
 .contributor-avatar {
@@ -140,9 +142,14 @@ tbody tr:nth-child(even) {
   margin-bottom: 1rem;
   margin-right: 1rem;
   width: 5rem;
+  max-width: 5rem;
   height: auto;
   transition-duration: 0.3s;
-  float: left;
+  flex: 1;
+}
+
+.contributor-social .info {
+  max-width: 25vw;
 }
 
 .contributor-social svg {
@@ -163,6 +170,9 @@ tbody tr:nth-child(even) {
   font-size: 14px;
   font-size: 0.875rem;
   color: #757575;
+}
+
+.contributor-team {
   white-space: nowrap;
 }
 

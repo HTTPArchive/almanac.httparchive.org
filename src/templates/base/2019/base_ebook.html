@@ -355,6 +355,39 @@
             </a>
           </div>
           {% endif %}
+          {% if contributor.github %}
+          <div class="contributor-social">
+            <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
+              <svg>
+                <title id="author-{{ author }}-github">{{ onTwitter(contributor.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+              @{{ contributor.github }}
+            </a>
+          </div>
+          {% endif %}
+          {% if contributor.linkedin %}
+          <div class="contributor-social">
+            <a href="https://www.linkedin.com/in/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-linkedin">
+              <svg>
+                <title id="author-{{ author }}-linkedin">{{ onTwitter(contributor.linkedin) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+              @{{ contributor.linkedin }}
+            </a>
+          </div>
+          {% endif %}
+          {% if contributor.website %}
+          <div class="contributor-social">
+            <a href="{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-website">
+              <svg>
+                <title id="author-{{ author }}-website">{{ contributor.website }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
+              @{{ contributor.website }}
+            </a>
+          </div>
+          {% endif %}
           <div class="contributor-teams">
             {% for id in contributor.teams | sort() %}
               <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
