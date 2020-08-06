@@ -130,7 +130,7 @@
 }
 
 .contributor-social {
-  flex: 1
+  flex: 1;
 }
 
 .contributor-social a {
@@ -141,19 +141,13 @@
 .contributor-teams {
   margin-top: 5px;
   text-align: center;
+  color: #757575;
 }
 
 .contributor-team {
   font-size: 14px;
   font-size: 0.875rem;
-  color: #757575;
   white-space: nowrap;
-}
-.contributor-team::after {
-  content: ', ';
-}
-.contributor-team:last-child::after {
-  content: '';
 }
 
 {% for id in config.teams.keys() %}
@@ -356,7 +350,7 @@
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
           {% endfor %}
         </div>
       </li>
