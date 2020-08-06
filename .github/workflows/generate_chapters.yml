@@ -37,7 +37,7 @@ jobs:
     - name: Update version numbers and timestamps
       if: github.event_name == 'push'
       env:
-        COMMIT_SHA: ${{ github.event.commits[0].id }}
+        COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/update_timestamps_versions.sh
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1
