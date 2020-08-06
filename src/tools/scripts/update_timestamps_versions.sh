@@ -30,6 +30,10 @@ if [ -d "src" ]; then
   cd src
 fi
 
+# You have to do some funky stuff for the version of sed on MacOS
+# https://stackoverflow.com/questions/5694228/sed-in-place-flag-that-works-both-on-mac-bsd-and-linux
+# Will mostly be running through GitHub Action but handy to have it working for
+# local development and debugging of this script.
 # Default case for Linux sed, just use "-i -r"
 SED_FLAGS=(-i -r)
 if [ $(uname) = 'Darwin' ]; then
