@@ -46,7 +46,6 @@
   {% if featured_quotes %}
   {# Get a random quote server side for those without JS #}
   {%- set random_chapter = featured_quotes.keys()|list()|random %}
-  {%- set random_chapter = 'javascript' %}
   {%- set featured_chapter_quotes = featured_quotes.get(random_chapter) %}
   {%- if not featured_chapter_quotes.get('stat_1') %}{% set stat1_hidden = "hidden" %}{% endif %}
   {%- if not featured_chapter_quotes.get('stat_2') %}{% set stat2_hidden = "hidden" %}{% endif %}
