@@ -11,6 +11,10 @@
 #
 # This script is run in a GitHub Action and should not need to be run manually
 #
+# Note:  we use basic sed with no support for "+" (one or more) and instead
+# fake it with syntax like "[0-9][0-9]*" to avoid having to enable extended
+# regex which would require more escapes.
+#
 
 if [ "$#" -eq 1 ]; then
 COMMIT_SHA=$1
@@ -84,7 +88,7 @@ function update_timestamp {
 
 update_versions "css"
 update_versions "js"
-update_timestamp "content" "^src/content\/[a-z]*\/[0-9]*\/[a-z0-9-]*\.md"
+update_timestamp "content" "^src/content\/[a-z][a-z](-[A-Z][A-Z])?\/20[0-9]*\/[a-z0-9-]*\.md"
 update_timestamp "templates" "^src\/templates\/[a-z][a-z](-[A-Z][A-Z])?\/20[0-9][0-9]\/[a-zA-Z0-9_]*\.html"
 update_timestamp "templates" "^src\/templates\/[a-z][a-z](-[A-Z][A-Z])?\/[a-zA-Z0-9_]*\.html"
 
