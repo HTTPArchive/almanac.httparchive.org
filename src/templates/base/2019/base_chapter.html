@@ -2,12 +2,12 @@
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 
+{% block date_published %}{{ metadata.published }}{% endblock %}
+{% block date_modified %}{{ metadata.last_updated }}{% endblock %}
+
 {% block image_url %}https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
-
-{% block date_published %}{{ metadata.get('published','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
-{% block date_modified %}{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
 
 {% block author_structured_data %}
       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
@@ -144,6 +144,14 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                     <svg width="22" height="22" role="img">
                       <title id="author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                    </svg>
+                  </a>
+                  {% endif %}
+                  {% if authordata.linkedin %}
+                  <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="author-{{ author }}-linkedin">
+                    <svg width="22" height="22" role="img">
+                      <title id="author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
                     </svg>
                   </a>
                   {% endif %}

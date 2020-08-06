@@ -213,6 +213,17 @@
       "github": "AAgar",
       "twitter": "AAgar"
     },
+     "adityapandey1998": {
+      "name": "Aditya Pandey",
+      "teams": [
+        "analysts",
+        "developers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/31750960?v=4&s=200",
+      "github": "adityapandey1998",
+      "twitter": "adityapandey98",
+      "linkedin": "adityapandey98"
+    },
     "alexdenning": {
       "name": "Alex Denning",
       "teams": [
@@ -318,6 +329,7 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
       "github": "bazzadp",
+      "linkedin": "barry-pollard-developer",
       "twitter": "tunetheweb"
     },
     "bseymour": {
@@ -690,7 +702,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13718746?v=4&s=200",
-      "website": "https://www.linkedin.com/in/johnfox/",
+      "linkedin": "johnfox",
       "github": "clarkeclark"
     },
     "logicalphase": {
@@ -881,7 +893,7 @@
         "translators"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/868584?v=4&s=200",
-      "website": "https://www.linkedin.com/in/miguelcarlosmartinezdiaz/",
+      "linkedin": "miguelcarlosmartinezdiaz",
       "github": "mcmd",
       "twitter": "mcmd"
     },
@@ -1116,7 +1128,9 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
-      "github": "rockeynebhwani"
+      "github": "rockeynebhwani",
+      "twitter": "rnebhwani",
+      "linkedin": "rockeynebhwani"
     },
     "RoelN": {
       "name": "Roel Nieskens",

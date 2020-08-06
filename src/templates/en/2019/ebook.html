@@ -475,6 +475,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -1165,6 +1172,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -1579,6 +1593,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -1603,7 +1624,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"I","chapter_number":4,"title":"Media","description":"Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":null,"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"I","chapter_number":4,"title":"Media","description":"Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":null,"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-04T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -1828,7 +1849,7 @@
       </a>
       <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig7-description" data-show-text="{{ show_description(7) }}" data-hide-text="{{ hide_description(7) }}">{{ show_description(7) }}</button>
       <div id="media-fig7-description" class="visually-hidden">A tree map showing that JPEGs are used 60.27% of the time, PNGs 28.2%, WebP 4.2%, GIF 3.67%, and SVG 3.63%.</div>
-      <figcaption id="media-fig7-caption">Figure 7: Image format usage.</figcaption>
+      <figcaption id="media-fig7-caption"><a href="#media-fig-7" class="anchor-link">Figure 7.</a> Image format usage.</figcaption>
     </figure>
     <p>Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of <code>google.com</code> and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images, 61 images at the 90th percentile, and a whopping 229 images at the 99th percentile.</p>
     <figure id="media-fig-8">
@@ -2113,6 +2134,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -2475,6 +2503,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -3174,6 +3209,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -3498,6 +3540,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -4415,6 +4464,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -4439,7 +4495,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"II","chapter_number":9,"title":"Accessibility","description":"Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":null,"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-27T00:00:00.000Z","chapter":"accessibility"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"II","chapter_number":9,"title":"Accessibility","description":"Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":null,"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-02T00:00:00.000Z","chapter":"accessibility"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -4490,9 +4546,7 @@
         <img alt="Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="accessibility-fig1-caption" aria-describedby="accessibility-fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300" />
       </a>
       <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig1-description" data-show-text="{{ show_description(1) }}" data-hide-text="{{ hide_description(1) }}">{{ show_description(1) }}</button>
-      <div id="accessibility-fig1-description" class="visually-hidden">
-        Four colored boxes of brown and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the brown background color written as <coce>#FCA469. The right column says Recommended and the brown background color is written as <code>#BD5B0E</code>. The top box in each column has an brown background with white text <code>#FFFFFF</code> and the bottom box has a gray background with white text <code>#FFFFFF</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Courtesy of LookZook</coce>
-      </div>
+      <div id="accessibility-fig1-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the brown background color written as <code>#FCA469</code>. The right column says Recommended and the brown background color is written as <code>#BD5B0E</code>. The top box in each column has an brown background with white text <code>#FFFFFF</code> and the bottom box has a gray background with white text <code>#FFFFFF</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Courtesy of LookZook</div>
       <figcaption id="accessibility-fig1-caption"><a href="#accessibility-fig-1" class="anchor-link">Figure 1.</a> Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
     </figure>
     <p>Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.</p>
@@ -4764,6 +4818,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -5261,6 +5322,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -5546,6 +5614,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -5911,6 +5986,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -6573,6 +6655,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -7289,6 +7378,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -7673,6 +7769,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -8412,6 +8515,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -8436,7 +8546,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT &amp; TLS management, HTTP/2 adoption, caching and common library and content CDNs.","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":null,"discuss":"1772","results":"https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/","queries":"17_CDN","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-19T00:00:00.000Z","chapter":"cdn"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT &amp; TLS management, HTTP/2 adoption, caching and common library and content CDNs.","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":null,"discuss":"1772","results":"https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/","queries":"17_CDN","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-04T00:00:00.000Z","chapter":"cdn"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -8532,7 +8642,7 @@
       </a>
       <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
       <div id="cdn-fig2-description" class="visually-hidden">Treemap graph showing the data from Table 3.</div>
-      <figcaption id="cdn-fig2-caption">Figure 2: HTML CDN usage.</figcaption>
+      <figcaption id="cdn-fig2-caption"><a href="#cdn-fig-2" class="anchor-link">Figure 2.</a> HTML CDN usage.</figcaption>
     </figure>
     <figure id="cdn-fig-3">
       <div class="table-wrap">
@@ -10029,6 +10139,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -10909,6 +11026,13 @@
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
               <svg role="img">
@@ -11214,6 +11338,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
@@ -12012,6 +12143,13 @@
               <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+            </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.website %}
