@@ -2,12 +2,12 @@
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 
+{% block date_published %}{{ metadata.published }}{% endblock %}
+{% block date_modified %}{{ metadata.last_updated }}{% endblock %}
+
 {% block image_url %}https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
-
-{% block date_published %}{{ metadata.get('published','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
-{% block date_modified %}{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
 
 {% block author_structured_data %}
       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}

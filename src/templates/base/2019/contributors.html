@@ -107,8 +107,13 @@
   margin: 10px;
 }
 
-.contributor:focus .contributor-avatar{
-    transform: scale(1.1);
+.contributor:focus .contributor-avatar {
+  transform: scale(1.1);
+}
+
+.contributor:focus {
+  border: 2px solid #f7f779;
+  outline: none;
 }
 
 .contributor-avatar {
@@ -130,7 +135,7 @@
 }
 
 .contributor-social {
-  flex: 1
+  flex: 1;
 }
 
 .contributor-social a {
@@ -141,19 +146,13 @@
 .contributor-teams {
   margin-top: 5px;
   text-align: center;
+  color: #757575;
 }
 
 .contributor-team {
   font-size: 14px;
   font-size: 0.875rem;
-  color: #757575;
   white-space: nowrap;
-}
-.contributor-team::after {
-  content: ', ';
-}
-.contributor-team:last-child::after {
-  content: '';
 }
 
 {% for id in config.teams.keys() %}
@@ -319,7 +318,7 @@
         </a>
       </li>
     {% for id, contributor in config.contributors.items() %}
-      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
+      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
@@ -356,7 +355,7 @@
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
           {% endfor %}
         </div>
       </li>
