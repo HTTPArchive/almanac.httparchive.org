@@ -67,15 +67,15 @@ function update_timestamp {
       echo "Updating ${CHANGED_FILE} timestamp to ${NEW_SHORT_DATE}:"
       if [ "${DIRECTORY}" = "content" ]; then
         if [ "${MACOS}" = true ]; then
-          sed -i '' "s/^last_updated: [0-9-]*T/last_updated: ${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
+          sed -i '' "s/^last_updated: [0-9-][0-9-]*T/last_updated: ${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
         else
-          sed -i "s/^last_updated: [0-9-]*T/last_updated: ${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
+          sed -i "s/^last_updated: [0-9-][0-9-]*T/last_updated: ${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
         fi
       else
         if [ "${MACOS}" = true ]; then
-          sed -i '' "s/block date_modified/block date_modified/" ../${CHANGED_FILE}
+          sed -i '' "s/block date_modified %}[0-9-][0-9-]*T/block date_modified %}${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
         else
-          sed -i "s/block date_modified/block date_modified/" ../${CHANGED_FILE}
+          sed -i "s/block date_modified %}[0-9-][0-9-]*T/block date_modified %}${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
         fi
       fi
     fi
@@ -84,9 +84,9 @@ function update_timestamp {
 
 update_versions "css"
 update_versions "js"
-update_timestamp "content" "^src/content\/[a-z]*\/[0-9]*\/[a-z0-9-]*.md"
-update_timestamp "templates" "^src\/templates\/[a-z][a-z](-[A-Z][A-Z])+\/20[0-9][0-9]\/[a-zA-Z0-9_]*.html"
-update_timestamp "templates" "^src\/templates\/[a-z][a-z](-[A-Z][A-Z])+\/[a-zA-Z0-9_]*.html"
+update_timestamp "content" "^src/content\/[a-z]*\/[0-9]*\/[a-z0-9-]*\.md"
+update_timestamp "templates" "^src\/templates\/[a-z][a-z](-[A-Z][A-Z])?\/20[0-9][0-9]\/[a-zA-Z0-9_]*\.html"
+update_timestamp "templates" "^src\/templates\/[a-z][a-z](-[A-Z][A-Z])?\/[a-zA-Z0-9_]*\.html"
 
 git status
 
