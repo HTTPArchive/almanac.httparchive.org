@@ -147,7 +147,7 @@ tbody tr:nth-child(even) {
 }
 
 .contributor-social svg,
-.authors .social svg  {
+.authors .social svg {
   height: 1rem;
   width: 1rem;
   vertical-align: middle;
