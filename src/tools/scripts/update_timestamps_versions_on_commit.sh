@@ -30,7 +30,7 @@ if [ -d "src" ]; then
   cd src
 fi
 
-# Default case for Linux sed, just use "-i"
+# Default case for Linux sed, just use "-i -r"
 SED_FLAGS=(-i -r)
 if [ $(uname) = 'Darwin' ]; then
   echo "Running MacOS"
