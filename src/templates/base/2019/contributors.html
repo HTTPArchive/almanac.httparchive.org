@@ -107,8 +107,13 @@
   margin: 10px;
 }
 
-.contributor:focus .contributor-avatar{
-    transform: scale(1.1);
+.contributor:focus .contributor-avatar {
+  transform: scale(1.1);
+}
+
+.contributor:focus {
+  border: 2px solid #f7f779;
+  outline: none;
 }
 
 .contributor-avatar {
@@ -313,7 +318,7 @@
         </a>
       </li>
     {% for id, contributor in config.contributors.items() %}
-      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
+      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
