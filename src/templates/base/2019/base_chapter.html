@@ -6,9 +6,6 @@
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
 
-{% block date_published %}{{ metadata.get('published','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
-{% block date_modified %}{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
-
 {% block author_structured_data %}
       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
       {% set authordata = config.contributors[author] if author in config.contributors else None -%}
