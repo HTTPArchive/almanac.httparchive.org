@@ -12,9 +12,6 @@
 
 {% set metadata = <%- JSON.stringify(metadata) %> %}
 
-{% block date_published %}<%- metadata['published'] %>{% endblock %}
-{% block date_modified %}<%- metadata.last_updated %>{% endblock %}
-
 {% block index %}
   <%- include('toc.html', { headings: toc }) %>
 {% endblock %}
