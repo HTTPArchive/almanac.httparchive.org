@@ -1,5 +1,17 @@
 #!/bin/bash
 
+######################################
+## Custom Web Almanac script        ##
+######################################
+#
+# This script updates CSS and JS reference to new versions numbers
+# when they are included in a commit. This is used for cahce busting.
+# 
+# It also updates timestamps for any .md and .html files changed
+#
+# This script is run in a GitHub Action and should not need to be run manually
+#
+
 if [ "$#" -eq 1 ]; then
 COMMIT_SHA=$1
 fi
@@ -15,8 +27,7 @@ if [ -d "src" ]; then
   cd src
 fi
 
-unamestr=$(uname)
-if [ "$unamestr" = 'Darwin' ]; then
+if [ $(uname) = 'Darwin' ]; then
   echo "Running MacOS"
   MACOS=true
 fi

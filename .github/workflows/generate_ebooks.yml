@@ -30,15 +30,6 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.7'
-    - name: Install Python requirements
-      run: |
-        python -m pip install --upgrade pip
-        cd src
-        pip install -r requirements.txt
-    - name: Install node modules
-      run: |
-        cd src
-        npm install
     - name: Install Asian Fonts
       run: |
         # Install Japanese san-serif font
@@ -49,15 +40,12 @@ jobs:
         sudo apt-get install -y fonts-unfonts-core
     - name: Install PrinceXML
       run: |
-        cd /tmp
-        wget https://www.princexml.com/download/${{ env.PRINCE_PACKAGE }}
+        wget https://www.princexml.com/download/${{ env.PRINCE_PACKAGE }} --directory-prefix=/tmp
         DEBIAN_FRONTEND=noninteractive sudo apt install -y /tmp/${{ env.PRINCE_PACKAGE }}
     - name: Install pdftk
       run: sudo apt install pdftk
-    - name: Run website
-      run: |
-        cd src
-        python main.py background &
+    - name: Run the website
+      run: ./src/tools/scripts/run_and_test_website.sh
     - name: Generating Ebooks
       run: |
         cd src
