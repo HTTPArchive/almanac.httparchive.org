@@ -41,8 +41,8 @@ if [ $(uname) = 'Darwin' ]; then
   SED_FLAGS=(-i "" -E)
 fi
 
-NEW_LONG_DATE=`date +%Y%m%d%H%M%S`
-NEW_SHORT_DATE=`date '+%Y-%m-%d'`
+NEW_LONG_DATE=`date -u +%Y%m%d%H%M%S`
+NEW_SHORT_DATE=${NEW_LONG_DATE:0:4}-${NEW_LONG_DATE:4:2}-${NEW_LONG_DATE:6:2}
 
 echo "Files changed in this commit:"
 git diff-tree --diff-filter=AM --no-commit-id --name-only -r ${COMMIT_SHA}
