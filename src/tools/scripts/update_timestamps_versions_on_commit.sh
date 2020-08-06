@@ -51,11 +51,9 @@ function update_versions {
     CHANGED_FILE=`basename ${CHANGED_FILE}`
     echo "Updating ${CHANGED_FILE} version number to ${NEW_LONG_DATE}"
     if [ "${MACOS}" = true ]; then
-      sed -i '' s/${CHANGED_FILE}\?v=[0-9][0-9]*/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base/*/*.html
-      sed -i '' s/${CHANGED_FILE}\?v=[0-9][0-9]*/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base.html
+      sed -i '' s/${CHANGED_FILE}\?v=[0-9][0-9]*/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base/*/*.html templates/base.html
     else
-      sed -i s/${CHANGED_FILE}\?v=[0-9][0-9]*/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base/*/*.html
-      sed -i s/${CHANGED_FILE}\?v=[0-9][0-9]*/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base.html
+      sed -i s/${CHANGED_FILE}\?v=[0-9][0-9]*/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base/*/*.html templates/base.html
     fi
   done
 }
