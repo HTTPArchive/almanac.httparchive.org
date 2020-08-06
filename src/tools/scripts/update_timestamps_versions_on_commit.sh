@@ -29,9 +29,7 @@ fi
 
 if [ $(uname) = 'Darwin' ]; then
   echo "Running MacOS"
-  SED_ARGS = "-i '' -E"
-else
-  SED_ARGS = "-E"
+  MACOS=true
 fi
 
 NEW_LONG_DATE=`date +%Y%m%d%H%M%S`
@@ -48,7 +46,11 @@ function update_versions {
   do
     CHANGED_FILE=`basename ${CHANGED_FILE}`
     echo "Updating ${CHANGED_FILE} version number to ${NEW_LONG_DATE}"
-    sed ${SED_ARGS} s/${CHANGED_FILE}\?v=[0-9]+/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base/*/*.html templates/base.html
+    if [ "${MACOS}" = true ]; then
+      sed -i '' -E s/${CHANGED_FILE}\?v=[0-9]+/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base/*/*.html templates/base.html
+    else
+      sed -i -r s/${CHANGED_FILE}\?v=[0-9]+/${CHANGED_FILE}\?v=${NEW_LONG_DATE}/ templates/base/*/*.html templates/base.html
+    fi
   done
 }
 
@@ -62,9 +64,17 @@ function update_timestamp {
     if [[ "${CHANGED_FILE}" =~ ${FILE_PATTERN} ]]; then
       echo "Updating ${CHANGED_FILE} timestamp to ${NEW_SHORT_DATE}:"
       if [ "${DIRECTORY}" = "content" ]; then
-        sed ${SED_ARGS} "s/^last_updated: [0-9-]+T/last_updated: ${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
+        if [ "${MACOS}" = true ]; then
+          sed -i '' -E "s/^last_updated: [0-9-]+T/last_updated: ${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
+        else
+          sed -i -r "s/^last_updated: [0-9-]+T/last_updated: ${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
+        fi
       else
-        sed ${SED_ARGS} -E "s/block date_modified %}[0-9-]+T/block date_modified %}${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
+        if [ "${MACOS}" = true ]; then
+          sed -i '' -E "s/block date_modified %}[0-9-]+T/block date_modified %}${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
+        else
+          sed -i "s/block date_modified %}[0-9-]+T/block date_modified %}${NEW_SHORT_DATE}T/" ../${CHANGED_FILE}
+        fi
       fi
     fi
   done
