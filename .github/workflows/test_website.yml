@@ -3,7 +3,7 @@
 ######################################
 #
 # This generates the chapters and tests the website when a pull request is
-# opened or added to on the original repo
+# opened (or added to) on the original repo
 #
 name: Test Website
 on:

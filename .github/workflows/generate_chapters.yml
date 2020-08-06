@@ -14,7 +14,9 @@
 name: Generate Chapters
 on:
   workflow_dispatch:
-  pull_request:
+  push:
+    branches:
+      - main
     paths:
       - src/**.js
       - src/**.css
@@ -34,7 +36,7 @@ jobs:
         fetch-depth: 0
     - name: Update version numbers and timestamps
       env:
-        COMMIT_SHA: ${{ github.event.commits[0].id }}
+        COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/update_timestamps_versions_on_commit.sh
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1
@@ -47,6 +49,7 @@ jobs:
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Create Pull Request
+      id: cpr
       uses: peter-evans/create-pull-request@v3
       with:
         title: Update datestamps and generate chapters
