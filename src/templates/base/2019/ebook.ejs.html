@@ -35,14 +35,14 @@
 
             <div class="byline">{{ self.written_by_before() }}
                 {% for author in metadata.get('authors') %}
-                <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+                <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.written_by_after() }}
             </div>
             
             <div class="byline reviewers">{{ self.reviewed_by_before() }}
                 {% for reviewer in metadata.get('reviewers') %}
-                <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+                <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.reviewed_by_after() }}
             </div>
@@ -50,7 +50,7 @@
             {% if metadata.get('translators') | length >= 1 %}
             <div class="byline translators">{{ self.translated_by_before() }}
                 {% for translator in metadata.get('translators') %}
-                <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+                <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }}
                 {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
                 {% endfor %}{{ self.translated_by_after() }}
             </div>
