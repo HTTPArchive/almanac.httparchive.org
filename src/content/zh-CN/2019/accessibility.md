@@ -41,7 +41,7 @@ last_updated: 2020-05-27T00:00:00.000Z
   <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
     <img alt="图1.色彩对比度不足的文本示例。由LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
   </a>
-  <div id="fig1-description" class="visually-hidden">四个彩色框，由棕色和灰色阴影填充，内部是白色文本。创建两个列。 左列说明颜色太浅，棕色背景色写为<code>#FCA469</code>. 右列是推荐的，棕色背景色写为<code>#BD5B0E</code>。每列的顶部框是带有棕色背景的白色文本<code>#FFFFFF</code> 底部框是带有灰色背景的白色文本 <code>#FFFFFF</code>。等效的灰度分别是 <code>#B8B8B8</code> 和 <code>#707070</code> 。由LookZook提供</div>
+  <div id="fig1-description" class="visually-hidden">四个彩色框，由棕色和灰色阴影填充，内部是白色文本。创建两个列。 左列说明颜色太浅，棕色背景色写为<code>#FCA469</code>. 右列是推荐的，棕色背景色写为<code>#BD5B0E</code>。每列的顶部框是带有棕色背景的白色文本<code>#FFFFFF</code> 底部框是带有灰色背景的白色文本 <code>#FFFFFF</code>。等效的灰度分别是 <code>#B8B8B8</code> 和 <code>#707070</code>。由LookZook提供</div>
   <figcaption id="fig1-caption">图1.色彩对比度不足的文本示例。由LookZook提供</figcaption>
 </figure>
 
