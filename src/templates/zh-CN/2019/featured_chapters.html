@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}
+{%- set featured_chapter = ("accessibility","accessibility") | random %}{#  Below is the full set of chapters. If all are translated then replace above line with this one.  Until then, add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)  {%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}#}
 {%- if featured_chapter == "javascript" %}
   {%- set featured_chapter_name = "JavaScript" %}
   {%- set featured_chapter_quote = "JavaScript是我们发送给浏览器的最昂贵的资源;必须下载、解析、编译，最后执行。尽管浏览器大大减少了解析和编译脚本的时间，但在web页面处理JavaScript时，下载和执行已经成为最昂贵的阶段。" %}
