@@ -19,9 +19,9 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 当考虑到残疾用户时，我们应该记住他们的用户旅程通常是相同的——他们只是使用不同的工具。这些流行的工具包括但不限于:屏幕阅读器、屏幕放大器、浏览器或文本缩放以及语音控制。
 
-通常，提高站点的可访问性对每个人都有好处。虽然我们通常认为残疾人是永久性残疾，但任何人都可能有暂时的或随着环境变化的残疾。例如失明，有人可能是永久失明，有人是暂时的眼睛感染，而有人在特定的情况下，比如在外面强烈的阳光下。所有这些都可以解释为什么有些人看不见自己的屏幕。每个人都有环境障碍，因此改进web页面的可访问性将改善所有用户在任何情况下的体验。
+通常，提高站点的可访问性对每个人都有好处。虽然我们通常认为残疾人是永久性残疾，但任何人都可能有暂时的或随着环境变化的残疾。例如失明，有人可能是永久失明，有人是暂时的眼睛感染，而有人在特定的情况下失明，比如在外面强烈的阳光之下。所有这些都可以解释为什么有些人看不见自己的屏幕。每个人都有环境障碍，因此改进web页面的可访问性将改善所有用户在任何情况下的体验。
 
-[网页内容易读性指引](https://www.w3.org/WAI/WCAG21/quickref/) (WCAG) 就如何使网页容易易阅读提供意见。这些准则被用作我们分析的基础。然而，在许多情况下，很难通过编程来分析网站的可访问性。例如，web平台提供了几种实现类似功能结果的方法，但是支持它们的底层代码可能完全不同。因此，我们的分析只是对整体网页可访问性的一个近似。
+[网页内容易读性指引](https://www.w3.org/WAI/WCAG21/quickref/) (WCAG) 针对如何使网页容易易阅读提供意见。这些准则被用作我们分析的基础。然而，在许多情况下，很难通过编程来分析网站的可访问性。例如，web平台提供了几种实现类似功能结果的方法，但是支持它们的底层代码可能完全不同。因此，我们的分析只是对整体网页可访问性的一个近似分析。
 
 我们将最有趣的观点分为四类:阅读的便捷性、网络媒体、页面导航的便捷性以及与辅助技术的兼容性。
 
@@ -89,7 +89,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 有趣的是，这个问题大部分似乎是因为一些流行的第三方样式表默认包含了无限循环的CSS动画。我们无法确定有多少页面实际使用了这些动画样式。
 
-## 网上的媒体
+## 网络媒体
 
 ### 图像上的替代文本
 
@@ -103,7 +103,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 在使用  [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)或 [`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) 元素的网站中，只有0.54％提供字幕(根据包含[`<track>`](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)  元素来评估)。请注意，某些网站具有用于向用户提供视频和音频字幕的自定义解决方案。 我们无法检测到这些，因此使用字幕的网站的真实百分比略高。
 
-## 容易的页面导航
+## 页面导航的便捷性
 
 当您在餐厅中打开菜单时，您可能要做的第一件事就是阅读所有标题：开胃菜，沙拉，主菜和甜点。 这使您可以浏览菜单中的所有选项并快速跳转到您最感兴趣的菜肴。 同样，当访问者打开网页时，他们的目标是找到他们最感兴趣的信息，这是他们首先进入该页面的原因。 为了帮助用户尽快找到所需的内容（并防止他们单击后退按钮），我们尝试将页面的内容分为几个视觉上不同的部分，例如：用于导航的网站标题，在我们的文章中有各种各样的标题，以便用户可以快速浏览它们，在页脚可以链接其他外部无关资源，等等。
 
@@ -125,7 +125,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
   <a href="/static/images/2019/accessibility/fig3.png">
     <img src="/static/images/2019/accessibility/fig3.png" alt="图3. 表头级别的流行程度" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">Vertical bar chart measuring percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing each heading level h1 through h6.垂直条形图量度百分比数据，范围从0到80，以20为增量，而条形图表示从每个表头h1到h6的级别。  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.</div>
+  <div id="fig3-description" class="visually-hidden">垂直条形图量度百分比数据，范围从0到80，以20为增量，而条形图表示从每个表头h1到h6的级别。  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.</div>
   <figcaption id="fig3-caption">图3. 表头级别的流行程度</figcaption>
 </figure>
 
@@ -140,7 +140,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
     <img src="/static/images/2019/accessibility/fig4.png" alt="Figure 4. 图4.按“main”地标数量划分的页面百分比。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
   </a>
   <div id="fig4-description" class="visually-hidden">垂直条形图显示百分比数据，范围从0到80，以20为增量，而条形图则表示每页从0到4的“main”地标数量。数据源: HTTP Archive (2019年7月). 0: 73.97%; 1: 17.97%; 2: 7.41%; 3: 0.15%; 4: 0.06%.</div>
-  <figcaption id="fig4-caption" >Figure 4. Percent of pages by their number of "main" landmarks.</figcaption>
+  <figcaption id="fig4-caption" >图4.按“main”地标数量划分的页面百分比。</figcaption>
 </figure>
 
 ### HTML 章节元素
@@ -234,7 +234,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
     <img src="/static/images/2019/accessibility/fig8.png" alt="图8.页面总数与ARIA属性的百分比。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
   </a>
   <div id="fig8-description" class="visually-hidden">垂直条形图显示百分比数据，范围从0到25，以5为增量，条形图代表每个属性。Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%</div>
-  <figcaption id="fig8-caption" >Figure 8. Percent of total pages vs ARIA attribute.</figcaption>
+  <figcaption id="fig8-caption" >图8.页面总数与ARIA属性的百分比。</figcaption>
 </figure>
 
 #### `role` 角色属性
@@ -295,7 +295,7 @@ Tab顺序中几乎总是包含按钮和链接，因此具有极高的可见性�
 
 ## 结论
 
-并非只有残障人士有无障碍访问的需求。 例如，遭受暂时性腕部伤害的任何人都经历了敲击小目标的困难。 视力通常会随着年龄的增长而降低，使以小字体书写的文本难以阅读。 手指的敏捷性在各个年龄段的人口统计数据中都不尽相同，这对于相当大比例的用户来说，轻敲交互式控件或在移动网站上滑动内容变得更加困难。
+并非只有残障人士有无障碍访问的需求。 例如，任何遭受暂时性腕部伤害的人都曾经历过敲击小目标的困难。 视力通常会随着年龄的增长而降低，使以小字体书写的文本难以阅读。 手指的敏捷性在各个年龄段的人口统计数据中都不尽相同，这对于相当大比例的用户来说，轻敲交互式控件或在移动网站上滑动内容变得更加困难。
 
 同样，辅助软件不仅适用于残疾人，同时也在改善每个人的日常体验：
 - 语音助手最近在移动设备和家庭中的流行已经证明，对于许多用户而言，使用语音命令控制计算设备既是期望的也是必不可少的。 诸如此类的语音命令曾经只是一种辅助功能，但现在已成为主流产品。
