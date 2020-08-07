@@ -4,7 +4,7 @@ import inspect
 
 from flask import request, abort, redirect
 from functools import wraps
-from language import Language, DEFAULT_LANGUAGE
+from .language import DEFAULT_LANGUAGE
 
 from config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 
@@ -51,7 +51,7 @@ def validate(func):
 def validate_chapter(chapter,year):
     chapters_for_year = SUPPORTED_CHAPTERS.get(year)
     if chapter not in chapters_for_year:
-        if (chapter[-1] == "/"):
+        if chapter[-1] == "/":
             # Automatically remove any trailing slashes
             return chapter[:-1]
         elif chapter in TYPO_CHAPTERS:
