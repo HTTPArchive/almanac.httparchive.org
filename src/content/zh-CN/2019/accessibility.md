@@ -1,6 +1,6 @@
 ---
-part\_number: II
-chapter\_number: 9
+part_number: II
+chapter_number: 9
 title: 无障碍可访问性
 description: 2019 Web Almanac 网络年鉴的无障碍易访问性章节，涵盖易阅读、媒体、易于导航和与辅助技术的兼容性。
 authors: [nektarios-paisios, obto, kleinab]
