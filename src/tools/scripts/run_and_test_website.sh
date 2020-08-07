@@ -14,8 +14,6 @@
 
 # exit when any command fails instead of trying to continue on
 set -e
-# echo commands to screen for debugging
-set -x
 
 # This script must be run from src directory
 if [ -d "src" ]; then
