@@ -3,7 +3,7 @@ from werkzeug.routing import BaseConverter
 from werkzeug.http import HTTP_STATUS_CODES
 from .helpers import get_view_args, chapter_lang_exists, ebook_exists, get_ebook_methodology, \
     add_footnote_links, year_live, accentless_sort
-from config import TEMPLATES_DIR, STATIC_DIR
+from .config import TEMPLATES_DIR, STATIC_DIR
 import logging
 
 
@@ -29,6 +29,25 @@ def create_app():
     # Flask default if not set is 12 hours but we want to match app.yaml
     # which is used by Google App Engine as it serves static files directly
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 10800
+
+    @app.after_request
+    def add_header(response):
+        # Make sure bad responses are not cached
+        #
+        # Cache good responses for 3 hours if no other Cache-Control header set
+        # This is used for the dynamically generated files (e.g. the HTML)
+        # (currently don't use unique filenames so cannot use long caches and
+        # some say they are overrated anyway as caches smaller than we think).
+        # Note this IS used by Google App Engine as dynamic content.
+        if 'Cache-Control' not in response.headers:
+            if response.status_code != 200 and response.status_code != 304:
+                response.cache_control.no_store = True
+                response.cache_control.no_cache = True
+                response.cache_control.max_age = 0
+            if response.status_code == 200 or response.status_code == 304:
+                response.cache_control.public = True
+                response.cache_control.max_age = 10800
+        return response
 
     app.url_map.converters['regex'] = RegexConverter
 

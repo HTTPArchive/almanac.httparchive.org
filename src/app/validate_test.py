@@ -1,4 +1,4 @@
-from config import DEFAULT_YEAR, SUPPORTED_YEARS
+from .config import DEFAULT_YEAR, SUPPORTED_YEARS
 from .language import Language, DEFAULT_LANGUAGE
 from .validate import parse_accept_language
 

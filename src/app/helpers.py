@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template as flask_render_template
-from config import TEMPLATES_DIR, get_config, DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+from .config import STATIC_DIR,TEMPLATES_DIR, get_config, DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 from .language import get_language, DEFAULT_LANGUAGE
 import os.path
 import re
@@ -87,7 +87,7 @@ def get_chapter_nextprev(config, chapter_slug):
 
 
 def ebook_exists(lang, year):
-    return os.path.isfile('static/pdfs/web_almanac_%s_%s.pdf' % (year, lang))
+    return os.path.isfile(STATIC_DIR + '/pdfs/web_almanac_%s_%s.pdf' % (year, lang))
 
 
 def get_view_args(lang=None, year=None):
