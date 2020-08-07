@@ -21,7 +21,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 通常，提高站点的可访问性对每个人都有好处。虽然我们通常认为残疾人是永久性残疾，但任何人都可能有暂时的或随着环境变化的残疾。例如失明，有人可能是永久失明，有人是暂时的眼睛感染，而有人在特定的情况下，比如在外面强烈的阳光下。所有这些都可以解释为什么有些人看不见自己的屏幕。每个人都有环境障碍，因此改进web页面的可访问性将改善所有用户在任何情况下的体验。
 
-[ 网页内容易读性指引 ][1] (WCAG) 就如何使网页容易易阅读提供意见。这些准则被用作我们分析的基础。然而，在许多情况下，很难通过编程来分析网站的可访问性。例如，web平台提供了几种实现类似功能结果的方法，但是支持它们的底层代码可能完全不同。因此，我们的分析只是对整体网页可访问性的一个近似。
+[网页内容易读性指引][1] (WCAG) 就如何使网页容易易阅读提供意见。这些准则被用作我们分析的基础。然而，在许多情况下，很难通过编程来分析网站的可访问性。例如，web平台提供了几种实现类似功能结果的方法，但是支持它们的底层代码可能完全不同。因此，我们的分析只是对整体网页可访问性的一个近似。
 
 我们将最有趣的观点分为四类:阅读的便捷性、网络媒体、页面导航的便捷性以及与辅助技术的兼容性。
 
@@ -33,7 +33,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 ### 色彩对比
 
-在很多情况下，访问者可能无法完美的看到你的网站。访问者可能是色盲，无法区分字体和背景颜色（欧洲血统中 [ 每12名男性中就有一名，每200名女性中就有一名 ][2] ）。也许他们只是在太阳出来的时候看书，在屏幕上产生大量的眩光——严重地损害了他们的视力。又或者他们只是年纪大了，眼睛不能像以前那样区分颜色了。
+在很多情况下，访问者可能无法完美的看到你的网站。访问者可能是色盲，无法区分字体和背景颜色（欧洲血统中 [每12名男性中就有一名，每200名女性中就有一名][2] ）。也许他们只是在太阳出来的时候看书，在屏幕上产生大量的眩光——严重地损害了他们的视力。又或者他们只是年纪大了，眼睛不能像以前那样区分颜色了。
 
 为了确保你的网站在这些情况下是可读的，确保你的文字与它的背景有足够的颜色对比是至关重要的。同时，要考虑当颜色转换为灰度时将显示什么对比也是非常重要的。
 
@@ -51,7 +51,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 ### 缩放页面
 
-使用 [ 清晰的字体大小 ][3] 和 [目标大小][4] 帮助用户阅读网站以及与你的网站互动。但即使网站完全遵循所有这些准则，也不能满足每个访问者的特定需求。这就是为什么像掐拉缩放这样的设备特性如此重要:它们允许用户调整你的页面以满足他们的需求。在某些使用微小字体和按钮的难以访问的网站上，这些特性甚至给了用户使用该网站的机会。
+使用 [清晰的字体大小][3] 和 [目标大小][4] 帮助用户阅读网站以及与你的网站互动。但即使网站完全遵循所有这些准则，也不能满足每个访问者的特定需求。这就是为什么像掐拉缩放这样的设备特性如此重要:它们允许用户调整你的页面以满足他们的需求。在某些使用微小字体和按钮的难以访问的网站上，这些特性甚至给了用户使用该网站的机会。
 
 在少数情况下，禁用缩放是可以接受的，比如有问题的页面是一个使用触摸控制的基于web的游戏。如果在这种情况下保持开启状态，玩家的手机游戏会在玩家双击时放大或缩小，讽刺的是，这个功能反而使得游戏无法访问。
 
@@ -61,7 +61,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 2. `maximum-scale` 设为 `1`, `1.0`, 等
 
-遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版 Safari 简单 [ 忽略了这个标记 ][6]。无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。
+遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版 Safari 简单 [忽略了这个标记][6]。无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。
 
 <figure>
   <a href="/static/images/2019/accessibility/fig2.png">
@@ -75,7 +75,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 网络充满了惊人数量的内容。但是，这里有一个问题:世界上有超过1000种不同的语言，而你要找的内容可能不是用你能流利使用的语言书写的。近年来我们在翻译技术方面取得了很大的进步，你可能已经在网络上使用过其中的一种(例如，谷歌翻译)。
 
-为了方便使用这个功能，翻译引擎需要知道你的页面是用什么语言编写的。这是通过使用 [`lang`属性][7] 来实现的。否则，计算机必须猜测你的页面是用什么语言写的。正如你所想象的那样，这会导致很多错误，特别是当页面使用多种语言时(例如，你的页面导航是英文的，但是发布的内容是日语的)。
+为了方便使用这个功能，翻译引擎需要知道你的页面是用什么语言编写的。这是通过使用 [lang`属性`][7] 来实现的。否则，计算机必须猜测你的页面是用什么语言写的。正如你所想象的那样，这会导致很多错误，特别是当页面使用多种语言时(例如，你的页面导航是英文的，但是发布的内容是日语的)。
 
 这个问题在使用类似屏幕阅读器这样的文字转语音辅助技术时会更加明显，如果没有指定语言，它们倾向于使用默认的用户语言来读取文本。
 
@@ -131,7 +131,7 @@ last\_updated: 2020-05-27T00:00:00.000Z
 
 ### Main 地标
 
-一个[main 地标 ][14] 向屏幕阅读器指出网页主要内容的开始位置，以便用户可以直接跳至该页面。 如果没有此设置，屏幕阅读器用户每次进入您网站的新页面时都必须手动跳过您的导航。 显然，这很令人沮丧。
+一个[main 地标][14] 向屏幕阅读器指出网页主要内容的开始位置，以便用户可以直接跳至该页面。 如果没有此设置，屏幕阅读器用户每次进入您网站的新页面时都必须手动跳过您的导航。 显然，这很令人沮丧。
 
 我们发现，每四个页面中只有一页（26.03％）包含main地标。 令人惊讶的是，8.06％的页面错误地包含多个main地标，使这些用户猜测哪个地标包含实际的主要内容。
 
@@ -309,45 +309,45 @@ Tab顺序中几乎总是包含按钮和链接，因此具有极高的可见性�
 
 我们认为，下一个前沿领域是使可通过UI框架访问的小部件更易于访问。 由于许多野外使用的复杂小部件（例如，日历选择器）均来自UI库，所以让这些小部件能够开箱即用将是非常棒的。我们希望下次收集结果时，可以看到更正确实现的复杂ARIA角色的使用在增加-这标志着更复杂的小部件也被无障碍化了。 此外，我们希望看到更多无障碍访问的媒体，例如图像和视频，以便所有用户都能享受网络的丰富性。
 
-[1]:	https://www.w3.org/WAI/WCAG21/quickref/
-[2]:	http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf
-[3]:	https://accessibleweb.com/question-answer/minimum-font-size/
-[4]:	https://www.w3.org/WAI/WCAG21/quickref/#target-size
-[5]:	https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
-[6]:	https://archive.org/details/ios-10-beta-release-notes
-[7]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
-[8]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee
-[9]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink
-[10]:	https://webaim.org/techniques/alttext/
-[11]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-[12]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-[13]:	https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video
-[14]:	https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role
-[15]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
-[16]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer
-[17]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
-[18]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
-[19]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
-[20]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
-[21]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
-[22]:	https://webaim.org/techniques/skipnav/
-[23]:	https://github.com/HTTPArchive/almanac.httparchive.org/pull/645
-[24]:	https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts
-[25]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
-[26]:	https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts
-[27]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
-[28]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th
-[29]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td
-[30]:	https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role
-[31]:	https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role
-[32]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption
-[33]:	https://www.w3.org/WAI/standards-guidelines/aria/
-[34]:	https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role
-[35]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
-[36]:	https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute
-[37]:	https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute
-[38]:	https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
-[39]:	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
-[40]:	https://www.deque.com/blog/unique-id-attributes-matter/
-[41]:	https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute
-[42]:	https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute
+[1]: https://www.w3.org/WAI/WCAG21/quickref/
+[2]: http://www.cvrl.org/people/stockman/pubs/1999%20Genetics%20chapter%20SSJN.pdf
+[3]: https://accessibleweb.com/question-answer/minimum-font-size/
+[4]: https://www.w3.org/WAI/WCAG21/quickref/#target-size
+[5]: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+[6]: https://archive.org/details/ios-10-beta-release-notes
+[7]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
+[8]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee
+[9]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink
+[10]: https://webaim.org/techniques/alttext/
+[11]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+[12]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+[13]: https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video
+[14]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role
+[15]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
+[16]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer
+[17]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
+[18]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
+[19]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+[20]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
+[21]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
+[22]: https://webaim.org/techniques/skipnav/
+[23]: https://github.com/HTTPArchive/almanac.httparchive.org/pull/645
+[24]: https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts
+[25]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
+[26]: https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts
+[27]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
+[28]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th
+[29]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td
+[30]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role
+[31]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role
+[32]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption
+[33]: https://www.w3.org/WAI/standards-guidelines/aria/
+[34]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role
+[35]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
+[36]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute
+[37]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute
+[38]: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
+[39]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
+[40]: https://www.deque.com/blog/unique-id-attributes-matter/
+[41]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute
+[42]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute
