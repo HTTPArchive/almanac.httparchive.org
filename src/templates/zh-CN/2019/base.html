@@ -58,9 +58,9 @@
 {% macro show_description(id) %}显示图像描述 {{ id }}{% endmacro %}
 {% macro hide_description(id) %}隐藏图像描述 {{ id }}{% endmacro %}
 
-{% block written_by_before %}撰写 by{% endblock %}
-{% block reviewed_by_before %}审阅 by{% endblock %}
-{% block translated_by_before %}翻译 by{% endblock %}
+{% block written_by_before %}作者： {% endblock %}
+{% block reviewed_by_before %}审稿者： {% endblock %}
+{% block translated_by_before %}翻译者： {% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
