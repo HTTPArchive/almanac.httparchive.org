@@ -16,12 +16,13 @@ set -o pipefail
 DIRECTORY=$1
 BQ_CMD="bq --format prettyjson --project_id httparchive query --max_rows 1000000"
 
-for sql in $(find $DIRECTORY | grep \.sql); do
+for sql in $(find "$DIRECTORY" | grep \.sql); do
   echo "Querying $sql"
-  metric=$(echo $sql | cut -d"." -f1)
-  cat $sql | $BQ_CMD | sed '/^$/d' > $metric.json
+  metric=$(echo "$sql" | cut -d"." -f1)
+  $BQ_CMD < "$sql" | sed '/^$/d' > "$metric".json
+  result=$?
   # Make sure the query succeeded.
-  if [ $? -ne 0 ]; then
+  if [ $result -ne 0 ]; then
     echo "Error querying $sql"
     exit 1
   fi
