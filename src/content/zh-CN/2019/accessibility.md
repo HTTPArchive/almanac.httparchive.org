@@ -7,8 +7,8 @@ authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
 translators: [chengxicn]
 discuss: 1764
-results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb\_\_idY8ifUtQ/
-queries: 09\_Accessibility
+results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
+queries: 09_Accessibility
 published: 2019-11-11T00:00:00.000Z
 last\_updated: 2020-05-27T00:00:00.000Z
 ---
