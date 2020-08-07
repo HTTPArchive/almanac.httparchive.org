@@ -1,4 +1,4 @@
-from .helpers import render_template, render_error_template, convert_old_image_path
+from .helpers import render_template, render_error_template, convert_old_image_path, get_chapter_nextprev
 from .validate import validate
 from flask import abort, redirect, url_for, request, send_from_directory
 from config import get_config, DEFAULT_YEAR
@@ -104,25 +104,6 @@ def configure(app, talisman):
         (prev_chapter, next_chapter) = get_chapter_nextprev(config, chapter)
         return render_template('%s/%s/chapters/%s.html' % (lang, year, chapter), config=config,
                                prev_chapter=prev_chapter, next_chapter=next_chapter)
-
-    def get_chapter_nextprev(config, chapter_slug):
-        prev_chapter = None
-        next_chapter = None
-        found = False
-
-        for part in config['outline']:
-            for chapter in part['chapters']:
-                if found and 'todo' not in chapter:
-                    next_chapter = chapter
-                    break
-                elif chapter.get('slug') == chapter_slug and 'todo' not in chapter:
-                    found = True
-                elif 'todo' not in chapter:
-                    prev_chapter = chapter
-            if found and next_chapter:
-                break
-
-        return prev_chapter, next_chapter
 
     @app.route('/robots.txt')
     def static_from_root():

@@ -66,6 +66,26 @@ def chapter_lang_exists(lang, year, chapter):
         return False
 
 
+def get_chapter_nextprev(config, chapter_slug):
+    prev_chapter = None
+    next_chapter = None
+    found = False
+
+    for part in config['outline']:
+        for chapter in part['chapters']:
+            if found and 'todo' not in chapter:
+                next_chapter = chapter
+                break
+            elif chapter.get('slug') == chapter_slug and 'todo' not in chapter:
+                found = True
+            elif 'todo' not in chapter:
+                prev_chapter = chapter
+        if found and next_chapter:
+            break
+
+    return prev_chapter, next_chapter
+
+
 def ebook_exists(lang, year):
     return os.path.isfile('static/pdfs/web_almanac_%s_%s.pdf' % (year, lang))
 
