@@ -193,7 +193,7 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 ### 快捷方式
 
-快捷方式通过 [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) 或者[`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) 属性设置， 可以用于以下两种方式之一:
+快捷方式通过[`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts)或者[`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)属性设置， 可以用于以下两种方式之一:
 
 1. 激活页面上的元素，例如链接或按钮。
 
