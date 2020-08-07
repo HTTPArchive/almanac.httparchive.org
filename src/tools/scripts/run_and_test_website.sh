@@ -36,8 +36,7 @@ npm run generate
 echo "Starting website"
 python main.py background &
 # Check website is running as won't have got feedback as backgrounded
-# use [p]ython so we don't match the grep itself
-ps -ef | grep "[p]ython main.py"
+pgrep -f "python main.py"
 
 echo "Testing website"
 npm run test
