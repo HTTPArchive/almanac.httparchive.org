@@ -16,9 +16,15 @@ try {
 SELECT
   _TABLE_SUFFIX AS client,
   element.name,
+<<<<<<< HEAD
   SUM(element.freq) AS freq, # M201 - total count from all pages
   ROUND(SUM(element.freq) * 100 / SUM(SUM(element.freq)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct, # M202
   SUM(SUM(element.freq)) OVER (PARTITION BY _TABLE_SUFFIX) AS total # M203 all elements count for a device. Don't see its value?
+=======
+  SUM(element.freq) AS freq,
+  SUM(SUM(element.freq)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
+  ROUND(SUM(element.freq) * 100 / SUM(SUM(element.freq)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
+>>>>>>> b28f3abcf6cd1881f3dccedc9e61bbf4110d4617
 FROM
   `httparchive.almanac.pages_*`,
   UNNEST(getElements(payload)) AS element

@@ -4,9 +4,6 @@
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-14T00:00:00.000Z{% endblock %}
-
 {% block skip_navigation %}跳过导航{% endblock %}
 
 {% block organization %}Web Almanac 源于 HTTP Archive{% endblock %}
@@ -51,6 +48,7 @@
 {% block close_the_index %}关闭目录{% endblock %}
 
 {% block and %}和{% endblock %}
+{% block comma %}、{% endblock %}
 
 {% block open %}打开{% endblock %}
 {% block close %}关闭{% endblock %}
@@ -70,6 +68,7 @@
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} 在 Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} 在 GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} 在 LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} 网站{% endmacro %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}

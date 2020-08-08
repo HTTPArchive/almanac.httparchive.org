@@ -2,12 +2,12 @@
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 
+{% block date_published %}{{ metadata.published }}{% endblock %}
+{% block date_modified %}{{ metadata.last_updated }}{% endblock %}
+
 {% block image_url %}https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
-
-{% block date_published %}{{ metadata.get('published','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
-{% block date_modified %}{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
 
 {% block author_structured_data %}
       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
@@ -86,14 +86,14 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_byline() %}
   <div class="byline">{{ self.written_by_before() }}
   {% for author in metadata.get('authors') %}
-    <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }}
     {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
   {% endfor %}{{ self.written_by_after() }}
   </div>
 
   <div class="byline reviewers">{{ self.reviewed_by_before() }}
   {% for reviewer in metadata.get('reviewers') %}
-    <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }}
     {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
   {% endfor %}{{ self.reviewed_by_after() }}
   </div>
@@ -101,7 +101,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% if metadata.get('translators') | length >= 1 %}
   <div class="byline translators">{{ self.translated_by_before() }}
   {% for translator in metadata.get('translators') %}
-    <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }}
     {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
   {% endfor %}{{ self.translated_by_after() }}
   </div>
@@ -144,6 +144,14 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                     <svg width="22" height="22" role="img">
                       <title id="author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+                    </svg>
+                  </a>
+                  {% endif %}
+                  {% if authordata.linkedin %}
+                  <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="author-{{ author }}-linkedin">
+                    <svg width="22" height="22" role="img">
+                      <title id="author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
                     </svg>
                   </a>
                   {% endif %}

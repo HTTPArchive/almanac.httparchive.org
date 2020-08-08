@@ -19,7 +19,7 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="/static/css/page.css?v=20200717231356" />
-<link rel="stylesheet" href="/static/css/ebook.css?v=20200720221448" />
+<link rel="stylesheet" href="/static/css/ebook.css?v=20200806055159" />
 
 <style nonce="{{ csp_nonce() }}">
 /* Add a print query param to format the book for printer (mirror headers and footers) */
@@ -361,6 +361,14 @@
             </svg>
           </a>
           {% endif %}
+          {% if contributor.linkedin %}
+          <a href="https://github.com/{{ contributor.linkedin }}" aria-labelledby="contributors-{{ id }}-linkedin">
+            <svg role="img">
+              <title id="contributors-{{ id }}-linkedin">{{ onLinkedIn(contributor.name) }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+            </svg>
+          </a>
+          {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
             <svg role="img">
@@ -373,7 +381,7 @@
           <br>
           <span class="contributor-teams">
             {% for id in contributor.teams | sort() %}
-              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
             {% endfor %}
           </span>
         </div>
