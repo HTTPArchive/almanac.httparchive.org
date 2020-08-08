@@ -5,7 +5,7 @@ import os
 
 from app.language import Language
 
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..')
 TEMPLATES_DIR = ROOT_DIR + '/templates'
 STATIC_DIR = ROOT_DIR + '/static'
 
@@ -70,7 +70,7 @@ def update_config():
 
     config_files = []
 
-    for root, directories, files in os.walk('config'):
+    for root, directories, files in os.walk(ROOT_DIR + '/config'):
         for file in files:
             if '.json' in file:
                 config_files.append(file[0:4])

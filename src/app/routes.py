@@ -1,30 +1,12 @@
 from .helpers import render_template, render_error_template, convert_old_image_path, get_chapter_nextprev
 from .validate import validate
 from flask import abort, redirect, url_for, request, send_from_directory
-from config import get_config, DEFAULT_YEAR
+from .config import get_config, DEFAULT_YEAR
 import random
 import logging
 
 
 def configure(app, talisman):
-    @app.after_request
-    def add_header(response):
-        # Make sure bad responses are not cached
-        #
-        # Cache good responses for 3 hours if no other Cache-Control header set
-        # This is used for the dynamically generated files (e.g. the HTML)
-        # (currently don't use unique filenames so cannot use long caches and
-        # some say they are overrated anyway as caches smaller than we think).
-        # Note this IS used by Google App Engine as dynamic content.
-        if 'Cache-Control' not in response.headers:
-            if response.status_code != 200 and response.status_code != 304:
-                response.cache_control.no_store = True
-                response.cache_control.no_cache = True
-                response.cache_control.max_age = 0
-            if response.status_code == 200 or response.status_code == 304:
-                response.cache_control.public = True
-                response.cache_control.max_age = 10800
-        return response
 
     @app.route('/<lang>/<year>/')
     @validate

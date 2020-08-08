@@ -6,7 +6,7 @@ from flask import request, abort, redirect
 from functools import wraps
 from .language import DEFAULT_LANGUAGE
 
-from config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
+from .config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
