@@ -1,15 +1,5 @@
-from flask_talisman import Talisman
-from server import initialize_server, routes, csp, feature_policy
 import sys
-
-app = initialize_server()
-talisman = Talisman(app,
-                    content_security_policy=csp.csp,
-                    content_security_policy_nonce_in=['script-src', 'style-src'],
-                    feature_policy=feature_policy.feature_policy)
-
-routes.configure(app, talisman)
-
+from server import app, talisman
 
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the

@@ -1,6 +1,7 @@
 from flask import request, redirect, url_for, render_template as flask_render_template
 from .config import STATIC_DIR,TEMPLATES_DIR, get_config, DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 from .language import get_language, DEFAULT_LANGUAGE
+from werkzeug.routing import BaseConverter
 import os.path
 import re
 
@@ -28,8 +29,8 @@ def render_template(template, *args, **kwargs):
     supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
     template_supported_languages = []
     for l in supported_languages:
-        langTemplate = TEMPLATES_DIR + '/%s/%s' % (l.lang_code, template[langcode_length:])
-        if os.path.isfile(langTemplate):
+        lang_template = TEMPLATES_DIR + '/%s/%s' % (l.lang_code, template[langcode_length:])
+        if os.path.isfile(lang_template):
             template_supported_languages.append(l)
 
     # Although a year may be enabled, all templates may not exist yet
@@ -37,8 +38,8 @@ def render_template(template, *args, **kwargs):
     supported_years = SUPPORTED_YEARS
     template_supported_years = []
     for y in supported_years:
-        yearLangTemplate = TEMPLATES_DIR + '/%s/%s/%s' % (lang, y, template[langcode_length + 1 + 4:])
-        if os.path.isfile(yearLangTemplate):
+        year_lang_template = TEMPLATES_DIR + '/%s/%s/%s' % (lang, y, template[langcode_length + 1 + 4:])
+        if os.path.isfile(year_lang_template):
             template_supported_years.append(y)
 
     kwargs.update(year=year, lang=lang, language=language, supported_languages=template_supported_languages,
@@ -166,3 +167,9 @@ def strip_accents(string):
 
 def accentless_sort(value):
     return sorted(value, key=lambda i: strip_accents(i[1]).lower())
+
+
+class RegexConverter(BaseConverter):
+    def __init__(self, url_map, *items):
+        super(RegexConverter, self).__init__(url_map)
+        self.regex = items[0]

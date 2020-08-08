@@ -5,14 +5,12 @@ import os
 
 from .language import Language
 
-ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..')
+ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 TEMPLATES_DIR = ROOT_DIR + '/templates'
 STATIC_DIR = ROOT_DIR + '/static'
 
 SUPPORTED_YEARS = []
 DEFAULT_YEAR = '2019'
-
-config_json = {}
 
 DEFAULT_AVATAR_FOLDER_PATH = '/static/images/avatars/'
 AVATAR_SIZE = 200
@@ -20,6 +18,8 @@ AVATARS_NUMBER = 15
 
 SUPPORTED_CHAPTERS = {}
 SUPPORTED_LANGUAGES = {}
+
+config_json = {}
 
 
 def get_config(year):

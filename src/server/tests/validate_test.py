@@ -1,6 +1,7 @@
-from .config import DEFAULT_YEAR, SUPPORTED_YEARS
-from .language import Language, DEFAULT_LANGUAGE
-from .validate import parse_accept_language
+from server.config import DEFAULT_YEAR, SUPPORTED_YEARS
+from server.language import Language, DEFAULT_LANGUAGE
+from server.validate import parse_accept_language
+
 
 SUPPORTED_LANGUAGES = (Language.EN.lang_code, Language.JA.lang_code)
 DEFAULT_LANGUAGE_CODE = DEFAULT_LANGUAGE.lang_code
