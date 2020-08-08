@@ -19,9 +19,9 @@ SELECT
 
   # Elements per page
   APPROX_QUANTILES(elements, 1000)[OFFSET(percentile * 10)] AS elements_count,
-  CAST(ROUND(AVG(elements)) AS INT64) AS elements_avg,
-  MIN(elements) AS elements_min,
-  MAX(elements) AS elements_max
+  CAST(ROUND(AVG(elements)) AS INT64) AS elements_avg, # not sure what value this is? average elements per page? same for all device rows
+  MIN(elements) AS elements_min, # y-axis min, same for all device rows
+  MAX(elements) AS elements_max # y-axis max, same for all device rows
 FROM (
   SELECT
     client,
