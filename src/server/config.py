@@ -3,7 +3,7 @@ import json
 import urllib.parse
 import os
 
-from app.language import Language
+from .language import Language
 
 ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..')
 TEMPLATES_DIR = ROOT_DIR + '/templates'

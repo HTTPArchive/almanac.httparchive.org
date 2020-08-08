@@ -9,7 +9,7 @@ import logging
 
 # Set WOFF and WOFF2 caching to return 1 year as they should never change
 # Note this requires similar set up in app.yaml for Google App Engine
-class MyFlask(Flask):
+class WebAlmanacServer(Flask):
     def get_send_file_max_age(self, name):
         if name.lower().endswith('.woff') or name.lower().endswith('.woff2'):
             return 31536000
@@ -22,8 +22,8 @@ class RegexConverter(BaseConverter):
         self.regex = items[0]
 
 
-def create_app():
-    app = MyFlask(__name__, template_folder=TEMPLATES_DIR, static_folder=STATIC_DIR)
+def initialize_server():
+    app = WebAlmanacServer(__name__, template_folder=TEMPLATES_DIR, static_folder=STATIC_DIR)
 
     # Cache static resources for 10800 secs (3 hrs) with SEND_FILE_MAX_AGE_DEFAULT.
     # Flask default if not set is 12 hours but we want to match app.yaml

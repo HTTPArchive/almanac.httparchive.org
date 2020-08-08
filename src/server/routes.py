@@ -1,6 +1,6 @@
+from flask import abort, redirect, url_for, request, send_from_directory
 from .helpers import render_template, render_error_template, convert_old_image_path, get_chapter_nextprev
 from .validate import validate
-from flask import abort, redirect, url_for, request, send_from_directory
 from .config import get_config, DEFAULT_YEAR
 import random
 import logging

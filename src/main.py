@@ -1,8 +1,8 @@
 from flask_talisman import Talisman
-from app import create_app, routes, csp, feature_policy
+from server import initialize_server, routes, csp, feature_policy
 import sys
 
-app = create_app()
+app = initialize_server()
 talisman = Talisman(app,
                     content_security_policy=csp.csp,
                     content_security_policy_nonce_in=['script-src', 'style-src'],
