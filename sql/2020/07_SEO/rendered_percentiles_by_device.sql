@@ -63,6 +63,8 @@ SELECT
 
   APPROX_QUANTILES(jsonld_scripts_count, 1000)[OFFSET(percentile * 10)] AS jsonld_scripts_count,
   APPROX_QUANTILES(jsonld_scripts_error_count, 1000)[OFFSET(percentile * 10)] AS jsonld_scripts_error_count
+  
+  ### ALSO NEED TO KNOW MAX MIN FOR ALL SO WE KNOW THE RANGE (Y-AXIS)
 FROM (
   SELECT
     client,
