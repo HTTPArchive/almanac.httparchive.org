@@ -55,7 +55,7 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 在少数情况下，禁用缩放是可以接受的，比如有问题的页面是一个使用触摸控制的基于web的游戏。如果在这种情况下保持开启状态，玩家的手机游戏会在玩家双击时放大或缩小，讽刺的是，这个功能反而使得游戏无法访问。
 
-因此，开发人员被赋予禁用此特性的能力。可以通过设置[viewport元标签](https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag)中的两个属性其中之一，:
+因此，开发人员被赋予禁用此特性的能力。可以通过设置[viewport元标签](https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag)中的两个属性其中之一:
 
 1. `user-scalable` 设为 `0` 或 `no`
 
