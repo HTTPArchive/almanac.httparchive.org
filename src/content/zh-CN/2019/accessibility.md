@@ -41,7 +41,7 @@ last_updated: 2020-05-27T00:00:00.000Z
   <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
     <img alt="图1.色彩对比度不足的文本示例。由LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
   </a>
-  <div id="fig1-description" class="visually-hidden">四个彩色框，由棕色和灰色阴影填充，内部是白色文本。创建两个列。 左列说明颜色太浅，棕色背景色写为<code>#FCA469</code>. 右列是推荐的，棕色背景色写为<code>#BD5B0E</code>。每列的顶部框是带有棕色背景的白色文本<code>#FFFFFF</code> 底部框是带有灰色背景的白色文本 <code>#FFFFFF</code>。等效的灰度分别是 <code>#B8B8B8</code> 和 <code>#707070</code>。由LookZook提供</div>
+  <div id="fig1-description" class="visually-hidden">四个彩色框，由棕色和灰色阴影填充，内部是白色文本。创建两个列。左列说明颜色太浅，棕色背景色写为<code>#FCA469</code>. 右列是推荐的，棕色背景色写为<code>#BD5B0E</code>。每列的顶部框是带有棕色背景的白色文本<code>#FFFFFF</code> 底部框是带有灰色背景的白色文本 <code>#FFFFFF</code>。等效的灰度分别是 <code>#B8B8B8</code> 和 <code>#707070</code>。由LookZook提供</div>
   <figcaption id="fig1-caption">图1.色彩对比度不足的文本示例。由LookZook提供</figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 这个问题在使用类似屏幕阅读器这样的文字转语音辅助技术时会更加明显，如果没有指定语言，它们倾向于使用默认的用户语言来读取文本。
 
-在被分析的页面中，26.13%的页面没有给语言指定带有 `lang` 属性。这使得超过四分之一的页面容易受到上述所有问题的影响。 好的方面呢? 在使用 `lang` 属性的站点中，它们正确指定有效语言代码的几率为99.68%。
+在被分析的页面中，26.13%的页面没有给语言指定带有 `lang` 属性。这使得超过四分之一的页面容易受到上述所有问题的影响。好的方面呢? 在使用 `lang` 属性的站点中，它们正确指定有效语言代码的几率为99.68%。
 
 ### 分散注意力的内容
 
@@ -101,19 +101,19 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 正如图片是强有力的故事讲述者一样，音频和视频在吸引注意力和表达想法方面也是如此。当音频和视频内容没有字幕时，无法听到这些内容的用户会错过大部分web内容。我们从耳聋或重听的用户中最常听到的需求之一就是需要为所有音频和视频内容加上字幕。
 
-在使用  [`<audio>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio)或 [`<video>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video) 元素的网站中，只有0.54％提供字幕(根据包含[`<track>`](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)  元素来评估)。请注意，某些网站具有用于向用户提供视频和音频字幕的自定义解决方案。 我们无法检测到这些，因此使用字幕的网站的真实百分比略高。
+在使用  [`<audio>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio)或 [`<video>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video) 元素的网站中，只有0.54％提供字幕(根据包含[`<track>`](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)  元素来评估)。请注意，某些网站具有用于向用户提供视频和音频字幕的自定义解决方案。我们无法检测到这些，因此使用字幕的网站的真实百分比略高。
 
 ## 页面导航的便捷性
 
-当您在餐厅中打开菜单时，您可能要做的第一件事就是阅读所有标题：开胃菜，沙拉，主菜和甜点。 这使您可以浏览菜单中的所有选项并快速跳转到您最感兴趣的菜肴。同样，当访问者打开网页时，他们的目标是找到他们最感兴趣的信息，这是他们首先进入该页面的原因。 为了帮助用户尽快找到所需的内容（并防止他们单击后退按钮），我们尝试将页面的内容分为几个视觉上不同的部分，例如：用于导航的网站标题，在我们的文章中有各种各样的标题，以便用户可以快速浏览它们，在页脚可以链接其他外部无关资源，等等。
+当您在餐厅中打开菜单时，您可能要做的第一件事就是阅读所有标题：开胃菜，沙拉，主菜和甜点。这使您可以浏览菜单中的所有选项并快速跳转到您最感兴趣的菜肴。同样，当访问者打开网页时，他们的目标是找到他们最感兴趣的信息，这是他们首先进入该页面的原因。为了帮助用户尽快找到所需的内容（并防止他们单击后退按钮），我们尝试将页面的内容分为几个视觉上不同的部分，例如：用于导航的网站标题，在我们的文章中有各种各样的标题，以便用户可以快速浏览它们，在页脚可以链接其他外部无关资源，等等。
 
-尽管这非常重要，但是我们需要注意给页面做标记，以便访问者的电脑也可以感知这些不同的部分。 为什么？ 虽然大多数阅读器使用鼠标来浏览页面，但许多其他的阅读器则依靠键盘和屏幕阅读器。 这些技术在很大程度上取决于用户的电脑对您的页面的理解程度。
+尽管这非常重要，但是我们需要注意给页面做标记，以便访问者的电脑也可以感知这些不同的部分。为什么？ 虽然大多数阅读器使用鼠标来浏览页面，但许多其他的阅读器则依靠键盘和屏幕阅读器。这些技术在很大程度上取决于用户的电脑对您的页面的理解程度。
 
 ### 表头
 
 表头不仅在视觉上有帮助，而且对屏幕阅读器也有帮助。它们使屏幕阅读器可以快速从一个区域跳到另一个区域，并帮助指示一个区域的结束位置和另一个区域的开始位置。
 
-为了避免使屏幕阅读器用户感到困惑，请确保绝对不要跳过表头级别。例如，不要直接从H1转到H3，而跳过H2。 为什么这很重要？因为这是一个意外的更改，将导致屏幕阅读器用户认为他们错过了一部分内容。这可能会导致他们虽然实际上没有错过任何内容，却开始开始四处寻找可能错过的部分。 另外，通过保持更一致的设计，您将为所有读者提供帮助。
+为了避免使屏幕阅读器用户感到困惑，请确保绝对不要跳过表头级别。例如，不要直接从H1转到H3，而跳过H2。为什么这很重要？因为这是一个意外的更改，将导致屏幕阅读器用户认为他们错过了一部分内容。这可能会导致他们虽然实际上没有错过任何内容，却开始开始四处寻找可能错过的部分。另外，通过保持更一致的设计，您将为所有读者提供帮助。
 
 虽说如此，下面是我们的分析结果：
 
@@ -125,7 +125,7 @@ last_updated: 2020-05-27T00:00:00.000Z
   <a href="/static/images/2019/accessibility/fig3.png">
     <img src="/static/images/2019/accessibility/fig3.png" alt="图3. 表头级别的流行程度" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">垂直条形图量度百分比数据，范围从0到80，以20为增量，而条形图表示从每个表头h1到h6的级别。  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.</div>
+  <div id="fig3-description" class="visually-hidden">垂直条形图量度百分比数据，范围从0到80，以20为增量，而条形图表示从每个表头h1到h6的级别。H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.</div>
   <figcaption id="fig3-caption">图3. 表头级别的流行程度</figcaption>
 </figure>
 
@@ -163,7 +163,7 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 ### 用于导航的其他 HTML 元素
 
-许多流行的屏幕阅读器还允许用户通过快速跳转链接，列表，列表项，iframe和表单字段（如编辑字段，按钮和列表框）进行导航。 图6详细说明了我们观察到的使用这些元素的页面的频率。
+许多流行的屏幕阅读器还允许用户通过快速跳转链接，列表，列表项，iframe和表单字段（如编辑字段，按钮和列表框）进行导航。图6详细说明了我们观察到的使用这些元素的页面的频率。
 
 <figure>
   <a href="/static/images/2019/accessibility/fig6.png">
@@ -183,7 +183,7 @@ last_updated: 2020-05-27T00:00:00.000Z
   <a href="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png">
     <img alt="图7.跳过链接在google.com上的样子。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png" width="600" height="333">
   </a>
-  <div id="fig7-description" class="visually-hidden">搜索'http archive'的Google搜索结果页面的屏幕截图。 可见“跳至主要内容”链接被突出显示的蓝色焦点框所包围，一个黄色覆盖框伸出红色的箭头指向蓝色焦点框，黄色覆盖框中的文字是“google.com上的跳过链接”。</div>
+  <div id="fig7-description" class="visually-hidden">搜索'http archive'的Google搜索结果页面的屏幕截图。可见“跳至主要内容”链接被突出显示的蓝色焦点框所包围，一个黄色覆盖框伸出红色的箭头指向蓝色焦点框，黄色覆盖框中的文字是“google.com上的跳过链接”。</div>
   <figcaption id="fig7-caption">图7.跳过链接在google.com上的样子。</figcaption>
 </figure>
 
@@ -199,9 +199,9 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 2. 在页面焦点上赋予特定元素。例如，将焦点转移到页面上的特定输入框，然后允许用户开始在页面上输入内容。
 
-在我们的样本中几乎没有采用 [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) ，在分析的超过400万网站中仅仅有159个站点使用了它。 而 [`accesskey`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/accesskey) 属性的使用频率更高，在2.47％的桌面站点上被找到（移动站点的比例是1.74％）。我们认为，桌面上快捷方式的使用率较高是由于开发人员预计移动网站只能通过触摸屏而非键盘来访问。
+在我们的样本中几乎没有采用 [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) ，在分析的超过400万网站中仅仅有159个站点使用了它。而 [`accesskey`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/accesskey) 属性的使用频率更高，在2.47％的桌面站点上被找到（移动站点的比例是1.74％）。我们认为，桌面上快捷方式的使用率较高是由于开发人员预计移动网站只能通过触摸屏而非键盘来访问。
 
-尤其令人惊讶的是，使用快捷键的移动站点和桌面站点中有15.56％和13.03％的用户将同一快捷方式分配给多个不同的元素。 这意味着浏览器必须猜测哪个元素应拥有此快捷键。
+尤其令人惊讶的是，使用快捷键的移动站点和桌面站点中有15.56％和13.03％的用户将同一快捷方式分配给多个不同的元素。这意味着浏览器必须猜测哪个元素应拥有此快捷键。
 
 ### 表格
 
@@ -209,9 +209,9 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 #### 表头
 
-根据特定表格的建构方式，利用表头使跨列或行的阅读更加容易，同时不会错过特定列或行所引用的数据的上下文。 对于屏幕阅读器用户而言，不得不浏览缺少行头或列头的表格是一种低于标准的体验。 这是因为屏幕阅读器用户很难追踪他们在没有表头的表单中的位置，尤其是当表很大时。
+根据特定表格的建构方式，利用表头使跨列或行的阅读更加容易，同时不会错过特定列或行所引用的数据的上下文。对于屏幕阅读器用户而言，不得不浏览缺少行头或列头的表格是一种低于标准的体验。这是因为屏幕阅读器用户很难追踪他们在没有表头的表单中的位置，尤其是当表很大时。
 
-要标记表头，只需使用 [`<th>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/th)  标记（而不是[`<td>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/td)) ，或者使用ARIA的 [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) 或 [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) 角色。 在分析中发现只有24.5％的带有表格的页面使用了这两种方法做了标记了。 因此，有四分之三的页面选择了包含不带表头的表，这对屏幕阅读器用户构成了严峻的挑战。
+要标记表头，只需使用 [`<th>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/th)  标记（而不是[`<td>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/td)) ，或者使用ARIA的 [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) 或 [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) 角色。在分析中发现只有24.5％的带有表格的页面使用了这两种方法做了标记了。因此，有四分之三的页面选择了包含不带表头的表，这对屏幕阅读器用户构成了严峻的挑战。
 
 到目前为止，使用 `<th>` 和 `<td>` 是标记表头的最常用方法。几乎不存在使用 `columnheader` 和 `rowheader` 角色的情况，只有677个站点使用了它们（0.058％）。
 
@@ -225,9 +225,9 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 ### 使用ARIA
 
-关于Web上可访问性的最流行和广泛使用的规范之一是 [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA) 标准。该标准提供了大量其他HTML属性，以帮助传达视觉元素背后的目的（例如它的语义）以及它们能够执行的操作。 
+关于Web上可访问性的最流行和广泛使用的规范之一是 [Accessible Rich Internet Applications](https://www.w3.org/WAI/standards-guidelines/aria/) (ARIA) 标准。该标准提供了大量其他HTML属性，以帮助传达视觉元素背后的目的（例如它的语义）以及它们能够执行的操作。
 
-正确和适当的使用ARIA可能会遇到挑战。 例如，在使用ARIA属性的页面中，我们发现12.31％的属性分配了无效值。 这是有问题的，因为任何使用ARIA属性的错误都不会对页面产生视觉影响。这些错误中的一些可以通过使用自动验证工具来检测，但是通常它们需要动手使用真正的辅助软件（例如屏幕阅读器）。本节将研究如何在网络上使用ARIA，特别是该标准的哪些部分最为普遍。
+正确和适当的使用ARIA可能会遇到挑战。例如，在使用ARIA属性的页面中，我们发现12.31％的属性分配了无效值。这是有问题的，因为任何使用ARIA属性的错误都不会对页面产生视觉影响。这些错误中的一些可以通过使用自动验证工具来检测，但是通常它们需要动手使用真正的辅助软件（例如屏幕阅读器）。本节将研究如何在网络上使用ARIA，特别是该标准的哪些部分最为普遍。
 
 <figure>
   <a href="/static/images/2019/accessibility/fig8.png">
@@ -239,9 +239,9 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 #### `role` 角色属性
 
-“role”角色属性是整个ARIA规范中最重要的属性。 它用于通知浏览器给定HTML元素的目的是什么（即语义）。 例如，一个`<div>` 元素（使用CSS可视化为按钮）应该赋予ARIA角色为`button`。
+“role”角色属性是整个ARIA规范中最重要的属性。它用于通知浏览器给定HTML元素的目的是什么（即语义）。例如，一个`<div>` 元素（使用CSS可视化为按钮）应该赋予ARIA角色为`button`。
 
-当前，有46.91％的页面使用至少一个ARIA角色属性。 在下面的图9中，我们汇总了使用最广泛的十个ARIA角色值。
+当前，有46.91％的页面使用至少一个ARIA角色属性。在下面的图9中，我们汇总了使用最广泛的十个ARIA角色值。
 
 <figure>
   <a href="/static/images/2019/accessibility/fig9.png">
@@ -257,9 +257,9 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 排名前5位的角色，占页面总数的11％或更多，都是地标角色。这些角色用于辅助导航，而不用于描述小部件（例如组合框）的功能。这是令人惊讶的结果，因为ARIA开发的主要动机是使Web开发人员能够描述由通用HTML元素 (比如`<div>`)组成的小部件的功能。
 
-我们怀疑某些最受欢迎的Web UI框架在其模板中包含导航角色。 这将解释地标属性的普遍性。 如果该理论正确，那么更新流行的UI框架以包含更多可访问性支持可能会对Web的可访问性产生巨大影响。
+我们怀疑某些最受欢迎的Web UI框架在其模板中包含导航角色。这将解释地标属性的普遍性。如果该理论正确，那么更新流行的UI框架以包含更多可访问性支持可能会对Web的可访问性产生巨大影响。
 
-指向该结论的另一个结果是，似乎根本没有使用更“高级”但同样重要的ARIA属性。此类属性无法通过UI框架轻松部署，因为可能需要根据每个站点的结构和视觉外观对其进行自定义。 例如，我们发现 `posinset` 和 `setsize` 属性仅在0.01％的页面上使用。这些属性传达给屏幕阅读器用户列表或菜单有多少项目，以及当前选中了哪一项。 因此，如果视力不佳的用户试图浏览菜单，他们可能会听到索引提示，例如：“首页，第1个，共5个”，“产品，第2个，共5个”，“下载，第3个，共5个”等。
+指向该结论的另一个结果是，似乎根本没有使用更“高级”但同样重要的ARIA属性。此类属性无法通过UI框架轻松部署，因为可能需要根据每个站点的结构和视觉外观对其进行自定义。例如，我们发现 `posinset` 和 `setsize` 属性仅在0.01％的页面上使用。这些属性传达给屏幕阅读器用户列表或菜单有多少项目，以及当前选中了哪一项。因此，如果视力不佳的用户试图浏览菜单，他们可能会听到索引提示，例如：“首页，第1个，共5个”，“产品，第2个，共5个”，“下载，第3个，共5个”等。
 
 ##### 许多站点试图使对话框易于访问
 
@@ -267,19 +267,19 @@ last_updated: 2020-05-27T00:00:00.000Z
 
 #### 互动元素的标签
 
-用户与网站互动的最常见方式是通过其控件，例如链接或按钮来浏览网站。 但是，很多时候屏幕阅读器用户无法确定控件一旦激活将执行什么操作。这种混乱发生的原因通常是由于缺少文本标签。 例如，显示左箭头图标的按钮表示它是“返回”按钮，但不包含实际文本。
+用户与网站互动的最常见方式是通过其控件，例如链接或按钮来浏览网站。但是，很多时候屏幕阅读器用户无法确定控件一旦激活将执行什么操作。这种混乱发生的原因通常是由于缺少文本标签。例如，显示左箭头图标的按钮表示它是“返回”按钮，但不包含实际文本。
 
-使用按钮或链接的页面中只有大约四分之一（24.39％）包含带有这些控件的文本标签。 如果未对控件做标记，则屏幕阅读器用户可能会阅读一些通用的内容，例如单词“按钮”，而不是诸如“搜索”之类的有意义的单词。
+使用按钮或链接的页面中只有大约四分之一（24.39％）包含带有这些控件的文本标签。如果未对控件做标记，则屏幕阅读器用户可能会阅读一些通用的内容，例如单词“按钮”，而不是诸如“搜索”之类的有意义的单词。
 
-Tab顺序中几乎总是包含按钮和链接，因此具有极高的可见性。使用Tab键浏览网站是仅使用键盘的用户浏览您的网站的主要方式之一。 因此，如果用户使用Tab键在您的网站中移动，则一定会遇到你未做标记的按钮和链接。
+Tab顺序中几乎总是包含按钮和链接，因此具有极高的可见性。使用Tab键浏览网站是仅使用键盘的用户浏览您的网站的主要方式之一。因此，如果用户使用Tab键在您的网站中移动，则一定会遇到你未做标记的按钮和链接。
 
 ### 表单控件的可访问性
 
-填写表格是我们许多人每天要做的一项任务。 无论我们是购物，预订旅行还是求职，表格都是用户与网页共享信息的主要方式。 因此，确保您的表单可访问性非常重要。实现此目的的最简单方法是为每个输入提供标签 (通过 [`<label>`元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/label)，[`aria-label`](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) 或者 [`aria-labelledby`](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute))。不幸的是，只有 22.33% 页面为其所有表单输入提供标签，这意味着每5页中有4个页面的表格可能非常难以填写。 
+填写表格是我们许多人每天要做的一项任务。无论我们是购物，预订旅行还是求职，表格都是用户与网页共享信息的主要方式。因此，确保您的表单可访问性非常重要。实现此目的的最简单方法是为每个输入提供标签 (通过 [`<label>`元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/label)，[`aria-label`](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) 或者 [`aria-labelledby`](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute))。不幸的是，只有 22.33% 页面为其所有表单输入提供标签，这意味着每5页中有4个页面的表格可能非常难以填写。
 
 #### 必填字段和无效字段的指示符
 
-当我们遇到一个旁边有一个大红色星号的字段时，我们知道它是必填字段。或者，当我们点击“提交”并被告知存在无效的输入时，需要更正用不同颜色突出显示的所有内容，然后重新提交。但是，视力低下或没有视力的人不能依靠这些视觉提示， 这就是为什么HTML输入属性 `required`， `aria-required`，和`aria-invalid`如此重要的原因。 它们为屏幕阅读器提供了相当于红色星号和红色突出显示字段的内容。额外的好处是，当您通知浏览器需要哪些字段时，它们会为您 [验证表单的某些部分](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/Data_form_validation)。而无需JavaScript. 
+当我们遇到一个旁边有一个大红色星号的字段时，我们知道它是必填字段。或者，当我们点击“提交”并被告知存在无效的输入时，需要更正用不同颜色突出显示的所有内容，然后重新提交。但是，视力低下或没有视力的人不能依靠这些视觉提示， 这就是为什么HTML输入属性 `required`， `aria-required`，和`aria-invalid`如此重要的原因。它们为屏幕阅读器提供了相当于红色星号和红色突出显示字段的内容。额外的好处是，当您通知浏览器需要哪些字段时，它们会为您 [验证表单的某些部分](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/Data_form_validation)。而无需JavaScript. 
 
 在使用表单的网页中，有21.73% 在标记必填字段时使用 `required` 或者 `aria-required`。每五个站点中只有一个使用此功能。这是使您的网站无障碍并为所有用户解锁有帮助的浏览器功能的简单步骤。
 
@@ -287,23 +287,23 @@ Tab顺序中几乎总是包含按钮和链接，因此具有极高的可见性�
 
 #### 重复的ID
 
-在HTML中 ，ID可以用于将两个元素链接在一起。例如，[`<label>`元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/label) 以这种方式工作。您指定此标签描述的输入字段的ID，然后浏览器将它们链接在一起。结果？ 用户现在可以点击此标签以将焦点放在输入字段上，屏幕阅读器将使用此标签作为说明。
+在HTML中 ，ID可以用于将两个元素链接在一起。例如，[`<label>`元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/label) 以这种方式工作。您指定此标签描述的输入字段的ID，然后浏览器将它们链接在一起。结果？用户现在可以点击此标签以将焦点放在输入字段上，屏幕阅读器将使用此标签作为说明。
 
-不幸的是，34.62％的站点具有重复的ID，这意味着在许多站点上，用户指定的ID可以引用多个不同的输入。因此，当用户单击标签选择一个字段时，他们可能没有选择他们期望的内容，而是会最终 [选择不同的内容](https://www.deque.com/blog/unique-id-attributes-matter/)。 您可能会想到，这也许会对购物车等产生负面影响。
+不幸的是，34.62％的站点具有重复的ID，这意味着在许多站点上，用户指定的ID可以引用多个不同的输入。因此，当用户单击标签选择一个字段时，他们可能没有选择他们期望的内容，而是会最终 [选择不同的内容](https://www.deque.com/blog/unique-id-attributes-matter/)。您可能会想到，这也许会对购物车等产生负面影响。
 
-对于屏幕阅读器来说，这个问题更加明显，因为他们的用户可能无法直观地二次检查所选内容。另外，许多ARIA属性，例如 [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute)  和 [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)与上述标签元素的功能相似。因此，要使您的网站无障碍化，删除所有重复的ID是一个很好的第一步。
+对于屏幕阅读器来说，这个问题更加明显，因为他们的用户可能无法直观地二次检查所选内容。另外，许多ARIA属性，例如 [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) 和 [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)与上述标签元素的功能相似。因此，要使您的网站无障碍化，删除所有重复的ID是一个很好的第一步。
 
 ## 结论
 
-并非只有残障人士有无障碍访问的需求。例如，任何遭受暂时性腕部伤害的人都曾经历过敲击小目标的困难。 视力通常会随着年龄的增长而降低，使以小字体书写的文本难以阅读。手指的敏捷性在各个年龄段的人口统计数据中都不尽相同，这对于相当大比例的用户来说，轻敲交互式控件或在移动网站上滑动内容变得更加困难。
+并非只有残障人士有无障碍访问的需求。例如，任何遭受暂时性腕部伤害的人都曾经历过敲击小目标的困难。视力通常会随着年龄的增长而降低，使以小字体书写的文本难以阅读。手指的敏捷性在各个年龄段的人口统计数据中都不尽相同，这对于相当大比例的用户来说，轻敲交互式控件或在移动网站上滑动内容变得更加困难。
 
 同样，辅助软件不仅适用于残疾人，同时也在改善每个人的日常体验：
-- 语音助手最近在移动设备和家庭中的流行已经证明，对于许多用户而言，使用语音命令控制计算设备既是期望的也是必不可少的。 诸如此类的语音命令曾经只是一种辅助功能，但现在已成为主流产品。
+- 语音助手最近在移动设备和家庭中的流行已经证明，对于许多用户而言，使用语音命令控制计算设备既是期望的也是必不可少的。诸如此类的语音命令曾经只是一种辅助功能，但现在已成为主流产品。
 - 驾驶员将从屏幕阅读功能中受益，该功能在他们注视路面的同时，还能大声朗读长篇的文字，例如新闻报导。
 - 字幕不仅会被无法收听视频的人观看，还会被想要在喧闹的餐厅或图书馆中观看视频的人观看。
 
 一旦网站建立后，通常很难在现有网站结构和窗口小部件上改造无障碍可访问性。无障碍可访问性并不是以后可以轻易点缀的东西，它必须是设计和实现过程的一部分。不幸的是，由于缺乏认知或缺乏易于使用的测试工具，许多开发人员并不熟悉所有用户的需求以及他们使用的辅助软件的需求。
 
-尽管不是结论性的，我们的结果表明在网络的*相当大，但并非实质性* 的部分中可以找到ARIA和可访问性最佳实践（例如使用替代文字）等无障碍标准的使用。从表面上看，这是令人鼓舞的，但是我们怀疑许多积极的趋势是由于某些UI框架的流行。 一方面，这令人失望，因为Web开发人员不能仅仅依靠UI框架向其网站提供无障碍化支持。 但是，另一方面，令人鼓舞的是，看到UI框架对Web的无障碍化可能有多大的影响。
+尽管不是结论性的，我们的结果表明在网络的*相当大，但并非实质性* 的部分中可以找到ARIA和可访问性最佳实践（例如使用替代文字）等无障碍标准的使用。从表面上看，这是令人鼓舞的，但是我们怀疑许多积极的趋势是由于某些UI框架的流行。一方面，这令人失望，因为Web开发人员不能仅仅依靠UI框架向其网站提供无障碍化支持。但是，另一方面，令人鼓舞的是，看到UI框架对Web的无障碍化可能有多大的影响。
 
 我们认为，下一个前沿领域是使可通过UI框架访问的小部件更易于访问。由于许多野外使用的复杂小部件（例如，日历选择器）均来自UI库，所以让这些小部件能够开箱即用将是非常棒的。我们希望下次收集结果时，可以看到更正确实现的复杂ARIA角色的使用在增加-这标志着更复杂的小部件也被无障碍化了。此外，我们希望看到更多无障碍访问的媒体，例如图像和视频，以便所有用户都能享受网络的丰富性。
