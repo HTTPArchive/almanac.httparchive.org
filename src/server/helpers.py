@@ -147,7 +147,7 @@ def get_ebook_methodology(lang, year):
 
 # This function takes a string and adds the footnote links for printing
 def add_footnote_links(html):
-    return re.sub('href="http([^"]*?)"([^>]*?)>((?!(www|http|@)).*?)</a>','href="http\\1"\\2>\\3</a><span class="fn">http\\1</span>', html)
+    return re.sub('href="http([^"]*?)"([^>]*?)>((?!(www|http|@)).*?)</a>', 'href="http\\1"\\2>\\3</a><span class="fn">http\\1</span>', html)
 
 
 # This checks whether a requested year is live - used to control the year selector
