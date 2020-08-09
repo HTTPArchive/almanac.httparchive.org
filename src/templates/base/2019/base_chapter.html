@@ -134,7 +134,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                 <span class="social">
                   {% if authordata.twitter %}
                   <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="author-{{ author }}-twitter">
-                    <svg width="22" height="22" role="img">
+                    <svg width="22" height="22" role="img" aria-hidden>
                       <title id="author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
                     </svg>
@@ -143,7 +143,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   {% endif %}
                   {% if authordata.github %}
                   <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="author-{{ author }}-github">
-                    <svg width="22" height="22" role="img">
+                    <svg width="22" height="22" aria-hidden>
                       <title id="author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
                     </svg>
@@ -152,7 +152,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   {% endif %}
                   {% if authordata.linkedin %}
                   <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="author-{{ author }}-linkedin">
-                    <svg width="22" height="22" role="img">
+                    <svg width="22" height="22" aria-hidden>
                       <title id="author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
                     </svg>
@@ -161,7 +161,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
                   {% endif %}
                   {% if authordata.website %}
                   <a class="website" href="{{ authordata.website }}" aria-labelledby="author-{{ author }}-website">
-                    <svg width="22" height="22" role="img">
+                    <svg width="22" height="22" aria-hidden>
                       <title id="author-{{ author }}-website">{{ website(authordata.name) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
                     </svg>
