@@ -48,7 +48,7 @@ def validate(func):
     return decorated_function
 
 
-def validate_chapter(chapter,year):
+def validate_chapter(chapter, year):
     chapters_for_year = SUPPORTED_CHAPTERS.get(year)
     if chapter not in chapters_for_year:
         if chapter[-1] == "/":
@@ -74,7 +74,7 @@ def validate_lang_and_year(lang, year):
         logging.debug('Unsupported year requested: %s' % year)
         abort(404, 'Unsupported year requested')
 
-    supported_langs = [l.lang_code for l in (SUPPORTED_LANGUAGES.get(year) or [DEFAULT_LANGUAGE])]
+    supported_langs = [lan.lang_code for lan in (SUPPORTED_LANGUAGES.get(year) or [DEFAULT_LANGUAGE])]
 
     # If an unsupported language code is passed in, abort.
     if lang is not None and lang not in supported_langs:

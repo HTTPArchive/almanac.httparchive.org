@@ -7,6 +7,7 @@ from .config import TEMPLATES_DIR, STATIC_DIR
 from . import csp, feature_policy
 import logging
 
+
 logging.basicConfig(level=logging.DEBUG)
 
 
@@ -65,6 +66,7 @@ talisman = Talisman(app,
                     content_security_policy=csp.csp,
                     content_security_policy_nonce_in=['script-src', 'style-src'],
                     feature_policy=feature_policy.feature_policy)
+
 
 # Circular Import but this is fine because routes and errors modules are not used in here and
 # this way we make app available for decorators in both modules
