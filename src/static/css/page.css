@@ -276,22 +276,26 @@
 }
 
 .authors .social {
-  display: inline-block;
-  vertical-align: top;
   font-size: 0.9em;
 }
 
 .authors .social a {
   margin: 0 10px 0 0;
   margin: 0 0.625rem 0 0;
-  text-decoration: none;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.authors .social a:hover,
+.authors .social a:focus {
+  text-decoration: underline;
 }
 
 .authors .social svg {
   width: 1em;
   height: auto;
-  vertical-align: -0.125rem;
   margin-right: 4px;
   margin-right: 0.25rem;
 }
