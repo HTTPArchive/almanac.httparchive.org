@@ -2,7 +2,7 @@
 part_number: I
 chapter_number: 4
 title: Media
-description: Capítulo Media del 2019 Web Almanac que cubre los tamaños y formatos de archivo de imagen, las imágenes adaptables (responsive), los "client hints", el "lazy loading", la accesibilidad y los vídeos.
+description: Capítulo Multimedia del 2019 Web Almanac que cubre los tamaños y formatos de archivo de imagen, las imágenes adaptables (responsive), los client hints, el lazy loading, la accesibilidad y los vídeos.
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 translators: []
@@ -14,13 +14,13 @@ last_updated: 2020-07-06T00:00:00.000Z
 ---
 
 ## Introducción
-Las imágenes, animaciones y vídeos son una parte importante de la experiencia web. Son importantes por muchas razones: ayudan a contar historias, atraen a la audiencia, y proporcionan expresión artística de una forma que a menudo no puede ser conseguida fácilmente con otras tecnologías web. La importancia de estos recursos multimedia puede ser demostrada de dos formas: por la gran cantidad de bytes que se requieren para descargar cada página, y también por la cantidad de píxeles que componen esos recursos.
+Las imágenes, animaciones y vídeos son una parte importante de la experiencia web. Son importantes por muchas razones: ayudan a contar historias, atraen a la audiencia y proporcionan expresión artística de una forma que a menudo no puede ser conseguida fácilmente a través de otras tecnologías web. La importancia de estos recursos multimedia puede ser demostrada de dos formas: por la gran cantidad de bytes que se requieren para descargar cada página, y también por la cantidad de píxeles que componen esos recursos.
 
-Desde una perspectiva puramente de bytes, el HTTP Archive ha [registrado históricamente](https://legacy.httparchive.org/interesting.php#bytesperpage) una media de dos tercios de bytes de recursos vinculados con recursos multimedia. Desde la perspectiva de la distribución, podemos ver que prácticamente toda página web depende de imágenes y vídeos. Incluso en el percentil 10, podemos ver que un 44% de los bytes son de recursos multimedia y puede llegar al 91% del total de bytes en las páginas del percentil 90. 
+Desde una perspectiva puramente de bytes, el <i lang="en">HTTP Archive</i> ha [registrado históricamente](https://legacy.httparchive.org/interesting.php#bytesperpage) una media de dos tercios de bytes de recursos vinculados con recursos multimedia. Desde la perspectiva de la distribución, podemos ver que prácticamente toda página web depende de imágenes y vídeos. Incluso en el percentil 10, podemos ver que un 44% de los bytes son de recursos multimedia y puede llegar al 91% del total de bytes en las páginas del percentil 90. 
 
 <figure>
-  <a href="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png">
-    <img src="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png" alt="Figura 1. Web page bytes: image and video versus other." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
+  <a href="/static/images/2019/media/fig1_bytes_images_and_vídeo_versus_other.png">
+    <img src="/static/images/2019/media/fig1_bytes_images_and_vídeo_versus_other.png" alt="Figura 1. Bytes por página web: imagen y vídeo frente a otros." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil p10 un 44,1% de los bytes de la página son recursos multimedia, en el percentil p25 un 52,7% son recursos multimedia, en el percentil p50 un 67,0% son recursos multimedia, en el percentil p75 un 81,7% son recursos multimedia, y en el percentil p90 un 91,2% son recursos multimedia.</div>
   <figcaption id="fig1-caption">Figura 1. Bytes por página web: imagen y vídeo frente a otros.</figcaption>
@@ -28,17 +28,17 @@ Desde una perspectiva puramente de bytes, el HTTP Archive ha [registrado histór
 
 Mientras que los recursos multimedia son esenciales para la experiencia visual, el impacto de este gran volumen de bytes tiene dos efectos colaterales.
 
-Primero, la carga de red requerida para descargar estos bytes puede ser alta y en un móvil o una red lenta (como la de las cafeterías o el Uber) puede ralentizar drásticamente el [rendimiento](./performance) de la página. Las imágenes son la petición del navegador de menor prioridad pero pueden bloquear fácilmente la descargar del CSS y JavaScript. Esto, por sí mismo, puede ralentizar el renderizado de la página. Aun así, en otras ocasiones, el contenido de la imagen es para el usuario la indicación visual de que la página se ha cargado. Por lo tanto, las transferencias lentas de contenido visual pueden dar la impresión de una página web lenta.
+Primero, la carga de red requerida para descargar estos bytes puede ser alta y en un móvil o una red lenta (como la de las cafeterías o el Uber) puede ralentizar drásticamente el [rendimiento](./performance) de la página. Las imágenes son la petición del navegador de menor prioridad pero pueden bloquear fácilmente la descarga del CSS y JavaScript. Esto, por sí mismo, puede ralentizar el renderizado de la página. Aun así, en otras ocasiones, el contenido de la imagen es, para el usuario, la indicación visual de que la página se ha cargado. Por lo tanto, las transferencias lentas del contenido visual pueden dar la impresión de una página web lenta.
 
-La segunda consecuencia es el coste económico que supone para el usuario. Normalmente, este es aspecto poco tenido en cuenta ya que es una carga que no afecta al dueño del sitio web, sino al usuario final.  Como anécdota, se ha difundido que algunos mercados, [como el de Japón](https://twitter.com/yoavweiss/status/1195036487538003968?s=20), han visto una caída en las compras hechas por estudiantes a finales de mes, cuando alcanzan los límites de datos y no pueden ver el contenido visual.
+La segunda consecuencia es el coste económico que supone para el usuario. Normalmente, este aspecto es poco tenido en cuenta ya que no afecta al dueño del sitio web, sino al usuario final.  Como anécdota, se ha difundido que algunos mercados, [como el de Japón](https://twitter.com/yoavweiss/status/1195036487538003968?s=20), han visto una caída en las compras hechas por estudiantes a finales de mes, cuando alcanzan los límites de datos y no pueden ver el contenido visual.
 
-Es más, el coste económico de visitar estos sitios web en diferentes partes del mundo es desproporcionado. En la mediana y en el percentil 90, la cantidad de bytes por imagen es de 1 MB y de 1,9 MB respectivamente. A través de [WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost), podemos ver que el Producto Interior Bruto (PIB) per cápita en Madagascar supone al usuario un coste tal que la carga de una sola página web del percentil 90 equivaldría al 2,6% del ingreso bruto diario. Por el contrario, en Alemania esto supondría el 0,3% del ingreso bruto diario.
+Es más, el coste económico de visitar estos sitios web en diferentes partes del mundo es desproporcionado. En la mediana y en el percentil 90, la cantidad de bytes por imagen es de 1 MB y de 1,9 MB respectivamente. A través de <i lang="en">[WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost)</i>, podemos ver que el Producto Interior Bruto (PIB) per cápita en Madagascar supone al usuario un coste tal que la carga de una sola página web del percentil 90 equivaldría al 2,6% del ingreso bruto diario. Por el contrario, en Alemania esto supondría el 0,3% del ingreso bruto diario.
 
 <figure>
   <a href="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png">
     <img src="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png" alt="Figura 2. Total de bytes de una imagen por sitio web (móvil)." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive">
   </a>
-  <div id="fig2-description" class="visually-hidden">La media de página web en formato móvil requiere 1 MB para imágenes y 4,9 MB en el percentil 90.</div>
+  <div id="fig2-description" class="visually-hidden">En la mediana, una página web en formato móvil requiere 1 MB para imágenes, y 4,9 MB en el percentil 90.</div>
   <figcaption id="fig2-caption">Figura 2. Total de bytes de una imagen por sitio web (móvil).</figcaption>
 </figure>
 
@@ -46,9 +46,9 @@ Analizar los bytes por página significa analizar el gasto por rendimiento de la
 
 Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: píxeles CSS, píxeles lógicos y píxeles físicos:
 
-* El _tamaño de pixel CSS_ es desde el punto de vista del diseño. Esta medida se centra en la caja delimitadora a la que la imagen o el video pueden adaptarse, expandiéndose o comprimiéndose. No tiene en cuenta ni los verdaderos píxeles del archivo ni los de la pantalla. 
-* Los _píxeles lógicos_ se refieren a aquellos píxeles que conforman un archivo. Si tuvieras que cargar esta imagen en GIMP o en Photoshop, las dimensiones en píxeles de dicho archivo serían los píxeles lógicos (o píxeles naturales).
-* Los _píxeles físicos_ se refieren a las partes electrónicas de la pantalla. Antes del móvil y de las modernas pantallas de alta resolución, había una relación 1:1 entre los píxeles CSS y los puntos LED de una pantalla. Sin embargo, debido a que los dispositivos móviles son sostenidos próximos al ojo y que las pantallas de los ordenadores están más cerca que los monitores de los terminales antiguos, las pantallas actuales tienen un ratio mayor de píxeles físicos que los tradicionales píxeles CSS. Este ratio es el Device-Pixel-Ratio, coloquialmente llamado Retina™.
+* El _tamaño de pixel CSS_ es desde el punto de vista del diseño. Esta medida se centra en la caja delimitadora a la que la imagen o el vídeo pueden adaptarse, expandiéndose o comprimiéndose. No tiene en cuenta ni los verdaderos píxeles del archivo ni los de la pantalla. 
+* Los _píxeles lógicos_ se refieren a aquellos píxeles que conforman un archivo. Si tuvieras que cargar esa imagen en GIMP o en Photoshop, las dimensiones en píxeles de dicho archivo serían los píxeles lógicos (o píxeles naturales).
+* Los _píxeles físicos_ se refieren a las partes electrónicas de la pantalla. Antes del móvil y de las modernas pantallas de alta resolución, había una relación 1:1 entre los píxeles CSS y los puntos LED de una pantalla. Sin embargo, debido a que los dispositivos móviles son sostenidos muy próximos al ojo y que las pantallas de los ordenadores están más cerca que los monitores de los terminales antiguos, las pantallas actuales tienen un ratio mayor de píxeles físicos que los tradicionales píxeles CSS. Este ratio es el <i lang="en">Device-Pixel-Ratio</i>, coloquialmente llamado Retina™.
 
  <figure>
   <a href="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png">
@@ -60,35 +60,35 @@ Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: p
 
 <figure>
   <a href="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png">
-    <img src="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png" alt="Figura 4. Píxeles de una imagen por página (desktop): CSS versus real." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
+    <img src="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png" alt="Figura 4. Píxeles de una imagen por página (escritorio): CSS versus real." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
   </a>
-  <div id="fig4-description" class="visually-hidden"> Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en desktop, mostrando el p10 (0,09 MP reales, 0,05 MP CSS), el p25(0,52 MP reales, 0,29 MP CSS), el p50 (2,1 MP reales, 1,1 MP CSS), el p75 (6,0 MP reales, 2,8 MP CSS), y el p90 (14 MP reales, 6,3 MP CSS).</div>
-  <figcaption id="fig4-caption">Figura 4. Píxeles de una imagen por página (desktop): CSS versus real.</figcaption>
+  <div id="fig4-description" class="visually-hidden"> Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en escritorio, mostrando el p10 (0,09 MP reales, 0,05 MP CSS), el p25(0,52 MP reales, 0,29 MP CSS), el p50 (2,1 MP reales, 1,1 MP CSS), el p75 (6,0 MP reales, 2,8 MP CSS), y el p90 (14 MP reales, 6,3 MP CSS).</div>
+  <figcaption id="fig4-caption">Figura 4. Píxeles de una imagen por página (escritorio): CSS versus real.</figcaption>
 </figure>
 
-Si miramos el volumen del pixel CSS y del pixel lógico, podemos observar que el sitio web medio tiene un diseño que muestra un megapixel (MP) de contenido multimedia. En el percentil 90, el volumen de la distribución del pixel CSS aumenta hasta 4,6 MP y 6,3 MP en móvil y desktop respectivamente. Esto es interesante, no solo porque probablemente el diseño responsive sea diferente, sino también porque el factor de forma es diferente. En resumen, el diseño móvil tiene menos espacio para el contenido multimedia comparado con el de desktop.
+Si miramos el volumen del pixel CSS y del pixel lógico, podemos observar que el sitio web medio tiene un diseño que muestra un megapixel (MP) de contenido multimedia. En el percentil 90, el volumen de la distribución del pixel CSS aumenta hasta 4,6 MP y 6,3 MP en móvil y escritorio respectivamente. Esto es interesante, no solo porque probablemente el diseño <i lang="en">responsive</i> sea diferente, sino también porque el factor de forma es diferente. En resumen, el diseño móvil tiene menos espacio para el contenido multimedia comparado con el de escritorio.
 
-Por el contrario, el volumen del pixel lógico, o real, es entre 2 y 2,6 veces el volumen del diseño. La página web para desktop media envía 2,1 MP de contenido pixel que es distribuido en 1,1 MP de espacio en el diseño. En el percentil 90 para móvil vemos que 12 MP son comprimidos a 4,6 MP.
+Por el contrario, el volumen del pixel lógico, o real, es entre 2 y 2,6 veces el volumen del diseño. La página web para escritorio media envía 2,1 MP de contenido pixel que es distribuido en 1,1 MP de espacio en el diseño. En el percentil 90 para móvil vemos que 12 MP son comprimidos a 4,6 MP.
 
-Por supuesto, el factor forma para dispositivos móviles es diferente al de desktop. Un dispositivo móvil es más pequeño y normalmente se sujeta en vertical, mientras que un ordenador es más grande y se usa principalmente en horizontal. Como se ha mencionado anteriormente, un dispositivo móvil también tiene habitualmente un ratio pixel-dispositivo (DPR por sus siglas en inglés: Device Pixel Ratio) mayor porque se sujeta mucho más cerca del ojo, necesitando más píxeles por pulgada, en comparación, que los que se necesitan para una pantalla publicitaria en Times Square. Estas diferencias fuerzan cambios en el diseño y los usuarios desde móviles tienen normalmente que hacer scroll por el sitio para poder consumir la totalidad de su contenido.
+Por supuesto, el factor forma para dispositivos móviles es diferente al de escritorio. Un dispositivo móvil es más pequeño y normalmente se sujeta en vertical, mientras que un ordenador es más grande y se usa principalmente en horizontal. Como se ha mencionado anteriormente, un dispositivo móvil también tiene habitualmente un ratio pixel-dispositivo (DPR por sus siglas en inglés: <i lang="en">Device Pixel Ratio</i>) mayor porque se sujeta mucho más cerca del ojo, necesitando más píxeles por pulgada, en comparación, que los que se necesitan para una pantalla publicitaria en Times Square. Estas diferencias fuerzan cambios en el diseño y los usuarios desde móviles tienen normalmente que hacer scroll por el sitio para poder consumir la totalidad de su contenido.
 
 Los megapíxeles son una unidad de medida compleja porque es bastante abstracta. Una forma muy útil de expresar la cantidad de píxeles que están siendo usados en una página web es representándola como el ratio relativo al tamaño de la pantalla.
 
-Para los dispositivos móviles usados en el rastreo (crawl) de páginas web, tenemos unas dimensiones de `512 x 360`, que suponen un 0,18 MP de contenido CSS. (No confundir con las pantallas físicas para las cuales es `3x` o 3^2 píxeles más, 1,7 MP). Si se divide esta cantidad de píxeles del visor por el número de píxeles CSS correspondiente a las imágenes, obtenemos la cantidad de píxeles relativa.
+Para los dispositivos móviles usados en el rastreo (<i lang="en">crawl</i>) de páginas web, tenemos unas dimensiones de `512 x 360`, que suponen un 0,18 MP de contenido CSS (no confundir con las pantallas físicas para las cuales es `3x` o 3^2 píxeles más, 1,7 MP). Si se divide esta cantidad de píxeles del visor por el número de píxeles CSS correspondiente a las imágenes, obtenemos la cantidad de píxeles relativa.
 
 Si tuviéramos una imagen que ocupase perfectamente la totalidad de la pantalla, el ratio de relleno de píxeles sería de 1x. Por supuesto, rara vez una página web ocupa la pantalla completa con una única imagen. El contenido multimedia suele mezclarse con el diseño y otro tipo de contenido. Un valor superior a 1x significa que el diseño requiere que el usuario haga scroll para ver el resto de la imagen.   
 
-<p class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el viper como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes responsive o la efectividad de facilitar un contenido con alto DPR.</p> 
+<p class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el <i lang="en">viper</i> como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes <i lang="en">responsive</i> o la efectividad de facilitar un contenido con alto DPR.</p> 
 
 <figure>
   <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
     <img src="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png" alt="Figura 5. Cantidad de píxeles en una imagen versus el tamaño de la pantalla (píxeles CSS)." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">Una comparación entre la cantidad de píxeles necesaria por página en relación con el tamaño real de la pantalla en píxeles CSS, mostrando el p10 (20% en móvil, 20% en desktop), el p25 (97% en móvil, 13% en desktop), el p50 (354% en móvil, 46% en desktop), el p75 (1003% en móvil, 123% en desktop), y el p90 (2477% en móvil, 273% en desktop).</div>
+  <div id="fig5-description" class="visually-hidden">Una comparación entre la cantidad de píxeles necesaria por página en relación con el tamaño real de la pantalla en píxeles CSS, mostrando el p10 (20% en móvil, 20% en escritorio), el p25 (97% en móvil, 13% en escritorio), el p50 (354% en móvil, 46% en escritorio), el p75 (1003% en móvil, 123% en escritorio), y el p90 (2477% en móvil, 273% en escritorio).</div>
   <figcaption id="fig5-caption">Figura 5. Cantidad de píxeles en una imagen versus el tamaño de la pantalla (píxeles CSS).</figcaption>
 </figure>
 
-Para la página web media en formato desktop, solamente el 46% de la pantalla tendría contenido con imágenes y video. En contraposición, en móvil, la cantidad de píxeles multimedia sería 3,5 veces el tamaño real de la ventana. El diseño tiene más contenido que lo que puede ser mostrado en una sola pantalla, requiriendo el uso del scroll. Como mínimo, hay 3,5 páginas de contenido con scroll por sitio (dando por hecho un 100% de saturación). En el percentil 90 para móvil, ¡esto aumenta sustancialmente a 25x el tamaño de la ventana!
+Para la página web media en formato escritorio, solamente el 46% de la pantalla tendría contenido con imágenes y vídeo. En contraposición, en móvil, la cantidad de píxeles multimedia sería 3,5 veces el tamaño real de la ventana. El diseño tiene más contenido que lo que puede ser mostrado en una sola pantalla, requiriendo el uso del scroll. Como mínimo, hay 3,5 páginas de contenido con scroll por sitio (dando por hecho un 100% de saturación). En el percentil 90 para móvil, ¡esto aumenta sustancialmente a 25x el tamaño de la ventana!
 
 Los recursos multimedia son esenciales para la experiencia del usuario.
 
@@ -98,12 +98,12 @@ Ya se ha escrito mucho sobre la gestión y optimización de imágenes para ayuda
 
 Mientras que el enfoque utilizado para imágenes, vídeos y animaciones son, a grandes rasgos, similares, sus abordajes específicos pueden ser muy diferentes. En general, estas estrategias se reducen a: 
 
-* **Formatos de archivo** - utilizando el formato de archivo óptimo 
-* **Adaptable** - aplicando técnicas de imágenes responsive para transferir únicamente los píxeles que serán mostrados en pantalla.
-* **Lazy loading** - para trasladar solamente contenido que pueda ser visto por un humano
-* **Accesibilidad** - asegurando una experiencia consistente para todos los humanos
+* **Formatos de archivo** - utilizando el formato de archivo óptimo. 
+* **Adaptable** - aplicando técnicas de imágenes <i lang="en">responsive</i> para transferir únicamente los píxeles que serán mostrados en pantalla.
+* **<i lang="en">Lazy loading</i>** - para trasladar solamente contenido que pueda ser visto por un humano.
+* **Accesibilidad** - asegurando una experiencia consistente para todos los seres humanos.
 
-<p class="note">Una advertencia a la hora de interpretar estos resultados. Las páginas webs rastreadas para el Web Almanac fueron rastreadas con un navegador Chrome. Esto significa que la negociación de contenido que pueda estar mejor integrada para Safari o Firefox podría no estar representada en este conjunto de datos. Por ejemplo, el uso de formatos de archivos como JPEG2000, JPEG-XR, HEVC, y HEIC no están representados porque estos no son compatibles de forma nativa con Chrome. Esto no significa que la web no contenga estos otros formatos o experiencias. Del mismo modo, Chrome tiene soporte nativo para lazy loading (desde la v76) el cual no está disponible en otros navegadores. Puedes leer más sobre estas excepciones en <a href="./methodology">Metodología</a>.</p>
+<p class="note">Una advertencia a la hora de interpretar estos resultados. Las páginas webs rastreadas para el Web Almanac fueron rastreadas con un navegador Chrome. Esto significa que la negociación de contenido que pueda estar mejor integrada para Safari o Firefox podría no estar representada en este conjunto de datos. Por ejemplo, el uso de formatos de archivos como JPEG2000, JPEG-XR, HEVC, y HEIC no están representados porque estos no son compatibles de forma nativa con Chrome. Esto no significa que la web no contenga estos otros formatos o experiencias. Del mismo modo, Chrome tiene soporte nativo para <i lang="en">lazy loading</i> (desde la v76) el cual no está disponible en otros navegadores. Puedes leer más sobre estas excepciones en <a href="./methodology">Metodología</a>.</p>
 
 Es raro encontrar una página web que no utilice imágenes. A lo largo de los años, han aparecido muchos formatos de archivo diferentes para ayudar a mostrar el contenido en la web, cada uno abordando un problema diferente. Principalmente, hay 4 formatos de imagen universales: JPEG, PNG, GIF, y SVG. Además, Chrome ha mejorado el canal multimedia y añadido soporte a un quinto formato de imagen: WebP. Otros navegadores, del mismo modo, han añadido soporte para JPEG2000 (Safari), JPEG-XL (IE y Edge) y HEIC (WebView solamente en Safari).
 
@@ -152,7 +152,7 @@ Cada formato tiene sus propias ventajas y usos para la web. Una forma muy simple
   
 ### Formatos de imagen
 
-Además, en toda la página, podemos ver la prevalencia de estos formatos. JPEG, uno de los formatos más antiguos de la web, es de lejos el que más comúnmente se utiliza como formato de imagen, con un 60% de peticiones de imagen y un 65% de todos los bytes de imagen. . Curiosamente, el PNG es el segundo formato de imagen más común, con un 28% de peticiones de imágenes y bytes. La ubicuidad de la compatibilidad junto con la precisión del color y el contenido creativo son, probablemente, el porqué de su extendido uso. Por otro lado, SVG, GIF y WebP comparten un porcentaje de uso muy similar, el 4%.
+Además, en toda la página, podemos ver la prevalencia de estos formatos. JPEG, uno de los formatos más antiguos de la web, es de lejos el que más comúnmente se utiliza como formato de imagen, con un 60% de peticiones de imagen y un 65% de todos los bytes de imagen. Curiosamente, el PNG es el segundo formato de imagen más común, con un 28% de peticiones de imágenes y bytes. La ubicuidad de la compatibilidad junto con la precisión del color y el contenido creativo son, probablemente, el porqué de su extendido uso. Por otro lado, SVG, GIF y WebP comparten un porcentaje de uso muy similar, el 4%.
 
 <figure>
   <a href="/static/images/2019/media/fig7_image_format_usage.png">
@@ -178,11 +178,11 @@ Mientras que la página media tiene nueve JPEGS y cuatro PNGs, y solamente en el
   <a href="/static/images/2019/media/fig9_pages_using_at_least_1_image.png">
     <img src="/static/images/2019/media/fig9_pages_using_at_least_1_image.png" alt="Figura 9. % de páginas que usan al menos una imagen." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive">
   </a>
-  <div id="fig9-description" class="visually-hidden">Un gráfico de barras mostrando que los JPEGs son usando en el 90% de las páginas, los PNGs en un 89%, el WebP en un 9%, el GIF en un 37% y el SVG un 22%.</div>
+  <div id="fig9-description" class="visually-hidden">Un gráfico de barras mostrando que los JPEGs son usados en el 90% de las páginas, los PNGs en un 89%, el WebP en un 9%, el GIF en un 37% y el SVG un 22%.</div>
   <figcaption id="fig9-caption">Figura 9. Porcentaje de páginas que usan al menos una imagen.</figcaption>
 </figure>
 
-Esto ayuda a explicar porqué, incluso en el percentil 90 de las páginas, la recurrencia del WebP es todavía nula; únicamente el 9% de las páginas web tienen al menos un recurso. Hay muchas razones por las que WebP podría no ser la mejor elección para una imagen, pero la adopción de las mejores prácticas multimedia, como la adopción del propio WebP, es todavía incipiente. 
+Esto ayuda a explicar por qué, incluso en el percentil 90 de las páginas, la recurrencia del WebP es todavía nula; únicamente el 9% de las páginas web tienen al menos un recurso. Hay muchas razones por las que WebP podría no ser la mejor elección para una imagen, pero la adopción de las mejores prácticas multimedia, como la adopción del propio WebP, es todavía incipiente. 
 
 ### Tamaños de archivo de imagen
 
@@ -220,37 +220,37 @@ Algunas funciones pueden afectar a la experiencia de usuario. Por ejemplo, tanto
 
 Otras funciones del formato simplemente organizan el contenido y, a veces, necesitan tener un contexto. Por ejemplo, aplicar una encriptación progresiva en un JPEG reorganizará los píxeles en capas digitales que permitirán al navegador completar la estructura más rápidamente y, a su vez, reducirá el volumen de píxeles.
 
-El test [Lighthouse](./methodology#lighthouse) es una comparación A/B con una encriptación progresiva del JPEG. Esto facilita una guía para saber qué imágenes pueden ser optimizadas un poco más con técnicas sin pérdida y potencialmente con técnicas con pérdida como usar diferentes niveles de calidad.
+El test <i lang="en">[Lighthouse](./methodology#lighthouse)</i> es una comparación A/B con una encriptación progresiva del JPEG. Esto facilita una guía para saber qué imágenes pueden ser optimizadas un poco más con técnicas sin pérdida y potencialmente con técnicas con pérdida como usar diferentes niveles de calidad.
 
  <figure>
   <a href="/static/images/2019/media/fig12_percentage_optimized_images.png">
     <img src="/static/images/2019/media/fig12_percentage_optimized_images.png" alt="Figura 12. Porcentaje de imágenes 'optimizadas'." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767">
   </a>
-  <div id="fig12-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil p10 el 100% de las imágenes están optimizadas, igual que en el percentil p25, en el percentil p50 el 98% de las imágenes están optimizadas (un 2% no lo están), en el percentil p75 un 83% de las imágenes están optimizadas (un 17% no lo están), y en el percentil p90 un 59& de las imágenes están optimizadas y un 41% no lo están.</div>
+  <div id="fig12-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil p10 el 100% de las imágenes están optimizadas, igual que en el percentil p25, en el percentil p50 el 98% de las imágenes están optimizadas (un 2% no lo están), en el percentil p75 un 83% de las imágenes están optimizadas (un 17% no lo están), y en el percentil p90 un 59% de las imágenes están optimizadas y un 41% no lo están.</div>
   <figcaption id="fig12-caption">Figura 12. Porcentaje de imágenes 'optimizadas'</figcaption>
 </figure>
 
-La ventaja de este test AB Lighthouse no es solo la potencial reducción de bytes, la cual puede suponer bastantes MBs en el p95, sino que también muestra la mejora del rendimiento de la página.
+La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial reducción de bytes, la cual puede suponer bastantes MBs en el p95, sino que también muestra la mejora del rendimiento de la página.
 
  <figure>
   <a href="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png">
     <img src="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png" alt="Figura 13. Estimación de la mejora del rendimiento de la página tras la optimización de imagen de Lighthouse." aria-labelledby="fig12-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779">
   </a>
   <div id="fig13-description" class="visually-hidden">Gráfico de barras que muestra  que en el percentil p10 0 ms pudieron ser medidos, lo mismo pasa en el percentil p25, en el percentil p50 se redujeron 150 ms, en el percentil p75 se redujeron 1.460 ms, y en el percentil p90 se redujeron 5.720 ms.</div>
-  <figcaption id="fig13-caption">Figura 13. Estimación de la mejora del rendimiento de la página tras la optimización de imagen de Lighthouse.</figcaption>
+  <figcaption id="fig13-caption">Figura 13. Estimación de la mejora del rendimiento de la página tras la optimización de imagen de <i lang="en">Lighthouse</i>.</figcaption>
 </figure>
 
-### Imágenes adaptables (responsive)
+### Imágenes adaptables (<i lang="en">responsive</i>)
 
-Otra forma de mejorar el rendimiento de la página es usar imágenes responsive. Esta técnica se basa en la reducción de bytes por imagen, mediante la reducción de aquellos pixeles de más que no estarán visibles debido al encogimiento de la imagen. Al comenzar este capítulo, viste cómo la página web media, en escritorio, usaba un MP de marcadores de imagen aunque transfiere 2,1 MP de volumen de pixel. Dado que esto erea un test de 1x DPR, 1,1 MP de píxeles fueron transferidos por la red, pero no mostrados. Para reducir esta carga, podemos usar cualquiera de estas dos (posiblemente tres) técnicas:
+Otra forma de mejorar el rendimiento de la página es usar imágenes <i lang="en">responsive</i>. Esta técnica se basa en la reducción de bytes por imagen, mediante la reducción de aquellos pixeles de más que no estarán visibles debido al encogimiento de la imagen. Al comenzar este capítulo, viste cómo la página web media, en escritorio, usaba un MP de marcadores de imagen aunque transfiere 2,1 MP de volumen de pixel. Dado que esto era un test de 1x DPR, 1,1 MP de píxeles fueron transferidos por la red, pero no mostrados. Para reducir esta carga, podemos usar cualquiera de estas dos (posiblemente tres) técnicas:
 
 * **Marcado HTML** - a través de la combinación de los elementos `<picture>` y `<source>`, junto con los atributos `srcset` y `sizes`, se facilita que el navegador pueda seleccionar la mejor imagen, basándose en las dimensiones de la ventana y la densidad de pantalla. 
-* **Client Hints** - esto pasa la selección de posibles imágenes redimensionadas a negociación de contenido HTTP.
+* **<i lang="en">Client Hints</i>** - esto pasa la selección de posibles imágenes redimensionadas a negociación de contenido HTTP.
 * **BONUS**: Librerías de JavaScript para retrasar la carga de las imágenes hasta que el código JavaScript pueda ejecutar e inspeccionar el DOM del navegador e inyectar la mejor imagen para ese contenedor.
 
 ### Uso del marcado HTML
 
-El método más usado para implementar las imágenes responsive es construir una lista de imágenes alternativas usando tanto `<img srcset>` como `<source srcset>`. Si el `srcset` está basado en DPR, el navegador podrá seleccionar la imagen correcta del listado sin información adicional. De todos modos, la mayoría de implementaciones también usan `<img sizes>` para ayudar a enseñar al navegador cómo realizar los cálculos de estructura necesarios para seleccionar la imagen correcta en el `srcset` en función de las dimensiones en píxeles.
+El método más usado para implementar las imágenes <i lang="en">responsive</i> es construir una lista de imágenes alternativas usando tanto `<img srcset>` como `<source srcset>`. Si el `srcset` está basado en DPR, el navegador podrá seleccionar la imagen correcta del listado sin información adicional. De todos modos, la mayoría de implementaciones también usan `<img sizes>` para ayudar a enseñar al navegador cómo realizar los cálculos de estructura necesarios para seleccionar la imagen correcta en el `srcset` en función de las dimensiones en píxeles.
 
  <figure>
   <a href="/static/images/2019/media/fig14_html_usage_of_responsive_images.png">
@@ -260,7 +260,7 @@ El método más usado para implementar las imágenes responsive es construir una
   <figcaption id="fig14-caption">Figura 14. Porcentaje de páginas que usan imágenes adaptables con HTML.</figcaption>
 </figure>
 
-No es sorprendente el notable menor uso del `<picture>` ya que se usan más a menudo para el diseño web responsive (RWD, siglas del inglés responsive web design) avanzado como el de [dirección de arte](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
+No es sorprendente el notable menor uso del `<picture>` ya que se usan más a menudo para el diseño web <i lang="en">responsive</i> (RWD, siglas del inglés <i lang="en">responsive web design</i>) avanzado como el de [dirección de arte](https://developer.mozilla.org/es/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
 
 ### Uso de sizes
 
@@ -269,7 +269,7 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
 * **`<img sizes="100vw">`** - este indica que la imagen ocupará toda la anchura de la ventana (el que se aplica por defecto).
 * **`<img sizes="200px">`** - este es útil para la selección del navegador basada en DPR.
 * **`<img sizes="(max-width: 300px) 100vw, 300px">`** - este es el segundo patrón de diseño más popular. Es el que se autogenera por WordPress y otro par de plataformas. Aparece autogenerado en base a su tamaño de imagen original (en este caso 300px).
-* **`<img sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...">`** - este patrón es el patrón de diseño personalizado que se alinea con el diseño responsive del CSS. Cada punto de ruptura (breakpoint) tiene un cálculo diferente para los tamaños a usar.
+* **`<img sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...">`** - este patrón es el patrón de diseño personalizado que se alinea con el diseño <i lang="en">responsive</i> del CSS. Cada punto de ruptura (<i lang="en">breakpoint</i>) tiene un cálculo diferente para los tamaños a usar.
 
 <figure markdown>
 `<img sizes>` | Frecuencia (millones) | %
@@ -283,7 +283,7 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
   <figcaption id="fig15-caption">Figura 15. Porcentaje de páginas que usan los patrones <code>sizes</code> más populares.</figcaption>
 </figure>
 
-* **`<img sizes="auto">`** - este es el que más se usa, aunque en realidad no es standard, sino producto del uso de la librería JavaScript `lazy_sizes`. Ésta usa un código del lado del cliente que inyecta mejores cálculos de `sizes` para el navegador. Su desventaja es que depende de la carga del JavaScript y de que el DOM esté completamente listo, retrasando sustancialmente la carga de las imágenes.
+* **`<img sizes="auto">`** - éste es el que más se usa, aunque en realidad no es standard, sino producto del uso de la librería JavaScript `lazy_sizes`. Ésta usa un código del lado del cliente que inyecta mejores cálculos de `sizes` para el navegador. Su desventaja es que depende de la carga del JavaScript y de que el DOM esté completamente listo, retrasando sustancialmente la carga de las imágenes.
 
  <figure>
   <a href="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png">
@@ -295,9 +295,9 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
 
 ### Client Hints
 
-Los [Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints) permiten a los creadores de contenido cambiar el redimensionamiento de imágenes por la negociación de contenido HTTP. De este modo, el HTML no necesita de `<img srcset>` adicionales para reordenar el marcado, y en su lugar depende de un servidor o [imagen CDN para elegir la imagen óptima](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) en cada contexto. Esto permite simplificar el HTML y habilita a los servidores de origen para adaptar y desconectar el contenido y las capas de presentación.
+Los <i lang="en">[Client Hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints)</i> permiten a los creadores de contenido cambiar el redimensionamiento de imágenes por la negociación de contenido HTTP. De este modo, el HTML no necesita de `<img srcset>` adicionales para reordenar el marcado, y en su lugar depende de un servidor o [imagen CDN para elegir la imagen óptima](https://cloudinary.com/blog/client_hints_and_responsive_images_what_changed_in_chrome_67) en cada contexto. Esto permite simplificar el HTML y habilita a los servidores de origen para adaptar y desconectar el contenido y las capas de presentación.
 
-Para habilitar los Client Hints, la página web debe señalizárselo al navegador usando bien un encabezado HTTP adicional `Accept-CH: DPR, Width, Viewport-Width` _o bien_ añadiendo el HTML `<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`. La conveniencia de usar una u otra técnica depende del equipo que las esté implementando, ambas se ofrecen por conveniencia.
+Para habilitar los <i lang="en">Client Hints</i>, la página web debe señalizárselo al navegador usando bien un encabezado HTTP adicional `Accept-CH: DPR, Width, Viewport-Width` _o bien_ añadiendo el HTML `<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`. La conveniencia de usar una u otra técnica depende del equipo que las esté implementando, ambas se ofrecen por conveniencia.
 
 <figure>
   <a href="/static/images/2019/media/fig17_usage_of_accept-ch_http_v_html.png">
@@ -307,39 +307,39 @@ Para habilitar los Client Hints, la página web debe señalizárselo al navegado
   <figcaption id="fig17-caption">Figura 17. Uso del encabezado <code>Accept-CH</code> versus la etiqueta <code>&lt;meta></code> equivalente.</figcaption>
 </figure>
 
-El uso de la etiqueta `<meta>` en HTML para invocar los Client Hints es bastante más común en comparación con el del encabezado HTTP. Esto es un claro reflejo de la comodidad de modificar el marcado de las plantillas en comparación con añadir los encabezados HTTP en cajas intermedias. De todos modos, analizando el uso del encabezado HTTP, más del 50% de estos casos provienen de una sola plataforma SaaS (Mercado).
+El uso de la etiqueta `<meta>` en HTML para invocar los <i lang="en">Client Hints</i> es bastante más común en comparación con el del encabezado HTTP. Esto es un claro reflejo de la comodidad de modificar el marcado de las plantillas en comparación con añadir los encabezados HTTP en cajas intermedias. De todos modos, analizando el uso del encabezado HTTP, más del 50% de estos casos provienen de una sola plataforma SaaS (Mercado).
 
-De los Client Hints solicitados, la mayoría de las páginas los usan para los tres casos originales de `DPR`, `ViewportWidth` y `Width`. Por supuesto, el Client Hint `Width` necesita del uso de `<img sizes>` para que el navegador tenga el contexto necesario relativo al diseño.
+De los <i lang="en">Client Hints</i> solicitados, la mayoría de las páginas los usan para los tres casos originales de `DPR`, `ViewportWidth` y `Width`. Por supuesto, el <i lang="en">Client Hint</i> `Width` necesita del uso de `<img sizes>` para que el navegador tenga el contexto necesario relativo al diseño.
 
 <figure>
   <a href="/static/images/2019/media/fig18_enabled_client_hints.png">
     <img src="/static/images/2019/media/fig18_enabled_client_hints.png" alt="Figura 18. Client Hints habilitados." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive">
   </a>
-  <div id="fig18-description" class="visually-hidden">Un gráfico circular de estilo donut que muestra que el 26,1% de los client hints usa 'dpr', 24,3% usa 'viewport-width', 19,7% usa 'width', 6,7% usa 'save-data', 6,1% usan 'device-memory', 6,0% usan 'downlink', 5,6% usan 'rtt' y 5,6% usan 'ect'</div>
-  <figcaption id="fig18-caption">Figura 18. Client Hints habilitados.</figcaption>
+  <div id="fig18-description" class="visually-hidden">Un gráfico circular de estilo donut que muestra que el 26,1% de los <i lang="en">client hints</i> usa 'dpr', 24,3% usa 'viewport-width', 19,7% usa 'width', 6,7% usa 'save-data', 6,1% usan 'device-memory', 6,0% usan 'downlink', 5,6% usan 'rtt' y 5,6% usan 'ect'</div>
+  <figcaption id="fig18-caption">Figura 18. <i lang="en">Client Hints</i> habilitados.</figcaption>
 </figure>
 
-Los Client Hints relacionados con la red, `downlink`, `rtt`, y `ect`, solamente están disponibles en Android Chrome.
+Los <i lang="en">Client Hints</i> relacionados con la red, `downlink`, `rtt`, y `ect`, solamente están disponibles en Android Chrome.
 
-### Lazy loading
+### <i lang="en">Lazy loading</i>
 
-Mejorar el rendimiento de una página web puede ser parcialmente descrito como un juego de ilusiones; moviendo las cosas más lentas fuera de banda y lejos del sitio del usuario. De este modo, el lazy loading de imágenes es una de esas ilusiones donde la imagen y el contenido multimedia solamente se cargan cuando el usuario se desplaza por la página. Esto mejora el rendimiento que se percibe, incluso en conexiones lentas, y evita al usuario la descarga de bytes que no van a ser vistos.
+Mejorar el rendimiento de una página web puede ser parcialmente descrito como un juego de ilusiones; moviendo las cosas más lentas fuera de banda y lejos de la vista del usuario. De este modo, el <i lang="en">lazy loading</i> de imágenes es una de esas ilusiones donde la imagen y el contenido multimedia solamente se cargan cuando el usuario se desplaza por la página. Esto mejora el rendimiento que se percibe, incluso en conexiones lentas, y evita al usuario la descarga de bytes que no van a estar visibles.
 
-Anteriormente, en la  <a href="#fig-5">Figura 5</a>, mostramos como el volumen del contenido de imagen en el percentil 75 es bastante más de lo que, en principio, puede verse en una sola ventana de escritorio o móvil. La auditoría Lighthouse de [imágenes fuera de pantalla](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirma nuestras sospechas. La página web media tiene un 27% de contenido de imagen significativamente por debajo del borde. Esto aumenta hasta el 84% en el percentil 90.
+Anteriormente, en la  <a href="#fig-5">Figura 5</a>, mostramos como el volumen del contenido de imagen en el percentil 75 es bastante más de lo que, en principio, puede verse en una sola ventana de escritorio o móvil. La auditoría <i lang="en">Lighthouse</i> de [imágenes fuera de pantalla](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirma nuestras sospechas. La página web media tiene un 27% de contenido de imagen significativamente por debajo del borde. Esto aumenta hasta el 84% en el percentil 90.
 
 <figure>
   <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
     <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="Figura 19. Auditoría Lighthouse: Fuera de pantalla." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
   </a>
   <div id="fig19-description" class="visually-hidden">Un gráfico de barras que muestra que en el percentil p10 un 0% de las imágenes se encuentran fuera de pantalla, en el percentil p25 un 2% están fuera de pantalla, en el percentil p50 un 27% están fuera de pantalla, en el percentil p75 un 64% están fuera de pantalla, y en el percentil p90 un 84% de las imágenes están fuera de pantalla.</div>
-  <figcaption id="fig19-caption">Figura 19. Auditoría Lighthouse: Fuera de pantalla.</figcaption>
+  <figcaption id="fig19-caption">Figura 19. Auditoría <i lang="en">Lighthouse</i>: Fuera de pantalla.</figcaption>
 </figure>
 
-La auditoría Lighthouse nos da solo una idea ya que hay un buen número de situaciones que pueden ser difíciles de detectar, como el uso de marcadores de calidad.
+La auditoría <i lang="en">Lighthouse</i> nos da solo una idea ya que hay un buen número de situaciones que pueden ser difíciles de detectar, como el uso de marcadores de calidad.
 
-El lazy loading [puede ser implementado](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) de muchas maneras, incluyendo el uso de una combinación de Observadores de intersección (Intersection Observers), Observadores de redimensión (Resize Observers), o el uso de librerías de JavaScript como [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), y otras tantas. 
+El <i lang="en">lazy loading</i> [puede ser implementado](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-vídeo) de muchas maneras, incluyendo el uso de una combinación de Observadores de intersección (<i lang="en">Intersection Observers</i>), Observadores de redimensión (<i lang="en">Resize Observers</i>), o el uso de librerías de JavaScript como [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), y otras tantas. 
 
-En agosto de 2019, Chrome 76 fue lanzado con la compatibilidad para un lazy loading basado en marcado usando `<img loading="lazy">`. Aunque la instantánea de los sitios web usada para el 2019 Web Almanac utilizaba datos de julio de 2019, más de 2.509 sitios web ya utilizaban esta función.
+En agosto de 2019, Chrome 76 fue lanzado con la compatibilidad para un <i lang="en">lazy loading</i> basado en marcado usando `<img loading="lazy">`. Aunque la instantánea de los sitios web usada para el 2019 Web Almanac utilizaba datos de julio de 2019, más de 2.509 sitios web ya utilizaban esta función.
 
 ### Accesibilidad
 
@@ -349,23 +349,23 @@ Podemos encontrar todas las etiquetas de imagen en los archivos HTML del conjunt
 
 ## Vídeo
 
-Aunque las imágenes dominan los medios multimedia de las páginas web, los vídeos están empezando a adquirir mayor relevancia como transmisores de contenido en la web. Según el HTTP Archive, vemos que el 4,06% de sitios para escritorio y el 2,99% de sitios para móvil tienen archivos de vídeo auto-hospedados (self-hosting). En otras palabras, archivos de vídeo que no están alojados en otro sitio web como Youtube o Facebook.
+Aunque las imágenes dominan los medios multimedia de las páginas web, los vídeos están empezando a adquirir mayor relevancia como transmisores de contenido en la web. Según el <i lang="en">HTTP Archive</i>, vemos que el 4,06% de sitios para escritorio y el 2,99% de sitios para móvil tienen archivos de vídeo auto-hospedados (<i lang="en">self-hosting</i>). En otras palabras, archivos de vídeo que no están alojados en otro sitio web como Youtube o Facebook.
 
 ### Formatos de vídeo
 
 El vídeo puede ser mostrado en muchos formatos y reproductores diferentes. Los formatos que dominan en móvil y escritorio son el `.ts` (segmentos de transmisión HLS) y el `.mp4` (el H264 MPEG):
 
 <figure>
-  <a href="/static/images/2019/media/fig20_video_files_by_extension.png">
-    <img src="/static/images/2019/media/fig20_video_files_by_extension.png" alt="Figura 20. Recuento de archivos de vídeo por extensión." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive">
+  <a href="/static/images/2019/media/fig20_vídeo_files_by_extension.png">
+    <img src="/static/images/2019/media/fig20_vídeo_files_by_extension.png" alt="Figura 20. Recuento de archivos de vídeo por extensión." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive">
   </a>
   <div id="fig20-description" class="visually-hidden">Un gráfico de barras que muestra el uso de 'ts' es de 1.283.439 para escritorio (792.952 para móvil), de 'mp4' es de 729.757 para escritorio (662.015 para móvil), el de 'webm' es de 38.591 para escritorio (32.417 para móvil), el de 'mov' es de 22.194 para escritorio (14.986 para móvil), el de 'm4s' es de 17.338 para escritorio (16.046 para móvil), el de 'm4v' es de 7.466 para escritorio (6.169 para móvil).</div>
   <figcaption id="fig20-caption">Figura 20. Recuento de archivos de vídeo por extensión.</figcaption>
 </figure>
 
-Otros formatos vistos incluyen `webm`, `mov`, `m4s` y `m4v` (segmentos de transmisión MPEG-DASH). Queda claro que la mayoría de las transmisiones (streamings) en la web son HLS y que el formato por excelencia para vídeos estáticos es el `mp4`.
+Otros formatos vistos incluyen `webm`, `mov`, `m4s` y `m4v` (segmentos de transmisión MPEG-DASH). Queda claro que la mayoría de las transmisiones (<i lang="en">streamings</i>) en la web son HLS y que el formato por excelencia para vídeos estáticos es el `mp4`.
 
-Bajo estas líneas puede verse el tamaño de video medio para cada formato:
+Bajo estas líneas puede verse el tamaño de vídeo medio para cada formato:
 
 <figure>
   <a href="/static/images/2019/media/fig21_median_vidoe_file_size_by_extension.png">
@@ -379,11 +379,11 @@ Los valores medios son menores en versión móvil, lo que puede significar simpl
 
 ### Tamaño de archivos de vídeo
 
-Cuando se muestran vídeos en la web, la mayoría de ellos son reproducidos con el reproductor de vídeo de HTML5. El reproductor de vídeo de HTML es altamente personalizable para poder mostrar vídeos con fines muy diferentes. Por ejemplo, para reproducir un vídeo automáticamente, los parámetros `autoplay` y `muted` han de ser añadidos. El atributo `controls` permite al usuario iniciar/parar y moverse a través del vídeo. Si analizamos las etiquetas de vídeo en el HTTP Archive, podemos ver el uso de cada uno de estos atributos:
+Cuando se muestran vídeos en la web, la mayoría de ellos son reproducidos con el reproductor de vídeo de HTML5. El reproductor de vídeo de HTML es altamente personalizable para poder mostrar vídeos con fines muy diferentes. Por ejemplo, para reproducir un vídeo automáticamente, los parámetros `autoplay` y `muted` han de ser añadidos. El atributo `controls` permite al usuario iniciar/parar y moverse a través del vídeo. Si analizamos las etiquetas de vídeo en el <i lang="en">HTTP Archive</i>, podemos ver el uso de cada uno de estos atributos:
 
 <figure>
-  <a href="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png">
-    <img src="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png" alt="Figura 22. Uso de los atributos de la etiqueta HTML de vídeo." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive">
+  <a href="/static/images/2019/media/fig22_html_vídeo_tag_attributes_usage.png">
+    <img src="/static/images/2019/media/fig22_html_vídeo_tag_attributes_usage.png" alt="Figura 22. Uso de los atributos de la etiqueta HTML de vídeo." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive">
   </a>
   <div id="fig22-description" class="visually-hidden">Un gráfico de barras que muestra para escritorio: 'autoplay' en el 11.84%, 'buffered' en el 0%, 'controls' en el 12.05%, 'crossorigin' en el 0.45%, 'currenttime' en el 0.01%, 'disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.01%, 'duration' en el 0.05%, 'height' en el 7.33%, 'intrinsicsize' en el 0%, 'loop' en el 14.57%, 'muted' en el 13.92%, 'playsinline' en el 6.49%, 'poster' en el 8.98%, 'preload' en el 11.62%, 'src' en el 3.67%, 'use-credentials' en el 0%, y 'width' en el 9%. Y para móvil: 'autoplay' en el 12.38%, 'buffered' en el 0%, 'controls' en el 13.88%, 'crossorigin' en el 0.16%, 'currenttime' en el 0.01%, disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.02%, 'duration' en el 0.09%, 'height' en el 6.54%,  intrinsicsize' en el 0%, 'loop' en el 14.44%, 'muted' en el 13.55%, 'playsinline' en el 6.15%, 'poster' en el 9.29%, 'preload' en el 10.34%, 'src' en el 4.13%, 'use-credentials' en el 0%, y 'width' en el 9.03%.</div>
   <figcaption id="fig22-caption">Figura 22. Uso de los atributos de la etiqueta HTML de vídeo.</figcaption>
@@ -393,21 +393,21 @@ Los atributos más comunes son `autoplay`, `muted` y `loop`, seguidos por la eti
 
 Aunque muchos de estos atributos tienen un uso muy parecido tanto en escritorio como en móvil, hay unos pocos que tienen diferencias significativas. Los dos atributos que mayor diferencia presentan entre móvil y escritorio son `width` y `height`, con un 4% menos de sitios que los usen en móvil. Curiosamente, hay un pequeño incremento del atributo `poster` (sitúa una imagen sobre la ventana de vídeo antes de la reproducción) en móvil.
 
-Desde el punto de vista de la accesibilidad, la etiqueta `<track>` puede ser usada para añadir descripciones o subtítulos. Hay información en el HTTP Archive sobre con qué frecuencia se usa `<track>`, pero tras analizarlo, la mayoría de instancias del conjunto de datos estaban comentadas o apuntaban a una dirección que devolvía un error `404`. Parece ser que muchos sitios usan plantillas de JavaScript o HTML y no eliminan el registro, incluso cuando éste ya no se usa más.
+Desde el punto de vista de la accesibilidad, la etiqueta `<track>` puede ser usada para añadir descripciones o subtítulos. Hay información en el <i lang="en">HTTP Archive</i> sobre con qué frecuencia se usa `<track>`, pero tras analizarlo, la mayoría de instancias del conjunto de datos estaban comentadas o apuntaban a una dirección que devolvía un error `404`. Parece ser que muchos sitios usan plantillas de JavaScript o HTML y no eliminan el registro, incluso cuando éste ya no se usa más.
 
 ### Reproductores de vídeo
 
 Para una reproducción más avanzada (y para iniciar la transmisión de vídeo), el reproductor de vídeo nativo de HTML5 no servirá. Hay otras pocas librerías de vídeo populares que son usadas para reproducir vídeo:
 
 <figure>
-  <a href="/static/images/2019/media/fig23_top_javascript_video_players.png">
-    <img src="/static/images/2019/media/fig23_top_javascript_video_players.png" alt="Figura 23. Top de reproductores de vídeo de JavaScript." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive">
+  <a href="/static/images/2019/media/fig23_top_javascript_vídeo_players.png">
+    <img src="/static/images/2019/media/fig23_top_javascript_vídeo_players.png" alt="Figura 23. Top de reproductores de vídeo de JavaScript." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive">
   </a>
-  <div id="fig23-description" class="visually-hidden">Gráfico de barras mostrando que 'flowplayer' se usa en 3.365 sitios web para escritorio (3.400 para móvil), 'hls' en 52.375 sitios web para escritorio (40.925 para móvil), 'jwplayer' en 110.280 sitios web para escritorio (96.945 para móvil), 'shaka' en 325 sitios web para escritorio (275 para móvil) y 'video' se usa en 377.990 sitios web para escritorio (391.330 para móvil)</div>
+  <div id="fig23-description" class="visually-hidden">Gráfico de barras mostrando que 'flowplayer' se usa en 3.365 sitios web para escritorio (3.400 para móvil), 'hls' en 52.375 sitios web para escritorio (40.925 para móvil), 'jwplayer' en 110.280 sitios web para escritorio (96.945 para móvil), 'shaka' en 325 sitios web para escritorio (275 para móvil) y 'vídeo' se usa en 377.990 sitios web para escritorio (391.330 para móvil)</div>
   <figcaption id="fig23-caption">Figura 23. Top de reproductores de vídeo de JavaScript.</figcaption>
 </figure>
 
-El más popular (de lejos) es el video.js, seguido por JWPLayer y HLS.js. Los autores advierten de que es posible que haya otros archivos con el nombre "video.js" que puedan no ser la misma librería de reproducción de vídeo.
+El más popular (de lejos) es el vídeo.js, seguido por JWPLayer y HLS.js. Los autores advierten de que es posible que haya otros archivos con el nombre "vídeo.js" que puedan no ser la misma librería de reproducción de vídeo.
 
 ## Conclusiones
-Casi todas las páginas web usan imágenes y vídeo en cierta medida para mejorar la experiencia de usuario y crear significado. Estos archivos multimedia utilizan una gran cantidad de recursos y son un gran porcentaje del tonelaje de las páginas web (¡y no se van a ir!) El uso de formatos alternativos, lazy loading, imágenes adaptables, y la optimización de imagen pueden ayudar mucho a minimizar el tamaño de los archivos multimedia en la web.
+Casi todas las páginas web usan imágenes y vídeo en cierta medida para mejorar la experiencia de usuario y crear significado. Estos archivos multimedia utilizan una gran cantidad de recursos y son un gran porcentaje del tonelaje de las páginas web (¡y no se van a ir!) El uso de formatos alternativos, <i lang="en">lazy loading</i>, imágenes adaptables, y la optimización de imagen pueden ayudar mucho a minimizar el tamaño de los archivos multimedia en la web.
