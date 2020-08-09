@@ -28,14 +28,15 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      - name: Set VALIDATE_ALL_CODEBASE variable
-        if: github.event_name == 'push' || github.event_name == 'pull_request'
-        run: |
-          echo "::set-env name=VALIDATE_ALL_CODEBASE1::false"
       - name: Lint Code Base
-        uses: docker://github/super-linter:v3
+        uses: docker://github/super-linter:v3.3.0
         env:
+          VALIDATE_ALL_CODEBASE: false	
           DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_PYTHON_PYLINT: true
-          VALIDATE_PYTHON_FLAKE8: true
+          VALIDATE_YAML: true
+          VALIDATE_JSON: true
+          VALIDATE_PYTHON: true
+          VALIDATE_JAVASCRIPT_ES: true	
+          VALIDATE_CSS: true	
+          VALIDATE_MD: true	
+          VALIDATE_HTML: true
