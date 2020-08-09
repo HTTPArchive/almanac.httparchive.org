@@ -44,4 +44,5 @@ jobs:
           VALIDATE_JSON: true
           VALIDATE_MD: true
           VALIDATE_PYTHON_PYLINT: true
+          VALIDATE_PYTHON_FLAKE8: true
           VALIDATE_YAML: true
