@@ -144,13 +144,19 @@ tbody tr:nth-child(even) {
   max-width: 25vw;
 }
 
+.contributor-social a {
+  display: flex;
+  align-items: center;
+  line-height: 12px;
+  color: #757575;
+}
+
 .contributor-social svg,
 .authors .social svg {
-  height: 1rem;
-  width: 1rem;
-  vertical-align: text-top;
-  margin-right: 2px;
-  margin-right: 0.2rem;
+  height: 1em;
+  width: 1em;
+  margin-right: 4px;
+  margin-right: 0.25rem;
 }
 
 .contributor-teams {
@@ -172,16 +178,6 @@ tbody tr:nth-child(even) {
 .authors .social a:visited {
   font-size: 8px;
   font-size: 0.8rem;
-}
-
-.authors .social a {
-  margin-left: 0;
-  margin-right: 6px;
-  margin-right: 0.6rem;
-}
-
-.authors .social {
-  display: block;
 }
 
 .contributor-team {
@@ -337,6 +333,11 @@ section.chapter {
   .content a,
   .content a:visited {
     color: black;
+  }
+
+  .contributor-social a,
+  .contributor-social a:visited {
+    color: #757575;
   }
 
   #title {

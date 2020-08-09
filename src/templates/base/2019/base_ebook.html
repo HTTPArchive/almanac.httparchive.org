@@ -347,8 +347,8 @@
           {% if contributor.twitter %}
           <div class="contributor-social">
             <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
-              <svg>
-                <title id="author-{{ author }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
+              <svg role="img">
+                <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
               @{{ contributor.twitter }}
@@ -358,33 +358,33 @@
           {% if contributor.github %}
           <div class="contributor-social">
             <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
-              <svg>
-                <title id="author-{{ author }}-github">{{ onTwitter(contributor.github) }}</title>
+              <svg role="img">
+                <title id="contributors-{{ id }}-github">{{ onTwitter(contributor.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
-              @{{ contributor.github }}
+              {{ contributor.github }}
             </a>
           </div>
           {% endif %}
           {% if contributor.linkedin %}
           <div class="contributor-social">
             <a href="https://www.linkedin.com/in/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-linkedin">
-              <svg>
-                <title id="author-{{ author }}-linkedin">{{ onTwitter(contributor.linkedin) }}</title>
+              <svg role="img">
+                <title id="contributors-{{ id }}-linkedin">{{ onTwitter(contributor.linkedin) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
               </svg>
-              @{{ contributor.linkedin }}
+              {{ contributor.linkedin }}
             </a>
           </div>
           {% endif %}
           {% if contributor.website %}
           <div class="contributor-social">
             <a href="{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-website">
-              <svg>
-                <title id="author-{{ author }}-website">{{ contributor.website }}</title>
+              <svg role="img">
+                <title id="contributors-{{ id }}-website">{{ contributor.website }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
-              @{{ contributor.website }}
+              {{ contributor.website }}
             </a>
           </div>
           {% endif %}
