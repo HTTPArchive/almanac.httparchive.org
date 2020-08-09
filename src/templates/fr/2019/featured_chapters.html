@@ -65,35 +65,4 @@
   {%- set featured_chapter_quote = "HTTP/2 was the first major update to the main transport protocol of the web in nearly 20 years. It arrived with a wealth of expectations: it promised a free performance boost with no downsides. More than that, we could stop doing all the hacks and work arounds that HTTP/1.1 forced us into, due to its inefficiencies. Bundling, spriting, inlining, and even sharding domains would all become anti-patterns in an HTTP/2 world, as improved performance would be provided by default. This chapter examines how this relatively new technology has fared in the real world." %}
   {%- set featured_chapter_stats = {"stat1":"95%","label1":"Users who can use HTTP/2","stat2":"27.83%","label2":"Requests with HTTP/2 prioritisation issues","stat3":"8.38%","label3":"Sites supporting QUIC"} %}
 {%- endif %}
-<section class="featured-chapter">
-  <div class="featured-chapter-content">
-    <h2 class="title title-center">Focus sur le chapitre…</h2>
-    <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
-    <blockquote>
-      {{ featured_chapter_quote|safe }}
-    </blockquote>
-    <div class="featured-chapter-content-data">
-      {% if featured_chapter_stats.get('stat1') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
-      </div>
-      {% endif %}
-      {% if featured_chapter_stats.get('stat2') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
-      </div>
-      {% endif %}
-      {% if featured_chapter_stats.get('stat3') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
-      </div>
-      {% endif %}
-    </div>
-    <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-      Lire le chapitre&nbsp;: {{ localizedChapterTitles[featured_chapter] }}
-    </a>
-  </div>
-</section>
+{{ featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) }}

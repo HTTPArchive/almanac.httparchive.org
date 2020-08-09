@@ -1,4 +1,5 @@
 const fs = require('fs-extra');
+const ejs = require('ejs');
 const { JSDOM } = require('jsdom');
 
 const { size_of } = require('./shared');
@@ -57,16 +58,24 @@ const generate_featured_chapters = async (featured_quotes) => {
         sorted_quotes[key] = unsorted_quotes[key];
       });
       
-      const json_file = `templates/${language}/${year}/featured_chapters.json`;
-      
-      console.log(`\n Generating ${json_file}`);
-      await fs.outputFile(`${json_file}`, JSON.stringify(sorted_quotes,null,2), 'utf8');
-      await size_of(`${json_file}`);
+      await write_template(language, year, sorted_quotes);
 
     }
   }
 
   return true;
+};
+
+const write_template = async (language, year, sorted_quotes) => {
+  const template = `templates/base/${year}/featured_chapters.ejs.html`;
+  const path = `templates/${language}/${year}/featured_chapters.html`;
+
+  if (fs.existsSync(template)) {
+    let html = await ejs.renderFile(template, { sorted_quotes });
+
+    await fs.outputFile(path, html, 'utf8');
+    await size_of(path);
+  }
 };
 
 module.exports = {

@@ -77,6 +77,9 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 
 {% block accessibility_statement %}Declaração de acessibilidade{% endblock %}
 
+{% block featured_chapter %}Capítulo em Destaque{% endblock %}
+{% macro readChapter(chapter) %}Leia o Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+
 {% block contributors_description %}
 O Web Almanac Isso foi possível graças ao trabalho árduo da comunidade da web. {{ self.contributors() }} as pessoas ofereceram inúmeras horas nas fases de planejamento, pesquisa, redação e produção.
 {% endblock %}

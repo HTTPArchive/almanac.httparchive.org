@@ -35,6 +35,7 @@ const generate_chapters = async () => {
   }
 
   for (const file of await find_markdown_files()) {
+
     const re = (process.platform != 'win32') 
                   ? /content\/(.*)\/(.*)\/(.*).md/ 
                   : /content\\(.*)\\(.*)\\(.*).md/;
@@ -68,9 +69,9 @@ const generate_chapters = async () => {
   }
 
   // Comment out temporarily until all featured quotes have been added
-  // await generate_featured_chapters(featured_quotes);
-  await generate_ebooks(ebook_chapters,configs);
-  await generate_js();
+  await generate_featured_chapters(featured_quotes);
+  //await generate_ebooks(ebook_chapters,configs);
+  //await generate_js();
 
   const sitemap_path = await generate_sitemap(sitemap,sitemap_languages);
   await size_of(sitemap_path);

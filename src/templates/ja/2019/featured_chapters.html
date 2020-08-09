@@ -65,35 +65,4 @@
   {%- set featured_chapter_quote = "HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。" %}
   {%- set featured_chapter_stats = {"stat1":"95%","label1":"HTTP/2を使用できるグローバルユーザーの割合。","stat2":"27.83%","label2":"準最適なHTTP/2優先順位付けによるモバイル要求の割合。","stat3":"8.38%","label3":"QUICをサポートするモバイルサイトの割合。"} %}
 {%- endif %}
-<section id="featured-chapter" class="featured-chapter">
-  <div class="featured-chapter-content">
-    <h2 class="title title-center">注目の章</h2>
-    <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
-    <blockquote>
-      {{ featured_chapter_quote|safe }}
-    </blockquote>
-    <div class="featured-chapter-content-data">
-      {% if featured_chapter_stats.get('stat1') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
-      </div>
-      {% endif %}
-      {% if featured_chapter_stats.get('stat2') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
-      </div>
-      {% endif %}
-      {% if featured_chapter_stats.get('stat3') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
-      </div>
-      {% endif %}
-    </div>
-    <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-      {{ localizedChapterTitles[featured_chapter] }}の章を読む
-    </a>
-  </div>
-</section>
+{{ featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) }}
