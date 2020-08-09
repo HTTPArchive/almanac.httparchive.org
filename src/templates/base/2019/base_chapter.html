@@ -87,7 +87,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_byline() %}
   <div class="byline">{{ self.written_by_before() }}
   {% for author in metadata.get('authors') %}
-    <a class="author" href="#author-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }}
+  <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }}
     {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
   {% endfor %}{{ self.written_by_after() }}
   </div>
