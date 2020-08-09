@@ -257,8 +257,6 @@
 .authors .name {
   font-size: 24px;
   font-size: 1.5rem;
-  margin-right: 10px;
-  margin-right: 0.625rem;
   margin-bottom: 10px;
   margin-bottom: 0.625rem;
   display: inline-block;
@@ -276,15 +274,21 @@
 }
 
 .authors .social {
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  text-align: center;
 }
 
 .authors .social a {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 5px;
-  margin: 0 0.3125rem;
+  margin: 0 10px 0 0 ;
+  margin: 0 0.625rem 0 0;
+  text-decoration: none;
+}
+
+.authors .social svg {
+  width: 1em;
+  vertical-align: text-top;
+  margin-right: 3.2px;
+  margin-right: 0.2rem;
 }
 
 #chapter-navigation {
