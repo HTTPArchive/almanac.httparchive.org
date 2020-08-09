@@ -276,15 +276,21 @@
 }
 
 .authors .social {
-  display: inline-block;
-  vertical-align: middle;
+  font-size: 0.9em;
 }
 
 .authors .social a {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 5px;
-  margin: 0 0.3125rem;
+  margin: 0 10px 0 0;
+  margin: 0 0.625rem 0 0;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.authors .social a:hover,
+.authors .social a:focus {
+  text-decoration: underline;
 }
 
 #chapter-navigation {
