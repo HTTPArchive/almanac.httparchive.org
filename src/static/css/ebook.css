@@ -160,20 +160,12 @@ tbody tr:nth-child(even) {
 
 .contributor-teams {
   margin-top: 5px;
+  color: #757575;
 }
 
 .contributor-team {
   font-size: 14px;
   font-size: 0.875rem;
-  color: #757575;
-}
-
-.contributor-team::after {
-  content: ', ';
-}
-
-.contributor-team:last-child::after {
-  content: '';
 }
 
 .social-icon {

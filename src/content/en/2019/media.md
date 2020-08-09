@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-07-06T00:00:00.000Z
+last_updated: 2020-08-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -159,7 +159,7 @@ In aggregate, across all page, we indeed see the prevalence of these formats. JP
     <img alt="Most frequent Image types used on web pages" aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/media/fig7_image_format_usage.png" width="600" height="376">
   </a>
   <div id="fig7-description" class="visually-hidden">A tree map showing that JPEGs are used 60.27% of the time, PNGs 28.2%, WebP 4.2%, GIF 3.67%, and SVG 3.63%.</div>
-  <figcaption id="fig7-caption">Figure 7: Image format usage.</figcaption>
+  <figcaption id="fig7-caption">Figure 7. Image format usage.</figcaption>
 </figure>
 
 Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of `google.com` and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images, 61 images at the 90th percentile, and a whopping 229 images at the 99th percentile.

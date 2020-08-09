@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja"],
+      "supported_languages": ["en","es","fr","ja","zh-CN"],
       "ebook_languages": []
     }
   ],
@@ -213,6 +213,17 @@
       "github": "AAgar",
       "twitter": "AAgar"
     },
+     "adityapandey1998": {
+      "name": "Aditya Pandey",
+      "teams": [
+        "analysts",
+        "developers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/31750960?v=4&s=200",
+      "github": "adityapandey1998",
+      "twitter": "adityapandey98",
+      "linkedin": "adityapandey98"
+    },
     "alexdenning": {
       "name": "Alex Denning",
       "teams": [
@@ -318,6 +329,7 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
       "github": "bazzadp",
+      "linkedin": "barry-pollard-developer",
       "twitter": "tunetheweb"
     },
     "bseymour": {
@@ -399,6 +411,14 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/1622597?v=4&s=200",
       "github": "colinbendell",
       "twitter": "colinbendell"
+    },
+    "chengxicn": {
+      "name": "Cheng Xi",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30398527?v=4&s=200",
+      "github": "chengxicn"
     },
     "davelab6": {
       "name": "Dave Crossland",
@@ -538,6 +558,16 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/2944237?v=4&s=200",
       "github": "gokulkrishh"
     },
+    "GregBrimble": {
+      "name": "Greg Brimble",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8484333?v=4&s=200",
+      "website": "https://gregbrimble.com/",
+      "github": "GregBrimble",
+      "twitter": "GregBrimble"
+    },
     "gregorywolf": {
       "name": "Greg Wolf",
       "teams": [
@@ -672,7 +702,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13718746?v=4&s=200",
-      "website": "https://www.linkedin.com/in/johnfox/",
+      "linkedin": "johnfox",
       "github": "clarkeclark"
     },
     "logicalphase": {
@@ -744,7 +774,8 @@
     "LeaVerou": {
       "name": "Lea Verou",
       "teams": [
-        "authors"
+        "authors",
+        "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/175836?v=4&s=200",
       "website": "http://lea.verou.me/",
@@ -862,7 +893,7 @@
         "translators"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/868584?v=4&s=200",
-      "website": "https://www.linkedin.com/in/miguelcarlosmartinezdiaz/",
+      "linkedin": "miguelcarlosmartinezdiaz",
       "github": "mcmd",
       "twitter": "mcmd"
     },
@@ -989,14 +1020,6 @@
       "github": "pmeenan",
       "twitter": "patmeenan"
     },
-    "tungpatrick": {
-      "name": "Patrick Tung",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/43163296?v=4&s=200",
-      "github": "tungpatrick"
-    },
     "paulcalvano": {
       "name": "Paul Calvano",
       "teams": [
@@ -1105,7 +1128,9 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
-      "github": "rockeynebhwani"
+      "github": "rockeynebhwani",
+      "twitter": "rnebhwani",
+      "linkedin": "rockeynebhwani"
     },
     "RoelN": {
       "name": "Roel Nieskens",
@@ -1142,6 +1167,16 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/16757512?v=4&s=200",
       "github": "sboukortt"
+    },
+    "saptaks": {
+      "name": "Saptak Sengupta",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9530293?v=4&s=200",
+      "website": "https://saptaks.website/",
+      "github": "saptaks",
+      "twitter": "Saptak013"
     },
     "ibnesayeed": {
       "name": "Sawood Alam",
