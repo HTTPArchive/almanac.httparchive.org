@@ -122,7 +122,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
     {% endif %}
       {% set authordata = config.contributors[author] if author in config.contributors else None %}
       {% if authordata %}
-      <li id="author-{{ author }}">
+      <li>
           <div aria-hidden="true">
             <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}" tabindex="-1">
               <img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" loading="lazy" />
