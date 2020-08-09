@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"IV","chapter_number":18,"title":"Page Weight","description":"ページの重さが重要な理由、帯域幅、複雑なページ、経時的なページの重み、ページ要求、およびファイル形式をカバーする2019 Web Almanacのページの重さの章。","authors":["tammyeverts","khempenius"],"reviewers":["paulcalvano"],"translators":["ksakae"],"discuss":"1773","results":"https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/","queries":"18_PageWeight","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-02T00:00:00.000Z","chapter":"page-weight"} %} {% block index %}
+{% set metadata = {"part_number":"IV","chapter_number":18,"title":"Page Weight","description":"ページの重さが重要な理由、帯域幅、複雑なページ、経時的なページの重み、ページ要求、およびファイル形式をカバーする2019 Web Almanacのページの重さの章。","authors":["tammyeverts","khempenius"],"reviewers":["paulcalvano"],"translators":["ksakae"],"discuss":"1773","results":"https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/","queries":"18_PageWeight","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-09T00:00:00.000Z","chapter":"page-weight"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -158,8 +158,8 @@
   <li><p>ページ上の画像の数は、コンバージョンの2番目に大きな予測因子でした。ユーザーが変換したセッションでは、変換しなかったセッションよりも画像が38％少なくなりました。</p></li>
 </ol>
 <figure id="fig-1">
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="図1.変換されたセッションと変換されないセッション。" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="432" loading="lazy" />
+  <a href="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png">
+    <img src="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png" alt="図1.変換されたセッションと変換されないセッション。" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="432" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig1-description" data-show-text="{{ show_description(1) }}" data-hide-text="{{ hide_description(1) }}">{{ show_description(1) }}</button>
   <div id="fig1-description" class="visually-hidden">19の変換済みセッションと31の非変換セッションを示すグラフ</div>
@@ -169,8 +169,8 @@
   <li><strong>スクリプトが多いセッションは、変換される可能性が低くなりました。</strong> このグラフで本当に魅力的なのは、約240個のスクリプトを実行した後の変換確率の急激な低下だけではありません。最大1,440個のスクリプトが含まれる小売セッションの数を示すのはロングテールです！</li>
 </ol>
 <figure id="fig-2">
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg" alt="図2.スクリプトが増加すると変換率は低下します。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="336" loading="lazy" />
+  <a href="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg">
+    <img src="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg" alt="図2.スクリプトが増加すると変換率は低下します。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="336" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
   <div id="fig2-description" class="visually-hidden">変換率が80スクリプトまで上昇し、その後スクリプトが1440スクリプトまで増加すると低下することを示すグラフ。</div>
@@ -654,8 +654,8 @@
 <p>上記のデータは、Web上のGIFの大部分が実際には小さな1×1ピクセルであるという事実を覆い隠しています。これらのピクセルは通常「トラッキングピクセル」として使用されますが、さまざまなCSS効果を生成するためのハックとしても使用できます。これらの1×1ピクセルは文字通りのイメージですが、その使用の精神はおそらくスクリプトまたはCSSに関連付けるものと近いでしょう。</p>
 <p>データセットをさらに調査すると、GIFの62％が43バイト以下（43バイトは透明な1×1ピクセルGIFのサイズ）であり、GIFの84％は1KB以下であることが明らかになりました。</p>
 <figure id="fig-10">
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="図10. GIFファイルサイズの累積分布関数。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="330" loading="lazy" />
+  <a href="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png">
+    <img src="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png" alt="図10. GIFファイルサイズの累積分布関数。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="330" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig10-description" data-show-text="{{ show_description(10) }}" data-hide-text="{{ hide_description(10) }}">{{ show_description(10) }}</button>
   <div id="fig10-description" class="visually-hidden">GIFの25％が35バイト以下（1x1ホワイトGIFの最適サイズ）であり、GIFの62％が43バイト以下（1x1透明GIFの最適サイズ）であることを示すグラフ。これは、GIFの75％を100バイト以下に増やすだけです。</div>
