@@ -31,19 +31,11 @@ jobs:
       - name: Set VALIDATE_ALL_CODEBASE variable
         if: github.event_name == 'push' || github.event_name == 'pull_request'
         run: |
-          echo "::set-env name=VALIDATE_ALL_CODEBASE::false"
+          echo "::set-env name=VALIDATE_ALL_CODEBASE1::false"
       - name: Lint Code Base
         uses: docker://github/super-linter:v3
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_BASH: true
-          VALIDATE_CSS: true
-          VALIDATE_HTML: true
-          VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_JSON: true
-          VALIDATE_MD: true
           VALIDATE_PYTHON_PYLINT: true
           VALIDATE_PYTHON_FLAKE8: true
-          VALIDATE_YAML: true
-
