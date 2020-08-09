@@ -274,8 +274,7 @@
 }
 
 .authors .social {
-  display: flex;
-  text-align: center;
+  display: block;
 }
 
 .authors .social a {
