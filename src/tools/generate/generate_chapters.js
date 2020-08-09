@@ -3,7 +3,7 @@ const showdown = require('showdown');
 const ejs = require('ejs');
 const prettier = require('prettier');
 
-const { find_markdown_files, find_config_files, size_of, parse_array } = require('./shared');
+const { find_markdown_files, get_yearly_configs, size_of, parse_array } = require('./shared');
 const { generate_table_of_contents } = require('./generate_table_of_contents');
 const { generate_header_links } = require('./generate_header_links');
 const { generate_figure_ids } = require('./generate_figure_ids');
@@ -29,15 +29,9 @@ const generate_chapters = async () => {
   let configs = {};
   let featured_quotes = {};
   
-  for (const config_file of await find_config_files()) {
-    const re = (process.platform != 'win32') 
-                  ? /config\/([0-9]*).json/ 
-                  : /config\\([0-9]*).json/;
-    const [path,year] = config_file.match(re);
-    
-    configs[year] = JSON.parse(await fs.readFile(`config/${year}.json`, 'utf8'));
+  configs = await get_yearly_configs();
+  for (const year in configs) {  
     sitemap_languages[year] = configs[year].settings[0].supported_languages
-
   }
 
   for (const file of await find_markdown_files()) {

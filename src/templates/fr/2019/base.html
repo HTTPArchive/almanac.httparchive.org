@@ -4,9 +4,6 @@
 
 {% block twitter_image_alt %}Web Almanac {{ year }}{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-26T00:00:00.000Z{% endblock %}
-
 {% block skip_navigation %}Sauter la navigation{% endblock %}
 
 {% block organization %}Web Almanac par HTTP Archive{% endblock %}
@@ -51,6 +48,7 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block close_the_index %}Fermer la table des matières{% endblock %}
 
 {% block and %}et{% endblock %}
+{% block comma %}, {% endblock %}
 
 {% block open %}Ouvrez{% endblock %}
 {% block close %}Fermez{% endblock %}
@@ -70,12 +68,13 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} sur Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} sur GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} sur LinkedIn{% endmacro %}
 {% macro website(authorName) %}site web de {{authorName}}{% endmacro %}
 
 {% macro edition(year) %}Édition {{ year }}{% endmacro %}
 
 {% block footer_title %}Navigation dans le pied de page{% endblock %}
-{% block copyright %}© 2019 Web Almanac. Sous licence <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block copyright %}© Web Almanac. Sous licence <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}Déclaration d'accessibilité{% endblock %}
 
 {% block contributors_description %}

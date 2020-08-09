@@ -4,9 +4,9 @@ import inspect
 
 from flask import request, abort, redirect
 from functools import wraps
-from language import Language, DEFAULT_LANGUAGE
+from .language import DEFAULT_LANGUAGE
 
-from config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
+from .config import SUPPORTED_YEARS, DEFAULT_YEAR, SUPPORTED_CHAPTERS, SUPPORTED_LANGUAGES
 
 TYPO_CHAPTERS = {
     'http-2': 'http2',
@@ -41,17 +41,17 @@ def validate(func):
             validated_chapter = validate_chapter(chapter, year)
 
             if chapter != validated_chapter:
-                return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=301)
+                return redirect('/%s/%s/%s' % (lang, year, validated_chapter), code=302)
 
         return func(*args, **kwargs)
 
     return decorated_function
 
 
-def validate_chapter(chapter,year):
+def validate_chapter(chapter, year):
     chapters_for_year = SUPPORTED_CHAPTERS.get(year)
     if chapter not in chapters_for_year:
-        if (chapter[-1] == "/"):
+        if chapter[-1] == "/":
             # Automatically remove any trailing slashes
             return chapter[:-1]
         elif chapter in TYPO_CHAPTERS:
@@ -61,7 +61,7 @@ def validate_chapter(chapter,year):
         else:
             logging.debug('Unsupported chapter requested: %s' % chapter)
             abort(404, 'Unsupported chapter requested')
-    
+
     return chapter
 
 
@@ -74,7 +74,7 @@ def validate_lang_and_year(lang, year):
         logging.debug('Unsupported year requested: %s' % year)
         abort(404, 'Unsupported year requested')
 
-    supported_langs = [l.lang_code for l in (SUPPORTED_LANGUAGES.get(year) or [DEFAULT_LANGUAGE])]
+    supported_langs = [lan.lang_code for lan in (SUPPORTED_LANGUAGES.get(year) or [DEFAULT_LANGUAGE])]
 
     # If an unsupported language code is passed in, abort.
     if lang is not None and lang not in supported_langs:
@@ -98,12 +98,21 @@ def parse_accept_language(header, supported_langs):
 
     if header is not None:
 
-        accepted_languages = re.findall(r'(?:^|\s|,)(\w+)', header)
-
+        # Looks for languages of the format en or en-US first
+        accepted_languages = re.findall(r'(?:^|\s|,)(\w+-?\w*)', header)
         logging.debug('Accepted languages: %s' % accepted_languages)
 
         # The header could contain multiple languages, in order of precedence
         # Limit the number of accepted languages tested to 10.
+        for lang in accepted_languages[:10]:
+            if lang in supported_langs:
+                # Return the first found supported language.
+                logging.debug('Using "%s" as the highest precedent language.' % lang)
+                return lang
+
+        # If that didn't find anything, then strip off the country code and try just the language
+        accepted_languages = re.findall(r'(?:^|\s|,)(\w+)', header)
+        logging.debug('Accepted languages (no country): %s' % accepted_languages)
         for lang in accepted_languages[:10]:
             if lang in supported_langs:
                 # Return the first found supported language.

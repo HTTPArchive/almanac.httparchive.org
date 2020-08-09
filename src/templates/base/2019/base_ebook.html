@@ -18,8 +18,8 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20200717231356" />
-<link rel="stylesheet" href="/static/css/ebook.css?v=20200720221448" />
+<link rel="stylesheet" href="/static/css/page.css?v=20200809210340" />
+<link rel="stylesheet" href="/static/css/ebook.css?v=20200809210340" />
 
 <style nonce="{{ csp_nonce() }}">
 /* Add a print query param to format the book for printer (mirror headers and footers) */
@@ -343,39 +343,56 @@
       <li class="contributor" id="contributors-{{ id }}">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" />
         <div>
-          <span class="contributor-name">{{ contributor.name }}</span>
-          <span class="contributor-social">
+          <div class="contributor-name">{{ contributor.name }}</div>
           {% if contributor.twitter %}
+          <div class="contributor-social">
             <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
               <svg role="img">
                 <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
+              @{{ contributor.twitter }}
             </a>
+          </div>
           {% endif %}
           {% if contributor.github %}
-          <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
-            <svg role="img">
-              <title id="contributors-{{ id }}-github">{{ onGitHub(contributor.github) }}</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
-            </svg>
-          </a>
+          <div class="contributor-social">
+            <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
+              <svg role="img">
+                <title id="contributors-{{ id }}-github">{{ onTwitter(contributor.github) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+              </svg>
+              {{ contributor.github }}
+            </a>
+          </div>
+          {% endif %}
+          {% if contributor.linkedin %}
+          <div class="contributor-social">
+            <a href="https://www.linkedin.com/in/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-linkedin">
+              <svg role="img">
+                <title id="contributors-{{ id }}-linkedin">{{ onTwitter(contributor.linkedin) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+              {{ contributor.linkedin }}
+            </a>
+          </div>
           {% endif %}
           {% if contributor.website %}
-          <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
-            <svg role="img">
-              <title id="contributors-{{ id }}-website">{{ website(contributor.name) }}</title>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
-            </svg>
-          </a>
+          <div class="contributor-social">
+            <a href="{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-website">
+              <svg role="img">
+                <title id="contributors-{{ id }}-website">{{ contributor.website }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+              </svg>
+              {{ contributor.website }}
+            </a>
+          </div>
           {% endif %}
-        </span>
-          <br>
-          <span class="contributor-teams">
+          <div class="contributor-teams">
             {% for id in contributor.teams | sort() %}
-              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
             {% endfor %}
-          </span>
+          </div>
         </div>
       </li>
     {% endfor %}

@@ -4,8 +4,6 @@
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-26T00:00:00.000Z{% endblock %}
 {% block skip_navigation %}ナビゲーションをスキップ{% endblock %}
 
 {% block organization %}HTTP ArchiveによるWeb Almanac{% endblock %}
@@ -48,6 +46,7 @@
 {% block close_the_index %}目次を閉じる{% endblock %}
 
 {% block and %} と {% endblock %}
+{% block comma %}、{% endblock %}
 
 {% block open %}開く{% endblock %}
 {% block close %}閉じる{% endblock %}
@@ -65,14 +64,15 @@
 {% macro show_description(id) %}図{{ id }}の説明を表示{% endmacro %}
 {% macro hide_description(id) %}図{{ id }}の説明を非表示{% endmacro %}
 
-{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} on Twitter{% endmacro %}
-{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} on GitHub{% endmacro %}
+{% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}
+{% macro onLinkedIn(authorName) %}LinkedInの{{authorName}}{% endmacro %}
 {% macro website(authorName) %}{{authorName}} ウェブサイト{% endmacro %}
 
 {% macro edition(year) %}{{ year }} 版{% endmacro %}
 
 {% block footer_title %}フッターナビゲーション{% endblock %}
-{% block copyright %}© 2019 Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block copyright %}© Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}アクセシビリティに関する声明{% endblock %}
 
 {% block contributors_description %}

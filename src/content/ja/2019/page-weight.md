@@ -10,7 +10,7 @@ discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/
 queries: 18_PageWeight
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-08-09T00:00:00.000Z
 ---
 
 ## 序章
@@ -62,8 +62,8 @@ HTTP Archiveが追跡するページ構成メトリックの簡単な用語集�
 2. ページ上の画像の数は、コンバージョンの2番目に大きな予測因子でした。ユーザーが変換したセッションでは、変換しなかったセッションよりも画像が38％少なくなりました。
 
 <figure>
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig1_conversion_difference.png" alt="図1.変換されたセッションと変換されないセッション。" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="432">
+  <a href="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png">
+    <img src="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png" alt="図1.変換されたセッションと変換されないセッション。" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="432">
   </a>
   <div id="fig1-description" class="visually-hidden">19の変換済みセッションと31の非変換セッションを示すグラフ</div>
   <figcaption id="fig1-caption">図1.変換されたセッションと変換されないセッション。</figcaption>
@@ -72,8 +72,8 @@ HTTP Archiveが追跡するページ構成メトリックの簡単な用語集�
 3. **スクリプトが多いセッションは、変換される可能性が低くなりました。** このグラフで本当に魅力的なのは、約240個のスクリプトを実行した後の変換確率の急激な低下だけではありません。最大1,440個のスクリプトが含まれる小売セッションの数を示すのはロングテールです！
 
 <figure>
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig2_conversion_graph.jpg" alt="図2.スクリプトが増加すると変換率は低下します。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="336">
+  <a href="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg">
+    <img src="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg" alt="図2.スクリプトが増加すると変換率は低下します。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="336">
   </a>
   <div id="fig2-description" class="visually-hidden">変換率が80スクリプトまで上昇し、その後スクリプトが1440スクリプトまで増加すると低下することを示すグラフ。</div>
   <figcaption id="fig2-caption">図2.スクリプトが増加すると変換率は低下します。</figcaption>
@@ -543,8 +543,8 @@ HTTP Archiveが追跡するページ構成メトリックの簡単な用語集�
 データセットをさらに調査すると、GIFの62％が43バイト以下（43バイトは透明な1×1ピクセルGIFのサイズ）であり、GIFの84％は1KB以下であることが明らかになりました。
 
 <figure>
-  <a href="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png">
-    <img src="/static/images/2019/18_Page_Weight/ch18_fig3_gif_cdf.png" alt="図10. GIFファイルサイズの累積分布関数。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="330">
+  <a href="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png">
+    <img src="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png" alt="図10. GIFファイルサイズの累積分布関数。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="330">
   </a>
   <div id="fig10-description" class="visually-hidden">GIFの25％が35バイト以下（1x1ホワイトGIFの最適サイズ）であり、GIFの62％が43バイト以下（1x1透明GIFの最適サイズ）であることを示すグラフ。これは、GIFの75％を100バイト以下に増やすだけです。</div>
   <figcaption id="fig10-caption">図10. GIFファイルサイズの累積分布関数。</figcaption>
