@@ -61,7 +61,7 @@ def validate_chapter(chapter, year):
         else:
             logging.debug('Unsupported chapter requested: %s' % chapter)
             abort(404, 'Unsupported chapter requested')
-    
+
     return chapter
 
 
