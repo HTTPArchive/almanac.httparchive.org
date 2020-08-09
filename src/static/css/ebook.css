@@ -125,8 +125,6 @@ tbody tr:nth-child(even) {
   width: 600px;
   max-width: 100%;
   vertical-align: middle;
-  overflow: auto;
-  min-height: 7rem;
   display: flex;
 }
 
@@ -150,7 +148,7 @@ tbody tr:nth-child(even) {
 .authors .social svg {
   height: 1rem;
   width: 1rem;
-  vertical-align: middle;
+  vertical-align: text-top;
   margin-right: 2px;
   margin-right: 0.2rem;
 }
