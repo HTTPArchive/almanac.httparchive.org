@@ -57,7 +57,7 @@ def get_live(json_config):
     is_live = False
     data = get_entries_from_json(json_config, 'settings', 'is_live')
     for list in data:
-        if list == True:
+        if list is True:
             is_live = True
     return is_live
 

@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template as flask_render_template
-from .config import STATIC_DIR,TEMPLATES_DIR, get_config, DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+from .config import STATIC_DIR, TEMPLATES_DIR, get_config, DEFAULT_YEAR, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 from .language import get_language, DEFAULT_LANGUAGE
 from werkzeug.routing import BaseConverter
 import os.path
@@ -28,10 +28,10 @@ def render_template(template, *args, **kwargs):
     # So check if each language exists and only return languages for templates that do exist
     supported_languages = SUPPORTED_LANGUAGES.get(year, (DEFAULT_LANGUAGE,))
     template_supported_languages = []
-    for l in supported_languages:
-        lang_template = TEMPLATES_DIR + '/%s/%s' % (l.lang_code, template[langcode_length:])
+    for lan in supported_languages:
+        lang_template = TEMPLATES_DIR + '/%s/%s' % (lan.lang_code, template[langcode_length:])
         if os.path.isfile(lang_template):
-            template_supported_languages.append(l)
+            template_supported_languages.append(lan)
 
     # Although a year may be enabled, all templates may not exist yet
     # So check if each template exists and only return years for templates that do exist
