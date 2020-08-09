@@ -74,7 +74,7 @@
                     <a class="avatar-link" href="#contributors-{{ author }}"><img class="avatar" alt="{{ authordata.name }} avatar" src="{{ authordata.avatar_url }}" height="200" width="200" /></a>
                     <div class="info">
                         <a href="#contributors-{{ author }}"><span class="name">{{ authordata.name }}</span></a>
-                        {% if authordata.twitter or authordata.github or authordata.website %}
+                        {% if authordata.twitter or authordata.github or authordata.linkedin or authordata.website %}
                             <div class="social">
                                 {% if authordata.twitter %}
                                 <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
