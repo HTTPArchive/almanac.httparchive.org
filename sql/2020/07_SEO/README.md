@@ -13,15 +13,17 @@ Other scripts are ones that have a unique output so can't be merged. Typically b
 
 At the moment most are pointing to test tables. But be careful. Always double check the cost before making a query as some old ones are still pointing to live tables. We could do with a test table for httparchive.almanac.summary_response_bodies as the table I'm currently testing with is in a different format.
 
-## helper to create percent based fields...
+## helper to create percent based fields
+```
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 SELECT
 AS_PERCENT(123, 1234567) AS pct_test,
-...
+```
 
 ## JSON helpers
+```
 JSON_EXTRACT = returns a string
 JSON_EXTRACT_SCALAR = returns string, number, boolean
 JSON_EXTRACT_ARRAY
@@ -34,3 +36,4 @@ SELECT ARRAY(
     JSON_EXTRACT_ARRAY('[1,2,3]','$')
   ) AS integer_element
 ) AS integer_array
+```
