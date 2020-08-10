@@ -43,25 +43,23 @@
 {% endmacro %}
 
 {% block main %}
-<div class="container">
-  <main id="accessibility_statement" class="main">
-    <nav class="index">
-      <div class="index-box floating-card">
-        <h2 class="header">
-          <button class="index-btn">{{ self.index_title() }}</button>
-          <span class="no-button">{{ self.index_title() }}</span>
-        </h2>
-        {{ self.index() }}
-      </div>
-    </nav>
+<main id="accessibility_statement" class="main">
+  <nav class="index">
+    <div class="index-box floating-card">
+      <h2 class="header">
+        <button class="index-btn">{{ self.index_title() }}</button>
+        <span class="no-button">{{ self.index_title() }}</span>
+      </h2>
+      {{ self.index() }}
+    </div>
+  </nav>
 
-    <article id="maincontent" class="content">
-      
-      {{ self.main_content() }}
+  <article id="maincontent" class="content">
+    
+    {{ self.main_content() }}
 
-    </article>
-  </main>
-</div>
+  </article>
+</main>
 {% endblock %}
 
 {% block scripts %}

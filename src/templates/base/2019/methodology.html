@@ -10,24 +10,22 @@
 {% endblock %}
 
 {% block main %}
-<div class="container">
-  <main id="methodology" class="main">
-    <nav class="index">
-      <div class="index-box floating-card">
-        <h2 class="header">
-          <button class="index-btn">{{ self.index_title() }}</button>
-          <span class="no-button">{{ self.index_title() }}</span>
-        </h2>
-        {{ self.index() }}
-      </div>
-    </nav>
+<main id="methodology" class="main">
+  <nav class="index">
+    <div class="index-box floating-card">
+      <h2 class="header">
+        <button class="index-btn">{{ self.index_title() }}</button>
+        <span class="no-button">{{ self.index_title() }}</span>
+      </h2>
+      {{ self.index() }}
+    </div>
+  </nav>
 
-    <article id="maincontent" class="content">
-      <h1 class="title title-lg">{{ self.methodology_title() }}</h1>
-      {{ self.main_content() }}
-    </article>
-  </main>
-</div>
+  <article id="maincontent" class="content">
+    <h1 class="title title-lg">{{ self.methodology_title() }}</h1>
+    {{ self.main_content() }}
+  </article>
+</main>
 {% endblock %}
 
 {% block scripts %}

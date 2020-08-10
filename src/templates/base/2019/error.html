@@ -41,27 +41,25 @@
 {% endblock %}
 
 {% block main %}
-<div class="container">
-  <main class="main">
-    <h1>
-      {{ expandedTitle(self.error()) }}
-    </h1>
-    {% block custom %}
-      <p class="error-message">
-      {% if error.description|length %}
-        {{ expandedErrorMessage(error.code, HTTP_STATUS_CODES[error.code], localizedErrorMessage[error.description] if localizedErrorMessage[error.description]|length else error.Description) }}
-      {% else %}
-        {{ error }}
-      {% endif %}
-      </p>
-    {% endblock %}
-    <div class="escape-hatch">
-      <a href="{{ url_for('home', lang=lang, year=year) }}" class="btn">{{ self.home() }}</a>
-    </div>
-    <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" />
-  </main>
-  <script nonce="{{ csp_nonce() }}">
-    gtag('event', '{{ HTTP_STATUS_CODES[error.code] }}', { 'event_category': 'error', 'event_label': '{{ request.path }}', 'value': 1 });
-  </script>
-</div>
+<main class="main">
+  <h1>
+    {{ expandedTitle(self.error()) }}
+  </h1>
+  {% block custom %}
+    <p class="error-message">
+    {% if error.description|length %}
+      {{ expandedErrorMessage(error.code, HTTP_STATUS_CODES[error.code], localizedErrorMessage[error.description] if localizedErrorMessage[error.description]|length else error.Description) }}
+    {% else %}
+      {{ error }}
+    {% endif %}
+    </p>
+  {% endblock %}
+  <div class="escape-hatch">
+    <a href="{{ url_for('home', lang=lang, year=year) }}" class="btn">{{ self.home() }}</a>
+  </div>
+  <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" />
+</main>
+<script nonce="{{ csp_nonce() }}">
+  gtag('event', '{{ HTTP_STATUS_CODES[error.code] }}', { 'event_category': 'error', 'event_label': '{{ request.path }}', 'value': 1 });
+</script>
 {% endblock %}

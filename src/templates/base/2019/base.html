@@ -177,7 +177,11 @@
   </header>
   {% endblock %}
 
-  {% block main %}{% endblock %}
+  {% block container %}
+    <div class="container">
+      {% block main %}{% endblock %}
+    </div>
+  {% endblock %}
 
   {% block footer %}
     <footer id="footer" class="alt-bg">

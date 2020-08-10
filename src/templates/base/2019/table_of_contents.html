@@ -104,75 +104,73 @@
 {% endblock %}
 
 {% block main %}
-<div class="container">
-  <main id="maincontent" class="main">
-    <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
+<main id="maincontent" class="main">
+  <h1 class="title title-lg">{{ self.table_of_contents_title() }}</h1>
 
-    <section>
-      <h2 id="forward"><a href="#forward" class="anchor-link">{{ self.foreword_title() }}</a></h2>
-      {{ self.foreword() }}
-    </section>
+  <section>
+    <h2 id="forward"><a href="#forward" class="anchor-link">{{ self.foreword_title() }}</a></h2>
+    {{ self.foreword() }}
+  </section>
 
-    <div class="contents-wrapper">
-      <div class="parts">
-        {% for part_config in config.outline %}
-          <section class="part">
-            <h2 id="part-{{ part_config.part_number }}" class="part-name"><a href="#part-{{ part_config.part_number }}" class="anchor-link">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</a></h2>
-            <div class="chapters">
-              {% for chapter_config in part_config.chapters %}
-                <div class="chapter">
-                  {% if chapter_config.todo %}
-                  <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}</span>
-                  {% else %}
-                    {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
-                    <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
-                      {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}
-                    </a>
-                    {% else %}
-                    <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
-                      {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
-                    </a>
-                    {% endif %}
-                  {% endif %}
-                </div>
-              {% endfor %}
-            </div>
-          </section>
-        {% endfor %}
+  <div class="contents-wrapper">
+    <div class="parts">
+      {% for part_config in config.outline %}
         <section class="part">
-          <h2 id="appendices" class="part-name"><a href="#appendices" class="anchor-link">{{ self.appendices() }}</a></h2>
+          <h2 id="part-{{ part_config.part_number }}" class="part-name"><a href="#part-{{ part_config.part_number }}" class="anchor-link">{{ self.part() }} {{ localizedPartTitles[part_config.part] if localizedPartTitles[part_config.part]|length else chapter_config.title }}</a></h2>
           <div class="chapters">
-            <div class="chapter">
-              <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
-            </div>
-            <div class="chapter">
-              <a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a>
-            </div>
+            {% for chapter_config in part_config.chapters %}
+              <div class="chapter">
+                {% if chapter_config.todo %}
+                <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}</span>
+                {% else %}
+                  {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
+                  <a href="{{ url_for('chapter', year=year, lang=lang, chapter=chapter_config.slug) }}">
+                    {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}
+                  </a>
+                  {% else %}
+                  <a href="{{ url_for('chapter', year=year, lang='en', chapter=chapter_config.slug) }}">
+                    {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+                  </a>
+                  {% endif %}
+                {% endif %}
+              </div>
+            {% endfor %}
           </div>
         </section>
-      </div>
-
-      {% if ebook_exists(lang, year) %}
+      {% endfor %}
       <section class="part">
-        <h2 id="ebook" class="part-name"><a href="#ebook" class="anchor-link">{{ self.ebook_title() }}</a></h2>
+        <h2 id="appendices" class="part-name"><a href="#appendices" class="anchor-link">{{ self.appendices() }}</a></h2>
         <div class="chapters">
-          <div id="ebook-download" class="chapter">
-            <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a><br>
-            <small>{{ self.ebook_download_note() }}</small>
+          <div class="chapter">
+            <a href="{{ url_for('methodology', year=year, lang=lang) }}">{{ self.methodology_title() }}</a>
+          </div>
+          <div class="chapter">
+            <a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a>
           </div>
         </div>
       </section>
-      {% endif %}
-
-      <div class="characters">
-        <img class="character" src="/static/images/character-painter.png" alt="" loading="lazy" height="202" width="226" />
-        <img class="character" src="/static/images/character-file.png" alt="" loading="lazy" height="158" width="161" />
-        <img class="character" src="/static/images/character-star.png" alt="" loading="lazy" height="254" width="245" />
-        <img class="character" src="/static/images/character-hat.png" alt="" loading="lazy" height="207" width="186" />
-      </div>
     </div>
-  </main>
-</div>
+
+    {% if ebook_exists(lang, year) %}
+    <section class="part">
+      <h2 id="ebook" class="part-name"><a href="#ebook" class="anchor-link">{{ self.ebook_title() }}</a></h2>
+      <div class="chapters">
+        <div id="ebook-download" class="chapter">
+          <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">{{ self.ebook_download() }}</a><br>
+          <small>{{ self.ebook_download_note() }}</small>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <div class="characters">
+      <img class="character" src="/static/images/character-painter.png" alt="" loading="lazy" height="202" width="226" />
+      <img class="character" src="/static/images/character-file.png" alt="" loading="lazy" height="158" width="161" />
+      <img class="character" src="/static/images/character-star.png" alt="" loading="lazy" height="254" width="245" />
+      <img class="character" src="/static/images/character-hat.png" alt="" loading="lazy" height="207" width="186" />
+    </div>
+  </div>
+</main>
 {% endblock %}
 
 
