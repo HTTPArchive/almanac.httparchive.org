@@ -62,6 +62,7 @@ p {
   grid-area: intro;
   width: 100%;
   max-width: 440px;
+  /* match the .container side padding */
   padding-left: 20px;
 }
 
@@ -165,6 +166,7 @@ p {
   background-position: -150px center;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 }
 
 .contributors-container .container {
@@ -464,6 +466,11 @@ p {
 
   .intro-image-wrapper svg {
     display: none;
+  }
+
+  .intro {
+    /* reset the .container side padding */
+    padding-left: 0;
   }
 
   .contributors-container {
