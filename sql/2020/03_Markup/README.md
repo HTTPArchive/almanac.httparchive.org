@@ -1,10 +1,11 @@
+# Guide 
 
-# perecent as 0-100
+## perecent as 0-100
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq * 100, total), 2)
 );
 
-# perecent as 0-1
+## perecent as 0-1
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );

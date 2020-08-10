@@ -1,6 +1,7 @@
 #standardSQL
-# Element types per page
+# Element types per page M203
 # See related: sql/2019/03_Markup/03_06b.sql
+
 CREATE TEMPORARY FUNCTION countElementTypes(payload STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {
@@ -18,7 +19,7 @@ SELECT
   countElementTypes(payload) AS element_types,
   COUNT(0) AS freq
 FROM
-  `httparchive.almanac.pages_*`
+  `httparchive.sample_data.pages_*`
 GROUP BY
   client,
   element_types

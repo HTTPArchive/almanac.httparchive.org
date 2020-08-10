@@ -36,7 +36,7 @@ FROM (
       #JSON_EXTRACT_SCALAR(payload, '$._almanac') AS almanac
       JSON_EXTRACT_SCALAR(payload, '$._element_count') AS elementsJsonString
     FROM
-    `httparchive.almanac.pages_*`
+    `httparchive.sample_data.pages_*`
   )
 ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile

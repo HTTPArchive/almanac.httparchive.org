@@ -1,6 +1,11 @@
 #standardSQL
-# % of pages having elements
+# % of pages having elements M241
 # See related: sql/2019/03_Markup/03_02a.sql
+
+CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+  ROUND(SAFE_DIVIDE(freq, total), 4)
+);
+
 CREATE TEMPORARY FUNCTION getElements(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -18,11 +23,11 @@ try {
   element,
   COUNT(DISTINCT url) AS pages,
   total,
-  ROUND(COUNT(DISTINCT url) * 100 / total, 2) AS pct
+  AS_PERCENT(COUNT(DISTINCT url), total) AS pct
 FROM
-  `httparchive.almanac.pages_*`
+  `httparchive.sample_data.pages_*`
 JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.pages.2019_07_01_*` GROUP BY _TABLE_SUFFIX)
+  (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM `httparchive.sample_data.pages_*` GROUP BY _TABLE_SUFFIX)
 USING (_TABLE_SUFFIX),
   UNNEST(getElements(payload)) AS element
 GROUP BY
