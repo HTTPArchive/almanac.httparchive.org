@@ -17,33 +17,16 @@ header.alt-bg {
   margin-bottom: -52.94em;
 }
 
-header .container,
-footer .container {
-  max-width: none;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
 #maincontent {
-  overflow: hidden;
   display: -ms-grid;
   display: grid;
   grid-template-areas:
-    'intro'
-    'chapter'
-    'contributors'
-    'methodology';
-
-  /* Overcome the .container parent wrapper */
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-}
-
-#maincontent section {
-  max-width: 100vw;
-  position: relative;
+    '. intro .'
+    '. chapter .'
+    'contributors contributors contributors'
+    '. methodology .';
+  /* 1280 is same as the .container width */
+  grid-template-columns: auto minmax(auto, 1280px) auto;
 }
 
 .featured-chapter,
@@ -77,14 +60,14 @@ p {
   grid-template-areas: 'intro image';
   grid-gap: 2rem;
   justify-content: space-between;
-  padding: 0 60px;
 }
 
 .intro {
   -ms-grid-column: 1;
   grid-area: intro;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
+  padding-left: 20px;
 }
 
 .intro-year {
@@ -190,6 +173,12 @@ p {
   background-position: -150px center;
   background-repeat: no-repeat;
   padding-left: 180px;
+
+  /* Overcome the .container parent wrapper */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
 }
 
 .contributors .btn {

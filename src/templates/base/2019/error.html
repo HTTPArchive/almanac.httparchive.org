@@ -41,6 +41,7 @@
 {% endblock %}
 
 {% block main %}
+<div class="container">
   <main class="main">
     <h1>
       {{ expandedTitle(self.error()) }}
@@ -62,4 +63,5 @@
   <script nonce="{{ csp_nonce() }}">
     gtag('event', '{{ HTTP_STATUS_CODES[error.code] }}', { 'event_category': 'error', 'event_label': '{{ request.path }}', 'value': 1 });
   </script>
+</div>
 {% endblock %}
