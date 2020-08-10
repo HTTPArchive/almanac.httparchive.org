@@ -26,7 +26,7 @@ header.alt-bg {
     'contributors contributors contributors'
     '. methodology .';
   /* 1280 is same as the .container width */
-  grid-template-columns: auto minmax(auto, 1280px) auto;
+  grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
 }
 
 .featured-chapter,
