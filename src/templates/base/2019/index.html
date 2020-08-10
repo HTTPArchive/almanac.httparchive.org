@@ -45,18 +45,20 @@
   </section>
   {% include "%s/2019/featured_chapters.html" % lang %}
   <section id="contributors" class="contributors-container alt-bg">
-    <div class="contributors">
-      <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
-      <p>{{ self.contributors_description() }}</p>
-      <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
-        {{ self.contributors_link() }}
-      </a>
-    </div>
-    <div class="people" aria-hidden="true">
-      <div class="people-number">{{ self.contributors() }}</div>
-      <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
-      <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
-      <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
+    <div class="container">
+      <div class="contributors">
+        <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
+        <p>{{ self.contributors_description() }}</p>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
+          {{ self.contributors_link() }}
+        </a>
+      </div>
+      <div class="people" aria-hidden="true">
+        <div class="people-number">{{ self.contributors() }}</div>
+        <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
+        <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
+        <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
+      </div>
     </div>
   </section>
   <section id="methodology" class="methodology-container">
