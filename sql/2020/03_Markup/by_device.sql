@@ -24,27 +24,31 @@ try {
 }
 ''';
 
+CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+  ROUND(SAFE_DIVIDE(freq, total), 4)
+);
+
 SELECT
   client,
   COUNT(0) AS total,
 
   # % of pages with deprecated elements
   COUNTIF(contains_deprecated_element) AS contains_deprecated_element,
-  ROUND(COUNTIF(contains_deprecated_element) * 100 / COUNT(0), 2) AS pct_contains_deprecated_element,
+  AS_PERCENT(COUNTIF(contains_deprecated_element), COUNT(0)) AS pct_contains_deprecated_element,
 
   # % of pages with custom elements ("slang")
   COUNTIF(contains_custom_element) AS contains_custom_element,
-  ROUND(COUNTIF(contains_custom_element) * 100 / COUNT(0), 2) AS pct_contains_custom_element,
+  AS_PERCENT(COUNTIF(contains_custom_element), COUNT(0)) AS pct_contains_custom_element,
 
   # % of pages with shadow roots
   COUNTIF(has_shadow_root) AS has_shadow_root,
-  ROUND(COUNTIF(has_shadow_root) * 100 / COUNT(0), 2) AS pct_has_shadow_root
+  AS_PERCENT(COUNTIF(has_shadow_root), COUNT(0)) AS pct_has_shadow_root
 
 FROM (
   SELECT
     client,
-    containsDeprecatedElement(elements) AS contains_deprecated_element, 
-    containsCustomElement(elements) AS contains_custom_element, 
+    containsDeprecatedElement(element_count) AS contains_deprecated_element, 
+    containsCustomElement(element_count) AS contains_custom_element, 
     CAST(JSON_EXTRACT_SCALAR(payload, '$._has_shadow_root') AS BOOLEAN) AS has_shadow_root
   FROM
     ( 
@@ -52,7 +56,7 @@ FROM (
       _TABLE_SUFFIX AS client,
       payload,
       #JSON_EXTRACT_SCALAR(payload, '$._almanac') AS almanac
-      JSON_EXTRACT_SCALAR(payload, '$._element_count') AS elements 
+      JSON_EXTRACT_SCALAR(payload, '$._element_count') AS element_count 
       FROM
       `httparchive.almanac.pages_*`
     )
