@@ -77,6 +77,9 @@
 {% block copyright %}© Web Almanac.的许可是基于 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}无障碍可访问声明{% endblock %}
 
+{% block featured_chapter%}章节精选{% endblock %}
+{% macro readChapter(chapter) %}阅读 <span class="featured-chapter-name">{{ chapter }}</span> 本章{% endmacro %}
+
 {% block contributors_description %}
 是web社区的辛勤工作才让 Web Almanac 网络年鉴成为可能。 {{ self.contributors() }} 成员在计划、研究、写作和发布阶段奉献投入了难以估量的时间。
 {% endblock %}

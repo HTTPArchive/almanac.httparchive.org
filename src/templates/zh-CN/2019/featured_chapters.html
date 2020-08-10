@@ -80,35 +80,4 @@
   {%- set featured_chapter_quote = "HTTP/2是近20年来对web主要传输协议的第一次重大更新。它带来了丰富的期望:它承诺免费的性能提升而没有缺点。更重要的是，我们可以停止做所有 HTTP/1.1曾因为低效率的缘故，强迫我们叠加的入侵式解决方案。在HTTP/2世界中，绑定、弹跳、内联甚至分片域都将成为反模式，因为默认情况下会提供改进的性能。之前的优化技术Bundling, spriting, inlining,甚至域分片都会在HTTP/2 的世界中成为反模式, 因为它在默认情况就提供改进的性能。本章探讨了这种相对较新的技术在现实世界中的表现。" %}
   {%- set featured_chapter_stats = {"stat1":"95%","label1":"可以使用HTTP/2的用户","stat2":"27.83%","label2":"有HTTP/2优先级问题的请求","stat3":"8.38%","label3":"支持QUIC的站点"} %}
 {%- endif %}
-<section id="featured-chapter" class="featured-chapter">
-  <div class="featured-chapter-content">
-    <h2 class="title title-center">章节精选</h2>
-    <h3>{{ featured_chapter_name }}</h3>
-    <blockquote>
-      {{ featured_chapter_quote|safe }}
-    </blockquote>
-    <div class="featured-chapter-content-data">
-      {% if featured_chapter_stats.get('stat1') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
-      </div>
-      {% endif %}
-      {% if featured_chapter_stats.get('stat2') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
-      </div>
-      {% endif %}
-      {% if featured_chapter_stats.get('stat3') %}
-      <div class="featured-chapter-content-data-item">
-        <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
-        <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
-      </div>
-      {% endif %}
-    </div>
-    <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
-      阅读 {{ featured_chapter_name }} 本章
-    </a>
-  </div>
-</section>
+{{ featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) }}
