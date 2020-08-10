@@ -1,97 +1,65 @@
 #standardSQL
-# metrics grouped by device
-# See related: sql/2019/03_Markup/03_01a.sql, sql/2019/03_Markup/03_05.sql, sql/2019/03_Markup/03_03a.sql
+# page payload metrics grouped by device
 
-CREATE TEMPORARY FUNCTION get_payload_info(payload_string STRING)
-RETURNS STRUCT<
-  element_count STRUCT<
-    contains_custom_element BOOL, 
-    contains_obsolete_element BOOL
-  >, 
-  almanac STRUCT<
-    contains_link_nodes BOOL
-  >
-> LANGUAGE js AS '''
-var result = {element_count: {}, almanac: {}};
-try {
-  var $ = JSON.parse(payload_string); // very slow
+# to speed things up there is only one js function per custom metric property. It returns a STRUCT with all the data needed
+# current test gathers 3 bits of incormation from teo custom petric properties
+# I tried to do a single js function processing payload but it was very slow (50 sec) because of parsing the full payload in js
+# this uses JSON_EXTRACT_SCALAR to first get the custom metrics json string, and only passes those into the js functions
+# Estimate about twice the speed of the original code. But should scale up far better as the custom metrics are only parsed once.
+# real test ($2.90) 39.1 sec
 
-  var elements = JSON.parse($._element_count);
-
-  if (!Array.isArray(elements) && typeof elements == 'object') {
-    result.element_count.contains_custom_element = Object.keys(elements).filter(e => e.includes('-')).length > 0;
-
-    var obsoleteElements = new Set(["applet","acronym","bgsound","dir","frame","frameset","noframes","isindex","keygen","listing","menuitem","nextid","noembed","plaintext","rb","rtc","strike","xmp","basefont","big","blink","center","font","marquee","multicol","nobr","spacer","tt"]);
-
-    result.element_count.contains_obsolete_element = !!Object.keys(elements).find(e => {
-      return obsoleteElements.has(e);
-    });
-  }
-
-   var almanac = JSON.parse($._almanac);
-  if (!Array.isArray(almanac) && typeof almanac == 'object') {
-    result.almanac.contains_link_nodes = almanac["link-nodes"] && almanac["link-nodes"].length > 0;
-   }
-
-} catch (e) {
-}
-return result;
-''';
-
-CREATE TEMPORARY FUNCTION get_element_info(elements_json_string STRING)
-RETURNS STRUCT<
-  contains_custom_element BOOL, 
-  contains_obsolete_element BOOL
-> LANGUAGE js AS '''
-var result = {};
-try {
-  var elements = JSON.parse(elements_json_string);
-
-  if (!Array.isArray(elements) && typeof elements == 'object') {
-  
-    result.contains_custom_element = Object.keys(elements).filter(e => e.includes('-')).length > 0;
-
-    var obsoleteElements = new Set(["applet","acronym","bgsound","dir","frame","frameset","noframes","isindex","keygen","listing","menuitem","nextid","noembed","plaintext","rb","rtc","strike","xmp","basefont","big","blink","center","font","marquee","multicol","nobr","spacer","tt"]);
-
-    result.contains_obsolete_element = !!Object.keys(elements).find(e => {
-        return obsoleteElements.has(e);
-    });
-  }
-} catch (e) {
-  
-}
-return result;
-''';
-
-CREATE TEMPORARY FUNCTION get_almanac_info(almanac_json_string STRING)
-RETURNS STRUCT<
-  contains_link_nodes BOOL
-> LANGUAGE js AS '''
-var result = {};
-try {
-  var almanac = JSON.parse(almanac_json_string);
-
-  if (!Array.isArray(elements) && typeof elements == 'object') {
-  
-    result.contains_link_nodes = almanac["link-nodes"] && almanac["link-nodes"].length > 0;
-  }
-} catch (e) {
-
-}
-return result;
-''';
-
-# original 14.8 sec (no almanac function)
-# first improvement 14.5 sec try 1
-# using payload function = 50 sec
-# latest improvement, minus almanac = 7.1 sec
-# latest improvement, full = 14sec
-# real test ($2.90) 39.1 sec :-)
-
-
+# helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
+
+# returns all the data we need from _element_count
+CREATE TEMPORARY FUNCTION get_element_count_info(element_count_json_string STRING)
+RETURNS STRUCT<
+  contains_custom_element BOOL, 
+  contains_obsolete_element BOOL,
+  contains_details_element BOOL,
+  contains_summary_element BOOL
+> LANGUAGE js AS '''
+var result = {};
+try {
+    var element_count = JSON.parse(element_count_json_string);
+
+    if (!Array.isArray(element_count) && typeof element_count == 'object') {
+    
+        result.contains_custom_element = Object.keys(element_count).filter(e => e.includes('-')).length > 0;
+        result.contains_details_element = Object.keys(element_count).filter(e => e ==='details').length > 0;
+        result.contains_summary_element = Object.keys(element_count).filter(e => e ==='summary').length > 0;
+
+        var obsoleteElements = new Set(["applet","acronym","bgsound","dir","frame","frameset","noframes","isindex","keygen","listing","menuitem","nextid","noembed","plaintext","rb","rtc","strike","xmp","basefont","big","blink","center","font","marquee","multicol","nobr","spacer","tt"]);
+
+        result.contains_obsolete_element = !!Object.keys(element_count).find(e => {
+            return obsoleteElements.has(e);
+        });
+    }
+} catch (e) {}
+return result;
+''';
+
+# returns all the data we need from _almanac
+CREATE TEMPORARY FUNCTION get_almanac_info(almanac_json_string STRING)
+RETURNS STRUCT<
+  contains_link_nodes BOOL,
+  link_nodes_count INT64
+> LANGUAGE js AS '''
+var result = {};
+try {
+    var almanac = JSON.parse(almanac_json_string);
+
+    if (!Array.isArray(almanac) && typeof almanac == 'object') {
+
+        result.contains_link_nodes = almanac["link-nodes"] && almanac["link-nodes"].length > 0;
+
+        result.link_nodes_count = almanac["link-nodes"] && almanac["link-nodes"].length;
+    }
+} catch (e) {}
+return result;
+''';
 
 SELECT
   client,
@@ -99,13 +67,19 @@ SELECT
 
   ## element_count
 
-  # % of pages with obsolete elements
-  COUNTIF(element_info.contains_obsolete_element) AS freq_contains_obsolete_element,
-  AS_PERCENT(COUNTIF(element_info.contains_obsolete_element), COUNT(0)) AS pct_contains_obsolete_element,
+  # % of pages with obsolete elements M216
+  COUNTIF(element_count_info.contains_obsolete_element) AS freq_contains_obsolete_element,
+  AS_PERCENT(COUNTIF(element_count_info.contains_obsolete_element), COUNT(0)) AS pct_contains_obsolete_element_m216,
 
-  # % of pages with custom elements ("slang")
-  COUNTIF(element_info.contains_custom_element) AS freq_contains_custom_element,
-  AS_PERCENT(COUNTIF(element_info.contains_custom_element), COUNT(0)) AS pct_contains_custom_element,
+  # % of pages with custom elements ("slang") M242
+  COUNTIF(element_count_info.contains_custom_element) AS freq_contains_custom_element,
+  AS_PERCENT(COUNTIF(element_count_info.contains_custom_element), COUNT(0)) AS pct_contains_custom_element_m242,
+
+  # % of pages with details and summary elements M214
+  COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element) AS freq_contains_details_and_summary_element,
+  AS_PERCENT(COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element), COUNT(0)) AS pct_contains_details_and_summary_element_m214,
+
+  ## has_shadow_root 
 
   # % of pages with shadow roots
   COUNTIF(has_shadow_root) AS freq_has_shadow_root,
@@ -113,26 +87,24 @@ SELECT
 
   ## almanac 
 
-  #  
+  # has link nodes
   COUNTIF(almanac_info.contains_link_nodes) AS freq_contains_link_nodes,
-  AS_PERCENT(COUNTIF(almanac_info.contains_link_nodes), COUNT(0)) AS pct_contains_link_nodes
+  AS_PERCENT(COUNTIF(almanac_info.contains_link_nodes), COUNT(0)) AS pct_contains_link_nodes,
+
+  # average number of link nodes
+  AVG(almanac_info.link_nodes_count) AS avg_link_nodes
 
   FROM
     ( 
       SELECT 
-      _TABLE_SUFFIX AS client,
-      CAST(JSON_EXTRACT_SCALAR(payload, '$._has_shadow_root') AS BOOLEAN) AS has_shadow_root,
-     #  JSON_EXTRACT_SCALAR(payload, '$._markup') AS markup,        
-     # JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies') AS wpt_bodies,
-     # JSON_EXTRACT_SCALAR(payload, '$._robots_txt') AS robots_txt,
-     #get_payload_info(payload) AS payload_info, # slow parsing payload in js. 
+        _TABLE_SUFFIX AS client,
+        CAST(JSON_EXTRACT_SCALAR(payload, '$._has_shadow_root') AS BOOLEAN) AS has_shadow_root, # simple one
 
-     get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info,
-     get_element_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_info
+        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info,
+        get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
       
       FROM
-      `httparchive.sample_data.pages_*`
+        `httparchive.sample_data.pages_*`
     )
-
 GROUP BY
   client
