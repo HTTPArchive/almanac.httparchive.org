@@ -1,4 +1,4 @@
-{% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["ksakae"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"2019年のWeb AlmanacのJavaScriptの章では、Web上でどれだけJavaScriptを使用しているか、圧縮、ライブラリとフレームワーク、読み込み、ソースマップを網羅しています。","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["ksakae"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-20T00:00:00.000Z","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -21,12 +21,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="javascript-序章"><a href="#javascript-序章" class="anchor-link">序章</a></h2>
     <p>JavaScriptはウェブ上で、対話可能で複雑な体験を構築することを可能にするスクリプト言語です。これには、ユーザーの会話への応答、ページ上の動的コンテンツの更新などが含まれます。イベントが発生したときにウェブページがどのように振る舞うべきかに関係するものはすべて、JavaScriptが使用されています。</p>
@@ -50,7 +50,7 @@
       <div id="javascript-fig1-description" class="visually-hidden">p10パーセンタイルで70バイト、p25で174バイト、p50で373バイト、p75で693バイト、p90で1,093バイトのJavaScriptを使用していることを示す棒グラフ</div>
       <figcaption id="javascript-fig1-caption"><a href="#javascript-fig-1" class="anchor-link">図 1.</a> ページあたりのJavaScriptバイト数の分布</figcaption>
     </figure>
-    <p>上の図1を見ると、JavaScriptを373KB使用しているのは、50パーセンタイル（中央値）であることがわかります。つまり、全サイトの5％がこれだけのJavaScriptをユーザーに提供していることになります。</p>
+    <p>上の図1を見ると、JavaScriptを373KB使用しているのは、50パーセンタイル（中央値）であることがわかります。つまり、全サイトの50％がこれだけのJavaScriptをユーザーに提供していることになります。</p>
     <p>この数字を見ると、これはJavaScriptの使いすぎではないかと思うのは当然のことです。しかし、ページのパフォーマンスに関しては、その影響はネットワーク接続や使用するデバイスに完全に依存します。モバイルクライアントとデスクトップクライアントを比較した場合、どのくらいのJavaScriptを提供しているのでしょうか？</p>
     <figure id="javascript-fig-2">
       <a href="https://almanac.httparchive.org/static/images/2019/javascript/fig2.png">
@@ -478,21 +478,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -537,12 +544,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="css-導入"><a href="#css-導入" class="anchor-link">導入</a></h2>
     <p>カスケードスタイルシート（CSS）は、Webページの描画、書式設定、およびレイアウトに使用されます。それらの機能は、テキストの色から3Dパースペクティブまでの単純な概念に及びます。また、さまざまな画面サイズ、コンテキストの表示、印刷を処理する開発者を支援するフックもあります。 CSSは、開発者がコンテンツを絞り込み、ユーザーに適切に適合させることを支援します。</p>
@@ -1176,21 +1183,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -1235,12 +1249,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="markup-導入"><a href="#markup-導入" class="anchor-link">導入</a></h2>
     <p>
@@ -1611,21 +1625,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -1647,7 +1668,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"I","chapter_number":4,"title":"メディア","description":"2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":["ksakae"],"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"I","chapter_number":4,"title":"メディア","description":"2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":["ksakae"],"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-20T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -1670,12 +1691,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="media-序章"><a href="#media-序章" class="anchor-link">序章</a></h2>
     <p>画像、アニメーション、動画はウェブ体験の重要な一部です。それらが重要な理由はたくさんあります。ストーリーを伝えたり、視聴者の関心を引きつけたり、他のウェブ技術では簡単には作れないような芸術的な表現を提供したりするのに役立ちます。これらのメディアリソースの重要性は、2つの方法で示すことができます。1つは、1ページのダウンロードに必要なバイト数の多さ、もう1つはメディアで描かれたピクセル数の多さです。</p>
@@ -2079,7 +2100,7 @@
       >などのJavaScriptライブラリの使用などさまざまな方法で実装できます。
     </p>
     <p>2019年8月、Chrome76では<code>&lt;img&gt;</code>を使用したマークアップベースの遅延ローディングのサポートが開始されました。2019年のWeb Almanacに使用されたウェブサイトのスナップショットは2019年7月のデータを使用していますが、2,509以上のウェブサイトがすでにこの機能を利用していました。</p>
-    <h3 id="media-アクセンシビリティ"><a href="#media-アクセンシビリティ" class="anchor-link">アクセンシビリティ</a></h3>
+    <h3 id="media-アクセシビリティ"><a href="#media-アクセシビリティ" class="anchor-link">アクセシビリティ</a></h3>
     <p>画像アクセシビリティの中心にあるのは <code>alt</code> タグです。画像に <code>alt</code> タグが追加されると、このテキストは画像を見ることができない（障害のある、インターネット接続が悪いのいずれかの理由で）ユーザーに画像を説明するために使用されます。</p>
     <p>データセットのHTMLファイルに含まれるすべての画像タグを検出できます。デスクトップでは1,300万個、モバイルでは1,500万個の画像タグのうち、91.6％の画像に<code>alt</code>タグが存在しています。一見すると、ウェブ上では画像のアクセシビリティは非常に良好な状態にあるように見えます。しかし、よく調べてみると、見通しはあまり良くありません。データセットに存在する<code>alt</code>タグの長さを調べると、<code>alt</code>タグの長さの中央値は6文字であることがわかります。これは空の<code>alt</code>タグ（<code>alt=""</code>のように見える）に対応する。6文字以上の長さの<code>alt</code>テキストを使用している画像は全体の39％にすぎない。実際の」<code>alt</code>テキストの中央値は31文字で、そのうち25文字が実際に画像を説明しています。</p>
     <h2 id="media-動画"><a href="#media-動画" class="anchor-link">動画</a></h2>
@@ -2150,21 +2171,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -2209,12 +2237,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="third-parties-導入"><a href="#third-parties-導入" class="anchor-link">導入</a></h2>
     <p>オープンWebは広大で、リンク可能で、設計により相互運用可能です。他の誰かの複雑なライブラリを取得し、単一の<code>&lt;link&gt;</code>または<code>&lt;script&gt;</code>要素を使用してサイトで使用する機能により開発者の生産性が大幅に向上し、素晴らしく新しいWeb体験を実現しました。反対に、一部のサードパーティプロバイダーが非常に人気があるため、パフォーマンス、プライバシー、およびセキュリティに関する重要な懸念が生じています。この章では、2019年のWebに対するサードパーティコードの普及と影響、サードパーティソリューションの人気につながる使用パターンと、Web体験の将来への影響の可能性について検討します。</p>
@@ -2515,21 +2543,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -2574,12 +2609,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="fonts-序章"><a href="#fonts-序章" class="anchor-link">序章</a></h2>
     <p>ウェブフォントは、ウェブ上で美しく機能的なタイポグラフィを可能にします。ウェブフォントを使用することは、デザインに力を与えるだけでなく、デザインのサブセットを民主化します。しかし、どんなに良いことがあってもウェブフォントが適切に読み込まれていないと、サイトのパフォーマンスに大きな悪影響を及ぼすこともあります。</p>
@@ -3221,21 +3256,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -3280,12 +3322,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="performance-導入"><a href="#performance-導入" class="anchor-link">導入</a></h2>
     <p>パフォーマンスはユーザー体験で大切なものの一つです。 多くのWebサイトでは、ページの読み込み時間を早くする事によるユーザー体験の向上と、コンバージョン率の上昇は一致しています。 逆に、パフォーマンスが低い場合、ユーザーはコンバージョンを達成せず、不満を持ち、ページをクリックすると怒りを覚えることさえあります。</p>
@@ -3550,21 +3592,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -3609,12 +3658,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="security-序章"><a href="#security-序章" class="anchor-link">序章</a></h2>
     <p>Web Almanacのこの章では、Web上のセキュリティの現状を見ていきます。オンラインでのセキュリティとプライバシーの重要性がますます高まる中、サイト運営者とユーザーを保護するための機能が増えています。ここでは、ウェブ上でのこれらの新機能の採用状況を見ていきます。</p>
@@ -4493,21 +4542,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -4552,12 +4608,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="accessibility-導入"><a href="#accessibility-導入" class="anchor-link">導入</a></h2>
     <p>Webのアクセシビリティは、包摂的で公平な社会の上では無くてはならない存在です。私たちの社会性と仕事や生活の多くがオンラインの世界に推移するにつれて、障害のある人々も分け隔てなく、すべてのオンラインの対話に参加できることがさらに重要になってきます。建築家が車椅子用の傾斜路のようなアクセシビリティ機能を作成や省略できるように、Web開発者はユーザーが頼りにしている支援技術を助けたり邪魔したりできます。</p>
@@ -4864,21 +4920,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -4923,12 +4986,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="seo-導入"><a href="#seo-導入" class="anchor-link">導入</a></h2>
     <p>検索エンジン最適化（SEO）はデジタルマーケティングの担当者にとって、単なる趣味やサイドプロジェクトではなくWebサイトを成功に導くための重要な要素です。 SEOの主な目標は、Webサイトをクロールする必要のある検索エンジンボットと、Webサイトを操作するコンテンツの消費者向けにWebサイトを最適化することです。 SEOはWebサイトを作っている開発者から、新しい潜在顧客に対して宣伝する必要のあるデジタルマーケティング担当者に至るまで、すべてのWebサイトに関わる人に影響を及ぼします。</p>
@@ -5376,21 +5439,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -5435,12 +5505,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="pwa-導入"><a href="#pwa-導入" class="anchor-link">導入</a></h2>
     <p>
@@ -5669,21 +5739,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -5728,12 +5805,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="mobile-web-序章introduction"><a href="#mobile-web-序章introduction" class="anchor-link">序章Introduction</a></h2>
     <p>2007年に少し戻ってみましょう。「モバイルウェブ」は現在、レーダー上ではほんの一瞬の出来事に過ぎませんが、それには正当な理由があります。なぜでしょうか？　モバイルブラウザはCSSをほとんどサポートしていないため、サイトの見た目がデスクトップとは全く異なります。画面は信じられないほど小さく、一度に数行のテキストしか表示できません。また、マウスの代わりとなるのは、「タブを使って移動する」ための小さな矢印キーです。言うまでもなく、携帯電話でウェブを閲覧することは本当に愛の労働です。 しかし、このすべてをちょうど変更しようとしている。</p>
@@ -6050,21 +6127,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -6109,12 +6193,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="ecommerce-序章"><a href="#ecommerce-序章" class="anchor-link">序章</a></h2>
     <p>この調査では、ホームページの10％近くがEコマース・プラットフォーム上にあることが判明しました。「Eコマースプラットフォーム」は、オンラインストアを作成し、運営することを可能にするソフトウェアまたはサービスのセットです。Eコマースプラットフォームのいくつかのタイプがあります。</p>
@@ -6725,21 +6809,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -6761,7 +6852,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"III","chapter_number":14,"title":"CMS","description":"2019年版Web AlmanacCMS章では、CMSの採用、CMS組み合わせの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションを取り上げています。","authors":["ernee","amedina"],"reviewers":["sirjonathan"],"translators":["ksakae"],"discuss":"1769","results":"https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/","queries":"14_CMS","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-05T00:00:00.000Z","chapter":"cms"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"III","chapter_number":14,"title":"CMS","description":"2019年版Web AlmanacCMS章では、CMSの採用、CMS組み合わせの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションを取り上げています。","authors":["ernee","amedina"],"reviewers":["sirjonathan"],"translators":["ksakae"],"discuss":"1769","results":"https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/","queries":"14_CMS","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-20T00:00:00.000Z","chapter":"cms"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -6784,12 +6875,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="cms-序章"><a href="#cms-序章" class="anchor-link">序章</a></h2>
     <p><strong>コンテンツ管理システム（CMS）</strong>とは、個人や組織がコンテンツを作成・管理・公開するためのシステムを総称しています。具体的には、オープンウェブを介して消費・体験できるコンテンツを作成・管理・公開することを目的としたシステムのことを指します。</p>
@@ -7252,7 +7343,7 @@
       <div id="cms-fig21-description" class="visually-hidden">CMSごとのLighthouse PWAスコアの中央値を示す棒グラフ。WordPressサイトのスコア中央値は0.33です。次の5つのCMS（Joomla、Drupal、Wix、Squarespace、1C-Bitrix）のスコア中央値はすべて0.3です。PWAのスコアがトップのCMSは、Jimdoが0.56、TYPO3が0.41となっています。</div>
       <figcaption id="cms-fig21-caption"><a href="#cms-fig-21" class="anchor-link">図 21.</a> CMSごとの灯台PWAカテゴリスコアの中央値。</figcaption>
     </figure>
-    <h4 id="cms-アクセンシビリティ"><a href="#cms-アクセンシビリティ" class="anchor-link">アクセンシビリティ</a></h4>
+    <h4 id="cms-アクセシビリティ"><a href="#cms-アクセシビリティ" class="anchor-link">アクセシビリティ</a></h4>
     <p>
       アクセシブルなウェブサイトとは、障害者が利用できるように設計・開発されたサイトのことです。Lighthouseは、一連のアクセシビリティ監査を提供し、それらすべての監査の加重平均を返します（各監査の加重方法の完全なリストについては、<a href="https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065">スコアリングの詳細<span class="fn">https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065</span></a
       >を参照してください）。
@@ -7440,21 +7531,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -7499,12 +7597,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="compression-序章"><a href="#compression-序章" class="anchor-link">序章</a></h2>
     <p>HTTP圧縮は、元の表現よりも少ないビットを使用して情報をエンコードできる技術です。 Webコンテンツの配信に使用すると、Webサーバーはクライアントに送信されるデータ量を削減できます。これにより、クライアントの利用可能な帯域幅の効率が向上し、<a href="#page-weight">ページの重さ</a>が軽減され、<a href="#performance">Webパフォーマンス</a>が向上します。</p>
@@ -7839,21 +7937,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -7898,12 +8003,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="caching-導入"><a href="#caching-導入" class="anchor-link">導入</a></h2>
     <p>キャッシングは、以前にダウンロードしたコンテンツの再利用を可能にする手法です。コストのかかるネットワークリクエストを回避することにより、<a href="#performance">パフォーマンス</a>が大幅に向上します。また、Webサイトのオリジンインフラストラクチャへのトラフィックを削減することで、アプリケーションの拡張にも役立ちます。「最速のリクエストはあなたがする必要のないものです」という古い格言があり、キャッシュはリクエストを行わなくて済むようにするための重要な方法の1つです。</p>
@@ -8591,21 +8696,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -8627,7 +8739,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDNの採用と使用法、RTTとTLSの管理、HTTP/2の採用、キャッシング、および共通ライブラリとコンテンツCDNをカバーする2019 Web AlmanacのCDNの章。","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":["ksakae"],"discuss":"1772","results":"https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/","queries":"17_CDN","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-19T00:00:00.000Z","chapter":"cdn"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDNの採用と使用法、RTTとTLSの管理、HTTP/2の採用、キャッシング、および共通ライブラリとコンテンツCDNをカバーする2019 Web AlmanacのCDNの章。","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":["ksakae"],"discuss":"1772","results":"https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/","queries":"17_CDN","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-04T00:00:00.000Z","chapter":"cdn"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -8650,12 +8762,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="cdn-導入"><a href="#cdn-導入" class="anchor-link">導入</a></h2>
     <p>
@@ -8725,7 +8837,7 @@
       </a>
       <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
       <div id="cdn-fig2-description" class="visually-hidden">表3のデータを示すツリーマップグラフ。</div>
-      <figcaption id="cdn-fig2-caption">図 2: HTML CDNの使用</figcaption>
+      <figcaption id="cdn-fig2-caption"><a href="#cdn-fig-2" class="anchor-link">図 2.</a> HTML CDNの使用</figcaption>
     </figure>
     <figure id="cdn-fig-3">
       <div class="table-wrap">
@@ -10212,21 +10324,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -10271,12 +10390,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="page-weight-序章"><a href="#page-weight-序章" class="anchor-link">序章</a></h2>
     <p>中央Webページのサイズは約1900KBで、74のリクエストが含まれています。悪くないですね。</p>
@@ -11088,21 +11207,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -11147,12 +11273,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="resource-hints-序章"><a href="#resource-hints-序章" class="anchor-link">序章</a></h2>
     <p>
@@ -11406,21 +11532,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>
@@ -11465,12 +11598,12 @@
       <img src="{{ chapter_image_dir }}/hero_lg.jpg" class="content-banner" alt="" width="866" height="433" />
     </picture>
 
-    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
+    <div class="byline">{{ self.written_by_before() }} {% for author in metadata.get('authors') %} <a class="author" href="#contributors-{{ author }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.written_by_after() }}</div>
 
-    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
+    <div class="byline reviewers">{{ self.reviewed_by_before() }} {% for reviewer in metadata.get('reviewers') %} <a class="reviewer" href="#contributors-{{ reviewer }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.reviewed_by_after() }}</div>
 
     {% if metadata.get('translators') | length >= 1 %}
-    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
+    <div class="byline translators">{{ self.translated_by_before() }} {% for translator in metadata.get('translators') %} <a class="translator" href="#contributors-{{ translator }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }} {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %} {% endfor %}{{ self.translated_by_after() }}</div>
     {% endif %}
     <h2 id="http2-導入"><a href="#http2-導入" class="anchor-link">導入</a></h2>
     <p>HTTP/2は、ほぼ20年ぶりになるWebのメイン送信プロトコルの初となるメジャーアップデートでした。それは多くの期待を持って到来し、欠点なしで無料のパフォーマンス向上を約束しました。それ以上に、HTTP/1.1が非効率なため強制されていたすべてのハックや回避策をやめることができました。デフォルトでパフォーマンスが向上するため、ドメインのバンドル、分割、インライン化、さらにはシャーディングなどはすべてHTTP/2の世界でアンチパターンになります。</p>
@@ -12208,21 +12341,28 @@
           <span class="social">
             {% if authordata.twitter %}
             <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
             </a>
             {% endif %} {% if authordata.github %}
             <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-github">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
               </svg>
             </a>
+            {% endif %} {% if authordata.linkedin %}
+            <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">
+              <svg role="img">
+                <title id="{{ metadata.get('chapter') }}-author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+              </svg>
+            </a>
             {% endif %} {% if authordata.website %}
             <a class="website" href="{{ authordata.website }}" aria-labelledby="{{ metadata.get('chapter') }}-author-{{ author }}-website">
-              <svg width="22" height="22" role="img">
+              <svg role="img">
                 <title id="{{ metadata.get('chapter') }}-author-{{ author }}-website">{{ website(authordata.name) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
               </svg>

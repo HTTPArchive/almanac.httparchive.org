@@ -38,6 +38,12 @@
   font-weight: 300;
 }
 
+#title.no-color .intro-year,
+#title.no-color h1.title,
+#title.no-color h2.title {
+  color: #5c687d;
+}
+
 .intro-image {
   border-radius: 10px;
   display: block;
@@ -63,16 +69,17 @@
   margin: 0;
 }
 
-th,
-td {
-  padding: 5px;
+.table-wrap {
+  padding: 0;
 }
 
 th {
+  padding: 0.75rem;
   text-align: center;
 }
 
 td {
+  padding: 0.625rem;
   text-align: left;
 }
 
@@ -104,31 +111,35 @@ tbody tr:nth-child(even) {
 
 .team img {
   height: 80px;
+  height: 5rem;
   width: 80px;
+  width: 5rem;
 }
 
 .contributors {
   padding: 0;
   columns: 2;
   column-gap: 30px;
-  margin: 50px 0 0 0;
+  margin: 15px 0 0 0;
+  margin: 1.5rem 0 0 0;
 }
 
 .contributor {
-  margin-bottom: 20px;
+  padding-top: 15px;
+  padding-top: 1.5rem;
   width: 600px;
   max-width: 100%;
   vertical-align: middle;
   overflow: auto;
-  min-height: 70px;
+  min-height: 7rem;
 }
 
 .contributor-avatar {
   border-radius: 50px;
   background-color: #f7f779;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  width: 50px;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  width: 5rem;
   height: auto;
   transition-duration: 0.3s;
   float: left;
@@ -138,29 +149,30 @@ tbody tr:nth-child(even) {
   display: inline-block;
   vertical-align: middle;
   margin: 0 5px;
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+.contributor-social svg {
+  height: 1.1rem;
+  width: 1.1rem;
 }
 
 .contributor-teams {
   margin-top: 5px;
+  color: #757575;
 }
 
 .contributor-team {
   font-size: 14px;
   font-size: 0.875rem;
-  color: #757575;
-}
-
-.contributor-team::after {
-  content: ', ';
-}
-
-.contributor-team:last-child::after {
-  content: '';
 }
 
 .social-icon {
   height: 15px;
+  height: 1.07rem;
   width: 15px;
+  width: 1.07rem;
 }
 
 .content ul li::before {
@@ -194,39 +206,43 @@ section.chapter {
 }
 
 @page {
-  margin: 2.5cm;
+  margin: 4.7rem;
   padding: 0;
   font-family: 'Lato', sans-serif;
-  font-size: 10pt;
-  size: A4;
+  font-size: 8px;
+  font-size: 0.8rem;
+  size: A5;
 
   @top-left {
     width: 100%;
-    margin: 30pt 0 10pt 0;
-    border-bottom: 0.5pt solid #666;
+    margin: 30px 0 10px 0;
+    margin: 2rem 0 1rem 0;
+    border-bottom: 0.5px solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
 
   @top-right {
     width: 100%;
-    margin: 30pt 0 10pt 0;
+    margin: 30px 0 10px 0;
+    margin: 2rem 0 1rem 0;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
 
   @bottom-left {
     width: 100%;
-    margin: 10pt 0 30pt 0;
-    border-top: 0.5pt solid #666;
+    margin: 10px 0 30px 0;
+    margin: 1rem 0 2rem 0;
+    border-top: 0.5px solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
 
   @bottom-right {
     width: 100%;
-    margin: 10pt 0 30pt 0;
-    border-top: 0.25pt solid #666;
+    margin: 1rem 0 2rem 0;
+    border-top: 0.25px solid #666;
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -306,7 +322,7 @@ section.chapter {
   }
 
   :root {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   /* We have some big tables that can't be force to break
@@ -361,10 +377,6 @@ section.chapter {
     text-decoration: none;
   }
 
-  figure img {
-    max-height: 800px;
-  }
-
   figcaption {
     width: 1000px;
   }
@@ -382,6 +394,15 @@ section.chapter {
     border-spacing: 2px;
     border-color: grey;
     page-break-inside: avoid;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  /* For some reason this is breaking the spine on the cover and can't override it, so scope it */
+  .chapter h3 {
+    font-size: 1.17em;
   }
 
   h1,
@@ -404,6 +425,17 @@ section.chapter {
     page-break-inside: avoid;
   }
 
+  .authors .avatar {
+    height: auto;
+    width: 60px;
+    width: 4.29rem;
+  }
+
+  .authors .social svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
   .fn {
     display: inline;
     float: footnote;
@@ -413,6 +445,7 @@ section.chapter {
     font-style: italic;
     text-align: left;
     margin: 0 0 0 18px;
+    margin: 0 0 0 1.5rem;
     line-height: normal;
   }
 
@@ -439,4 +472,219 @@ section.chapter {
 
 .content section.authors li *:first-child {
   flex: 0 0 76px;
+}
+
+#front-cover {
+  position: absolute;
+  text-align: center;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#front-cover .title {
+  color: white;
+}
+
+#front-cover .intro-year {
+  margin: 0;
+  width: auto;
+  color: #f7f779;
+  font-size: 80px;
+  font-size: 8rem;
+  line-height: 100%;
+  font-weight: bold;
+}
+
+#front-cover h1.title::before {
+  border-bottom: none;
+}
+
+#front-cover h1.title {
+  font-size: 40px;
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 40px;
+}
+
+#front-cover h2.title {
+  font-size: 16px;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+#front-cover .intro-image-wrapper {
+  text-align: center;
+}
+
+#front-cover .intro-image {
+  border-radius: 10px;
+  display: block;
+  margin: 10px auto;
+  padding-top: 40px;
+  width: 80%;
+  height: auto;
+}
+
+#front-cover img {
+  margin: 0 auto;
+}
+
+#front-cover .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  right: 1rem;
+  margin: 0 auto 4rem;
+  padding: 10px;
+}
+
+#front-cover .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+}
+
+#spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+#spine .spine-author {
+  fill: #fff;
+  width: 100%;
+  font-weight: 300;
+}
+
+#spine .spine-year {
+  margin: 0;
+  color: #f7f779;
+  line-height: 100%;
+  font-weight: bold;
+  font-size: 10rem;
+  width: 100%;
+}
+
+.spine-year svg {
+  fill: #f7f779;
+  width: 100%;
+}
+
+#spine .intro-image {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  height: auto;
+}
+
+#spine .title-wrapper {
+  position: relative;
+}
+
+#spine .title {
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(90deg);
+  font-size: 40px;
+  font-size: 4rem;
+  font-weight: 700;
+  overflow: visible;
+  width: 0;
+  margin: 0 auto;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#spine .title .intro-year {
+  font-size: 4rem;
+  vertical-align: middle;
+  padding-right: 1rem;
+}
+
+#spine .title br {
+  display: none;
+}
+
+#spine .title::before {
+  margin: 0 auto;
+  border-bottom: initial;
+  content: '';
+}
+
+#spine .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  margin: 0 auto 4rem;
+  padding: 10px;
+}
+
+#spine .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+}
+
+#back-cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#back-cover .description {
+  position: absolute;
+  margin: 4rem 4rem;
+}
+
+#back-cover .description p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#back-cover .description img {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#back-cover .methodology-data {
+  display: block;
+  margin: 1.5rem 0;
+  color: #fff;
+}
+
+#back-cover .websites-tested,
+#back-cover .data-processed {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 1.5rem 0;
+}
+
+#back-cover .websites-tested div,
+#back-cover .data-processed div {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+#back-cover .websites-tested div:last-of-type,
+#back-cover .data-processed div:last-of-type {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+#back-cover .ha-logo-wrapper {
+  position: absolute;
+  bottom: 12.5mm;
+  left: 1rem;
+  margin: 0 auto 4rem;
+  padding: 10px;
+}
+
+#back-cover .ha-logo-wrapper svg {
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
 }

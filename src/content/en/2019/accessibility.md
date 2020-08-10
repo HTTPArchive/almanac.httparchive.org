@@ -10,7 +10,7 @@ discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-27T00:00:00.000Z
+last_updated: 2020-08-02T00:00:00.000Z
 ---
 
 ## Introduction
@@ -41,7 +41,7 @@ In order to make sure your website is readable under these conditions, making su
   <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
     <img alt="Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
   </a>
-  <div id="fig1-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the brown background color written as <coce>#FCA469</code>. The right column says Recommended and the brown background color is written as <code>#BD5B0E</code>. The top box in each column has an brown background with white text <code>#FFFFFF</code> and the bottom box has a gray background with white text <code>#FFFFFF</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Courtesy of LookZook</div>
+  <div id="fig1-description" class="visually-hidden">Four colored boxes of brown and gray shades with white text overlaid inside creating two columns. The left column says Too lightly colored and has the brown background color written as <code>#FCA469</code>. The right column says Recommended and the brown background color is written as <code>#BD5B0E</code>. The top box in each column has an brown background with white text <code>#FFFFFF</code> and the bottom box has a gray background with white text <code>#FFFFFF</code>. The grayscale equivalents are <code>#B8B8B8</code> and <code>#707070</code> respectively. Courtesy of LookZook</div>
   <figcaption id="fig1-caption">Figure 1. Example of what text with insufficient color contrast looks like. Courtesy of LookZook</figcaption>
 </figure>
 

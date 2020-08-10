@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":4,"title":"Media","description":"Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":null,"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"media"} %} {% block index %}
+{% set metadata = {"part_number":"I","chapter_number":4,"title":"Media","description":"Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":null,"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-04T00:00:00.000Z","chapter":"media"} %} {% block index %}
 <ul>
   <li>
     <a href="#introduction">Introduction</a>
@@ -267,7 +267,7 @@
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig7-description" data-show-text="{{ show_description(7) }}" data-hide-text="{{ hide_description(7) }}">{{ show_description(7) }}</button>
   <div id="fig7-description" class="visually-hidden">A tree map showing that JPEGs are used 60.27% of the time, PNGs 28.2%, WebP 4.2%, GIF 3.67%, and SVG 3.63%.</div>
-  <figcaption id="fig7-caption">Figure 7: Image format usage.</figcaption>
+  <figcaption id="fig7-caption"><a href="#fig-7" class="anchor-link">Figure 7.</a> Image format usage.</figcaption>
 </figure>
 <p>Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of <code>google.com</code> and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images, 61 images at the 90th percentile, and a whopping 229 images at the 99th percentile.</p>
 <figure id="fig-8">

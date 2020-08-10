@@ -19,25 +19,46 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="/static/css/page.css?v=20200717231356" />
-<link rel="stylesheet" href="/static/css/ebook.css?v=20200717224244" />
+<link rel="stylesheet" href="/static/css/ebook.css?v=20200806055159" />
 
 <style nonce="{{ csp_nonce() }}">
 /* Add a print query param to format the book for printer (mirror headers and footers) */
 /* Do this as an inline-style, rather than with JavaScript in case PDF generator doesn't execute JavaScript */
-{% if request.args.get('print') == None %}
+{% if request.args.get('print') == None and request.args.get('cover') == None %}
   @page {
     @top-left { content: ''; }
     @top-right { content: string(chapter-subtitle) string(chapter-title); }
     @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
     @bottom-right { content: counter(page); }
   }
-{% else %}
+{% elif request.args.get('cover') == None %}
 
   @page {
+
+    {% if request.args.get('printer') != None %}
+    marks: crop cross;
+    bleed: 3mm;
+    prince-trim: 5mm;
+    {% endif %}
+
+    {% if request.args.get('bleed') != None %}
+    bleed: {{ request.args.get('bleed') }};
+    {% endif %}
+
+    {% if request.args.get('prince-trim') != None %}
+    prince-trim: {{ request.args.get('prince-trim') }};
+    {% endif %}
+
+    {% if request.args.get('inside-margin') != None %}
+    {% set insideMargin = request.args.get('inside-margin') %}
+    {% else %}
+    {% set insideMargin = "19.5mm" %}
+    {% endif %}
+    
     @footnote {
       float: bottom;
       border-top: .25pt solid #666;
-      margin-top: 10px;
+      margin-top: 1rem;
       padding: 5px 0;
     }
   }
@@ -46,9 +67,7 @@
     @top-right { content: ''; }
     @bottom-left { content: counter(page); }
     @bottom-right { content: "{{ year }} {{ self.organization() }}"; }
-    {% if request.args.get('inside-margin') != None %}
-    margin-right: {{ request.args.get('inside-margin') }};
-    {% endif %}
+    margin-right: {{ insideMargin }};
   }
 
   @page :right {
@@ -56,9 +75,7 @@
     @top-right { content: string(chapter-subtitle) string(chapter-title); }
     @bottom-left { content: "{{ year }} {{ self.organization() }}"; }
     @bottom-right { content: counter(page); }
-    {% if request.args.get('inside-margin') != None %}
-    margin-left: {{ request.args.get('inside-margin') }};
-    {% endif %}
+    margin-left: {{ insideMargin }};
   }
 
   @page front-matter:left {
@@ -92,17 +109,132 @@
     prince-footnote-policy: keep-with-line;
   }
 
+{% else %}
+
+{% set unit = 'mm' %}
+{% set spine = 25 %}
+{% set pageWidth = 148 %}
+{% set pageHeight = 210 %}
+{% if request.args.get('unit') != None %}{% set unit = request.args.get('unit') %}{% endif %}
+{% if request.args.get('spine') != None %}{% set spine = request.args.get('spine')|float %}{% endif %}
+{% if request.args.get('pageWidth') != None %}{% set pageWidth = request.args.get('pageWidth')|float %}{% endif %}
+{% if request.args.get('pageHeight') != None %}{% set pageHeight = request.args.get('pageHeight')|float %}{% endif %}
+{% set totalWidth = pageWidth + spine + pageWidth %}
+{% set pageAndSpine = pageWidth + spine %}
+{% set halfSpine =  spine / 2 %}
+
+#front-cover {
+  width: {{ pageWidth }}{{ unit }};
+  left: {{ pageAndSpine }}{{ unit }};
+}
+
+#front-cover .ha-logo-wrapper {
+  max-width: {{ spine }}{{ unit }};
+  height: {{ halfSpine }}{{ unit }};
+}
+
+#spine {
+  left: {{ pageWidth }}{{ unit }};
+  width: {{ spine }}{{ unit }};
+}
+
+#spine .ha-logo-wrapper {
+  max-width: {{ spine }}{{ unit }};
+  height: {{ halfSpine }}{{ unit }};
+}
+
+#back-cover {
+  width: {{ pageWidth }}{{ unit }};
+}
+
+#back-cover .ha-logo-wrapper {
+  max-width: {{ spine }}{{ unit }};
+  height: {{ halfSpine }}{{ unit }};
+}
+
+@prince-pdf {
+  prince-pdf-display-doc-title: true;
+}
+
+@page {
+  margin: 0;
+  padding: 0;
+  font-size: 5pt;
+  size: {{ totalWidth }}{{ unit }} {{ pageHeight }}{{ unit }};
+  marks: crop cross;
+  bleed: 3mm;
+  prince-trim: 5mm;
+}
+
+@page :left {
+  background: #5c687d;
+  background: transparent linear-gradient(#5c687d 70%, transparent 30%);
+  background: transparent url(/static/images/intro-background-fit-cover.svg) bottom left / 100% 100% no-repeat;
+  background-position: -20px -20px;
+  background-repeat: no-repeat;
+  background-size: 105% 105%;
+
+  @top-left {
+    content: '';
+    border-bottom: none;
+  }
+
+  @top-right {
+    content: '';
+  }
+
+  @bottom-left {
+    content: '';
+    border: none;
+  }
+
+  @bottom-right {
+    content: '';
+    border: none;
+  }
+}
+
+@page :first {
+  background: none;
+}
+
 {% endif %}
 
 {% if request.args.get('page-size') != None %}
   @page { size: {{ request.args.get('page-size') }}; }
 {% endif %}
 
+{% if request.args.get('base-font-size') != None %}
+
+  @media print {
+
+    :root {
+      font-size: {{ request.args.get('base-font-size') }};
+    }
+
+  }
+{% endif %}
+
+/* Prince does not support vh yet so limit the height of images */
+{% if request.args.get('max-fig-height') != None %}
+  figure img {
+    max-height: {{ request.args.get('max-fig-height') }};
+  }
+{% else %}
+  figure img {
+    max-height: 610px;
+  }
+{% endif %}
+
 </style>
 {% endblock %}
 
 {% block content %}
+
+{% if request.args.get('cover') == None %}
 <div class="content">
+
+  {% if request.args.get('printer') == None %}
 
   <section id="title" class="no-header-or-footer">
     
@@ -110,7 +242,25 @@
     <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
 
     <img class="intro-image" src="/static/images/home-hero.png" alt="" width="984" height="354" />
+
   </section>
+
+  {% else %}
+
+  <section class="no-header-or-footer">
+  </section>
+
+  <section class="no-header-or-footer">
+  </section>
+
+  <section id="title" class="no-color no-header-or-footer">
+    
+    <h1 class="title title-center">{{ self.intro_title() }}</h1>
+    <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
+
+  </section>
+
+  {% endif %}
 
   <section id="toc" class="contents-wrapper">
     <h1>{{ self.table_of_contents_title() }}</h1>
@@ -130,15 +280,15 @@
           {% for chapter_config in part_config.chapters %}
             <div class="toc-chapter">
               {% if chapter_config.todo %}
-              <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}</span>
+              <span class="todo">{{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}</span>
               {% else %}
                 {% if chapter_lang_exists(lang, year, chapter_config.slug) %}
                 <a href="#chapter-{{ chapter_config.chapter }}">
-                  {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }}
+                  {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }}
                 </a>
                 {% else %}
                 <a href="#chapter-{{ chapter_config.chapter }}">
-                  {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.title] if localizedChapterTitles[chapter_config.title]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
+                  {{ self.chapter() }} {{ chapter_config.chapter }}: {{ localizedChapterTitles[chapter_config.slug] if localizedChapterTitles[chapter_config.slug]|length else chapter_config.title }} <span class="not-translated">({{ self.translation_not_available() }})</span>
                 </a>
                 {% endif %}
               {% endif %}
@@ -197,7 +347,7 @@
           <span class="contributor-social">
           {% if contributor.twitter %}
             <a href="https://twitter.com/{{ contributor.twitter }}" aria-labelledby="contributors-{{ id }}-twitter">
-              <svg width="15" height="15" role="img">
+              <svg role="img">
                 <title id="contributors-{{ id }}-twitter">{{ onTwitter(contributor.twitter) }}</title>
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
               </svg>
@@ -205,15 +355,23 @@
           {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-labelledby="contributors-{{ id }}-github">
-            <svg width="15" height="15" role="img">
+            <svg role="img">
               <title id="contributors-{{ id }}-github">{{ onGitHub(contributor.github) }}</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
             </svg>
           </a>
           {% endif %}
+          {% if contributor.linkedin %}
+          <a href="https://github.com/{{ contributor.linkedin }}" aria-labelledby="contributors-{{ id }}-linkedin">
+            <svg role="img">
+              <title id="contributors-{{ id }}-linkedin">{{ onLinkedIn(contributor.name) }}</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+            </svg>
+          </a>
+          {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-labelledby="contributors-{{ id }}-website">
-            <svg width="15" height="15" role="img">
+            <svg role="img">
               <title id="contributors-{{ id }}-website">{{ website(contributor.name) }}</title>
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
             </svg>
@@ -223,7 +381,7 @@
           <br>
           <span class="contributor-teams">
             {% for id in contributor.teams | sort() %}
-              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
             {% endfor %}
           </span>
         </div>
@@ -234,4 +392,105 @@
 
 </div>
 
+{% else %}
+
+<div class="content">
+
+  <section id="blank-page">
+  </section>
+
+  <section id="cover" class="no-color no-header-or-footer">
+
+    <div id="front-cover">
+      
+      <h1 class="title title-center">{{ self.intro_title() }}</h1>
+      <h2 class="title title-center">{{ self.intro_sub_title() }}</h2>
+
+      <div class="intro-image-wrapper"> 
+        <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+    
+    </div>
+
+    <div id="spine">
+
+      <h3 class="spine-author">
+        <svg viewBox="0 0 90 16">
+          <text x="8" y="15">Viscomi</text>
+        </svg>
+      </h3>
+  
+      <div class="intro-image-wrapper"> 
+        <img class="intro-image" src="/static/images/home-hero.png" alt="" width="820" height="562" />
+      </div>
+
+      <div class="spine-title-wrapper">
+        <h2 class="title">{{ self.intro_title() }}</h2>
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+
+    </div>
+
+    <div id="back-cover">
+
+      <div class="description">
+
+        <p>{{ self.mission() }}</p>
+
+        <div class="methodology-data">
+          <div class="websites-tested">
+            <div>
+              {{ self.methodology_stat_1_title() }}
+            </div>
+            <div>
+              {{ self.methodology_stat_1() }}
+            </div>
+          </div>
+          <div class="data-processed">
+            <div>
+              {{ self.methodology_stat_2_title() }}
+            </div>
+            <div>
+              {{ self.methodology_stat_2() }}
+            </div>
+          </div>
+        </div>
+        <!--
+        <p>{{ self.methodology_description() }}</p>
+        <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" />
+        -->
+
+        <p>{{ self.contributors_description() }}</p>
+
+      </div>
+
+      <div class="ha-logo-wrapper">
+        <svg role="img">
+          <title id="ha-logo">HTTP Archive home</title>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ha"></use>
+        </svg>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="inside-cover">
+  </section>
+
+</div>
+{% endif %} 
 {% endblock %} 

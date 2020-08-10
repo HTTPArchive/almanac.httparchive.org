@@ -35,6 +35,10 @@
   margin-bottom: 30px;
 }
 
+.filter-container ul {
+  padding: 0;
+}
+
 .filter-container li {
   list-style-type: none;
   display: inline-block
@@ -61,6 +65,7 @@
   flex-wrap: wrap;
   margin: 0 -15px;
   justify-content: center;
+  padding: 0;
 }
 
 .contributor-grid li {
@@ -69,7 +74,7 @@
 
 .contributor-grid:not([data-rendered='true']) .contributor {
   transform: translateY(30px);
-  opacity: 1;
+  opacity: 0;
   will-change: opacity;
 }
 
@@ -102,8 +107,13 @@
   margin: 10px;
 }
 
-.contributor:focus .contributor-avatar{
-    transform: scale(1.1);
+.contributor:focus .contributor-avatar {
+  transform: scale(1.1);
+}
+
+.contributor:focus {
+  border: 2px solid #f7f779;
+  outline: none;
 }
 
 .contributor-avatar {
@@ -125,7 +135,7 @@
 }
 
 .contributor-social {
-  flex: 1
+  flex: 1;
 }
 
 .contributor-social a {
@@ -136,18 +146,13 @@
 .contributor-teams {
   margin-top: 5px;
   text-align: center;
+  color: #757575;
 }
 
 .contributor-team {
   font-size: 14px;
   font-size: 0.875rem;
-  color: #757575;
-}
-.contributor-team::after {
-  content: ', ';
-}
-.contributor-team:last-child::after {
-  content: '';
+  white-space: nowrap;
 }
 
 {% for id in config.teams.keys() %}
@@ -226,6 +231,7 @@
   display: flex;
   border: 5px dashed #5e687c;
   justify-content: center;
+  text-align: center;
 }
 
 .contributor-join:hover {
@@ -233,8 +239,10 @@
 }
 
 .contributor-join svg {
-  margin-bottom: -10px;
+  margin-bottom: -25px;
+  position: relative;
   z-index: 1;
+  display: block;
 }
 
 .contributor-join path {
@@ -245,6 +253,7 @@
   fill: #fff;
   font-weight: bold;
   text-anchor: middle;
+  font-size: .9rem;
 }
 
 @media (max-width: 600px) {
@@ -254,6 +263,14 @@
   }
 }
 </style>
+<noscript>
+  <style nonce="{{ csp_nonce() }}">
+    .contributor-grid:not([data-rendered='true']) .contributor {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</noscript>
 {% endblock %}
 
 {% block main %}
@@ -270,7 +287,7 @@
       <img src="/static/images/avatars/9.jpg" alt="" height="100" width="100" loading="lazy" />
   </div>
   <div class="contributors {{ ' '.join(config.teams.keys()) }}">
-    <div class="filter-container">
+    <form class="filter-container">
       <p aria-live="polite" aria-atomic="true">
         {{ self.filter_by_team() }}
       </p>
@@ -285,14 +302,14 @@
         {% endif %}
         {% endfor %}
       </ul>
-    </div>
+    </form>
 
     <ul class="contributor-grid">
-      <li>
-        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/README.md" class="contributor-join" aria-labelledby="jointheteam">
-          <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 203 117">
+      <li class="contributor-join">
+        <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/README.md" aria-labelledby="jointheteam">
+          <svg xmlns="http://www.w3.org/2000/svg" role="img" width="174" height="100" viewBox="0 0 173 96">
             <title id="jointheteam">{{ self.join_the_team_title() }}</title>
-            <path d="M0 0l11 89 71 4.4L65.9 117l40.7-22.4L201 89l2-79z" />
+            <path d="M0,0l8.4,75.1l88.7,0.8L93.3,96l24.9-19.1l50.6-1.8l3.7-67.5L0,0z"/>
             <text x="50%" y="47%">
               {{ self.join_the_team_text() }}
             </text>
@@ -301,7 +318,7 @@
         </a>
       </li>
     {% for id, contributor in config.contributors.items() %}
-      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
+      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
@@ -320,6 +337,13 @@
             </svg>
           </a>
           {% endif %}
+          {% if contributor.linkedin %}
+          <a href="https://www.linkedin.com/in/{{ contributor.linkedin }}/" aria-label="{{ onLinkedIn(contributor.name) }}">
+            <svg width="22" height="22">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+            </svg>
+          </a>
+          {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-label="{{ website(contributor.name) }}">
             <svg width="22" height="22">
@@ -331,7 +355,7 @@
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
           {% endfor %}
         </div>
       </li>
@@ -344,15 +368,31 @@
 {% block scripts %}
   {{ super() }}
   <script nonce="{{ csp_nonce() }}">
-(function loaded() {
+  
+  // Randomise the contributors on reload as server-side random will be cached at CDN.
+  // Only run this if the page is reloaded for performance reasons.
+  
+  // Support both newer PerformanceNavigationTiming API for newer browsers
+  // and older Navigation Timing API for older browsers
+  if ((performance.getEntriesByType("navigation")[0] && performance.getEntriesByType("navigation")[0].type === "reload")
+      ||
+        (performance.navigation && performance.navigation.type === performance.navigation.TYPE_RELOAD)) {
+    var ul = document.querySelector('.contributor-grid');
+    for (var i = ul.children.length; i >= 1; i--) {
+        // Ensure position 1 is minimum to leave "Join the team" icon at beginning
+        ul.appendChild(ul.children[Math.floor(Math.random() * i) + 1]);
+    }
+  }
+
+  function loaded() {
     var teams = ['{{ "','".join(config.teams.keys()) | safe }}'];
     var buttons = document.querySelectorAll('.filter-container button');
     var contributors = document.querySelector('.contributors');
-    var contributorsGrid = document.querySelector('.contributor-grid');
     var counter = document.querySelector('#filtered-contributors');
     var totalText = document.querySelector('#contributors-total-text');
     var totalContributors = document.querySelector('#contributors-total');
     var shadowNode = document.createElement('div');
+
     var urlObject = new URL(document.location);
 
     function getFilteredContributorCount() {
@@ -414,14 +454,15 @@
 
         event && event.preventDefault();
         var urlObject = new URL(document.location);
+
         if(urlObject.searchParams.has('teams')) {
 
             var hash = urlObject.searchParams.get('teams');
             var filterTeams = hash.split(',');
 
             if(teams.includes(filterTeams[0])) {
-                contributors.classList.remove(...teams);
-                contributors.classList.add(...filterTeams);
+                contributors.classList.remove.apply(contributors.classList,teams);
+                contributors.classList.add.apply(contributors.classList,filterTeams);
             }
 
             for (index = 0; index < buttons.length; ++index) {
@@ -430,12 +471,13 @@
             }
 
         } else {
-            contributors.classList.add(...teams);
+            contributors.classList.add.apply(contributors.classList,teams);
             for (index = 0; index < buttons.length; ++index) {
               var button = buttons[index];
               button.setAttribute('aria-pressed',false);
             }
         }
+        
         var filteredCount = getFilteredContributorCount();
         counter.innerText = filteredCount;
         if ( counter.innerText ===  totalContributors.innerText ) {
@@ -446,10 +488,20 @@
     }
     window.addEventListener('popstate', handleFilterUrl);
     handleFilterUrl();
+  }
 
-    contributorsGrid.setAttribute('data-rendered', true);
-})();
+  try {
+    loaded() 
+  } catch(e) {
+    gtag('event', 'exception', {
+      'description': e,
+      'fatal': false
+    });
+  }
 
+  var contributorsGrid = document.querySelector('.contributor-grid');
+  contributorsGrid.setAttribute('data-rendered', true);
+    
   </script>
   <!-- add chapter.js to handle print mode and avoid duplicating code -->
   <script src="/static/js/chapter.js?v=20200527181403" defer></script>

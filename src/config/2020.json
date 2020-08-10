@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja"],
+      "supported_languages": ["en","es","fr","ja","zh-CN"],
       "ebook_languages": []
     }
   ],
@@ -213,6 +213,17 @@
       "github": "AAgar",
       "twitter": "AAgar"
     },
+     "adityapandey1998": {
+      "name": "Aditya Pandey",
+      "teams": [
+        "analysts",
+        "developers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/31750960?v=4&s=200",
+      "github": "adityapandey1998",
+      "twitter": "adityapandey98",
+      "linkedin": "adityapandey98"
+    },
     "alexdenning": {
       "name": "Alex Denning",
       "teams": [
@@ -222,6 +233,16 @@
       "website": "getellipsis.com",
       "github": "alexdenning",
       "twitter": "AlexDenning"
+    },
+    "alextait1": {
+      "name": "Alex Tait",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/24625637?v=4&s=200",
+      "website": "https://togethertech.ca/",
+      "github": "alextait1",
+      "twitter": "at_fresh_dev"
     },
     "aleyda": {
       "name": "Aleyda Solis",
@@ -251,6 +272,23 @@
       "website": "https://hankchizljaw.com/",
       "github": "hankchizljaw",
       "twitter": "hankchizljaw"
+    },
+    "antoineeripret": {
+      "name": "Antoine Eripret",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9512616?v=4&s=200",
+      "github": "antoineeripret"
+    },
+    "denar90": {
+      "name": "Artem Denysov",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6231516?v=4&s=200",
+      "github": "denar90",
+      "twitter": "denar90_"
     },
     "ashleyish": {
       "name": "ashleyish",
@@ -291,7 +329,17 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
       "github": "bazzadp",
+      "linkedin": "barry-pollard-developer",
       "twitter": "tunetheweb"
+    },
+    "bseymour": {
+      "name": "Ben Seymour",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6849494?v=4&s=200",
+      "website": "http://benseymour.com",
+      "github": "bseymour"
     },
     "borisschapira": {
       "name": "Boris Schapira",
@@ -326,15 +374,34 @@
       "github": "catalinred",
       "twitter": "catalinred"
     },
+    "cheneytsai": {
+      "name": "Cheney Tsai",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/672494?v=4&s=200",
+      "github": "cheneytsai"
+    },
     "svgeesus": {
       "name": "Chris Lilley",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/2506926?v=4&s=200",
       "website": "http://svgees.us/",
       "github": "svgeesus",
       "twitter": "svgeesus"
+    },
+    "christianliebel": {
+      "name": "Christian Liebel",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6698344?v=4&s=200",
+      "website": "https://christianliebel.com",
+      "github": "christianliebel",
+      "twitter": "christianliebel"
     },
     "colinbendell": {
       "name": "Colin Bendell",
@@ -344,6 +411,14 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/1622597?v=4&s=200",
       "github": "colinbendell",
       "twitter": "colinbendell"
+    },
+    "chengxicn": {
+      "name": "Cheng Xi",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30398527?v=4&s=200",
+      "github": "chengxicn"
     },
     "davelab6": {
       "name": "Dave Crossland",
@@ -483,6 +558,16 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/2944237?v=4&s=200",
       "github": "gokulkrishh"
     },
+    "GregBrimble": {
+      "name": "Greg Brimble",
+      "teams": [
+        "analysts"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8484333?v=4&s=200",
+      "website": "https://gregbrimble.com/",
+      "github": "GregBrimble",
+      "twitter": "GregBrimble"
+    },
     "gregorywolf": {
       "name": "Greg Wolf",
       "teams": [
@@ -534,7 +619,6 @@
     "jadjoubran": {
       "name": "Jad Joubran",
       "teams": [
-        "authors",
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/2265232?v=4&s=200",
@@ -584,7 +668,8 @@
     "j9t": {
       "name": "Jens Oliver Meiert",
       "teams": [
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1700772?v=4&s=200",
       "website": "https://meiert.com/en/",
@@ -617,10 +702,10 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13718746?v=4&s=200",
-      "website": "https://www.linkedin.com/in/johnfox/",
+      "linkedin": "johnfox",
       "github": "clarkeclark"
     },
-    "hyperpress": {
+    "logicalphase": {
       "name": "John Teague",
       "teams": [
         "authors",
@@ -644,7 +729,7 @@
     "jyrkialakuijala": {
       "name": "Jyrki Alakuijala",
       "teams": [
-        "authors"
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/9086028?v=4&s=200",
       "github": "jyrkialakuijala"
@@ -689,7 +774,8 @@
     "LeaVerou": {
       "name": "Lea Verou",
       "teams": [
-        "authors"
+        "authors",
+        "analysts"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/175836?v=4&s=200",
       "website": "http://lea.verou.me/",
@@ -706,6 +792,14 @@
       "website": "https://twitter.com/zizzamia",
       "github": "Zizzamia",
       "twitter": "Zizzamia"
+    },
+    "veluca93": {
+      "name": "Luca Versari",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1896483?v=4&s=200",
+      "github": "veluca93"
     },
     "LPardue": {
       "name": "Lucas Pardue",
@@ -768,6 +862,14 @@
       "github": "max-ostapenko",
       "twitter": "themax_o"
     },
+    "mdiblasio": {
+      "name": "Michael DiBlasio",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/17748781?v=4&s=200",
+      "github": "mdiblasio"
+    },
     "ipullrank": {
       "name": "Michael King",
       "teams": [
@@ -784,6 +886,16 @@
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/4273797?v=4&s=200",
       "github": "MikeBishop"
+    },
+    "mcmd": {
+      "name": "Miguel Carlos Martínez Díaz",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/868584?v=4&s=200",
+      "linkedin": "miguelcarlosmartinezdiaz",
+      "github": "mcmd",
+      "twitter": "mcmd"
     },
     "mgechev": {
       "name": "Minko Gechev",
@@ -808,12 +920,21 @@
     "notwaldorf": {
       "name": "Monica Dinculescu",
       "teams": [
-        "authors"
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1369170?v=4&s=200",
       "website": "https://meowni.ca/",
       "github": "notwaldorf",
       "twitter": "notwaldorf"
+    },
+    "mo271": {
+      "name": "Moritz Firsching",
+      "teams": [
+        "authors"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3491627?v=4&s=200",
+      "website": "https://page.mi.fu-berlin.de/moritz/",
+      "github": "mo271"
     },
     "natedame": {
       "name": "Nate Dame",
@@ -837,7 +958,8 @@
     "phacks": {
       "name": "Nicolas Goutay",
       "teams": [
-        "analysts"
+        "analysts",
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/2587348?v=4&s=200",
       "website": "https://phacks.dev/",
@@ -897,14 +1019,6 @@
       "website": "https://www.webpagetest.org/",
       "github": "pmeenan",
       "twitter": "patmeenan"
-    },
-    "tungpatrick": {
-      "name": "Patrick Tung",
-      "teams": [
-        "analysts"
-      ],
-      "avatar_url": "https://avatars3.githubusercontent.com/u/43163296?v=4&s=200",
-      "github": "tungpatrick"
     },
     "paulcalvano": {
       "name": "Paul Calvano",
@@ -1014,7 +1128,9 @@
         "authors"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/1718757?v=4&s=200",
-      "github": "rockeynebhwani"
+      "github": "rockeynebhwani",
+      "twitter": "rnebhwani",
+      "linkedin": "rockeynebhwani"
     },
     "RoelN": {
       "name": "Roel Nieskens",
@@ -1043,6 +1159,24 @@
       "website": "https://www.ksakae1216.com/archive",
       "github": "ksakae1216",
       "twitter": "beltway7"
+    },
+    "sboukortt": {
+      "name": "Sami Boukortt",
+      "teams": [
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/16757512?v=4&s=200",
+      "github": "sboukortt"
+    },
+    "saptaks": {
+      "name": "Saptak Sengupta",
+      "teams": [
+        "developers"
+      ],
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9530293?v=4&s=200",
+      "website": "https://saptaks.website/",
+      "github": "saptaks",
+      "twitter": "Saptak013"
     },
     "ibnesayeed": {
       "name": "Sawood Alam",
@@ -1106,8 +1240,8 @@
     "tpiros": {
       "name": "Tamas Piros",
       "teams": [
-        "analysts",
-        "authors"
+        "authors",
+        "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/2042718?v=4&s=200",
       "website": "https://www.fullstacktraining.com",
@@ -1123,6 +1257,16 @@
       "website": "https://speedcurve.com/",
       "github": "tammyeverts",
       "twitter": "tameverts"
+    },
+    "tomayac": {
+      "name": "Thomas Steiner",
+      "teams": [
+        "analysts",
+        "reviewers"
+      ],
+      "avatar_url": "https://avatars1.githubusercontent.com/u/145676?v=4&s=200",
+      "website": "https://blog.tomayac.com/",
+      "github": "tomayac"
     },
     "tkadlec": {
       "name": "Tim Kadlec",

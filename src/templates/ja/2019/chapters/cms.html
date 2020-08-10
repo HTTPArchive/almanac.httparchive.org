@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"III","chapter_number":14,"title":"CMS","description":"2019年版Web AlmanacCMS章では、CMSの採用、CMS組み合わせの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションを取り上げています。","authors":["ernee","amedina"],"reviewers":["sirjonathan"],"translators":["ksakae"],"discuss":"1769","results":"https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/","queries":"14_CMS","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-05T00:00:00.000Z","chapter":"cms"} %} {% block index %}
+{% set metadata = {"part_number":"III","chapter_number":14,"title":"CMS","description":"2019年版Web AlmanacCMS章では、CMSの採用、CMS組み合わせの構築方法、CMSを搭載したWebサイトのユーザーエクスペリエンス、CMSのイノベーションを取り上げています。","authors":["ernee","amedina"],"reviewers":["sirjonathan"],"translators":["ksakae"],"discuss":"1769","results":"https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/","queries":"14_CMS","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-20T00:00:00.000Z","chapter":"cms"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -75,7 +75,7 @@
           </li>
 
           <li>
-            <a href="#アクセンシビリティ">アクセンシビリティ</a>
+            <a href="#アクセシビリティ">アクセシビリティ</a>
           </li>
         </ul>
       </li>
@@ -522,7 +522,7 @@
   <div id="fig21-description" class="visually-hidden">CMSごとのLighthouse PWAスコアの中央値を示す棒グラフ。WordPressサイトのスコア中央値は0.33です。次の5つのCMS（Joomla、Drupal、Wix、Squarespace、1C-Bitrix）のスコア中央値はすべて0.3です。PWAのスコアがトップのCMSは、Jimdoが0.56、TYPO3が0.41となっています。</div>
   <figcaption id="fig21-caption"><a href="#fig-21" class="anchor-link">図 21.</a> CMSごとの灯台PWAカテゴリスコアの中央値。</figcaption>
 </figure>
-<h4 id="アクセンシビリティ"><a href="#アクセンシビリティ" class="anchor-link">アクセンシビリティ</a></h4>
+<h4 id="アクセシビリティ"><a href="#アクセシビリティ" class="anchor-link">アクセシビリティ</a></h4>
 <p>アクセシブルなウェブサイトとは、障害者が利用できるように設計・開発されたサイトのことです。Lighthouseは、一連のアクセシビリティ監査を提供し、それらすべての監査の加重平均を返します（各監査の加重方法の完全なリストについては、<a href="https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=1567011065">スコアリングの詳細</a>を参照してください）。</p>
 <p>各アクセシビリティ監査は合格か、不合格かですが他のLighthouseの監査とは異なり、アクセシビリティ監査に部分的に合格してもページはポイントをもらえません。例えば、いくつかの要素がスクリーンリーダーに優しい名前を持っていて他の要素がそうでない場合、そのページは<em>screenreader-friendly-names</em>監査で0点を獲得します。</p>
 <figure id="fig-22">

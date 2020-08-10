@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/HTTPArchive/almanac.httparchive.org#readme",
   "scripts": {
+    "test": "node ./tools/test",
     "generate": "node ./tools/generate",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version"
@@ -25,6 +26,8 @@
     "prettier": "^2.0.5",
     "recursive-readdir": "^2.2.2",
     "showdown": "^1.9.1",
-    "web-vitals": "^0.2.3"
+    "web-vitals": "^0.2.4",
+    "node-fetch": "^2.6.0",
+    "xml-js": "^1.6.11"
   }
 }

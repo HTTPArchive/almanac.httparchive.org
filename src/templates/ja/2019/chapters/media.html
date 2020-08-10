@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":4,"title":"メディア","description":"2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":["ksakae"],"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"media"} %} {% block index %}
+{% set metadata = {"part_number":"I","chapter_number":4,"title":"メディア","description":"2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":["ksakae"],"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-20T00:00:00.000Z","chapter":"media"} %} {% block index %}
 <ul>
   <li>
     <a href="#序章">序章</a>
@@ -53,7 +53,7 @@
       </li>
 
       <li>
-        <a href="#アクセンシビリティ">アクセンシビリティ</a>
+        <a href="#アクセシビリティ">アクセシビリティ</a>
       </li>
     </ul>
   </li>
@@ -460,7 +460,7 @@
 <p>Lighthouseの監査では、質の高いプレースホルダーを使用するなど、油断できない状況がいくつもあるため、臭いを嗅ぎ分けてくれます。</p>
 <p>遅延ローディングはIntersection Observers、Resize Observersの組み合わせを含め<a href="https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video">実装可能</a> です、または<a href="https://github.com/aFarkas/lazysizes">lazySizes</a>、<a href="https://github.com/ApoorvSaxena/lozad.js">lozad</a>などのJavaScriptライブラリの使用などさまざまな方法で実装できます。</p>
 <p>2019年8月、Chrome76では<code>&lt;img loading="lazy"&gt;</code>を使用したマークアップベースの遅延ローディングのサポートが開始されました。2019年のWeb Almanacに使用されたウェブサイトのスナップショットは2019年7月のデータを使用していますが、2,509以上のウェブサイトがすでにこの機能を利用していました。</p>
-<h3 id="アクセンシビリティ"><a href="#アクセンシビリティ" class="anchor-link">アクセンシビリティ</a></h3>
+<h3 id="アクセシビリティ"><a href="#アクセシビリティ" class="anchor-link">アクセシビリティ</a></h3>
 <p>画像アクセシビリティの中心にあるのは <code>alt</code> タグです。画像に <code>alt</code> タグが追加されると、このテキストは画像を見ることができない（障害のある、インターネット接続が悪いのいずれかの理由で）ユーザーに画像を説明するために使用されます。</p>
 <p>データセットのHTMLファイルに含まれるすべての画像タグを検出できます。デスクトップでは1,300万個、モバイルでは1,500万個の画像タグのうち、91.6％の画像に<code>alt</code>タグが存在しています。一見すると、ウェブ上では画像のアクセシビリティは非常に良好な状態にあるように見えます。しかし、よく調べてみると、見通しはあまり良くありません。データセットに存在する<code>alt</code>タグの長さを調べると、<code>alt</code>タグの長さの中央値は6文字であることがわかります。これは空の<code>alt</code>タグ（<code>alt=""</code>のように見える）に対応する。6文字以上の長さの<code>alt</code>テキストを使用している画像は全体の39％にすぎない。実際の」<code>alt</code>テキストの中央値は31文字で、そのうち25文字が実際に画像を説明しています。</p>
 <h2 id="動画"><a href="#動画" class="anchor-link">動画</a></h2>
