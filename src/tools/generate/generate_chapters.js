@@ -95,7 +95,7 @@ const parse_file = async (markdown,chapter) => {
 };
 
 const write_template = async (language, year, chapter, metadata, body, toc) => {
-  const template = `templates/base/${year}/chapter.html`;
+  const template = `templates/base/${year}/chapter.ejs.html`;
   const path = `templates/${language}/${year}/chapters/${chapter}.html`;
 
   if (fs.existsSync(template)) {
