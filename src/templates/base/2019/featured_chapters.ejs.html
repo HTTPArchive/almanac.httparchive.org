@@ -1,18 +1,23 @@
-<% if (Object.keys(sorted_quotes).length === 1) { -%>
-{%- set featured_chapter = ("<%- Object.keys(sorted_quotes) %>") %}
+<% if (Object.keys(featured_quotes).length === 1) { -%>
+{%- set featured_chapter = ("<%- Object.keys(featured_quotes) %>") %}
 <% } else { -%>
-{%- set featured_chapter = ("<%- Object.keys(sorted_quotes).join('","') %>") | random %}
+{%- set featured_chapter = ("<%- Object.keys(featured_quotes).join('","') %>") | random %}
 <% } -%>
 
 <% let loop = 0 -%>
-<% for (chapter in sorted_quotes) { -%>
+<% for (chapter in featured_quotes) { -%>
 <% if (loop === 0) { -%>
 {%- if featured_chapter == "<%- chapter %>" %}
 <% } else { -%>
 {%- elif featured_chapter == "<%- chapter %>" %}
 <% } %><% loop++ -%>
-  {%- set featured_chapter_quote = "<%- sorted_quotes[chapter].quote %>" %}
-  {%- set featured_chapter_stats = {"stat1":"<%- sorted_quotes[chapter].stat_1 %>","label1":"<%- sorted_quotes[chapter].stat_label_1 %>","stat2":"<%- sorted_quotes[chapter].stat_2 %>","label2":"<%- sorted_quotes[chapter].stat_label_2 %>","stat3":"<%- sorted_quotes[chapter].stat_3 %>","label3":"<%- sorted_quotes[chapter].stat_label_3 %>"} %}
+  {%- set featured_chapter_quote = "<%- featured_quotes[chapter].quote %>" %}
+  {%- set featured_chapter_stats = {
+      "stat1":"<%- featured_quotes[chapter].stats[0][0] %>","label1":"<%- featured_quotes[chapter].stats[0][1] %>",
+      "stat2":"<%- featured_quotes[chapter].stats[1][0] %>","label2":"<%- featured_quotes[chapter].stats[1][1] %>",
+      "stat3":"<%- featured_quotes[chapter].stats[2][0] %>","label3":"<%- featured_quotes[chapter].stats[2][1] %>",
+    }
+  %}
 <% } -%>
 {% endif %}
 

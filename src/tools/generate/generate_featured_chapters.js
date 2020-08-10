@@ -16,28 +16,23 @@ const getElementContents = (dom,selector) => {
 const generate_chapter_featured_quote = (body) => {
   const dom = new JSDOM(body);
   const featured_quote = getElementContents(dom, '#featured-quote');
-  const featured_stat_1 = getElementContents(dom,'#featured-stat-1');
-  const featured_stat_label_1 = getElementContents(dom,'#featured-stat-label-1');
-  const featured_stat_2 = getElementContents(dom,'#featured-stat-2');
-  const featured_stat_label_2 = getElementContents(dom,'#featured-stat-label-2');
-  const featured_stat_3 = getElementContents(dom,'#featured-stat-3');
-  const featured_stat_label_3 = getElementContents(dom,'#featured-stat-label-3');
 
   let featured_quote_obj = {};
+  featured_stats = [];
   if (featured_quote) {
     featured_quote_obj.quote = featured_quote;
   }
-  if (featured_stat_1 && featured_stat_label_1) {
-    featured_quote_obj.stat_1 = featured_stat_1;
-    featured_quote_obj.stat_label_1 = featured_stat_label_1;
+  for (let i=1; i<4; i++) {
+    const featured_stat = getElementContents(dom,'#featured-stat-' + i);
+    const featured_stat_label  = getElementContents(dom,'#featured-stat-label-' + i);
+    if (featured_stat && featured_stat_label) {
+      featured_stats.push ([featured_stat, featured_stat_label]);
+    } else {
+      break;
+    }
   }
-  if (featured_stat_2 && featured_stat_label_2) {
-    featured_quote_obj.stat_2 = featured_stat_2;
-    featured_quote_obj.stat_label_2 = featured_stat_label_2;
-  }
-  if (featured_stat_3 && featured_stat_label_3) {
-    featured_quote_obj.stat_3 = featured_stat_3;
-    featured_quote_obj.stat_label_3 = featured_stat_label_3;
+  if (featured_stats.length > 0) {
+    featured_quote_obj.stats = featured_stats;
   }
 
   return featured_quote_obj;
@@ -66,12 +61,12 @@ const generate_featured_chapters = async (featured_quotes) => {
   return true;
 };
 
-const write_template = async (language, year, sorted_quotes) => {
+const write_template = async (language, year, featured_quotes) => {
   const template = `templates/base/${year}/featured_chapters.ejs.html`;
   const path = `templates/${language}/${year}/featured_chapters.html`;
 
   if (fs.existsSync(template)) {
-    let html = await ejs.renderFile(template, { sorted_quotes });
+    let html = await ejs.renderFile(template, { featured_quotes });
 
     await fs.outputFile(path, html, 'utf8');
     await size_of(path);
