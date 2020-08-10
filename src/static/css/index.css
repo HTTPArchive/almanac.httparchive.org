@@ -173,12 +173,7 @@ p {
   background-position: -150px center;
   background-repeat: no-repeat;
   padding-left: 180px;
-
-  /* Overcome the .container parent wrapper */
-  width: 100vw;
   position: relative;
-  left: 50%;
-  margin-left: -50vw;
 }
 
 .contributors .btn {
