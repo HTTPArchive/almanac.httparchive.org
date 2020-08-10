@@ -21,7 +21,7 @@
 
 {% block styles %}
   {{ super() }}
-  <link rel="stylesheet" href="/static/css/index.css?v=20200728001611">
+  <link rel="stylesheet" href="/static/css/index.css?v=20200810202018">
   <style nonce="{{ csp_nonce() }}">
 .intro {
   max-width: 600px;
@@ -60,7 +60,7 @@
 <li><a href="{{ url_for('contributors', year=year, lang=lang) }}">{{ self.contributors_title() }}</a></li>
 {% endblock %}
 
-{% block main %}
+{% block container %}
 <main id="maincontent">
   <section id="intro" class="intro-container">
     <div class="intro">
