@@ -22,7 +22,7 @@ const generate_chapter_featured_quote = (body) => {
   if (featured_quote) {
     featured_quote_obj.quote = featured_quote;
   }
-  for (let i=1; i<4; i++) {
+  for (let i = 1; i < 4; i++) {
     const featured_stat = getElementContents(dom,'#featured-stat-' + i);
     const featured_stat_label  = getElementContents(dom,'#featured-stat-label-' + i);
     if (featured_stat && featured_stat_label) {
