@@ -25,73 +25,71 @@
 {% endblock %}
 
 {% block container %}
-  {% block main %}
-    <main id="maincontent">
-      <section id="intro" class="intro-container">
-        <div class="intro">
-          <div class="intro-year">{{ year }}</div>
-          <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
-          <h2>{{ self.intro_sub_title() }}</h2>
-          <p>{{ self.mission() }}</p>
-          <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
-            {{ self.start_exploring() }}
+  <main id="maincontent">
+    <section id="intro" class="intro-container">
+      <div class="intro">
+        <div class="intro-year">{{ year }}</div>
+        <h1 class="title title-lg title-alt">{{ self.intro_title() }}</h1>
+        <h2>{{ self.intro_sub_title() }}</h2>
+        <p>{{ self.mission() }}</p>
+        <a href="{{ url_for('table_of_contents', year=year, lang=lang) }}" class="btn">
+          {{ self.start_exploring() }}
+        </a>
+      </div>
+      <div class="intro-image-wrapper">
+        <svg viewBox="0 0 50 16">
+          <text x="7" y="15">{{ year }}</text>
+        </svg>      
+        <img src="/static/images/home-hero.png" alt="" width="562" height="820">
+      </div>
+    </section>
+    {% include "%s/2019/featured_chapters.html" % lang %}
+    <section id="contributors" class="contributors-container alt-bg">
+      <div class="container">
+        <div class="contributors">
+          <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
+          <p>{{ self.contributors_description() }}</p>
+          <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
+            {{ self.contributors_link() }}
           </a>
         </div>
-        <div class="intro-image-wrapper">
-          <svg viewBox="0 0 50 16">
-            <text x="7" y="15">{{ year }}</text>
-          </svg>      
-          <img src="/static/images/home-hero.png" alt="" width="562" height="820">
+        <div class="people" aria-hidden="true">
+          <div class="people-number">{{ self.contributors() }}</div>
+          <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
+          <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
+          <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
         </div>
-      </section>
-      {% include "%s/2019/featured_chapters.html" % lang %}
-      <section id="contributors" class="contributors-container alt-bg">
-        <div class="container">
-          <div class="contributors">
-            <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
-            <p>{{ self.contributors_description() }}</p>
-            <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
-              {{ self.contributors_link() }}
-            </a>
-          </div>
-          <div class="people" aria-hidden="true">
-            <div class="people-number">{{ self.contributors() }}</div>
-            <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
-            <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
-            <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
-          </div>
-        </div>
-      </section>
-      <section id="methodology" class="methodology-container">
-        <div class="methodology">
-          <h2 class="title title-center">{{ self.methodology_title() }}</h2>
-          <div class="methodology-data">
-            <div class="websites-tested">
-              <div>
-                {{ self.methodology_stat_1_title() }}
-              </div>
-              <div>
-                {{ self.methodology_stat_1() }}
-              </div>
+      </div>
+    </section>
+    <section id="methodology" class="methodology-container">
+      <div class="methodology">
+        <h2 class="title title-center">{{ self.methodology_title() }}</h2>
+        <div class="methodology-data">
+          <div class="websites-tested">
+            <div>
+              {{ self.methodology_stat_1_title() }}
             </div>
-            <div class="data-processed">
-              <div>
-                {{ self.methodology_stat_2_title() }}
-              </div>
-              <div>
-                {{ self.methodology_stat_2() }}
-              </div>
+            <div>
+              {{ self.methodology_stat_1() }}
             </div>
           </div>
-          <p class="methodology-info">
-            {{ self.methodology_description() }}
-          </p>
-          <a href="{{ url_for('methodology', year=year, lang=lang) }}" class="alt btn">
-            {{ self.methodology_link() }}
-          </a>
-          <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
+          <div class="data-processed">
+            <div>
+              {{ self.methodology_stat_2_title() }}
+            </div>
+            <div>
+              {{ self.methodology_stat_2() }}
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
-  {% endblock %}
+        <p class="methodology-info">
+          {{ self.methodology_description() }}
+        </p>
+        <a href="{{ url_for('methodology', year=year, lang=lang) }}" class="alt btn">
+          {{ self.methodology_link() }}
+        </a>
+        <img class="methodology-characters" src="/static/images/methodology-characters.png" alt="" width="984" height="354" loading="lazy" />
+      </div>
+    </section>
+  </main>
 {% endblock %}

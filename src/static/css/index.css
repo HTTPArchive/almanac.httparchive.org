@@ -165,8 +165,6 @@ p {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDIiIGhlaWdodD0iMzMwIiB2aWV3Qm94PSIwIDAgMzAyIDMzMCI+CiAgPHBhdGggb3BhY2l0eT0iLjMiIGZpbGw9IiNmN2Y3NzkiIGQ9Ik0tMTcxMiAyNTdIMjI1djczaC0xOTM3eiIvPgogIDxwYXRoIG9wYWNpdHk9Ii45IiBmaWxsPSIjYThjYWJhIiBkPSJNLTE2NDAgMTM2SDI5N3Y3M2gtMTkzN3oiLz4KICA8cGF0aCBvcGFjaXR5PSIuOSIgZmlsbD0iI2Y3Zjc3OSIgZD0iTS0xNjc3IDE2NkgyNjB2NzNoLTE5Mzd6Ii8+CiAgPHBhdGggb3BhY2l0eT0iLjkiIGZpbGw9IiM0YTMyNDQiIGQ9Ik0tMTc3MiAzSDE2NXY3M2gtMTkzN3oiLz4KPC9zdmc+);
   background-position: -150px center;
   background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
 }
 
 .contributors-container .container {
@@ -305,7 +303,6 @@ p {
     line-height: 400px;
     top: 50px;
     position: relative;
-    left: 50px;
   }
 
   .people .character {
