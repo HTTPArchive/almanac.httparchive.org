@@ -23,13 +23,13 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2.3.2
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v1.4.2
       with:
         version:  12.x
     - name: Set up Python 3.7
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v2.1.1
       with:
         python-version: '3.7'
     - name: Run the website
