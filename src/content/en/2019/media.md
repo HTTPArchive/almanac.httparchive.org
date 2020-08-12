@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-08-04T00:00:00.000Z
+last_updated: 2020-08-12T00:00:00.000Z
 ---
 
 ## Introduction
@@ -78,7 +78,7 @@ For the mobile device used in the web page crawl, we have a display of `512 x 36
 
 If we had one image that filled the entire screen perfectly, this would be a 1x pixel fill rate. Of course, rarely does a website fill the entire canvas with a single image. Media content tends to be mixed in with the design and other content. A value greater than 1x implies that the layout requires the user to scroll to see the additional image content. 
 
-<p class="note">Note: this is only looking at the CSS layout for both the viper and the volume of layout content. It is not evaluating the effectiveness of the responsive images or the effectiveness of providing high DPR content.</p> 
+<p class="note">Note: this is only looking at the CSS layout for both the DPR and the volume of layout content. It is not evaluating the effectiveness of the responsive images or the effectiveness of providing high DPR content.</p> 
 
 <figure>
   <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
