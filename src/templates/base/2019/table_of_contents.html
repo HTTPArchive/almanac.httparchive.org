@@ -7,12 +7,6 @@
 {% block styles %}
 {{ super() }}
 <style nonce="{{ csp_nonce() }}">
-.main {
-  margin-bottom: 100px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 .contents-wrapper {
   display: grid;
   grid-template-areas: 'parts characters';
@@ -81,10 +75,6 @@
 @media (max-width: 600px) {
   .contents-wrapper {
     display: block;
-  }
-  .main {
-    padding-left: 0;
-    padding-right: 0;
   }
   .parts {
     max-width: 100%;

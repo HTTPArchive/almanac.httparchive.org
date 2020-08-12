@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.2
       - name: Set VALIDATE_ALL_CODEBASE variable
         if: github.event_name == 'push' || github.event_name == 'pull_request'
         run: |
@@ -44,4 +44,5 @@ jobs:
           VALIDATE_JSON: true
           VALIDATE_MD: true
           VALIDATE_PYTHON_PYLINT: true
+          VALIDATE_PYTHON_FLAKE8: true
           VALIDATE_YAML: true
