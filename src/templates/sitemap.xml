@@ -422,18 +422,23 @@
     </url>
 
     <url>
+        <loc>https://almanac.httparchive.org/zh-CN/2019/accessibility</loc>
+        <lastmod>2020-08-12</lastmod>
+    </url>
+
+    <url>
         <loc>https://almanac.httparchive.org/zh-CN/2019/contributors</loc>
         <lastmod>2020-06-21</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/zh-CN/2019/methodology</loc>
-        <lastmod>2020-06-21</lastmod>
+        <lastmod>2020-08-12</lastmod>
     </url>
 
     <url>
         <loc>https://almanac.httparchive.org/zh-CN/2019/table-of-contents</loc>
-        <lastmod>2020-06-21</lastmod>
+        <lastmod>2020-08-12</lastmod>
     </url>
 
     <url>
