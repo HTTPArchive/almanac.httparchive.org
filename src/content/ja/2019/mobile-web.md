@@ -10,7 +10,7 @@ discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-27T00:00:00.000Z
+last_updated: 2020-08-07T00:00:00.000Z
 ---
 
 ## 序章Introduction
@@ -194,7 +194,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
   <a href="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png">
     <img src="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png" alt="図6. タップターゲットのサイズと間隔の基準。画像提供：LookZook" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="800" height="430">
   </a>
-  <div id="fig6-description" class="visually-hidden">A diagram displaying two examples of difficult to tap buttons. The first example shows two buttons with no spacing between them; An example below it shows the same buttons but with the recommended amount of spacing between them (8px or 1-2mm). The second example shows a button far too small to tap; An example below it shows the same button enlarged to the recommended size of 40-48px (around 8mm). Image courtesy of LookZook</div>
+  <div id="fig6-description" class="visually-hidden">タップしにくいボタンの例を2つ表示した図です。1つ目の例では、2つのボタンの間に間隔を空けていますが、その下の例では、同じボタンを推奨される間隔(8pxまたは1-2mm)で表示しています。その下の例では、同じボタンを40～48px（約8mm）の推奨サイズに拡大して表示しています。画像提供：LookZook</div>
   <figcaption id="fig6-caption">図6. タップターゲットのサイズと間隔の基準。画像提供：LookZook</figcaption>
 </figure>
 
