@@ -68,7 +68,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/2019/media</loc>
-        <lastmod>2020-08-04</lastmod>
+        <lastmod>2020-08-12</lastmod>
     </url>
 
     <url>
@@ -164,6 +164,11 @@
     <url>
         <loc>https://almanac.httparchive.org/es/2019/markup</loc>
         <lastmod>2020-03-01</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/es/2019/media</loc>
+        <lastmod>2020-08-12</lastmod>
     </url>
 
     <url>
