@@ -7,10 +7,6 @@
 {% block styles %}
 {{ super() }}
 <style nonce="{{ csp_nonce() }}">
-.main {
-  padding-left: 10px;
-  padding-right: 10px;
-}
 .team {
   display: flex;
   flex-direction: row;
@@ -167,10 +163,6 @@
 {% endfor %}
 
 @media (max-width: 600px) {
-  .main {
-    padding-left: 0;
-    padding-right: 0;
-  }
   .team {
     height: 100px;
   }
@@ -325,28 +317,28 @@
         <div class="contributor-social">
           {% if contributor.twitter %}
           <a href="https://twitter.com/{{ contributor.twitter }}" aria-label="{{ onTwitter(contributor.twitter) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-label="{{ onGitHub(contributor.github) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.linkedin %}
           <a href="https://www.linkedin.com/in/{{ contributor.linkedin }}/" aria-label="{{ onLinkedIn(contributor.name) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-label="{{ website(contributor.name) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
             </svg>
           </a>
