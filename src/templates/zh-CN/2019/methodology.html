@@ -54,7 +54,7 @@
         <h2 id="overview"><a href="#overview" class="anchor-link">概览</a></h2>
 
         <p>
-          Web Almanac 是一个由 <a href="https://httparchive.org">HTTP Archive</a>组织的项目. HTTP Archive 于2010年由Steve Souders创立，其任务是跟踪web是如何构建的。它按月评估数以百万计的网页，并使它的TB级别的元数据可供<a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>分析。了解更多 <a href="https://httparchive.org/about">HTTP Archive</a>.
+          Web Almanac 是一个由 <a href="https://httparchive.org">HTTP Archive</a>组织的项目. HTTP Archive 于2010年由Steve Souders创立，其任务是跟踪web是如何构建的。它按月评估数以百万计的网页，并使它的TB级别的元数据可供<a href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>分析。了解更多 <a href="https://httparchive.org/about">HTTP Archive</a>。
         </p>
 
         <p>
@@ -74,11 +74,11 @@
         </p>
 
         <p>
-          Web Almanac中列出的所有指标都可以通过BigQuery上的数据集公开重现。您可以在我们的<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub 仓库</a>浏览我们的所有章节使用的查询 .
+          Web Almanac中列出的所有指标都可以通过BigQuery上的数据集公开重现。您可以在我们的<a href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/2019">GitHub 仓库</a>浏览我们的所有章节使用的查询。
         </p>
 
         <p class="note">
-          请注意，其中一些查询相当大，如果你自己运行可能比较 <a href="https://cloud.google.com/bigquery/pricing">昂贵</a> , 因为BigQuery是按TB收费. 为了帮助控制你的开支, 请看 Tim Kadlec的文章 <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">在不破产的情况下来使用BigQuery</a>.
+          请注意，其中一些查询相当大，如果你自己运行可能比较 <a href="https://cloud.google.com/bigquery/pricing">昂贵</a> ，因为BigQuery是按TB收费。为了帮助控制你的开支，请看 Tim Kadlec的文章 <a href="https://timkadlec.com/remembers/2019-12-10-using-bigquery-without-breaking-the-bank/">在不破产的情况下来使用BigQuery</a>。
         </p>
 
         <p>
@@ -104,7 +104,7 @@
         </div>
 
         <p>
-          每个指标的结果都可以在章节对应的电子表格中公开查看，例如<a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript 结果</a>.
+          每个指标的结果都可以在章节对应的电子表格中公开查看，例如<a href="https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/edit?usp=sharing">JavaScript 结果</a>。
         </p>
     </section>
 
@@ -136,7 +136,7 @@
       <h3 id="metrics"><a href="#metrics" class="anchor-link">指标</a></h3>
 
       <p>
-        HTTP Archive 收集关于如何构建web的指标。它包括一些基本指标，如每个页面的字节数、页面是否通过HTTPS加载，以及单个请求和响应头。这些指标中的大多数是由<a href="#webpagetest">WebPageTest</a>提供, 它作为每个网站的测试运行工具。
+        HTTP Archive 收集关于如何构建web的指标。它包括一些基本指标，如每个页面的字节数、页面是否通过HTTPS加载，以及单个请求和响应头。这些指标中的大多数是由<a href="#webpagetest">WebPageTest</a>提供， 它作为每个网站的测试运行工具。
       </p>
 
       <p>
@@ -174,20 +174,20 @@
       <table>
         <thead>
           <tr>
-              <th>Config</th>
-              <th>Desktop</th>
-              <th>Mobile</th>
+              <th>配置</th>
+              <th>桌面</th>
+              <th>移动</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Device</td>
+            <td>设备</td>
             <td>Linux VM</td>
-            <td>Emulated Moto G4</td>
+            <td>模拟 Moto G4</td>
           </tr>
 
           <tr>
-            <td>User Agent</td>
+            <td>用户代理UA</td>
             <td>
               Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 PTST/190704.170731
             </td>
@@ -197,7 +197,7 @@
           </tr>
 
           <tr>
-            <td>Location</td>
+            <td>位置</td>
             <td>
               Redwood City, California, USA<br>
               The Dalles, Oregon, USA
@@ -209,13 +209,13 @@
           </tr>
 
           <tr>
-            <td>Connection</td>
-            <td>Cable (5/1 Mbps 28ms RTT)</td>
+            <td>连接</td>
+            <td>有线 (5/1 Mbps 28ms RTT)</td>
             <td>3G (1.600/0.768 Mbps 300ms RTT)</td>
           </tr>
 
           <tr>
-            <td>Viewport</td>
+            <td>可视区域Viewport</td>
             <td>1200 x 1920px</td>
             <td>512 x 360px</td>
           </tr>
@@ -252,31 +252,31 @@
       </p>
 
       <p>
-        HTTP Archive 为所有的移动网页运行最新版本的 Lighthouse — 因为资源的限制问题并没有包括桌面版本的页面。 在2019年七月的爬取中, HTTP Archive 使用了 <a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v5.1.0">5.1.0</a> 版本的Lighthouse.
+        HTTP Archive 为所有的移动网页运行最新版本的Lighthouse — 因为资源的限制问题并没有包括桌面版本的页面。在2019年七月的爬取中，HTTP Archive 使用了 <a href="https://github.com/GoogleChrome/lighthouse/releases/tag/v5.1.0">5.1.0</a> 版本的Lighthouse.
       </p>
 
       <p>
-        Lighthouse 在 <a href="#webpagetest">WebPageTest</a>中运行自己独特的测试, 它有自己的配置文件:
+        Lighthouse 在 <a href="#webpagetest">WebPageTest</a>中运行自己独特的测试，它有自己的配置文件:
       </p>
       <div class="table-wrap"><div class="table-wrap-container">
       <table>
         <thead>
           <tr>
-            <th>Config</th>
-            <th>Value</th>
+            <th>配置</th>
+            <th>值</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>CPU slowdown</td>
+            <td>CPU 降速</td>
             <td>1x*</td>
           </tr>
           <tr>
-            <td>Download throughput</td>
+            <td>下载吞吐</td>
             <td>1.475 Mbps</td>
           </tr>
           <tr>
-            <td>Upload throughput</td>
+            <td>上传吞吐</td>
             <td>0.675 Mbps</td>
           </tr>
           <tr>
@@ -288,11 +288,11 @@
       </div></div>
 
       <p class="note">
-        * 请注意，Lighthouse通常的配置是CPU减速4倍, 但是因为一个WebPageTest的<a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> , 在当时的测试是1倍。
+        * 请注意，Lighthouse通常的配置是CPU降速4倍，但是因为一个WebPageTest的<a href="https://github.com/GoogleChrome/lighthouse/issues/9668#issuecomment-535134232">bug</a> ， 在当时的测试是降速1倍。
       </p>
 
       <p>
-        如需了解更多关于 Lighthouse 以及 HTTP Archive中可用的审计, 请参考 <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse 开发者文档</a>.
+        如需了解更多关于Lighthouse以及HTTP Archive中可用的审计，请参考 <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse 开发者文档</a>。
       </p>
     </section>
 
@@ -300,7 +300,7 @@
       <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
 
       <p>
-        <a href="https://www.wappalyzer.com/">Wappalyzer</a> 是用于检测web页面使用的技术的工具。 有 <a href="https://www.wappalyzer.com/technologies">65 类</a>技术被用于测试, 从JavaScript框架到CMS平台，甚至加密货币挖掘。支持的技术超过1200种。
+        <a href="https://www.wappalyzer.com/">Wappalyzer</a> 是用于检测web页面使用的技术的工具。 有 <a href="https://www.wappalyzer.com/technologies">65 类</a>技术被用于测试， 从JavaScript框架到CMS平台，甚至加密货币挖掘。支持的技术超过1200种。
       </p>
 
       <p>
@@ -308,7 +308,7 @@
       </p>
 
       <p>
-        Wappalyzer为很多章节提供动力，它分析开发人员工具的流行程度，例如 WordPress, Bootstrap, 和 jQuery. 比如 <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">电商</a> 和 <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> 章节非常依赖于Wappalyzer探测出的各自的 <a href="https://www.wappalyzer.com/categories/ecommerce">电商</a> 和 <a href="https://www.wappalyzer.com/categories/cms">CMS</a> 类别。 
+        Wappalyzer为很多章节提供动力，它分析开发人员工具的流行程度，例如 WordPress，Bootstrap，和jQuery。比如 <a href="{{ url_for('chapter', year=year, lang=lang, chapter='ecommerce') }}">电商</a> 和 <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> 章节非常依赖于Wappalyzer探测出的各自的 <a href="https://www.wappalyzer.com/categories/ecommerce">电商</a> 和 <a href="https://www.wappalyzer.com/categories/cms">CMS</a> 类别。 
       </p>
 
       <p>
@@ -328,7 +328,7 @@
       </p>
 
       <p>
-        关于数据集，你可以在这里了解更多 <a href="https://web.dev/chrome-ux-report-bigquery">在BigQuery使用Chrome UX报告</a> 指南<a href="https://web.dev/">web.dev</a>.
+        关于数据集，你可以在这里了解更多： <a href="https://web.dev/">web.dev</a>上的<a href="https://web.dev/chrome-ux-report-bigquery">在BigQuery使用Chrome UX报告</a> 指南。
       </p>
     </section>
 
@@ -356,7 +356,7 @@
       </p>
 
       <p>
-        在<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> 章节，这个特殊用途的工具显著地提高了数据库中许多度量标准的准确性。所有外部样式表中的CSS和每个页面的内联样式块都被解析和查询，让这个分析工作成为可能。阅读<a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">这段</a> 来了解更多关于它如何同BigQuery上的HTTP Archive数据集来集成.
+        在<a href="{{ url_for('chapter', year=year, lang=lang, chapter='css') }}">CSS</a> 章节，这个特殊用途的工具显著地提高了数据库中许多度量标准的准确性。所有外部样式表中的CSS和每个页面的内联样式块都被解析和查询，让这个分析工作成为可能。阅读<a href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">这段</a> 来了解更多关于它如何同BigQuery上的HTTP Archive数据集来集成。
       </p>
     </section>
 
@@ -376,7 +376,7 @@
       </p>
 
       <p>
-        经过头脑风暴, 20个章节被固化确定， 我们开始 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2">分配主题专家和对应的审稿人</a>。 这个过程有一些固有的偏见，因为要让志愿者致力于这样规模的项目是一个挑战。因此，许多贡献者是同一专业圈子的成员。Web Almanac网络年鉴的未来版本的一个明确目标是鼓励更多未被充分代表和异质的声音作为作者和审稿人。
+        经过头脑风暴，20个章节被固化确定，我们开始 <a href="https://github.com/HTTPArchive/almanac.httparchive.org/issues/2">分配主题专家和对应的审稿人</a>。 这个过程有一些固有的偏见，因为要让志愿者致力于这样规模的项目是一个挑战。因此，许多贡献者是同一专业圈子的成员。Web Almanac网络年鉴的未来版本的一个明确目标是鼓励更多未被充分代表和异质的声音作为作者和审稿人。
       </p>
 
       <p>
@@ -392,7 +392,7 @@
       </p>
 
       <p>
-        整个2019年7月, HTTP Archive 数据管道爬取了数百万网站, 收集到的元数据用于了 Web Almanac 网络年鉴.
+        整个2019年7月，HTTP Archive 数据管道爬取了数百万网站，收集到的元数据用于了Web Almanac网络年鉴。
       </p>
 
       <p>
@@ -424,7 +424,7 @@
       </p>
 
       <p>
-        如果您对2020年版的Web Almanac网络年鉴有兴趣, 请填写 <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">感兴趣表格</a>. 我们非常希望倾听你的想法，让这个项目变得更好!
+        如果您对2020年版的Web Almanac网络年鉴有兴趣，请填写 <a href="https://forms.gle/Qyf3q5pKgdH1cBhq5">感兴趣表格</a>. 我们非常希望倾听你的想法，让这个项目变得更好!
       </p>
     </section>
 {% endblock main_content %}
