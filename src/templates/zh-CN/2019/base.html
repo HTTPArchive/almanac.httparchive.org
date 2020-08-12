@@ -56,9 +56,9 @@
 {% macro show_description(id) %}显示图像描述 {{ id }}{% endmacro %}
 {% macro hide_description(id) %}隐藏图像描述 {{ id }}{% endmacro %}
 
-{% block written_by_before %}撰写 by{% endblock %}
-{% block reviewed_by_before %}审阅 by{% endblock %}
-{% block translated_by_before %}翻译 by{% endblock %}
+{% block written_by_before %}作者： {% endblock %}
+{% block reviewed_by_before %}审稿者： {% endblock %}
+{% block translated_by_before %}翻译者： {% endblock %}
 {% block written_by_after %}{% endblock %}
 {% block reviewed_by_after %}{% endblock %}
 {% block translated_by_after %}{% endblock %}
@@ -87,7 +87,7 @@
 {% block methodology_stat_2_title %}处理的数据{% endblock %}
 {% block methodology_stat_2 %}20.9 TB{% endblock %}
 {% block methodology_description %}
-除非另有说明，在所有20章的Web Almanac网络年鉴的指标都来自HTTP Archive数据集。HTTP Archive是一个社区运行的项目，自2010年以来一直在跟踪web是如何构建的。使用WebPageTest和Lighthouse，每月测试大约600万个网站的元数据，并将其包含在一个公开的BigQuery数据库中进行分析。Web Almanac 网络年鉴使用了2019年7月的数据集作为度量的基础。有关更多信息，请参见方法学页面。
+除非另有说明，在所有20章的Web Almanac网络年鉴的指标都来自HTTP Archive数据集。HTTP Archive是一个社区运行的项目，自2010年以来一直在跟踪web是如何构建的。使用WebPageTest和Lighthouse，每月测试大约600万个网站的元数据，并将其包含在一个公开的BigQuery数据库中进行分析。Web Almanac 网络年鉴使用了2019年7月的数据集作为度量的基础。有关更多信息，请参见方法论页面。
 {% endblock %}
 {% block methodology_link %}了解方法论{% endblock %}
 
@@ -120,7 +120,7 @@
 
 {% block ebook_title %}Ebook{% endblock %}
 {% block ebook_download %}下载 {{ year }} Web Almanac网络年鉴 ：PDF 格式{% endblock %}
-{% block ebook_download_note %}(generated with <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+{% block ebook_download_note %}(使用 <a href="https://www.princexml.com/">www.princexml.com</a>生成){% endblock %}
 
 {% 
   set localizedPartTitles = {
