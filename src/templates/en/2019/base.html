@@ -77,6 +77,9 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block copyright %}© Web Almanac. Licensed under <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}Accessibility Statement{% endblock %}
 
+{% block featured_chapter %}Featured Chapter{% endblock %}
+{% macro readChapter(chapter) %}Read the <span class="featured-chapter-name">{{ chapter }}</span> Chapter{% endmacro %}
+
 {% block contributors_description %}
 The Web Almanac has been made possible by the hard work of the web community. {{ self.contributors() }} people have volunteered countless hours in the planning, research, writing and production phases.
 {% endblock %}

@@ -77,6 +77,9 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block copyright %}© Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
 
+{% block featured_chapter %}Capítulo Destacado{% endblock %}
+{% macro readChapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+
 {% block contributors_description %}
 Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.
 {% endblock %}
