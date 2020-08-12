@@ -27,7 +27,7 @@ jobs:
         version:  12.x
     # Install Python 3.7 as used by Google Cloud Platform
     - name: Set up Python 3.7
-      uses: actions/setup-python@v2.1.1
+      uses: actions/setup-python@v2.1.2
       with:
         python-version: '3.7'
     - name: Install Asian Fonts
