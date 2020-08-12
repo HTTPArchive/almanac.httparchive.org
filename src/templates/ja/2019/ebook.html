@@ -1528,7 +1528,7 @@
   </div>
 </section>
 
-{% set metadata = {"part_number":"I","chapter_number":4,"title":"メディア","description":"2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":["ksakae"],"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-20T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
+{% set metadata = {"part_number":"I","chapter_number":4,"title":"メディア","description":"2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":["ksakae"],"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-12T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
     <div class="subtitle">
@@ -1616,7 +1616,7 @@
     <p>メガピクセルは、主に抽象的な指標であるため、難しい指標です。ウェブページで使用されているピクセルの量を表現するのに便利な方法は、ディスプレイサイズに対する比率として表現することです。</p>
     <p>ウェブページのクロールで使用したモバイル端末では、<code>512 x 360</code>の表示で、0.18MPのCSSコンテンツが表示されています（物理的な画面である<code>3x</code>や3^2以上の画素である1.7MPと混同しないように）。このビューアーのピクセル量を画像に割り当てられたCSSピクセルの数で割ると、相対的なピクセル量が得られます。</p>
     <p>もし、画面全体を完璧に埋め尽くす画像が1枚あったとしたら、これは1xピクセルの塗りつぶし率になります。もちろん、ウェブサイトが1枚の画像でキャンバス全体を埋め尽くすことはほとんどありません。メディアコンテンツは、デザインや他のコンテンツと混在する傾向があります。1xよりも大きい値はレイアウトが追加の画像コンテンツを見るため、ユーザーが、スクロールする必要があることを意味します。</p>
-    <p class="note">注：これは、viperとレイアウトコンテンツのボリュームの両方のCSSレイアウトを見ているだけです。レスポンシブ画像の効果や、DPRの高いコンテンツを提供することの効果を評価しているわけではありません。</p>
+    <p class="note">注：これは、DPRとレイアウトコンテンツのボリュームの両方のCSSレイアウトを見ているだけです。レスポンシブ画像の効果や、DPRの高いコンテンツを提供することの効果を評価しているわけではありません。</p>
     <figure id="media-fig-5">
       <a href="https://almanac.httparchive.org/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
         <img src="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png" alt="図5. 画像のピクセル量と画面サイズ（CSSピクセル）の関係。" aria-labelledby="media-fig5-caption" aria-describedby="media-fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&amp;format=interactive" />
