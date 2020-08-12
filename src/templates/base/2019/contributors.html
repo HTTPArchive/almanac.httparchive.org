@@ -7,10 +7,6 @@
 {% block styles %}
 {{ super() }}
 <style nonce="{{ csp_nonce() }}">
-.main {
-  padding-left: 10px;
-  padding-right: 10px;
-}
 .team {
   display: flex;
   flex-direction: row;
@@ -107,8 +103,13 @@
   margin: 10px;
 }
 
-.contributor:focus .contributor-avatar{
-    transform: scale(1.1);
+.contributor:focus .contributor-avatar {
+  transform: scale(1.1);
+}
+
+.contributor:focus {
+  border: 2px solid #f7f779;
+  outline: none;
 }
 
 .contributor-avatar {
@@ -130,7 +131,7 @@
 }
 
 .contributor-social {
-  flex: 1
+  flex: 1;
 }
 
 .contributor-social a {
@@ -141,19 +142,13 @@
 .contributor-teams {
   margin-top: 5px;
   text-align: center;
+  color: #757575;
 }
 
 .contributor-team {
   font-size: 14px;
   font-size: 0.875rem;
-  color: #757575;
   white-space: nowrap;
-}
-.contributor-team::after {
-  content: ', ';
-}
-.contributor-team:last-child::after {
-  content: '';
 }
 
 {% for id in config.teams.keys() %}
@@ -168,10 +163,6 @@
 {% endfor %}
 
 @media (max-width: 600px) {
-  .main {
-    padding-left: 0;
-    padding-right: 0;
-  }
   .team {
     height: 100px;
   }
@@ -319,28 +310,35 @@
         </a>
       </li>
     {% for id, contributor in config.contributors.items() %}
-      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}">
+      <li class="contributor {{ ' '.join(contributor.teams) }}" id="{{ id }}" tabindex="-1">
         <img class="contributor-avatar" src="{{contributor.avatar_url}}" height="100" width="100" alt="{{ contributor.name }} avatar" loading="lazy" />
         <div class="contributor-name">{{ contributor.name }}</div>
 
         <div class="contributor-social">
           {% if contributor.twitter %}
           <a href="https://twitter.com/{{ contributor.twitter }}" aria-label="{{ onTwitter(contributor.twitter) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.github %}
           <a href="https://github.com/{{ contributor.github }}" aria-label="{{ onGitHub(contributor.github) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
+            </svg>
+          </a>
+          {% endif %}
+          {% if contributor.linkedin %}
+          <a href="https://www.linkedin.com/in/{{ contributor.linkedin }}/" aria-label="{{ onLinkedIn(contributor.name) }}">
+            <svg width="22" height="22" role="img">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
             </svg>
           </a>
           {% endif %}
           {% if contributor.website %}
           <a href="{{ contributor.website }}" aria-label="{{ website(contributor.name) }}">
-            <svg width="22" height="22">
+            <svg width="22" height="22" role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
             </svg>
           </a>
@@ -349,7 +347,7 @@
 
         <div class="contributor-teams">
           {% for id in contributor.teams | sort() %}
-            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>
+            <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
           {% endfor %}
         </div>
       </li>

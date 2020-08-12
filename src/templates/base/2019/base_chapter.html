@@ -2,12 +2,12 @@
 
 {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 
+{% block date_published %}{{ metadata.published }}{% endblock %}
+{% block date_modified %}{{ metadata.last_updated }}{% endblock %}
+
 {% block image_url %}https://almanac.httparchive.org{{ chapter_image_dir }}/hero_lg.jpg{% endblock %}
 {% block image_height %}433{% endblock %}
 {% block image_width %}866{% endblock %}
-
-{% block date_published %}{{ metadata.get('published','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
-{% block date_modified %}{{ metadata.get('last_updated','2019-11-04') + 'T12:00:00.000Z' }}{% endblock %}
 
 {% block author_structured_data %}
       {% for author in metadata.get('authors') %}{% if loop.length > 1 and loop.index == 1 %}[{% endif -%}
@@ -19,6 +19,7 @@
             "https://almanac.httparchive.org{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"
             {% if authordata.twitter %},"https://twitter.com/{{ authordata.twitter }}"{% endif %}
             {% if authordata.github %},"https://github.com/{{ authordata.github }}"{% endif %}
+            {% if authordata.linkedin %},"https://www.linkedin.com/in/{{ authordata.linkedin }}/"{% endif %}
             ],
         "name": "{{ authordata.name if authordata.name else author }}"
       }{% if loop.index < loop.length %},{% endif %}
@@ -28,7 +29,7 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/static/css/page.css?v=20200717231356">
+<link rel="stylesheet" href="/static/css/page.css?v=20200810003757">
 {% endblock %}
 
 {% block scripts %}
@@ -86,14 +87,14 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
 {% macro render_byline() %}
   <div class="byline">{{ self.written_by_before() }}
   {% for author in metadata.get('authors') %}
-    <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+  <a class="author" href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}">{{ config.contributors[author].name if author in config.contributors else author }}</a>{{ self.comma() if not loop.last }}
     {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
   {% endfor %}{{ self.written_by_after() }}
   </div>
 
   <div class="byline reviewers">{{ self.reviewed_by_before() }}
   {% for reviewer in metadata.get('reviewers') %}
-    <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    <a class="reviewer" href="{{ url_for('contributors', year=year, lang=lang, _anchor=reviewer) }}">{{ config.contributors[reviewer].name if reviewer in config.contributors else reviewer }}</a>{{ self.comma() if not loop.last }}
     {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
   {% endfor %}{{ self.reviewed_by_after() }}
   </div>
@@ -101,7 +102,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% if metadata.get('translators') | length >= 1 %}
   <div class="byline translators">{{ self.translated_by_before() }}
   {% for translator in metadata.get('translators') %}
-    <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{% if loop.index != loop.length and loop.length != 2 %},{% endif %}
+    <a class="translator" href="{{ url_for('contributors', year=year, lang=lang, _anchor=translator) }}">{{ config.contributors[translator].name if translator in config.contributors else translator }}</a>{{ self.comma() if not loop.last }}
     {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
   {% endfor %}{{ self.translated_by_after() }}
   </div>
@@ -129,33 +130,45 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
           </div>
           <div class="info">
             <a href="{{ url_for('contributors', year=year, lang=lang, _anchor=author) }}"><span class="name">{{ authordata.name if authordata.name else author }}</span></a>
-              {% if authordata.twitter or authordata.github %}
-                  <span class="social">
+              {% if authordata.twitter or authordata.github or authordata.linkedin or authordata.website %}
+                <div class="social">
                   {% if authordata.twitter %}
                   <a class="twitter" href="https://twitter.com/{{ authordata.twitter }}" aria-labelledby="author-{{ author }}-twitter">
-                    <svg width="22" height="22" role="img">
+                    <svg width="22" height="22" role="img" aria-hidden>
                       <title id="author-{{ author }}-twitter">{{ onTwitter(authordata.twitter) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
                     </svg>
+                    @{{ authordata.twitter }}
                   </a>
                   {% endif %}
                   {% if authordata.github %}
                   <a class="github" href="https://github.com/{{ authordata.github }}" aria-labelledby="author-{{ author }}-github">
-                    <svg width="22" height="22" role="img">
+                    <svg width="22" height="22" aria-hidden>
                       <title id="author-{{ author }}-github">{{ onGitHub(authordata.github) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use>
                     </svg>
+                    {{ authordata.github }}
+                  </a>
+                  {% endif %}
+                  {% if authordata.linkedin %}
+                  <a class="linkedin" href="https://www.linkedin.com/in/{{ authordata.linkedin }}/" aria-labelledby="author-{{ author }}-linkedin">
+                    <svg width="22" height="22" aria-hidden>
+                      <title id="author-{{ author }}-linkedin">{{ onLinkedIn(authordata.name) }}</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
+                    </svg>
+                    {{ authordata.linkedin }}
                   </a>
                   {% endif %}
                   {% if authordata.website %}
                   <a class="website" href="{{ authordata.website }}" aria-labelledby="author-{{ author }}-website">
-                    <svg width="22" height="22" role="img">
+                    <svg width="22" height="22" aria-hidden>
                       <title id="author-{{ author }}-website">{{ website(authordata.name) }}</title>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
                     </svg>
+                    {{ authordata.website }}
                   </a>
                   {% endif %}
-                  </span>
+                </div>
               {% endif %}
               {% if authordata.tagline %}
                   <div class="tagline">

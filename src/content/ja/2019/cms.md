@@ -10,7 +10,7 @@ discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
 queries: 14_CMS
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-07-20T00:00:00.000Z
+last_updated: 2020-08-07T00:00:00.000Z
 ---
 
 ## 序章
@@ -62,7 +62,7 @@ CMSについて考えるとき、ウェブ上にコンテンツを公開する�
   <a href="/static/images/2019/cms/cms-logos.png">
     <img src="/static/images/2019/cms/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="図3. 上位のコンテンツ管理システム。" width="600" height="559">
   </a>
-  <div id="fig3-description" class="visually-hidden">Logos of the top CMS providers, including WordPress, Drupal, Wix, etc.</div>
+  <div id="fig3-description" class="visually-hidden">WordPress、Drupal、WixなどのトップCMSプロバイダーのロゴマーク。</div>
   <figcaption id="fig3-caption">図3. 上位のコンテンツ管理システム。</figcaption>
 </figure>
 

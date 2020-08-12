@@ -1,0 +1,36 @@
+######################################
+## Custom Web Almanac GitHub action ##
+######################################
+#
+# This generates the chapters and tests the website when a pull request is
+# opened (or added to) on the original repo
+#
+name: Test Website
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - src/**.js
+      - src/**.css
+      - src/**.html
+      - src/content/**.md
+      - src/**.py
+      - src/**.json
+      - src/requirements.txt
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.repository == 'HTTPArchive/almanac.httparchive.org'
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2.3.2
+    - name: Setup Node.js for use with actions
+      uses: actions/setup-node@v1.4.2
+      with:
+        version:  12.x
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2.1.2
+      with:
+        python-version: '3.7'
+    - name: Run the website
+      run: ./src/tools/scripts/run_and_test_website.sh
