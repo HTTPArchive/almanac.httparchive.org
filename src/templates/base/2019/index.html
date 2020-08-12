@@ -43,7 +43,43 @@
       <img src="/static/images/home-hero.png" alt="" width="562" height="820">
     </div>
   </section>
+  {% block featured_chapter_section %}
+  {% macro featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) %}
+  <section id="featured-chapter" class="featured-chapter">
+    <div class="featured-chapter-content">
+      <h2 class="title title-center">{{ self.featured_chapter() }}</h2>
+      <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
+      <blockquote>
+        {{ featured_chapter_quote|safe }}
+      </blockquote>
+      <div class="featured-chapter-content-data">
+        {% if featured_chapter_stats.get('stat1') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
+        </div>
+        {% endif %}
+        {% if featured_chapter_stats.get('stat2') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
+        </div>
+        {% endif %}
+        {% if featured_chapter_stats.get('stat3') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
+        </div>
+        {% endif %}
+      </div>
+      <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
+        {{ readChapter(localizedChapterTitles[featured_chapter]) }}
+      </a>
+    </div>
+  </section>
+  {% endmacro %}
   {% include "%s/2019/featured_chapters.html" % lang %}
+  {% endblock %}
   <section id="contributors" class="contributors-container alt-bg">
     <div class="container">
       <div class="contributors">
