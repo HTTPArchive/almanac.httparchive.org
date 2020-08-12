@@ -133,7 +133,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/en/accessibility-statement</loc>
-        <lastmod>2020-07-29</lastmod>
+        <lastmod>2020-08-12</lastmod>
     </url>
 
     <url>
@@ -259,6 +259,11 @@
     <url>
         <loc>https://almanac.httparchive.org/fr/2020/contributors</loc>
         <lastmod>2020-07-17</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/fr/accessibility-statement</loc>
+        <lastmod>2020-08-12</lastmod>
     </url>
 
     <url>
@@ -393,7 +398,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/ja/accessibility-statement</loc>
-        <lastmod>2020-08-07</lastmod>
+        <lastmod>2020-08-12</lastmod>
     </url>
 
     <url>
@@ -438,7 +443,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/zh-CN/accessibility-statement</loc>
-        <lastmod>2020-06-21</lastmod>
+        <lastmod>2020-08-12</lastmod>
     </url>
    
 </urlset>
