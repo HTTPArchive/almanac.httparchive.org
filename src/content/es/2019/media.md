@@ -5,7 +5,7 @@ title: Media
 description: Capítulo Multimedia del 2019 Web Almanac que cubre los tamaños y formatos de archivo de imagen, las imágenes adaptables (responsive), los client hints, el lazy loading, la accesibilidad y los vídeos.
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
-translators: []
+translators: [garcaplay]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
@@ -19,8 +19,8 @@ Las imágenes, animaciones y vídeos son una parte importante de la experiencia 
 Desde una perspectiva puramente de bytes, el <i lang="en">HTTP Archive</i> ha [registrado históricamente](https://legacy.httparchive.org/interesting.php#bytesperpage) una media de dos tercios de bytes de recursos vinculados con recursos multimedia. Desde la perspectiva de la distribución, podemos ver que prácticamente toda página web depende de imágenes y vídeos. Incluso en el percentil 10, podemos ver que un 44% de los bytes son de recursos multimedia y puede llegar al 91% del total de bytes en las páginas del percentil 90. 
 
 <figure>
-  <a href="/static/images/2019/media/fig1_bytes_images_and_vídeo_versus_other.png">
-    <img src="/static/images/2019/media/fig1_bytes_images_and_vídeo_versus_other.png" alt="Figura 1. Bytes por página web: imagen y vídeo frente a otros." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
+  <a href="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png">
+    <img src="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png" alt="Figura 1. Bytes por página web: imagen y vídeo frente a otros." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
   </a>
   <div id="fig1-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil p10 un 44,1% de los bytes de la página son recursos multimedia, en el percentil p25 un 52,7% son recursos multimedia, en el percentil p50 un 67,0% son recursos multimedia, en el percentil p75 un 81,7% son recursos multimedia, y en el percentil p90 un 91,2% son recursos multimedia.</div>
   <figcaption id="fig1-caption">Figura 1. Bytes por página web: imagen y vídeo frente a otros.</figcaption>
@@ -78,7 +78,7 @@ Para los dispositivos móviles usados en el rastreo (<i lang="en">crawl</i>) de 
 
 Si tuviéramos una imagen que ocupase perfectamente la totalidad de la pantalla, el ratio de relleno de píxeles sería de 1x. Por supuesto, rara vez una página web ocupa la pantalla completa con una única imagen. El contenido multimedia suele mezclarse con el diseño y otro tipo de contenido. Un valor superior a 1x significa que el diseño requiere que el usuario haga scroll para ver el resto de la imagen.   
 
-<p class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el <i lang="en">viper</i> como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes <i lang="en">responsive</i> o la efectividad de facilitar un contenido con alto DPR.</p> 
+<p class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el <i lang="en">DPR</i> como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes <i lang="en">responsive</i> o la efectividad de facilitar un contenido con alto DPR.</p> 
 
 <figure>
   <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
@@ -240,7 +240,7 @@ La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial r
   <figcaption id="fig13-caption">Figura 13. Estimación de la mejora del rendimiento de la página tras la optimización de imagen de <i lang="en">Lighthouse</i>.</figcaption>
 </figure>
 
-### Imágenes adaptables (<i lang="en">responsive</i>)
+### Imágenes adaptables (responsive)
 
 Otra forma de mejorar el rendimiento de la página es usar imágenes <i lang="en">responsive</i>. Esta técnica se basa en la reducción de bytes por imagen, mediante la reducción de aquellos pixeles de más que no estarán visibles debido al encogimiento de la imagen. Al comenzar este capítulo, viste cómo la página web media, en escritorio, usaba un MP de marcadores de imagen aunque transfiere 2,1 MP de volumen de pixel. Dado que esto era un test de 1x DPR, 1,1 MP de píxeles fueron transferidos por la red, pero no mostrados. Para reducir esta carga, podemos usar cualquiera de estas dos (posiblemente tres) técnicas:
 
@@ -321,7 +321,7 @@ De los <i lang="en">Client Hints</i> solicitados, la mayoría de las páginas lo
 
 Los <i lang="en">Client Hints</i> relacionados con la red, `downlink`, `rtt`, y `ect`, solamente están disponibles en Android Chrome.
 
-### <i lang="en">Lazy loading</i>
+### Lazy loading
 
 Mejorar el rendimiento de una página web puede ser parcialmente descrito como un juego de ilusiones; moviendo las cosas más lentas fuera de banda y lejos de la vista del usuario. De este modo, el <i lang="en">lazy loading</i> de imágenes es una de esas ilusiones donde la imagen y el contenido multimedia solamente se cargan cuando el usuario se desplaza por la página. Esto mejora el rendimiento que se percibe, incluso en conexiones lentas, y evita al usuario la descarga de bytes que no van a estar visibles.
 
@@ -356,8 +356,8 @@ Aunque las imágenes dominan los medios multimedia de las páginas web, los víd
 El vídeo puede ser mostrado en muchos formatos y reproductores diferentes. Los formatos que dominan en móvil y escritorio son el `.ts` (segmentos de transmisión HLS) y el `.mp4` (el H264 MPEG):
 
 <figure>
-  <a href="/static/images/2019/media/fig20_vídeo_files_by_extension.png">
-    <img src="/static/images/2019/media/fig20_vídeo_files_by_extension.png" alt="Figura 20. Recuento de archivos de vídeo por extensión." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive">
+  <a href="/static/images/2019/media/fig20_video_files_by_extension.png">
+    <img src="/static/images/2019/media/fig20_video_files_by_extension.png" alt="Figura 20. Recuento de archivos de vídeo por extensión." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive">
   </a>
   <div id="fig20-description" class="visually-hidden">Un gráfico de barras que muestra el uso de 'ts' es de 1.283.439 para escritorio (792.952 para móvil), de 'mp4' es de 729.757 para escritorio (662.015 para móvil), el de 'webm' es de 38.591 para escritorio (32.417 para móvil), el de 'mov' es de 22.194 para escritorio (14.986 para móvil), el de 'm4s' es de 17.338 para escritorio (16.046 para móvil), el de 'm4v' es de 7.466 para escritorio (6.169 para móvil).</div>
   <figcaption id="fig20-caption">Figura 20. Recuento de archivos de vídeo por extensión.</figcaption>
@@ -382,8 +382,8 @@ Los valores medios son menores en versión móvil, lo que puede significar simpl
 Cuando se muestran vídeos en la web, la mayoría de ellos son reproducidos con el reproductor de vídeo de HTML5. El reproductor de vídeo de HTML es altamente personalizable para poder mostrar vídeos con fines muy diferentes. Por ejemplo, para reproducir un vídeo automáticamente, los parámetros `autoplay` y `muted` han de ser añadidos. El atributo `controls` permite al usuario iniciar/parar y moverse a través del vídeo. Si analizamos las etiquetas de vídeo en el <i lang="en">HTTP Archive</i>, podemos ver el uso de cada uno de estos atributos:
 
 <figure>
-  <a href="/static/images/2019/media/fig22_html_vídeo_tag_attributes_usage.png">
-    <img src="/static/images/2019/media/fig22_html_vídeo_tag_attributes_usage.png" alt="Figura 22. Uso de los atributos de la etiqueta HTML de vídeo." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive">
+  <a href="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png">
+    <img src="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png" alt="Figura 22. Uso de los atributos de la etiqueta HTML de vídeo." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive">
   </a>
   <div id="fig22-description" class="visually-hidden">Un gráfico de barras que muestra para escritorio: 'autoplay' en el 11.84%, 'buffered' en el 0%, 'controls' en el 12.05%, 'crossorigin' en el 0.45%, 'currenttime' en el 0.01%, 'disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.01%, 'duration' en el 0.05%, 'height' en el 7.33%, 'intrinsicsize' en el 0%, 'loop' en el 14.57%, 'muted' en el 13.92%, 'playsinline' en el 6.49%, 'poster' en el 8.98%, 'preload' en el 11.62%, 'src' en el 3.67%, 'use-credentials' en el 0%, y 'width' en el 9%. Y para móvil: 'autoplay' en el 12.38%, 'buffered' en el 0%, 'controls' en el 13.88%, 'crossorigin' en el 0.16%, 'currenttime' en el 0.01%, disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.02%, 'duration' en el 0.09%, 'height' en el 6.54%,  intrinsicsize' en el 0%, 'loop' en el 14.44%, 'muted' en el 13.55%, 'playsinline' en el 6.15%, 'poster' en el 9.29%, 'preload' en el 10.34%, 'src' en el 4.13%, 'use-credentials' en el 0%, y 'width' en el 9.03%.</div>
   <figcaption id="fig22-caption">Figura 22. Uso de los atributos de la etiqueta HTML de vídeo.</figcaption>
@@ -400,8 +400,8 @@ Desde el punto de vista de la accesibilidad, la etiqueta `<track>` puede ser usa
 Para una reproducción más avanzada (y para iniciar la transmisión de vídeo), el reproductor de vídeo nativo de HTML5 no servirá. Hay otras pocas librerías de vídeo populares que son usadas para reproducir vídeo:
 
 <figure>
-  <a href="/static/images/2019/media/fig23_top_javascript_vídeo_players.png">
-    <img src="/static/images/2019/media/fig23_top_javascript_vídeo_players.png" alt="Figura 23. Top de reproductores de vídeo de JavaScript." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive">
+  <a href="/static/images/2019/media/fig23_top_javascript_video_players.png">
+    <img src="/static/images/2019/media/fig23_top_javascript_video_players.png" alt="Figura 23. Top de reproductores de vídeo de JavaScript." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive">
   </a>
   <div id="fig23-description" class="visually-hidden">Gráfico de barras mostrando que 'flowplayer' se usa en 3.365 sitios web para escritorio (3.400 para móvil), 'hls' en 52.375 sitios web para escritorio (40.925 para móvil), 'jwplayer' en 110.280 sitios web para escritorio (96.945 para móvil), 'shaka' en 325 sitios web para escritorio (275 para móvil) y 'vídeo' se usa en 377.990 sitios web para escritorio (391.330 para móvil)</div>
   <figcaption id="fig23-caption">Figura 23. Top de reproductores de vídeo de JavaScript.</figcaption>
