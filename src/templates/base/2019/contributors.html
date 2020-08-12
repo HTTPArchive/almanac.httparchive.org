@@ -7,10 +7,6 @@
 {% block styles %}
 {{ super() }}
 <style nonce="{{ csp_nonce() }}">
-.main {
-  padding-left: 10px;
-  padding-right: 10px;
-}
 .team {
   display: flex;
   flex-direction: row;
@@ -167,10 +163,6 @@
 {% endfor %}
 
 @media (max-width: 600px) {
-  .main {
-    padding-left: 0;
-    padding-right: 0;
-  }
   .team {
     height: 100px;
   }
