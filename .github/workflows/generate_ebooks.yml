@@ -16,6 +16,7 @@ on:
 
 jobs:
   build:
+    name: Auto-generate Ebooks
     # Prince needs ubuntu 20 and ubuntu-latest is only on 18
     runs-on: ubuntu-20.04
     steps:
