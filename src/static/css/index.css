@@ -556,7 +556,7 @@ p {
 
   /* Contributors */
   .contributors-container {
-    padding: 0 60px 300px;
+    padding: 0 60px 100px;
   }
 
   .rectangles {
@@ -577,16 +577,16 @@ p {
   }
 
   .people {
-    position: absolute;
+    position: relative;
     bottom: 0;
     height: auto;
   }
 
   .people-number {
     font-size: 240px;
-    line-height: 240px;
+    line-height: 350px;
     overflow: visible;
-    top: 40px;
+    top: 80px;
     position: relative;
   }
 
@@ -595,18 +595,18 @@ p {
   }
 
   #character-markup {
-    top: -55px;
+    top: 60px;
     right: 60px;
   }
 
   #character-star {
-    bottom: -20px;
+    bottom: -40px;
     left: 130px;
   }
 
   #character-hat {
     right: 0;
-    bottom: -15px;
+    bottom: -40px;
   }
 
   /* Methodology */
