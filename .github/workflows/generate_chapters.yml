@@ -27,6 +27,7 @@ on:
       - src/requirements.txt
 jobs:
   build:
+    name: Generate Chapters and Update Timestamps
     runs-on: ubuntu-latest
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
