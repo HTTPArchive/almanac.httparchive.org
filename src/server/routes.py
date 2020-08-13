@@ -94,6 +94,10 @@ def chapter(lang, year, chapter):
                            prev_chapter=prev_chapter, next_chapter=next_chapter)
 
 
+@app.route('/robots.txt')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
 
 @app.route('/favicon.ico')
 def default_favicon():
