@@ -10,7 +10,8 @@ on:
   workflow_dispatch:
   pull_request:
 jobs:
-  build_and_test_website:
+  build:
+    name: Build and Test Website
     runs-on: ubuntu-latest
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
