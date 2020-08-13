@@ -1,3 +1,6 @@
+#standardSQL
+# Distribution of LH5 performance score.
+
 SELECT
   SAFE_DIVIDE(slow,    slow + avg + fast + hundred) slow,
   SAFE_DIVIDE(avg,     slow + avg + fast + hundred) avg,
