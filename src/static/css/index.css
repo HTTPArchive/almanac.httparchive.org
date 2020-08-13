@@ -556,7 +556,7 @@ p {
 
   /* Contributors */
   .contributors-container {
-    padding: 0 60px 100px;
+    padding: 0 60px 300px;
   }
 
   .rectangles {
@@ -577,14 +577,14 @@ p {
   }
 
   .people {
-    position: relative;
+    position: absolute;
     bottom: 0;
     height: auto;
   }
 
   .people-number {
     font-size: 240px;
-    line-height: 350px;
+    line-height: 240px;
     overflow: visible;
     top: 40px;
     position: relative;
@@ -595,7 +595,7 @@ p {
   }
 
   #character-markup {
-    top: 20px;
+    top: -55px;
     right: 60px;
   }
 
