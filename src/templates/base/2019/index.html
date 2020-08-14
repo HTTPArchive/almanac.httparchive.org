@@ -21,10 +21,10 @@
 
 {% block styles %}
   {{ super() }}
-  <link rel="stylesheet" href="/static/css/index.css?v=20200728001611">
+  <link rel="stylesheet" href="/static/css/index.css?v=20200813141014">
 {% endblock %}
 
-{% block main %}
+{% block container %}
 <main id="maincontent">
   <section id="intro" class="intro-container">
     <div class="intro">
@@ -43,20 +43,58 @@
       <img src="/static/images/home-hero.png" alt="" width="562" height="820">
     </div>
   </section>
-  {% include "%s/2019/featured_chapters.html" % lang %}
-  <section id="contributors" class="contributors-container alt-bg">
-    <div class="contributors">
-      <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
-      <p>{{ self.contributors_description() }}</p>
-      <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
-        {{ self.contributors_link() }}
+  {% block featured_chapter_section %}
+  {% macro featuredChapter(featured_chapter, featured_chapter_quote, featured_chapter_stats) %}
+  <section id="featured-chapter" class="featured-chapter">
+    <div class="featured-chapter-content">
+      <h2 class="title title-center">{{ self.featured_chapter() }}</h2>
+      <h3>{{ localizedChapterTitles[featured_chapter] }}</h3>
+      <blockquote>
+        {{ featured_chapter_quote|safe }}
+      </blockquote>
+      <div class="featured-chapter-content-data">
+        {% if featured_chapter_stats.get('stat1') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat1')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label1')|safe }}</div>
+        </div>
+        {% endif %}
+        {% if featured_chapter_stats.get('stat2') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat2')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label2')|safe }}</div>
+        </div>
+        {% endif %}
+        {% if featured_chapter_stats.get('stat3') %}
+        <div class="featured-chapter-content-data-item">
+          <div>{{ featured_chapter_stats.get('stat3')|safe }}</div>
+          <div>{{ featured_chapter_stats.get('label3')|safe }}</div>
+        </div>
+        {% endif %}
+      </div>
+      <a href="{{ url_for('chapter', year=year, chapter=featured_chapter, lang=lang) }}" class="btn">
+        {{ readChapter(localizedChapterTitles[featured_chapter]) }}
       </a>
     </div>
-    <div class="people" aria-hidden="true">
-      <div class="people-number">{{ self.contributors() }}</div>
-      <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
-      <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
-      <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
+  </section>
+  {% endmacro %}
+  {% include "%s/2019/featured_chapters.html" % lang %}
+  {% endblock %}
+  <section id="contributors" class="contributors-container alt-bg">
+    <div class="container">
+      <div class="contributors">
+        <h2 class="title title-alt">{{ self.contributors_title() }}</h2>
+        <p>{{ self.contributors_description() }}</p>
+        <a href="{{ url_for('contributors', year=year, lang=lang) }}" class="alt btn">
+          {{ self.contributors_link() }}
+        </a>
+      </div>
+      <div class="people" aria-hidden="true">
+        <div class="people-number">{{ self.contributors() }}</div>
+        <img id="character-markup" class="character" src="/static/images/character-markup.png" alt="" width="154" height="252" loading="lazy" />
+        <img id="character-star" class="character" src="/static/images/character-star.png" alt="" width="245" height="254" loading="lazy" />
+        <img id="character-hat" class="character" src="/static/images/character-hat.png" alt="" width="186" height="207" loading="lazy" />
+      </div>
     </div>
   </section>
   <section id="methodology" class="methodology-container">

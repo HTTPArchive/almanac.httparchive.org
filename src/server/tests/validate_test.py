@@ -1,6 +1,7 @@
-from config import DEFAULT_YEAR, SUPPORTED_YEARS
-from language import Language, DEFAULT_LANGUAGE
-from validate import parse_accept_language
+from server.config import DEFAULT_YEAR, SUPPORTED_YEARS
+from server.language import Language, DEFAULT_LANGUAGE
+from server.validate import parse_accept_language
+
 
 SUPPORTED_LANGUAGES = (Language.EN.lang_code, Language.JA.lang_code)
 DEFAULT_LANGUAGE_CODE = DEFAULT_LANGUAGE.lang_code
@@ -10,7 +11,6 @@ ENGLISH_LANGUAGE_CODE = Language.EN.lang_code
 
 def assert_language(accept_language_header, expected_lang):
     lang = parse_accept_language(accept_language_header, SUPPORTED_LANGUAGES)
-
     assert lang == expected_lang
 
 
@@ -39,7 +39,7 @@ def test_returns_correct_language_if_simple_code_specified():
 
 
 def test_returns_correct_language_if_locale_is_specified():
-    assert_language('ja-JP',JAPANESE_LANGUAGE_CODE)
+    assert_language('ja-JP', JAPANESE_LANGUAGE_CODE)
 
 
 def test_returns_correct_language_if_quality_is_specified():

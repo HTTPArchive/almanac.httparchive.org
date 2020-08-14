@@ -20,8 +20,8 @@ const update_links = (chapter) => {
   body = body.replace(/<a href=".\/([a-z0-9-]+)#/g,'<a href="#$1-');
   // Replace other chapter references to anchor link (e.g. ./javascript -> #javascript)
   body = body.replace(/<a href=".\//g,'<a href="#');
-  // For external links add footnote span
-  body = body.replace(/href="(http.*?)"(.*?)>(.*?)<\/a>/g,'href="$1"$2>$3<span class="fn">$1</span></a>');
+  // For external links add footnote span - unless the link text is the address (begining wiht http, ww or @ got Twitter ids)
+  body = body.replace(/href="(http[^"]*?)"([^>]*?)>(?!(www|http|@)[^<]*?)<\/a>/g,'href="$1"$2>$3</a><span class="fn">$1</span>');
   // Replace figure image links to full site, to avoid 0.0.0.0:8080 links
   body = body.replace(/<a href="\/static\/images/g,'<a href="https://almanac.httparchive.org/static/images');
   // Remove lazy-loading attributes

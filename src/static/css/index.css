@@ -1,8 +1,3 @@
-/* Related to #maincontent's vw unit width */
-body {
-  overflow-x: hidden;
-}
-
 header.alt-bg {
   background: #5c687d;
   background: transparent linear-gradient(#5c687d 70%, transparent 30%);
@@ -17,33 +12,16 @@ header.alt-bg {
   margin-bottom: -52.94em;
 }
 
-header .container,
-footer .container {
-  max-width: none;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
 #maincontent {
-  overflow: hidden;
   display: -ms-grid;
   display: grid;
   grid-template-areas:
-    'intro'
-    'chapter'
-    'contributors'
-    'methodology';
-
-  /* Overcome the .container parent wrapper */
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-}
-
-#maincontent section {
-  max-width: 100vw;
-  position: relative;
+    '. intro .'
+    '. chapter .'
+    'contributors contributors contributors'
+    '. methodology .';
+  /* 1280 is same as the .container width */
+  grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
 }
 
 .featured-chapter,
@@ -77,14 +55,15 @@ p {
   grid-template-areas: 'intro image';
   grid-gap: 2rem;
   justify-content: space-between;
-  padding: 0 60px;
 }
 
 .intro {
   -ms-grid-column: 1;
   grid-area: intro;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
+  /* match the .container side padding */
+  padding-left: 20px;
 }
 
 .intro-year {
@@ -183,13 +162,15 @@ p {
 .contributors-container {
   -ms-grid-row: 3;
   grid-area: contributors;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDIiIGhlaWdodD0iMzMwIiB2aWV3Qm94PSIwIDAgMzAyIDMzMCI+CiAgPHBhdGggb3BhY2l0eT0iLjMiIGZpbGw9IiNmN2Y3NzkiIGQ9Ik0tMTcxMiAyNTdIMjI1djczaC0xOTM3eiIvPgogIDxwYXRoIG9wYWNpdHk9Ii45IiBmaWxsPSIjYThjYWJhIiBkPSJNLTE2NDAgMTM2SDI5N3Y3M2gtMTkzN3oiLz4KICA8cGF0aCBvcGFjaXR5PSIuOSIgZmlsbD0iI2Y3Zjc3OSIgZD0iTS0xNjc3IDE2NkgyNjB2NzNoLTE5Mzd6Ii8+CiAgPHBhdGggb3BhY2l0eT0iLjkiIGZpbGw9IiM0YTMyNDQiIGQ9Ik0tMTc3MiAzSDE2NXY3M2gtMTkzN3oiLz4KPC9zdmc+);
   background-position: -150px center;
   background-repeat: no-repeat;
-  padding-left: 180px;
+}
+
+.contributors-container .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .contributors .btn {
@@ -308,6 +289,10 @@ p {
 }
 
 @media (max-width: 1400px) and (min-width: 901px) {
+  .contributors-container {
+    padding-left: 180px;
+  }
+  
   .people {
     height: auto;
   }
@@ -318,7 +303,6 @@ p {
     line-height: 400px;
     top: 50px;
     position: relative;
-    left: 50px;
   }
 
   .people .character {
@@ -382,8 +366,6 @@ p {
   }
 
   .contributors-container {
-    background-image: none;
-    flex-direction: column;
     padding: 40px 60px;
   }
 
@@ -464,7 +446,40 @@ p {
   }
 }
 
-/* Mobile View */
+@media (max-width: 900px) {
+  .intro-year {
+    display: block;
+    color: #f7f779;
+    font-size: 190px;
+    font-size: min(190px, 40vw);
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .intro-image-wrapper {
+    margin: 3rem 0;
+    max-width: 100vw;
+  }
+
+  .intro-image-wrapper svg {
+    display: none;
+  }
+
+  .intro {
+    /* reset the .container side padding */
+    padding-left: 0;
+  }
+
+  .contributors-container {
+    background-image: none;
+    position: relative;
+  }
+
+  .contributors-container .container {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 600px) {
   header.alt-bg {
     background-size: cover;
@@ -542,9 +557,7 @@ p {
 
   /* Contributors */
   .contributors-container {
-    flex-direction: column;
-    background-image: none;
-    padding: 0 60px 300px;
+    padding: 0 60px 340px;
   }
 
   .rectangles {
@@ -617,25 +630,5 @@ p {
   .data-processed {
     flex-direction: column;
     margin: 0;
-  }
-}
-
-@media (max-width: 900px) {
-  .intro-year {
-    display: block;
-    color: #f7f779;
-    font-size: 190px;
-    font-size: min(190px, 40vw);
-    line-height: 1;
-    font-weight: 700;
-  }
-
-  .intro-image-wrapper {
-    margin: 3rem 0;
-    max-width: 100vw;
-  }
-
-  .intro-image-wrapper svg {
-    display: none;
   }
 }

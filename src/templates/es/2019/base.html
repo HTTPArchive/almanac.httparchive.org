@@ -4,9 +4,6 @@
 
 {% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
-{% block date_published %}2019-11-04T12:00:00.000Z{% endblock %}
-{% block date_modified %}2020-07-27T00:00:00.000Z{% endblock %}
-
 {% block skip_navigation %}Saltar navegación{% endblock %}
 
 {% block organization %}Web Almanac por HTTP Archive{% endblock %}
@@ -51,6 +48,7 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block close_the_index %}Cerrar la tabla de contenido{% endblock %}
 
 {% block and %}y{% endblock %}
+{% block comma %}, {% endblock %}
 
 {% block open %}Abre{% endblock %}
 {% block close %}Cierra{% endblock %}
@@ -70,6 +68,7 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 
 {% macro onTwitter(twitterHandle) %}@{{twitterHandle}} en Twitter{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} en GitHub{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} en LinkedIn{% endmacro %}
 {% macro website(authorName) %}{{authorName}} sitio web{% endmacro %}
 
 {% macro edition(year) %}Edición {{ year }}{% endmacro %}
@@ -77,6 +76,9 @@ Nuestra misión es combinar las estadísticas y tendencias sin procesar del HTTP
 {% block footer_title %}Navegación de pie de página{% endblock %}
 {% block copyright %}© Web Almanac. Con licencia <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
 {% block accessibility_statement %}Declaración de accesibilidad{% endblock %}
+
+{% block featured_chapter %}Capítulo Destacado{% endblock %}
+{% macro readChapter(chapter) %}Lea el Capítulo: <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
 
 {% block contributors_description %}
 Web Almanac ha sido posible gracias al arduo trabajo de la comunidad web. {{ self.contributors() }} personas han ofrecido incontables horas en las fases de planificación, investigación, redacción y producción.

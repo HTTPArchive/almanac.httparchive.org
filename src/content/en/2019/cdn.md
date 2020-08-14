@@ -10,7 +10,7 @@ discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-08-04T00:00:00.000Z
 ---
 
 ## Introduction
@@ -88,7 +88,7 @@ This is clearly represented when looking at the top CDNs found serving the base 
     <img alt="Most popular CDNs used to serve base HTML pages" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/cdn/html_cdn_usage.png" width="600" height="371">
   </a>
   <div id="fig2-description" class="visually-hidden">Treemap graph showing the data from Table 3.</div>
-  <figcaption id="fig2-caption">Figure 2: HTML CDN usage.</figcaption>
+  <figcaption id="fig2-caption">Figure 2. HTML CDN usage.</figcaption>
 </figure>
 
 <figure>
