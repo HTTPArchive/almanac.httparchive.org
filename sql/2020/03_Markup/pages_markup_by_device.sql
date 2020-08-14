@@ -17,7 +17,8 @@ RETURNS STRUCT<
   svg_object_total INT64,
   svg_embed_total INT64,
   svg_iframe_total INT64,
-  svg_total INT64
+  svg_total INT64,
+  buttons_total INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -37,6 +38,12 @@ try {
         "svg_embed_total": Math.floor(Math.random()*10),
         "svg_iframe_total": Math.floor(Math.random()*10),
         "svg_total": Math.floor(Math.random()*60)
+      },
+      "buttons": {
+        "types": {
+            "button": 1
+        },
+        "total": 1
       }
     }; 
 
@@ -56,6 +63,10 @@ try {
       result.svg_embed_total = markup.svgs.svg_embed_total;
       result.svg_iframe_total = markup.svgs.svg_iframe_total;
       result.svg_total = markup.svgs.svg_total;
+    }
+
+    if (markup.buttons) {
+      result.buttons_total = markup.buttons.total;
     }
 
 } catch (e) {}
@@ -101,6 +112,10 @@ SELECT
   # pages with an svg 
   COUNTIF(markup_info.svg_total > 0) AS freq_svg_total,
   AS_PERCENT(COUNTIF(markup_info.svg_total > 0), COUNT(0)) AS pct_svg_total_m233,
+
+  # pages with a button 
+  COUNTIF(markup_info.buttons_total > 0) AS freq_buttons_total,
+  AS_PERCENT(COUNTIF(markup_info.buttons_total > 0), COUNT(0)) AS pct_buttons_total_m302,
 
   FROM
     ( 
