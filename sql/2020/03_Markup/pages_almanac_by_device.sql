@@ -26,7 +26,7 @@ try {
     // var almanac = JSON.parse(almanac_string); // LIVE
 
     // TEST
-    almanac = {
+    var almanac = {
       "scripts": {
         "total": 4,
         "nodes": [

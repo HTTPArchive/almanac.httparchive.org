@@ -72,7 +72,7 @@ SELECT
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info # LIVE
+        get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
       FROM
         `httparchive.sample_data.pages_*` # TEST
     )

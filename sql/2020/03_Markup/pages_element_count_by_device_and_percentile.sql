@@ -49,7 +49,7 @@ FROM (
     url,
     get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
   FROM
-  `httparchive.sample_data.pages_*`,
+  `httparchive.sample_data.pages_*`, # TEST
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY

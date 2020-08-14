@@ -18,7 +18,11 @@ RETURNS STRUCT<
   svg_embed_total INT64,
   svg_iframe_total INT64,
   svg_total INT64,
-  buttons_total INT64
+  buttons_total INT64,
+  buttons_with_type INT64,
+  contains_audios_with_autoplay BOOL,
+  contains_audios_without_autoplay BOOL,
+  app_id_present BOOL
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -41,9 +45,18 @@ try {
       },
       "buttons": {
         "types": {
-            "button": 1
+            "button": 1,
+            "fish": 1
         },
-        "total": 1
+        "total": Math.floor(Math.random()*2)+2
+      },
+      "audios": {
+        "autoplay": {true: 3, false: 6, "": 6},
+        "total": 9
+      },
+      "app": {
+        "app_id_present": false,
+        "meta_theme_color": null
       }
     }; 
 
@@ -67,6 +80,22 @@ try {
 
     if (markup.buttons) {
       result.buttons_total = markup.buttons.total;
+
+      result.buttons_with_type = Object.values(markup.buttons.types).reduce((total, freq) => total + freq, 0);
+    }
+
+    if (markup.audios) {
+
+      var autoplay_count = Object.entries(markup.audios.autoplay)
+        .filter(([key, value]) => key == "" || key.toLowerCase() == "true")
+        .reduce((total, [key, value]) => total + value, 0);
+
+      result.contains_audios_with_autoplay = autoplay_count > 0;
+      result.contains_audios_without_autoplay = markup.audios.total > autoplay_count;
+    }
+
+    if (markup.app) {
+      result.app_id_present = !!markup.app.app_id_present;
     }
 
 } catch (e) {}
@@ -90,32 +119,48 @@ SELECT
   AS_PERCENT(COUNTIF(markup_info.favicon), COUNT(0)) AS pct_favicon_m218,
 
   # pages with an svg element
-  COUNTIF(markup_info.svg_element_total > 0) AS freq_svg_element_total,
-  AS_PERCENT(COUNTIF(markup_info.svg_element_total > 0), COUNT(0)) AS pct_svg_element_total_m223,
+  COUNTIF(markup_info.svg_element_total > 0) AS freq_svg_element,
+  AS_PERCENT(COUNTIF(markup_info.svg_element_total > 0), COUNT(0)) AS pct_svg_element_m223,
 
   # pages with an svg img
-  COUNTIF(markup_info.svg_img_total > 0) AS freq_svg_img_total,
-  AS_PERCENT(COUNTIF(markup_info.svg_img_total > 0), COUNT(0)) AS pct_svg_svg_img_total_m225,
+  COUNTIF(markup_info.svg_img_total > 0) AS freq_svg_img,
+  AS_PERCENT(COUNTIF(markup_info.svg_img_total > 0), COUNT(0)) AS pct_svg_svg_img_m225,
 
   # pages with an svg object
-  COUNTIF(markup_info.svg_object_total > 0) AS freq_svg_object_total,
-  AS_PERCENT(COUNTIF(markup_info.svg_object_total > 0), COUNT(0)) AS pct_svg_object_total_m227,
+  COUNTIF(markup_info.svg_object_total > 0) AS freq_svg_object,
+  AS_PERCENT(COUNTIF(markup_info.svg_object_total > 0), COUNT(0)) AS pct_svg_object_m227,
 
   # pages with an svg embed
-  COUNTIF(markup_info.svg_embed_total > 0) AS freq_svg_embed_total,
-  AS_PERCENT(COUNTIF(markup_info.svg_embed_total > 0), COUNT(0)) AS pct_svg_embed_total_m229,
+  COUNTIF(markup_info.svg_embed_total > 0) AS freq_svg_embed,
+  AS_PERCENT(COUNTIF(markup_info.svg_embed_total > 0), COUNT(0)) AS pct_svg_embed_m229,
 
   # pages with an svg iframe
-  COUNTIF(markup_info.svg_iframe_total > 0) AS freq_svg_iframe_total,
-  AS_PERCENT(COUNTIF(markup_info.svg_iframe_total > 0), COUNT(0)) AS pct_svg_iframe_total_m231,
+  COUNTIF(markup_info.svg_iframe_total > 0) AS freq_svg_iframe,
+  AS_PERCENT(COUNTIF(markup_info.svg_iframe_total > 0), COUNT(0)) AS pct_svg_iframe_m231,
 
   # pages with an svg 
-  COUNTIF(markup_info.svg_total > 0) AS freq_svg_total,
-  AS_PERCENT(COUNTIF(markup_info.svg_total > 0), COUNT(0)) AS pct_svg_total_m233,
+  COUNTIF(markup_info.svg_total > 0) AS freq_svg,
+  AS_PERCENT(COUNTIF(markup_info.svg_total > 0), COUNT(0)) AS pct_svg__m233,
 
   # pages with a button 
-  COUNTIF(markup_info.buttons_total > 0) AS freq_buttons_total,
-  AS_PERCENT(COUNTIF(markup_info.buttons_total > 0), COUNT(0)) AS pct_buttons_total_m302,
+  COUNTIF(markup_info.buttons_total > 0) AS freq_buttons,
+  AS_PERCENT(COUNTIF(markup_info.buttons_total > 0), COUNT(0)) AS pct_buttons_m302,
+
+  # pages with a button without a type 
+  COUNTIF(markup_info.buttons_total > markup_info.buttons_with_type) AS freq_buttons_without_type,
+  AS_PERCENT(COUNTIF(markup_info.buttons_total > markup_info.buttons_with_type), COUNT(0)) AS pct_buttons_without_type_m303,
+
+  # pages with autoplaying audio elements M312
+  COUNTIF(markup_info.contains_audios_with_autoplay) AS freq_contains_audios_with_autoplay,
+  AS_PERCENT(COUNTIF(markup_info.contains_audios_with_autoplay), COUNT(0)) AS pct_contains_audios_with_autoplay_m312,
+
+  # pages with non autoplaying audio elements M313
+  COUNTIF(markup_info.contains_audios_without_autoplay) AS freq_contains_audios_without_autoplay,
+  AS_PERCENT(COUNTIF(markup_info.contains_audios_without_autoplay), COUNT(0)) AS pct_contains_audios_without_autoplay_m313,
+
+  # pages identified as an app M403
+  COUNTIF(markup_info.app_id_present) AS freq_app_id_present,
+  AS_PERCENT(COUNTIF(markup_info.app_id_present), COUNT(0)) AS pct_app_id_present_m403,
 
   FROM
     ( 
