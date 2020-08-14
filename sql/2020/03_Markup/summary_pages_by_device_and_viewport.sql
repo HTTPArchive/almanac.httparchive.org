@@ -25,9 +25,9 @@ SELECT
   normalise(meta_viewport) AS meta_viewport,
   COUNT(0) AS freq,
   # SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct 
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m219 
 FROM
-  `httparchive.sample_data.summary_pages_*`
+  `httparchive.sample_data.summary_pages_*` # TEST
 GROUP BY
   client,
   meta_viewport

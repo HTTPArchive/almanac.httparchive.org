@@ -1,5 +1,5 @@
 #standardSQL
-# page payload metrics grouped by device
+# page element_count metrics grouped by device
 
 # to speed things up there is only one js function per custom metric property. It returns a STRUCT with all the data needed
 # current test gathers 3 bits of incormation from teo custom petric properties
@@ -46,26 +46,6 @@ try {
 return result;
 ''';
 
-# returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
-RETURNS STRUCT<
-  contains_link_nodes BOOL,
-  link_nodes_count INT64
-> LANGUAGE js AS '''
-var result = {};
-try {
-    var almanac = JSON.parse(almanac_string);
-
-    if (Array.isArray(almanac) || typeof almanac != 'object') return result;
-
-    result.contains_link_nodes = almanac["link-nodes"] && almanac["link-nodes"].length > 0;
-
-    result.link_nodes_count = almanac["link-nodes"] && almanac["link-nodes"].length;
-
-} catch (e) {}
-return result;
-''';
-
 SELECT
   client,
   COUNT(0) AS total,
@@ -76,44 +56,25 @@ SELECT
   MIN(element_count_info.count) AS elements_min, # y-axis min, same for all device rows
   MAX(element_count_info.count) AS elements_max, # y-axis max, same for all device rows
 
-  # % of pages with obsolete elements M216
+  # % of pages with obsolete elements related to M216
   COUNTIF(element_count_info.contains_obsolete_element) AS freq_contains_obsolete_element,
-  AS_PERCENT(COUNTIF(element_count_info.contains_obsolete_element), COUNT(0)) AS pct_contains_obsolete_element_m216,
+  AS_PERCENT(COUNTIF(element_count_info.contains_obsolete_element), COUNT(0)) AS pct_contains_obsolete_element,
 
-  # % of pages with custom elements ("slang") M242
+  # % of pages with custom elements ("slang") related to M242
   COUNTIF(element_count_info.contains_custom_element) AS freq_contains_custom_element,
-  AS_PERCENT(COUNTIF(element_count_info.contains_custom_element), COUNT(0)) AS pct_contains_custom_element_m242,
+  AS_PERCENT(COUNTIF(element_count_info.contains_custom_element), COUNT(0)) AS pct_contains_custom_element,
 
   # % of pages with details and summary elements M214
   COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element) AS freq_contains_details_and_summary_element,
   AS_PERCENT(COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element), COUNT(0)) AS pct_contains_details_and_summary_element_m214,
 
-  ## has_shadow_root 
-
-  # % of pages with shadow roots
-  COUNTIF(has_shadow_root) AS freq_has_shadow_root,
-  AS_PERCENT(COUNTIF(has_shadow_root), COUNT(0)) AS pct_has_shadow_root,
-
-  ## almanac 
-
-  # has link nodes
-  COUNTIF(almanac_info.contains_link_nodes) AS freq_contains_link_nodes,
-  AS_PERCENT(COUNTIF(almanac_info.contains_link_nodes), COUNT(0)) AS pct_contains_link_nodes,
-
-  # average number of link nodes
-  AVG(almanac_info.link_nodes_count) AS avg_link_nodes
-
   FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        CAST(JSON_EXTRACT_SCALAR(payload, '$._has_shadow_root') AS BOOLEAN) AS has_shadow_root, # simple one
-
-        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info,
-        get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
-      
+        get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info # LIVE
       FROM
-        `httparchive.sample_data.pages_*`
+        `httparchive.sample_data.pages_*` # TEST
     )
 GROUP BY
   client

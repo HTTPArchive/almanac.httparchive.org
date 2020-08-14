@@ -8,7 +8,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 SELECT
   _TABLE_SUFFIX AS client,
   COUNTIF(TRIM(doctype) <> '') AS freq_doctype,
-  # SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
+  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   AS_PERCENT(COUNTIF(TRIM(doctype) <> ''), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_doctype_m102, 
   MIN(bytesHtml) AS min_bytes_html_m109, 
   MAX(bytesHtml) AS max_bytes_html_m108, 
