@@ -19,7 +19,11 @@ RETURNS STRUCT<
   scripts_total INT64,
   none_jsonld_scripts_total INT64,
   src_scripts_total INT64,
-  inline_scripts_total INT64
+  inline_scripts_total INT64,
+  good_heading_sequence BOOL,
+  contains_videos_with_autoplay BOOL,
+  contains_videos_without_autoplay BOOL,
+  html_node_lang STRING
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -49,6 +53,37 @@ try {
                 "data-cfasync": ""
             }
         ]
+      },
+      "headings_order": [
+        1,
+        2,
+        2,
+        3,
+        2
+      ],
+      "videos": {
+        "total": 2,
+        "nodes": [{
+                "tagName": "video",
+                "autoplay": ""
+            },
+            {
+                "tagName": "video",
+                "autoplay": "false"
+            }],
+        "attribute_usage_count": {},
+        "tracks": {
+            "total": 0,
+            "nodes": [],
+            "attribute_usage_count": {}
+        }
+      },
+      "html_node": {
+          "tagName": "html",
+          "xmlns": "http://www.w3.org/1999/xhtml",
+          "lang": "en-US",
+          "xml:lang": "en-US",
+          "prefix": "og: https://ogp.me/ns#"
       } 
     };
 
@@ -64,6 +99,30 @@ try {
       }
     }
 
+    if (almanac.headings_order) {
+      var good = true;
+      var previousLevel = 0;
+      almanac.headings_order.forEach(level =>  {
+          if (previousLevel + 1 < level) { // jumped a level
+            good = false;
+          }
+          previousLevel = level;
+      }); 
+      result.good_heading_sequence = good;
+    }
+
+    if (almanac.videos) {
+      var autoplay_count = almanac.videos.nodes.filter(n => n.autoplay == "" || n.autoplay).length; // valid values are blank or autoplay. Im just checking it exists...
+      //var autoplay_count = almanac.videos.nodes.filter(n => n.autoplay == "" || n.autoplay == "autoplay").length; 
+
+      result.contains_videos_with_autoplay = autoplay_count > 0;
+      result.contains_videos_without_autoplay = almanac.videos.total > autoplay_count;
+    }
+
+    if (almanac.html_node) {
+      result.html_node_lang = almanac.html_node.lang;
+    }
+
 } catch (e) {}
 return result;
 ''';
@@ -73,26 +132,42 @@ SELECT
   COUNT(0) AS total,
 
   # has scripts excluding jsonld ones
-  COUNTIF(almanac_info.none_jsonld_scripts_total > 0) AS freq_contains_none_jsonld_scripts,
+  # COUNTIF(almanac_info.none_jsonld_scripts_total > 0) AS freq_contains_none_jsonld_scripts,
   AS_PERCENT(COUNTIF(almanac_info.none_jsonld_scripts_total > 0), COUNT(0)) AS pct_contains_none_jsonld_scripts_m204, 
 
   # has inline scripts 
-  COUNTIF(almanac_info.inline_scripts_total > 0) AS freq_contains_inline_scripts,
+  # COUNTIF(almanac_info.inline_scripts_total > 0) AS freq_contains_inline_scripts,
   AS_PERCENT(COUNTIF(almanac_info.inline_scripts_total > 0), COUNT(0)) AS pct_contains_inline_scripts_m206,
 
   # has src scripts 
-  COUNTIF(almanac_info.src_scripts_total > 0) AS freq_contains_src_scripts,
+  # COUNTIF(almanac_info.src_scripts_total > 0) AS freq_contains_src_scripts,
   AS_PERCENT(COUNTIF(almanac_info.src_scripts_total > 0), COUNT(0)) AS pct_contains_src_scripts_m208,
 
   # has no scripts 
-  COUNTIF(almanac_info.scripts_total = 0) AS freq_contains_no_scripts,
+  # COUNTIF(almanac_info.scripts_total = 0) AS freq_contains_no_scripts,
   AS_PERCENT(COUNTIF(almanac_info.scripts_total = 0), COUNT(0)) AS pct_contains_no_scripts_m210,
+
+  # Does the heading logical sequence make any sense
+  # COUNTIF(almanac_info.good_heading_sequence) AS freq_good_heading_sequence,
+  AS_PERCENT(COUNTIF(almanac_info.good_heading_sequence), COUNT(0)) AS pct_good_heading_sequence_m222,
+
+  # pages with autoplaying video elements M310
+  # COUNTIF(almanac_info.contains_videos_with_autoplay) AS freq_contains_videos_with_autoplay,
+  AS_PERCENT(COUNTIF(almanac_info.contains_videos_with_autoplay), COUNT(0)) AS pct_contains_videos_with_autoplay_m310,
+
+  # pages without autoplaying video elements M311
+  # COUNTIF(almanac_info.contains_videos_without_autoplay) AS freq_contains_videos_without_autoplay,
+  AS_PERCENT(COUNTIF(almanac_info.contains_videos_without_autoplay), COUNT(0)) AS pct_contains_videos_without_autoplay_m311,
+
+  # pages with no html lang attribute M404
+  # COUNTIF(almanac_info.html_node_lang IS NULL OR LENGTH(almanac_info.html_node_lang) = 0) AS freq_no_html_lang,
+  AS_PERCENT(COUNTIF(almanac_info.html_node_lang IS NULL OR LENGTH(almanac_info.html_node_lang) = 0), COUNT(0)) AS pct_no_html_lang_m404,
 
   #AVG(almanac_info.scripts_total) AS avg_scripts_total,
 
   #AVG(almanac_info.none_jsonld_scripts_total) AS avg_none_jsonld_scripts_total
 
-  FROM
+FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,

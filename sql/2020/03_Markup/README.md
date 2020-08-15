@@ -1,12 +1,19 @@
 # Guide 
 
+## file naming
+file names start with the table being queried. Next is the custom metric if appropriate. Then "_by_" followed by how the query is grouped. Finally anything more specific needed.
+
+Queries contain one or more metrics that match the queries grouping structure. 
+
+## general
+
 percents should be 0-1
 always segment by device (client)
 total for the denominator, freq for the numerator, and pct for the fraction
 
 percentiles (10, 25, 50, 75 and 90th) The y-axis min should almost always be 0 and usually the max that gets automatically rendered is good enough. So no max min required?
 
-Some common query paterns:
+Some common query patterns:
 
 ## _by_device
 
@@ -59,6 +66,14 @@ try {
 } catch (e) {}
 return result;
 ''';
+```
+
+Make sure you do null/undefined checks in your js code when digging into an object. We don't want a simple error causing the loss of data. No issue in setting a value to null or undefined as it gets converted into a NULL.
+
+```
+    if (almanac.html_node) {
+      result.html_node_lang = almanac.html_node.lang;
+    }
 ```
 
 To get the info first extracts the custom metric from the payload using the fast JSON_EXTRACT_SCALAR. Then the returned STRUCT values can be accessed with dot notation.
@@ -121,7 +136,7 @@ ORDER BY
   client
 ```
 
-# Testing
+## Testing
 
 Most custom metrics are not available at the moment. For testing I change the start of the function and hard code some random data. e.g.
 
@@ -133,7 +148,7 @@ try {
     // TEST
     var almanac = {
       "scripts": {
-        "total": 4
+        "total": Math.floor(Math.random()*10)
     };
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
