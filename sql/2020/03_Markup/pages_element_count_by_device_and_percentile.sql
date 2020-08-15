@@ -1,5 +1,5 @@
 #standardSQL
-# percientile data from element_count per device
+# percientile data from element_count per device - NOT USED
 
 # returns all the data we need from _element_count
 CREATE TEMPORARY FUNCTION get_element_count_info(element_count_string STRING)

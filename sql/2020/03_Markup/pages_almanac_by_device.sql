@@ -163,10 +163,6 @@ SELECT
   # COUNTIF(almanac_info.html_node_lang IS NULL OR LENGTH(almanac_info.html_node_lang) = 0) AS freq_no_html_lang,
   AS_PERCENT(COUNTIF(almanac_info.html_node_lang IS NULL OR LENGTH(almanac_info.html_node_lang) = 0), COUNT(0)) AS pct_no_html_lang_m404,
 
-  #AVG(almanac_info.scripts_total) AS avg_scripts_total,
-
-  #AVG(almanac_info.none_jsonld_scripts_total) AS avg_none_jsonld_scripts_total
-
 FROM
     ( 
       SELECT 

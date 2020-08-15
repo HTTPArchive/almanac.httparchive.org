@@ -41,5 +41,5 @@ GROUP BY
   client,
   obsolete_element_type
 ORDER BY
-  pct DESC,
+  pct_from_pages_with_obsolete_elements DESC,
   client

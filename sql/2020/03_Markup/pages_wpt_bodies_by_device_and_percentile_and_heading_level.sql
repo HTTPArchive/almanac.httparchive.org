@@ -93,7 +93,7 @@ SELECT
   client,
   COUNT(DISTINCT url) AS total,
 
-  APPROX_QUANTILES(total, 1000)[OFFSET(percentile * 10)] AS total_heading
+  APPROX_QUANTILES(total, 1000)[OFFSET(percentile * 10)] AS heading_count
 
 FROM (
   SELECT 

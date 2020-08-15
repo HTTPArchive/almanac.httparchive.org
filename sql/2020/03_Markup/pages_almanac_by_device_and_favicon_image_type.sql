@@ -18,10 +18,17 @@ try {
               "tagName": "link",
               "rel": "icon",
               "type": "image/png",
-              "href": "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg."+Math.floor(Math.random() * 10)+"?hgfhfgdh"
+              "href": "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.png?hgfhfgdh"
           }]
        }
     };
+    if (Math.floor(Math.random() * 3) == 0) {
+      almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.jpg?hgfhfgdh";
+    } else if (Math.floor(Math.random() * 3) == 0) {
+      almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.svg";
+    } else if (Math.floor(Math.random() * 3) == 0) {
+      almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.gif";
+    }
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 

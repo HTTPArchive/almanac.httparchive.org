@@ -57,15 +57,15 @@ SELECT
   MAX(element_count_info.count) AS elements_max, # y-axis max, same for all device rows
 
   # % of pages with obsolete elements related to M216
-  COUNTIF(element_count_info.contains_obsolete_element) AS freq_contains_obsolete_element,
-  AS_PERCENT(COUNTIF(element_count_info.contains_obsolete_element), COUNT(0)) AS pct_contains_obsolete_element,
+  # COUNTIF(element_count_info.contains_obsolete_element) AS freq_contains_obsolete_element,
+  AS_PERCENT(COUNTIF(element_count_info.contains_obsolete_element), COUNT(0)) AS pct_contains_obsolete_element_m216,
 
   # % of pages with custom elements ("slang") related to M242
-  COUNTIF(element_count_info.contains_custom_element) AS freq_contains_custom_element,
-  AS_PERCENT(COUNTIF(element_count_info.contains_custom_element), COUNT(0)) AS pct_contains_custom_element,
+  # COUNTIF(element_count_info.contains_custom_element) AS freq_contains_custom_element,
+  AS_PERCENT(COUNTIF(element_count_info.contains_custom_element), COUNT(0)) AS pct_contains_custom_element_m242,
 
   # % of pages with details and summary elements M214
-  COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element) AS freq_contains_details_and_summary_element,
+  # COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element) AS freq_contains_details_and_summary_element,
   AS_PERCENT(COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element), COUNT(0)) AS pct_contains_details_and_summary_element_m214,
 
   FROM

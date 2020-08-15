@@ -17,23 +17,22 @@ try {
       "html_node": {
           "tagName": "html",
           "xmlns": "http://www.w3.org/1999/xhtml",
-          "lang": "en-US",
           "xml:lang": "en-US",
           "prefix": "og: https://ogp.me/ns#"
       } 
     };
     if (Math.floor(Math.random() * 3) == 0) {
-      almanac.html_node.lang = "test1";
+      almanac.html_node.lang = "en-AU";
     } else if (Math.floor(Math.random() * 2) == 0) {
-      almanac.html_node.lang = "test2";
+      almanac.html_node.lang = "es-mx";
     } else if (Math.floor(Math.random() * 2) == 0) {
-      almanac.html_node.lang = "test3";
+      almanac.html_node.lang = "EN-US";
     }
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return '';
 
-    if (almanac.html_node) {
-      return almanac.html_node.lang;
+    if (almanac.html_node && almanac.html_node.lang) {
+      return almanac.html_node.lang.trim().toLowerCase();
     }
 
 } catch (e) {}
