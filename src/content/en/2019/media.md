@@ -21,7 +21,7 @@ featured_stat_label_3: Use of <code>&lt;picture&gt;</code> element
 ---
 
 ## Introduction
-Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.
+Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media. 
 
 From a pure bytes perspective, HTTP Archive has [historically reported](https://legacy.httparchive.org/interesting.php#bytesperpage) an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every web page depends on images and videos. Even at the tenth percentile, we see that 44% of the bytes are from media and can rise to 91% of the total bytes at the 90th percentile of pages. 
 
@@ -39,7 +39,7 @@ First, the network overhead required to download these bytes can be large and in
 
 The second impact is on the financial cost to the user. This is often an ignored aspect since it is not a burden on the website owner but a burden to the end-user. Anecdotally, it has been shared that some markets, [like Japan](https://twitter.com/yoavweiss/status/1195036487538003968?s=20), see a drop in purchases by students near the end of the month when data caps are reached, and users cannot see the visual content. 
 
-Further, the financial cost of visiting these websites in different parts of the world is disproportionate. At the median and 90th percentile, the volume of image bytes is 1 MB and 1.9 MB respectively. Using [WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost) we can see that the gross national income (GNI) per capita cost to a user in Madagascar a single web page load at the 90th percentile would cost 2.6% of the daily gross income. By contrast, in Germany this would be 0.3% of the daily gross income.
+Further, the financial cost of visiting these websites in different parts of the world is disproportionate. At the median and 90th percentile, the volume of image bytes is 1 MB and 1.9 MB respectively. Using [WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost) we can see that the gross national income (GNI) per capita cost to a user in Madagascar a single web page load at the 90th percentile would cost 2.6% of the daily gross income. By contrast, in Germany this would be 0.3% of the daily gross income. 
 
 <figure>
   <a href="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png">
