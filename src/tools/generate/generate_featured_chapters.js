@@ -13,24 +13,28 @@ const getElementContents = (dom,selector) => {
   }
 }
 
-const generate_chapter_featured_quote = (body) => {
-  const dom = new JSDOM(body);
-  const featured_quote = getElementContents(dom, '#featured-quote');
+const generate_chapter_featured_quote = (metadata) => {
+  let featured_quote = metadata.featured_quote;
 
   let featured_quote_obj = {};
   featured_stats = [];
   if (featured_quote) {
+    // Showdown replaces & with &amp; so convert those back to avoid escape issues
+    featured_quote = featured_quote.replace(/&amp;/g ,'&');
     featured_quote_obj.quote = featured_quote;
   }
+  
   for (let i = 1; i < 4; i++) {
-    const featured_stat = getElementContents(dom,'#featured-stat-' + i);
-    const featured_stat_label  = getElementContents(dom,'#featured-stat-label-' + i);
+
+    let featured_stat = metadata["featured_stat_" + i];
+    let featured_stat_label = metadata["featured_stat_label_" + i];
     if (featured_stat && featured_stat_label) {
+      // Showdown replaces & with &amp; so convert those back to avoid escape issues
+      featured_stat_label = featured_stat_label.replace(/&amp;/g,'&');
       featured_stats.push ([featured_stat, featured_stat_label]);
-    } else {
-      break;
     }
   }
+
   if (featured_stats.length > 0) {
     featured_quote_obj.stats = featured_stats;
   }

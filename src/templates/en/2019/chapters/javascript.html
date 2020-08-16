@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":null,"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"javascript"} %} {% block index %}
+{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":null,"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","featured_quote":"JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page.","featured_stat_1":"89%","featured_stat_label_1":"Sites with more third-party code than first-party","featured_stat_2":"83%","featured_stat_label_2":"Sites that use jQuery","featured_stat_3":"4.6%","featured_stat_label_3":"Home pages using React","chapter":"javascript"} %} {% block index %}
 <ul>
   <li>
     <a href="#introduction">Introduction</a>
@@ -76,7 +76,6 @@
 <p>The <a href="https://httparchive.org/">HTTP Archive</a> crawls <a href="https://httparchive.org/reports/state-of-the-web#numUrls">millions of pages</a> every month and runs them through a private instance of <a href="https://webpagetest.org/">WebPageTest</a> to store key information of every page. (You can learn more about this in our <a href="./methodology">methodology</a>). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.</p>
 <h2 id="how-much-javascript-do-we-use"><a href="#how-much-javascript-do-we-use" class="anchor-link">How much JavaScript do we use?</a></h2>
 <p>JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, <a href="https://v8.dev/blog/cost-of-javascript-2019">download and execution have become the most expensive stages</a> when JavaScript is processed by a web page.</p>
-<p><span id="featured-quote" hidden="">JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page.</span></p>
 <p>Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?</p>
 <figure id="fig-1">
   <a href="/static/images/2019/javascript/fig1.png">
@@ -165,8 +164,7 @@
   <div id="fig9-description" class="visually-hidden">Bar chart showing 0/17 bytes of JavaScript are downloaded on mobile for first-party and third-party requests respectively in the p10 percentile, 6/54 in p25, 83/217 in p50, 189/477 in p75, and 380/827 in p90.</div>
   <figcaption id="fig9-caption"><a href="#fig-9" class="anchor-link">Figure 9.</a> Distribution of total JavaScript downloaded on mobile.</figcaption>
 </figure>
-<p>At the median, <span id="featured-stat-1">89%</span> more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the <a href="./third-parties">"Third Parties"</a> chapter.</p>
-<p><span id="featured-stat-label-1" hidden="">Sites with more third-party code than first-party</span></p>
+<p>At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the <a href="./third-parties">"Third Parties"</a> chapter.</p>
 <h2 id="resource-compression"><a href="#resource-compression" class="anchor-link">Resource compression</a></h2>
 <p>In the context of browser-server interactions, resource compression refers to code that has been modified using a data compression algorithm. Resources can be compressed statically ahead of time or on-the-fly as they are requested by the browser, and for either approach the transferred resource size is significantly reduced which improves page performance.</p>
 <p>There are multiple text-compression algorithms, but only two are mostly used for the compression (and decompression) of HTTP network requests:</p>
@@ -312,7 +310,6 @@
   <figcaption><a href="#fig-11" class="anchor-link">Figure 11.</a> Top JavaScript libraries on desktop and mobile.</figcaption>
 </figure>
 <p><a href="https://jquery.com/">jQuery</a>, the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a>, standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?</p>
-<p><span id="featured-stat-2" hidden="">83%</span><span id="featured-stat-label-2" hidden="">Sites that use jQuery</span></p>
 <p>There are a number of possible reasons:</p>
 <ul>
   <li><a href="https://wordpress.org/">WordPress</a>, which is used in more than 30% of sites, includes jQuery by default.</li>
@@ -330,7 +327,6 @@
   <div id="fig12-description" class="visually-hidden">Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.</div>
   <figcaption id="fig12-caption"><a href="#fig-12" class="anchor-link">Figure 12.</a> Most frequently used frameworks on desktop.</figcaption>
 </figure>
-<p><span id="featured-stat-3" hidden="">4.6%</span><span id="featured-stat-label-3" hidden="">Home pages using React</span></p>
 <p>Only a subset of popular frameworks are being analyzed here, but it's important to note that all of them either follow one of these two approaches:</p>
 <ul>
   <li>A <a href="https://developer.chrome.com/apps/app_frameworks">model-view-controller</a> (or model-view-viewmodel) architecture</li>

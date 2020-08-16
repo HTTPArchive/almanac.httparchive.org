@@ -11,11 +11,18 @@ results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOl
 queries: 09_Accessibility
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-08-02T00:00:00.000Z
+featured_quote: Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.
+featured_stat_1: 22%
+featured_stat_label_1: Sites using sufficient colour contrast
+featured_stat_2: 50%
+featured_stat_label_2: Sites with missing image alt attributes
+featured_stat_3: 14%
+featured_stat_label_3: Sites using a skip link
 ---
 
 ## Introduction
 
-<span id="featured-quote">Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.</span>
+Accessibility on the web is essential for an inclusive and equitable society. As more of our social and work lives move to the online world, it becomes even more important for people with disabilities to be able to participate in all online interactions without barriers. Just as building architects can create or omit accessibility features such as wheelchair ramps, web developers can help or hinder the assistive technology users rely on.
 
 When thinking about users with disabilities, we should remember that their user journeys are often the same—they just use different tools. These popular tools include but are not limited to: screen readers, screen magnifiers, browser or text size zooming, and voice controls.
 
@@ -46,8 +53,6 @@ In order to make sure your website is readable under these conditions, making su
 </figure>
 
 Only 22.04% of sites gave all of their text sufficient color contrast. Or in other words: 4 out of every 5 sites have text which easily blends into the background, making it unreadable.
-
-<span id="featured-stat-1" hidden>22%</span><span id="featured-stat-label-1" hidden>Sites using sufficient colour contrast</span>
 
 <p class="note">Note that we weren't able to analyze any text inside of images, so our reported metric is an upper-bound of the total number of websites passing the color contrast test.</p>
 
@@ -98,8 +103,6 @@ It is interesting to note however, that the bulk of this problem appears to be a
 Images are an essential part of the web experience. They can tell powerful stories, grab attention, and elicit emotion. But not everyone can see these images that we rely on to tell parts of our stories. Thankfully, in 1995, HTML 2.0 provided a solution to this problem: [the alt attribute](https://webaim.org/techniques/alttext/). The alt attribute provides web developers with the capability of adding a textual description to the images we use, so that when someone is unable to see our images (or the images are unable to load), they can read the alt text for a description. The alt text fills them in on the part of the story they would have otherwise missed.
 
 Even though alt attributes have been around for 25 years, 49.91% of pages still fail to provide alt attributes for some of their images, and 8.68% of pages never use them at all.
-
-<span id="featured-stat-2" hidden>50%</span><span id="featured-stat-label-2" hidden>Sites with missing image alt attributes</span>
 
 ### Captions for audio and video
 
@@ -194,8 +197,6 @@ If you'd like to see a skip link in action for yourself, you can! Just do a quic
 In fact you don't need to even leave this site as we [use them here too](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)!
 
 It's hard to accurately determine what a skip link is when analyzing sites. For this analysis, if we found an anchor link (`href=#heading1`) within the first 3 links on the page, we defined this as a page with a skip link. So 14.19% is a strict upper bound.
-
-<span id="featured-stat-3" hidden>14%</span><span id="featured-stat-label-3" hidden>Sites using a skip link</span>
 
 ### Shortcuts
 

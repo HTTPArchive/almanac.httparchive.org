@@ -46,7 +46,7 @@ const generate_chapters = async () => {
 
       const markdown = await fs.readFile(file, 'utf-8');
       const { metadata, body, toc } = await parse_file(markdown,chapter);
-      const chapter_featured_quote = generate_chapter_featured_quote(body);
+      const chapter_featured_quote = generate_chapter_featured_quote(metadata);
       if (Object.keys(chapter_featured_quote).length > 0) {
         if (!(language in featured_quotes)) {
           featured_quotes[language] = {};

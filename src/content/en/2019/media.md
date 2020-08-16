@@ -11,10 +11,17 @@ results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CH
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-08-12T00:00:00.000Z
+featured_quote: Images, animations, and videos are an important part of the web experience. They are important for many reasons&colon; they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways&colon; by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.
+featured_stat_1: 1 MB
+featured_stat_label_1: Median size of home pages
+featured_stat_2: 60%
+featured_stat_label_2: JPEG use amongst images
+featured_stat_3: 2%
+featured_stat_label_3: Use of <code>&lt;picture&gt;</code> element
 ---
 
 ## Introduction
-<span id="featured-quote">Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.</span>
+Images, animations, and videos are an important part of the web experience. They are important for many reasons: they help tell stories, engage audiences, and provide artistic expression in ways that often cannot be easily produced with other web technologies. The importance of these media resources can be demonstrated in two ways: by the sheer volume of bytes required to download for a page, and also the volume of pixels painted with media.
 
 From a pure bytes perspective, HTTP Archive has [historically reported](https://legacy.httparchive.org/interesting.php#bytesperpage) an average of two-thirds of resource bytes associated from media. From a distribution perspective, we can see that virtually every web page depends on images and videos. Even at the tenth percentile, we see that 44% of the bytes are from media and can rise to 91% of the total bytes at the 90th percentile of pages. 
 
@@ -33,8 +40,6 @@ First, the network overhead required to download these bytes can be large and in
 The second impact is on the financial cost to the user. This is often an ignored aspect since it is not a burden on the website owner but a burden to the end-user. Anecdotally, it has been shared that some markets, [like Japan](https://twitter.com/yoavweiss/status/1195036487538003968?s=20), see a drop in purchases by students near the end of the month when data caps are reached, and users cannot see the visual content. 
 
 Further, the financial cost of visiting these websites in different parts of the world is disproportionate. At the median and 90th percentile, the volume of image bytes is 1 MB and 1.9 MB respectively. Using [WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost) we can see that the gross national income (GNI) per capita cost to a user in Madagascar a single web page load at the 90th percentile would cost 2.6% of the daily gross income. By contrast, in Germany this would be 0.3% of the daily gross income.
-
-<span  id="featured-stat-1" hidden>1 MB</span><span id="featured-stat-label-1" hidden>Median size of home pages</span>
 
 <figure>
   <a href="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png">
@@ -164,8 +169,6 @@ In aggregate, across all page, we indeed see the prevalence of these formats. JP
   <figcaption id="fig7-caption">Figure 7. Image format usage.</figcaption>
 </figure>
 
-<span id="featured-stat-2" hidden>60%</span><span id="featured-stat-label-2" hidden>JPEG use amongst images</span>
-
 Of course, web pages are not uniform in their use of image content. Some depend on images more than others. Look no further than the home page of `google.com` and you will see very little imagery compared to a typical news website. Indeed, the median website has 13 images, 61 images at the 90th percentile, and a whopping 229 images at the 99th percentile.
 
 <figure>
@@ -263,8 +266,6 @@ The most common method to implement responsive images is to build a list of alte
   <div id="fig14-description" class="visually-hidden">A bar chart showing 18% of images uses 'sizes', 21% use 'srcset', and 2% use 'picture'.</div>
   <figcaption id="fig14-caption">Figure 14. Percent of pages using responsive images with HTML.</figcaption>
 </figure>
-
-<span id="featured-stat-3" hidden>2%</span><span id="featured-stat-label-3" hidden>Use of <code>&lt;picture&gt;</code> element</span>
 
 The notably lower use of `<picture>` is not surprising given that it is used most often for advanced responsive web design (RWD) layouts like [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
 
