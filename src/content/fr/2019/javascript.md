@@ -72,7 +72,7 @@ Bien que ces données montrent combien de temps il peut falloir à un appareil m
       <img src="/static/images/2019/javascript/js-processing-reddit.png" alt="Délais de traitement de JavaScript pour Reddit.com." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="363">
    </a>
    <div id="fig4-description" class="visually-hidden">Diagramme à barres montrant 3 appareils différents&nbsp;: en haut, un Pixel 3 présentant une petite portion à la fois sur le fil principal et le fil secondaire de moins de 400&nbsp;ms. Dans le cas du Moto G4, cela représente environ 900&nbsp;ms sur le fil principal et 300&nbsp;ms sur le fil secondaire. La dernière barre est celle d’un Alcatel 1X 5059D avec plus de 2&#8239;000&nbsp;ms sur le fil principal et plus de 500&nbsp;ms sur le fil secondaire.</div>
-   <figcaption id="fig4-caption">Figure 4. Délais de traitement de JavaScript pour Reddit.com, issus de <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019 (en anglais)</a>.</figcaption>
+   <figcaption id="fig4-caption">Figure 4. Délais de traitement de JavaScript pour Reddit.com, issus de <a href="https://v8.dev/blog/cost-of-javascript-2019"><i lang="en">The cost of JavaScript in 2019</i> (en anglais)</a>.</figcaption>
 </figure>
 
 ### Nombre de requêtes
