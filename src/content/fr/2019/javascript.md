@@ -43,7 +43,7 @@ En regardant ces chiffres, il est naturel de se demander si ce n’est pas trop 
    <a href="/static/images/2019/javascript/fig2.png">
       <img src="/static/images/2019/javascript/fig2.png" alt="Figure 2. Distribution de JavaScript par page et par type d’appareil." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive">
    </a>
-   <div id="fig2-description" class="visually-hidden">Un diagramme à barres montrant que 76 octets&#8239;/&#8239;65 octets de JavaScript sont utilisés dans le percentile p10 sur ordinateur de bureau et mobile respectivement, 186&#8239;/&#8239;164 octets pour p25, 391&#8239;/&#8239;359 octets pour p50, 721&#8239;/&#8239;668 octets pour p75, et 1&#8239;/&#8239;131&#8239;/&#8239;1&#8239;/&#8239;060 octets pour p90.</div>
+   <div id="fig2-description" class="visually-hidden">Un diagramme à barres montrant que 76 octets&#8239;/&#8239;65 octets de JavaScript sont utilisés dans le percentile p10 sur ordinateur de bureau et mobile respectivement, 186&#8239;/&#8239;164 octets pour p25, 391&#8239;/&#8239;359 octets pour p50, 721&#8239;/&#8239;668 octets pour p75, et 1&#8239;131&#8239;/&#8239;1&#8239;060 octets pour p90.</div>
    <figcaption id="fig2-caption">Figure 2. Distribution de JavaScript par page et par type d’appareil.</figcaption>
 </figure>
 
