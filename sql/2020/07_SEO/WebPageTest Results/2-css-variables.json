@@ -1,0 +1,22 @@
+{
+    "summary": {
+        "--wp-block-core-button--color--background": {
+            "get": [
+                {
+                    "usedIn": "background-color",
+                    "value": "var(--wp-block-core-button--color--background,var(--wp-color--primary,#32373c))",
+                    "selector": ".wp-gs .wp-block-button__link:not(.has-background)"
+                }
+            ]
+        },
+        "--wp-color--primary": {
+            "get": [
+                {
+                    "usedIn": "background-color",
+                    "value": "var(--wp-block-core-button--color--background,var(--wp-color--primary,#32373c))",
+                    "selector": ".wp-gs .wp-block-button__link:not(.has-background)"
+                }
+            ]
+        }
+    }
+}

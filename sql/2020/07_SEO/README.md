@@ -1,24 +1,17 @@
 # Guide
 
-almanac.js queries are identified by rendered\_ and body queries by raw\_.
+My first run at converting 2019 queries is in the "2019 Rewrites" folder. This is now out of date but functions and ideas in there may be of use.
 
-I've tried to merge as many queries as possible based on the data source and format of the results. This should make it a lot easier to manage as well as save on the number of queries made $$$
+## WebPageTest Results
 
-lighthouse.sql - all data from lighthouse
-rendered\_by\_device.sql - rendered data from almanac.js grouped by device
-rendered\_percentiles\_by\_device.txt - rendered data from almanac.js reported by percentiles and grouped by device
-raw\_by\_device.sql - data from the raw html - very expensive query when done on the real data - does not gather much at the moment. This could become our raw/rendered comparison query.
-
-Other scripts are ones that have a unique output so can't be merged. Typically because they group by the field they are analysing.
-
-At the moment most are pointing to test tables. But be careful. Always double check the cost before making a query as some old ones are still pointing to live tables. We could do with a test table for httparchive.almanac.summary_response_bodies as the table I'm currently testing with is in a different format.
-
-I've pulled this over from the Markup chapters readme...
+The "WebPageTest Results" folder contains json files for example tests made using the 2020 custom metrics scripts. They are a good reference to what we will get once the crawl is completed. I pull from these to create test objects for the queries.
 
 ## file naming
 file names start with the table being queried. Next is the custom metric if appropriate. Then "_by_" followed by how the query is grouped. Finally anything more specific needed.
 
 Queries contain one or more metrics that match the queries grouping structure. 
+
+To avoid creating over complicated queries we should split up any that contain say more than 10 fields into sperate queries with logical groupings.
 
 ## general
 
@@ -153,6 +146,8 @@ ORDER BY
 
 ## Testing
 
+I've labeled code using test data with TEST and where done, the equivalent line for real data with LIVE. When switching to gather live data we need to check and upate all those lines.
+
 Most custom metrics are not available at the moment. For testing I change the start of the function and hard code some random data. e.g.
 
 ```
@@ -177,3 +172,5 @@ To speed up queries the call to the test function can also be faked:
         get_almanac_info('') AS almanac_info  # TEST
         #get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
 ```
+
+And the queries currently use the sample data tables. This needs to be switched to the real ones when ready.

@@ -1,0 +1,1072 @@
+{
+    "01.12": 0,
+    "01.13": 0,
+    "link-nodes": {
+        "total": 36,
+        "nodes": [
+            {
+                "tagName": "link",
+                "rel": "icon",
+                "type": "image/png",
+                "href": ""
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "href": "https://btpi.com/wp-content/themes/ThemeBlocks%20Child/style.css",
+                "type": "text/css",
+                "media": "screen"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "type": "application/rss+xml",
+                "title": "Business Telecom Products RSS Feed",
+                "href": "https://btpi.com/feed/"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "type": "application/atom+xml",
+                "title": "Business Telecom Products Atom Feed",
+                "href": "https://btpi.com/feed/atom/"
+            },
+            {
+                "tagName": "link",
+                "rel": "pingback",
+                "href": "https://btpi.com/xmlrpc.php"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "ubermenu-lato-css",
+                "href": "//fonts.googleapis.com/css?family=Lato%3A%2C300%2C400%2C700&ver=3.9.2",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "href": "/superfish/css/megafish.css",
+                "media": "screen"
+            },
+            {
+                "tagName": "link",
+                "rel": "canonical",
+                "href": "https://btpi.com/"
+            },
+            {
+                "tagName": "link",
+                "rel": "dns-prefetch",
+                "href": "//platform-api.sharethis.com"
+            },
+            {
+                "tagName": "link",
+                "rel": "dns-prefetch",
+                "href": "//s.w.org"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "type": "application/rss+xml",
+                "title": "Business Telecom Products » Feed",
+                "href": "https://btpi.com/feed/"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "type": "application/rss+xml",
+                "title": "Business Telecom Products » Comments Feed",
+                "href": "https://btpi.com/comments/feed/"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "type": "application/rss+xml",
+                "title": "Business Telecom Products » Home Comments Feed",
+                "href": "https://btpi.com/home-2/feed/"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "thickbox.css-css",
+                "href": "https://btpi.com/wp-includes/js/thickbox/thickbox.css?ver=1.0",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "widgetopts-styles-css",
+                "href": "https://btpi.com/wp-content/plugins/widget-options/assets/css/widget-options.css",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "woocommerce-layout-css",
+                "href": "https://btpi.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=3.5.7",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "woocommerce-smallscreen-css",
+                "href": "https://btpi.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.5.7",
+                "type": "text/css",
+                "media": "only screen and (max-width: 768px)"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "woocommerce-general-css",
+                "href": "https://btpi.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.5.7",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "megamenu-css",
+                "href": "https://btpi.com/wp-content/uploads/maxmegamenu/style.css?ver=95d8cc",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "dashicons-css",
+                "href": "https://btpi.com/wp-includes/css/dashicons.min.css?ver=9fb09126209f810364bcc0dfa48ab5cb",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "megamenu-fontawesome-css",
+                "href": "https://btpi.com/wp-content/plugins/megamenu-pro/icons/fontawesome/css/font-awesome.min.css?ver=1.6.3",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "megamenu-genericons-css",
+                "href": "https://btpi.com/wp-content/plugins/megamenu-pro/icons/genericons/genericons/genericons.css?ver=1.6.3",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "parent-style-css",
+                "href": "https://btpi.com/wp-content/themes/ThemeBlocks/style.css?ver=9fb09126209f810364bcc0dfa48ab5cb",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "themeblocks-style-css",
+                "href": "https://btpi.com/wp-content/themes/ThemeBlocks%20Child/style.css?ver=9fb09126209f810364bcc0dfa48ab5cb",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "wpdreams-asl-basic-css",
+                "href": "https://btpi.com/wp-content/plugins/ajax-search-lite/css/style.basic.css?ver=4.8.3",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "wpdreams-ajaxsearchlite-css",
+                "href": "https://btpi.com/wp-content/plugins/ajax-search-lite/css/style-underline.css?ver=4.8.3",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "tablepress-default-css",
+                "href": "https://btpi.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.11",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "sv-wc-payment-gateway-payment-form-css",
+                "href": "https://btpi.com/wp-content/plugins/woocommerce-gateway-authorize-net-cim/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/css/frontend/sv-wc-payment-gateway-payment-form.min.css?ver=5.6.1",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "stylesheet",
+                "id": "addtoany-css",
+                "href": "https://btpi.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.15",
+                "type": "text/css",
+                "media": "all"
+            },
+            {
+                "tagName": "link",
+                "rel": "https://api.w.org/",
+                "href": "https://btpi.com/wp-json/"
+            },
+            {
+                "tagName": "link",
+                "rel": "EditURI",
+                "type": "application/rsd+xml",
+                "title": "RSD",
+                "href": "https://btpi.com/xmlrpc.php?rsd"
+            },
+            {
+                "tagName": "link",
+                "rel": "wlwmanifest",
+                "type": "application/wlwmanifest+xml",
+                "href": "https://btpi.com/wp-includes/wlwmanifest.xml"
+            },
+            {
+                "tagName": "link",
+                "rel": "shortlink",
+                "href": "https://btpi.com/"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "type": "application/json+oembed",
+                "href": "https://btpi.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbtpi.com%2F"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "type": "text/xml+oembed",
+                "href": "https://btpi.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbtpi.com%2F&format=xml"
+            },
+            {
+                "tagName": "link",
+                "href": "//fonts.googleapis.com/css?family=Open+Sans",
+                "rel": "stylesheet",
+                "type": "text/css"
+            }
+        ],
+        "attribute_usage_count": {
+            "rel": 36,
+            "type": 29,
+            "href": 36,
+            "media": 19,
+            "title": 6,
+            "id": 17
+        }
+    },
+    "priority-hints": {
+        "total": 0,
+        "nodes": [],
+        "attribute_usage_count": {}
+    },
+    "meta-nodes": {
+        "total": 16,
+        "nodes": [
+            {
+                "tagName": "meta",
+                "http-equiv": "Content-Type",
+                "content": "text/html; charset=UTF-8"
+            },
+            {
+                "tagName": "meta",
+                "http-equiv": "X-UA-Compatible",
+                "content": "IE=edge,chrome-1"
+            },
+            {
+                "tagName": "meta",
+                "name": "format-detection",
+                "content": "telephone=no"
+            },
+            {
+                "tagName": "meta",
+                "name": "viewport",
+                "content": "width=device-width, initial-scale=1"
+            },
+            {
+                "tagName": "meta",
+                "name": "description",
+                "content": "BTP's Headset Help Desk service-first approach can save you 40% or more of the cost of owning headsets over their lifetime. Find out about BTP."
+            },
+            {
+                "tagName": "meta",
+                "property": "og:type",
+                "content": "website"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:title",
+                "content": "Business Telecom Products"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:description",
+                "content": "Home of the Headset Help Desk!"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:url",
+                "content": "https://btpi.com/"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:site_name",
+                "content": "Business Telecom Products"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:image",
+                "content": "https://btpi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:image:secure_url",
+                "content": "https://btpi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:card",
+                "content": "summary"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:title",
+                "content": "Business Telecom Products"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:description",
+                "content": "Home of the Headset Help Desk!"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:image",
+                "content": "https://btpi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png"
+            }
+        ],
+        "attribute_usage_count": {
+            "http-equiv": 2,
+            "content": 16,
+            "name": 7,
+            "property": 7
+        }
+    },
+    "10.5": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+    ],
+    "seo-anchor-elements": {
+        "internal": 216,
+        "external": 8,
+        "hash": 1,
+        "navigateHash": 1,
+        "earlyHash": 1
+    },
+    "seo-titles": {
+        "titleWords": 32,
+        "titleElements": 5
+    },
+    "seo-words": {
+        "wordsCount": 549,
+        "wordElements": 50
+    },
+    "input_elements": {
+        "total": 16,
+        "nodes": [
+            {
+                "tagName": "input",
+                "aria-label": "Search input",
+                "type": "search",
+                "name": "phrase",
+                "placeholder": "",
+                "autocomplete": "off"
+            },
+            {
+                "tagName": "input",
+                "aria-label": "Autocomplete input, do not use this",
+                "type": "text",
+                "name": "phrase",
+                "autocomplete": "off"
+            },
+            {
+                "tagName": "input",
+                "type": "submit"
+            },
+            {
+                "tagName": "input",
+                "type": "search",
+                "placeholder": "Search",
+                "name": "s"
+            },
+            {
+                "tagName": "input",
+                "type": "submit"
+            },
+            {
+                "tagName": "input",
+                "type": "submit"
+            },
+            {
+                "tagName": "input",
+                "type": "text",
+                "name": "s",
+                "placeholder": ""
+            },
+            {
+                "tagName": "input",
+                "type": "hidden",
+                "name": "post_type"
+            },
+            {
+                "tagName": "input",
+                "type": "hidden",
+                "name": "qtranslate_lang",
+                "id": "qtranslate_lang1"
+            },
+            {
+                "tagName": "input",
+                "type": "checkbox",
+                "id": "set_exactonly1",
+                "name": "set_exactonly"
+            },
+            {
+                "tagName": "input",
+                "type": "checkbox",
+                "id": "set_intitle1",
+                "name": "set_intitle"
+            },
+            {
+                "tagName": "input",
+                "type": "checkbox",
+                "id": "set_incontent1",
+                "name": "set_incontent"
+            },
+            {
+                "tagName": "input",
+                "type": "checkbox",
+                "id": "set_inexcerpt1",
+                "name": "set_inexcerpt"
+            },
+            {
+                "tagName": "input",
+                "type": "checkbox",
+                "id": "set_inposts1",
+                "name": "set_inposts"
+            },
+            {
+                "tagName": "input",
+                "type": "checkbox",
+                "id": "set_inpages1",
+                "name": "set_inpages"
+            },
+            {
+                "tagName": "input",
+                "type": "checkbox",
+                "id": "1customset_11",
+                "name": "customset[]"
+            }
+        ],
+        "attribute_usage_count": {
+            "aria-label": 2,
+            "type": 16,
+            "class": 4,
+            "name": 13,
+            "placeholder": 3,
+            "value": 15,
+            "autocomplete": 2,
+            "style": 1,
+            "data-placeholder": 1,
+            "id": 8,
+            "title": 7,
+            "checked": 4
+        }
+    },
+    "06.47": 0,
+    "08.39": {
+        "link": 0,
+        "script": 0
+    },
+    "09.27": {
+        "total": 22,
+        "nodes": [
+            {
+                "tagName": "div",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "div",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "div",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            },
+            {
+                "tagName": "a",
+                "tabindex": "0"
+            }
+        ],
+        "attribute_usage_count": {
+            "class": 22,
+            "id": 3,
+            "tabindex": 22,
+            "href": 15,
+            "aria-haspopup": 3,
+            "aria-expanded": 3,
+            "aria-label": 4
+        }
+    },
+    "icon_only_clickables": 3,
+    "inline_svg_stats": {
+        "total": 5,
+        "content_lengths": [
+            822,
+            411,
+            483,
+            209,
+            113
+        ],
+        "attribute_usage_count": {
+            "version": 3,
+            "xmlns": 3,
+            "xmlns:xlink": 3,
+            "x": 3,
+            "y": 3,
+            "width": 5,
+            "height": 5,
+            "viewbox": 3,
+            "enable-background": 3,
+            "xml:space": 3,
+            "style": 2
+        }
+    },
+    "images": {
+        "pictures": {
+            "total": 0,
+            "nodes": [],
+            "attribute_usage_count": {}
+        },
+        "imgs": {
+            "total": 21,
+            "nodes": [
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                }
+            ],
+            "attribute_usage_count": {
+                "src": 21,
+                "title": 4,
+                "alt": 21,
+                "width": 17,
+                "height": 17,
+                "class": 18,
+                "srcset": 1,
+                "sizes": 1,
+                "draggable": 6,
+                "style": 1
+            }
+        },
+        "sources": {
+            "total": 0,
+            "nodes": [],
+            "attribute_usage_count": {}
+        },
+        "total_with_srcset": 1,
+        "total_with_sizes": 1,
+        "total_pictures_with_img": 0,
+        "sizes_values": [
+            "(max-width: 224px) 100vw, 224px"
+        ],
+        "loading_values": [],
+        "alt_lengths": [
+            14,
+            0,
+            14,
+            30,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            45,
+            33,
+            56,
+            102,
+            37,
+            9,
+            56,
+            21,
+            33,
+            12,
+            49
+        ]
+    },
+    "videos": {
+        "total": 0,
+        "nodes": [],
+        "attribute_usage_count": {},
+        "tracks": {
+            "total": 0,
+            "nodes": [],
+            "attribute_usage_count": {}
+        }
+    },
+    "scripts": {
+        "total": 42,
+        "nodes": [
+            {
+                "tagName": "script",
+                "async": "",
+                "src": "https://google-analytics.com/analytics.js"
+            },
+            {
+                "tagName": "script",
+                "async": "",
+                "src": "https://static.addtoany.com/menu/page.js"
+            },
+            {
+                "tagName": "script",
+                "async": "",
+                "src": "https://buttons-config.sharethis.com/js/5b2150c50c48cf0011faf307.js"
+            },
+            {
+                "tagName": "script",
+                "type": "application/ld+json",
+                "class": "aioseop-schema"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "src": "https://btpi.com/wp-includes/js/wp-emoji-release.min.js?ver=9fb09126209f810364bcc0dfa48ab5cb",
+                "type": "text/javascript",
+                "defer": ""
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "//platform-api.sharethis.com/js/sharethis.js#product=ga&property=5b2150c50c48cf0011faf307"
+            },
+            {
+                "tagName": "script",
+                "data-cfasync": ""
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/themes/ThemeBlocks/js/aimtoggle.js?ver=9fb09126209f810364bcc0dfa48ab5cb"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=3.5.7"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=3.5.7"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.5.7"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/ajax-search-lite/js/min/jquery.ajaxsearchlite.min.js?ver=4.8.3"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/woocommerce/assets/js/jquery-payment/jquery.payment.min.js?ver=3.0.0"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/woocommerce-gateway-authorize-net-cim/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/js/frontend/sv-wc-payment-gateway-payment-form.min.js?ver=5.6.1"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/woocommerce-gateway-authorize-net-cim/assets/js/frontend/wc-authorize-net-cim.min.js?ver=3.2.3"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.7.4"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/megamenu-pro/assets/public.js?ver=1.6.3"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-includes/js/wp-embed.min.js?ver=9fb09126209f810364bcc0dfa48ab5cb"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://btpi.com/wp-content/plugins/ml-slider/assets/sliders/flexslider/jquery.flexslider.min.js?ver=3.16.4"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript"
+            }
+        ],
+        "attribute_usage_count": {
+            "async": 3,
+            "src": 27,
+            "type": 37,
+            "class": 1,
+            "defer": 1,
+            "data-cfasync": 1
+        }
+    },
+    "nodes_using_role": {
+        "total": 5,
+        "usage_and_count": {
+            "button": 3,
+            "search": 2
+        }
+    },
+    "headings_order": [
+        2,
+        2,
+        2,
+        2,
+        3
+    ],
+    "shortcuts_stats": {
+        "total_with_aria_shortcut": 0,
+        "total_with_accesskey": 0,
+        "aria_shortcut_values": [],
+        "accesskey_values": []
+    },
+    "attributes_used_on_elements": {
+        "xmlns": 4,
+        "lang": 1,
+        "xml:lang": 1,
+        "prefix": 1,
+        "http-equiv": 2,
+        "content": 16,
+        "name": 22,
+        "rel": 42,
+        "type": 105,
+        "href": 262,
+        "media": 36,
+        "title": 59,
+        "id": 232,
+        "async": 3,
+        "src": 49,
+        "class": 669,
+        "property": 9,
+        "defer": 1,
+        "data-cfasync": 1,
+        "tabindex": 22,
+        "role": 5,
+        "aria-expanded": 17,
+        "data-event": 3,
+        "data-effect": 3,
+        "data-effect-speed": 3,
+        "data-effect-mobile": 3,
+        "data-effect-speed-mobile": 3,
+        "data-mobile-force-width": 3,
+        "data-second-click": 3,
+        "data-document-click": 3,
+        "data-vertical-behaviour": 3,
+        "data-breakpoint": 3,
+        "data-unbind": 3,
+        "version": 3,
+        "xmlns:xlink": 3,
+        "x": 3,
+        "y": 3,
+        "width": 22,
+        "height": 22,
+        "viewBox": 3,
+        "enable-background": 3,
+        "xml:space": 3,
+        "d": 1,
+        "style": 17,
+        "data-opened": 1,
+        "transform": 1,
+        "points": 2,
+        "autocomplete": 4,
+        "aria-label": 7,
+        "placeholder": 3,
+        "value": 15,
+        "in": 1,
+        "stdDeviation": 1,
+        "data-asldata": 1,
+        "alt": 21,
+        "method": 1,
+        "action": 2,
+        "aria-haspopup": 14,
+        "srcset": 1,
+        "sizes": 1,
+        "target": 15,
+        "data-placeholder": 1,
+        "aria-live": 1,
+        "aria-hidden": 5,
+        "draggable": 6,
+        "checked": 4,
+        "for": 7
+    },
+    "body_node": {
+        "tagName": "body",
+        "class": "home page-template page-template-front-page page-template-front-page-php page page-id-69 custom-background woocommerce-js mega-menu-primary-menu mega-menu-tertiary-menu mega-menu-mobile-menu mega-menu-max-mega-menu-1 chrome unknown linux"
+    },
+    "html_node": {
+        "tagName": "html",
+        "xmlns": "http://www.w3.org/1999/xhtml",
+        "lang": "en-US",
+        "xml:lang": "en-US",
+        "prefix": "og: https://ogp.me/ns#"
+    },
+    "document_title": {
+        "value": "Headsets, Wireless Plantronics Headset Distributor, BTP",
+        "length": 55
+    },
+    "length_of_h1s": []
+}

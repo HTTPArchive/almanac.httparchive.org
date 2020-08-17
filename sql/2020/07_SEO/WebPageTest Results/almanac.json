@@ -1,0 +1,1264 @@
+{
+    "01.12": 0,
+    "01.13": 0,
+    "link-nodes": {
+        "total": 80,
+        "nodes": [
+            {
+                "tagName": "link",
+                "rel": "apple-touch-icon",
+                "type": "image/png",
+                "sizes": "180x180",
+                "href": "https://www.mozilla.org/media/img/favicons/mozilla/apple-touch-icon.8cbe9c835c00.png"
+            },
+            {
+                "tagName": "link",
+                "rel": "icon",
+                "type": "image/png",
+                "sizes": "196x196",
+                "href": "https://www.mozilla.org/media/img/favicons/mozilla/favicon-196x196.2af054fea211.png"
+            },
+            {
+                "tagName": "link",
+                "rel": "shortcut icon",
+                "href": "https://www.mozilla.org/media/img/favicons/mozilla/favicon.d25d81d39065.ico"
+            },
+            {
+                "tagName": "link",
+                "rel": "canonical",
+                "href": "https://www.mozilla.org/en-US/"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "x-default",
+                "href": "https://www.mozilla.org/"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "an",
+                "href": "https://www.mozilla.org/an/",
+                "title": "aragonés"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ar",
+                "href": "https://www.mozilla.org/ar/",
+                "title": "عربي"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "az",
+                "href": "https://www.mozilla.org/az/",
+                "title": "Azərbaycanca"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "be",
+                "href": "https://www.mozilla.org/be/",
+                "title": "Беларуская"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "bg",
+                "href": "https://www.mozilla.org/bg/",
+                "title": "Български"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "bs",
+                "href": "https://www.mozilla.org/bs/",
+                "title": "Bosanski"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ca",
+                "href": "https://www.mozilla.org/ca/",
+                "title": "Català"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "cs",
+                "href": "https://www.mozilla.org/cs/",
+                "title": "Čeština"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "cy",
+                "href": "https://www.mozilla.org/cy/",
+                "title": "Cymraeg"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "da",
+                "href": "https://www.mozilla.org/da/",
+                "title": "Dansk"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "de",
+                "href": "https://www.mozilla.org/de/",
+                "title": "Deutsch"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "el",
+                "href": "https://www.mozilla.org/el/",
+                "title": "Ελληνικά"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "en-CA",
+                "href": "https://www.mozilla.org/en-CA/",
+                "title": "English (Canadian)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "en-GB",
+                "href": "https://www.mozilla.org/en-GB/",
+                "title": "English (British)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "en",
+                "href": "https://www.mozilla.org/en-US/",
+                "title": "English"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "en-US",
+                "href": "https://www.mozilla.org/en-US/",
+                "title": "English (USA)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "eo",
+                "href": "https://www.mozilla.org/eo/",
+                "title": "Esperanto"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "es-AR",
+                "href": "https://www.mozilla.org/es-AR/",
+                "title": "Español (de Argentina)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "es-CL",
+                "href": "https://www.mozilla.org/es-CL/",
+                "title": "Español (de Chile)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "es",
+                "href": "https://www.mozilla.org/es-ES/",
+                "title": "Español"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "es-ES",
+                "href": "https://www.mozilla.org/es-ES/",
+                "title": "Español (de España)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "es-MX",
+                "href": "https://www.mozilla.org/es-MX/",
+                "title": "Español (de México)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "et",
+                "href": "https://www.mozilla.org/et/",
+                "title": "Eesti keel"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "eu",
+                "href": "https://www.mozilla.org/eu/",
+                "title": "Euskara"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "fa",
+                "href": "https://www.mozilla.org/fa/",
+                "title": "فارسی"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "fi",
+                "href": "https://www.mozilla.org/fi/",
+                "title": "suomi"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "fr",
+                "href": "https://www.mozilla.org/fr/",
+                "title": "Français"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "fy",
+                "href": "https://www.mozilla.org/fy-NL/",
+                "title": "Frysk"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "fy-NL",
+                "href": "https://www.mozilla.org/fy-NL/",
+                "title": "Frysk"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "gl",
+                "href": "https://www.mozilla.org/gl/",
+                "title": "Galego"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "gn",
+                "href": "https://www.mozilla.org/gn/",
+                "title": "Avañe'ẽ"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "gu",
+                "href": "https://www.mozilla.org/gu-IN/",
+                "title": "ગુજરાતી"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "gu-IN",
+                "href": "https://www.mozilla.org/gu-IN/",
+                "title": "ગુજરાતી (ભારત)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "hi",
+                "href": "https://www.mozilla.org/hi-IN/",
+                "title": "हिन्दी"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "hi-IN",
+                "href": "https://www.mozilla.org/hi-IN/",
+                "title": "हिन्दी (भारत)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "hr",
+                "href": "https://www.mozilla.org/hr/",
+                "title": "Hrvatski"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "hu",
+                "href": "https://www.mozilla.org/hu/",
+                "title": "magyar"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "hy",
+                "href": "https://www.mozilla.org/hy-AM/",
+                "title": "Հայերեն"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "hy-AM",
+                "href": "https://www.mozilla.org/hy-AM/",
+                "title": "Հայերեն"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ia",
+                "href": "https://www.mozilla.org/ia/",
+                "title": "Interlingua"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "id",
+                "href": "https://www.mozilla.org/id/",
+                "title": "Bahasa Indonesia"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "it",
+                "href": "https://www.mozilla.org/it/",
+                "title": "Italiano"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ja",
+                "href": "https://www.mozilla.org/ja/",
+                "title": "日本語"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ka",
+                "href": "https://www.mozilla.org/ka/",
+                "title": "ქართული"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ko",
+                "href": "https://www.mozilla.org/ko/",
+                "title": "한국어"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "lt",
+                "href": "https://www.mozilla.org/lt/",
+                "title": "Lietuvių"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ml",
+                "href": "https://www.mozilla.org/ml/",
+                "title": "മലയാളം"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "mr",
+                "href": "https://www.mozilla.org/mr/",
+                "title": "मराठी"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ms",
+                "href": "https://www.mozilla.org/ms/",
+                "title": "Melayu"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "nb-NO",
+                "href": "https://www.mozilla.org/nb-NO/",
+                "title": "Norsk bokmål"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "nl",
+                "href": "https://www.mozilla.org/nl/",
+                "title": "Nederlands"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "nn-NO",
+                "href": "https://www.mozilla.org/nn-NO/",
+                "title": "Norsk nynorsk"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "pa",
+                "href": "https://www.mozilla.org/pa-IN/",
+                "title": "ਪੰਜਾਬੀ"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "pa-IN",
+                "href": "https://www.mozilla.org/pa-IN/",
+                "title": "ਪੰਜਾਬੀ (ਭਾਰਤ)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "pl",
+                "href": "https://www.mozilla.org/pl/",
+                "title": "Polski"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "pt-BR",
+                "href": "https://www.mozilla.org/pt-BR/",
+                "title": "Português (do Brasil)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "pt",
+                "href": "https://www.mozilla.org/pt-PT/",
+                "title": "Português"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "pt-PT",
+                "href": "https://www.mozilla.org/pt-PT/",
+                "title": "Português (Europeu)"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "rm",
+                "href": "https://www.mozilla.org/rm/",
+                "title": "rumantsch"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ro",
+                "href": "https://www.mozilla.org/ro/",
+                "title": "Română"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ru",
+                "href": "https://www.mozilla.org/ru/",
+                "title": "Русский"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "sk",
+                "href": "https://www.mozilla.org/sk/",
+                "title": "slovenčina"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "sl",
+                "href": "https://www.mozilla.org/sl/",
+                "title": "Slovenščina"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "sq",
+                "href": "https://www.mozilla.org/sq/",
+                "title": "Shqip"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "sr",
+                "href": "https://www.mozilla.org/sr/",
+                "title": "Српски"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "sv",
+                "href": "https://www.mozilla.org/sv-SE/",
+                "title": "Svenska"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "sv-SE",
+                "href": "https://www.mozilla.org/sv-SE/",
+                "title": "Svenska"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "ta",
+                "href": "https://www.mozilla.org/ta/",
+                "title": "தமிழ்"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "th",
+                "href": "https://www.mozilla.org/th/",
+                "title": "ไทย"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "tr",
+                "href": "https://www.mozilla.org/tr/",
+                "title": "Türkçe"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "uk",
+                "href": "https://www.mozilla.org/uk/",
+                "title": "Українська"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "vi",
+                "href": "https://www.mozilla.org/vi/",
+                "title": "Tiếng Việt"
+            },
+            {
+                "tagName": "link",
+                "rel": "alternate",
+                "hreflang": "zh-TW",
+                "href": "https://www.mozilla.org/zh-TW/",
+                "title": "正體中文 (繁體)"
+            },
+            {
+                "tagName": "link",
+                "href": "https://www.mozilla.org/media/css/BUNDLES/protocol-core.9e8fa6cef6bb.css",
+                "rel": "stylesheet",
+                "type": "text/css"
+            },
+            {
+                "tagName": "link",
+                "href": "https://www.mozilla.org/media/css/BUNDLES/home-en.cf482dd961c3.css",
+                "rel": "stylesheet",
+                "type": "text/css"
+            }
+        ],
+        "attribute_usage_count": {
+            "rel": 80,
+            "type": 4,
+            "sizes": 2,
+            "href": 80,
+            "hreflang": 74,
+            "title": 73
+        }
+    },
+    "priority-hints": {
+        "total": 0,
+        "nodes": [],
+        "attribute_usage_count": {}
+    },
+    "meta-nodes": {
+        "total": 22,
+        "nodes": [
+            {
+                "tagName": "meta",
+                "charset": "utf-8"
+            },
+            {
+                "tagName": "meta",
+                "name": "viewport",
+                "content": "width=device-width, initial-scale=1"
+            },
+            {
+                "tagName": "meta",
+                "name": "msvalidate.01",
+                "content": "B7B177115A634927D608514DA17B2574"
+            },
+            {
+                "tagName": "meta",
+                "name": "google-site-verification",
+                "content": "U9a6gH32vLIykvntaDToj-ytYhlZ1AfAgVEKstixQIE"
+            },
+            {
+                "tagName": "meta",
+                "name": "description",
+                "content": "\n Mozilla is the not-for-profit behind the lightning fast Firefox browser. We put people over profit to give everyone more power online.\n"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:type",
+                "content": "website"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:site_name",
+                "content": "Mozilla"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:locale",
+                "content": "en_US"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:url",
+                "content": "https://www.mozilla.org/en-US/"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:image",
+                "content": "https://www.mozilla.org/media/img/mozorg/mozilla-256.4720741d4108.jpg"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:title",
+                "content": "Internet for people, not profit"
+            },
+            {
+                "tagName": "meta",
+                "property": "og:description",
+                "content": "\n Mozilla is the not-for-profit behind the lightning fast Firefox browser. We put people over profit to give everyone more power online.\n"
+            },
+            {
+                "tagName": "meta",
+                "property": "fb:page_id",
+                "content": "262134952380"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:card",
+                "content": "summary"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:site",
+                "content": "@mozilla"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:domain",
+                "content": "mozilla.org"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:app:name:googleplay",
+                "content": "Firefox"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:app:id:googleplay",
+                "content": "org.mozilla.firefox"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:app:name:iphone",
+                "content": "Firefox"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:app:id:iphone",
+                "content": "989804926"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:app:name:ipad",
+                "content": "Firefox"
+            },
+            {
+                "tagName": "meta",
+                "name": "twitter:app:id:ipad",
+                "content": "989804926"
+            }
+        ],
+        "attribute_usage_count": {
+            "charset": 1,
+            "name": 13,
+            "content": 21,
+            "property": 8
+        }
+    },
+    "10.5": [
+        "brand",
+        "Product",
+        "NGO",
+        "schema.org/Organization"
+    ],
+    "seo-anchor-elements": {
+        "internal": 66,
+        "external": 112,
+        "hash": 0,
+        "navigateHash": 0,
+        "earlyHash": 0
+    },
+    "seo-titles": {
+        "titleWords": 242,
+        "titleElements": 55
+    },
+    "seo-words": {
+        "wordsCount": 1213,
+        "wordElements": 137
+    },
+    "input_elements": {
+        "total": 9,
+        "nodes": [
+            {
+                "tagName": "input",
+                "type": "hidden",
+                "name": "newsletters",
+                "id": "id_newsletters"
+            },
+            {
+                "tagName": "input",
+                "type": "hidden",
+                "name": "source_url"
+            },
+            {
+                "tagName": "input",
+                "type": "email",
+                "name": "email",
+                "required": "",
+                "placeholder": "yourname@example.com",
+                "id": "id_email"
+            },
+            {
+                "tagName": "select",
+                "name": "country",
+                "required": "required",
+                "aria-required": "true",
+                "id": "id_country"
+            },
+            {
+                "tagName": "select",
+                "name": "lang",
+                "required": "required",
+                "aria-required": "true",
+                "id": "id_lang"
+            },
+            {
+                "tagName": "input",
+                "type": "radio",
+                "id": "format-html",
+                "name": "fmt"
+            },
+            {
+                "tagName": "input",
+                "type": "radio",
+                "id": "format-text",
+                "name": "fmt"
+            },
+            {
+                "tagName": "input",
+                "type": "checkbox",
+                "id": "privacy",
+                "name": "privacy",
+                "required": "",
+                "aria-required": "true"
+            },
+            {
+                "tagName": "select",
+                "id": "page-language-select",
+                "name": "lang"
+            }
+        ],
+        "attribute_usage_count": {
+            "type": 6,
+            "name": 9,
+            "value": 4,
+            "id": 8,
+            "required": 4,
+            "placeholder": 1,
+            "class": 2,
+            "aria-required": 3,
+            "checked": 1,
+            "dir": 1,
+            "data-previous-language": 1
+        }
+    },
+    "06.47": 0,
+    "08.39": {
+        "link": 0,
+        "script": 0
+    },
+    "09.27": {
+        "total": 0,
+        "nodes": [],
+        "attribute_usage_count": {}
+    },
+    "icon_only_clickables": 0,
+    "inline_svg_stats": {
+        "total": 14,
+        "content_lengths": [
+            315,
+            460,
+            322,
+            378,
+            404,
+            381,
+            884,
+            637,
+            525,
+            980,
+            537,
+            787,
+            647,
+            1710
+        ],
+        "attribute_usage_count": {
+            "class": 14,
+            "xmlns": 14,
+            "width": 14,
+            "height": 14,
+            "viewbox": 1
+        }
+    },
+    "images": {
+        "pictures": {
+            "total": 0,
+            "nodes": [],
+            "attribute_usage_count": {}
+        },
+        "imgs": {
+            "total": 37,
+            "nodes": [
+                {
+                    "tagName": "img",
+                    "loading": "lazy"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img",
+                    "loading": "lazy"
+                },
+                {
+                    "tagName": "img",
+                    "loading": "lazy"
+                },
+                {
+                    "tagName": "img",
+                    "loading": "lazy"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                },
+                {
+                    "tagName": "img"
+                }
+            ],
+            "attribute_usage_count": {
+                "src": 37,
+                "class": 37,
+                "width": 7,
+                "height": 7,
+                "alt": 36,
+                "loading": 4,
+                "data-src": 25,
+                "data-srcset": 19,
+                "srcset": 7
+            }
+        },
+        "sources": {
+            "total": 0,
+            "nodes": [],
+            "attribute_usage_count": {}
+        },
+        "total_with_srcset": 7,
+        "total_with_sizes": 0,
+        "total_pictures_with_img": 0,
+        "sizes_values": [],
+        "loading_values": [
+            "lazy",
+            "lazy",
+            "lazy",
+            "lazy"
+        ],
+        "alt_lengths": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -1
+        ]
+    },
+    "videos": {
+        "total": 0,
+        "nodes": [],
+        "attribute_usage_count": {},
+        "tracks": {
+            "total": 0,
+            "nodes": [],
+            "attribute_usage_count": {}
+        }
+    },
+    "scripts": {
+        "total": 9,
+        "nodes": [
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "async": "",
+                "src": "https://www.google-analytics.com/plugins/ua/linkid.js"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "async": "",
+                "src": "https://www.google-analytics.com/analytics.js"
+            },
+            {
+                "tagName": "script",
+                "async": "",
+                "src": "//www.googletagmanager.com/gtm.js?id=GTM-MW3R8V&l=dataLayer"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://www.mozilla.org/media/js/BUNDLES/site.133e404d326d.js",
+                "charset": "utf-8"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://www.mozilla.org/media/js/BUNDLES/gtm-snippet.9f9cf2026c5f.js",
+                "charset": "utf-8"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://www.mozilla.org/media/js/BUNDLES/common-protocol.bb46e61dff6e.js",
+                "charset": "utf-8"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://www.mozilla.org/media/js/BUNDLES/stub-attribution.1e21cafa6bb0.js",
+                "charset": "utf-8"
+            },
+            {
+                "tagName": "script",
+                "type": "text/javascript",
+                "src": "https://www.mozilla.org/media/js/BUNDLES/home.1d5391702326.js",
+                "charset": "utf-8"
+            },
+            {
+                "tagName": "script",
+                "type": "application/ld+json"
+            }
+        ],
+        "attribute_usage_count": {
+            "type": 8,
+            "async": 3,
+            "src": 8,
+            "charset": 5
+        }
+    },
+    "nodes_using_role": {
+        "total": 4,
+        "usage_and_count": {
+            "heading": 4
+        }
+    },
+    "headings_order": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        2,
+        2,
+        5,
+        5,
+        5,
+        5
+    ],
+    "shortcuts_stats": {
+        "total_with_aria_shortcut": 0,
+        "total_with_accesskey": 0,
+        "aria_shortcut_values": [],
+        "accesskey_values": []
+    },
+    "attributes_used_on_elements": {
+        "class": 619,
+        "lang": 73,
+        "dir": 2,
+        "data-latest-firefox": 1,
+        "data-esr-versions": 1,
+        "data-gtm-container-id": 1,
+        "data-gtm-page-id": 1,
+        "data-stub-attribution-rate": 1,
+        "charset": 6,
+        "type": 25,
+        "async": 3,
+        "src": 45,
+        "name": 22,
+        "content": 21,
+        "property": 8,
+        "rel": 82,
+        "sizes": 2,
+        "href": 258,
+        "hreflang": 74,
+        "title": 73,
+        "id": 26,
+        "data-global-close": 1,
+        "data-global-next": 1,
+        "data-global-previous": 1,
+        "aria-controls": 9,
+        "data-link-name": 96,
+        "data-link-type": 156,
+        "aria-expanded": 5,
+        "role": 4,
+        "data-download-version": 60,
+        "data-download-os": 60,
+        "data-nosnippet": 8,
+        "data-direct-link": 16,
+        "data-display-name": 20,
+        "data-download-location": 20,
+        "data-action": 1,
+        "data-cta-text": 2,
+        "data-cta-type": 2,
+        "data-cta-position": 1,
+        "data-alt-href": 1,
+        "data-mozillaonline-link": 1,
+        "data-mozillaonline-action": 1,
+        "aria-haspopup": 4,
+        "data-link-position": 48,
+        "data-link-group": 71,
+        "width": 22,
+        "height": 22,
+        "alt": 36,
+        "loading": 4,
+        "xmlns": 14,
+        "viewBox": 1,
+        "fill": 14,
+        "fill-rule": 14,
+        "stroke": 1,
+        "transform": 1,
+        "stroke-width": 2,
+        "rx": 1,
+        "d": 15,
+        "data-src": 25,
+        "data-srcset": 19,
+        "srcset": 7,
+        "data-card-tag": 23,
+        "data-id": 3,
+        "action": 2,
+        "method": 2,
+        "value": 354,
+        "for": 5,
+        "required": 4,
+        "placeholder": 1,
+        "aria-required": 3,
+        "selected": 3,
+        "checked": 1,
+        "data-previous-language": 1
+    },
+    "body_node": {
+        "tagName": "body",
+        "id": "home",
+        "class": "html-ltr "
+    },
+    "html_node": {
+        "tagName": "html",
+        "class": "linux x86 js x64 is-modern-browser mzp-has-sticky-navigation loaded",
+        "lang": "en",
+        "dir": "ltr",
+        "data-latest-firefox": "79.0",
+        "data-esr-versions": "68.11.0 78.1.0",
+        "data-gtm-container-id": "GTM-MW3R8V",
+        "data-gtm-page-id": "Homepage",
+        "data-stub-attribution-rate": "1.0"
+    },
+    "document_title": {
+        "value": "Internet for people, not profit — Mozilla",
+        "length": 41
+    },
+    "length_of_h1s": [
+        31
+    ]
+}

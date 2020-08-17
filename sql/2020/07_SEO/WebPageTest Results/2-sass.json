@@ -1,0 +1,10 @@
+{
+    "stylesheets": {
+        "remote": 8,
+        "inline": 5
+    },
+    "sourcemaps": {
+        "count": 0,
+        "ext": {}
+    }
+}

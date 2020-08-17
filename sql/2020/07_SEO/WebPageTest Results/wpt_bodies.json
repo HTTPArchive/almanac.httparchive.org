@@ -1,0 +1,784 @@
+{
+    "anchors": {
+        "rendered": {
+            "crawlable": {
+                "follow": 178,
+                "nofollow": 0
+            },
+            "hash_link": 3,
+            "hash_only_link": 0,
+            "javascript_void_links": 0,
+            "same_page": {
+                "total": 3,
+                "jumpto": {
+                    "total": 0,
+                    "early": 0,
+                    "other": 0,
+                    "using_id": 0,
+                    "using_name": 0
+                },
+                "dynamic": {
+                    "total": 0,
+                    "onclick_attributes": {
+                        "total": 0,
+                        "window_location": 0,
+                        "window_open": 0,
+                        "unknown_action": 0
+                    },
+                    "href_javascript": 0,
+                    "hash_link": 0
+                },
+                "other": {
+                    "total": 3,
+                    "hash_link": 0
+                }
+            },
+            "same_site": 63,
+            "same_property": 0,
+            "other_property": 112,
+            "rel_attributes": {
+                "dofollow": 0,
+                "follow": 0,
+                "nofollow": 0,
+                "ugc": 0,
+                "sponsored": 0,
+                "noopener": 1,
+                "noreferrer": 0
+            },
+            "image_links": 0,
+            "invisible_links": 0,
+            "text_links": 178,
+            "target_blank": {
+                "total": 0,
+                "noopener_noreferrer": 0,
+                "noopener": 0,
+                "noreferrer": 0,
+                "neither": 0
+            },
+            "targets": {},
+            "protocols": {
+                "https": 178
+            }
+        },
+        "raw": {
+            "crawlable": {
+                "follow": 178,
+                "nofollow": 0
+            },
+            "hash_link": 3,
+            "hash_only_link": 0,
+            "javascript_void_links": 0,
+            "same_page": {
+                "total": 3,
+                "jumpto": {
+                    "total": 0,
+                    "early": 0,
+                    "other": 0,
+                    "using_id": 0,
+                    "using_name": 0
+                },
+                "dynamic": {
+                    "total": 0,
+                    "onclick_attributes": {
+                        "total": 0,
+                        "window_location": 0,
+                        "window_open": 0,
+                        "unknown_action": 0
+                    },
+                    "href_javascript": 0,
+                    "hash_link": 0
+                },
+                "other": {
+                    "total": 3,
+                    "hash_link": 0
+                }
+            },
+            "same_site": 63,
+            "same_property": 0,
+            "other_property": 112,
+            "rel_attributes": {
+                "dofollow": 0,
+                "follow": 0,
+                "nofollow": 0,
+                "ugc": 0,
+                "sponsored": 0,
+                "noopener": 1,
+                "noreferrer": 0
+            },
+            "image_links": 0,
+            "invisible_links": 0,
+            "text_links": 178,
+            "target_blank": {
+                "total": 0,
+                "noopener_noreferrer": 0,
+                "noopener": 0,
+                "noreferrer": 0,
+                "neither": 0
+            },
+            "targets": {},
+            "protocols": {
+                "https": 178
+            }
+        }
+    },
+    "title": {
+        "rendered": {
+            "primary": {
+                "characters": 45,
+                "words": 7,
+                "text": "Internet for people, not profit\n — Mozilla"
+            },
+            "total": 1
+        },
+        "raw": {
+            "primary": {
+                "characters": 45,
+                "words": 7,
+                "text": "Internet for people, not profit\n — Mozilla"
+            },
+            "total": 1
+        },
+        "title_changed_on_render": false
+    },
+    "meta_description": {
+        "rendered": {
+            "all": {
+                "text": "Mozilla is the not-for-profit behind the lightning fast Firefox browser. We put people over profit to give everyone more power online.",
+                "words": 21,
+                "characters": 138
+            },
+            "primary": {
+                "characters": 138,
+                "words": 21,
+                "text": "\n Mozilla is the not-for-profit behind the lightning fast Firefox browser. We put people over profit to give everyone more power online.\n"
+            },
+            "total": 1
+        },
+        "raw": {
+            "all": {
+                "text": "Mozilla is the not-for-profit behind the lightning fast Firefox browser. We put people over profit to give everyone more power online.",
+                "words": 21,
+                "characters": 138
+            },
+            "primary": {
+                "characters": 138,
+                "words": 21,
+                "text": "\n Mozilla is the not-for-profit behind the lightning fast Firefox browser. We put people over profit to give everyone more power online.\n"
+            },
+            "total": 1
+        }
+    },
+    "hreflangs": {
+        "http_header": {
+            "values": []
+        },
+        "rendered": {
+            "values": [
+                "x-default",
+                "an",
+                "ar",
+                "az",
+                "be",
+                "bg",
+                "bs",
+                "ca",
+                "cs",
+                "cy",
+                "da",
+                "de",
+                "el",
+                "en-CA",
+                "en-GB",
+                "en",
+                "en-US",
+                "eo",
+                "es-AR",
+                "es-CL",
+                "es",
+                "es-ES",
+                "es-MX",
+                "et",
+                "eu",
+                "fa",
+                "fi",
+                "fr",
+                "fy",
+                "fy-NL",
+                "gl",
+                "gn",
+                "gu",
+                "gu-IN",
+                "hi",
+                "hi-IN",
+                "hr",
+                "hu",
+                "hy",
+                "hy-AM",
+                "ia",
+                "id",
+                "it",
+                "ja",
+                "ka",
+                "ko",
+                "lt",
+                "ml",
+                "mr",
+                "ms",
+                "nb-NO",
+                "nl",
+                "nn-NO",
+                "pa",
+                "pa-IN",
+                "pl",
+                "pt-BR",
+                "pt",
+                "pt-PT",
+                "rm",
+                "ro",
+                "ru",
+                "sk",
+                "sl",
+                "sq",
+                "sr",
+                "sv",
+                "sv-SE",
+                "ta",
+                "th",
+                "tr",
+                "uk",
+                "vi",
+                "zh-TW"
+            ]
+        },
+        "raw": {
+            "values": [
+                "x-default",
+                "an",
+                "ar",
+                "az",
+                "be",
+                "bg",
+                "bs",
+                "ca",
+                "cs",
+                "cy",
+                "da",
+                "de",
+                "el",
+                "en-CA",
+                "en-GB",
+                "en",
+                "en-US",
+                "eo",
+                "es-AR",
+                "es-CL",
+                "es",
+                "es-ES",
+                "es-MX",
+                "et",
+                "eu",
+                "fa",
+                "fi",
+                "fr",
+                "fy",
+                "fy-NL",
+                "gl",
+                "gn",
+                "gu",
+                "gu-IN",
+                "hi",
+                "hi-IN",
+                "hr",
+                "hu",
+                "hy",
+                "hy-AM",
+                "ia",
+                "id",
+                "it",
+                "ja",
+                "ka",
+                "ko",
+                "lt",
+                "ml",
+                "mr",
+                "ms",
+                "nb-NO",
+                "nl",
+                "nn-NO",
+                "pa",
+                "pa-IN",
+                "pl",
+                "pt-BR",
+                "pt",
+                "pt-PT",
+                "rm",
+                "ro",
+                "ru",
+                "sk",
+                "sl",
+                "sq",
+                "sr",
+                "sv",
+                "sv-SE",
+                "ta",
+                "th",
+                "tr",
+                "uk",
+                "vi",
+                "zh-TW"
+            ]
+        }
+    },
+    "headings": {
+        "rendered": {
+            "first_non_empty_heading_hidden": false,
+            "primary": {
+                "words": 5,
+                "characters": 31,
+                "matches_title": false,
+                "text": "Internet for people, not profit",
+                "level": 1
+            },
+            "h1": {
+                "total": 1,
+                "non_empty_total": 1,
+                "characters": 31,
+                "words": 5
+            },
+            "h2": {
+                "total": 33,
+                "non_empty_total": 33,
+                "characters": 1141,
+                "words": 187
+            },
+            "h3": {
+                "total": 3,
+                "non_empty_total": 3,
+                "characters": 39,
+                "words": 7
+            },
+            "h4": {
+                "total": 18,
+                "non_empty_total": 18,
+                "characters": 286,
+                "words": 43
+            },
+            "h5": {
+                "total": 4,
+                "non_empty_total": 4,
+                "characters": 38,
+                "words": 5
+            },
+            "h6": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h7": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h8": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            }
+        },
+        "raw": {
+            "first_non_empty_heading_hidden": false,
+            "primary": {
+                "words": 5,
+                "characters": 31,
+                "matches_title": false,
+                "text": "Internet for people, not profit",
+                "level": 1
+            },
+            "h1": {
+                "total": 1,
+                "non_empty_total": 1,
+                "characters": 31,
+                "words": 5
+            },
+            "h2": {
+                "total": 33,
+                "non_empty_total": 33,
+                "characters": 1141,
+                "words": 187
+            },
+            "h3": {
+                "total": 3,
+                "non_empty_total": 3,
+                "characters": 39,
+                "words": 7
+            },
+            "h4": {
+                "total": 18,
+                "non_empty_total": 18,
+                "characters": 286,
+                "words": 43
+            },
+            "h5": {
+                "total": 4,
+                "non_empty_total": 4,
+                "characters": 38,
+                "words": 5
+            },
+            "h6": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h7": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h8": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            }
+        }
+    },
+    "structured_data": {
+        "rendered": {
+            "jsonld_and_microdata_types": [
+                {
+                    "name": "schema.org/Organization",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 1,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/brand",
+                    "count": 2,
+                    "jsonld": 2,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 2,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Product",
+                    "count": 15,
+                    "jsonld": 15,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 15,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/-UnknownType-",
+                    "count": 15,
+                    "jsonld": 15,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 15,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Offer",
+                    "count": 15,
+                    "jsonld": 15,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 15,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/NGO",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 1,
+                    "www": 0
+                }
+            ],
+            "jsonldIds": 19,
+            "jsonldReferencedIds": 16,
+            "microdataIds": 0,
+            "microdataReferencedIds": 0,
+            "jsonlsMicrodataCommonIds": 0,
+            "logo": true,
+            "sitelinks_search_box": false,
+            "same_as_values": [
+                "https://www.wikidata.org/wiki/Q169925",
+                "https://twitter.com/mozilla",
+                "https://www.facebook.com/mozilla",
+                "https://github.com/mozilla",
+                "https://www.instagram.com/mozilla/",
+                "https://www.youtube.com/user/Mozilla",
+                "https://en.wikipedia.org/wiki/Mozilla_Corporation",
+                "https://www.linkedin.com/company/mozilla-corporation",
+                "https://en.wikipedia.org/wiki/Mozilla",
+                "https://www.wikidata.org/wiki/Q9661",
+                "https://twitter.com/firefox",
+                "https://www.instagram.com/firefox/",
+                "https://www.youtube.com/firefox",
+                "https://www.wikidata.org/wiki/Q550315",
+                "https://en.wikipedia.org/wiki/Firefox_for_Android",
+                "https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=en",
+                "https://play.google.com/store/apps/details?id=org.mozilla.firefox_beta&hl=en",
+                "https://www.wikidata.org/wiki/Q698",
+                "https://en.wikipedia.org/wiki/Firefox",
+                "https://en.wikipedia.org/wiki/Firefox_Developer_Edition",
+                "https://www.youtube.com/watch?v=pnQUOFgj3oA",
+                "https://www.amazon.com/Mozilla-Firefox-for-Fire-TV/dp/B078B5YMPD",
+                "https://www.wikidata.org/wiki/Q20820972",
+                "https://en.wikipedia.org/wiki/Firefox_for_iOS",
+                "https://itunes.apple.com/us/app/firefox-private-safe-browser/id989804926",
+                "https://play.google.com/store/apps/details?id=org.mozilla.rocket&hl=en",
+                "https://en.wikipedia.org/wiki/Firefox_Lockwise",
+                "https://www.wikidata.org/wiki/Q64829394",
+                "https://play.google.com/store/apps/details?id=mozilla.lockbox&hl=en",
+                "https://itunes.apple.com/us/app/id1314000270?mt=8",
+                "https://www.wikidata.org/wiki/Q64828890",
+                "https://monitor.firefox.com",
+                "https://en.wikipedia.org/wiki/Firefox_Monitor",
+                "https://www.wikidata.org/wiki/Q56316099",
+                "https://en.wikipedia.org/wiki/Firefox_Nightly",
+                "https://play.google.com/store/apps/details?id=org.mozilla.fenix&hl=en",
+                "https://blog.nightly.mozilla.org/",
+                "https://twitter.com/FirefoxNightly",
+                "https://en.wikipedia.org/wiki/Firefox_Send",
+                "https://send.firefox.com",
+                "https://www.wikidata.org/wiki/Q62394165",
+                "https://play.google.com/store/apps/details?id=org.mozilla.firefoxsend&hl=en",
+                "https://www.wikidata.org/wiki/Q55672",
+                "https://foundation.mozilla.org/",
+                "https://en.wikipedia.org/wiki/Mozilla_Foundation"
+            ],
+            "items_by_format": {
+                "microformats2": 0,
+                "microdata": 0,
+                "jsonld": 49,
+                "rdfa": 0
+            },
+            "context_hostnames": [
+                "schema.org"
+            ],
+            "jsonld_scripts": {
+                "count": 1,
+                "errors": 0
+            },
+            "microformats2_types": []
+        },
+        "raw": {
+            "jsonld_and_microdata_types": [
+                {
+                    "name": "schema.org/Organization",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 1,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/brand",
+                    "count": 2,
+                    "jsonld": 2,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 2,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Product",
+                    "count": 15,
+                    "jsonld": 15,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 15,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/-UnknownType-",
+                    "count": 15,
+                    "jsonld": 15,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 15,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Offer",
+                    "count": 15,
+                    "jsonld": 15,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 15,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/NGO",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 1,
+                    "www": 0
+                }
+            ],
+            "jsonldIds": 19,
+            "jsonldReferencedIds": 16,
+            "microdataIds": 0,
+            "microdataReferencedIds": 0,
+            "jsonlsMicrodataCommonIds": 0,
+            "logo": true,
+            "sitelinks_search_box": false,
+            "same_as_values": [
+                "https://www.wikidata.org/wiki/Q169925",
+                "https://twitter.com/mozilla",
+                "https://www.facebook.com/mozilla",
+                "https://github.com/mozilla",
+                "https://www.instagram.com/mozilla/",
+                "https://www.youtube.com/user/Mozilla",
+                "https://en.wikipedia.org/wiki/Mozilla_Corporation",
+                "https://www.linkedin.com/company/mozilla-corporation",
+                "https://en.wikipedia.org/wiki/Mozilla",
+                "https://www.wikidata.org/wiki/Q9661",
+                "https://twitter.com/firefox",
+                "https://www.instagram.com/firefox/",
+                "https://www.youtube.com/firefox",
+                "https://www.wikidata.org/wiki/Q550315",
+                "https://en.wikipedia.org/wiki/Firefox_for_Android",
+                "https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=en",
+                "https://play.google.com/store/apps/details?id=org.mozilla.firefox_beta&hl=en",
+                "https://www.wikidata.org/wiki/Q698",
+                "https://en.wikipedia.org/wiki/Firefox",
+                "https://en.wikipedia.org/wiki/Firefox_Developer_Edition",
+                "https://www.youtube.com/watch?v=pnQUOFgj3oA",
+                "https://www.amazon.com/Mozilla-Firefox-for-Fire-TV/dp/B078B5YMPD",
+                "https://www.wikidata.org/wiki/Q20820972",
+                "https://en.wikipedia.org/wiki/Firefox_for_iOS",
+                "https://itunes.apple.com/us/app/firefox-private-safe-browser/id989804926",
+                "https://play.google.com/store/apps/details?id=org.mozilla.rocket&hl=en",
+                "https://en.wikipedia.org/wiki/Firefox_Lockwise",
+                "https://www.wikidata.org/wiki/Q64829394",
+                "https://play.google.com/store/apps/details?id=mozilla.lockbox&hl=en",
+                "https://itunes.apple.com/us/app/id1314000270?mt=8",
+                "https://www.wikidata.org/wiki/Q64828890",
+                "https://monitor.firefox.com",
+                "https://en.wikipedia.org/wiki/Firefox_Monitor",
+                "https://www.wikidata.org/wiki/Q56316099",
+                "https://en.wikipedia.org/wiki/Firefox_Nightly",
+                "https://play.google.com/store/apps/details?id=org.mozilla.fenix&hl=en",
+                "https://blog.nightly.mozilla.org/",
+                "https://twitter.com/FirefoxNightly",
+                "https://en.wikipedia.org/wiki/Firefox_Send",
+                "https://send.firefox.com",
+                "https://www.wikidata.org/wiki/Q62394165",
+                "https://play.google.com/store/apps/details?id=org.mozilla.firefoxsend&hl=en",
+                "https://www.wikidata.org/wiki/Q55672",
+                "https://foundation.mozilla.org/",
+                "https://en.wikipedia.org/wiki/Mozilla_Foundation"
+            ],
+            "items_by_format": {
+                "microformats2": 0,
+                "microdata": 0,
+                "jsonld": 49,
+                "rdfa": 0
+            },
+            "context_hostnames": [
+                "schema.org"
+            ],
+            "jsonld_scripts": {
+                "count": 1,
+                "errors": 0
+            },
+            "microformats2_types": []
+        }
+    },
+    "raw_html": {
+        "body": true,
+        "html": true,
+        "head": true,
+        "size": 164612,
+        "head_size": 12080,
+        "body_size": 152285,
+        "comment_count": 42,
+        "conditional_comment_count": 7
+    },
+    "canonicals": {
+        "rendered": {
+            "html_link_canoncials": [
+                "https://www.mozilla.org/en-US/"
+            ]
+        },
+        "raw": {
+            "html_link_canoncials": [
+                "https://www.mozilla.org/en-US/"
+            ]
+        },
+        "self_canonical": true,
+        "other_canonical": false,
+        "canonicals": [
+            "https://www.mozilla.org/en-US/"
+        ],
+        "url": "https://www.mozilla.org/en-US/",
+        "http_header_link_canoncials": [],
+        "canonical_missmatch": false
+    },
+    "robots": {
+        "has_robots_meta_tag": false,
+        "has_x_robots_tag": false,
+        "rendered": {
+            "otherbot": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": false,
+                "via_x_robots_tag": false
+            },
+            "googlebot": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": false,
+                "via_x_robots_tag": false
+            },
+            "googlebot_news": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": false,
+                "via_x_robots_tag": false
+            },
+            "google": {}
+        },
+        "raw": {
+            "otherbot": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": false,
+                "via_x_robots_tag": false
+            },
+            "googlebot": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": false,
+                "via_x_robots_tag": false
+            },
+            "googlebot_news": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": false,
+                "via_x_robots_tag": false
+            },
+            "google": {}
+        }
+    },
+    "visible_words": {
+        "rendered": 803,
+        "raw": 803
+    }
+}

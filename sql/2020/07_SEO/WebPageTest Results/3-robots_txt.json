@@ -1,0 +1,12 @@
+{
+    "redirected": false,
+    "status": 200,
+    "size": 67,
+    "comment_lines": 0,
+    "allow_lines": 1,
+    "disallow_lines": 1,
+    "user_agents": [
+        "*"
+    ],
+    "sitemaps": []
+}

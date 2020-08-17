@@ -1,0 +1,435 @@
+{
+    "01.12": 0,
+    "01.13": 0,
+    "link-nodes": [
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/s3.feedly.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/www.googletagmanager.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/cse.google.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/apis.google.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/fonts.gstatic.com",
+            "crossorigin": ""
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/fonts.googleapis.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/www.google.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/accounts.google.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/www.google-analytics.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "preconnect",
+            "href": "https:\/\/www.googleadservices.com\/"
+        },
+        {
+            "tagName": "link",
+            "rel": "canonical",
+            "href": "https:\/\/websiteadvantage.com.au\/Javascript-Schema-And-Rich-Snippets"
+        },
+        {
+            "tagName": "link",
+            "rel": "shortcut icon",
+            "href": "Media\/good-seo.ico"
+        },
+        {
+            "tagName": "link",
+            "rel": "image_src",
+            "title": "Javascript Schema & Rich Snippets Test",
+            "href": "https:\/\/websiteadvantage.com.au\/Media\/Javascript-Schema-And-Rich-Snippets.png"
+        },
+        {
+            "tagName": "link",
+            "rel": "apple-touch-icon",
+            "href": "Media\/Web-Site-Advantage-57.png"
+        },
+        {
+            "tagName": "link",
+            "rel": "alternate",
+            "type": "application\/rss+xml",
+            "title": "Web Site Advantage - Summary RSS",
+            "href": "https:\/\/websiteadvantage.com.au\/Rss.xml"
+        },
+        {
+            "tagName": "link",
+            "rel": "alternate",
+            "type": "application\/rss+xml",
+            "title": "Web Site Advantage - Full RSS",
+            "href": "https:\/\/websiteadvantage.com.au\/Rss-Full.xml"
+        },
+        {
+            "tagName": "link",
+            "rel": "preload",
+            "href": "Main.css?fingerprint=0454509424",
+            "as": "style"
+        },
+        {
+            "tagName": "link",
+            "rel": "stylesheet",
+            "type": "text\/css",
+            "href": "Main.css?fingerprint=0454509424"
+        },
+        {
+            "tagName": "link",
+            "rel": "preload",
+            "href": "Slidebars-0.9.4\/slidebars.min.css",
+            "as": "style"
+        },
+        {
+            "tagName": "link",
+            "rel": "preload",
+            "href": "jQuery\/3-5-1\/jquery.min.js",
+            "as": "script"
+        },
+        {
+            "tagName": "link",
+            "rel": "preload",
+            "href": "Slidebars-0.9.4\/slidebars.min.js",
+            "as": "script"
+        },
+        {
+            "tagName": "link",
+            "rel": "preload",
+            "href": "https:\/\/cse.google.com\/cse.js?cx=partner-pub-4877327089643254:0969941934",
+            "as": "script"
+        },
+        {
+            "tagName": "link",
+            "rel": "preload",
+            "href": "Media\/Web-Site-Advantage-64-tiny.png",
+            "as": "image"
+        },
+        {
+            "tagName": "link",
+            "rel": "stylesheet",
+            "href": "https:\/\/kit-pro.fontawesome.com\/releases\/latest\/css\/pro.min.css",
+            "media": "all"
+        },
+        {
+            "tagName": "link",
+            "rel": "section",
+            "title": "SEO Sandbox",
+            "href": "SEO-Sandbox"
+        },
+        {
+            "tagName": "link",
+            "type": "text\/css",
+            "rel": "stylesheet",
+            "href": "https:\/\/www.google.com\/cse\/static\/element\/57975621473fd078\/default_v2+en.css"
+        },
+        {
+            "tagName": "link",
+            "type": "text\/css",
+            "rel": "stylesheet",
+            "href": "https:\/\/www.google.com\/cse\/static\/style\/look\/v4\/default.css"
+        },
+        {
+            "tagName": "link",
+            "rel": "prefetch",
+            "as": "style",
+            "href": "https:\/\/c.disquscdn.com\/next\/embed\/styles\/lounge.4ccc2ba08c360cad557fd79f7fdaa34f.css"
+        },
+        {
+            "tagName": "link",
+            "rel": "prefetch",
+            "as": "script",
+            "href": "https:\/\/c.disquscdn.com\/next\/embed\/common.bundle.5439bce5811a3908f603eb4fa66869dd.js"
+        },
+        {
+            "tagName": "link",
+            "rel": "prefetch",
+            "as": "script",
+            "href": "https:\/\/c.disquscdn.com\/next\/embed\/lounge.bundle.29c410fc9375f4c2406b8150dc967c51.js"
+        },
+        {
+            "tagName": "link",
+            "rel": "prefetch",
+            "as": "script",
+            "href": "https:\/\/disqus.com\/next\/config.js"
+        }
+    ],
+    "priority-hints": [],
+    "meta-nodes": [
+        {
+            "tagName": "meta",
+            "http-equiv": "content-type",
+            "content": "text\/html; charset=utf-8"
+        },
+        {
+            "tagName": "meta",
+            "name": "viewport",
+            "content": "width=device-width, initial-scale=1.0, minimum-scale=1.0"
+        },
+        {
+            "tagName": "meta",
+            "name": "description",
+            "property": "og:description",
+            "content": "A quick test to see if Google can pick up Schema.org markup that is added by Javacript"
+        },
+        {
+            "tagName": "meta",
+            "itemprop": "description",
+            "content": "A quick test to see if Google can pick up Schema.org markup that is added by Javacript"
+        },
+        {
+            "tagName": "meta",
+            "name": "robots",
+            "content": "NOODP"
+        },
+        {
+            "tagName": "meta",
+            "name": "geo.region",
+            "content": "AU-SA"
+        },
+        {
+            "tagName": "meta",
+            "name": "geo.placename",
+            "content": "Adelaide, Australia"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:site_name",
+            "content": "Web Site Advantage"
+        },
+        {
+            "tagName": "meta",
+            "name": "title",
+            "property": "og:title",
+            "content": "Javascript Schema & Rich Snippets Test"
+        },
+        {
+            "tagName": "meta",
+            "itemprop": "name",
+            "content": "Javascript Schema & Rich Snippets Test"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:locale",
+            "content": "en_GB"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:url",
+            "content": "https:\/\/websiteadvantage.com.au\/Javascript-Schema-And-Rich-Snippets?og=true"
+        },
+        {
+            "tagName": "meta",
+            "itemprop": "url",
+            "content": "https:\/\/websiteadvantage.com.au\/Javascript-Schema-And-Rich-Snippets"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:image",
+            "content": "https:\/\/websiteadvantage.com.au\/Media\/Javascript-Schema-And-Rich-Snippets.png"
+        },
+        {
+            "tagName": "meta",
+            "itemprop": "image",
+            "content": "https:\/\/websiteadvantage.com.au\/Media\/Javascript-Schema-And-Rich-Snippets.png"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:locality",
+            "content": "Adelaide"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:region",
+            "content": "SA"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:postal-code",
+            "content": "5000"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:country-name",
+            "content": "Australia"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:email",
+            "content": "team@websiteadvantage.com.au"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:phone_number",
+            "content": "+61872001664"
+        },
+        {
+            "tagName": "meta",
+            "property": "og:type",
+            "content": "article"
+        },
+        {
+            "tagName": "meta",
+            "name": "twitter:card",
+            "content": "summary"
+        },
+        {
+            "tagName": "meta",
+            "name": "twitter:url",
+            "content": "https:\/\/websiteadvantage.com.au\/Javascript-Schema-And-Rich-Snippets?twitter=true"
+        },
+        {
+            "tagName": "meta",
+            "name": "twitter:title",
+            "content": "Javascript Schema & Rich Snippets Test"
+        },
+        {
+            "tagName": "meta",
+            "name": "twitter:description",
+            "content": "A quick test to see if Google can pick up Schema.org markup that is added by Javacript"
+        },
+        {
+            "tagName": "meta",
+            "name": "twitter:image:src",
+            "content": "https:\/\/websiteadvantage.com.au\/Media\/Javascript-Schema-And-Rich-Snippets.png"
+        },
+        {
+            "tagName": "meta",
+            "name": "twitter:site",
+            "content": "@TonyMcCreath"
+        },
+        {
+            "tagName": "meta",
+            "name": "twitter:creator",
+            "content": "@TonyMcCreath"
+        },
+        {
+            "tagName": "meta",
+            "property": "fb:admins",
+            "content": "694530152"
+        },
+        {
+            "tagName": "meta",
+            "property": "fb:app_id",
+            "content": "115194181848288"
+        }
+    ],
+    "10.5": [
+        "schema.org\/BreadcrumbList",
+        "schema.org\/ListItem",
+        "schema.org\/Recipe"
+    ],
+    "seo-anchor-elements": {
+        "internal": 27,
+        "external": 7,
+        "hash": 0,
+        "navigateHash": 0,
+        "earlyHash": 0
+    },
+    "seo-titles": {
+        "titleWords": 20,
+        "titleElements": 6
+    },
+    "seo-words": {
+        "wordsCount": 740,
+        "wordElements": 52
+    },
+    "input-elements": [
+        {
+            "tagName": "input",
+            "autocomplete": "off",
+            "type": "text",
+            "size": "10",
+            "class": "gsc-input",
+            "name": "search",
+            "title": "search",
+            "id": "gsc-i-id1",
+            "dir": "ltr",
+            "spellcheck": "false",
+            "style": "width: 100%; padding: 0px; border: none; margin: 0px; height: auto; background: url(\\"https:\/\/www.google.com\/cse\/static\/images\/1x\/en\/branding.png\\") left center no-repeat rgb(255, 255, 255); outline: none;"
+        },
+        {
+            "tagName": "input",
+            "autocomplete": "off",
+            "type": "text",
+            "size": "10",
+            "class": "gsc-input",
+            "name": "search",
+            "title": "search",
+            "id": "gsc-i-id2",
+            "dir": "ltr",
+            "spellcheck": "false",
+            "style": "width: 100%; padding: 0px; border: none; margin: 0px; height: auto; background: url(\\"https:\/\/www.google.com\/cse\/static\/images\/1x\/en\/branding.png\\") left center no-repeat rgb(255, 255, 255); outline: none;"
+        }
+    ],
+    "06.47": 0,
+    "08.39": {
+        "link": 0,
+        "script": 0
+    },
+    "09.27": [
+        {
+            "tagName": "iframe",
+            "id": "dsq-app3837",
+            "name": "dsq-app3837",
+            "allowtransparency": "true",
+            "frameborder": "0",
+            "scrolling": "no",
+            "tabindex": "0",
+            "title": "Disqus",
+            "width": "100%",
+            "src": "https:\/\/disqus.com\/embed\/comments\/?base=default&f=websiteadvantage&t_i=javascript-schema-and-rich-snippets&t_u=https%3A%2F%2Fwebsiteadvantage.com.au%2FJavascript-Schema-And-Rich-Snippets&t_d=Javascript%20Schema%20%26%20Rich%20Snippets%20Test&t_t=Javascript%20Schema%20%26%20Rich%20Snippets%20Test&s_o=default#version=2a2b01bebe0877f53b5f97441603b638",
+            "horizontalscrolling": "no",
+            "verticalscrolling": "no",
+            "style": "height: 506px !important;"
+        },
+        {
+            "tagName": "iframe",
+            "id": "indicator-north",
+            "name": "indicator-north",
+            "allowtransparency": "true",
+            "frameborder": "0",
+            "scrolling": "no",
+            "tabindex": "0",
+            "title": "Disqus",
+            "style": "width: 960px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 960px !important; max-width: 960px !important; position: fixed !important; z-index: 2147483646 !important; height: 0px !important; min-height: 0px !important; max-height: 0px !important; display: none !important;"
+        },
+        {
+            "tagName": "iframe",
+            "id": "indicator-south",
+            "name": "indicator-south",
+            "allowtransparency": "true",
+            "frameborder": "0",
+            "scrolling": "no",
+            "tabindex": "0",
+            "title": "Disqus",
+            "style": "width: 960px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 960px !important; max-width: 960px !important; position: fixed !important; z-index: 2147483646 !important; height: 0px !important; min-height: 0px !important; max-height: 0px !important; display: none !important;"
+        }
+    ],
+    "12.11": 2
+}
