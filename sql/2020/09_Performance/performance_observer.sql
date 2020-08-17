@@ -13,7 +13,7 @@ FROM (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    date = "2019-07-01"
+    date = "2019-08-01"
     AND type = "script"
   GROUP BY
     client,

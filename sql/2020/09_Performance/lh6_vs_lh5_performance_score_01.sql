@@ -15,7 +15,7 @@ FROM
     SELECT lh6.url AS url,
       CAST(JSON_EXTRACT(lh6.report, '$.categories.performance.score') AS NUMERIC) AS perf_score_lh6,
       CAST(JSON_EXTRACT(lh5.report, '$.categories.performance.score') AS NUMERIC) AS perf_score_lh5,
-      FROM `httparchive.sample_data.lighthouse_mobile_10k` lh6
-      JOIN `httparchive.scratchspace.2020_03_01_lighthouse_mobile_10k` lh5 ON lh5.url=lh6.url
+      FROM `httparchive.lighthouse.2020_08_01_mobile` lh6
+      JOIN `httparchive.lighthouse.2020_05_01_mobile` lh5 ON lh5.url=lh6.url
   )
 )
