@@ -37,7 +37,7 @@ last_updated: 2020-03-01T00:00:00.000Z
   - 4G
 - 用户地理位置
 
-用户体验按月量度，包括绘制、加载和交互性指标。我们要看的第一个度量是[首次有内容的绘制](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP)。这个指标是用户等待在屏幕上显示出有用处的页面内容（例如图像或文本）所花费的时间。然后，我们来看一下加载指标[首包时间](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte) (TTFB)。这是网页从用户导航到接收到响应的第一个字节所花费的时间的指标。最后，我们要看的最后一个真实用户指标是[首次输入延迟](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID)。这是一个相对较新的度量标准，它表示的是用户体验的部分，而不是加载性能。它测量从用户第一次与页面UI交互到浏览器主线程准备好处理事件的时间。
+用户体验按月量度，包括绘制、加载和交互性指标。我们要看的第一个度量是[首次有内容的绘制](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint) (FCP)。这个指标是用户等待在屏幕上显示出有用处的页面内容（例如图像或文本）所花费的时间。然后，我们来看一下加载指标[首包时间](https://developer.mozilla.org/zh-CN/docs/Glossary/%E7%AC%AC%E4%B8%80%E5%AD%97%E8%8A%82%E6%97%B6%E9%97%B4) (TTFB)。这是网页从用户导航到接收到响应的第一个字节所花费的时间的指标。最后，我们要看的最后一个真实用户指标是[首次输入延迟](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID)。这是一个相对较新的度量标准，它表示的是用户体验的部分，而不是加载性能。它测量从用户第一次与页面UI交互到浏览器主线程准备好处理事件的时间。
 
 因此，让我们深入研究看看可以找到哪些见解。
 
