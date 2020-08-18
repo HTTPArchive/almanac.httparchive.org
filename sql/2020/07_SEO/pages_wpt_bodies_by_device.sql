@@ -228,44 +228,44 @@ SELECT
 
   ##Antoine
   # meta title inclusion
-  # COUNTIF(wpt_bodies_info.n_titles < 0) AS freq_has_meta_title,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_titles < 0), COUNT(0)) AS pct_has_meta_title,
+  # COUNTIF(wpt_bodies_info.n_titles > 0) AS freq_has_meta_title,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_titles > 0), COUNT(0)) AS pct_has_meta_title,
 
   # meta description inclusion
-  # COUNTIF(wpt_bodies_info.n_meta_descriptions < 0) AS freq_has_meta_description,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_meta_descriptions < 0), COUNT(0)) AS pct_has_meta_description,
+  # COUNTIF(wpt_bodies_info.n_meta_descriptions > 0) AS freq_has_meta_description,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_meta_descriptions > 0), COUNT(0)) AS pct_has_meta_description,
 
   # H1 inclusion
-  # COUNTIF(wpt_bodies_info.n_h1 < 0) AS freq_has_h1,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h1 < 0), COUNT(0)) AS pct_has_h1,
+  # COUNTIF(wpt_bodies_info.n_h1 > 0) AS freq_has_h1,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h1 > 0), COUNT(0)) AS pct_has_h1,
 
   # H2 inclusion
-  # COUNTIF(wpt_bodies_info.n_h2 < 0) AS freq_has_h2,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h2 < 0), COUNT(0)) AS pct_has_h2,
+  # COUNTIF(wpt_bodies_info.n_h2 > 0) AS freq_has_h2,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h2 > 0), COUNT(0)) AS pct_has_h2,
 
   # H3 inclusion
-  # COUNTIF(wpt_bodies_info.n_h3 < 0) AS freq_has_h3,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h3 < 0), COUNT(0)) AS pct_has_h3,
+  # COUNTIF(wpt_bodies_info.n_h3 > 0) AS freq_has_h3,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h3 > 0), COUNT(0)) AS pct_has_h3,
 
   # H4 inclusion
-  # COUNTIF(wpt_bodies_info.n_h4 < 0) AS freq_has_h4,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h4 < 0), COUNT(0)) AS pct_has_h4,
+  # COUNTIF(wpt_bodies_info.n_h4 > 0) AS freq_has_h4,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_h4 > 0), COUNT(0)) AS pct_has_h4,
 
   # Non-empty H1 inclusion
-  # COUNTIF(wpt_bodies_info.n_non_empty_h1 < 0) AS freq_has_non_empty_h1,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h1 < 0), COUNT(0)) AS pct_has_non_empty_h1,
+  # COUNTIF(wpt_bodies_info.n_non_empty_h1 > 0) AS freq_has_non_empty_h1,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h1 > 0), COUNT(0)) AS pct_has_non_empty_h1,
 
   # Non-empty H2 inclusion
-  # COUNTIF(wpt_bodies_info.n_non_empty_h2 < 0) AS freq_has_non_empty_h2,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h2 < 0), COUNT(0)) AS pct_has_non_empty_h2,
+  # COUNTIF(wpt_bodies_info.n_non_empty_h2 > 0) AS freq_has_non_empty_h2,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h2 > 0), COUNT(0)) AS pct_has_non_empty_h2,
 
   # Non-empty H3 inclusion
-  # COUNTIF(wpt_bodies_info.n_non_empty_h3 < 0) AS freq_has_non_empty_h3,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h3 < 0), COUNT(0)) AS pct_has_non_empty_h3,
+  # COUNTIF(wpt_bodies_info.n_non_empty_h3 > 0) AS freq_has_non_empty_h3,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h3 > 0), COUNT(0)) AS pct_has_non_empty_h3,
 
   # Non-empty H4 inclusion
-  # COUNTIF(wpt_bodies_info.n_non_empty_h4 < 0) AS freq_has_non_empty_h4,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h4 < 0), COUNT(0)) AS pct_has_non_empty_h4,
+  # COUNTIF(wpt_bodies_info.n_non_empty_h4 > 0) AS freq_has_non_empty_h4,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_non_empty_h4 > 0), COUNT(0)) AS pct_has_non_empty_h4,
 
   # Same title and H1
   # COUNTIF(wpt_bodies_info.has_same_h1_title ) AS freq_has_same_h1_title,
