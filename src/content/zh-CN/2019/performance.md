@@ -57,7 +57,6 @@ last_updated: 2020-03-01T00:00:00.000Z
 
 为了对网站是否足够**快速**进行分类，我们将使用新的[PageSpeed Insights](https://developers.google.com/speed/docs/insights/v5/about#categories) (PSI) 方法，其中至少有75％的网站FCP体验必须快于1秒。同样，一个足够**慢速**的网站具有25％或更多的FCP体验慢于3秒。我们说一个网站不符合以上两个条件时，它们的性能就是**中速**。
 
-
 <figure id="fig2">
   <a href="/static/images/2019/performance/fig2.png">
     <img src="/static/images/2019/performance/fig2.png" alt="图2.标有快速，中等或慢速FCP的网站的分布。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&amp;format=interactive">
