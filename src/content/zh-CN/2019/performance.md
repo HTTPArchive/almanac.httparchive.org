@@ -212,8 +212,7 @@ last_updated: 2020-03-01T00:00:00.000Z
   <a href="/static/images/2019/performance/fig14.png">
     <img src="/static/images/2019/performance/fig14.png" alt="图14.快速，中度和慢速FID性能'桌面'站点的分布" aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&amp;format=interactive">
   </a>
-  <div id="fig14-description" class="visually-hidden">1,000个桌面网站的快速，中速和慢速FID分布。对于最快的四分之三的网站，快速FID的分布非常缓慢地从100％降低到90％。之后，快速FID会略微降低到75％。几乎所有桌面网站都拥有超过75％的快速FID体验。
-</div>
+  <div id="fig14-description" class="visually-hidden">1,000个桌面网站的快速，中速和慢速FID分布。对于最快的四分之三的网站，快速FID的分布非常缓慢地从100％降低到90％。之后，快速FID会略微降低到75％。几乎所有桌面网站都拥有超过75％的快速FID体验。</div>
   <figcaption id="fig14-caption">图14.快速，中度和慢速FID性能<em>桌面</em>站点的分布</figcaption>
 </figure>
 
