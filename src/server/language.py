@@ -26,12 +26,14 @@ class _Language(object):
         return self._lang_code
 
 
-# Currently we are only supporting languages and not regions
+# Mostly we are region agnostic languages, but can add region where
+# there are significant differences (e.g. Chinese)
 class Language(object):
-    JA = _Language('日本語', 'ja', 'JP')
     EN = _Language('English', 'en', 'US')
     ES = _Language('Español', 'es', 'ES')
     FR = _Language('Français', 'fr', 'FR')
+    JA = _Language('日本語', 'ja', 'JP')
+    PT = _Language('Portuguese', 'pt', 'PT')
     ZH_CN = _Language('简体中文', 'zh-CN', 'CN')
 
 
