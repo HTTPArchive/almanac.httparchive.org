@@ -1,3 +1,7 @@
 .idea/
 .vscode/
 node_modules/
+templates/*/*/chapters/
+templates/*/*/ebook.html
+templates/sitemap.xml
+static/pdfs/
