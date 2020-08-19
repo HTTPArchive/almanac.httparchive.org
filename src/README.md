@@ -152,28 +152,21 @@ _Make sure you have generated the ebooks PDFs first in the main branch, by runni
 gcloud init
 ```
 
-3. Stage the changes locally:
-
-```
-git checkout production
-git status
-git pull
-git pull origin main
-git push
-```
-
-  - Check out the `production` branch
-  - Run `git status` to ensure you don't have any uncommitted changes locally
-  - Merge any remote changes (both origin/production and origin/main branches)
-  - Push the merge-commit back up to origin/production
-
-4. Browse the website locally as one final QA test, then deploy the changes live:
+3. Deploy the site:
 
 ```
 npm run deploy
 ```
 
-5. Browse the website in production to verify that the new changes have taken effect
+The deploy script will do the following:
+- Switch to the production branch
+- Merge changes from main
+- Do a clean install
+- Run the tests
+- Ask you to complete any local tests and confirm good to deploy
+- Ask you if good to push changes to production branch on GitHub
+
+4. Browse the website in production to verify that the new changes have taken effect
 
 ## Developing in Docker
 
