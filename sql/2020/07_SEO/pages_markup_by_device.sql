@@ -9,7 +9,14 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 # returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
 RETURNS STRUCT<
-  images_img_total INT64
+
+  ##Tony
+  images_img_total INT64, 
+
+  ##Antoine
+  has_html_amp_tag BOOL, 
+  has_rel_amphtml_tag BOOL
+
   # add more properties here...
 > LANGUAGE js AS '''
 var result = {};
@@ -33,6 +40,11 @@ try {
       }
     }
 
+    if (markup.amp) {
+      result.has_html_amp_tag = markup.amp.html_amp_attribute_present;
+      result.has_rel_amphtml_tag = markup.amp.rel_amphtml;
+    }
+
     // add more code to set result properties here...
 
 } catch (e) {}
@@ -43,12 +55,22 @@ SELECT
   client,
   COUNT(0) AS total,
 
+  ##Tony
   # Pages with img
-  COUNTIF(markup_info.images_img_total > 0) as has_img,
+  #COUNTIF(markup_info.images_img_total > 0) as has_img,
   AS_PERCENT(COUNTIF(markup_info.images_img_total > 0), COUNT(0)) AS pct_has_img,
-  # AS_PERCENT(COUNTIF(markup_info.images_img_total > 0), SUM(COUNT(0) OVER())) AS pct_overall_has_img, # Could not get this to work?
 
-  # add more fields here...
+
+  ##Antoine
+
+  # Pages with <html amp> tag
+  #COUNTIF(markup_info.has_html_amp_tag) as has_html_amp_tag,
+  AS_PERCENT(COUNTIF(markup_info.has_html_amp_tag > 0), COUNT(0)) AS pct_has_html_amp_tag,
+
+  # Pages with rel=amphtml
+  #COUNTIF(markup_info.has_rel_amphtml_tag) as has_rel_amphtml_tag,
+  AS_PERCENT(COUNTIF(markup_info.has_rel_amphtml_tag > 0), COUNT(0)) AS pct_has_rel_amphtml_tag
+
 
   FROM
     ( 
