@@ -288,7 +288,7 @@ Open source code, or code with a permissive license that can be accessed, viewed
         </tr>
       </tbody>
     </table>
-   <figcaption>{{ figure_link(11,"Top JavaScript libraries on desktop and mobile.")</figcaption>
+   <figcaption>{{ figure_link(11,"Top JavaScript libraries on desktop and mobile.") }}</figcaption>
 </figure>
 
 [jQuery](https://jquery.com/), the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
