@@ -38,7 +38,7 @@ try {
 
     // TEST
     var wpt_bodies = {
-      "canonicals": {
+       "canonicals": {
           "rendered": {
               "html_link_canoncials": [
                   "https://btpi.com/"
@@ -49,14 +49,14 @@ try {
                   "https://btpi.com/"
               ]
           },
-          "self_canonical": true,
-          "other_canonical": false,
+          "self_canonical": Math.floor(Math.random() * 2) == 0,
+          "other_canonical": Math.floor(Math.random() * 10) == 0,
           "canonicals": [
               "https://btpi.com/"
           ],
           "url": "https://btpi.com/",
           "http_header_link_canoncials": [],
-          "canonical_missmatch": false
+          "canonical_missmatch": Math.floor(Math.random() * 20) == 0
       },
       "robots": {
           "has_robots_meta_tag":  Math.floor(Math.random() * 3) == 0,
@@ -125,7 +125,18 @@ try {
       }
     }; 
 
-
+if (Math.floor(Math.random() * 50) == 0) {
+        wpt_bodies.canonicals.canonicals = []; // sometimes no canonicals
+    }
+    if (Math.floor(Math.random() * 30) == 0) {
+        wpt_bodies.canonicals.raw = {}; // sometimes no raw canonicals
+    }
+    if (Math.floor(Math.random() * 25) == 0) {
+        wpt_bodies.canonicals.rendered.html_link_canoncials = ["https://someoneelse.com/"]; // sometimes rendering changes it
+    }
+    if (Math.floor(Math.random() * 60) == 0) {
+        wpt_bodies.canonicals.http_header_link_canoncials = ["https://someoneelse.com/"]; // sometimes header exists
+    }
 
 
 
@@ -200,6 +211,57 @@ try {
       }
     }
 
+    var canonicals = wpt_bodies.canonicals;
+
+
+    if (canonicals.canonicals) {
+      result.canonicals = canonicals.canonicals;
+    }
+
+    if (canonicals.self_canonical) {
+      result.has_self_canonical = canonicals.self_canonical;
+    }
+
+    if (canonicals.other_canonical) {
+      result.is_canonicalized = canonicals.other_canonical;
+    }
+
+    if (canonicals.http_header_link_canonicals) {
+      result.http_canonicals = canonicals.http_header_link_canonicals;
+    }
+
+    if (canonicals.canonical_missmatch) {
+      result.has_canonical_mismatch = canonicals.canonical_missmatch;
+    }
+
+
+
+    function compareStringArrays(array1, array2) {
+        if (!array1 && !array2) return true; // both missing
+        if (!array1 && array2.length > 0) return false; 
+        if (!array2 && array1.length > 0) return false; 
+        if (array1.length != array2.length) return false;
+
+        array1 = array1.slice();
+        array1.sort();
+        array2 = array2.slice();
+        array2.sort();
+
+        for (var i = 0; i < array1.length; i++) {
+            if (array1[i] != array2[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+    if (canonicals.raw && canonicals.rendered) {
+      result.rendering_changed_canonical = !compareStringArrays(canonicals.raw.html_link_canoncials, canonicals.rendered.html_link_canoncials);
+        }
+
+
 
     }
 
@@ -269,7 +331,31 @@ SELECT
 
   # Same title and H1
   # COUNTIF(wpt_bodies_info.has_same_h1_title ) AS freq_has_same_h1_title,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.has_same_h1_title ), COUNT(0)) AS pct_has_same_h1_title
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_same_h1_title ), COUNT(0)) AS pct_has_same_h1_title,
+
+  # Pages with canonical
+  #COUNTIF(ARRAY_LENGTH(canonicals_info.canonicals) > 0) as has_canonical,
+  AS_PERCENT(COUNTIF(ARRAY_LENGTH(canonicals_info.canonicals) > 0), COUNT(0)) AS pct_has_canonical,
+
+  # Pages with self-canonical
+  #COUNTIF(canonicals_info.has_self_canonical) as has_self_canonical,
+  AS_PERCENT(COUNTIF(canonicals_info.has_self_canonical), COUNT(0)) AS pct_has_self_canonical,
+
+  # Pages canonicalized
+  #COUNTIF(canonicals_info.is_canonicalized)) as is_canonicalized,
+  AS_PERCENT(COUNTIF(canonicals_info.is_canonicalized), COUNT(0)) AS pct_has_canonical,
+
+  # Pages with canonical in HTTP header 
+  #COUNTIF(ARRAY_LENGTH(canonicals_info.http_canonicals) > 0) as has_http_canonical,
+  AS_PERCENT(COUNTIF(ARRAY_LENGTH(canonicals_info.http_canonicals) > 0), COUNT(0)) AS pct_http_canonical,
+
+  # Pages with canonical mismatch
+  #COUNTIF(canonicals_info.has_canonical_mismatch) > 0) as has_canonical_mismatch,
+  AS_PERCENT(COUNTIF(canonicals_info.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
+
+  # Pages with canonical conflict between raw and rendered 
+  #COUNTIF(wpt_bodies_info.rendering_changed_canonical) as has_conflict_raw_rendered_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_raw_rendered_canonical
 
 
   # add more fields here...
@@ -280,7 +366,8 @@ SELECT
       SELECT 
         _TABLE_SUFFIX AS client,
         get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info # LIVE      
+        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE 
+        #get_canonicals_info(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.canonicals') AS canonicals_info # LIVE      
       FROM
         `httparchive.sample_data.pages_*` # TEST
     )
