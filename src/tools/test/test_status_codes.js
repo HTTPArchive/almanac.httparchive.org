@@ -8,8 +8,6 @@ const default_year = 2019;
 const default_language = 'en';
 const base_url = "http://127.0.0.1:8080";
 
-const output_dir = `static/site`;
-
 let failures = 0;
 let passes = 0;
   
@@ -41,20 +39,11 @@ const test_status_code = async (page, status, location) => {
       redirect: 'manual'
     }
 
-    let body;
-    let headers;
-
     const response = await fetch(base_url + page, options);
 
     if (response.status === status && response.headers.get('location') === location) {
       console.log('Success - expected:', status, 'got:',response.status, 'for page:', page);
       passes++;
-      if (status === 200 && response.headers.get('content-type').startsWith('text/html')) {
-        if (page.slice(-1) === '/') page = page + 'index';
-        page = page + '.html';
-        body = await response.text();
-        await fs.outputFile(output_dir + page, body, 'utf8');
-      }
     } else {
       console.error('Failed - expected:', status, 'got:',response.status, 'for page:', page, 'location:', location);
       failures++;
