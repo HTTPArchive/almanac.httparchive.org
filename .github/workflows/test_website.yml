@@ -28,7 +28,7 @@ jobs:
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Lint Generated HTML
-        uses: github/super-linter@v3.7.0
+      uses: github/super-linter@v3.7.0
       env:
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

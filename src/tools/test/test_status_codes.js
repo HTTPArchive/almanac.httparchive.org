@@ -8,7 +8,7 @@ const default_year = 2019;
 const default_language = 'en';
 const base_url = "http://127.0.0.1:8080";
 
-const output_dir = `static/site`;
+const output_dir = `static/html`;
 
 let failures = 0;
 let passes = 0;
