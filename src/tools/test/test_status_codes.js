@@ -41,9 +41,6 @@ const test_status_code = async (page, status, location) => {
       redirect: 'manual'
     }
 
-    let body;
-    let headers;
-
     const response = await fetch(base_url + page, options);
 
     if (response.status === status && response.headers.get('location') === location) {
@@ -52,7 +49,7 @@ const test_status_code = async (page, status, location) => {
       if (status === 200 && response.headers.get('content-type').startsWith('text/html')) {
         if (page.slice(-1) === '/') page = page + 'index';
         page = page + '.html';
-        body = await response.text();
+        const body = await response.text();
         await fs.outputFile(output_dir + page, body, 'utf8');
       }
     } else {
