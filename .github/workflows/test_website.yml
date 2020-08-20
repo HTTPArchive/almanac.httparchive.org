@@ -27,8 +27,8 @@ jobs:
         python-version: '3.7'
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
-    - name: Linting Generated HTML
-      uses: github/super-linter@v3.8.0
+    - name: Lint Generated HTML
+        uses: docker://github/super-linter:v3.8.0
       env:
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
