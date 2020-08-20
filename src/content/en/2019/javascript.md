@@ -73,11 +73,10 @@ Although this data shows how much longer it can take for a mobile device to proc
 {{ figure_markup(
   id=4,
   image="/static/images/2019/javascript/js-processing-reddit.png",
-  alt="JavaScript processing times for Reddit.com",
   caption='JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.',
   description="Bar chart showing 3 different devices: at the top a Pixel 3 has small amount on both the main thread and the worker thread of less than 400ms. For a Moto G4 it is approximately 900 ms on main thread and a further 300 ms on worker thread. And the final bar is an Alcatel 1X 5059D with over 2,000 ms on the main thread and over 500 ms on worker thread.",
   width=600,
-  height=363,
+  height=363
   )
 }}
 
