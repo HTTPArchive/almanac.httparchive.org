@@ -1,7 +1,7 @@
 ---
 part_number: I
 chapter_number: 6
-title: Fonts
+title: Fuentes
 description: Capítulo Fuentes del Almanaque Web de 2019 que cubre desde dónde se cargan las fuentes, formatos de fuente, rendimiento de carga de fuentes, fuentes variables y fuentes de color.
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
@@ -625,7 +625,7 @@ Incluso con un 1.8%, esto fue más alto de lo esperado, aunque estoy emocionado 
   <a href="/static/images/2019/fonts/fig19.png">
     <img src="/static/images/2019/fonts/fig19.png" alt="Figura 19. Uso de los ejes 'font-variación-settings'." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&amp;format=interactive">
   </a>
-  <div id="fig19-description" class="visually-hidden">Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the "opsz" value, 32% to "wght", 16% to "wdth", 2% or fewer to "roun", "crsb", "slnt", "inln", and more. The most notable differences between desktop and mobile pages are 26% usage of "opsz", 38% of "wght", and 23% of "wdth".</div>
+  <div id="fig19-description" class="visually-hidden">Gráfico de barras que muestra el uso de la propiedad font-variation-settings. El 42% de las propiedades en las páginas de escritorio se establecen en el valor "opsz", el 32% en "wght", el 16% en "wdth", el 2% o menos en "roun", "crsb", "slnt", "inln" , y más. Las diferencias más notables entre las páginas de escritorio y móviles son el 26% de uso de "opsz", el 38% de "wght" y el 23% de "wdth".</div>
   <figcaption id="fig19-caption">Figura 19. Uso de los ejes <code>font-variation-settings</code>.</figcaption>
 </figure>
 
