@@ -29,7 +29,7 @@ El uso de fuentes web alojadas facilita la implementación y el mantenimiento, p
 
 Diferenciar el alojamiento propio del alojamiento de terceros es cada vez más relevante en un mundo [HTTP/2] (./ http2), donde la brecha de rendimiento entre una conexión del mismo dominio y de un dominio diferente puede ser más amplia. Las solicitudes del mismo dominio tienen el gran beneficio de un mejor potencial de priorización frente a otras solicitudes del mismo dominio en la cascada.
 
-Las recomendaciones para mitigar los costos de rendimiento de cargar fuentes web desde otro dominio incluyen el uso de `preconnect`, `dns-prefetch` y` preload` [sugerencias de recursos] (./resource-hints), pero las fuentes web de alta prioridad deben ser solicitadas al alojamiento propio para minimizar el impacto en el rendimiento de las fuentes web. Esto es especialmente importante para las fuentes utilizadas por contenido visualmente prominente o cuerpo de texto que ocupan la mayor parte de una página.
+Las recomendaciones para mitigar los costos de rendimiento de cargar fuentes web desde otro dominio incluyen el uso de `preconnect`, `dns-prefetch` y `preload` [sugerencias de recursos] (./resource-hints), pero las fuentes web de alta prioridad deben ser solicitadas al alojamiento propio para minimizar el impacto en el rendimiento de las fuentes web. Esto es especialmente importante para las fuentes utilizadas por contenido visualmente prominente o cuerpo de texto que ocupan la mayor parte de una página.
 
 <figure>
   <a href="/static/images/2019/fonts/fig1.png">
@@ -43,7 +43,7 @@ El hecho de que tres cuartas partes estén alojadas tal vez no sea sorprendente 
 
 Google ofrece fuentes que utilizan archivos CSS de terceros alojados en `https://fonts.googleapis.com`. Los desarrolladores agregan solicitudes a estas hojas de estilo usando etiquetas`<link>` en su código. Si bien estas hojas de estilo bloquean el procesamiento, son muy pequeñas. Sin embargo, los archivos de fuentes se alojan en otro dominio, `https://fonts.gstatic.com`. El modelo de requerir dos peticiones separadas a dos dominios diferentes hace que `preconnect` sea una gran opción aquí para la segunda solicitud que no se descubrirá hasta que se descargue el CSS.
 
-Tenga en cuenta que, si bien `preload` sería una buena adición para cargar los archivos de fuentes más arriba en la cascada de solicitudes (recuerde que` preconnect` configura la conexión, no solicita el contenido del archivo), `preload` aún no está disponible con Google Fonts. Google Fonts genera URLs únicas para sus archivos de fuentes [que están sujetos a cambios](https://github.com/google/fonts/issues/1067).
+Tenga en cuenta que, si bien `preload` sería una buena adición para cargar los archivos de fuentes más arriba en la cascada de solicitudes (recuerde que `preconnect` configura la conexión, no solicita el contenido del archivo), `preload` aún no está disponible con Google Fonts. Google Fonts genera URLs únicas para sus archivos de fuentes [que están sujetos a cambios](https://github.com/google/fonts/issues/1067).
 
 ### ¿Cuáles son los dominios de terceros más populares?
 
@@ -182,7 +182,7 @@ Si bien el alto uso de Google Fonts aquí es muy impresionante, también es dign
 
 La documentación de Google Fonts recomienda que el `<link>` del CSS de Google Fonts se coloque como el primer hijo en el `<head>` de una página. ¡Esta es una gran pregunta! En la práctica, esto no es común, ya que solo cerca del medio porciento de todas las páginas (unas 20.000 páginas) siguió este consejo.
 
-Más aún, si una página usa `preconnect` o` dns-prefetch` como elementos `<link>`, estos vendrían antes del CSS de Google Fonts de todos modos. Siga leyendo para obtener más información sobre estas sugerencias de recursos.
+Más aún, si una página usa `preconnect` o `dns-prefetch` como elementos `<link>`, estos vendrían antes del CSS de Google Fonts de todos modos. Siga leyendo para obtener más información sobre estas sugerencias de recursos.
 
 ### Acelerando el alojamiento de terceros
 
@@ -513,7 +513,7 @@ Es importante destacar que estos datos en particular no respaldan ni restan mér
 
 ## Luchando contra el texto invisible
 
-La herramienta número uno que tenemos para combatir el comportamiento de carga de fuentes web predeterminado de "invisible durante la carga" (también conocido como FOIT por sus siglas en inglés), es `font-display`. Agregar `font-display: swap` a su bloque` @font-face` es una manera fácil de decirle al navegador que muestre el texto de respaldo mientras se carga la fuente web.
+La herramienta número uno que tenemos para combatir el comportamiento de carga de fuentes web predeterminado de "invisible durante la carga" (también conocido como FOIT por sus siglas en inglés), es `font-display`. Agregar `font-display: swap` a su bloque `@font-face` es una manera fácil de decirle al navegador que muestre el texto de respaldo mientras se carga la fuente web.
 
 [Soporte de navegador](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display) es genial tambien. Internet Explorer y la versión anterior a Chromium Edge no son compatibles, pero también representan el texto de respaldo de forma predeterminada cuando se carga una fuente web (aquí no se permiten FOIT). Para nuestras pruebas de Chrome, ¿con qué frecuencia se usa `font-display`?
 
@@ -584,7 +584,7 @@ Es irónico que un complemento de optimización del rendimiento pueda empeorar s
   <figcaption>Figura 15. Porcentaje de páginas móviles que declaran una fuente web con la propiedad <code>unicode-range</code>.</figcaption>
 </figure>
 
-[`unicode-range`](https://developer.mozilla.org/es/docs/Web/CSS/@font-face/unicode-range) es una excelente propiedad de CSS para que el navegador sepa específicamente qué puntos de código le gustaría usar la página en el archivo de fuente. Si la declaración `@font-face` tiene un` unicode-range`, el contenido de la página debe coincidir con uno de los puntos de código en el rango antes de que se solicite la fuente. Es algo muy bueno.
+[`unicode-range`](https://developer.mozilla.org/es/docs/Web/CSS/@font-face/unicode-range) es una excelente propiedad de CSS para que el navegador sepa específicamente qué puntos de código le gustaría usar la página en el archivo de fuente. Si la declaración `@font-face` tiene un `unicode-range`, el contenido de la página debe coincidir con uno de los puntos de código en el rango antes de que se solicite la fuente. Es algo muy bueno.
 
 Esta es otra métrica que espero que esté sesgada por el uso de Google Fonts, ya que Google Fonts usa `unicode-range` en la mayoría (si no en todos) de su CSS. Espero que esto sea menos común en la tierra de los usuarios, pero tal vez sea posible filtrar las solicitudes de Google Fonts en la próxima edición del Almanaque.
 
@@ -629,7 +629,7 @@ Incluso con un 1.8%, esto fue más alto de lo esperado, aunque estoy emocionado 
   <figcaption id="fig19-caption">Figura 19. Uso de los ejes <code>font-variation-settings</code>.</figcaption>
 </figure>
 
-A través del lente de este gran conjunto de datos, estos son tamaños de muestra muy bajos; tome estos resultados con un grano de sal. Sin embargo, `opsz` como el eje más común en las páginas de escritorio es notable, con` wght` y `wdth` al final. En mi experiencia, las demostraciones introductorias de fuentes variables suelen estar basadas en el peso.
+A través del lente de este gran conjunto de datos, estos son tamaños de muestra muy bajos; tome estos resultados con un grano de sal. Sin embargo, `opsz` como el eje más común en las páginas de escritorio es notable, con `wght` y `wdth` al final. En mi experiencia, las demostraciones introductorias de fuentes variables suelen estar basadas en el peso.
 
 ## ¿Las fuentes de color también podrían ser el futuro?
 
