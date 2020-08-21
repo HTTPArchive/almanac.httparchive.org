@@ -5,3 +5,4 @@ templates/*/*/chapters/
 templates/*/*/ebook.html
 templates/sitemap.xml
 static/pdfs/
+static/html/
