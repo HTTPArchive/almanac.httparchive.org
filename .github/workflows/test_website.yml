@@ -20,10 +20,16 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.4.2
       with:
-        version:  12.x
+        node-version: 12.x
     - name: Set up Python 3.7
       uses: actions/setup-python@v2.1.2
       with:
         python-version: '3.7'
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
+    - name: Lint Generated HTML
+      uses: github/super-linter@v3.7.0
+      env:
+        DEFAULT_BRANCH: main
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VALIDATE_HTML: true
