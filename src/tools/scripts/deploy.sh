@@ -3,6 +3,12 @@
 # exit when any command fails instead of trying to continue on
 set -e
 
+# Check branch is clean first
+if [ ! -z "$(git status --porcelain)" ]; then 
+  echo "Your branch includes changes that must be commited or remove. Exiting"
+  exit 1
+fi
+
 echo "Update local production branch"
 git checkout production
 git status
