@@ -4,7 +4,7 @@
 set -e
 
 # Check branch is clean first
-if [ ! -z "$(git status --porcelain)" ]; then 
+if [ -n "$(git status --porcelain)" ]; then 
   echo "Your branch includes changes that must be commited or remove. Exiting"
   exit 1
 fi
