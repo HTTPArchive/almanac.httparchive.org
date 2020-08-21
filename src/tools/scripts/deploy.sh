@@ -28,7 +28,7 @@ npm run ebooks
 
 echo "Please test the site locally"
 
-read -r -n 1 -p "Are you ready to deploy?: [Y/N]" DEPLOY
+read -r -n 1 -p "Are you ready to deploy?: [y/N]" DEPLOY
 if [ "$DEPLOY" != "Y" ] && [ "$DEPLOY" != "y" ]; then
     echo
     echo "Cancelling deploy"
@@ -38,7 +38,7 @@ fi
 echo "Deploying"
 gcloud app deploy --project webalmanac --stop-previous-version
 
-read -r -n 1 -p "Are you happy to push changes to production?: [Y/N]" DEPLOY
+read -r -n 1 -p "Are you happy to push changes to production?: [y/N]" DEPLOY
 if [ "$DEPLOY" != "Y" ] && [ "$DEPLOY" != "y" ]; then
     echo
     echo "Exiting"
