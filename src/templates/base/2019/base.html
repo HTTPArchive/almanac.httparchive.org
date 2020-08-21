@@ -385,6 +385,41 @@
   {% endmacro %}
 {% endif %}
 
+{%- macro figure_markup(
+  id=0,
+  image="",
+  caption="",
+  alt=caption,
+  description="",
+  sheets_url="",
+  width=600,
+  height=371,
+  data_width=width,
+  data_height=height,
+  big_number="",
+  really_big_number=""
+  )
+%}
+<figure id="fig-{{ id }}">
+  {%- if image != "" %}
+  <a href="{{ image }}">
+    {%- if sheets_url != "" %}
+    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ sheets_url|safe }}" loading="lazy" />
+    {%- else %}
+    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+    {%- endif %}
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig{{ id }}-description" data-show-text="{{ show_description(id) }}" data-hide-text="{{ hide_description(id) }}">{{ show_description(id) }}</button>
+  <div id="fig{{ id }}-description" class="visually-hidden">{{ description|safe }}</div>
+  {%- elif big_number != "" %}
+  <div class="big-number">{{ big_number }}</div>
+  {%- elif really_big_number != "" %}
+  <div class="really-big-number">{{ really_big_number }}</div>
+  {%- endif %}
+  <figcaption id="fig{{ id }}-caption">{{ figure_link( id, caption) }}</figcaption>
+</figure>
+{%- endmacro %}
+
 {% block index_menu_script %}
 <script nonce="{{ csp_nonce() }}">
 
