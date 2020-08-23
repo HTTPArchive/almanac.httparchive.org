@@ -23,18 +23,18 @@ fi
 echo
 
 echo "Update local production branch"
-git checkout production
+#git checkout production
 git status
-git pull
-git pull origin main
+#git pull
+#git pull origin main
 
 if [ "$(pgrep -f 'python main.py')" ]; then
   echo "Killing existing server to run afresh"
-  pkill -9 python main.py
+  #pkill -9 python main.py
 fi
 
 echo "Run and test website"
-./tools/scripts/run_and_test_website.sh
+#./tools/scripts/run_and_test_website.sh
 
 echo "Please test the site locally"
 
@@ -49,7 +49,7 @@ echo
 LAST_TAGGED_VERSION=$(git tag -l "v*" | tail)
 echo "Last tagged version: $LAST_TAGGED_VERSION"
 if [[ "$LAST_TAGGED_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-  semver=( ${LAST_TAGGED_VERSION//./ } )
+  semver=( "${LAST_TAGGED_VERSION//./ }" )
   major="${semver[0]}"
   minor="${semver[1]}"
   next_minor=$((minor + 1))
@@ -67,8 +67,8 @@ do
 done
 echo "Tagging as $TAG_VERSION"
 
-LONG_DATE=$(date -u +%Y\-%m\-%d\ %H:%M:%S)
-git tag -a "$TAG_VERSION" -m "Version $TAG_VERSION $LONG_DATE"
+LONG_DATE=$(date -u +%Y-%m-%d\ %H:%M:%S)
+#git tag -a "$TAG_VERSION" -m "Version $TAG_VERSION $LONG_DATE"
 echo "Version $TAG_VERSION $LONG_DATE"
 
 if [[ -f deploy.zip ]]; then
@@ -80,10 +80,10 @@ echo "Zipping into deploy.zip"
 zip -q -r deploy . --exclude @.gcloudignore
 
 echo "Deploying"
-echo Y | gcloud app deploy --project webalmanac --stop-previous-version
+#cho Y | gcloud app deploy --project webalmanac --stop-previous-version
 
 echo "Push production branch"
-git push
+#git push
 git status
 
 echo "Please update release on GitHub using tag $TAG_VERSION@production"
