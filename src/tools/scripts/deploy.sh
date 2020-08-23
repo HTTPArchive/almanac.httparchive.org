@@ -102,6 +102,6 @@ echo -e "${AMBER}Please update release on GitHub: https://github.com/HTTPArchive
 echo -e "Using tag ${TAG_VERSION}@production${RESET_COLOR}"
 echo -e "${AMBER}Please upload deploy.zip as the release artifact${RESET_COLOR}"
 echo
-echo "Have a nice day!"
+echo "Have a good one!"
 echo
 exit 0
