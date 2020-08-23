@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"II","chapter_number":9,"title":"无障碍可访问性","description":"2019 Web Almanac 网络年鉴的无障碍易访问性章节，涵盖易阅读、媒体、易于导航和与辅助技术的兼容性。","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":["chengxicn"],"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-12T00:00:00.000Z","chapter":"accessibility"} %} {% block index %}
+{% set metadata = {"part_number":"II","chapter_number":9,"title":"无障碍可访问性","description":"2019 Web Almanac 网络年鉴的无障碍易访问性章节，涵盖易阅读、媒体、易于导航和与辅助技术的兼容性。","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":["chengxicn"],"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-23T00:00:00.000Z","chapter":"accessibility"} %} {% block index %}
 <ul>
   <li>
     <a href="#介绍">介绍</a>
@@ -147,11 +147,11 @@
 
 {% endblock %} {% block main_content %}
 <h2 id="介绍"><a href="#介绍" class="anchor-link">介绍</a></h2>
-<p>互联网的无障碍可访问性对一个包容和公平的社会至关重要。随着我们的社会生活和工作生活越来越多地转移到网络世界，残疾人能够无障碍地参与所有在线互动就变得更加重要了。正如建筑设计师可以创建或省略无障碍功能，例如轮椅坡道，web开发人员可以帮助或阻碍用户依赖的辅助技术。</p>
-<p>当考虑到残疾用户时，我们应该记住他们的用户旅程通常是相同的——他们只是使用不同的工具。这些流行的工具包括但不限于:屏幕阅读器、屏幕放大器、浏览器或文本缩放以及语音控制。</p>
-<p>通常，提高站点的可访问性对每个人都有好处。虽然我们通常认为残疾人是永久性残疾，但任何人都可能有暂时的或随着环境变化的残疾。例如失明，有人可能是永久失明，有人是暂时的眼睛感染，而有人在特定的情况下失明，比如在外面强烈的阳光之下。所有这些都可以解释为什么有些人看不见自己的屏幕。每个人都有环境障碍，因此改进web页面的可访问性将改善所有用户在任何情况下的体验。</p>
+<p>互联网的无障碍可访问性对一个包容和公平的社会至关重要。随着我们的社会生活和工作生活越来越多地转移到网络世界，残障人士能够无障碍地参与所有在线互动就变得更加重要了。正如建筑设计师可以创建或省略无障碍功能，例如轮椅坡道，web开发人员可以帮助或阻碍用户依赖的辅助技术。</p>
+<p>当考虑到残障用户时，我们应该记住他们的用户旅程通常是相同的——他们只是使用不同的工具。这些流行的工具包括但不限于：屏幕阅读器、屏幕放大器、浏览器或文本缩放以及语音控制。</p>
+<p>通常，提高站点的可访问性对每个人都有好处。虽然我们通常认为残障人士是永久性残疾，但任何人都可能有暂时的或随着环境变化的残疾。例如失明，有人可能是永久失明，有人是暂时的眼睛感染，而有人在特定的情况下失明，比如在外面强烈的阳光之下。所有这些都可以解释为什么有些人看不见自己的屏幕。每个人都有环境障碍，因此改进web页面的可访问性将改善所有用户在任何情况下的体验。</p>
 <p><a href="https://www.w3.org/WAI/WCAG21/quickref/">网页内容易读性指引</a> (WCAG) 针对如何使网页容易易阅读提供意见。这些准则被用作我们分析的基础。然而，在许多情况下，很难通过编程来分析网站的可访问性。例如，web平台提供了几种实现类似功能结果的方法，但是支持它们的底层代码可能完全不同。因此，我们的分析只是对整体网页可访问性的一个近似分析。</p>
-<p>我们将最有趣的观点分为四类:阅读的便捷性、网络媒体、页面导航的便捷性以及与辅助技术的兼容性。</p>
+<p>我们将最有趣的观点分为四类：阅读的便捷性、网络媒体、页面导航的便捷性以及与辅助技术的兼容性。</p>
 <p>在测试过程中，桌面和移动设备的可访问性没有显著差异。因此除非另有说明，否则我们呈现的所有指标都是我们的桌面分析的结果。</p>
 <h2 id="阅读的便捷性"><a href="#阅读的便捷性" class="anchor-link">阅读的便捷性</a></h2>
 <p>网页的主要目标是提供用户想要参与的内容。这些内容可能是视频或各种图像，但很多时候，它只是页面上的文本。我们的文本内容对读者来说是易读的，这是极其重要的。如果访问者不能阅读一个网页，他们就不能参与其中，最终导致他们离开。在这一节中，我们将看到网站遇到的三个方面的困难。</p>
@@ -166,12 +166,12 @@
   <div id="fig1-description" class="visually-hidden">四个彩色框，由棕色和灰色阴影填充，内部是白色文本。创建两个列。左列说明颜色太浅，棕色背景色写为<code>#FCA469</code>. 右列是推荐的，棕色背景色写为<code>#BD5B0E</code>。每列的顶部框是带有棕色背景的白色文本<code>#FFFFFF</code> 底部框是带有灰色背景的白色文本 <code>#FFFFFF</code>。等效的灰度分别是 <code>#B8B8B8</code> 和 <code>#707070</code>。由LookZook提供</div>
   <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">图 1.</a>色彩对比度不足的文本示例。由LookZook提供</figcaption>
 </figure>
-<p>只有22.04%的网站给所有的文本提供了足够的颜色对比。或换句话说:每5个网站中就有4个网站的文字很容易和背景融合，导致难以阅读。</p>
+<p>只有22.04%的网站给所有的文本提供了足够的颜色对比。或换句话说：每5个网站中就有4个网站的文字很容易和背景融合，导致难以阅读。</p>
 <p class="note">请注意，我们无法分析图像中的任何文本，因此我们报告的指标是通过颜色对比测试的网站总数的上限。</p>
 <h3 id="缩放页面"><a href="#缩放页面" class="anchor-link">缩放页面</a></h3>
-<p>使用 <a href="https://accessibleweb.com/question-answer/minimum-font-size/">清晰的字体大小</a> 和 <a href="https://www.w3.org/WAI/WCAG21/quickref/#target-size">目标大小</a> 帮助用户阅读网站以及与你的网站互动。但即使网站完全遵循所有这些准则，也不能满足每个访问者的特定需求。这就是为什么像掐拉缩放这样的设备特性如此重要:它们允许用户调整你的页面以满足他们的需求。在某些使用微小字体和按钮的难以访问的网站上，这些特性甚至给了用户使用该网站的机会。</p>
+<p>使用 <a href="https://accessibleweb.com/question-answer/minimum-font-size/">清晰的字体大小</a> 和 <a href="https://www.w3.org/WAI/WCAG21/quickref/#target-size">目标大小</a> 帮助用户阅读网站以及与你的网站互动。但即使网站完全遵循所有这些准则，也不能满足每个访问者的特定需求。这就是为什么像掐拉缩放这样的设备特性如此重要：它们允许用户调整你的页面以满足他们的需求。在某些使用微小字体和按钮的难以访问的网站上，这些特性甚至给了用户使用该网站的机会。</p>
 <p>在少数情况下，禁用缩放是可以接受的，比如有问题的页面是一个使用触摸控制的基于web的游戏。如果在这种情况下保持开启状态，玩家的手机游戏会在玩家双击时放大或缩小，讽刺的是，这个功能反而使得游戏无法访问。</p>
-<p>因此，开发人员被赋予禁用此特性的能力。可以通过设置<a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag">viewport元标签</a>中的两个属性其中之一:</p>
+<p>因此，开发人员被赋予禁用此特性的能力。可以通过设置<a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag">viewport元标签</a>中的两个属性其中之一：</p>
 <ol>
   <li>
     <p><code>user-scalable</code> 设为 <code>0</code> 或 <code>no</code></p>
@@ -180,7 +180,7 @@
     <p><code>maximum-scale</code> 设为 <code>1</code>， <code>1.0</code>，等</p>
   </li>
 </ol>
-<p>遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版 Safari 简单 <a href="https://archive.org/details/ios-10-beta-release-notes">忽略了这个标记</a>。无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。</p>
+<p>遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版Safari直接<a href="https://archive.org/details/ios-10-beta-release-notes">忽略了这个标记</a>。无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。</p>
 <figure id="fig-2">
   <a href="/static/images/2019/accessibility/fig2.png">
     <img src="/static/images/2019/accessibility/fig2.png" alt="图2.禁用缩放的站点与设备类型的百分比。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive" loading="lazy" />
@@ -190,7 +190,7 @@
   <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">图 2.</a>禁用缩放的站点与设备类型的百分比。</figcaption>
 </figure>
 <h3 id="语言识别"><a href="#语言识别" class="anchor-link">语言识别</a></h3>
-<p>网络充满了惊人数量的内容。但是，这里有一个问题:世界上有超过1000种不同的语言，而你要找的内容可能不是用你能流利使用的语言书写的。近年来我们在翻译技术方面取得了很大的进步，你可能已经在网络上使用过其中的一种(例如，谷歌翻译)。</p>
+<p>网络充满了惊人数量的内容。但是，这里有一个问题：世界上有超过1000种不同的语言，而你要找的内容可能不是用你能流利使用的语言书写的。近年来我们在翻译技术方面取得了很大的进步，你可能已经在网络上使用过其中的一种(例如，谷歌翻译)。</p>
 <p>
   为了方便使用这个功能，翻译引擎需要知道你的页面是用什么语言编写的。这是通过使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/lang">lang<code>属性</code></a> 来实现的。否则，计算机必须猜测你的页面是用什么语言写的。正如你所想象的那样，这会导致很多错误，特别是当页面使用多种语言时（例如，你的页面导航是英文的，但是发布的内容是日语的）。
 </p>
@@ -230,7 +230,7 @@
     <img src="/static/images/2019/accessibility/fig3.png" alt="图3. 表头级别的流行程度" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-crolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig3-description" data-show-text="{{ show_description(3) }}" data-hide-text="{{ hide_description(3) }}">{{ show_description(3) }}</button>
-  <div id="fig3-description" class="visually-hidden">垂直条形图量度百分比数据，范围从0到80，以20为增量，而条形图表示从每个表头h1到h6的级别。H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.</div>
+  <div id="fig3-description" class="visually-hidden">垂直条形图量度百分比数据，范围从0到80，以20为增量，而条形图表示从每个表头h1到h6的级别。H1：63.25%; H2：67.86%; H3：58.63%; H4：36.38%; H5：14.64%; H6：6.91%.</div>
   <figcaption id="fig3-caption"><a href="#fig-3" class="anchor-link">图 3.</a> 表头级别的流行程度</figcaption>
 </figure>
 <h3 id="main-地标"><a href="#main-地标" class="anchor-link">Main 地标</a></h3>
@@ -241,7 +241,7 @@
     <img src="/static/images/2019/accessibility/fig4.png" alt="Figure 4. 图4.按“main”地标数量划分的页面百分比。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig4-description" data-show-text="{{ show_description(4) }}" data-hide-text="{{ hide_description(4) }}">{{ show_description(4) }}</button>
-  <div id="fig4-description" class="visually-hidden">垂直条形图显示百分比数据，范围从0到80，以20为增量，而条形图则表示每页从0到4的“main”地标数量。数据源: HTTP Archive (2019年7月). 0: 73.97%; 1: 17.97%; 2: 7.41%; 3: 0.15%; 4: 0.06%.</div>
+  <div id="fig4-description" class="visually-hidden">垂直条形图显示百分比数据，范围从0到80，以20为增量，而条形图则表示每页从0到4的“main”地标数量。数据源：HTTP Archive (2019年7月). 0：73.97%; 1：17.97%; 2：7.41%; 3：0.15%; 4：0.06%.</div>
   <figcaption id="fig4-caption"><a href="#fig-4" class="anchor-link">图 4.</a>按“main”地标数量划分的页面百分比。</figcaption>
 </figure>
 <h3 id="html-章节元素"><a href="#html-章节元素" class="anchor-link">HTML 章节元素</a></h3>
@@ -263,7 +263,7 @@
     <img src="/static/images/2019/accessibility/fig5.png" alt="图5.各种HTML语义元素的使用。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig5-description" data-show-text="{{ show_description(5) }}" data-hide-text="{{ hide_description(5) }}">{{ show_description(5) }}</button>
-  <div id="fig5-description" class="visually-hidden">垂直条形图，每种元素类型的条形与页面百分比的关系，范围从0到60，增量为20。. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%.</div>
+  <div id="fig5-description" class="visually-hidden">垂直条形图，每种元素类型的条形与页面百分比的关系，范围从0到60，增量为20。. nav：53.94%; header：54.82%; footer：55.92%; main：18.47%; aside：16.99%; article：22.59%; hr：19.1%; section：36.55%.</div>
   <figcaption id="fig5-caption"><a href="#fig-5" class="anchor-link">图 5.</a>各种HTML语义元素的使用。</figcaption>
 </figure>
 <h3 id="用于导航的其他-html-元素"><a href="#用于导航的其他-html-元素" class="anchor-link">用于导航的其他 HTML 元素</a></h3>
@@ -273,7 +273,7 @@
     <img src="/static/images/2019/accessibility/fig6.png" alt="图6.用于导航的其他HTML元素。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig6-description" data-show-text="{{ show_description(6) }}" data-hide-text="{{ hide_description(6) }}">{{ show_description(6) }}</button>
-  <div id="fig6-description" class="visually-hidden">垂直条形图，每种元素的类型与页面百分比之间的关系，从0到100，以25为增量。a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%.</div>
+  <div id="fig6-description" class="visually-hidden">垂直条形图，每种元素的类型与页面百分比之间的关系，从0到100，以25为增量。a：98.22%; ul：88.62%; input：76.63%; iframe：60.39%; button：56.74%; select：19.68%; textarea：12.03%.</div>
   <figcaption id="fig6-caption"><a href="#fig-6" class="anchor-link">图 6.</a>用于导航的其他HTML元素。</figcaption>
 </figure>
 <h3 id="跳过链接"><a href="#跳过链接" class="anchor-link">跳过链接</a></h3>
@@ -293,7 +293,7 @@
 <p>
   快捷方式通过<a href="https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts"><code>aria-keyshortcuts</code></a
   >或者<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/accesskey"><code>accesskey</code></a
-  >属性设置， 可以用于以下两种方式之一:
+  >属性设置， 可以用于以下两种方式之一：
 </p>
 <ol>
   <li><p>激活页面上的元素，例如链接或按钮。</p></li>
@@ -326,7 +326,7 @@
     <img src="/static/images/2019/accessibility/fig8.png" alt="图8.页面总数与ARIA属性的百分比。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig8-description" data-show-text="{{ show_description(8) }}" data-hide-text="{{ hide_description(8) }}">{{ show_description(8) }}</button>
-  <div id="fig8-description" class="visually-hidden">垂直条形图显示百分比数据，范围从0到25，以5为增量，条形图代表每个属性。Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%</div>
+  <div id="fig8-description" class="visually-hidden">垂直条形图显示百分比数据，范围从0到25，以5为增量，条形图代表每个属性。Aria-hidden：23.46%，aria-label：17.67%，aria-expanded：8.68%，aria-current：7.76%，aria-labelledby：6.85%，aria-controls：3.56%，aria-haspopup：2.62%，aria-invalid：2.68%，aria-describedby：1.69%，aria-live：1.04%，aria-required：1%</div>
   <figcaption id="fig8-caption"><a href="#fig-8" class="anchor-link">图 8.</a>页面总数与ARIA属性的百分比。</figcaption>
 </figure>
 <h4 id="role-角色属性">
@@ -339,7 +339,7 @@
     <img src="/static/images/2019/accessibility/fig9.png" alt="图9.前10名aria角色。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig9-description" data-show-text="{{ show_description(9) }}" data-hide-text="{{ hide_description(9) }}">{{ show_description(9) }}</button>
-  <div id="fig9-description" class="visually-hidden">垂直条形图，每种角色类型的条形图和使用的站点百分比，范围是0到25，以5为增量。Navigation:20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%</div>
+  <div id="fig9-description" class="visually-hidden">垂直条形图，每种角色类型的条形图和使用的站点百分比，范围是0到25，以5为增量。Navigation：20.4%; search：15.49%; main：14.39%; banner：13.62%; contentinfo：11.23%; button：10.59%; dialog：7.87%; complementary：6.06%; menu：4.71%; form：3.75%</div>
   <figcaption id="fig9-caption"><a href="#fig-9" class="anchor-link">图 9.</a>前10名aria角色。</figcaption>
 </figure>
 <p>查看图9中的结果，我们发现了两个有趣的见解：更新UI框架可能会对整个Web的可访问性产生深远的影响，同时发现尝试让对话框可访问的网站数量之多令人印象深刻。</p>
@@ -373,13 +373,13 @@
 </p>
 <h2 id="结论"><a href="#结论" class="anchor-link">结论</a></h2>
 <p>并非只有残障人士有无障碍访问的需求。例如，任何遭受暂时性腕部伤害的人都曾经历过敲击小目标的困难。视力通常会随着年龄的增长而降低，使以小字体书写的文本难以阅读。手指的敏捷性在各个年龄段的人口统计数据中都不尽相同，这对于相当大比例的用户来说，轻敲交互式控件或在移动网站上滑动内容变得更加困难。</p>
-<p>同样，辅助软件不仅适用于残疾人，同时也在改善每个人的日常体验：</p>
+<p>同样，辅助软件不仅适用于残障人士，同时也在改善每个人的日常体验：</p>
 <ul>
   <li>语音助手最近在移动设备和家庭中的流行已经证明，对于许多用户而言，使用语音命令控制计算设备既是期望的也是必不可少的。诸如此类的语音命令曾经只是一种辅助功能，但现在已成为主流产品。</li>
   <li>驾驶员将从屏幕阅读功能中受益，该功能在他们注视路面的同时，还能大声朗读长篇的文字，例如新闻报导。</li>
-  <li>字幕不仅会被无法收听视频的人观看，还会被想要在喧闹的餐厅或图书馆中观看视频的人观看。</li>
+  <li>字幕不仅可以被无法收听视频的人观看，还可以被想要在喧闹的餐厅或图书馆中观看视频的人观看。</li>
 </ul>
 <p>一旦网站建立后，通常很难在现有网站结构和窗口小部件上改造无障碍可访问性。无障碍可访问性并不是以后可以轻易点缀的东西，它必须是设计和实现过程的一部分。不幸的是，由于缺乏认知或缺乏易于使用的测试工具，许多开发人员并不熟悉所有用户的需求以及他们使用的辅助软件的需求。</p>
-<p>尽管不是结论性的，我们的结果表明在网络的<em>相当大，但并非实质性</em> 的部分中可以找到ARIA和可访问性最佳实践（例如使用替代文字）等无障碍标准的使用。从表面上看，这是令人鼓舞的，但是我们怀疑许多积极的趋势是由于某些UI框架的流行。一方面，这令人失望，因为Web开发人员不能仅仅依靠UI框架向其网站提供无障碍化支持。但是，另一方面，令人鼓舞的是，看到UI框架对Web的无障碍化可能有多大的影响。</p>
+<p>尽管不是结论性的，我们的结果表明在网络的<em>相当大，但并非实质性</em>的部分中可以找到ARIA和可访问性最佳实践（例如使用替代文字）等无障碍标准的使用。从表面上看，这是令人鼓舞的，但是我们怀疑许多积极的趋势是由于某些UI框架的流行。一方面，这令人失望，因为Web开发人员不能仅仅依靠UI框架向其网站提供无障碍化支持。但是，另一方面，令人鼓舞的是，看到UI框架对Web的无障碍化可能有多大的影响。</p>
 <p>我们认为，下一个前沿领域是使可通过UI框架访问的小部件更易于访问。由于许多野外使用的复杂小部件（例如，日历选择器）均来自UI库，所以让这些小部件能够开箱即用将是非常棒的。我们希望下次收集结果时，可以看到更正确实现的复杂ARIA角色的使用在增加-这标志着更复杂的小部件也被无障碍化了。此外，我们希望看到更多无障碍访问的媒体，例如图像和视频，以便所有用户都能享受网络的丰富性。</p>
 {% endblock %}
