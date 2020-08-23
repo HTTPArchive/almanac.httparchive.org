@@ -99,7 +99,7 @@ echo
 echo -e "${GREEN}Successfully deployed!${RESET_COLOR}"
 echo
 echo -e "${AMBER}Please update release on GitHub: https://github.com/HTTPArchive/almanac.httparchive.org/releases${RESET_COLOR}"
-echo -e "Using tag ${TAG_VERSION}@production${RESET_COLOR}"
+echo -e "${AMBER}Using tag ${TAG_VERSION}@production${RESET_COLOR}"
 echo -e "${AMBER}Please upload deploy.zip as the release artifact${RESET_COLOR}"
 echo
 echo "Have a nice day!"
