@@ -10,7 +10,7 @@ discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-08-23T00:00:00.000Z
 ---
 
 ## Introducción
