@@ -52,8 +52,9 @@ if [[ "$LAST_TAGGED_VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   semver=( "${LAST_TAGGED_VERSION//./ }" )
   major="${semver[0]}"
   minor="${semver[1]}"
-  next_minor=$((minor + 1))
-  NEXT_VERSION="$major.$next_minor.0"
+  patch="${semver[2]}"
+  next_patch=$((patch + 1))
+  NEXT_VERSION="$major.$minor.$patch"
 else
   echo "Warning - last tagged version is not of the format vX.X.X!"
 fi
