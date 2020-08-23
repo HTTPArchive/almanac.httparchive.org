@@ -31,9 +31,11 @@ __pycache__/*
 /setup.cfg
 
 env/
-node_modules/
 env/*
+node_modules/
 node_modules/*
+static/html
+static/html/*
 .DS_Store
 **/.DS_Store
 Dockerfile

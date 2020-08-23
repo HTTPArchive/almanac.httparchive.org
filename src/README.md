@@ -164,9 +164,14 @@ The deploy script will do the following:
 - Do a clean install
 - Run the tests
 - Ask you to complete any local tests and confirm good to deploy
-- Ask you if good to push changes to production branch on GitHub
+- Ask for a version number (suggesing the last verision tagged and incrementing the patch)
+- Tag the release (after asking you for the verion number to use)
+- Generate a `deploy.zip` file of what has been deployed
+- Deploy to GCP
+- Push changes to `production` branch on GitHub
+- Ask you to update the release section of GitHub
 
-4. Browse the website in production to verify that the new changes have taken effect
+4. Browse the website in production to verify that the new changes have taken effect. Not we have 3 hour caching so add random query params to pages to ensure you get latest version.
 
 ## Developing in Docker
 
