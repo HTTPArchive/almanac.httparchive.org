@@ -23,7 +23,7 @@ La spécification du langage elle-même, ainsi que les nombreuses bibliothèques
 
 ## Combien de JavaScript utilisons-nous&nbsp;?
 
-JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;; il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, [le téléchargement et l’exécution sont devenus les étapes les plus coûteuses](https://v8.dev/blog/cost-of-javascript-2019) lorsque JavaScript est traité par une page web.
+JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;: il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, [le téléchargement et l’exécution sont devenus les étapes les plus coûteuses](https://v8.dev/blog/cost-of-javascript-2019) lorsque JavaScript est traité par une page web.
 
 Envoyer de plus petits paquets de JavaScript au navigateur est le meilleur moyen de réduire les temps de téléchargement et d’améliorer ainsi les performances des pages. Mais quelle quantité de JavaScript utilisons-nous réellement&nbsp;?
 
@@ -37,7 +37,7 @@ Envoyer de plus petits paquets de JavaScript au navigateur est le meilleur moyen
 
 La Figure 1 ci-dessus montre que nous utilisons 373&nbsp;Ko de JavaScript au 50ᵉ percentile (aussi appelé médiane). En d’autres termes, 50&nbsp;% des sites envoient plus que cette quantité de JavaScript à leurs utilisateurs.
 
-En regardant ces chiffres, il est naturel de se demander si ce n’est pas trop de JavaScript. Cependant, en termes de performances des pages, l’impact dépend entièrement des connexions réseau et des appareils utilisés. Ce qui nous amène à notre prochaine question&nbsp;: quelle quantité de JavaScript envoyons-nous lorsque nous comparons les tests mobiles et sur ordinateurs de bureau&nbsp;?
+En regardant ces chiffres, il est naturel de se demander si ce n’est pas trop de JavaScript. Cependant, en termes de performances des pages, l’impact dépend entièrement des connexions réseau et des appareils utilisés. Ce qui nous amène à notre prochaine question&nbsp;: quelle quantité de JavaScript envoyons-nous lorsque nous comparons les tests sur mobiles et sur ordinateurs de bureau&nbsp;?
 
 <figure>
    <a href="/static/images/2019/javascript/fig2.png">
@@ -129,18 +129,18 @@ Tant sur les mobiles que sur les ordinateurs de bureau, les requêtes vers des t
    <figcaption id="fig9-caption">Figure 9. Répartition de l’ensemble du JavaScript téléchargé sur mobile.</figcaption>
 </figure>
 
-À la médiane, on utilise 89&nbsp;% plus de code tiers que de code du domaine principal rédigé par l’équipe de développement, tant sur mobiles que sur ordinateurs de bureau. Cela montre clairement que le code tiers peut être un des principaux facteurs de lourdeur d’une page web. Pour plus d’informations sur l’impact des tiers, consultez le chapitre ["Tierces Parties"](./third-parties).
+À la médiane, on utilise 89&nbsp;% plus de code tiers que de code du domaine principal rédigé par l’équipe de développement, tant sur mobiles que sur ordinateurs de bureau. Cela montre clairement que le code tiers peut être un des principaux facteurs de lourdeur d’une page web. Pour plus d’informations sur l’impact des tiers, consultez le chapitre [« Tierces Parties »](./third-parties).
 
 ## Compression des ressources
 
-Dans le contexte des interactions entre navigateur et serveur, la compression des ressources fait référence au code qui a été transformé à l’aide d’un algorithme de compression des données. Les ressources peuvent être compressées statiquement à l’avance ou à la volée, quand le navigateur les requêtes. Dans les deux cas, la taille de la ressource transférée est considérablement réduite, ce qui améliore les performances de la page.
+Dans le contexte des interactions entre navigateur et serveur, la compression des ressources fait référence au code qui a été transformé à l’aide d’un algorithme de compression des données. Les ressources peuvent être compressées statiquement à l’avance ou à la volée, au moment où le navigateur en fait la demande. Dans les deux cas, la taille de la ressource transférée est considérablement réduite, ce qui améliore les performances de la page.
 
 Il existe de nombreux algorithmes de compression de texte, mais seuls deux sont principalement utilisés pour la compression (et la décompression) des requêtes sur le réseau HTTP&nbsp;:
 
-- [Gzip](https://www.gzip.org/) (gzip): le format de compression le plus utilisé pour les interactions entre serveurs et clients&nbsp;;
-- [Brotli](https://github.com/google/brotli) (br): un algorithme de compression plus récent visant à améliorer encore les taux de compression. [90&nbsp;% des navigateurs](https://caniuse.com/#feat=brotli) supportent la compression Brotli.
+- [Gzip](https://www.gzip.org/) (gzip)&nbsp;: le format de compression le plus utilisé pour les interactions entre serveurs et clients&nbsp;;
+- [Brotli](https://github.com/google/brotli) (br)&nbsp;: un algorithme de compression plus récent visant à améliorer encore les taux de compression. [90&nbsp;% des navigateurs](https://caniuse.com/#feat=brotli) supportent la compression Brotli.
 
-Les scripts compressés devront toujours être décompressés par le navigateur une fois transférés. Cela signifie que son contenu reste le même et que les temps d’exécution ne sont pas du tout optimisés. Cependant, la compression des ressources améliorera toujours les temps de téléchargement, qui est également l’une des étapes les plus coûteuses du traitement JavaScript. S’assurer que les fichiers JavaScript sont correctement compressés peut constituer un des principaux facteurs d’amélioration des performances pour un site web.
+Les scripts compressés devront toujours être décompressés par le navigateur une fois transférés. Cela signifie que son contenu reste le même et que les temps d’exécution ne sont pas du tout optimisés. Cependant, la compression des ressources améliorera toujours leur temps de téléchargement, qui est également l’une des étapes les plus coûteuses du traitement JavaScript. S’assurer que les fichiers JavaScript sont correctement compressés peut constituer un des principaux facteurs d’amélioration des performances pour un site web.
 
 Combien de sites compressent leurs ressources JavaScript&nbsp;?
 
@@ -154,19 +154,19 @@ Combien de sites compressent leurs ressources JavaScript&nbsp;?
 
 La majorité des sites compressent leurs ressources JavaScript. L’encodage Gzip est utilisé sur ~64-67&nbsp;% des sites et Brotli sur ~14&nbsp;%. Les taux de compression sont similaires sur ordinateurs de bureau et mobiles.
 
-Pour une analyse plus approfondie sur la compression, reportez-vous au chapitre ["Compression"](./compression).
+Pour une analyse plus approfondie sur la compression, reportez-vous au chapitre [« Compression »](./compression).
 
 ## Bibliothèques et frameworks ouverts
 
-Parlons ici du code source ouvert (<i lang="en">open source</i>), ou du code sous licence permissive, qui peut être consulté, visualisé et modifié par n’importe qui. Des minuscules bibliothèques aux navigateurs complets, tels que [Chromium](https://www.chromium.org/Home) et [Firefox](https://www.openhub.net/p/firefox), le code source <i lang="en">open source</i> joue un rôle crucial dans le monde du développement web. Dans le contexte de JavaScript, les équipe de développement s’appuient sur des outils <i lang="en">open source</i> pour inclure tous types de fonctionnalités dans leur page web. Qu’un développeur ou une développeuse décide d’utiliser une petite bibliothèque d’utilitaires ou un énorme framework qui dicte l’architecture de toute son application, le fait de s’appuyer sur du code <i lang="en">open source</i> peut rendre le développement de fonctionnalités plus facile et plus rapide. Quelles sont donc les bibliothèques JavaScript <i lang="en">open source</i> les plus utilisées&nbsp;?
+Parlons ici du code source ouvert (<i lang="en">open source</i>), ou du code sous licence permissive, qui peut être consulté, visualisé et modifié par n’importe qui. Des minuscules bibliothèques aux navigateurs complets, tels que [Chromium](https://www.chromium.org/Home) et [Firefox](https://www.openhub.net/p/firefox), le code source <i lang="en">open source</i> joue un rôle crucial dans le monde du développement web. Dans le contexte de JavaScript, les équipes de développement s’appuient sur des outils <i lang="en">open source</i> pour inclure tous types de fonctionnalités dans leur page web. Qu’un développeur ou une développeuse décide d’utiliser une petite bibliothèque d’utilitaires ou un énorme <i lang="en">framework</i> qui dicte l’architecture de toute son application, le fait de s’appuyer sur du code <i lang="en">open source</i> peut rendre le développement de fonctionnalités plus facile et plus rapide. Quelles sont donc les bibliothèques JavaScript <i lang="en">open source</i> les plus utilisées&nbsp;?
 
 <figure>
    <table>
       <thead>
         <tr>
-          <th>Librairie</th>
-          <th>Ordinateur de bureau</th>
-          <th>Mobile</th>
+          <th scope="col">Librairie</th>
+          <th scope="col">Ordinateur de bureau</th>
+          <th scope="col">Mobile</th>
         </tr>
       </thead>
       <tbody>
@@ -289,26 +289,26 @@ Il y a plusieurs raisons possibles&nbsp;:
 
 Les autres bibliothèques JavaScript les plus utilisées comprennent les variantes de jQuery (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/) et ainsi de suite.
 
-### Frameworks and librairies UI
+### Frameworks et bibliothèques d'interface
 
-<p class="note">Comme mentionné dans notre <a href="./methodology#wappalyzer">méthodologie</a>, la bibliothèque de détection tierce utilisée dans HTTP Archive (Wappalyzer) a un certain nombre de limitations en ce qui concerne la manière dont elle détecte certains outils. Un ticket est ouvert concernant <a href="https://github.com/AliasIO/wappalyzer/issues/2450">l’amélioration de la détection des librairies et <span lang="en">frameworks</span> JavaScript</a>, ce qui aura eu un impact sur les résultats présentés ici.</p>
+<p class="note">Comme mentionné dans notre <a href="./methodology#wappalyzer">méthodologie</a>, la bibliothèque de détection tierce utilisée dans HTTP Archive (Wappalyzer) a un certain nombre de limitations en ce qui concerne la manière dont elle détecte certains outils. Un ticket est ouvert concernant <a href="https://github.com/AliasIO/wappalyzer/issues/2450">l’amélioration de la détection des bibliothèques et <span lang="en">frameworks</span> JavaScript</a>, ce qui aura eu un impact sur les résultats présentés ici.</p>
 
-Au cours des dernières années, l’écosystème JavaScript a connu une augmentation du nombre de librairies et <span lang="en">frameworks</span> open-source pour faciliter la création d’applications monopages (SPA). Une application monopage se caractérise par une page web qui charge une seule page HTML et utilise JavaScript pour modifier la page lors de l’interaction avec l’utilisateur au lieu de télécharger de nouvelles pages depuis le serveur. Bien que cela reste la principale prémisse des applications monopages, différentes approches de rendu du serveur peuvent encore être utilisées pour améliorer l’expérience de ces sites. Combien de sites utilisent ces types de <span lang="en">frameworks</span>&nbsp;?
+Au cours des dernières années, l’écosystème JavaScript a connu une augmentation du nombre de bibliothèques et <span lang="en">frameworks</span> open-source pour faciliter la création d’applications monopages (SPA). Une application monopage se caractérise par une page web qui charge une seule page HTML et utilise JavaScript pour modifier la page lors de l’interaction avec l’utilisateur au lieu de télécharger de nouvelles pages depuis le serveur. Bien que cela reste la principale prémisse des applications monopages, différentes approches de rendu du serveur peuvent encore être utilisées pour améliorer l’expérience de ces sites. Combien de sites utilisent ces types de <span lang="en">frameworks</span>&nbsp;?
 
 <figure>
    <a href="/static/images/2019/javascript/fig12.png">
       <img src="/static/images/2019/javascript/fig12.png" alt="Figure 12. Frameworks les plus fréquemment utilisés sur ordinateurs de bureau." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive">
    </a>
    <div id="fig12-description" class="visually-hidden">Diagramme à barres montrant que 4,6&nbsp;% des sites utilisent React, 2,0&nbsp;% AngularJS, 1,8&nbsp;% Backbone.js, 0,8&nbsp;% Vue.js, 0,4&nbsp;% Knockout.js, 0,3&nbsp;% Zone.js, 0,3&nbsp;% Angular, 0,1&nbsp;% AMP, 0,1&nbsp;% Ember.js.</div>
-   <figcaption id="fig12-caption">Figure 12. Frameworks les plus fréquemment utilisés sur ordinateurs de bureau.</figcaption>
+   <figcaption id="fig12-caption">Figure 12. <span lang="en">Frameworks</span> les plus fréquemment utilisés sur ordinateurs de bureau.</figcaption>
 </figure>
 
 Seul un sous-ensemble de <span lang="en">frameworks</span> populaires est analysé ici, mais il est important de noter que tous suivent l’une ou l’autre de ces deux approches&nbsp;:
 
 - Une architecture [modèle-vue-contrôleur](https://developer.chrome.com/apps/app_frameworks) (ou modèle-vue-vue/modèle)
-- Une architecture orientée composant
+- Une architecture orientée composants
 
-Bien qu’il y ait eu une évolution vers un modèle basé sur les composants, de nombreux <span lang="en">frameworks</span> plus anciens suivent le paradigme MVC. ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) sont toujours utilisées dans des milliers de pages. Cependant, [React](https://reactjs.org/), [Vue](https://vuejs.org/) et [Angular](https://angular.io/) sont les <span lang="en">frameworks</span> à base de composants les plus populaires ([Zone.js](https://github.com/angular/zone.js) est un module qui fait maintenant partie du noyau Angular).
+Bien qu’il y ait eu une évolution vers un modèle basé sur les composants, de nombreux <span lang="en">frameworks</span> plus anciens suivent le paradigme MVC. ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) sont toujours utilisées dans des milliers de pages. Cependant, [React](https://reactjs.org/), [Vue](https://vuejs.org/) et [Angular](https://angular.io/) sont les <span lang="en">frameworks</span> à base de composants les plus populaires. ([Zone.js](https://github.com/angular/zone.js) est un module qui fait maintenant partie du noyau Angular).
 
 ## Chargement différentiel
 
@@ -326,11 +326,11 @@ Combien de site utilisent `type="module"` sur des scripts dans leurs pages&nbsp;
    <a href="/static/images/2019/javascript/fig13.png">
       <img src="/static/images/2019/javascript/fig13.png" alt="Figure 13. Pourcentage de sites utilisant type=module." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive">
    </a>
-   <div id="fig13-description" class="visually-hidden">Diagramme à barres montrant que 0,6&nbsp;% des sites sur ordinateurs de bureau utilisent "type=module", et 0,8&nbsp;% des sites sur mobiles.</div>
-   <figcaption id="fig13-caption">Figure 13. Pourcentage de sites utilisant type=module.</figcaption>
+   <div id="fig13-description" class="visually-hidden">Diagramme à barres montrant que 0,6&nbsp;% des sites sur ordinateurs de bureau utilisent <code>type=module</code>, et 0,8&nbsp;% des sites sur mobiles.</div>
+   <figcaption id="fig13-caption">Figure 13. Pourcentage de sites utilisant <code>type=module</code>.</figcaption>
 </figure>
 
-La prise en charge des modules au niveau du navigateur est encore relativement récente, et les chiffres montrent que très peu de sites utilisent actuellement le `type="module"` pour leurs scripts. De nombreux sites s’appuient encore sur des chargeurs de modules (2,37&nbsp;% de tous les sites sur ordinateurs de bureau utilisent [RequireJS](https://github.com/requirejs/requirejs) par exemple) et des bundlers ([webpack](https://webpack.js.org/) par exemple) pour définir des modules au sein de leur base de code.
+La prise en charge des modules au niveau du navigateur est encore relativement récente, et les chiffres montrent que très peu de sites utilisent actuellement le `type="module"` pour leurs scripts. De nombreux sites s’appuient encore sur des chargeurs de modules (2,37&nbsp;% de tous les sites sur ordinateurs de bureau utilisent [RequireJS](https://github.com/requirejs/requirejs) par exemple) et des <i lang="en">bundlers</i> ([webpack](https://webpack.js.org/) par exemple) pour définir des modules au sein de leur base de code.
 
 Si des modules natifs sont utilisés, il est important de s’assurer qu’un script de recours approprié est utilisé pour les navigateurs qui ne supportent pas encore les modules. Cela peut être fait en incluant un script supplémentaire avec un attribut `nomodule`.
 
@@ -363,20 +363,20 @@ Alors, combien de sites utilisent les directives `preload` et `prefetch`&nbsp;?
    <a href="/static/images/2019/javascript/fig15.png">
       <img src="/static/images/2019/javascript/fig15.png" alt="Figure 15. Pourcentage de sites utilisant rel=preload pour les scripts." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive">
    </a>
-   <div id="fig15-description" class="visually-hidden">Diagramme à barres montrant que 14&nbsp;% des sites sur ordinateurs de bureau utilisent "rel=preload" pour les scripts, et 15&nbsp;% des sites sur mobiles.</div>
-   <figcaption id="fig15-caption">Figure 15. Pourcentage de sites utilisant rel=preload pour les scripts.</figcaption>
+   <div id="fig15-description" class="visually-hidden">Diagramme à barres montrant que 14&nbsp;% des sites sur ordinateurs de bureau utilisent <code>rel=preload</code> pour les scripts, et 15&nbsp;% des sites sur mobiles.</div>
+   <figcaption id="fig15-caption">Figure 15. Pourcentage de sites utilisant <code>rel=preload</code> pour les scripts.</figcaption>
 </figure>
 
 Sur tous les sites mesurés par HTTP Archive, 14,33&nbsp;% des sites sur ordinateurs de bureau et 14,84&nbsp;% des sites sur mobiles utilisent `<link rel="preload">` pour des scripts de leur page.
 
-Pour `prefetch`, les chiffres sont les suivant&nbsp;:
+Pour `prefetch`, les chiffres sont les suivants&nbsp;:
 
 <figure>
    <a href="/static/images/2019/javascript/fig16.png">
       <img src="/static/images/2019/javascript/fig16.png" alt="Figure 16. Pourcentage de sites utilisant rel=prefetch pour les scripts." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive">
    </a>
-   <div id="fig16-description" class="visually-hidden">Diagramme à barres montrant que 0,08&nbsp;% des sites sur ordinateurs de bureau utilisent "rel=prefetch", et 0,08&nbsp;% des sites sur mobiles.</div>
-   <figcaption id="fig16-caption">Figure 16. Pourcentage de sites utilisant rel=prefetch pour les scripts.</figcaption>
+   <div id="fig16-description" class="visually-hidden">Diagramme à barres montrant que 0,08&nbsp;% des sites sur ordinateurs de bureau utilisent <code>rel=prefetch</code>, et 0,08&nbsp;% des sites sur mobiles.</div>
+   <figcaption id="fig16-caption">Figure 16. Pourcentage de sites utilisant <code>rel=prefetch</code> pour les scripts.</figcaption>
 </figure>
 
 Sur mobiles comme sur ordinateurs de bureau, 0,08&nbsp;% des pages utilisent la directive `prefetch` pour au moins un de leurs scripts.
@@ -385,7 +385,7 @@ Sur mobiles comme sur ordinateurs de bureau, 0,08&nbsp;% des pages utilisent la 
 
 JavaScript continue d’évoluer en tant que langage. Une nouvelle version de la norme de langage elle-même, connue sous le nom d’ECMAScript, est publiée chaque année avec de nouvelles API et comprend des fonctionnalités qui franchissent les étapes de proposition pour devenir une partie du langage lui-même.
 
-Grâce à HTTP Archive, nous pouvons examiner toute nouvelle API prise en charge (ou sur le point de l’être) et voir à quel point son utilisation est répandue. Ces API peuvent déjà être utilisées dans les navigateurs qui les prennent en charge _ou_ avec un polyfill d’accompagnement pour s’assurer qu’elles fonctionnent quel que soit le navigateur.
+Grâce à HTTP Archive, nous pouvons examiner toute nouvelle API prise en charge (ou sur le point de l’être) et voir à quel point son utilisation est répandue. Ces API peuvent déjà être utilisées dans les navigateurs qui les prennent en charge _ou_ avec un <i lang="en">polyfill</i> d’accompagnement pour s’assurer qu’elles fonctionnent quel que soit le navigateur.
 
 Combien de sites utilisent les API suivantes&nbsp;?
 
@@ -412,22 +412,22 @@ Il est important de noter que les chiffres indiqués ici sont des approximations
 
 Dans de nombreux moteurs de compilation, les fichiers JavaScript subissent une minification afin de minimiser leur taille et une transpilation pour les nouvelles fonctionnalités du langage qui ne sont pas encore prises en charge par de nombreux navigateurs. Par ailleurs, les surensembles de langage comme [TypeScript](https://www.typescriptlang.org/) se compilent en un résultat qui peut être sensiblement différent du code source original. Pour toutes ces raisons, le code final servi au navigateur peut être illisible et difficile à déchiffrer.
 
-Une cartographie de code source, ou **sourcemap** est un fichier supplémentaire accompagnant un fichier JavaScript qui permet à un navigateur de faire correspondre la version finale à sa source d’origine. Cela peut rendre le débogage et l’analyse des bundles de production beaucoup plus simples.
+Une cartographie de code source, ou **sourcemap** est un fichier supplémentaire accompagnant un fichier JavaScript qui permet à un navigateur de faire correspondre la version finale à sa source d’origine. Cela peut rendre le débogage et l’analyse des <i lang="en">bundles</i> de production beaucoup plus simples.
 
 Bien qu’utile, il existe un certain nombre de raisons pour lesquelles de nombreux sites peuvent ne pas vouloir inclure de cartographie des sources dans leur site de production final, par exemple en choisissant de ne pas exposer le code source complet au public. Combien de sites incluent donc réellement des sourcemaps&nbsp;?
 
 <figure>
    <a href="/static/images/2019/javascript/fig18.png">
-      <img src="/static/images/2019/javascript/fig18.png" alt="Figure 18. Pourcentage de sites utilisant des sourcemaps." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive">
+      <img src="/static/images/2019/javascript/fig18.png" alt="Figure 18. Pourcentage de sites utilisant des source maps." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive">
    </a>
-   <div id="fig18-description" class="visually-hidden">Diagramme à barres montrant que 18&nbsp;% des sites sur ordinateurs de bureau et 17&nbsp;% des sites sur mobiles utilisent des sourcemaps.</div>
-   <figcaption id="fig18-caption">Figure 18. Percentage of sites using source maps.</figcaption>
+   <div id="fig18-description" class="visually-hidden">Diagramme à barres montrant que 18&nbsp;% des sites sur ordinateurs de bureau et 17&nbsp;% des sites sur mobiles utilisent des <i lang="en">source maps</i>.</div>
+   <figcaption id="fig18-caption">Figure 18. Pourcentage de sites utilisant des <i lang="en">source maps</i>.</figcaption>
 </figure>
 
 Les résultats sont à peu près les mêmes pour les pages sur ordinateurs de bureau et les pages sur mobiles. 17-18&nbsp;% incluent un sourcemap pour au moins un script sur la page (détecté comme un script du domaine principal avec `sourceMappingURL`).
 
 ## Conclusion
 
-L’écosystème JavaScript continue de changer et d’évoluer chaque année. Nous verront toujours apparaitre des API plus récentes, des moteurs de navigation améliorés, de nouvelles librairies ou <span lang="en">frameworks</span>. HTTP Archive nous fournit des informations précieuses sur la façon dont les sites utilisent le langage sur le terrain.
+L’écosystème JavaScript continue de changer et d’évoluer chaque année. Nous verront toujours apparaitre des API plus récentes, des moteurs de navigation améliorés, de nouvelles bibliothèques ou <span lang="en">frameworks</span>. HTTP Archive nous fournit des informations précieuses sur la façon dont les sites utilisent le langage sur le terrain.
 
 Sans JavaScript, le web ne serait pas là où il est aujourd’hui, et toutes les données recueillies pour cet article ne font que le prouver.
