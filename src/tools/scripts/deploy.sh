@@ -15,8 +15,8 @@ RESET_COLOR="\033[0m" # No Color
 
 # This is a helper function to as if OK to continue with [y/N] answer
 function check_continue {
-  read -r -n 1 -p "${1} [y/N]: " DEPLOY
-  if [ "${DEPLOY}" != "Y" ] && [ "${DEPLOY}" != "y" ]; then
+  read -r -n 1 -p "${1} [y/N]: " REPLY
+  if [ "${REPLY}" != "Y" ] && [ "${REPLY}" != "y" ]; then
     echo
     echo -e "${RED}Cancelling deploy${RESET_COLOR}"
     exit 1
