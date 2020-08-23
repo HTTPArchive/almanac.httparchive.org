@@ -26,7 +26,18 @@ RETURNS STRUCT<
   n_non_empty_h2 INT64, 
   n_non_empty_h3 INT64, 
   n_non_empty_h4 INT64, 
-  has_same_h1_title BOOL
+  has_same_h1_title BOOL, 
+  canonicals ARRAY<STRING>, 
+  has_self_canonical BOOL, 
+  is_canonicalized BOOL,
+  http_canonicals ARRAY<STRING>, 
+  has_canonical_mismatch BOOL, 
+  rendering_changed_canonical BOOL, 
+  rendering_changed_hreflang BOOL, 
+  has_hreflang ARRAY<STRING>,
+  has_http_hreflang ARRAY<STRING>
+
+
 
 # add more properties here...
 
@@ -265,7 +276,21 @@ if (Math.floor(Math.random() * 50) == 0) {
 
     }
 
-    // add more code to set result properties here...
+    var hreflang = wpt_bodies.hreflang;
+
+    if (hreflang.raw && hreflang.rendered) {
+      result.rendering_changed_hreflang = !compareStringArrays(canonicals.raw.html_link_canoncials, canonicals.rendered.html_link_canoncials);
+        }
+
+    if (hreflang.rendered.values) {
+      result.has_hreflang = hreflang.rendered.values;
+    }
+
+    if (hreflang.http_header.values) {
+      result.has_http_hreflang = hreflang.http_header.values;
+    }
+
+
 
 } catch (e) {}
 return result;
@@ -354,8 +379,20 @@ SELECT
   AS_PERCENT(COUNTIF(canonicals_info.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
 
   # Pages with canonical conflict between raw and rendered 
-  #COUNTIF(wpt_bodies_info.rendering_changed_canonical) as has_conflict_raw_rendered_canonical,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_raw_rendered_canonical
+  #COUNTIF(canonicals_info.rendering_changed_canonical) as has_conflict_raw_rendered_canonical,
+  AS_PERCENT(COUNTIF(canonicals.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_raw_rendered_canonical, 
+
+   # Pages with hreflang conflict between raw and rendered 
+  #COUNTIF(wpt_bodies_info.rendering_changed_hreflang) as has_conflict_raw_rendered_hreflang,
+  AS_PERCENT(COUNTIF(hreflangs.rendering_changed_hreflang), COUNT(0)) AS pct_has_conflict_raw_rendered_hreflang, 
+
+  # Pages with hreflang
+  #COUNTIF(ARRAY_LENGTH(hreflangs_info.has_hreflang) > 0) as has_hreflang,
+  AS_PERCENT(COUNTIF(ARRAY_LENGTH(hreflangs_info.has_hreflang) > 0), COUNT(0)) AS pct_has_hreflang,
+
+  # Pages with http hreflang
+  #COUNTIF(ARRAY_LENGTH(hreflangs_info.has_http_hreflang) > 0) as has_http_hreflang,
+  AS_PERCENT(COUNTIF(ARRAY_LENGTH(hreflangs_info.has_http_hreflang) > 0), COUNT(0)) AS pct_has_http_hreflang,
 
 
   # add more fields here...
@@ -367,7 +404,8 @@ SELECT
         _TABLE_SUFFIX AS client,
         get_wpt_bodies_info('') AS wpt_bodies_info # TEST
         #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE 
-        #get_canonicals_info(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.canonicals') AS canonicals_info # LIVE      
+        #get_canonicals_info(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.canonicals') AS canonicals_info # LIVE 
+        #get_hreflangs_info(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.hreflangs') AS hreflangs_info # LIVE      
       FROM
         `httparchive.sample_data.pages_*` # TEST
     )
