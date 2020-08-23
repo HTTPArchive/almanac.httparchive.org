@@ -59,7 +59,7 @@ if [[ "${LAST_TAGGED_VERSION}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   MAJOR="${SEMVER[0]}"
   MINOR="${SEMVER[1]}"
   PATCH="${SEMVER[2]}"
-  NEXT_PATCH=$((patch + 1))
+  NEXT_PATCH=$((PATCH + 1))
   NEXT_VERSION="$MAJOR.$MINOR.$NEXT_PATCH"
 else
   echo -e "${AMBER}Warning - last tagged version is not of the format vX.X.X!${RESET_COLOR}"
