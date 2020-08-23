@@ -222,6 +222,11 @@
     </url>
 
     <url>
+        <loc>https://almanac.httparchive.org/fr/2019/javascript</loc>
+        <lastmod>2020-06-30</lastmod>
+    </url>
+
+    <url>
         <loc>https://almanac.httparchive.org/fr/2019/markup</loc>
         <lastmod>2020-03-01</lastmod>
     </url>
