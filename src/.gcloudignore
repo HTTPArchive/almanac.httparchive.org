@@ -6,7 +6,11 @@
 # For more information, run:
 #   $ gcloud topic gcloudignore
 #
+# Note we are also using this for zip ignore in deploy.xh, so have to be a little
+# bit more verbose than gcloud demands, to exclude items
+
 .gcloudignore
+
 # If you would like to upload your .git directory, .gitignore file or files
 # from your .gitignore file, remove the corresponding line
 # below:
@@ -16,8 +20,21 @@
 # Python pycache:
 __pycache__/
 .pytest_cache/
+__pycache__/*
+.pytest_cache/*
+**/__pycache__/*
+**/.pytest_cache/*
+*.pyc
+**/*.pyc
+
 # Ignored by the build system
 /setup.cfg
 
 env/
 node_modules/
+env/*
+node_modules/*
+.DS_Store
+**/.DS_Store
+Dockerfile
+.dockerignore

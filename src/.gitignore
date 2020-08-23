@@ -4,5 +4,5 @@ node_modules/
 templates/*/*/chapters/
 templates/*/*/ebook.html
 templates/sitemap.xml
-static/pdfs/
 static/html/
+deploy.zip
