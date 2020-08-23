@@ -13,7 +13,7 @@ GREEN="\033[0;32m"
 AMBER="\033[0;33m"
 RESET_COLOR="\033[0m" # No Color
 
-# This is a helper function to as if OK to continue with [y/N] answer
+# A helper function to ask if it is OK to continue with [y/N] answer
 function check_continue {
   read -r -n 1 -p "${1} [y/N]: " REPLY
   if [ "${REPLY}" != "Y" ] && [ "${REPLY}" != "y" ]; then
