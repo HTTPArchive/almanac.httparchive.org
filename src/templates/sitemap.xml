@@ -423,7 +423,7 @@
 
     <url>
         <loc>https://almanac.httparchive.org/zh-CN/2019/accessibility</loc>
-        <lastmod>2020-08-12</lastmod>
+        <lastmod>2020-08-23</lastmod>
     </url>
 
     <url>
@@ -434,6 +434,11 @@
     <url>
         <loc>https://almanac.httparchive.org/zh-CN/2019/methodology</loc>
         <lastmod>2020-08-12</lastmod>
+    </url>
+
+    <url>
+        <loc>https://almanac.httparchive.org/zh-CN/2019/performance</loc>
+        <lastmod>2020-08-23</lastmod>
     </url>
 
     <url>
