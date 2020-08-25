@@ -118,7 +118,7 @@ Custom properties are what many call CSS variables. They're more dynamic than a 
   id=6,
   caption="Percent of pages using custom properties.",
   content="5%",
-  class="big-number"
+  classes="big-number"
 )
 }}
 
@@ -182,7 +182,7 @@ With the rise of OOCSS, atomic, and functional CSS strategies which can compose 
   id=11,
   caption="The median number of class names per class attribute (desktop and mobile).",
   content="1",
-  class="big-number"
+  classes="big-number"
 )
 }}
 
@@ -211,7 +211,7 @@ Like flexbox, [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_L
   id=13,
   caption="Percent of websites using grid.",
   content="2%",
-  class="big-number"
+  classes="big-number"
 )
 }}
 
@@ -302,7 +302,7 @@ Quite a lot, it seems! The median desktop page has 96 distinct margin values and
   id=19,
   caption="Percent of desktop and mobile pages that include logical properties.",
   content="0.6%",
-  class="big-number"
+  classes="big-number"
 )
 }}
 
@@ -338,7 +338,7 @@ From our work experience, any number of 9's seemed to be the most popular choice
   id=22,
   caption="The largest known <code>z-index</code> value.",
   content="999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important",
-  class="really-big-number"
+  classes="really-big-number"
 )
 }}
 
@@ -353,7 +353,7 @@ Filters are a fun and great way to modify the pixels the browser intends to draw
   id=23,
   caption="Percent of pages that include a stylesheet with the <code>filter</code> property.",
   content="78%",
-  class="big-number"
+  classes="big-number"
 )
 }}
 
@@ -369,7 +369,7 @@ Blend modes are similar to filters in that they are a post-processing effect tha
   id=24,
   caption="Percent of pages that include a stylesheet with the <code>*-blend-mode</code> property.",
   content="8%",
-  class="big-number"
+  classes="big-number"
 )
 }}
 

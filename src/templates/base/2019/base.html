@@ -397,7 +397,7 @@
   data_width=width,
   data_height=height,
   content="",
-  class=""
+  classes=""
   )
 %}
 <figure id="fig-{{ id }}">
@@ -412,7 +412,7 @@
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig{{ id }}-description" data-show-text="{{ show_description(id) }}" data-hide-text="{{ hide_description(id) }}">{{ show_description(id) }}</button>
   <div id="fig{{ id }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
-  <div {% if class != "" %} class="{{ class }}" {% endif %}>{{ content }}</div>
+  <div {% if classes != "" %} class="{{ classes }}" {% endif %}>{{ content }}</div>
   {%- endif %}
   <figcaption id="fig{{ id }}-caption">{{ figure_link( id, caption) }}</figcaption>
 </figure>
