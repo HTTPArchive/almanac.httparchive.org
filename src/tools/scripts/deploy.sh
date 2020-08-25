@@ -83,7 +83,8 @@ if [[ -f deploy.zip ]]; then
 fi
 
 echo "Zipping artifacts into deploy.zip"
-zip -q -r deploy . --exclude @.gcloudignore
+# Exclude chapter images as quick large and tracked in git anyway
+zip -q -r deploy . --exclude @.gcloudignore static\/images\/*\/*\/* static\/pdfs\/*
 
 echo "Deploying to GCP"
 echo "Y" | gcloud app deploy --project webalmanac --stop-previous-version
