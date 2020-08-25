@@ -77,14 +77,14 @@ LONG_DATE=$(date -u +%Y-%m-%d\ %H:%M:%S)
 git tag -a "${TAG_VERSION}" -m "Version ${TAG_VERSION} ${LONG_DATE}"
 echo "Tagged ${TAG_VERSION} with message 'Version ${TAG_VERSION} ${LONG_DATE}'"
 
-if [[ -f deploy.zip ]]; then
+if [[ -f deployed.zip ]]; then
   echo "Removing old deploy.zip"
-  rm -f deploy.zip
+  rm -f deployed.zip
 fi
 
 echo "Zipping artifacts into deploy.zip"
-# Exclude chapter images as quick large and tracked in git anyway
-zip -q -r deploy . --exclude @.gcloudignore static\/images\/*\/*\/* static\/pdfs\/*
+# Exclude chapter images as quite large and tracked in git anyway
+zip -q -r deployed . --exclude @.gcloudignore static/images/*/*/* static/pdfs/*
 
 echo "Deploying to GCP"
 echo "Y" | gcloud app deploy --project webalmanac --stop-previous-version

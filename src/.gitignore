@@ -5,4 +5,4 @@ templates/*/*/chapters/
 templates/*/*/ebook.html
 templates/sitemap.xml
 static/html/
-deploy.zip
+deployed.zip
