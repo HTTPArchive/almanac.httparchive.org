@@ -10,7 +10,7 @@
   - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
 #}-->
 
-{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"Chapitre JavaScript du Web Almanac 2019 couvrant la quantité de JavaScript que nous utilisons sur le web, la compression, les bibliothèques et les frameworks, le chargement et les cartographies de code source (source maps).","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["borisschapira"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-23T00:00:00.000Z","chapter":"javascript"} %} {% block index %}
+{% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"Chapitre JavaScript du Web Almanac 2019 couvrant la quantité de JavaScript que nous utilisons sur le web, la compression, les bibliothèques et les frameworks, le chargement et les cartographies de code source (source maps).","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":["borisschapira"],"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-25T00:00:00.000Z","chapter":"javascript"} %} {% block index %}
 <ul>
   <li>
     <a href="#introduction">Introduction</a>
@@ -82,17 +82,17 @@
     <img src="/static/images/2019/javascript/fig1.png" alt="Figure 1. Répartition des octets de JavaScript par page." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig1-description" data-show-text="{{ show_description(1) }}" data-hide-text="{{ hide_description(1) }}">{{ show_description(1) }}</button>
-  <div id="fig1-description" class="visually-hidden">Diagramme à barres montrant que 70 octets de JavaScript sont utilisés dans le percentile p10, 174 octets pour p25, 373 octets pour p50, 693 octets pour p75 et 1093 octets pour p90</div>
+  <div id="fig1-description" class="visually-hidden">Diagramme à barres montrant que 70 octets de JavaScript sont utilisés au 10e percentile, 174 octets au 25e, 373 octets au 50e, 693 octets au 75e et 1093 octets au 90e</div>
   <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">Figure 1.</a> Répartition des octets de JavaScript par page.</figcaption>
 </figure>
-<p>La Figure 1 ci-dessus montre que nous utilisons 373&nbsp;Ko de JavaScript au 50ᵉ percentile (aussi appelé médiane). En d’autres termes, 50&nbsp;% des sites envoient plus que cette quantité de JavaScript à leurs utilisateurs.</p>
+<p>La Figure 1 ci-dessus montre que nous utilisons 373&nbsp;Ko de JavaScript au 50e percentile (aussi appelé médiane). En d’autres termes, 50&nbsp;% des sites envoient plus que cette quantité de JavaScript à leurs utilisateurs.</p>
 <p>En regardant ces chiffres, il est naturel de se demander si ce n’est pas trop de JavaScript. Cependant, en termes de performances des pages, l’impact dépend entièrement des connexions réseau et des appareils utilisés. Ce qui nous amène à notre prochaine question&nbsp;: quelle quantité de JavaScript envoyons-nous lorsque nous comparons les tests sur mobiles et sur ordinateurs de bureau&nbsp;?</p>
 <figure id="fig-2">
   <a href="/static/images/2019/javascript/fig2.png">
     <img src="/static/images/2019/javascript/fig2.png" alt="Figure 2. Distribution de JavaScript par page et par type d’appareil." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
-  <div id="fig2-description" class="visually-hidden">Un diagramme à barres montrant que 76 octets / 65 octets de JavaScript sont utilisés dans le percentile p10 sur ordinateur de bureau et mobile respectivement, 186 / 164 octets pour p25, 391 / 359 octets pour p50, 721 / 668 octets pour p75, et 1 131 / 1 060 octets pour p90.</div>
+  <div id="fig2-description" class="visually-hidden">Un diagramme à barres montrant que 76 octets / 65 octets de JavaScript sont utilisés au 10e percentile sur ordinateur de bureau et mobile respectivement, 186 / 164 octets au 25e, 391 / 359 octets au 50e, 721 / 668 octets au 75e, et 1 131 / 1 060 octets au 90e.</div>
   <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">Figure 2.</a> Distribution de JavaScript par page et par type d’appareil.</figcaption>
 </figure>
 <p>À chaque centile, nous envoyons un peu plus de JavaScript aux ordinateurs de bureau qu’aux mobiles.</p>
@@ -104,7 +104,7 @@
     <img src="/static/images/2019/javascript/fig3.png" alt="Figure 3. Temps de traitement du fil d’exécution principal V8 par appareil." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig3-description" data-show-text="{{ show_description(3) }}" data-hide-text="{{ hide_description(3) }}">{{ show_description(3) }}</button>
-  <div id="fig3-description" class="visually-hidden">Un diagramme à barres indiquant que 141&nbsp;ms / 377&nbsp;ms de temps de traitement sont utilisés dans le percentile p10 sur le bureau et le mobile respectivement, 352 / 988&nbsp;ms pour p25, 849 / 2 437&nbsp;ms pour p50, 1 850 / 5 518&nbsp;ms pour p75, et 3 543 / 10 735&nbsp;ms pour p90.</div>
+  <div id="fig3-description" class="visually-hidden">Un diagramme à barres indiquant que 141&nbsp;ms / 377&nbsp;ms de temps de traitement sont utilisés au 10e percentile sur le bureau et le mobile respectivement, 352 / 988&nbsp;ms au 25e, 849 / 2 437&nbsp;ms au 50e, 1 850 / 5 518&nbsp;ms au 75e, et 3 543 / 10 735&nbsp;ms au 90e.</div>
   <figcaption id="fig3-caption"><a href="#fig-3" class="anchor-link">Figure 3.</a> Temps de traitement du fil d’exécution principal V8 par appareil.</figcaption>
 </figure>
 <p>À chaque centile, les délais de traitement sont plus longs pour les pages web testées sur mobiles que pour les pages testées sur ordinateurs de bureau. Le temps total médian du fil d’exécution principal sur ordinateurs de bureau est de 849&nbsp;ms, tandis que sur mobiles, il est plus important&nbsp;: 2 437&nbsp;ms.</p>
@@ -126,7 +126,7 @@
     <img src="/static/images/2019/javascript/fig5.png" alt="Figure 5. Répartition de l’ensemble des requêtes JavaScript." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig5-description" data-show-text="{{ show_description(5) }}" data-hide-text="{{ hide_description(5) }}">{{ show_description(5) }}</button>
-  <div id="fig5-description" class="visually-hidden">Le diagramme à barres montrant 4 / 4 requêtes sur ordinateurs de bureau et mobiles respectivement sont utilisés dans le percentile p10, 10 / 9 en p25, 19 / 18 en p50, 33 / 32 en p75 et 53 / 52 en p90.</div>
+  <div id="fig5-description" class="visually-hidden">Le diagramme à barres montrant 4 / 4 requêtes sur ordinateurs de bureau et mobiles respectivement sont utilisés au 10e percentile, 10 / 9 au 25e, 19 / 18 au 50e, 33 / 32 au 75e et 53 / 52 au 90e.</div>
   <figcaption id="fig5-caption"><a href="#fig-5" class="anchor-link">Figure 5.</a> Répartition de l’ensemble des requêtes JavaScript.</figcaption>
 </figure>
 <p>À la médiane, 19 requêtes sont envoyées pour les ordinateurs de bureau et 18 pour les mobiles.</p>
@@ -138,7 +138,7 @@
     <img src="/static/images/2019/javascript/fig6.png" alt="Figure 6. Distribution des scripts entre domaine principal et tiers, sur ordinateurs de bureau." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig6-description" data-show-text="{{ show_description(6) }}" data-hide-text="{{ hide_description(6) }}">{{ show_description(6) }}</button>
-  <div id="fig6-description" class="visually-hidden">Diagramme à barres montrant 0 / 1 requêtes sur ordinateurs de bureau pour le domaine principal et les domaines tiers respectivement en percentile p10, 2 / 4 en p25, 6 / 10 en p50, 13 / 21 en p75, et 24 / 38 en p90.</div>
+  <div id="fig6-description" class="visually-hidden">Diagramme à barres montrant 0 / 1 requêtes sur ordinateurs de bureau pour le domaine principal et les domaines tiers respectivement au 10e percentile, 2 / 4 25e, 6 / 10 au 50e, 13 / 21 au 75e, et 24 / 38 au 90e.</div>
   <figcaption id="fig6-caption"><a href="#fig-6" class="anchor-link">Figure 6.</a> Distribution des scripts entre domaine principal et tiers, sur ordinateurs de bureau.</figcaption>
 </figure>
 <figure id="fig-7">
@@ -146,7 +146,7 @@
     <img src="/static/images/2019/javascript/fig7.png" alt="Figure 7. Distribution des scripts entre domaine principal et tiers, sur mobiles." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig7-description" data-show-text="{{ show_description(7) }}" data-hide-text="{{ hide_description(7) }}">{{ show_description(7) }}</button>
-  <div id="fig7-description" class="visually-hidden">Diagramme à barres montrant 0 / 1 requêtes sur mobile pour le domaine principal et les domaines tiers respectivement en percentile p10, 2 / 3 en p25, 5 / 9 en p50, 13 / 20 en p75, et 23 / 36 en p90.</div>
+  <div id="fig7-description" class="visually-hidden">Diagramme à barres montrant 0 / 1 requêtes sur mobile pour le domaine principal et les domaines tiers respectivement au 10e percentile, 2 / 3 au 25e, 5 / 9 au 50e, 13 / 20 au 75e, et 23 / 36 au 90e.</div>
   <figcaption id="fig7-caption"><a href="#fig-7" class="anchor-link">Figure 7.</a> Distribution des scripts entre domaine principal et tiers, sur mobile</figcaption>
 </figure>
 <p>Tant sur les mobiles que sur les ordinateurs de bureau, les requêtes vers des tierces parties sont plus nombreuses que les requêtes sur le domaine principal, à chaque centile. Si cela vous semble surprenant, découvrons quelle quantité de code téléchargé provient de fournisseurs tiers.</p>
@@ -155,7 +155,7 @@
     <img src="/static/images/2019/javascript/fig8.png" alt="Figure 8. Répartition de l’ensemble du JavaScript téléchargé sur ordinateurs de bureau." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig8-description" data-show-text="{{ show_description(8) }}" data-hide-text="{{ hide_description(8) }}">{{ show_description(8) }}</button>
-  <div id="fig8-description" class="visually-hidden">Diagramme à barres montrant 0 / 17 octets de JavaScript téléchargés sur ordinateurs de bureau issus de requêtes vers le domaine principal et, respectivement, vers des domaines tiers, dans le percentile p10, 11 / 62 en p25, 89 / 232 en p50, 200 / 525 en p75, et 404 / 900 en p90.</div>
+  <div id="fig8-description" class="visually-hidden">Diagramme à barres montrant 0 / 17 octets de JavaScript téléchargés sur ordinateurs de bureau issus de requêtes vers le domaine principal et, respectivement, vers des domaines tiers, au 10 percentile, 11 / 62 au 25e, 89 / 232 au 50e, 200 / 525 au 75e, et 404 / 900 au 90e.</div>
   <figcaption id="fig8-caption"><a href="#fig-8" class="anchor-link">Figure 8.</a> Répartition de l’ensemble du JavaScript téléchargé sur ordinateurs de bureau.</figcaption>
 </figure>
 <figure id="fig-9">
@@ -163,7 +163,7 @@
     <img src="/static/images/2019/javascript/fig9.png" alt="Figure 9. Répartition de l’ensemble du JavaScript téléchargé sur mobile." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&amp;format=interactive" loading="lazy" />
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig9-description" data-show-text="{{ show_description(9) }}" data-hide-text="{{ hide_description(9) }}">{{ show_description(9) }}</button>
-  <div id="fig9-description" class="visually-hidden">Diagramme à barres montrant 0 / 17 octets de JavaScript téléchargés sur mobiles issus de requêtes vers le domaine principal et, respectivement, vers des domaines tiers, dans le percentile p10, 6 / 54 en p25, 83 / 217 en p50, 189 / 477 en p75, et 380 / 827 en p90.</div>
+  <div id="fig9-description" class="visually-hidden">Diagramme à barres montrant 0 / 17 octets de JavaScript téléchargés sur mobiles issus de requêtes vers le domaine principal et, respectivement, vers des domaines tiers, au 10e percentile, 6 / 54 au 25e, 83 / 217 au 50e, 189 / 477 au 75e, et 380 / 827 au 90e.</div>
   <figcaption id="fig9-caption"><a href="#fig-9" class="anchor-link">Figure 9.</a> Répartition de l’ensemble du JavaScript téléchargé sur mobile.</figcaption>
 </figure>
 <p>À la médiane, on utilise 89&nbsp;% plus de code tiers que de code du domaine principal rédigé par l’équipe de développement, tant sur mobiles que sur ordinateurs de bureau. Cela montre clairement que le code tiers peut être un des principaux facteurs de lourdeur d’une page web. Pour plus d’informations sur l’impact des tiers, consultez le chapitre <a href="./third-parties">«&nbsp;Tierces Parties&nbsp;»</a>.</p>
