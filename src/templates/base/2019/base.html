@@ -385,7 +385,7 @@
   {% endmacro %}
 {% endif %}
 
-{%- macro figure_markup(
+{%- macro figure(
   id=0,
   image="",
   caption="",
@@ -402,11 +402,11 @@
 %}
 <figure id="fig-{{ id }}">
   {%- if image != "" %}
-  <a href="{{ image }}">
+  <a href="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}">
     {%- if sheets_url != "" %}
-    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ sheets_url|safe }}" loading="lazy" />
+    <img src="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ sheets_url|safe }}" loading="lazy" />
     {%- else %}
-    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+    <img src="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
     {%- endif %}
   </a>
   <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig{{ id }}-description" data-show-text="{{ show_description(id) }}" data-hide-text="{{ hide_description(id) }}">{{ show_description(id) }}</button>

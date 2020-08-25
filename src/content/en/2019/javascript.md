@@ -27,9 +27,9 @@ JavaScript is the most costly resource we send to browsers; having to be downloa
 
 Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?
 
-{{ figure_markup(
+{{ figure(
   id=1,
-  image="/static/images/2019/javascript/fig1.png",
+  image="fig1.png",
   caption="Distribution of JavaScript bytes per page.",
   description="Bar chart showing 70 bytes of JavaScript are used in the p10 percentile, 174 bytes for p25, 373 bytes for p50, 693 bytes for p75, and 1,093 bytes for p90",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive"
@@ -40,9 +40,9 @@ Figure 1 above shows that we use 373 KB of JavaScript at the 50th percentile, or
 
 Looking at these numbers, it's only natural to wonder if this is too much JavaScript. However in terms of page performance, the impact entirely depends on network connections and devices used. Which brings us to our next question: how much JavaScript do we ship when we compare mobile and desktop clients?
 
-{{ figure_markup(
+{{ figure(
   id=2,
-  image="/static/images/2019/javascript/fig2.png",
+  image="fig2.png",
   caption="Distribution of JavaScript per page by device.",
   description="Bar chart showing 76 bytes/65 bytes of JavaScript are used in the p10 percentile on desktop and mobile respectively, 186/164 bytes for p25, 391/359 bytes for p50, 721/668 bytes for p75, and 1,131/1,060 bytes for p90.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive"
@@ -57,9 +57,9 @@ After being parsed and compiled, JavaScript fetched by the browser needs to proc
 
 We can get an idea by analyzing main thread processing times for V8 at different percentiles:
 
-{{ figure_markup(
+{{ figure(
   id=3,
-  image="/static/images/2019/javascript/fig3.png",
+  image="fig3.png",
   caption="V8 Main thread processing times by device.",
   description="Bar chart showing 141 ms/377 ms of processing time is used in the p10 percentile on desktop and mobile respectively, 352/988 ms for p25, 849/2,437 ms for p50, 1,850/5,518 ms for p75, and 3,543/10,735 ms for p90.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive"
@@ -70,9 +70,9 @@ At every percentile, processing times are longer for mobile web pages than on de
 
 Although this data shows how much longer it can take for a mobile device to process JavaScript compared to a more powerful desktop machine, mobile devices also vary in terms of computing power. The following chart shows how processing times on a single web page can vary significantly depending on the mobile device class.
 
-{{ figure_markup(
+{{ figure(
   id=4,
-  image="/static/images/2019/javascript/js-processing-reddit.png",
+  image="js-processing-reddit.png",
   caption='JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.',
   description="Bar chart showing 3 different devices: at the top a Pixel 3 has small amount on both the main thread and the worker thread of less than 400ms. For a Moto G4 it is approximately 900 ms on main thread and a further 300 ms on worker thread. And the final bar is an Alcatel 1X 5059D with over 2,000 ms on the main thread and over 500 ms on worker thread.",
   width=600,
@@ -84,9 +84,9 @@ Although this data shows how much longer it can take for a mobile device to proc
 
 One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With [HTTP/2](./http2), sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, how many requests are being fetched?
 
-{{ figure_markup(
+{{ figure(
   id=5,
-  image="/static/images/2019/javascript/fig5.png",
+  image="fig5.png",
   caption="Distribution of total JavaScript requests.",
   description="Bar chart showing 4/4 requests for desktop and mobile respectively are used in the p10 percentile, 10/9 in p25, 19/18 in p50, 33/32 in p75 and 53/52 in p90.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive"
@@ -101,18 +101,18 @@ Of the results analyzed so far, the entire size and number of requests were bein
 
 Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: how many requests sent are third-party instead of first-party?
 
-{{ figure_markup(
+{{ figure(
   id=6,
-  image="/static/images/2019/javascript/fig6.png",
+  image="fig6.png",
   caption="Distribution of first and third-party scripts on desktop.",
   description="Bar chart showing 0/1 request on desktop are first-party and third-party respectively in p10 percentile, 2/4 in p25, 6/10 in p50, 13/21 in p75, and 24/38 in p90.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"
   )
 }}
 
-{{ figure_markup(
+{{ figure(
   id=7,
-  image="/static/images/2019/javascript/fig7.png",
+  image="fig7.png",
   caption="Distribution of first and third party scripts on mobile.",
   description="Bar chart showing 0/1 request on mobile are first-party and third-party respectively in p10 percentile, 2/3 in p25, 5/9 in p50, 13/20 in p75, and 23/36 in p90.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive"
@@ -121,18 +121,18 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
 
 For both mobile and desktop clients, more third-party requests are sent than first-party at every percentile. If this seems surprising, let's find out how much actual code shipped comes from third-party vendors.
 
-{{ figure_markup(
+{{ figure(
   id=8,
-  image="/static/images/2019/javascript/fig8.png",
+  image="fig8.png",
   caption="Distribution of total JavaScript downloaded on desktop.",
   description="Bar chart showing 0/17 bytes of JavaScript are downloaded on desktop for first-party and third-party requests respectively in the p10 percentile, 11/62 in p25, 89/232 in p50, 200/525 in p75, and 404/900 in p90.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive"
   )
 }}
 
-{{ figure_markup(
+{{ figure(
   id=9,
-  image="/static/images/2019/javascript/fig9.png",
+  image="fig9.png",
   caption="Distribution of total JavaScript downloaded on mobile.",
   description="Bar chart showing 0/17 bytes of JavaScript are downloaded on mobile for first-party and third-party requests respectively in the p10 percentile, 6/54 in p25, 83/217 in p50, 189/477 in p75, and 380/827 in p90.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive"
@@ -154,9 +154,9 @@ Compressed scripts will always need to be uncompressed by the browser once trans
 
 How many sites are compressing their JavaScript resources?
 
-{{ figure_markup(
+{{ figure(
   id=10,
-  image="/static/images/2019/javascript/fig10.png",
+  image="fig10.png",
   caption="Percentage of sites compressing JavaScript resources with gzip or brotli.",
   description="Bar chart showing 67%/65% of JavaScript resources are compressed with gzip on desktop and mobile respectively, and 15%/14% are compressed using Brotli.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
@@ -306,9 +306,9 @@ Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQu
 
 In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building **single-page applications** (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?
 
-{{ figure_markup(
+{{ figure(
   id=12,
-  image="/static/images/2019/javascript/fig12.png",
+  image="fig12.png",
   caption="Most frequently used frameworks on desktop.",
   description="Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
@@ -334,9 +334,9 @@ To declare a script as a module, the script tag must get the `type="module"` att
 
 How many sites use `type="module"` for scripts on their page?
 
-{{ figure_markup(
+{{ figure(
   id=13,
-  image="/static/images/2019/javascript/fig13.png",
+  image="fig13.png",
   caption="Percentage of sites utilizing type=module.",
   description="Bar chart showing 0.6% of sites on desktop use 'type=module', and 0.8% of sites on mobile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive"
@@ -353,9 +353,9 @@ If native modules are used, it's important to ensure that an appropriate fallbac
 
 When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to [send modern code to modern browsers for faster page loads](https://web.dev/serve-modern-code-to-modern-browsers/). So, how many sites use `nomodule` for scripts on their page?
 
-{{ figure_markup(
+{{ figure(
   id=14,
-  image="/static/images/2019/javascript/fig14.png",
+  image="fig14.png",
   caption="Percentage of sites using nomodule.",
   description="Bar chart showing 0.8% of sites on desktop use 'nomobule', and 0.5% of sites on mobile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
@@ -373,9 +373,9 @@ Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scr
 
 So, how many sites use preload and prefetch directives?
 
-{{ figure_markup(
+{{ figure(
   id=15,
-  image="/static/images/2019/javascript/fig15.png",
+  image="fig15.png",
   caption="Percentage of sites using rel=preload for scripts.",
   description="Bar chart showing 14% of sites on desktop use rel=preload' for scripts, and 15% of sites on mobile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive"
@@ -386,9 +386,9 @@ For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mo
 
 For prefetch, we have the following:
 
-{{ figure_markup(
+{{ figure(
   id=16,
-  image="/static/images/2019/javascript/fig16.png",
+  image="fig16.png",
   caption="Percentage of sites using rel=prefetch for scripts.",
   description="Bar chart showing 0.08% of sites on desktop use 'rel=prefetch', and 0.08% of sites on mobile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive"
@@ -412,9 +412,9 @@ How many sites use the following APIs?
 - [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 - [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
-{{ figure_markup(
+{{ figure(
   id=17,
-  image="/static/images/2019/javascript/fig17.png",
+  image="fig17.png",
   caption="Usage of new JavaScript APIs.",
   description="Bar chart showing 25.5%/36.2% of sites on desktop and mobile respectivdely use WeakMap, 6.1%/17.2% use WeakSet, 3.9%/14.0% use Intl, 3.9%/4.4% use Proxy, 0.4%/0.4% use Atomics, and 0.2%/0.2% use SharedArrayBuffer.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive"
@@ -433,9 +433,9 @@ A **source map** is an additional file accompanying a JavaScript file that allow
 
 Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. So how many sites actually include sourcemaps?
 
-{{ figure_markup(
+{{ figure(
   id=18,
-  image="/static/images/2019/javascript/fig18.png",
+  image="fig18.png",
   caption="Percentage of sites using source maps.",
   description="Bar chart showing 18% of desktop sites and 17% of mobile sites use source maps.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"
