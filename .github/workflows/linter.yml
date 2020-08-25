@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "::set-env name=VALIDATE_ALL_CODEBASE::false"
       - name: Lint Code Base
-        uses: github/super-linter@v3.7.0
+        uses: github/super-linter@v3.8.3
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

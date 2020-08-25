@@ -23,7 +23,7 @@
     "ejs": "^3.1.5",
     "fs-extra": "^9.0.1",
     "jsdom": "^16.4.0",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.0",
     "recursive-readdir": "^2.2.2",
     "showdown": "^1.9.1",
     "web-vitals": "^0.2.4",
