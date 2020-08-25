@@ -50,7 +50,7 @@ ptw
 
 The chapter generation is dependent on nodejs, so you will need to have [nodejs](https://nodejs.org/en/) installed as well. All of the following commands must be run from within the `src` directory by executing `cd src` first.
 
-Note this is run automatically by a GitHub Action on merges to main, so does not need to be run manually.
+Note this is run automatically by a GitHub Action on merges to main, so does not need to be run manually unless you want to run the site locally.
 
 Install the dependencies:
 
@@ -159,13 +159,14 @@ npm run deploy
 ```
 
 The deploy script will do the following:
+- Ask you to confirm you've updated the eBooks via GitHub Actions
 - Switch to the production branch
 - Merge changes from main
 - Do a clean install
 - Run the tests
 - Ask you to complete any local tests and confirm good to deploy
 - Ask for a version number (suggesing the last verision tagged and incrementing the patch)
-- Tag the release (after asking you for the verion number to use)
+- Tag the release (after asking you for the version number to use)
 - Generate a `deploy.zip` file of what has been deployed
 - Deploy to GCP
 - Push changes to `production` branch on GitHub
