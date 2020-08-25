@@ -6,7 +6,7 @@
 # For more information, run:
 #   $ gcloud topic gcloudignore
 #
-# Note we are also using this for zip ignore in deploy.xh, so have to be a little
+# Note we are also using this for zip ignore in deploy.sh, so have to be a little
 # bit more verbose than gcloud demands, to exclude items
 
 .gcloudignore
