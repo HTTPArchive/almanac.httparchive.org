@@ -91,10 +91,8 @@ def get_ebook_size(lang, year):
     ebook_file = STATIC_DIR + '/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
     if os.path.isfile(ebook_file):
         size = os.path.getsize(ebook_file)
-        # Convert to MB with decimal point precision (e.g. 17.1MB)
-        # Note we use 1000 rather than 1024 as that's worst case and how
-        # MacOS reports it - Windows seems to use 1000 / 1024
-        size = int(round(size / 1024 / 1000, 0))
+        # Convert to MB
+        size = int(round(size / 1024 / 1024, 0))
         return size
 
     return 0
