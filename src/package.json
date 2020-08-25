@@ -17,7 +17,7 @@
     "test": "node ./tools/test",
     "generate": "node ./tools/generate",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
-    "deploy": "echo \"Y\" | gcloud app deploy --project webalmanac --stop-previous-version"
+    "deploy": "./tools/scripts/deploy.sh"
   },
   "devDependencies": {
     "ejs": "^3.1.5",
