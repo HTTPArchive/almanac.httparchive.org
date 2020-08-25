@@ -486,7 +486,7 @@ In contrast, the median TLS negotiation for the majority of CDN providers is bet
     <thead>
       <tr>
         <td></td>
-        <th colspan="5" scope="col">Percentile</th>
+        <th colspan="5" scope="colgroup">Percentile</th>
       </tr>
       <tr>
         <td></td>
@@ -687,7 +687,7 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
     <thead>
       <tr>
         <td></td>
-        <th colspan="5" scope="col">Percentile</th>
+        <th colspan="5" scope="colgroup">Percentile</th>
       </tr>
       <tr>
         <td></td>
@@ -861,7 +861,7 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
     <thead>
       <tr>
         <td></td>
-        <th colspan="5" scope="col">Percentile</th>
+        <th colspan="5" scope="colgroup">Percentile</th>
       </tr>
       <tr>
         <td></td>
