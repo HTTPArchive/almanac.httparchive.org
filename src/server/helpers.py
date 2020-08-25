@@ -87,8 +87,14 @@ def get_chapter_nextprev(config, chapter_slug):
     return prev_chapter, next_chapter
 
 
-def ebook_exists(lang, year):
-    return os.path.isfile(STATIC_DIR + '/pdfs/web_almanac_%s_%s.pdf' % (year, lang))
+def get_ebook_size(lang, year):
+    ebook_file = STATIC_DIR + '/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
+    if os.path.isfile(ebook_file):
+        size = os.path.getsize(ebook_file)
+        size = round(size / 1000 / 1000, 1)
+        return size
+
+    return 0
 
 
 def get_view_args(lang=None, year=None):
