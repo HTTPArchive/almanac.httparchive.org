@@ -87,7 +87,7 @@ def get_chapter_nextprev(config, chapter_slug):
     return prev_chapter, next_chapter
 
 
-def get_ebook_size(lang, year):
+def get_ebook_size_in_mb(lang, year):
     ebook_file = STATIC_DIR + '/pdfs/web_almanac_%s_%s.pdf' % (year, lang)
     if os.path.isfile(ebook_file):
         size = os.path.getsize(ebook_file)
