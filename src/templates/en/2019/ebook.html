@@ -1,9 +1,7 @@
 {% extends "%s/2019/base_ebook.html" % lang %} {% set metadata = {} %} {% block chapters %} {% set metadata = {"part_number":"I","chapter_number":1,"title":"JavaScript","description":"JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.","authors":["housseindjirdeh"],"reviewers":["obto","paulcalvano","mathiasbynens"],"translators":null,"discuss":"1756","results":"https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/","queries":"01_JavaScript","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"javascript"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -386,9 +384,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -433,13 +429,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -450,9 +442,7 @@
 {% set metadata = {"part_number":"I","chapter_number":2,"title":"CSS","description":"CSS chapter of the 2019 Web Almanac covering color, units, selectors, layout, typography and fonts, spacing, decoration, animation, and media queries.","authors":["una","argyleink"],"reviewers":["meyerweb","huijing"],"translators":null,"discuss":"1757","results":"https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYelxY-qR9Pd7QpM/","queries":"02_CSS","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"css"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -694,9 +684,7 @@
       <figcaption id="css-fig21-caption"><a href="#css-fig-21" class="anchor-link">Figure 21.</a> Most frequently used <code>z-index</code> values.</figcaption>
     </figure>
     <figure id="css-fig-22">
-      <div class="really-big-number">
-        999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important
-      </div>
+      <div class="really-big-number">999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important</div>
       <figcaption><a href="#css-fig-22" class="anchor-link">Figure 22.</a> The largest known <code>z-index</code> value.</figcaption>
     </figure>
     <h2 id="css-decoration"><a href="#css-decoration" class="anchor-link">Decoration</a></h2>
@@ -1066,9 +1054,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -1113,13 +1099,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -1130,9 +1112,7 @@
 {% set metadata = {"part_number":"I","chapter_number":3,"title":"Markup","description":"Markup chapter of the 2019 Web Almanac covering elements used, custom elements, value, products, and common use cases.","authors":["bkardell"],"reviewers":["zcorpan","tomhodgins","matthewp"],"translators":null,"discuss":"1758","results":"https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/","queries":"03_Markup","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"markup"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -1455,9 +1435,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -1502,13 +1480,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -1519,9 +1493,7 @@
 {% set metadata = {"part_number":"I","chapter_number":4,"title":"Media","description":"Media chapter of the 2019 Web Almanac covering image file sizes and formats, responsive images, client hints, lazy loading, accessibility and video.","authors":["colinbendell","dougsillars"],"reviewers":["ahmadawais","eeeps"],"translators":null,"discuss":"1759","results":"https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/","queries":"04_Media","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-12T00:00:00.000Z","chapter":"media"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -1981,9 +1953,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -2028,13 +1998,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -2045,9 +2011,7 @@
 {% set metadata = {"part_number":"II","chapter_number":5,"title":"Third Parties","description":"Third Parties chapter of the 2019 Web Almanac covering data of what third parties are used, what they are used for, performance impacts and privacy impacts.","authors":["patrickhulce"],"reviewers":["zcorpan","obto","jasti"],"translators":null,"discuss":"1760","results":"https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/","queries":"05_Third_Parties","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-02T00:00:00.000Z","chapter":"third-parties"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -2334,9 +2298,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -2381,13 +2343,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -2398,9 +2356,7 @@
 {% set metadata = {"part_number":"I","chapter_number":6,"title":"Fonts","description":"Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.","authors":["zachleat"],"reviewers":["hyperpress","AymenLoukil"],"translators":null,"discuss":"1761","results":"https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/","queries":"06_Fonts","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-02T00:00:00.000Z","chapter":"fonts"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -3016,9 +2972,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -3063,13 +3017,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -3080,9 +3030,7 @@
 {% set metadata = {"part_number":"II","chapter_number":7,"title":"Performance","description":"Performance chapter of the 2019 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and First Input Delay (FID).","authors":["rviscomi"],"reviewers":["JMPerez","obto","sergeychernyshev","zeman"],"translators":null,"discuss":"1762","results":"https://docs.google.com/spreadsheets/d/1zWzFSQ_ygb-gGr1H1BsJCfB7Z89zSIf7GX0UayVEte4/","queries":"07_Performance","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-01T00:00:00.000Z","chapter":"performance"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -3329,9 +3277,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -3376,13 +3322,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -3393,9 +3335,7 @@
 {% set metadata = {"part_number":"II","chapter_number":8,"title":"Security","description":"Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":null,"discuss":"1763","results":"https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/","queries":"08_Security","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"security"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -4179,9 +4119,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -4226,13 +4164,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -4243,9 +4177,7 @@
 {% set metadata = {"part_number":"II","chapter_number":9,"title":"Accessibility","description":"Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.","authors":["nektarios-paisios","obto","kleinab"],"reviewers":["ljme"],"translators":null,"discuss":"1764","results":"https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/","queries":"09_Accessibility","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-02T00:00:00.000Z","chapter":"accessibility"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -4507,9 +4439,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -4554,13 +4484,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -4571,9 +4497,7 @@
 {% set metadata = {"part_number":"I","chapter_number":10,"title":"SEO","description":"SEO chapter of the 2019 Web Almanac covering content, meta tags, indexability, linking, speed, structured data, internationalization, SPAs, AMP and security.","authors":["ymschaap","rachellcostello","AVGP"],"reviewers":["clarkeclark","andylimn","AymenLoukil","catalinred","mattludwig"],"translators":null,"discuss":"1765","results":"https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/","queries":"10_SEO","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-01T00:00:00.000Z","chapter":"seo"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -4940,9 +4864,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -4987,13 +4909,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -5004,9 +4922,7 @@
 {% set metadata = {"part_number":"II","chapter_number":11,"title":"PWA","description":"PWA chapter of the 2019 Web Almanac covering service workers (registations, installability, events and filesizes), Web App Manifests properties, and Workbox.","authors":["tomayac","jeffposnick"],"reviewers":["hyperpress","ahmadawais"],"translators":null,"discuss":"1766","results":"https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/","queries":"11_PWA","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-01T00:00:00.000Z","chapter":"pwa"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -5195,9 +5111,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -5242,13 +5156,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -5259,9 +5169,7 @@
 {% set metadata = {"part_number":"II","chapter_number":12,"title":"Mobile Web","description":"Mobile Web chapter of the 2019 Web Almanac covering page loading, textual content, zooming and scaling, buttons and links, and ease of filling out forms.","authors":["obto"],"reviewers":["AymenLoukil","hyperpress"],"translators":null,"discuss":"1767","results":"https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/","queries":"12_Mobile_Web","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-27T00:00:00.000Z","chapter":"mobile-web"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -5518,9 +5426,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -5565,13 +5471,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -5582,9 +5484,7 @@
 {% set metadata = {"part_number":"III","chapter_number":13,"title":"Ecommerce","description":"Ecommerce chapter of the 2019 Web Almanac covering ecommerce platforms, payloads, images, third-parties, performance, seo, and PWAs.","authors":["samdutton","alankent"],"reviewers":["voltek62"],"translators":null,"discuss":"1768","results":"https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/","queries":"13_Ecommerce","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"ecommerce"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -6156,9 +6056,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -6203,13 +6101,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -6220,9 +6114,7 @@
 {% set metadata = {"part_number":"III","chapter_number":14,"title":"CMS","description":"CMS chapter of the 2019 Web Almanac covering CMS adoption, how CMS suites are built, User experience of CMS powered websites, and CMS innovation.","authors":["ernee","amedina"],"reviewers":["sirjonathan"],"translators":null,"discuss":"1769","results":"https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/","queries":"14_CMS","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-01T00:00:00.000Z","chapter":"cms"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -6848,9 +6740,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -6895,13 +6785,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -6912,9 +6798,7 @@
 {% set metadata = {"part_number":"IV","chapter_number":15,"title":"Compression","description":"Compression chapter of the 2019 Web Almanac covering HTTP compression, algorithms, content types, 1st party and 3rd party compression and opportunities.","authors":["paulcalvano"],"reviewers":["obto","yoavweiss"],"translators":null,"discuss":"1770","results":"https://docs.google.com/spreadsheets/d/1IK9kaScQr_sJUwZnWMiJcmHEYJV292C9DwCfXH6a50o/","queries":"15_Compression","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-08T00:00:00.000Z","chapter":"compression"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -7229,9 +7113,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -7276,13 +7158,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -7293,9 +7171,7 @@
 {% set metadata = {"part_number":"IV","chapter_number":16,"title":"Caching","description":"Caching chapter of the 2019 Web Almanac covering cache-control, expires, TTLs, validitaty, vary, set-cookies, AppCache, Service Workers and opportunities.","authors":["paulcalvano"],"reviewers":["obto","bkardell"],"translators":null,"discuss":"1771","results":"https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/","queries":"16_Caching","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-07-06T00:00:00.000Z","chapter":"caching"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -7936,9 +7812,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -7983,13 +7857,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -8000,9 +7870,7 @@
 {% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT &amp; TLS management, HTTP/2 adoption, caching and common library and content CDNs.","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":null,"discuss":"1772","results":"https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/","queries":"17_CDN","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-04T00:00:00.000Z","chapter":"cdn"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -9542,9 +9410,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -9589,13 +9455,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -9606,9 +9468,7 @@
 {% set metadata = {"part_number":"IV","chapter_number":18,"title":"Page Weight","description":"Page Weight chapter of the 2019 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.","authors":["tammyeverts","khempenius"],"reviewers":["paulcalvano"],"translators":null,"discuss":"1773","results":"https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/","queries":"18_PageWeight","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-03-01T00:00:00.000Z","chapter":"page-weight"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -10420,9 +10280,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -10467,13 +10325,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -10484,9 +10338,7 @@
 {% set metadata = {"part_number":"IV","chapter_number":19,"title":"Resource Hints","description":"Resource Hints chapter of the 2019 Web Almanac covering usage of dns-prefetch, preconnect, preload, prefetch, priority hints, and native lazy loading.","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":null,"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"resource-hints"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -10715,9 +10567,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -10762,13 +10612,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
@@ -10779,9 +10625,7 @@
 {% set metadata = {"part_number":"IV","chapter_number":20,"title":"HTTP/2","description":"HTTP/2 chapter of the 2019 Web Almanac covering adoption and impact of HTTP/2, HTTP/2 Push, HTTP/2 Issues, and HTTP/3.","authors":["bazzadp"],"reviewers":["bagder","rmarx","dotjs"],"translators":null,"discuss":"1775","results":"https://docs.google.com/spreadsheets/d/1z1gdS3YVpe8J9K3g2UdrtdSPhRywVQRBz5kgBeqCnbw/","queries":"20_HTTP_2","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-05-05T00:00:00.000Z","chapter":"http2"} %} {% set chapter_image_dir = ("/static/images/2019/%s" % metadata.chapter) %}
 <section class="chapter" id="chapter-{{ metadata.get('chapter_number') }}">
   <div class="body" id="{{ metadata.get('chapter') }}">
-    <div class="subtitle">
-      {{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}
-    </div>
+    <div class="subtitle">{{ self.part() }} {{ metadata.get('part_number') }} {{ self.chapter() }} {{ metadata.get('chapter_number') }}</div>
     <h1 class="title title-lg">
       {{ metadata.get('title') }} {% if metadata.get('unedited', false) %}
       <span class="chapter-unedited">{{ self.unedited() }}</span>
@@ -11454,9 +11298,7 @@
   <div class="authors">
     {% for author in metadata.get('authors') %} {% if loop.index == 1 %}
     <h2 id="{{ metadata.get('chapter') }}-authors">
-      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link">
-        {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %}
-      </a>
+      <a href="#{{ metadata.get('chapter') }}-authors" class="anchor-link"> {% if loop.length == 1 %}{{ self.author() }}{% endif -%} {% if loop.length > 1 and loop.index == 1 %}{{ self.authors() }}{% endif %} </a>
     </h2>
     <ul>
       {% endif %} {% set authordata = config.contributors[author] if author in config.contributors else None %}
@@ -11501,13 +11343,9 @@
             {% endif %}
           </div>
           {% endif %} {% if authordata.tagline %}
-          <div class="tagline">
-            {{ authordata.tagline }}
-          </div>
+          <div class="tagline">{{ authordata.tagline }}</div>
           {% endif %}
-          <div class="bio">
-            {{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}
-          </div>
+          <div class="bio">{{ add_footnote_links(localizedContributors[author] if localizedContributors[author]|length) | safe }}</div>
         </div>
       </li>
       {% endfor %}
