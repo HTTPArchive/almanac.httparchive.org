@@ -32,7 +32,8 @@ def root(lang):
 def table_of_contents(lang, year):
     config = get_config(year)
     ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
-    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config, ebook_size_in_mb=ebook_size_in_mb)
+    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config,
+                           ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/<lang>/<year>/contributors')
