@@ -27,6 +27,7 @@ on:
       - src/requirements.txt
 jobs:
   build:
+    name: Generate Chapters and Update Timestamps
     runs-on: ubuntu-latest
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
@@ -42,7 +43,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.4.2
       with:
-        version:  12.x
+        node-version: 12.x
     - name: Set up Python 3.7
       uses: actions/setup-python@v2.1.2
       with:
@@ -51,7 +52,7 @@ jobs:
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@v3.1.2
       with:
         title: Update datestamps and generate chapters
         branch-suffix: timestamp

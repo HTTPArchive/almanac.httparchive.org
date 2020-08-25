@@ -16,6 +16,7 @@ on:
 
 jobs:
   build:
+    name: Auto-generate Ebooks
     # Prince needs ubuntu 20 and ubuntu-latest is only on 18
     runs-on: ubuntu-20.04
     steps:
@@ -52,7 +53,7 @@ jobs:
         npm run ebooks
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@v3.1.2
       with:
         title: Regenerate Ebooks
         branch-suffix: timestamp
