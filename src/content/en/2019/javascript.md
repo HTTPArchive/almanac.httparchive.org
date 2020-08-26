@@ -27,7 +27,8 @@ JavaScript is the most costly resource we send to browsers; having to be downloa
 
 Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=1,
   image="fig1.png",
   caption="Distribution of JavaScript bytes per page.",
@@ -40,7 +41,8 @@ Figure 1 above shows that we use 373 KB of JavaScript at the 50th percentile, or
 
 Looking at these numbers, it's only natural to wonder if this is too much JavaScript. However in terms of page performance, the impact entirely depends on network connections and devices used. Which brings us to our next question: how much JavaScript do we ship when we compare mobile and desktop clients?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=2,
   image="fig2.png",
   caption="Distribution of JavaScript per page by device.",
@@ -57,7 +59,8 @@ After being parsed and compiled, JavaScript fetched by the browser needs to proc
 
 We can get an idea by analyzing main thread processing times for V8 at different percentiles:
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=3,
   image="fig3.png",
   caption="V8 Main thread processing times by device.",
@@ -70,7 +73,8 @@ At every percentile, processing times are longer for mobile web pages than on de
 
 Although this data shows how much longer it can take for a mobile device to process JavaScript compared to a more powerful desktop machine, mobile devices also vary in terms of computing power. The following chart shows how processing times on a single web page can vary significantly depending on the mobile device class.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=4,
   image="js-processing-reddit.png",
   caption='JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.',
@@ -84,7 +88,8 @@ Although this data shows how much longer it can take for a mobile device to proc
 
 One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With [HTTP/2](./http2), sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, how many requests are being fetched?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=5,
   image="fig5.png",
   caption="Distribution of total JavaScript requests.",
@@ -101,7 +106,8 @@ Of the results analyzed so far, the entire size and number of requests were bein
 
 Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: how many requests sent are third-party instead of first-party?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=6,
   image="fig6.png",
   caption="Distribution of first and third-party scripts on desktop.",
@@ -110,7 +116,8 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
   )
 }}
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=7,
   image="fig7.png",
   caption="Distribution of first and third party scripts on mobile.",
@@ -121,7 +128,8 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
 
 For both mobile and desktop clients, more third-party requests are sent than first-party at every percentile. If this seems surprising, let's find out how much actual code shipped comes from third-party vendors.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=8,
   image="fig8.png",
   caption="Distribution of total JavaScript downloaded on desktop.",
@@ -130,7 +138,8 @@ For both mobile and desktop clients, more third-party requests are sent than fir
   )
 }}
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=9,
   image="fig9.png",
   caption="Distribution of total JavaScript downloaded on mobile.",
@@ -154,7 +163,8 @@ Compressed scripts will always need to be uncompressed by the browser once trans
 
 How many sites are compressing their JavaScript resources?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=10,
   image="fig10.png",
   caption="Percentage of sites compressing JavaScript resources with gzip or brotli.",
@@ -288,7 +298,7 @@ Open source code, or code with a permissive license that can be accessed, viewed
         </tr>
       </tbody>
     </table>
-   <figcaption>{{ figure_link(11,"Top JavaScript libraries on desktop and mobile.") }}</figcaption>
+   <figcaption>{{ figure_link(metadata=metadata, id=11, caption="Top JavaScript libraries on desktop and mobile.") }}</figcaption>
 </figure>
 
 [jQuery](https://jquery.com/), the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
@@ -306,7 +316,8 @@ Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQu
 
 In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building **single-page applications** (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=12,
   image="fig12.png",
   caption="Most frequently used frameworks on desktop.",
@@ -334,7 +345,8 @@ To declare a script as a module, the script tag must get the `type="module"` att
 
 How many sites use `type="module"` for scripts on their page?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=13,
   image="fig13.png",
   caption="Percentage of sites utilizing type=module.",
@@ -353,7 +365,8 @@ If native modules are used, it's important to ensure that an appropriate fallbac
 
 When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to [send modern code to modern browsers for faster page loads](https://web.dev/serve-modern-code-to-modern-browsers/). So, how many sites use `nomodule` for scripts on their page?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=14,
   image="fig14.png",
   caption="Percentage of sites using nomodule.",
@@ -373,7 +386,8 @@ Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scr
 
 So, how many sites use preload and prefetch directives?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=15,
   image="fig15.png",
   caption="Percentage of sites using rel=preload for scripts.",
@@ -386,7 +400,8 @@ For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mo
 
 For prefetch, we have the following:
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=16,
   image="fig16.png",
   caption="Percentage of sites using rel=prefetch for scripts.",
@@ -412,7 +427,8 @@ How many sites use the following APIs?
 - [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 - [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=17,
   image="fig17.png",
   caption="Usage of new JavaScript APIs.",
@@ -433,7 +449,8 @@ A **source map** is an additional file accompanying a JavaScript file that allow
 
 Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. So how many sites actually include sourcemaps?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=18,
   image="fig18.png",
   caption="Percentage of sites using source maps.",

@@ -385,7 +385,7 @@
   {% endmacro %}
 {% endif %}
 
-{%- macro figure(
+{%- macro figure_markup(
   id=0,
   image="",
   caption="",
@@ -397,11 +397,19 @@
   data_width=width,
   data_height=height,
   content="",
-  classes=""
+  classes="",
+  metadata="",
+  ebook=false
   )
 %}
+{# Ebook needs a unique fig id. 2019 is already out there so reluctant #}
+{# to change that, so "if" statemnt it is! #}
+{% if ebook %}
+<figure id="{{ metadata.chapter }}-fig-{{ id }}">
+{% else %}
 <figure id="fig-{{ id }}">
-  {%- if image != "" %}
+{% endif %}
+    {%- if image != "" %}
   <a href="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}">
     {%- if sheets_url != "" %}
     <img src="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ sheets_url|safe }}" loading="lazy" />
@@ -409,12 +417,12 @@
     <img src="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
     {%- endif %}
   </a>
-  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig{{ id }}-description" data-show-text="{{ show_description(id) }}" data-hide-text="{{ hide_description(id) }}">{{ show_description(id) }}</button>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig{{ id }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
   <div id="fig{{ id }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
   <div class="{{ classes }}">{{ content }}</div>
   {%- endif %}
-  <figcaption id="fig{{ id }}-caption">{{ figure_link( id, caption) }}</figcaption>
+  <figcaption id="fig{{ id }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook) }}</figcaption>
 </figure>
 {%- endmacro %}
 

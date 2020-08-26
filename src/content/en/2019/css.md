@@ -31,7 +31,8 @@ Color is an integral part of theming and styling on the web. Let's take a look a
 
 Hex is the most popular way to describe color by far, with 93% usage, followed by RGB, and then HSL. Interestingly, developers are taking full advantage of the alpha-transparency argument when it comes to these color types: HSLA and RGBA are far more popular than HSL and RGB, with almost double the usage! Even though the alpha-transparency was added later to the web spec, HSLA and RGBA are supported [as far back as IE9](https://caniuse.com/#feat=css3-colors), so you can go ahead and use them, too!
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=1,
   image="fig1.png",
   caption="Popularity of color formats.",
@@ -44,7 +45,8 @@ Hex is the most popular way to describe color by far, with 93% usage, followed b
 
 There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors), not including the special values `transparent` and `currentcolor`. You can use these by their string name for more readable styling. The most popular named colors are `black` and `white`, unsurprisingly, followed by `red` and `blue`.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=2,
   image="fig2.png",
   caption="Top named colors.",
@@ -63,7 +65,8 @@ Language is interestingly inferred via color as well. There are more instances o
 
 How many different font colors are used across the web? So this isn't the total number of unique colors; rather, it's how many different colors are used just for text. The numbers in this chart are quite high, and from experience, we know that without CSS variables, spacing, sizes and colors can quickly get away from you and fragment into lots of tiny values across your styles. These numbers reflect a difficulty of style management, and we hope this helps create some perspective for you to bring back to your teams or projects. How can you reduce this number into a manageable and reasonable amount?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=3,
   image="fig3.png",
   caption="Distribution of colors per page.",
@@ -76,7 +79,8 @@ How many different font colors are used across the web? So this isn't the total 
 
 Well, we got curious here and wanted to inspect how many duplicate colors are present on a page. Without a tightly managed reusable class CSS system, duplicates are quite easy to create. It turns out that the median has enough duplicates that it could be worth doing a pass to unify them with custom properties.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=4,
   image="fig4.png",
   caption="Distribution of duplicate colors per page.",
@@ -89,7 +93,8 @@ Well, we got curious here and wanted to inspect how many duplicate colors are pr
 
 In CSS, there are many different ways to achieve the same visual result using different unit types: `rem`, `px`, `em`, `ch`, or even `cm`! So which unit types are most popular?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=5,
   image="fig5.png",
   caption="Popularity of unit types.",
@@ -114,7 +119,8 @@ We saw larger differences in unit types when it comes to mobile and desktop usag
 
 Custom properties are what many call CSS variables. They're more dynamic than a typical static variable though! They're very powerful and as a community we're still discovering their potential.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=6,
   caption="Percent of pages using custom properties.",
   content="5%",
@@ -130,7 +136,8 @@ We felt like this was exciting information, since it shows healthy growth of one
 
 CSS has a few ways to find elements on the page for styling, so let's put IDs and classes against each other to see which is more prevalent! The results shouldn't be too surprising: classes are more popular!
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=7,
   image="fig7.png",
   caption="Popularity of selector types per page.",
@@ -141,7 +148,8 @@ CSS has a few ways to find elements on the page for styling, so let's put IDs an
 
 A nice follow up chart is this one, showing that classes take up 93% of the selectors found in a stylesheet.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=8,
   image="fig8.png",
   caption="Popularity of selector types per selector.",
@@ -154,7 +162,8 @@ A nice follow up chart is this one, showing that classes take up 93% of the sele
 
 CSS has some very powerful comparison selectors. These are selectors like `[target="_blank"]`, `[attribute^="value"]`, `[title~="rad"]`, `[attribute$="-rad"]` or `[attribute*="value"]`. Do you use them? Think they're used a lot? Let's compare how those are used with IDs and classes across the web.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=9,
   image="fig9.png",
   caption="Popularity of operators per ID attribute selector.",
@@ -163,7 +172,8 @@ CSS has some very powerful comparison selectors. These are selectors like `[targ
   )
 }}
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=10,
   image="fig10.png",
   caption="Popularity of operators per class attribute selector.",
@@ -178,7 +188,8 @@ These operators are much more popular with class selectors than IDs, which feels
 
 With the rise of OOCSS, atomic, and functional CSS strategies which can compose 10 or more classes on an element to achieve a design look, perhaps we'd see some interesting results. The query came back quite unexciting, with the median on mobile and desktop being 1 class per element.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=11,
   caption="The median number of class names per class attribute (desktop and mobile).",
   content="1",
@@ -192,7 +203,8 @@ With the rise of OOCSS, atomic, and functional CSS strategies which can compose 
 
 [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) is a container style that directs and aligns its children; that is, it helps with layout in a constraint-based way. It had a quite rocky beginning on the web, as its specification went through two or three quite drastic changes between 2010 and 2013. Fortunately, it settled and was implemented across all browsers by 2014. Given that history, it had a slow adoption rate, but it's been a few years since then! It's quite popular now and has many articles about it and how to leverage it, but it's still new in comparison to other layout tactics.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=12,
   image="fig12.png",
   caption="Adoption of flexbox.",
@@ -207,7 +219,8 @@ Quite the success story shown here, as nearly 50% of the web has flexbox usage i
 
 Like flexbox, [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) too went through a few spec alternations early on in its lifespan, but without changing implementations in publicly-deployed browsers. Microsoft had grid in the first versions of Windows 8, as the primary layout engine for its horizontally scrolling design style. It was vetted there first, transitioned to the web, and then hardened by the other browsers until its final release in 2017. It had a very successful launch in that nearly all browsers released their implementations at the same time, so web developers just woke up one day to superb grid support. Today, at the end of 2019, grid still feels like a new kid on the block, as folks are still awakening to its power and capabilities.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=13,
   caption="Percent of websites using grid.",
   content="2%",
@@ -221,7 +234,8 @@ This shows just how little the web development community has exercised and explo
 
 The web and CSS are international platform features, and writing modes offer a way for HTML and CSS to indicate a user's preferred reading and writing direction within our elements.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=14,
   image="fig14.png",
   caption="Popularity of direction values.",
@@ -236,7 +250,8 @@ The web and CSS are international platform features, and writing modes offer a w
 
 How many web fonts are you loading on your web page: 0? 10? The median number of web fonts per page is 3!
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=15,
   image="fig15.png",
   caption="Distribution of the number of web fonts loaded per page.",
@@ -249,7 +264,8 @@ How many web fonts are you loading on your web page: 0? 10? The median number of
 
 A natural follow up to the inquiry of total number of fonts per page, is: what fonts are they?! Designers, tune in, because you'll now get to see if your choices are in line with what's popular or not.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=16,
   image="fig16.png",
   caption="Top web fonts.",
@@ -270,7 +286,8 @@ It's also interesting to note the differences between desktop and mobile adoptio
 
 This is a fun one, because if you asked a user how many font sizes they feel are on a page, they'd generally return a number of 5 or definitely less than 10. Is that reality though? Even in a design system, how many font sizes are there? We queried the web and found the median to be 40 on mobile and 38 on desktop. Might be time to really think hard about custom properties or creating some reusable classes to help you distribute your type ramp.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=17,
   image="fig17.png",
   caption="Distribution of the number of distinct font sizes per page.",
@@ -285,7 +302,8 @@ This is a fun one, because if you asked a user how many font sizes they feel are
 
 A margin is the space outside of elements, like the space you demand when you push your arms out from yourself. This often looks like the spacing between elements, but is not limited to that effect. In a website or app, spacing plays a huge role in UX and design. Let's see how much margin spacing code goes into a stylesheet, shall we?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=18,
   image="fig18.png",
   caption="Distribution of the number of distinct margin values per page.",
@@ -298,7 +316,8 @@ Quite a lot, it seems! The median desktop page has 96 distinct margin values and
 
 ### Logical properties
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=19,
   caption="Percent of desktop and mobile pages that include logical properties.",
   content="0.6%",
@@ -312,7 +331,8 @@ We estimate that the hegemony of `margin-left` and `padding-top` is of limited d
 
 Vertical layering, or stacking, can be managed with `z-index` in CSS. We were curious how many different values folks use in their sites. The range of what `z-index` accepts is theoretically infinite, bounded only by a browser's variable size limitations. Are all those stack positions used? Let's see!
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=20,
   image="fig20.png",
   caption="Distribution of the number of distinct <code>z-index</code> values per page.",
@@ -325,7 +345,8 @@ Vertical layering, or stacking, can be managed with `z-index` in CSS. We were cu
 
 From our work experience, any number of 9's seemed to be the most popular choice. Even though we taught ourselves to use the lowest number possible, that's not the communal norm. So what is then?! If folks need things on top, what are the most popular `z-index` numbers to pass in? Put your drink down; this one is funny enough you might lose it.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=21,
   image="fig21.png",
   caption="Most frequently used <code>z-index</code> values.",
@@ -334,7 +355,8 @@ From our work experience, any number of 9's seemed to be the most popular choice
   )
 }}
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=22,
   caption="The largest known <code>z-index</code> value.",
   content="999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important",
@@ -349,7 +371,8 @@ From our work experience, any number of 9's seemed to be the most popular choice
 
 Filters are a fun and great way to modify the pixels the browser intends to draw to the screen. It's a post-processing effect that is done against a flat version of the element, node, or layer that it's being applied to. Photoshop made them easy to use, then Instagram made them accessible to the masses through bespoke, stylized combinations. They've been around since about 2012, there are 10 of them, and they can be combined to create unique effects.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=23,
   caption="Percent of pages that include a stylesheet with the <code>filter</code> property.",
   content="78%",
@@ -365,7 +388,8 @@ Upon further investigation, we discovered [FontAwesome](https://fontawesome.com)
 
 Blend modes are similar to filters in that they are a post-processing effect that are run against a flat version of their target elements, but are unique in that they are concerned with pixel convergence. Said another way, blend modes are how 2 pixels _should_ impact each other when they overlap. Whichever element is on the top or the bottom will affect the way that the blend mode manipulates the pixels. There are 16 blend modes -- let's see which ones are the most popular.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=24,
   caption="Percent of pages that include a stylesheet with the <code>*-blend-mode</code> property.",
   content="8%",
@@ -383,7 +407,8 @@ In a future edition of the Web Almanac, it would be great to drill down into ble
 
 CSS has this awesome interpolation power that can be simply used by just writing a single rule on how to transition those values. If you're using CSS to manage states in your app, how often are you employing transitions to do the task? Let's query the web!
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=25,
   image="fig25.png",
   caption="Distribution of the number of transitions per page.",
@@ -398,7 +423,8 @@ That's pretty good! We did see `animate.css` as a popular library to include, wh
 
 CSS keyframe animations are a great solution for your more complex animations or transitions. They allow you to be more explicit which provides higher control over the effects. They can be small, like one keyframe effect, or be large with many many keyframe effects composed into a robust animation. The median number of keyframe animations per page is much lower than CSS transitions.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=26,
   image="fig26.png",
   caption="Distribution of the number of keyframes per page.",
@@ -413,7 +439,8 @@ Media queries let CSS hook into various system-level variables in order to adapt
 
 A good place to start with Media Queries, is just about how many are used per page? How many different moments or contexts does the typical page feel they want to respond to?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=27,
   image="fig27.png",
   caption="Distribution of the number of media queries per page.",
@@ -426,7 +453,8 @@ A good place to start with Media Queries, is just about how many are used per pa
 
 For viewport media queries, any type of CSS unit can be passed into the query expression for evaluation. In earlier days, folks would pass `em` and `px` into the query, but more units were added over time, making us very curious about what types of sizes were commonly found across the web. We assume most media queries will follow popular device sizes, but instead of assuming, let's look at the data!
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=28,
   image="fig28.png",
   caption="Most frequently used snap points used in media queries.",
@@ -441,7 +469,8 @@ Figure 28 above shows that part of our assumptions were correct: there's certain
 
 The most popular query value from the popular breakpoint sizes looks to be `768px`, which made us curious. Was this value primarily used to switch to a portrait layout, since it could be based on an assumption that `768px` represents the typical mobile portrait viewport? So we ran a follow up query to see the popularity of using the portrait and landscape modes:
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=29,
   image="fig29.png",
   caption="Adoption of media query orientation modes.",
@@ -456,7 +485,8 @@ Interestingly, `portrait` isn't used very much, whereas `landscape` is used much
 
 In the width and height media queries we've seen so far, pixels look like the dominant unit of choice for developers looking to adapt their UI to viewports. We wanted to exclusively query this though, and really take a look at the types of units folks use. Here's what we found.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=30,
   image="fig30.png",
   caption="Adoption of units in media query snap points.",
@@ -469,7 +499,8 @@ In the width and height media queries we've seen so far, pixels look like the do
 
 When folks write a media query, are they typically checking for a viewport that's over or under a specific range, _or_ both, checking if it's between a range of sizes? Let's ask the web!
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=31,
   image="fig31.png",
   caption="Adoption of properties used in media query snap points.",
@@ -484,7 +515,8 @@ No clear winners here; `max-width` and `min-width` are nearly equally used.
 
 Websites feel like digital paper, right? As users, it's generally known that you can just hit print from your browser and turn that digital content into physical content. A website isn't required to change itself for that use case, but it can if it wants to! Lesser known is the ability to adjust your website in the use case of it being read by a tool or robot. So just how often are these features taken advantage of?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=32,
   image="fig32.png",
   caption="Adoption of the all, print, screen, and speech types of media queries.",
@@ -499,7 +531,8 @@ Websites feel like digital paper, right? As users, it's generally known that you
 
 How many stylesheets do you reference from your home page? How many from your apps? Do you serve more or less to mobile vs desktop? Here's a chart of everyone else!
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=33,
   image="fig33.png",
   caption="Distribution of the number of stylesheets loaded per page.",
@@ -614,7 +647,7 @@ What do you name your stylesheets? Have you been consistent throughout your care
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(34,"Most frequently used stylesheet names.") }}</figcaption>
+  <figcaption>{{ figure_link(metadata=metadata, id=34, caption="Most frequently used stylesheet names.") }}</figcaption>
 </figure>
 
 Look at all those creative file names! style, styles, main, default, all. One stood out though, do you see it? `BfWyFJ2Rl5s.css` takes the number four spot for most popular. We went researching it a bit and our best guess is that it's related to Facebook "like" buttons. Do you know what that file is? Leave a comment, because we'd love to hear the story.
@@ -623,7 +656,8 @@ Look at all those creative file names! style, styles, main, default, all. One st
 
 How big are these stylesheets? Is our CSS size something to worry about? Judging by this data, our CSS is not a main offender for page bloat.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=35,
   image="fig35.png",
   caption="Distribution of the number of stylesheet bytes (KB) loaded per page.",
@@ -720,7 +754,7 @@ It's common, popular, convenient, and powerful to reach for a CSS library to kic
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(36,"Percent of pages that include a given CSS library.") }}</figcaption>
+  <figcaption>{{ figure_link(metadata=metadata, id=36, caption="Percent of pages that include a given CSS library.") }}</figcaption>
 </figure>
 
 This chart suggests that [Bootstrap](https://getbootstrap.com/) is a valuable library to know to assist with getting a job. Look at all the opportunity there is to help! It's also worth noting that this is a positive signal chart only: the math doesn't add up to 100% because not all sites are using a CSS framework. A little bit over half of all sites _are not_ using a known CSS framework. Very interesting, no?!
@@ -731,7 +765,8 @@ CSS reset utilities intend to normalize or create a baseline for native web elem
 
 So let's take a peek at how many sites are using one! Their existence seems quite reasonable, so how many folks agree with their tactics and use them in their sites?
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=37,
   image="fig37.png",
   caption="Adoption of CSS reset utilities.",
@@ -746,7 +781,8 @@ Turns out that about one-third of the web is using [`normalize.css`](https://nec
 
 CSS `@supports` is a way for the browser to check whether a particular property-value combination is parsed as valid, and then apply styles if the check returns as true.
 
-{{ figure(
+{{ figure_markup(
+  metadata=metadata,
   id=38,
   image="fig38.png",
   caption='Popularity of CSS "at" rules.',

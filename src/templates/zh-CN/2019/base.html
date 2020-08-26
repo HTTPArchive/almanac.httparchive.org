@@ -53,10 +53,15 @@
 {% block open %}打开{% endblock %}
 {% block close %}关闭{% endblock %}
 
-{% macro figure(id, caption) %}图 {{ metadata.chapter_number }}.{{ id }}. {{ caption|safe }}{% endmacro %}
-{% macro figure_link(id,caption) %}<a href="#fig-{{ id }}" class="anchor-link">图 {{ metadata.chapter_number }}.{{ id }}.</a> {{ caption|safe }}{% endmacro %}
-{% macro show_description(id) %}显示图像描述 {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
-{% macro hide_description(id) %}隐藏图像描述 {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro figure_link(metadata, id,caption) %}
+{% if ebook %}
+<a href="#{{ metadata.chapter }}-fig-{{ id }}" class="anchor-link">图 {{ metadata.chapter_number }}.{{ id }}.</a> {{ caption|safe }}
+{% else %}
+<a href="#fig-{{ id }}" class="anchor-link">图 {{ metadata.chapter_number }}.{{ id }}.</a> {{ caption|safe }}
+{% endif %}
+{% endmacro %}
+{% macro show_description(metadata, id) %}显示图像描述 {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro hide_description(metadata, id) %}隐藏图像描述 {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
 
 {% block written_by_before %}作者： {% endblock %}
 {% block reviewed_by_before %}审稿者： {% endblock %}

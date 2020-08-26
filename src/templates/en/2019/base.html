@@ -53,10 +53,15 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block open %}Open{% endblock %}
 {% block close %}Close{% endblock %}
 
-{% macro figure(id, caption) %}Figure {{ metadata.chapter_number }}.{{ id }}. {{ caption|safe }}{% endmacro %}
-{% macro figure_link(id, caption) %}<a href="#fig-{{ id }}" class="anchor-link">Figure {{ metadata.chapter_number }}.{{ id }}.</a> {{ caption|safe }}{% endmacro %}
-{% macro show_description(id) %}Show description of Figure {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
-{% macro hide_description(id) %}Hide description of Figure {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro figure_link(metadata, id, caption, ebook=false) %}
+{% if ebook %}
+<a href="#{{ metadata.chapter }}-fig-{{ id }}" class="anchor-link">Figure {{ metadata.chapter_number }}.{{ id }}.</a> {{ caption|safe }}
+{% else %}
+<a href="#fig-{{ id }}" class="anchor-link">Figure {{ metadata.chapter_number }}.{{ id }}.</a> {{ caption|safe }}
+{% endif %}
+{% endmacro %}
+{% macro show_description(metadata, id) %}Show description of Figure {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Hide description of Figure {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
 
 {% block written_by_before %}Written by{% endblock %}
 {% block reviewed_by_before %}Reviewed by{% endblock %}

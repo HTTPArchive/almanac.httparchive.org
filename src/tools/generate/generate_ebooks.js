@@ -14,6 +14,10 @@ const update_links = (chapter) => {
   body = body.replace(/aria-describedby="fig([0-9_-])/g,'aria-describedby="' + chapter.metadata.chapter + '-fig$1');
   // Replace current chapter fig ids to full id (e.g. id="fig-1" -> id="javascript-fig-1")
   body = body.replace(/id="fig([0-9_-])/g,'id="' + chapter.metadata.chapter + '-fig$1');
+  // Add ebook=true to figure_markup templates
+  body = body.replace(/figure_markup\(/g,'figure_markup(\nebook=true,');
+  // Add ebook=true to figure_link templates
+  body = body.replace(/figure_link\(/g,'figure_link(\nebook=true,');
   // Replace current chapter header ids to full id (e.g. <h2 id="introduction"> -> <h2 id="javascript-introduction">)
   body = body.replace(/<h([0-6]) id="/g,'<h$1 id="' + chapter.metadata.chapter + '-');
   // Replace other chapter references with hash to anchor link (e.g. ./javascript#fig-1 -> #javascript-fig-1)
