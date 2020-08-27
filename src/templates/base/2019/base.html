@@ -414,10 +414,11 @@
 {# Ebook needs a unique fig id. 2019 is already out there so reluctant #}
 {# to change that, so "if" statemnt it is! #}
 {% if ebook %}
-<figure id="{{ metadata.chapter }}-fig-{{ id }}">
+{% set anchor="%s-fig-%s" % (metadata.chapter, id) %}
 {% else %}
-<figure id="fig-{{ id }}">
+{% set anchor="fig-%s" % (id) %}
 {% endif %}
+<figure id="{{ anchor }}">
     {%- if image != "" %}
   <a href="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}">
     {%- if sheets_url != "" %}
