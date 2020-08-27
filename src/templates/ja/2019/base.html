@@ -63,13 +63,8 @@
 {% block author %}著者{% endblock %}
 {% block authors %}著者{% endblock %}
 
-{% macro figure_link(metadata, id,caption) %}
-{% if ebook %}
-<a href="#{{ metadata.chapter }}-fig-{{ id }}" class="anchor-link">図{{ metadata.chapter_number }}.{{ id }}.</a>{{ caption|safe }}
-{% else %}
-<a href="#fig-{{ id }}" class="anchor-link">図{{ metadata.chapter_number }}.{{ id }}.</a>{{ caption|safe }}
-{% endif %}
-{% endmacro %}
+
+{% macro figure_text(metadata, id) %}図{{ metadata.chapter_number }}.{{ id }}.{% endmacro %}
 {% macro show_description(metadata, id) %}図{{ metadata.chapter_number }}.{{ id }}の説明を表示{% endmacro %}
 {% macro hide_description(metadata, id) %}図{{ metadata.chapter_number }}.{{ id }}の説明を非表示{% endmacro %}
 

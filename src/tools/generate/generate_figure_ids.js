@@ -1,4 +1,6 @@
-const generate_figure_ids = (html) => {
+const generate_figure_ids = (html, figure_lock) => {
+
+  let figure_count = 0;
 
   if (html.includes('figure_markup(')) {
     // New style figure markup
@@ -19,24 +21,42 @@ const generate_figure_ids = (html) => {
     // replace _figid_ with i and increment
     // replace _figidn_ with i and do not increment
     re = /_figid(n?)_/g;
-    let i = 1;
     html = html.replace(re, ($1, $2) => {
       if ($2) {
-        return i
+        return figure_count;
       } else {
-        return i++
+        return ++figure_count;
       }
     });
-  
-    return html;
+
+    var refs={};
+
+    // Now let's replace any references in the chapter
+    // So first of all get a list of references -> ids
+    // For simplicity the reference must be the first item after the inserted data
+    re = /figure_markup\(metadata=metadata, id=([0-9]*),\s*\n*\s*(ref="([^"]*?)")/gism;
+    while((result = re.exec(html)) !== null) {
+      refs[result[3]] = result[1];
+    }
+
+    // Then repalce the references with the actual numbers
+    for (var ref in refs) {
+      if (refs.hasOwnProperty(ref)) {
+          // strip refs from figures
+          let re = new RegExp('ref="' + ref +'",?','g');
+          html = html.replace(re, '');
+          // replace refs in writing
+          re = new RegExp(ref,'g');
+          html = html.replace(re, '{{ figure_id(metadata=metadata,id=' + refs[ref] + ') }}');
+      }
+    }
 
   } else {
-    // Old style figure markup
+    // Old style figure markup - can remove after all chapters converted
 
     const re = /<figure>|<figure markdown>|<figure data-markdown="1">/gi;
 
-    let i = 1;
-    html = html.replace(re, () => `<figure id='fig-${i++}'>`);
+    html = html.replace(re, () => `<figure id='fig-${++figure_count}'>`);
 
     //Add the show description button
     html = html.replace(/<div id="fig([0-9]+)-description"/gi, '<button hidden class="fig-description-button" aria-expanded="false" aria-controls="fig$1-description" data-show-text="{{ show_description(metadata=metadata, id=$1) }}" data-hide-text="{{ hide_description(metadata=metadata, id=$1) }}">{{ show_description(metadata=metadata, id=$1) }}</button><div id="fig$1-description"');
@@ -44,11 +64,24 @@ const generate_figure_ids = (html) => {
     //Some of our 2019 chapters (markdown and performance) had different fig ids
     const figcaption_regex = /<figcaption(.*?)>(.*?)([0-9]+)\./gi;
     if (html.includes('<figure id="fig1"')) {
-      return html.replace(figcaption_regex, '<figcaption$1><a href="#fig$3" class="anchor-link">$2 $3.</a>');
+      html = html.replace(figcaption_regex, '<figcaption$1><a href="#fig$3" class="anchor-link">$2 $3.</a>');
     } else {
-      return html.replace(figcaption_regex, '<figcaption$1><a href="#fig-$3" class="anchor-link">$2 $3.</a>');
+      html = html.replace(figcaption_regex, '<figcaption$1><a href="#fig-$3" class="anchor-link">$2 $3.</a>');
     }
   }
+
+  // After a chapter is published a figure_lock value should be set
+  // So check the figure count hasn't changed
+  if (figure_lock && figure_lock != figure_count) {
+    console.error("Total figures have changed from: ", figure_lock, " to: ", figure_count);
+    console.error("After publishing we strongly advise NOT to change figure numbering.");
+    console.error("Adding new figures is usually OK but update the figure_lock count.");
+    console.error("If removing, perhaps consider commenting out figures instead,");
+    console.error("to ensure consistency in figure numbering");
+    throw("Total figures have changed from: ", figure_lock, " to: ", figure_count);
+  }
+
+  return html;
 };
 
 module.exports = {

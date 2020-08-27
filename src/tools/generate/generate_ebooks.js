@@ -14,7 +14,7 @@ const update_links = (chapter) => {
   body = body.replace(/aria-describedby="fig([0-9_-])/g,'aria-describedby="' + chapter.metadata.chapter + '-fig$1');
   // Replace current chapter fig ids to full id (e.g. id="fig-1" -> id="javascript-fig-1")
   body = body.replace(/id="fig([0-9_-])/g,'id="' + chapter.metadata.chapter + '-fig$1');
-  // Add ebook=true to figure_markup templates
+  // Add ebook=true to figure_markup macros
   body = body.replace(/figure_markup\(/g,'figure_markup(\nebook=true,');
   // Add ebook=true to figure_link templates
   body = body.replace(/figure_link\(/g,'figure_link(\nebook=true,');

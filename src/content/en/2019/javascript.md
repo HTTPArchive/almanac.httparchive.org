@@ -11,6 +11,7 @@ results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmL
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-06-30T00:00:00.000Z
+figure_lock: 18
 ---
 
 ## Introduction
@@ -27,7 +28,7 @@ JavaScript is the most costly resource we send to browsers; having to be downloa
 
 Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?
 
-{{ figure_markup(
+{{ figure_markup(ref="figref1",
   image="fig1.png",
   caption="Distribution of JavaScript bytes per page.",
   description="Bar chart showing 70 bytes of JavaScript are used in the p10 percentile, 174 bytes for p25, 373 bytes for p50, 693 bytes for p75, and 1,093 bytes for p90",
@@ -35,7 +36,7 @@ Sending smaller JavaScript bundles to the browser is the best way to reduce down
   )
 }}
 
-Figure 1 above shows that we use 373 KB of JavaScript at the 50th percentile, or median. In other words, 50% of all sites ship more than this much JavaScript to their users.
+Figure figref1 above shows that we use 373 KB of JavaScript at the 50th percentile, or median. In other words, 50% of all sites ship more than this much JavaScript to their users.
 
 Looking at these numbers, it's only natural to wonder if this is too much JavaScript. However in terms of page performance, the impact entirely depends on network connections and devices used. Which brings us to our next question: how much JavaScript do we ship when we compare mobile and desktop clients?
 

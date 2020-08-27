@@ -66,14 +66,15 @@ const parse_file = async (markdown,chapter) => {
   const html = converter.makeHtml(markdown);
   let body = html;
 
+  const m = converter.getMetadata();
+  const figure_lock = m.figure_lock || 0;
   body = generate_header_links(body);
-  body = generate_figure_ids(body);
+  body = generate_figure_ids(body, figure_lock);
   body = wrap_tables(body);
   body = lazy_load_content(body);
   body = remove_unnecessary_markup(body);
   const toc = generate_table_of_contents(body);
 
-  const m = converter.getMetadata();
   const chapter_number = Number(m.chapter_number);
   const authors = parse_array(m.authors);
   const reviewers = parse_array(m.reviewers);

@@ -385,6 +385,15 @@
   {% endmacro %}
 {% endif %}
 
+{% macro figure_id(metadata, id) %}{{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro figure_link(metadata, id, caption, ebook=false) %}
+{% if ebook %}
+<a href="#{{ metadata.chapter }}-fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
+{% else %}
+<a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
+{% endif %}
+{% endmacro %}
+
 {%- macro figure_markup(
   id=0,
   image="",
