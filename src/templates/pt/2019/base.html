@@ -53,9 +53,9 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block open %}Abrir{% endblock %}
 {% block close %}Fechar{% endblock %}
 
-{% macro figure_text(metadata, id) %}Figura {{ metadata.chapter_number }}.{{ id }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Mostrar descrição da figura {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Ocultar descrição da figura {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro figure_text(metadata, id) %}Figura {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Mostrar descrição da figura {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Ocultar descrição da figura {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}Escrito por{% endblock %}
 {% block reviewed_by_before %}Revisado por{% endblock %}

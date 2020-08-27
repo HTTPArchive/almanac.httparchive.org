@@ -64,9 +64,9 @@
 {% block authors %}著者{% endblock %}
 
 
-{% macro figure_text(metadata, id) %}図{{ metadata.chapter_number }}.{{ id }}.{% endmacro %}
-{% macro show_description(metadata, id) %}図{{ metadata.chapter_number }}.{{ id }}の説明を表示{% endmacro %}
-{% macro hide_description(metadata, id) %}図{{ metadata.chapter_number }}.{{ id }}の説明を非表示{% endmacro %}
+{% macro figure_text(metadata, id) %}図{{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を表示{% endmacro %}
+{% macro hide_description(metadata, id) %}図{{ figure_id(metadata, id) }}の説明を非表示{% endmacro %}
 
 {% macro onTwitter(twitterHandle) %}Twitterの@{{twitterHandle}}{% endmacro %}
 {% macro onGitHub(gitHubHandle) %}GitHubの{{gitHubHandle}}{% endmacro %}

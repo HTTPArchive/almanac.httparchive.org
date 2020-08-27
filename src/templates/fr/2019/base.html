@@ -54,9 +54,9 @@ Notre mission est de combiner les statistiques brutes et les tendances de HTTP A
 {% block close %}Fermez{% endblock %}
 
 
-{% macro figure_text(metadata, id) %}Figure {{ metadata.chapter_number }}.{{ id }}.{% endmacro %}
-{% macro show_description(metadata, id) %}Afficher la description de la figure {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
-{% macro hide_description(metadata, id) %}Masquer la description de la figure  {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro figure_text(metadata, id) %}Figure {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Afficher la description de la figure {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Masquer la description de la figure  {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}Écrit par{% endblock %}
 {% block reviewed_by_before %}Relu par{% endblock %}

@@ -53,9 +53,9 @@
 {% block open %}打开{% endblock %}
 {% block close %}关闭{% endblock %}
 
-{% macro figure_text(metadata, id) %}图 {{ metadata.chapter_number }}.{{ id }}.{% endmacro %}
-{% macro show_description(metadata, id) %}显示图像描述 {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
-{% macro hide_description(metadata, id) %}隐藏图像描述 {{ metadata.chapter_number }}.{{ id }}{% endmacro %}
+{% macro figure_text(metadata, id) %}图 {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}显示图像描述 {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}隐藏图像描述 {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}作者： {% endblock %}
 {% block reviewed_by_before %}审稿者： {% endblock %}
