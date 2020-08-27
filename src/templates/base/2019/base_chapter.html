@@ -83,6 +83,7 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   </a>
 {% endmacro %}
 
+
 {% macro render_byline() %}
   <div class="byline">{{ self.written_by_before() }}
   {% for author in metadata.get('authors') %}
