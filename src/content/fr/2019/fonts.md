@@ -608,16 +608,16 @@ Historically, `font-stretch` has suffered from poor browser support and was not 
 
 It has been suggested that using condensed fonts on smaller viewports allows more text to be viewable, but this approach isn't commonly used. That being said, that this property is used half a percentage point more on desktop than mobile is unexpected, and 7% seems much higher than I would have predicted.
 
-## Variable fonts are the future
+## Les polices variables sont l'avenir
 
-[Variable fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) allow several font weights and styles to be included in the one font file.
+[Les polices variables](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) permettent d'inclure plusieurs poids et styles de police dans un seul fichier.
 
 <figure>
   <div class="big-number">1.8%</div>
   <figcaption>Figure 18. Percent of pages that include a variable font.</figcaption>
 </figure>
 
-Even at 1.8% this was higher than expected, although I am excited to see this take off. [Google Fonts v2](https://developers.google.com/fonts/docs/css2) does include some support for variable fonts.
+Avec 1, 8 %, c'est plus que prévu, encore que je sois enthousiaste de voir ce décollage. [Google Fonts v2](https://developers.google.com/fonts/docs/css2) inclut un certain support pour les polices variables.
 
 <figure>
   <a href="/static/images/2019/fonts/fig19.png">
@@ -627,16 +627,17 @@ Even at 1.8% this was higher than expected, although I am excited to see this ta
   <figcaption id="fig19-caption">Figure 19. Usage of <code>font-variation-settings</code> axes.</figcaption>
 </figure>
 
-Through the lens of this large data set, these are very low sample sizes-take these results with a grain of salt. However, `opsz` as the most common axis on desktop pages is notable, with `wght` and `wdth` trailing. In my experience, the introductory demos for variable fonts are usually weight-based.
+Dans l'optique de ce vaste ensemble de données, il s'agit d'échantillons de très petite taille - prenez ces résultats avec des pincettes. Cependant, l'axe `opsz`, qui est le plus courant sur les pages desktop, est notable, avec `wght` et `wdth` à la traîne. D'après mon expérience, les démos d'introduction aux polices variables sont généralement basées sur le poids.
 
-## Color fonts might also be the future?
+## Les polices de couleur pourraient-elles aussi être l'avenir ?
 
 <figure>
   <div class="big-number">117</div>
   <figcaption>Figure 20. The number of desktop web pages that include a color font.</figcaption>
 </figure>
 
-Usage here of these is basically nonexistent but you can check out the excellent resource [Color Fonts! WTF?](https://www.colorfonts.wtf/) for more information. Similar (but not at all) to the SVG format for fonts (which is bad and going away), this allows you to embed SVG inside of OpenType files, which is awesome and cool.
+Leur utilisation est pratiquement inexistante ici, mais vous pouvez consulter l'excellente ressource [Color Fonts ! WTF ?](https://www.colorfonts.wtf/) pour plus d'informations. Semblable (mais pas du tout) au format SVG pour les polices (qui est mauvais et qui disparaît), cela vous permet d'intégrer le SVG dans les fichiers OpenType, ce qui est génial et cool.
+
 
 ## Conclusion
 
