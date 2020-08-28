@@ -853,15 +853,11 @@ Most CDNs balance the need for shared certificates and performance. Most cap the
     <thead>
       <tr>
         <td></td>
-        <th colspan="5" scope="colgroup">Percentile</th>
-      </tr>
-      <tr>
-        <td></td>
-        <th scope="col">10</th>
-        <th scope="col">25</th>
-        <th scope="col">50</th>
-        <th scope="col">75</th>
-        <th scope="col">90</th>
+        <th scope="col"><span class="visually-hidden">10th percentile</span><span aria-hidden="true">p10</span></th>
+        <th scope="col"><span class="visually-hidden">25th percentile</span><span aria-hidden="true">p25</span></th>
+        <th scope="col"><span class="visually-hidden">50th percentile</span><span aria-hidden="true">p50</span></th>
+        <th scope="col"><span class="visually-hidden">75th percentile</span><span aria-hidden="true">p75</span></th>
+        <th scope="col"><span class="visually-hidden">90th percentile</span><span aria-hidden="true">p90</span></th>
       </tr>
     </thead>
     <tbody>
