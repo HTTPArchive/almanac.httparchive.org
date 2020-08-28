@@ -184,19 +184,18 @@ La documentation de Google Fonts encourage le `<link>` pour le CSS Google Fonts 
 
 De plus, si une page utilise les éléments "preconnect" ou "dns-prefetch" comme `<link>`, ceux-ci passeront de toute façon avant les polices CSS de Google. Lisez la suite pour en savoir plus sur ces conseils de ressources.
 
-### Speeding up third-party hosting
+### Accélérer l'hébergement tierce-partie
 
-As mentioned above, a super easy way to speed up web font requests to a third-party host is to use the `preconnect` [resource hint](./resource-hints).
+Comme mentionné ci-dessus, un moyen très simple d'accélérer les demandes de polices Web à un hébergement tierce-partie est d'utiliser la fonction `preconnect`[resource hint](./resource-hints).
 
 <figure>
   <div class="big-number">1.7%</div>
   <figcaption>Figure 5. Percent of mobile pages preconnecting to a web font host.</figcaption>
 </figure>
 
-Wow! Less than 2% of pages are using [`preconnect`](https://web.dev/uses-rel-preconnect)! Given that Google Fonts is at 75%, this should be higher! Developers: if you use Google Fonts, use `preconnect`! Google Fonts: proselytize `preconnect` more!
+Ouah ! Moins de 2% des pages utilisent [`preconnect`] (https://web.dev/uses-rel-preconnect) ! Etant donné que Google Fonts est à 75%, cela devrait être plus élevé ! Développeurs : si vous utilisez Google Fonts, utilisez `preconnect` ! Google Fonts : faites plus de prosélytisme avec `preconnect` !
 
-In fact, if you're using Google Fonts go ahead and add this to your `<head>` if it's not there already:
-
+En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<head>` si ce n'est pas déjà fait :
 ```<link rel="preconnect" href="https://fonts.gstatic.com/">```
 
 ### Most popular typefaces
@@ -337,11 +336,11 @@ In fact, if you're using Google Fonts go ahead and add this to your `<head>` if 
   <figcaption>Figure 6. Top 20 font families as a percent of all font declarations.</figcaption>
 </figure>
 
-It is unsurprising that the top entries here seem to match up very similarly to [Google Fonts' list of fonts sorted by popularity](https://fonts.google.com/?sort=popularity).
+Il n'est pas surprenant que les principales entrées ici semblent correspondre de manière très similaire à [Liste des Google Fonts classées par popularité](https://fonts.google.com/?sort=popularity).
 
-## What font formats are being used?
+## Quels sont les formats de police utilisés ?
 
-[WOFF2 is pretty well supported](https://caniuse.com/#feat=woff2) in web browsers today. Google Fonts serves WOFF2, a format that offers improved compression over its predecessor WOFF, which was itself already an improvement over other existing font formats.
+[WOFF2 est assez bien pris en charge](https://caniuse.com/#feat=woff2) dans les navigateurs web aujourd'hui. Google Fonts sert WOFF2, un format qui offre une meilleure compression que son prédécesseur WOFF, qui était lui-même déjà une amélioration par rapport aux autres formats de police existants.
 
 <figure>
   <a href="/static/images/2019/fonts/fig7.png">
@@ -351,12 +350,11 @@ It is unsurprising that the top entries here seem to match up very similarly to 
   <figcaption id="fig7-caption">Figure 7. Popularity of web font MIME types.</figcaption>
 </figure>
 
-From my perspective, an argument could be made to go WOFF2-only for web fonts after seeing the results here. I wonder where the double-digit WOFF usage is coming from? Perhaps developers still serving web fonts to Internet Explorer?
+De mon point de vue, on pourrait argumenter en faveur de l'utilisation exclusive de WOFF2 pour les polices Web après avoir vu les résultats ici. Je me demande d'où vient l'utilisation à deux chiffres de WOFF ? Peut-être que les développeurs continuent de fournir des polices web pour Internet Explorer ?
 
-Third place `octet-stream` (and `plain` a little further down) would seem to suggest that a lot of web servers are configured improperly, sending an incorrect MIME type with web font file requests.
+La troisième place `octet-stream` (et `plain` un peu plus bas) semble suggérer que beaucoup de serveurs web sont mal configurés, envoyant un type MIME incorrect avec les requêtes de fichiers de polices web.
 
-Let's dig a bit deeper and look at the `format()` values used in the `src:` property of `@font-face` declarations:
-
+Creusons un peu plus loin et regardons les valeurs de `format()` utilisées dans la propriété `src:` des déclarations `@font-face` :
 <figure>
   <a href="/static/images/2019/fonts/fig8.png">
     <img src="/static/images/2019/fonts/fig8.png" alt="Figure 8. Popularity of font formats in <code>@font-face</code> declarations." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&amp;format=interactive">
@@ -365,11 +363,11 @@ Let's dig a bit deeper and look at the `format()` values used in the `src:` prop
   <figcaption id="fig8-caption">Figure 8. Popularity of font formats in <code>@font-face</code> declarations.</figcaption>
 </figure>
 
-I was hoping to see [SVG fonts](https://caniuse.com/#feat=svg-fonts) on the decline. They're buggy and implementations have been removed from every browser except Safari. Time to drop these, y'all.
+J'espérais voir [les polices SVG] (https://caniuse.com/#feat=svg-fonts) sur le déclin. Elles sont boguées et leur implémentation a été supprimée de tous les navigateurs sauf Safari. Il est temps de les laisser tomber.
 
-The SVG data point here also makes me wonder what MIME type y'all are serving these SVG fonts with. I don't see `image/svg+xml` anywhere in Figure 7. Anyway, don't worry about fixing that, just get rid of them!
+Le point de données SVG ici me fait aussi me demander avec quel type MIME vous utilisez ces polices SVG. Je ne vois pas `image/svg+xml` nulle part dans la Figure 7. Quoi qu'il en soit, ne vous inquiétez pas pour cela, débarrassez-vous simplement d'elles !
 
-### WOFF2-only
+### WOFF2 seulement
 
 <figure>
   <table>
@@ -507,9 +505,9 @@ The SVG data point here also makes me wonder what MIME type y'all are serving th
   <figcaption>Figure 9. Top 20 font format combinations.</figcaption>
 </figure>
 
-This dataset seems to suggest that the majority of people are already using WOFF2-only in their `@font-face` blocks. But this is misleading of course, per our earlier discussion on the dominance of Google Fonts in the data set. Google Fonts does some sniffing methods to serve a streamlined CSS file and only includes the most modern `format()`. Unsurprisingly, WOFF2 dominates the results here for that reason, as browser support for WOFF2 has been pretty broad for some time now.
+Cet ensemble de données semble indiquer que la majorité des gens utilisent déjà WOFF2 uniquement dans leurs blocs `@font-face`. Mais cela est bien sûr trompeur, selon notre discussion précédente sur la domination des polices Google dans l'ensemble des données. Google Fonts utilise des méthodes de reniflage pour servir un fichier CSS simplifié et n'inclut que le `format()` le plus moderne. Il n'est pas surprenant que WOFF2 domine les résultats ici pour cette raison, car la prise en charge de WOFF2 par les navigateurs est assez courante depuis un certain temps déjà.
 
-Importantly, this particular data doesn't really support or detract from the case to go WOFF2-only yet, but it remains a tempting idea.
+Il est important de noter que ces données particulières ne soutiennent ni ne détournent vraiment l'idée d'utiliser uniquement WOFF2 pour le moment, mais cela reste une idée tentante.
 
 ## Fighting against invisible text
 
