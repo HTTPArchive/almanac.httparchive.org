@@ -642,10 +642,10 @@ Usage here of these is basically nonexistent but you can check out the excellent
 
 ## Conclusion
 
-The biggest takeaway here is that Google Fonts dominates the web font discussion. Approaches they've taken weigh heavily on the data we've recorded here. The positives here are easy access to web fonts, good font formats (WOFF2), and for-free `unicode-range` configurations. The downsides here are performance drawbacks associated with third-party hosting, different-host requests, and no access to `preload`.
+Le point le plus important ici est que Google Fonts domine la conversation sur les polices de caractères sur le web. Les approches qu'ils ont adoptées pèsent lourdement sur les données que nous avons enregistrées ici. Les points positifs sont un accès facile aux polices web, de bons formats de police (WOFF2), et des configurations gratuites de `unicode-range`. Les inconvénients sont les inconvénients liés à l'hébergement par des tiers, les demandes de différents hôtes et l'absence d'accès au `preload`.
 
-I fully expect that in the future we'll see the "Rise of the Variable Font". This _should_ be paired with a decline in web font requests, as Variable Fonts combine multiple individual font files into a single composite font file. But history has shown us that what usually happens here is that we optimize a thing and then add more things to fill the vacancy.
+Je suis convaincu que nous assisterons à l'avenir à la "montée en puissance des polices variables". Ce phénomène devrait s'accompagner d'une diminution des demandes de polices sur le web, car les polices variables combinent plusieurs fichiers de polices individuels en un seul fichier de police composite. Mais l'histoire nous a montré que ce qui se passe généralement ici, c'est que nous optimisons une chose puis que nous en ajoutons d'autres pour combler le poste vacant.
 
-It will be very interesting to see if color fonts increase in popularity. I expect these to be far more niche than variable fonts but may see a lifeline in the icon font space.
+Il sera très intéressant de voir si la popularité des polices de couleur augmente. Je pense qu'elles occuperont une place beaucoup plus importante que les polices variables, mais il se peut que l'espace réservé aux polices des icônes soit une bouée de sauvetage.
 
-Keep those fonts frosty, y'all.
+Faites en sorte que ces polices restent givrées.
