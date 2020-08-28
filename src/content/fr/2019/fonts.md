@@ -19,17 +19,17 @@ Les polices Web permettent une typographie belle et fonctionnelle sur le web. L'
 
 Sont-elles un atout pour le web ? Offrent-elles plus d'avantages que d'inconvénients ? Les sentiers des standards du web sont-ils suffisamment pavés pour encourager les meilleures pratiques de chargement des polices web par défaut ? Et si ce n'est pas le cas, que faut-il changer ? Voyons si nous pouvons répondre à ces questions en examinant comment les polices de caractères sont utilisées sur le web aujourd'hui.
 
-## Where did you get those web fonts?
+## Où avez-vous obtenu ces polices de caractères pour le web ?
 
-The first and most prominent question: performance. There is a whole chapter dedicated to [performance](./performance) but we will delve a little into font-specific performance issues here.
+La première et la plus importante question : la performance. Un chapitre entier est consacré à la [performance](./performance), mais nous allons ici approfondir un peu les questions de performance spécifiques aux polices.
 
-Using hosted web fonts enables ease of implementation and maintenance, but self-hosting offers the best performance. Given that web fonts by default make text invisible while the web font is loading (also known as the [Flash of Invisible Text](https://css-tricks.com/fout-foit-foft/), or FOIT), the performance of web fonts can be more critical than non-blocking assets like images.
+L'utilisation de polices web hébergées permet une mise en œuvre et une maintenance faciles, mais l'auto-hébergement offre les meilleures performances. Étant donné que les polices web par défaut rendent le texte invisible pendant le chargement de la police web (également connu sous le nom de [Flash of Invisible Text](https://css-tricks.com/fout-foit-foft/), ou FOIT), les performances des polices web peuvent être plus critiques que les éléments non bloquants comme les images.
 
-### Are fonts being hosted on the same host or by a different host?
+### Les polices sont-elles hébergées sur le même serveur ou par un serveur différent ?
 
-Differentiating self-hosting against third-party hosting is increasingly relevant in an [HTTP/2](./http2) world, where the performance gap between a same-host and different-host connection can be wider. Same-host requests have the huge benefit of a better potential for prioritization against other same-host requests in the waterfall.
+La distinction entre l'auto-hébergement et l'hébergement tiers est de plus en plus pertinente dans un monde [HTTP/2](./http2), où l'écart de performance entre un même hôte et une connexion d'hôte différent peut être plus important. Les requêtes de même hôte présentent l'énorme avantage d'un meilleur potentiel de priorisation par rapport aux autres requêtes de même hôte dans la cascade.
 
-Recommendations to mitigate the performance costs of loading web fonts from another host include using the `preconnect`, `dns-prefetch`, and `preload` [resource hints](./resource-hints), but high priority web fonts should be same-host requests to minimize the performance impact of web fonts. This is especially important for fonts used by very visually prominent content or body copy occupying the majority of a page.
+Les recommandations pour réduire les coûts de performance du chargement des polices web à partir d'un autre hôte comprennent l'utilisation des fonctions "preconnect", "dns-prefetch" et "preload" [resource hints](./resource-hints), mais les polices web hautement prioritaires devraient être des requêtes de même hôte pour minimiser l'impact des polices web sur les performances. Ceci est particulièrement important pour les polices utilisées par des contenus très visuellement importants ou des corps de texte occupant la majorité d'une page.
 
 <figure>
   <a href="/static/images/2019/fonts/fig1.png">
@@ -39,11 +39,11 @@ Recommendations to mitigate the performance costs of loading web fonts from anot
   <figcaption id="fig1-caption">Figure 1. Popular web font hosting strategies.</figcaption>
 </figure>
 
-The fact that three quarters are hosted is perhaps unsurprising given Google Fonts dominance that we will discuss [below](#what-are-the-most-popular-third-party-hosts).
+Le fait que les trois quarts soient hébergés n'est peut-être pas surprenant compte tenu de la domination de Google Fonts dont nous parlerons [ci-dessous] (#what-are-the-most-popular-third-party-hosts).
 
-Google serves fonts using third-party CSS files hosted on `https://fonts.googleapis.com`. Developers add requests to these stylesheets using `<link>` tags in their markup. While these stylesheets are render blocking, they are very small. However, the font files are hosted on yet another domain, `https://fonts.gstatic.com`. The model of requiring two separate hops to two different domains makes `preconnect` a great option here for the second request that will not be discovered until the CSS is downloaded.
+Google fournit des polices en utilisant des fichiers CSS tiers hébergés sur https://fonts.googleapis.com. Les développeurs ajoutent des requêtes à ces feuilles de style en utilisant les balises `<link>` dans leur balisage. Bien que ces feuilles de style soient bloquantes, elles sont très petites. Cependant, les fichiers de police sont hébergés sur un autre domaine, `https://fonts.gstatic.com`. Le modèle consistant à exiger deux sauts séparés vers deux domaines différents fait de `preconnect` une excellente option ici pour la deuxième requête qui ne sera pas découverte avant le téléchargement du CSS.
 
-Note that while `preload` would be a nice addition to load the font files higher in the request waterfall (remember that `preconnect` sets up the connection, it doesn’t request the file content), `preload` is not yet available with Google Fonts. Google Fonts generates unique URLs for their font files [which are subject to change](https://github.com/google/fonts/issues/1067).
+Notez que si `preload` serait un ajout intéressant pour charger les fichiers de police plus haut dans la cascade de requêtes (rappelez-vous que `preconnect` établit la connexion, il ne demande pas le contenu du fichier), `preload` n'est pas encore disponible avec Google Fonts. Google Fonts génère des URL uniques pour leurs fichiers de police [qui sont susceptibles de changer] (https://github.com/google/fonts/issues/1067).
 
 ### What are the most popular third-party hosts?
 
@@ -162,27 +162,27 @@ Note that while `preload` would be a nice addition to load the font files higher
   <figcaption>Figure 2. Top 20 font hosts by percent of requests.</figcaption>
 </figure>
 
-The dominance of Google Fonts here was simultaneously surprising and unsurprising at the same time. It was unsurprising in that I expected the service to be the most popular and surprising in the sheer dominance of its popularity. 75% of font requests is astounding. TypeKit was a distant single-digit second place, with the Bootstrap library accounting for an even more distant third place.
+La domination de Google Fonts ici était à la fois surprenante et non surprenante. Elle n'était pas surprenante dans la mesure où je m'attendais à ce que le service soit le plus populaire et surprenant par la simple domination de sa popularité. 75 % des demandes de polices sont étonnantes. TypeKit était en deuxième position, à un chiffre près, la bibliothèque Bootstrap occupant une troisième place encore plus éloignée.
 
 <figure>
   <div class="big-number">29%</div>
   <figcaption>Figure 3. Percent of pages that include a Google Fonts stylesheet link in the document <code>&lt;head&gt;</code>.</figcaption>
 </figure>
 
-While the high usage of Google Fonts here is very impressive, it is also noteworthy that only 29% of pages included a Google Fonts `<link>` element. This could mean a few things:
+Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est également à noter que seulement 29% des pages comprenaient un élément Google Fonts `<link>`. Cela pourrait signifier plusieurs choses :
 
-- When pages uses Google Fonts, they use _a lot_ of Google Fonts. They are provided without monetary cost, after all. Perhaps they're being used in a popular WYSIWYG editor? This seems like a very likely explanation.
-- Or a more unlikely story is that it could mean that a lot of people are using Google Fonts with `@import` instead of `<link>`.
-- Or if we want to go off the deep end into super unlikely scenarios, it could mean that many people are using Google Fonts with an [HTTP `Link:` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) instead.
+- Lorsque des pages utilisent des Google Fonts, elles utilisent _beaucoup_ de Google Fonts. Elles sont fournies sans coût monétaire, après tout. Peut-être qu'elles sont utilisées dans un éditeur WYSIWYG populaire ? Cela semble être une explication très probable.
+- Ou une histoire plus improbable est que cela pourrait signifier que beaucoup de gens utilisent les Google Fonts avec `@import` au lieu de `<link>`.
+- Ou si nous voulons aller plus loin dans des scénarios très improbables, cela pourrait signifier que beaucoup de gens utilisent des polices Google avec un [HTTP `Link:` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link) à la place.
 
 <figure>
   <div class="big-number">0.4%</div>
   <figcaption>Figure 4. Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code>&lt;head&gt;</code>.</figcaption>
 </figure>
 
-Google Fonts documentation encourages the `<link>` for the Google Fonts CSS to be placed as the first child in the `<head>` of a page. This is a big ask! In practice, this is not common as only half a percent of all pages (about 20,000 pages) took this advice.
+La documentation de Google Fonts encourage le `<link>` pour le CSS Google Fonts à être placé comme premier enfant dans le `<head>` d'une page. C'est une grande demande ! Dans la pratique, ce n'est pas courant car seulement un demi pour cent de toutes les pages (environ 20 000 pages) ont suivi ce conseil.
 
-More so, if a page is using `preconnect` or `dns-prefetch` as `<link>` elements, these would come before the Google Fonts CSS anyway. Read on for more about these resource hints.
+De plus, si une page utilise les éléments "preconnect" ou "dns-prefetch" comme `<link>`, ceux-ci passeront de toute façon avant les polices CSS de Google. Lisez la suite pour en savoir plus sur ces conseils de ressources.
 
 ### Speeding up third-party hosting
 
