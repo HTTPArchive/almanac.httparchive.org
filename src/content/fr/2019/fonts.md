@@ -1,8 +1,8 @@
 ---
 part_number: I
 chapter_number: 6
-title: Fonts
-description: Fonts chapter of the 2019 Web Almanac covering where fonts are loaded from, font formats, font loading performance, variable fonts and color fonts.
+title: Polices d'écriture
+description: Chapitre Polices d'écriture du web Almanac 2019 couvrant l'endroit d'où les polices sont chargées, les formats de police, la performance de leur chargement, les polices variables et les polices de couleur. 
 authors: [zachleat]
 reviewers: [hyperpress, AymenLoukil]
 translators: [arigaud-ca]
@@ -15,9 +15,9 @@ last_updated: 2020-03-02T00:00:00.000Z
 
 ## Introduction
 
-Les polices Web permettent une typographie belle et fonctionnelle sur le web. L'utilisation des polices Web permet non seulement de renforcer la conception, mais aussi de démocratiser un sous-ensemble de la conception, car elle permet un accès plus facile à ceux qui n'ont pas forcément de solides compétences en matière de conception. Cependant, malgré tout le bien qu'elles peuvent faire, les polices web peuvent également nuire considérablement aux performances de votre site si elles ne sont pas chargées correctement.
+Les polices Web permettent une typographie belle et fonctionnelle sur le web. L'utilisation des polices Web permet non seulement de renforcer le design, mais aussi de démocratiser un sous-ensemble du design, car elle permet un accès plus facile à ceux qui n'ont pas forcément de solides compétences en matière de design. Cependant, malgré tout le bien qu'elles peuvent faire, les polices web peuvent également nuire considérablement aux performances de votre site si elles ne sont pas chargées correctement.
 
-Sont-elles un atout pour le web ? Offrent-elles plus d'avantages que d'inconvénients ? Les cowpaths des standards du web sont-ils suffisamment pavés pour encourager les meilleures pratiques de chargement des polices web par défaut ? Et si ce n'est pas le cas, que faut-il changer ? Voyons si nous pouvons répondre à ces questions en examinant comment les polices de caractères sont utilisées sur le web aujourd'hui.
+Sont-elles un atout pour le web ? Offrent-elles plus d'avantages que d'inconvénients ? Les sentiers des standards du web sont-ils suffisamment pavés pour encourager les meilleures pratiques de chargement des polices web par défaut ? Et si ce n'est pas le cas, que faut-il changer ? Voyons si nous pouvons répondre à ces questions en examinant comment les polices de caractères sont utilisées sur le web aujourd'hui.
 
 ## Where did you get those web fonts?
 
