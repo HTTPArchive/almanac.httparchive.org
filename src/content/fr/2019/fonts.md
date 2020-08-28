@@ -509,22 +509,22 @@ Cet ensemble de données semble indiquer que la majorité des gens utilisent dé
 
 Il est important de noter que ces données particulières ne soutiennent ni ne détournent vraiment l'idée d'utiliser uniquement WOFF2 pour le moment, mais cela reste une idée tentante.
 
-## Fighting against invisible text
+## Lutter contre le texte invisible
 
-The number one tool we have to fight the default web font loading behavior of "invisible while loading" (also known as FOIT), is `font-display`. Adding `font-display: swap` to your `@font-face` block is an easy way to tell the browser to show fallback text while the web font is loading.
+Le premier outil dont nous disposons pour lutter contre le comportement par défaut de chargement des polices web "invisible pendant le chargement" (aussi appelé FOIT), est `font-display`. Ajouter `font-display : swap` à votre bloc `@font-face` est un moyen facile de dire au navigateur d'afficher le texte de remplacement pendant le chargement de la police web.
 
-[Browser support](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display) is great too. Internet Explorer and pre-Chromium Edge don't have support but they also render fallback text by default when a web font loads (no FOITs allowed here). For our Chrome tests, how commonly is `font-display` used?
+La fonction [Support du navigateur](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display) est également très utile. Internet Explorer et les versions antérieures à Chromium Edge ne sont pas pris en charge, mais ils affichent également un texte de remplacement par défaut lors du chargement d'une police Web (les FOIT ne sont pas autorisés ici). Pour nos tests dans Chrome, quelle est la fréquence d'utilisation de la fonction `font-display` ?
 
 <figure>
   <div class="big-number">26%</div>
   <figcaption>Figure 10. Percent of mobile pages that utilize the <code>font-display</code> style.</figcaption>
 </figure>
 
-I assume this will be creeping up over time, especially now that [Google Fonts is adding `font-display` to all new code snippets](https://www.zachleat.com/web/google-fonts-display/) copied from their site.
+Je suppose que cela va s'accumuler au fil du temps, surtout maintenant que [Google Fonts ajoute "font-display" à tous les nouveaux extraits de code](https://www.zachleat.com/web/google-fonts-display/) copiés de leur site.
 
-If you're using Google Fonts, update your snippets! If you're not using Google Fonts, use `font-display`! Read more about `font-display` on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+Si vous utilisez les Google Fonts, mettez à jour vos snippets ! Si vous n'utilisez pas les Google Fonts, utilisez `font-display` ! Pour en savoir plus sur l'affichage des polices, consultez le site [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
 
-Let's have a look at what `font-display` values are popular:
+Voyons voir quelles sont les valeurs les plus populaires de `font-display` :
 
 <figure>
   <a href="/static/images/2019/fonts/fig11.png">
@@ -534,7 +534,7 @@ Let's have a look at what `font-display` values are popular:
   <figcaption id="fig11-caption">Figure 11. Usage of <code>font-display</code> values.</figcaption>
 </figure>
 
-As an easy way to show fallback text while a web font is loading, `font-display: swap` reigns supreme and is the most common value. `swap` is also the default value used by new Google Fonts code snippets too. I would have expected `optional` (only render if cached) to have a bit more usage here as a few prominent developer evangelists lobbied for it a bit, but no dice.
+Comme moyen facile d'afficher du texte de remplacement pendant le chargement d'une police Web, `font-display : swap` règne en maître et est la valeur la plus courante. `swap` est également la valeur par défaut utilisée par les nouveaux extraits de code de Google Fonts. Je me serais attendu à ce que `optional` (seulement rendu si mis en cache) soit un peu plus utilisé ici car quelques éminents développeurs évangélistes ont fait pression pour cela, mais pas de dés.
 
 ## How many web fonts are too many?
 
