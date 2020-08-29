@@ -536,9 +536,9 @@ Voyons voir quelles sont les valeurs les plus populaires de `font-display` :
 
 Comme moyen facile d'afficher du texte de remplacement pendant le chargement d'une police Web, `font-display : swap` règne en maître et est la valeur la plus courante. `swap` est également la valeur par défaut utilisée par les nouveaux extraits de code de Google Fonts. Je me serais attendu à ce que `optional` (seulement rendu si mis en cache) soit un peu plus utilisé ici car quelques éminents développeurs évangélistes ont fait pression pour cela, mais pas de dés.
 
-## How many web fonts are too many?
+## Combien de polices de caractères pour le web sont trop nombreuses ?
 
-This is a question that requires some measure of nuance. How are the fonts being used? For how much content on the page? Where does this content live in the layout? How are the fonts being rendered? In lieu of nuance however let's dive right into some broad and heavy handed analysis specifically centered on request counts.
+C'est une question qui nécessite une certaine nuance. Comment sont utilisées les polices de caractères ? Pour quelle quantité de contenu sur la page ? Où se trouve ce contenu dans la mise en page ? Comment les polices sont-elles rendues ? Au lieu de la nuance, plongeons dans une analyse générale et approfondie, centrée sur le nombre de demandes.
 
 <figure>
   <a href="/static/images/2019/fonts/fig12.png">
@@ -548,7 +548,7 @@ This is a question that requires some measure of nuance. How are the fonts being
   <figcaption id="fig12-caption">Figure 12. Distribution of font requests per page.</figcaption>
 </figure>
 
-The median web page makes three web font requests. At the 90th percentile, requested six and nine web fonts on mobile and desktop, respectively.
+La page web médiane fait trois demandes de polices de caractères web. Au 90e percentile, elle a demandé six et neuf polices web sur le mobile et le bureau, respectivement.
 
 <figure>
   <a href="/static/images/2019/fonts/fig13.png">
@@ -558,22 +558,22 @@ The median web page makes three web font requests. At the 90th percentile, reque
   <figcaption id="fig13-caption">Figure 13. Histogram of web fonts requested per page.</figcaption>
 </figure>
 
-It does seem quite interesting that web font requests seem to be pretty steady across desktop and mobile. I'm glad to see the [recommendation to hide `@font-face` blocks inside of a `@media` queries](https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6) didn't catch on (don't get any ideas).
+Il est intéressant de constater que les demandes de polices de caractères sur le web semblent être assez stables sur les ordinateurs de bureau et les téléphones portables. Je suis heureux de constater que la [recommandation de cacher les blocs `@font-face` dans les requêtes `@media`] (https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6) n'a pas été retenue (ne vous faites pas d'idées).
 
-That said there are marginally more requests for fonts made on mobile devices. My hunch here is that fewer typefaces are available on mobile devices, which in turn means fewer `local()` hits in Google Fonts CSS, falling back to network requests for these.
+Cela dit, les requêtes de polices de caractères faites sur les appareils mobiles sont légèrement plus nombreuses. J'ai l'impression que moins de polices sont disponibles sur les appareils mobiles, ce qui signifie moins d'occurrences `local()` dans les CSS de Google Fonts, et donc moins de requêtes sur le réseau pour ces polices.
 
-### You don't want to win this award
+### Vous ne voulez pas gagner ce prix
 
 <figure>
   <div class="big-number">718</div>
   <figcaption>Figure 14. The most web font requests on a single page.</figcaption>
 </figure>
 
-The award for the page that requests the most web fonts goes to a site that made **718** web font requests!
+Le prix de la page qui demande le plus de polices web est attribué à un site qui a fait **718** requêtes de polices web !
 
-After diving into the code, all of those 718 requests are going to Google Fonts! It looks like a malfunctioning "Above the Page fold" optimization plugin for WordPress has gone rogue on this site and is requesting (DDoS-ing?) all the Google Fonts—oops!
+Après avoir plongé dans le code, toutes ces 718 requêtes vont à Google Fonts ! Il semble qu'un plugin d'optimisation "Above the Page fold" pour WordPress qui ne fonctionne pas bien soit devenu défectueux sur ce site et demande (DDoS-ing ?) toutes les polices Google !
 
-Ironic that a performance optimization plugin can make your performance much worse!
+Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos performances bien pires !
 
 ## More accurate matching with `unicode-range`
 
