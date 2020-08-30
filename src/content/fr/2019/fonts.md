@@ -35,8 +35,8 @@ Les recommandations pour réduire les coûts de performance du chargement des po
   <a href="/static/images/2019/fonts/fig1.png">
     <img src="/static/images/2019/fonts/fig1.png" alt="Figure 1. Popular web font hosting strategies." aria-labelledby="fig1-description" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive">
   </a>
-  <div id="fig1-description" class="visually-hidden">Bar chart showing the popularity of third-party and self-hosting strategies for web fonts. 75% of mobile web pages use third-party hosts and 25% self-host. Desktop websites have similar usage.</div>
-  <figcaption id="fig1-caption">Figure 1. Popular web font hosting strategies.</figcaption>
+  <div id="fig1-description" class="visually-hidden">Diagramme à barres montrant la popularité des stratégies de tierces-parties et d'auto-hébergement pour les polices web. 75% des pages web mobiles utilisent des hébergements tierces-parties et 25% des auto-hébergements. Les sites web en version desktop ont une utilisation similaire.</div>
+  <figcaption id="fig1-caption">Figure 1. Stratégies populaires d'hébergement de polices de caractères sur le web.</figcaption>
 </figure>
 
 Le fait que les trois quarts soient hébergés n'est peut-être pas surprenant compte tenu de la domination de Google Fonts dont nous parlerons [ci-dessous] (#what-are-the-most-popular-third-party-hosts).
@@ -45,13 +45,13 @@ Google fournit des polices en utilisant des fichiers CSS tiers hébergés sur ht
 
 Notez que si `preload` serait un ajout intéressant pour charger les fichiers de police plus haut dans la cascade de requêtes (rappelez-vous que `preconnect` établit la connexion, il ne demande pas le contenu du fichier), `preload` n'est pas encore disponible avec Google Fonts. Google Fonts génère des URL uniques pour leurs fichiers de police [qui sont susceptibles de changer] (https://github.com/google/fonts/issues/1067).
 
-### What are the most popular third-party hosts?
+### Quels sont les hébergeurs tierces-parties les plus populaires ?
 
 <figure>
   <table>
     <thead>
       <tr>
-        <th>Host</th>
+        <th>Hébergeur</th>
         <th>Desktop</th>
         <th>Mobile</th>
       </tr>
@@ -159,14 +159,14 @@ Notez que si `preload` serait un ajout intéressant pour charger les fichiers de
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 2. Top 20 font hosts by percent of requests.</figcaption>
+  <figcaption>Figure 2. Top 20 des hébergements de polices de caractère par requêtes.</figcaption>
 </figure>
 
 La domination de Google Fonts ici était à la fois surprenante et non surprenante. Elle n'était pas surprenante dans la mesure où je m'attendais à ce que le service soit le plus populaire et surprenant par la simple domination de sa popularité. 75 % des demandes de polices sont étonnantes. TypeKit était en deuxième position, à un chiffre près, la bibliothèque Bootstrap occupant une troisième place encore plus éloignée.
 
 <figure>
   <div class="big-number">29%</div>
-  <figcaption>Figure 3. Percent of pages that include a Google Fonts stylesheet link in the document <code>&lt;head&gt;</code>.</figcaption>
+  <figcaption>Figure 3. Pourcentage des pages qui incluent un lien vers des feuilles de style Google Fonts dans l'entête (<code>&lt;head&gt;</code>) du document.</figcaption>
 </figure>
 
 Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est également à noter que seulement 29% des pages comprenaient un élément Google Fonts `<link>`. Cela pourrait signifier plusieurs choses :
@@ -177,7 +177,7 @@ Si l'utilisation élevée des Google Fonts ici est très impressionnante, il est
 
 <figure>
   <div class="big-number">0.4%</div>
-  <figcaption>Figure 4. Percent of pages that include a Google Fonts stylesheet link as the first child in the document <code>&lt;head&gt;</code>.</figcaption>
+  <figcaption>Figure 4. Pourcentage des pages qui incluent un lien vers des feuilles de style Google Fonts comme premier noeud dans l'entête du document (<code>&lt;head&gt;</code>).</figcaption>
 </figure>
 
 La documentation de Google Fonts encourage le `<link>` pour le CSS Google Fonts à être placé comme premier enfant dans le `<head>` d'une page. C'est une grande demande ! Dans la pratique, ce n'est pas courant car seulement un demi pour cent de toutes les pages (environ 20 000 pages) ont suivi ce conseil.
@@ -190,7 +190,7 @@ Comme mentionné ci-dessus, un moyen très simple d'accélérer les demandes de 
 
 <figure>
   <div class="big-number">1.7%</div>
-  <figcaption>Figure 5. Percent of mobile pages preconnecting to a web font host.</figcaption>
+  <figcaption>Figure 5. Pourcentage des pages mobiles qui se préconnectent à un serveur de web font.</figcaption>
 </figure>
 
 Ouah ! Moins de 2% des pages utilisent [`preconnect`] (https://web.dev/uses-rel-preconnect) ! Etant donné que Google Fonts est à 75%, cela devrait être plus élevé ! Développeurs : si vous utilisez Google Fonts, utilisez `preconnect` ! Google Fonts : faites plus de prosélytisme avec `preconnect` !
@@ -204,8 +204,8 @@ En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<h
   <table>
       <thead>
         <tr>
-          <th>Rank</th>
-          <th>Font family</th>
+          <th>Rang</th>
+          <th>Famille de police</th>
           <th>Desktop</th>
           <th>Mobile</th>
         </tr>
@@ -333,7 +333,7 @@ En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<h
         </tr>
       </tbody>
     </table>
-  <figcaption>Figure 6. Top 20 font families as a percent of all font declarations.</figcaption>
+  <figcaption>Figure 6. Top 20 des familles de polices de caractère en pourcentage de toutes les déclarations.</figcaption>
 </figure>
 
 Il n'est pas surprenant que les principales entrées ici semblent correspondre de manière très similaire à [Liste des Google Fonts classées par popularité](https://fonts.google.com/?sort=popularity).
@@ -347,7 +347,7 @@ Il n'est pas surprenant que les principales entrées ici semblent correspondre d
     <img src="/static/images/2019/fonts/fig7.png" alt="Figure 7. Popularity of web font MIME types." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&amp;format=interactive">
   </a>
   <div id="fig7-description" class="visually-hidden">Bar chart showing the popularity of web font MIME types. WOFF2 is used on 74% of fonts, followed by 13% WOFF, 6% octet-stream, 3% TTF, 2% plain, 1% HTML, 1% SFNT, and fewer than 1% for all other types. Desktop and mobile have similar distributions.</div>
-  <figcaption id="fig7-caption">Figure 7. Popularity of web font MIME types.</figcaption>
+  <figcaption id="fig7-caption">Figure 7. Popularité des types MIME de web font.</figcaption>
 </figure>
 
 De mon point de vue, on pourrait argumenter en faveur de l'utilisation exclusive de WOFF2 pour les polices Web après avoir vu les résultats ici. Je me demande d'où vient l'utilisation à deux chiffres de WOFF ? Peut-être que les développeurs continuent de fournir des polices web pour Internet Explorer ?
