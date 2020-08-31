@@ -1,5 +1,5 @@
 #standardSQL
-# page almanac metrics grouped by device
+# page wpt_bodies metrics grouped by device
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -9,8 +9,9 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 # returns all the data we need from _almanac
 CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
-    number_links INT64
-
+    has_html_canonical BOOL,
+    has_http_canonical BOOL, 
+    has_both_canonicals BOOL
 
 
 > LANGUAGE js AS '''
@@ -124,9 +125,25 @@ if (Math.floor(Math.random() * 50) == 0) {
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
-    if (wpt_bodies.anchors) {
+    if (wpt_bodies.canonicals) {
 
-      result.number_links = wpt_bodies_info.anchors.rendered.same_site + wpt_bodies_info.anchors.rendered.same_property;
+      if (wpt_bodies.canonicals.rendered.html_link_canoncials.length) {
+        result.has_html_canonical = true;
+      } else {
+        result.has_html_canonical = false;
+      }
+
+      if (wpt_bodies.canonicals.http_header_link_canoncials.length) {
+        result.has_http_canonical = true;
+      } else {
+        result.has_http_canonical = false;
+      }
+
+       if (wpt_bodies.canonicals.http_header_link_canoncials.length && wpt_bodies.canonicals.rendered.html_link_canoncials.length ) {
+        result.has_both_canonical = true;
+      } else {
+        result.has_both_canonical = false;
+      }
     }
 
 } catch (e) {}
@@ -136,8 +153,18 @@ return result;
 SELECT
 client,
 COUNT(*) AS total, 
-wpt_bodies_info.number_links as links
 
+# HTML Canonical
+# COUNTIF(wpt_bodies_info.robots_has_html_canonical) AS freq_has_html_canonical,
+AS_PERCENT(COUNTIF(wpt_bodies_info.has_html_canonical), COUNT(0)) AS pct_has_html_canonical,
+
+# HTTP Canonical
+# COUNTIF(wpt_bodies_info.robots_has_http_canonical) AS freq_has_http_canonical,
+AS_PERCENT(COUNTIF(wpt_bodies_info.has_http_canonical), COUNT(0)) AS pct_has_http_canonical,
+
+# Both Canonicals
+# COUNTIF(wpt_bodies_info.robots_has_both_canonicals) AS freq_has_both_canonicals,
+AS_PERCENT(COUNTIF(wpt_bodies_info.has_both_canonicals), COUNT(0)) AS pct_has_both_canonicals
 
 FROM
     ( 
@@ -148,4 +175,4 @@ FROM
       FROM
         `httparchive.sample_data.pages_*` test # TEST
     )
-    GROUP BY client, links
+    GROUP BY client

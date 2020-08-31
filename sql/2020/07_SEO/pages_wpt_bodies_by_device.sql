@@ -30,17 +30,17 @@ RETURNS STRUCT<
   canonicals ARRAY<STRING>, 
   has_self_canonical BOOL, 
   is_canonicalized BOOL,
-  http_canonicals ARRAY<STRING>, 
+  has_http_canonical BOOL, 
+  has_rendered_canonical BOOL, 
+  has_raw_canonical BOOL, 
   has_canonical_mismatch BOOL, 
   rendering_changed_canonical BOOL, 
+  http_header_changed_canonical BOOL,
   rendering_changed_hreflang BOOL, 
-  has_hreflang ARRAY<STRING>,
-  has_http_hreflang ARRAY<STRING>
-
-
-
-# add more properties here...
-
+  has_hreflang BOOL,
+  has_http_hreflang BOOL,
+  has_rendered_hreflang BOOL,
+  has_raw_hreflang BOOL
 
 > LANGUAGE js AS '''
 var result = {};
@@ -118,11 +118,11 @@ try {
       "title": {
         "rendered": {
             "primary": {
-                "characters": 55,
+                "characters": Math.floor(Math.random() * 200),
                 "words": Math.floor(Math.random() * 20),
                 "text": "Headsets, Wireless Plantronics Headset Distributor, BTP"
             },
-            "total": 2
+            "total": Math.floor(Math.random() * 3)
         },
         "raw": {
             "primary": {
@@ -132,24 +132,199 @@ try {
             },
             "total": 2
         },
-        "title_changed_on_render": false
+        "title_changed_on_render": Math.floor(Math.random() * 5) == 0
+      },
+      "meta_description": {
+        "rendered": {
+            "all": {
+                "text": "BUGG has you covered with BUGGINS insect repellents and BUGGSLAYER insecticides. Click here to solve box elder bug, stink bug, Asian lady beetle and over 50 other bug problems.",
+                "words": 29,
+                "characters": 176
+            },
+            "primary": {
+                "characters": 176,
+                "words": 29,
+                "text": "BUGG has you covered with BUGGINS insect repellents and BUGGSLAYER insecticides. Click here to solve box elder bug, stink bug, Asian lady beetle and over 50 other bug problems."
+            },
+            "total": Math.floor(Math.random() * 3)
+        },
+        "raw": {
+            "all": {
+                "text": "BUGG has you covered with BUGGINS insect repellents and BUGGSLAYER insecticides. Click here to solve box elder bug, stink bug, Asian lady beetle and over 50 other bug problems.",
+                "words": 29,
+                "characters": 176
+            },
+            "primary": {
+                "characters": 176,
+                "words": 29,
+                "text": "BUGG has you covered with BUGGINS insect repellents and BUGGSLAYER insecticides. Click here to solve box elder bug, stink bug, Asian lady beetle and over 50 other bug problems."
+            },
+            "total": 1
+        }
+      },
+      "headings": {
+        "rendered": {
+            "first_non_empty_heading_hidden": false,
+            "primary": {
+                "words": 3,
+                "characters": 17,
+                "matches_title":  Math.floor(Math.random() * 2) == 0,
+                "text": "BUGG Products LLC",
+                "level": 1
+            },
+            "h1": {
+                "total": Math.floor(Math.random() * 2),
+                "non_empty_total":  Math.floor(Math.random() * 2),
+                "characters": 17,
+                "words": 3
+            },
+            "h2": {
+                "total": Math.floor(Math.random() * 3),
+                "non_empty_total":  Math.floor(Math.random() * 3),
+                "characters": 186,
+                "words": 28
+            },
+            "h3": {
+                "total": Math.floor(Math.random() * 4),
+                "non_empty_total":  Math.floor(Math.random() * 3),
+                "characters": 0,
+                "words": 0
+            },
+            "h4": {
+                "total": Math.floor(Math.random() * 5),
+                "non_empty_total":  Math.floor(Math.random() * 3),
+                "characters": 0,
+                "words": 0
+            },
+            "h5": {
+                "total": Math.floor(Math.random() * 2),
+                "non_empty_total":  Math.floor(Math.random() * 3),
+                "characters": 0,
+                "words": 0
+            },
+            "h6": {
+                "total":  Math.floor(Math.random() * 2),
+                "non_empty_total":  Math.floor(Math.random() * 3),
+                "characters": 0,
+                "words": 0
+            },
+            "h7": {
+                "total":  Math.floor(Math.random() * 2),
+                "non_empty_total":  Math.floor(Math.random() * 3),
+                "characters": 0,
+                "words": 0
+            },
+            "h8": {
+                "total":  Math.floor(Math.random() * 2),
+                "non_empty_total":  Math.floor(Math.random() * 3),
+                "characters": 0,
+                "words": 0
+            }
+        },
+        "raw": {
+            "first_non_empty_heading_hidden": false,
+            "primary": {
+                "words": 3,
+                "characters": 17,
+                "matches_title": false,
+                "text": "BUGG Products LLC",
+                "level": 1
+            },
+            "h1": {
+                "total": 1,
+                "non_empty_total": 1,
+                "characters": 17,
+                "words": 3
+            },
+            "h2": {
+                "total": 4,
+                "non_empty_total": 4,
+                "characters": 186,
+                "words": 28
+            },
+            "h3": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h4": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h5": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h6": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h7": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h8": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            }
+        }
+      },
+      "hreflangs": {
+        "http_header": {
+            "values": []
+        },
+        "rendered": {
+            "values": [
+                "en-us",
+                "en-gb",
+                "en-ca",
+                "fr-ca"
+            ]
+        },
+        "raw": {
+            "values": [
+                "en-us",
+                "en-gb",
+                "en-ca",
+                "fr-ca"
+            ]
+        }
       }
     }; 
-
-if (Math.floor(Math.random() * 50) == 0) {
+    if (Math.floor(Math.random() * 50) == 0) {
         wpt_bodies.canonicals.canonicals = []; // sometimes no canonicals
-    }
-    if (Math.floor(Math.random() * 30) == 0) {
-        wpt_bodies.canonicals.raw = {}; // sometimes no raw canonicals
     }
     if (Math.floor(Math.random() * 25) == 0) {
         wpt_bodies.canonicals.rendered.html_link_canoncials = ["https://someoneelse.com/"]; // sometimes rendering changes it
     }
-    if (Math.floor(Math.random() * 60) == 0) {
+    if (Math.floor(Math.random() * 30) == 0) {
         wpt_bodies.canonicals.http_header_link_canoncials = ["https://someoneelse.com/"]; // sometimes header exists
     }
-
-
+    if (Math.floor(Math.random() * 10) == 0) {
+        wpt_bodies.hreflangs.rendered.values.push("en-au"); 
+    }  else if (Math.floor(Math.random() * 10) == 0) {
+        wpt_bodies.hreflangs.rendered.values = []; 
+    }
+    if (Math.floor(Math.random() * 20) == 0) {
+        wpt_bodies.hreflangs.http_header.values.push("en-au"); 
+    }
+    if (Math.floor(Math.random() * 30) == 0) {
+        wpt_bodies.canonicals.raw = {}; // sometimes no raw canonicals
+    }
+        if (Math.floor(Math.random() * 15) == 0) {
+        wpt_bodies.canonicals.rendered = {}; // sometimes no raw canonicals
+    }
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -162,30 +337,26 @@ if (Math.floor(Math.random() * 50) == 0) {
       if (wpt_bodies.title.rendered) {
 
         //Number of words in the title tag
-        result.title_words = wpt_bodies.title.rendered.primary.words;
+        if (wpt_bodies.title.rendered.primary) {
+          result.title_words = wpt_bodies.title.rendered.primary.words;
+        }
 
         //If the webpage has a title
         result.n_titles = wpt_bodies.title.rendered.total
-
       }
     }
 
-
+    
     if (wpt_bodies.meta_description) {
-      if (wpt_bodies.meta_descripton.rendered) {
-
-
+      
+      if (wpt_bodies.meta_description.rendered) {
         //If the webpage has a meta description
         result.n_meta_descriptions = wpt_bodies.meta_description.rendered.total;
-
-
       }
     }
-
 
     if (wpt_bodies.headings) {
       if (wpt_bodies.headings.rendered) {
-
 
         //If the webpage has h1
         result.n_h1 = wpt_bodies.headings.rendered.h1.total;
@@ -222,31 +393,6 @@ if (Math.floor(Math.random() * 50) == 0) {
       }
     }
 
-    var canonicals = wpt_bodies.canonicals;
-
-
-    if (canonicals.canonicals) {
-      result.canonicals = canonicals.canonicals;
-    }
-
-    if (canonicals.self_canonical) {
-      result.has_self_canonical = canonicals.self_canonical;
-    }
-
-    if (canonicals.other_canonical) {
-      result.is_canonicalized = canonicals.other_canonical;
-    }
-
-    if (canonicals.http_header_link_canonicals) {
-      result.http_canonicals = canonicals.http_header_link_canonicals;
-    }
-
-    if (canonicals.canonical_missmatch) {
-      result.has_canonical_mismatch = canonicals.canonical_missmatch;
-    }
-
-
-
     function compareStringArrays(array1, array2) {
         if (!array1 && !array2) return true; // both missing
         if (!array1 && array2.length > 0) return false; 
@@ -267,31 +413,75 @@ if (Math.floor(Math.random() * 50) == 0) {
         return true;
     }
 
+    var canonicals = wpt_bodies.canonicals;
 
-    if (canonicals.raw && canonicals.rendered) {
-      result.rendering_changed_canonical = !compareStringArrays(canonicals.raw.html_link_canoncials, canonicals.rendered.html_link_canoncials);
-        }
+    if (canonicals) {
 
+      if (canonicals.canonicals) {
+        result.canonicals = canonicals.canonicals;
+      }
 
+      if (canonicals.self_canonical) {
+        result.has_self_canonical = canonicals.self_canonical;
+      }
 
+      if (canonicals.other_canonical) {
+        result.is_canonicalized = canonicals.other_canonical;
+      }
+
+      if (canonicals.http_header_link_canoncials) {     
+        result.has_http_canonical = canonicals.http_header_link_canoncials.length > 0;
+      }
+
+      result.has_rendered_canonical = false; // used in a NOT so must be set for a simple query to work
+      if (canonicals.rendered && canonicals.rendered.html_link_canoncials) {     
+        result.has_rendered_canonical = canonicals.rendered.html_link_canoncials.length > 0;
+      }
+
+      result.has_raw_canonical = false; // used in a NOT so must be set for a simple query to work
+      if (canonicals.raw && canonicals.raw.html_link_canoncials) {     
+        result.has_raw_canonical = canonicals.raw.html_link_canoncials.length > 0;
+      }
+
+      if (canonicals.canonical_missmatch) {
+        result.has_canonical_mismatch = canonicals.canonical_missmatch;
+      }
+
+      if (canonicals.raw && canonicals.rendered) {
+        result.rendering_changed_canonical = !compareStringArrays(canonicals.raw.html_link_canoncials, canonicals.rendered.html_link_canoncials);
+      }
+
+      if (canonicals.raw && canonicals.http_header_link_canoncials && canonicals.http_header_link_canoncials.length > 0) {
+        result.http_header_changed_canonical = !compareStringArrays(canonicals.raw.html_link_canoncials, canonicals.http_header_link_canoncials);
+      }
     }
 
-    var hreflang = wpt_bodies.hreflang;
+    var hreflangs = wpt_bodies.hreflangs;
 
-    if (hreflang.raw && hreflang.rendered) {
-      result.rendering_changed_hreflang = !compareStringArrays(canonicals.raw.html_link_canoncials, canonicals.rendered.html_link_canoncials);
-        }
+    if (hreflangs) {
 
-    if (hreflang.rendered.values) {
-      result.has_hreflang = hreflang.rendered.values;
+      if (hreflangs.raw && hreflangs.raw.values && hreflangs.rendered && hreflangs.rendered.values) {
+        result.rendering_changed_hreflang = !compareStringArrays(hreflangs.raw.values, hreflangs.rendered.values);
+      }
+
+      if (hreflangs.rendered && hreflangs.rendered.values) {
+        result.has_hreflang = hreflangs.rendered.values.length > 0;
+      }
+
+      if (hreflangs.http_header && hreflangs.http_header.values) {
+        result.has_http_hreflang = hreflangs.http_header.values.length > 0;
+      }
+
+      result.has_rendered_hreflang = false; // used in a NOT so must be set for a simple query to work
+      if (hreflangs.rendered && hreflangs.rendered.values) {     
+        result.has_rendered_hreflang = hreflangs.rendered.values.length > 0;
+      }
+
+      result.has_raw_hreflang = false; // used in a NOT so must be set for a simple query to work
+      if (hreflangs.raw && hreflangs.raw.values) {     
+        result.has_raw_hreflang = hreflangs.raw.values.length > 0;
+      }
     }
-
-    if (hreflang.http_header.values) {
-      result.has_http_hreflang = hreflang.http_header.values;
-    }
-
-
-
 } catch (e) {}
 return result;
 ''';
@@ -309,14 +499,18 @@ SELECT
   # COUNTIF(wpt_bodies_info.robots_has_x_robots_tag) AS freq_robots_has_x_robots_tag,
   AS_PERCENT(COUNTIF(wpt_bodies_info.robots_has_x_robots_tag), COUNT(0)) AS pct_robots_has_x_robots_tag,
 
-  # titles with less than 5 words
-  # COUNTIF(wpt_bodies_info.title_words < 5) AS freq_robots_has_x_robots_tag,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.title_words < 5), COUNT(0)) AS pct_short_title_tag,
+  # Meta Robots and x-robots inclusion
+  # COUNTIF(wpt_bodies_info.robots_has_robots_meta_tag && wpt_bodies_info.robots_has_x_robots_tag) AS freq_has_meta_robots_and_x_robots_tag,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.robots_has_robots_meta_tag && wpt_bodies_info.robots_has_x_robots_tag), COUNT(0)) AS pct_has_meta_robots_and_x_robots_tag,
+
+  # titles with less than 5 words (NOT USED?)
+  # COUNTIF(wpt_bodies_info.title_words < 5) AS freq_short_title_tag,
+  #AS_PERCENT(COUNTIF(wpt_bodies_info.title_words < 5), COUNT(0)) AS pct_short_title_tag,
 
   ##Antoine
   # meta title inclusion
-  # COUNTIF(wpt_bodies_info.n_titles > 0) AS freq_has_meta_title,
-  AS_PERCENT(COUNTIF(wpt_bodies_info.n_titles > 0), COUNT(0)) AS pct_has_meta_title,
+  # COUNTIF(wpt_bodies_info.n_titles > 0) AS freq_has_title_tag,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.n_titles > 0), COUNT(0)) AS pct_has_title_tag,
 
   # meta description inclusion
   # COUNTIF(wpt_bodies_info.n_meta_descriptions > 0) AS freq_has_meta_description,
@@ -359,53 +553,79 @@ SELECT
   AS_PERCENT(COUNTIF(wpt_bodies_info.has_same_h1_title ), COUNT(0)) AS pct_has_same_h1_title,
 
   # Pages with canonical
-  #COUNTIF(ARRAY_LENGTH(canonicals_info.canonicals) > 0) as has_canonical,
-  AS_PERCENT(COUNTIF(ARRAY_LENGTH(canonicals_info.canonicals) > 0), COUNT(0)) AS pct_has_canonical,
+  #COUNTIF(ARRAY_LENGTH(wpt_bodies_info.canonicals) > 0) as has_canonical,
+  AS_PERCENT(COUNTIF(ARRAY_LENGTH(wpt_bodies_info.canonicals) > 0), COUNT(0)) AS pct_has_canonical,
 
   # Pages with self-canonical
-  #COUNTIF(canonicals_info.has_self_canonical) as has_self_canonical,
-  AS_PERCENT(COUNTIF(canonicals_info.has_self_canonical), COUNT(0)) AS pct_has_self_canonical,
+  #COUNTIF(wpt_bodies_info.has_self_canonical) as has_self_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_self_canonical), COUNT(0)) AS pct_has_self_canonical,
 
   # Pages canonicalized
-  #COUNTIF(canonicals_info.is_canonicalized)) as is_canonicalized,
-  AS_PERCENT(COUNTIF(canonicals_info.is_canonicalized), COUNT(0)) AS pct_has_canonical,
+  #COUNTIF(wpt_bodies_info.is_canonicalized)) as is_canonicalized,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.is_canonicalized), COUNT(0)) AS pct_is_canonicalized,
 
   # Pages with canonical in HTTP header 
-  #COUNTIF(ARRAY_LENGTH(canonicals_info.http_canonicals) > 0) as has_http_canonical,
-  AS_PERCENT(COUNTIF(ARRAY_LENGTH(canonicals_info.http_canonicals) > 0), COUNT(0)) AS pct_http_canonical,
+  #COUNTIF(wpt_bodies_info.has_http_canonical) as has_http_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_http_canonical), COUNT(0)) AS pct_http_canonical,
+
+  # Pages with canonical in raw html 
+  #COUNTIF(wpt_bodies_info.has_raw_canonical) as has_raw_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_raw_canonical), COUNT(0)) AS pct_has_raw_canonical,
+
+  # Pages with canonical in rendered html 
+  #COUNTIF(wpt_bodies_info.has_rendered_canonical) as has_rendered_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_canonical), COUNT(0)) AS pct_has_rendered_canonical,
+
+  # Pages with canonical in rendered but not raw html 
+  #COUNTIF(wpt_bodies_info.has_rendered_canonical AND NOT wpt_bodies_info.has_raw_canonical) as has_rendered_but_not_raw_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_canonical AND NOT wpt_bodies_info.has_raw_canonical), COUNT(0)) AS pct_has_rendered_but_not_raw_canonical,
 
   # Pages with canonical mismatch
-  #COUNTIF(canonicals_info.has_canonical_mismatch) > 0) as has_canonical_mismatch,
-  AS_PERCENT(COUNTIF(canonicals_info.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
+  #COUNTIF(wpt_bodies_info.has_canonical_mismatch) as has_canonical_mismatch,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_canonical_mismatch), COUNT(0)) AS pct_has_canonical_mismatch,
 
   # Pages with canonical conflict between raw and rendered 
-  #COUNTIF(canonicals_info.rendering_changed_canonical) as has_conflict_raw_rendered_canonical,
-  AS_PERCENT(COUNTIF(canonicals.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_raw_rendered_canonical, 
+  #COUNTIF(wpt_bodies_info.rendering_changed_canonical) as has_conflict_rendering_changed_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_rendering_changed_canonical, 
+
+  # Pages with canonical conflict between raw and http header 
+  #COUNTIF(wpt_bodies_info.http_header_changed_canonical) as has_conflict_http_header_changed_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.http_header_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_changed_canonical,
+
+  # Pages with canonical conflict between raw and http header 
+  #COUNTIF(wpt_bodies_info.http_header_changed_canonical OR wpt_bodies_info.rendering_changed_canonical) as has_conflict_http_header_or_rendering_changed_canonical,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.http_header_changed_canonical OR wpt_bodies_info.rendering_changed_canonical), COUNT(0)) AS pct_has_conflict_http_header_or_rendering_changed_canonical,
 
    # Pages with hreflang conflict between raw and rendered 
   #COUNTIF(wpt_bodies_info.rendering_changed_hreflang) as has_conflict_raw_rendered_hreflang,
-  AS_PERCENT(COUNTIF(hreflangs.rendering_changed_hreflang), COUNT(0)) AS pct_has_conflict_raw_rendered_hreflang, 
+  AS_PERCENT(COUNTIF(wpt_bodies_info.rendering_changed_hreflang), COUNT(0)) AS pct_has_conflict_raw_rendered_hreflang, 
 
   # Pages with hreflang
-  #COUNTIF(ARRAY_LENGTH(hreflangs_info.has_hreflang) > 0) as has_hreflang,
-  AS_PERCENT(COUNTIF(ARRAY_LENGTH(hreflangs_info.has_hreflang) > 0), COUNT(0)) AS pct_has_hreflang,
+  #COUNTIF(wpt_bodies_info.has_hreflang) as has_hreflang,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_hreflang), COUNT(0)) AS pct_has_hreflang,
 
   # Pages with http hreflang
-  #COUNTIF(ARRAY_LENGTH(hreflangs_info.has_http_hreflang) > 0) as has_http_hreflang,
-  AS_PERCENT(COUNTIF(ARRAY_LENGTH(hreflangs_info.has_http_hreflang) > 0), COUNT(0)) AS pct_has_http_hreflang,
+  #COUNTIF(wpt_bodies_info.has_http_hreflang) as has_http_hreflang,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_http_hreflang), COUNT(0)) AS pct_has_http_hreflang,
 
+  # Pages with rendered hreflang
+  #COUNTIF(wpt_bodies_info.has_rendered_hreflang) as has_rendered_hreflang,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_hreflang), COUNT(0)) AS pct_has_rendered_hreflang,
 
-  # add more fields here...
-  # split the query up into logical groups if it gets too large.
+  # Pages with raw hreflang
+  #COUNTIF(wpt_bodies_info.has_raw_hreflang) as has_raw_hreflang,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_raw_hreflang), COUNT(0)) AS pct_has_raw_hreflang,
+
+  # Pages with hreflang in rendered but not raw html 
+  #COUNTIF(wpt_bodies_info.has_rendered_hreflang AND NOT wpt_bodies_info.has_raw_hreflang) as has_rendered_but_not_raw_hreflang,
+  AS_PERCENT(COUNTIF(wpt_bodies_info.has_rendered_hreflang AND NOT wpt_bodies_info.has_raw_hreflang), COUNT(0)) AS pct_has_rendered_but_not_raw_hreflang,
 
   FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
         get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE 
-        #get_canonicals_info(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.canonicals') AS canonicals_info # LIVE 
-        #get_hreflangs_info(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.hreflangs') AS hreflangs_info # LIVE      
+        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info # LIVE      
       FROM
         `httparchive.sample_data.pages_*` # TEST
     )

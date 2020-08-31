@@ -1,5 +1,5 @@
 #standardSQL
-# page almanac metrics grouped by device
+# page markup metrics grouped by device and image loading attributes
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -8,12 +8,8 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 
 # returns all the data we need from _markup
 CREATE TEMPORARY FUNCTION get_markup_info(markup_string STRING)
-RETURNS STRUCT<
-  
+RETURNS STRUCT<  
   loading ARRAY<STRING>
-
-
-
 > LANGUAGE js AS '''
 var result = {};
 
@@ -55,12 +51,12 @@ try {
           "present": 0
       },
         "loading": {
-         "auto": 0,
-         "lazy": 4,
-         "eager": 0,
-         "invalid": 0,
-         "missing": 33,
-         "blank": 0
+         "auto": Math.floor(Math.random() * 3),
+         "lazy": Math.floor(Math.random() * 3),
+         "eager": Math.floor(Math.random() * 3),
+         "invalid": Math.floor(Math.random() * 3),
+         "missing": Math.floor(Math.random() * 30),
+         "blank": Math.floor(Math.random() * 3)
          }
       }
       }
@@ -74,8 +70,6 @@ try {
 
     }
 
-    // add more code to set result properties here...
-
 } catch (e) {}
 return result;
 ''';
@@ -83,14 +77,22 @@ return result;
 SELECT
   client,
   loading, 
-  COUNT(*) AS total
+total, 
+COUNT(*) AS count,
+AS_PERCENT(COUNT(*), total) AS pct
 FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
+        total,
         get_markup_info('') AS markup_info # TEST
         #get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info # LIVE      
       FROM
         `httparchive.sample_data.pages_*` # TEST
+        JOIN
+  (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
+  FROM `httparchive.sample_data.pages_*` # TEST
+  GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
+USING (_TABLE_SUFFIX)
     ),UNNEST(markup_info.loading) as loading
-    GROUP BY loading, client
+    GROUP BY total, loading, client
