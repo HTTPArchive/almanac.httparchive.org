@@ -17,6 +17,10 @@ JOIN (
         WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-github-request)') = 'x-github-request' THEN 'GitHub'
         WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(netlify)') = 'netlify' THEN 'Netlify'
         WHEN _cdn_provider = 'Microsoft Azure' THEN 'Azure'
+        WHEN _cdn_provider = 'Vercel' THEN 'Vercel'
+        WHEN _cdn_provider = 'Amazon CloudFront' THEN 'AWS'
+        WHEN _cdn_provider = 'Akamai' THEN 'Akamai'
+        WHEN _cdn_provider = 'Cloudflare' THEN 'Cloudflare'
         ELSE NULL
       END AS CDN,
       _TABLE_SUFFIX as client,
@@ -38,7 +42,7 @@ JOIN (
     USING (url, _TABLE_SUFFIX)
 )
 ON
-  client = IF(form_factor.name = 'desktop', 'desktop', 'phone') AND CONCAT(origin, '/') = url
+  client = IF(form_factor.name = 'desktop', 'desktop', 'mobile') AND CONCAT(origin, '/') = url
 WHERE
   CDN IS NOT NULL
 GROUP BY
