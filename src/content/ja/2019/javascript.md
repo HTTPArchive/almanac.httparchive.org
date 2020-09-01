@@ -31,7 +31,7 @@ JavaScriptは、私たちがブラウザに送るリソースの中で最もコ�
    <a href="/static/images/2019/javascript/fig1.png">
       <img src="/static/images/2019/javascript/fig1.png" alt="図1. ページあたりのJavaScriptバイト数の分布" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive">
    </a>
-   <div id="fig1-description" class="visually-hidden">p10パーセンタイルで70バイト、p25で174バイト、p50で373バイト、p75で693バイト、p90で1,093バイトのJavaScriptを使用していることを示す棒グラフ</div>
+   <div id="fig1-description" class="visually-hidden">10パーセンタイルで70バイト、25パーセンタイルで174バイト、50パーセンタイルで373バイト、75パーセンタイルで693バイト、90パーセンタイルで1,093バイトのJavaScriptを使用していることを示す棒グラフ</div>
    <figcaption id="fig1-caption">図1. ページあたりのJavaScriptバイト数の分布</figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ JavaScriptは、私たちがブラウザに送るリソースの中で最もコ�
    <a href="/static/images/2019/javascript/fig2.png">
       <img src="/static/images/2019/javascript/fig2.png" alt="図2. デバイス別のページあたりのJavaScriptの分布。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive">
    </a>
-   <div id="fig2-description" class="visually-hidden">デスクトップとモバイルでそれぞれp10パーセンタイルで76バイト/65バイトのJavaScriptを使用していることを示す棒グラフで、p25で186/164バイト、p50で391/359バイト、p75で721/668バイト、p90で1,131/1,060バイトとなっています。</div>
+   <div id="fig2-description" class="visually-hidden">デスクトップとモバイルでそれぞれ10パーセンタイルで76バイト/65バイトのJavaScriptを使用していることを示す棒グラフで、25パーセンタイルで186/164バイト、50パーセンタイルで391/359バイト、75パーセンタイルで721/668バイト、90パーセンタイルで1,131/1,060バイトとなっています。</div>
    <figcaption id="fig2-caption">図2. デバイス別のページあたりのJavaScriptの分布。</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ V8のメインスレッドの処理時間を異なるパーセンタイルで分
    <a href="/static/images/2019/javascript/fig3.png">
       <img src="/static/images/2019/javascript/fig3.png" alt="図3. デバイス別のV8メインスレッド処理時間。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive">
    </a>
-   <div id="fig3-description" class="visually-hidden">処理時間をデスクトップとモバイルでそれぞれp10パーセンタイルで141ms/377ms、p25で352/988ms、p50で849/2,437ms、p75で1,850/5,518ms、p90で3,543/10,735msとした棒グラフ。</div>
+   <div id="fig3-description" class="visually-hidden">処理時間をデスクトップとモバイルでそれぞれ10パーセンタイルで141ms/377ms、25パーセンタイルで352/988ms、50パーセンタイルで849/2,437ms、75パーセンタイルで1,850/5,518ms、90パーセンタイルで3,543/10,735msとした棒グラフ。</div>
    <figcaption id="fig3-caption">図3. デバイス別のV8メインスレッド処理時間。</figcaption>
 </figure>
 
@@ -83,7 +83,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
    <a href="/static/images/2019/javascript/fig5.png">
       <img src="/static/images/2019/javascript/fig5.png" alt="図5. 総JavaScriptリクエスト数の分布。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive">
    </a>
-   <div id="fig5-description" class="visually-hidden">p10パーセンタイルではデスクトップとモバイルそれぞれ4/4のリクエストを示す棒グラフ、p25では10/9、p50では19/18、p75では33/32、p90では53/52が使用されています。</div>
+   <div id="fig5-description" class="visually-hidden">10パーセンタイルではデスクトップとモバイルそれぞれ4/4のリクエストを示す棒グラフ、25パーセンタイルでは10/9、50パーセンタイルでは19/18、75パーセンタイルでは33/32、90パーセンタイルでは53/52が使用されています。</div>
    <figcaption id="fig5-caption">図5. 総JavaScriptリクエスト数の分布。</figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
    <a href="/static/images/2019/javascript/fig6.png">
       <img src="/static/images/2019/javascript/fig6.png" alt="図6. デスクトップ上のファーストスクリプトとサードパーティスクリプトの分布。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive">
    </a>
-   <div id="fig6-description" class="visually-hidden">デスクトップ上でp10パーセンタイルでは0/1リクエストがファーストパーティとサードパーティであることを示す棒グラフが表示されています、p25では2/4、p50では6/10、p75では13/21、p90では24/38となっています。</div>
+   <div id="fig6-description" class="visually-hidden">デスクトップ上で10パーセンタイルでは0/1リクエストがファーストパーティとサードパーティであることを示す棒グラフが表示されています、25パーセンタイルでは2/4、50パーセンタイルでは6/10、75パーセンタイルでは13/21、90パーセンタイルでは24/38となっています。</div>
    <figcaption id="fig6-caption">図6. デスクトップ上のファーストスクリプトとサードパーティスクリプトの分布。</figcaption>
 </figure>
 
@@ -107,7 +107,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
    <a href="/static/images/2019/javascript/fig7.png">
       <img src="/static/images/2019/javascript/fig7.png" alt="図7. モバイル上のファーストパーティとサードパーティのスクリプトの分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive">
    </a>
-   <div id="fig7-description" class="visually-hidden">モバイルでp10パーセンタイルでは0/1リクエストがファーストパーティとサードパーティであることを示す棒グラフが表示されています、p25では2/3、p50では5/9、p75では13/20、p90では23/36となっています。</div>
+   <div id="fig7-description" class="visually-hidden">モバイルで10パーセンタイルでは0/1リクエストがファーストパーティとサードパーティであることを示す棒グラフが表示されています、25パーセンタイルでは2/3、50パーセンタイルでは5/9、75パーセンタイルでは13/20、90パーセンタイルでは23/36となっています。</div>
    <figcaption id="fig7-caption">図7. モバイル上のファーストパーティとサードパーティのスクリプトの分布。</figcaption>
 </figure>
 
@@ -117,7 +117,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
    <a href="/static/images/2019/javascript/fig8.png">
       <img src="/static/images/2019/javascript/fig8.png" alt="図8. デスクトップ上でダウンロードされたJavaScriptの総ダウンロード数の分布。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive">
    </a>
-   <div id="fig8-description" class="visually-hidden">p10パーセンタイルでは、ファーストパーティとサードパーティのリクエストに対してデスクトップ上で0/17バイトのJavaScriptがダウンロードされていることを示す棒グラフ、p25では11/62、p50では89/232、p75では200/525、p90では404/900である。</div>
+   <div id="fig8-description" class="visually-hidden">10パーセンタイルでは、ファーストパーティとサードパーティのリクエストに対してデスクトップ上で0/17バイトのJavaScriptがダウンロードされていることを示す棒グラフ、25パーセンタイルでは11/62、50パーセンタイルでは89/232、75パーセンタイルでは200/525、90パーセンタイルでは404/900である。</div>
    <figcaption id="fig8-caption">図8. デスクトップ上でダウンロードされたJavaScriptの総ダウンロード数の分布。</figcaption>
 </figure>
 
@@ -125,7 +125,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
    <a href="/static/images/2019/javascript/fig9.png">
       <img src="/static/images/2019/javascript/fig9.png" alt="図9. モバイルでダウンロードされたJavaScriptの総ダウンロード数の分布。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive">
    </a>
-   <div id="fig9-description" class="visually-hidden">棒グラフは、p10パーセンタイルではファーストパーティとサードパーティのリクエストでそれぞれ0/17バイトの JavaScriptがモバイルでダウンロードされていることを示していますが、p25では6/54、p50では83/217、p75では189/477、p90では380/827です。</div>
+   <div id="fig9-description" class="visually-hidden">棒グラフは、10パーセンタイルではファーストパーティとサードパーティのリクエストでそれぞれ0/17バイトの JavaScriptがモバイルでダウンロードされていることを示していますが、25パーセンタイルでは6/54、50パーセンタイルでは83/217、75パーセンタイルでは189/477、90パーセンタイルでは380/827です。</div>
    <figcaption id="fig9-caption">図9. モバイルでダウンロードされたJavaScriptの総ダウンロード数の分布。</figcaption>
 </figure>
 
