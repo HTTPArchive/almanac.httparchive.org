@@ -119,18 +119,22 @@ AS_PERCENT(COUNT(*), total) AS pct
 
 
 FROM
-    ( 
-      SELECT 
+( 
+    SELECT 
         _TABLE_SUFFIX AS client,
         total,
         get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE       
-      FROM
+        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info # LIVE       
+    FROM
         `httparchive.sample_data.pages_*` test # TEST
-        JOIN
-  (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-  FROM `httparchive.sample_data.pages_*` # TEST
-  GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
-USING (_TABLE_SUFFIX)
-    ),UNNEST(wpt_bodies_info.rel) as rel
-    GROUP BY total, rel, client
+    JOIN
+    (
+        # to get an accurate total of pages per device. also seems fast
+        SELECT _TABLE_SUFFIX, COUNT(0) AS total 
+        FROM `httparchive.sample_data.pages_*` # TEST
+        GROUP BY _TABLE_SUFFIX
+    ) 
+    USING (_TABLE_SUFFIX)
+),
+UNNEST(wpt_bodies_info.rel) as rel
+GROUP BY total, rel, client

@@ -1,30 +1,36 @@
 #standardSQL
 # Gather SEO data from lighthouse
+
+# helper to create percent fields
+CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+  ROUND(SAFE_DIVIDE(freq, total), 4)
+);
+
 SELECT
     COUNT(0) AS total,
 
     COUNTIF(is_crawlable) AS crawlable,
     COUNTIF(is_canonical) AS canonical,
 
-    ROUND(COUNTIF(is_crawlable) * 100 / COUNT(0), 2) AS pct_crawlable,
-    ROUND(COUNTIF(is_canonical) * 100 / COUNT(0), 2) AS pct_canonical,
+    AS_PERCENT(COUNTIF(is_crawlable), COUNT(0)) AS pct_crawlable,
+    AS_PERCENT(COUNTIF(is_canonical), COUNT(0)) AS pct_canonical,
 
     COUNTIF(has_title) AS title,
     COUNTIF(has_meta_description) AS meta_description,
     COUNTIF(has_title AND has_meta_description) AS title_and_meta_description,
 
-    ROUND(COUNTIF(has_title) * 100 / COUNT(0), 2) AS pct_title,
-    ROUND(COUNTIF(has_meta_description) * 100 / COUNT(0), 2) AS pct_meta_description,
-    ROUND(COUNTIF(has_title AND has_meta_description) * 100 / COUNT(0), 2) AS pct_title_and_meta_description,
+    AS_PERCENT(COUNTIF(has_title), COUNT(0)) AS pct_title,
+    AS_PERCENT(COUNTIF(has_meta_description), COUNT(0)) AS pct_meta_description,
+    AS_PERCENT(COUNTIF(has_title AND has_meta_description), COUNT(0)) AS pct_title_and_meta_description,
 
     COUNTIF(img_alt_on_all) AS img_alt_on_all,
-    ROUND(COUNTIF(img_alt_on_all) * 100 / COUNT(0), 2) AS pct_img_alt_on_all,
+    AS_PERCENT(COUNTIF(img_alt_on_all), COUNT(0)) AS pct_img_alt_on_all,
 
     COUNTIF(robots_txt_valid) AS robots_txt_valid,
-    ROUND(COUNTIF(robots_txt_valid) * 100 / COUNT(0), 2) AS pct_robots_txt_valid,
+    AS_PERCENT(COUNTIF(robots_txt_valid), COUNT(0)) AS pct_robots_txt_valid,
 
     COUNTIF(link_text_descriptive) AS link_text_descriptive,
-    ROUND(COUNTIF(link_text_descriptive) * 100 / COUNT(0), 2) AS pct_link_text_descriptive  
+    AS_PERCENT(COUNTIF(link_text_descriptive), COUNT(0)) AS pct_link_text_descriptive  
 FROM (
   SELECT
     JSON_EXTRACT_SCALAR(report, '$.audits.is-crawlable.score') = '1' AS is_crawlable,
@@ -35,5 +41,5 @@ FROM (
     JSON_EXTRACT_SCALAR(report, '$.audits.robots-txt.score') = '1' AS robots_txt_valid,
     JSON_EXTRACT_SCALAR(report, '$.audits.link-text.score') = '1' AS link_text_descriptive
   FROM
-    `httparchive.almanac.lighthouse_mobile_1k`
+    `httparchive.almanac.lighthouse_mobile_1k` # TEST
     )

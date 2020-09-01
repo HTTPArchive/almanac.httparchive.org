@@ -26,11 +26,33 @@ try {
                     "follow": 18,
                     "nofollow": 0
                 },
-                "hash_link": 0,
+                "hash_link": Math.floor(Math.random() * 5),
                 "hash_only_link": 1,
                 "javascript_void_links": 0,
                 "same_page": {
-                    "total":  Math.floor(Math.random() * 5)
+                    "total":  Math.floor(Math.random() * 5),
+                    "jumpto": {
+                        "total": 2,
+                        "early": 1,
+                        "other": 1,
+                        "using_id": 1,
+                        "using_name": 1
+                    },
+                    "dynamic": {
+                        "total": Math.floor(Math.random() * 5) == 0 ? Math.floor(Math.random() * 25) : 0,
+                        "onclick_attributes": {
+                            "total": 0,
+                            "window_location": 0,
+                            "window_open": 0,
+                            "unknown_action": 0
+                        },
+                        "href_javascript": 0,
+                        "hash_link": 0
+                    },
+                    "other": {
+                        "total": 34,
+                        "hash_link": 0
+                    }
                 },
                 "same_site":  Math.floor(Math.random() * 50),
                 "same_property":  Math.floor(Math.random() * 10),
