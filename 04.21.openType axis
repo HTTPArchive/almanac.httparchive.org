@@ -1,0 +1,16 @@
+#standardSQL
+#openType axis
+SELECT
+ client,
+ JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.name') AS name,
+ JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.avar') AS avar,
+ JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.fvar') AS fvar,
+FROM
+ `httparchive.almanac.requests`
+WHERE
+ type = 'font' AND
+ JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.gvar' ) IS NOT NULL AND
+ JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.avar') IS NOT NULL AND
+ JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.fvar') IS NOT NULL
+GROUP BY
+ client, name, avar, fvar
