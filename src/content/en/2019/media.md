@@ -22,7 +22,7 @@ From a pure bytes perspective, HTTP Archive has [historically reported](https://
   <a href="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png">
     <img src="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png" alt="Figure 1. Web page bytes: image and video versus other." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
   </a>
-  <div id="fig1-description" class="visually-hidden">Bar chart showing in the p10 percentile 44.1% of page bytes are media, in the p25 percentile 52.7% is media, in the p50 percentile 67.0% is media, in the p75 percentile 81.7% is media, and in the p90 percentile 91.2% is media.</div>
+  <div id="fig1-description" class="visually-hidden">Bar chart showing in the 10th percentile 44.1% of page bytes are media, in the 25th percentile 52.7% is media, in the 50th percentile 67.0% is media, in the 75th percentile 81.7% is media, and in the 90th percentile 91.2% is media.</div>
   <figcaption id="fig1-caption">Figure 1. Web page bytes: image and video versus other.</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ There are three metrics to consider when looking at pixel volume: CSS pixels, na
   <a href="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png">
     <img src="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png" alt="Figure 3. Image pixels per page (mobile): CSS versus actual." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels for mobile, showing p10 (0.07 MP actual, 0.04 MP CSS), p25 (0.38 MP actual, 0.18 MP CSS), p50 (1.6 MP actual, 0.65 MP CSS), p75 (5.1 MP actual, 1.8 MP CSS), and p90 (12 MP actual, 4.6 MP CSS)</div>
+  <div id="fig3-description" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels for mobile, showing 10th percentile (0.07 MP actual, 0.04 MP CSS), 25th percentile (0.38 MP actual, 0.18 MP CSS), 50th percentile (1.6 MP actual, 0.65 MP CSS), 75th percentile (5.1 MP actual, 1.8 MP CSS), and 90th percentile (12 MP actual, 4.6 MP CSS)</div>
   <figcaption id="fig3-caption">Figure 3. Image pixels per page (mobile): CSS versus actual.</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ There are three metrics to consider when looking at pixel volume: CSS pixels, na
   <a href="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png">
     <img src="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png" alt="Figure 4. Image pixels per page (desktop): CSS versus actual." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
   </a>
-  <div id="fig4-description" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels for desktop, showing p10 (0.09 MP actual, 0.05 MP CSS), p25 (0.52 MP actual, 0.29 MP CSS), p50 (2.1 MP actual, 1.1 MP CSS), p75 (6.0 MP actual, 2.8 MP CSS), and p90 (14 MP actual, 6.3 MP CSS)</div>
+  <div id="fig4-description" class="visually-hidden">A comparison of the CSS pixels allocated to image content compared to the actual image pixels for desktop, showing 10th percentile (0.09 MP actual, 0.05 MP CSS), 25th percentile (0.52 MP actual, 0.29 MP CSS), 50th percentile (2.1 MP actual, 1.1 MP CSS), 75th percentile (6.0 MP actual, 2.8 MP CSS), and 90th percentile (14 MP actual, 6.3 MP CSS)</div>
   <figcaption id="fig4-caption">Figure 4. Image pixels per page (desktop): CSS versus actual.</figcaption>
 </figure>
 
@@ -84,7 +84,7 @@ If we had one image that filled the entire screen perfectly, this would be a 1x 
   <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
     <img src="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png" alt="Figure 5. Image pixel volume versus screen size (CSS pixels)." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">A comparison of the pixel volume required per page relative to the actual screen size CSS pixels, showing p10 (20% mobile, 2% desktop), p25 (97% mobile, 13% desktop), p50 (354% mobile, 46% desktop), p75 (1003% mobile, 123% desktop), and p90 (2477% mobile, 273% desktop).</div>
+  <div id="fig5-description" class="visually-hidden">A comparison of the pixel volume required per page relative to the actual screen size CSS pixels, showing 10th percentile (20% mobile, 2% desktop), 25th percentile (97% mobile, 13% desktop), 50th percentile (354% mobile, 46% desktop), 75th percentile (1003% mobile, 123% desktop), and 90th percentile (2477% mobile, 273% desktop).</div>
   <figcaption id="fig5-caption">Figure 5. Image pixel volume versus screen size (CSS pixels).</figcaption>
 </figure>
 
@@ -168,7 +168,7 @@ Of course, web pages are not uniform in their use of image content. Some depend 
   <a href="/static/images/2019/media/fig8_image_format_usage_per_page.png">
     <img src="/static/images/2019/media/fig8_image_format_usage_per_page.png" alt="Figure 8. Image format usage per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive">
   </a>
-  <div id="fig8-description" class="visually-hidden">A bar chart showing in p10 percentile no image formats are used at all, in the p25 percentile three JPGs and four PNGs are used, in the p50 percentile nine JPGs, four PNGs, and one GIF are used, in the p75 percentile 39 JPEGs, 18 PNGs, two SVGs, and two GIFs are used and in the p99 percentile, 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs and 14 GIFs are used.</div>
+  <div id="fig8-description" class="visually-hidden">A bar chart showing in 10th percentile no image formats are used at all, in the 25th percentile three JPGs and four PNGs are used, in the 50th percentile nine JPGs, four PNGs, and one GIF are used, in the 75th percentile 39 JPEGs, 18 PNGs, two SVGs, and two GIFs are used and in the 99th percentile, 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs and 14 GIFs are used.</div>
   <figcaption id="fig8-caption">Figure 8. Image format usage per page.</figcaption>
 </figure>
 
@@ -192,7 +192,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
   <a href="/static/images/2019/media/fig10_image_format_size.png">
     <img alt="A comparison of image formats by file size" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/media/fig10_image_format_size.png" width="600" height="371">
   </a>
-  <div id="fig10-description" class="visually-hidden">A chart showing in p10 percentile 4 KB of JPEGs, 2 KB of PNG and 2 KB of GIFs are used, in the p25 percentile 9 KB JPGs, 4 KB of PNGs, 7 KB of WebP, and 3 KB of GIFs are used, in the p50 percentile 24 KB of JPGs, 11 KB of PNGs, 17 KB of WebP, 6 KB of GIFs, and 1 KB of SVGs are used, in the p75 percentile 68 KB of JPEGs, 43 KB of PNGs, 41 KB of WebPs, 17 KB of GIFs and 2 KB of SVGs are used and in the p90 percentile, 116 KB of JPGs, 152 KB of PNGs, 90 KB of WebPs, 87 KB of GIFs, and 8 KB of SVGs are used.</div>
+  <div id="fig10-description" class="visually-hidden">A chart showing in 10th percentile 4 KB of JPEGs, 2 KB of PNG and 2 KB of GIFs are used, in the 25th percentile 9 KB JPGs, 4 KB of PNGs, 7 KB of WebP, and 3 KB of GIFs are used, in the 50th percentile 24 KB of JPGs, 11 KB of PNGs, 17 KB of WebP, 6 KB of GIFs, and 1 KB of SVGs are used, in the 75th percentile 68 KB of JPEGs, 43 KB of PNGs, 41 KB of WebPs, 17 KB of GIFs and 2 KB of SVGs are used and in the 90th percentile, 116 KB of JPGs, 152 KB of PNGs, 90 KB of WebPs, 87 KB of GIFs, and 8 KB of SVGs are used.</div>
   <figcaption id="fig10-caption">Figure 10. File size (KB) by image format.</figcaption>
 </figure>
 
@@ -202,7 +202,7 @@ From this we can start to get a sense of how large or small a typical resource i
   <a href="/static/images/2019/media/fig11_bytes_per_pixel.png">
     <img src="/static/images/2019/media/fig11_bytes_per_pixel.png" alt="Figure 11. Bytes per pixel." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden">A candlestick chart showing in p10 percentile we have 0.1175 bytes-per-pixel for JPEG, 0.1197 for PNG, 0.1702 for GIF, 0.0586 for WebP, and 0.0293 for SVG. In the p25 percentile we have 0.1848 bytes-per-pixel for JPEGs, 0.2874 for PNG, 0.3641 for GIF, 0.1025 for WebP, and 0.174 for SVG. In the p50 percentile we have 0.2997 bytes-per-pixel for JPEGs, 0.6918 for PNG, 0.7967 for GIF, 0.183 for WebP, and 0.6766 for SVG. In the p75 percentile we have 0.5456 bytes-per-pixel for JPEGs, 1.4548 for PNG, 2.515 for GIF, 0.3272 for WebP, and 1.9261 for SVG. In the p90 percentile we have 0.9822 bytes-per-pixel for JPEGs, 2.5026 for PNG, 8.5151 for GIF, 0.6474 for WebP, and 4.1075 for SVG</div>
+  <div id="fig11-description" class="visually-hidden">A candlestick chart showing in 10th percentile we have 0.1175 bytes-per-pixel for JPEG, 0.1197 for PNG, 0.1702 for GIF, 0.0586 for WebP, and 0.0293 for SVG. In the 25th percentile we have 0.1848 bytes-per-pixel for JPEGs, 0.2874 for PNG, 0.3641 for GIF, 0.1025 for WebP, and 0.174 for SVG. In the 50th percentile we have 0.2997 bytes-per-pixel for JPEGs, 0.6918 for PNG, 0.7967 for GIF, 0.183 for WebP, and 0.6766 for SVG. In the 75th percentile we have 0.5456 bytes-per-pixel for JPEGs, 1.4548 for PNG, 2.515 for GIF, 0.3272 for WebP, and 1.9261 for SVG. In the 90th percentile we have 0.9822 bytes-per-pixel for JPEGs, 2.5026 for PNG, 8.5151 for GIF, 0.6474 for WebP, and 4.1075 for SVG</div>
   <figcaption id="fig11-caption">Figure 11. Bytes per pixel.</figcaption>
 </figure>
 
@@ -226,17 +226,17 @@ One [Lighthouse](./methodology#lighthouse) test is an A/B comparing baseline wit
   <a href="/static/images/2019/media/fig12_percentage_optimized_images.png">
     <img src="/static/images/2019/media/fig12_percentage_optimized_images.png" alt="Figure 12. Percent 'optimized' images." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767">
   </a>
-  <div id="fig12-description" class="visually-hidden">Bar chart showing in the p10 percentile 100% of images are optimized, same in p25 percentile, in the p50 percentile 98% of images are optimized (2% not), in the p75 percentile 83% of images are optimized (17% not), and in the p90 percentile 59% of images are optimized and 41% are not.</div>
+  <div id="fig12-description" class="visually-hidden">Bar chart showing in the 10th percentile 100% of images are optimized, same in 25th percentile, in the 50th percentile 98% of images are optimized (2% not), in the 75th percentile 83% of images are optimized (17% not), and in the 90th percentile 59% of images are optimized and 41% are not.</div>
   <figcaption id="fig12-caption">Figure 12. Percent "optimized" images.</figcaption>
 </figure>
 
-The savings in this AB Lighthouse test is not just about potential byte savings, which can accrue to several MBs at the p95, it also demonstrates the page performance improvement. 
+The savings in this AB Lighthouse test is not just about potential byte savings, which can accrue to several MBs at the 95th percentile, it also demonstrates the page performance improvement. 
 
  <figure>
   <a href="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png">
     <img src="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png" alt="Figure 13. Projected page performance improvements from image optimization from Lighthouse." aria-labelledby="fig12-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779">
   </a>
-  <div id="fig13-description" class="visually-hidden">Bar chart showing in the p10 percentile 0 ms could be sized, same in p25 percentile, in the p50 percentile 150 ms could be saved, in the p75 percentile 1,460 ms could be saved and in the p90 percentile 5,720 ms could be saved.</div>
+  <div id="fig13-description" class="visually-hidden">Bar chart showing in the 10th percentile 0 ms could be sized, same in 25th percentile, in the 50th percentile 150 ms could be saved, in the 75th percentile 1,460 ms could be saved and in the 90th percentile 5,720 ms could be saved.</div>
   <figcaption id="fig13-caption">Figure 13. Projected page performance improvements from image optimization from Lighthouse.</figcaption>
 </figure>
 
@@ -331,7 +331,7 @@ Earlier, in <a href="#fig-5">Figure 5</a>, we showed that the volume of image co
   <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
     <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="Figure 19. Lighthouse audit: Offscreen." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
   </a>
-  <div id="fig19-description" class="visually-hidden">A bar chart showing in the p10 percentile 0% of images are offscreen, in the p25 percentile 2% are offscreen, in the p50 percentile, 27% are offscreen, in the p75 percentile 64% are offscreen, and in the p90 percentile 84% of images are offscreen.</div>
+  <div id="fig19-description" class="visually-hidden">A bar chart showing in the 10th percentile 0% of images are offscreen, in the 25th percentile 2% are offscreen, in the 50th percentile, 27% are offscreen, in the 75th percentile 64% are offscreen, and in the 90th percentile 84% of images are offscreen.</div>
   <figcaption id="fig19-caption">Figure 19. Lighthouse audit: Offscreen.</figcaption>
 </figure>
 
