@@ -64,6 +64,7 @@ LANGUAGE js AS """
     return 'other';
   }
   function getFormat(prettyType, mimeType, ext) {
+    ext = ext.toLowerCase();
     if (prettyType == 'image') {
       for (type of ['jpg', 'png', 'gif', 'webp', 'svg', 'ico']) {
         if (mimeType.includes(type) || ext == type) {
