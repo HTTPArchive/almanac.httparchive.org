@@ -8,4 +8,8 @@ This query generates summary metadata about each request from its JSON-encoded H
 
 ## [summary_response_bodies.sql](./summary_response_bodies.sql)
 
-This query combines `almanac.requests` with the `response_bodies.YYYY_MM_DD` tables. For every Web Almanac crawl (eg 2019_07_01 and 2020_08_01) this query should be run once and configured to have its results appended to the `almanac.requests` table.
+This query combines `almanac.requests` with the `response_bodies.YYYY_MM_DD` tables. For every Web Almanac crawl (eg 2019_07_01 and 2020_08_01) this query should be run once and configured to have its results appended to the `almanac.summary_response_bodies` table.
+
+## [parsed_css.sql](./parsed_css.sql), [parsed_css_inline.sql](./parsed_css_inline.sql)
+
+These queries take the CSS response bodies and parse them using Rework CSS to generate a queryable, JSON-formatted AST. For every Web Almanac crawl (eg 2019_07_01 and 2020_08_01) each query should be run once and configured to have its results appended to the `almanac.parsed_css` table.
