@@ -1,6 +1,6 @@
 #standardSQL
-  # Distribution of page weight, requests, and co2 grams per CMS web page
-  -- https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/b498ec3bb239536d3612c5f3d758f46e0d2431a6/includes/carbonapi.php
+# Distribution of page weight, requests, and co2 grams per CMS web page
+# https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/b498ec3bb239536d3612c5f3d758f46e0d2431a6/includes/carbonapi.php
 CREATE TEMP FUNCTION
   GREEN(url STRING) AS (FALSE); -- TODO: Investigate fetching from Green Web Foundation
 CREATE TEMP FUNCTION
@@ -12,51 +12,40 @@ CREATE TEMP FUNCTION
 CREATE TEMP FUNCTION
   getCo2Renewable(energy FLOAT64) AS (energy * 0.1008 * 33.4 + energy * 0.8992 * 475);
 CREATE TEMP FUNCTION
-  CO2(url STRING,
-    bytes INT64) AS (
+  CO2(url STRING, bytes INT64) AS (
   IF
     (GREEN(url),
       getCo2Renewable(energyConsumption(adjustDataTransfer(bytes))),
       getCo2Grid(energyConsumption(adjustDataTransfer(bytes)))));
+
 SELECT
   percentile,
   client,
-  APPROX_QUANTILES(requests, 1000)[
-OFFSET
-  (percentile * 10)] AS requests,
-  ROUND(APPROX_QUANTILES(bytes, 1000)[
-  OFFSET
-    (percentile * 10)] / 1024 / 1024, 2) AS mbytes,
-  APPROX_QUANTILES(co2grams, 1000)[
-OFFSET
-  (percentile * 10)] AS co2grams
+  APPROX_QUANTILES(requests, 1000)[OFFSET(percentile * 10)] AS requests,
+  ROUND(APPROX_QUANTILES(bytes, 1000)[OFFSET(percentile * 10)] / 1024 / 1024, 2) AS mbytes,
+  APPROX_QUANTILES(co2grams, 1000)[OFFSET(percentile * 10)] AS co2grams
 FROM (
   SELECT
-    client,
-    COUNT(0) AS requests,
-    SUM(respSize) AS bytes,
-    CO2(page,
-      SUM(respSize)) AS co2grams
+    _TABLE_SUFFIX AS client,
+    reqTotal AS requests,
+    bytesTotal AS bytes,
+    CO2(url, bytesTotal) AS co2grams
   FROM
-    `httparchive.almanac.summary_requests`
+    `httparchive.summary_pages.2020_08_01_*`
   JOIN (
     SELECT
-      _TABLE_SUFFIX AS client,
-      url AS page
+      _TABLE_SUFFIX,
+      url
     FROM
-      `httparchive.technologies.2020_07_01_*`
+      `httparchive.technologies.2020_08_01_*`
     WHERE
       category = 'CMS')
   USING
-    (client,
-      page)
-  GROUP BY
-    client,
-    page),
+    (_TABLE_SUFFIX, url)),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,
   client
 ORDER BY
   percentile,
-  client;
+  client

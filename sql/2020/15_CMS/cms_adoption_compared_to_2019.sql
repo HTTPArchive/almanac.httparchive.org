@@ -5,15 +5,15 @@ SELECT
   2020 AS year,
   COUNT(0) AS freq,
   total,
-  ROUND(COUNT(0) * 100 / total, 2) AS pct
+  COUNT(0) / total AS pct
 FROM
-  `httparchive.technologies.2020_07_01_*`
+  `httparchive.technologies.2020_08_01_*`
 JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(0) AS total
   FROM
-    `httparchive.summary_pages.2020_07_01_*`
+    `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
@@ -29,7 +29,7 @@ SELECT
   2019 AS year,
   COUNT(0) AS freq,
   total,
-  ROUND(COUNT(0) * 100 / total, 2) AS pct
+  COUNT(0) / total AS pct
 FROM
   `httparchive.technologies.2019_07_01_*`
 JOIN (
@@ -49,4 +49,4 @@ GROUP BY
   total
 ORDER BY
   year DESC,
-  freq / total DESC
+  pct DESC

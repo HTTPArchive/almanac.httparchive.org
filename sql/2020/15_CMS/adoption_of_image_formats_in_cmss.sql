@@ -1,28 +1,33 @@
 #standardSQL
-  # Adoption of image formats in CMSs
+# Adoption of image formats in CMSs
 SELECT
   client,
   format,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
-FROM
-  `httparchive.almanac.summary_requests`
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+FROM (
+  SELECT
+    client,
+    format,
+    page
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2020-08-01' AND
+    type = 'image')
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page
   FROM
-    `httparchive.technologies.2020_07_01_*`
+    `httparchive.technologies.2020_08_01_*`
   WHERE
     category = 'CMS')
 USING
-  (client,
-    page)
-WHERE
-  type = 'image'
+  (client, page)
 GROUP BY
   client,
   format
 ORDER BY
-  freq / total DESC
+  pct DESC
