@@ -13,3 +13,7 @@ This query combines `almanac.requests` with the `response_bodies.YYYY_MM_DD` tab
 ## [parsed_css.sql](./parsed_css.sql), [parsed_css_inline.sql](./parsed_css_inline.sql)
 
 These queries take the CSS response bodies and parse them using Rework CSS to generate a queryable, JSON-formatted AST. For every Web Almanac crawl (eg 2019_07_01 and 2020_08_01) each query should be run once and configured to have its results appended to the `almanac.parsed_css` table.
+
+## [third_parties.sql](./third_parties.sql)
+
+This query copies the [Third Party Web](https://github.com/patrickhulce/third-party-web) category data. Coordinate with @patrickhulce to publish a new version of the table based on the latest HTTP Archive data, then append the results of this query to the `almanac.third_parties` table.
