@@ -1,5 +1,5 @@
 #standardSQL
-#font formats
+#font_formats
 SELECT
  client,
  LOWER(IFNULL(REGEXP_EXTRACT(mimeType, '/(?:x-)?(?:font-)?(.*)'), ext)) AS mime_type,
@@ -12,7 +12,7 @@ join
  (select origin, fast_fcp, slow_fcp,
 from
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
-on
+ON
  concat(origin, '/')= url
 WHERE
  type = 'font' AND mimeType!= ''
