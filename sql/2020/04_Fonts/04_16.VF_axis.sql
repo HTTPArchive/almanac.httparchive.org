@@ -21,7 +21,7 @@ return [];
 
 SELECT
  client,
- REGEXP_EXTRACT(LOWER(values), '[\'"]([\\w]{4})[\'"]') AS axis,
+ REGEXP_EXTRACT(LOWER(values),'[\'"]([\w]{4})[\'"]')AS axis,
  COUNT(0) AS freq_axis,
  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_axis,
  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_axis
