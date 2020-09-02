@@ -1,5 +1,5 @@
 #standardSQL
-#VF axis values(6.7T)
+#VF_axis_value
 CREATE TEMPORARY FUNCTION getFontVariationSettings(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
