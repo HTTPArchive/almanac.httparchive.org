@@ -25,7 +25,8 @@ return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
 return [];
 }
-'';
+''';
+
 SELECT
  client,
  net.host(page),
