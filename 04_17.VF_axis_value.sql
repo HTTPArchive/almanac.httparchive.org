@@ -1,5 +1,5 @@
 #standardSQL
-#VF_axis_value
+#VF axis values(6.7T)
 CREATE TEMPORARY FUNCTION getFontVariationSettings(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -26,7 +26,7 @@ SELECT
  COUNTIF(CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) < 6) AS freq_under_6_axis,
  COUNTIF(CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) BETWEEN 6 AND 19) AS freq_between_6_20_axis,
  COUNTIF(CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) >= 20) AS freq_over_20_axis,
- count(0) AS sub_total_axis,
+ COUNT(0) AS sub_total_axis,
  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_axis,
  ROUND(COUNTIF(CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) < 6) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_under_6_axis,
  ROUND(COUNTIF(CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) BETWEEN 6 AND 19) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_between_6_20_axis,
@@ -39,5 +39,5 @@ GROUP BY
  client, axis, num_axis
 HAVING 
  axis IS NOT NULL
-ORDER BY   
+ORDER BY  
  freq_between_6_20_axis DESC
