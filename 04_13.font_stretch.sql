@@ -1,5 +1,5 @@
 #standardSQL
-#font-stretch
+#font_stretch
 CREATE TEMPORARY FUNCTION usesFontStretch(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
