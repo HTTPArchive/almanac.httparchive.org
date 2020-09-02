@@ -1,5 +1,5 @@
 #standardSQL
-#icon fonts 
+#icon_fonts 
 CREATE TEMPORARY FUNCTION checksSupports(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -18,7 +18,7 @@ return [];
 
 SELECT
  client,
- net.host(page),
+ NET.HOST(page),
  COUNT(DISTINCT page) AS freq_ficon,
  total_page,
  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_ficon
