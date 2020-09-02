@@ -1,25 +1,25 @@
 #standardSQL
 #font_resource_hints_with_fcp
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
-RETURNS ARRAY<STRUCT<name STRING, href STRING>>
-LANGUAGE js AS '''
+RETURNS ARRAY < STRUCT < name STRING, href STRING >>
+    LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
 try {
-var $ = JSON.parse(payload);
-var almanac = JSON.parse($._almanac);
-return almanac['link-nodes'].reduce((results, link) => {
-var hint = link.rel.toLowerCase();
-if (!hints.has(hint)) {
-return results;
-}
-results.push({
-name: hint,
-href: link.href
-});
-return results;
-}, []);
+    var $ = JSON.parse(payload);
+    var almanac = JSON.parse($._almanac);
+    return almanac['link-nodes'].reduce((results, link) => {
+        var hint = link.rel.toLowerCase();
+        if (!hints.has(hint)) {
+            return results;
+        }
+        results.push({
+            name: hint,
+            href: link.href
+        });
+        return results;
+    }, []);
 } catch (e) {
-return [];
+    return [];
 }
 ''';
 
