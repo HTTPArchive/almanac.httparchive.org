@@ -1,5 +1,5 @@
 #standardSQL
-#local vs host 
+#local_vs_host_with_fcp 
 SELECT
  client,
  COUNTIF(NET.HOST(page) != NET.HOST(url)) AS host,
