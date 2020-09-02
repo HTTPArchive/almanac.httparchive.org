@@ -2,7 +2,7 @@
 
 This directory contains utilities for managing the Web Almanac dataset on BigQuery.
 
-## [summary_requests.sql](./summary_requests.sql)
+## [requests.sql](./requests.sql)
 
 This query generates summary metadata about each request from its JSON-encoded HAR object. For every Web Almanac crawl (eg 2019_07_01 and 2020_08_01) this query should be run once and configured to have its results appended to the `almanac.requests` table. This table is useful for Web Almanac analysis because it combines the metadata of the request with the HAR payload, more easily enabling queries that segment requests by resource type (script, style, image) and base HTML page.
 
