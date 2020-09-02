@@ -35,7 +35,7 @@ SELECT
   ROUND(COUNT(DISTINCT page) * 100 / COUNT(0), 2) AS pct_subset,
   COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_fast_fcp_subset,
   COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_avg_fcp_subset,
+    AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_mode_fcp_subset,
   COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_slow_fcp_subset,
 FROM
   `httparchive.almanac.parsed_css`,
