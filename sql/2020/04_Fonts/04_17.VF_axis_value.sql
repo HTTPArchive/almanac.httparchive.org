@@ -21,7 +21,7 @@ return [];
 
 SELECT
  client,
- REGEXP_EXTRACT(LOWER(values), [\'"]([\\w]{4})[\'"]) AS axis,
+ REGEXP_EXTRACT(LOWER(values), '[\'"]([\\w]{4})[\'"]') AS axis,
  CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) AS num_axis,
  COUNTIF(CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) < 6) AS freq_under_6_axis,
  COUNTIF(CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) BETWEEN 6 AND 19) AS freq_between_6_20_axis,
@@ -35,6 +35,8 @@ FROM
  `httparchive.almanac.parsed_css`,
  UNNEST(getFontVariationSettings(css)) AS value,
  UNNEST(SPLIT(value, ',')) AS values
+WHERE 
+ date='2020-08-01'
 GROUP BY 
  client, axis, num_axis
 HAVING 
