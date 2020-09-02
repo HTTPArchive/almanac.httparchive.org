@@ -1,5 +1,5 @@
 #standardSQL
-#country web fonts usage 
+#web_fonts_usage_by_country
 SELECT
  _TABLE_SUFFIX AS client,
  country,
@@ -7,9 +7,8 @@ SELECT
  ROUND(APPROX_QUANTILES(bytesFont, 1000)[OFFSET(500)] / 1024, 2) AS median_font_bytes
 FROM (
 SELECT
- DISTINCT 
-  origin,
-  `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
+ DISTINCT origin,
+ `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
 FROM 
   `chrome-ux-report.materialized.country_summary`
 WHERE 
