@@ -1,5 +1,5 @@
 #standardSQL
-#web font usage breakdown with fcp 
+#web_font_usage_breakdown_with_fcp 
 SELECT
  client,
  NET.HOST(url) AS host,
