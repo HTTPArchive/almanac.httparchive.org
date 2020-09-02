@@ -11,12 +11,11 @@ SELECT
  round(countif(slow_fcp>=0.25)*100/count(0),0) as pct_slow_fcp,
 FROM 
  `httparchive.almanac.requests`
-
 JOIN 
  (select origin, fast_fcp, slow_fcp,
 FROM 
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
-on 
+ON 
  concat(origin, '/')=page
 WHERE 
  type = 'font' AND NET.HOST(url) != NET.HOST(page)
