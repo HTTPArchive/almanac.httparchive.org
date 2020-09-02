@@ -26,7 +26,6 @@ return $.stylesheet.rules.reduce(reduceValues, []);
 return [];
 }
 '';
-
 SELECT
  client,
  net.host(page),
@@ -53,5 +52,5 @@ FROM
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
 ON 
  concat(origin, '/')=page
-group by  
+GROUP BY  
  client, page, font_display
