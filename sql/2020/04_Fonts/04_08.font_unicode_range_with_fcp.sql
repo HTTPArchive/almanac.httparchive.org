@@ -42,6 +42,8 @@ SELECT
  SUM(ARRAY_LENGTH(getFonts(css))) AS ranges
 FROM
  `httparchive.almanac.parsed_css`
+WHERE
+ date = '2020-08-01'
 GROUP BY
  client, page)
 JOIN 
