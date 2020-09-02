@@ -1,5 +1,5 @@
 #standardSQL
-#VF @supports 
+#VF_@supports 
 CREATE TEMPORARY FUNCTION checksSupports(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
