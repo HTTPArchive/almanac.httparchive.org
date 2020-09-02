@@ -1,5 +1,5 @@
 #standardSQL
-#font unicode-range with fcp
+#font_unicode_range_with_fcp
 CREATE TEMPORARY FUNCTION getFonts(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -32,9 +32,9 @@ SELECT
  COUNTIF(ranges > 0) AS freq_range,
  total_page,
  ROUND(COUNTIF(ranges > 0) * 100 / total_page, 2) AS pct_range,
- countif(fast_fcp>=0.75)*100/count(0) as pct_fast_fcp_unicode,
- countif(NOT(slow_fcp >=0.25) AND NOT(fast_fcp>=0.75)) *100/count(0) as pct_avg_fcp_unicode,
- countif(slow_fcp>=0.25)*100/count(0) as pct_slow_fcp_unicode,
+ COUNTIF(fast_fcp>=0.75)*100/count(0) as pct_fast_fcp_unicode,
+ COUNTIF(NOT(slow_fcp >=0.25) AND NOT(fast_fcp>=0.75)) *100/count(0) as pct_avg_fcp_unicode,
+ COUNTIF(slow_fcp>=0.25)*100/count(0) as pct_slow_fcp_unicode,
 FROM (
 SELECT
  client,
