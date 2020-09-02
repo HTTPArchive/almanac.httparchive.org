@@ -1,5 +1,5 @@
 #standardSQL
-#font subset 
+#font_subset_with_fcp
 CREATE TEMPORARY FUNCTION getFont(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
@@ -33,17 +33,17 @@ SELECT
  COUNT(DISTINCT page) AS freq_subset,
  COUNT(0) AS total_subset,
  ROUND(COUNT(DISTINCT page) * 100 / COUNT(0), 2) AS pct_subset,
- countif(fast_fcp>=0.75)*100/count(0) as pct_fast_fcp_subset,
- countif(NOT(slow_fcp >=0.25) AND NOT(fast_fcp>=0.75)) *100/count(0) as pct_avg_fcp_subset,
- countif(slow_fcp>=0.25)*100/count(0) as pct_slow_fcp_subset,
+ COUNTIF(fast_fcp>=0.75)*100/count(0) as pct_fast_fcp_subset,
+ COUNTIF(NOT(slow_fcp >=0.25) AND NOT(fast_fcp>=0.75)) *100/count(0) as pct_avg_fcp_subset,
+ COUNTIF(slow_fcp>=0.25)*100/count(0) as pct_slow_fcp_subset,
 FROM
  `httparchive.almanac.parsed_css`,
  UNNEST(getFont(css)) AS font_subset
-join
+JOIN
  (select origin, fast_fcp, slow_fcp,
-from
+FROM
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
-on
+ON
  concat(origin, '/')=page
 JOIN
  (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total_page FROM `httparchive.summary_pages.2020_08_01_*` GROUP BY _TABLE_SUFFIX, client)
