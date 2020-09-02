@@ -53,5 +53,7 @@ FROM
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
 ON 
  concat(origin, '/')=page
+WHERE
+ date='2020-08-01' 
 GROUP BY  
  client, page, font_display
