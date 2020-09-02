@@ -1,14 +1,14 @@
 #standardSQL
-#variable font with fcp
+#variable_font_with_fcp
 SELECT
  client,
  NET.HOST(url),
  COUNT(DISTINCT page) AS freq_vf,
  total_page,
  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_vf,
- ROUND(countif(fast_fcp>=0.75)*100/count(0),0) as pct_fast_fcp_vf,
- ROUND(countif(NOT(slow_fcp >=0.25) AND NOT(fast_fcp>=0.75))*100/count(0),0) as pct_avg_fcp_vf,
- ROUND(countif(slow_fcp>=0.25)*100/count(0),0) as pct_slow_fcp_vf,
+ ROUND(COUNTIF(fast_fcp>=0.75)*100/count(0),0) as pct_fast_fcp_vf,
+ ROUND(COUNTIF(NOT(slow_fcp >=0.25) AND NOT(fast_fcp>=0.75))*100/count(0),0) as pct_avg_fcp_vf,
+ ROUND(COUNTIF(slow_fcp>=0.25)*100/count(0),0) as pct_slow_fcp_vf,
 FROM
  `httparchive.almanac.requests`
 JOIN
@@ -19,7 +19,7 @@ join
  (select origin, fast_fcp, slow_fcp,
 from
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
-on
+ON
  concat(origin, '/')= url
 WHERE
  type = 'font' AND
