@@ -38,7 +38,7 @@ FROM (
 LEFT JOIN (
  SELECT client AS _TABLE_SUFFIX, page, url, type
 FROM 
-  `httparchive.almanac.summary_requests` where type='font')
+  `httparchive.almanac.summary_requests` where type='font' AND date='2020-08-01')
 USING 
  (_TABLE_SUFFIX, page, url)
 JOIN 
@@ -47,8 +47,6 @@ FROM
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
 ON  
  concat(origin, '/')=page
-WHERE
- date = '2020-08-01'
 GROUP BY 
  client, name
 ORDER BY 
