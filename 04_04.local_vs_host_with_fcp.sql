@@ -14,9 +14,9 @@ FROM
  `httparchive.almanac.requests`
 JOIN 
  (select origin, fast_fcp, slow_fcp,
-from 
+FROM 
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
-on 
+ON 
  concat(origin, '/')=page
 WHERE 
  type = 'font'
