@@ -12,6 +12,7 @@ return family && family.value.replace(/['"]/g, '');
 return [];
 }
 ''';
+
 SELECT
  client,
  font_family,
