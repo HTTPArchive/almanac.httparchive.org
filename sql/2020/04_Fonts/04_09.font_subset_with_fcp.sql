@@ -3,27 +3,27 @@
 CREATE TEMPORARY FUNCTION getFont(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-var reduceValues = (values, rule) => {
-if ('rules' in rule) {
-return rule.rules.reduce(reduceValues, values);
-}
-if (!('declarations' in rule)) {
-return values;
-}
-if (rule.type != 'font-face') {
-return values;
-}
-rule.declarations.forEach(d => {
-if (d.property.toLowerCase() == 'subset') {
-values.push(d.value);
-}
-});
-return values;
-};
-var $ = JSON.parse(css);
-return $.stylesheet.rules.reduce(reduceValues, []);
+    var reduceValues = (values, rule) => {
+        if ('rules' in rule) {
+            return rule.rules.reduce(reduceValues, values);
+        }
+        if (!('declarations' in rule)) {
+            return values;
+        }
+        if (rule.type != 'font-face') {
+            return values;
+        }
+        rule.declarations.forEach(d => {
+            if (d.property.toLowerCase() == 'subset') {
+                values.push(d.value);
+            }
+        });
+        return values;
+    };
+    var $ = JSON.parse(css);
+    return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-return [];
+    return [];
 }
 ''';
 
