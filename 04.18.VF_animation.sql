@@ -15,7 +15,6 @@ return $.stylesheet.rules.reduce(reduceValues, []);
 return [];
 }
 ''';
-
 SELECT
  client,
  COUNT(DISTINCT page) AS freq,
