@@ -1,5 +1,5 @@
 #standardSQL
-# color fonts 
+#color_fonts
 SELECT
  client,
  format,
