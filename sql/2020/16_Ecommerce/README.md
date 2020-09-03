@@ -1,4 +1,10 @@
-Queries for the ECommerce 2020 chapter (#914)
+# Queries for ECommerce 2020 (#914)
+
+Related materials:
+
+- [Planning doc](https://docs.google.com/document/d/1N6idOzeBOQV-a1Zg4sIlfCSAIseONDDmckzJv5n5oRw/edit)
+- [Results spreadsheet](https://docs.google.com/spreadsheets/d/1Hvsh_ZBKg2vWhouJ8vIzLmp0nLIMzrT2mr6RQbIkxqY/edit#gid=618573782)
+
 
 ### ECommerce adoption
 - [x] % of desktop and mobile websites using an EComm platform 
