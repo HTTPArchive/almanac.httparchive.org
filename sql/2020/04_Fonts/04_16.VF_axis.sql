@@ -3,19 +3,19 @@
 CREATE TEMPORARY FUNCTION getFontVariationSettings(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-var reduceValues = (values, rule) => {
-if ('rules' in rule) {
-return rule.rules.reduce(reduceValues, values);
-}
-if (!('declarations' in rule)) {
-return values;
-}
-return values.concat(rule.declarations.filter(d => d.property.toLowerCase() == 'font-variation-settings').map(d => d.value));
-};
-var $ = JSON.parse(css);
-return $.stylesheet.rules.reduce(reduceValues, []);
+    var reduceValues = (values, rule) => {
+        if ('rules' in rule) {
+            return rule.rules.reduce(reduceValues, values);
+        }
+        if (!('declarations' in rule)) {
+            return values;
+        }
+        return values.concat(rule.declarations.filter(d => d.property.toLowerCase() == 'font-variation-settings').map(d => d.value));
+    };
+    var $ = JSON.parse(css);
+    return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-return [];
+    return [];
 }
 ''';
 

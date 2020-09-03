@@ -71,5 +71,4 @@ USING
   (client)
 GROUP BY
   client,
-  page,
   total_page

@@ -15,7 +15,7 @@ USING
 # Color fonts have any of sbix, cbdt, svg or colr tables.
  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)(sbix|cbdt|svg|colr)')) AS format
 WHERE
- type = 'font'
+ type = 'font' AND date='2020-08-01'
 GROUP BY
 client,
  total_page,

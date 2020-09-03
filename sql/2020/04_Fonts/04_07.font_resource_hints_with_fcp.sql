@@ -38,9 +38,9 @@ FROM (
 LEFT JOIN (
  SELECT client AS _TABLE_SUFFIX, page, url, type
 FROM 
-  `httparchive.almanac.summary_requests` where type='font' AND date='2020-08-01')
+  `httparchive.summary_requests.2020_08_01_*` where type='font')
 USING 
- (_TABLE_SUFFIX, page, url)
+ (url)
 JOIN 
  (select origin, fast_fcp, slow_fcp,
 FROM 

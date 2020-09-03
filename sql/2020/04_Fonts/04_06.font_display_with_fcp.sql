@@ -29,7 +29,6 @@ try {
 
 SELECT
   client,
-  net.host(page),
   font_display,
   COUNT(DISTINCT page) AS freq_display,
   COUNT(0) AS total_display,
@@ -71,5 +70,4 @@ WHERE
   date='2020-08-01'
 GROUP BY
   client,
-  page,
   font_display

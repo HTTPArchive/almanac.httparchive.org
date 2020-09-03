@@ -24,7 +24,7 @@ JOIN (
   FROM
     `httparchive.summary_pages.2020_08_01_*`
   GROUP BY
-    _TABLE_SUFFIX) #FROM `httparchive.summary_pages.2020_08_01_*`
+    _TABLE_SUFFIX) 
 USING
   (client)
 JOIN (

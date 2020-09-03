@@ -3,16 +3,16 @@
 CREATE TEMPORARY FUNCTION getfontKeyframes(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-var reduceValues = (values, rule) => {
-if (rule.type == 'keyframes' && rule.supports.toLowerCase().includes('font-variation-settings')) {
-values.push(rule.supports.toLowerCase());
-}
-return values;
-};
-var $ = JSON.parse(css);
-return $.stylesheet.rules.reduce(reduceValues, []);
+    var reduceValues = (values, rule) => {
+        if (rule.type == 'keyframes' && rule.supports.toLowerCase().includes('font-variation-settings')) {
+            values.push(rule.supports.toLowerCase());
+        }
+        return values;
+    };
+    var $ = JSON.parse(css);
+    return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-return [];
+    return [];
 }
 ''';
 SELECT
@@ -27,6 +27,6 @@ JOIN
 USING
  (client)
 WHERE
- ARRAY_LENGTH(getfontKeyframes(css)) > 0
+ ARRAY_LENGTH(getfontKeyframes(css)) > 0 AND date='2020-08-01'
 GROUP BY
  client, total_page

@@ -19,6 +19,6 @@ FROM
 ON 
  concat(origin, '/')=page
 WHERE 
- type = 'font'
+ type = 'font' AND date='2020-08-01'
 GROUP BY 
  client

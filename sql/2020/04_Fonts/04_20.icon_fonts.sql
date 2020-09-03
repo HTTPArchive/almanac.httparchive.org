@@ -3,16 +3,16 @@
 CREATE TEMPORARY FUNCTION checksSupports(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-var reduceValues = (values, rule) => {
-if (rule.type == 'stylesheet' && rule.supports.toLowerCase().includes('icon')) {
-values.push(rule.supports.toLowerCase());
-}
-return values;
-};
-var $ = JSON.parse(css);
-return $.stylesheet.rules.reduce(reduceValues, []);
+    var reduceValues = (values, rule) => {
+        if (rule.type == 'stylesheet' && rule.supports.toLowerCase().includes('icon')) {
+            values.push(rule.supports.toLowerCase());
+        }
+        return values;
+    };
+    var $ = JSON.parse(css);
+    return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-return [];
+    return [];
 }
 ''';
 
@@ -29,6 +29,6 @@ JOIN
 USING
  (client)
 WHERE
- ARRAY_LENGTH(checksSupports(css)) > 0 OR url LIKE '%fontawesome%' OR url LIKE '%icomoon%'
+ ARRAY_LENGTH(checksSupports(css)) > 0 AND date='2020-08-01' OR url LIKE '%fontawesome%' OR url LIKE '%icomoon%' 
 GROUP BY
  client, page, total_page

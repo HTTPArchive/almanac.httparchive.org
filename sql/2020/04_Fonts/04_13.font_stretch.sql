@@ -37,7 +37,7 @@ JOIN (
 USING
   (client)
 WHERE
-  ARRAY_LENGTH(usesFontStretch(css)) > 0
+  ARRAY_LENGTH(usesFontStretch(css)) > 0 and date='2020-08-01'
 GROUP BY
   client,
   total_page

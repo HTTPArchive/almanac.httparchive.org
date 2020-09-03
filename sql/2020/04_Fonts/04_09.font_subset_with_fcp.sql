@@ -38,8 +38,8 @@ SELECT
     AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_mode_fcp_subset,
   COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_slow_fcp_subset,
 FROM
-  `httparchive.almanac.parsed_css`,
-  UNNEST(getFont(css)) AS font_subset
+  (SELECT * FROM `httparchive.almanac.parsed_css`,
+  UNNEST(getFont(css)) AS font_subset WHERE date='2020-08-01')
 JOIN (
   SELECT
     origin,

@@ -9,7 +9,7 @@ SELECT
 FROM
  `httparchive.almanac.requests`
 WHERE
- type = 'font' AND mimeType!= ''
+ type = 'font' AND mimeType!= '' AND date='2020-08-01'
 GROUP BY
  client,
  mime_type

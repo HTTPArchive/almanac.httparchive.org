@@ -20,8 +20,8 @@ SELECT
  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_typeface,
  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
- `httparchive.almanac.parsed_css`,
- UNNEST(getFontFamilies(css)) AS font_family
+ (SELECT * FROM `httparchive.almanac.parsed_css`, 
+ UNNEST(getFontFamilies(css)) AS font_family WHERE date='2020-08-01')
 GROUP BY
  client,
  font_family
