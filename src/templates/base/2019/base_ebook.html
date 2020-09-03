@@ -390,7 +390,7 @@
           {% endif %}
           <div class="contributor-teams">
             {% for id in contributor.teams | sort() %}
-              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last }}
+              <span class="contributor-team team-{{ id }}">{{ localizedTeamNames[id] if localizedTeamNames[id]|length else team.name }}</span>{{ self.comma() if not loop.last  and loop.length > 2 }}
             {% endfor %}
           </div>
         </div>
