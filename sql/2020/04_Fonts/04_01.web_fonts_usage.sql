@@ -1,5 +1,5 @@
 #standardSQL
-#web_fonts_usage
+#web_fonts_usage_2020
 SELECT
  _TABLE_SUFFIX AS client,
  SUBSTR(_TABLE_SUFFIX, 0, 10) AS date,

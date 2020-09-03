@@ -1,5 +1,5 @@
 #standardSQL
-#web_fonts_usage_by_country
+#web_fonts_usage_by_country_2020
 SELECT
  _TABLE_SUFFIX AS client,
  country,
