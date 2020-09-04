@@ -16,6 +16,7 @@
 set -e
 
 TEMP_TEMPLATES_DIRECTORY=templates_new
+TEMP_DIFF_FILENAME=/tmp/template_differences.txt
 
 # This script must be run from src directory
 if [ -d "src" ]; then
@@ -47,17 +48,18 @@ echo "Building website"
 npm run generate
 
 echo "Diff the two folders"
-#Don't fail if there are differences so turn off that
+#Don't fail if there are differences so turn off that temporarily
 set +e
-DIFF_OUTPUT=$(diff -r templates "${TEMP_TEMPLATES_DIRECTORY}")
+diff -r templates "${TEMP_TEMPLATES_DIRECTORY}" > "${TEMP_DIFF_FILENAME}"
 set -e
 
 echo "Differences:"
-echo "${DIFF_OUTPUT}"
+cat "${TEMP_DIFF_FILENAME}"
 
-if [ -n "${DIFF_OUTPUT}" ]; then
-  ESCAPED_OUTPUT=$(echo "$DIFF_OUTPUT" | sed -e 's/\n/%0A/g' -e 's/\r/%0D/g' -e 's/\%/%25/g')
-  PR_COMMENT="The following diffs were found:%0A\\\`\\\`\\\`${ESCAPED_OUTPUT}\\\`\\\`\\\`"
+NUM_DIFFS=$(cat "${TEMP_DIFF_FILENAME}" | wc -l)
+if [ "${NUM_DIFFS}" -ne "0" ]; then
+  ESCAPED_OUTPUT=$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/%0A/g' -e 's/\r/%0D/g' -e 's/\%/%25/g' -i "${TEMP_DIFF_FILENAME}")
+  PR_COMMENT="The following diffs happen in the templates due to differences in this branch and main:%0A\`\`\`${ESCAPED_OUTPUT}\`\`\`"
   echo "::set-env name=PR_COMMENT::${PR_COMMENT}"
 fi
 
