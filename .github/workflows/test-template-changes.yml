@@ -43,8 +43,7 @@ jobs:
       if: github.event_name == 'pull_request' && ${{ env.PR_COMMENT != '' }}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        pr_comment: process.env.PR_COMMENT
         script: |
           const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
-          const pr_comment = process.env.pr_comment
+          const pr_comment = process.env.PR_COMMENT;
           github.issues.createComment({ issue_number, owner, repo, body: pr_comment });
