@@ -45,5 +45,5 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
-          const pr_comment = process.env.PR_COMMENT;
+          const pr_comment = process.env.PR_COMMENT.replace(/%0A/g,'\n').replace(/%0D/g,'\r').replace(/%25/g,'%');
           github.issues.createComment({ issue_number, owner, repo, body: pr_comment });
