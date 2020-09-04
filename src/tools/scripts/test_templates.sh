@@ -22,7 +22,7 @@ if [ -d "src" ]; then
   cd src
 fi
 
-if [ -d "${TEMP_TEMPLATES_DIRECTORY}"]; then
+if [ -d "${TEMP_TEMPLATES_DIRECTORY}" ]; then
   echo "${TEMP_TEMPLATES_DIRECTORY} already exists. Exiting"
   exit 1
 fi
@@ -49,7 +49,7 @@ npm run generate
 echo "Diff the two folders"
 DIFF_OUTPUT=$(diff -r templates "${TEMP_TEMPLATES_DIRECTORY}")
 
-if [ "${DIFF_OUTPUT}" -ne "" ]; then
+if [ -n "${DIFF_OUTPUT}" ]; then
   export PR_COMMENT="${DIFF_OUTPUT}"
 fi
 
