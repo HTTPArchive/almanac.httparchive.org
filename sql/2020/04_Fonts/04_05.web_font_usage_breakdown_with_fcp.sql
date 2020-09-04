@@ -4,7 +4,7 @@ SELECT
  client,
  NET.HOST(url) AS host,
  COUNT(0) AS freq_host,
- COUNT(net.host(url)) AS TOTAL,
+ SUM(COUNT(0)) OVER (PARTITION BY client ) AS TOTAL,
  ROUND(COUNT(0) * 100 / (COUNT(net.host(url))), 2) AS pct_host,
  round(countif(fast_fcp>=0.75)*100/count(0),0) as pct_fast_fcp,
  round(countif(NOT(slow_fcp >=0.25) AND NOT(fast_fcp>=0.75))*100/count(0),0) as pct_avg_fcp,
