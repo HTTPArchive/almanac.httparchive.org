@@ -58,8 +58,8 @@ cat "${TEMP_DIFF_FILENAME}"
 
 NUM_DIFFS=$(wc -l < "${TEMP_DIFF_FILENAME}")
 if [ "${NUM_DIFFS}" -ne "0" ]; then
-  ESCAPED_OUTPUT=$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/%0A/g' -e 's/\r/%0D/g' -e 's/\%/%25/g' "${TEMP_DIFF_FILENAME}")
-  PR_COMMENT="The following diffs happen in the templates due to differences in this branch and main:%0A\`\`\`${ESCAPED_OUTPUT}\`\`\`"
+  ESCAPED_OUTPUT=$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/\\n/g' -e 's/\r/\\r/g' -e 's/\%/\\%/g' "${TEMP_DIFF_FILENAME}")
+  PR_COMMENT="The following diffs happen in the templates due to differences in this branch and main:%0A\`\`\`%0A${ESCAPED_OUTPUT}%0A\`\`\`%0A"
   echo "::set-env name=PR_COMMENT::${PR_COMMENT}"
 fi
 
