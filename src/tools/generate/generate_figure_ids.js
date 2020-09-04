@@ -29,28 +29,6 @@ const generate_figure_ids = (html, figure_lock) => {
       }
     });
 
-    var refs={};
-
-    // Now let's replace any references in the chapter
-    // So first of all get a list of references -> ids
-    // For simplicity the reference must be the first item after the inserted data
-    re = /figure_markup\(metadata=metadata, id=([0-9]*),\s*\n*\s*(ref="([^"]*?)")/gism;
-    while((result = re.exec(html)) !== null) {
-      refs[result[3]] = result[1];
-    }
-
-    // Then repalce the references with the actual numbers
-    for (var ref in refs) {
-      if (refs.hasOwnProperty(ref)) {
-          // strip refs from figures
-          let re = new RegExp('ref="' + ref +'",?','g');
-          html = html.replace(re, '');
-          // replace refs in writing
-          re = new RegExp(ref,'g');
-          html = html.replace(re, '{{ figure_id(metadata=metadata,id=' + refs[ref] + ') }}');
-      }
-    }
-
   } else {
     // Old style figure markup - can remove after all chapters converted
 
