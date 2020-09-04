@@ -46,17 +46,6 @@ FROM
   UNNEST(getFontDisplay(css)) AS font_display
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_page
-  FROM
-    `httparchive.sample_data.summary_pages_*`
-  GROUP BY
-    _TABLE_SUFFIX,
-    client)
-USING
-  (client)
-JOIN (
-  SELECT
     origin,
     fast_fcp,
     slow_fcp,
