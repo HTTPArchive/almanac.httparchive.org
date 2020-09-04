@@ -26,7 +26,7 @@ jobs:
   build:
     name: Build and Test Template Changes
     runs-on: ubuntu-latest
-    if: github.repository == 'bazzadp/almanac.httparchive.org'
+    if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
       uses: actions/checkout@v2.3.2
