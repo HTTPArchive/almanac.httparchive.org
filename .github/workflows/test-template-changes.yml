@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
-    - name: Checkout branch
+    - name: Checkout Code
       uses: actions/checkout@v2.3.2
       with:
         fetch-depth: 0
