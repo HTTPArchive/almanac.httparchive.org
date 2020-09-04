@@ -31,7 +31,7 @@ echo "Installing node modules"
 npm install
 
 echo "Building website"
-#npm run generate
+npm run generate
 
 echo "Backing up templates"
 cp -r templates "${TEMP_TEMPLATES_DIRECTORY}"
@@ -44,13 +44,13 @@ rm -rf node_modules
 npm install
 
 echo "Building website"
-#npm run generate
+npm run generate
 
 echo "Diff the two folders"
+#Don't fail if there are differences so turn off that
 set +e
 DIFF_OUTPUT=$(diff -r templates "${TEMP_TEMPLATES_DIRECTORY}")
 set -e
-DIFF_OUTPUT="This\nis\a\test"
 
 echo "Differences:"
 echo "${DIFF_OUTPUT}"
