@@ -19,8 +19,8 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - 'package.json'
-      - 'package-lock.json'
+      - 'src/package.json'
+      - 'src/package-lock.json'
 jobs:
   build:
     name: Build and Test Template Changes
