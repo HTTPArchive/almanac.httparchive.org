@@ -31,8 +31,8 @@ SELECT
   client,
   font_display,
   COUNT(DISTINCT page) AS freq_display,
-  COUNT(0) AS total_display,
-  ROUND(COUNT(DISTINCT page) * 100 / COUNT(0), 2) AS pct_display,
+  total_page,
+  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_display,
   COUNTIF(fast_fcp>=0.75) AS fast_fcp_display,
   COUNTIF(NOT(slow_fcp >=0.25)
     AND NOT(fast_fcp>=0.75)) AS mode_fcp_display,
@@ -44,6 +44,17 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getFontDisplay(css)) AS font_display
+  
+JOIN (
+SELECT
+_TABLE_SUFFIX AS client,
+COUNT(0) AS total_page
+FROM
+`httparchive.sample_data.summary_pages_*`
+GROUP BY
+_TABLE_SUFFIX)
+USING
+(client)  
 JOIN (
   SELECT
     origin,
@@ -59,4 +70,5 @@ WHERE
   date='2020-08-01'
 GROUP BY
   client,
-  font_display
+  font_display,
+  total_page

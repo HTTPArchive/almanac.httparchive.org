@@ -1,7 +1,9 @@
 #standardSQL
 #font_subset_with_fcp
-CREATE TEMPORARY FUNCTION getFont(css STRING)
-RETURNS ARRAY<STRING> LANGUAGE js AS '''
+CREATE TEMPORARY FUNCTION
+  getFont(css STRING)
+  RETURNS ARRAY<STRING>
+  LANGUAGE js AS '''
 try {
     var reduceValues = (values, rule) => {
         if ('rules' in rule) {
@@ -26,20 +28,24 @@ try {
     return [];
 }
 ''';
-
 SELECT
   client,
   font_subset,
   COUNT(DISTINCT page) AS freq_subset,
-  COUNT(0) AS total_subset,
-  ROUND(COUNT(DISTINCT page) * 100 / COUNT(0), 2) AS pct_subset,
+  total_page,
+  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_subset,
   COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_fast_fcp_subset,
   COUNTIF(NOT(slow_fcp >=0.25)
     AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_mode_fcp_subset,
   COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_slow_fcp_subset,
-FROM
-  (SELECT * FROM `httparchive.almanac.parsed_css`,
-  UNNEST(getFont(css)) AS font_subset WHERE date='2020-08-01')
+FROM (
+  SELECT
+    *
+  FROM
+    `httparchive.almanac.parsed_css`,
+    UNNEST(getFont(css)) AS font_subset
+  WHERE
+    date='2020-08-01')
 JOIN (
   SELECT
     origin,
@@ -64,4 +70,5 @@ USING
   (client)
 GROUP BY
   client,
-  font_subset
+  font_subset,
+  total_page

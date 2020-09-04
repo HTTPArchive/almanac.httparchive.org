@@ -27,8 +27,8 @@ SELECT
  _TABLE_SUFFIX AS client,
  name,
  COUNT(DISTINCT page) AS freq_hints,
- COUNT(0) AS total_hints,
- ROUND(COUNT(DISTINCT page) * 100 / COUNT(0), 2) AS pct_hints,
+ total_page,
+ ROUND(COUNT(DISTINCT page) * 100 / total_page , 2) AS pct_hints,
  COUNTIF(fast_fcp>=0.75)*100/count(0) as pct_fast_fcp_hints,
  COUNTIF(NOT(slow_fcp >=0.25) AND NOT(fast_fcp>=0.75)) *100/count(0) as pct_avg_fcp_hints,
  COUNTIF(slow_fcp>=0.25)*100/count(0) as pct_slow_fcp_hints,
@@ -36,7 +36,7 @@ FROM (
  SELECT _TABLE_SUFFIX, url AS page, hint.name, hint.href AS url
  FROM `httparchive.pages.2020_08_01_*`, UNNEST(getResourceHints(payload)) AS hint)
 LEFT JOIN (
- SELECT client AS _TABLE_SUFFIX, page, url, type
+ SELECT _TABLE_SUFFIX as client, url, type
 FROM 
   `httparchive.summary_requests.2020_08_01_*` where type='font')
 USING 
@@ -47,7 +47,17 @@ FROM
  `chrome-ux-report.materialized.device_summary` where yyyymm=202007)
 ON  
  concat(origin, '/')=page
+JOIN (
+SELECT
+_TABLE_SUFFIX AS client,
+COUNT(0) AS total_page
+FROM
+`httparchive.summary_pages.2020_08_01_*`
+GROUP BY
+_TABLE_SUFFIX)
+USING
+(client)
 GROUP BY 
- client, name
+ client, name, total_page
 ORDER BY 
  client, name DESC
