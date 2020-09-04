@@ -16,6 +16,7 @@
 set -e
 
 TEMP_TEMPLATES_DIRECTORY=templates_new
+DIFF_FILENAME=/tmp/template_differences.txt
 
 # This script must be run from src directory
 if [ -d "src" ]; then
@@ -47,10 +48,19 @@ echo "Building website"
 npm run generate
 
 echo "Diff the two folders"
-DIFF_OUTPUT=$(diff -r templates "${TEMP_TEMPLATES_DIRECTORY}")
+#Don't fail if there are differences so turn that check off that temporarily
+set +e
+diff -r templates "${TEMP_TEMPLATES_DIRECTORY}" > "${DIFF_FILENAME}"
+set -e
 
-if [ -n "${DIFF_OUTPUT}" ]; then
-  export PR_COMMENT="${DIFF_OUTPUT}"
+echo "Differences:"
+cat "${DIFF_FILENAME}"
+
+NUM_DIFFS=$(wc -l < "${DIFF_FILENAME}")
+if [ "${NUM_DIFFS}" -ne "0" ]; then
+  ESCAPED_OUTPUT=$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/%0A/g' -e 's/\r/%0D/g' -e 's/\%/%25/g' "${DIFF_FILENAME}")
+  PR_COMMENT="Please note, that the following diffs happen in the templates on this branch compared to main:%0A\`\`\`%0A${ESCAPED_OUTPUT}%0A\`\`\`%0A"
+  echo "::set-env name=PR_COMMENT::${PR_COMMENT}"
 fi
 
 echo "Removing templates backup"
