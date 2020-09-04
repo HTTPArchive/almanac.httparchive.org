@@ -47,7 +47,7 @@ echo "Building website"
 npm run generate
 
 echo "Diff the two folders"
-DIFF_OUTPUT=$(diff -r templates "${TEMP_TEMPLATES_DIRECTORY}" || "")
+DIFF_OUTPUT=$(diff -r templates "${TEMP_TEMPLATES_DIRECTORY}" || echo "")
 
 if [ -n "${DIFF_OUTPUT}" ]; then
   export PR_COMMENT="${DIFF_OUTPUT}"
