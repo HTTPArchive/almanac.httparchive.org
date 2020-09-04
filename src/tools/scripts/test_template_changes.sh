@@ -58,6 +58,7 @@ cat "${DIFF_FILENAME}"
 
 NUM_DIFFS=$(wc -l < "${DIFF_FILENAME}")
 if [ "${NUM_DIFFS}" -ne "0" ]; then
+  # Weird syntax is to make is Mac compatible: https://stackoverflow.com/a/1252191/2144578
   ESCAPED_OUTPUT=$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/%0A/g' -e 's/\r/%0D/g' -e 's/\%/%25/g' "${DIFF_FILENAME}")
   PR_COMMENT="Please note, that the following diffs happen in the templates on this branch compared to main:%0A\`\`\`%0A${ESCAPED_OUTPUT}%0A\`\`\`%0A"
   echo "::set-env name=PR_COMMENT::${PR_COMMENT}"
@@ -65,5 +66,6 @@ fi
 
 echo "Removing templates backup"
 rm -rf "${TEMP_TEMPLATES_DIRECTORY}"
+rm -f "${DIFF_FILENAME}"
 
 echo "Comparison complete"
