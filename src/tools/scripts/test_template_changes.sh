@@ -47,15 +47,16 @@ echo "Building website"
 #npm run generate
 
 echo "Diff the two folders"
-#Use || echo "" to ensure we don't fail on diffs
-DIFF_OUTPUT=$(diff -r templates "${TEMP_TEMPLATES_DIRECTORY}" || echo "")
+set +e
+DIFF_OUTPUT=$(diff -r templates "${TEMP_TEMPLATES_DIRECTORY}")
+set -e
 DIFF_OUTPUT="This\nis\a\test"
 
 echo "Differences:"
 echo "${DIFF_OUTPUT}"
 
 if [ -n "${DIFF_OUTPUT}" ]; then
-  export PR_COMMENT="${DIFF_OUTPUT}"
+  echo "::set-output name=PR_COMMENT::$(echo $DIFF_OUTPUT)"
 fi
 
 echo "Removing templates backup"
