@@ -56,7 +56,7 @@ echo "Differences:"
 echo "${DIFF_OUTPUT}"
 
 if [ -n "${DIFF_OUTPUT}" ]; then
-  echo "::set-output name=PR_COMMENT::$(echo $DIFF_OUTPUT)"
+  echo "::set-env name=PR_COMMENT::$(echo $DIFF_OUTPUT)"
 fi
 
 echo "Removing templates backup"
