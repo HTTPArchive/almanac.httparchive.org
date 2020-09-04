@@ -2,17 +2,18 @@
 ## Custom Web Almanac GitHub action ##
 ######################################
 #
-# This Action runs and tests the website on demand. It also then takes a copy
+# This Action generated the dynamic templates. It also then takes a copy
 # of the templates folder, and then checks out main branch and regenerates the
-# templates and compares the two.
+# templates and compares the two. If run from a pull request it adds a comment
+# showing the diffs.
 #
-# It does not run a full test of the website as that will be completed y
+# Note it does not run a full test of the website as that will be completed by
 # the test_website.yml GitHub Action.
 #
 # This Action is useful to check impact of dependency upgrades (e.g. if
-# prettier version change results in different HTML being generated) since we
+# prettier version change results in different HTML being generated), since we
 # do not store generated templates in Git and so cannot otherwise see these
-# changes. Changes can then be investigated manually.
+# changes. Changes can then be accepted or investigated further before merging.
 #
 name: Test Template Changes
 on:
@@ -45,5 +46,6 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
+          // Unescape any escaped comments so code blocks appear correctly
           const pr_comment = process.env.PR_COMMENT.replace(/%0A/g,'\n').replace(/%0D/g,'\r').replace(/%25/g,'%');
           github.issues.createComment({ issue_number, owner, repo, body: pr_comment });
