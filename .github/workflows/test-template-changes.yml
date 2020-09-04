@@ -2,7 +2,7 @@
 ## Custom Web Almanac GitHub action ##
 ######################################
 #
-# This Action generated the dynamic templates. It also then takes a copy
+# This Action generates the dynamic templates. It also then takes a copy
 # of the templates folder, and then checks out main branch and regenerates the
 # templates and compares the two. If run from a pull request it adds a comment
 # showing the diffs.
