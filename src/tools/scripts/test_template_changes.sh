@@ -57,8 +57,8 @@ echo "${DIFF_OUTPUT}"
 
 if [ -n "${DIFF_OUTPUT}" ]; then
   ESCAPED_OUTPUT=$(echo "$DIFF_OUTPUT" | sed -e 's/\n/%0A/g' -e 's/\r/%0D/g' -e 's/\%/%25/g')
-  PR_COMMENT="The following diffs were found:%0A\`\`\`${ESCAPED_OUTPUT}\`\`\`"
-  echo "::set-env name=PR_COMMENT::\"${PR_COMMENT}\""
+  PR_COMMENT="The following diffs were found:%0A\\\`\\\`\\\`${ESCAPED_OUTPUT}\\\`\\\`\\\`"
+  echo "::set-env name=PR_COMMENT::${PR_COMMENT}"
 fi
 
 echo "Removing templates backup"
