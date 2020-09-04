@@ -57,7 +57,7 @@ echo "${DIFF_OUTPUT}"
 
 if [ -n "${DIFF_OUTPUT}" ]; then
   PR_COMMENT="The following diffs were found:%0A`${DIFF_OUTPUT}```"
-  echo "::set-env name=PR_COMMENT::${DIFF_OUTPUT}"
+  echo "::set-env name=PR_COMMENT::${PR_COMMENT}"
 fi
 
 echo "Removing templates backup"
