@@ -10,7 +10,7 @@ discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+last_updated: 2020-09-01T00:00:00.000Z
 figure_lock: 18
 ---
 
@@ -31,7 +31,7 @@ Sending smaller JavaScript bundles to the browser is the best way to reduce down
 {{ figure_markup(ref="figref1",
   image="fig1.png",
   caption="Distribution of JavaScript bytes per page.",
-  description="Bar chart showing 70 bytes of JavaScript are used in the p10 percentile, 174 bytes for p25, 373 bytes for p50, 693 bytes for p75, and 1,093 bytes for p90",
+  description="Bar chart showing 70 bytes of JavaScript are used in the 10th percentile, 174 bytes for 25th percentile, 373 bytes for 50th percentile, 693 bytes for 75th percentile, and 1,093 bytes for 90th percentile",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive"
   )
 }}
@@ -43,7 +43,7 @@ Looking at these numbers, it's only natural to wonder if this is too much JavaSc
 {{ figure_markup(
   image="fig2.png",
   caption="Distribution of JavaScript per page by device.",
-  description="Bar chart showing 76 bytes/65 bytes of JavaScript are used in the p10 percentile on desktop and mobile respectively, 186/164 bytes for p25, 391/359 bytes for p50, 721/668 bytes for p75, and 1,131/1,060 bytes for p90.",
+  description="Bar chart showing 76 bytes/65 bytes of JavaScript are used in the 10th percentile on desktop and mobile respectively, 186/164 bytes for 25th percentile, 391/359 bytes for 50th percentile, 721/668 bytes for 75th percentile, and 1,131/1,060 bytes for 90th percentile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive"
   )
 }}
@@ -59,7 +59,7 @@ We can get an idea by analyzing main thread processing times for V8 at different
 {{ figure_markup(
   image="fig3.png",
   caption="V8 Main thread processing times by device.",
-  description="Bar chart showing 141 ms/377 ms of processing time is used in the p10 percentile on desktop and mobile respectively, 352/988 ms for p25, 849/2,437 ms for p50, 1,850/5,518 ms for p75, and 3,543/10,735 ms for p90.",
+  description="Bar chart showing 141 ms/377 ms of processing time is used in the 10th percentile on desktop and mobile respectively, 352/988 ms for 25th percentile, 849/2,437 ms for 50th percentile, 1,850/5,518 ms for 75th percentile, and 3,543/10,735 ms for 90th percentile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive"
   )
 }}
@@ -84,7 +84,7 @@ One avenue worth exploring when trying to analyze the amount of JavaScript used 
 {{ figure_markup(
   image="fig5.png",
   caption="Distribution of total JavaScript requests.",
-  description="Bar chart showing 4/4 requests for desktop and mobile respectively are used in the p10 percentile, 10/9 in p25, 19/18 in p50, 33/32 in p75 and 53/52 in p90.",
+  description="Bar chart showing 4/4 requests for desktop and mobile respectively are used in the 10th percentile, 10/9 in 25th percentile, 19/18 in 50th percentile, 33/32 in 75th percentile and 53/52 in 90th percentile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive"
   )
 }}
@@ -99,8 +99,7 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
 
 {{ figure_markup(
   image="fig6.png",
-  caption="Distribution of first and third-party scripts on desktop.",
-  description="Bar chart showing 0/1 request on desktop are first-party and third-party respectively in p10 percentile, 2/4 in p25, 6/10 in p50, 13/21 in p75, and 24/38 in p90.",
+  caption="Bar chart showing 0/1 request on desktop are first-party and third-party respectively in 10th percentile, 2/4 in 25th percentile, 6/10 in 50th percentile, 13/21 in 75th percentile, and 24/38 in 90th percentile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"
   )
 }}
@@ -108,7 +107,7 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
 {{ figure_markup(
   image="fig7.png",
   caption="Distribution of first and third party scripts on mobile.",
-  description="Bar chart showing 0/1 request on mobile are first-party and third-party respectively in p10 percentile, 2/3 in p25, 5/9 in p50, 13/20 in p75, and 23/36 in p90.",
+  description="Bar chart showing 0/1 request on mobile are first-party and third-party respectively in 10th percentile, 2/3 in 25th percentile, 5/9 in 50th percentile, 13/20 in 75th percentile, and 23/36 in 90th percentile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive"
   )
 }}
@@ -118,7 +117,7 @@ For both mobile and desktop clients, more third-party requests are sent than fir
 {{ figure_markup(
   image="fig8.png",
   caption="Distribution of total JavaScript downloaded on desktop.",
-  description="Bar chart showing 0/17 bytes of JavaScript are downloaded on desktop for first-party and third-party requests respectively in the p10 percentile, 11/62 in p25, 89/232 in p50, 200/525 in p75, and 404/900 in p90.",
+  description="Bar chart showing 0/17 bytes of JavaScript are downloaded on desktop for first-party and third-party requests respectively in the 10th percentile, 11/62 in 25th percentile, 89/232 in 50th percentile, 200/525 in 75th percentile, and 404/900 in 90th percentile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive"
   )
 }}
@@ -126,7 +125,7 @@ For both mobile and desktop clients, more third-party requests are sent than fir
 {{ figure_markup(
   image="fig9.png",
   caption="Distribution of total JavaScript downloaded on mobile.",
-  description="Bar chart showing 0/17 bytes of JavaScript are downloaded on mobile for first-party and third-party requests respectively in the p10 percentile, 6/54 in p25, 83/217 in p50, 189/477 in p75, and 380/827 in p90.",
+  description="Bar chart showing 0/17 bytes of JavaScript are downloaded on mobile for first-party and third-party requests respectively in the 10th percentile, 6/54 in 25th percentile, 83/217 in 50th percentile, 189/477 in 75th percentile, and 380/827 in 90th percentile.",
   sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive"
   )
 }}
