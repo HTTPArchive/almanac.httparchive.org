@@ -56,7 +56,7 @@ LAST_TAGGED_VERSION=$(git tag -l "v*" | tail -1)
 echo "Last tagged version: ${LAST_TAGGED_VERSION}"
 if [[ "${LAST_TAGGED_VERSION}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   #Split LAST_TAGGED_VERSION on dots (.) into SEMVER
-  IFS=\. read -a SEMVER <<<"${LAST_TAGGED_VERSION}"
+  IFS=\. read -r -a SEMVER <<<"${LAST_TAGGED_VERSION}"
   MAJOR="${SEMVER[0]}"
   MINOR="${SEMVER[1]}"
   PATCH="${SEMVER[2]}"
