@@ -1,6 +1,10 @@
 #standardSQL
 # page almanac favicon image types grouped by device and type M217
 
+CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
+  ROUND(SAFE_DIVIDE(freq, total), 4)
+);
+
 # returns all the data we need from _almanac
 CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
 RETURNS STRUCT<
@@ -8,26 +12,30 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    // var almanac = JSON.parse(almanac_string); // LIVE
-
-    // TEST
-    var almanac = {
-       "link-nodes": {
-          "total": 36,
-          "nodes": [{
-              "tagName": "link",
-              "rel": "icon",
-              "type": "image/png",
-              "href": "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.png?hgfhfgdh"
-          }]
-       }
-    };
-    if (Math.floor(Math.random() * 3) == 0) {
-      almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.jpg?hgfhfgdh";
-    } else if (Math.floor(Math.random() * 3) == 0) {
-      almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.svg";
-    } else if (Math.floor(Math.random() * 3) == 0) {
-      almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.gif";
+    var almanac;
+    if (true) { // LIVE = true
+      almanac = JSON.parse(almanac_string); // LIVE
+    }
+    else {
+      // TEST
+      almanac = {
+        "link-nodes": {
+            "total": 36,
+            "nodes": [{
+                "tagName": "link",
+                "rel": "icon",
+                "type": "image/png",
+                "href": "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.png?hgfhfgdh"
+            }]
+        }
+      };
+      if (Math.floor(Math.random() * 3) == 0) {
+        almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.jpg?hgfhfgdh";
+      } else if (Math.floor(Math.random() * 3) == 0) {
+        almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.svg";
+      } else if (Math.floor(Math.random() * 3) == 0) {
+        almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.gif";
+      }
     }
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
@@ -69,20 +77,23 @@ return result;
 
 SELECT
   client,
-  COUNT(0) AS total,
+  almanac_info.image_type_extension AS image_type_extension,
 
-  almanac_info.image_type_extension AS image_type_extension
+  COUNT(0) AS freq,
+
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS pct
 
   FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        get_almanac_info('') AS almanac_info  # TEST
-        #get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
+        #get_almanac_info('') AS almanac_info  # TEST
+        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
       FROM
-        `httparchive.sample_data.pages_*` # TEST
+        #`httparchive.sample_data.pages_*` # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
     )
 GROUP BY
   client,
   image_type_extension
-ORDER BY total DESC
+ORDER BY freq DESC

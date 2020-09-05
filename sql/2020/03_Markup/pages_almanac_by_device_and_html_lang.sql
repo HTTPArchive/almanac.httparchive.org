@@ -10,23 +10,27 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 CREATE TEMPORARY FUNCTION get_almanac_html_lang(almanac_string STRING)
 RETURNS STRING LANGUAGE js AS '''
 try {
-    // var almanac = JSON.parse(almanac_string); // LIVE
-
-    // TEST
-    var almanac = {    
-      "html_node": {
-          "tagName": "html",
-          "xmlns": "http://www.w3.org/1999/xhtml",
-          "xml:lang": "en-US",
-          "prefix": "og: https://ogp.me/ns#"
-      } 
-    };
-    if (Math.floor(Math.random() * 3) == 0) {
-      almanac.html_node.lang = "en-AU";
-    } else if (Math.floor(Math.random() * 2) == 0) {
-      almanac.html_node.lang = "es-mx";
-    } else if (Math.floor(Math.random() * 2) == 0) {
-      almanac.html_node.lang = "EN-US";
+    var almanac;
+    if (true) { // LIVE = true
+      almanac = JSON.parse(almanac_string); // LIVE
+    }
+    else {
+      // TEST
+      almanac = {    
+        "html_node": {
+            "tagName": "html",
+            "xmlns": "http://www.w3.org/1999/xhtml",
+            "xml:lang": "en-US",
+            "prefix": "og: https://ogp.me/ns#"
+        } 
+      };
+      if (Math.floor(Math.random() * 3) == 0) {
+        almanac.html_node.lang = "en-AU";
+      } else if (Math.floor(Math.random() * 2) == 0) {
+        almanac.html_node.lang = "es-mx";
+      } else if (Math.floor(Math.random() * 2) == 0) {
+        almanac.html_node.lang = "EN-US";
+      }
     }
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return '';
@@ -50,10 +54,11 @@ SELECT
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        get_almanac_html_lang('') AS almanac_html_lang  # TEST
-        #get_almanac_html_lang(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_html_lang # LIVE
+        #get_almanac_html_lang('') AS almanac_html_lang  # TEST
+        get_almanac_html_lang(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_html_lang # LIVE
       FROM
-        `httparchive.sample_data.pages_*` # TEST
+        #`httparchive.sample_data.pages_*` # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
     )
 GROUP BY
   client,

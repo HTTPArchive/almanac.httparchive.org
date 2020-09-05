@@ -33,7 +33,8 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total_pages_with_obsolete_elements, # not accurate unless you only care about pages with obsolete element
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_from_pages_with_obsolete_elements
 FROM
-  `httparchive.sample_data.pages_*`,
+  #`httparchive.sample_data.pages_*`, # TEST
+  `httparchive.pages.2020_08_01_*`, # LIVE
   UNNEST(get_element_types(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type
 WHERE
   is_obsolete(element_type)

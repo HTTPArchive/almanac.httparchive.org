@@ -13,39 +13,45 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    //var wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
+    var wpt_bodies;
 
-    // TEST
-    var wpt_bodies = {
-      raw_html: {
-        comment_count: Math.floor(Math.random() * 100),
-        conditional_comment_count: Math.floor(Math.random() * 100),
-        head_size: Math.floor(Math.random() * 1000),
-        body_size: Math.floor(Math.random() * 10000)
-      },
-      "headings": {
-        "rendered": {
-            "first_non_empty_heading_hidden": false,
-            "h1": {
-                "total": 1,
-                "non_empty_total": 1,
-                "characters": 343,
-                "words": 20
+    if (true) { // LIVE = true
+      wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
+    }
+    else 
+    {
+      // TEST
+      wpt_bodies = {
+        raw_html: {
+          comment_count: Math.floor(Math.random() * 100),
+          conditional_comment_count: Math.floor(Math.random() * 100),
+          head_size: Math.floor(Math.random() * 1000),
+          body_size: Math.floor(Math.random() * 10000)
+        },
+        "headings": {
+          "rendered": {
+              "first_non_empty_heading_hidden": false,
+              "h1": {
+                  "total": 1,
+                  "non_empty_total": 1,
+                  "characters": 343,
+                  "words": 20
+              }
+          }
+        },
+        "anchors": {
+          "rendered": {
+            "target_blank": {
+                  "total": 0,
+                  "noopener_noreferrer": 0,
+                  "noopener": 0,
+                  "noreferrer": 0,
+                  "neither": 8
             }
-        }
-      },
-      "anchors": {
-        "rendered": {
-          "target_blank": {
-                "total": 0,
-                "noopener_noreferrer": 0,
-                "noopener": 0,
-                "noreferrer": 0,
-                "neither": 8
           }
         }
-      }
-    }; 
+      }; 
+    }
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -82,10 +88,11 @@ FROM (
     _TABLE_SUFFIX AS client,
     percentile,
     url,
-    get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-    #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info # LIVE
+    #get_wpt_bodies_info('') AS wpt_bodies_info # TEST
+    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info # LIVE
   FROM
-  `httparchive.sample_data.pages_*`, # TEST
+  #`httparchive.sample_data.pages_*`, # TEST
+  `httparchive.pages.2020_08_01_*`, # LIVE
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY

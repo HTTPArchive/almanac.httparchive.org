@@ -28,7 +28,8 @@ SELECT
   SUM(element_type_info.freq) AS freq_m201, # M201 - total count from all pages
   AS_PERCENT(SUM(element_type_info.freq), SUM(SUM(element_type_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m202 # M202
 FROM
-  `httparchive.sample_data.pages_*`, # TEST
+  #`httparchive.sample_data.pages_*`, # TEST
+  `httparchive.pages.2020_08_01_*`, # LIVE
   UNNEST(get_element_types_info(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type_info
 GROUP BY
   client,

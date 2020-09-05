@@ -24,7 +24,8 @@ SELECT
   get_element_types_used(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_types_used,
   COUNT(0) AS freq
 FROM
-  `httparchive.sample_data.pages_*` # TEST
+  #`httparchive.sample_data.pages_*` # TEST
+  `httparchive.pages.2020_08_01_*` # LIVE
 GROUP BY
   client,
   element_types_used

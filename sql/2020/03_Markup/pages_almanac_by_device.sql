@@ -1,12 +1,13 @@
 #standardSQL
-# page payload metrics grouped by device
+# pages almanac metrics grouped by device
+
+# real run estimated at $4.08 and took 48 seconds
 
 # to speed things up there is only one js function per custom metric property. It returns a STRUCT with all the data needed
-# current test gathers 3 bits of incormation from teo custom petric properties
-# I tried to do a single js function processing payload but it was very slow (50 sec) because of parsing the full payload in js
+# current test gathers 3 bits of incormation from the custom petric properties
+# I tried to do a single js function processing the whole payload but it was very slow (50 sec) because of parsing the full payload in js
 # this uses JSON_EXTRACT_SCALAR to first get the custom metrics json string, and only passes those into the js functions
 # Estimate about twice the speed of the original code. But should scale up far better as the custom metrics are only parsed once.
-# real test ($2.90) 39.1 sec
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -27,65 +28,89 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    // var almanac = JSON.parse(almanac_string); // LIVE
-
-    // TEST
-    var almanac = {
-      "scripts": {
-        "total": 4,
-        "nodes": [
-            {
-                "tagName": "script",
-                "async": "",
-                "src": "//www.google-analytics.com/analytics.js"
-            },
-            {
-                "tagName": "script"
-            },
-            {
-                "tagName": "script",
-                "type": "application/ld+json",
-                "class": "yoast-schema-graph"
-            },
-            {
-                "tagName": "script",
-                "type": "text/javascript",
-                "data-cfasync": ""
-            }
-        ]
-      },
-      "headings_order": [
-        1,
-        2,
-        2,
-        3,
-        2
-      ],
-      "videos": {
-        "total": 2,
-        "nodes": [{
-                "tagName": "video",
-                "autoplay": ""
-            },
-            {
-                "tagName": "video",
-                "autoplay": "false"
-            }],
-        "attribute_usage_count": {},
-        "tracks": {
-            "total": 0,
-            "nodes": [],
-            "attribute_usage_count": {}
-        }
-      },
-      "html_node": {
-          "tagName": "html",
-          "xmlns": "http://www.w3.org/1999/xhtml",
-          "lang": "en-US",
-          "xml:lang": "en-US",
-          "prefix": "og: https://ogp.me/ns#"
-      } 
-    };
+    var almanac;
+    if (true) { // LIVE = true
+      almanac = JSON.parse(almanac_string); // LIVE
+    }
+    else {
+      // TEST
+      almanac = {
+        "scripts": {
+          "total": Math.floor(Math.random() * 4),
+          "nodes": []
+        },
+        "headings_order": [
+          1,
+          2,
+          2,
+          3,
+          2
+        ],
+        "videos": {
+          "total": 2,
+          "nodes": [],
+          "attribute_usage_count": {},
+          "tracks": {
+              "total": 0,
+              "nodes": [],
+              "attribute_usage_count": {}
+          }
+        },
+        "html_node": {
+            "tagName": "html",
+            "xmlns": "http://www.w3.org/1999/xhtml",
+            "xml:lang": "en-US",
+            "prefix": "og: https://ogp.me/ns#"
+        } 
+      };
+      if(Math.floor(Math.random() * 10)) {
+        almanac.scripts.nodes.push({
+            "tagName": "script",
+            "async": "",
+            "src": "//www.google-analytics.com/analytics.js"
+        });
+      }
+      if(Math.floor(Math.random() * 10)) {
+        almanac.scripts.nodes.push({
+            "tagName": "script"
+        });
+      }
+      if(Math.floor(Math.random() * 10)) {
+        almanac.scripts.nodes.push({
+            "tagName": "script",
+            "type": "application/ld+json",
+            "class": "yoast-schema-graph"
+        });
+      }
+      if(Math.floor(Math.random() * 10)) {
+        almanac.scripts.nodes.push({
+            "tagName": "script",
+            "type": "text/javascript",
+            "data-cfasync": ""
+        });
+      }
+      if(Math.floor(Math.random() * 3)) {
+        almanac.headings_order = [1,4,2,3,8];
+      }
+      if(Math.floor(Math.random() * 10)) {
+        almanac.videos.nodes.push({
+              "tagName": "video",
+              "autoplay": ""
+          });
+      }
+      if(Math.floor(Math.random() * 10)) {
+        almanac.videos.nodes.push({
+              "tagName": "video",
+              "autoplay": "false"
+          });
+      }
+      if(Math.floor(Math.random() * 3)) {
+        almanac.html_node.lang = "en-US";
+      }
+      if(Math.floor(Math.random() * 5)) {
+        almanac.html_node.lang = "en-UK";
+      }
+    }
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
@@ -167,10 +192,11 @@ FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        get_almanac_info('') AS almanac_info  # TEST
-        #get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
+        #get_almanac_info('') AS almanac_info  # TEST
+        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
       FROM
-        `httparchive.sample_data.pages_*` # TEST
+        #`httparchive.sample_data.pages_*` # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
     )
 GROUP BY
   client

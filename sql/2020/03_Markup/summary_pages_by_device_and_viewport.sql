@@ -27,7 +27,8 @@ SELECT
   # SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
   AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m219 
 FROM
-  `httparchive.sample_data.summary_pages_*` # TEST
+  #`httparchive.sample_data.summary_pages_*` # TEST
+  `httparchive.summary_pages.2020_08_01_*` # LIVE
 GROUP BY
   client,
   meta_viewport

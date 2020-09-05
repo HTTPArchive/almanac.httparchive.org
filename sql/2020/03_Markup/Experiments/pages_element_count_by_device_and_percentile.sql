@@ -50,6 +50,7 @@ FROM (
     get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
   FROM
   `httparchive.sample_data.pages_*`, # TEST
+  #`httparchive.pages.2020_08_01_*`, # LIVE
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY

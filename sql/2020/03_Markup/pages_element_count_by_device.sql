@@ -1,12 +1,5 @@
 #standardSQL
-# page element_count metrics grouped by device
-
-# to speed things up there is only one js function per custom metric property. It returns a STRUCT with all the data needed
-# current test gathers 3 bits of incormation from teo custom petric properties
-# I tried to do a single js function processing payload but it was very slow (50 sec) because of parsing the full payload in js
-# this uses JSON_EXTRACT_SCALAR to first get the custom metrics json string, and only passes those into the js functions
-# Estimate about twice the speed of the original code. But should scale up far better as the custom metrics are only parsed once.
-# real test ($2.90) 39.1 sec
+# pages element_count metrics grouped by device
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -74,7 +67,8 @@ SELECT
         _TABLE_SUFFIX AS client,
         get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
       FROM
-        `httparchive.sample_data.pages_*` # TEST
+        #`httparchive.sample_data.pages_*` # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
     )
 GROUP BY
   client

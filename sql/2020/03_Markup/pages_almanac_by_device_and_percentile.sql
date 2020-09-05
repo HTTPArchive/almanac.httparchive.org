@@ -1,6 +1,8 @@
 #standardSQL
 # percientile data from almanac per device
 
+# live run estimated $4.08 and took 2 min 28 sec
+
 # returns all the data we need from _almanac
 CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
 RETURNS STRUCT<
@@ -11,34 +13,45 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    // var almanac = JSON.parse(almanac_string); // LIVE
-
-    // TEST
-    almanac = {
-      "scripts": {
-        "total": 4,
-        "nodes": [
-            {
-                "tagName": "script",
-                "async": "",
-                "src": "//www.google-analytics.com/analytics.js"
-            },
-            {
-                "tagName": "script"
-            },
-            {
-                "tagName": "script",
-                "type": "application/ld+json",
-                "class": "yoast-schema-graph"
-            },
-            {
-                "tagName": "script",
-                "type": "text/javascript",
-                "data-cfasync": ""
-            }
-        ]
-      } 
-    };
+    var almanac;
+    if (true) { // LIVE = true
+      almanac = JSON.parse(almanac_string); // LIVE
+    }
+    else {
+      // TEST
+      almanac = {
+        "scripts": {
+          "total": Math.floor(Math.random() * 4),
+          "nodes": []
+        } 
+      };
+      if(Math.floor(Math.random() * 10)) {
+        almanac.scripts.nodes.push({
+            "tagName": "script",
+            "async": "",
+            "src": "//www.google-analytics.com/analytics.js"
+        });
+      }
+      if(Math.floor(Math.random() * 10)) {
+        almanac.scripts.nodes.push({
+            "tagName": "script"
+        });
+      }
+      if(Math.floor(Math.random() * 10)) {
+        almanac.scripts.nodes.push({
+            "tagName": "script",
+            "type": "application/ld+json",
+            "class": "yoast-schema-graph"
+        });
+      }
+      if(Math.floor(Math.random() * 10)) {
+        almanac.scripts.nodes.push({
+            "tagName": "script",
+            "type": "text/javascript",
+            "data-cfasync": ""
+        });
+      }
+    }
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
@@ -75,10 +88,11 @@ FROM (
     _TABLE_SUFFIX AS client,
     percentile,
     url,
-    get_almanac_info('') AS almanac_info  # TEST
-     #get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
+     #get_almanac_info('') AS almanac_info  # TEST
+    get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
   FROM
-  `httparchive.sample_data.pages_*`, # TEST
+  #`httparchive.sample_data.pages_*`, # TEST
+  `httparchive.pages.2020_08_01_*`, # LIVE
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY
