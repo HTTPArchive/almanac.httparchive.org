@@ -52,15 +52,15 @@ echo "Please test the site locally"
 
 check_continue "Are you ready to deploy?"
 
-LAST_TAGGED_VERSION=$(git tag -l "v*" | tail)
+LAST_TAGGED_VERSION=$(git tag -l "v*" | tail -1)
 echo "Last tagged version: ${LAST_TAGGED_VERSION}"
 if [[ "${LAST_TAGGED_VERSION}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-  SEMVER=( "${LAST_TAGGED_VERSION//./ }" )
+  SEMVER=(${LAST_TAGGED_VERSION//./ })
   MAJOR="${SEMVER[0]}"
   MINOR="${SEMVER[1]}"
   PATCH="${SEMVER[2]}"
   NEXT_PATCH=$((PATCH + 1))
-  NEXT_VERSION="$MAJOR.$MINOR.$NEXT_PATCH"
+  NEXT_VERSION="${MAJOR}.${MINOR}.${NEXT_PATCH}"
 else
   echo -e "${AMBER}Warning - last tagged version is not of the format vX.X.X!${RESET_COLOR}"
 fi
@@ -70,9 +70,13 @@ while [[ ! "${TAG_VERSION}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
 do
   echo "Please update major tag version when changing default year"
   echo "Please update minor tag version when adding new languages or other large changes"
-  read -r -p "Please select tag version of the format vX.X.X. [$NEXT_VERSION]: " TAG_VERSION
+  read -r -p "Please select tag version of the format vX.X.X. [${NEXT_VERSION}]: " TAG_VERSION
+  if [[ -z "${TAG_VERSION}" ]]; then
+    TAG_VERSION="${NEXT_VERSION}"
+  fi
 done
-echo "Tagging as ${TAG_VERSION}"
+check_continue "Tag as ${TAG_VERSION}?"
+
 LONG_DATE=$(date -u +%Y-%m-%d\ %H:%M:%S)
 git tag -a "${TAG_VERSION}" -m "Version ${TAG_VERSION} ${LONG_DATE}"
 echo "Tagged ${TAG_VERSION} with message 'Version ${TAG_VERSION} ${LONG_DATE}'"
