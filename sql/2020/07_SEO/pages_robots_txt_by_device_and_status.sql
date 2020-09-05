@@ -13,31 +13,37 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    //var robots_txt = JSON.parse(robots_txt_string); // LIVE
+    var robots_txt;
 
-    // TEST
-    var robots_txt = {
-      "redirected": false,
-      "status": 200,
-      "size": 205,
-      "comment_lines": 0,
-      "allow_lines": 0,
-      "disallow_lines": 5,
-      "user_agents": [
-          "LinkChecker",
-          "*"
-      ],
-      "sitemaps": [
-          "https://www.mozilla.org/sitemap.xml"
-      ]
-    }; 
+    if (true) { // LIVE = true
+      robots_txt = JSON.parse(robots_txt_string); // LIVE
+    }
+    else 
+    {
+      // TEST
+      robots_txt = {
+        "redirected": false,
+        "status": 200,
+        "size": 205,
+        "comment_lines": 0,
+        "allow_lines": 0,
+        "disallow_lines": 5,
+        "user_agents": [
+            "LinkChecker",
+            "*"
+        ],
+        "sitemaps": [
+            "https://www.mozilla.org/sitemap.xml"
+        ]
+      }; 
 
-    if (Math.floor(Math.random() * 10) == 0) {
-      robots_txt.status = 500;
-    } else if (Math.floor(Math.random() * 10) == 0) {
-      robots_txt.status = 301;
-    } else if (Math.floor(Math.random() * 3) == 0) {
-      robots_txt.status = 404;
+      if (Math.floor(Math.random() * 10) == 0) {
+        robots_txt.status = 500;
+      } else if (Math.floor(Math.random() * 10) == 0) {
+        robots_txt.status = 301;
+      } else if (Math.floor(Math.random() * 3) == 0) {
+        robots_txt.status = 404;
+      }
     }
 
     if (Array.isArray(robots_txt) || typeof robots_txt != 'object') return result;
@@ -62,10 +68,11 @@ SELECT
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        get_robots_txt_info('') AS robots_txt_info # TEST
-        #get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info # LIVE      
+        #get_robots_txt_info('') AS robots_txt_info # TEST
+        get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info # LIVE      
       FROM
-        `httparchive.sample_data.pages_*` # TEST
+        #`httparchive.sample_data.pages_*` # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
     )
 GROUP BY
   client,

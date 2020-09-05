@@ -10,16 +10,18 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
     number_links INT64
-
-
-
 > LANGUAGE js AS '''
 var result = {};
 try {
-    //var wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
+    var wpt_bodies;
 
-     // TEST
-    var wpt_bodies = {
+    if (true) { // LIVE = true
+      wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
+    }
+    else 
+    {
+      // TEST
+      wpt_bodies = {
         "anchors": {
             "rendered": {
                 "crawlable": {
@@ -37,14 +39,14 @@ try {
                 "other_property":  Math.floor(Math.random() * 3)
             }
         }
-
-    };  
+      };  
+    }
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
-    if (wpt_bodies.anchors) {
+    if (wpt_bodies.anchors && wpt_bodies.anchors.rendered) {
 
-      result.number_links = wpt_bodies_info.anchors.rendered.other_property;
+      result.number_links = wpt_bodies.anchors.rendered.other_property;
     }
 
 } catch (e) {}
@@ -60,9 +62,10 @@ FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE       
+        #get_wpt_bodies_info('') AS wpt_bodies_info # TEST
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE       
       FROM
-        `httparchive.sample_data.pages_*` test # TEST
+        #`httparchive.sample_data.pages_*`  # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
     )
     GROUP BY client, links

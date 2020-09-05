@@ -1,5 +1,5 @@
 #standardSQL
-# page markup metrics grouped by device and image loading attributes
+# pages markup metrics grouped by device and image loading attributes
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -26,41 +26,47 @@ function getKey(dict){
 }
 
 try {
-    //var markup = JSON.parse(markup_string); // LIVE
+    var markup;
 
-    // TEST
-    var markup = {
-    "images": {
-      "picture": {
-        "total": 0
-        },
-      "source": {
-        "total": 0,
-        "src_total": 0,
-        "srcset_total": 0,
-        "media_total": 0,
-        "type_total": 0
-        },
-      "img": {
-        "total": 37,
-        "src_total": 37,
-        "srcset_total": 7,
-        "alt": {
-          "missing": 1,
-          "blank": 36,
-          "present": 0
-      },
-        "loading": {
-         "auto": Math.floor(Math.random() * 3),
-         "lazy": Math.floor(Math.random() * 3),
-         "eager": Math.floor(Math.random() * 3),
-         "invalid": Math.floor(Math.random() * 3),
-         "missing": Math.floor(Math.random() * 30),
-         "blank": Math.floor(Math.random() * 3)
-         }
-      }
-      }
+    if (true) { // LIVE = true
+      markup = JSON.parse(markup_string); // LIVE
+    }
+    else 
+    {
+      // TEST
+      markup = {
+        "images": {
+          "picture": {
+            "total": 0
+            },
+          "source": {
+            "total": 0,
+            "src_total": 0,
+            "srcset_total": 0,
+            "media_total": 0,
+            "type_total": 0
+            },
+          "img": {
+            "total": 37,
+            "src_total": 37,
+            "srcset_total": 7,
+            "alt": {
+              "missing": 1,
+              "blank": 36,
+              "present": 0
+          },
+            "loading": {
+            "auto": Math.floor(Math.random() * 3),
+            "lazy": Math.floor(Math.random() * 3),
+            "eager": Math.floor(Math.random() * 3),
+            "invalid": Math.floor(Math.random() * 3),
+            "missing": Math.floor(Math.random() * 30),
+            "blank": Math.floor(Math.random() * 3)
+            }
+          }
+        }
       };
+    }
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
@@ -85,13 +91,16 @@ FROM
       SELECT 
         _TABLE_SUFFIX AS client,
         total,
-        get_markup_info('') AS markup_info # TEST
-        #get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info # LIVE      
+        #get_markup_info('') AS markup_info # TEST
+        get_markup_info(JSON_EXTRACT_SCALAR(payload, '$._markup')) AS markup_info # LIVE      
       FROM
-        `httparchive.sample_data.pages_*` # TEST
+        #`httparchive.sample_data.pages_*` # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
         JOIN
   (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-  FROM `httparchive.sample_data.pages_*` # TEST
+  FROM 
+  #`httparchive.sample_data.pages_*` # TEST
+  `httparchive.pages.2020_08_01_*` # LIVE
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX)
     ),UNNEST(markup_info.loading) as loading

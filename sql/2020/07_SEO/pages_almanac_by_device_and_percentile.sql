@@ -8,14 +8,20 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    // var almanac = JSON.parse(almanac_string); // LIVE
+    var almanac;
 
-    // TEST
-    var almanac = {
-      "videos": {
-        "total": Math.floor(Math.random() * 3)
-      }
-    };
+    if (true) { // LIVE = true
+      almanac = JSON.parse(almanac_string); // LIVE
+    }
+    else 
+    {
+      // TEST
+      almanac = {
+        "videos": {
+          "total": Math.floor(Math.random() * 3)
+        }
+      };
+    }
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
@@ -40,10 +46,11 @@ FROM (
     _TABLE_SUFFIX AS client,
     percentile,
     url,
-    get_almanac_info('') AS almanac_info  # TEST
-     #get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
+    #get_almanac_info('') AS almanac_info  # TEST
+    get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
   FROM
-  `httparchive.sample_data.pages_*`, # TEST
+  #`httparchive.sample_data.pages_*`, # TEST
+  `httparchive.pages.2020_08_01_*`, # LIVE
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY

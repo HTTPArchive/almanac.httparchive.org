@@ -1,5 +1,5 @@
 #standardSQL
-# page robots_txt metrics grouped by device and status code
+# pages robots_txt metrics grouped by device and status code
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -13,33 +13,39 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    //var robots_txt = JSON.parse(robots_txt_string); // LIVE
+    var robots_txt;
 
-    // TEST
-    var robots_txt = {
-      "redirected": false,
-      "status": 200,
-      "size": 205,
-      "comment_lines": 0,
-      "allow_lines": 0,
-      "disallow_lines": 5,
-      "user_agents": [],
-      "sitemaps": [
-          "https://www.mozilla.org/sitemap.xml"
-      ]
-    }; 
-    if (Math.floor(Math.random() * 20) == 0) {
-      robots_txt.user_agents.push("LinkChecker");
+    if (true) { // LIVE = true
+      robots_txt = JSON.parse(robots_txt_string); // LIVE
     }
-    if (Math.floor(Math.random() * 2) == 0) {
-      robots_txt.user_agents.push("*");
-      if (Math.floor(Math.random() * 2) == 0) { // sometimes two
-        robots_txt.user_agents.push("*");
+    else 
+    {
+      // TEST
+      robots_txt = {
+        "redirected": false,
+        "status": 200,
+        "size": 205,
+        "comment_lines": 0,
+        "allow_lines": 0,
+        "disallow_lines": 5,
+        "user_agents": [],
+        "sitemaps": [
+            "https://www.mozilla.org/sitemap.xml"
+        ]
+      }; 
+      if (Math.floor(Math.random() * 20) == 0) {
+        robots_txt.user_agents.push("LinkChecker");
       }
-    }
+      if (Math.floor(Math.random() * 2) == 0) {
+        robots_txt.user_agents.push("*");
+        if (Math.floor(Math.random() * 2) == 0) { // sometimes two
+          robots_txt.user_agents.push("*");
+        }
+      }
 
-    if (Math.floor(Math.random() * 4) == 0) {
-      robots_txt.user_agents.push("googlebot");
+      if (Math.floor(Math.random() * 4) == 0) {
+        robots_txt.user_agents.push("googlebot");
+      }
     }
 
     if (Array.isArray(robots_txt) || typeof robots_txt != 'object') return result;
@@ -65,15 +71,18 @@ FROM
   SELECT 
     _TABLE_SUFFIX AS client,
     total,
-    get_robots_txt_info('') AS robots_txt_info # TEST
-    #get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info # LIVE   
+    #get_robots_txt_info('') AS robots_txt_info # TEST
+    get_robots_txt_info(JSON_EXTRACT_SCALAR(payload, '$._robots_txt')) AS robots_txt_info # LIVE   
   FROM
-    `httparchive.sample_data.pages_*` test # TEST   
+    #`httparchive.sample_data.pages_*` # TEST   
+    `httparchive.pages.2020_08_01_*` # LIVE
   JOIN
   ( 
     # to get an accurate total of pages per device. also seems fast
     SELECT _TABLE_SUFFIX, COUNT(0) AS total 
-    FROM `httparchive.sample_data.pages_*` # TEST
+    FROM 
+    #`httparchive.sample_data.pages_*` # TEST
+    `httparchive.pages.2020_08_01_*` # LIVE
     GROUP BY _TABLE_SUFFIX
   ) 
   USING (_TABLE_SUFFIX)

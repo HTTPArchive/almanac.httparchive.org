@@ -13,14 +13,20 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    // var almanac = JSON.parse(almanac_string); // LIVE
+    var almanac;
 
-    // TEST
-    var almanac = {
-      "videos": {
-        "total": Math.floor(Math.random() * 3)
-      }
-    };
+    if (true) { // LIVE = true
+      almanac = JSON.parse(almanac_string); // LIVE
+    }
+    else 
+    {
+      // TEST
+      almanac = {
+        "videos": {
+          "total": Math.floor(Math.random() * 3)
+        }
+      };
+    }
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
@@ -41,16 +47,15 @@ SELECT
   AS_PERCENT(COUNTIF(almanac_info.videos_total > 0), COUNT(0)) AS pct_has_videos,
   # AS_PERCENT(COUNTIF(almanac_info.videos_total > 0), SUM(COUNT(0) OVER())) AS pct_overall_has_videos, # Could not get this to work? 
 
-  # add more fields here...
-
 FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        get_almanac_info('') AS almanac_info  # TEST
-        #get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
+        #get_almanac_info('') AS almanac_info  # TEST
+        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
       FROM
-        `httparchive.sample_data.pages_*` # TEST
+        #`httparchive.sample_data.pages_*` # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
     )
 GROUP BY
   client

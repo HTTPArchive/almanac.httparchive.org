@@ -1,6 +1,8 @@
 #standardSQL
 # Gather SEO data from lighthouse
 
+# live run is about $9
+
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
   ROUND(SAFE_DIVIDE(freq, total), 4)
@@ -41,5 +43,6 @@ FROM (
     JSON_EXTRACT_SCALAR(report, '$.audits.robots-txt.score') = '1' AS robots_txt_valid,
     JSON_EXTRACT_SCALAR(report, '$.audits.link-text.score') = '1' AS link_text_descriptive
   FROM
-    `httparchive.almanac.lighthouse_mobile_1k` # TEST
+    #`httparchive.almanac.lighthouse_mobile_1k` # TEST
+    `httparchive.lighthouse.2020_08_01_*` # LIVE
     )

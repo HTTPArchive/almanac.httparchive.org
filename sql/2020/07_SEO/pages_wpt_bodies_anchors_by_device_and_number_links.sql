@@ -1,5 +1,5 @@
 #standardSQL
-# page wpt_bodies metrics grouped by device and links
+# pages wpt_bodies metrics grouped by device and links
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -13,10 +13,15 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    //var wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
+    var wpt_bodies;
 
-    // TEST
-    var wpt_bodies = {
+    if (true) { // LIVE = true
+      wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
+    }
+    else 
+    {
+      // TEST
+      wpt_bodies = {
         "anchors": {
             "rendered": {
                 "crawlable": {
@@ -34,13 +39,17 @@ try {
                 "other_property":  Math.floor(Math.random() * 3)
             }
         }
-
-    }; 
+      }; 
+    }
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
-    if (wpt_bodies.anchors) {
-      result.number_links = wpt_bodies_info.anchors.rendered.other_property + wpt_bodies_info.anchors.rendered.same_site + wpt_bodies_info.anchors.rendered.same_property;
+    if (wpt_bodies.anchors && wpt_bodies.anchors.rendered) {
+      var anchors_rendered = wpt_bodies.anchors.rendered;
+      result.number_links = 0;
+      if (anchors_rendered.other_property) result.number_links += anchors_rendered.other_property;
+      if (anchors_rendered.same_site) result.number_links += anchors_rendered.same_site;
+      if (anchors_rendered.same_property) result.number_links += anchors_rendered.same_property;
     }
 
 } catch (e) {}
@@ -52,14 +61,14 @@ client,
 COUNT(*) AS total, 
 wpt_bodies_info.number_links as links
 
-
 FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE       
+        #get_wpt_bodies_info('') AS wpt_bodies_info # TEST
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE       
       FROM
-        `httparchive.sample_data.pages_*` test # TEST
+        #`httparchive.sample_data.pages_*` # TEST
+        `httparchive.pages.2020_08_01_*` # LIVE
     )
     GROUP BY client, links
