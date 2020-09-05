@@ -141,7 +141,7 @@
       </section>
     </div>
 
-    {% if ebook_exists(lang, year) %}
+    {% if ebook_size_in_mb > 0 %}
     <section class="part">
       <h2 id="ebook" class="part-name"><a href="#ebook" class="anchor-link">{{ self.ebook_title() }}</a></h2>
       <div class="chapters">

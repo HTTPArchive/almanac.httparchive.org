@@ -1,6 +1,6 @@
 from flask import redirect, url_for, request, send_from_directory
 from . import app, talisman
-from .helpers import render_template, convert_old_image_path, get_chapter_nextprev
+from .helpers import render_template, convert_old_image_path, get_chapter_nextprev, get_ebook_size_in_mb
 from .validate import validate
 from .config import get_config, DEFAULT_YEAR
 import random
@@ -31,7 +31,9 @@ def root(lang):
 @validate
 def table_of_contents(lang, year):
     config = get_config(year)
-    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config)
+    ebook_size_in_mb = get_ebook_size_in_mb(lang, year)
+    return render_template('%s/%s/table_of_contents.html' % (lang, year), config=config,
+                           ebook_size_in_mb=ebook_size_in_mb)
 
 
 @app.route('/<lang>/<year>/contributors')
