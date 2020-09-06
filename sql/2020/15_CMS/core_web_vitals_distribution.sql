@@ -27,7 +27,7 @@ JOIN (
     url,
     app AS cms
   FROM
-    `httparchive.technologies.2019_08_01_*`
+    `httparchive.technologies.2020_08_01_*`
   WHERE
     category = 'CMS')
 ON
