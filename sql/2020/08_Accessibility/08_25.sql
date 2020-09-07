@@ -3,8 +3,7 @@
 CREATE TEMPORARY FUNCTION getUsedAttributes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(payload);
-  var almanac = JSON.parse($._almanac);
+  const almanac = JSON.parse(payload);
   return Object.keys(almanac.videos.attribute_usage_count);
 } catch (e) {
   return [];
@@ -22,7 +21,7 @@ SELECT
   ROUND(COUNT(0) * 100 / total_sites_with_video, 2) AS pct_of_sites_using_video
 FROM
   `httparchive.almanac.pages_desktop_*`,
-  UNNEST(getUsedAttributes(payload)) AS attribute
+  UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS attribute
 LEFT JOIN (
   SELECT
     client,

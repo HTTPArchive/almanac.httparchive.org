@@ -3,8 +3,7 @@
 CREATE TEMPORARY FUNCTION getShortcuts(payload STRING)
 RETURNS ARRAY<STRUCT<type STRING, shortcut STRING>> LANGUAGE js AS '''
 try {
-  const $ = JSON.parse(payload);
-  const almanac = JSON.parse($._almanac);
+  const almanac = JSON.parse(payload);
 
   const collector = [];
   function addToCollector(array, type) {
@@ -36,7 +35,7 @@ SELECT
   ROUND((COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, type)) * 100, 2) AS pct_of_type_uses
 FROM
   `httparchive.almanac.pages_desktop_*`,
-  UNNEST(getShortcuts(payload)) AS type_and_key
+  UNNEST(getShortcuts(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS type_and_key
 GROUP BY
   client,
   type_and_key.type,

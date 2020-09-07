@@ -3,8 +3,7 @@
 CREATE TEMPORARY FUNCTION getTotalPositiveTabIndexes(payload STRING)
 RETURNS STRUCT<total INT64, total_positive INT64> LANGUAGE js AS '''
 try {
-  const $ = JSON.parse(payload);
-  const almanac = JSON.parse($._almanac);
+  const almanac = JSON.parse(payload);
 
   let total = 0;
   let total_positive = 0;
@@ -32,7 +31,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    getTotalPositiveTabIndexes(payload) AS tab_index_stats
+    getTotalPositiveTabIndexes(JSON_EXTRACT_SCALAR(payload, "$._almanac")) AS tab_index_stats
   FROM
     `httparchive.almanac.pages_desktop_*`
 )

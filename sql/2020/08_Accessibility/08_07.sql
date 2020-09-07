@@ -3,8 +3,7 @@
 CREATE TEMPORARY FUNCTION getUsedExtensions(payload STRING)
 RETURNS ARRAY<STRUCT<extension STRING, total INT64>> LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(payload);
-  var a11y = JSON.parse($._a11y);
+  const a11y = JSON.parse(payload);
 
   return Object.keys(a11y.file_extension_alts.file_extensions).map(key => {
     return {
@@ -38,7 +37,7 @@ SELECT
   ROUND(COUNT(0) * 100 / total_sites, 2) AS pct_sites_using
 FROM
   `httparchive.almanac.pages_desktop_*`,
-  UNNEST(getUsedExtensions(payload)) AS extension_stat
+  UNNEST(getUsedExtensions(JSON_EXTRACT_SCALAR(payload, "$._a11y"))) AS extension_stat
 LEFT JOIN (
   SELECT
     client,

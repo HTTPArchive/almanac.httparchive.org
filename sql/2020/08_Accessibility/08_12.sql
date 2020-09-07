@@ -3,8 +3,7 @@
 CREATE TEMPORARY FUNCTION getEarlyHash(payload STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(payload);
-  var almanac = JSON.parse($._almanac);
+  const almanac = JSON.parse(payload);
   return almanac['seo-anchor-elements'].earlyHash;
 } catch (e) {
   return 0;
@@ -29,7 +28,7 @@ JOIN (
 )
 USING (_TABLE_SUFFIX)
 WHERE
-  getEarlyHash(payload) > 0
+  getEarlyHash(JSON_EXTRACT_SCALAR(payload, "$._almanac")) > 0
 GROUP BY
   client,
   total

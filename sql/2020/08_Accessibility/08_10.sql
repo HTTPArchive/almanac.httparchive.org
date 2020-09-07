@@ -3,8 +3,7 @@
 CREATE TEMPORARY FUNCTION getUsedRoles(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  var $ = JSON.parse(payload);
-  var almanac = JSON.parse($._almanac);
+  const almanac = JSON.parse(payload);
   return Object.keys(almanac.nodes_using_role.usage_and_count);
 } catch (e) {
   return [];
@@ -18,7 +17,7 @@ SELECT
   ROUND((COUNT(0) / total_sites) * 100, 2) AS pct_sites_using
 FROM
   `httparchive.almanac.pages_desktop_*`,
-  UNNEST(getUsedRoles(payload)) AS role
+  UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS role
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX,
