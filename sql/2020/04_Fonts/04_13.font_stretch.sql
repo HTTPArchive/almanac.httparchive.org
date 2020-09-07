@@ -41,3 +41,5 @@ WHERE
 GROUP BY
   client,
   total_page
+ORDER BY
+  freq_stretch

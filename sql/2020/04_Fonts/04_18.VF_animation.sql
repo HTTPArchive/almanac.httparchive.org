@@ -1,5 +1,5 @@
 #standardSQL
-#VF_animation 
+#VF_animation(??NoResult) 
 CREATE TEMPORARY FUNCTION getfontKeyframes(css STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {

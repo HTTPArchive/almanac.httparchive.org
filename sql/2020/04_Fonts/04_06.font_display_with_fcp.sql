@@ -50,7 +50,7 @@ SELECT
 _TABLE_SUFFIX AS client,
 COUNT(0) AS total_page
 FROM
-`httparchive.sample_data.summary_pages_*`
+`httparchive.summary_pages.2020_08_01_*`
 GROUP BY
 _TABLE_SUFFIX)
 USING
@@ -61,7 +61,7 @@ JOIN (
     fast_fcp,
     slow_fcp,
   FROM
-    `chrome-ux-report.materialized.device_summary`
+    `chrome-ux-report.materialized.metrics_summary`
   WHERE
     yyyymm=202007)
 ON
@@ -72,3 +72,5 @@ GROUP BY
   client,
   font_display,
   total_page
+ORDER BY
+ freq_display DESC

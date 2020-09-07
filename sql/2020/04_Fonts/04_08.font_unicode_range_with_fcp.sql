@@ -54,7 +54,7 @@ JOIN (
     fast_fcp,
     slow_fcp,
   FROM
-    `chrome-ux-report.materialized.device_summary`
+    `chrome-ux-report.materialized.metrics_summary`
   WHERE
     yyyymm=202007)
 ON

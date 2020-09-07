@@ -1,8 +1,8 @@
 #standardSQL
-#variable_font_with_fcp
+#variable_font_with_fcp(??NoResult)
 SELECT
   client,
-  NET.HOST(url),
+  NET.HOST(url) AS url,
   COUNT(DISTINCT page) AS freq_vf,
   total_page,
   ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_vf,
@@ -33,7 +33,7 @@ JOIN (
     fast_fcp,
     slow_fcp,
   FROM
-    `chrome-ux-report.materialized.device_summary`
+    `chrome-ux-report.materialized.metrics_summary`
   WHERE
     yyyymm=202007)
 ON
@@ -48,3 +48,5 @@ GROUP BY
   client,
   url,
   total_page
+Order BY
+  freq_vf DESC

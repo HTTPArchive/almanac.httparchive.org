@@ -1,5 +1,5 @@
 #standardSQL
-#font_weight_font_style
+#font_weight_font_style(??Invalid_NUMERIC_value)
 CREATE TEMPORARY FUNCTION getFonts(css STRING)
 RETURNS ARRAY<STRUCT<weight STRING, style STRING>> LANGUAGE js AS '''
 try {

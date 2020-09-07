@@ -18,7 +18,7 @@ try {
 
 SELECT
  client,
- NET.HOST(page),
+ NET.HOST(url) AS url,
  COUNT(DISTINCT page) AS freq_ficon,
  total_page,
  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_ficon
@@ -31,4 +31,6 @@ USING
 WHERE
  ARRAY_LENGTH(checksSupports(css)) > 0 AND date='2020-08-01' OR url LIKE '%fontawesome%' OR url LIKE '%icomoon%' 
 GROUP BY
- client, page, total_page
+ client, url, total_page
+ORDER BY
+ client, freq_ficon

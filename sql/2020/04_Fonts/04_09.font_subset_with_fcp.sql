@@ -1,5 +1,5 @@
 #standardSQL
-#font_subset_with_fcp
+#font_subset_with_fcp(??NoResult)
 CREATE TEMPORARY FUNCTION
   getFont(css STRING)
   RETURNS ARRAY<STRING>
@@ -52,7 +52,7 @@ JOIN (
     fast_fcp,
     slow_fcp,
   FROM
-    `chrome-ux-report.materialized.device_summary`
+    `chrome-ux-report.materialized.metrics_summary`
   WHERE
     yyyymm=202007)
 ON
