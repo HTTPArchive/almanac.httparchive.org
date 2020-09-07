@@ -1,5 +1,5 @@
 #standardSQL
-# 08_22: Sites with duplicated IDs
+# 08_22: Duplicate ID occurrences
 SELECT
   client,
   COUNT(0) AS total_sites,

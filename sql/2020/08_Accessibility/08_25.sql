@@ -1,5 +1,5 @@
 #standardSQL
-# 08_25: How often video elements use a given attribute
+# 08_25: Video elements attribute usage
 CREATE TEMPORARY FUNCTION getUsedAttributes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {

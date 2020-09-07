@@ -1,5 +1,5 @@
 #standardSQL
-# 08_18: How often do form controls have a placeholder but no label
+# 08_18: Form controls with placeholder but no label
 SELECT
   client,
   COUNT(0) AS total_sites,

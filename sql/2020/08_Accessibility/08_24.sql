@@ -1,5 +1,5 @@
 #standardSQL
-# 08_24: Total anchors with role="button"
+# 08_24: Anchors with role="button"
 SELECT
   client,
   COUNT(0) AS total_sites,
