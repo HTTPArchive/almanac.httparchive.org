@@ -1268,7 +1268,7 @@ p.copyright a {
 }
 
 .nav-dropdown-btn:focus:not(:focus-visible) {
-    outline: none;
+  outline: none;
 }
 
 .nav-dropdown-btn:focus-visible {
