@@ -447,7 +447,7 @@
       {% for l in supported_languages | sort(attribute='_local_name') %}
         {% if l != language %}
           <li>
-            <a href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">{{ l }}</a>
+            <a lang="{{ l.lang_code }}" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">{{ l }}</a>
           </li>
         {% endif %}
       {% endfor %}
