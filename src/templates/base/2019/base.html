@@ -289,13 +289,6 @@
           });
         }
 
-
-        var languageYearNavList = document.querySelectorAll('.nav-dropdown-list');
-        for (let i = 0; i < languageYearNavList.length; i++) {
-          const list = languageYearNavList[i];
-          
-        }
-
         function closeAnyOtherOpenDropdown(e) {
           if (e.target.classList.contains('dropdown-open')) {
             return
@@ -306,17 +299,17 @@
         function trapFocusInList(e) {
           var list = e.currentTarget;
           var isInFooter = list.classList.contains('footer-list');
-          if(e.keyCode === 40) {//KeyDown
+          if(e.key === "ArrowDown") {
             var siblingElem = isInFooter ? e.target.parentElement.previousElementSibling : e.target.parentElement.nextElementSibling;
             var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? lastFocusableElementInList : firstFocusableElementInList);
             e.preventDefault();
             focusableElem.focus();
-          } else if (e.keyCode === 38) {//keyUp
+          } else if (e.key === "ArrowUp") {
             var siblingElem = isInFooter ? e.target.parentElement.nextElementSibling : e.target.parentElement.previousElementSibling;
             var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? firstFocusableElementInList : lastFocusableElementInList);
             e.preventDefault();
             focusableElem.focus();
-          } else if (e.keyCode === 27) {//Esc
+          } else if (e.key === "Escape") {
             var navDropDown = e.currentTarget.closest('.nav-dropdown');
             var navDropDownBtn = navDropDown.querySelector('.nav-dropdown-btn');
             navDropDownBtn.click();
@@ -353,8 +346,14 @@
         }
 
         function navBtnKeyDownHandler(e) {
-          if(e.keyCode === 27) {
-            e.target.click();
+          if(e.key === "Escape") {
+            e.currentTarget.click();
+          } else if (e.key === "ArrowDown") {
+            var isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
+            !isDropdownOpen && e.currentTarget.click();
+            var dropdownList = e.currentTarget.nextElementSibling;
+            e.preventDefault();
+            dropdownList.querySelector('a').focus();
           }
         }
 

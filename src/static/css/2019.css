@@ -1267,6 +1267,14 @@ p.copyright a {
   color: #f7f779;
 }
 
+.nav-dropdown-btn:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.nav-dropdown-btn:focus-visible {
+  outline: revert;
+}
+
 .nav-dropdown-btn::after {
   content: "";
   position: absolute;
