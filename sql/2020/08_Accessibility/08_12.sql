@@ -1,5 +1,5 @@
 #standardSQL
-# 09_10: % of pages having skip links
+# 08_12: % of pages having skip links
 CREATE TEMPORARY FUNCTION getEarlyHash(payload STRING)
 RETURNS INT64 LANGUAGE js AS '''
 try {

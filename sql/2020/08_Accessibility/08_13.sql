@@ -1,5 +1,5 @@
 #standardSQL
-# 09_13: Most popular accesskey or aria-keyshortcuts keys
+# 08_13: Most popular accesskey or aria-keyshortcuts keys
 CREATE TEMPORARY FUNCTION getShortcuts(payload STRING)
 RETURNS ARRAY<STRUCT<type STRING, shortcut STRING>> LANGUAGE js AS '''
 try {

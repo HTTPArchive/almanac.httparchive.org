@@ -1,5 +1,5 @@
 #standardSQL
-# 09_14: Total of captioned, presentational and all tables
+# 08_14: Total of captioned, presentational and all tables
 SELECT
   client,
   COUNT(0) AS total_sites,
