@@ -1,50 +1,73 @@
 #standardSQL
-# 08_07: Alt text ending with an image format
-CREATE TEMPORARY FUNCTION getAltImageExtensions(payload STRING)
+# 08_07: Alt text ending in an image extension
+CREATE TEMPORARY FUNCTION getUsedExtensions(payload STRING)
 RETURNS ARRAY<STRUCT<extension STRING, total INT64>> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);
   var a11y = JSON.parse($._a11y);
-  return Object.keys(a11y.file_extension_alts.file_extensions).map((key) => {
+
+  return Object.keys(a11y.file_extension_alts.file_extensions).map(key => {
     return {
       extension: key,
-      total: a11y.file_extension_alts.file_extensions[key]
+      total: a11y.file_extension_alts.file_extensions[key],
     };
   });
 } catch (e) {
   return [];
 }
 ''';
-
 SELECT
-  a.client AS client,
-  total_non_zero_alts,
-  extension,
-  occurances,
-  ROUND((occurances / total_non_zero_alts) * 100, 4) AS pct_occurances
-FROM (
-  SELECT
-    "desktop" AS client,
-    file_extensions.extension AS extension,
-    SUM(file_extensions.total) AS occurances
-  FROM
-    `httparchive.almanac.pages_desktop_1k`,
-    UNNEST(getAltImageExtensions(payload)) AS file_extensions
-  GROUP BY
-    client,
-    extension
-) a
+  client,
+  total_sites,
+  sites_with_non_empty_alt,
+  sites_with_file_extension_alt,
+  total_alts_with_file_extensions,
+
+  # Of sites with a non-empty alt, what % have an alt with a file extension
+  ROUND(sites_with_file_extension_alt * 100 / sites_with_non_empty_alt, 2) AS pct_sites_with_file_extension_alt,
+  ROUND(total_alts_with_file_extensions * 100 / total_non_empty_alts, 2) AS pct_alts_with_file_extension,
+
+  extension_stat.extension AS extension,
+  COUNT(0) AS total_sites_using,
+  # Of sites with a non-empty alt, what % have an alt with this file extension
+  ROUND(COUNT(0) * 100 / sites_with_non_empty_alt, 2) AS pct_applicable_sites_using,
+
+  SUM(extension_stat.total) AS total_occurances,
+  ROUND(SUM(extension_stat.total) * 100 / total_alts_with_file_extensions, 2) AS pct_total_occurances,
+
+  ROUND(COUNT(0) * 100 / total_sites, 2) AS pct_sites_using
+FROM
+  `httparchive.almanac.pages_desktop_*`,
+  UNNEST(getUsedExtensions(payload)) AS extension_stat
 LEFT JOIN (
   SELECT
-    "desktop" AS client,
-    COUNT(0) AS total_non_zero_alts
-  FROM
-    `httparchive.almanac.pages_desktop_1k`,
-    UNNEST(
-      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$.images.alt_lengths")
-    ) AS alt_length_string
-  WHERE
-    alt_length_string > "0" # This string comparison will still remove all numbers less than 1
+    client,
+    COUNT(0) AS total_sites,
+    COUNTIF(total_non_empty_alt > 0) AS sites_with_non_empty_alt,
+    COUNTIF(total_with_file_extension > 0) AS sites_with_file_extension_alt,
+
+    SUM(total_non_empty_alt) AS total_non_empty_alts,
+    SUM(total_with_file_extension) AS total_alts_with_file_extensions
+  FROM (
+    SELECT
+      _TABLE_SUFFIX AS client,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._markup"), "$.images.img.alt.present") AS INT64) AS total_non_empty_alt,
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._a11y"), "$.file_extension_alts.total_with_file_extension") AS INT64) AS total_with_file_extension
+    FROM
+      `httparchive.almanac.pages_desktop_*`
+  )
   GROUP BY
     client
-) b ON a.client = b.client
+)
+ON (_TABLE_SUFFIX = client)
+GROUP BY
+  client,
+  total_sites,
+  sites_with_non_empty_alt,
+  sites_with_file_extension_alt,
+  total_non_empty_alts,
+  total_alts_with_file_extensions,
+  extension
+ORDER BY
+  client,
+  pct_sites_using DESC
