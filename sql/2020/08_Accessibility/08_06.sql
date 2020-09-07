@@ -10,10 +10,10 @@ FROM (
     IF(alt_length >= 2000, 2000, alt_length) AS alt_length_clipped
   FROM (
     SELECT
-      "desktop" AS client,
+      _TABLE_SUFFIX AS client,
       CAST(alt_length_string as INT64) AS alt_length
     FROM
-      `httparchive.almanac.pages_desktop_1k`,
+      `httparchive.almanac.pages_desktop_*`,
       UNNEST(
         JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$.images.alt_lengths")
       ) AS alt_length_string
