@@ -27,7 +27,7 @@
     "recursive-readdir": "2.2.2",
     "showdown": "1.9.1",
     "web-vitals": "0.2.4",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.1",
     "xml-js": "1.6.11"
   }
 }
