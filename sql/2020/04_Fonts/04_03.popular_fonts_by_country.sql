@@ -1,8 +1,9 @@
 #standardSQL
-#popular fonts by country(??too_many_rows)
+#popular_fonts_by_country(??too_many_url_rows)
 SELECT
   client,
   country,
+  #APPROX_TOP_COUNT_not_support
   NET.HOST(url) AS url_font,
   COUNT(0) AS freq_font,
   COUNT(0) OVER (PARTITION BY country) AS country_total,
@@ -26,4 +27,6 @@ WHERE
 GROUP BY
   client,
   country,
-  url
+  url_font
+ORDER BY
+  freq_font DESC

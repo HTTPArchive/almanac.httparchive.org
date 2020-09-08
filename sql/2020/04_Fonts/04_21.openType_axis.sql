@@ -10,7 +10,7 @@ SELECT
   total_page,
   ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct
 FROM
-  `httparchive.sample_data.requests`
+  `httparchive.almanac.requests`
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -31,7 +31,7 @@ USING
         '$._font_details.table_sizes.fvar'), '(?i)(axis.size)')) AS axisSize           
 WHERE
   type = 'font'
-  AND date='2020-06-01'
+  AND date='2020-08-01'
 GROUP BY
   client,
   name,

@@ -33,4 +33,4 @@ WHERE
 GROUP BY
  client, url, total_page
 ORDER BY
- client, freq_ficon
+ client, freq_ficon DESC

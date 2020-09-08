@@ -1,16 +1,11 @@
 #standardSQL
-#local_vs_host_with_fcp
+#local_vs_host_with_fcp_PSI
 SELECT
   client,
   host_local,
+  COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNTIF(NET.HOST(page) != NET.HOST(url)) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_host,
-  ROUND(COUNTIF(NET.HOST(page) = NET.HOST(url)) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct_local,
-  COUNTIF(fast_fcp>=0.75) AS fast,
-  COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75)) AS moder,
-  COUNTIF(slow_fcp>=0.25) AS slow,
-  COUNT(0) AS total_fcp,
+  ROUND(COUNT(0)/SUM(COUNT(0)) OVER (PARTITION BY client),2) AS pct,
   ROUND(COUNTIF(fast_fcp>=0.75)*100/COUNT(0),0) AS pct_fast_fcp,
   ROUND(COUNTIF(NOT(slow_fcp >=0.25)
       AND NOT(fast_fcp>=0.75))*100/COUNT(0),0) AS pct_moderate_fcp,
@@ -41,3 +36,5 @@ WHERE
 GROUP BY
   client,
   host_local
+ORDER BY
+  freq DESC

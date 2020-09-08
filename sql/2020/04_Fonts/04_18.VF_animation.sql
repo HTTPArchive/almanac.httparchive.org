@@ -30,3 +30,6 @@ WHERE
  ARRAY_LENGTH(getfontKeyframes(css)) > 0 AND date='2020-08-01'
 GROUP BY
  client, total_page
+ORDER BY
+ client, freq
+

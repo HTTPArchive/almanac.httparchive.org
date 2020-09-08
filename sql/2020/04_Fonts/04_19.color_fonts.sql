@@ -17,8 +17,8 @@ USING
 WHERE
  type = 'font' AND date='2020-08-01'
 GROUP BY
-client,
+ client,
  total_page,
  format
 ORDER BY
- total_page DESC
+ pages_color DESC
