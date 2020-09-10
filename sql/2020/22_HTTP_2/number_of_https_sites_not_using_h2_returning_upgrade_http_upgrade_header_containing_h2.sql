@@ -20,11 +20,12 @@ SELECT
   firstHtml,  
   COUNT(*) AS num_requests
 FROM 
-  `httparchive.sample_data.requests`
+  `httparchive.almanac.requests`
 WHERE
   url LIKE "https://%"
   AND JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2"
   AND getUpgradeHeader(payload) LIKE "%h2%"
+  AND date='2020-08-01'
 GROUP BY
   client,
   firstHtml

@@ -23,7 +23,9 @@ SELECT
   getUpgradeHeader(payload) AS upgrade,
   COUNT(*) AS num_requests
 FROM 
-  `httparchive.sample_data.requests` 
+  `httparchive.almanac.requests`
+WHERE
+  date='2020-08-01'
 GROUP BY
   client,
   firstHtml,

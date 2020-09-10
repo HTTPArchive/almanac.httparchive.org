@@ -9,11 +9,11 @@ FROM (
     client,
     page
   FROM 
-    `httparchive.sample_data.requests` 
+    `httparchive.almanac.requests` 
   WHERE 
     JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
-    AND 
-    JSON_EXTRACT_SCALAR(payload, "$._was_pushed") = "1"
+    AND JSON_EXTRACT_SCALAR(payload, "$._was_pushed") = "1"
+    AND date='2020-08-01'
 )
 GROUP BY
   client

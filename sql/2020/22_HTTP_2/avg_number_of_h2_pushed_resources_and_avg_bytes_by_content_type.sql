@@ -15,11 +15,11 @@ SELECT
     SUM(CAST(JSON_EXTRACT_SCALAR(payload, "$._bytesIn") AS INT64)/1024) AS kb_transfered,
     COUNT(*) AS num_requests
   FROM 
-    `httparchive.sample_data.requests`  
+    `httparchive.almanac.requests` 
   WHERE 
     JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
-    AND 
-    JSON_EXTRACT_SCALAR(payload, "$._was_pushed") = "1"
+    AND JSON_EXTRACT_SCALAR(payload, "$._was_pushed") = "1"
+    AND date='2020-08-01'
   GROUP BY 
     client,
     page,

@@ -23,11 +23,13 @@ SELECT
   COUNT(*) AS num_pages,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM 
-  `httparchive.sample_data.requests` 
+  `httparchive.almanac.requests` 
 WHERE
   firstHtml
   AND JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
+  AND date='2020-08-01'
 GROUP BY
   client,
   server_header
-ORDER BY num_pages DESC
+ORDER BY 
+  num_pages DESC

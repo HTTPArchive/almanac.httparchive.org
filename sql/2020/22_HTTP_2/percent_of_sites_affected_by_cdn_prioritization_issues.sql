@@ -13,10 +13,11 @@ FROM
       url,
       JSON_EXTRACT_SCALAR(payload, "$._cdn_provider") as cdn
     FROM 
-      `httparchive.sample_data.requests` 
+      `httparchive.almanac.requests` 
     WHERE 
       JSON_EXTRACT_SCALAR(payload, "$._protocol") ="HTTP/2"
       AND firstHtml
+      AND date='2020-08-01'
   ) AS pages
 LEFT JOIN 
   `httparchive.almanac.h2_prioritization_cdns_201909` AS h2_pri

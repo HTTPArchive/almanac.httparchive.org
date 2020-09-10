@@ -26,14 +26,15 @@ FROM (
     firstHtml,  
     getLinkHeaders(payload) AS link_headers
   FROM 
-   `httparchive.sample_data.requests` 
+   `httparchive.almanac.requests`
+  WHERE
+   date='2020-08-01'
 )
 CROSS JOIN
   UNNEST(link_headers) AS link_header
 WHERE 
   link_header LIKE '%preload%' 
-AND
-  link_header LIKE '%nopush%'
+  AND link_header LIKE '%nopush%'
 GROUP BY
 	client, 
 	firstHtml
