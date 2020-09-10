@@ -44,9 +44,6 @@ return result;
 
 SELECT
   _TABLE_SUFFIX AS client,
- # COUNT(DISTINCT url) AS pages,
- # total,
-
   button_type_info.name AS button_type,
   SUM(button_type_info.freq) AS freq, 
   AS_PERCENT(SUM(button_type_info.freq), SUM(SUM(button_type_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m304
@@ -63,5 +60,4 @@ FROM
     UNNEST(get_markup_buttons_info(JSON_EXTRACT_SCALAR(payload, '$._markup'))) AS button_type_info # LIVE
 GROUP BY
   client,
-#  total,
   button_type

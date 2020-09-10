@@ -72,3 +72,4 @@ SELECT
     )
 GROUP BY
   client
+  

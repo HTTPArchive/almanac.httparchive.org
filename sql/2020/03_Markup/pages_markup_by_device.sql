@@ -265,3 +265,4 @@ SELECT
     )
 GROUP BY
   client
+  

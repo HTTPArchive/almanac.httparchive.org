@@ -71,3 +71,4 @@ GROUP BY
   client,
   total,
   protocol
+  

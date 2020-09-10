@@ -200,3 +200,4 @@ FROM
     )
 GROUP BY
   client
+  
