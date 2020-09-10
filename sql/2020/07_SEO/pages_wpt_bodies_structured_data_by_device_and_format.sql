@@ -62,8 +62,8 @@ SELECT
 client,
 format, 
 total, 
-COUNT(*) AS count,
-AS_PERCENT(COUNT(*), total) AS pct
+COUNT(0) AS count,
+AS_PERCENT(COUNT(0), total) AS pct
 
 FROM
     ( 

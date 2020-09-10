@@ -62,7 +62,7 @@ return result;
 
 SELECT
 client,
-COUNT(*) AS total, 
+COUNT(0) AS total, 
 wpt_bodies_info.number_links as links
 
 FROM

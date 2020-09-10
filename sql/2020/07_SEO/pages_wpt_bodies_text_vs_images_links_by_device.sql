@@ -46,7 +46,7 @@ return result;
 
 SELECT
 client,
-COUNT(*) AS total, 
+COUNT(0) AS total, 
 ROUND(AVG(wpt_bodies_info.image_links)) as image_links_avg,
 ROUND(AVG(wpt_bodies_info.text_links)) as text_links_avg,
 

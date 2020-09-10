@@ -59,7 +59,7 @@ return result;
 
 SELECT
 client,
-COUNT(*) AS total, 
+COUNT(0) AS total, 
 wpt_bodies_info.title_char_count as char_count
 
 

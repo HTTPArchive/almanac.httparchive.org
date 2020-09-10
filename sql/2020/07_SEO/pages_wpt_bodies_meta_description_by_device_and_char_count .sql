@@ -70,7 +70,7 @@ return result;
 
 SELECT
 client,
-COUNT(*) AS total, 
+COUNT(0) AS total, 
 wpt_bodies_info.meta_description_char_count as char_count
 
 FROM

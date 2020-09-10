@@ -43,7 +43,7 @@ return result;
 
 SELECT
 client,
-COUNT(*) AS total, 
+COUNT(0) AS total, 
 wpt_bodies_info.page_word_count as words_count
 
 FROM
