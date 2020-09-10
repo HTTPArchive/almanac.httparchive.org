@@ -50,9 +50,7 @@ try {
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
     if (wpt_bodies.title && wpt_bodies.title.rendered && wpt_bodies.title.rendered.primary) {
-
       result.title_char_count = wpt_bodies.title.rendered.primary.characters;
-
     }
 
 } catch (e) {}
