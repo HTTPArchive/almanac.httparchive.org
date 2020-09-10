@@ -46,3 +46,4 @@ FROM (
     #`httparchive.almanac.lighthouse_mobile_1k` # TEST
     `httparchive.lighthouse.2020_08_01_*` # LIVE
     )
+    
