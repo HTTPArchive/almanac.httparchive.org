@@ -1,16 +1,18 @@
 #standardSQL
-# 13_11b: List of AD Platforms used by vendor usage for eComm - solely from Wapp
+# 13_14: % of AMP enabled eCommerce Sites
 SELECT
+  _TABLE_SUFFIX AS client,
   vendor,
   app,
-  COUNTIF(category = 'Advertising') AS AdPlatfromFreq,
+  COUNTIF(category = 'AMP') AS AMPfromFreq,
   SUM(COUNT(0)) OVER (PARTITION BY vendor) AS total,
-  ROUND(COUNTIF(category = 'Advertising') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
+  ROUND(COUNTIF(category = 'AMP') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
   FROM
     `httparchive.technologies.2020_08_01_*`
 JOIN 
 (
   SELECT 
+    _TABLE_SUFFIX AS client,
     url, 
     app as vendor
   FROM
@@ -21,11 +23,13 @@ JOIN
 USING 
   (url)
 GROUP BY
-  vendor, app
+  client, 
+  vendor, 
+  app
 HAVING 
- Cdnfreq > 0
+ AMPFreq > 0
 ORDER BY
   total desc,
   Vendor, 
-  AdPlatfromFreq desc
+  AMPFreq desc
   

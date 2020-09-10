@@ -1,5 +1,5 @@
 #standardSQL
-# 13_11: Top ad providers
+# 13_11: Top cdn providers
 SELECT
   client,
   canonicalDomain AS provider,
@@ -13,7 +13,7 @@ FROM
   `httparchive.almanac.summary_requests`
 JOIN (
   SELECT _TABLE_SUFFIX AS client, url AS page
-  FROM `httparchive.technologies.2020_06_01_*`
+  FROM `httparchive.technologies.2020_08_01_*`
   WHERE category = 'Ecommerce')
 USING
   (client, page)
@@ -23,12 +23,13 @@ ON
   NET.HOST(url) = domain
 JOIN (
   SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total
-  FROM `httparchive.summary_pages.2020_06_01_*`
+  FROM `httparchive.summary_pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX)
 USING
   (client)
 WHERE
-  category = 'cdn'
+    `httparchive.almanac.summary_requests`.date = '2020-08-01' AND
+    lower(category) = 'cdn'
 GROUP BY
   client,
   total,

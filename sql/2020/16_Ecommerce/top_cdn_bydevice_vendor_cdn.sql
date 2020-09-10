@@ -1,6 +1,7 @@
 #standardSQL
 # 13_15c: List of CDNs used by vendor usage for eComm - solely from Wapp
 SELECT
+  _TABLE_SUFFIX AS client,
   vendor,
   app,
   COUNTIF(category = 'CDN') AS Cdnfreq,
@@ -11,6 +12,7 @@ SELECT
 JOIN 
 (
   SELECT 
+    _TABLE_SUFFIX AS client,
     url, 
     app as vendor
   FROM
@@ -21,7 +23,9 @@ JOIN
 USING 
   (url)
 GROUP BY
-  vendor, app
+  client, 
+  vendor, 
+  app
 HAVING 
  Cdnfreq > 0
 ORDER BY

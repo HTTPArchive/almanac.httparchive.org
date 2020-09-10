@@ -1,6 +1,7 @@
 #standardSQL
-# 13_10b: List of Analytics Platforms used by vendor usage for eComm - solely from Wapp
+# 13_11b: List of Analtics Platforms used by vendor usage for eComm - solely from Wapp
 SELECT
+  _TABLE_SUFFIX AS client,
   vendor,
   app,
   COUNTIF(category = 'Analytics') AS AnalyticsPlatfromFreq,
@@ -11,6 +12,7 @@ SELECT
 JOIN 
 (
   SELECT 
+    _TABLE_SUFFIX AS client,
     url, 
     app as vendor
   FROM
@@ -21,9 +23,11 @@ JOIN
 USING 
   (url)
 GROUP BY
-  vendor, app
+  client, 
+  vendor, 
+  app
 HAVING 
- Cdnfreq > 0
+ AnalyticsPlatfromFreq > 0
 ORDER BY
   total desc,
   Vendor, 

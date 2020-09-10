@@ -18,6 +18,8 @@ FROM (
     WHERE category = 'Ecommerce')
   USING
     (client, page)
+  WHERE
+    date = '2020-08-01' 
   GROUP BY
     client,
     page),
