@@ -32,9 +32,7 @@ try {
 
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
-
     if (wpt_bodies.visible_words) {
-
       result.page_word_count = wpt_bodies.visible_words.rendered;
 
     }
