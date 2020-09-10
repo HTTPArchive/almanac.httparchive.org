@@ -119,3 +119,4 @@ SELECT
     )
 GROUP BY
   client
+  
