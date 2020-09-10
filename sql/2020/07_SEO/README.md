@@ -1,6 +1,6 @@
 # Guide
 
-My first run at converting 2019 queries is in the "2019 Rewrites" folder. This is now out of date but functions and ideas in there may be of use.
+These are the queries for the 2020 SEO Chapter as discussed in https://github.com/HTTPArchive/almanac.httparchive.org/issues/908
 
 ## WebPageTest Results
 
