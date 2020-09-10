@@ -60,8 +60,12 @@ FROM (
       OR font.weight = '400') AS weight_400_normal,
     COUNTIF(font.weight = 'bold'
       OR font.weight = '700') AS weight_700_bold,
-    COUNTIF(CAST(font.weight AS NUMERIC) > 400) AS bolder,
-    COUNTIF(CAST(font.weight AS NUMERIC) < 400) AS lighter
+    COUNTIF(font.weight != 'normal'
+      AND (font.weight = 'bold'
+        OR (CAST(font.weight AS NUMERIC) > 400))) AS bolder,
+    COUNTIF(font.weight != 'normal'
+      AND font.weight != 'bold'
+      AND (CAST(font.weight AS NUMERIC) < 400)) AS lighter
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFonts(css)) AS font
