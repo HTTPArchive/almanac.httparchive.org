@@ -1,0 +1,822 @@
+{
+    "anchors": {
+        "rendered": {
+            "crawlable": {
+                "follow": 24,
+                "nofollow": 7
+            },
+            "hash_link": 4,
+            "hash_only_link": 2,
+            "javascript_void_links": 2,
+            "same_page": {
+                "total": 13,
+                "jumpto": {
+                    "total": 1,
+                    "early": 0,
+                    "other": 1,
+                    "using_id": 0,
+                    "using_name": 1
+                },
+                "dynamic": {
+                    "total": 5,
+                    "onclick_attributes": {
+                        "total": 4,
+                        "window_location": 1,
+                        "window_open": 1,
+                        "unknown_action": 2
+                    },
+                    "href_javascript": 2,
+                    "hash_link": 1
+                },
+                "other": {
+                    "total": 7,
+                    "hash_link": 1
+                }
+            },
+            "same_site": 21,
+            "same_property": 0,
+            "other_property": 8,
+            "rel_attributes": {
+                "dofollow": 0,
+                "follow": 0,
+                "nofollow": 4,
+                "ugc": 2,
+                "sponsored": 5,
+                "noopener": 4,
+                "noreferrer": 4
+            },
+            "image_links": 1,
+            "invisible_links": 5,
+            "text_links": 36,
+            "target_blank": {
+                "total": 8,
+                "noopener_noreferrer": 2,
+                "noopener": 2,
+                "noreferrer": 2,
+                "neither": 2
+            },
+            "targets": {
+                "_blank": 8
+            },
+            "protocols": {
+                "https": 30,
+                "tel": 1,
+                "file": 1,
+                "javascript": 2,
+                "http": 4
+            }
+        },
+        "raw": {
+            "crawlable": {
+                "follow": 24,
+                "nofollow": 7
+            },
+            "hash_link": 4,
+            "hash_only_link": 2,
+            "javascript_void_links": 2,
+            "same_page": {
+                "total": 13,
+                "jumpto": {
+                    "total": 1,
+                    "early": 0,
+                    "other": 1,
+                    "using_id": 0,
+                    "using_name": 1
+                },
+                "dynamic": {
+                    "total": 5,
+                    "onclick_attributes": {
+                        "total": 4,
+                        "window_location": 1,
+                        "window_open": 1,
+                        "unknown_action": 2
+                    },
+                    "href_javascript": 2,
+                    "hash_link": 1
+                },
+                "other": {
+                    "total": 7,
+                    "hash_link": 1
+                }
+            },
+            "same_site": 21,
+            "same_property": 0,
+            "other_property": 8,
+            "rel_attributes": {
+                "dofollow": 0,
+                "follow": 0,
+                "nofollow": 4,
+                "ugc": 2,
+                "sponsored": 5,
+                "noopener": 4,
+                "noreferrer": 4
+            },
+            "image_links": 1,
+            "invisible_links": 5,
+            "text_links": 36,
+            "target_blank": {
+                "total": 8,
+                "noopener_noreferrer": 2,
+                "noopener": 2,
+                "noreferrer": 2,
+                "neither": 2
+            },
+            "targets": {
+                "_blank": 8
+            },
+            "protocols": {
+                "https": 30,
+                "tel": 1,
+                "file": 1,
+                "javascript": 2,
+                "http": 4
+            }
+        }
+    },
+    "title": {
+        "rendered": {
+            "primary": {
+                "characters": 467,
+                "words": 72,
+                "text": "HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP ..."
+            },
+            "total": 2
+        },
+        "raw": {
+            "primary": {
+                "characters": 467,
+                "words": 72,
+                "text": "HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP Archive HTTP ..."
+            },
+            "total": 1
+        },
+        "title_changed_on_render": false
+    },
+    "meta_description": {
+        "rendered": {
+            "all": {
+                "text": "Meta Description Other Description",
+                "words": 4,
+                "characters": 33
+            },
+            "primary": {
+                "characters": 16,
+                "words": 2,
+                "text": "Meta Description"
+            },
+            "total": 2
+        },
+        "raw": {
+            "all": {
+                "text": "Meta Description Other Description",
+                "words": 4,
+                "characters": 33
+            },
+            "primary": {
+                "characters": 16,
+                "words": 2,
+                "text": "Meta Description"
+            },
+            "total": 2
+        }
+    },
+    "hreflangs": {
+        "http_header": {
+            "values": []
+        },
+        "rendered": {
+            "values": [
+                "en-gb",
+                "en",
+                "x-default",
+                "de",
+                "en-us"
+            ]
+        },
+        "raw": {
+            "values": [
+                "en-gb",
+                "en",
+                "x-default",
+                "de",
+                "en-us"
+            ]
+        }
+    },
+    "headings": {
+        "rendered": {
+            "first_non_empty_heading_hidden": false,
+            "primary": {
+                "words": 204,
+                "characters": 1211,
+                "matches_title": false,
+                "text": "Google typically displays the first 50–60 characters of a title tag. If you keep your titles under 6...",
+                "level": 1
+            },
+            "h1": {
+                "total": 7,
+                "non_empty_total": 5,
+                "characters": 1715,
+                "words": 290
+            },
+            "h2": {
+                "total": 14,
+                "non_empty_total": 14,
+                "characters": 120,
+                "words": 20
+            },
+            "h3": {
+                "total": 5,
+                "non_empty_total": 5,
+                "characters": 215,
+                "words": 40
+            },
+            "h4": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h5": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h6": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h7": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h8": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            }
+        },
+        "raw": {
+            "first_non_empty_heading_hidden": false,
+            "primary": {
+                "words": 204,
+                "characters": 1211,
+                "matches_title": false,
+                "text": "Google typically displays the first 50–60 characters of a title tag. If you keep your titles under 6...",
+                "level": 1
+            },
+            "h1": {
+                "total": 7,
+                "non_empty_total": 6,
+                "characters": 1722,
+                "words": 291
+            },
+            "h2": {
+                "total": 14,
+                "non_empty_total": 14,
+                "characters": 120,
+                "words": 20
+            },
+            "h3": {
+                "total": 5,
+                "non_empty_total": 5,
+                "characters": 215,
+                "words": 40
+            },
+            "h4": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h5": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h6": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h7": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            },
+            "h8": {
+                "total": 0,
+                "non_empty_total": 0,
+                "characters": 0,
+                "words": 0
+            }
+        }
+    },
+    "structured_data": {
+        "rendered": {
+            "jsonld_and_microdata_types": [
+                {
+                    "name": "schema.org/OrganizationCDATA",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/WebSite",
+                    "count": 2,
+                    "jsonld": 1,
+                    "microdata": 1,
+                    "https": 2,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/SearchActionx",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Recipe",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Person",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/NutritionInformation",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/HowToStep",
+                    "count": 6,
+                    "jsonld": 6,
+                    "microdata": 0,
+                    "https": 6,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/AggregateRating",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/VideoObject",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/InteractionCounter",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/WatchAction",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 1,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/SearchAction",
+                    "count": 1,
+                    "jsonld": 0,
+                    "microdata": 1,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "data-vocabulary.org/Breadcrumb",
+                    "count": 2,
+                    "jsonld": 0,
+                    "microdata": 2,
+                    "https": 2,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Question",
+                    "count": 5,
+                    "jsonld": 0,
+                    "microdata": 5,
+                    "https": 5,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Answer",
+                    "count": 5,
+                    "jsonld": 0,
+                    "microdata": 5,
+                    "https": 5,
+                    "http": 0,
+                    "www": 0
+                }
+            ],
+            "jsonldIds": 5,
+            "jsonldReferencedIds": 0,
+            "microdataIds": 2,
+            "microdataReferencedIds": 1,
+            "jsonlsMicrodataCommonIds": 1,
+            "logo": true,
+            "sitelinks_search_box": true,
+            "same_as_values": [
+                "http://Organization",
+                "https://example.com/photos/1x1/photo.jpg",
+                "https://example.com/photos/4x3/photo.jpg",
+                "https://example.com/photos/16x9/photo.jpg",
+                "https://otherthing",
+                "instagram",
+                "facebook/",
+                "twitter",
+                "google+"
+            ],
+            "items_by_format": {
+                "microformats2": 3,
+                "microdata": 14,
+                "jsonld": 16,
+                "rdfa": 8
+            },
+            "context_hostnames": [
+                "schema.org",
+                "data-vocabulary.org"
+            ],
+            "jsonld_scripts": {
+                "count": 5,
+                "errors": 2
+            },
+            "microformats2_types": [
+                {
+                    "name": "h-card",
+                    "count": 1
+                },
+                {
+                    "name": "h-item",
+                    "count": 1
+                },
+                {
+                    "name": "h-review",
+                    "count": 1
+                }
+            ]
+        },
+        "raw": {
+            "jsonld_and_microdata_types": [
+                {
+                    "name": "schema.org/OrganizationCDATA",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/WebSite",
+                    "count": 2,
+                    "jsonld": 1,
+                    "microdata": 1,
+                    "https": 2,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/SearchActionx",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Recipe",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Person",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/NutritionInformation",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/HowToStep",
+                    "count": 6,
+                    "jsonld": 6,
+                    "microdata": 0,
+                    "https": 6,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/AggregateRating",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/VideoObject",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/InteractionCounter",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/WatchAction",
+                    "count": 1,
+                    "jsonld": 1,
+                    "microdata": 0,
+                    "https": 0,
+                    "http": 1,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/SearchAction",
+                    "count": 1,
+                    "jsonld": 0,
+                    "microdata": 1,
+                    "https": 1,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "data-vocabulary.org/Breadcrumb",
+                    "count": 2,
+                    "jsonld": 0,
+                    "microdata": 2,
+                    "https": 2,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Question",
+                    "count": 5,
+                    "jsonld": 0,
+                    "microdata": 5,
+                    "https": 5,
+                    "http": 0,
+                    "www": 0
+                },
+                {
+                    "name": "schema.org/Answer",
+                    "count": 5,
+                    "jsonld": 0,
+                    "microdata": 5,
+                    "https": 5,
+                    "http": 0,
+                    "www": 0
+                }
+            ],
+            "jsonldIds": 5,
+            "jsonldReferencedIds": 0,
+            "microdataIds": 2,
+            "microdataReferencedIds": 1,
+            "jsonlsMicrodataCommonIds": 1,
+            "logo": true,
+            "sitelinks_search_box": true,
+            "same_as_values": [
+                "http://Organization",
+                "https://example.com/photos/1x1/photo.jpg",
+                "https://example.com/photos/4x3/photo.jpg",
+                "https://example.com/photos/16x9/photo.jpg",
+                "https://otherthing",
+                "instagram",
+                "facebook/",
+                "twitter",
+                "google+"
+            ],
+            "items_by_format": {
+                "microformats2": 3,
+                "microdata": 14,
+                "jsonld": 16,
+                "rdfa": 8
+            },
+            "context_hostnames": [
+                "schema.org",
+                "data-vocabulary.org"
+            ],
+            "jsonld_scripts": {
+                "count": 5,
+                "errors": 2
+            },
+            "microformats2_types": [
+                {
+                    "name": "h-card",
+                    "count": 1
+                },
+                {
+                    "name": "h-item",
+                    "count": 1
+                },
+                {
+                    "name": "h-review",
+                    "count": 1
+                }
+            ]
+        }
+    },
+    "raw_html": {
+        "body": true,
+        "html": true,
+        "head": true,
+        "size": 46996,
+        "head_size": 8081,
+        "body_size": 38775,
+        "comment_count": 2,
+        "conditional_comment_count": 1
+    },
+    "canonicals": {
+        "rendered": {
+            "html_link_canoncials": [
+                "",
+                "http://localhost:62885/HttpArchiveAlmanacScriptTest.html",
+                "https://classyschemastaging.websiteadvantage.com.au/HttpArchiveAlmanacScriptTest.html"
+            ]
+        },
+        "raw": {
+            "html_link_canoncials": [
+                "",
+                "http://localhost:62885/HttpArchiveAlmanacScriptTest.html",
+                "https://classyschemastaging.websiteadvantage.com.au/HttpArchiveAlmanacScriptTest.html"
+            ]
+        },
+        "self_canonical": true,
+        "other_canonical": true,
+        "canonicals": [
+            "",
+            "http://localhost:62885/HttpArchiveAlmanacScriptTest.html",
+            "https://classyschemastaging.websiteadvantage.com.au/HttpArchiveAlmanacScriptTest.html"
+        ],
+        "url": "https://classyschemastaging.websiteadvantage.com.au/HttpArchiveAlmanacScriptTest.html",
+        "http_header_link_canoncials": [],
+        "canonical_missmatch": true
+    },
+    "robots": {
+        "has_robots_meta_tag": true,
+        "has_x_robots_tag": false,
+        "rendered": {
+            "otherbot": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": true,
+                "via_x_robots_tag": false,
+                "follow": true,
+                "max_snippet": true,
+                "max_image_preview": true,
+                "nofollow": true
+            },
+            "googlebot": {
+                "status_index": false,
+                "status_follow": true,
+                "via_meta_tag": true,
+                "via_x_robots_tag": false,
+                "follow": true,
+                "noindex": true,
+                "max_snippet": true,
+                "max_image_preview": true,
+                "nofollow": true
+            },
+            "googlebot_news": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": true,
+                "via_x_robots_tag": false,
+                "follow": true,
+                "max_snippet": true,
+                "max_image_preview": true,
+                "nofollow": true
+            },
+            "google": {
+                "nopagereadaloud": 1,
+                "nositelinkssearchbox": 1,
+                "madeup": 2,
+                "": 1,
+                "comma": 1,
+                "space": 1
+            }
+        },
+        "raw": {
+            "otherbot": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": true,
+                "via_x_robots_tag": false,
+                "follow": true,
+                "max_snippet": true,
+                "max_image_preview": true,
+                "nofollow": true
+            },
+            "googlebot": {
+                "status_index": false,
+                "status_follow": true,
+                "via_meta_tag": true,
+                "via_x_robots_tag": false,
+                "follow": true,
+                "noindex": true,
+                "max_snippet": true,
+                "max_image_preview": true,
+                "nofollow": true
+            },
+            "googlebot_news": {
+                "status_index": true,
+                "status_follow": true,
+                "via_meta_tag": true,
+                "via_x_robots_tag": false,
+                "follow": true,
+                "max_snippet": true,
+                "max_image_preview": true,
+                "nofollow": true
+            },
+            "google": {
+                "nopagereadaloud": 1,
+                "nositelinkssearchbox": 1,
+                "madeup": 2,
+                "": 1,
+                "comma": 1,
+                "space": 1
+            }
+        }
+    },
+    "visible_words": {
+        "rendered": 792,
+        "raw": 795
+    }
+}
