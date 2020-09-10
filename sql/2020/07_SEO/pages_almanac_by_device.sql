@@ -59,3 +59,4 @@ FROM
     )
 GROUP BY
   client
+  
