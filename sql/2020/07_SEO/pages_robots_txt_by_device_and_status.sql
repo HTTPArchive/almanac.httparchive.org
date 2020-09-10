@@ -77,3 +77,4 @@ SELECT
 GROUP BY
   client,
   status_code
+  
