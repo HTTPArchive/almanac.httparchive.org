@@ -8,9 +8,9 @@ When prototyping queries, it's advisable to use the [`parsed_css_1k`](https://co
 
 ## [Rework utils](../../lib/rework-utils.js)
 
-Source: https://github.com/LeaVerou/rework-utils/tree/master/src
-Playground: https://projects.verou.me/rework-utils/
-Docs: https://projects.verou.me/rework-utils/docs/
+- **Source**: https://github.com/LeaVerou/rework-utils/tree/master/src
+- **Playground**: https://projects.verou.me/rework-utils/
+- **Docs**: https://projects.verou.me/rework-utils/docs/
 
 This file provides JS utility functions to be used by the queries that depend on the `parsed_css` table.
 
