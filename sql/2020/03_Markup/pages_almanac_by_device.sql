@@ -74,7 +74,7 @@ SELECT
   client,
   COUNT(0) AS total,
 
-  # has scripts excluding jsonld ones
+  # has scripts that are not jsonld ones. i.e. has a none jsonld script.
   AS_PERCENT(COUNTIF(almanac_info.none_jsonld_scripts_total > 0), COUNT(0)) AS pct_contains_none_jsonld_scripts_m204, 
 
   # has inline scripts 
