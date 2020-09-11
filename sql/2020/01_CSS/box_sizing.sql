@@ -17,7 +17,7 @@ SELECT
   COUNT(DISTINCT IF(declarations > 0, page, NULL)) AS pages,
   COUNT(DISTINCT page) AS total,
   COUNT(DISTINCT IF(declarations > 0, page, NULL)) / COUNT(DISTINCT page) AS pct_pages,
-  APPROX_QUANTILES(declarations, 1000)[OFFSET(percentile * 10)] AS median_declarations
+  APPROX_QUANTILES(declarations, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS declarations_per_page
 FROM (
   SELECT
     client,
