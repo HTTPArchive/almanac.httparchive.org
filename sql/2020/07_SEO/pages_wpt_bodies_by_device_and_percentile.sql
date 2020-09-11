@@ -16,95 +16,8 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var wpt_bodies;
-
-    if (true) { // LIVE = true
-        wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
-    }
-    else 
-    {
-      // TEST
-      wpt_bodies = {
-        "anchors": {
-              "rendered": {
-                  "crawlable": {
-                      "follow": 18,
-                      "nofollow": 0
-                  },
-                  "hash_link": Math.floor(Math.random() * 5),
-                  "hash_only_link": 1,
-                  "javascript_void_links": 0,
-                  "same_page": {
-                      "total":  Math.floor(Math.random() * 5),
-                      "jumpto": {
-                          "total": 2,
-                          "early": 1,
-                          "other": 1,
-                          "using_id": 1,
-                          "using_name": 1
-                      },
-                      "dynamic": {
-                          "total": Math.floor(Math.random() * 5) == 0 ? Math.floor(Math.random() * 25) : 0,
-                          "onclick_attributes": {
-                              "total": 0,
-                              "window_location": 0,
-                              "window_open": 0,
-                              "unknown_action": 0
-                          },
-                          "href_javascript": 0,
-                          "hash_link": 0
-                      },
-                      "other": {
-                          "total": 34,
-                          "hash_link": 0
-                      }
-                  },
-                  "same_site":  Math.floor(Math.random() * 50),
-                  "same_property":  Math.floor(Math.random() * 10),
-                  "other_property":  Math.floor(Math.random() * 3)
-              }
-        },
-        "title": {
-          "rendered": {
-              "primary": {
-                  "characters": Math.floor(Math.random() * 200),
-                  "words": Math.floor(Math.random() * 20),
-                  "text": "Headsets, Wireless Plantronics Headset Distributor, BTP"
-              },
-              "total": 2
-          },
-          "raw": {
-              "primary": {
-                  "characters": 55,
-                  "words": 6,
-                  "text": "Headsets, Wireless Plantronics Headset Distributor, BTP"
-              },
-              "total": 2
-          },
-          "title_changed_on_render": false
-        },
-        "visible_words": {
-              "rendered": Math.floor(Math.random() * 2000),
-              "raw": Math.floor(Math.random() * 2000)
-        },
-        "meta_description": {
-              "rendered": {
-                  "all": {
-                      "text": "BUGG has you covered with BUGGINS insect repellents and BUGGSLAYER insecticides. Click here to solve box elder bug, stink bug, Asian lady beetle and over 50 other bug problems.",
-                      "words": 29,
-                      "characters": 176
-                  },
-                  "primary": {
-                      "characters": Math.floor(Math.random() * 200),
-                      "words": Math.floor(Math.random() * 30),
-                      "text": "BUGG has you covered with BUGGINS insect repellents and BUGGSLAYER insecticides. Click here to solve box elder bug, stink bug, Asian lady beetle and over 50 other bug problems."
-                  },
-                  "total": 1
-              }
-          }
-      }; 
-    }
-
+    var wpt_bodies = JSON.parse(wpt_bodies_string);
+   
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
     if (wpt_bodies.title) {
@@ -157,18 +70,16 @@ SELECT
 
   # words
   APPROX_QUANTILES(wpt_bodies_info.visible_words_rendered_count, 1000)[OFFSET(percentile * 10)] AS visible_words_rendered,
-  APPROX_QUANTILES(wpt_bodies_info.visible_words_raw_count, 1000)[OFFSET(percentile * 10)] AS visible_words_raw,
+  APPROX_QUANTILES(wpt_bodies_info.visible_words_raw_count, 1000)[OFFSET(percentile * 10)] AS visible_words_raw
 
 FROM (
   SELECT 
     _TABLE_SUFFIX AS client,
     percentile,
     url,
-    #get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info # LIVE
+    get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info
   FROM
-  #`httparchive.sample_data.pages_*`, # TEST
-  `httparchive.pages.2020_08_01_*`, # LIVE
+  `httparchive.pages.2020_08_01_*`,
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 )
 GROUP BY

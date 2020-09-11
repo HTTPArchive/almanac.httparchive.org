@@ -43,7 +43,6 @@ FROM (
     JSON_EXTRACT_SCALAR(report, '$.audits.robots-txt.score') = '1' AS robots_txt_valid,
     JSON_EXTRACT_SCALAR(report, '$.audits.link-text.score') = '1' AS link_text_descriptive
   FROM
-    #`httparchive.almanac.lighthouse_mobile_1k` # TEST
-    `httparchive.lighthouse.2020_08_01_*` # LIVE
+    `httparchive.lighthouse.2020_08_01_*`
     )
     

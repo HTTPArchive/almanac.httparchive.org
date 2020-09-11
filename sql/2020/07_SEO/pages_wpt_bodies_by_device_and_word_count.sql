@@ -6,7 +6,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
-# returns all the data we need from _almanac
+# returns all the data we need from _wpt_bodies
 CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
     page_word_count INT64
@@ -14,24 +14,10 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var wpt_bodies;
-
-    if (true) { // LIVE = true
-        wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
-    }
-    else 
-    {
-      // TEST
-      wpt_bodies = {
-          "visible_words": {
-              "rendered": Math.floor(Math.random() * 2000),
-              "raw": Math.floor(Math.random() * 2000)
-          }
-      }; 
-    }
-
+    var wpt_bodies = JSON.parse(wpt_bodies_string);
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
+
     if (wpt_bodies.visible_words) {
       result.page_word_count = wpt_bodies.visible_words.rendered;
 
@@ -50,10 +36,8 @@ FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        #get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE       
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info       
       FROM
-        #`httparchive.sample_data.pages_*` # TEST
-        `httparchive.pages.2020_08_01_*` # LIVE
+        `httparchive.pages.2020_08_01_*`
     )
-    GROUP BY client, words_count
+GROUP BY client, words_count

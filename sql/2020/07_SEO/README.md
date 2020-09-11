@@ -2,16 +2,10 @@
 
 These are the queries for the 2020 SEO Chapter as discussed in https://github.com/HTTPArchive/almanac.httparchive.org/issues/908
 
-## WebPageTest Results
-
-The "WebPageTest Results" folder contains json files for example tests made using the 2020 custom metrics scripts. They are a good reference to what we will get once the crawl is completed. I pull from these to create test objects for the queries.
-
 ## file naming
 file names start with the table being queried. Next is the custom metric if appropriate. Then "_by_" followed by how the query is grouped. Finally anything more specific needed.
 
 Queries contain one or more metrics that match the queries grouping structure. 
-
-To avoid creating over complicated queries we should split up any that contain say more than 10 fields into sperate queries with logical groupings.
 
 ## general
 
@@ -25,7 +19,7 @@ Some common query patterns:
 
 ## _by_device
 
-Example: pages_element_count_by_device.sql
+Example: pages_wpt_bodies_by_device.sql
 
 ### AS_PERCENT function
 
@@ -111,7 +105,7 @@ GROUP BY
 
 ## _by_device_and_percentile
 
-Example: pages_element_count_by_device_and_percentile.sql
+Example: pages_wpt_bodies_by_device_and_percentile.sql
 
 This would typically use the exact same function to extract the data. The select adds in the percentiles and uses a standard field definition to extract the data 
 
@@ -146,31 +140,45 @@ ORDER BY
 
 ## Testing
 
-I've labeled code using test data with TEST and where done, the equivalent line for real data with LIVE. When switching to gather live data we need to check and upate all those lines.
-
-Most custom metrics are not available at the moment. For testing I change the start of the function and hard code some random data. e.g.
+To test the custom metrics before they existed I modifies the JavaScript code to use fake data. e.g.
 
 ```
-var result = {};
-try {
-    // var almanac = JSON.parse(almanac_string); // LIVE
+    var wpt_bodies;
 
-    // TEST
-    var almanac = {
-      "scripts": {
-        "total": Math.floor(Math.random()*10)
-    };
-
-    if (Array.isArray(almanac) || typeof almanac != 'object') return result;
-
-    // ...
+    if (false) { // LIVE = true
+      wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
+    }
+    else 
+    {
+      // TEST
+      wpt_bodies = {
+        "canonicals": {
+          "rendered": {
+              "html_link_canoncials": [
+                  "https://btpi.com/"
+              ]
+          },
+          "self_canonical": Math.floor(Math.random() * 2) == 0,
+          ...
+    }
 ```
 
-To speed up queries the call to the test function can also be faked:
+You can get hold of example custom metric inputs by using the latest custom metrics scripts and following the instructions here:
+
+https://github.com/HTTPArchive/almanac.httparchive.org/issues/33#issuecomment-502288773
+
+Testing also used alternate tables. e.g.
 
 ```
-        get_almanac_info('') AS almanac_info  # TEST
-        #get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
+    `httparchive.sample_data.pages_*` # TEST
+    #`httparchive.pages.2020_08_01_*` # LIVE
 ```
 
-And the queries currently use the sample data tables. This needs to be switched to the real ones when ready.
+Make sure you change all tables in a query when switching between live and test. Some times multiple tables are referenced in a single query.
+
+Another trick I used was to remove the reference to the payload. This would speed up[ test queries and reduce query cost from fractions to nothing.
+
+```
+        get_wpt_bodies_info('') AS wpt_bodies_info # TEST
+        #get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info # LIVE
+```

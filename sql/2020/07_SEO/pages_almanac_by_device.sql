@@ -13,27 +13,13 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var almanac;
-
-    if (true) { // LIVE = true
-      almanac = JSON.parse(almanac_string); // LIVE
-    }
-    else 
-    {
-      // TEST
-      almanac = {
-        "videos": {
-          "total": Math.floor(Math.random() * 3)
-        }
-      };
-    }
+    var almanac = JSON.parse(almanac_string); 
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
     if (almanac.videos) {
       result.videos_total = almanac.videos.total;
     }
-
 } catch (e) {}
 return result;
 ''';
@@ -43,19 +29,16 @@ SELECT
   COUNT(0) AS total,
 
   # Pages with videos
-  COUNTIF(almanac_info.videos_total > 0) as has_videos,
-  AS_PERCENT(COUNTIF(almanac_info.videos_total > 0), COUNT(0)) AS pct_has_videos,
-  # AS_PERCENT(COUNTIF(almanac_info.videos_total > 0), SUM(COUNT(0) OVER())) AS pct_overall_has_videos, # Could not get this to work? 
+  COUNTIF(almanac_info.videos_total > 0) AS has_videos,
+  AS_PERCENT(COUNTIF(almanac_info.videos_total > 0), COUNT(0)) AS pct_has_videos
 
 FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        #get_almanac_info('') AS almanac_info  # TEST
-        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
+        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
       FROM
-        #`httparchive.sample_data.pages_*` # TEST
-        `httparchive.pages.2020_08_01_*` # LIVE
+        `httparchive.pages.2020_08_01_*`
     )
 GROUP BY
   client

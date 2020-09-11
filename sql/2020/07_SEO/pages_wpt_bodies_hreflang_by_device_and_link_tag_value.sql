@@ -6,46 +6,15 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
   ROUND(SAFE_DIVIDE(freq, total), 4)
 );
 
-# returns all the data we need from _almanac
+# returns all the data we need from _wpt_bodies
 CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
     hreflangs ARRAY<STRING>
 > LANGUAGE js AS '''
 var result = {};
 
-
 try {
-    var wpt_bodies;
-
-    if (true) { // LIVE = true
-        wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
-    }
-    else 
-    {
-        // TEST
-        wpt_bodies = {
-            "hreflangs": {
-                "http_header": {
-                    "values": []
-                },
-                "rendered": {
-                    "values": []
-                },
-                "raw": {
-                    "values": []
-                }
-            }
-        }; 
-        if (Math.floor(Math.random() * 10) == 0) {
-            wpt_bodies.hreflangs.rendered.values.push("en-us");
-        }
-        if (Math.floor(Math.random() * 50) == 0) {
-            wpt_bodies.hreflangs.rendered.values.push("en-gb");
-        }
-        if (Math.floor(Math.random() * 25) == 0) {
-            wpt_bodies.hreflangs.rendered.values.push("en-ca");
-        }
-    }
+    var wpt_bodies = JSON.parse(wpt_bodies_string);
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -69,18 +38,15 @@ FROM
       SELECT 
         _TABLE_SUFFIX AS client,
         total,
-        #get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE       
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info,        
       FROM
-        #`httparchive.sample_data.pages_*` # TEST
-        `httparchive.pages.2020_08_01_*` # LIVE
+        `httparchive.pages.2020_08_01_*`
         JOIN
   (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
   FROM 
-  #`httparchive.sample_data.pages_*` # TEST
-  `httparchive.pages.2020_08_01_*` # LIVE
+  `httparchive.pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX)
-    ), UNNEST(wpt_bodies_info.hreflangs) as hreflang
+    ), UNNEST(wpt_bodies_info.hreflangs) AS hreflang
 GROUP BY total, hreflang, client
 ORDER BY client, pct DESC

@@ -13,34 +13,7 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var wpt_bodies;
-
-    if (true) { // LIVE = true
-      wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
-    }
-    else 
-    {
-      // TEST
-      wpt_bodies = {
-        "anchors": {
-            "rendered": {
-                "crawlable": {
-                    "follow": 18,
-                    "nofollow": 0
-                },
-                "hash_link": 0,
-                "hash_only_link": 1,
-                "javascript_void_links": 0,
-                "same_page": {
-                    "total":  Math.floor(Math.random() * 5)
-                },
-                "same_site":  Math.floor(Math.random() * 50),
-                "same_property":  Math.floor(Math.random() * 10),
-                "other_property":  Math.floor(Math.random() * 3)
-            }
-        }
-      }; 
-    }
+    var wpt_bodies = JSON.parse(wpt_bodies_string); 
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -65,10 +38,8 @@ FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        #get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info, # LIVE       
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info       
       FROM
-        #`httparchive.sample_data.pages_*` # TEST
-        `httparchive.pages.2020_08_01_*` # LIVE
+        `httparchive.pages.2020_08_01_*`
     )
-    GROUP BY client, links
+GROUP BY client, links
