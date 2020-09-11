@@ -6,14 +6,15 @@ SELECT
   body,
   truncated,
   NULL AS pageid,
-  SAFE_CAST(requestId AS INT64) AS requestid,
+  requestId AS requestid,
   startedDateTime, time, method, urlShort, redirectUrl, firstReq, firstHtml, reqHttpVersion, reqHeadersSize, reqBodySize, reqCookieLen, reqOtherHeaders, status, respHttpVersion, respHeadersSize, respBodySize, respSize, respCookieLen,
-  SAFE_CAST(expAge AS INT64) AS expAge,
+  expAge AS expAge,
   * EXCEPT (date, client, page, url, body, truncated, requestId, startedDateTime, time, method, urlShort, redirectUrl, firstReq, firstHtml, reqHttpVersion, reqHeadersSize, reqBodySize, reqCookieLen, reqOtherHeaders, status, respHttpVersion, respHeadersSize, respBodySize, respSize, respCookieLen, expAge, type, ext, format, payload),
   NULL AS crawlid,
   type,
   ext,
-  format
+  format,
+  payload
 FROM (
   SELECT
     *
