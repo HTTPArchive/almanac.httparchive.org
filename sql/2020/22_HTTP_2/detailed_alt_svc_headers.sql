@@ -31,4 +31,4 @@ GROUP BY
   firstHtml,
   protocol,
   http_or_https,
-  upgrade 
+  upgrade

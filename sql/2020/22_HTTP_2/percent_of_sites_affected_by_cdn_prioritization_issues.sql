@@ -8,7 +8,8 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM 
   (
-    SELECT 
+    SELECT
+      date,
       client,
       url,
       JSON_EXTRACT_SCALAR(payload, "$._cdn_provider") as cdn
@@ -20,8 +21,9 @@ FROM
       AND date='2020-08-01'
   ) AS pages
 LEFT JOIN 
-  `httparchive.almanac.h2_prioritization_cdns_201909` AS h2_pri
+  `httparchive.almanac.h2_prioritization_cdns` AS h2_pri
 ON pages.cdn = h2_pri.cdn
+AND pages.date = h2_pri.date
 GROUP BY
   client,
   CDN,
