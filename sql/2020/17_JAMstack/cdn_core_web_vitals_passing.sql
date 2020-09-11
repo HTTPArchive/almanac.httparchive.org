@@ -10,9 +10,8 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 
 
 SELECT
-  app,
+  CDN,
   client,
-  CDN
   COUNT(DISTINCT origin) AS origins,
   # Origins with good LCP divided by origins with any LCP.
   SAFE_DIVIDE(
@@ -57,14 +56,14 @@ JOIN (
       url,
       app
     FROM
-      `httparchive.summary_requests.2020_07_01_*`
+      `httparchive.summary_requests.2020_08_01_*`
     JOIN (
       SELECT
         _TABLE_SUFFIX,
         app,
         url
       FROM
-        `httparchive.technologies.2020_07_01_*`
+        `httparchive.technologies.2020_08_01_*`
       WHERE
         LOWER(category) = "static site generator" OR
 				app = "Next.js"
@@ -76,12 +75,10 @@ ON
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
   # The CrUX 202008 dataset is not available until September 8.
-  date = '2020-07-01' AND
+  date = '2020-08-01' AND
 	CDN IS NOT NULL
 GROUP BY
   CDN,
-  app,
-  client,
-  origin
+  client
 ORDER BY
   origins DESC
