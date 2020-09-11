@@ -11,7 +11,7 @@ SELECT
       AND NOT(fast_fcp>=0.75))*100/COUNT(0),0) AS pct_moderate_fcp,
   ROUND(COUNTIF(slow_fcp>=0.25)*100/COUNT(0),0) AS pct_slow_fcp,
 FROM
-  `httparchive.sample_data.requests`
+  `httparchive.almanac.requests`
 JOIN (
   SELECT
     origin,
@@ -20,7 +20,7 @@ JOIN (
   FROM
     `chrome-ux-report.materialized.metrics_summary`
   WHERE
-    yyyymm=202007)
+    yyyymm=202008)
 ON
   CONCAT(origin, '/')=page
 WHERE

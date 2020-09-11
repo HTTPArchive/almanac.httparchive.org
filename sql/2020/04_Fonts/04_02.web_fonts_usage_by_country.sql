@@ -12,7 +12,7 @@ SELECT
 FROM 
   `chrome-ux-report.materialized.country_summary`
 WHERE 
-  yyyymm = 202007)
+  yyyymm = 202008)
 JOIN 
   `httparchive.summary_pages.2020_08_01_*`
 ON 

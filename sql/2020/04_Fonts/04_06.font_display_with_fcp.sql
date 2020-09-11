@@ -58,7 +58,7 @@ JOIN (
   FROM
     `chrome-ux-report.materialized.metrics_summary`
   WHERE
-    yyyymm=202007)
+    yyyymm=202008)
 ON
   CONCAT(origin, '/')=page
 WHERE

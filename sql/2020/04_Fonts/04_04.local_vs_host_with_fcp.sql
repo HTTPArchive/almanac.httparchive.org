@@ -1,24 +1,20 @@
 #standardSQL
-#local_vs_host_with_fcp_PSI
+#local_vs_host_with_fcp
 SELECT
   client,
-  host_local,
+  CASE 
+    WHEN NET.HOST(page) != NET.HOST(url) THEN "host"     
+    ELSE "local"
+  END as host_local,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   ROUND(COUNT(0)/SUM(COUNT(0)) OVER (PARTITION BY client),2) AS pct,
   ROUND(COUNTIF(fast_fcp>=0.75)*100/COUNT(0),0) AS pct_fast_fcp,
   ROUND(COUNTIF(NOT(slow_fcp >=0.25)
       AND NOT(fast_fcp>=0.75))*100/COUNT(0),0) AS pct_moderate_fcp,
-  ROUND(COUNTIF(slow_fcp>=0.25)*100/COUNT(0),0) AS pct_slow_fcp,
-FROM (
-  SELECT
-    *,
-  IF
-    (NET.HOST(page) != NET.HOST(url),
-      'host',
-      'local') AS host_local
-  FROM
-    `httparchive.almanac.requests`)
+  ROUND(COUNTIF(slow_fcp>=0.25)*100/COUNT(0),0) AS pct_slow_fcp,      
+FROM 
+    `httparchive.almanac.requests`
 JOIN (
   SELECT
     origin,
@@ -27,9 +23,9 @@ JOIN (
   FROM
     `chrome-ux-report.materialized.metrics_summary`
   WHERE
-    yyyymm=202007)
+    yyyymm=202008)
 ON
-  CONCAT(origin, '/')=page
+  CONCAT(origin, '/')=page        
 WHERE
   type = 'font'
   AND date='2020-08-01'
