@@ -49,7 +49,7 @@ LANGUAGE js AS """
       return 'script';
     } else if (['eot', 'ttf', 'woff', 'woff2', 'otf'].includes(ext)) {
       return 'font';
-    } else if (['png', 'gif', 'jpg', 'jpeg', 'webp', 'ico', 'svg']) {
+    } else if (['png', 'gif', 'jpg', 'jpeg', 'webp', 'ico', 'svg'].includes(ext)) {
       return 'image';
     } else if (['css', 'xml'].includes(ext)) {
       return ext;
