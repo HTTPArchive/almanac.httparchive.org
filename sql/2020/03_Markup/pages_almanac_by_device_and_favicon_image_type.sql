@@ -12,31 +12,7 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var almanac;
-    if (true) { // LIVE = true
-      almanac = JSON.parse(almanac_string); // LIVE
-    }
-    else {
-      // TEST
-      almanac = {
-        "link-nodes": {
-            "total": 36,
-            "nodes": [{
-                "tagName": "link",
-                "rel": "icon",
-                "type": "image/png",
-                "href": "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.png?hgfhfgdh"
-            }]
-        }
-      };
-      if (Math.floor(Math.random() * 3) == 0) {
-        almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.jpg?hgfhfgdh";
-      } else if (Math.floor(Math.random() * 3) == 0) {
-        almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.svg";
-      } else if (Math.floor(Math.random() * 3) == 0) {
-        almanac["link-nodes"].nodes[0].href = "fgdhfgdhfdghgfdhfdghdfghfghdg/dfgdfgdfs/dfgfdsgdfgs/fdgfdg.gif";
-      }
-    }
+    var almanac = JSON.parse(almanac_string);
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
@@ -87,11 +63,9 @@ SELECT
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        #get_almanac_info('') AS almanac_info  # TEST
-        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info # LIVE
+        get_almanac_info(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS almanac_info
       FROM
-        #`httparchive.sample_data.pages_*` # TEST
-        `httparchive.pages.2020_08_01_*` # LIVE
+        `httparchive.pages.2020_08_01_*`
     )
 GROUP BY
   client,

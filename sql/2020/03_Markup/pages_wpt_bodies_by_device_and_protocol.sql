@@ -11,32 +11,7 @@ CREATE TEMPORARY FUNCTION get_wpt_bodies_protocols(wpt_bodies_string STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 var result = [];
 try {
-    var wpt_bodies;
-
-    if (true) { // LIVE = true
-      wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
-    }
-    else 
-    {
-      // TEST
-      wpt_bodies = {
-        "anchors": {
-          "rendered": {
-            "protocols": {
-            }
-          }
-        }
-      }; 
-      if (Math.floor(Math.random() * 2) == 0) {
-        wpt_bodies.anchors.rendered.protocols.https = 2;
-      }
-      if (Math.floor(Math.random() * 5) == 0) {
-        wpt_bodies.anchors.rendered.protocols.http = 2;
-      }
-      if (Math.floor(Math.random() * 10) == 0) {
-        wpt_bodies.anchors.rendered.protocols.mailto = 2;
-      }
-    }
+    var wpt_bodies = JSON.parse(wpt_bodies_string); 
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -57,16 +32,13 @@ SELECT
   AS_PERCENT(COUNT(DISTINCT url), total) AS pct,
 
 FROM
-    #`httparchive.sample_data.pages_*` # TEST
-    `httparchive.pages.2020_08_01_*` # LIVE
+    `httparchive.pages.2020_08_01_*`
     JOIN
       (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM 
-      #`httparchive.sample_data.pages_*`  # TEST
-      `httparchive.pages.2020_08_01_*` # LIVE
+      `httparchive.pages.2020_08_01_*`
       GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
     USING (_TABLE_SUFFIX),
-    #UNNEST(get_wpt_bodies_protocols('')) AS protocol # TEST
-    UNNEST(get_wpt_bodies_protocols(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'))) AS protocol # LIVE
+    UNNEST(get_wpt_bodies_protocols(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'))) AS protocol 
 GROUP BY
   client,
   total,

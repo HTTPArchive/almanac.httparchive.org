@@ -14,23 +14,7 @@ freq INT64
 >> LANGUAGE js AS '''
 var result = [];
 try {
-    var markup;
-    if (true) { // LIVE = true
-      markup = JSON.parse(markup_string); // LIVE
-    } 
-    else 
-    {
-      // TEST
-      markup = {    
-        "buttons": {
-          "types": {
-              "button": Math.floor(Math.random()*5),
-              "fish": Math.floor(Math.random()*3)
-          },
-          "total": Math.floor(Math.random()*2)+2
-        }
-      }; 
-    }
+    var markup = JSON.parse(markup_string); 
 
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
@@ -48,16 +32,13 @@ SELECT
   SUM(button_type_info.freq) AS freq, 
   AS_PERCENT(SUM(button_type_info.freq), SUM(SUM(button_type_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m304
 FROM
-    #`httparchive.sample_data.pages_*` # TEST
-    `httparchive.pages.2020_08_01_*` # LIVE
+    `httparchive.pages.2020_08_01_*`
     JOIN
       (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM 
-      #`httparchive.sample_data.pages_*`  # TEST
-      `httparchive.pages.2020_08_01_*` # LIVE
+      `httparchive.pages.2020_08_01_*`
       GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
     USING (_TABLE_SUFFIX),
-    #UNNEST(get_markup_buttons_info('')) AS button_type_info # TEST
-    UNNEST(get_markup_buttons_info(JSON_EXTRACT_SCALAR(payload, '$._markup'))) AS button_type_info # LIVE
+    UNNEST(get_markup_buttons_info(JSON_EXTRACT_SCALAR(payload, '$._markup'))) AS button_type_info
 GROUP BY
   client,
   button_type

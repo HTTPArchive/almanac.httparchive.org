@@ -18,45 +18,7 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var wpt_bodies;
-
-    if (true) { // LIVE = true
-      wpt_bodies = JSON.parse(wpt_bodies_string); // LIVE
-    }
-    else 
-    {
-      // TEST
-      wpt_bodies = {
-        raw_html: {
-          comment_count: Math.floor(Math.random() * 100),
-          conditional_comment_count: Math.floor(Math.random() * 100),
-          head_size: Math.floor(Math.random() * 1000),
-          body_size: Math.floor(Math.random() * 10000)
-        },
-        "headings": {
-          "rendered": {
-              "first_non_empty_heading_hidden": false,
-              "h1": {
-                  "total": Math.floor(Math.random() * 4),
-                  "non_empty_total": Math.floor(Math.random() * 4),
-                  "characters": 343,
-                  "words": 20
-              }
-          }
-        },
-        "anchors": {
-          "rendered": {
-            "target_blank": {
-              "total": Math.floor(Math.random() * 4),
-              "noopener_noreferrer": Math.floor(Math.random() * 4),
-              "noopener": 0,
-              "noreferrer": 0,
-              "neither": 8
-            }
-          }
-        }
-      }; 
-    }
+    var wpt_bodies = JSON.parse(wpt_bodies_string); 
 
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
@@ -82,34 +44,27 @@ SELECT
   COUNT(0) AS total,
 
   # % of pages with comments
-  # COUNTIF(wpt_bodies_info.comment_count > 0) AS freq_contains_comment,
   AS_PERCENT(COUNTIF(wpt_bodies_info.comment_count > 0), COUNT(0)) AS pct_contains_comment_m104,
 
   # % of pages with conditional comments
-  # COUNTIF(wpt_bodies_info.conditional_comment_count > 0) AS freq_contains_conditional_comment,
   AS_PERCENT(COUNTIF(wpt_bodies_info.conditional_comment_count > 0), COUNT(0)) AS pct_contains_conditional_comment_m106,
 
   # pages without an h1
-  # COUNTIF(wpt_bodies_info.no_h1) AS freq_no_h1,
   AS_PERCENT(COUNTIF(wpt_bodies_info.no_h1), COUNT(0)) AS pct_no_h1_m220,
 
   # pages with all target _banks including rel="noopener noreferrer" M420
-  # COUNTIF(wpt_bodies_info.target_blank_total IS NULL OR wpt_bodies_info.target_blank_total = wpt_bodies_info.target_blank_noopener_noreferrer_total) AS freq_always_target_blank_noopener_noreferrer,
   AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_total IS NULL OR wpt_bodies_info.target_blank_total = wpt_bodies_info.target_blank_noopener_noreferrer_total), COUNT(0)) AS pct_always_target_blank_noopener_noreferrer_m420,
 
   # pages with some target _banks not using rel="noopener noreferrer" M421
-  # COUNTIF(wpt_bodies_info.target_blank_total > wpt_bodies_info.target_blank_noopener_noreferrer_total) AS freq_some_target_blank_without_noopener_noreferrer,
   AS_PERCENT(COUNTIF(wpt_bodies_info.target_blank_total > wpt_bodies_info.target_blank_noopener_noreferrer_total), COUNT(0)) AS pct_some_target_blank_without_noopener_noreferrer_m421,
 
   FROM
     ( 
       SELECT 
         _TABLE_SUFFIX AS client,
-        #get_wpt_bodies_info('') AS wpt_bodies_info # TEST
-        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info # LIVE      
+        get_wpt_bodies_info(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies')) AS wpt_bodies_info      
       FROM
-        #`httparchive.sample_data.pages_*` # TEST
-        `httparchive.pages.2020_08_01_*` # LIVE
+       `httparchive.pages.2020_08_01_*`
     )
 GROUP BY
   client

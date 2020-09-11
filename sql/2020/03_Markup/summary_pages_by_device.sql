@@ -18,8 +18,7 @@ SELECT
   COUNTIF(bytesHtml = 0) AS freq_zero_bytes_html,
   AS_PERCENT(COUNTIF(bytesHtml = 0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_zero_bytes_html
 FROM
-  #`httparchive.sample_data.summary_pages_*` # TEST
-  `httparchive.summary_pages.2020_08_01_*` # LIVE
+  `httparchive.summary_pages.2020_08_01_*`
 GROUP BY
   client
 ORDER BY

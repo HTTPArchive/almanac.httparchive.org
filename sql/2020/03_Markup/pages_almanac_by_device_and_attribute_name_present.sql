@@ -8,29 +8,7 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 CREATE TEMPORARY FUNCTION get_almanac_attribute_names(almanac_string STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-    var almanac;
-    if (true) { // LIVE = true
-      almanac = JSON.parse(almanac_string); // LIVE
-    }
-    else {
-      // TEST
-       almanac = {    
-        "attributes_used_on_elements": {
-        }
-      };
-      if (Math.floor(Math.random() * 3) == 0) {
-        almanac.attributes_used_on_elements.xmlns = 10;
-      }
-      if (Math.floor(Math.random() * 3) == 0) {
-        almanac.attributes_used_on_elements.lang = 10;
-      }
-      if (Math.floor(Math.random() * 3) == 0) {
-        almanac.attributes_used_on_elements.type = 10;
-      }
-      if (Math.floor(Math.random() * 3) == 0) {
-        almanac.attributes_used_on_elements.media = 10;
-      }
-    }
+    var almanac = JSON.parse(almanac_string); 
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return [];
 
@@ -51,17 +29,14 @@ SELECT
   total,
   AS_PERCENT(COUNT(DISTINCT url), total) AS pct_m401
 FROM
-  #`httparchive.sample_data.pages_*` # TEST
-  `httparchive.pages.2020_08_01_*` # LIVE
+  `httparchive.pages.2020_08_01_*`
 JOIN
   (SELECT _TABLE_SUFFIX, COUNT(0) AS total 
   FROM 
-  #`httparchive.sample_data.pages_*` # TEST
-  `httparchive.pages.2020_08_01_*` # LIVE
+  `httparchive.pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX),
-  #UNNEST(get_almanac_attribute_names('')) AS attribute_name # TEST
-  UNNEST(get_almanac_attribute_names(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS attribute_name # LIVE
+  UNNEST(get_almanac_attribute_names(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS attribute_name
 GROUP BY
   client,
   total,

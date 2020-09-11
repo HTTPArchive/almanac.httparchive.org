@@ -17,7 +17,7 @@ Some common query patterns:
 
 ## _by_device
 
-Example: pages_element_count_by_device.sql
+Example: pages_markup_by_device.sql
 
 ### AS_PERCENT function
 
@@ -103,7 +103,7 @@ GROUP BY
 
 ## _by_device_and_percentile
 
-Example: pages_element_count_by_device_and_percentile.sql
+Example: pages_markup_by_device_and_percentile.sql
 
 This would typically use the exact same function to extract the data. The select adds in the percentiles and uses a standard field definition to extract the data 
 
@@ -138,7 +138,7 @@ ORDER BY
 
 ## Testing
 
-Most custom metrics are not available at the moment. For testing I change the start of the function and hard code some random data. e.g.
+For testing I change the start of the function and hard code some random data. e.g.
 
 ```
 var result = {};

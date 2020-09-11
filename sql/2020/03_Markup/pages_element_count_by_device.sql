@@ -43,22 +43,17 @@ SELECT
   client,
   COUNT(0) AS total,
 
-  ## element_count
-
   CAST(ROUND(AVG(element_count_info.count)) AS INT64) AS elements_avg, # not sure what value this is? average elements per page? same for all device rows
   MIN(element_count_info.count) AS elements_min, # y-axis min, same for all device rows
   MAX(element_count_info.count) AS elements_max, # y-axis max, same for all device rows
 
   # % of pages with obsolete elements related to M216
-  # COUNTIF(element_count_info.contains_obsolete_element) AS freq_contains_obsolete_element,
   AS_PERCENT(COUNTIF(element_count_info.contains_obsolete_element), COUNT(0)) AS pct_contains_obsolete_element_m216,
 
   # % of pages with custom elements ("slang") related to M242
-  # COUNTIF(element_count_info.contains_custom_element) AS freq_contains_custom_element,
   AS_PERCENT(COUNTIF(element_count_info.contains_custom_element), COUNT(0)) AS pct_contains_custom_element_m242,
 
   # % of pages with details and summary elements M214
-  # COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element) AS freq_contains_details_and_summary_element,
   AS_PERCENT(COUNTIF(element_count_info.contains_details_element AND element_count_info.contains_summary_element), COUNT(0)) AS pct_contains_details_and_summary_element_m214,
 
   FROM
@@ -67,8 +62,7 @@ SELECT
         _TABLE_SUFFIX AS client,
         get_element_count_info(JSON_EXTRACT_SCALAR(payload, '$._element_count')) AS element_count_info
       FROM
-        #`httparchive.sample_data.pages_*` # TEST
-        `httparchive.pages.2020_08_01_*` # LIVE
+        `httparchive.pages.2020_08_01_*` 
     )
 GROUP BY
   client
