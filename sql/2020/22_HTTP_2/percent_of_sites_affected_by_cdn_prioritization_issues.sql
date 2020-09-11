@@ -20,7 +20,7 @@ FROM
       AND date='2020-08-01'
   ) AS pages
 LEFT JOIN 
-  `httparchive.almanac.h2_prioritization_cdns_201909` AS h2_pri
+  `httparchive.almanac.h2_prioritization_cdns` AS h2_pri
 ON pages.cdn = h2_pri.cdn
 GROUP BY
   client,
