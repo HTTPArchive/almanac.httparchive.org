@@ -24,6 +24,8 @@ FROM (
     expAge > 0 AS uses_cache
   FROM
     `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01'
 )
 GROUP BY
   client,

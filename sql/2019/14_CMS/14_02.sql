@@ -14,6 +14,7 @@ FROM (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
+    date = '2019-07-01' AND
     firstHtml)
 JOIN
   (SELECT _TABLE_SUFFIX AS client, url FROM `httparchive.technologies.2019_07_01_*` WHERE app = 'WordPress')

@@ -25,8 +25,9 @@ SELECT
 FROM 
   `httparchive.almanac.requests` 
 WHERE
-  firstHtml
-  AND JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2"
+  date = '2019-07-01' AND
+  firstHtml AND
+  JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2"
 GROUP BY
   client,
   server_header

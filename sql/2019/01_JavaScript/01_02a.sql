@@ -16,7 +16,9 @@ FROM (
       respSize,
       NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties`) AS is_third_party
     FROM
-      `httparchive.almanac.summary_requests`)
+      `httparchive.almanac.summary_requests`
+    WHERE
+      date = '2019-07-01')
   WHERE
     type = 'script'
   GROUP BY

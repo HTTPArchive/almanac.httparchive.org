@@ -23,7 +23,9 @@ SELECT
   getUpgradeHeader(payload) AS upgrade,
   COUNT(0) AS num_requests
 FROM 
-  `httparchive.almanac.requests` 
+  `httparchive.almanac.requests`
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client,
   firstHtml,

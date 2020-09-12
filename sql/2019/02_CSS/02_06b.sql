@@ -32,6 +32,8 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getColors(css)) AS color
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client,
   color
