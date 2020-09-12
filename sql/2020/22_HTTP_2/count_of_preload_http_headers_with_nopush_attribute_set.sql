@@ -1,5 +1,5 @@
-#standardSQL
-# 22_HTTP_2 - Count of preload HTTP Headers with nopush attribute set. Once off stat for last crawl
+# standardSQL
+# Count of preload HTTP Headers with nopush attribute set. Once off stat for last crawl
 CREATE TEMPORARY FUNCTION getLinkHeaders(payload STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS """
@@ -12,14 +12,13 @@ LANGUAGE js AS """
         preload.push(headers[i].value);
       }
      return preload;  
-    
 """;
 
 SELECT 
   client, 
   firstHtml, 
-  COUNT(*) as num_requests,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
+  COUNT(0) as num_requests,
+  ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) AS pct
 FROM (
   SELECT 
     client,

@@ -1,23 +1,26 @@
-#standardSQL
-# 22_HTTP_2 - Average percentage of resources loaded over HTTP/2 or HTTP/1.1 per site
+# standardSQL
+# Percentage of resources loaded over HTTP/2 or HTTP/1.1 per site
 SELECT
   client,
-  ROUND(AVG(http_1_1/num_requests) * 100,2) avg_pct_http_1_1,
-  ROUND(AVG(http_2/num_requests) * 100,2) avg_pct_http_2
+  APPROX_QUANTILES((http_1_1/num_requests) * 100, 1000)[OFFSET(500)] AS median_avg_pct_http_1_1,
+  APPROX_QUANTILES((http_2/num_requests) * 100, 1000)[OFFSET(500)] AS median_avg_pct_http_2
 FROM (
   SELECT 
+    percentile,
     client,
     page,
-    COUNT(*) AS num_requests, 
+    COUNT(0) AS num_requests, 
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="http/0.9",1,0)) AS http_0_9, 
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="http/1.0",1,0)) AS http_1_0, 
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="http/1.1",1,0)) AS http_1_1,
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="HTTP/2",1,0)) AS http_2
   FROM 
-    `httparchive.almanac.requests`
+    `httparchive.almanac.requests`,
+    UNNEST([10, 25, 50, 75, 90]) AS percentile
   WHERE
     date='2020-08-01'
   GROUP BY
+    percentile,
     client,
     page
 )

@@ -1,9 +1,9 @@
-#standardSQL
-# 22_HTTP_2 - Measure number of TCP Connections per site.
+# standardSQL
+# Measure number of TCP Connections per site.
 SELECT 
   "mobile" AS client,
   JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
-  COUNT(*) AS num_pages,
+  COUNT(0) AS num_pages,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(50)] AS median,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(75)] AS p75,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(95)] AS p95
@@ -24,7 +24,7 @@ UNION ALL
 SELECT 
   "desktop" AS client,
   JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
-  COUNT(*) AS num_pages,
+  COUNT(0) AS num_pages,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(50)] AS median,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(75)] AS p75,
   APPROX_QUANTILES(_connections, 100)[SAFE_ORDINAL(95)] AS p95

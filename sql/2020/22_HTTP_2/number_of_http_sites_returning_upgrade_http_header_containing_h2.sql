@@ -1,5 +1,5 @@
-#standardSQL
-# 22_HTTP_2 - Number of HTTP (not HTTPS) sites which return upgrade HTTP header containing h2.
+# standardSQL
+# Number of HTTP (not HTTPS) sites which return upgrade HTTP header containing h2.
 CREATE TEMPORARY FUNCTION getUpgradeHeader(payload STRING)
 RETURNS STRING
 LANGUAGE js AS """
@@ -18,13 +18,13 @@ LANGUAGE js AS """
 SELECT 
   client,
   firstHtml,  
-  COUNT(*) AS num_requests
+  COUNT(0) AS num_requests
 FROM 
   `httparchive.almanac.requests`
 WHERE
-  url LIKE "http://%"
-  AND getUpgradeHeader(payload) LIKE "%h2%"
-  AND date='2020-08-01'
+  date='2020-08-01' AND 
+  url LIKE "http://%" AND
+  getUpgradeHeader(payload) LIKE "%h2%"
 GROUP BY
   client,
   firstHtml
