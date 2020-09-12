@@ -6,7 +6,7 @@ try {
   var $ = JSON.parse(css);
   return $.stylesheet.rules.filter(rule => rule.type == 'font-face').map(rule => {
     var family = rule.declarations && rule.declarations.find(d => d.property == 'font-family');
-    return family && family.value.replace(/['"]/g, '');
+    return family && family.value.replace(/[\'"]/g, '');
   }).filter(family => family);
 } catch (e) {
   return [];

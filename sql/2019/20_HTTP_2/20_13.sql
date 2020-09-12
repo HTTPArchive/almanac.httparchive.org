@@ -18,7 +18,7 @@ LANGUAGE js AS """
 SELECT 
   client, 
   firstHtml, 
-  COUNT(*) as num_requests,
+  COUNT(0) as num_requests,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM (
   SELECT 

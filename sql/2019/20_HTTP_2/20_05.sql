@@ -18,7 +18,7 @@ LANGUAGE js AS """
 SELECT 
   client,
   firstHtml,  
-  COUNT(*) AS num_requests
+  COUNT(0) AS num_requests
 FROM 
   `httparchive.almanac.requests`
 WHERE

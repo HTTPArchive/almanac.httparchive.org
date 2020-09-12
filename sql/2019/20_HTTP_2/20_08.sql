@@ -20,7 +20,7 @@ LANGUAGE js AS """
 SELECT 
   client,
   getServerHeader(payload) AS server_header,
-  COUNT(*) AS num_pages,
+  COUNT(0) AS num_pages,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM 
   `httparchive.almanac.requests` 
