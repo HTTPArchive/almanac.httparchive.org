@@ -29,6 +29,7 @@ FROM (
     `httparchive.almanac.requests`,
     UNNEST(getVary(payload)) AS vary
   WHERE
+    date = '2019-07-01' AND
     type = 'image'
   GROUP BY
     client,

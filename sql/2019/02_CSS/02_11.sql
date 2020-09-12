@@ -12,7 +12,7 @@ SELECT
   total,
   ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
 FROM
-  (SELECT client, page, body FROM `httparchive.almanac.summary_response_bodies` WHERE type = 'css')
+  (SELECT client, page, body FROM `httparchive.almanac.summary_response_bodies` WHERE date = '2019-07-01' AND type = 'css')
 JOIN
   (SELECT _TABLE_SUFFIX AS client, COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_*` GROUP BY client)
 USING (client),

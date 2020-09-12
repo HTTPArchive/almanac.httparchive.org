@@ -29,6 +29,8 @@ FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getFontVariationSettings(css)) AS values,
   UNNEST(SPLIT(values, ',')) AS value
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client,
   axis

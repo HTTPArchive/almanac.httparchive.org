@@ -36,6 +36,8 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getFontFormats(css)) AS formats
+WHERE
+    date = '2019-07-01'
 GROUP BY
   client,
   formats
