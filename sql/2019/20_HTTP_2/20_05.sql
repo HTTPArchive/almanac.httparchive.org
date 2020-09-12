@@ -18,13 +18,14 @@ LANGUAGE js AS """
 SELECT 
   client,
   firstHtml,  
-  COUNT(*) AS num_requests
+  COUNT(0) AS num_requests
 FROM 
   `httparchive.almanac.requests`
 WHERE
-  url LIKE "https://%"
-  AND JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
-  AND getUpgradeHeader(payload) LIKE "%h2%"
+  date = '2019-07-01' AND
+  url LIKE "https://%" AND
+  JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2" AND
+  getUpgradeHeader(payload) LIKE "%h2%"
 GROUP BY
   client,
   firstHtml

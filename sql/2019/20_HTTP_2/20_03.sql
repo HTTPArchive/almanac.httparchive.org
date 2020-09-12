@@ -8,13 +8,15 @@ FROM (
   SELECT 
     client,
     page,
-    COUNT(*) AS num_requests, 
+    COUNT(0) AS num_requests, 
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="http/0.9",1,0)) AS http_0_9, 
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="http/1.0",1,0)) AS http_1_0, 
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="http/1.1",1,0)) AS http_1_1,
     SUM(IF(JSON_EXTRACT_SCALAR(payload, "$._protocol") ="HTTP/2",1,0)) AS http_2
   FROM 
-    `httparchive.almanac.requests` 
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01'
   GROUP BY
     client,
     page

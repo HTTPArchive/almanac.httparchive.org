@@ -73,7 +73,9 @@ FROM (
       page,
       getColorFormats(css) AS color
     FROM
-      `httparchive.almanac.parsed_css`)
+      `httparchive.almanac.parsed_css`
+  WHERE
+    date = '2019-07-01')
   GROUP BY
     client,
     page)

@@ -23,7 +23,9 @@ FROM
     FROM
       `httparchive.almanac.requests`
     WHERE
-      resp_last_modified <> "" AND expAge > 0
+      date = '2019-07-01' AND
+      resp_last_modified <> "" AND
+      expAge > 0
   )
 GROUP BY
   client

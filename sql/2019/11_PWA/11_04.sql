@@ -22,7 +22,9 @@ FROM (
     getManifestProps(body) AS properties,
     COUNT(DISTINCT page) OVER (PARTITION BY client) AS total
   FROM
-    `httparchive.almanac.manifests`),
+    `httparchive.almanac.manifests`
+  WHERE
+    date = '2019-07-01'),
   UNNEST(properties) AS property
 GROUP BY
   client,
