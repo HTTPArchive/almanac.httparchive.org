@@ -20,13 +20,14 @@ LANGUAGE js AS """
 SELECT 
   client,
   getServerHeader(payload) AS server_header,
-  COUNT(*) AS num_pages,
+  COUNT(0) AS num_pages,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM 
-  `httparchive.almanac.requests` 
+  `httparchive.almanac.requests`
 WHERE
-  firstHtml
-  AND JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
+  date = '2019-07-01' AND
+  firstHtml AND
+  JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
 GROUP BY
   client,
   server_header
