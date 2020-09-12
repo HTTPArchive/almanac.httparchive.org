@@ -27,6 +27,8 @@ jobs:
         python-version: '3.7'
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
+    - name: Remove node modules to avoid linting errors
+      run: rm -rf src/node_modules
     - name: Lint Generated HTML
       uses: github/super-linter@v3.9.4
       env:
