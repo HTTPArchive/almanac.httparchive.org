@@ -17,3 +17,7 @@ These queries take the CSS response bodies and parse them using Rework CSS to ge
 ## [third_parties.sql](./third_parties.sql)
 
 This query copies the [Third Party Web](https://github.com/patrickhulce/third-party-web) category data. Coordinate with @patrickhulce to publish a new version of the table based on the latest HTTP Archive data, then append the results of this query to the `almanac.third_parties` table.
+
+## [pwa_candidates.sql](./pwa_candidates.sql)
+
+This query generates a list of candidate URLs for manifest and service worker files. It depends on the `summary_response_bodies` table but could just as easily query `response_bodies.YYYY_MM_DD_*` instead. Append the results to the `almanac.pwa_candidates` table with the latest HTTP Archive data.
