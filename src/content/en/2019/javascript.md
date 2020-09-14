@@ -32,7 +32,7 @@ Sending smaller JavaScript bundles to the browser is the best way to reduce down
   image="fig1.png",
   caption="Distribution of JavaScript bytes per page.",
   description="Bar chart showing 70 bytes of JavaScript are used in the 10th percentile, 174 bytes for 25th percentile, 373 bytes for 50th percentile, 693 bytes for 75th percentile, and 1,093 bytes for 90th percentile",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive"
   )
 }}
 
@@ -44,7 +44,7 @@ Looking at these numbers, it's only natural to wonder if this is too much JavaSc
   image="fig2.png",
   caption="Distribution of JavaScript per page by device.",
   description="Bar chart showing 76 bytes/65 bytes of JavaScript are used in the 10th percentile on desktop and mobile respectively, 186/164 bytes for 25th percentile, 391/359 bytes for 50th percentile, 721/668 bytes for 75th percentile, and 1,131/1,060 bytes for 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive"
   )
 }}
 
@@ -60,7 +60,7 @@ We can get an idea by analyzing main thread processing times for V8 at different
   image="fig3.png",
   caption="V8 Main thread processing times by device.",
   description="Bar chart showing 141 ms/377 ms of processing time is used in the 10th percentile on desktop and mobile respectively, 352/988 ms for 25th percentile, 849/2,437 ms for 50th percentile, 1,850/5,518 ms for 75th percentile, and 3,543/10,735 ms for 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive"
   )
 }}
 
@@ -85,7 +85,7 @@ One avenue worth exploring when trying to analyze the amount of JavaScript used 
   image="fig5.png",
   caption="Distribution of total JavaScript requests.",
   description="Bar chart showing 4/4 requests for desktop and mobile respectively are used in the 10th percentile, 10/9 in 25th percentile, 19/18 in 50th percentile, 33/32 in 75th percentile and 53/52 in 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive"
   )
 }}
 
@@ -100,7 +100,7 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
 {{ figure_markup(
   image="fig6.png",
   caption="Bar chart showing 0/1 request on desktop are first-party and third-party respectively in 10th percentile, 2/4 in 25th percentile, 6/10 in 50th percentile, 13/21 in 75th percentile, and 24/38 in 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"
   )
 }}
 
@@ -108,7 +108,7 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
   image="fig7.png",
   caption="Distribution of first and third party scripts on mobile.",
   description="Bar chart showing 0/1 request on mobile are first-party and third-party respectively in 10th percentile, 2/3 in 25th percentile, 5/9 in 50th percentile, 13/20 in 75th percentile, and 23/36 in 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive"
   )
 }}
 
@@ -118,7 +118,7 @@ For both mobile and desktop clients, more third-party requests are sent than fir
   image="fig8.png",
   caption="Distribution of total JavaScript downloaded on desktop.",
   description="Bar chart showing 0/17 bytes of JavaScript are downloaded on desktop for first-party and third-party requests respectively in the 10th percentile, 11/62 in 25th percentile, 89/232 in 50th percentile, 200/525 in 75th percentile, and 404/900 in 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive"
   )
 }}
 
@@ -126,7 +126,7 @@ For both mobile and desktop clients, more third-party requests are sent than fir
   image="fig9.png",
   caption="Distribution of total JavaScript downloaded on mobile.",
   description="Bar chart showing 0/17 bytes of JavaScript are downloaded on mobile for first-party and third-party requests respectively in the 10th percentile, 6/54 in 25th percentile, 83/217 in 50th percentile, 189/477 in 75th percentile, and 380/827 in 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive"
   )
 }}
 
@@ -149,7 +149,7 @@ How many sites are compressing their JavaScript resources?
   image="fig10.png",
   caption="Percentage of sites compressing JavaScript resources with gzip or brotli.",
   description="Bar chart showing 67%/65% of JavaScript resources are compressed with gzip on desktop and mobile respectively, and 15%/14% are compressed using Brotli.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}
 
@@ -300,7 +300,7 @@ In the past number of years, the JavaScript ecosystem has seen a rise in open-so
   image="fig12.png",
   caption="Most frequently used frameworks on desktop.",
   description="Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
   )
 }}
 
@@ -327,7 +327,7 @@ How many sites use `type="module"` for scripts on their page?
   image="fig13.png",
   caption="Percentage of sites utilizing type=module.",
   description="Bar chart showing 0.6% of sites on desktop use 'type=module', and 0.8% of sites on mobile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive"
   )
 }}
 
@@ -345,7 +345,7 @@ When used together, browsers that support modules will completely ignore any scr
   image="fig14.png",
   caption="Percentage of sites using nomodule.",
   description="Bar chart showing 0.8% of sites on desktop use 'nomobule', and 0.5% of sites on mobile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
   )
 }}
 
@@ -364,7 +364,7 @@ So, how many sites use preload and prefetch directives?
   image="fig15.png",
   caption="Percentage of sites using rel=preload for scripts.",
   description="Bar chart showing 14% of sites on desktop use rel=preload' for scripts, and 15% of sites on mobile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive"
   )
 }}
 
@@ -376,7 +376,7 @@ For prefetch, we have the following:
   image="fig16.png",
   caption="Percentage of sites using rel=prefetch for scripts.",
   description="Bar chart showing 0.08% of sites on desktop use 'rel=prefetch', and 0.08% of sites on mobile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive"
   )
 }}
 
@@ -401,7 +401,7 @@ How many sites use the following APIs?
   image="fig17.png",
   caption="Usage of new JavaScript APIs.",
   description="Bar chart showing 25.5%/36.2% of sites on desktop and mobile respectivdely use WeakMap, 6.1%/17.2% use WeakSet, 3.9%/14.0% use Intl, 3.9%/4.4% use Proxy, 0.4%/0.4% use Atomics, and 0.2%/0.2% use SharedArrayBuffer.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive"
   )
 }}
 
@@ -421,7 +421,7 @@ Although useful, there are a number of reasons why many sites may not want to in
   image="fig18.png",
   caption="Percentage of sites using source maps.",
   description="Bar chart showing 18% of desktop sites and 17% of mobile sites use source maps.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"
   )
 }}
 

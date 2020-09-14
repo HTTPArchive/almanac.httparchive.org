@@ -36,7 +36,7 @@ Hex is the most popular way to describe color by far, with 93% usage, followed b
   image="fig1.png",
   caption="Popularity of color formats.",
   description="Bar chart showing the adoption of HSL, HSLA, RGB, RGBA, and hex color formats. Hex is used on 93% of desktop pages, RGBA on 83%, RGB on 22%, HSLA 19%, and HSL 1%. Desktop and mobile adoption is similar for all color formats except HSL, for which mobile adoption is 9% (9 times higher).",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&format=interactive"
   )
 }}
 
@@ -48,7 +48,7 @@ There are [148 named CSS colors](https://www.w3.org/TR/css-color-4/#named-colors
   image="fig2.png",
   caption="Top named colors.",
   description="Pie chart showing the most popular named colors. White is the most popular at 40%, then black at 22%, red 11%, and blue 5%.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1985913808&format=interactive",
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1985913808&format=interactive",
   width=600,
   height=415,
   data_width=600,
@@ -66,7 +66,7 @@ How many different font colors are used across the web? So this isn't the total 
   image="fig3.png",
   caption="Distribution of colors per page.",
   description="Distribution showing the 10, 25, 50, 75, and 90th percentiles of colors per desktop and mobile page. On desktop the distribution is 8, 22, 48, 83, and 131. Mobile pages tend to have more colors by 1-10.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&format=interactive"
   )
 }}
 
@@ -78,7 +78,7 @@ Well, we got curious here and wanted to inspect how many duplicate colors are pr
   image="fig4.png",
   caption="Distribution of duplicate colors per page.",
   description="Bar chart showing the distribution of colors per page. The median desktop page has 24 duplicate colors. The 10th percentile is 4 duplicate colors and the 90th percentile is 62. Desktop and mobile distributions are similar.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&format=interactive"
   )
 }}
 
@@ -90,7 +90,7 @@ In CSS, there are many different ways to achieve the same visual result using di
   image="fig5.png",
   caption="Popularity of unit types.",
   description="Bar chart of the popularity of various unit types. px and em are used on at over 90% of pages. rem is the next most popular unit type on 40% of pages and the popularity quickly falls for the remaining unit types.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&format=interactive"
   )
 }}
 
@@ -129,7 +129,7 @@ CSS has a few ways to find elements on the page for styling, so let's put IDs an
   image="fig7.png",
   caption="Popularity of selector types per page.",
   description="Bar chart showing the adoption of ID and class selector types. Classes are used on 95% of desktop and mobile pages. IDs are used on 89% of desktop and 87% of mobile pages.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&format=interactive"
   )
 }}
 
@@ -139,7 +139,7 @@ A nice follow up chart is this one, showing that classes take up 93% of the sele
   image="fig8.png",
   caption="Popularity of selector types per selector.",
   description="Bar chart showing that 94% of selectors include the class selector for desktop and mobile, while 7% of desktop selectors include the ID selector (8% for mobile).",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&format=interactive"
   )
 }}
 
@@ -151,7 +151,7 @@ CSS has some very powerful comparison selectors. These are selectors like `[targ
   image="fig9.png",
   caption="Popularity of operators per ID attribute selector.",
   description="Bar chart showing the popularity of operators used by ID attribute selectors. About 4% of desktop and mobile pages use star-equals and caret-equals. 1% of pages use equals and dollar-equals. 0% use tilde-equals.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive"
   )
 }}
 
@@ -159,7 +159,7 @@ CSS has some very powerful comparison selectors. These are selectors like `[targ
   image="fig10.png",
   caption="Popularity of operators per class attribute selector.",
   description="Bar chart showing the popularity of operators used by class attribute selectors. 57% of pages use star-equals. 36% use caret-equals. 1% use equals and dollar-equals. 0% use tilde-equals.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive"
   )
 }}
 
@@ -186,7 +186,7 @@ With the rise of OOCSS, atomic, and functional CSS strategies which can compose 
   image="fig12.png",
   caption="Adoption of flexbox.",
   description="Bar chart showing 49% of desktop pages and 52% of mobile pages using flexbox.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&format=interactive"
   )
 }}
 
@@ -213,7 +213,7 @@ The web and CSS are international platform features, and writing modes offer a w
   image="fig14.png",
   caption="Popularity of direction values.",
   description="Bar chart showing the popularity of direction values ltr and rtl. ltr is used by 32% of desktop pages and 40% of mobile pages. rtl is used by 32% of desktop pages and 36% of mobile pages.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&format=interactive"
   )
 }}
 
@@ -227,7 +227,7 @@ How many web fonts are you loading on your web page: 0? 10? The median number of
   image="fig15.png",
   caption="Distribution of the number of web fonts loaded per page.",
   description="Distribution of the number of web fonts loaded per page. On desktop the 10, 25, 50, 75, and 90th percentiles are: 0, 1, 3, 6, and 9. This slightly higher than the mobile distribution which is one fewer font in the 75th and 90th percentiles.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&format=interactive"
   )
 }}
 
@@ -239,7 +239,7 @@ A natural follow up to the inquiry of total number of fonts per page, is: what f
   image="fig16.png",
   caption="Top web fonts.",
   description="Bar chart of the most popular fonts. Among desktop pages, they are Open Sans (24%), Roboto (15%), Montserrat (5%), Source Sans Pro (4%), Noto Sans JP (3%), and Lato (3%). On mobile the most notable differences are that Open Sans is used 22% of the time (down from 24%) and Roboto is used 19% of the time (up from 15%).",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1883567922&format=interactive",
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1883567922&format=interactive",
   width=600,
   height=450,
   data_width=600,
@@ -259,7 +259,7 @@ This is a fun one, because if you asked a user how many font sizes they feel are
   image="fig17.png",
   caption="Distribution of the number of distinct font sizes per page.",
   description="Bar chart showing the distribution of distinct font sizes per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 8, 20, 40, 66, and 92 font sizes. The desktop distribution diverges from mobile at the 75th percentile, where it is larger by 7 to 13 distinct sizes.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&format=interactive"
   )
 }}
 
@@ -273,7 +273,7 @@ A margin is the space outside of elements, like the space you demand when you pu
   image="fig18.png",
   caption="Distribution of the number of distinct margin values per page.",
   description="Bar chart showing the distribution of distinct margin values per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 12, 47, 96, 167, and 248 distinct margin values. The desktop distribution diverges from mobile at the 75th percentile, where it is smaller by 12 to 31 distinct values.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&format=interactive"
   )
 }}
 
@@ -298,7 +298,7 @@ Vertical layering, or stacking, can be managed with `z-index` in CSS. We were cu
   image="fig20.png",
   caption="Distribution of the number of distinct <code>z-index</code> values per page.",
   description="Bar chart showing the distribution of distinct z-index values per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 1, 7, 16, 26, and 36 distinct z-index values. The desktop distribution is much higher than mobile, by as many as 16 distinct values at the 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&format=interactive"
   )
 }}
 
@@ -310,7 +310,7 @@ From our work experience, any number of 9's seemed to be the most popular choice
   image="fig21.png",
   caption="Most frequently used <code>z-index</code> values.",
   description="Scatterplot of all known z-index values and the number of times they're used, for both desktop and mobile. 1 and 2 are the most frequently used, but the rest of the popular values explode in orders of magnitude: 10, 100, 1,000, and so on all the way to numbers with hundreds of digits.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&format=interactive"
   )
 }}
 
@@ -364,7 +364,7 @@ CSS has this awesome interpolation power that can be simply used by just writing
   image="fig25.png",
   caption="Distribution of the number of transitions per page.",
   description="Bar chart showing the distribution of transitions per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 2, 16, 49, and 118 transitions. The desktop distribution is much lower than mobile, by as many as 77 transitions at the 90th percentile.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&format=interactive"
   )
 }}
 
@@ -378,7 +378,7 @@ CSS keyframe animations are a great solution for your more complex animations or
   image="fig26.png",
   caption="Distribution of the number of keyframes per page.",
   description="Bar chart showing the distribution of keyframes per page. For mobile pages the 10, 25, 50, 75, and 90th percentiles are: 0, 0, 3, 18, and 76 keyframes. The mobile distribution is slightly higher than desktop by 6 keyframes at the 75th and 90th percentiles.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&format=interactive"
   )
 }}
 
@@ -392,7 +392,7 @@ A good place to start with Media Queries, is just about how many are used per pa
   image="fig27.png",
   caption="Distribution of the number of media queries per page.",
   description="Bar chart showing the distribution of media queries per page. For desktop pages the 10, 25, 50, 75, and 90th percentiles are: 0, 3, 14, 27, and 43 keyframes. The desktop distribution is similar to the mobile distribution.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive"
   )
 }}
 
@@ -404,7 +404,7 @@ For viewport media queries, any type of CSS unit can be passed into the query ex
   image="fig28.png",
   caption="Most frequently used snap points used in media queries.",
   description="Bar chart of the most popular media query snap points. 768px and 767px are the most popular at 23% and 16%, respectively. The list drops off quickly after that, with 992px used 6% of the time and 1200px used 4% of the time. Desktop and mobile have similar usage.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&format=interactive"
   )
 }}
 
@@ -418,7 +418,7 @@ The most popular query value from the popular breakpoint sizes looks to be `768p
   image="fig29.png",
   caption="Adoption of media query orientation modes.",
   description="Bar chart showing the adoption of portrait and landscape orientation modes of media queries. 31% of pages specify landscape, 8% specify portrait, and 7% specify both. Adoption is the same for desktop and mobile pages.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&format=interactive"
   )
 }}
 
@@ -432,7 +432,7 @@ In the width and height media queries we've seen so far, pixels look like the do
   image="fig30.png",
   caption="Adoption of units in media query snap points.",
   description="Bar chart showing 75% of media query snap points specifying pixels, 8% specifying ems, and 1% specifying rems.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&format=interactive"
   )
 }}
 
@@ -444,7 +444,7 @@ When folks write a media query, are they typically checking for a viewport that'
   image="fig31.png",
   caption="Adoption of properties used in media query snap points.",
   description="Bar chart showing 74% of desktop pages using max-width, 70% using min-width, and 68% using both properties. Adoption is similar for mobile pages.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&format=interactive"
   )
 }}
 
@@ -458,7 +458,7 @@ Websites feel like digital paper, right? As users, it's generally known that you
   image="fig32.png",
   caption="Adoption of the all, print, screen, and speech types of media queries.",
   description='Bar chart showing 35% of desktop pages using the "all" media query type, 46% using print, 72% using screen, and 0% using speech. Adoption is lower by about 5 percentage points for desktop compared to mobile.',
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
   )
 }}
 
@@ -472,7 +472,7 @@ How many stylesheets do you reference from your home page? How many from your ap
   image="fig33.png",
   caption="Distribution of the number of stylesheets loaded per page.",
   description="Distribution of the number of stylesheets loaded per page. Desktop and mobile have identical distributions with 10, 25, 50, 75, and 90th percentiles: 1, 3, 6, 12, and 20 stylesheets per page.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&format=interactive"
   )
 }}
 
@@ -595,7 +595,7 @@ How big are these stylesheets? Is our CSS size something to worry about? Judging
   image="fig35.png",
   caption="Distribution of the number of stylesheet bytes (KB) loaded per page.",
   description="Distribution of the number of stylesheet bytes loaded per page. The desktop page's 10, 25, 50, 75, and 90th percentiles are: 8, 26, 62, 129, and 240 KB. The desktop distribution is slightly higher than the mobile distribution by 5 to 10 KB.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&format=interactive"
   )
 }}
 
@@ -702,7 +702,7 @@ So let's take a peek at how many sites are using one! Their existence seems quit
   image="fig37.png",
   caption="Adoption of CSS reset utilities.",
   description="Bar chart showing the adoption of three CSS reset utilities: Normalize.css (33%), Reset CSS (3%), and Pure CSS (0%). There is no difference in adoption across desktop and mobile pages.",
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&format=interactive"
   )
 }}
 
@@ -716,7 +716,7 @@ CSS `@supports` is a way for the browser to check whether a particular property-
   image="fig38.png",
   caption='Popularity of CSS "at" rules.',
   description='Bar chart showing the popularity of @import and @supports "at" rules. On desktop, @import is used on 28% of pages and @supports is used on 31%. For mobile @import is used on 26% of pages and @supports is used on 29%',
-  sheets_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive"
+  figure_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive"
   )
 }}
 
