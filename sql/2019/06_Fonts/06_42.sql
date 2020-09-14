@@ -12,6 +12,7 @@ JOIN
 USING
   (client)
 WHERE
+  date = '2019-07-01' AND
   type = 'font' AND
   # Color fonts have any of sbix, cbdt, svg or colr tables.
   ARRAY_LENGTH(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload, '$._font_details.table_sizes'), '(?i)(sbix|cbdt|svg|colr)')) > 0

@@ -12,6 +12,7 @@ JOIN
 USING
   (client)
 WHERE
+  date = '2019-07-01' AND
   type = 'video' AND
   NET.REG_DOMAIN(url) NOT IN ('youtube.com','youtube-nocookie.com', 'googlevideo.com', 'fbcdn.net', 'vimeocdn.com')
 GROUP BY

@@ -15,6 +15,8 @@ USING (client),
     REGEXP_EXTRACT_ALL(body, r'\.on(install|activate|fetch|push|notificationclick|notificationclose|sync|canmakepayment|paymentrequest|message|messageerror)\s*='),
     REGEXP_EXTRACT_ALL(body, r'addEventListener\(\s*[\'"](install|activate|fetch|push|notificationclick|notificationclose|sync|canmakepayment|paymentrequest|message|messageerror)[\'"]')
   )) AS event
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client,
   total,
