@@ -1,6 +1,6 @@
 #standardSQL
-# - Distribution of the number of occurrences of box-sizing:border-box per page.
-# - Percent of pages with that style.
+# 1. Distribution of the number of occurrences of box-sizing:border-box per page.
+# 2. Percent of pages with that style.
 CREATE TEMPORARY FUNCTION countBorderBoxDeclarations(css STRING) RETURNS NUMERIC LANGUAGE js AS '''
 try {
   const ast = JSON.parse(css);
