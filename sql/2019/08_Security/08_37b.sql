@@ -24,7 +24,6 @@ FROM
   `httparchive.almanac.requests`,
   UNNEST(SPLIT(extractHeader(payload, 'Set-Cookie'), ';')) AS directive
 WHERE
-  date = '2019-07-01' AND
   firstHtml AND
   STARTS_WITH(TRIM(directive), 'SameSite')
 GROUP BY

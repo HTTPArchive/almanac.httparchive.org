@@ -13,7 +13,7 @@ FROM (
     COUNT(0) AS requests,
     SUM(respSize) AS bytes
   FROM
-    `httparchive.almanac.summary_requests` r
+    `httparchive.almanac.summary_requests`
   JOIN (
     SELECT _TABLE_SUFFIX AS client, url AS page
     FROM `httparchive.technologies.2019_07_01_*`
@@ -21,12 +21,9 @@ FROM (
   USING
     (client, page)
   JOIN
-    `httparchive.almanac.third_parties` tp
+    `httparchive.almanac.third_parties`
   ON
     NET.HOST(url) = domain
-  WHERE
-    r.date = '2019-07-01' AND
-    tp.date = '2019-07-01'
   GROUP BY
     client,
     category,

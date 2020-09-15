@@ -15,10 +15,8 @@ FROM (
     LEFT JOIN
       `lighthouse-infrastructure.third_party_web.2019_07_01_all_observed_domains` AS DomainsOver50Table
     ON NET.HOST(url) = DomainsOver50Table.requestDomain
-    WHERE
-      date = '2019-07-01'
 ) t1, (
-  SELECT SUM(respSize) AS totalRequestBytes FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01'
+  SELECT SUM(respSize) AS totalRequestBytes FROM `httparchive.almanac.summary_requests`
 ) t2
 WHERE thirdPartyDomain IS NOT NULL
 GROUP BY

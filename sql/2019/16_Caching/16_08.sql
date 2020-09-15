@@ -20,8 +20,6 @@ FROM (
     REGEXP_CONTAINS(resp_cache_control, r'(?i)max-age\s*=') AS uses_max_age
   FROM
     `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01'
 )
 GROUP BY
   client

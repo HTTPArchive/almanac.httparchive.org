@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-05T00:00:00.000Z
+last_updated: 2020-08-12T00:00:00.000Z
 ---
 
 ## Introducción
@@ -22,7 +22,7 @@ Desde una perspectiva puramente de bytes, el <i lang="en">HTTP Archive</i> ha [r
   <a href="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png">
     <img src="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png" alt="Figura 1. Bytes por página web: imagen y vídeo frente a otros." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
   </a>
-  <div id="fig1-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil 10 un 44,1% de los bytes de la página son recursos multimedia, en el percentil 25 un 52,7% son recursos multimedia, en el percentil 50 un 67,0% son recursos multimedia, en el percentil 75 un 81,7% son recursos multimedia, y en el percentil 90 un 91,2% son recursos multimedia.</div>
+  <div id="fig1-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil p10 un 44,1% de los bytes de la página son recursos multimedia, en el percentil p25 un 52,7% son recursos multimedia, en el percentil p50 un 67,0% son recursos multimedia, en el percentil p75 un 81,7% son recursos multimedia, y en el percentil p90 un 91,2% son recursos multimedia.</div>
   <figcaption id="fig1-caption">Figura 1. Bytes por página web: imagen y vídeo frente a otros.</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: p
   <a href="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png">
     <img src="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png" alt="Figura 3. Píxeles de una imagen por página (móvil): CSS versus real." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden"> Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en móvil, mostrando el percentil 10 (0,07 MP reales, 0,04 MP CSS), el percentil 25 (0,38MP reales, 0,18 MP CSS), el percentil 50 (1,6 MP reales, 0,65 MP CSS), el percentil 75 (5,1 MP reales, 1,8 MP CSS), y el percentil 90 (12 MP reales, 4,6 MP CSS).</div>
+  <div id="fig3-description" class="visually-hidden"> Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en móvil, mostrando el p10 (0,07 MP reales, 0,04 MP CSS), el p25 (0,38MP reales, 0,18 MP CSS), el p50 (1,6 MP reales, 0,65 MP CSS), el p75 (5,1 MP reales, 1,8 MP CSS), y el p90 (12 MP reales, 4,6 MP CSS).</div>
   <figcaption id="fig3-caption">Figura 3. Píxeles de una imagen por página (móvil): CSS versus real.</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: p
   <a href="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png">
     <img src="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png" alt="Figura 4. Píxeles de una imagen por página (escritorio): CSS versus real." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
   </a>
-  <div id="fig4-description" class="visually-hidden"> Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en escritorio, mostrando el percentil 10 (0,09 MP reales, 0,05 MP CSS), el percentil 25 (0,52 MP reales, 0,29 MP CSS), el percentil 50 (2,1 MP reales, 1,1 MP CSS), el percentil 75 (6,0 MP reales, 2,8 MP CSS), y el percentil 90 (14 MP reales, 6,3 MP CSS).</div>
+  <div id="fig4-description" class="visually-hidden"> Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en escritorio, mostrando el p10 (0,09 MP reales, 0,05 MP CSS), el p25(0,52 MP reales, 0,29 MP CSS), el p50 (2,1 MP reales, 1,1 MP CSS), el p75 (6,0 MP reales, 2,8 MP CSS), y el p90 (14 MP reales, 6,3 MP CSS).</div>
   <figcaption id="fig4-caption">Figura 4. Píxeles de una imagen por página (escritorio): CSS versus real.</figcaption>
 </figure>
 
@@ -84,7 +84,7 @@ Si tuviéramos una imagen que ocupase perfectamente la totalidad de la pantalla,
   <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
     <img src="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png" alt="Figura 5. Cantidad de píxeles en una imagen versus el tamaño de la pantalla (píxeles CSS)." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">Una comparación entre la cantidad de píxeles necesaria por página en relación con el tamaño real de la pantalla en píxeles CSS, mostrando el percentil 10 (20% en móvil, 20% en escritorio), el percentil 25 (97% en móvil, 13% en escritorio), el percentil 50 (354% en móvil, 46% en escritorio), el percentil 75 (1003% en móvil, 123% en escritorio), y el percentil 90 (2477% en móvil, 273% en escritorio).</div>
+  <div id="fig5-description" class="visually-hidden">Una comparación entre la cantidad de píxeles necesaria por página en relación con el tamaño real de la pantalla en píxeles CSS, mostrando el p10 (20% en móvil, 20% en escritorio), el p25 (97% en móvil, 13% en escritorio), el p50 (354% en móvil, 46% en escritorio), el p75 (1003% en móvil, 123% en escritorio), y el p90 (2477% en móvil, 273% en escritorio).</div>
   <figcaption id="fig5-caption">Figura 5. Cantidad de píxeles en una imagen versus el tamaño de la pantalla (píxeles CSS).</figcaption>
 </figure>
 
@@ -168,7 +168,7 @@ Por supuesto, las páginas webs no son uniformes en el uso del contenido de imag
   <a href="/static/images/2019/media/fig8_image_format_usage_per_page.png">
     <img src="/static/images/2019/media/fig8_image_format_usage_per_page.png" alt="Figura 8. Formato de imagen usado por página." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive">
   </a>
-  <div id="fig8-description" class="visually-hidden">Un gráfico de barras mostrando en el percentil 10 que no se usa ningún tipo de formato de imagen, en el percentil 25 se usan tres JPGS y cuatro PNGs, en el percentil 50 nueve JPGs, cuatro PNGs y un GIF, en el percentil 75 39 JPEGs, 18 PNGs, dos SVGs, y dos GIFs, y en el percentil p99 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs y 14 GIFs.</div>
+  <div id="fig8-description" class="visually-hidden">Un gráfico de barras mostrando en el percentil p10 que no se usa ningún tipo de formato de imagen, en el percentil p25 se usan tres JPGS y cuatro PNGs, en el percentil p50 nueve JPGs, cuatro PNGs y un GIF, en el percentil p75 39 JPEGs, 18 PNGs, dos SVGs, y dos GIFs, y en el percentil p99 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs y 14 GIFs.</div>
   <figcaption id="fig8-caption">Figura 8. Formato de imagen usado por página.</figcaption>
 </figure>
 
@@ -192,7 +192,7 @@ Hay dos formas de analizar los tamaños de archivo de imagen: total de bytes por
   <a href="/static/images/2019/media/fig10_image_format_size.png">
     <img alt="Una comparación de formatos de imagen por tamaño de archivo" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/media/fig10_image_format_size.png" width="600" height="371">
   </a>
-  <div id="fig10-description" class="visually-hidden">Un gráfico mostrando que en el percentil 10 se usan 4 KB de JPEGs, 2 KB de PNGs y 2 KB de GIFs, en el percentil 25 se usan 9KB de JPGs, 4 KB de PNGs, 7 KB de WebP, y 3 KB de GIFs, en el percentil 50 se usan 24 KB de JPGs, 11 KB de PNGs, 17 KB de WebP, 6 KB de GIFs y 1 KB de SVGs, en el percentil 75 se usan 68 KB de JPEGs, 43 KB de PNGs 41 KB de WebPs, 17 KB de GIFs y 2 KB de SVGs, y en el percentil 90 se usan 116 KB de JPGs, 152 KB de PNGs, 90 KB de WebPs, 87 KB de GIFs y 8 KB de SVGs.</div>
+  <div id="fig10-description" class="visually-hidden">Un gráfico mostrando que en el percentil p10 se usan 4 KB de JPEGs, 2 KB de PNGs y 2 KB de GIFs, en el percentil p25 se usan 9KB de JPGs, 4 KB de PNGs, 7 KB de WebP, y 3 KB de GIFs, en el percentil p50 se usan 24 KB de JPGs, 11 KB de PNGs, 17 KB de WebP, 6 KB de GIFs y 1 KB de SVGs, en el percentil p75 se usan 68 KB de JPEGs, 43 KB de PNGs 41 KB de WebPs, 17 KB de GIFs y 2 KB de SVGs, y en el percentil p90 se usan 116 KB de JPGs, 152 KB de PNGs, 90 KB de WebPs, 87 KB de GIFs y 8 KB de SVGs.</div>
   <figcaption id="fig10-caption">Figura 10. Tamaño de archivo (KB) por formato de imagen.</figcaption>
 </figure>
 
@@ -202,7 +202,7 @@ A partir de esto, podemos hacer una idea de cuán grande o pequeño es el recurs
   <a href="/static/images/2019/media/fig11_bytes_per_pixel.png">
     <img src="/static/images/2019/media/fig11_bytes_per_pixel.png" alt="Figura 11. Bytes por pixel." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden"> Un gráfico de velas que muestra en el percentil 10 que tenemos 0,1175 bytes por pixel para JPEG, 0,1197 para PNG, 0,1702 para GIF, 0,0586 para WebP y 0,0293 para SVG. En el percentil 25 tenemos 0,1848 bytes por pixel para JPEGs, 0,2874 para PNG, 0,3641 para GIF, 0,1025 para WebP, y 0,174 para SVG. En el percentil 50 tenemos 0,2997 bytes por pixel para JPEGs, 0,6918 para PNG, 0,7967 para GIF, 0,183 para WebP, y 0,6766 para SVG. En el percentil 75 tenemos 0,5456 bytes por pixel para JPEGs, 1,4548 para PNG, 2,515 para GIF, 0,3272 para WebP, y 1,9261 para SVG. En el percentil 90 tenemos 0,9822 bytes por pixel para JPEGs, 2,5026 para PNG, 8,5151 para GIF, 0,6474 para WebP, y 4,1075 para SVG</div>
+  <div id="fig11-description" class="visually-hidden"> Un gráfico de velas que muestra en el percentil p10 que tenemos 0,1175 bytes por pixel para JPEG, 0,1197 para PNG, 0,1702 para GIF, 0,0586 para WebP y 0,0293 para SVG. En el percentil p25 tenemos 0,1848 bytes por pixel para JPEGs, 0,2874 para PNG, 0,3641 para GIF, 0,1025 para WebP, y 0,174 para SVG. En el percentil p50 tenemos 0,2997 bytes por pixel para JPEGs, 0,6918 para PNG, 0,7967 para GIF, 0,183 para WebP, y 0,6766 para SVG. En el percentil p75 tenemos 0,5456 bytes por pixel para JPEGs, 1,4548 para PNG, 2,515 para GIF, 0,3272 para WebP, y 1,9261 para SVG. En el percentil p90 tenemos 0,9822 bytes por pixel para JPEGs, 2,5026 para PNG, 8,5151 para GIF, 0,6474 para WebP, y 4,1075 para SVG</div>
   <figcaption id="fig11-caption">Figura 11. Bytes por pixel.</figcaption>
 </figure>
 
@@ -226,7 +226,7 @@ El test <i lang="en">[Lighthouse](./methodology#lighthouse)</i> es una comparaci
   <a href="/static/images/2019/media/fig12_percentage_optimized_images.png">
     <img src="/static/images/2019/media/fig12_percentage_optimized_images.png" alt="Figura 12. Porcentaje de imágenes 'optimizadas'." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767">
   </a>
-  <div id="fig12-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil 10 el 100% de las imágenes están optimizadas, igual que en el percentil 25, en el percentil 50 el 98% de las imágenes están optimizadas (un 2% no lo están), en el percentil 75 un 83% de las imágenes están optimizadas (un 17% no lo están), y en el percentil 90 un 59% de las imágenes están optimizadas y un 41% no lo están.</div>
+  <div id="fig12-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil p10 el 100% de las imágenes están optimizadas, igual que en el percentil p25, en el percentil p50 el 98% de las imágenes están optimizadas (un 2% no lo están), en el percentil p75 un 83% de las imágenes están optimizadas (un 17% no lo están), y en el percentil p90 un 59% de las imágenes están optimizadas y un 41% no lo están.</div>
   <figcaption id="fig12-caption">Figura 12. Porcentaje de imágenes 'optimizadas'</figcaption>
 </figure>
 
@@ -236,7 +236,7 @@ La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial r
   <a href="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png">
     <img src="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png" alt="Figura 13. Estimación de la mejora del rendimiento de la página tras la optimización de imagen de Lighthouse." aria-labelledby="fig12-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779">
   </a>
-  <div id="fig13-description" class="visually-hidden">Gráfico de barras que muestra  que en el percentil 10 0 ms pudieron ser medidos, lo mismo pasa en el percentil 25, en el percentil 50 se redujeron 150 ms, en el percentil 75 se redujeron 1.460 ms, y en el percentil 90 se redujeron 5.720 ms.</div>
+  <div id="fig13-description" class="visually-hidden">Gráfico de barras que muestra  que en el percentil p10 0 ms pudieron ser medidos, lo mismo pasa en el percentil p25, en el percentil p50 se redujeron 150 ms, en el percentil p75 se redujeron 1.460 ms, y en el percentil p90 se redujeron 5.720 ms.</div>
   <figcaption id="fig13-caption">Figura 13. Estimación de la mejora del rendimiento de la página tras la optimización de imagen de <i lang="en">Lighthouse</i>.</figcaption>
 </figure>
 
@@ -331,7 +331,7 @@ Anteriormente, en la  <a href="#fig-5">Figura 5</a>, mostramos como el volumen d
   <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
     <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="Figura 19. Auditoría Lighthouse: Fuera de pantalla." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
   </a>
-  <div id="fig19-description" class="visually-hidden">Un gráfico de barras que muestra que en el percentil 10 un 0% de las imágenes se encuentran fuera de pantalla, en el percentil 25 un 2% están fuera de pantalla, en el percentil 50 un 27% están fuera de pantalla, en el percentil 75 un 64% están fuera de pantalla, y en el percentil 90 un 84% de las imágenes están fuera de pantalla.</div>
+  <div id="fig19-description" class="visually-hidden">Un gráfico de barras que muestra que en el percentil p10 un 0% de las imágenes se encuentran fuera de pantalla, en el percentil p25 un 2% están fuera de pantalla, en el percentil p50 un 27% están fuera de pantalla, en el percentil p75 un 64% están fuera de pantalla, y en el percentil p90 un 84% de las imágenes están fuera de pantalla.</div>
   <figcaption id="fig19-caption">Figura 19. Auditoría <i lang="en">Lighthouse</i>: Fuera de pantalla.</figcaption>
 </figure>
 

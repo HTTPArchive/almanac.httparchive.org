@@ -92,12 +92,6 @@
         {
           "part": "II",
           "chapter": "13",
-          "title": "Capabilities",
-          "slug": "capabilities"
-        },
-        {
-          "part": "II",
-          "chapter": "14",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -109,20 +103,20 @@
       "chapters": [
         {
           "part": "III",
-          "chapter": "15",
+          "chapter": "14",
           "title": "CMS",
           "slug": "cms"
         },
         {
           "part": "III",
-          "chapter": "16",
+          "chapter": "15",
           "title": "Ecommerce",
           "slug": "ecommerce"
         },
         {
           "part": "III",
-          "chapter": "17",
-          "title": "Jamstack",
+          "chapter": "16",
+          "title": "JAMstack",
           "slug": "jamstack"
         }
       ]
@@ -133,31 +127,31 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter": "18",
+          "chapter": "17",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter": "19",
+          "chapter": "18",
           "title": "Compression",
           "slug": "compression"
         },
         {
           "part": "IV",
-          "chapter": "20",
+          "chapter": "19",
           "title": "Caching",
           "slug": "caching"
         },
         {
           "part": "IV",
-          "chapter": "21",
+          "chapter": "20",
           "title": "Resource Hints",
           "slug": "resource-hints"
         },
         {
           "part": "IV",
-          "chapter": "22",
+          "chapter": "21",
           "title": "HTTP/2",
           "slug": "http2"
         }
@@ -170,9 +164,6 @@
     },
     "authors": {
       "name": "Authors"
-    },
-    "designers": {
-      "name": "Designers"
     },
     "developers": {
       "name": "Developers"
@@ -896,12 +887,6 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/1043031?v=4&s=200",
       "github": "ipullrank",
       "twitter": "IPullRank"
-    },
-    "michelleoconnor": {
-      "name": "Michelle O'Connor",
-      "teams": [
-        "designers"
-      ]
     },
     "MikeBishop": {
       "name": "Mike Bishop",

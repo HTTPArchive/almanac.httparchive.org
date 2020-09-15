@@ -35,8 +35,6 @@ FROM (
     `httparchive.almanac.parsed_css`
   LEFT JOIN
     UNNEST(getFontSizes(css)) AS value
-  WHERE
-    date = '2019-07-01'
   GROUP BY
     client,
     page)

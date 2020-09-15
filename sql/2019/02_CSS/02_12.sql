@@ -45,8 +45,6 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getDirValues(css)) AS direction
-  WHERE
-    date = '2019-07-01'
   GROUP BY
     client,
     direction)

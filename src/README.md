@@ -50,7 +50,7 @@ ptw
 
 The chapter generation is dependent on nodejs, so you will need to have [nodejs](https://nodejs.org/en/) installed as well. All of the following commands must be run from within the `src` directory by executing `cd src` first.
 
-Note this is run automatically by a GitHub Action on merges to main, so does not need to be run manually unless you want to run the site locally.
+Note this is run automatically by a GitHub Action on merges to main, so does not need to be run manually.
 
 Install the dependencies:
 
@@ -152,27 +152,28 @@ _Make sure you have generated the ebooks PDFs first in the main branch, by runni
 gcloud init
 ```
 
-3. Deploy the site:
+3. Stage the changes locally:
+
+```
+git checkout production
+git status
+git pull
+git pull origin main
+git push
+```
+
+  - Check out the `production` branch
+  - Run `git status` to ensure you don't have any uncommitted changes locally
+  - Merge any remote changes (both origin/production and origin/main branches)
+  - Push the merge-commit back up to origin/production
+
+4. Browse the website locally as one final QA test, then deploy the changes live:
 
 ```
 npm run deploy
 ```
 
-The deploy script will do the following:
-- Ask you to confirm you've updated the eBooks via GitHub Actions
-- Switch to the production branch
-- Merge changes from main
-- Do a clean install
-- Run the tests
-- Ask you to complete any local tests and confirm good to deploy
-- Ask for a version number (suggesing the last verision tagged and incrementing the patch)
-- Tag the release (after asking you for the version number to use)
-- Generate a `deploy.zip` file of what has been deployed
-- Deploy to GCP
-- Push changes to `production` branch on GitHub
-- Ask you to update the release section of GitHub
-
-4. Browse the website in production to verify that the new changes have taken effect. Not we have 3 hour caching so add random query params to pages to ensure you get latest version.
+5. Browse the website in production to verify that the new changes have taken effect
 
 ## Developing in Docker
 

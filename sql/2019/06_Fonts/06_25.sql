@@ -28,7 +28,6 @@ JOIN
 USING
   (client)
 WHERE
-  date = '2019-07-01' AND
   ARRAY_LENGTH(checksSupports(css)) > 0
 GROUP BY
   client,

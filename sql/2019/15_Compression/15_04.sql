@@ -3,7 +3,7 @@
 SELECT
   _TABLE_SUFFIX AS client,
   mimeType,
-  COUNT(0) AS num_requests,
+  COUNT(*) AS num_requests,
   SUM(IF(resp_content_encoding = "gzip",1,0)) AS gzip,
   SUM(IF(resp_content_encoding = "br",1,0)) AS brotli,
   SUM(IF(resp_content_encoding = "deflate",1,0)) AS deflate,

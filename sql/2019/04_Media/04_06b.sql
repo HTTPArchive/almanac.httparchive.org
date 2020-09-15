@@ -10,7 +10,6 @@ FROM
   `httparchive.almanac.summary_response_bodies`,
   UNNEST(REGEXP_EXTRACT_ALL(body, r'(?im)<(?:source|img)[^>]*sizes=[\'"]?([^\'"]*)')) AS sizes
 WHERE
-  date = '2019-07-01' AND
   firstHtml
 GROUP BY
   client,

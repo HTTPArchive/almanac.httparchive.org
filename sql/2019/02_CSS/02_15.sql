@@ -30,8 +30,6 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getSnapPoints(css)) AS snap_point
-WHERE
-  date = '2019-07-01'
 GROUP BY
   client,
   snap_point

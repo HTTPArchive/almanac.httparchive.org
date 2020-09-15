@@ -18,8 +18,6 @@ FROM (
     REGEXP_CONTAINS(resp_cache_control, r'(?i)(^\s*|,\s*)must-revalidate(\s*,|\s*$)') AS uses_revalidate
   FROM
     `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01'
 )
 GROUP BY
   client,

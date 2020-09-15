@@ -1,4 +1,4 @@
-{%- set featured_chapter = ("accessibility","performance") | random %}{#  Below is the full set of chapters. If all are translated then replace above line with this one.  Until then, add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)  {%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}#}
+{%- set featured_chapter = ("accessibility","accessibility") | random %}{#  Below is the full set of chapters. If all are translated then replace above line with this one.  Until then, add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)  {%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}#}
 {%- if featured_chapter == "javascript" %}
   {%- set featured_chapter_name = "JavaScript" %}
   {%- set featured_chapter_quote = "JavaScript是我们发送给浏览器的最昂贵的资源;必须下载、解析、编译，最后执行。尽管浏览器大大减少了解析和编译脚本的时间，但在web页面处理JavaScript时，下载和执行已经成为最昂贵的阶段。" %}
@@ -25,7 +25,7 @@
   {%- set featured_chapter_stats = {"stat1":"74.9%","label1":"第三方字体请求使用谷歌体","stat2":"29%","label2":"包含谷歌字体样式表链接的页面的百分比","stat3":"718","label3":"单个页面上的大多数字体请求"} %}
 {%- elif featured_chapter == "performance" %}
   {%- set featured_chapter_name = "性能" %}
-  {%- set featured_chapter_quote = "性能是用户体验的重要组成部分。对于许多网站来说，通过降低页面加载时间来改善用户体验与转化率的提高是一致的。相反，当性能不佳时，用户的转化率就不会像往常那样高，甚至还会在导致沮丧的页面观察到愤怒点击。" %}
+  {%- set featured_chapter_quote = "性能是用户体验的本质部分。对于许多网站来说，通过加快页面加载时间来改善用户体验与提高转化率是一致的。相反，当性能较差时，用户不会经常转换，甚至会在沮丧时愤怒的点击页面。" %}
   {%- set featured_chapter_stats = {"stat1":"13%","label1":"有快速FCP的站点","stat2":"42%","label2":"有缓慢TTFB的站点","stat3":"40%","label3":"有快速FID的站点"} %}
 {%- elif featured_chapter == "security" %}
   {%- set featured_chapter_name = "安全" %}
@@ -33,7 +33,7 @@
   {%- set featured_chapter_stats = {"stat1":"79%","label1":"Sites using HTTPS","stat2":"41%","label2":"使用TLSv1.3的站点","stat3":"4.43%","label3":"使用CSP的站点"} %}
 {%- elif featured_chapter == "accessibility" %}
   {%- set featured_chapter_name = "无障碍可访问性" %}
-  {%- set featured_chapter_quote = "互联网的无障碍可访问性对一个包容和公平的社会至关重要。随着我们的社会生活和工作生活越来越多地转移到网络世界，残障人士能够无障碍地参与所有在线互动就变得更加重要了。正如建筑设计师可以创建或省略无障碍功能，例如轮椅坡道，web开发人员可以帮助或阻碍用户依赖的辅助技术。" %}
+  {%- set featured_chapter_quote = "互联网的无障碍可访问性对一个包容和公平的社会至关重要。随着我们的社会生活和工作生活越来越多地转移到网络世界，残疾人能够无障碍地参与所有在线互动就变得更加重要了。正如建筑设计师可以创建或省略无障碍功能，例如轮椅坡道，web开发人员可以帮助或阻碍用户依赖的辅助技术。" %}
   {%- set featured_chapter_stats = {"stat1":"22%","label1":"使用充分的色彩对比的网站","stat2":"50%","label2":"缺少图像alt属性的网站","stat3":"14%","label3":"使用跳过链接的网站"} %}
 {%- elif featured_chapter == "seo" %}
   {%- set featured_chapter_name = "SEO" %}

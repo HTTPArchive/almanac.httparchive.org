@@ -9,8 +9,6 @@ SELECT
 FROM
   `httparchive.almanac.summary_response_bodies`,
   UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)<link[^>]*hreflang=[\'"]?([^\'"\\s>]+)')) AS hreflang
-WHERE
-  date = '2019-07-01'
 GROUP BY
   client,
   hreflang

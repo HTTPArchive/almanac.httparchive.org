@@ -19,8 +19,7 @@ FROM (
   USING
     (client, page)
   WHERE
-    date = '2019-07-01' AND
-    NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2019-07-01' AND category != 'hosting')
+    NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties` WHERE category != 'hosting')
   GROUP BY
     client,
     page),
@@ -31,4 +30,3 @@ GROUP BY
 ORDER BY
   percentile,
   client
-

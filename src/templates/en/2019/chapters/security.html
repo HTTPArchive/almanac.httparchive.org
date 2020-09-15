@@ -1,0 +1,931 @@
+{% extends "%s/2019/base_chapter.html" % lang %}
+
+<!--{# IMPORTANT!
+
+- `chapter.html` is a "template for templates" used by the `generate_chapters.js` script, hence the strange template syntax (eg, mixing ejs and jinja syntax)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}-->
+
+{% set metadata = {"part_number":"II","chapter_number":8,"title":"Security","description":"Security chapter of the 2019 Web Almanac covering Transport Layer Security (TLS(), mixed content, security headers, cookies, and Subresource Integrity.","authors":["ScottHelme","arturjanc"],"reviewers":["bazzadp","ghedo","paulcalvano"],"translators":null,"discuss":"1763","results":"https://docs.google.com/spreadsheets/d/1Zq2tQhPE06YZUcbzryRrBE6rdZgHHlqEp2XcgS37cm8/","queries":"08_Security","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"security"} %} {% block index %}
+<ul>
+  <li>
+    <a href="#introduction">Introduction</a>
+  </li>
+
+  <li>
+    <a href="#transport-layer-security">Transport Layer Security</a>
+
+    <ul>
+      <li>
+        <a href="#protocol-versions">Protocol versions</a>
+      </li>
+
+      <li>
+        <a href="#certificate-authorities">Certificate Authorities</a>
+      </li>
+
+      <li>
+        <a href="#authentication-key-type">Authentication key type</a>
+      </li>
+
+      <li>
+        <a href="#forward-secrecy">Forward secrecy</a>
+      </li>
+
+      <li>
+        <a href="#cipher-suites">Cipher suites</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#mixed-content">Mixed content</a>
+  </li>
+
+  <li>
+    <a href="#security-headers">Security headers</a>
+
+    <ul>
+      <li>
+        <a href="#http-strict-transport-security">HTTP Strict Transport Security</a>
+
+        <ul>
+          <li>
+            <a href="#hsts-preloading">HSTS preloading</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#content-security-policy">Content Security Policy</a>
+
+        <ul>
+          <li>
+            <a href="#hashnonce">Hash/nonce</a>
+          </li>
+
+          <li>
+            <a href="#strict-dynamic">strict-dynamic</a>
+          </li>
+
+          <li>
+            <a href="#trusted-types">trusted-types</a>
+          </li>
+
+          <li>
+            <a href="#unsafe-inline-and-unsafe-eval">unsafe inline and unsafe-eval</a>
+          </li>
+
+          <li>
+            <a href="#upgrade-insecure-requests">upgrade-insecure-requests</a>
+          </li>
+
+          <li>
+            <a href="#frame-ancestors">frame-ancestors</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#referrer-policy">Referrer Policy</a>
+      </li>
+
+      <li>
+        <a href="#feature-policy">Feature Policy</a>
+      </li>
+
+      <li>
+        <a href="#x-frame-options">X-Frame-Options</a>
+      </li>
+
+      <li>
+        <a href="#x-content-type-options">X-Content-Type-Options</a>
+      </li>
+
+      <li>
+        <a href="#x-xss-protection">X-XSS-Protection</a>
+      </li>
+
+      <li>
+        <a href="#report-to">Report-To</a>
+      </li>
+
+      <li>
+        <a href="#network-error-logging">Network Error Logging</a>
+      </li>
+
+      <li>
+        <a href="#clear-site-data">Clear Site Data</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#cookies">Cookies</a>
+
+    <ul>
+      <li>
+        <a href="#secure">Secure</a>
+      </li>
+
+      <li>
+        <a href="#httponly">HttpOnly</a>
+      </li>
+
+      <li>
+        <a href="#samesite">SameSite</a>
+      </li>
+
+      <li>
+        <a href="#prefixes">Prefixes</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#subresource-integrity">Subresource Integrity</a>
+  </li>
+
+  <li>
+    <a href="#conclusion">Conclusion</a>
+
+    <ul>
+      <li>
+        <a href="#encryption">Encryption</a>
+      </li>
+
+      <li>
+        <a href="#defending-against-common-web-vulnerabilities">Defending against common web vulnerabilities</a>
+      </li>
+
+      <li>
+        <a href="#modern-web-platform-defenses">Modern web platform defenses</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#tying-it-all-together">Tying it all together</a>
+  </li>
+</ul>
+
+{% endblock %} {% block main_content %}
+<h2 id="introduction"><a href="#introduction" class="anchor-link">Introduction</a></h2>
+<p>This chapter of the Web Almanac looks at the current status of security on the web. With security and privacy becoming increasingly more important online there has been an increase in the availability of features to protect site operators and users. We're going to look at the adoption of these new features across the web.</p>
+<h2 id="transport-layer-security"><a href="#transport-layer-security" class="anchor-link">Transport Layer Security</a></h2>
+<p>Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security (TLS). TLS (or the older version, SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great <a href="https://httparchive.org/reports/state-of-the-web#pctHttps">increase in the use of HTTPS across the web</a>, but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.</p>
+<figure id="fig-1">
+  <a href="/static/images/2019/security/fig1.png">
+    <img src="/static/images/2019/security/fig1.png" alt="Figure 1. Usage of HTTP versus HTTPS." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="760" height="470" data-width="760" data-height="470" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig1-description" data-show-text="{{ show_description(1) }}" data-hide-text="{{ hide_description(1) }}">{{ show_description(1) }}</button>
+  <div id="fig1-description" class="visually-hidden">Horizontal bar chart showing mobile HTTPS at 79% and HTTP at 21%, and beneath that desktop HTTPS is 80.51% and HTTP is 19.49%</div>
+  <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">Figure 1.</a> Usage of HTTP versus HTTPS.</figcaption>
+</figure>
+<h3 id="protocol-versions"><a href="#protocol-versions" class="anchor-link">Protocol versions</a></h3>
+<figure id="fig-2">
+  <a href="/static/images/2019/security/fig2.png">
+    <img src="/static/images/2019/security/fig2.png" alt="Figure 2. Usage of TLS protocol versions." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="760" height="470" data-width="760" data-height="470" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
+  <div id="fig2-description" class="visually-hidden">Horizontal bar chart showing desktop and mobile on similar TLS usage: 58% on TLSv1.2, 41% on TLSv1.3 and very little usage of TLSv1.0 (0.75%) and a tiny usage of TLSv1.1.</div>
+  <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">Figure 2.</a> Usage of TLS protocol versions.</figcaption>
+</figure>
+<p>Figure 2 shows the support for various protocol versions. Use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in <a href="https://tools.ietf.org/html/rfc8446">August 2018</a>), over 40% of requests using TLS are using the latest version!</p>
+<p>This is likely due to many sites using requests from the larger players for <a href="./third-parties">third-party content</a>. For example, any sites load Google Analytics, Google AdWords, or Google Fonts and these large players like Google are typically early adopters for new protocols.</p>
+<p>If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to <a href="./cms">CMS</a> sites like Wordpress and <a href="./cdn">CDNs</a>:</p>
+<figure id="fig-3">
+  <a href="/static/images/2019/security/fig3.png">
+    <img src="/static/images/2019/security/fig3.png" alt="Figure 3. Usage of TLS protocol versions for home page requests only." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="760" height="470" data-width="760" data-height="470" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig3-description" data-show-text="{{ show_description(3) }}" data-hide-text="{{ hide_description(3) }}">{{ show_description(3) }}</button>
+  <div id="fig3-description" class="visually-hidden">Horizontal bar chart showing desktop and mobile on similar TLS usage: 47% on desktop (43% on mobile) on TLSv1.2, 20.2% on desktop (19.7% on mobile) on TLSv1.3 and very little usage of TLSv1.0 (1.1% - 1.2%) and a tiny usage of TLSv1.1.</div>
+  <figcaption id="fig3-caption"><a href="#fig-3" class="anchor-link">Figure 3.</a> Usage of TLS protocol versions for home page requests only.</figcaption>
+</figure>
+<p>On the other hand, the <a href="./methodology">methodology</a> used by the Web Almanac will also <em>under-report</em> usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.</p>
+<h3 id="certificate-authorities"><a href="#certificate-authorities" class="anchor-link">Certificate Authorities</a></h3>
+<p>Of course, if we want to use HTTPS on our website then we need a certificate from a Certificate Authority (CA). With the increase in the use of HTTPS comes the increase in use of CAs and their products/services. Here are the top ten certificate issuers based on the volume of TLS requests that use their certificate.</p>
+<figure id="fig-4">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Issuing Certificate Authority</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Internet Authority G3</td>
+            <td>19.26%</td>
+            <td>19.68%</td>
+          </tr>
+          <tr>
+            <td>Let's Encrypt Authority X3</td>
+            <td>10.20%</td>
+            <td>9.19%</td>
+          </tr>
+          <tr>
+            <td>DigiCert SHA2 High Assurance Server CA</td>
+            <td>9.83%</td>
+            <td>9.26%</td>
+          </tr>
+          <tr>
+            <td>DigiCert SHA2 Secure Server CA</td>
+            <td>7.55%</td>
+            <td>8.72%</td>
+          </tr>
+          <tr>
+            <td>GTS CA 1O1</td>
+            <td>7.87%</td>
+            <td>8.43%</td>
+          </tr>
+          <tr>
+            <td>DigiCert SHA2 Secure Server CA</td>
+            <td>7.55%</td>
+            <td>8.72%</td>
+          </tr>
+          <tr>
+            <td>COMODO RSA Domain Validation Secure Server CA</td>
+            <td>6.29%</td>
+            <td>5.79%</td>
+          </tr>
+          <tr>
+            <td>Go Daddy Secure Certificate Authority - G2</td>
+            <td>4.84%</td>
+            <td>5.10%</td>
+          </tr>
+          <tr>
+            <td>Amazon</td>
+            <td>4.71%</td>
+            <td>4.45%</td>
+          </tr>
+          <tr>
+            <td>COMODO ECC Domain Validation Secure Server CA 2</td>
+            <td>3.22%</td>
+            <td>2.75%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-4" class="anchor-link">Figure 4.</a> Top ten Certificate Authority used.</figcaption>
+</figure>
+<p>As previously discussed, the volume for Google likely reflects repeated use of Google Analytics, Google Adwords, or Google Fonts on other sites.</p>
+<p>The rise of <a href="https://letsencrypt.org/">Let's Encrypt</a> has been meteoric after their launch in early 2016, since then they've become one of the top certificate issuers in the world. The availability of free certificates and the automated tooling has been critically important to the adoption of HTTPS on the web. Let's Encrypt certainly had a significant part to play in both of those.</p>
+<p>The reduced cost has removed the barrier to entry for HTTPS, but the automation Let's Encrypt uses is perhaps more important in the long run as it allows shorter certificate lifetimes <a href="https://scotthelme.co.uk/why-we-need-to-do-more-to-reduce-certificate-lifetimes/">which has many security benefits</a>.</p>
+<h3 id="authentication-key-type"><a href="#authentication-key-type" class="anchor-link">Authentication key type</a></h3>
+<p>Alongside the important requirement to use HTTPS is the requirement to also use a good configuration. With so many configuration options and choices to make, this is a careful balance.</p>
+<p>First of all, we'll look at the keys used for authentication purposes. Traditionally certificates have been issued based on keys using the RSA algorithm, however a newer and better algorithm uses ECDSA (Elliptic Curve Digital Signature Algorithm) which allows the use of smaller keys that demonstrate better performance than their RSA counterparts. Looking at the results of our crawl we still see a large % of the web using RSA.</p>
+<figure id="fig-5">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Key Type</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RSA Keys</td>
+            <td>48.67%</td>
+            <td>58.8%</td>
+          </tr>
+          <tr>
+            <td>ECDA Keys</td>
+            <td>21.47%</td>
+            <td>26.41%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-5" class="anchor-link">Figure 5.</a> Authentication key types used.</figcaption>
+</figure>
+<p>Whilst ECDSA keys are stronger, which allows the use of smaller keys and demonstrate better performance than their RSA counterparts, concerns around backwards compatibility, and complications in supporting both in the meantime, do prevent some website operators from migrating.</p>
+<h3 id="forward-secrecy"><a href="#forward-secrecy" class="anchor-link">Forward secrecy</a></h3>
+<p><a href="https://en.wikipedia.org/wiki/Forward_secrecy">Forward secrecy</a> is a property of some key exchange mechanisms that secures the connection in such a way that it prevents each connection to a server from being exposed even in case of a future compromise of the server's private key. This is well understood within the security community as desirable on all TLS connections to safeguard the security of those connections. It was introduced as an optional configuration in 2008 with TLSv1.2 and has become mandatory in 2018 with TLSv1.3 requiring the use of Forward Secrecy.</p>
+<p>Looking at the % of TLS requests that provide Forward Secrecy, we can see that support is tremendous. 96.92% of Desktop and 96.49% of mobile requests use Forward secrecy. We'd expect that the continuing increase in the adoption of TLSv1.3 will further increase these numbers.</p>
+<h3 id="cipher-suites"><a href="#cipher-suites" class="anchor-link">Cipher suites</a></h3>
+<p>TLS allows the use of various cipher suites - some newer and more secure, and some older and insecure. Traditionally newer TLS versions have added cipher suites but have been reluctant to remove older cipher suites. TLSv1.3 aims to simplify this by offering a reduced set of ciphers suites and will not permit the older, insecure, cipher suites to be used. Tools like <a href="https://www.ssllabs.com/">SSL Labs</a> allow the TLS setup of a website (including the cipher suites supported and their preferred order) to be easily seen, which helps drive better configurations. We can see that the majority of cipher suites negotiated for TLS requests were indeed excellent:</p>
+<figure id="fig-6">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Cipher Suite</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>AES_128_GCM</code></td>
+            <td>75.87%</td>
+            <td>76.71%</td>
+          </tr>
+          <tr>
+            <td><code>AES_256_GCM</code></td>
+            <td>19.73%</td>
+            <td>18.49%</td>
+          </tr>
+          <tr>
+            <td><code>AES_256_CBC</code></td>
+            <td>2.22%</td>
+            <td>2.26%</td>
+          </tr>
+          <tr>
+            <td><code>AES_128_CBC</code></td>
+            <td>1.43%</td>
+            <td>1.72%</td>
+          </tr>
+          <tr>
+            <td><code>CHACHA20_POLY1305</code></td>
+            <td>0.69%</td>
+            <td>0.79%</td>
+          </tr>
+          <tr>
+            <td><code>3DES_EDE_CBC</code></td>
+            <td>0.06%</td>
+            <td>0.04%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-6" class="anchor-link">Figure 6.</a> Cipher suite usage used.</figcaption>
+</figure>
+<p>It is positive to see such wide stream use of GCM ciphers since the older CBC ciphers are less secure. <a href="https://blog.cloudflare.com/it-takes-two-to-chacha-poly/">CHACHA20_POLY1305</a> is still an niche cipher suite, and we even still have a very small use of the <a href="https://en.wikipedia.org/wiki/Triple_DES#Security">insecure 3DES ciphers</a>.</p>
+<p>It should be noticed that these were the cipher suites used for the crawl using Chrome, but sites will likely also support other cipher suites as well for older browsers. Other sources, for example <a href="https://www.ssllabs.com/ssl-pulse/">SSL Pulse</a>, can provide more detail on the range of all cipher suites and protocols supported.</p>
+<h2 id="mixed-content"><a href="#mixed-content" class="anchor-link">Mixed content</a></h2>
+<p>Most sites on the web originally existed as HTTP websites and have had to migrate their site to HTTPS. This 'lift and shift' operation can be difficult and sometimes things get missed or left behind. This results in sites having mixed content, where their pages load over HTTPS but something on the page, perhaps an image or a style, is loaded over HTTP. Mixed content is bad for security and privacy and can be difficult to find and fix.</p>
+<figure id="fig-7">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Mixed Content Type</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pages with Any Mixed Content</td>
+            <td>16.27%</td>
+            <td>15.37%</td>
+          </tr>
+          <tr>
+            <td>Pages with Active Mixed Content</td>
+            <td>3.99%</td>
+            <td>4.13%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-7" class="anchor-link">Figure 7.</a> Mixed content usage.</figcaption>
+</figure>
+<p>We can see that around 20% of sites across mobile (645,485 sites) and desktop (594,072 sites) present some form of mixed content. Whilst passive mixed content, something like an image, is less dangerous, we can still see that almost a quarter of sites with mixed content have active mixed content. Active mixed content, like JavaScript, is more dangerous as an attacker can insert their own hostile code into a page easily.</p>
+<p>In the past web browsers have allowed passive mixed content and flagged it with a warning but blocked active mixed content. More recently however, Chrome <a href="https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html">announced</a> it intends to improve here and as HTTPS becomes the norm it will block all mixed content instead.</p>
+<h2 id="security-headers"><a href="#security-headers" class="anchor-link">Security headers</a></h2>
+<p>Many new and recent features for site operators to better protect their users have come in the form of new HTTP response headers that can configure and control security protections built into the browser. Some of these features are easy to enable and provide a huge level of protection whilst others require a little more work from site operators. If you wish to check if a site is using these headers and has them correctly configured, you can use the <a href="https://securityheaders.com/">Security Headers</a> tool to scan it.</p>
+<figure id="fig-8">
+  <a href="/static/images/2019/security/fig8.png">
+    <img src="/static/images/2019/security/fig8.png" alt="Figure 8. Usage of Security Headers" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="760" height="450" data-width="760" data-height="450" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig8-description" data-show-text="{{ show_description(8) }}" data-hide-text="{{ hide_description(8) }}">{{ show_description(8) }}</button>
+  <div id="fig8-description" class="visually-hidden">A vertical bar graph showing increasing usage of security headers list for both desktop and mobile listing from left to right: cross-origin-resource-policy (0 sites on both), feature policy (approx 8k desktop and mobile) report-to (74k desktop and 83k mobile), nel (74k desktop and 83k mobile), referrer-policy (142k desktop, 156k mobile), content-security-policy (240k desktop, 252k mobile), strict-transport-security (648k desktop, 679k mobile), x-xss-protection (642k desktop, 805k mobile), x-frame-options (743k desktop, 782k mobile) and finally x-content-type-options (770k desktop, 932k mobile).</div>
+  <figcaption id="fig8-caption"><a href="#fig-8" class="anchor-link">Figure 8.</a> Usage of Security Headers</figcaption>
+</figure>
+<h3 id="http-strict-transport-security"><a href="#http-strict-transport-security" class="anchor-link">HTTP Strict Transport Security</a></h3>
+<p>The <a href="https://tools.ietf.org/html/rfc6797">HSTS</a> header allows a website to instruct a browser that it should only ever communicate with the site over a secure HTTPS connection. This means that any attempts to use a http:// URL will automatically be converted to https:// before a request is made. Given that over 40% of requests were capable of using TLS, we see a much lower % of requests instructing the browser to require it.</p>
+<figure id="fig-9">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>HSTS Directive</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>max-age</code></td>
+            <td>14.80%</td>
+            <td>12.81%</td>
+          </tr>
+          <tr>
+            <td><code>includeSubDomains</code></td>
+            <td>3.86%</td>
+            <td>3.29%</td>
+          </tr>
+          <tr>
+            <td><code>preload</code></td>
+            <td>2.27%</td>
+            <td>1.99%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-9" class="anchor-link">Figure 9.</a> HSTS directive usage.</figcaption>
+</figure>
+<p>Less than 15% of mobile and desktop pages are issuing a HSTS with a <code>max-age</code> directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the <code>includeSubDomains</code> directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS <code>max-age</code>, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration representing half a year (60 x 60 x 24 x 365/2).</p>
+<figure id="fig-10">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="colgroup" colspan="2">Client</th>
+          </tr>
+          <tr>
+            <th scope="col">Percentile</th>
+            <th scope="col">Desktop</th>
+            <th scope="col">Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10</td>
+            <td>300</td>
+            <td>300</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>7889238</td>
+            <td>7889238</td>
+          </tr>
+          <tr>
+            <td>50</td>
+            <td>15768000</td>
+            <td>15768000</td>
+          </tr>
+          <tr>
+            <td>75</td>
+            <td>31536000</td>
+            <td>31536000</td>
+          </tr>
+          <tr>
+            <td>90</td>
+            <td>63072000</td>
+            <td>63072000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <figcaption><a href="#fig-10" class="anchor-link">Figure 10.</a> Medium values of HSTS `max-age` policy by percentile.</figcaption>
+</figure>
+<h4 id="hsts-preloading"><a href="#hsts-preloading" class="anchor-link">HSTS preloading</a></h4>
+<p>With the HSTS policy delivered via an HTTP response Header, when visiting a site for the first time a browser will not know whether a policy is configured. To avoid this <a href="https://en.wikipedia.org/wiki/Trust_on_first_use">Trust On First Use</a> problem, a site operator can have the policy preloaded into the browser (or other user agents) meaning you are protected even before you visit the site for the first time.</p>
+<p>There are a number of requirements for preloading, which are outlined on the <a href="https://hstspreload.org/">HSTS preload</a> site. We can see that only a small number of sites, 0.31% on desktop and 0.26% on mobile, are eligible according to current criteria. Sites should ensure they have fully transitions all sites under their domain to HTTPS before submitting to preload the domain or they risk blocking access to HTTP-only sites.</p>
+<h3 id="content-security-policy"><a href="#content-security-policy" class="anchor-link">Content Security Policy</a></h3>
+<p>Web applications face frequent attacks where hostile content finds its way into a page. The most worrisome form of content is JavaScript and when an attacker finds a way to insert JavaScript into a page, they can launch damaging attacks. These attacks are known as <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">Cross-Site Scripting (XSS)</a> and <a href="https://www.w3.org/TR/CSP2/">Content Security Policy (CSP)</a> provides an effective defense against these attacks.</p>
+<p>CSP is an HTTP header (<code>Content-Security-Policy</code>) published by a website which tells the browser rules around content allowed on a site. If additional content is injected into the site due to a security flaw, and it is not allowed by the policy, the browser will block it from being used. Alongside XSS protection, CSP also offers several other key benefits such as <a href="#upgrade-insecure-requests">making migration to HTTPS easier</a>.</p>
+<p>Despite the many benefits of CSP, it can be complicated to implement on websites since its very purpose is to limit what is acceptable on a page. The policy must allow all content and resources you need and can easily get large and complex. Tools like <a href="https://report-uri.com/">Report URI</a> can help you analyze and build the appropriate policy.</p>
+<p>We find that only 5.51% of desktop pages include a CSP and only 4.73% of mobile pages include a CSP, likely due to the complexity of deployment.</p>
+<h4 id="hashnonce"><a href="#hashnonce" class="anchor-link">Hash/nonce</a></h4>
+<p>A common approach to CSP is to create an allowlist of 3rd party domains that are permitted to load content, such as JavaScript, into your pages. Creating and managing these lists can be difficult so <a href="https://www.w3.org/TR/CSP2/#source-list-valid-hashes">hashes</a> and <a href="https://www.w3.org/TR/CSP2/#source-list-valid-nonces">nonces</a> were introduced as an alternative approach. A hash is calculated based on contents of the script so if this is published by the website operator and the script is changed, or another script is added, then it will not match the hash and will be blocked. A nonce is a one-time code (which should be changed each time the page is loaded to prevent it being guessed) which is allowed by the CSP and which the script is tagged with. You can see an example of a nonce on this page by viewing the source to see how Google Tag Manager is loaded.</p>
+<p>Of the sites surveyed only 0.09% of desktop pages use a nonce source and only 0.02% of desktop pages use a hash source. The number of mobile pages use a nonce source is slightly higher at 0.13% but the use of hash sources is lower on mobile pages at 0.01%.</p>
+<h4 id="strict-dynamic">
+  <a href="#strict-dynamic" class="anchor-link"><code>strict-dynamic</code></a>
+</h4>
+<p>
+  The proposal of <a href="https://www.w3.org/TR/CSP3/#strict-dynamic-usage"><code>strict-dynamic</code></a> in the next iteration of <a href="https://www.w3.org/TR/CSP3/">CSP</a> further reduces the burden on site operators for using CSP by allowing an approved script to load further script dependencies. Despite the introduction of this feature, which already has <a href="https://caniuse.com/#feat=mdn-http_headers_csp_content-security-policy_strict-dynamic">support in some modern browsers</a>, only 0.03% of desktop pages and 0.1% of mobile pages include it in their policy.
+</p>
+<h4 id="trusted-types">
+  <a href="#trusted-types" class="anchor-link"><code>trusted-types</code></a>
+</h4>
+<p>XSS attacks come in various forms and <a href="https://github.com/w3c/webappsec-trusted-types">Trusted-Types</a> was created to help specifically with DOM-XSS. Despite being an effective mechanism, our data shows that only 2 mobile and desktop pages use the Trusted-Types directive.</p>
+<h4 id="unsafe-inline-and-unsafe-eval">
+  <a href="#unsafe-inline-and-unsafe-eval" class="anchor-link"><code>unsafe inline</code> and <code>unsafe-eval</code></a>
+</h4>
+<p>When a CSP is deployed on a page, certain unsafe features like inline scripts or the use of <code>eval()</code> are disabled. A page can depend on these features and enable them in a safe fashion, perhaps with a nonce or hash source. Site operators can also re-enable these unsafe features with <code>unsafe-inline</code> or <code>unsafe-eval</code> in their CSP though, as their names suggest, doing so does lose much of the protections that CSP gives you. Of the 5.51% of desktop pages that include a CSP, 33.94% of them include <code>unsafe-inline</code> and 31.03% of them include <code>unsafe-eval</code>. On mobile pages we find that of the 4.73% that contain a CSP, 34.04% use <code>unsafe-inline</code> and 31.71% use <code>unsafe-eval</code>.</p>
+<h4 id="upgrade-insecure-requests">
+  <a href="#upgrade-insecure-requests" class="anchor-link"><code>upgrade-insecure-requests</code></a>
+</h4>
+<p>We mentioned earlier that a common problem that site operators face in their migration from HTTP to HTTPS is that some content can still be accidentally loaded over HTTP on their HTTPS page. This problem is known as mixed content and CSP provides an effective way to solve this problem. The <code>upgrade-insecure-requests</code> directive instructs a browser to load all subresources on a page over a secure connection, automatically upgrading HTTP requests to HTTPS requests as an example. Think of it like HSTS for subresources on a page.</p>
+<p>We showed earlier in figure 7 that, of the HTTPS pages surveyed on the desktop, 16.27% of them loaded mixed-content with 3.99% of pages loading active mixed-content like JS/CSS/fonts. On mobile pages we see 15.37% of HTTPS pages loading mixed-content with 4.13% loading active mixed-content. By loading active content such as JavaScript over HTTP an attacker can easily inject hostile code into the page to launch an attack. This is what the <code>upgrade-insecure-requests</code> directive in CSP protects against.</p>
+<p>The <code>upgrade-insecure-requests</code> directive is found in the CSP of 3.24% of desktop pages and 2.84% of mobile pages, indicating that an increase in adoption would provide substantial benefits. It could be introduced with relative ease, without requiring a fully locked-down CSP and the complexity that would entail, by allowing broad categories with a policy like below, or even including <code>unsafe-inline</code> and <code>unsafe-eval</code>:</p>
+<pre><code>Content-Security-Policy: upgrade-insecure-requests; default-src https:</code></pre>
+<h4 id="frame-ancestors">
+  <a href="#frame-ancestors" class="anchor-link"><code>frame-ancestors</code></a>
+</h4>
+<p>Another common attack known as <a href="https://en.wikipedia.org/wiki/Clickjacking">clickjacking</a> is conducted by an attacker who will place a target website inside an iframe on a hostile website, and then overlay hidden controls and buttons that they are in control of. Whilst the <code>X-Frame-Options</code> header (discussed below) originally set out to control framing, it wasn't flexible and <code>frame-ancestors</code> in CSP stepped in to provide a more flexible solution. Site operators can now specify a list of hosts that are permitted to frame them and any other hosts attempting to frame them will be prevented.</p>
+<p>Of the pages surveyed, 2.85% of desktop pages include the <code>frame-ancestors</code> directive in CSP with 0.74% of desktop pages setting Frame-Ancestors to <code>'none'</code>, preventing any framing, and 0.47% of pages setting <code>frame-ancestors</code> to <code>'self'</code>, allowing only their own site to frame itself. On mobile we see 2.52% of pages using <code>frame-ancestors</code> with 0.71% setting the value of <code>'none'</code> and 0.41% setting the value to <code>'self'</code>.</p>
+<h3 id="referrer-policy"><a href="#referrer-policy" class="anchor-link">Referrer Policy</a></h3>
+<p>
+  The <a href="https://www.w3.org/TR/referrer-policy/"><code>Referrer-Policy</code></a> header allows a site to control what information will be sent in the <code>Referer</code> header when a user navigates away from the current page. This can be the source of information leakage if there is sensitive data in the URL, such as search queries or other user-dependent information included in URL parameters. By controlling what information is sent in the <code>Referer</code> header, ideally limiting it, a site can protect the privacy of their visitors by reducing the information sent to 3rd parties.
+</p>
+<p>Note the Referrer Policy does not follow the <code>Referer</code> header's misspelling <a href="https://stackoverflow.com/questions/3087626/was-the-misspelling-of-the-http-field-name-referer-intentional">which has become a well-known error</a>.</p>
+<p>A total of 3.25% of desktop pages and 2.95% of mobile pages issue a <code>Referrer-Policy</code> header and below we can see the configurations those pages used.</p>
+<figure id="fig-11">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Configuration</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>no-referrer-when-downgrade</code></td>
+            <td>39.16%</td>
+            <td>41.52%</td>
+          </tr>
+          <tr>
+            <td><code>strict-origin-when-cross-origin</code></td>
+            <td>39.16%</td>
+            <td>22.17%</td>
+          </tr>
+          <tr>
+            <td><code>unsafe-url</code></td>
+            <td>22.17%</td>
+            <td>22.17%</td>
+          </tr>
+          <tr>
+            <td><code>same-origin</code></td>
+            <td>7.97%</td>
+            <td>7.97%</td>
+          </tr>
+          <tr>
+            <td><code>origin-when-cross-origin</code></td>
+            <td>6.76%</td>
+            <td>6.44%</td>
+          </tr>
+          <tr>
+            <td><code>no-referrer</code></td>
+            <td>5.65%</td>
+            <td>5.38%</td>
+          </tr>
+          <tr>
+            <td><code>strict-origin</code></td>
+            <td>4.35%</td>
+            <td>4.14%</td>
+          </tr>
+          <tr>
+            <td><code>origin</code></td>
+            <td>3.63%</td>
+            <td>3.23%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-11" class="anchor-link">Figure 11.</a> <code>Referrer-Policy</code> configuration option usage.</figcaption>
+</figure>
+<p>This table shows the valid values set by pages and that, of the pages which use this header, 99.75% of them on desktop and 96.55% of them on mobile are setting a valid policy. The most popular choice of configuration is <code>no-referrer-when-downgrade</code> which will prevent the <code>Referer</code> header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is <code>strict-origin-when-cross-origin</code> which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the <code>Referer</code> it will only contain the origin of the source and not the full URL (for example <code>https://www.example.com</code> rather than <code>https://www.example.com/page/</code>). Details on the other valid configurations can be found in the <a href="https://www.w3.org/TR/referrer-policy/#referrer-policies">Referrer Policy specification</a>, though such a high usage of <code>unsafe-url</code> warrants further investigation but is likely to be a <a href="./third-parties">third-party</a> component like analytics or advertisement libraries.</p>
+<h3 id="feature-policy"><a href="#feature-policy" class="anchor-link">Feature Policy</a></h3>
+<p>
+  As the web platform becomes more powerful and feature rich, attackers can abuse these new APIs in interesting ways. In order to limit misuse of powerful APIs, a site operator can issue a <a href="https://w3c.github.io/webappsec-feature-policy/"><code>Feature-Policy</code></a> header to disable features that are not required, preventing them from being abused.
+</p>
+<p>Here are the 5 most popular features that are controlled with a Feature Policy.</p>
+<figure id="fig-12">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>microphone</code></td>
+            <td>10.78%</td>
+            <td>10.98%</td>
+          </tr>
+          <tr>
+            <td><code>camera</code></td>
+            <td>9.95%</td>
+            <td>10.19%</td>
+          </tr>
+          <tr>
+            <td><code>payment</code></td>
+            <td>9.54%</td>
+            <td>9.54%</td>
+          </tr>
+          <tr>
+            <td><code>geolocation</code></td>
+            <td>9.38%</td>
+            <td>9.41%</td>
+          </tr>
+          <tr>
+            <td><code>gyroscope</code></td>
+            <td>7.92%</td>
+            <td>7.90%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-12" class="anchor-link">Figure 12.</a> Top 5 <code>Feature-Policy</code> options used.</figcaption>
+</figure>
+<p>We can see that the most popular feature to take control of is the microphone, with almost 11% of desktop and mobile pages issuing a policy that includes it. Delving deeper into the data we can look at what those pages are allowing or blocking.</p>
+<figure id="fig-13">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Configuration</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>microphone</code></td>
+            <td><code>none</code></td>
+            <td>9.09%</td>
+          </tr>
+          <tr>
+            <td><code>microphone</code></td>
+            <td><code>none</code></td>
+            <td>8.97%</td>
+          </tr>
+          <tr>
+            <td><code>microphone</code></td>
+            <td><code>self</code></td>
+            <td>0.86%</td>
+          </tr>
+          <tr>
+            <td><code>microphone</code></td>
+            <td><code>self</code></td>
+            <td>0.85%</td>
+          </tr>
+          <tr>
+            <td><code>microphone</code></td>
+            <td><code>*</code></td>
+            <td>0.64%</td>
+          </tr>
+          <tr>
+            <td><code>microphone</code></td>
+            <td><code>*</code></td>
+            <td>0.53%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-13" class="anchor-link">Figure 13.</a> Settings used for <code>microphone</code> feature.</figcaption>
+</figure>
+<p>By far the most common approach here is to block use of the microphone altogether, with about 9% of pages taking that approach. A small number of pages do allow the use of the microphone by their own origin and interestingly, a small selection of pages intentionally allow use of the microphone by any origin loading content in their page.</p>
+<h3 id="x-frame-options">
+  <a href="#x-frame-options" class="anchor-link"><code>X-Frame-Options</code></a>
+</h3>
+<p>
+  The <a href="https://tools.ietf.org/html/rfc7034"><code>X-Frame-Options</code></a> header allows a page to control whether or not it can be placed in an iframe by another page. Whilst lacking the flexibility of <code>frame-ancestors</code> in CSP, mentioned above, it was effective if you didn't require fine grained control of framing.
+</p>
+<p>We see that the usage of the <code>X-Frame-Options</code> header is quite high on both desktop (16.99%) and mobile (14.77%) and can also look more closely at the specific configurations used.</p>
+<figure id="fig-14">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Configuration</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>sameorigin</code></td>
+            <td>84.92%</td>
+            <td>83.86%</td>
+          </tr>
+          <tr>
+            <td><code>deny</code></td>
+            <td>13.54%</td>
+            <td>14.50%</td>
+          </tr>
+          <tr>
+            <td><code>allow-from</code></td>
+            <td>1.53%</td>
+            <td>1.64%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-14" class="anchor-link">Figure 14.</a> <code>X-Frame-Options</code> configuration used.</figcaption>
+</figure>
+<p>It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to <code>frame-ancestors</code> in CSP where these 2 approaches are also the most common. It should also be noted that the <code>allow-from</code> option, which in theory allow site owners to list the third-party domains allowed to frame was <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility">never well supported</a> and has been deprecated.</p>
+<h3 id="x-content-type-options">
+  <a href="#x-content-type-options" class="anchor-link"><code>X-Content-Type-Options</code></a>
+</h3>
+<p>
+  The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options"><code>X-Content-Type-Options</code></a> header is the most widely deployed Security Header and is also the most simple, with only one possible configuration value <code>nosniff</code>. When this header is issued a browser must treat a piece of content as the MIME Type declared in the <code>Content-Type</code> header and not try to change the advertised value when it infers a file is of a different type. Various security flaws can be introduced if a browser is persuaded to incorrectly sniff the type..
+</p>
+<p>We find that an identical 17.61% of pages on both mobile and desktop issue the <code>X-Content-Type-Options</code> header.</p>
+<h3 id="x-xss-protection">
+  <a href="#x-xss-protection" class="anchor-link"><code>X-XSS-Protection</code></a>
+</h3>
+<p>
+  The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection"><code>X-XSS-Protection</code></a> header allows a site to control the XSS Auditor or XSS Filter built into a browser, which should in theory provide some XSS protection.
+</p>
+<p>14.69% of Desktop requests, and 15.2% of mobile requests used the <code>X-XSS-Protection</code> header. Digging into the data we can see what the intention for most site operators was in figure 13.</p>
+<figure id="fig-15">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Configuration</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>1;mode=block</code></td>
+            <td>91.77%</td>
+            <td>91.46%</td>
+          </tr>
+          <tr>
+            <td><code>1</code></td>
+            <td>5.54%</td>
+            <td>5.35%</td>
+          </tr>
+          <tr>
+            <td><code>0</code></td>
+            <td>2.58%</td>
+            <td>3.11%</td>
+          </tr>
+          <tr>
+            <td><code>1;report=</code></td>
+            <td>0.12%</td>
+            <td>0.09%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-15" class="anchor-link">Figure 15.</a> <code>X-XSS-Protection</code> configuration usage.</figcaption>
+</figure>
+<p>The value <code>1</code> enables the filter/auditor and <code>mode=block</code> sets the protection to the strongest setting (in theory) where any suspected XSS attack would cause the page to not be rendered. The second most common configuration was to simply ensure the auditor/filter was turned on, by presenting a value of <code>1</code> and then the 3rd most popular configuration is quite interesting.</p>
+<p>Setting a value of <code>0</code> in the header instructs the browser to disable any XSS auditor/filter that it may have. Some historic attacks demonstrated how the auditor or filter could be tricked into assisting an attacker rather than protecting the user so some site operators could disable it if they were confident they have adequate protection against XSS in place.</p>
+<p>Due to these attacks, Edge retired their XSS Filter, Chrome deprecated their XSS Auditor and Firefox never implemented support for the feature. We still see widespread use of the header at approximately 15% of all sites, despite it being largely useless now.</p>
+<h3 id="report-to"><a href="#report-to" class="anchor-link">Report-To</a></h3>
+<p>The <a href="https://www.w3.org/TR/reporting/">Reporting API</a> was introduced to allow site operators to gather various pieces of <a href="https://scotthelme.co.uk/introducing-the-reporting-api-nel-other-major-changes-to-report-uri/">telemetry from the browser</a>. Many errors or problems on a site can result in a poor experience for the user yet a site operator can only find out if the user contacts them. The Reporting API provides a mechanism for a browser to automatically report these problems without any user interaction or interruption. The Reporting API is configured by delivering the <code>Report-To</code> header.</p>
+<p>By specifying the header, which contains a location where the telemetry should be sent, a browser will automatically begin sending the data and you can use a 3rd party service like <a href="https://report-uri.com/">Report URI</a> to collect the reports or collect them yourself. Given the ease of deployment and configuration, we can see that only a small fraction of desktop (1.70%) and mobile (1.57%) sites currently enable this feature. To see the kind of telemetry you can collect, refer to the <a href="https://www.w3.org/TR/reporting/">Reporting API specification</a>.</p>
+<h3 id="network-error-logging"><a href="#network-error-logging" class="anchor-link">Network Error Logging</a></h3>
+<p><a href="https://www.w3.org/TR/network-error-logging/">Network Error Logging (NEL)</a> provides detailed information about various failures in the browser that can result in a site being inoperative. Whereas the <code>Report-To</code> is used to report problems with a page that is loaded, the <code>NEL</code> header allows sites to inform the browser to cache this policy and then to report future connection problems when they happen via the endpoint configured in the <code>Reporting-To</code> header above. NEL can therefore be seen as an extension of the Reporting API.</p>
+<p>Of course, with NEL depending on the Reporting API, we shouldn't see the usage of NEL exceed that of the Reporting API, so we see similarly low numbers here too at 1.70% for desktop requests and 1.57% for mobile. The fact these numbers are identical suggest they are being deployed together.</p>
+<p>NEL provides incredibly valuable information and you can read more about the type of information in the <a href="https://w3c.github.io/network-error-logging/#predefined-network-error-types">Network Error Logging specification</a>.</p>
+<h3 id="clear-site-data"><a href="#clear-site-data" class="anchor-link">Clear Site Data</a></h3>
+<p>With the increasing ability to store data locally on a user's device, via cookies, caches and local storage to name but a few, site operators needed a reliable way to manage this data. The Clear Site Data header provides a means to ensure that all data of a particular type is removed from the device, though it is <a href="https://caniuse.com/#feat=mdn-http_headers_clear-site-data">not yet supported in all browsers</a>.</p>
+<p>Given the nature of the header, it is unsurprising to see almost no usage reported - just 9 desktop requests and 7 mobile requests. With our data only looking at the homepage of a site, we're unlikely to see the most common use of the header which would be on a logout endpoint. Upon logging out of a site, the site operator would return the Clear Site Data header and the browser would remove all data of the indicated types. This is unlikely to take place on the homepage of a site.</p>
+<h2 id="cookies"><a href="#cookies" class="anchor-link">Cookies</a></h2>
+<p>Cookies have many security protections available and whilst some of those are long standing, and have been available for years, some of them are really quite new have been introduced only in the last couple of years.</p>
+<h3 id="secure">
+  <a href="#secure" class="anchor-link"><code>Secure</code></a>
+</h3>
+<p>The <code>Secure</code> flag on a cookie instructs a browser to only send the cookie over a secure (HTTPS) connection and we find only a small % of sites (4.22% on desktop and 3.68% on mobile) issuing a cookie with the Secure flag set on their homepage. This is depressing considering the relative ease with which this feature can be used. Again, the high usage of analytics and advertisement <a href="./third-parties">third-party</a> requests, which wish to collect data over both HTTP and HTTPS is likely skewing these numbers and it would be interesting research to see the usage on other cookies, like authentication cookies.</p>
+<h3 id="httponly">
+  <a href="#httponly" class="anchor-link"><code>HttpOnly</code></a>
+</h3>
+<p>The <code>HttpOnly</code> flag on a cookie instructs the browser to prevent JavaScript on the page from accessing the cookie. Many cookies are only used by the server so are not needed by the JavaScript on the page, so restricting access to a cookie is a great protection against XSS attacks from stealing the cookie. We find that a much larger % of sites issuing a cookie with this flag on their homepage at 24.24% on desktop and 22.23% on mobile.</p>
+<h3 id="samesite">
+  <a href="#samesite" class="anchor-link"><code>SameSite</code></a>
+</h3>
+<p>As a much more recent addition to cookie protections, the <code>SameSite</code> flag is a powerful protection against <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">Cross-Site Request Forgery (CSRF)</a> attacks (often also known as XSRF).</p>
+<p>These attacks work by using the fact that browsers will typically include relevant cookies in all requests. Therefore, if you are logged in, and so have cookies set, and then visit a malicious site, it can make a call for an API and the browser will "helpfully" send the cookies. Adding the <code>SameSite</code> attribute to a Cookie, allows a website to inform the browser not to send the cookies when calls are issued from third-party sites and hence the attack fails.</p>
+<p>Being a recently introduced mechanism, the usage of Same-Site cookies is much lower as we would expect at 0.1% of requests on both desktop and mobile. There are use cases when a cookie should be sent cross-site. For example, single sign-on sites implicitly work by setting the cookie along with an authentication token.</p>
+<figure id="fig-16">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Configuration</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>strict</code></td>
+            <td>53.14%</td>
+            <td>50.64%</td>
+          </tr>
+          <tr>
+            <td><code>lax</code></td>
+            <td>45.85%</td>
+            <td>47.42%</td>
+          </tr>
+          <tr>
+            <td><code>none</code></td>
+            <td>0.51%</td>
+            <td>0.41%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-16" class="anchor-link">Figure 16.</a> SameSite configuration usage.</figcaption>
+</figure>
+<p>We can see that of those pages already using Same-Site cookies, more than half of them are using it in <code>strict</code> mode. This is closely followed by sites using Same-Site in <code>lax</code> mode and then a small selection of sites using the value <code>none</code>. This last value is used to opt-out of the upcoming change where browser vendors may implement <code>lax</code> mode by default.</p>
+<p>Because it provides much needed protection against a dangerous attack, there are currently indications that leading browsers could <a href="https://blog.chromium.org/2019/10/developers-get-ready-for-new.html">implement this feature by default</a> and enable it on cookies even though the value is not set. If this were to happen the SameSite protection would be enabled, though in its weaker setting of <code>lax</code> mode and not <code>strict</code> mode, as that would likely cause more breakage.</p>
+<h3 id="prefixes"><a href="#prefixes" class="anchor-link">Prefixes</a></h3>
+<p>Another recent addition to cookies are Cookie Prefixes. These use the name of your cookie to add one of two further protections to those already covered. While the above flags can be accidentally unset on cookies, the name will not change so using the name to define security attributes can more reliably enforce them.</p>
+<p>Currently the name of your cookie can be prefixed with either <code>__Secure-</code> or <code>__Host-</code>, with both offering additional security to the cookie.</p>
+<figure id="fig-17">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="colgroup" colspan="2">No. of Home Pages</th>
+            <th scope="colgroup" colspan="2">% of Home Pages</th>
+          </tr>
+          <tr>
+            <th scope="col">Prefix value</th>
+            <th scope="col">Desktop</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Desktop</th>
+            <th scope="col">Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>__Secure-</code></td>
+            <td>640</td>
+            <td>628</td>
+            <td>0.01%</td>
+            <td>0.01%</td>
+          </tr>
+          <tr>
+            <td><code>__Host-</code></td>
+            <td>154</td>
+            <td>157</td>
+            <td>0.00%</td>
+            <td>0.00%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <figcaption><a href="#fig-17" class="anchor-link">Figure 17.</a> Cookie prefix usage.</figcaption>
+</figure>
+<p>As the figures show, the use of either prefix is incredibly low but as the more relaxed of the two, the <code>__Secure-</code> prefix does see more utilization already.</p>
+<h2 id="subresource-integrity"><a href="#subresource-integrity" class="anchor-link">Subresource Integrity</a></h2>
+<p>Another problem that has been on the rise recently is the security of 3rd party dependencies. When loading a script file from a 3rd party, we hope that the script file is always the library that we wanted, perhaps a particular version of jQuery. If a CDN or 3rd party hosting service is compromised, the script files they are hosting could be altered. In this scenario your application would now be loading malicious JavaScript that could harm your visitors. This is what subresource integrity protects against.</p>
+<p>By adding an <code>integrity</code> attribute to a script or link tag, a browser can integrity check the 3rd party resource and reject it if it has been altered, in a similar manner that CSP hashes described above are used.</p>
+<pre><code>&lt;script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+<p>With only 0.06% (247,604) of desktop pages and 0.05% (272,167) of mobile pages containing link or script tags with the integrity attribute set, there's room for a lot of improvement in the use of SRI. With many CDNs now providing code samples that include the SRI integrity attribute we should see a steady increase in the use of SRI.</p>
+<h2 id="conclusion"><a href="#conclusion" class="anchor-link">Conclusion</a></h2>
+<p>As the web grows in capabilities and allows access to more and more sensitive data, it becomes increasingly important for developers to adopt web security features to protect their applications. The security features reviewed in this chapter are defenses built into the web platform itself, available to every web author. However, as a review of the study results in this chapter shows, the coverage of several important security mechanisms extends only to a subset of the web, leaving a significant part of the ecosystem exposed to security or privacy bugs.</p>
+<h3 id="encryption"><a href="#encryption" class="anchor-link">Encryption</a></h3>
+<p>In the recent years, the web has made the most progress on the encryption of data in transit. As described in the <a href="#transport-layer-security">TLS section</a> section, thanks to a range of efforts from browser vendors, developers and Certificate Authorities such as Let's Encrypt, the fraction of the web using HTTPS has steadily grown. At the time of writing, the majority of sites are available over HTTPS, ensuring confidentiality and integrity of traffic. Importantly, over 99% of websites which enable HTTPS use newer, more secure versions of the TLS protocol (TLSv1.2 and TLSv1.3). The use of strong <a href="#cipher-suites">cipher suites</a> such as AES in GCM mode is also high, accounting for over 95% of requests on all platforms.</p>
+<p>At the same time, gaps in TLS configurations are still fairly common. Over 15% of pages suffer from <a href="#mixed-content">mixed content</a> issues, resulting in browser warnings, and 4% of sites contain active mixed content, blocked by modern browsers for security reasons. Similarly, the benefits of <a href="#http-strict-transport-security">HTTP Strict Transport Security</a> only extend to a small subset of major sites, and the majority of websites don't enable the most secure HSTS configurations and are not eligible for <a href="#hsts-preloading">HSTS preloading</a>. Despite progress in HTTPS adoption, a large number of cookies is still set without the <code>Secure</code> flag; only 4% of homepages that set cookies prevent them from being sent over unencrypted HTTP.</p>
+<h3 id="defending-against-common-web-vulnerabilities"><a href="#defending-against-common-web-vulnerabilities" class="anchor-link">Defending against common web vulnerabilities</a></h3>
+<p>
+  Web developers working on sites with sensitive data often enable opt-in web security features to protect their applications from <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a>, <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">CSRF</a>, <a href="https://en.wikipedia.org/wiki/Clickjacking">clickjacking</a>, and other common web bugs. These issues can be mitigated by setting a number of standard, broadly supported HTTP response headers, including <a href="#x-frame-options"><code>X-Frame-Options</code></a
+  >, <a href="#x-content-type-options"><code>X-Content-Type-Options</code></a
+  >, and <a href="#content-security-policy"><code>Content-Security-Policy</code></a
+  >.
+</p>
+<p>
+  In large part due to the complexity of both the security features and web applications, only a minority of websites currently use these defenses, and often enable only those mechanisms which do not require significant refactoring efforts. The most common opt-in application security features are <code>X-Content-Type-Options</code> (enabled by 17% of pages), <code>X-Frame-Options</code> (16%), and the deprecated <code>X-XSS-Protection</code> header (15%). The most powerful web security mechanism—Content Security Policy—is only enabled by 5% of websites, and only a small subset of them (about 0.1% of all sites) use the safer configurations based on <a href="#hashnonce">CSP nonces and hashes</a>. The related <a href="#referrer-policy"><code>Referrer-Policy</code></a
+  >, aiming to reduce the amount of information sent to third parties in the <code>Referer</code> headers is similarly only used by 3% of websites.
+</p>
+<h3 id="modern-web-platform-defenses"><a href="#modern-web-platform-defenses" class="anchor-link">Modern web platform defenses</a></h3>
+<p>In the recent years, web browsers have implemented powerful new mechanisms which offer protections from major classes of vulnerabilities and new web threats; this includes <a href="#subresource-integrity">Subresource Integrity</a>, <a href="#samesite">SameSite cookies</a>, and <a href="#prefixes">cookie prefixes</a>.</p>
+<p>These features have seen adoption only by a relatively small number of websites; their total coverage is generally well below 1%. The even more recent security mechanisms such as <a href="https://w3c.github.io/webappsec-trusted-types/dist/spec/">Trusted Types</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)">Cross-Origin Resource Policy</a> or <a href="https://www.chromestatus.com/feature/5432089535053824">Cross-Origin-Opener Policy</a> have not seen any widespread adoption as of yet.</p>
+<p>
+  Similarly, convenience features such as the <a href="#report-to">Reporting API</a>, <a href="#network-error-logging">Network Error Logging</a> and the <a href="#clear-site-data"><code>Clear-Site-Data</code></a> header are also still in their infancy and are currently being used by a small number of sites.
+</p>
+<h2 id="tying-it-all-together"><a href="#tying-it-all-together" class="anchor-link">Tying it all together</a></h2>
+<p>At web scale, the total coverage of opt-in platform security features is currently relatively low. Even the most broadly adopted protections are enabled by less than a quarter of websites, leaving the majority of the web without platform safeguards against common security issues; more recent security mechanisms, such as Content Security Policy or Referrer Policy, are enabled by less than 5% of websites.</p>
+<p>It is important to note, however, that the adoption of these mechanisms is skewed towards larger web applications which frequently handle more sensitive user data. The developers of these sites more frequently invest in improving their web defenses, including enabling a range of protections against common vulnerabilities; tools such as <a href="https://observatory.mozilla.org/">Mozilla Observatory</a> and <a href="https://securityheaders.com/">Security Headers</a> can provide a useful checklist of web available security features.</p>
+<p>If your web application handles sensitive user data, consider enabling the security mechanisms outlined in this section to protect your users and make the web safer.</p>
+{% endblock %}

@@ -19,3 +19,4 @@ WHERE host is not null AND pageUseCount > 1000
 ORDER BY
   client DESC,
   pageUseCount DESC
+

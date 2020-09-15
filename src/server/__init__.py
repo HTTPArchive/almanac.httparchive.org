@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_talisman import Talisman
 from werkzeug.http import HTTP_STATUS_CODES
-from .helpers import get_view_args, chapter_lang_exists, get_ebook_methodology, add_footnote_links, \
+from .helpers import get_view_args, chapter_lang_exists, ebook_exists, get_ebook_methodology, add_footnote_links, \
     year_live, accentless_sort, RegexConverter
 from .config import TEMPLATES_DIR, STATIC_DIR
 from . import csp, feature_policy
@@ -55,6 +55,7 @@ app.url_map.converters['regex'] = RegexConverter
 # Make these functions available in templates.
 app.jinja_env.globals['get_view_args'] = get_view_args
 app.jinja_env.globals['chapter_lang_exists'] = chapter_lang_exists
+app.jinja_env.globals['ebook_exists'] = ebook_exists
 app.jinja_env.globals['HTTP_STATUS_CODES'] = HTTP_STATUS_CODES
 app.jinja_env.globals['get_ebook_methodology'] = get_ebook_methodology
 app.jinja_env.globals['add_footnote_links'] = add_footnote_links

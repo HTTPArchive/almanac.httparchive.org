@@ -29,8 +29,6 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getNumericZIndexValues(css)) AS value
-WHERE
-  date = '2019-07-01'
 GROUP BY
   client,
   value

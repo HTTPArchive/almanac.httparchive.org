@@ -23,7 +23,6 @@ FROM
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'set-cookie = ([^,\r\n]+)')) AS value,
   UNNEST(SPLIT(value, ';')) AS policy
 WHERE
-  date = '2019-07-01' AND
   firstHtml
 GROUP BY
   client,

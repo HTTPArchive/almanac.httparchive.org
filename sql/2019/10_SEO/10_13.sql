@@ -30,7 +30,6 @@ FROM
   (SELECT page, css FROM `httparchive.almanac.parsed_css` WHERE client = 'desktop'),
   (SELECT COUNT(0) AS total FROM `httparchive.summary_pages.2019_07_01_desktop`)
 WHERE
-  date = '2019-07-01' AND
   hasBreakpoint(css)
 GROUP BY
   total

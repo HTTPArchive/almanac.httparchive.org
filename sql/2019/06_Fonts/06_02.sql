@@ -14,7 +14,6 @@ FROM (
   FROM
     `httparchive.almanac.requests`
   WHERE
-    date = '2019-07-01' AND
     type = 'font' AND
     NET.HOST(url) != NET.HOST(page)
   GROUP BY

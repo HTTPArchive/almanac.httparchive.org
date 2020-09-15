@@ -9,7 +9,6 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2019-07-01' AND
   type = 'font'
 GROUP BY
   client,

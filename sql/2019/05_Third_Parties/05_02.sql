@@ -20,8 +20,6 @@ FROM (
     LEFT JOIN
       `lighthouse-infrastructure.third_party_web.2019_07_01` AS ThirdPartyTable
     ON NET.HOST(url) = ThirdPartyTable.domain
-    WHERE
-      date = '2019-07-01'
   )
   GROUP BY
     client,

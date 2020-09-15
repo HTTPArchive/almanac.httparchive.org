@@ -1,0 +1,366 @@
+{% extends "%s/2019/base_chapter.html" % lang %}
+
+<!--{# IMPORTANT!
+
+- `chapter.html` is a "template for templates" used by the `generate_chapters.js` script, hence the strange template syntax (eg, mixing ejs and jinja syntax)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}-->
+
+{% set metadata = {"part_number":"II","chapter_number":5,"title":"Tierces Parties","description":"Le chapitre sur les ressources tierces du Web Almanac 2019, qui aborde les tierces parties utilisées, pourquoi elles le sont et les répercussions de leur usage sur le rendu et la confidentialité.","authors":["patrickhulce"],"reviewers":["zcorpan","obto","jasti"],"translators":["borisschapira"],"discuss":"1760","results":"https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/","queries":"05_Third_Parties","published":"2019-12-23T00:00:00.000Z","last_updated":"2020-05-05T00:00:00.000Z","chapter":"third-parties"} %} {% block index %}
+<ul>
+  <li>
+    <a href="#introduction">Introduction</a>
+  </li>
+
+  <li>
+    <a href="#définitions">Définitions</a>
+
+    <ul>
+      <li>
+        <a href="#tierce-partie">&#34;Tierce partie&#34;</a>
+      </li>
+
+      <li>
+        <a href="#catégories-de-fournisseurs">Catégories de fournisseurs</a>
+      </li>
+
+      <li>
+        <a href="#quelques-réserves">Quelques réserves</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#données">Données</a>
+
+    <ul>
+      <li>
+        <a href="#catégories">Catégories</a>
+      </li>
+
+      <li>
+        <a href="#fournisseurs">Fournisseurs</a>
+      </li>
+
+      <li>
+        <a href="#types-de-ressources">Types de ressources</a>
+      </li>
+
+      <li>
+        <a href="#nombre-de-requêtes">Nombre de requêtes</a>
+      </li>
+
+      <li>
+        <a href="#poids-en-octets">Poids en octets</a>
+      </li>
+
+      <li>
+        <a href="#exécution-de-scripts">Exécution de scripts</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#types-d’utilisation">Types d’utilisation</a>
+
+    <ul>
+      <li>
+        <a href="#générer-et-consommer-des-données">Générer et consommer des données</a>
+      </li>
+
+      <li>
+        <a href="#monétiser-le-trafic-web">Monétiser le trafic web</a>
+      </li>
+
+      <li>
+        <a href="#simplifier-le-développement">Simplifier le développement</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#répercussions">Répercussions</a>
+
+    <ul>
+      <li>
+        <a href="#performance">Performance</a>
+      </li>
+
+      <li>
+        <a href="#confidentialité">Confidentialité</a>
+      </li>
+
+      <li>
+        <a href="#sécurité">Sécurité</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#conclusion">Conclusion</a>
+  </li>
+</ul>
+
+{% endblock %} {% block main_content %}
+<h2 id="introduction"><a href="#introduction" class="anchor-link">Introduction</a></h2>
+<p>Le web ouvert a été conçu pour être vaste, interconnectable et interopérable. La possibilité d’accéder à de puissantes librairies tierces et de les utiliser sur votre site avec des éléments <code>&lt;link&gt;</code> ou <code>&lt;script&gt;</code> a décuplé la productivité des développeurs et permis de nouvelles et incroyables expériences web. Par contre, l’immense popularité de quelques fournisseurs tiers pose d’importants problèmes en termes de performances et de confidentialité. Ce chapitre examine la prévalence et l’impact du code tiers sur le web en 2019, les modèles d’utilisation du web qui mènent à la popularité des solutions tierces et les répercussions potentielles sur l’avenir des expériences sur le web.</p>
+<h2 id="définitions"><a href="#définitions" class="anchor-link">Définitions</a></h2>
+<h3 id="tierce-partie"><a href="#tierce-partie" class="anchor-link">"Tierce partie"</a></h3>
+<p>Une tierce partie est une entité extérieure à la relation principale entre le site et l’utilisateur. Autrement dit, tous les aspects du site qui ne sont pas directement sous le contrôle du propriétaire du site mais qui sont présents avec son approbation. Par exemple, le script Google Analytics est un exemple de ressource tierce courante.</p>
+<p>Les ressources tierces sont&nbsp;:</p>
+<ul>
+  <li>Hébergées sur une origine <em>partagée</em> et <em>publique</em>.</li>
+  <li>Largement utilisées par une variété de sites</li>
+  <li>Aucunement influencées par un propriétaire de site individuel</li>
+</ul>
+<p>Pour se rapprocher le plus possible de ces objectifs, la définition formelle utilisée tout au long de ce chapitre d’une ressource tierce est une ressource qui provient d’un domaine dont les ressources se trouvent sur au moins 50 pages uniques dans le jeu de données HTTP Archive.</p>
+<p>Notez qu’en utilisant ces définitions, le contenu de tiers servi à partir d’un domaine "en propre" est considéré comme du contenu de première partie. Par exemple, les polices Google ou bootstrap.css auto-hébergées sont considérées comme du contenu de première partie. De même, le contenu de première partie servi à partir d’un domaine tiers est considéré comme du contenu tiers. Par exemple, les images de première partie diffusées via un CDN sur un domaine tiers sont considérées comme du contenu tiers.</p>
+<h3 id="catégories-de-fournisseurs"><a href="#catégories-de-fournisseurs" class="anchor-link">Catégories de fournisseurs</a></h3>
+<p>Le présent chapitre classe les fournisseurs tiers dans l’une de ces grandes catégories. Une brève description est incluse ci-dessous et la correspondance entre chaque domaine et sa catégorie peut être trouvée dans le <a href="https://github.com/patrickhulce/third-party-web/blob/8afa2d8cadddec8f0db39e7d715c07e85fb0f8ec/data/entities.json5">dépôt third-party-web</a>.</p>
+<ul>
+  <li><strong>Publicité (Ad)</strong> - affichage et mesures relatives aux annonces</li>
+  <li><strong>Télémétrie (Analytics)</strong> - suivi du comportement des visiteurs du site</li>
+  <li><strong>CDN</strong> - fournisseurs de services communément utilisés, publics comme privés</li>
+  <li><strong>Contenu (Content)</strong> - fournisseurs qui facilitent la tâche des éditeurs et hébergent du contenu syndiqué</li>
+  <li><strong>Relation Client (Customer Success)</strong> - fonctionnalités de support et de gestion de la relation client</li>
+  <li><strong>Hébergement (Hosting)</strong> - fournisseurs qui hébergent n’importe quel contenu de leurs utilisateurs</li>
+  <li><strong>Marketing</strong> - fonctionnalités de vente, de génération de prospects et d’email marketing</li>
+  <li><strong>Social</strong> - réseaux sociaux et leurs intégrations affiliées</li>
+  <li><strong>Gestionnaires de tags (Tag Manager)</strong> - fournisseur dont le seul rôle est de gérer l’inclusion d’autres tiers</li>
+  <li><strong>Services (Utility)</strong> - code qui contribue à la réalisation des objectifs du propriétaire du site en termes de services</li>
+  <li><strong>Video</strong> - fournisseurs qui hébergent un contenu vidéo quelconque de leurs utilisateurs</li>
+  <li><strong>Autre (Other)</strong> - activité non classée ou considérée comme non conforme</li>
+</ul>
+<p class="note"><strong>Note sur les CDN</strong>&nbsp;: d’après les critères que nous utilisons, seuls sont comptabilisés dans la catégorie CDN les fournisseurs qui fournissent des ressources sur des domaines de CDN <strong>publics</strong> (par exemple bootstrapcdn.com, cdnjs.cloudflare.com, etc.). Cela n’inclut <strong>pas</strong> les ressources qui sont simplement servies sur un CDN. Exemple&nbsp;: même si vous mettez Cloudflare devant une page, nous la considérerons comme une première partie.</p>
+<h3 id="quelques-réserves"><a href="#quelques-réserves" class="anchor-link">Quelques réserves</a></h3>
+<ul>
+  <li>Toutes les données présentées ici sont basées sur une sollicitation à froid, sans interaction. Ces valeurs seraient rapidement très différentes après l’interaction d’un utilisateur ou d’une utilisatrice.</li>
+  <li>Environ 84&nbsp;% de tous les domaines tiers (en volume) ont été identifiés et catégorisés. Les 16&nbsp;% restants appartiennent à la catégorie "Autres".</li>
+</ul>
+<h2 id="données"><a href="#données" class="anchor-link">Données</a></h2>
+<figure id="fig-1">
+  <div class="big-number">93,59&nbsp;%</div>
+  <figcaption><a href="#fig-1" class="anchor-link">Figure 1.</a> Pourcentage des pages destinées aux ordinateurs de bureau qui comprennent au moins une ressource tierce.</figcaption>
+</figure>
+<p>Le code tiers est partout. 93&nbsp;% des pages comprennent au moins une ressource tierce, 76&nbsp;% des pages émettent une requête vers un domaine de télémétrie, une page requête, en médiane, du contenu en provenance d’au moins 9 domaines tiers <em>uniques</em>, ce qui représente 35&nbsp;% de l’activité réseau totale. 10&nbsp;% des pages, les plus "actives", émettent plus de 175 requêtes vers des ressources tierces. Il n’est pas exagéré de dire que les tierces parties font partie intégrante du web.</p>
+<figure id="fig-2">
+  <div class="big-number">55,63&nbsp;%</div>
+  <figcaption><a href="#fig-2" class="anchor-link">Figure 2.</a> Pourcentage de pages destinées aux ordinateurs de bureau qui comprennent au moins une ressource publicitaire.</figcaption>
+</figure>
+<h3 id="catégories"><a href="#catégories" class="anchor-link">Catégories</a></h3>
+<p>Si l’omniprésence du contenu tiers n’est pas surprenante, la répartition du contenu de tiers par type de fournisseur est peut-être plus intéressante.</p>
+<p>Alors que la publicité pourrait être l’exemple le plus visible de contenus tiers sur le web, les fournisseurs de services de télémétrie sont la catégorie de tiers la plus courante avec 76&nbsp;% des sites incluant au moins une requête de ce type. Les CDN à 63&nbsp;%, les annonces à 57&nbsp;%, et les services comme Sentry, Stripe et Google Maps SDK à 56&nbsp;% suivent de près en deuxième, troisième et quatrième position pour apparaître sur la plupart des plate-formes web. La popularité de ces catégories constitue le fondement de nos usage sur le web, décrits plus loin dans ce chapitre.</p>
+<h3 id="fournisseurs"><a href="#fournisseurs" class="anchor-link">Fournisseurs</a></h3>
+<p>Un nombre relativement restreint de fournisseurs dominent le paysage des services tiers&nbsp;: les 100 premiers domaines représentent 30&nbsp;% des requêtes réseau sur le web. Des moteurs comme Google, Facebook et YouTube sont en tête avec des pourcentages entiers de parts de marché chacun, mais des entités plus petites comme Wix et Shopify représentent aussi une partie substantielle de la popularité des tiers.</p>
+<p>Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact de chaque fournisseur sur la performance, nous laissons au lecteur et à d’autres outils conçus à cet effet, tels que <a href="https://thirdpartyweb.today">third-party-web</a>, le soin de faire faire une analyse plus objective de ces questions.</p>
+<figure id="fig-3">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Rang</th>
+            <th>Domaines tiers</th>
+            <th>Pourcentage des requêtes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><code>fonts.gstatic.com</code></td>
+            <td>2,53&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><code>www.facebook.com</code></td>
+            <td>2,38&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><code>www.google-analytics.com</code></td>
+            <td>1,71&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><code>www.google.com</code></td>
+            <td>1,17&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><code>fonts.googleapis.com</code></td>
+            <td>1,05&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><code>www.youtube.com</code></td>
+            <td>0,99&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><code>connect.facebook.net</code></td>
+            <td>0,97&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><code>googleads.g.doubleclick.net</code></td>
+            <td>0,93&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><code>cdn.shopify.com</code></td>
+            <td>0,76&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><code>maps.googleapis.com</code></td>
+            <td>0,75&nbsp;%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-3" class="anchor-link">Figure 3.</a> Top 10 des domaines tiers les plus populaires.</figcaption>
+</figure>
+<figure id="fig-4">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Rang</th>
+            <th>URL de ressource tierce</th>
+            <th>Pourcentage des requêtes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><code>https://www.google-analytics.com/analytics.js</code></td>
+            <td>0,64&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><code>https://connect.facebook.net/en_US/fbevents.js</code></td>
+            <td>0,20&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><code>https://connect.facebook.net/signals/plugins/inferredEvents.js&amp;nbsp;?v=2.8.51</code></td>
+            <td>0,19&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><code>https://staticxx.facebook.com/connect/xd_arbiter.php&amp;nbsp;?version=44</code></td>
+            <td>0,16&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><code>https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2</code></td>
+            <td>0,13&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><code>https://www.googletagservices.com/activeview/js/current/osd.js&amp;nbsp;?cb=%2Fr20100101</code></td>
+            <td>0,12&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><code>https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+            <td>0,11&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><code>https://googleads.g.doubleclick.net/pagead/id</code></td>
+            <td>0,11&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><code>https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2</code></td>
+            <td>0,10&nbsp;%</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><code>https://www.googleadservices.com/pagead/conversion_async.js</code></td>
+            <td>0,10&nbsp;%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-4" class="anchor-link">Figure 4.</a> Top 10 des requêtes les plus populaires.</figcaption>
+</figure>
+<h3 id="types-de-ressources"><a href="#types-de-ressources" class="anchor-link">Types de ressources</a></h3>
+<p>La répartition du volume de contenu par type de ressource donne également un aperçu de la façon dont le code tiers est utilisé sur le web. Alors que les requêtes sur le domaine principal sont composées à 56&nbsp;% d’images, à 23&nbsp;% de scripts, à 14&nbsp;% de CSS, et seulement à 4&nbsp;% de HTML, les requêtes vers des domaines tiers contienne davantage de scripts et de code HTML (32&nbsp;% de scripts, 34&nbsp;% d’images, 12&nbsp;% HTML, et seulement 6&nbsp;% de CSS). On pourrait penser que le code d’une tierce partie est moins souvent utilisé pour faciliter la conception et plus fréquemment pour faciliter ou observer les interactions que le code du domaine principal, mais une ventilation des types de ressources par type de tierce partie apporte de la nuance à cette idée. Alors que les CSS et les images sont majoritairement issus du domaine principal (respectivement 70&nbsp;% et 64&nbsp;%), les polices sont largement servies par des fournisseurs tiers, avec seulement 28&nbsp;% provenant du domaie principal. Nous explorerons plus en détails ces usages plus loin dans ce chapitre.</p>
+<figure id="fig-5">
+  <a href="/static/images/2019/third-parties/fig5.png">
+    <img src="/static/images/2019/third-parties/fig5.png" alt="Figure 5. Pourcentage de requêtes de ressources tierces par catégorie et par type de contenu." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig5-description" data-show-text="{{ show_description(5) }}" data-hide-text="{{ hide_description(5) }}">{{ show_description(5) }}</button>
+  <div id="fig5-description" class="visually-hidden">Graphique montrant la répartition des types de contenu pour chaque catégorie de tiers. Les images et les scripts constituent la majorité des requêtes pour chaque catégorie. Les requêtes CDN présentent une proportion particulièrement importante de polices d’écriture.</div>
+  <figcaption id="fig5-caption"><a href="#fig-5" class="anchor-link">Figure 5.</a> Pourcentage de requêtes de ressources tierces par catégorie et par type de contenu.</figcaption>
+</figure>
+<p>Ces données regorgent d’autres faits amusants. Les pixels de suivi (requêtes d’images situées sur des domaines de télémétrie) représentent 1,6&nbsp;% de toutes les requêtes réseau. Les réseaux sociaux comme Facebook et Twitter délivrent six fois plus de vidéos que les fournisseurs dédiés comme YouTube et Vimeo (probablement parce que l’intégration par défaut de YouTube est composée d’un peu de HTML et d’une prévisualisation mais pas une vidéo en lecture automatique). Enfin, il existe plus de requêtes pour des images du domaine principal que tous les scripts combinés.</p>
+<h3 id="nombre-de-requêtes"><a href="#nombre-de-requêtes" class="anchor-link">Nombre de requêtes</a></h3>
+<p>49&nbsp;% de toutes les requêtes pointent vers des tiers. Avec 51&nbsp;%, le domaine principal conserve garde donc la tête, puisqu’il héberge la moitié des ressources web. Mais les sites qui utilisent des ressources tierces doivent le faire de manière importante car même si un peu moins de la moitié de toutes les requêtes proviennent de tiers, un petit nombre de pages n’en référencent pas du tout. En détails&nbsp;: aux 75e, 90e et 99e percentiles, la quasi-totalité de la page est constituée de contenu de tiers. En fait, pour certains sites s’appuyant fortement sur des plates-formes WYSIWYG distribuées comme Wix et SquareSpace, le document racine est parfois la seule requête sur le domaine principal&nbsp;!</p>
+<p>&lt;&nbsp;!-- insert graphic of metric 05_11 --&gt;</p>
+<p>Le nombre de demandes émises par chaque fournisseur tiers varie aussi considérablement selon la catégorie. Bien que les services de télémétrie soient la catégorie de tiers la plus répandue sur les sites web, ils ne représentent que 7&nbsp;% de toutes les requêtes réseau vers des tiers. Les publicités, en revanche, se trouvent sur environ 20&nbsp;% de sites en moins, mais elles représentent 25&nbsp;% de toutes les requêtes réseau vers des tiers. L’impact disproportionné de leurs ressources par rapport à leur popularité sera un thème que nous ne manquerons pas d’approfondir dans les données restantes.</p>
+<h3 id="poids-en-octets"><a href="#poids-en-octets" class="anchor-link">Poids en octets</a></h3>
+<p>Bien que 49&nbsp;% des requêtes proviennent de tiers, leur part sur le web en termes d’octets est un peu plus faible, atteignant seulement 28&nbsp;%. Il en va de même pour la répartition par types de ressources. Les polices d’écriture tierces représentent 72&nbsp;% de toutes les polices d’écritures, mais seulement 53&nbsp;% des octets correspondant aux polices d’écriture&nbsp;; 74&nbsp;% des requêtes concernent des documents HTML tiers, mais ils ne représentent que 39&nbsp;% des octets HTML&nbsp;; 68&nbsp;% des requêtes vidéo viennent de tiers, mais ne représentent que 31&nbsp;% des octets vidéo. Tout cela semble indiquer que les fournisseurs tiers sont des intendants responsables qui maintiennent la taille de leurs réponses à un niveau bas. Dans la plupart des cas, c’est effectivement. Enfin, jusqu’à ce que vous examiniez les scripts.</p>
+<p>Bien qu’ils servent 57&nbsp;% des scripts, les tiers représentent 64&nbsp;% des octets de script, ce qui signifie que leurs scripts sont en moyenne plus volumineux que les scripts des domaines principaux. C’est un signe avant-coureur de l’impact de leurs performances qui sera présenté dans les prochaines sections.</p>
+<figure id="fig-6">
+  <a href="/static/images/2019/third-parties/fig7.png">
+    <img src="/static/images/2019/third-parties/fig7.png" alt="Figure 7. Répartition des octets de ressource par catégorie de tiers." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig7-description" data-show-text="{{ show_description(7) }}" data-hide-text="{{ hide_description(7) }}">{{ show_description(7) }}</button>
+  <div id="fig7-description" class="visually-hidden">Graphique montrant la répartition des octets pour chaque type de contenu par catégorie de tiers. Les images et les scripts sont répartis de manière relativement égale entre les catégories. 80&nbsp;% des polices proviennent de CDN. La vidéo provient de tiers spécialisés en "Contenus".</div>
+  <figcaption id="fig7-caption"><a href="#fig-7" class="anchor-link">Figure 7.</a> Répartition des octets de ressource par catégorie de tiers.</figcaption>
+</figure>
+<p>&lt;&nbsp;!--</p>
+<p><code>&lt;insert graphic of metric 05_12&gt;</code> --&gt;</p>
+<p>En ce qui concerne les fournisseurs tiers spécifiques, on trouve les mêmes poids-lourds en tête du classement du nombre de requêtes, qu’en tête du classement des poids en octets. Les seuls à ne pas respecter cette tendance sont les fournisseurs très médiatiques que sont YouTube, Shopify et Twitter, qui se hissent en tête des tableaux d’impact en poids.</p>
+<p>&lt;&nbsp;!--<code>&lt;insert table of metric 05_07&gt;</code>--&gt;</p>
+<h3 id="exécution-de-scripts"><a href="#exécution-de-scripts" class="anchor-link">Exécution de scripts</a></h3>
+<p>57&nbsp;% du temps d’exécution des scripts provient de scripts tiers, et les 100 premiers domaines représentent déjà 48&nbsp;% de la durée totale d’exécution des scripts sur le web. Cela souligne l’impact considérable que quelques entités bien définies ont réellement sur les performances du web. Ce sujet est étudié plus en profondeur dans la section <a href="#performance">Répercussions &gt; Performance</a>.</p>
+<p>&lt;&nbsp;!--<code>&lt;insert graphic of metric 05_05&gt;</code>--&gt;</p>
+<p>&lt;&nbsp;!--<code>&lt;insert graphic of metric 05_13&gt;</code>--&gt;</p>
+<p>La répartition par catégorie de l’exécution des scripts suit largement celle du nombre de requêtes. Ici aussi, la publicité est la plus imposante. Les scripts publicitaires représentent 25&nbsp;% du temps d’exécution de scripts tiers, les fournisseurs de services d’hébergement et les fournisseurs liés aux réseaux sociaux arrivant en deuxième position, à 12&nbsp;%.</p>
+<p>&lt;&nbsp;!--<code>&lt;insert table of metric 05_08&gt;</code>--&gt;</p>
+<p>&lt;&nbsp;!--<code>&lt;insert table of metric 05_10&gt;</code>--&gt;</p>
+<p>Bien que l’on puisse dire beaucoup de choses sur la popularité et l’impact sur le rendement de chaque fournisseur, cette analyse plus subjective est laissée à la discrétion du lecteur et d’autres outils conçus à cette fin, comme le <a href="https://thirdpartyweb.today">third-party-web</a>.</p>
+<h2 id="types-d’utilisation"><a href="#types-d’utilisation" class="anchor-link">Types d’utilisation</a></h2>
+<p>Pourquoi les propriétaires de sites utilisent-ils un code tiers&nbsp;? Comment ces contenus tiers peuvent-ils désormais représenter plus de la moitié des requêtes réseau&nbsp;? Que font toutes ces requêtes&nbsp;? Les réponses à ces questions se trouvent dans les trois principaux modèles d’utilisation des ressources tierces. En général, les propriétaires de sites font appel à des tiers pour générer et consommer les données de leurs utilisateurs, monétiser leurs expériences sur le site et simplifier le développement web.</p>
+<h3 id="générer-et-consommer-des-données"><a href="#générer-et-consommer-des-données" class="anchor-link">Générer et consommer des données</a></h3>
+<p>La télémétrie est la catégorie de tiers la plus populaire sur le web et pourtant, elle est peu visible pour l’utilisateur. Considérez le volume d’information en jeu pendant la durée de vie d’une visite sur le Web&nbsp;: le contexte de l’utilisateur·ice, le dispositif, le navigateur, la qualité de la connexion, la localisation, les interactions avec la page, la durée de la session, l’information selon laquelle il ou elle a déjà visité le site ou cette page, etc. sont générés en permanence. Il est difficile, encombrant et coûteux de maintenir des outils qui permettent d’entreposer, de normaliser et d’analyser des séries chronologiques de données de cette ampleur. Bien que rien n’exige catégoriquement que la télémétrie relève du domaine des fournisseurs tiers, l’attrait grandissant pour la compréhension de vos utilisateur·ice·s, la grande complexité de l’espace des problèmes et l’importance croissante accordée à la gestion respectueuse et responsable des données font naturellement apparaître la télémétrie comme un modèle d’utilisation tiers très répandu.</p>
+<p>Mais il y a aussi un revers à la médaille pour les données des utilisateurs&nbsp;: la consommation. Alors que les outiles de télémétrie consistent à générer des données sur les visiteurs et visiteuses de votre site, d’autres ressources tierces se concentrent sur la consommation de données sur ces personnes, en provenance d’autres sources. Les fournisseurs sociaux s’inscrivent parfaitement dans ce schéma d’utilisation. Un propriétaire de site <em>doit</em> utiliser les ressources Facebook s’il souhaite intégrer à son site des informations provenant du profil Facebook d’une personne. Tant que les propriétaires de sites sont intéressés à personnaliser leur expérience avec les widgets des réseaux sociaux et à tirer parti des réseaux sociaux de leurs visiteurs et visiteuses pour accroître leur audience, les intégrations sociales resteront probablement la chasse gardée de fournisseurs ters dans le futur.</p>
+<h3 id="monétiser-le-trafic-web"><a href="#monétiser-le-trafic-web" class="anchor-link">Monétiser le trafic web</a></h3>
+<p>
+  Le modèle ouvert du web ne sert pas toujours les intérêts financiers des personnes créatrices de contenu aussi bien qu’elles le souhaiteraient et de nombreux propriétaires de sites ont recours à la publicité pour monétiser leurs sites. Comme l’établissement de relations directes avec les annonceurs et la négociation de contrats de prix est un processus relativement difficile et long, cette responsabilité est en grande partie assumée par des fournisseurs tiers qui se chargent de la publicité ciblée et des appels d’offres en temps réel. L’opinion publique globalement négative, la popularité de la technologie de blocage des publicités et les mesures réglementaires prises sur les principaux marchés mondiaux tels que l’Europe constituent la plus grande menace à la poursuite du recours à des fournisseurs tiers pour la monétisation. Bien qu’il soit peu probable que les propriétaires de sites concluent soudainement leurs propres contrats publicitaires ou construisent des réseaux publicitaires sur mesure, d’autres modèles de monétisation comme les <span lang="en">paywalls</span> et des expériences comme le <a href="https://basicattentiontoken.org/"><span lang="en">Basic Attention Token</span></a> du navigateur Brave ont une réelle chance de secouer, à l’avenir, le paysage de la publicité de tiers.
+</p>
+<h3 id="simplifier-le-développement"><a href="#simplifier-le-développement" class="anchor-link">Simplifier le développement</a></h3>
+<p>Plus que tout autre usage, les ressources tierces sont surtout utilisées pour simplifier l’expérience de développement web. Il est possible que même des modes d’utilisation antérieurs s’inscrivent dans ce schéma. Qu’il s’agisse d’analyser le comportement des utilisateurs, de communiquer avec les annonceurs ou de personnaliser l’expérience utilisateur, les ressources tierces sont utilisées pour faciliter le développement initial du site.</p>
+<p>Les fournisseurs d’hébergement sont l’exemple le plus extrême de ce schéma. Certains de ces fournisseurs permettent même à n’importe qui sur Terre de devenir propriétaire d’un site sans avoir besoin de compétences techniques. Ils fournissent l’hébergement des ressources, des outils pour construire des sites sans aucune compétence en matière de programmation et des services d’enregistrement de domaines.</p>
+<p>Le reste des fournisseurs tiers ont également tendance à s’inscrire dans ce schéma d’utilisation. Qu’il s’agisse de l’hébergement d’une bibliothèque d’utilitaires telle que jQuery pour l’utilisation par les développeurs frontaux mis en cache sur les serveurs de périphérie de Cloudflare ou d’une vaste bibliothèque de polices d’écriture usuelles, servies à partir du très populaire CDN de Google, le contenu de tiers est une autre façon de soulager le propriétaire du site et, peut-être, simplement, de lui faciliter un peu la tâche pour offrir une expérience agréable.</p>
+<h2 id="répercussions"><a href="#répercussions" class="anchor-link">Répercussions</a></h2>
+<h3 id="performance"><a href="#performance" class="anchor-link">Performance</a></h3>
+<p>L’impact des contenus de tiers sur la <a href="./performance">performance</a> n’est ni catégoriquement bon ni mauvais. Il y a de bons et de mauvais acteurs dans toutes les catégories et les différents types de tiers ont des niveaux d’influence variables.</p>
+<p>Le point positif&nbsp;: les polices de caractères et les styles partagés par des domaines tiers sont, en moyenne, plus efficaces que celles de leurs homologues du domaine principal.</p>
+<p>Les catégories Utilitaires, CDN et Contenu sont les meilleures en termes de performances, au sein du paysage des performances tierces. Elles offrent des versions optimisées du même type de contenu qui serait autrement servi par des ressources du domaine principal. Google Fonts et Typekit proposent des polices optimisées qui sont en moyenne plus petites que les polices de première partie, Cloudflare CDN propose une version minifiée des bibliothèques open source qui pourraient être accidentellement servies en mode développement par certains propriétaires de sites, le SDK Google Maps fournit efficacement des cartes complexes qui pourraient, sinon, être naïvement livrées sous forme de grandes images.</p>
+<p>Le mauvais&nbsp;: un très petit nombre d’entités génère une très grande partie du temps d’exécution de JavaScript, alors qu’elles ne fournissent qu’un petit ensemble de fonctionnalités, très limité, sur les pages.</p>
+<p>Les publicités, les fournisseurs de services de réseautage social, d’hébergement et certains fournisseurs de services de télémétrie exercent une influence des plus négatives sur la performance du web. Alors que les fournisseurs d’hébergement fournissent la majorité du contenu d’un site et ont naturellement un impact plus important sur les performances que les autres catégories de tiers, ils servent également des sites presque entièrement statiques qui exigent, dans la plupart des cas, très peu de JavaScript, ce qui ne devrait pas justifier le volume de temps d’exécution des scripts. Les autres catégories qui nuisent aux performances ont cependant encore moins d’excuses. Elles jouent un rôle très limité sur chaque page sur laquelle elles apparaissent et pourtant elles prennent rapidement le dessus sur une majorité de ressources. Par exemple, le bouton " J’aime " de Facebook et les widgets des réseaux sociaux associés occupent un espace extraordinairement réduit sur l’écran et ne représentent qu’une fraction de la plupart des expériences web, et pourtant l’impact médian sur les pages avec des tiers sociaux est de près de 20&nbsp;% de leur temps d’exécution JavaScript total. La situation est similaire pour l’analyse - les bibliothèques de suivi ne contribuent pas directement à l’expérience utilisateur perçue, et pourtant l’impact du 90e percentile sur les pages avec des tiers d’analyse est de 44&nbsp;% de leur temps d’exécution JavaScript total.</p>
+<p>Le bon côté de ce petit nombre d’entités jouissant d’une si grande part de marché est qu’un effort très limité et concentré peut avoir un impact énorme sur le web dans son ensemble. L’amélioration des performances chez les quelques premiers hébergeurs peut améliorer de 2 à 3&nbsp;% de <em>toutes</em> les requêtes web.</p>
+<h3 id="confidentialité"><a href="#confidentialité" class="anchor-link">Confidentialité</a></h3>
+<p>L’abondance des fournisseurs de services de télémétrie et la forte concentration de l’exécution des scripts posent deux problèmes majeurs de confidentialité pour les visiteurs des sites&nbsp;: les propriétaires de sites sont très nombreux à pister leurs utilisateurs avec des scripts tiers, permettant à une poignée d’entreprises de recevoir des informations sur une grande partie du trafic web.</p>
+<p>L’intérêt des propriétaires de sites pour la compréhension et l’analyse du comportement des utilisateurs n’est pas malveillant en soi, mais le caractère généralisé et plutôt dissimulé du pistage sur le web soulève des préoccupations légitimes. Les utilisateurs et utilisatrices, les entreprises et les autorités législatives en ont pris conscience ces dernières années, aboutissant aux réglementations sur la protection de la vie privée telles que le <a href="https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es">RGPD</a> en Europe et le <a href="https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act">CCPA</a> en Californie. Il est essentiel de s’assurer que les équipes de développement traitent les données des utilisateurs et utilisatrices de manière responsable, qu’elles les traitent avec respect et qu’elles soient transparentes quant aux données recueillies pour que la télémétrie demeure la catégorie de tiers la plus populaire et pour s’assurer que l’analyse du comportement des utilisateurs reste en symbiose avec l’amélioration de la valeur d’usage pour les utilisateurs et utilisatrices.</p>
+<p>La forte concentration de l’exécution des scripts est excellente au regard de l’impact potentiel des futures améliorations de performance, mais moins excitante pour ses implications en termes de confidentialité. 29&nbsp;% de <em>tous</em> les temps d’exécution de scripts sur le web proviennent uniquement de scripts sur des domaines appartenant à Google ou à Facebook. C’est un pourcentage très important du temps CPU qui est contrôlé par ces deux seules entités. Il est essentiel de s’assurer que les mêmes protections de la vie privée que celles dont bénéficient les fournisseurs de services de télémétrie sont également appliquées dans les autres catégories&nbsp;: services, publicités, réseaux sociaux et développement.</p>
+<h3 id="sécurité"><a href="#sécurité" class="anchor-link">Sécurité</a></h3>
+<p>Bien que le sujet de la sécurité soit traité plus en profondeur dans le chapitre <a href="./security">Sécurité</a>, les conséquences de l’introduction de dépendances externes sur votre site en matière de sécurité sont indissociables de la protection de la vie privée. Permettre à des tiers d’exécuter des JavaScript arbitraires leur donne un contrôle total sur votre page. Quand un script peut contrôler le DOM et <code>window</code>, il peut tout faire. Même si le code n’a pas de problèmes de sécurité, il peut introduire un point unique de défaillance, <a href="https://www.stevesouders.com/blog/2010/06/01/frontend-spof/">ce qui a été reconnu comme un problème potentiel depuis un certain temps maintenant</a>.</p>
+<p><a href="https://csswizardry.com/2019/05/self-host-your-static-assets/">Auto-héberger du contenu de tierces parties</a> répond à certaines des préoccupations mentionnées ici – et à d’autres. De plus, comme les navigateurs <a href="https://chromestatus.com/feature/5730772021411840">partitionnement de plus en plus les caches HTTP</a>, les avantages du chargement direct à partir de la tierce partie semblent plus que jamais incertains. Cette méthode est peut-être meilleure pour de nombreux cas d’utilisation, même si elle rend la mesure de son impact plus difficile.</p>
+<h2 id="conclusion"><a href="#conclusion" class="anchor-link">Conclusion</a></h2>
+<p>Le contenu tiers est partout. Cela n’est guère surprenant&nbsp;; le principe de base du web est de permettre l’interconnexion et la mise en relation. Dans ce chapitre, nous avons examiné les contenus de tiers en termes de ressources hébergées en dehors du domaine principal. Si nous avions inclus les contenus tiers auto-hébergés (par exemple, les bibliothèques open source communes hébergées sur le domaine principal), l’utilisation de contenus tiers aurait été encore plus importante&nbsp;!</p>
+<p>Bien que la <a href="https://en.wikipedia.org/wiki/Code_reuse">réutilisation dans les technologies informatiques</a> soit généralement une pratique exemplaire, les tiers sur le web introduisent des dépendances qui ont un impact considérable sur la performance, la confidentialité et la sécurité d’une page. L’auto-hébergement et la sélection minutieuse des fournisseurs peuvent grandement contribuer à atténuer ces effets.</p>
+<p>Indépendamment de la question importante de savoir comment les contenus de tiers sont ajoutés à une page, la conclusion est la même&nbsp;: les tiers font partie intégrante du web&nbsp;!</p>
+{% endblock %}

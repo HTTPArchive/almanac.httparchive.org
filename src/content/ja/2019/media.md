@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-05T00:00:00.000Z
+last_updated: 2020-08-12T00:00:00.000Z
 ---
 
 ## 序章
@@ -22,7 +22,7 @@ last_updated: 2020-09-05T00:00:00.000Z
   <a href="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png">
     <img src="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png" alt="図1. Webページのバイト：画像と動画対その他。" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
   </a>
-  <div id="fig1-description" class="visually-hidden">10パーセンタイルでページバイトの44.1％がメディア、25パーセンタイルで52.7％がメディア、50パーセンタイルで67.0％がメディア、75パーセンタイルで81.7％がメディア、90パーセンタイルで91.2％がメディアであることを示す棒グラフです。</div>
+  <div id="fig1-description" class="visually-hidden">p10パーセンタイルでページバイトの44.1％がメディア、p25パーセンタイルで52.7％がメディア、p50パーセンタイルで67.0％がメディア、p75パーセンタイルで81.7％がメディア、p90パーセンタイルで91.2％がメディアであることを示す棒グラフです。</div>
   <figcaption id="fig1-caption">図1. Webページのバイト：画像と動画対その他。</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ last_updated: 2020-09-05T00:00:00.000Z
   <a href="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png">
     <img src="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png" alt="図3. 1ページあたりのピクセル画像（モバイル）。CSS対実物。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive">
   </a>
-  <div id="fig3-description" class="visually-hidden">画像コンテンツに割り当てられているCSSの画素数を、実際の画像の画素数と比較した結果、10パーセンタイル（実測は0.07MP、CSSは0.04MP）、25パーセンタイル（実測は0.38MP、CSSは0.18MP）、50パーセンタイル（実測は1.6MP、CSSは0.65MP）、75パーセンタイル（実測は5.1MP、CSSは1.8MP）、90パーセンタイル（実測は12MP、CSSは4.6MP）が表示されていることがわかります。</div>
+  <div id="fig3-description" class="visually-hidden">画像コンテンツに割り当てられているCSSの画素数を、実際の画像の画素数と比較した結果、p10（実測は0.07MP、CSSは0.04MP）、p25（実測は0.38MP、CSSは0.18MP）、p50（実測は1.6MP、CSSは0.65MP）、p75（実測は5.1MP、CSSは1.8MP）、p90（実測は12MP、CSSは4.6MP）が表示されていることがわかります。</div>
   <figcaption id="fig3-caption">図3. 1ページあたりのピクセル画像（モバイル）。CSS対実物。</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ last_updated: 2020-09-05T00:00:00.000Z
   <a href="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png">
     <img src="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png" alt="図4. 1ページあたりのピクセル画像（デスクトップ）。CSS対実物。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
   </a>
-  <div id="fig4-description" class="visually-hidden">画像コンテンツに割り当てられたCSSの画素数をデスクトップ用の実際の画像の画素数と比較した結果、10パーセンタイル（実際は0.09MP、CSSは0.05MP）、25パーセンタイル（実際は0.52MP、CSSは0.29MP）、50パーセンタイル（実際は2.1MP、CSSは1.1MP）、75パーセンタイル（実際は6.0MP、CSSは2.8MP）、90パーセンタイル（実際は14MP、CSSは6.3MP）が表示されています。</div>
+  <div id="fig4-description" class="visually-hidden">画像コンテンツに割り当てられたCSSの画素数をデスクトップ用の実際の画像の画素数と比較した結果、p10（実際は0.09MP、CSSは0.05MP）、p25（実際は0.52MP、CSSは0.29MP）、p50（実際は2.1MP、CSSは1.1MP）、p75（実際は6.0MP、CSSは2.8MP）、p90（実際は14MP、CSSは6.3MP）が表示されています。</div>
   <figcaption id="fig4-caption">図4. 1ページあたりのピクセル画像（デスクトップ）。CSS対実物。</figcaption>
 </figure>
 
@@ -84,7 +84,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
     <img src="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png" alt="図5. 画像のピクセル量と画面サイズ（CSSピクセル）の関係。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive">
   </a>
-  <div id="fig5-description" class="visually-hidden">実際の画面サイズCSSピクセルと比較したページあたりに必要なピクセル量の比較では、10パーセンタイル（モバイル20%、デスクトップ2%）、25パーセンタイル（モバイル97%、デスクトップ13%）、50パーセンタイル（モバイル354%、デスクトップ46%）、75パーセンタイル（モバイル1003%、デスクトップ123%）、および90パーセンタイル（モバイル2477%、デスクトップ273%）が示されています。</div>
+  <div id="fig5-description" class="visually-hidden">実際の画面サイズCSSピクセルと比較したページあたりに必要なピクセル量の比較では、p10（モバイル20%、デスクトップ2%）、p25（モバイル97%、デスクトップ13%）、p50（モバイル354%、デスクトップ46%）、p75（モバイル1003%、デスクトップ123%）、およびp90（モバイル2477%、デスクトップ273%）が示されています。</div>
   <figcaption id="fig5-caption">図5. 画像のピクセル量と画面サイズ（CSSピクセル）の関係。</figcaption>
 </figure>
 
@@ -168,7 +168,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   <a href="/static/images/2019/media/fig8_image_format_usage_per_page.png">
     <img src="/static/images/2019/media/fig8_image_format_usage_per_page.png" alt="Figure 8. Image format usage per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive">
   </a>
-<div id="fig8-description" class="visually-hidden">10パーセンタイルでは画像フォーマットが全く使用されていないことを示す棒グラフ、25パーセンタイルではJPGが3枚とPNGが4枚、50パーセンタイルではJPGが9枚、PNGが4枚、GIFが1枚、75パーセンタイルではJPEGが39枚、PNGが18枚、SVGが2枚、GIFが2枚、p99パーセンタイルではJPGが119枚、PNGが49枚、WebPが28枚、SVGが19枚、GIFが14枚使用されていることを示しています。</div>
+<div id="fig8-description" class="visually-hidden">p10パーセンタイルでは画像フォーマットが全く使用されていないことを示す棒グラフ、p25パーセンタイルではJPGが3枚とPNGが4枚、p50パーセンタイルではJPGが9枚、PNGが4枚、GIFが1枚、p75パーセンタイルではJPEGが39枚、PNGが18枚、SVGが2枚、GIFが2枚、p99パーセンタイルではJPGが119枚、PNGが49枚、WebPが28枚、SVGが19枚、GIFが14枚使用されていることを示しています。</div>
   <figcaption id="fig8-caption">図8. 1ページあたりの画像フォーマットの使用量</figcaption>
 </figure>
 
@@ -192,7 +192,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   <a href="/static/images/2019/media/fig10_image_format_size.png">
     <img alt="A comparison of image formats by file size" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/media/fig10_image_format_size.png" width="600" height="371">
   </a>
-  <div id="fig10-description" class="visually-hidden">10パーセンタイルではJPEGの4KB、PNGの2KB、GIFの2KBが使用され、25パーセンタイルではJPGの9KB、PNGの4KB、WebPの7KB、GIFの3KBが使用され、50パーセンタイルではJPGの24KB、PNGの11KB、WebPの17KB、GIFの6KBが使用されていることを示すチャート。SVGの1KBが使用され、75パーセンタイルではJPEGの68KB、PNGの43KB、WebPの41KB、GIFの17KB、SVGの2KBが使用され、90パーセンタイルではJPGの116KB、PNGの152KB、WebPの90KB、GIFの87KB、SVGの8KBが使用されています。</div>
+  <div id="fig10-description" class="visually-hidden">p10パーセンタイルではJPEGの4KB、PNGの2KB、GIFの2KBが使用され、p25パーセンタイルではJPGの9KB、PNGの4KB、WebPの7KB、GIFの3KBが使用され、p50パーセンタイルではJPGの24KB、PNGの11KB、WebPの17KB、GIFの6KBが使用されていることを示すチャート。SVGの1KBが使用され、p75パーセンタイルではJPEGの68KB、PNGの43KB、WebPの41KB、GIFの17KB、SVGの2KBが使用され、p90パーセンタイルではJPGの116KB、PNGの152KB、WebPの90KB、GIFの87KB、SVGの8KBが使用されています。</div>
   <figcaption id="fig10-caption">図10. 画像形式別のファイルサイズ（KB）。</figcaption>
 </figure>
 
@@ -202,7 +202,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   <a href="/static/images/2019/media/fig11_bytes_per_pixel.png">
     <img src="/static/images/2019/media/fig11_bytes_per_pixel.png" alt="図11. ピクセルあたりのバイト数。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden">ローソク足チャートは、10パーセンタイルでは、JPEGが0.1175byte/pixel、PNGが0.1197byte/pixel、GIFが0.1702byte/pixel、WebPが0.0586byte/pixel、SVGが0.0293byte/pixelであることを示しています。25パーセンタイルでは、JPEGが0.1848byte/pixel、PNGが0.2874byte/pixel、GIFが0.3641byte/pixel、WebPが0.1025byte/pixel、SVGが0.174byte/pixelとなっています。50パーセンタイルでは、JPEGが0.2997byte/pixel、PNGが0.6918byte/pixel、GIFが0.7967byte/pixel、WebPが0.183byte/pixel、SVGが0.6766byte/pixelとなっています。75パーセンタイルでは、JPEGが0.5456byte/pixel、PNGが1.4548byte/pixel、GIFが2.515byte/pixel、WebPが0.3272byte/pixel、SVGが1.9261byte/pixelとなっています。90パーセンタイルでは、JPEGが0.9822byte/pixel、PNGが2.5026byte/pixel、GIFが8.5151byte/pixel、WebPが0.6474byte/pixel、SVGが4.1075byte/pixelとなっています。</div>
+  <div id="fig11-description" class="visually-hidden">ローソク足チャートは、p10パーセンタイルでは、JPEGが0.1175byte/pixel、PNGが0.1197byte/pixel、GIFが0.1702byte/pixel、WebPが0.0586byte/pixel、SVGが0.0293byte/pixelであることを示しています。p25パーセンタイルでは、JPEGが0.1848byte/pixel、PNGが0.2874byte/pixel、GIFが0.3641byte/pixel、WebPが0.1025byte/pixel、SVGが0.174byte/pixelとなっています。p50パーセンタイルでは、JPEGが0.2997byte/pixel、PNGが0.6918byte/pixel、GIFが0.7967byte/pixel、WebPが0.183byte/pixel、SVGが0.6766byte/pixelとなっています。p75パーセンタイルでは、JPEGが0.5456byte/pixel、PNGが1.4548byte/pixel、GIFが2.515byte/pixel、WebPが0.3272byte/pixel、SVGが1.9261byte/pixelとなっています。p90パーセンタイルでは、JPEGが0.9822byte/pixel、PNGが2.5026byte/pixel、GIFが8.5151byte/pixel、WebPが0.6474byte/pixel、SVGが4.1075byte/pixelとなっています。</div>
   <figcaption id="fig11-caption">図11. ピクセルあたりのバイト数。</figcaption>
 </figure>
 
@@ -226,7 +226,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   <a href="/static/images/2019/media/fig12_percentage_optimized_images.png">
     <img src="/static/images/2019/media/fig12_percentage_optimized_images.png" alt="図12. 「最適化された」画像の割合。" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767">
   </a>
-  <div id="fig12-description" class="visually-hidden">10パーセンタイルでは100%の画像が最適化されており、25パーセンタイルでも同様で、50パーセンタイルでは98%の画像が最適化されており（2%は最適化されていない）、75パーセンタイルでは83%の画像が最適化されており（17%は最適化されていない）、90パーセンタイルでは59%の画像が最適化されており、41%の画像が最適化されていないことを示す棒グラフです。</div>
+  <div id="fig12-description" class="visually-hidden">p10パーセンタイルでは100%の画像が最適化されており、p25パーセンタイルでも同様で、p50パーセンタイルでは98%の画像が最適化されており（2%は最適化されていない）、p75パーセンタイルでは83%の画像が最適化されており（17%は最適化されていない）、p90パーセンタイルでは59%の画像が最適化されており、41%の画像が最適化されていないことを示す棒グラフです。</div>
   <figcaption id="fig12-caption">図12. 「最適化された」画像の割合。</figcaption>
 </figure>
 
@@ -236,7 +236,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   <a href="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png">
     <img src="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png" alt="図13. Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。" aria-labelledby="fig12-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779">
   </a>
-  <div id="fig13-description" class="visually-hidden">10パーセンタイルでは0ms、25パーセンタイルでも同じ、50パーセンタイルでは150ms、75パーセンタイルでは1,460ms、90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。</div>
+  <div id="fig13-description" class="visually-hidden">p10パーセンタイルでは0ms、p25パーセンタイルでも同じ、p50パーセンタイルでは150ms、p75パーセンタイルでは1,460ms、p90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。</div>
   <figcaption id="fig13-caption">図13. Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。</figcaption>
 </figure>
 
@@ -331,7 +331,7 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
   <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
     <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="図19. Lighthouse監査：オフスクリーン。" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
   </a>
-  <div id="fig19-description" class="visually-hidden">10パーセンタイルでは画像の0%が画面外、25パーセンタイルでは2%が画面外、50パーセンタイルでは27%が画面外、75パーセンタイルでは64%が画面外、90パーセンタイルでは 84%が画面外であることを示す棒グラフです。</div>
+  <div id="fig19-description" class="visually-hidden">P10パーセンタイルでは画像の0%が画面外、P25パーセンタイルでは2%が画面外、P50パーセンタイルでは27%が画面外、P75パーセンタイルでは64%が画面外、P90パーセンタイルでは 84%が画面外であることを示す棒グラフです。</div>
   <figcaption id="fig19-caption">図19. Lighthouse監査：オフスクリーン。</figcaption>
 </figure>
 

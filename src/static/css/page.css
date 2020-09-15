@@ -280,7 +280,8 @@
 }
 
 .authors .social a {
-  margin: 0.25rem 1rem 0.25rem 0;
+  margin-right: 10px;
+  margin-right: 0.625rem;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -297,7 +298,7 @@
 }
 
 .authors .social svg {
-  width: 1.5em;
+  width: 1em;
   height: auto;
   margin-right: 4px;
   margin-right: 0.25rem;

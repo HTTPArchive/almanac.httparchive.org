@@ -1,0 +1,1587 @@
+{% extends "%s/2019/base_chapter.html" % lang %}
+
+<!--{# IMPORTANT!
+
+- `chapter.html` is a "template for templates" used by the `generate_chapters.js` script, hence the strange template syntax (eg, mixing ejs and jinja syntax)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}-->
+
+{% set metadata = {"part_number":"IV","chapter_number":17,"title":"CDN","description":"CDN chapter of the 2019 Web Almanac covering CDN adoption and usage, RTT &amp; TLS management, HTTP/2 adoption, caching and common library and content CDNs.","authors":["andydavies","colinbendell"],"reviewers":["yoavweiss","paulcalvano","pmeenan","enygren"],"translators":null,"discuss":"1772","results":"https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/","queries":"17_CDN","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-08-04T00:00:00.000Z","chapter":"cdn"} %} {% block index %}
+<ul>
+  <li>
+    <a href="#introduction">Introduction</a>
+
+    <ul>
+      <li>
+        <a href="#caveats-and-disclaimers">Caveats and disclaimers</a>
+      </li>
+
+      <li>
+        <a href="#further-stats">Further stats</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#cdn-adoption-and-usage">CDN adoption and usage</a>
+  </li>
+
+  <li>
+    <a href="#top-cdn-providers">Top CDN providers</a>
+  </li>
+
+  <li>
+    <a href="#rtt-and-tls-management">RTT and TLS management</a>
+  </li>
+
+  <li>
+    <a href="#tls-negotiation-time-origin-3x-slower-than-cdns">TLS negotiation time: origin 3x slower than CDNs</a>
+  </li>
+
+  <li>
+    <a href="#tls-adoption">TLS adoption</a>
+  </li>
+
+  <li>
+    <a href="#http2-adoption">HTTP/2 adoption</a>
+  </li>
+
+  <li>
+    <a href="#controlling-cdn-caching-behavior">Controlling CDN caching behavior</a>
+
+    <ul>
+      <li>
+        <a href="#vary">Vary</a>
+      </li>
+
+      <li>
+        <a href="#surrogate-control-s-maxage-and-pre-check">Surrogate-Control, s-maxage, and Pre-Check</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#cdns-for-common-libraries-and-content">CDNs for common libraries and content</a>
+  </li>
+
+  <li>
+    <a href="#conclusion">Conclusion</a>
+  </li>
+</ul>
+
+{% endblock %} {% block main_content %}
+<h2 id="introduction"><a href="#introduction" class="anchor-link">Introduction</a></h2>
+<p>"Use a Content Delivery Network" was one of <a href="http://stevesouders.com/examples/rules.php">Steve Souders original recommendations</a> for making web sites load faster. It's advice that remains valid today, and in this chapter of the Web Almanac we're going to explore how widely Steve's recommendation has been adopted, how sites are using Content Delivery Networks (CDNs), and some of the features they're using.</p>
+<p>Fundamentally, CDNs reduce latency—the time it takes for packets to travel between two points on a network, say from a visitor's device to a server—and latency is a key factor in how quickly pages load.</p>
+<p>A CDN reduces latency in two ways: by serving content from locations that are closer to the user and second, by terminating the TCP connection closer to the end user.</p>
+<p>Historically, CDNs were used to cache, or copy, bytes so that the logical path from the user to the bytes becomes shorter. A file that is requested by many people can be retrieved once from the origin (your server) and then stored on a server closer to the user, thus saving transfer time.</p>
+<p>CDNs also help with TCP latency. The latency of TCP determines how long it takes to establish a connection between a browser and a server, how long it takes to secure that connection, and ultimately how quickly content downloads. At best, network packets travel at roughly two-thirds of the speed of light, so how long that round trip takes depends on how far apart the two ends of the conversation are, and what's in between. Congested networks, overburdened equipment, and the type of network will all add further delays. Using a CDN to move the server end of the connection closer to the visitor reduces this latency penalty, shortening connection times, TLS negotiation times, and improving content download speeds.</p>
+<p>Although CDNs are often thought of as just caches that store and serve static content close to the visitor, they are capable of so much more! CDNs aren't limited to just helping overcome the latency penalty, and increasingly they offer other features that help improve performance and security.</p>
+<ul>
+  <li>Using a CDN to proxy dynamic content (base HTML page, API responses, etc.) can take advantage of both the reduced latency between the browser and the CDN's own network back to the origin.</li>
+  <li>Some CDNs offer transformations that optimize pages so they download and render more quickly, or optimize images so they're the appropriate size (both dimensions and file size) for the device on which they're going to be viewed.</li>
+  <li>From a <a href="./security">security</a> perspective, malicious traffic and bots can be filtered out by a CDN before the requests even reach the origin, and their wide customer base means CDNs can often see and react to new threats sooner.</li>
+  <li>The rise of <a href="https://en.wikipedia.org/wiki/Edge_computing">edge computing</a> allows sites to run their own code close to their visitors, both improving performance and reducing the load on the origin.</li>
+</ul>
+<p>Finally, CDNs also help sites to adopt new technologies without requiring changes at the origin, for example <a href="./http2">HTTP/2</a>, TLS 1.3, and/or IPv6 can be enabled from the edge to the browser, even if the origin servers don't support it yet.</p>
+<h3 id="caveats-and-disclaimers"><a href="#caveats-and-disclaimers" class="anchor-link">Caveats and disclaimers</a></h3>
+<p>As with any observational study, there are limits to the scope and impact that can be measured. The statistics gathered on CDN usage for the the Web Almanac does not imply performance nor effectiveness of a specific CDN vendor.</p>
+<p>There are many limits to the testing <a href="./methodology">methodology</a> used for the Web Almanac. These include:</p>
+<ul>
+  <li><strong>Simulated network latency</strong>: The Web Almanac uses a dedicated network connection that <a href="./methodology#webpagetest">synthetically shapes traffic</a>.</li>
+  <li><strong>Single geographic location</strong>: Tests are run from <a href="https://httparchive.org/faq#how-is-the-data-gathered">a single datacenter</a> and cannot test the geographic distribution of many CDN vendors.</li>
+  <li><strong>Cache effectiveness</strong>: Each CDN uses proprietary technology and many, for security reasons, do not expose cache performance.</li>
+  <li><strong>Localization and internationalization</strong>: Just like geographic distribution, the effects of language and geo-specific domains are also opaque to the testing.</li>
+  <li><a href="https://github.com/WPO-Foundation/wptagent/blob/master/internal/optimization_checks.py#L51">CDN detection</a> is primarily done through DNS resolution and HTTP headers. Most CDNs use a DNS CNAME to map a user to an optimal datacenter. However, some CDNs use AnyCast IPs or direct A+AAAA responses from a delegated domain which hide the DNS chain. In other cases, websites use multiple CDNs to balance between vendors which is hidden from the single-request pass of <a href="./methodology#webpagetest">WebPageTest</a>. All of this limits the effectiveness in the measurements.</li>
+</ul>
+<p>Most importantly, these results reflect a potential utilization but do not reflect actual impact. YouTube is more popular than "ShoesByColin" yet both will appear as equal value when comparing utilization.</p>
+<p>With this in mind, there are a few intentional statistics that were not measured with the context of a CDN:</p>
+<ul>
+  <li>
+    <strong>TTFB</strong>: Measuring the Time to first byte <em>by CDN</em> would be intellectually dishonest without proper knowledge about cacheability and cache effectiveness. If one site uses a CDN for <strong>round trip time</strong> (RTT) management but not for caching, this would create a disadvantage when comparing another site that uses a different CDN vendor but does also caches the content. <em>(Note: this does not apply to the TTFB analysis in the <a href="./performance#time-to-first-byte-ttfb">Performance</a> chapter because it does not draw conclusions about the performance of individual CDNs.)</em>
+  </li>
+  <li><strong>Cache Hit vs. Cache Miss performance</strong>: As mentioned previously, this is opaque to the testing apparatus and therefore repeat tests to test page performance with a cold cache vs. a hot cache are unreliable.</li>
+</ul>
+<h3 id="further-stats"><a href="#further-stats" class="anchor-link">Further stats</a></h3>
+<p>In future versions of the Web Almanac, we would expect to look more closely at the TLS and RTT management between CDN vendors. Of interest would the impact of OCSP stapling, differences in TLS Cipher performance. CWND (TCP congestion window) growth rate, and specifically the adoption of BBR v1, v2, and traditional TCP Cubic.</p>
+<h2 id="cdn-adoption-and-usage"><a href="#cdn-adoption-and-usage" class="anchor-link">CDN adoption and usage</a></h2>
+<p>For websites, a CDN can improve performance for the primary domain (<code>www.shoesbycolin.com</code>), sub-domains or sibling domains (<code>images.shoesbycolin.com</code> or <code>checkout.shoesbycolin.com</code>), and finally third parties (Google Analytics, etc.). Using a CDN for each of these use cases improves performance in different ways.</p>
+<p>Historically, CDNs were used exclusively for static resources like <a href="./css">CSS</a>, <a href="./javascript">JavaScript</a>, and <a href="./media">images</a>. These resources would likely be versioned (include a unique number in the path) and cached long-term. In this way we should expect to see higher adoption of CDNs on sub-domains or sibling domains compared to the base HTML domains. The traditional design pattern would expect that <code>www.shoesbycolin.com</code> would serve HTML directly from a datacenter (or <strong>origin</strong>) while <code>static.shoesbycolin.com</code> would use a CDN.</p>
+<figure id="fig-1">
+  <a href="/static/images/2019/cdn/fig1.png">
+    <img src="/static/images/2019/cdn/fig1.png" alt="Figure 1. CDN usage vs. origin-hosted resources." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig1-description" data-show-text="{{ show_description(1) }}" data-hide-text="{{ hide_description(1) }}">{{ show_description(1) }}</button>
+  <div id="fig1-description" class="visually-hidden">Stacked bar chart showing HTML is 80% served from origin, 20% from CDN, Sub-domains are 61%/39%, third-party is 34%/66%.</div>
+  <figcaption id="fig1-caption"><a href="#fig-1" class="anchor-link">Figure 1.</a> CDN usage vs. origin-hosted resources.</figcaption>
+</figure>
+<p>Indeed, this traditional pattern is what we observe on the majority of websites crawled. The majority of web pages (80%) serve the base HTML from origin. This breakdown is nearly identical between mobile and desktop with only 0.4% lower usage of CDNs on desktop. This slight variance is likely due to the small continued use of mobile specific web pages ("mDot"), which more frequently use a CDN.</p>
+<p>Likewise, resources served from sub-domains are more likely to utilize a CDN at 40% of sub-domain resources. Sub-domains are used either to partition resources like images and CSS or they are used to reflect organizational teams such as checkout or APIs.</p>
+<p>Despite first-party resources still largely being served directly from origin, third-party resources have a substantially higher adoption of CDNs. Nearly 66% of all third-party resources are served from a CDN. Since third-party domains are more likely a SaaS integration, the use of CDNs are more likely core to these business offerings. Most third-party content breaks down to shared resources (JavaScript or font CDNs), augmented content (advertisements), or statistics. In all these cases, using a CDN will improve the performance and offload for these SaaS solutions.</p>
+<h2 id="top-cdn-providers"><a href="#top-cdn-providers" class="anchor-link">Top CDN providers</a></h2>
+<p>There are two categories of CDN providers: the generic and the purpose-fit CDN. The generic CDN providers offer customization and flexibility to serve all kinds of content for many industries. In contrast, the purpose-fit CDN provider offers similar content distribution capabilities but are narrowly focused on a specific solution.</p>
+<p>This is clearly represented when looking at the top CDNs found serving the base HTML content. The most frequent CDNs serving HTML are generic CDNs (Cloudflare, Akamai, Fastly) and cloud solution providers who offer a bundled CDN (Google, Amazon) as part of the platform service offerings. In contrast, there are only a few purpose-fit CDN providers, such as Wordpress and Netlify, that deliver base HTML markup.</p>
+<p class="note">Note: This does not reflect traffic or usage, only the number of sites using them.</p>
+<figure id="fig-2">
+  <a href="/static/images/2019/cdn/html_cdn_usage.png">
+    <img alt="Most popular CDNs used to serve base HTML pages" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/cdn/html_cdn_usage.png" width="600" height="371" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig2-description" data-show-text="{{ show_description(2) }}" data-hide-text="{{ hide_description(2) }}">{{ show_description(2) }}</button>
+  <div id="fig2-description" class="visually-hidden">Treemap graph showing the data from Table 3.</div>
+  <figcaption id="fig2-caption"><a href="#fig-2" class="anchor-link">Figure 2.</a> HTML CDN usage.</figcaption>
+</figure>
+<figure id="fig-3">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">HTML CDN Usage (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ORIGIN</td>
+            <td class="numeric">80.39</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td class="numeric">9.61</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td class="numeric">5.54</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td class="numeric">1.08</td>
+          </tr>
+          <tr>
+            <td>Akamai</td>
+            <td class="numeric">1.05</td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td class="numeric">0.79</td>
+          </tr>
+          <tr>
+            <td>WordPress</td>
+            <td class="numeric">0.37</td>
+          </tr>
+          <tr>
+            <td>Sucuri Firewall</td>
+            <td class="numeric">0.31</td>
+          </tr>
+          <tr>
+            <td>Incapsula</td>
+            <td class="numeric">0.28</td>
+          </tr>
+          <tr>
+            <td>Myra Security CDN</td>
+            <td class="numeric">0.1</td>
+          </tr>
+          <tr>
+            <td>OVH CDN</td>
+            <td class="numeric">0.08</td>
+          </tr>
+          <tr>
+            <td>Netlify</td>
+            <td class="numeric">0.06</td>
+          </tr>
+          <tr>
+            <td>Edgecast</td>
+            <td class="numeric">0.04</td>
+          </tr>
+          <tr>
+            <td>GoCache</td>
+            <td class="numeric">0.03</td>
+          </tr>
+          <tr>
+            <td>Highwinds</td>
+            <td class="numeric">0.03</td>
+          </tr>
+          <tr>
+            <td>CDNetworks</td>
+            <td class="numeric">0.02</td>
+          </tr>
+          <tr>
+            <td>Limelight</td>
+            <td class="numeric">0.01</td>
+          </tr>
+          <tr>
+            <td>Level 3</td>
+            <td class="numeric">0.01</td>
+          </tr>
+          <tr>
+            <td>NetDNA</td>
+            <td class="numeric">0.01</td>
+          </tr>
+          <tr>
+            <td>StackPath</td>
+            <td class="numeric">0.01</td>
+          </tr>
+          <tr>
+            <td>Instart Logic</td>
+            <td class="numeric">0.01</td>
+          </tr>
+          <tr>
+            <td>Azion</td>
+            <td class="numeric">0.01</td>
+          </tr>
+          <tr>
+            <td>Yunjiasu</td>
+            <td class="numeric">0.01</td>
+          </tr>
+          <tr>
+            <td>section.io</td>
+            <td class="numeric">0.01</td>
+          </tr>
+          <tr>
+            <td>Microsoft Azure</td>
+            <td class="numeric">0.01</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-3" class="anchor-link">Figure 3.</a> Top 25 CDNs for HTML by site.</figcaption>
+</figure>
+<p>Sub-domain requests have a very similar composition. Since many websites use sub-domains for static content, we see a shift to a higher CDN usage. Like the base page requests, the resources served from these sub-domains utilize generic CDN offerings.</p>
+<figure id="fig-4">
+  <a href="/static/images/2019/cdn/subdomain_resource_cdn_usage.png">
+    <img alt="Most popular CDNs used for resources served from a sub-domain" aria-labelledby="fig4-caption" aria-describedby="fig4-description" src="/static/images/2019/cdn/subdomain_resource_cdn_usage.png" width="600" height="371" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig4-description" data-show-text="{{ show_description(4) }}" data-hide-text="{{ hide_description(4) }}">{{ show_description(4) }}</button>
+  <div id="fig4-description" class="visually-hidden">Treemap graph showing the data from Table 5.</div>
+  <figcaption id="fig4-caption"><a href="#fig-4" class="anchor-link">Figure 4.</a> Sub-domain resource CDN usage.</figcaption>
+</figure>
+<figure id="fig-5">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Sub-Domain CDN Usage (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ORIGIN</td>
+            <td class="numeric">60.56</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td class="numeric">10.06</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td class="numeric">8.86</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td class="numeric">6.24</td>
+          </tr>
+          <tr>
+            <td>Akamai</td>
+            <td class="numeric">3.5</td>
+          </tr>
+          <tr>
+            <td>Edgecast</td>
+            <td class="numeric">1.97</td>
+          </tr>
+          <tr>
+            <td>WordPress</td>
+            <td class="numeric">1.69</td>
+          </tr>
+          <tr>
+            <td>Highwinds</td>
+            <td class="numeric">1.24</td>
+          </tr>
+          <tr>
+            <td>Limelight</td>
+            <td class="numeric">1.18</td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td class="numeric">0.8</td>
+          </tr>
+          <tr>
+            <td>CDN77</td>
+            <td class="numeric">0.43</td>
+          </tr>
+          <tr>
+            <td>KeyCDN</td>
+            <td class="numeric">0.41</td>
+          </tr>
+          <tr>
+            <td>NetDNA</td>
+            <td class="numeric">0.37</td>
+          </tr>
+          <tr>
+            <td>CDNetworks</td>
+            <td class="numeric">0.36</td>
+          </tr>
+          <tr>
+            <td>Incapsula</td>
+            <td class="numeric">0.29</td>
+          </tr>
+          <tr>
+            <td>Microsoft Azure</td>
+            <td class="numeric">0.28</td>
+          </tr>
+          <tr>
+            <td>Reflected Networks</td>
+            <td class="numeric">0.28</td>
+          </tr>
+          <tr>
+            <td>Sucuri Firewall</td>
+            <td class="numeric">0.16</td>
+          </tr>
+          <tr>
+            <td>BunnyCDN</td>
+            <td class="numeric">0.13</td>
+          </tr>
+          <tr>
+            <td>OVH CDN</td>
+            <td class="numeric">0.12</td>
+          </tr>
+          <tr>
+            <td>Advanced Hosters CDN</td>
+            <td class="numeric">0.1</td>
+          </tr>
+          <tr>
+            <td>Myra Security CDN</td>
+            <td class="numeric">0.07</td>
+          </tr>
+          <tr>
+            <td>CDNvideo</td>
+            <td class="numeric">0.07</td>
+          </tr>
+          <tr>
+            <td>Level 3</td>
+            <td class="numeric">0.06</td>
+          </tr>
+          <tr>
+            <td>StackPath</td>
+            <td class="numeric">0.06</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-5" class="anchor-link">Figure 5.</a> Top 25 resource CDNs for sub-domain requests.</figcaption>
+</figure>
+<p>The composition of top CDN providers dramatically shifts for third-party resources. Not only are CDNs more frequently observed hosting third-party resources, there is also an increase in purpose-fit CDN providers such as Facebook, Twitter, and Google.</p>
+<figure id="fig-6">
+  <a href="/static/images/2019/cdn/thirdparty_resource_cdn_usage.png">
+    <img alt="Most popular CDNs used by third-party resources" aria-labelledby="fig6-caption" aria-describedby="fig6-description" src="/static/images/2019/cdn/thirdparty_resource_cdn_usage.png" width="600" height="376" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig6-description" data-show-text="{{ show_description(6) }}" data-hide-text="{{ hide_description(6) }}">{{ show_description(6) }}</button>
+  <div id="fig6-description" class="visually-hidden">Treemap graph showing the data from Table 7.</div>
+  <figcaption id="fig6-caption"><a href="#fig-6" class="anchor-link">Figure 6.</a> Third-party resource CDN usage.</figcaption>
+</figure>
+<figure id="fig-7">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Third-Party CDN Usage (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ORIGIN</td>
+            <td class="numeric">34.27</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td class="numeric">29.61</td>
+          </tr>
+          <tr>
+            <td>Facebook</td>
+            <td class="numeric">8.47</td>
+          </tr>
+          <tr>
+            <td>Akamai</td>
+            <td class="numeric">5.25</td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td class="numeric">5.14</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td class="numeric">4.21</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td class="numeric">3.87</td>
+          </tr>
+          <tr>
+            <td>WordPress</td>
+            <td class="numeric">2.06</td>
+          </tr>
+          <tr>
+            <td>Edgecast</td>
+            <td class="numeric">1.45</td>
+          </tr>
+          <tr>
+            <td>Twitter</td>
+            <td class="numeric">1.27</td>
+          </tr>
+          <tr>
+            <td>Highwinds</td>
+            <td class="numeric">0.94</td>
+          </tr>
+          <tr>
+            <td>NetDNA</td>
+            <td class="numeric">0.77</td>
+          </tr>
+          <tr>
+            <td>Cedexis</td>
+            <td class="numeric">0.3</td>
+          </tr>
+          <tr>
+            <td>CDNetworks</td>
+            <td class="numeric">0.22</td>
+          </tr>
+          <tr>
+            <td>section.io</td>
+            <td class="numeric">0.22</td>
+          </tr>
+          <tr>
+            <td>jsDelivr</td>
+            <td class="numeric">0.2</td>
+          </tr>
+          <tr>
+            <td>Microsoft Azure</td>
+            <td class="numeric">0.18</td>
+          </tr>
+          <tr>
+            <td>Yahoo</td>
+            <td class="numeric">0.18</td>
+          </tr>
+          <tr>
+            <td>BunnyCDN</td>
+            <td class="numeric">0.17</td>
+          </tr>
+          <tr>
+            <td>CDNvideo</td>
+            <td class="numeric">0.16</td>
+          </tr>
+          <tr>
+            <td>Reapleaf</td>
+            <td class="numeric">0.15</td>
+          </tr>
+          <tr>
+            <td>CDN77</td>
+            <td class="numeric">0.14</td>
+          </tr>
+          <tr>
+            <td>KeyCDN</td>
+            <td class="numeric">0.13</td>
+          </tr>
+          <tr>
+            <td>Azion</td>
+            <td class="numeric">0.09</td>
+          </tr>
+          <tr>
+            <td>StackPath</td>
+            <td class="numeric">0.09</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-7" class="anchor-link">Figure 7.</a> Top 25 resource CDNs for third-party requests.</figcaption>
+</figure>
+<h2 id="rtt-and-tls-management"><a href="#rtt-and-tls-management" class="anchor-link">RTT and TLS management</a></h2>
+<p>CDNs can offer more than simple caching for website performance. Many CDNs also support a pass-through mode for dynamic or personalized content when an organization has a legal or other business requirement prohibiting the content from being cached. Utilizing a CDN's physical distribution enables increased performance for TCP RTT for end users. As <a href="https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/">others have noted</a>, <a href="https://hpbn.co/primer-on-latency-and-bandwidth/">reducing RTT is the most effective means to improve web page performance</a> compared to increasing bandwidth.</p>
+<p>Using a CDN in this way can improve page performance in two ways:</p>
+<ol>
+  <li>
+    <p>Reduce RTT for TCP and TLS negotiation. The speed of light is only so fast and CDNs offer a highly distributed set of data centers that are closer to the end users. In this way the logical (and physical) distance that packets must traverse to negotiate a TCP connection and perform the TLS handshake can be greatly reduced.</p>
+    <p>Reducing RTT has three immediate benefits. First, it improves the time for the user to receive data, because TCP+TLS connection time are RTT-bound. Secondly, this will improve the time it takes to grow the congestion window and utilize the full amount of bandwidth the user has available. Finally, it reduces the probability of packet loss. When the RTT is high, network interfaces will time-out requests and resend packets. This can result in double packets being delivered.</p>
+  </li>
+  <li><p>CDNs can utilize pre-warmed TCP connections to the back-end origin. Just as terminating the connection closer to the user will improve the time it takes to grow the congestion window, the CDN can relay the request to the origin on pre-established TCP connections that have already maximized congestion windows. In this way the origin can return the dynamic content in fewer TCP round trips and the content can be more effectively ready to be delivered to the waiting user.</p></li>
+</ol>
+<h2 id="tls-negotiation-time-origin-3x-slower-than-cdns"><a href="#tls-negotiation-time-origin-3x-slower-than-cdns" class="anchor-link">TLS negotiation time: origin 3x slower than CDNs</a></h2>
+<p>Since TLS negotiations require multiple TCP round trips before data can be sent from a server, simply improving the RTT can significantly improve the page performance. For example, looking at the base HTML page, the median TLS negotiation time for origin requests is 207 ms (for desktop WebPageTest). This alone accounts for 10% of a 2 second performance budget, and this is under ideal network conditions where there is no latency applied on the request.</p>
+<p>In contrast, the median TLS negotiation for the majority of CDN providers is between 60 and 70 ms. Origin requests for HTML pages take almost 3x longer to complete TLS negotiation than those web pages that use a CDN. Even at the 90th percentile, this disparity perpetuates with origin TLS negotiation rates of 427 ms compared to most CDNs which complete under 140 ms!</p>
+<p class="note">A word of caution when interpreting these charts: it is important to focus on orders of magnitude when comparing vendors as there are many factors that impact the actual TLS negotiation performance. These tests were completed from a single datacenter under controlled conditions and do not reflect the variability of the internet and user experiences.</p>
+<figure id="fig-8">
+  <a href="/static/images/2019/cdn/html_tls_negotiation_time.png">
+    <img alt="Distribution of TLS negotiation time for initial HTML request broken down by CDN" aria-labelledby="fig8-caption" aria-describedby="fig8-description" src="/static/images/2019/cdn/html_tls_negotiation_time.png" width="600" height="371" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig8-description" data-show-text="{{ show_description(8) }}" data-hide-text="{{ hide_description(8) }}">{{ show_description(8) }}</button>
+  <div id="fig8-description" class="visually-hidden">Graph showing the data from Table 9.</div>
+  <figcaption id="fig8-caption"><a href="#fig-8" class="anchor-link">Figure 8.</a> HTML TLS negotiation time.</figcaption>
+</figure>
+<figure id="fig-9">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">p10</th>
+            <th scope="col">p25</th>
+            <th scope="col">p50</th>
+            <th scope="col">p75</th>
+            <th scope="col">p90</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Highwinds</td>
+            <td class="numeric">58</td>
+            <td class="numeric">58</td>
+            <td class="numeric">60</td>
+            <td class="numeric">66</td>
+            <td class="numeric">94</td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td class="numeric">56</td>
+            <td class="numeric">59</td>
+            <td class="numeric">63</td>
+            <td class="numeric">69</td>
+            <td class="numeric">75</td>
+          </tr>
+          <tr>
+            <td>WordPress</td>
+            <td class="numeric">58</td>
+            <td class="numeric">62</td>
+            <td class="numeric">76</td>
+            <td class="numeric">77</td>
+            <td class="numeric">80</td>
+          </tr>
+          <tr>
+            <td>Sucuri Firewall</td>
+            <td class="numeric">63</td>
+            <td class="numeric">66</td>
+            <td class="numeric">77</td>
+            <td class="numeric">80</td>
+            <td class="numeric">86</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td class="numeric">59</td>
+            <td class="numeric">61</td>
+            <td class="numeric">62</td>
+            <td class="numeric">83</td>
+            <td class="numeric">128</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td class="numeric">62</td>
+            <td class="numeric">68</td>
+            <td class="numeric">80</td>
+            <td class="numeric">92</td>
+            <td class="numeric">103</td>
+          </tr>
+          <tr>
+            <td>Akamai</td>
+            <td class="numeric">57</td>
+            <td class="numeric">59</td>
+            <td class="numeric">72</td>
+            <td class="numeric">93</td>
+            <td class="numeric">134</td>
+          </tr>
+          <tr>
+            <td>Microsoft Azure</td>
+            <td class="numeric">62</td>
+            <td class="numeric">93</td>
+            <td class="numeric">97</td>
+            <td class="numeric">98</td>
+            <td class="numeric">101</td>
+          </tr>
+          <tr>
+            <td>Edgecast</td>
+            <td class="numeric">94</td>
+            <td class="numeric">97</td>
+            <td class="numeric">100</td>
+            <td class="numeric">110</td>
+            <td class="numeric">221</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td class="numeric">47</td>
+            <td class="numeric">53</td>
+            <td class="numeric">79</td>
+            <td class="numeric">119</td>
+            <td class="numeric">184</td>
+          </tr>
+          <tr>
+            <td>OVH CDN</td>
+            <td class="numeric">114</td>
+            <td class="numeric">115</td>
+            <td class="numeric">118</td>
+            <td class="numeric">120</td>
+            <td class="numeric">122</td>
+          </tr>
+          <tr>
+            <td>section.io</td>
+            <td class="numeric">105</td>
+            <td class="numeric">108</td>
+            <td class="numeric">112</td>
+            <td class="numeric">120</td>
+            <td class="numeric">210</td>
+          </tr>
+          <tr>
+            <td>Incapsula</td>
+            <td class="numeric">96</td>
+            <td class="numeric">100</td>
+            <td class="numeric">111</td>
+            <td class="numeric">139</td>
+            <td class="numeric">243</td>
+          </tr>
+          <tr>
+            <td>Netlify</td>
+            <td class="numeric">53</td>
+            <td class="numeric">64</td>
+            <td class="numeric">73</td>
+            <td class="numeric">145</td>
+            <td class="numeric">166</td>
+          </tr>
+          <tr>
+            <td>Myra Security CDN</td>
+            <td class="numeric">95</td>
+            <td class="numeric">106</td>
+            <td class="numeric">118</td>
+            <td class="numeric">226</td>
+            <td class="numeric">365</td>
+          </tr>
+          <tr>
+            <td>GoCache</td>
+            <td class="numeric">217</td>
+            <td class="numeric">219</td>
+            <td class="numeric">223</td>
+            <td class="numeric">234</td>
+            <td class="numeric">260</td>
+          </tr>
+          <tr>
+            <td><em>ORIGIN</em></td>
+            <td class="numeric"><em>100</em></td>
+            <td class="numeric"><em>138</em></td>
+            <td class="numeric"><em>207</em></td>
+            <td class="numeric"><em>342</em></td>
+            <td class="numeric"><em>427</em></td>
+          </tr>
+          <tr>
+            <td>CDNetworks</td>
+            <td class="numeric">85</td>
+            <td class="numeric">143</td>
+            <td class="numeric">229</td>
+            <td class="numeric">369</td>
+            <td class="numeric">452</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-9" class="anchor-link">Figure 9.</a> HTML TLS connection time (ms).</figcaption>
+</figure>
+<p>For resource requests (including same-domain and third-party), the TLS negotiation time takes longer and the variance increases. This is expected because of network saturation and network congestion. By the time that a third-party connection is established (by way of a resource hint or a resource request) the browser is busy rendering and making other parallel requests. This creates contention on the network. Despite this disadvantage, there is still a clear advantage for third-party resources that utilize a CDN over using an origin solution.</p>
+<figure id="fig-10">
+  <a href="/static/images/2019/cdn/resource_tls_negotiation_time.png">
+    <img alt="Distribution of TLS negotiation time for site resources broken down by CDN" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/cdn/resource_tls_negotiation_time.png" width="600" height="371" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig10-description" data-show-text="{{ show_description(10) }}" data-hide-text="{{ hide_description(10) }}">{{ show_description(10) }}</button>
+  <div id="fig10-description" class="visually-hidden">Graph showing most CDNs have a TLS negotiation time of around 80 ms, but some (Microsoft Azure, Yahoo, Edgecast, ORIGIN, and CDNetworks) start to creep out towards 200 ms - especially when going above the p50 percentile.</div>
+  <figcaption id="fig10-caption"><a href="#fig-10" class="anchor-link">Figure 10.</a> Resource TLS negotiation time.</figcaption>
+</figure>
+<p>TLS handshake performance is impacted by a number of factors. These include RTT, TLS record size, and TLS certificate size. While RTT has the biggest impact on the TLS handshake, the second largest driver for TLS performance is the TLS certificate size.</p>
+<p>During the first round trip of the <a href="https://hpbn.co/transport-layer-security-tls/#tls-handshake">TLS handshake</a>, the server attaches its certificate. This certificate is then verified by the client before proceeding. In this certificate exchange, the server might include the certificate chain by which it can be verified. After this certificate exchange, additional keys are established to encrypt the communication. However, the length and size of the certificate can negatively impact the TLS negotiation performance, and in some cases, crash client libraries.</p>
+<p>
+  The certificate exchange is at the foundation of the TLS handshake and is usually handled by isolated code paths so as to minimize the attack surface for exploits. Because of its low level nature, buffers are usually not dynamically allocated, but fixed. In this way, we cannot simply assume that the client can handle an unlimited-sized certificate. For example, OpenSSL CLI tools and Safari can successfully negotiate against <a href="https://10000-sans.badssl.com"><code>https://10000-sans.badssl.com</code></a
+  >. Yet, Chrome and Firefox fail because of the size of the certificate.
+</p>
+<p>While extreme sizes of certificates can cause failures, even sending moderately large certificates has a performance impact. A certificate can be valid for one or more hostnames which are are listed in the <code>Subject-Alternative-Name</code> (SAN). The more SANs, the larger the certificate. It is the processing of these SANs during verification that causes performance to degrade. To be clear, performance of certificate size is not about TCP overhead, rather it is about processing performance of the client.</p>
+<p>Technically, TCP slow start can impact this negotiation but it is very improbable. TLS record length is limited to 16 KB, which fits into a typical initial congestion window of 10. While some ISPs might employ packet splicers, and other tools fragment congestion windows to artificially throttle bandwidth, this isn't something that a website owner can change or manipulate.</p>
+<p>Many CDNs, however, depend on shared TLS certificates and will list many customers in the SAN of a certificate. This is often necessary because of the scarcity of IPv4 addresses. Prior to the adoption of <code>Server-Name-Indicator</code> (SNI) by end users, the client would connect to a server, and only after inspecting the certificate, would the client hint which hostname the user user was looking for (using the <code>Host</code> header in HTTP). This results in a 1:1 association of an IP address and a certificate. If you are a CDN with many physical locations, each location may require a dedicated IP, further aggravating the exhaustion of IPv4 addresses. Therefore, the simplest and most efficient way for CDNs to offer TLS certificates for websites that still have users that don't support SNI is to offer a shared certificate.</p>
+<p>According to Akamai, the adoption of SNI is <a href="https://datatracker.ietf.org/meeting/101/materials/slides-101-maprg-update-on-tls-sni-and-ipv6-client-adoption-00">still not 100% globally</a>. Fortunately there has been a rapid shift in recent years. The biggest culprits are no longer Windows XP and Vista, but now Android apps, bots, and corporate applications. Even at 99% adoption, the remaining 1% of 3.5 billion users on the internet can create a very compelling motivation for website owners to require a non-SNI certificate. Put another way, a pure play website can enjoy a virtually 100% SNI adoption among standard web browsers. Yet, if the website is also used to support APIs or WebViews in apps, particularly Android apps, this distribution can drop rapidly.</p>
+<p>Most CDNs balance the need for shared certificates and performance. Most cap the number of SANs between 100 and 150. This limit often derives from the certificate providers. For example, <a href="https://letsencrypt.org/docs/rate-limits/">LetsEncrypt</a>, <a href="https://www.websecurity.digicert.com/security-topics/san-ssl-certificates">DigiCert</a>, and <a href="https://www.godaddy.com/web-security/multi-domain-san-ssl-certificate">GoDaddy</a> all limit SAN certificates to 100 hostnames while <a href="https://comodosslstore.com/comodo-mdc-ssl.aspx">Comodo</a>'s limit is 2,000. This, in turn, allows some CDNs to push this limit, cresting over 800 SANs on a single certificate. There is a strong negative correlation of TLS performance and the number of SANs on a certificate.</p>
+<figure id="fig-11">
+  <a href="/static/images/2019/cdn/fig11.png">
+    <img src="/static/images/2019/cdn/fig11.png" alt="Figure 11. TLS SAN count for HTML." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig11-description" data-show-text="{{ show_description(11) }}" data-hide-text="{{ hide_description(11) }}">{{ show_description(11) }}</button>
+  <div id="fig11-description" class="visually-hidden">Bar chart showing data from table 12.</div>
+  <figcaption id="fig11-caption"><a href="#fig-11" class="anchor-link">Figure 11.</a> TLS SAN count for HTML.</figcaption>
+</figure>
+<figure id="fig-12">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">p10</th>
+            <th scope="col">p25</th>
+            <th scope="col">p50</th>
+            <th scope="col">p75</th>
+            <th scope="col">p90</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>section.io</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+          </tr>
+          <tr>
+            <td>ORIGIN</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">7</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">8</td>
+          </tr>
+          <tr>
+            <td>WordPress</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+          </tr>
+          <tr>
+            <td>Sucuri Firewall</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+          </tr>
+          <tr>
+            <td>Netlify</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">3</td>
+          </tr>
+          <tr>
+            <td>Highwinds</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+          </tr>
+          <tr>
+            <td>GoCache</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">4</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">3</td>
+            <td class="numeric">53</td>
+          </tr>
+          <tr>
+            <td>OVH CDN</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">3</td>
+            <td class="numeric">8</td>
+            <td class="numeric">19</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">3</td>
+            <td class="numeric">39</td>
+            <td class="numeric">59</td>
+          </tr>
+          <tr>
+            <td>Microsoft Azure</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">43</td>
+            <td class="numeric">47</td>
+          </tr>
+          <tr>
+            <td>Edgecast</td>
+            <td class="numeric">2</td>
+            <td class="numeric">4</td>
+            <td class="numeric">46</td>
+            <td class="numeric">56</td>
+            <td class="numeric">130</td>
+          </tr>
+          <tr>
+            <td>Incapsula</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">11</td>
+            <td class="numeric">78</td>
+            <td class="numeric">140</td>
+          </tr>
+          <tr>
+            <td>Akamai</td>
+            <td class="numeric">2</td>
+            <td class="numeric">18</td>
+            <td class="numeric">57</td>
+            <td class="numeric">85</td>
+            <td class="numeric">95</td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">77</td>
+            <td class="numeric">100</td>
+            <td class="numeric">100</td>
+          </tr>
+          <tr>
+            <td>Myra Security CDN</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">18</td>
+            <td class="numeric">139</td>
+            <td class="numeric">145</td>
+          </tr>
+          <tr>
+            <td>CDNetworks</td>
+            <td class="numeric">2</td>
+            <td class="numeric">7</td>
+            <td class="numeric">100</td>
+            <td class="numeric">360</td>
+            <td class="numeric">818</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-12" class="anchor-link">Figure 12.</a> TLS SAN count for HTML.</figcaption>
+</figure>
+<figure id="fig-13">
+  <a href="/static/images/2019/cdn/fig13.png">
+    <img src="/static/images/2019/cdn/fig13.png" alt="Figure 13. Resource SAN count (p50)." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig13-description" data-show-text="{{ show_description(13) }}" data-hide-text="{{ hide_description(13) }}">{{ show_description(13) }}</button>
+  <div id="fig13-description" class="visually-hidden">Bar chart showing the data from Table 14 for the p50 percentile.</div>
+  <figcaption id="fig13-caption"><a href="#fig-13" class="anchor-link">Figure 13.</a> Resource SAN count (p50).</figcaption>
+</figure>
+<figure id="fig-14">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">p10</th>
+            <th scope="col">p25</th>
+            <th scope="col">p50</th>
+            <th scope="col">p75</th>
+            <th scope="col">p90</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>section.io</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+          </tr>
+          <tr>
+            <td>ORIGIN</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">3</td>
+            <td class="numeric">10</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td class="numeric">1</td>
+            <td class="numeric">1</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">6</td>
+          </tr>
+          <tr>
+            <td>Highwinds</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">3</td>
+            <td class="numeric">79</td>
+          </tr>
+          <tr>
+            <td>WordPress</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+          </tr>
+          <tr>
+            <td>NetDNA</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+          </tr>
+          <tr>
+            <td>CDN77</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">10</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td class="numeric">2</td>
+            <td class="numeric">3</td>
+            <td class="numeric">3</td>
+            <td class="numeric">3</td>
+            <td class="numeric">35</td>
+          </tr>
+          <tr>
+            <td>Edgecast</td>
+            <td class="numeric">2</td>
+            <td class="numeric">4</td>
+            <td class="numeric">4</td>
+            <td class="numeric">4</td>
+            <td class="numeric">4</td>
+          </tr>
+          <tr>
+            <td>Twitter</td>
+            <td class="numeric">2</td>
+            <td class="numeric">4</td>
+            <td class="numeric">4</td>
+            <td class="numeric">4</td>
+            <td class="numeric">4</td>
+          </tr>
+          <tr>
+            <td>Akamai</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">5</td>
+            <td class="numeric">20</td>
+            <td class="numeric">54</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td class="numeric">1</td>
+            <td class="numeric">10</td>
+            <td class="numeric">11</td>
+            <td class="numeric">55</td>
+            <td class="numeric">68</td>
+          </tr>
+          <tr>
+            <td>Facebook</td>
+            <td class="numeric">13</td>
+            <td class="numeric">13</td>
+            <td class="numeric">13</td>
+            <td class="numeric">13</td>
+            <td class="numeric">13</td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td class="numeric">2</td>
+            <td class="numeric">4</td>
+            <td class="numeric">16</td>
+            <td class="numeric">98</td>
+            <td class="numeric">128</td>
+          </tr>
+          <tr>
+            <td>Yahoo</td>
+            <td class="numeric">6</td>
+            <td class="numeric">6</td>
+            <td class="numeric">79</td>
+            <td class="numeric">79</td>
+            <td class="numeric">79</td>
+          </tr>
+          <tr>
+            <td>Cedexis</td>
+            <td class="numeric">2</td>
+            <td class="numeric">2</td>
+            <td class="numeric">98</td>
+            <td class="numeric">98</td>
+            <td class="numeric">98</td>
+          </tr>
+          <tr>
+            <td>Microsoft Azure</td>
+            <td class="numeric">2</td>
+            <td class="numeric">43</td>
+            <td class="numeric">99</td>
+            <td class="numeric">99</td>
+            <td class="numeric">99</td>
+          </tr>
+          <tr>
+            <td>jsDelivr</td>
+            <td class="numeric">2</td>
+            <td class="numeric">116</td>
+            <td class="numeric">116</td>
+            <td class="numeric">116</td>
+            <td class="numeric">116</td>
+          </tr>
+          <tr>
+            <td>CDNetworks</td>
+            <td class="numeric">132</td>
+            <td class="numeric">178</td>
+            <td class="numeric">397</td>
+            <td class="numeric">398</td>
+            <td class="numeric">645</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-14" class="anchor-link">Figure 14.</a> 10th, 25th, 50th, 75th, and 90th percentiles of the distribution of resource SAN count.</figcaption>
+</figure>
+<h2 id="tls-adoption"><a href="#tls-adoption" class="anchor-link">TLS adoption</a></h2>
+<p>In addition to using a CDN for TLS and RTT performance, CDNs are often used to ensure patching and adoption of TLS ciphers and TLS versions. In general, the adoption of TLS on the main HTML page is much higher for websites that use a CDN. Over 76% of HTML pages are served with TLS compared to the 62% from origin-hosted pages.</p>
+<figure id="fig-15">
+  <a href="/static/images/2019/cdn/fig15.png">
+    <img src="/static/images/2019/cdn/fig15.png" alt="Figure 15. HTML TLS version adoption (CDN vs. origin)." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig15-description" data-show-text="{{ show_description(15) }}" data-hide-text="{{ hide_description(15) }}">{{ show_description(15) }}</button>
+  <div id="fig15-description" class="visually-hidden">Stacked bar chart showing TLS 1.0 is used 0.86% of the time for origin, TLS 1.2 55% of the time, TLS 1.3 6% of the time, and unencrypted 38% of the time. For CDN this changes to 35% for TLS 1.2, 41% for TLS 1.3, and 24% for unencrypted.</div>
+  <figcaption id="fig15-caption"><a href="#fig-15" class="anchor-link">Figure 15.</a> HTML TLS version adoption (CDN vs. origin).</figcaption>
+</figure>
+<p>Each CDN offers different rates of adoption for both TLS and the relative ciphers and versions offered. Some CDNs are more aggressive and roll out these changes to all customers whereas other CDNs require website owners to opt-in to the latest changes and offer change-management to facilitate these ciphers and versions.</p>
+<figure id="fig-16">
+  <a href="/static/images/2019/cdn/fig16.png">
+    <img src="/static/images/2019/cdn/fig16.png" alt="Figure 16. HTML TLS adoption by CDN." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig16-description" data-show-text="{{ show_description(16) }}" data-hide-text="{{ hide_description(16) }}">{{ show_description(16) }}</button>
+  <div id="fig16-description" class="visually-hidden">Division of secure vs non-secure connections established for initial HTML request broken down by CDN with some CDNs (e.g. Wordpress) at 100%, most between 80%-100%, and then ORIGIN at 62%, Google at 51%, ChinaNetCenter at 36%, and Yunjiasu at 29%.</div>
+  <figcaption id="fig16-caption"><a href="#fig-16" class="anchor-link">Figure 16.</a> HTML TLS adoption by CDN.</figcaption>
+</figure>
+<figure id="fig-17">
+  <a href="/static/images/2019/cdn/fig17.png">
+    <img src="/static/images/2019/cdn/fig17.png" alt="Figure 17. Third-party TLS adoption by CDN." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig17-description" data-show-text="{{ show_description(17) }}" data-hide-text="{{ hide_description(17) }}">{{ show_description(17) }}</button>
+  <div id="fig17-description" class="visually-hidden">Stacked bar chart showing the vast majority of CDNs use TLS for over 90% of third-party requests, with a few stragglers in the 75% - 90% range, and ORIGIN lower than them all at 68%.</div>
+  <figcaption id="fig17-caption"><a href="#fig-17" class="anchor-link">Figure 17.</a> Third-party TLS adoption by CDN.</figcaption>
+</figure>
+<p>Along with this general adoption of TLS, CDN use also sees higher adoption of emerging TLS versions like TLS 1.3.</p>
+<p>In general, the use of a CDN is highly correlated with a more rapid adoption of stronger ciphers and stronger TLS versions compared to origin-hosted services where there is a higher usage of very old and compromised TLS versions like TLS 1.0.</p>
+<p class="note">It is important to emphasize that Chrome used in the Web Almanac will bias to the latest TLS versions and ciphers offered by the host. Also, these web pages were crawled in July 2019 and reflect the adoption of websites that have enabled the newer versions.</p>
+<figure id="fig-18">
+  <a href="/static/images/2019/cdn/fig18.png">
+    <img src="/static/images/2019/cdn/fig18.png" alt="Figure 18. HTML TLS version by CDN." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig18-description" data-show-text="{{ show_description(18) }}" data-hide-text="{{ hide_description(18) }}">{{ show_description(18) }}</button>
+  <div id="fig18-description" class="visually-hidden">Bar chart showing that TLS 1.3 or TLS 1.2 is used by all CDNs when TLS is used. A few CDNs have adopted TLS 1.3 completely, some partially and a large proportion not at all and only using TLS 1.2.</div>
+  <figcaption id="fig18-caption"><a href="#fig-18" class="anchor-link">Figure 18.</a> HTML TLS version by CDN.</figcaption>
+</figure>
+<p>More discussion of TLS versions and ciphers can be found in the <a href="./security">Security</a> and <a href="./http2">HTTP/2</a> chapters.</p>
+<h2 id="http2-adoption"><a href="#http2-adoption" class="anchor-link">HTTP/2 adoption</a></h2>
+<p>Along with RTT management and improving TLS performance, CDNs also enable new standards like HTTP/2 and IPv6. While most CDNs offer support for HTTP/2 and many have signaled early support of the still-under-standards-development HTTP/3, adoption still depends on website owners to enable these new features. Despite the change-management overhead, the majority of the HTML served from CDNs has HTTP/2 enabled.</p>
+<p>CDNs have over 70% adoption of HTTP/2, compared to the nearly 27% of origin pages. Similarly, sub-domain and third-party resources on CDNs see an even higher adoption of HTTP/2 at 90% or higher while third-party resources served from origin infrastructure only has 31% adoption. The performance gains and other features of HTTP/2 are further covered in the <a href="./http2">HTTP/2</a> chapter.</p>
+<p class="note">Note: All requests were made with the latest version of Chrome which supports HTTP/2. When only HTTP/1.1 is reported, this would indicate either unencrypted (non-TLS) servers or servers that don't support HTTP/2.</p>
+<figure id="fig-19">
+  <a href="/static/images/2019/cdn/fig19.png">
+    <img src="/static/images/2019/cdn/fig19.png" alt="Figure 19. HTTP/2 adoption (CDN vs. origin)." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig19-description" data-show-text="{{ show_description(19) }}" data-hide-text="{{ hide_description(19) }}">{{ show_description(19) }}</button>
+  <div id="fig19-description" class="visually-hidden">Stacked bar chart showing 73% of Origin connections use HTTP/1.1, and 27% HTTP/2. This compares to CDNs where 29% are using HTTP/1.1 and 71% HTTP/2.</div>
+  <figcaption id="fig19-caption"><a href="#fig-19" class="anchor-link">Figure 19.</a> HTTP/2 adoption (CDN vs. origin).</figcaption>
+</figure>
+<figure id="fig-20">
+  <a href="/static/images/2019/cdn/fig20.png">
+    <img src="/static/images/2019/cdn/fig20.png" alt="Figure 20. HTML adoption of HTTP/2." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig20-description" data-show-text="{{ show_description(20) }}" data-hide-text="{{ hide_description(20) }}">{{ show_description(20) }}</button>
+  <div id="fig20-description" class="visually-hidden">Bar chart showing the data from Table 21.</div>
+  <figcaption id="fig20-caption"><a href="#fig-20" class="anchor-link">Figure 20.</a> HTML adoption of HTTP/2.</figcaption>
+</figure>
+<figure id="fig-21">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">HTTP/0.9</th>
+            <th scope="col">HTTP/1.0</th>
+            <th scope="col">HTTP/1.1</th>
+            <th scope="col">HTTP/2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>WordPress</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0.38</td>
+            <td class="numeric">100</td>
+          </tr>
+          <tr>
+            <td>Netlify</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">1.07</td>
+            <td class="numeric">99</td>
+          </tr>
+          <tr>
+            <td>section.io</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">1.56</td>
+            <td class="numeric">98</td>
+          </tr>
+          <tr>
+            <td>GoCache</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">7.97</td>
+            <td class="numeric">92</td>
+          </tr>
+          <tr>
+            <td>NetDNA</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">12.03</td>
+            <td class="numeric">88</td>
+          </tr>
+          <tr>
+            <td>Instart Logic</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">12.36</td>
+            <td class="numeric">88</td>
+          </tr>
+          <tr>
+            <td>Microsoft Azure</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">14.06</td>
+            <td class="numeric">86</td>
+          </tr>
+          <tr>
+            <td>Sucuri Firewall</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">15.65</td>
+            <td class="numeric">84</td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">16.34</td>
+            <td class="numeric">84</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">16.43</td>
+            <td class="numeric">84</td>
+          </tr>
+          <tr>
+            <td>Highwinds</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">17.34</td>
+            <td class="numeric">83</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">18.19</td>
+            <td class="numeric">82</td>
+          </tr>
+          <tr>
+            <td>OVH CDN</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">25.53</td>
+            <td class="numeric">74</td>
+          </tr>
+          <tr>
+            <td>Limelight</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">33.16</td>
+            <td class="numeric">67</td>
+          </tr>
+          <tr>
+            <td>Edgecast</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">37.04</td>
+            <td class="numeric">63</td>
+          </tr>
+          <tr>
+            <td>Cedexis</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">43.44</td>
+            <td class="numeric">57</td>
+          </tr>
+          <tr>
+            <td>Akamai</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">47.17</td>
+            <td class="numeric">53</td>
+          </tr>
+          <tr>
+            <td>Myra Security CDN</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0.06</td>
+            <td class="numeric">50.05</td>
+            <td class="numeric">50</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">52.45</td>
+            <td class="numeric">48</td>
+          </tr>
+          <tr>
+            <td>Incapsula</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0.01</td>
+            <td class="numeric">55.41</td>
+            <td class="numeric">45</td>
+          </tr>
+          <tr>
+            <td>Yunjiasu</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">70.96</td>
+            <td class="numeric">29</td>
+          </tr>
+          <tr>
+            <td>ORIGIN</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0.1</td>
+            <td class="numeric">72.81</td>
+            <td class="numeric">27</td>
+          </tr>
+          <tr>
+            <td>Zenedge</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">87.54</td>
+            <td class="numeric">12</td>
+          </tr>
+          <tr>
+            <td>CDNetworks</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">88.21</td>
+            <td class="numeric">12</td>
+          </tr>
+          <tr>
+            <td>ChinaNetCenter</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">94.49</td>
+            <td class="numeric">6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-21" class="anchor-link">Figure 21.</a> HTML adoption of HTTP/2 by CDN.</figcaption>
+</figure>
+<figure id="fig-22">
+  <a href="/static/images/2019/cdn/fig22.png">
+    <img src="/static/images/2019/cdn/fig22.png" alt="Figure 22. HTML/2 adoption: third-party resources." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig22-description" data-show-text="{{ show_description(22) }}" data-hide-text="{{ hide_description(22) }}">{{ show_description(22) }}</button>
+  <div id="fig22-description" class="visually-hidden">Bar chart showing the data from Table 23.</div>
+  <figcaption id="fig22-caption"><a href="#fig-22" class="anchor-link">Figure 22.</a> HTML/2 adoption: third-party resources.</figcaption>
+</figure>
+<figure id="fig-23">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>cdn</th>
+            <th>HTTP/0.9</th>
+            <th>HTTP/1.0</th>
+            <th>HTTP/1.1</th>
+            <th>HTTP/2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>jsDelivr</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">100</td>
+          </tr>
+          <tr>
+            <td>Facebook</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">100</td>
+          </tr>
+          <tr>
+            <td>Twitter</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">1</td>
+            <td class="numeric">99</td>
+          </tr>
+          <tr>
+            <td>section.io</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">2</td>
+            <td class="numeric">98</td>
+          </tr>
+          <tr>
+            <td>BunnyCDN</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">2</td>
+            <td class="numeric">98</td>
+          </tr>
+          <tr>
+            <td>KeyCDN</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">4</td>
+            <td class="numeric">96</td>
+          </tr>
+          <tr>
+            <td>Microsoft Azure</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">6</td>
+            <td class="numeric">94</td>
+          </tr>
+          <tr>
+            <td>WordPress</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">7</td>
+            <td class="numeric">93</td>
+          </tr>
+          <tr>
+            <td>CDN77</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">7</td>
+            <td class="numeric">93</td>
+          </tr>
+          <tr>
+            <td>NetDNA</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">7</td>
+            <td class="numeric">93</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">8</td>
+            <td class="numeric">92</td>
+          </tr>
+          <tr>
+            <td>Fastly</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">10</td>
+            <td class="numeric">90</td>
+          </tr>
+          <tr>
+            <td>Sucuri Firewall</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">14</td>
+            <td class="numeric">86</td>
+          </tr>
+          <tr>
+            <td>Cloudflare</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">16</td>
+            <td class="numeric">84</td>
+          </tr>
+          <tr>
+            <td>Yahoo</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">17</td>
+            <td class="numeric">83</td>
+          </tr>
+          <tr>
+            <td>OVH CDN</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">26</td>
+            <td class="numeric">75</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">26</td>
+            <td class="numeric">74</td>
+          </tr>
+          <tr>
+            <td>Cedexis</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">27</td>
+            <td class="numeric">73</td>
+          </tr>
+          <tr>
+            <td>CDNetworks</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">30</td>
+            <td class="numeric">70</td>
+          </tr>
+          <tr>
+            <td>Edgecast</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">42</td>
+            <td class="numeric">58</td>
+          </tr>
+          <tr>
+            <td>Highwinds</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">43</td>
+            <td class="numeric">57</td>
+          </tr>
+          <tr>
+            <td>Akamai</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0.01</td>
+            <td class="numeric">47</td>
+            <td class="numeric">53</td>
+          </tr>
+          <tr>
+            <td>Incapsula</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">56</td>
+            <td class="numeric">44</td>
+          </tr>
+          <tr>
+            <td>CDNvideo</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0</td>
+            <td class="numeric">68</td>
+            <td class="numeric">31</td>
+          </tr>
+          <tr>
+            <td>ORIGIN</td>
+            <td class="numeric">0</td>
+            <td class="numeric">0.07</td>
+            <td class="numeric">69</td>
+            <td class="numeric">31</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-23" class="anchor-link">Figure 23.</a> HTML/2 adoption: third-party resources.</figcaption>
+</figure>
+<h2 id="controlling-cdn-caching-behavior"><a href="#controlling-cdn-caching-behavior" class="anchor-link">Controlling CDN caching behavior</a></h2>
+<h3 id="vary">
+  <a href="#vary" class="anchor-link"><code>Vary</code></a>
+</h3>
+<p>A website can control the caching behavior of browsers and CDNs with the use of different HTTP headers. The most common is the <code>Cache-Control</code> header which specifically determines how long something can be cached before returning to the origin to ensure it is up-to-date.</p>
+<p>Another useful tool is the use of the <code>Vary</code> HTTP header. This header instructs both CDNs and browsers how to fragment a cache. The <code>Vary</code> header allows an origin to indicate that there are multiple representations of a resource, and the CDN should cache each variation separately. The most common example is <a href="./compression">compression</a>. Declaring a resource as <code>Vary: Accept-Encoding</code> allows the CDN to cache the same content, but in different forms like uncompressed, with gzip, or Brotli. Some CDNs even do this compression on the fly so as to keep only one copy available. This <code>Vary</code> header likewise also instructs the browser how to cache the content and when to request new content.</p>
+<figure id="fig-24">
+  <a href="/static/images/2019/cdn/use_of_vary_on_cdn.png">
+    <img alt="Breakdown of Vary header values for HTML content served from a CDN" src="/static/images/2019/cdn/use_of_vary_on_cdn.png" aria-labelledby="fig24-caption" aria-describedby="fig24-description" width="600" height="376" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig24-description" data-show-text="{{ show_description(24) }}" data-hide-text="{{ hide_description(24) }}">{{ show_description(24) }}</button>
+  <div id="fig24-description" class="visually-hidden">Treemap graph showing accept-encoding dominates vary usage with 73% of the chart taken up with that. Cookie (13%) and user-agent (8%) having some usage, then a complete mixed of other headers.</div>
+  <figcaption id="fig24-caption"><a href="#fig-24" class="anchor-link">Figure 24.</a> Usage of <code>Vary</code> for HTML served from CDNs.</figcaption>
+</figure>
+<p>While the main use of <code>Vary</code> is to coordinate <code>Content-Encoding</code>, there are other important variations that websites use to signal cache fragmentation. Using <code>Vary</code> also instructs SEO bots like DuckDuckGo, Google, and BingBot that alternate content would be returned under different conditions. This has been important to avoid SEO penalties for "cloaking" (sending SEO specific content in order to game the rankings).</p>
+<p>For HTML pages, the most common use of <code>Vary</code> is to signal that the content will change based on the <code>User-Agent</code>. This is short-hand to indicate that the website will return different content for desktops, phones, tablets, and link-unfurling engines (like Slack, iMessage, and Whatsapp). The use of <code>Vary: User-Agent</code> is also a vestige of the early mobile era, where content was split between "mDot" servers and "regular" servers in the back-end. While the adoption for responsive web has gained wide popularity, this <code>Vary</code> form remains.</p>
+<p>In a similar way, <code>Vary: Cookie</code> usually indicates that content that will change based on the logged-in state of the user or other personalization.</p>
+<figure id="fig-25">
+  <a href="/static/images/2019/cdn/use_of_vary.png">
+    <img src="/static/images/2019/cdn/use_of_vary.png" alt="Figure 25. Comparison of Vary usage for HTML and resources served from origin and CDN." aria-labelledby="fig25-caption" aria-describedby="fig25-description" width="600" height="371" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig25-description" data-show-text="{{ show_description(25) }}" data-hide-text="{{ hide_description(25) }}">{{ show_description(25) }}</button>
+  <div id="fig25-description" class="visually-hidden">Set of four treemap graphs showing that for CDNs serving home pages the biggest use of Vary is for Cookie, followed by User-agent. For CDNs serving other resources it's origin, followed by accept, user-agent, x-origin and referrer. For Origins and home pages it's user-agent, followed by cookie. Finally for Origins and other resources it's primarily user-agent followed by origin, accept, then range and host.</div>
+  <figcaption id="fig25-caption"><a href="#fig-25" class="anchor-link">Figure 25.</a> Comparison of <code>Vary</code> usage for HTML and resources served from origin and CDN.</figcaption>
+</figure>
+<p>Resources, in contrast, don't use <code>Vary: Cookie</code> as much as the HTML resources. Instead these resources are more likely to adapt based on the <code>Accept</code>, <code>Origin</code>, or <code>Referer</code>. Most media, for example, will use <code>Vary: Accept</code> to indicate that an image could be a JPEG, WebP, JPEG 2000, or JPEG XR depending on the browser's offered <code>Accept</code> header. In a similar way, third-party shared resources signal that an XHR API will differ depending on which website it is embedded. This way, a call to an ad server API will return different content depending on the parent website that called the API.</p>
+<p>The <code>Vary</code> header also contains evidence of CDN chains. These can be seen in <code>Vary</code> headers such as <code>Accept-Encoding, Accept-Encoding</code> or even <code>Accept-Encoding, Accept-Encoding, Accept-Encoding</code>. Further analysis of these chains and <code>Via</code> header entries might reveal interesting data, for example how many sites are proxying third-party tags.</p>
+<p>Many of the uses of the <code>Vary</code> are extraneous. With most browsers adopting double-key caching, the use of <code>Vary: Origin</code> is redundant. As is <code>Vary: Range</code> or <code>Vary: Host</code> or <code>Vary: *</code>. The wild and variable use of <code>Vary</code> is demonstrable proof that the internet is weird.</p>
+<h3 id="surrogate-control-s-maxage-and-pre-check">
+  <a href="#surrogate-control-s-maxage-and-pre-check" class="anchor-link"><code>Surrogate-Control</code>, <code>s-maxage</code>, and <code>Pre-Check</code></a>
+</h3>
+<p>There are other HTTP headers that specifically target CDNs, or other proxy caches, such as the <code>Surrogate-Control</code>, <code>s-maxage</code>, <code>pre-check</code>, and <code>post-check</code> values in the <code>Cache-Control</code> header. In general usage of these headers is low.</p>
+<p><code>Surrogate-Control</code> allows origins to specify caching rules just for CDNs, and as CDNs are likely to strip the header before serving responses, its low visible usage isn't a surprise, in fact it's surprising that it's actually in any responses at all! (It was even seen from some CDNs that state they strip it).</p>
+<p>Some CDNs support <code>post-check</code> as a method to allow a resource to be refreshed when it goes stale, and <code>pre-check</code> as a <code>maxage</code> equivalent. For most CDNs, usage of <code>pre-check</code> and <code>post-check</code> was below 1%. Yahoo was the exception to this and about 15% of requests had <code>pre-check=0, post-check=0</code>. Unfortunately this seems to be a remnant of an old Internet Explorer pattern rather than active usage. More discussion on this can be found in the <a href="./caching">Caching</a> chapter.</p>
+<p>The <code>s-maxage</code> directive informs proxies for how long they may cache a response. Across the Web Almanac dataset, jsDelivr is the only CDN where a high level of usage was seen across multiple resources—this isn't surprising given jsDelivr's role as a public CDN for libraries. Usage across other CDNs seems to be driven by individual customers, for example third-party scripts or SaaS providers using that particular CDN.</p>
+<figure id="fig-26">
+  <a href="/static/images/2019/cdn/fig26.png">
+    <img src="/static/images/2019/cdn/fig26.png" alt="Figure 26. Adoption of s-maxage across CDN responses." aria-labelledby="fig26-caption" aria-describedby="fig26-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig26-description" data-show-text="{{ show_description(26) }}" data-hide-text="{{ hide_description(26) }}">{{ show_description(26) }}</button>
+  <div id="fig26-description" class="visually-hidden">Bar chart showing 82% of jsDelivr serves responses with s-maxage, 14% of Level 3, 6.3% of Amazon CloudFront, 3.3% of Akamai, 3.1% of Fastly, 3% of Highwinds, 2% of Cloudflare, 0.91% of ORIGIN, 0.75% of Edgecast, 0.07% of Google.</div>
+  <figcaption id="fig26-caption"><a href="#fig-26" class="anchor-link">Figure 26.</a> Adoption of <code>s-maxage</code> across CDN responses.</figcaption>
+</figure>
+<p>With 40% of sites using a CDN for resources, and presuming these resources are static and cacheable, the usage of <code>s-maxage</code> seems low.</p>
+<p>Future research might explore cache lifetimes versus the age of the resources, and the usage of <code>s-maxage</code> versus other validation directives such as <code>stale-while-revalidate</code>.</p>
+<h2 id="cdns-for-common-libraries-and-content"><a href="#cdns-for-common-libraries-and-content" class="anchor-link">CDNs for common libraries and content</a></h2>
+<p>So far, this chapter has explored the use of commercials CDNs which the site may be using to host its own content, or perhaps used by a third-party resource included on the site.</p>
+<p>Common libraries like jQuery and Bootstrap are also available from public CDNs hosted by Google, Cloudflare, Microsoft, etc. Using content from one of the public CDNs instead of a self-hosting the content is a trade-off. Even though the content is hosted on a CDN, creating a new connection and growing the congestion window may negate the low latency of using a CDN.</p>
+<p>Google Fonts is the most popular of the content CDNs and is used by 55% of websites. For non-font content, Google API, Cloudflare's JS CDN, and the Bootstrap's CDN are the next most popular.</p>
+<figure id="fig-27">
+  <a href="/static/images/2019/cdn/fig27.png">
+    <img src="/static/images/2019/cdn/fig27.png" alt="Figure 27. Usage of public content CDNs." aria-labelledby="fig27-caption" aria-describedby="fig27-description" width="600" height="371" data-width="600" data-height="371" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&amp;format=interactive" loading="lazy" />
+  </a>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig27-description" data-show-text="{{ show_description(27) }}" data-hide-text="{{ hide_description(27) }}">{{ show_description(27) }}</button>
+  <div id="fig27-description" class="visually-hidden">Bar chart showing 55.33% of public content CDNs are made to fonts.googleapis.com, 19.86% to ajax.googleapis.com, 10.47% to cdnjs.cloudflare.com, 9.83% to maxcdn.bootstrapcdn.com, 5.95% to code.jquery.com, 4.29% to cdn.jsdelivr.net, 3.22% to use.fontawesome.com, 0.7% to stackpath.bootstrapcdn.com, 0.67% to unpkg.com, and 0.52% to ajax.aspnetcdn.com.</div>
+  <figcaption id="fig27-caption"><a href="#fig-27" class="anchor-link">Figure 27.</a> Usage of public content CDNs.</figcaption>
+</figure>
+<p>As more browsers implement partitioned caches, the effectiveness of public CDNs for hosting common libraries will decrease and it will be interesting to see whether they are less popular in future iterations of this research.</p>
+<h2 id="conclusion"><a href="#conclusion" class="anchor-link">Conclusion</a></h2>
+<p>The reduction in latency that CDNs deliver along with their ability to store content close to visitors enable sites to deliver faster experiences while reducing the load on the origin.</p>
+<p>Steve Souders' recommendation to use a CDN remains as valid today as it was 12 years ago, yet only 20% of sites serve their HTML content via a CDN, and only 40% are using a CDN for resources, so there's plenty of opportunity for their usage to grow further.</p>
+<p>There are some aspects of CDN adoption that aren't included in this analysis, sometimes this was due to the limitations of the dataset and how it's collected, in other cases new research questions emerged during the analysis.</p>
+<p>As the web continues to evolve, CDN vendors innovate, and sites use new practices CDN adoption remains an area rich for further research in future editions of the Web Almanac.</p>
+{% endblock %}

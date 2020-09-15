@@ -38,8 +38,7 @@ FROM (
   FROM `httparchive.pages.2019_07_01_*`, UNNEST(getResourceHints(payload)) AS hint)
 LEFT JOIN (
   SELECT client AS _TABLE_SUFFIX, page, url, type
-  FROM `httparchive.almanac.summary_requests`
-  WHERE date = '2019-07-01')
+  FROM `httparchive.almanac.summary_requests`)
 USING
   (_TABLE_SUFFIX, page, url)
 GROUP BY

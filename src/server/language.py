@@ -1,8 +1,9 @@
 # coding=utf-8
 class _Language(object):
-    def __init__(self, local_name, lang_code):
+    def __init__(self, local_name, lang_code, region_code):
         self._local_name = local_name
         self._lang_code = lang_code
+        self._region_code = region_code
 
     def __eq__(self, other):
         if isinstance(other, _Language):
@@ -25,15 +26,13 @@ class _Language(object):
         return self._lang_code
 
 
-# Mostly we use region-agnostic languages, but can add region where
-# there are significant differences (e.g. Chinese)
+# Currently we are only supporting languages and not regions
 class Language(object):
-    EN = _Language('English', 'en')
-    ES = _Language('Español', 'es')
-    FR = _Language('Français', 'fr')
-    JA = _Language('日本語', 'ja')
-    PT = _Language('Portuguese', 'pt')
-    ZH_CN = _Language('简体中文', 'zh-CN')
+    JA = _Language('日本語', 'ja', 'JP')
+    EN = _Language('English', 'en', 'US')
+    ES = _Language('Español', 'es', 'ES')
+    FR = _Language('Français', 'fr', 'FR')
+    ZH_CN = _Language('简体中文', 'zh-CN', 'CN')
 
 
 DEFAULT_LANGUAGE = Language.EN

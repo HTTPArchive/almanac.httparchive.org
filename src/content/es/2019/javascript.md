@@ -10,7 +10,7 @@ discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-05T00:00:00.000Z
+last_updated: 2020-06-30T00:00:00.000Z
 ---
 
 ## Introducción
@@ -31,7 +31,7 @@ Enviar paquetes de JavaScript más pequeños al navegador es la mejor manera de 
    <a href="/static/images/2019/javascript/fig1.png">
       <img src="/static/images/2019/javascript/fig1.png" alt="Figura 1. Distribución de bytes de JavaScript por página." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive">
    </a>
-   <div id="fig1-description" class="visually-hidden">Gráfico de barras que muestra que 70 bytes de JavaScript se usa en el percentil 10, 174 bytes para percentil 25, 373 bytes para percentil 50, 693 bytes para percentil 75 y 1.093 bytes para percentil 90</div>
+   <div id="fig1-description" class="visually-hidden">Gráfico de barras que muestra que 70 bytes de JavaScript se usa en el percentil p10, 174 bytes para p25, 373 bytes para p50, 693 bytes para p75 y 1.093 bytes para p90</div>
    <figcaption id="fig1-caption">Figura 1. Distribución de bytes de JavaScript por página.</figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ Mirando estos números, es natural preguntarse si esto es demasiado JavaScript. 
    <a href="/static/images/2019/javascript/fig2.png">
       <img src="/static/images/2019/javascript/fig2.png" alt="Figura 2. Distribución de JavaScript por página por dispositivo." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive">
    </a>
-   <div id="fig2-description" class="visually-hidden">Gráfico de barras que muestra 76 bytes / 65 bytes de JavaScript se usa en el percentil 10 en computadoras de escritorio y dispositivos móviles respectivamente, 186/164 bytes para percentil 25, 391/359 bytes para percentil 50, 721/668 bytes para percentil 75 y 1.131 / 1.060 bytes para percentil 90 .</div>
+   <div id="fig2-description" class="visually-hidden">Gráfico de barras que muestra 76 bytes / 65 bytes de JavaScript se usa en el percentil p10 en computadoras de escritorio y dispositivos móviles respectivamente, 186/164 bytes para p25, 391/359 bytes para p50, 721/668 bytes para p75 y 1.131 / 1.060 bytes para p90 .</div>
    <figcaption id="fig2-caption">Figura 2. Distribución de JavaScript por página por dispositivo.</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ Podemos tener una idea analizando los tiempos de procesamiento de subprocesos pr
    <a href="/static/images/2019/javascript/fig3.png">
       <img src="/static/images/2019/javascript/fig3.png" alt="Figura 3. Tiempos de procesamiento de subprocesos principales según V8 por dispositivo." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive">
    </a>
-   <div id="fig3-description" class="visually-hidden">Gráfico de barras que muestra 141 ms / 377 ms de tiempo de procesamiento se utiliza en el percentil 10 en computadoras de escritorio y dispositivos móviles respectivamente, 352/988 ms para percentil 25, 849 / 2.437 ms para percentil 50, 1.850 / 5.518 ms para percentil 75 y 3.543 / 10.735 ms para percentil 90.</div>
+   <div id="fig3-description" class="visually-hidden">Gráfico de barras que muestra 141 ms / 377 ms de tiempo de procesamiento se utiliza en el percentil p10 en computadoras de escritorio y dispositivos móviles respectivamente, 352/988 ms para p25, 849 / 2.437 ms para p50, 1.850 / 5.518 ms para p75 y 3.543 / 10.735 ms para p90.</div>
    <figcaption id="fig3-caption">Figura 3. Tiempos de procesamiento de subprocesos principales según V8 por dispositivo.</figcaption>
 </figure>
 
@@ -83,7 +83,7 @@ Una vía que vale la pena explorar al tratar de analizar la cantidad de JavaScri
    <a href="/static/images/2019/javascript/fig5.png">
       <img src="/static/images/2019/javascript/fig5.png" alt="Figura 5. Distribución del total de solicitudes de JavaScript." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive">
    </a>
-   <div id="fig5-description" class="visually-hidden">Gráfico de barras que muestra 4/4 solicitudes se utilizan para computadoras de escritorio y dispositivos móviles respectivamente en el percentil 10, 10/9 en percentil 25, 19/18 en percentil 50, 33/32 en percentil 75 y 53/52 en percentil 90.</div>
+   <div id="fig5-description" class="visually-hidden">Gráfico de barras que muestra 4/4 solicitudes se utilizan para computadoras de escritorio y dispositivos móviles respectivamente en el percentil p10, 10/9 en p25, 19/18 en p50, 33/32 en p75 y 53/52 en p90.</div>
    <figcaption id="fig5-caption">Figura 5. Distribución del total de solicitudes de JavaScript.</figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ JavaScript de contenido de terceros puede provenir de cualquier fuente externa d
    <a href="/static/images/2019/javascript/fig6.png">
       <img src="/static/images/2019/javascript/fig6.png" alt="Figura 6. Distribución de scripts de origen y de terceros en dispositivos de escritorio." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive">
    </a>
-   <div id="fig6-description" class="visually-hidden">Gráfico de barras que muestra las solicitudes 0/1 en el escritorio es contenido de origen y contenido de terceros, respectivamente, en el percentil 10, 2/4 en la percentil 25, 6/10 en la percentil 50, 13/21 en la percentil 75 y 24/38 en la percentil 90.</div>
+   <div id="fig6-description" class="visually-hidden">Gráfico de barras que muestra las solicitudes 0/1 en el escritorio es contenido de origen y contenido de terceros, respectivamente, en el percentil p10, 2/4 en la p25, 6/10 en la p50, 13/21 en la p75 y 24/38 en la p90.</div>
    <figcaption id="fig6-caption">Figura 6. Distribución de scripts de origen y de terceros en dispositivos de escritorio.</figcaption>
 </figure>
 
@@ -107,7 +107,7 @@ JavaScript de contenido de terceros puede provenir de cualquier fuente externa d
    <a href="/static/images/2019/javascript/fig7.png">
       <img src="/static/images/2019/javascript/fig7.png" alt="Figura 7. Distribución de scripts de origen  y de terceros en dispositivos móviles." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive">
    </a>
-   <div id="fig7-description" class="visually-hidden">Gráfico de barras que muestra las solicitudes 0/1 en dispositivos móviles es de contenido de origen y contenido de terceros, respectivamente, en el percentil 10, 2/3 en la percentil 25, 5/9 en la percentil 50, 13/20 en la percentil 75 y 23/36 en la percentil 90.</div>
+   <div id="fig7-description" class="visually-hidden">Gráfico de barras que muestra las solicitudes 0/1 en dispositivos móviles es de contenido de origen y contenido de terceros, respectivamente, en el percentil p10, 2/3 en la p25, 5/9 en la p50, 13/20 en la p75 y 23/36 en la p90.</div>
    <figcaption id="fig7-caption">Figura 7. Distribución de scripts de origen  y de terceros en dispositivos móviles.</figcaption>
 </figure>
 
@@ -117,7 +117,7 @@ Para clientes móviles y de escritorio, se envían más solicitudes de contenido
    <a href="/static/images/2019/javascript/fig8.png">
       <img src="/static/images/2019/javascript/fig8.png" alt="Figura 8. Distribución del JavaScript total descargado en dispositivos de escritorio." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive">
    </a>
-   <div id="fig8-description" class="visually-hidden">Gráfico de barras que muestra 0/17 bytes de JavaScript se descarga en dispositivos de escritorio para contenido de origen y contenido de terceros, respectivamente, en el percentil 10, 11/62 en percentil 25, 89/232 en percentil 50, 200/525 en percentil 75 y 404/900 en percentil 90.</div>
+   <div id="fig8-description" class="visually-hidden">Gráfico de barras que muestra 0/17 bytes de JavaScript se descarga en dispositivos de escritorio para contenido de origen y contenido de terceros, respectivamente, en el percentil p10, 11/62 en p25, 89/232 en p50, 200/525 en p75 y 404/900 en p90.</div>
    <figcaption id="fig8-caption">Figura 8. Distribución del JavaScript total descargado en dispositivos de escritorio.</figcaption>
 </figure>
 
@@ -125,7 +125,7 @@ Para clientes móviles y de escritorio, se envían más solicitudes de contenido
    <a href="/static/images/2019/javascript/fig9.png">
       <img src="/static/images/2019/javascript/fig9.png" alt="Figura 9. Distribución del JavaScript total descargado en dispositivos móviles." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive">
    </a>
-   <div id="fig9-description" class="visually-hidden">Gráfico de barras que muestra 0/17 bytes de JavaScript se descarga en dispositivos móviles para contenido de origen y contenido de terceros, respectivamente, en el percentil 10, 6/54 en percentil 25, 83/217 en percentil 50, 189/477 en percentil 75 y 380/827 en percentil 90.</div>
+   <div id="fig9-description" class="visually-hidden">Gráfico de barras que muestra 0/17 bytes de JavaScript se descarga en dispositivos móviles para contenido de origen y contenido de terceros, respectivamente, en el percentil p10, 6/54 en p25, 83/217 en p50, 189/477 en p75 y 380/827 en p90.</div>
    <figcaption id="fig9-caption">Figura 9. Distribución del JavaScript total descargado en dispositivos móviles.</figcaption>
 </figure>
 

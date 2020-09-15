@@ -21,11 +21,9 @@ SELECT
   JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
   IF(url LIKE "https://%","https","http") AS http_or_https,
   getUpgradeHeader(payload) AS upgrade,
-  COUNT(0) AS num_requests
+  COUNT(*) AS num_requests
 FROM 
-  `httparchive.almanac.requests`
-WHERE
-  date = '2019-07-01'
+  `httparchive.almanac.requests` 
 GROUP BY
   client,
   firstHtml,

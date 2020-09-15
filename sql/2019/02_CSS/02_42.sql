@@ -30,8 +30,6 @@ FROM (
     `httparchive.almanac.parsed_css`
   LEFT JOIN
     UNNEST(getKeyframes(css)) AS value
-  WHERE
-    date = '2019-07-01'
   GROUP BY
     client,
     page)

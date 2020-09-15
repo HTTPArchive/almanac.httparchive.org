@@ -17,8 +17,6 @@ FROM
       resp_cache_control
     FROM
       `httparchive.almanac.requests`
-    WHERE
-      date = '2019-07-01'
   ),
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_cache_control), r'([a-z][^,\s="\']*)')) AS directive
 JOIN (
@@ -29,8 +27,6 @@ JOIN (
     COUNTIF(TRIM(resp_cache_control) != "") AS total_using_control
   FROM
     `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01'
   GROUP BY
     client,
     party

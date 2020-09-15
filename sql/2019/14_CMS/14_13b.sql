@@ -12,7 +12,6 @@ JOIN
   (SELECT _TABLE_SUFFIX AS client, url AS page FROM `httparchive.technologies.2019_07_01_*` WHERE category = 'CMS')
 USING (client, page)
 WHERE
-  date = '2019-07-01'
   type = 'image'
 GROUP BY
   client,

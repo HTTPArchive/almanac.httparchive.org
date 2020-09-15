@@ -10,7 +10,6 @@ FROM
   `httparchive.almanac.summary_response_bodies`,
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(respOtherHeaders),r'cross-origin-opener-policy = ([^,\r\n]+)')) AS policy
 WHERE
-  date = '2019-07-01' AND
   firstHtml
 GROUP BY
   client,

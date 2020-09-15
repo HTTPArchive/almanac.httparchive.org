@@ -1,0 +1,277 @@
+{% extends "%s/2019/base_chapter.html" % lang %}
+
+<!--{# IMPORTANT!
+
+- `chapter.html` is a "template for templates" used by the `generate_chapters.js` script, hence the strange template syntax (eg, mixing ejs and jinja syntax)
+- if you want to modify `chapter.html`, you must also:
+  - translate the corresponding language-specific templates (eg `src/templates/<lang>/<year>/chapter.html`)
+  - run the generation script to update each chapter template
+- if you want to modify the chapter templates (eg `src/templates/<lang>/<year>/chapters/<chapter>.html`):
+  - make changes to the markdown content directly (`src/content/<lang>/<year>/<chapter>.md`) because any changes to the chapter templates will be overwritten by the generation script
+#}-->
+
+{% set metadata = {"part_number":"IV","chapter_number":19,"title":"リソースヒント","description":"2019年のWeb Almanacのリソースヒントの章では、dns-prefetch、preconnect、preload、prefetch、priority hints、ネイティブの遅延ローディングの使用法をカバーしています。","authors":["khempenius"],"reviewers":["andydavies","bazzadp","yoavweiss"],"translators":["ksakae"],"discuss":"1774","results":"https://docs.google.com/spreadsheets/d/14QBP8XGkMRfWRBbWsoHm6oDVPkYhAIIpfxRn4iOkbUU/","queries":"19_Resource_Hints","published":"2019-11-11T00:00:00.000Z","last_updated":"2020-06-30T00:00:00.000Z","chapter":"resource-hints"} %} {% block index %}
+<ul>
+  <li>
+    <a href="#序章">序章</a>
+
+    <ul>
+      <li>
+        <a href="#dns-prefetch">dns-prefetch</a>
+      </li>
+
+      <li>
+        <a href="#preconnect">preconnect</a>
+      </li>
+
+      <li>
+        <a href="#preload">preload</a>
+      </li>
+
+      <li>
+        <a href="#prefetch">prefetch</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#文法">文法</a>
+  </li>
+
+  <li>
+    <a href="#リソースヒント">リソースヒント</a>
+  </li>
+
+  <li>
+    <a href="#crossorigin属性">crossorigin属性</a>
+  </li>
+
+  <li>
+    <a href="#as属性">as属性</a>
+  </li>
+
+  <li>
+    <a href="#将来のこと">将来のこと</a>
+
+    <ul>
+      <li>
+        <a href="#優先順位のヒント">優先順位のヒント</a>
+      </li>
+
+      <li>
+        <a href="#ネイティブの遅延ローディング">ネイティブの遅延ローディング</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#結論">結論</a>
+  </li>
+</ul>
+
+{% endblock %} {% block main_content %}
+<h2 id="序章"><a href="#序章" class="anchor-link">序章</a></h2>
+<p><a href="https://www.w3.org/TR/resource-hints/">リソースヒント</a> は、どのようなリソースがすぐに必要になるかについての「ヒント」をブラウザに提供します。このヒントを受け取った結果としてブラウザが取るアクションは、リソースヒントの種類によって異なります。リソースヒントは正しく使用されると、重要なアクションを先取りすることでページのパフォーマンスを向上させることができます。</p>
+<p><a href="https://youtu.be/YJGCZCaIZkQ?t=1956">例</a>は、リソースヒントの結果としてパフォーマンスが向上しています。</p>
+<ul>
+  <li>Jabongは、重要なスクリプトをプリロードすることで、対話までの時間を1.5秒短縮しました。</li>
+  <li>Barefoot Wineは、目に見えるリンクを先読みすることで、将来のページの対話までの時間を2.7秒短縮しました。</li>
+  <li>Chrome.comは、クリティカルなオリジンに事前接続することで、待ち時間を0.7秒短縮しました。</li>
+</ul>
+<p>今日、ほとんどのブラウザでサポートされているリソースヒントには、4つの独立したものがあります。<code>dns-prefetch</code>, <code>preconnect</code>, <code>preload</code>, <code>prefetch</code> です。</p>
+<h3 id="dns-prefetch">
+  <a href="#dns-prefetch" class="anchor-link"><code>dns-prefetch</code></a>
+</h3>
+<p>
+  <a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/dns-prefetch"><code>dns-prefetch</code></a
+  >の役割は、初期のDNS検索を開始することである。サードパーティのDNSルックアップを完了させるのに便利です。たとえば、CDN、フォントプロバイダー、サードパーティAPIのDNSルックアップなどです。
+</p>
+<h3 id="preconnect">
+  <a href="#preconnect" class="anchor-link"><code>preconnect</code></a>
+</h3>
+<p>
+  <a href="https://web.dev/uses-rel-preconnect"><code>preconnect</code></a
+  >は、DNSルックアップ、TCPハンドシェイク、TLSネゴシエーションを含む早期接続を開始します。このヒントはサードパーティとの接続を設定する際に有用である。<code>preconnect</code>の用途は<code>dns-prefetch</code>の用途と非常によく似ているが、<code>preconnect</code>はブラウザのサポートが少ない。しかし、IE 11のサポートを必要としないのであれば、preconnectの方が良い選択であろう。
+</p>
+<h3 id="preload">
+  <a href="#preload" class="anchor-link"><code>preload</code></a>
+</h3>
+<p>
+  <a href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf"><code>preload</code></a
+  >ヒントは、早期のリクエストを開始します。これは、パーサによって発見されるのが遅れてしまうような重要なリソースをロードするのに便利です。たとえば、ブラウザがスタイルシートを受信し解析したあとでしか重要な画像を発見できない場合、画像をプリロードすることは意味があるかもしれません。
+</p>
+<h3 id="prefetch">
+  <a href="#prefetch" class="anchor-link"><code>prefetch</code></a>
+</h3>
+<p>
+  <a href="https://calendar.perfplanet.com/2018/all-about-prefetching/"><code>prefetch</code></a
+  >は優先度の低いリクエストを開始します。これは、次の（現在のページではなく）ページの読み込みで使われるであろうリソースを読み込むのに便利です。プリフェッチの一般的な使い方は、アプリケーションが次のページロードで使われると「予測」したリソースをロードすることです。これらの予測は、ユーザーのマウスの動きや、一般的なユーザーの流れ/旅のようなシグナルに基づいているかもしれません。
+</p>
+<h2 id="文法"><a href="#文法" class="anchor-link">文法</a></h2>
+<p>
+  リソースヒント使用率の97%は、リソースヒントを指定するために<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/link"><code>&lt;link&gt;</code></a
+  >タグを使用しています。たとえば、以下のようになります。
+</p>
+<pre><code>&lt;link rel="prefetch" href="shopping-cart.js"&gt;</code></pre>
+<p>リソースヒント使用率のわずか3%は、リソースヒントの指定に<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link">HTTPヘッダ</a>を使用しました。たとえば、以下のようになります。</p>
+<pre><code>Link: &lt;https://example.com/shopping-cart.js&gt;; rel=prefetch</code></pre>
+<p>HTTPヘッダー内のリソースヒントの使用量が非常に少ないため、本章の残りの部分では、<code>&lt;link&gt;</code>タグと組み合わせたリソースヒントの使用量の分析のみに焦点を当てています。しかし、今後、<a href="./http2#http2プッシュ">HTTP/2 Push</a>が採用されるようになると、HTTPヘッダーでのリソースヒントの使用量が増える可能性のあることは注目に値します。これは、HTTP/2 Pushがリソースをプッシュするためのシグナルとして、HTTPのプリロード <code>Link</code> ヘッダーを再利用していることに起因しています。</p>
+<h2 id="リソースヒント"><a href="#リソースヒント" class="anchor-link">リソースヒント</a></h2>
+<p class="note">注: モバイルとデスクトップでは、リソースヒントの利用パターンに目立った違いはありませんでした。そのため、簡潔にするために、本章ではモバイルの統計のみを掲載しています。</p>
+<figure id="fig-1">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <tbody>
+          <tr>
+            <th>リソースヒント</th>
+            <th>利用状況（サイトの割合）</th>
+          </tr>
+          <tr>
+            <td><code>dns-prefetch</code></td>
+            <td>29%</td>
+          </tr>
+          <tr>
+            <td><code>preload</code></td>
+            <td>16%</td>
+          </tr>
+          <tr>
+            <td><code>preconnect</code></td>
+            <td>4%</td>
+          </tr>
+          <tr>
+            <td><code>prefetch</code></td>
+            <td>3%</td>
+          </tr>
+          <tr>
+            <td><code>prerender</code> (非推奨)</td>
+            <td>0.13%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-1" class="anchor-link">図 1.</a> リソースヒントの採用。</figcaption>
+</figure>
+<p><code>dns-prefetch</code>の相対的な人気は驚くに値しません。これはよく知られたAPIであり（<a href="https://caniuse.com/#feat=link-rel-dns-prefetch">2009</a>ではじめて登場しました）、すべての主要なブラウザでサポートされており、すべてのリソースヒントの中でもっとも「安価」なものです。<code>dns-prefetch</code>はDNSの検索を行うだけなので、データの消費量が非常に少なく、使用する上でのデメリットはほとんどありません。<code>dns-prefetch</code>はレイテンシの高い状況でもっとも有用である。</p>
+<p>つまり、IE11以下をサポートする必要がないサイトであれば、<code>dns-prefetch</code>から<code>preconnect</code>に切り替えるのが良いでしょう。HTTPSがユビキタスな時代には、<code>preconnect</code>は安価でありながら、より大きな<a href="./performance">パフォーマンス</a>の向上をもたらします。<code>dns-prefetch</code>とは異なり、<code>preconnect</code>はDNSの検索だけでなく、TCPハンドシェイクとTLSネゴシエーションも開始することに注意してください。<a href="https://knowledge.digicert.com/solution/SO16297.html">証明書チェーン</a>はTLSネゴシエーション中にダウンロードされるが、これには通常数キロバイトのコストがかかります。</p>
+<p><code>prefetch</code>は3%のサイトで利用されており、もっとも広く利用されていないリソースヒントである。この使用率の低さは、<code>prefetch</code>が現在のページの読み込みよりも後続のページの読み込みを改善するのに有用であるという事実によって説明できるかもしれません。したがって、ランディングページの改善や最初に閲覧されたページのパフォーマンスを向上させることだけに焦点を当てているサイトでは、これは見過ごされてしまうだろう。</p>
+<figure id="fig-2">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <tbody>
+          <tr>
+            <th>リソースヒント</th>
+            <th>ページごとのリソースヒント<br />中央値</th>
+            <th>ページごとのリソースヒント<br />90パーセンタイル</th>
+          </tr>
+          <tr>
+            <td><code>dns-prefetch</code></td>
+            <td>2</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td><code>preload</code></td>
+            <td>2</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td><code>preconnect</code></td>
+            <td>2</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td><code>prefetch</code></td>
+            <td>1</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td><code>prerender</code> (非推奨)</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-2" class="anchor-link">図 2.</a> そのリソースヒントを使用している全ページのうち、1ページあたりに使用されているリソースヒントの数の中央値と90パーセンタイル。</figcaption>
+</figure>
+<p>リソースヒントは、選択的に使用されるときにもっとも効果的です（<em>"すべてが重要なときには、何も重要ではない"</em>）。上の図2は、少なくとも1つのリソースヒントを使用しているページの1ページあたりのリソースヒントの数を示しています。適切なリソースヒントの数を定義する明確なルールはありませんが、ほとんどのサイトが適切にリソースヒントを使用しているように見えます。</p>
+<h2 id="crossorigin属性">
+  <a href="#crossorigin属性" class="anchor-link"><code>crossorigin</code>属性</a>
+</h2>
+<p>ウェブ上に取り込まれるほとんどの「伝統的な」リソース（<a href="./media">images</a>、<a href="./css">stylesheets</a>、<a href="./javascript">script</a>）は、クロスオリジンリソース共有（<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/CORS">CORS</a>）を選択せずに取り込まれています。つまり、これらのリソースがクロスオリジンサーバーからフェッチされた場合、デフォルトでは同一オリジンポリシーのために、その内容をページで読み返すことができないということです。</p>
+<p>場合によっては、ページはコンテンツを読む必要がある場合、CORSを使用してリソースを取得するようにオプトインできます。CORSは、ブラウザが「許可を求める」ことを可能にし、それらのクロスオリジンリソースへのアクセスを取得します。</p>
+<p>新しいリソースタイプ（フォント、<code>fetch()</code> リクエスト、ESモジュールなど）では、ブラウザはデフォルトでCORSを使用してリソースをリクエストし、サーバーがアクセス許可を与えていない場合はリクエストを完全に失敗させます。</p>
+<figure id="fig-3">
+  <div class="table-wrap">
+    <div class="table-wrap-container">
+      <table>
+        <tbody>
+          <tr>
+            <th><code>クロスオリジン</code>値</th>
+            <th>使用方法</th>
+            <th>説明</th>
+          </tr>
+          <tr>
+            <td>未設定</td>
+            <td>92%</td>
+            <td>crossorigin属性がない場合、リクエストはシングルオリジンポリシーに従います。</td>
+          </tr>
+          <tr>
+            <td>anonymous(に相当する)</td>
+            <td>7%</td>
+            <td>クレデンシャルを含まないクロスオリジンリクエストを実行します。</td>
+          </tr>
+          <tr>
+            <td>use-credentials</td>
+            <td>0.47%</td>
+            <td>クレデンシャルを含むクロスオリジンリクエストを実行します。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <figcaption><a href="#fig-3" class="anchor-link">図 3.</a> リソースヒントインスタンスの割合としての<code>クロスオリジン</code>属性の採用。</figcaption>
+</figure>
+<p>リソースヒントのコンテキストでは、<code>crossorigin</code>属性を使用することで、マッチすることになっているリソースのCORSモードにマッチし、リクエストに含めるべき資格情報を示すことができます。たとえば、<code>anonymous</code>はCORSを有効にし、クロスオリジンリクエストには資格情報を含めるべきではないことを示します。</p>
+<pre><code>&lt;link rel="prefetch" href="https://other-server.com/shopping-cart.css" crossorigin="anonymous"&gt;</code></pre>
+<p>他のHTML要素はcrossorigin属性をサポートしていますが、この分析では、リソースヒントを使った使用法のみを見ています。</p>
+<h2 id="as属性">
+  <a href="#as属性" class="anchor-link"><code>as</code>属性</a>
+</h2>
+<p><code>as</code>は<code>preload</code>リソースヒントと一緒に使用されるべき属性で、要求されたリソースの種類（画像、スクリプト、スタイルなど）をブラウザに知らせるため使用されます。これにより、ブラウザがリクエストに正しく優先順位をつけ、正しいコンテンツセキュリティポリシー(<a href="https://developers.google.com/web/fundamentals/security/csp">CSP</a>)を適用するのに役立ちます。CSPはHTTPヘッダーで表現される<a href="./security">セキュリティ</a>メカニズムです、信頼できるソースのセーフリストを宣言することで、XSSやその他の悪意のある攻撃の影響を緩和するのに役立ちます。</p>
+<figure id="fig-4">
+  <div class="big-number">88%</div>
+  <figcaption><a href="#fig-4" class="anchor-link">図 4.</a> <code>as</code>属性を使用したリソースヒントインスタンスの割合。</figcaption>
+</figure>
+<p>リソースヒントインスタンスの88%は<code>as</code>属性を使用しています。<code>as</code>が指定されている場合、圧倒的にスクリプトに使われています。92%がスクリプト、3%がフォント、3%がスタイルです。これはスクリプトがほとんどのサイトのアーキテクチャで重要な役割を果たしていることと、スクリプトが攻撃のベクターとして使用される頻度が高いことを考えると当然のことです（したがって、スクリプトが正しいCSPを適用されることがとくに重要です）。</p>
+<h2 id="将来のこと"><a href="#将来のこと" class="anchor-link">将来のこと</a></h2>
+<p>現時点では、現在のリソースヒントのセットを拡張する提案はありません。しかし、優先度ヒントとネイティブの遅延ローディングは、ローディングプロセスを最適化するためのAPIを提供するという点で、リソースヒントに似た精神を持つ2つの技術が提案されています。</p>
+<h3 id="優先順位のヒント"><a href="#優先順位のヒント" class="anchor-link">優先順位のヒント</a></h3>
+<p><a href="https://wicg.github.io/priority-hints/">優先度ヒント</a>は、リソースのフェッチの優先度を<code>high</code>,<code>low</code>,<code>auto</code>のいずれかで表現するためのAPIです。これらは幅広いHTMLタグで利用できます。とくに<code>&lt;image&gt;</code>,<code>&lt;link</code>&gt;,<code>&lt;script&gt;</code>,<code>&lt;iframe&gt;</code>などです。</p>
+<figure id="fig-5">
+  <div class="code-block floating-card">
+    <pre><code>&lt;carousel&gt;
+  &lt;img src="cat1.jpg" importance="high"&gt;
+  &lt;img src="cat2.jpg" importance="low"&gt;
+  &lt;img src="cat3.jpg" importance="low"&gt;
+&lt;/carousel&gt;</code></pre>
+  </div>
+  <figcaption><a href="#fig-5" class="anchor-link">図 5.</a> 画像のカルーセルで優先度ヒントを使用するHTMLの例。</figcaption>
+</figure>
+<p>たとえば、画像カルーセルがある場合、優先度ヒントを使用して、ユーザーがすぐに見る画像に優先順位をつけ、後の画像に優先順位をつけることができます。</p>
+<figure id="fig-6">
+  <div class="big-number">0.04%</div>
+  <figcaption><a href="#fig-6" class="anchor-link">図 6.</a> 優先ヒントの採用率。</figcaption>
+</figure>
+<p>優先度ヒントは<a href="https://www.chromestatus.com/feature/5273474901737472">実装</a>されており、Chromiumブラウザのバージョン70以降では機能フラグを使ってテストできます。まだ実験的な技術であることを考えると、0.04%のサイトでしか使用されていないのは当然のことです。</p>
+<p>優先度ヒントの85%は<code>&lt;img&gt;</code>タグを使用しています。優先度ヒントはほとんどがリソースの優先順位を下げるために使われます。使用率の72%は<code>importance="low"</code>で、28%は<code>importance="high"</code>です。</p>
+<h3 id="ネイティブの遅延ローディング"><a href="#ネイティブの遅延ローディング" class="anchor-link">ネイティブの遅延ローディング</a></h3>
+<p><a href="https://web.dev/native-lazy-loading">ネイティブの遅延ローディング</a>は、画面外の画像やiframeの読み込みを遅延させるためのネイティブAPIです。これにより、最初のページ読み込み時にリソースを解放し、使用されないアセットの読み込みを回避できます。以前は、この技術はサードパーティの<a href="./javascript">JavaScript</a>ライブラリでしか実現できませんでした。</p>
+<p>ネイティブな遅延読み込みのためのAPIはこのようになります。<code>&lt;img src="cat.jpg" loading="lazy"&gt;</code>.</p>
+<p>ネイティブな遅延ローディングは、Chromium76以上をベースにしたブラウザで利用可能です。このAPIは発表が遅すぎて今年のWeb Almanacのデータセットには含まれていませんが、来年に向けて注目しておきたいものです。</p>
+<h2 id="結論"><a href="#結論" class="anchor-link">結論</a></h2>
+<p>全体的に、このデータはリソースヒントをさらに採用する余地があることを示唆しているように思われる。ほとんどのサイトでは、<code>dns-prefetch</code>から<code>preconnect</code>に切り替えることで恩恵を受けることができるだろう。もっと小さなサブセットのサイトでは、<code>prefetch</code>や<code>preload</code>を採用することで恩恵を受けることができるだろう。<code>prefetch</code>と<code>preload</code>をうまく使うには、より大きなニュアンスがあり、それが採用をある程度制限していますが、潜在的な利益はより大きくなります。HTTP/2 Pushや機械学習技術の成熟により、<code>preload</code>や<code>prefetch</code>の採用が増える可能性もあります。</p>
+{% endblock %}

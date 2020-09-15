@@ -28,8 +28,6 @@ FROM (
     REGEXP_CONTAINS(TRIM(resp_last_modified), r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun), \d{1,2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} \d{2}:\d{2}:\d{2} GMT$') AS has_valid_last_modified
   FROM
     `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01'
 )
 GROUP BY
   client,

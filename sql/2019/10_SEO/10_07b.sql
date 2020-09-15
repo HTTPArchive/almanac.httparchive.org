@@ -11,7 +11,6 @@ FROM (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    date = '2019-07-01' AND
     firstHtml),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY

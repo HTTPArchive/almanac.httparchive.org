@@ -3,7 +3,7 @@
 SELECT 
   _TABLE_SUFFIX AS client,
   ROUND(CAST(JSON_EXTRACT_SCALAR(report, "$.audits.uses-text-compression.details.overallSavingsBytes")as INT64)/1024/1024) mbyte_savings,
-  COUNT(0) num_pages,
+  COUNT(*) num_pages,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct_pages       
 FROM 
   `httparchive.lighthouse.2019_07_01_*`

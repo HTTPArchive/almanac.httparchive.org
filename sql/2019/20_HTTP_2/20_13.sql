@@ -18,7 +18,7 @@ LANGUAGE js AS """
 SELECT 
   client, 
   firstHtml, 
-  COUNT(0) as num_requests,
+  COUNT(*) as num_requests,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM (
   SELECT 
@@ -26,9 +26,7 @@ FROM (
     firstHtml,  
     getLinkHeaders(payload) AS link_headers
   FROM 
-   `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01'
+   `httparchive.almanac.requests` 
 )
 CROSS JOIN
   UNNEST(link_headers) AS link_header

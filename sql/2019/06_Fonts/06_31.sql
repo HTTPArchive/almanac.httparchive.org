@@ -22,8 +22,6 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getFontFamilies(css)) AS font_family
-WHERE
-  date = '2019-07-01'
 GROUP BY
   client,
   font_family

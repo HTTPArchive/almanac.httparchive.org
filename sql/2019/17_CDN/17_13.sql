@@ -20,7 +20,6 @@ FROM (
       if(NET.HOST(url) = NET.HOST(page), true, false) sameHost,
       if(NET.HOST(url) = NET.HOST(page) OR NET.REG_DOMAIN(url) = NET.REG_DOMAIN(page), true, false) AS sameDomain # if toplevel reg_domain will return null so we group this as sameDomain
     FROM `httparchive.almanac.requests`
-    WHERE date = '2019-07-01'
     GROUP BY client, pageid, requestid, page, url, firstHtml, cdn, tlstime, sanLength
 )
 WHERE

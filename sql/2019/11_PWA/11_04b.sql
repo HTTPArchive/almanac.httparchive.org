@@ -18,8 +18,6 @@ SELECT
   ROUND(COUNT(DISTINCT page) * 100 / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client), 2) AS pct
 FROM
   `httparchive.almanac.manifests`
-WHERE
-  date = '2019-07-01'
 GROUP BY
   client,
   can_parse

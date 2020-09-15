@@ -7,9 +7,8 @@ SELECT
 FROM
   `httparchive.almanac.summary_response_bodies`
 WHERE
-  date = '2019-07-01' AND
-  firstHtml AND
-  REGEXP_contains(body, r'(?im)<(?:source|img)[^>]*sizes=[\'"]?([^\'"]*)')
+  firstHtml
+  AND REGEXP_contains(body, r'(?im)<(?:source|img)[^>]*sizes=[\'"]?([^\'"]*)')
 GROUP BY
   client
 ORDER BY

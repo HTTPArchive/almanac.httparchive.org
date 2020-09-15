@@ -17,11 +17,8 @@ FROM
     page,
     regexp_contains(body, r'(?is)<meta[^><]*Accept-CH\b') chHTML,
     regexp_contains(respOtherHeaders, r'(?is)Accept-CH = ') chHeader
-  FROM
-    `httparchive.almanac.summary_response_bodies`
-  WHERE
-    date = '2019-07-01' AND
-    firstHtml
+  FROM `httparchive.almanac.summary_response_bodies`
+  WHERE firstHtml
 )
 GROUP BY
   client

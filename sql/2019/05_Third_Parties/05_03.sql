@@ -21,8 +21,6 @@ FROM (
     LEFT JOIN
       `lighthouse-infrastructure.third_party_web.2019_07_01_all_observed_domains` AS DomainsOver50Table
     ON NET.HOST(url) = DomainsOver50Table.requestDomain
-    WHERE
-      date = '2019-07-01'
 )
 GROUP BY
   client,

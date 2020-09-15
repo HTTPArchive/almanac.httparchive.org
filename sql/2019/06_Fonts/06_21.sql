@@ -30,8 +30,6 @@ FROM (
     page
   FROM
     `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2019-07-01'
   GROUP BY
     client,
     page
@@ -40,7 +38,7 @@ FROM (
 JOIN
   (SELECT client, page
     FROM `httparchive.almanac.requests`
-    WHERE date = '2019-07-01' and type = 'font' AND JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.gvar') IS NOT NULL
+    WHERE type = 'font' AND JSON_EXTRACT_SCALAR(payload, '$._font_details.table_sizes.gvar') IS NOT NULL
     GROUP BY client, page)
 USING
   (client, page)

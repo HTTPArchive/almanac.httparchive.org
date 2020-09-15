@@ -26,10 +26,8 @@ FROM (
     `httparchive.almanac.summary_requests`
 )
 JOIN
-  (SELECT requestid, reqCookieLen > 0 AS uses_cookies FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01')
+  (SELECT requestid, reqCookieLen > 0 AS uses_cookies FROM `httparchive.almanac.summary_requests`)
 USING (requestid)
-WHERE
-  date = '2019-07-01'
 GROUP BY
   client,
   type,

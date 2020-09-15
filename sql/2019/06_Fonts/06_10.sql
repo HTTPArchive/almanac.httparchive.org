@@ -64,8 +64,6 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFonts(css)) AS font
-  WHERE
-    date = '2019-07-01'
   GROUP BY
     client,
     page)

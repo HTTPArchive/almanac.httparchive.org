@@ -11,10 +11,8 @@ FROM (
       respBodySize AS requestBytes
     FROM
       `httparchive.almanac.summary_requests`
-    WHERE
-      date = '2019-07-01'
 ) t1, (
-  SELECT COUNT(0) AS totalRequestCount FROM `httparchive.almanac.summary_requests` WHERE date = '2019-07-01'
+  SELECT COUNT(0) AS totalRequestCount FROM `httparchive.almanac.summary_requests`
 ) t2
 GROUP BY
   requestUrl

@@ -23,8 +23,6 @@ FROM (
     SUM(countFonts(css)) AS font_rules
   FROM
     `httparchive.almanac.parsed_css`
-  WHERE
-    date = '2019-07-01'
   GROUP BY
     client,
     page)

@@ -12,9 +12,7 @@ FROM (
     _cdn_provider AS cdn,
     JSON_EXTRACT(payload, '$._was_pushed') IS NOT NULL AS pushed
   FROM
-    `httparchive.almanac.requests`
-  WHERE
-    date = '2019-07-01')
+    `httparchive.almanac.requests`)
 GROUP BY
   client,
   cdn

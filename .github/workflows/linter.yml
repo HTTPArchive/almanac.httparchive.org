@@ -2,8 +2,16 @@
 ## Linter GitHub Actions ##
 ###########################
 #
-# Documentation: https://github.com/github/super-linter/
+# Documentation:
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions
 #
+# For the Web Almanac we have the following rule changes from the defaults:
+#  * Markdown - we're a bit more relaxed about this since authors may be less technical
+#  * Python - Only change from default is to set ignored-modules=flask, flask-talisman...etc.
+#  * CSS - Tweaked to ignore some Prince/Normalise exceptions and some whitespace exceptions
+#  * JS - default rules
+#  * JSON - default rules
+#  * YML - default rules
 # Exception config files are in the .github/linters directory
 #
 name: Lint Code Base
@@ -15,24 +23,17 @@ jobs:
   lint:
     name: Lint Code Base
     # Skip duplicate job for local branches
-    # except for linter upgrades (so it can be caught by below check to lint all)
-    if: |
-        github.event_name == 'push' ||
-        github.event.pull_request.head.repo.full_name != github.repository ||
-        startsWith(github.event.pull_request.title,'Bump github/super-linter')
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2.3.2
-      - name: Set VALIDATE_ALL_CODEBASE variable to false
-        # Only run the full workflow for manual runs or if upgrading the super linter
-        if: |
-            github.event_name != 'workflow' &&
-            startsWith(github.event.pull_request.title,'Bump github/super-linter') != true
+      - name: Set VALIDATE_ALL_CODEBASE variable
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
         run: |
           echo "::set-env name=VALIDATE_ALL_CODEBASE::false"
       - name: Lint Code Base
-        uses: github/super-linter@v3.9.4
+        uses: docker://github/super-linter:v3
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

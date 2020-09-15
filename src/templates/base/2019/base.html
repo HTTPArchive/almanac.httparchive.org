@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css?v=20200907001001">
+  <link rel="stylesheet" href="/static/css/2019.css?v=20200730202229">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -207,10 +207,10 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
-              {{ year_switcher('mobile-footer') }}
+              {{ year_switcher('mobile') }}
             </li>
             <li>
-              {{ language_switcher('mobile-footer') }}
+              {{ language_switcher('mobile') }}
             </li>
           </ul>
         </nav>
@@ -408,7 +408,7 @@
 {% endblock %}
 
 {% macro language_switcher(switcher_name) %}
-  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+  {% if switcher_name == "mobile" %}
     {{ native_lang_dropdown(switcher_name) }}
   {% else %}
     {{ styled_lang_dropdown(switcher_name) }}
@@ -464,7 +464,7 @@
   {% macro year_switcher(switcher_name) %}
     {# Only show if we currently support multi-year #}
     {% if all_supported_years|length > 1  %}
-      {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+      {% if switcher_name == "mobile" %}
           {{ native_year_dropdown(switcher_name) }}
         {% else %}
           {{ styled_year_dropdown(switcher_name) }}

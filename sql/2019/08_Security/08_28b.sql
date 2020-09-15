@@ -25,7 +25,6 @@ FROM
   `httparchive.almanac.requests`,
   UNNEST(SPLIT(extractHeader(payload, 'Feature-Policy'), ';')) AS directive
 WHERE
-    date = '2019-07-01' AND
   firstHtml
 GROUP BY
   client,

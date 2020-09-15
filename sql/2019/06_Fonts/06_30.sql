@@ -32,8 +32,6 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getFontVariationSettings(css)) AS common_axes
-WHERE
-  date = '2019-07-01'
 GROUP BY
   client,
   common_axes

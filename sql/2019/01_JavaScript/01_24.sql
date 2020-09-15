@@ -12,7 +12,6 @@ JOIN
 USING
   (client)
 WHERE
-  date = '2019-07-01' AND
   type = 'script' AND
   body LIKE '%import(%' AND
   NET.REG_DOMAIN(page) = NET.REG_DOMAIN(url)
