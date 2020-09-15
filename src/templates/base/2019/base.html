@@ -207,10 +207,10 @@
           <ul>
             {{ self.non_chapter_nav_links() }}
             <li>
-              {{ year_switcher('mobile') }}
+              {{ year_switcher('mobile-footer') }}
             </li>
             <li>
-              {{ language_switcher('mobile') }}
+              {{ language_switcher('mobile-footer') }}
             </li>
           </ul>
         </nav>
@@ -408,7 +408,7 @@
 {% endblock %}
 
 {% macro language_switcher(switcher_name) %}
-  {% if switcher_name == "mobile" %}
+  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
     {{ native_lang_dropdown(switcher_name) }}
   {% else %}
     {{ styled_lang_dropdown(switcher_name) }}
@@ -464,7 +464,7 @@
   {% macro year_switcher(switcher_name) %}
     {# Only show if we currently support multi-year #}
     {% if all_supported_years|length > 1  %}
-      {% if switcher_name == "mobile" %}
+      {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
           {{ native_year_dropdown(switcher_name) }}
         {% else %}
           {{ styled_year_dropdown(switcher_name) }}
