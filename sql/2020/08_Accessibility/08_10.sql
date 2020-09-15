@@ -16,14 +16,14 @@ SELECT
   COUNT(0) AS total_sites_using,
   ROUND((COUNT(0) / total_sites) * 100, 2) AS pct_sites_using
 FROM
-  `httparchive.almanac.pages_desktop_*`,
+  `httparchive.pages.2020_08_01_*`,
   UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS role
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX,
     COUNT(0) AS total_sites
   FROM
-    `httparchive.almanac.pages_desktop_*`
+    `httparchive.pages.2020_08_01_*`
   GROUP BY _TABLE_SUFFIX
 )
 USING (_TABLE_SUFFIX)

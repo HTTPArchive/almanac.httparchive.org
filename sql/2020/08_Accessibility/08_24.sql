@@ -14,7 +14,7 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._a11y"), "$.total_anchors_with_role_button") AS INT64) AS total_anchors_with_role_button,
     IFNULL(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._element_count"), "$.a") AS INT64), 0) AS total_anchors
   FROM
-    `httparchive.almanac.pages_desktop_*`
+    `httparchive.pages.2020_08_01_*`
 )
 GROUP BY
   client

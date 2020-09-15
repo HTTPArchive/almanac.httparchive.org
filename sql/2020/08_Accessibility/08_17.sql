@@ -11,7 +11,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._a11y"), "$.total_role_tab_with_selected_and_controls") AS INT64) AS total_tab_selected_controls
   FROM
-    `httparchive.almanac.pages_desktop_*`
+    `httparchive.pages.2020_08_01_*`
 )
 GROUP BY
   client

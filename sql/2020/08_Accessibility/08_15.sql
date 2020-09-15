@@ -26,7 +26,7 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._a11y"), "$.td_with_headers_attribute.total_tds") AS INT64) AS total_td,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._a11y"), "$.td_with_headers_attribute.total_with_headers") AS INT64) AS total_td_with_headers
   FROM
-    `httparchive.almanac.pages_desktop_*`
+    `httparchive.pages.2020_08_01_*`
 )
 GROUP BY
   client

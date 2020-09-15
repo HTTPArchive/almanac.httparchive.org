@@ -16,7 +16,7 @@ FROM (
     _TABLE_SUFFIX AS client,
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._markup"), "$.ids.duplicate_ids_total") AS INT64) AS total_duplicate_ids
   FROM
-    `httparchive.almanac.pages_desktop_*`
+    `httparchive.pages.2020_08_01_*`
 )
 GROUP BY
   client

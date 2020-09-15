@@ -22,7 +22,7 @@ FROM (
     CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._wpt_bodies"), "$.anchors.rendered.javascript_void_links") AS INT64) AS javascript_void,
     IFNULL(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._element_count"), "$.a") AS INT64), 0) AS total_anchors
   FROM
-    `httparchive.almanac.pages_desktop_*`
+    `httparchive.pages.2020_08_01_*`
 )
 GROUP BY
   client

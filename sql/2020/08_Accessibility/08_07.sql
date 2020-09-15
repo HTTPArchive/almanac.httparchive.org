@@ -36,7 +36,7 @@ SELECT
 
   ROUND(COUNT(0) * 100 / total_sites, 2) AS pct_sites_using
 FROM
-  `httparchive.almanac.pages_desktop_*`,
+  `httparchive.pages.2020_08_01_*`
   UNNEST(getUsedExtensions(JSON_EXTRACT_SCALAR(payload, "$._a11y"))) AS extension_stat
 LEFT JOIN (
   SELECT
@@ -53,7 +53,7 @@ LEFT JOIN (
       CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._markup"), "$.images.img.alt.present") AS INT64) AS total_non_empty_alt,
       CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._a11y"), "$.file_extension_alts.total_with_file_extension") AS INT64) AS total_with_file_extension
     FROM
-      `httparchive.almanac.pages_desktop_*`
+      `httparchive.pages.2020_08_01_*`
   )
   GROUP BY
     client
