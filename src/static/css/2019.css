@@ -1250,6 +1250,7 @@ p.copyright a {
 .nav-dropdown-btn.dropdown-open {
   border-radius: 29px 29px 0 0;
   background-color: #5c687d;
+  border-color: #f7f779;
   border-bottom-color: #5c687d;
   z-index: 2;
 }
@@ -1257,8 +1258,8 @@ p.copyright a {
 .footer .nav-dropdown-btn.dropdown-open {
   border-radius: 0 0 29px 29px;
   background-color: #5c687d;
+  border-color: #f7f779;
   border-top-color: #5c687d;
-  border-bottom-color: white;
   z-index: 2;
 }
 
@@ -1301,7 +1302,7 @@ p.copyright a {
 
 .nav-dropdown-list {
   background: #5c687d;
-  border: 1px solid white;
+  border: 1px solid #f7f779;
   border-radius: 0 29px 29px;
   align-items: flex-start;
   flex-direction: column;
