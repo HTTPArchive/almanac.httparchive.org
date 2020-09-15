@@ -20,6 +20,8 @@ FROM (
     TRIM(resp_last_modified) != "" AS uses_last_modified
   FROM
     `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01'
 )
 GROUP BY
   client

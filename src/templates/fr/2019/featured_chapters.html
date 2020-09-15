@@ -1,12 +1,12 @@
-{%- set featured_chapter = ("accessibility","third-parties","seo","markup","cms","caching","mobile-web","resource-hints","compression") | random %}
+{%- set featured_chapter = ("accessibility","third-parties","seo","markup","cms","caching","mobile-web","resource-hints","compression","javascript") | random %}
 {#
   Below is the full set of chapters. If all are translated then replace above line with this one.
   Other than add chapters to above first line as they are translated (min of two chapters so repeat if only one chapter)
   {%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}
 #}
 {%- if featured_chapter == "javascript" %}
-  {%- set featured_chapter_quote = "JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, download and execution have become the most expensive stages when JavaScript is processed by a web page." %}
-  {%- set featured_chapter_stats = {"stat1":"89%","label1":"Sites with more third-party code than first-party","stat2":"83%","label2":"Sites that use jQuery","stat3":"4.6%","label3":"Home pages using React"} %}
+  {%- set featured_chapter_quote = "JavaScript est la ressource la plus consommatrice que nous envoyons aux navigateurs&nbsp;; il doit être téléchargé, analysé, compilé et enfin exécuté. Bien que les navigateurs aient considérablement réduit le temps nécessaire pour analyser et compiler les scripts, le téléchargement et l’exécution sont devenus les étapes les plus coûteuses lorsque JavaScript est traité par une page web." %}
+  {%- set featured_chapter_stats = {"stat1":"89&nbsp;%","label1":"des sites ont plus de code tiers que de code maison","stat2":"83&nbsp;%","label2":"des sites utilisent jQuery","stat3":"4,6&nbsp;%","label3":"des pages d’accueil utilisent React"} %}
 {%- elif featured_chapter == "css" %}
   {%- set featured_chapter_quote = "Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user." %}
   {%- set featured_chapter_stats = {"stat1":"5%","label1":"Pages using custom properties","stat2":"2%","label2":"Sites that use CSS Grid","stat3":"780","label3":"Number of digits in largest Z-Index value"} %}

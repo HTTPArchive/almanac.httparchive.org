@@ -10,7 +10,7 @@ discuss: 1772
 results: https://docs.google.com/spreadsheets/d/1Y7kAxjxUl8puuTToe6rL3kqJLX1ftOb0nCcD8m3lZBw/
 queries: 17_CDN
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-08-04T00:00:00.000Z
+last_updated: 2020-09-05T00:00:00.000Z
 ---
 
 ## 導入
@@ -486,11 +486,11 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
     <thead>
       <tr>
         <td></td>
-        <th scope="col">p10</th>
-        <th scope="col">p25</th>
-        <th scope="col">p50</th>
-        <th scope="col">p75</th>
-        <th scope="col">p90</th>
+        <th scope="col"><span class="visually-hidden">10パーセンタイル</span><span aria-hidden="true">p10</span></th>
+        <th scope="col"><span class="visually-hidden">25パーセンタイル</span><span aria-hidden="true">p25</span></th>
+        <th scope="col"><span class="visually-hidden">50パーセンタイル</span><span aria-hidden="true">p50</span></th>
+        <th scope="col"><span class="visually-hidden">75パーセンタイル</span><span aria-hidden="true">p75</span></th>
+        <th scope="col"><span class="visually-hidden">90パーセンタイル</span><span aria-hidden="true">p90</span></th>
       </tr>
     </thead>
     <tbody>
@@ -683,11 +683,11 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
     <thead>
       <tr>
         <td></td>
-        <th scope="col">p10</th>
-        <th scope="col">p25</th>
-        <th scope="col">p50</th>
-        <th scope="col">p75</th>
-        <th scope="col">p90</th>
+        <th scope="col"><span class="visually-hidden">10パーセンタイル</span><span aria-hidden="true">p10</span></th>
+        <th scope="col"><span class="visually-hidden">25パーセンタイル</span><span aria-hidden="true">p25</span></th>
+        <th scope="col"><span class="visually-hidden">50パーセンタイル</span><span aria-hidden="true">p50</span></th>
+        <th scope="col"><span class="visually-hidden">75パーセンタイル</span><span aria-hidden="true">p75</span></th>
+        <th scope="col"><span class="visually-hidden">90パーセンタイル</span><span aria-hidden="true">p90</span></th>
       </tr>
     </thead>
     <tbody>
@@ -844,8 +844,8 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   <a href="/static/images/2019/cdn/fig13.png">
     <img src="/static/images/2019/cdn/fig13.png" alt="図13.リソースSANカウント（p50）。" aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive">
   </a>
-  <div id="fig13-description" class="visually-hidden">p50パーセンタイルの表14のデータを示す棒グラフ。</div>
-  <figcaption id="fig13-caption">図13.リソースSANカウント（p50）。</figcaption>
+  <div id="fig13-description" class="visually-hidden">50パーセンタイルの表14のデータを示す棒グラフ。</div>
+  <figcaption id="fig13-caption">図13.リソースSANカウント（50パーセンタイル）。</figcaption>
 </figure>
 
 <figure>
@@ -853,11 +853,11 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
     <thead>
       <tr>
         <td></td>
-        <th scope="col">p10</th>
-        <th scope="col">p25</th>
-        <th scope="col">p50</th>
-        <th scope="col">p75</th>
-        <th scope="col">p90</th>
+        <th scope="col"><span class="visually-hidden">10パーセンタイル</span><span aria-hidden="true">p10</span></th>
+        <th scope="col"><span class="visually-hidden">25パーセンタイル</span><span aria-hidden="true">p25</span></th>
+        <th scope="col"><span class="visually-hidden">50パーセンタイル</span><span aria-hidden="true">p50</span></th>
+        <th scope="col"><span class="visually-hidden">75パーセンタイル</span><span aria-hidden="true">p75</span></th>
+        <th scope="col"><span class="visually-hidden">90パーセンタイル</span><span aria-hidden="true">p90</span></th>
       </tr>
     </thead>
     <tbody>

@@ -18,6 +18,8 @@ FROM (
     WHERE category = 'CMS')
   USING
     (client, page)
+  WHERE
+    date = '2019-07-01'
   GROUP BY
     client,
     page),

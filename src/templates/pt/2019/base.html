@@ -48,6 +48,7 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 {% block close_the_index %}Fechar índice de conteúdos{% endblock %}
 
 {% block and %}e{% endblock %}
+{% block comma %}, {% endblock %}
 
 {% block open %}Abrir{% endblock %}
 {% block close %}Fechar{% endblock %}
@@ -74,7 +75,6 @@ Nossa missão é combinar as estatísticas brutas e as tendências do HTTP Archi
 
 {% block footer_title %}Navegação no rodapé{% endblock %}
 {% block copyright %}© Web Almanac. Licenciado sob <a href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
-
 {% block accessibility_statement %}Declaração de acessibilidade{% endblock %}
 
 {% block featured_chapter %}Capítulo em Destaque{% endblock %}
@@ -122,7 +122,7 @@ Salvo indicação em contrário, as métricas em todos os 20 capítulos do Web A
 {% block appendices %}Apêndices{% endblock %}
 
 {% block ebook_title %}Ebook{% endblock %}
-{% block ebook_download %}Faça o download do Web Almanac {{ year }} completo em formato PDF{% endblock %}
+{% block ebook_download %}Faça o download do Web Almanac {{ year }} completo em formato PDF ({{ ebook_size_in_mb }}MB){% endblock %}
 {% block ebook_download_note %}(gerado em <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {% 
@@ -154,7 +154,10 @@ Salvo indicação em contrário, as métricas em todos os 20 capítulos do Web A
     "cdn": "CDN",
     "page-weight": "Peso da página",
     "resource-hints": "Dicas de Recursos",
-    "http2": "HTTP/2"
+    "http2": "HTTP/2",
+    "privacy": "Privacidade",
+    "capabilities": "Capacidades",
+    "jamstack": "Jamstack"
   }
 %}
 
