@@ -1,4 +1,4 @@
-const generate_figure_ids = (html, figure_lock) => {
+const generate_figure_ids = (html) => {
 
   let figure_count = 0;
 
@@ -46,17 +46,6 @@ const generate_figure_ids = (html, figure_lock) => {
     } else {
       html = html.replace(figcaption_regex, '<figcaption$1><a href="#fig-$3" class="anchor-link">$2 $3.</a>');
     }
-  }
-
-  // After a chapter is published a figure_lock value should be set
-  // So check the figure count hasn't changed
-  if (figure_lock && figure_lock != figure_count) {
-    console.error("Total figures have changed from: ", figure_lock, " to: ", figure_count);
-    console.error("After publishing we strongly advise NOT to change figure numbering.");
-    console.error("Adding new figures is usually OK but update the figure_lock count.");
-    console.error("If removing, perhaps consider commenting out figures instead,");
-    console.error("to ensure consistency in figure numbering");
-    throw("Total figures have changed from: ", figure_lock, " to: ", figure_count);
   }
 
   return html;

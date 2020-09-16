@@ -11,7 +11,6 @@ results: https://docs.google.com/spreadsheets/d/1uFlkuSRetjBNEhGKWpkrXo4eEIsgYel
 queries: 02_CSS
 published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-07-06T00:00:00.000Z
-figure_lock: 38
 ---
 
 ## Introduction
