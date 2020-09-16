@@ -27,7 +27,7 @@ return result;
 
 SELECT
   client,
-  robots_txt_info.status_code as status_code,
+  robots_txt_info.status_code AS status_code,
 
   COUNT(0) AS total,
 
