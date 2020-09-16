@@ -1,5 +1,5 @@
 #standardSQL
-# percientile data from almanac per device
+# percientile data from almanac per device for video tags
 
 # returns all the data we need from _almanac
 CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)

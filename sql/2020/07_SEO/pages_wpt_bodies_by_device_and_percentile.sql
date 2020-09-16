@@ -63,8 +63,6 @@ SELECT
 
   # links
   APPROX_QUANTILES(wpt_bodies_info.links_other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_external,
-  #APPROX_QUANTILES(wpt_bodies_info.links_same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_site,
-  #APPROX_QUANTILES(wpt_bodies_info.links_same_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_property,
   APPROX_QUANTILES(wpt_bodies_info.links_same_property+wpt_bodies_info.links_same_site+wpt_bodies_info.links_other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links,
   APPROX_QUANTILES(wpt_bodies_info.links_same_property+wpt_bodies_info.links_same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_internal,
 

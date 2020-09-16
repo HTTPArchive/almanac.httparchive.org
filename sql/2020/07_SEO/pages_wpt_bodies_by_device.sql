@@ -256,9 +256,6 @@ return result;
 SELECT
   client,
   COUNT(0) AS total,
-  
-  # titles with less than 5 words (NOT USED?)
-  #AS_PERCENT(COUNTIF(wpt_bodies_info.title_words < 5), COUNT(0)) AS pct_short_title_tag,
 
   # meta title inclusion
   AS_PERCENT(COUNTIF(wpt_bodies_info.n_titles > 0), COUNT(0)) AS pct_has_title_tag,

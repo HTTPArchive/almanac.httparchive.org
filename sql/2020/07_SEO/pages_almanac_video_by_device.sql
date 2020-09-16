@@ -1,5 +1,5 @@
 #standardSQL
-# page almanac metrics grouped by device
+# page almanac metrics grouped by device for video tags
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
