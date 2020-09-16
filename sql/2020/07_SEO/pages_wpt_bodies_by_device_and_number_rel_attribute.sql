@@ -65,3 +65,4 @@ FROM
 ),
 UNNEST(wpt_bodies_info.rel) as rel
 GROUP BY total, rel, client
+ORDER BY count DESC
