@@ -51,3 +51,5 @@ FROM
 USING (_TABLE_SUFFIX)
     ), UNNEST(wpt_bodies_info.jsonld_and_microdata_types) AS type
 GROUP BY total, type, client
+HAVING count > 100
+ORDER BY count DESC
