@@ -32,7 +32,7 @@ SELECT
   font_display,
   COUNT(DISTINCT page) AS freq_display,
   total_page,
-  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_displa
+  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_display,
   ROUND(COUNTIF(fast_fcp>=0.75)*100/COUNT(0),0) AS pct_fast_fcp_display,
   ROUND(COUNTIF(NOT(slow_fcp >=0.25)
     AND NOT(fast_fcp>=0.75))*100/COUNT(0),0) AS pct_mode_fcp_display,
