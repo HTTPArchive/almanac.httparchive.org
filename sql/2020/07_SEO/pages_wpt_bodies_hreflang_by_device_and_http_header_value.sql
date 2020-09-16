@@ -28,7 +28,7 @@ return result;
 
 SELECT
 client,
-hreflang,
+NORMALIZE_AND_CASEFOLD(hreflang) AS hreflang,
 total, 
 COUNT(0) AS count,
 AS_PERCENT(COUNT(0), total) AS pct
