@@ -36,10 +36,13 @@ jobs:
   build:
     name: calibreapp/image-actions
     runs-on: ubuntu-latest
-    # Only run on main repo as PRs can't be updated on forks
-    if: github.repository == 'HTTPArchive/almanac.httparchive.org'
-    env:
-      COMPRESS_ONLY: false
+    # Only run on main repo on and PRs that match the main repo
+    if: |
+      (github.event_name != 'pull_request' &&
+       github.repository == 'HTTPArchive/almanac.httparchive.org')
+      ||
+      (github.event_name == 'pull_request' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2.3.2
