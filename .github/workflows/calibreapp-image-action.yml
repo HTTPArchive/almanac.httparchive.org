@@ -4,35 +4,67 @@
 # 
 # This runs the calibre GitHub action to compress our images
 #
-# This Action has a few limitations:
-#
-# 1) This currently only works on pull requests from this repo
-#    and fails silently for PRs from forks. We've added a PR
-#    to handle this better (https://github.com/calibreapp/image-actions/pull/54)
-#    and after that can probably combine to the generate_chapters.yml.
-#
-# 2) It seems to only do a basic level of optimisations and better results can
-#    be achieved from https://tinypng.com/ or https://squoosh.app/ but not as automated
-#    so still good to have this.
-#
-# 3) Currently doesn't handle WebP (https://github.com/calibreapp/image-actions/issues/31)
+# This Action has a few different methoids for running:
+# 1) For Pull Requests from and to the main repo it can run and update the PR
+# 2) For pushes to main, it will run and create a new PR. This captures PR from
+#    Forks.
+# 3) It also runs every sunday at 11pm in case anything else sneaks in or any
+#    improvements are added to Calibre. This will also open a PR if necessary.
+# 4) Finally it can be kicked off manually and it will open a PR if necessary.
 #
 name: Compress images
 on:
+  schedule:
+    # Run a full compression every Sunday at 11pm to start the week right
+    - cron: '00 23 * * 0'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.png'
+      - '**.webp'
   pull_request:
     paths:
       - '**.jpg'
+      - '**.jpeg'
       - '**.png'
       - '**.webp'
 jobs:
   build:
-    # Only run on Pull Requests within the same repository, and not from forks as they don't work
-    if: github.event.pull_request.head.repo.full_name == github.repository
     name: calibreapp/image-actions
     runs-on: ubuntu-latest
+    # Only run on main repo on and PRs that match the main repo
+    if: |
+      github.repository == 'HTTPArchive/almanac.httparchive.org' &&
+      (github.event_name != 'pull_request' ||
+       github.event.pull_request.head.repo.full_name == github.repository)
     steps:
-      - uses: actions/checkout@v2.3.2
-      - name: calibreapp/image-actions
-        uses: docker://calibreapp/github-image-actions
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout branch
+        uses: actions/checkout@v2.3.2
+      - name: Run image compression
+        id: calibre
+        uses: calibreapp/image-actions@master
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: ${{ github.event_name != 'pull_request' }}
+          jpegProgressive: true
+      - name: Create Pull Request
+        # If it's not a pull request then commit any changes as a new PR
+        if: |
+          github.event_name != 'pull_request' &&
+          steps.calibre.outputs.markdown != ''
+        id: cpr
+        uses: peter-evans/create-pull-request@v3.3.0
+        with:
+          title: Auto Compress Images
+          branch-suffix: timestamp
+          commit-message: Compress Images
+          body: ${{ steps.calibre.outputs.markdown }}
+          labels: performance
+      - name: Check outputs
+        # If it's not a pull request then commit any changes as a new PR
+        if: steps.cpr.outputs.pull-request-number != ''
+        run: echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
