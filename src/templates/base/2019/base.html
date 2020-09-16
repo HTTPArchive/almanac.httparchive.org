@@ -346,14 +346,19 @@
         }
 
         function navBtnKeyDownHandler(e) {
+          var dropdownList = e.currentTarget.nextElementSibling;
+          var isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
+          var isInFooter = dropdownList.classList.contains('footer-list');
           if(e.key === "Escape") {
             e.currentTarget.click();
           } else if (e.key === "ArrowDown") {
-            var isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
-            !isDropdownOpen && e.currentTarget.click();
-            var dropdownList = e.currentTarget.nextElementSibling;
             e.preventDefault();
-            dropdownList.querySelector('a').focus();
+            !isDropdownOpen && e.currentTarget.click();
+            (isInFooter ? dropdownList.lastElementChild : dropdownList.firstElementChild).querySelector('a').focus();
+          } else if (isInFooter && e.key === "ArrowUp") {
+            e.preventDefault();
+            !isDropdownOpen && e.currentTarget.click();
+            dropdownList.firstElementChild.querySelector('a').focus();
           }
         }
 
