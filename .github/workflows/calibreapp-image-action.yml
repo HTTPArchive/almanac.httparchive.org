@@ -54,6 +54,7 @@ jobs:
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
         compressOnly: ${{ env.COMPRESS_ONLY }}
+        jpegProgressive: true
     - name: Create Pull Request
       # If it's not a pull request then commit any changes as a new PR
       if: |
