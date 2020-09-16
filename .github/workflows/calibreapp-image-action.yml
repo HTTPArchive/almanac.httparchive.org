@@ -64,4 +64,6 @@ jobs:
           body: ${{ steps.calibre.outputs.markdown }}
           labels: performance
       - name: Check outputs
+        # If it's not a pull request then commit any changes as a new PR
+        if: steps.cpr.outputs.pull-request-number != ''
         run: echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
