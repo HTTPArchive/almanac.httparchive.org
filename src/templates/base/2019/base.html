@@ -481,7 +481,7 @@
 {% macro figure_id(metadata, id) %}{{ metadata.chapter_number }}.{{ id }}{% endmacro %}
 {% macro figure_link(metadata, id, caption, ebook=false) %}
 {% if ebook %}
-<a href="#{{ metadata.chapter }}-fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
+<a href="#fig-{{ metadata.chapter_number }}-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
 {% else %}
 <a href="#fig-{{ id }}" class="anchor-link">{{ figure_text(metadata, id) }}</a> {{ caption|safe }}
 {% endif %}
@@ -490,6 +490,8 @@
 {%- macro figure_markup(
   id=0,
   image="",
+  link="",
+  video="",
   caption="",
   alt=caption,
   description="",
@@ -498,6 +500,8 @@
   sql_file="",
   width=600,
   height=371,
+  video_width=width,
+  video_height=height,
   data_width=width,
   data_height=height,
   content="",
@@ -506,30 +510,40 @@
   ebook=false
   )
 %}
-{# Ebook needs a unique fig id. 2019 is already out there so reluctant #}
-{# to change that, so "if" statemnt it is! #}
+
+{# Add the chapter path to image and set the link #}
+{% if image and not image.startswith("/") and not image.startswith("http") %}{% set image="/static/images/%s/%s/%s" % (year, metadata.get('chapter'), image) %}{% endif %}
+{# Set the link as appropriate if not provided #}
+{% if not link and video %}{% set link=video %}{% elif not link %}{% set link=image %}{% endif %}
+
+{# Ebook needs a unique fig id. 2019 is already out there so reluctant to change that, so "if" statemnt it is! #}
 {% if ebook %}
-{% set anchor="%s-fig-%s" % (metadata.chapter, id) %}
+{% set anchor="fig-%s-%s" % (metadata.chapter_number, id) %}
 {% else %}
 {% set anchor="fig-%s" % (id) %}
 {% endif %}
+
 <figure id="{{ anchor }}">
-    {%- if image != "" %}
-  <a href="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}">
-    {%- if sheets_url != "" %}
-    <img src="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ sheets_url|safe }}" loading="lazy" />
+  {%- if video != "" %}
+  <iframe class="fig-mobile fig-desktop video-embed" src="{{ video }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="{{ video_width }}" height="{{ video_height }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description"></iframe>
+  {%- endif %}
+  {%- if image != "" %}
+  <a {% if video != "" %}class="video-fallback-image"{% endif %} href="{{ link }}">
+    {%- if chart_url != "" %}
+    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" data-width="{{ data_width }}" data-height="{{ data_height }}" data-seamless="" data-frameborder="0" data-scrolling="no" data-iframe="{{ chart_url|safe }}" loading="lazy" />
     {%- else %}
-    <img src="/static/images/{{ year }}/{{ metadata.get('chapter') }}/{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="fig{{ id }}-caption" aria-describedby="fig{{ id }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
+    <img src="{{ image }}" alt="{{ caption|striptags }}" aria-labelledby="{{ anchor }}-caption" aria-describedby="{{ anchor }}-description" width="{{ width }}" height="{{ height }}" loading="lazy" />
     {%- endif %}
   </a>
-  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="fig{{ id }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
-  <div id="fig{{ id }}-description" class="visually-hidden">{{ description|safe }}</div>
+  <button hidden="" class="fig-description-button" aria-expanded="false" aria-controls="{{ anchor }}-description" data-show-text="{{ show_description(metadata,id) }}" data-hide-text="{{ hide_description(metadata,id) }}">{{ show_description(metadata,id) }}</button>
+  <div id="{{ anchor }}-description" class="visually-hidden">{{ description|safe }}</div>
   {%- elif content != "" %}
   <div class="{{ classes }}">{{ content }}</div>
   {%- endif %}
-  <figcaption id="fig{{ id }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook) }}</figcaption>
+  <figcaption id="{{ anchor }}-caption">{{ figure_link(metadata, id, caption, ebook=ebook) }}</figcaption>
 </figure>
 {%- endmacro %}
+
 {% macro native_year_dropdown(switcher_name)%}
   <div class="year-switcher">
     <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
