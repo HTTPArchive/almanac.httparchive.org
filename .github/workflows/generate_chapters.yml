@@ -52,7 +52,7 @@ jobs:
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3.3.0
+      uses: peter-evans/create-pull-request@v3.4.0
       with:
         title: Update datestamps and generate chapters
         branch-suffix: timestamp
