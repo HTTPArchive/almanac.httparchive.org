@@ -11,7 +11,7 @@ FROM (
       date,
       client,
       url,
-      JSON_EXTRACT_SCALAR(payload, "$._cdn_provider") as cdn
+      _cdn_provider as cdn
     FROM 
       `httparchive.almanac.requests` 
     WHERE 
