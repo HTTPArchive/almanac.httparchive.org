@@ -12,7 +12,9 @@ RETURNS STRUCT<
   visible_words_rendered_count INT64,
   visible_words_raw_count INT64,
   meta_description_words INT64,
-  meta_description_characters INT64
+  meta_description_characters INT64,
+  image_links INT64, 
+  text_links INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -32,9 +34,14 @@ try {
     }
 
     if (wpt_bodies.anchors && wpt_bodies.anchors.rendered) {
-      result.links_other_property = wpt_bodies.anchors.rendered.other_property;
-      result.links_same_site = wpt_bodies.anchors.rendered.same_site;
-      result.links_same_property = wpt_bodies.anchors.rendered.same_property;
+      var anchors_rendered = wpt_bodies.anchors.rendered;
+
+      result.links_other_property = anchors_rendered.other_property;
+      result.links_same_site = anchors_rendered.same_site;
+      result.links_same_property = anchors_rendered.same_property;
+    
+      result.image_links = anchors_rendered.image_links;
+      result.text_links = anchors_rendered.text_links;
     }
 
     if (wpt_bodies.meta_description && wpt_bodies.meta_description.rendered && wpt_bodies.meta_description.rendered.primary) {
@@ -65,6 +72,12 @@ SELECT
   APPROX_QUANTILES(wpt_bodies_info.links_other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links_external,
   APPROX_QUANTILES(wpt_bodies_info.links_same_property+wpt_bodies_info.links_same_site+wpt_bodies_info.links_other_property, 1000)[OFFSET(percentile * 10)] AS outgoing_links,
   APPROX_QUANTILES(wpt_bodies_info.links_same_property+wpt_bodies_info.links_same_site, 1000)[OFFSET(percentile * 10)] AS outgoing_links_internal,
+
+  APPROX_QUANTILES(wpt_bodies_info.image_links, 1000)[OFFSET(percentile * 10)] AS image_links,
+  APPROX_QUANTILES(wpt_bodies_info.text_links, 1000)[OFFSET(percentile * 10)] AS text_links,
+
+  # percent of links are image links
+  ROUND(APPROX_QUANTILES(SAFE_DIVIDE(wpt_bodies_info.image_links, wpt_bodies_info.image_links + wpt_bodies_info.text_links), 1000)[OFFSET(percentile * 10)], 4) AS image_links_percent,
 
   # words
   APPROX_QUANTILES(wpt_bodies_info.visible_words_rendered_count, 1000)[OFFSET(percentile * 10)] AS visible_words_rendered,
