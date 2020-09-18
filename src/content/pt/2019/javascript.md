@@ -2,10 +2,10 @@
 part_number: I
 chapter_number: 1
 title: JavaScript
-description: JavaScript chapter of the 2019 Web Almanac covering how much JavaScript we use on the web, compression, libraries and frameworks, loading, and source maps.
+description: Capítulo de JavaScript de 2019 Web Almanac que cobre quanto JavaScript usamos na web, compressão, bibliotecas e estruturas, carregamento e mapas de origem.
 authors: [housseindjirdeh]
 reviewers: [obto, paulcalvano, mathiasbynens]
-translators: []
+translators: [HakaCode]
 discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
@@ -13,43 +13,43 @@ published: 2019-11-11T00:00:00.000Z
 last_updated: 2020-09-01T00:00:00.000Z
 ---
 
-## Introduction
+## Introdução
 
-JavaScript is a scripting language that makes it possible to build interactive and complex experiences on the web. This includes responding to user interactions, updating dynamic content on a page, and so forth. Anything involving how a web page should behave when an event occurs is what JavaScript is used for.
+JavaScript é uma linguagem de script que torna possível construir experiências interativas e complexas na web. Isso inclui responder às interações do usuário, atualizar o conteúdo dinâmico em uma página e assim por diante. Qualquer coisa que envolva como uma página da web deve se comportar quando ocorre um evento é para o que o JavaScript é usado.
 
-The language specification itself, along with many community-built libraries and frameworks used by developers around the world, has changed and evolved ever since the language was created in 1995. JavaScript implementations and interpreters have also continued to progress, making the language usable in many environments, not only web browsers.
+A especificação da linguagem em si, junto com muitas bibliotecas e estruturas construídas pela comunidade usadas por desenvolvedores em todo o mundo, mudou e evoluiu desde que a linguagem foi criada em 1995. As implementações e os interpretadores de JavaScript também continuaram a progredir, tornando a linguagem utilizável em muitos ambientes, não apenas navegadores.
 
-The [HTTP Archive](https://httparchive.org/) crawls [millions of pages](https://httparchive.org/reports/state-of-the-web#numUrls) every month and runs them through a private instance of [WebPageTest](https://webpagetest.org/) to store key information of every page. (You can learn more about this in our [methodology](./methodology)). In the context of JavaScript, HTTP Archive provides extensive information on the usage of the language for the entire web. This chapter consolidates and analyzes many of these trends.
+O [HTTP Archive](https://httparchive.org/) rastreia [milhões de páginas](https://httparchive.org/reports/state-of-the-web#numUrls) todos os meses e os executa por meio de uma instância privada de [WebPageTest](https://webpagetest.org/) para armazenar informações importantes de cada página. (Você pode aprender mais sobre isso em nossa [metodologia](./methodology)). No contexto do JavaScript, o HTTP Archive fornece informações abrangentes sobre o uso da linguagem em toda a web. Este capítulo consolida e analisa muitas dessas tendências.
 
-## How much JavaScript do we use?
+## Quanto JavaScript usamos?
 
-JavaScript is the most costly resource we send to browsers; having to be downloaded, parsed, compiled, and finally executed. Although browsers have significantly decreased the time it takes to parse and compile scripts, [download and execution have become the most expensive stages](https://v8.dev/blog/cost-of-javascript-2019) when JavaScript is processed by a web page.
+JavaScript é o recurso mais caro que enviamos aos navegadores; tendo que ser baixado, analisado, compilado e finalmente executado. Embora os navegadores tenham diminuído significativamente o tempo que leva para analisar e compilar scripts, [download e execução se tornaram as etapas mais caras](https://v8.dev/blog/cost-of-javascript-2019) quando o JavaScript é processado por uma página da web.
 
-Sending smaller JavaScript bundles to the browser is the best way to reduce download times, and in turn improve page performance. But how much JavaScript do we really use?
+O envio de pacotes menores de JavaScript para o navegador é a melhor maneira de reduzir o tempo de download e, por sua vez, melhorar o desempenho da página. Mas quanto JavaScript realmente usamos?
 
 <figure>
    <a href="/static/images/2019/javascript/fig1.png">
-      <img src="/static/images/2019/javascript/fig1.png" alt="Figure 1. Distribution of JavaScript bytes per page." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive">
+      <img src="/static/images/2019/javascript/fig1.png" alt="Figura 1. Distribuição de bytes de JavaScript por página." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive">
    </a>
-   <div id="fig1-description" class="visually-hidden">Bar chart showing 70 bytes of JavaScript are used in the 10th percentile, 174 bytes for 25th percentile, 373 bytes for 50th percentile, 693 bytes for 75th percentile, and 1,093 bytes for 90th percentile</div>
-   <figcaption id="fig1-caption">Figure 1. Distribution of JavaScript bytes per page.</figcaption>
+   <div id="fig1-description" class="visually-hidden">Gráfico de barras mostrando 70 bytes de JavaScript usados no 10º percentil, 174 bytes no 25º percentil, 373 bytes no 50º percentil, 693 bytes no 75º percentil, e 1.093 bytes no 90º percentil</div>
+   <figcaption id="fig1-caption">Figura 1. Distribuição de bytes de JavaScript por página.</figcaption>
 </figure>
 
-Figure 1 above shows that we use 373 KB of JavaScript at the 50th percentile, or median. In other words, 50% of all sites ship more than this much JavaScript to their users.
+A Figura 1 acima mostra que usamos 373 KB de JavaScript no 50º percentil, ou mediana. Em outras palavras, 50% de todos os sites fornecem mais do que essa quantidade de JavaScript para seus usuários.
 
-Looking at these numbers, it's only natural to wonder if this is too much JavaScript. However in terms of page performance, the impact entirely depends on network connections and devices used. Which brings us to our next question: how much JavaScript do we ship when we compare mobile and desktop clients?
+Olhando para esses números, é natural imaginar se isso é muito JavaScript. No entanto, em termos de desempenho da página, o impacto depende inteiramente das conexões de rede e dos dispositivos usados. O que nos leva à nossa próxima pergunta: quanto JavaScript enviamos quando comparamos clientes móveis e de desktop?
 
 <figure>
    <a href="/static/images/2019/javascript/fig2.png">
-      <img src="/static/images/2019/javascript/fig2.png" alt="Figure 2. Distribution of JavaScript per page by device." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive">
+      <img src="/static/images/2019/javascript/fig2.png" alt="Figura 2. Distribuição de JavaScript por página por dispositivo." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive">
    </a>
-   <div id="fig2-description" class="visually-hidden">Bar chart showing 76 bytes/65 bytes of JavaScript are used in the 10th percentile on desktop and mobile respectively, 186/164 bytes for 25th percentile, 391/359 bytes for 50th percentile, 721/668 bytes for 75th percentile, and 1,131/1,060 bytes for 90th percentile.</div>
-   <figcaption id="fig2-caption">Figure 2. Distribution of JavaScript per page by device.</figcaption>
+   <div id="fig2-description" class="visually-hidden">Gráfico de barras mostrando 76 bytes / 65 bytes de JavaScript usados no 10º percentil em computadores e dispositivos móveis, respectivamente, 186/164 bytes para 25º percentil, 391/359 bytes para 50º percentil, 721/668 bytes para 75º percentil, e 1.131 / 1.060 bytes para o 90º percentil.</div>
+   <figcaption id="fig2-caption">Figura 2. Distribuição de JavaScript por página por dispositivo.</figcaption>
 </figure>
 
-At every percentile, we're sending slightly more JavaScript to desktop devices than we are to mobile.
+Em cada percentil, estamos enviando um pouco mais de JavaScript para dispositivos de desktop do que para dispositivos móveis.
 
-### Processing time
+### Tempo de processamento
 
 After being parsed and compiled, JavaScript fetched by the browser needs to processed (or executed) before it can be utilized. Devices vary, and their computing power can significantly affect how fast JavaScript can be processed on a page. What are the current processing times on the web?
 
