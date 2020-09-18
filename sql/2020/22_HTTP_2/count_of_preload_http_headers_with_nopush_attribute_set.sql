@@ -1,39 +1,32 @@
 # standardSQL
 # Count of preload HTTP Headers with nopush attribute set. Once off stat for last crawl
 CREATE TEMPORARY FUNCTION getLinkHeaders(payload STRING)
-RETURNS ARRAY<STRING>
-LANGUAGE js AS """
+RETURNS ARRAY<STRING> LANGUAGE js AS """
+try {
   var $ = JSON.parse(payload);
   var headers = $.response.headers;
-  var preload=[];
-  
-  for (i in headers) {
-      if (headers[i].name.toLowerCase() === 'link')
-        preload.push(headers[i].value);
-      }
-     return preload;  
+  return headers.filter(h => h.name.toLowerCase() == 'link').map(h => h.value);
+} catch (e) {
+  return [];
+}
 """;
 
-SELECT 
-  client, 
-  firstHtml, 
-  COUNT(0) as num_requests,
-  ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) AS pct
+SELECT
+  client,
+  COUNTIF(link_header LIKE '%nopush%') as num_nopush,
+  COUNT(0) AS total_preload,
+  ROUND(COUNTIF(link_header LIKE '%nopush%') / COUNT(0), 4) AS pct_nopush
 FROM (
-  SELECT 
+  SELECT
     client,
-    firstHtml,  
     getLinkHeaders(payload) AS link_headers
-  FROM 
+  FROM
    `httparchive.almanac.requests`
   WHERE
-   date='2020-08-01'
-)
-CROSS JOIN
+   date = '2020-08-01' AND
+   firstHtml),
   UNNEST(link_headers) AS link_header
-WHERE 
-  link_header LIKE '%preload%' 
-  AND link_header LIKE '%nopush%'
+WHERE
+  link_header LIKE '%preload%'
 GROUP BY
-	client, 
-	firstHtml
+  client
