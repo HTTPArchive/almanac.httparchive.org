@@ -1,18 +1,19 @@
 # standardSQL
 # Count of HTTP/2 Sites using HTTP/2 Push
-SELECT 
+SELECT
   client,
-  COUNT(DISTINCT page) AS num_pages
+  COUNT(DISTINCT IF(was_pushed, page, NULL)) AS num_pages_with_push,
+  COUNT(DISTINCT page) AS total,
+  COUNT(DISTINCT IF(was_pushed, page, NULL)) / COUNT(DISTINCT page) AS pct
 FROM (
-  SELECT 
+  SELECT
     client,
-    page
-  FROM 
-    `httparchive.almanac.requests` 
-  WHERE 
-    JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2" AND
-    JSON_EXTRACT_SCALAR(payload, "$._was_pushed") = "1" AND
-    date='2020-08-01'
-)
+    page,
+    JSON_EXTRACT_SCALAR(payload, '$._was_pushed') = '1' AS was_pushed
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2020-08-01' AND
+    JSON_EXTRACT_SCALAR(payload, '$._protocol') = 'HTTP/2')
 GROUP BY
   client
