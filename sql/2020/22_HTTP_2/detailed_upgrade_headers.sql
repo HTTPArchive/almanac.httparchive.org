@@ -1,34 +1,36 @@
 # standardSQL
 # Detailed upgrade headers for 20.04, 20.05 and 20.06
 CREATE TEMPORARY FUNCTION getUpgradeHeader(payload STRING)
-RETURNS STRING
-LANGUAGE js AS """
+RETURNS STRING LANGUAGE js AS """
   try {
     var $ = JSON.parse(payload);
     var headers = $.response.headers;
-    var st = headers.find(function(e) { 
-      return e['name'].toLowerCase() === 'upgrade'
-    });
-    return st['value'];
+    return headers.find(h => h.name.toLowerCase() === 'upgrade').value.trim();
   } catch (e) {
     return '';
   }
 """;
 
-SELECT 
+SELECT
   client,
-  firstHtml,  
-  JSON_EXTRACT_SCALAR(payload, "$._protocol") AS protocol,
-  IF(url LIKE "https://%","https","http") AS http_or_https,
-  getUpgradeHeader(payload) AS upgrade,
-  COUNT(0) AS num_requests
-FROM 
+  firstHtml,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') AS protocol,
+  IF(url LIKE 'https://%', 'https', 'http') AS http_or_https,
+  NORMALIZE_AND_CASEFOLD(getUpgradeHeader(payload)) AS upgrade,
+  COUNT(0) AS num_requests,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
+FROM
   `httparchive.almanac.requests`
 WHERE
-  date='2020-08-01'
+  date = '2020-08-01'
 GROUP BY
   client,
   firstHtml,
   protocol,
   http_or_https,
   upgrade
+HAVING
+  num_requests >= 100
+ORDER BY
+  num_requests DESC
