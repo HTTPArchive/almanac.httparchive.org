@@ -22,7 +22,8 @@ FROM (
   USING
     (client, page)
   WHERE
-    NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties`)
+    date = '2019-07-01' AND
+    NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties` WHERE date = '2019-07-01')
   GROUP BY
     client,
     app,
