@@ -55,8 +55,7 @@ try {
     }
 
     if (almanac.videos) {
-      var autoplay_count = almanac.videos.nodes.filter(n => n.autoplay == "" || n.autoplay).length; // valid values are blank or autoplay. Im just checking it exists...
-      //var autoplay_count = almanac.videos.nodes.filter(n => n.autoplay == "" || n.autoplay == "autoplay").length; 
+      var autoplay_count = almanac.videos.nodes.filter(n => n.autoplay == "" || n.autoplay).length; // valid values are blank or autoplay. Im just checking it exists... 
 
       result.contains_videos_with_autoplay = autoplay_count > 0;
       result.contains_videos_without_autoplay = almanac.videos.total > autoplay_count;

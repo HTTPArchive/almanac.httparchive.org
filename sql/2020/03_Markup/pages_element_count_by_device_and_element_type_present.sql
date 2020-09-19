@@ -9,16 +9,16 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 CREATE TEMPORARY FUNCTION get_element_types(element_count_string STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-    if (!element_count_string) return ["ERROR: payload._element_count is missing"]; // 2019 had a few cases
+    if (!element_count_string) return []; // 2019 had a few cases
 
     var element_count = JSON.parse(element_count_string); // should be an object with element type properties with values of how often they are present
 
-    if (Array.isArray(element_count)) return ["ERROR: payload._element_count is an array"];
-    if (typeof element_count != 'object') return ["ERROR: payload._element_count is a " + typeof(element_count)];
+    if (Array.isArray(element_count)) return [];
+    if (typeof element_count != 'object') return [];
 
     return Object.keys(element_count); 
 } catch (e) {
-    return ["ERROR: "+e.message]; 
+    return []; 
 }
 ''';
 
@@ -44,3 +44,4 @@ GROUP BY
 ORDER BY
   pages / total DESC,
   client
+LIMIT 1000

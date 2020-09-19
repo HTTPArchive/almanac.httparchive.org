@@ -9,7 +9,6 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 # returns all the data we need from _element_count
 CREATE TEMPORARY FUNCTION get_element_count_info(element_count_string STRING)
 RETURNS STRUCT<
-  count INT64,
   contains_custom_element BOOL, 
   contains_obsolete_element BOOL,
   contains_details_element BOOL,
@@ -22,8 +21,6 @@ try {
     var element_count = JSON.parse(element_count_string);
 
     if (Array.isArray(element_count) || typeof element_count != 'object') return result;
-
-    result.count = Object.values(element_count).reduce((total, freq) => total + (parseInt(freq, 10) || 0), 0);
     
     result.contains_custom_element = Object.keys(element_count).filter(e => e.includes('-')).length > 0;
     result.contains_details_element = Object.keys(element_count).filter(e => e ==='details').length > 0;
@@ -42,10 +39,6 @@ return result;
 SELECT
   client,
   COUNT(0) AS total,
-
-  CAST(ROUND(AVG(element_count_info.count)) AS INT64) AS elements_avg, # not sure what value this is? average elements per page? same for all device rows
-  MIN(element_count_info.count) AS elements_min, # y-axis min, same for all device rows
-  MAX(element_count_info.count) AS elements_max, # y-axis max, same for all device rows
 
   # % of pages with obsolete elements related to M216
   AS_PERCENT(COUNTIF(element_count_info.contains_obsolete_element), COUNT(0)) AS pct_contains_obsolete_element_m216,

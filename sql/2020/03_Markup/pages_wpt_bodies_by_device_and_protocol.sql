@@ -43,4 +43,4 @@ GROUP BY
   client,
   total,
   protocol
-  
+LIMIT 1000

@@ -13,19 +13,19 @@ CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS
 CREATE TEMPORARY FUNCTION get_element_types_with_a_dash(element_count_string STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS ''' 
 try {
-    if (!element_count_string) return ["ERROR: payload._element_count is missing"]; // 2019 had a few cases
+    if (!element_count_string) return []; // 2019 had a few cases
 
     var element_count = JSON.parse(element_count_string); // should be an object with element type properties with values of how often they are present
 
-    if (Array.isArray(element_count)) return ["ERROR: payload._element_count is an array"];
-    if (typeof element_count != 'object') return ["ERROR: payload._element_count is a " + typeof(element_count)];
+    if (Array.isArray(element_count)) return [];
+    if (typeof element_count != 'object') return [];
 
     var r = Object.keys(element_count).filter(e => e.includes('-')); // array of element type names that include a dash
     if (r.length > 0) return r; 
 
-    return ["NONE"]; // could be handy having a row showing how many pages do not have one
+    return []; // could be handy having a row showing how many pages do not have one
 } catch (e) {
-    return ["ERROR: "+e.message]; 
+    return []; 
 }
 ''';
 

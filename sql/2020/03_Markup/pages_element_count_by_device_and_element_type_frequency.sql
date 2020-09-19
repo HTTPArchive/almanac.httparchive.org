@@ -37,4 +37,4 @@ ORDER BY
   client,
   pct_m202 DESC
 LIMIT
-  10000
+  1000

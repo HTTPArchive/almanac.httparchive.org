@@ -44,3 +44,5 @@ GROUP BY
 ORDER BY
   pages / total DESC,
   client
+LIMIT
+  1000

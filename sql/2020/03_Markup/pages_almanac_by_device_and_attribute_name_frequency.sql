@@ -37,4 +37,4 @@ ORDER BY
   client,
   pct_m400 DESC
 LIMIT
-  10000
+  1000

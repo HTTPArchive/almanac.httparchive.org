@@ -42,3 +42,4 @@ FROM
 GROUP BY
   client,
   button_type
+LIMIT 1000

@@ -70,4 +70,7 @@ SELECT
 GROUP BY
   client,
   image_type_extension
-ORDER BY freq DESC
+ORDER BY 
+  freq DESC
+LIMIT
+  1000
