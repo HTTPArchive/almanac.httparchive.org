@@ -11,10 +11,11 @@ SELECT
     client,
     page,
     SUM(CAST(JSON_EXTRACT_SCALAR(payload, "$._bytesIn") AS INT64)/1024) AS kb_transfered,
-    COUNT(*) AS num_requests
+    COUNT(0) AS num_requests
   FROM 
-    `httparchive.almanac.requests` 
-  WHERE 
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01' AND 
     JSON_EXTRACT_SCALAR(payload, "$._protocol") = "HTTP/2"
     AND 
     JSON_EXTRACT_SCALAR(payload, "$._was_pushed") = "1"

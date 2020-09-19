@@ -21,3 +21,4 @@ GROUP BY
   device
 ORDER BY
   pct_fast_fcp DESC
+

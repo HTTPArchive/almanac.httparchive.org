@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="/static/css/2019.css?v=20200730202229">
+  <link rel="stylesheet" href="/static/css/2019.css?v=20200916144232">
 {% endblock %}
 
 {% block page_url %}https://almanac.httparchive.org{{ url_for(request.endpoint, **get_view_args(lang=language.lang_code, year=year)) }}{% endblock %}
@@ -203,6 +203,17 @@
             </li>
           </ul>
         </nav>
+        <nav id="mobile-footer-nav-items" aria-label="{{ self.footer_title() }}" class="nav-items">
+          <ul>
+            {{ self.non_chapter_nav_links() }}
+            <li>
+              {{ year_switcher('mobile-footer') }}
+            </li>
+            <li>
+              {{ language_switcher('mobile-footer') }}
+            </li>
+          </ul>
+        </nav>
         <div id="footer-mobile-social-media" class="mobile-ha-social-media">
           <a class="ha-logo" href="https://httparchive.org/" aria-labelledby="httparchive-logo-footer-mobile">
             <svg width="70" height="35" role="img">
@@ -278,6 +289,85 @@
           });
         }
 
+        function closeAnyOtherOpenDropdown(e) {
+          if (e.target.classList.contains('dropdown-open')) {
+            return
+          };
+          var openDropdownBtn = document.querySelector('.nav-dropdown-btn.dropdown-open');
+          openDropdownBtn && openDropdownBtn.click();
+        }
+        function trapFocusInList(e) {
+          var list = e.currentTarget;
+          var isInFooter = list.classList.contains('footer-list');
+          if(e.key === "ArrowDown") {
+            var siblingElem = isInFooter ? e.target.parentElement.previousElementSibling : e.target.parentElement.nextElementSibling;
+            var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? lastFocusableElementInList : firstFocusableElementInList);
+            e.preventDefault();
+            focusableElem.focus();
+          } else if (e.key === "ArrowUp") {
+            var siblingElem = isInFooter ? e.target.parentElement.nextElementSibling : e.target.parentElement.previousElementSibling;
+            var focusableElem = siblingElem ? siblingElem.querySelector('a') : (isInFooter ? firstFocusableElementInList : lastFocusableElementInList);
+            e.preventDefault();
+            focusableElem.focus();
+          } else if (e.key === "Escape") {
+            var navDropDown = e.currentTarget.closest('.nav-dropdown');
+            var navDropDownBtn = navDropDown.querySelector('.nav-dropdown-btn');
+            navDropDownBtn.click();
+            navDropDownBtn.focus();
+          }
+        }
+        var firstFocusableElementInList, lastFocusableElementInList;
+        function toggleDropdownVisibility(e) {
+          var dropdownBtn = e.currentTarget;
+          var dropdown = dropdownBtn.closest('.nav-dropdown');
+          var list = dropdown.querySelector('.nav-dropdown-list');
+          var isListVisible =  !list.classList.toggle('hidden');
+          var dropdownOpen = dropdownBtn.classList.toggle('dropdown-open');
+          dropdownBtn.setAttribute('aria-expanded', dropdownOpen);
+          
+          if (isListVisible) {
+            var btnBoundingRect = dropdownBtn.getBoundingClientRect();
+            var listBoundingRect = list.getBoundingClientRect();
+            if (listBoundingRect.width <= btnBoundingRect.width) {
+              list.style.minWidth = btnBoundingRect.width + "px";
+              list.classList.add("align-center");
+            } else if (btnBoundingRect.left + listBoundingRect.width > window.innerWidth) {
+              list.classList.add("align-right");
+            }
+            document.body.addEventListener('click', closeAnyOtherOpenDropdown, true);
+            var navItems = list.querySelectorAll('a');
+            firstFocusableElementInList = navItems[0];
+            lastFocusableElementInList = navItems[navItems.length - 1];
+            list.addEventListener('keydown', trapFocusInList);
+          } else {
+            list.removeEventListener('keydown', trapFocusInList);
+            document.body.removeEventListener('click', closeAnyOtherOpenDropdown, true);
+          }
+        }
+
+        function navBtnKeyDownHandler(e) {
+          var dropdownList = e.currentTarget.nextElementSibling;
+          var isDropdownOpen = e.currentTarget.classList.contains('dropdown-open');
+          var isInFooter = dropdownList.classList.contains('footer-list');
+          if(e.key === "Escape") {
+            e.currentTarget.click();
+          } else if (e.key === "ArrowDown") {
+            e.preventDefault();
+            !isDropdownOpen && e.currentTarget.click();
+            (isInFooter ? dropdownList.lastElementChild : dropdownList.firstElementChild).querySelector('a').focus();
+          } else if (isInFooter && e.key === "ArrowUp") {
+            e.preventDefault();
+            !isDropdownOpen && e.currentTarget.click();
+            dropdownList.firstElementChild.querySelector('a').focus();
+          }
+        }
+
+        var navDropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
+        for (var i = 0; i < navDropdownButtons.length; i++) {
+          navDropdownButtons[i].addEventListener('click', toggleDropdownVisibility);
+          navDropdownButtons[i].addEventListener('keydown', navBtnKeyDownHandler);
+        }
+
         // Mobile menu
         var menuBtn = document.querySelector('.menu-btn');
         var menuNav = document.querySelector('#menu');
@@ -302,12 +392,12 @@
           toggleNavMenu();
           event.stopPropagation();
         });
-        
+
         /* Add a click listener to menu so when it's open it swallows click to avoid above click closing it */
         menuNav.addEventListener('click', function () {
           event.stopPropagation();
         });
-        
+
         menuNav.addEventListener('keydown', function (event) {
           if (event.key === 'Escape') {
             if (menuBtn.getAttribute('aria-expanded') === 'true') {
@@ -323,81 +413,141 @@
 {% endblock %}
 
 {% macro language_switcher(switcher_name) %}
-<div class="language-switcher">
-  <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
-  <select id="language-switcher-{{switcher_name}}">
-    {% for l in supported_languages | sort(attribute='_local_name') %}
-    {% if l == language %}
-    <option selected="selected" lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-      {{ l }}
-    </option>
-    {% else %}
-    <option lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
-      {{ l }}
-    </option>
-    {% endif %}
-    {% endfor %}
-    <option disabled="disabled" aria-hidden="true">
-      ────
-    </option>
-    <option value="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide">
-      {{ self.help_translate() }}
-    </option>
-  </select>
-</div>
+  {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+    {{ native_lang_dropdown(switcher_name) }}
+  {% else %}
+    {{ styled_lang_dropdown(switcher_name) }}
+  {% endif %}
 {% endmacro %}
+
+{% macro native_lang_dropdown(switcher_name) %}
+  <div class="language-switcher">
+    <label for="language-switcher-{{switcher_name}}" class="visually-hidden">{{ self.language_switcher() }}</label>
+    <select id="language-switcher-{{switcher_name}}">
+      {% for l in supported_languages | sort(attribute='_local_name') %}
+        {% if l == language %}
+          <option selected="selected" lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+            {{ l }}
+          </option>
+        {% else %}
+          <option lang="{{ l.lang_code }}" value="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">
+            {{ l }}
+          </option>
+        {% endif %}
+      {% endfor %}
+      <option disabled="disabled" aria-hidden="true">
+        ────
+      </option>
+      <option value="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide">
+        {{ self.help_translate() }}
+      </option>
+    </select>
+  </div>
+{% endmacro %}
+
+{% macro styled_lang_dropdown(switcher_name) %}
+  <div class="nav-dropdown {{switcher_name}}">
+    <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.language_switcher() }}" >{{ language }}</button>
+    <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
+      {% for l in supported_languages | sort(attribute='_local_name') %}
+        {% if l != language %}
+          <li>
+            <a lang="{{ l.lang_code }}" href="{{ url_for(request.endpoint, **get_view_args(lang=l.lang_code)) }}">{{ l }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+      <li>
+        <a class="help-translate" href="https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Translators'-Guide">{{ self.help_translate() }}</a>
+      </li>
+    </ul>
+  </div>
+{% endmacro %}
+
 
 {# Check if year_switcher already defined in child template as macros can't be overridden #}
 {% if not year_switcher %}
   {% macro year_switcher(switcher_name) %}
     {# Only show if we currently support multi-year #}
     {% if all_supported_years|length > 1  %}
-      <div class="year-switcher">
-        <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
-        <select id="year-switcher-{{switcher_name}}">
-            {% for y in supported_years | sort %}
-              {% if y == year %}
-              <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-                {{ y }}
-              </option>
-              {% else %}
-              <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
-                {{ y }}
-              </option>
-              {% endif %}
-            {% endfor %}
-            {# If the current page doesn't support a year, then show a home link for that year #}
-            {% if supported_years|length < all_supported_years|length %}
-              <option disabled="disabled" aria-hidden="true">
-                ────
-              </option>
-              {% for y in all_supported_years | sort %}
-              {% if y not in supported_years %}
-              <option value="{{ url_for('home', lang=lang,year=y) }}">
-                {{ y }} {{ self.home() }}
-              </option>
-              {% endif %}
-              {% endfor %}
-            {% endif %}
-        </select>
-      </div>
+      {% if switcher_name == "mobile" or switcher_name == "mobile-footer" %}
+          {{ native_year_dropdown(switcher_name) }}
+        {% else %}
+          {{ styled_year_dropdown(switcher_name) }}
+      {% endif %}
     {% endif %}
   {% endmacro %}
 {% endif %}
+
+{% macro native_year_dropdown(switcher_name)%}
+  <div class="year-switcher">
+    <label for="year-switcher-{{switcher_name}}" class="visually-hidden">{{ self.year_switcher() }}</label>
+    <select id="year-switcher-{{switcher_name}}">
+      {% for y in supported_years | sort %}
+        {% if y == year %}
+          <option selected="selected" value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
+            {{ y }}
+          </option>
+        {% else %}
+          <option value="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">
+            {{ y }}
+          </option>
+        {% endif %}
+      {% endfor %}
+      {# If the current page doesn't support a year, then show a home link for that year #}
+      {% if supported_years|length < all_supported_years|length %}
+        <option disabled="disabled" aria-hidden="true">
+          ────
+        </option>
+        {% for y in all_supported_years | sort %}
+          {% if y not in supported_years %}
+            <option value="{{ url_for('home', lang=lang,year=y) }}">
+              {{ y }} {{ self.home() }}
+            </option>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </select>
+  </div>
+{% endmacro %}
+
+{% macro styled_year_dropdown(switcher_name)%}
+  <div class="nav-dropdown {{switcher_name}}">
+    <button class="nav-dropdown-btn" aria-expanded="false" aria-label="{{ self.year_switcher() }}">{{ year }}</button>
+    <ul class="nav-dropdown-list hidden {{switcher_name}}-list">
+      {% for y in supported_years | sort %}
+        {% if y != year %}
+          <li>
+            <a href="{{ url_for(request.endpoint, **get_view_args(lang=lang,year=y)) }}">{{y}}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+      {# If the current page doesn't support a year, then show a home link for that year #}
+      {% if supported_years|length < all_supported_years|length %}
+        {% for y in all_supported_years | sort %}
+          {% if y not in supported_years %}
+            <li class="unsupported-year">
+              <a href="{{ url_for('home', lang=lang,year=y) }}">{{ y }} {{ self.home() }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+{% endmacro %}
 
 {% block index_menu_script %}
 <script nonce="{{ csp_nonce() }}">
 
   var indexBox = document.querySelector('.index-box');
   var indexBoxTitle = document.querySelector('.index .index-btn');
-  
+
   indexBoxTitle.addEventListener('click', function(e) {
     var indexOpen = indexBox.classList.toggle('show');
     indexBoxTitle.setAttribute('aria-expanded',indexOpen);
     var ariaLabel = indexOpen ?  "{{ self.close_the_index() }}" : "{{ self.open_the_index() }}";
     indexBoxTitle.setAttribute('aria-label',ariaLabel);
   });
-  
+
   indexBox.addEventListener("keydown", function onPress(event) {
     if (event.key === 'Escape') {
       if (indexBoxTitle.getAttribute('aria-expanded') === 'true') {

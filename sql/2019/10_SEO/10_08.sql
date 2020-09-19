@@ -9,6 +9,7 @@ SELECT
 FROM
   `httparchive.almanac.summary_requests`
 WHERE
+  date = '2019-07-01' AND
   firstReq
 GROUP BY
   client,
