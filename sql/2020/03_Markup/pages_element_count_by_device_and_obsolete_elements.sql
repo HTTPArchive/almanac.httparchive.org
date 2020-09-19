@@ -30,16 +30,22 @@ SELECT
   _TABLE_SUFFIX AS client,
   element_type AS obsolete_element_type,
   COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total_obsolete_elements, # not accurate unless you only care about pages with obsolete element
-  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_from_pages_with_obsolete_elements
+  AS_PERCENT(COUNT(0), total) AS pct_pages_with_obsolete_elements,
+  AS_PERCENT(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX)) AS ratio_compared_to_all_obsolete_elements
 FROM
-  `httparchive.pages.2020_08_01_*`, 
+  `httparchive.pages.2020_08_01_*`
+    JOIN
+    (SELECT _TABLE_SUFFIX, COUNT(0) AS total FROM 
+  `httparchive.pages.2020_08_01_*`
+    GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
+  USING (_TABLE_SUFFIX),
   UNNEST(get_element_types(JSON_EXTRACT_SCALAR(payload, '$._element_count'))) AS element_type
 WHERE
   is_obsolete(element_type)
 GROUP BY
   client,
+  total,
   obsolete_element_type
 ORDER BY
-  pct_from_pages_with_obsolete_elements DESC,
+  pct_pages_with_obsolete_elements DESC,
   client

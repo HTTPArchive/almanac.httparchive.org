@@ -29,8 +29,10 @@ return result;
 SELECT
   _TABLE_SUFFIX AS client,
   button_type_info.name AS button_type,
-  SUM(button_type_info.freq) AS freq, 
-  AS_PERCENT(SUM(button_type_info.freq), SUM(SUM(button_type_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_m304
+  COUNTIF(button_type_info.freq > 0) AS freq_page_with_button, 
+  AS_PERCENT(COUNTIF(button_type_info.freq > 0), total) AS pct_page_with_button,
+  SUM(button_type_info.freq) AS freq_button, 
+  AS_PERCENT(SUM(button_type_info.freq), SUM(SUM(button_type_info.freq)) OVER (PARTITION BY _TABLE_SUFFIX)) AS pct_button
 FROM
     `httparchive.pages.2020_08_01_*`
     JOIN
