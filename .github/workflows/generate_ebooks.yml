@@ -26,11 +26,10 @@ jobs:
       uses: actions/setup-node@v1.4.2
       with:
         version:  12.x
-    # Install Python 3.7 as used by Google Cloud Platform
-    - name: Set up Python 3.7
+    - name: Set up Python 3.8
       uses: actions/setup-python@v2.1.2
       with:
-        python-version: '3.7'
+        python-version: '3.8'
     - name: Install Asian Fonts
       run: |
         # Install Japanese san-serif font
@@ -53,7 +52,7 @@ jobs:
         npm run ebooks
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v3.3.0
+      uses: peter-evans/create-pull-request@v3.4.0
       with:
         title: Regenerate Ebooks
         branch-suffix: timestamp

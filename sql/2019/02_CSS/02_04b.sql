@@ -29,6 +29,8 @@ SELECT
 FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getBlendModes(css)) AS blend_mode
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client,
   blend_mode

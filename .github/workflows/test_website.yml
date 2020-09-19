@@ -21,16 +21,16 @@ jobs:
       uses: actions/setup-node@v1.4.2
       with:
         node-version: 12.x
-    - name: Set up Python 3.7
+    - name: Set up Python 3.8
       uses: actions/setup-python@v2.1.2
       with:
-        python-version: '3.7'
+        python-version: '3.8'
     - name: Run the website
       run: ./src/tools/scripts/run_and_test_website.sh
     - name: Remove node modules to avoid linting errors
       run: rm -rf src/node_modules
     - name: Lint Generated HTML
-      uses: github/super-linter@v3.9.4
+      uses: github/super-linter@v3.10.2
       env:
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
