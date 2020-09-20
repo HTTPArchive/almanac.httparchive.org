@@ -14,17 +14,15 @@ LANGUAGE js AS """
     return '';
   }
 """;
-
 SELECT 
-  client,
-  firstHtml,  
+  client, 
   COUNT(0) AS num_requests
 FROM 
   `httparchive.almanac.requests`
 WHERE
   date='2020-08-01' AND 
   url LIKE "http://%" AND
-  getUpgradeHeader(payload) LIKE "%h2%"
-GROUP BY
-  client,
+  getUpgradeHeader(payload) LIKE "%h2%" AND
   firstHtml
+GROUP BY
+  client
