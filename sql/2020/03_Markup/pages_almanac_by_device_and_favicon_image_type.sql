@@ -16,7 +16,7 @@ try {
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
-    if (almanac["link-nodes"] && almanac["link-nodes"].nodes) {
+    if (almanac["link-nodes"] && almanac["link-nodes"].nodes && almanac["link-nodes"].nodes.find) {
       var faviconNode = almanac["link-nodes"].nodes.find(n => n.rel && n.rel.split(' ').find(r => r.trim().toLowerCase() == 'icon'));
 
       if (faviconNode) {
@@ -30,7 +30,7 @@ try {
           if (temp.includes('.')) {
             temp = temp.substring(temp.lastIndexOf('.')+1);
 
-            result.image_type_extension = temp;
+            result.image_type_extension = temp.toLowerCase().trim();
           }
           else {
             result.image_type_extension = "NO_EXTENSION";
@@ -47,7 +47,7 @@ try {
       result.image_type_extension = "NO_DATA";
     }
 
-} catch (e) {result.image_type_extension = "ERROR: "+e.message;}
+} catch (e) {result.image_type_extension = "NO_DATA";}
 return result;
 ''';
 

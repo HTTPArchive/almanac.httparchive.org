@@ -28,7 +28,7 @@ return result;
 
 SELECT
   _TABLE_SUFFIX AS client,
-  button_type_info.name AS button_type,
+  LOWER(TRIM(button_type_info.name)) AS button_type,
   COUNTIF(button_type_info.freq > 0) AS freq_page_with_button, 
   AS_PERCENT(COUNTIF(button_type_info.freq > 0), total) AS pct_page_with_button,
   SUM(button_type_info.freq) AS freq_button, 
@@ -43,5 +43,8 @@ FROM
     UNNEST(get_markup_buttons_info(JSON_EXTRACT_SCALAR(payload, '$._markup'))) AS button_type_info
 GROUP BY
   client,
-  button_type
+  button_type,
+  total
+ORDER BY 
+  freq_page_with_button DESC
 LIMIT 1000
