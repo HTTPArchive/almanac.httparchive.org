@@ -9,7 +9,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(alt_length_string as INT64) AS alt_length
+    CAST(alt_length_string AS INT64) AS alt_length
   FROM
     `httparchive.pages.2020_08_01_*`
     UNNEST(
