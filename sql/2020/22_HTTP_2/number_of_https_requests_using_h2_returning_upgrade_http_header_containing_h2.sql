@@ -1,5 +1,5 @@
 # standardSQL
-# Number of HTTPS sites using HTTP/2 which return upgrade HTTP header containing h2
+# Number of HTTPS requests using HTTP/2 which return upgrade HTTP header containing h2
 CREATE TEMPORARY FUNCTION getUpgradeHeader(payload STRING)
 RETURNS STRING
 LANGUAGE js AS """
@@ -18,7 +18,8 @@ LANGUAGE js AS """
 SELECT 
   client,
   firstHtml,  
-  COUNT(0) AS num_requests
+  COUNTIF(getUpgradeHeader(payload) LIKE "%h2%") AS num_requests,
+  COUNT(0) AS total
 FROM 
   `httparchive.almanac.requests`
 WHERE
