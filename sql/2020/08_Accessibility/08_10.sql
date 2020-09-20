@@ -31,5 +31,7 @@ GROUP BY
   client,
   role,
   total_sites
+HAVING
+  total_sites >= 100
 ORDER BY
   pct_sites_using DESC

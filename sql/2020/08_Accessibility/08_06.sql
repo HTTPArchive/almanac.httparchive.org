@@ -3,7 +3,7 @@
 SELECT
   client,
   alt_length_clipped AS alt_length,
-  COUNT(0) AS occurances
+  COUNT(0) AS occurrences
 FROM (
   SELECT
     client,
@@ -22,5 +22,7 @@ FROM (
 GROUP BY
   client,
   alt_length
+HAVING
+  occurrences >= 100
 ORDER BY
   alt_length ASC
