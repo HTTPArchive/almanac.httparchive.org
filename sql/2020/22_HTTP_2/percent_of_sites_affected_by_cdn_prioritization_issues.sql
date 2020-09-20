@@ -21,10 +21,10 @@ FROM (
   ) AS pages
 LEFT JOIN 
   `httparchive.almanac.h2_prioritization_cdns` AS h2_pri
-ON pages.cdn = h2_pri.cdn
-AND pages.date = h2_pri.date
+USING (cdn, date)
 GROUP BY
   client,
   CDN,
   prioritizes_correctly
-ORDER BY num_pages DESC
+ORDER BY 
+  num_pages DESC
