@@ -17,7 +17,8 @@ LANGUAGE js AS """
 SELECT 
   client,
   firstHtml,
-  COUNT(0) AS num_requests
+  COUNTIF(getUpgradeHeader(payload) LIKE "%h2%") AS num_requests,
+  COUNT(0) AS total
 FROM 
   `httparchive.almanac.requests`
 WHERE
