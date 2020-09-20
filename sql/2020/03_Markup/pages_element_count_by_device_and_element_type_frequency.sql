@@ -33,8 +33,8 @@ FROM
 GROUP BY
   client,
   element_type_info.name
-ORDER BY
-  client,
-  pct_m202 DESC
+ORDER BY 
+  freq_m201 DESC,
+  client
 LIMIT
   1000

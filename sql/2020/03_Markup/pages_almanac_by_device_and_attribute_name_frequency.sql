@@ -34,7 +34,7 @@ GROUP BY
   client,
   almanac_attribute_info.name
 ORDER BY
-  client,
-  pct_m400 DESC
+  freq DESC,
+  client
 LIMIT
   1000
