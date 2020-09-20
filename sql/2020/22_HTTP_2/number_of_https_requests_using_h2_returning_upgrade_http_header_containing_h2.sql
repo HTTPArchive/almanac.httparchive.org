@@ -17,7 +17,8 @@ LANGUAGE js AS """
 
 SELECT 
   client,
-  firstHtml,  
+  firstHtml,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
   COUNTIF(getUpgradeHeader(payload) LIKE "%h2%") AS num_requests,
   COUNT(0) AS total
 FROM 
@@ -29,4 +30,5 @@ WHERE
   getUpgradeHeader(payload) LIKE "%h2%"
 GROUP BY
   client,
-  firstHtml
+  firstHtml,
+  http_version
