@@ -40,5 +40,6 @@ SELECT
 GROUP BY
   client,
   html_lang
-ORDER BY freq DESC
+ORDER BY 
+  freq DESC
   

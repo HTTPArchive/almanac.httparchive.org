@@ -41,7 +41,7 @@ SELECT
 
   # Comments per page
   APPROX_QUANTILES(wpt_bodies_info.comment_count, 1000)[OFFSET(percentile * 10)] AS comment_count_m103,
-  APPROX_QUANTILES(wpt_bodies_info.conditional_comment_count, 1000)[OFFSET(percentile * 10)] AS conditional_comment_count_m104,
+  APPROX_QUANTILES(wpt_bodies_info.conditional_comment_count, 1000)[OFFSET(percentile * 10)] AS conditional_comment_count_m105,
 
   # size of the head section in characters
   APPROX_QUANTILES(wpt_bodies_info.head_size, 1000)[OFFSET(percentile * 10)] AS head_size_m234

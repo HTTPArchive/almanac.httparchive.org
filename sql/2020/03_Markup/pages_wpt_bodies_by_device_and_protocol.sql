@@ -1,5 +1,6 @@
 #standardSQL
 # page wpt_bodies metrics grouped by device
+# M235
 
 # helper to create percent fields
 CREATE TEMP FUNCTION AS_PERCENT (freq FLOAT64, total FLOAT64) RETURNS FLOAT64 AS (
@@ -43,4 +44,6 @@ GROUP BY
   client,
   total,
   protocol
+ORDER BY 
+  pages DESC
 LIMIT 1000
