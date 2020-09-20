@@ -31,13 +31,17 @@ Diferenciar el alojamiento propio del alojamiento de terceros es cada vez más r
 
 Las recomendaciones para mitigar los costos de rendimiento de cargar fuentes web desde otro dominio incluyen el uso de `preconnect`, `dns-prefetch` y `preload` [sugerencias de recursos] (./resource-hints), pero las fuentes web de alta prioridad deben ser solicitadas al alojamiento propio para minimizar el impacto en el rendimiento de las fuentes web. Esto es especialmente importante para las fuentes utilizadas por contenido visualmente prominente o cuerpo de texto que ocupan la mayor parte de una página.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig1.png">
-    <img src="/static/images/2019/fonts/fig1.png" alt="Figura 1. Estrategias populares de alojamiento de fuentes web." aria-labelledby="fig1-description" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Gráfico de barras que muestra la popularidad de las estrategias de alojamiento propio y de terceros para fuentes web. El 75% de las páginas web móviles utilizan dominios de terceros y el 25% alojamiento propio. Los sitios web de escritorio tienen un uso similar.</div>
-  <figcaption id="fig1-caption">Figura 1. Estrategias populares de alojamiento de fuentes web.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1.png",
+  caption="Estrategias populares de alojamiento de fuentes web.",
+  description="Gráfico de barras que muestra la popularidad de las estrategias de alojamiento propio y de terceros para fuentes web. El 75% de las páginas web móviles utilizan dominios de terceros y el 25% alojamiento propio. Los sitios web de escritorio tienen un uso similar.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 El hecho de que tres cuartas partes estén alojadas tal vez no sea sorprendente dado el dominio de Google Fonts que discutiremos [más adelante](#cuales-son-los-dominios-de-terceros-mas-populares?).
 
@@ -159,15 +163,17 @@ Tenga en cuenta que, si bien `preload` sería una buena adición para cargar los
       </tr>
     </tbody>
   </table>
-  <figcaption>Figura 2. Los 20 dominios principales de fuentes por porcentaje de solicitudes.</figcaption>
+  <figcaption>{{ figure_link(caption="Los 20 dominios principales de fuentes por porcentaje de solicitudes.") }}</figcaption>
 </figure>
 
 El dominio de Google Fonts aquí fue simultáneamente sorprendente y no sorprendente. No fue sorprendente porque esperaba que el servicio fuera el más popular y sorprendente por el dominio absoluto de su popularidad. El 75% de las solicitudes de fuentes es asombroso. TypeKit fue un distante segundo lugar de un solo dígito, con la biblioteca Bootstrap representando un tercer lugar aún más distante.
 
-<figure>
-  <div class="big-number">29%</div>
-  <figcaption>Figura 3. Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts en el documento <code>&lt;head&gt;</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts en el documento <code>&lt;head&gt;</code>.",
+  content="29%",
+  classes="big-number"
+)
+}}
 
 Si bien el alto uso de Google Fonts aquí es muy impresionante, también es digno de mención que solo el 29% de las páginas incluían un elemento `<link>` de Google Fonts. Esto podría significar algunas cosas:
 
@@ -175,10 +181,12 @@ Si bien el alto uso de Google Fonts aquí es muy impresionante, también es dign
 - O una historia más improbable es que podría significar que mucha gente está usando Google Fonts con `@import` en lugar de `<link>`.
 - O si queremos irnos al extremo profundo hacia escenarios súper improbables, podría significar que muchas personas están usando Google Fonts con un [HTTP `Link:` header](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Link) en su lugar.
 
-<figure>
-  <div class="big-number">0.4%</div>
-  <figcaption>Figura 4. Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts como primer elemento secundario del documento <code>&lt;head&gt;</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts como primer elemento secundario del documento <code>&lt;head&gt;</code>.",
+  content="0.4%",
+  classes="big-number"
+)
+}}
 
 La documentación de Google Fonts recomienda que el `<link>` del CSS de Google Fonts se coloque como el primer hijo en el `<head>` de una página. ¡Esta es una gran pregunta! En la práctica, esto no es común, ya que solo cerca del medio porciento de todas las páginas (unas 20.000 páginas) siguió este consejo.
 
@@ -188,10 +196,12 @@ Más aún, si una página usa `preconnect` o `dns-prefetch` como elementos `<lin
 
 Como se mencionó anteriormente, una manera súper fácil de acelerar las solicitudes de fuentes web a un dominio de terceros es usar la [sugerencia de recursos](./resource-hints) `preconnect`.
 
-<figure>
-  <div class="big-number">1.7%</div>
-  <figcaption>Figura 5. Porcentaje de páginas móviles que se pre-conectan previamente a un dominio de fuentes web.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas móviles que se pre-conectan previamente a un dominio de fuentes web.",
+  content="1.7%",
+  classes="big-number"
+)
+}}
 
 ¡Guauu! ¡Menos del 2% de las páginas están usando [`preconnect`](https://web.dev/uses-rel-preconnect)! Dado que Google Fonts está al 75%, ¡debería ser más alto! Desarrolladores: si usa Google Fonts, use `preconnect`! Google Fonts: ¡proselitice más `preconnect`!
 
@@ -334,7 +344,7 @@ De hecho, si está usando Google Fonts, continúe y agregue esto a su `<head>` s
         </tr>
       </tbody>
     </table>
-  <figcaption>Figura 6. Las 20 familias de fuentes principales como porcentaje de todas las declaraciones de fuentes.</figcaption>
+  <figcaption>{{ figure_link(caption="Las 20 familias de fuentes principales como porcentaje de todas las declaraciones de fuentes.") }}</figcaption>
 </figure>
 
 No es sorprendente que las entradas principales aquí parezcan coincidir de manera muy similar a la [lista de fuentes de Google Fonts ordenadas por popularidad](https://fonts.google.com/?sort=popularity).
@@ -343,13 +353,17 @@ No es sorprendente que las entradas principales aquí parezcan coincidir de mane
 
 [WOFF2 está bastante bien soportado](https://caniuse.com/#feat=woff2) en los navegadores web hoy. Google Fonts sirve WOFF2, un formato que ofrece una compresión mejorada con respecto a su predecesor WOFF, que en sí mismo ya era una mejora con respecto a otros formatos de fuente existentes.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig7.png">
-    <img src="/static/images/2019/fonts/fig7.png" alt="Figura 7. Popularidad de los tipos MIME de fuentes web." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Gráfico de barras que muestra la popularidad de los tipos MIME de fuentes web. WOFF2 se utiliza en el 74% de las fuentes, seguido del 13% WOFF, el 6% de octet-stream, el 3% TTF, el 2% plano, el 1% HTML, el 1% SFNT y menos del 1% para todos los demás tipos. Las computadoras de escritorio y los dispositivos móviles tienen distribuciones similares.</div>
-  <figcaption id="fig7-caption">Figura 7. Popularidad de los tipos MIME de fuentes web.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="Popularidad de los tipos MIME de fuentes web.",
+  description="Gráfico de barras que muestra la popularidad de los tipos MIME de fuentes web. WOFF2 se utiliza en el 74% de las fuentes, seguido del 13% WOFF, el 6% de octet-stream, el 3% TTF, el 2% plano, el 1% HTML, el 1% SFNT y menos del 1% para todos los demás tipos. Las computadoras de escritorio y los dispositivos móviles tienen distribuciones similares.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 Desde mi perspectiva, se podría argumentar que solo se opte por WOFF2 para fuentes web después de ver los resultados aquí. Me pregunto de dónde viene el doble dígito en uso de WOFF. ¿Quizás los desarrolladores todavía ofrecen fuentes web en Internet Explorer?
 
@@ -357,13 +371,17 @@ Tercer lugar `octet-stream` (y `plano` un poco mas abajo) parecería sugerir que
 
 Profundicemos un poco más y veamos los valores `format()` usados en la propiedad `src:` de las declaraciones `@font-face`:
 
-<figure>
-  <a href="/static/images/2019/fonts/fig8.png">
-    <img src="/static/images/2019/fonts/fig8.png" alt="Figura 8. Popularidad de los formatos de fuente en las declaraciones <code>@font-face</code>." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Gráfico de barras que muestra la popularidad de los formatos utilizados en las declaraciones de fuentes. El 69% de las declaraciones @font-face de las páginas de escritorio especifican el formato WOFF2, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT y menos del 1% OpenType, TTF y OTF. La distribución de las páginas móviles es similar.</div>
-  <figcaption id="fig8-caption">Figura 8. Popularidad de los formatos de fuente en las declaraciones <code>@font-face</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Popularidad de los formatos de fuente en las declaraciones <code>@font-face</code>.",
+  description="Gráfico de barras que muestra la popularidad de los formatos utilizados en las declaraciones de fuentes. El 69% de las declaraciones @font-face de las páginas de escritorio especifican el formato WOFF2, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT y menos del 1% OpenType, TTF y OTF. La distribución de las páginas móviles es similar.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 Estaba esperando ver [fuentes SVG](https://caniuse.com/#feat=svg-fonts) en declive. Tienen errores y las implementaciones se han eliminado de todos los navegadores excepto Safari. Es hora de dejarlas a todas.
 
@@ -504,7 +522,7 @@ El punto de datos SVG aquí también me hace preguntarme con qué tipo de MIME e
       </tr>
     </tbody>
   </table>
-  <figcaption>Figura 9. Las 20 principales combinaciones de formatos de fuente.</figcaption>
+  <figcaption>{{ figure_link(caption="Las 20 principales combinaciones de formatos de fuente.") }}</figcaption>
 </figure>
 
 Este conjunto de datos parece sugerir que la mayoría de las personas ya están usando WOFF2-only en sus bloques `@font-face`. Pero esto es engañoso, por supuesto, según nuestra discusión anterior sobre el dominio de Google Fonts en el conjunto de datos. Google Fonts utiliza algunos métodos de rastreo para ofrecer un archivo CSS simplificado y solo incluye el `format()` más moderno. Como era de esperar, WOFF2 domina los resultados aquí por esa razón, ya que el soporte del navegador para WOFF2 ha sido bastante amplio desde hace algún tiempo.
@@ -517,10 +535,12 @@ La herramienta número uno que tenemos para combatir el comportamiento de carga 
 
 [Soporte de navegador](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display) es genial tambien. Internet Explorer y la versión anterior a Chromium Edge no son compatibles, pero también representan el texto de respaldo de forma predeterminada cuando se carga una fuente web (aquí no se permiten FOIT). Para nuestras pruebas de Chrome, ¿con qué frecuencia se usa `font-display`?
 
-<figure>
-  <div class="big-number">26%</div>
-  <figcaption>Figura 10. Porcentaje de páginas móviles que utilizan el estilo <code>font-display</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas móviles que utilizan el estilo <code>font-display</code>.",
+  content="26%",
+  classes="big-number"
+)
+}}
 
 Supongo que esto aumentará con el tiempo, especialmente ahora que [Google Fonts está agregando `font-display` a todos los nuevos fragmentos de código](https://www.zachleat.com/web/google-fonts-display/) copiado desde su sitio.
 
@@ -528,13 +548,17 @@ Si está utilizando Google Fonts, actualice sus fragmentos. Si no está utilizan
 
 Echemos un vistazo a los valores de `font-display` que son populares:
 
-<figure>
-  <a href="/static/images/2019/fonts/fig11.png">
-    <img src="/static/images/2019/fonts/fig11.png" alt="Figura 11. Uso de valores font-display." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&amp;format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">Gráfico de barras que muestra el uso del estilo font-display. El 2,6% de las páginas móviles configuran este estilo en "swap", 1,5% en "auto", 0,7% en "block", 0,4% en "fallback", 0,2% en "optional" y 0,1% en "swap" entre comillas. que no es válido. La distribución de escritorio es similar, excepto que el uso de "swap" es menor en 0.4 puntos porcentuales y el uso "auto" es mayor en 0.1 puntos porcentuales.</div>
-  <figcaption id="fig11-caption">Figura 11. Uso de valores <code>font-display</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig11.png",
+  caption="Uso de valores <code>font-display</code>.",
+  description="Gráfico de barras que muestra el uso del estilo font-display. El 2,6% de las páginas móviles configuran este estilo en \"swap\", 1,5% en \"auto\", 0,7% en \"block\", 0,4% en \"fallback\", 0,2% en \"optional\" y 0,1% en \"swap\" entre comillas. que no es válido. La distribución de escritorio es similar, excepto que el uso de \"swap\" es menor en 0.4 puntos porcentuales y el uso \"auto\" es mayor en 0.1 puntos porcentuales.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 Como una manera fácil de mostrar texto de respaldo mientras se carga una fuente web, `font-display: swap` reina suprema y es el valor más común. `swap` también es el valor predeterminado utilizado por los nuevos fragmentos de código de Google Fonts. Hubiera esperado que `optional` (solo renderizado si se almacena en caché) tuviera un poco más de uso aquí, ya que algunos promotores prominentes de los desarrolladores presionaron un poco por ello, pero sin lugar.
 
@@ -542,23 +566,31 @@ Como una manera fácil de mostrar texto de respaldo mientras se carga una fuente
 
 Ésta es una pregunta que requiere cierto matiz. ¿Cómo se utilizan las fuentes? ¿Por cuánto contenido hay en la página? ¿Dónde vive este contenido en el diseño? ¿Cómo se renderizan las fuentes? Sin embargo, en lugar de matices, profundicemos en un análisis amplio y de mano dura centrado específicamente en el recuento de solicitudes.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig12.png">
-    <img src="/static/images/2019/fonts/fig12.png" alt="Figura 12. Distribución de solicitudes de fuentes por página." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&amp;format=interactive">
-  </a>
-  <div id="fig12-description" class="visually-hidden">Gráfico de barras que muestra la distribución de solicitudes de fuentes por página. Los percentiles 10, 25, 50, 75 y 90 para escritorio son: 0, 1, 3, 6 y 9 solicitudes de fuentes. La distribución para móviles es idéntica hasta los percentiles 75 y 90, donde las páginas móviles solicitan 1 fuente menos.</div>
-  <figcaption id="fig12-caption">Figura 12. Distribución de solicitudes de fuentes por página.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12.png",
+  caption="Distribución de solicitudes de fuentes por página.",
+  description="Gráfico de barras que muestra la distribución de solicitudes de fuentes por página. Los percentiles 10, 25, 50, 75 y 90 para escritorio son: 0, 1, 3, 6 y 9 solicitudes de fuentes. La distribución para móviles es idéntica hasta los percentiles 75 y 90, donde las páginas móviles solicitan 1 fuente menos.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 La página web mediana realiza tres solicitudes de fuentes web. En el percentil 90, solicitó seis y nueve fuentes web en dispositivos móviles y computadoras de escritorio, respectivamente.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig13.png">
-    <img src="/static/images/2019/fonts/fig13.png" alt="Figura 13. Histograma de fuentes web solicitadas por página." aria-labelledby="fig13-description" aria-describedby="fig13-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">Histograma que muestra la distribución del número de solicitudes de fuentes por página. El número más popular de solicitudes de fuentes es 0 en el 22% de las páginas de escritorio. La distribución cae al 9% de las páginas que tienen 1 fuente, luego alcanza el 10% para 2-4 fuentes antes de caer a medida que aumenta el número de fuentes. Las distribuciones de escritorio y móvil son similares, aunque la distribución móvil se inclina ligeramente hacia tener menos fuentes por página.</div>
-  <figcaption id="fig13-caption">Figura 13. Histograma de fuentes web solicitadas por página.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig13.png",
+  caption="Histograma de fuentes web solicitadas por página.",
+  description="Histograma que muestra la distribución del número de solicitudes de fuentes por página. El número más popular de solicitudes de fuentes es 0 en el 22% de las páginas de escritorio. La distribución cae al 9% de las páginas que tienen 1 fuente, luego alcanza el 10% para 2-4 fuentes antes de caer a medida que aumenta el número de fuentes. Las distribuciones de escritorio y móvil son similares, aunque la distribución móvil se inclina ligeramente hacia tener menos fuentes por página.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 Parece bastante interesante que las solicitudes de fuentes web parezcan ser bastante estables en computadoras de escritorio y dispositivos móviles. Me alegro de ver que la[recomendación de esconder bloques `@font-face` dentro de consultas `@media`](https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6) no fue acogida (ni lo pienses).
 
@@ -566,10 +598,12 @@ Dicho esto, hay un poco más de solicitudes de fuentes realizadas en dispositivo
 
 ### No quieres ganar este premio
 
-<figure>
-  <div class="big-number">718</div>
-  <figcaption>Figura 14. La mayor cantidad de solicitudes de fuentes web en una sola página.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="La mayor cantidad de solicitudes de fuentes web en una sola página.",
+  content="718",
+  classes="big-number"
+)
+}}
 
 El premio a la página que solicita más fuentes web es para un sitio que hizo **718** solicitudes de fuentes web!
 
@@ -579,10 +613,12 @@ Es irónico que un complemento de optimización del rendimiento pueda empeorar s
 
 ## Coincidencia más precisa con `unicode-range`
 
-<figure>
-  <div class="big-number">56%</div>
-  <figcaption>Figura 15. Porcentaje de páginas móviles que declaran una fuente web con la propiedad <code>unicode-range</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas móviles que declaran una fuente web con la propiedad <code>unicode-range</code>.",
+  content="56%",
+  classes="big-number"
+)
+}}
 
 [`unicode-range`](https://developer.mozilla.org/es/docs/Web/CSS/@font-face/unicode-range) es una excelente propiedad de CSS para que el navegador sepa específicamente qué puntos de código le gustaría usar la página en el archivo de fuente. Si la declaración `@font-face` tiene un `unicode-range`, el contenido de la página debe coincidir con uno de los puntos de código en el rango antes de que se solicite la fuente. Es algo muy bueno.
 
@@ -590,10 +626,12 @@ Esta es otra métrica que espero que esté sesgada por el uso de Google Fonts, y
 
 ## No solicite fuentes web si existe una fuente del sistema
 
-<figure>
-  <div class="big-number">59%</div>
-  <figcaption>Figura 16. Porcentaje de páginas móviles que declaran una fuente web con la propiedad <code>local ()</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas móviles que declaran una fuente web con la propiedad <code>local ()</code>.",
+  content="59%",
+  classes="big-number"
+)
+}}
 
 `local()` es una buena forma de hacer referencia a una fuente del sistema en su `@font-face` `src`. Si la fuente `local()` existe, no necesita solicitar una fuente web en absoluto. Google Fonts usa esto de manera extensa y controvertida, por lo que es probable que sea otro ejemplo de datos sesgados si estamos tratando de obtener patrones de la tierra del usuario.
 
@@ -601,10 +639,12 @@ También debe tenerse en cuenta aquí que personas más inteligentes que yo (Bra
 
 ## Fuentes condensadas y `font-stretch`
 
-<figure>
-  <div class="big-number">7%</div>+
-  <figcaption>Figura 17. Porcentaje de páginas de escritorio y móviles que incluyen un estilo con la propiedad <code>font-stretch</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas de escritorio y móviles que incluyen un estilo con la propiedad <code>font-stretch</code>.",
+  content="7%",
+  classes="big-number"
+)
+}}
 
 Históricamente, `font-stretch` ha sufrido de un soporte deficiente del navegador y no era una prpopiedad `@font-face` conocida. Lee mas sobre [`font-stretch` en MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). Pero el [soporte de los navegadores](https://caniuse.com/#feat=css-font-stretch) se ha ampliado.
 
@@ -614,29 +654,37 @@ Se ha sugerido que el uso de fuentes condensadas en ventanas gráficas más pequ
 
 [Las fuentes variables](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) permite incluir varios tamaños y estilos de fuente en un archivo de fuente.
 
-<figure>
-  <div class="big-number">1.8%</div>
-  <figcaption>Figura 18. Porcentaje de páginas que incluyen una fuente variable.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas que incluyen una fuente variable.",
+  content="1.8%",
+  classes="big-number"
+)
+}}
 
 Incluso con un 1.8%, esto fue más alto de lo esperado, aunque estoy emocionado de ver esto despegar. [Google Fonts v2](https://developers.google.com/fonts/docs/css2) incluye cierto soporte para fuentes variables.
 
-<figure>
-  <a href="/static/images/2019/fonts/fig19.png">
-    <img src="/static/images/2019/fonts/fig19.png" alt="Figura 19. Uso de los ejes 'font-variación-settings'." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&amp;format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">Gráfico de barras que muestra el uso de la propiedad font-variation-settings. El 42% de las propiedades en las páginas de escritorio se establecen en el valor "opsz", el 32% en "wght", el 16% en "wdth", el 2% o menos en "roun", "crsb", "slnt", "inln" , y más. Las diferencias más notables entre las páginas de escritorio y móviles son el 26% de uso de "opsz", el 38% de "wght" y el 23% de "wdth".</div>
-  <figcaption id="fig19-caption">Figura 19. Uso de los ejes <code>font-variation-settings</code>.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19.png",
+  caption="Uso de los ejes <code>font-variation-settings</code>.",
+  description="Gráfico de barras que muestra el uso de la propiedad font-variation-settings. El 42% de las propiedades en las páginas de escritorio se establecen en el valor \"opsz\", el 32% en \"wght\", el 16% en \"wdth\", el 2% o menos en \"roun\", \"crsb\", \"slnt\", \"inln\" , y más. Las diferencias más notables entre las páginas de escritorio y móviles son el 26% de uso de \"opsz\", el 38% de \"wght\" y el 23% de \"wdth\".",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 A través del lente de este gran conjunto de datos, estos son tamaños de muestra muy bajos; tome estos resultados con un grano de sal. Sin embargo, `opsz` como el eje más común en las páginas de escritorio es notable, con `wght` y `wdth` al final. En mi experiencia, las demostraciones introductorias de fuentes variables suelen estar basadas en el peso.
 
 ## ¿Las fuentes de color también podrían ser el futuro?
 
-<figure>
-  <div class="big-number">117</div>
-  <figcaption>Figura 20. El número de páginas web de escritorio que incluyen una fuente de color.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="El número de páginas web de escritorio que incluyen una fuente de color.",
+  content="117",
+  classes="big-number"
+)
+}}
 
 El uso aquí de estas es básicamente inexistente, pero puede consultar el excelente recurso [Color Fonts! WTF?](https://www.colorfonts.wtf/) para obtener más información. Similar (pero no en absoluto) al formato SVG para fuentes (que es malo y va a desaparecer), esta le permite incrustar SVG dentro de archivos OpenType, lo cual es increíble y genial.
 
