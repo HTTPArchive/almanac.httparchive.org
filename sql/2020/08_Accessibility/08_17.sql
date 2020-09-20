@@ -5,7 +5,7 @@ SELECT
   COUNT(0) AS total_sites,
 
   COUNTIF(total_tab_selected_controls > 0) AS total_with_tab_selected_controls,
-  ROUND((COUNTIF(total_tab_selected_controls > 0) / COUNT(0)) * 100, 2) AS pct_with_tab_selected_controls
+  COUNTIF(total_tab_selected_controls > 0) / COUNT(0) AS pct_with_tab_selected_controls
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

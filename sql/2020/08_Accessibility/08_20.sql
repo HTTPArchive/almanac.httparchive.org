@@ -4,7 +4,7 @@ SELECT
   client,
   COUNT(0) AS total_sites,
   COUNTIF(uses_sr_only) AS sites_with_sr_only,
-  ROUND((COUNTIF(uses_sr_only) / COUNT(0)) * 100, 2) AS pct_sites_with_sr_only
+  COUNTIF(uses_sr_only) / COUNT(0) AS pct_sites_with_sr_only
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

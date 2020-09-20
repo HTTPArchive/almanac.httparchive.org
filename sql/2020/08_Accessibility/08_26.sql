@@ -6,8 +6,8 @@ SELECT
   COUNTIF(total_videos > 0) AS total_with_video,
   COUNTIF(total_tracks > 0) AS total_with_tracks,
 
-  ROUND(COUNTIF(total_videos > 0) * 100 / COUNT(0), 2) AS pct_sites_with_videos,
-  ROUND(COUNTIF(total_tracks > 0) * 100 / COUNTIF(total_videos > 0), 2) AS pct_sites_with_tracks
+  COUNTIF(total_videos > 0) / COUNT(0) AS pct_sites_with_videos,
+  COUNTIF(total_tracks > 0) / COUNTIF(total_videos > 0) AS pct_sites_with_tracks
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

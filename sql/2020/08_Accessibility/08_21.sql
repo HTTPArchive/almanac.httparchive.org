@@ -7,9 +7,9 @@ SELECT
   COUNTIF(total_title_words > 3) AS total_title_with_four_or_more_words,
   COUNTIF(title_changed_on_render) AS total_title_changed,
 
-  ROUND(COUNTIF(total_title_words > 0) * 100 / COUNT(0), 2) AS pct_with_title,
-  ROUND(COUNTIF(total_title_words > 3) * 100 / COUNTIF(total_title_words > 0), 2) AS pct_titles_four_or_more_words,
-  ROUND(COUNTIF(title_changed_on_render) * 100 / COUNTIF(total_title_words > 0), 2) AS pct_titles_changed_on_render
+  COUNTIF(total_title_words > 0) / COUNT(0) AS pct_with_title,
+  COUNTIF(total_title_words > 3) / COUNTIF(total_title_words > 0) AS pct_titles_four_or_more_words,
+  COUNTIF(title_changed_on_render) / COUNTIF(total_title_words > 0) AS pct_titles_changed_on_render
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

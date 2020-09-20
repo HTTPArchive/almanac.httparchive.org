@@ -7,7 +7,7 @@ SELECT
   COUNTIF(total_anchors_with_role_button > 0) AS sites_with_anchor_role_button,
 
   # Of sites that have anchors... how many have an anchor with a role="button"
-  ROUND((COUNTIF(total_anchors_with_role_button > 0) / COUNTIF(total_anchors > 0)) * 100, 2) AS pct_sites_with_anchor_role_button
+  COUNTIF(total_anchors_with_role_button > 0) / COUNTIF(total_anchors > 0) AS pct_sites_with_anchor_role_button
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

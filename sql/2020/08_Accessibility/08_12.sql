@@ -14,7 +14,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   COUNT(DISTINCT url) AS pages,
   total,
-  ROUND(COUNT(DISTINCT url) * 100 / total, 2) AS pct
+  COUNT(DISTINCT url) / total AS pct
 FROM
   `httparchive.pages.2020_08_01_*`
 JOIN (

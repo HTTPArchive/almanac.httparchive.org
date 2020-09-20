@@ -8,9 +8,9 @@ SELECT
   COUNTIF(max_scale_1_or_less IS TRUE) AS total_locked_max_scale,
   COUNTIF(not_scalable OR (max_scale_1_or_less IS TRUE)) AS total_either,
 
-  ROUND(COUNTIF(not_scalable) * 100 / COUNT(0), 2) AS perc_sites_no_scale,
-  ROUND(COUNTIF(max_scale_1_or_less IS TRUE) * 100 / COUNT(0), 2) AS perc_sites_locked_max_scale,
-  ROUND(COUNTIF(not_scalable OR (max_scale_1_or_less IS TRUE)) * 100 / COUNT(0), 2) AS perc_sites_either
+  COUNTIF(not_scalable) / COUNT(0) AS perc_sites_no_scale,
+  COUNTIF(max_scale_1_or_less) / COUNT(0) AS perc_sites_locked_max_scale,
+  COUNTIF(not_scalable OR max_scale_1_or_less) / COUNT(0) AS perc_sites_either
 FROM (
   SELECT
     client,

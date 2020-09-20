@@ -5,7 +5,7 @@ SELECT
   COUNT(0) AS total_sites,
   COUNTIF(total_duplicate_ids > 0) AS total_with_duplicate_ids,
 
-  ROUND(COUNTIF(total_duplicate_ids > 0) * 100 / COUNT(0), 2) AS pct_with_duplicate_ids,
+  COUNTIF(total_duplicate_ids > 0) / COUNT(0) AS pct_with_duplicate_ids,
 
   SUM(total_duplicate_ids) AS total_duplicate_ids,
   APPROX_QUANTILES(total_duplicate_ids, 100)[SAFE_ORDINAL(50)] AS median_duplicate_ids,

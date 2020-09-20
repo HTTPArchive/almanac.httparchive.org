@@ -10,9 +10,9 @@ SELECT
   COUNTIF(hash_only > 0) AS has_hash_only_link,
   COUNTIF(javascript_void > 0) AS has_javascript_void_links,
 
-  ROUND((COUNTIF(same_page > 0) / COUNTIF(total_anchors > 0)) * 100, 2) AS pct_has_same_page,
-  ROUND((COUNTIF(hash_only > 0) / COUNTIF(total_anchors > 0)) * 100, 2) AS pct_has_hash_only_link,
-  ROUND((COUNTIF(javascript_void > 0) / COUNTIF(total_anchors > 0)) * 100, 2) AS pct_has_javascript_void_links
+  COUNTIF(same_page > 0) / COUNTIF(total_anchors > 0) AS pct_has_same_page,
+  COUNTIF(hash_only > 0) / COUNTIF(total_anchors > 0) AS pct_has_hash_only_link,
+  COUNTIF(javascript_void > 0) / COUNTIF(total_anchors > 0) AS pct_has_javascript_void_links
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

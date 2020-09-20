@@ -6,13 +6,13 @@ SELECT
   COUNTIF(total_placeholder > 0) AS sites_with_placeholder,
   COUNTIF(total_no_label > 0) AS sites_with_no_label, # Has placeholder but no label
 
-  ROUND((COUNTIF(total_placeholder > 0) / COUNT(0)) * 100, 2) AS pct_sites_with_placeholder,
+  COUNTIF(total_placeholder > 0) / COUNT(0) AS pct_sites_with_placeholder,
   # Sites with placeholders that dont always use labels alongside them
-  ROUND((COUNTIF(total_no_label > 0) / COUNTIF(total_placeholder > 0)) * 100, 2) AS pct_placeholder_sites_with_no_label,
+  COUNTIF(total_no_label > 0) / COUNTIF(total_placeholder > 0) AS pct_placeholder_sites_with_no_label,
 
   SUM(total_placeholder) AS total_placeholders,
   SUM(total_no_label) AS total_placeholder_with_no_label,
-  ROUND((SUM(total_no_label) / SUM(total_placeholder)) * 100, 2) AS pct_placeholders_with_no_label
+  SUM(total_no_label) / SUM(total_placeholder) AS pct_placeholders_with_no_label
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -7,9 +7,9 @@ SELECT
   COUNTIF(total_role_link > 0) AS sites_with_div_span_role_link,
   COUNTIF(total_either > 0) AS sites_with_div_span_role_either,
 
-  ROUND((COUNTIF(total_role_button > 0) / COUNT(0)) * 100, 2) AS pct_sites_with_div_span_role_button,
-  ROUND((COUNTIF(total_role_link > 0) / COUNT(0)) * 100, 2) AS pct_sites_with_div_span_role_link,
-  ROUND((COUNTIF(total_either > 0) / COUNT(0)) * 100, 2) AS pct_sites_with_div_span_role_either,
+  COUNTIF(total_role_button > 0) / COUNT(0) AS pct_sites_with_div_span_role_button,
+  COUNTIF(total_role_link > 0) / COUNT(0) AS pct_sites_with_div_span_role_link,
+  COUNTIF(total_either > 0) / COUNT(0) AS pct_sites_with_div_span_role_either,
 
   SUM(total_role_button) AS total_div_span_role_button,
   SUM(total_role_link) AS total_div_span_role_link,

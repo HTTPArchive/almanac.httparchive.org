@@ -23,18 +23,18 @@ SELECT
   total_alts_with_file_extensions,
 
   # Of sites with a non-empty alt, what % have an alt with a file extension
-  ROUND(sites_with_file_extension_alt * 100 / sites_with_non_empty_alt, 2) AS pct_sites_with_file_extension_alt,
-  ROUND(total_alts_with_file_extensions * 100 / total_non_empty_alts, 2) AS pct_alts_with_file_extension,
+  sites_with_file_extension_alt / sites_with_non_empty_alt AS pct_sites_with_file_extension_alt,
+  total_alts_with_file_extensions / total_non_empty_alts AS pct_alts_with_file_extension,
 
   extension_stat.extension AS extension,
   COUNT(0) AS total_sites_using,
   # Of sites with a non-empty alt, what % have an alt with this file extension
-  ROUND(COUNT(0) * 100 / sites_with_non_empty_alt, 2) AS pct_applicable_sites_using,
+  COUNT(0) / sites_with_non_empty_alt AS pct_applicable_sites_using,
 
   SUM(extension_stat.total) AS total_occurances,
-  ROUND(SUM(extension_stat.total) * 100 / total_alts_with_file_extensions, 2) AS pct_total_occurances,
+  SUM(extension_stat.total) / total_alts_with_file_extensions AS pct_total_occurances,
 
-  ROUND(COUNT(0) * 100 / total_sites, 2) AS pct_sites_using
+  COUNT(0) / total_sites AS pct_sites_using
 FROM
   `httparchive.pages.2020_08_01_*`
   UNNEST(getUsedExtensions(JSON_EXTRACT_SCALAR(payload, "$._a11y"))) AS extension_stat

@@ -14,7 +14,7 @@ SELECT
   total_sites,
   role,
   COUNT(0) AS total_sites_using,
-  ROUND((COUNT(0) / total_sites) * 100, 2) AS pct_sites_using
+  COUNT(0) / total_sites AS pct_sites_using
 FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS role

@@ -18,7 +18,7 @@ SELECT
 
   attribute,
   COUNT(0) AS total_sites_using,
-  ROUND(COUNT(0) * 100 / total_sites_with_video, 2) AS pct_of_sites_using_video
+  COUNT(0) / total_sites_with_video AS pct_of_sites_using_video
 FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS attribute
@@ -27,7 +27,7 @@ LEFT JOIN (
     client,
     COUNT(0) AS total_sites,
     COUNTIF(total_videos > 0) AS total_sites_with_video,
-    ROUND(COUNTIF(total_videos > 0) * 100 / COUNT(0), 2) AS pct_sites_with_video
+    COUNTIF(total_videos > 0) / COUNT(0) AS pct_sites_with_video
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,

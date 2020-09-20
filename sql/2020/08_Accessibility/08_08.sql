@@ -6,9 +6,9 @@ SELECT
   SUM(total_title) AS total_titles,
   SUM(total_both) AS total_both,
   SUM(total_alt_same_as_title) AS total_alt_same_as_title,
-  ROUND((SUM(total_both) / SUM(total_alt)) * 100, 2) AS pct_title_used_with_alt,
-  ROUND((SUM(total_alt_same_as_title) / SUM(total_both) * 100), 2) AS pct_same_when_both_used,
-  ROUND((SUM(total_alt_same_as_title) / SUM(total_alt)) * 100, 2) AS pct_same_of_all_alts
+  SUM(total_both) / SUM(total_alt) AS pct_title_used_with_alt,
+  SUM(total_alt_same_as_title) / SUM(total_both) AS pct_same_when_both_used,
+  SUM(total_alt_same_as_title) / SUM(total_alt) AS pct_same_of_all_alts
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

@@ -9,12 +9,12 @@ SELECT
   COUNTIF(total_th_with_scope > 0) AS sites_with_th_scope,
   COUNTIF(total_td_with_headers > 0) AS sites_with_td_headers,
 
-  ROUND((COUNTIF(total_tables > 0) / COUNT(0)) * 100, 2) AS pct_sites_with_table,
-  ROUND((COUNTIF(total_th > 0) / COUNT(0)) * 100, 2) AS pct_sites_with_th,
-  ROUND((COUNTIF(total_td > 0) / COUNT(0)) * 100, 2) AS pct_sites_with_td,
+  COUNTIF(total_tables > 0) / COUNT(0) AS pct_sites_with_table,
+  COUNTIF(total_th > 0) / COUNT(0) AS pct_sites_with_th,
+  COUNTIF(total_td > 0) / COUNT(0) AS pct_sites_with_td,
 
-  ROUND((COUNTIF(total_th_with_scope > 0) / COUNTIF(total_th > 0)) * 100, 2) AS pct_th_sites_with_scope,
-  ROUND((COUNTIF(total_td_with_headers > 0) / COUNTIF(total_td > 0)) * 100, 2) AS pct_td_sites_with_headers
+  COUNTIF(total_th_with_scope > 0) / COUNTIF(total_th > 0) AS pct_th_sites_with_scope,
+  COUNTIF(total_td_with_headers > 0) / COUNTIF(total_td > 0) AS pct_td_sites_with_headers
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

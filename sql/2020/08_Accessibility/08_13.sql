@@ -32,7 +32,7 @@ SELECT
 
   type_and_key.shortcut AS shortcut,
   COUNT(0) AS total_uses,
-  ROUND((COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, type)) * 100, 2) AS pct_of_type_uses
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, type) AS pct_of_type_uses
 FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST(getShortcuts(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS type_and_key

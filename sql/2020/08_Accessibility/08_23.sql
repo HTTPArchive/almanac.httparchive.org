@@ -26,8 +26,8 @@ SELECT
   COUNTIF(tab_index_stats.total > 0) AS total_with_tab_indexes,
   COUNTIF(tab_index_stats.total_positive > 0) AS total_with_positive_tab_indexes,
 
-  ROUND((COUNTIF(tab_index_stats.total > 0) / COUNT(0)) * 100, 2) AS pct_with_tab_indexes,
-  ROUND((COUNTIF(tab_index_stats.total_positive > 0) / COUNT(0)) * 100, 2) AS pct_with_positive_tab_indexes
+  COUNTIF(tab_index_stats.total > 0) / COUNT(0) AS pct_with_tab_indexes,
+  COUNTIF(tab_index_stats.total_positive > 0) / COUNT(0) AS pct_with_positive_tab_indexes
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
