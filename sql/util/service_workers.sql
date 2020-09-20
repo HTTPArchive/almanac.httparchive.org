@@ -1,5 +1,5 @@
-SELECT DISTINCT
-  date,
+SELECT
+  DISTINCT date,
   client,
   page,
   url,
