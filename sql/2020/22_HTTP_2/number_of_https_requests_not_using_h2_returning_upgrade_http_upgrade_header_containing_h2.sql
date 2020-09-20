@@ -17,7 +17,8 @@ LANGUAGE js AS """
 
 SELECT 
   client,
-  firstHtml,  
+  firstHtml,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
   COUNTIF(getUpgradeHeader(payload) LIKE "%h2%") AS num_requests,
   COUNT(0) AS total
 FROM 
@@ -26,7 +27,9 @@ WHERE
   date='2020-08-01' AND 
   url LIKE "https://%" AND
   JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2" AND
-  getUpgradeHeader(payload) LIKE "%h2%"
+  getUpgradeHeader(payload) LIKE "%h2%" AND
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') != ''
 GROUP BY
   client,
-  firstHtml
+  firstHtml,
+  http_version
