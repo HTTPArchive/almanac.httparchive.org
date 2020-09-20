@@ -49,4 +49,4 @@ FROM
 USING (_TABLE_SUFFIX)
     ), UNNEST(wpt_bodies_info.hreflangs) AS hreflang
 GROUP BY total, hreflang, client
-ORDER BY client, pct DESC
+ORDER BY count, client DESC
