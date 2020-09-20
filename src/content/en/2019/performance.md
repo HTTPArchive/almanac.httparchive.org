@@ -260,6 +260,7 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 
 {{ figure_markup(
   image="fig14.png",
+  alt="Distribution of desktop websites' fast, moderate, and slow FID performance.",
   caption="Distribution of <em>desktop</em> websites' fast, moderate, and slow FID performance.",
   description="Distribution of 1,000 desktop websites' fast, moderate, and slow FID. The distribution of fast FID decreases very slowly from 100% to 90% for the fastest three quarters of websites. After that, fast FID decreases slightly to 75%. Nearly all desktop websites have more than 75% fast FID experiences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&format=interactive",
@@ -272,6 +273,7 @@ Compared to the previous metrics, the distribution of aggregate FID performance 
 
 {{ figure_markup(
   image="fig15.png",
+  alt="Distribution of phone websites' fast, moderate, and slow FID performance.",
   caption="Distribution of <em>phone</em> websites' fast, moderate, and slow FID performance.",
   description="Distribution of 1,000 mobile websites' fast, moderate, and slow FID. The distribution of fast FID declines steadily but much more quickly than desktop. It reaches 75% fast for at three quarters of websites then quickly drops to 0%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&format=interactive",
