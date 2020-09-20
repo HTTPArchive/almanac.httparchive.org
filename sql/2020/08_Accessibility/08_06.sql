@@ -15,7 +15,7 @@ FROM (
     FROM
       `httparchive.pages.2020_08_01_*`
       UNNEST(
-        JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), "$.images.alt_lengths")
+        JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.alt_lengths')
       ) AS alt_length_string
   )
 )

@@ -21,7 +21,7 @@ SELECT
   COUNT(0) / total_sites_with_video AS pct_of_sites_using_video
 FROM
   `httparchive.pages.2020_08_01_*`,
-  UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS attribute
+  UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS attribute
 LEFT JOIN (
   SELECT
     client,
@@ -31,7 +31,7 @@ LEFT JOIN (
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
-      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._almanac"), "$.videos.total") AS INT64) AS total_videos
+      CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.total') AS INT64) AS total_videos
     FROM
       `httparchive.pages.2020_08_01_*`
   )

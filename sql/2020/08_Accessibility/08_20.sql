@@ -8,7 +8,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._a11y"), "$.does_page_use_sr_only_classes") AS BOOL) AS uses_sr_only
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._a11y'), '$.does_page_use_sr_only_classes') AS BOOL) AS uses_sr_only
   FROM
     `httparchive.pages.2020_08_01_*`
 )

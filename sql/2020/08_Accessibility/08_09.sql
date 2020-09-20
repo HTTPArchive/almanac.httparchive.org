@@ -17,7 +17,7 @@ SELECT
   COUNT(0) / total_sites AS pct_sites_using
 FROM
   `httparchive.pages.2020_08_01_*`,
-  UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS attribute
+  UNNEST(getUsedAttributes(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS attribute
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX,

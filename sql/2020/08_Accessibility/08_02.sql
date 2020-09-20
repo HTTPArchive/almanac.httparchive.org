@@ -5,8 +5,8 @@ SELECT
   COUNT(0) AS total_sites,
   COUNTIF(has_meta_viewport) AS total_viewports,
   COUNTIF(not_scalable) AS total_no_scale,
-  COUNTIF(max_scale_1_or_less IS TRUE) AS total_locked_max_scale,
-  COUNTIF(not_scalable OR (max_scale_1_or_less IS TRUE)) AS total_either,
+  COUNTIF(max_scale_1_or_less) AS total_locked_max_scale,
+  COUNTIF(not_scalable OR max_scale_1_or_less) AS total_either,
 
   COUNTIF(not_scalable) / COUNT(0) AS perc_sites_no_scale,
   COUNTIF(max_scale_1_or_less) / COUNT(0) AS perc_sites_locked_max_scale,

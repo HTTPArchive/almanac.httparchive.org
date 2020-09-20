@@ -13,8 +13,8 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._wpt_bodies"), "$.title.title_changed_on_render") AS BOOL) AS title_changed_on_render,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._wpt_bodies"), "$.title.rendered.primary.words") AS INT64) AS total_title_words
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.title.title_changed_on_render') AS BOOL) AS title_changed_on_render,
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.title.rendered.primary.words') AS INT64) AS total_title_words
   FROM
     `httparchive.pages.2020_08_01_*`
 )

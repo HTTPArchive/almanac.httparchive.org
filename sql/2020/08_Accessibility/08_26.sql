@@ -11,8 +11,8 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._almanac"), "$.videos.total") AS INT64) AS total_videos,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._almanac"), "$.videos.tracks.total") AS INT64) AS total_tracks
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.total') AS INT64) AS total_videos,
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.videos.tracks.total') AS INT64) AS total_tracks
   FROM
     `httparchive.pages.2020_08_01_*`
 )

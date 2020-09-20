@@ -31,7 +31,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    getTotalPositiveTabIndexes(JSON_EXTRACT_SCALAR(payload, "$._almanac")) AS tab_index_stats
+    getTotalPositiveTabIndexes(JSON_EXTRACT_SCALAR(payload, '$._almanac')) AS tab_index_stats
   FROM
     `httparchive.pages.2020_08_01_*`
 )

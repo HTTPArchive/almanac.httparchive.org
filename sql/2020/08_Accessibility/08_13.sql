@@ -35,7 +35,7 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, type) AS pct_of_type_uses
 FROM
   `httparchive.pages.2020_08_01_*`,
-  UNNEST(getShortcuts(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS type_and_key
+  UNNEST(getShortcuts(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS type_and_key
 GROUP BY
   client,
   type_and_key.type,

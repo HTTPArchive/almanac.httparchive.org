@@ -14,7 +14,7 @@ SELECT
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._markup"), "$.ids.duplicate_ids_total") AS INT64) AS total_duplicate_ids
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._markup'), '$.ids.duplicate_ids_total') AS INT64) AS total_duplicate_ids
   FROM
     `httparchive.pages.2020_08_01_*`
 )

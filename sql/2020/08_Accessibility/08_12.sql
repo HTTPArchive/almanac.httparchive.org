@@ -28,7 +28,7 @@ JOIN (
 )
 USING (_TABLE_SUFFIX)
 WHERE
-  getEarlyHash(JSON_EXTRACT_SCALAR(payload, "$._almanac")) > 0
+  getEarlyHash(JSON_EXTRACT_SCALAR(payload, '$._almanac')) > 0
 GROUP BY
   client,
   total

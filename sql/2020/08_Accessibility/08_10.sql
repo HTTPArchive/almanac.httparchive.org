@@ -17,7 +17,7 @@ SELECT
   COUNT(0) / total_sites AS pct_sites_using
 FROM
   `httparchive.pages.2020_08_01_*`,
-  UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, "$._almanac"))) AS role
+  UNNEST(getUsedRoles(JSON_EXTRACT_SCALAR(payload, '$._almanac'))) AS role
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX,

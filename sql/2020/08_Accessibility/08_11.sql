@@ -17,10 +17,10 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
 
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._wpt_bodies"), "$.anchors.rendered.same_page.total") AS INT64) AS same_page,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._wpt_bodies"), "$.anchors.rendered.hash_only_link") AS INT64) AS hash_only,
-    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._wpt_bodies"), "$.anchors.rendered.javascript_void_links") AS INT64) AS javascript_void,
-    IFNULL(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, "$._element_count"), "$.a") AS INT64), 0) AS total_anchors
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.anchors.rendered.same_page.total') AS INT64) AS same_page,
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.anchors.rendered.hash_only_link') AS INT64) AS hash_only,
+    CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._wpt_bodies'), '$.anchors.rendered.javascript_void_links') AS INT64) AS javascript_void,
+    IFNULL(CAST(JSON_EXTRACT_SCALAR(JSON_EXTRACT_SCALAR(payload, '$._element_count'), '$.a') AS INT64), 0) AS total_anchors
   FROM
     `httparchive.pages.2020_08_01_*`
 )
