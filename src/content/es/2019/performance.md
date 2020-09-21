@@ -303,7 +303,7 @@ Cuando aplicamos el etiquetado PSI a las experiencias de escritorio y móvil, la
 
 {{ figure_markup(
   image="fig17.png",
-  caption='Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por ECT (effective connection type).',
+  alt='Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por ECT (effective connection type).',
   caption='Distribución de sitios web etiquetados como que tienen un FID rápido, moderado o lento, desglosados por <abbr title="effective connection type">ECT</abbr>.',
   description="Bar chart of FID distributions per effective connection type. 4G fast, moderate, slow: 41%, 45%, and 15% respectively. 3G: 22%, 52%, and 26%. 2G: 19%, 58%, 23%. Slow 2G: 15%, 58%, 27%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&format=interactive",

@@ -53,13 +53,17 @@ SEOの基本的なベストプラクティスの基準を満たしているWeb�
 私達は、少なくとも３つの単語グループを探し合計でいくつ見つかったかを数えるようにして、ページのコンテンツを評価しました。
 デスクトップページには単語グループを持たないものが2.73%見つかりました。これはWebサイトが何を指しているのかを検索エンジンが理解するのに役立つ本文コンテンツが無いことを示しています。
 
-<figure>
-  <a href="/static/images/2019/seo/fig1.png">
-    <img src="/static/images/2019/seo/fig1.png" alt="図1.ページ毎の単語数分布。" aria-labelledby="fig1-caption" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">ページ毎の単語分布。デスクトップページあたりの単語数の中央値は346でモバイルページの場合は306となっています。デスクトップページには、パーセンタイル全体でより多くの単語があり、90パーセンタイルで120単語もあります</div>
-  <figcaption id="fig1-caption" >図1.ページ毎の単語数分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1.png",
+  caption="ページ毎の単語数分布。",
+  description="ページ毎の単語分布。デスクトップページあたりの単語数の中央値は346でモバイルページの場合は306となっています。デスクトップページには、パーセンタイル全体でより多くの単語があり、90パーセンタイルで120単語もあります",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 デスクトップ向けホームページの中央値は346単語で、モバイル向けホームページの中央値は306単語とわずかに少ない単語数になっています。
 これはモバイル向けサイトが少し少ない量をユーザーにコンテンツとして提供していることを示していますが、300単語を超えたとしても読むのには問題ない量でしょう。
@@ -72,25 +76,33 @@ SEOの基本的なベストプラクティスの基準を満たしているWeb�
 見出し（`H1`、 `H2`、 `H3`、など）を使ってページを整え構造化すれば、コンテンツは読みやすく、解析しやすいようになります。
 そんな見出しの重要性にもかかわらず、ページの10.67%には見出しタグがまったくありませんでした。
 
-<figure>
-  <a href="/static/images/2019/seo/fig2.png">
-    <img src="/static/images/2019/seo/fig2.png" alt="図2.ページ毎の見出し数分布。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">ページ毎の見出しの分布。 デスクトップもモバイルもページ毎の見出しの中央値は10です。10/25/75/90それぞれのパーセンタイルではデスクトップの場合 0、3、21、39となっており、モバイルの見出し分布よりも少しだけ高くなっています。</div>
-  <figcaption id="fig2-caption" >図2.ページ毎の見出し数分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  caption="ページ毎の見出し数分布。",
+  description="ページ毎の見出しの分布。 デスクトップもモバイルもページ毎の見出しの中央値は10です。10/25/75/90それぞれのパーセンタイルではデスクトップの場合 0、3、21、39となっており、モバイルの見出し分布よりも少しだけ高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 １ページあたりの見出し要素の中央値は10となっています。
 見出しにはモバイルページで30単語、デスクトップページで32単語が含まれています。
 これは、見出しを活用できているWebサイトが、ページが読みやすく、説明的で、ページの構造とコンテキストを検索エンジンボットに明確に概説することに多大な労力を費やしていることを意味します。
 
-<figure>
-  <a href="/static/images/2019/seo/fig3.png">
-    <img src="/static/images/2019/seo/fig3.png" alt="図3.ページ毎のH1の長さの分布。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">ページ毎の最初のH1文字数の分布。デスクトップとモバイルの分配はほぼ同様となっており、10、25、50、75、90パーセンタイルで6、11、19、31、47文字です。</div>
-  <figcaption id="fig3-caption" >図3.ページ毎のH1の長さの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="ページ毎のH1の長さの分布。",
+  description="ページ毎の最初のH1文字数の分布。デスクトップとモバイルの分配はほぼ同様となっており、10、25、50、75、90パーセンタイルで6、11、19、31、47文字です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 具体的な見出しの長さを見ると、最初に見つかった`H1`要素の長さの中央値はデスクトップで19文字です。
 
@@ -104,21 +116,27 @@ SEOとアクセシビリティのための`H1`と見出しの処理に関する�
 
 #### ページのタイトル
 
-<figure>
-  <div class="big-number">97%</div>
-  <figcaption>図4. <code>&lt;title></code>タグを含むモバイルページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="<code>&lt;title&gt;</code> タグを含むモバイルページの割合。",
+  content="97%",
+  classes="big-number"
+)
+}}
 
 ページのタイトルはページの目的をユーザーや検索エンジンに伝える重要な手段です。
 `<title>`タグはSERPSの見出にも、ページにアクセスする時のブラウザーのタブのタイトルとしても使われるので、モバイルページの97.1%にドキュメントタイトルが存在することは驚くことではないでしょう。
 
-<figure>
-  <a href="/static/images/2019/seo/fig5.png">
-    <img src="/static/images/2019/seo/fig5.png" alt="図5.ページごとのタイトルの長さの分布。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">ページ毎のタイトル要素毎の文字数分布。デスクトップのタイトルの長さそれぞれの10、25、50、75、90パーセンタイルは、4、9、20、40、66文字です。モバイルの分布も非常に似ています。</div>
-  <figcaption id="fig5-caption">図5.ページごとのタイトルの長さの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="ページごとのタイトルの長さの分布。",
+  description="ページ毎のタイトル要素毎の文字数分布。デスクトップのタイトルの長さそれぞれの10、25、50、75、90パーセンタイルは、4、9、20、40、66文字です。モバイルの分布も非常に似ています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 一般的に[GoogleのSERPはページタイトルの最初の50〜60文字を表示](https://moz.com/learn/seo/title-tag)しますが、`<title>`タグの長さの中央値はモバイルページで21文字、デスクトップページで20文字でした。
 75パーセンタイルでも、境界を下回っています。
@@ -129,13 +147,17 @@ SEOとアクセシビリティのための`H1`と見出しの処理に関する�
 `<title>`タグと比べると、メタディスクリプションが検出されたページは少なくなっており、モバイル用ホームページの64.02%にだけメタディスクリプションが設定されています。
 Googleが検索者のクエリに応じてSERP内のメタディスクリプションの記述を頻繁に書き換えることを考慮すると、おそらくWebサイトの所有者はメタディスクリプションを含めることを重要視しないでしょう。
 
-<figure>
-  <a href="/static/images/2019/seo/fig6.png">
-    <img src="/static/images/2019/seo/fig6.png" alt="図6. ページ毎のメタ記述の長さ分布。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">ページ毎のメタ記述毎の文字数分布。デスクトップのタイトルの長さの10、25、50、75、90パーセンタイルはそれぞれ、9、48、123、162、230文字です。モバイルの分布は任意のパーセンタイルでは10文字未満だけわずかに高くなっています。</div>
-  <figcaption id="fig6-caption" >図6. ページ毎のメタ記述の長さ分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="ページ毎のメタ記述の長さ分布。",
+  description="ページ毎のメタ記述毎の文字数分布。デスクトップのタイトルの長さの10、25、50、75、90パーセンタイルはそれぞれ、9、48、123、162、230文字です。モバイルの分布は任意のパーセンタイルでは10文字未満だけわずかに高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 メタディスクリプションの長さは[155-160文字が推奨](https://moz.com/learn/seo/meta-description)となっていますが、デスクトップページの中央値ははそれより短い123文字となっています。
 さらに興味深い事があります、モバイルのSERPはピクセル制限により従来よりも短かくなるにも関わらず、メタディスクリプションは一貫してデスクトップよりもモバイルが長くなっています。
@@ -211,31 +233,43 @@ Webページの最も重要な属性の1つはリンクです。
 モバイル用のページで内部リンクが少ない場合、Webサイトで[問題が発生する可能性](https://moz.com/blog/internal-linking-mobile-first-crawl-paths)が有るため注意が必要です。
 新しいWebサイトでGoogleの規定である[モバイルファーストインデックス](https://www.deepcrawl.com/knowledge/white-papers/mobile-first-index-guide/)が適用されると、そのページがデスクトップ用ではリンクされているがモバイル用からリンクが無い時、検索エンジンはそのページを見つけてランク付けするのがとても難しくなってしまいます。
 
-<figure>
-  <a href="/static/images/2019/seo/fig7.png">
-    <img src="/static/images/2019/seo/fig7.png" alt="図7.ページ毎の内部リンク分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">ページ毎の内部リンク数の分布。デスクトップの内部リンクは10、25、50、75、90パーセンタイルごとに、7、29、70、142、261となっています。モバイル分布はかなり低く、90パーセンタイルでリンク数は30、中央値で10となっています。</div>
-  <figcaption id="fig7-caption" >図7.ページ毎の内部リンク分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="ページ毎の内部リンク分布。",
+  description="ページ毎の内部リンク数の分布。デスクトップの内部リンクは10、25、50、75、90パーセンタイルごとに、7、29、70、142、261となっています。モバイル分布はかなり低く、90パーセンタイルでリンク数は30、中央値で10となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/seo/fig8.png">
-    <img src="/static/images/2019/seo/fig8.png" alt="図8.ページ毎の外部リンク数の分布。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">ページ毎の外部リンク数の分布。デスクトップの外部リンクは10、25、50、75、90パーセンタイルごとに、1、4、10、22、51となっています。モバイルの分布はかなり低く、90パーセンタイルでリンク数は11、中央値で2となっています。</div>
-  <figcaption id="fig8-caption" >図8.ページ毎の外部リンク数の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="ページ毎の外部リンク数の分布。",
+  description="ページ毎の外部リンク数の分布。デスクトップの外部リンクは10、25、50、75、90パーセンタイルごとに、1、4、10、22、51となっています。モバイルの分布はかなり低く、90パーセンタイルでリンク数は11、中央値で2となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 デスクトップ用ページの内部リンク(同一サイト)数は中央値で70となっていますが、モバイル用ページの内部リンク数の中央値は60になっています。外部リンク数のページ毎中央値も同じような傾向となっており、デスクトップ用ページの外部リンク数は10で、モバイル用ページは8になっています。
 
-<figure>
-  <a href="/static/images/2019/seo/fig9.png">
-    <img src="/static/images/2019/seo/fig9.png" alt="図9.ページ毎のアンカーリンク数の分布。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">ページ毎のアンカーリンク数の分布。デスクトップの内部アンカーは10、25、50、75、90パーセンタイルに対して、0、0、0、1、3となっています。モバイルの分布も同様です。</div>
-  <figcaption id="fig9-caption">図9.ページ毎のアンカーリンク数の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9.png",
+  caption="ページ毎のアンカーリンク数の分布。",
+  description="ページ毎のアンカーリンク数の分布。デスクトップの内部アンカーは10、25、50、75、90パーセンタイルに対して、0、0、0、1、3となっています。モバイルの分布も同様です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 同一ページの特定スクロール位置にリンクするアンカーリンクはあまり人気が無いようです。
 ホームページの65%以上でアンカーリンクは使われていません。
@@ -264,13 +298,17 @@ Web全体の読み込み速度の分析に使った指標は [Chrome UX Report](
 このデータで驚くべき点は、48%のWebサイトが**遅い**とラベル付されていることです。
 FCPの25%が3秒より遅い場合、_もしくは_ FIDの5%が300ミリ秒より遅い場合にWebサイトは低速とラベル付されます。
 
-<figure>
-  <a href="/static/images/2019/seo/fig10.png">
-    <img src="/static/images/2019/seo/fig10.png" alt="図10.デバイスタイプごとのユーザー体験パフォーマンスの分布。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive">
-  </a>
-  <div id="fig10-description" class="visually-hidden">デスクトップ、電話、タブレットのパフォーマンスにおけるユーザー体験の分布。 デスクトップ：2%高速、52%中程度、46%低速。 電話：高速1%、中程度41%、低速58%。 タブレット：高速0%、中程度35%、低速65%。</div>
-  <figcaption id="fig10-caption">図10.デバイスタイプごとのユーザー体験パフォーマンスの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10.png",
+  caption="デバイスタイプごとのユーザー体験パフォーマンスの分布。",
+  description="デスクトップ、電話、タブレットのパフォーマンスにおけるユーザー体験の分布。 デスクトップ：2%高速、52%中程度、46%低速。 電話：高速1%、中程度41%、低速58%。 タブレット：高速0%、中程度35%、低速65%。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 デバイスごとに分けるとより鮮明になります、この画像ではタブレット(65%)、電話(58%)を示しています。
 
@@ -461,7 +499,7 @@ HTML lang属性が英語に設定されているデスクトップ用サイト�
       </tr>
     </tbody>
   </table>
-  <figcaption>図11. よく見る<code>hreflang</code>値のトップ25。</figcaption>
+  <figcaption>{{ figure_link(caption="よく見る <code>hreflang</code> 値のトップ25。") }}</figcaption>
 </figure>
 
 英語の次に最もよく見る言語は、フランス語、スペイン語、およびドイツ語です。

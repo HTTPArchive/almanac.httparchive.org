@@ -65,40 +65,54 @@ table | script | script
 td | img | p
 tr | span | option
 
-<figcaption>図1. 2005年から2019年までの上位要素の比較。</figcaption>
+<figcaption>{{ figure_link(caption="2005年から2019年までの上位要素の比較。") }}</figcaption>
 </figure>
 
 ### ページ毎の要素
 
-<figure id="fig2">
-  <img src="/static/images/2019/markup/hixie_elements_per_page.png" alt="Hixieによる2005年の要素頻度の分布" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="318">
-    <div id="fig2-description" class="visually-hidden">要素数が増加するにつれて相対頻度の分布が減少することを示すグラフ</div>
-  <figcaption id="fig2-caption">図2. Hixieによる2005年の要素頻度の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="hixie_elements_per_page.png",
+  caption="Hixieによる2005年の要素頻度の分布。",
+  description="要素数が増加するにつれて相対頻度の分布が減少することを示すグラフ",
+  width=600,
+  height=318
+  )
+}}
 
-<figure id="fig3">
-  <a href="/static/images/2019/markup/fig3.png">
-    <img src="/static/images/2019/markup/fig3.png" alt="図3. 2019年の要素頻度" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">約2,500ページからなるグラフは、約30個の要素から開始します。そして2,000個の要素を含む327ページまで直線的に追従する前の283個の要素を持つ6,876ページあたりでピークに達します。</div>
-  <figcaption id="fig3-caption">図3. 2019年の要素頻度。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="2019年の要素頻度。",
+  description="約2,500ページからなるグラフは、約30個の要素から開始します。そして2,000個の要素を含む327ページまで直線的に追従する前の283個の要素を持つ6,876ページあたりでピークに達します。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 図2の2005年のHixieのレポートと図3の最新データを比較すると、DOMツリーの平均サイズが大きくなっていることがわかります。
 
-<figure id="fig4">
-  <img src="/static/images/2019/markup/hixie_element_types_per_page.png" alt="図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="320">
-   <div id="fig4-description" class="visually-hidden">相対周波数が19個の要素点の周りで釣鐘曲線となっていることを示すグラフ</div>
-  <figcaption id="fig4-caption">図4. 2005年にHixieが分析したページ毎の要素タイプのヒストグラム。</figcaption>
-</figure>
+{{ figure_markup(
+  image="hixie_element_types_per_page.png",
+  caption="2005年にHixieが分析したページ毎の要素タイプのヒストグラム。",
+  description="相対周波数が19個の要素点の周りで釣鐘曲線となっていることを示すグラフ",
+  width=600,
+  height=320
+  )
+}}
 
-<figure id="fig5">
-    <a href="/static/images/2019/markup/fig5.png">
-      <img src="/static/images/2019/markup/fig5.png" alt="図5. 2019年時点でのページ毎の要素タイプのヒストグラム。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&amp;format=interactive">
-    </a>
-    <div id="fig5-description" class="visually-hidden">308,168,000のサイトで使用されている平均要素数を示すグラフは、マークされた30個の要素の周りで釣鐘曲線になっています。</div>
-  <figcaption id="fig5-caption">図5. 2019年時点でのページ毎の要素タイプのヒストグラム。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="2019年時点でのページ毎の要素タイプのヒストグラム。",
+  description="308,168,000のサイトで使用されている平均要素数を示すグラフは、マークされた30個の要素の周りで釣鐘曲線になっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 ページあたりの要素の種類の平均数と、ユニークな要素数の最大値の両方が増加していることがわかります。
 
@@ -129,13 +143,17 @@ tr | span | option
 
 <p class="note">注意：この結果は、それぞれのの作成者がマークアップを手動で作成しているのではなく、何らかの製品を使っている為と考えられます。</p>
 
-<figure id="fig6">
-    <a href="/static/images/2019/markup/fig6.png">
-      <img src="/static/images/2019/markup/fig6.png" alt="図6.最も頻繁に使われている非推奨の要素。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&amp;format=interactive">
-    </a>
-    <div id="fig6-description" class="visually-hidden">デスクトップの8.31％（モバイルの7.96％）で使用中の「center」、デスクトップサイトの8.01％（モバイルの7.38％）で使用中の「font」、デスクトップサイトの1.07％（モバイルの1.20％）で使用中の「marquee」 、デスクトップサイトの0.71％（モバイルの0.55％）で使用中の「nobr」、デスクトップサイトの0.53％（モバイルの0.47％）で使用中の「big」、デスクトップサイトの0.39%（モバイルの0.35％）で使用中の「frameset」、デスクトップサイトの0.39％（モバイルの0.35％）による「frame」の使用、デスクトップサイトの0.33％（モバイルの0.27％）による「strike」、デスクトップサイトの0.25％（モバイルの0.27％）で使用中の「noframes」を示す棒グラフ。</div>
-  <figcaption id="fig6-caption">図6.最も頻繁に使われている非推奨の要素。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="最も頻繁に使われている非推奨の要素。",
+  description="デスクトップの8.31％（モバイルの7.96％）で使用中の「center」、デスクトップサイトの8.01％（モバイルの7.38％）で使用中の「font」、デスクトップサイトの1.07％（モバイルの1.20％）で使用中の「marquee」 、デスクトップサイトの0.71％（モバイルの0.55％）で使用中の「nobr」、デスクトップサイトの0.53％（モバイルの0.47％）で使用中の「big」、デスクトップサイトの0.39%（モバイルの0.35％）で使用中の「frameset」、デスクトップサイトの0.39％（モバイルの0.35％）による「frame」の使用、デスクトップサイトの0.33％（モバイルの0.27％）による「strike」、デスクトップサイトの0.25％（モバイルの0.27％）で使用中の「noframes」を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&format=interactive",
+  width=600,
+  height=371,
+  data_width=600,
+  data_height=371
+  )
+}}
 
 上記の図6は、最も頻繁に使われている非推奨の要素トップ10を表しています。
 これらは非常に小さな数値に見えますが、この観点は重要です。
@@ -144,13 +162,17 @@ tr | span | option
 
 要素の使い方に関する数値（標準、非推奨、またはカスタム）を議論する為には、まず何らかの観点を確立する必要があります。
 
-<figure id="fig7">
-    <a href="/static/images/2019/markup/fig7_full.png">
-      <img src="/static/images/2019/markup/fig7.png" alt="図7.トップ150の要素。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="778" data-width="600" data-height="778" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&amp;format=interactive">
-    </a>
-    <div id="fig7-description" class="visually-hidden">使用される要素を減少の割合で降順で並べた棒グラフ：html、head、body、titleは使用率99％を超えるています、meta、a、divは98％を超える使用率です、link、script、img、spanが90％を超 えています、ul、li、p、style、input、br、formなどが70%を超えています、h2、h1、iframe、h3、button、footer、header、navは50％を超えています、50％未満からほぼ0％に低下するその他のあまり知られていないタグもあります。</div>
-  <figcaption id="fig7-caption">図7.トップ150の要素（<a href="/static/images/2019/markup/fig7_full.png">詳細</a>）。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7_full.png",
+  caption='トップ150の要素（<a href="/static/images/2019/markup/fig7_full.png">詳細</a>）。',
+  description="使用される要素を減少の割合で降順で並べた棒グラフ：html、head、body、titleは使用率99％を超えるています、meta、a、divは98％を超える使用率です、link、script、img、spanが90％を超 えています、ul、li、p、style、input、br、formなどが70%を超えています、h2、h1、iframe、h3、button、footer、header、navは50％を超えています、50％未満からほぼ0％に低下するその他のあまり知られていないタグもあります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&format=interactive",
+  width=600,
+  height=778,
+  data_width=600,
+  data_height=778
+  )
+}}
 
 上記の図7は、ページ中に現れたかどうかでカウントされた要素のトップ150を表示しています。
 利用率がどのように落ちていくかに着目してください。
@@ -196,13 +218,15 @@ tr | span | option
 
 これらの要素の分布を抑え、どの要素が1％以上使われているのかを見るのは興味深いことです。
 
-<figure id="fig8">
-  <a href="https://rainy-periwinkle.glitch.me/scatter/html">
-    <img src="/static/images/2019/markup/element_categories.png" alt="図8. 標準化によって人気になった要素の分類" aria-labelledby="fig8-caption" width="600" height="1065">
-  </a>
-  <div id="fig8-description" class="visually-hidden">HTML、SVG、Math MLを示す散布図は比較的少数のタグを使用しますが、非標準要素（「in global ns」、「dasherized」、「colon」に分けられる）ははるかに広がっています。</div>
-  <figcaption id="fig8-caption">図8. 標準化によって人気になった要素の分類。</figcaption>
-</figure>
+{{ figure_markup(
+  link="https://rainy-periwinkle.glitch.me/scatter/html",
+  image="element_categories.png",
+  caption="標準化によって人気になった要素の分類。",
+  description="HTML、SVG、Math MLを示す散布図は比較的少数のタグを使用しますが、非標準要素（「in global ns」、「dasherized」、「colon」に分けられる）ははるかに広がっています。",
+  width=600,
+  height=1065
+  )
+}}
 
 図8は、各要素の順位とそれらがどのカテゴリに属するかを示しています。
 データポイントを単純に見ることができるように、個別の塊へ分割しました（そうしなければ、全データを表現するために十分なピクセル領域がありませんでした）、これは人気を一つの「線」として表します。
@@ -274,13 +298,17 @@ Webには約20億のWebサイトがあります。
 
 これらを5％未満のネイティブHTML要素と比べてみましょう。
 
-<figure id="fig9">
-  <a href="/static/images/2019/markup/fig9.png">
-    <img src="/static/images/2019/markup/fig9.png" alt="図9. 採用率が5％以下での、製品固有とネイティブで人気の要素。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">videoは184,149サイト、canvasは108,355、ym-measure（製品固有のタグ）は52,146、コードは25,075、g:plusone（製品固有のタグ）は21,098、fb:like（製品固有のタグ）は12,773、fb:like-box（製品固有のタグ）は6,792、app-root（製品固有のタグ）は8,468、summaryは6,578、templateは5,913、meterは0を示す棒グラフ。</div>
-  <figcaption id="fig9-caption">図9. 採用率が5％以下での、製品固有とネイティブで人気の要素。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9.png",
+  caption="採用率が5％以下での、製品固有とネイティブで人気の要素。",
+  description="videoは184,149サイト、canvasは108,355、ym-measure（製品固有のタグ）は52,146、コードは25,075、g:plusone（製品固有のタグ）は21,098、fb:like（製品固有のタグ）は12,773、fb:like-box（製品固有のタグ）は6,792、app-root（製品固有のタグ）は8,468、summaryは6,578、templateは5,913、meterは0を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=962404708&format=interactive",
+  width=600,
+  height=370,
+  data_width=600,
+  data_height=370
+  )
+}}
 
 
 このような興味深い洞察を一日中行うことができます。
@@ -309,13 +337,17 @@ Hixieはオリジナルの論文で次のように述べています。
 
 前回のチャートに今回のデータを配置すると、次のようになります（改めて、データセットに基づいて少しだけ変わっています）
 
-<figure id="fig10">
-    <a href="/static/images/2019/markup/fig10.png">
-      <img src="/static/images/2019/markup/fig10.png" alt="図10. 採用率が5％以下での、製品固有のコンテキストまたはネイティブで人気のあるその他の要素。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&amp;format=interactive">
-    </a>
-    <div id="fig10-description" class="visually-hidden">videoは184,149サイトで使用され、canvasは108,355、ym-measureは52,416、codeは25,075、g:plusoneは21,098、db:likeは12,773、cufonは10,523、ymapsは8,303、fb:like-boxは6,972、app-rootが8,468、summaryが6,578、templateが5,913、meterが0を示す棒グラフ。</div>
-  <figcaption id="fig10-caption">図10. 採用率が5％以下での、製品固有のコンテキストまたはネイティブで人気のあるその他の要素。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10.png",
+  caption="採用率が5％以下での、製品固有のコンテキストまたはネイティブで人気のあるその他の要素。",
+  description="videoは184,149サイトで使用され、canvasは108,355、ym-measureは52,416、codeは25,075、g:plusoneは21,098、db:likeは12,773、cufonは10,523、ymapsは8,303、fb:like-boxは6,972、app-rootが8,468、summaryが6,578、templateが5,913、meterが0を示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=468373762&format=interactive",
+  width=600,
+  height=370,
+  data_width=600,
+  data_height=370
+  )
+}}
 
 この結果には興味深い点があります、それは一つのツールが他の便利になる手段も提供していると言うことです。
 データ空間を調べることに興味がある場合に、具体的なタグ名は想定される尺度の一つでしかありません。
