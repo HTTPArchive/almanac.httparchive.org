@@ -8,8 +8,8 @@ SELECT
 FROM
 (
   SELECT
-    (perf_score_lh6 - perf_score_lh5) as perf_score_delta,
-    ABS(perf_score_lh6 - perf_score_lh5) as abs_perf_score_delta
+    (perf_score_lh6 - perf_score_lh5) AS perf_score_delta,
+    ABS(perf_score_lh6 - perf_score_lh5) AS abs_perf_score_delta
   FROM
   (
     SELECT lh6.url AS url,
