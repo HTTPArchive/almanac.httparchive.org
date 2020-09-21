@@ -12,7 +12,11 @@ FROM
 WHERE
   date = '2020-08-01' AND
   firstHtml AND
-  JSON_EXTRACT_SCALAR(payload, '$._protocol') = 'HTTP/2'
+  (JSON_EXTRACT_SCALAR(payload, '$._protocol') = 'HTTP/2' OR
+   LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "%quic%" OR
+   LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "h3%" OR
+   LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%"
+  )
 GROUP BY
   client,
   server_header
