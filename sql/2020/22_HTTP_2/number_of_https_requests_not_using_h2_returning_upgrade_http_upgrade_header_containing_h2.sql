@@ -28,7 +28,7 @@ WHERE
   url LIKE "https://%" AND
   JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2" AND
   getUpgradeHeader(payload) LIKE "%h2%" AND
-  JSON_EXTRACT_SCALAR(payload, '$._protocol') != ''
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') IS NOT NULL
 GROUP BY
   client,
   firstHtml,
