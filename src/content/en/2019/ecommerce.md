@@ -10,7 +10,7 @@ discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## Introduction
@@ -21,10 +21,12 @@ Nearly 10% of the home pages in this study were found to be on an ecommerce plat
 - **Software platforms** such as [Magento Open Source](https://magento.com/products/magento-open-source) which you set up, host and manage yourself. These platforms can be powerful and flexible, but may be more complex to set up and run than services such as Shopify.
 - **Hosted platforms** such as [Magento Commerce](https://magento.com/products/magento-commerce) that offer the same features as their self-hosted counterparts, except that hosting is managed as a service by a third-party.
 
-<figure>
-  <div class="big-number">10%</div>
-  <figcaption>Figure 1. Percent of pages on an ecommerce platform.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percent of pages on an ecommerce platform.",
+  content="10%",
+  classes="big-number"
+)
+}}
 
 This analysis could only detect sites built on an ecommerce platform. This means that most large online stores and marketplaces—such as Amazon, JD, and eBay—are not included here. Also note that the data here is for home pages only: not category, product or other pages. Learn more about our [methodology](./methodology).
 
@@ -63,7 +65,7 @@ Page detection is not always reliable, and some sites explicitly block detection
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 2. Percent of ecommerce platforms detected.</figcaption>
+  <figcaption>{{ figure_link(caption="Percent of ecommerce platforms detected.") }}</figcaption>
 </figure>
 
 ## Ecommerce platforms
@@ -110,7 +112,7 @@ Page detection is not always reliable, and some sites explicitly block detection
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 3. Adoption of the top six ecommerce platforms.</figcaption>
+  <figcaption>{{ figure_link(caption="Adoption of the top six ecommerce platforms.") }}</figcaption>
 </figure>
 
 Out of the 116 ecommerce platforms that were detected, only six are found on more than 0.1% of desktop or mobile websites. Note that these results do not show variation by country, by size of site, or other similar metrics.
@@ -119,23 +121,31 @@ Figure 3 above shows that WooCommerce has the largest adoption at around 4% of d
 
 ### Long tail
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig4.png">
-    <img src="/static/images/2019/ecommerce/fig4.png" alt="Figure 4. Adoption of top ecommerce platforms." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414" data-width="600" data-height="414" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">Bar chart of the adoption of top 20 ecommerce platforms. Refer to Figure 3 above for a data table of adoption of the top six platforms.</div>
-  <figcaption id="fig4-caption">Figure 4. Adoption of top ecommerce platforms.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4.png",
+  caption="Adoption of top ecommerce platforms.",
+  description="Bar chart of the adoption of top 20 ecommerce platforms. Refer to Figure 3 above for a data table of adoption of the top six platforms.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&format=interactive",
+  width=600,
+  height=414,
+  data_width=600,
+  data_height=414
+  )
+}}
 
 There are 110 ecommerce platforms that each have fewer than 0.1% of desktop or mobile websites. Around 60 of these have fewer than 0.01% of mobile or desktop websites.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig5.png">
-    <img src="/static/images/2019/ecommerce/fig5.png" alt="Figure 5. Combined adoption of the top six ecommerce platforms versus the other 110 platforms." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="361" data-width="600" data-height="361" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2093212206&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">The top six ecommerce platforms make up 8% of all websites. The rest of the 110 platforms only make up 1.5% of websites. The results for desktop and mobile are similar.</div>
-  <figcaption id="fig5-caption">Figure 5. Combined adoption of the top six ecommerce platforms versus the other 110 platforms.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Combined adoption of the top six ecommerce platforms versus the other 110 platforms.",
+  description="The top six ecommerce platforms make up 8% of all websites. The rest of the 110 platforms only make up 1.5% of websites. The results for desktop and mobile are similar.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2093212206&format=interactive",
+  width=600,
+  height=361,
+  data_width=600,
+  data_height=361
+  )
+}}
 
 7.87% of all requests on mobile and 8.06% on desktop are for home pages on one of the top six ecommerce platforms. A further 1.52% of requests on mobile and 1.59% on desktop are for home pages on the 110 other ecommerce platforms.
 
@@ -143,13 +153,17 @@ There are 110 ecommerce platforms that each have fewer than 0.1% of desktop or m
 
 In total, 9.7% of desktop pages and 9.5% of mobile pages used an ecommerce platform.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig6.png">
-    <img src="/static/images/2019/ecommerce/fig6.png" alt="Figure 6. Percent of pages using any ecommerce platform." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1360307171&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">9.7% of desktop pages use an ecommerce platform and 9.5% of mobile pages use an ecommerce platform.</div>
-  <figcaption id="fig6-caption">Figure 6. Percent of pages using any ecommerce platform.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="Percent of pages using any ecommerce platform.",
+  description="9.7% of desktop pages use an ecommerce platform and 9.5% of mobile pages use an ecommerce platform.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1360307171&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
 Although the desktop proportion of websites was slightly higher overall, some popular platforms (including WooCommerce, PrestaShop and Shopware) actually have more mobile than desktop websites.
 
@@ -157,21 +171,29 @@ Although the desktop proportion of websites was slightly higher overall, some po
 
 The [page weight](./page-weight) of an ecommerce platform includes all HTML, CSS, JavaScript, JSON, XML, images, audio, and video.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig7.png">
-    <img src="/static/images/2019/ecommerce/fig7.png" alt="Figure 7. Distribution of ecommerce page weight." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of ecommerce page weight. The median desktop ecommerce page loads 2.7 MB. The 10th percentile is 1.0 MB, 25th 1.6 MB, 75th 4.5 MB, and 90th 7.6 MB. Desktop websites are slightly higher than mobile by tenths of a megabyte.</div>
-  <figcaption id="fig7-caption">Figure 7. Distribution of ecommerce page weight.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="Distribution of ecommerce page weight.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of ecommerce page weight. The median desktop ecommerce page loads 2.7 MB. The 10th percentile is 1.0 MB, 25th 1.6 MB, 75th 4.5 MB, and 90th 7.6 MB. Desktop websites are slightly higher than mobile by tenths of a megabyte.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig8.png">
-    <img src="/static/images/2019/ecommerce/fig8.png" alt="Figure 8. Distribution of requests per ecommerce page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1968521689&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of requests per ecommerce page. The median desktop ecommerce page makes 108 requests. The 10th percentile is 53 requests, 25th 76, 75th 153, and 90th 210. Desktop websites are slightly higher than mobile by about 10 requests.</div>
-  <figcaption id="fig8-caption">Figure 8. Distribution of requests per ecommerce page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Distribution of requests per ecommerce page.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of requests per ecommerce page. The median desktop ecommerce page makes 108 requests. The 10th percentile is 53 requests, 25th 76, 75th 153, and 90th 210. Desktop websites are slightly higher than mobile by about 10 requests.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1968521689&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
 The median desktop ecommerce platform page loads 108 requests and 2.7 MB. The median weight for _all_ desktop pages is 74 requests and [1.9 MB](./page-weight#page-weight). In other words, ecommerce pages make nearly 50% more requests than other web pages, with payloads around 35% larger. By comparison, the [amazon.com](https://amazon.com) home page makes around 300 requests on first load, for a page weight of around 5 MB, and [ebay.com](https://ebay.com) makes around 150 requests for a page weight of approximately 3 MB. The page weight and number of requests for home pages on ecommerce platforms is slightly smaller on mobile at every percentile, but around 10% of all ecommerce home pages load more than 7 MB and make over 200 requests.
 
@@ -278,7 +300,7 @@ The charts below are for desktop requests:
       </tr>
     </tbody>
   </table>
-<figcaption>Figure 9. Percentiles of the distribution of page weight (in KB) by resource type.</figcaption>
+<figcaption>{{ figure_link(caption="Percentiles of the distribution of page weight (in KB) by resource type.") }}</figcaption>
 </figure>
 
 <figure>
@@ -376,7 +398,7 @@ The charts below are for desktop requests:
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 10. Percentiles of the distribution of requests per page by resource type.</figcaption>
+  <figcaption>{{ figure_link(caption="Percentiles of the distribution of requests per page by resource type.") }}</figcaption>
 </figure>
 
 Images constitute the largest number of requests and the highest proportion of bytes for ecommerce pages. The median desktop ecommerce page includes 39 images weighing 1,514 KB (1.5 MB).
@@ -385,13 +407,13 @@ The number of [JavaScript](./javascript) requests indicates that better bundling
 
 ## HTML payload size
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig11.png">
-    <img src="/static/images/2019/ecommerce/fig11.png" alt="Figure 11. Distribution of HTML bytes (in KB) per ecommerce page." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&amp;format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of HTML bytes per ecommerce page. The median desktop ecommerce page has 36 KB of HTML. The 10th percentile is 12 KB, 25th 20, 75th 66, and 90th 118. Desktop websites have slightly more HTML bytes than mobile by 1 or 2 KB.</div>
-  <figcaption id="fig11-caption">Figure 11. Distribution of HTML bytes (in KB) per ecommerce page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig11.png",
+  caption="Distribution of HTML bytes (in KB) per ecommerce page.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of HTML bytes per ecommerce page. The median desktop ecommerce page has 36 KB of HTML. The 10th percentile is 12 KB, 25th 20, 75th 66, and 90th 118. Desktop websites have slightly more HTML bytes than mobile by 1 or 2 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive"
+  )
+}}
 
 Note that HTML payloads may include other code such as inline JSON, JavaScript, or CSS directly in the markup itself, rather than referenced as external links. The median HTML payload size for ecommerce pages is 34 KB on mobile and 36 KB on desktop. However, 10% of ecommerce pages have an HTML payload of more than 115 KB.
 
@@ -399,30 +421,32 @@ Mobile HTML payload sizes are not very different from desktop. In other words, i
 
 ## Image stats
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig12.png">
-    <img src="/static/images/2019/ecommerce/fig12.png" alt="Figure 12. Distribution of image bytes (in KB) per ecommerce page." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&amp;format=interactive">
-  </a>
-  <div id="fig12-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of image bytes per ecommerce page. The median mobile ecommerce page has 1,517 KB of images. The 10th percentile is 318 KB, 25th 703, 75th 3,132, and 90th 5,881. Desktop and mobile websites have similar distributions.</div>
-  <figcaption id="fig12-caption">Figure 12. Distribution of image bytes (in KB) per ecommerce page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12.png",
+  caption="Distribution of image bytes (in KB) per ecommerce page.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of image bytes per ecommerce page. The median mobile ecommerce page has 1,517 KB of images. The 10th percentile is 318 KB, 25th 703, 75th 3,132, and 90th 5,881. Desktop and mobile websites have similar distributions.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig13.png">
-    <img src="/static/images/2019/ecommerce/fig13.png" alt="Figure 13. Distribution of image requests per ecommerce page." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of image requests per ecommerce page. The median desktop ecommerce page makes 40 image requests. The 10th percentile is 16 requests, 25th 25, 75th 62, and 90th 97. The desktop distribution is slightly higher than mobile by 2-10 requests at each percentile.</div>
-  <figcaption id="fig13-caption">Figure 13. Distribution of image requests per ecommerce page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig13.png",
+  caption="Distribution of image requests per ecommerce page.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of image requests per ecommerce page. The median desktop ecommerce page makes 40 image requests. The 10th percentile is 16 requests, 25th 25, 75th 62, and 90th 97. The desktop distribution is slightly higher than mobile by 2-10 requests at each percentile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive"
+  )
+}}
 
 <p class="note">Note that because our data collection <a href="./methodology">methodology</a> does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</p>
 
 Figures 12 and 13 above show that the median ecommerce page has 37 images and an image payload of 1,517 KB on mobile, 40 images and 1,524 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly 6 MB!
 
-<figure>
-  <div class="big-number">1,517 KB</div>
-  <figcaption>Figure 14. The median number of image bytes per mobile ecommerce page.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="The median number of image bytes per mobile ecommerce page.",
+  content="1,517 KB",
+  classes="big-number"
+)
+}}
 
 A significant proportion of ecommerce pages have sizable image payloads and make a large number of image requests on first load. See HTTP Archive's [State of Images](https://httparchive.org/reports/state-of-images) report and the [media](./media) and [page weight](./page-weight) chapters for more context.
 
@@ -432,13 +456,13 @@ We need to do more analysis to better understand why some sites are not using re
 
 ## Popular image formats
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig15.png">
-    <img src="/static/images/2019/ecommerce/fig15.png" alt="Figure 15. Popular image formats." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&amp;format=interactive">
-  </a>
-  <div id="fig15-description" class="visually-hidden">Bar chart showing the popularity of various image formats. JPEG is the most popular format at 54% of images on desktop ecommerce pages. Next are PNG at 27%, GIF at 14%, SVG at 2%, and WebP and ICO at 1% each.</div>
-  <figcaption id="fig15-caption">Figure 15. Popular image formats.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig15.png",
+  caption="Popular image formats.",
+  description="Bar chart showing the popularity of various image formats. JPEG is the most popular format at 54% of images on desktop ecommerce pages. Next are PNG at 27%, GIF at 14%, SVG at 2%, and WebP and ICO at 1% each.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive"
+  )
+}}
 
 <p class="note">Note that some image services or CDNs will automatically deliver WebP (rather than JPEG or PNG) to platforms that support WebP, even for a URL with a `.jpg` or `.png` suffix. For example, <a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> returns a WebP image in Chrome. However, the way HTTP Archive <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detects image formats</a> is to check for keywords in the MIME type first, then fall back to the file extension. This means that the format for images with URLs such as the above will be given as WebP, since WebP is supported by HTTP Archive as a user agent.</p>
 
@@ -510,7 +534,7 @@ We as a web community can provide better guidance/advocacy for enabling transpar
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 16. Distribution of intrinsic image dimensions (in pixels) per ecommerce page.</figcaption>
+  <figcaption>{{ figure_link(caption="Distribution of intrinsic image dimensions (in pixels) per ecommerce page.") }}</figcaption>
 </figure>
 
 The median ('mid-range') dimensions for images requested by ecommerce pages is 247x196 px on mobile and 240x192 px on desktop. 10% of images requested by ecommerce pages are at least 693x512 px on mobile and 800x546 px on desktop. Note that these dimensions are the intrinsic sizes of images, not their display size.
@@ -523,21 +547,21 @@ We need to do more research into why many sites are (apparently) not delivering 
 
 Many websites—especially online stores—load a significant amount of code and content from third-parties: for analytics, A/B testing, customer behavior tracking, advertising, and social media support. Third-party content can have a [significant impact on performance](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript). [Patrick Hulce](https://twitter.com/patrickhulce)'s [third-party-web tool](https://github.com/patrickhulce/third-party-web) is used to determine third-party requests for this report, and this is discussed more in the [Third Parties](./third-parties) chapter.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig17.png">
-    <img src="/static/images/2019/ecommerce/fig17.png" alt="Figure 17. Distribution of third-party requests per ecommerce page." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&amp;format=interactive">
-  </a>
-  <div id="fig17-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page. The median number of third-party requests on desktop is 19. The 10, 25, 75, and 90th percentiles are: 4, 9, 34, and 54. The desktop distribution is higher at each percentile than mobile by only 1-2 requests.</div>
-  <figcaption id="fig17-caption">Figure 17. Distribution of third-party requests per ecommerce page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig17.png",
+  caption="Distribution of third-party requests per ecommerce page.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page. The median number of third-party requests on desktop is 19. The 10, 25, 75, and 90th percentiles are: 4, 9, 34, and 54. The desktop distribution is higher at each percentile than mobile by only 1-2 requests.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig18.png">
-    <img src="/static/images/2019/ecommerce/fig18.png" alt="Figure 18. Distribution of third-party bytes per ecommerce page." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&amp;format=interactive">
-  </a>
-  <div id="fig18-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes per ecommerce page. The median number of third-party bytes on desktop is 320 KB. The 10, 25, 75, and 90th percentiles are: 42, 129, 651, and 1,071. The desktop distribution is higher at each percentile than mobile by 10-30 KB.</div>
-  <figcaption id="fig18-caption">Figure 18. Distribution of third-party bytes per ecommerce page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig18.png",
+  caption="Distribution of third-party bytes per ecommerce page.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes per ecommerce page. The median number of third-party bytes on desktop is 320 KB. The 10, 25, 75, and 90th percentiles are: 42, 129, 651, and 1,071. The desktop distribution is higher at each percentile than mobile by 10-30 KB.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive"
+  )
+}}
 
 The median ('mid-range') home page on an ecommerce platform makes 17 requests for third-party content on mobile and 19 on desktop. 10% of all home pages on ecommerce platforms make over 50 requests for third-party content, with a total payload of over 1 MB.
 
@@ -547,21 +571,21 @@ The median ('mid-range') home page on an ecommerce platform makes 17 requests fo
 
 Note the charts and tables below show data for mobile only.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig19.png">
-    <img src="/static/images/2019/ecommerce/fig19.png" alt="Figure 19. Distribution of third-party requests per mobile page for each ecommerce platform." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&amp;format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party requests across the distributions by about 40 requests at the median.</div>
-  <figcaption id="fig19-caption">Figure 19. Distribution of third-party requests per mobile page for each ecommerce platform.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19.png",
+  caption="Distribution of third-party requests per mobile page for each ecommerce platform.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party requests across the distributions by about 40 requests at the median.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig20.png">
-    <img src="/static/images/2019/ecommerce/fig20.png" alt="Figure 20. Distribution of third-party bytes (KB) per mobile page for each ecommerce platform." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&amp;format=interactive">
-  </a>
-  <div id="fig20-description" class="visually-hidden">Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes (KB) per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party bytes across the distributions by more than 1,000 KB at the median.</div>
-  <figcaption id="fig20-caption">Figure 20. Distribution of third-party bytes (KB) per mobile page for each ecommerce platform.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig20.png",
+  caption="Distribution of third-party bytes (KB) per mobile page for each ecommerce platform.",
+  description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes (KB) per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party bytes across the distributions by more than 1,000 KB at the median.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive"
+  )
+}}
 
 Platforms such as Shopify may extend their services using client-side JavaScript, whereas other platforms such as Magento use more server side extensions. This difference in architecture affects the figures seen here.
 
@@ -569,13 +593,13 @@ Clearly, pages on some ecommerce platforms make more requests for third-party co
 
 ## First Contentful Paint (FCP)
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig21.png">
-    <img src="/static/images/2019/ecommerce/fig21.png" alt="Figure 21. Average distribution of FCP experiences per ecommerce platform." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&amp;format=interactive">
-  </a>
-  <div id="fig21-description" class="visually-hidden">Bar chart of the average distribution of FCP experiences for the top six ecommerce platforms. WooCommerce has the highest density of slow FCP experiences at 43%. Shopify has the highest density of fast FCP experiences at 47%.</div>
-  <figcaption id="fig21-caption">Figure 21. Average distribution of FCP experiences per ecommerce platform.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig21.png",
+  caption="Average distribution of FCP experiences per ecommerce platform.",
+  description="Bar chart of the average distribution of FCP experiences for the top six ecommerce platforms. WooCommerce has the highest density of slow FCP experiences at 43%. Shopify has the highest density of fast FCP experiences at 47%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive"
+  )
+}}
 
 [First Contentful Paint](./performance#first-contentful-paint) measures the time it takes from navigation until content such as text or an image is first displayed. In this context, **fast** means FCP in under one second, **slow** means FCP in 3 seconds or more, and **moderate** is everything in between. Note that third-party content and code may have a significant impact on FCP.
 
@@ -587,13 +611,13 @@ We need to establish why FCP is worse on mobile than desktop. What are the cause
 
 See also the [PWA chapter](./pwa) for more information on this topic beyond just ecommerce sites.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig22.png">
-    <img src="/static/images/2019/ecommerce/fig22.png" alt="Figure 22. Distribution of Lighthouse PWA category scores for mobile ecommerce pages." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&amp;format=interactive">
-  </a>
-  <div id="fig22-description" class="visually-hidden">Distribution of Lighthouse's PWA category scores for ecommerce pages. On a scale of 0 (failing) to 1 (perfect), 40% of pages get a score of 0.33. 1% of pages get a score above 0.6.</div>
-  <figcaption id="fig22-caption">Figure 22. Distribution of Lighthouse PWA category scores for mobile ecommerce pages.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig22.png",
+  caption="Distribution of Lighthouse PWA category scores for mobile ecommerce pages.",
+  description="Distribution of Lighthouse's PWA category scores for ecommerce pages. On a scale of 0 (failing) to 1 (perfect), 40% of pages get a score of 0.33. 1% of pages get a score above 0.6.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive"
+  )
+}}
 
 More than 60% of home pages on ecommerce platforms get a [Lighthouse PWA score](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) between 0.25 and 0.35. Less than 20% of home pages on ecommerce platforms get a score of more than 0.5 and less than 1% of home pages score more than 0.6.
 

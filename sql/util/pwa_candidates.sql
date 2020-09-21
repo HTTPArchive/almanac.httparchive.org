@@ -6,7 +6,7 @@ RETURNS STRING LANGUAGE js AS """
 """;
 
 SELECT
-  date,
+  DISTINCT date,
   client,
   REGEXP_REPLACE(page, "^http:", "https:") AS pwa_url,
   pathResolve(REGEXP_REPLACE(page, "^http:", "https:"),

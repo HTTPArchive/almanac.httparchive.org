@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-05T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## 序章
@@ -18,13 +18,13 @@ last_updated: 2020-09-05T00:00:00.000Z
 
 純粋なバイトの観点から見ると、HTTP Archiveは[歴史的に報告されている](https://legacy.httparchive.org/interesting.php#bytesperpage)メディアから関連付けられたリソースバイトの平均3分の2を持っています。分布の観点から見ると、事実上すべてのウェブページが画像や動画に依存していることがわかります。10パーセンタイルでさえ、我々はバイトの44％がメディアからであり、ページの90パーセンタイルで総バイトの91％に上昇できることを参照してください。
 
-<figure>
-  <a href="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png">
-    <img src="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png" alt="図1. Webページのバイト：画像と動画対その他。" aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">10パーセンタイルでページバイトの44.1％がメディア、25パーセンタイルで52.7％がメディア、50パーセンタイルで67.0％がメディア、75パーセンタイルで81.7％がメディア、90パーセンタイルで91.2％がメディアであることを示す棒グラフです。</div>
-  <figcaption id="fig1-caption">図1. Webページのバイト：画像と動画対その他。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1_bytes_images_and_video_versus_other.png",
+  caption="Webページのバイト：画像と動画対その他。",
+  description="10パーセンタイルでページバイトの44.1％がメディア、25パーセンタイルで52.7％がメディア、50パーセンタイルで67.0％がメディア、75パーセンタイルで81.7％がメディア、90パーセンタイルで91.2％がメディアであることを示す棒グラフです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive"
+  )
+}}
 
 メディアは視覚体験には欠かせないものですが、この大量のバイトのインパクトには2つの副作用があります。
 
@@ -34,13 +34,13 @@ last_updated: 2020-09-05T00:00:00.000Z
 
 さらに、世界のさまざまな地域でこれらのウェブサイトを訪問するための金銭的コストは不釣り合いです。中央値と90パーセンタイルでは、画像のバイト数はそれぞれ1MBと1.9MBです。[WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost)を使用すると、マダガスカルのユーザーの一人当たりの国民総所得（GNI）コストは90パーセンタイルでウェブページを1回読み込んだだけで、一日の総所得の2.6％になることがわかります。対照的に、ドイツでは、これは1日の総所得の0.3％になります。
 
-<figure>
-  <a href="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png">
-    <img src="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png" alt="図2. ウェブページあたりの総画像バイト数（モバイル）。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">モバイルの中央値のウェブページでは、90パーセンタイルで1MBの画像と4.9MBの画像が必要です。</div>
-  <figcaption id="fig2-caption">図2. ウェブページあたりの総画像バイト数（モバイル）。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2_total_image_bytes_per_web_page_mobile.png",
+  caption="ウェブページあたりの総画像バイト数（モバイル）。",
+  description="モバイルの中央値のウェブページでは、90パーセンタイルで1MBの画像と4.9MBの画像が必要です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"
+  )
+}}
 
 ページあたりのバイト数を見ると、ページパフォーマンスとユーザーに対するコストだけを見ることになりますが、それは利点を見落としています。これらのバイトは、画面上のピクセルをレンダリングするために重要です。このように、1ページあたりに使用されるメディアのピクセル数を見ることで、画像や動画リソースの重要性を見ることができます。
 
@@ -50,21 +50,21 @@ last_updated: 2020-09-05T00:00:00.000Z
 * _ナチュラルピクセル_ とは、 ファイル内で表現される論理的なピクセルのことを指します。この画像をGIMPやPhotoshopで読み込んだ場合、ピクセルファイルの寸法は自然なピクセルとなります。
 * _スクリーンピクセル_ とは、ディスプレイ上の物理的な電子機器を指します。携帯電話や最新の高解像度ディスプレイが登場する以前は、CSSピクセルとスクリーン上のLEDポイントの間には1:1の関係がありました。しかし、モバイルデバイスは目に近づけられ、ノートPCの画面は昔のメインフレーム端末よりも近づけられているため、現代のスクリーンは従来のCSSピクセルに対する物理ピクセルの比率が高くなっています。この比率は、Device-Pixel-Ratio、または口語でRetina™ディスプレイと呼ばれています。
  
- <figure>
-  <a href="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png">
-    <img src="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png" alt="図3. 1ページあたりのピクセル画像（モバイル）。CSS対実物。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">画像コンテンツに割り当てられているCSSの画素数を、実際の画像の画素数と比較した結果、10パーセンタイル（実測は0.07MP、CSSは0.04MP）、25パーセンタイル（実測は0.38MP、CSSは0.18MP）、50パーセンタイル（実測は1.6MP、CSSは0.65MP）、75パーセンタイル（実測は5.1MP、CSSは1.8MP）、90パーセンタイル（実測は12MP、CSSは4.6MP）が表示されていることがわかります。</div>
-  <figcaption id="fig3-caption">図3. 1ページあたりのピクセル画像（モバイル）。CSS対実物。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
+  caption="1ページあたりのピクセル画像（モバイル）。CSS対実物。",
+  description="画像コンテンツに割り当てられているCSSの画素数を、実際の画像の画素数と比較した結果、10パーセンタイル（実測は0.07MP、CSSは0.04MP）、25パーセンタイル（実測は0.38MP、CSSは0.18MP）、50パーセンタイル（実測は1.6MP、CSSは0.65MP）、75パーセンタイル（実測は5.1MP、CSSは1.8MP）、90パーセンタイル（実測は12MP、CSSは4.6MP）が表示されていることがわかります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png">
-    <img src="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png" alt="図4. 1ページあたりのピクセル画像（デスクトップ）。CSS対実物。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">画像コンテンツに割り当てられたCSSの画素数をデスクトップ用の実際の画像の画素数と比較した結果、10パーセンタイル（実際は0.09MP、CSSは0.05MP）、25パーセンタイル（実際は0.52MP、CSSは0.29MP）、50パーセンタイル（実際は2.1MP、CSSは1.1MP）、75パーセンタイル（実際は6.0MP、CSSは2.8MP）、90パーセンタイル（実際は14MP、CSSは6.3MP）が表示されています。</div>
-  <figcaption id="fig4-caption">図4. 1ページあたりのピクセル画像（デスクトップ）。CSS対実物。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4_image_pixel_per_page_desktop_css_v_actual.png",
+  caption="1ページあたりのピクセル画像（デスクトップ）。CSS対実物。",
+  description="画像コンテンツに割り当てられたCSSの画素数をデスクトップ用の実際の画像の画素数と比較した結果、10パーセンタイル（実際は0.09MP、CSSは0.05MP）、25パーセンタイル（実際は0.52MP、CSSは0.29MP）、50パーセンタイル（実際は2.1MP、CSSは1.1MP）、75パーセンタイル（実際は6.0MP、CSSは2.8MP）、90パーセンタイル（実際は14MP、CSSは6.3MP）が表示されています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"
+  )
+}}
 
 CSSピクセルと自然ピクセル量を見ると、中央値のウェブサイトは1メガピクセル (MP) のメディア コンテンツを表示するレイアウトになっていることがわかります。90パーセンタイルでは、CSSレイアウトのピクセル量はモバイルで4.6MP、デスクトップで6.3MPに増加しています。これはレスポンシブレイアウトが、異なる可能性が高いだけでなく、フォームファクターが異なることも興味深い。要するに、モバイルレイアウトはデスクトップに比べてメディアに割り当てられるスペースが少ないということです。
 
@@ -80,13 +80,13 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 <p class="note">注：これは、DPRとレイアウトコンテンツのボリュームの両方のCSSレイアウトを見ているだけです。レスポンシブ画像の効果や、DPRの高いコンテンツを提供することの効果を評価しているわけではありません。</p> 
 
-<figure>
-  <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
-    <img src="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png" alt="図5. 画像のピクセル量と画面サイズ（CSSピクセル）の関係。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">実際の画面サイズCSSピクセルと比較したページあたりに必要なピクセル量の比較では、10パーセンタイル（モバイル20%、デスクトップ2%）、25パーセンタイル（モバイル97%、デスクトップ13%）、50パーセンタイル（モバイル354%、デスクトップ46%）、75パーセンタイル（モバイル1003%、デスクトップ123%）、および90パーセンタイル（モバイル2477%、デスクトップ273%）が示されています。</div>
-  <figcaption id="fig5-caption">図5. 画像のピクセル量と画面サイズ（CSSピクセル）の関係。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5_image_pixel_volume_v_css_pixels.png",
+  caption="画像のピクセル量と画面サイズ（CSSピクセル）の関係。",
+  description="実際の画面サイズCSSピクセルと比較したページあたりに必要なピクセル量の比較では、10パーセンタイル（モバイル20%、デスクトップ2%）、25パーセンタイル（モバイル97%、デスクトップ13%）、50パーセンタイル（モバイル354%、デスクトップ46%）、75パーセンタイル（モバイル1003%、デスクトップ123%）、および90パーセンタイル（モバイル2477%、デスクトップ273%）が示されています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"
+  )
+}}
 
 デスクトップの中央値のウェブページでは、画像や動画を含むレイアウトが表示されるのはディスプレイの46％に過ぎません。対照的に、モバイルでは、メディアピクセルの量が実際のビューポートサイズの3.5倍を埋めています。レイアウトは、1つの画面で埋められる以上のコンテンツがあり、ユーザーはスクロールする必要があります。最低でも、1サイトあたり3.5ページ分のコンテンツがスクロールしていることになります（飽和度100％を想定）。モバイルの90パーセンタイルでは、これはビューポートサイズの25倍にまで大幅に拡大します！
 
@@ -147,40 +147,41 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
  </tbody>
  </table>
 
- <figcaption>図6. 主流のファイル形式の説明。</figcaption>
+ <figcaption>{{ figure_link(caption="主流のファイル形式の説明。") }}</figcaption>
 </figure>
   
 ### 画像フォーマット
 
 すべてのページを見てみると、これらのフォーマットの普及率が、高いことがわかります。ウェブ上でもっとも古いフォーマットの1つであるJPEGは画像リクエストの60％、全画像バイトの65％で圧倒的に、もっとも一般的に使用されている画像フォーマットです。興味深いことに、PNGは画像要求とバイト数の28％で2番目によく使われている画像フォーマットです。色の正確さやクリエイティブなコンテンツの精度に加えて、サポートがどこにでもあることが広く使われている理由と考えられます。対照的に、SVG、GIF、WebPは4％とほぼ同じ使用率です。
 
-<figure>
-  <a href="/static/images/2019/media/fig7_image_format_usage.png">
-    <img alt="Most frequent Image types used on web pages" aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/media/fig7_image_format_usage.png" width="600" height="376">
-  </a>
-  <div id="fig7-description" class="visually-hidden">ツリーマップを見ると、JPEGが60.27％、PNGが28.2％、WebPが4.2％、GIFが3.67％、SVGが3.63％となっています。</div>
-  <figcaption id="fig7-caption">図7. 画像フォーマットの使用法</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7_image_format_usage.png",
+  caption="画像フォーマットの使用法",
+  description="ツリーマップを見ると、JPEGが60.27％、PNGが28.2％、WebPが4.2％、GIFが3.67％、SVGが3.63％となっています。",
+  width=600,
+  height=376
+  )
+}}
 
 もちろん、ウェブページの画像コンテンツの使い方は一様でありません。画像に依存しているページもあれば、いくつかは他よりも画像に依存しています。`google.com`のホームページを見てみると、一般的なニュースサイトに比べて画像はほとんどないことがわかります。実際、中央値のウェブサイトには13枚の画像があり、90パーセンタイルでは61枚、99パーセンタイルでは229枚の画像があります。
 
-<figure>
-  <a href="/static/images/2019/media/fig8_image_format_usage_per_page.png">
-    <img src="/static/images/2019/media/fig8_image_format_usage_per_page.png" alt="Figure 8. Image format usage per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive">
-  </a>
-<div id="fig8-description" class="visually-hidden">10パーセンタイルでは画像フォーマットが全く使用されていないことを示す棒グラフ、25パーセンタイルではJPGが3枚とPNGが4枚、50パーセンタイルではJPGが9枚、PNGが4枚、GIFが1枚、75パーセンタイルではJPEGが39枚、PNGが18枚、SVGが2枚、GIFが2枚、p99パーセンタイルではJPGが119枚、PNGが49枚、WebPが28枚、SVGが19枚、GIFが14枚使用されていることを示しています。</div>
-  <figcaption id="fig8-caption">図8. 1ページあたりの画像フォーマットの使用量</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8_image_format_usage_per_page.png",
+  caption="1ページあたりの画像フォーマットの使用量",
+  description="10パーセンタイルでは画像フォーマットが全く使用されていないことを示す棒グラフ、25パーセンタイルではJPGが3枚とPNGが4枚、50パーセンタイルではJPGが9枚、PNGが4枚、GIFが1枚、75パーセンタイルではJPEGが39枚、PNGが18枚、SVGが2枚、GIFが2枚、p99パーセンタイルではJPGが119枚、PNGが49枚、WebPが28枚、SVGが19枚、GIFが14枚使用されていることを示しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"
+  )
+}}
 
 中央値のページではJPEGが9枚、PNGが4枚となっており、GIFが使用されているのは上位25％のページのみで、採用率は報告されていません。1ページあたりの各フォーマットの使用頻度は、より近代的なフォーマットの採用についての洞察を提供していません。具体的には、各フォーマットに少なくとも1枚の画像が含まれているページの割合は？
 
-<figure>
-  <a href="/static/images/2019/media/fig9_pages_using_at_least_1_image.png">
-    <img src="/static/images/2019/media/fig9_pages_using_at_least_1_image.png" alt="図9. 少なくとも1枚の画像を使用しているページの割合。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">棒グラフで見ると、90%のページでJPEGが使用されており、89%がPNG、9%がWebP、37%がGIF、22%がSVGとなっています。</div>
-  <figcaption id="fig9-caption">図9. 少なくとも1枚の画像を使用しているページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9_pages_using_at_least_1_image.png",
+  caption="少なくとも1枚の画像を使用しているページの割合。",
+  description="棒グラフで見ると、90%のページでJPEGが使用されており、89%がPNG、9%がWebP、37%がGIF、22%がSVGとなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"
+  )
+}}
 
 これは、90パーセンタイルのページでさえWebPの頻度がゼロである理由を説明するのに役立ちます。WebPがイメージに適していない理由はたくさんありますが、メディアのベストプラクティスの採用は、WebP自体の採用のようにまだ初期段階にとどまっています。
 
@@ -188,23 +189,22 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 画像ファイルのサイズを見るには、リソースあたりの絶対バイト数とピクセルあたりのバイト数の2つの方法があります。
  
-<figure>
-  <a href="/static/images/2019/media/fig10_image_format_size.png">
-    <img alt="A comparison of image formats by file size" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/media/fig10_image_format_size.png" width="600" height="371">
-  </a>
-  <div id="fig10-description" class="visually-hidden">10パーセンタイルではJPEGの4KB、PNGの2KB、GIFの2KBが使用され、25パーセンタイルではJPGの9KB、PNGの4KB、WebPの7KB、GIFの3KBが使用され、50パーセンタイルではJPGの24KB、PNGの11KB、WebPの17KB、GIFの6KBが使用されていることを示すチャート。SVGの1KBが使用され、75パーセンタイルではJPEGの68KB、PNGの43KB、WebPの41KB、GIFの17KB、SVGの2KBが使用され、90パーセンタイルではJPGの116KB、PNGの152KB、WebPの90KB、GIFの87KB、SVGの8KBが使用されています。</div>
-  <figcaption id="fig10-caption">図10. 画像形式別のファイルサイズ（KB）。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10_image_format_size.png",
+  caption="画像形式別のファイルサイズ（KB）。",
+  description="10パーセンタイルではJPEGの4KB、PNGの2KB、GIFの2KBが使用され、25パーセンタイルではJPGの9KB、PNGの4KB、WebPの7KB、GIFの3KBが使用され、50パーセンタイルではJPGの24KB、PNGの11KB、WebPの17KB、GIFの6KBが使用されていることを示すチャート。SVGの1KBが使用され、75パーセンタイルではJPEGの68KB、PNGの43KB、WebPの41KB、GIFの17KB、SVGの2KBが使用され、90パーセンタイルではJPGの116KB、PNGの152KB、WebPの90KB、GIFの87KB、SVGの8KBが使用されています。"
+  )
+}}
 
 このことから、ウェブ上の典型的なリソースの大きさや小ささを知ることができます。しかし、これではこれらのファイル分布の画面上で表現されているピクセルの量を知ることはできません。これを行うには、各リソースのバイト数を画像の自然なピクセル数で割ることができます。1ピクセルあたりのバイト数が低いほど、視覚コンテンツの伝送効率が高いことを示しています。
 
- <figure>
-  <a href="/static/images/2019/media/fig11_bytes_per_pixel.png">
-    <img src="/static/images/2019/media/fig11_bytes_per_pixel.png" alt="図11. ピクセルあたりのバイト数。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">ローソク足チャートは、10パーセンタイルでは、JPEGが0.1175byte/pixel、PNGが0.1197byte/pixel、GIFが0.1702byte/pixel、WebPが0.0586byte/pixel、SVGが0.0293byte/pixelであることを示しています。25パーセンタイルでは、JPEGが0.1848byte/pixel、PNGが0.2874byte/pixel、GIFが0.3641byte/pixel、WebPが0.1025byte/pixel、SVGが0.174byte/pixelとなっています。50パーセンタイルでは、JPEGが0.2997byte/pixel、PNGが0.6918byte/pixel、GIFが0.7967byte/pixel、WebPが0.183byte/pixel、SVGが0.6766byte/pixelとなっています。75パーセンタイルでは、JPEGが0.5456byte/pixel、PNGが1.4548byte/pixel、GIFが2.515byte/pixel、WebPが0.3272byte/pixel、SVGが1.9261byte/pixelとなっています。90パーセンタイルでは、JPEGが0.9822byte/pixel、PNGが2.5026byte/pixel、GIFが8.5151byte/pixel、WebPが0.6474byte/pixel、SVGが4.1075byte/pixelとなっています。</div>
-  <figcaption id="fig11-caption">図11. ピクセルあたりのバイト数。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig11_bytes_per_pixel.png",
+  caption="ピクセルあたりのバイト数。",
+  description="ローソク足チャートは、10パーセンタイルでは、JPEGが0.1175byte/pixel、PNGが0.1197byte/pixel、GIFが0.1702byte/pixel、WebPが0.0586byte/pixel、SVGが0.0293byte/pixelであることを示しています。25パーセンタイルでは、JPEGが0.1848byte/pixel、PNGが0.2874byte/pixel、GIFが0.3641byte/pixel、WebPが0.1025byte/pixel、SVGが0.174byte/pixelとなっています。50パーセンタイルでは、JPEGが0.2997byte/pixel、PNGが0.6918byte/pixel、GIFが0.7967byte/pixel、WebPが0.183byte/pixel、SVGが0.6766byte/pixelとなっています。75パーセンタイルでは、JPEGが0.5456byte/pixel、PNGが1.4548byte/pixel、GIFが2.515byte/pixel、WebPが0.3272byte/pixel、SVGが1.9261byte/pixelとなっています。90パーセンタイルでは、JPEGが0.9822byte/pixel、PNGが2.5026byte/pixel、GIFが8.5151byte/pixel、WebPが0.6474byte/pixel、SVGが4.1075byte/pixelとなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive"
+  )
+}}
 
 以前はGIFファイルがJPEGよりも小さいと思われていましたが、今ではJPEGのリソースが大きくなった原因はピクセルボリュームにあることがはっきりとわかります。おそらく、GIFが他のフォーマットと比較して非常に低いピクセル密度を示していることは驚きではありません。さらにPNGは高いビット深度を扱うことができ、クロマサブサンプリングのぼやけに悩まされることはありませんが、同じピクセルボリュームではJPGやWebPの約2倍のサイズになります。
 
@@ -222,23 +222,23 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 1つの[Lighthouse](./methodology#lighthouse)テストは、ベースラインとプログレッシブにエンコードされたJPEGをA/Bで比較するものです。これは画像全体がロスレス技術でさらに最適化されるか、また異なる品質レベルを使用するなど、潜在的には不可逆技術で最適化されるかどうかを示すための気付きを提供しています。
 
- <figure>
-  <a href="/static/images/2019/media/fig12_percentage_optimized_images.png">
-    <img src="/static/images/2019/media/fig12_percentage_optimized_images.png" alt="図12. 「最適化された」画像の割合。" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767">
-  </a>
-  <div id="fig12-description" class="visually-hidden">10パーセンタイルでは100%の画像が最適化されており、25パーセンタイルでも同様で、50パーセンタイルでは98%の画像が最適化されており（2%は最適化されていない）、75パーセンタイルでは83%の画像が最適化されており（17%は最適化されていない）、90パーセンタイルでは59%の画像が最適化されており、41%の画像が最適化されていないことを示す棒グラフです。</div>
-  <figcaption id="fig12-caption">図12. 「最適化された」画像の割合。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig12_percentage_optimized_images.png",
+  caption="「最適化された」画像の割合。",
+  description="10パーセンタイルでは100%の画像が最適化されており、25パーセンタイルでも同様で、50パーセンタイルでは98%の画像が最適化されており（2%は最適化されていない）、75パーセンタイルでは83%の画像が最適化されており（17%は最適化されていない）、90パーセンタイルでは59%の画像が最適化されており、41%の画像が最適化されていないことを示す棒グラフです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767"
+  )
+}}
 
 このAB Lighthouseテストでの節約は、p95で数MBに達することができる潜在的なバイトの節約だけでなく、ページパフォーマンスの向上を実証しています。
 
- <figure>
-  <a href="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png">
-    <img src="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png" alt="図13. Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。" aria-labelledby="fig12-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779">
-  </a>
-  <div id="fig13-description" class="visually-hidden">10パーセンタイルでは0ms、25パーセンタイルでも同じ、50パーセンタイルでは150ms、75パーセンタイルでは1,460ms、90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。</div>
-  <figcaption id="fig13-caption">図13. Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig13_project_perf_improvements_image_optimization.png",
+  caption="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
+  description="10パーセンタイルでは0ms、25パーセンタイルでも同じ、50パーセンタイルでは150ms、75パーセンタイルでは1,460ms、90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
+  )
+}}
 
 ### レスポンシブ画像
 
@@ -252,13 +252,13 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 レスポンシブ画像を実装するもっとも一般的な方法は、`<img srcset>` または `<source srcset>`のいずれかを用いて代替画像のリストを作成することです。`srcset`がDPRに基づいている場合、ブラウザは追加情報なしでリストから正しい画像を選択できます。しかし、ほとんどの実装では、`srcset`のピクセルサイズに基づいて正しい画像を選択するため必要なレイアウト計算の方法をブラウザへ指示するため`<img sizes>`を利用しています。
 
- <figure>
-  <a href="/static/images/2019/media/fig14_html_usage_of_responsive_images.png">
-    <img src="/static/images/2019/media/fig14_html_usage_of_responsive_images.png" alt="図14. HTMLでレスポンシブ画像を使用しているページの割合。" aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive">
-  </a>
-  <div id="fig14-description" class="visually-hidden">18%の画像が「sizes」を使用しており、21%が「srcset」を使用しており、2%が「picture」を使用していることを示す棒グラフです。</div>
-  <figcaption id="fig14-caption">図14. HTMLでレスポンシブ画像を使用しているページの割合。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig14_html_usage_of_responsive_images.png",
+  caption="HTMLでレスポンシブ画像を使用しているページの割合。",
+  description="18%の画像が「sizes」を使用しており、21%が「srcset」を使用しており、2%が「picture」を使用していることを示す棒グラフです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive"
+  )
+}}
 
 [アートディレクション](https://developer.mozilla.org/ja/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction)のような高度なレスポンシブウェブデザイン（RWD）レイアウトによく使われていることを考えると、`<picture>`の使用率が著しく低いのは驚くべきことでありません。
 
@@ -280,18 +280,18 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 (max-width: 400px) 100vw, 400px | 0.32 | 1%
 (max-width: 80px) 100vw, 80px | 0.28 | 1%
 
-  <figcaption id="fig15-caption">図15. 最も人気のある<code>sizes</code>パターンを使用しているページの割合。</figcaption>
+  <figcaption>{{ figure_link(caption="最も人気のある <code>sizes</code> パターンを使用しているページの割合。") }}</figcaption>
 </figure>
 
 * **`<img sizes="auto">`** - これはもっともよく使われている使い方ですが、実際には非標準であり、`lazy_sizes`JavaScriptライブラリの使用によるものです。これはクライアント側のコードを使って、ブラウザのためにより良い`sizes`の計算を注入します。これの欠点は、JavaScriptの読み込みとDOMの準備が完全に整っているかどうかに依存し、画像の読み込みが大幅に遅れることです。
 
- <figure>
-  <a href="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png">
-    <img src="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png" alt="図16. 'img sizes'のトップパターン。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive">
-  </a>
-  <div id="fig16-description" class="visually-hidden">1,130万枚の画像が「img sizes="(max-width: 300px) 100vw, 300px"」を使用しており、「auto」が160万枚、「img sizes="(max-width: 767px) 89vwなどなど"」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。</div>
-  <figcaption id="fig16-caption" >図16. <code>&lt;img sizes&gt;</code>のトップパターン。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig16_top_patterns_of_img_sizes.png",
+  caption="<code>&lt;img sizes&gt;</code> のトップパターン。",
+  description="1,130万枚の画像が「img sizes=\"(max-width: 300px) 100vw, 300px\"」を使用しており、「auto」が160万枚、「img sizes=\"(max-width: 767px) 89vwなどなど\"」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
+  )
+}}
 
 ### クライアントヒント
 
@@ -299,25 +299,25 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
 クライアントヒントを有効にするには、ウェブページでブラウザに追加のHTTPヘッダー`Accept-CH: DPR, Width, Viewport-Width`を使ってシグナルを送る必要があります。 _または_ HTML`<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`を追加します。どちらか一方の手法の利便性は実装するチームに依存し、どちらも利便性のために提供されています。
 
-<figure>
-  <a href="/static/images/2019/media/fig17_usage_of_accept-ch_http_v_html.png">
-    <img src="/static/images/2019/media/fig17_usage_of_accept-ch_http_v_html.png" alt="Accept-CH の使用法: HTTP と HTML の比較。" aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive">
-  </a>
-  <div id="fig17-description" class="visually-hidden">71%が'meta http-equiv'を使用し、30% が'Accept-CH'HTTPヘッダーを使用し、1%が両方を使用していることを示す棒グラフです。</div>
-  <figcaption id="fig17-caption">図17. <code>Accept-CH</code>ヘッダーと同等の<code>&lt;meta&gt;</code>タグの使用法。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig17_usage_of_accept-ch_http_v_html.png",
+  caption="<code>Accept-CH</code> ヘッダーと同等の <code>&lt;meta&gt;</code> タグの使用法。",
+  description="71%が'meta http-equiv'を使用し、30% が'Accept-CH'HTTPヘッダーを使用し、1%が両方を使用していることを示す棒グラフです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
+  )
+}}
 
 HTMLでクライアントヒントを呼び出すために`<meta>`タグを使うのは、HTTPヘッダーに比べてはるかに一般的です。これは、ミドルボックスにHTTPヘッダーを追加するよりも、マークアップテンプレートを変更する方が便利であることを反映していると思われます。しかし、HTTPヘッダーの利用状況を見ると、50％以上が単一のSaaSプラットフォーム（Mercado）からのものです。
 
 呼び出されたクライアントヒントのうち、大部分のページでは`DPR`,`ViewportWidth`,`Width`の3つのユースケースで使用されている。もちろん、`Width`のクライアントヒントでは、ブラウザがレイアウトに関する十分なコンテキストを持つために`<img sizes>`を使用する必要があります。
 
-<figure>
-  <a href="/static/images/2019/media/fig18_enabled_client_hints.png">
-    <img src="/static/images/2019/media/fig18_enabled_client_hints.png" alt="図18. 有効化されたクライアントヒント。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive">
-  </a>
-  <div id="fig18-description" class="visually-hidden">ドーナツ型のパイチャートを見ると、クライアントヒントの26.1%が「dpr」を使用しており、24.3%が「viewport-width」を使用しており、19.7%が「width」を使用しており、6.7%が「save-data」を使用しており、6.1%が「device-memory」を使用しており、6.0%が「downnlink」を使用しており、5.6%が「rtt」を使用しており、5.6%が「ect」を使用していることを示しています。</div>
-  <figcaption id="fig18-caption">図18. 有効化されたクライアントヒント。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig18_enabled_client_hints.png",
+  caption="有効化されたクライアントヒント。",
+  description="ドーナツ型のパイチャートを見ると、クライアントヒントの26.1%が「dpr」を使用しており、24.3%が「viewport-width」を使用しており、19.7%が「width」を使用しており、6.7%が「save-data」を使用しており、6.1%が「device-memory」を使用しており、6.0%が「downnlink」を使用しており、5.6%が「rtt」を使用しており、5.6%が「ect」を使用していることを示しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive"
+  )
+}}
 
 ネットワーク関連のクライアントヒント`downlink`、`rtt`、`ect`はAndroid Chromeでのみ利用可能です。
 
@@ -325,15 +325,15 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
 
 ウェブページのパフォーマンスを改善することは、部分的にはイリュージョンのゲームとして特徴付けることができます。このように遅延読み込み画像は、ユーザーがページをスクロールしたときにのみ画像やメディアコンテンツが読み込まれる、これらのイリュージョンの1つです。これにより、遅いネットワークでも知覚パフォーマンスが向上し、ユーザーが他の方法で表示されていないバイトをダウンロードする手間が省けます。
 
-以前、<a href="#fig-5">図5</a>で、75パーセンタイルの画像コンテンツの量が、理論的には単一のデスクトップやモバイルのビューポートで表示できる量をはるかに超えていることを示しました。[オフスクリーン画像](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)Lighthouseの監査は、この疑念を裏付けています。ウェブページの中央値では、折り目の下に27％の画像コンテンツがあります。これは、90パーセンタイルの割合で84％に増加しています。
+以前、図5で、75パーセンタイルの画像コンテンツの量が、理論的には単一のデスクトップやモバイルのビューポートで表示できる量をはるかに超えていることを示しました。[オフスクリーン画像](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images)Lighthouseの監査は、この疑念を裏付けています。ウェブページの中央値では、折り目の下に27％の画像コンテンツがあります。これは、90パーセンタイルの割合で84％に増加しています。
 
-<figure>
-  <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
-    <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="図19. Lighthouse監査：オフスクリーン。" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">10パーセンタイルでは画像の0%が画面外、25パーセンタイルでは2%が画面外、50パーセンタイルでは27%が画面外、75パーセンタイルでは64%が画面外、90パーセンタイルでは 84%が画面外であることを示す棒グラフです。</div>
-  <figcaption id="fig19-caption">図19. Lighthouse監査：オフスクリーン。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19_lighthouse_audit_offscreen.png",
+  caption="Lighthouse監査：オフスクリーン。",
+  description="10パーセンタイルでは画像の0%が画面外、25パーセンタイルでは2%が画面外、50パーセンタイルでは27%が画面外、75パーセンタイルでは64%が画面外、90パーセンタイルでは 84%が画面外であることを示す棒グラフです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
+  )
+}}
 
 Lighthouseの監査では、質の高いプレースホルダーを使用するなど、油断できない状況がいくつもあるため、臭いを嗅ぎ分けてくれます。
 
@@ -355,25 +355,25 @@ Lighthouseの監査では、質の高いプレースホルダーを使用する�
 
 動画は、多くの異なるフォーマットやプレイヤーで配信できます。モバイルおよびデスクトップ向けの主要なフォーマットは、`.ts`（HLSストリーミングのセグメント）と`.mp4`(H264 MPEG) です。
 
-<figure>
-  <a href="/static/images/2019/media/fig20_video_files_by_extension.png">
-    <img src="/static/images/2019/media/fig20_video_files_by_extension.png" alt="図20. 拡張子別の動画ファイルの数" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive">
-  </a>
-  <div id="fig20-description" class="visually-hidden">棒グラフは、デスクトップで「ts」が1,283,439件（モバイルで792,952件）、デスクトップで「mp4」が729,757件（モバイルで662,015件）、デスクトップで「webm」が38,591件（モバイルで32,417件）、デスクトップは「mov」が22,194件（モバイルは14,986件）、デスクトップは「m4s」が17,338件（モバイルは16,046件）、デスクトップは「m4v」が7,466件（モバイルは6,169件）となっています。</div>
-  <figcaption id="fig20-caption">図20. 拡張子別の動画ファイルの数</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig20_video_files_by_extension.png",
+  caption="拡張子別の動画ファイルの数",
+  description="棒グラフは、デスクトップで「ts」が1,283,439件（モバイルで792,952件）、デスクトップで「mp4」が729,757件（モバイルで662,015件）、デスクトップで「webm」が38,591件（モバイルで32,417件）、デスクトップは「mov」が22,194件（モバイルは14,986件）、デスクトップは「m4s」が17,338件（モバイルは16,046件）、デスクトップは「m4v」が7,466件（モバイルは6,169件）となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"
+  )
+}}
 
 他にも、`webm`、`mov`、`m4s`、`m4v`（MPEG-DASHストリーミングセグメント）などのフォーマットが見られます。ウェブ上のストリーミングの大部分はHLSであり、静的動画の主要なフォーマットは`mp4`であることが明らかです。
 
 各フォーマットの動画サイズの中央値は以下の通りです。
 
-<figure>
-  <a href="/static/images/2019/media/fig21_median_vidoe_file_size_by_extension.png">
-    <img src="/static/images/2019/media/fig21_median_vidoe_file_size_by_extension.png" alt="図21. 動画の拡張子別のファイルサイズの中央値。" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive">
-  </a>
-  <div id="fig21-description" class="visually-hidden">「ts」の平均ファイルサイズがデスクトップで335KB(モバイルで156KB)、「mp4」がデスクトップで175KB(モバイルで128KB)、「webm」がデスクトップで359KB(モバイルで192KB)、「mov」がデスクトップで128KB(モバイルで96KB)、「m4s」がデスクトップで324KB(モバイルで246KB)、「m4v」がデスクトップで383KB(モバイルで161KB)であることを示す棒グラフ。</div>
-  <figcaption id="fig21-caption">図21. 動画の拡張子別のファイルサイズの中央値。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig21_median_vidoe_file_size_by_extension.png",
+  caption="動画の拡張子別のファイルサイズの中央値。",
+  description="「ts」の平均ファイルサイズがデスクトップで335KB(モバイルで156KB)、「mp4」がデスクトップで175KB(モバイルで128KB)、「webm」がデスクトップで359KB(モバイルで192KB)、「mov」がデスクトップで128KB(モバイルで96KB)、「m4s」がデスクトップで324KB(モバイルで246KB)、「m4v」がデスクトップで383KB(モバイルで161KB)であることを示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"
+  )
+}}
 
 中央値はモバイルの方が小さくなっていますが、これはおそらくデスクトップで非常に大きな動画を持っているサイトがモバイル用へ無効化していたり、動画ストリームが小さい画面に小さいバージョンの動画を提供していたりすることを意味していると思われます。
 
@@ -381,13 +381,13 @@ Lighthouseの監査では、質の高いプレースホルダーを使用する�
 
 ウェブ上で動画を配信する場合、ほとんどの動画はHTML5動画プレイヤーで配信されます。HTML動画プレイヤーは、さまざまな目的で動画を配信するために非常にカスタマイズが可能です。たとえば、動画を自動再生するには、パラメーター`autoplay`と`muted`を追加します。`controls`属性は、ユーザーが動画を開始/停止したり、スキャンしたりすることを可能にします。HTTP Archiveの動画タグを解析することで、これらの属性の使用状況を確認できます。
 
-<figure>
-  <a href="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png">
-    <img src="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png" alt="図21. HTML 動画タグ属性の使用法。" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive">
-  </a>
-  <div id="fig22-description" class="visually-hidden">デスクトップ用のバーチャート。'autoplay'は11.84%、'buffered'は0%、'controls'は12.05%、'crossorigin'は0.45%、'currenttime'は0.01%、'disablepictureinpicture'は0.01%、'disableremoteplayback'は0.01%、'duration'は0.05%、'height'は7.33%、'intrinsicsize'は0%、'loop'は14.57%、'muted'は13.92%、'playsinline'は6.49%、'poster'は8.98%、'preload'は11.62%、'src'は3.67%、'use-credentials'は0%、and 'width'は9%。そしてモバイルで'autoplay'は12.38%、'buffered'は0%、'controls'は13.88%、'crossorigin'は0.16%、'currenttime'は0.01%、disablepictureinpicture'は0.01%、'disableremoteplayback'は0.02%、'duration'は0.09%、'height'は6.54%、 intrinsicsize'は0%、'loop'は14.44%、'muted'は13.55%、'playsinline'は6.15%、'poster'は9.29%、'preload'は10.34%、'src'は4.13%、'use-credentials'は0%、'width'は9.03%である。</div>
-  <figcaption id="fig22-caption">図22. HTML動画タグ属性の使用法。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig22_html_video_tag_attributes_usage.png",
+  caption="HTML動画タグ属性の使用法。",
+  description="デスクトップ用のバーチャート。'autoplay'は11.84%、'buffered'は0%、'controls'は12.05%、'crossorigin'は0.45%、'currenttime'は0.01%、'disablepictureinpicture'は0.01%、'disableremoteplayback'は0.01%、'duration'は0.05%、'height'は7.33%、'intrinsicsize'は0%、'loop'は14.57%、'muted'は13.92%、'playsinline'は6.49%、'poster'は8.98%、'preload'は11.62%、'src'は3.67%、'use-credentials'は0%、and 'width'は9%。そしてモバイルで'autoplay'は12.38%、'buffered'は0%、'controls'は13.88%、'crossorigin'は0.16%、'currenttime'は0.01%、disablepictureinpicture'は0.01%、'disableremoteplayback'は0.02%、'duration'は0.09%、'height'は6.54%、 intrinsicsize'は0%、'loop'は14.44%、'muted'は13.55%、'playsinline'は6.15%、'poster'は9.29%、'preload'は10.34%、'src'は4.13%、'use-credentials'は0%、'width'は9.03%である。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive"
+  )
+}}
 
 もっとも一般的な属性は`autoplay`、`muted`、`loop`で、続いて`preload`タグ、そして`width`と`height`です。`loop`属性の使用は背景の動画や、動画をアニメーションGIFの代わりに、使用する場合に使用されるのでウェブサイトのホームページでよく使用されても不思議ではありません。
 
@@ -399,13 +399,13 @@ Lighthouseの監査では、質の高いプレースホルダーを使用する�
 
 より高度な再生（および動画ストリームの再生）を行うには、HTML5ネイティブ動画プレイヤーは動作しません。再生に使用する一般的な動画ライブラリがいくつかあります。
 
-<figure>
-  <a href="/static/images/2019/media/fig23_top_javascript_video_players.png">
-    <img src="/static/images/2019/media/fig23_top_javascript_video_players.png" alt="図23. トップの JavaScript 動画プレイヤー" aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive">
-  </a>
-  <div id="fig23-description" class="visually-hidden">3,365のデスクトップサイト(3,400のモバイルサイト)、52,375のデスクトップサイト(40,925のモバイルサイト)、110,280のデスクトップサイト(96,945のモバイルサイト)、325のデスクトップサイト(275のモバイルサイト)の「shaka」、377,990のデスクトップサイト(391,330のモバイルサイト)の「video」を示す棒グラフです。</div>
-  <figcaption id="fig23-caption">図23. トップの JavaScript 動画プレイヤー</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig23_top_javascript_video_players.png",
+  caption="トップの JavaScript 動画プレイヤー",
+  description="3,365のデスクトップサイト(3,400のモバイルサイト)、52,375のデスクトップサイト(40,925のモバイルサイト)、110,280のデスクトップサイト(96,945のモバイルサイト)、325のデスクトップサイト(275のモバイルサイト)の「shaka」、377,990のデスクトップサイト(391,330のモバイルサイト)の「video」を示す棒グラフです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive"
+  )
+}}
 
 もっとも人気があるのは（圧倒的に）video.jsで、JWPLayerとHLS.jsがそれに続いています。著者は、「video.js」という名前のファイルが、同じ動画再生ライブラリではない可能性があることを認めています。
 
