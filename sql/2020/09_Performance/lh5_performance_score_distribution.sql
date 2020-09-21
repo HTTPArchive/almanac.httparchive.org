@@ -5,7 +5,7 @@ SELECT
   SAFE_DIVIDE(slow,    slow + avg + fast + hundred) AS slow,
   SAFE_DIVIDE(avg,     slow + avg + fast + hundred) AS avg,
   SAFE_DIVIDE(fast,    slow + avg + fast + hundred) AS fast,
-  SAFE_DIVIDE(hundred, slow + avg + fast + hundred) AS hundred,
+  SAFE_DIVIDE(hundred, slow + avg + fast + hundred) AS hundred
 FROM (
   SELECT
     COUNTIF(score < 0.3) AS slow,
