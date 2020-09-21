@@ -1,7 +1,8 @@
 # standardSQL
-# Count of non-HTTP/2 Sites Grouped By Server
+# Count of non H2 and H3 Sites Grouped By Server
 SELECT
   client,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
   # Omit server version
   NORMALIZE_AND_CASEFOLD(REGEXP_EXTRACT(resp_server, r'\s*([^/]*)\s*')) AS server_header,
   COUNT(0) AS num_pages,
@@ -12,9 +13,13 @@ FROM
 WHERE
   date = '2020-08-01' AND
   firstHtml AND
-  JSON_EXTRACT_SCALAR(payload, '$._protocol') != 'HTTP/2'
+  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "http/2" AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "%quic%" AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "h3%" AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "http/3%"
 GROUP BY
   client,
+  http_version,
   server_header
 HAVING
   num_pages >= 100
