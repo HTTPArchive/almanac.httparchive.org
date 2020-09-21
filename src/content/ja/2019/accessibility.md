@@ -37,13 +37,14 @@ Webページの主な目的はユーザーの興味を引くコンテンツを�
 
 このような条件下であっても、あなたのWebサイトが確実に読めるようにするため、テキストと背景で十分な色のコントラストがあることを確認することは重要です。
 
-<figure>
-  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img alt="図1.色のコントラストが不十分なテキストの表示例 LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
-  </a>
-  <div id="fig1-description" class="visually-hidden">褐色とグレー4色のボックスに白いテキストがあり、2列に並んでいます。左の列は、色の薄い、<code>#FCA469</code>と書かれた褐色色の背景色があります。右の列は、推奨と表示されており、褐色色の背景色に<code>#BD5B0E</code>と書かれています。各列の上のボックスには白いテキスト#FFFFFFに褐色色の背景で、下のボックスは灰色の背景に白いテキスト#FFFFFFとなっています。同等のグレースケールは、それぞれ<code>＃B8B8B8</code>および<code>＃707070</code>です。LookZook提供。</div>
-  <figcaption id="fig1-caption">図1.色のコントラストが不十分なテキストの表示例 LookZook提供</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-good-and-bad-color-contrast-lookzook.svg",
+  caption="色のコントラストが不十分なテキストの表示例 LookZook提供",
+  description="褐色とグレー4色のボックスに白いテキストがあり、2列に並んでいます。左の列は、色の薄い、 <code>#FCA469</code> と書かれた褐色色の背景色があります。右の列は、推奨と表示されており、褐色色の背景色に <code>#BD5B0E</code> と書かれています。各列の上のボックスには白いテキスト#FFFFFFに褐色色の背景で、下のボックスは灰色の背景に白いテキスト#FFFFFFとなっています。同等のグレースケールは、それぞれ <code>＃B8B8B8</code> および <code>＃707070</code> です。LookZook提供。",
+  width=568,
+  height=300
+  )
+}}
 
 すべてのテキストに十分な色のコントラストが適用されているサイトは22.04％のみでした。これは言い換えると、5つのサイトのうち4つは背景に溶け込んで読みにくいテキストを持っていると言うことです。
 
@@ -63,13 +64,13 @@ Webページの主な目的はユーザーの興味を引くコンテンツを�
 
 悲しいことに、開発者はこの機能を誤用しすぎており、モバイルサイトの3つのうち1つ（32.21％）でこの機能を無効化しています。さらにApple（iOS 10の時点）でWeb開発者がズームを無効化できなくなってしまいました。モバイルSafariは純粋に[タグを無視します](https://archive.org/details/ios-10-beta-release-notes)。すべてのサイトは新しいiOSデバイスでズームとスケーリングができます。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig2.png">
-    <img src="/static/images/2019/accessibility/fig2.png" alt="図2. ズームとスケーリングを無効にしているサイトとデバイスの種類の割合。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">20刻みの0から80までの垂直測定パーセンテージデータ。デバイスタイプをデスクトップとモバイルでグループ化しています。デスクトップで有効なのは 75.46%無効が24.54%、モバイルで有効なのは67.79%無効が32.21%.</div>
-  <figcaption id="fig2-caption">図2. ズームとスケーリングを無効にしているサイトとデバイスの種類の割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  caption="ズームとスケーリングを無効にしているサイトとデバイスの種類の割合。",
+  description="20刻みの0から80までの垂直測定パーセンテージデータ。デバイスタイプをデスクトップとモバイルでグループ化しています。デスクトップで有効なのは 75.46%無効が24.54%、モバイルで有効なのは67.79%無効が32.21%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"
+  )
+}}
 
 ### 言語の識別
 
@@ -121,13 +122,13 @@ alt属性は25年前から存在していますが、49.91％のページで画�
 2. 38.6％のページは見出しのレベルを飛ばしています。
 3. 不思議な事に、H2はH1よりも多くのサイトで見つかりました。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig3.png">
-    <img src="/static/images/2019/accessibility/fig3.png" alt="図3. 見出しレベルの人気。" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">20毎に0から80の範囲のパーセンテージデータを測定する垂直棒グラフ。各見出しはh1〜h6レベルを表します。H1：63.25％、H2：67.86％、H3：58.63％、H4：36.38％、H5：14.64％、H6：6.91％。</div>
-  <figcaption id="fig3-caption">図3. 見出しレベルの人気。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="見出しレベルの人気。",
+  description="20毎に0から80の範囲のパーセンテージデータを測定する垂直棒グラフ。各見出しはh1〜h6レベルを表します。H1：63.25％、H2：67.86％、H3：58.63％、H4：36.38％、H5：14.64％、H6：6.91％。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"
+  )
+}}
 
 ### Mainランドマーク
 
@@ -135,13 +136,13 @@ alt属性は25年前から存在していますが、49.91％のページで画�
 
 ページの4分の1（26.03％）にだけmainランドマークが含まれていることが判明しました。さらに驚くべきことに、8.06％のページに複数のmainランドマークが誤って含まれているため、ユーザーは実際のメインコンテンツがどのランドマークなのかを推測する必要が出ていました。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig4.png">
-    <img src="/static/images/2019/accessibility/fig4.png" alt="図4. 「main」ランドマークの数によるページの割合。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">20毎に0〜80の範囲のパーセントデータを表示する垂直棒グラフと、0〜4のページごとの「main」ランドマークの数を表すバー。ソース：HTTP Archive （2019年7月）。 0：73.97％、1：17.97％、2：7.41％、3：0.15％; 4：0.06％。</div>
-  <figcaption id="fig4-caption" >図4. 「main」ランドマークの数によるページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4.png",
+  caption="「main」ランドマークの数によるページの割合。",
+  description="20毎に0〜80の範囲のパーセントデータを表示する垂直棒グラフと、0〜4のページごとの「main」ランドマークの数を表すバー。ソース：HTTP Archive （2019年7月）。 0：73.97％、1：17.97％、2：7.41％、3：0.15％; 4：0.06％。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
+  )
+}}
 
 ### HTML section要素
 
@@ -153,25 +154,25 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
 
 これらの要素はすべてアクセシビリティサポートを主目的として設計されており、見た目の変化はありません。つまりこれは、既存の要素を安全に置き換えることが可能なので意図しない影響で苦しむことはないでしょう。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig5.png">
-    <img src="/static/images/2019/accessibility/fig5.png" alt="図5. 色々なHTMLセマンティック要素の利用率。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">各要素のバーと20毎に0〜60の範囲のページの割合を表す水平線を含む縦棒グラフ。nav：53.94％、header：54.82％、footer：55.92％、main：18.47％、aside：16.99％、article：22.59％、hr：19.1％、section：36.55%。</div>
-  <figcaption id="fig5-caption" >図5. 色々なHTMLセマンティック要素の利用率。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="色々なHTMLセマンティック要素の利用率。",
+  description="各要素のバーと20毎に0〜60の範囲のページの割合を表す水平線を含む縦棒グラフ。nav：53.94％、header：54.82％、footer：55.92％、main：18.47％、aside：16.99％、article：22.59％、hr：19.1％、section：36.55%。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
+  )
+}}
 
 ### ナビゲーションで使われているその他のHTML要素
 
 よく使われているスクリーンリーダーは、ユーザーがリンク、一覧、一覧のアイテム、iframe、それと編集フィールド、ボタン、リストボックスなどのフォームフィールドに素早く飛び、誘導できます。図6はこういった要素を使うページの表示頻度を表しています。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig6.png">
-    <img src="/static/images/2019/accessibility/fig6.png" alt="図6. ナビゲーションで使われるその他のHTML要素。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">各要素を示すバーと、25毎に0~100の範囲でページの割合を示す縦棒グラフ。a：98.22％、ul：88.62％、input：76.63％、iframe：60.39％、button：56.74％、select：19.68％、textarea：12.03%。</div>
-  <figcaption id="fig6-caption">図6. ナビゲーションで使われるその他のHTML要素。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="ナビゲーションで使われるその他のHTML要素。",
+  description="各要素を示すバーと、25毎に0~100の範囲でページの割合を示す縦棒グラフ。a：98.22％、ul：88.62％、input：76.63％、iframe：60.39％、button：56.74％、select：19.68％、textarea：12.03%。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
+  )
+}}
 
 ### スキップリンク
 
@@ -179,13 +180,16 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
 
 スキップリンクの動作を試す事ができます！　シンプルにGoogle検索を実行し、検索結果ページが表示されたらすぐに「Tab」キーを押します。図7のような、事前に隠されたリンクが表示されます。
 
-<figure>
-  <a href="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png">
-    <img alt="図7. google.comのスキップリンク外観。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png" width="600" height="333">
-  </a>
-  <div id="fig7-description" class="visually-hidden">「Http Archive」を検索するためのGoogle検索結果ページのスクリーンショット。表示される「メインコンテンツにスキップ」のリンクは青色のフォーカスハイライトと、スキップリンクを示す赤い矢印の付いた黄色のオーバーレイボックスに囲まれ「google.comのスキップリンク」と表示されます。</div>
-  <figcaption id="fig7-caption">図7. google.comのスキップリンク外観。</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-a-skip-link-on-google.com.png",
+  caption="google.comのスキップリンク外観。",
+  description="「Http Archive」を検索するためのGoogle検索結果ページのスクリーンショット。表示される「メインコンテンツにスキップ」のリンクは青色のフォーカスハイライトと、スキップリンクを示す赤い矢印の付いた黄色のオーバーレイボックスに囲まれ「google.comのスキップリンク」と表示されます。",
+  width=600,
+  height=333
+  )
+}}
+
+実際、[ここでも使用する]https://github.com/HTTPArchive/almanac.httparchive.org/pull/645）ので、このサイトを離れる必要もありません。
 
 サイトを分析するときに、正しいスキップリンクを判断するのは困難です。なのでこの分析ではページの最初の3つのリンク内にアンカーリンク（`href=#heading1`）が見つかった場合、それをスキップリンクのあるページと定義しました。つまり14.19％というのは厳密には上限です。
 
@@ -227,13 +231,13 @@ Web上でもっとも一般的かつ広く活用されているアクセシビ�
 
 ARIAを適切かつ正しく使うのは難しい場合があります。例えば、ARIA属性を使っているページでは12.31％の属性に無効な値が割り当てられていました。ARIA属性の利用に誤りがあると、ページに視覚的な影響が及ばないため問題になります。これらの間違いは自動検証ツールを使っても検出できますが、一般的には実際の支援ソフトウェア（スクリーンリーダーなど）を実際に使う必要があります。この節ではARIAがWeb上でどのように使われているか、特に標準のどの部分が最も普及しているのかを検証していきます。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig8.png">
-    <img src="/static/images/2019/accessibility/fig8.png" alt="図8. 総ページ数とARIA属性の割合。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">0〜25の範囲で5ずつ増加するパーセントデータと、各属性のバーを表示する垂直棒グラフ。 aria-hidden：23.46％、aria-label：17.67％、aria-expanded：8.68％、aria-current：7.76％、aria-labelledby：6.85％、aria-controls：3.56％、aria-haspopup：2.62％、aria-invalid：2.68％、aria-describedby：1.69％、aria-live：1.04％、aria-required：1％</div>
-  <figcaption id="fig8-caption" >図8. 総ページ数とARIA属性の割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="総ページ数とARIA属性の割合。",
+  description="0〜25の範囲で5ずつ増加するパーセントデータと、各属性のバーを表示する垂直棒グラフ。 aria-hidden：23.46％、aria-label：17.67％、aria-expanded：8.68％、aria-current：7.76％、aria-labelledby：6.85％、aria-controls：3.56％、aria-haspopup：2.62％、aria-invalid：2.68％、aria-describedby：1.69％、aria-live：1.04％、aria-required：1％",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
+  )
+}}
 
 #### `role`属性
 
@@ -241,13 +245,13 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
 
 実際には46.91％のページが少なくとも1つのARIAロール属性を使っています。以下の図9は、最もよく使われているトップ10のARIAロールの値一覧を纏めました。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig9.png">
-    <img src="/static/images/2019/accessibility/fig9.png" alt="図9. ariaロールトップ10。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">0から25までの範囲で5ずつ増加サイトの割合と各ロールタイプのバーを備えた垂直棒グラフ。Navigation：20.4％。 search：15.49％; main：14.39％; banner：13.62％; contentinfo：11.23％; button：10.59％; dialog：7.87％; complementary：6.06％; menu：4.71％; form：3.75％</div>
-  <figcaption id="fig9-caption" >図9. ariaロールトップ10。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9.png",
+  caption="ariaロールトップ10。",
+  description="0から25までの範囲で5ずつ増加サイトの割合と各ロールタイプのバーを備えた垂直棒グラフ。Navigation：20.4％。 search：15.49％; main：14.39％; banner：13.62％; contentinfo：11.23％; button：10.59％; dialog：7.87％; complementary：6.06％; menu：4.71％; form：3.75％",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
+  )
+}}
 
 図9の結果を見ると、2つの興味深い見解が得られます。UIフレームワークを更新すると、Web全体のアクセシビリティおよび操作しやすいダイアログとなっているサイトの数が非常に多くなるようです。
 

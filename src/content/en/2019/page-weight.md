@@ -61,23 +61,25 @@ There were three really important takeaways from this research:
 
 2. **The number of images on a page was the second greatest predictor of conversions.** Sessions in which users converted had 38% fewer images than in sessions that didn't convert.
 
-<figure>
-  <a href="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png">
-    <img src="/static/images/2019/page-weight/ch18_fig1_conversion_difference.png" alt="Figure 1. Converted sessions vs non-converted sessions." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="432">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Chart showing 19 converted sessions vs. 31 non-converted sessions</div>
-  <figcaption id="fig1-caption">Figure 1. Converted sessions vs non-converted sessions.</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch18_fig1_conversion_difference.png",
+  caption="Converted sessions vs non-converted sessions.",
+  description="Chart showing 19 converted sessions vs. 31 non-converted sessions",
+  width=600,
+  height=432
+  )
+}}
 
 3. **Sessions with more scripts were less likely to convert.** What's really fascinating about this chart isn't just the sharp drop-off in conversion probability after about 240 scripts. It's the long tail that demonstrates how many retail sessions contained up to 1,440 scripts!
 
-<figure>
-  <a href="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg">
-    <img src="/static/images/2019/page-weight/ch18_fig2_conversion_graph.jpg" alt="Figure 2. Conversion rate dropping off as scripts increase." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="336">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Chart showing conversion rate climbing up until 80 scripts, and then dropping off as scripts increase up to 1440 scripts.</div>
-  <figcaption id="fig2-caption">Figure 2. Conversion rate dropping off as scripts increase.</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch18_fig2_conversion_graph.jpg",
+  caption="Conversion rate dropping off as scripts increase.",
+  description="Chart showing conversion rate climbing up until 80 scripts, and then dropping off as scripts increase up to 1440 scripts.",
+  width=600,
+  height=336
+  )
+}}
 
 Now that we've covered why page size and complexity matter, let's get into some juicy HTTP Archive stats so we can better understand the current state of the web and the impact of page bloat.
 
@@ -148,7 +150,7 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
       <td>4</td>
     </tr>
   </table>
-  <figcaption>Figure 3. Page weight on mobile broken down by resource type.</figcaption>
+  <figcaption>{{ figure_link(caption="Page weight on mobile broken down by resource type.") }}</figcaption>
 </figure>
 
 #### Desktop
@@ -210,7 +212,7 @@ Roughly speaking, mobile sites are about 10% smaller than their desktop counterp
       <td>4</td>
     </tr>
   </table>
-  <figcaption>Figure 4. Page weight on desktop broken down by resource type</figcaption>
+  <figcaption>{{ figure_link(caption="Page weight on desktop broken down by resource type") }}</figcaption>
 </figure>
 
 ### Page weight over time
@@ -276,7 +278,7 @@ Over the past year the median size of a desktop site increased by 434 KB, and th
       <td>+1</td>
     </tr>
   </table>
-  <figcaption>Figure 5. Change in mobile page weight since 2018.</figcaption>
+  <figcaption>{{ figure_link(caption="Change in mobile page weight since 2018.") }}</figcaption>
 </figure>
 
 #### Desktop
@@ -338,7 +340,7 @@ Over the past year the median size of a desktop site increased by 434 KB, and th
       <td>+1</td>
     </tr>
   </table>
-  <figcaption>Figure 6. Change in desktop page weight since 2018.</figcaption>
+  <figcaption>{{ figure_link(caption="Change in desktop page weight since 2018.") }}</figcaption>
 </figure>
 
 For a longer-term perspective on how page weight has changed over time, check out [this timeseries graph](https://httparchive.org/reports/page-weight#bytesTotal) from HTTP Archive. Median page size has grown at a fairly constant rate since the HTTP Archive started tracking this metric in November 2010 and the increase in page weight observed over the past year is consistent with this.
@@ -406,7 +408,7 @@ The median desktop page makes 74 requests, and the median mobile page makes 69. 
       <td>0</td>
     </tr>
   </table>
-  <figcaption>Figure 7. Mobile page requests broken down by resource type.</figcaption>
+  <figcaption>{{ figure_link(caption="Mobile page requests broken down by resource type.") }}</figcaption>
 </figure>
 
 #### Desktop
@@ -468,7 +470,7 @@ The median desktop page makes 74 requests, and the median mobile page makes 69. 
       <td>0</td>
     </tr>
   </table>
-  <figcaption>Figure 8. Desktop page requests broken down by resource type.</figcaption>
+  <figcaption>{{ figure_link(caption="Desktop page requests broken down by resource type.") }}</figcaption>
 </figure>
 
 ### File formats
@@ -533,7 +535,7 @@ The preceding analysis has focused on analyzing page weight through the lens of 
       <td>78</td>
     </tr>
   </table>
-  <figcaption>Figure 9. Images file sizes on mobile broken down by image format.</figcaption>
+  <figcaption>{{ figure_link(caption="Images file sizes on mobile broken down by image format.") }}</figcaption>
 </figure>
 
 Some of these results, particularly those for GIFs, are really surprising. If GIFs are so small, then why are they being replaced by formats like JPG, PNG, and WEBP?
@@ -542,13 +544,14 @@ The data above obscures the fact that the vast majority of GIFs on the web are a
 
 Further investigation into the data set revealed that 62% of GIFs are 43 bytes or smaller (43 bytes is the size of a transparent, 1x1 pixel GIF) and 84% of GIFs are 1 KB or smaller.
 
-<figure>
-  <a href="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png">
-    <img src="/static/images/2019/page-weight/ch18_fig3_gif_cdf.png" alt="Figure 10. Cumulative distribution function of GIF file sizes." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="330">
-  </a>
-  <div id="fig10-description" class="visually-hidden">Chart showing 25% of GIFs are 35 bytes or smaller (which is the optimal size of a 1x1 white GIF) and 62% of GIFs are 43 bytes or smaller (which is the optimal size of a 1x1 transparent GIF). This increases to just over 75% of GIFs being 100 bytes or less.</div>
-  <figcaption id="fig10-caption">Figure 10. Cumulative distribution function of GIF file sizes.</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch18_fig3_gif_cdf.png",
+  caption="Cumulative distribution function of GIF file sizes.",
+  description="Chart showing 25% of GIFs are 35 bytes or smaller (which is the optimal size of a 1x1 white GIF) and 62% of GIFs are 43 bytes or smaller (which is the optimal size of a 1x1 transparent GIF). This increases to just over 75% of GIFs being 100 bytes or less.",
+  width=600,
+  height=330
+  )
+}}
 
 The tables below show two different approaches to removing these tiny images from the data set: the first one is based on images with a file size greater than 100 bytes, the second is based on images with a file size greater than 1024 bytes.
 
@@ -611,7 +614,7 @@ The tables below show two different approaches to removing these tiny images fro
       <td>76.43</td>
     </tr>
   </table>
-  <figcaption>Figure 11. File size by image format for images > 100 bytes.</figcaption>
+  <figcaption>{{ figure_link(caption="File size by image format for images > 100 bytes.") }}</figcaption>
 </figure>
 
 #### File size by image format for images > 1024 bytes
@@ -673,7 +676,7 @@ The tables below show two different approaches to removing these tiny images fro
       <td>79.53</td>
     </tr>
   </table>
-  <figcaption>Figure 12. File size by image format for images > 1024 bytes.</figcaption>
+  <figcaption>{{ figure_link(caption="File size by image format for images > 1024 bytes.") }}</figcaption>
 </figure>
 
 The low file size of PNG images compared to JPEG images may seem surprising. JPEG uses [lossy compression](https://en.wikipedia.org/wiki/Lossy_compression). Lossy compression results in data loss, which makes it possible to achieve smaller file sizes. Meanwhile, PNG uses [lossless compression](https://en.wikipedia.org/wiki/Lossless_compression). This does not result in data loss, which this produces higher-quality, but larger images. However, this difference in file sizes is probably a reflection of the popularity of PNGs for iconography due to their transparency support, rather than differences in their encoding and compression.
@@ -725,7 +728,7 @@ Unlike some of the other tables in this data set, this one has mostly happy take
       <td>475</td>
     </tr>
   </table>
-  <figcaption>Figure 13. Video size by media format on mobile.</figcaption>
+  <figcaption>{{ figure_link(caption="Video size by media format on mobile.") }}</figcaption>
 </figure>
 
 ##### Desktop
@@ -769,7 +772,7 @@ Unlike some of the other tables in this data set, this one has mostly happy take
       <td>756</td>
     </tr>
   </table>
-  <figcaption>Figure 14. Video size by media format on desktop.</figcaption>
+  <figcaption>{{ figure_link(caption="Video size by media format on desktop.") }}</figcaption>
 </figure>
 
 ## Conclusion

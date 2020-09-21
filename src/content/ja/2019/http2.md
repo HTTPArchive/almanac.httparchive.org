@@ -57,23 +57,27 @@ HTTP/2には次の重要な概念があります。
 ## HTTP/2の採用
 前述のように、インターネットプロトコルはインターネットを構成するインフラストラクチャの多くに深く浸透しているため、しばしば採用を難しくする事があります。これにより、変更の導入が遅くなり、困難になります。たとえば、IPv6は20年前から存在していますが、[採用に苦労しています。](https://www.google.com/intl/en/ipv6/statistics.html)
 
-<figure>
-  <div class="big-number">95%</div>
-  <figcaption>図1. HTTP/2を使用できるグローバルユーザーの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="HTTP/2を使用できるグローバルユーザーの割合。",
+  content="95%",
+  classes="big-number"
+)
+}}
 
 ただし、HTTP/2はHTTPSで事実上隠されていたため異なってました（少なくともブラウザーの使用例では）、ブラウザーとサーバーの両方がサポートしている限り、採用の障壁を取り除いてきました。ブラウザーのサポートはしばらく前から非常に強力であり、*最新バージョン*へ自動更新するブラウザーの出現により、[グローバルユーザーの推定95％がHTTP/2をサポートするようになりました](https://caniuse.com/#feat=http2)。
 
 私たちの分析は、Chromeブラウザで約500万の上位デスクトップおよびモバイルWebサイトをテストするHTTP Archiveから提供されています。([方法論](./methodology)の詳細をご覧ください。)
 
 
-<figure>
-  <a href="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png">
-    <img alt="図2.要求によるHTTP/2の使用。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" src="/static/images/2019/http2/ch20_fig2_http2_usage_by_request.png" width="600" height="321">
-  </a>
-  <div id="fig2-description" class="visually-hidden">2019年7月現在、デスクトップとモバイルの両方で55％採用されているHTTP/2使用の時系列チャート。傾向は年間約15ポイントで着実に増加しています。</div>
-  <figcaption id="fig2-caption">図2.要求によるHTTP/2の使用。(引用: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch20_fig2_http2_usage_by_request.png",
+  alt="要求によるHTTP/2の使用。(引用: HTTP Archive)",
+  caption='要求によるHTTP/2の使用。(引用: <a href="https://httparchive.org/reports/state-of-the-web#h2">HTTP Archive</a>)',
+  description="2019年7月現在、デスクトップとモバイルの両方で55％採用されているHTTP/2使用の時系列チャート。傾向は年間約15ポイントで着実に増加しています。",
+  width=600,
+  height=321
+  )
+}}
 
 結果は、HTTP/2の使用が、現在過半数のプロトコルであることを示しています。これは、正式な標準化からわずか4年後の目覚しい偉業です。要求ごとのすべてのHTTPバージョンの内訳を見ると、次のことがわかります。
 
@@ -86,7 +90,7 @@ HTTP/2には次の重要な概念があります。
 | HTTP/1.1 |     40.36% |  45.01% | 42.79% |
 | HTTP/2   |     53.96% |  54.37% | 54.18% |
 
-<figcaption>図3.要求によるHTTPバージョンの使用。</figcaption>
+<figcaption>{{ figure_link(caption="要求によるHTTPバージョンの使用。") }}</figcaption>
 </figure>
 
 図3は、HTTP/1.1およびHTTP/2が、予想どおり大部分の要求で使用されるバージョンであることを示しています。古いHTTP/1.0とHTTP/0.9プロトコルでは、ごく少数のリクエストしかありません。面倒なことに、特にデスクトップでHTTP Archiveクロールによってプロトコルは正しく追跡されなかった割合が大きくなっています。これを掘り下げた結果、さまざまな理由が示され、そのいくつかは説明できますが、いくつかは説明できません。スポットチェックに基づいて、それらは概ねHTTP/1.1リクエストであるように見え、それらを想定するとデスクトップとモバイルの使用は似ています。
@@ -107,7 +111,7 @@ HTTP/2には次の重要な概念があります。
 | HTTP/1.1 |    62.36%  |  63.92% | 63.22% |
 | HTTP/2   |    37.46%  |  35.92% | 36.61% |
 
-<figcaption>図4.ホームページのHTTPバージョンの使用。</figcaption>
+<figcaption>{{ figure_link(caption="ホームページのHTTPバージョンの使用。") }}</figcaption>
 </figure>
 
 ホームページを見て、HTTP/2をサポートするサイト数の大まかな数字を取得するだけでも（少なくともそのホームページで）おもしろいです。図4は、全体的な要求よりもサポートが少ないことを示しており、予想どおり約36％です。
@@ -122,7 +126,7 @@ HTTP/2は、HTTPSまたは暗号化されていない非HTTPS接続で公式に�
 | HTTP/1.1 |    45.81%  |  44.31% | 45.01% |
 | HTTP/2   |    54.04%  |  55.53% | 54.83% |
 
-<figcaption>図5. HTTPSホームページのHTTPバージョンの使用。</figcaption>
+<figcaption>{{ figure_link(caption=" HTTPSホームページのHTTPバージョンの使用。") }}</figcaption>
 </figure>
 
 WebはHTTPSに移行しており、HTTP/2は、HTTPSがパフォーマンスに悪影響を与えるという従来の議論をほぼ完全に覆しています。すべてのサイトがHTTPSに移行しているわけではないため、HTTP/2を利用できないサイトも利用できません。 HTTPSを使用するサイトのみを見ると、図5では図2の*すべてのリクエスト*の割合と同様に、HTTP/2の採用率が55％前後です。
@@ -144,7 +148,7 @@ HTTP/2のブラウザサポートは強力であり、採用への安全な方�
 | openresty     |      2.15% |  2.01% |  2.07% |
 | ...           |      ...   |  ...   |  ...   |
 
-<figcaption>図6. HTTP/2に使用されるサーバー。</figcaption>
+<figcaption>{{ figure_link(caption=" HTTP/2に使用されるサーバー。") }}</figcaption>
 </figure>
 
 nginxは、最新バージョンへのインストールまたはアップグレードを容易にするパッケージリポジトリを提供しているため、ここをリードしていることについて驚くことではありません。 cloudflareは最も人気のある[CDN](./cdn)で、デフォルトでHTTP/2を有効にしているため、HTTP/2サイトの大部分をホストしていることについて驚くことはありません。ちなみに、cloudflareは、Webサーバーとして[大幅にカスタマイズ](https://blog.cloudflare.com/nginx-structural-enhancements-for-http-2-performance/)されたバージョンのnginxを使用しています。その後、Apacheの使用率は約20％であり、次に何が隠されているかを選択するサーバー、LiteSpeed、IIS、Google Servlet Engine、nginxベースのopenrestyなどの小さなプレイヤーが続きます。
@@ -164,7 +168,7 @@ nginxは、最新バージョンへのインストールまたはアップグレ
 | openresty     |      1.22% |  1.36% |  1.30% |
 | ...           |      ...   |  ...   |  ...   |
 
-<figcaption>図7. HTTP/1.1以前に使用されるサーバー。</figcaption>
+<figcaption>{{ figure_link(caption=" HTTP/1.1以前に使用されるサーバー。") }}</figcaption>
 </figure>
 
 これの一部は、サーバーがHTTP/2をサポートしていてもHTTP/1.1を使用する非HTTPSトラフィックになりますが、より大きな問題はHTTP/2をまったくサポートしないことです。これらの統計では、古いバージョンを実行している可能性が高いApacheとIISのシェアがはるかに大きいことがわかります。
@@ -188,7 +192,7 @@ Linuxディストリビューションの最新バージョン（RHELおよびCe
 | Microsoft-IIS |     14.10% | 13.47% |
 | ...           |      ...   |  ...   |
 
-<figcaption>図8. HTTP/2を提供するために使用される各サーバーのインストールの割合。</figcaption>
+<figcaption>{{ figure_link(caption=" HTTP/2を提供するために使用される各サーバーのインストールの割合。") }}</figcaption>
 </figure>
 
 ApacheとIISがインストールベースのHTTP/2サポートで1​​8％、14％と遅れを取っていることは明らかです。これは（少なくとも部分的に）アップグレードがより困難であるためです。多くのサーバーがこのサポートを簡単に取得するには、多くの場合、OSの完全なアップグレードが必要です。新しいバージョンのOSが標準になると、これが簡単になることを願っています。
@@ -200,23 +204,27 @@ HTTP/2の影響は、特にHTTP Archive[方法論](./methodology)を使用して
 
 測定できる影響の1つは、現在HTTP/2の世界にいるHTTP使用の変化です。複数の接続は、限られた形式の並列化を可能にするHTTP/1.1の回避策でしたが、これは実際、HTTP/2で通常最もよく機能することの反対になります。単一の接続でTCPセットアップ、TCPスロースタート、およびHTTPSネゴシエーションのオーバーヘッドが削減され、クロスリクエストの優先順位付けが可能になります。
 
-<figure>
-  <a href="/static/images/2019/http2/ch20_fig9_num_tcp_connections_trend_over_years.png">
-    <img alt="図9.ページごとのTCP接続。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" src="/static/images/2019/http2/ch20_fig9_num_tcp_connections_trend_over_years.png" width="600" height="320">
-  </a>
-  <div id="fig9-description" class="visually-hidden">ページあたりのTCP接続数の時系列グラフ。2019年7月現在、デスクトップページの中央値には14の接続があり、モバイルページの中央値には16の接続があります。</div>
-  <figcaption id="fig9-caption">図9.ページごとのTCP接続。 (引用: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch20_fig9_num_tcp_connections_trend_over_years.png",
+  alt='ページごとのTCP接続。  ',
+  caption='ページごとのTCP接続。 (引用: <a href="https://httparchive.org/reports/state-of-the-web#tcp">HTTP Archive</a>)',
+  description="ページあたりのTCP接続数の時系列グラフ。2019年7月現在、デスクトップページの中央値には14の接続があり、モバイルページの中央値には16の接続があります。",
+  width=600,
+  height=320
+  )
+}}
 
 HTTP Archiveは、ページあたりのTCP接続数を測定します。これは、HTTP/2をサポートするサイトが増え、6つの個別の接続の代わりに単一の接続を使用するため、徐々に減少しています。
 
-<figure>
-  <a href="/static/images/2019/http2/ch20_fig10_total_requests_per_page_trend_over_years.png">
-    <img alt="図10.ページごとの合計リクエスト。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/http2/ch20_fig10_total_requests_per_page_trend_over_years.png" width="600" height="321">
-  </a>
-  <div id="fig10-description" class="visually-hidden">ページあたりのリクエスト数の時系列チャート。2019年7月現在、デスクトップページの中央値は74リクエスト、モバイルページの中央値は69リクエストです。傾向は比較的横ばいです。</div>
-  <figcaption id="fig10-caption">図10.ページごとの合計リクエスト。 (引用: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)</figcaption>
-</figure>
+{{ figure_markup(
+  image="ch20_fig10_total_requests_per_page_trend_over_years.png",
+  alt='ページごとの合計リクエスト。',
+  caption='ページごとの合計リクエスト。 (引用: <a href="https://httparchive.org/reports/state-of-the-web#reqTotal">HTTP Archive</a>)',
+  description="ページあたりのリクエスト数の時系列チャート。2019年7月現在、デスクトップページの中央値は74リクエスト、モバイルページの中央値は69リクエストです。傾向は比較的横ばいです。",
+  width=600,
+  height=321
+  )
+}}
 
 より少ないリクエストを取得するためのアセットのバンドルは、バンドル、連結、パッケージ化、分割など多くの名前で行われた別のHTTP/1.1回避策でした。HTTP/2を使用する場合、リクエストのオーバーヘッドが少ないため、これはあまり必要ありませんが、注意する必要がありますその要求はHTTP/2で無料ではなく、[バンドルを完全に削除する実験を行った人はパフォーマンスの低下に気付きました](https://engineering.khanacademy.org/posts/js-packaging-http2.htm)。ページごとにロードされるリクエストの数を時間毎に見ると、予想される増加ではなく、リクエストのわずかな減少が見られます。
 
@@ -243,7 +251,7 @@ HTTP/2プッシュは、HTTP/2の大いに宣伝された新機能であるに�
 | デスクトップ  |  22,581                    | 0.52%                         |
 | モバイル     |  31,452                    | 0.59%                         |
 
-<figcaption>図11. HTTP/2プッシュを使用するサイト。</figcaption>
+<figcaption>{{ figure_link(caption=" HTTP/2プッシュを使用するサイト。") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -252,21 +260,20 @@ HTTP/2プッシュは、HTTP/2の大いに宣伝された新機能であるに�
 | デスクトップ  |  7.86                   | 162.38            |
 | モバイル     |  6.35                   | 122.78            |
 
-<figcaption>図12.使用時にプッシュされる量。</figcaption>
+<figcaption>{{ figure_link(caption="使用時にプッシュされる量。") }}</figcaption>
 </figure>
 
 これらの統計は、HTTP/2プッシュの増加が非常に低いことを示しています。これは、おそらく前述の問題が原因です。ただし、サイトがプッシュを使用する場合、図12に示すように1つまたは2つのアセットではなく、プッシュを頻繁に使用する傾向があります。
 
 これは以前のアドバイスでプッシュを控えめにし、「[アイドル状態のネットワーク時間を埋めるのに十分なリソースだけをプッシュし、それ以上はプッシュしない](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit)」ということでした。上記の統計は、大きなサイズの多くのリソースがプッシュされることを示しています。
 
-<figure>
-  <a href="/static/images/2019/http2/ch20_fig13_what_push_is_used_for.png">
-    <img src="/static/images/2019/http2/ch20_fig13_what_push_is_used_for.png" aria-labelledby="fig13-caption" alt="図13.プッシュはどのアセットタイプに使用されますか？" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">プッシュされるアセットタイプの割合を分類する円グラフ。 JavaScriptがアセットのほぼ半分を構成し、次にCSSが約4分の1、画像が約8分の1、残りをテキストベースのさまざまなタイプで構成します。</div>
-  <figcaption id="fig13-caption">図13.プッシュはどの資産タイプに使用されますか？</figcaption>
-</figure>
-
+{{ figure_markup(
+  image="ch20_fig13_what_push_is_used_for.png",
+  caption="プッシュはどの資産タイプに使用されますか？",
+  description="プッシュされるアセットタイプの割合を分類する円グラフ。 JavaScriptがアセットのほぼ半分を構成し、次にCSSが約4分の1、画像が約8分の1、残りをテキストベースのさまざまなタイプで構成します。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&format=interactive"
+  )
+}}
 図13は、最も一般的にプッシュされるアセットを示しています。 JavaScriptとCSSは、ボリュームとバイトの両方で、プッシュされるアイテムの圧倒的多数です。この後、画像、フォント、およびデータのラグタグの種類があります。最後にビデオをプッシュしているサイトは約100あることがわかりますが、これは意図的なものであるか、間違ったタイプのアセットを過剰にプッシュしている兆候かもしれません！
 
 一部の人が提起する懸念の1つは、HTTP/2実装が`プリロード`HTTP`リンク`ヘッダーをプッシュする信号として再利用したことです。`プリロード`の最も一般的な使用法の1つは、CSSが要求、ダウンロード、解析されるまでブラウザに表示されない、フォントや画像などの遅れて発見されたリソースをブラウザに通知することです。これらが現在そのヘッダーに基づいてプッシュされる場合、これを再利用すると多くの意図しないプッシュを発生する可能性があるという懸念はありました。
@@ -308,15 +315,17 @@ HTTP/2には複雑な優先順位付けモデルがあります（非常に複�
 | Netlify           | Fail                   |  0.23%     |  0.15% |  0.19% |
 | OVH CDN           | Unknown                |  0.19%     |  0.18% |  0.18% |
 
-<figcaption>図14.一般的なCDNでのHTTP/2優先順位付けのサポート。</figcaption>
+<figcaption>{{ figure_link(caption="一般的なCDNでのHTTP/2優先順位付けのサポート。") }}</figcaption>
 </figure>
 
 図14は、トラフィックのかなりの部分が特定された問題の影響を受けていることを示しており、合計はデスクトップで26.82％、モバイルで27.83％です。これがどの程度の問題であるかは、ページの読み込み方法と、影響を受けるサイトの優先度の高いリソースが遅れて検出されるかどうかによって異なります。
 
-<figure>
-  <div class="big-number">27.83%</div>
-  <figcaption>図15.準最適なHTTP/2優先順位付けによるモバイル要求の割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="準最適なHTTP/2優先順位付けによるモバイル要求の割合。",
+  content="27.83%",
+  classes="big-number"
+)
+}}
 
 別の問題は、`アップグレード`HTTPヘッダーが誤って使用されていることです。 Webサーバーは、クライアントが使用したいより良いプロトコルをサポートすることを示唆する`アップグレード`HTTPヘッダーで要求に応答できます（たとえば、HTTP/2をHTTP/1.1のみを使用してクライアントに宣伝します）。これは、サーバーがHTTP/2をサポートすることをブラウザーに通知する方法として役立つと思われるかもしれませんがブラウザーはHTTPSのみをサポートし、HTTP/2の使用はHTTPSハンドシェイクを通じてネゴシエートできるため、HTTP/2を宣伝するための`アップグレード`ヘッダーはかなり制限されています（少なくともブラウザの場合）。
 
@@ -337,10 +346,12 @@ QUICは長年にわたってGoogleによって実装されており、SPDYがHTT
 
 HTTP/3はTCPではなくUDPでQUICを使用するため、HTTP/3の検出はHTTP/2の検出よりも大きな課題になります。 HTTP/2では、主にHTTPSハンドシェイクを使用できますが、HTTP/3は完全に異なる接続となるため、ここは選択肢ではありません。またHTTP/2は`アップグレード`HTTPヘッダーを使用してブラウザーにHTTP/2サポートを通知します、HTTP/2にはそれほど有用ではありませんでしたが、QUICにはより有用な同様のメカニズムが導入されています。*代替サービス*HTTPヘッダー（`alt-svc`）は、この接続で使用できる代替プロトコルとは対照的に、まったく異なる接続で使用できる代替プロトコルを宣伝します。これは、`アップグレード`HTTPヘッダーの使用目的です。
 
-<figure>
-  <div class="big-number">8.38%</div>
-  <figcaption>図16. QUICをサポートするモバイルサイトの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="QUICをサポートするモバイルサイトの割合。",
+  content="8.38%",
+  classes="big-number"
+)
+}}
 
 このヘッダーを分析すると、デスクトップサイトの7.67％とモバイルサイトの8.38％がすでにQUICをサポートしていることがわかります。QUICは、Googleのトラフィックの割合を表します。また、0.04％はすでにHTTP/3をサポートしています。来年のWeb Almanacでは、この数は大幅に増加すると予想しています。
 

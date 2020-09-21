@@ -37,13 +37,14 @@ last_updated: 2020-08-23T00:00:00.000Z
 
 为了确保你的网站在这些情况下是可读的，确保你的文字与它的背景有足够的颜色对比是至关重要的。同时，要考虑当颜色转换为灰度时将显示什么对比也是非常重要的。
 
-<figure>
-  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img alt="图1.色彩对比度不足的文本示例。由LookZook提供" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
-  </a>
-  <div id="fig1-description" class="visually-hidden">四个彩色框，由棕色和灰色阴影填充，内部是白色文本。创建两个列。左列说明颜色太浅，棕色背景色写为<code>#FCA469</code>. 右列是推荐的，棕色背景色写为<code>#BD5B0E</code>。每列的顶部框是带有棕色背景的白色文本<code>#FFFFFF</code> 底部框是带有灰色背景的白色文本 <code>#FFFFFF</code>。等效的灰度分别是 <code>#B8B8B8</code> 和 <code>#707070</code>。由LookZook提供</div>
-  <figcaption id="fig1-caption">图1.色彩对比度不足的文本示例。由LookZook提供</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-good-and-bad-color-contrast-lookzook.svg",
+  caption="色彩对比度不足的文本示例。由LookZook提供",
+  description="四个彩色框，由棕色和灰色阴影填充，内部是白色文本。创建两个列。左列说明颜色太浅，棕色背景色写为 <code>#FCA469</code>. 右列是推荐的，棕色背景色写为 <code>#BD5B0E</code>。每列的顶部框是带有棕色背景的白色文本 <code>#FFFFFF</code> 底部框是带有灰色背景的白色文本 <code>#FFFFFF</code>。等效的灰度分别是 <code>#B8B8B8</code> 和 <code>#707070</code>。由LookZook提供",
+  width=568,
+  height=300
+  )
+}}
 
 只有22.04%的网站给所有的文本提供了足够的颜色对比。或换句话说：每5个网站中就有4个网站的文字很容易和背景融合，导致难以阅读。
 
@@ -63,13 +64,13 @@ last_updated: 2020-08-23T00:00:00.000Z
 
 遗憾的是，开发者们滥用了这一功能，以至于几乎三分之一(32.21%)的移动版网站禁用了这一功能，而苹果(例如 iOS 10)也不再允许网络开发者禁用缩放功能。移动版Safari直接[忽略了这个标记](https://archive.org/details/ios-10-beta-release-notes)。无论如何设置，所有网站都可以在更新的iOS设备上进行缩放。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig2.png">
-    <img src="/static/images/2019/accessibility/fig2.png" alt="图2.禁用缩放的站点与设备类型的百分比。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">垂直测量百分比数据， 从0到80，以20为增量，与设备类型相对应，分为桌面和移动设备。启用桌面版：75.46％； 禁用桌面版24.54％； 启用移动版：67.79％； 禁用移动版：32.21％。</div>
-  <figcaption id="fig2-caption">图2.禁用缩放的站点与设备类型的百分比。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig2.png",
+  caption="禁用缩放的站点与设备类型的百分比。",
+  description="垂直测量百分比数据， 从0到80，以20为增量，与设备类型相对应，分为桌面和移动设备。启用桌面版：75.46％； 禁用桌面版24.54％； 启用移动版：67.79％； 禁用移动版：32.21％。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"
+  )
+}}
 
 ### 语言识别
 
@@ -121,13 +122,13 @@ last_updated: 2020-08-23T00:00:00.000Z
 2. 38.6%的页面跳过表头级别。
 3. 奇怪的是，在发现H2的网站更多，多于H1。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig3.png">
-    <img src="/static/images/2019/accessibility/fig3.png" alt="图3. 表头级别的流行程度" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">垂直条形图量度百分比数据，范围从0到80，以20为增量，而条形图表示从每个表头h1到h6的级别。H1：63.25%; H2：67.86%; H3：58.63%; H4：36.38%; H5：14.64%; H6：6.91%.</div>
-  <figcaption id="fig3-caption">图3. 表头级别的流行程度</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="表头级别的流行程度",
+  description="垂直条形图量度百分比数据，范围从0到80，以20为增量，而条形图表示从每个表头h1到h6的级别。H1：63.25%; H2：67.86%; H3：58.63%; H4：36.38%; H5：14.64%; H6：6.91%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"
+  )
+}}
 
 ### Main 地标
 
@@ -135,13 +136,13 @@ last_updated: 2020-08-23T00:00:00.000Z
 
 我们发现，每四个页面中只有一页（26.03％）包含main地标。令人惊讶的是，8.06％的页面错误地包含多个main地标，使这些用户猜测哪个地标包含实际的主要内容。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig4.png">
-    <img src="/static/images/2019/accessibility/fig4.png" alt="Figure 4. 图4.按“main”地标数量划分的页面百分比。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">垂直条形图显示百分比数据，范围从0到80，以20为增量，而条形图则表示每页从0到4的“main”地标数量。数据源：HTTP Archive (2019年7月). 0：73.97%; 1：17.97%; 2：7.41%; 3：0.15%; 4：0.06%.</div>
-  <figcaption id="fig4-caption" >图4.按“main”地标数量划分的页面百分比。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig4.png",
+  caption="按“main”地标数量划分的页面百分比。",
+  description="垂直条形图显示百分比数据，范围从0到80，以20为增量，而条形图则表示每页从0到4的“main”地标数量。数据源：HTTP Archive (2019年7月). 0：73.97%; 1：17.97%; 2：7.41%; 3：0.15%; 4：0.06%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
+  )
+}}
 
 ### HTML 章节元素
 
@@ -153,25 +154,25 @@ last_updated: 2020-08-23T00:00:00.000Z
 
 所有这些元素主要是为无障碍可访问性支持而设计的，并且没有视觉效果，这意味着您可以安全地用它们替换现有元素，并且不会遭受意外的后果。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig5.png">
-    <img src="/static/images/2019/accessibility/fig5.png" alt="图5.各种HTML语义元素的使用。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">垂直条形图，每种元素类型的条形与页面百分比的关系，范围从0到60，增量为20。. nav：53.94%; header：54.82%; footer：55.92%; main：18.47%; aside：16.99%; article：22.59%; hr：19.1%; section：36.55%.</div>
-  <figcaption id="fig5-caption" >图5.各种HTML语义元素的使用。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig5.png",
+  caption="各种HTML语义元素的使用。",
+  description="垂直条形图，每种元素类型的条形与页面百分比的关系，范围从0到60，增量为20。. nav：53.94%; header：54.82%; footer：55.92%; main：18.47%; aside：16.99%; article：22.59%; hr：19.1%; section：36.55%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
+  )
+}}
 
 ### 用于导航的其他 HTML 元素
 
 许多流行的屏幕阅读器还允许用户通过快速跳转链接，列表，列表项，iframe和表单字段（如编辑字段，按钮和列表框）进行导航。图6详细说明了我们观察到的使用这些元素的页面的频率。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig6.png">
-    <img src="/static/images/2019/accessibility/fig6.png" alt="图6.用于导航的其他HTML元素。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">垂直条形图，每种元素的类型与页面百分比之间的关系，从0到100，以25为增量。a：98.22%; ul：88.62%; input：76.63%; iframe：60.39%; button：56.74%; select：19.68%; textarea：12.03%.</div>
-  <figcaption id="fig6-caption">图6.用于导航的其他HTML元素。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig6.png",
+  caption="用于导航的其他HTML元素。",
+  description="垂直条形图，每种元素的类型与页面百分比之间的关系，从0到100，以25为增量。a：98.22%; ul：88.62%; input：76.63%; iframe：60.39%; button：56.74%; select：19.68%; textarea：12.03%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
+  )
+}}
 
 ### 跳过链接
 
@@ -179,13 +180,14 @@ last_updated: 2020-08-23T00:00:00.000Z
 
 如果您希望自己看到一个跳过链接，没问题！只需进行一次快速的Google搜索，然后在进入搜索结果页面时敲”<kbd>tab</kbd>"，您将看到一个先前隐藏的链接，如图7所示。
 
-<figure>
-  <a href="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png">
-    <img alt="图7.跳过链接在google.com上的样子。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png" width="600" height="333">
-  </a>
-  <div id="fig7-description" class="visually-hidden">搜索'http archive'的Google搜索结果页面的屏幕截图。可见“跳至主要内容”链接被突出显示的蓝色焦点框所包围，一个黄色覆盖框伸出红色的箭头指向蓝色焦点框，黄色覆盖框中的文字是“google.com上的跳过链接”。</div>
-  <figcaption id="fig7-caption">图7.跳过链接在google.com上的样子。</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-a-skip-link-on-google.com.png",
+  caption="跳过链接在google.com上的样子。",
+  description="搜索'http archive'的Google搜索结果页面的屏幕截图。可见“跳至主要内容”链接被突出显示的蓝色焦点框所包围，一个黄色覆盖框伸出红色的箭头指向蓝色焦点框，黄色覆盖框中的文字是“google.com上的跳过链接”。",
+  width=600,
+  height=333
+  )
+}}
 
 实际上，您甚至不需要离开此站点，因为我们 [也在这里使用它们](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)! 
 
@@ -229,13 +231,13 @@ last_updated: 2020-08-23T00:00:00.000Z
 
 正确和适当的使用ARIA可能会遇到挑战。例如，在使用ARIA属性的页面中，我们发现12.31％的属性分配了无效值。这是有问题的，因为任何使用ARIA属性的错误都不会对页面产生视觉影响。这些错误中的一些可以通过使用自动验证工具来检测，但是通常它们需要动手使用真正的辅助软件（例如屏幕阅读器）。本节将研究如何在网络上使用ARIA，特别是该标准的哪些部分最为普遍。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig8.png">
-    <img src="/static/images/2019/accessibility/fig8.png" alt="图8.页面总数与ARIA属性的百分比。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">垂直条形图显示百分比数据，范围从0到25，以5为增量，条形图代表每个属性。Aria-hidden：23.46%，aria-label：17.67%，aria-expanded：8.68%，aria-current：7.76%，aria-labelledby：6.85%，aria-controls：3.56%，aria-haspopup：2.62%，aria-invalid：2.68%，aria-describedby：1.69%，aria-live：1.04%，aria-required：1%</div>
-  <figcaption id="fig8-caption" >图8.页面总数与ARIA属性的百分比。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig8.png",
+  caption="页面总数与ARIA属性的百分比。",
+  description="垂直条形图显示百分比数据，范围从0到25，以5为增量，条形图代表每个属性。Aria-hidden：23.46%，aria-label：17.67%，aria-expanded：8.68%，aria-current：7.76%，aria-labelledby：6.85%，aria-controls：3.56%，aria-haspopup：2.62%，aria-invalid：2.68%，aria-describedby：1.69%，aria-live：1.04%，aria-required：1%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
+  )
+}}
 
 #### `role` 角色属性
 
@@ -243,13 +245,13 @@ last_updated: 2020-08-23T00:00:00.000Z
 
 当前，有46.91％的页面使用至少一个ARIA角色属性。在下面的图9中，我们汇总了使用最广泛的十个ARIA角色值。
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig9.png">
-    <img src="/static/images/2019/accessibility/fig9.png" alt="图9.前10名aria角色。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden"> 垂直条形图，每种角色类型的条形图和使用的站点百分比，范围是0到25，以5为增量。Navigation：20.4%; search：15.49%; main：14.39%; banner：13.62%; contentinfo：11.23%; button：10.59%; dialog：7.87%; complementary：6.06%; menu：4.71%; form：3.75%</div>
-  <figcaption id="fig9-caption" >图9.前10名aria角色。</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig9.png",
+  caption="前10名aria角色。",
+  description=" 垂直条形图，每种角色类型的条形图和使用的站点百分比，范围是0到25，以5为增量。Navigation：20.4%; search：15.49%; main：14.39%; banner：13.62%; contentinfo：11.23%; button：10.59%; dialog：7.87%; complementary：6.06%; menu：4.71%; form：3.75%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
+  )
+}}
 
 查看图9中的结果，我们发现了两个有趣的见解：更新UI框架可能会对整个Web的可访问性产生深远的影响，同时发现尝试让对话框可访问的网站数量之多令人印象深刻。
 

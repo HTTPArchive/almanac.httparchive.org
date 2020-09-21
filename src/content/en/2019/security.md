@@ -19,23 +19,31 @@ This chapter of the Web Almanac looks at the current status of security on the w
 ## Transport Layer Security
 Perhaps the largest push to increasing security and privacy online we're seeing at present is the widespread adoption of Transport Layer Security (TLS). TLS (or the older version, SSL) is the protocol that gives us the 'S' in HTTPS and allows secure and private browsing of websites. Not only are we seeing a great [increase in the use of HTTPS across the web](https://httparchive.org/reports/state-of-the-web#pctHttps), but also an increase in more modern versions of TLS like TLSv1.2 and TLSv1.3, which is also important.
 
-<figure>
-  <a href="/static/images/2019/security/fig1.png">
-    <img src="/static/images/2019/security/fig1.png" alt="Figure 1. Usage of HTTP versus HTTPS." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&amp;format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Horizontal bar chart showing mobile HTTPS at 79% and HTTP at 21%, and beneath that desktop HTTPS is 80.51% and HTTP is 19.49%</div>
-  <figcaption id="fig1-caption" >Figure 1. Usage of HTTP versus HTTPS.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1.png",
+  caption="Usage of HTTP versus HTTPS.",
+  description="Horizontal bar chart showing mobile HTTPS at 79% and HTTP at 21%, and beneath that desktop HTTPS is 80.51% and HTTP is 19.49%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=933123879&format=interactive",
+  width=760,
+  height=470,
+  data_width=760,
+  data_height=470
+  )
+}}
 
 ### Protocol versions
 
-<figure>
-  <a href="/static/images/2019/security/fig2.png">
-    <img src="/static/images/2019/security/fig2.png" alt="Figure 2. Usage of TLS protocol versions." aria-labelledby="fig2-caption"  aria-describedby="fig2-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Horizontal bar chart showing desktop and mobile on similar TLS usage: 58% on TLSv1.2, 41% on TLSv1.3 and very little usage of TLSv1.0 (0.75%) and a tiny usage of TLSv1.1.</div>
-  <figcaption id="fig2-caption" >Figure 2. Usage of TLS protocol versions.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  caption="Usage of TLS protocol versions.",
+  description="Horizontal bar chart showing desktop and mobile on similar TLS usage: 58% on TLSv1.2, 41% on TLSv1.3 and very little usage of TLSv1.0 (0.75%) and a tiny usage of TLSv1.1.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=1441324762&format=interactive",
+  width=760,
+  height=470,
+  data_width=760,
+  data_height=470
+  )
+}}
 
 Figure 2 shows the support for various protocol versions. Use of legacy TLS versions like TLSv1.0 and TLSv1.1 is minimal and almost all support is for the newer TLSv1.2 and TLSv1.3 versions of the protocol. Even though TLSv1.3 is still very young as a standard (TLSv1.3 was only formally approved in [August 2018](https://tools.ietf.org/html/rfc8446)), over 40% of requests using TLS are using the latest version!
 
@@ -43,13 +51,17 @@ This is likely due to many sites using requests from the larger players for [thi
 
 If we look at just home pages, and not all the other requests made on sites, then the usage of TLS is considerably as expected, though still quite high which is likely due to [CMS](./cms) sites like Wordpress and [CDNs](./cdn):
 
-<figure>
-   <a href="/static/images/2019/security/fig3.png">
-    <img src="/static/images/2019/security/fig3.png" alt="Figure 3. Usage of TLS protocol versions for home page requests only." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="760" height="470" data-width="760" data-height="470" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">Horizontal bar chart showing desktop and mobile on similar TLS usage: 47% on desktop (43% on mobile) on TLSv1.2, 20.2% on desktop (19.7% on mobile) on TLSv1.3 and very little usage of TLSv1.0 (1.1% - 1.2%) and a tiny usage of TLSv1.1.</div>
-  <figcaption id="fig3-caption">Figure 3. Usage of TLS protocol versions for home page requests only.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="Usage of TLS protocol versions for home page requests only.",
+  description="Horizontal bar chart showing desktop and mobile on similar TLS usage: 47% on desktop (43% on mobile) on TLSv1.2, 20.2% on desktop (19.7% on mobile) on TLSv1.3 and very little usage of TLSv1.0 (1.1% - 1.2%) and a tiny usage of TLSv1.1.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&format=interactive",
+  width=760,
+  height=470,
+  data_width=760,
+  data_height=470
+  )
+}}
 
 On the other hand, the [methodology](./methodology) used by the Web Almanac will also *under-report* usage from large sites, as their sites themselves will likely form a larger volume of internet traffic in the real world, yet are crawled only once for these statistics.
 
@@ -71,7 +83,7 @@ Of course, if we want to use HTTPS on our website then we need a certificate fro
 | Amazon                                          |  4.71%  |  4.45% |
 | COMODO ECC Domain Validation Secure Server CA 2 |  3.22%  |  2.75% |
 
-<figcaption>Figure 4. Top ten Certificate Authority used.</figcaption>
+<figcaption>{{ figure_link(caption="Top ten Certificate Authority used.") }}</figcaption>
 </figure>
 
 As previously discussed, the volume for Google likely reflects repeated use of Google Analytics, Google Adwords, or Google Fonts on other sites.
@@ -93,7 +105,7 @@ First of all, we'll look at the keys used for authentication purposes. Tradition
 | RSA Keys  | 48.67%  | 58.8%  |
 | ECDA Keys | 21.47%  | 26.41% |
 
-<figcaption>Figure 5. Authentication key types used.</figcaption>
+<figcaption>{{ figure_link(caption="Authentication key types used.") }}</figcaption>
 </figure>
 
 Whilst ECDSA keys are stronger, which allows the use of smaller keys and demonstrate better performance than their RSA counterparts, concerns around backwards compatibility, and complications in supporting both in the meantime, do prevent some website operators from migrating. 
@@ -117,7 +129,7 @@ TLS allows the use of various cipher suites - some newer and more secure, and so
 | `CHACHA20_POLY1305` |  0.69%  |  0.79% |
 | `3DES_EDE_CBC`      |  0.06%  |  0.04% |
 
-<figcaption>Figure 6. Cipher suite usage used.</figcaption>
+<figcaption>{{ figure_link(caption="Cipher suite usage used.") }}</figcaption>
 </figure>
 
 It is positive to see such wide stream use of GCM ciphers since the older CBC ciphers are less secure. [CHACHA20_POLY1305](https://blog.cloudflare.com/it-takes-two-to-chacha-poly/) is still an niche cipher suite, and we even still have a very small use of the [insecure 3DES ciphers](https://en.wikipedia.org/wiki/Triple_DES#Security).
@@ -134,7 +146,7 @@ Most sites on the web originally existed as HTTP websites and have had to migrat
 | Pages with Any Mixed Content    | 16.27%  | 15.37% |
 | Pages with Active Mixed Content |  3.99%  |  4.13% |
 
-<figcaption>Figure 7. Mixed content usage.</figcaption>
+<figcaption>{{ figure_link(caption="Mixed content usage.") }}</figcaption>
 </figure>
 
 We can see that around 20% of sites across mobile (645,485 sites) and desktop (594,072 sites) present some form of mixed content. Whilst passive mixed content, something like an image, is less dangerous, we can still see that almost a quarter of sites with mixed content have active mixed content. Active mixed content, like JavaScript, is more dangerous as an attacker can insert their own hostile code into a page easily.
@@ -144,13 +156,17 @@ In the past web browsers have allowed passive mixed content and flagged it with 
 ## Security headers
 Many new and recent features for site operators to better protect their users have come in the form of new HTTP response headers that can configure and control security protections built into the browser. Some of these features are easy to enable and provide a huge level of protection whilst others require a little more work from site operators. If you wish to check if a site is using these headers and has them correctly configured, you can use the [Security Headers](https://securityheaders.com/) tool to scan it.
 
-<figure>
-   <a href="/static/images/2019/security/fig8.png">
-    <img src="/static/images/2019/security/fig8.png" alt="Figure 8. Usage of Security Headers" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="760" height="450" data-width="760" data-height="450" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">A vertical bar graph showing increasing usage of security headers list for both desktop and mobile listing from left to right: cross-origin-resource-policy (0 sites on both), feature policy (approx 8k desktop and mobile) report-to (74k desktop and 83k mobile), nel (74k desktop and 83k mobile), referrer-policy (142k desktop, 156k mobile), content-security-policy (240k desktop, 252k mobile), strict-transport-security (648k desktop, 679k mobile), x-xss-protection (642k desktop, 805k mobile), x-frame-options (743k desktop, 782k mobile) and finally x-content-type-options (770k desktop, 932k mobile).</div>
-  <figcaption id="fig8-caption" >Figure 8. Usage of Security Headers</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Usage of Security Headers",
+  description="A vertical bar graph showing increasing usage of security headers list for both desktop and mobile listing from left to right: cross-origin-resource-policy (0 sites on both), feature policy (approx 8k desktop and mobile) report-to (74k desktop and 83k mobile), nel (74k desktop and 83k mobile), referrer-policy (142k desktop, 156k mobile), content-security-policy (240k desktop, 252k mobile), strict-transport-security (648k desktop, 679k mobile), x-xss-protection (642k desktop, 805k mobile), x-frame-options (743k desktop, 782k mobile) and finally x-content-type-options (770k desktop, 932k mobile).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=2029255231&format=interactive",
+  width=760,
+  height=450,
+  data_width=760,
+  data_height=450
+  )
+}}
 
 ### HTTP Strict Transport Security
 The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instruct a browser that it should only ever communicate with the site over a secure HTTPS connection. This means that any attempts to use a http:// URL will automatically be converted to https:// before a request is made. Given that over 40% of requests were capable of using TLS, we see a much lower % of requests instructing the browser to require it.
@@ -163,7 +179,7 @@ The [HSTS](https://tools.ietf.org/html/rfc6797) header allows a website to instr
 | `includeSubDomains` |  3.86%  |  3.29% |
 | `preload`           |  2.27%  |  1.99% |
 
-<figcaption>Figure 9. HSTS directive usage.</figcaption>
+<figcaption>{{ figure_link(caption="HSTS directive usage.") }}</figcaption>
 </figure>
 
 Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age` directive. This is a minimum requirement for a valid policy. Fewer still are including subdomains in their policy with the `includeSubDomains` directive and even fewer still are HSTS preloading. Looking at the median value for a HSTS `max-age`, for those that do use this, we can see that on both desktop and mobile it is 15768000, a strong configuration representing half a year (60 x 60 x 24 x 365/2).
@@ -210,7 +226,7 @@ Less than 15% of mobile and desktop pages are issuing a HSTS with a `max-age` di
     </tbody>
   </table>
 
-<figcaption>Figure 10. Medium values of HSTS `max-age` policy by percentile.</figcaption>
+<figcaption>{{ figure_link(caption="Medium values of HSTS `max-age` policy by percentile.") }}</figcaption>
 </figure>
 
 #### HSTS preloading
@@ -278,7 +294,7 @@ A total of 3.25% of desktop pages and 2.95% of mobile pages issue a `Referrer-Po
 | `strict-origin`                   |  4.35%  |  4.14% |
 | `origin`                          |  3.63%  |  3.23% |
 
-<figcaption>Figure 11. `Referrer-Policy` configuration option usage.</figcaption>
+<figcaption>{{ figure_link(caption="`Referrer-Policy` configuration option usage.") }}</figcaption>
 </figure>
 
 This table shows the valid values set by pages and that, of the pages which use this header, 99.75% of them on desktop and 96.55% of them on mobile are setting a valid policy. The most popular choice of configuration is `no-referrer-when-downgrade` which will prevent the `Referer` header being sent when a user navigates from a HTTPS page to a HTTP page. The second most popular choice is `strict-origin-when-cross-origin` which prevents any information being sent on a scheme downgrade (HTTPS to HTTP navigation) and when information is sent in the `Referer` it will only contain the origin of the source and not the full URL (for example `https://www.example.com` rather than `https://www.example.com/page/`). Details on the other valid configurations can be found in the [Referrer Policy specification](https://www.w3.org/TR/referrer-policy/#referrer-policies), though such a high usage of `unsafe-url` warrants further investigation but is likely to be a [third-party](./third-parties) component like analytics or advertisement libraries.
@@ -298,7 +314,7 @@ Here are the 5 most popular features that are controlled with a Feature Policy.
 | `geolocation`     |  9.38%  |  9.41% |
 | `gyroscope`       |  7.92%  |  7.90% |
 
-<figcaption>Figure 12. Top 5 `Feature-Policy` options used.</figcaption>
+<figcaption>{{ figure_link(caption="Top 5 `Feature-Policy` options used.") }}</figcaption>
 </figure>
 
 We can see that the most popular feature to take control of is the microphone, with almost 11% of desktop and mobile pages issuing a policy that includes it. Delving deeper into the data we can look at what those pages are allowing or blocking.
@@ -314,7 +330,7 @@ We can see that the most popular feature to take control of is the microphone, w
 | `microphone` | `*`           | 0.64% |
 | `microphone` | `*`           | 0.53% |
 
-<figcaption>Figure 13. Settings used for `microphone` feature.</figcaption>
+<figcaption>{{ figure_link(caption="Settings used for `microphone` feature.") }}</figcaption>
 </figure>
 
 By far the most common approach here is to block use of the microphone altogether, with about 9% of pages taking that approach. A small number of pages do allow the use of the microphone by their own origin and interestingly, a small selection of pages intentionally allow use of the microphone by any origin loading content in their page. 
@@ -332,7 +348,7 @@ We see that the usage of the `X-Frame-Options` header is quite high on both desk
 | `deny`        | 13.54%  | 14.50% |
 | `allow-from`  |  1.53%  |  1.64% |
 
-<figcaption>Figure 14. `X-Frame-Options` configuration used.</figcaption>
+<figcaption>{{ figure_link(caption="`X-Frame-Options` configuration used.") }}</figcaption>
 </figure>
 
 It seems that the vast majority of pages restrict framing to only their own origin and the next significant approach is to prevent framing altogether. This is similar to `frame-ancestors` in CSP where these 2 approaches are also the most common. It should also be noted that the `allow-from` option, which in theory allow site owners to list the third-party domains allowed to frame was [never well supported](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) and has been deprecated.
@@ -356,7 +372,7 @@ The [`X-XSS-Protection`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Heade
 | `0`            |  2.58%  |  3.11% |
 | `1;report=`    |  0.12%  |  0.09% |
 
-<figcaption>Figure 15. `X-XSS-Protection` configuration usage.</figcaption>
+<figcaption>{{ figure_link(caption="`X-XSS-Protection` configuration usage.") }}</figcaption>
 </figure>
 
 The value `1` enables the filter/auditor and `mode=block` sets the protection to the strongest setting (in theory) where any suspected XSS attack would cause the page to not be rendered. The second most common configuration was to simply ensure the auditor/filter was turned on, by presenting a value of `1` and then the 3rd most popular configuration is quite interesting.
@@ -406,7 +422,7 @@ Being a recently introduced mechanism, the usage of Same-Site cookies is much lo
 | `lax`         | 45.85%  | 47.42% |
 | `none`        |  0.51%  |  0.41% |
 
-<figcaption>Figure 16. SameSite configuration usage.</figcaption>
+<figcaption>{{ figure_link(caption="SameSite configuration usage.") }}</figcaption>
 </figure>
 
 We can see that of those pages already using Same-Site cookies, more than half of them are using it in `strict` mode. This is closely followed by sites using Same-Site in `lax` mode and then a small selection of sites using the value `none`. This last value is used to opt-out of the upcoming change where browser vendors may implement `lax` mode by default.
@@ -453,7 +469,7 @@ Currently the name of your cookie can be prefixed with either `__Secure-` or `__
     </tbody>
   </table>
 
-<figcaption>Figure 17. Cookie prefix usage.</figcaption>
+<figcaption>{{ figure_link(caption="Cookie prefix usage.") }}</figcaption>
 </figure>
 
 As the figures show, the use of either prefix is incredibly low but as the more relaxed of the two, the `__Secure-` prefix does see more utilization already. 
@@ -503,4 +519,3 @@ At web scale, the total coverage of opt-in platform security features is current
 It is important to note, however, that the adoption of these mechanisms is skewed towards larger web applications which frequently handle more sensitive user data. The developers of these sites more frequently invest in improving their web defenses, including enabling a range of protections against common vulnerabilities; tools such as [Mozilla Observatory](https://observatory.mozilla.org/) and [Security Headers](https://securityheaders.com/) can provide a useful checklist of web available security features.
 
 If your web application handles sensitive user data, consider enabling the security mechanisms outlined in this section to protect your users and make the web safer.
-
