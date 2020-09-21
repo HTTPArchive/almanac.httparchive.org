@@ -21,12 +21,12 @@ SELECT
   COUNTIF(getUpgradeHeader(payload) LIKE "%h2%") AS num_requests,
   COUNT(0) AS total
 FROM 
-  `httparchive.sample_data.requests`
+  `httparchive.almanac.requests`
 WHERE
   date='2020-08-01' AND 
   url LIKE "http://%" AND
   getUpgradeHeader(payload) LIKE "%h2%" AND
-  JSON_EXTRACT_SCALAR(payload, '$._protocol') != ''
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') IS NOT NULL
 GROUP BY
   client,
   firstHtml,
