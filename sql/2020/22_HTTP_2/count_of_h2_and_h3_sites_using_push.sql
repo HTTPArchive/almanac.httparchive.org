@@ -1,5 +1,5 @@
 # standardSQL
-# Count of H2 and H3 Sites using HTTP/2 Push
+# Count of H2 and H3 Sites using Push
 SELECT
   client,
   COUNT(DISTINCT IF(was_pushed, page, NULL)) AS num_pages_with_push,
