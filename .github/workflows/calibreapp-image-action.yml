@@ -14,10 +14,6 @@
 #
 name: Compress images
 on:
-  schedule:
-    # Run a full compression every Sunday at 11pm to start the week right
-    - cron: '00 23 * * 0'
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -32,6 +28,10 @@ on:
       - '**.jpeg'
       - '**.png'
       - '**.webp'
+  schedule:
+    # Run a full compression every Sunday at 11pm to start the week right
+    - cron: '00 23 * * 0'
+  workflow_dispatch:
 jobs:
   build:
     name: calibreapp/image-actions
