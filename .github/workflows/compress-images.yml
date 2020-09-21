@@ -12,11 +12,7 @@
 #    improvements are added to Calibre. This will also open a PR if necessary.
 # 4) Finally it can be kicked off manually and it will open a PR if necessary.
 
-<<<<<<< HEAD:.github/workflows/compress-images.yml
 name: Compress Images
-=======
-name: Compress images
->>>>>>> main:.github/workflows/calibreapp-image-action.yml
 on:
   push:
     branches:
