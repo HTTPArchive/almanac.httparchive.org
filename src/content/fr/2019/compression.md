@@ -146,7 +146,7 @@ Parmi les ressources qui sont servies compressées, la majorité utilise soit gz
 {{ figure_markup(
   image="fig2.png",
   caption="Adoption des algorithmes de compression sur les pages d’ordinateur de bureau.",
-  description="Diagramme circulaire du tableau de données de la figure 1.",
+  description="Diagramme circulaire du tableau de données de la figure 15.1.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNIyMEGYE_1W0OdFYLIKsxg6M3o_ZsTTuaX73Zzv6Alw4x4D6oH0jdg9BSgw-jy4E-MmX_Qaf-B98W/pubchart?oid=2052550005&format=interactive"
   )
 }}

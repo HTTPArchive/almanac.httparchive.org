@@ -120,7 +120,7 @@ So what do we see when we look at CLS across the web?
 
 1. Nearly two out of every three sites (65.32%) have medium or large CLS for 50% or more of all user experiences.
 
-2. 20.52% of sites have large CLS for at least half of all user experiences. That's about one of every five websites. Remember, the video in Figure 3 only has a CLS of 42.59% — these experiences are even worse than that!
+2. 20.52% of sites have large CLS for at least half of all user experiences. That's about one of every five websites. Remember, the video in Figure 12.3 only has a CLS of 42.59% — these experiences are even worse than that!
 
 We suspect much of this may be caused by websites not providing an explicit width and height for resources like ads and images that load after text has been painted to the screen. Before browsers can display a resource on the screen, they need to know how much room the resource will take up. So unless an explicit size is provided via CSS or HTML attributes, browsers have no way to know how how large the resource actually is and display it with a width and height of 0px until loaded. When the resource loads and browsers finally know how big it is, it shifts the page's contents, creating an unstable layout.
 
@@ -252,7 +252,7 @@ When analyzing sites containing an email input, 56.42% use `type="email"`. Simil
   <figcaption>{{ figure_link(caption="Most commonly used invalid input types") }}</figcaption>
 </figure>
 
-Make sure to educate yourself and others on the large amount of input types available and double-check that you don't have any typos like the most common ones in Figure 7 above.
+Make sure to educate yourself and others on the large amount of input types available and double-check that you don't have any typos like the most common ones in Figure 12.7 above.
 
 ### Enabling autocomplete for inputs
 

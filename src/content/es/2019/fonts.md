@@ -373,7 +373,7 @@ Profundicemos un poco más y veamos los valores `format()` usados en la propieda
 
 Estaba esperando ver [fuentes SVG](https://caniuse.com/#feat=svg-fonts) en declive. Tienen errores y las implementaciones se han eliminado de todos los navegadores excepto Safari. Es hora de dejarlas a todas.
 
-El punto de datos SVG aquí también me hace preguntarme con qué tipo de MIME están sirviendo estas fuentes SVG. No veo `image/svg+xml` en ninguna parte de la Figura 7. De todos modos, no se preocupe por arreglar eso, ¡simplemente deshágase de ellas!
+El punto de datos SVG aquí también me hace preguntarme con qué tipo de MIME están sirviendo estas fuentes SVG. No veo `image/svg+xml` en ninguna parte de la Figura 6.7. De todos modos, no se preocupe por arreglar eso, ¡simplemente deshágase de ellas!
 
 ### Solo WOFF2
 

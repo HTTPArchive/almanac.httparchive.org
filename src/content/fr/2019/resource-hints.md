@@ -156,7 +156,7 @@ Cela étant dit, si un site n'a pas besoin de supporter IE11 et les versions inf
   <figcaption>{{ figure_link(caption="Médiane en 90e percentile du nombre d'indices de ressources utilisés sur les pages en utilisant au moins un.") }}</figcaption>
 </figure>
 
-Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (_"quand tout est important, rien ne l'est"_). La figure 2 ci-dessus montre le nombre d'indices de ressources sur les pages en utilisant au moins un. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites les utilisent de manière appropriée.
+Les indices de ressources sont plus efficaces lorsqu'ils sont utilisés de manière sélective (_"quand tout est important, rien ne l'est"_). La figure 19.2 ci-dessus montre le nombre d'indices de ressources sur les pages en utilisant au moins un. Bien qu'il n'existe pas de règle précise pour définir ce qu'est un nombre approprié d'indices de ressources, il semble que la plupart des sites les utilisent de manière appropriée.
 
 ## L'attribut `crossorigin`
 
