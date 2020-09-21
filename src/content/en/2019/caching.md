@@ -226,7 +226,7 @@ The table below details the cache TTL values for desktop requests by type. Most 
 
 While most of the median TTLs are high, the lower percentiles highlight some of the missed caching opportunities. For example, the median TTL for images is 28 hours, however the 25th percentile is just one-two hours and the 10th percentile indicates that 10% of cacheable image content is cached for less than one hour.
 
-By exploring the cacheability by content type in more detail in figure 5 below, we can see that approximately half of all HTML responses are considered non-cacheable. Additionally, 16% of images and scripts are non-cacheable. 
+By exploring the cacheability by content type in more detail in Figure 16.5 below, we can see that approximately half of all HTML responses are considered non-cacheable. Additionally, 16% of images and scripts are non-cacheable. 
 
 {{ figure_markup(
   image="fig5.png",
@@ -346,7 +346,7 @@ For example, `cache-control: public, max-age=43200` indicates that a cached entr
   )
 }}
 
-Figure 9 above illustrates the top 15 `Cache-Control` directives in use on mobile websites. The results for desktop and mobile are very similar. There are a few interesting observations about the popularity of these cache directives:
+Figure 16.9 above illustrates the top 15 `Cache-Control` directives in use on mobile websites. The results for desktop and mobile are very similar. There are a few interesting observations about the popularity of these cache directives:
 
 * `max-age` is used by almost 75% of `Cache-Control` headers, and `no-store` is used by 18%. 
 * `public` is rarely necessary since cached entries are assumed `public` unless `private` is specified. Approximately 38% of responses include `public`.

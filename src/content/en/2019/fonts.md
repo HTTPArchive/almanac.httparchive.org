@@ -373,7 +373,7 @@ Let's dig a bit deeper and look at the `format()` values used in the `src:` prop
 
 I was hoping to see [SVG fonts](https://caniuse.com/#feat=svg-fonts) on the decline. They're buggy and implementations have been removed from every browser except Safari. Time to drop these, y'all.
 
-The SVG data point here also makes me wonder what MIME type y'all are serving these SVG fonts with. I don't see `image/svg+xml` anywhere in Figure 7. Anyway, don't worry about fixing that, just get rid of them!
+The SVG data point here also makes me wonder what MIME type y'all are serving these SVG fonts with. I don't see `image/svg+xml` anywhere in Figure 6.7. Anyway, don't worry about fixing that, just get rid of them!
 
 ### WOFF2-only
 

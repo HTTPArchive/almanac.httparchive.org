@@ -95,11 +95,11 @@ En CSS, hay muchas formas diferentes de lograr el mismo resultado visual utiliza
 
 ### Longitud y tamaño
 
-Como era de esperar, en la figura 5, `px` es el tipo de unidad más utilizado, es el tipo de unidad más utilizado con aproximadamente el 95% de las páginas web usando píxeles de una forma u otra (esto podría ser el tamaño del elemento, el tamaño de la fuente, etc.). Sin embargo, la unidad `em` es casi tan popular, con uso alrededor del 90%. Esto es más de 2 veces más popular que la unidad `rem`,que tiene solo un 40% de frecuencia en las páginas web. Si te preguntas cuál es la diferencia, `em` se basa en el tamaño de fuente principal, mientras que `rem` se basa en el tamaño de fuente base establecido en la página. No cambia por componente como podría hacerlo `em`,y así permite el ajuste de todos los espacios de manera uniforme.
+Como era de esperar, en la Figura 2.5, `px` es el tipo de unidad más utilizado, es el tipo de unidad más utilizado con aproximadamente el 95% de las páginas web usando píxeles de una forma u otra (esto podría ser el tamaño del elemento, el tamaño de la fuente, etc.). Sin embargo, la unidad `em` es casi tan popular, con uso alrededor del 90%. Esto es más de 2 veces más popular que la unidad `rem`,que tiene solo un 40% de frecuencia en las páginas web. Si te preguntas cuál es la diferencia, `em` se basa en el tamaño de fuente principal, mientras que `rem` se basa en el tamaño de fuente base establecido en la página. No cambia por componente como podría hacerlo `em`,y así permite el ajuste de todos los espacios de manera uniforme.
 
 Cuando se trata de unidades basadas en el espacio físico, la unidad `cm` (or centímetros) es la más popular por mucho, seguida por `in` (pulgadas), y luego por  `Q`.Sabemos que este tipo de unidades son específicamente útiles para imprimir hojas de estilo, ¡pero ni siquiera sabíamos que la unidad `Q` existía hasta esta encuesta! ¿Sabías?
 
-<p class="note">Una versión anterior de este capítulo discutia la inesperada popularidad de la unidad<code>Q</code>. Gracias a la discusión de la comunidad <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6"></a> alrededor de este capítulo, hemos identificado que esto fue un error en nuestro análisis y hemos actualizado la Figura 5 en consecuencia.</p>
+<p class="note">Una versión anterior de este capítulo discutia la inesperada popularidad de la unidad<code>Q</code>. Gracias a la discusión de la comunidad <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6"></a> alrededor de este capítulo, hemos identificado que esto fue un error en nuestro análisis y hemos actualizado la Figura 2.5 en consecuencia.</p>
 
 ### Unidades basadas en el viewport
 
@@ -406,7 +406,7 @@ Para media queries de ventana gráfica, cualquier tipo de unidad CSS se puede pa
   )
 }}
 
-La Figura 28 anterior muestra que parte de nuestras suposiciones eran correctas: ciertamente hay una gran cantidad de tamaños específicos de teléfonos allí, pero también hay algunos que no lo son. Es interesante también cómo es muy dominante en píxeles, con unas pocas entradas que utilizan `em` más allá del alcance de este gráfico.
+La Figura 2.28 anterior muestra que parte de nuestras suposiciones eran correctas: ciertamente hay una gran cantidad de tamaños específicos de teléfonos allí, pero también hay algunos que no lo son. Es interesante también cómo es muy dominante en píxeles, con unas pocas entradas que utilizan `em` más allá del alcance de este gráfico.
 
 ### Uso vertical versus horizontal
 

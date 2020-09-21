@@ -120,7 +120,7 @@ Que constatons-nous lorsque nous regardons le CLS sur le web&nbsp;?
 
 1. Près de deux sites sur trois (65,32&nbsp;%) ont des CLS moyens ou grands pour 50&nbsp;% ou plus de toutes les expériences utilisateurs.
 
-2. 20,52&nbsp;% des sites ont des CLS importants pour au moins la moitié de toutes les expériences des utilisateurs. Cela représente environ un site sur cinq. N’oubliez pas que la vidéo de la figure 3 n’a qu’un CLS de 42,59&nbsp;%. Ces expériences sont donc encore pires&nbsp;!
+2. 20,52&nbsp;% des sites ont des CLS importants pour au moins la moitié de toutes les expériences des utilisateurs. Cela représente environ un site sur cinq. N’oubliez pas que la vidéo de la figure 12.3 n’a qu’un CLS de 42,59&nbsp;%. Ces expériences sont donc encore pires&nbsp;!
 
 Nous pensons que cette situation est due en grande partie au fait que les sites web ne fournissent pas une largeur et une hauteur explicites pour les ressources qui se chargent après que le texte a été affiché à l’écran, comme les publicités et les images. Avant que les navigateurs puissent afficher une ressource à l’écran, ils doivent savoir quelle surface la ressource occupera. À moins qu’une taille explicite ne soit fournie via des attributs CSS ou HTML, les navigateurs n’ont aucun moyen de connaître la taille réelle de la ressource. Ils affichent donc celle-ci avec une largeur et une hauteur de 0&nbsp;px jusqu’à ce qu’elle soit chargée. Lorsque la ressource est chargée et que les navigateurs savent enfin quelle est sa taille, ils déplacent le reste du contenu de la page, créant ainsi une instabilité dans la mise en page.
 
@@ -252,7 +252,7 @@ Lors de l’analyse des sites contenant une saisie d’email, 56,42&nbsp;% utili
   <figcaption>{{ figure_link(caption="Types de saisie invalides les plus couramment utilisés") }}</figcaption>
 </figure>
 
-Assurez-vous de bien vous informer et de renseigner les autres sur la grande quantité de types de saisie disponibles et vérifiez que vous n’avez pas de fautes de frappe, à l’image des plus courantes, reprises dans la figure 7 ci-dessus.
+Assurez-vous de bien vous informer et de renseigner les autres sur la grande quantité de types de saisie disponibles et vérifiez que vous n’avez pas de fautes de frappe, à l’image des plus courantes, reprises dans la figure 12.7 ci-dessus.
 
 ### Activation de l’autocomplétion pour les saisies
 

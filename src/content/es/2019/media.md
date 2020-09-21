@@ -325,7 +325,7 @@ Los <i lang="en">Client Hints</i> relacionados con la red, `downlink`, `rtt`, y 
 
 Mejorar el rendimiento de una página web puede ser parcialmente descrito como un juego de ilusiones; moviendo las cosas más lentas fuera de banda y lejos de la vista del usuario. De este modo, el <i lang="en">lazy loading</i> de imágenes es una de esas ilusiones donde la imagen y el contenido multimedia solamente se cargan cuando el usuario se desplaza por la página. Esto mejora el rendimiento que se percibe, incluso en conexiones lentas, y evita al usuario la descarga de bytes que no van a estar visibles.
 
-Anteriormente, en la  <a href="#fig-5">Figura 5</a>, mostramos como el volumen del contenido de imagen en el percentil 75 es bastante más de lo que, en principio, puede verse en una sola ventana de escritorio o móvil. La auditoría <i lang="en">Lighthouse</i> de [imágenes fuera de pantalla](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirma nuestras sospechas. La página web media tiene un 27% de contenido de imagen significativamente por debajo del borde. Esto aumenta hasta el 84% en el percentil 90.
+Anteriormente, en la [Figura 4.5](#fig-5), mostramos como el volumen del contenido de imagen en el percentil 75 es bastante más de lo que, en principio, puede verse en una sola ventana de escritorio o móvil. La auditoría <i lang="en">Lighthouse</i> de [imágenes fuera de pantalla](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirma nuestras sospechas. La página web media tiene un 27% de contenido de imagen significativamente por debajo del borde. Esto aumenta hasta el 84% en el percentil 90.
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",

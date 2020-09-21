@@ -51,7 +51,7 @@ Así que vamos a profundizar y ver qué resultados podemos encontrar.
   )
 }}
 
-En la Figura 1 anterior, se puede ver cómo se distribuyen las experiencias de FCP en la web. De los millones de sitios web en el conjunto de datos de CrUX, este gráfico comprime la distribución a 1.000 sitios web, donde cada segmento vertical representa un sólo sitio web. El cuadro está ordenado por el porcentaje de experiencias rápidas de FCP, que son las que ocurren en menos de 1 segundo. Las experiencias lentas ocurren en 3 segundos o más, y las experiencias moderadas (anteriormente conocidas como "promedias") son todo lo que hay en medio. En los extremos de la tabla hay algunos sitios web con experiencias casi 100% rápidas y algunos sitios web con experiencias casi 100% lentas. Entre medias, los sitios web que tienen una combinación de rendimiento rápido, moderado y lento parecen inclinarse más hacia rápido o moderado que lento, lo cual es bueno.
+En la Figura 7.1 anterior, se puede ver cómo se distribuyen las experiencias de FCP en la web. De los millones de sitios web en el conjunto de datos de CrUX, este gráfico comprime la distribución a 1.000 sitios web, donde cada segmento vertical representa un sólo sitio web. El cuadro está ordenado por el porcentaje de experiencias rápidas de FCP, que son las que ocurren en menos de 1 segundo. Las experiencias lentas ocurren en 3 segundos o más, y las experiencias moderadas (anteriormente conocidas como "promedias") son todo lo que hay en medio. En los extremos de la tabla hay algunos sitios web con experiencias casi 100% rápidas y algunos sitios web con experiencias casi 100% lentas. Entre medias, los sitios web que tienen una combinación de rendimiento rápido, moderado y lento parecen inclinarse más hacia rápido o moderado que lento, lo cual es bueno.
 
 <p class="note">Nota: cuando un usuario experimenta un rendimiento lento es difícil decir cuál podría ser el motivo. Podría ser que el sitio web en sí mismo se construyó de manera deficiente e ineficiente. O podría haber otros factores ambientales como la conexión lenta del usuario, la caché vacía, etc. Por lo tanto, cuando miramos estos datos de campo, preferimos decir que las experiencias del usuario son lentas y no necesariamente los sitios web.</p>
 
@@ -65,7 +65,7 @@ Para clasificar si un sitio web es lo suficientemente **rápido** utilizaremos l
   )
 }}
 
-Los resultados en la Figura 2 muestran que sólo el 13% de los sitios web se consideran rápidos. Esta es una señal de que todavía hay mucho margen de mejora, pero muchos sitios web están pintando contenido significativo de manera rápida y consistente. Dos tercios de los sitios web tienen experiencias moderadas de FCP.
+Los resultados en la Figura 7.2 muestran que sólo el 13% de los sitios web se consideran rápidos. Esta es una señal de que todavía hay mucho margen de mejora, pero muchos sitios web están pintando contenido significativo de manera rápida y consistente. Dos tercios de los sitios web tienen experiencias moderadas de FCP.
 
 Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes dispositivos, segmentemos por factor de forma.
 
@@ -89,7 +89,7 @@ Para ayudarnos a comprender cómo los usuarios experimentan FCP en diferentes di
   )
 }}
 
-En las Figuras 3 y 4 anteriores las distribuciones de FCP se desglosan por computadora y teléfono. Es sutil, pero el torso de la distribución rápida de FCP en escritorio parece ser más convexo que la distribución para usuarios de teléfonos. Esta aproximación visual sugiere que los usuarios de escritorio experimentan una mayor proporción general de FCP rápido. Para verificar esto, podemos aplicar la metodología PSI a cada distribución.
+En las Figuras 7.3 y 7.4 anteriores las distribuciones de FCP se desglosan por computadora y teléfono. Es sutil, pero el torso de la distribución rápida de FCP en escritorio parece ser más convexo que la distribución para usuarios de teléfonos. Esta aproximación visual sugiere que los usuarios de escritorio experimentan una mayor proporción general de FCP rápido. Para verificar esto, podemos aplicar la metodología PSI a cada distribución.
 
 {{ figure_markup(
   image="fig5.png",
@@ -114,7 +114,7 @@ Según la clasificación de PSI, el 17% de los sitios web tienen experiencias r�
   )
 }}
 
-En la Figura 6 anterior, las experiencias de FCP se agrupan por la ECT de la experiencia del usuario. Curiosamente, existe una correlación entre la velocidad de ECT y el porcentaje de sitios web que sirven FCP rápido. A medida que las velocidades de ECT disminuyen, la proporción de experiencias rápidas se acerca a cero. El 14% de los sitios web que sirven a los usuarios 4G ECT tienen experiencias rápidas de FCP, mientras que el 19% de esos sitios web tienen experiencias lentas. El 61% de los sitios web ofrecen FCP lento a usuarios con 3G ECT, 90% a 2G ECT y 99% a 2G lento ECT. Estos resultados sugieren que los sitios web rara vez sirven FCP rápido de manera consistente a los usuarios en conexiones efectivamente más lentas que 4G.
+En la Figura 7.6 anterior, las experiencias de FCP se agrupan por la ECT de la experiencia del usuario. Curiosamente, existe una correlación entre la velocidad de ECT y el porcentaje de sitios web que sirven FCP rápido. A medida que las velocidades de ECT disminuyen, la proporción de experiencias rápidas se acerca a cero. El 14% de los sitios web que sirven a los usuarios 4G ECT tienen experiencias rápidas de FCP, mientras que el 19% de esos sitios web tienen experiencias lentas. El 61% de los sitios web ofrecen FCP lento a usuarios con 3G ECT, 90% a 2G ECT y 99% a 2G lento ECT. Estos resultados sugieren que los sitios web rara vez sirven FCP rápido de manera consistente a los usuarios en conexiones efectivamente más lentas que 4G.
 
 #### FCP por geografía
 
@@ -147,7 +147,7 @@ Otros geos de APAC cuentan una historia diferente. Tailandia, Vietnam, Indonesia
   )
 }}
 
-Para ayudar a explicar TTFB y los muchos factores que lo afectan, tomemos prestado un diagrama de la [especificación de la API de Navigation Timing](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API). En la Figura 8 anterior, TTFB es la duración desde `startTime` hasta `responseStart`, que incluye todo lo que se encuentra entre: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`, `TCP` y el tiempo el servidor pasa gestionando la petición. Dado ese contexto, veamos cómo los usuarios están experimentando esta métrica.
+Para ayudar a explicar TTFB y los muchos factores que lo afectan, tomemos prestado un diagrama de la [especificación de la API de Navigation Timing](https://developer.mozilla.org/docs/Web/API/Navigation_timing_API). En la Figura 7.8 anterior, TTFB es la duración desde `startTime` hasta `responseStart`, que incluye todo lo que se encuentra entre: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`, `TCP` y el tiempo el servidor pasa gestionando la petición. Dado ese contexto, veamos cómo los usuarios están experimentando esta métrica.
 
 {{ figure_markup(
   image="fig9.png",
@@ -157,7 +157,7 @@ Para ayudar a explicar TTFB y los muchos factores que lo afectan, tomemos presta
   )
 }}
 
-De forma similar a la tabla de FCP en la Figura 1, ésta es una vista de 1.000 muestras representativas ordenadas por TTFB rápido. Un [TTFB rápido](https://developers.google.com/speed/docs/insights/Server#recommendations) es el que ocurre en menos de 0,2 segundos (200 ms), un TTFB lento ocurre en 1 segundo o más, y todo en medio es moderado.
+De forma similar a la tabla de FCP en la Figura 7.1, ésta es una vista de 1.000 muestras representativas ordenadas por TTFB rápido. Un [TTFB rápido](https://developers.google.com/speed/docs/insights/Server#recommendations) es el que ocurre en menos de 0,2 segundos (200 ms), un TTFB lento ocurre en 1 segundo o más, y todo en medio es moderado.
 
 Mirando la curva de las proporciones rápidas, la forma es bastante diferente de la del FCP. Hay muy pocos sitios web que tienen un TTFB rápido superior al 75%, mientras que más de la mitad están por debajo del 25%.
 
@@ -203,7 +203,7 @@ Comencemos definiendo algunos umbrales. De acuerdo con la nueva metodología PSI
   )
 }}
 
-Seguimos el mismo procedimiento que hasta ahora. Este gráfico muestra la distribución de las experiencias FID rápidas, moderadas y lentas de los sitios web. Éste es un gráfico dramáticamente diferente de los gráficos anteriores para FCP y TTFB. (Ver [Figura 1](#fig1) y [Figura 9](#fig9) respectivamente). La curva de FID rápido desciende muy lentamente del 100% al 75% y luego cae en picada. La gran mayoría de las experiencias de FID son rápidas para la mayoría de los sitios web.
+Seguimos el mismo procedimiento que hasta ahora. Este gráfico muestra la distribución de las experiencias FID rápidas, moderadas y lentas de los sitios web. Éste es un gráfico dramáticamente diferente de los gráficos anteriores para FCP y TTFB. (Ver [Figura 7.1](#fig-1) y [Figura 7.9](#fig-9) respectivamente). La curva de FID rápido desciende muy lentamente del 100% al 75% y luego cae en picada. La gran mayoría de las experiencias de FID son rápidas para la mayoría de los sitios web.
 
 {{ figure_markup(
   image="fig13.png",

@@ -95,11 +95,11 @@ In CSS, there are many different ways to achieve the same visual result using di
 
 ### Length and sizing
 
-Unsurprisingly, in Figure 5 above, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, and so on). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, and thus allows for adjustment of all spacing evenly.
+Unsurprisingly, in Figure 2.5 above, `px` is the most used unit type, with about 95% of web pages using pixels in some form or another (this could be element sizing, font size, and so on). However, the `em` unit is almost as popular, with about 90% usage. This is over 2x more popular than the `rem` unit, which has only 40% frequency in web pages. If you're wondering what the difference is, `em` is based on the parent font size, while `rem` is based on the base font size set to the page. It doesn't change per-component like `em` could, and thus allows for adjustment of all spacing evenly.
 
 When it comes to units based on physical space, the `cm` (or centimeter) unit is the most popular by far, followed by `in` (inches), and then `Q`. We know these types of units are specifically useful for print stylesheets, but we didn't even know the `Q` unit existed until this survey! Did you?
 
-<p class="note">An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 5 accordingly.</p>
+<p class="note">An earlier version of this chapter discussed the unexpected popularity of the <code>Q</code> unit. Thanks to the <a href="https://discuss.httparchive.org/t/chapter-2-css/1757/6">community discussion</a> surrounding this chapter, we've identified that this was a bug in our analysis and have updated Figure 2.5 accordingly.</p>
 
 ### Viewport-based units
 
@@ -406,7 +406,7 @@ For viewport media queries, any type of CSS unit can be passed into the query ex
   )
 }}
 
-Figure 28 above shows that part of our assumptions were correct: there's certainly a high amount of phone specific sizes in there, but there's also some that aren't. It's interesting also how it's very pixel dominant, with a few trickling entries using `em` beyond the scope of this chart.
+Figure 2.28 above shows that part of our assumptions were correct: there's certainly a high amount of phone specific sizes in there, but there's also some that aren't. It's interesting also how it's very pixel dominant, with a few trickling entries using `em` beyond the scope of this chart.
 
 ### Portrait vs landscape usage
 
