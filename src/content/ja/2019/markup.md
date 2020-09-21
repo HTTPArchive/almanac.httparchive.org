@@ -10,7 +10,7 @@ discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/
 queries: 03_Markup
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-19T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## 導入
