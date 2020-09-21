@@ -8,7 +8,7 @@ SELECT
   END as host_local,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(0)/SUM(COUNT(0)) OVER (PARTITION BY client),2) AS pct,
+  ROUND(COUNT(0)*100/SUM(COUNT(0)) OVER (PARTITION BY client),2) AS pct,
   ROUND(COUNTIF(fast_fcp>=0.75)*100/COUNT(0),0) AS pct_fast_fcp,
   ROUND(COUNTIF(NOT(slow_fcp >=0.25)
       AND NOT(fast_fcp>=0.75))*100/COUNT(0),0) AS pct_moderate_fcp,
@@ -33,4 +33,4 @@ GROUP BY
   client,
   host_local
 ORDER BY
-  freq DESC
+  client, host_local, freq DESC

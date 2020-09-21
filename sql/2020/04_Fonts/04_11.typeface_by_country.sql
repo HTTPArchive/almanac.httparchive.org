@@ -30,7 +30,7 @@ FROM (
     ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct,
     ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS rank
   FROM
-    `httparchive.almanac.parsed_css_*`,
+    `httparchive.almanac.parsed_css`,
     UNNEST(getFontFamilies(css)) AS font_family
   JOIN (
     SELECT
