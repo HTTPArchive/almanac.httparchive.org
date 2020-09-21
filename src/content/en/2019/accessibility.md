@@ -164,7 +164,7 @@ All of these elements are primarily designed for accessibility support and have 
 
 ### Other HTML elements used for navigation
 
-Many popular screen readers also allow users to navigate by quickly jumping through links, lists, list items, iframes, and form fields like edit fields, buttons, and list boxes. Figure 6 details how often we saw pages using these elements.
+Many popular screen readers also allow users to navigate by quickly jumping through links, lists, list items, iframes, and form fields like edit fields, buttons, and list boxes. Figure 9.6 details how often we saw pages using these elements.
 
 {{ figure_markup(
   image="fig6.png",
@@ -178,7 +178,7 @@ Many popular screen readers also allow users to navigate by quickly jumping thro
 
 A [skip link](https://webaim.org/techniques/skipnav/) is a link placed at the top of a page which allows screen readers or keyboard-only users to jump straight to the main content. It effectively "skips" over all navigational links and menus at the top of the page. Skip links are especially useful to keyboard users who don't use a screen reader, as these users don't usually have access to other modes of quick navigation (like landmarks and headings). 14.19% of the pages in our sample were found to have skip links.
 
-If you'd like to see a skip link in action for yourself, you can! Just do a quick Google search and hit "<kbd>tab</kbd>" as soon as you land on the search result pages. You'll be greeted with a previously hidden link just like the one in Figure 7.
+If you'd like to see a skip link in action for yourself, you can! Just do a quick Google search and hit "<kbd>tab</kbd>" as soon as you land on the search result pages. You'll be greeted with a previously hidden link just like the one in Figure 9.7.
 
 {{ figure_markup(
   image="example-of-a-skip-link-on-google.com.png",
@@ -243,7 +243,7 @@ Using ARIA correctly and appropriately can be challenging. For example, of pages
 
 The "role" attribute is the most important attribute in the entire ARIA specification. It's used to inform the browser what the purpose of a given HTML element is (i.e., the semantic meaning). For example, a `<div>` element, visually styled as a button using CSS, should be given the ARIA role of `button`.
 
-Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9 below, we've compiled a list of the top ten most widely used ARIA role values.
+Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9.9 below, we've compiled a list of the top ten most widely used ARIA role values.
 
 {{ figure_markup(
   image="fig9.png",
@@ -253,7 +253,7 @@ Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9 bel
   )
 }}
 
-Looking at the results in Figure 9, we found two interesting insights: updating UI frameworks may have a profound impact on accessibility across the web, and the impressive number of sites attempting to make dialogs accessible.
+Looking at the results in Figure 9.9, we found two interesting insights: updating UI frameworks may have a profound impact on accessibility across the web, and the impressive number of sites attempting to make dialogs accessible.
 
 ##### Updating UI frameworks could be the way forward for accessibility across the web
 

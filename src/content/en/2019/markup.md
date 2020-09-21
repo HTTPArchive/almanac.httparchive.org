@@ -72,7 +72,7 @@ tr | span | option
   )
 }}
 
-Comparing the latest data in Figure 3 to that of Hixie's report from 2005 in Figure 2, we can see that the average size of DOM trees has gotten bigger.
+Comparing the latest data in Figure 3.3 to that of Hixie's report from 2005 in Figure 3.2, we can see that the average size of DOM trees has gotten bigger.
 
 {{ figure_markup(
   image="hixie_element_types_per_page.png",
@@ -127,7 +127,7 @@ Additionally, 15% of desktop pages and 16% of mobile pages contain deprecated el
   )
 }}
 
-Figure 6 above shows the top 10 most frequently used deprecated elements. Most of these can seem like very small numbers, but perspective matters.
+Figure 3.6 above shows the top 10 most frequently used deprecated elements. Most of these can seem like very small numbers, but perspective matters.
 
 ## Perspective on value and usage
 
@@ -146,7 +146,7 @@ In order to discuss numbers about the use of elements (standard, deprecated or c
   )
 }}
 
-In Figure 7 above, the top 150 element names, counting the number of pages where they appear, are shown. Note how quickly use drops off.
+In Figure 3.7 above, the top 150 element names, counting the number of pages where they appear, are shown. Note how quickly use drops off.
 
 Only 11 elements are used on more than 90% of pages:
 
@@ -196,7 +196,7 @@ It's interesting, then, to see what the distribution of these elements looks lik
   )
 }}
 
-Figure 8 shows the rank of each element and which category they fall into.  I've separated the data points into discrete sets simply so that they can be viewed (otherwise there just aren't enough pixels to capture all that data), but they represent a single 'line' of popularity; the bottom-most being the most common, the top-most being the least common.  The arrow points to the end of elements that appear in more than 1% of the pages.
+Figure 3.8 shows the rank of each element and which category they fall into.  I've separated the data points into discrete sets simply so that they can be viewed (otherwise there just aren't enough pixels to capture all that data), but they represent a single 'line' of popularity; the bottom-most being the most common, the top-most being the least common.  The arrow points to the end of elements that appear in more than 1% of the pages.
 
 You can observe two things here. First, the set of elements that have more than 1% use are not exclusively HTML.  In fact, *27 of the most popular 100 elements aren't even HTML* - they are SVG! And there are *non-standard tags at or very near that cutoff too*!  Second, note that a whole lot of HTML elements are used by less than 1% of pages.
 

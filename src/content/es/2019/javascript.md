@@ -35,7 +35,7 @@ Enviar paquetes de JavaScript más pequeños al navegador es la mejor manera de 
   )
 }}
 
-La Figura 1 anterior muestra que utilizamos 373 KB de JavaScript en el percentil 50, o mediana. En otras palabras, el 50% de todos los sitios envían más de este JavaScript a sus usuarios.
+La Figura 1.1 anterior muestra que utilizamos 373 KB de JavaScript en el percentil 50, o mediana. En otras palabras, el 50% de todos los sitios envían más de este JavaScript a sus usuarios.
 
 Mirando estos números, es natural preguntarse si esto es demasiado JavaScript. Sin embargo, en términos de rendimiento de la página, el impacto depende completamente de las conexiones de red y los dispositivos utilizados. Lo que nos lleva a nuestra siguiente pregunta: ¿cuánto JavaScript enviamos cuando comparamos clientes móviles y de escritorio?
 

@@ -11,9 +11,9 @@ const generate_figure_ids = (html) => {
   // and also in figure_link call from <figcaption> element
   // at bottom of table.
   re = /<figure>|<figure markdown>|<figure data-markdown="1">/gi;
-  html = html.replace(re, () => '<figure id="fig-_figidn_">');
+  html = html.replace(re, () => '<figure id="fig-_figid_">');
   re = /figure_link\s*\(/g;
-  html = html.replace(re, () => 'figure_link(metadata=metadata, id=_figid_, ');
+  html = html.replace(re, () => 'figure_link(metadata=metadata, id=_figidn_, ');
 
   // replace _figid_ with i and increment
   // replace _figidn_ with i and do not increment
