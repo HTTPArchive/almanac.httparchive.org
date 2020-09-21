@@ -35,7 +35,7 @@ Envoyer de plus petits paquets de JavaScript au navigateur est le meilleur moyen
   )
 }}
 
-La Figure 1 ci-dessus montre que nous utilisons 373&nbsp;Ko de JavaScript au 50e percentile (aussi appelé médiane). En d’autres termes, 50&nbsp;% des sites envoient plus que cette quantité de JavaScript à leurs utilisateurs.
+La figure 1.1 ci-dessus montre que nous utilisons 373&nbsp;Ko de JavaScript au 50e percentile (aussi appelé médiane). En d’autres termes, 50&nbsp;% des sites envoient plus que cette quantité de JavaScript à leurs utilisateurs.
 
 En regardant ces chiffres, il est naturel de se demander si ce n’est pas trop de JavaScript. Cependant, en termes de performances des pages, l’impact dépend entièrement des connexions réseau et des appareils utilisés. Ce qui nous amène à notre prochaine question&nbsp;: quelle quantité de JavaScript envoyons-nous lorsque nous comparons les tests sur mobiles et sur ordinateurs de bureau&nbsp;?
 

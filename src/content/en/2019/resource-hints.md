@@ -156,7 +156,7 @@ That being said, if a site does not need to support IE11 and below, switching fr
   <figcaption>{{ figure_link(caption="Median and 90th percentiles of the number of resource hints used per page, of all pages using that resource hint.") }}</figcaption>
 </figure>
 
-Resource hints are most effective when they're used selectively (_"when everything is important, nothing is"_). Figure 2 above shows the number of resource hints per page for pages using at least one resource hint. Although there is no clear cut rule for defining what an appropriate number of resource hints is, it appears that most sites are using resource hints appropriately.
+Resource hints are most effective when they're used selectively (_"when everything is important, nothing is"_). Figure 19.2 above shows the number of resource hints per page for pages using at least one resource hint. Although there is no clear cut rule for defining what an appropriate number of resource hints is, it appears that most sites are using resource hints appropriately.
 
 ## The `crossorigin` attribute
 

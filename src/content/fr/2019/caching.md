@@ -226,7 +226,7 @@ Le tableau ci-dessous détaille les TTL du cache pour les requêtes en provenanc
 
 Bien que la plupart des TTL médians sont élevées, les percentiles inférieurs mettent en évidence certaines occasions manquées de mise en cache. Par exemple, le TTL médian pour les images est de 28 heures, mais le 25e percentile n'est que d'une à deux heures et le 10e percentile indique que 10&nbsp;% du volume d'images en cache l'est pendant moins d'une heure.
 
-En explorant plus en détail les possibilités de mise en cache par type de contenu dans la figure 5 ci-dessous, nous pouvons voir qu'environ la moitié de toutes les réponses HTML sont considérées comme non cachables. De plus, 16&nbsp;% des images et des scripts ne peuvent pas être mis en cache.
+En explorant plus en détail les possibilités de mise en cache par type de contenu dans la figure 16.5 ci-dessous, nous pouvons voir qu'environ la moitié de toutes les réponses HTML sont considérées comme non cachables. De plus, 16&nbsp;% des images et des scripts ne peuvent pas être mis en cache.
 
 {{ figure_markup(
   image="fig5.png",
@@ -346,7 +346,7 @@ Par exemple, `cache-control:public, max-age=43200` indique qu'une entrée mise e
   )
 }}
 
-La figure 9 ci-dessus illustre les 15 directives `Cache-Control` les plus utilisées sur les sites Web mobiles. Les résultats pour les sites destinés aux ordinateurs de bureau et les sites mobiles sont très similaires. Il y a quelques observations intéressantes sur la popularité de ces directives de cache&nbsp;:
+La figure 16.9 ci-dessus illustre les 15 directives `Cache-Control` les plus utilisées sur les sites Web mobiles. Les résultats pour les sites destinés aux ordinateurs de bureau et les sites mobiles sont très similaires. Il y a quelques observations intéressantes sur la popularité de ces directives de cache&nbsp;:
 
 * `max-age` est utilisé par presque 75&nbsp;% des en-têtes `Cache-Control`, et `no-store` est utilisé par 18&nbsp;%.
 * `public` (publique) est rarement nécessaire car les entrées en cache sont supposées `public` à moins que `private` (privé) ne soit spécifié. Environ 38&nbsp;% des réponses incluent `public`.

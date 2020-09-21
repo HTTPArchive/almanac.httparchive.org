@@ -51,7 +51,7 @@ So let's dive in and see what insights we can find.
   )
 }}
 
-In Figure 1 above, you can see how FCP experiences are distributed across the web. Out of the millions of websites in the CrUX dataset, this chart compresses the distribution down to 1,000 websites, where each vertical slice represents a single website. The chart is sorted by the percent of fast FCP experiences, which are those occurring in less than 1 second. Slow experiences occur in 3 seconds or more, and moderate (formerly known as "average") experiences are everything in between. At the extremes of the chart, there are some websites with almost 100% fast experiences and some websites with almost 100% slow experiences. In between that, websites that have a combination of fast, moderate, and slow performance seem to lean more towards fast or moderate than slow, which is good.
+In Figure 7.1 above, you can see how FCP experiences are distributed across the web. Out of the millions of websites in the CrUX dataset, this chart compresses the distribution down to 1,000 websites, where each vertical slice represents a single website. The chart is sorted by the percent of fast FCP experiences, which are those occurring in less than 1 second. Slow experiences occur in 3 seconds or more, and moderate (formerly known as "average") experiences are everything in between. At the extremes of the chart, there are some websites with almost 100% fast experiences and some websites with almost 100% slow experiences. In between that, websites that have a combination of fast, moderate, and slow performance seem to lean more towards fast or moderate than slow, which is good.
 
 <p class="note">Note: When a user experiences slow performance, it's hard to say what the reason might be. It could be that the website itself was built poorly and inefficiently. Or there could be other environmental factors like the user's slow connection, empty cache, etc. So, when looking at this field data we prefer to say that the user experiences themselves are slow, and not necessarily the websites.</p>
 
@@ -65,7 +65,7 @@ In order to categorize whether a website is sufficiently **fast** we will use th
   )
 }}
 
-The results in Figure 2 show that only 13% of websites are considered fast. This is a sign that there is still a lot of room for improvement, but many websites are painting meaningful content quickly and consistently. Two thirds of websites have moderate FCP experiences.
+The results in Figure 7.2 show that only 13% of websites are considered fast. This is a sign that there is still a lot of room for improvement, but many websites are painting meaningful content quickly and consistently. Two thirds of websites have moderate FCP experiences.
 
 To help us understand how users experience FCP across different devices, let's segment by form factor.
 
@@ -89,7 +89,7 @@ To help us understand how users experience FCP across different devices, let's s
   )
 }}
 
-In Figures 3 and 4 above, the FCP distributions are broken down by desktop and phone. It's subtle, but the torso of the desktop fast FCP distribution appears to be more convex than the distribution for phone users. This visual approximation suggests that desktop users experience a higher overall proportion of fast FCP. To verify this, we can apply the PSI methodology to each distribution.
+In Figures 7.3 and 7.4 above, the FCP distributions are broken down by desktop and phone. It's subtle, but the torso of the desktop fast FCP distribution appears to be more convex than the distribution for phone users. This visual approximation suggests that desktop users experience a higher overall proportion of fast FCP. To verify this, we can apply the PSI methodology to each distribution.
 
 {{ figure_markup(
   image="fig5.png",
@@ -114,7 +114,7 @@ Why might desktop users experience fast FCP on a higher proportion of websites t
   )
 }}
 
-In Figure 6 above, FCP experiences are grouped by the ECT of the user experience. Interestingly, there is a correlation between ECT speed and the percent of websites serving fast FCP. As the ECT speeds decrease, the proportion of fast experiences approaches zero. 14% of websites that serve users with 4G ECT have fast FCP experiences, while 19% of those websites have slow experiences. 61% of websites serve slow FCP to users with 3G ECT, 90% to 2G ECT, and 99% to slow-2G ECT. These results suggest that websites seldom serve fast FCP consistently to users on connections effectively slower than 4G.
+In Figure 7.6 above, FCP experiences are grouped by the ECT of the user experience. Interestingly, there is a correlation between ECT speed and the percent of websites serving fast FCP. As the ECT speeds decrease, the proportion of fast experiences approaches zero. 14% of websites that serve users with 4G ECT have fast FCP experiences, while 19% of those websites have slow experiences. 61% of websites serve slow FCP to users with 3G ECT, 90% to 2G ECT, and 99% to slow-2G ECT. These results suggest that websites seldom serve fast FCP consistently to users on connections effectively slower than 4G.
 
 #### FCP by geography
 
@@ -147,7 +147,7 @@ Other APAC geos tell a different story. Thailand, Vietnam, Indonesia, and India 
   )
 }}
 
-To help explain TTFB and the many factors that affect it, let's borrow a diagram from the [Navigation Timing API spec](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API). In Figure 8 above, TTFB is the duration from `startTime` to `responseStart`, including everything in between: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`, `TCP`, and the time the server spends handling the request. Given that context, let's see how users are experiencing this metric.
+To help explain TTFB and the many factors that affect it, let's borrow a diagram from the [Navigation Timing API spec](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API). In Figure 7.8 above, TTFB is the duration from `startTime` to `responseStart`, including everything in between: `unload`, `redirects`, `AppCache`, `DNS`, `SSL`, `TCP`, and the time the server spends handling the request. Given that context, let's see how users are experiencing this metric.
 
 {{ figure_markup(
   image="fig9.png",
@@ -157,7 +157,7 @@ To help explain TTFB and the many factors that affect it, let's borrow a diagram
   )
 }}
 
-Similar to the FCP chart in Figure 1, this is a view of 1,000 representative samples ordered by fast TTFB. A [fast TTFB](https://developers.google.com/speed/docs/insights/Server#recommendations) is one that happens in under 0.2 seconds (200 ms), a slow TTFB happens in 1 second or more, and everything in between is moderate.
+Similar to the FCP chart in Figure 7.1, this is a view of 1,000 representative samples ordered by fast TTFB. A [fast TTFB](https://developers.google.com/speed/docs/insights/Server#recommendations) is one that happens in under 0.2 seconds (200 ms), a slow TTFB happens in 1 second or more, and everything in between is moderate.
 
 Looking at the curve of the fast proportions, the shape is quite different from that of FCP. There are very few websites that have a fast TTFB greater than 75%, while more than half are below 25%.
 
@@ -203,7 +203,7 @@ Let's start by defining some thresholds. According to the new PSI methodology, a
   )
 }}
 
-You know the drill by now. This chart shows the distribution of websites' fast, moderate, and slow FID experiences. This is a dramatically different chart from the previous charts for FCP and TTFB. (See [Figure 1](#fig1) and [Figure 9](#fig9), respectively). The curve of fast FID very slowly descends from 100% to 75%, then takes a nosedive. The overwhelming majority of FID experiences are fast for most websites.
+You know the drill by now. This chart shows the distribution of websites' fast, moderate, and slow FID experiences. This is a dramatically different chart from the previous charts for FCP and TTFB. (See [Figure 7.1](#fig-1) and [Figure 7.9](#fig-9), respectively). The curve of fast FID very slowly descends from 100% to 75%, then takes a nosedive. The overwhelming majority of FID experiences are fast for most websites.
 
 {{ figure_markup(
   image="fig13.png",

@@ -72,7 +72,7 @@ tr | span | option
   )
 }}
 
-En comparant les dernières données de la figure 3 à celles du rapport d’Hixie de 2005 à la figure 2, nous pouvons constater que la taille moyenne des arbres DOM a augmenté.
+En comparant les dernières données de la figure 3.3 à celles du rapport d’Hixie de 2005 à la figure 3.2, nous pouvons constater que la taille moyenne des arbres DOM a augmenté.
 
 {{ figure_markup(
   image="hixie_element_types_per_page.png",
@@ -127,7 +127,7 @@ En outre, 15 % des pages pour ordinateurs de bureau et 16 % des pages mobiles 
   )
 }}
 
-La figure 6 ci-dessus montre les 10 éléments les plus fréquemment utilisés. Dans la plupart des cas, les nombres peuvent sembler petits mais dans l’ensemble, ce n’est pas négligeable.
+La figure 3.6 ci-dessus montre les 10 éléments les plus fréquemment utilisés. Dans la plupart des cas, les nombres peuvent sembler petits mais dans l’ensemble, ce n’est pas négligeable.
 
 ## Mise en perspective des valeurs et des usages
 
@@ -146,7 +146,7 @@ Afin de discuter des chiffres sur l’utilisation d’éléments (standards, obs
   )
 }}
 
-Dans la figure 7 ci-dessus, sont affichés les 150 premiers noms d’éléments, en comptant le nombre de pages où ils apparaissent. Notez la rapidité avec laquelle l’utilisation diminue.
+Dans la figure 3.7 ci-dessus, sont affichés les 150 premiers noms d’éléments, en comptant le nombre de pages où ils apparaissent. Notez la rapidité avec laquelle l’utilisation diminue.
 
 Seuls 11 éléments sont utilisés sur plus de 90 % des pages:
 
@@ -196,7 +196,7 @@ Il est donc intéressant de voir à quoi ressemble la distribution de ces élém
   )
 }}
 
-La figure 8 montre le classement de chaque élément et la norme dans laquelle il se situe. J’ai séparé les points de données en ensembles discrets simplement pour pouvoir les visualiser (sinon, il  n’ya tout simplement pas assez de pixels pour capturer toutes ces données), mais ils représentent une unique "ligne" de popularité ; le plus bas étant le plus commun, le plus haut étant le plus rare. La flèche pointe vers la fin des éléments qui apparaissent dans plus de 1 % des pages.
+La figure 3.8 montre le classement de chaque élément et la norme dans laquelle il se situe. J’ai séparé les points de données en ensembles discrets simplement pour pouvoir les visualiser (sinon, il  n’ya tout simplement pas assez de pixels pour capturer toutes ces données), mais ils représentent une unique "ligne" de popularité ; le plus bas étant le plus commun, le plus haut étant le plus rare. La flèche pointe vers la fin des éléments qui apparaissent dans plus de 1 % des pages.
 
 Vous pouvez observer deux choses ici. Premièrement, l’ensemble des éléments utilisés à plus de 1 % n’est pas exclusivement HTML. En fait, *27 des 100 éléments les plus populaires ne sont même pas issus de HTML* – ils sont en SVG ! Et il y a *aussi des balises non standards au niveau ou très près de cette démarcation*! Deuxièmement, notez que de nombreux éléments HTML sont utilisés par moins de 1 % des pages.
 

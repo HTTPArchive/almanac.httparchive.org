@@ -117,14 +117,14 @@ La detección de páginas no siempre es confiable, y algunos sitios bloquean exp
 
 De las 116 plataformas de comercio electrónico que se detectaron, sólo seis se encuentran en más del 0,1% de los sitios web de escritorio o móviles. Tenga en cuenta que estos resultados no muestran variaciones por país, por tamaño de sitio u otras métricas similares.
 
-La Figura 3 anterior muestra que WooCommerce tiene la mayor adopción con alrededor del 4% de los sitios web de escritorio y móviles. Shopify es el segundo con aproximadamente el 1,6% de adopción. Magento, PrestaShop, Bigcommerce y Shopware siguen con una adopción cada vez más pequeña, acercándose al 0,1%.
+La Figura 13.3 anterior muestra que WooCommerce tiene la mayor adopción con alrededor del 4% de los sitios web de escritorio y móviles. Shopify es el segundo con aproximadamente el 1,6% de adopción. Magento, PrestaShop, Bigcommerce y Shopware siguen con una adopción cada vez más pequeña, acercándose al 0,1%.
 
 ### La larga cola
 
 {{ figure_markup(
   image="fig4.png",
   caption="Adopción de las principales plataformas de comercio electrónico.",
-  description="Gráfico de barras de la adopción de las 20 principales plataformas de comercio electrónico. Consulte la Figura 3 anterior para obtener una tabla de datos de adopción de las 6 plataformas principales.",
+  description="Gráfico de barras de la adopción de las 20 principales plataformas de comercio electrónico. Consulte la Figura 13.3 anterior para obtener una tabla de datos de adopción de las 6 plataformas principales.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&format=interactive",
   width=600,
   height=414,
@@ -439,7 +439,7 @@ Los tamaños de HTML en móvil no son muy diferentes de los de escritorio. En ot
 
 <p class="note">Tenga en cuenta que debido a que nuestra <a href="./methodology">metodología</a> de recopilación de datos no simula las interacciones del usuario en páginas como hacer clic o scroll, las imágenes cargadas de forma diferida (_lazy loading_) no se representarían en estos resultados.</p>
 
-Las Figuras 12 y 13 muestran que la página de comercio electrónico promedio tiene 37 imágenes y representan un tráfico de 1.517 KB en dispositivos móviles, 40 imágenes y 1.524 KB en computadoras de escritorio. ¡El 10% de las páginas de inicio tienen 90 o más imágenes y representan en total casi 6 MB!
+Las Figuras 13.12 y 13.13 muestran que la página de comercio electrónico promedio tiene 37 imágenes y representan un tráfico de 1.517 KB en dispositivos móviles, 40 imágenes y 1.524 KB en computadoras de escritorio. ¡El 10% de las páginas de inicio tienen 90 o más imágenes y representan en total casi 6 MB!
 
 {{ figure_markup(
   caption="El número medio de bytes de imagen por página de comercio electrónico en móvil.",
