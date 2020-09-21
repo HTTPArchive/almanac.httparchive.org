@@ -31,6 +31,7 @@ JOIN
 USING
   (client)
 WHERE
+  date = '2019-07-01'
   ARRAY_LENGTH(usesFontStretch(css)) > 0
 GROUP BY
   client,

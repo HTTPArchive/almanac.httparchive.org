@@ -10,7 +10,7 @@ discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/
 queries: 04_Media
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-08-12T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## Introducción
@@ -18,13 +18,13 @@ Las imágenes, animaciones y vídeos son una parte importante de la experiencia 
 
 Desde una perspectiva puramente de bytes, el <i lang="en">HTTP Archive</i> ha [registrado históricamente](https://legacy.httparchive.org/interesting.php#bytesperpage) una media de dos tercios de bytes de recursos vinculados con recursos multimedia. Desde la perspectiva de la distribución, podemos ver que prácticamente toda página web depende de imágenes y vídeos. Incluso en el percentil 10, podemos ver que un 44% de los bytes son de recursos multimedia y puede llegar al 91% del total de bytes en las páginas del percentil 90. 
 
-<figure>
-  <a href="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png">
-    <img src="/static/images/2019/media/fig1_bytes_images_and_video_versus_other.png" alt="Figura 1. Bytes por página web: imagen y vídeo frente a otros." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil p10 un 44,1% de los bytes de la página son recursos multimedia, en el percentil p25 un 52,7% son recursos multimedia, en el percentil p50 un 67,0% son recursos multimedia, en el percentil p75 un 81,7% son recursos multimedia, y en el percentil p90 un 91,2% son recursos multimedia.</div>
-  <figcaption id="fig1-caption">Figura 1. Bytes por página web: imagen y vídeo frente a otros.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1_bytes_images_and_video_versus_other.png",
+  caption="Bytes por página web: imagen y vídeo frente a otros.",
+  description="Gráfico de barras mostrando que en el percentil 10 un 44,1% de los bytes de la página son recursos multimedia, en el percentil 25 un 52,7% son recursos multimedia, en el percentil 50 un 67,0% son recursos multimedia, en el percentil 75 un 81,7% son recursos multimedia, y en el percentil 90 un 91,2% son recursos multimedia.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive"
+  )
+}}
 
 Mientras que los recursos multimedia son esenciales para la experiencia visual, el impacto de este gran volumen de bytes tiene dos efectos colaterales.
 
@@ -34,13 +34,13 @@ La segunda consecuencia es el coste económico que supone para el usuario. Norma
 
 Es más, el coste económico de visitar estos sitios web en diferentes partes del mundo es desproporcionado. En la mediana y en el percentil 90, la cantidad de bytes por imagen es de 1 MB y de 1,9 MB respectivamente. A través de <i lang="en">[WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost)</i>, podemos ver que el Producto Interior Bruto (PIB) per cápita en Madagascar supone al usuario un coste tal que la carga de una sola página web del percentil 90 equivaldría al 2,6% del ingreso bruto diario. Por el contrario, en Alemania esto supondría el 0,3% del ingreso bruto diario.
 
-<figure>
-  <a href="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png">
-    <img src="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png" alt="Figura 2. Total de bytes de una imagen por sitio web (móvil)." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">En la mediana, una página web en formato móvil requiere 1 MB para imágenes, y 4,9 MB en el percentil 90.</div>
-  <figcaption id="fig2-caption">Figura 2. Total de bytes de una imagen por sitio web (móvil).</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2_total_image_bytes_per_web_page_mobile.png",
+  caption="Total de bytes de una imagen por sitio web (móvil).",
+  description="En la mediana, una página web en formato móvil requiere 1 MB para imágenes, y 4,9 MB en el percentil 90.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"
+  )
+}}
 
 Analizar los bytes por página significa analizar el gasto por rendimiento de la página y por usuario, pero se pasan por alto los beneficios. Estos bytes son importantes para renderizar los píxeles en la pantalla. De este modo, también podemos ver la importancia de las imágenes y los recursos visuales a través del análisis de la cantidad de píxeles usados de media por página.
 
@@ -50,21 +50,21 @@ Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: p
 * Los _píxeles lógicos_ se refieren a aquellos píxeles que conforman un archivo. Si tuvieras que cargar esa imagen en GIMP o en Photoshop, las dimensiones en píxeles de dicho archivo serían los píxeles lógicos (o píxeles naturales).
 * Los _píxeles físicos_ se refieren a las partes electrónicas de la pantalla. Antes del móvil y de las modernas pantallas de alta resolución, había una relación 1:1 entre los píxeles CSS y los puntos LED de una pantalla. Sin embargo, debido a que los dispositivos móviles son sostenidos muy próximos al ojo y que las pantallas de los ordenadores están más cerca que los monitores de los terminales antiguos, las pantallas actuales tienen un ratio mayor de píxeles físicos que los tradicionales píxeles CSS. Este ratio es el <i lang="en">Device-Pixel-Ratio</i>, coloquialmente llamado Retina™.
 
- <figure>
-  <a href="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png">
-    <img src="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png" alt="Figura 3. Píxeles de una imagen por página (móvil): CSS versus real." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden"> Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en móvil, mostrando el p10 (0,07 MP reales, 0,04 MP CSS), el p25 (0,38MP reales, 0,18 MP CSS), el p50 (1,6 MP reales, 0,65 MP CSS), el p75 (5,1 MP reales, 1,8 MP CSS), y el p90 (12 MP reales, 4,6 MP CSS).</div>
-  <figcaption id="fig3-caption">Figura 3. Píxeles de una imagen por página (móvil): CSS versus real.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
+  caption="Píxeles de una imagen por página (móvil): CSS versus real.",
+  description=" Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en móvil, mostrando el percentil 10 (0,07 MP reales, 0,04 MP CSS), el percentil 25 (0,38MP reales, 0,18 MP CSS), el percentil 50 (1,6 MP reales, 0,65 MP CSS), el percentil 75 (5,1 MP reales, 1,8 MP CSS), y el percentil 90 (12 MP reales, 4,6 MP CSS).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png">
-    <img src="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png" alt="Figura 4. Píxeles de una imagen por página (escritorio): CSS versus real." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden"> Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en escritorio, mostrando el p10 (0,09 MP reales, 0,05 MP CSS), el p25(0,52 MP reales, 0,29 MP CSS), el p50 (2,1 MP reales, 1,1 MP CSS), el p75 (6,0 MP reales, 2,8 MP CSS), y el p90 (14 MP reales, 6,3 MP CSS).</div>
-  <figcaption id="fig4-caption">Figura 4. Píxeles de una imagen por página (escritorio): CSS versus real.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4_image_pixel_per_page_desktop_css_v_actual.png",
+  caption="Píxeles de una imagen por página (escritorio): CSS versus real.",
+  description=" Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en escritorio, mostrando el percentil 10 (0,09 MP reales, 0,05 MP CSS), el percentil 25 (0,52 MP reales, 0,29 MP CSS), el percentil 50 (2,1 MP reales, 1,1 MP CSS), el percentil 75 (6,0 MP reales, 2,8 MP CSS), y el percentil 90 (14 MP reales, 6,3 MP CSS).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"
+  )
+}}
 
 Si miramos el volumen del pixel CSS y del pixel lógico, podemos observar que el sitio web medio tiene un diseño que muestra un megapixel (MP) de contenido multimedia. En el percentil 90, el volumen de la distribución del pixel CSS aumenta hasta 4,6 MP y 6,3 MP en móvil y escritorio respectivamente. Esto es interesante, no solo porque probablemente el diseño <i lang="en">responsive</i> sea diferente, sino también porque el factor de forma es diferente. En resumen, el diseño móvil tiene menos espacio para el contenido multimedia comparado con el de escritorio.
 
@@ -80,13 +80,13 @@ Si tuviéramos una imagen que ocupase perfectamente la totalidad de la pantalla,
 
 <p class="note">Nota: esto es únicamente analizando el diseño CSS para tanto el <i lang="en">DPR</i> como para la cantidad de contenido del diseño. No está evaluándose la efectividad de las imágenes <i lang="en">responsive</i> o la efectividad de facilitar un contenido con alto DPR.</p> 
 
-<figure>
-  <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
-    <img src="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png" alt="Figura 5. Cantidad de píxeles en una imagen versus el tamaño de la pantalla (píxeles CSS)." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Una comparación entre la cantidad de píxeles necesaria por página en relación con el tamaño real de la pantalla en píxeles CSS, mostrando el p10 (20% en móvil, 20% en escritorio), el p25 (97% en móvil, 13% en escritorio), el p50 (354% en móvil, 46% en escritorio), el p75 (1003% en móvil, 123% en escritorio), y el p90 (2477% en móvil, 273% en escritorio).</div>
-  <figcaption id="fig5-caption">Figura 5. Cantidad de píxeles en una imagen versus el tamaño de la pantalla (píxeles CSS).</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5_image_pixel_volume_v_css_pixels.png",
+  caption="Cantidad de píxeles en una imagen versus el tamaño de la pantalla (píxeles CSS).",
+  description="Una comparación entre la cantidad de píxeles necesaria por página en relación con el tamaño real de la pantalla en píxeles CSS, mostrando el percentil 10 (20% en móvil, 20% en escritorio), el percentil 25 (97% en móvil, 13% en escritorio), el percentil 50 (354% en móvil, 46% en escritorio), el percentil 75 (1003% en móvil, 123% en escritorio), y el percentil 90 (2477% en móvil, 273% en escritorio).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"
+  )
+}}
 
 Para la página web media en formato escritorio, solamente el 46% de la pantalla tendría contenido con imágenes y vídeo. En contraposición, en móvil, la cantidad de píxeles multimedia sería 3,5 veces el tamaño real de la ventana. El diseño tiene más contenido que lo que puede ser mostrado en una sola pantalla, requiriendo el uso del scroll. Como mínimo, hay 3,5 páginas de contenido con scroll por sitio (dando por hecho un 100% de saturación). En el percentil 90 para móvil, ¡esto aumenta sustancialmente a 25x el tamaño de la ventana!
 
@@ -146,41 +146,41 @@ Cada formato tiene sus propias ventajas y usos para la web. Una forma muy simple
  </tr>
  </tbody>
  </table>
-
- <figcaption>Figura 6. Explicación de los formatos de archivo convencionales.</figcaption>
+ <figcaption>{{ figure_link(caption="Explicación de los formatos de archivo convencionales.") }}</figcaption>
 </figure>
   
 ### Formatos de imagen
 
 Además, en toda la página, podemos ver la prevalencia de estos formatos. JPEG, uno de los formatos más antiguos de la web, es de lejos el que más comúnmente se utiliza como formato de imagen, con un 60% de peticiones de imagen y un 65% de todos los bytes de imagen. Curiosamente, el PNG es el segundo formato de imagen más común, con un 28% de peticiones de imágenes y bytes. La ubicuidad de la compatibilidad junto con la precisión del color y el contenido creativo son, probablemente, el porqué de su extendido uso. Por otro lado, SVG, GIF y WebP comparten un porcentaje de uso muy similar, el 4%.
 
-<figure>
-  <a href="/static/images/2019/media/fig7_image_format_usage.png">
-    <img alt="Los tipos de imagen más frecuentemente usados en las páginas web" aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/media/fig7_image_format_usage.png" width="600" height="376">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Un gráfico de estructura de árbol mostrando que los JPEGs son usados un 60,27% de las veces, los PNGs el 28,2%, el WebP el 4,2%, el GIF el 3,67% y el SVG el 3,63%.</div>
-  <figcaption id="fig7-caption">Figura 7: Uso del formato de imagen.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7_image_format_usage.png",
+  caption="Uso del formato de imagen.",
+  description="Un gráfico de estructura de árbol mostrando que los JPEGs son usados un 60,27% de las veces, los PNGs el 28,2%, el WebP el 4,2%, el GIF el 3,67% y el SVG el 3,63%.",
+  width=600,
+  height=376
+  )
+}}
 
 Por supuesto, las páginas webs no son uniformes en el uso del contenido de imagen. Algunas dependen de las imágenes más que otras. Basta con que mires la página principal de `google.com` y veas las pocas imágenes que muestra en comparación con el resto de las típicas páginas webs modernas. De hecho, la página web media tiene 13 imágenes, 61 imágenes en el percentil 90, y se dispara en el percentil 99 a 229 imágenes.
 
-<figure>
-  <a href="/static/images/2019/media/fig8_image_format_usage_per_page.png">
-    <img src="/static/images/2019/media/fig8_image_format_usage_per_page.png" alt="Figura 8. Formato de imagen usado por página." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Un gráfico de barras mostrando en el percentil p10 que no se usa ningún tipo de formato de imagen, en el percentil p25 se usan tres JPGS y cuatro PNGs, en el percentil p50 nueve JPGs, cuatro PNGs y un GIF, en el percentil p75 39 JPEGs, 18 PNGs, dos SVGs, y dos GIFs, y en el percentil p99 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs y 14 GIFs.</div>
-  <figcaption id="fig8-caption">Figura 8. Formato de imagen usado por página.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8_image_format_usage_per_page.png",
+  caption="Formato de imagen usado por página.",
+  description="Un gráfico de barras mostrando en el percentil 10 que no se usa ningún tipo de formato de imagen, en el percentil 25 se usan tres JPGS y cuatro PNGs, en el percentil 50 nueve JPGs, cuatro PNGs y un GIF, en el percentil 75 39 JPEGs, 18 PNGs, dos SVGs, y dos GIFs, y en el percentil p99 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs y 14 GIFs.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"
+  )
+}}
 
 Mientras que la página media tiene nueve JPEGS y cuatro PNGs, y solamente en el primer 25% de las páginas se usan GIFs, esto no representa la tasa de adopción. El uso y recurrencia de cada formato por página no proporciona información sobre la adopción de formatos más modernos. Concretamente, qué porcentaje de páginas incluye al menos una imagen por cada formato.
 
-<figure>
-  <a href="/static/images/2019/media/fig9_pages_using_at_least_1_image.png">
-    <img src="/static/images/2019/media/fig9_pages_using_at_least_1_image.png" alt="Figura 9. % de páginas que usan al menos una imagen." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">Un gráfico de barras mostrando que los JPEGs son usados en el 90% de las páginas, los PNGs en un 89%, el WebP en un 9%, el GIF en un 37% y el SVG un 22%.</div>
-  <figcaption id="fig9-caption">Figura 9. Porcentaje de páginas que usan al menos una imagen.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9_pages_using_at_least_1_image.png",
+  caption="Porcentaje de páginas que usan al menos una imagen.",
+  description="Un gráfico de barras mostrando que los JPEGs son usados en el 90% de las páginas, los PNGs en un 89%, el WebP en un 9%, el GIF en un 37% y el SVG un 22%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"
+  )
+}}
 
 Esto ayuda a explicar por qué, incluso en el percentil 90 de las páginas, la recurrencia del WebP es todavía nula; únicamente el 9% de las páginas web tienen al menos un recurso. Hay muchas razones por las que WebP podría no ser la mejor elección para una imagen, pero la adopción de las mejores prácticas multimedia, como la adopción del propio WebP, es todavía incipiente. 
 
@@ -188,23 +188,22 @@ Esto ayuda a explicar por qué, incluso en el percentil 90 de las páginas, la r
 
 Hay dos formas de analizar los tamaños de archivo de imagen: total de bytes por recursos y bytes por pixel.
 
-<figure>
-  <a href="/static/images/2019/media/fig10_image_format_size.png">
-    <img alt="Una comparación de formatos de imagen por tamaño de archivo" aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/media/fig10_image_format_size.png" width="600" height="371">
-  </a>
-  <div id="fig10-description" class="visually-hidden">Un gráfico mostrando que en el percentil p10 se usan 4 KB de JPEGs, 2 KB de PNGs y 2 KB de GIFs, en el percentil p25 se usan 9KB de JPGs, 4 KB de PNGs, 7 KB de WebP, y 3 KB de GIFs, en el percentil p50 se usan 24 KB de JPGs, 11 KB de PNGs, 17 KB de WebP, 6 KB de GIFs y 1 KB de SVGs, en el percentil p75 se usan 68 KB de JPEGs, 43 KB de PNGs 41 KB de WebPs, 17 KB de GIFs y 2 KB de SVGs, y en el percentil p90 se usan 116 KB de JPGs, 152 KB de PNGs, 90 KB de WebPs, 87 KB de GIFs y 8 KB de SVGs.</div>
-  <figcaption id="fig10-caption">Figura 10. Tamaño de archivo (KB) por formato de imagen.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10_image_format_size.png",
+  caption="Tamaño de archivo (KB) por formato de imagen.",
+  description="Un gráfico mostrando que en el percentil 10 se usan 4 KB de JPEGs, 2 KB de PNGs y 2 KB de GIFs, en el percentil 25 se usan 9KB de JPGs, 4 KB de PNGs, 7 KB de WebP, y 3 KB de GIFs, en el percentil 50 se usan 24 KB de JPGs, 11 KB de PNGs, 17 KB de WebP, 6 KB de GIFs y 1 KB de SVGs, en el percentil 75 se usan 68 KB de JPEGs, 43 KB de PNGs 41 KB de WebPs, 17 KB de GIFs y 2 KB de SVGs, y en el percentil 90 se usan 116 KB de JPGs, 152 KB de PNGs, 90 KB de WebPs, 87 KB de GIFs y 8 KB de SVGs."
+  )
+}}
 
 A partir de esto, podemos hacer una idea de cuán grande o pequeño es el recurso habitual de una web. Sin embargo, esto no nos muestra la cantidad de píxeles en pantalla para estas distribuciones de archivo. Para ello podemos dividir cada recurso de bytes por la cantidad de píxeles lógicos de la imagen. A menor cuantía de bytes por pixel, mayor eficiencia en la transmisión del contenido visual.
 
- <figure>
-  <a href="/static/images/2019/media/fig11_bytes_per_pixel.png">
-    <img src="/static/images/2019/media/fig11_bytes_per_pixel.png" alt="Figura 11. Bytes por pixel." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden"> Un gráfico de velas que muestra en el percentil p10 que tenemos 0,1175 bytes por pixel para JPEG, 0,1197 para PNG, 0,1702 para GIF, 0,0586 para WebP y 0,0293 para SVG. En el percentil p25 tenemos 0,1848 bytes por pixel para JPEGs, 0,2874 para PNG, 0,3641 para GIF, 0,1025 para WebP, y 0,174 para SVG. En el percentil p50 tenemos 0,2997 bytes por pixel para JPEGs, 0,6918 para PNG, 0,7967 para GIF, 0,183 para WebP, y 0,6766 para SVG. En el percentil p75 tenemos 0,5456 bytes por pixel para JPEGs, 1,4548 para PNG, 2,515 para GIF, 0,3272 para WebP, y 1,9261 para SVG. En el percentil p90 tenemos 0,9822 bytes por pixel para JPEGs, 2,5026 para PNG, 8,5151 para GIF, 0,6474 para WebP, y 4,1075 para SVG</div>
-  <figcaption id="fig11-caption">Figura 11. Bytes por pixel.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig11_bytes_per_pixel.png",
+  caption="Bytes por pixel.",
+  description=" Un gráfico de velas que muestra en el percentil 10 que tenemos 0,1175 bytes por pixel para JPEG, 0,1197 para PNG, 0,1702 para GIF, 0,0586 para WebP y 0,0293 para SVG. En el percentil 25 tenemos 0,1848 bytes por pixel para JPEGs, 0,2874 para PNG, 0,3641 para GIF, 0,1025 para WebP, y 0,174 para SVG. En el percentil 50 tenemos 0,2997 bytes por pixel para JPEGs, 0,6918 para PNG, 0,7967 para GIF, 0,183 para WebP, y 0,6766 para SVG. En el percentil 75 tenemos 0,5456 bytes por pixel para JPEGs, 1,4548 para PNG, 2,515 para GIF, 0,3272 para WebP, y 1,9261 para SVG. En el percentil 90 tenemos 0,9822 bytes por pixel para JPEGs, 2,5026 para PNG, 8,5151 para GIF, 0,6474 para WebP, y 4,1075 para SVG",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive"
+  )
+}}
 
 Aunque previamente se había visto que los archivos GIF son más pequeños que los JPEG, ahora podemos ver claramente que la razón de esos recursos JPEG de mayor envergadura es su cantidad de píxeles. Seguramente no sea una sorpresa ver que los GIF muestran una densidad de píxeles mucho menor que la de otros formatos, en comparación. Además, aunque el PNG puede gestionar una alta profundidad de bits y no verse afectado por el desenfoque del submuestreo de crominancia, se traduce en el doble de tamaño que en JPG o WebP para el mismo número de píxeles.
 
@@ -222,23 +221,23 @@ Otras funciones del formato simplemente organizan el contenido y, a veces, neces
 
 El test <i lang="en">[Lighthouse](./methodology#lighthouse)</i> es una comparación A/B con una encriptación progresiva del JPEG. Esto facilita una guía para saber qué imágenes pueden ser optimizadas un poco más con técnicas sin pérdida y potencialmente con técnicas con pérdida como usar diferentes niveles de calidad.
 
- <figure>
-  <a href="/static/images/2019/media/fig12_percentage_optimized_images.png">
-    <img src="/static/images/2019/media/fig12_percentage_optimized_images.png" alt="Figura 12. Porcentaje de imágenes 'optimizadas'." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767">
-  </a>
-  <div id="fig12-description" class="visually-hidden">Gráfico de barras mostrando que en el percentil p10 el 100% de las imágenes están optimizadas, igual que en el percentil p25, en el percentil p50 el 98% de las imágenes están optimizadas (un 2% no lo están), en el percentil p75 un 83% de las imágenes están optimizadas (un 17% no lo están), y en el percentil p90 un 59% de las imágenes están optimizadas y un 41% no lo están.</div>
-  <figcaption id="fig12-caption">Figura 12. Porcentaje de imágenes 'optimizadas'</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig12_percentage_optimized_images.png",
+  caption="Porcentaje de imágenes 'optimizadas'",
+  description="Gráfico de barras mostrando que en el percentil 10 el 100% de las imágenes están optimizadas, igual que en el percentil 25, en el percentil 50 el 98% de las imágenes están optimizadas (un 2% no lo están), en el percentil 75 un 83% de las imágenes están optimizadas (un 17% no lo están), y en el percentil 90 un 59% de las imágenes están optimizadas y un 41% no lo están.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767"
+  )
+}}
 
 La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial reducción de bytes, la cual puede suponer bastantes MBs en el p95, sino que también muestra la mejora del rendimiento de la página.
 
- <figure>
-  <a href="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png">
-    <img src="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png" alt="Figura 13. Estimación de la mejora del rendimiento de la página tras la optimización de imagen de Lighthouse." aria-labelledby="fig12-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779">
-  </a>
-  <div id="fig13-description" class="visually-hidden">Gráfico de barras que muestra  que en el percentil p10 0 ms pudieron ser medidos, lo mismo pasa en el percentil p25, en el percentil p50 se redujeron 150 ms, en el percentil p75 se redujeron 1.460 ms, y en el percentil p90 se redujeron 5.720 ms.</div>
-  <figcaption id="fig13-caption">Figura 13. Estimación de la mejora del rendimiento de la página tras la optimización de imagen de <i lang="en">Lighthouse</i>.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig13_project_perf_improvements_image_optimization.png",
+  caption='Estimación de la mejora del rendimiento de la página tras la optimización de imagen de <i lang="en">Lighthouse</i>.',
+  description="Gráfico de barras que muestra  que en el percentil 10 0 ms pudieron ser medidos, lo mismo pasa en el percentil 25, en el percentil 50 se redujeron 150 ms, en el percentil 75 se redujeron 1.460 ms, y en el percentil 90 se redujeron 5.720 ms.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
+  )
+}}
 
 ### Imágenes adaptables (responsive)
 
@@ -252,13 +251,13 @@ Otra forma de mejorar el rendimiento de la página es usar imágenes <i lang="en
 
 El método más usado para implementar las imágenes <i lang="en">responsive</i> es construir una lista de imágenes alternativas usando tanto `<img srcset>` como `<source srcset>`. Si el `srcset` está basado en DPR, el navegador podrá seleccionar la imagen correcta del listado sin información adicional. De todos modos, la mayoría de implementaciones también usan `<img sizes>` para ayudar a enseñar al navegador cómo realizar los cálculos de estructura necesarios para seleccionar la imagen correcta en el `srcset` en función de las dimensiones en píxeles.
 
- <figure>
-  <a href="/static/images/2019/media/fig14_html_usage_of_responsive_images.png">
-    <img src="/static/images/2019/media/fig14_html_usage_of_responsive_images.png" alt="Figura 14. Porcentaje de páginas que usan imágenes adaptables con HTML." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive">
-  </a>
-  <div id="fig14-description" class="visually-hidden">Un gráfico de barras que muestra que el 18% de las imágenes usan 'sizes', un 21% usan 'srcset', y un 2% usan 'picture'.</div>
-  <figcaption id="fig14-caption">Figura 14. Porcentaje de páginas que usan imágenes adaptables con HTML.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig14_html_usage_of_responsive_images.png",
+  caption="Porcentaje de páginas que usan imágenes adaptables con HTML.",
+  description="Un gráfico de barras que muestra que el 18% de las imágenes usan 'sizes', un 21% usan 'srcset', y un 2% usan 'picture'.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive"
+  )
+}}
 
 No es sorprendente el notable menor uso del `<picture>` ya que se usan más a menudo para el diseño web <i lang="en">responsive</i> (RWD, siglas del inglés <i lang="en">responsive web design</i>) avanzado como el de [dirección de arte](https://developer.mozilla.org/es/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
 
@@ -280,18 +279,19 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
 (max-width: 400px) 100vw, 400px | 0.32 | 1%
 (max-width: 80px) 100vw, 80px | 0.28 | 1%
 
-  <figcaption id="fig15-caption">Figura 15. Porcentaje de páginas que usan los patrones <code>sizes</code> más populares.</figcaption>
+<figcaption>{{ figure_link(caption="Porcentaje de páginas que usan los patrones <code>sizes</code> más populares.") }}</figcaption>
 </figure>
 
 * **`<img sizes="auto">`** - éste es el que más se usa, aunque en realidad no es standard, sino producto del uso de la librería JavaScript `lazy_sizes`. Ésta usa un código del lado del cliente que inyecta mejores cálculos de `sizes` para el navegador. Su desventaja es que depende de la carga del JavaScript y de que el DOM esté completamente listo, retrasando sustancialmente la carga de las imágenes.
 
- <figure>
-  <a href="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png">
-    <img src="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png" alt="Figura 16. Top de patrones de 'img sizes'." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive">
-  </a>
-  <div id="fig16-description" class="visually-hidden">Gráfico de barras que muestra que 11,3 millones de imágenes usan 'img sizes="(max-width: 300px) 100vw, 300px"', 1,60 millones usan 'auto', 1 millón usan 'img sizes="(max-width: 767px) 89vw...etc."', 0,23 millones usan '100vw' y 0,13 millones usan '300px'</div>
-  <figcaption id="fig16-caption" >Figura 16. Top de patrones de <code>&lt;img sizes&gt;</code>.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig16_top_patterns_of_img_sizes.png",
+  alt="Top de patrones de img sizes.",
+  caption="Top de patrones de <code>&lt;img sizes&gt;</code>.",
+  description="Gráfico de barras que muestra que 11,3 millones de imágenes usan 'img sizes=\"(max-width: 300px) 100vw, 300px\"', 1,60 millones usan 'auto', 1 millón usan 'img sizes=\"(max-width: 767px) 89vw...etc.\"', 0,23 millones usan '100vw' y 0,13 millones usan '300px'",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
+  )
+}}
 
 ### Client Hints
 
@@ -299,25 +299,25 @@ Los <i lang="en">[Client Hints](https://developers.google.com/web/fundamentals/p
 
 Para habilitar los <i lang="en">Client Hints</i>, la página web debe señalizárselo al navegador usando bien un encabezado HTTP adicional `Accept-CH: DPR, Width, Viewport-Width` _o bien_ añadiendo el HTML `<meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width">`. La conveniencia de usar una u otra técnica depende del equipo que las esté implementando, ambas se ofrecen por conveniencia.
 
-<figure>
-  <a href="/static/images/2019/media/fig17_usage_of_accept-ch_http_v_html.png">
-    <img src="/static/images/2019/media/fig17_usage_of_accept-ch_http_v_html.png" alt="Figura 17. Uso del Accept-CH: HTTP versus HTML." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive">
-  </a>
-  <div id="fig17-description" class="visually-hidden">Gráfico de barras mostrando que un 71% usa el 'meta http-equiv', un 30% usa el encabezado 'Accept-CH' HTTP y un 1% usa ambos.</div>
-  <figcaption id="fig17-caption">Figura 17. Uso del encabezado <code>Accept-CH</code> versus la etiqueta <code>&lt;meta></code> equivalente.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig17_usage_of_accept-ch_http_v_html.png",
+  caption="Uso del encabezado <code>Accept-CH</code> versus la etiqueta <code>&lt;meta></code> equivalente.",
+  description="Gráfico de barras mostrando que un 71% usa el 'meta http-equiv', un 30% usa el encabezado 'Accept-CH' HTTP y un 1% usa ambos.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
+  )
+}}
 
 El uso de la etiqueta `<meta>` en HTML para invocar los <i lang="en">Client Hints</i> es bastante más común en comparación con el del encabezado HTTP. Esto es un claro reflejo de la comodidad de modificar el marcado de las plantillas en comparación con añadir los encabezados HTTP en cajas intermedias. De todos modos, analizando el uso del encabezado HTTP, más del 50% de estos casos provienen de una sola plataforma SaaS (Mercado).
 
 De los <i lang="en">Client Hints</i> solicitados, la mayoría de las páginas los usan para los tres casos originales de `DPR`, `ViewportWidth` y `Width`. Por supuesto, el <i lang="en">Client Hint</i> `Width` necesita del uso de `<img sizes>` para que el navegador tenga el contexto necesario relativo al diseño.
 
-<figure>
-  <a href="/static/images/2019/media/fig18_enabled_client_hints.png">
-    <img src="/static/images/2019/media/fig18_enabled_client_hints.png" alt="Figura 18. Client Hints habilitados." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive">
-  </a>
-  <div id="fig18-description" class="visually-hidden">Un gráfico circular de estilo donut que muestra que el 26,1% de los <i lang="en">client hints</i> usa 'dpr', 24,3% usa 'viewport-width', 19,7% usa 'width', 6,7% usa 'save-data', 6,1% usan 'device-memory', 6,0% usan 'downlink', 5,6% usan 'rtt' y 5,6% usan 'ect'</div>
-  <figcaption id="fig18-caption">Figura 18. <i lang="en">Client Hints</i> habilitados.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig18_enabled_client_hints.png",
+  caption="Client Hints habilitados.",
+  description="Un gráfico circular de estilo donut que muestra que el 26,1% de los client hints usa 'dpr', 24,3% usa 'viewport-width', 19,7% usa 'width', 6,7% usa 'save-data', 6,1% usan 'device-memory', 6,0% usan 'downlink', 5,6% usan 'rtt' y 5,6% usan 'ect'",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive"
+  )
+}}
 
 Los <i lang="en">Client Hints</i> relacionados con la red, `downlink`, `rtt`, y `ect`, solamente están disponibles en Android Chrome.
 
@@ -325,15 +325,15 @@ Los <i lang="en">Client Hints</i> relacionados con la red, `downlink`, `rtt`, y 
 
 Mejorar el rendimiento de una página web puede ser parcialmente descrito como un juego de ilusiones; moviendo las cosas más lentas fuera de banda y lejos de la vista del usuario. De este modo, el <i lang="en">lazy loading</i> de imágenes es una de esas ilusiones donde la imagen y el contenido multimedia solamente se cargan cuando el usuario se desplaza por la página. Esto mejora el rendimiento que se percibe, incluso en conexiones lentas, y evita al usuario la descarga de bytes que no van a estar visibles.
 
-Anteriormente, en la  <a href="#fig-5">Figura 5</a>, mostramos como el volumen del contenido de imagen en el percentil 75 es bastante más de lo que, en principio, puede verse en una sola ventana de escritorio o móvil. La auditoría <i lang="en">Lighthouse</i> de [imágenes fuera de pantalla](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirma nuestras sospechas. La página web media tiene un 27% de contenido de imagen significativamente por debajo del borde. Esto aumenta hasta el 84% en el percentil 90.
+Anteriormente, en la [Figura 4.5](#fig-5), mostramos como el volumen del contenido de imagen en el percentil 75 es bastante más de lo que, en principio, puede verse en una sola ventana de escritorio o móvil. La auditoría <i lang="en">Lighthouse</i> de [imágenes fuera de pantalla](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirma nuestras sospechas. La página web media tiene un 27% de contenido de imagen significativamente por debajo del borde. Esto aumenta hasta el 84% en el percentil 90.
 
-<figure>
-  <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
-    <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="Figura 19. Auditoría Lighthouse: Fuera de pantalla." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">Un gráfico de barras que muestra que en el percentil p10 un 0% de las imágenes se encuentran fuera de pantalla, en el percentil p25 un 2% están fuera de pantalla, en el percentil p50 un 27% están fuera de pantalla, en el percentil p75 un 64% están fuera de pantalla, y en el percentil p90 un 84% de las imágenes están fuera de pantalla.</div>
-  <figcaption id="fig19-caption">Figura 19. Auditoría <i lang="en">Lighthouse</i>: Fuera de pantalla.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19_lighthouse_audit_offscreen.png",
+  caption='Auditoría <i lang="en">Lighthouse</i>: Fuera de pantalla.',
+  description="Un gráfico de barras que muestra que en el percentil 10 un 0% de las imágenes se encuentran fuera de pantalla, en el percentil 25 un 2% están fuera de pantalla, en el percentil 50 un 27% están fuera de pantalla, en el percentil 75 un 64% están fuera de pantalla, y en el percentil 90 un 84% de las imágenes están fuera de pantalla.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
+  )
+}}
 
 La auditoría <i lang="en">Lighthouse</i> nos da solo una idea ya que hay un buen número de situaciones que pueden ser difíciles de detectar, como el uso de marcadores de calidad.
 
@@ -355,25 +355,25 @@ Aunque las imágenes dominan los medios multimedia de las páginas web, los víd
 
 El vídeo puede ser mostrado en muchos formatos y reproductores diferentes. Los formatos que dominan en móvil y escritorio son el `.ts` (segmentos de transmisión HLS) y el `.mp4` (el H264 MPEG):
 
-<figure>
-  <a href="/static/images/2019/media/fig20_video_files_by_extension.png">
-    <img src="/static/images/2019/media/fig20_video_files_by_extension.png" alt="Figura 20. Recuento de archivos de vídeo por extensión." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive">
-  </a>
-  <div id="fig20-description" class="visually-hidden">Un gráfico de barras que muestra el uso de 'ts' es de 1.283.439 para escritorio (792.952 para móvil), de 'mp4' es de 729.757 para escritorio (662.015 para móvil), el de 'webm' es de 38.591 para escritorio (32.417 para móvil), el de 'mov' es de 22.194 para escritorio (14.986 para móvil), el de 'm4s' es de 17.338 para escritorio (16.046 para móvil), el de 'm4v' es de 7.466 para escritorio (6.169 para móvil).</div>
-  <figcaption id="fig20-caption">Figura 20. Recuento de archivos de vídeo por extensión.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig20_video_files_by_extension.png",
+  caption="Recuento de archivos de vídeo por extensión.",
+  description="Un gráfico de barras que muestra el uso de 'ts' es de 1.283.439 para escritorio (792.952 para móvil), de 'mp4' es de 729.757 para escritorio (662.015 para móvil), el de 'webm' es de 38.591 para escritorio (32.417 para móvil), el de 'mov' es de 22.194 para escritorio (14.986 para móvil), el de 'm4s' es de 17.338 para escritorio (16.046 para móvil), el de 'm4v' es de 7.466 para escritorio (6.169 para móvil).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"
+  )
+}}
 
 Otros formatos vistos incluyen `webm`, `mov`, `m4s` y `m4v` (segmentos de transmisión MPEG-DASH). Queda claro que la mayoría de las transmisiones (<i lang="en">streamings</i>) en la web son HLS y que el formato por excelencia para vídeos estáticos es el `mp4`.
 
 Bajo estas líneas puede verse el tamaño de vídeo medio para cada formato:
 
-<figure>
-  <a href="/static/images/2019/media/fig21_median_vidoe_file_size_by_extension.png">
-    <img src="/static/images/2019/media/fig21_median_vidoe_file_size_by_extension.png" alt="Figura 21. Tamaño medio de archivo por extensión de vídeo." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive">
-  </a>
-  <div id="fig21-description" class="visually-hidden">Un gráfico de barras mostrando que el tamaño medio de un archivo 'ts' es 335 KB para escritorio (156 KB para móvil), el de 'mp4' es de 175 KB para escritorio (128 KB para móvil), el de 'webm' es de 359 KB para escritorio (192 KB para móvil), el de 'mov' es de 128 KB para escritorio (96 KB para móvil), el de 'm4s' es de 324 KB para escritorio (246 KB para móvil), y el de 'm4v' es de 383 KB para escritorio (161 KB para móvil)</div>
-  <figcaption id="fig21-caption">Figura 21. Tamaño medio de archivo por extensión de vídeo.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig21_median_vidoe_file_size_by_extension.png",
+  caption="Tamaño medio de archivo por extensión de vídeo.",
+  description="Un gráfico de barras mostrando que el tamaño medio de un archivo 'ts' es 335 KB para escritorio (156 KB para móvil), el de 'mp4' es de 175 KB para escritorio (128 KB para móvil), el de 'webm' es de 359 KB para escritorio (192 KB para móvil), el de 'mov' es de 128 KB para escritorio (96 KB para móvil), el de 'm4s' es de 324 KB para escritorio (246 KB para móvil), y el de 'm4v' es de 383 KB para escritorio (161 KB para móvil)",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"
+  )
+}}
 
 Los valores medios son menores en versión móvil, lo que puede significar simplemente que algunos sitios que tienen vídeos de gran tamaño en versión de escritorio no los muestran en la versión móvil, y que las transmisiones de vídeo ofrecen versiones menores de dichos vídeos para las pantallas más pequeñas.
 
@@ -381,13 +381,13 @@ Los valores medios son menores en versión móvil, lo que puede significar simpl
 
 Cuando se muestran vídeos en la web, la mayoría de ellos son reproducidos con el reproductor de vídeo de HTML5. El reproductor de vídeo de HTML es altamente personalizable para poder mostrar vídeos con fines muy diferentes. Por ejemplo, para reproducir un vídeo automáticamente, los parámetros `autoplay` y `muted` han de ser añadidos. El atributo `controls` permite al usuario iniciar/parar y moverse a través del vídeo. Si analizamos las etiquetas de vídeo en el <i lang="en">HTTP Archive</i>, podemos ver el uso de cada uno de estos atributos:
 
-<figure>
-  <a href="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png">
-    <img src="/static/images/2019/media/fig22_html_video_tag_attributes_usage.png" alt="Figura 22. Uso de los atributos de la etiqueta HTML de vídeo." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive">
-  </a>
-  <div id="fig22-description" class="visually-hidden">Un gráfico de barras que muestra para escritorio: 'autoplay' en el 11.84%, 'buffered' en el 0%, 'controls' en el 12.05%, 'crossorigin' en el 0.45%, 'currenttime' en el 0.01%, 'disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.01%, 'duration' en el 0.05%, 'height' en el 7.33%, 'intrinsicsize' en el 0%, 'loop' en el 14.57%, 'muted' en el 13.92%, 'playsinline' en el 6.49%, 'poster' en el 8.98%, 'preload' en el 11.62%, 'src' en el 3.67%, 'use-credentials' en el 0%, y 'width' en el 9%. Y para móvil: 'autoplay' en el 12.38%, 'buffered' en el 0%, 'controls' en el 13.88%, 'crossorigin' en el 0.16%, 'currenttime' en el 0.01%, disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.02%, 'duration' en el 0.09%, 'height' en el 6.54%,  intrinsicsize' en el 0%, 'loop' en el 14.44%, 'muted' en el 13.55%, 'playsinline' en el 6.15%, 'poster' en el 9.29%, 'preload' en el 10.34%, 'src' en el 4.13%, 'use-credentials' en el 0%, y 'width' en el 9.03%.</div>
-  <figcaption id="fig22-caption">Figura 22. Uso de los atributos de la etiqueta HTML de vídeo.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig22_html_video_tag_attributes_usage.png",
+  caption="Uso de los atributos de la etiqueta HTML de vídeo.",
+  description="Un gráfico de barras que muestra para escritorio: 'autoplay' en el 11.84%, 'buffered' en el 0%, 'controls' en el 12.05%, 'crossorigin' en el 0.45%, 'currenttime' en el 0.01%, 'disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.01%, 'duration' en el 0.05%, 'height' en el 7.33%, 'intrinsicsize' en el 0%, 'loop' en el 14.57%, 'muted' en el 13.92%, 'playsinline' en el 6.49%, 'poster' en el 8.98%, 'preload' en el 11.62%, 'src' en el 3.67%, 'use-credentials' en el 0%, y 'width' en el 9%. Y para móvil: 'autoplay' en el 12.38%, 'buffered' en el 0%, 'controls' en el 13.88%, 'crossorigin' en el 0.16%, 'currenttime' en el 0.01%, disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.02%, 'duration' en el 0.09%, 'height' en el 6.54%,  intrinsicsize' en el 0%, 'loop' en el 14.44%, 'muted' en el 13.55%, 'playsinline' en el 6.15%, 'poster' en el 9.29%, 'preload' en el 10.34%, 'src' en el 4.13%, 'use-credentials' en el 0%, y 'width' en el 9.03%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive"
+  )
+}}
 
 Los atributos más comunes son `autoplay`, `muted` y `loop`, seguidos por la etiqueta `preload` y por `width` y `height`. El uso del atributo `loop` es para vídeos de fondo y también para vídeos usados para reemplazar animaciones GIFs, así que no es sorprendente ver que se usa habitualmente en la página de inicio de los sitios web.
 
@@ -399,13 +399,13 @@ Desde el punto de vista de la accesibilidad, la etiqueta `<track>` puede ser usa
 
 Para una reproducción más avanzada (y para iniciar la transmisión de vídeo), el reproductor de vídeo nativo de HTML5 no servirá. Hay otras pocas librerías de vídeo populares que son usadas para reproducir vídeo:
 
-<figure>
-  <a href="/static/images/2019/media/fig23_top_javascript_video_players.png">
-    <img src="/static/images/2019/media/fig23_top_javascript_video_players.png" alt="Figura 23. Top de reproductores de vídeo de JavaScript." aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive">
-  </a>
-  <div id="fig23-description" class="visually-hidden">Gráfico de barras mostrando que 'flowplayer' se usa en 3.365 sitios web para escritorio (3.400 para móvil), 'hls' en 52.375 sitios web para escritorio (40.925 para móvil), 'jwplayer' en 110.280 sitios web para escritorio (96.945 para móvil), 'shaka' en 325 sitios web para escritorio (275 para móvil) y 'vídeo' se usa en 377.990 sitios web para escritorio (391.330 para móvil)</div>
-  <figcaption id="fig23-caption">Figura 23. Top de reproductores de vídeo de JavaScript.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig23_top_javascript_video_players.png",
+  caption="Top de reproductores de vídeo de JavaScript.",
+  description="Gráfico de barras mostrando que 'flowplayer' se usa en 3.365 sitios web para escritorio (3.400 para móvil), 'hls' en 52.375 sitios web para escritorio (40.925 para móvil), 'jwplayer' en 110.280 sitios web para escritorio (96.945 para móvil), 'shaka' en 325 sitios web para escritorio (275 para móvil) y 'vídeo' se usa en 377.990 sitios web para escritorio (391.330 para móvil)",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive"
+  )
+}}
 
 El más popular (de lejos) es el vídeo.js, seguido por JWPLayer y HLS.js. Los autores advierten de que es posible que haya otros archivos con el nombre "vídeo.js" que puedan no ser la misma librería de reproducción de vídeo.
 

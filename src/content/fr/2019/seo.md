@@ -10,7 +10,7 @@ discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
 queries: 10_SEO
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-09T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## Introduction
@@ -43,13 +43,13 @@ Pour pouvoir comprendre ce qu'est une page web et décider pour quelles requête
 
 Nous avons évalué le contenu des pages en recherchant des groupes d'au moins 3 mots et en comptant le nombre total de mots trouvés. Nous avons trouvé 2,73 % des pages sur ordinateur qui ne comportaient aucun groupe de mots, ce qui signifie qu'elles n'ont pas de contenu principal pour aider les moteurs de recherche à comprendre le sujet du site web.
 
-<figure>
-  <a href="/static/images/2019/seo/fig1.png">
-    <img src="/static/images/2019/seo/fig1.png" alt="Figure 1. Distribution du nombre de mots par pages." aria-labelledby="fig1-caption" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&amp;format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden"> Distribution du nombre de mots par page. Le nombre médian de mots par page de bureau est de 346 et 306 pour les pages mobiles. Les pages de bureau contiennent plus de mots dans les centiles, jusqu'à 120 mots au 90e centile</div>
-  <figcaption id="fig1-caption" >Figure 1. Distribution du nombre de mots par page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1.png",
+  caption="Distribution du nombre de mots par page.",
+  description="Distribution du nombre de mots par page. Le nombre médian de mots par page de bureau est de 346 et 306 pour les pages mobiles. Les pages de bureau contiennent plus de mots dans les centiles, jusqu'à 120 mots au 90e centile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&format=interactive"
+  )
+}}
 
 La page d'accueil médiane du bureau contient 346 mots et la page d'accueil médiane du mobile a un nombre de mots légèrement inférieur à 306 mots. Cela montre que les sites mobiles offrent un peu moins de contenu à leurs utilisateurs, mais à plus de 300 mots, c'est toujours une quantité raisonnable à lire. Cela est particulièrement vrai pour les pages d'accueil qui contiennent naturellement moins de contenu que les pages d'article, par exemple. Dans l'ensemble, la distribution des mots est large, avec entre 22 mots au 10e centile et jusqu'à 1 361 au 90e centile.
 
@@ -57,23 +57,23 @@ La page d'accueil médiane du bureau contient 346 mots et la page d'accueil méd
 
 Nous avons également examiné si les pages sont structurées de manière à fournir le bon contexte pour le contenu qu'elles contiennent. Les éléments d'en-tête (`H1`, `H2`, `H3`, etc.) sont utilisés pour formater et structurer une page et rendre le contenu plus facile à lire et à analyser. Malgré l’importance des titres, 10,67&nbsp;% des pages ne en comportent pas.
 
-<figure>
-  <a href="/static/images/2019/seo/fig2.png">
-    <img src="/static/images/2019/seo/fig2.png" alt="Figure 2. Répartition du nombre de titres par page." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Répartition du nombre de titres par page. Répartition des titres par page. Le nombre médian d'en-têtes par page de bureau et mobile est de 10. Aux 10, 25, 75 et 90e centiles, le nombre d'en-têtes par page de bureau est de 0, 3, 21 et 39. C'est légèrement plus élevé que la distribution d'en-têtes mobiles par page</div>
-  <figcaption id="fig2-caption" >Répartition du nombre de titres par page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  caption="Répartition du nombre de titres par page.",
+  description="Répartition du nombre de titres par page. Répartition des titres par page. Le nombre médian d'en-têtes par page de bureau et mobile est de 10. Aux 10, 25, 75 et 90e centiles, le nombre d'en-têtes par page de bureau est de 0, 3, 21 et 39. C'est légèrement plus élevé que la distribution d'en-têtes mobiles par page.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&format=interactive"
+  )
+}}
 
 Le nombre médian d'éléments de titre par page est de 10. Les titres contiennent 30 mots sur les pages mobiles et 32 mots sur les pages de bureau. Cela implique que les sites web qui utilisent des titres mettent beaucoup d'efforts pour s'assurer que leurs pages sont lisibles, descriptives et décrivent clairement la structure de la page et le contexte du moteur de recherche.
 
-<figure>
-  <a href="/static/images/2019/seo/fig3.png">
-    <img src="/static/images/2019/seo/fig3.png" alt="Figure 3. Répartition du nombre de caractères dans le premier H1 par page." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">Répartition du nombre de caractères dans le premier H1 par page. Les distributions de bureau et mobile sont presque identiques, avec les 10, 25, 50, 75 et 90e centiles sous la forme: 6, 11, 19, 31 et 47 caractères.</div>
-  <figcaption id="fig3-caption" >Figure 3. Répartition du nombre de caractères dans le premier H1 par page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="Répartition du nombre de caractères dans le premier H1 par page.",
+  description="Répartition du nombre de caractères dans le premier H1 par page. Les distributions de bureau et mobile sont presque identiques, avec les 10, 25, 50, 75 et 90e centiles sous la forme: 6, 11, 19, 31 et 47 caractères.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&format=interactive"
+  )
+}}
 
 En termes de longueur de titre spécifique, la longueur médiane du premier élément `H1` trouvé sur le bureau est de 19 caractères.
 
@@ -85,20 +85,22 @@ Les balises meta nous permettent de donner des instructions et des informations 
 
 #### Balise title
 
-<figure>
-  <div class="big-number">97 %</div>
-  <figcaption>Figure 4. Pourcentage des pages mobiles qui ont une balise title</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Pourcentage des pages mobiles qui ont une balise title",
+  content="97 %",
+  classes="big-number"
+)
+}}
 
 Les titres de page sont un moyen important de communiquer l'objectif d'une page à un utilisateur ou à un moteur de recherche. Les balises sont également utilisées comme en-têtes dans le SERPS et comme titre pour l'onglet du navigateur lors de la visite d'une page, il n'est donc pas surprenant de voir que 97,1 % des pages mobiles ont un titre de document.
 
-<figure>
-  <a href="/static/images/2019/seo/fig5.png">
-    <img src="/static/images/2019/seo/fig5.png" alt="Figure 5. Distribution de la longueur du titre par page." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Répartition du nombre de caractères par élément de titre par page. Les 10, 25, 50, 75 et 90e centiles des longueurs de titre pour le bureau sont&nbsp;: 4, 9, 20, 40 et 66 caractères. La distribution mobile est très similaire</div>
-  <figcaption id="fig5-caption">Figure 5. Distribution de la longueur du titre par page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Distribution de la longueur du titre par page.",
+  description="Répartition du nombre de caractères par élément de titre par page. Les 10, 25, 50, 75 et 90e centiles des longueurs de titre pour le bureau sont&nbsp;: 4, 9, 20, 40 et 66 caractères. La distribution mobile est très similaire",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&format=interactive"
+  )
+}}
 
 Même si [Google affiche généralement les 50 à 60 premiers caractères d'un titre de page](https://moz.com/learn/seo/title-tag) dans une page de résultats de recherche. La longueur médiane `title` de la balise ne comportait que 21 caractères pour les pages mobiles et 20 caractères pour les pages de bureau. Même le 75e centile est toujours inférieur à la longueur préconisée. Cela suggère que certains SEO et rédacteurs de contenu ne profitent pas de l'espace qui leur est alloué par les moteurs de recherche pour décrire leurs pages d'accueil dans les SERP.
 
@@ -106,13 +108,13 @@ Même si [Google affiche généralement les 50 à 60 premiers caractères d'un t
 
 Par rapport à la balise `title`, moins de pages ont implémenté une méta description. Seulement 64,02 % des pages d'accueil mobiles ont une méta description. Étant donné que Google réécrit souvent les descriptions méta dans le SERP en réponse à la requête de l'internaute, les propriétaires de sites web accordent peut-être moins d'importance à l'inclusion des metas descriptions.
 
-<figure>
-  <a href="/static/images/2019/seo/fig6.png">
-    <img src="/static/images/2019/seo/fig6.png" alt="Figure 6. Distribution des pages par méta description " aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">Répartition du nombre de caractères par méta description par page. Les 10, 25, 50, 75 et 90e centiles des longueurs de titre pour le bureau sont&nbsp;: 9, 48, 123, 162 et 230 caractères. La distribution mobile est légèrement supérieure de moins de 10 caractères à un centile donné.</div>
-  <figcaption id="fig6-caption" >Figure 6. Distribution des pages par longueurs de meta description.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="Distribution des pages par longueurs de meta description.",
+  description="Répartition du nombre de caractères par méta description par page. Les 10, 25, 50, 75 et 90e centiles des longueurs de titre pour le bureau sont&nbsp;: 9, 48, 123, 162 et 230 caractères. La distribution mobile est légèrement supérieure de moins de 10 caractères à un centile donné.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&format=interactive"
+  )
+}}
 
 La longueur médiane de la description de la méta était également inférieure à la [longueur recommandée de 155 à 160 caractères](https://moz.com/learn/seo/meta-description), les pages de bureau ayant des descriptions de 123 caractères. Fait intéressant, les méta descriptions étaient toujours plus longues sur mobile que sur ordinateur, malgré les SERP mobiles ayant traditionnellement une limite de pixels plus courte. Cette limite n'a été étendue que récemment, donc peut-être qu'un plus grand nombre de propriétaires de sites web ont testé l'impact d'avoir des méta descriptions plus longues et plus descriptives pour les résultats mobiles.
 
@@ -165,31 +167,31 @@ Le nombre de liens internes et externes inclus sur les pages de bureau était co
 
 Il est important de garder à l'esprit que moins de liens internes sur la version mobile d'une page [pourraient causer un problème](https://moz.com/blog/internal-linking-mobile-first-crawl-paths) pour votre site web. Avec le Mobile-First index, si une page est uniquement liée à partir de la version bureau, Google ne prendra pas compte de ses liens si le site fait partie de l'index Mobile.
 
-<figure>
-  <a href="/static/images/2019/seo/fig7.png">
-    <img src="/static/images/2019/seo/fig7.png" alt="Figure 7. Répartition du nombre de liens internes par page" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Répartition du nombre de liens internes par page. Les 10, 25, 50, 75 et 90e centiles de liens internes pour les ordinateurs de bureau sont&nbsp;: 7, 29, 70, 142 et 261. La distribution mobile est beaucoup plus faible, de 30 liens au 90e centile et 10 à la médiane.</div>
-  <figcaption id="fig7-caption" >Figure 7. Répartition du nombre de liens internes par page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="Répartition du nombre de liens internes par page.",
+  description="Répartition du nombre de liens internes par page. Les 10, 25, 50, 75 et 90e centiles de liens internes pour les ordinateurs de bureau sont&nbsp;: 7, 29, 70, 142 et 261. La distribution mobile est beaucoup plus faible, de 30 liens au 90e centile et 10 à la médiane.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/seo/fig8.png">
-    <img src="/static/images/2019/seo/fig8.png" alt="Figure 8. Distribution of external links per page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Répartition du nombre de liens externes par page. Les 10, 25, 50, 75 et 90e centiles de liens externes pour ordinateur de bureau sont&nbsp;: 1, 4, 10, 22 et 51. La distribution mobile est beaucoup plus faible, de 11 liens au 90e centile et 2 au médian</div>
-  <figcaption id="fig8-caption" >Figure 8. Répartition du nombre de liens externes par page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Répartition du nombre de liens externes par page.",
+  description="Répartition du nombre de liens externes par page. Les 10, 25, 50, 75 et 90e centiles de liens externes pour ordinateur de bureau sont&nbsp;: 1, 4, 10, 22 et 51. La distribution mobile est beaucoup plus faible, de 11 liens au 90e centile et 2 au médian",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&format=interactive"
+  )
+}}
 
 La page de bureau médiane comprend 70 liens internes (même site), tandis que la page mobile médiane comporte 60 liens internes. Le nombre médian de liens externes par page suit une tendance similaire, avec des pages de bureau comprenant 10 liens externes et des pages mobiles 8.
 
-<figure>
-  <a href="/static/images/2019/seo/fig9.png">
-    <img src="/static/images/2019/seo/fig9.png" alt="Figure 9. Répartition du nombre de liens d'ancrage par page." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">Répartition du nombre de liens d'ancrage par page. Les 10, 25, 50, 75 et 90e centiles d'ancrage interne pour le bureau sont&nbsp;: 0, 0, 0, 1 et 3. La distribution sur mobile est identique.</div>
-  <figcaption id="fig9-caption">Figure 9. Répartition du nombre de liens d'ancrage par page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9.png",
+  caption="Répartition du nombre de liens d'ancrage par page.",
+  description="Répartition du nombre de liens d'ancrage par page. Les 10, 25, 50, 75 et 90e centiles d'ancrage interne pour le bureau sont&nbsp;: 0, 0, 0, 1 et 3. La distribution sur mobile est identique.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&format=interactive"
+  )
+}}
 
 Les liens d'ancrage, qui pointent vers une certaine position de défilement sur la même page, ne sont pas très populaires. Plus de 65 % des pages d'accueil n'ont pas de liens d'ancrage. Cela est probablement dû au fait que les pages d'accueil ne contiennent généralement pas de contenu long.
 
@@ -209,13 +211,13 @@ Un site web à chargement rapide est également essentiel pour une bonne expéri
 
 Les métriques que nous avons utilisées pour notre analyse de la vitesse de chargement sur le web sont basées sur le [<i lang="en">Chrome UX Report</i>](./methodology#chrome-ux-report) (CrUX), qui recueille des données auprès des utilisateurs réels de Chrome. Ces données montrent qu'un que 48 % des sites web sont étiquetés comme **lents**. Un site web est considéré lent s'il présente plus de 25 % d'expériences FCP (<i lang="en">First Contentful Paint</i>) plus lentes que 3 secondes _ou_ 5 % d'expériences FID (<i lang="en">First input Delay</i>) plus lentes que 300 ms.
 
-<figure>
-  <a href="/static/images/2019/seo/fig10.png">
-    <img src="/static/images/2019/seo/fig10.png" alt="Figure 10. Répartition des performances des expériences utilisateur par type d'appareil." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&amp;format=interactive">
-  </a>
-  <div id="fig10-description" class="visually-hidden">Distribution des performances des expériences utilisateur des ordinateurs de bureau, des téléphones et des tablettes. Ordinateur de bureau&nbsp;: 2 % rapide, 52 % modéré, 46 % lent. Téléphone&nbsp;: 1 % rapide, 41 % modéré, 58 % lent. Tablette&nbsp;: 0 % rapide, 35 % modérée, 65 % lente.</div>
-  <figcaption id="fig10-caption">Figure 10. Distribution des performances des expériences utilisateur par type d'appareil.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10.png",
+  caption="Distribution des performances des expériences utilisateur par type d'appareil.",
+  description="Distribution des performances des expériences utilisateur des ordinateurs de bureau, des téléphones et des tablettes. Ordinateur de bureau&nbsp;: 2 % rapide, 52 % modéré, 46 % lent. Téléphone&nbsp;: 1 % rapide, 41 % modéré, 58 % lent. Tablette&nbsp;: 0 % rapide, 35 % modérée, 65 % lente.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&format=interactive"
+  )
+}}
 
 Segmentée par type d'appareil, cette image est encore plus sombre pour la tablette (65 %) et le mobile (58 %).
 
@@ -394,7 +396,7 @@ Alors que 38,40 % des sites de bureau (33,79 % sur mobile) ont l'attribut HTML
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 11. Les 25 valeurs <code>hreflang</code> les plus utilisées.</figcaption>
+  <figcaption>{{ figure_link(caption="Les 25 valeurs <code>hreflang</code> les plus utilisées.") }}</figcaption>
 </figure>
 
 À côté de l'anglais, les langues les plus courantes sont le français, l'espagnol et l'allemand. Ils sont suivis de langues ciblées vers des zones géographiques spécifiques comme l'anglais pour les américains (`en-us`) ou des combinaisons plus obscures comme l'espagnol pour l'irlandais (`es-ie`).

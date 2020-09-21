@@ -15,6 +15,7 @@ FROM (
   FROM
     `httparchive.almanac.summary_requests`
   WHERE
+    date = '2019-07-01' AND
     STARTS_WITH(page, 'https') AND
     status = 200
   GROUP BY
