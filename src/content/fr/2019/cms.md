@@ -111,7 +111,7 @@ Les jeux de données CrUX et HTTP Archive contiennent des pages web propulsées 
   )
 }}
  
-Les principales plates-formes CMS présentes dans les jeux de données sont indiquées ci-dessus à la figure 5. WordPress est utilisé par 74,19 % des sites web utilisant un CMS pour les téléphones mobiles et 73,47 % des sites web utilisant un CMS pour les ordinateurs de bureau. Sa domination dans le milieu des CMS peut être attribuée à un certain nombre de facteurs dont nous parlerons plus loin, mais c'est un acteur _major_. Les plateformes open source comme Drupal et Joomla, et les solutions SaaS propriétaires comme Squarespace et Wix, complètent le top 5 des CMS. La diversité de ces plateformes reflète l'écosystème des CMS, composé de nombreuses plateformes où la démographie des utilisateurs et le parcours de création de sites web varient. Ce qui est également intéressant, c'est la longue liste des plateformes CMS de petites tailles qui se trouvent dans le top 20. Des offres d'entreprise aux applications propriétaires développées en interne pour une utilisation spécifique à un secteur, les systèmes de gestion de contenu fournissent une infrastructure personnalisable permettant aux groupes de gérer, de publier et de faire des affaires sur le web. 
+Les principales plates-formes CMS présentes dans les jeux de données sont indiquées ci-dessus à la figure 14.5. WordPress est utilisé par 74,19 % des sites web utilisant un CMS pour les téléphones mobiles et 73,47 % des sites web utilisant un CMS pour les ordinateurs de bureau. Sa domination dans le milieu des CMS peut être attribuée à un certain nombre de facteurs dont nous parlerons plus loin, mais c'est un acteur _major_. Les plateformes open source comme Drupal et Joomla, et les solutions SaaS propriétaires comme Squarespace et Wix, complètent le top 5 des CMS. La diversité de ces plateformes reflète l'écosystème des CMS, composé de nombreuses plateformes où la démographie des utilisateurs et le parcours de création de sites web varient. Ce qui est également intéressant, c'est la longue liste des plateformes CMS de petites tailles qui se trouvent dans le top 20. Des offres d'entreprise aux applications propriétaires développées en interne pour une utilisation spécifique à un secteur, les systèmes de gestion de contenu fournissent une infrastructure personnalisable permettant aux groupes de gérer, de publier et de faire des affaires sur le web. 
 
 Le [projet WordPress](https://fr.wordpress.org/about/) définit sa mission en ces termes : "*démocratiser la publication*". Certains de ses principaux objectifs sont de faciliter l'utilisation et de rendre le logiciel libre et disponible à tous pour créer du contenu sur le web. Un autre élément important est la communauté inclusive que le projet promeut. Dans presque toutes les grandes villes du monde, on peut trouver un groupe de personnes qui se réunissent régulièrement pour se rencontrer, partager et coder dans un effort de compréhension et de construction sur la plate-forme WordPress. La participation aux rencontres locales et aux événements annuels, ainsi que la participation aux réseaux basés sur le web sont quelques unes des façons dont les contributeurs, les experts, les entreprises et les passionnés de WordPress participent à sa communauté globale.
 
@@ -361,7 +361,7 @@ Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/a
 {{ figure_markup(
   image="fig16.png",
   caption="Répartition moyenne des expériences de FCP entre les CMS.",
-  description="Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 17 ci-dessous pour un tableau des données des cinq CMS les plus populaires.",
+  description="Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 14.17 ci-dessous pour un tableau des données des cinq CMS les plus populaires.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&format=interactive"
   )
 }}
@@ -425,7 +425,7 @@ Le FID dans l'écosystème CMS tend généralement vers des expériences rapides
 {{ figure_markup(
   image="fig18.png",
   caption="Répartition moyenne des expériences de FID entre les CMS.",
-  description="Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 19 ci-dessous pour un tableau des données des cinq CMS les plus populaires.",
+  description="Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 14.19 ci-dessous pour un tableau des données des cinq CMS les plus populaires.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&format=interactive"
   )
 }}

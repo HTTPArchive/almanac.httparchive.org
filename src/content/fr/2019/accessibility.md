@@ -164,7 +164,7 @@ Tous ces éléments sont principalement conçus pour la prise en charge de l’a
 
 ### Autres éléments HTML utilisés pour la navigation
 
-De nombreux lecteurs d’écran populaires permettent également aux utilisateurs de naviguer en parcourant rapidement les liens, les listes, les éléments de liste, les iframes et les champs de formulaire tels que les champs d’édition, les boutons et les zones de liste. La figure 6 détaille la fréquence à laquelle nous avons vu des pages utilisant ces éléments.
+De nombreux lecteurs d’écran populaires permettent également aux utilisateurs de naviguer en parcourant rapidement les liens, les listes, les éléments de liste, les iframes et les champs de formulaire tels que les champs d’édition, les boutons et les zones de liste. La figure 9.6 détaille la fréquence à laquelle nous avons vu des pages utilisant ces éléments.
 
 {{ figure_markup(
   image="fig6.png",
@@ -178,7 +178,7 @@ De nombreux lecteurs d’écran populaires permettent également aux utilisateur
 
 Un [lien d’évitement](https://webaim.org/techniques/skipnav/) est un lien placé en haut d’une page qui permet aux lecteurs d’écran ou aux utilisateurs de clavier d’accéder directement au contenu principal. Il «&nbsp;saute&nbsp;» efficacement tous les liens et menus de navigation en haut de la page. Les liens d’évitement sont particulièrement utiles aux utilisateurs de clavier qui n’utilisent pas de lecteur d’écran, car ces utilisateurs n’ont généralement pas accès à d’autres modes de navigation rapide (comme les zones de contenus principales et les en-têtes). 14,19&nbsp;% des pages de notre échantillon avaient des liens d’évitement.
 
-Si vous souhaitez voir un lien d’évitement en action par vous-même, vous pouvez&nbsp;! Faites simplement une recherche rapide sur Google et tapez sur «&nbsp;<kbd>Tab</kbd>&nbsp;» dès que vous atterrissez sur les pages de résultats de recherche. Vous serez accueilli avec un lien précédemment masqué, comme celui sur la figure 7.
+Si vous souhaitez voir un lien d’évitement en action par vous-même, vous pouvez&nbsp;! Faites simplement une recherche rapide sur Google et tapez sur «&nbsp;<kbd>Tab</kbd>&nbsp;» dès que vous atterrissez sur les pages de résultats de recherche. Vous serez accueilli avec un lien précédemment masqué, comme celui sur la figure 9.7.
 
 {{ figure_markup(
   image="example-of-a-skip-link-on-google.com.png",
@@ -243,7 +243,7 @@ L’utilisation correcte et appropriée d’ARIA peut être difficile. Par exemp
 
 L’attribut `role` est le plus important de toute la spécification ARIA. Il est utilisé pour informer le navigateur de la finalité d’un élément HTML donné (c’est-à-dire la signification sémantique). Par exemple, un élément `<div>` ayant via CSS le visuel d’un bouton devrait se voir attribuer le rôle ARIA de `button`.
 
-Actuellement, 46,91&nbsp;% des pages utilisent au moins un attribut de rôle ARIA. Dans la figure 9 ci-dessous, nous avons compilé une liste des dix valeurs de rôles ARIA les plus utilisées.
+Actuellement, 46,91&nbsp;% des pages utilisent au moins un attribut de rôle ARIA. Dans la figure 9.9 ci-dessous, nous avons compilé une liste des dix valeurs de rôles ARIA les plus utilisées.
 
 {{ figure_markup(
   image="fig9.png",
@@ -253,7 +253,7 @@ Actuellement, 46,91&nbsp;% des pages utilisent au moins un attribut de rôle ARI
   )
 }}
 
-En examinant les résultats de la figure 9, nous avons trouvé deux informations intéressantes&nbsp;: la mise à jour des <i lang="en">frameworks</i> d’interface pourrait avoir un impact profond sur l’accessibilité sur le web, et le nombre impressionnant de sites tentant de rendre les modales accessibles.
+En examinant les résultats de la figure 9.9, nous avons trouvé deux informations intéressantes&nbsp;: la mise à jour des <i lang="en">frameworks</i> d’interface pourrait avoir un impact profond sur l’accessibilité sur le web, et le nombre impressionnant de sites tentant de rendre les modales accessibles.
 
 ##### Mettre à jour les <i lang="en">frameworks</i> d’interface pourrait être la voie à suivre pour l’accessibilité du web
 

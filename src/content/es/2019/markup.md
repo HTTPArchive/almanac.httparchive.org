@@ -72,7 +72,7 @@ tr | span | option
   )
 }}
 
-Comparando los últimos datos en la Figura 3 con los del informe de Hixie de 2005 en la Figura 2, podemos ver que el tamaño promedio de los árboles DOM ha aumentado.
+Comparando los últimos datos en la Figura 3.3 con los del informe de Hixie de 2005 en la Figura 3.2, podemos ver que el tamaño promedio de los árboles DOM ha aumentado.
 
 {{ figure_markup(
   image="hixie_element_types_per_page.png",
@@ -127,7 +127,7 @@ Además, el 15% de las páginas de escritorio y el 16% de las páginas móviles 
   )
 }}
 
-La Figura 6 anterior muestra los 10 elementos obsoletos más utilizados. La mayoría de estos pueden parecer números muy pequeños, pero la perspectiva es importante.
+La Figura 3.6 anterior muestra los 10 elementos obsoletos más utilizados. La mayoría de estos pueden parecer números muy pequeños, pero la perspectiva es importante.
 
 ## Perspectiva sobre valor y uso
 
@@ -146,7 +146,7 @@ Para discutir números sobre el uso de elementos (estándar, obsoleto o personal
   )
 }}
 
-En la Figura 7 anterior, se muestran los 150 nombres de elementos principales, contando el número de páginas donde aparecen. Observe lo rápido que se cae el uso.
+En la Figura 3.7 anterior, se muestran los 150 nombres de elementos principales, contando el número de páginas donde aparecen. Observe lo rápido que se cae el uso.
 
 Solo se utilizan 11 elementos en más del 90% de las páginas:
 
@@ -196,7 +196,7 @@ Es interesante, entonces, ver cómo se ve la distribución de estos elementos y 
   )
 }}
 
-La Figura 8 muestra el rango de cada elemento y en qué categoría se encuentran. He separado los puntos de datos en conjuntos discretos simplemente para que puedan verse (de lo contrario, no hay suficientes píxeles para capturar todos esos datos), pero representan una única "línea" de popularidad; el más bajo es el más común, el más alto es el menos común. La flecha apunta al final de los elementos que aparecen en más del 1% de las páginas.
+La Figura 3.8 muestra el rango de cada elemento y en qué categoría se encuentran. He separado los puntos de datos en conjuntos discretos simplemente para que puedan verse (de lo contrario, no hay suficientes píxeles para capturar todos esos datos), pero representan una única "línea" de popularidad; el más bajo es el más común, el más alto es el menos común. La flecha apunta al final de los elementos que aparecen en más del 1% de las páginas.
 
 Se pueden observar dos cosas aquí. Primero, el conjunto de elementos que tienen más del 1% de uso no son exclusivamente HTML. De hecho, *27 de los 100 elementos más populares ni siquiera son HTML* - son SVG! Y hay *etiquetas no estándar en o muy cerca de ese límite también*!  Segundo, tenga en cuenta que menos del 1% de las páginas utilizan una gran cantidad de elementos HTML.
 

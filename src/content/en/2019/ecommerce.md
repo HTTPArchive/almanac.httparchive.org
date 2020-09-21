@@ -117,14 +117,14 @@ Page detection is not always reliable, and some sites explicitly block detection
 
 Out of the 116 ecommerce platforms that were detected, only six are found on more than 0.1% of desktop or mobile websites. Note that these results do not show variation by country, by size of site, or other similar metrics.
 
-Figure 3 above shows that WooCommerce has the largest adoption at around 4% of desktop and mobile websites. Shopify is second with about 1.6% adoption. Magento, PrestaShop, Bigcommerce, and Shopware follow with smaller and smaller adoption, approaching 0.1%.
+Figure 13.3 above shows that WooCommerce has the largest adoption at around 4% of desktop and mobile websites. Shopify is second with about 1.6% adoption. Magento, PrestaShop, Bigcommerce, and Shopware follow with smaller and smaller adoption, approaching 0.1%.
 
 ### Long tail
 
 {{ figure_markup(
   image="fig4.png",
   caption="Adoption of top ecommerce platforms.",
-  description="Bar chart of the adoption of top 20 ecommerce platforms. Refer to Figure 3 above for a data table of adoption of the top six platforms.",
+  description="Bar chart of the adoption of top 20 ecommerce platforms. Refer to Figure 13.3 above for a data table of adoption of the top six platforms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&format=interactive",
   width=600,
   height=414,
@@ -439,7 +439,7 @@ Mobile HTML payload sizes are not very different from desktop. In other words, i
 
 <p class="note">Note that because our data collection <a href="./methodology">methodology</a> does not simulate user interactions on pages like clicking or scrolling, images that are lazy loaded would not be represented in these results.</p>
 
-Figures 12 and 13 above show that the median ecommerce page has 37 images and an image payload of 1,517 KB on mobile, 40 images and 1,524 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly 6 MB!
+Figures 13.12 and 13.13 above show that the median ecommerce page has 37 images and an image payload of 1,517 KB on mobile, 40 images and 1,524 KB on desktop. 10% of home pages have 90 or more images and an image payload of nearly 6 MB!
 
 {{ figure_markup(
   caption="The median number of image bytes per mobile ecommerce page.",

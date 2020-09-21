@@ -111,7 +111,7 @@ The CrUX and HTTP Archive datasets contain web pages powered by a mix of around 
   )
 }}
  
-The most salient CMS platforms present in the datasets are shown above in Figure 5. WordPress comprises 74.19% of mobile and 73.47% of desktop CMS websites. Its dominance in the CMS landscape can be attributed to a number of factors that we'll discuss later, but it's a _major_ player. Open source platforms like Drupal and Joomla, and closed SaaS offerings like Squarespace and Wix, round out the top 5 CMSs. The diversity of these platforms speak to the CMS ecosystem consisting of many platforms where user demographics and the website creation journey vary. What's also interesting is the long tail of small scale CMS platforms in the top 20. From enterprise offerings to proprietary applications developed in-house for industry specific use, content management systems provide the customizable infrastructure for groups to manage, publish, and do business on the web. 
+The most salient CMS platforms present in the datasets are shown above in Figure 14.5. WordPress comprises 74.19% of mobile and 73.47% of desktop CMS websites. Its dominance in the CMS landscape can be attributed to a number of factors that we'll discuss later, but it's a _major_ player. Open source platforms like Drupal and Joomla, and closed SaaS offerings like Squarespace and Wix, round out the top 5 CMSs. The diversity of these platforms speak to the CMS ecosystem consisting of many platforms where user demographics and the website creation journey vary. What's also interesting is the long tail of small scale CMS platforms in the top 20. From enterprise offerings to proprietary applications developed in-house for industry specific use, content management systems provide the customizable infrastructure for groups to manage, publish, and do business on the web. 
 
 The [WordPress project](https://wordpress.org/about/) defines its mission as "*democratizing publishing*". Some of its main goals are ease of use and to make the software free and available for everyone to create content on the web. Another big component is the inclusive community the project fosters. In almost any major city in the world, one can find a group of people who gather regularly to connect, share, and code in an effort to understand and build on the WordPress platform. Attending local meetups and annual events as well as participating in web-based channels are some of the ways WordPress contributors, experts, businesses, and enthusiasts participate in its global community.
 
@@ -145,7 +145,7 @@ The building blocks of any website also make a CMS website: [HTML](./markup), [C
   )
 }}
 
-In Figures 6 and 7 above, we see the median desktop CMS page loads 86 resources and weighs 2.29 MB. Mobile page resource usage is not too far behind with 83 resources and 2.25 MB.
+In Figures 14.6 and 14.7 above, we see the median desktop CMS page loads 86 resources and weighs 2.29 MB. Mobile page resource usage is not too far behind with 83 resources and 2.25 MB.
 
 The median indicates the halfway point that all CMS pages either fall above or below. In short, half of all CMS pages load fewer requests and weigh less, while half load more requests and weigh more. At the 10th percentile, mobile and desktop pages have under 40 requests and 1 MB in weight, but at the 90th percentile we see pages with over 170 requests and at 7 MB, almost tripling in weight from the median.  
 
@@ -300,7 +300,7 @@ Given that third-party resources originate from remote domains and servers, the 
 )
 }}
 
-Recall from Figures 8 and 9 earlier, images are a big contributor to the total weight of CMS pages. Figures 12 and 13 above show that the median desktop CMS page has 31 images and payload of 1,232 KB, while the median mobile CMS page has 29 images and payload of 1,263 KB. Again we have very close margins for the weight of these resources for both desktop and mobile experiences. The [Page Weight](./page-weight) chapter additionally shows that image resources well exceed the median weight of pages with the same amount of images on the web as a whole, which is 983 KB and 893 KB for desktop and mobile respectively. The verdict: CMS pages ship heavy images.
+Recall from Figures 14.8 and 14.9 earlier, images are a big contributor to the total weight of CMS pages. Figures 14.12 and 14.13 above show that the median desktop CMS page has 31 images and payload of 1,232 KB, while the median mobile CMS page has 29 images and payload of 1,263 KB. Again we have very close margins for the weight of these resources for both desktop and mobile experiences. The [Page Weight](./page-weight) chapter additionally shows that image resources well exceed the median weight of pages with the same amount of images on the web as a whole, which is 983 KB and 893 KB for desktop and mobile respectively. The verdict: CMS pages ship heavy images.
 
 Which are the common formats found on mobile and desktop CMS pages? From our data JPG images on average are the most popular image format. PNG and GIF formats follow, while formats like SVG, ICO, and WebP trail significantly comprising approximately a little over 2% and 1%.
 
@@ -361,7 +361,7 @@ In this section we take a look at three important dimensions which can shed ligh
 {{ figure_markup(
   image="fig16.png",
   caption="Average distribution of FCP experiences across CMSs.",
-  description="Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 17 below for a data table of the top 5 CMSs.",
+  description="Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 14.17 below for a data table of the top 5 CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&format=interactive"
   )
 }}
@@ -425,7 +425,7 @@ FID in the CMS space generally trends on fast experiences for both desktop and m
 {{ figure_markup(
   image="fig18.png",
   caption="Average distribution of FID experiences across CMSs.",
-  description="Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 19 below for a data table of the top 5 CMSs.",
+  description="Bar chart of the average distribution of FCP experiences per CMS. Refer to Figure 14.19 below for a data table of the top 5 CMSs.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&format=interactive"
   )
 }}
