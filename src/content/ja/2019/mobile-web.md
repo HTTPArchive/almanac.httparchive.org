@@ -10,7 +10,7 @@ discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
 queries: 12_Mobile_Web
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-08-07T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## 序章Introduction
@@ -46,7 +46,7 @@ last_updated: 2020-08-07T00:00:00.000Z
     <td><a href="https://www.gsmarena.com/samsung_galaxy_s6-6849.php">Galaxy S6</a> — <a href="https://www.notebookcheck.net/A11-Bionic-vs-7420-Octa_9250_6662.247596.0.html">4x slower</a> than iPhone 8 (Octane V2 score)</td>
   </tr>
 </table>
-<figcaption>図1. 典型的なモバイルユーザーの技術的プロフィール。</figcaption>
+<figcaption>{{ figure_link(caption="典型的なモバイルユーザーの技術的プロフィール。") }}</figcaption>
 </figure>
 
 この結果に驚かれる方もいらっしゃると思います。あなたがこれまでにサイトをテストしたことのある条件よりも、はるかに悪い条件かもしれません。しかし、モバイルユーザーが本当にどのようなものなのかということについては、今はみんな同じページにいるのでさっそく始めてみましょう。
@@ -57,14 +57,17 @@ last_updated: 2020-08-07T00:00:00.000Z
 
 なぜこれが問題なのでしょうか？　なぜなら、これだけの量のJSをロードしているサイトは、一貫してインタラクティブになるまで[10秒](https://httparchive.org/reports/loading-speed?start=earliest&end=2019_07_01&view=list#ttci)以上かかるからです。言い換えればページは完全に読み込まれているように見えるかもしれませんが、ユーザーがボタンやメニューをクリックするとJavaScriptの実行が終了していないために、ユーザーは多少の速度低下を経験するかもしれません。最悪の場合、ユーザーは10秒以上ボタンをクリックし続けなければならず、何かが実際に起こる魔法のような瞬間を待つことになります。それがどれほど混乱し、イライラさせるかを考えてみてください。
 
-<figure>
-  <iframe class="fig-mobile fig-desktop video-embed" width="560" height="315" src="https://www.youtube.com/embed/Lx1cYJAVnzA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-labelledby="fig2-caption" aria-describedby="fig2-description"></iframe>
-  <a class="video-fallback-image" href="https://www.youtube.com/embed/Lx1cYJAVnzA">
-    <img src="/static/images/2019/mobile-web/fig2.png" alt="図2. JS がロードされるのを待つのがいかに苦痛であるかの例。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="610" height="343" loading="lazy">
-  </a>
-  <div id="fig2-description" class="visually-hidden">2つのWebページのロードを示すビデオ。各ページは、ビデオ全体でボタンを繰り返しタップする図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎると幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了します。</div>
-  <figcaption id="fig2-caption">図2. JS がロードされるのを待つのがいかに苦痛であるかの例。</figcaption>
-</figure>
+{{ figure_markup(
+  video="https://www.youtube.com/embed/Lx1cYJAVnzA",
+  video_width=560,
+  video_height=315,
+  image="fig2.png",
+  caption="JS がロードされるのを待つのがいかに苦痛であるかの例。",
+  description="2つのWebページのロードを示すビデオ。各ページは、ビデオ全体でボタンを繰り返しタップする図がありますが、効果はありません。上部には0秒から刻々と刻む時計があり、各Webサイトの最初の幸せな絵文字の顔は、時計が6秒を過ぎると幸せになり始め、8秒で目が大きく、10秒で怒り、 13秒、19秒で泣いてすぐにビデオが終了します。",
+  width=610,
+  height=343
+  )
+}}
 
 さらに深く掘り下げて、各ページがJavaScriptをどの程度利用しているかに焦点を当てた別の指標を見てみましょう。例えば、読み込み中のページは本当に多くのJavaScriptを必要としているのでしょうか？　私たちはこの指標を[Web bloat score](https://www.webbloatscore.com/)に基づいた*JavaScript Bloat Score*と呼んでいます。その背後にある考え方は次のようなものです。
 
@@ -90,13 +93,14 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 ウェブの最も美しい部分の1つは、ウェブページのロードが自然と進んでいくことです。ブラウザはできる限り早くコンテンツをダウンロードして表示するため、ユーザーはできるだけ早くあなたのコンテンツに引き込む事ができます。しかし、このことを念頭に置いてサイトを設計しないと、悪影響を及ぼす可能性があります。具体的には、リソースのロードに合わせてコンテンツの位置がずれることで、ユーザー体験の妨げになることがあります。
 
-<figure>
-  <a href="/static/images/2019/mobile-web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif">
-    <img src="/static/images/2019/mobile-web/example-of-a-site-shifting-content-while-it-loads-lookzook.gif" alt="図3. シフト内容が読者の気を散らす例 CLS合計42.59％。画像提供：LookZook" aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="360" height="640">
-  </a>
-  <div id="fig3-description" class="visually-hidden">Webサイトの読み込みが進んでいく様子を動画で紹介しています。テキストは素早く表示されますが、画像が読み込まれ続けると、テキストはページの下にどんどん移動していき、読むのに非常にイライラします。この例の計算されたCLSは42.59%です。画像提供：LookZook</div>
-  <figcaption id="fig3-caption">図3. シフト内容が読者の気を散らす例 CLS合計42.59％。画像提供：LookZook</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-a-site-shifting-content-while-it-loads-lookzook.gif",
+  caption="シフト内容が読者の気を散らす例 CLS合計42.59％。画像提供：LookZook",
+  description="Webサイトの読み込みが進んでいく様子を動画で紹介しています。テキストは素早く表示されますが、画像が読み込まれ続けると、テキストはページの下にどんどん移動していき、読むのに非常にイライラします。この例の計算されたCLSは42.59%です。画像提供：LookZook",
+  width=360,
+  height=640
+  )
+}}
 
 あなたが記事を読んでいるときに突然、画像が読み込まれ、読んでいるテキストが画面の下に押し出されたと想像してみてください。あなたは今、あなたがいた場所を探すか、ちょうど記事を読むことをあきらめなければなりません。または、おそらくさらに悪いことに、同じ場所に広告がロードされる直前にリンクをクリックし始め、代わりに広告を誤ってクリックしてしまうことになります。
 
@@ -138,13 +142,14 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 この問題を軽減するために、テキストや背景色を選択する際に従うことのできる[アクセシビリティ・ガイドライン](https://dequeuniversity.com/rules/axe/2.2/color-contrast)があります。では、これらの基準を満たすにはどうすればよいのでしょうか？　すべてのテキストに十分な色のコントラストを与えているサイトは22.04％にすぎません。この値は実際には下限値であり、背景が無地のテキストのみを分析したためです。画像やグラデーションの背景は分析できませんでした。
 
-<figure>
-  <a href="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img src="/static/images/2019/mobile-web/example-of-good-and-bad-color-contrast-lookzook.svg" alt="図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="568" height="300">
-  </a>
-  <div id="fig4-description" class="visually-hidden">褐色とグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は<code>#FFFFFF</code>、褐色色の背景の薄い色合いは<code>#FCA469</code>、褐色色の背景の推奨色合いは<code>#BD5B0E</code>となっています。同等のグレースケールは、それぞれ<code>＃B8B8B8</code>および<code>＃707070</code>です。画像提供：LookZook</div>
-  <figcaption id="fig4-caption">図4. 色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-good-and-bad-color-contrast-lookzook.svg",
+  caption="色のコントラストが不十分なテキストがどのように見えるかの例。提供：LookZook",
+  description="褐色とグレーの4色のボックスに白のテキストを重ねて、背景色が白のテキストに比べて薄い色になっている場合と、白のテキストに比べて背景色が推奨されている場合の2つの列を作ります。各色の16進数コードが表示され、白は <code>#FFFFFF</code> 、褐色色の背景の薄い色合いは <code>#FCA469</code> 、褐色色の背景の推奨色合いは <code>#BD5B0E</code> となっています。同等のグレースケールは、それぞれ <code>＃B8B8B8</code> および <code>＃707070</code> です。画像提供：LookZook",
+  width=568,
+  height=300
+  )
+}}
 
 他の人口統計における色覚異常の統計については、[本論文](https://web.archive.org/web/20180304115406/http://www.allpsych.uni-giessen.de/karl/colbook/sharpe.pdf)を参照してください。
 
@@ -168,13 +173,17 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 2. `maximum-scale`を`1`、`1.0`などに設定
 
-<figure>
-  <a href="/static/images/2019/mobile-web/fig5.png">
-    <img src="/static/images/2019/mobile-web/fig5.png" alt="図5. ズーム/スケーリングを有効または無効にしているデスクトップおよびモバイルのウェブサイトの割合。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="370" data-width="600" data-height="370" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">"ズームとスケーリングは有効ですか？"と題された縦方向のグループ化された棒グラフでは、0から80までのデータを20刻みで計測し、デバイスの種類をデスクトップとモバイルに分類しています。デスクトップが有効：75.46％、デスクトップが無効：24.54％、モバイルが有効：67.79％、モバイルが無効：32.21％。</div>
-  <figcaption id="fig5-caption">図 5. ズーム/スケーリングを有効または無効にしているデスクトップおよびモバイルのウェブサイトの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="ズーム/スケーリングを有効または無効にしているデスクトップおよびモバイルのウェブサイトの割合。",
+  description='"ズームとスケーリングは有効ですか？"と題された縦方向のグループ化された棒グラフでは、0から80までのデータを20刻みで計測し、デバイスの種類をデスクトップとモバイルに分類しています。デスクトップが有効：75.46％、デスクトップが無効：24.54％、モバイルが有効：67.79％、モバイルが無効：32.21％。',
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQcVHQTKIULwgs3f2Jy8IQiHwVAJjKoHrfcvwYX5UAlb4s3bsEA2owiku4c14YZiJeG8H8acgSUul2N/pubchart?oid=655301645&format=interactive",
+  width=600,
+  height=370,
+  data_width=600,
+  data_height=370
+  )
+}}
 
 しかし開発者はこれを悪用しすぎて、3つのサイトのほぼ1つ(32.21％)がこの機能を無効にしており、Appleは(iOS 10の時点で)ウェブ開発者がズームを無効にすることを許さなくなっています。モバイルSafariは単に[タグを無視する](https://archive.org/details/ios-10-beta-release-notes)。世界中のウェブトラフィックの[11%](https://gs.statcounter.com/)以上を占める新しいアップルのデバイスでは、どんなサイトでもズームや拡大縮小が可能です。
 
@@ -190,13 +199,14 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 この問題を軽減するためにタップターゲットを適切に設計することは、指の大きさが大きく異なるために困難な場合があります。しかし現在では多くの研究が行われており、どの程度の大きさのボタンが必要で、どの程度の間隔で離す必要があるかについては安全な[基準](https://developers.google.com/web/tools/lighthouse/audits/tap-targets) があります。
 
-<figure>
-  <a href="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png">
-    <img src="/static/images/2019/mobile-web/example-of-easy-to-hit-tap-targets-lookzook.png" alt="図6. タップターゲットのサイズと間隔の基準。画像提供：LookZook" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="800" height="430">
-  </a>
-  <div id="fig6-description" class="visually-hidden">タップしにくいボタンの例を2つ表示した図です。1つ目の例では、2つのボタンの間に間隔を空けていますが、その下の例では、同じボタンを推奨される間隔(8pxまたは1-2mm)で表示しています。その下の例では、同じボタンを40～48px（約8mm）の推奨サイズに拡大して表示しています。画像提供：LookZook</div>
-  <figcaption id="fig6-caption">図6. タップターゲットのサイズと間隔の基準。画像提供：LookZook</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-easy-to-hit-tap-targets-lookzook.png",
+  caption="タップターゲットのサイズと間隔の基準。画像提供：LookZook",
+  description="タップしにくいボタンの例を2つ表示した図です。1つ目の例では、2つのボタンの間に間隔を空けていますが、その下の例では、同じボタンを推奨される間隔(8pxまたは1-2mm)で表示しています。その下の例では、同じボタンを40～48px（約8mm）の推奨サイズに拡大して表示しています。画像提供：LookZook",
+  width=800,
+  height=430
+  )
+}}
 
 現在のところ、34.43％のサイトで十分なサイズのタップターゲットを持っています。つまり、「タップミス」が過去のものになるまでには、かなりの道のりがあるということです。
 
@@ -239,7 +249,7 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
       <td class="numeric">833</td>
     </tr>
   </table>
-  <figcaption>図7. 最も一般的に使用される無効な入力タイプ</figcaption>
+  <figcaption>{{ figure_link(caption="最も一般的に使用される無効な入力タイプ") }}</figcaption>
 </figure>
 
 利用可能な大量の入力タイプについて自分自身や他の人を教育し、上の図7のようなタイプミスがないことを再確認するようにしてください。
@@ -248,10 +258,12 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 入力属性[`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) は、ユーザーがワンクリックでフォームフィールドへ記入できるようにします。ユーザーは膨大な数のフォームに記入しますが、毎回全く同じ情報を記入することがよくあります。このことに気付いたブラウザは、この情報を安全に保存し、将来のページで使用できるようにし始めました。開発者がすべきことは、この`autocomplete`属性を使用してどの情報を正確に入力する必要があるかをブラウザに伝えるだけで、あとはブラウザが行います。
 
-<figure>
-  <div class="big-number">29.62%</div>
-  <figcaption>図8. <code>オートコンプリート</code>を使用しているページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="<code>オートコンプリート</code> を使用しているページの割合。",
+  content="29.62%",
+  classes="big-number"
+)
+}}
 
 現在、入力フィールドを持つページのうち、この機能を利用しているのは29.62％に過ぎません。
 
@@ -269,13 +281,15 @@ JavaScriptの効果をもっと詳しく知りたい方は、Addy Osmaniの[The 
 
 モバイルウェブは今では十分に長い間存在しています。子供たちの世代全体がこれまでに知っていた唯一のインターネットです。私たちは彼らにどのような経験を与えているのでしょうか？　私たちは本質的にダイヤルアップ時代に彼らを連れ戻しています。(私はAOLがまだ無料のインターネットアクセスの1000時間を提供するCDを販売していると聞いて良かった!)
 
-<figure>
-  <a href="/static/images/2019/mobile-web/america-online-1000-hours-free.jpg">
-    <img alt="A 1000 hour free-trial CD for America Online" src="/static/images/2019/mobile-web/america-online-1000-hours-free.jpg" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="300" height="285">
-  </a>
-  <div id="fig9-description" class="visually-hidden">1,000時間無料で提供しているAOLのCD-ROMの写真。</div>
-  <figcaption id="fig9-caption">図9. 無料で1000時間の「アメリカオンライン」から。<a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.</figcaption>
-</figure>
+{{ figure_markup(
+  image="america-online-1000-hours-free.jpg",
+  alt='無料で1000時間の「アメリカオンライン」から。archive.org.',
+  caption='無料で1000時間の「アメリカオンライン」から。<a href="https://archive.org/details/America_Online_1000_Hours_Free_for_45_Days_Version_7.0_Faster_Than_Ever_AM402R28">archive.org</a>.',
+  description="1,000時間無料で提供しているAOLのCD-ROMの写真。",
+  width=300,
+  height=285
+  )
+}}
 
 <p class="note" data-markdown="1">注:
 

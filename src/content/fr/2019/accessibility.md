@@ -10,7 +10,7 @@ discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-08-03T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## Introduction
@@ -37,13 +37,14 @@ Il existe de nombreux cas où les visiteurs de votre site peuvent ne pas le voir
 
 Afin de vous assurer que votre site web soit lisible dans ces conditions, un contraste de couleur suffisant entre le texte et son arrière-plan est capital. Il est également important de prendre en compte les contrastes qui seront affichés lorsque les couleurs seront converties en niveaux de gris.
 
-<figure>
-  <a href="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg">
-    <img alt="Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook" aria-labelledby="fig1-caption" aria-describedby="fig1-description" src="/static/images/2019/accessibility/example-of-good-and-bad-color-contrast-lookzook.svg" width="568" height="300">
-  </a>
-  <div id="fig1-description" class="visually-hidden">Quatre boîtes colorées de nuances marron et grises avec, par-dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond marron écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan marron est écrite comme `#BD5B0E`. La zone supérieure de chaque colonne a un fond marron avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Gracieusement mis à disposition par LookZook</div>
-  <figcaption id="fig1-caption">Figure 1. Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-good-and-bad-color-contrast-lookzook.svg",
+  caption="Exemple de texte présentant un contraste de couleurs insuffisant. Gracieusement mis à disposition par LookZook",
+  description="Quatre boîtes colorées de nuances marron et grises avec, par-dessus, du texte blanc à l’intérieur créant deux colonnes. La colonne de gauche indique «&nbsp;Trop légèrement coloré&nbsp;» et a la couleur de fond marron écrite comme `#FCA469`. La colonne de droite indique «&nbsp;Recommandé&nbsp;» et la couleur d’arrière-plan marron est écrite comme `#BD5B0E`. La zone supérieure de chaque colonne a un fond marron avec du texte blanc `#FFFFFF` et la zone inférieure a un fond gris avec du texte blanc `#FFFFFF`. Les équivalents en niveaux de gris sont respectivement <code>#B8B8B8</code> et <code>#707070</code>. Gracieusement mis à disposition par LookZook",
+  width=568,
+  height=300
+  )
+}}
 
 Seuls 22,04&nbsp;% des sites ont donné à l’ensemble de leurs textes un contraste de couleurs suffisant. En d’autres termes&nbsp;: 4 sites sur 5 ont un texte qui se confond facilement avec son arrière-plan, le rendant illisible.
 
@@ -63,13 +64,13 @@ De fait, les développeurs et développeuses ont la possibilité de désactiver 
 
 Malheureusement, les développeurs et développeuses web en ont tellement abusé que près d’un site sur trois sur mobile (32,21&nbsp;%) désactive cette fonctionnalité, et Apple (à partir d’iOS 10) ne leur permet plus de désactiver le zoom. Safari mobile [ignore simplement la balise](https://archive.org/details/ios-10-beta-release-notes). Tous les sites, quels qu’ils soient, peuvent être zoomés et mis à l’échelle sur les nouveaux appareils iOS.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig2.png">
-    <img src="/static/images/2019/accessibility/fig2.png" alt="Figure 2. Pourcentage de sites qui désactivent le zoom et la mise à l’échelle par rapport au type d’appareil." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Graphes verticaux en pourcentages, allant de 0 à 80 de 20 en 20, par rapport au type d’appareil, regroupées en ordinateur de bureau et mobile. Bureau activé&nbsp;: 75,46&nbsp;%&nbsp;; Bureau désactivé&nbsp;: 24,54&nbsp;%&nbsp;; Mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.</div>
-  <figcaption id="fig2-caption">Figure 2. Pourcentage de sites qui désactivent le zoom et la mise à l’échelle par rapport au type d’appareil.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  caption="Pourcentage de sites qui désactivent le zoom et la mise à l’échelle par rapport au type d’appareil.",
+  description="Graphes verticaux en pourcentages, allant de 0 à 80 de 20 en 20, par rapport au type d’appareil, regroupées en ordinateur de bureau et mobile. Bureau activé&nbsp;: 75,46&nbsp;%&nbsp;; Bureau désactivé&nbsp;: 24,54&nbsp;%&nbsp;; Mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"
+  )
+}}
 
 ### Identification de la langue
 
@@ -121,13 +122,13 @@ Cela étant dit, voici nos résultats&nbsp;:
 2. 38,6&nbsp;% des pages sautent des niveaux de titre&nbsp;;
 3. Curieusement, les `h2` se trouvent sur plus de sites que les `h1`.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig3.png">
-    <img src="/static/images/2019/accessibility/fig3.png" alt="Figure 3. Popularité des en-têtes." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-crolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&amp;format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">Graphique à barres verticales mesurant des données de pourcentage, allant de 0 à 80 de 20 en 20, par rapport aux barres représentant chaque niveau de `h1` à `h6`. `h1`&nbsp;: 63,25&nbsp;%&nbsp;; `h2`&nbsp;: 67,86&nbsp;%&nbsp;; `h3`&nbsp;: 58,63&nbsp;%&nbsp;; `h4`&nbsp;: 36,38&nbsp;%&nbsp;; `h5`&nbsp;: 14,64&nbsp;%; `h6`&nbsp;: 6,91&nbsp;%.</div>
-  <figcaption id="fig3-caption">Figure 3. Popularité des en-têtes.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3.png",
+  caption="Popularité des en-têtes.",
+  description="Graphique à barres verticales mesurant des données de pourcentage, allant de 0 à 80 de 20 en 20, par rapport aux barres représentant chaque niveau de `h1` à `h6`. `h1`&nbsp;: 63,25&nbsp;%&nbsp;; `h2`&nbsp;: 67,86&nbsp;%&nbsp;; `h3`&nbsp;: 58,63&nbsp;%&nbsp;; `h4`&nbsp;: 36,38&nbsp;%&nbsp;; `h5`&nbsp;: 14,64&nbsp;%; `h6`&nbsp;: 6,91&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"
+  )
+}}
 
 ### Zone de contenu principale
 
@@ -135,13 +136,13 @@ Une [zone de contenu principale <i lang="en">`main`</i>](https://developer.mozil
 
 Nous avons constaté qu’une seule page sur quatre (26,03&nbsp;%) comprend une zone de contenu principale. Et étonnamment, 8,06&nbsp;% des pages contenaient par erreur plus d’une zone de contenu principale, laissant ces utilisateurs deviner laquelle contient le contenu principal réel.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig4.png">
-    <img src="/static/images/2019/accessibility/fig4.png" alt="Figure 4. Pourcentage des pages selon leur nombre d’éléments «main»" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">Graphique à barres verticales affichant des pourcentages de données allant de 0 à 80 de 20 en 20, par rapport à des barres représentant le nombre de repères «&nbsp;principaux&nbsp;» par page de 0 à 4. Source: HTTP Archive (juillet 2019). Zéro&nbsp;: 73,97&nbsp;%&nbsp;; Un&nbsp;: 17,97&nbsp;%&nbsp;; Deux&nbsp;: 7,41&nbsp;%&nbsp;; Trois&nbsp;: 0,15&nbsp;%&nbsp;; 4&nbsp;: 0,06&nbsp;%.</div>
-  <figcaption id="fig4-caption" >Figure 4. Pourcentage des pages selon leur nombre d’éléments `main`.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4.png",
+  caption="Pourcentage des pages selon leur nombre d’éléments `main`.",
+  description="Graphique à barres verticales affichant des pourcentages de données allant de 0 à 80 de 20 en 20, par rapport à des barres représentant le nombre de repères «&nbsp;principaux&nbsp;» par page de 0 à 4. Source: HTTP Archive (juillet 2019). Zéro&nbsp;: 73,97&nbsp;%&nbsp;; Un&nbsp;: 17,97&nbsp;%&nbsp;; Deux&nbsp;: 7,41&nbsp;%&nbsp;; Trois&nbsp;: 0,15&nbsp;%&nbsp;; 4&nbsp;: 0,06&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
+  )
+}}
 
 ### Éléments de section HTML
 
@@ -153,25 +154,25 @@ D’autres comme [`<article>`](https://developer.mozilla.org/fr/docs/Web/HTML/El
 
 Tous ces éléments sont principalement conçus pour la prise en charge de l’accessibilité et n’ont aucun effet visuel, ce qui signifie que vous pouvez remplacer en toute sécurité les éléments existants et ne subir aucune conséquence involontaire.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig5.png">
-    <img src="/static/images/2019/accessibility/fig5.png" alt="Figure 5. Utilisation de divers éléments sémantiques HTML." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 60 de 20 en 20. `nav`&nbsp;: 53,94&nbsp;%&nbsp;; `header`&nbsp;: 54,82&nbsp;%&nbsp;; `footer`&nbsp;: 55,92&nbsp;%&nbsp;; `main`&nbsp;: 18,47&nbsp;%&nbsp;; `aside`&nbsp;: 16,99&nbsp;%&nbsp;; `article`&nbsp;: 22,59&nbsp;%&nbsp;; `hr`&nbsp;: 19,1&nbsp;%&nbsp;; `section`&nbsp;: 36,55&nbsp;%.</div>
-  <figcaption id="fig5-caption" >Figure 5. Utilisation de divers éléments sémantiques HTML.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Utilisation de divers éléments sémantiques HTML.",
+  description="Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 60 de 20 en 20. `nav`&nbsp;: 53,94&nbsp;%&nbsp;; `header`&nbsp;: 54,82&nbsp;%&nbsp;; `footer`&nbsp;: 55,92&nbsp;%&nbsp;; `main`&nbsp;: 18,47&nbsp;%&nbsp;; `aside`&nbsp;: 16,99&nbsp;%&nbsp;; `article`&nbsp;: 22,59&nbsp;%&nbsp;; `hr`&nbsp;: 19,1&nbsp;%&nbsp;; `section`&nbsp;: 36,55&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
+  )
+}}
 
 ### Autres éléments HTML utilisés pour la navigation
 
 De nombreux lecteurs d’écran populaires permettent également aux utilisateurs de naviguer en parcourant rapidement les liens, les listes, les éléments de liste, les iframes et les champs de formulaire tels que les champs d’édition, les boutons et les zones de liste. La figure 6 détaille la fréquence à laquelle nous avons vu des pages utilisant ces éléments.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig6.png">
-    <img src="/static/images/2019/accessibility/fig6.png" alt="Figure 6. Autres éléments HTML utilisés pour la navigation" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 100 de 25 en 25. `a`&nbsp;: 98,22&nbsp;%&nbsp;; `ul`&nbsp;: 88,62&nbsp;%&nbsp;; `input`: 76,63&nbsp;%&nbsp;; `iframe`: 60,39&nbsp;%&nbsp;; `button`&nbsp;: 56,74&nbsp;%&nbsp;; `select`&nbsp;: 19,68&nbsp;%&nbsp;; `textarea`&nbsp;: 12,03&nbsp;%.</div>
-  <figcaption id="fig6-caption">Figure 6. Autres éléments HTML utilisés pour la navigation</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="Autres éléments HTML utilisés pour la navigation",
+  description="Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 100 de 25 en 25. `a`&nbsp;: 98,22&nbsp;%&nbsp;; `ul`&nbsp;: 88,62&nbsp;%&nbsp;; `input`: 76,63&nbsp;%&nbsp;; `iframe`: 60,39&nbsp;%&nbsp;; `button`&nbsp;: 56,74&nbsp;%&nbsp;; `select`&nbsp;: 19,68&nbsp;%&nbsp;; `textarea`&nbsp;: 12,03&nbsp;%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
+  )
+}}
 
 ### Liens d’évitement
 
@@ -179,13 +180,14 @@ Un [lien d’évitement](https://webaim.org/techniques/skipnav/) est un lien pla
 
 Si vous souhaitez voir un lien d’évitement en action par vous-même, vous pouvez&nbsp;! Faites simplement une recherche rapide sur Google et tapez sur «&nbsp;<kbd>Tab</kbd>&nbsp;» dès que vous atterrissez sur les pages de résultats de recherche. Vous serez accueilli avec un lien précédemment masqué, comme celui sur la figure 7.
 
-<figure>
-  <a href="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png">
-    <img alt="Figure 7. Ce à quoi un lien d’évitement ressemble sur google.com." aria-labelledby="fig7-caption" aria-describedby="fig7-description" src="/static/images/2019/accessibility/example-of-a-skip-link-on-google.com.png" width="600" height="333">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Capture d’écran de la page de résultats de recherche Google pour la recherche «&nbsp;http archive&nbsp;». Le lien visible «&nbsp;Passer au contenu principal&nbsp;» est entouré d’un surlignage bleu et une boîte jaune superposée avec une flèche rouge pointant vers le lien de saut indique en anglais «&nbsp;Un lien d’évitement sur google.com&nbsp;».</div>
-  <figcaption id="fig7-caption">Figure 7. Ce à quoi un lien d’évitement ressemble sur google.com.</figcaption>
-</figure>
+{{ figure_markup(
+  image="example-of-a-skip-link-on-google.com.png",
+  caption="Ce à quoi un lien d’évitement ressemble sur google.com.",
+  description="Capture d’écran de la page de résultats de recherche Google pour la recherche «&nbsp;http archive&nbsp;». Le lien visible «&nbsp;Passer au contenu principal&nbsp;» est entouré d’un surlignage bleu et une boîte jaune superposée avec une flèche rouge pointant vers le lien de saut indique en anglais «&nbsp;Un lien d’évitement sur google.com&nbsp;».",
+  width=600,
+  height=333
+  )
+}}
 
 En fait, vous n’avez même pas besoin de quitter ce site, car nous [les utilisons ici aussi](https://github.com/HTTPArchive/almanac.httparchive.org/pull/645)&nbsp;!
 
@@ -229,13 +231,13 @@ L’une des spécifications les plus populaires et les plus utilisées pour l’
 
 L’utilisation correcte et appropriée d’ARIA peut être difficile. Par exemple, sur les pages utilisant des attributs ARIA, 12,31&nbsp;% ont des valeurs non valides en attribut. Cela est problématique car toute erreur dans l’utilisation d’un attribut ARIA n’a aucun effet visuel sur la page. Certaines de ces erreurs peuvent être détectées à l’aide d’un outil de validation automatisé, mais généralement elles nécessitent l’utilisation réelle d’un logiciel d’assistance (comme un lecteur d’écran). Cette section examinera comment ARIA est utilisé sur le web, et en particulier quelles parties de la norme sont les plus répandues.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig8.png">
-    <img src="/static/images/2019/accessibility/fig8.png" alt="Figure 8. Pourcentage du nombre total de pages par rapport aux attributs ARIA." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Graphique à barres verticales affichant des données en pourcentage, allant de 0 à 25 de 5 en 5, par rapport aux barres représentant chaque attribut. `aria-hidden`&nbsp;: 23,46&nbsp;%, `aria-label`&nbsp;: 17,67&nbsp;%, `aria-expanded`&nbsp;: 8,68&nbsp;%, `aria-current`&nbsp;: 7,76&nbsp;%, `aria-labelledby`&nbsp;: 6,85&nbsp;%, `aria-controls`&nbsp;: 3,56&nbsp;%, `aria-haspopup`&nbsp;: 2,62&nbsp;%, `aria-invalid`&nbsp;: 2,68&nbsp;%, `aria-describedby`&nbsp;: 1,69&nbsp;%, `aria-live`&nbsp;: 1,04&nbsp;%, `aria-required`&nbsp;: 1&nbsp;%</div>
-  <figcaption id="fig8-caption" >Figure 8. Pourcentage du nombre total de pages par rapport aux attributs ARIA.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Pourcentage du nombre total de pages par rapport aux attributs ARIA.",
+  description="Graphique à barres verticales affichant des données en pourcentage, allant de 0 à 25 de 5 en 5, par rapport aux barres représentant chaque attribut. `aria-hidden`&nbsp;: 23,46&nbsp;%, `aria-label`&nbsp;: 17,67&nbsp;%, `aria-expanded`&nbsp;: 8,68&nbsp;%, `aria-current`&nbsp;: 7,76&nbsp;%, `aria-labelledby`&nbsp;: 6,85&nbsp;%, `aria-controls`&nbsp;: 3,56&nbsp;%, `aria-haspopup`&nbsp;: 2,62&nbsp;%, `aria-invalid`&nbsp;: 2,68&nbsp;%, `aria-describedby`&nbsp;: 1,69&nbsp;%, `aria-live`&nbsp;: 1,04&nbsp;%, `aria-required`&nbsp;: 1&nbsp;%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
+  )
+}}
 
 #### L’attribut `role`
 
@@ -243,13 +245,13 @@ L’attribut `role` est le plus important de toute la spécification ARIA. Il es
 
 Actuellement, 46,91&nbsp;% des pages utilisent au moins un attribut de rôle ARIA. Dans la figure 9 ci-dessous, nous avons compilé une liste des dix valeurs de rôles ARIA les plus utilisées.
 
-<figure>
-  <a href="/static/images/2019/accessibility/fig9.png">
-    <img src="/static/images/2019/accessibility/fig9.png" alt="Figure 9. Top 10 des rôles ARIA." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">Graphique à barres verticales avec des barres pour chaque type de rôle par rapport au pourcentage de sites utilisant de 0 à 25 de 5 en 5. `navigation`&nbsp;: 20,4&nbsp;%&nbsp;; `search`&nbsp;: 15,49&nbsp;%&nbsp;; `main`&nbsp;: 14,39&nbsp;%&nbsp;; `banner`&nbsp;: 13,62&nbsp;%&nbsp;; `contentinfo`&nbsp;: 11,23&nbsp;%&nbsp;; `button`&nbsp;: 10,59&nbsp;%&nbsp;; `dialog`&nbsp;: 7,87&nbsp;%&nbsp;; `complementary`&nbsp;: 6,06&nbsp;%&nbsp;; `menu`&nbsp;: 4,71&nbsp;%&nbsp;; `form`&nbsp;: 3,75&nbsp;%</div>
-  <figcaption id="fig9-caption" >Figure 9. Top 10 des rôles ARIA.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9.png",
+  caption="Top 10 des rôles ARIA.",
+  description="Graphique à barres verticales avec des barres pour chaque type de rôle par rapport au pourcentage de sites utilisant de 0 à 25 de 5 en 5. `navigation`&nbsp;: 20,4&nbsp;%&nbsp;; `search`&nbsp;: 15,49&nbsp;%&nbsp;; `main`&nbsp;: 14,39&nbsp;%&nbsp;; `banner`&nbsp;: 13,62&nbsp;%&nbsp;; `contentinfo`&nbsp;: 11,23&nbsp;%&nbsp;; `button`&nbsp;: 10,59&nbsp;%&nbsp;; `dialog`&nbsp;: 7,87&nbsp;%&nbsp;; `complementary`&nbsp;: 6,06&nbsp;%&nbsp;; `menu`&nbsp;: 4,71&nbsp;%&nbsp;; `form`&nbsp;: 3,75&nbsp;%",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
+  )
+}}
 
 En examinant les résultats de la figure 9, nous avons trouvé deux informations intéressantes&nbsp;: la mise à jour des <i lang="en">frameworks</i> d’interface pourrait avoir un impact profond sur l’accessibilité sur le web, et le nombre impressionnant de sites tentant de rendre les modales accessibles.
 

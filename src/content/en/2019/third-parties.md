@@ -10,7 +10,7 @@ discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 queries: 05_Third_Parties
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## Introduction
@@ -61,17 +61,21 @@ This chapter divides third-party providers into one of these broad categories. A
 
 ## Data
 
-<figure>
-  <div class="big-number">93.59%</div>
-  <figcaption>Figure 1. Percentage of desktop pages that include at least one third-party resource.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percentage of desktop pages that include at least one third-party resource.",
+  content="93.59%",
+  classes="big-number"
+)
+}}
 
 Third-party code is everywhere. 93% of pages include at least one third-party resource, 76% of pages issue a request to an analytics domain, the median page requests content from at least 9 _unique_ third-party domains that represent 35% of their total network activity, and the most active 10% of pages issue a whopping 175 third-party requests or more. It's not a stretch to say that third parties are an integral part of the web.
 
-<figure>
-  <div class="big-number">55.63%</div>
-  <figcaption>Figure 2. Percentage of desktop pages that include at least one ad resource.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Percentage of desktop pages that include at least one ad resource.",
+  content="55.63%",
+  classes="big-number"
+)
+}}
 
 ### Categories
 
@@ -99,7 +103,7 @@ Rank | Third party domain | Percent of requests
 9 | `cdn.shopify.com` | 0.76%
 10 | `maps.googleapis.com` | 0.75%
 
-<figcaption>Figure 3. Top 10 most popular third-party domains.</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 most popular third-party domains.") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -116,20 +120,24 @@ Rank | Third party URL | Percent of requests
 9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
 10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
 
-<figcaption>Figure 4. Top 10 most popular third-party requests.</figcaption>
+<figcaption>{{ figure_link(caption="Top 10 most popular third-party requests.") }}</figcaption>
 </figure>
 
 ### Resource types
 
 The resource type breakdown of third-party content also lends insight into how third-party code is used across the web. While first-party requests are 56% images, 23% script, 14% CSS, and only 4% HTML, third-party requests skew more heavily toward script and HTML at 32% script, 34% images, 12% HTML, and only 6% CSS. While this suggests that third-party code is less frequently used to aid the design and instead used more frequently to facilitate or observe interactions than first-party code, a breakdown of resource types by party status tells a more nuanced story. While CSS and images are dominantly first-party at 70% and 64% respectively, fonts are largely served by third-party providers with only 28% being served from first-party sources. This concept of usage patterns is explored in more depth later in this chapter.
 
-<figure>
-  <a href="/static/images/2019/third-parties/fig5.png">
-    <img src="/static/images/2019/third-parties/fig5.png" alt="Figure 5. Percent of third-party requests by category and content type." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.</div>
-  <figcaption id="fig5-caption">Figure 5. Percent of third-party requests by category and content type.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Percent of third-party requests by category and content type.",
+  description="Chart showing the breakdown of content types for each third party category. Images and scripts make up the majority of requests for each category. CDN requests have an especially large proportion of fonts.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&format=interactive",
+  width=600,
+  height=387,
+  data_width=600,
+  data_height=387
+  )
+}}
 
 Several other amusing factoids jump out from this data. Tracking pixels (image requests to analytics domains) make up 1.6% of all network requests, six times as many video requests are to social networks like Facebook and Twitter than dedicated video providers like YouTube and Vimeo (presumably because the default YouTube embed consists of HTML and a preview thumbnail but not an autoplaying video), and there are still more requests for first-party images than all scripts combined.
 
@@ -138,6 +146,7 @@ Several other amusing factoids jump out from this data. Tracking pixels (image r
 49% of all requests are third-party. At 51%, first-party can still narrowly hold on to the crown in 2019 of comprising the majority of the web resources. Given that just under half of all the requests are third-party yet a small set of pages do not include any at all, the most active third-party users must be doing quite a bit more than their fair share. Indeed, at the 75th, 90th, and 99th percentiles we see nearly all of the page being comprised of third-party content. In fact, for some sites heavily relying on distributed WYSIWYG platforms like Wix and SquareSpace, the root document might be the sole first-party request!
 
 <!-- insert graphic of metric 05_11 -->
+<!-- {{ figure_markup() }} -->
 
 The number of requests issued by each third-party provider also varies considerably by category. While analytics are the most widespread third-party category across websites, they account for only 7% of all third-party network requests. Ads, on the other hand, are found on nearly 20% fewer sites yet make up 25% of all third-party network requests. Their outsized resource impact compared to their popularity will be a theme we continue to uncover in the remaining data.
 
@@ -147,13 +156,17 @@ While 49% of requests are third-party, their share of the web in terms of bytes 
 
 Despite serving 57% of scripts, third parties comprise 64% of script bytes. meaning their scripts are larger on average than first-party scripts. This is an early warning sign for their performance impact to come in the next few sections.
 
-<figure id="fig-7">
-  <a href="/static/images/2019/third-parties/fig7.png">
-    <img src="/static/images/2019/third-parties/fig7.png" alt="Figure 7. Distributions of resource bytes per third-party category." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Chart showing the breakdown of bytes for each content type per third party category. Images and scripts are relatively evenly distributed across categories. 80% of fonts come from CDNs. Video comes from "content" third-parties.</div>
-  <figcaption id="fig7-caption">Figure 7. Distributions of resource bytes per third-party category.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="Distributions of resource bytes per third-party category.",
+  description='Chart showing the breakdown of bytes for each content type per third party category. Images and scripts are relatively evenly distributed across categories. 80% of fonts come from CDNs. Video comes from "content" third-parties.',
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&format=interactive",
+  width=600,
+  height=387,
+  data_width=600,
+  data_height=387
+  )
+}}
 
 <!--
 

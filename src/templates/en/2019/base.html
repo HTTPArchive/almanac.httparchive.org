@@ -53,8 +53,9 @@ Our mission is to combine the raw stats and trends of the HTTP Archive with the 
 {% block open %}Open{% endblock %}
 {% block close %}Close{% endblock %}
 
-{% macro show_description(id) %}Show description of Figure {{ id }}{% endmacro %}
-{% macro hide_description(id) %}Hide description of Figure {{ id }}{% endmacro %}
+{% macro figure_text(metadata, id) %}Figure {{ figure_id(metadata, id) }}.{% endmacro %}
+{% macro show_description(metadata, id) %}Show description of Figure {{ figure_id(metadata, id) }}{% endmacro %}
+{% macro hide_description(metadata, id) %}Hide description of Figure {{ figure_id(metadata, id) }}{% endmacro %}
 
 {% block written_by_before %}Written by{% endblock %}
 {% block reviewed_by_before %}Reviewed by{% endblock %}
