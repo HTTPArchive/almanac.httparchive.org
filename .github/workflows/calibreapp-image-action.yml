@@ -12,7 +12,7 @@
 #    improvements are added to Calibre. This will also open a PR if necessary.
 # 4) Finally it can be kicked off manually and it will open a PR if necessary.
 
-name: Compress images
+name: Compress Images
 on:
   push:
     branches:
@@ -34,7 +34,7 @@ on:
     - cron:  '00 23 * * 0'
 jobs:
   build:
-    name: calibreapp/image-actions
+    name: Compress All Images
     runs-on: ubuntu-latest
     # Only run on main repo on and PRs that match the main repo
     if: |
@@ -42,9 +42,9 @@ jobs:
       (github.event_name != 'pull_request' ||
        github.event.pull_request.head.repo.full_name == github.repository)
     steps:
-      - name: Checkout branch
+      - name: Checkout Branch
         uses: actions/checkout@v2.3.2
-      - name: Run image compression
+      - name: Run Image Compression
         id: calibre
         uses: calibreapp/image-actions@master
         with:
@@ -64,7 +64,7 @@ jobs:
           commit-message: Compress Images
           body: ${{ steps.calibre.outputs.markdown }}
           labels: performance
-      - name: Check outputs
+      - name: Check Outputs
         # If it's not a pull request then commit any changes as a new PR
         if: steps.cpr.outputs.pull-request-number != ''
         run: echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
