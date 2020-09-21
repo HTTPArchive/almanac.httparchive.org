@@ -22,11 +22,7 @@ last_updated: 2020-09-05T00:00:00.000Z
   image="fig1_bytes_images_and_video_versus_other.png",
   caption="Webページのバイト：画像と動画対その他。",
   description="10パーセンタイルでページバイトの44.1％がメディア、25パーセンタイルで52.7％がメディア、50パーセンタイルで67.0％がメディア、75パーセンタイルで81.7％がメディア、90パーセンタイルで91.2％がメディアであることを示す棒グラフです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive"
   )
 }}
 
@@ -42,11 +38,7 @@ last_updated: 2020-09-05T00:00:00.000Z
   image="fig2_total_image_bytes_per_web_page_mobile.png",
   caption="ウェブページあたりの総画像バイト数（モバイル）。",
   description="モバイルの中央値のウェブページでは、90パーセンタイルで1MBの画像と4.9MBの画像が必要です。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"
   )
 }}
 
@@ -62,11 +54,7 @@ last_updated: 2020-09-05T00:00:00.000Z
   image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
   caption="1ページあたりのピクセル画像（モバイル）。CSS対実物。",
   description="画像コンテンツに割り当てられているCSSの画素数を、実際の画像の画素数と比較した結果、10パーセンタイル（実測は0.07MP、CSSは0.04MP）、25パーセンタイル（実測は0.38MP、CSSは0.18MP）、50パーセンタイル（実測は1.6MP、CSSは0.65MP）、75パーセンタイル（実測は5.1MP、CSSは1.8MP）、90パーセンタイル（実測は12MP、CSSは4.6MP）が表示されていることがわかります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"
   )
 }}
 
@@ -74,11 +62,7 @@ last_updated: 2020-09-05T00:00:00.000Z
   image="fig4_image_pixel_per_page_desktop_css_v_actual.png",
   caption="1ページあたりのピクセル画像（デスクトップ）。CSS対実物。",
   description="画像コンテンツに割り当てられたCSSの画素数をデスクトップ用の実際の画像の画素数と比較した結果、10パーセンタイル（実際は0.09MP、CSSは0.05MP）、25パーセンタイル（実際は0.52MP、CSSは0.29MP）、50パーセンタイル（実際は2.1MP、CSSは1.1MP）、75パーセンタイル（実際は6.0MP、CSSは2.8MP）、90パーセンタイル（実際は14MP、CSSは6.3MP）が表示されています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"
   )
 }}
 
@@ -100,11 +84,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig5_image_pixel_volume_v_css_pixels.png",
   caption="画像のピクセル量と画面サイズ（CSSピクセル）の関係。",
   description="実際の画面サイズCSSピクセルと比較したページあたりに必要なピクセル量の比較では、10パーセンタイル（モバイル20%、デスクトップ2%）、25パーセンタイル（モバイル97%、デスクトップ13%）、50パーセンタイル（モバイル354%、デスクトップ46%）、75パーセンタイル（モバイル1003%、デスクトップ123%）、および90パーセンタイル（モバイル2477%、デスクトップ273%）が示されています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"
   )
 }}
 
@@ -189,11 +169,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig8_image_format_usage_per_page.png",
   caption="1ページあたりの画像フォーマットの使用量",
   description="10パーセンタイルでは画像フォーマットが全く使用されていないことを示す棒グラフ、25パーセンタイルではJPGが3枚とPNGが4枚、50パーセンタイルではJPGが9枚、PNGが4枚、GIFが1枚、75パーセンタイルではJPEGが39枚、PNGが18枚、SVGが2枚、GIFが2枚、p99パーセンタイルではJPGが119枚、PNGが49枚、WebPが28枚、SVGが19枚、GIFが14枚使用されていることを示しています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"
   )
 }}
 
@@ -203,11 +179,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig9_pages_using_at_least_1_image.png",
   caption="少なくとも1枚の画像を使用しているページの割合。",
   description="棒グラフで見ると、90%のページでJPEGが使用されており、89%がPNG、9%がWebP、37%がGIF、22%がSVGとなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"
   )
 }}
 
@@ -220,9 +192,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 {{ figure_markup(
   image="fig10_image_format_size.png",
   caption="画像形式別のファイルサイズ（KB）。",
-  description="10パーセンタイルではJPEGの4KB、PNGの2KB、GIFの2KBが使用され、25パーセンタイルではJPGの9KB、PNGの4KB、WebPの7KB、GIFの3KBが使用され、50パーセンタイルではJPGの24KB、PNGの11KB、WebPの17KB、GIFの6KBが使用されていることを示すチャート。SVGの1KBが使用され、75パーセンタイルではJPEGの68KB、PNGの43KB、WebPの41KB、GIFの17KB、SVGの2KBが使用され、90パーセンタイルではJPGの116KB、PNGの152KB、WebPの90KB、GIFの87KB、SVGの8KBが使用されています。",
-  width=600,
-  height=371
+  description="10パーセンタイルではJPEGの4KB、PNGの2KB、GIFの2KBが使用され、25パーセンタイルではJPGの9KB、PNGの4KB、WebPの7KB、GIFの3KBが使用され、50パーセンタイルではJPGの24KB、PNGの11KB、WebPの17KB、GIFの6KBが使用されていることを示すチャート。SVGの1KBが使用され、75パーセンタイルではJPEGの68KB、PNGの43KB、WebPの41KB、GIFの17KB、SVGの2KBが使用され、90パーセンタイルではJPGの116KB、PNGの152KB、WebPの90KB、GIFの87KB、SVGの8KBが使用されています。"
   )
 }}
 
@@ -232,11 +202,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig11_bytes_per_pixel.png",
   caption="ピクセルあたりのバイト数。",
   description="ローソク足チャートは、10パーセンタイルでは、JPEGが0.1175byte/pixel、PNGが0.1197byte/pixel、GIFが0.1702byte/pixel、WebPが0.0586byte/pixel、SVGが0.0293byte/pixelであることを示しています。25パーセンタイルでは、JPEGが0.1848byte/pixel、PNGが0.2874byte/pixel、GIFが0.3641byte/pixel、WebPが0.1025byte/pixel、SVGが0.174byte/pixelとなっています。50パーセンタイルでは、JPEGが0.2997byte/pixel、PNGが0.6918byte/pixel、GIFが0.7967byte/pixel、WebPが0.183byte/pixel、SVGが0.6766byte/pixelとなっています。75パーセンタイルでは、JPEGが0.5456byte/pixel、PNGが1.4548byte/pixel、GIFが2.515byte/pixel、WebPが0.3272byte/pixel、SVGが1.9261byte/pixelとなっています。90パーセンタイルでは、JPEGが0.9822byte/pixel、PNGが2.5026byte/pixel、GIFが8.5151byte/pixel、WebPが0.6474byte/pixel、SVGが4.1075byte/pixelとなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive"
   )
 }}
 
@@ -260,11 +226,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig12_percentage_optimized_images.png",
   caption="「最適化された」画像の割合。",
   description="10パーセンタイルでは100%の画像が最適化されており、25パーセンタイルでも同様で、50パーセンタイルでは98%の画像が最適化されており（2%は最適化されていない）、75パーセンタイルでは83%の画像が最適化されており（17%は最適化されていない）、90パーセンタイルでは59%の画像が最適化されており、41%の画像が最適化されていないことを示す棒グラフです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767"
   )
 }}
 
@@ -274,11 +236,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig13_project_perf_improvements_image_optimization.png",
   caption="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
   description="10パーセンタイルでは0ms、25パーセンタイルでも同じ、50パーセンタイルでは150ms、75パーセンタイルでは1,460ms、90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
   )
 }}
 
@@ -298,11 +256,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig14_html_usage_of_responsive_images.png",
   caption="HTMLでレスポンシブ画像を使用しているページの割合。",
   description="18%の画像が「sizes」を使用しており、21%が「srcset」を使用しており、2%が「picture」を使用していることを示す棒グラフです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive"
   )
 }}
 
@@ -335,11 +289,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig16_top_patterns_of_img_sizes.png",
   caption="<code>&lt;img sizes&gt;</code> のトップパターン。",
   description="1,130万枚の画像が「img sizes=\"(max-width: 300px) 100vw, 300px\"」を使用しており、「auto」が160万枚、「img sizes=\"(max-width: 767px) 89vwなどなど\"」が100万枚、「100vw」が23万枚、「300px」が13万枚であることを棒グラフで示しています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
 }}
 
@@ -353,11 +303,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
   image="fig17_usage_of_accept-ch_http_v_html.png",
   caption="<code>Accept-CH</code> ヘッダーと同等の <code>&lt;meta&gt;</code> タグの使用法。",
   description="71%が'meta http-equiv'を使用し、30% が'Accept-CH'HTTPヘッダーを使用し、1%が両方を使用していることを示す棒グラフです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
   )
 }}
 
@@ -369,11 +315,7 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
   image="fig18_enabled_client_hints.png",
   caption="有効化されたクライアントヒント。",
   description="ドーナツ型のパイチャートを見ると、クライアントヒントの26.1%が「dpr」を使用しており、24.3%が「viewport-width」を使用しており、19.7%が「width」を使用しており、6.7%が「save-data」を使用しており、6.1%が「device-memory」を使用しており、6.0%が「downnlink」を使用しており、5.6%が「rtt」を使用しており、5.6%が「ect」を使用していることを示しています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive"
   )
 }}
 
@@ -389,11 +331,7 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
   image="fig19_lighthouse_audit_offscreen.png",
   caption="Lighthouse監査：オフスクリーン。",
   description="10パーセンタイルでは画像の0%が画面外、25パーセンタイルでは2%が画面外、50パーセンタイルでは27%が画面外、75パーセンタイルでは64%が画面外、90パーセンタイルでは 84%が画面外であることを示す棒グラフです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
   )
 }}
 
@@ -421,11 +359,7 @@ Lighthouseの監査では、質の高いプレースホルダーを使用する�
   image="fig20_video_files_by_extension.png",
   caption="拡張子別の動画ファイルの数",
   description="棒グラフは、デスクトップで「ts」が1,283,439件（モバイルで792,952件）、デスクトップで「mp4」が729,757件（モバイルで662,015件）、デスクトップで「webm」が38,591件（モバイルで32,417件）、デスクトップは「mov」が22,194件（モバイルは14,986件）、デスクトップは「m4s」が17,338件（モバイルは16,046件）、デスクトップは「m4v」が7,466件（モバイルは6,169件）となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"
   )
 }}
 
@@ -437,11 +371,7 @@ Lighthouseの監査では、質の高いプレースホルダーを使用する�
   image="fig21_median_vidoe_file_size_by_extension.png",
   caption="動画の拡張子別のファイルサイズの中央値。",
   description="「ts」の平均ファイルサイズがデスクトップで335KB(モバイルで156KB)、「mp4」がデスクトップで175KB(モバイルで128KB)、「webm」がデスクトップで359KB(モバイルで192KB)、「mov」がデスクトップで128KB(モバイルで96KB)、「m4s」がデスクトップで324KB(モバイルで246KB)、「m4v」がデスクトップで383KB(モバイルで161KB)であることを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"
   )
 }}
 
@@ -455,11 +385,7 @@ Lighthouseの監査では、質の高いプレースホルダーを使用する�
   image="fig22_html_video_tag_attributes_usage.png",
   caption="HTML動画タグ属性の使用法。",
   description="デスクトップ用のバーチャート。'autoplay'は11.84%、'buffered'は0%、'controls'は12.05%、'crossorigin'は0.45%、'currenttime'は0.01%、'disablepictureinpicture'は0.01%、'disableremoteplayback'は0.01%、'duration'は0.05%、'height'は7.33%、'intrinsicsize'は0%、'loop'は14.57%、'muted'は13.92%、'playsinline'は6.49%、'poster'は8.98%、'preload'は11.62%、'src'は3.67%、'use-credentials'は0%、and 'width'は9%。そしてモバイルで'autoplay'は12.38%、'buffered'は0%、'controls'は13.88%、'crossorigin'は0.16%、'currenttime'は0.01%、disablepictureinpicture'は0.01%、'disableremoteplayback'は0.02%、'duration'は0.09%、'height'は6.54%、 intrinsicsize'は0%、'loop'は14.44%、'muted'は13.55%、'playsinline'は6.15%、'poster'は9.29%、'preload'は10.34%、'src'は4.13%、'use-credentials'は0%、'width'は9.03%である。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive"
   )
 }}
 
@@ -477,11 +403,7 @@ Lighthouseの監査では、質の高いプレースホルダーを使用する�
   image="fig23_top_javascript_video_players.png",
   caption="トップの JavaScript 動画プレイヤー",
   description="3,365のデスクトップサイト(3,400のモバイルサイト)、52,375のデスクトップサイト(40,925のモバイルサイト)、110,280のデスクトップサイト(96,945のモバイルサイト)、325のデスクトップサイト(275のモバイルサイト)の「shaka」、377,990のデスクトップサイト(391,330のモバイルサイト)の「video」を示す棒グラフです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive"
   )
 }}
 

@@ -36,11 +36,7 @@ Service Workerは2014年12月に[Chrome 40で初めて実装](https://blog.chrom
   image="fig2.png",
   caption="デスクトップおよびモバイルのService Workerの経時的なインストール。",
   description="Service Workerのインストールの時系列チャート。 2017年1月以降、デスクトップとモバイルは約0.0％から約0.4％に着実に増加しています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&format=interactive"
   )
 }}
 
@@ -74,11 +70,7 @@ Service Workerでは、[いくつかのイベントをリッスンできます](
   image="fig4.png",
   caption="Service Workerイベントの人気。",
   description="さまざまなService Workerイベントの人気を示す棒グラフ。 Fetchは、モバイルService Workerの73％、インストール71％、アクティブ化56％、通知クリック10％、プッシュ8％、メッセージ5％、通知クローズ2％、同期1％で使用されます。デスクトップService Workerの使用方法は似ていますが、取得、インストール、およびアクティブ化の場合は若干低くなります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2110574556&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2110574556&format=interactive"
   )
 }}
 
@@ -92,11 +84,7 @@ HTTP Archiveで見つけることのできるService Workerがこれらのイベ
   image="fig5.png",
   caption="Service Workerの転送サイズの分布。",
   description="Service Workerの転送サイズの分布を示す棒グラフ。デスクトップService Worker転送サイズの10、25、50、75、および90パーセンタイルは、176、350、895、2,010、および4,138バイトです。デスクトップService Workerは、90パーセンタイルの1,000バイトから、パーセンタイルごとに大きくなります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=345926232&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=345926232&format=interactive"
   )
 }}
 
@@ -151,13 +139,10 @@ Webアプリマニフェストは、ブラウザーにWebアプリケーショ�
 
 {{ figure_markup(
   image="fig7.png",
+  alt="Webアプリマニフェストの display プロパティの使用法。",
   caption="Webアプリマニフェストの <code>display</code> プロパティの使用法。",
   description="Webアプリマニフェストの表示プロパティがデスクトップおよびモバイルWebサイトでどのように使用されるかを示す棒グラフ。どちらの場合も、57％の時間で「standalone」値が使用されます。マニフェストの38％でプロパティがまったく設定されていません。 「minimal UI」、「browser」、および「fullscreen」の各値は、使用量の1〜2％のみを占めています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&format=interactive"
   )
 }}
 
@@ -171,11 +156,7 @@ Webアプリマニフェストは、ブラウザーにWebアプリケーショ�
   image="fig8.png",
   caption="上位のWebアプリマニフェストカテゴリ。",
   description="上位のWebアプリマニフェストカテゴリを示す棒グラフ。 60個のモバイルマニフェストは「ショッピング」カテゴリ、15個は「ビジネス」、9個は「ウェブ」、9個は「テクノロジー」、8個は「ゲーム」、8個は「エンターテイメント」、7個は「ソーシャル」などです。 「ショッピング」の場合、デスクトップマニフェストは1つだけです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1609487902&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1609487902&format=interactive"
   )
 }}
 
@@ -189,11 +170,7 @@ Lighthouseには少なくとも192X192ピクセルのサイズのアイコンが
   image="fig9.png",
   caption="上位のWebアプリマニフェストアイコンのサイズ。",
   description="上位のWebアプリマニフェストアイコンサイズプロパティ値の使用状況を示す棒グラフ。すべての値は高さと幅のピクセルで指定されます。たとえば、マニフェストの23％のトップ値は192X192ピクセルです。次に人気のあるサイズは、11％で144、11％で96、10％で72、10％で48、9％で512、9％で36％、5％で256、2％で384、1%で128、そして1％で152です。デスクトップとモバイルの使用パターンは同じです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1369881840&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1369881840&format=interactive"
   )
 }}
 
@@ -216,11 +193,7 @@ Lighthouseのルールが、おそらくアイコンサイズ選択の犯人で�
   image="fig10.png",
   caption="上位のWebアプリマニフェストのOrientation値。",
   description="上位のWebアプリマニフェストの方向の値を示す棒グラフ。 「Portrait」はデスクトップマニフェストの6％に設定され、2％に「any」が続き、マニフェストの1％未満に他のすべてが設定されます。これはモバイルマニフェストでの使用に似ていますが、マニフェストの8％で「portrait」が設定され、1％で「portrait-primary」が設定されます。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2065142361&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2065142361&format=interactive"
   )
 }}
 

@@ -98,11 +98,7 @@ If no caching headers are present in a response, then the [client is permitted t
   image="fig2.png",
   caption="Presence of HTTP <code>Cache-Control</code> and <code>Expires</code> headers.",
   description="Two identical bar charts for mobile and desktop showing 72% of requests use Cache-Control headers, 56% use Expires and the 27% use neither.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive"
   )
 }}
 
@@ -120,11 +116,7 @@ The remaining responses are not permitted to be stored in browser caches.
   image="fig3.png",
   caption="Distribution of cacheable responses.",
   description="A stacked bar chart showing 20% of desktop responses are not cacheable, 47% have a cache greater than zero, 27% are heuristically cached and 6% have a TTL of 0. The stats for mobile are very similar (19%, 47%, 27% and 7%)",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&format=interactive"
   )
 }}
 
@@ -240,11 +232,7 @@ By exploring the cacheability by content type in more detail in figure 5 below, 
   image="fig5.png",
   caption="Distribution of cacheability by content type for desktop.",
   description="A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for desktop. A small, but significant proportion are not cacheable and this goes up to 50% for HTML, most have caching greater than 0 and a smaller amount has a 0 TTL",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&format=interactive"
   )
 }}
 
@@ -254,11 +242,7 @@ The same data for mobile is shown below. As can be seen, the cacheability of con
   image="fig6.png",
   caption="Distribution of cacheability by content type for mobile.",
   description="A stacked bar chart showing the split of not cacheable, cached more than 0 seconds and cached for only 0 seconds by type for mobile. A small, but significant proportion are not cacheable and this goes up to 50% for HTML, most have caching greater than 0 and a smaller amount has a 0 TTL",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&format=interactive"
   )
 }}
 
@@ -282,11 +266,7 @@ HTTP/1.1 introduced the `Cache-Control` header, and most modern clients support 
   image="fig7.png",
   caption="Usage of <code>Cache-Control</code> versus <code>Expires</code> headers.",
   description="A bar chart showing 53% of responses have a `Cache-Control: max-age`, 54%-55% use `Expires`, 41%-42% use both, and 34% use neither. The figures are given for both desktop and mobile but the figures are near identical with mobile having a percentage point higher in use of expires.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive"
   )
 }}
 
@@ -498,11 +478,7 @@ Overall, 65% of responses are served with a `Last-Modified` header, 42% are serv
   image="fig12.png",
   caption="Adoption of validating freshness via <code>Last-Modified</code> and <code>ETag</code> headers for desktop websites.",
   description="A bar chart showing 64.4% of desktop requests have a last modified, 42.8% have an ETag, 37.9% have both and 30.7% have neither. The stats for mobile are almost identical at 65.3% for Last Modified, 42.8% for ETag, 38.0% for both and 29.9% for neither.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive"
   )
 }}
 
@@ -540,11 +516,7 @@ The `Date` HTTP response header is usually generated by the web server or CDN se
   image="fig13.png",
   caption="Invalid date formats in response headers.",
   description="A bar chart showing 0.10% of desktop responses have an invalid date, 0.67% have an invalid Last-Modified and 3.64% have an invalid Expires. The stats for mobile are very similar with 0.06% of responses have an invalid date, 0.68% have an invalid Last-Modified and 3.50% have an invalid Expires.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&format=interactive"
   )
 }}
 
@@ -725,11 +697,7 @@ Lighthouse computes a score for each audit, ranging from 0% to 100%, and those s
   image="fig21.png",
   caption="Distribution of Lighthouse scores for the \"Uses Long Cache TTL\" audit for mobile web pages.",
   description="A stacked bar chart 38.2% of websites get a score of < 10%, 29.0% of websites get a score between 10% and 39%, 18.7% of websites get a score of 40%-79%, 10.7% of websites get a score of 80% - 99%, and 3.4% of websites get a score of 100%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive"
   )
 }}
 
@@ -741,11 +709,7 @@ Lighthouse also indicates how many bytes could be saved on repeat views by enabl
   image="fig22.png",
   caption="Distribution of potential byte savings from the Lighthouse caching audit.",
   description="A stacked bar chart showing 56.8% of websites have potential byte savings of less than one MB, 22.1% could have savings of one to two MB, 8.3% could save two to three MB. 4.3% could save three to four MB and 6.0% could save more than four MB.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&format=interactive"
   )
 }}
 

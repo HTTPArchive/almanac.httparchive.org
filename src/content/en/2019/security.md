@@ -53,7 +53,6 @@ If we look at just home pages, and not all the other requests made on sites, the
 
 {{ figure_markup(
   image="fig3.png",
-  alt="Usage of TLS protocol versions for home page requests only.",
   caption="Usage of TLS protocol versions for home page requests only.",
   description="Horizontal bar chart showing desktop and mobile on similar TLS usage: 47% on desktop (43% on mobile) on TLSv1.2, 20.2% on desktop (19.7% on mobile) on TLSv1.3 and very little usage of TLSv1.0 (1.1% - 1.2%) and a tiny usage of TLSv1.1.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRCG3clMcnkVPrnZSCWFi3qG-EU00Qr8X3XaRFQPWHEXQmYWMxnS_kfmmyMQsPZe2P6ECjzCjG0dVFg/pubchart?oid=897771966&format=interactive",
@@ -520,4 +519,3 @@ At web scale, the total coverage of opt-in platform security features is current
 It is important to note, however, that the adoption of these mechanisms is skewed towards larger web applications which frequently handle more sensitive user data. The developers of these sites more frequently invest in improving their web defenses, including enabling a range of protections against common vulnerabilities; tools such as [Mozilla Observatory](https://observatory.mozilla.org/) and [Security Headers](https://securityheaders.com/) can provide a useful checklist of web available security features.
 
 If your web application handles sensitive user data, consider enabling the security mechanisms outlined in this section to protect your users and make the web safer.
-

@@ -22,11 +22,7 @@ From a pure bytes perspective, HTTP Archive has [historically reported](https://
   image="fig1_bytes_images_and_video_versus_other.png",
   caption="Web page bytes: image and video versus other.",
   description="Bar chart showing in the 10th percentile 44.1% of page bytes are media, in the 25th percentile 52.7% is media, in the 50th percentile 67.0% is media, in the 75th percentile 81.7% is media, and in the 90th percentile 91.2% is media.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive"
   )
 }}
 
@@ -42,11 +38,7 @@ Further, the financial cost of visiting these websites in different parts of the
   image="fig2_total_image_bytes_per_web_page_mobile.png",
   caption="Total image bytes per web page (mobile).",
   description="The median web page on mobile requires 1 MB of images and 4.9 MB at the 90th percentile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"
   )
 }}
 
@@ -62,11 +54,7 @@ There are three metrics to consider when looking at pixel volume: CSS pixels, na
   image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
   caption="Image pixels per page (mobile): CSS versus actual.",
   description="A comparison of the CSS pixels allocated to image content compared to the actual image pixels for mobile, showing 10th percentile (0.07 MP actual, 0.04 MP CSS), 25th percentile (0.38 MP actual, 0.18 MP CSS), 50th percentile (1.6 MP actual, 0.65 MP CSS), 75th percentile (5.1 MP actual, 1.8 MP CSS), and 90th percentile (12 MP actual, 4.6 MP CSS)",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"
   )
 }}
 
@@ -74,11 +62,7 @@ There are three metrics to consider when looking at pixel volume: CSS pixels, na
   image="fig4_image_pixel_per_page_desktop_css_v_actual.png",
   caption="Image pixels per page (desktop): CSS versus actual.",
   description="A comparison of the CSS pixels allocated to image content compared to the actual image pixels for desktop, showing 10th percentile (0.09 MP actual, 0.05 MP CSS), 25th percentile (0.52 MP actual, 0.29 MP CSS), 50th percentile (2.1 MP actual, 1.1 MP CSS), 75th percentile (6.0 MP actual, 2.8 MP CSS), and 90th percentile (14 MP actual, 6.3 MP CSS)",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"
   )
 }}
 
@@ -100,11 +84,7 @@ If we had one image that filled the entire screen perfectly, this would be a 1x 
   image="fig5_image_pixel_volume_v_css_pixels.png",
   caption="Image pixel volume versus screen size (CSS pixels).",
   description="A comparison of the pixel volume required per page relative to the actual screen size CSS pixels, showing 10th percentile (20% mobile, 2% desktop), 25th percentile (97% mobile, 13% desktop), 50th percentile (354% mobile, 46% desktop), 75th percentile (1003% mobile, 123% desktop), and 90th percentile (2477% mobile, 273% desktop).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"
   )
 }}
 
@@ -188,11 +168,7 @@ Of course, web pages are not uniform in their use of image content. Some depend 
   image="fig8_image_format_usage_per_page.png",
   caption="Image format usage per page.",
   description="A bar chart showing in 10th percentile no image formats are used at all, in the 25th percentile three JPGs and four PNGs are used, in the 50th percentile nine JPGs, four PNGs, and one GIF are used, in the 75th percentile 39 JPEGs, 18 PNGs, two SVGs, and two GIFs are used and in the 99th percentile, 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs and 14 GIFs are used.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"
   )
 }}
 
@@ -202,11 +178,7 @@ While the median page has nine JPEGs and four PNGs, and only in the top 25% page
   image="fig9_pages_using_at_least_1_image.png",
   caption="Percent of pages using at least one image.",
   description="A bar chart showing JPEGs are used on 90% of pages, PNGs on 89%, WebP on 9%, GIF on 37%, and SVG on 22%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"
   )
 }}
 
@@ -219,9 +191,7 @@ There are two ways to look at image file sizes: absolute bytes per resource and 
 {{ figure_markup(
   image="fig10_image_format_size.png",
   caption="File size (KB) by image format.",
-  description="A chart showing in 10th percentile 4 KB of JPEGs, 2 KB of PNG and 2 KB of GIFs are used, in the 25th percentile 9 KB JPGs, 4 KB of PNGs, 7 KB of WebP, and 3 KB of GIFs are used, in the 50th percentile 24 KB of JPGs, 11 KB of PNGs, 17 KB of WebP, 6 KB of GIFs, and 1 KB of SVGs are used, in the 75th percentile 68 KB of JPEGs, 43 KB of PNGs, 41 KB of WebPs, 17 KB of GIFs and 2 KB of SVGs are used and in the 90th percentile, 116 KB of JPGs, 152 KB of PNGs, 90 KB of WebPs, 87 KB of GIFs, and 8 KB of SVGs are used.",
-  width=600,
-  height=371
+  description="A chart showing in 10th percentile 4 KB of JPEGs, 2 KB of PNG and 2 KB of GIFs are used, in the 25th percentile 9 KB JPGs, 4 KB of PNGs, 7 KB of WebP, and 3 KB of GIFs are used, in the 50th percentile 24 KB of JPGs, 11 KB of PNGs, 17 KB of WebP, 6 KB of GIFs, and 1 KB of SVGs are used, in the 75th percentile 68 KB of JPEGs, 43 KB of PNGs, 41 KB of WebPs, 17 KB of GIFs and 2 KB of SVGs are used and in the 90th percentile, 116 KB of JPGs, 152 KB of PNGs, 90 KB of WebPs, 87 KB of GIFs, and 8 KB of SVGs are used."
   )
 }}
 
@@ -231,11 +201,7 @@ From this we can start to get a sense of how large or small a typical resource i
   image="fig11_bytes_per_pixel.png",
   caption="Bytes per pixel.",
   description="A candlestick chart showing in 10th percentile we have 0.1175 bytes-per-pixel for JPEG, 0.1197 for PNG, 0.1702 for GIF, 0.0586 for WebP, and 0.0293 for SVG. In the 25th percentile we have 0.1848 bytes-per-pixel for JPEGs, 0.2874 for PNG, 0.3641 for GIF, 0.1025 for WebP, and 0.174 for SVG. In the 50th percentile we have 0.2997 bytes-per-pixel for JPEGs, 0.6918 for PNG, 0.7967 for GIF, 0.183 for WebP, and 0.6766 for SVG. In the 75th percentile we have 0.5456 bytes-per-pixel for JPEGs, 1.4548 for PNG, 2.515 for GIF, 0.3272 for WebP, and 1.9261 for SVG. In the 90th percentile we have 0.9822 bytes-per-pixel for JPEGs, 2.5026 for PNG, 8.5151 for GIF, 0.6474 for WebP, and 4.1075 for SVG",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive"
   )
 }}
 
@@ -259,11 +225,7 @@ One [Lighthouse](./methodology#lighthouse) test is an A/B comparing baseline wit
   image="fig12_percentage_optimized_images.png",
   caption='Percent "optimized" images.',
   description="Bar chart showing in the 10th percentile 100% of images are optimized, same in 25th percentile, in the 50th percentile 98% of images are optimized (2% not), in the 75th percentile 83% of images are optimized (17% not), and in the 90th percentile 59% of images are optimized and 41% are not.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767"
   )
 }}
 
@@ -273,11 +235,7 @@ The savings in this AB Lighthouse test is not just about potential byte savings,
   image="fig13_project_perf_improvements_image_optimization.png",
   caption="Projected page performance improvements from image optimization from Lighthouse.",
   description="Bar chart showing in the 10th percentile 0 ms could be sized, same in 25th percentile, in the 50th percentile 150 ms could be saved, in the 75th percentile 1,460 ms could be saved and in the 90th percentile 5,720 ms could be saved.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
   )
 }}
 
@@ -297,11 +255,7 @@ The most common method to implement responsive images is to build a list of alte
   image="fig14_html_usage_of_responsive_images.png",
   caption="Percent of pages using responsive images with HTML.",
   description="A bar chart showing 18% of images uses 'sizes', 21% use 'srcset', and 2% use 'picture'.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive"
   )
 }}
 
@@ -332,13 +286,10 @@ The utility of `srcset` is usually dependent on the precision of the `sizes` med
 
  {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
+  alt="Top patterns of img sizes.",
   caption="Top patterns of <code>&lt;img sizes&gt;</code>.",
   description="Bar chart showing 11.3 million images use 'img sizes=\"(max-width: 300px) 100vw, 300px\"', 1.60 million use 'auto', 1.00 million use 'img sizes=\"(max-width: 767px) 89vw...etc.\"', 0.23 million use '100vw' and 0.13 million use '300px'",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
 }}
 
@@ -352,11 +303,7 @@ To enable Client Hints, the web page must signal to the browser using either an 
   image="fig17_usage_of_accept-ch_http_v_html.png",
   caption="Usage of the <code>Accept-CH</code> header versus the equivalent <code>&lt;meta></code> tag.",
   description="Bar chart showing 71% use the 'meta http-equiv', 30% use the 'Accept-CH' HTTP header and 1% use both.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
   )
 }}
 
@@ -368,11 +315,7 @@ Of the Client Hints invoked, the majority of pages use it for the original three
   image="fig18_enabled_client_hints.png",
   caption="Enabled Client Hints.",
   description="A doughnut-style pie-chart showing 26.1% of client hints use 'dpr', 24.3% use 'viewport-width', 19.7% use 'width', 6.7% use 'save-data', 6.1% uses 'device-memory', 6.0% uses 'downlink', 5.6% uses 'rtt' and 5.6% uses 'ect'",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive"
   )
 }}
 
@@ -388,11 +331,7 @@ Earlier, in <a href="#fig-5">Figure 5</a>, we showed that the volume of image co
   image="fig19_lighthouse_audit_offscreen.png",
   caption="Lighthouse audit: Offscreen.",
   description="A bar chart showing in the 10th percentile 0% of images are offscreen, in the 25th percentile 2% are offscreen, in the 50th percentile, 27% are offscreen, in the 75th percentile 64% are offscreen, and in the 90th percentile 84% of images are offscreen.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
   )
 }}
 
@@ -420,11 +359,7 @@ Video can be delivered with many different formats and players. The dominant for
   image="fig20_video_files_by_extension.png",
   caption="Count of video files by extension.",
   description="A bar chart showing 'ts' usage at 1,283,439 for desktop (792,952 for mobile), 'mp4' at 729,757 thousand for desktop (662,015 for mobile), 'webm' at 38,591 for desktop (32,417 for mobile), 'mov' at 22,194 for desktop (14,986 for mobile), 'm4s' at 17,338 for desktop (16,046 for mobile), 'm4v' at 7,466 for desktop (6,169 for mobile).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"
   )
 }}
 
@@ -436,11 +371,7 @@ The median video size for each format is shown below:
   image="fig21_median_vidoe_file_size_by_extension.png",
   caption="Median file size by video extension.",
   description="A bar chart showing 'ts' average file size at 335 KB for desktop (156 KB for mobile), 'mp4' at 175 KB for desktop (128 KB for mobile), 'webm' at 359 KB for desktop (192 KB for mobile), 'mov' at 128 KB for desktop (96 KB for mobile), 'm4s' at 324 KB for desktop (246 KB for mobile), and 'm4v' at 383 KB for desktop (161 KB for mobile)",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"
   )
 }}
 
@@ -454,11 +385,7 @@ When delivering video on the web, most videos are delivered with the HTML5 video
   image="fig22_html_video_tag_attributes_usage.png",
   caption="Usage of HTML video tag attributes.",
   description="A bar chart showing for desktop: 'autoplay' at 11.84%, 'buffered' at 0%, 'controls' at 12.05%, 'crossorigin' at 0.45%, 'currenttime' at 0.01%, 'disablepictureinpicture' at 0.01%, 'disableremoteplayback' at 0.01%, 'duration' at 0.05%, 'height' at 7.33%, 'intrinsicsize' at 0%, 'loop' at 14.57%, 'muted' at 13.92%, 'playsinline' at 6.49%, 'poster' at 8.98%, 'preload' at 11.62%, 'src' at 3.67%, 'use-credentials' at 0%, and 'width' at 9%. And for mobile 'autoplay' at 12.38%, 'buffered' at 0%, 'controls' at 13.88%, 'crossorigin' at 0.16%, 'currenttime' at 0.01%, disablepictureinpicture' at 0.01%, 'disableremoteplayback' at 0.02%, 'duration' at 0.09%, 'height' at 6.54%,  intrinsicsize' at 0%, 'loop' at 14.44%, 'muted' at 13.55%, 'playsinline' at 6.15%, 'poster' at 9.29%, 'preload' at 10.34%, 'src' at 4.13%, 'use-credentials' at 0%, and 'width' at 9.03%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive"
   )
 }}
 
@@ -476,11 +403,7 @@ For more advanced playback (and to play video streams), the HTML5 native video p
   image="fig23_top_javascript_video_players.png",
   caption="Top JavaScript video players.",
   description="Bar chart showing 'flowplayer' used by 3,365 desktop sites (3,400 mobile), 'hls' by 52,375 desktop sites (40,925 mobile), 'jwplayer' by 110,280 desktop sites (96,945 mobile), 'shaka' on 325 desktop sites (275 mobile) and 'video' used on 377,990 desktop sites (391,330 mobile)",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive"
   )
 }}
 

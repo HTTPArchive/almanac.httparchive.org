@@ -31,11 +31,7 @@ Envoyer de plus petits paquets de JavaScript au navigateur est le meilleur moyen
   image="fig1.png",
   caption="Répartition des octets de JavaScript par page.",
   description="Diagramme à barres montrant que 70 octets de JavaScript sont utilisés au 10e percentile, 174 octets au 25e, 373 octets au 50e, 693 octets au 75e et 1093 octets au 90e",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive"
   )
 }}
 
@@ -47,11 +43,7 @@ En regardant ces chiffres, il est naturel de se demander si ce n’est pas trop 
   image="fig2.png",
   caption="Distribution de JavaScript par page et par type d’appareil.",
   description="Un diagramme à barres montrant que 76 octets&#8239;/&#8239;65 octets de JavaScript sont utilisés au 10e percentile sur ordinateur de bureau et mobile respectivement, 186&#8239;/&#8239;164 octets au 25e, 391&#8239;/&#8239;359 octets au 50e, 721&#8239;/&#8239;668 octets au 75e, et 1&#8239;131&#8239;/&#8239;1&#8239;060 octets au 90e.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive"
   )
 }}
 
@@ -67,11 +59,7 @@ Nous pouvons nous faire une idée en analysant les temps de traitement du fil d�
   image="fig3.png",
   caption="Temps de traitement du fil d’exécution principal V8 par appareil.",
   description="Un diagramme à barres indiquant que 141&nbsp;ms&#8239;/&#8239;377&nbsp;ms de temps de traitement sont utilisés au 10e percentile sur le bureau et le mobile respectivement, 352&#8239;/&#8239;988&nbsp;ms au 25e, 849&#8239;/&#8239;2&#8239;437&nbsp;ms au 50e, 1&#8239;850&#8239;/&#8239;5&#8239;518&nbsp;ms au 75e, et 3&#8239;543&#8239;/&#8239;10&#8239;735&nbsp;ms au 90e.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive"
   )
 }}
 
@@ -96,11 +84,7 @@ Une piste à explorer pour analyser la quantité de JavaScript utilisée par les
   image="fig5.png",
   caption="Répartition de l’ensemble des requêtes JavaScript.",
   description="Le diagramme à barres montrant 4&#8239;/&#8239;4 requêtes sur ordinateurs de bureau et mobiles respectivement sont utilisés au 10e percentile, 10&#8239;/&#8239;9 au 25e, 19&#8239;/&#8239;18 au 50e, 33&#8239;/&#8239;32 au 75e et 53&#8239;/&#8239;52 au 90e.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive"
   )
 }}
 
@@ -116,11 +100,7 @@ Le JavaScript tiers peut provenir de n’importe quelle source externe, en tierc
   image="fig6.png",
   caption="Distribution des scripts entre domaine principal et tiers, sur ordinateurs de bureau.",
   description="Diagramme à barres montrant 0&#8239;/&#8239;1 requêtes sur ordinateurs de bureau pour le domaine principal et les domaines tiers respectivement au 10e percentile, 2&#8239;/&#8239;4 25e, 6&#8239;/&#8239;10 au 50e, 13&#8239;/&#8239;21 au 75e, et 24&#8239;/&#8239;38 au 90e.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"
   )
 }}
 
@@ -128,11 +108,7 @@ Le JavaScript tiers peut provenir de n’importe quelle source externe, en tierc
   image="fig7.png",
   caption="Distribution des scripts entre domaine principal et tiers, sur mobile",
   description="Diagramme à barres montrant 0&#8239;/&#8239;1 requêtes sur mobile pour le domaine principal et les domaines tiers respectivement au 10e percentile, 2&#8239;/&#8239;3 au 25e, 5&#8239;/&#8239;9 au 50e, 13&#8239;/&#8239;20 au 75e, et 23&#8239;/&#8239;36 au 90e.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive"
   )
 }}
 
@@ -142,11 +118,7 @@ Tant sur les mobiles que sur les ordinateurs de bureau, les requêtes vers des t
   image="fig8.png",
   caption="Répartition de l’ensemble du JavaScript téléchargé sur ordinateurs de bureau.",
   description="Diagramme à barres montrant 0&#8239;/&#8239;17 octets de JavaScript téléchargés sur ordinateurs de bureau issus de requêtes vers le domaine principal et, respectivement, vers des domaines tiers, au 10 percentile, 11&#8239;/&#8239;62 au 25e, 89&#8239;/&#8239;232 au 50e, 200&#8239;/&#8239;525 au 75e, et 404&#8239;/&#8239;900 au 90e.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive"
   )
 }}
 
@@ -154,11 +126,7 @@ Tant sur les mobiles que sur les ordinateurs de bureau, les requêtes vers des t
   image="fig9.png",
   caption="Répartition de l’ensemble du JavaScript téléchargé sur mobile.",
   description="Diagramme à barres montrant 0&#8239;/&#8239;17 octets de JavaScript téléchargés sur mobiles issus de requêtes vers le domaine principal et, respectivement, vers des domaines tiers, au 10e percentile, 6&#8239;/&#8239;54 au 25e, 83&#8239;/&#8239;217 au 50e, 189&#8239;/&#8239;477 au 75e, et 380&#8239;/&#8239;827 au 90e.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive"
   )
 }}
 
@@ -181,11 +149,7 @@ Combien de sites compressent leurs ressources JavaScript&nbsp;?
   image="fig10.png",
   caption="Pourcentage de sites compressant des ressources JavaScript avec gzip ou brotli.",
   description="Diagramme à barres montrant que 67&nbsp;%&#8239;/&#8239;65&nbsp;% des ressources JavaScript sont compressées avec gzip sur les ordinateurs de bureau et les mobiles respectivement, et 15&nbsp;%&#8239;/&#8239;14&nbsp;% sont compressées en utilisant Brotli.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}
 
@@ -336,11 +300,7 @@ Au cours des dernières années, l’écosystème JavaScript a connu une augment
   image="fig12.png",
   caption='<span lang="en">Frameworks</span> les plus fréquemment utilisés sur ordinateurs de bureau.',
   description="Diagramme à barres montrant que 4,6&nbsp;% des sites utilisent React, 2,0&nbsp;% AngularJS, 1,8&nbsp;% Backbone.js, 0,8&nbsp;% Vue.js, 0,4&nbsp;% Knockout.js, 0,3&nbsp;% Zone.js, 0,3&nbsp;% Angular, 0,1&nbsp;% AMP, 0,1&nbsp;% Ember.js.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
   )
 }}
 
@@ -367,11 +327,7 @@ Combien de site utilisent `type="module"` sur des scripts dans leurs pages&nbsp;
   image="fig13.png",
   caption="Pourcentage de sites utilisant <code>type=module</code>.",
   description="Diagramme à barres montrant que 0,6&nbsp;% des sites sur ordinateurs de bureau utilisent <code>type=module</code>, et 0,8&nbsp;% des sites sur mobiles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive"
   )
 }}
 
@@ -389,11 +345,7 @@ Lorsqu’ils sont utilisés ensemble, les navigateurs qui prennent en charge les
   image="fig14.png",
   caption="Pourcentage de sites utilisant nomodule.",
   description="Diagramme à barres montrant que 0,8&nbsp;% des sites sur ordinateurs de bureau utilisent \"nomodule\", et 0,5&nbsp;% des sites sur mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
   )
 }}
 
@@ -412,11 +364,7 @@ Alors, combien de sites utilisent les directives `preload` et `prefetch`&nbsp;?
   image="fig15.png",
   caption="Pourcentage de sites utilisant <code>rel=preload</code> pour les scripts.",
   description="Diagramme à barres montrant que 14&nbsp;% des sites sur ordinateurs de bureau utilisent <code>rel=preload</code> pour les scripts, et 15&nbsp;% des sites sur mobiles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive"
   )
 }}
 
@@ -428,11 +376,7 @@ Pour `prefetch`, les chiffres sont les suivants&nbsp;:
   image="fig16.png",
   caption="Pourcentage de sites utilisant <code>rel=prefetch</code> pour les scripts.",
   description="Diagramme à barres montrant que 0,08&nbsp;% des sites sur ordinateurs de bureau utilisent <code>rel=prefetch</code>, et 0,08&nbsp;% des sites sur mobiles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive"
   )
 }}
 
@@ -457,11 +401,7 @@ Combien de sites utilisent les API suivantes&nbsp;?
   image="fig17.png",
   caption="Utilisation de nouvelles API JavaScript.",
   description="Diagramme à barres montrant que 25,5&nbsp;%&#8239;/&#8239;36,2&nbsp;% des sites sur ordinateurs de bureau et, respectivement, sur mobile, utilisent WeakMap, 6,1&nbsp;%&#8239;/&#8239;17,2&nbsp;% utilisent WeakSet, 3,9&nbsp;%&#8239;/&#8239;14,0&nbsp;% utilisent Intl, 3,9&nbsp;%&#8239;/&#8239;4,4&nbsp;% utilisent Proxy, 0,4&nbsp;%&#8239;/&#8239;0,4&nbsp;% utilisent Atomics, et 0,2&nbsp;%&#8239;/&#8239;0,2&nbsp;% utilisent SharedArrayBuffer.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive"
   )
 }}
 
@@ -481,11 +421,7 @@ Bien qu’utile, il existe un certain nombre de raisons pour lesquelles de nombr
   image="fig18.png",
   caption='Pourcentage de sites utilisant des <i lang="en">source maps</i>.',
   description='Diagramme à barres montrant que 18&nbsp;% des sites sur ordinateurs de bureau et 17&nbsp;% des sites sur mobiles utilisent des <i lang="en">source maps</i>.',
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"
   )
 }}
 

@@ -302,6 +302,7 @@ The charts below are for desktop requests:
   </table>
 <figcaption>{{ figure_link(caption="Percentiles of the distribution of page weight (in KB) by resource type.") }}</figcaption>
 </figure>
+
 <figure>
   <table>
     <thead>
@@ -410,11 +411,7 @@ The number of [JavaScript](./javascript) requests indicates that better bundling
   image="fig11.png",
   caption="Distribution of HTML bytes (in KB) per ecommerce page.",
   description="Distribution of the 10, 25, 50, 75, and 90th percentiles of HTML bytes per ecommerce page. The median desktop ecommerce page has 36 KB of HTML. The 10th percentile is 12 KB, 25th 20, 75th 66, and 90th 118. Desktop websites have slightly more HTML bytes than mobile by 1 or 2 KB.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive"
   )
 }}
 
@@ -428,11 +425,7 @@ Mobile HTML payload sizes are not very different from desktop. In other words, i
   image="fig12.png",
   caption="Distribution of image bytes (in KB) per ecommerce page.",
   description="Distribution of the 10, 25, 50, 75, and 90th percentiles of image bytes per ecommerce page. The median mobile ecommerce page has 1,517 KB of images. The 10th percentile is 318 KB, 25th 703, 75th 3,132, and 90th 5,881. Desktop and mobile websites have similar distributions.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive"
   )
 }}
 
@@ -440,11 +433,7 @@ Mobile HTML payload sizes are not very different from desktop. In other words, i
   image="fig13.png",
   caption="Distribution of image requests per ecommerce page.",
   description="Distribution of the 10, 25, 50, 75, and 90th percentiles of image requests per ecommerce page. The median desktop ecommerce page makes 40 image requests. The 10th percentile is 16 requests, 25th 25, 75th 62, and 90th 97. The desktop distribution is slightly higher than mobile by 2-10 requests at each percentile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive"
   )
 }}
 
@@ -471,11 +460,7 @@ We need to do more analysis to better understand why some sites are not using re
   image="fig15.png",
   caption="Popular image formats.",
   description="Bar chart showing the popularity of various image formats. JPEG is the most popular format at 54% of images on desktop ecommerce pages. Next are PNG at 27%, GIF at 14%, SVG at 2%, and WebP and ICO at 1% each.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive"
   )
 }}
 
@@ -566,11 +551,7 @@ Many websites—especially online stores—load a significant amount of code and
   image="fig17.png",
   caption="Distribution of third-party requests per ecommerce page.",
   description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page. The median number of third-party requests on desktop is 19. The 10, 25, 75, and 90th percentiles are: 4, 9, 34, and 54. The desktop distribution is higher at each percentile than mobile by only 1-2 requests.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive"
   )
 }}
 
@@ -578,11 +559,7 @@ Many websites—especially online stores—load a significant amount of code and
   image="fig18.png",
   caption="Distribution of third-party bytes per ecommerce page.",
   description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes per ecommerce page. The median number of third-party bytes on desktop is 320 KB. The 10, 25, 75, and 90th percentiles are: 42, 129, 651, and 1,071. The desktop distribution is higher at each percentile than mobile by 10-30 KB.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive"
   )
 }}
 
@@ -598,11 +575,7 @@ Note the charts and tables below show data for mobile only.
   image="fig19.png",
   caption="Distribution of third-party requests per mobile page for each ecommerce platform.",
   description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party requests per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party requests across the distributions by about 40 requests at the median.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive"
   )
 }}
 
@@ -610,11 +583,7 @@ Note the charts and tables below show data for mobile only.
   image="fig20.png",
   caption="Distribution of third-party bytes (KB) per mobile page for each ecommerce platform.",
   description="Distribution of the 10, 25, 50, 75, and 90th percentiles of third-party bytes (KB) per ecommerce page for each platform. Shopify and Bigcommerce load the most third-party bytes across the distributions by more than 1,000 KB at the median.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive"
   )
 }}
 
@@ -628,11 +597,7 @@ Clearly, pages on some ecommerce platforms make more requests for third-party co
   image="fig21.png",
   caption="Average distribution of FCP experiences per ecommerce platform.",
   description="Bar chart of the average distribution of FCP experiences for the top six ecommerce platforms. WooCommerce has the highest density of slow FCP experiences at 43%. Shopify has the highest density of fast FCP experiences at 47%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive"
   )
 }}
 
@@ -650,11 +615,7 @@ See also the [PWA chapter](./pwa) for more information on this topic beyond just
   image="fig22.png",
   caption="Distribution of Lighthouse PWA category scores for mobile ecommerce pages.",
   description="Distribution of Lighthouse's PWA category scores for ecommerce pages. On a scale of 0 (failing) to 1 (perfect), 40% of pages get a score of 0.33. 1% of pages get a score above 0.6.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive"
   )
 }}
 

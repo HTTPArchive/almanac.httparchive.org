@@ -411,11 +411,7 @@ Eコマースページでは、画像が最大のリクエスト数とバイト�
   image="fig11.png",
   caption="EコマースページあたりのHTMLバイト数の分布（KB単位）。",
   description="EコマースページあたりのHTMLバイトの10、25、50、75、および90パーセンタイルの分布。中央値のデスクトップ Eコマースページには、36KBのHTMLがあります。10パーセンタイルは12KB、25パーセンタイルは20、75パーセンタイルは66、90パーセンタイルは118です。デスクトップWebサイトの HTMLバイト数は、モバイルよりも1～2KB多いです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive"
   )
 }}
 
@@ -429,11 +425,7 @@ HTMLペイロードには、外部リンクとして参照されるのではな�
   image="fig12.png",
   caption="Eコマースページごとの画像バイト数の分布（KB単位）。",
   description="Eコマースページあたりの画像バイト数の10、25、50、75、および90パーセンタイルの分布。中央値のモバイルEコマースページには、1,517KBの画像があります。10パーセンタイルは318KB、25パーセンタイルは703、75パーセンタイルは3,132、90パーセンタイルは5,881です。デスクトップとモバイルのウェブサイトでは、同様の分布を示しています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive"
   )
 }}
 
@@ -441,11 +433,7 @@ HTMLペイロードには、外部リンクとして参照されるのではな�
   image="fig13.png",
   caption="Eコマースページごとの画像リクエストの分布。",
   description="Eコマースページあたりの画像リクエストの10、25、50、75、および90パーセンタイルの分布。中央値のデスクトップEコマースページでは、40件の画像リクエストが発生します。10パーセンタイルはリクエストが16件、25パーセンタイルは25件、75パーセンタイルは62件、90パーセンタイルは97件です。デスクトップの分布は、各パーセンタイルで2～10件のリクエストがモバイルよりもわずかに高くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive"
   )
 }}
 
@@ -472,11 +460,7 @@ Eコマースページのかなりの割合で、大きな画像ペイロード�
   image="fig15.png",
   caption="一般的な画像フォーマット。",
   description="様々な画像フォーマットの人気を示す棒グラフ。JPEGが最も人気のあるフォーマットで、デスクトップEコマースページの画像の54％を占めています。次いでPNGが27％、GIFが14％、SVGが2％、WebPとICOがそれぞれ1％となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive"
   )
 }}
 
@@ -567,11 +551,7 @@ Eコマースページで要求された画像の中央値（「中間値」）�
   image="fig17.png",
   caption="Eコマースページごとのサードパーティリクエストの分布。",
   description="Eコマースページあたりのサードパーティリクエストの10、25、50、75、90パーセンタイルの分布。デスクトップでのサードパーティリクエストの数の中央値は19です。10、25、75、90パーセンタイルは4、9、34、54となっています。デスクトップの分布は、各パーセンタイルでモバイルよりも1-2件のリクエスト数だけ高くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive"
   )
 }}
 
@@ -579,11 +559,7 @@ Eコマースページで要求された画像の中央値（「中間値」）�
   image="fig18.png",
   caption="Eコマースページあたりのサードパーティのバイト数の分布。",
   description="Eコマースページあたりのサードパーティのバイト数の10、25、50、75、90パーセンタイルの分布。デスクトップでのサードパーティのバイト数の中央値は320KBです。10、25、75、90パーセンタイルは次のとおりです。42、129、651、1,071。デスクトップの分布は、各パーセンタイルでモバイルよりも10～30KB高くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive"
   )
 }}
 
@@ -599,11 +575,7 @@ Eコマースプラットフォーム上の中央値（「中規模」）のホ�
   image="fig19.png",
   caption="各Eコマースプラットフォームのモバイルページごとのサードパーティリクエストの分布。",
   description="各プラットフォームのEコマースページあたりのサードパーティリクエストの10、25、50、75、および90パーセンタイルの分布。ShopifyとBigcommerceは、分布の中央値で約40件のサードパーティのリクエストをロードしています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive"
   )
 }}
 
@@ -611,11 +583,7 @@ Eコマースプラットフォーム上の中央値（「中規模」）のホ�
   image="fig20.png",
   caption="各Eコマースプラットフォームのモバイルページあたりのサードパーティのバイト数（KB）分布。",
   description="各プラットフォームのEコマースページあたりのサードパーティのバイト数(KB)の10、25、50、75、および90パーセンタイルの分布。ShopifyとBigcommerceは、中央値で1,000KBを超え、分布全体で最も多くのサードパーティのバイトをロードします。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive"
   )
 }}
 
@@ -629,11 +597,7 @@ Shopifyのようなプラットフォームでは、クライアントサイド�
   image="fig21.png",
   caption="Eコマースプラットフォーム毎のFCP体験の平均分布。",
   description="上位6つのEコマースプラットフォームのFCPエクスペリエンスの平均分布の棒グラフ。WooCommerceは、遅いFCP体験の密度が43%と最も高くなっています。Shopifyは、高速FCP体験の密度が47%で最も高くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive"
   )
 }}
 
@@ -651,11 +615,7 @@ Eコマースサイト以外のこのトピックの詳細については、[PWA
   image="fig22.png",
   caption="モバイルEコマースページのLighthouse PWAカテゴリスコアの分布。",
   description="EコマースページのLighthouseのPWAカテゴリスコアの分布。0（失敗）から1（完璧）のスケールで、ページの40％が0.33のスコアを取得します。ページの1％が0.6以上のスコアを取得しています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive"
   )
 }}
 

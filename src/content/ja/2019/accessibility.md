@@ -68,11 +68,7 @@ Webページの主な目的はユーザーの興味を引くコンテンツを�
   image="fig2.png",
   caption="ズームとスケーリングを無効にしているサイトとデバイスの種類の割合。",
   description="20刻みの0から80までの垂直測定パーセンテージデータ。デバイスタイプをデスクトップとモバイルでグループ化しています。デスクトップで有効なのは 75.46%無効が24.54%、モバイルで有効なのは67.79%無効が32.21%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"
   )
 }}
 
@@ -130,11 +126,7 @@ alt属性は25年前から存在していますが、49.91％のページで画�
   image="fig3.png",
   caption="見出しレベルの人気。",
   description="20毎に0から80の範囲のパーセンテージデータを測定する垂直棒グラフ。各見出しはh1〜h6レベルを表します。H1：63.25％、H2：67.86％、H3：58.63％、H4：36.38％、H5：14.64％、H6：6.91％。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"
   )
 }}
 
@@ -148,11 +140,7 @@ alt属性は25年前から存在していますが、49.91％のページで画�
   image="fig4.png",
   caption="「main」ランドマークの数によるページの割合。",
   description="20毎に0〜80の範囲のパーセントデータを表示する垂直棒グラフと、0〜4のページごとの「main」ランドマークの数を表すバー。ソース：HTTP Archive （2019年7月）。 0：73.97％、1：17.97％、2：7.41％、3：0.15％; 4：0.06％。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
   )
 }}
 
@@ -170,11 +158,7 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
   image="fig5.png",
   caption="色々なHTMLセマンティック要素の利用率。",
   description="各要素のバーと20毎に0〜60の範囲のページの割合を表す水平線を含む縦棒グラフ。nav：53.94％、header：54.82％、footer：55.92％、main：18.47％、aside：16.99％、article：22.59％、hr：19.1％、section：36.55%。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
   )
 }}
 
@@ -186,11 +170,7 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
   image="fig6.png",
   caption="ナビゲーションで使われるその他のHTML要素。",
   description="各要素を示すバーと、25毎に0~100の範囲でページの割合を示す縦棒グラフ。a：98.22％、ul：88.62％、input：76.63％、iframe：60.39％、button：56.74％、select：19.68％、textarea：12.03%。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
   )
 }}
 
@@ -208,6 +188,8 @@ HTML5は2008年リリースされ、2014年に公式の標準となっている�
   height=333
   )
 }}
+
+実際、[ここでも使用する]https://github.com/HTTPArchive/almanac.httparchive.org/pull/645）ので、このサイトを離れる必要もありません。
 
 サイトを分析するときに、正しいスキップリンクを判断するのは困難です。なのでこの分析ではページの最初の3つのリンク内にアンカーリンク（`href=#heading1`）が見つかった場合、それをスキップリンクのあるページと定義しました。つまり14.19％というのは厳密には上限です。
 
@@ -253,11 +235,7 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
   image="fig8.png",
   caption="総ページ数とARIA属性の割合。",
   description="0〜25の範囲で5ずつ増加するパーセントデータと、各属性のバーを表示する垂直棒グラフ。 aria-hidden：23.46％、aria-label：17.67％、aria-expanded：8.68％、aria-current：7.76％、aria-labelledby：6.85％、aria-controls：3.56％、aria-haspopup：2.62％、aria-invalid：2.68％、aria-describedby：1.69％、aria-live：1.04％、aria-required：1％",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
   )
 }}
 
@@ -271,11 +249,7 @@ ARIAを適切かつ正しく使うのは難しい場合があります。例え�
   image="fig9.png",
   caption="ariaロールトップ10。",
   description="0から25までの範囲で5ずつ増加サイトの割合と各ロールタイプのバーを備えた垂直棒グラフ。Navigation：20.4％。 search：15.49％; main：14.39％; banner：13.62％; contentinfo：11.23％; button：10.59％; dialog：7.87％; complementary：6.06％; menu：4.71％; form：3.75％",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
   )
 }}
 

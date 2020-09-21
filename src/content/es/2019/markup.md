@@ -68,11 +68,7 @@ tr | span | option
   image="fig3.png",
   caption="Frecuencias de elementos de acuerdo al 2019.",
   description="El gráfico que muestra alrededor de 2.500 páginas comienza con aproximadamente 30 elementos, esto aumenta con un máximo de 6.876 páginas con 283 elementos, antes de llegar bastante linealmente a 327 páginas con 2.000 elementos.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&format=interactive"
   )
 }}
 
@@ -91,11 +87,7 @@ Comparando los últimos datos en la Figura 3 con los del informe de Hixie de 200
   image="fig5.png",
   caption="Histograma de tipos de elementos por página a partir de 2019.",
   description="El gráfico que muestra el número promedio de elementos es una curva de campana alrededor de los 30 elementos marcados, utilizados por 308,168 mil sitios.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&format=interactive"
   )
 }}
 
@@ -131,11 +123,7 @@ Además, el 15% de las páginas de escritorio y el 16% de las páginas móviles 
   image="fig6.png",
   caption="Elementos en desuso más utilizados.",
   description="Bar chart showing 'center' in use by 8.31% of desktop sites (7.96% of mobile), 'font' in use by 8.01% of desktop sites (7.38% of mobile), 'marquee' in use by 1.07% of desktop sites (1.20% of mobile), 'nobr' in use by 0.71% of desktop sites (0.55% of mobile), 'big' in use by 0.53% of desktop sites (0.47% of mobile), 'frameset' in use by 0.39% of desktop sites (0.35% of mobile), 'frame' in use by 0.39% of desktop sites (0.35% of mobile), 'strike' in use by 0.33% of desktop sites (0.27% of mobile), and 'noframes' in use by 0.25% of desktop sites (0.27% of mobile).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&format=interactive"
   )
 }}
 
@@ -147,6 +135,7 @@ Para discutir números sobre el uso de elementos (estándar, obsoleto o personal
 
 {{ figure_markup(
   image="fig7_full.png",
+  alt="Principales 150 elementos",
   caption='Principales 150 elementos (<a href="fig7_full.png">detalle completo</a>).',
   description="Gráfico de barras que muestra un uso decreciente de elementos en orden descendente: html, head, body, title por encima del 99% de uso, meta, a, div por encima del 98% de uso, link, script, img, span por encima del 90% de uso, ul, li , p, style, input, br, form por encima del 70% de uso, h2, h1, iframe, h3, button, footer, header, nav por encima del 50% de uso y otras etiquetas menos conocidas que descienden desde menos del 50% hasta casi 0 % de uso.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1694360298&format=interactive",

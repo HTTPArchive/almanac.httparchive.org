@@ -31,11 +31,7 @@ JavaScriptは、私たちがブラウザに送るリソースの中で最もコ�
   image="fig1.png",
   caption="ページあたりのJavaScriptバイト数の分布",
   description="10パーセンタイルで70バイト、25パーセンタイルで174バイト、50パーセンタイルで373バイト、75パーセンタイルで693バイト、90パーセンタイルで1,093バイトのJavaScriptを使用していることを示す棒グラフ",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive"
   )
 }}
 
@@ -47,11 +43,7 @@ JavaScriptは、私たちがブラウザに送るリソースの中で最もコ�
   image="fig2.png",
   caption="デバイス別のページあたりのJavaScriptの分布。",
   description="デスクトップとモバイルでそれぞれ10パーセンタイルで76バイト/65バイトのJavaScriptを使用していることを示す棒グラフで、25パーセンタイルで186/164バイト、50パーセンタイルで391/359バイト、75パーセンタイルで721/668バイト、90パーセンタイルで1,131/1,060バイトとなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive"
   )
 }}
 
@@ -67,11 +59,7 @@ V8のメインスレッドの処理時間を異なるパーセンタイルで分
   image="fig3.png",
   caption="デバイス別のV8メインスレッド処理時間。",
   description="処理時間をデスクトップとモバイルでそれぞれ10パーセンタイルで141ms/377ms、25パーセンタイルで352/988ms、50パーセンタイルで849/2,437ms、75パーセンタイルで1,850/5,518ms、90パーセンタイルで3,543/10,735msとした棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive"
   )
 }}
 
@@ -96,11 +84,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
   image="fig5.png",
   caption="総JavaScriptリクエスト数の分布。",
   description="10パーセンタイルではデスクトップとモバイルそれぞれ4/4のリクエストを示す棒グラフ、25パーセンタイルでは10/9、50パーセンタイルでは19/18、75パーセンタイルでは33/32、90パーセンタイルでは53/52が使用されています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive"
   )
 }}
 
@@ -116,11 +100,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
   image="fig6.png",
   caption="デスクトップ上のファーストスクリプトとサードパーティスクリプトの分布。",
   description="デスクトップ上で10パーセンタイルでは0/1リクエストがファーストパーティとサードパーティであることを示す棒グラフが表示されています、25パーセンタイルでは2/4、50パーセンタイルでは6/10、75パーセンタイルでは13/21、90パーセンタイルでは24/38となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"
   )
 }}
 
@@ -128,11 +108,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
   image="fig7.png",
   caption="モバイル上のファーストパーティとサードパーティのスクリプトの分布。",
   description="モバイルで10パーセンタイルでは0/1リクエストがファーストパーティとサードパーティであることを示す棒グラフが表示されています、25パーセンタイルでは2/3、50パーセンタイルでは5/9、75パーセンタイルでは13/20、90パーセンタイルでは23/36となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive"
   )
 }}
 
@@ -142,11 +118,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
   image="fig8.png",
   caption="デスクトップ上でダウンロードされたJavaScriptの総ダウンロード数の分布。",
   description="10パーセンタイルでは、ファーストパーティとサードパーティのリクエストに対してデスクトップ上で0/17バイトのJavaScriptがダウンロードされていることを示す棒グラフ、25パーセンタイルでは11/62、50パーセンタイルでは89/232、75パーセンタイルでは200/525、90パーセンタイルでは404/900である。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive"
   )
 }}
 
@@ -154,11 +126,7 @@ Webページで使用されているJavaScriptの量を分析しようとする�
   image="fig9.png",
   caption="モバイルでダウンロードされたJavaScriptの総ダウンロード数の分布。",
   description="棒グラフは、10パーセンタイルではファーストパーティとサードパーティのリクエストでそれぞれ0/17バイトの JavaScriptがモバイルでダウンロードされていることを示していますが、25パーセンタイルでは6/54、50パーセンタイルでは83/217、75パーセンタイルでは189/477、90パーセンタイルでは380/827です。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive"
   )
 }}
 
@@ -181,11 +149,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
   image="fig10.png",
   caption="JavaScript リソースをgzipまたはbrotliで圧縮しているサイトの割合。",
   description="バーチャートを見ると、デスクトップとモバイルでそれぞれJavaScriptリソースの67%/65%がgzipで圧縮されており、15%/14%がBrotliで圧縮されていることがわかります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}
 
@@ -336,11 +300,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
   image="fig12.png",
   caption="デスクトップで最もよく使われるフレームワーク",
   description="Reactを使用しているサイトは4.6％、AngularJSを使用しているサイトは2.0％、Backbone.jsを使用しているサイトは1.8％、Vue.jsを使用しているサイトは0.8％、Knockout.jsを使用しているサイトは0.4％、Zone.jsを使用しているサイトは0.3％、Angularを使用しているサイトは0.3％、AMPを使用しているサイトは0.1％、Ember.jsを使用しているサイトは0.1％という棒グラフになっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
   )
 }}
 
@@ -367,11 +327,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
   image="fig13.png",
   caption="type=moduleを利用しているサイトの割合。",
   description="デスクトップでは0.6%のサイトが「type=module」を使用しており、モバイルでは0.8%のサイトが使用していることを示す棒グラフです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive"
   )
 }}
 
@@ -389,11 +345,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
   image="fig14.png",
   caption="nomoduleを使用しているサイトの割合。",
   description="デスクトップでは0.8％のサイトが「nomobule」を利用しており、モバイルでは0.5％のサイトが利用していることを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
   )
 }}
 
@@ -412,11 +364,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
   image="fig15.png",
   caption="スクリプトにrel=preloadを使用しているサイトの割合。",
   description="バーチャートを見ると、デスクトップでは14%のサイトがスクリプトに'rel=preload'を使用しており、モバイルでは15%のサイトがスクリプトにrel=preloadを使用していることがわかります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive"
   )
 }}
 
@@ -428,11 +376,7 @@ HTTP Archiveで測定したすべてのサイトで、デスクトップサイ�
   image="fig16.png",
   caption="スクリプトにrel=prefetchを使用しているサイトの割合。",
   description="デスクトップでは0.08%のサイトが「rel=prefetch」を使用しており、モバイルでは0.08%のサイトが使用していることを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive"
   )
 }}
 
@@ -457,11 +401,7 @@ HTTP Archiveを使用すると、サポートされている（あるいはこ�
   image="fig17.png",
   caption="新しいJavaScript APIの利用法",
   description="バーチャートを見ると、デスクトップとモバイルのサイトの25.5%/36.2%がWeakMap、6.1%/17.2%がWeakSet、3.9%/14.0%がIntl、3.9%/4.4%がProxy、0.4%/0.4%がAtomics、0.2%/0.2%がSharedArrayBufferを使用していることがわかります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive"
   )
 }}
 
@@ -481,11 +421,7 @@ Atomics(0.38％)とSharedArrayBuffer(0.20％)は、使用されているペー�
   image="fig18.png",
   caption="ソースマップを使用しているサイトの割合。",
   description="デスクトップサイトの18％、モバイルサイトの17％がソースマップを使用していることを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"
   )
 }}
 

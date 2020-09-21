@@ -47,11 +47,7 @@ Nous avons évalué le contenu des pages en recherchant des groupes d'au moins 3
   image="fig1.png",
   caption="Distribution du nombre de mots par page.",
   description="Distribution du nombre de mots par page. Le nombre médian de mots par page de bureau est de 346 et 306 pour les pages mobiles. Les pages de bureau contiennent plus de mots dans les centiles, jusqu'à 120 mots au 90e centile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&format=interactive"
   )
 }}
 
@@ -65,11 +61,7 @@ Nous avons également examiné si les pages sont structurées de manière à fou
   image="fig2.png",
   caption="Répartition du nombre de titres par page.",
   description="Répartition du nombre de titres par page. Répartition des titres par page. Le nombre médian d'en-têtes par page de bureau et mobile est de 10. Aux 10, 25, 75 et 90e centiles, le nombre d'en-têtes par page de bureau est de 0, 3, 21 et 39. C'est légèrement plus élevé que la distribution d'en-têtes mobiles par page.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&format=interactive"
   )
 }}
 
@@ -79,11 +71,7 @@ Le nombre médian d'éléments de titre par page est de 10. Les titres contienne
   image="fig3.png",
   caption="Répartition du nombre de caractères dans le premier H1 par page.",
   description="Répartition du nombre de caractères dans le premier H1 par page. Les distributions de bureau et mobile sont presque identiques, avec les 10, 25, 50, 75 et 90e centiles sous la forme: 6, 11, 19, 31 et 47 caractères.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&format=interactive"
   )
 }}
 
@@ -110,11 +98,7 @@ Les titres de page sont un moyen important de communiquer l'objectif d'une page 
   image="fig5.png",
   caption="Distribution de la longueur du titre par page.",
   description="Répartition du nombre de caractères par élément de titre par page. Les 10, 25, 50, 75 et 90e centiles des longueurs de titre pour le bureau sont&nbsp;: 4, 9, 20, 40 et 66 caractères. La distribution mobile est très similaire",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&format=interactive"
   )
 }}
 
@@ -128,11 +112,7 @@ Par rapport à la balise `title`, moins de pages ont implémenté une méta desc
   image="fig6.png",
   caption="Distribution des pages par longueurs de meta description.",
   description="Répartition du nombre de caractères par méta description par page. Les 10, 25, 50, 75 et 90e centiles des longueurs de titre pour le bureau sont&nbsp;: 9, 48, 123, 162 et 230 caractères. La distribution mobile est légèrement supérieure de moins de 10 caractères à un centile donné.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&format=interactive"
   )
 }}
 
@@ -191,11 +171,7 @@ Il est important de garder à l'esprit que moins de liens internes sur la versio
   image="fig7.png",
   caption="Répartition du nombre de liens internes par page.",
   description="Répartition du nombre de liens internes par page. Les 10, 25, 50, 75 et 90e centiles de liens internes pour les ordinateurs de bureau sont&nbsp;: 7, 29, 70, 142 et 261. La distribution mobile est beaucoup plus faible, de 30 liens au 90e centile et 10 à la médiane.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&format=interactive"
   )
 }}
 
@@ -203,11 +179,7 @@ Il est important de garder à l'esprit que moins de liens internes sur la versio
   image="fig8.png",
   caption="Répartition du nombre de liens externes par page.",
   description="Répartition du nombre de liens externes par page. Les 10, 25, 50, 75 et 90e centiles de liens externes pour ordinateur de bureau sont&nbsp;: 1, 4, 10, 22 et 51. La distribution mobile est beaucoup plus faible, de 11 liens au 90e centile et 2 au médian",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&format=interactive"
   )
 }}
 
@@ -217,11 +189,7 @@ La page de bureau médiane comprend 70 liens internes (même site), tandis que l
   image="fig9.png",
   caption="Répartition du nombre de liens d'ancrage par page.",
   description="Répartition du nombre de liens d'ancrage par page. Les 10, 25, 50, 75 et 90e centiles d'ancrage interne pour le bureau sont&nbsp;: 0, 0, 0, 1 et 3. La distribution sur mobile est identique.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&format=interactive"
   )
 }}
 
@@ -247,11 +215,7 @@ Les métriques que nous avons utilisées pour notre analyse de la vitesse de cha
   image="fig10.png",
   caption="Distribution des performances des expériences utilisateur par type d'appareil.",
   description="Distribution des performances des expériences utilisateur des ordinateurs de bureau, des téléphones et des tablettes. Ordinateur de bureau&nbsp;: 2 % rapide, 52 % modéré, 46 % lent. Téléphone&nbsp;: 1 % rapide, 41 % modéré, 58 % lent. Tablette&nbsp;: 0 % rapide, 35 % modérée, 65 % lente.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&format=interactive"
   )
 }}
 

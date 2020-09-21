@@ -271,11 +271,7 @@ HTTP/2プッシュは、HTTP/2の大いに宣伝された新機能であるに�
   image="ch20_fig13_what_push_is_used_for.png",
   caption="プッシュはどの資産タイプに使用されますか？",
   description="プッシュされるアセットタイプの割合を分類する円グラフ。 JavaScriptがアセットのほぼ半分を構成し、次にCSSが約4分の1、画像が約8分の1、残りをテキストベースのさまざまなタイプで構成します。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQLxLA5Nojw28P7ceisqti3oTmNSM-HIRIR0bDb2icJS5TzONvRhdqxQcooh_45TmK97XVpot4kEQA0/pubchart?oid=466353517&format=interactive"
   )
 }}
 図13は、最も一般的にプッシュされるアセットを示しています。 JavaScriptとCSSは、ボリュームとバイトの両方で、プッシュされるアイテムの圧倒的多数です。この後、画像、フォント、およびデータのラグタグの種類があります。最後にビデオをプッシュしているサイトは約100あることがわかりますが、これは意図的なものであるか、間違ったタイプのアセットを過剰にプッシュしている兆候かもしれません！

@@ -31,11 +31,7 @@ Enviar paquetes de JavaScript más pequeños al navegador es la mejor manera de 
   image="fig1.png",
   caption="Distribución de bytes de JavaScript por página.",
   description="Gráfico de barras que muestra que 70 bytes de JavaScript se usa en el percentil 10, 174 bytes para percentil 25, 373 bytes para percentil 50, 693 bytes para percentil 75 y 1.093 bytes para percentil 90",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive"
   )
 }}
 
@@ -47,11 +43,7 @@ Mirando estos números, es natural preguntarse si esto es demasiado JavaScript. 
   image="fig2.png",
   caption="Distribución de JavaScript por página por dispositivo.",
   description="Gráfico de barras que muestra 76 bytes / 65 bytes de JavaScript se usa en el percentil 10 en computadoras de escritorio y dispositivos móviles respectivamente, 186/164 bytes para percentil 25, 391/359 bytes para percentil 50, 721/668 bytes para percentil 75 y 1.131 / 1.060 bytes para percentil 90 .",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1914565673&format=interactive"
   )
 }}
 
@@ -67,11 +59,7 @@ Podemos tener una idea analizando los tiempos de procesamiento de subprocesos pr
   image="fig3.png",
   caption="Tiempos de procesamiento de subprocesos principales según V8 por dispositivo.",
   description="Gráfico de barras que muestra 141 ms / 377 ms de tiempo de procesamiento se utiliza en el percentil 10 en computadoras de escritorio y dispositivos móviles respectivamente, 352/988 ms para percentil 25, 849 / 2.437 ms para percentil 50, 1.850 / 5.518 ms para percentil 75 y 3.543 / 10.735 ms para percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive"
   )
 }}
 
@@ -96,11 +84,7 @@ Una vía que vale la pena explorar al tratar de analizar la cantidad de JavaScri
   image="fig5.png",
   caption="Distribución del total de solicitudes de JavaScript.",
   description="Gráfico de barras que muestra 4/4 solicitudes se utilizan para computadoras de escritorio y dispositivos móviles respectivamente en el percentil 10, 10/9 en percentil 25, 19/18 en percentil 50, 33/32 en percentil 75 y 53/52 en percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive"
   )
 }}
 
@@ -116,11 +100,7 @@ JavaScript de contenido de terceros puede provenir de cualquier fuente externa d
   image="fig6.png",
   caption="Distribución de scripts de origen y de terceros en dispositivos de escritorio.",
   description="Gráfico de barras que muestra las solicitudes 0/1 en el escritorio es contenido de origen y contenido de terceros, respectivamente, en el percentil 10, 2/4 en la percentil 25, 6/10 en la percentil 50, 13/21 en la percentil 75 y 24/38 en la percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"
   )
 }}
 
@@ -128,11 +108,7 @@ JavaScript de contenido de terceros puede provenir de cualquier fuente externa d
   image="fig7.png",
   caption="Distribución de scripts de origen  y de terceros en dispositivos móviles.",
   description="Gráfico de barras que muestra las solicitudes 0/1 en dispositivos móviles es de contenido de origen y contenido de terceros, respectivamente, en el percentil 10, 2/3 en la percentil 25, 5/9 en la percentil 50, 13/20 en la percentil 75 y 23/36 en la percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive"
   )
 }}
 
@@ -142,11 +118,7 @@ Para clientes móviles y de escritorio, se envían más solicitudes de contenido
   image="fig8.png",
   caption="Distribución del JavaScript total descargado en dispositivos de escritorio.",
   description="Gráfico de barras que muestra 0/17 bytes de JavaScript se descarga en dispositivos de escritorio para contenido de origen y contenido de terceros, respectivamente, en el percentil 10, 11/62 en percentil 25, 89/232 en percentil 50, 200/525 en percentil 75 y 404/900 en percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive"
   )
 }}
 
@@ -154,11 +126,7 @@ Para clientes móviles y de escritorio, se envían más solicitudes de contenido
   image="fig9.png",
   caption="Distribución del JavaScript total descargado en dispositivos móviles.",
   description="Gráfico de barras que muestra 0/17 bytes de JavaScript se descarga en dispositivos móviles para contenido de origen y contenido de terceros, respectivamente, en el percentil 10, 6/54 en percentil 25, 83/217 en percentil 50, 189/477 en percentil 75 y 380/827 en percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive"
   )
 }}
 
@@ -181,11 +149,7 @@ Los scripts comprimidos siempre deberán ser descomprimidos por el navegador una
   image="fig10.png",
   caption="Porcentaje de sitios que comprimen recursos de JavaScript con gzip o brotli.",
   description="Gráfico de barras que muestra el 67% / 65% de los recursos de JavaScript se comprime con gzip en computadoras de escritorio y dispositivos móviles respectivamente, y el 15% / 14% se comprime con Brotli.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive"
   )
 }}
 
@@ -195,9 +159,7 @@ Para un análisis más profundo sobre la compresión, consulte el capítulo de [
 
 ## Bibliotecas y frameworks de código abierto
 
-Código fuente abierto, o código con una licencia permisiva a la que cualquier persona pueda acceder, ver y modificar. Desde pequeñas bibliotecas hasta navegadores completos, como [Chromium](https://www.chromium.org/Home) y [Firefox](https://www.openhub.net/p/firefox), el código fuente abierto juega un papel crucial en el mundo del desarrollo web. En el contexto de JavaScript, los desarrolladores confían en herramientas de código abierto para incluir todo tipo de funcionalidad en su página web. Independientemente de si un desarrollador decide usar una pequeña biblioteca de utilidades o un framework masivo que dicta la arquitectura de toda su aplicación, confiar en paquetes de código abierto puede hacer que el desarrollo de funciones sea más fácil y rápido.
-
-**¿Qué bibliotecas de código abierto de JavaScript se usan más?**
+Código fuente abierto, o código con una licencia permisiva a la que cualquier persona pueda acceder, ver y modificar. Desde pequeñas bibliotecas hasta navegadores completos, como [Chromium](https://www.chromium.org/Home) y [Firefox](https://www.openhub.net/p/firefox), el código fuente abierto juega un papel crucial en el mundo del desarrollo web. En el contexto de JavaScript, los desarrolladores confían en herramientas de código abierto para incluir todo tipo de funcionalidad en su página web. Independientemente de si un desarrollador decide usar una pequeña biblioteca de utilidades o un framework masivo que dicta la arquitectura de toda su aplicación, confiar en paquetes de código abierto puede hacer que el desarrollo de funciones sea más fácil y rápido. ¿Qué bibliotecas de código abierto de JavaScript se usan más?
 
 <figure>
    <table>
@@ -330,19 +292,13 @@ Otras bibliotecas JavaScript más utilizadas incluyen variantes de jQuery (jQuer
 
 ### Frameworks y bibliotecas de UI
 
-En los últimos años, el ecosistema de JavaScript ha visto un aumento en las bibliotecas y frameworks de código abierto para facilitar la construcción de **aplicaciones de página única** (SPA por sus siglas en inglés). Una aplicación página única se caracteriza por ser una página web que carga una sola página HTML y usa JavaScript para modificar la página en la interacción del usuario en lugar de buscar nuevas páginas del servidor. Aunque esta sigue siendo la premisa principal de las aplicaciones de página única, todavía se pueden utilizar diferentes enfoques de representación del servidor para mejorar la experiencia de dichos sitios.
-
-**¿Cuántos sitios usan este tipo de frameworks?**
+En los últimos años, el ecosistema de JavaScript ha visto un aumento en las bibliotecas y frameworks de código abierto para facilitar la construcción de **aplicaciones de página única** (SPA por sus siglas en inglés). Una aplicación página única se caracteriza por ser una página web que carga una sola página HTML y usa JavaScript para modificar la página en la interacción del usuario en lugar de buscar nuevas páginas del servidor. Aunque esta sigue siendo la premisa principal de las aplicaciones de página única, todavía se pueden utilizar diferentes enfoques de representación del servidor para mejorar la experiencia de dichos sitios. ¿Cuántos sitios usan este tipo de frameworks?
 
 {{ figure_markup(
   image="fig12.png",
   caption="Los frameworks más utilizados en el escritorio.",
   description="Gráfico de barras que muestra que el 4,6% de los sitios usan React, 2,0% AngiularJS, 1,8% Backbone.js, 0,8% Vue.js, 0,4% Knockout.js, 0,3% Zone.js, 0,3% Angular, 0,1% AMP, 0,1% Ember. js.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
   )
 }}
 
@@ -371,11 +327,7 @@ Para declarar un script como módulo, la etiqueta del script debe tener el códi
   image="fig13.png",
   caption="Porcentaje de sitios que utilizan type=module.",
   description="Gráfico de barras que muestra el 0,6% de los sitios en computadoras de escritorio usan 'type=module' y el 0,8% de los sitios en dispositivos móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive"
   )
 }}
 
@@ -387,19 +339,13 @@ Si se usan módulos nativos, es importante asegurarse de que se use un script de
 <script nomodule src="fallback.js"></script>
 ```
 
-Cuando se usan juntos, los navegadores que admiten módulos ignorarán por completo cualquier script que contenga el atributo `nomodule`. Por otro lado, los navegadores que aún no admiten módulos no descargarán ningún script con `type ="module"`. Como tampoco reconocen `nomodule`, normalmente descargarán scripts con el atributo. El uso de este enfoque puede permitir a los desarrolladores [enviar código moderno a navegadores modernos para cargas de página más rápidas](https://web.dev/serve-modern-code-to-modern-browsers/).
-
-Así que, **¿Cuántos sitios usan `nomodule` para los scripts en su página?**
+Cuando se usan juntos, los navegadores que admiten módulos ignorarán por completo cualquier script que contenga el atributo `nomodule`. Por otro lado, los navegadores que aún no admiten módulos no descargarán ningún script con `type ="module"`. Como tampoco reconocen `nomodule`, normalmente descargarán scripts con el atributo. El uso de este enfoque puede permitir a los desarrolladores [enviar código moderno a navegadores modernos para cargas de página más rápidas](https://web.dev/serve-modern-code-to-modern-browsers/). Así que, **¿Cuántos sitios usan `nomodule` para los scripts en su página?
 
 {{ figure_markup(
   image="fig14.png",
   caption="Porcentaje de sitios que usan nomodule.",
   description="Gráfico de barras que muestra el 0,8% de los sitios en computadoras de escritorio usan 'nomodule' y el 0,5% de los sitios en dispositivos móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
   )
 }}
 
@@ -418,11 +364,7 @@ Del mismo modo, muy pocos sitios (0,50% - 0,80%) usan el atributo `nomodule` par
   image="fig15.png",
   caption="Porcentaje de sitios que usan rel=preload para scripts.",
   description="Gráfico de barras que muestra que el 14% de los sitios en computadoras de escritorio usan 'rel=preload 'para scripts, y el 15% de los sitios en dispositivos móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive"
   )
 }}
 
@@ -434,11 +376,7 @@ Para _prefetch_:
   image="fig16.png",
   caption="Porcentaje de sitios que usan rel=prefetch para scripts.",
   description="Gráfico de barras que muestra el 0,08% de los sitios en computadoras de escritorio usan 'rel=prefetch' y el 0,08% de los sitios en dispositivos móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive"
   )
 }}
 
@@ -463,11 +401,7 @@ Con HTTP Archive, podemos echar un vistazo a cualquier API más nueva que sea co
   image="fig17.png",
   caption="Uso de nuevas API de JavaScript.",
   description="Gráfico de barras que muestra el 25,5% / 36,2% de los sitios en computadoras de escritorio y dispositivos móviles usa WeakMap, 6,1% / 17,2% usa WeakSet, 3,9% / 14,0% usa Intl, 3,9% / 4,4% usa Proxy, 0,4% / 0,4% usa Atomics, y 0,2% / 0,2% usan SharedArrayBuffer.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive"
   )
 }}
 
@@ -487,11 +421,7 @@ Aunque es útil, hay una serie de razones por las cuales muchos sitios pueden no
   image="fig18.png",
   caption="Porcentaje de sitios que usan mapas fuente.",
   description="Gráfico de barras que muestra el 18% de los sitios de escritorio y el 17% de los sitios móviles utilizan mapas fuente.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"
   )
 }}
 

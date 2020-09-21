@@ -36,11 +36,7 @@ The first metric we explore are service worker installations. Looking at the dat
   image="fig2.png",
   caption="Service Worker installation over time for desktop and mobile.",
   description="Timeseries chart of service worker installation. Since Janurary 2017, desktop and mobile have increased steadily from approximately 0.0% to about 0.4%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&format=interactive"
   )
 }}
 
@@ -74,11 +70,7 @@ In a service worker one can [listen for a number of events](https://developers.g
   image="fig4.png",
   caption="Popularity of service worker events.",
   description="Bar chart showing the popularity of various service worker events. Fetch is used on 73% of mobile service workers, install 71%, activate 56%, notification click 10%, push 8%, message 5%, notification close 2%, and sync 1%. The usage on desktop service workers is similar, but slightly lower for fetch, install, and activate.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2110574556&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2110574556&format=interactive"
   )
 }}
 
@@ -92,11 +84,7 @@ File size or lines of code are generally a bad proxy for the complexity of the t
   image="fig5.png",
   caption="Distribution of service worker transfer size.",
   description="Bar chart showing the distribution of transfer sizes of service workers. The 10, 25, 50, 75, and 90th percentiles for desktop service worker transfer sizes are: 176, 350, 895, 2,010, and 4,138 bytes. Desktop service workers are larger across each percentile from as many as 1,000 bytes at the 90th percentile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=345926232&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=345926232&format=interactive"
   )
 }}
 
@@ -154,11 +142,7 @@ Looking at the values developers set for the `display` property, it becomes imme
   alt="Usage of web app manifest display properties.",
   caption="Usage of web app manifest <code>display</code> properties.",
   description='Bar chart showing how the display property of web app manifests is used by desktop and mobile websites. In both cases, the "standalone" value is used 57% of the time. The property is not set at all in 38% of manifests. The "minimal UI", "browser", and "fullscreen" values each make up only 1 or 2% of usage.',
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&format=interactive"
   )
 }}
 
@@ -172,11 +156,7 @@ The `categories` property describes the expected application categories to which
   image="fig8.png",
   caption="Top web app manifest categories.",
   description='Bar chart showing the top web app manifest categories. 60 mobile manifests are in the "shopping" category, 15 "business", 9 "web", 9 "technology", 8 "games", 8 "entertainment", 7 "social", etc. Desktop manifests follow a similar distribution except for "shopping", for which there is only 1 desktop manifest.',
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1609487902&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1609487902&format=interactive"
   )
 }}
 
@@ -190,11 +170,7 @@ Lighthouse [requires](https://developers.google.com/web/tools/lighthouse/audits/
   image="fig9.png",
   caption="Top web app manifest icon sizes.",
   description="Bar chart showing the usage of top web app manifest icon size property values. All values are given in height and width pixels, for example the top value in 23% of manifests is 192 by 192 pixels. The next most popular sizes are 144 at 11%, 96 at 11%, 72 at 10%, 48 at 10%, 512 at 9%, 36% at 9%, 256 at 5%, 384 at 2%, 128 at 1%, and 152 at 1%. Desktop and mobile have identical usage patterns.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1369881840&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1369881840&format=interactive"
   )
 }}
 
@@ -217,11 +193,7 @@ The valid values for the `orientation` property are defined in the [Screen Orien
   image="fig10.png",
   caption="Top web app manifest orientation values.",
   description='Bar chart showing the top web app manifest orientation values. "Portrait" is set in 6% of desktop manifests, followed by "any" in 2%, and the everything else in fewer than 1% of manifests. This is similar to usage in mobile manifests, except "portrait" is set in 8% of manifests and "portrait-primary" in 1%.',
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2065142361&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2065142361&format=interactive"
   )
 }}
 

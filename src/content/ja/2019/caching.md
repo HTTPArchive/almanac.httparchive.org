@@ -98,11 +98,7 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
   image="fig2.png",
   caption="HTTP <code>Cache-Control</code> および <code>Expires</code> ヘッダーの存在",
   description="リクエストの72％がCache-Controlヘッダーを使用し、56％がExpiresを使用し、27％がどちらも使用しないことを示す、モバイルとデスクトップの棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive"
   )
 }}
 
@@ -120,11 +116,7 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
   image="fig3.png",
   caption="キャッシュ可能なレスポンスの分布。",
   description="デスクトップレスポンスの20％がキャッシュ不可、47％が0秒以上のキャッシュ、27％がヒューリスティックにキャッシュ、6％が0秒のTTLを示す積み上げ棒グラフ。モバイルの統計は非常に似ています（19％、47％ 、27％および7％）",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&format=interactive"
   )
 }}
 
@@ -240,11 +232,7 @@ TTLの中央値のほとんどは高いですが、低いパーセンタイル�
   image="fig5.png",
   caption="デスクトップのコンテンツタイプごとのキャッシュ可能性の分布。",
   description="キャッシュ不可、0秒を超えたキャッシュ、デスクトップのタイプごとに0秒だけキャッシュの分割を示す積み上げ棒グラフ。小さいがかなりの割合でキャッシュ不可能でHTMLでは最大50％になり、ほとんどはキャッシュが大きく0で、小さいキャッシュは0 TTLです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&format=interactive"
   )
 }}
 
@@ -254,11 +242,7 @@ TTLの中央値のほとんどは高いですが、低いパーセンタイル�
   image="fig6.png",
   caption="モバイルのコンテンツタイプ別のキャッシュ可能性の分布。",
   description="キャッシュ不可、0秒を超えたキャッシュ、デスクトップのタイプごとに0秒だけキャッシュの分割を示す積み上げ棒グラフ。小さいがかなりの割合でキャッシュ不可能でHTMLでは最大50％になり、ほとんどはキャッシュが大きく0で、小さいキャッシュは0 TTLです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&format=interactive"
   )
 }}
 
@@ -282,11 +266,7 @@ HTTPレスポンスの53％は、`max-age`ディレクティブを持つ`Cache-C
   image="fig7.png",
   caption="<code>Cache-Control</code> と <code>Expires</code> ヘッダーの使用法。",
   description="レスポンスの53％を示す棒グラフには、「Cache-Control：max-age」、54％-55％が「Expires」、41％-42％が両方を使用し、34％がどちらも使用していません。数字は、デスクトップとモバイルの両方について示されていますが、有効期限の使用率が高いモバイルとほぼ同じです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive"
   )
 }}
 
@@ -498,11 +478,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
   image="fig12.png",
   caption="デスクトップWebサイトの <code>Last-Modified</code> および <code>ETag</code> ヘッダーを介した鮮度の検証の採用。",
   description="デスクトップリクエストの64.4％が最後に変更され、42.8％がETagを持ち、37.9％が両方を持ち、30.7％がどちらも持たないことを示す棒グラフ。モバイルの統計は、最終変更が65.3％、ETagが42.8％、両方が38.0％、どちらも29.9％というほぼ同じです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive"
   )
 }}
 
@@ -540,11 +516,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
   image="fig13.png",
   caption="レスポンスヘッダーの無効な日付形式。",
   description="デスクトップレスポンスの0.10％に無効な日付があり、0.67％に無効なLast-Modifiedがあり、3.64％に無効なExpiresがあることを示す棒グラフ。モバイルの統計は非常によく似ており、レスポンスの0.06％に無効な日付があり、0.68％に無効なLast-Modifiedがあり、3.50％に無効な有効期限があります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&format=interactive"
   )
 }}
 
@@ -620,6 +592,7 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
 
 {{ figure_markup(
   image="ch16_fig14_service_worker_adoption.jpg",
+  alt='Service Workerが制御するページの時系列。',
   caption='Service Workerが制御するページの時系列。 (引用: <a href="https://httparchive.org/reports/progressive-web-apps#swControlledPages">HTTP Archive</a>)',
   description="2016年10月から2019年7月までのService Workerが制御するサイトの使用状況を示す時系列チャート。モバイルとデスクトップの両方で使用量は年々着実に増加していますが、依然として両方で0.6％未満です。",
   width=600,
@@ -724,11 +697,7 @@ Lighthouseは、監査ごとに0％〜100％の範囲のスコアを計算し、
   image="fig21.png",
   caption="モバイルWebページの「Use Long Cache TTL」監査のLighthouseスコアの分布。",
   description="積み上げ棒グラフの38.2％のウェブサイトのスコアは10％未満、29.0％のウェブサイトのスコアは10％〜39％、18.7％のウェブサイトのスコアは40％〜79％、10.7％のウェブサイトは80％から99％のスコア、および3.4​​％のWebサイトが100％のスコアを取得します。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive"
   )
 }}
 
@@ -740,11 +709,7 @@ Lighthouseは、より長いキャッシュポリシーを有効にすること�
   image="fig22.png",
   caption="Lighthouseキャッシング監査による潜在的なバイト節約の分布。",
   description="Webサイトの56.8％が1MB未満の潜在的なバイト節約を示す積み上げ棒グラフ、22.1％は1〜2MBの節約、8.3％は2〜3MBの節約になります。 4.3％は3〜4MB節約でき、6.0％は4MB以上節約できました。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&format=interactive"
   )
 }}
 

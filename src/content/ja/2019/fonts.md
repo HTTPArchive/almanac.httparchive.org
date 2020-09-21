@@ -35,11 +35,7 @@ last_updated: 2020-06-30T00:00:00.000Z
   image="fig1.png",
   caption="人気のあるウェブフォントのホスティング戦略。font hosting strategies.",
   description="ウェブフォントのサードパーティおよびセルフホスティング戦略の人気を示す棒グラフ。モバイルWebページの75%がサードパーティ製ホストを使用し、25%がセルフホストを使用しています。デスクトップのウェブサイトでも、同様の利用状況です。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&format=interactive"
   )
 }}
 
@@ -357,11 +353,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
   image="fig7.png",
   caption="ウェブフォントのMIMEタイプの普及率",
   description="ウェブフォントのMIMEタイプの人気を示す棒グラフ。フォントの74%でWOFF2が使用されており、次いでWOFFが13%、octet-streamが 6%、TTFが3%、plainが2%、HTMLが1%、SFNTが1%、その他のすべてのタイプが1%未満となっています。デスクトップとモバイルでは、同様の分布となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&format=interactive"
   )
 }}
 
@@ -375,11 +367,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
   image="fig8.png",
   caption="<code>@font-face</code> 宣言におけるフォントフォーマットの人気度。",
   description="フォントフェイス宣言で使用されるフォーマットの人気を示す棒グラフ。デスクトップページの@font-face宣言の 69%がWOFF2形式を指定しており、11%がWOFF、10%がTrueType、8%がSVG、2%がEOT、1%未満でOpenType、TTF、OTFを指定しています。モバイルページの分布も同様です。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
   )
 }}
 
@@ -552,11 +540,7 @@ Google Fontsを使っているなら、スニペットを更新しよう！　Go
   image="fig11.png",
   caption="<code>font-display</code> の値の使用法。",
   description="フォント表示スタイルの利用状況を示す棒グラフ。モバイルページの2.6％がこのスタイルを「swap」、1.5％が「auto」、0.7％が「block」、0.4％が「fallback」、0.2％が「optional」、0.1％が引用符で囲んだ「swap」に設定しているが、これは無効である。デスクトップの分布は、「swap」の利用率が0.4％ポイント低く、「auto」の利用率が0.1％ポイント高くなっている以外は似ている。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
   )
 }}
 
@@ -570,11 +554,7 @@ Google Fontsを使っているなら、スニペットを更新しよう！　Go
   image="fig12.png",
   caption="ページあたりのフォント要求の分布。",
   description="ページごとのフォント要求の分布を示す棒グラフ。デスクトップでの10、25、50、75、90パーセンタイルは以下の通りです。0、1、3、6、9のフォント要求があります。モバイルの分布は75パーセンタイルと90パーセンタイルまでは同じで、モバイルページでは要求されるフォントが1つ少なくなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&format=interactive"
   )
 }}
 
@@ -584,11 +564,7 @@ Google Fontsを使っているなら、スニペットを更新しよう！　Go
   image="fig13.png",
   caption="ページあたりに要求されたウェブフォントのヒストグラム。",
   description="ページあたりのフォントリクエスト数の分布を示すヒストグラム。最も人気のあるフォントリクエスト数は0で、デスクトップページの22%を占めています。この分布は、1つのフォントを持つページの9%まで落ち込み、2～4つのフォントでは10%で頂点に達し、フォント数が増えるにつれて落ち込んでいきます。デスクトップとモバイルの分布は似ていますが、モバイルの分布はページあたりのフォント数が少ない方にわずかに傾いています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&format=interactive"
   )
 }}
 
@@ -667,11 +643,7 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
   image="fig19.png",
   caption="<code>font-variation-settings</code> 軸の使用法。",
   description="font-variation-settingsプロパティの使用状況を示す棒グラフ。デスクトップページのプロパティの42%が\"opsz\"の値に設定されており、32%が\"wght\"、16%が\"wdth\"、2%以下が\"roun\"、\"crsb\"、\"slnt\"、\"inln\"などに設定されています。デスクトップページとモバイルページで顕著な違いは、\"opsz\"の使用率が26％、\"wght\"の使用率が38％、\"wdth\"の使用率が23％となっており、\"wght\"の使用率は、\"wght\"の使用率と\"wght\"の使用率の差が大きい。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
   )
 }}
 

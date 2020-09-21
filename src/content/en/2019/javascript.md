@@ -98,7 +98,8 @@ Third-party JavaScript can come from any external, third-party source. Ads, anal
 
 {{ figure_markup(
   image="fig6.png",
-  caption="Bar chart showing 0/1 request on desktop are first-party and third-party respectively in 10th percentile, 2/4 in 25th percentile, 6/10 in 50th percentile, 13/21 in 75th percentile, and 24/38 in 90th percentile.",
+  caption="Distribution of first and third-party scripts on desktop.",
+  description="Bar chart showing 0/1 request on desktop are first-party and third-party respectively in 10th percentile, 2/4 in 25th percentile, 6/10 in 50th percentile, 13/21 in 75th percentile, and 24/38 in 90th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive"
   )
 }}

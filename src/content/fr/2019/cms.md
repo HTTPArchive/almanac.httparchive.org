@@ -84,11 +84,7 @@ En examinant les pages web servies sur les appareils de bureau et mobiles, nous 
   image="fig4.png",
   caption="Pourcentage de sites web desktop et mobiles qui utilisent un CMS.",
   description="Diagramme en bâtons montrant que 40 % des sites web desktop et 40 % des sites web mobiles sont construits à l'aide d'un CMS.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&format=interactive"
   )
 }}
 
@@ -137,11 +133,7 @@ Les éléments de base de tout site web constituent également un site web gér�
   image="fig6.png",
   caption="Répartition du poids des pages sur les CMS.",
   description="Diagramme en bâtons montrant la distribution du poids des pages CMS. La page CMS moyenne sur ordinateur de bureau pèse 2.3 MB. Au 10e percentile, elle pèse 0,7 Mo, au 25e percentile, 1,2 Mo, au 75e percentile, 4,2 Mo et au 90e percentile, 7,4 Mo. Les valeurs pour les ordinateurs de bureau sont très légèrement supérieures à celles des mobiles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&format=interactive"
   )
 }}
 
@@ -149,11 +141,7 @@ Les éléments de base de tout site web constituent également un site web gér�
   image="fig7.png",
   caption="Répartition des requêtes des CMS par page.",
   description="Diagramme en bâtons montrant la répartition des requêtes des CMS par page. La page CMS moyenne sur ordinateur de bureau charge 86 ressources. Au 10e percentile, elle charge 39 ressources, au 25e percentile 57 ressources, au 75e percentile 127 ressources et au 90e percentile 183 ressources. Le desktop est constamment plus élevé que le mobile par une petite marge de 3-6 ressources.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&format=interactive"
   )
 }}
 
@@ -279,11 +267,7 @@ La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 e
   image="fig10.png",
   caption="Répartition du poids des tierces parties (en Ko) sur les pages CMS.",
   description="Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des kilo-octets de tierces parties sur les pages CMS pour les ordinateurs de bureau et les mobiles. Le poids médian (50e percentile) des pages de bureau de tierces parties est de 272 Ko. Le 10e percentile est de 27 Ko, le 25e de 104 Ko, le 75e de 577 Ko et le 90e de 940 Ko. Le mobile est légèrement plus petit dans les petits percentiles et légèrement plus grand dans les grands percentiles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&format=interactive"
   )
 }}
 
@@ -291,11 +275,7 @@ La quantité médiane de requêtes tierces sur les pages CMS mobiles est de 15 e
   image="fig11.png",
   caption="Répartition du nombre de requêtes de tiers sur les pages CMS.",
   description="Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des requêtes de tierces-parties sur les pages CMS sur ordinateur de bureau et mobile. Le nombre médian (50e percentile) de requêtes de tierces-parties sur ordinateur de bureau est de 16. Le 10e percentile est 3, le 25e 7, le 75e 31 et le 90e 52. Les ordinateurs de bureau et les mobiles ont des distributions presque équivalentes.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&format=interactive"
   )
 }}
 
@@ -309,11 +289,7 @@ Nous savons que la valeur médiane indique qu'au moins la moitié des pages Web 
   image="fig12.png",
   caption="Répartition du poids des images (KB) sur les pages CMS.",
   description="Diagramme en bâtons des percentiles 10, 25, 50, 75 et 90 représentant la distribution des kilo-octets d'images sur les pages CMS bureau et mobile. Le poids médian (50e percentile) des images sur bureau est de 1 232 Ko. Le 10e percentile est de 198 Ko, le 25e de 507 Ko, le 75e de 2 763 Ko et le 90e de 5 694 Ko. Les ordinateurs de bureau et les mobiles ont des distributions presque équivalentes.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&format=interactive"
   )
 }}
 
@@ -332,11 +308,7 @@ Quels sont les formats courants que l'on trouve sur les pages CMS sur ordinateur
   image="fig14.png",
   caption="Adoption de formats d'images sur les pages CMS.",
   description="Diagramme en bâtons illustrant l'adoption de formats d'images sur les pages CMS pour les ordinateurs de bureau et les mobiles. Le JPEG représente près de la moitié de tous les formats d'image, le PNG en représente un tiers, le GIF un cinquième, et les 5% restants sont partagés entre le SVG, l'ICO et le WebP. Les ordinateurs de bureau et les téléphones portables ont une adoption presque équivalente.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&format=interactive"
   )
 }}
 
@@ -390,11 +362,7 @@ Le [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/a
   image="fig16.png",
   caption="Répartition moyenne des expériences de FCP entre les CMS.",
   description="Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 17 ci-dessous pour un tableau des données des cinq CMS les plus populaires.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&format=interactive"
   )
 }}
 
@@ -449,6 +417,7 @@ Le FCP dans l'écosystème des CMS tend surtout à se situer dans la plage des v
 WordPress montre notamment des expériences FCP modérées et lentes sur le mobile et le bureau. Wix se situe fortement dans les expériences FCP moyennes sur sa plateforme propriétaire. TYPO3, une plateforme CMS open-source d'entreprise, a des expériences rapides et constantes sur mobile et sur ordinateur de bureau. TYPO3 annonce des fonctionnalités intégrées de performance et d'évolutivité qui peuvent avoir un impact positif pour les visiteurs du site web en frontend.
 
 ### First Input Delay
+
 Le [First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) (FID) mesure le temps écoulé entre le moment où un utilisateur interagit pour la première fois avec votre site (c'est-à-dire lorsqu'il clique sur un lien, tape sur un bouton ou utilise une option paramétrée en JavaScript) et le moment où le navigateur est réellement capable de répondre à cette interaction. Du point de vue de l'utilisateur, un FID "rapide" serait une réponse immédiate à ses actions sur un site plutôt qu'une expérience retardée. Ce délai (un point sensible) pourrait être en corrélation avec l'interférence d'autres aspects du chargement du site lorsque l'utilisateur essaie d'interagir avec le site.
 
 Le FID dans l'écosystème CMS tend généralement vers des expériences rapides à la fois pour les ordinateurs de bureau et les mobiles en moyenne. Cependant, ce qui est remarquable, c'est la différence significative entre les expériences mobiles et sur ordinateur de bureau.
@@ -457,11 +426,7 @@ Le FID dans l'écosystème CMS tend généralement vers des expériences rapides
   image="fig18.png",
   caption="Répartition moyenne des expériences de FID entre les CMS.",
   description="Diagramme en bâtons de la distribution moyenne des expériences de FCP par CMS. Voir la figure 19 ci-dessous pour un tableau des données des cinq CMS les plus populaires.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&format=interactive"
   )
 }}
 
@@ -525,11 +490,7 @@ Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expérience
   image="fig20.png",
   caption="Distribution des notes Lighthouse de la catégorie PWA pour les pages CMS.",
   description="Diagramme en bâtons montrant la distribution des notes Lighthouse de la catégorie PWA pour toutes les pages CMS. La note la plus fréquente est de 0,3 pour 22 % des pages CMS. Il y a deux autres pics dans la distribution : 11 % des pages avec un score de 0,15 et 8 % des pages avec un score de 0,56. Moins de 1% des pages obtiennent un score supérieur à 0,6.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&format=interactive"
   )
 }}
 
@@ -537,11 +498,7 @@ Le terme **Progressive Web App** ([PWA](./pwa)) fait référence aux expérience
   image="fig21.png",
   caption="Notes Lighthouse médianes de la catégorie PWA par CMS.",
   description="Diagramme en bâtons montrant la note médiane Lighthouse PWA par CMS. Le score médian pour les sites web WordPress est de 0,33. Les cinq prochains CMS (Joomla, Drupal, Wix, Squarespace et 1C-Bitrix) ont tous un score médian de 0,3. Les CMS avec les meilleurs scores PWA sont Jimdo avec un score de 0,56 et TYPO3 à 0,41.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&format=interactive"
   )
 }}
 
@@ -555,11 +512,7 @@ Chaque audit d'accessibilité est réussi ou échoué, mais contrairement aux au
   image="fig22.png",
   caption="Distribution des scores d'accessibilité de Lighthouse pour les pages CMS.",
   description="Diagramme en bâtons montrant la distribution des scores d'accessibilité Lighthouse des pages CMS. La distribution est fortement asymétrique vers les scores les plus élevés avec un mode d'environ 0,85.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&format=interactive"
   )
 }}
 
@@ -567,11 +520,7 @@ Chaque audit d'accessibilité est réussi ou échoué, mais contrairement aux au
   image="fig23.png",
   caption="Notes médianes Lighthouse d'accessibilité par CMS.",
   description="Diagramme en bâtons montrant la note Lighthouse médiane d'accessibilité par CMS. La plupart des CMS obtiennent un score d'environ 0,75. Parmi les valeurs les plus aberrantes, on retrouve Wix avec un score médian de 0,93 et 1-C Bitrix avec un score de 0,65.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&format=interactive"
   )
 }}
 

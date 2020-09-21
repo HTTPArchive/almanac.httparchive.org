@@ -68,11 +68,7 @@ Sadly, developers have misused this so much that almost one out of every three s
   image="fig2.png",
   caption="Percentage of sites that disable zooming and scaling vs device type.",
   description="Vertical measuring percentage data, ranging from 0 to 80 in increments of 20, vs. the device type, grouped into desktop and mobile. Desktop enabled: 75.46%; Desktop disabled 24.54%; Mobile enabled: 67.79%; Mobile disabled: 32.21%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"
   )
 }}
 
@@ -130,11 +126,7 @@ With that being said, here are our results:
   image="fig3.png",
   caption="Popularity of heading levels.",
   description="Vertical bar chart measuring percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing each heading level h1 through h6.  H1: 63.25%; H2: 67.86%; H3: 58.63%; H4: 36.38%; H5: 14.64%; H6: 6.91%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"
   )
 }}
 
@@ -148,11 +140,7 @@ We found only one in every four pages (26.03%) include a main landmark. And surp
   image="fig4.png",
   caption="Percent of pages by their number of 'main' landmarks.",
   description="Vertical bar chart displaying percentage data, ranging from 0 to 80 in increments of 20, vs. bars representing the number of “main” landmarks per page from 0 to 4. Source: HTTP Archive (July 2019). Zero: 73.97%; One: 17.97%; Two: 7.41%; Three: 0.15%; 4: 0.06%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
   )
 }}
 
@@ -170,11 +158,7 @@ All of these elements are primarily designed for accessibility support and have 
   image="fig5.png",
   caption="Usage of various HTML semantic elements.",
   description="Vertical bar chart with bars for each element type vs percent of pages ranging from 0 to 60 in increments of 20. nav: 53.94%; header: 54.82%; footer: 55.92%; main: 18.47%; aside: 16.99%; article: 22.59%; hr: 19.1%; section: 36.55%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
   )
 }}
 
@@ -186,11 +170,7 @@ Many popular screen readers also allow users to navigate by quickly jumping thro
   image="fig6.png",
   caption="Other HTML elements used for navigation.",
   description="Vertical bar chart with bars for each element type vs percent of pages ranging from 0 to 100 in increments of 25. a: 98.22%; ul: 88.62%; input: 76.63%; iframe: 60.39%; button: 56.74%; select: 19.68%; textarea: 12.03%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
   )
 }}
 
@@ -255,11 +235,7 @@ Using ARIA correctly and appropriately can be challenging. For example, of pages
   image="fig8.png",
   caption="Percent of total pages vs ARIA attribute.",
   description="Vertical bar chart displaying percentage data, ranging from 0 to 25 in increments of 5, vs. bars representing each attribute. Aria-hidden: 23.46%, aria-label: 17.67%, aria-expanded: 8.68%, aria-current: 7.76%, aria-labelledby: 6.85%, aria-controls: 3.56%, aria-haspopup: 2.62%, aria-invalid: 2.68%, aria-describedby: 1.69%, aria-live: 1.04%, aria-required: 1%",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
   )
 }}
 
@@ -273,11 +249,7 @@ Currently, 46.91% of pages use at least one ARIA role attribute. In Figure 9 bel
   image="fig9.png",
   caption="Top 10 aria roles.",
   description="Vertical bar chart with bars for each role type vs percent of sites using ranging from 0 to 25 in increments of 5. Navigation: 20.4%; search: 15.49%; main: 14.39%; banner: 13.62%; contentinfo: 11.23%; button: 10.59%; dialog: 7.87%; complementary: 6.06%; menu: 4.71%; form: 3.75%",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
   )
 }}
 

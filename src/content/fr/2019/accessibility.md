@@ -68,11 +68,7 @@ Malheureusement, les développeurs et développeuses web en ont tellement abusé
   image="fig2.png",
   caption="Pourcentage de sites qui désactivent le zoom et la mise à l’échelle par rapport au type d’appareil.",
   description="Graphes verticaux en pourcentages, allant de 0 à 80 de 20 en 20, par rapport au type d’appareil, regroupées en ordinateur de bureau et mobile. Bureau activé&nbsp;: 75,46&nbsp;%&nbsp;; Bureau désactivé&nbsp;: 24,54&nbsp;%&nbsp;; Mobile activé&nbsp;: 67,79&nbsp;%&nbsp;; Mobile désactivé&nbsp;: 32,21&nbsp;%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=2053904956&format=interactive"
   )
 }}
 
@@ -130,11 +126,7 @@ Cela étant dit, voici nos résultats&nbsp;:
   image="fig3.png",
   caption="Popularité des en-têtes.",
   description="Graphique à barres verticales mesurant des données de pourcentage, allant de 0 à 80 de 20 en 20, par rapport aux barres représentant chaque niveau de `h1` à `h6`. `h1`&nbsp;: 63,25&nbsp;%&nbsp;; `h2`&nbsp;: 67,86&nbsp;%&nbsp;; `h3`&nbsp;: 58,63&nbsp;%&nbsp;; `h4`&nbsp;: 36,38&nbsp;%&nbsp;; `h5`&nbsp;: 14,64&nbsp;%; `h6`&nbsp;: 6,91&nbsp;%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1123601243&format=interactive"
   )
 }}
 
@@ -148,11 +140,7 @@ Nous avons constaté qu’une seule page sur quatre (26,03&nbsp;%) comprend une 
   image="fig4.png",
   caption="Pourcentage des pages selon leur nombre d’éléments `main`.",
   description="Graphique à barres verticales affichant des pourcentages de données allant de 0 à 80 de 20 en 20, par rapport à des barres représentant le nombre de repères «&nbsp;principaux&nbsp;» par page de 0 à 4. Source: HTTP Archive (juillet 2019). Zéro&nbsp;: 73,97&nbsp;%&nbsp;; Un&nbsp;: 17,97&nbsp;%&nbsp;; Deux&nbsp;: 7,41&nbsp;%&nbsp;; Trois&nbsp;: 0,15&nbsp;%&nbsp;; 4&nbsp;: 0,06&nbsp;%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
   )
 }}
 
@@ -170,11 +158,7 @@ Tous ces éléments sont principalement conçus pour la prise en charge de l’a
   image="fig5.png",
   caption="Utilisation de divers éléments sémantiques HTML.",
   description="Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 60 de 20 en 20. `nav`&nbsp;: 53,94&nbsp;%&nbsp;; `header`&nbsp;: 54,82&nbsp;%&nbsp;; `footer`&nbsp;: 55,92&nbsp;%&nbsp;; `main`&nbsp;: 18,47&nbsp;%&nbsp;; `aside`&nbsp;: 16,99&nbsp;%&nbsp;; `article`&nbsp;: 22,59&nbsp;%&nbsp;; `hr`&nbsp;: 19,1&nbsp;%&nbsp;; `section`&nbsp;: 36,55&nbsp;%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=708035719&format=interactive"
   )
 }}
 
@@ -186,11 +170,7 @@ De nombreux lecteurs d’écran populaires permettent également aux utilisateur
   image="fig6.png",
   caption="Autres éléments HTML utilisés pour la navigation",
   description="Graphique à barres verticales avec des barres pour chaque type d’élément par rapport au pourcentage de pages allant de 0 à 100 de 25 en 25. `a`&nbsp;: 98,22&nbsp;%&nbsp;; `ul`&nbsp;: 88,62&nbsp;%&nbsp;; `input`: 76,63&nbsp;%&nbsp;; `iframe`: 60,39&nbsp;%&nbsp;; `button`&nbsp;: 56,74&nbsp;%&nbsp;; `select`&nbsp;: 19,68&nbsp;%&nbsp;; `textarea`&nbsp;: 12,03&nbsp;%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
   )
 }}
 
@@ -255,11 +235,7 @@ L’utilisation correcte et appropriée d’ARIA peut être difficile. Par exemp
   image="fig8.png",
   caption="Pourcentage du nombre total de pages par rapport aux attributs ARIA.",
   description="Graphique à barres verticales affichant des données en pourcentage, allant de 0 à 25 de 5 en 5, par rapport aux barres représentant chaque attribut. `aria-hidden`&nbsp;: 23,46&nbsp;%, `aria-label`&nbsp;: 17,67&nbsp;%, `aria-expanded`&nbsp;: 8,68&nbsp;%, `aria-current`&nbsp;: 7,76&nbsp;%, `aria-labelledby`&nbsp;: 6,85&nbsp;%, `aria-controls`&nbsp;: 3,56&nbsp;%, `aria-haspopup`&nbsp;: 2,62&nbsp;%, `aria-invalid`&nbsp;: 2,68&nbsp;%, `aria-describedby`&nbsp;: 1,69&nbsp;%, `aria-live`&nbsp;: 1,04&nbsp;%, `aria-required`&nbsp;: 1&nbsp;%",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=792161340&format=interactive"
   )
 }}
 
@@ -273,11 +249,7 @@ Actuellement, 46,91&nbsp;% des pages utilisent au moins un attribut de rôle ARI
   image="fig9.png",
   caption="Top 10 des rôles ARIA.",
   description="Graphique à barres verticales avec des barres pour chaque type de rôle par rapport au pourcentage de sites utilisant de 0 à 25 de 5 en 5. `navigation`&nbsp;: 20,4&nbsp;%&nbsp;; `search`&nbsp;: 15,49&nbsp;%&nbsp;; `main`&nbsp;: 14,39&nbsp;%&nbsp;; `banner`&nbsp;: 13,62&nbsp;%&nbsp;; `contentinfo`&nbsp;: 11,23&nbsp;%&nbsp;; `button`&nbsp;: 10,59&nbsp;%&nbsp;; `dialog`&nbsp;: 7,87&nbsp;%&nbsp;; `complementary`&nbsp;: 6,06&nbsp;%&nbsp;; `menu`&nbsp;: 4,71&nbsp;%&nbsp;; `form`&nbsp;: 3,75&nbsp;%",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
   )
 }}
 

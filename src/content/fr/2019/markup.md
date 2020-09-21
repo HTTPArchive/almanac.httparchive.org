@@ -68,11 +68,7 @@ tr | span | option
   image="fig3.png",
   caption="Fréquences des éléments en 2019.",
   description="Graphique représentant environ 2 500 pages commençant par environ 30 éléments, il passe à 6 876 pages et compte 283 éléments, avant de se terminer d’une manière relativement linéaire jusqu’à 327 pages comportant 2 000 éléments.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=2141583176&format=interactive"
   )
 }}
 
@@ -91,11 +87,7 @@ En comparant les dernières données de la figure 3 à celles du rapport d’Hix
   image="fig5.png",
   caption="Histogramme des types d’éléments par page en 2019.",
   description="Graphique montrant que la fréquence relative est une courbe en cloche autour d’un point culminant correspondant à 30 éléments, tel qu’utilisés par 308 168 sites.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1500675289&format=interactive"
   )
 }}
 
@@ -131,11 +123,7 @@ En outre, 15 % des pages pour ordinateurs de bureau et 16 % des pages mobiles 
   image="fig6.png",
   caption="Éléments obsolètes les plus fréquemment utilisés.",
   description="Diagramme à barres montrant que 'center' est utilisé par 8,31 % des sites pour ordinateurs de bureau (7,96 % des sites mobiles), 'font' par 8,01 % des sites pour ordinateurs de bureau (7,38 % des sites mobiles), 'marquee' utilisé par 1,07 % des sites pour ordinateurs de bureau (1,20 % des sites mobiles), 'nobr' utilisé par 0,71 % des sites pour ordinateurs de bureau (0,55 % des sites mobiles), 'big' utilisé par 0,53 % des sites pour ordinateurs de bureau (0,47 % des sites mobiles), 'frameset' utilisé par 0,39 % des sites version web (0,35 % des sites mobiles), 'frame' utilisé par 0,39 % des sites pour ordinateurs de bureau (0,35 % des sites mobiles), 'strike' utilisé par 0,33 % des sites pour ordinateurs de bureau (0,27 % des sites mobiles), et 'noframes' utilisé par 0,25 % des sites pour ordinateurs de bureau (0,27 % des sites mobiles).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbHgqcSepZye6DrCTpifFAUYxKT1hEO56585awyMips8oiPMLYu20GETuIE8mALkm814ObJyktEe2P/pubchart?oid=1304237557&format=interactive"
   )
 }}
 

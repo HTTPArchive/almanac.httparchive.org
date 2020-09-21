@@ -22,11 +22,7 @@ Desde una perspectiva puramente de bytes, el <i lang="en">HTTP Archive</i> ha [r
   image="fig1_bytes_images_and_video_versus_other.png",
   caption="Bytes por página web: imagen y vídeo frente a otros.",
   description="Gráfico de barras mostrando que en el percentil 10 un 44,1% de los bytes de la página son recursos multimedia, en el percentil 25 un 52,7% son recursos multimedia, en el percentil 50 un 67,0% son recursos multimedia, en el percentil 75 un 81,7% son recursos multimedia, y en el percentil 90 un 91,2% son recursos multimedia.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1189524305&format=interactive"
   )
 }}
 
@@ -42,11 +38,7 @@ Es más, el coste económico de visitar estos sitios web en diferentes partes de
   image="fig2_total_image_bytes_per_web_page_mobile.png",
   caption="Total de bytes de una imagen por sitio web (móvil).",
   description="En la mediana, una página web en formato móvil requiere 1 MB para imágenes, y 4,9 MB en el percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"
   )
 }}
 
@@ -62,11 +54,7 @@ Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: p
   image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
   caption="Píxeles de una imagen por página (móvil): CSS versus real.",
   description=" Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en móvil, mostrando el percentil 10 (0,07 MP reales, 0,04 MP CSS), el percentil 25 (0,38MP reales, 0,18 MP CSS), el percentil 50 (1,6 MP reales, 0,65 MP CSS), el percentil 75 (5,1 MP reales, 1,8 MP CSS), y el percentil 90 (12 MP reales, 4,6 MP CSS).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"
   )
 }}
 
@@ -74,11 +62,7 @@ Hay tres métricas a tener en cuenta cuando se analiza el tamaño de píxeles: p
   image="fig4_image_pixel_per_page_desktop_css_v_actual.png",
   caption="Píxeles de una imagen por página (escritorio): CSS versus real.",
   description=" Una comparación entre los píxeles CSS distribuidos en el contenido de la imagen y los píxeles reales en escritorio, mostrando el percentil 10 (0,09 MP reales, 0,05 MP CSS), el percentil 25 (0,52 MP reales, 0,29 MP CSS), el percentil 50 (2,1 MP reales, 1,1 MP CSS), el percentil 75 (6,0 MP reales, 2,8 MP CSS), y el percentil 90 (14 MP reales, 6,3 MP CSS).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1364487787&format=interactive"
   )
 }}
 
@@ -100,11 +84,7 @@ Si tuviéramos una imagen que ocupase perfectamente la totalidad de la pantalla,
   image="fig5_image_pixel_volume_v_css_pixels.png",
   caption="Cantidad de píxeles en una imagen versus el tamaño de la pantalla (píxeles CSS).",
   description="Una comparación entre la cantidad de píxeles necesaria por página en relación con el tamaño real de la pantalla en píxeles CSS, mostrando el percentil 10 (20% en móvil, 20% en escritorio), el percentil 25 (97% en móvil, 13% en escritorio), el percentil 50 (354% en móvil, 46% en escritorio), el percentil 75 (1003% en móvil, 123% en escritorio), y el percentil 90 (2477% en móvil, 273% en escritorio).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"
   )
 }}
 
@@ -166,7 +146,6 @@ Cada formato tiene sus propias ventajas y usos para la web. Una forma muy simple
  </tr>
  </tbody>
  </table>
-
  <figcaption>{{ figure_link(caption="Explicación de los formatos de archivo convencionales.") }}</figcaption>
 </figure>
   
@@ -189,11 +168,7 @@ Por supuesto, las páginas webs no son uniformes en el uso del contenido de imag
   image="fig8_image_format_usage_per_page.png",
   caption="Formato de imagen usado por página.",
   description="Un gráfico de barras mostrando en el percentil 10 que no se usa ningún tipo de formato de imagen, en el percentil 25 se usan tres JPGS y cuatro PNGs, en el percentil 50 nueve JPGs, cuatro PNGs y un GIF, en el percentil 75 39 JPEGs, 18 PNGs, dos SVGs, y dos GIFs, y en el percentil p99 119 JPGs, 49 PNGs, 28 WebPs, 19 SVGs y 14 GIFs.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"
   )
 }}
 
@@ -203,11 +178,7 @@ Mientras que la página media tiene nueve JPEGS y cuatro PNGs, y solamente en el
   image="fig9_pages_using_at_least_1_image.png",
   caption="Porcentaje de páginas que usan al menos una imagen.",
   description="Un gráfico de barras mostrando que los JPEGs son usados en el 90% de las páginas, los PNGs en un 89%, el WebP en un 9%, el GIF en un 37% y el SVG un 22%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1024386063&format=interactive"
   )
 }}
 
@@ -220,9 +191,7 @@ Hay dos formas de analizar los tamaños de archivo de imagen: total de bytes por
 {{ figure_markup(
   image="fig10_image_format_size.png",
   caption="Tamaño de archivo (KB) por formato de imagen.",
-  description="Un gráfico mostrando que en el percentil 10 se usan 4 KB de JPEGs, 2 KB de PNGs y 2 KB de GIFs, en el percentil 25 se usan 9KB de JPGs, 4 KB de PNGs, 7 KB de WebP, y 3 KB de GIFs, en el percentil 50 se usan 24 KB de JPGs, 11 KB de PNGs, 17 KB de WebP, 6 KB de GIFs y 1 KB de SVGs, en el percentil 75 se usan 68 KB de JPEGs, 43 KB de PNGs 41 KB de WebPs, 17 KB de GIFs y 2 KB de SVGs, y en el percentil 90 se usan 116 KB de JPGs, 152 KB de PNGs, 90 KB de WebPs, 87 KB de GIFs y 8 KB de SVGs.",
-  width=600,
-  height=371
+  description="Un gráfico mostrando que en el percentil 10 se usan 4 KB de JPEGs, 2 KB de PNGs y 2 KB de GIFs, en el percentil 25 se usan 9KB de JPGs, 4 KB de PNGs, 7 KB de WebP, y 3 KB de GIFs, en el percentil 50 se usan 24 KB de JPGs, 11 KB de PNGs, 17 KB de WebP, 6 KB de GIFs y 1 KB de SVGs, en el percentil 75 se usan 68 KB de JPEGs, 43 KB de PNGs 41 KB de WebPs, 17 KB de GIFs y 2 KB de SVGs, y en el percentil 90 se usan 116 KB de JPGs, 152 KB de PNGs, 90 KB de WebPs, 87 KB de GIFs y 8 KB de SVGs."
   )
 }}
 
@@ -232,11 +201,7 @@ A partir de esto, podemos hacer una idea de cuán grande o pequeño es el recurs
   image="fig11_bytes_per_pixel.png",
   caption="Bytes por pixel.",
   description=" Un gráfico de velas que muestra en el percentil 10 que tenemos 0,1175 bytes por pixel para JPEG, 0,1197 para PNG, 0,1702 para GIF, 0,0586 para WebP y 0,0293 para SVG. En el percentil 25 tenemos 0,1848 bytes por pixel para JPEGs, 0,2874 para PNG, 0,3641 para GIF, 0,1025 para WebP, y 0,174 para SVG. En el percentil 50 tenemos 0,2997 bytes por pixel para JPEGs, 0,6918 para PNG, 0,7967 para GIF, 0,183 para WebP, y 0,6766 para SVG. En el percentil 75 tenemos 0,5456 bytes por pixel para JPEGs, 1,4548 para PNG, 2,515 para GIF, 0,3272 para WebP, y 1,9261 para SVG. En el percentil 90 tenemos 0,9822 bytes por pixel para JPEGs, 2,5026 para PNG, 8,5151 para GIF, 0,6474 para WebP, y 4,1075 para SVG",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1379541850&format=interactive"
   )
 }}
 
@@ -260,11 +225,7 @@ El test <i lang="en">[Lighthouse](./methodology#lighthouse)</i> es una comparaci
   image="fig12_percentage_optimized_images.png",
   caption="Porcentaje de imágenes 'optimizadas'",
   description="Gráfico de barras mostrando que en el percentil 10 el 100% de las imágenes están optimizadas, igual que en el percentil 25, en el percentil 50 el 98% de las imágenes están optimizadas (un 2% no lo están), en el percentil 75 un 83% de las imágenes están optimizadas (un 17% no lo están), y en el percentil 90 un 59% de las imágenes están optimizadas y un 41% no lo están.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1569150767"
   )
 }}
 
@@ -274,11 +235,7 @@ La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial r
   image="fig13_project_perf_improvements_image_optimization.png",
   caption='Estimación de la mejora del rendimiento de la página tras la optimización de imagen de <i lang="en">Lighthouse</i>.',
   description="Gráfico de barras que muestra  que en el percentil 10 0 ms pudieron ser medidos, lo mismo pasa en el percentil 25, en el percentil 50 se redujeron 150 ms, en el percentil 75 se redujeron 1.460 ms, y en el percentil 90 se redujeron 5.720 ms.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
   )
 }}
 
@@ -298,11 +255,7 @@ El método más usado para implementar las imágenes <i lang="en">responsive</i>
   image="fig14_html_usage_of_responsive_images.png",
   caption="Porcentaje de páginas que usan imágenes adaptables con HTML.",
   description="Un gráfico de barras que muestra que el 18% de las imágenes usan 'sizes', un 21% usan 'srcset', y un 2% usan 'picture'.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=582530039&format=interactive"
   )
 }}
 
@@ -336,11 +289,7 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
   alt="Top de patrones de img sizes.",
   caption="Top de patrones de <code>&lt;img sizes&gt;</code>.",
   description="Gráfico de barras que muestra que 11,3 millones de imágenes usan 'img sizes=\"(max-width: 300px) 100vw, 300px\"', 1,60 millones usan 'auto', 1 millón usan 'img sizes=\"(max-width: 767px) 89vw...etc.\"', 0,23 millones usan '100vw' y 0,13 millones usan '300px'",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
 }}
 
@@ -354,11 +303,7 @@ Para habilitar los <i lang="en">Client Hints</i>, la página web debe señalizá
   image="fig17_usage_of_accept-ch_http_v_html.png",
   caption="Uso del encabezado <code>Accept-CH</code> versus la etiqueta <code>&lt;meta></code> equivalente.",
   description="Gráfico de barras mostrando que un 71% usa el 'meta http-equiv', un 30% usa el encabezado 'Accept-CH' HTTP y un 1% usa ambos.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
   )
 }}
 
@@ -370,11 +315,7 @@ De los <i lang="en">Client Hints</i> solicitados, la mayoría de las páginas lo
   image="fig18_enabled_client_hints.png",
   caption="Client Hints habilitados.",
   description="Un gráfico circular de estilo donut que muestra que el 26,1% de los client hints usa 'dpr', 24,3% usa 'viewport-width', 19,7% usa 'width', 6,7% usa 'save-data', 6,1% usan 'device-memory', 6,0% usan 'downlink', 5,6% usan 'rtt' y 5,6% usan 'ect'",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive"
   )
 }}
 
@@ -390,11 +331,7 @@ Anteriormente, en la  <a href="#fig-5">Figura 5</a>, mostramos como el volumen d
   image="fig19_lighthouse_audit_offscreen.png",
   caption='Auditoría <i lang="en">Lighthouse</i>: Fuera de pantalla.',
   description="Un gráfico de barras que muestra que en el percentil 10 un 0% de las imágenes se encuentran fuera de pantalla, en el percentil 25 un 2% están fuera de pantalla, en el percentil 50 un 27% están fuera de pantalla, en el percentil 75 un 64% están fuera de pantalla, y en el percentil 90 un 84% de las imágenes están fuera de pantalla.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
   )
 }}
 
@@ -422,11 +359,7 @@ El vídeo puede ser mostrado en muchos formatos y reproductores diferentes. Los 
   image="fig20_video_files_by_extension.png",
   caption="Recuento de archivos de vídeo por extensión.",
   description="Un gráfico de barras que muestra el uso de 'ts' es de 1.283.439 para escritorio (792.952 para móvil), de 'mp4' es de 729.757 para escritorio (662.015 para móvil), el de 'webm' es de 38.591 para escritorio (32.417 para móvil), el de 'mov' es de 22.194 para escritorio (14.986 para móvil), el de 'm4s' es de 17.338 para escritorio (16.046 para móvil), el de 'm4v' es de 7.466 para escritorio (6.169 para móvil).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"
   )
 }}
 
@@ -438,11 +371,7 @@ Bajo estas líneas puede verse el tamaño de vídeo medio para cada formato:
   image="fig21_median_vidoe_file_size_by_extension.png",
   caption="Tamaño medio de archivo por extensión de vídeo.",
   description="Un gráfico de barras mostrando que el tamaño medio de un archivo 'ts' es 335 KB para escritorio (156 KB para móvil), el de 'mp4' es de 175 KB para escritorio (128 KB para móvil), el de 'webm' es de 359 KB para escritorio (192 KB para móvil), el de 'mov' es de 128 KB para escritorio (96 KB para móvil), el de 'm4s' es de 324 KB para escritorio (246 KB para móvil), y el de 'm4v' es de 383 KB para escritorio (161 KB para móvil)",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"
   )
 }}
 
@@ -456,11 +385,7 @@ Cuando se muestran vídeos en la web, la mayoría de ellos son reproducidos con 
   image="fig22_html_video_tag_attributes_usage.png",
   caption="Uso de los atributos de la etiqueta HTML de vídeo.",
   description="Un gráfico de barras que muestra para escritorio: 'autoplay' en el 11.84%, 'buffered' en el 0%, 'controls' en el 12.05%, 'crossorigin' en el 0.45%, 'currenttime' en el 0.01%, 'disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.01%, 'duration' en el 0.05%, 'height' en el 7.33%, 'intrinsicsize' en el 0%, 'loop' en el 14.57%, 'muted' en el 13.92%, 'playsinline' en el 6.49%, 'poster' en el 8.98%, 'preload' en el 11.62%, 'src' en el 3.67%, 'use-credentials' en el 0%, y 'width' en el 9%. Y para móvil: 'autoplay' en el 12.38%, 'buffered' en el 0%, 'controls' en el 13.88%, 'crossorigin' en el 0.16%, 'currenttime' en el 0.01%, disablepictureinpicture' en el 0.01%, 'disableremoteplayback' en el 0.02%, 'duration' en el 0.09%, 'height' en el 6.54%,  intrinsicsize' en el 0%, 'loop' en el 14.44%, 'muted' en el 13.55%, 'playsinline' en el 6.15%, 'poster' en el 9.29%, 'preload' en el 10.34%, 'src' en el 4.13%, 'use-credentials' en el 0%, y 'width' en el 9.03%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=593556050&format=interactive"
   )
 }}
 
@@ -478,11 +403,7 @@ Para una reproducción más avanzada (y para iniciar la transmisión de vídeo),
   image="fig23_top_javascript_video_players.png",
   caption="Top de reproductores de vídeo de JavaScript.",
   description="Gráfico de barras mostrando que 'flowplayer' se usa en 3.365 sitios web para escritorio (3.400 para móvil), 'hls' en 52.375 sitios web para escritorio (40.925 para móvil), 'jwplayer' en 110.280 sitios web para escritorio (96.945 para móvil), 'shaka' en 325 sitios web para escritorio (275 para móvil) y 'vídeo' se usa en 377.990 sitios web para escritorio (391.330 para móvil)",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=215677194&format=interactive"
   )
 }}
 

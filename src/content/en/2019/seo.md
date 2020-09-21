@@ -47,11 +47,7 @@ We assessed the content on the pages by looking for groups of at least 3 words a
   image="fig1.png",
   caption="Distribution of the number of words per page.",
   description="Distribution of words per page. The median number of words per desktop page is 346 and 306 for mobile pages. Desktop pages have more word throughout the percentiles, by as many as 120 words at the 90th percentile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=190546113&format=interactive"
   )
 }}
 
@@ -65,11 +61,7 @@ We also looked at whether pages are structured in a way that provides the right 
   image="fig2.png",
   caption="Distribution of the number of headings per page.",
   description="Distribution of headings per page. The median number of headings per desktop and mobile page is 10. At the 10, 25, 75, and 90th percentiles, the number of headings per desktop page are: 0, 3, 21, and 39. This is slightly higher than the distribution of mobile headings per page.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=676369575&format=interactive"
   )
 }}
 
@@ -79,11 +71,7 @@ The median number of heading elements per page is 10. Headings contain 30 words 
   image="fig3.png",
   caption="Distribution of H1 length per page.",
   description="Distribution of the number of characters in the first H1 per page. The desktop and mobile distributions are nearly identical, with the 10, 25, 50, 75, and 90th percentiles as: 6, 11, 19, 31, and 47 characters.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1380411857&format=interactive"
   )
 }}
 
@@ -110,11 +98,7 @@ Page titles are an important way of communicating the purpose of a page to a use
   image="fig5.png",
   caption="Distribution of title length per page.",
   description="Distribution of the number of characters per title element per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 4, 9, 20, 40, and 66 characters. The mobile distribution is very similar.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1015017335&format=interactive"
   )
 }}
 
@@ -128,11 +112,7 @@ Compared to the `<title>` tag, fewer pages were detected to have a meta descript
   image="fig6.png",
   caption="Distribution of meta description length per page.",
   description="Distribution of the number of characters per meta description per page. The 10, 25, 50, 75, and 90th percentiles of title lengths for desktop are: 9, 48, 123, 162, and 230 characters. The mobile distribution is slightly higher by fewer than 10 characters at any given percentile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1750266149&format=interactive"
   )
 }}
 
@@ -191,11 +171,7 @@ It's important to bear in mind that fewer internal links on the mobile version o
   image="fig7.png",
   caption="Distribution of internal links per page.",
   description="Distribution of the number of internal links per page. The 10, 25, 50, 75, and 90th percentiles of internal links for desktop are: 7, 29, 70, 142, and 261. The mobile distribution is much lower, by 30 links at the 90th percentile and 10 at the median.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=534496673&format=interactive"
   )
 }}
 
@@ -203,11 +179,7 @@ It's important to bear in mind that fewer internal links on the mobile version o
   image="fig8.png",
   caption="Distribution of external links per page.",
   description="Distribution of the number of external links per page. The 10, 25, 50, 75, and 90th percentiles of external links for desktop are: 1, 4, 10, 22, and 51. The mobile distribution is much lower, by 11 links at the 90th percentile and 2 at the median.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1997009875&format=interactive"
   )
 }}
 
@@ -217,11 +189,7 @@ The median desktop page includes 70 internal (same-site) links, whereas the medi
   image="fig9.png",
   caption="Distribution of anchor links per page.",
   description="Distribution of the number of anchor links per page. The 10, 25, 50, 75, and 90th percentiles of internal anchor for desktop are: 0, 0, 0, 1, and 3. The mobile distribution is identical.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=1852200766&format=interactive"
   )
 }}
 
@@ -247,11 +215,7 @@ The metrics we used for our analysis of load speed across the web is based on th
   image="fig10.png",
   caption="Distribution of the performance of user experiences by device type.",
   description="Distribution of the performance of desktop, phone, and tablet user experiences. Desktop: 2% fast, 52% moderate, 46% slow. Phone: 1% fast, 41% moderate, 58% slow. Tablet: 0% fast, 35% moderate, 65% slow.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrPaauIA_G4AySC09FX4fK5DsJ8DWhJGUQE0obrBe9HGSA8geyq3KwFi531jg9Ll9auE3x_UEwnF8g/pubchart?oid=2083126642&format=interactive"
   )
 }}
 

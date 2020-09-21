@@ -98,11 +98,7 @@ Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'a
   image="fig2.png",
   caption="Présence des en-tête HTTP <code>Cache-Control</code> et <code>Expires</code>.",
   description="Ces deux diagrammes à barres identiques pour le mobile et les ordinateurs de bureau montrent que 72&nbsp;% des requêtes utilisent des en-têtes Cache-Control et que 56&nbsp;% utilisent Expires et les 27&nbsp;% n'utilisent aucun des deux.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive"
   )
 }}
 
@@ -120,15 +116,12 @@ Les autres réponses ne peuvent pas être stockées dans le cache du navigateur.
   image="fig3.png",
   caption="Distribution des réponses pouvant être mises en cache.",
   description="Un graphique à barres superposées montrant que 20&nbsp;% des réponses pour ordinateurs de bureau ne peuvent être mises en cache, 47&nbsp;% ont un cache supérieur à zéro, 27&nbsp;% sont mises en cache de manière heuristique et 6&nbsp;% ont un TTL de 0. Les statistiques pour les mobiles sont très similaires (19&nbsp;%, 47&nbsp;%, 27&nbsp;% et 7&nbsp;%)",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1868559586&format=interactive"
   )
 }}
 
 Le tableau ci-dessous détaille les TTL du cache pour les requêtes en provenance d'ordinateurs de bureau. La plupart des types de contenu sont mis en cache, mais les ressources CSS semblent toujours être mises en cache à des valeurs TTL élevées.
+
 <figure>
   <table>
     <thead>
@@ -239,11 +232,7 @@ En explorant plus en détail les possibilités de mise en cache par type de cont
   image="fig5.png",
   caption="Distribution de la cachabilité pour les types de contenu destinés aux ordinateurs de bureau.",
   description="Un diagramme à barres montrant la répartition des éléments non cachables, mis en cache pendant plus de 0 seconde et mis en cache pendant seulement 0 seconde par type pour les ordinateurs de bureau. Une petite, mais significative proportion n'est pas cachable et cela va jusqu'à 50&nbsp;% pour le HTML, la plupart ont une mise en cache supérieure à 0 et une plus petite quantité a un TTL de 0",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1493610744&format=interactive"
   )
 }}
 
@@ -253,11 +242,7 @@ Les mêmes données pour le mobile sont présentées ci-dessous. Comme on peut l
   image="fig6.png",
   caption="Distribution de la cachabilité pour les types de contenu mobile.",
   description="Un diagramme à barres montrant la répartition des éléments non cachables, mis en cache pendant plus de 0 seconde et mis en cache pendant seulement 0 seconde par type pour les ordinateurs de bureau. Une petite, mais significative proportion n'est pas cachable et cela va jusqu'à 50&nbsp;% pour le HTML, la plupart ont une mise en cache supérieure à 0 et une plus petite quantité a un TTL de 0",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1713903788&format=interactive"
   )
 }}
 
@@ -281,11 +266,7 @@ HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients moder
   image="fig7.png",
   caption="Utilisation comparée des en-têtes <code>Cache-Control</code> et <code>Expires</code>.",
   description="Un diagramme à barres montrant que 53&nbsp;% des réponses ont un `Cache-Control: max-age`, 54&nbsp;%-55&nbsp;% utilisent `Expire`, 41&nbsp;%-42&nbsp;% utilisent les deux, et 34&nbsp;% n'utilisent aucun des deux. Les chiffres sont donnés à la fois pour les ordinateurs de bureau et les mobiles, mais les chiffres sont presque identiques, les mobiles ayant un point de pourcentage d'utilisation des expirations plus élevé.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive"
   )
 }}
 
@@ -497,11 +478,7 @@ Dans l'ensemble, 65&nbsp;% des réponses sont servies avec un en-tête `Last-Mod
   image="fig12.png",
   caption="Adoption de la validation de la fraîcheur via les en-têtes <code>Last-Modified</code> et <code>ETag</code> pour sites sur ordinateurs de bureau.",
   description="Le diagramme à barres montre que 64,4&nbsp;% des requêtes sur ordinateurs de bureau ont un Last Modified, 42,8&nbsp;% ont un ETag, 37,9&nbsp;% ont les deux et 30,7&nbsp;% n'ont ni l'un ni l'autre. Les statistiques pour les mobiles sont presque identiques&nbsp;: 65,3&nbsp;% pour la dernière modification, 42,8&nbsp;% pour l'ETag, 38,0&nbsp;% pour les deux et 29,9&nbsp;% pour aucune des deux.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive"
   )
 }}
 
@@ -539,11 +516,7 @@ L'en-tête de réponse HTTP `Date` est généralement généré par le serveur w
   image="fig13.png",
   caption="Formats de date invalides dans les en-têtes de réponse.",
   description="Le diagramme à barres montre que 0,10&nbsp;% des réponses sur ordinateurs de bureau ont une date non valide, 0,67&nbsp;% ont une date Last-Modified non valide et 3,64&nbsp;% ont une date d'Expires non valide. Les statistiques pour les mobiles sont très similaires avec 0,06&nbsp;% des réponses ayant une date non valide, 0,68&nbsp;% ayant une date Last-Modified non valide et 3,50&nbsp;% ayant une date d'Expires non valide.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1500819114&format=interactive"
   )
 }}
 
@@ -724,11 +697,7 @@ Lighthouse calcule un score pour chaque audit, allant de 0 à 100&nbsp;%, et ces
   image="fig21.png",
   caption="Distribution des scores Lighthouse pour l'audit \"Définit un long cache TTL\" pour les pages web mobiles.",
   description="Un diagramme à barres superposées&nbsp;: 38,2&nbsp;% des sites web obtiennent un score de < 10&nbsp;%, 29,0&nbsp;% des sites web obtiennent un score entre 10 et 39&nbsp;%, 18,7&nbsp;% des sites web obtiennent un score de 40 à 79&nbsp;%, 10,7&nbsp;% des sites web obtiennent un score de 80 à 99&nbsp;%, et 3,4&nbsp;% des sites web obtiennent un score de 100&nbsp;%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=827424070&format=interactive"
   )
 }}
 
@@ -740,11 +709,7 @@ Lighthouse indique également combien d'octets pourraient être économisés sur
   image="fig22.png",
   caption="Répartition des économies potentielles d'octets résultant de l'audit de la mise en cache de Lighthouse.",
   description="Un diagramme à barres superposées montrant que 56,8&nbsp;% des sites web ont un potentiel d'économie d'octets de moins d'un Mo, 22,1&nbsp;% pourraient avoir une économie d'un à deux Mo, 8,3&nbsp;% pourraient économiser deux à trois Mo. 4,3&nbsp;% pourraient permettre d'économiser trois à quatre Mo et 6,0&nbsp;% pourraient permettre d'économiser plus de quatre Mo.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1698914500&format=interactive"
   )
 }}
 

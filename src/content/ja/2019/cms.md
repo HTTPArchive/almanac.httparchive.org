@@ -84,11 +84,7 @@ CMSについて考えるとき、ウェブ上にコンテンツを公開する�
   image="fig4.png",
   caption="CMSを使用しているデスクトップおよびモバイルサイトの割合。",
   description="デスクトップサイトの40％、モバイルサイトの40％がCMSを使用して構築されていることを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&format=interactive"
   )
 }}
 
@@ -137,11 +133,7 @@ WordPressの人気は参入障壁の低さと、ユーザー（オンライン�
   image="fig6.png",
   caption="CMSページ重量の分布。",
   description="CMSページの重さの分布を示す棒グラフ。デスクトップCMSページの重さの中央値は2.3MBです。10パーセンタイルでは0.7MB、25パーセンタイルでは1.2MB、75パーセンタイルでは4.2MB、90パーセンタイルでは7.4MBとなっています。デスクトップの値は、モバイルよりもわずかに高くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&format=interactive"
   )
 }}
 
@@ -149,11 +141,7 @@ WordPressの人気は参入障壁の低さと、ユーザー（オンライン�
   image="fig7.png",
   caption="ページあたりのCMSリクエストの分布。",
   description="ページあたりのCMSリクエストの分布を示す棒グラフ。中央値のデスクトップCMSページは86リソースをロードします。10パーセンタイルでは39リソース、25パーセンタイルでは57リソース、75パーセンタイルでは127リソース、90パーセンタイルでは183リソースをロードします。デスクトップはモバイルよりも3～6リソースの僅差で一貫して高い。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&format=interactive"
   )
 }}
 
@@ -279,11 +267,7 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
   image="fig10.png",
   caption="CMSページにおけるサードパーティウェイト（KB）の分布。",
   description="デスクトップとモバイルのCMSページにおけるサードパーティのキロバイトの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップのサードパーティ重量の中央値（50パーセンタイル）は272KB。10パーセンタイルは27KB、25位104KB、75位577KB、90位940KBとなっています。モバイルはパーセンタイルが小さい方がわずかに小さく、大きい方がわずかに大きくなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&format=interactive"
   )
 }}
 
@@ -291,11 +275,7 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
   image="fig11.png",
   caption="CMSページの第三者リクエスト数の分布。",
   description="デスクトップとモバイル用のCMSページのサードパーティリクエストの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップのサードパーティリクエスト数の中央値（50パーセンタイル）は16。10パーセンタイルは3、25パーセンタイルは7、75パーセンタイルは31、90パーセンタイルは52です。デスクトップとモバイルでは、ほぼ同等の分布となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&format=interactive"
   )
 }}
 
@@ -309,11 +289,7 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
   image="fig12.png",
   caption="CMSページにおける画像の重み（KB）の分布。",
   description="デスクトップとモバイルのCMSページの画像キロバイトの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップの画像重量の中央値（50パーセンタイル）は1,232KB。10パーセンタイルは198KB、25パーセンタイル507KB、75パーセンタイル2,763KB、90パーセンタイル5,694KBとなっています。デスクトップとモバイルでは、ほぼ同等の分布となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&format=interactive"
   )
 }}
 
@@ -332,11 +308,7 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
   image="fig14.png",
   caption="CMSページでの画像フォーマットの採用。",
   description="デスクトップとモバイルのCMSページにおける画像フォーマットの採用状況の棒グラフ。JPEGが全体の半分近くを占め、PNGが3分の1、GIFが5分の1を占め、残りの5%はSVG、ICO、WebPで占められています。デスクトップとモバイルでは、ほぼ同等の採用率となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&format=interactive"
   )
 }}
 
@@ -390,11 +362,7 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
   image="fig16.png",
   caption="CMS全体のFCP経験の平均分布。",
   description="CMSごとのFCP経験値の平均分布を棒グラフにしたもの。以下の図17を参照して、上位5つのCMSデータ表を作成した。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&format=interactive"
   )
 }}
 
@@ -458,11 +426,7 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
   image="fig18.png",
   caption="CMS全体のFID経験の平均分布。",
   description="CMSごとのFCP経験値の平均分布を棒グラフにしたもの。上位5つのCMSデータ表については、下記の図19を参照のこと。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&format=interactive"
   )
 }}
 
@@ -526,11 +490,7 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
   image="fig20.png",
   caption="CMSページのLighthouse PWAカテゴリスコアの分布。",
   description="全CMSページのLighthouse PWAカテゴリスコアの分布を示す棒グラフです。最も一般的なスコアは0.3で、CMSページの22%です。この分布には他にも2つのピークがあります。スコアが0.15のページが11％、スコアが0.56のページが8％です。0.6以上のスコアを取得しているページは1%未満です。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&format=interactive"
   )
 }}
 
@@ -538,11 +498,7 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
   image="fig21.png",
   caption="CMSごとの灯台PWAカテゴリスコアの中央値。",
   description="CMSごとのLighthouse PWAスコアの中央値を示す棒グラフ。WordPressサイトのスコア中央値は0.33です。次の5つのCMS（Joomla、Drupal、Wix、Squarespace、1C-Bitrix）のスコア中央値はすべて0.3です。PWAのスコアがトップのCMSは、Jimdoが0.56、TYPO3が0.41となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&format=interactive"
   )
 }}
 
@@ -556,11 +512,7 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
   image="fig22.png",
   caption="CMSページのLighthouseアクセシビリティカテゴリスコアの分布。",
   description="CMSページのLighthouseアクセシビリティスコアの分布を示す棒グラフ。この分布は、約0.85のモードで、高いスコアに大きく傾いています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&format=interactive"
   )
 }}
 
@@ -568,11 +520,7 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
   image="fig23.png",
   caption="CMSごとのLighthouseアクセシビリティカテゴリスコアの中央値。",
   description="CMSごとのLighthouseアクセシビリティカテゴリスコアの中央値を示す棒グラフ。ほとんどのCMSのスコアは約0.75です。注目すべき例外としては、Wixのスコア中央値が0.93、1C-Bitrixのスコアが0.65のものがあります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&format=interactive"
   )
 }}
 

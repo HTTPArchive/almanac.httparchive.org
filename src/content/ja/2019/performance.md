@@ -47,11 +47,7 @@ Web Almanacにある他のほとんどの章は、[HTTP Archive](https://httparc
   image="fig1.png",
   caption="Webサイトの高速、適度、および低速のFCPパフォーマンスの分布。",
   description="Webサイト1000個から見た、FCPが高速、適度、低速の分布。FCPが早いサイトの分布は100%から0%までが線形になっているように見えます。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=115935793&format=interactive"
   )
 }}
 
@@ -65,11 +61,7 @@ Webサイトが十分に**高速**かどうかを分類するために、新し�
   image="fig2.png",
   caption="高速、適度、低速のFCPラベルが貼られたWebサイトの分布。",
   description="Webサイトの13%が高速なFCPで、66%が適度のFCP、20%が低速のFCPを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=36103372&format=interactive"
   )
 }}
 
@@ -81,13 +73,10 @@ Webサイトが十分に**高速**かどうかを分類するために、新し�
 
 {{ figure_markup(
   image="fig3.png",
+  alt="デスクトップWebサイトの高速、適度、低速のFCPパフォーマンスの分布。",
   caption="<em>デスクトップ</em> Webサイトの高速、適度、低速のFCPパフォーマンスの分布。",
   description="1,000個のデスクトップWebサイトの高速、適度、低速のFCP分布、高速なFCPの分布は100%から0%までが線形となっており、中央で少し膨らんでいます。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1231764008&format=interactive"
   )
 }}
 
@@ -96,11 +85,7 @@ Webサイトが十分に**高速**かどうかを分類するために、新し�
   alt="携帯電話向け Webサイトの高速、適度、低速のFCPパフォーマンスの分布。",
   caption="<em>携帯電話向け</em> Webサイトの高速、適度、低速のFCPパフォーマンスの分布。",
   description="1,000個の携帯電話向けWebサイトの高速、適度、低速のFCP分布、高速なFCPの分布は100%から0%までに膨らみが無く、線形に見えます。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=167423587&format=interactive"
   )
 }}
 
@@ -110,11 +95,7 @@ Webサイトが十分に**高速**かどうかを分類するために、新し�
   image="fig5.png",
   caption="高速、適度、低速FCPのラベルが付けられたWebサイトの分布。デバイスの種類で分類されています。",
   description="デスクトップとモバイルのFCP分布を示す棒グラフ。デスクトップは高速、適度、低速が17%、67%、16%となっており、モバイルは11%、66%、23%となっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=486448175&format=interactive"
   )
 }}
 
@@ -129,11 +110,7 @@ Webサイトでデスクトップユーザーが高確率で携帯電話のユ�
   alt="高速、適度、低速のFCPでラベル付けされたWebサイトの分布。ECT (effective connection type) で分類されています。",
   caption='高速、適度、低速のFCPでラベル付けされたWebサイトの分布。<abbr title="effective connection type">ECT</abbr> で分類されています。',
   description="有効な接続タイプ毎のFCP分布棒グラフ。4Gの高速、適度、低速：14％、67％、19％。 3G：1％、38％、61％。 2G：0％、9％、90％。 低速な2G：0％、1％、99％。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1987967547&format=interactive"
   )
 }}
 
@@ -176,11 +153,7 @@ TTFBとそれに影響する多くの要因を説明するために、[Navigatio
   image="fig9.png",
   caption="WebサイトのTTFBパフォーマンス、高速、適度、低速の分布。",
   description="Webサイト1,000個の高速、適度、低速のTTFBの配布。 高速TTFBの分布は、10番目まで早い割合で、そして約90％から50％に急速に低下します。 その後分布は50％から0％に徐々に減少し、最後の1割は底辺を這います。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=444630188&format=interactive"
   )
 }}
 
@@ -194,11 +167,7 @@ TTFBとそれに影響する多くの要因を説明するために、[Navigatio
   image="fig10.png",
   caption="TTFBが高速、適度、低速としてラベル付けされたWebサイトの分布。",
   description="Webサイトの2%が高速なTTFBを、56%が適度のTTFBを、42%が低速なTTFBとなっていることを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=926985367&format=interactive"
   )
 }}
 
@@ -230,11 +199,7 @@ Webサイトの42%で低速のTTFB体験となっています。TTFBは他のす
   image="fig12.png",
   caption="Webサイトの高速、適度、低速のFIDパフォーマンスの分布。",
   description="Webサイト1,000個の高速、適度、低速のFID配布。75%を超える高速なFIDの分布は、4分の3でもWebサイトがあり、その後急速に0％に低下します。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=60679078&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=60679078&format=interactive"
   )
 }}
 
@@ -244,11 +209,7 @@ Webサイトの42%で低速のTTFB体験となっています。TTFBは他のす
   image="fig13.png",
   caption="高速、適度、低速のTTFBでラベル付けされたWebサイトの分布。",
   description="40％のWebサイトが高速なFID、45％が適度のFID、15％が低速のFIDであることを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1828752871&format=interactive"
   )
 }}
 
@@ -263,11 +224,7 @@ Webサイトの42%で低速のTTFB体験となっています。TTFBは他のす
   alt="デスクトップWebサイトのFIDパフォーマンスの高速、適度、低速の分布。",
   caption="<em>デスクトップ</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。",
   description="デスクトップWebサイト1,000個の高速、適度、低速FIDの配布。 Webサイトの最速の4分の3で、高速FIDの分布は100％から90％にかけて非常にゆっくりと減少して、その後高速FIDは75％まで減少します。 ほぼすべてのデスクトップWebサイトは、75％以上の高速なFID体験を備えています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=16379508&format=interactive"
   )
 }}
 
@@ -276,11 +233,7 @@ Webサイトの42%で低速のTTFB体験となっています。TTFBは他のす
   alt="携帯電話向けWebサイトのFIDパフォーマンスの高速、適度、低速の分布。",
   caption="<em>携帯電話向け</em> WebサイトのFIDパフォーマンスの高速、適度、低速の分布。",
   description="モバイルWebサイト1,000個の高速、適度、低速FIDの配布。 高速なFIDの分布は着実に減少していますが、デスクトップよりもはるかに速く減っています。 ウェブサイトの4分の3までが75％となる高速に達していますが、その後すぐに0％に低下します。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=519511409&format=interactive"
   )
 }}
 
@@ -290,11 +243,7 @@ FIDをデバイスで分類してみると、この2つはまったく別の話�
   image="fig16.png",
   caption="高速、適度、低速FIDとしてラベル付けされたWebサイトの分布。デバイス種類別に分類されています。",
   description="デスクトップとモバイルFID分布の棒グラフ。 デスクトップは高速、適度、低速がそれぞれ82％、12％、5％。 モバイルの場合26％、52％、22％。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1533541692&format=interactive"
   )
 }}
 
@@ -307,11 +256,7 @@ PSIラベルをデスクトップと携帯電話の体験に適用してみる�
   alt="ECT (effective connection type)によって分類された高速、適度、低速FIDとしてラベル付けされたWebサイトの分布",
   caption='<abbr title="effective connection type">ECT</abbr>によって分類された高速、適度、低速FIDとしてラベル付けされたWebサイトの分布',
   description="有効な接続タイプ毎のFID分布の棒グラフ。4G高速、適度、低速がそれぞれ41％、45％、15％。3G：22％、52％、26％。 2G：19％、58％、23％。 低速な2G：15％、58％、27％。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQlf3_ySLPB5322aTumUZhbVGdaUdkmi1Hs4bYuO3Z1kqM4xspx7REbwXukwPd_tsOSg6oImzpYLM9/pubchart?oid=1173039776&format=interactive"
   )
 }}
 

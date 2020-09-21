@@ -411,11 +411,7 @@ El número de peticiones [JavaScript](./javascript) indica que un mejor _bundlin
   image="fig11.png",
   caption="Distribución de bytes de HTML (en KB) por página de comercio electrónico.",
   description="Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de HTML por página de comercio electrónico. La página de comercio electrónico de escritorio promedio tiene 36 KB de HTML. El percentil 10 es 12 KB, el 25 es 20, el 75 es 66 y el 90 es 118. Los sitios web de escritorio tienen 1 ó 2 KB más de HTML que los sitios móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive"
   )
 }}
 
@@ -429,11 +425,7 @@ Los tamaños de HTML en móvil no son muy diferentes de los de escritorio. En ot
   image="fig12.png",
   caption="Distribución de bytes de imagen (en KB) por página de comercio electrónico.",
   description="Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de imagen por página de comercio electrónico. La página de comercio electrónico móvil promedio tiene 1.517 KB de imágenes. El percentil 10 es 318 KB, el 25 es 703, el 75 es 3.132 y el 90 es 5.881. Los sitios web para escritorio y dispositivos móviles tienen distribuciones similares.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive"
   )
 }}
 
@@ -441,11 +433,7 @@ Los tamaños de HTML en móvil no son muy diferentes de los de escritorio. En ot
   image="fig13.png",
   caption="Distribución de peticiones de imágenes por página de comercio electrónico.",
   description="Distribución de los percentiles 10, 25, 50, 75 y 90 de peticiones de imágenes por página de comercio electrónico. La página mediana de comercio electrónico de escritorio realiza 40 peticiones de imágenes. El percentil 10 es 16 peticiones, el 25 es 25, el 75 es 62 y el 90 es 97. La distribución de escritorio es ligeramente superior a la móvil en 2-10 peticiones en cada percentil.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive"
   )
 }}
 
@@ -472,11 +460,7 @@ Necesitamos hacer más análisis para comprender mejor por qué algunos sitios n
   image="fig15.png",
   caption="Formatos de imagen populares.",
   description="Gráfico de barras que muestra la popularidad de varios formatos de imagen. JPEG es el formato más popular con el 54% de las imágenes en las páginas de comercio electrónico de escritorio. Los siguientes son PNG con un 27%, GIF con un 14%, SVG con un 2% y WebP e ICO con un 1% cada uno.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive"
   )
 }}
 
@@ -567,11 +551,7 @@ Muchos sitios web, especialmente las tiendas en línea, cargan una cantidad sign
   image="fig17.png",
   caption="Distribución de peticiones de terceros por página de comercio electrónico.",
   description="Distribución de los percentiles 10, 25, 50, 75 y 90 de las solicitudes de terceros por página de comercio electrónico. El número medio de solicitudes de terceros en escritorio es 19. Los percentiles 10, 25, 75 y 90 son: 4, 9, 34 y 54. En escritorio hay 1 ó 2 peticiones más que en móvil en cada percentil.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive"
   )
 }}
 
@@ -579,11 +559,7 @@ Muchos sitios web, especialmente las tiendas en línea, cargan una cantidad sign
   image="fig18.png",
   caption="Distribución de bytes de terceros por página de comercio electrónico.",
   description="Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de terceros por página de comercio electrónico. El número medio de bytes de terceros en el escritorio es de 320 KB. Los percentiles 10, 25, 75 y 90 son: 42, 129, 651 y 1.071. En escriorio es 10-30 KB más alto que en móvil en cada percentil.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive"
   )
 }}
 
@@ -599,11 +575,7 @@ Tenga en cuenta que las siguientes gráficas y tablas muestran datos sólo para 
   image="fig19.png",
   caption="Distribución de solicitudes de terceros por página móvil para cada plataforma de comercio electrónico.",
   description="Distribución de los percentiles 10, 25, 50, 75 y 90 de peticiones de terceros por página de comercio electrónico para cada plataforma. Shopify y Bigcommerce cargan la mayoría de las peticiones de terceros en las distribuciones con unas 40 peticiones en la mediana.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive"
   )
 }}
 
@@ -611,11 +583,7 @@ Tenga en cuenta que las siguientes gráficas y tablas muestran datos sólo para 
   image="fig20.png",
   caption="Distribución de bytes de terceros (KB) por página móvil para cada plataforma de comercio electrónico.",
   description="Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de terceros (KB) por página de comercio electrónico para cada plataforma. Shopify y Bigcommerce cargan la mayoría de los bytes de terceros en las distribuciones con más de 1.000 KB en la mediana.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive"
   )
 }}
 
@@ -629,11 +597,7 @@ Claramente, las páginas en algunas plataformas de comercio electrónico hacen m
   image="fig21.png",
   caption="Distribución promedio de experiencias FCP por plataforma de comercio electrónico.",
   description="Gráfico de barras de la distribución promedio de las experiencias de FCP para las seis principales plataformas de comercio electrónico. WooCommerce tiene la mayor densidad de experiencias FCP lentas con un 43%. Shopify tiene la mayor densidad de experiencias rápidas de FCP con 47%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive"
   )
 }}
 
@@ -651,11 +615,7 @@ Consulte también el [capítulo de PWA](./pwa) para obtener más información so
   image="fig22.png",
   caption="Distribución de las puntuaciones en la categoría PWA en Lighthouse para páginas de comercio electrónico móvil.",
   description="Distribución de las puntuaciones de la categoría PWA de Lighthouse para páginas de comercio electrónico. En una escala de 0 (fallando) a 1 (perfecto), el 40% de las páginas obtienen una puntuación de 0,33. El 1% de las páginas obtienen una puntuación superior a 0,6.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive"
   )
 }}
 

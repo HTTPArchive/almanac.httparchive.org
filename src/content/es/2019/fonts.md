@@ -35,11 +35,7 @@ Las recomendaciones para mitigar los costos de rendimiento de cargar fuentes web
   image="fig1.png",
   caption="Estrategias populares de alojamiento de fuentes web.",
   description="Gráfico de barras que muestra la popularidad de las estrategias de alojamiento propio y de terceros para fuentes web. El 75% de las páginas web móviles utilizan dominios de terceros y el 25% alojamiento propio. Los sitios web de escritorio tienen un uso similar.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&format=interactive"
   )
 }}
 
@@ -357,11 +353,7 @@ No es sorprendente que las entradas principales aquí parezcan coincidir de mane
   image="fig7.png",
   caption="Popularidad de los tipos MIME de fuentes web.",
   description="Gráfico de barras que muestra la popularidad de los tipos MIME de fuentes web. WOFF2 se utiliza en el 74% de las fuentes, seguido del 13% WOFF, el 6% de octet-stream, el 3% TTF, el 2% plano, el 1% HTML, el 1% SFNT y menos del 1% para todos los demás tipos. Las computadoras de escritorio y los dispositivos móviles tienen distribuciones similares.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&format=interactive"
   )
 }}
 
@@ -375,11 +367,7 @@ Profundicemos un poco más y veamos los valores `format()` usados en la propieda
   image="fig8.png",
   caption="Popularidad de los formatos de fuente en las declaraciones <code>@font-face</code>.",
   description="Gráfico de barras que muestra la popularidad de los formatos utilizados en las declaraciones de fuentes. El 69% de las declaraciones @font-face de las páginas de escritorio especifican el formato WOFF2, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT y menos del 1% OpenType, TTF y OTF. La distribución de las páginas móviles es similar.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
   )
 }}
 
@@ -552,11 +540,7 @@ Echemos un vistazo a los valores de `font-display` que son populares:
   image="fig11.png",
   caption="Uso de valores <code>font-display</code>.",
   description="Gráfico de barras que muestra el uso del estilo font-display. El 2,6% de las páginas móviles configuran este estilo en \"swap\", 1,5% en \"auto\", 0,7% en \"block\", 0,4% en \"fallback\", 0,2% en \"optional\" y 0,1% en \"swap\" entre comillas. que no es válido. La distribución de escritorio es similar, excepto que el uso de \"swap\" es menor en 0.4 puntos porcentuales y el uso \"auto\" es mayor en 0.1 puntos porcentuales.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
   )
 }}
 
@@ -570,11 +554,7 @@ Como una manera fácil de mostrar texto de respaldo mientras se carga una fuente
   image="fig12.png",
   caption="Distribución de solicitudes de fuentes por página.",
   description="Gráfico de barras que muestra la distribución de solicitudes de fuentes por página. Los percentiles 10, 25, 50, 75 y 90 para escritorio son: 0, 1, 3, 6 y 9 solicitudes de fuentes. La distribución para móviles es idéntica hasta los percentiles 75 y 90, donde las páginas móviles solicitan 1 fuente menos.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&format=interactive"
   )
 }}
 
@@ -584,11 +564,7 @@ La página web mediana realiza tres solicitudes de fuentes web. En el percentil 
   image="fig13.png",
   caption="Histograma de fuentes web solicitadas por página.",
   description="Histograma que muestra la distribución del número de solicitudes de fuentes por página. El número más popular de solicitudes de fuentes es 0 en el 22% de las páginas de escritorio. La distribución cae al 9% de las páginas que tienen 1 fuente, luego alcanza el 10% para 2-4 fuentes antes de caer a medida que aumenta el número de fuentes. Las distribuciones de escritorio y móvil son similares, aunque la distribución móvil se inclina ligeramente hacia tener menos fuentes por página.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&format=interactive"
   )
 }}
 
@@ -667,11 +643,7 @@ Incluso con un 1.8%, esto fue más alto de lo esperado, aunque estoy emocionado 
   image="fig19.png",
   caption="Uso de los ejes <code>font-variation-settings</code>.",
   description="Gráfico de barras que muestra el uso de la propiedad font-variation-settings. El 42% de las propiedades en las páginas de escritorio se establecen en el valor \"opsz\", el 32% en \"wght\", el 16% en \"wdth\", el 2% o menos en \"roun\", \"crsb\", \"slnt\", \"inln\" , y más. Las diferencias más notables entre las páginas de escritorio y móviles son el 26% de uso de \"opsz\", el 38% de \"wght\" y el 23% de \"wdth\".",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
   )
 }}
 

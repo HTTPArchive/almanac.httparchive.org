@@ -35,11 +35,7 @@ CSSをWebテクノロジーに慣れていない人に説明するときは、CS
   image="fig1.png",
   caption="カラー形式の人気。",
   description="HSL、HSLA、RGB、RGBA、および16進カラー形式の採用を示す棒グラフ。 Hexはデスクトップページの93％、RGBAは83％、RGBは22％、HSLA 19％、HSL 1％で使用されています。デスクトップとモバイルの採用は、モバイルの採用が9％（9倍）であるHSLを除くすべてのカラー形式で類似しています。s",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&format=interactive"
   )
 }}
 
@@ -69,11 +65,7 @@ CSSの[名前付きカラーは148個](https://www.w3.org/TR/css-color-4/#named-
   image="fig3.png",
   caption="ページごとの色の分布。",
   description="デスクトップおよびモバイルページごとの色の10、25、50、75、および90パーセンタイルを示す分布。デスクトップ分布は8、22、48、83、および131です。モバイルページは、1〜10までに色が増える傾向があります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&format=interactive"
   )
 }}
 
@@ -85,11 +77,7 @@ CSSの[名前付きカラーは148個](https://www.w3.org/TR/css-color-4/#named-
   image="fig4.png",
   caption="ページごとの複製色の分布。",
   description="ページごとの色の分布を示す棒グラフ。中央のデスクトップページには24の重複した色があります。 10パーセンタイルは4つの重複色であり、90パーセンタイルは62です。デスクトップとモバイルの分布は似ています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&format=interactive"
   )
 }}
 
@@ -101,11 +89,7 @@ CSSには、異なるユニットタイプ（`rem`、`px`、`em`、`ch`、また
   image="fig5.png",
   caption="ユニットタイプの人気。",
   description="さまざまなユニットタイプの人気の棒グラフ。 pxとemは、ページの90％以上で使用されています。 remは、ページの40％で次に人気のあるユニットタイプであり、残りのユニットタイプの人気は急落します。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&format=interactive"
   )
 }}
 
@@ -144,11 +128,7 @@ CSSには、スタイリングのためにページ上の要素を見つける�
   image="fig7.png",
   caption="ページごとのセレクタータイプの人気。",
   description="IDおよびクラスセレクタータイプの採用を示す棒グラフ。クラスは、デスクトップおよびモバイルページの95％で使用されます。 IDは、デスクトップの89％とモバイルページの87％で使用されます。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&format=interactive"
   )
 }}
 
@@ -158,11 +138,7 @@ CSSには、スタイリングのためにページ上の要素を見つける�
   image="fig8.png",
   caption="セレクタごとのセレクタタイプの人気。",
   description="セレクタの94％にデスクトップとモバイルのクラスセレクタが含まれていることを示す棒グラフ、一方デスクトップセレクターの7％にはIDセレクターが含まれます（モバイルの場合は8％）。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&format=interactive"
   )
 }}
 
@@ -174,11 +150,7 @@ CSSには、非常に強力な比較セレクターがいくつかあります�
   image="fig9.png",
   caption="ID属性セレクターごとの演算子の人気。",
   description="ID属性セレクターで使用される演算子の人気を示す棒グラフ。デスクトップページとモバイルページの約4％は、スターイコールとキャレットイコールを使用しています。 1％のページで「イコール」と「ダラーイコール」を使用しています。 0％はチルダイコールを使用します。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive"
   )
 }}
 
@@ -186,11 +158,7 @@ CSSには、非常に強力な比較セレクターがいくつかあります�
   image="fig10.png",
   caption="クラス属性セレクタごとの演算子の人気。",
   description="クラス属性セレクターで使用される演算子の人気を示す棒グラフ。 57％のページがスターイコールを使用しています。 36％がキャレットイコールを使用します。 1％はイコールおよびドルイコールを使用します。 0％はチルダイコールを使用します。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive"
   )
 }}
 
@@ -217,11 +185,7 @@ OOCSS、アトミック、および機能的なCSS戦略の登場により要素
   image="fig12.png",
   caption="フレックスボックスの採用。",
   description="フレックスボックスを使用したデスクトップページの49％とモバイルページの52％を示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&format=interactive"
   )
 }}
 
@@ -248,11 +212,7 @@ WebとCSSは国際的なプラットフォーム機能であり、書き込み�
   image="fig14.png",
   caption="方向の値の人気。",
   description="方向値ltrおよびrtlの人気を示す棒グラフ。 ltrは、デスクトップページの32％とモバイルページの40％で使用されています。 rtlは、デスクトップページの32％とモバイルページの36％で使用されています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&format=interactive"
   )
 }}
 
@@ -266,11 +226,7 @@ WebページにいくつのWebフォントをロードしていますか：0？�
   image="fig15.png",
   caption="ページごとにロードされるWebフォントの数の分布。",
   description="ページごとにロードされるWebフォントの数の分布。デスクトップでは、10、25、50、75、および90パーセンタイルは0、1、3、6、および9です。これは、75パーセンタイルと90パーセンタイルで1つ少ないフォントであるモバイル配布よりわずかに高くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&format=interactive"
   )
 }}
 
@@ -302,11 +258,7 @@ WebページにいくつのWebフォントをロードしていますか：0？�
   image="fig17.png",
   caption="ページごとの異なるフォントサイズの数の分布。",
   description="ページごとの異なるフォントサイズの分布を示す棒グラフ。デスクトップページの10、25、50、75、および90パーセンタイルは、8、20、40、66、および92のフォントサイズです。デスクトップディストリビューションは、75パーセンタイルでモバイルとは異なり、7〜13の異なるサイズで大きくなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&format=interactive"
   )
 }}
 
@@ -320,11 +272,7 @@ WebページにいくつのWebフォントをロードしていますか：0？�
   image="fig18.png",
   caption="ページごとの異なるマージン値の数の分布。",
   description="ページごとの明確なマージン値の分布を示す棒グラフ。デスクトップページの場合、10、25、50、75、および90パーセンタイルは、12、47、96、167、および248の異なるマージン値です。デスクトップディストリビューションは75パーセンタイルでモバイルとは異なり、12〜31の異なる値で小さくなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&format=interactive"
   )
 }}
 
@@ -349,11 +297,7 @@ CSSの`z-index`を使用して、垂直の階層化またはスタックを管�
   image="fig20.png",
   caption="ページごとの個別の <code>z-index</code> 値の数の分布。",
   description="ページごとの異なるz-index値の分布を示す棒グラフ。デスクトップページの場合、10、25、50、75、および90パーセンタイルは、1、7、16、26、および36の異なるz-index値です。デスクトップの分布はモバイルよりもはるかに高く、90パーセンタイルで16もの異なる値があります。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&format=interactive"
   )
 }}
 
@@ -365,11 +309,7 @@ CSSの`z-index`を使用して、垂直の階層化またはスタックを管�
   image="fig21.png",
   caption="最も頻繁に使用される <code>z-index</code> 値。",
   description="デスクトップとモバイルの両方について、すべての既知のz-index値とそれらが使用された回数の散布図。 1と2が最も頻繁に使用されますが、残りの人気のある値は数百桁の数字まで桁違いに爆発します：10、100、1,000など。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&format=interactive"
   )
 }}
 
@@ -422,11 +362,7 @@ CSSには、トランジションのこれらの値の方法に関する単一�
   image="fig25.png",
   caption="ページごとの遷移数の分布。",
   description="ページごとのトランジションの分布を示す棒グラフ。デスクトップページの場合、10、25、50、75、および90パーセンタイルは、0、2、16、49、および118です。デスクトップの分布はモバイルよりもはるかに低く、90パーセンタイルで最大77のトランジション。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&format=interactive"
   )
 }}
 
@@ -440,11 +376,7 @@ CSSキーフレームアニメーションは、より複雑なアニメーシ�
   image="fig26.png",
   caption="ページごとのキーフレーム数の分布。",
   description="ページごとのキーフレームの分布を示す棒グラフ。モバイルページの場合、10、25、50、75、および90パーセンタイルは、0、0、3、18、および76キーフレームです。モバイルの分布は、75パーセンタイルと90パーセンタイルで6キーフレーム分、デスクトップよりわずかに高くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&format=interactive"
   )
 }}
 
@@ -458,11 +390,7 @@ CSSキーフレームアニメーションは、より複雑なアニメーシ�
   image="fig27.png",
   caption="ページごとのメディアクエリ数の分布。",
   description="ページごとのメディアクエリの分布を示す棒グラフ。デスクトップページの場合、10、25、50、75、および90パーセンタイルは、0、3、14、27、および43キーフレームです。デスクトップ配布は、モバイル配布に似ています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive"
   )
 }}
 
@@ -474,11 +402,7 @@ CSSキーフレームアニメーションは、より複雑なアニメーシ�
   image="fig28.png",
   caption="メディアクエリで使用される最も頻繁に使用されるスナップポイント。",
   description="最も人気のあるメディアクエリスナップポイントの棒グラフ。 768pxと767pxが最も人気があり、それぞれ23％と16％です。その後、リストはすぐに削除され、992pxは6％の時間を使用し、1200pxは4％の時間を使用しました。デスクトップとモバイルの使用方法は似ています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&format=interactive"
   )
 }}
 
@@ -492,11 +416,7 @@ CSSキーフレームアニメーションは、より複雑なアニメーシ�
   image="fig29.png",
   caption="メディアクエリの方向モードの採用。",
   description="メディアクエリの縦向きモードと横向きモードの採用を示す棒グラフ。ページの31％は横向き、8％は縦向き、7​​％は両方を指定しています。採用は、デスクトップページとモバイルページで同じです。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&format=interactive"
   )
 }}
 
@@ -510,11 +430,7 @@ CSSキーフレームアニメーションは、より複雑なアニメーシ�
   image="fig30.png",
   caption="メディアクエリスナップポイントでのユニットの採用。",
   description="ピクセルを指定するメディアクエリスナップポイントの75％、emsを指定する8％、remを指定する1％を示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&format=interactive"
   )
 }}
 
@@ -526,11 +442,7 @@ CSSキーフレームアニメーションは、より複雑なアニメーシ�
   image="fig31.png",
   caption="メディアクエリスナップポイントで使用されるプロパティの採用。",
   description="最大幅を使用するデスクトップページの74％、最小幅を使用する70％、および両方のプロパティを使用する68％を示す棒グラフ。採用はモバイルページでも同様です。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&format=interactive"
   )
 }}
 
@@ -544,11 +456,7 @@ Webサイトはデジタルペーパーのように感じますか？　ユー�
   image="fig32.png",
   caption="メディアクエリのall、print、screen、およびspeechタイプの採用。",
   description="「all」のメディアクエリタイプを使用するデスクトップページの35％、printを使用する46％、screenを使用する72％、およびspeechを使用する0％を示す棒グラフ。採用率は、モバイルに比べてデスクトップで約5パーセントポイント低くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
   )
 }}
 
@@ -562,11 +470,7 @@ Webサイトはデジタルペーパーのように感じますか？　ユー�
   image="fig33.png",
   caption="ページごとにロードされるスタイルシートの数の分布。",
   description="ページごとにロードされるスタイルシートの数の分布。デスクトップとモバイルは、10、25、50、75、および90パーセンタイル（ページごとに1、3、6、12、および20のスタイルシート）を持つ同一の分布を持っています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&format=interactive"
   )
 }}
 
@@ -689,11 +593,7 @@ Webサイトはデジタルペーパーのように感じますか？　ユー�
   image="fig35.png",
   caption="ページごとにロードされるスタイルシートのバイト数（KB）の分布。",
   description="ページごとにロードされるスタイルシートのバイト数の分布。デスクトップページの10、25、50、75、および90パーセンタイルは、8、26、62、129、および240KBです。デスクトップ配布は、モバイル配布より5〜10KBわずかに高くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&format=interactive"
   )
 }}
 
@@ -800,11 +700,7 @@ CSSリセットユーティリティは、ネイティブWeb要素のベース�
   image="fig37.png",
   caption="CSSリセットユーティリティの採用。",
   description="3つのCSSリセットユーティリティの採用を示す棒グラフ：Normalize.css（33％）、Reset CSS（3％）、およびPure CSS（0％）。デスクトップページとモバイルページで採用に違いはありません。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&format=interactive"
   )
 }}
 
@@ -818,11 +714,7 @@ CSS `@supports`は、ブラウザが特定のプロパティと値の組み合�
   image="fig38.png",
   caption="CSS「@」ルールの人気",
   description='@importおよび@supports "@"ルールの人気を示す棒グラフ。デスクトップでは、ページの28％で@importが使用され、31％で@supportsが使用されます。モバイルでは、ページの26％で@importが使用され、29％で@supportsが使用されます。',
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive"
   )
 }}
 

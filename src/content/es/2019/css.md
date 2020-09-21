@@ -35,11 +35,7 @@ Hex es la forma más popular de describir el color por mucho, con un 93% de uso,
   image="fig1.png",
   caption="Popularidad de los formatos de color.",
   description="Gráfico de barras que muestra la adopción de los formatos HSL, HSLA, RGB, RGBA y hexadecimal. Hex se usa en el 93% de las páginas de escritorio, RGBA en el 83%, RGB en el 22%, HSLA 19% y HSL 1%. La adopción móvil y de escritorio es similar para todos los formatos de color, excepto HSL, para el cual la adopción móvil es del 9% (9 veces mayor).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1946838030&format=interactive"
   )
 }}
 
@@ -69,11 +65,7 @@ El idioma también se infiere de manera interesante a través del color. Hay má
   image="fig3.png",
   caption="Distribución de colores por página.",
   description="Distribución que muestra los percentiles 10, 25, 50, 75 y 90 de colores por computadoras de escritorio y página móvil. En computadoras de  escritorio, la distribución es 8, 22, 48, 83 y 131. Las páginas móviles tienden a tener más colores entre 1 y 10.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1361184636&format=interactive"
   )
 }}
 
@@ -85,11 +77,7 @@ Bueno, tenemos curiosidad aquí y queríamos inspeccionar cuántos colores dupli
   image="fig4.png",
   caption="Distribución de colores duplicados por página.",
   description="Gráfico de barras que muestra la distribución de colores por página. La página de escritorio promedio tiene 24 colores duplicados. El percentil 10 es de 4 colores duplicados y el percentil 90 es de 62. Las distribuciones de escritorio y móviles son similares.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=326531498&format=interactive"
   )
 }}
 
@@ -101,11 +89,7 @@ En CSS, hay muchas formas diferentes de lograr el mismo resultado visual utiliza
   image="fig5.png",
   caption="Popularidad de los tipos de unidades.",
   description="Gráfico de barras de la popularidad de varios tipos de unidades.Las unidades px y em se utilizan en más del 90% de las páginas. La unidad rem es el siguiente tipo de unidad más popular en el 40% de las páginas y la popularidad cae rápidamente para los tipos de unidades restantes.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=540111393&format=interactive"
   )
 }}
 
@@ -144,11 +128,7 @@ CSS tiene algunas formas de encontrar elementos en la página para el estilo, as
   image="fig7.png",
   caption="Popularidad de los tipos de selector por página.",
   description="Gráfico de barras que muestra la adopción de ID y tipos de selector de clase. Las clases se usan en el 95% de las páginas de escritorio y móviles. Las ID se usan en el 89% de las páginas de escritorio y el 87% de las páginas móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1216272563&format=interactive"
   )
 }}
 
@@ -158,11 +138,7 @@ Un buen cuadro de seguimiento es este, que muestra que las clases ocupan el 93% 
   image="fig8.png",
   caption="Popularidad de los tipos de selector por selector.",
   description="Gráfico de barras que muestra que el 94% de los selectores incluyen el selector de clase para computadoras de escritorio y dispositivos móviles, mientras que el 7% de los selectores de escritorio incluyen el selector de ID (8% para dispositivos móviles).",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=351006989&format=interactive"
   )
 }}
 
@@ -174,11 +150,7 @@ CSS tiene algunos selectores de comparación muy potentes. Estos son selectores 
   image="fig9.png",
   caption="Popularidad de operadores por selector de atributo ID.",
   description="Gráfico de barras que muestra la popularidad de los operadores utilizados por los selectores de atributos de ID. Alrededor del 4% de las páginas de escritorio y móviles usan asterisco igual y signo de intercalación igual. El 1% de las páginas usan igual y dólar igual. 0% usa virgulilla igual.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=695879874&format=interactive"
   )
 }}
 
@@ -186,11 +158,7 @@ CSS tiene algunos selectores de comparación muy potentes. Estos son selectores 
   image="fig10.png",
   caption="Popularidad de operadores por selector de atributo de clase.",
   description="Gráfico de barras que muestra la popularidad de los operadores utilizados por los selectores de atributos de clase. El 57% de las páginas usan asterisco igual. El 36% usa signo de interalación igual. El 1% usa igual y dólar igual. 0% usa virgulilla igual.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=377805296&format=interactive"
   )
 }}
 
@@ -217,11 +185,7 @@ Con el surgimiento de las estrategias OOCSS, atómicas y funcionales de CSS que 
   image="fig12.png",
   caption="Adopción de flexbox.",
   description="Gráfico de barras que muestra el 49% de las páginas de escritorio y el 52% de las páginas móviles usan flexbox.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2021161093&format=interactive"
   )
 }}
 
@@ -248,11 +212,7 @@ La web y CSS son características de la plataforma internacional, y los modos de
   image="fig14.png",
   caption="Popularidad de los valores de dirección.",
   description="Gráfico de barras que muestra la popularidad de los valores de dirección ltr y rtl. ltr es utilizado por el 32% de las páginas de escritorio y el 40% de las páginas móviles. rtl es utilizado por el 32% de las páginas de escritorio y el 36% de las páginas móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=136847988&format=interactive"
   )
 }}
 
@@ -266,11 +226,7 @@ La web y CSS son características de la plataforma internacional, y los modos de
   image="fig15.png",
   caption="Distribución de la cantidad de fuentes web cargadas por página.",
   description="Distribución de la cantidad de fuentes web cargadas por página. En computadoras de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 0, 1, 3, 6 y 9. Esto es ligeramente más alto que la distribución para dispositivos móviles, que es una fuente menos en los percentiles 75 y 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1453570774&format=interactive"
   )
 }}
 
@@ -302,11 +258,7 @@ Esta es divertida, porque si le pregunta a un usuario cuántos tamaños de fuent
   image="fig17.png",
   caption="Distribución del número de tamaños de fuente distintos por página.",
   description="Gráfico de barras que muestra la distribución de distintos tamaños de fuente por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 8, 20, 40, 66 y 92 tamaños de fuente. La distribución de escritorio difiere de la móvil en el percentil 75, donde es más grande en 7 tamaños distintos y para el percentil 90 en 13 tamaños.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1695270216&format=interactive"
   )
 }}
 
@@ -320,11 +272,7 @@ Un margen es el espacio fuera de los elementos, como el espacio que exige cuando
   image="fig18.png",
   caption="Distribución del número de valores de margen distintos por página.",
   description="Gráfico de barras que muestra la distribución de valores de margen distintos por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 12, 47, 96, 167 y 248 valores de margen distintos. La distribución de escritorio difiere de la móvil en el percentil 75, donde es más pequeña en 12 a 31 valores distintos.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=4233531&format=interactive"
   )
 }}
 
@@ -349,11 +297,7 @@ Las capas verticales, o apilamiento, se pueden administrar con `z-index` en CSS.
   image="fig20.png",
   caption="Distribución del número de valores distintos de <code>z-index</code> por página.",
   description="Gráfico de barras que muestra la distribución de distintos valores de z-index por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 1, 7, 16, 26 y 36 valores distintos de z-index. La distribución de escritorio es mucho más alta que la móvil, en hasta 16 valores distintos en el percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1320871189&format=interactive"
   )
 }}
 
@@ -365,11 +309,7 @@ Según nuestra experiencia laboral, cualquier número con 9s parecía ser la opc
   image="fig21.png",
   caption="Los valores de <code>z-index</code> más utilizados.",
   description="Diagrama de dispersión de todos los valores de z-index conocidos y la cantidad de veces que se usan, tanto para escritorio como para dispositivos móviles. 1 y 2 son los más utilizados, pero el resto de los valores populares explotan en órdenes de magnitud: 10, 100, 1,000, y así sucesivamente hasta números con cientos de dígitos.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1169148473&format=interactive"
   )
 }}
 
@@ -422,11 +362,7 @@ CSS tiene este increíble poder de interpolación que se puede usar simplemente 
   image="fig25.png",
   caption="Distribución del número de transiciones por página.",
   description="Gráfico de barras que muestra la distribución de las transiciones por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 0, 2, 16, 49 y 118 transiciones. La distribución del escritorio es mucho más baja que la del móvil, hasta 77 transiciones en el percentil 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=419145172&format=interactive"
   )
 }}
 
@@ -440,11 +376,7 @@ Las animaciones de keyframe CSS son una excelente solución para sus animaciones
   image="fig26.png",
   caption="Distribución del número de keyframe por página.",
   description="Gráfico de barras que muestra la distribución de keyframes por página. Para las páginas móviles, los percentiles 10, 25, 50, 75 y 90 son: 0, 0, 3, 18 y 76 fotogramas clave. La distribución móvil es ligeramente superior a la de escritorio en 6 fotogramas clave en los percentiles 75 y 90.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=11848448&format=interactive"
   )
 }}
 
@@ -458,11 +390,7 @@ Un buen lugar para comenzar con las _media queries_, ¿es aproximadamente cuánt
   image="fig27.png",
   caption="Distribución del número de consultas de media queries por página.",
   description="Gráfico de barras que muestra la distribución de consultas de medios por página. Para las páginas de escritorio, los percentiles 10, 25, 50, 75 y 90 son: 0, 3, 14, 27 y 43 media queries. La distribución de escritorio es similar a la distribución móvil.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1892465673&format=interactive"
   )
 }}
 
@@ -474,11 +402,7 @@ Para media queries de ventana gráfica, cualquier tipo de unidad CSS se puede pa
   image="fig28.png",
   caption="Puntos de ajuste más utilizados en media queries.",
   description="Gráfico de barras de los puntos de referencia de media queries más populares. 768px y 767px son los más populares con 23% y 16%, respectivamente. La lista cae rápidamente después de eso, con 992px usado el 6% del tiempo y 1200px usado el 4% del tiempo. Las computadoras de escritorio y los dispositivos móviles tienen un uso similar.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1353707515&format=interactive"
   )
 }}
 
@@ -492,11 +416,7 @@ El valor de _media query_ más popular de los tamaños de punto de interrupción
   image="fig29.png",
   caption="Adopción de modos de orientación en media queries.",
   description="Gráfico de barras que muestra la adopción de modos de orientación vertical y horizontal en media queries. El 31% de las páginas especifican horizontal, el 8% especifica vertical y el 7% especifica ambas. La adopción es la misma para páginas de escritorio y móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=295845630&format=interactive"
   )
 }}
 
@@ -510,11 +430,7 @@ En las media queries de ancho y alto que hemos visto hasta ahora, los píxeles s
   image="fig30.png",
   caption="Adopción de unidades en puntos de referencia de media queries.",
   description="Gráfico de barras que muestra el 75% de los puntos de referencia de las media queries especifican píxeles, el 8% que especifica ems y el 1% que especifica rems.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=305563768&format=interactive"
   )
 }}
 
@@ -526,11 +442,7 @@ Cuando las personas escriben una _media query_, ¿están generalmente buscando u
   image="fig31.png",
   caption="Adopción de propiedades utilizadas en puntos de referencia de media queries.",
   description="Gráfico de barras que muestra el 74% de las páginas de escritorio usan max-width, el 70% con min-width y el 68% con ambas propiedades. La adopción es similar para páginas móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2091525146&format=interactive"
   )
 }}
 
@@ -544,11 +456,7 @@ Los sitios web se sienten como papel digital, ¿verdad? Como usuarios, generalme
   image="fig32.png",
   caption="Adopción de las media queries para todos, impresión, pantalla y voz.",
   description="Gráfico de barras que muestra el 35% de las páginas de escritorio con el tipo de media query \"todos\", el 46% con impresión, el 72% con pantalla y el 0% con voz. La adopción es inferior en aproximadamente 5 puntos porcentuales para el escritorio en comparación con el móvil.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=939890574&format=interactive"
   )
 }}
 
@@ -562,11 +470,7 @@ Los sitios web se sienten como papel digital, ¿verdad? Como usuarios, generalme
   image="fig33.png",
   caption="Distribución del número de hojas de estilo cargadas por página.",
   description="Distribución de la cantidad de hojas de estilo cargadas por página. Las computadoras de escritorio y los dispositivos móviles tienen distribuciones idénticas con percentiles 10, 25, 50, 75 y 90: 1, 3, 6, 12 y 20 hojas de estilo por página.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1377313548&format=interactive"
   )
 }}
 
@@ -689,11 +593,7 @@ Los sitios web se sienten como papel digital, ¿verdad? Como usuarios, generalme
   image="fig35.png",
   caption="Distribución del número de bytes de hoja de estilo (KB) cargados por página.",
   description="Distribución del número de bytes de hoja de estilo cargados por página. Los percentiles 10, 25, 50, 75 y 90 de la página de escritorio son: 8, 26, 62, 129 y 240 KB. La distribución de escritorio es ligeramente superior a la distribución móvil en 5 a 10 KB.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=2132635319&format=interactive"
   )
 }}
 
@@ -800,11 +700,7 @@ Las utilidades de restablecimiento de CSS tienen la intención de normalizar o c
   image="fig37.png",
   caption="Adopción de utilidades de restablecimiento CSS.",
   description="Gráfico de barras que muestra la adopción de tres utilidades de restablecimiento de CSS: Normalize.css (33%), Reset CSS (3%) y Pure CSS (0%). No hay diferencia en la adopción en páginas de escritorio y móviles.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1318910215&format=interactive"
   )
 }}
 
@@ -818,11 +714,7 @@ CSS `@supports` es una forma para que el navegador verifique si una combinación
   image="fig38.png",
   caption="Popularidad de las reglas CSS 'arroba'.",
   description="Gráfico de barras que muestra la popularidad de las reglas @import y @supports \"arroba\". En el escritorio, @import se usa en el 28% de las páginas y @supports se usa en el 31%. Para dispositivos móviles, @import se usa en el 26% de las páginas y @supports se usa en el 29%.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5CabwLwQ5Lj1_9bbEFnFM1qEqCorymaBHrcaNiMSJ7sYDKHUI5iish5VAS-SxN447UTW-1-5-OjE/pubchart?oid=1739611283&format=interactive"
   )
 }}
 

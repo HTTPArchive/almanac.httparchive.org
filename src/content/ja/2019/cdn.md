@@ -66,11 +66,7 @@ Web Almanacの将来のバージョンでは、CDNベンダー間のTLSおよび
   image="fig1.png",
   caption="1. CDN使用量 vs. originがホストするリソース",
   description="HTMLがoriginから提供される80％、CDNから20％、サブドメインが61％と39％、サードパーティが34％と66％である積層棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=777938536&format=interactive"
   )
 }}
 
@@ -90,9 +86,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 {{ figure_markup(
   image="html_cdn_usage.png",
   caption="HTML CDNの使用",
-  description="表3のデータを示すツリーマップグラフ。",
-  width=600,
-  height=371
+  description="表3のデータを示すツリーマップグラフ。"
   )
 }}
 
@@ -215,9 +209,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
 {{ figure_markup(
   image="subdomain_resource_cdn_usage.png",
   caption="サブドメインリソースのCDNの使用。",
-  description="表5のデータを示すツリーマップグラフ。",
-  width=600,
-  height=371
+  description="表5のデータを示すツリーマップグラフ。"
   )
 }}
 
@@ -483,9 +475,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
 {{ figure_markup(
   image="html_tls_negotiation_time.png",
   caption="HTML TLSネゴシエーション時間。",
-  description="表9のデータを示すグラフ。",
-  width=600,
-  height=371
+  description="表9のデータを示すグラフ。"
   )
 }}
 
@@ -656,9 +646,7 @@ TLSネゴシエーションでは、サーバーからデータを送信する�
 {{ figure_markup(
   image="resource_tls_negotiation_time.png",
   caption="リソースTLSネゴシエーション時間。",
-  description="ほとんどのCDNを示すグラフのTLSネゴシエーション時間は約80ミリ秒ですが、一部（Microsoft Azure、Yahoo、Edgecast、ORIGIN、およびCDNetworks）は、特にp50パーセンタイルを超えると、200ミリ秒に向かって徐々に変化し始めます。",
-  width=600,
-  height=371
+  description="ほとんどのCDNを示すグラフのTLSネゴシエーション時間は約80ミリ秒ですが、一部（Microsoft Azure、Yahoo、Edgecast、ORIGIN、およびCDNetworks）は、特にp50パーセンタイルを超えると、200ミリ秒に向かって徐々に変化し始めます。"
   )
 }}
 
@@ -683,11 +671,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   image="fig11.png",
   caption="HTMLのTLS SANカウント。",
   description="表12のデータを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=753130748&format=interactive"
   )
 }}
 
@@ -857,11 +841,7 @@ TLSハンドシェイクのパフォーマンスは、さまざまな要因の�
   image="fig13.png",
   caption="リソースSANカウント（50パーセンタイル）。",
   description="50パーセンタイルの表14のデータを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=528008536&format=interactive"
   )
 }}
 
@@ -1043,11 +1023,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
   image="fig15.png",
   caption="HTML TLSバージョンの採用（CDNとorigin）。",
   description="TLS1.0が発信元の時間の0.86％、TLS1.2が55％、TLS1.3が6％、暗号化されていない38％の時間を示す積み上げ棒グラフ。 CDNの場合、これはTLS1.2では35％、TLS1.3では41％、暗号化されていない場合は24％に変更されます。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1183502256&format=interactive"
   )
 }}
 
@@ -1057,11 +1033,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
   image="fig16.png",
   caption="CDNによるHTML TLSの採用。",
   description="いくつかのCDN（Wordpressなど）が100％、ほとんどは80％-100％で、次にORIGINを62％、Googleを51％、ChinaNetCenterをCDNで分解した最初のHTML要求に対して確立されたセキュア接続と非セキュア接続の区分36％、ユンジアスは29％。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=2053476423&format=interactive"
   )
 }}
 
@@ -1069,11 +1041,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
   image="fig17.png",
   caption="CDNによるサードパーティTLSの採用。",
   description="CDNの大部分を示す積み上げ棒グラフは、サードパーティリクエストの90％以上でTLSを使用し、75％から90％の範囲のストラグラーがいくつかあり、ORIGINはそれらすべてよりも68％低くなっています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=991037479&format=interactive"
   )
 }}
 
@@ -1087,11 +1055,7 @@ TLSおよびRTTのパフォーマンスにCDNを使用することに加えて�
   image="fig18.png",
   caption="CDNによるHTML TLSバージョン。",
   description="TLSが使用される場合、TLS1.3またはTLS1.2がすべてのCDNによって使用されることを示す棒グラフ。いくつかのCDNはTLS1.3を完全に採用していますが、一部ではTLS1.2が大部分を採用されています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=659795773&format=interactive"
   )
 }}
 
@@ -1109,11 +1073,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
   image="fig19.png",
   caption="HTTP/2の採用（CDNとorigin）。",
   description="origin接続の73％がHTTP/1.1を使用し、27％がHTTP/2を使用する積み上げ棒グラフ。これは、29％がHTTP/1.1と71％がHTTP/2を使用しているCDNと比較しています。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1166990011&format=interactive"
   )
 }}
 
@@ -1121,11 +1081,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
   image="fig20.png",
   caption="HTTP/2のHTML採用。",
   description="表21のデータを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1896876288&format=interactive"
   )
 }}
 
@@ -1325,11 +1281,7 @@ CDNのHTTP/2の採用率は70％を超えていますが、originページはほ
   image="fig22.png",
   caption="HTML/2の採用：サードパーティのリソース。",
   description="表23のデータを示す棒グラフ。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=397209603&format=interactive"
   )
 }}
 
@@ -1551,9 +1503,7 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
 {{ figure_markup(
   image="use_of_vary.png",
   caption="HTMLとoriginとCDNから提供されるリソースの <code>Vary</code> 使用の比較。",
-  description="ホームページを提供するCDNの場合、Varyの最大の用途はCookieであり、その後にuser-agentが続くことを示す4つのツリーマップグラフのセット、他のリソースを提供するCDNの場合は、originであり、その後にaccept、user-agent、x-origin、およびreferrerが続きます。 originsとホームページの場合、それはuser-agentであり、その後にcookieが続きます。最後に、originsおよびその他のリソースについては、主にuser-agentであり、その後にorigin、accept、range、hostが続きます。",
-  width=600,
-  height=371
+  description="ホームページを提供するCDNの場合、Varyの最大の用途はCookieであり、その後にuser-agentが続くことを示す4つのツリーマップグラフのセット、他のリソースを提供するCDNの場合は、originであり、その後にaccept、user-agent、x-origin、およびreferrerが続きます。 originsとホームページの場合、それはuser-agentであり、その後にcookieが続きます。最後に、originsおよびその他のリソースについては、主にuser-agentであり、その後にorigin、accept、range、hostが続きます。"
   )
 }}
 
@@ -1577,11 +1527,7 @@ HTMLページの場合、`Vary`の最も一般的な使用法は、`User-Agent`�
   image="fig26.png",
   caption="CDN応答全体での <code>s-maxage</code> の採用。",
   description="jsDelivrの82％がs-maxage、レベル3の14％、Amazon CloudFrontの6.3％、Akamaiの3.3％、Fastlyの3.1％、Highwindsの3％、Cloudflareの2％、ORIGINの0.91％の応答を提供する棒グラフ、Edgecastの0.75％、Googleの0.07％。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=1215102767&format=interactive"
   )
 }}
 
@@ -1601,11 +1547,7 @@ GoogleフォントはコンテンツCDNの中で最も人気があり、55％の
   image="fig27.png",
   caption="パブリックコンテンツCDNの使用。",
   description="パブリックコンテンツのCDNの55.33％がfonts.googleapis.com、19.86％がajax.googleapis.com、10.47％がcdnjs.cloudflare.com、9.83％がmaxcdn.bootstrapcdn.com、コードが5.95％の棒グラフです。 jquery.com、cdn.jsdelivr.netに4.29％、use.fontawesome.comに3.22％、stackpath.bootstrapcdn.comに0.7％、unpkg.comに0.67％、ajax.aspnetcdn.comに0.52％。",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive",
-  width=600,
-  height=371,
-  data_width=600,
-  data_height=371
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPn-1SGVa3rNCT0U9QeQNODE97fsmXyaJX1ZOoBNR8nPpclhC6fg8R_UpoodeiX6HkdHrp50WBQ5Q/pubchart?oid=123086113&format=interactive"
   )
 }}
 

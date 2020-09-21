@@ -320,7 +320,6 @@ From our work experience, any number of 9's seemed to be the most popular choice
 )
 }}
 
-
 ## Decoration
 
 ### Filters
