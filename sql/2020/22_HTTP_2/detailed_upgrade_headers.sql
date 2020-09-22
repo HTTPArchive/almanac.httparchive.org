@@ -5,7 +5,7 @@ SELECT
   firstHtml,  
   JSON_EXTRACT_SCALAR(payload, '$._protocol') AS protocol,
   IF(url LIKE 'https://%', 'https', 'http') AS http_or_https,
-  regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Upgrade = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') is not null AS upgrade,
+  regexp_extract(regexp_extract(respOtherHeaders, r'(?is)Upgrade = (.*)'), r'(?im)^([^=]*?)(?:, [a-z-]+ = .*)') IS NOT NULL AS upgrade,
   COUNT(0) AS num_requests,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
