@@ -7,7 +7,7 @@ SELECT
   client,
   CDN,
   COUNT(DISTINCT origin) AS origins,
-  SUM(fast_lcp) / (SUM(fast_lcp) + SUM(avg_lcp) + SUM(slow_lcp)) AS good_lcp,
+  SUM(fast_lcp) / SUM(fast_lcp + avg_lcp + slow_lcp) AS good_lcp,
   SUM(avg_lcp) / (SUM(fast_lcp) + SUM(avg_lcp) + SUM(slow_lcp)) AS ni_lcp,
   SUM(slow_lcp) / (SUM(fast_lcp) + SUM(avg_lcp) + SUM(slow_lcp)) AS poor_lcp,
 
