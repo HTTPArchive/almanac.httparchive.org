@@ -408,23 +408,23 @@ Atomics (0.38%) and SharedArrayBuffer (0.20%) are barely visible on this chart s
 
 It is important to note that the numbers here are approximations and they do not leverage [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) to measure feature usage.
 
-## Source maps
+## Mapas de origem
 
-In many build systems, JavaScript files undergo minification to minimize its size and transpilation for newer language features that are not yet supported in many browsers. Moreover, language supersets like [TypeScript](https://www.typescriptlang.org/) compile to an output that can look noticeably different from the original source code. For all these reasons, the final code served to the browser can be unreadable and hard to decipher.
+Em muitos sistemas de construção, os arquivos JavaScript são minificados para minimizar seu tamanho e transpilar para recursos de linguagem mais recentes que ainda não são suportados em muitos navegadores. Além disso, os superconjuntos de linguagem como [TypeScript](https://www.typescriptlang.org/) são compilados para uma saída que pode parecer visivelmente diferente do código-fonte original. Por todos esses motivos, o código final fornecido ao navegador pode ser ilegível e difícil de decifrar.
 
-A **source map** is an additional file accompanying a JavaScript file that allows a browser to map the final output to its original source. This can make debugging and analyzing production bundles much simpler.
+Um **mapas de origem** é um arquivo adicional que acompanha um arquivo JavaScript que permite a um navegador mapear a saída final para sua fonte original. Isso pode tornar a depuração e análise de pacotes configuráveis de produção muito mais simples.
 
-Although useful, there are a number of reasons why many sites may not want to include source maps in their final production site, such as choosing not to expose complete source code to the public. So how many sites actually include sourcemaps?
+Embora úteis, existem vários motivos pelos quais muitos sites podem não querer incluir mapas de origem em seu site de produção final, como a escolha de não expor o código-fonte completo ao público. Então, quantos sites realmente incluem mapas de origem?
 
 <figure>
    <a href="/static/images/2019/javascript/fig18.png">
-      <img src="/static/images/2019/javascript/fig18.png" alt="Figure 18. Percentage of sites using source maps." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive">
+      <img src="/static/images/2019/javascript/fig18.png" alt="Figura 18. Porcentagem de sites usando mapas de origem." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive">
    </a>
-   <div id="fig18-description" class="visually-hidden">Bar chart showing 18% of desktop sites and 17% of mobile sites use source maps.</div>
-   <figcaption id="fig18-caption">Figure 18. Percentage of sites using source maps.</figcaption>
+   <div id="fig18-description" class="visually-hidden">Gráfico de barras mostrando 18% dos sites para desktop e 17% dos sites para celular usam mapas de origem.</div>
+   <figcaption id="fig18-caption">Figura 18. Porcentagem de sites usando mapas de origem.</figcaption>
 </figure>
 
-For both desktop and mobile pages, the results are about the same. 17-18% include a source map for at least one script on the page (detected as a first-party script with `sourceMappingURL`).
+Para páginas de desktop e móveis, os resultados são quase os mesmos. 17-18% incluem um mapa de origem para pelo menos um script na página (detectado como um script primário com `sourceMappingURL`).
 
 ## Conclusão
 
