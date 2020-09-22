@@ -4,7 +4,7 @@ SELECT
   percentile,
   client,
   http_version,
-  content_type,
+  type,
   COUNT(DISTINCT page) AS num_pages,
   APPROX_QUANTILES(num_requests, 1000)[OFFSET(percentile * 10)] AS pushed_requests,
   APPROX_QUANTILES(kb_transfered, 1000)[OFFSET(percentile * 10)] AS kb_transfered,
@@ -13,7 +13,7 @@ FROM (
     client,
     page,
     JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
-    JSON_EXTRACT_SCALAR(payload, "$._contentType") as content_type,
+    type,
     SUM(CAST(JSON_EXTRACT_SCALAR(payload, "$._bytesIn") AS INT64)/1024) AS kb_transfered,
     COUNT(0) AS num_requests
   FROM 
@@ -29,13 +29,13 @@ FROM (
     client,
     http_version,
     page,
-    content_type),
+    type),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,
   client,
   http_version,
-  content_type
+  type
 ORDER BY
   percentile,
   client
