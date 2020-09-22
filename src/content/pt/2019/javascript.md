@@ -51,43 +51,43 @@ Em cada percentil, estamos enviando um pouco mais de JavaScript para dispositivo
 
 ### Tempo de processamento
 
-After being parsed and compiled, JavaScript fetched by the browser needs to processed (or executed) before it can be utilized. Devices vary, and their computing power can significantly affect how fast JavaScript can be processed on a page. What are the current processing times on the web?
+Depois de ser analisado e compilado, o JavaScript obtido pelo navegador precisa ser processado (ou executado) antes de ser utilizado. Os dispositivos variam e seu poder de computação pode afetar significativamente a velocidade com que o JavaScript pode ser processado em uma página. Quais são os tempos de processamento atuais na web?
 
-We can get an idea by analyzing main thread processing times for V8 at different percentiles:
+Podemos ter uma ideia analisando os tempos de processamento do thread principal para V8 em diferentes percentis:
 
 <figure>
    <a href="/static/images/2019/javascript/fig3.png">
-      <img src="/static/images/2019/javascript/fig3.png" alt="Figure 3. V8 Main thread processing times by device." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive">
+      <img src="/static/images/2019/javascript/fig3.png" alt="Figura 3. Tempos de processamento do thread principal V8 por dispositivo." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=924000517&format=interactive">
    </a>
-   <div id="fig3-description" class="visually-hidden">Bar chart showing 141 ms/377 ms of processing time is used in the 10th percentile on desktop and mobile respectively, 352/988 ms for 25th percentile, 849/2,437 ms for 50th percentile, 1,850/5,518 ms for 75th percentile, and 3,543/10,735 ms for 90th percentile.</div>
-   <figcaption id="fig3-caption">Figure 3. V8 Main thread processing times by device.</figcaption>
+   <div id="fig3-description" class="visually-hidden">O gráfico de barras mostrando 141 ms / 377 ms de tempo de processamento é usado no 10º percentil em computadores e dispositivos móveis, respectivamente, 352/988 ms para 25º percentil, 849 / 2.437 ms para 50º percentil, 1.850 / 5.518 ms para 75º percentil e 3.543 / 10.735 ms para o percentil 90.</div>
+   <figcaption id="fig3-caption">Figura 3. Tempos de processamento do thread principal V8 por dispositivo.</figcaption>
 </figure>
 
-At every percentile, processing times are longer for mobile web pages than on desktop. The median total main thread time on desktop is 849 ms, while mobile is at a larger number: 2,437 ms.
+A cada percentil, os tempos de processamento são mais longos para páginas da web para celular do que para desktop. A mediana do tempo total do thread principal no desktop é de 849 ms, enquanto no celular está em um número maior: 2.437 ms.
 
-Although this data shows how much longer it can take for a mobile device to process JavaScript compared to a more powerful desktop machine, mobile devices also vary in terms of computing power. The following chart shows how processing times on a single web page can vary significantly depending on the mobile device class.
+Embora esses dados mostrem quanto tempo pode levar para um dispositivo móvel processar JavaScript em comparação com uma máquina de desktop mais poderosa, os dispositivos móveis também variam em termos de capacidade de computação. O gráfico a seguir mostra como os tempos de processamento em uma única página da web podem variar significativamente dependendo da classe do dispositivo móvel.
 
 <figure>
    <a href="/static/images/2019/javascript/js-processing-reddit.png">
-      <img src="/static/images/2019/javascript/js-processing-reddit.png" alt="JavaScript processing times for Reddit.com" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="363">
+      <img src="/static/images/2019/javascript/js-processing-reddit.png" alt="Tempos de processamento de JavaScript para Reddit.com" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="363">
    </a>
-   <div id="fig4-description" class="visually-hidden">Bar chart showing 3 different devices: at the top a Pixel 3 has small amount on both the main thread and the worker thread of less than 400ms. For a Moto G4 it is approximately 900 ms on main thread and a further 300 ms on worker thread. And the final bar is an Alcatel 1X 5059D with over 2,000 ms on the main thread and over 500 ms on worker thread.</div>
-   <figcaption id="fig4-caption">Figure 4. JavaScript processing times for reddit.com. From <a href="https://v8.dev/blog/cost-of-javascript-2019">The cost of JavaScript in 2019</a>.</figcaption>
+   <div id="fig4-description" class="visually-hidden">Gráfico de barras mostrando 3 dispositivos diferentes: no topo, um Pixel 3 tem uma pequena quantidade no thread principal e no thread de trabalho de menos de 400ms. Para um Moto G4, é aproximadamente 900 ms no thread principal e mais 300 ms no thread de trabalho. E a barra final é um Alcatel 1X 5059D com mais de 2.000 ms no thread principal e mais de 500 ms no thread de trabalho.</div>
+   <figcaption id="fig4-caption">Figura 4. Tempos de processamento de JavaScript para reddit.com. De <a href="https://v8.dev/blog/cost-of-javascript-2019">O custo do JavaScript em 2019</a>.</figcaption>
 </figure>
 
-### Number of requests
+### Número de pedidos
 
-One avenue worth exploring when trying to analyze the amount of JavaScript used by web pages is the number of requests shipped. With [HTTP/2](./http2), sending multiple smaller chunks can improve page load over sending a larger, monolithic bundle. If we also break it down by device client, how many requests are being fetched?
+Uma via que vale a pena explorar ao tentar analisar a quantidade de JavaScript usada por páginas da web é o número de solicitações enviadas. Com [HTTP/2](./http2), enviar vários pedaços menores pode melhorar o carregamento da página em comparação ao envio de um pacote maior e monolítico. Se também dividirmos por cliente do dispositivo, quantas solicitações estão sendo buscadas?
 
 <figure>
    <a href="/static/images/2019/javascript/fig5.png">
-      <img src="/static/images/2019/javascript/fig5.png" alt="Figure 5. Distribution of total JavaScript requests." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive">
+      <img src="/static/images/2019/javascript/fig5.png" alt="Figura 5. Distribuição do total de solicitações de JavaScript." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1632335480&format=interactive">
    </a>
-   <div id="fig5-description" class="visually-hidden">Bar chart showing 4/4 requests for desktop and mobile respectively are used in the 10th percentile, 10/9 in 25th percentile, 19/18 in 50th percentile, 33/32 in 75th percentile and 53/52 in 90th percentile.</div>
-   <figcaption id="fig5-caption">Figure 5. Distribution of total JavaScript requests.</figcaption>
+   <div id="fig5-description" class="visually-hidden">O gráfico de barras mostrando 4/4 solicitações para desktop e celular, respectivamente, são usadas no 10º percentil, 10/9 no 25º percentil, 19/18 no 50º percentil, 33/32 no 75º percentil e 53/52 no 90º percentil.</div>
+   <figcaption id="fig5-caption">Figura 5. Distribuição do total de solicitações de JavaScript.</figcaption>
 </figure>
 
-At the median, 19 requests are sent for desktop and 18 for mobile.
+Na mediana, 19 solicitações são enviadas para desktop e 18 para celular.
 
 ### First-party vs. third-party
 
@@ -426,8 +426,8 @@ Although useful, there are a number of reasons why many sites may not want to in
 
 For both desktop and mobile pages, the results are about the same. 17-18% include a source map for at least one script on the page (detected as a first-party script with `sourceMappingURL`).
 
-## Conclusion
+## Conclusão
 
-The JavaScript ecosystem continues to change and evolve every year. Newer APIs, improved browser engines, and fresh libraries and frameworks are all things we can expect to happen indefinitely. HTTP Archive provides us with valuable insight on how sites in the wild use the language.
+O ecossistema JavaScript continua mudando e evoluindo a cada ano. APIs mais recentes, motores de navegador aprimorados e bibliotecas e estruturas novas são coisas que podemos esperar que aconteçam indefinidamente. O HTTP Archive nos fornece informações valiosas sobre como os sites locais usam a linguagem.
 
-Without JavaScript, the web would not be where it is today, and all the data gathered for this article only proves this.
+Sem o JavaScript, a web não estaria onde está hoje, e todos os dados coletados para este artigo apenas provam isso.
