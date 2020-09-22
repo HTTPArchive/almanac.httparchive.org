@@ -1,5 +1,5 @@
 # standardSQL
-# Number of HTTPS requests not using HTTP/2 which return upgrade HTTP header containing h2
+# Number of HTTPS requests not using H2 or H3 returning upgrade HTTP header containing H2
 CREATE TEMPORARY FUNCTION getUpgradeHeader(payload STRING)
 RETURNS STRING
 LANGUAGE js AS """
@@ -24,11 +24,13 @@ SELECT
 FROM 
   `httparchive.almanac.requests`
 WHERE
-  date='2020-08-01' AND 
+  date = '2020-08-01' AND 
   url LIKE "https://%" AND
-  JSON_EXTRACT_SCALAR(payload, "$._protocol") != "HTTP/2" AND
   getUpgradeHeader(payload) LIKE "%h2%" AND
-  JSON_EXTRACT_SCALAR(payload, '$._protocol') IS NOT NULL
+  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "http/2" AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "%quic%" AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "h3%" AND
+  LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "http/3%"
 GROUP BY
   client,
   firstHtml,
