@@ -69,6 +69,7 @@ JOIN (
 				app = "Next.js"
     )
     USING (url, _TABLE_SUFFIX)
+		WHERE firstHtml
 )
 ON
   CONCAT(origin, '/') = url AND

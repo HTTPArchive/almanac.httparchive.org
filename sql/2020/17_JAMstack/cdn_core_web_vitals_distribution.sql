@@ -34,6 +34,7 @@ JOIN (
       END AS CDN,
       _TABLE_SUFFIX as client,
       url,
+			firstHtml,
       app
     FROM
       `httparchive.summary_requests.2020_08_01_*`
@@ -49,12 +50,12 @@ JOIN (
 				app = "Next.js"
     )
     USING (url, _TABLE_SUFFIX)
+		WHERE firstHtml
 )
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
-  # The CrUX 202008 dataset is not available until September 8.
   date = '2020-08-01' AND
 	CDN IS NOT NULL
 GROUP BY
