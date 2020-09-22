@@ -2,11 +2,11 @@
 # Percentage of resources loaded over HTTP by version per site
 SELECT
   client,
-  APPROX_QUANTILES((http_0_9/num_requests) * 100, 1000)[OFFSET(500)] AS pct_http_0_9,
-  APPROX_QUANTILES((http_1_0/num_requests) * 100, 1000)[OFFSET(500)] AS pct_http_1_0,
-  APPROX_QUANTILES((http_1_1/num_requests) * 100, 1000)[OFFSET(500)] AS pct_http_1_1,
-  APPROX_QUANTILES((http_2/num_requests) * 100, 1000)[OFFSET(500)] AS pct_http_2,
-  APPROX_QUANTILES((quic/num_requests) * 100, 1000)[OFFSET(500)] AS pct_quic
+  APPROX_QUANTILES((http_0_9/num_requests) * 100, 1000)[OFFSET(percentile * 10)] AS pct_http_0_9,
+  APPROX_QUANTILES((http_1_0/num_requests) * 100, 1000)[OFFSET(percentile * 10)] AS pct_http_1_0,
+  APPROX_QUANTILES((http_1_1/num_requests) * 100, 1000)[OFFSET(percentile * 10)] AS pct_http_1_1,
+  APPROX_QUANTILES((http_2/num_requests) * 100, 1000)[OFFSET(percentile * 10)] AS pct_http_2,
+  APPROX_QUANTILES((quic/num_requests) * 100, 1000)[OFFSET(percentile * 10)] AS pct_quic
 FROM (
   SELECT 
     percentile,
