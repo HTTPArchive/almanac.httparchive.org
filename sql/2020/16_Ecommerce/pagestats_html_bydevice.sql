@@ -8,9 +8,9 @@ SELECT
   ROUND(APPROX_QUANTILES(bytesHtml, 1000)[OFFSET(750)] / 1024, 2) AS p75,
   ROUND(APPROX_QUANTILES(bytesHtml, 1000)[OFFSET(900)] / 1024, 2) AS p90
 FROM
-  `httparchive.summary_pages.2020_07_01_*`
+  `httparchive.summary_pages.2020_08_01_*`
 JOIN
-  `httparchive.technologies.2020_07_01_*`
+  `httparchive.technologies.2020_08_01_*`
 USING (_TABLE_SUFFIX, url)
 WHERE
   category = 'Ecommerce'

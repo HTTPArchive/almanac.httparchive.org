@@ -1,7 +1,5 @@
 #standardSQL
 # 13_08: CrUX LCP performance of ecommerce providers
-#standardSQL
-# 13_08: CrUX LCP performance of ecommerce providers
 SELECT
     client,
     ecomm,
@@ -25,7 +23,7 @@ SELECT
       AND
       IF(device = 'desktop', 'desktop', 'mobile') = client
   WHERE
-    date = '2020-07-01' AND
+    date = '2020-08-01' AND
     fast_lcp + avg_lcp + slow_lcp > 0
   GROUP BY 
     client,

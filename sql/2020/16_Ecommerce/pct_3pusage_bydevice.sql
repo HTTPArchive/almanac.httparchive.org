@@ -19,6 +19,7 @@ FROM (
   USING
     (client, page)
   WHERE
+    date = '2020-08-01' AND
     NET.HOST(url) IN 
       (SELECT domain 
         FROM `httparchive.almanac.third_parties` 

@@ -1,12 +1,11 @@
 #standardSQL
-# 13_14: % of AMP enabled eCommerce Sites
+# 13_14: % of AMP enabled eCommerce Sites by device
 SELECT
   _TABLE_SUFFIX AS client,
   vendor,
-  app,
-  COUNTIF(category = 'AMP') AS AMPfromFreq,
+  COUNTIF(app = 'AMP') AS AMPFreq,
   SUM(COUNT(0)) OVER (PARTITION BY vendor) AS total,
-  ROUND(COUNTIF(category = 'AMP') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
+  ROUND(COUNTIF(app = 'AMP') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
   FROM
     `httparchive.technologies.2020_08_01_*`
 JOIN 
@@ -24,12 +23,9 @@ USING
   (url)
 GROUP BY
   client, 
-  vendor, 
-  app
-HAVING 
- AMPFreq > 0
+  vendor
 ORDER BY
   total desc,
-  Vendor, 
-  AMPFreq desc
+  AMPFreq desc,
+  Vendor
   

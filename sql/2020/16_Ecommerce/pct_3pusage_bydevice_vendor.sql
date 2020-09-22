@@ -17,12 +17,17 @@ FROM (
     `httparchive.almanac.summary_requests`
   JOIN (
     SELECT _TABLE_SUFFIX AS client, url AS page, app
-    FROM `httparchive.technologies.2020_06_01_*`
+    FROM `httparchive.technologies.2020_08_01_*`
     WHERE category = 'Ecommerce')
   USING
     (client, page)
   WHERE
-    NET.HOST(url) IN (SELECT domain FROM `httparchive.almanac.third_parties`)
+    date = '2020-08-01' AND
+    NET.HOST(url) IN 
+      (SELECT domain 
+        FROM `httparchive.almanac.third_parties`
+        WHERE date = '2020-08-01'
+          AND category != 'hosting')
   GROUP BY
     client,
     app,

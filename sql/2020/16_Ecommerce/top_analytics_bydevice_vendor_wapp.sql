@@ -4,7 +4,7 @@ SELECT
   _TABLE_SUFFIX AS client,
   vendor,
   app,
-  COUNTIF(category = 'Analytics') AS AnalyticsPlatfromFreq,
+  COUNTIF(category = 'Analytics') AS AnalyticsPlatformFreq,
   SUM(COUNT(0)) OVER (PARTITION BY vendor) AS total,
   ROUND(COUNTIF(category = 'Analytics') * 100 / SUM(COUNT(0)) OVER (PARTITION BY vendor), 2) AS pct
   FROM
@@ -31,5 +31,5 @@ HAVING
 ORDER BY
   total desc,
   Vendor, 
-  AnalyticsPlatfromFreq desc
+  AnalyticsPlatformFreq desc
   
