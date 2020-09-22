@@ -25,8 +25,7 @@ FROM
 WHERE
   date='2020-08-01' AND 
   url LIKE "http://%" AND
-  getUpgradeHeader(payload) LIKE "%h2%" AND
-  JSON_EXTRACT_SCALAR(payload, '$._protocol') IS NOT NULL
+  getUpgradeHeader(payload) LIKE "%h2%"
 GROUP BY
   client,
   firstHtml,
