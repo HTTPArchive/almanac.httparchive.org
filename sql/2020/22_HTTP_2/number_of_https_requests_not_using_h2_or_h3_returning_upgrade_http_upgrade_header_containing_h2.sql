@@ -26,7 +26,6 @@ FROM
 WHERE
   date = '2020-08-01' AND 
   url LIKE "https://%" AND
-  getUpgradeHeader(payload) LIKE "%h2%" AND
   LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "http/2" AND
   LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "%quic%" AND
   LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) NOT LIKE "h3%" AND
