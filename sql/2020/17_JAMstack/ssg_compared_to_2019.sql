@@ -1,8 +1,9 @@
 #standardSQL
-# SSG adoptions, compared to 2019
+# SSG adoptions and top SSGs YoY
 SELECT
   _TABLE_SUFFIX AS client,
   2020 AS year,
+	app AS ssg,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
@@ -23,11 +24,13 @@ WHERE
   app = "Next.js"
 GROUP BY
   client,
-  total
+  total,
+  ssg
 UNION ALL
 SELECT
   _TABLE_SUFFIX AS client,
   2019 AS year,
+	app AS ssg,
   COUNT(0) AS freq,
   total,
   COUNT(0) / total AS pct
@@ -48,7 +51,8 @@ WHERE
   app = "Next.js"
 GROUP BY
   client,
-  total
+  total,
+	ssg
 ORDER BY
   year DESC,
   pct DESC
