@@ -10,7 +10,7 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  `httparchive.sample_data.requests`
+  `httparchive.almanac.requests`
 WHERE
   date = '2020-08-01'
 GROUP BY
