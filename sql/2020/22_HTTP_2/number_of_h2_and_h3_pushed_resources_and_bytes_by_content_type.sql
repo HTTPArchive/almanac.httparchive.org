@@ -6,8 +6,8 @@ SELECT
   http_version,
   content_type,
   COUNT(DISTINCT page) AS num_pages,
-  APPROX_QUANTILES(num_requests, 1000)[OFFSET(500)] AS pushed_requests,
-  APPROX_QUANTILES(kb_transfered, 1000)[OFFSET(500)] AS kb_transfered,
+  APPROX_QUANTILES(num_requests, 1000)[OFFSET(percentile * 10)] AS pushed_requests,
+  APPROX_QUANTILES(kb_transfered, 1000)[OFFSET(percentile * 10)] AS kb_transfered,
 FROM (
   SELECT 
     client,
