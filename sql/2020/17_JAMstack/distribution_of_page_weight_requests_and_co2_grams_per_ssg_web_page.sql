@@ -1,5 +1,5 @@
 #standardSQL
-# Distribution of page weight, requests, and co2 grams per CMS web page
+# Distribution of page weight, requests, and co2 grams per SSG web page
 # https://gitlab.com/wholegrain/carbon-api-2-0/-/blob/b498ec3bb239536d3612c5f3d758f46e0d2431a6/includes/carbonapi.php
 CREATE TEMP FUNCTION
   GREEN(url STRING) AS (FALSE); -- TODO: Investigate fetching from Green Web Foundation
