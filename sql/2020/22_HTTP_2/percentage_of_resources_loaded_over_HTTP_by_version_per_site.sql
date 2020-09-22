@@ -9,7 +9,7 @@ SELECT
   APPROX_QUANTILES((quic/num_requests) * 100, 1000)[OFFSET(500)] AS pct_quic
 FROM (
   SELECT 
---    percentile,
+    percentile,
     client,
     page,
     COUNT(0) AS num_requests, 
@@ -23,13 +23,12 @@ FROM (
      LOWER(JSON_EXTRACT_SCALAR(payload, "$._protocol")) LIKE "http/3%"
       ),1,0)) AS quic
   FROM 
-    `httparchive.almanac.requests`
---    `httparchive.almanac.requests`,           
---    UNNEST([10, 25, 50, 75, 90]) AS percentile
+    `httparchive.almanac.requests`,           
+    UNNEST([10, 25, 50, 75, 90]) AS percentile
   WHERE
     date='2020-08-01'
   GROUP BY
---    percentile,
+    percentile,
     client,
     page
 )
