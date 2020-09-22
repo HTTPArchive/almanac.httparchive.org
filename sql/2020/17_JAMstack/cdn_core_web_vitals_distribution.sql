@@ -23,7 +23,7 @@ FROM
 JOIN (
     SELECT
       CASE
-        WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(x-github-request)') = 'x-github-request' THEN 'GitHub'
+        WHEN REGEXP_CONTAINS(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server), '(?i)x-github-request') THEN 'GitHub'
         WHEN REGEXP_EXTRACT(LOWER(CONCAT(respOtherHeaders, resp_x_powered_by, resp_via, resp_server)), '(netlify)') = 'netlify' THEN 'Netlify'
         WHEN _cdn_provider = 'Microsoft Azure' THEN 'Azure'
         WHEN _cdn_provider = 'Vercel' THEN 'Vercel'
