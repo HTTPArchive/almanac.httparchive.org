@@ -14,9 +14,6 @@ FROM (
     JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tls_version
   FROM `httparchive.almanac.requests` WHERE date='2020-08-01'
   )
-WHERE
-  http_version IS NOT NULL AND  
-  tls_version IS NOT NULL
 GROUP BY
   client,
   http_version,
