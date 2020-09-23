@@ -25,7 +25,7 @@ O [HTTP Archive](https://httparchive.org/) rastreia [milhões de páginas](https
 
 JavaScript é o recurso mais caro que enviamos aos navegadores; tendo que ser baixado, analisado, compilado e finalmente executado. Embora os navegadores tenham diminuído significativamente o tempo que leva para analisar e compilar scripts, [download e execução se tornaram as etapas mais caras](https://v8.dev/blog/cost-of-javascript-2019) quando o JavaScript é processado por uma página da web.
 
-O envio de pacotes menores de JavaScript para o navegador é a melhor maneira de reduzir o tempo de download e, por sua vez, melhorar o desempenho da página. **Mas quanto JavaScript realmente usamos?**
+O envio de pacotes menores de JavaScript para o navegador é a melhor maneira de reduzir o tempo de download e, por sua vez, melhorar o desempenho da página. Mas quanto JavaScript realmente usamos?
 
 <figure>
    <a href="/static/images/2019/javascript/fig1.png">
