@@ -27,13 +27,13 @@ JavaScript é o recurso mais caro que enviamos aos navegadores; tendo que ser ba
 
 O envio de pacotes menores de JavaScript para o navegador é a melhor maneira de reduzir o tempo de download e, por sua vez, melhorar o desempenho da página. Mas quanto JavaScript realmente usamos?
 
-<figure>
-   <a href="/static/images/2019/javascript/fig1.png">
-      <img src="/static/images/2019/javascript/fig1.png" alt="Figura 1. Distribuição de bytes de JavaScript por página." aria-labelledby="fig1-caption" aria-describedby="fig1-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive">
-   </a>
-   <div id="fig1-description" class="visually-hidden">Gráfico de barras mostrando 70 bytes de JavaScript usados no 10º percentil, 174 bytes no 25º percentil, 373 bytes no 50º percentil, 693 bytes no 75º percentil, e 1.093 bytes no 90º percentil</div>
-   <figcaption id="fig1-caption">Figura 1. Distribuição de bytes de JavaScript por página.</figcaption>
-</figure>
+{{ figure_markup(
+  image="/static/images/2019/javascript/fig1.png",
+  caption="Distribuição de bytes de JavaScript por página.",
+  description="Gráfico de barras mostrando 70 bytes de JavaScript usados no 10º percentil, 174 bytes no 25º percentil, 373 bytes no 50º percentil, 693 bytes no 75º percentil, e 1.093 bytes no 90º percentil",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1974602890&format=interactive"
+  )
+}}
 
 A Figura 1 acima mostra que usamos 373 KB de JavaScript no 50º percentil, ou mediana. Em outras palavras, 50% de todos os sites fornecem mais do que essa quantidade de JavaScript para seus usuários.
 
@@ -323,13 +323,13 @@ Para declarar um script como um módulo, a tag do script deve ter o código `typ
 
 Quantos sites usam `type="module"` para scripts em suas páginas?
 
-<figure>
-   <a href="/static/images/2019/javascript/fig13.png">
-      <img src="/static/images/2019/javascript/fig13.png" alt="Figura 13. Porcentagem de sites usando type=module." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive">
-   </a>
-   <div id="fig13-description" class="visually-hidden">Gráfico de barras mostrando 0,6% dos sites de desktop usam 'type=module', e 0.8% de sites mobile.</div>
-   <figcaption id="fig13-caption">Figura 13. Porcentagem de sites usando type=module.</figcaption>
-</figure>
+{{ figure_markup(
+  image="/static/images/2019/javascript/fig13.png",
+  caption="Porcentagem de sites usando type=module.",
+  description="Gráfico de barras mostrando 0,6% dos sites de desktop usam 'type=module', e 0.8% de sites mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive"
+  )
+}}
 
 O suporte de nível de navegador para módulos ainda é relativamente novo, e os números aqui mostram que muito poucos sites atualmente usam `type="module"` para seus scripts. Muitos sites ainda dependem de carregadores de módulo (2,37% de todos os sites de desktop usam [RequireJS](https://github.com/requirejs/requirejs) por exemplo) e bundlers ([webpack](https://webpack.js.org/)  por exemplo) para definir módulos em seu código-fonte.
 
@@ -339,15 +339,15 @@ Se estiver usando módulos nativos, é importante garantir que um script de back
 <script nomodule src="fallback.js"></script>
 ```
 
-Quando usados ​​juntos, os navegadores que suportam módulos irão ignorar completamente qualquer script que contenha o atributo `nomodule`. Por outro lado, navegadores que ainda não suportam módulos não irão baixar nenhum script com `type="module"`. Como eles também não reconhecem `nomodule`, eles normalmente baixam scripts com o atributo. O uso dessa abordagem pode permitir que os desenvolvedores [empurrem código moderno para navegadores modernos para carregamentos de página mais rápidos](https://web.dev/serve-modern-code-to-modern-browsers/). Então, **Quantos sites usam `nomodule` para os scripts em sua página?**
+Quando usados ​​juntos, os navegadores que suportam módulos irão ignorar completamente qualquer script que contenha o atributo `nomodule`. Por outro lado, navegadores que ainda não suportam módulos não irão baixar nenhum script com `type="module"`. Como eles também não reconhecem `nomodule`, eles normalmente baixam scripts com o atributo. O uso dessa abordagem pode permitir que os desenvolvedores [empurrem código moderno para navegadores modernos para carregamentos de página mais rápidos](https://web.dev/serve-modern-code-to-modern-browsers/). Então, quantos sites usam `nomodule` para os scripts em sua página?
 
-<figure>
-   <a href="/static/images/2019/javascript/fig14.png">
-      <img src="/static/images/2019/javascript/fig14.png" alt="Figura 14. Porcentagem de sites usando nomodule." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive">
-   </a>
-   <div id="fig14-description" class="visually-hidden">Gráfico de barras mostrando 0,8% dos sites para desktop usam 'nomodule' e 0,5% dos sites para celular.</div>
-   <figcaption id="fig14-caption">Figura 14. Porcentagem de sites usando nomodule.</figcaption>
-</figure>
+{{ figure_markup(
+  image="/static/images/2019/javascript/fig14.png",
+  caption="Porcentagem de sites usando nomodule.",
+  description="Gráfico de barras mostrando 0,8% dos sites para desktop usam 'nomodule' e 0,5% dos sites para celular.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive"
+  )
+}}
 
 Da mesma forma, poucos sites (0,50% - 0,80%) usam o atributo `nomodule` para qualquer script.
 
@@ -360,25 +360,25 @@ Da mesma forma, poucos sites (0,50% - 0,80%) usam o atributo `nomodule` para qua
 
 Então, quantos sites usam diretivas de preload e prefetch?
 
-<figure>
-   <a href="/static/images/2019/javascript/fig15.png">
-      <img src="/static/images/2019/javascript/fig15.png" alt="Figura 15. Porcentagem de sites usando rel=preload para scripts." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive">
-   </a>
-   <div id="fig15-description" class="visually-hidden">Gráfico de barras mostrando 14% dos sites para desktop usam 'rel=preload' para scripts e 15% dos sites para celular.</div>
-   <figcaption id="fig15-caption">Figura 15. Porcentagem de sites usando rel=preload para scripts.</figcaption>
-</figure>
+{{ figure_markup(
+  image="/static/images/2019/javascript/fig15.png",
+  caption="Porcentagem de sites usando rel=preload para scripts.",
+  description="Gráfico de barras mostrando 14% dos sites para desktop usam 'rel=preload' para scripts e 15% dos sites para celular.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive"
+  )
+}}
 
 Para todos os sites medidos no arquivo HTTP, 14,33% dos sites de desktop e 14,84% dos sites móveis usam `<link rel="preload">` para scripts em suas páginas.
 
 Para prefetch, temos o seguinte:
 
-<figure>
-   <a href="/static/images/2019/javascript/fig16.png">
-      <img src="/static/images/2019/javascript/fig16.png" alt="Figura 16. Porcentagem de sites usando rel=prefetch para scripts." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive">
-   </a>
-   <div id="fig16-description" class="visually-hidden">Gráfico de barras mostrando 0,08% dos sites para desktop usam 'rel=prefetch', e 0,08% dos sites para celular.</div>
-   <figcaption id="fig16-caption">Figura 16. Porcentagem de sites usando rel=prefetch para scripts.</figcaption>
-</figure>
+{{ figure_markup(
+  image="/static/images/2019/javascript/fig16.png",
+  caption="Porcentagem de sites usando rel=prefetch para scripts.",
+  description="Gráfico de barras mostrando 0,08% dos sites para desktop usam 'rel=prefetch', e 0,08% dos sites para celular.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive"
+  )
+}}
 
 Para dispositivos móveis e desktops, 0,08% das páginas aproveitam a pré-busca para qualquer um de seus scripts.
 
@@ -388,7 +388,7 @@ JavaScript continua a evoluir como linguagem. A cada ano uma nova versão do pad
 
 Com o HTTP Archive, podemos dar uma olhada em qualquer API mais recente que seja suportada (ou prestes a ser) e ver o quão difundida ela está em uso. Essas APIs já podem ser usadas em navegadores que as suportam _ou_ com um polyfill anexado para garantir que ainda funcionem para todos os usuários.
 
-**Quantos sites usam as seguintes APIs?**
+Quantos sites usam as seguintes APIs?
 
 - [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
 - [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
@@ -397,13 +397,13 @@ Com o HTTP Archive, podemos dar uma olhada em qualquer API mais recente que seja
 - [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 - [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
-<figure>
-   <a href="/static/images/2019/javascript/fig17.png">
-      <img src="/static/images/2019/javascript/fig17.png" alt="Figura 17. Uso de novas APIs JavaScript." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive">
-   </a>
-   <div id="fig17-description" class="visually-hidden">Gráfico de barras mostrando 25,5% / 36,2% dos sites em computadores e dispositivos móveis usam WeakMap, 6,1% / 17,2% usam WeakSet, 3.9%/14.0% usa Intl, 3.9%/4.4% usa Proxy, 0.4%/0.4% usa Atomics, e 0.2%/0.2% usa SharedArrayBuffer.</div>
-   <figcaption id="fig17-caption">Figura 17. Uso de novas APIs JavaScript.</figcaption>
-</figure>
+{{ figure_markup(
+  image="/static/images/2019/javascript/fig17.png",
+  caption="Uso de novas APIs JavaScript.",
+  description="Gráfico de barras mostrando 25,5% / 36,2% dos sites em computadores e dispositivos móveis usam WeakMap, 6,1% / 17,2% usam WeakSet, 3.9%/14.0% usa Intl, 3.9%/4.4% usa Proxy, 0.4%/0.4% usa Atomics, e 0.2%/0.2% usa SharedArrayBuffer.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive"
+  )
+}}
 
 Atomics (0.38%) e SharedArrayBuffer (0.20%) eles mal são visíveis neste gráfico, pois são usados ​​em tão poucas páginas.
 
