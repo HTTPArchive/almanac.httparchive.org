@@ -281,7 +281,7 @@ Código-fonte aberto ou código com licença permissiva que qualquer pessoa pode
    <figcaption>{{ figure_link(caption="Principais bibliotecas JavaScript em computadores desktop e dispositivos móveis.") }}</figcaption>
 </figure>
 
-[jQuery](https://jquery.com/), a biblioteca JavaScript mais popular já criada, é usada em 85,03% das páginas de desktop e 83,46% das páginas móveis. O advento de muitas APIs e métodos de navegador, como [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) e [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), eles padronizaram muitas das funcionalidades fornecidas pela biblioteca em um formato nativo. Embora a popularidade do jQuery pareça estar diminuindo, por que ele ainda é usado na grande maioria da web?
+[jQuery](https://jquery.com/), a biblioteca JavaScript mais popular já criada, é usada em 85,03% das páginas de desktop e 83,46% das páginas móveis. O advento de muitas APIs e métodos de navegador, como [Fetch](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API) e [querySelector](https://developer.mozilla.org/pt-PT/docs/Web/API/Document/querySelector), eles padronizaram muitas das funcionalidades fornecidas pela biblioteca em um formato nativo. Embora a popularidade do jQuery pareça estar diminuindo, por que ele ainda é usado na grande maioria da web?
 
 Existem vários motivos possíveis:
 
@@ -353,7 +353,7 @@ Da mesma forma, poucos sites (0,50% - 0,80%) usam o atributo `nomodule` para qua
 
 ## Preload e prefetch
 
-[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) e [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) são [dicas de recursos](./resource-hints) que permitem que você ajude o navegador a determinar quais recursos precisam ser baixados.
+[Preload](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Preloading_content) e [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) são [dicas de recursos](./resource-hints) que permitem que você ajude o navegador a determinar quais recursos precisam ser baixados.
 
 - Pré-carregar um recurso com `<link rel="preload">` diz ao navegador para baixar este recurso o mais rápido possível. Isso é especialmente útil para recursos críticos que são descobertos no final do processo de carregamento da página (por exemplo, JavaScript localizado na parte inferior de seu HTML) e, caso contrário, são baixados por último.
 - Usar `<link rel="prefetch">` diz ao navegador para tirar vantagem de qualquer tempo ocioso que ele tenha para buscar esses recursos necessários para navegações futuras. 
@@ -390,12 +390,12 @@ Com o HTTP Archive, podemos dar uma olhada em qualquer API mais recente que seja
 
 Quantos sites usam as seguintes APIs?
 
-- [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
-- [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
-- [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+- [Atomics](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
+- [Intl](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+- [Proxy](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
 - [SharedArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-- [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
-- [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+- [WeakMap](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+- [WeakSet](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
 {{ figure_markup(
   image="/static/images/2019/javascript/fig17.png",
