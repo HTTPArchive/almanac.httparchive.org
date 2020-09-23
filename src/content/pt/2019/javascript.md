@@ -69,7 +69,7 @@ Embora esses dados mostrem quanto tempo pode levar para um dispositivo móvel pr
 
 {{ figure_markup(
   image="/static/images/2019/javascript/js-processing-reddit.png",
-  caption="Tempos de processamento de JavaScript para reddit.com. De <a href="https://v8.dev/blog/cost-of-javascript-2019">O custo do JavaScript em 2019</a>.",
+  caption='Tempos de processamento de JavaScript para reddit.com. De <a href="https://v8.dev/blog/cost-of-javascript-2019">O custo do JavaScript em 2019</a>.',
   description="Gráfico de barras mostrando 3 dispositivos diferentes: no topo, um Pixel 3 tem uma pequena quantidade no thread principal e no thread de trabalho de menos de 400ms. Para um Moto G4, é aproximadamente 900 ms no thread principal e mais 300 ms no thread de trabalho. E a barra final é um Alcatel 1X 5059D com mais de 2.000 ms no thread principal e mais de 500 ms no thread de trabalho.",
   width=600,
   height=363
