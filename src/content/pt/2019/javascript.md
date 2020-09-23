@@ -25,7 +25,7 @@ O [HTTP Archive](https://httparchive.org/) rastreia [milhões de páginas](https
 
 JavaScript é o recurso mais caro que enviamos aos navegadores; tendo que ser baixado, analisado, compilado e finalmente executado. Embora os navegadores tenham diminuído significativamente o tempo que leva para analisar e compilar scripts, [download e execução se tornaram as etapas mais caras](https://v8.dev/blog/cost-of-javascript-2019) quando o JavaScript é processado por uma página da web.
 
-O envio de pacotes menores de JavaScript para o navegador é a melhor maneira de reduzir o tempo de download e, por sua vez, melhorar o desempenho da página. Mas quanto JavaScript realmente usamos?
+O envio de pacotes menores de JavaScript para o navegador é a melhor maneira de reduzir o tempo de download e, por sua vez, melhorar o desempenho da página. **Mas quanto JavaScript realmente usamos?**
 
 <figure>
    <a href="/static/images/2019/javascript/fig1.png">
@@ -37,7 +37,7 @@ O envio de pacotes menores de JavaScript para o navegador é a melhor maneira de
 
 A Figura 1 acima mostra que usamos 373 KB de JavaScript no 50º percentil, ou mediana. Em outras palavras, 50% de todos os sites fornecem mais do que essa quantidade de JavaScript para seus usuários.
 
-Olhando para esses números, é natural imaginar se isso é muito JavaScript. No entanto, em termos de desempenho da página, o impacto depende inteiramente das conexões de rede e dos dispositivos usados. O que nos leva à nossa próxima pergunta: quanto JavaScript enviamos quando comparamos clientes móveis e de desktop?
+Olhando para esses números, é natural imaginar se isso é muito JavaScript. No entanto, em termos de desempenho da página, o impacto depende inteiramente das conexões de rede e dos dispositivos usados. O que nos leva à nossa próxima pergunta: **quanto JavaScript enviamos quando comparamos clientes móveis e de desktop?**
 
 <figure>
    <a href="/static/images/2019/javascript/fig2.png">
@@ -51,7 +51,7 @@ Em cada percentil, estamos enviando um pouco mais de JavaScript para dispositivo
 
 ### Tempo de processamento
 
-Depois de ser analisado e compilado, o JavaScript obtido pelo navegador precisa ser processado (ou executado) antes de ser utilizado. Os dispositivos variam e seu poder de computação pode afetar significativamente a velocidade com que o JavaScript pode ser processado em uma página. Quais são os tempos de processamento atuais na web?
+Depois de ser analisado e compilado, o JavaScript obtido pelo navegador precisa ser processado (ou executado) antes de ser utilizado. Os dispositivos variam e seu poder de computação pode afetar significativamente a velocidade com que o JavaScript pode ser processado em uma página. **Quais são os tempos de processamento atuais na web?**
 
 Podemos ter uma ideia analisando os tempos de processamento do thread principal para V8 em diferentes percentis:
 
@@ -77,7 +77,7 @@ Embora esses dados mostrem quanto tempo pode levar para um dispositivo móvel pr
 
 ### Número de pedidos
 
-Uma via que vale a pena explorar ao tentar analisar a quantidade de JavaScript usada por páginas da web é o número de solicitações enviadas. Com [HTTP/2](./http2), enviar vários pedaços menores pode melhorar o carregamento da página em comparação ao envio de um pacote maior e monolítico. Se também dividirmos por cliente do dispositivo, quantas solicitações estão sendo buscadas?
+Uma via que vale a pena explorar ao tentar analisar a quantidade de JavaScript usada por páginas da web é o número de solicitações enviadas. Com [HTTP/2](./http2), enviar vários pedaços menores pode melhorar o carregamento da página em comparação ao envio de um pacote maior e monolítico. Se também dividirmos por cliente do dispositivo, **quantas solicitações estão sendo buscadas?**
 
 <figure>
    <a href="/static/images/2019/javascript/fig5.png">
@@ -89,84 +89,84 @@ Uma via que vale a pena explorar ao tentar analisar a quantidade de JavaScript u
 
 Na mediana, 19 solicitações são enviadas para desktop e 18 para celular.
 
-### First-party vs. third-party
+### Conteúdo de origem vs. conteúdo de terceiros
 
-Of the results analyzed so far, the entire size and number of requests were being considered. In a majority of websites however, a significant portion of the JavaScript code fetched and used comes from [third-party](./third-parties) sources.
+Dos resultados analisados até o momento, foram considerados todo o tamanho e número de solicitações. Na maioria dos sites, no entanto, uma parte significativa do código JavaScript obtido e usado vem de fontes [de terceiros](./third-parties).
 
-Third-party JavaScript can come from any external, third-party source. Ads, analytics and social media embeds are all common use-cases for fetching third-party scripts. So naturally, this brings us to our next question: how many requests sent are third-party instead of first-party?
+JavaScript de conteúdo de terceiros pode vir de qualquer fonte externa de terceiros. Anúncios, ferramentas de análise e conteúdo de mídia social são casos de uso comuns para a obtenção de scripts de terceiros. Então, naturalmente, isso nos leva à nossa próxima pergunta: **Quantas solicitações enviadas são para conteúdo de terceiros em vez de conteúdo de origem?**
 
 <figure>
    <a href="/static/images/2019/javascript/fig6.png">
-      <img src="/static/images/2019/javascript/fig6.png" alt="Figure 6. Distribution of first and third-party scripts on desktop." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive">
+      <img src="/static/images/2019/javascript/fig6.png" alt="Figura 6. Distribuição de scripts de origem e de terceiros em dispositivos desktop." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1108490&format=interactive">
    </a>
-   <div id="fig6-description" class="visually-hidden">Bar chart showing 0/1 request on desktop are first-party and third-party respectively in 10th percentile, 2/4 in 25th percentile, 6/10 in 50th percentile, 13/21 in 75th percentile, and 24/38 in 90th percentile.</div>
-   <figcaption id="fig6-caption">Figure 6. Distribution of first and third-party scripts on desktop.</figcaption>
+   <div id="fig6-description" class="visually-hidden">O gráfico de barras que mostra a solicitação 0/1 no desktop são primárias e terceiras, respectivamente, no 10º percentil, 2/4 no 25º percentil, 6/10 no 50º percentil, 13/21 no 75º percentil e 24/38 no 90º percentil.</div>
+   <figcaption id="fig6-caption">Figura 6. Distribuição de scripts de origem e de terceiros em dispositivos desktop.</figcaption>
 </figure>
 
 <figure>
    <a href="/static/images/2019/javascript/fig7.png">
-      <img src="/static/images/2019/javascript/fig7.png" alt="Figure 7. Distribution of first and third party scripts on mobile." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive">
+      <img src="/static/images/2019/javascript/fig7.png" alt="Figura 7. Distribuição de scripts de origem e de terceiros em dispositivos móveis." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=998640509&format=interactive">
    </a>
-   <div id="fig7-description" class="visually-hidden">Bar chart showing 0/1 request on mobile are first-party and third-party respectively in 10th percentile, 2/3 in 25th percentile, 5/9 in 50th percentile, 13/20 in 75th percentile, and 23/36 in 90th percentile.</div>
-   <figcaption id="fig7-caption">Figure 7. Distribution of first and third party scripts on mobile.</figcaption>
+   <div id="fig7-description" class="visually-hidden">O gráfico de barras que mostra 0/1 solicitações em dispositivos móveis é para conteúdo de origem e conteúdo de terceiros, respectivamente, no 10º percentil, 2/3 no 25º percentil, 5/9 no 50º percentil, 13/20 em no 75º percentil e 23/36 no 90º percentil.</div>
+   <figcaption id="fig7-caption">Figura 7. Distribuição de scripts de origem e de terceiros em dispositivos móveis.</figcaption>
 </figure>
 
-For both mobile and desktop clients, more third-party requests are sent than first-party at every percentile. If this seems surprising, let's find out how much actual code shipped comes from third-party vendors.
+Para clientes móveis e de desktop, mais solicitações são enviadas para conteúdo de terceiros do que conteúdo de origem em cada percentil. Se isso parece surpreendente, vamos descobrir quanto código real enviado vem de fornecedores terceirizados.
 
 <figure>
    <a href="/static/images/2019/javascript/fig8.png">
-      <img src="/static/images/2019/javascript/fig8.png" alt="Figure 8. Distribution of total JavaScript downloaded on desktop." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive">
+      <img src="/static/images/2019/javascript/fig8.png" alt="Figura 8. Distribuição do JavaScript total baixado em dispositivos desktop." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=633945705&format=interactive">
    </a>
-   <div id="fig8-description" class="visually-hidden">Bar chart showing 0/17 bytes of JavaScript are downloaded on desktop for first-party and third-party requests respectively in the 10th percentile, 11/62 in 25th percentile, 89/232 in 50th percentile, 200/525 in 75th percentile, and 404/900 in 90th percentile.</div>
-   <figcaption id="fig8-caption">Figure 8. Distribution of total JavaScript downloaded on desktop.</figcaption>
+   <div id="fig8-description" class="visually-hidden">Gráfico de barras mostrando 0/17 bytes de JavaScript sendo baixado para dispositivos desktop para conteúdo de origem e conteúdo de terceiros, respectivamente, no 10º percentil, 11/62 no 25º percentil, 89/232 no 50º percentil, 200/525 no percentil 75 e 404/900 no percentil 90.</div>
+   <figcaption id="fig8-caption">Figura 8. Distribuição do JavaScript total baixado em dispositivos desktop.</figcaption>
 </figure>
 
 <figure>
    <a href="/static/images/2019/javascript/fig9.png">
-      <img src="/static/images/2019/javascript/fig9.png" alt="Figure 9. Distribution of total JavaScript downloaded on mobile." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive">
+      <img src="/static/images/2019/javascript/fig9.png" alt="Figura 9. Distribuição do JavaScript total baixado em dispositivos móveis." aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1611383649&format=interactive">
    </a>
-   <div id="fig9-description" class="visually-hidden">Bar chart showing 0/17 bytes of JavaScript are downloaded on mobile for first-party and third-party requests respectively in the 10th percentile, 6/54 in 25th percentile, 83/217 in 50th percentile, 189/477 in 75th percentile, and 380/827 in 90th percentile.</div>
-   <figcaption id="fig9-caption">Figure 9. Distribution of total JavaScript downloaded on mobile.</figcaption>
+   <div id="fig9-description" class="visually-hidden">Gráfico de barras mostrando 0/17 bytes de JavaScript sendo baixados para dispositivos móveis para conteúdo de origem e conteúdo de terceiros, respectivamente, no 10º percentil, 6/54 no 25º percentil, 83/217 no 50º percentil, 189/477 no 75º percentil e 380/827 no 90º percentil.</div>
+   <figcaption id="fig9-caption">Figura 9. Distribuição do JavaScript total baixado em dispositivos móveis.</figcaption>
 </figure>
 
-At the median, 89% more third-party code is used than first-party code authored by the developer for both mobile and desktop. This clearly shows that third-party code can be one of the biggest contributors to bloat. For more information on the impact of third parties, refer to the ["Third Parties"](./third-parties) chapter.
+Na média, 89% mais código de conteúdo de terceiros é usado do que código de conteúdo de origem criado pelo desenvolvedor para desktops e dispositivos móveis. Isso mostra claramente que o código de terceiros pode ser um dos maiores contribuintes para a inflação. Para obter mais informações sobre o impacto de terceiros, consulte o capítulo ["Terceiros"](./third-parties).
 
-## Resource compression
+## Compressão de recursos
 
-In the context of browser-server interactions, resource compression refers to code that has been modified using a data compression algorithm. Resources can be compressed statically ahead of time or on-the-fly as they are requested by the browser, and for either approach the transferred resource size is significantly reduced which improves page performance.
+No contexto das interações navegador-servidor, a compactação de recursos se refere ao código que foi modificado usando um algoritmo de compactação de dados. Os recursos podem ser compactados estaticamente com antecedência ou em tempo real, conforme solicitado pelo navegador, e para ambas as abordagens o tamanho do recurso transferido é reduzido significativamente, melhorando o desempenho da página.
 
-There are multiple text-compression algorithms, but only two are mostly used for the compression (and decompression) of HTTP network requests:
+Existem vários algoritmos de compactação de texto, mas apenas dois são usados ​​principalmente para compactação (e descompressão) de solicitações de rede HTTP:
 
-- [Gzip](https://www.gzip.org/) (gzip): The most widely used compression format for server and client interactions
-- [Brotli](https://github.com/google/brotli) (br): A newer compression algorithm aiming to further improve compression ratios. [90% of browsers](https://caniuse.com/#feat=brotli) support Brotli encoding.
+- [Gzip](https://www.gzip.org/) (gzip): O formato de compactação mais amplamente usado para interações de servidor e cliente.
+- [Brotli](https://github.com/google/brotli) (br): Um algoritmo de compressão mais recente que visa melhorar ainda mais as taxas de compressão. [90% dos navegadores](https://caniuse.com/#feat=brotli) eles suportam a codificação Brotli.
 
-Compressed scripts will always need to be uncompressed by the browser once transferred. This means its content remains the same and execution times are not optimized whatsoever. Resource compression, however, will always improve download times which also is one of the most expensive stages of JavaScript processing. Ensuring JavaScript files are compressed correctly can be one of the most significant factors in improving site performance.
+Scripts compactados devem sempre ser descompactados pelo navegador depois de transferidos. Isso significa que seu conteúdo permanece o mesmo e os tempos de execução não são otimizados de forma alguma. No entanto, a compactação de recursos sempre melhorará os tempos de download, que também é um dos estágios mais caros do processamento de JavaScript. Garantir que os arquivos JavaScript sejam compactados corretamente pode ser um dos fatores mais importantes para melhorar o desempenho do site.
 
-How many sites are compressing their JavaScript resources?
+**Quantos sites estão compactando seus recursos JavaScript?**
 
 <figure>
    <a href="/static/images/2019/javascript/fig10.png">
-      <img src="/static/images/2019/javascript/fig10.png" alt="Figure 10. Percentage of sites compressing JavaScript resources with gzip or brotli." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive">
+      <img src="/static/images/2019/javascript/fig10.png" alt="Figura 10. Porcentagem de sites que compactam recursos JavaScript com gzip ou brotli." aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=241928028&format=interactive">
    </a>
-   <div id="fig10-description" class="visually-hidden">Bar chart showing 67%/65% of JavaScript resources are compressed with gzip on desktop and mobile respectively, and 15%/14% are compressed using Brotli.</div>
-   <figcaption id="fig10-caption">Figure 10. Percentage of sites compressing JavaScript resources with gzip or brotli.</figcaption>
+   <div id="fig10-description" class="visually-hidden">Gráfico de barras mostrando 67% / 65% dos recursos JavaScript são compactados com gzip em desktops e dispositivos móveis, respectivamente, e 15% / 14% são compactados com Brotli.</div>
+   <figcaption id="fig10-caption">Figura 10. Porcentagem de sites que compactam recursos JavaScript com gzip ou brotli.</figcaption>
 </figure>
 
-The majority of sites are compressing their JavaScript resources. Gzip encoding is used on ~64-67% of sites and Brotli on ~14%. Compression ratios are similar for both desktop and mobile.
+A maioria dos sites está compactando seus recursos JavaScript. A codificação Gzip é usada em ~ 64-67% dos sites e Brotli em cerca de 14%. As taxas de compressão são semelhantes para computadores desktop e dispositivos móveis.
 
-For a deeper analysis on compression, refer to the ["Compression"](./compression) chapter.
+Para uma discussão mais aprofundada sobre compressão, veja o capítulo sobre ["Compressão"](./compression).
 
-## Open source libraries and frameworks
+## Bibliotecas e estruturas de código aberto
 
-Open source code, or code with a permissive license that can be accessed, viewed and modified by anyone. From tiny libraries to entire browsers, such as [Chromium](https://www.chromium.org/Home) and [Firefox](https://www.openhub.net/p/firefox), open source code plays a crucial role in the world of web development. In the context of JavaScript, developers rely on open source tooling to include all types of functionality into their web page. Regardless of whether a developer decides to use a small utility library or a massive framework that dictates the architecture of their entire application, relying on open-source packages can make feature development easier and faster. So which JavaScript open-source libraries are used the most?
+Código-fonte aberto ou código com licença permissiva que qualquer pessoa pode acessar, visualizar e modificar. De pequenas bibliotecas a navegadores completos, como [Chromium](https://www.chromium.org/Home) e [Firefox](https://www.openhub.net/p/firefox), o código-fonte aberto reproduz um papel crucial no mundo do desenvolvimento web. No contexto do JavaScript, os desenvolvedores contam com ferramentas de código aberto para incluir todos os tipos de funcionalidade em suas páginas da web. Independentemente de o desenvolvedor decidir usar uma pequena biblioteca de utilitários ou uma estrutura enorme que dita a arquitetura de todo o seu aplicativo, confiar em pacotes de código aberto pode tornar o desenvolvimento de recursos mais fácil e rápido. **Então, quais bibliotecas de código aberto JavaScript são mais usadas?**
 
 <figure>
    <table>
       <thead>
         <tr>
-          <th>Library</th>
-          <th>Desktop</th>
-          <th>Mobile</th>
+          <th>Biblioteca</th>
+          <th>Área de Trabalho</th>
+          <th>Móvel</th>
         </tr>
       </thead>
       <tbody>
@@ -277,117 +277,117 @@ Open source code, or code with a permissive license that can be accessed, viewed
         </tr>
       </tbody>
     </table>
-   <figcaption>Figure 11. Top JavaScript libraries on desktop and mobile.</figcaption>
+   <figcaption>Figura 11. Principais bibliotecas JavaScript em computadores desktop e dispositivos móveis.</figcaption>
 </figure>
 
-[jQuery](https://jquery.com/), the most popular JavaScript library ever created, is used in 85.03% of desktop pages and 83.46% of mobile pages. The advent of many Browser APIs and methods, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), standardized much of the functionality provided by the library into a native form. Although the popularity of jQuery may seem to be declining, why is it still used in the vast majority of the web?
+[jQuery](https://jquery.com/), a biblioteca JavaScript mais popular já criada, é usada em 85,03% das páginas de desktop e 83,46% das páginas móveis. O advento de muitas APIs e métodos de navegador, como [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) e [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), eles padronizaram muitas das funcionalidades fornecidas pela biblioteca em um formato nativo. Embora a popularidade do jQuery pareça estar diminuindo, por que ele ainda é usado na grande maioria da web?
 
-There are a number of possible reasons:
+Existem vários motivos possíveis:
 
-- [WordPress](https://wordpress.org/), which is used in more than 30% of sites, includes jQuery by default.
-- Switching from jQuery to a newer client-side library can take time depending on how large an application is, and many sites may consist of jQuery in addition to newer client-side libraries.
+- [WordPress](https://wordpress.org/), usado por mais de 30% dos sites, inclui jQuery por padrão.
+- Mudar de jQuery para uma biblioteca mais recente do lado do cliente pode levar algum tempo, dependendo do tamanho do aplicativo, e muitos sites podem consistir em jQuery e bibliotecas do lado do cliente mais novas.
 
-Other top used JavaScript libraries include jQuery variants (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/) and so on.
+Outras bibliotecas JavaScript comumente usadas incluem variantes jQuery (jQuery migrate, jQuery UI), [Modernizr](https://modernizr.com/), [Moment.js](https://momentjs.com/), [Underscore.js](https://underscorejs.org/) e assim por diante.
 
-### Frameworks and UI libraries
+### Frameworks e bibliotecas de UI
 
-<p class="note">As mentioned in our <a href="./methodology#wappalyzer">methodology</a>, the third-party detection library used in HTTP Archive (Wappalyzer) has a number of limitations with regards to how it detects certain tools. There is an open issue <a href="https://github.com/AliasIO/wappalyzer/issues/2450">to improve detection of JavaScript libraries and frameworks</a>, which will have impacted the results presented here.</p>
+<p class="note">Conforme mencionado em nossa <a href="./methodology#wappalyzer">metodologia</a>, a biblioteca de detecção de terceiros usada no HTTP Archive (Wappalyzer) tem uma série de limitações com relação à maneira como detecta certas ferramentas. Há um problema aberto <a href="https://github.com/AliasIO/wappalyzer/issues/2450">para melhorar a detecção de bibliotecas e frameworks JavaScript</a>, que terá impactado os resultados apresentados aqui.</p>
 
-In the past number of years, the JavaScript ecosystem has seen a rise in open-source libraries and frameworks to make building **single-page applications** (SPAs) easier. A single-page application is characterized as a web page that loads a single HTML page and uses JavaScript to modify the page on user interaction instead of fetching new pages from the server. Although this remains to be the main premise of single-page applications, different server-rendering approaches can still be used to improve the experience of such sites. How many sites use these types of frameworks?
+Nos últimos anos, o ecossistema JavaScript tem visto um aumento em bibliotecas e frameworks de código aberto para facilitar a construção de **aplicativos de página única** (SPAs por sua sigla em Inglês). Um aplicativo de página única é caracterizado como uma página da web que carrega uma única página HTML e usa JavaScript para modificar a página na interação do usuário em vez de procurar novas páginas no servidor. Embora essa continue sendo a premissa principal dos aplicativos de página única, diferentes abordagens de renderização de servidor ainda podem ser usadas para aprimorar a experiência de tais sites. **Quantos sites usam este tipo de framework?**
 
 <figure>
    <a href="/static/images/2019/javascript/fig12.png">
-      <img src="/static/images/2019/javascript/fig12.png" alt="Figure 12. Most frequently used frameworks on desktop." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive">
+      <img src="/static/images/2019/javascript/fig12.png" alt="Figura 12. Os frameworks mais usados ​​no desktop." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive">
    </a>
-   <div id="fig12-description" class="visually-hidden">Bar chart showing 4.6% of sites use React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.</div>
-   <figcaption id="fig12-caption">Figure 12. Most frequently used frameworks on desktop.</figcaption>
+   <div id="fig12-description" class="visually-hidden">Gráfico de barras mostrando que 4,6% dos sites usam React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.</div>
+   <figcaption id="fig12-caption">Figura 12. Os frameworks mais usados ​​no desktop.</figcaption>
 </figure>
 
-Only a subset of popular frameworks are being analyzed here, but it's important to note that all of them either follow one of these two approaches:   
+Apenas um subconjunto de estruturas populares é discutido aqui, mas é importante observar que todos eles seguem uma das duas abordagens:   
 
-- A [model-view-controller](https://developer.chrome.com/apps/app_frameworks) (or model-view-viewmodel) architecture   
-- A component-based architecture   
+- Arquitetura [modelo-visualização-controlador](https://developer.chrome.com/apps/app_frameworks) (ou model-view-viewmodel)   
+- Arquitetura baseada em componentes   
 
-Although there has been a shift towards a component-based model, many older frameworks that follow the MVC paradigm ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) are still being used in thousands of pages. However, [React](https://reactjs.org/), [Vue](https://vuejs.org/) and [Angular](https://angular.io/) are the most popular component-based frameworks ([Zone.js](https://github.com/angular/zone.js) is a package that is now part of Angular core).   
+Embora tenha havido uma mudança em direção a um modelo baseado em componentes, muitos frameworks mais antigos que seguem o paradigma MVC ([AngularJS](https://angularjs.org/), [Backbone.js](https://backbonejs.org/), [Ember](https://emberjs.com/)) ainda estão sendo usados em milhares de páginas. Contudo, [React](https://reactjs.org/), [Vue](https://vuejs.org/) e [Angular](https://angular.io/) são frameworks baseadas em componentes mais populares ([Zone.js](https://github.com/angular/zone.js) é um pacote que agora faz parte do núcleo Angular).   
 
-## Differential loading
+## Carregamento diferencial
 
-[JavaScript modules](https://v8.dev/features/modules), or ES modules, are supported in [all major browsers](https://caniuse.com/#feat=es6-module). Modules provide the capability to create scripts that can import and export from other modules. This allows anyone to build their applications architected in a module pattern, importing and exporting wherever necessary, without relying on third-party module loaders.
+[Módulos JavaScript](https://v8.dev/features/modules), ou módulos ES, são suportados em [todos os principais navegadores](https://caniuse.com/#feat=es6-module). Os módulos fornecem a capacidade de criar scripts que você pode importar e exportar de outros módulos. Isso permite que qualquer pessoa crie seus aplicativos projetados em um padrão de módulo, importando e exportando quando necessário, sem depender de carregadores de módulo de terceiros.
 
-To declare a script as a module, the script tag must get the `type="module"` attribute:
+Para declarar um script como um módulo, a tag do script deve ter o código `type="module"`:
 
 ```html
 <script type="module" src="main.mjs"></script>
 ```
 
-How many sites use `type="module"` for scripts on their page?
+**Quantos sites usam `type="module"` para scripts em suas páginas?**
 
 <figure>
    <a href="/static/images/2019/javascript/fig13.png">
-      <img src="/static/images/2019/javascript/fig13.png" alt="Figure 13. Percentage of sites utilizing type=module." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive">
+      <img src="/static/images/2019/javascript/fig13.png" alt="Figura 13. Porcentagem de sites usando type=module." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1409239029&format=interactive">
    </a>
-   <div id="fig13-description" class="visually-hidden">Bar chart showing 0.6% of sites on desktop use 'type=module', and 0.8% of sites on mobile.</div>
-   <figcaption id="fig13-caption">Figure 13. Percentage of sites utilizing type=module.</figcaption>
+   <div id="fig13-description" class="visually-hidden">Gráfico de barras mostrando 0,6% dos sites de desktop usam 'type=module', e 0.8% de sites mobile.</div>
+   <figcaption id="fig13-caption">Figura 13. Porcentagem de sites usando type=module.</figcaption>
 </figure>
 
-Browser-level support for modules is still relatively new, and the numbers here show that very few sites currently use `type="module"` for their scripts. Many sites are still relying on module loaders (2.37% of all desktop sites use [RequireJS](https://github.com/requirejs/requirejs) for example) and bundlers ([webpack](https://webpack.js.org/) for example) to define modules within their codebase.
+O suporte de nível de navegador para módulos ainda é relativamente novo, e os números aqui mostram que muito poucos sites atualmente usam `type="module"` para seus scripts. Muitos sites ainda dependem de carregadores de módulo (2,37% de todos os sites de desktop usam [RequireJS](https://github.com/requirejs/requirejs) por exemplo) e bundlers ([webpack](https://webpack.js.org/)  por exemplo) para definir módulos em seu código-fonte.
 
-If native modules are used, it's important to ensure that an appropriate fallback script is used for browsers that do not yet support modules. This can be done by including an additional script with a `nomodule` attribute.
+Se estiver usando módulos nativos, é importante garantir que um script de backup apropriado seja usado para navegadores que ainda não suportam módulos. Isso pode ser feito incluindo um script adicional com um atributo `nomodule`.
 
 ```html
 <script nomodule src="fallback.js"></script>
 ```
 
-When used together, browsers that support modules will completely ignore any scripts containing the `nomodule` attribute. On the other hand, browsers that do not yet support modules will not download any scripts with `type="module"`. Since they do not recognize `nomodule` either, they will download scripts with the attribute normally. Using this approach can allow developers to [send modern code to modern browsers for faster page loads](https://web.dev/serve-modern-code-to-modern-browsers/). So, how many sites use `nomodule` for scripts on their page?
+Quando usados ​​juntos, os navegadores que suportam módulos irão ignorar completamente qualquer script que contenha o atributo `nomodule`. Por outro lado, navegadores que ainda não suportam módulos não irão baixar nenhum script com `type="module"`. Como eles também não reconhecem `nomodule`, eles normalmente baixam scripts com o atributo. O uso dessa abordagem pode permitir que os desenvolvedores [empurrem código moderno para navegadores modernos para carregamentos de página mais rápidos](https://web.dev/serve-modern-code-to-modern-browsers/). Então, **Quantos sites usam `nomodule` para os scripts em sua página?**
 
 <figure>
    <a href="/static/images/2019/javascript/fig14.png">
-      <img src="/static/images/2019/javascript/fig14.png" alt="Figure 14. Percentage of sites using nomodule." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive">
+      <img src="/static/images/2019/javascript/fig14.png" alt="Figura 14. Porcentagem de sites usando nomodule." aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=781034243&format=interactive">
    </a>
-   <div id="fig14-description" class="visually-hidden">Bar chart showing 0.8% of sites on desktop use 'nomobule', and 0.5% of sites on mobile.</div>
-   <figcaption id="fig14-caption">Figure 14. Percentage of sites using nomodule.</figcaption>
+   <div id="fig14-description" class="visually-hidden">Gráfico de barras mostrando 0,8% dos sites para desktop usam 'nomodule' e 0,5% dos sites para celular.</div>
+   <figcaption id="fig14-caption">Figura 14. Porcentagem de sites usando nomodule.</figcaption>
 </figure>
 
-Similarly, very few sites (0.50%-0.80%) use the `nomodule` attribute for any scripts.
+Da mesma forma, poucos sites (0,50% - 0,80%) usam o atributo `nomodule` para qualquer script.
 
-## Preload and prefetch
+## Preload e prefetch
 
-[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) and [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) are [resource hints](./resource-hints) which enable you to aid the browser in determining what resources need to be downloaded.
+[Preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) e [prefetch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ) são [dicas de recursos](./resource-hints) que permitem que você ajude o navegador a determinar quais recursos precisam ser baixados.
 
-- Preloading a resource with `<link rel="preload">` tells the browser to download this resource as soon as possible. This is especially helpful for critical resources which are discovered late in the page loading process (e.g., JavaScript located at the bottom of your HTML) and are otherwise downloaded last.
-- Using `<link rel="prefetch">` tells the browser to take advantage of any idle time it has to fetch these resources needed for future navigations 
+- Pré-carregar um recurso com `<link rel="preload">` diz ao navegador para baixar este recurso o mais rápido possível. Isso é especialmente útil para recursos críticos que são descobertos no final do processo de carregamento da página (por exemplo, JavaScript localizado na parte inferior de seu HTML) e, caso contrário, são baixados por último.
+- Usar `<link rel="prefetch">` diz ao navegador para tirar vantagem de qualquer tempo ocioso que ele tenha para buscar esses recursos necessários para navegações futuras. 
 
-So, how many sites use preload and prefetch directives?
+Então, quantos sites usam diretivas de preload e prefetch?
 
 <figure>
    <a href="/static/images/2019/javascript/fig15.png">
-      <img src="/static/images/2019/javascript/fig15.png" alt="Figure 15. Percentage of sites using rel=preload for scripts." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive">
+      <img src="/static/images/2019/javascript/fig15.png" alt="Figura 15. Porcentagem de sites usando rel=preload para scripts." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=2007534370&format=interactive">
    </a>
-   <div id="fig15-description" class="visually-hidden">Bar chart showing 14% of sites on desktop use rel=preload' for scripts, and 15% of sites on mobile.</div>
-   <figcaption id="fig15-caption">Figure 15. Percentage of sites using rel=preload for scripts.</figcaption>
+   <div id="fig15-description" class="visually-hidden">Gráfico de barras mostrando 14% dos sites para desktop usam 'rel=preload' para scripts e 15% dos sites para celular.</div>
+   <figcaption id="fig15-caption">Figura 15. Porcentagem de sites usando rel=preload para scripts.</figcaption>
 </figure>
 
-For all sites measured in HTTP Archive, 14.33% of desktop sites and 14.84% of mobile sites use `<link rel="preload">` for scripts on their page.
+Para todos os sites medidos no arquivo HTTP, 14,33% dos sites de desktop e 14,84% dos sites móveis usam `<link rel="preload">` para scripts em suas páginas.
 
-For prefetch, we have the following:
+Para prefetch, temos o seguinte:
 
 <figure>
    <a href="/static/images/2019/javascript/fig16.png">
-      <img src="/static/images/2019/javascript/fig16.png" alt="Figure 16. Percentage of sites using rel=prefetch for scripts." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive">
+      <img src="/static/images/2019/javascript/fig16.png" alt="Figura 16. Porcentagem de sites usando rel=prefetch para scripts." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=547807937&format=interactive">
    </a>
-   <div id="fig16-description" class="visually-hidden">Bar chart showing 0.08% of sites on desktop use 'rel=prefetch', and 0.08% of sites on mobile.</div>
-   <figcaption id="fig16-caption">Figure 16. Percentage of sites using rel=prefetch for scripts.</figcaption>
+   <div id="fig16-description" class="visually-hidden">Gráfico de barras mostrando 0,08% dos sites para desktop usam 'rel=prefetch', e 0,08% dos sites para celular.</div>
+   <figcaption id="fig16-caption">Figura 16. Porcentagem de sites usando rel=prefetch para scripts.</figcaption>
 </figure>
 
-For both mobile and desktop, 0.08% of pages leverage prefetch for any of their scripts.
+Para dispositivos móveis e desktops, 0,08% das páginas aproveitam a pré-busca para qualquer um de seus scripts.
 
-## Newer APIs
+## Novas APIs
 
-JavaScript continues to evolve as a language. A new version of the language standard itself, known as ECMAScript, is released every year with new APIs and features passing proposal stages to become a part of the language itself.
+JavaScript continua a evoluir como linguagem. A cada ano uma nova versão do padrão da linguagem, conhecida como ECMAScript, é lançada com novas APIs e recursos que passam pelas etapas da proposta de se tornar parte da própria linguagem.
 
-With HTTP Archive, we can take a look at any newer API that is supported (or is about to be) and see how widespread its usage is. These APIs may already be used in browsers that support them _or_ with an accompanying polyfill to make sure they still work for every user.
+Com o HTTP Archive, podemos dar uma olhada em qualquer API mais recente que seja suportada (ou prestes a ser) e ver o quão difundida ela está em uso. Essas APIs já podem ser usadas em navegadores que as suportam _ou_ com um polyfill anexado para garantir que ainda funcionem para todos os usuários.
 
-How many sites use the following APIs?
+**Quantos sites usam as seguintes APIs?**
 
 - [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
 - [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
@@ -398,15 +398,15 @@ How many sites use the following APIs?
 
 <figure>
    <a href="/static/images/2019/javascript/fig17.png">
-      <img src="/static/images/2019/javascript/fig17.png" alt="Figure 17. Usage of new JavaScript APIs." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive">
+      <img src="/static/images/2019/javascript/fig17.png" alt="Figura 17. Uso de novas APIs JavaScript." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=594315296&format=interactive">
    </a>
-   <div id="fig17-description" class="visually-hidden">Bar chart showing 25.5%/36.2% of sites on desktop and mobile respectivdely use WeakMap, 6.1%/17.2% use WeakSet, 3.9%/14.0% use Intl, 3.9%/4.4% use Proxy, 0.4%/0.4% use Atomics, and 0.2%/0.2% use SharedArrayBuffer.</div>
-   <figcaption id="fig17-caption">Figure 17. Usage of new JavaScript APIs.</figcaption>
+   <div id="fig17-description" class="visually-hidden">Gráfico de barras mostrando 25,5% / 36,2% dos sites em computadores e dispositivos móveis usam WeakMap, 6,1% / 17,2% usam WeakSet, 3.9%/14.0% usa Intl, 3.9%/4.4% usa Proxy, 0.4%/0.4% usa Atomics, e 0.2%/0.2% usa SharedArrayBuffer.</div>
+   <figcaption id="fig17-caption">Figura 17. Uso de novas APIs JavaScript.</figcaption>
 </figure>
 
-Atomics (0.38%) and SharedArrayBuffer (0.20%) are barely visible on this chart since they are used on such few pages.
+Atomics (0.38%) e SharedArrayBuffer (0.20%) eles mal são visíveis neste gráfico, pois são usados ​​em tão poucas páginas.
 
-It is important to note that the numbers here are approximations and they do not leverage [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) to measure feature usage.
+É importante notar que os números aqui são aproximações e não aproveitam [UseCounter](https://chromium.googlesource.com/chromium/src.git/+/master/docs/use_counter_wiki.md) para medir o uso de recursos.
 
 ## Mapas de origem
 
