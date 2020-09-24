@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja","zh-CN"],
+      "supported_languages": ["en","es","fr","ja","pt","zh-CN"],
       "ebook_languages": []
     }
   ],
@@ -1320,6 +1320,16 @@
       "website": "https://websiteadvantage.com.au/",
       "github": "Tiggerito",
       "twitter": "TonyMcCreath"
+    },
+    "HakaCode": {
+      "name": "William Sandres",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33907565?v=4&s=200",
+      "website": "https://hakacode.github.io",
+      "github": "HakaCode",
+      "twitter": "hakacode"
     },
     "ydimova": {
       "name": "Yana Dimova",
