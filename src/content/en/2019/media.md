@@ -233,6 +233,7 @@ The savings in this AB Lighthouse test is not just about potential byte savings,
 
  {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
+  alt="Projected page performance improvements from image optimization from Lighthouse.",
   caption="Projected page performance improvements from image optimization from Lighthouse.",
   description="Bar chart showing in the 10th percentile 0 ms could be sized, same in 25th percentile, in the 50th percentile 150 ms could be saved, in the 75th percentile 1,460 ms could be saved and in the 90th percentile 5,720 ms could be saved.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
@@ -301,7 +302,8 @@ To enable Client Hints, the web page must signal to the browser using either an 
 
 {{ figure_markup(
   image="fig17_usage_of_accept-ch_http_v_html.png",
-  caption="Usage of the <code>Accept-CH</code> header versus the equivalent <code>&lt;meta></code> tag.",
+  alt="Usage of the Accept-CH header versus the equivalent meta tag.",
+  caption="Usage of the <code>Accept-CH</code> header versus the equivalent <code>&lt;meta&gt;</code> tag.",
   description="Bar chart showing 71% use the 'meta http-equiv', 30% use the 'Accept-CH' HTTP header and 1% use both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
   )
@@ -329,6 +331,7 @@ Earlier, in [Figure 4.5](#fig-5), we showed that the volume of image content at 
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
+  alt="Lighthouse audit: Offscreen.",
   caption="Lighthouse audit: Offscreen.",
   description="A bar chart showing in the 10th percentile 0% of images are offscreen, in the 25th percentile 2% are offscreen, in the 50th percentile, 27% are offscreen, in the 75th percentile 64% are offscreen, and in the 90th percentile 84% of images are offscreen.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"

@@ -86,7 +86,7 @@ Meta tags allow us to give specific instructions and information to search engin
 #### Page titles
 
 {{ figure_markup(
-  caption="Percent of mobile pages that include a <code>&lt;title></code> tag.",
+  caption="Percent of mobile pages that include a <code>&lt;title&gt;</code> tag.",
   content="97%",
   classes="big-number"
 )

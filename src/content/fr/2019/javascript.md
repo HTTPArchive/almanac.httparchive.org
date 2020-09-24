@@ -69,6 +69,7 @@ Bien que ces données montrent combien de temps il peut falloir à un appareil m
 
 {{ figure_markup(
   image="js-processing-reddit.png",
+  alt="Délais de traitement de JavaScript pour Reddit.com.",
   caption='Délais de traitement de JavaScript pour Reddit.com, issus de <a href="https://v8.dev/blog/cost-of-javascript-2019"><i lang="en">The cost of JavaScript in 2019</i> (en anglais)</a>.',
   description="Diagramme à barres montrant 3 appareils différents&nbsp;: en haut, un Pixel 3 présentant une petite portion à la fois sur le fil principal et le fil secondaire de moins de 400&nbsp;ms. Dans le cas du Moto G4, cela représente environ 900&nbsp;ms sur le fil principal et 300&nbsp;ms sur le fil secondaire. La dernière barre est celle d’un Alcatel 1X 5059D avec plus de 2&#8239;000&nbsp;ms sur le fil principal et plus de 500&nbsp;ms sur le fil secondaire.",
   width=600,
@@ -298,6 +299,7 @@ Au cours des dernières années, l’écosystème JavaScript a connu une augment
 
 {{ figure_markup(
   image="fig12.png",
+  alt="Frameworks les plus fréquemment utilisés sur ordinateurs de bureau.",
   caption='<span lang="en">Frameworks</span> les plus fréquemment utilisés sur ordinateurs de bureau.',
   description="Diagramme à barres montrant que 4,6&nbsp;% des sites utilisent React, 2,0&nbsp;% AngularJS, 1,8&nbsp;% Backbone.js, 0,8&nbsp;% Vue.js, 0,4&nbsp;% Knockout.js, 0,3&nbsp;% Zone.js, 0,3&nbsp;% Angular, 0,1&nbsp;% AMP, 0,1&nbsp;% Ember.js.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
@@ -419,6 +421,7 @@ Bien qu’utile, il existe un certain nombre de raisons pour lesquelles de nombr
 
 {{ figure_markup(
   image="fig18.png",
+  alt="Pourcentage de sites utilisant des source maps.",
   caption='Pourcentage de sites utilisant des <i lang="en">source maps</i>.',
   description='Diagramme à barres montrant que 18&nbsp;% des sites sur ordinateurs de bureau et 17&nbsp;% des sites sur mobiles utilisent des <i lang="en">source maps</i>.',
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"
