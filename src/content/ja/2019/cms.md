@@ -10,7 +10,7 @@ discuss: 1769
 results: https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/
 queries: 14_CMS
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-08-07T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## 序章
@@ -29,13 +29,14 @@ CMSについて考えるとき、ウェブ上にコンテンツを公開する�
 
 ウェブが進化するにつれ、ウェブはより強力になる一方で、より複雑になりました。その結果、その単純な成長のループは破られ、誰でもクリエイターになれるような状況ではなくなってしまいました。コンテンツ制作の道を追求できる人にとっては、その道のりは険しく困難なものになってしまいました。ウェブでできることと実際にできることの差である[利用可能性ギャップ](https://medinathoughts.com/2018/05/17/progressive-wordpress/)は着実に拡大していきました。
 
-<figure>
-  <a href="/static/images/2019/cms/web-evolution.png">
-    <img src="/static/images/2019/cms/web-evolution.png" aria-labelledby="fig1-caption" aria-describedby="fig1-description" alt="図1. 1999年から2018年までのWeb機能の増加を示すグラフ。" width="600" height="492">
-  </a>
-  <div id="fig1-description" class="visually-hidden">左側の1999年頃と書かれたラベルには2本の棒グラフがありますが、できることは、実際に行われていることに近いことを示しています。右側の2018年と書かれたものは、同じような棒グラフですが、できることの方がはるかに大きく、実際に行われていることの方がわずかに大きくなっています。できることと実際にできることのギャップが大きくなっています。</div>
-  <figcaption id="fig1-caption">図1. 1999年から2018年までのWeb機能の増加を示すグラフ。</figcaption>
-</figure>
+{{ figure_markup(
+  image="web-evolution.png",
+  caption="1999年から2018年までのWeb機能の増加を示すグラフ。",
+  description="左側の1999年頃と書かれたラベルには2本の棒グラフがありますが、できることは、実際に行われていることに近いことを示しています。右側の2018年と書かれたものは、同じような棒グラフですが、できることの方がはるかに大きく、実際に行われていることの方がわずかに大きくなっています。できることと実際にできることのギャップが大きくなっています。",
+  width=600,
+  height=492
+  )
+}}
 
 ここでCMSが果たす役割は、技術的な専門性の異なるユーザーがコンテンツ制作者としてウェブのエコシステムのループに入りやすくするという非常に重要なものです。コンテンツ制作への参入障壁を下げることで、ユーザーをクリエイターに変えることで、ウェブの成長ループを活性化させます。それが人気の理由です。
 
@@ -47,10 +48,12 @@ CMSについて考えるとき、ウェブ上にコンテンツを公開する�
 
 ## CMS導入
 
-<figure>
-  <div class="big-number">40%</div>
-  <figcaption>図2. CMSを搭載したウェブページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="CMSを搭載したウェブページの割合。",
+  content="40%",
+  classes="big-number"
+)
+}}
 
 今日では、ウェブページの40％以上が何らかのCMSプラットフォームを利用していることがわかります。40.01％がモバイル用で、39.61％がデスクトップ用です。
 
@@ -58,13 +61,14 @@ CMSについて考えるとき、ウェブ上にコンテンツを公開する�
 
 要するに、多くのCMSプラットフォームが存在するということです。下の写真は、CMSの風景を縮小したものです。
 
-<figure>
-  <a href="/static/images/2019/cms/cms-logos.png">
-    <img src="/static/images/2019/cms/cms-logos.png" aria-labelledby="fig3-caption" aria-describedby="fig3-description" alt="図3. 上位のコンテンツ管理システム。" width="600" height="559">
-  </a>
-  <div id="fig3-description" class="visually-hidden">WordPress、Drupal、WixなどのトップCMSプロバイダーのロゴマーク。</div>
-  <figcaption id="fig3-caption">図3. 上位のコンテンツ管理システム。</figcaption>
-</figure>
+{{ figure_markup(
+  image="cms-logos.png",
+  caption="上位のコンテンツ管理システム。",
+  description="WordPress、Drupal、WixなどのトップCMSプロバイダーのロゴマーク。",
+  width=600,
+  height=559
+  )
+}}
 
 その中には、オープンソース（WordPress、Drupalなど）のものもあれば、有償（AEMなど）のものもあります。CMSプラットフォームの中には「無料」のホスティングプランやセルフホスティングプランで利用できるものもありますし、企業レベルでも、より高い階層のプランで利用できる高度なオプションもあります。CMS空間全体として複雑で連携した*CMSエコシステム*の世界であり、全てが分離され、同時にウェブの広大な構造に絡み合っています。
 
@@ -76,13 +80,13 @@ CMSについて考えるとき、ウェブ上にコンテンツを公開する�
 
 デスクトップとモバイルデバイスで提供されているウェブページを見てみると、何らかのCMSプラットフォームによって生成されたページとそうでないページの割合が約60-40％に分かれていることがわかります。
 
-<figure>
-  <a href="/static/images/2019/cms/fig4.png">
-    <img src="/static/images/2019/cms/fig4.png" alt="図4. CMSを使用しているデスクトップおよびモバイルサイトの割合。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">デスクトップサイトの40％、モバイルサイトの40％がCMSを使用して構築されていることを示す棒グラフ。</div>
-  <figcaption id="fig4-caption">図4. CMSを使用しているデスクトップおよびモバイルサイトの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4.png",
+  caption="CMSを使用しているデスクトップおよびモバイルサイトの割合。",
+  description="デスクトップサイトの40％、モバイルサイトの40％がCMSを使用して構築されていることを示す棒グラフ。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644425372&format=interactive"
+  )
+}}
 
 CMSを搭載したウェブページは、利用可能なCMSプラットフォームの大規模なセットによって生成されます。そのようなプラットフォームの中から選択するには多くのものがあり、1つを使用することを決定する際に考慮できる多くの要因があり、以下のようなものがあります。
 
@@ -95,15 +99,19 @@ CMSを搭載したウェブページは、利用可能なCMSプラットフォ�
 
 CrUXとHTTP Archiveのデータセットには、約103のCMSプラットフォームが、混在したウェブページが含まれています。これらのプラットフォームのほとんどは、相対的な市場シェアが非常に小さいものです。今回の分析では、データに反映されているウェブ上でのフットプリントという観点から、上位のCMSプラットフォームに焦点を当ててみたいと思います。完全な分析については、[この章の結果のスプレッドシートを参照してください](https://docs.google.com/spreadsheets/d/1FDYe6QdoY3UtXodE2estTdwMsTG-hHNrOe9wEYLlwAw/edit#gid=0)。
 
-<figure>
-  <a href="/static/images/2019/cms/fig5.png">
-    <img src="/static/images/2019/cms/fig5.png" alt="図5. 全CMSウェブサイトに占めるトップCMSプラットフォームの割合。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="600" data-width="600" data-height="600" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1652315665&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">WordPressがCMSサイト全体の75％を占めていることを示す棒グラフ。次に大きなCMSであるDrupalは、CMS市場の約6%のシェアを持っています。残りのCMSは急速に採用率が1%未満に縮小しています。</div>
-  <figcaption id="fig5-caption">図5. 全CMSウェブサイトに占めるトップCMSプラットフォームの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="全CMSウェブサイトに占めるトップCMSプラットフォームの割合。",
+  description="WordPressがCMSサイト全体の75％を占めていることを示す棒グラフ。次に大きなCMSであるDrupalは、CMS市場の約6%のシェアを持っています。残りのCMSは急速に採用率が1%未満に縮小しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1652315665&format=interactive",
+  width=600,
+  height=600,
+  data_width=600,
+  data_height=600
+  )
+}}
  
-データセットに含まれる最も顕著なCMSプラットフォームを図5に示す。WordPressはモバイルサイトの74.19%、デスクトップサイトの73.47% を占めています。CMSの世界におけるWordPressの優位性は、後述するいくつかの要因に起因していますが、WordPressは主要なプレイヤーです。DrupalやJoomlaのようなオープンソースのプラットフォームと、SquarespaceやWixのようなクローズドなSaaSが上位5つのCMSを占めています。これらのプラットフォームの多様性は、多くのプラットフォームからなるCMSエコシステムを物語っています。また、興味深いのは、上位20位までの小規模CMSプラットフォームのロングテールです。企業向けに提供されているものから、業界特有の用途のために社内で開発された独自のアプリケーションまで、コンテンツ管理システムは、グループがウェブ上で管理、公開、ビジネスを行うためのカスタマイズ可能なインフラストラクチャを提供しています。
+データセットに含まれる最も顕著なCMSプラットフォームを図14.5に示す。WordPressはモバイルサイトの74.19%、デスクトップサイトの73.47% を占めています。CMSの世界におけるWordPressの優位性は、後述するいくつかの要因に起因していますが、WordPressは主要なプレイヤーです。DrupalやJoomlaのようなオープンソースのプラットフォームと、SquarespaceやWixのようなクローズドなSaaSが上位5つのCMSを占めています。これらのプラットフォームの多様性は、多くのプラットフォームからなるCMSエコシステムを物語っています。また、興味深いのは、上位20位までの小規模CMSプラットフォームのロングテールです。企業向けに提供されているものから、業界特有の用途のために社内で開発された独自のアプリケーションまで、コンテンツ管理システムは、グループがウェブ上で管理、公開、ビジネスを行うためのカスタマイズ可能なインフラストラクチャを提供しています。
 
 WordPressプロジェクト](https://wordpress.org/about/)は、そのミッションを「*出版の民主化*」と定義しています。その主な目標のいくつかは、使いやすさと、誰もがウェブ上でコンテンツを作成できるようにソフトウェアを無料で利用できるようにすることです。もう1つの大きな要素は、このプロジェクトが育んでいる包括的なコミュニティです。世界のほとんどの大都市ではWordPressプラットフォームを理解し、構築しようと定期的に集まり、つながりを持ち共有し、コードを書く人々のグループを見つけることができます。地域のミートアップや年次イベントに参加したり、ウェブベースのチャンネルに参加したりすることは、WordPressの貢献者、専門家、ビジネス、愛好家がそのグローバルなコミュニティに参加する方法の一部となっています。
 
@@ -121,23 +129,23 @@ WordPressの人気は参入障壁の低さと、ユーザー（オンライン�
 
 どんなWebサイトでも、その構成要素がCMSサイトを作っています。[HTML](./markup)、[CSS](./css)、[JavaScript](./javascript)、[media](./media)（画像や動画）です。CMSプラットフォームは、これらのリソースを統合してWeb体験を作成するための強力に合理化された管理機能をユーザーに提供します。これは、これらのアプリケーションの最も包括的な側面の1つですが、より広いウェブに悪影響を及ぼす可能性があります。
 
-<figure>
-  <a href="/static/images/2019/cms/fig6.png">
-    <img src="/static/images/2019/cms/fig6.png" alt="図6. CMSページ重量の分布。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">CMSページの重さの分布を示す棒グラフ。デスクトップCMSページの重さの中央値は2.3MBです。10パーセンタイルでは0.7MB、25パーセンタイルでは1.2MB、75パーセンタイルでは4.2MB、90パーセンタイルでは7.4MBとなっています。デスクトップの値は、モバイルよりもわずかに高くなっています。</div>
-  <figcaption id="fig6-caption">図6. CMSページ重量の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="CMSページ重量の分布。",
+  description="CMSページの重さの分布を示す棒グラフ。デスクトップCMSページの重さの中央値は2.3MBです。10パーセンタイルでは0.7MB、25パーセンタイルでは1.2MB、75パーセンタイルでは4.2MB、90パーセンタイルでは7.4MBとなっています。デスクトップの値は、モバイルよりもわずかに高くなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=991628102&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/cms/fig7.png">
-    <img src="/static/images/2019/cms/fig7.png" alt="図7. ページあたりのCMSリクエストの分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">ページあたりのCMSリクエストの分布を示す棒グラフ。中央値のデスクトップCMSページは86リソースをロードします。10パーセンタイルでは39リソース、25パーセンタイルでは57リソース、75パーセンタイルでは127リソース、90パーセンタイルでは183リソースをロードします。デスクトップはモバイルよりも3～6リソースの僅差で一貫して高い。</div>
-  <figcaption id="fig7-caption">図7. ページあたりのCMSリクエストの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="ページあたりのCMSリクエストの分布。",
+  description="ページあたりのCMSリクエストの分布を示す棒グラフ。中央値のデスクトップCMSページは86リソースをロードします。10パーセンタイルでは39リソース、25パーセンタイルでは57リソース、75パーセンタイルでは127リソース、90パーセンタイルでは183リソースをロードします。デスクトップはモバイルよりも3～6リソースの僅差で一貫して高い。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=140872807&format=interactive"
+  )
+}}
 
-上の図6と7では、デスクトップCMSページの中央値は86のリソースと2.29MBの重さをロードしていることがわかります。モバイルページのリソース使用量は、83のリソースと2.25 MBと、それほど大きくはありません。
+上の図14.6と7では、デスクトップCMSページの中央値は86のリソースと2.29MBの重さをロードしていることがわかります。モバイルページのリソース使用量は、83のリソースと2.25 MBと、それほど大きくはありません。
 
 中央値は、すべてのCMSページが上か下かの中間点を示しています。つまり全CMSページの半分はリクエスト数が少なく、重量が少ないのに対し、半分はリクエスト数が多く、重量が多いということになります。10パーセンタイルではモバイルとデスクトップのページはリクエスト数が40以下で重量が1MBですが、90パーセンタイルではリクエスト数が170以上で重量が7MBとなり、中央値の3倍近くになっています。
 
@@ -190,7 +198,7 @@ CMSのページは、ウェブ全体のページと比較してどうでしょ�
       </tr>
     </tbody>
   </table>
-  <figcaption>図8. リソースタイプごとのデスクトップCMSページのキロバイト数の分布。</figcaption>
+  <figcaption>{{ figure_link(caption="リソースタイプごとのデスクトップCMSページのキロバイト数の分布。") }}</figcaption>
 </figure>
 
 <figure>
@@ -240,7 +248,7 @@ CMSのページは、ウェブ全体のページと比較してどうでしょ�
       </tr>
     </tbody>
   </table>
-  <figcaption>図9. リソースタイプごとのモバイルCMSページのキロバイト分布。</figcaption>
+  <figcaption>{{ figure_link(caption="リソースタイプごとのモバイルCMSページのキロバイト分布。") }}</figcaption>
 </figure>
 
 モバイルやデスクトップのCMSページにロードされるリソースの種類を詳しく見ると、画像や動画は、その重さの主な貢献者としてすぐに目立ちます。
@@ -255,21 +263,21 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
 
 モバイルCMSページのサードパーティリクエストの中央値は15、重さ264.72KBでデスクトップCMSページのサードパーティリクエストの中央値は16、重さ271.56KBです。(これは「ホスティング」の一部とみなされる3Pリソースを除いたものであることに注意)。
 
-<figure>
-  <a href="/static/images/2019/cms/fig10.png">
-    <img src="/static/images/2019/cms/fig10.png" alt="図10. CMSページにおけるサードパーティウェイト（KB）の分布。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&amp;format=interactive">
-  </a>
-  <div id="fig10-description" class="visually-hidden">デスクトップとモバイルのCMSページにおけるサードパーティのキロバイトの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップのサードパーティ重量の中央値（50パーセンタイル）は272KB。10パーセンタイルは27KB、25位104KB、75位577KB、90位940KBとなっています。モバイルはパーセンタイルが小さい方がわずかに小さく、大きい方がわずかに大きくなっています。</div>
-  <figcaption id="fig10-caption">図10. CMSページにおけるサードパーティウェイト（KB）の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10.png",
+  caption="CMSページにおけるサードパーティウェイト（KB）の分布。",
+  description="デスクトップとモバイルのCMSページにおけるサードパーティのキロバイトの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップのサードパーティ重量の中央値（50パーセンタイル）は272KB。10パーセンタイルは27KB、25位104KB、75位577KB、90位940KBとなっています。モバイルはパーセンタイルが小さい方がわずかに小さく、大きい方がわずかに大きくなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=354803312&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/cms/fig11.png">
-    <img src="/static/images/2019/cms/fig11.png" alt="図11. CMSページの第三者リクエスト数の分布。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&amp;format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">デスクトップとモバイル用のCMSページのサードパーティリクエストの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップのサードパーティリクエスト数の中央値（50パーセンタイル）は16。10パーセンタイルは3、25パーセンタイルは7、75パーセンタイルは31、90パーセンタイルは52です。デスクトップとモバイルでは、ほぼ同等の分布となっています。</div>
-  <figcaption id="fig11-caption">図11. CMSページの第三者リクエスト数の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig11.png",
+  caption="CMSページの第三者リクエスト数の分布。",
+  description="デスクトップとモバイル用のCMSページのサードパーティリクエストの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップのサードパーティリクエスト数の中央値（50パーセンタイル）は16。10パーセンタイルは3、25パーセンタイルは7、75パーセンタイルは31、90パーセンタイルは52です。デスクトップとモバイルでは、ほぼ同等の分布となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=699762709&format=interactive"
+  )
+}}
 
 中央値は、少なくとも半分のCMSウェブページが、ここで報告している値よりも多くのサードパーティのリソースを提供していることを示しています。90パーセンタイルではCMSページは約940KBで52のリソースを配信できますが、これはかなりの増加です。
 
@@ -277,30 +285,32 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
 
 ### 画像の統計
 
-<figure>
-  <a href="/static/images/2019/cms/fig12.png">
-    <img src="/static/images/2019/cms/fig12.png" alt="図12. CMSページにおける画像の重み（KB）の分布。" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&amp;format=interactive">
-  </a>
-  <div id="fig12-description" class="visually-hidden">デスクトップとモバイルのCMSページの画像キロバイトの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップの画像重量の中央値（50パーセンタイル）は1,232KB。10パーセンタイルは198KB、25パーセンタイル507KB、75パーセンタイル2,763KB、90パーセンタイル5,694KBとなっています。デスクトップとモバイルでは、ほぼ同等の分布となっています。</div>
-  <figcaption id="fig12-caption">図12. CMSページにおける画像の重み（KB）の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12.png",
+  caption="CMSページにおける画像の重み（KB）の分布。",
+  description="デスクトップとモバイルのCMSページの画像キロバイトの分布を示すパーセンタイル10、25、50、75、90の棒グラフ。デスクトップの画像重量の中央値（50パーセンタイル）は1,232KB。10パーセンタイルは198KB、25パーセンタイル507KB、75パーセンタイル2,763KB、90パーセンタイル5,694KBとなっています。デスクトップとモバイルでは、ほぼ同等の分布となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1615220952&format=interactive"
+  )
+}}
 
-<figure>
-  <div class="big-number">1,232 KB</div>
-  <figcaption>図13. デスクトップCMSページあたりの画像の読み込みキロバイト数の中央値。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="デスクトップCMSページあたりの画像の読み込みキロバイト数の中央値。",
+  content="1,232 KB",
+  classes="big-number"
+)
+}}
 
-先に図8と9を見て、画像はCMSページの総重量に大きく寄与していることを思い出してください。上記の図12と13は、デスクトップCMSページの中央値は31枚の画像とペイロードが1,232KBであるのに対し、モバイルCMSページの中央値は29枚の画像とペイロードが1,263KBであることを示しています。ここでも私たちは、デスクトップとモバイルの両方の経験のためのこれらのリソースの重量のための非常に近いマージンを持っています。[ページ重量](./page-weight)の章では、さらに、画像リソースがウェブ全体で同じ量の画像を持つページの重量の中央値を十分に上回っていることが示されています。その結果は以下の通りです。CMSページは重い画像を供給している。
+先に図14.8と14.9を見て、画像はCMSページの総重量に大きく寄与していることを思い出してください。上記の図14.12と14.13は、デスクトップCMSページの中央値は31枚の画像とペイロードが1,232KBであるのに対し、モバイルCMSページの中央値は29枚の画像とペイロードが1,263KBであることを示しています。ここでも私たちは、デスクトップとモバイルの両方の経験のためのこれらのリソースの重量のための非常に近いマージンを持っています。[ページ重量](./page-weight)の章では、さらに、画像リソースがウェブ全体で同じ量の画像を持つページの重量の中央値を十分に上回っていることが示されています。その結果は以下の通りです。CMSページは重い画像を供給している。
 
 モバイルやデスクトップのCMSページでよく見られるフォーマットは何ですか？　当社のデータによると、平均的にJPG画像が最も人気のある画像フォーマットです。次いでPNG、GIFが続き、SVG、ICO、WebPのようなフォーマットが2％強、1％強と大きく後れを取っています。
 
-<figure>
-  <a href="/static/images/2019/cms/fig14.png">
-    <img src="/static/images/2019/cms/fig14.png" alt="図14. CMSページでの画像フォーマットの採用。" aria-labelledby="fig14-caption" aria-describedby="fig14-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&amp;format=interactive">
-  </a>
-  <div id="fig14-description" class="visually-hidden">デスクトップとモバイルのCMSページにおける画像フォーマットの採用状況の棒グラフ。JPEGが全体の半分近くを占め、PNGが3分の1、GIFが5分の1を占め、残りの5%はSVG、ICO、WebPで占められています。デスクトップとモバイルでは、ほぼ同等の採用率となっています。</div>
-  <figcaption id="fig14-caption">図14. CMSページでの画像フォーマットの採用。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig14.png",
+  caption="CMSページでの画像フォーマットの採用。",
+  description="デスクトップとモバイルのCMSページにおける画像フォーマットの採用状況の棒グラフ。JPEGが全体の半分近くを占め、PNGが3分の1、GIFが5分の1を占め、残りの5%はSVG、ICO、WebPで占められています。デスクトップとモバイルでは、ほぼ同等の採用率となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=98218771&format=interactive"
+  )
+}}
 
 おそらく、これらの画像タイプの一般的な使用例を考えると、このようなセグメンテーションは驚くべきものでありません。ロゴやアイコン用のSVGは、JPEGがユビキタスであるのと同様に一般的です。WebPはまだ比較的新しい最適化されたフォーマットであり、[ブラウザの普及が進んでいます](https://caniuse.com/#search=webp)。これが今後数年の間にCMS空間での使用にどのような影響を与えるかを見るのは興味深いことでしょう。
 
@@ -333,7 +343,7 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
       </tr>
     </tbody>
   </table>
-  <figcaption>図15. 人間がどのようにして短い時間を知覚するのか。</figcaption>
+  <figcaption>{{ figure_link(caption="人間がどのようにして短い時間を知覚するのか。") }}</figcaption>
 </figure>
 
 0.1秒（100ミリ秒）以内に起こることは、私たちにとっては事実上瞬時に起こっていることです。そして、数秒以上の時間がかかる場合、私たちはそれ以上待たずに生活を続ける可能性が非常に高くなります。これは、ウェブでの持続的な成功を目指すコンテンツ制作者にとって非常に重要なことです。なぜならユーザーを獲得し、魅了し、ユーザーベースを維持したいのであればサイトの読み込み速度がどれだけ速くなければならないかを教えてくれるからです。
@@ -348,13 +358,13 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
 
 [コンテンツの初回ペイント](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint) は、ナビゲーションからテキストや画像などのコンテンツが最初に表示されるまでの時間を測定します。成功したFCPの経験、つまり「速い」と認定される経験とは、ウェブサイトの読み込みが正常に行われていることをユーザーへ保証するため、DOM内の要素がどれだけ速くロードされるかということです。FCPのスコアが良ければ対応するサイトが良いUXを提供していることを保証するものではありませんが、FCPが悪ければ、ほぼ確実にその逆を保証することになります。
 
-<figure>
-  <a href="/static/images/2019/cms/fig16.png">
-    <img src="/static/images/2019/cms/fig16.png" alt="図16. CMS全体のFCP経験の平均分布。" aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&amp;format=interactive">
-  </a>
-  <div id="fig16-description" class="visually-hidden">CMSごとのFCP経験値の平均分布を棒グラフにしたもの。以下の図17を参照して、上位5つのCMSデータ表を作成した。</div>
-  <figcaption id="fig16-caption">図16. CMS全体のFCP経験の平均分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig16.png",
+  caption="CMS全体のFCP経験の平均分布。",
+  description="CMSごとのFCP経験値の平均分布を棒グラフにしたもの。以下の図14.17を参照して、上位5つのCMSデータ表を作成した。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1644531590&format=interactive"
+  )
+}}
 
 <figure>
   <table>
@@ -399,7 +409,7 @@ CMSの経験がこれらのリソースで飽和状態にある中で、フロ�
       </tr>
     </tbody>
   </table>
-  <figcaption>図17. 上位5つのCMSのFCP経験値の平均分布。</figcaption>
+  <figcaption>{{ figure_link(caption="上位5つのCMSのFCP経験値の平均分布。") }}</figcaption>
 </figure>
 
 CMSの世界におけるFCPの傾向は、ほとんどが中程度の範囲にあります。CMSプラットフォームがデータベースからコンテンツを照会し、送信し、その後ブラウザでレンダリングする必要があるため、ユーザーが体験する遅延の一因となっている可能性があります。前のセクションで説明したリソース負荷も一役買っている可能性があります。さらに、これらのインスタンスの中には共有ホスティング上にあるものやパフォーマンスが最適化されていない環境もあり、これもブラウザ上での体験に影響を与える可能性があります。
@@ -412,13 +422,13 @@ WordPressはモバイルとデスクトップで、中程度のFCP体験と遅�
 
 CMS領域のFIDは一般的に、デスクトップとモバイルの両方で平均的に高速なエクスペリエンスを提供する傾向にある。しかし、注目すべきは、モバイルとデスクトップの体験の間に大きな違いがあることです。
 
-<figure>
-  <a href="/static/images/2019/cms/fig18.png">
-    <img src="/static/images/2019/cms/fig18.png" alt="図18. CMS全体のFID経験の平均分布。" aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&amp;format=interactive">
-  </a>
-  <div id="fig18-description" class="visually-hidden">CMSごとのFCP経験値の平均分布を棒グラフにしたもの。上位5つのCMSデータ表については、下記の図19を参照のこと。</div>
-  <figcaption id="fig18-caption">図18. CMS全体のFID経験の平均分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig18.png",
+  caption="CMS全体のFID経験の平均分布。",
+  description="CMSごとのFCP経験値の平均分布を棒グラフにしたもの。上位5つのCMSデータ表については、下記の図19を参照のこと。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=625179047&format=interactive"
+  )
+}}
 
 <figure>
   <table>
@@ -463,7 +473,7 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
       </tr>
     </tbody>
   </table>
-  <figcaption>図19. 上位5つのCMSのFID経験値の平均分布。</figcaption>
+  <figcaption>{{ figure_link(caption="上位5つのCMSのFID経験値の平均分布。") }}</figcaption>
 </figure>
 
 この差はFCPのデータにも見られますが、FIDではパフォーマンスに大きなギャップが見られます。例えば、Joomlaのモバイルとデスクトップの高速FCP体験の差は約12.78％ですが、FIDの体験では27.76％と大きな差があります。モバイルデバイスと接続品質が、ここで見られるパフォーマンスの格差に一役買っている可能性があります。以前に強調したように、ウェブサイトのデスクトップ版とモバイル版に出荷されるリソースにはわずかな差があります。モバイル（インタラクティブ）体験のための最適化は、これらの結果から明らかになります。
@@ -476,21 +486,21 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
 
 **プログレッシブウェブアプリ** ([PWA](./pwa))という用語は、[信頼できる](https://developers.google.com/web/progressive-web-apps#reliable)、[速い](https://developers.google.com/web/progressive-web-apps#fast)、[魅力的](https://developers.google.com/web/progressive-web-apps#engaging)とみなされるウェブベースのユーザー体験を指します。Lighthouseは、0（最悪）から1（最高）の間のPWAスコアを返す一連の監査を提供しています。これらの監査は、14の要件をリストアップした[ベースラインPWAチェックリスト](https://developers.google.com/web/progressive-web-apps/checklist#baseline)に基づいています。Lighthouseは、14の要件のうち11の要件について自動監査を実施しています。残りの3つは手動でしかテストできません。11の自動PWA監査はそれぞれ均等に重み付けされているため、それぞれがPWAスコアに約9ポイント寄与します。
 
-<figure>
-  <a href="/static/images/2019/cms/fig20.png">
-    <img src="/static/images/2019/cms/fig20.png" alt="図20. CMSページのLighthouse PWAカテゴリスコアの分布。" aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&amp;format=interactive">
-  </a>
-  <div id="fig20-description" class="visually-hidden">全CMSページのLighthouse PWAカテゴリスコアの分布を示す棒グラフです。最も一般的なスコアは0.3で、CMSページの22%です。この分布には他にも2つのピークがあります。スコアが0.15のページが11％、スコアが0.56のページが8％です。0.6以上のスコアを取得しているページは1%未満です。</div>
-  <figcaption id="fig20-caption">図20. CMSページのLighthouse PWAカテゴリスコアの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig20.png",
+  caption="CMSページのLighthouse PWAカテゴリスコアの分布。",
+  description="全CMSページのLighthouse PWAカテゴリスコアの分布を示す棒グラフです。最も一般的なスコアは0.3で、CMSページの22%です。この分布には他にも2つのピークがあります。スコアが0.15のページが11％、スコアが0.56のページが8％です。0.6以上のスコアを取得しているページは1%未満です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1812566020&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/cms/fig21.png">
-    <img src="/static/images/2019/cms/fig21.png" alt="図21. CMSごとの灯台PWAカテゴリスコアの中央値。" aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&amp;format=interactive">
-  </a>
-  <div id="fig21-description" class="visually-hidden">CMSごとのLighthouse PWAスコアの中央値を示す棒グラフ。WordPressサイトのスコア中央値は0.33です。次の5つのCMS（Joomla、Drupal、Wix、Squarespace、1C-Bitrix）のスコア中央値はすべて0.3です。PWAのスコアがトップのCMSは、Jimdoが0.56、TYPO3が0.41となっています。</div>
-  <figcaption id="fig21-caption">図21. CMSごとの灯台PWAカテゴリスコアの中央値。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig21.png",
+  caption="CMSごとの灯台PWAカテゴリスコアの中央値。",
+  description="CMSごとのLighthouse PWAスコアの中央値を示す棒グラフ。WordPressサイトのスコア中央値は0.33です。次の5つのCMS（Joomla、Drupal、Wix、Squarespace、1C-Bitrix）のスコア中央値はすべて0.3です。PWAのスコアがトップのCMSは、Jimdoが0.56、TYPO3が0.41となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=1071586621&format=interactive"
+  )
+}}
 
 #### アクセシビリティ
 
@@ -498,21 +508,21 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
 
 各アクセシビリティ監査は合格か、不合格かですが他のLighthouseの監査とは異なり、アクセシビリティ監査に部分的に合格してもページはポイントをもらえません。例えば、いくつかの要素がスクリーンリーダーに優しい名前を持っていて他の要素がそうでない場合、そのページは*screenreader-friendly-names*監査で0点を獲得します。
 
-<figure>
-  <a href="/static/images/2019/cms/fig22.png">
-    <img src="/static/images/2019/cms/fig22.png" alt="図22. CMSページのLighthouseアクセシビリティカテゴリスコアの分布。" aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&amp;format=interactive">
-  </a>
-  <div id="fig22-description" class="visually-hidden">CMSページのLighthouseアクセシビリティスコアの分布を示す棒グラフ。この分布は、約0.85のモードで、高いスコアに大きく傾いています。</div>
-  <figcaption id="fig22-caption">図22. CMSページのLighthouseアクセシビリティカテゴリスコアの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig22.png",
+  caption="CMSページのLighthouseアクセシビリティカテゴリスコアの分布。",
+  description="CMSページのLighthouseアクセシビリティスコアの分布を示す棒グラフ。この分布は、約0.85のモードで、高いスコアに大きく傾いています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=764428981&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/cms/fig23.png">
-    <img src="/static/images/2019/cms/fig23.png" alt="図23. CMSごとのLighthouseアクセシビリティカテゴリスコアの中央値。" aria-labelledby="fig23-caption" aria-describedby="fig23-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&amp;format=interactive">
-  </a>
-  <div id="fig23-description" class="visually-hidden">CMSごとのLighthouseアクセシビリティカテゴリスコアの中央値を示す棒グラフ。ほとんどのCMSのスコアは約0.75です。注目すべき例外としては、Wixのスコア中央値が0.93、1C-Bitrixのスコアが0.65のものがあります。</div>
-  <figcaption id="fig23-caption">図23. CMSごとのLighthouseアクセシビリティカテゴリスコアの中央値。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig23.png",
+  caption="CMSごとのLighthouseアクセシビリティカテゴリスコアの中央値。",
+  description="CMSごとのLighthouseアクセシビリティカテゴリスコアの中央値を示す棒グラフ。ほとんどのCMSのスコアは約0.75です。注目すべき例外としては、Wixのスコア中央値が0.93、1C-Bitrixのスコアが0.65のものがあります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlIvQce5DSZ4KnDyHErJhLJvnond89U_cNFewvtIhI2uV4Ff4og0e7X8bRFO28eBGKJ2uYlJyXLUBH/pubchart?oid=940747460&format=interactive"
+  )
+}}
 
 現在、モバイルCMSのホームページで100％のパーフェクトスコアを獲得しているのは1.27％しかありません。上位のCMSの中では、Wixがモバイルページのアクセシビリティスコアの中央値が最も高く、トップに立っています。全体的に見て、これらの数字は、私たちの人口のかなりの部分がアクセスできないウェブサイトはどれだけ多いか（CMSによって駆動されているウェブのどれだけの部分か）を考えると悲惨なものとなります。デジタル体験が私たちの生活の多くの側面に影響を与えるのと同様に、この数字は私たちに *最初からアクセシブルなウェブ体験を構築すること* を奨励し、ウェブを包括的な空間にする作業を継続するための指令であるべきです。
 
@@ -655,7 +665,7 @@ CMS領域のFIDは一般的に、デスクトップとモバイルの両方で�
       </tr>
     </tbody>
   </table>
-  <figcaption>図24. CMSごとのReactとコンパニオンフレームワークの採用率（モバイルサイト数）。</figcaption>
+  <figcaption>{{ figure_link(caption="CMSごとのReactとコンパニオンフレームワークの採用率（モバイルサイト数）。") }}</figcaption>
 </figure>
 
 また、ホスティングプロバイダーや代理店が企業の顧客に焦点を当てた戦略のためのツールボックスとして、CMSやその他の統合技術を使用した総合的なソリューションとしてデジタルエクスペリエンスプラットフォーム（DXP）を提供しているのも見受けられます。これらのイノベーションは、ユーザー（とそのエンドユーザー）がこれらのプラットフォームのコンテンツを作成し、消費する際に最高のUXを得ることを可能にするターンキーのCMSベースのソリューションを作成するための努力を示しています。目的は、デフォルトでの優れたパフォーマンス、豊富な機能、優れたホスティング環境です。

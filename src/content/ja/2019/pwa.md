@@ -10,7 +10,7 @@ discuss: 1766
 results: https://docs.google.com/spreadsheets/d/19BI3RQc_vR9bUPPZfVsF_4gpFWLNT6P0pLcAdL-A56c/
 queries: 11_PWA
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-03-02T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## 導入
@@ -23,27 +23,31 @@ Service Workerは2014年12月に[Chrome 40で初めて実装](https://blog.chrom
 
 ### Service Workerの登録とインストール可能性
 
-<figure>
-  <div class="big-number">0.44%</div>
-  <figcaption>図1. Service Workerを登録するデスクトップページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Service Workerを登録するデスクトップページの割合。",
+  content="0.44%",
+  classes="big-number"
+)
+}}
 
 最初に検討する指標は、Service Workerのインストールです。 HTTP Archiveの機能カウンターを介して公開されたデータを見ると、すべてのデスクトップの0.44％とすべてのモバイルページの0.37％がService Workerを登録しており、時間の経過に伴う両方の曲線が急成長しています。
 
-<figure>
-  <a href="/static/images/2019/pwa/fig2.png" class="fig-mobile">
-    <img src="/static/images/2019/pwa/fig2.png" alt="図2.デスクトップおよびモバイルのService Workerの経時的なインストール。" aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&amp;format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">Service Workerのインストールの時系列チャート。 2017年1月以降、デスクトップとモバイルは約0.0％から約0.4％に着実に増加しています。</div>
-  <figcaption id="fig2-caption">図2.デスクトップおよびモバイルのService Workerの経時的なインストール。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2.png",
+  caption="デスクトップおよびモバイルのService Workerの経時的なインストール。",
+  description="Service Workerのインストールの時系列チャート。 2017年1月以降、デスクトップとモバイルは約0.0％から約0.4％に着実に増加しています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=251442414&format=interactive"
+  )
+}}
 
 これはあまり印象的でないかもしれませんが、Chromeプラットフォームステータスからのトラフィックデータを考慮すると、Service Workerが[すべてのページロードの約15％](https://www.chromestatus.com/metrics/feature/timeline/popularity/990)を制御していることがわかります。トラフィックの多いサイトがますますService Workerを受け入れ始めています。
 
-<figure>
-  <div class="big-number">15%</div>
-  <figcaption>図3.Service Workerを登録するページのページビューの割合。 （出典：Chromeプラットフォームステータス） (出典: <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chromeプラットフォームステータス</a>)</figcaption>
-</figure>
+{{ figure_markup(
+  caption='Service Workerを登録するページのページビューの割合。 （出典：Chromeプラットフォームステータス） (出典: <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/990">Chromeプラットフォームステータス</a>)',
+  content="15%",
+  classes="big-number"
+)
+}}
 
 [Lighthouse](./methodology#lighthouse)は、ページが[インストールプロンプト](https://developers.google.com/web/tools/lighthouse/audits/install-prompt)の対象かどうかを確認します。モバイルページの1.56％に[インストール可能なマニフェスト](https://web.dev/installable-manifest/)があります。
 
@@ -62,13 +66,13 @@ Service Workerでは、[いくつかのイベントをリッスンできます](
 - `message`, `postMessage()`を介して送信されたメッセージが到着したときに発生します。
 - `sync`, バックグラウンド同期イベントが発生すると発生します。
 
-<figure>
-  <a href="/static/images/2019/pwa/fig4.png">
-    <img src="/static/images/2019/pwa/fig4.png" alt="図4. Service Workerイベントの人気。" aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2110574556&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">さまざまなService Workerイベントの人気を示す棒グラフ。 Fetchは、モバイルService Workerの73％、インストール71％、アクティブ化56％、通知クリック10％、プッシュ8％、メッセージ5％、通知クローズ2％、同期1％で使用されます。デスクトップService Workerの使用方法は似ていますが、取得、インストール、およびアクティブ化の場合は若干低くなります。</div>
-  <figcaption id="fig4-caption">図4. Service Workerイベントの人気。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig4.png",
+  caption="Service Workerイベントの人気。",
+  description="さまざまなService Workerイベントの人気を示す棒グラフ。 Fetchは、モバイルService Workerの73％、インストール71％、アクティブ化56％、通知クリック10％、プッシュ8％、メッセージ5％、通知クローズ2％、同期1％で使用されます。デスクトップService Workerの使用方法は似ていますが、取得、インストール、およびアクティブ化の場合は若干低くなります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2110574556&format=interactive"
+  )
+}}
 
 HTTP Archiveで見つけることのできるService Workerがこれらのイベントのどれをリッスンしているかを調べました。モバイルとデスクトップの結果は非常によく似ており、`fetch`、`install`、および`activate`が3つの最も人気のあるイベントであり、それに続いて`notificationclick`と`push`が行われます。これらの結果を解釈すると、Service Workerが有効にするオフラインユースケースは、プッシュ通知よりもはるかに先のアプリ開発者にとって最も魅力的な機能です。可用性が限られているため、あまり一般的ではないユースケースのため、現時点ではバックグラウンド同期は重要な役割を果たしていません。
 
@@ -76,13 +80,13 @@ HTTP Archiveで見つけることのできるService Workerがこれらのイベ
 
 一般に、ファイルサイズまたはコード行は、手元のタスクの複雑さの悪いプロキシです。ただし、この場合、モバイルとデスクトップのService Workerの（圧縮された）ファイルサイズを比較することは間違いなく興味深いです。
 
-<figure>
-  <a href="/static/images/2019/pwa/fig5.png">
-    <img src="/static/images/2019/pwa/fig5.png" alt="図5. Service Workerの転送サイズの分布。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=345926232&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Service Workerの転送サイズの分布を示す棒グラフ。デスクトップService Worker転送サイズの10、25、50、75、および90パーセンタイルは、176、350、895、2,010、および4,138バイトです。デスクトップService Workerは、90パーセンタイルの1,000バイトから、パーセンタイルごとに大きくなります。</div>
-  <figcaption id="fig5-caption">図5. Service Workerの転送サイズの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Service Workerの転送サイズの分布。",
+  description="Service Workerの転送サイズの分布を示す棒グラフ。デスクトップService Worker転送サイズの10、25、50、75、および90パーセンタイルは、176、350、895、2,010、および4,138バイトです。デスクトップService Workerは、90パーセンタイルの1,000バイトから、パーセンタイルごとに大きくなります。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=345926232&format=interactive"
+  )
+}}
 
 デスクトップのService Workerファイルの中央値は895バイトですが、モバイルでは694バイトです。すべてのパーセンタイルを通じて、デスクトップService WorkerはモバイルService Workerよりも大きくなっています。これらの統計は、[`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)メソッドを使用して動的にインポートされたスクリプトを考慮しないため、結果は大きく歪む可能性が高いことに注意してください。
 
@@ -115,13 +119,17 @@ Webアプリマニフェストは、ブラウザーにWebアプリケーショ�
 
 私たちが野生で観察しなかった唯一のプロパティは`iarc_rating_id`でした。これは、Webアプリケーションの国際年齢評価連合（IARC）認定コードを表す文字列です。 Webアプリケーションがどの年齢に適しているかを判断するために使用することを目的としています。
 
-<figure>
-  <a href="/static/images/2019/pwa/fig6.png">
-    <img src="/static/images/2019/pwa/fig6.png" alt="図6. Webアプリマニフェストプロパティの人気。" aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="452" data-width="600" data-height="452" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1904325089&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">デスクトップおよびモバイル向けのWebアプリマニフェストプロパティの人気を示す棒グラフ。デスクトップWebアプリマニフェストの88％には、名前プロパティ、82％はアイコン、61％はディスプレイ、55％はテーマカラー、49％は背景色、45％はショートネーム、36％は開始URL、19％はGCM送信者ID、9％はGCMユーザーのみ表示、9％はオリエンテーション、説明7％、範囲5％、言語4％。モバイルWebアプリマニフェストでのプロパティの人気は似ており、プラスまたはマイナス2パーセントポイントです。</div>
-  <figcaption id="fig6-caption">図6. Webアプリマニフェストプロパティの人気。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="Webアプリマニフェストプロパティの人気。",
+  description="デスクトップおよびモバイル向けのWebアプリマニフェストプロパティの人気を示す棒グラフ。デスクトップWebアプリマニフェストの88％には、名前プロパティ、82％はアイコン、61％はディスプレイ、55％はテーマカラー、49％は背景色、45％はショートネーム、36％は開始URL、19％はGCM送信者ID、9％はGCMユーザーのみ表示、9％はオリエンテーション、説明7％、範囲5％、言語4％。モバイルWebアプリマニフェストでのプロパティの人気は似ており、プラスまたはマイナス2パーセントポイントです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1904325089&format=interactive",
+  width=600,
+  height=452,
+  data_width=600,
+  data_height=452
+  )
+}}
 
 頻繁に遭遇した独自のプロパティは、従来のGoogle Cloud Messaging（GCM）サービスの`gcm_sender_id`と`gcm_user_visible_only`でした。興味深いことに、モバイルとデスクトップにはほとんど違いがありません。ただし、両方のプラットフォームで、ブラウザーによって解釈されないプロパティの長いテールがありますが、`作成者`や`バージョン`などの潜在的に有用なメタデータが含まれています。また、重要なタイプミスのプロパティもありました。私たちのお気に入りは、`short_name`ではなく`shot_name`です。興味深い外れ値は`serviceworker`プロパティです。これは標準ですが、ブラウザベンダーによって実装されていません。それでも、モバイルおよびデスクトップページで使用されるすべてのWebアプリマニフェストの0.09％で見つかりました。
 
@@ -129,13 +137,14 @@ Webアプリマニフェストは、ブラウザーにWebアプリケーショ�
 
 開発者が`display`プロパティに設定した値を見ると、PWAがWebテクノロジーの起源を明かさない「適切な」アプリとして認識されることを望んでいることがすぐに明らかになります。
 
-<figure>
-  <a href="/static/images/2019/pwa/fig7.png">
-    <img src="/static/images/2019/pwa/fig7.png" alt="図7. Webアプリマニフェストのdisplayプロパティの使用法。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Webアプリマニフェストの表示プロパティがデスクトップおよびモバイルWebサイトでどのように使用されるかを示す棒グラフ。どちらの場合も、57％の時間で「standalone」値が使用されます。マニフェストの38％でプロパティがまったく設定されていません。 「minimal UI」、「browser」、および「fullscreen」の各値は、使用量の1〜2％のみを占めています。</div>
-  <figcaption id="fig7-caption">図7. Webアプリマニフェストの<code>display</code>プロパティの使用法。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  alt="Webアプリマニフェストの display プロパティの使用法。",
+  caption="Webアプリマニフェストの <code>display</code> プロパティの使用法。",
+  description="Webアプリマニフェストの表示プロパティがデスクトップおよびモバイルWebサイトでどのように使用されるかを示す棒グラフ。どちらの場合も、57％の時間で「standalone」値が使用されます。マニフェストの38％でプロパティがまったく設定されていません。 「minimal UI」、「browser」、および「fullscreen」の各値は、使用量の1〜2％のみを占めています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1514793237&format=interactive"
+  )
+}}
 
 `standalone`を選択することで、エンドユーザーにブラウザUIが表示されないようにします。これは、`prefers_related_applications`プロパティを使用するアプリの大部分に反映されています。モバイルアプリケーションとデスクトップアプリケーションの両方の97％がネイティブアプリケーションを優先していません。
 
@@ -143,13 +152,13 @@ Webアプリマニフェストは、ブラウザーにWebアプリケーショ�
 
 `categories`プロパティは、Webアプリケーションが属する予想されるアプリケーションカテゴリを記述します。これは、Webアプリケーションをリストするカタログまたはアプリストアへのヒントとしてのみ意図されており、Webサイトは1つ以上の適切なカテゴリに自分自身をリストするために最善を尽くすことが期待されます。
 
-<figure>
-  <a href="/static/images/2019/pwa/fig8.png">
-    <img src="/static/images/2019/pwa/fig8.png" alt="図8.上位のWebアプリマニフェストカテゴリ。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1609487902&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">上位のWebアプリマニフェストカテゴリを示す棒グラフ。 60個のモバイルマニフェストは「ショッピング」カテゴリ、15個は「ビジネス」、9個は「ウェブ」、9個は「テクノロジー」、8個は「ゲーム」、8個は「エンターテイメント」、7個は「ソーシャル」などです。 「ショッピング」の場合、デスクトップマニフェストは1つだけです。</div>
-  <figcaption id="fig8-caption">図8.上位のWebアプリマニフェストカテゴリ。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="上位のWebアプリマニフェストカテゴリ。",
+  description="上位のWebアプリマニフェストカテゴリを示す棒グラフ。 60個のモバイルマニフェストは「ショッピング」カテゴリ、15個は「ビジネス」、9個は「ウェブ」、9個は「テクノロジー」、8個は「ゲーム」、8個は「エンターテイメント」、7個は「ソーシャル」などです。 「ショッピング」の場合、デスクトップマニフェストは1つだけです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1609487902&format=interactive"
+  )
+}}
 
 このプロパティを利用したマニフェストはあまり多くありませんでしたが、モバイルで最も人気のあるカテゴリである「ショッピング」から「ビジネス」「テクノロジー」、そして最初の場所を均等に共有するデスクトップ上の「ウェブ」（それが意味するものは何でも）。
 
@@ -157,13 +166,13 @@ Webアプリマニフェストは、ブラウザーにWebアプリケーショ�
 
 Lighthouseには少なくとも192X192ピクセルのサイズのアイコンが[必要](https://developers.google.com/web/tools/lighthouse/audits/manifest-contains-192px-icon)ですが、一般的なファビコン生成ツールは他のサイズのアイコンも大量に作成します。
 
-<figure>
-  <a href="/static/images/2019/pwa/fig9.png">
-    <img src="/static/images/2019/pwa/fig9.png" alt="図9.上位のWebアプリマニフェストアイコンのサイズ。" aria-labelledby="fig9-caption" aria-describedby="fig9-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1369881840&amp;format=interactive">
-  </a>
-  <div id="fig9-description" class="visually-hidden">上位のWebアプリマニフェストアイコンサイズプロパティ値の使用状況を示す棒グラフ。すべての値は高さと幅のピクセルで指定されます。たとえば、マニフェストの23％のトップ値は192X192ピクセルです。次に人気のあるサイズは、11％で144、11％で96、10％で72、10％で48、9％で512、9％で36％、5％で256、2％で384、1%で128、そして1％で152です。デスクトップとモバイルの使用パターンは同じです。</div>
-  <figcaption id="fig9-caption">図9.上位のWebアプリマニフェストアイコンのサイズ。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig9.png",
+  caption="上位のWebアプリマニフェストアイコンのサイズ。",
+  description="上位のWebアプリマニフェストアイコンサイズプロパティ値の使用状況を示す棒グラフ。すべての値は高さと幅のピクセルで指定されます。たとえば、マニフェストの23％のトップ値は192X192ピクセルです。次に人気のあるサイズは、11％で144、11％で96、10％で72、10％で48、9％で512、9％で36％、5％で256、2％で384、1%で128、そして1％で152です。デスクトップとモバイルの使用パターンは同じです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=1369881840&format=interactive"
+  )
+}}
 
 Lighthouseのルールが、おそらくアイコンサイズ選択の犯人で、192ピクセルがデスクトップとモバイルの両方で最も人気があります。[Googleのドキュメント](https://developers.google.com/web/fundamentals/web-app-manifest#icons)で512X512を明示的に推奨していますが、これは特に目立つオプションとしては表示されてません。
 
@@ -180,13 +189,13 @@ Lighthouseのルールが、おそらくアイコンサイズ選択の犯人で�
 - `"landscape-primary"`
 - `"landscape-secondary"`
 
-<figure>
-  <a href="/static/images/2019/pwa/fig10.png">
-    <img src="/static/images/2019/pwa/fig10.png" alt="図10.上位のWebアプリマニフェストのOrientation値。" aria-labelledby="fig10-caption" aria-describedby="fig10-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2065142361&amp;format=interactive">
-  </a>
-  <div id="fig10-description" class="visually-hidden">上位のWebアプリマニフェストの方向の値を示す棒グラフ。 「Portrait」はデスクトップマニフェストの6％に設定され、2％に「any」が続き、マニフェストの1％未満に他のすべてが設定されます。これはモバイルマニフェストでの使用に似ていますが、マニフェストの8％で「portrait」が設定され、1％で「portrait-primary」が設定されます。</div>
-  <figcaption id="fig10-caption">図10.上位のWebアプリマニフェストのOrientation値。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10.png",
+  caption="上位のWebアプリマニフェストのOrientation値。",
+  description="上位のWebアプリマニフェストの方向の値を示す棒グラフ。 「Portrait」はデスクトップマニフェストの6％に設定され、2％に「any」が続き、マニフェストの1％未満に他のすべてが設定されます。これはモバイルマニフェストでの使用に似ていますが、マニフェストの8％で「portrait」が設定され、1％で「portrait-primary」が設定されます。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT7DUzACr4eBhNU4cDz8-17oSx2qYbi9OFDjngz0NXNBP2IzZFxvDxLX2XThlN4SZymKMygOXzpI2AJ/pubchart?oid=2065142361&format=interactive"
+  )
+}}
 
 `「portrait」`オリエンテーションは両方のプラットフォームで明確な勝者であり、`「any」`オリエンテーションがそれに続きます。
 

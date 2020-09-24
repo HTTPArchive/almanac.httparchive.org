@@ -10,7 +10,7 @@ discuss: 1760
 results: https://docs.google.com/spreadsheets/d/1iC4WkdadDdkqkrTY32g7hHKhXs9iHrr3Bva8CuPjVrQ/
 queries: 05_Third_Parties
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-05-14T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## 導入
@@ -61,17 +61,21 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 ## データ
 
-<figure>
-  <div class="big-number">93.59%</div>
-  <figcaption>図 1. 少なくとも1つのサードパーティ製リソースを含むデスクトップページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="少なくとも1つのサードパーティ製リソースを含むデスクトップページの割合。",
+  content="93.59%",
+  classes="big-number"
+)
+}}
 
 サードパーティのコードは至る所にあります。ページの93％が少なくとも1つのサードパーティリソースを含み、ページの76％がアナリティクスドメインへのリクエストを発行しています。中央のページでは、ネットワークアクティビティ全体の35％を占める少なくとも9つのユニークサードパーティドメインからコンテンツをリクエストしており、最もアクティブな10％のページでは175以上のサードパーティリクエストを発行しています。サードパーティはウェブの不可欠な部分であると言っても過言ではありません。
 
-<figure>
-  <div class="big-number">55.63%</div>
-  <figcaption>図2. 少なくとも1つの広告リソースを含むデスクトップページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="少なくとも1つの広告リソースを含むデスクトップページの割合。",
+  content="55.63%",
+  classes="big-number"
+)
+}}
 
 ### カテゴリー
 
@@ -99,7 +103,7 @@ last_updated: 2020-05-14T00:00:00.000Z
 9 | `cdn.shopify.com` | 0.76%
 10 | `maps.googleapis.com` | 0.75%
 
-<figcaption>図3. サードパーティドメインの人気トップ10</figcaption>
+<figcaption>{{ figure_link(caption=" サードパーティドメインの人気トップ10") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -116,20 +120,24 @@ last_updated: 2020-05-14T00:00:00.000Z
 9 | `https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2` | 0.10%
 10 | `https://www.googleadservices.com/pagead/conversion_async.js` | 0.10%
 
-<figcaption>図4. サードパーティからのリクエストが多いトップ10</figcaption>
+<figcaption>{{ figure_link(caption=" サードパーティからのリクエストが多いトップ10") }}</figcaption>
 </figure>
 
 ### リソースの種類
 
 サードパーティコンテンツのリソースタイプの内訳を見ると、サードパーティのコードがWeb全体でどのように使用されているかを知ることができます。ファーストパーティのリクエストが、56％の画像、23％のスクリプト、14％のCSS、4％のHTMLにすぎないのに対し、サードパーティのリクエストはスクリプトとHTMLの割合が高く32％のスクリプト、34％の画像、12％のHTML、6％のCSSとなっています。このことは、サードパーティのコードがデザインを支援するために使用される頻度が低く代わりにファーストパーティのコードよりもインタラクションを促進したり観察したりするために使用される頻度が高いことを示唆していますがパーティの状態別のリソースタイプの内訳を見ると、よりニュアンスのあるストーリーがわかります。CSSと画像がそれぞれ70％、64％と圧倒的にファーストパーティであるのに対し、フォントはほとんどがサードパーティのプロバイダによって提供されており、ファーストパーティのソースから提供されているのは28％ にすぎません。この使用パターンの概念については、この章で後ほど詳しく説明します。
 
-<figure>
-  <a href="/static/images/2019/third-parties/fig5.png">
-    <img src="/static/images/2019/third-parties/fig5.png" alt="図5. カテゴリーとコンテンツタイプ別の第三者リクエストの割合。" aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">サードパーティの各カテゴリのコンテンツタイプの内訳を示すグラフ。画像とスクリプトが各カテゴリのリクエストの大半を占めています。CDNリクエストでは、特にフォントの割合が高いです。</div>
-  <figcaption id="fig5-caption">図5. カテゴリーとコンテンツタイプ別の第三者リクエストの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="カテゴリーとコンテンツタイプ別の第三者リクエストの割合。",
+  description="サードパーティの各カテゴリのコンテンツタイプの内訳を示すグラフ。画像とスクリプトが各カテゴリのリクエストの大半を占めています。CDNリクエストでは、特にフォントの割合が高いです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=488955458&format=interactive",
+  width=600,
+  height=387,
+  data_width=600,
+  data_height=387
+  )
+}}
 
 このデータからは、他にもいくつかの興味深い事実が飛び出してきます。トラッキングピクセル（解析ドメインへの画像リクエスト）は全ネットワークリクエストの1.6％を占め、FacebookやTwitterなどのソーシャルネットワークへの動画リクエストの数は、YouTubeやVimeoなどの専用動画プロバイダーの6倍にもなります（YouTubeのデフォルトの埋め込みはHTMLとプレビューサムネイルで構成されていて自動再生動画ではないためと思われます）。
 
@@ -138,6 +146,7 @@ last_updated: 2020-05-14T00:00:00.000Z
 全リクエストの49％がサードパーティです。ファーストパーティは2019年にも、51％と、ウェブリソースの大部分を占めるという王座にあと一歩まで迫ることができます。全リクエストの半分弱がサードパーティ製であるにもかかわらず、まったく含まれていないページが少数であることを考えると最もアクティブなサードパーティ製ユーザーは、自分の公平なシェアよりもかなり多くのことをしているに違いありません。実際、75％、90％、99％の割合で、ほぼすべてのページがサードパーティのコンテンツで構成されていることがわかります。実際、WixやSquareSpaceのような分散型WYSIWYGプラットフォームに大きく依存しているサイトでは、ルートドキュメントが唯一のファーストパーティのリクエストになっているかもしれません。
 
 <!-- insert graphic of metric 05_11 -->
+<!-- {{ figure_markup() }} -->
 
 各サードパーティプロバイダーが発行するリクエストの数も、カテゴリーによって大きく異なります。アナリティクスはウェブサイトで最も普及しているサードパーティのカテゴリーですが、サードパーティのネットワークリクエスト全体のわずか7％にすぎません。一方、広告は、サイト数が20％近く少ないにもかかわらず、サードパーティのネットワークリクエスト全体の25％を占めています。彼らの人気に比べてリソースへの影響が桁違いに大きいことは、残りのデータからも明らかにしていくテーマになるでしょう。
 
@@ -147,13 +156,17 @@ last_updated: 2020-05-14T00:00:00.000Z
 
 スクリプトの57％を提供しているにもかかわらず、サードパーティはスクリプトバイトの64％を占めています。つまり、サードパーティのスクリプトはファーストパーティのスクリプトよりも平均で大きくなっています。これは、次のいくつかのセクションで述べるパフォーマンスへの影響を示す早期警告の兆候です。
 
-<figure id="fig-7">
-  <a href="/static/images/2019/third-parties/fig7.png">
-    <img src="/static/images/2019/third-parties/fig7.png" alt="図7. サードパーティカテゴリ毎のリソースバイトの分布。" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="387" data-width="600" data-height="387" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">サードパーティのカテゴリ毎でコンテンツタイプ毎のバイト数の内訳を示すグラフ。画像とスクリプトはカテゴリ間で比較的均等に分布しています。フォントの80%はCDNから来ています。動画は「コンテンツ」サードパーティからのものです。</div>
-  <figcaption id="fig7-caption" >図7. サードパーティカテゴリ毎のリソースバイトの分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="サードパーティカテゴリ毎のリソースバイトの分布。",
+  description="サードパーティのカテゴリ毎でコンテンツタイプ毎のバイト数の内訳を示すグラフ。画像とスクリプトはカテゴリ間で比較的均等に分布しています。フォントの80%はCDNから来ています。動画は「コンテンツ」サードパーティからのものです。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRO5jS8JpjYdTr9poYmpyw-BL1LPQtfzHx_1hLRk9lgwkHQERuyELgF_rQ-4CpTbdbAyI9u1ggtPlLQ/pubchart?oid=1167032693&format=interactive",
+  width=600,
+  height=387,
+  data_width=600,
+  data_height=387
+  )
+}}
 
 <!--
 
