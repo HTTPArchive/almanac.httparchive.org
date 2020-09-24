@@ -5,8 +5,8 @@
   {%- set featured_chapter = ("accessibility","caching","cdn","cms","compression","css","ecommerce","fonts","http2","javascript","markup","media","mobile-web","page-weight","performance","pwa","resource-hints","security","seo","third-parties") | random %}
 #}
 {%- if featured_chapter == "javascript" %}
-  {%- set featured_chapter_quote = "JavaScript é o recurso mais caro que enviamos aos navegadores; tendo que ser baixado, analisado, compilado e finalmente executado. Embora os navegadores tenham diminuído significativamente o tempo que leva para analisar e compilar scripts, download e execução se tornaram as etapas mais caras quando o JavaScript é processado por uma página da web." %}
-  {%- set featured_chapter_stats = {"stat1":"89%","label1":"Sites com mais código de terceiros do que primários","stat2":"83%","label2":"Sites que usam jQuery","stat3":"4.6%","label3":"Páginas iniciais usando React"} %}
+  {%- set featured_chapter_quote = "JavaScript é o recurso mais caro que enviamos aos navegadores; tendo que ser baixado, analisado, compilado e finalmente executado. Embora os navegadores tenham diminuído significativamente o tempo que leva para analisar e compilar scripts, download e execução tornaram as etapas mais caras quando o JavaScript é processado por uma página da web." %}
+  {%- set featured_chapter_stats = {"stat1":"89%","label1":"Sites com mais código de terceiros do que de origem","stat2":"83%","label2":"Sites que usam jQuery","stat3":"4.6%","label3":"Páginas iniciais usando React"} %}
 {%- elif featured_chapter == "css" %}
   {%- set featured_chapter_quote = "Cascading Style Sheets (CSS) are used to paint, format, and layout web pages. Their capabilities span concepts as simple as text color to 3D perspective. It also has hooks to empower developers to handle varying screen sizes, viewing contexts, and printing. CSS helps developers wrangle content and ensure it's adapting properly to the user." %}
   {%- set featured_chapter_stats = {"stat1":"5%","label1":"Pages using custom properties","stat2":"2%","label2":"Sites that use CSS Grid","stat3":"780","label3":"Number of digits in largest Z-Index value"} %}
