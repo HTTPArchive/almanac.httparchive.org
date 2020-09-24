@@ -17,8 +17,7 @@ WHERE
   AND bytesFont IS NOT NULL
 GROUP BY
   client,
-  year,
-  month
+  date
 ORDER BY
   client,
   year,
