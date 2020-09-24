@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v2.3.3
       - name: Set VALIDATE_ALL_CODEBASE variable to false
         # Only run the full workflow for manual runs or if upgrading the super linter
         if: |
