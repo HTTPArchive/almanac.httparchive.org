@@ -1,11 +1,17 @@
 #standardSQL
 # Use this sql to find popular library imports for popular_pwa_libraries.sql
+# And also other importscripts used in service workers
 SELECT
   client,
   ImportScript,
-  count(0) AS COUNT
+  count(DISTINCT page) AS COUNT,
+  total,
+  COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.almanac.service_workers`,
+  (SELECT DISTINCT * FROM `httparchive.almanac.service_workers`)
+JOIN
+  (SELECT client, date, COUNT(DISTINCT page) AS total FROM `httparchive.almanac.service_workers` GROUP BY client, date)
+USING (client, date),
   UNNEST(ARRAY_CONCAT(REGEXP_EXTRACT_ALL(body, r'(?i)importscripts\([\'"]([^(]*)[\'"]\)'))) AS ImportScript
 WHERE
   date = '2020-08-01' AND
@@ -20,7 +26,10 @@ WHERE
   lower(ImportScript) NOT LIKE '%analytics-helper%'  
 GROUP BY
   client,
-  ImportScript
+  ImportScript,
+  total
 ORDER BY
-  count(0) desc
+  count(0) desc,
+  client
+
   
