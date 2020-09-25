@@ -233,6 +233,7 @@ La ventaja de este test AB <i lang="en">Lighthouse</i> no es solo la potencial r
 
  {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
+  alt="Estimación de la mejora del rendimiento de la página tras la optimización de imagen de Lighthouse.",
   caption='Estimación de la mejora del rendimiento de la página tras la optimización de imagen de <i lang="en">Lighthouse</i>.',
   description="Gráfico de barras que muestra  que en el percentil 10 0 ms pudieron ser medidos, lo mismo pasa en el percentil 25, en el percentil 50 se redujeron 150 ms, en el percentil 75 se redujeron 1.460 ms, y en el percentil 90 se redujeron 5.720 ms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
@@ -301,7 +302,8 @@ Para habilitar los <i lang="en">Client Hints</i>, la página web debe señalizá
 
 {{ figure_markup(
   image="fig17_usage_of_accept-ch_http_v_html.png",
-  caption="Uso del encabezado <code>Accept-CH</code> versus la etiqueta <code>&lt;meta></code> equivalente.",
+  alt="Uso del encabezado Accept-CH versus la etiqueta meta equivalente.",
+  caption="Uso del encabezado <code>Accept-CH</code> versus la etiqueta <code>&lt;meta&gt;</code> equivalente.",
   description="Gráfico de barras mostrando que un 71% usa el 'meta http-equiv', un 30% usa el encabezado 'Accept-CH' HTTP y un 1% usa ambos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
   )
@@ -329,6 +331,7 @@ Anteriormente, en la [Figura 4.5](#fig-5), mostramos como el volumen del conteni
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
+  alt="Auditoría Lighthouse: Fuera de pantalla.",
   caption='Auditoría <i lang="en">Lighthouse</i>: Fuera de pantalla.',
   description="Un gráfico de barras que muestra que en el percentil 10 un 0% de las imágenes se encuentran fuera de pantalla, en el percentil 25 un 2% están fuera de pantalla, en el percentil 50 un 27% están fuera de pantalla, en el percentil 75 un 64% están fuera de pantalla, y en el percentil 90 un 84% de las imágenes están fuera de pantalla.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"

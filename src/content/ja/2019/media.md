@@ -234,6 +234,7 @@ CSSピクセルと自然ピクセル量を見ると、中央値のウェブサ�
 
  {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
+  alt="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
   caption="Lighthouseからの画像最適化によるページパフォーマンスの向上を予測。",
   description="10パーセンタイルでは0ms、25パーセンタイルでも同じ、50パーセンタイルでは150ms、75パーセンタイルでは1,460ms、90パーセンタイルでは5,720msの保存が可能であることを示す棒グラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
@@ -329,6 +330,7 @@ HTMLでクライアントヒントを呼び出すために`<meta>`タグを使�
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
+  alt="Lighthouse監査：オフスクリーン。",
   caption="Lighthouse監査：オフスクリーン。",
   description="10パーセンタイルでは画像の0%が画面外、25パーセンタイルでは2%が画面外、50パーセンタイルでは27%が画面外、75パーセンタイルでは64%が画面外、90パーセンタイルでは 84%が画面外であることを示す棒グラフです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
