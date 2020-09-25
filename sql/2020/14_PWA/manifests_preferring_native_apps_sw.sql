@@ -1,5 +1,5 @@
 #standardSQL
-# % manifests preferring native apps - based on 2019/14_04e.sql
+# % manifests preferring native apps where service worker is used - based on 2019/14_04e.sql
 CREATE TEMPORARY FUNCTION prefersNative(manifest STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
@@ -18,11 +18,15 @@ SELECT
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
   (SELECT DISTINCT
-    client,
-    page,
-    body
+    m.client,
+    m.page,
+    m.body
   FROM
-    `httparchive.almanac.manifests`
+    `httparchive.almanac.manifests` m
+  JOIN
+    `httparchive.almanac.service_workers` sw
+  USING
+    (date, client, page)
   WHERE
     date = '2020-08-01')
 GROUP BY

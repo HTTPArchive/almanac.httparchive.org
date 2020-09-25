@@ -20,13 +20,9 @@ SELECT
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
-  (SELECT DISTINCT
-      client,
-      body
-    FROM
-      `httparchive.almanac.manifests`
-    WHERE
-      date = '2020-08-01'),
+  `httparchive.almanac.manifests`
+WHERE
+  date = '2020-08-01'
 GROUP BY
   client,
   display

@@ -1,5 +1,5 @@
 #standardSQL
-# Manifests that are not JSON parsable - based on 2019/14_04b.sql
+# Manifests that are not JSON parsable for service worker pages - based on 2019/14_04b.sql
 CREATE TEMPORARY FUNCTION canParseManifest(manifest STRING)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
@@ -18,11 +18,15 @@ SELECT
   ROUND(COUNT(DISTINCT page) * 100 / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client), 2) AS pct
 FROM
   (SELECT DISTINCT
-    client,
-    page,
-    body
+    m.client,
+    m.page,
+    m.body
   FROM
-    `httparchive.almanac.manifests`
+    `httparchive.almanac.manifests` m
+  JOIN
+    `httparchive.almanac.service_workers` sw
+  USING
+    (date, client, page)
   WHERE
     date = '2020-08-01')
 GROUP BY

@@ -1,13 +1,13 @@
 #standardSQL
-# Top manifest display values - based on 2019/14_04c.sql
-CREATE TEMPORARY FUNCTION getDisplay(manifest STRING)
+# Top manifest orientations - based on 2019/14_04g.sql
+CREATE TEMPORARY FUNCTION getOrientation(manifest STRING)
 RETURNS STRING LANGUAGE js AS '''
 try {
   var $ = JSON.parse(manifest);
-  if (!('display' in $)) {
+  if (!('orientation' in $)) {
     return '(not set)';
   }
-  return $.display;
+  return $.orientation;
 } catch (e) {
   return null;
 }
@@ -15,22 +15,26 @@ try {
 
 SELECT
   client,
-  getDisplay(body) AS display,
+  getOrientation(body) AS orientation,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
 FROM
   (SELECT DISTINCT
-      client,
-      body
+      m.client,
+      m.body
     FROM
-      `httparchive.almanac.manifests`
+      `httparchive.almanac.manifests` m
+    JOIN
+      `httparchive.almanac.service_workers` sw
+    USING
+      (date, client, page)
     WHERE
       date = '2020-08-01'),
 GROUP BY
   client,
-  display
+  orientation
 HAVING
-  display IS NOT NULL
+  orientation IS NOT NULL
 ORDER BY
   freq / total DESC
