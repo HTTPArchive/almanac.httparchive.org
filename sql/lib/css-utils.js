@@ -1,4 +1,4 @@
-(() => {
+var parsel = (() => {
 const TOKENS = {
 	attribute: /\[\s*(?:(?<namespace>\*|[-\w]*)\|)?(?<name>[-\w\u{0080}-\u{FFFF}]+)\s*(?:(?<operator>\W?=)\s*(?<value>.+?)\s*(?<i>i)?\s*)?\]/gu,
 	id: /#(?<name>(?:[-\w\u{0080}-\u{FFFF}]|\\.)+)/gu,
@@ -268,7 +268,7 @@ function parse(selector, {recursive = true, list = true} = {}) {
 function specificityToNumber(specificity, base) {
 	base = base || Math.max(...specificity) + 1;
 
-	return specificity[0] * base ** 2 + specificity[1] * base + specificity[0];
+	return specificity[0] * base ** 2 + specificity[1] * base + specificity[2];
 }
 
 function maxIndexOf(arr) {
@@ -336,7 +336,7 @@ function specificity(selector, {format = "array"} = {}) {
 }
 
 
-self.parsel = {gobbleParens, tokenizeBy, tokenize, nestTokens, walk, parse, specificityToNumber, specificity};
+return {gobbleParens, tokenizeBy, tokenize, nestTokens, walk, parse, specificityToNumber, specificity};
 })();
 
 /* countDeclarations.js */
