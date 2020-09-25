@@ -14,7 +14,7 @@ SELECT
   property,
   COUNT(DISTINCT page) AS freq,
   total,
-  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM (
   SELECT
     m.client,
@@ -36,6 +36,8 @@ GROUP BY
   total,
   property
 ORDER BY
-  freq / total DESC
+  freq / total DESC,
+  property,
+  client
 LIMIT
   500

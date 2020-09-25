@@ -31,33 +31,7 @@ SELECT
     lower(body) NOT LIKE '%najva%' AND
     lower(body) NOT LIKE '%upush%' AND
     lower(body) NOT LIKE '%cache-polyfill.js%' AND
-    lower(body) NOT LIKE '%analytics-helper.js%') AS none_of_the_above,
-  COUNTIF(lower(body) LIKE '%workbox%')/count(0) AS workbox_pct,
-  COUNTIF(lower(body) LIKE '%sw-toolbox%')/count(0) AS sw_toolbox_pct,
-  COUNTIF(lower(body) LIKE '%firebase%')/count(0) AS firebase_pct,
-  COUNTIF(lower(body) LIKE '%onesignalsdk%')/count(0) AS OneSignalSDK_pct,
-  COUNTIF(lower(body) LIKE '%najva%')/count(0) AS najva_pct,
-  COUNTIF(lower(body) LIKE '%upush%')/count(0) AS upush_pct,
-  COUNTIF(lower(body) LIKE '%cache-polyfill%')/count(0) AS cache_polyfill_pct,
-  COUNTIF(lower(body) LIKE '%analytics-helper%')/count(0) AS analytics_helper_pct,
-  COUNTIF(lower(body) LIKE '%importscript%' AND
-    lower(body) NOT LIKE '%workbox%' AND
-    lower(body) NOT LIKE '%sw-toolbox%' AND
-    lower(body) NOT LIKE '%firebase%' AND
-    lower(body) NOT LIKE '%onesignalsdk%' AND
-    lower(body) NOT LIKE '%najva%' AND
-    lower(body) NOT LIKE '%upush%' AND
-    lower(body) NOT LIKE '%cache-polyfill%' AND
-    lower(body) NOT LIKE '%analytics-helper%')/count(0) AS importscript_nolib_pct,
-  COUNTIF(lower(body) NOT LIKE '%importscript%' AND
-    lower(body) NOT LIKE '%workbox%' AND
-    lower(body) NOT LIKE '%sw-toolbox%' AND
-    lower(body) NOT LIKE '%firebase%' AND
-    lower(body) NOT LIKE '%onesignalsdk%' AND
-    lower(body) NOT LIKE '%najva%' AND
-    lower(body) NOT LIKE '%upush%' AND
-    lower(body) NOT LIKE '%cache-polyfill%' AND
-    lower(body) NOT LIKE '%analytics-helper%')/count(0) AS none_of_the_above_pct
+    lower(body) NOT LIKE '%analytics-helper.js%') AS none_of_the_above
 FROM
   (
     SELECT DISTINCT

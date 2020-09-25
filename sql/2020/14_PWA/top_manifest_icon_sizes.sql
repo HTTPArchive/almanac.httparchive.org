@@ -15,7 +15,7 @@ SELECT
   size,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
   (SELECT DISTINCT
       client,
@@ -31,4 +31,6 @@ GROUP BY
 HAVING
   size IS NOT NULL
 ORDER BY
-  freq / total DESC
+  freq / total DESC,
+  size,
+  client

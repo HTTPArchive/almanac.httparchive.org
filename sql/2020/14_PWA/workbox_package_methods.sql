@@ -6,7 +6,7 @@ SELECT
   workbox_method,
   COUNT(DISTINCT page) AS freq,
   total,
-  ROUND(COUNT(DISTINCT page) * 100 / total, 2) AS pct
+  COUNT(DISTINCT page) / total AS pct
 FROM
   `httparchive.almanac.service_workers`
 JOIN
@@ -29,4 +29,7 @@ GROUP BY
   workbox_package,
   workbox_method
 ORDER BY
-  freq / total DESC
+  freq / total DESC,
+  workbox_package,
+  workbox_method,
+  client

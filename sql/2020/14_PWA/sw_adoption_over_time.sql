@@ -5,7 +5,7 @@ SELECT
   client,
   num_urls AS freq,
   total_urls AS total,
-  ROUND(pct_urls * 100, 2) AS pct
+  pct_urls AS pct
 FROM
   `httparchive.blink_features.usage`
 WHERE

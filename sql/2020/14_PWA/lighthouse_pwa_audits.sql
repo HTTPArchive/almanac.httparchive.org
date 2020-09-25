@@ -18,23 +18,6 @@ SELECT
   COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.maskable-icon.score') = '1') AS maskable_icon,
   COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.pwa-cross-browser.score') = '1') AS pwa_cross_browser,
   COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.pwa-page-transitions.score') = '1') AS pwa_page_transitions,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.pwa-each-page-has-url.score') = '1') AS pwa_each_page_has_url,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.load-fast-enough-for-pwa.score') = '1')/count(0) AS load_fast_enough_for_pwa_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.works-offline.score') = '1')/count(0) AS works_offline_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.offline-start-url.score') = '1')/count(0) AS offline_start_url_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.is-on-https.score') = '1')/count(0) AS is_on_https_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.service-worker.score') = '1')/count(0) AS service_worker_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.installable-manifest.score') = '1')/count(0) AS installable_manifest_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.redirects-http.score') = '1')/count(0) AS redirects_http_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.splash-screen.score') = '1')/count(0) AS splash_screen_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.themed-omnibox.score') = '1')/count(0) AS themed_omnibox_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.content-width.score') = '1')/count(0) AS content_width_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.viewport.score') = '1')/count(0) AS viewport_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.without-javascript.score') = '1')/count(0) AS without_javascript_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.apple-touch-icon.score') = '1')/count(0) AS apple_touch_icon_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.maskable-icon.score') = '1')/count(0) AS maskable_icon_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.pwa-cross-browser.score') = '1')/count(0) AS pwa_cross_browser_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.pwa-page-transitions.score') = '1')/count(0) AS pwa_page_transitions_pct,
-  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.pwa-each-page-has-url.score') = '1')/count(0) AS pwa_each_page_has_url_pct
+  COUNTIF(JSON_EXTRACT_SCALAR(report, '$.audits.pwa-each-page-has-url.score') = '1') AS pwa_each_page_has_url
 FROM
   `httparchive.lighthouse.2020_08_01_mobile`

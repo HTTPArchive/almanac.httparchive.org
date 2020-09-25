@@ -18,15 +18,25 @@ SELECT
   getDisplay(body) AS display,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM
-  `httparchive.almanac.manifests`
-WHERE
-  date = '2020-08-01'
+  (SELECT DISTINCT
+      m.client,
+      m.body
+    FROM
+      `httparchive.almanac.manifests` m
+    JOIN
+      `httparchive.almanac.service_workers` sw
+    USING
+      (date, client, page)
+    WHERE
+      date = '2020-08-01')
 GROUP BY
   client,
   display
 HAVING
   display IS NOT NULL
 ORDER BY
-  freq / total DESC
+  freq / total DESC,
+  display,
+  client

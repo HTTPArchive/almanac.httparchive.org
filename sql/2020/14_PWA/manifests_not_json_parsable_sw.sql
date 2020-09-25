@@ -15,7 +15,7 @@ SELECT
   canParseManifest(body) AS can_parse,
   COUNT(DISTINCT page) AS freq,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(DISTINCT page) * 100 / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client), 2) AS pct
+  COUNT(DISTINCT page) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS pct
 FROM
   (SELECT DISTINCT
     m.client,
