@@ -4,10 +4,10 @@ SELECT
   _TABLE_SUFFIX AS client,
   country,
   COUNT(0) AS freq_url,
-  APPROX_QUANTILES(bytesFont, 1000)[OFFSET(500)] / 1024 AS median_font_kbytes
+  APPROX_QUANTILES(bytesFont, 1000)[OFFSET(500)]/1024 AS median_font_kbytes
 FROM (
-  SELECT
-    DISTINCT origin,
+  SELECT DISTINCT 
+    origin,
     device,
     `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
   FROM 

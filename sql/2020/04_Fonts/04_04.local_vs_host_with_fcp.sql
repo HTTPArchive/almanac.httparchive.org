@@ -9,10 +9,10 @@ SELECT
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0)*100/SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
-  COUNTIF(fast_fcp >= 0.75)*100/COUNT(0) AS pct_good_fcp,
-  COUNTIF(NOT(slow_fcp >= 0.25)
-      AND NOT(fast_fcp >= 0.75))*100/COUNT(0) AS pct_ni_fcp,
-  COUNTIF(slow_fcp >= 0.25)*100/COUNT(0) AS pct_poor_fcp,      
+  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp,
+  COUNTIF(NOT(slow_fcp>=0.25)
+      AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp,
+  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp,      
 FROM 
     `httparchive.almanac.requests`
 JOIN (
