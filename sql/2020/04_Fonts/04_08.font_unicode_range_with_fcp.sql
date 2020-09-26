@@ -23,42 +23,51 @@ try {
     var $ = JSON.parse(css);
     return $.stylesheet.rules.reduce(reduceValues, []);
 } catch (e) {
-    return [];
+    return [null];
 }
 ''';
-
 SELECT
   client,
-  COUNTIF(ranges > 0) AS freq_range,
+  CASE
+    WHEN unicode != " " THEN "unicode_ranges"
+  ELSE "none"
+  END AS use_unicode,
+  COUNT(0) AS freq_range,
   total_page,
-  ROUND(COUNTIF(ranges > 0) * 100 / total_page, 2) AS pct_range,
-  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_fast_fcp_unicode,
+  COUNT(0) * 100 / total_page AS pct_range,
+  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_unicode,
   COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_avg_fcp_unicode,
-  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_slow_fcp_unicode,
+    AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp_unicode,
+  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_unicode,
 FROM (
   SELECT
     client,
     page,
-    SUM(ARRAY_LENGTH(getFonts(css))) AS ranges
+    unicode
   FROM
     `httparchive.almanac.parsed_css`
+  LEFT JOIN
+    UNNEST(getFonts(css)) AS unicode
   WHERE
     date = '2020-08-01'
   GROUP BY
     client,
-    page)
+    page,
+    unicode)
 JOIN (
   SELECT
-    origin,
+    DISTINCT origin,
+    device,
     fast_fcp,
     slow_fcp,
   FROM
-    `chrome-ux-report.materialized.metrics_summary`
+    `chrome-ux-report.materialized.device_summary`
   WHERE
     yyyymm=202008)
 ON
   CONCAT(origin, '/')=page
+  AND
+  IF(device='desktop', 'desktop', 'mobile')=client
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -71,4 +80,5 @@ USING
   (client)
 GROUP BY
   client,
+  use_unicode,
   total_page

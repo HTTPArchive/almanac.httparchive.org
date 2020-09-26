@@ -8,9 +8,17 @@ SELECT
   axisSize,
   COUNT(DISTINCT page) AS freq,
   total_page,
-  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct
+  COUNT(DISTINCT page) * 100 / total_page AS pct
 FROM
-  `httparchive.almanac.requests`
+  `httparchive.almanac.requests`,
+  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
+        '$._font_details.name'), '(?i)(name)')) AS name,
+  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
+        '$._font_details.table_sizes'), '(?i)(gvar)')) AS axisValue,
+  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
+        '$._font_details.table_sizes.fvar'), '(?i)(axisTag)')) AS axisTag,
+  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
+        '$._font_details.table_sizes.fvar'), '(?i)(axis.size)')) AS axisSize  
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -20,15 +28,7 @@ JOIN (
   GROUP BY
     _TABLE_SUFFIX)
 USING
-  (client),
-  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
-        '$._font_details.name'), '(?i)(name)')) AS name,
-  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
-        '$._font_details.table_sizes'), '(?i)(gvar)')) AS axisValue,
-  UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
-        '$._font_details.table_sizes.fvar'), '(?i)(axisTag)')) AS axisTag,
-    UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
-        '$._font_details.table_sizes.fvar'), '(?i)(axis.size)')) AS axisSize           
+  (client)      
 WHERE
   type = 'font'
   AND date='2020-08-01'

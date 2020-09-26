@@ -2,19 +2,23 @@
 #variable_font_with_fcp(??NoResult)
 SELECT
   client,
-  NET.HOST(url) AS url,
+  name,
   COUNT(DISTINCT page) AS freq_vf,
   total_page,
-  ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_vf,
-  ROUND(COUNTIF(fast_fcp>=0.75)*100/COUNT(0),0) AS pct_fast_fcp_vf,
-  ROUND(COUNTIF(NOT(slow_fcp >=0.25)
-      AND NOT(fast_fcp>=0.75))*100/COUNT(0),0) AS pct_mode_fcp_vf,
-  ROUND(COUNTIF(slow_fcp>=0.25)*100/COUNT(0),0) AS pct_slow_fcp_vf,
+  COUNT(DISTINCT page)*100/total_page AS pct_vf,
+  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_vf,
+  COUNTIF(NOT(slow_fcp>=0.25)
+      AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp_vf,
+  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_vf,
 FROM (
   SELECT
     *
   FROM
     `httparchive.almanac.requests`
+    LEFT JOIN UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
+        '$._font_details.name'), '(?i)(name)')) AS name
+    LEFT JOIN UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
+        '$._font_details.table_sizes'), '(?i)(gvar)')) AS axisValue
   WHERE
     date='2020-08-01')
 JOIN (
@@ -28,25 +32,23 @@ JOIN (
 USING
   (client)
 JOIN (
-  SELECT
-    origin,
+  SELECT DISTINCT
+    origin, device,
     fast_fcp,
     slow_fcp,
   FROM
-    `chrome-ux-report.materialized.metrics_summary`
+    `chrome-ux-report.materialized.device_summary`
   WHERE
     yyyymm=202007)
 ON
-  CONCAT(origin, '/')= url
+  CONCAT(origin, '/')= url AND
+  IF(device='desktop','desktop','mobile')=client
 WHERE
-  type = 'font'
-  AND JSON_EXTRACT_SCALAR(payload,
-    '$._font_details.table_sizes.gvar') IS NOT NULL
-  OR CAST(JSON_EXTRACT_SCALAR(payload,
-      '$._font_details.table_sizes.fvar.axisCount') AS NUMERIC) >0
+  type = 'font' AND 
+  axisValue IS NOT NULL
 GROUP BY
   client,
-  url,
+  name,
   total_page
 Order BY
   freq_vf DESC

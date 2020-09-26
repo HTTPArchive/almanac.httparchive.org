@@ -21,7 +21,7 @@ SELECT
  NET.HOST(url) AS url,
  COUNT(DISTINCT page) AS freq_ficon,
  total_page,
- ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_ficon
+ COUNT(DISTINCT page)*100/total_page AS pct_ficon
 FROM
  `httparchive.almanac.parsed_css`
 JOIN
@@ -29,7 +29,7 @@ JOIN
 USING
  (client)
 WHERE
- ARRAY_LENGTH(checksSupports(css)) > 0 AND date='2020-08-01' OR url LIKE '%fontawesome%' OR url LIKE '%icomoon%' 
+ ARRAY_LENGTH(checksSupports(css))>0 AND date='2020-08-01' OR url LIKE '%fontawesome%' OR url LIKE '%icomoon%' 
 GROUP BY
  client, url, total_page
 ORDER BY

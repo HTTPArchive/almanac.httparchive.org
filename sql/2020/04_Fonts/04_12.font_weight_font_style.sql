@@ -35,45 +35,48 @@ try {
 
 SELECT
   client,
-  COUNTIF(italic > 0) AS freq_italic,
-  COUNTIF(oblique > 0) AS freq_oblique,
-  COUNTIF(style_normal > 0) AS freq_style_normal,
-  COUNTIF(weight_400_normal > 0) AS freq_weight_400_normal,
-  COUNTIF(weight_700_bold > 0) AS freq_weight_700_bold,
-  COUNTIF(lighter > 0) AS freq_lighter,
-  COUNTIF(bolder > 0) AS freq_bolder,
+  style,
+  weight,
+  COUNTIF(italic>0) AS freq_italic,
+  COUNTIF(oblique>0) AS freq_oblique,
+  COUNTIF(style_normal>0) AS freq_style_normal,
+  COUNTIF(weight_400_normal>0) AS freq_weight_400_normal,
+  COUNTIF(weight_700_bold>0) AS freq_weight_700_bold,
+  COUNTIF(lighter>0) AS freq_lighter,
+  COUNTIF(bolder>0) AS freq_bolder,
   total_page,
-  ROUND(COUNTIF(italic > 0) * 100 / total_page, 2) AS pct_italic,
-  ROUND(COUNTIF(oblique > 0) * 100 / total_page, 2) AS pct_oblique,
-  ROUND(COUNTIF(style_normal > 0) * 100 / total_page, 2) AS pct_style_normal,
-  ROUND(COUNTIF(weight_400_normal > 0) * 100 / total_page, 2) AS pct_weight_400_normal,
-  ROUND(COUNTIF(weight_700_bold > 0) * 100 / total_page, 2) AS pct_weight_700_bold,
-  ROUND(COUNTIF(lighter > 0) * 100 / total_page, 2) AS pct_lighter,
-  ROUND(COUNTIF(bolder > 0) * 100 / total_page, 2) AS pct_bolder
+  COUNTIF(italic>0)*100/total_page AS pct_italic,
+  COUNTIF(oblique>0)*100/total_page AS pct_oblique,
+  COUNTIF(style_normal>0)*100/total_page AS pct_style_normal,
+  COUNTIF(weight_400_normal>0)*100/total_page AS pct_weight_400_normal,
+  COUNTIF(weight_700_bold>0)*100/total_page AS pct_weight_700_bold,
+  COUNTIF(lighter>0)*100/total_page AS pct_lighter,
+  COUNTIF(bolder>0)*100/total_page AS pct_bolder
 FROM (
   SELECT
     client,
-    COUNTIF(font.style = 'italic') AS italic,
-    COUNTIF(font.style = 'oblique') AS oblique,
-    COUNTIF(font.style = 'normal') AS style_normal,
-    COUNTIF(font.weight = 'normal'
-      OR font.weight = '400') AS weight_400_normal,
-    COUNTIF(font.weight = 'bold'
-      OR font.weight = '700') AS weight_700_bold,
-    COUNTIF(font.weight != 'normal'
-      AND (font.weight = 'bold'
-        OR (CAST(font.weight AS NUMERIC) > 400))) AS bolder,
-    COUNTIF(font.weight != 'normal'
-      AND font.weight != 'bold'
-      AND (CAST(font.weight AS NUMERIC) < 400)) AS lighter
+    font.style as style,
+    font.weight as weight,
+    COUNTIF(font.style='italic') AS italic,
+    COUNTIF(font.style='oblique') AS oblique,
+    COUNTIF(font.style='normal') AS style_normal,
+    COUNTIF(font.weight='normal'
+      OR font.weight='400') AS weight_400_normal,
+    COUNTIF(font.weight='bold'
+      OR font.weight='700') AS weight_700_bold,
+    COUNTIF(font.weight!='normal'
+      AND (font.weight='bold'
+        OR (CAST(font.weight AS NUMERIC)>400))) AS bolder,
+    COUNTIF(font.weight!='normal'
+      AND font.weight ='bold'
+      AND (CAST(font.weight AS NUMERIC)<400)) AS lighter
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFonts(css)) AS font
   WHERE
     date='2020-08-01'
   GROUP BY
-    client,
-    page)
+    client, font.style, font.weight, page)
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -85,5 +88,4 @@ JOIN (
 USING
   (client)
 GROUP BY
-  client,
-  total_page
+  client, style, weight, total_page

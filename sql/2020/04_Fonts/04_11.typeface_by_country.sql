@@ -27,21 +27,22 @@ FROM (
     country,
     COUNT(0) AS freq_typeface,
     SUM(COUNT(0)) OVER (PARTITION BY client) AS total_typeface,
-    ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client), 2) AS pct,
-    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS rank
+    COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
+    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS sort_row
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontFamilies(css)) AS font_family
   JOIN (
-    SELECT
-      DISTINCT origin,
+    SELECT DISTINCT  
+      origin, device,
       `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
     FROM
       `chrome-ux-report.materialized.country_summary`
     WHERE
       yyyymm=202008)
   ON
-    CONCAT(origin, '/')=page
+    CONCAT(origin, '/')=page AND
+    IF(device='desktop','desktop','mobile')=client
   WHERE
     date='2020-08-01'
   GROUP BY
@@ -51,4 +52,4 @@ FROM (
   ORDER BY
     client, font_family, freq_typeface DESC)
 WHERE
-  rank<=10
+  sort_row<=10

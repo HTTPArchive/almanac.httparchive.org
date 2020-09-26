@@ -7,7 +7,7 @@ var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-pref
 try {
     var $ = JSON.parse(payload);
     var almanac = JSON.parse($._almanac);
-    return almanac['link-nodes'].reduce((results, link) => {
+    return almanac['link-nodes'].nodes.reduce((results, link) => {
         var hint = link.rel.toLowerCase();
         if (!hints.has(hint)) {
             return results;
@@ -19,51 +19,51 @@ try {
         return results;
     }, []);
 } catch (e) {
-    return [];
+    return [null];
 }
 ''';
-
 SELECT
-  _TABLE_SUFFIX AS client,
+  client,
   name,
-  COUNT(DISTINCT url) AS freq_hints,
+  COUNT(DISTINCT page) AS freq_hints,
   total_page,
-  ROUND(COUNT(DISTINCT url) * 100 / total_page, 2) AS pct_hints,
-  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_fast_fcp_hints,
-  COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_avg_fcp_hints,
-  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_slow_fcp_hints,
+  COUNT(DISTINCT page)*100/total_page AS pct_hints,
+  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_hints,
+  COUNTIF(NOT(slow_fcp>=0.25)
+    AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp_hints,
+  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_hints,
 FROM (
   SELECT
-    _TABLE_SUFFIX,
-    url,
+    _TABLE_SUFFIX AS client,
+    url AS page,
     hint.name,
     hint.href AS hint_url
   FROM
-    `httparchive.pages.2020_08_01_*`,
-    UNNEST(getResourceHints(payload)) AS hint)
+    `httparchive.pages.2020_08_01_*`
+    LEFT JOIN UNNEST(getResourceHints(payload)) AS hint)
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url,
+    url AS page,
     type
   FROM
     `httparchive.summary_requests.2020_08_01_*`
   WHERE
     type='font')
 USING
-  (url)
+  (client, page)
 JOIN (
-  SELECT
-    origin,
+  SELECT DISTINCT
+    origin, device,
     fast_fcp,
     slow_fcp,
   FROM
-    `chrome-ux-report.materialized.metrics_summary`
+    `chrome-ux-report.materialized.device_summary`
   WHERE
     yyyymm=202008)
 ON
-  CONCAT(origin, '/')=url
+  CONCAT(origin, '/')=page AND
+  IF(device='desktop','desktop','mobile')=client
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
@@ -74,13 +74,9 @@ JOIN (
     _TABLE_SUFFIX)
 USING
   (client)
-WHERE
-  NET.HOST(hint_url)=NET.HOST(url)
-  AND SUBSTR(hint_url,0,5)=SUBSTR(url,0,5)
 GROUP BY
   client,
   name,
-  url,
   total_page
 ORDER BY
   client,

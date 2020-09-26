@@ -7,7 +7,7 @@ SELECT
   freq_font,
   country_total,
   pct_country,
-  RANK() OVER (PARTITION BY country ORDER BY pct_country DESC) AS rank
+  RANK() OVER (PARTITION BY country ORDER BY pct_country DESC) AS ranking
 FROM 
 (
   SELECT
@@ -15,28 +15,30 @@ FROM
     country,
     NET.HOST(url) AS url_font,
     COUNT(0) AS freq_font,
-    SUM(COUNT(0)) OVER (PARTITION BY country) AS country_total,
-    ROUND(COUNT(0)/SUM(COUNT(0)) OVER (PARTITION BY country),2) AS pct_country,
-    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS rank
+    COUNT(0) OVER (PARTITION BY country) AS country_total,
+    COUNT(0)/COUNT(0) OVER (PARTITION BY country) AS pct_country,
+    ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS sort_row
+
   FROM
     `httparchive.almanac.requests`
   JOIN (
-    SELECT
-      DISTINCT origin,
+    SELECT DISTINCT 
+      origin, device,
       `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS country
     FROM
       `chrome-ux-report.materialized.country_summary`
     WHERE
       yyyymm=202008)
   ON
-    CONCAT(origin, '/')=page
+    CONCAT(origin, '/')=page AND
+    IF(device='desktop','desktop','mobile')=client
   WHERE
     type='font'
     AND NET.HOST(url)!=NET.HOST(page)
     AND date='2020-08-01'
   GROUP BY
     client,
-    url_font,
-    country
+    country,
+    url_font
 )
-WHERE rank <= 10
+WHERE sort_row <= 10

@@ -5,7 +5,7 @@ SELECT
  format,
  COUNT(DISTINCT page) AS pages_color,
  total_page,
- ROUND(COUNT(DISTINCT page) * 100 / total_page, 2) AS pct_color
+ COUNT(DISTINCT page) * 100 / total_page AS pct_color
 FROM
  `httparchive.almanac.requests`
 JOIN
