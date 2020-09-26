@@ -73,7 +73,7 @@ try {
   }
 
   const ast = JSON.parse(css);
-  const specificity = extractSpecificity(ast);
+  let specificity = extractSpecificity(ast);
 
   return {
     ruleCount: specificity.ruleCount,
