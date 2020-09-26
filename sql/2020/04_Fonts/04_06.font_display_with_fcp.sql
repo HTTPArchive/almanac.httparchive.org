@@ -37,9 +37,16 @@ SELECT
   ROUND(COUNTIF(NOT(slow_fcp >=0.25)
     AND NOT(fast_fcp>=0.75))*100/COUNT(0),0) AS pct_mode_fcp_display,
   ROUND(COUNTIF(slow_fcp>=0.25)*100/COUNT(0),0) AS pct_slow_fcp_display,
-FROM
-  `httparchive.almanac.parsed_css`,
-  UNNEST(getFontDisplay(css)) AS font_display  
+FROM (
+  SELECT
+    DISTINCT client,
+    page,
+    font_display
+  FROM
+    `httparchive.almanac.parsed_css`,
+    UNNEST(getFontDisplay(css)) AS font_display
+  WHERE
+    date = '2020-08-01')
 JOIN (
 SELECT
 _TABLE_SUFFIX AS client,
