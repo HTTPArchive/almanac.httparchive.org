@@ -33,16 +33,20 @@ SELECT
   COUNT(DISTINCT page) AS freq_display,
   total_page,
   COUNT(DISTINCT page) * 100 / total_page AS pct_display,
-  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_display,
+  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_fast_fcp_display,
   COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp_display,
-  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_display,
+    AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_mode_fcp_display,
+  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_slow_fcp_display,
 FROM (
-SELECT DISTINCT
-  date, client, page, font_display
-  FROM `httparchive.almanac.parsed_css`
-  LEFT JOIN UNNEST(getFontDisplay(css)) AS font_display 
-  WHERE date='2020-08-01') 
+  SELECT
+    DISTINCT client,
+    page,
+    font_display
+  FROM
+    `httparchive.almanac.parsed_css`
+    LEFT JOIN UNNEST(getFontDisplay(css)) AS font_display
+  WHERE
+    date = '2020-08-01')
 JOIN (
 SELECT
 _TABLE_SUFFIX AS client,
@@ -54,7 +58,7 @@ _TABLE_SUFFIX)
 USING
 (client)  
 JOIN (
-  SELECT DISTINCT
+  SELECT
     origin,
     device,
     fast_fcp,
@@ -65,7 +69,7 @@ JOIN (
     yyyymm=202008)
 ON
   CONCAT(origin, '/')=page AND
-  if(device='desktop','desktop','mobile')=client
+  IF(device='desktop','desktop','mobile')=client
 GROUP BY
   client,
   font_display,
