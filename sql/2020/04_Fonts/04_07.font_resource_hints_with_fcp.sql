@@ -36,16 +36,14 @@ FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     url AS page,
-    hint.name,
-    hint.href AS hint_url
+    hint.name
   FROM
     `httparchive.pages.2020_08_01_*`
     LEFT JOIN UNNEST(getResourceHints(payload)) AS hint)
 LEFT JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
-    url AS page,
-    type
+    url AS page
   FROM
     `httparchive.summary_requests.2020_08_01_*`
   WHERE
@@ -60,7 +58,7 @@ JOIN (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm=202008)
+    date='2020-08-01')
 ON
   CONCAT(origin, '/')=page AND
   IF(device='desktop','desktop','mobile')=client
