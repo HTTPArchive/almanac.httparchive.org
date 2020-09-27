@@ -10,7 +10,7 @@ discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-23T00:00:00.000Z
+last_updated: 2020-09-25T00:00:00.000Z
 ---
 
 ## Introdução
@@ -69,6 +69,7 @@ Embora esses dados mostrem quanto tempo pode levar para um dispositivo móvel pr
 
 {{ figure_markup(
   image="/static/images/2019/javascript/js-processing-reddit.png",
+  alt="Tempos de processamento de JavaScript para reddit.com.",
   caption='Tempos de processamento de JavaScript para reddit.com. De <a href="https://v8.dev/blog/cost-of-javascript-2019">O custo do JavaScript em 2019</a>.',
   description="Gráfico de barras mostrando 3 dispositivos diferentes: no topo, um Pixel 3 tem uma pequena quantidade no thread principal e no thread de trabalho de menos de 400ms. Para um Moto G4, é aproximadamente 900 ms no thread principal e mais 300 ms no thread de trabalho. E a barra final é um Alcatel 1X 5059D com mais de 2.000 ms no thread principal e mais de 500 ms no thread de trabalho.",
   width=600,
@@ -298,7 +299,8 @@ Nos últimos anos, o ecossistema JavaScript tem visto um aumento em bibliotecas 
 
 {{ figure_markup(
   image="/static/images/2019/javascript/fig12.png",
-  caption="Os frameworks mais usados ​​no desktop.",
+  alt="Os frameworks mais usados no desktop.",
+  caption="Os frameworks mais usados no desktop.",
   description="Gráfico de barras mostrando que 4,6% dos sites usam React, 2.0% AngularJS, 1.8% Backbone.js, 0.8% Vue.js, 0.4% Knockout.js, 0.3% Zone.js, 0.3% Angular, 0.1% AMP, 0.1% Ember.js.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
   )
@@ -419,6 +421,7 @@ Embora úteis, existem vários motivos pelos quais muitos sites podem não quere
 
 {{ figure_markup(
   image="/static/images/2019/javascript/fig18.png",
+  alt="Porcentagem de sites usando mapas de origem.",
   caption="Porcentagem de sites usando mapas de origem.",
   description="Gráfico de barras mostrando 18% dos sites para desktop e 17% dos sites para celular usam mapas de origem.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"

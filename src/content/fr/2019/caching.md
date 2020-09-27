@@ -10,7 +10,7 @@ discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-09-25T00:00:00.000Z
 ---
 
 ## Introduction
@@ -83,6 +83,7 @@ L'outil [RedBot.org](https://redbot.org/) vous permet d'entrer une URL et de voi
 
 {{ figure_markup(
   image="ch16_fig1_redbot_example.jpg",
+  alt="Informations de RedBot relatives au Cache-Control.",
   caption="Informations de RedBot relatives au <code>Cache-Control</code>.",
   description="Exemple de réponse Redbot montrant des informations détaillées sur le moment où la ressource a été modifiée ; si les caches peuvent la stocker ; pour combien de temps elle peut être considérée valide ; si nécessaire les avertissements.",
   width=600,
@@ -96,6 +97,7 @@ Si aucun en-tête de mise en cache n'est renseigné dans la réponse, alors [l'a
 
 {{ figure_markup(
   image="fig2.png",
+  alt="Présence des en-tête HTTP Cache-Control et Expires.",
   caption="Présence des en-tête HTTP <code>Cache-Control</code> et <code>Expires</code>.",
   description="Ces deux diagrammes à barres identiques pour le mobile et les ordinateurs de bureau montrent que 72&nbsp;% des requêtes utilisent des en-têtes Cache-Control et que 56&nbsp;% utilisent Expires et les 27&nbsp;% n'utilisent aucun des deux.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive"
@@ -264,6 +266,7 @@ HTTP/1.1 a introduit l'en-tête `Cache-Control`, et la plupart des clients moder
 
 {{ figure_markup(
   image="fig7.png",
+  alt="Utilisation comparée des en-têtes Cache-Control et Expires.",
   caption="Utilisation comparée des en-têtes <code>Cache-Control</code> et <code>Expires</code>.",
   description="Un diagramme à barres montrant que 53&nbsp;% des réponses ont un `Cache-Control: max-age`, 54&nbsp;%-55&nbsp;% utilisent `Expire`, 41&nbsp;%-42&nbsp;% utilisent les deux, et 34&nbsp;% n'utilisent aucun des deux. Les chiffres sont donnés à la fois pour les ordinateurs de bureau et les mobiles, mais les chiffres sont presque identiques, les mobiles ayant un point de pourcentage d'utilisation des expirations plus élevé.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive"
@@ -336,6 +339,7 @@ Par exemple, `cache-control:public, max-age=43200` indique qu'une entrée mise e
 
 {{ figure_markup(
   image="fig9.png",
+  alt="Utilisation de la directive Cache-Control sur mobile.",
   caption="Utilisation de la directive <code>Cache-Control</code> sur mobile.",
   description="Un diagramme à barres de 15 directives `Cache-Control` et leur utilisation allant de 74,8&nbsp;% pour max-age, 37,8&nbsp;% pour public, 27,8&nbsp;% pour no-cache, 18&nbsp;% pour no-store, 14,3&nbsp;% pour private, 3,4&nbsp;% pour l'immutable, 3.3. 3&nbsp;% pour no-transform, 2,4&nbsp;% pour le stale-while-revalidate, 2,2&nbsp;% pour pre-check, 2,2&nbsp;% pour post-check, 1,9&nbsp;% pour s-maxage, 1,6&nbsp;% pour proxy-revalidate, 0,3&nbsp;% pour le set-cookie et 0,2&nbsp;% pour le stale-if-error. Les statistiques sont presque identiques pour les ordinateurs de bureaux et les téléphones portables. ",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&format=interactive",
@@ -476,6 +480,7 @@ Dans l'ensemble, 65&nbsp;% des réponses sont servies avec un en-tête `Last-Mod
 
 {{ figure_markup(
   image="fig12.png",
+  alt="Adoption de la validation de la fraîcheur via les en-têtes Last-Modified et ETag pour sites sur ordinateurs de bureau.",
   caption="Adoption de la validation de la fraîcheur via les en-têtes <code>Last-Modified</code> et <code>ETag</code> pour sites sur ordinateurs de bureau.",
   description="Le diagramme à barres montre que 64,4&nbsp;% des requêtes sur ordinateurs de bureau ont un Last Modified, 42,8&nbsp;% ont un ETag, 37,9&nbsp;% ont les deux et 30,7&nbsp;% n'ont ni l'un ni l'autre. Les statistiques pour les mobiles sont presque identiques&nbsp;: 65,3&nbsp;% pour la dernière modification, 42,8&nbsp;% pour l'ETag, 38,0&nbsp;% pour les deux et 29,9&nbsp;% pour aucune des deux.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive"
@@ -577,6 +582,7 @@ L'un des risques de la mise en cache avec `Set-Cookie` est que les valeurs des c
 
 {{ figure_markup(
   image="ch16_fig16_cacheable_responses_set_cookie.jpg",
+  alt="Réponses pouvant être mises en cache avec Set-Cookie.",
   caption="Réponses pouvant être mises en cache avec <code>Set-Cookie</code>.",
   description="Le graphique à barres montre que 97&nbsp;% des réponses n'utilisent pas Set-Cookie alors que 3&nbsp;% le font. Ces 3&nbsp;% sont zoomés pour obtenir un autre diagramme à barres montrant la répartition entre 15,3&nbsp;% de réponses <code>private</code>, 84,7&nbsp;% de réponses <code>public</code> pour les ordinateurs de bureau et réciproquement pour les téléphones portables, 18,4&nbsp;% de réponses <code>public</code> et 81,6&nbsp;% de réponses <code>private</code>.",
   width=600,
