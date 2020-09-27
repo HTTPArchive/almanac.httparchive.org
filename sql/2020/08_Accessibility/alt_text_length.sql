@@ -1,5 +1,5 @@
 #standardSQL
-# 08_05: Alt text median, mean, and max (ignoring empty and missing alts)
+# 08_05: Alt text length
 SELECT
   client,
   percentile,
