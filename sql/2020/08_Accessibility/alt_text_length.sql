@@ -17,7 +17,7 @@ FROM
         JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.alt_lengths')
       ) AS alt_length_string
   ),
-  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 WHERE
   alt_length > 0 AND alt_length IS NOT NULL
 GROUP BY
