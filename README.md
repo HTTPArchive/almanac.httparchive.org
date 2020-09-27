@@ -18,8 +18,6 @@ The 2019 Web Almanac is available in:
 - [Simplified Chinese](https://almanac.httparchive.org/zh-CN/2019/)
 - [Spanish](https://almanac.httparchive.org/es/2019/)
 
-And [many other languages have been proposed](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/2019-Translation). Please comment on the issue for that language if interested in helping translate, or open a new issue for any new language.
-
 ## Contributing
 
 See [our contributing guide](CONTRIBUTING.md).
