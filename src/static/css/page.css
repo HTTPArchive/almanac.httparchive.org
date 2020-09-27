@@ -257,8 +257,8 @@
 .authors .name {
   font-size: 24px;
   font-size: 1.5rem;
-  margin-right: 10px;
-  margin-right: 0.625rem;
+  margin-right: 16px;
+  margin-right: 1rem;
   margin-bottom: 10px;
   margin-bottom: 0.625rem;
   display: inline-block;
@@ -276,15 +276,31 @@
 }
 
 .authors .social {
-  display: inline-block;
-  vertical-align: middle;
+  font-size: 0.9em;
 }
 
 .authors .social a {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 5px;
-  margin: 0 0.3125rem;
+  margin: 0.25rem 1rem 0.25rem 0;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.authors .social a:last-child {
+  margin-right: 0;
+}
+
+.authors .social a:hover,
+.authors .social a:focus {
+  text-decoration: underline;
+}
+
+.authors .social svg {
+  width: 1.5em;
+  height: auto;
+  margin-right: 4px;
+  margin-right: 0.25rem;
 }
 
 #chapter-navigation {

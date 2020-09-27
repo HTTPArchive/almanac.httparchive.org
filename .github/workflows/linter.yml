@@ -2,40 +2,46 @@
 ## Linter GitHub Actions ##
 ###########################
 #
-# Documentation:
-# https://help.github.com/en/articles/workflow-syntax-for-github-actions
+# Documentation: https://github.com/github/super-linter/
 #
-# For the Web Almanac we have the following rule changes from the defaults:
-#  * Markdown - we're a bit more relaxed about this since authors may be less technical
-#  * Python - Only change from default is to set ignored-modules=flask, flask-talisman...etc.
-#  * CSS - Tweaked to ignore some Prince/Normalise exceptions and some whitespace exceptions
-#  * JS - default rules
-#  * JSON - default rules
-#  * YML - default rules
 # Exception config files are in the .github/linters directory
 #
 name: Lint Code Base
 on:
+  - workflow_dispatch
   - push
   - pull_request
 jobs:
   lint:
     name: Lint Code Base
     # Skip duplicate job for local branches
-    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+    # except for linter upgrades (so it can be caught by below check to lint all)
+    if: |
+        github.event_name == 'push' ||
+        github.event.pull_request.head.repo.full_name != github.repository ||
+        startsWith(github.event.pull_request.title,'Bump github/super-linter')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.3
+      - name: Set VALIDATE_ALL_CODEBASE variable to false
+        # Only run the full workflow for manual runs or if upgrading the super linter
+        if: |
+            github.event_name != 'workflow' &&
+            startsWith(github.event.pull_request.title,'Bump github/super-linter') != true
+        run: |
+          echo "::set-env name=VALIDATE_ALL_CODEBASE::false"
       - name: Lint Code Base
-        uses: docker://github/super-linter:v3.3.0
+        uses: github/super-linter@v3.11.0
         env:
-          VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
-          VALIDATE_YAML: true
-          VALIDATE_JSON: true
-          VALIDATE_PYTHON: true
-          VALIDATE_JAVASCRIPT_ES: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_BASH: true
           VALIDATE_CSS: true
-          VALIDATE_MD: true
           VALIDATE_HTML: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_MD: true
+          VALIDATE_PYTHON_PYLINT: true
+          VALIDATE_PYTHON_FLAKE8: true
+          VALIDATE_YAML: true
