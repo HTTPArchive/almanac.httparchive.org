@@ -23,7 +23,7 @@ EOF
 OPTIND=1 #Reseting is good practive
 force=0
 no_promote=0
-while getopts "fn" opt; do
+while getopts "h?fn" opt; do
     case "$opt" in
     h|\?)
         show_help
