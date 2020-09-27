@@ -33,7 +33,7 @@ SELECT
 
   COUNT(0) / total_sites AS pct_sites_using
 FROM
-  `httparchive.pages.2020_08_01_*`
+  `httparchive.pages.2020_08_01_*`,
   UNNEST(getUsedExtensions(JSON_EXTRACT_SCALAR(payload, '$._a11y'))) AS extension_stat
 LEFT JOIN (
   SELECT
