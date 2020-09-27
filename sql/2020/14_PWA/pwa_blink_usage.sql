@@ -10,9 +10,9 @@ FROM
 WHERE
   yyyymmdd = '20200801' AND
   (
-    feature like '%ServiceWorker%' OR
-    feature like '%BackgroundSync%' OR
-    feature like '%GetInstalledRelatedApps%'
+    feature LIKE '%ServiceWorker%' OR
+    feature LIKE '%BackgroundSync%' OR
+    feature LIKE '%GetInstalledRelatedApps%'
   )
 ORDER BY
   client,

@@ -30,9 +30,10 @@ FROM (
 GROUP BY
   client,
   total,
+  property
+HAVING
+  freq > 10
+ORDER BY
+  freq / total DESC,
   property,
   client
-ORDER BY
-  freq / total DESC
-LIMIT
-  500

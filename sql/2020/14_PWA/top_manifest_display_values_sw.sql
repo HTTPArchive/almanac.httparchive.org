@@ -15,7 +15,7 @@ try {
 
 SELECT
   client,
-  getDisplay(body) AS display,
+  LOWER(getDisplay(body)) AS display,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct

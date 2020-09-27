@@ -17,6 +17,8 @@ JOIN
   `httparchive.almanac.requests`
 USING (date, client, page, url),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
+WHERE
+  date = '2020-08-01'
 GROUP BY
   date,
   percentile,

@@ -29,7 +29,8 @@ GROUP BY
   client,
   size
 HAVING
-  size IS NOT NULL
+  size IS NOT NULL AND
+  freq > 100
 ORDER BY
   freq / total DESC,
   size,

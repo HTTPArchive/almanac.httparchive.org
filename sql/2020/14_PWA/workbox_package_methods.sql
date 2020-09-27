@@ -21,8 +21,8 @@ USING (client),
 WHERE
   date = '2020-08-01' AND
   # Exclude JS files themselves as only interested in functions
-  workbox_method not like ('%js') AND
-  workbox_method not like ('%js.map')
+  workbox_method NOT LIKE ('%js') AND
+  workbox_method NOT LIKE ('%js.map')
 GROUP BY
   client,
   total,
