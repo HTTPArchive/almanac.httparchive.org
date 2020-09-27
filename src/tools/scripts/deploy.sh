@@ -146,18 +146,10 @@ git checkout main
 echo
 echo -e "${GREEN}Successfully deployed!${RESET_COLOR}"
 echo
-
-if [[ $(which gh) ]]; then
-  gh release create "${TAG_VERSION}@production" deployed.zip -t "${TAG_VERSION}"
-  echo "Release updated on GitHub"
-else
-  echo -e "${AMBER}GitHub cli is not available${RESET_COLOR}"
-  echo -e "${AMBER}Please update release on GitHub: https://github.com/HTTPArchive/almanac.httparchive.org/releases${RESET_COLOR}"
-  echo -e "${AMBER}Using tag ${TAG_VERSION}@production${RESET_COLOR}"
-  echo -e "${AMBER}Please upload deploy.zip as the release artifact${RESET_COLOR}"
-  echo
-fi
-
+echo -e "${AMBER}Please update release on GitHub: https://github.com/HTTPArchive/almanac.httparchive.org/releases${RESET_COLOR}"
+echo -e "${AMBER}Using tag ${TAG_VERSION}@production${RESET_COLOR}"
+echo -e "${AMBER}Please upload deploy.zip as the release artifact${RESET_COLOR}"
+echo
 echo "Have a good one!"
 echo
 exit 0
