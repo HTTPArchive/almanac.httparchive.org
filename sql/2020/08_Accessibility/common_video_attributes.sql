@@ -45,5 +45,7 @@ GROUP BY
   total_sites,
   total_sites_with_video,
   pct_sites_with_video
+HAVING
+  total_sites_using >= 10
 ORDER BY
   pct_of_sites_using_video DESC

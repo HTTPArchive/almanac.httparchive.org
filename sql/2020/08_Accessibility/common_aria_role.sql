@@ -32,6 +32,6 @@ GROUP BY
   role,
   total_sites
 HAVING
-  total_sites >= 100
+  total_sites_using >= 100
 ORDER BY
   pct_sites_using DESC

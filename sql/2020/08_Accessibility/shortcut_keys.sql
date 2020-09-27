@@ -40,7 +40,7 @@ GROUP BY
   client,
   type_and_key.type,
   type_and_key.shortcut
+HAVING
+  total_uses >= 100
 ORDER BY
-  client,
-  type_and_key.type,
   total_uses DESC

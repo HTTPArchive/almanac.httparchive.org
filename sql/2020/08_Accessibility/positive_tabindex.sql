@@ -16,7 +16,7 @@ try {
 
   return {total, total_positive};
 } catch (e) {
-  return 0;
+  return {total: 0, total_positive: 0};
 }
 ''';
 
@@ -27,7 +27,8 @@ SELECT
   COUNTIF(tab_index_stats.total_positive > 0) AS total_with_positive_tab_indexes,
 
   COUNTIF(tab_index_stats.total > 0) / COUNT(0) AS pct_with_tab_indexes,
-  COUNTIF(tab_index_stats.total_positive > 0) / COUNT(0) AS pct_with_positive_tab_indexes
+  COUNTIF(tab_index_stats.total_positive > 0) / COUNT(0) AS pct_with_positive_tab_indexes,
+  COUNTIF(tab_index_stats.total_positive > 0) / COUNTIF(tab_index_stats.total > 0) AS pct_positive_in_sites_with_tab_indexes
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,

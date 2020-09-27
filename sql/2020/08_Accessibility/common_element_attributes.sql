@@ -32,6 +32,6 @@ GROUP BY
   attribute,
   total_sites
 HAVING
-  total_sites_using > 100
+  total_sites_using > 1000
 ORDER BY
   pct_sites_using DESC

@@ -2,8 +2,11 @@
 # Most common lengths of alt text (-1 for none. 2000+ grouped together)
 SELECT
   client,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_alt_tags,
+
   alt_length_clipped AS alt_length,
-  COUNT(0) AS occurrences
+  COUNT(0) AS occurrences,
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_all_occurrences
 FROM (
   SELECT
     client,
@@ -11,13 +14,15 @@ FROM (
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
-      CAST(alt_length_string AS INT64) AS alt_length
+      SAFE_CAST(alt_length_string AS INT64) AS alt_length
     FROM
-      `httparchive.pages.2020_08_01_*`
+      `httparchive.pages.2020_08_01_*`,
       UNNEST(
         JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.alt_lengths')
       ) AS alt_length_string
   )
+  WHERE
+    alt_length IS NOT NULL
 )
 GROUP BY
   client,
