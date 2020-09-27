@@ -50,7 +50,8 @@ try {
     }
 
     // The highest unit of specificity is 9398, so we need 5 digits of padding.
-    return specificity.split(',').map(i => i.padStart(5, '0')).join('') + specificity;
+    // Fun fact: the most specific selector in the dataset is 1065,9398,7851!
+    return specificity.split(',').map(i => i.padStart(5, '0')).join('');
   }
 
   const ast = JSON.parse(css);
@@ -76,45 +77,32 @@ try {
 '''
 OPTIONS (library="gs://httparchive/lib/css-utils.js");
 
-# https://www.stevenmoseley.com/blog/tech/high-performance-sql-correlated-scalar-aggregate-reduction-queries
-CREATE TEMPORARY FUNCTION extractSpecificity(specificity_cmp STRING) RETURNS STRING AS (
-  SUBSTR(specificity_cmp, 16)
-);
-
 SELECT
   percentile,
   client,
-  extractSpecificity(APPROX_QUANTILES(max_specificity_cmp, 1000)[OFFSET(percentile * 10)]) AS max_specificity,
-  extractSpecificity(APPROX_QUANTILES(median_specificity_cmp, 1000)[OFFSET(percentile * 10)]) AS median_specificity
+  APPROX_QUANTILES(rule_count, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS rule_count,
+  APPROX_QUANTILES(selector_count, 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS selector_count,
+  APPROX_QUANTILES(SAFE_DIVIDE(selector_count, rule_count), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS selectors_per_rule
 FROM (
   SELECT
     client,
-    MAX(specificity_cmp) AS max_specificity_cmp,
-    MIN(IF(freq_cdf >= 0.5, specificity_cmp, NULL)) AS median_specificity_cmp
+    SUM(info.ruleCount) AS rule_count,
+    SUM(info.selectorCount) AS selector_count
   FROM (
     SELECT
       client,
       page,
-      bin.specificity_cmp,
-      SUM(bin.freq) OVER (PARTITION BY client, page ORDER BY bin.specificity_cmp) / SUM(bin.freq) OVER (PARTITION BY client, page) AS freq_cdf
-    FROM (
-      SELECT
-        client,
-        page,
-        getSpecificityInfo(css) AS info
-      FROM
-        `httparchive.almanac.parsed_css`
-      WHERE
-        date = '2020-08-01' AND
-        # Limit the size of the CSS to avoid OOM crashes.
-        LENGTH(css) < 0.1 * 1024 * 1024),
-      UNNEST(info.distribution) AS bin
+      getSpecificityInfo(css) AS info
+    FROM
+      `httparchive.almanac.parsed_css`
     WHERE
-      bin.specificity_cmp IS NOT NULL)
+      date = '2020-08-01' AND
+      # Limit the size of the CSS to avoid OOM crashes. This loses ~20% of stylesheets.
+      LENGTH(css) < 0.1 * 1024 * 1024)
   GROUP BY
     client,
     page),
-  UNNEST([10, 25, 50, 75, 90, 95, 99, 100]) AS percentile
+  UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
   percentile,
   client
