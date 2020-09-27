@@ -10,7 +10,7 @@ discuss: 1771
 results: https://docs.google.com/spreadsheets/d/1mnq03DqrRBwxfDV05uEFETK0_hPbYOynWxZkV3tFgNk/
 queries: 16_Caching
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-09-25T00:00:00.000Z
 ---
 
 ## 導入
@@ -83,6 +83,7 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
 
 {{ figure_markup(
   image="ch16_fig1_redbot_example.jpg",
+  alt="ロボットからのCache-Control情報",
   caption="ロボットからの <code>Cache-Control</code> 情報",
   description="リソースがいつ変更されたか、キャッシュがそれを保存できるかどうか、リソースが新鮮であると見なされる期間、および警告に関する詳細情報を示すRedbotの応答例。",
   width=600,
@@ -96,6 +97,7 @@ Webブラウザーがクライアントにレスポンスを送信するとき�
 
 {{ figure_markup(
   image="fig2.png",
+  alt="HTTP Cache-ControlおよびExpiresヘッダーの存在",
   caption="HTTP <code>Cache-Control</code> および <code>Expires</code> ヘッダーの存在",
   description="リクエストの72％がCache-Controlヘッダーを使用し、56％がExpiresを使用し、27％がどちらも使用しないことを示す、モバイルとデスクトップの棒グラフ。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1611664016&format=interactive"
@@ -264,6 +266,7 @@ HTTPレスポンスの53％は、`max-age`ディレクティブを持つ`Cache-C
 
 {{ figure_markup(
   image="fig7.png",
+  alt="Cache-ControlとExpiresヘッダーの使用法。",
   caption="<code>Cache-Control</code> と <code>Expires</code> ヘッダーの使用法。",
   description="レスポンスの53％を示す棒グラフには、「Cache-Control：max-age」、54％-55％が「Expires」、41％-42％が両方を使用し、34％がどちらも使用していません。数字は、デスクトップとモバイルの両方について示されていますが、有効期限の使用率が高いモバイルとほぼ同じです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1909701542&format=interactive"
@@ -336,6 +339,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 {{ figure_markup(
   image="fig9.png",
+  alt="モバイルでのCache-Controlディレクティブの使用。",
   caption="モバイルでの <code>Cache-Control</code> ディレクティブの使用。",
   description="15のcache-controlディレクティブとその使用量の棒グラフ。74.8％のmax-age、37.8％のpublic、27.8％のno-cache、18％のno-store、14.3％のprivate、3.4％のimmutable、3.3％のno-transform、2.4％のstale-while-revalidate、2.2％のpre-check、2.2％のpost-check、1.9％のs-maxage、1.6％のproxy-revalidate、0.3％set-cookieおよび0.2％のstale-if-error。統計は、デスクトップとモバイルでほぼ同じです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=1054108345&format=interactive",
@@ -476,6 +480,7 @@ HTTP/1.1[仕様](https://tools.ietf.org/html/rfc7234#section-5.2.1)には、`Cac
 
 {{ figure_markup(
   image="fig12.png",
+  alt="デスクトップWebサイトのLast-ModifiedおよびETagヘッダーを介した鮮度の検証の採用。",
   caption="デスクトップWebサイトの <code>Last-Modified</code> および <code>ETag</code> ヘッダーを介した鮮度の検証の採用。",
   description="デスクトップリクエストの64.4％が最後に変更され、42.8％がETagを持ち、37.9％が両方を持ち、30.7％がどちらも持たないことを示す棒グラフ。モバイルの統計は、最終変更が65.3％、ETagが42.8％、両方が38.0％、どちらも29.9％というほぼ同じです。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vT3GWCs19Wq0mu0zgIlKRc8zcXgmVEk2xFHuzZACiWVtqOv8FO5gfHwBxa0mhU6O9TBY8ODdN4Zjd_O/pubchart?oid=20297100&format=interactive"
@@ -577,6 +582,7 @@ Varyヘッダーは、1つ以上の要求ヘッダー値の値をキャッシュ
 
 {{ figure_markup(
   image="ch16_fig16_cacheable_responses_set_cookie.jpg",
+  alt="Set-Cookieレスポンスのキャッシュ可能なレスポンス。",
   caption="<code>Set-Cookie</code> レスポンスのキャッシュ可能なレスポンス。",
   description="レスポンスの97％を示す棒グラフはSet-Cookieを使用せず、3％が使用します。この3％の内、15.3％がプライベート、84.7％がデスクトップ、モバイルは18.4％がパブリック、81.6％がプライベートであるという別の棒グラフに拡大されています。",
   width=600,
