@@ -32,7 +32,7 @@ class Language(object):
     ES = _Language('Español', 'es')
     FR = _Language('Français', 'fr')
     JA = _Language('日本語', 'ja')
-    PT = _Language('Portuguese', 'pt')
+    PT = _Language('Português', 'pt')
     ZH_CN = _Language('简体中文', 'zh-CN')
 
 
