@@ -5,7 +5,7 @@ RETURNS ARRAY<STRUCT<extension STRING, total INT64>> LANGUAGE js AS '''
 try {
   const a11y = JSON.parse(payload);
 
-  return Object.entries(a11y.file_extension_alts.file_extensions).map((extension, total) => {
+  return Object.entries(a11y.file_extension_alts.file_extensions).map(([extension, total]) => {
     return {extension, total};
   });
 } catch (e) {
