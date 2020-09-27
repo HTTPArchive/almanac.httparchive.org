@@ -12,7 +12,7 @@ show_help() {
 cat << EOF
 Usage: ${0##*/} [-hv] [-f OUTFILE] [FILE]...
 Release the Web Alamanac to Google Cloud Platform
-Requires Permissions on 
+Requires Permissions on Google Cloud Platform for the Web Amanac account
 
     -h   display this help and exit
     -f   force mode (no interactive prompts for each step)
