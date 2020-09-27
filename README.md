@@ -14,8 +14,11 @@ The 2019 Web Almanac is available in:
 - [English](https://almanac.httparchive.org/en/2019/)
 - [French](https://almanac.httparchive.org/fr/2019/)
 - [Japanese](https://almanac.httparchive.org/ja/2019/)
+- [Portuguese](https://almanac.httparchive.org/pt/2019/)
 - [Simplified Chinese](https://almanac.httparchive.org/zh-CN/2019/)
 - [Spanish](https://almanac.httparchive.org/es/2019/)
+
+And [many other languages have been proposed](https://github.com/HTTPArchive/almanac.httparchive.org/wiki/2019-Translation). Please comment on the issue for that language if interested in helping translate, or open a new issue for any new language.
 
 ## Contributing
 
