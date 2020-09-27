@@ -1,5 +1,5 @@
 #standardSQL
-# 08_21: Page title stats (usage, descriptive, changed on render)
+# Page title stats (usage, descriptive, changed on render)
 SELECT
   client,
   COUNT(0) AS total_sites,

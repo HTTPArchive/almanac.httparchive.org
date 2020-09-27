@@ -1,5 +1,5 @@
 #standardSQL
-# 08_08: How often the title attribute is used with an alt attribute, and how often they are the same values
+# How often the title attribute is used with an alt attribute, and how often they are the same values
 SELECT
   client,
   SUM(total_alt) AS total_alts,

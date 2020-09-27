@@ -1,5 +1,5 @@
 #standardSQL
-# 08_06: Most common lengths of alt text (-1 for none. 2000+ grouped together)
+# Most common lengths of alt text (-1 for none. 2000+ grouped together)
 SELECT
   client,
   alt_length_clipped AS alt_length,

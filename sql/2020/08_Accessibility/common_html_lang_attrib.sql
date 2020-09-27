@@ -1,5 +1,5 @@
 #standardSQL
-# 08_04: Most common html lang attributes
+# Most common html lang attributes
 SELECT
   client,
   LOWER(JSON_EXTRACT(payload, '$._almanac.html_node.lang')) AS lang,

@@ -1,5 +1,5 @@
 #standardSQL
-# 08_07: Alt text ending in an image extension
+# Alt text ending in an image extension
 CREATE TEMPORARY FUNCTION getUsedExtensions(payload STRING)
 RETURNS ARRAY<STRUCT<extension STRING, total INT64>> LANGUAGE js AS '''
 try {

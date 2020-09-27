@@ -1,5 +1,5 @@
 #standardSQL
-# 08_26: Video elements track usage
+# Video elements track usage
 SELECT
   client,
   COUNT(0) AS total_sites,

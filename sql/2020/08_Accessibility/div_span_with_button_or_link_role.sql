@@ -1,5 +1,5 @@
 #standardSQL
-# 08_16: Divs or spans with role of button or link
+# Divs or spans with role of button or link
 SELECT
   client,
   COUNT(0) AS total_sites,

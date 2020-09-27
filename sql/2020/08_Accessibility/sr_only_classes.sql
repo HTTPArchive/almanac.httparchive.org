@@ -1,5 +1,5 @@
 #standardSQL
-# 08_20: Sites using sr-only or visually-hidden classes
+# Sites using sr-only or visually-hidden classes
 SELECT
   client,
   COUNT(0) AS total_sites,

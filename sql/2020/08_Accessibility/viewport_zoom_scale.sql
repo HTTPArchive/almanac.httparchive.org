@@ -1,5 +1,5 @@
 #standardSQL
-# 08_02: Disabled zooming and scaling via the viewport tag
+# Disabled zooming and scaling via the viewport tag
 SELECT
   client,
   COUNT(0) AS total_sites,

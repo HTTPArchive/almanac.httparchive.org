@@ -1,5 +1,5 @@
 #standardSQL
-# 08_10: % of sites using each type of aria role
+# % of sites using each type of aria role
 CREATE TEMPORARY FUNCTION getUsedRoles(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {

@@ -1,5 +1,5 @@
 #standardSQL
-# 08_01: % mobile sites with sufficient text color contrast with its background
+# % mobile sites with sufficient text color contrast with its background
 SELECT
   COUNTIF(color_contrast_score IS NOT NULL) AS total_applicable,
   COUNTIF(CAST(color_contrast_score AS NUMERIC) = 1) AS total_sufficient,

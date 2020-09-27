@@ -1,5 +1,5 @@
 #standardSQL
-# 08_15: th and td stats. Scope and headers usage
+# th and td stats. Scope and headers usage
 SELECT
   client,
   COUNT(0) AS total_sites,

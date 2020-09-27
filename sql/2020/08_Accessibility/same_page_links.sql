@@ -1,5 +1,5 @@
 #standardSQL
-# 08_11: % sites with links to to the same page, # or javascript:void
+# % sites with links to to the same page, # or javascript:void
 # NOTE: same_page.total includes empty hash links (#) but excludes all others (#foobar)
 SELECT
   client,

@@ -1,5 +1,5 @@
 #standardSQL
-# 08_14: Table stats. Total all, captioned and presentational
+# Table stats. Total all, captioned and presentational
 SELECT
   client,
   COUNT(0) AS total_sites,

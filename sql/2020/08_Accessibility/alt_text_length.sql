@@ -1,5 +1,5 @@
 #standardSQL
-# 08_05: Alt text length
+# Alt text length
 SELECT
   client,
   percentile,

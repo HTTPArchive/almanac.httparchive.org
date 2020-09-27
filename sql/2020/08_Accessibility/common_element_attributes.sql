@@ -1,5 +1,5 @@
 #standardSQL
-# 08_09: How often pages contain an element with a given attribute
+# How often pages contain an element with a given attribute
 CREATE TEMPORARY FUNCTION getUsedAttributes(payload STRING)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {

@@ -1,5 +1,5 @@
 #standardSQL
-# 08_03: % of mobile sites with a valid html lang attribute
+# % of mobile sites with a valid html lang attribute
 SELECT
   COUNT(0) AS total,
   COUNTIF(valid_lang) AS valid_lang,

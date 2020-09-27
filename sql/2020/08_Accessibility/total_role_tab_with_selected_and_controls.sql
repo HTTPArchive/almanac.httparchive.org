@@ -1,5 +1,5 @@
 #standardSQL
-# 08_17: Sites containing elements with role='tab', aria-selected and aria-controls attributes
+# Sites containing elements with role='tab', aria-selected and aria-controls attributes
 SELECT
   client,
   COUNT(0) AS total_sites,

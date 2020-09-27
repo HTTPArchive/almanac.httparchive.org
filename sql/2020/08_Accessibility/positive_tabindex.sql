@@ -1,5 +1,5 @@
 #standardSQL
-# 08_23: Positive tabindex value occurrences
+# Positive tabindex value occurrences
 CREATE TEMPORARY FUNCTION getTotalPositiveTabIndexes(payload STRING)
 RETURNS STRUCT<total INT64, total_positive INT64> LANGUAGE js AS '''
 try {
