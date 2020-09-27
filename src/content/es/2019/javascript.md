@@ -10,7 +10,7 @@ discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-09-25T00:00:00.000Z
 ---
 
 ## Introducción
@@ -69,6 +69,7 @@ Aunque estos datos muestran cuánto tiempo puede llevar un dispositivo móvil pr
 
 {{ figure_markup(
   image="js-processing-reddit.png",
+  alt="Tiempos de procesamiento de JavaScript para Reddit.com.",
   caption='Tiempos de procesamiento de JavaScript para Reddit.com. Tomado de <a href="https://v8.dev/blog/cost-of-javascript-2019\">El costo de JavaScript en 2019</a>.',
   description="Gráfico de barras que muestra 3 dispositivos diferentes: en la parte superior, un Pixel 3, que tiene un tiempo de procesamiento pequeño tanto en el hilo principal como en el hilo worker de menos de 400 ms. Para un Moto G4 es de aproximadamente 900 ms en el subproceso principal y otros 300 ms en el subproceso del worker. Y la barra final es un Alcatel 1X 5059D con más de 2.000 ms en el subproceso principal y más de 500 ms en el subproceso del worker.",
   width=600,
@@ -296,6 +297,7 @@ En los últimos años, el ecosistema de JavaScript ha visto un aumento en las bi
 
 {{ figure_markup(
   image="fig12.png",
+  alt="Los frameworks más utilizados en el escritorio.",
   caption="Los frameworks más utilizados en el escritorio.",
   description="Gráfico de barras que muestra que el 4,6% de los sitios usan React, 2,0% AngiularJS, 1,8% Backbone.js, 0,8% Vue.js, 0,4% Knockout.js, 0,3% Zone.js, 0,3% Angular, 0,1% AMP, 0,1% Ember. js.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
@@ -419,6 +421,7 @@ Aunque es útil, hay una serie de razones por las cuales muchos sitios pueden no
 
 {{ figure_markup(
   image="fig18.png",
+  alt="Porcentaje de sitios que usan mapas fuente.",
   caption="Porcentaje de sitios que usan mapas fuente.",
   description="Gráfico de barras que muestra el 18% de los sitios de escritorio y el 17% de los sitios móviles utilizan mapas fuente.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"

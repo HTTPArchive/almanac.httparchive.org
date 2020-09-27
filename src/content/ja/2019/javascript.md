@@ -10,7 +10,7 @@ discuss: 1756
 results: https://docs.google.com/spreadsheets/d/1kBTglETN_V9UjKqK_EFmFjRexJnQOmLLr-I2Tkotvic/
 queries: 01_JavaScript
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-09-25T00:00:00.000Z
 ---
 
 ## 序章
@@ -69,6 +69,7 @@ V8のメインスレッドの処理時間を異なるパーセンタイルで分
 
 {{ figure_markup(
   image="js-processing-reddit.png",
+  alt="reddit.comのJavaScript処理時間。",
   caption='reddit.comのJavaScript処理時間。<a href="https://v8.dev/blog/cost-of-javascript-2019">2019年のJavaScriptのコスト</a>より。',
   description="3つの異なるデバイスを示す棒グラフ: 上部のPixel3は、メインスレッドとワーカースレッドの両方で400ms未満と量が少ないです。Moto G4の場合、メインスレッドで約900ms、ワーカースレッドでさらに300msです。そして最後のバーはAlcatel 1X 5059Dで、メインスレッドで2,000ms以上、ワーカースレッドで500ms以上となっています。",
   width=600,
@@ -298,6 +299,7 @@ JavaScriptのリソースを圧縮しているサイトはどれくらいある�
 
 {{ figure_markup(
   image="fig12.png",
+  alt="デスクトップで最もよく使われるフレームワーク",
   caption="デスクトップで最もよく使われるフレームワーク",
   description="Reactを使用しているサイトは4.6％、AngularJSを使用しているサイトは2.0％、Backbone.jsを使用しているサイトは1.8％、Vue.jsを使用しているサイトは0.8％、Knockout.jsを使用しているサイトは0.4％、Zone.jsを使用しているサイトは0.3％、Angularを使用しているサイトは0.3％、AMPを使用しているサイトは0.1％、Ember.jsを使用しているサイトは0.1％という棒グラフになっています。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=1699359221&format=interactive"
@@ -419,6 +421,7 @@ Atomics(0.38％)とSharedArrayBuffer(0.20％)は、使用されているペー�
 
 {{ figure_markup(
   image="fig18.png",
+  alt="ソースマップを使用しているサイトの割合。",
   caption="ソースマップを使用しているサイトの割合。",
   description="デスクトップサイトの18％、モバイルサイトの17％がソースマップを使用していることを示す棒グラフ。",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTpzDb9HGbdVvin6YPTOmw11qBVGGysltxmH545fUfnqIThAq878F_b-KxUo65IuXaeFVSnlmJ5K1Dm/pubchart?oid=906754154&format=interactive"

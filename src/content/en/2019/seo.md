@@ -10,7 +10,7 @@ discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/
 queries: 10_SEO
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-09-21T00:00:00.000Z
+last_updated: 2020-09-25T00:00:00.000Z
 ---
 
 ## Introduction
@@ -86,7 +86,7 @@ Meta tags allow us to give specific instructions and information to search engin
 #### Page titles
 
 {{ figure_markup(
-  caption="Percent of mobile pages that include a <code>&lt;title></code> tag.",
+  caption="Percent of mobile pages that include a <code>&lt;title&gt;</code> tag.",
   content="97%",
   classes="big-number"
 )

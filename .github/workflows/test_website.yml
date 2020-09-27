@@ -16,7 +16,7 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v2.3.2
+      uses: actions/checkout@v2.3.3
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.4.2
       with:
@@ -30,7 +30,7 @@ jobs:
     - name: Remove node modules to avoid linting errors
       run: rm -rf src/node_modules
     - name: Lint Generated HTML
-      uses: github/super-linter@v3.10.2
+      uses: github/super-linter@v3.11.0
       env:
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
