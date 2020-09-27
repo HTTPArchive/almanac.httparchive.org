@@ -32,7 +32,10 @@ SELECT
 FROM
   `httparchive.lighthouse.2020_08_01_mobile`,
   UNNEST(getAudits(report, "pwa")) AS audits
+WHERE
+  LENGTH(report) < 20000000  # necessary to avoid out of memory issues. Excludes 16 very large results
 GROUP BY
   audits.id
 ORDER BY
-  weight DESC
+  weight DESC,
+  audit.id
