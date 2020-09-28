@@ -26,7 +26,7 @@ SELECT
   COUNTIF(audits.score > 0) AS num_pages,
   COUNT(0) AS total,
   COUNTIF(audits.score > 0) / COUNT(0) AS pct,
-  MAX(audits.weight) AS weight,
+  AVG(audits.weight) AS weight,
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
