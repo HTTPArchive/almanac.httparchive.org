@@ -1,12 +1,12 @@
 #standardSQL
 # 21_06: Frequency of link tags that set both preconnect & dns-prefetch
-CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
+CREATE TEMPORARY FUNCTION preconnectsAndPrefetchesDns(payload STRING)
 RETURNS BOOLEAN
 LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
-  return !!almanac['link-nodes'].find((node) => {
+  return !!almanac['link-nodes'].nodes.find((node) => {
     var rel = node.rel.toLowerCase();
     return rel.includes("preconnect") && rel.includes("dns-prefetch");
   });
@@ -14,10 +14,13 @@ try {
   return false;
 }
 ''';
+
 SELECT
-    COUNTIF(getResourceHints(payload)) AS freq,
-    COUNT(0) AS total
+  _TABLE_SUFFIX AS client,
+  COUNTIF(preconnectsAndPrefetchesDns(payload)) AS freq,
+  COUNT(0) AS total,
+  COUNTIF(preconnectsAndPrefetchesDns(payload)) / COUNT(0) AS pct
 FROM
-    `httparchive.almanac.pages`
-WHERE
-    edition = "2020"
+  `httparchive.pages.2020_08_01_*`
+GROUP BY
+  client

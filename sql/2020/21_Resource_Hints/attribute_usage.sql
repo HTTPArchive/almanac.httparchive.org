@@ -1,6 +1,6 @@
 #standardSQL
 # 21_03: Attribute popularity for each hint.
-CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
+CREATE TEMPORARY FUNCTION getResourceHintAttrs(payload STRING)
 RETURNS ARRAY<STRUCT<name STRING, attribute STRING, value STRING>>
 LANGUAGE js AS '''
 var hints = new Set(['preload', 'prefetch', 'preconnect', 'prerender', 'dns-prefetch']);
@@ -8,7 +8,7 @@ var attributes = ['as', 'crossorigin'];
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
-  return almanac['link-nodes'].reduce((results, link) => {
+  return almanac['link-nodes'].nodes.reduce((results, link) => {
     var hint = link.rel.toLowerCase();
     if (!hints.has(hint)) {
       return results;
@@ -38,14 +38,14 @@ SELECT
   IFNULL(NORMALIZE_AND_CASEFOLD(hint.value), 'not set') AS value,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, hint.name) AS total,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, hint.name), 2) AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX, hint.name) AS pct
 FROM
-  `httparchive.almanac.pages` WHERE edition = "2020",
-  UNNEST(getResourceHints(payload)) AS hint
+  `httparchive.pages.2020_08_01_*`,
+  UNNEST(getResourceHintAttrs(payload)) AS hint
 GROUP BY
   client,
   name,
   attribute,
   value
 ORDER BY
-  freq DESC
+  pct DESC

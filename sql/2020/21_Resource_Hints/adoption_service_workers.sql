@@ -8,7 +8,7 @@ try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
   return hints.reduce((results, hint) => {
-    results[hint] = !!almanac['link-nodes'].find(link => link.rel.toLowerCase() == hint);
+    results[hint] = !!almanac['link-nodes'].nodes.find(link => link.rel.toLowerCase() == hint);
     return results;
   }, {});
 } catch (e) {
@@ -22,28 +22,30 @@ try {
 SELECT
   client,
   COUNTIF(hints.preload) AS preload,
-  ROUND(COUNTIF(hints.preload) * 100 / COUNT(0), 2) AS pct_preload,
+  COUNTIF(hints.preload) / COUNT(0) AS pct_preload,
   COUNTIF(hints.prefetch) AS prefetch,
-  ROUND(COUNTIF(hints.prefetch) * 100 / COUNT(0), 2) AS pct_prefetch,
+  COUNTIF(hints.prefetch) / COUNT(0) AS pct_prefetch,
   COUNTIF(hints.preconnect) AS preconnect,
-  ROUND(COUNTIF(hints.preconnect) * 100 / COUNT(0), 2) AS pct_preconnect,
+  COUNTIF(hints.preconnect) / COUNT(0) AS pct_preconnect,
   COUNTIF(hints.prerender) AS prerender,
-  ROUND(COUNTIF(hints.prerender) * 100 / COUNT(0), 2) AS pct_prerender,
+  COUNTIF(hints.prerender) / COUNT(0) AS pct_prerender,
   COUNTIF(hints.`dns-prefetch`) AS dns_prefetch,
-  ROUND(COUNTIF(hints.`dns-prefetch`) * 100 / COUNT(0), 2) AS pct_dns_prefetch
+  COUNTIF(hints.`dns-prefetch`) / COUNT(0) AS pct_dns_prefetch
 FROM (
   SELECT
     _TABLE_SUFFIX AS client,
     getResourceHints(payload) AS hints
   FROM
-    `httparchive.almanac.pages` as pages
-  JOIN
-    `httparchive.almanac.blink_features.features` as features
+    `httparchive.pages.2020_08_01_*`
+  JOIN (
+    SELECT
+      url
+    FROM
+      `httparchive.blink_features.features`
+    WHERE
+      yyyymmdd = '20200801' AND
+      feature = 'ServiceWorkerControlledPage')
   USING
-  (url)
-  WHERE
-    edition = "2020" AND
-    feature = 'ServiceWorkerControlledPage'
-)
+    (url))
 GROUP BY
   client

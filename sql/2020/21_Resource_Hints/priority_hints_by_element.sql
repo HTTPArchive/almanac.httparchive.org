@@ -5,7 +5,7 @@ RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var $ = JSON.parse(payload);
   var almanac = JSON.parse($._almanac);
-  return almanac['priority-hints'].map(el => el.tagName);
+  return almanac['priority-hints'].nodes.map(el => el.tagName);
 } catch (e) {
   return [];
 }
@@ -16,9 +16,9 @@ SELECT
   tag,
   COUNT(0) AS freq,
   SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS total,
-  ROUND(COUNT(0) * 100 / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX), 2) AS pct
+  COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY _TABLE_SUFFIX) AS pct
 FROM
-  `httparchive.almanac.pages` WHERE edition = "2020",
+  `httparchive.pages.2020_08_01_*`,
   UNNEST(getPriorityHints(payload)) AS tag
 WHERE
   tag IS NOT NULL
@@ -26,4 +26,4 @@ GROUP BY
   client,
   tag
 ORDER BY
-  freq DESC
+  pct DESC
