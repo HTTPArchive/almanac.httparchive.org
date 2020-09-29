@@ -7,7 +7,7 @@ SELECT
 FROM (
   SELECT
     client,
-    CAST(REGEXP_EXTRACT(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\W?strict-transport-security =([^,]+)'), r'(?i)max-age=\s*-?(\d+)') AS NUMERIC) AS max_age
+    SAFE_CAST(REGEXP_EXTRACT(REGEXP_EXTRACT(respOtherHeaders, r'(?i)\W?strict-transport-security =([^,]+)'), r'(?i)max-age=\s*-?(\d+)') AS NUMERIC) AS max_age
   FROM
     `httparchive.almanac.requests`
   WHERE
