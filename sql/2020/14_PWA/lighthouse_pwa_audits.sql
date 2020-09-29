@@ -22,11 +22,11 @@ return results;
 ''';
 
 SELECT
-  audits.id,
+  audits.id AS id,
   COUNTIF(audits.score > 0) AS num_pages,
   COUNT(0) AS total,
   COUNTIF(audits.score > 0) / COUNT(0) AS pct,
-  AVG(audits.weight) AS weight,
+  APPROX_QUANTILES(audits.weight, 100)[OFFSET(50)] AS median_weight,
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
 FROM
@@ -37,5 +37,5 @@ WHERE
 GROUP BY
   audits.id
 ORDER BY
-  weight DESC,
-  audit.id
+  median_weight DESC,
+  id
