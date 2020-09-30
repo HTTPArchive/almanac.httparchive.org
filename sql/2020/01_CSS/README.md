@@ -18,8 +18,4 @@ This file provides JS utility functions to be used by the queries that depend on
 
 - [Tracking issue](https://github.com/HTTPArchive/almanac.httparchive.org/issues/898)
 - [Draft doc](https://docs.google.com/document/d/1Cy9acip1ZQScoQEeds5-6l1FFFBJTJr4SheZiQxbj-Q/edit?usp=sharing)
-<<<<<<< HEAD
 - [Results sheet](https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/edit?usp=sharing)
-=======
-- [Results sheet](https://docs.google.com/spreadsheets/d/1sMWXWjMujqfAREYxNbG_t1fOJKYCA6ASLwtz4pBQVTw/edit?usp=sharing)
->>>>>>> 7bae53121009e65e78113a114313c8dfd5acdf18
