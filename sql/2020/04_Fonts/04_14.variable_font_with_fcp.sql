@@ -5,11 +5,11 @@ SELECT
   name,
   COUNT(DISTINCT page) AS freq_vf,
   total_page,
-  COUNT(DISTINCT page)*100/total_page AS pct_vf,
-  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_vf,
-  COUNTIF(NOT(slow_fcp>=0.25)
-      AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp_vf,
-  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_vf,
+  COUNT(DISTINCT page) * 100 / total_page AS pct_vf,
+  COUNTIF(fast_fcp >= 0.75) * 100 / COUNT(0) AS pct_good_fcp_vf,
+  COUNTIF(NOT(slow_fcp >= 0.25)
+      AND NOT(fast_fcp >= 0.75)) * 100 / COUNT(0) AS pct_ni_fcp_vf,
+  COUNTIF(slow_fcp >= 0.25) * 100 / COUNT(0) AS pct_poor_fcp_vf,
 FROM (
   SELECT
     *
@@ -39,7 +39,7 @@ JOIN (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm=202007)
+    date='2020-08-01')
 ON
   CONCAT(origin, '/')= url AND
   IF(device='desktop','desktop','mobile')=client

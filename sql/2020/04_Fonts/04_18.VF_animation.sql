@@ -22,7 +22,7 @@ SELECT
  CAST(REGEXP_EXTRACT(value, '\\d+') AS NUMERIC) AS num_axis,
  COUNT(DISTINCT page) AS freq,
  total_page,
- COUNT(DISTINCT page)*100/total_page AS pct
+ COUNT(DISTINCT page) * 100 / total_page AS pct
 FROM
  `httparchive.almanac.parsed_css`,
  UNNEST(getfontKeyframes(css)) AS value,

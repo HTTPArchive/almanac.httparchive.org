@@ -33,10 +33,10 @@ SELECT
   COUNT(DISTINCT page) AS freq_display,
   total_page,
   COUNT(DISTINCT page) * 100 / total_page AS pct_display,
-  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_display,
-  COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp_display,
-  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_display,
+  COUNTIF(fast_fcp >= 0.75) * 100 / COUNT(0) AS pct_good_fcp_display,
+  COUNTIF(NOT(slow_fcp >= 0.25)
+    AND NOT(fast_fcp >= 0.75)) * 100 / COUNT(0) AS pct_ni_fcp_display,
+  COUNTIF(slow_fcp >= 0.25)*100 / COUNT(0) AS pct_poor_fcp_display,
 FROM (
   SELECT DISTINCT
     client,
@@ -46,7 +46,7 @@ FROM (
     `httparchive.almanac.parsed_css`
     LEFT JOIN UNNEST(getFontDisplay(css)) AS font_display
   WHERE
-    date = '2020-08-01')
+    date='2020-08-01')
 JOIN (
 SELECT
 _TABLE_SUFFIX AS client,
@@ -66,7 +66,7 @@ JOIN (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm=202008)
+    date='2020-08-01')
 ON
   CONCAT(origin, '/')=page AND
   IF(device='desktop','desktop','mobile')=client

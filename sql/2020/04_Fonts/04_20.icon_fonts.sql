@@ -21,7 +21,7 @@ SELECT
  NET.HOST(url) AS url,
  COUNT(DISTINCT page) AS freq_ficon,
  total_page,
- COUNT(DISTINCT page)*100/total_page AS pct_ficon
+ COUNT(DISTINCT page) * 100 / total_page AS pct_ficon
 FROM
  `httparchive.almanac.parsed_css`
 JOIN

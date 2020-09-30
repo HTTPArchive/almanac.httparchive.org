@@ -1,5 +1,3 @@
-#standardSQL
-#font_resource_hints_with_fcp(??NoResult)
 CREATE TEMPORARY FUNCTION getResourceHints(payload STRING)
 RETURNS ARRAY < STRUCT < name STRING, href STRING >>
     LANGUAGE js AS '''
@@ -19,7 +17,7 @@ try {
         return results;
     }, []);
 } catch (e) {
-    return [null];
+    return [];
 }
 ''';
 SELECT
@@ -27,56 +25,35 @@ SELECT
   name,
   COUNT(DISTINCT page) AS freq_hints,
   total_page,
-  COUNT(DISTINCT page)*100/total_page AS pct_hints,
-  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_hints,
-  COUNTIF(NOT(slow_fcp>=0.25)
-    AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp_hints,
-  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_hints,
+  COUNT(DISTINCT page) / total_page AS pct_hints,
+  COUNTIF(fast_fcp >= 0.75) / COUNT(0) AS pct_good_fcp_hints,
+  COUNTIF(NOT(slow_fcp >= 0.25) AND NOT(fast_fcp >= 0.75)) / COUNT(0) AS pct_ni_fcp_hints,
+  COUNTIF(slow_fcp >= 0.25) / COUNT(0) AS pct_poor_fcp_hints
 FROM (
-  SELECT
+  SELECT DISTINCT
     _TABLE_SUFFIX AS client,
     url AS page,
+    COUNT(DISTINCT url) OVER (PARTITION BY _TABLE_SUFFIX) AS total_page,
     hint.name
   FROM
     `httparchive.pages.2020_08_01_*`
-    LEFT JOIN UNNEST(getResourceHints(payload)) AS hint)
-LEFT JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    url AS page
-  FROM
-    `httparchive.summary_requests.2020_08_01_*`
-  WHERE
-    type='font')
-USING
-  (client, page)
+  LEFT JOIN
+    UNNEST(getResourceHints(payload)) AS hint)
 JOIN (
   SELECT DISTINCT
-    origin, device,
+    IF(device = 'desktop', 'desktop', 'mobile') AS client,
+    CONCAT(origin, '/') AS page,
     fast_fcp,
-    slow_fcp,
+    slow_fcp
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    date='2020-08-01')
-ON
-  CONCAT(origin, '/')=page AND
-  IF(device='desktop','desktop','mobile')=client
-JOIN (
-  SELECT
-    _TABLE_SUFFIX AS client,
-    COUNT(0) AS total_page
-  FROM
-    `httparchive.summary_pages.2020_08_01_*`
-  GROUP BY
-    _TABLE_SUFFIX)
+    yyyymm = 202008)
 USING
-  (client)
+  (client, page)
 GROUP BY
   client,
   name,
   total_page
 ORDER BY
-  client,
-  name,
-  freq_hints DESC
+  pct_hints DESC

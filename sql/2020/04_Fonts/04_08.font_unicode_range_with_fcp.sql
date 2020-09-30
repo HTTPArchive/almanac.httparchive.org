@@ -35,10 +35,10 @@ SELECT
   COUNT(0) AS freq_range,
   total_page,
   COUNT(0) * 100 / total_page AS pct_range,
-  COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_unicode,
-  COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75))*100/COUNT(0) AS pct_ni_fcp_unicode,
-  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_unicode,
+  COUNTIF(fast_fcp >= 0.75) * 100 / COUNT(0) AS pct_good_fcp_unicode,
+  COUNTIF(NOT(slow_fcp >= 0.25)
+    AND NOT(fast_fcp >= 0.75))*100 / COUNT(0) AS pct_ni_fcp_unicode,
+  COUNTIF(slow_fcp >= 0.25)*100 / COUNT(0) AS pct_poor_fcp_unicode
 FROM (
   SELECT
     client,
@@ -59,11 +59,11 @@ JOIN (
     DISTINCT origin,
     device,
     fast_fcp,
-    slow_fcp,
+    slow_fcp
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm=202008)
+    date='2020-08-01')
 ON
   CONCAT(origin, '/')=page
   AND

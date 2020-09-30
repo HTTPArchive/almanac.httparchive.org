@@ -36,8 +36,7 @@ SELECT
   COUNT(DISTINCT page)*100/total_page AS pct_subset,
   COUNTIF(fast_fcp>=0.75)*100/COUNT(0) AS pct_good_fcp_subset,
   COUNTIF(NOT(slow_fcp >=0.25)
-    AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_ni_fcp_subset,
-  COUNTIF(slow_fcp>=0.25)*100/COUNT(0) AS pct_poor_fcp_subset,
+    AND NOT(fast_fcp>=0.75)) *100/COUNT(0) AS pct_ni_fcp_subset 
 FROM (
   SELECT
     *
@@ -50,11 +49,11 @@ JOIN (
   SELECT DISTINCT
     origin, device,
     fast_fcp,
-    slow_fcp,
+    slow_fcp
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm=202008)
+    date='2020-08-01')
 ON
   CONCAT(origin, '/')=page AND
   IF(device='desktop','desktop','mobile')=client

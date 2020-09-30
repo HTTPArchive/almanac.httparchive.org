@@ -16,7 +16,7 @@ FROM
     NET.HOST(url) AS url_font,
     COUNT(0) AS freq_font,
     COUNT(0) OVER (PARTITION BY country) AS country_total,
-    COUNT(0)/COUNT(0) OVER (PARTITION BY country) AS pct_country,
+    COUNT(0) / COUNT(0) OVER (PARTITION BY country) AS pct_country,
     ROW_NUMBER() OVER (PARTITION BY client, country ORDER BY COUNT(0) DESC) AS sort_row
 
   FROM
