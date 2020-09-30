@@ -6,7 +6,7 @@ The 2020 data in the [`parsed_css`](https://console.cloud.google.com/bigquery?p=
 
 When prototyping queries, it's advisable to use the [`parsed_css_1k`](https://console.cloud.google.com/bigquery?p=httparchive&d=almanac&t=parsed_css_1k&page=table) table instead, which only contains 1000 rows for easier testing. Make sure to switch this back to the full table when saving the results for analysis.
 
-## [Rework utils](../../lib/rework-utils.js)
+## [CSS utils](../../lib/css-utils.js)
 
 - **Source**: https://github.com/LeaVerou/rework-utils/tree/master/src
 - **Playground**: https://projects.verou.me/rework-utils/
