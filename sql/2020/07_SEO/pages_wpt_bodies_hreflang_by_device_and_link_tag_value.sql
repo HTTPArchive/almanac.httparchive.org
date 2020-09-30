@@ -11,7 +11,9 @@ CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
     hreflangs ARRAY<STRING>
 > LANGUAGE js AS '''
-var result = {};
+var result = {
+hreflangs: []
+};
 
 try {
     var wpt_bodies = JSON.parse(wpt_bodies_string);
@@ -19,7 +21,7 @@ try {
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
     if (wpt_bodies.hreflangs && wpt_bodies.hreflangs.rendered && wpt_bodies.hreflangs.rendered.values) {
-        result.hreflangs = wpt_bodies.hreflangs.rendered.values;
+        result.hreflangs = wpt_bodies.hreflangs.rendered.values.map(v=> v); // seems to fix a coercion issue!
     }
 
 } catch (e) {}
@@ -48,5 +50,10 @@ FROM
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX)
     ), UNNEST(wpt_bodies_info.hreflangs) AS hreflang
-GROUP BY total, hreflang, client
-ORDER BY count, client DESC
+GROUP BY 
+total, 
+hreflang, 
+client
+ORDER BY 
+count DESC, 
+client DESC

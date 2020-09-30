@@ -30,7 +30,7 @@ try {
   
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
-    if (markup.images) {
+    if (markup.images && markup.images.img && markup.images.img.loading) {
       result.loading = getKey(markup.images.img.loading);
     }
 } catch (e) {}

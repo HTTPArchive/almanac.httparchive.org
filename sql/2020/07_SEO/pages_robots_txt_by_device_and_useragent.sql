@@ -11,7 +11,9 @@ CREATE TEMPORARY FUNCTION get_robots_txt_info(robots_txt_string STRING)
 RETURNS STRUCT<
   user_agents ARRAY<STRING>
 > LANGUAGE js AS '''
-var result = {};
+var result = {
+  user_agents: []
+};
 try {
     var robots_txt = JSON.parse(robots_txt_string);
  
