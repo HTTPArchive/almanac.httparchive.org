@@ -13,15 +13,21 @@ FROM
   UNNEST(REGEXP_EXTRACT_ALL(LOWER(resp_vary), r'([a-z][^,\s="\']*)')) AS header_name
 JOIN (
   SELECT
+    date,
     client,
     COUNT(0) AS all_requests,
     COUNTIF(TRIM(resp_vary) != "") AS total_with_vary
   FROM
     `httparchive.almanac.requests`
+  WHERE
+    date = '2019-07-01'
   GROUP BY
+    date,
     client
 )
-USING (client)
+USING (date, client)
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client,
   all_requests,

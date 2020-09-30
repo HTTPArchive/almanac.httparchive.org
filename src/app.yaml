@@ -1,4 +1,4 @@
-runtime: python37
+runtime: python38
 entrypoint: gunicorn -b :$PORT main:app
 default_expiration: 3h
 
