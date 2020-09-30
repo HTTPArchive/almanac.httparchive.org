@@ -11,13 +11,15 @@ CREATE TEMPORARY FUNCTION get_almanac_info(almanac_string STRING)
 RETURNS STRUCT<
     videos_total INT64
 > LANGUAGE js AS '''
-var result = {};
+var result = {
+  videos_total: 0
+};
 try {
     var almanac = JSON.parse(almanac_string); 
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return result;
 
-    if (almanac.videos) {
+    if (almanac.videos && almanac.videos.total) {
       result.videos_total = almanac.videos.total;
     }
 } catch (e) {}

@@ -50,6 +50,11 @@ FROM
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX)
     ), UNNEST(wpt_bodies_info.jsonld_and_microdata_types) AS type
-GROUP BY total, type, client
-HAVING count > 100
-ORDER BY count DESC
+GROUP BY 
+total, 
+type, 
+client
+HAVING 
+count > 100
+ORDER BY 
+count DESC

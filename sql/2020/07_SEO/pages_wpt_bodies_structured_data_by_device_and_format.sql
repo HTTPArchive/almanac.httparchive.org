@@ -11,7 +11,9 @@ CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_string STRING)
 RETURNS STRUCT<
     items_by_format ARRAY<STRING>
 > LANGUAGE js AS '''
-var result = {};
+var result = {
+items_by_format: []
+};
 
 //Function to retrieve only keys if value is > 0
 function getKey(dict){
@@ -60,4 +62,9 @@ FROM
   GROUP BY _TABLE_SUFFIX) # to get an accurate total of pages per device. also seems fast
 USING (_TABLE_SUFFIX)
     ), UNNEST(wpt_bodies_info.items_by_format) AS format
-GROUP BY total, format, client
+GROUP BY 
+total, 
+format, 
+client
+ORDER BY 
+count DESC
