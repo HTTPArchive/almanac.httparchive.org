@@ -18,7 +18,15 @@ RETURNS STRUCT<
   has_rel_amphtml_tag BOOL,
   has_html_amp_emoji_attribute BOOL
 > LANGUAGE js AS '''
-var result = {};
+var result = {
+  images_img_total: 0,
+  images_alt_missing_total: 0,
+  images_alt_blank_total: 0,
+  images_alt_present_total: 0,
+  has_html_amp_attribute: false, 
+  has_rel_amphtml_tag: false,
+  has_html_amp_emoji_attribute: false
+};
 try {
     var markup = JSON.parse(markup_string);
 
@@ -26,13 +34,15 @@ try {
 
     if (markup.images) {
       if (markup.images.img) {
-        result.images_img_total = markup.images.img.total;
-
-      }
-      if (markup.images.alt) {
-          result.images_alt_missing_total = markup.images.alt.missing;
-          result.images_alt_blank_total = markup.images.alt.blank;
-          result.images_alt_present_total = markup.images.alt.present; // present does not include blank
+        var img = markup.images.img;
+        result.images_img_total = img.total;
+   
+        if (img.alt) {
+          var alt = img.alt;
+            result.images_alt_missing_total = alt.missing;
+            result.images_alt_blank_total = alt.blank;
+            result.images_alt_present_total = alt.present; // present does not include blank
+        }
       }
     }
 
