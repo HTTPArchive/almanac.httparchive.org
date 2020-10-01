@@ -35,7 +35,7 @@ FROM
     url,
     get_media_info(JSON_EXTRACT_SCALAR(payload, '$._media')) AS media_info
   FROM
-    `httparchive.pages.2020_08_01_*`
+    `httparchive.pages.2020_08_01_*` where url in ('http://hcmcons.vn/', 'https://google.com/', 'https://www.amazon.com/')
   )
 GROUP BY
   client;
