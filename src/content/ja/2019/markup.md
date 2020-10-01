@@ -5,6 +5,7 @@ title: マークアップ
 description: 使われている要素、カスタム要素、価値、製品、及び一般的なユースケースについて抑えてある 2019 Web Almanac マークアップの章
 authors: [bkardell]
 reviewers: [zcorpan, tomhodgins, matthewp]
+analysts: [rviscomi]
 translators: [MSakamaki]
 discuss: 1758
 results: https://docs.google.com/spreadsheets/d/1WnDKLar_0Btlt9UgT53Giy2229bpV4IM2D_v6OM_WzA/

@@ -5,6 +5,7 @@ title: Page Weight
 description: ページの重さが重要な理由、帯域幅、複雑なページ、経時的なページの重み、ページ要求、およびファイル形式をカバーする2019 Web Almanacのページの重さの章。
 authors: [tammyeverts, khempenius]
 reviewers: [paulcalvano]
+analysts: [khempenius]
 translators: [ksakae]
 discuss: 1773
 results: https://docs.google.com/spreadsheets/d/1nWOo8efqDgzmA0wt1ipplziKhlReAxnVCW1HkjuFAxU/

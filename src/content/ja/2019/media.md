@@ -5,6 +5,7 @@ title: メディア
 description: 2019年版Web Almanacのメディアの章では、画像ファイルのサイズとフォーマット、レスポンシブ画像、クライアントのヒント、遅延読み込み、アクセシビリティ、動画を取り上げています。
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
+analysts: [dougsillars, rviscomi]
 translators: [ksakae]
 discuss: 1759
 results: https://docs.google.com/spreadsheets/d/1hj9bY6JJZfV9yrXHsoCRYuG8t8bR-CHuuD98zXV7BBQ/

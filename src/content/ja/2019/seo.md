@@ -5,6 +5,7 @@ title: SEO
 description: コンテンツ、メタタグ、インデクサビリティ、リンク、速度、構造化データ、国際化、SPA、AMP、セキュリティをカバーする2019 Web AlmanacのSEOの章。
 authors: [ymschaap, rachellcostello, AVGP]
 reviewers: [clarkeclark, andylimn, AymenLoukil, catalinred, mattludwig]
+analysts: [ymschaap]
 translators: [MSakamaki]
 discuss: 1765
 results: https://docs.google.com/spreadsheets/d/1uARtBWwz9nJOKqKPFinAMbtoDgu5aBtOhsBNmsCoTaA/

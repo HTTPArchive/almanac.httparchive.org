@@ -5,6 +5,7 @@ title: モバイルウェブ
 description: 2019年Web AlmanacのモバイルWebの章では、ページの読み込み、テキストコンテンツ、拡大縮小、ボタンやリンク、フォームへの記入のしやすさなどをカバーしています。
 authors: [obto]
 reviewers: [AymenLoukil, hyperpress]
+analysts: [ymschaap, rviscomi]
 translators: [ksakae]
 discuss: 1767
 results: https://docs.google.com/spreadsheets/d/1dPBDeHigqx9FVaqzfq7CYTz4KjllkMTkfq4DG4utE_g/
