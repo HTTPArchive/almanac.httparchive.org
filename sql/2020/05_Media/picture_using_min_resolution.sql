@@ -1,12 +1,11 @@
 #standardSQL
-# images with srcset descriptor_x descriptor_w
+# picture using min resolution
 
 # returns all the data we need from _media
 CREATE TEMPORARY FUNCTION get_media_info(media_string STRING)
 RETURNS STRUCT<
-  num_srcset_all INT64, 
-  num_srcset_descriptor_x INT64,
-  num_srcset_descriptor_w INT64
+  num_picture_using_min_resolution  INT64, 
+  num_picture_img INT64
 > LANGUAGE js AS '''
 var result = {};
 try {
@@ -14,9 +13,8 @@ try {
 
     if (Array.isArray(media) || typeof media != 'object') return result;
 	
-    result.num_srcset_all = media.num_srcset_all;
-    result.num_srcset_descriptor_x = media.num_srcset_descriptor_x;
-	result.num_srcset_descriptor_w = media.num_srcset_descriptor_w;
+    result.num_picture_using_min_resolution = media.num_picture_using_min_resolution;
+    result.num_picture_img = media.num_picture_img;
 
 } catch (e) {}
 return result;
@@ -25,9 +23,8 @@ return result;
 SELECT
   client,
   COUNT(0) AS total_pages,
-  COUNTIF(media_info.num_srcset_all > 0) AS srcset_all,
-  COUNTIF(media_info.num_srcset_descriptor_x > 0) AS srcset_descriptor_x,
-  COUNTIF(media_info.num_srcset_descriptor_w > 0) AS srcset_descriptor_w
+  COUNTIF(media_info.num_picture_img > 0) AS picture_all,
+  COUNTIF(media_info.num_picture_using_min_resolution > 0) AS picture_min_resolution
 FROM
   (
   SELECT
