@@ -107,6 +107,15 @@ window.discussion_url="https://discuss.httparchive.org/t/{{ metadata.get('discus
   {% endfor %}{{ self.translated_by_after() }}
   </div>
   {% endif %}
+
+  {% if metadata.get('analysts') and metadata.get('analysts') | length >= 1 %}
+  <div class="byline analysts">{{ self.analysis_by_before() }}
+  {% for analyst in metadata.get('analysts') %}
+    <a class="analyst" href="{{ url_for('contributors', year=year, lang=lang, _anchor=analyst) }}">{{ config.contributors[analyst].name if analyst in config.contributors else analyst }}</a>{{ self.comma() if not loop.last and loop.length > 2 }}
+    {% if loop.index == loop.length - 1 %}{{ self.and() }}{% endif %}
+  {% endfor %}{{ self.analysis_by_after() }}
+  </div>
+  {% endif %}
 {% endmacro %}
 
 {% macro render_authors() %}
