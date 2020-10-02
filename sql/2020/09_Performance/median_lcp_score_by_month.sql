@@ -13,7 +13,8 @@ FROM (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    date >= "2019-08-01"
+    date >= "2020-09-01"
+    AND date <= "2020-09-30"
     AND device IN ('desktop','phone')
 )
 GROUP BY

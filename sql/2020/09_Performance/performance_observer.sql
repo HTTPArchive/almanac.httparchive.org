@@ -13,8 +13,9 @@ FROM (
   FROM
     `httparchive.almanac.summary_response_bodies`
   WHERE
-    date = "2019-08-01"
-    AND type = "script"
+    type = "script"
+    AND date >= "2020-09-01"
+    AND date <= "2020-09-30"
   GROUP BY
     client,
     page)

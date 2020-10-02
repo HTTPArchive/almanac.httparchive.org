@@ -29,7 +29,7 @@ WITH
     first_contentful_paint,
     experimental.time_to_first_byte AS time_to_first_byte
   FROM
-    `chrome-ux-report.all.202008`
+    `chrome-ux-report.all.202009`
   ),
   cls AS (
   SELECT
