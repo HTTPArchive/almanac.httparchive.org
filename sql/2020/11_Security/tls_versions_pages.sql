@@ -8,14 +8,13 @@ SELECT
   COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct,
 FROM (
   SELECT
-    _TABLE_SUFFIX AS client,
+    client,
     JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tls_version
   FROM
-    `httparchive.requests.2020_08_01_*`
-  JOIN
-    `httparchive.summary_requests.2020_08_01_*`
-  USING (_TABLE_SUFFIX, url)
-  WHERE firstHtml = true
+    `httparchive.almanac.requests`
+  WHERE 
+    date = '2020-08-01' AND
+    firstHtml = true
 )
 WHERE
   tls_version IS NOT NULL

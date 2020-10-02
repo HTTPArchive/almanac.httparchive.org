@@ -10,8 +10,8 @@ CREATE TEMPORARY FUNCTION getHeader(headers STRING, headername STRING)
   }
   return null;
 ''';
-CREATE TEMP FUNCTION array_unique(arr ANY TYPE) AS (
-  (SELECT ARRAY_AGG(DISTINCT x) FROM UNNEST(arr) as x)
+CREATE TEMP FUNCTION getNumUniqueHosts(str STRING) AS (
+  (SELECT COUNT(DISTINCT x) FROM UNNEST(REGEXP_EXTRACT_ALL(str, r'(?i)\W(https*://[^\s;]+)[\s;]')) as x)
 );
 
 SELECT
@@ -22,7 +22,7 @@ SELECT
   COUNTIF(csp_header IS NOT NULL) / COUNT(0) AS pct_csp_headers,
   COUNT(DISTINCT csp_header) AS num_unique_csp_headers,
   APPROX_QUANTILES(LENGTH(csp_header), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS csp_header_length,
-  APPROX_QUANTILES(ARRAY_LENGTH(array_unique(REGEXP_EXTRACT_ALL(csp_header, r'(?i)\W(https*://[^\s;]+)[\s;]'))), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS unique_allowed_hosts,
+  APPROX_QUANTILES(getNumUniqueHosts(csp_header), 1000 IGNORE NULLS)[OFFSET(percentile * 10)] AS unique_allowed_hosts,
 FROM (
   SELECT
     client,
