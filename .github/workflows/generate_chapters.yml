@@ -41,7 +41,7 @@ jobs:
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/update_timestamps_versions.sh
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v1.4.2
+      uses: actions/setup-node@v2.1.2
       with:
         node-version: 12.x
     - name: Set up Python 3.8
