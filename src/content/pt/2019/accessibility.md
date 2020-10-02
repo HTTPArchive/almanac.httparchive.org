@@ -188,7 +188,7 @@ Se você gostaria de ver um skip link em ação, você pode! Basta fazer uma pes
 {{ figure_markup(
   image="example-of-a-skip-link-on-google.com.png",
   caption="Qual é a aparência de um link para pular no google.com.",
-  description="Captura de tela da página de resultados de pesquisa do Google para pesquisar 'arquivo http'. O link visível 'Pular para o conteúdo principal' é cercado por um destaque azul e uma caixa amarela sobreposta com uma seta vermelha apontando para o link de pular" link em google.com '.",
+  description="Captura de tela da página de resultados de pesquisa do Google para pesquisar (arquivo http). O link visível (Pular para o conteúdo principal) é cercado por um destaque azul e uma caixa amarela sobreposta com uma seta vermelha apontando para o link de pular (link em google.com).",
   width=600,
   height=333
   )
@@ -254,7 +254,7 @@ Atualmente, 46,91% das páginas usam pelo menos um atributo de função ARIA. Na
 {{ figure_markup(
   image="fig9.png",
   caption="Top 10 papéis ária.",
-  description="Gráfico de barras verticais com barras para cada tipo de função vs porcentagem de sites usando variando de 0 a 25 em incrementos de 5. Navegação: 20,4%; pesquisa: 15,49%; principal: 14,39%; banner: 13,62%; informações de conteúdo: 11,23 %; botão: 10,59%; diálogo: 7,87%; complementar: 6,06%; menu: 4,71%; formulário: 3,75%",
+  description="Gráfico de barras verticais com barras para cada tipo de função vs porcentagem de sites usando variando de 0 a 25 em incrementos de 5. Navegação: 20,4%; pesquisa: 15,49%; principal: 14,39%; banner: 13,62%; informações de conteúdo: 11,23%; botão: 10,59%; diálogo: 7,87%; complementar: 6,06%; menu: 4,71%; formulário: 3,75%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=176877741&format=interactive"
   )
 }}
