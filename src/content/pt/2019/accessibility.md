@@ -141,8 +141,8 @@ Encontramos apenas uma em cada quatro páginas (26,03%) que inclui um marco prin
 
 {{ figure_markup(
   image="fig4.png",
-  caption="Porcentagem de páginas pelo número de pontos de referência 'principais'.",
-  description="Gráfico de barras verticais exibindo dados percentuais, variando de 0 a 80 em incrementos de 20, contra barras que representam o número de pontos de referência" principais "por página de 0 a 4. Fonte: Arquivo HTTP (julho de 2019). Zero: 73,97 %; Um: 17,97%; Dois: 7,41%; Três: 0,15%; 4: 0,06%.",
+  caption="Porcentagem de páginas pelo número de pontos de referência principais.",
+  description="Gráfico de barras verticais exibindo dados percentuais, variando de 0 a 80 em incrementos de 20, contra barras que representam o número de pontos de referência principais por página de 0 a 4. Fonte: Arquivo HTTP (julho de 2019). Zero: 73,97 %; Um: 17,97%; Dois: 7,41%; Três: 0,15%; 4: 0,06%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=1420590464&format=interactive"
   )
 }}
