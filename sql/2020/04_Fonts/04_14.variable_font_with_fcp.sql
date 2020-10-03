@@ -20,13 +20,13 @@ FROM (
     LEFT JOIN UNNEST(REGEXP_EXTRACT_ALL(JSON_EXTRACT(payload,
         '$._font_details.table_sizes'), '(?i)(gvar)')) AS axisValue
   WHERE
-    date='2020-08-01')
+    date='2020-09-01')
 JOIN (
   SELECT
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_page
   FROM
-    `httparchive.summary_pages.2020_08_01_*`
+    `httparchive.summary_pages.2020_09_01_*`
   GROUP BY
     _TABLE_SUFFIX) 
 USING

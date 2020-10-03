@@ -24,14 +24,14 @@ JOIN (
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total_page
   FROM
-    `httparchive.summary_pages.2020_08_01_*`
+    `httparchive.summary_pages.2020_09_01_*`
   GROUP BY
     _TABLE_SUFFIX)
 USING
   (client)      
 WHERE
   type = 'font'
-  AND date='2020-08-01'
+  AND date='2020-09-01'
 GROUP BY
   client,
   name,

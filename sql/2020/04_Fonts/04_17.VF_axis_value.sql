@@ -26,7 +26,7 @@ SELECT
  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_axis,
  COUNT(0)/SUM(COUNT(0)) OVER (PARTITION BY client) AS pct
 FROM 
- `httparchive.almanac.parsed_css_*`,
+ `httparchive.almanac.parsed_css`,
  UNNEST(getFontVariationSettings(css)) AS value,
  UNNEST(SPLIT(value, ',')) AS values
 WHERE 
