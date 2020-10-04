@@ -14,13 +14,13 @@ try {
 ''';
 SELECT
   client,
-  total_sites,
   sites_with_non_empty_alt,
   sites_with_file_extension_alt,
   total_alts_with_file_extensions,
 
   # Of sites with a non-empty alt, what % have an alt with a file extension
   sites_with_file_extension_alt / sites_with_non_empty_alt AS pct_sites_with_file_extension_alt,
+  # Given a random alt, how often will it end in a file extension
   total_alts_with_file_extensions / total_non_empty_alts AS pct_alts_with_file_extension,
 
   extension_stat.extension AS extension,
@@ -28,17 +28,16 @@ SELECT
   # Of sites with a non-empty alt, what % have an alt with this file extension
   COUNT(0) / sites_with_non_empty_alt AS pct_applicable_sites_using,
 
+  # Of sites with a non-empty alt, what % have an alt with this file extension
   SUM(extension_stat.total) AS total_occurances,
-  SUM(extension_stat.total) / total_alts_with_file_extensions AS pct_total_occurances,
-
-  COUNT(0) / total_sites AS pct_sites_using
+  # Given a random alt ending in a file extension, how often will it end in this file extension
+  SUM(extension_stat.total) / total_alts_with_file_extensions AS pct_total_occurances
 FROM
   `httparchive.pages.2020_08_01_*`,
   UNNEST(getUsedExtensions(JSON_EXTRACT_SCALAR(payload, '$._a11y'))) AS extension_stat
 LEFT JOIN (
   SELECT
     client,
-    COUNT(0) AS total_sites,
     COUNTIF(total_non_empty_alt > 0) AS sites_with_non_empty_alt,
     COUNTIF(total_with_file_extension > 0) AS sites_with_file_extension_alt,
 
@@ -58,7 +57,6 @@ LEFT JOIN (
 ON (_TABLE_SUFFIX = client)
 GROUP BY
   client,
-  total_sites,
   sites_with_non_empty_alt,
   sites_with_file_extension_alt,
   total_non_empty_alts,
@@ -66,4 +64,4 @@ GROUP BY
   extension
 ORDER BY
   client,
-  pct_sites_using DESC
+  total_occurances DESC

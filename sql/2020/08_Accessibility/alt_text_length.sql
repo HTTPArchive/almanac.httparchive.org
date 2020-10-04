@@ -2,10 +2,9 @@
 # Alt text length
 SELECT
   client,
-  MAX(alt_length) as max_alt_length,
 
   percentile,
-  APPROX_QUANTILES(alt_length, 1000)[SAFE_ORDINAL(percentile * 10)] AS alt_length
+  APPROX_QUANTILES(alt_length, 1000)[OFFSET(percentile * 10)] AS alt_length
 FROM
   (
     SELECT
@@ -17,9 +16,9 @@ FROM
         JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._almanac'), '$.images.alt_lengths')
       ) AS alt_length_string
   ),
-  UNNEST([10, 25, 50, 75, 90]) AS percentile
+  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  alt_length > 0 AND alt_length IS NOT NULL
+  alt_length > 0
 GROUP BY
   percentile,
   client

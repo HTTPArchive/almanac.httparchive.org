@@ -2,7 +2,6 @@
 # Anchors with role='button'
 SELECT
   client,
-  COUNT(0) AS total_sites,
   COUNTIF(total_anchors > 0) AS sites_with_anchors,
   COUNTIF(total_anchors_with_role_button > 0) AS sites_with_anchor_role_button,
 

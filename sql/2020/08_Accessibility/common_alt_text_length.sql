@@ -10,7 +10,7 @@ SELECT
 FROM (
   SELECT
     client,
-    IF(alt_length >= 2000, 2000, alt_length) AS alt_length_clipped
+    LEAST(alt_length, 2000) AS alt_length_clipped
   FROM (
     SELECT
       _TABLE_SUFFIX AS client,
