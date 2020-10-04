@@ -1,5 +1,5 @@
 #standardSQL
-# 12_03: Most used apps
+# Most used apps
 SELECT
   total_sites,
 

@@ -1,5 +1,5 @@
 #standardSQL
-# 12_01: 4G, 3G and 2G distribution
+# ECT distribution
 SELECT
   percentile,
   APPROX_QUANTILES(_4GDensity, 1000)[SAFE_ORDINAL(percentile * 10)] AS _4GDensity,
