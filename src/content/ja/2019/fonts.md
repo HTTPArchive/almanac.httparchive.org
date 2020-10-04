@@ -165,7 +165,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 ここでのGoogle Fontsの優位性は、同時に驚くべきことであると同時に意外性のないものであった。期待していたという点では予想外でしたが、サービスの圧倒的な人気の高さには驚きました。フォントリクエストの75％というのは驚異的だ。TypeKitは一桁台の遠い2位で、Bootstrapライブラリがさらに遠い3位を占めていました。
 
 {{ figure_markup(
-  caption="ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code> 。",
+  caption="ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code> 。",
   content="29%",
   classes="big-number"
 )
@@ -178,7 +178,7 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 - あるいは、超ありえないシナリオにまで踏み込んでみたいのであれば、多くの人が代わりに[HTTP `Link:`ヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP)を使ってGoogle Fontsを使っているということになるかもしれません。
 
 {{ figure_markup(
-  caption="ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code>。",
+  caption="ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code>。",
   content="0.4%",
   classes="big-number"
 )

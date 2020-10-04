@@ -86,7 +86,7 @@ SEOとアクセシビリティのための`H1`と見出しの処理に関する�
 #### ページのタイトル
 
 {{ figure_markup(
-  caption="<code>&lt;title&gt;</code> タグを含むモバイルページの割合。",
+  caption="<code><title></code> タグを含むモバイルページの割合。",
   content="97%",
   classes="big-number"
 )

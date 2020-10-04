@@ -288,7 +288,7 @@ The utility of `srcset` is usually dependent on the precision of the `sizes` med
  {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
   alt="Top patterns of img sizes.",
-  caption="Top patterns of <code>&lt;img sizes&gt;</code>.",
+  caption="Top patterns of <code><img sizes></code>.",
   description="Bar chart showing 11.3 million images use 'img sizes=\"(max-width: 300px) 100vw, 300px\"', 1.60 million use 'auto', 1.00 million use 'img sizes=\"(max-width: 767px) 89vw...etc.\"', 0.23 million use '100vw' and 0.13 million use '300px'",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
@@ -303,7 +303,7 @@ To enable Client Hints, the web page must signal to the browser using either an 
 {{ figure_markup(
   image="fig17_usage_of_accept-ch_http_v_html.png",
   alt="Usage of the Accept-CH header versus the equivalent meta tag.",
-  caption="Usage of the <code>Accept-CH</code> header versus the equivalent <code>&lt;meta&gt;</code> tag.",
+  caption="Usage of the <code>Accept-CH</code> header versus the equivalent <code><meta></code> tag.",
   description="Bar chart showing 71% use the 'meta http-equiv', 30% use the 'Accept-CH' HTTP header and 1% use both.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
   )

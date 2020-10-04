@@ -165,7 +165,7 @@ Tenga en cuenta que, si bien `preload` sería una buena adición para cargar los
 El dominio de Google Fonts aquí fue simultáneamente sorprendente y no sorprendente. No fue sorprendente porque esperaba que el servicio fuera el más popular y sorprendente por el dominio absoluto de su popularidad. El 75% de las solicitudes de fuentes es asombroso. TypeKit fue un distante segundo lugar de un solo dígito, con la biblioteca Bootstrap representando un tercer lugar aún más distante.
 
 {{ figure_markup(
-  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts en el documento <code>&lt;head&gt;</code>.",
+  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts en el documento <code><head></code>.",
   content="29%",
   classes="big-number"
 )
@@ -178,7 +178,7 @@ Si bien el alto uso de Google Fonts aquí es muy impresionante, también es dign
 - O si queremos irnos al extremo profundo hacia escenarios súper improbables, podría significar que muchas personas están usando Google Fonts con un [HTTP `Link:` header](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Link) en su lugar.
 
 {{ figure_markup(
-  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts como primer elemento secundario del documento <code>&lt;head&gt;</code>.",
+  caption="Porcentaje de páginas que incluyen un vínculo de hoja de estilo de Google Fonts como primer elemento secundario del documento <code><head></code>.",
   content="0.4%",
   classes="big-number"
 )
