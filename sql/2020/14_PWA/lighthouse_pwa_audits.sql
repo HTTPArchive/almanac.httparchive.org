@@ -24,8 +24,8 @@ return results;
 SELECT
   audits.id AS id,
   COUNTIF(audits.score > 0) AS num_pages,
-  COUNT(0) AS total,
-  COUNTIF(audits.score > 0) / COUNT(0) AS pct,
+  COUNTIF(audits.score IS NOT NULL) AS total_applicable,
+  SAFE_DIVIDE(COUNTIF(audits.score > 0), COUNTIF(audits.score IS NOT NULL)) AS pct,
   APPROX_QUANTILES(audits.weight, 100)[OFFSET(50)] AS median_weight,
   MAX(audits.audit_group) AS audit_group,
   MAX(audits.description) AS description
