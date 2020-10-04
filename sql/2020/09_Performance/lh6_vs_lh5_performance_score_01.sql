@@ -1,21 +1,21 @@
 #standardSQL
+# Calculates percentile for delta of LH5 and LH6 performance score for mobile
 
-# Calculates minimum, maximum and average delta between LH5 and LH6 performance score for mobile
 SELECT
-  MIN(perf_score_delta) AS min_delta,
-  MAX(perf_score_delta) AS max_delta,
-  AVG(abs_perf_score_delta) AS avg_delta
-FROM
-(
+  percentile,
+  APPROX_QUANTILES(abs_perf_score_delta, 1000)[OFFSET(percentile * 10)] AS abs_perf_score_delta
+FROM (
   SELECT
-    (perf_score_lh6 - perf_score_lh5) AS perf_score_delta,
     ABS(perf_score_lh6 - perf_score_lh5) AS abs_perf_score_delta
   FROM
   (
-    SELECT lh6.url AS url,
+    SELECT
       CAST(JSON_EXTRACT(lh6.report, '$.categories.performance.score') AS NUMERIC) AS perf_score_lh6,
       CAST(JSON_EXTRACT(lh5.report, '$.categories.performance.score') AS NUMERIC) AS perf_score_lh5
-      FROM `httparchive.lighthouse.2020_09_01_mobile` lh6
-      JOIN `httparchive.lighthouse.2020_05_01_mobile` lh5 ON lh5.url=lh6.url
+    FROM `httparchive.lighthouse.2020_09_01_mobile` lh6
+    JOIN `httparchive.lighthouse.2020_05_01_mobile` lh5 ON lh5.url=lh6.url
   )
-)
+),
+UNNEST([10, 25, 50, 75, 90]) AS percentile
+GROUP BY percentile
+ORDER BY percentile
