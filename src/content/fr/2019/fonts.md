@@ -206,7 +206,7 @@ En fait, si vous utilisez les Google Fonts, allez-y et ajoutez ceci à votre `<h
         <tr>
           <th>Rang</th>
           <th>Famille de police</th>
-          <th>Desktop</th>
+          <th>Ordinateur de bureau</th>
           <th>Mobile</th>
         </tr>
       </thead>
@@ -346,7 +346,7 @@ Il n'est pas surprenant que les principales entrées ici semblent correspondre d
   <a href="/static/images/2019/fonts/fig7.png">
     <img src="/static/images/2019/fonts/fig7.png" alt="Figure 7. Popularity of web font MIME types." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&amp;format=interactive">
   </a>
-  <div id="fig7-description" class="visually-hidden">Bar chart showing the popularity of web font MIME types. WOFF2 is used on 74% of fonts, followed by 13% WOFF, 6% octet-stream, 3% TTF, 2% plain, 1% HTML, 1% SFNT, and fewer than 1% for all other types. Desktop and mobile have similar distributions.</div>
+  <div id="fig7-description" class="visually-hidden">Graphique à barres indiquant la popularité des types de police MIME pour le web. WOFF2 est utilisé pour 74% des polices, suivi de WOFF avec 13%, octet-stream à 6% , TTF pour 3% , plain 2% , HTML 1% , SFNT 1% , et moins de 1% pour tous les autres types. Les ordinateurs de bureau et les téléphones mobiles ont des distributions similaires.</div>
   <figcaption id="fig7-caption">Figure 7. Popularité des types MIME de web font.</figcaption>
 </figure>
 
@@ -357,10 +357,10 @@ La troisième place `octet-stream` (et `plain` un peu plus bas) semble suggérer
 Creusons un peu plus loin et regardons les valeurs de `format()` utilisées dans la propriété `src:` des déclarations `@font-face` :
 <figure>
   <a href="/static/images/2019/fonts/fig8.png">
-    <img src="/static/images/2019/fonts/fig8.png" alt="Figure 8. Popularity of font formats in <code>@font-face</code> declarations." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&amp;format=interactive">
+    <img src="/static/images/2019/fonts/fig8.png" alt="Figure 8. Popularité des formats de police dans les déclarations <code>@font-face</code>." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&amp;format=interactive">
   </a>
-  <div id="fig8-description" class="visually-hidden">Bar chart showing the popularity of formats used in font-face declarations. 69% of desktop pages' @font-face declarations specify the WOFF2 format, 11% WOFF, 10% TrueType, 8% SVG, 2% EOT, and fewer than 1% OpenType, TTF, and OTF. The distribution for mobile pages is similar.</div>
-  <figcaption id="fig8-caption">Figure 8. Popularity of font formats in <code>@font-face</code> declarations.</figcaption>
+  <div id="fig8-description" class="visually-hidden">Diagramme à barres indiquant la popularité des types de police MIME pour le web. WOFF2 est utilisé pour 74% des polices, suivi de WOFF avec 13%, octet-stream à 6% , TTF pour 3% , plain 2% , HTML 1% , SFNT 1% , et moins de 1% pour tous les autres types. Les ordinateurs de bureau et les téléphones mobiles ont des distributions similaires.</div>
+  <figcaption id="fig8-caption">Figure 8. Popularité des formats de police dans les déclarations <code>@font-face</code>.</figcaption>
 </figure>
 
 J'espérais voir [les polices SVG] (https://caniuse.com/#feat=svg-fonts) sur le déclin. Elles sont boguées et leur implémentation a été supprimée de tous les navigateurs sauf Safari. Il est temps de les laisser tomber.
@@ -373,9 +373,9 @@ Le point de données SVG ici me fait aussi me demander avec quel type MIME vous 
   <table>
     <thead>
       <tr>
-        <th>Rank</th>
-        <th>Format combinations</th>
-        <th>Desktop</th>
+        <th>Rang</th>
+        <th>Combinaisons de format</th>
+        <th>Ordinateur de bureau</th>
         <th>Mobile</th>
       </tr>
     </thead>
@@ -502,7 +502,7 @@ Le point de données SVG ici me fait aussi me demander avec quel type MIME vous 
       </tr>
     </tbody>
   </table>
-  <figcaption>Figure 9. Top 20 font format combinations.</figcaption>
+  <figcaption>Figure 9. Top 20 des combinaisons de format de polices.</figcaption>
 </figure>
 
 Cet ensemble de données semble indiquer que la majorité des gens utilisent déjà WOFF2 uniquement dans leurs blocs `@font-face`. Mais cela est bien sûr trompeur, selon notre discussion précédente sur la domination des polices Google dans l'ensemble des données. Google Fonts utilise des méthodes de reniflage pour servir un fichier CSS simplifié et n'inclut que le `format()` le plus moderne. Il n'est pas surprenant que WOFF2 domine les résultats ici pour cette raison, car la prise en charge de WOFF2 par les navigateurs est assez courante depuis un certain temps déjà.
@@ -517,7 +517,7 @@ La fonction [Support du navigateur](https://caniuse.com/#feat=mdn-css_at-rules_f
 
 <figure>
   <div class="big-number">26%</div>
-  <figcaption>Figure 10. Percent of mobile pages that utilize the <code>font-display</code> style.</figcaption>
+  <figcaption>Figure 10. Pourcentage des pages mobiles qui utilisent le style <code>font-display</code>.</figcaption>
 </figure>
 
 Je suppose que cela va s'accumuler au fil du temps, surtout maintenant que [Google Fonts ajoute "font-display" à tous les nouveaux extraits de code](https://www.zachleat.com/web/google-fonts-display/) copiés de leur site.
@@ -528,10 +528,10 @@ Voyons voir quelles sont les valeurs les plus populaires de `font-display` :
 
 <figure>
   <a href="/static/images/2019/fonts/fig11.png">
-    <img src="/static/images/2019/fonts/fig11.png" alt="Figure 11. Usage of 'font-display' values." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&amp;format=interactive">
+    <img src="/static/images/2019/fonts/fig11.png" alt="Figure 11. Valeurs de l'utilisation de 'font-display'" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&amp;format=interactive">
   </a>
-  <div id="fig11-description" class="visually-hidden">Bar chart showing the usage of the font-display style. 2.6% of mobile pages set this style to "swap", 1.5% to "auto", 0.7% to "block", 0.4% to "fallback", 0.2% to optional, and 0.1% to "swap" enclosed in quotes, which is invalid. The desktop distribution is similar except "swap" usage is lower by 0.4 percentage points and "auto" usage is higher by 0.1 percentage points.</div>
-  <figcaption id="fig11-caption">Figure 11. Usage of <code>font-display</code> values.</figcaption>
+  <div id="fig11-description" class="visually-hidden">Diagramme à barres montrant l'utilisation du style d'affichage des polices. 2,6 % des pages mobiles définissent ce style comme "swap", 1,5 % comme "auto", 0,7 % comme "block", 0,4 % comme "fallback", 0,2 % comme optionnel et 0,1 % comme "swap" entre guillemets, ce qui n'est pas valide. La distribution des ordinateurs de bureau est similaire, sauf que l'utilisation de "swap" est inférieure de 0,4 point de pourcentage et que l'utilisation de "auto" est supérieure de 0,1 point de pourcentage.</div>
+  <figcaption id="fig11-caption">Figure 11. Valeurs de l'utilisation de <code>font-display</code>.</figcaption>
 </figure>
 
 Comme moyen facile d'afficher du texte de remplacement pendant le chargement d'une police Web, `font-display : swap` règne en maître et est la valeur la plus courante. `swap` est également la valeur par défaut utilisée par les nouveaux extraits de code de Google Fonts. Je me serais attendu à ce que `optional` (seulement rendu si mis en cache) soit un peu plus utilisé ici car quelques éminents développeurs évangélistes ont fait pression pour cela, mais pas de dés.
@@ -542,10 +542,10 @@ C'est une question qui nécessite une certaine nuance. Comment sont utilisées l
 
 <figure>
   <a href="/static/images/2019/fonts/fig12.png">
-    <img src="/static/images/2019/fonts/fig12.png" alt="Figure 12. Distribution of font requests per page." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&amp;format=interactive">
+    <img src="/static/images/2019/fonts/fig12.png" alt="Figure 12. Distribution des requêtes de police par page." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&amp;format=interactive">
   </a>
-  <div id="fig12-description" class="visually-hidden">Bar chart showing the distribution of font requests per page. The 10, 25, 50, 75, and 90th percentiles for desktop are: 0, 1, 3, 6, and 9 font requests. The distribution for mobile is identical until the 75th and 90th percentiles, where mobile pages request 1 fewer font.</div>
-  <figcaption id="fig12-caption">Figure 12. Distribution of font requests per page.</figcaption>
+  <div id="fig12-description" class="visually-hidden">Graphique à barres indiquant la répartition des demandes de polices par page. Les 10, 25, 50, 75 et 90e percentiles pour le bureau sont : 0, 1, 3, 6 et 9 demandes de polices. La distribution pour les mobiles est identique jusqu'aux 75e et 90e percentiles, où les pages mobiles demandent une police de moins.</div>
+  <figcaption id="fig12-caption">Figure 12. Distribution des requêtes de police par page.</figcaption>
 </figure>
 
 La page web médiane fait trois demandes de polices de caractères web. Au 90e percentile, elle a demandé six et neuf polices web sur le mobile et le bureau, respectivement.
@@ -554,8 +554,8 @@ La page web médiane fait trois demandes de polices de caractères web. Au 90e p
   <a href="/static/images/2019/fonts/fig13.png">
     <img src="/static/images/2019/fonts/fig13.png" alt="Figure 13. Histogram of web fonts requested per page." aria-labelledby="fig13-description" aria-describedby="fig13-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&amp;format=interactive">
   </a>
-  <div id="fig13-description" class="visually-hidden">Histogram showing the distribution of the number of font requests per page. The most popular number of font requests is 0 at 22% of desktop pages. The distribution drops to 9% of pages having 1 font, then crests at 10% for 2-4 fonts before falling as the number of fonts increases. The desktop and mobile distributions are similar, although the mobile distribution skews slightly toward having fewer fonts per page.</div>
-  <figcaption id="fig13-caption">Figure 13. Histogram of web fonts requested per page.</figcaption>
+  <div id="fig13-description" class="visually-hidden">Histogramme montrant la répartition du nombre de demandes de polices par page. Le nombre de demandes de polices le plus répandu est 0 pour 22 % des pages pour ordinateur de bureau. La distribution tombe à 9 % des pages ayant une police, puis atteint un maximum de 10 % pour 2 à 4 polices avant de diminuer à mesure que le nombre de polices augmente. Les distributions pour les ordinateurs de bureau et les téléphones mobiles sont similaires, bien que la distribution pour les téléphones mobiles penche légèrement vers une réduction du nombre de polices par page.</div>
+  <figcaption id="fig13-caption">Figure 13. Histogramme des polices web demandées par page.</figcaption>
 </figure>
 
 Il est intéressant de constater que les demandes de polices de caractères sur le web semblent être assez stables sur les ordinateurs de bureau et les téléphones portables. Je suis heureux de constater que la [recommandation de cacher les blocs `@font-face` dans les requêtes `@media`] (https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6) n'a pas été retenue (ne vous faites pas d'idées).
@@ -566,7 +566,7 @@ Cela dit, les requêtes de polices de caractères faites sur les appareils mobil
 
 <figure>
   <div class="big-number">718</div>
-  <figcaption>Figure 14. The most web font requests on a single page.</figcaption>
+  <figcaption>Figure 14. Le plus grand nombre de demandes de polices Web sur une seule page.</figcaption>
 </figure>
 
 Le prix de la page qui demande le plus de polices web est attribué à un site qui a fait **718** requêtes de polices web !
@@ -579,29 +579,31 @@ Il est ironique qu'un plugin d'optimisation des performances puisse rendre vos p
 
 <figure>
   <div class="big-number">56%</div>
-  <figcaption>Figure 15. Percent of mobile pages that declare a web font with the <code>unicode-range</code> property.</figcaption>
+  <figcaption>Figure 15. Pourcentage des pages mobiles qui déclarent une police web avec la propriété <code>unicode-range</code>.</figcaption>
 </figure>
 
-[`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) is a great CSS property to let the browser know specifically which code points the page would like to use in the font file. If the `@font-face` declaration has a `unicode-range`, content on the page must match one of the code points in the range before the font is requested. It is a very good thing.
+[`unicode-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/%40font-face/unicode-range) est une excellente propriété CSS qui permet au navigateur de savoir précisément quels points de code la page souhaite utiliser dans le fichier de police. Si la déclaration `@font-face` a une "plage de codes"(`unicode-range`), le contenu de la page doit correspondre à l'un des points de code de la plage avant que la police ne soit demandée. C'est une très bonne chose.
 
-This is another metric that I expect was skewed by Google Fonts usage, as Google Fonts uses `unicode-range` in most (if not all) of its CSS. I'd expect this to be less common in user land, but perhaps filtering out Google Fonts requests in the next edition of the Almanac may be possible.
 
-## Don't request web fonts if a system font exists
+C'est une autre mesure qui, je pense, a été faussée par l'utilisation des Google Fonts, car Google Fonts utilise la "plage unicode" (`unicode-range`) dans la plupart (sinon la totalité) de ses CSS. Je m'attendrais à ce que cela soit moins fréquent du côté des utilisateurs, mais peut-être qu'il sera possible de filtrer les demandes de Google Fonts dans la prochaine édition de l'Almanach.
+
+## Ne demandez pas de police web si la police système existe
 
 <figure>
   <div class="big-number">59%</div>
-  <figcaption>Figure 16. Percent of mobile pages that declare a web font with the <code>local()</code> property.</figcaption>
+  <figcaption>Figure 16. Pourcentage de pages mobile qui déclarent une police web avec la propriété <code>local()</code>.</figcaption>
 </figure>
 
-`local()` is a nice way to reference a system font in your `@font-face` `src`. If the `local()` font exists, it doesn't need to make a request for a web font at all. This is used both extensively and controversially by Google Fonts, so it is likely another example of skewed data if we're trying to glean patterns from user land.
+`local()` est une belle façon de référencer une police système dans votre `@font-face` `src`. Si la police `local()` existe, il n'est pas du tout nécessaire de faire une requête pour une police web. Cette propriété est utilisée de manière extensive et controversée par Google Fonts, et il s'agit donc probablement d'un autre exemple de données biaisées si nous essayons de glaner des modèles à partir du terrain des utilisateurs. - du côté des utilisateurs
 
-It should also be noted here that it has been said by smarter people than I (Bram Stein of TypeKit) that [using `local()` can be unpredictable as installed versions of fonts can be outdated and unreliable](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html).
+Il convient également de noter ici que des personnes plus intelligentes que moi (Bram Stein de TypeKit) ont déclaré que [l'utilisation de `local()` peut être imprévisible car les versions de polices installées peuvent être obsolètes et peu fiables](https://bramstein.com/writing/web-font-anti-patterns-local-fonts.html).
 
-## Condensed fonts and `font-stretch`
+## Polices condensées et `font-stretch`
 
 <figure>
   <div class="big-number">7%</div>
-  <figcaption>Figure 17. Percent of desktop and mobile pages that include a style with the <code>font-stretch</code> property.</figcaption>
+  <figcaption>Figure 17. Pourcentage des pages pour ordinateurs de bureau et pour mobile qui comportent un style avec la propriété 
+ <code>font-stretch</code>.</figcaption>
 </figure>
 
 Historically, `font-stretch` has suffered from poor browser support and was not a well-known `@font-face` property. Read more about [`font-stretch` on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch). But [browser support](https://caniuse.com/#feat=css-font-stretch) has broadened.
@@ -614,7 +616,7 @@ It has been suggested that using condensed fonts on smaller viewports allows mor
 
 <figure>
   <div class="big-number">1.8%</div>
-  <figcaption>Figure 18. Percent of pages that include a variable font.</figcaption>
+  <figcaption>Figure 18. Pourcentage des pages qui incluent une police variable.</figcaption>
 </figure>
 
 Avec 1, 8 %, c'est plus que prévu, encore que je sois enthousiaste de voir ce décollage. [Google Fonts v2](https://developers.google.com/fonts/docs/css2) inclut un certain support pour les polices variables.
@@ -623,8 +625,8 @@ Avec 1, 8 %, c'est plus que prévu, encore que je sois enthousiaste de voir ce d
   <a href="/static/images/2019/fonts/fig19.png">
     <img src="/static/images/2019/fonts/fig19.png" alt="Figure 19. Usage of 'font-variation-settings' axes." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&amp;format=interactive">
   </a>
-  <div id="fig19-description" class="visually-hidden">Bar chart showing the usage of the font-variation-settings property. 42% of properties on desktop pages are set to the "opsz" value, 32% to "wght", 16% to "wdth", 2% or fewer to "roun", "crsb", "slnt", "inln", and more. The most notable differences between desktop and mobile pages are 26% usage of "opsz", 38% of "wght", and 23% of "wdth".</div>
-  <figcaption id="fig19-caption">Figure 19. Usage of <code>font-variation-settings</code> axes.</figcaption>
+  <div id="fig19-description" class="visually-hidden">Graphique à barres montrant l'utilisation de la propriété font-variation-settings. 42% des propriétés des pages pour ordinateur de bureau sont réglées sur la valeur "opsz", 32% sur "wght", 16% sur "wdth", 2% ou moins sur "roun", "crsb", "slnt", "inln", et plus. Les différences les plus notables entre les pages pour ordinateur de bureau et les pages mobiles sont l'utilisation à 26 % de "opsz", 38 % de "wght" et 23 % de "wdth".</div>
+  <figcaption id="fig19-caption">Figure 19. Utilisation de <code>font-variation-settings</code>.</figcaption>
 </figure>
 
 Dans l'optique de ce vaste ensemble de données, il s'agit d'échantillons de très petite taille - prenez ces résultats avec des pincettes. Cependant, l'axe `opsz`, qui est le plus courant sur les pages desktop, est notable, avec `wght` et `wdth` à la traîne. D'après mon expérience, les démos d'introduction aux polices variables sont généralement basées sur le poids.
@@ -633,7 +635,7 @@ Dans l'optique de ce vaste ensemble de données, il s'agit d'échantillons de tr
 
 <figure>
   <div class="big-number">117</div>
-  <figcaption>Figure 20. The number of desktop web pages that include a color font.</figcaption>
+  <figcaption>Figure 20. Nombre de pages pour ordinateurs de bureau incluant une police de couleur.</figcaption>
 </figure>
 
 Leur utilisation est pratiquement inexistante ici, mais vous pouvez consulter l'excellente ressource [Color Fonts ! WTF ?](https://www.colorfonts.wtf/) pour plus d'informations. Semblable (mais pas du tout) au format SVG pour les polices (qui est mauvais et qui disparaît), cela vous permet d'intégrer le SVG dans les fichiers OpenType, ce qui est génial et cool.
