@@ -288,7 +288,7 @@ La utilidad de `srcset` normalmente depende de la precisión de la media query `
  {{ figure_markup(
   image="fig16_top_patterns_of_img_sizes.png",
   alt="Top de patrones de img sizes.",
-  caption="Top de patrones de <code>&lt;img sizes&gt;</code>.",
+  caption="Top de patrones de <code><img sizes></code>.",
   description="Gráfico de barras que muestra que 11,3 millones de imágenes usan 'img sizes=\"(max-width: 300px) 100vw, 300px\"', 1,60 millones usan 'auto', 1 millón usan 'img sizes=\"(max-width: 767px) 89vw...etc.\"', 0,23 millones usan '100vw' y 0,13 millones usan '300px'",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
@@ -303,7 +303,7 @@ Para habilitar los <i lang="en">Client Hints</i>, la página web debe señalizá
 {{ figure_markup(
   image="fig17_usage_of_accept-ch_http_v_html.png",
   alt="Uso del encabezado Accept-CH versus la etiqueta meta equivalente.",
-  caption="Uso del encabezado <code>Accept-CH</code> versus la etiqueta <code>&lt;meta&gt;</code> equivalente.",
+  caption="Uso del encabezado <code>Accept-CH</code> versus la etiqueta <code><meta></code> equivalente.",
   description="Gráfico de barras mostrando que un 71% usa el 'meta http-equiv', un 30% usa el encabezado 'Accept-CH' HTTP y un 1% usa ambos.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=284657706&format=interactive"
   )
