@@ -2,7 +2,7 @@
 part_number: I
 chapter_number: 4
 title: Media
-description: Chapitre Média du Web Almanac 2019 couvrant les tailles et formats des fichiers d’images, les images adaptatives, les Client Hints, le lazy loading, l’accessibilité et la vidéo.
+description: Chapitre Média du Web Almanac 2019 couvrant les tailles et formats des fichiers d’images, les images adaptatives, les Indications Client, le lazy loading, l’accessibilité et la vidéo.
 authors: [colinbendell, dougsillars]
 reviewers: [ahmadawais, eeeps]
 translators: [borisschapira]
