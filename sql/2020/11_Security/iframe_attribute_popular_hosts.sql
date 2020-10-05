@@ -1,0 +1,38 @@
+#standardSQL
+# most common hostnames of iframes that have the allow or sandbox attribute
+CREATE TEMP FUNCTION hasPolicy(attr STRING, policy_type STRING)
+  RETURNS BOOL DETERMINISTIC
+  LANGUAGE js AS '''
+  const $ = JSON.parse(attr);
+  return $[policy_type] !== null;
+''';
+
+SELECT
+  client,
+  policy_type,
+  hostname,
+  SUM(COUNTIF(has_policy)) OVER (PARTITION BY client, policy_type) AS total,
+  COUNTIF(has_policy) AS freq,
+  COUNTIF(has_policy) / SUM(COUNTIF(has_policy)) OVER (PARTITION BY client, policy_type) AS pct
+FROM (
+  SELECT
+    client,
+    policy_type,
+    JSON_EXTRACT_SCALAR(iframeAttr, '$.hostname') AS hostname,
+    hasPolicy(iframeAttr, policy_type) AS has_policy
+  FROM (
+    SELECT
+      _TABLE_SUFFIX as client,
+      JSON_EXTRACT_ARRAY(JSON_EXTRACT_SCALAR(payload, '$._security'), "$.iframe-allow-sandbox") AS iframeAttrs
+    FROM
+      `httparchive.pages.2020_08_01_*`),
+    UNNEST(iframeAttrs) AS iframeAttr,
+    UNNEST(['allow', 'sandbox']) AS policy_type
+  )
+GROUP BY
+  client,
+  policy_type,
+  hostname
+ORDER BY
+  pct DESC
+LIMIT 100
