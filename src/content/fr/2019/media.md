@@ -284,13 +284,14 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 
 * **`<img sizes="auto">`** - c’est l’utilisation la plus populaire, qui n’est en fait pas normalisée et qui est un artefact de l’utilisation de la bibliothèque JavaScript `lazy_sizes`. Celle-ci utilise du code côté client pour injecter un meilleur calcul des `sizes` pour le navigateur. L’inconvénient de cette méthode est qu’elle dépend du chargement du JavaScript et du DOM pour être totalement prête, ce qui retarde considérablement le chargement des images. 
 
- <figure>
-  <a href="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png">
-    <img src="/static/images/2019/media/fig16_top_patterns_of_img_sizes.png" alt="Figure 16. Principaux modèles de conception de 'img sizes'." aria-labelledby="fig16-caption" aria-describedby="fig16-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive">
-  </a>
-  <div id="fig16-description" class="visually-hidden">Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=""(max-width : 300px) 100vw, 300px"', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=""(max-width : 767px) 89vw...etc."', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.</div>
-  <figcaption id="fig16-caption" >Figure 16. Principaux modèles de conception de <code>img sizes</code>.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig16_top_patterns_of_img_sizes.png",
+  alt="Top patterns of img sizes.",
+  caption="Principaux modèles de conception de <code><img sizes></code>.",
+  description="Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=""(max-width : 300px) 100vw, 300px"', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=""(max-width : 767px) 89vw...etc."', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
+  )
+}}
 
 ### Indications Client
 
