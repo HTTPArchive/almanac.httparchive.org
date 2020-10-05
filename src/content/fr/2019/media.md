@@ -327,13 +327,14 @@ L’amélioration des performances des pages web peut être partiellement caract
 
 Plus tôt, dans la <a href="#fig-5">Figure 5</a>, nous avons montré que le volume de contenu d’image au 75e percentile est bien plus important que ce qui pourrait théoriquement être affiché sur un seul écran de bureau ou de téléphone portable. L’audit Lighthouse concernant les [images hors champs](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirme ce soupçon. La page web médiane contient 27&nbsp;% d’images situées nettement sous la partie visible de la page. Ce pourcentage passe à 84&nbsp;% au 90e percentile. 
 
-<figure>
-  <a href="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png">
-    <img src="/static/images/2019/media/fig19_lighthouse_audit_offscreen.png" alt="Figure 19. Audit Lighthouse: Hors-Écran." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">Un diagramme à barres montrant qu’au 10e percentile, 0&nbsp;% des images sont hors champ, au 25e percentile, 2&nbsp;% sont hors champ, au 50e percentile, 27&nbsp;% sont hors champ, au 75e percentile, 64&nbsp;% sont hors champ et au 90e percentile, 84&nbsp;% des images sont hors champ.</div>
-  <figcaption id="fig19-caption">Figure 19. Audit Lighthouse: Hors-Écran.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19_lighthouse_audit_offscreen.png",
+  alt="Audit Lighthouse: Hors-Écran.",
+  caption="Audit Lighthouse: Hors-Écran.",
+  description="Un diagramme à barres montrant qu’au 10e percentile, 0&nbsp;% des images sont hors champ, au 25e percentile, 2&nbsp;% sont hors champ, au 50e percentile, 27&nbsp;% sont hors champ, au 75e percentile, 64&nbsp;% sont hors champ et au 90e percentile, 84&nbsp;% des images sont hors champ.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
+  )
+}}
 
 L’audit Lighthouse nous indique qu’il y a un certain nombre de situations qui peuvent être difficiles à détecter, comme par exemple l’utilisation de substituts de qualité. 
 
