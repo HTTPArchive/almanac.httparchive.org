@@ -188,13 +188,12 @@ Ceci explique pourquoi, même au 90e percentile des pages, la fréquence de WebP
 
 Il y a deux façons de considérer la taille des fichiers d’images&nbsp;: les octets absolus par ressource et les octets par pixel.
  
-<figure>
-  <a href="/static/images/2019/media/fig10_image_format_size.png">
-    <img alt="Figure 10. Taille du fichier (Ko) par format d’image." aria-labelledby="fig10-caption" aria-describedby="fig10-description" src="/static/images/2019/media/fig10_image_format_size.png" width="600" height="371">
-  </a>
-  <div id="fig10-description" class="visually-hidden">Un tableau montrant qu’au 10e percentile, 4&nbsp;Ko de JPEG, 2&nbsp;Ko de PNG et 2&nbsp;Ko de GIF sont utilisés&nbsp;; au 25e percentile, 9&nbsp;Ko de JPG, 4&nbsp;Ko de PNG, 7&nbsp;Ko de WebP, et 3&nbsp;Ko de GIF sont utilisés&nbsp;; au 50e percentile, 24&nbsp;Ko de JPG, 11&nbsp;Ko de PNG, 17&nbsp;Ko de WebP, 6&nbsp;Ko de GIF, et 1&nbsp;Ko de SVG sont utilisés&nbsp;; au 75e percentile, 68&nbsp;Ko de JPEG, 43&nbsp;Ko de PNG, 41&nbsp;Ko de WebP, 17&nbsp;Ko de GIF et 2&nbsp;Ko de SVG sont utilisés&nbsp;; au 90e percentile, 116&nbsp;Ko de JPG, 152&nbsp;Ko de PNG, 90&nbsp;Ko de WebP, 87&nbsp;Ko de GIF et 8&nbsp;Ko de SVG sont utilisés.</div>
-  <figcaption id="fig10-caption">Figure 10. Taille du fichier (Ko) par format d’image.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig10_image_format_size.png",
+  caption="Taille du fichier (Ko) par format d’image.",
+  description="Un tableau montrant qu’au 10e percentile, 4&nbsp;Ko de JPEG, 2&nbsp;Ko de PNG et 2&nbsp;Ko de GIF sont utilisés&nbsp;; au 25e percentile, 9&nbsp;Ko de JPG, 4&nbsp;Ko de PNG, 7&nbsp;Ko de WebP, et 3&nbsp;Ko de GIF sont utilisés&nbsp;; au 50e percentile, 24&nbsp;Ko de JPG, 11&nbsp;Ko de PNG, 17&nbsp;Ko de WebP, 6&nbsp;Ko de GIF, et 1&nbsp;Ko de SVG sont utilisés&nbsp;; au 75e percentile, 68&nbsp;Ko de JPEG, 43&nbsp;Ko de PNG, 41&nbsp;Ko de WebP, 17&nbsp;Ko de GIF et 2&nbsp;Ko de SVG sont utilisés&nbsp;; au 90e percentile, 116&nbsp;Ko de JPG, 152&nbsp;Ko de PNG, 90&nbsp;Ko de WebP, 87&nbsp;Ko de GIF et 8&nbsp;Ko de SVG sont utilisés."
+  )
+}}
 
 Grâce à ces informations, nous pouvons commencer à avoir une idée de la taille d’une ressource typique sur le web. Cependant, cela ne nous donne pas encore une idée du volume de pixels représentés à l’écran pour ces distributions de fichiers. Pour ce faire, nous pouvons diviser chaque octet de ressource par le volume naturel de pixels de l’image. Un faible nombre d’octets par pixel indique une transmission plus efficace du contenu visuel.
 
