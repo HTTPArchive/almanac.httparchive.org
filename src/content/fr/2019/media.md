@@ -267,7 +267,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 
 * **`<img sizes="100vw">`** - cela indique que l’image remplira la largeur de la fenêtre de visualisation (le comportement par défaut).
 * **`<img sizes="200px">`** - ceci est utile pour les navigateurs qui sélectionnent sur la base du DPR.
-* **`<img sizes="(max-width: 300px) 100vw, 300px">`** - c’est le deuxième modèle de conception le plus populaire. C’est celui qui est généré automatiquement par WordPress et probablement par quelques autres plateformes. Il semble généré automatiquement en fonction de la taille de l’image originale (dans ce cas, 300&nbsp;px).
+* **`<img sizes="(max-width: 300px) 100vw, 300px">`** - c’est le deuxième modèle de conception le plus populaire. C’est celui qui est généré automatiquement par WordPress et probablement par quelques autres plateformes. Il semble être généré automatiquement en fonction de la taille de l’image originale (dans ce cas, 300&nbsp;px).
 * **`<img sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, ...">`** - ce modèle est le modèle de conception sur-mesure qui est aligné avec la mise en page CSS. Chaque point de rupture a un calcul différent pour les tailles à utiliser.
 
 <figure markdown>
@@ -310,7 +310,7 @@ Pour activer les Indications Client, la page web doit envoyer un signal au navig
 
 L’utilisation de la balise `<meta>` en HTML pour énoncer les Indications Client est beaucoup plus courante que l’en-tête HTTP. Cela reflète probablement la facilité avec laquelle on peut modifier les gabarits HTML par rapport à l’ajout d’en-têtes HTTP dans les outils intermédiaires. Cependant, si l’on considère l’utilisation de l’en-tête HTTP, plus de 50&nbsp;% de ces cas proviennent d’une seule plate-forme SaaS (Mercado).
 
-En observant la manière dont les Indications Client énoncées, on peut voir que la majorité des pages les utilisent pour les trois cas d’utilisation originaux&nbsp;: `DPR`, `ViewportWidth` et `Width`. Bien sûr, l’Indication Client `Width` nécessite l’utilisation de `<img sizes>` pour que le navigateur ait suffisamment de contexte sur la mise en page. 
+En observant la manière dont les Indications Client sont énoncées, on peut voir que la majorité des pages les utilisent pour les trois cas d’utilisation originaux&nbsp;: `DPR`, `ViewportWidth` et `Width`. Bien sûr, l’Indication Client `Width` nécessite l’utilisation de `<img sizes>` pour que le navigateur ait suffisamment de contexte sur la mise en page. 
 
 {{ figure_markup(
   image="fig18_enabled_client_hints.png",
