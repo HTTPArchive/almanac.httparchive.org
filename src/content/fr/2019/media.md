@@ -330,7 +330,7 @@ Plus tôt, dans la <a href="#fig-5">Figure 5</a>, nous avons montré que le volu
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
-  alt="Audit <span lang=\"en\">Lighthouse</span>&nbsp;: Hors-Écran.",
+  alt="Audit Lighthouse : Hors-Écran.",
   caption="Audit <span lang=\"en\">Lighthouse</span>&nbsp;: Hors-Écran.",
   description="Un diagramme à barres montrant qu’au 10e percentile, 0&nbsp;% des images sont hors champ, au 25e percentile, 2&nbsp;% sont hors champ, au 50e percentile, 27&nbsp;% sont hors champ, au 75e percentile, 64&nbsp;% sont hors champ et au 90e percentile, 84&nbsp;% des images sont hors champ.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
