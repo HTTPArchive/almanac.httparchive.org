@@ -1,11 +1,11 @@
 ---
 part_number: II
 chapter_number: 9
-title: Acessibilidade
-description: Capítulo de acessibilidade do Almanaque da Web de 2019 cobrindo facilidade de leitura, mídia, facilidade de navegação e compatibilidade com tecnologias assistivas.
+title: Accessibility
+description: Accessibility chapter of the 2019 Web Almanac covering ease of reading, media, ease of navigation, and compatibility with assistive technologies.
 authors: [nektarios-paisios, obto, kleinab]
 reviewers: [ljme]
-translators: [edu_qg]
+translators: [eduqg]
 discuss: 1764
 results: https://docs.google.com/spreadsheets/d/16JGy-ehf4taU0w4ABiKjsHGEXNDXxOlb__idY8ifUtQ/
 queries: 09_Accessibility
@@ -37,7 +37,6 @@ Existem muitos casos em que os visitantes do seu site podem não conseguir vê-l
 
 Para garantir que o seu site seja legível nessas condições, é fundamental que o texto tenha contraste de cor suficiente com o fundo. Também é importante considerar quais contrastes serão mostrados quando as cores forem convertidas para tons de cinza.
 
-
 {{ figure_markup(
   image="example-of-good-and-bad-color-contrast-lookzook.svg",
   caption="Exemplo de como é o texto com contraste de cor insuficiente. Cortesia de LookZook",
@@ -55,10 +54,9 @@ Apenas 22,04% dos sites deram contraste de cor suficiente a todo o texto. Ou em 
 
 Usando um [tamanho de fonte legível](https://accessibleweb.com/question-answer/minimum-font-size/) e [tamanho alvo](https://www.w3.org/WAI/WCAG21/quickref/#target-size) ajuda os usuários a ler e interagir com seu site. Mas mesmo os sites que seguem perfeitamente todas essas diretrizes não podem atender às necessidades específicas de cada visitante. É por isso que recursos do dispositivo, como a pinça para aplicar zoom e dimensionamento, são tão importantes: eles permitem que os usuários ajustem suas páginas para que suas necessidades sejam atendidas. Ou, no caso de sites particularmente inacessíveis que usam fontes e botões minúsculos, dá aos usuários a chance de usar o site.
 
-
 Existem raros casos em que a desativação do escalonamento é aceitável, como quando a página em questão é um jogo baseado na web que usa controles de toque. Se deixado ativado neste caso, os telefones dos jogadores irão aumentar e diminuir o zoom cada vez que o jogador tocar duas vezes no jogo, ironicamente tornando-o inacessível.
 
-Por causa disso, os desenvolvedores têm a capacidade de desativar esse recurso definindo uma das duas propriedades a seguir na [meta tag viewport](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag):
+Por causa disso, os desenvolvedores têm a capacidade de desativar esse recurso definindo uma das duas propriedades a seguir na [meta tag viewport](https://developer.mozilla.org/pt-BR/docs/Mozilla/Mobile/Viewport_meta_tag):
 
 1. `user-scalable` definido como `0` ou `no`
 
@@ -78,7 +76,7 @@ Infelizmente, os desenvolvedores abusaram tanto disso que quase um em cada três
 
 A web está cheia de uma quantidade incrível de conteúdo. No entanto, há um porém: existem mais de 1.000 idiomas diferentes no mundo, e o conteúdo que você procura pode não estar escrito em um em que você seja fluente. Nos últimos anos, fizemos grandes avanços em tecnologias de tradução e você provavelmente usou um deles na web (por exemplo, Google Tradutor).
 
-Para facilitar esse recurso, os motores de tradução precisam saber em que idioma suas páginas estão escritas. Isso é feito usando o [atributo `lang`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang). Sem isso, os computadores devem adivinhar em que idioma sua página está escrita. Como você pode imaginar, isso leva a muitos erros, especialmente quando as páginas usam vários idiomas (por exemplo, a navegação da página é em inglês, mas o conteúdo da postagem está em japonês).
+Para facilitar esse recurso, os motores de tradução precisam saber em que idioma suas páginas estão escritas. Isso é feito usando o [atributo `lang`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/lang). Sem isso, os computadores devem adivinhar em que idioma sua página está escrita. Como você pode imaginar, isso leva a muitos erros, especialmente quando as páginas usam vários idiomas (por exemplo, a navegação da página é em inglês, mas o conteúdo da postagem está em japonês).
 
 Esse problema é ainda mais encontrado em tecnologias assistivas de conversão de texto em fala, como leitores de tela, onde, se nenhum idioma tiver sido especificado, eles tendem a ler o texto no idioma padrão do usuário.
 
@@ -88,7 +86,7 @@ Das páginas analisadas, 26,13% não especificam um idioma com o atributo `lang`
 
 Alguns usuários, como aqueles com deficiências cognitivas, têm dificuldade em se concentrar na mesma tarefa por longos períodos de tempo. Esses usuários não querem lidar com páginas que incluem muitos movimentos e animações, especialmente quando esses efeitos são puramente cosméticos e não relacionados à tarefa em questão. No mínimo, esses usuários precisam encontrar uma maneira de desligar todas as animações que distraem.
 
-Infelizmente, nossos resultados indicam que animações em loop infinito são bastante comuns na web, com 21,04% das páginas usando-as por meio de animações CSS infinitas ou [`<marquee>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee) e elementos [`<blink>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink).
+Infelizmente, nossos resultados indicam que animações em loop infinito são bastante comuns na web, com 21,04% das páginas usando-as por meio de animações CSS infinitas ou [`<marquee>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/marquee) e elementos [`<blink>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/blink).
 
 É interessante notar, entretanto, que a maior parte desse problema parece ser em algumas folhas de estilo populares de terceiros que incluem animações CSS em loop infinito por padrão. Não foi possível determinar quantas páginas realmente usaram esses estilos de animação.
 
@@ -104,7 +102,7 @@ Embora os atributos alt existam há 25 anos, 49,91% das páginas ainda não forn
 
 Assim como as imagens contam histórias poderosas, o áudio e o vídeo também são para chamar a atenção e expressar ideias. Quando o conteúdo de áudio e vídeo não é legendado, os usuários que não conseguem ouvir esse conteúdo perdem grande do conteúdo na web. Uma das coisas mais comuns que ouvimos de usuários surdos ou com deficiência auditiva é a necessidade de incluir legendas em todo o conteúdo de áudio e vídeo.
 
-De sites usando elementos [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) ou [`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video), apenas 0,54% fornecem legendas (conforme medido por aqueles que incluem o elemento [`<track>`](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)). Observe que alguns sites têm soluções personalizadas para fornecer legendas de vídeo e áudio aos usuários. Não foi possível detectar essas soluções personalizadas e, portanto, a porcentagem real de sites que utilizam legendas é um pouco maior.
+De sites usando elementos [`<audio>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Audio) ou [`<video>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Video), apenas 0,54% fornecem legendas (conforme medido por aqueles que incluem o elemento [`<track>`](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)). Observe que alguns sites têm soluções personalizadas para fornecer legendas de vídeo e áudio aos usuários. Não foi possível detectar essas soluções personalizadas e, portanto, a porcentagem real de sites que utilizam legendas é um pouco maior.
 
 ## Facilidade de navegação na página
 
@@ -138,7 +136,6 @@ Um [marco principal](https://developer.mozilla.org/en-US/docs/Web/Accessibility/
 
 Encontramos apenas uma em cada quatro páginas (26,03%) que inclui um marco principal. E, surpreendentemente, 8,06% das páginas continham erroneamente mais de um ponto de referência principal, deixando esses usuários adivinhando qual ponto de referência contém o conteúdo principal real.
 
-
 {{ figure_markup(
   image="fig4.png",
   caption="Porcentagem de páginas pelo número de pontos de referência principais.",
@@ -151,9 +148,9 @@ Encontramos apenas uma em cada quatro páginas (26,03%) que inclui um marco prin
 
 Desde que o HTML5 foi lançado em 2008 e se tornou o padrão oficial em 2014, existem muitos elementos HTML para ajudar os computadores e leitores de tela a entender o layout e a estrutura de nossa página.
 
-Elementos como [`<header>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav), e [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) indicam onde estão os tipos específicos de conteúdo e permitem que os usuários acessem rapidamente sua página. Eles estão sendo amplamente usados ​​na web, com a maioria deles sendo usados ​​em mais de 50% das páginas (`<main>` sendo o valor atípico).
+Elementos como [`<header>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/header), [`<footer>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/footer), [`<navigation>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/nav), e [`<main>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/main) indicam onde estão os tipos específicos de conteúdo e permitem que os usuários acessem rapidamente sua página. Eles estão sendo amplamente usados ​​na web, com a maioria deles sendo usados ​​em mais de 50% das páginas (`<main>` sendo o valor atípico).
 
-Outros elementos como [`<article>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr), e [`<aside>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) ajudam os leitores a compreender o conteúdo principal de uma página. Por exemplo, `<article>` diz onde um artigo termina e outro começa. Esses elementos não são usados ​​tanto, com cada um sentado em cerca de 20% de uso. Nem todos eles pertencem a todas as páginas da web, então essa não é necessariamente uma estatística alarmante.
+Outros elementos como [`<article>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/article), [`<hr>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/hr), e [`<aside>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/aside) ajudam os leitores a compreender o conteúdo principal de uma página. Por exemplo, `<article>` diz onde um artigo termina e outro começa. Esses elementos não são usados ​​tanto, com cada um sentado em cerca de 20% de uso. Nem todos eles pertencem a todas as páginas da web, então essa não é necessariamente uma estatística alarmante.
 
 Todos esses elementos são projetados principalmente para suporte de acessibilidade e não têm efeito visual, o que significa que você pode substituir os elementos existentes por eles com segurança e não sofrer consequências indesejadas.
 
@@ -169,7 +166,6 @@ Todos esses elementos são projetados principalmente para suporte de acessibilid
 
 Muitos leitores de tela populares também permitem que os usuários naveguem pulando rapidamente por links, listas, itens de lista, iframes e campos de formulário, como campos de edição, botões e caixas de listagem. A Figura 9.6 detalha a frequência com que vimos as páginas usando esses elementos.
 
-
 {{ figure_markup(
   image="fig6.png",
   caption="Outros elementos HTML usados ​​para navegação.",
@@ -177,7 +173,6 @@ Muitos leitores de tela populares também permitem que os usuários naveguem pul
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSG3DTnx7j-YT1hnQpQYjDRD-rCSF1dXbgva-iJQZKdCKIt34ojGMDRhx74fF93CpPg7oGW_C68fWGT/pubchart?oid=389034849&format=interactive"
   )
 }}
-
 
 ### Skip Links
 
@@ -200,13 +195,13 @@ Na verdade, você não precisa nem mesmo sair deste site, pois nós [os usamos a
 
 ### Atalhos
 
-Teclas de atalho definidas por meio de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) ou [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) podem ser usados ​​de duas maneiras:
+Teclas de atalho definidas por meio de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) ou [`accesskey`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/accesskey) podem ser usados ​​de duas maneiras:
 
 1. Ativando um elemento na página, como um link ou botão.
 
 2. Dando um certo elemento ao foco da página. Por exemplo, mudar o foco para uma determinada entrada na página, permitindo que um usuário comece a digitar nela.
 
-A adoção de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) esteve quase ausente em nossa amostra, sendo usada apenas em 159 sites de mais de 4 milhões analisados. O atributo [`accesskey`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) foi usado com mais frequência, sendo encontrado em 2,47% das páginas da web (1,74% no celular ) Acreditamos que o maior uso de atalhos no desktop deve-se aos desenvolvedores que esperam que os sites móveis sejam acessados ​​apenas por meio de uma tela de toque e não de um teclado.
+A adoção de [`aria-keyshortcuts`](https://www.w3.org/TR/wai-aria-1.1/#aria-keyshortcuts) esteve quase ausente em nossa amostra, sendo usada apenas em 159 sites de mais de 4 milhões analisados. O atributo [`accesskey`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes/accesskey) foi usado com mais frequência, sendo encontrado em 2,47% das páginas da web (1,74% no celular ) Acreditamos que o maior uso de atalhos no desktop deve-se aos desenvolvedores que esperam que os sites móveis sejam acessados ​​apenas por meio de uma tela de toque e não de um teclado.
 
 O que é especialmente surpreendente aqui é que 15,56% dos sites para celular e 13,03% dos sites para desktop que usam teclas de atalho atribuem o mesmo atalho a vários elementos diferentes. Isso significa que os navegadores precisam adivinhar qual elemento deve possuir essa tecla de atalho.
 
@@ -218,13 +213,13 @@ As tabelas são uma das principais maneiras de organizar e expressar grandes qua
 
 Dependendo da maneira como uma tabela específica é estruturada, o uso de cabeçalhos de tabela torna mais fácil ler as colunas ou linhas sem perder o contexto sobre a quais dados aquela coluna ou linha específica se refere. Ter que navegar em uma tabela sem linhas ou colunas de cabeçalho é uma experiência inferior para um usuário de leitor de tela. Isso ocorre porque é difícil para um usuário de leitor de tela controlar sua posição em uma tabela sem cabeçalhos, especialmente quando a tabela é muito grande.
 
-Para marcar cabeçalhos de tabela, basta usar a tag [`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th) (em vez de [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)), ou qualquer um das regras ARIA [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) ou [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role). Apenas 24,5% das páginas com tabelas marcam suas tabelas com um desses métodos. Portanto, os três quartos das páginas que optam por incluir tabelas sem cabeçalhos estão criando sérios desafios para os usuários de leitores de tela.
+Para marcar cabeçalhos de tabela, basta usar a tag [`<th>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/th) (em vez de [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)), ou qualquer um das regras ARIA [`columnheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role) ou [`rowheader`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role). Apenas 24,5% das páginas com tabelas marcam suas tabelas com um desses métodos. Portanto, os três quartos das páginas que optam por incluir tabelas sem cabeçalhos estão criando sérios desafios para os usuários de leitores de tela.
 
 Usar `<th>` e `<td>` era de longe o método mais comumente usado para marcar cabeçalhos de tabela. O uso dos papéis `columnheader` e `rowheader` era quase inexistente, com apenas 677 sites no total usando-os (0,058%).
 
 #### Legendas
 
-As legendas das tabelas por meio do elemento [`<caption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption) são úteis para fornecer mais contexto para leitores de todos os tipos. Uma legenda pode preparar o leitor para receber as informações que sua mesa está compartilhando e pode ser especialmente útil para pessoas que podem se distrair ou ser interrompidas facilmente. Eles também são úteis para pessoas que podem perder seu lugar em uma mesa grande, como um usuário de leitor de tela ou alguém com deficiência intelectual ou de aprendizado. Quanto mais fácil você permitir que os leitores entendam o que estão analisando, melhor.
+As legendas das tabelas por meio do elemento [`<caption>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/caption) são úteis para fornecer mais contexto para leitores de todos os tipos. Uma legenda pode preparar o leitor para receber as informações que sua mesa está compartilhando e pode ser especialmente útil para pessoas que podem se distrair ou ser interrompidas facilmente. Eles também são úteis para pessoas que podem perder seu lugar em uma mesa grande, como um usuário de leitor de tela ou alguém com deficiência intelectual ou de aprendizado. Quanto mais fácil você permitir que os leitores entendam o que estão analisando, melhor.
 
 Apesar disso, apenas 4,32% das páginas com tabelas apresentam legendas.
 
@@ -283,11 +278,11 @@ Botões e links quase sempre são incluídos na ordem das guias e, portanto, tê
 
 ### Acessibilidade de controles de formulário
 
-Preencher formulários é uma tarefa que muitos de nós fazemos todos os dias. Quer estejamos fazendo compras, agendando viagens ou nos candidatando a um emprego, os formulários são a principal forma de os usuários compartilharem informações com páginas da web. Por isso, é extremamente importante garantir que seus formulários estejam acessíveis. O meio mais simples de fazer isso é fornecer rótulos (por meio dos elementos [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label), [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) ou [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)) para cada uma de suas entradas. Infelizmente, apenas 22,33% das páginas fornecem rótulos para todas as entradas de formulário, o que significa que 4 em cada 5 páginas têm formulários que podem ser muito difíceis de preencher.
+Preencher formulários é uma tarefa que muitos de nós fazemos todos os dias. Quer estejamos fazendo compras, agendando viagens ou nos candidatando a um emprego, os formulários são a principal forma de os usuários compartilharem informações com páginas da web. Por isso, é extremamente importante garantir que seus formulários estejam acessíveis. O meio mais simples de fazer isso é fornecer rótulos (por meio dos elementos [`<label>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/label), [`aria-label`](https://developer.mozilla.org/pt-BR/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) ou [`aria-labelledby`](https://developer.mozilla.org/pt-BR/docs/Web/Accessibility/ARIA/ARIA_Techniques/Usando_o_atributo_aria-labelledby)) para cada uma de suas entradas. Infelizmente, apenas 22,33% das páginas fornecem rótulos para todas as entradas de formulário, o que significa que 4 em cada 5 páginas têm formulários que podem ser muito difíceis de preencher.
 
 #### Indicadores de campos obrigatórios e inválidos
 
-Quando encontramos um campo com um grande asterisco vermelho próximo a ele, sabemos que é um campo obrigatório. Ou quando clicamos em enviar e somos informados de que há entradas inválidas, qualquer coisa destacada em uma cor diferente precisa ser corrigida e então reenviada. No entanto, pessoas com pouca ou nenhuma visão não podem confiar nessas dicas visuais, e é por isso que os atributos de entrada HTML `required`, `aria-required` e `aria-invalid` são tão importantes. Eles fornecem leitores de tela com o equivalente a asteriscos vermelhos e campos realçados em vermelho. Como um bom bônus, quando você informar aos navegadores quais campos são obrigatórios, eles irão [validar partes de seus formulários](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation) para vocês. Não requer JavaScript.
+Quando encontramos um campo com um grande asterisco vermelho próximo a ele, sabemos que é um campo obrigatório. Ou quando clicamos em enviar e somos informados de que há entradas inválidas, qualquer coisa destacada em uma cor diferente precisa ser corrigida e então reenviada. No entanto, pessoas com pouca ou nenhuma visão não podem confiar nessas dicas visuais, e é por isso que os atributos de entrada HTML `required`, `aria-required` e `aria-invalid` são tão importantes. Eles fornecem leitores de tela com o equivalente a asteriscos vermelhos e campos realçados em vermelho. Como um bom bônus, quando você informar aos navegadores quais campos são obrigatórios, eles irão [validar partes de seus formulários](https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/Forms/Form_validation) para vocês. Não requer JavaScript.
 
 Das páginas que usam formulários, 21,73% usam `required` ou `aria-required` ao marcar os campos obrigatórios. Apenas um em cada cinco sites faz uso disso. Esta é uma etapa simples para tornar seu site acessível e desbloquear recursos úteis do navegador para todos os usuários.
 
@@ -295,11 +290,11 @@ Também descobrimos que 3,52% dos sites com formulários usam `aria-invalid`. No
 
 #### IDs duplicados
 
-Os IDs podem ser usados ​​em HTML para vincular dois elementos. Por exemplo, o elemento [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) funciona dessa maneira. Você especifica o ID do campo de entrada que este rótulo está descrevendo e o navegador os vincula. O resultado? Os usuários agora podem clicar neste rótulo para focar no campo de entrada, e os leitores de tela usarão esse rótulo como a descrição.
+Os IDs podem ser usados ​​em HTML para vincular dois elementos. Por exemplo, o elemento [`<label>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/label) funciona dessa maneira. Você especifica o ID do campo de entrada que este rótulo está descrevendo e o navegador os vincula. O resultado? Os usuários agora podem clicar neste rótulo para focar no campo de entrada, e os leitores de tela usarão esse rótulo como a descrição.
 
 Infelizmente, 34,62% ​​dos sites têm IDs duplicados, o que significa que em muitos sites a ID especificada pelo usuário pode se referir a várias entradas diferentes. Portanto, quando um usuário clica no rótulo para selecionar um campo, ele pode acabar [selecionando algo diferente](https://www.deque.com/blog/unique-id-attributes-matter/) do que pretendia. Como você pode imaginar, isso pode ter consequências negativas em algo como um carrinho de compras.
 
-Esse problema é ainda mais encontrado para leitores de tela porque seus usuários podem não conseguir verificar visualmente o que está selecionado. Além disso, muitos atributos ARIA, como [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) e [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), funciona de forma semelhante ao elemento de rótulo detalhado acima. Portanto, para tornar seu site acessível, remover todos os IDs duplicados é um bom primeiro passo.
+Esse problema é ainda mais encontrado para leitores de tela porque seus usuários podem não conseguir verificar visualmente o que está selecionado. Além disso, muitos atributos ARIA, como [`aria-describedby`](https://developer.mozilla.org/pt-BR/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) e [`aria-labelledby`](https://developer.mozilla.org/pt-BR/docs/Web/Accessibility/ARIA/ARIA_Techniques/Usando_o_atributo_aria-labelledby), funciona de forma semelhante ao elemento de rótulo detalhado acima. Portanto, para tornar seu site acessível, remover todos os IDs duplicados é um bom primeiro passo.
 
 ## Conclusão
 
