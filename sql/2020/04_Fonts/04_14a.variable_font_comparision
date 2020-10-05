@@ -1,5 +1,5 @@
 #standardSQL
-#variable_font_with_fcp
+#variable_font_comparision_fcp
 SELECT
   client,
   variable_fonts > 0 AS uses_variable_fonts,
