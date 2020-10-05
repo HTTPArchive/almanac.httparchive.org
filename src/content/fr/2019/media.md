@@ -241,11 +241,11 @@ Les gains obtenus dans ce test A/B <span lang="en">Lighthouse</span> ne concerne
 
 ### Images adaptatives
 
-Un autre axe d’amélioration des performances des pages consiste à utiliser des images adaptatives. Cette technique vise à réduire le nombre d’octets d’image en diminuant les pixels supplémentaires qui ne sont pas affichés à l’écran en raison du rétrécissement de l’image. Au début de ce chapitre, vous avez vu que la page web médiane sur ordinateur utilisait un MP d’espace réservé pour les images mais transférait 2,1&nbsp;MP de volume de pixels réel. Comme il s’agissait d’un test DPR 1x, 1,1&nbsp;MP de pixels ont été transférés sur le réseau, mais n’ont pas été affichés. Pour réduire cette surcharge, nous pouvons utiliser l’une des deux (éventuellement trois) techniques suivantes:
+Un autre axe d’amélioration des performances des pages consiste à utiliser des images adaptatives. Cette technique vise à réduire le nombre d’octets d’image en diminuant les pixels supplémentaires qui ne sont pas affichés à l’écran en raison du rétrécissement de l’image. Au début de ce chapitre, vous avez vu que la page web médiane sur ordinateur utilisait un MP d’espace réservé pour les images mais transférait 2,1&nbsp;MP de volume de pixels réels. Comme il s’agissait d’un test DPR 1x, 1,1&nbsp;MP de pixels ont été transférés sur le réseau, mais n’ont pas été affichés. Pour réduire cette surcharge, nous pouvons utiliser l’une des deux (éventuellement trois) techniques suivantes&nbsp;:
 
 * **Le balisage HTML** - utiliser une combinaison d’éléments `<picture>` et `<source>` avec les attributs `srcset` et `sizes` permet au navigateur de choisir la meilleure image à partir des dimensions du <span lang="en">viewport</span> et la densité de l’affichage. 
 * **Indices Client** - permet de déléguer le choix des images éventuellement redimensionnées à la négociation de contenu HTTP.
-* **BONUS**: des bibliothèques JavaScript pour retarder le chargement des images jusqu’à ce que le JavaScript puisse s’exécuter, inspecter le DOM du navigateur et injecter l’image correcte en fonction du conteneur.
+* **BONUS**&nbsp;: des bibliothèques JavaScript pour retarder le chargement des images jusqu’à ce que le JavaScript puisse s’exécuter, inspecter le DOM du navigateur et injecter l’image correcte en fonction du conteneur.
 
 ### Utilisation du balisage HTML
 
@@ -263,7 +263,7 @@ L’utilisation nettement plus faible de `<picture>` n’est pas surprenante dan
 
 ### Utilisation de sizes
 
-L’utilité de `srcset` dépend généralement de la précision de la requête média `size`. Sans `sizes`, le navigateur supposera que la balise `<img>` remplira toute la fenêtre d’affichage au lieu d’un composant plus petit. Il est intéressant de noter qu’il existe cinq modèles courants que les développeurs web ont adoptés pour les `<img sizes>` :
+L’utilité de `srcset` dépend généralement de la précision de la requête média `size`. Sans `sizes`, le navigateur supposera que la balise `<img>` remplira toute la fenêtre d’affichage au lieu d’un composant plus petit. Il est intéressant de noter qu’il existe cinq modèles courants que les développeurs web ont adoptés pour les `<img sizes>`&nbsp;:
 
 * **`<img sizes="100vw">`** - cela indique que l’image remplira la largeur de la fenêtre de visualisation (le comportement par défaut).
 * **`<img sizes="200px">`** - ceci est utile pour les navigateurs qui sélectionnent sur la base du DPR.
