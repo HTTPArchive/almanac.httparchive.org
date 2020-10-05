@@ -279,7 +279,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
 (max-width: 400px) 100vw, 400px | 0.32 | 1&nbsp;%
 (max-width: 80px) 100vw, 80px | 0.28 | 1&nbsp;%
 
-  <figcaption id="fig15-caption">Figure 15. Pourcentage de pages utilisant modèle de conception <code>sizes</code> le plus populaire.</figcaption>
+  <figcaption>{{ figure_link(caption="Pourcentage de pages utilisant modèle de conception <code>sizes</code> le plus populaire.") }}</figcaption>
 </figure>
 
 * **`<img sizes="auto">`** - c’est l’utilisation la plus populaire, qui n’est en fait pas normalisée et qui est un artefact de l’utilisation de la bibliothèque JavaScript `lazy_sizes`. Celle-ci utilise du code côté client pour injecter un meilleur calcul des `sizes` pour le navigateur. L’inconvénient de cette méthode est qu’elle dépend du chargement du JavaScript et du DOM pour être totalement prête, ce qui retarde considérablement le chargement des images. 
