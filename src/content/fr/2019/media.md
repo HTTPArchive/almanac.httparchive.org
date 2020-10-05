@@ -339,7 +339,7 @@ Plus tôt, dans la <a href="#fig-5">Figure 5</a>, nous avons montré que le volu
 
 L’audit <span lang="en">Lighthouse</span> nous indique qu’il y a un certain nombre de situations qui peuvent être difficiles à détecter, comme par exemple l’utilisation de substituts de qualité. 
 
-Le <i lang="en">Lazy Loading</i> [peut être implémenté](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) de différentes manières en incluant une combinaison de <i lang="en">Intersection Observers</i>, <i lang="en">Resize Observers</i>, ou en utilisant des librairies JavaScript comme [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), ou une poignée d’autres. 
+Le <i lang="en">Lazy Loading</i> [peut être implémenté](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) de différentes manières en incluant une combinaison de <i lang="en">Intersection Observers</i>, <i lang="en">Resize Observers</i>, ou en utilisant des bibliothèques JavaScript comme [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), ou une poignée d’autres. 
 
 En août 2019, Chrome 76 a été lancé avec le support du <i lang="en">lazy loading</i> basé sur des balises utilisant `<img loading="lazy">`. Alors que l’instantané des sites web utilisés pour le Web Almanac 2019 utilisait les données de juillet 2019, plus de 2&#8239;509 sites web utilisaient déjà cette fonctionnalité.
 
