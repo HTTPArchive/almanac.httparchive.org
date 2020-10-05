@@ -242,15 +242,15 @@ Uma preocupação maior é que o push pode facilmente causar, em vez de resolver
 
 Também há muito pouca evidência até o momento de que o push, mesmo quando implementado corretamente, resulta no aumento de desempenho prometido. Esta é uma área em que, novamente, o HTTP Archive não está na melhor posição para responder, devido à natureza de como ele é executado (um rastreamento de sites populares usando o Chrome em um estado), então não vamos nos aprofundar muito aqui. No entanto, basta dizer que os ganhos de performance estão longe de ser claros e os problemas potenciais são reais.
 
-Putting that aside let's look at the usage of HTTP/2 push.
+Deixando isso de lado, vamos analisar o uso do HTTP/2 push.
 
 <figure markdown>
-| Cliente | Sites Usando o Push do HTTP/2 | Sites Usando o Push do HTTP/2 (%) |
-| ------- | ----------------------------- | --------------------------------- |
-| Desktop |  22,581                       | 0.52%                             |
-| Mobile  |  31,452                       | 0.59%                             |
+| Cliente | Sites Usando o HTTP/2 Push | Sites Usando o HTTP/2 Push (%) |
+| ------- | -------------------------- | --------------------------------- |
+| Desktop |  22,581                    | 0.52%                             |
+| Mobile  |  31,452                    | 0.59%                             |
 
-<figcaption>{{ figure_link(caption="Sites Usando o Push do HTTP/2.") }}</figcaption>
+<figcaption>{{ figure_link(caption="Sites Usando o HTTP/2 Push.") }}</figcaption>
 </figure>
 
 <figure markdown>
@@ -297,7 +297,7 @@ Uma das causas de problemas no HTTP/2 é o suporte insuficiente para a prioriza�
 
 O HTTP/2 tem um modelo de priorização complexo (muitos dizem que é demasiado complexo — daí por que está sendo reconsiderado para o HTTP/3!), porém, poucos servidores o empregam adequadamente. Isso pode ser porque suas implementações do HTTP/2 não estão à altura ou por causa do chamado *bufferbloat*, em que as respostas já estão a caminho antes que o servidor perceba que há uma requisição de prioridade mais alta. Devido à natureza variável dos servidores, pilhas TCP e localizações, é difícil medir isso para a maioria dos sites, mas com CDNs isso deve ser mais consistente.
 
-[Patrick Meenan](https://twitter.com/patmeenan) created [an example test page](https://github.com/pmeenan/http2priorities/tree/master/stand-alone), which deliberately tries to download a load of low priority, off-screen images, before requesting some high priority on-screen images. A good HTTP/2 server should be able to recognize this and send the high priority images shortly after requested, at the expense of the lower priority images. A poor HTTP/2 server will just respond in the request order and ignore any priority signals. [Andy Davies](./contributors#andydavies) has [a page tracking the status of various CDNs for Patrick's test](https://github.com/andydavies/http2-prioritization-issues). The HTTP Archive identifies when a CDN is used as part of its crawl, and merging these two datasets can tell us the percent of pages using a passing or failing CDN.
+[Patrick Meenan](https://twitter.com/patmeenan) criou [uma página de teste de exemplo](https://github.com/pmeenan/http2priorities/tree/master/stand-alone), que deliberadamente tenta baixar uma carga de recursos de baixa prioridade, imagens fora do foco da tela, antes de fazer a requisição de algumas imagens de alta prioridade, na tela. Um bom servidor HTTP/2 deve ser capaz de reconhecer isso e enviar as imagens de alta prioridade logo após solicitadas, às custas das imagens de baixa prioridade. Um servidor HTTP/2 ruim apenas responderá na ordem de requisição e ignorará quaisquer sinais de prioridade. [Andy Davies](./contributors#andydavies) tem [uma página rastreando o status de vários CDNs para o teste de Patrick](https://github.com/andydavies/http2-prioritization-issues). O HTTP Archive identifica quando um CDN é usado como parte do seu rastreamento e a fusão desses dois conjuntos de dados pode nos dizer a porcentagem de páginas que usam um CDN aprovado ou com falha.
 
 <figure markdown>
 | CDN               | Prioriza Corretamente? | Desktop | Mobile | Ambos  |
