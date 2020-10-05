@@ -164,13 +164,13 @@ Dans l’ensemble, à travers l’ensemble des pages, nous voyons en effet la pr
 
 Bien entendu, les pages web n’utilisent pas toutes le contenu des images de la même manière. Certaines dépendent des images plus que d’autres. Il suffit de regarder la page d’accueil de `google.com` pour voir très peu d’images par rapport à un site d’information typique. En effet, le site web médian compte 13 images, 61 images au 90e percentile, et un nombre impressionnant de 229 images au 99e percentile.
 
-<figure>
-  <a href="/static/images/2019/media/fig8_image_format_usage_per_page.png">
-    <img src="/static/images/2019/media/fig8_image_format_usage_per_page.png" alt="Figure 8. Utilisation des formats d’image par page." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Un diagramme à barres montrant qu’au 10e percentile&nbsp;: aucun format d’image n’est utilisé&nbsp;; au 25e percentile&nbsp;: trois JPG et quatre PNG sont utilisés&nbsp;; au 50e percentile&nbsp;: neuf JPG, quatre PNG et un GIF sont utilisés&nbsp;; au 75e percentile&nbsp;: 39 JPEG, 18 PNG, deux SVG et deux GIF sont utilisés et au 99e percentile&nbsp;: 119 JPG, 49 PNG, 28 WebP, 19 SVG et 14 GIF sont utilisés.</div>
-  <figcaption id="fig8-caption">Figure 8. Utilisation des formats d’image par page.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8_image_format_usage_per_page.png",
+  caption="Utilisation des formats d’image par page.",
+  description="Un diagramme à barres montrant qu’au 10e percentile&nbsp;: aucun format d’image n’est utilisé&nbsp;; au 25e percentile&nbsp;: trois JPG et quatre PNG sont utilisés&nbsp;; au 50e percentile&nbsp;: neuf JPG, quatre PNG et un GIF sont utilisés&nbsp;; au 75e percentile&nbsp;: 39 JPEG, 18 PNG, deux SVG et deux GIF sont utilisés et au 99e percentile&nbsp;: 119 JPG, 49 PNG, 28 WebP, 19 SVG et 14 GIF sont utilisés.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=294858455&format=interactive"
+  )
+}}
 
 Bien que la page médiane comporte neuf JPEG et quatre PNG, et que les GIF n’aient été utilisés que dans les 25&nbsp;% de pages les plus importantes, cela ne rend pas compte du taux d’adoption. L’utilisation et la fréquence de chaque format par page ne donnent pas d’indications sur l’adoption des formats plus modernes. Plus précisément, quel pourcentage de pages comprend au moins une image dans chaque format&nbsp;?
 
