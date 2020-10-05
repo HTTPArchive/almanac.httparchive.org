@@ -24,7 +24,7 @@ FROM
 WHERE
   req.client = domain.client AND
   NET.HOST(req.url) = domain.domain AND
-  req.date = '2020-08-01' AND
+  req.date = '2020-09-01' AND
   req.url like 'https://%'
 GROUP BY
   client,
