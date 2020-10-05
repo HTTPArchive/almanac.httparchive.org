@@ -231,13 +231,13 @@ Un des contrôles de [Lighthouse](./methodology#lighthouse) est un test A/B comp
 
 Les gains obtenus dans ce test A/B Lighthouse ne concernent pas seulement les réductions potentielles en termes d’octets, qui peuvent s’élever à plusieurs Mo au 95e percentile, ils démontrent également l’amélioration des performances des pages. 
 
- <figure>
-  <a href="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png">
-    <img src="/static/images/2019/media/fig13_project_perf_improvements_image_optimization.png" alt="Figure 13. Projection que fait Lighthouse de l’amélioration des performances des pages grâce à l’optimisation des images." aria-labelledby="fig12-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779">
-  </a>
-  <div id="fig13-description" class="visually-hidden">Diagramme à barres montrant qu’au 10e percentile, 0&nbsp;ms pourrait être sauvée, de même au 25e percentile. Au 50e percentile, 150&nbsp;ms pourraient être sauvées. Au 75e percentile, 1460&nbsp;ms pourraient être sauvées et 90e percentile, 5720&nbsp;ms pourraient être sauvées.</div>
-  <figcaption id="fig13-caption">Figure 13. Projection que fait Lighthouse de l’amélioration des performances des pages grâce à l’optimisation des images.</figcaption>
-</figure>
+ {{ figure_markup(
+  image="fig13_project_perf_improvements_image_optimization.png",
+  alt="Projection que fait Lighthouse de l’amélioration des performances des pages grâce à l’optimisation des images.",
+  caption="Diagramme à barres montrant qu’au 10e percentile, 0&nbsp;ms pourrait être sauvée, de même au 25e percentile. Au 50e percentile, 150&nbsp;ms pourraient être sauvées. Au 75e percentile, 1460&nbsp;ms pourraient être sauvées et 90e percentile, 5720&nbsp;ms pourraient être sauvées.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
+  )
+}}
 
 ### Images adaptatives
 
