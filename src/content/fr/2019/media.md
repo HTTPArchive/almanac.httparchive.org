@@ -219,7 +219,7 @@ Certaines de ces caractéristiques peuvent avoir un impact sur l’ensemble de l
 
 D’autres particularités du format permettent de simplement organiser le contenu et nécessitent parfois une connaissance du contexte. Par exemple, en appliquant l’encodage progressif à un JPEG, on réorganise les pixels en couches de balayage, ce qui permet au navigateur de terminer la mise en page plus rapidement et, en même temps, de réduire le volume des pixels.
 
-Un des contrôles de [Lighthouse](./methodology#lighthouse) est un test A/B comparant la ligne de base avec un JPEG progressif. Cela donne une indication sur la possibilité d’optimiser davantage les images dans leur ensemble avec des techniques sans perte et éventuellement avec des techniques avec perte comme l’utilisation de différents niveaux de qualité. 
+Un des contrôles de [<span lang="en">Lighthouse</span>](./methodology#lighthouse) est un test A/B comparant la ligne de base avec un JPEG progressif. Cela donne une indication sur la possibilité d’optimiser davantage les images dans leur ensemble avec des techniques sans perte et éventuellement avec des techniques avec perte comme l’utilisation de différents niveaux de qualité. 
 
 {{ figure_markup(
   image="fig12_percentage_optimized_images.png",
@@ -229,11 +229,11 @@ Un des contrôles de [Lighthouse](./methodology#lighthouse) est un test A/B comp
   )
 }}
 
-Les gains obtenus dans ce test A/B Lighthouse ne concernent pas seulement les réductions potentielles en termes d’octets, qui peuvent s’élever à plusieurs Mo au 95e percentile, ils démontrent également l’amélioration des performances des pages. 
+Les gains obtenus dans ce test A/B <span lang="en">Lighthouse</span> ne concernent pas seulement les réductions potentielles en termes d’octets, qui peuvent s’élever à plusieurs Mo au 95e percentile, ils démontrent également l’amélioration des performances des pages. 
 
 {{ figure_markup(
   image="fig13_project_perf_improvements_image_optimization.png",
-  caption="Projection que fait Lighthouse de l’amélioration des performances des pages grâce à l’optimisation des images.",
+  caption="Projection que fait <span lang=\"en\">Lighthouse</span> de l’amélioration des performances des pages grâce à l’optimisation des images.",
   description="Diagramme à barres montrant qu’au 10e percentile, 0&nbsp;ms pourrait être sauvée, de même au 25e percentile. Au 50e percentile, 150&nbsp;ms pourraient être sauvées. Au 75e percentile, 1460&nbsp;ms pourraient être sauvées et 90e percentile, 5720&nbsp;ms pourraient être sauvées.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=167590779"
   )
@@ -326,18 +326,18 @@ Les Indications Client liés au réseau, `downlink`, `rtt`, et `ect`, ne sont di
 
 L’amélioration des performances des pages web peut être partiellement caractérisée comme un jeu de miroirs&nbsp;: sans les supprimer, on décale les éléments les plus lents en dehors de la zone d’usage de l’utilisateur. Par exemple, le <span lang="en">lazy loading</span> d’images est une de ces illusions où les images et les contenus médias ne sont chargés que lorsque l’utilisateur fait défiler la page. Cela améliore les performances perçues, même sur des réseaux lents, et évite à l’utilisateur de télécharger des octets qui ne sont pas visualisés autrement.
 
-Plus tôt, dans la <a href="#fig-5">Figure 5</a>, nous avons montré que le volume de contenu d’image au 75e percentile est bien plus important que ce qui pourrait théoriquement être affiché sur un seul écran de bureau ou de téléphone portable. L’audit Lighthouse concernant les [images hors champs](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirme ce soupçon. La page web médiane contient 27&nbsp;% d’images situées nettement sous la partie visible de la page. Ce pourcentage passe à 84&nbsp;% au 90e percentile. 
+Plus tôt, dans la <a href="#fig-5">Figure 5</a>, nous avons montré que le volume de contenu d’image au 75e percentile est bien plus important que ce qui pourrait théoriquement être affiché sur un seul écran de bureau ou de téléphone portable. L’audit <span lang="en">Lighthouse</span> concernant les [images hors champs](https://developers.google.com/web/tools/lighthouse/audits/offscreen-images) confirme ce soupçon. La page web médiane contient 27&nbsp;% d’images situées nettement sous la partie visible de la page. Ce pourcentage passe à 84&nbsp;% au 90e percentile. 
 
 {{ figure_markup(
   image="fig19_lighthouse_audit_offscreen.png",
-  alt="Audit Lighthouse: Hors-Écran.",
-  caption="Audit Lighthouse: Hors-Écran.",
+  alt="Audit <span lang=\"en\">Lighthouse</span>&nbsp;: Hors-Écran.",
+  caption="Audit <span lang=\"en\">Lighthouse</span>&nbsp;: Hors-Écran.",
   description="Un diagramme à barres montrant qu’au 10e percentile, 0&nbsp;% des images sont hors champ, au 25e percentile, 2&nbsp;% sont hors champ, au 50e percentile, 27&nbsp;% sont hors champ, au 75e percentile, 64&nbsp;% sont hors champ et au 90e percentile, 84&nbsp;% des images sont hors champ.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2123391693&format=interactive"
   )
 }}
 
-L’audit Lighthouse nous indique qu’il y a un certain nombre de situations qui peuvent être difficiles à détecter, comme par exemple l’utilisation de substituts de qualité. 
+L’audit <span lang="en">Lighthouse</span> nous indique qu’il y a un certain nombre de situations qui peuvent être difficiles à détecter, comme par exemple l’utilisation de substituts de qualité. 
 
 Le <i lang="en">Lazy Loading</i> [peut être implémenté](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video) de différentes manières en incluant une combinaison de <i lang="en">Intersection Observers</i>, <i lang="en">Resize Observers</i>, ou en utilisant des librairies JavaScript comme [lazySizes](https://github.com/aFarkas/lazysizes), [lozad](https://github.com/ApoorvSaxena/lozad.js), ou une poignée d’autres. 
 
