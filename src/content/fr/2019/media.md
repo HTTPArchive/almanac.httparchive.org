@@ -80,13 +80,13 @@ Si nous avions une image qui remplissait parfaitement tout l’écran, le taux d
 
 <p class="note">Remarque&nbsp;: ceci ne concerne que la mise en page CSS, à la fois pour le ratio de pixels et le volume du contenu de la mise en page. Il ne s’agit pas d’évaluer la pertinence des images adaptatives ou la pertinence de fournir des contenus à haute densité de pixels.</p> 
 
-<figure>
-  <a href="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png">
-    <img src="/static/images/2019/media/fig5_image_pixel_volume_v_css_pixels.png" alt="Figure 5. Volume des pixels des images en fonction de la taille de l’écran (pixels CSS)." aria-labelledby="fig5-caption" aria-describedby="fig5-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Une comparaison du volume de pixels requis par page par rapport à la taille réelle de l’écran en pixels CSS, montrant le 10e percentile (20&nbsp;% mobile, 2&nbsp;% bureau), le 25e percentile (97&nbsp;% mobile, 13&nbsp;% bureau), le 50e percentile (354&nbsp;% mobile, 46&nbsp;% bureau), le 75e percentile (1003&nbsp;% mobile, 123&nbsp;% bureau), et le 90e percentile (2477&nbsp;% mobile, 273&nbsp;% bureau).</div>
-  <figcaption id="fig5-caption">Figure 5. Volume des pixels des images en fonction de la taille de l’écran (pixels CSS).</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5_image_pixel_volume_v_css_pixels.png",
+  caption="Volume des pixels des images en fonction de la taille de l’écran (pixels CSS).",
+  description="Une comparaison du volume de pixels requis par page par rapport à la taille réelle de l’écran en pixels CSS, montrant le 10e percentile (20&nbsp;% mobile, 2&nbsp;% bureau), le 25e percentile (97&nbsp;% mobile, 13&nbsp;% bureau), le 50e percentile (354&nbsp;% mobile, 46&nbsp;% bureau), le 75e percentile (1003&nbsp;% mobile, 123&nbsp;% bureau), et le 90e percentile (2477&nbsp;% mobile, 273&nbsp;% bureau).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1889020047&format=interactive"
+  )
+}}
 
 Au niveau de la page web médiane sur ordinateur de bureau, 46&nbsp;% de l’affichage est occupé par des images et de la vidéo. En revanche, sur un téléphone portable, le volume de pixels des médias remplit 3,5 fois la taille réelle de l’écran. La mise en page comporte plus de contenu qu’il n’est possible d’en remplir dans un seul écran, ce qui oblige l’utilisateur à faire défiler les pages. Au minimum, il y a 3,5 pages de contenu défilant par site (en supposant une saturation de 100&nbsp;%). Au 90e percentile pour les mobiles, ce chiffre augmente considérablement pour atteindre 25 fois la taille de la fenêtre&nbsp;!
 
