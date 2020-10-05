@@ -310,13 +310,13 @@ L’utilisation de la balise `<meta>` en HTML pour énoncer les Indications Clie
 
 En observant la manière dont les Indications Client énoncées, on peut voir que la majorité des pages les utilisent pour les trois cas d’utilisation originaux&nbsp;: `DPR`, `ViewportWidth` et `Width`. Bien sûr, l’Indication Client `Width` nécessite l’utilisation de `<img sizes>` pour que le navigateur ait suffisamment de contexte sur la mise en page. 
 
-<figure>
-  <a href="/static/images/2019/media/fig18_enabled_client_hints.png">
-    <img src="/static/images/2019/media/fig18_enabled_client_hints.png" alt="Figure 18. Indications Client actives." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive">
-  </a>
-  <div id="fig18-description" class="visually-hidden">Un graphique en anneau montrant que 26,1&nbsp;% des Indications Client utilisent `dpr`, 24,3&nbsp;% `viewport-width`, 19,7&nbsp;% `width`, 6,7&nbsp;% `save-data`, 6,1&nbsp;% `device memory`, 6,0&nbsp;% `downlink`, 5,6&nbsp;% `rtt` et 5,6&nbsp;% `ect`.</div>
-  <figcaption id="fig18-caption">Figure 18. Indications Client actives.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig18_enabled_client_hints.png",
+  caption="Indications Client actives.",
+  description="Un graphique en anneau montrant que 26,1&nbsp;% des Indications Client utilisent `dpr`, 24,3&nbsp;% `viewport-width`, 19,7&nbsp;% `width`, 6,7&nbsp;% `save-data`, 6,1&nbsp;% `device memory`, 6,0&nbsp;% `downlink`, 5,6&nbsp;% `rtt` et 5,6&nbsp;% `ect`.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=1878506264&format=interactive"
+  )
+}}
 
 Les Indications Client liés au réseau, `downlink`, `rtt`, et `ect`, ne sont disponibles que sur Chrome pour Android.
 
