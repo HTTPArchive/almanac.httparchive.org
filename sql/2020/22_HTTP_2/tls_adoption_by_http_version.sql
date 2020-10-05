@@ -1,22 +1,36 @@
 # standardSQL
 # Distribution of TLS versions
 SELECT
-  client,
-  http_version,
-  tls_version,
+  req.client,
+  JSON_EXTRACT_SCALAR(payload, '$._protocol') AS protocol,
+  domain.tls_version,
   COUNT(0) AS freq,
-  SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-  ROUND(COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client), 4) pct
-FROM (
-  SELECT
+  COUNTIF(firstHtml) AS freq_firstHtml,
+  COUNTIF(firstReq) AS freq_firstReq
+FROM
+  `httparchive.almanac.requests` req,
+    (SELECT
     client,
-    JSON_EXTRACT_SCALAR(payload, '$._protocol') as http_version,
-    JSON_EXTRACT_SCALAR(payload, '$._tls_version') AS tls_version
-  FROM `httparchive.almanac.requests` WHERE date='2020-08-01'
-  )
+    NET.HOST(url) AS domain,
+    MAX(IFNULL(JSON_EXTRACT_SCALAR(payload, '$._tls_version'), JSON_EXTRACT_SCALAR(payload, '$._securityDetails.protocol'))) AS tls_version
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    date = '2020-09-01' AND
+    url like 'https://%'
+  GROUP BY
+    client,
+    domain) domain
+WHERE
+  req.client = domain.client AND
+  NET.HOST(req.url) = domain.domain AND
+  req.date = '2020-08-01' AND
+  req.url like 'https://%'
 GROUP BY
   client,
-  http_version,
+  protocol,
   tls_version
 ORDER BY
-  freq / total DESC
+  freq desc,
+  client,
+  protocol
