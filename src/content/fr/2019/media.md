@@ -152,6 +152,7 @@ Chaque format a ses propres mérites et a des utilisations idéales pour le web.
 ### Formats d’images
 
 Dans l’ensemble, à travers l’ensemble des pages, nous voyons en effet la prédominance de ces formats. Le JPEG, l’un des plus anciens formats du web, est de loin le format d’image le plus utilisé avec 60&nbsp;% des requêtes d’image et 65&nbsp;% de tous les octets d’image. Il est intéressant de noter que le PNG est le deuxième format d’image le plus utilisé&nbsp;: 28&nbsp;% des requêtes d’images et des octets. La généralisation de son support ainsi que la précision des couleurs et la créativité de son contenu expliquent probablement sa large utilisation. En revanche, le SVG, le GIF et le WebP partagent presque la même utilisation avec 4&nbsp;%.
+
 {{ figure_markup(
   image="fig7_image_format_usage.png",
   caption="Utilisation des formats d’image.",
