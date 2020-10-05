@@ -110,53 +110,52 @@ Il est rare de trouver une page web qui n’utilise pas d’images. Au fil des a
 Chaque format a ses propres mérites et a des utilisations idéales pour le web. Un résumé très simplifié se décomposerait ainsi&nbsp;:
 
 <figure>
-<table>
-<thead>
-<tr>
-<th scope="col">Format</th>
-<th scope="col" class="width-45">Points forts</th>
-<th scope="col" class="width-45">Inconvénients</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JPEG</td>
-<td><ul><li>Supporté universellement</li><li>Idéal pour les contenus photographiques</li></ul></td>
-<td><ul><li>Il y a toujours une perte de qualité</li><li>La plupart des décodeurs ne peuvent pas traiter les photos à grande profondeur en octets provenant d’appareils photo modernes (> 8 octets par canal)</li><li>Pas de support de la transparence</li></ul></td>
-</tr>
-<tr>
-<td>PNG</td>
-<td><ul><li>Comme JPEG et GIF, bénéficie d’un large support</li><li>Sans perte</li><li>Supporte la transparence, l’animation et une grande profondeur d’octets</li></ul></td>
-<td><ul><li>Fichiers beaucoup plus volumineux que le JPEG</li><li>Pas idéal pour le contenu photographique</li></ul></td>
-</tr>
-<tr>
-<td>GIF</td>
-<td><ul><li>Le prédécesseur de PNG, est surtout connu pour ses animations</li><li>Sans perte</li></ul></td>
-<td><ul><li>En raison de la limitation des 256 couleurs, il y a toujours une perte visuelle due à la conversion</li><li>Fichiers très volumineux pour les animations</li></ul></td>
-</tr>
-<tr>
-<td>SVG</td>
-<td><ul><li>Un format vectoriel qui peut être redimensionné sans augmenter la taille du fichier</li><li>Elle est basée sur les mathématiques plutôt que sur les pixels et crée des lignes lisses</li></ul></td>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Format</th>
+        <th scope="col" class="width-45">Points forts</th>
+        <th scope="col" class="width-45">Inconvénients</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td><ul><li>Supporté universellement</li><li>Idéal pour les contenus photographiques</li></ul></td>
+        <td><ul><li>Il y a toujours une perte de qualité</li><li>La plupart des décodeurs ne peuvent pas traiter les photos à grande profondeur en octets provenant d’appareils photo modernes (> 8 octets par canal)</li><li>Pas de support de la transparence</li></ul></td>
+      </tr>
+      <tr>
+      <td>PNG</td>
+        <td><ul><li>Comme JPEG et GIF, bénéficie d’un large support</li><li>Sans perte</li><li>Supporte la transparence, l’animation et une grande profondeur d’octets</li></ul></td>
+        <td><ul><li>Fichiers beaucoup plus volumineux que le JPEG</li><li>Pas idéal pour le contenu photographique</li></ul></td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td><ul><li>Le prédécesseur de PNG, est surtout connu pour ses animations</li><li>Sans perte</li></ul></td>
+        <td><ul><li>En raison de la limitation des 256 couleurs, il y a toujours une perte visuelle due à la conversion</li><li>Fichiers très volumineux pour les animations</li></ul></td>
+      </tr>
+      <tr>
+        <td>SVG</td>
+        <td><ul><li>Un format vectoriel qui peut être redimensionné sans augmenter la taille du fichier</li><li>Elle est basée sur les mathématiques plutôt que sur les pixels et crée des lignes lisses</li></ul></td>
 <td><ul><li>Non utile pour les contenus photographiques ou autres contenus tramés</li></ul></td>
-</tr>
-<tr>
-<td>WebP</td>
-<td><ul><li>Un format de fichier plus récent qui peut produire des images sans perte comme le PNG et des images avec perte comme le JPEG</li><li>Il <a href="https://developers.google.com/speed/webp/faq">prétend être 30&nbsp;% plus affichage que</a> le JPEG, alors que d’autres données suggèrent que la réduction médiane des fichiers se situe <a href="https://cloudinary.com/state-of-visual-media-report/">entre 10 et 28&nbsp;% suivant le volume de pixels</a>.</li></ul></td>
-<td><ul><li>Contrairement au JPEG, il est limité à un sous-échantillonnage chromatique qui rendra certaines images floues.</li><li>Ne bénéficie pas d’un support généralisé. Uniquement les écosystèmes Chrome, Firefox et Android.</li><li>Support de fonctionnalités fragmenté suivant les versions de navigateur</li></ul></td>
- </tr>
- </tbody>
- </table>
+      </tr>
+      <tr>
+        <td>WebP</td>
+        <td><ul><li>Un format de fichier plus récent qui peut produire des images sans perte comme le PNG et des images avec perte comme le JPEG</li><li>Il <a href="https://developers.google.com/speed/webp/faq">prétend être 30&nbsp;% plus affichage que</a> le JPEG, alors que d’autres données suggèrent que la réduction médiane des fichiers se situe <a href="https://cloudinary.com/state-of-visual-media-report/">entre 10 et 28&nbsp;% suivant le volume de pixels</a>.</li></ul></td>
+        <td><ul><li>Contrairement au JPEG, il est limité à un sous-échantillonnage chromatique qui rendra certaines images floues.</li><li>Ne bénéficie pas d’un support généralisé. Uniquement les écosystèmes Chrome, Firefox et Android.</li><li>Support de fonctionnalités fragmenté suivant les versions de navigateur</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
    <figcaption>{{ figure_link(caption="Explication des principaux formats de fichiers.") }}</figcaption>
 </figure>
   
 ### Formats d’images
 
 Dans l’ensemble, à travers l’ensemble des pages, nous voyons en effet la prédominance de ces formats. Le JPEG, l’un des plus anciens formats du web, est de loin le format d’image le plus utilisé avec 60&nbsp;% des requêtes d’image et 65&nbsp;% de tous les octets d’image. Il est intéressant de noter que le PNG est le deuxième format d’image le plus utilisé&nbsp;: 28&nbsp;% des requêtes d’images et des octets. La généralisation de son support ainsi que la précision des couleurs et la créativité de son contenu expliquent probablement sa large utilisation. En revanche, le SVG, le GIF et le WebP partagent presque la même utilisation avec 4&nbsp;%.
-
 {{ figure_markup(
   image="fig7_image_format_usage.png",
   caption="Utilisation des formats d’image.",
-  description="Une carte arborescente montrant que le JPEG est utilisé 60,27&nbsp;% du temps, le PNG 28,2&nbsp;%, le WebP 4,2&nbsp;%, le GIF 3,67&nbsp;% et le SVG 3,63&nbsp;%.",
+  description="Une carte arborescente montrant que le JPEG est utilisé 60,27&nbsp;% du temps, le PNG 28,2&nbsp;%, le WebP 4,2&nbsp;%, le GIF 3,67&nbsp;% et le SVG 3,63&nbsp;%.", 
   width=600,
   height=376
   )
@@ -187,12 +186,12 @@ Ceci explique pourquoi, même au 90e percentile des pages, la fréquence de WebP
 ### Taille des fichiers d’images
 
 Il y a deux façons de considérer la taille des fichiers d’images&nbsp;: les octets absolus par ressource et les octets par pixel.
- 
+
 {{ figure_markup(
   image="fig10_image_format_size.png",
   caption="Taille du fichier (Ko) par format d’image.",
   description="Un tableau montrant qu’au 10e percentile, 4&nbsp;Ko de JPEG, 2&nbsp;Ko de PNG et 2&nbsp;Ko de GIF sont utilisés&nbsp;; au 25e percentile, 9&nbsp;Ko de JPG, 4&nbsp;Ko de PNG, 7&nbsp;Ko de WebP, et 3&nbsp;Ko de GIF sont utilisés&nbsp;; au 50e percentile, 24&nbsp;Ko de JPG, 11&nbsp;Ko de PNG, 17&nbsp;Ko de WebP, 6&nbsp;Ko de GIF, et 1&nbsp;Ko de SVG sont utilisés&nbsp;; au 75e percentile, 68&nbsp;Ko de JPEG, 43&nbsp;Ko de PNG, 41&nbsp;Ko de WebP, 17&nbsp;Ko de GIF et 2&nbsp;Ko de SVG sont utilisés&nbsp;; au 90e percentile, 116&nbsp;Ko de JPG, 152&nbsp;Ko de PNG, 90&nbsp;Ko de WebP, 87&nbsp;Ko de GIF et 8&nbsp;Ko de SVG sont utilisés."
-  )
+)
 }}
 
 Grâce à ces informations, nous pouvons commencer à avoir une idée de la taille d’une ressource typique sur le web. Cependant, cela ne nous donne pas encore une idée du volume de pixels représentés à l’écran pour ces distributions de fichiers. Pour ce faire, nous pouvons diviser chaque octet de ressource par le volume naturel de pixels de l’image. Un faible nombre d’octets par pixel indique une transmission plus efficace du contenu visuel.
