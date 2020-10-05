@@ -34,13 +34,13 @@ Le deuxième impact est le coût financier pour l’utilisateur. C’est un aspe
 
 En outre, le coût financier de la visite de ces sites web dans différentes parties du monde est disproportionné. Au niveau de la médiane et du 90e percentile, le volume des octets d’images est respectivement de 1&nbsp;Mo et de 1,9&nbsp;Mo. En utilisant [WhatDoesMySiteCost.com](https://whatdoesmysitecost.com/#gniCost) et en regardant le revenu national brut (RNB) par habitant, on peut voir qu’à Madagascar, le chargement d’une seule page web au 90e percentile coûterait à un utilisateur 2,6&nbsp;% du revenu brut quotidien. En revanche, en Allemagne, ce coût serait de 0,3&nbsp;% du revenu brut quotidien.
 
-<figure>
-  <a href="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png">
-    <img src="/static/images/2019/media/fig2_total_image_bytes_per_web_page_mobile.png" alt="Figure 2. Total des octets d’images par page web (mobile)." aria-labelledby="fig2-caption" aria-describedby="fig2-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive">
-  </a>
-  <div id="fig2-description" class="visually-hidden">La page web médiane sur le mobile nécessite 1&nbsp;Mo d’images et 4,9&nbsp;Mo au 90e percentile.</div>
-  <figcaption id="fig2-caption">Figure 2. Total des octets d’images par page web (mobile).</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig2_total_image_bytes_per_web_page_mobile.png",
+  caption="Total des octets d’images par page web (mobile).",
+  description="La page web médiane sur le mobile nécessite 1&nbsp;Mo d’images et 4,9&nbsp;Mo au 90e percentile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2025280105&format=interactive"
+  )
+}}
 
 Si on ne considère que les octets par page, on ne tient compte que du coût en performance pour la page et l’utilisateur, mais on néglige les avantages. Ces octets sont importants pour le rendu des pixels à l’écran. C’est pourquoi nous pouvons aussi mesurer la prédominance des images et des ressources vidéo en examinant le nombre de pixels média utilisés par page.
 
