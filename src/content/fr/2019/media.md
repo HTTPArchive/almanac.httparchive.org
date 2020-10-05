@@ -50,13 +50,13 @@ Il y a trois mesures à prendre en compte lorsqu’on regarde le volume des pixe
 * Les _pixels naturels_ se réfèrent aux pixels logiques représentés dans un fichier. Si vous chargiez cette image dans GIMP ou Photoshop, les dimensions du fichier de pixels seraient les pixels naturels.
 * Les _pixels de l’écran_ se réfèrent à l’électronique physique de l’écran. Avant les téléphones mobiles et les écrans modernes à haute résolution, il existait une relation 1:1 entre les pixels CSS et les points LED d’un écran. Cependant, comme les appareils mobiles sont tenus plus près de l'œil et que les écrans d’ordinateurs portables sont plus proches que les anciens terminaux <i lang="en">mainframe</i>, les écrans modernes ont un rapport plus élevé entre les pixels physiques et les pixels CSS traditionnels. Ce rapport est appelé "<span lang="en">Device-Pixel-Ratio</span>" ou, plus communément, "affichage Retina™".
  
- <figure>
-  <a href="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png">
-    <img src="/static/images/2019/media/fig3_image_pixel_per_page_mobile_css_v_actual.png" alt="Figure 3. Pixels d’image par page (mobile)&nbsp;: pixels CSS par rapport aux pixels naturels." aria-labelledby="fig3-caption" aria-describedby="fig3-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive">
-  </a>
-  <div id="fig3-description" class="visually-hidden">Une comparaison des pixels CSS alloués au contenu de l’image par rapport aux pixels d’image naturels pour les mobiles, montrant le 10e percentile (0,07&nbsp;MP réels, 0,04&nbsp;MP CSS), le 25e percentile (0,38&nbsp;MP réel, 0,18&nbsp;MP CSS), le 50e percentile (1,6&nbsp;MP réel, 0,65&nbsp;MP CSS), le 75e percentile (5,1&nbsp;MP réel, 1,8&nbsp;MP CSS), et le 90e percentile (12&nbsp;MP réel, 4,6&nbsp;MP CSS)</div>
-  <figcaption id="fig3-caption">Figure 3. Pixels d’image par page (mobile)&nbsp;: pixels CSS par rapport aux pixels naturels.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig3_image_pixel_per_page_mobile_css_v_actual.png",
+  caption="Pixels d’image par page (mobile)&nbsp;: pixels CSS par rapport aux pixels naturels.",
+  description="Une comparaison des pixels CSS alloués au contenu de l’image par rapport aux pixels d’image naturels pour les mobiles, montrant le 10e percentile (0,07&nbsp;MP réels, 0,04&nbsp;MP CSS), le 25e percentile (0,38&nbsp;MP réel, 0,18&nbsp;MP CSS), le 50e percentile (1,6&nbsp;MP réel, 0,65&nbsp;MP CSS), le 75e percentile (5,1&nbsp;MP réel, 1,8&nbsp;MP CSS), et le 90e percentile (12&nbsp;MP réel, 4,6&nbsp;MP CSS)",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=2027393897&format=interactive"
+  )
+}}
 
 <figure>
   <a href="/static/images/2019/media/fig4_image_pixel_per_page_desktop_css_v_actual.png">
