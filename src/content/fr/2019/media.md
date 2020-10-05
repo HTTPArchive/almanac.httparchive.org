@@ -288,7 +288,7 @@ L’utilité de `srcset` dépend généralement de la précision de la requête 
   image="fig16_top_patterns_of_img_sizes.png",
   alt="Top patterns of img sizes.",
   caption="Principaux modèles de conception de <code><img sizes></code>.",
-  description="Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=""(max-width : 300px) 100vw, 300px"', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=""(max-width : 767px) 89vw...etc."', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.",
+  description="Diagramme à barres montrant que 11,3 millions d’images utilisent 'img sizes=\"(max-width: 300px) 100vw, 300px\"', 1,60 million utilisent 'auto', 1,00 million utilisent 'img sizes=\"(max-width : 767px) 89vw...etc.\"', 0,23 million utilisent '100vw' et 0,13 million utilisent '300px'.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=663985412&format=interactive"
   )
 }}
@@ -360,7 +360,7 @@ Les vidéos peuvent être diffusées avec de nombreux formats et lecteurs diffé
 {{ figure_markup(
   image="fig20_video_files_by_extension.png",
   caption="Nombre de fichiers vidéo par extension.",
-  description="Un diagramme à barres montrant que 1&#8239;283&#8239;439 fichiers "ts" sont utilisés sur ordinateurs de bureau (792&#8239;952 sur mobiles), 729&#8239;757&#8239;000 "mp4" sur les ordinateurs de bureau (662&#8239;015 sur mobiles), 38&#8239;591 de "webm" sur ordinateurs de bureau (32&#8239;417 sur mobiles), 22&#8239;194 fichiers "mov" sur ordinateurs de bureau (14&#8239;986 sur mobiles), 17&#8239;338 fichiers "m4s" sur ordinateurs de bureau (16&#8239;046 sur mobiles), 7&#8239;466 fichiers "m4v" sur ordinateurs de bureau (6&#8239;169 sur mobiles).",
+  description="Un diagramme à barres montrant que 1&#8239;283&#8239;439 fichiers 'ts' sont utilisés sur ordinateurs de bureau (792&#8239;952 sur mobiles), 729&#8239;757&#8239;000 'mp4' sur les ordinateurs de bureau (662&#8239;015 sur mobiles), 38&#8239;591 de 'webm' sur ordinateurs de bureau (32&#8239;417 sur mobiles), 22&#8239;194 fichiers 'mov' sur ordinateurs de bureau (14&#8239;986 sur mobiles), 17&#8239;338 fichiers 'm4s' sur ordinateurs de bureau (16&#8239;046 sur mobiles), 7&#8239;466 fichiers 'm4v' sur ordinateurs de bureau (6&#8239;169 sur mobiles).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=999894252&format=interactive"
   )
 }}
