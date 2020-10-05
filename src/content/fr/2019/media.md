@@ -368,13 +368,13 @@ D’autres formats sont également utilisés, notamment `webm`, `mov`, `m4s` et 
 
 La taille médiane des vidéos pour chaque format est indiquée ci-dessous&nbsp;:
 
-<figure>
-  <a href="/static/images/2019/media/fig21_median_vidoe_file_size_by_extension.png">
-    <img src="/static/images/2019/media/fig21_median_vidoe_file_size_by_extension.png" alt="Figure 21. Taille médiane de fichier par extension vidéo." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive">
-  </a>
-  <div id="fig21-description" class="visually-hidden">Un diagramme à barres montrant la taille moyenne du fichier "ts" à 335&nbsp;Ko pour le bureau (156&nbsp;Ko pour le mobile), "mp4" à 175&nbsp;Ko pour le bureau (128&nbsp;Ko pour le mobile), "webm" à 359&nbsp;Ko pour le bureau (192&nbsp;Ko pour le mobile), "mov" à 128&nbsp;Ko pour le bureau (96&nbsp;Ko pour le mobile), "m4s" à 324&nbsp;Ko pour le bureau (246&nbsp;Ko pour le mobile), et "m4v" à 383&nbsp;Ko pour le bureau (161&nbsp;Ko pour le mobile).</div>
-  <figcaption id="fig21-caption">Figure 21. Taille médiane de fichier par extension vidéo.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig21_median_vidoe_file_size_by_extension.png",
+  caption="Taille médiane de fichier par extension vidéo.",
+  description="Un diagramme à barres montrant la taille moyenne du fichier "ts" à 335&nbsp;Ko pour le bureau (156&nbsp;Ko pour le mobile), "mp4" à 175&nbsp;Ko pour le bureau (128&nbsp;Ko pour le mobile), "webm" à 359&nbsp;Ko pour le bureau (192&nbsp;Ko pour le mobile), "mov" à 128&nbsp;Ko pour le bureau (96&nbsp;Ko pour le mobile), "m4s" à 324&nbsp;Ko pour le bureau (246&nbsp;Ko pour le mobile), et "m4v" à 383&nbsp;Ko pour le bureau (161&nbsp;Ko pour le mobile).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSViHIntdF6-bHAI0cl1HelY_X8rR4lf0P3W2Y8I5SyVMxG-ptggTHfWA0qrrU47RvuAydLE6Zex6L3/pubchart?oid=821311770&format=interactive"
+  )
+}}
 
 Les valeurs médianes sont plus petites sur les mobiles, ce qui signifie probablement que certains sites qui ont de très grandes vidéos sur le bureau les désactivent pour les mobiles, et que les flux vidéo servent des versions plus petites de vidéos sur des écrans plus petits.
 
