@@ -11,6 +11,7 @@ CREATE TEMP FUNCTION IS_NON_ZERO (good FLOAT64, needs_improvement FLOAT64, poor 
 
 SELECT
   app,
+	CDN,
   client,
   COUNT(DISTINCT origin) AS origins,
   # Origins with good LCP divided by origins with any LCP.
@@ -56,14 +57,14 @@ JOIN (
       url,
       app
     FROM
-      `httparchive.summary_requests.2020_07_01_*`
+      `httparchive.summary_requests.2020_08_01_*`
     JOIN (
       SELECT
         _TABLE_SUFFIX,
         app,
         url
       FROM
-        `httparchive.technologies.2020_07_01_*`
+        `httparchive.technologies.2020_08_01_*`
       WHERE
         LOWER(category) = "static site generator" OR
 				app = "Next.js"
@@ -80,6 +81,7 @@ WHERE
 	CDN IS NOT NULL
 GROUP BY
   app,
+	CDN,
   client
 ORDER BY
   origins DESC

@@ -5,6 +5,7 @@
 # Performance of sites with millions of visitors as weighted the same as small sites.
 SELECT
   app,
+	CDN,
   client,
   COUNT(DISTINCT origin) AS origins,
   SUM(fast_lcp) / (SUM(fast_lcp) + SUM(avg_lcp) + SUM(slow_lcp)) AS good_lcp,
@@ -60,6 +61,7 @@ WHERE
 	CDN IS NOT NULL
 GROUP BY
   app,
+	CDN,
   client
 ORDER BY
   origins DESC
