@@ -23,6 +23,8 @@ SELECT
 FROM
   `httparchive.almanac.manifests`,
   UNNEST(getCategories(body)) AS category
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client,
   category

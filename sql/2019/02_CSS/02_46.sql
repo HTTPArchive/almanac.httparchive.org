@@ -40,5 +40,7 @@ FROM
   `httparchive.almanac.parsed_css`
 LEFT JOIN
   UNNEST(getClassChainLengths(css)) AS classes
+WHERE
+  date = '2019-07-01'
 GROUP BY
   client

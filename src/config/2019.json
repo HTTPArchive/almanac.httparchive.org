@@ -2,7 +2,7 @@
   "settings": [
     {
       "is_live": true,
-      "supported_languages": ["en","es","fr","ja"],
+      "supported_languages": ["en","es","fr","ja","pt","zh-CN"],
       "ebook_languages": ["en","ja"]
     }
   ],
@@ -339,6 +339,7 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/10931297?v=4&s=200",
       "website": "https://www.tunetheweb.com",
       "github": "bazzadp",
+      "linkedin": "barry-pollard-developer",
       "twitter": "tunetheweb"
     },
     "borisschapira": {
@@ -414,6 +415,14 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/1622597?v=4&s=200",
       "github": "colinbendell",
       "twitter": "colinbendell"
+    },
+    "chengxicn": {
+      "name": "Cheng Xi",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30398527?v=4&s=200",
+      "github": "chengxicn"
     },
     "bagder": {
       "name": "Daniel Stenberg",
@@ -583,7 +592,7 @@
         "reviewers"
       ],
       "avatar_url": "https://avatars1.githubusercontent.com/u/13718746?v=4&s=200",
-      "website": "https://www.linkedin.com/in/johnfox/",
+      "linkedin": "johnfox",
       "github": "clarkeclark"
     },
     "hyperpress": {
@@ -1041,11 +1050,21 @@
       "name": "Vincent Terrasi",
       "teams": [
         "brainstormers",
-        "authors"
+        "reviewers"
       ],
       "avatar_url": "https://avatars3.githubusercontent.com/u/2698956?v=4&s=200",
       "website": "https://data-seo.com",
       "github": "voltek62"
+    },
+    "HakaCode": {
+      "name": "William Sandres",
+      "teams": [
+        "translators"
+      ],
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33907565?v=4&s=200",
+      "website": "https://hakacode.github.io",
+      "github": "HakaCode",
+      "twitter": "hakacode"
     },
     "yoavweiss": {
       "name": "Yoav Weiss",

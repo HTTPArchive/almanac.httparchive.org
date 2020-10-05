@@ -57,6 +57,8 @@ FROM (
   FROM
     `httparchive.almanac.parsed_css`,
     UNNEST(getLengthUnit(css)) AS unit
+  WHERE
+    date = '2019-07-01'
   GROUP BY
     client,
     unit)

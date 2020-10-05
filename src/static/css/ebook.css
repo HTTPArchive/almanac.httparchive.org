@@ -96,11 +96,6 @@ tbody tr:nth-child(even) {
   text-decoration: none;
 }
 
-.content a,
-.content a:visited {
-  color: #0b1423;
-}
-
 .team {
   display: flex;
   flex-direction: row;
@@ -130,8 +125,7 @@ tbody tr:nth-child(even) {
   width: 600px;
   max-width: 100%;
   vertical-align: middle;
-  overflow: auto;
-  min-height: 7rem;
+  display: flex;
 }
 
 .contributor-avatar {
@@ -140,47 +134,54 @@ tbody tr:nth-child(even) {
   margin-bottom: 1rem;
   margin-right: 1rem;
   width: 5rem;
+  max-width: 5rem;
   height: auto;
   transition-duration: 0.3s;
-  float: left;
+  flex: 1;
+}
+
+.contributor-social .info {
+  max-width: 25vw;
 }
 
 .contributor-social a {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 5px;
-  height: 1.1rem;
-  width: 1.1rem;
-}
-
-.contributor-social svg {
-  height: 1.1rem;
-  width: 1.1rem;
-}
-
-.contributor-teams {
-  margin-top: 5px;
-}
-
-.contributor-team {
-  font-size: 14px;
-  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  line-height: 12px;
   color: #757575;
 }
 
-.contributor-team::after {
-  content: ', ';
+.contributor-social svg,
+.authors .social svg {
+  height: 1em;
+  width: 1em;
+  margin-right: 4px;
+  margin-right: 0.25rem;
 }
 
-.contributor-team:last-child::after {
-  content: '';
+.contributor-teams {
+  line-height: 1;
+  color: #757575;
 }
 
-.social-icon {
-  height: 15px;
-  height: 1.07rem;
-  width: 15px;
-  width: 1.07rem;
+.contributor-team,
+.contributor-social,
+.contributor-social a,
+.contributor-social a:visited {
+  font-size: 8px;
+  font-size: 0.8rem;
+  color: #757575;
+}
+
+.authors .social,
+.authors .social a,
+.authors .social a:visited {
+  font-size: 8px;
+  font-size: 0.8rem;
+}
+
+.contributor-team {
+  white-space: nowrap;
 }
 
 .content ul li::before {
@@ -325,6 +326,20 @@ section.chapter {
 }
 
 @media print {
+  body {
+    color: black;
+  }
+
+  .content a,
+  .content a:visited {
+    color: black;
+  }
+
+  .contributor-social a,
+  .contributor-social a:visited {
+    color: #757575;
+  }
+
   #title {
     background: none;
   }
@@ -439,9 +454,18 @@ section.chapter {
     width: 4.29rem;
   }
 
-  .authors .social svg {
-    height: 1.5rem;
-    width: 1.5rem;
+  /* Prince does not yet support Grid https://www.princexml.com/roadmap/ */
+  @supports not (display: grid) {
+    .content .authors li {
+      display: flex;
+      margin-bottom: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .authors .avatar-link {
+      flex-basis: 60px;
+      flex-shrink: 0;
+    }
   }
 
   .fn {

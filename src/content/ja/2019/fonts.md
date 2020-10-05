@@ -10,7 +10,7 @@ discuss: 1761
 results: https://docs.google.com/spreadsheets/d/108g6LXdC3YVsxmX1CCwrmpZ3-DmbB8G_wwgQHX5pn6Q/
 queries: 06_Fonts
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-06-30T00:00:00.000Z
+last_updated: 2020-10-04T00:00:00.000Z
 ---
 
 ## 序章
@@ -31,13 +31,13 @@ last_updated: 2020-06-30T00:00:00.000Z
 
 別のホストからウェブフォントを読み込む際のパフォーマンスコストを軽減するための推奨事項としては、`preconnect`、`dns-prefetch`、`preload` [リソースのヒント](./resource-hints)の使用がありますが、優先度の高いウェブフォントは、ウェブフォントのパフォーマンスへの影響を最小限に抑えるため、同一ホストからのリクエストにすべきです。これは視覚的に、非常に目立つコンテンツやページの大部分を占める本文コピーで使用されるフォントへ対して特に重要です。
 
-<figure>
-  <a href="/static/images/2019/fonts/fig1.png">
-    <img src="/static/images/2019/fonts/fig1.png" alt="図1. 人気のあるウェブフォントのホスティング戦略。" aria-labelledby="fig1-description" aria-describedby="fig1-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&amp;format=interactive">
-  </a>
-  <div id="fig1-description" class="visually-hidden">ウェブフォントのサードパーティおよびセルフホスティング戦略の人気を示す棒グラフ。モバイルWebページの75%がサードパーティ製ホストを使用し、25%がセルフホストを使用しています。デスクトップのウェブサイトでも、同様の利用状況です。</div>
-  <figcaption id="fig1-caption">図1. 人気のあるウェブフォントのホスティング戦略。font hosting strategies.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig1.png",
+  caption="人気のあるウェブフォントのホスティング戦略。font hosting strategies.",
+  description="ウェブフォントのサードパーティおよびセルフホスティング戦略の人気を示す棒グラフ。モバイルWebページの75%がサードパーティ製ホストを使用し、25%がセルフホストを使用しています。デスクトップのウェブサイトでも、同様の利用状況です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1546332659&format=interactive"
+  )
+}}
 
 4分の3がホストされているという事実は、おそらく我々が議論するGoogle Fontsの優位性を考えると意外と知られていません[以下](#最も人気のあるサードパーティ製のホストは何ですか？)。
 
@@ -159,15 +159,17 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
       </tr>
     </tbody>
   </table>
-  <figcaption>図2. リクエストの割合による上位20のフォントホスト。</figcaption>
+  <figcaption>{{ figure_link(caption="リクエストの割合による上位20のフォントホスト。") }}</figcaption>
 </figure>
 
 ここでのGoogle Fontsの優位性は、同時に驚くべきことであると同時に意外性のないものであった。期待していたという点では予想外でしたが、サービスの圧倒的な人気の高さには驚きました。フォントリクエストの75％というのは驚異的だ。TypeKitは一桁台の遠い2位で、Bootstrapライブラリがさらに遠い3位を占めていました。
 
-<figure>
-  <div class="big-number">29%</div>
-  <figcaption>図3. ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code>。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="ドキュメント内にGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code> 。",
+  content="29%",
+  classes="big-number"
+)
+}}
 
 ここでのGoogle Fontsの使用率の高さは非常に印象的だが、Google Fonts`<link>`要素を含むページが29％しかなかったことも注目に値する。これはいくつかのことを意味しているかもしれない。
 
@@ -175,10 +177,12 @@ Googleは`https://fonts.googleapis.com`でホストされているサードパ�
 - あるいは、もっとありそうにない話としては、多くの人が`<link>`の代わりに`@import`を使ってGoogle Fontsを使っているということかもしれません。
 - あるいは、超ありえないシナリオにまで踏み込んでみたいのであれば、多くの人が代わりに[HTTP `Link:`ヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP)を使ってGoogle Fontsを使っているということになるかもしれません。
 
-<figure>
-  <div class="big-number">0.4%</div>
-  <figcaption>図4. ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code>&lt;head&gt;</code>。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="ドキュメントの最初の子としてGoogle Fontsスタイルシートのリンクを含むページの割合 <code><head></code>。",
+  content="0.4%",
+  classes="big-number"
+)
+}}
 
 Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はページの`<head>`の最初の子として配置することを推奨しています。これは大きなお願いです！　実際、これは一般的でありません。全ページの半分のパーセント（約20,000ページ）しかこのアドバイスを受けていないので、これは一般的でありません。
 
@@ -188,10 +192,12 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 上述したように、サードパーティホストへのウェブフォント要求を高速化する超簡単な方法は、`preconnect`[リソースヒント](./resource-hints)を使用することです。
 
-<figure>
-  <div class="big-number">1.7%</div>
-  <figcaption>図5. モバイルページがウェブフォントホストにプリコネクティングしている割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="モバイルページがウェブフォントホストにプリコネクティングしている割合。",
+  content="1.7%",
+  classes="big-number"
+)
+}}
 
 うわー！　2％未満のページが[`preconnect`](https://web.dev/uses-rel-preconnect)を使用している！　Google Fontsが75％であることを考えると、これはもっと高いはずです！　開発者の皆さん: Google Fontsを使うなら、`preconnect`を使いましょう！　Google Fonts:`preconnect`をもっと宣伝しよう！
 
@@ -334,7 +340,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
       </tr>
     </tbody>
   </table>
-  <figcaption>図6. 全フォント宣言に占める上位20のフォントファミリーの割合。</figcaption>
+  <figcaption>{{ figure_link(caption="全フォント宣言に占める上位20のフォントファミリーの割合。") }}</figcaption>
 </figure>
 
 ここでの上位のエントリが[Google Fontsの人気順フォント一覧](https://fonts.google.com/?sort=popularity)と非常によく似ていることは驚くに値しません。
@@ -343,13 +349,13 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 今日のブラウザでは[WOFF2はかなりサポートされています](https://caniuse.com/#feat=woff2)。Google FontsはWOFF2というフォーマットを提供していますが、これは前身のWOFFよりも圧縮率が向上したフォーマットで、それ自体はすでに他の既存のフォントフォーマットよりも改善されていました。
 
-<figure>
-  <a href="/static/images/2019/fonts/fig7.png">
-    <img src="/static/images/2019/fonts/fig7.png" alt="図7. ウェブフォントのMIMEタイプの普及率" aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">ウェブフォントのMIMEタイプの人気を示す棒グラフ。フォントの74%でWOFF2が使用されており、次いでWOFFが13%、octet-streamが 6%、TTFが3%、plainが2%、HTMLが1%、SFNTが1%、その他のすべてのタイプが1%未満となっています。デスクトップとモバイルでは、同様の分布となっています。</div>
-  <figcaption id="fig7-caption">図7. ウェブフォントのMIMEタイプの普及率</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="ウェブフォントのMIMEタイプの普及率",
+  description="ウェブフォントのMIMEタイプの人気を示す棒グラフ。フォントの74%でWOFF2が使用されており、次いでWOFFが13%、octet-streamが 6%、TTFが3%、plainが2%、HTMLが1%、SFNTが1%、その他のすべてのタイプが1%未満となっています。デスクトップとモバイルでは、同様の分布となっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=998584594&format=interactive"
+  )
+}}
 
 私から見れば、ここでの結果を見て、WebフォントはWOFF2オンリーにした方がいいという意見もあるかもしれません。二桁台のWOFF使用率はどこから来ているのでしょうか？　もしかして、まだWebフォントをInternet Explorerに提供している開発者がいるのでしょうか？
 
@@ -357,17 +363,18 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 もう少し深く掘り下げて、`@font-face`宣言の`src:`プロパティで使われている`format()`の値を見てみましょう。
 
-<figure>
-  <a href="/static/images/2019/fonts/fig8.png">
-    <img src="/static/images/2019/fonts/fig8.png" alt="図8. <code>@font-face</code>宣言におけるフォントフォーマットの人気度。" aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">フォントフェイス宣言で使用されるフォーマットの人気を示す棒グラフ。デスクトップページの@font-face宣言の 69%がWOFF2形式を指定しており、11%がWOFF、10%がTrueType、8%がSVG、2%がEOT、1%未満でOpenType、TTF、OTFを指定しています。モバイルページの分布も同様です。</div>
-  <figcaption id="fig8-caption">図8. <code>@font-face</code>宣言におけるフォントフォーマットの人気度。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  alt="@font-face宣言におけるフォントフォーマットの人気度。",
+  caption="<code>@font-face</code> 宣言におけるフォントフォーマットの人気度。",
+  description="フォントフェイス宣言で使用されるフォーマットの人気を示す棒グラフ。デスクトップページの@font-face宣言の 69%がWOFF2形式を指定しており、11%がWOFF、10%がTrueType、8%がSVG、2%がEOT、1%未満でOpenType、TTF、OTFを指定しています。モバイルページの分布も同様です。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=700778025&format=interactive"
+  )
+}}
 
 [SVGフォント](https://caniuse.com/#feat=svg-fonts)が衰退しているのを見て期待していたのですが。バグだらけだし、Safari以外のブラウザでは実装が削除されている。そろそろ捨ててしまおうか。
 
-ここのSVGデータポイントを見ると、どのMIMEタイプでSVGフォントを提供しているのか気になります。図7のどこにも`image/svg+xml`は見当たりません。とにかく、それを修正することは気にしないで、ただそれらを取り除くだけです！
+ここのSVGデータポイントを見ると、どのMIMEタイプでSVGフォントを提供しているのか気になります。図6.7のどこにも`image/svg+xml`は見当たりません。とにかく、それを修正することは気にしないで、ただそれらを取り除くだけです！
 
 ### WOFF2専用
 
@@ -504,7 +511,7 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
       </tr>
     </tbody>
   </table>
-  <figcaption>図9. フォントフォーマットの組み合わせトップ20</figcaption>
+  <figcaption>{{ figure_link(caption="フォントフォーマットの組み合わせトップ20") }}</figcaption>
 </figure>
 
 このデータセットは、大多数の人がすでに`@font-face`ブロックでWOFF2のみを使っていることを示唆しているように見える。しかし、このデータセットにおけるGoogle Fontsの優位性についての以前の議論によれば、もちろんこれは誤解を招くものです。Google Fontsは合理化されたCSSファイルを提供するためにいくつかのスニッフィングメソッドを実行しており、最新の`format()`のみを含んでいる。当然のことながら、WOFF2がここでの結果を支配しているのはこの理由によるもので、WOFF2に対するブラウザのサポートは以前からかなり広くなっている。
@@ -517,10 +524,12 @@ Google Fontsのドキュメントでは、Google Fonts CSSの`<link>`はペー�
 
 [ブラウザ対応](https://caniuse.com/#feat=mdn-css_at-rules_font-face_font-display)もいいですね。Internet ExplorerやChromium以前のEdgeではサポートされていませんが、Webフォントが読み込まれたときにデフォルトでフォールバックテキストをレンダリングしてくれます（ここではFOITは使えません）。Chromeのテストでは、`font-display`はどのくらいの頻度で使われているのでしょうか？
 
-<figure>
-  <div class="big-number">26%</div>
-  <figcaption>図10. <code>font-display</code>スタイルを利用しているモバイルページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="<code>font-display</code> スタイルを利用しているモバイルページの割合。",
+  content="26%",
+  classes="big-number"
+)
+}}
 
 私はこれが時間の経過とともに忍び寄ってくることを想定しています、特に今は[Google Fontsがすべての新しいコードスニペットに `font-display` を追加しています](https://www.zachleat.com/web/google-fonts-display/)が彼らのサイトからコピーされています。
 
@@ -528,13 +537,14 @@ Google Fontsを使っているなら、スニペットを更新しよう！　Go
 
 どのような`font-display`値が人気あるのか見てみましょう。
 
-<figure>
-  <a href="/static/images/2019/fonts/fig11.png">
-    <img src="/static/images/2019/fonts/fig11.png" alt="図11. `font-display'の値の使用法。" aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&amp;format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">フォント表示スタイルの利用状況を示す棒グラフ。モバイルページの2.6％がこのスタイルを「swap」、1.5％が「auto」、0.7％が「block」、0.4％が「fallback」、0.2％が「optional」、0.1％が引用符で囲んだ「swap」に設定しているが、これは無効である。デスクトップの分布は、「swap」の利用率が0.4％ポイント低く、「auto」の利用率が0.1％ポイント高くなっている以外は似ている。</div>
-  <figcaption id="fig11-caption">図11. <code>font-display</code>の値の使用法。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig11.png",
+  alt="font-displayの値の使用法。",
+  caption="<code>font-display</code> の値の使用法。",
+  description="フォント表示スタイルの利用状況を示す棒グラフ。モバイルページの2.6％がこのスタイルを「swap」、1.5％が「auto」、0.7％が「block」、0.4％が「fallback」、0.2％が「optional」、0.1％が引用符で囲んだ「swap」に設定しているが、これは無効である。デスクトップの分布は、「swap」の利用率が0.4％ポイント低く、「auto」の利用率が0.1％ポイント高くなっている以外は似ている。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1988783738&format=interactive"
+  )
+}}
 
 ウェブフォントの読み込み中にフォールバックテキストを表示する簡単な方法として、`font-display: swap`が最も一般的な値として君臨しています。`swap`は新しいGoogle Fontsのコードスニペットでもデフォルト値として使われています。いくつかの著名な開発者のエバンジェリストがこれを求めてちょっとした働きかけをしていたので、ここでは`optional`(キャッシュされた場合にのみレンダリングする)がもう少し使われることを期待していたのですが、駄目でした。
 
@@ -542,23 +552,23 @@ Google Fontsを使っているなら、スニペットを更新しよう！　Go
 
 ある程度のニュアンスが必要な質問です。フォントはどのように使われているのか？　ページ上のコンテンツの量は？　そのコンテンツはレイアウトのどこにあるのか？　フォントはどのようにレンダリングされているのか？　しかし、ニュアンスの代わりに、リクエスト数を中心とした大まかで重い分析に飛び込んでみましょう。
 
-<figure>
-  <a href="/static/images/2019/fonts/fig12.png">
-    <img src="/static/images/2019/fonts/fig12.png" alt="図12. ページあたりのフォント要求の分布。" aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&amp;format=interactive">
-  </a>
-  <div id="fig12-description"class="visually-hidden">ページごとのフォント要求の分布を示す棒グラフ。デスクトップでの10、25、50、75、90パーセンタイルは以下の通りです。0、1、3、6、9のフォント要求があります。モバイルの分布は75パーセンタイルと90パーセンタイルまでは同じで、モバイルページでは要求されるフォントが1つ少なくなっています。</div>
-  <figcaption id="fig12-caption">図12. ページあたりのフォント要求の分布。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12.png",
+  caption="ページあたりのフォント要求の分布。",
+  description="ページごとのフォント要求の分布を示す棒グラフ。デスクトップでの10、25、50、75、90パーセンタイルは以下の通りです。0、1、3、6、9のフォント要求があります。モバイルの分布は75パーセンタイルと90パーセンタイルまでは同じで、モバイルページでは要求されるフォントが1つ少なくなっています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=451821825&format=interactive"
+  )
+}}
 
 中央値のウェブページでは、3つのウェブフォントをリクエストしています。90パーセンタイルでは、モバイルとデスクトップでそれぞれ6つと9つのウェブフォントをリクエストしています。
 
-<figure>
-  <a href="/static/images/2019/fonts/fig13.png">
-    <img src="/static/images/2019/fonts/fig13.png" alt="図13. ページあたりに要求されたウェブフォントのヒストグラム。" aria-labelledby="fig13-description" aria-describedby="fig13-caption" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">ページあたりのフォントリクエスト数の分布を示すヒストグラム。最も人気のあるフォントリクエスト数は0で、デスクトップページの22%を占めています。この分布は、1つのフォントを持つページの9%まで落ち込み、2～4つのフォントでは10%で頂点に達し、フォント数が増えるにつれて落ち込んでいきます。デスクトップとモバイルの分布は似ていますが、モバイルの分布はページあたりのフォント数が少ない方にわずかに傾いています。</div>
- <figcaption id="fig13-caption">図13. ページあたりに要求されたウェブフォントのヒストグラム。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig13.png",
+  caption="ページあたりに要求されたウェブフォントのヒストグラム。",
+  description="ページあたりのフォントリクエスト数の分布を示すヒストグラム。最も人気のあるフォントリクエスト数は0で、デスクトップページの22%を占めています。この分布は、1つのフォントを持つページの9%まで落ち込み、2～4つのフォントでは10%で頂点に達し、フォント数が増えるにつれて落ち込んでいきます。デスクトップとモバイルの分布は似ていますが、モバイルの分布はページあたりのフォント数が少ない方にわずかに傾いています。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=1755200484&format=interactive"
+  )
+}}
 
 Webフォントのリクエストがデスクトップとモバイルの間でかなり安定しているように見えるというのは非常に興味深いことです。私は、[`@media`クエリの中の`@font-face`ブロックを隠すことを推奨すること](https://css-tricks.com/snippets/css/using-font-face/#article-header-id-6)が流行らなかったのを見てうれしく思います (何も考えないでください)。
 
@@ -566,10 +576,12 @@ Webフォントのリクエストがデスクトップとモバイルの間で�
 
 ### この賞を受賞したくない
 
-<figure>
-  <div class="big-number">718</div>
-  <figcaption>図14. 1ページで最も多くのWebフォントのリクエストがあった。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="1ページで最も多くのWebフォントのリクエストがあった。",
+  content="718",
+  classes="big-number"
+)
+}}
 
 最も多くのウェブフォントをリクエストしたページの賞は、**718**のウェブフォントをリクエストしたサイトに贈られます！
 
@@ -579,10 +591,12 @@ Webフォントのリクエストがデスクトップとモバイルの間で�
 
 ## `Unicode-range`を使うとより正確なマッチングが可能になります
 
-<figure>
-  <div class="big-number">56%</div>
-  <figcaption>図15. <code>unicode-range</code>プロパティでWebフォントを宣言しているモバイルページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="<code>unicode-range</code> プロパティでWebフォントを宣言しているモバイルページの割合。",
+  content="56%",
+  classes="big-number"
+)
+}}
 
 [`unicode-range`](https://developer.mozilla.org/ja/docs/Web/CSS/@font-face/unicode-range)は、ブラウザに、ページがフォントファイルで使用したいコードポイントを具体的に知らせるための優れたCSSプロパティです。`@font-face`宣言に`unicode-range`がある場合、ページ上のコンテンツは、フォントが要求される前に、その範囲内のコードポイントのいずれかにマッチしなければなりません。これは非常に良いことです。
 
@@ -590,10 +604,12 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 
 ## システムフォントが存在する場合、ウェブフォントを要求しないようにする
 
-<figure>
-  <div class="big-number">59%</div>
-  <figcaption>図16. <code>local()</code>プロパティでWebフォントを宣言しているモバイルページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="<code>local()</code> プロパティでWebフォントを宣言しているモバイルページの割合。",
+  content="59%",
+  classes="big-number"
+)
+}}
 
 `local()`は`@font-face`、`src`のシステムフォントを参照するための良い方法です。もし `local()`フォントが存在するならば、ウェブフォントを要求する必要は全くありません。これはGoogle Fontsによって広く使われており、論争の的にもなっているのでユーザの土地からパターンを得ようとしているのであれば、これも歪んだデータの一例になるでしょう。
 
@@ -601,10 +617,12 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 
 ## 縮約されたフォントと`font-stretch`
 
-<figure>
-  <div class="big-number">7%</div>
-  <figcaption>図17. <code>font-stretch</code> プロパティを持つスタイルを含むデスクトップページとモバイルページの割合。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="<code>font-stretch</code> プロパティを持つスタイルを含むデスクトップページとモバイルページの割合。",
+  content="7%",
+  classes="big-number"
+)
+}}
 
 歴史的に、`font-stretch`はブラウザのサポートが悪く、よく知られた`@font-face`プロパティではありませんでした。詳しくは[MDNの`font-stretch`について](https://developer.mozilla.org/ja/docs/Web/CSS/font-stretch) を参照してください。しかし、[ブラウザのサポート](https://caniuse.com/#feat=css-font-stretch)は広がっています。
 
@@ -614,29 +632,34 @@ Google FontsはそのCSSのほとんど（すべてではないにしても）�
 
 [可変フォント](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide)では、1つのフォントファイルに複数のフォントの太さやスタイルを含めることができます。
 
-<figure>
-  <div class="big-number">1.8%</div>
-  <figcaption>図18. 可変フォントを含むページの割合</figcaption>
-</figure>
+{{ figure_markup(
+  caption="可変フォントを含むページの割合",
+  content="1.8%",
+  classes="big-number"
+)
+}}
 
 1.8％でさえ、これは予想よりも高かったが、これがうまくいくのを見て興奮している。[Google Fonts v2](https://developers.google.com/fonts/docs/css2)には可変フォントのサポートがいくつか含まれています。
 
-<figure>
-  <a href="/static/images/2019/fonts/fig19.png">
-    <img src="/static/images/2019/fonts/fig19.png" alt="図19. 'font-variation-settings'軸の使用法。" aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&amp;format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">font-variation-settingsプロパティの使用状況を示す棒グラフ。デスクトップページのプロパティの42%が"opsz"の値に設定されており、32%が"wght"、16%が"wdth"、2%以下が"roun"、"crsb"、"slnt"、"inln"などに設定されています。デスクトップページとモバイルページで顕著な違いは、"opsz"の使用率が26％、"wght"の使用率が38％、"wdth"の使用率が23％となっており、"wght"の使用率は、"wght"の使用率と"wght"の使用率の差が大きい。</div>
-  <figcaption id="fig19-caption">図19. <code>font-variation-settings</code>軸の使用法。</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19.png",
+  alt="font-variation-settings軸の使用法。",
+  caption="<code>font-variation-settings</code> 軸の使用法。",
+  description="font-variation-settingsプロパティの使用状況を示す棒グラフ。デスクトップページのプロパティの42%が\"opsz\"の値に設定されており、32%が\"wght\"、16%が\"wdth\"、2%以下が\"roun\"、\"crsb\"、\"slnt\"、\"inln\"などに設定されています。デスクトップページとモバイルページで顕著な違いは、\"opsz\"の使用率が26％、\"wght\"の使用率が38％、\"wdth\"の使用率が23％となっており、\"wght\"の使用率は、\"wght\"の使用率と\"wght\"の使用率の差が大きい。",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQDogXDb3BwZZHrBT39qccP_LJoCScD3QEi_FmjT_8VDPD_1Srpz-g7ZuuTUEb8pYXBpDmQzZ1hQh7q/pubchart?oid=699343351&format=interactive"
+  )
+}}
 
 この大規模なデータセットのレンズを通して見ると、これらの結果は非常に低いサンプルサイズであることがわかります。しかし、デスクトップページで最も一般的な軸として`opsz`が注目され、`wght`と`wdth`が後に続く。私の経験では、可変フォントの入門デモはたいていウェイトベースです。
 
 ## カラーフォントも未来かも？
 
-<figure>
-  <div class="big-number">117</div>
-  <figcaption>図20. カラーフォントを含むデスクトップウェブページの数。</figcaption>
-</figure>
+{{ figure_markup(
+  caption="カラーフォントを含むデスクトップウェブページの数。",
+  content="117",
+  classes="big-number"
+)
+}}
 
 これらのここでの使用法は基本的に存在しませんが、詳細については[カラーフォント！　WTF?](https://www.colorfonts.wtf/)という優れたリソースをチェックできます。フォント用のSVGフォーマット(これは良くないし消えていく)に似ていますが(全くそうではありません)、これを使うとOpenTypeファイルの中にSVGを埋め込むことができ、これは素晴らしくクールです。
 

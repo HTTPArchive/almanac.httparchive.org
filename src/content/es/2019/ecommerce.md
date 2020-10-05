@@ -10,7 +10,7 @@ discuss: 1768
 results: https://docs.google.com/spreadsheets/d/1FUMHeOPYBgtVeMU5_pl2r33krZFzutt9vkOpphOSOss/
 queries: 13_Ecommerce
 published: 2019-11-11T00:00:00.000Z
-last_updated: 2020-07-12T00:00:00.000Z
+last_updated: 2020-09-21T00:00:00.000Z
 ---
 
 ## Introducción
@@ -21,10 +21,12 @@ Casi el 10% de las páginas de inicio en este estudio resultaron ser parte de un
 - **Plataformas de software** como [Magento Open Source](https://magento.com/products/magento-open-source) que configura, aloja y administra usted mismo. Estas plataformas pueden ser potentes y flexibles, pero pueden ser más complejas de configurar y ejecutar que servicios como Shopify.
 - **Plataformas _hosted_ o alojadas** como [Magento Commerce](https://magento.com/products/magento-commerce) que ofrecen las mismas funciones que sus homólogos autohospedados, excepto que el alojamiento es administrado como un servicio por un tercero.
 
-<figure>
-  <div class="big-number">10%</div>
-  <figcaption>Figura 1. Porcentaje de páginas servidas por una plataforma de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="Porcentaje de páginas servidas por una plataforma de comercio electrónico.",
+  content="10%",
+  classes="big-number"
+)
+}}
 
 Este análisis sólo pudo detectar sitios creados en una plataforma de comercio electrónico. Esto significa que las tiendas y mercados en línea más grandes, como Amazon, JD y eBay, no están incluidos aquí. También tenga en cuenta que los datos aquí proceden sólo de las páginas de inicio, por lo que no se incluyen páginas de categoría, producto u otras páginas. Lea más información sobre nuestra [metodología](./methodology).
 
@@ -63,7 +65,7 @@ La detección de páginas no siempre es confiable, y algunos sitios bloquean exp
       </tr>
     </tbody>
   </table>
-  <figcaption>Figura 2. Porcentaje de plataformas de comercio electrónico detectado.</figcaption>
+  <figcaption>{{ figure_link(caption="Porcentaje de plataformas de comercio electrónico detectado.") }}</figcaption>
 </figure>
 
 ## Plataformas de comercio electrónico
@@ -110,32 +112,40 @@ La detección de páginas no siempre es confiable, y algunos sitios bloquean exp
       </tr>
     </tbody>
   </table>
-  <figcaption>Figura 3. Adopción de las 6 principales plataformas de comercio electrónico.</figcaption>
+  <figcaption>{{ figure_link(caption="Adopción de las 6 principales plataformas de comercio electrónico.") }}</figcaption>
 </figure>
 
 De las 116 plataformas de comercio electrónico que se detectaron, sólo seis se encuentran en más del 0,1% de los sitios web de escritorio o móviles. Tenga en cuenta que estos resultados no muestran variaciones por país, por tamaño de sitio u otras métricas similares.
 
-La Figura 3 anterior muestra que WooCommerce tiene la mayor adopción con alrededor del 4% de los sitios web de escritorio y móviles. Shopify es el segundo con aproximadamente el 1,6% de adopción. Magento, PrestaShop, Bigcommerce y Shopware siguen con una adopción cada vez más pequeña, acercándose al 0,1%.
+La Figura 13.3 anterior muestra que WooCommerce tiene la mayor adopción con alrededor del 4% de los sitios web de escritorio y móviles. Shopify es el segundo con aproximadamente el 1,6% de adopción. Magento, PrestaShop, Bigcommerce y Shopware siguen con una adopción cada vez más pequeña, acercándose al 0,1%.
 
 ### La larga cola
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig4.png">
-    <img src="/static/images/2019/ecommerce/fig4.png" alt="Figura 4. Adopción de las principales plataformas de comercio electrónico." aria-labelledby="fig4-caption" aria-describedby="fig4-description" width="600" height="414" data-width="600" data-height="414" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&amp;format=interactive">
-  </a>
-  <div id="fig4-description" class="visually-hidden">Gráfico de barras de la adopción de las 20 principales plataformas de comercio electrónico. Consulte la Figura 3 anterior para obtener una tabla de datos de adopción de las 6 plataformas principales.</div>
-  <figcaption id="fig4-caption">Figura 4. Adopción de las principales plataformas de comercio electrónico.</figcaption>
-  </figure>
+{{ figure_markup(
+  image="fig4.png",
+  caption="Adopción de las principales plataformas de comercio electrónico.",
+  description="Gráfico de barras de la adopción de las 20 principales plataformas de comercio electrónico. Consulte la Figura 13.3 anterior para obtener una tabla de datos de adopción de las 6 plataformas principales.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1565776696&format=interactive",
+  width=600,
+  height=414,
+  data_width=600,
+  data_height=414
+  )
+}}
   
 Hay 110 plataformas de comercio electrónico usadas por menos de un 0,1% de sitios web de escritorio o móvil. Alrededor de 60 de éstas tienen menos del 0,01% de sitios web móviles o de escritorio.
   
-  <figure>
-  <a href="/static/images/2019/ecommerce/fig5.png">
-    <img src="/static/images/2019/ecommerce/fig5.png" alt="Figura 5. Adopción combinada de las 6 principales plataformas de comercio electrónico versus las otras 110 plataformas." aria-labelledby="fig5-caption" aria-describedby ="fig5-description" width="600" height="361" data-width="600" data-height="361" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2093212206&amp;format=interactive">
-  </a>
-  <div id="fig5-description" class="visually-hidden">Las 6 principales plataformas de comercio electrónico representan el 8% de todos los sitios web. El resto de las 110 plataformas solo representan el 1,5% de los sitios web. Los resultados para escritorio y móvil son similares.</div>
-  <figcaption id="fig5-caption">Figura 5. Adopción combinada de las 6 principales plataformas de comercio electrónico versus las otras 110 plataformas.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig5.png",
+  caption="Adopción combinada de las 6 principales plataformas de comercio electrónico versus las otras 110 plataformas.",
+  description="Las 6 principales plataformas de comercio electrónico representan el 8% de todos los sitios web. El resto de las 110 plataformas solo representan el 1,5% de los sitios web. Los resultados para escritorio y móvil son similares.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2093212206&format=interactive",
+  width=600,
+  height=361,
+  data_width=600,
+  data_height=361
+  )
+}}
 
 El 7,87% de todas las peticiones en dispositivos móviles y el 8,06% en escritorio son para páginas de inicio servidas en una de las seis principales plataformas de comercio electrónico. Otro 1,52% de las peticiones en dispositivos móviles y 1,59% en escritorio son para páginas de inicio en las otras 110 plataformas de comercio electrónico.
 
@@ -143,13 +153,17 @@ El 7,87% de todas las peticiones en dispositivos móviles y el 8,06% en escritor
 
 En total, el 9,7% de las páginas de escritorio y el 9,5% de las páginas móviles usaron una plataforma de comercio electrónico.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig6.png">
-    <img src="/static/images/2019/ecommerce/fig6.png" alt="Figura 6. Porcentaje de páginas que utilizan una plataforma de comercio electrónico." aria-labelledby="fig6-caption" aria-describedby="fig6-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1360307171&amp;format=interactive">
-  </a>
-  <div id="fig6-description" class="visually-hidden">El 9,7% de las páginas de escritorio usan una plataforma de comercio electrónico y el 9,5% de las páginas móviles usan una plataforma de comercio electrónico.</div>
-  <figcaption id="fig6-caption">Figura 6. Porcentaje de páginas que utilizan una plataforma de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig6.png",
+  caption="Porcentaje de páginas que utilizan una plataforma de comercio electrónico.",
+  description="El 9,7% de las páginas de escritorio usan una plataforma de comercio electrónico y el 9,5% de las páginas móviles usan una plataforma de comercio electrónico.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1360307171&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
 Aunque la proporción de sitios web de escritorio fue ligeramente mayor en general, algunas plataformas populares (incluyendo WooCommerce, PrestaShop y Shopware) en realidad tienen más sitios web móviles que de escritorio.
 
@@ -157,21 +171,29 @@ Aunque la proporción de sitios web de escritorio fue ligeramente mayor en gener
 
 El [peso de la página](./page-weight) de una plataforma de comercio electrónico incluye todo su HTML, CSS, JavaScript, JSON, XML, imágenes, audio y video.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig7.png">
-    <img src="/static/images/2019/ecommerce/fig7.png" alt="Figura 7. Distribución del peso de la página de comercio electrónico." aria-labelledby="fig7-caption" aria-describedby="fig7-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&amp;format=interactive">
-  </a>
-  <div id="fig7-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 del peso de la página de comercio electrónico. La página de comercio electrónico de escritorio situada en la mediana carga 2,7 MB. El percentil 10 es 1,0 MB, el 25 es 1,6 MB, el 75 es 4,5 MB y el 90 es 7,6 MB. Los sitios web de escritorio son ligeramente más altos que los móviles por décimas de megabytes.</div>
-  <figcaption id="fig7-caption">Figura 7. Distribución del peso de la página de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig7.png",
+  caption="Distribución del peso de la página de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 del peso de la página de comercio electrónico. La página de comercio electrónico de escritorio situada en la mediana carga 2,7 MB. El percentil 10 es 1,0 MB, el 25 es 1,6 MB, el 75 es 4,5 MB y el 90 es 7,6 MB. Los sitios web de escritorio son ligeramente más altos que los móviles por décimas de megabytes.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=448248428&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig8.png">
-    <img src="/static/images/2019/ecommerce/fig8.png" alt="Figura 8. Distribución de peticiones por página de comercio electrónico." aria-labelledby="fig8-caption" aria-describedby="fig8-description" width="600" height="363" data-width="600" data-height="363" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1968521689&amp;format=interactive">
-  </a>
-  <div id="fig8-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 de peticiones por página de comercio electrónico. La página de comercio electrónico de escritorio situada en la mediana realiza 108 peticiones. El percentil 10 es 53 peticiones, el 25 es 76, el 75 es 153 y el 90 es 210. Los sitios web de escritorio son ligeramente más altos que los móviles en aproximadamente 10 peticiones.</div>
-  <figcaption id="fig8-caption">Figura 8. Distribución de peticiones por página de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig8.png",
+  caption="Distribución de peticiones por página de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 de peticiones por página de comercio electrónico. La página de comercio electrónico de escritorio situada en la mediana realiza 108 peticiones. El percentil 10 es 53 peticiones, el 25 es 76, el 75 es 153 y el 90 es 210. Los sitios web de escritorio son ligeramente más altos que los móviles en aproximadamente 10 peticiones.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1968521689&format=interactive",
+  width=600,
+  height=363,
+  data_width=600,
+  data_height=363
+  )
+}}
 
 La página de una plataforma de comercio electrónico de escritorio situada en la mediana carga 108 peticiones y 2,7 MB. El peso medio para _todas_ páginas de escritorio es 74 peticiones y [1,9 MB] (./page-weight#peso-de-pagina). En otras palabras, las páginas de comercio electrónico realizan casi un 50% más de peticiones que otras páginas web, con _payloads_ aproximadamente un 35% más grandes. En comparación, la página de inicio de [amazon.com](https://amazon.com) realiza alrededor de 300 peticiones en la primera carga, con un peso de página de alrededor de 5 MB, y [ebay.com](https://ebay.com) realiza alrededor de 150 peticiones con un peso de página de aproximadamente 3 MB. El peso de la página y el número de peticiones de páginas de inicio en plataformas de comercio electrónico es ligeramente menor en dispositivos móviles en cada percentil, pero alrededor del 10% de todas las páginas de inicio de comercio electrónico cargan más de 7 MB y realizan más de 200 peticiones.
 
@@ -278,7 +300,7 @@ Los siguientes gráficos son para peticiones de escritorio:
       </tr>
     </tbody>
   </table>
-<figcaption>Figura 9. Percentiles de la distribución del peso de la página (en KB) por tipo de recurso.</figcaption>
+<figcaption>{{ figure_link(caption="Percentiles de la distribución del peso de la página (en KB) por tipo de recurso.") }}</figcaption>
 </figure>
 
 <figure>
@@ -376,7 +398,7 @@ Los siguientes gráficos son para peticiones de escritorio:
       </tr>
     </tbody>
   </table>
-  <figcaption>Figura 10. Percentiles de la distribución de peticiones por página por tipo de recurso.</figcaption>
+  <figcaption>{{ figure_link(caption="Percentiles de la distribución de peticiones por página por tipo de recurso.") }}</figcaption>
 </figure>
 
 Las imágenes constituyen el mayor número de peticiones y la mayor proporción de bytes para las páginas de comercio electrónico. La página de comercio electrónico de escritorio promedio incluye 39 imágenes con un peso de 1.514 KB (1,5 MB).
@@ -385,13 +407,13 @@ El número de peticiones [JavaScript](./javascript) indica que un mejor _bundlin
 
 ## Tamaño del HTML
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig11.png">
-    <img src="/static/images/2019/ecommerce/fig11.png" alt="Figura 11. Distribución de bytes de HTML (en KB) por página de comercio electrónico." aria-labelledby="fig11-caption" aria-describedby="fig11-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&amp;format=interactive">
-  </a>
-  <div id="fig11-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de HTML por página de comercio electrónico. La página de comercio electrónico de escritorio promedio tiene 36 KB de HTML. El percentil 10 es 12 KB, el 25 es 20, el 75 es 66 y el 90 es 118. Los sitios web de escritorio tienen 1 ó 2 KB más de HTML que los sitios móviles.</div>
-  <figcaption id="fig11-caption">Figura 11. Distribución de bytes de HTML (en KB) por página de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig11.png",
+  caption="Distribución de bytes de HTML (en KB) por página de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de HTML por página de comercio electrónico. La página de comercio electrónico de escritorio promedio tiene 36 KB de HTML. El percentil 10 es 12 KB, el 25 es 20, el 75 es 66 y el 90 es 118. Los sitios web de escritorio tienen 1 ó 2 KB más de HTML que los sitios móviles.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=908924961&format=interactive"
+  )
+}}
 
 Tenga en cuenta que el _payload_ de HTML puede incluir otro código, como JSON, JavaScript o CSS incrustado en el marcado, en lugar de referenciarse como enlaces externos. El tamaño medio del HTML para las páginas de comercio electrónico es de 34 KB en dispositivos móviles y 36 KB en escritorio. Sin embargo, el 10% de las páginas de comercio electrónico tienen un tamaño de HTML de más de 115 KB.
 
@@ -399,30 +421,32 @@ Los tamaños de HTML en móvil no son muy diferentes de los de escritorio. En ot
 
 ## Estadísticas de imágenes
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig12.png">
-    <img src="/static/images/2019/ecommerce/fig12.png" alt="Figura 12. Distribución de bytes de imagen (en KB) por página de comercio electrónico." aria-labelledby="fig12-caption" aria-describedby="fig12-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&amp;format=interactive">
-  </a>
-  <div id="fig12-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de imagen por página de comercio electrónico. La página de comercio electrónico móvil promedio tiene 1.517 KB de imágenes. El percentil 10 es 318 KB, el 25 es 703, el 75 es 3.132 y el 90 es 5.881. Los sitios web para escritorio y dispositivos móviles tienen distribuciones similares.</div>
-  <figcaption id="fig12-caption">Figura 12. Distribución de bytes de imagen (en KB) por página de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig12.png",
+  caption="Distribución de bytes de imagen (en KB) por página de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de imagen por página de comercio electrónico. La página de comercio electrónico móvil promedio tiene 1.517 KB de imágenes. El percentil 10 es 318 KB, el 25 es 703, el 75 es 3.132 y el 90 es 5.881. Los sitios web para escritorio y dispositivos móviles tienen distribuciones similares.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=323146848&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig13.png">
-    <img src="/static/images/2019/ecommerce/fig13.png" alt="Figura 13. Distribución de peticiones de imágenes por página de comercio electrónico." aria-labelledby="fig13-caption" aria-describedby="fig13-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&amp;format=interactive">
-  </a>
-  <div id="fig13-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 de peticiones de imágenes por página de comercio electrónico. La página mediana de comercio electrónico de escritorio realiza 40 peticiones de imágenes. El percentil 10 es 16 peticiones, el 25 es 25, el 75 es 62 y el 90 es 97. La distribución de escritorio es ligeramente superior a la móvil en 2-10 peticiones en cada percentil.</div>
-  <figcaption d="fig13-caption">Figura 13. Distribución de peticiones de imágenes por página de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig13.png",
+  caption="Distribución de peticiones de imágenes por página de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 de peticiones de imágenes por página de comercio electrónico. La página mediana de comercio electrónico de escritorio realiza 40 peticiones de imágenes. El percentil 10 es 16 peticiones, el 25 es 25, el 75 es 62 y el 90 es 97. La distribución de escritorio es ligeramente superior a la móvil en 2-10 peticiones en cada percentil.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1483037371&format=interactive"
+  )
+}}
 
 <p class="note">Tenga en cuenta que debido a que nuestra <a href="./methodology">metodología</a> de recopilación de datos no simula las interacciones del usuario en páginas como hacer clic o scroll, las imágenes cargadas de forma diferida (_lazy loading_) no se representarían en estos resultados.</p>
 
-Las Figuras 12 y 13 muestran que la página de comercio electrónico promedio tiene 37 imágenes y representan un tráfico de 1.517 KB en dispositivos móviles, 40 imágenes y 1.524 KB en computadoras de escritorio. ¡El 10% de las páginas de inicio tienen 90 o más imágenes y representan en total casi 6 MB!
+Las Figuras 13.12 y 13.13 muestran que la página de comercio electrónico promedio tiene 37 imágenes y representan un tráfico de 1.517 KB en dispositivos móviles, 40 imágenes y 1.524 KB en computadoras de escritorio. ¡El 10% de las páginas de inicio tienen 90 o más imágenes y representan en total casi 6 MB!
 
-<figure>
-  <div class="big-number">1.517 KB</div>
-  <figcaption>Figura 14. El número medio de bytes de imagen por página de comercio electrónico en móvil.</figcaption>
-</figure>
+{{ figure_markup(
+  caption="El número medio de bytes de imagen por página de comercio electrónico en móvil.",
+  content="1.517 KB",
+  classes="big-number"
+)
+}}
 
 Una proporción significativa de las páginas de comercio electrónico tienen un _payload_ de imágenes considerable y realizan una gran cantidad de peticiones de imágenes en la primera carga. Consulte el informe [Estado de las imágenes](https://httparchive.org/reports/state-of-images) de HTTP Archive y los capítulos [media](./media) y [peso de página](./page-weight) para más contexto.
 
@@ -432,13 +456,13 @@ Necesitamos hacer más análisis para comprender mejor por qué algunos sitios n
 
 ## Formatos de imagen populares
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig15.png">
-    <img src="/static/images/2019/ecommerce/fig15.png" alt="Figura 15. Formatos de imagen populares." aria-labelledby="fig15-caption" aria-describedby="fig15-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&amp;format=interactive">
-  </a>
-  <div id="fig15-description" class="visually-hidden">Gráfico de barras que muestra la popularidad de varios formatos de imagen. JPEG es el formato más popular con el 54% de las imágenes en las páginas de comercio electrónico de escritorio. Los siguientes son PNG con un 27%, GIF con un 14%, SVG con un 2% y WebP e ICO con un 1% cada uno.</div>
-  <figcaption id="fig15-caption">Figura 15. Formatos de imagen populares.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig15.png",
+  caption="Formatos de imagen populares.",
+  description="Gráfico de barras que muestra la popularidad de varios formatos de imagen. JPEG es el formato más popular con el 54% de las imágenes en las páginas de comercio electrónico de escritorio. Los siguientes son PNG con un 27%, GIF con un 14%, SVG con un 2% y WebP e ICO con un 1% cada uno.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=2108999644&format=interactive"
+  )
+}}
 
 <p class="note">Tenga en cuenta que algunos servicios de imágenes o CDN entregarán automáticamente WebP (en lugar de JPEG o PNG) a plataformas que admitan WebP, incluso para una URL con el sufijo `.jpg` o` .png`. Por ejemplo, <a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">IMG_20190113_113201.jpg</a> devuelve una imagen WebP en Chrome. Sin embargo, la forma en que HTTP Archive <a href="https://github.com/HTTPArchive/legacy.httparchive.org/blob/31a25b9064a365d746d4811a1d6dda516c0e4985/bulktest/batch_lib.inc#L994">detecta los formatos de imagen</a> es verificar primero las palabras clave en el tipo MIME y usar como alternativa la extensión de archivo. Esto significa que el formato para imágenes con una URL como la anterior se clasifica como WebP, ya que WebP es compatible con HTTP Archive como agente de usuario.</p>
 
@@ -510,7 +534,7 @@ Nosotros, como comunidad web, podemos abogar por proporcionar transparencia usan
       </tr>
     </tbody>
   </table>
-  <figcaption>Figura 16. Distribución de las dimensiones intrínsecas de imagen (en píxeles) por página de comercio electrónico.</figcaption>
+  <figcaption>{{ figure_link(caption="Distribución de las dimensiones intrínsecas de imagen (en píxeles) por página de comercio electrónico.") }}</figcaption>
 </figure>
 
 Las dimensiones medias ('rango medio') para las imágenes solicitadas por las páginas de comercio electrónico son 247x196 px en dispositivos móviles y 240x192 px en escritorio. El 10% de las imágenes solicitadas por las páginas de comercio electrónico tienen al menos 693x512 px en dispositivos móviles y 800x546 px en escritorio. Tenga en cuenta que estas dimensiones son los tamaños intrínsecos de las imágenes, no su tamaño de visualización.
@@ -523,21 +547,21 @@ Necesitamos investigar más sobre por qué muchos sitios (aparentemente) no ofre
 
 Muchos sitios web, especialmente las tiendas en línea, cargan una cantidad significativa de código y contenido de terceros: para análisis, pruebas A/B, seguimiento del comportamiento del cliente, publicidad y soporte de redes sociales. El contenido de terceros puede tener un [impacto significativo en el rendimiento](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript). La [herramienta third-party-web](https://github.com/patrickhulce/third-party-web) de [Patrick Hulce](https://twitter.com/patrickhulce) se utiliza para determinar las solicitudes de terceros para este informe, y esto se discute más en el capítulo de [Third Parties](./third-parties).
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig17.png">
-    <img src="/static/images/2019/ecommerce/fig17.png" alt="Figura 17. Distribución de peticiones de terceros por página de comercio electrónico." aria-labelledby="fig17-caption" aria-describedby="fig17-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&amp;format=interactive">
-  </a>
-  <div id="fig17-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 de las solicitudes de terceros por página de comercio electrónico. El número medio de solicitudes de terceros en escritorio es 19. Los percentiles 10, 25, 75 y 90 son: 4, 9, 34 y 54. En escritorio hay 1 ó 2 peticiones más que en móvil en cada percentil.</div>
-  <figcaption id="fig17-caption">Figura 17. Distribución de peticiones de terceros por página de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig17.png",
+  caption="Distribución de peticiones de terceros por página de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 de las solicitudes de terceros por página de comercio electrónico. El número medio de solicitudes de terceros en escritorio es 19. Los percentiles 10, 25, 75 y 90 son: 4, 9, 34 y 54. En escritorio hay 1 ó 2 peticiones más que en móvil en cada percentil.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=865791628&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig18.png">
-    <img src="/static/images/2019/ecommerce/fig18.png" alt="Figura 18. Distribución de bytes de terceros por página de comercio electrónico." aria-labelledby="fig18-caption" aria-describedby="fig18-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&amp;format=interactive">
-  </a>
-  <div id="fig18-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de terceros por página de comercio electrónico. El número medio de bytes de terceros en el escritorio es de 320 KB. Los percentiles 10, 25, 75 y 90 son: 42, 129, 651 y 1.071. En escriorio es 10-30 KB más alto que en móvil en cada percentil.</div>
-  <figcaption id="fig18-caption">Figura 18. Distribución de bytes de terceros por página de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig18.png",
+  caption="Distribución de bytes de terceros por página de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de terceros por página de comercio electrónico. El número medio de bytes de terceros en el escritorio es de 320 KB. Los percentiles 10, 25, 75 y 90 son: 42, 129, 651 y 1.071. En escriorio es 10-30 KB más alto que en móvil en cada percentil.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=164264869&format=interactive"
+  )
+}}
 
 La página de inicio mediana ('rango medio') en una plataforma de comercio electrónico realiza 17 peticiones de contenido de terceros en dispositivos móviles y 19 en escritorio. El 10% de todas las páginas de inicio en plataformas de comercio electrónico realizan más de 50 peticiones de contenido de terceros, lo que supone un total de más de 1 MB.
 
@@ -547,21 +571,21 @@ La página de inicio mediana ('rango medio') en una plataforma de comercio elect
 
 Tenga en cuenta que las siguientes gráficas y tablas muestran datos sólo para dispositivos móviles.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig19.png">
-    <img src="/static/images/2019/ecommerce/fig19.png" alt="Figura 19. Distribución de solicitudes de terceros por página móvil para cada plataforma de comercio electrónico." aria-labelledby="fig19-caption" aria-describedby="fig19-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&amp;format=interactive">
-  </a>
-  <div id="fig19-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 de peticiones de terceros por página de comercio electrónico para cada plataforma. Shopify y Bigcommerce cargan la mayoría de las peticiones de terceros en las distribuciones con unas 40 peticiones en la mediana.</div>
-<figcaption id="fig19-caption">Figura 19. Distribución de solicitudes de terceros por página móvil para cada plataforma de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig19.png",
+  caption="Distribución de solicitudes de terceros por página móvil para cada plataforma de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 de peticiones de terceros por página de comercio electrónico para cada plataforma. Shopify y Bigcommerce cargan la mayoría de las peticiones de terceros en las distribuciones con unas 40 peticiones en la mediana.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1242665725&format=interactive"
+  )
+}}
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig20.png">
-    <img src="/static/images/2019/ecommerce/fig20.png" alt="Figura 20. Distribución de bytes de terceros (KB) por página móvil para cada plataforma de comercio electrónico." aria-labelledby="fig20-caption" aria-describedby="fig20-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&amp;format=interactive">
-  </a>
-  <div id="fig20-description" class="visually-hidden">Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de terceros (KB) por página de comercio electrónico para cada plataforma. Shopify y Bigcommerce cargan la mayoría de los bytes de terceros en las distribuciones con más de 1.000 KB en la mediana.</div>
-<figcaption id="fig20-caption">Figura 20. Distribución de bytes de terceros (KB) por página móvil para cada plataforma de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig20.png",
+  caption="Distribución de bytes de terceros (KB) por página móvil para cada plataforma de comercio electrónico.",
+  description="Distribución de los percentiles 10, 25, 50, 75 y 90 de bytes de terceros (KB) por página de comercio electrónico para cada plataforma. Shopify y Bigcommerce cargan la mayoría de los bytes de terceros en las distribuciones con más de 1.000 KB en la mediana.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1017068803&format=interactive"
+  )
+}}
 
 Las plataformas como Shopify pueden extender sus servicios usando JavaScript del lado del cliente, mientras que otras plataformas como Magento usan más extensiones del lado del servidor. Esta diferencia en la arquitectura afecta a los números mostrados aquí.
 
@@ -569,13 +593,13 @@ Claramente, las páginas en algunas plataformas de comercio electrónico hacen m
 
 ## First Contentful Paint (FCP)
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig21.png">
-    <img src="/static/images/2019/ecommerce/fig21.png" alt="Figura 21. Distribución promedio de experiencias FCP por plataforma de comercio electrónico." aria-labelledby="fig21-caption" aria-describedby="fig21-description" width="600" height="371" data-width="600" data-height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&amp;format=interactive">
-  </a>
-  <div id="fig21-description" class="visually-hidden">Gráfico de barras de la distribución promedio de las experiencias de FCP para las seis principales plataformas de comercio electrónico. WooCommerce tiene la mayor densidad de experiencias FCP lentas con un 43%. Shopify tiene la mayor densidad de experiencias rápidas de FCP con 47%.</div>
-<figcaption id="fig21-caption">Figura 21. Distribución promedio de experiencias FCP por plataforma de comercio electrónico.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig21.png",
+  caption="Distribución promedio de experiencias FCP por plataforma de comercio electrónico.",
+  description="Gráfico de barras de la distribución promedio de las experiencias de FCP para las seis principales plataformas de comercio electrónico. WooCommerce tiene la mayor densidad de experiencias FCP lentas con un 43%. Shopify tiene la mayor densidad de experiencias rápidas de FCP con 47%.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1341906463&format=interactive"
+  )
+}}
 
 [First Contentful Paint](./performance#first-contentful-paint) mide el tiempo que transcurre desde la navegación hasta que se muestra por primera vez contenido como texto o una imagen. En este contexto, **rápido** significa FCP en menos de un segundo, **lento** significa FCP en 3 segundos o más, y **moderado** es el resto. Tenga en cuenta que el contenido y el código de terceros pueden tener un impacto significativo en FCP.
 
@@ -587,13 +611,13 @@ Necesitamos establecer por qué FCP es peor en dispositivos móviles que en escr
 
 Consulte también el [capítulo de PWA](./pwa) para obtener más información sobre este tema más allá de los sitios de comercio electrónico.
 
-<figure>
-  <a href="/static/images/2019/ecommerce/fig22.png">
-    <img src="/static/images/2019/ecommerce/fig22.png" alt="Figura 22. Distribución de las puntuaciones en la categoría PWA en Lighthouse para páginas de comercio electrónico móvil." aria-labelledby="fig22-caption" aria-describedby="fig22-description" width="600" height="371" data-width="600" height="371" data-seamless data-frameborder="0" data-scrolling="no" data-iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&amp;format=interactive">
-  </a>
-  <div id="fig22-description" class="visually-hidden">Distribución de las puntuaciones de la categoría PWA de Lighthouse para páginas de comercio electrónico. En una escala de 0 (fallando) a 1 (perfecto), el 40% de las páginas obtienen una puntuación de 0,33. El 1% de las páginas obtienen una puntuación superior a 0,6.</div>
-<figcaption id="fig22-caption">Figura 22. Distribución de las puntuaciones en la categoría PWA en Lighthouse para páginas de comercio electrónico móvil.</figcaption>
-</figure>
+{{ figure_markup(
+  image="fig22.png",
+  caption="Distribución de las puntuaciones en la categoría PWA en Lighthouse para páginas de comercio electrónico móvil.",
+  description="Distribución de las puntuaciones de la categoría PWA de Lighthouse para páginas de comercio electrónico. En una escala de 0 (fallando) a 1 (perfecto), el 40% de las páginas obtienen una puntuación de 0,33. El 1% de las páginas obtienen una puntuación superior a 0,6.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vROHKGuMutXmxtzEoBSJNVn7DOzlfpizJh7mOkopFK8OVl_hCUHDOmKgYOojrpVsGnGWaletE7Uc5oX/pubchart?oid=1148584930&format=interactive"
+  )
+}}
 
 Más del 60% de las páginas de inicio en plataformas de comercio electrónico obtienen una [puntuación de PWA en Lighthouse](https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool) de entre 0,25 y 0,35. Menos del 20% de las páginas de inicio en las plataformas de comercio electrónico obtienen una puntuación de más de 0,5 y menos del 1% de las páginas de inicio obtienen una puntuación de más de 0,6.
 
